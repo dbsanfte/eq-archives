@@ -1,0 +1,480 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html lang="en" xml:lang="en">
+<HEAD>
+<title>EverQuest   News, Trailers, Screenshots, Previews, Reviews, Guides -- EverQuest: The Serpent's Spine Vault</title>
+<META  name="description" content="Everquest Vault is the Internet's most complete source for Everquest. You can find anything from news, screenshots, databases, guide, trailer, fan fiction, columns and more..">
+<META  name="keywords" content="EverQuest, Online, Adventures, EQ, Cleric, Paladin, Necromancer, Druid, Beastlord, Enchanter, Magician, Mage, Elf, Halfling, Iskar, Monk, Dwarf, Froglok, MMORPG, MMOG, game, games, Warrior, Shadow knight, PC, game, PC game, PS2, PS2 game, comic book, novel, fantasy, Berserker, Erudite, SOE, RPG, guilds, screenshots, trailer, preview, reviews, guide, forums
+">
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://vnmedia.ign.com/eqvault.ign.com/skins/default/vault.css">
+<LINK REL="alternate" TYPE="text/css" HREF="http://vnmedia.ign.com/eqvault.ign.com/skins/default/vault.css">
+<LINK REL="alternate" TITLE="EverQuest Vault -- EQ  RSS Feed" href="http://eqvault.ign.com/show_rss.php" type="application/rss+xml"><SCRIPT LANGUAGE="JavaScript" SRC="http://vaultnap.ign.com/templates/new_toc/Scripts.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="http://vaultnap.ign.com/include/db/scripts.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="http://vaultnap.ign.com/templates/new_toc/calendarDateInput.js">
+/***********************************************
+ * Jason's Date Input Calendar- By Jason Moon http://calendar.moonscript.com/dateinput.cfm
+ * Script featured on and available at http://www.dynamicdrive.com
+ * Keep this notice intact for use.
+ ***********************************************/
+</SCRIPT>
+<link rel="stylesheet" type="text/css" href="http://vnmedia.ign.com/eqvault.ign.com/skins/default/google_afc.css">
+</HEAD>
+<BODY LEFTMARGIN=0  RIGHTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<!-- begin: Horizontal Links --><style type="text/css">.frame { margin-right:auto; margin-left:auto; background-image:url(http://media.ign.com/ign/images/frame_bg.gif);text-align:left}#mastheadNav { background-image:url(http://media.ign.com/ign/images/mastheadnav_bg.gif); border:1px solid #000; border-bottom:0; height:20px;}.horizontalNavText { color:#999; font: bold 9px tahoma,sans-serif; padding:4px;  white-space: nowrap; }.horizontalNavText a:link, .horizontalNavText a:visited {color:#303498;}.horizontalNavText a:hover {color:#000000;}</style><div class="frame"> <div id="mastheadNav"> <div class="horizontalNavText"><a href="http://www.ign.com/">IGN.com</a> | <a href="http://pc.ign.com/">PC Games</a> | <a href="http://ps2.ign.com/" >PS2</a> | <a href="http://ps3.ign.com/">PS3</a> | <a href="http://psp.ign.com/" >PSP</a> | <a href="http://xbox.ign.com/">Xbox</a> | <a href="http://xbox360.ign.com/" >Xbox 360</a> | <a href="http://cube.ign.com/" >GameCube</a> | <a href="http://wii.ign.com/" >Wii</a> | <a href="http://ds.ign.com/" >DS</a> | <a href="http://gameboy.ign.com/" >GBA</a> | <a href="http://wireless.ign.com/">Wireless</a> | <a href="http://www.fileplanet.com/">FilePlanet</a> | <a href="http://cheats.ign.com/">Cheats</a> | <a href="http://movies.ign.com/">Movies</a> | <a href="http://tv.ign.com/">TV</a> | <a href="http://dvd.ign.com/">DVD</a> | <a href="http://music.ign.com/">Music</a> | <a href="http://comics.ign.com/" >Comics</a> | <a href="http://gear.ign.com/">Gear</a> | <a href="http://sports.ign.com/">Sports</a> | <a href="http://cars.ign.com/">Cars</a> | <a href="http://babes.entertainment.ign.com/" >Babes</a></div> </div> </div><!-- end: Horizontal Links -->
+
+<!-- Prestitial Code -->
+          <script language="javascript">
+          document.write("<"+"script type='text/javascript' src='http://wrapper.ign.com/a?pagetype=vn_content&size=prestitial'>");
+          document.write("<"+"/script>");
+          </script><TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0  WIDTH="100%" BACKGROUND="http://vnmedia.ign.com/eqvault.ign.com/skins/default/HeaderBackground.jpg"><TR><TD ALIGN=LEFT VALIGN="TOP"><map name="IGNLogo"><area href="http://www.ign.com" shape="polygon" coords="46, 38, 42, 70, 32, 67, 25, 93, 33, 93, 29, 105, 90, 106, 92, 98, 99, 98, 100, 89, 94, 88, 107, 37"></map><img border="0" src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/HeaderIGNLogo.gif" usemap="#IGNLogo" ></TD><TD  width="50%"><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" WIDTH=5 HEIGHT=115></TD><TD ALIGN=CENTER VALIGN="TOP"><map name="vnmenubar"> <area href="http://vault.ign.com"  title="Vault Hub" shape="rect" coords="103, 98, 155, 111"> <area href="http://rpgvault.ign.com/" title="RPG Vault" shape="rect" coords="160, 98, 227, 111"> <area href="http://vnboards.ign.com" title="VN Boards" shape="rect" coords="233, 98, 280, 111"> <area href="http://eqvault.ign.com" title="Everquest Vault" shape="rect" coords="71, 3, 265, 95"></map><img border="0" src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/HeaderSiteLogo.gif" usemap="#vnmenubar"></TD><TD  width="50%"><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" WIDTH=5 HEIGHT=115></TD><TD ALIGN=RIGHT VALIGN="TOP"><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/HeaderArtRight.gif"></TD></TR></TABLE><TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0  WIDTH="100%"><TR><TD ALIGN=LEFT BACKGROUND="http://vnmedia.ign.com/eqvault.ign.com/skins/default/NavigationLeftTrim.jpg"><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" WIDTH=15></TD><TD ALIGN=LEFT BACKGROUND="http://vnmedia.ign.com/eqvault.ign.com/skins/default/Navigation.jpg" VALIGN=TOP><br><p align="center"><b><a href="/View.php?view=Authentication.Login">Login</a> | <a href="/View.php?view=Authentication.Login">Register<a></b><br></p><BR /><span class="menutitle">EverQuest Vault</span><BR /><a href="http://eqvault.ign.com/" class="menu" >Front Page</a><BR /><a href="http://eqvault.ign.com/show_archives.php" class="menu" >News Archive</a><BR /><a href="/wiki/index.php/Main_Page" class="menu" >Main Page</a><BR /><a href="http://www.fileplanet.com/39113/0/section/EverQuest-Series" class="menu" >EverQuest Files</a><BR /><a href="www.eqvault.com/wiki/index.php/Help:Contents" class="menu" >Help</a><BR /><a href="http://eqvault.ign.com/?dir=siteinfo&content=staff" class="menu" >Staff Info</a><BR /><a href="http://eqvault.ign.com/siteinfo/mail.php" class="menu" >Submissions</a><BR /><a href="http://eqvault.ign.com/static.php?page=rssfeeds" class="menu" >RSS News Feeds</a><BR /><a href="http://www.direct2drive.com/?camp=vlt" class="menu" target="_new">Download Full Games</a><BR /><a href="/hosting.php" class="menu" ><b>Apply for Hosting</b></a><BR /><BR /><span class="menutitle">Wikki</span><BR /><a href="http://eqvault.ign.com//wiki/index.php/Main_Page" class="menu" >Main Page</a><BR /><a href="http://eqvault.ign.com/wiki/index.php/Special:Recentchanges" class="menu" >Recent Changes</a><BR /><a href="/wiki/index.php/Special:Random" class="menu" >Random Page</a><BR /><BR /><span class="menutitle">Your Submissions</span><BR /><a href="/static.php?page=submitcontent" class="menusub" >- Submit Content</a><BR /><a href="/View.php?view=User.Entries" class="menusub" >- My Submissions</a><BR /><a href="/View.php?view=RecentUpdates.AllSections" class="menu" ><b>Recent updates</b></a><BR /><a href="http://eqvault.ign.com/View.php?view=GuildListings.list" class="menu" >Guild Listings</a><BR /><a href="http://eqvault.ign.com/View.php?view=PlayGuides.List" class="menu" >Play Guides</a><BR /><a href="http://eqvault.ign.com/View.php?view=Classifieds.list" class="menu" >Classified Ads</a><BR /><a href="http://eqvault.ign.com/View.php?view=PlayerMovies.List" class="menu" >Player Movies</a><BR /><a href="http://eqvault.ign.com/View.php?view=PlayerScreenshots.List" class="menu" >Player Screenshots</a><BR /><a href="http://eqvault.ign.com/View.php?view=FanArt.List" class="menu" >Fan Artwork</a><BR /><a href=" http://eqvault.ign.com/View.php?view=FanFiction.List" class="menu" >Fan Fiction</a><BR /><BR /><span class="menutitle">Feature Writing</span><BR /><a href="http://eqvault.ign.com/static.php?page=theseries.htm" class="menusub" >- EQ Developer Interviews</a><BR /><a href="http://eqvault.ign.com/View.php?view=Columns.List&category_select_id=6" class="menu" >Kwill's Quill</a><BR /><a href="http://eqvault.ign.com/View.php?view=Features.List&category_select_id=1" class="menu" >Interviews</a><BR /><a href="http://eqvault.ign.com/View.php?view=Columns.List&category_select_id=4" class="menu" >Editorials</a><BR /><a href="http://eqvault.ign.com/View.php?view=Columns.List&category_select_id=5" class="menu" >Black Storm Tavern</a><BR /><a href="http://eqvault.ign.com/static.php?page=Fanfaire2005" class="menu" >Fan Faire June 2005</a><BR /><BR /><span class="menutitle">Features</span><BR /><a href="http://eqvault.ign.com/static.php?page=theseries.htm" class="menu" >EQ Developer Interviews</a><BR /><a href="http://eqvault.ign.com/static.php?page=class.sites" class="menu" >Class Sites</a><BR /><a href="http://eqvault.ign.com/static.php?page=info.links" class="menu" >Useful Info Links</a><BR /><a href="http://eqforums.station.sony.com/eq/board/message?board.id=TNZ&message.id=220540" class="menu" >Returning Player FAQ</a><BR /><a href="http://eqvault.ign.com/screenshots/?cat=13" class="menu" >Wallpapers</a><BR /><BR /><span class="menutitle">Expansion Information</span><BR /><a href="http://eqvault.ign.com/static.php?page=porpreview" class="menu" >Prophecy of Ro Preview</a><BR /><a href="http://eqvault.ign.com/static.php?page=poroverview" class="menu" >Quick Guide to PoR</a><BR /><a href="http://eqvault.ign.com/static.php?page=dodlore" class="menu" >Depths of Darkhollow Lore</a><BR /><a href="http://eqvault.ign.com/static.php?page=don" class="menu" >Dragons of Norrath Q&A</a><BR /><a href="http://eqvault.ign.com/static.php?page=donp" class="menu" >Dragons of Norrath Preview</a><BR /><a href="http://eqvault.ign.com/View.php?view=OOWF.List" class="menu" >Omens of War Features</a><BR /><BR /><span class="menutitle">Server Guild Guide</span><BR /><a href="http://eqvault.ign.com/static.php?page=alkabor.list" class="menu" >Al'Kabor Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=ab.list" class="menu" >Antonius Bayle Guilds (European Server)</a><BR /><a href="http://eqvault.ign.com/static.php?page=bertox.list" class="menu" >Bertoxxulous Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=bristlebane.list" class="menu" >Bristlebane Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=cazic.list" class="menu" >Cazic Thule Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=drinal.list" class="menu" >Drinal Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=druzzil.list" class="menu" >Druzzil Ro Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=erollisi.list" class="menu" >Erollisi Marr Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=fennin.list" class="menu" >Fennin Ro Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=luclin.list" class="menu" >Luclin Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=maelin.list" class="menu" >Maelin Starpyre Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=povar.list" class="menu" >Povar Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=quellious.list" class="menu" >Quellious Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=prexus.list" class="menu" >Prexus Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=saryn.list" class="menu" >Saryrn Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=stromm.list" class="menu" >Stromm Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=nameless.list" class="menu" >The Nameless Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=rathe.list" class="menu" >The Rathe Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=tribunal.list" class="menu" >Tribunal Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=tunare.list" class="menu" >Tunare Guilds</a><BR /><a href="http://eqvault.ign.com/static.php?page=xegony.list" class="menu" >Xegony Guilds</a><BR /><BR /><span class="menutitle">SOE Links</span><BR /><a href="http://eqlive.station.sony.com/index.jsp" class="menu" target="_new">EQPlayers from SOE</a><BR /><a href="http://eqforums.station.sony.com/eq/tracker?role=Dev" class="menu" target="_new">SOE Dev Tracker</a><BR /><BR /><span class="menutitle">Hosted Sites</span><BR /><a href="http://eqvault.ign.com/View.php?view=HostedSites.List" class="menu" >All Hosted Sites!</a><BR /><a href="http://vquest.eqvault.ign.com/" class="menusub" >- Ventura Quest</a><BR /><BR /><span class="menutitle">Forums</span><BR /><a href="http://vnboards.ign.com/EverQuest_General/b5001/" class="menu" >EverQuest General</a><BR /><a href="http://vnboards.ign.com/EverQuest_Online_Adventures/b22361/" class="menu" >EQ Online Adventures</a><BR /><a href="http://vnboards.ign.com/Champions_of_Norrath/b22760/" class="menu" >Champions of Norrath</a><BR /><a href="http://vnboards.ign.com/EQ_Roleplaying_(Pen_&_Paper_Game)/b22761/" class="menu" >EverQuest RPG</a><BR /><a href="http://vnboards.ign.com/Lords_of_EverQuest_/b22518/" class="menu" >Lords of EverQuest</a><BR /><BR /><p> 
+<span CLASS="menutitle">Vault Network</span><br>
+<b><a HREF="http://rpgvault.ign.com/" CLASS="menu" title="RPG Vault">RPG Vault</a></b><br>
+<B><A HREF="http://vnboards.ign.com/" CLASS="menu" title="VN Message Board">VN Boards</A></B><BR>
+<b><a HREF="http://vault.ign.com/" CLASS="menu" title="Vault Hub">Vault Hub</a></b><br>
+<b><a HREF="http://vault.ign.com/wiki/" CLASS="menu" title="Vault Wiki">Vault Wiki</a></b><br>
+<a HREF="http://aovault.ign.com/" CLASS="menu" title="Anarchy Online Vault">&#183; Anarchy Online</a><br>
+
+<a HREF="http://acvault.ign.com/" CLASS="menu" title="Asheron's Call Vault">&#183; Asheron's Call</a><br>
+<a HREF="http://autoassaultvault.ign.com/" CLASS="menu" title="Auto Assault Vault">&#183; Auto Assault</a><br>
+<a HREF="http://camelotvault.ign.com/" CLASS="menu" title="Dark Age of Camelot Vault">&#183; Camelot</a><br>
+<a HREF="http://cohvault.ign.com/?skin=hero" CLASS="menu" title="City of Heroes Vault">&#183; City of Heroes</a><br>
+<a HREF="http://cohvault.ign.com/?skin=default" CLASS="menu" title="City of Villains Vault">&#183; City of Villains</a><br>
+<a HREF="http://dndvault.ign.com/" CLASS="menu" title="D&D Vault">&#183; D&D</a><br>
+
+<a HREF="http://evevault.ign.com/" CLASS="menu" title="EVE Online Vault">&#183; EVE Online</a><br>
+<a HREF="http://eqvault.ign.com/" CLASS="menu" title="EverQuest Vault">&#183; EverQuest</a><br>
+<a HREF="http://eq2vault.ign.com/" CLASS="menu" title="EverQuest 2 Vault">&#183; EverQuest 2</a><br>
+<a HREF="http://ffvault.ign.com/" CLASS="menu" title="Final Fantasy Vault">&#183; Final Fantasy</a><br>
+<a HREF="http://gwvault.ign.com" CLASS="menu" title="Guild Wars Vault">&#183; Guild Wars</a><br>
+
+<a HREF="http://l2vault.ign.com/" CLASS="menu" title="Lineage 2 Vault">&#183; Lineage 2</a><br>
+<a HREF="http://lotrovault.ign.com/" CLASS="menu" title="Lord of the Rings Online">&#183; Lord of the Rings Online</a><br>
+<a HREF="http://mevault.ign.com/" CLASS="menu" title="Middle Earth Vault">&#183; Middle Earth</a><br>
+<a HREF="http://nwvault.ign.com/" CLASS="menu" title="Neverwinter Nights Vault">&#183; Neverwinter Nights</a><br>
+<a href="http://swvault.ign.com" CLASS="menu" title="Star Wars Galaxies Vault">&#183; Star Wars Galaxies</a><br>
+
+<a HREF="http://titanquestvault.ign.com/" CLASS="menu" title="Titan Quest Vault">&#183; Titan Quest</a><br>
+<a HREF="http://twoworldsvault.ign.com/" CLASS="menu" title="Two Worlds Vault">&#183; Two Worlds</a><br>
+<a HREF="http://vanguardvault.ign.com/" CLASS="menu" title="Vanguard Vault">&#183; Vanguard</a><br>
+<a HREF="http://warhammervault.ign.com/" CLASS="menu" title="Warhammer Vault">&#183; Warhammer</a><br>
+<a HREF="http://wowvault.ign.com/" CLASS="menu" title="World of Warcraft Vault">&#183; World of Warcraft</a><br>
+
+<p> <span CLASS="menutitle">Planet Network</span><br><b><a HREF="http://www.gamespy.com/network/" CLASS="menu" title="Planet Hub">Planet Hub</a></b><br>
+<p>
+<span CLASS="menutitle">IGN</span><br>
+<b><a HREF="http://www.ign.com/" CLASS="menu" title="Games">Games</a></b><br>
+<B><A HREF="http://cheats.ign.com/" CLASS="menu" title="Cheats">Cheats</A></B><BR>
+<b><a HREF="http://entertainment.ign.com/" CLASS="menu" title="Entertainment">Entertainment</a></b><br>
+<IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" WIDTH=115></TD><TD ALIGN=LEFT BACKGROUND="http://vnmedia.ign.com/eqvault.ign.com/skins/default/NavigationRightTrim.jpg"><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" WIDTH=15></TD><TD WIDTH="100%" VALIGN="TOP" ALIGN=CENTER><DIV CLASS="Main"><TABLE  BORDER=0 CELLPADDING=6 CELLSPACING=0  WIDTH="100%"><TR><TD  VALIGN="TOP">
+<!-- GOOGLE SEARCH START --> 
+<center><div style="height:32px;width:632px">
+<div style="margin:5px; height:1px;float:left;">
+<form id="DateQueryForm" action="/View.php?view=GlobalSearch" method="post" onsubmit="return DateQueryForm_OnSubmit(this);">
+<input name="searchtype" id="websearch" value="web" type="radio">The Web</input>&nbsp;&nbsp;
+<input name="searchtype" id="internalsearch" value="internal" checked="checked" type="radio">The Site</input>&nbsp;&nbsp;
+<INPUT TYPE="text"  id="QueryForm_Search" name="QueryForm_Search" size="35">
+<input id="QueryForm_Submit" name="QueryForm_Submit" value="Search" type="submit"></div>
+
+<div style="vertical-align: bottom;margin:0px; float:right;">
+<IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/poweredbygoogle.jpg" WIDTH="145" HEIGHT="32" BORDER="0" ALT=""></div>
+</FORM>
+</div></center>
+<!-- GOOGLE SEARCH END --><center><form name=search action=show_archives.php method=POST><b>Search for string:  <input type=text name=search_string  > <input type=submit name=search_by_string value=Search></form><form name=search_date action=show_archives.php><b>Archived news for the week of:<br><select name=month><option value=1>January</option><option value=2>February</option><option value=3>March</option><option value=4>April</option><option value=5>May</option><option value=6>June</option><option value=7>July</option><option value=8>August</option><option value=9 selected>September</option><option value=10>October</option><option value=11>November</option><option value=12>December</option></select> <select name=day><option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9 selected>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option><option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option><option value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option><option value=26>26</option><option value=27>27</option><option value=28>28</option><option value=29>29</option><option value=30>30</option><option value=31>31</option></select> <select name=year><option value=2004>2004</option><option value=2005>2005</option><option value=2006>2006</option><option value=2007 selected>2007</option></select> <input type=submit value=Go></form><p><TABLE WIDTH="94%" BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/dateheader_01.gif"></TD><TD WIDTH="100%" background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/dateheader_02.gif"><span CLASS="newsdate">Thu 06 Sep 2007</span></TD><TD><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/dateheader_03.gif"></TD></TR></TABLE><br><!-------Start News item--><table cellSpacing=0 cellPadding=0 width="94%" border=0>             <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_01.jpg"></td>           <td  width=100%        background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_02.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_03.jpg"></td></tr>         <tr>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_04.jpg" width="17px">&nbsp;</td>           <td             background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_05.jpg" class="newsbody"><a name="32786"></a><span CLASS="newstitle">Hotfix Notes 9/6</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104421862">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32786>Print News</a></span><br><span class="newsbody">09/06/2007 <br><br>Here is what's going into Thursday morning's Hotfix:<br><br>There were a few technical issues that we addressed today that require a server update and some downtime. We are sure for those affected they will welcome the fixes and for everyone else, thank you for your understanding.<br><br>Legends of Norrath crash related to the 8000 series NVidia cards<br>- This has been addressed and now the crash and gameplay problems should be addressed and working as intended.<br><br>Legends of Norrath Global Loot Drop<br>- The loot drop percentage has been fixed and now you will be able to obtain LoN loot from NPC's in game.<br><br>Custom UI's being scrambled when tabbed out to other windows<br>- We are aware of the problems players are having with custom UI's and we are looking into the issue. In the meantime on of our developers has started a post called UI Problems and Workarounds and it is sticky'd on the forums. Please refer to that post while we do some work on our end.<br><br>New human NPCs loading into global memory<br>- This has been addressed and the standard Human models have replaced the models from the Test server.<br><br>Procs not working correctly<br>- This has been addressed and procs that were affected are now working as intended.</span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Thu 06 Sep 2007</span><br><br><br><a name="32785"></a><span CLASS="newstitle">UI Problems and Workarounds</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104421801">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32785>Print News</a></span><br><span class="newsbody">Sklug, Senior EQ Programmer, has <a href="http://forums.station.sony.com/eq/posts/list.m?topic_id=118687">posted information</a> regarding the UI on the EQPlayers forums.<br><br>The entire post is below.  If you have an issue that is not addressed, you can post to the thread link above.</span><p><a href="fullstory.php?id=32785">Read More...</a><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Thu 06 Sep 2007</span><br><br><br><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" width="540px" height=1></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_06.jpg" width="17px">&nbsp;</td></tr>         <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_07.jpg"></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_08.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_09.jpg"></td></tr></table></p><!-------End News item--><p><TABLE WIDTH="94%" BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/dateheader_01.gif"></TD><TD WIDTH="100%" background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/dateheader_02.gif"><span CLASS="newsdate">Wed 05 Sep 2007</span></TD><TD><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/dateheader_03.gif"></TD></TR></TABLE><br><!-------Start News item--><table cellSpacing=0 cellPadding=0 width="94%" border=0>             <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_01.jpg"></td>           <td  width=100%        background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_02.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_03.jpg"></td></tr>         <tr>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_04.jpg" width="17px">&nbsp;</td>           <td             background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_05.jpg" class="newsbody"><a name="32768"></a><span CLASS="newstitle">Legends of Norrath Live</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104415503">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32768>Print News</a></span><br><span class="newsbody">LEGENDS OF NORRATH™ NOW AVAILABLE FOR ALL EVERQUEST® AND EVERQUEST® II PLAYERS<br><br>New Online Trading Card Game Playable Within and Across Online RPG’s<br><br>Subscribers to Receive Free Starter Deck<br><br>Legends of Norrath™ Oathbound, the online trading card game based on the rich fantasy worlds of EverQuest® and EverQuest® II, is now live and available for all EQ and EQII subscribers.  Playable from within either of the two online games, players can take on challengers in casual gameplay or test their skills against AI opponents, across all servers, within both live games.  <br><br>Oathbound is the first release in the Legends of Norrath storyline, featuring more than 375 digital cards, available in both 55 card digital starter decks for $9.99 (plus applicable taxes) and 15 card digital booster packs for $2.99 (plus applicable taxes).  In the three-part Oathbound storyline, players become part of a secret war between the forces of Order and Chaos, preventing the realm of Norrath from the brunt of a bloody and eternal war.<br><br>In addition to player vs. player combat, Legends of Norrath provides the complete online card gaming experience, featuring a sophisticated, re-playable AI system for single player campaigns, easy to use management tools and numerous Casual and Tournament game lobbies.  Victory can be achieved by completing quests or reducing your opponent’s health, enabling players to employ their own unique strategies for victory.  The game also features a robust loot system; more than 30 loot items each for EQ and EQII will be available, including player mounts, potions, clothing, weapon adornments and spells.  <br><br>To get started on the fun, EQ and EQII players will receive a free starter deck and game client to play.  Non-subscribers will also get a chance to compete against the EQ and EQII community on September 12, when a free stand alone version of the game is scheduled to be available.<br><br>For more information on Legends of Norrath, visit the website at www.legendsofnorrath.com.  </span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><a name="32767"></a><span CLASS="newstitle">Eating Safely in Norrath</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104415305">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32767>Print News</a></span><br><span class="newsbody">Most adventurers are usually far from home, and what's a person to do to make sure not to get a case of "Sarnak's Revenge?"  It's so inconvenient when the entire raid has to pause for your bio again.<br><br>Here's a guide on <a href="http://eqvault.ign.com/View.php?view=Columns.Detail&id=58&category_select_id=6">Eating Safely in Norrath</a>.  Your deadly adventure should not be your meal choice!</span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><a name="32738"></a><span CLASS="newstitle">Call for Volunteers</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104406520">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32738>Print News</a></span><br><span class="newsbody">Kwill is lonely!  No, not in that way, but I sure could use a contributor or two to help out with EQVault.<br><br>I specifically could use:<br><br>-- people to write play guides.  Do you know how to level a character up, defeat a certain zone, or make money?  Write a short article and get it published here!<br><br>-- people to help keep the guild listings updated.  It's a big job for one person, but easy enough for a couple of peeps.<br><br>-- ideas for new features.  Think the site is missing something? Be the first one to add it!<br><br>-- someone to cover Legends of Norrath.<br><br>Why should you help out as a volunteer?<br><br>It's a great way to get your foot in the door in the video game industry.  Companies love it when you have worked on a fan site.  This site is powered by one of the top media companies in the business, IGN Entertainment, so it looks good on a resume!<br><br>Writing practice.  Wish you could be a writer? The best way to get there is to write, and write some more.  Get published here, painlessly!<br><br>Be part of the EverQuest community.  Fan site contributors are a special breed of devoted fans.  And we are way fierce!  Come join the supercool club!<br><br>Please email me at kwill@vaultnetwork.com if you have an interest in helping.  Thanks!</span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><a name="32736"></a><span CLASS="newstitle">Legends of Norrath Card Guide</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104406318">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32736>Print News</a></span><br><span class="newsbody">Player Tnexus_Prexus has created a complete <a href="http://handofka.tehomgz.net/loncards.pdf">Legends of Norrath card guide</a>, listing card numbers, card names, their powers, attack, defense, damage bonus, health, specialty, archtypes, card types, tokens, and item descriptions.   He created it as a .pdf to be easily viewed.<br><br>Very impressive!<br><br>Edit:  credit should go to Tnexus Fyrewolf of the Prexus Server if you use this guide.  Thank you!</span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><a name="32734"></a><span CLASS="newstitle">Producer Tidbits</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104406226">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32734>Print News</a></span><br><span class="newsbody">Clint Worley has some tidbits for this week [I have added some emphasis on certain comments -- Kwill]:<br><br><a href="http://forums.station.sony.com/eq/posts/list.m?topic_id=118566">Producer Tidbits 9/4/07</a><br><br>Legends of Norrath and raiding- Can't we all get along?<br><br>I have seen a few posts about players getting frustrated that LoN is distracting focused Raid attempts and even smaller group outings. We did discuss this initially and we came to the conclusion that it is much easier to treat the players as adults than to put training wheels on LoN. Meaning, if you decide to raid with someone that you do not know, there are inherent risks associated with it. One such risk could be needing said "unknown player" to help and they are playing LoN instead.<br><br><strong>Some players would like to have an icon or some indication that players are playing LoN but that is not the direction we want to take the game. I would suggest that all players take the time to know who they are playing with and make sure that LoN rules are clear in critical situations.</strong><br><br><br>Dice, Dice, I need some dice over here!<br><br>The dice will be rolling out in the update tomorrow. I am sure that the players will have a good time with them. For those of you that were not at this years Fan Faire maybe next year! You will see players with their own Stones of Fortune being used to get random buffs.<br><br><br>Did I lose a claim item around here somewhere? Hey there is a new claim window!<br><br>In an effort to support the LoN roll out that is happening this week, we redesigned the claim window. Now you should find it much easier to use. I hope that now everyone will be able to find all of their claimables and hopefully give CS a little break  Also, I want to be sure to clarify that this is a new window that handles claim items only. Please do not confuse it with a new item window. <br><br><br>I run EQ in 1600x1200 on my main machine and 1024x768 on the other 5 boxes!!!<br><br>There is a change to the resolution options in the latest update. You now need to be in full screen mode to change your resolution size under the options menu.  While in windowed mode, you can simply drag the window border to re-size the window.<br><br><br>I had the day off and the server was down, what gives?!?<br><br>Yesterday we had to bring down the FV server to get in a hotfix to some of the loot drops tied to LoN. Firiona Vie has a special rule set and it generally allows players to trade items that are normally no trade on other servers. That is a specific setting that must be set and it was overlooked. That means that players were able to trade LoN redeemed loot on FV. Once this was pointed out to the development team we made an immediate fix. I apologize for the downtime and assure you that the change to LoN loot on FV was the only change that made it in yesterday.<br><br>Our end desire is to have LoN be uniform across all servers and all games. Having the rule set be unique on FV was an oversight and required a fix. We appreciate your understanding and we are glad that we caught in the Beta phase prior to Live launch.<br><br><br>Raids are waiting for the foolish and brave alike!!!<br><br><strong>We are already starting with the Raid tuning on the Secrets of Faydwer expansion.</strong> A special thank you goes out to those players for taking the time to work with the developers on these insanely difficult challenges. I am sure that you will all learn quite a bit about the next expansion but I can assure you that we will have a few surprises for you right after launch.<br><br><br>Secrets of Faydwer- Unfolding the Lore Series<br><br>In an effort to help players understand the expansion better, the EQ designers have been working with community to get out all of the lore from the next expansion. I would recommend that you all go check out the latest update in the series. It is a cool insight to the work that we put into the design of each zone and storyline and it also has screenshots from the next expansion for you to check out.<br><br><br>Is it a bird, is it a plane, noooooo it is the new LaunchPad!<br><br>As you all know now, we made the move and many of you are pleased. With everything we as devs do there were good comments and not so good comments but it was an overwhelming success. You should notice faster download times and more functionality as well. We are enjoying it from our end and we actually look forward to update days now. (I know, I know, I probably just jinxed myself but hey, it is working and the team loves it. What else can I say?)<br></span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><a name="32733"></a><span CLASS="newstitle">Patch Message September 5</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104406136">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32733>Print News</a></span><br><span class="newsbody">Read the entire patch message below!<br><br>*** Highlights ***<br><br>- Legends of Norrath: Legends of Norrath: Oathbound is now live! <br><br>Legends of Norrath is an online-only trading card game, based on the richly-detailed sword-and-sorcery world of Norrath from the massively multiplayer online role-playing games EverQuest and EverQuest II. EQ and EQII players have been awarded a complimentary random Oathbound digital starter deck. To play, navigate the EQ icon to Legends of Norrath or simply type /TCG.  Visit  <a href="http://legendsofnorrath.station.sony.com/">http://legendsofnorrath.station.sony.com/</a> for more information.<br><br>- Claim Window: A new window has been added for /claim subscription rewards. When the command is used, a UI window will popup. <br><br>- The EverQuest window can now be sized by simply dragging the border on the window!</span><p><a href="fullstory.php?id=32733">Read More...</a><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><a name="32732"></a><span CLASS="newstitle">RPG Vault Roundtable: Online Worlds</span><br><span class="feat"><a href="http://vnboards.ign.com/forums/b1/104406072">[Post A Comment]</a> - <a href=pagetools/pagetools.php?act=printnews&id=32732>Print News</a></span><br><span class="newsbody">A group of game developers share their thoughts on the global online worlds market in this edition of RPG Vault's <a href="http://rpgvault.ign.com/articles/817/817484p1.html">Online World Roundtable No. Five.</a><br><br>How does the global market influence game design?  Can a great game cross international boundaries?  The Western-based gaming industry so far has paid little attention to the global space, but that's not going to be the case for much longer.  In the near future, the pipeline from Asia to the United States and other Western countries is going to start flowing our way, rather than just the one way to Asia as it has in the past, these designers predict.  This theme of expanding markets and a two-way pipeline was also emphasized at this year's Game Developer's Conference in San Francisco.<br><br>Look for more "Freemium" games (free to play plus premium virtual items) to be produced for the global marketplace, since that model has been so successful in Asia.<br><br>The article is a good read with lots of interesting comments from cutting edge game designers for those interested in the future of online gaming.</span><br><br><span CLASS="newsby">-- <a href="/siteinfo/mail.php?staff=Kwill">Kwill</a> @ Wed 05 Sep 2007</span><br><br><br><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" width="540px" height=1></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_06.jpg" width="17px">&nbsp;</td></tr>         <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_07.jpg"></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_08.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_09.jpg"></td></tr></table></p><!-------End News item--></center>
+</td></tr></table></DIV>
+<!-- START WIKI RECENT CHANGES --><!-------Start Network Connections Box --><p><table cellSpacing=0 cellPadding=0 width="94%" border=0>             <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_01.jpg"></td>           <td  width=100%        background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_02.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_03.jpg"></td></tr>         <tr>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_04.jpg" width="17px">&nbsp;</td>           <td             background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_05.jpg"><center><a href="/wiki/"><b>Latest Vault Wiki Updates</b></a></center><p><div id="wikichanges">
+<div class="leftcolumn">
+<li>07-17 <a href="http://eqvault.ign.com/wiki/index.php/Main_Page">Main Page (Gil)</a></li>
+</div>
+<div class="rightcolumn">
+</div>
+</div>
+<img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" width="540px" height=1></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_06.jpg" width="17px">&nbsp;</td></tr>         <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_07.jpg"></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_08.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_09.jpg"></td></tr></table></p><!-------End  Network Connections Box--><!-------Start Network Connections Box --><p><table cellSpacing=0 cellPadding=0  width="94%" border=0>             <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_01.jpg"></td>           <td  width=100%        background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_02.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_03.jpg"></td></tr>         <tr>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_04.jpg" width="17px">&nbsp;</td>           <td nowrap           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_05.jpg"><div class="network_forum_box"><b>Most recent posts on the <a href="http://vnboards.ign.com/EverQuest_Series/c5001">EverQuest Series</a></b><br>
+<img src="http://scripts.snowball.com/scripts/images/pixy_CCCCCC.gif" border="0" height="1" vspace="3" width="100%"><br>
+
+<table cellpadding="0" cellspacing="0" border="0">
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104421862/p1/" class="tooltiplargeleft"><b>Hotfix Notes 9/6</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 06, 2007 09:48 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104421801/p1/" class="tooltiplargeleft"><b>UI Problems and Workarounds</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 06, 2007 09:43 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104415503/p1/" class="tooltiplargeleft"><b>Legends of Norrath Live</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 08:43 PM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104415305/p1/" class="tooltiplargeleft"><b>Eating Safely in Norrath</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 08:27 PM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104406520/p1/" class="tooltiplargeleft"><b>Call for Volunteers</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 10:00 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104406318/p1/" class="tooltiplargeleft"><b>Legends of Norrath Card Guide</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 09:45 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104406226/p1/" class="tooltiplargeleft"><b>Producer Tidbits</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 09:39 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104406136/p1/" class="tooltiplargeleft"><b>Patch Message September 5</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 09:33 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104406072/p1/" class="tooltiplargeleft"><b>RPG Vault Roundtable: Online Worlds</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 05, 2007 09:28 AM</font></div></td></tr>
+
+		            <tr><td nowrap width="320">
+
+            
+                <a href="http://vnboards.ign.com/everquest_general/b5001/104376587/p1/" class="tooltiplargeleft"><b>Meet and Greet in Austin September 4</b></a>
+                
+                        
+                                                                        
+
+
+            </td><td><div class="network_forum_box"><font size="1">- posted by <a href="http://club.ign.com/b/about?username=Vault_News&which=boards">Vault_News</a> on Sep 02, 2007 04:41 PM</font></div></td></tr>
+
+		</table></div><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" width="320px" height=1></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_06.jpg" width="17px">&nbsp;</td></tr>         <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_07.jpg"></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_08.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_09.jpg"></td></tr></table></p><!-------End  Network Connections Box--><center><div style=""><script language="javascript" src="http://fimserve.ign.com/?placement=fim_ign-vaults_vn-content"></script></div></center><!-------Start Network Connections Box --><p><table cellSpacing=0 cellPadding=0 width="94%" border=0>             <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_01.jpg"></td>           <td  width=100%        background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_02.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_03.jpg"></td></tr>         <tr>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_04.jpg" width="17px">&nbsp;</td>           <td             background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_05.jpg">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+	
+		
+		
+		
+	
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+<!-- network connections box STARTS -->
+<div id="aroundTheNetworkBox">
+<div style="padding-bottom: 2px; text-align: center"><b>Around The Network:</b></div>
+<div class="aroundTheNetworkLine"></div>
+<table border="0" cellspacing="0" cellpadding="0" >
+<tr>
+	<td width="50%" valign="top" class="aroundTheNetworkLinks">
+	<div><a href="http://pc.ign.com/objects/002/002252.html">EverQuest</a> at IGN</div>
+	<div><a href="http://cheats.ign.com/ob2/068/002/002252.html">EverQuest Cheats</a> at IGN</div>
+	<div><a href="http://guides.ign.com/guides/2252/index.html">EverQuest Guide</a> at IGN</div>
+	<div><a href="http://pc.gamespy.com/pc/everquest/">EverQuest</a> at GameSpy</div>
+	<div><a href="http://www.fileplanet.com/158253/150000/fileinfo/EverQuest---Escape-to-Norrath">EverQuest - Escape to Norrath</a> at FilePlanet</div>
+	<div><a href="http://www.fileplanet.com/39114/section/EverQuest">EverQuest Downloads</a> at FilePlanet</div>
+	</td>
+	<td><div style="width: 10px;"></div></td>
+	<td width="50%" valign="top" class="aroundTheNetworkLinks">
+	<div><a href="http://www.direct2drive.com/117/product/Buy-EverQuest:-Evolution-Download">EverQuest Download</a> at Direct2Drive</div>
+	<div><a href="http://www.gamestats.com/objects/002/002252/">EverQuest</a> at GameStats</div>
+	<div><a href="http://www.cheatscodesguides.com/pc-cheats/everquest/">EverQuest Cheats</a> at CCG</div>
+	<div><a href="http://eqvault.ign.com">EverQuest Vault</a></div>
+	<div><a href="http://www.planeteq.com">Planet EQ</a></div>
+	</td>
+</tr>
+</table>
+</div>
+<!-- network connections box ENDS -->
+
+
+
+<!-- network connections box ENDS -->
+
+<img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" width="540px" height=1></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_06.jpg" width="17px">&nbsp;</td></tr>         <tr>           <td width=23><img src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_07.jpg"></td>           <td           background="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_08.jpg"></td>           <td><img         src="http://vnmedia.ign.com/eqvault.ign.com/skins/default/newsbox_09.jpg"></td></tr></table></p><!-------End  Network Connections Box--><!-- Over flow -->
+		<script language="javascript">
+		document.write("<"+"script type='text/javascript' src='http://wrapper.ign.com/a?pagetype=vn_content&size=s300x250'>");
+		document.write("<"+"/script>");
+		</script>
+		<noscript>
+		<iframe valign=top WIDTH=300 HEIGHT=250 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="#000000" SRC="http://wrapper.ign.com/a?pagetype=vn_content&size=s300x250&sizew=300&sizeh=250&js=false">
+		</iframe>
+		</noscript><center><script language="javascript">
+document.write("<"+"script type='text/javascript' src='http://wrapper.ign.com/a?pagetype=vn_content&size=text'>");
+document.write("<"+"/script>");
+</script>
+<noscript> <iframe valign=top style="height:1.2em; width:64ex" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="#000000" SRC="http://wrapper.ign.com/a?pagetype=vn_content&size=text&sizew=128&sizeh=30&js=false"> </iframe><img src="http://atax.ign.com/t=pn_content&network=ign&size=1x1&name=ATAtracker?
+" height=1 width=1 /> </noscript></center><!-- FOOTER NETWORK -->
+<style>#footerNetwork * { font:9px verdana,sans-serif!important;}</style>
+<p><center><div id="footerNetwork"  style="width:650px;">
+
+<!-- LOGO AND SITES -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="footerLogoCell">
+	<a class="footerLogo" href="http://corp.ign.com/"></a>
+</td>
+<td class="footerTextCell">
+	<a href="http://www.ign.com/">IGN.com</a> | 
+	<a href="http://www.gamespy.com/">GameSpy</a> | 
+	<a href="http://comrade.gamespy.com/">Comrade</a> | 
+	<a href="http://arena.gamespy.com/">Arena</a> | 
+	<a href="http://www.fileplanet.com/">FilePlanet</a> |
+	<a href="http://www.modcenter.com/">ModCenter</a> |
+	<a href="http://www.poweredbygamespy.com/">GameSpy Technology</a>
+	<br />
+	<a href="http://www.teamxbox.com/">TeamXbox</a> | 
+	<a href="http://www.gamespy.com/network/">Planets</a> | 
+	<a href="http://vault.ign.com/">Vaults</a> | 
+	<a href="http://ve3d.ign.com/">VE3D</a> | 
+	<a href="http://www.cheatscodesguides.com/">CheatsCodesGuides</a> | 
+	<a href="http://www.gamestats.com/">GameStats</a> | 
+	<a href="http://www.3dgamers.com/">3D Gamers</a>
+	<br />
+	<a href="http://www.askmen.com/">AskMen.com</a>	| 
+	<a href="http://www.rottentomatoes.com/">Rotten Tomatoes</a> | 
+	<a href="http://www.gamermetrics.com/">GamerMetrics</a> | 
+	<a href="http://www.direct2drive.com/">Direct2Drive</a> 
+</td>
+</tr>
+</table>
+<!-- /LOGO AND SITES -->
+
+<!-- CORPORATE -->
+<div class="footerCorp">
+	By continuing past this page, and by your continued use of this site, you agree to be bound by and abide by the <a href="http://corp.ign.com/user-agreement.html">User Agreement</a>. 	
+	<br />
+	Copyright 1996-2007, IGN Entertainment, Inc. &nbsp;
+	<a href="http://corp.ign.com/">About Us</a> | 
+	<a href="http://support.igngamespy.com/">Support</a> | 
+	<a href="http://corp.ign.com/advertising-solutions.html">Advertise</a> | 
+	<a href="http://corp.ign.com/privacy.html">Privacy Policy</a> | 
+	<a href="http://corp.ign.com/user-agreement.html">User Agreement</a> |
+	<a href="http://corp.ign.com/feeds.html"><img class="footerRss"src="http://media.ign.com/ign/images/rss_icon.gif" border="0" alt="Subscribe to RSS Feeds" title="Subscribe to RSS Feeds"  style="position:relative; top:4px; border:0;" /> RSS</a>		
+</div>
+	<div style="padding-top: 2px; text-align: center;">IGN's enterprise databases running Oracle, SQL and MySQL are professionally monitored and managed by <a href="http://www.pythian.com" target="_blank">Pythian Remote DBA</a>.</div>
+<!-- /CORPORATE -->
+
+
+</div></center>
+
+<!-- FOOTER NETWORK -->
+</DIV></TD><TD ALIGN=CENTER VALIGN=TOP BACKGROUND="http://vnmedia.ign.com/eqvault.ign.com/skins/default/Skyscraper.jpg"><br><script language="javascript">
+document.write("<"+"script type='text/javascript' src='http://wrapper.ign.com/a?pagetype=vn_content&size=skyscraper'>");
+document.write("<"+"/script>");
+</script>
+<noscript>
+<iframe valign=top WIDTH=160 HEIGHT=600 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="#000000" SRC="http://wrapper.ign.com/a?pagetype=vn_content&size=skyscraper&sizew=160&sizeh=600&js=false">
+</iframe>
+</noscript><p><div style="text-align: left;margin-left:10px;"><hr><p><center><a href="http://vault.ign.com/static.php?page=nogold"><img src="http://vnmedia.ign.com/vault.ign.com/images/vault_goldfreesite.gif" alt="No Gold Ads" title="No Gold Ads!" border=0></a></center><p><hr><p><center><h3><a href="http://eqvault.ign.com/View.php?view=PlayerMovies.List" class="fms_toprated">NEW PLAYER MOVIES</a></h3></center>
+<div class="menuitem">1) <a href="http://eqvault.ign.com/View.php?view=PlayerMovies.Detail&id=3" class="tooltiplarge">The Buried Sea Previ..<span>The Buried Sea Preview<br>by Kwill</span></a></div>
+<div class="menuitem">2) <a href="http://eqvault.ign.com/View.php?view=PlayerMovies.Detail&id=2" class="tooltiplarge">Prophecy of Ro Freep..<span>Prophecy of Ro Freeport Preview<br>by Chadwick DeLasCasas</span></a></div>
+<center><h3><a href="http://eqvault.ign.com/View.php?view=FanArt.List" class="fms_toprated">NEW FAN ARTWORK</a></h3></center>
+<div class="menuitem">1) <a href="http://eqvault.ign.com/View.php?view=FanArt.Detail&id=8" class="tooltiplarge">Kwill's World: Getti..<span>Kwill's World: Getting Your Epic<br>by Kwill</span></a></div>
+<div class="menuitem">2) <a href="http://eqvault.ign.com/View.php?view=FanArt.Detail&id=7" class="tooltiplarge">Kwill's World: Rifts..<span>Kwill's World: Riftseeker's Group<br>by Kwill</span></a></div>
+<div class="menuitem">3) <a href="http://eqvault.ign.com/View.php?view=FanArt.Detail&id=6" class="tooltiplarge">Kwill's World: Raid ..<span>Kwill's World: Raid Night<br>by Kwill</span></a></div>
+<div class="menuitem">4) <a href="http://eqvault.ign.com/View.php?view=FanArt.Detail&id=5" class="tooltiplarge">Kwill's World: Power..<span>Kwill's World: Power Gamers<br>by Kwill</span></a></div>
+<div class="menuitem">5) <a href="http://eqvault.ign.com/View.php?view=FanArt.Detail&id=3" class="tooltiplarge">Kwill's World:  Powe..<span>Kwill's World:  Powerful Necros<br>by Kwill</span></a></div>
+<br><br><br><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif"  WIDTH=185></TD><TD ALIGN=RIGHT BACKGROUND="http://vnmedia.ign.com/eqvault.ign.com/skins/default/SkyscraperRightTrim.jpg"><IMG SRC="http://vnmedia.ign.com/eqvault.ign.com/skins/default/spacer.gif" WIDTH=6></TD></TR></TABLE><script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2547204-10";
+urchinTracker();
+</script></BODY></HTML>

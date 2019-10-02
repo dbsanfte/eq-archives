@@ -1,0 +1,448 @@
+
+<html>
+<head>
+	<title>EverLore - A Deeper Look at Everquest</title>
+
+	<meta name="description" content="EverLore">
+	<meta name="author" content="Georgia Wall">
+	<meta name="keywords" content="Everquest, EQ, RPG, Role Playing, RPG, Guilds, gaming">
+	
+	<style type="text/css">
+	<!--A:link        {text-decoration: none; color: #9f3215; }
+    	A:visited {text-decoration: none; color: #9f3215; }
+    	A:active  {text-decoration: none; color: #9f3215; }
+    	A:hover   {text-decoration: underline; color: #9f3215; }
+        -->
+	</style>
+<script LANGUAGE="JavaScript">
+	<!--
+	function rand(n){seed = (0x01 * seed); return(seed);}
+	var now = new Date()
+	var seed = now.getTime()
+	//-->
+</script>
+</head>
+
+<body BGCOLOR="BLACK" TEXT="black" LINK="#9f3215" VLINK="#9f3215" background="http://165.90.193.58/images/main_back.jpg" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0">
+<map NAME="Map">
+<!-- #$-:Image Map file created by Map THIS! -->
+<!-- #$-:Map THIS! free image map editor by Todd C. Wilson -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:1.30 -->
+<!-- #$AUTHOR:Georgia Wall, Forrest Parker -->
+<!-- #$DATE:Wed Mar 10 00:38:30 1999 -->
+<!-- #$PATH:\\Pserver2\g\INetPub\WWWRoot\EverLore\images\ -->
+<!-- #$GIF:map.gif -->
+<area SHAPE="RECT" COORDS="2,19,63,39" HREF="http://www.everlore.com">
+<area SHAPE="RECT" COORDS="69,18,137,39" HREF="http://www.everlore.com/skills/">
+<area SHAPE="RECT" COORDS="145,17,281,39" HREF="http://www.everlore.com/items/">
+<area SHAPE="RECT" COORDS="291,16,358,39" HREF="http://www.everlore.com/magic/">
+<area SHAPE="RECT" COORDS="372,17,522,38" HREF="http://www.everlore.com/races_classes/">
+<area SHAPE="RECT" COORDS="534,17,640,39" HREF="http://www.everlore.com/geography/">
+<area SHAPE="default" HREF="http://www.everlore.com">
+</map>
+
+<center>
+
+<!-- bg color #585250 -->
+<img SRC="http://165.90.193.58/images/everlore_logo.jpg" WIDTH="640" HEIGHT="118"><br><img border="0" USEMAP="items.asp#Map" SRC="http://165.90.193.58/images/map.gif" WIDTH="640" HEIGHT="39">
+<br>
+
+<table BORDER="0" WIDTH="640" CELLSPACING="0" CELLPADDING="0">
+<tr>
+
+<td VALIGN="top" WIDTH="504">
+	
+	
+<script LANGUAGE="JavaScript">
+
+<!--
+function rand(n){seed = (0x01 * seed); return(seed);}
+var now = new Date()
+var seed = now.getTime()
+//-->
+
+</script>
+
+<script LANGUAGE="JavaScript">
+<!--
+var random_num = (rand(123)); 
+
+document.write("<a HREF='http://ugo.eu-adcenter.net/click.ng/Params.richmedia=yes&amp;cat2=pc&amp;cat3=rpg&amp;cat4=blank&amp;cat5=blank1&amp;cat=games&amp;site=everlore&amp;size=468x60&amp;r=" + random_num + "'>")
+
+document.write("<img WIDTH='468' HEIGHT='60' border='0' SRC='http://ugo.eu-adcenter.net/image.ng/Params.richmedia=yes&amp;cat2=pc&amp;cat3=rpg&amp;cat4=blank&amp;cat5=blank1&amp;cat=games&amp;site=everlore&amp;size=468x60&amp;r=" + random_num + "'></a>")
+
+//-->
+</script>
+<noscript>
+  <a HREF="http://ugo.eu-adcenter.net/click.ng/Params.richmedia=yes&amp;cat2=pc&amp;cat3=rpg&amp;cat4=blank&amp;cat5=blank1&amp;cat=games&amp;site=everlore&amp;size=468x60&amp;r=13-2">
+  <img WIDTH="468" HEIGHT="60" border="0" SRC="http://ugo.eu-adcenter.net/image.ng/Params.richmedia=yes&amp;cat2=pc&amp;cat3=rpg&amp;cat4=blank&amp;cat5=blank1&amp;cat=games&amp;site=everlore&amp;size=468x60&amp;r=13-2"></a>
+</noscript>
+<!-- End Ad -->
+
+
+	
+	
+	
+<table border="0" width="640" cellspacing="0" cellpadding="0" background="http://165.90.193.58/images/test_background2.jpg">
+	<tr>
+	
+	
+<td colspan="3"><img src="http://165.90.193.58/images/bar_top_long.jpg" WIDTH="640" HEIGHT="14"></td>
+	</tr>
+	<tr>
+	<td colspan="3">
+	<br>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="1">&nbsp;&nbsp;&nbsp;</td>
+	<td>
+
+		
+
+	<table width="100%">
+
+	<tr>
+		<td colspan="1" valign="top" align="left">
+			<font face="verdana" size="3" color="black">
+			EverQuest Equipment
+			<p><a href="items.asp?mode=new"><b>Add A New Item</b></a></p></td>
+			<td colspan="2"><font face="verdana" size="1" color="black">
+			Total Items: 1503
+		</td>
+	</tr>
+	<tr>
+	<td colspan="2">
+	<font face="verdana" size="2" color="#9f3215"></font>
+	</td>
+</tr>
+	<tr>
+	
+	 <td colspan="2">
+	  <font face="verdana" size="1" color="black">
+				
+	 </td>
+	</tr>
+
+	<tr><td colspan="2">&nbsp;</td></tr>
+	
+	<tr>
+		<td colspan="2">
+		
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=69"><font face="verdana" size="3" color="black">
+			1H Blunt</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			50</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=66"><font face="verdana" size="3" color="black">
+			1H Slash</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			73</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=70"><font face="verdana" size="3" color="black">
+			2H Blunt</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			34</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=67"><font face="verdana" size="3" color="black">
+			2H Slash</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			47</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=62"><font face="verdana" size="3" color="black">
+			Armor</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			404</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=73"><font face="verdana" size="3" color="black">
+			Equipment</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			71</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=76"><font face="verdana" size="3" color="black">
+			Food and Drink</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			41</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=74"><font face="verdana" size="3" color="black">
+			General Loot Items</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			202</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=75"><font face="verdana" size="3" color="black">
+			Lore Items</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			91</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=63"><font face="verdana" size="3" color="black">
+			Magic Armour Items</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			345</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=64"><font face="verdana" size="3" color="black">
+			Magic Items</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			61</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=65"><font face="verdana" size="3" color="black">
+			Piercing</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			54</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;id=71"><font face="verdana" size="3" color="black">
+			Projectile</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			30</td>
+	</tr>
+	
+	
+	
+
+	
+	
+		<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;list=quest"><font face="verdana" size="3" color="black">
+			All Quest Items</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			166</td>
+	</tr>
+	
+		
+	<tr>
+		<td>
+		<b>
+			
+			
+			<a href="items.asp?mode=list&amp;list=magic"><font face="verdana" size="3" color="black">
+			All Magic Items</a></b>
+			
+			
+			</td>
+		<td>
+			
+			<font face="verdana" size="2" color="black">
+			
+			637</td>
+	</tr>
+	
+	
+	
+	
+	<tr><td colspan="2">&nbsp;</td></tr>
+	</table>
+	
+	
+	</td>
+		<td>&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+	</table>
+</td>
+	
+</table>
+
+ <img height="14" src="http://165.90.193.58/images/bar_top_long.jpg"></td>
+</tr>
+</table>
+
+</center>
+
+<p>
+<center>
+	<img height="20" src="http://165.90.193.58/images/bottom.jpg" width="640"> 
+</center>
+
+	
+
+</body>
+</html>

@@ -1,0 +1,1528 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>EQ Stratics - EverQuest House of Commons - February 2005</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="EQ,Everquest">
+<META NAME="description" CONTENT="Stratics provides the best news and information coverage for Everquest.">
+<META NAME="ROBOTS" CONTENT="INDEX,FOLLOW">
+
+<link href="/shared/main_ie.css" rel="STYLESHEET" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v2.0
+  if (document.images) {
+    var imgFiles = MM_preloadImages.arguments;
+    if (document.preloadArray==null) document.preloadArray = new Array();
+    var i = document.preloadArray.length;
+    with (document) for (var j=0; j<imgFiles.length; j++) if (imgFiles[j].charAt(0)!="#"){
+      preloadArray[i] = new Image;
+      preloadArray[i++].src = imgFiles[j];
+  } }
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<script src="/shared/navmenu.js"></script>
+
+<script LANGUAGE=JavaScript>
+//functions
+function window_open(filename, x, y)
+{
+windowops = eval("'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=yes,width=" + x + ",height=" + y + "'");
+window.open(filename, 'New1', windowops);
+return;
+}
+//-->
+</script><LINK REL="SHORTCUT ICON" HREF="http://eq.stratics.com/favicon.ico">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('/images/square.gif','/images/space.gif','/images/news/forums.gif','/images/news/submitnews.gif','/images/news/top.gif','/images/nav_dot.gif')">
+
+<Script language='JavaScript'>
+var CM8Server = 'web.checkm8.com'
+var CM8Cat = 'StraticsNetwork.eq'
+</script>
+<Script language="JavaScript" src="http://web.checkm8.com/adam/cm8adam_1_call.js"></script><!-- START: Stratics Menu Header Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr bgcolor="#000000">
+  <td align="left" valign="top" nowrap bgcolor="#000000">&nbsp;<a class="navTitle" href="http://www.stratics.com" target="_parent">Stratics - The Massively Multiplayer Network</a></td>
+<?php
+// boards.stratics.com/shared/
+// www.stratics.com/shared/
+// www.stratics.com/global/
+// /home/straticshub/public_html/hub/global/
+   include ("nav_cats.php");
+?>
+<meta http-equiv="Cache-Control" Content="no-cache">
+ <td align="right" width="500" nowrap>
+  <table border="0" cellspacing="0" cellpadding="0" align="right" width="500">
+   <tr align="right">
+    <td nowrap valign="top">
+     <span class="navMenu" id="m1" onMouseOver="show(this,ms1);">
+      Stratics Network
+     </span>
+     <span class="navSubmenu" id="ms1" style="display:none" onMouseOver="onMenu()" onMouseOut="outMenu()">
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://www.stratics.com" target="_parent">Stratics Central</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://links.stratics.com/" target="_parent">Stratics Links</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://www.stratics.com/content/interviews/interviews.php" target="_parent">Interviews</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://www.stratics.com/content/previews/previews.php" target="_parent">Previews</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://www.stratics.com/content/gamereviews/reviews.php" target="_parent">Reviews</a><br>
+      <div class="navMenu">--------------------------</div>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://ageofconan.stratics.com" target="_parent">Age of Conan</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://cox.stratics.com" target="_parent">City of Heroes/Villains</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://sims.stratics.com" target="_parent">EA-Land/TSO</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://eve.stratics.com" target="_parent">Eve Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://eq2.stratics.com" target="_parent">EverQuest II</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://ffxi.stratics.com" target="_parent">FINAL FANTASY XI</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://lineage2.stratics.com" target="_parent">Lineage II</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://lotro.stratics.com" target="_parent">Lord of the Rings Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://potbs.stratics.com" target="_parent">Pirates of the Burning Sea</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://swg.stratics.com" target="_parent">Star Wars Galaxies</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://toontown.stratics.com" target="_parent">Toontown Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://uo.stratics.com" target="_parent">Ultima Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://war.stratics.com" target="_parent">Warhammer Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://wow.stratics.com" target="_parent">World of Warcraft</a><br>
+      <div class="navMenu">--------------------------</div>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://chat.stratics.com" target="_parent">Chat/IRC</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com" target="_parent">Forums</a><br>
+     </span>
+    </td>
+    <td nowrap valign="top">
+     <span class="navMenu" id="m2" onMouseOver="show(this,ms2);">
+      Stratics Community
+     </span>
+     <span class="navSubmenu" id="ms2" style="display:none" onMouseOver="onMenu()" onMouseOut="outMenu()">
+     	<img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://vboards.stratics.com/forumdisplay.php?f=82" target="_parent">Age of Conan</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/coh/ubbthreads.php" target="_parent">City of Heroes/Villains</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/sims/ubbthreads.php" target="_parent">EA-Land/TSO</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/eve/ubbthreads.php" target="_parent">Eve Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/eq2/ubbthreads.php" target="_parent">EverQuest II</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/ffxi/ubbthreads.php?Cat=" target="_parent">FINAL FANTASY XI</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/lineage2/ubbthreads.php" target="_parent">Lineage II</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/lotro/ubbthreads.php" target="_parent">Lord of the Rings Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/potbs/ubbthreads.php" target="_parent">Pirates of the Burning Sea</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/swg/ubbthreads.php" target="_parent">Star Wars Galaxies</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/tt/ubbthreads.php" target="_parent">Toontown Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/uo/ubbthreads.php" target="_parent">Ultima Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/war/ubbthreads.php" target="_parent">Warhammer Online</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/wow/ubbthreads.php" target="_parent">World of Warcraft</a><br>
+      <div class="navMenu">--------------------------</div>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/offtopic/ubbthreads.php" target="_parent">Off Topic</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/arcpub/ubbthreads.php" target="_parent">Stratics Archives</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://chat.stratics.com/content/java/sponsoredchat.php" target="_parent">Java IRC Chat</a><br>
+     </span>
+    </td>
+    <td nowrap valign="top">
+     <span class="navMenu" id="m3" onMouseOver="show(this,ms3);">
+      Stratics Central
+     </span>
+     <span class="navSubmenu" id="ms3" style="display:none" onMouseOver="onMenu()" onMouseOut="outMenu()">
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://www.stratics.com" target="_parent">Stratics Central</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://links.stratics.com/" target="_parent">Stratics Links</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/stratics/ubbthreads.php" target="_parent">Central Forums</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/stratics/postlist.php?Cat=&Board=genhelp" target="_parent">Help/Q&amp;A Forum</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/stratics/faq.php" target="_parent">Forum FAQ</a><br>
+<!--      <div class="navMenu">--------------------------</div>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://sl.stratics.com" target="_parent">Second Life</a><br>
+      <img src="/images/clear.gif" width="15" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/sl/ubbthreads.php" target="_parent">- Forums</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://vg.stratics.com" target="_parent">Vanguard</a><br>
+      <img src="/images/clear.gif" width="15" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/stratics/ubbthreads.php?Cat=<?php echo "$cat[vg]"; ?>" target="_parent">- Forums</a><br>
+      <img src="/images/nav_dot.gif" width="5" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://war.stratics.com" target="_parent">Warhammer Online</a><br>
+      <img src="/images/clear.gif" width="15" height="5" border="0">&nbsp;<a class="navSubmenuLink" href="http://boards.stratics.com/php-bin/stratics/ubbthreads.php?Cat=<?php echo "$cat[warhammer]"; ?>" target="_parent">- Forums</a><br>
+-->
+     </span>
+    </td>
+    <td width="50">&nbsp;</td>
+   </tr>
+  </table>
+ </td>
+</tr>
+</table> <!-- END: Stratics Menu Header Table -->
+<map name="Map1">
+  <area shape="circle" coords="57,56,48" href="/index.php" alt="ffxi_ Stratics Front Page">
+</map>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" background="http://images.stratics.com/eq/images/header3/eq02.gif">
+  <tr>
+    <td width="605" height="115"><img src="http://images.stratics.com/eq/images/header3/eq01.gif" width=605 height=115 border="0" usemap="#Map1"></td>
+    <td align="right" background="/images/header3/eq02.gif">
+	<img src="http://images.stratics.com/eq/images/header3/eq03a.gif" width=153 height=115></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://images.stratics.com/eq/images/header3/eq04.gif"><tr><td width="100%" background="http://images.stratics.com/eq/images/header3/eq04.gif" align="center"><!-- N BANNER T --><!-- ID eq --><!-- BF 0 --><!-- IN   --><!-- NS   --><!-- FN   --><!-- PT   -->
+<script language="javascript">
+CM8ShowAd("Top")
+</script>
+<Noscript>
+<A href="http://web.checkm8.com/adam/ep/click/StraticsNetwork.eq/Top?cat=StraticsNetwork.eq" target="_blank">
+<IMG src="http://web.checkm8.com/adam/noscript?cat=StraticsNetwork.eq&format=Top" border=0></A>
+</Noscript>
+</td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://images.stratics.com/eq/images/header3/eq06.gif"><tr><td width="605" height="15"><img src="http://images.stratics.com/eq/images/header3/eq05.gif" width=605 height=15></td><td background="http://images.stratics.com/eq/images/header3/eq06.gif"><div align="right"><img src="http://images.stratics.com/eq/images/header3/eq07.gif" width=153 height=15></div></td></tr></table><table width="100%" height="70%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td valign="top" width="141" class="menuBackground"> 
+	<table width="141" border="0" cellspacing="0" cellpadding="0" align="left">
+  <tr> 
+    <td align="left" valign="top"> 
+      <table width="141" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="middle" class="menuSection">Stratics Plus <img src="http://images.stratics.com/eq/images/advertising/plus_icon.gif" alt="Stratics Plus" width="8" height="8" border="0" align="middle"></td></tr>
+      <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/members/" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">About Stratics Plus</a></td></tr>
+      <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/members/whyplus.php" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Help Stratics</a></td></tr>
+      <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/members/features.php" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Plus Features</a></td></tr>
+	  <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/plus/faq/straticsplus_faq.php" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Stratics Plus FAQ</a></td></tr>
+      <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/members/signup.html" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Sign-up!</a></td></tr>
+	  <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/plus/faq/plustroubleshooting_faq.php" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Troubleshooting FAQ</a></td></tr>
+      <tr><td align="left"><a class="menuItem" href="http://www.stratics.com/members/bugreport.php" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Report a Plus Bug</a></td></tr>
+      <tr> <td align="left"><a class="menuItem" href="mailto:plushelp&#64;stratics.com?subject=Plus%20Feedback" target="_parent"><img src="http://images.stratics.com/eq/images/square.gif" border="0" alt="" width="5" height="5" hspace="2">Plus Feedback</a></td></tr>
+      <tr> <td><img src="http://images.stratics.com/eq/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+    </table>
+    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" class="menuSection">News &amp; Info</td></tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/index.php" target="_parent">Current News</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/news/archive.php" target="_parent">News Archive</a></td>
+  </tr>  
+   <tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><A class="menuItem" href="/content/community/pollarchive.php" target="_parent">Poll Archive</A></td>
+  </tr>  
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="mailto:eqnews&#64;stratics.com?subject=eq%20News%20Submission" target="_parent">Submit News</a></td>
+  </tr>
+  <tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><A class="menuItem" href="/content/sod/archives.php" target="_parent">Image Gallery</A></td>
+  </tr>
+    <tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><A class="menuItem" href="/comments/comments.php" target="_parent">Contact Us</A></td>
+  </tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table>
+    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Information</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!-- EQ Information --><TBODY>    <tr>
+        <td colspan="2" class="menuSection">Information</td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="/images/clear.gif" width="50"
+        height="4"></td>
+    </tr>
+<!-- General Information -->    <tr>
+        <td colspan="2" class="menuSubsection">General</td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="/content/gameplay/introduction.shtml"
+        target="_parent" class="menuItem">Introduction</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/gameplay/newbie.shtml"
+        target="_parent" class="menuItem">Beginner's Guide</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/lore/history.shtml"
+        target="_parent" class="menuItem">History of Norrath</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/lore/deities.shtml"
+        target="_parent" class="menuItem">Deities of Norrath</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/gameplay/system.shtml"
+        target="_parent" class="menuItem">System Requirements</a></td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="/images/clear.gif" width="50"
+        height="4"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="menuSubSection">Features</td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="http://eq.stratics.com/content/features/exclusives/buriedsea/buriedseatour.php"
+        target="_parent" class="menuItem">The Buried Sea</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="http://eq.stratics.com/eqskins/"
+        target="_parent" class="menuItem">EQSkins (UI Files)</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="http://eq.stratics.com/content/features/meleeqa.shtml"
+        target="_parent" class="menuItem">Melee Enhancement
+        Q&amp;A</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="../../../../../../content/features/oow/oowscreens.php"
+        target="_parent" class="menuItem">Omens of War Exclusive</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/features/ldon.shtml"
+        target="_parent" class="menuItem">Sneak Peak at LDoN</a></td>
+    </tr>
+<!--<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+	<td align="left" width="99%"><a class="menuItem" href="/content/features/oow/oowscreens.php" target="_parent">
+    Omens of War</a></td>
+  </tr>-->    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="/content/features/videoindex.shtml"
+        target="_parent" class="menuItem">Videos</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/features/loyss.shtml"
+        target="_parent" class="menuItem">LoY Pre-Release Shots</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="/content/features/devquestions.shtml"
+        target="_parent" class="menuItem">PoP Dev Info</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/site/store/"
+        target="_parent" class="menuItem">Stratics EQ Store</a></td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="/images/clear.gif" width="50"
+        height="4"></td>
+    </tr>
+<!-- Media -->    <tr>
+        <td colspan="2" class="menuSubsection">EverQuest: OA</td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/eqoa/eqoareview.shtml"
+        target="_parent" class="menuItem">Review</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="/content/features/SOEFrontiers.pdf"
+        target="_parent" class="menuItem">Strategy Guide</a></td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="/images/clear.gif" width="50"
+        height="4"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="menuSubSection" height="19">EverQuest
+        Events</td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="/content/events/fansite/fansiteappreciation.shtml"
+        target="_parent" class="menuItem">Fan Site Appreciation</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/events/e3/2002/"
+        target="_parent" class="menuItem">E3 2002</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="http://eq.stratics.com/content/events/gencon/2002/index.shtml"
+        target="_parent" class="menuItem">EQ at Gen Con</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="http://everquest.station.sony.com/fanfaire/en/index.jsp"
+        target="_parent" class="menuItem">EQ Fan Faire</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="http://eqlive.station.sony.com/eqinvasion/index.jsp"
+        target="_parent" class="menuItem">EQ Invasion 2002</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a
+        href="http://www.gamesmasters.com/eqfest/index.html"
+        target="_parent" class="menuItem">EQ Gathering 2001</a></td>
+    </tr>
+    <tr>
+        <td width="1%"><img src="/images/square.gif" hspace="2"
+        width="5" height="5"></td>
+        <td width="99%"><a href="/content/events/eqfest/2000/"
+        target="_parent" class="menuItem">EQ Gathering 2000</a></td>
+    </tr>
+</TBODY></table>
+</body>
+</html>
+    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <!-- EQ  Menu --> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <!-- EQ Community -->
+  <tr><td colspan="2" class="menuSection">Community</td></tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  <tr><td colspan="2" class="menuSubsection">Community Forums</td></tr>		
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/postlist.php?Cat=&Board=eqwestwood" target="_parent">Westwood Tavern</A></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/ubbthreads.php?Cat=" target="_parent">Forum Index</A></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/ubbthreads.php?Cat=2" target="_parent">General Discussion</A></td>
+        </tr>
+		 <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/ubbthreads.php?Cat=3" target="_parent">EQSkins Forums</A></td></tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/ubbthreads.php?Cat=6" target="_parent">Server Forums</A></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/ubbthreads.php?Cat=4" target="_parent">Class Forums</A></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/ubbthreads.php?Cat=5" target="_parent">TradeSkill Forums</A></td>
+        </tr>
+		  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+        <!-- Forum Tools -->
+        <tr><td colspan="2" class="menusubSection">Forum Tools</td></tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/forums/roc.shtml" target="_parent">Rules of Conduct</a></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/faq_english.php?Cat=6" target="_parent">Forum FAQ</a></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/forums/search.shtml" target="_parent">Forum Search</a></td>
+        </tr>
+        <tr>
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://boards.stratics.com/php-bin/eq/login.php?Cat=2" target="_parent">Control Panel</a></td></tr>
+        <tr> 
+          <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/forums/register.shtml" target="_parent">Register</A></td>
+        </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>       
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <!-- Strategy -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr><td colspan="2" class="menuSection">Statistics</td></tr>
+  <tr><td colspan="2" class="menuSubsection">Databases</td></tr>
+  <tr><td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_parent" href="http://eq.stratics.com/eqskins/char_list.php?menu=9">Character Database</a></td>
+  </tr>
+    <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_parent" href="http://eq.stratics.com/eqskins/user.php">Add Characters</a></td>
+  </tr>
+    <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_parent" href="http://eq.stratics.com/content/gameplay/quests/index.php">Quest Database</a></td>
+  </tr>
+   <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_parent" href="http://boards.stratics.com/php-bin/eq/postlist.php?Cat=&Board=eqquestadd">Add Quests</a></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  <tr><td colspan="2" class="menuSubsection">World Atlas</td></tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/maps/" target="_parent">Maps of Norrath</A></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/statistics/reference/startingcities.shtml" target="_parent">Starting City/Deities</a></td>
+  </tr>
+    <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  <tr><td colspan="2" class="menuSubsection">Weapons &amp; Armor</td></tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/items/armor_ref.shtml" target="_parent">Armor Statistics</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/items/weap_ref.shtml" target="_parent">Weapons Statistics</A></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  <tr><td colspan="2" class="menuSubsection">Combat &amp; Noteriety</td></tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_parent" href="/content/statistics/factions.shtml">Overview of Factions</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_parent" href="http://eq.stratics.com/content/statistics/faction/">City by City Faction</a></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  <tr><td colspan="2" class="menuSubsection">Reference</td></tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/creation/attr_key.shtml" target="_parent">Attribute Table</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/creation/attr_ref.shtml" target="_parent">Attribute Descriptions</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/newplayer/money_ref.shtml" target="_parent">Currency Conversion </A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/reference/game_emotes.shtml" target="_parent">Game Emotes</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/reference/hitsmode.shtml" target="_parent">Hitsmode Help</A></td>
+  </tr>
+   <tr><td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/skills/" target="_parent">Skills Legend</A></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table>    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <!-- Strategy -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr><td colspan="2" class="menuSection">Gameplay</td></tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  <tr><td colspan="2" class="menuSubsection">General Guides</td></tr>
+    <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/article_index.shtml" target="_parent">Article Index</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/basic_combat.shtml" target="_parent">Basic Combat</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/roleplay101.shtml" target="_parent">Role-Playing 101</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/roleplay201.shtml" target="_parent">Role-Playing 201</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/comm101.shtml" target="_parent">Communication 101</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/horses.shtml" target="_parent">Horses in EQ</A></td>
+  </tr>  
+ <tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/lore/deities.shtml" target="_parent">Deities of Norrath</a></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/misc_etiq.shtml" target="_parent">Etiquette in Norrath</A></td>
+  </tr>
+<!--  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/newcomersguide.shtml" target="_parent">Newcomers 
+      Guide</A></td>
+  </tr> -->
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+<!-- Class -->
+  <tr> <td colspan="2" class="menuSubsection">Class Portals</td></tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/statistics/classes/classes_ref.shtml" target="_parent">Class Reference</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/bard/" target="_parent">Bard</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/beastlord/" target="_parent">BeastLord</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/cleric/" target="_parent">Cleric</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/druid/" target="_parent">Druid</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/enchanter/" target="_parent">Enchanter</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/magician/" target="_parent">Mage</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/monk/" target="_parent">Monk</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/necromancer/" target="_parent">Necromancer</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/paladin/" target="_parent">Paladin</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/ranger/" target="_parent">Ranger</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/rogue/" target="_parent">Rogue</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/shadowknight/" target="_parent">ShadowKnight</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/shaman/" target="_parent">Shaman</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/warrior/" target="_parent">Warrior</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/classes/wizard/" target="_parent">Wizard</A></td>
+  </tr>
+
+<!-- Race Guides 
+  <tr><td colspan="2" class="menuSubsection">Race Info</td></tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/roleplay101.shtml" target="_parent">Barbarian</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/roleplay201.shtml" target="_parent">Dark Elf</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/comm101.shtml" target="_parent">Dwarf</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/horses.shtml" target="_parent">Erudite</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/comm101.shtml" target="_parent">Gnome</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/horses.shtml" target="_parent">Half-Elf</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/comm101.shtml" target="_parent">Halfling</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/horses.shtml" target="_parent">High Elf</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/comm101.shtml" target="_parent">Human</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/horses.shtml" target="_parent">Iksar</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/comm101.shtml" target="_parent">Ogre</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/horses.shtml" target="_parent">Troll </A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/comm101.shtml" target="_parent">Vah Shir</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/guides/race/horses.shtml" target="_parent">Wood Elf</A></td>
+  </tr>
+
+-->
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+<!-- TradeSkills -->
+  <tr> <td colspan="2" class="menuSubsection">Tradeskill Portals</td></tr>
+   <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/index.shtml" target="_parent">Tradeskill Central</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/alchemy/index.shtml" target="_parent">Alchemy</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/baking/index.shtml" target="_parent">Baking</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/brewing/index.shtml" target="_parent">Brewing</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/fletching/index.shtml" target="_parent">Fletching</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/jewelcraft/index.shtml" target="_parent">Jewelcraft</A></td>
+  </tr>
+   <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/poison/index.shtml" target="_parent">Poison</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/pottery/index.shtml" target="_parent">Pottery</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/smithing/index.shtml" target="_parent">Smithing</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td> <td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/tailoring/index.shtml" target="_parent">Tailoring</A></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/gameplay/tradeskills/tinkering/index.shtml" target="_parent">Tinkering</A></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table>    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr><td colspan="2" class="menuSection">Game Guides Online</td></tr>
+
+<!-- GENERAL -->
+
+  <tr><td colspan="2" class="menuSubSection">General Guides</td></tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/eqessentials.php" target="_parent">EQ Essentials</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/ldonguide.php" target="_parent">LDON Guide</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/platguide.php" target="_parent">Platinum Guide</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/powerleveling.php" target="_parent">Power Leveling</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/questhandbook.php" target="_parent">Quest Handbook</a></td>
+ </tr>
+
+<!-- TRADE SKILLS -->
+
+  <tr><td colspan="2" class="menuSubSection">Trade Skills</td></tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/gmtradeskills.php" target="_parent">GM Trade Skills</a></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/alchemy.php" target="_parent">Alchemy</a></td>
+  </tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/baking.php" target="_parent">Baking</a></td>
+  </tr>
+  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/brewing.php" target="_parent">Brewing</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/fletching.php" target="_parent">Fletching</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/jewelcraft.php" target="_parent">Jewelcraft</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/pottery.php" target="_parent">Pottery</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/smithing.php" target="_parent">Smithing</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/tailoring.php" target="_parent">Tailoring</a></td>
+  </tr>
+
+<!-- CLASS GUIDES -->
+
+  <tr><td colspan="2" class="menuSubSection">Class Guides</td></tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/clericguide.php" target="_parent">Cleric Guide</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/druidguide.php" target="_parent">Druid Guide</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/mageguide.php" target="_parent">Mage Guide</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="http://eq.stratics.com/content/ggo/skguide.php" target="_parent">Shadow Knight Guide</a></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table>    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+      <!-- EQRPG Menu -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" class="menuSection">EverQuest RPG</td></tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+<tr><td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://www.eqrpg.com" target="_blank">Introduction</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://secure.white-wolf.com/catalog/default.tpl?point=16500ST" target="_blank">Players Handbook</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://secure.white-wolf.com/catalog/default.tpl?point=16501ST" target="_blank">Monsters of Norrath</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://secure.white-wolf.com/catalog/default.tpl?point=16502ST" target="_blank">Game Masters Guide</a></td>
+  </tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table>    </td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"> 
+<p><div align="center"><a href="http://www.stratics.com/members"><img src="/images/advertising/stratics%2Bflashlink_120x60.jpg" alt="Become a Stratics Plus Member!" width="120" height="60" border="0"></a>
+<br><a href="http://www.stratics.com/members">Remove all ads!</a></div>
+    </td>
+  </tr>
+</table>
+	</td>
+    <td width="100%" align="center" valign="top">
+      <table width="98%" border="0" cellspacing="0" cellpadding="2">
+	  <td align="center" valign="top" class="comment2">
+    [ <a href="mailto:eqnews&#64;stratics.com?Subject=Everquest%20News">Submit News</a> | <a href="mailto:eqnews&#64;stratics.com?Subject=Everquest%20Poll%20Idea">Submit a Poll</a> | <a href="mailto:eqnews&#64;stratics.com?Subject=Everquest%20Screenshot%20Submission">Submit a Screenshot</a> ]</td>
+
+ <!-- startprint --><tr><td align="center" class="sectionTitle" valign="top" width="98%">EverQuest House of Commons - February 2005</td></tr>              <tr> 
+                <td width="98%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="left">
+<tr><td valign="top">
+<table width="250" border="0" cellspacing="0" cellpadding="6" align="right">
+  <tr> 
+    <td align="right"> 
+      <!-- BANNER C --><!-- ID eq --><!-- BF 0 --><!-- IN   --><!-- NS   --><!-- FN   --><!-- PT   -->
+
+      <tr>
+         <td align='center' valign='top'><br><a class='ad_notice' href="http://www.stratics.com/network/advertising.php">&#187; Advertisement &#171;</a><br></td>
+      </tr>
+      <tr>
+         <td align='center' valign='top'>
+      <!-- begin ZEDO for channel:  Everquest Stratics , publisher: Stratics , Ad Dimension: Medium Rectangle - 300 x 250 -->
+<script language="JavaScript">
+var zflag_nid="462"; var zflag_cid="51/41"; var zflag_sid="0"; var zflag_width="300"; var zflag_height="250"; var zflag_sz="9"; 
+</script>
+<script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script>
+<!-- end ZEDO  for channel:  Everquest Stratics , publisher: Stratics , Ad Dimension: Medium Rectangle - 300 x 250 -->
+
+         </td>
+      </tr>
+      <tr>
+         <td><img src="http://images.stratics.com/eq/images/clear.gif" width='1' height='6' border='0'></td>
+      </tr>
+          </td>
+  </tr>
+</table>
+      <p><br><font face="Arial, Helvetica" size="2">
+        <br>
+        February 24th, 2005<br>
+        <br>
+        <font color="#800080">* Topic is 'Please join us Tonight, February 24th 
+        at 6pm pacific / 9pm eastern for a live chat with the developers of EverQuest!' 
+        *</font> <br>
+        <font color="#800080">* Set by Brekkee on Thu Feb 24 13:54:28 *</font> 
+        <br>
+        <font color="#800080">* Brekkee changes topic to 'Welcome to the EverQuest 
+        House of Commons. Tonight’s topic is the DoN expansion. Please send your 
+        questions to [QT]Ishu or [QT]Phineus' *</font> <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> Good evening and welcome 
+        to another great Stratics House of Commons chat, tonight our guests are 
+        the developers of EverQuest! Tonight’s topic is the DoN expansion, only 
+        questions related to the topic will be answered. <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> Please send your questions 
+        to [QT]Ishu OR [QT]Phineus - to do so type /query NICK and type in the 
+        window that pops up. Questions sent to me or the developers will not make 
+        it into the lineup. Full logs of the chat will be up on http://eq.stratics.com 
+        shortly after the chat. <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> We'll start with a brief 
+        introduction from the developers, now would be a good time to send those 
+        questions. <br>
+        <br>
+        <font color="#800000"><b>Rashere -</b></font> Evenin' folks. Thanks for 
+        coming. I'm Travis McGeathy, designer on EverQuest. <br>
+        <br>
+        <font color="#800000"><b>Prathun -</b></font> Good evening everyone! I'm 
+        Prathun, a game designer on EverQuest <br>
+        <br>
+        <font color="#800000"><b>Maddoc -</b></font> Welcome, everyone. I'm Jason 
+        Mash, a designer on the EverQuest team. <br>
+        <br>
+        <font color="#800000"><b>Brenlo -</b></font> Howdy folks I am Brenlo also 
+        known as Alan Crosby, the Court Jester <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *dispatch_stromm* Are they 
+        going to look at the cultural armor combine drops, aka the droprate? I 
+        know if I want to attempt making my barbarian cultural at the master level 
+        I need pile of gravel, which drops only from golem mobs in Rcod, while 
+        High elfs and some others use small bricks of ytrrium ore. I have spent 
+        countless days in rcod and have only been able to acquire 4 piles of gravel. 
+        while yttirum ore is found in mulit <br>
+        <font color="#800000"><b>Maddoc -</b></font> The drop rates for the Cultural 
+        Armor is something that we're definitely going to keep an eye on. The 
+        expansion's been out for around two weeks, so it's too early to really 
+        make any solid decisions on which are too low and which are too high quite 
+        yet. Rest assured, if we do increase the drop rates on any of them, we'll 
+        make sure it's posted on the boards and in the Update Message. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Dracious* um this question 
+        slightly partains to the topic of the new expansion but more or less to 
+        EQ in general i know that DoN has no dragon race but will one become available 
+        in later editions like not a pure dragon race but like a dragon cross 
+        breed or something along those lines <br>
+        <font color="#800000"><b>Rashere -</b></font> I'm assuming you're asking 
+        about PC-playable races. Right now, we don't have any plans to add a new 
+        race, but its definitely something that might happen in the future. What 
+        it would be is something that is open to a lot of different opinions. 
+        <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *FurorXev* You've just 
+        announced the first non pvp server mergers. What are the plans in the 
+        near future for additional blue server mergers? <br>
+        <font color="#800000"><b>Brenlo -</b></font> Our plan is to do the mergers 
+        we have planned, let the folks who want to move off do so, and then see 
+        how well the merger accomplishes our goal as well as seeing where people 
+        end up after the merge. So we will be taking a wait and see approach to 
+        any additional server merges. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Rhett* With EQ2's existance 
+        causing EQ to be obsolete, are there any plans for shifting players allegiance 
+        over to EQ2 and dropping EQ altogether? <br>
+        <font color="#800000"><b>Prathun -</b></font> EverQuest1 and EverQuest2 
+        are distinctly different games that will appeal to different audiences. 
+        Neither one of them is going anywhere anytime soon. <br>
+        <font color="#800000"><b>Prathun -</b></font> EQLive still has a very 
+        strong following and we're going to continue to provide new features and 
+        content for our playerbase. <br>
+        <font color="#800000"><b>Brenlo -</b></font> EQ is doing very well. We 
+        have lots planned including some nice Anniversary stuff coming up next 
+        month. We are not going anywhere. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Cinexa* Grats to all on 
+        the raids / missions in this expansion - we are loving it ~ but those 
+        dragons?? Why are they so easy Prathun?! <br>
+        <font color="#800000"><b>Prathun -</b></font> Haha, I'm glad you asked 
+        Cinexa! The two dragons that have been felled so far are Tirranun and 
+        Rikkukin. They are aimed at PoTime and MPG raid trial difficulty, respectively. 
+        <br>
+        <font color="#800000"><b>Prathun -</b></font> I expect that it won't be 
+        long before Kessdona is defeated... but after that come some VERY challenging 
+        raids. <br>
+        <font color="#800000"><b>Brenlo -</b></font> A mouse tells me that you 
+        asked Cinexa to ask that question . . . Say it ain't so Prathun <br>
+        <font color="#800000"><b>Prathun -</b></font> Be prepared for the fury 
+        of Yar`Lir the storm dragon, she won't go down without a fight. ;) <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Loral* The mission system 
+        adds a lot of excitement to typical hunts. Are there any plans to add 
+        more missions anytime soon? <br>
+        <font color="#800000"><b>Rashere -</b></font> We have lots of plans for 
+        using the mission system in the future. It's a very strong system with 
+        a lot of flexibility. What you're seeing right now is just the tip of 
+        the iceberg. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Cmer* Are there any plans 
+        to make the guild bank easier to use? Right now it's a nice feature, but 
+        a big headache for guild leaders to organize. <br>
+        <font color="#800000"><b>Rashere -</b></font> We're always looking for 
+        ways to improve the way things work. I can't give any firm examples right 
+        now, but we've been getting a lot of feedback on the guild banks which 
+        is tremendously helpful and I encourage you to keep sending it in. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> Remember to get your questions 
+        in to [QT]Ishu or [QT]Phineus , questions will be answered in the order 
+        they are received, so send them in now! <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> *Cinexa* Love the expansion 
+        guys - but one piece bothers me some =- why do evils lose their aa with 
+        ONE raid with their "good" guild =-( or is that only if they turn in their 
+        "tear" ? <br>
+        <font color="#800000"><b>Maddoc -</b></font> The AA rewards are given 
+        for completing missions and gaining faction with the two different camps. 
+        If you lose enough faction with your chosen camp, you will certainly lose 
+        the AA rewards as well. With the way that the faction tokens work, the 
+        faction hits are optional, which means you won't ever be "forced" to lose 
+        them. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Loral* I love Dragons 
+        and I think it shows just how far EQ has come...but why are these Dragons 
+        so hard!!! <br>
+        <font color="#800000"><b>Prathun -</b></font> I guess hard / easy is relative. 
+        <br>
+        <font color="#800000"><b>Brenlo -</b></font> Wow that's a great question 
+        Loral. Did Prathun ask you to send that in? <br>
+        <font color="#800000"><b>Prathun -</b></font> Historically, dragons have 
+        been end-game content in EverQuest <br>
+        <font color="#800000"><b>Prathun -</b></font> From Vox and Nagafen in 
+        original EQ, to Trakanon Gorenaire and Talendor in Kunark <br>
+        <font color="#800000"><b>Prathun -</b></font> Dragons of Norrath's dragon 
+        fights are no different - though their difficulty spans the range from 
+        Planes of Power to Anguish (OoW) <br>
+        <font color="#800000"><b>Prathun -</b></font> I have faith that a large 
+        subset of the playerbase will have the opportunity to face the dragons 
+        if they choose to do so. The entry requirements to see them are not strict 
+        <br>
+        <font color="#800000"><b>Prathun -</b></font> and today's endgame content 
+        will be tomorrow's midgame content. It's only a matter of time before 
+        these fights are easier simply due to new levels / spells / AAs / etc. 
+        <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Loral* can you explain 
+        more about The Nest? When will we see it open? <br>
+        <font color="#800000"><b>Rashere -</b></font> The Nest is full of secrets...the 
+        biggest being where it is and how you get into it. At this point, I'm 
+        not going to spoil the surprise but I'm pretty excited about what is in 
+        store. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Nolrog* One thing that 
+        EQ is lacking is with some kind of quest journal. Are there any plans 
+        to move more of the old quests into the task/quest system? I think that 
+        would give a whole new dimension to doing quests. <br>
+        <font color="#800000"><b>Rashere -</b></font> Part of the new task functionality 
+        that was added with Dragons is a quest journal. This journal tracks a 
+        specific type of task that we designate as a quest. There aren't many 
+        out there right now, but we have plans to use this a lot in the future. 
+        <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Anwyn* Can you explain 
+        this new Faction AA thing? If we don't like the AA provided by one faction, 
+        can we switch easily or do we have to double the work since we would have 
+        lost faction with one camp? <br>
+        <font color="#800000"><b>Maddoc -</b></font> The AA's offered by both 
+        sides are fairly similar, but in the event that you would like to switch 
+        factions, whatever the reason may be, you are able to do so. <br>
+        <font color="#800000"><b>Maddoc -</b></font> If you've earned the AA from 
+        one side and decide to switch factions, you'll lose the AA from the favorable 
+        side and have to earn the AA's from the opposite faction. <br>
+        <font color="#800000"><b>Maddoc -</b></font> You'll end up having to prove 
+        yourself to both sides that way, but it is allowed. :) <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Cinexa* what's the idea 
+        behind lockouts on the smaller raids (24) ? only 6 people get quest pieces 
+        and 18 are locked out from completing theirs ~ wondering what the thinking 
+        is behind this <br>
+        <font color="#800000"><b>Rashere -</b></font> Lockouts for events and 
+        raids are basically a replacement for the NPC only spawning once every 
+        few days. It allows us to control how fast loot comes into the world as 
+        well as the effort required to obtain special rewards such as the AAs. 
+        <br>
+        <font color="#800000"><b>Rashere -</b></font> We've been pretty loose 
+        with the requirements to do the raids and with how many people are rewarded. 
+        In the past, a typical small event NPC would only drop a single item and 
+        maybe allow a single person to progress on their quest. These ones give 
+        out a full group's worth of progression items on top of their normal treasure. 
+        <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Nolrog* The e-mail system 
+        was a great addition to the game. However, it's a bit limited right now 
+        in the implementation. Are there plans on adding functionality for guilds, 
+        so that the leader can send one message to the entire guild, or to all 
+        officers? What about the ability to make our own mail lists. That would 
+        be a great addition too. <br>
+        <font color="#800000"><b>Maddoc -</b></font> We're definitely planning 
+        on adding more features to the in-game e-mail system. The things you've 
+        mentioned are just a couple of the features that we've received feedback 
+        on and are looking at in terms of new features. :) <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Loral* is there any chance 
+        we might see a tiered loot system added to Dragons or in future releases? 
+        <br>
+        <font color="#800000"><b>Rashere -</b></font> We don't have any plans 
+        to change the way the vendor loot works right now, but its something we 
+        might do for future releases. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *reptile1z* What new graphics 
+        engine upgrades are planned for this year? <br>
+        <font color="#800000"><b>Prathun -</b></font> Our team is currently looking 
+        at graphics engine changes, both for performance reasons and to add new 
+        features. I've seen glimpses of what's ahead for the lighting system and 
+        it looks pretty amazing. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *sore* is there any more 
+        work being done on the GoD backflag implementation? it is very complicated 
+        compared to the time solution. <br>
+        <font color="#800000"><b>Prathun -</b></font> One thing we are looking 
+        to change with the Gates backflagging system is allowing the Qvic Backflag 
+        and Inktuta to combine to allow access to Txevu (currently you have to 
+        either do the entire backflag quest for Txevu or the entire normal progression. 
+        You can't mix and match) <br>
+        <font color="#800000"><b>Prathun -</b></font> As far as them being more 
+        complicated, I implemented them with the goal of giving players several 
+        small manageable steps instead of 2-3 bottleneck steps. <br>
+        <font color="#800000"><b>Prathun -</b></font> So the complexity may have 
+        had to do with that granularity. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Aina* Hi, I have a question 
+        about the level 70 tradeskill cap for culture tailoring, I was wondering 
+        if it would be possible to have it lifted? <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> *Aina* Currently there is 
+        a level 70 restriction on culture smithing / tailoring as you know, I 
+        was wondering if there was any chance it could be lifted, or lowered to 
+        65 even, so many tradskillers are pre 70 and it really creates a lot of 
+        hardship for people with less time to play this game, any chance it will 
+        be removed, or changed to a skill based, or possibly add a skill check 
+        of 300 tailoring or smithing, as a skill check t <br>
+        <font color="#800000"><b>Maddoc -</b></font> This is something that I've 
+        been reviewing feedback on and, while the level restrictions are not going 
+        to be removed or changed to skill-based, they *may* be relaxed slightly. 
+        I'm still in the process of evaluating these quests, but when I've decided 
+        what changes we're going to be doing, I'll make sure we post them. <br>
+        <font color="#800000"><b>Brenlo -</b></font> So far Loral is winning for 
+        most questions, While Prathun holds the title for the longest answer. 
+        <br>
+        <font color="#800080">* Prathun flexes. *</font> <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Loral* Are there plans 
+        to add more content for people with limited time? (best friend has a third 
+        kid on the way, Tunare help him) <br>
+        <font color="#800000"><b>Rashere -</b></font> Add another point to Loral's 
+        total... For Dragons, we designed the mission system to appeal to players 
+        with a limited amount of time. Missions are built to take roughly an hour 
+        to an hour and a half to complete. It's gone over very well and I'm sure 
+        its something we'll continue to explore in the future. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Nolrog* Are there any 
+        large scale tradeskill quests, along the lines of the Coldain Prayer Shawl 
+        or the Aid Grimmel quests included with the expansion? Those were some 
+        great events. The ring war as well. Can we look forward to any epic type 
+        TRADESKILL quests (besides the cultural of course) or epic battles? <br>
+        <font color="#800000"><b>Maddoc -</b></font> The majority of the time 
+        spent on the DoN tradeskills was getting all of the cultural armor recipes 
+        and storyline in and working (and of course, making sense!) As of right 
+        now, there's no large-scale tradeskill quests, but I've got a few ideas 
+        in store for you guys for a live-update in the future. *hint hint* :) 
+        <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Anwyn* Will the email 
+        system also block emails from people on your /ignore list? <br>
+        <font color="#800000"><b>Prathun -</b></font> Yes, absolutely. /ignore 
+        should block e-mails as well as tells, etc. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Vincalis* The FV event 
+        rocked! Is that a harbinger of things to come? Are we going back to the 
+        old days of lots of GM events? That would be so very cool. <br>
+        <font color="#800000"><b>Rashere -</b></font> The FV event was the culmination 
+        of a month's worth of events leading up to the launch of the Dragons expansion. 
+        The feedback we've received has been overwhelmingly positive and its definitely 
+        something I'd like to do more of in the future. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Nolrog* Speaking of graphics 
+        engines, I heard a rumor (I know, I know) that EQ would be moving to the 
+        same graphics engine that EQ2 uses. Is there any truth to this? If so, 
+        what would be the benefits over the current engine? <br>
+        <font color="#800000"><b>Brenlo -</b></font> We just put in a new engine 
+        last year. The new engine allows to do the quality of graphics we put 
+        into DoN without raising system specs. There are no plans to intigrate 
+        the EQ2 engine and we are not even sure it could be done seamlessly and 
+        without raising system specs. <br>
+        <font color="#800000"><b>Brenlo -</b></font> Or is it integrate? Where's 
+        my dictionary <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Aina* It looks to me like 
+        DoN is a tradeskillers paradise, and being almost in the 2100 club I've 
+        been doing tradeskills from the day it came out, is there any chance that 
+        since the cap from modifers will be dropped, there could be added an augment 
+        or item with +15% or higher, and for all tradeskills in one, to be found 
+        in the near future, or quested for? <br>
+        <font color="#800000"><b>Maddoc -</b></font> It's certainly not outside 
+        the realm of possibility, though I've got no plans to add them right now. 
+        One of the things that tradeskillers have (sometimes incessantly) requested 
+        are some upgraded tradeskill trophies, and I think additional, higher 
+        percentage mods would fit quite well there. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> *Vincalis* Will EQ have 
+        a revamp of the player character models anytime soon? The Goblins look 
+        better than we do. :( <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> *Nolrog* Brenlo mentioned 
+        the qualtiy of graphics. That reminded me of the summit last year, and 
+        the new character models and revamps to the old zones. Is this something 
+        that we'll see "soon (tm)"?? <br>
+        <font color="#800000"><b>Brenlo -</b></font> Well as far as goblins looking 
+        better than you. You should have played a Halfling. <br>
+        <font color="#800000"><b>Brenlo -</b></font> As far as new PC models, 
+        that is actually a HUGE undertaking. Much more so than redoing a Goblin 
+        <br>
+        <font color="#800000"><b>Brenlo -</b></font> PCs models have hundreds 
+        of animations, armor sets, attachment points, etc . . . that NPCs do not. 
+        So <br>
+        <font color="#800000"><b>Brenlo -</b></font> We will not have new PC models 
+        anytime soon. It is something we would like to do but is such a large 
+        project we are not sure how best to tackle it yet. <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> That will wrap it up for 
+        tonight. I’d like to thank the folks from EverQuest for coming! The log 
+        for tonight’s chat will be up shortly on http://eq.stratics.com <br>
+        <font color="#0000A0"><b>Brekkee -</b></font> Thank you all for joining 
+        us! You can join #EverQuest to chat more about the game. <br>
+        <br>
+        <font color="#800000"><b>Brenlo -</b></font> Thanks folks. Have a good 
+        night and avoid the Mongoose. <br>
+        <br>
+        <font color="#800000"><b>Rashere -</b></font> Have a great evening all! 
+        <br>
+        <br>
+        <font color="#800000"><b>Prathun -</b></font> Thanks for coming, everyone! 
+        <br>
+        <br>
+        <font color="#800000"><b>Maddoc -</b></font> Thanks everyone for coming! 
+        :) <br>
+      </p>
+      <p><font color="#0000A0"><b>Brekkee -</b></font> Rashere will be joining 
+        #everquest for a bit.. feel free to join there to continue chatting <br>
+        <br>
+        <font color="#800000"><b>Rashere -</b></font> be gentle 
+        <!-- Insert Main Page Table Content Here-->
+      </p></td>
+</tr>
+</table>
+
+<br>        <div align="right" class="comment2">Written by: <a href="mailto:email@stratics.com">Sylvene</a></div><div align="right" class="comment2">Last updated: February 24, 2005</div>		 <br><br>
+          </td>
+        </tr>
+      </table><!-- stopprint --> 
+    </td>
+    <td width="142" class="menubackgroundRight" valign="top"><!-- RIGHT -->
+<table width="142" border="0" cellspacing="0" cellpadding="0" align="right">
+<tr><td align="right" valign="top"><table width="142" border="0" cellspacing="0" cellpadding="0">
+<tr><td valign="top" class="menuSection">Search EQ Stratics</td></tr>
+<tr><td><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+<tr>
+<td width="125" align="center" valign="middle" class="searchText">
+<form method="post" action="/search.php">
+		<input type="hidden" name="Realm" value="Everquest">
+		<input type="hidden" name="straticsid" value="eq">
+		<label for="fdse_TermsEx" Search for: </label><input name="Terms" id="fdse_TermsEx" />
+		<input type="submit" name="submit" value="Search" class="searchButton">
+</form></td>
+</tr>
+</table></td></tr>
+
+<tr><td align="center" valign="top"></td></tr><tr><td><img src="/images/clear.gif" width="1" height="6" border="0"></td></tr><!-- ID: eq - 1 - 0 --><tr><td align="center" valign="top"><!-- LOGIN -->
+<form method="POST" name="login_form" action="http://www.flashlink.com/index.php">
+<input type="hidden" name="p" value="login">
+<input type="hidden" name="s" value="92">
+<input type="hidden" name="save" value="1">
+<table width="142" border="0" cellspacing="0" cellpadding="0">
+    <tr valign="middle">
+    <td class="menuSection">Stratics Plus Login</td>
+  </tr>
+  <tr>
+    <td><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td>
+  </tr>
+  <tr><td align="center" width="100%">
+  <table width="130" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="menuSubsection">User Name:</td>
+</tr>
+<tr>
+    <td align="center"><input type="text" name="username" size="16" maxlength="20" class="search"></td>
+  </tr>
+  <tr>
+    <td class="menuSubsection">Password:</td>
+	</tr>
+	<tr>
+    <td align="center"><input type="password" name="password" size="16" maxlength="20" class="search"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="comment2" width="120"><input type="submit" name="submit" value="login"  class="submitButton"></td>
+  </tr>
+  </table>
+  </td></tr>
+      <tr>
+    <td><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td>
+  </tr>
+   <tr><td align="center" class="comment"><a href="http://www.flashlink.com/index.php?p=sendpass&s=92">Forgot your password?</a></td></tr>
+      <tr>
+    <td><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td>
+  </tr>
+  <tr><td align="center" class="comment">Not a member? <a href="http://www.stratics.com/members/" target="_blank">Sign-up!</a></td></tr>
+</table></form></td></tr>
+<!-- EA Temp Ad Original is ad_right.php -->
+<!-- N BANNER R --><!-- ID eq --><!-- BF 0 --><!-- IN   --><!-- NS   --><!-- FN   --><!-- PT   -->
+
+      <tr>
+         <td align='center' valign='top'><br><a class='ad_notice' href="http://www.stratics.com/network/advertising.php">&#187; Advertisement &#171;</a><br></td>
+      </tr>
+      <tr>
+         <td align='center' valign='top'>
+   
+<script language="javascript">
+CM8ShowAd("Right")
+</script>
+<Noscript>
+<A href="http://web.checkm8.com/adam/ep/click/StraticsNetwork.eq/Top?cat=StraticsNetwork.eq" target="_blank">
+<IMG src="http://web.checkm8.com/adam/noscript?cat=StraticsNetwork.eq&format=Right" border=0></A>
+</Noscript>
+
+
+         </td>
+      </tr>
+      <tr>
+         <td><img src="http://images.stratics.com/eq/images/clear.gif" width='1' height='6' border='0'></td>
+      </tr>
+   
+
+<tr><td align="center" valign="top"><style type="text/css">
+.container {		   
+border-style:none;	
+border-width:1px;	
+padding:2px;	
+float:center;	
+width:90%;
+}
+.eql_title {	
+color:#000000;	
+font-family:verdana, Geneva, Arial, Helvetica, sans-serif;	
+font-size:10px;	
+font-weight:bold;	
+background-color : #DBDBD5;
+padding : 1px;
+text-align : left;
+border: 1px solid #000000;
+text-decoration : none;
+color: #000000;
+padding-left : 3px;
+width : 100%;
+}
+a.eql_headline {	
+color : #330000;
+font-family:verdana, Geneva, Arial, Helvetica, sans-serif;	
+font-size:10px;	
+font-weight:normal;	
+text-decoration:none;
+padding : 1px;
+}
+a.eql_headline:hover {	
+color : #000000;
+background-color: #C6C6BB;
+text-decoration : none;
+}
+a.eql_headline:visited {	
+color : #330000;
+}
+</style>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+<tr><td colspan="2" class="menuSection">Official News</td></tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+<tr><td colspan="2" class="menuItem"><div class="menuItem">	
+<SCRIPT language="JavaScript" SRC="http://eqlive.station.sony.com/includes/js_news/eq_headlines.jsp"></SCRIPT>
+<noscript>The EverQuest Live news requires you to have JavaScript turned on.</noscript></SCRIPT></div>
+</td></tr></td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>
+<tr><td align="right" valign="top">
+<!-- Stratics -->
+<table width="142" border="0" cellspacing="0" cellpadding="0" align="right">
+<tr><td colspan="2" class="menuSection">Stratics Central</td></tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="mailto:advertising&#64;stratics.com?subject=Advertising on Stratics" target="_parent">Advertising</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://chat.stratics.com" target="_parent">Stratics Chat</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://www.stratics.com/" target="_parent">Stratics Main</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%">
+    <a class="menuItem" target="_parent" href="http://links.stratics.com">Stratics Links</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://www.cafepress.com/stratics" target="_parent">Stratics Store</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="mailto:eqadmin&#64;stratics.com?Subject=EQ%20Stratics%20Feedback" target="_parent">EQ Site Feedback</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/site/eq_staff.shtml" target="_parent">EQ Stratics Team</a></td>
+  </tr>
+ <tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%">
+    <a class="menuItem" target="_parent" href="/content/site/joinstaff.shtml">Join the EQS Staff</a></td>
+  </tr> 
+<!-- <tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+	<td align="left" width="99%"><a class="menuItem" href="/content/info/submission.shtml" target="_parent">Site 
+	  Submissions</a></td>
+  </tr>
+-->
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr> 
+</table></td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>
+<tr><td align="right" valign="top">
+<!-- Library -->
+<table width="142" border="0" cellspacing="0" cellpadding="0" align="right">
+<tr><td colspan="2" class="menuSection">Official EQ Info</td></tr>
+<tr><td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" target="_blank" href="http://eqlive.station.sony.com">Main EQ Website</a></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://legends.everquest.station.sony.com/" target="_parent">EQ Legends Service</A></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://eqlive.station.sony.com/forums/index.jsp" target="_parent">Main EQ Forums</A></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="https://store.station.sony.com/game_index.jsp?gamecode=EQ" target="_parent">Official EQ Products</A></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://eqlive.station.sony.com/support/index.jsp" target="_parent">EverQuest Support</A></td>
+  </tr>
+<tr>
+	<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://www.station.sony.com/services/everquest-contactgm.jhtml" target="_parent">Contact a GM</A></td>
+  </tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table></td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>
+<tr><td align="right" valign="top">
+<table width="142" border="0" cellspacing="0" cellpadding="0" align="right">
+<tr><td colspan="2" class="menuSection">IRC</td></tr> 
+<tr>          
+<td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td>        </tr>        
+<tr>           
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><A class="menuItem" href="http://chat.stratics.com/" target="_parent">Chat (IRC)</A></td>      
+</tr>       
+<tr>
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><A class="menuItem" href="/content/community/irc/" target="_parent">EQ Chat Logs</A> </td>       
+</tr>        
+<tr>           
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><A class="menuItem" href="/content/community/irc/stats.shtml" target="_parent">#Everquest Stats</A></td>      
+</tr>            
+<tr>           
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://chat.stratics.com/content/java/chat.php?size=800" target="_blank">800 x 600 Java IRC</a></td>
+</tr>        
+<tr>          
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://chat.stratics.com/content/java/chat.php?size=1024" target="_blank">1024 x 768 Java IRC</a></td>    
+</tr>       
+<tr>           
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="http://chat.stratics.com/content/java/chat.php?size=1280" target="_blank">1280 x 960 Java IRC</a></td></tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>	
+<tr><td colspan="2" class="menuSection">Links</td></tr>			 
+<tr>           
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/links.shtml" target="_parent">Community Links</A></td>        
+</tr>        
+<tr>          
+<td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td> <td align="left" width="99%"><a class="menuItem" href="http://eq2.stratics.com" target="_parent">Everquest 2 Stratics</a></td>
+</tr>
+<tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>	
+</table></td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>
+<tr><td align="right" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr><td colspan="2" class="menuSection">Player Creations</td></tr>
+<!--  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="/content/community/fanart/" target="_parent">Fan Art</a></td>
+  </tr> -->
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/fiction/" target="_parent">Fan Fiction</a></td>
+  </tr>
+<!--  <tr> 
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td>
+    <td align="left" width="99%"><a class="menuItem" href="/content/community/articles/" target="_parent">Player Articles</a></td>
+  </tr> -->
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/fiction/tales_of_loral.shtml" target="_parent">Tales of Loral Ciriclight</a></td>
+  </tr>
+  <tr>
+    <td valign="middle" width="1%"><img src="/images/square.gif" border="0" alt="" width="5" height="5" hspace="2"></td><td align="left" width="99%"><a class="menuItem" href="/content/community/characterprofiles/index.shtml" target="_parent">Character Profiles</a></td>
+  </tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+</table></td></tr>
+<tr><td align="center" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr><td colspan="2" class="menuSection">Comments</td></tr>
+  <tr><td colspan="2"><img src="/images/clear.gif" width="50" height="4" alt="" border="0"></td></tr>
+  </table>
+
+  
+
+	    <!-- BEGIN side box e-mail -->
+		<form method='post' enctype='multipart/form-data' action='/comments/comments.php'>
+ 			<input type='hidden' name='op' value='send_mail' />
+            <input type='hidden' name='mail_to' value='eqadmin@stratics.com' />
+			<input type='hidden' name='mail_subject' value='EQ Stratics: Side Box E-mail' />
+
+			<span class='smalltype'><b>Your E-mail</b></span><br />
+	        <input type='text' name='mail_from_email' size='15' maxlength='50' value='' /><br />
+
+			<span class='smalltype'><b>Comments</b></span><br />
+	        <textarea name='mail_body' cols='11' rows='6' maxlength='255'></textarea><br />
+
+			<input type='submit' value='Send' name='submit' class='smalltype'>&nbsp;
+			<input type='reset' value='Reset' name='reset' class='smalltype'>
+		</form>
+	    <!-- END side box e-mail -->
+
+
+
+</td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>
+<tr><td align="center" valign="top">
+
+<!-- <tr><td align="right" valign="top">
+</td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>-->
+<!-- <tr><td align="right" valign="top">
+</td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>-->
+<!-- <tr><td align="right" valign="top">
+</td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>-->
+</table> </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="footerBackground">
+<tr><td align="center" class="comment2"><br>This site best viewed in Internet Explorer.</td></tr>
+<tr><td height="15">&nbsp;</td></tr> 
+<tr><td align="center" valign="top">
+<table width="100%" height="10" border="0" cellspacing="0" cellpadding="0">
+<tr><td align="center" class="comment2">Site Design &amp; Original Content <a href="/content/stratics/copyright.php" target="_parent" class="comment2">&copy;2005</a>, <a href="http://www.stratics.com" target="_parent" class="comment2">Stratics</a>. All rights reserved.</td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="2" alt="" border="0"></td></tr>
+<tr>
+    <td align="center" class="comment2">Maintained by: <a href="mailto:eq&#64;stratics.com">EQ Stratics Staff</a></td>
+  </tr>
+  <tr><td align="center" class="comment2"><!-- Add any game copy right specific info here--></td></tr>
+</table>
+</td></tr> 
+<tr><td align="center" class="comment2"><A href="http://www.stratics.com/content/staff/art_credits.shtml" target="_blank">Graphic Design Credits</a></td></tr>
+<tr><td><img src="/images/clear.gif" width="1" height="6" alt="" border="0"></td></tr>
+</table>
+</body>
+</html>

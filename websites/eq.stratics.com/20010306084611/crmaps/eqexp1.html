@@ -1,0 +1,369 @@
+<HTML>
+<TITLE>	EQ Experience Calculator</TITLE>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+// <!--
+var NUMRACES=13
+var NUMCLASSES=14
+
+var race=8
+var clas=12
+var mld=0
+
+var Brd=1
+var Cle=2
+var Dru=4
+var Enc=8
+var Mag=16
+var Monk=32
+var Nec=64
+var Pal=128
+var Rng=256
+var Rog=512
+var Shd=1024
+var Shm=2048
+var War=4096
+var Wiz=8192
+
+
+RA=new Array(NUMRACES)
+RA[0]=new Array("Barbarian", "105",Rog + Shm + War)
+RA[1]=new Array("Dark Elf", "100",Cle + Enc + Mag + Nec + Rog + Shd + War + Wiz)
+RA[2]=new Array("Dwarf", "100",Cle + Pal + Rog + War)
+RA[3]=new Array("Erudite", "100",Cle + Enc + Mag + Nec + Pal + Shd + Wiz)
+RA[4]=new Array("Gnome", "100",Cle + Enc + Mag + Nec + Rog + War + Wiz)
+RA[5]=new Array("Half Elf", "100",Brd + Dru + Pal + Rng + Rog + War)
+RA[6]=new Array("Halfling", "95",Cle + Dru + Rog + War)
+RA[7]=new Array("High Elf", "100",Cle + Enc + Mag + Pal + Wiz)
+RA[8]=new Array("Human", "100",Brd + Cle + Dru + Enc + Mag + Monk + Nec + Pal + Rng + Rog + Shd + War + Wiz)
+RA[9]=new Array("Iksar", "120",Monk + Nec + Shd + Shm + War)
+RA[10]=new Array("Ogre", "115",Shd + Shm + War)
+RA[11]=new Array("Troll", "120",Shd + Shm + War)
+RA[12]=new Array("Wood Elf", "100",Brd + Dru + Rng + Rog + War)
+
+CA=new Array(NUMCLASSES)
+CA[0]=new Array("Bard", "14")
+CA[1]=new Array("Cleric", "10")
+CA[2]=new Array("Druid", "10")
+CA[3]=new Array("Enchanter", "11")
+CA[4]=new Array("Magician", "11")
+CA[5]=new Array("Monk", "12")
+CA[6]=new Array("Necromancer", "11")
+CA[7]=new Array("Paladin", "14")
+CA[8]=new Array("Ranger", "14")
+CA[9]=new Array("Rogue", "9.05")
+CA[10]=new Array("Shadow Knight", "14")
+CA[11]=new Array("Shaman", "10")
+CA[12]=new Array("Warrior", "9")
+CA[13]=new Array("Wizard", "11")
+
+BA=new Array(61)
+for (i=1; i <=60; i++) {
+if (i <=12) BA[i]=- 3;
+else if (i <=24) BA[i]=- 5;
+else if (i <=34) BA[i]=- 7;
+else if (i <=40) BA[i]=- 9;
+else if (i <=44) BA[i]=- 11;
+else if (i <=48) BA[i]=- 12;
+else if (i <=52) BA[i]=- 13;
+else if (i <=56) BA[i]=- 14;
+else if (i <=60) BA[i]=- 15;
+}
+
+function C(l) {
+var val;
+if (l <=30)
+val=1.0;
+else if (l <=35)
+val=1.1;
+else if (l <=40)
+val=1.2;
+else if (l <=45)
+val=1.3;
+else if (l <=51)
+val=1.4;
+else if (l <=54)
+val=1.3 + ((l - 50) / 10);
+else if (l <=59)
+val=1.9 + ((l - 55) / 5);
+else if (l==60)
+val=3.0;
+else
+val=3.1;
+return(val);
+}
+
+function XPTol(l, raceMult, classMult) {
+return(Math.floor(C(l) * raceMult * classMult * Math.pow(l - 1, 3)));
+} // END XPTol
+
+
+function doTable() {
+var base=RA[race][1] * CA[clas][1];
+base=Math.round(base * 100) / 100;
+if (top.two) {
+top.two.document.open("text/html", "replace");
+var win=top.two;
+} else {
+var win=window.open("eqexp2.html", "two", "scrollbars");
+}
+
+var title=RA[race][0] + "/" + CA[clas][0] + " (" + RA[race][1] + " * " + CA[clas][1] + "=" + base + ")";
+win.document.writeln("<HTML><HEAD><TITLE>" + title + "</TITLE></HEAD>");
+win.document.writeln("<BODY><DIV>");
+win.document.writeln("<TABLE BORDER><CAPTION><B><FONT SIZE=+1>" + title + "<FONT></B></CAPTION>");
+win.document.writeln("<TR>" +
+"<TH>Lvl</TH>" +
+"<TH>Total XP<BR>needed to<BR>reach lvl</TH>" +
+"<TH>Total XP<BR>needed to<BR>complete<BR>lvl</TH>" +
+"<TH>Difference<BR>(XP needed<BR>for lvl)</TH>" +
+"<TH>Approx. # of<BR>mobs of lvl<BR>selected needed<BR>to solo for lvl</TH>" +
+"");
+
+for (var l=1; l <=60; l++) {
+
+var begin=XPTol(l, RA[race][1], CA[clas][1]);
+var end=XPTol(l + 1, RA[race][1], CA[clas][1]);
+var diff=end - begin;
+
+var numk="";
+if ((l + mld) > 0 & mld >=BA[l] ) {
+var XPperkill=75 * ((l + mld) * (l + mld));
+var MaxXP=diff * 0.125;
+if (XPperkill > MaxXP) {
+XPperkill=MaxXP;
+limited=1;
+} else {
+limited=0;
+}
+numk=Math.floor(diff / XPperkill);
+numk +="";// make it a string...
+var string=""
+while (numk.length > 3) {
+u=numk.length;
+string="," + numk.slice(u - 3, u) + string;
+numk=numk.slice(0, u - 3);
+}
+string=numk + string;
+} else {
+if ((l + mld) <=0) {
+string="N/A";
+} else {
+string="NoExp";
+}
+}
+
+begin +="";// make it a string...
+var begins=""
+while (begin.length > 3) {
+u=begin.length;
+begins="," + begin.slice(u - 3, u) + begins;
+begin=begin.slice(0, u - 3);
+}
+begins=begin + begins;
+
+end +="";// make it a string...
+var ends=""
+while (end.length > 3) {
+u=end.length;
+ends="," + end.slice(u - 3, u) + ends;
+end=end.slice(0, u - 3);
+}
+ends=end + ends;
+
+diff +="";// make it a string...
+var diffs=""
+while (diff.length > 3) {
+u=diff.length;
+diffs="," + diff.slice(u - 3, u) + diffs;
+diff=diff.slice(0, u - 3);
+}
+diffs=diff + diffs;
+
+
+hell=((l==30) || (l==35) || (l==40) || (l==45) || (l > 50));
+win.document.writeln("<TR>" +
+"<TD>" + l + "" +
+"<TD ALIGN=RIGHT>" + begins + "" +
+"<TD ALIGN=RIGHT>" + ends + "" +
+"<TD ALIGN=RIGHT>" + (hell ? "<B>" : "") + diffs + (hell ? "</B>" : "") + "" +
+"<TD ALIGN=CENTER>" + (hell ? "<B>" : "") + string + (limited ? "*" : " ") + (hell ? "</B>" : "") + "" +
+"");
+
+}
+
+win.document.writeln("<TR>" +
+"<TH>Lvl</TH>" +
+"<TH>Total XP<BR>needed to<BR>reach lvl</TH>" +
+"<TH>Total XP<BR>needed to<BR>complete<BR>lvl</TH>" +
+"<TH>Difference<BR>(XP needed<BR>for lvl)</TH>" +
+"<TH>Approx. # of<BR>mobs of lvl<BR>selected needed<BR>to solo for lvl</TH>" +
+"");
+win.document.write("</TABLE>");
+win.document.write("<BR><BR>* - XP per kill is limited to 12.5% of the XP required to complete the level");
+win.document.write("</DIV>");
+win.document.write("</BODY></HTML>");
+win.document.close();
+} // END doTable
+
+
+function changedRace() {
+for (var i=0; i < NUMRACES; i++) {
+if (document.xpc.race[i].checked) {
+race=i
+ValidateCombo();
+return
+}
+}
+alert("Error")
+} // END changedRace
+
+function changedClass() {
+for (var i=0; i < NUMCLASSES; i++) {
+if (document.xpc.clas[i].checked) {
+clas=i
+ValidateCombo();
+return
+}
+}
+alert("Error")
+} // END changedClass
+
+function changedMobl() {
+if (document.xpc.mobl.selectedIndex !=-1) {
+mld=new Number(document.xpc.mobl.options[document.xpc.mobl.selectedIndex].value)
+//alert("mld=" + mld)
+doTable()
+}
+} // END changedMobl
+
+function ValidateCombo() {
+//alert("RA[race][2]=" + RA[race][2]);
+//alert("1 << clas=" + (1 << clas));
+if (RA[race][2] & (1 << clas)) {
+doTable();
+} else {
+top.two.document.open("text/html", "replace");
+top.two.document.writeln("\
+<HTML>\
+<HEAD>\
+<TITLE>Invalid Race/Class Combintion</TITLE>\
+</HEAD>\
+</HTML>\
+<BODY>\
+<H1>Invalid Race/Class Combintion</H1>\
+</BODY>\
+</HTML>");
+}
+return
+}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY onLoad=doTable()>
+<DL>
+<DT>The formula for the amount of experience to complete a lvl is as follows:
+<DD><FONT SIZE=+1><CODE><B>Total XP to complete a lvl=L<SUP>3</SUP> * C * R * H</B></CODE></FONT>
+<DT>Where:
+<DD><DL>
+<DT><B>C</B>=Class Multiplier
+<DT><B>R</B>=Race Multiplier
+<DT><B>H</B>=Hell Multiplier (based on l)
+<DD><TABLE><TR><TD><TABLE WIDTH=100 BORDER=1>
+<TR><TH>Lvl</TH><TH>H</TH>
+<TR><TD>1-29<TD>1.0
+<TR><TD>30-34<TD>1.1
+<TR><TD>35-39<TD>1.2
+<TR><TD>40-44<TD>1.3
+<TR><TD>45-50<TD>1.4
+</TABLE>
+
+<TD><TABLE WIDTH=100 BORDER=1>
+<TR><TH>Lvl</TH><TH>H</TH>
+<!--
+<SCRIPT>
+for (var i=51; i <=60; i++) {
+document.writeln("\t\t<TR><TD>" + i +
+"<TD>" + C(l) + "");
+}
+</SCRIPT>
+-->
+<TR><TD>51<TD>1.5
+<TR><TD>52<TD>1.6
+<TR><TD>53<TD>1.7
+<TR><TD>54<TD>1.9
+<TR><TD>55<TD>2.1
+<TR><TD>56<TD>2.3
+<TR><TD>57<TD>2.5
+<TR><TD>58<TD>2.7
+<TR><TD>59<TD>3.0
+<TR><TD>60<TD>3.1
+
+</TABLE>
+</TABLE>
+</DL>
+</DL>
+
+<HR>
+<DL>
+<DT>The formula for the amount of XP earned for soloing a <FONT COLOR=BLUE>blue</FONT> or higher mob is as follows:
+<DD><FONT SIZE=+1><CODE><B>XP=L<SUP>2</SUP> * C</B></CODE></FONT>
+<DT>Where:
+<DD><DL>
+<DT><B>L</B>=lvl of mob being soloed.
+<BR>
+(I have excluded green exp mobs from the list due to insufficient data.  High greens give partial exp, usually 50%.)
+<DT><B>C</B>=Varies based on zone and your level.  For newbies it is 114 or 100.  For everyone else it is based on zone, and ranges from 75 to about 120, with most zones being 75.  The chart is calculated assuming 75.
+</DL>
+</DL>
+<BR>
+<B>Note</B> - The maximum XP that can be earned from a single mob is 12.5% of the XP required to complete the level.
+<HR>
+
+<B>Select a different race, class or mob lvl to change the XP table</B>
+<FORM NAME="xpc" onSubmit="return false">
+<TABLE><TR>
+<TD VALIGN=TOP><TABLE BORDER=1>
+<TR><TH></TH><TH>RACE</TH><TH>Mult</TH>
+<SCRIPT>
+for (i=0; i < NUMRACES; i++) {
+document.writeln("<TR><TD><INPUT TYPE=RADIO NAME='race' VALUE='" + i +
+"' onClick='changedRace()'" + ((i==8) ? " CHECKED" : "") + "><TD>" + RA[i][0]  +
+"<TD ALIGN=RIGHT>" + RA[i][1] + "")
+}
+</SCRIPT>
+
+</TABLE>
+
+<TD VALIGN=TOP><TABLE BORDER=1>
+<TR><TH></TH><TH>CLASS</TH><TH>Mult</TH>
+<SCRIPT>
+for (i=0; i < NUMCLASSES; i++) {
+document.writeln("<TR><TD><INPUT TYPE=RADIO NAME='clas' VALUE='" + i +
+"' onClick='changedClass()'" + ((i==12) ? " CHECKED" : "") + "><TD>" + CA[i][0]  +
+"<TD ALIGN=RIGHT>" + CA[i][1] + "")
+}
+</SCRIPT>
+</TABLE>
+
+<TD VALIGN=TOP><B>Lvl difference of mobs you hunt</B><BR>
+<SELECT NAME="mobl" onChange="changedMobl()">
+<SCRIPT>
+for (i=-15; i <=5; i++) {
+document.writeln("<OPTION VALUE=" + i + ((i==0) ? " SELECTED" : "") + ">" + i)
+}
+</SCRIPT>
+</SELECT></TABLE>
+</FORM>
+
+<HR>
+All formulae and numbers from
+<A HREF="http://www.hackersquest.gomp.ch/cgi-bin/Ultimate.cgi" TARGET="_top">posts</A>
+on <A HREF="http://www.hackersquest.gomp.ch" TARGET="_top">HackersQuest</A> and from <A HREF="MAILTO:genius@utk.edu">Sparr</A>
+<BR><BR>
+Don't flame me if they are wrong, just send me any <A HREF="MAILTO:sstair@iname.com">corrections</A>.
+</BODY>
+</HTML>
+<NOSCRIPT>
+</NOSCRIPT>

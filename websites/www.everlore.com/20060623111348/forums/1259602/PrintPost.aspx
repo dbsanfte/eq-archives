@@ -1,0 +1,166 @@
+
+<html>
+    <head>
+        <title>RE: Brewing is like a quest - Everlore</title>
+
+        <link rel="stylesheet" href="/Themes/default/style/default.aspx?application=" type="text/css" media="screen" />
+    </head>
+	<body onload="window.focus(); window.print()">
+        <form name="_ctl0" method="post" action="/forums/1259602/PrintPost.aspx" id="_ctl0">
+<input type="hidden" name="__VIEWSTATE" value="dDwtMjAxNzc5MTM2Nzt0PDtsPGk8NT47PjtsPHQ8O2w8aTwxPjs+O2w8dDw7bDxpPDA+Oz47bDx0PDtsPGk8MT47aTwzPjtpPDU+O2k8Nz47aTw5Pjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxSRTogQnJld2luZyBpcyBsaWtlIGEgcXVlc3Q7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPEJyZXdpbmc7Pj47Pjs7Pjt0PHQ8OztsPGk8MD47Pj47Oz47dDxwPGw8XyFJdGVtQ291bnQ7PjtsPGk8Nj47Pj47bDxpPDA+O2k8MT47aTwyPjtpPDM+O2k8ND47aTw1Pjs+O2w8dDw7bDxpPDE+O2k8Mz47aTw0PjtpPDU+Oz47bDx0PHA8bDxUZXh0Oz47bDxCcmV3aW5nIGlzIGxpa2UgYSBxdWVzdDs+Pjs7Pjt0PHA8bDxUZXh0Oz47bDxcPHNwYW4gY2xhc3M9ImlubGluZUxpbmsiIG9uY2xpY2s9IndpbmRvdy5vcGVuKCcvdXNlci9Qcm9maWxlLmFzcHg/VXNlcklEPTEzNjUzNScpIlw+THVzaW50X09mX0x1Y2xpbl9TZXJ2ZXJcPC9zcGFuXD47Pj47Oz47dDxAPDA4LTE5LTIwMDMsIDEwOjUxIEFNOz47Oz47dDxwPGw8UG9zdDs+O2w8aTwxMjU5NTk3Pjs+Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDQ+O2k8NT47PjtsPHQ8cDxsPFRleHQ7PjtsPFJFOiBCcmV3aW5nIGlzIGxpa2UgYSBxdWVzdDs+Pjs7Pjt0PHA8bDxUZXh0Oz47bDxcPHNwYW4gY2xhc3M9ImlubGluZUxpbmsiIG9uY2xpY2s9IndpbmRvdy5vcGVuKCcvdXNlci9Qcm9maWxlLmFzcHg/VXNlcklEPTEzNjUzNScpIlw+Q3RybCBBbHQgRGVsXDwvc3Bhblw+Oz4+Ozs+O3Q8QDwwOC0xOS0yMDAzLCAxMTozOSBBTTs+Ozs+O3Q8cDxsPFBvc3Q7PjtsPGk8MTI1OTU5OD47Pj47Oz47Pj47dDw7bDxpPDE+O2k8Mz47aTw0PjtpPDU+Oz47bDx0PHA8bDxUZXh0Oz47bDxSRTogQnJld2luZyBpcyBsaWtlIGEgcXVlc3Q7Pj47Oz47dDxwPGw8VGV4dDs+O2w8XDxzcGFuIGNsYXNzPSJpbmxpbmVMaW5rIiBvbmNsaWNrPSJ3aW5kb3cub3BlbignL3VzZXIvUHJvZmlsZS5hc3B4P1VzZXJJRD0xMzY1MzUnKSJcPldpemFyZCBvZiB0aGUgU2hhZG93c1w8L3NwYW5cPjs+Pjs7Pjt0PEA8MDgtMTktMjAwMywgMTI6MzQgUE07Pjs7Pjt0PHA8bDxQb3N0Oz47bDxpPDEyNTk1OTk+Oz4+Ozs+Oz4+O3Q8O2w8aTwxPjtpPDM+O2k8ND47aTw1Pjs+O2w8dDxwPGw8VGV4dDs+O2w8UkU6IEJyZXdpbmcgaXMgbGlrZSBhIHF1ZXN0Oz4+Ozs+O3Q8cDxsPFRleHQ7PjtsPFw8c3BhbiBjbGFzcz0iaW5saW5lTGluayIgb25jbGljaz0id2luZG93Lm9wZW4oJy91c2VyL1Byb2ZpbGUuYXNweD9Vc2VySUQ9MTM2NTM1JykiXD5DZXJwaWNpb1w8L3NwYW5cPjs+Pjs7Pjt0PEA8MDgtMTktMjAwMywgMTowMCBQTTs+Ozs+O3Q8cDxsPFBvc3Q7PjtsPGk8MTI1OTYwMD47Pj47Oz47Pj47dDw7bDxpPDE+O2k8Mz47aTw0PjtpPDU+Oz47bDx0PHA8bDxUZXh0Oz47bDxSRTogQnJld2luZyBpcyBsaWtlIGEgcXVlc3Q7Pj47Oz47dDxwPGw8VGV4dDs+O2w8XDxzcGFuIGNsYXNzPSJpbmxpbmVMaW5rIiBvbmNsaWNrPSJ3aW5kb3cub3BlbignL3VzZXIvUHJvZmlsZS5hc3B4P1VzZXJJRD0xMzY1MzUnKSJcPlN1bW1vbmVyIG9mIFBldHNcPC9zcGFuXD47Pj47Oz47dDxAPDA4LTI1LTIwMDMsIDExOjIzIFBNOz47Oz47dDxwPGw8UG9zdDs+O2w8aTwxMjU5NjAxPjs+Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDQ+O2k8NT47PjtsPHQ8cDxsPFRleHQ7PjtsPFJFOiBCcmV3aW5nIGlzIGxpa2UgYSBxdWVzdDs+Pjs7Pjt0PHA8bDxUZXh0Oz47bDxcPHNwYW4gY2xhc3M9ImlubGluZUxpbmsiIG9uY2xpY2s9IndpbmRvdy5vcGVuKCcvdXNlci9Qcm9maWxlLmFzcHg/VXNlcklEPTEzNjUzNScpIlw+Q2VycGljaW9cPC9zcGFuXD47Pj47Oz47dDxAPDA4LTI2LTIwMDMsIDU6MjQgQU07Pjs7Pjt0PHA8bDxQb3N0Oz47bDxpPDEyNTk2MDI+Oz4+Ozs+Oz4+Oz4+O3Q8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47bDxpPDE+O2k8Mz47PjtsPHQ8cDxwPGw8VG90YWxSZWNvcmRzO1RvdGFsUGFnZXM7UGFnZUluZGV4Oz47bDxpPDY+O2k8MT47aTwxPjs+Pjs+Ozs+O3Q8cDxwPGw8VG90YWxSZWNvcmRzOz47bDxpPDY+Oz4+Oz47Oz47Pj47Pj47Pj47Pj47Pj47Psf4KjBk3R5yk7ewI/Ozru+tFmf5" />
+
+          <!-- Start: CommunityServer.Discussions.Controls.PostFlatView -->
+<!-- Skin Path: ~/Themes/default/Skins/View-PostFlatViewPrint.ascx -->
+
+
+<body>    
+	<div id="header">
+
+		<h1><span id="_ctl1__ctl0_PostSubject">RE: Brewing is like a quest</span></h1>
+		<h3><span id="_ctl1__ctl0_ForumName">Brewing</span></h3>
+
+
+
+
+		<h3>Brewing is like a quest</h3>
+		<hr>
+		<span class="inlineLink" onclick="window.open('/user/Profile.aspx?UserID=136535')">Lusint_Of_Luclin_Server</span>
+		08-19-2003, 10:51 AM
+		<br>
+		<!-- Start: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+<!-- Skin Path: /Themes/default/Skins/PostType-TextPost.ascx -->
+alot of people think brewing is mainly for fun
+i disagree
+i look at it this way brewing is like one big quest
+with a great big reward at the end of it 
+
+("Grandmaster Brewer's Corker")
+
+LORE ITEM NO DROP 
+Slot: PRIMARY,SECONDARY,RANGE,AMMO
+Skill Mod: Brewing +5%
+STR: +10   CHA: +50   WIS: +10   INT: +10   
+Effect: Grandmaster's Satchel (Cast Time: 10.0)
+WT: 0.1   Size: SMALL
+Class: ALL
+Race: ALL
+
+to get this item all you need to do is get brewing up to lvl 200-250 (250 if you wish brewing to be your best tradeskill)
+
+this item comes in hand when trying to get up a really expensive tradeskill that results in money out the ying-yang, such as tailoring or jewelrycrafting
+
+<!-- End: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+
+	
+		<h3>RE: Brewing is like a quest</h3>
+		<hr>
+		<span class="inlineLink" onclick="window.open('/user/Profile.aspx?UserID=136535')">Ctrl Alt Del</span>
+		08-19-2003, 11:39 AM
+		<br>
+		<!-- Start: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+<!-- Skin Path: /Themes/default/Skins/PostType-TextPost.ascx -->
+Post Count ++
+(there are better items out there)
+
+<!-- End: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+
+	
+		<h3>RE: Brewing is like a quest</h3>
+		<hr>
+		<span class="inlineLink" onclick="window.open('/user/Profile.aspx?UserID=136535')">Wizard of the Shadows</span>
+		08-19-2003, 12:34 PM
+		<br>
+		<!-- Start: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+<!-- Skin Path: /Themes/default/Skins/PostType-TextPost.ascx -->
+There are better items out there for your ammo slot?
+
+Are they as easy to get as this is? Granted this is very time consuming and somewhat expensive, but it is gettable by anyone.
+
+Please elaborate.....
+
+
+Wizard of the 55th Circle of Knowledge.
+Bard of the 51st silly song.
+Beasty of the 23rd soloing level.
+Shadow Knight of the 3rd level of Evil.
+Enchanter of the 2nd Illusion.
+
+"There is always one more imbecile than you had planned for."
+
+<!-- End: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+
+	
+		<h3>RE: Brewing is like a quest</h3>
+		<hr>
+		<span class="inlineLink" onclick="window.open('/user/Profile.aspx?UserID=136535')">Cerpicio</span>
+		08-19-2003, 1:00 PM
+		<br>
+		<!-- Start: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+<!-- Skin Path: /Themes/default/Skins/PostType-TextPost.ascx -->
+FYI, you don't get any bonuses off items in your ammo slot.
+
+
+Try it sometime.
+-- C.
+
+<!-- End: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+
+	
+		<h3>RE: Brewing is like a quest</h3>
+		<hr>
+		<span class="inlineLink" onclick="window.open('/user/Profile.aspx?UserID=136535')">Summoner of Pets</span>
+		08-25-2003, 11:23 PM
+		<br>
+		<!-- Start: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+<!-- Skin Path: /Themes/default/Skins/PostType-TextPost.ascx -->
+no bonus off of range slot items????
+
+
+daym
+
+<IMG BORDER=0 SRC="http://www.geocities.com/cptqrk/banner.jpg.txt">
+
+wanna see my junk?
+http://www.magelo.com/eq_view_profile.html?num=724376
+
+<!-- End: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+
+	
+		<h3>RE: Brewing is like a quest</h3>
+		<hr>
+		<span class="inlineLink" onclick="window.open('/user/Profile.aspx?UserID=136535')">Cerpicio</span>
+		08-26-2003, 5:24 AM
+		<br>
+		<!-- Start: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+<!-- Skin Path: /Themes/default/Skins/PostType-TextPost.ascx -->
+No, that's not what I said.  You get bonuses off your range slot (bows), but not your *ammo* slot (arrows).
+
+
+-- C.
+
+<!-- End: CommunityServer.Discussions.Controls.PostDisplay.TextPost -->
+
+	 
+
+<table cellpadding="3" cellspacing="0" width="100%">
+	<tr>
+		<td valign="top">
+
+			
+	
+		</td> 
+	</tr>
+</table>
+<!-- Start: CommunityServer.Controls.Ads -->
+<!-- Skin Path: /Themes/default/Skins/Skin-Ads.ascx -->
+<!-- End: CommunityServer.Controls.Ads -->
+
+<!-- End: CommunityServer.Discussions.Controls.PostFlatView -->
+
+
+	<div class="copyright"></div>
+<p align="center" class="txt4"><a target="_blank" href="http://www.communityserver.org/"><img alt="Powered by Community Server, by Telligent Systems " border="0" src="/utility/EULA.GIF"></a></p>
+
+        </form>
+    </body>
+</html>

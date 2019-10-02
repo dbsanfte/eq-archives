@@ -1,0 +1,1864 @@
+
+<html>
+<head>
+<link rel=stylesheet type="text/css" href="http://www.everlore.com/gimages/styles.css">
+<title>Everlore - A Deeper Look into EverQuest</title>
+<META name="keywords" content="EverQuest, EQ, Norrath, Gaming, MMORPG, roleplaying, everlore, rpg, quests, game guides">
+<META name="description" content="** DO NOT REMOVE ** -- design and code by Jaime Boyaca, Jr.  Backend programming by Charles Strout.  UGO networks, inc. -- Insert the description of your site here.  This is important for web search engines.">
+<style type="text/css">
+	A:link    {text-decoration: none; color: gold; }
+	A:visited {text-decoration: none; color: gold; }
+	A:active  {text-decoration: none; color: #FFF09D; }
+	A:hover   {text-decoration: underline; color: #FFF09D; }
+	.dcolor   {text-decoration: underline; color: yellow; }
+</style>	
+
+</head>
+<body id="bodybg" marginheight="0" marginwidth="0" leftmargin="0" rightmargin="0" topmargin="0" text="white">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table1">
+  <tr valign="top">
+    <td><a href="http://www.ugo.com/" target="_top"><img src="http://www.everlore.com/gimages/ugologo.gif" border="0" width="96" height="94" /></a></td>
+    <td width="100%">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table2">
+        <tr valign="top">
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100" ID="Table3">
+              <tr valign="top">
+                <td><a href="http://www.everlore.com/"><img src="http://www.everlore.com/gimages/site_name.gif" border="0" width="415" height="54" /></a></td>
+                <td><img src="http://www.everlore.com/gimages/masthead_glow.gif" border="0" width="249" height="54" /></td>
+              </tr>
+            </table>
+          </td>
+          <td><img src="http://www.everlore.com/gimages/spacer.gif" width="1" height="54" border="0" /></td>
+          <td width="100%"><img src="http://www.everlore.com/gimages/spacer.gif" width="1" height="1" border="0" /></td>
+        </tr>
+        <tr id="trmasthead">
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table4">
+              <tr valign="top">
+                <td class="font_small">
+
+					<!-- Today on UGO -->
+						<!--
+						*****************************************************************************************************************************************************
+						****                                                                                                                                             ****
+						**** VERY IMPORTANT: replace the variables 'channelname' & 'sitename' (in the iframe SRC tag below) according to what channel                    ****
+						**** you belong to on UGO and what your site name is.  'sitename' can ONLY be numbers or letters (NO SPACES), and MUST be the same as your site  ****
+						**** name in your ad tags.  Your channel name possibilities are: games, filmtv, music, tech, sports, or freestyle.  'bgcolor' is your desired    ****
+						**** background color, and 'fontcolor' is your desired font color.  These variables may be hex (i.e. black = #000000).                           ****
+						****                                                                                                                                             ****
+						**** EX: if your sitename was letsgojets and you belonged in the sports channel, then the code would look like this:                             ****
+						****  http://www.ugo.com/syndicatedContent/todayOnUGO/680x18_IframeContent.asp?channel=sports&site=letsgojets&bgcolor=FFFFFF&fontcolor=000000  ****
+						****                                         																			                         ****
+						*****************************************************************************************************************************************************
+						-->
+
+					<iframe width=680 height=18 marginwidth=0 marginheight=0 frameborder=0 scrolling=no src="http://www.ugo.com/syndicatedContent/todayOnUGO/680x18_IframeContent.asp?channel=channelname&site=sitename&bgcolor=000000&fontcolor=gold"></iframe>
+
+				</td>
+              </tr>
+            </table>
+          </td>
+          <td><img src="http://www.everlore.com/gimages/spacer.gif" width="1" height="19" border="0" /></td>
+          <td width="100%"><img src="http://www.everlore.com/gimages/spacer.gif" width="1" height="1" border="0" /></td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table5">
+              <tr valign="top">
+                <td background="http://www.everlore.com/gimages/masthead_bot_bg.gif"><img src="http://www.everlore.com/gimages/spacer.gif" width="401" height="1" border="0" /></td>
+                <td width="100%" background="http://www.everlore.com/gimages/masthead_line_bot_bg.gif">
+                <img src="http://www.everlore.com/gimages/masthead_line_bot.gif" border="0" width="71" height="21" /></td>
+              </tr>
+            </table>
+          </td>
+          <td background="http://www.everlore.com/gimages/masthead_line_bot_bg.gif"><img src="http://www.everlore.com/gimages/spacer.gif" width="1" height="21" border="0" /></td>
+          <td background="http://www.everlore.com/gimages/masthead_line_bot_bg.gif" width="100%"><img src="http://www.everlore.com/gimages/spacer.gif" width="1" height="1" border="0" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table6">
+  <tr valign="top">
+    <td>
+    <img src="http://www.everlore.com/gimages/feature_spacer.gif" border="0" width="46" height="90" /></td>
+<td>
+
+<script language=JavaScript src=http://www.obsidian-tech.com/absolutebm/abmx.aspx?z=1></script>
+
+</td>
+    <td width="100%" id="td728"><img src="http://www.everlore.com/gimages/spacer.gif" border="0" height="1" width="3" /></td>
+  </tr>
+</table>
+
+<table  border="0" width="100%" cellpadding="0" cellspacing="0" ID="Table7">
+  <tr valign="top">
+    <td><img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="1" height="3" /><br/><a href="http://www.rpglore.com/" target="_blank">
+    <img src="http://www.everlore.com/gimages/channel_masthead.gif" border="0" width="508" height="36" /></a><br/>
+      <map name="Map">
+        <area shape="rect" coords="2,1,204,38" href="" target="_top">
+        <area shape="rect" coords="247,2,301,34" href="" target="_top">
+      </map>
+      <table border="0" cellpadding="3" cellspacing="0" ID="Table8">
+        <tr valign="top">
+				<!-- Network Links -->
+            <td class="masthead"><a href="http://www.EverLore.com/" class="link" target="_top">EQ</a></td>
+            <td class="masthead">-</td>
+            <td class="masthead"><a href="http://EverLore2.RPGLore.com/" class="link" target="_top">EQ II</a></td>
+            <td class="masthead">-</td>
+				<td class="masthead"><a href="http://www.CamelotLore.com/" class="link" target="_top">DAoC</a></td>
+            <td class="masthead">-</td>
+				<td class="masthead"><a href="http://www.MagicLore.com/" class="link" target="_top">MTG</a></td>
+            <td class="masthead">-</td>
+				<td class="masthead"><a href="http://www.AsheronsLore.com/" class="link" target="_top">AC</a></td>
+            <td class="masthead">-</td>
+				<td class="masthead"><a href="http://AC2.RPGLore.com/" class="link" target="_top">AC II</a></td>
+            <td class="masthead">-</td>
+				<td class="masthead"><a href="http://www.AnarchyLore.com/" class="link" target="_top">AO</a></td>
+            <td class="masthead">-</td>
+				<td class="masthead"><a href="http://www.StarWarsLore.com/" class="link" target="_top">SWG</a></td>
+			</tr>
+	</table></td>
+    <td ><img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="69" height="1" 
+    /></td>
+    <td background="http://www.everlore.com/gimages/channel_masthead_bg.gif"><img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="250" height="1" /></td>
+    <td width="100%" id="tdchannel"><img src="http://www.everlore.com/gimages/spacer.gif" border="0" height="1" width="1" /></td>
+  </tr>
+</table>
+<!-- Main Table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table9">
+  <tr valign="top">
+
+		
+		<!-- menu stuff -->
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table10">
+        <tr valign="top">
+          <td><img src="http://www.everlore.com/gimages/main.gif" border="0" width="214" height="21" /></td>
+          <td background="http://www.everlore.com/gimages/main_bg.gif"><img src="http://www.everlore.com/gimages/spacer.gif" width="441" height="1" border="0" /></td>
+          <td background="http://www.everlore.com/gimages/main_bg_line.gif" width="100%">
+          <img src="http://www.everlore.com/gimages/main_lines.gif" border="0" width="66" height="21" /></td>
+        </tr>
+      </table>
+</tr>
+  <tr valign="top" id="trmain">
+    <td background="http://www.everlore.com/gimages/dots_bg.gif">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table11">
+        <tr valign="top">
+			 <!-- Site Menu -->
+          <td background="http://www.everlore.com/gimages/menu_bg.gif" class="font_menu"><img src="http://www.everlore.com/gimages/spacer.gif" width="145" height="1" border="0" />   
+
+
+			
+			<!-- main site links -->
+		
+
+	
+
+<font color="white"><b>Quick Links</b></font><br>
+<b>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/skills/" class="link" target="_top"><font color="beige">Skills</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/items/" class="link" target="_top"><font color="beige">Items</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/magic/" class="link" target="_top"><font color="beige">Magic</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/races_classes/" class="link" target="_top"><font color="beige">Classes/Races</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/geography/" class="link" target="_top"><font color="beige">Geography</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/bestiary/" class="link" target="_top"><font color="beige">Bestiary</font></a><br>
+<img src="http://www.everlore.com/gimages/pacer.gif" border="0" width="10" height="1"><a href="http://www.everlore.com/quests/" class="link" target="_top"><font color="beige">Quests</font></a><br>
+</b><br>
+<font face="verdana" size="2" color="white"><b>Everlore</b></font><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/ServiceFee.asp" class="link"><b>Remove Ads</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/default.asp" class="link">Main Page</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/Archives.asp" class="link">News Archives</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/addwizard/addwiz.asp?mode=news" class="link">Submit News</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/NewsLetter.asp" class="link">News Letters</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="mailto:news@everlore.com" class="link">Email News</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/polls/default.asp" class="link">Polls</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/Default.asp?mode=5" class="link">Introduction</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/crystalball.asp" class="link"><b>Search Site</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/register.asp" class="link"><b>Register</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MyInfo.asp" class="link"><b>Your Info</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/GuildPlayerMain.asp" class="link">Guild/Player</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MSG_Mailbox.asp" class="link"><b>Your Messages</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/login.asp" class="link"><b>Login</b></a>&nbsp;/&nbsp;<a href="/login.asp?mode=logoff" class="link"><b>Logoff</b></a></font><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/chat/default.asp" class="link"><b>IRC Live Chat</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/addwizard/addwiz.asp" class="link"><b>Add Wizard</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/ContactUS.asp" class="link">Contact Us</font></a><br>
+<br>
+			
+			<!-- main site links -->
+		
+
+	
+
+<font face="verdana" size="2" color="white"><b>Community</b></font><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_MR.asp?LT=1&amp;SID=7&amp;SN=Everlore&amp;CAT=Servers&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;PL=7" class="link"><b>MOST RECENT!</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_SEARCH.asp?SID=7&amp;SN=&amp;PL=8" class="link"><b>Search Forums</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/ForumRules.asp" class="link"><b>Forum Rules</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_LISTCAT.asp?sid=7&amp;SN=Everlore&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;Cat=General&amp;PL=1" class="link">General Forums</a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_TOPICS.asp?fid=76&amp;FN=MainHall&amp;sid=7&amp;SN=Everlore&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;Cat=General&amp;PL=2" class="link">Main Hall</a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_LISTCAT.asp?sid=7&amp;SN=Everlore&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;Cat=Servers&amp;PL=1" class="link">Server Specific</a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_LISTCAT.asp?sid=7&amp;SN=Everlore&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;Cat=Classes&amp;PL=1" class="link">Class Specific</a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_LISTCAT.asp?sid=7&amp;SN=Everlore&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;Cat=Trade+Skills&amp;PL=1" class="link">Trade Skills</a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_LISTCAT.asp?sid=7&amp;SN=EverQuest&amp;SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&amp;Cat=Epic+Quests&amp;PL=1" class="link"><b>Epic Quests</b></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/MB_TOPICS.asp?fid=151&FN=Off+Topic+Main+Hall&sid=7&SN=EverQuest&SURL=http%3A%2F%2Fwww%2Eeverlore%2Ecom&Cat=General&PL=2" class="link">Off-Topic</a><br>
+<br>
+			
+			<!-- main site links -->
+		
+
+	
+
+<font face="verdana" size="2" color="white"><b>Game Info</b></font><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/Recent.htm" class="link"><b>MOST RECENT!</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/items/" class="link">Items</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/quests/" class="link">Quests</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/bestiary/" class="link">Bestiary</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/geography/" class="link">Geography</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/magic/" class="link">Magic/Spells</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/guides.asp" class="link">Player Guides</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/races_classes/" class="link">Class Guides</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/skills/" class="link">Class Skills</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/Stats.asp" class="link">Statistics</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/screenshots/default.asp" class="link">Screenshots</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/guilds/default.asp" class="link">Guild Database</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/stories/default.asp" class="link">Player Stories</font></a><br>
+<br>
+<font face="verdana" size="2" color="white"><b>Events/News</b></font><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="http://www.everlore.com/events/Default.asp?event=408511" class="link"><b>EQ Fan Faire II</b></font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="http://www.everlore.com/events/Default.asp?event=351268" class="link">EQ Fan Faire I</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/veranttrip/default.asp" class="link">Verant Visit</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/velious/default.asp" class="link">Velious Signing</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/events/Default.asp?event=351265" class="link">Velious Party</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/eqevent/default.asp" class="link">EQ Event I</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/eqevent2/default.asp" class="link">EQ Event II</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/eqevent3/default.asp" class="link">EQ Event III</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/ChatLogs.asp" class="link">Chat Logs</font></a><br>
+<br>
+<font face="verdana" size="2" color="white"><b>Other Links</b></font><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/askmilo/default.asp" class="link">Milo Column</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/shirts/default.asp" class="link">Everlore T-Shirts</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/lorefiles/default.asp" class="link">EQ Files</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/links/default.asp" class="link">EQ Links</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="http://everquest.station.sony.com/main/faq.jsp" class="link">Everquest FAQ</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><font face="verdana" size="1">&nbsp;<a href="/Default.asp?mode=12" class="link">Want to Help?</font></a><br>
+<br>
+<font face="verdana" size="2" color="white"><b><u>Network</u></b></font><br>
+
+			
+			<!-- main site links -->
+		
+
+	
+
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.EverLore.com" class="link"><font face="verdana" size="1">EverQuest</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://EverLore2.RPGLore.com" class="link"><font face="verdana" size="1">EverQuest II</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.AsheronsLore.com" class="link"><font face="verdana" size="1">Asherons Call</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://AC2.RPGLore.com" class="link"><font face="verdana" size="1">Asherons Call II</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.AnarchyLore.com" class="link"><font face="verdana" size="1">Anarchy Online</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.CamelotLore.com" class="link"><font face="verdana" size="1">Camelot</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.StarWarsLore.com" class="link"><font face="verdana" size="1">Star Wars</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.MagicLore.com" class="link"><font face="verdana" size="1">Magic</font></a><br>
+<img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="10" height="1"><a href="http://www.RPGLore.com" class="link"><font face="verdana" size="1">RPG Lore</font></a><br>
+
+		<!-- End the Menu Table -->			
+		<!--Everlore Homepage 120x60-->
+		</td>          
+      
+          <!-- Site Data (news, content, etc.) -->
+          
+		
+		
+		<!-- Information Stuff -->
+		<td class="main_font" width="100%">
+
+
+
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table12">
+        <tr valign="top">
+			 <!-- Site Menu -->
+          <td background="" class="font_menu"><img src="http://www.everlore.com/gimages/spacer.gif" width="145" height="1" border="0" />
+			<!-- Headlines and Daily Vision Here -->
+			<center>
+					<table border="0" width="100%" cellspacing="0" cellpadding="0">
+						<!-- Headlines -->
+						<tr>
+						<td class="main_font" valign="top" width="60%">
+					
+							<b>Latest Headlines:</b><br>
+							<font size="1">
+							
+						<!-- Daily Vision -->
+
+<font face="verdana" size="1">&nbsp;<a href="#1" class="link">[3/29/2003]&nbsp;&nbsp;Wednesday Night in Norrath #127</font></a><br><font face="verdana" size="1">&nbsp;<a href="#2" class="link">[3/29/2003]&nbsp;&nbsp;EQ/Magic artist Ken Meyer Jr. 1/2 price sale</font></a><br><font face="verdana" size="1">&nbsp;<a href="#3" class="link">[3/29/2003]&nbsp;&nbsp;Norrath's Search and Rescue</font></a><br><font face="verdana" size="1">&nbsp;<a href="#4" class="link">[3/28/2003]&nbsp;&nbsp;Restless Vision Gallery Update</font></a><br><font face="verdana" size="1">&nbsp;<a href="#5" class="link">[3/25/2003]&nbsp;&nbsp;Maelin Starpyre Character Transfer Service Extended Again!</font></a><br><font face="verdana" size="1">&nbsp;<a href="#6" class="link">[3/20/2003]&nbsp;&nbsp;Fan Faire Event Schedule</font></a><br><font face="verdana" size="1">&nbsp;<a href="#7" class="link">[3/13/2003]&nbsp;&nbsp;Race Across Norrath on 3/16</font></a><br><font face="verdana" size="1">&nbsp;<a href="#8" class="link">[3/11/2003]&nbsp;&nbsp;Bill Trost Interview</font></a><br><font face="verdana" size="1">&nbsp;<a href="#9" class="link">[3/10/2003]&nbsp;&nbsp;Beta Test EQ for the Macintosh</font></a><br><font face="verdana" size="1">&nbsp;<a href="#10" class="link">[3/7/2003]&nbsp;&nbsp;Baelish takes a look inside SOE</font></a><br><font face="verdana" size="1">&nbsp;<a href="#11" class="link">[3/6/2003]&nbsp;&nbsp;New Everquest Server</font></a><br><font face="verdana" size="1">&nbsp;<a href="#12" class="link">[2/27/2003]&nbsp;&nbsp;Legacy of Ykesha items will be gaining a Recommended Level</font></a><br><font face="verdana" size="1">&nbsp;<a href="#13" class="link">[2/26/2003]&nbsp;&nbsp;Research - an old skill given new life</font></a><br><font face="verdana" size="1">&nbsp;<a href="#14" class="link">[2/24/2003]&nbsp;&nbsp;The Legacy of Ykesha Now Live</font></a><br><font face="verdana" size="1">&nbsp;<a href="#15" class="link">[2/23/2003]&nbsp;&nbsp;Register and Billing Server Status</font></a><br>
+<br>&nbsp;<a href="/AddWizard/AddWiz.asp?mode=news"><font face="verdana" size="2" color="white"><b>Submit News</b></font></a> - <a href="addwizard/addwiz.asp?mode=screenshot"><font face="verdana" size="2" color="white"><b>Submit Daily Vision</b></font></a><br><br>
+												
+							</font>
+						</td>
+								
+								<!-- Border Table Between Headlines and Picture -->
+								<!-- Daily Vision -->
+						
+						<td class="main_font" align="center" valign="top" width="40%">
+						  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+							<tr>
+							  <td align="left" width="100%" colspan="2"><font size="2"><b>Daily Vision:</b></td>
+							</tr>
+							<tr>
+							  <td align="left" width="100%" colspan="2"><a href="ShowScreenShot.asp?ID=608028"><img src="http://www.everlore.com/files2/FLO608028_F.jpg" border="0" width="150" height="113"></a></td>
+							</tr>
+							<tr>
+							  <!-- Daily Vision Description -->
+							  <td align="left" width="70%"><font size="1">The animation of Tallon Zek using his giant bow is quite a sight.
+
+It was a fun fight & loots were also nice :)
+
+
+
+Solamar
+65 Archon
+Pravus Dei
+Veeshan</font></td>
+							  <td align="left" width="30%"><font size="1">&nbsp;</font></td>
+							</tr>
+						  </table>
+						</td>
+					</tr>
+					<tr>
+					  <td><font size="2"><b>Latest Poll:</b></td>
+					</tr>
+					<tr>
+					  <td>
+	  <table border="0" cellspacing="0" cellpadding="0" ID="Table6" width="100%"> 
+	    <form method="POST" action="default.asp" id="formP" name="formP">
+	    <tr>
+		  <td width="1%">&nbsp;</td>
+		  <td width="99%">
+			<table cellspacing="0" width="100%" cellpadding="" border="0" ID="Table7" class="main_font">						
+			  <tr>
+			  																						
+			  </tr>	
+			  <tr>
+			    <td valign="top" align="left" width="100%">
+			    <font face="Verdana" SIZE="1" class="poll_font"><i>Will you be transferring characters to the new Maelin Starpyre server?
+</i></font>
+			    </td>
+			  </tr>
+			  
+			  <tr>
+			 
+			    <td valign="top" align="left" width="100%">
+			    <font face="Verdana" SIZE="1" class="poll_font">
+			    <input type="radio" value="V383" name="P" ID="Radio1">
+			    What do you mean will I?  I'm 65 there now!
+			    </font>
+			    </td>
+			  </tr>
+			  
+			  
+			  <tr>
+			 
+			    <td valign="top" align="left" width="100%">
+			    <font face="Verdana" SIZE="1" class="poll_font">
+			    <input type="radio" value="V384" name="P" ID="Radio1">
+			    No, my toons are happy right where they are thank you!
+			    </font>
+			    </td>
+			  </tr>
+			  
+			  
+			  <tr>
+			 
+			    <td valign="top" align="left" width="100%">
+			    <font face="Verdana" SIZE="1" class="poll_font">
+			    <input type="radio" value="V385" name="P" ID="Radio1">
+			    Frankly, Sony is out of their mind expecting anyone to pay 75 bucks for that privilege
+			    </font>
+			    </td>
+			  </tr>
+			  
+			  
+			  <tr>
+			    <td>&nbsp;</td>
+			  </tr>
+			 <tr>
+			    <td valign="top" align="Left">
+			    <font face="Verdana" SIZE="1">
+			    <input type="submit" value="Submit Vote" name="submit" ID="Submit1" >
+			    <input type="hidden" value="Vote" name="Vote" ID="Hidden1">
+			    <input type="hidden" value="56" name="poll" ID="Hidden2">
+			    
+			    </font>
+			    </td>
+			  </tr>
+			</table>
+		</td>
+
+	</tr>
+	</table>
+
+	<!--<p>&nbsp;</p>-->
+	</form>
+
+
+</td>
+					</tr>
+						
+						
+</table></center>
+			
+<!-- News/Information/Menu -->
+				<table border="0" background="http://www.everlore.com/gimages/content_split.gif" height="12" width="100%" cellspacing="0" cellpadding="0" ID="Table16">
+					<tr><td valign="top" height="12" width="100%">
+                      <img src="http://www.everlore.com/gimages/content_split.gif" width="22" height="12"></td></tr>				
+				</table>
+
+			
+
+
+			
+
+
+<!-- Begin News/Information Section -->
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr id="trmasthead">
+    <td valign="middle" class="main_font" align="center">
+	  
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Saturday, March 29 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607979" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="1">Wednesday Night in Norrath #127</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607979" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:evilavatar@evilavatar.com" class="link">Evil Avatar</b></a>
+							[3/29/2003-10:27:54 PM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+  <p>Dug up from a fresh grave, the new edition of Wednesday Night in Norrath, 
+  Episode 127, is now available!<br>
+  <br>
+  WNiN #127 Roshawn's Lucky Rabbit Foot, or The day the rabbit met its maker<br>
+  <br>
+  <a href="http://www.evilavatar.com/EA/Editorials/WednesdayNightinNorrath/M44148/">
+  [Click Here]</a></p>
+</blockquote>
+</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607945" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="2">EQ/Magic artist Ken Meyer Jr. 1/2 price sale</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607945" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:kenmeyerjr@cox.net" class="link">ken meyer jr</b></a>
+							[3/29/2003-5:23:46 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+  <p>EQ and Magic artist Ken Meyer Jr. is having a 1/2 price Tax Relief sale on 
+  his website at <a href="http://www.kenmeyerjr.com">http://www.kenmeyerjr.com</a>. 
+  Half price on available originals, prints, commissions, everything! Only until 
+  April 15th, so get there now!</p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607926" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="3">Norrath's Search and Rescue</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607926" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:eratimus_ker@yahoo.com" class="link">Eratimus Swiftarrow</b></a>
+							[3/29/2003-12:33:00 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+  <p>In the distance a call is heard. Men and Women have been lost to the world 
+  and at times recovery is nay a possibility, save by those trained to do so. We 
+  are those who seek to assist those in grave need. We are those who will rescue 
+  those that the Gods "GMs/Guides" are not able. We will charged the battle 
+  grounds, seek entrance into the most dangerous of places, to assist those in 
+  need, to assist the citizens of Norrath, Luclin and the Planes.<br>
+  <br>
+  We are an elite team of Rescuers dedicated to the Search and Rescue of those 
+  in need within Norrath, Luclin, and the Planes. We are a FREE service and 
+  donations or tips will not be asked in return, but if offered by the 
+  individual being assisted the member will be free to accept it.<br>
+  <br>
+  We will provide the following services:<br>
+  <br>
+  Corpse Recovery in dangerous locations<br>
+  Corpse Locations<br>
+  Guiding out of dangerous Areas and provide safe travel.<br>
+  Resurrections and Revives: for those in grave areas that they can not re-enter 
+  and search to find it or must travel safely a great distance from there 
+  corpse. NO ONE WILL BE HELPED IF The need for true help is not warrented.<br>
+  Drag Corpses to the Nearest Safe Zone<br>
+  <br>
+  Once the individual has been united with his/her/its corpse or can reach it 
+  safely, or they have arrived at a Safe Haven, then the members of the SAR team 
+  will depart.<br>
+  <br>
+  We will not provide:<br>
+  <br>
+  Camping of Quests or Mobs<br>
+  Assistance in slaying mobs if no Rescue Assistance is needed<br>
+  <br>
+  We are not able to provide any corpse summoning from another zone, graphics 
+  corrections, or any assistance normally taken care of by the Gm/Guide Service. 
+  We do that which policies do not allow them to do. The direct interaction 
+  assistance with the PCs "Player Characters" "YOU" is what we do.<br>
+  <br>
+  Currently Supported Servers:<br>
+  <br>
+  Druzzil Ro<br>
+  The Nameless<br>
+  Drinal<br>
+  Kanara<br>
+  Lanys T'vyl<br>
+  Erollisi Marr<br>
+  Saryrn<br>
+  Firiona Vie<br>
+  Tallon Zek<br>
+  Innoruuk<br>
+  Bertoxxulous<br>
+  Mithaniel Marr<br>
+  Xev<br>
+  Vazaelle<br>
+  Quellious<br>
+  E'ci<br>
+  Tunare<br>
+  Terris-Thule<br>
+  <br>
+  The majority of the assistance requests received are mainly those that can 
+  wait till we gather a rescue team. But if you have the time, we can help with 
+  minor rescues.<br>
+  <br>
+  Visit the site to request assistance or join our ranks:
+  <a href="http://www.nsar.cjb.net">www.nsar.cjb.net</a></p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Friday, March 28 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607919" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="4">Restless Vision Gallery Update</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607919" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:evan_smith@excite.com" class="link">Hagan</b></a>
+							[3/28/2003-7:01:15 PM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+  <p>Hi, I'd like to announce a gallery update at Restless Vision Graphics. 
+  Several new character portraits have been added and are on display in the 
+  galleries.<br>
+  <br>
+  Thanks :)<br>
+  <br>
+  Evan Smith<br>
+  <a target="_blank" href="http://www.restlessvision.com">Restless Vision 
+  Graphics</a><br>
+  <br>
+ </p>
+</blockquote>
+</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Tuesday, March 25 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607321" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="5">Maelin Starpyre Character Transfer Service Extended Again!</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607321" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[12]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/25/2003-7:38:02 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">This has been extended yet again.  If you want to transfer your character to Maelin Starpyre, you know have until March 31:<br>
+<blockquote>
+  <p>To better serve those interesting in taking advantage of the special 
+  Character Transfer severice for the Maelin Starpyre server, we've extended 
+  this sever to March 31. </p>
+  <p>This service is offered for a limited time and allows players to transfer 
+  characters, with all items and coin, for a fee to Maelin Starpyre.</p>
+  <p>Check out our
+  <a href="https://store.station.sony.com/eq_item_moves/index.jsp">Special 
+  Character Transfer Service page</a> for full details.</p>
+</blockquote>
+So if you haven't already transfered your character, now is your last chance to pay SoE $75 bucks to have the honor of letting them transfer it</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Thursday, March 20 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607455" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="6">Fan Faire Event Schedule</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607455" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/20/2003-9:59:45 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+The Fan Faire Event Schedule is now up on the official Eq live website.  You can find it <a href="http://everquest.station.sony.com/fanfaire/event_schedule.jsp"><b>here</b></a>.  The fan faire begins next weekend so hopefully if you wanted to attend you have already registered.  If you have any questions regarding this Fan Faire you should check out the official Fan Faire <a href="http://everquest.station.sony.com/fanfaire/faq.jsp"><b>FAQ</b></a>.<br>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Thursday, March 13 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=607032" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="7">Race Across Norrath on 3/16</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=607032" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/13/2003-11:08:26 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">This news item was sent to us by Cage:
+<blockquote>
+  <p>Hey all Cage here,<br>
+  <br>
+  Do any of you long time gamers remember the races across Norrath, gladiator 
+  tournaments, and bake sales? Well the Misfits of Mayhem are going to bring 
+  them back! We have many ideas on how to make our guild larger and more known. 
+  For instance, this Sunday, 3/16, 12:00 Eastern, on the Karana server, we will 
+  be hosting a race across Norrath. It will start in Akkanon and will end at the 
+  ent of Lavastorm. We will accept all levels 1-3, the winners will recive the 
+  following: </p>
+  <p><br>
+  1st Place: 300pp<br>
+  2nd Place: 100pp<br>
+  3rd Place: 75 pp</p>
+  <p><br>
+  Now this wont be a simple cut and dry race, there will be some 
+  rules/surprises. For the rules there will be no speed increasing spells cast 
+  on the people racing, unless its from a guild member trap (I'll get to that in 
+  a second). The character must be naked during the race. The racies must pass 
+  in the KoS book. They must race on land at all times. We will bind them all in 
+  Akkanon. And no teleports will be allowed. Now for the surprises. We will set 
+  up traps along the way from killing them to giving them SoW. We will have a 
+  chat channel to talk in so everyone can share the fun. I think that this will 
+  be very fun and will provide guild advertisement. If you are planning on 
+  coming or want more information e-mail me at Tomahawks98@aol.com. Please come 
+  everyone. And remember March 16th 12:00 Eastern Time, Karana Server. <br>
+  <br>
+  Thank you, <br>
+  <br>
+  Cage<br>
+  (54th level Monk)</p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Tuesday, March 11 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=606884" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="8">Bill Trost Interview</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=606884" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[1]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/11/2003-11:45:50 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">The official EQ Live site posted an interesting <a href="http://eqlive.station.sony.com/community/articles.jsp?id=54638"><b>interview</b></a> with one of the orginal Everquest co-creators and Lead Designer for Everquest II, Bill Trost.  Here's an excerpt:<br>
+<blockquote>
+  <p><b>SF: What were your expectations of EverQuest in the beginning? Did you 
+  envision having a sustained subscriber base of more than 400k four years after 
+  release?</b></p>
+  <p>BT: No way.  No how.  We thought that if we could get 70k over the life of 
+  the game (which we hoped to be about 16 months or so), we would be golden.  
+  EverQuest's longevity and continued growth is just incredible and a testament 
+  to the skill of the talented designers, engineers and artists that came on 
+  board after us original farts.  I have the highest respect for them and feel 
+  they have consistently improved the game over the years.  EQ is more fun now 
+  than it ever was. </p>
+  <p><b>SF: And on beating such expectations, one word to describe your thoughts 
+  now on such a huge accomplishment?</b></p>
+  <p>BT: Thanks!</p>
+  <p><b>SF: Looking back on your role with EQ, what is your most shining moment? 
+  What's your one most favorite thing about the game?</b></p>
+  <p>BT: Queen Klicnik!  Hee...  Seriously, I love that so many people enjoy 
+  what we worked so long and hard on.  We accomplished what we set out to do and 
+  what nobody, including ourselves some of the time, actually thought we could 
+  do.  We created a brand new fantasy world and a fun game.  Norrath is a place 
+  where people can meet, become friends, have adventures, then tell stories 
+  about the good times they had.  That is awesome.  </p>
+  <p><b>SF: For balance, what moment would you love to take back?</b></p>
+  <p>BT: I wish, on the original release, we would have had the time and good 
+  management support to do some of the awesome things that Rich Waters, Shawn 
+  Lord, Scott Hartsman and the rest of the EQ Live team have done with PoP and 
+  LoY.  Those guys (and gals) rock.  They are totally focused on EverQuest and 
+  have excellent leadership in Robert Pfister and Rod Humble.   EQ is a much 
+  better game since the gauntlet was passed to them.</p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Monday, March 10 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=606797" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="9">Beta Test EQ for the Macintosh</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=606797" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/10/2003-9:11:46 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">This information was sent to us by Nathan Pearce, Director of Web Presence for SOE:<br>
+<blockquote>
+<p>Registrations are now being accepted to participate in the EverQuest for the 
+Macintosh beta test. The first phase of testing is scheduled to begin soon. 
+Check out the beta test website and see what you'll need and to fill out the</p>
+<p>application:
+<a HREF="http://eqmac.station.sony.com/registration/index.jsp">
+http://eqmac.station.sony.com/registration/index.jsp</a></p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Friday, March 7 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=606610" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="10">Baelish takes a look inside SOE</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=606610" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/7/2003-9:36:04 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">The Everquest Live site posted an article about  Baelish's (of Casters Realm) recent vist to SOE offices in San Diego where he witnessed a behind the scenes look at LoY.  You can find his article <a href="http://eq.crgaming.com/viewarticle.asp?Article=5047"><b>here</b></a>.  Here is an excerpt:<br>
+<blockquote>
+  <p><i><b>Watch me pull a rabbit out of my hat! </b></i></p>
+  <p><i>Planes of Power introduced a lot of new code which up until the Legacy 
+  of Ykesha had not been fully activated. The major event leading up to the 
+  activation of the extension involved a fully scripted event with no Human 
+  actors involved. </i></p>
+  <p><i>The launch event involved a script 100 times larger than the Sleepers 
+  Tomb event, involving over 10 zones and over 1500 scripted NPCs. It was an 
+  experiemental event that was a complete success. The technology developed 
+  worked and holds out for some exciting new additions to the game in the future 
+  not only in terms of dynamic events but for more large scale quest based 
+  activities similar to the fabled 10th Ring War of Velious. </i></p>
+  <p><i>One of the most amazing things about the new scripting system is how 
+  complex it can be. NPC’s can now ‘zone’ from one to the next to complete their 
+  tasks, they can also be set to only proceed with certain actions once multiple 
+  NPC’s have reached certain locations or performed certain deeds (or even 
+  died!). </i></p>
+  <p><i>It’s an exciting new element to the EverQuest world which players can 
+  expect to see a lot more of in the near future. </i></p>
+  <p><i><b>So will all new zones cost money now? </b></i></p>
+  <p><i>Apparently the answer is no. The dev team currently has two new zone 
+  revamps in the works: Plane of Hate and Veksar. </i></p>
+  <p><i>The Plane of Hate is being rebuilt from the ground up to correct its 
+  numerous pathing issues. The feel of the zone will remain similar to how it is 
+  now but the zone will, for all intents, be a completely new experience for 
+  players. </i></p>
+  <p><i>Veksar is the underwater city in the Lake of Ill Omen and will be aimed 
+  for Level 50 – 65 players. </i></p>
+  <p><i>The team also mentioned that the Plane of Mischief revamp is continuing. 
+  One revamp was completed but was rejected by Rich Waters who felt that it 
+  could be improved even further before going live. </i></p>
+  <p><i>No exact ETA on any of the new zones were given. </i></p>
+  <p><i>The team stressed that players can expect to see a lot of zones 
+  receiving some ‘love’. This won’t always mean total revamps but will include 
+  improvements of many kinds: new NPC’s, Quests, Items, improvements to pathing 
+  and spawns etc. Nurga was mentioned as one of the zones that could do with 
+  some tweaks.</i></p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Thursday, March 6 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=606512" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="11">New Everquest Server</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=606512" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[4]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[3/6/2003-10:48:32 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">A new Everquest server is now live.  This article was posted on the official everquest website regarding this development:<br>
+<blockquote>
+<i>
+  <p>Maelin Starpyre is the name of the brand new server opened in EverQuest. 
+  This is a standard rules, non-split, server.</p>
+  <p>As part of the launch of the Maelin Starpyre server, Sony Online 
+  Entertainment is also offering a specially revised Character Transfer Service 
+  for this new server only.</p>
+  <p>For a fee, characters can be transferred to Maelin Starpyre with all 
+  equipment and coin intact and there will be no wait.</p>
+  <p>Normally when a new server opens in EQ, there is a customary waiting period 
+  of 6-months before character transfers may be requested to the new server. 
+  Just for Maelin Starpyre, however, character transfers are available now!</p>
+  <p>This revised Character Transfer Service for the Maelin Starpyre server is 
+  available for a limited time. To take advantage of this unprecedented 
+  opportunity, visit the
+  <a href="https://store.station.sony.com/eq_item_moves/index.jsp">Maelin 
+  Starpyre Character Transfer Service</a> page.</p>
+</i>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Thursday, February 27 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=606196" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="12">Legacy of Ykesha items will be gaining a Recommended Level</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=606196" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[2/27/2003-9:48:07 PM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">This article was posted by Alan in the Developers Corner:
+<blockquote>
+  <b>Some Legacy of Ykesha items will be gaining a Recommended 
+  Level</b>
+  <p>With our next patch we will be adding Recommended Levels to some of the 
+  items that can be found in The Legacy of Ykesha. We will be adding them to 
+  items as needed and at levels that are reasonable for the items. This 
+  shouldn't change too much for most folks, but we wanted to let you know before 
+  it happened. <br>
+  <br>
+  Alan </p>
+</blockquote>
+You can find this article <a href="http://eqlive.station.sony.com/community/dev_view.jsp?id=54449">here</a>.</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Wednesday, February 26 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=605902" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="13">Research - an old skill given new life</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=605902" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[5]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[2/26/2003-10:05:30 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">This information was posted on the offical EQ Live site:<br>
+<blockquote>
+<font color="gold">
+  <p>With this patch we introduced the ability for intelligence casters 
+  (Enchanters, Magicians, Necromancers and Wizards) to create additional spell 
+  scrolls using their research skill. Many of the newly researchable spells have 
+  only been available from quests or killing NPCs in the past. The new research 
+  still requires components from risky locations or dangerous foes. Our goal is 
+  to increase the number of ways to earn rare spells, without reducing the 
+  challenge required. <br>
+  <br>
+  This, however, creates a bit of an inequity between the intelligence casters 
+  and the priest classes (Clerics, Druids and Shaman) when it comes to acquiring 
+  this type of spell. While there is nothing inherently wrong with different 
+  classes earning their spells in different ways, we don't see a reason to give 
+  more options to one type of caster than another. In this case, we have taken 
+  the opportunity to give the research skill a little more value and at the same 
+  time negate any imbalance between classes. <br>
+  <br>
+  Some time in the near future we plan to introduce recipes for the creation of 
+  certain spells for the priest classes. Intelligence casters can use their 
+  research skill to create these priest spell scrolls, and priest classes will 
+  benefit by having an alternate method for obtaining these spells. This helps 
+  out both priests and intelligence casters, and creates a new niche for 
+  research as a trade skill. <br>
+  <br>
+  Alan</p>
+</font>
+</blockquote>
+You can view this article on the official EQ Live site <a href="http://eqlive.station.sony.com/community/dev_view.jsp?id=54405">here</a>!</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Monday, February 24 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=605741" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="14">The Legacy of Ykesha Now Live</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=605741" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[0]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:doyle@rpglore.com" class="link">Doyle</b></a>
+							[2/24/2003-10:03:11 AM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+The Legacy of Ykesha is now live and here's the patch message to prove it:<br><br><br>
+<font face="verdana" size="3">
+<a href="viewarticle.asp?id=605740"><b>View Full Patch Message</b></a>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td valign="top" align="right"><font face="verdana" size="2" color="white"><b>
+		
+</b></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  																										
+										<!-- Actual News -->
+  <tr>
+    <td  width="100%" valign="top">
+			<!-- DAILY INDICATOR -->
+			<center>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<tr id="trmasthead">
+						<td valign="middle" class="main_font" align="center" colspan="2">
+							<font size="3"><b>Sunday, February 23 2003</b></font>
+						</td>
+					</tr>
+				
+			</center>
+			
+				<tr>
+					<td width="70%" bgcolor="#DCDCDC">
+					  <a href="/NewsAdmin.asp?mode=edit&amp;id=605692" class="link"><img BORDER="0" ALT="Edit/Delete" src="http://www.everlore.com/gimages/edit.gif"></a>
+					  <font face="verdana" size="3" color="black"><a name="15">Register and Billing Server Status</a></font>
+					</td>
+					<td width="30%" bgcolor="#DCDCDC" align="right">
+					  <a href="Comments.asp?ID=605692" class="link"><font face="Verdana" size="2" color="#2C3F56">Comments[1]</font></a>
+					</td>
+				</tr>
+				<tr>
+				  <td width="100%" colspan="2">
+				   <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table1">				     
+				     <tr>
+				       <td width="01%">&nbsp;</td>
+				       <td width="98%">
+				         <table border="0" width="100%" cellspacing="0" cellpadding="0" ID="Table2">				     
+				          
+							<tr>
+							<td colspan=2>
+							<font face="verdana" size="2" color="white">
+							<b><a href="mailto:PkmnDragon@hotmail.com" class="link">PkmnDragon</b></a>
+							[2/23/2003-6:39:00 PM]</font>
+							</td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>				
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white"><blockquote>
+  <p>The registration and billing servers are currently down and the GM's have 
+  no ETA as of 8:30 CDT. They have been down since 5:30 CDT to my knowledge they 
+  may have been down longer but I am not sure. I am willing to bet that they 
+  won't be brought up till after the servers for the LOY patching are brought 
+  back up tomorow.</p>
+</blockquote></font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+							<tr>
+							<td colspan=2><font face="verdana" size="2" color="white">&nbsp;</font></td>
+							</tr>
+								</td>
+								</tr>
+							</td>
+							</tr>
+						  </table>
+						<td width="01%">&nbsp;</td>
+					   </tr>
+					 </table>
+				    </td>
+				   </tr>
+				
+				
+				
+		
+		 </table>
+		</td>
+		
+	</tr>
+	<tr>
+		<td valign="top" width="100%" colspan="3">
+											
+		</td>
+	</tr>	
+	<tr>
+	
+				<td colspan="3" nowrap>
+					<font size="2" face="verdana">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>
+				</td>
+	
+				</tr>						
+
+</table>
+</td>
+<!-- Buffer Table Between Information/News and Menu -->
+<td valign="top" align="right">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" ID="Table17">
+  <tr>
+    <td bgcolor="black"><font face="verdana" color="white" size="2"><b>Sponsor</b></font></td>
+  </tr>
+  <tr>
+    <td bgcolor="black">
+      <table width="100%" border="0" cellspacing="1" ID="Table18">
+        <tr>
+          <td bgcolor="white" align="left"><script language=JavaScript src=http://www.obsidian-tech.com/absolutebm/abmx.aspx?z=18></script></td>
+        </tr>
+        <tr>
+          <td bgcolor="white" align="left"><script language=JavaScript src=http://www.obsidian-tech.com/absolutebm/abmx.aspx?z=6></script></td>
+        </tr>
+        <tr>
+          <td bgcolor="white" align="left"><script language=JavaScript src=http://www.obsidian-tech.com/absolutebm/abmx.aspx?z=19></script></td>
+        </tr>
+      </table>      
+    </td>
+  </tr>
+</table>
+
+</td>
+								
+								</tr>
+						</table>
+						<!-- End News/Information/Menu --></p>
+																	
+					</td>
+				</tr>
+			</table>
+
+			
+			
+		<!-- And So Ends the Big Table -->						
+		</td>
+		
+		
+		
+	</tr>
+</table>
+
+<!-- Bottom Portion and Legal Stuff -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table29">
+        <tr valign="top">
+          <td background="http://www.everlore.com/gimages/main_line_bot_bg.gif"><img src="http://www.everlore.com/gimages/spacer.gif" height="12" width="750" border="0" /></td>
+          <td background="http://www.everlore.com/gimages/main_line_bot_bg.gif" width="100%">
+          <img src="http://www.everlore.com/gimages/spacer.gif" border="0" width="1" height="1" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+ </table>
+ <center>
+	<font size="1" face="arial,helvetica" color="white">Copyright © 1999 Obsidian Technologies, Inc. <a href="http://www.everquestlive.com" target="_blank"><font color="gold">EverQuest(TM)</font></a> is a registered trademark of Verant Interactive.</font>
+ </center>
+
+
+
+</body>
+
+</html>
+<!-- PAGEDONE -->
