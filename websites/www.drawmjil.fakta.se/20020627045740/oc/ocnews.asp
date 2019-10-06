@@ -1,0 +1,32 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link href="http://www.sitepilot.net/userfiles/o/oc/oc/style/sitepilotns.css" rel="stylesheet" type="text/css">
+<script language="JScript">function swapNews()	{	if (newsBar.style.display=='none')	{		newsBar.style.display='';	}	else	{		newsBar.style.display='none';	}}function closeNews()	{ 	clsNews.style.display='none';}function swapVote()	{	if (voteBar.style.display=='none')	{		voteBar.style.display='';	}	else	{		voteBar.style.display='none';	}}function closeVote()	{	clsVote.style.display='none';}</script>
+
+</head><body  bgColor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"  style="font-size:8pt;font-family:verdana,Arial;color:#343f43;scrollbar-base-color:#9CACB2;scrollbar-arrow-color:#343f43">
+
+<font face="Verdana, Arial, Helvetica, Geneva, Sans Serif" size="2">      <TABLE style="WIDTH: 662px; HEIGHT: 154px; bogus: " cellSpacing=2 cellPadding=1 width=662 border=0>
+<TBODY>
+<TR>
+<TD unselectable><IMG height=129 src="http://www.drawmjil.fakta.se/images/legion.gif" width=152 border=0></TD>
+<TD align=middle unselectable><FONT size=4>Old Continent</FONT> 
+<P><FONT size=2><STRONG>Main/News</STRONG></FONT></P>
+<P align=center><I><FONT size=1>Allways reload this page to get latest news!<BR></FONT></I></P></TD>
+<TD align=right unselectable><IMG height=129 src="http://www.drawmjil.fakta.se/images/skaven1.gif" width=117 border=0></TD></TR></TBODY></TABLE>
+<P align=center><I><FONT size=1></FONT></I>&nbsp;</P><table cellpadding="5"><tr><td><table width="649" border="1" bgcolor="#9CACB2" cellspacing="0" cellpadding="5"><tr><td><font size="1" color="#ffffff" style="font-size:11px"><b>2</b> OCmembers during the last 30 minutes -- <br> · <a href="/viewmem.asp?id=92"><font size="1" color="#ffffff">Walolin</font></a> · <a href="/viewmem.asp?id=311"><font size="1" color="#ffffff">Loydah</font></a></font></td></tr></table></td></tr></table>
+<table width="100%" cellpadding="9"><tr><td valign="top" width="450"><font size="2"><b>Avarage OC rampage</font></b><br><i>Loading checklist.....</i><br><br><UL>
+<LI><FONT size=2>UP mobs</FONT>&nbsp; <SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT size=3>q</FONT></SPAN></SPAN> 
+<LI><SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT face=Verdana size=2>Lendiara the Keeper <SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT size=3>q</FONT></SPAN></SPAN></FONT></SPAN></SPAN> 
+<LI><SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT face=Verdana size=3><SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT face=Verdana size=2>Klandikar </FONT>r</SPAN></SPAN></FONT></SPAN></SPAN> 
+<LI><SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT face=Verdana size=3><SPAN style="FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><SPAN style="mso-char-type: symbol; mso-symbol-font-family: Wingdings"><FONT face=Verdana size=2>King Tormax the Wuss</FONT> r<BR></SPAN></SPAN></FONT></SPAN></SPAN></LI></UL>
+<P><FONT size=2>Good work everyone....</FONT></P>
+<P><FONT size=2>/Cata</FONT></P></td><td valign="top"><table border="0" cellpadding="0" cellspacing="0"><tr><td><nobr><img src="images/news_first.gif" border="0"><img src="images/news_first2.gif" border="0"></nobr></td></tr><tr><td><table cellpadding="6" cellspacing="0" border="0" width="100%"><tr><td>
+<font face="Verdana, Arial, Helvetica, Geneva, Sans Serif" size="1"><a style="color:#003399;" href="ocnews.asp?site=oc&Id=142&xId=662"><b>Avarage OC rampage </b></a><br>Loading checklist..... <br><font size="1">[2002-06-20]</font><br><br>
+<a style="color:#003399;" href="ocnews.asp?site=oc&Id=142&xId=658"><b>TIV DOWN FASTER THAN CATA CAN UNZIP HIS PANTS! </b></a><br>Veni, vidi, vici! <br><font size="1">[2002-06-18]</font><br><br>
+<a style="color:#003399;" href="ocnews.asp?site=oc&Id=142&xId=655"><b>Elvis has left the building... </b></a><br>Another day. Another Dain. <br><font size="1">[2002-06-16]</font><br><br>
+<a style="color:#003399;" href="ocnews.asp?site=oc&Id=142&xId=641"><b>Thats it! </b></a><br>I am changing faction.... <br><font size="1">[2002-05-29]</font><br><br>
+<a style="color:#003399;" href="ocnews.asp?site=oc&Id=142&xId=639"><b>The knights who say TIV </b></a><br>TIV TIV TIV TIV...... <br><font size="1">[2002-05-26]</font><br><br>
+<a style="color:#003399;" href="ocnews.asp?site=oc&Id=142&xId=637"><b>Yelinak sleaping the long sleap </b></a><br>Yeapp, me soo big, me soo scary, me sooo..... SMACK! DEAD ! <br><font size="1">[2002-05-25]</font><br><br>
+<font face="Verdana, Arial, Helvetica" size="1"><b><a href="ocnews.asp?site=oc&Arkiv=1&Id=142">Newsarchive</a></b></font></font></td></tr></table></td></tr></table></td></tr></table>

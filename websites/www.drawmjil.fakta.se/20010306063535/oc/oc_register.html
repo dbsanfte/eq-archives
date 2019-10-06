@@ -1,0 +1,758 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+<!-- #BeginTemplate "/Templates/masterpage.dwt" --> 
+<head>
+<title>ezboard - helping.people.connect</title>
+<!-- #BeginEditable "scriptos" --> 
+<script language="JavaScript">
+<!--
+                           
+//OK Lets validate the form
+var new_fieldname = ""
+
+function check(form,x)
+{
+
+  var message = ""
+  var more_message = ""
+  var showmsg = "no"
+
+  x = x - 1
+  for (var i = 0; i <= x; i++)
+  {
+    var messenger = form.elements[i].name
+    messenger = messenger.substring(0, 2)
+    var fieldname = form.elements[i].name
+    fieldname = fieldname.substring(2)
+
+    {
+      if (messenger == "r_")
+      {
+        more_message = r_check(form,x,fieldname,i)
+      }
+      else if (messenger == "c_")
+      {
+        more_message = c_check(form,x,fieldname,i)
+      }
+      else if (messenger == "p_")
+      {
+        more_message = p_check(form,x,fieldname,i)
+      }
+      else if (messenger == "i_")
+      {
+        more_message = i_check(form,x,fieldname,i)
+      }
+      else if (messenger == "e_")
+      {
+        more_message = e_check(form,x,fieldname,i)
+      }
+      else if (messenger == "v_")
+      {
+        more_message = v_check(form,x,fieldname,i)
+      }
+      else if (messenger == "m_")
+      {
+        more_message = m_check(form,x,fieldname,i)
+      }
+      else if (messenger == "z_")
+      {
+        more_message = z_check(form,x,fieldname,i)
+      } 
+                     
+      if (more_message != "")
+      {
+        if (message == "")
+        {
+          message = more_message
+          more_message=""
+        }
+        else
+        {
+          message = message + "\n" + more_message
+          more_message=""
+        }
+      }
+                                                                                        
+      if (message > "")
+      {
+        showmsg = "yes"
+      }                                                                                     }       
+  }
+                        
+  if (showmsg == "yes")
+  {
+    alert("The following form field(s) were incomplete or incorrect:\n\n" + message + "\n\n Please complete or correct the form and submit again.")
+  }
+  else
+  {
+    form.submit()
+  }
+}
+       
+//Check for required fields
+function r_check(form,x,fieldname,i)
+{
+var msg_addition = ""
+new_fieldname = fieldname
+for (var y = 0; y <= x; y++)
+  {
+    if ((form.elements[y].type == "radio" || form.elements[y].type == "checkbox") && form.elements[y].name == new_fieldname && form.elements[y].checked == true)
+    {
+      msg_addition = ""
+      break
+    }
+    else if ((form.elements[y].type == "radio" || form.elements[y].type == "checkbox") && form.elements[y].name == new_fieldname && form.elements[y].checked == false)
+    {
+      msg_addition = form.elements[i].value
+    }
+    else if (form.elements[y].type == "select-one")
+    {
+      var l = form.elements[y].selectedIndex
+      if (form.elements[y].name == fieldname && form.elements[y].options[l].value != "")
+      {
+        msg_addition = ""
+        break
+      }
+      else if (form.elements[y].name == fieldname && form.elements[y].options[l].value == "")
+      {
+        msg_addition = form.elements[i].value
+      }
+    }
+    else if (form.elements[y].name == fieldname && form.elements[y].value == "" && form.elements[y].type != "radio" && form.elements[y].type != "checkbox" && form.elements[y].type != "select-one")
+    {
+      msg_addition = form.elements[i].value
+      break
+    }
+    else if (form.elements[y].name == fieldname && form.elements[y].value != "" && form.elements[y].type != "radio" && form.elements[y].type != "checkbox" && form.elements[y].type != "select-one")
+    {
+      msg_addition = ""
+    }       
+  }
+  return(msg_addition)
+}
+
+                     
+//Check for integers                       
+function i_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)
+  {
+    if (form.elements[y].name == fieldname)
+    break
+  }                                               
+                
+  var msg_addition = ""
+  var decimal = ""
+  inputStr = form.elements[y].value.toString()
+  if (inputStr == "")
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    for (var c = 0; c < inputStr.length; c++)
+    {
+      var oneChar = inputStr.charAt(c)
+      if (oneChar < "0" || oneChar > "9")
+      {
+        msg_addition = form.elements[i].value
+      }
+    }
+  }
+  return(msg_addition)
+}       
+        
+        
+//Email Address 1 format check
+function e_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)
+  {
+    if (form.elements[y].name == fieldname)
+    break
+  }                                               
+                
+  var msg_addition = ""
+  ctrl = form.email;
+  period = ".";
+  //Need east one letter before @
+  if (ctrl.value == "" || ctrl.value.indexOf ('@', 0) < 1) error = 1;
+  else
+  {
+    //A period must come after the @
+    test = ctrl.value.indexOf('.', ctrl.value.indexOf ('@', 0))
+    if (test != -1)
+    {
+      error = 0;
+    }
+    else
+    {
+      error=1;
+    }
+  }
+  if (error == 1)
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    new_length = ctrl.value.length - test  //The length of email address - the number of characters from @ to a period.
+    if (new_length == 4 || new_length == 3 || (new_length >= 5 && ctrl.value.indexOf ('.', (test+1)) != -1))
+    {
+      msg_addition = ""
+    }
+    else
+    msg_addition = form.elements[i].value;
+  }
+  return(msg_addition)
+}       
+
+//Email Verify format check
+function v_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)
+  {
+    if (form.elements[y].name == fieldname)
+    break
+  }                                               
+                
+  var msg_addition = ""
+  vctrl = form.emailVerify;
+  period = ".";
+  //Need east one letter before @
+  if (vctrl.value == "" || vctrl.value.indexOf ('@', 0) < 1) error = 1;
+  else
+  {
+    //A period must come after the @
+    vtest = vctrl.value.indexOf('.', vctrl.value.indexOf ('@', 0))
+    if (vtest != -1)
+    {
+      error = 0;
+    }
+    else
+    {
+      error=1;
+    }
+  }
+  if (error == 1)
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    new_length = vctrl.value.length - vtest  //The length of email address - the number of characters from @ to a period.
+    if (new_length == 4 || new_length == 3 || (new_length >= 5 && vctrl.value.indexOf ('.', (vtest+1)) != -1))
+    {
+      msg_addition = ""
+    }
+    else
+    msg_addition = form.elements[i].value;
+  }
+  return(msg_addition)
+}
+
+//User email duplication verify
+function m_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)                                             
+                
+  var msg_addition = ""
+  mctrl = form.email;
+  mvctrl = form.emailVerify;
+  if (mctrl.value != mvctrl.value)
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    msg_addition = ""
+  }
+  return(msg_addition)
+}
+
+
+//User Name characters validation
+function c_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)
+  {
+    if (form.elements[y].name == fieldname)
+    break
+  }                                               
+                
+  var msg_addition = ""
+  var bslash = "\\";
+  var colon = ":";
+  var scolon = "\;";
+  var dquote = "\"";
+  var squote = "\'";
+  var period = "\.";
+  var fslash = "\/";
+  var qmark = "\?";
+  var gthan = "\>";
+  var comma = "\,";
+  var lthan = "\<";
+  inputStr = form.elements[y].value.toString()
+  if (inputStr == "")
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    for (var c = 0; c < inputStr.length; c++)
+    {
+      var oneChar = inputStr.charAt(c)
+      if ((oneChar == "~") || (oneChar == "`") || (oneChar == "!") || (oneChar == "@") || (oneChar == "#") || (oneChar == "$") || (oneChar == "%") || (oneChar == "^") || (oneChar == "&") || (oneChar == "*") || (oneChar == "(") || (oneChar == ")") || (oneChar == "_") || (oneChar == "-") || (oneChar == "+") || (oneChar == "=") || (oneChar == "{") || (oneChar == "}") || (oneChar == "[") || (oneChar == "]") || (oneChar == "|") || (oneChar == bslash) || (oneChar == colon) || (oneChar == scolon) || (oneChar == dquote) || (oneChar == squote) || (oneChar == period) || (oneChar == fslash) || (oneChar == qmark) || (oneChar == gthan) || (oneChar == comma) || (oneChar == lthan))
+      {
+        msg_addition = form.elements[i].value
+      }
+    }
+  }
+  return(msg_addition)
+}
+
+
+
+//User password validation
+function p_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)                                             
+                
+  var msg_addition = ""
+  pctrl = form.password;
+  pvctrl = form.passwordVerify;
+  if ((pctrl.value != pvctrl.value) || (pctrl.value.length < 5) || (pvctrl.value.length < 5))
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    msg_addition = ""
+  }
+  return(msg_addition)
+}
+
+  
+//Zip Code check dependant on USA selection. Not working fully in Netscape
+function z_check(form,x,fieldname,i)
+{
+  for (var y = 0; y <= x; y++)
+  {
+    if (form.elements[y].name == fieldname)
+    break
+  }                                               
+                
+  var msg_addition = ""
+  var coctrl = form.country;
+  var zctrl = form.zipCode;
+  inputStr = form.elements[y].value.toString()
+  if ((inputStr == "") && (coctrl.value == 'USA'))
+  {
+    msg_addition = form.elements[i].value
+  }
+  else if ((zctrl.value.length < 5) && (coctrl.value == 'USA'))
+  {
+    msg_addition = form.elements[i].value
+  }
+  else
+  {
+    for (var c = 0; c < inputStr.length; c++)
+    {
+      var oneChar = inputStr.charAt(c)
+      if (oneChar < "0" || oneChar > "9")
+      {
+        msg_addition = form.elements[i].value
+      }
+    }
+  }
+  return(msg_addition)
+}
+
+  
+function asc(each_char)
+{
+var n = 0
+var char_str = charSetStr()
+for (i = 0; i < char_str.length; i++)
+  {
+    if (each_char == char_str.substring(i, i+1))
+    {
+      break
+    }
+  }
+  return i + 32
+}
+
+//Character set string                
+function charSetStr()
+{
+  var str
+  str = ' !"#$%&' + "'" + '()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
+
+  return str
+}        
+//End of form validation------------//
+
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+        
+//-->
+
+</script>
+<!-- #EndEditable --> 
+<link rel="stylesheet" href="ezstyles.css">
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<center>
+  <!-- standard internal header starts here ---><img border="0" src="images/oc_logo.gif" width="618" height="89">&nbsp;
+  <!-- standard internal header ends here ---> <br>
+  <!-- title starts here ---> <font size="5" color="#273C82" face="Verdana, Arial, Helvetica, sans-serif"><b><!-- #BeginEditable "header" --><!-- #EndEditable --></b></font><br>
+  <!-- title ends here ---> 
+</center>
+<!-- #BeginEditable "body%20table" --> 
+<table width="640" align="center">
+  <tr align="left" valign="top"> 
+    <td> 
+      <table border="0" cellspacing="0" cellpadding="1" width="100%" bgcolor="#F7F7F7">
+        <tr> 
+          <td> 
+            <table border="0" cellspacing="0" cellpadding="1" bgcolor="#EEF0FD" width="100%">
+              <tr> 
+                <td width="21"><img src="http://www.ezboard.com/help/helpimages/icon_1_lit.gif" width="21" height="22"></td>
+                <td nowrap width="99%"><b><font color="#339900" size="3">&nbsp;</font><font face="Verdana, Arial, Helvetica, sans-serif" color="#000080" size="3">User 
+                  Information</font></b></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table width="640" border="0" cellspacing="0" cellpadding="3">
+        <tr> 
+          <td width="350" valign="top"> <font size="2"><b><font size="3"><br>
+            </font><font size="4"> </font></b><font size="4"><font size="2">Sections 
+            marked with an <font color="#FF0000">*</font> must be filled in</font></font></font>.<br>
+            <br>
+            <form action=http://pub23.ezboard.com/BBSSystem.registerGlobalUser method="POST">
+                          <input type="hidden" name="r_heardFrom" value="Select an option on how you heard about ezboard.">
+              <b> 
+              <font face="Verdana, Arial, Helvetica, sans-serif" size="3" color="#000080"> 
+              User Profile Information</font></b><br>
+              <br>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/spacer.gif" width="1" height="1"></td>
+                  <td rowspan="3" bgcolor="#273C82" valign="top"><img src="http://www.ezboard.com/image/widget_ur.gif" width="7" height="7"></td>
+                </tr>
+                <tr> 
+                  <td width="99%" class="thesmall"> 
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr bgcolor="#D2DADF"> 
+                        <td><b>&nbsp;User Name <font color="#FF0000">*</font></b></td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/shim.gif" width="1" height="1"></td>
+                      </tr>
+                      <tr bgcolor="#F7F7F7"> 
+                        <td class="thesmall"><br>
+                          Name you wish to go by<br>
+                          <font color="#666666">only letters, numbers and spaces</font><br>
+                          <input type=TEXT name=login size=40 maxlength=20>
+                          <input type="hidden" name="r_login" value="Your user name is required">
+                          <input type="hidden" name="c_login" value="Your user name can only have letters, numbers and spaces">
+                          <input type="hidden" name="category" value="<? print ($category); ?>">
+                          <br>
+                          <br>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/widget_bl.gif" width="5" height="5"></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/spacer.gif" width="1" height="1"></td>
+                  <td rowspan="3" bgcolor="#273C82" valign="top"><img src="http://www.ezboard.com/image/widget_ur.gif" width="7" height="7"></td>
+                </tr>
+                <tr> 
+                  <td width="99%"> 
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr valign="top" bgcolor="#D2DADF"> 
+                        <td width="50%"><b>&nbsp;Password <font color="#FF0000">*</font></b></td>
+                      </tr>
+                      <tr valign="top"> 
+                        <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/shim.gif" width="1" height="1"></td>
+                      </tr>
+                      <tr valign="top"> 
+                        <td class="thesmall" width="50%" bgcolor="#F7F7F7"><br>
+                          Enter your desired password <br>
+                          <font color="#666666">must be at least 5 characters</font><br>
+                          <input maxlength=40 name=password type=password size="40">
+                          <input type="hidden" name="r_password" value="A Password is required">
+                          <br>
+                          Enter your password again<br>
+                          <input maxlength=40 name=passwordVerify type=password size="40">
+                          <input type="hidden" name="r_passwordVerify" value="A Password verification is required">
+                          <input type="hidden" name="p_passwordVerify" value="Password must be the same as verification and at least five characters long.">
+                          <br>
+                          <br>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/widget_bl.gif" width="5" height="5"></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/spacer.gif" width="1" height="1"></td>
+                  <td rowspan="3" bgcolor="#273C82" valign="top"><img src="http://www.ezboard.com/image/widget_ur.gif" width="7" height="7"></td>
+                </tr>
+                <tr> 
+                  <td width="99%"> 
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr bgcolor="#D2DADF"> 
+                        <td><b>&nbsp;Email Address <font color="#FF0000">*</font></b></td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/shim.gif" width="1" height="1"></td>
+                      </tr>
+                      <tr bgcolor="#F7F7F7"> 
+                        <td class="thesmall"><br>
+                          Enter your email address<br>
+                          <input type=text name=email size=40>
+                          <input type=hidden name="r_email" value="Email address is required">
+                          <input type=hidden name="e_email" value="Email address format is incorrect">
+                          <br>
+                          Enter your email again<br>
+                          <input type=text name=emailVerify size=40>
+                          <input type=hidden name="r_emailVerify" value="Email address verification is required">
+                          <input type=hidden name="v_emailVerify" value="Email address verification format is incorrect">
+                          <input type=hidden name="m_emailVerify" value="Email address verification must match. Is the address correct?">
+                          <br>
+                          <br>
+                          Can you receive HTML emails ?<br>
+                          <input type="radio" name="htmlemail" value="yes" checked>
+                          Yes&nbsp;&nbsp; 
+                          <input type="radio" name="htmlemail" value="no">
+                          No &nbsp;&nbsp; 
+                          <input type="radio" name="htmlemail" value="no">
+                          Don't know<br>
+                          <br>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/widget_bl.gif" width="5" height="5"></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/spacer.gif" width="1" height="1"></td>
+                  <td rowspan="3" bgcolor="#273C82" valign="top"><img src="http://www.ezboard.com/image/widget_ur.gif" width="7" height="7"></td>
+                </tr>
+                <tr> 
+                  <td width="99%"> 
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td width="33%" bgcolor="#D2DADF"><b>&nbsp;Gender <font color="#FF0000">*</font></b></td>
+                        <td width="33%" bgcolor="#D2DADF"><b>Birth Year <font color="#FF0000">*</font></b></td>
+                        <td width="33%" bgcolor="#D2DADF"><b>Location <font color="#FF0000">*</font></b></td>
+                      </tr>
+                      <tr> 
+                        <td colspan="3" bgcolor="#273C82"><img src="http://www.ezboard.com/image/shim.gif" width="1" height="1"></td>
+                      </tr>
+                      <tr align="left" valign="top"> 
+                        <td width="30%" class="thesmall" bgcolor="#F7F7F7"> <br>
+                          <input type=radio name=sex value=F>
+                          Female&nbsp;&nbsp;<br>
+                          <input type=radio name=sex value=M>
+                          <input type="hidden" name="r_sex" value="Select a gender.">
+                          Male </td>
+                        <td width="30%" class="thesmall" bgcolor="#F7F7F7"> <br>
+                          <br>
+                          19 
+                          <input type=text name=birthYear size=2 maxlength=2 >
+                          <input type="hidden" name="r_birthYear" value="A Birth Year is required">
+                          <input type="hidden" name="i_birthYear" value="A Birth Year must be a number">
+                          <br>
+                        </td>
+                        <td width="40%" class="thesmall" bgcolor="#F7F7F7"> <br>
+                          Country<br>
+                          <select name="country">
+                            <option value="" selected>Select Country</option>
+                            <option value="">......................................</option>
+                            <option value="USA">USA</option>
+                            <option value=Argentina>Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value=Australia>Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value=Barbados>Barbados</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value=Bermuda>Bermuda</option>
+                            <option value=Brazil>Brazil</option>
+                            <option value="Canada">Canada</option>
+                            <option value=Chile>Chile</option>
+                            <option value=China>China</option>
+                            <option value=Colombia>Colombia</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value=Egypt>Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value=Guatemala>Guatemala</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value=India>India</option>
+                            <option value=Indonesia>Indonesia</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value=Israel>Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value=Jamaica>Jamaica</option>
+                            <option value=Japan>Japan</option>
+                            <option value=Kuwait>Kuwait</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value=Malaysia>Malaysia</option>
+                            <option value="Malta">Malta</option>
+                            <option value=Mexico>Mexico</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value=Namibia>Namibia</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value=Nicaragua>Nicaragua</option>
+                            <option value="Norway">Norway</option>
+                            <option value=Pakistan>Pakistan</option>
+                            <option value=Panama>Panama</option>
+                            <option value=Paraguay>Paraguay</option>
+                            <option value=Peru>Peru</option>
+                            <option value=Philippines>Philippines</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Slovak Republic">Slovak Republic</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value=Singapore>Singapore</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value=Tanzania>Tanzania</option>
+                            <option value=Thailand>Thailand</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value=Venezuela>Venezuela</option>
+                            <option value=Vietnam>Vietnam</option>
+                            <option value=Zimbabwe>Zimbabwe</option>
+                            <option value=Other>Other</option>
+                          </select>
+                          <input type="hidden" name="r_country" value="Location of your country is required.">
+                          <br>
+                          zip code (US Residents) <br>
+                          <input type=TEXT name="zipCode" size=5 maxlength=5>
+                          <input type="hidden" name="z_zipCode" value="Zip Code required when location is USA and must be a number five digits long.">
+                          <br>
+                          <br>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td bgcolor="#273C82"><img src="http://www.ezboard.com/image/widget_bl.gif" width="5" height="5"></td>
+                </tr>
+              </table>
+              <br>
+              <center>
+                <br>
+                <input type="button" value="Create my ezboard account now!" onClick="check(form,form.elements.length)" name="button">
+                <font face="Verdana, Arial, Helvetica" size="1"></font> 
+              </center>
+              <input type="hidden" name="heardFrom" value="other">
+            </form>
+            &nbsp;</td>
+          <td valign="top"> <img src="http://www.ezboard.com/image/shim.gif" width="1" height="230"> 
+            <table width="80%" border="0" cellspacing="0" cellpadding="1" bgcolor="#D2DADF" align="center">
+              <tr> 
+                <td> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#F7F7F7">
+                    <tr> 
+                      <td><b><font face="Verdana, Arial, Helvetica, sans-serif" color="#666666"><img src="http://www.ezboard.com/help/scrsht/button_help1.gif" width="17" height="15"> 
+                        password</font></b> <br>
+                        Your password will not work until you have validated your 
+                        account by responding to the email you will receive upon 
+                        registration. </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <img src="http://www.ezboard.com/image/shim.gif" width="1" height="100"> 
+            <b><font face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+            </font></b> 
+            <table width="80%" border="0" cellspacing="0" cellpadding="1" bgcolor="#D2DADF" align="center">
+              <tr> 
+                <td> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#F7F7F7">
+                    <tr> 
+                      <td><b><font face="Verdana, Arial, Helvetica, sans-serif" color="#666666"><img src="http://www.ezboard.com/help/scrsht/button_help1.gif" width="17" height="15"> 
+                        email address</font></b> <br>
+                        You will be sent instructions on how to validate your 
+                        account via this email address - please make sure it's 
+                        accurate. </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <b><font face="Verdana, Arial, Helvetica, sans-serif" color="#666666"> 
+            </font></b> <b><font face="Verdana, Arial, Helvetica, sans-serif"><img src="http://www.ezboard.com/image/shim.gif" width="1" height="325"></font></b> 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- #EndEditable --> <br>
+ <!-- revamped crlewis jr@ezboard.com 2000 ---> 
+</body>
+<!-- #EndTemplate -->
+</html>

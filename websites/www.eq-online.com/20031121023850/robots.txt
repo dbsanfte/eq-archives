@@ -1,0 +1,159 @@
+
+<script LANGUAGE="JavaScript">
+// Browser Detection
+isMac = (navigator.appVersion.indexOf("Mac")!=-1) ? true : false;
+NS4 = (document.layers) ? true : false;
+IEmac = ((document.all)&&(isMac)) ? true : false;
+IE4plus = (document.all) ? true : false;
+IE4 = ((document.all)&&(navigator.appVersion.indexOf("MSIE 4.")!=-1)) ? true : false;
+IE5 = ((document.all)&&(navigator.appVersion.indexOf("MSIE 5.")!=-1)) ? true : false;
+
+IE6 = ((document.all)&&(navigator.appVersion.indexOf("MSIE 6.")!=-1)) ? true : false;
+ver4 = (NS4 || IE4plus) ? true : false;
+NS6 = (!document.layers) && (navigator.userAgent.indexOf('Netscape')!=-1)?true:false;
+
+IE5plus = IE5 || IE6;
+IEMajor = 0;
+
+if (IE4plus)
+{
+	var start = navigator.appVersion.indexOf("MSIE");
+	var end = navigator.appVersion.indexOf(".",start);
+	IEMajor = parseInt(navigator.appVersion.substring(start+5,end));
+	IE5plus = (IEMajor>=5) ? true : false;
+}
+
+// Body onload utility (supports multiple onload functions)
+var gSafeOnload = new Array();
+function SafeAddOnload(f)
+{
+	if (IEmac && IE4)  // IE 4.5 blows out on testing window.onload
+	{
+		window.onload = SafeOnload;
+		gSafeOnload[gSafeOnload.length] = f;
+	}
+	else if  (window.onload)
+	{
+		if (window.onload != SafeOnload)
+		{
+			gSafeOnload[0] = window.onload;
+			window.onload = SafeOnload;
+		}		
+		gSafeOnload[gSafeOnload.length] = f;
+	}
+	else
+		window.onload = f;
+}
+function SafeOnload()
+{
+	for (var i=0;i<gSafeOnload.length;i++)
+		gSafeOnload[i]();
+}
+
+function isInt(numIn)
+{
+	var checknum = parseInt(numIn);
+	return !isNaN(checknum);
+}
+
+function PUW_Init()
+{
+	if (gPopupWindow.CheckFrequency())
+	{
+		setTimeout("gPopupWindow.Show()",gPopupWindow.showDelay);
+	}
+}
+
+function PUW_Show()
+{
+	var settings = "width="+this.width+",height="+this.height+",top="+this.top+",left="+this.left+",";
+	settings += "scrollbars=" + ((this.scrollbars) ? "yes," : "no,");
+	settings += "toolbar=" + ((this.toolbar) ? "yes," : "no,");
+	settings += "location=" + ((this.locationbar) ? "yes," : "no,");
+	settings += "menubar=" + ((this.menubar) ? "yes," : "no,");
+	settings += "status=" + ((this.statusbar) ? "yes," : "no,");
+	settings += "resizable=" + ((this.resizable) ? "yes" : "no");
+	
+	var newWin = window.open(this.url,this.name,settings);
+	
+	if (! this.ontop)
+		window.focus();
+}
+
+function PUW_CheckFrequency()
+{
+	var shouldShow = this.frequency != 0;
+	if (this.frequency > 0)
+	{
+		var allCookies = document.cookie;
+		var start = allCookies.indexOf("PUWCount=");
+		if (start >= 0)
+		{
+			var end = allCookies.indexOf(";",start);
+			if (end < 0)
+				end = allCookies.length;
+			var freqStr = allCookies.substring(start+9,end);
+			if (isInt(freqStr))
+				this.frequency = parseInt(freqStr);
+		}
+
+		if (this.frequency>0)
+			this.frequency--;
+		else
+			shouldShow = false;
+			
+		var exp = new Date();
+		exp.setTime(exp.getTime()+this.renew*60*60000);
+		document.cookie = "PUWCount="+this.frequency+ "; expires=" + exp.toGMTString();
+	}
+	
+	return shouldShow;
+}
+
+
+function PopupWindow(url,width,height)
+{
+	this.width = width;
+	this.height = height;
+	this.top = screen.availHeight/2 - height/2; // center
+	this.left = screen.availWidth/2 - width/2; // center
+	this.name = "mypopupwin";
+	this.url = url;
+	this.showDelay = 2000;
+	this.frequency = 1; // how many times show per renewal time period
+	this.renew = 1; // renew showing every x hours
+	this.scrollbars= false;
+	this.toolbar= false;
+	this.statusbar= false;
+	this.resizable = false;
+	this.locationbar = false;
+	this.menubar = false;
+	this.ontop = true;
+	
+
+	
+	this.Init = PUW_Init;
+	this.Show = PUW_Show;
+	this.CheckFrequency = PUW_CheckFrequency;
+}
+
+function PUWStart()
+{
+	gPopupWindow.Init();
+}
+
+SafeAddOnload(PUWStart);
+
+gPopupWindow = new PopupWindow("001.html", 750, 350);
+gPopupWindow.toolbar = false;
+gPopupWindow.statusbar = true;
+gPopupWindow.resizable = false;
+gPopupWindow.ontop = false;
+
+</script>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" scroll="no">
+
+		<IFRAME SRC="http://apps5.oingo.com/apps/domainpark/domainpark.cgi?cid=ICRI6248&s=eq-online.com"  HEIGHT="100%" WIDTH="100%"  FRAMEBORDER="0" SCROLLING="auto"></IFRAME>
+	
+</body>

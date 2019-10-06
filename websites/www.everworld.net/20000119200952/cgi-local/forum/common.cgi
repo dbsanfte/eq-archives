@@ -1,0 +1,562 @@
+<HTML>
+<HEAD>
+	<TITLE>EVERWORLD.NET - EQHAVEN</TITLE>
+
+</HEAD>
+<BODY bgcolor="Black" text="#FFFFFF" link="#CB723D" vlink="#AB7211" alink="#964B4B">
+<table cellspacing="0" cellpadding="0">
+	<!-- TOP BAR -->
+	<tr>
+		<td valign="bottom"><img src="http://www.everworld.net/images/ewhead.gif" width=765 height=68 border=0 hspace="0" vspace="0"></td>
+	</tr>
+	<!-- TOP BAR -->
+	
+	
+	<!-- START NEWS CONTENT -->
+	<tr>
+		<td>
+			<table cellspacing="0" cellpadding="0" border=0 width=100%>
+				
+				<tr>
+					<!-- START MENU CELL -->
+					<td valign="top">
+<table cellspacing="0" cellpadding="0" border="0" width="150">
+
+							<tr>
+
+				    			<td colspan="2"><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><img src="/images/spacer.gif" alt="Image File" width=70 height=5 border="0"><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td><td></td>
+
+							</tr>
+
+
+
+			 				<!-- BUTTON -->
+
+			 				<tr>
+
+    							<td colspan="2"><img src="/images/btntown.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td>
+
+	   							<td align="right" valign="top">
+
+						<!-- LINKS TOWN CRIER -->
+
+								<font face="Arial" size="-2">
+
+								<a href="http://www.everworld.net/index.shtml">Current News</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								Archives<img src="/images/bulletw.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								<a href="/polls/index.shtml">Polls</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="mailto:weblords@everworld.net?subject=EW News">Submit News</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								<a href="/services/index.shtml">Member Services</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/staff.shtml">Staff</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/legal.shtml">Legal</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								</font>
+
+						<!-- LINKS TOWN CRIER -->
+
+							   	</td>
+
+							</tr>
+
+
+
+	        	 			<!-- BUTTON -->
+
+							<tr>
+
+    							<td colspan="2"><img src="/images/btndragon.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td>
+
+	 <!-- LINKS TOWN PERSONA --><td align="right" valign="top"><font face="Arial" color="#FFFFFF" size=1>
+								<a href="http://dragon.everworld.net/">Dragon.EverWorld.net</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://dragon.everworld.net/pvp.shtml">Geiger's PvP</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://dragon.everworld.net/quest.shtml">Quest</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://dragon.everworld.net/events.shtml">Events</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://dragon.everworld.net/portals/index.shtml">Portals</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								</td>
+
+							</tr>
+
+
+
+	        	 			<!-- BUTTON -->
+
+							<tr>
+
+    							<td colspan="2"><img src="/images/btntavern.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>	
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>	
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td>
+
+	 <!-- TAVERN --><td align="right" valign="top"><font face="Arial" color="#FFFFFF" size=1>
+								<a href="http://www.everworld.net/forum/index.shtml">Message Boards</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/common.cgi">Commons</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/barracks.cgi">Barracks</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/chambers.cgi">Chambers</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/chronicles.cgi">Chronicles</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/roleplay.cgi">RolePlay</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								<a href="http://www.everworld.net/bertoxx.html">Bertoxxulous</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/bristlebane.cgi">Bristlebane</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/cazic_thule.cgi">Cazic-Thule</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/e_ci.cgi">E'Ci</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/erollisi_marr.cgi">Erollisi Marr</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/fennin_ro.cgi">Fennin Ro</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/innoruuk.cgi">Innoruuk</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/karana.cgi">Karana</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/mithaniel_marr.cgi">Mithaniel Marr</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/povar.cgi">Povar</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/prexus.cgi">Prexus</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/rallos_zek.cgi">Rallos Zek (PvP)</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/rodcet_nife.cgi">Rodcet Nife</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/solusek_ro.cgi">Solusek Ro</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/tarrew_marr.cgi">Tarrew Marr</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/test.cgi">Test Server</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/the_rathe.cgi">The Rathe</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/tunare.cgi">Tunare</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/veeshan.cgi">Veeshan</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/forum/xegony.cgi">Xegony</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+
+		<br><b>Dragon.EverWorld.net </b><br>
+								<a href="http://www.everworld.net/cgi-local/general.cgi">General</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/pvp.cgi">PvP</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/quest.cgi">Quest</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/cgi-local/events.cgi">Events</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								</td>
+
+							</tr>
+
+
+	        	 			<!-- BUTTON -->
+
+										 				<tr>
+
+    							<td colspan="2"><img src="/images/btnleg.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR></td>
+
+	   							<td align="right" valign="top">
+
+						<!-- LINKS LEGACY -->
+
+								<font face="Arial" size="-2">
+								<a href="/theway">The Way Chronicles</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/biography">Biographies</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/editorials.shtml">Editorials</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/guilds.shtml">Guild Spotlight</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								</font>
+
+						<!-- LINKS LEGACY -->
+
+							   	</td>
+
+							</tr>
+
+							
+							
+							<tr>
+
+								<td colspan="2"><img src="/images/btnnorr.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><br>
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><br>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td>
+
+	 							<td align="right" valign="top">
+
+						<!-- LINKS TOWN NORRATH -->
+
+								<font face="Arial" size="-2">
+								<a href="/chronicles.shtml">Chronicles</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+   								<a href="/chronicles.shtml">Beastiary</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+   								<a href="/ss/index.shtml">Gallery</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+   								<a href="/fanart.shtml">Fan Art</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+   								<a href="/norrath/history.shtml">History</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+   								<a href="/norrath/norrath.shtml">World</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								</font>
+
+
+
+						<!-- LINKS TOWN NORRATH -->
+
+								</td>
+
+							</tr>
+
+
+
+	        	 			<!-- BUTTON -->
+
+							<tr>
+
+    							<td colspan="2"><img src="/images/btnking.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+								<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR></td>
+
+ <!-- LINKS TOWN KINGS COURT --><td align="right" valign="top"><font face="Arial" color="#CB723D" size=1>
+								<font color="white"><a href="http://www.everworld.net/mailing_lists.shtml">EQ Mailing Lists</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<font color="white"><a href="http://www.everworld.net/files.shtml">Files</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="http://www.everworld.net/mailbag.shtml">Mail Bag</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								</font></font></td>
+
+							</tr>
+
+
+
+							<!-- BUTTON -->
+
+							<tr>
+
+							    <td colspan="2"><img src="/images/btnmagi.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+						  	  	<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td>
+
+	   <!-- LINKS TOWN MAGIC --><td align="right" valign="top">
+
+								<font face="Arial" size="-2">
+
+								<a href="http://www.everworld.net/magic/faq.shtml">FAQ</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								<a href="http://www.everworld.net/magic/cleric.shtml">Spells</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								<a href="http://www.everworld.net/magic/skills.shtml">Skills</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+
+								</font>
+
+								</td>
+
+							</tr>
+
+
+
+	        	 			<!-- BUTTON -->
+
+							<tr>
+
+    							<td colspan="2"><img src="/images/btnpers.gif" alt="Image File" width=150 height=35 hspace=0 vspace=0 border=0></td>
+
+							</tr>
+
+							<tr>
+
+    							<td><img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0><BR>
+
+									<img src="/images/chain.gif" alt="Image File" width=14 height=26 hspace=12 border=0></td>
+
+	 <!-- LINKS TOWN PERSONA --><td align="right" valign="top"><font face="Arial" color="#FFFFFF" size=1>
+								<a href="/persona/deities.shtml">Deities</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								Attributes<img src="/images/bulletw.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								Class<img src="/images/bulletw.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/persona/equipment/index.shtml">Equipment</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/persona/classrace/index.shtml">Race</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br>
+								<a href="/persona/skills.shtml">Skills</a><img src="/images/bulletg.gif" alt="Image File" width=6 height=6 border=0 hspace=4><br></font>
+								</td>
+
+							</tr>
+
+	        	 			<!-- END BUTTONS -->
+
+
+
+						</table>
+
+					<br>
+					<br>
+					</td>
+					<!-- END MENU CELL -->
+
+					<!-- CONTENT CELL -->
+					<td valign="top">
+<font face=arial size=2><P><CENTER><TABLE BORDER=0 CELLPADDING=6><TR><TH><font face=arial size=2>| <A HREF="#PostMessage">Post New Message</A> | <A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?search" TARGET=_self>Search</A> |</TH></TR></TABLE></CENTER></P>
+<P ALIGN=CENTER><font face=arial size=2>Everworld: Commons - General Discussion Board</P>
+<center><b>[</b> 1 <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-2">2</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-3">3</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-4">4</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-5">5</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-6">6</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-7">7</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-8">8</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-9">9</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-10">10</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-11">11</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-12">12</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-13">13</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-14">14</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-15">15</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-16">16</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-17">17</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-18">18</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-19">19</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-20">20</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-21">21</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-22">22</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-23">23</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-24">24</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-25">25</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-26">26</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-27">27</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-28">28</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-29">29</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-30">30</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-31">31</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-32">32</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-33">33</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-34">34</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-35">35</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-36">36</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-37">37</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-38">38</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-39">39</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-40">40</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-41">41</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-42">42</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-43">43</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-44">44</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-45">45</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-46">46</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-47">47</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-48">48</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-49">49</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-50">50</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-51">51</a> <a href="http://www.everworld.net/cgi-local/forum/common.cgi?archive-52">52</a>  <b>]</b></center>
+<P ALIGN=CENTER><EM>5395 of 5395 Messages Displayed<BR><br><img src="http://www.everworld.net/images/datel.gif" width=46 height=22 border=0><img src="http://www.everworld.net/images/dateblnk.gif" width=100 height=22 border=0><img src="http://www.everworld.net/images/dater.gif" width=306 height=22 border=0><BR></EM></P>
+<P><CENTER>| <a href="/cgi-local/forum/common.cgi">Commons</a> | <a href="/cgi-local/forum/barracks.cgi">Barracks</a> | <a href="/cgi-local/forum/chronicles.cgi">Chronicles</a> | <a href="/cgi-local/forum/chambers.cgi">Chambers</a> | <a href="/cgi-local/forum/roleplay.cgi">RolePlay</a> |</center><p><CENTER>| <a href="/cgi-local/forum/bertoxxulous.cgi">Bertoxxulous</A> | <a href="/cgi-local/forum/bristlebane.cgi">Bristlebane</A> | <a href="/cgi-local/forum/cazic_thule.cgi">Cazic-Thule</A> | <a href="/cgi-local/forum/e_ci.cgi">E'ci</A> | <a href="/cgi-local/forum/erollisi_marr.cgi">Erollisi Marr</A> | <a href="/cgi-local/forum/fennin_ro.cgi">Fennin Ro</A> | <a href="/cgi-local/forum/innoruuk.cgi">Innoruuk</A> | <a href="/cgi-local/forum/karana.cgi">Karana</A> |<BR>| <a href="/cgi-local/forum/mithaniel_marr.cgi">Mithaniel Marr</A> | <a href="/cgi-local/forum/povar.cgi">Povar</A> | <a href="/cgi-local/forum/prexus.cgi">Prexus</A> | <a href="/cgi-local/forum/rallos_zek.cgi">Rallos Zek (PvP)</A> | <a href="/cgi-local/forum/rodcet_nife.cgi">Rodcet Nife</A> | <a href="/cgi-local/forum/solusek_ro.cgi">Solusek Ro</A> | <a href="/cgi-local/forum/tarrew_marr.cgi">Tarrew Marr</A> |<BR>| <a href="/cgi-local/forum/test.cgi">Test Server</A> | <a href="/cgi-local/forum/the_rathe.cgi">The Rathe</A> | <a href="/cgi-local/forum/tunare.cgi">Tunare</A> | <a href="/cgi-local/forum/veeshan.cgi">Veeshan</A> | <a href="/cgi-local/forum/xegony.cgi">Xegony</A> |</CENTER><br><br>
+<font size=2><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5815" TARGET=_self>Enchanters and Religion</A> - <b>Tyris_No</b> <i>11:11 p.m. 18/1/2000</i>
+ <SMALL>(4 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5811" TARGET=_self>asdasd</A> - <b><font color="#8B2C29">Syrneus</font></b> <i>10:40 p.m. 14/12/1999</i>
+ <SMALL>(2 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5812" TARGET=_self>Re: asdasd</A> - <b>#@#@$%!!@$^^&amp;&amp;*&amp;*</b> <i>10:42 p.m. 14/12/1999</i>
+ <SMALL>(2 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5810" TARGET=_self>I need help with a name</A> - <b>Brein</b> <i>9:02 a.m. 19/11/1999</i>
+ <SMALL>(13 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5813" TARGET=_self>Re: I need help with a name</A> - <b>Joker</b> <i>1:51 p.m. 17/12/1999</i>
+ <SMALL>(8 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5814" TARGET=_self>Re: I need help with a name</A> - <b>Nicotine</b> <i>1:11 p.m. 18/1/2000</i>
+<UL>
+</UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5806" TARGET=_self>Tagnis Grinfarr and Lore Item he drops</A> - <b>Veldrane</b> <i>12:48 a.m. 10/9/1999</i>
+ <SMALL>(44 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5807" TARGET=_self>There is nothing for you here</A> - <b>Spiro</b> <i>9:53 a.m. 10/9/1999</i>
+ <SMALL>(39 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5808" TARGET=_self>*chuckles at the grumpy necro*</A> - <b>Kitaira</b> <i>12:27 p.m. 10/9/1999</i>
+ <SMALL>(34 views)</SMALL><UL>
+</UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5805" TARGET=_self>--------------------------------------------------</A> - <b>Spiro</b> <i>10:58 p.m. 8/9/1999</i>
+ <SMALL>(13 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5802" TARGET=_self>a revolution in Butcherblock</A> - <b>Minat</b> <i>12:21 p.m. 23/8/1999</i>
+ <SMALL>(32 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5800" TARGET=_self>A New Place to Share your Tales - Our Quest</A> - <b>Crisisten</b> <i>11:29 a.m. 17/8/1999</i>
+ <SMALL>(18 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5799" TARGET=_self>EQ 2?</A> - <b>Soveren</b> <i>6:13 p.m. 9/8/1999</i>
+ <SMALL>(59 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5798" TARGET=_self>EBONY BLADE</A> - <b>Anonymous</b> <i>3:08 a.m. 8/8/1999</i>
+ <SMALL>(37 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5797" TARGET=_self>Tired of killing four hundred monsters to gain a level?</A> - <b>Anonymous</b> <i>10:04 p.m. 7/8/1999</i>
+ <SMALL>(179 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5803" TARGET=_self>Exploiting (rambling)</A> - <b>Scrawny Knoll</b> <i>4:39 p.m. 25/8/1999</i>
+ <SMALL>(80 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5801" TARGET=_self>Re: Tired of killing four hundred monsters to gain a level?</A> - <b>Skaven</b> <i>5:51 p.m. 19/8/1999</i>
+ <SMALL>(75 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5795" TARGET=_self>Consent Newbie Mistake and Dishonor</A> - <b>Zyluin Treweshot</b> <i>1:56 p.m. 6/8/1999</i>
+ <SMALL>(77 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5796" TARGET=_self>Re: Consent Newbie Mistake and Dishonor</A> - <b>Draikan7</b> <i>9:05 p.m. 6/8/1999</i>
+ <SMALL>(56 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5794" TARGET=_self>Divine Mace</A> - <b>Katie</b> <i>4:16 p.m. 2/8/1999</i>
+ <SMALL>(27 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5793" TARGET=_self>ruby Quest.</A> - <b>Kurkul</b> <i>12:40 p.m. 2/8/1999</i>
+ <SMALL>(35 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5792" TARGET=_self>Anilolate norrath</A> - <b>Crazy killer</b> <i>11:45 a.m. 2/8/1999</i>
+ <SMALL>(10 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5791" TARGET=_self>A few questions</A> - <b>Wood elf ranger</b> <i>11:38 a.m. 2/8/1999</i>
+ <SMALL>(17 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5790" TARGET=_self>Trading good items on Fennin ro</A> - <b>Aldaris</b> <i>3:19 a.m. 2/8/1999</i>
+ <SMALL>(14 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5789" TARGET=_self>Level 35 Magician on Bertox for sale</A> - <b>surfnut</b> <i>1:41 a.m. 1/8/1999</i>
+ <SMALL>(33 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5787" TARGET=_self>Collaborated Loc List</A> - <b>Porphyre</b> <i>1:04 p.m. 30/7/1999</i>
+ <SMALL>(25 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5780" TARGET=_self>Warriors, rangers, hybrids and a few solutions.</A> - <b>BattleDragon</b> <i>4:32 p.m. 28/7/1999</i>
+ <SMALL>(100 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5785" TARGET=_self>um... no?</A> - <b>Sung-Li</b> <i>11:02 a.m. 30/7/1999</i>
+ <SMALL>(42 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5809" TARGET=_self>Re: um... no?</A> - <b>FOOL?</b> <i>1:03 a.m. 27/9/1999</i>
+ <SMALL>(12 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5804" TARGET=_self>Re: um... no?</A> - <b>aaf67</b> <i>3:17 a.m. 28/8/1999</i>
+ <SMALL>(22 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5782" TARGET=_self>Kick is not a magical attack - Not for Rangers or anybody else</A> - <b>Shakith</b> <i>9:39 a.m. 30/7/1999</i>
+ <SMALL>(30 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5788" TARGET=_self>Re: Kick is not a magical attack - Not for Rangers or anybody else</A> - <b>Shadowfist</b> <i>12:55 p.m. 31/7/1999</i>
+ <SMALL>(32 views)</SMALL><UL>
+</UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5779" TARGET=_self>I just looked at all the other boards and it's laughable us Bertoxers are the only ones here /nt</A> - <b>Darynth Quickfinger &quot;Wanderers of Norrath&quot;</b> <i>3:44 p.m. 28/7/1999</i>
+ <SMALL>(15 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5775" TARGET=_self>Bertox Board is Down!!</A> - <b>Zeeg da troll</b> <i>2:35 p.m. 28/7/1999</i>
+ <SMALL>(20 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5778" TARGET=_self>Re: I thought I said something bad and got banned =) /nt</A> - <b>Darynth Quickfinger &quot;Wanderers of Norrath&quot; (Very ticked off)</b> <i>3:26 p.m. 28/7/1999</i>
+ <SMALL>(15 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5776" TARGET=_self>Re: Bertox Board is Down!!</A> - <b>Scanna The Bard</b> <i>2:39 p.m. 28/7/1999</i>
+ <SMALL>(12 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5777" TARGET=_self>Re: OMG, they killed our message board...YOU BASTARDS!</A> - <b>Kelnya - Jester at Small</b> <i>3:10 p.m. 28/7/1999</i>
+ <SMALL>(16 views)</SMALL><UL>
+</UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5774" TARGET=_self>I need some info please...</A> - <b>Bryyhn Moltgar</b> <i>12:49 p.m. 28/7/1999</i>
+ <SMALL>(22 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5770" TARGET=_self>OpenGL Support?</A> - <b>Erilar</b> <i>8:49 p.m. 27/7/1999</i>
+ <SMALL>(19 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5768" TARGET=_self>Banded Armor Sales - Questions</A> - <b>Tehthu BloodPaw</b> <i>4:21 p.m. 27/7/1999</i>
+ <SMALL>(43 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5771" TARGET=_self>Re: Banded Armor Sales - Questions</A> - <b>Deya</b> <i>9:04 a.m. 28/7/1999</i>
+ <SMALL>(36 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5766" TARGET=_self>Is EQ still down or am i having an isolated problem? nt</A> - <b>Rowanoak</b> <i>2:05 p.m. 27/7/1999</i>
+ <SMALL>(20 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5767" TARGET=_self>Re: Is EQ still down or am i having an isolated problem? nt</A> - <b>olzan</b> <i>3:32 p.m. 27/7/1999</i>
+ <SMALL>(27 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5765" TARGET=_self>(ooc/funny) Gospel according to McQuaid</A> - <b>Kayfess Trevallin</b> <i>1:46 p.m. 27/7/1999</i>
+ <SMALL>(40 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5764" TARGET=_self>Rusty Swords</A> - <b>Isaac</b> <i>11:24 a.m. 27/7/1999</i>
+ <SMALL>(49 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5781" TARGET=_self>Re: Rusty Swords</A> - <b>Benjoga</b> <i>6:08 p.m. 28/7/1999</i>
+ <SMALL>(30 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5772" TARGET=_self>Re: Rusty Swords</A> - <b>Deya</b> <i>9:10 a.m. 28/7/1999</i>
+ <SMALL>(29 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5763" TARGET=_self>Where can I get a Foreman's Tunic</A> - <b>olzan</b> <i>11:11 a.m. 27/7/1999</i>
+ <SMALL>(16 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5761" TARGET=_self>&quot;The Wild; Part One&quot;, Written by the &quot;Witness&quot;</A> - <b>Posted by Brimstone[LOA]</b> <i>7:59 a.m. 27/7/1999</i>
+ <SMALL>(14 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5760" TARGET=_self>How do you make rare spawns, spawn in South Karana?</A> - <b>phaeren</b> <i>11:50 p.m. 26/7/1999</i>
+ <SMALL>(52 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5783" TARGET=_self>Re: Linked Spawning</A> - <b>Shakith</b> <i>10:11 a.m. 30/7/1999</i>
+ <SMALL>(35 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5773" TARGET=_self>Re: How do you make rare spawns, spawn in South Karana?</A> - <b>Deya</b> <i>9:26 a.m. 28/7/1999</i>
+ <SMALL>(47 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5759" TARGET=_self>Make Money While You Play EQ</A> - <b>Soulless</b> <i>10:25 p.m. 26/7/1999</i>
+ <SMALL>(76 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5757" TARGET=_self>I think the /consider command could use some changes. What do you think?</A> - <b>Eli</b> <i>4:43 p.m. 26/7/1999</i>
+ <SMALL>(26 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5756" TARGET=_self>Staff of Observers... AWESOME weapon for casters!!!!</A> - <b>Ozzumno</b> <i>4:02 p.m. 26/7/1999</i>
+ <SMALL>(72 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5754" TARGET=_self>(OOC) Ode to CerfNet</A> - <b>Kayfess Trevallin</b> <i>11:37 a.m. 26/7/1999</i>
+ <SMALL>(16 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5752" TARGET=_self>Equestriulle the unicorn</A> - <b>agwyre</b> <i>9:30 a.m. 26/7/1999</i>
+ <SMALL>(51 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5762" TARGET=_self>Re: Equestriulle the unicorn</A> - <b>olzan</b> <i>10:06 a.m. 27/7/1999</i>
+ <SMALL>(40 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5751" TARGET=_self>ice comet</A> - <b>mahtar</b> <i>9:22 a.m. 26/7/1999</i>
+ <SMALL>(50 views)</SMALL><UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5784" TARGET=_self>Re: ice comet</A> - <b>Shakith</b> <i>10:16 a.m. 30/7/1999</i>
+ <SMALL>(21 views)</SMALL><UL>
+</UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5749" TARGET=_self>loading zones</A> - <b>mahtar</b> <i>9:16 a.m. 26/7/1999</i>
+ <SMALL>(14 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5748" TARGET=_self>Glowing Wooden Crook</A> - <b>Caddis</b> <i>8:33 a.m. 26/7/1999</i>
+ <SMALL>(23 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5747" TARGET=_self>New Guild forming on Tallon Zek! =)</A> - <b>Bowin</b> <i>9:06 p.m. 25/7/1999</i>
+ <SMALL>(12 views)</SMALL><UL>
+</UL>
+</STRONG><font face=arial size=2><LI><A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?read=5746" TARGET=_self>Dark Furies Guild</A> - <b>Althea Good'Slayer</b> <i>10:11 a.m. 25/7/1999</i>
+ <SMALL>(7 views)</SMALL><UL>
+</UL>
+</UL></font></P>
+<P ALIGN=CENTER><img src="http://www.everworld.net/images/datel.gif" width=46 height=22 border=0><img src="http://www.everworld.net/images/dateblnk.gif" width=100 height=22 border=0><img src="http://www.everworld.net/images/dater.gif" width=306 height=22 border=0></P><BR><BR><A NAME="PostMessage"><font size=3><center>Post a New Message</center></font></A>
+<P><FORM METHOD=POST ACTION="http://www.everworld.net/cgi-local/forum/common.cgi?post" TARGET=_self>
+<P><DIV ALIGN=CENTER><TABLE border=0><TR>
+<TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Your Name: </STRONG></TD><TD ALIGN=RIGHT><font face=arial size=2><INPUT TYPE=TEXT NAME="name" SIZE=25 MAXLENGTH=100></TD></TR>
+<TR><TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Password: </STRONG></TD><TD><font face=arial size=2><INPUT TYPE=PASSWORD NAME="pass" SIZE=25 MAXLENGTH=100></TD></TR>
+<TR><TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Subject: </STRONG></TD><TD><font face=arial size=2><INPUT TYPE=TEXT NAME="subject" SIZE=25 MAXLENGTH=100></TD></TR></TABLE><TABLE><TR>
+<TD COLSPAN=2><P><STRONG><font face=arial size=2>Message:</STRONG>
+<BR><font face=arial size=2><TEXTAREA COLS=50 ROWS=15 NAME="body" WRAP=VIRTUAL></TEXTAREA></TD></TR></TABLE><TABLE><TR>
+<TD COLSPAN=2 ALIGN=CENTER><font face=arial size=2><P><SMALL>If you'd like to include a link to another page with your message,<BR>please provide both the URL address and the title of the page:</SMALL></TD></TR><TR>
+<TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Optional Link URL: </STRONG></TD><TD><font face=arial size=2><INPUT TYPE=TEXT NAME="url" SIZE=25 VALUE="http://"></TD></TR><TR>
+<TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Optional Link Title: </STRONG></TD><TD><font face=arial size=2><INPUT TYPE=TEXT NAME="url_title" SIZE=25></TD></TR><TR>
+<TD COLSPAN=2 ALIGN=CENTER><font face=arial size=2><P><SMALL>If you'd like to include an image (picture) with your message,<BR>please provide the URL address of the image file:</SMALL></TD></TR><TR>
+<TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Optional Image URL: </STRONG></TD><TD><font face=arial size=2><INPUT TYPE=TEXT NAME="imageurl" SIZE=25 VALUE="http://"></TD></TR><TR>
+<TD COLSPAN=2 ALIGN=CENTER><font face=arial size=1><P><SMALL>If you'd like to have the option of deleting your post later,<BR>please provide a password (CASE SENSITIVE!):</SMALL></TD></TR><TR>
+<TD ALIGN=RIGHT><P><STRONG><font face=arial size=2>Password: </STRONG></TD><TD><font face=arial size=2><INPUT TYPE=PASSWORD NAME="password" SIZE=25></TD></TR><TR>
+<TD COLSPAN=2 ALIGN=CENTER><font face=arial size=2><P><SMALL>If you'd like e-mail notification of responses, please check this box:</SMALL> <INPUT TYPE=CHECKBOX NAME="wantnotice" CHECKED VALUE="yes"></TD></TR><TR>
+<TH COLSPAN=2><font face=arial size=2><P><INPUT TYPE=SUBMIT NAME="Preview" VALUE="Preview Message"> <INPUT TYPE=SUBMIT NAME="Post" VALUE="Post Message"></TH></TR></TABLE></DIV></P></FORM>
+<P><CENTER><TABLE BORDER=0 CELLPADDING=6><TR><TH><font face=arial size=2>| <A HREF="#PostMessage">Post New Message</A> | <A HREF="http://www.everworld.net/cgi-local/forum/common.cgi?search" TARGET=_self>Search</A> |</TH></TR></TABLE></CENTER></P>
+
+				</tr>
+			</table>
+		</td>
+		<!-- END CONTENT -->
+	</tr>
+</table>
+</BODY>
+</HTML>
+</BODY></HTML>
+

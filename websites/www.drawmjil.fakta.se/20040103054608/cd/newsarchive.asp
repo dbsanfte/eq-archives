@@ -1,0 +1,22 @@
+
+
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Continental Drift of Xev</title>
+<link href="style/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<img src="images/logo_spec.gif" style="position:absolute;left:239;top:0;">
+
+<img vspace="4" src="images/header_newsarchive.gif"><br>
+2003-12-05 <a href="news.asp?nid=72">Oi've got a brand new combine 'arvester</a><br>2003-11-22 <a href="news.asp?nid=71">ENGAAAALLLLAAAAAAANNNDDD!!!!!!!!!!!!!</a><br>2003-11-21 <a href="news.asp?nid=70">Not bad, Not bad!!</a><br>2003-11-16 <a href="news.asp?nid=69">Oh, what a night ...</a><br>2003-11-13 <a href="news.asp?nid=68">We're Back !!!!</a><br>2003-11-10 <a href="news.asp?nid=67">Lazy Sunday ... not</a><br>2003-10-27 <a href="news.asp?nid=66">We came, we saw, we achieved...errrr....not a lot really</a><br>2003-09-29 <a href="news.asp?nid=65">Epics closing in</a><br>2003-07-02 <a href="news.asp?nid=64">Cazic Thule = SPLAT</a><br>2003-06-30 <a href="news.asp?nid=63">More epic's</a><br>2003-06-22 <a href="news.asp?nid=62">Severilous</a><br>2003-06-06 <a href="news.asp?nid=61">Sev...</a><br>2003-06-05 <a href="news.asp?nid=60">Rumblecrush</a><br>2003-06-02 <a href="news.asp?nid=59">And then there was silence</a><br>2003-05-31 <a href="news.asp?nid=58">Epeeeeks</a><br>2003-05-30 <a href="news.asp?nid=57">VS had a visit</a><br>2003-05-06 <a href="news.asp?nid=56">Cyenie Clicky Bladecaster</a><br>2003-05-05 <a href="news.asp?nid=55">ToV, Dings and Epics</a><br>2003-04-27 <a href="news.asp?nid=54">Derakor .. pfft</a><br>2003-04-17 <a href="news.asp?nid=53">More Epics and Dings!</a><br>2003-04-11 <a href="news.asp?nid=52">Iceclad to Kithicor</a><br>2003-04-09 <a href="news.asp?nid=51">Porenz gets his Epic</a><br>2003-04-07 <a href="news.asp?nid=50">Big Pile o' Bones</a><br>2003-04-03 <a href="news.asp?nid=49">CD Exterminator Brigade</a><br>2003-03-27 <a href="news.asp?nid=48">Gorenaire meets Continental Drift</a><br>2003-03-21 <a href="news.asp?nid=47">Skydiving in Freeport</a><br>2003-03-16 <a href="news.asp?nid=46">High up in the sky ...</a><br>2003-03-16 <a href="news.asp?nid=45">More 60's for Continental Ding</a><br>2003-03-14 <a href="news.asp?nid=44">Lodi down..again.</a><br>2003-03-13 <a href="news.asp?nid=43">Another DING! 60</a><br>2003-02-20 <a href="news.asp?nid=42">Continental Rampage</a><br>2003-02-16 <a href="news.asp?nid=41">Saturday bloody saturday...</a><br>2003-02-04 <a href="news.asp?nid=40">Venril Sathir</a><br>2003-01-13 <a href="news.asp?nid=39">Epic Rampage</a><br>2003-01-06 <a href="news.asp?nid=38">CD back after holiday piss up</a><br>2002-12-23 <a href="news.asp?nid=37">More epic stuff</a><br>2002-12-16 <a href="news.asp?nid=36">The weekend of success</a><br>2002-12-02 <a href="news.asp?nid=35">Another Epic!</a><br>2002-11-25 <a href="news.asp?nid=34">New Ghinger Lollies</a><br>2002-11-19 <a href="news.asp?nid=33">Weekly Vote Results</a><br>2002-11-13 <a href="news.asp?nid=32">CD EPICS</a><br>2002-11-02 <a href="news.asp?nid=31">Skelly's in trouble now</a><br>2002-10-25 <a href="news.asp?nid=30">CD go fishing...</a><br>2002-10-14 <a href="news.asp?nid=29">CD have no Fear</a><br>2002-09-19 <a href="news.asp?nid=27">Daylight shines</a><br>2002-09-14 <a href="news.asp?nid=26">The CD Epic brigade...</a><br>2002-08-21 <a href="news.asp?nid=25">Well Done Aaachoo</a><br>2002-08-12 <a href="news.asp?nid=23">1st Annual Baldrick award</a><br>2002-08-09 <a href="news.asp?nid=22">Look out Manchester!</a><br>2002-07-23 <a href="news.asp?nid=17">Dragons Be Here</a><br>2002-07-21 <a href="news.asp?nid=16">Don't you just Hate it when...</a><br>2002-07-19 <a href="news.asp?nid=15">Falling down the Hole</a><br>2002-07-11 <a href="news.asp?nid=14">Trip To Kael</a><br>2002-07-03 <a href="news.asp?nid=13">Fandabalicious</a><br>2002-06-29 <a href="news.asp?nid=11">Blue, and its significance</a><br>2002-06-27 <a href="news.asp?nid=10">City of Mist: Today 7:30UK</a><br>2002-06-26 <a href="news.asp?nid=9">First Visitor</a><br>2002-06-26 <a href="news.asp?nid=8">The new website!</a><br>
+
+</body>
+
+</html>
