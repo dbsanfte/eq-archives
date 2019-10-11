@@ -1,0 +1,217 @@
+<HTML>
+<HEAD>
+<TITLE>Mod_perl_api - accessing the Apache API via mod_perl</TITLE>
+<LINK REV="made" HREF="mailto:pixel@no.mandrakesoft.com">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#description">DESCRIPTION</A></LI>
+	<LI><A HREF="#why can't the server find the handler i wrote">Why can't the server find the handler I wrote?</A></LI>
+	<UL>
+
+		<LI><A HREF="#did you enable the required hook">Did you enable the required hook?</A></LI>
+		<LI><A HREF="#is the handler correctly referenced in the configuration">Is the handler correctly referenced in the configuration?</A></LI>
+	</UL>
+
+	<LI><A HREF="#where can i find examples to get me started">Where can I find examples to get me started?</A></LI>
+	<LI><A HREF="#how can i check if mod_perl is available during configuration">How can I check if mod_perl is available during configuration?</A></LI>
+	<LI><A HREF="#how can i terminate a chain of handlers">How can I terminate a chain of handlers?</A></LI>
+	<LI><A HREF="#why can't my handler see an environment variable that i set in httpd.conf">Why can't my handler see an environment variable that I set in httpd.conf?</A></LI>
+	<LI><A HREF="#why does the server hang when i try to read a form">Why does the server hang when I try to read a FORM?</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P>Mod_perl_api - accessing the Apache API via mod_perl ($Date: 2000/03/05 11:57:55 $)</P>
+<P>
+<HR>
+<H1><A NAME="description">DESCRIPTION</A></H1>
+<P>This part of the mod_perl FAQ deals with the Apache Application
+Programmer's Interface and how to access it from perl via mod_perl.</P>
+<P>
+<HR>
+<H1><A NAME="why can't the server find the handler i wrote">Why can't the server find the handler I wrote?</A></H1>
+<P>
+<H2><A NAME="did you enable the required hook">Did you enable the required hook?</A></H2>
+<P>As described in the mod_perl/INSTALL document, the only callback hook
+enabled by default is PerlHandler.  If you want to intervene at a
+different stage of request processing you must enable the relevant
+hook.  So to add a special authentication handler, for instance, you
+would start the installation process with:</P>
+<PRE>
+  perl Makefile.PL PERL_AUTHEN=1</PRE>
+<P>
+<H2><A NAME="is the handler correctly referenced in the configuration">Is the handler correctly referenced in the configuration?</A></H2>
+<P>Apache must be told to load your handler, either as a module with the
+<CODE>PerlModule</CODE> directive or as a script with <CODE>PerlRequire</CODE>.  The
+handler subroutine will then be available, but you must also specify
+which requests it should process.  This is done by naming it in one of
+the Perl*Handler directives (PerlInitHandler, PerlTransHandler, etc.).
+If this directive is put in access.conf outside of any restrictive
+context, your handler will be called during the given phase of each
+request processed by the server.  You can make it more selective by
+restricting it to a directory (-hierarchy) in a &lt;Directory ...&gt;
+section of access.conf or by putting it in a .htaccess file.</P>
+<P>Here is an example of the directives needed to call a handler during
+Apache's URI to filename translation phase:</P>
+<PRE>
+  PerlRequire         /full/path/to/script/Trans.pl
+  PerlTransHandler   Trans::handler</PRE>
+<P>Trans.pl would start with the statement <CODE>Package Trans;</CODE> and define a
+subroutine called <CODE>handler</CODE>.</P>
+<P>
+<HR>
+<H1><A NAME="where can i find examples to get me started">Where can I find examples to get me started?</A></H1>
+<P>Check out the Apache-Perl-contrib tarfile at
+<A HREF="http://perl.apache.org/src/">http://perl.apache.org/src/</A></P>
+<P>Here is an example from Vivek Khera.  It allows you to filter files
+through a perl script based on their location.  Rather than having to
+invoke a CGI script, the user just references the file with a normal
+URL and it is automagically processed by this code...</P>
+<PRE>
+  #! /usr/local/bin/perl
+  use strict;
+</PRE>
+<PRE>
+
+  # filter a file before returning it to the web client
+  # tell Apache to use the PerlHandler FileFilter on file which need
+  # filtering in the htaccess file:
+  #
+  # &lt;Files *.baz&gt;
+  #  SetHandler  perl-script
+  #  PerlHandler FileFilter
+  # &lt;/Files&gt;</PRE>
+<PRE>
+
+  package FileFilter;</PRE>
+<PRE>
+
+  use Apache::Constants ':common';</PRE>
+<PRE>
+
+  # find out the file name, then write it out with our header attached
+  sub handler {
+    my $r = shift;</PRE>
+<PRE>
+
+    my $fileName = $r-&gt;filename;</PRE>
+<PRE>
+
+    open(F,$fileName) or return NOT_FOUND; # file not found</PRE>
+<PRE>
+
+    $r-&gt;content_type('text/html');
+    $r-&gt;no_cache(1);              # don't be caching my dynamic documents!</PRE>
+<PRE>
+
+    $r-&gt;send_http_header;</PRE>
+<PRE>
+
+    $r-&gt;print(&quot;&lt;HEAD&gt;&lt;TITLE&gt;This is my personal header!&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&quot;);</PRE>
+<PRE>
+    # Now copy the file to the client.  If you do not need to make any
+    # changes you can copy it verbatim with the single statement
+    #    $r-&gt;send_fd(\*F);
+    # Otherwise, loop over each line...
+    while(&lt;F&gt;) {
+      # mangle the contents here if you want
+      $r-&gt;print ($_);
+    }
+    close(F);
+</PRE>
+<PRE>
+
+    $r-&gt;print(&quot;&lt;HR&gt;Document created: &quot;, scalar localtime time);
+    $r-&gt;print(&quot;&lt;/BODY&gt;&quot;);</PRE>
+<PRE>
+
+    OK;
+  }</PRE>
+<PRE>
+
+  1;</PRE>
+<P>
+<HR>
+<H1><A NAME="how can i check if mod_perl is available during configuration">How can I check if mod_perl is available during configuration?</A></H1>
+<P>Ralf Engelschall writes:</P>
+<P>When you compiled one httpd with and the other without mod_perl, then
+you can simply use &lt;IfModule mod_perl.c&gt;...&lt;/IfModule&gt; to surround the
+stuff for the httpd compiled with mod_perl. The other then ignores
+these lines. Example:</P>
+<PRE>
+  &lt;IfModule mod_perl.c&gt;
+  ...stuff for httpd w/ mod_perl...
+  &lt;/IfModule&gt;
+  &lt;IfModule !mod_perl.c&gt;
+  ...stuff for httpd w/o mod_perl...
+  &lt;/IfModule&gt;</PRE>
+<P>
+<HR>
+<H1><A NAME="how can i terminate a chain of handlers">How can I terminate a chain of handlers?</A></H1>
+<P>During each phase of request processing, apache calls handlers which
+have registered an interest in looking at and possibly handling the
+request.  In some phases it makes sense to let all of the handlers
+have a chance to look at the request.  In other phases the first
+handler to return ``OK'' terminates that phase (see the Apache
+documentation, /manual/misc/API.html).</P>
+<P>If you define more than one PerlHandler for a phase, they are placed
+on a stack and all of the handlers on the stack are called
+sequentially by mod_perl, as long as they return ``DECLINED'' or ``OK''.
+Apache sees the return code from the final handler and reacts to it.
+If a handler wants to terminate the chain and ensure that no other
+handler is called after it, it should set the corresponding stack to
+undef.  For instance, when a TransHandler has set $r-&gt;filename, it
+should terminate with</P>
+<PRE>
+  $r-&gt;set_handlers(PerlTransHandler =&gt; undef);
+  return OK;</PRE>
+<P>
+<HR>
+<H1><A NAME="why can't my handler see an environment variable that i set in httpd.conf">Why can't my handler see an environment variable that I set in httpd.conf?</A></H1>
+<P>The configuration directives SetEnv and PassEnv are handled by
+apache's mod_env during the fixup stage, so mod_perl handlers that run
+prior to the fixup-stage don't see variables set with them.  You can
+use PerlSetEnv/PerlPassEnv instead - they are processed as soon as
+possible during a request.</P>
+<P>
+<HR>
+<H1><A NAME="why does the server hang when i try to read a form">Why does the server hang when I try to read a FORM?</A></H1>
+<P>The <CODE>$r-&gt;content</CODE> method reads <CODE>application/x-www-form-urlencoded</CODE>
+data directly from the client and it does not keep a copy, so if you
+(or another handler) call it again, the server will hang.  One way of
+avoiding this, if you do not have full control of all the handlers
+involved, is to convert the request from POST to GET in the first
+handler that reads the content:</P>
+<PRE>
+    use Apache::Constants qw(M_GET);
+</PRE>
+<PRE>
+
+    sub My::Test::handler {
+        my $r = shift;</PRE>
+<PRE>
+
+        if ($r-&gt;method eq 'POST') { 
+           my $content = $r-&gt;content;
+           # ...
+           #make sure nobody else tries to read POST data now that we have
+           $r-&gt;method('GET');
+           $r-&gt;method_number(M_GET);
+           $r-&gt;headers_in-&gt;unset('Content-length');
+        }
+        # ...
+    }</PRE>
+
+</BODY>
+
+</HTML>
