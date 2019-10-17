@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>Civilization Fanatics' Forums - Excel macro help needed</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="civilization,civ2,civ3,civ4,civilization iii,civilization ii,civilization iv,downloads,scenarios,modpacks,maps,sid meier,firaxis,strategy,tips,reference" />
+	<meta name="description" content="Dedicated to the entire Sid Meier's Civilization series." />
+	<link rel="stylesheet" href="http://forums.civfanatics.com/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Civilization Fanatics' Forums</a> &gt; <a href="f-3.html">COLOSSEUM</a> &gt; <a href="f-73.html">Computer Talk</a> &gt; Excel macro help needed</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forums.civfanatics.com/showthread.php?t=27817">Excel macro help needed</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Jul 23, 2002, 07:26 AM</div></div><div class="posttext">Seems I´ve been getting lots of problems lately. :D <br />
+<br />
+The case: I have an Excel file, into which I import some numerical data on a weekly basis. The imported data uses dots to mark decimals (i.e. 24.15 means 24 euros 15 cents), but I want to change this to commas which is specified in my Windows regional settings to be the decimal symbol. <br />
+<br />
+This can of course be done by selecting the cells and use the edit-replace funtion, but since I do this every week, I tried to fasten things up by making it a macro instead. The problem now is that Excel won´t recognise the numbers changed by the macro as real numbers, even though they have the comma just like any other value in the sheet! :confused: <br />
+<br />
+I guess this only applies to European users, but if anybody has a suggestion of how to change the macro so it would work, I would be very happy.<br />
+<br />
+I use this code for the macro:<br />
+<br />
+Range(&quot;C34:BF34&quot;).Select<br />
+    Selection.Replace What:=&quot;.&quot;, Replacement:=&quot;,&quot;,  _<br />
+LookAt:=xlPart, SearchOrder:=xlByRows, MatchCase:=False<br />
+<br />
+So, the problem is that if I do the exact same operation &quot;by hand&quot;, everything works ok, but if the macro does it, Excel won´t recognise the changed values as numbers, even though they perfectly correctly contain commas.<br />
+<br />
+I attach a screenshot so you can see for yourselves: note that all values have commas (cell formatting in all cells is &quot;General&quot;), but that the sum value only takes the values that have been corrected &quot;by hand&quot;, i.e. the sum is 1,09 instead of 1,58.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 24, 2002, 02:17 AM</div></div><div class="posttext">The problem here is that the replace function is specifically for text.  When you use it inside a macro, Excel will treat the converted values as text.  You can see this by the fact that the value you converted via the macro appears on the left-hand side of the cell (default for text) and the &quot;numbers&quot; appear on the right (default for numbers).<br />
+<br />
+The problem here is that Excel works on the Windows Regional settings.  <br />
+<br />
+Can you confirm what your Regional Settings are?  You say that you have these set to the American system (decimal points for decimals, rather than commas), in which case I am very surprised that even the top two values add correctly!<br />
+<br />
+What I would presume is the following:  <br />
+<br />
+*  You have your regional settings set to European - such that the decimal separator is a comma.<br />
+<br />
+*  The data you are importing in to Excel is actually a text file.  You are dumping the data into your sheet (maybe unknowingly!) as text.<br />
+<br />
+*  When you manually change the decimal point to a comma, Excel recognises this, and believes that you are changing a text cell to a value cell.<br />
+<br />
+*  When the macro changes it, as stated above, Excel keeps it as a text cell.<br />
+<br />
+<br />
+So what to do?  Its actually a bit complicated.  What you need to do, is read in the text value.  You then need to split out the parts that will become the whole number and the decimal section, then convert each of those parts into something that Excel regognises as a number.<br />
+<br />
+Try this:<br />
+Sub ChangeIt()<br />
+Dim sTextString As String<br />
+sTextString = ActiveCell.Value<br />
+<br />
+Dim sLeftSide As String<br />
+Dim sRightSide As String<br />
+<br />
+'Split text into whole and decimal parts<br />
+sLeftSide = Left(sTextString, InStr(1, sTextString, &quot;.&quot;) - 1)<br />
+sRightSide = Right(sTextString, Len(sTextString) - 1 - Len(sLeftSide))<br />
+<br />
+'Convert to a double data type:<br />
+Dim dblConverted As Double<br />
+<br />
+'Right side requires a divisor<br />
+Dim sDivisor As String<br />
+sDivisor = &quot;1&quot;<br />
+Dim i As Integer<br />
+    For i = 1 To Len(sRightSide)<br />
+        sDivisor = sDivisor &amp; &quot;0&quot;<br />
+    Next i<br />
+<br />
+dblConverted = CDbl(sLeftSide) + CDbl(sRightSide) / CDbl(sDivisor)<br />
+<br />
+ActiveCell.Value = dblConverted<br />
+End Sub<br />
+<br />
+<br />
+This may work.  Adapt as required to do multiple values - you will need to loop through each cell in the range, rather than do it on a multiple cell selection. :)<br />
+<br />
+<br />
+<br />
+There may be an easier way of doing this - but I couldn't think of one.  the CDbl function on its own doesn't seem to work (it doesn't recognise the decimal part....)   <br />
+<br />
+It may actually be easier to adapt your input macro that dumps the data into Excel, so that it pastes it as a value rather than as text.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Jul 24, 2002, 05:30 AM</div></div><div class="posttext">Originally posted by ainwood <br />
+What I would presume is the following:  <br />
+<br />
+*  You have your regional settings set to European - such that the decimal separator is a comma.<br />
+<br />
+*  The data you are importing in to Excel is actually a text file.  You are dumping the data into your sheet (maybe unknowingly!) as text.<br />
+<br />
+*  When you manually change the decimal point to a comma, Excel recognises this, and believes that you are changing a text cell to a value cell.<br />
+<br />
+*  When the macro changes it, as stated above, Excel keeps it as a text cell.<br />
+<br />
+You are absolutely right. <br />
+<br />
+<br />
+There may be an easier way of doing this - but I couldn't think of one.  the CDbl function on its own doesn't seem to work (it doesn't recognise the decimal part....)   <br />
+<br />
+<br />
+Thanks a lot. :love: Your solution works perfectly. :goodjob:</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

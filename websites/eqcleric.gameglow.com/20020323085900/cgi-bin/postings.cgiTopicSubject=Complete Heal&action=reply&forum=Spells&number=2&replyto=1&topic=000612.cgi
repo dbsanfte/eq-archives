@@ -1,0 +1,187 @@
+<HTML><HEAD><TITLE>EQ Cleric - Forums - Reply to Topic</TITLE>
+
+</HEAD>
+ <BODY bgcolor="#FFFFFF"  text="#000000" link="#000080" alink="" vlink="#2f2f4f" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<center>
+<!--- Start Everyone.net network logo, no edit without explicit permission from Everyone.net -->
+<!--- <A HREF="http://onlinegames.everyone.net">
+<img src="http://static.everyone.net/adservice/images/games/onlinegames.gif" border="0" width="100" height="60"></A> -->
+  
+<!--- End Everyone.net network logo -->
+  
+<!--- Start Everyone.net banner, no edit without explicit permission from Everyone.net -->
+<!--- <iframe
+src="http://engage.everyone.net/hserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?"
+noresize scrolling="no" hspace="0" vspace="0" frameborder="0"
+marginheight="0" marginwidth="0" width="468" height="60">
+<script
+src="http://engage.everyone.net/jserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+</script>
+<noscript>
+ <a
+href="http://engage.everyone.net/adclick/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+  <img
+src="http://engage.everyone.net/iserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+</noscript>
+</iframe> -->
+<!-- End Everyone.net banner -->
+</center>
+</font>
+<table border=0 width=95%>
+<TR><TD>
+<A HREF="Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://eqcleric.gameglow.com/ubb/EQC-BBTitle.jpg"  BORDER=0></A></td>
+<td align=center>
+
+<table border=0>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Forum:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Spells</FONT></td></tr>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Topic:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Complete Heal</FONT></td></tr></table>
+
+</td></tr></table>
+<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://eqcleric.gameglow.com/cgi-bin/Ultimate.cgi?action=agree">Want to register?</a></FONT>
+
+<FORM ACTION="postings.cgi" NAME="REPLIER" METHOD="POST">
+<center>
+
+<table border=0 cellpadding=4 cellspacing=1 width=95%>
+<tr bgcolor="#D5E6E1">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Who Can Post?
+</font>
+</td>
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Any registered users may post a reply.
+</font>
+</td></tr>
+
+<tr bgcolor="#D5E6E1">
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+About Registration
+</font></td><td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+You must be registered in order to post a topic or reply in this forum.</font></td></tr>
+<tr bgcolor="#dedfdf"><td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your UserName:</B></FONT></td>
+<td valign=top>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td>
+</tr>
+
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Password:</B></FONT></td>
+<td valign=top><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="Ultimate.cgi?action=lostpw">Forget your password?</A></font></td></tr>
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Message Icon:</B></FONT></td>
+<td><INPUT type="radio" name="MsgIcon" value="1" CHECKED>&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon1.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="10"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon10.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="11"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon11.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="12"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon12.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="13"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon13.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="14"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon14.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="2"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon2.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR><INPUT type="radio" name="MsgIcon" value="3"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon3.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="4"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon4.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="5"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon5.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="6"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon6.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="7"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon7.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="8"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon8.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="9"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon9.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR></td></tr>
+<TR bgcolor="#dedfdf"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Reply:</B></FONT>
+<p><BR>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#2f2f4f">
+*HTML is ON<BR>
+<A HREF="http://eqcleric.gameglow.com/ubb/ubbcode.html" target=_blank>*UBB Code is ON</A><BR>
+<p><A HREF="http://eqcleric.gameglow.com/ubb/smilies.html" target=_blank>Smilies Legend</A></font>
+</td>
+<td>
+<TEXTAREA NAME="ReplyMessage" ROWS=10 COLS=45 WRAP="VIRTUAL">[QUOTE]Originally posted by Quotison:
+[B]I assume you are under level 44.. if you are level 44 or above, Celestial healing would be a perfect healing spell for a rogue or ranger, as they don't have as many HPs as a warrior.
+
+It is hard to conserve mana, since you are forced to use mana when the situation arises. Unlike wizards or druids, you can't be more conservative with your mana. They can decide not to nuke, but you can't decide not to heal. 
+
+Set up your CH macro to catch fizzles. I do mine like this:
+
+/cast 1
+/g Complete Healing --> %T
+/cast 1
+
+If the first one fizzles, it will get cast again. 
+[/B][/QUOTE]
+
+</TEXTAREA>
+</td></tr>
+<TR bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<B>Options</B>
+</FONT></td>
+<td valign=top><FONT SIZE="1" FACE="Verdana, Arial">
+<BR><INPUT TYPE="CHECKBOX" NAME="DisableSmilies" VALUE="yes"> <B>Disable Smilies in This Post. <BR><INPUT TYPE="CHECKBOX" NAME="Signature" VALUE="yes"> <B>Show Signature:</B> include your profile  signature.  Only registered users may have signatures.
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="postreply">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Complete Heal">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="Spells">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="2">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="000612.cgi">
+<CENTER>
+ <FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+<P>
+If you have previously registered, but forgotten your password, <A HREF="Ultimate.cgi?action=lostpw">click here</A>.
+</font>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Reply">
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<P>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#FF0000">*If HTML and/or <A HREF="http://eqcleric.gameglow.com/ubb/ubbcode.html" target=_blank>UBB Code</A> are enabled, this means you can use HTML and/or UBB Code in your message.</FONT>
+<br>
+<P><FONT SIZE="2" FACE="Verdana, Arial">
+<TABLE BORDER=0 cellpadding=4 border=0 cellspacing=1 WIDTH="95%"><TR bgcolor="#D5E6E1"><TD COLSPAN=2><CENTER><FONT SIZE="2" COLOR="#000080" FACE="Verdana, Arial">T O P I C  &nbsp;&nbsp;&nbsp; R E V I E W</font></CENTER></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Tyba</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Began using CH recently as a way to conserve mana -- my main fighting has been with one or two others (rogue/ranger). The timing of this spell is most times easy to judge, but a fizzle can corrupt it, and players die. <P>Any suggestions out there? My mana regens SO very slowly that I just have to do something to conserve it, otherwise pulls are put on hold and exp comes even slower.<BR></FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Quotison</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I assume you are under level 44.. if you are level 44 or above, Celestial healing would be a perfect healing spell for a rogue or ranger, as they don't have as many HPs as a warrior.<P>It is hard to conserve mana, since you are forced to use mana when the situation arises. Unlike wizards or druids, you can't be more conservative with your mana. They can decide not to nuke, but you can't decide not to heal. <P>Set up your CH macro to catch fizzles. I do mine like this:<P>/cast 1<BR>/g Complete Healing --> %T<BR>/cast 1<P>If the first one fizzles, it will get cast again. <P>------------------<BR><B><A HREF="http://www.magelo.com/eq_view_profile.html?num=42628" TARGET=_blank>Quotison Iachwer</A></B><BR>46th Level Dwarven Cleric<BR>Tarew Marr Server</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Aerillea</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Setup a Complete Heal key, somewhat like this:<P>/cast # (the number spell gem for your CH Spell)<BR>/g Casting Complete Heal on %t<BR>/cast # again<P>This will cut down the delay a little between recasts if you fizzle. <P>Since I tend to be medding all the time, my heal keys start with Stand, just in case I'm sitting down.<P>/stand<BR>/cast # (the number spell gem for your CH Spell)<BR>/g Casting Complete Heal on %t<BR>/cast # again<P><BR>---<BR>If your healing to late that 2 seconds makes a big difference in life or death, you may need to start casting earlier.</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Tyba</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I appreciate the suggestions. I neglected to mention that Tyba is level 51. I will try the second suggestion about the additional /cast # line....hopefully it helps. The rogue I group with is very important to me. Him dying is unacceptable.<BR></FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Gravewalker</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I suggest NOT using Complete Heal on Rogues or Rangers at your level. Once you get higher, close to level 60, Rogues/Rangers will have the AC and HP's that are sufficient enough to use CH. Other than that, use Divine Light or Celestial Heal. Rogues shouldn't be taking too much damage anyways (Evade), and either should Rangers (Jolt spell). Unless the Ranger is the main tank, which I hope not =)  <P>------------------<BR>Gravewalker<BR>60 High Priest<BR>Blood of Ro<BR><A HREF="http://www.magelo.com/eq_view_profile.html?num=49075" TARGET=_blank>Magelo Profile</A></FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Samsara</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">If she's grouping with just the rogue and the ranger, then I hope the ranger *IS* her main tank   <IMG SRC="http://eqcleric.gameglow.com/ubb/wink.gif">.  I myself have spent most of my exping played time with a ranger as my main tank and I love him to death.  He does a great job at keeping things off me, and I've been CHing him since we were both in our early 40s, well before Celestial was in the game.  Just toss him your best buffs including symbol and CH is very worthwhile to use on a low-50s ranger in controlled situations.<P>The macro above should help catch fizzles, and level/Alteration skill should help prevent them.  Increased wisdom is also rumored to play a role in reducing fizzles.<P><P>------------------<BR>Samsara<BR>Holy Cleric of Tunare<BR>The Folk of Fennin Ro</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Taishar Malkier</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Technically, if you figure it out with full lvl 54 cleric buffs, ANYONE is worth chealing if u can do it when they are at one bub =D.<P>------------------<BR><B>Taishar Malkier</B> d0rf templar<BR><B>Mysk Isntursk</B><BR>uba twink eva nite<BR><B>Torvonnilous</B></FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Luminar</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">at 51, rogue and ranger are not efficent to CH, unless maybe you used your largest symbol on them. Neither of these classes should be tanking, but if they are.. a symbol is a must, and i would stick with celestial healing and remedy. (Divine light I never started useing untill 58, its not really any more or less mana efficent then casting 3 remedys, and most of the time your only useing remedy to help save a caster getting beat on. at 58 divine light is used for the same reason)<P>however as you said, with your mana regening slower and slower seemingly, you can no longer use thrown together groups. Useing a rogue/ranger to MT and not having any bard or enchanter for mana regen is just ASKING for long downtime. (Shamans help with slow if you can get them too). either get a pali/sk/warrior, or get an enchanter/bard. or better yet, both.<P><P>------------------<BR>---<P><A HREF="http://www.magelo.com/eq_view_profile.html?num=32524" TARGET=_blank>Magelo Profile</A></FONT></TD></TR></TABLE>
+</FONT>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.ReplyMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+<P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:Rayne@gameglow.com">Contact Us</A> | <A HREF="http://eqcleric.gameglow.com" target=_top>EQ Cleric</A>
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board (UltimateBB), Version 5.43a<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>

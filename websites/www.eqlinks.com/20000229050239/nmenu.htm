@@ -1,0 +1,162 @@
+<html>
+<head>
+	<title>Cross-browser Dynamic HTML Scripts - SideScrollMenu</title>
+    <style type="text/css">
+#divBg{position:absolute; z-index:10; width:200; left:0; height:100; clip:rect(0,10,10,0)}
+#divMenu{position:absolute; left:15; top:6; font-weight:bold}
+#divArrowLeft{position:absolute; width:20; height:20; left:0; top:9}
+#divArrowRight{position:absolute; width:20; height:20; top:9}
+</style>
+<script type="text/javascript" language="JavaScript">
+/********************************************************************************
+Copyright (C) 1999 Thomas Brattli
+This script is made by and copyrighted to Thomas Brattli at www.bratta.com
+Visit for more great scripts. This may be used freely as long as this msg is intact!
+I will also appriciate any links you could give me.
+********************************************************************************/
+//Default browsercheck, added to all scripts!
+function checkBrowser(){
+	this.ver=navigator.appVersion
+	this.dom=document.getElementById?1:0
+	this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+	this.ie4=(document.all && !this.dom)?1:0;
+	this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0;
+	this.ns4=(document.layers && !this.dom)?1:0;
+	this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5)
+	return this
+}
+bw=new checkBrowser()
+/**************************************************************************
+Variables to set.
+***************************************************************************/
+//Updated: Added left and top variables.
+sLeft=0 //The left placement of the menu
+sTop=70 //The top placement of the menu
+
+//The height of the menu
+sMenuheight=30
+
+//Width of the arrows
+sArrowwidth=16
+
+//Scroll speed: (in milliseconds, change this one and the next variable to change the speed)
+sScrollspeed=20
+
+//Pixels to scroll per timeout.
+sScrollPx=10
+
+/**************************************************************************
+Scrolling functions
+***************************************************************************/
+var tim=0
+var noScroll=true
+function mLeft(){
+	if(!noScroll && oMenu.x<sArrowwidth){
+		oMenu.moveBy(sScrollPx,0)
+		tim=setTimeout("mLeft()",sScrollspeed)
+	}
+}
+function mRight(){
+	if(!noScroll && oMenu.x>-(oMenu.scrollWidth-(pageWidth))-sArrowwidth){
+		oMenu.moveBy(-sScrollPx,0)
+		tim=setTimeout("mRight()",sScrollspeed)
+	}
+}
+function noMove(){clearTimeout(tim); noScroll=true}
+/**************************************************************************
+Object part
+***************************************************************************/
+function makeObj(obj,nest,menu){
+	nest=(!nest) ? '':'document.'+nest+'.'										
+   	this.css=bw.dom? document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+"document.layers." +obj):0;		
+	this.evnt=bw.dom? document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+"document.layers." +obj):0;		
+	this.scrollWidth=bw.ns4?this.css.document.width:this.evnt.offsetWidth
+	this.x=(bw.ns4 || bw.ns5)? this.css.left:this.css.pixelLeft;
+	this.y=(bw.ns4 || bw.ns5)? this.css.top:this.css.pixelTop;		
+	this.moveBy=b_moveBy; this.moveIt=b_moveIt;	this.showIt=b_showIt;this.clipTo=b_clipTo;
+	return this
+}
+function b_moveBy(x,y){this.x=this.x+x; this.y=this.y+y; this.css.left=this.x; this.css.top=this.y}
+function b_moveIt(x,y){this.x=x; this.y=y; this.css.left=this.x; this.css.top=this.y}
+function b_clipTo(t,r,b,l){
+	if(bw.ns4){this.css.clip.top=t; this.css.clip.right=r; this.css.clip.bottom=b; this.css.clip.left=l
+	}else this.css.clip="rect("+t+","+r+","+b+","+l+")";
+}
+function b_showIt(){this.css.visibility="visible"}
+/**************************************************************************
+Object part end
+***************************************************************************/
+
+/**************************************************************************
+Init function. Set the placements of the objects here.
+***************************************************************************/
+function sideInit(){
+	//Width of the menu, Currently set to the width of the document.
+	//If you want the menu to be 500px wide for instance, just 
+	//set the the pageWidth=500 in stead.
+	pageWidth=(bw.ns4 || bw.ns5)?innerWidth:document.body.offsetWidth-20;
+	
+	oBg=new makeObj('divBg')
+	oMenu=new makeObj('divMenu','divBg',1)
+	oArrowRight=new makeObj('divArrowRight','divBg')
+	//Placement
+	oBg.moveIt(sLeft,sTop) //Main div, holds all the other divs.
+	oMenu.moveIt(sArrowwidth,6)
+	oArrowRight.moveIt(pageWidth-sArrowwidth,9)
+	//setting the width and the visible area of the links.
+	if(bw.dom || bw.ie4){ oBg.css.width=pageWidth; oBg.css.overflow="hidden" }
+	oBg.clipTo(0,pageWidth,sMenuheight,0)
+}
+
+//executing the init function on pageload.
+onload=sideInit;
+</script>
+    <base target="main1">
+</HEAD>
+<BODY bgcolor="#380000" link="#CDFCF7" vlink="#CDFCF7" text="#3394F4">
+<div id="divBg">
+	<div id="divMenu"><table height="22"><tr><td nowrap height="18">
+			[<b><a href="http://www.eqlinks.com/" target="_top">Home</a>]
+			[<a href="http://www.eqlinks.com/center.htm">News</a>] 
+			[<a href="http://www.eqlinks.com/classinfo/classget.htm">Class Guides</a>] 
+			[<a href="http://www.eqlinks.com/raceinfo/raceget.htm">Race Guides</a>] 
+			[<a href="http://www.eqlinks.com/zones/zonestart.htm">Zone Guides</a>] 
+			[<a href="http://www.eqlinks.com/equipment/equipmentcenter.htm">Equipment</a>]  
+			[<a href="http://www.eqlinks.com/trade/tradeskills.htm">Trade Guides</a>]  
+			[<a href="http://www.eqlinks.com/quest.htm">Quest</a>] 
+			[<a href="http://www.eqlinks.com/bestairy.htm">Bestiary</a>]
+			[<a href="http://www.eqlinks.com/commands/formsstart.htm">Commands</a>] 
+			[<a href="http://www.eqlinks.com/guilds/guildstart.htm">Guilds</a>]  
+			[<a href="http://pub4.ezboard.com/beventboard.html">Events</a>]  
+			[<a href="http://www.eqlinks.com/links/linkcenter.htm">Links</a>] 
+			[<a href="http://www.eqlinks.com/tradingpost/tradingpost.htm">Trading Post</a>]  
+			[<a href="http://www.auctionrover.com/QuickSearch/ShowlAuctions.asp?or=2&ca=15509&ft=everquest&ps=50&sr=1&ao=1">Auctions</a>] 
+			[<a href="http://www.eqlinks.com/searchs/searchs.htm">Site Search</a>] 
+			[<a href="http://www.eqlinks.com/chat/chatroom" target="_blank">Chat Room</a>] 
+			[<a href="http://www.eqlinks.com/submit/submitcenter.htm">Submit Info</a>] 
+			[<a href="http://pub5.ezboard.com/beqlinks">Message Board</a>] 
+			[<a href="http://www.everlore.com/status.htm">Server Status</a>] 
+			[<a href="http://www.eqlinks.com/sitemap.htm">Site Map</a>]
+			[<a href="http://www.eqlinks.com/gameing.htm">Trivia Blitz</a>] 
+			</b>
+			</td></tr></table>
+	</div>
+	<div id="divArrowLeft"><a href="javascript://" onmouseover="noScroll=false; mLeft()" onmouseout="noMove()"><img src="images/arrowleft.gif" width=16 height=21 border=0></A></div>
+	<div id="divArrowRight"><a href="javascript://" onmouseover="noScroll=false; mRight()" onmouseout="noMove()"><img src="images/arrowright.gif" width=20 height=20 border=0></a></div>
+</div>
+<table border="0" width="100%">
+  <tr>
+    <td width="33%"><a href="http://www.eqlinks.com" target="_top"><img border="0" src="images/NewEQlink.gif" width="207" height="47"></a></td>
+    <td width="33%"></td>
+    <td width="34%">
+      <p style="margin-top: 0; margin-bottom: 0" align="right"><b>Menu Options</b></p>
+      <p style="margin-top: 0; margin-bottom: 0" align="right"><b><a href="nav.htm" target="_self">Bar
+      Menu</a></b></p>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</BODY>
+</HTML>
+
+

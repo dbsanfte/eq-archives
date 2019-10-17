@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>Civilization Fanatics' Forums - A µseconds delay C function</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="civilization,civ2,civ3,civ4,civilization iii,civilization ii,civilization iv,downloads,scenarios,modpacks,maps,sid meier,firaxis,strategy,tips,reference" />
+	<meta name="description" content="Dedicated to the entire Sid Meier's Civilization series." />
+	<link rel="stylesheet" href="http://forums.civfanatics.com/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Civilization Fanatics' Forums</a> &gt; <a href="f-3.html">COLOSSEUM</a> &gt; <a href="f-73.html">Computer Talk</a> &gt; A µseconds delay C function</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forums.civfanatics.com/showthread.php?t=36463">A µseconds delay C function</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Lucky</div><div class="date">Nov 12, 2002, 09:22 AM</div></div><div class="posttext">I am currently trying to find a working (on a PC C-software surrounding) µseconds function. <br />
+<br />
+Meaning that I need a function that can precisely give me a delay of milliseconds, with precision of microseconds. <br />
+<br />
+C standard libraries give me: <br />
+function - precision :<br />
+sleep - seconds <br />
+delay - milliseconds <br />
+<br />
+and <br />
+usleep - microseconds, but this does not work properly in the microseconds range under Windoze or DOS :eek: <br />
+<br />
+So if anyone here knows a C function (not neccessarly from a standard library) please let me know. <br />
+Currently I'm investigating a clock function which times through the system clock, but that still is rather unprecise. :mischief: <br />
+<br />
+The alternative is to write an assembler program to directly program the timer chip 8253, which every PC has, and which every timer function uses in some ways. That will take much longer and time is an issue here, but that's how I'll do it if there is no other possibility. <br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Nov 12, 2002, 12:07 PM</div></div><div class="posttext">You will be hard pressed in a multithread environment to attain that level of precision. But I'm sure your determination will prove me wrong. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lucky</div><div class="date">Nov 12, 2002, 02:38 PM</div></div><div class="posttext">Well, that´s why I don´t use Windoze, the program merely uses DOS. We need that real-time environment. Unfortunately usleep doesn´t work there either.<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Nov 12, 2002, 03:04 PM</div></div><div class="posttext">Ahh, so it's not so much a specific length of delay but a delay to a 'future real time'. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Nov 12, 2002, 05:07 PM</div></div><div class="posttext">Found this don't know if it helps.<br />
+<br />
+<br />
+<br />
+Information on 8253/8254 Programming<br />
+The IBM XT used an Intel 8253 to perform timing, sound generation, and memory refresh logic, the AT improved upon this by using the upwardly compatible 8254. The HCMOS version is called the 82C54. You can download a datasheet for the 82C54 from Intel. <br />
+The Intel 82C54 is a high-performance, CHMOS version of the industry standard 8254 counter/timer. It provides three independent 16-bit counters. All operating modes are software programmable. The 82C54 is pin compatible with the HMOS 8254, and is a superset of the 8253. Six programmable modes allow the 82C54 to be used as an event counter, elapsed time indicator, programmable one-shot, and in many other applications. <br />
+<br />
+In the PC's architecture the 8254 is located at hardware I/O address 40H through 43H. The following C/Assembler code reads the 16 bit count maintained by channel 0 of the PC's 8254. Each count represent a time interval of 0.41905 uSec. <br />
+<br />
+   unsigned int read_8254_count (void)<br />
+   {<br />
+     asm {<br />
+        pushf             // save current inetrrupt status<br />
+        cli               // no ints while we read the 8254<br />
+        mov  al,0         // command to latch counter for counter 0<br />
+        out  0x43,al      // tell the 8254 to latch the count<br />
+        db   0x24, 0xf0   // jmp $+2, this slow I/O on fast processors<br />
+        in   al,0x40      // read LSB of 8254's count<br />
+        mov  ah,al        // temp save<br />
+        db   0x24, 0xf0   // jmp $+2<br />
+        in   al,0x40      // read MSB of count<br />
+        xchg al,ah        // get right order of MSB/LSB<br />
+        popf              // return saved interrupt status<br />
+     }<br />
+     return _AX;<br />
+  }</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Nov 12, 2002, 05:49 PM</div></div><div class="posttext">And if you get real desperate you could always write some assembler noop loops and get some even finer resolutions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lucky</div><div class="date">Nov 13, 2002, 04:14 AM</div></div><div class="posttext">Thanks, I´ll try the assembler programming now, but also test a few other features. I hope at least one of them works as intended.<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lucky</div><div class="date">Nov 13, 2002, 10:34 AM</div></div><div class="posttext">Could you tell me where you got that C/ASM code from?<br />
+I need to find out which compiler they use, which include libraries, etc.<br />
+I currently use the standard GNU C compiler, so that the program is most platform independant, but that function does not work there. I rewrote the assembler code, but it still is kind of difficult to use.<br />
+Any info would be appreciated.<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gonzo_for_civ</div><div class="date">Nov 14, 2002, 06:09 PM</div></div><div class="posttext">@Lucky, please post and tell us the results of your assembly efforts :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Nov 14, 2002, 09:04 PM</div></div><div class="posttext">Good thing gonzo posted cause I didn't notice that you had made another post.<br />
+<br />
+If you need better resolution than the timer permits you can stock a noop loop to take up the slack. Of course you have to be able to measure the performance of the machine that you run on to use that approach. I'm not too sure how &quot;real time&quot; you have to go to, you may have to even allow for checks to the clock in the noop loop if your getting real microscopic.<br />
+<br />
+<br />
+<br />
+Anyway:<br />
+<br />
+Did search on &quot;8253/8254 Programming&quot; got 97 hits<br />
+<br />
+First link leads you to the program chunk I posted<br />
+<br />
+http://www.techedge.com.au/tech/8253tec.htm <br />
+<br />
+http://www.decisioncards.com/io/tutorials/8254_tut.html <br />
+<br />
+http://www.decisioncards.com/io/tutorials/8254_tut2.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lucky</div><div class="date">Nov 15, 2002, 03:35 AM</div></div><div class="posttext">Well, the decision I had to make was between another C function I found and writing an assembler program. I actually did both, and the assembler part worked as intended, but it was kind of difficult to implement in the program itself. :ack:<br />
+<br />
+The uclock C-function returns a simple clock setting of the 8253/8254. It is even simpler and therefore faster in processing the timer data than the assembler code I wrote and the ones you and I found somewhere else.<br />
+With the implementation in the C program, it runs with a precision of +-3..5 µs. We will now have to test whether that is enough. My personal belief is that it's ok, since the step motor itself is not capable of much more than that precision, but the experiments we will run next week (probably) will yield more results. :yeah:<br />
+<br />
+Until then I have to polish up the code a bit and hopefully gain a bit more speed. But since the comp we use is a PII 350, there is nothing really to worry about.<br />
+More on next week.<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Nov 15, 2002, 10:41 AM</div></div><div class="posttext">Some 'C' compliers let you write inline code but I haven't done any of that for more than 10 years. The fact that the compiler wrote code to read the clock that was faster than the assembler kind of shows why it's not done much any more. :)<br />
+<br />
+The time precision [Edit-opps: shouldn't] be a problem operating stepper motors, they probably have more operational lag than the resolution on the timer chip.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lucky</div><div class="date">Nov 20, 2002, 01:46 PM</div></div><div class="posttext">Ok, the function seems to work as intended, the motor is running fine. The uclock() is precise enough.<br />
+<br />
+But for final examination, we need to run several test series. That will still take a while more.<br />
+:D</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.5, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

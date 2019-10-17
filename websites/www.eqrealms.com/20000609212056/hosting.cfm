@@ -1,0 +1,368 @@
+
+
+
+	
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+
+<HTML>
+
+<HEAD>
+<TITLE>EQrealms - Hosting Info</TITLE>
+
+<META NAME="KeyWords" CONTENT="Everquest, EverQuest, EVERQUEST, EQ, Quest, Ever, Role-playing, RPG, Everquest Guilds, Everquest News, Everquest Guides, Quests, Items, Weapons, Norrath, Role-playing Games, Game, Games, Gamer">
+<META NAME="Author" CONTENT="Matt 'Dyno' Rowell, webmaster@gagames.com">
+<META NAME="Description" CONTENT="Welcome to the Realms of Everquest, this is your one stop information site for EverQuest.  Enjoy guides, news, quests, event information, and much more!">
+<!-- Ad this Code to The Top of Each Page-->
+<SCRIPT LANGUAGE="JavaScript"> 
+<!-- 
+  function random() { 
+    randomseed = (randomseed * randoma + randomc) % randomm; 
+    return randomseed / randomm;
+  } 
+  var randomm = 714025; 
+  var randoma = 4096; 
+  var randomc = 150889; 
+  randomseed = Date.parse(new Date()); 
+  randomNumber = random() + ""; 
+
+  var not_ns2 = false;
+  if ((navigator.appVersion.indexOf ("2.0") == -1) 
+       || (navigator.appName.indexOf("Netscape") == -1)) {
+    not_ns2 = true;
+  }
+  //var page = "www.eqrealms.com";
+  var page = window.location.hostname + window.location.pathname;
+  var oasurl = "http://ads.euniverseads.com/RealMedia/ads/";
+  var imageurl = oasurl + "adstream_jx.cgi/" + page + "/1"; 
+  var clickurl = oasurl + "click_nx.cgi/" + page + "/1"; 
+
+  function oas_ad(pos) {
+    var rand = randomNumber.substring(2,11);
+    document.write ("<SCRIPT language='JavaScript1.1' SRC='" + imageurl + '@' + pos + '?' + rand + "'></SCRIPT>");
+}
+
+// --> 
+</SCRIPT> 
+<SCRIPT LANGUAGE="JavaScript1.1"> 
+<!-- 
+var randomNumber = new String (Math.random()); 
+// --> 
+</SCRIPT> 
+<!-- End this code to the top of each page-->
+<script language = "javascript">
+<!--
+var color_num1 = "#bfbf80"
+var color_num2 = "#4a0000"
+var color_num3 = "#474723"
+var color_num4 = "#bfbf80"
+var panelcolor = "#4a0000"
+//-->
+</script>
+<script language="JavaScript" src='http://ga.gamecity.net/menugen.js'></script>
+</HEAD>
+
+<style type="text/css" title="GA-S">
+<!--
+   .b:link {text-decoration: none; color: ffff80}
+   .b:visited {text-decoration: none; color: ffff40}
+-->
+</style>
+
+<BODY LEFTMARGIN="0" RIGHTMARGIN="0" TOPMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" BGCOLOR="#dbdbb7" TEXT="#474723" LINK="#ca0000" VLINK="#808080" ALINK="#ff0000">
+<script language="JavaScript" src='http://ga.gamecity.net/panelbar.js'></script>
+
+
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD width="230" bgcolor="#4a0000" valign="top">
+<IMG SRC="logo1.gif" WIDTH="230" HEIGHT="80" ALT="EQrealms - the EverQuest Knowledge Base"><BR>
+</TD><TD width="100%" bgcolor="#4a0000">
+<CENTER>
+
+<!--Top Banner Start-->
+<SCRIPT LANGUAGE="JavaScript"> 
+<!--
+if (not_ns2) {
+  oas_ad('Top');
+}
+//-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://euni01a.euniverseads.com/RealMedia/ads/click_nx.cgi/www.eqrealms.com/@Top">
+<IMG SRC="http://euni01a.euniverseads.com/RealMedia/ads/adstream_nx.cgi/www.eqrealms.com/@Top"></A>
+</NOSCRIPT>
+<!--End Top Banner-->
+
+</CENTER>
+</TD></TR>
+</TABLE>
+
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD width="126" valign="top" bgcolor="#4a0000"><IMG SRC="logo2.gif" WIDTH="126" HEIGHT="70">
+
+<TABLE width="126" border="0" cellpadding="3" cellspacing="0">
+<TR><TD width="126" bgcolor="#2b0000"><FONT FACE="Arial, Verdana, Helvetica" size="-1" COLOR=#ffffff><B>EQ News</B></FONT></TD></TR>
+<TR><TD width="126">
+<FONT FACE="Verdana, Arial" size="-2">
+<A class="b" HREF="/index.cfm">Daily News</a><BR>
+<A class="b" HREF="/customize.cfm">Customize News</A><BR>
+<A class="b" HREF="/archive.cfm">News Archives</A><BR>
+<A class="b" HREF="/submit_news.cfm">Submit News</A><BR>
+<A class="b" HREF="/prizes.cfm">GeForce 2 Contest!</A><BR>
+<A class="b" HREF="/article.cfm?id=59">Bonus Points</a>
+</FONT></TD>
+</TR>
+</TABLE>
+
+<TABLE width="126" border="0" cellpadding="3" cellspacing="0">
+<TR><TD width="126" bgcolor="#2b0000"><FONT FACE="Arial, Verdana, Helvetica" size="-1" COLOR=#ffffff><B>Discussion</B></FONT></TD></TR>
+<TR><TD width="126">
+<FONT FACE="Verdana, Arial" size="-2">
+<A class="b" HREF="http://216.240.130.13/forums/sites/passin.cfm?Site_Name=EQRealms%2Ecom%20Forums" target="_blank">All Forums</a><BR>
+<A class="b" HREF="http://216.240.130.13/forums/categories.cfm?catid=73&currentsiteid=22">General Discussion</A><BR>
+<A class="b" HREF="http://216.240.130.13/forums/categories.cfm?catid=74&currentsiteid=22">Roleplay/Stories</A><BR>
+<A class="b" HREF="http://216.240.130.13/forums/categories.cfm?catid=75&currentsiteid=22">Trade Board</A>
+</FONT></TD>
+</TR>
+</TABLE>
+
+<TABLE width="126" border="0" cellpadding="3" cellspacing="0">
+<TR><TD width="126" bgcolor="#2b0000"><FONT FACE="Arial, Verdana, Helvetica" size="-1" COLOR=#ffffff><B>Knowledge</B></FONT></TD></TR>
+<TR><TD width="126">
+<FONT FACE="Verdana, Arial" size="-2">
+<A class="b" HREF="/equipment/armor.cfm">Armory</a><BR>
+<A class="b" HREF="/beasts/index.cfm">Bestiary</a><BR>
+<A class="b" HREF="/equipment/items.cfm">Items</A><BR>
+<A class="b" HREF="/lore/index.cfm">Lore</A><BR>
+<A class="b" HREF="/quests/index.cfm">Quests</A><BR>
+<A class="b" HREF="/images/index.cfm">Screenshots</A><BR>
+<A class="b" HREF="/equipment/spells.cfm">Spells</A><BR>
+<A class="b" HREF="/equipment/weapons.cfm">Weaponry</a><BR>
+<A class="b" HREF="/zones/index.cfm">Zones</A><BR>
+</FONT></TD>
+</TR>
+</TABLE>
+
+<TABLE width="126" border="0" cellpadding="3" cellspacing="0">
+<TR><TD width="126" bgcolor="#2b0000"><FONT FACE="Arial, Verdana, Helvetica" size="-1" COLOR=#ffffff><B>Classes</B></FONT></TD></TR>
+<TR><TD width="126">
+<FONT FACE="Verdana, Arial" size="-2">
+<A class="b" HREF="/classes/bard.cfm">Bard</a><BR>
+<A class="b" HREF="/classes/cleric.cfm">Cleric</a><BR>
+<A class="b" HREF="/classes/druid.cfm">Druid</A><BR>
+<A class="b" HREF="/classes/enchanter.cfm">Enchanter</A><BR>
+<A class="b" HREF="/classes/magician.cfm">Magician</a><BR>
+<A class="b" HREF="/classes/monk.cfm">Monk</a><BR>
+<A class="b" HREF="/classes/necromancer.cfm">Necromancer</A><BR>
+<A class="b" HREF="/classes/paladin.cfm">Paladin</A><BR>
+<A class="b" HREF="/classes/ranger.cfm">Ranger</a><BR>
+<A class="b" HREF="/classes/rogue.cfm">Rogue</a><BR>
+<A class="b" HREF="/classes/shadowknight.cfm">Shadow Knight</A><BR>
+<A class="b" HREF="/classes/shaman.cfm">Shamen</A><BR>
+<A class="b" HREF="/classes/warrior.cfm">Warrior</A><BR>
+<A class="b" HREF="/classes/wizard.cfm">Wizard</A>
+</FONT></TD>
+</TR>
+</TABLE>
+
+<TABLE width="126" border="0" cellpadding="3" cellspacing="0">
+<TR><TD width="126" bgcolor="#2b0000"><FONT FACE="Arial, Verdana, Helvetica" size="-1" COLOR=#ffffff><B>Servers</B></FONT></TD></TR>
+<TR><TD width="126">
+<FONT FACE="Verdana, Arial" size="-2">
+<A class="b" HREF="/servers/bertoxxulous.cfm">Bertoxxulous</a><BR> 
+<A class="b" HREF="/servers/brellserilis.cfm">Brell Serilis</a><BR> 
+<A class="b" HREF="/servers/bristlebane.cfm">Bristlebane</a><BR> 
+<A class="b" HREF="/servers/cazic-thule.cfm">Cazic-Thule</a><BR> 
+<A class="b" HREF="/servers/eci.cfm">E'ci</a><BR> 
+<A class="b" HREF="/servers/erollisimarr.cfm">Erollisi Marr</a><BR> 
+<A class="b" HREF="/servers/fenninro.cfm">Fennin Ro</a><BR> 
+<A class="b" HREF="/servers/innoruuk.cfm">Innoruuk</a><BR> 
+<A class="b" HREF="/servers/karana.cfm">Karana</a><BR>
+<A class="b" HREF="/servers/lanystvyl.cfm">Lanys T'Vyl</a><BR> 
+<A class="b" HREF="/servers/mithanielmarr.cfm">Mithaniel Marr</a><BR> 
+<A class="b" HREF="/servers/povar.cfm">Povar</a><BR> 
+<A class="b" HREF="/servers/prexus.cfm">Prexus</a><BR> 
+<A class="b" HREF="/servers/quellious.cfm">Quellious</a><BR> 
+<A class="b" HREF="/servers/ralloszek.cfm">Rallos Zek (PvP)</a><BR>  
+<A class="b" HREF="/servers/rodcetnife.cfm">Rodcet Nife</a><BR>  
+<A class="b" HREF="/servers/solusekro.cfm">Solusek Ro</a><BR>  
+<A class="b" HREF="/servers/tallonzek.cfm">Tallon Zek (Teams)</a><BR>  
+<A class="b" HREF="/servers/tarewmarr.cfm">Tarew Marr</a><BR>  
+<A class="b" HREF="/servers/test.cfm">Test Server</a><BR>  
+<A class="b" HREF="/servers/thenameless.cfm">The Nameless</a><BR>  
+<A class="b" HREF="/servers/therathe.cfm">The Rathe</a><BR>  
+<A class="b" HREF="/servers/thetribunal.cfm">The Tribunal</a><BR>  
+<A class="b" HREF="/servers/tunare.cfm">Tunare</a><BR>  
+<A class="b" HREF="/servers/vallonzek.cfm">Vallon Zek (Teams)</a><BR>  
+<A class="b" HREF="/servers/veeshan.cfm">Veeshan</a><BR>  
+<A class="b" HREF="/servers/xegony.cfm">Xegony</a><BR>  
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<TABLE width="126" border="0" cellpadding="3" cellspacing="0">
+<TR><TD width="126" bgcolor="#2b0000"><FONT FACE="Arial, Verdana, Helvetica" size="-1" COLOR=#ffffff><B>Fellowship</B></FONT></TD></TR>
+<TR><TD width="126">
+<FONT FACE="Verdana, Arial" size="-2">
+<A class="b" HREF="/staff.cfm">Staff/Contacts</a><BR>
+<A class="b" HREF="/help.cfm">Help Wanted</a><BR> 
+<A class="b" HREF="/links.cfm">Links</a><BR> 
+
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR><BR>
+<DIV align="center"><!--Start Middle 1 Button Code-->
+<SCRIPT LANGUAGE="JavaScript"> 
+<!--
+if (not_ns2) {
+  oas_ad('Middle1');
+}
+//-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://euni01a.euniverseads.com/RealMedia/ads/click_nx.cgi/www.eqrealms.com/@Middle1">
+<IMG SRC="http://euni01a.euniverseads.com/RealMedia/ads/adstream_nx.cgi/www.eqrealms.com/@Middle1"></A>
+</NOSCRIPT>
+<!--End Middle 1 Button Code--></DIV>
+
+</TD>
+<TD width="100%" valign="top"><IMG SRC="logo3.gif" WIDTH="88" HEIGHT="20">
+
+<TABLE width="100%" cellpadding="5" valign="top">
+<TR><TD width="100%">
+
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD width="159"><IMG SRC="hosting.gif" WIDTH="126" HEIGHT="44" ALT="Hosting"></TD>
+<TD background="backing.gif" width="100%">
+&nbsp;
+</TD>
+<TD><IMG SRC="corner.gif" WIDTH="26" HEIGHT="44"></TD></TR>
+</TABLE>
+<TABLE width="100%" border="0" cellpadding="5" cellspacing="0">
+<TR><TD bgcolor="#bfbf80"><FONT FACE="Arial, Verdana, Helvetica" SIZE="+1" color="4a0000"><B>Hosting at EQrealms</B></FONT></TD></TR>
+<TR><TD bgcolor="#cdcd9c">
+<FONT FACE="Arial, Verdana, Helvetica" size="-1">
+
+<B>Free Reliable Hosting for EQ Sites</B><BR>
+Here at EQrealms we offer free unlimited hosting services for EQ related websites, in exchange for the placement of ads on 
+your site we offer hosted sites the following:
+
+<UL>
+<LI><B>Subdomain Hosting:</B> A short url like site.eqrealms.com.
+<LI><B>Domain Hosting:</B> If you own a domain, we can host it, we can also allow you to have subdomains on your domain.
+<LI><B>Multiple Logins:</B> For hosted sites and multiple staff. 
+<LI><B>FTP Access</B>
+<LI><B>Telnet Access if Needed</B>
+<LI><B>Multiple POP3 & E-mail Aliases</B> 
+<LI><B>Server Side Includes</B> 
+<LI><B>Daily Hit-Stats</B> 
+<LI><B>Mailing List & Newsletter Support</B> 
+<LI><B>NT or UNIX Platforms:</B> Your choice depending on what your site needs.
+<LI><B>Custom Scripts:</B> News handling, forums, polls, and more. 
+<LI><B>Publicity Through the EQrealms Site</B>
+<LI><B>Front Page Extensions</B>
+<LI><B>ASP Support</B>  
+<LI><B>Cold Fusion Support </B>
+</UL>
+
+<B>What We're Looking For</B><BR>
+Here at EQrealms we're pretty much interested in hosting any valuable resource to EQ players, but here's a quick list 
+of the types of sites we will be able to host:
+
+<UL>
+<LI><B>Server Related Sites</B>
+<LI><B>Active Guild Sites</B>
+<LI><B>Class Specific Sites</B>
+<LI><B>Art Sites</B>
+</UL>
+
+We're not too interested in item information sites and so on because we've built many of our own tools for collecting and reporting on items, 
+quests, zones, and so on.  If you are interested in contributing to EQrealms with that type of information you may wish to check 
+out our <A HREF="help.cfm">help wanted</A> page.  The same goes for news, if you are interested in becoming part of the team
+please contact us.<BR><BR>
+
+<B>Sounds Cool!  How can I find out more?</B><BR>
+Send mail to <A HREF="mailto:hosting@eqrealms.com">hosting@eqrealms.com</A>, please include a URL of your 
+current site and any information about it that we might like to know.  We'll be glad to fill you in on exactly what is required 
+on your end and answer any questions you have.
+
+</font>
+</TD></TR>
+</TABLE>
+
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD width="26"><IMG SRC="bottom_left.gif" WIDTH="26" HEIGHT="28"></TD>
+<TD bgcolor="#cdcd9c" width="100%"> &nbsp; </TD>
+<TD width="26"><IMG SRC="bottom_right.gif" WIDTH="26" HEIGHT="28"></TD></TR>
+</TABLE><BR>
+
+
+<DIV align="center"><FONT SIZE="-2" FACE="Verdana, Arial, Helvetica">Realms of EverQuest, (c) 2000 Gamer's Alliance, Inc.</FONT></DIV>
+<BR>
+
+</TD>
+
+</TR>
+</TABLE>
+
+</TD></TR>
+</TABLE>
+
+<TABLE width="100%" border="0" cellpadding="5" cellspacing="0">
+<TR><TD width="100%" bgcolor="#4a0000" align="right">
+<CENTER>
+
+<!--Start Bottom Banner Code-->
+<SCRIPT LANGUAGE="JavaScript"> 
+<!--
+if (not_ns2) {
+  oas_ad('Bottom');
+}
+//-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://euni01a.euniverseads.com/RealMedia/ads/click_nx.cgi/www.eqrealms.com/@Bottom">
+<IMG SRC="http://euni01a.euniverseads.com/RealMedia/ads/adstream_nx.cgi/www.eqrealms.com/@Bottom"></A>
+</NOSCRIPT>
+<!--End Bottom Banner Code-->
+
+
+</CENTER>
+</TD></TR>
+</TABLE>
+
+</BODY>
+
+</HTML>
+<script language="JavaScript" src='http://ga.gamecity.net/menurecipe.js'></script>

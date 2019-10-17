@@ -1,0 +1,1846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>Civilization Fanatics' Forums - VB How To:</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="civilization,civ2,civ3,civ4,civilization iii,civilization ii,civilization iv,downloads,scenarios,modpacks,maps,sid meier,firaxis,strategy,tips,reference" />
+	<meta name="description" content="Dedicated to the entire Sid Meier's Civilization series." />
+	<link rel="stylesheet" href="http://forums.civfanatics.com/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Civilization Fanatics' Forums</a> &gt; <a href="f-3.html">COLOSSEUM</a> &gt; <a href="f-73.html">Computer Talk</a> &gt; VB How To:</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forums.civfanatics.com/showthread.php?t=26254">VB How To:</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 01, 2002, 10:40 AM</div></div><div class="posttext">The aim of this thread is to include code demonstrating &quot;how to&quot; do various things in VB (or VBA at a stretch). People who know how to program in VB, please contribute (code snippets and pointing out bugs.  When pointing out bugs, please do it via PM).<br />
+<br />
+I suggest that short code snippets be posted as text, longer ones posted as attachments.<br />
+<br />
+If anyone has any &quot;how do I ....&quot; type questions, please post them.<br />
+<br />
+<br />
+And as a starter:<br />
+<br />
+<br />
+How do I time how long it takes to run code?<br />
+<br />
+There are two (easy) methods.  Firstly, you can use the VB &quot;Timer&quot; function.<br />
+<br />
+Dim sgl_StartTime as single<br />
+Dim sgl_EndTime as single<br />
+<br />
+sgl_StartTime = Timer<br />
+<br />
+'------------------------------<br />
+'Code to time goes here<br />
+'------------------------------<br />
+<br />
+sgl_EndTime = Timer<br />
+<br />
+msgbox &quot;Time taken = &quot; &amp; sgl_EndTime - sgl_StartTime &amp; &quot; Seconds.&quot;<br />
+<br />
+<br />
+<br />
+<br />
+This will only give you resolution to the nearest second, which is often not that useful for code optimisation.  A &quot;better&quot; method is to use a Windows timer function.  You will need to declare this function to use it:<br />
+<br />
+Public Declare Function timeGetTime Lib &quot;winmm.dll&quot; () As Long<br />
+<br />
+Dim lng_StartTime as Long<br />
+Dim lng_EndTime as Long<br />
+<br />
+lng_StartTime = TimeGetTime<br />
+<br />
+'------------------------------<br />
+'Code to time goes here<br />
+'------------------------------<br />
+<br />
+lng_EndTime = TimeGetTime<br />
+<br />
+msgbox &quot;Time taken = &quot; &amp; lng_EndTime - lng_StartTime &amp; &quot; milliseconds.&quot;This code will (usually) give you millisecond resultion (you can actually interrogate windows to find the actual resolution, but that can be the subject of further code!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Jul 01, 2002, 11:01 AM</div></div><div class="posttext">As a moderate VB programmer....I'm happy to contribute. :D<br />
+<br />
+Here are some VERY simple examples: (Most of my other advanced code is from help from other sources. ;))<br />
+<br />
+How To Make a Command Button Enabled ONLY it there is text present in a text box.<br />
+<br />
+Instructions:<br />
+Create a text box called Text1, and a Command Button called Command1.<br />
+<br />
+Properties:<br />
+Set Command1 Enabled to False<br />
+<br />
+Private Sub Text1_Change()<br />
+If Text1.Text = &quot;&quot; Then<br />
+ Command1.Enabled = False<br />
+Else:<br />
+ Command1.Enabled = True<br />
+End If<br />
+End Sub<br />
+<br />
+<br />
+How To Create Blinking Text/Controls.<br />
+<br />
+Instructions:<br />
+Create a Label called Label1.  Create a Timer called Timer1.<br />
+<br />
+Properties:<br />
+Set Timer1 Interval to 1000 (That is a blink every second or whatever interval you want)<br />
+<br />
+If Label1.Caption = &quot;&quot; Then<br />
+Label1.Caption = &quot;Welcome To My Blink Program!&quot;<br />
+ElseIf Label1.Caption = &quot;Welcome To My Blink Program!&quot; Then<br />
+Label1.Caption = &quot;&quot;<br />
+End If<br />
+<br />
+<br />
+Note....This will make the text on the label blink.  <br />
+To make the entire label blink:<br />
+If Label1.Visible = True Then<br />
+Label1.Visible = False<br />
+ElseIf Label1.Visible = False Then<br />
+Label1.Visible = True<br />
+End If<br />
+<br />
+<br />
+I'm also working on a scrolling text control....but that is much more complicated that I thought. :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 02, 2002, 02:31 AM</div></div><div class="posttext">To highlight all the text within a textbox when the user clicks on it or tabs to it.<br />
+<br />
+<br />
+<br />
+Put a textbox called &quot;TextBox1&quot; on a form.  Put the following code<br />
+in the forms' private module:<br />
+<br />
+Sub TextBox1_GotFocus()<br />
+<br />
+   With TextBox1<br />
+      .SelStart = 0<br />
+      .SelLength = Len(.Text)<br />
+   End With<br />
+<br />
+End Sub<br />
+<br />
+This won't work in VBA, as MSForms Textbox's don't appear to have a GotFocus event.<br />
+<br />
+Instead, you will have to put code the code in for both the &quot;mousedown&quot; event (to capture when the user clicks on the box) and the &quot;Enter&quot; event (to capture the user tabbing to the box).<br />
+<br />
+<br />
+Private Sub TextBox1_Click()<br />
+   With TextBox1<br />
+      .SelStart = 0<br />
+      .SelLength = Len(.Text)<br />
+   End With<br />
+<br />
+End Sub<br />
+<br />
+<br />
+Private Sub TextBox1_MouseDown(ByVal Button As Integer, _<br />
+ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)<br />
+    With TextBox1<br />
+      .SelStart = 0<br />
+      .SelLength = Len(.Text)<br />
+   End With<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 03, 2002, 06:44 AM</div></div><div class="posttext">How to:  Check whether a file exists.<br />
+<br />
+The most common way to do this is with the built-in VB DIR() function.  This function returns the name of the file at a specific path, and you then need to check the returned string to see if it what you wanted.<br />
+<br />
+Using the windows API, it is easy to set up a function to simply return a boolean indicating whether a file exists or not:<br />
+<br />
+<br />
+Public Const INVALID_HANDLE_VALUE = -1<br />
+Public Const MAX_PATH = 260<br />
+<br />
+Public Type FILETIME<br />
+   dwLowDateTime As Long<br />
+   dwHighDateTime As Long<br />
+End Type<br />
+<br />
+Public Type WIN32_FIND_DATA<br />
+   dwFileAttributes As Long<br />
+   ftCreationTime As FILETIME<br />
+   ftLastAccessTime As FILETIME<br />
+   ftLastWriteTime As FILETIME<br />
+   nFileSizeHigh As Long<br />
+   nFileSizeLow As Long<br />
+   dwReserved0 As Long<br />
+   dwReserved1 As Long<br />
+   cFileName As String * MAX_PATH<br />
+   cAlternate As String * 14<br />
+End Type<br />
+<br />
+Public Declare Function FindFirstFile Lib &quot;kernel32&quot; _<br />
+Alias &quot;FindFirstFileA&quot;  (ByVal lpFileName As String, _<br />
+lpFindFileData As WIN32_FIND_DATA) As Long<br />
+<br />
+Public Declare Function FindClose Lib &quot;kernel32&quot; _<br />
+(ByVal hFindFile As Long) As Long<br />
+<br />
+<br />
+Public Function FileExists(strFileName As String) As Boolean<br />
+<br />
+   Dim WFD As WIN32_FIND_DATA<br />
+   Dim API_ReturnHandle As Long<br />
+   <br />
+   API_ReturnHandle = FindFirstFile(strFileName, WFD)<br />
+<br />
+    If API_ReturnHandle &lt;&gt; INVALID_HANDLE_VALUE then<br />
+	FileExists = True<br />
+    Else<br />
+            FileExists = False<br />
+    End If <br />
+<br />
+   Call FindClose(API_ReturnHandle)<br />
+   <br />
+End Function<br />
+<br />
+<br />
+Note that in this example, the String variable passed should be the full filename and path of the file you are checking.<br />
+<br />
+Once you have included this code in a .bas file somewhere, the function can then be easily called:<br />
+<br />
+eg.  boolCheck = FileExists(&quot;C:\Windows\Win.Ini&quot;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Jul 03, 2002, 08:53 AM</div></div><div class="posttext">Whoa....whoa...whoa....<br />
+<br />
+There is a much simpler way to check if a file or folder exists!<br />
+<br />
+Set fso = CreateObject(&quot;Scripting.FileSystemObject&quot;) <br />
+If fso.FolderExists(&quot;C:\cesplaylists\&quot;) Then <br />
+ Msgbox &quot;Folder Exists.&quot;, vbinformation, &quot;Folder Exists&quot;<br />
+else<br />
+ Msgbox &quot;Folder Does Not Exist.&quot;, vbcritical, &quot;Folder Does Not Exist&quot;<br />
+End if<br />
+<br />
+To do it with a file instead of a folder:<br />
+<br />
+Set fso = CreateObject(&quot;Scripting.FileSystemObject&quot;) <br />
+If fso.FileExists(&quot;C:\cesplaylists\playlist.lst&quot;) Then <br />
+ Msgbox &quot;File Exists.&quot;, vbinformation, &quot;File Exists&quot;<br />
+else<br />
+ Msgbox &quot;File Does Not Exist.&quot;, vbcritical, &quot;File Does Not Exist&quot;<br />
+End if</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 08, 2002, 02:06 AM</div></div><div class="posttext">How to: Retrieve the user's name.<br />
+<br />
+If you want to get the name of the logged-in user, it can be done quite easily.  Again, you have to call a function from the windows API, so you need to decalre it first.<br />
+<br />
+<br />
+Public Declare Function GetUserName Lib &quot;advapi32.dll&quot; _<br />
+    Alias &quot;GetUserNameA&quot; _<br />
+    (ByVal lpBuffer As String, _<br />
+    nSize As Long) As Long<br />
+<br />
+Public Function ReturnUserName() As String<br />
+Dim strName As String<br />
+    strName = Space$(512)<br />
+    GetUserName strName, Len(strName)<br />
+    ReturnUserName = Trim$(strName)<br />
+End Function<br />
+<br />
+When you want to get the user's name, just call the &quot;ReturnUserName&quot; function, and it will return it to s tring variable.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 10, 2002, 05:16 AM</div></div><div class="posttext">This code is an algorithm for a &quot;QuickSort&quot;.  It allows a (one-dimensional) array of values to be passed to it, and it will return the values in sorted order, from smallest to largest.<br />
+<br />
+<br />
+Public Function QuickSort(InputArray As Variant, _<br />
+        Optional iLowBound As Variant, Optional iUpBound As Variant)<br />
+    'The Optional parameters are needed, because the recursive part of the function<br />
+    'passes different lower and upper bounds to use for the sorting process.  Note that<br />
+    'the IsMissing function only works for variant data types!<br />
+    <br />
+    <br />
+    'Declare variables to hold the lower and upper bounds of the array<br />
+    'to be sorted.<br />
+    Dim iLowerBound As Integer<br />
+    Dim iUpperBound As Integer     <br />
+     <br />
+    'Check whether the lower and upper bounds have been passed.<br />
+    'If so, store them in the declared variables.  If no, set them<br />
+    'to the actual upper and lower bounds of the array.<br />
+    If IsMissing(iLowBound) Then<br />
+        iLowerBound = LBound(InputArray)<br />
+    Else<br />
+        iLowerBound = iLowBound<br />
+    End If<br />
+    <br />
+    If IsMissing(iUpBound) Then<br />
+        iUpperBound = UBound(InputArray)<br />
+    Else<br />
+        iUpperBound = iUpBound<br />
+    End If<br />
+    <br />
+    'Declare variables to hold actual array values for sorting<br />
+    Dim X As Double<br />
+    Dim Y As Double<br />
+    <br />
+    'Declare variables to hold the current array elements to check.<br />
+    Dim iLower As Integer<br />
+    Dim iUpper As Integer<br />
+    <br />
+    'Set the variables to start from the lower and upper bounds<br />
+    'respectively.<br />
+    iLower = iLowerBound<br />
+    iUpper = iUpperBound<br />
+    <br />
+    'Set the initial array value to sort as the middle value.<br />
+    X = InputArray((iLowerBound + iUpperBound) / 2)<br />
+  <br />
+    'Now start the algorithm.  Iterate until the lower array index<br />
+    'being checked is equal to the upper.<br />
+    While (iLower &lt;= iUpper)<br />
+  <br />
+        'Find the first value greater than X (the middle value),<br />
+        'starting at the beginning of the array.<br />
+        While (InputArray(iLower) &lt; X And iLower &lt; iUpperBound)<br />
+            iLower = iLower + 1<br />
+        Wend<br />
+    <br />
+        'Find the first value less than X (the middle value),<br />
+        'starting at the end of the array.<br />
+        While (X &lt; InputArray(iUpper) And iUpper &gt; iLowerBound)<br />
+            iUpper = iUpper - 1<br />
+        Wend<br />
+<br />
+        'Check whether the values are &quot;in order&quot; - ie the larger one<br />
+        'is later in the array than the smaller one.  If not, swap them.<br />
+        If (iLower &lt;= iUpper) Then<br />
+        <br />
+            'Store the larger value<br />
+            Y = InputArray(iLower)<br />
+            'Write the smaller one on top of the larger one.<br />
+            InputArray(iLower) = InputArray(iUpper)<br />
+            <br />
+            'Put the larger value where the smaller one was.<br />
+            InputArray(iUpper) = Y<br />
+            <br />
+            'A swap has been made.  The following allows the Wend loop<br />
+            'to exit, if the middle two values were swapped, and carry<br />
+            'on if any other values were swapped.<br />
+            iLower = iLower + 1<br />
+            iUpper = iUpper - 1<br />
+            <br />
+        End If<br />
+  <br />
+    Wend<br />
+    <br />
+    'This function must be iterated again, as all that has been done on the<br />
+    'first run-through is to compare values with the middle value.  You<br />
+    'therefore have to iterate again.  This requires you to iterate with the<br />
+    '&quot;unsorted&quot; parts of the array.<br />
+    If (iLowerBound &lt; iUpper) Then QuickSort InputArray, iLowerBound, iUpper<br />
+    If (iLower &lt; iUpperBound) Then QuickSort InputArray, iLower, iUpperBound<br />
+<br />
+End Function<br />
+<br />
+<br />
+<br />
+Sub TestIt()<br />
+'This code allows the user to test the above algorithm.<br />
+Dim aAnArray(25) As Double<br />
+Dim i As Integer<br />
+For i = 1 To 25<br />
+    aAnArray(i) = (Rnd() * 10) + 1<br />
+Next i<br />
+<br />
+For i = 1 To 25<br />
+    Debug.Print aAnArray(i)<br />
+Next i<br />
+<br />
+Debug.Print &quot;--------------------------------------------&quot;<br />
+<br />
+Call QuickSort(aAnArray)<br />
+<br />
+For i = 1 To 25<br />
+    Debug.Print aAnArray(i)<br />
+Next i<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Jul 10, 2002, 08:59 AM</div></div><div class="posttext">Here is a question for you. :)<br />
+<br />
+Actually....two.<br />
+<br />
+1)  How can I delete the first letter of a textbox (or variable) and record that letter to a variable.<br />
+<br />
+2)  How can I make two web browser controls &quot;mirror&quot; each other.  This means that when you go somewhere in one....it automatically displays it in the other too.<br />
+<br />
+:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 11, 2002, 02:30 AM</div></div><div class="posttext">Originally posted by CornMaster <br />
+Here is a question for you. :)<br />
+<br />
+Actually....two.<br />
+<br />
+1)  How can I delete the first letter of a textbox (or variable) and record that letter to a variable.<br />
+<br />
+This is one that I can do! You can use the &quot;left&quot;, &quot;right&quot; and &quot;len&quot; functions.<br />
+<br />
+<br />
+Dim sTextString As String<br />
+Dim sFirstLetter As String<br />
+<br />
+'Get text from textbox.<br />
+sTextstring = txtText1.text<br />
+<br />
+'Extract first letter.<br />
+sFirstLetter = left(sTextString,1)<br />
+<br />
+'Now delete the first letter from the original text string.<br />
+sTextString = Right(sTextString, Len(sTextString) - 1)<br />
+:)<br />
+<br />
+<br />
+<br />
+Originally posted by CornMaster <br />
+2)  How can I make two web browser controls &quot;mirror&quot; each other.  This means that when you go somewhere in one....it automatically displays it in the other too.<br />
+<br />
+:) :confused:  Beats me!  I've never worked with web browser controls.  Maybe someone else browsing here can help?<br />
+<br />
+The only thing I can think of is whether there is some form of _Change event that you can use in one to drive the other.<br />
+<br />
+eg - something of the form:<br />
+<br />
+<br />
+Private Sub WebBrowser1_change()<br />
+    WebBrowser2.WebAddress = webBrowser1.WebAddress<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 18, 2002, 02:28 AM</div></div><div class="posttext">This post I will be appending to occasionally.  The idea is to list some little idiosyncracies of VB, and show how to work around them.<br />
+<br />
+<br />
+1.  Overflow in multiplication.<br />
+The following code will generate an overflow error:<br />
+<br />
+<br />
+Sub MultiplyIt()<br />
+Dim lngProduct  As Long<br />
+<br />
+lngProduct = 24 * 3600<br />
+msgbox lngProduct<br />
+End Sub<br />
+<br />
+<br />
+Why does this happen?  A long variable type can store any integer value between -2,147,483,648 and 2,147,483,647.  The product here is only 86400, so it should be able to be stored in the lngProduct variable, right?<br />
+<br />
+The problem is that VB will calculate the product, store it in a temporary variable, then assign &quot;lngProduct&quot; to be equal to that temporary variable.  This is where the problem lies:  VB looks at the data types being multiplied, and sees that they are both of &quot;integer&quot; data type.  It therefore creates the temporary variable of integer type to hold the result of the multiplication.  Because an integer data type can only hold values from -32,768 to 32,767, the product is too large for the temporary variable, and the overflow is generated.<br />
+<br />
+So how do you get around this?  All you need to do is force VB to create the temporary varible as a &quot;long&quot;.  This can be done by &quot;declaring&quot; the value of &quot;24&quot; and the value of &quot;3600&quot; to be of Long type.  To do this, just append an ampersand to the numbers:<br />
+<br />
+<br />
+Sub MultiplyIt()<br />
+Dim lngProduct  As Long<br />
+<br />
+lngProduct = 24&amp; * 3600&amp;<br />
+msgbox lngProduct<br />
+End Sub<br />
+<br />
+ <br />
+The amersand tells VB that it is multiplying two &quot;long&quot; numbers, rather than two integers, so it creates the correct temporary variable.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 24, 2002, 02:55 AM</div></div><div class="posttext">A short one this time:  How to change the desktop wallpaper via code:<br />
+<br />
+<br />
+Private Declare Function SystemParametersInfo Lib &quot;user32&quot; Alias &quot;SystemParametersInfoA&quot; _<br />
+    (ByVal uAction [color=blue]As Long, _<br />
+    ByVal  uParam As Long, _<br />
+    ByVal  lpvparam As String, _<br />
+    ByVal  fuWinIni As Long) As Long<br />
+    <br />
+Const  SPIF_Updateinifile = &amp;H1<br />
+Const  spi_SetDeskWallpaper = 20<br />
+Const  spif_SendWinIniChange = &amp;H2<br />
+<br />
+<br />
+Sub  ChangeTheWallPaper()<br />
+Dim  L<br />
+L = SystemParametersInfo(spi_SetDeskWallpaper, 0&amp;, &quot;c:\apps\gi desktop.bmp&quot;, SPIF_Updateinifile Or spif_SendWinIniChange)<br />
+<br />
+End Sub <br />
+<br />
+<br />
+Simply change the &quot;c:\apps\gi desktop.bmp&quot; to the appropriate pathname of the new wallpapaer. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">starlifter</div><div class="date">Jul 24, 2002, 08:01 AM</div></div><div class="posttext">This is a cool thread.  I don't post much to it because I don't do a lot of VB programming (or really much of any programing) at the moment.  But it is very good to read!!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Jul 30, 2002, 04:37 AM</div></div><div class="posttext">In a VB function, you can declare an argument to be “optional”.  This can be very useful for such things as letting the user supply an initial estimate.<br />
+When using an “Optional” variable, you can use the IsMissing function to determine whether or not the user has actually specified the optional value or not.<br />
+<br />
+However, one problem with VB is that this IsMissing function only works for Variant data types.  For any other data type, it automatically returns “False” for the IsMissing call.<br />
+<br />
+<br />
+For Example:<br />
+<br />
+<br />
+Function Check(Optional  sDefaultString As String)<br />
+If IsMissing (sDefaultString) Then<br />
+    sDefaultString = &quot;Hello&quot;<br />
+End If<br />
+<br />
+Debug.Print sDefaultString<br />
+<br />
+End Function<br />
+<br />
+<br />
+Sub CallIt()<br />
+    Call Check<br />
+'   Call Check(&quot;Goodbye&quot;)<br />
+End Sub<br />
+<br />
+<br />
+The code above has the Optional argument specified as a string.  If the above code is run with the first line commented-out, it will result in “goodbye” being written to the debug window (as expected).  However, if the second line is commented out (as shown above), then an empty string will be written to the debug window instead – the IsMissing call will go to the “false” case, even though the optional parameter has not been passed.<br />
+<br />
+This can be “solved” in two ways.  Firstly, the optional parameter can be specified as a Variant data type (declare it as variant, or don’t specify the data tyep – it will default to variant).<br />
+<br />
+The other (more elegant) option is to specify the default value in the declaration line:<br />
+<br />
+<br />
+Function Check(Optional  sDefaultString As String = “Hello”)<br />
+    Debug.Print sDefaultString<br />
+End Function<br />
+<br />
+<br />
+<br />
+The whole &quot;IsMissing&quot; funciton is a bit of a hang-over from earlier versions of visual basic, where optional parameters could not have default values, and had to be variant data types anyway.  It is probably &quot;better&quot; not to use IsMissing, but if you do, the above is an issue that you should be aware of. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">munzy</div><div class="date">Jul 30, 2002, 11:06 AM</div></div><div class="posttext">Cool thread...this is all above my head as I have just started learning VB (haven't really learned much besides how to operate the program itself....but I will get there someday). Got some really basic stuff to help guys like me out or would that be better handled in a different thread?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Aug 02, 2002, 08:18 AM</div></div><div class="posttext">You are probably all aware of the Macro virus protection built-in to M$ Office products.  If you try and open a document with Macros, you are presented with the little dialog asking you if you want to enable or disable them, or not open the document at all.<br />
+<br />
+What you may not realise, is that this macro protection only appears to work when the document is opened by double-clicking on it, or via the file / open procedure from the main application.  This macro protection is circumvented if you open a file via OLE.<br />
+<br />
+For example:  Create a word document called “C:\Virus.doc”.  In a code module for this document, add the following code:<br />
+<br />
+Private Sub Document_Open()<br />
+    MsgBox &quot;Bingo!&quot;<br />
+End Sub<br />
+<br />
+<br />
+In a VB application (or even Excel for example), put the following code:<br />
+<br />
+Sub openword()<br />
+Dim oWordDoc [color=blue]As Object<br />
+Set oWordDoc = CreateObject(&quot;word.application&quot;)<br />
+oWordDoc.Visible = True<br />
+oWordDoc.documents.Open (&quot;C:\virus.doc&quot;)<br />
+End Sub<br />
+<br />
+<br />
+When you run this code, you will see that the code quite happily opens the document and triggers the Document_Open macro.<br />
+<br />
+This behaviour appears to exist with both Office ’97 and Office 2000.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Aug 06, 2002, 06:30 AM</div></div><div class="posttext">The following code will allow you to check whether a number provided is a valid credit-card number.  Note that it will not tell you whether the expiry date matches or not, but it may be useful for a first check.<br />
+<br />
+This function returns a simple “true” if the number is valid as a credit card number, or “false” if it is not.  Note that that number must be passed to the function as a string.<br />
+<br />
+<br />
+Private Function IsValid(strCardNumber As String) As Boolean<br />
+<br />
+Dim iCharPos As Integer<br />
+Dim iCheckSum As Integer<br />
+Dim strCharCheck As String<br />
+<br />
+<br />
+For iCharPos = Len(strCardNumber) To 2 Step -2<br />
+    iCheckSum = iCheckSum + CInt (Mid(strCardNumber, iCharPos, 1))<br />
+    strCharCheck = CStr ((Mid(strCardNumber, iCharPos - 1, 1)) * 2)<br />
+    iCheckSum = iCheckSum + CInt (Left(strCharCheck, 1))<br />
+    <br />
+    If Len(strCharCheck) &gt; 1 Then <br />
+        iCheckSum = iCheckSum + CInt(Right(strCharCheck, 1))<br />
+    End If<br />
+Next iCharPos<br />
+<br />
+<br />
+If Len(strCardNumber) Mod 2 = 1 Then <br />
+    iCheckSum = iCheckSum + CInt (Left(strCardNumber, 1))<br />
+End If<br />
+<br />
+If iCheckSum Mod 10 = 0 Then<br />
+    IsValid = True<br />
+Else<br />
+    IsValid = False<br />
+End If<br />
+<br />
+End Function<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+P.S.  PH - A &quot;Basics&quot; thread is a good idea.  I may try and start one later in the week / next week. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Aug 08, 2002, 03:38 AM</div></div><div class="posttext">If you have an array of values, and you want to set them all to zero, a lot of people simply loop through each item of the array, and set it to zero.<br />
+<br />
+There is a much easier way of achieving the same thing, using the Erase Function.<br />
+<br />
+<br />
+Sub EraseArray()<br />
+Dim aTestArray(1000) As Long<br />
+Dim i As Integer<br />
+<br />
+'Fill array with values<br />
+For i = 0 To 100<br />
+    aTestArray(i) = i<br />
+Next i<br />
+<br />
+'Now erase it. <br />
+Erase aTestArray<br />
+<br />
+'Check that values are all &quot;0&quot;<br />
+For i = 0 To 100<br />
+    Debug.Print aTestArray(i)<br />
+Next i<br />
+<br />
+End Sub<br />
+<br />
+<br />
+If your array is a dynamic one, you can clear it by the Erase method, or by redimensioning it.<br />
+<br />
+Sub EraseArray()<br />
+Dim aTestArray() As Long<br />
+[color=blue]Redim aTestArray(100) As Long<br />
+Dim i As Integer<br />
+<br />
+'Fill array with values<br />
+For i = 0 To 100<br />
+    aTestArray(i) = i<br />
+Next i<br />
+<br />
+'Now erase it. <br />
+ReDim aTestArray(100)<br />
+<br />
+'Check that values are all &quot;0&quot;<br />
+For i = 0 To 100<br />
+    Debug.Print aTestArray(i)<br />
+Next i<br />
+<br />
+End Sub<br />
+<br />
+<br />
+<br />
+I recently came across an interesting method for clearing out a block of array values.  Say you have an array of 10,000 values, and you want to set the values from 8000 to 9000 to zero, you can do this by directly setting the values in memory to zero.<br />
+<br />
+<br />
+<br />
+Private Declare Sub ZeroMemory Lib &quot;kernel32&quot; Alias &quot;RtlZeroMemory&quot; _<br />
+(Destination As Any, ByVal Length As Long)<br />
+<br />
+<br />
+<br />
+Function ClearArray()<br />
+Dim i As Integer<br />
+' Declare an array and fill it with data<br />
+Dim aTestArray(10000) As Long<br />
+For i = 0 To UBound (aTestArray)<br />
+    aTestArray(i) = i<br />
+Next i<br />
+<br />
+'Clear the elements from 8000 to 9000 (1001 elements) to zero<br />
+ZeroMemory aTestArray(8000), 1001 * Len (aTestArray(0))<br />
+<br />
+'Check a couple of elements:<br />
+For i = 7998 To 8002<br />
+    Debug.Print &quot;Item &quot; &amp; i &amp; &quot; = &quot; &amp; aTestArray(i)<br />
+Next i<br />
+For i = 8998 To 9002<br />
+    Debug.Print &quot;Item &quot; &amp; i &amp; &quot; = &quot; &amp; aTestArray(i)<br />
+Next i<br />
+<br />
+End Function<br />
+<br />
+<br />
+<br />
+Note:  This function requires that the amount of memory allocated to each array element is constant.  Therefore, it will not work with variant arryas that contain variable-length strings, nor with string arrays with variable-length strings.  In both cases, it will case a General Protection Fault - Save your project before you run it!<br />
+<br />
+Note that it works on the amount of memory allocated to each array item, not what the actual array contains.  Long, single, integer, double etc are all allocated a fixed amount of memory, regardless of what they contain.  Ie – in a long array, the element storing the value “3” is allocated the same amount of memory as the element containing the value “28569”.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Aug 15, 2002, 05:43 AM</div></div><div class="posttext">Some code requires specific version of windows (especially ones looking for specific registry keys for example).  The following code will return a string variable telling you which version of windows the code is being run on. :)<br />
+<br />
+<br />
+Public Declare Function GetVersionExA Lib &quot;kernel32&quot; _<br />
+(lpVersionInformation As OSVERSIONINFO) As Integer<br />
+<br />
+<br />
+Public Type OSVERSIONINFO<br />
+            dwOSVersionInfoSize As Long<br />
+            dwMajorVersion As Long<br />
+            dwMinorVersion As Long<br />
+            dwBuildNumber As Long<br />
+            dwPlatformId As Long<br />
+            szCSDVersion As String * 128<br />
+End Type<br />
+<br />
+Function GetOS() As String<br />
+[color=blue]Dim osVer As OSVERSIONINFO<br />
+osVer.dwOSVersionInfoSize = Len(osVer)<br />
+<br />
+Dim lngAPIReturn As Long<br />
+lngAPIReturn = GetVersionExA(osVer)<br />
+<br />
+If lngAPIReturn = 0 Then<br />
+    'Call failed<br />
+    Debug.Print &quot;Failed API call.&quot;<br />
+    Exit Function<br />
+End If<br />
+<br />
+Dim strOS As String<br />
+<br />
+Select Case osVer.dwPlatformId<br />
+    Case 1<br />
+        Select Case osVer.dwMinorVersion<br />
+            Case 0<br />
+                strOS = &quot;Win95&quot;<br />
+            Case 10<br />
+                strOS = &quot;Win98&quot;<br />
+            Case 90<br />
+                strOS = &quot;Win ME&quot;<br />
+        End Select<br />
+    Case 2<br />
+        Select Case osVer.dwMajorVersion<br />
+            Case 3<br />
+                strOS = &quot;WinNT 3.51&quot;<br />
+            Case 4<br />
+                strOS = &quot;WinNT 4.0&quot;<br />
+            Case 5<br />
+                Select Case osVer.dwMinorVersion<br />
+                    Case 0<br />
+                        strOS = &quot;Windows 2000&quot;<br />
+                    Case 1<br />
+                        strOS = &quot;Windows XP&quot;<br />
+                End Select<br />
+        End Select<br />
+End Select<br />
+<br />
+strOS = strOS &amp; &quot;, &quot; &amp; osVer.szCSDVersion<br />
+<br />
+GetOS = strOS<br />
+<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">darkwarpblade</div><div class="date">Aug 19, 2002, 11:55 PM</div></div><div class="posttext">Hey, I was just wondering if you know how to make file from code, MSDN seems to compliced.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Aug 20, 2002, 03:13 PM</div></div><div class="posttext">Originally posted by darkwarpblade <br />
+Hey, I was just wondering if you know how to make file from code, MSDN seems to compliced. <br />
+<br />
+You mean a text file?<br />
+<br />
+OR like an .ini file format?<br />
+<br />
+Or a picture file?<br />
+<br />
+What kind of file excatly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">darkwarpblade</div><div class="date">Aug 21, 2002, 08:28 PM</div></div><div class="posttext">I can't figure out how to make any kind, though custom(like a saved gamed) would be nice to know.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Aug 21, 2002, 10:28 PM</div></div><div class="posttext">Well....I know how to make plain text.  ASCII text.  And .ini file format.<br />
+<br />
+I use it for all different things.<br />
+<br />
+I even created my own file format for a word processor.<br />
+<br />
+It's really easy to write text files.<br />
+<br />
+Essentially you create the file, and then print text to in line by line.  Or you can print entire controls or variables.  This can be used as a saved game if you structure it right.<br />
+<br />
+Here is an example I use:<br />
+<br />
+Open &quot;C:\test.txt&quot; For Output As #1<br />
+Print #1, &quot;Hello&quot;<br />
+Print #1, &quot;This is my new text file&quot;<br />
+Print #1, text1 'this prints the contents of a text box to the file<br />
+Print #1, 'Empty Line<br />
+Close #1 ' This closes the file (must be done to save memory.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Aug 22, 2002, 05:56 AM</div></div><div class="posttext">Following on from Corn's info on how to print to a text file, I decided to post how to read from / write to an .ini file.<br />
+<br />
+.ini files were what early versions of windows and other software programs used instead of the registry that many use now.  They are still quite useful for data storage on a small-scale.<br />
+<br />
+An .ini file is made up of sections and keys.  Each section is indicated via a square bracket around it, and each key is listed under these section headings, in the format &quot;keyname=keyvalue&quot;.<br />
+<br />
+Here is an example of what one may look like (it is stored as plain text):<br />
+<br />
+<br />
+;<br />
+;Note to user: DO NOT ALTER OR DELETE THIS FILE.<br />
+;<br />
+[SMS Inventory Identification]<br />
+Version=1.0<br />
+<br />
+[Product Specification]<br />
+Product=Windows 2000 Professional<br />
+<br />
+Version=5.0<br />
+Localization=English<br />
+ServicePackNumber=0<br />
+BitVersion=40 <br />
+[Version]<br />
+DriverVer=11/14/1999,5.00.2183.1<br />
+<br />
+<br />
+There are various windows functions that can be used for maintenance of these files.  You can read in individual values or entire sections, and write values or sections.<br />
+<br />
+The following code is used to read a value from a given key in a given section of a given .ini file:<br />
+<br />
+<br />
+Private Declare Function GetPrivateProfileString _<br />
+   Lib &quot;kernel32&quot; Alias &quot;GetPrivateProfileStringA&quot; _<br />
+  (ByVal lpSectionName As String , _<br />
+   ByVal lpKeyName As Any , _<br />
+   ByVal lpDefault As String , _<br />
+   ByVal lpReturnedString As String , _<br />
+   ByVal nSize As Long , _<br />
+   ByVal lpFileName As String ) <br />
+As Long<br />
+<br />
+<br />
+Public Function GetKey(SectionName As String, KeyName As String, _<br />
+                                Inifile As String) As String<br />
+<br />
+'Retrieves a value from an ini file corresponding<br />
+'to the section and key name passed.<br />
+        <br />
+   Dim Success As Long<br />
+   Dim nSize As Long<br />
+   Dim ret As String<br />
+  <br />
+    Dim Defaultvalue As String<br />
+    Defaultvalue = &quot;Not Found&quot;<br />
+  <br />
+  'call the API with the parameters passed.<br />
+  'The return value is the length of the string<br />
+  'in ret, including the terminating null. If a<br />
+  'default value was passed, and the section or<br />
+  'key name are not in the file, that value is<br />
+  'returned. If no default value was passed (&quot;&quot;),<br />
+  'then success will = 0 if not found.<br />
+<br />
+  'Pad a string large enough to hold the data.<br />
+   ret = Space$(2048)<br />
+   nSize = Len(ret)<br />
+   Success = GetPrivateProfileString(SectionName, KeyName, _<br />
+                                     Defaultvalue, ret, nSize, Inifile)<br />
+   <br />
+   If Success Then<br />
+      GetKey = Left$(ret, Success)<br />
+   End If<br />
+   <br />
+End Function<br />
+<br />
+<br />
+<br />
+To write a new value to the file, use the following:<br />
+<br />
+<br />
+<br />
+Private Declare Function WritePrivateProfileString _<br />
+   Lib &quot;kernel32&quot; Alias &quot;WritePrivateProfileStringA&quot; _<br />
+  (ByVal lpSectionName As String, _<br />
+   ByVal lpKeyName As Any, _<br />
+   ByVal lpString As Any, _<br />
+   ByVal lpFileName As String) As Long<br />
+<br />
+<br />
+Function WriteKey(SectionName As String, KeyName As String,  _<br />
+NewValue As String, Inifile As String)<br />
+Dim Success As Long<br />
+Success = WritePrivateProfileString(SectionName, KeyName, NewValue, Inifile)<br />
+WriteKey = Success<br />
+End Function<br />
+<br />
+<br />
+<br />
+Another useful function is the one to delete an entire section:<br />
+<br />
+<br />
+Function DeleteSection(SectionName As String, Inifile As String)<br />
+    WritePrivateProfileString SectionName, _<br />
+        vbNullString, vbNullString, Inifile<br />
+End Function<br />
+<br />
+<br />
+You can modify the functions to give a return value to let you know if the operation was a success or not.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">darkwarpblade</div><div class="date">Aug 23, 2002, 06:41 AM</div></div><div class="posttext">Thanks. I never did get that stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">apiaster</div><div class="date">Aug 24, 2002, 11:38 AM</div></div><div class="posttext">Hi, can anyone tell me how to build a webpage with Visual Basic (such as with DHTML or any other means ?) My problem is, whenever I build a webpage (ex with DHTML,) it will always create a supporting .dll or .ocx or .exe (a supporting exe not a really executable file, you still run it from the HTML document) Free websites do not support dll's etc. Also you will need to tell the person that owns the server to actually activate the .dll in its new location (by typing regsvr32 documentname.dll) <br />
+<br />
+Thanks in advance</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Aug 28, 2002, 02:32 AM</div></div><div class="posttext">Originally posted by apiaster <br />
+Hi, can anyone tell me how to build a webpage with Visual Basic (such as with DHTML or any other means ?) My problem is, whenever I build a webpage (ex with DHTML,) it will always create a supporting .dll or .ocx or .exe (a supporting exe not a really executable file, you still run it from the HTML document) Free websites do not support dll's etc. Also you will need to tell the person that owns the server to actually activate the .dll in its new location (by typing regsvr32 documentname.dll) <br />
+<br />
+Thanks in advance <br />
+<br />
+To be honest, I've never created a web-page.  However, you can write a webpage in normal HTML that supports VBscript (instead of using Java as the scripting language).  This may limit you to what web-browers can 'read' the page - I'm not sure if the latest netscape or the likes of opera support vbscript.<br />
+<br />
+I've seen some examples of vbscript, and it is very similar to VB, so the learning curve may not be great.<br />
+<br />
+I don't know whether this requires &quot;support&quot; files though.<br />
+<br />
+Do a seach on google or similar for vbscript tutorial.  <br />
+<br />
+Here (http://www.intranetjournal.com/corner/wrox/progref/vbt/ch21_15.shtml) is an example tutorial, and you can see that the concepts are pretty easy. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Sep 04, 2002, 06:48 AM</div></div><div class="posttext">I am making a form and have run into some problems. <br />
+<br />
+There are several rows in the form, and the user has the possibility to add rows if he wants to (with a macro). Some rows have combo boxes or check boxes in them, and problems occur when these are copied. All contents and formatting works ok, but the new control boxes are exact copies of the original controls. That is, if you copy the formula C2+D2 one row down it will change to C3+D3, but the combo box will still have the SAME cell references as the original combo box. :mad:<br />
+<br />
+So what I´m asking is how to make the new control unique (I guess the new control should be given a new name, now it's name is the same as the original) and how to make its cell references to point one row down from the original's? <br />
+<br />
+Thanks in advance for any help. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 05, 2002, 01:41 AM</div></div><div class="posttext">Is this in VB or VBA?<br />
+<br />
+Maybe if you post your code it would help. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">GaryNemo</div><div class="date">Sep 05, 2002, 10:20 PM</div></div><div class="posttext">Cornmaster asked, How can I make two web browser controls &quot;mirror&quot; each other. This means that when you go somewhere in one....it automatically displays it in the other too.<br />
+<br />
+Try using Javascript.  There is probably an onChange event that you could use to run a little script...  In JavaScript, beware of your capitaliZation!   You could perhaps just as easily use VBScript.<br />
+<br />
+apiaster asked about building a dynamic webpage.  I agree, dll's are a pain.  Lots of hosts have enabled the .asp suffix.  Try uploading your htm file, same thing exactly, as an .asp file  (test.htm = test.asp).  If it runs from a browser, you've got an asp interpreter!<br />
+<br />
+The detailed answer to both of these questions can probably be found on Google.  Whenever I need some new code, that I can't cut/paste from stuff I've already done, I just search Google.  <br />
+Typical search:  +asp +date +format<br />
+Or even cut/paste the error message!  The amount of detailed solutions and examples out there is simply amazing!<br />
+<br />
+Welcome to the Next Generation.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Sep 06, 2002, 12:44 AM</div></div><div class="posttext">Originally posted by ainwood <br />
+Is this in VB or VBA?<br />
+<br />
+Maybe if you post your code it would help. :) <br />
+<br />
+VBA.<br />
+<br />
+The problem is of course that I don´t have any code. :o I´m not very familiar with programming controls in VBA, so after having tried without success for a few hours, I decided to bypass the entire problem by removing the combo boxes totally.<br />
+<br />
+My very simple solution now is to instead have a number of rows hidden from the start, and let the user make them visible by clicking on a button. This is the code:<br />
+<br />
+Private Sub ButtonChecker()<br />
+<br />
+Dim RowNumber As Integer<br />
+    <br />
+      Select Case Application.Caller<br />
+      <br />
+            Case &quot;button 1&quot;<br />
+            <br />
+                RowNumber = 31<br />
+                <br />
+                Do While Rows(RowNumber).EntireRow.Hidden = False<br />
+                RowNumber = RowNumber + 1<br />
+                Loop<br />
+                <br />
+                If RowNumber &gt;= 41 Then<br />
+                MsgBox (&quot;Only 10 rows available&quot;)<br />
+                Else<br />
+                ActiveSheet.Unprotect<br />
+                Rows(RowNumber).EntireRow.Hidden = False<br />
+                ActiveSheet.Protect<br />
+                End If<br />
+                <br />
+               Case &quot;button 2&quot;<br />
+<br />
+               ' And so on...<br />
+<br />
+<br />
+<br />
+I.e. the macro puts the cursor at that button's first hidden row, and then unhides one. If all rows already are visible, a message box pops up.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 07, 2002, 04:58 AM</div></div><div class="posttext">Well, good that you got it working! :)<br />
+<br />
+Yes, Excel does strange things with embedded controls.  You will find that any &quot;new&quot; controls are given a new name with a sequential number on the end - you could actually use the new name to change any cell references etc.  You could detect the new one by creating a collection of the old ones, and enumerating all the controls to identify the new one when its created.<br />
+<br />
+BTW - it looks like you used controls from the &quot;forms&quot; toolbar, rather than the &quot;control toolbox&quot; toolbar.  They are actually slightly different - the &quot;Control Toolbox&quot; ones are better to use with VBA, whereas the forms ones are easier to use if you don't want to have to write macros. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Sep 09, 2002, 06:17 AM</div></div><div class="posttext">Originally posted by ainwood <br />
+Well, good that you got it working! :)<br />
+<br />
+Yes, Excel does strange things with embedded controls.  You will find that any &quot;new&quot; controls are given a new name with a sequential number on the end - you could actually use the new name to change any cell references etc.  You could detect the new one by creating a collection of the old ones, and enumerating all the controls to identify the new one when its created.<br />
+<br />
+BTW - it looks like you used controls from the &quot;forms&quot; toolbar, rather than the &quot;control toolbox&quot; toolbar.  They are actually slightly different - the &quot;Control Toolbox&quot; ones are better to use with VBA, whereas the forms ones are easier to use if you don't want to have to write macros. :) <br />
+<br />
+Any good tutorials on how to use the &quot;control toolbox&quot; controls out there?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 09, 2002, 06:31 AM</div></div><div class="posttext">Do a search on google or other for some.  I found one here. (http://www.vbatutor.com/vbatutor.htm)<br />
+<br />
+If you have any problems, just let me know.  I learnt just  by reading other peoples' source code, and trying to learn what code does what action.  <br />
+<br />
+If you have any specific examples of what you want to do with excel (for example), then let me know and I can probably write you some code that you can study. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Sep 09, 2002, 09:31 AM</div></div><div class="posttext">Thanks. That's how I have learned VB, too. Bump into some problem, search for other peoples solutions to similar problems and adapt it to your own problem. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 19, 2002, 12:59 AM</div></div><div class="posttext">Here are a couple of basic functions for converting Longs to Hexadecimal and vice-versa.  May be useful if you want to write utility editors etc ;)<br />
+<br />
+<br />
+Function LongToHex(lngLong as Long) as string<br />
+    LongToHex = Hex$(lngLong)<br />
+End Function<br />
+<br />
+<br />
+Function HexToLong(strHex As String) as Long<br />
+    HexToLong = CLng(&quot;&amp;H&quot; &amp; strHex)<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 19, 2002, 09:35 AM</div></div><div class="posttext">Along a similar line, if you want to work with singles and doubles, it is a bit more difficult.  The &quot;easiest&quot; way to convert &quot;Hex&quot; into a single etc, may actually be to just read the binary data into a variable.<br />
+<br />
+For example, a &quot;single&quot; data type occupies 4 bytes.  If you therefore read 4 bytes of data from a binary file into a variable declared as a &quot;single&quot;, then the &quot;conversion&quot; has already happened.<br />
+<br />
+Eg:<br />
+<br />
+<br />
+'Write a &quot;single&quot; value to a binary file.<br />
+Sub WriteIt()<br />
+Dim i As Long<br />
+i = FreeFile<br />
+<br />
+Dim sglPI As Single<br />
+sglPI = 3.141592<br />
+<br />
+Open &quot;C:\apps\hex.bin&quot; For Binary As i<br />
+    Put i, , sglPI<br />
+    Put  i, , sglPI<br />
+Close i<br />
+<br />
+End Sub<br />
+<br />
+<br />
+<br />
+The above code simply writes two single variable to a data file.  Open it with a Hex Write a &quot;single&quot; value to a binary file.  If you now open the file with a Hex Editor, you will see that the Hex is:<br />
+<br />
+D8 0F 49 40 D8 0F 49 40<br />
+<br />
+Now, you want to read this back in.  To illustrate the point a bit better, I will give the code to read in the second value.  To do this, you just use the &quot;Get&quot; function, and tell it which byte to start reading from:<br />
+<br />
+<br />
+'Read a &quot;single&quot; value from a binary file.<br />
+Sub ReadIt()<br />
+Dim i As Long<br />
+i = FreeFile<br />
+<br />
+Dim sglPI As Single<br />
+<br />
+Open &quot;C:\apps\hex.bin&quot; For Binary As i<br />
+    Get i, 5, sglPI<br />
+Close i<br />
+Debug.Print sglPi<br />
+<br />
+End Sub<br />
+<br />
+<br />
+<br />
+If you want to convert it the &quot;harder&quot; way (ie - convert a hex &quot;string&quot;, you need to use a clever trick.  You can't just use the CSng() function.  Instead, you have to read the Hex into a Byte array, and then &quot;copy&quot; that memory onto a single variable type.  This is done with user-defined types, so that the LSET function can be used.<br />
+<br />
+<br />
+Private Type DummySingle<br />
+    Output As Single<br />
+End Type<br />
+<br />
+Private Type HexBytes<br />
+    TheBytes(0 To 3) As Byte<br />
+End Type<br />
+<br />
+Function HexToSingle(strHex As String) As Single<br />
+'declare a byte array<br />
+Dim bytHex [color=blue]As HexBytes<br />
+Dim i As Integer<br />
+For i = 0 To 3<br />
+    bytHex.TheBytes(i) = CByte(&quot;&amp;H&quot; &amp; Mid(strHex, i * 2 + 1, 2))<br />
+Next i<br />
+<br />
+Dim sngOutput As DummySingle<br />
+LSet sngOutput = bytHex<br />
+<br />
+HexToSingle = sngOutput.Output<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">King of Camelot</div><div class="date">Sep 20, 2002, 10:59 PM</div></div><div class="posttext">I'm teaching myself VB a small step at a time and I can't figure out what is wrong with this code. Everything works but the part that is supposed to change the units type. The msgbox doesn't come up and the scalemode type doesn't change. Does anyone know what I'm doing wrong?<br />
+<br />
+<br />
+Dim Unit As String<br />
+-----------------------------------------------------<br />
+Private Sub Command2_Click()<br />
+  If Unit = &quot;Units&quot; Then<br />
+    MsgBox , &quot;Please choose a units type.&quot;<br />
+  End If<br />
+  If Unit = &quot;Pixels&quot; Then<br />
+    Form1.Main.ScaleMode = 3<br />
+  End If<br />
+  If Unit = &quot;Inches&quot; Then<br />
+    Form1.Main.ScaleMode = 5<br />
+  End If<br />
+  If Unit = &quot;Centimeters&quot; Then<br />
+    Form1.Main.ScaleMode = 7<br />
+  End If<br />
+  If Unit = &quot;Millimeters&quot; Then<br />
+    Form1.Main.ScaleMode = 6<br />
+  End If<br />
+  Form1.Main.Width = Text1.Text<br />
+  Form1.Main.Height = Text2.Text<br />
+  Form1.Main.Enabled = True<br />
+  Form1.Main.Visible = True<br />
+  Unload Form2<br />
+End Sub<br />
+-----------------------------------------------------<br />
+Private Sub Command3_Click()<br />
+  Unload Form2<br />
+End Sub<br />
+-----------------------------------------------------<br />
+Private Sub Timer1_Timer()<br />
+  Unit = Combo1.SelText<br />
+  Text1.Text = VScroll1.Value<br />
+  Text2.Text = VScroll2.Value<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 23, 2002, 01:40 AM</div></div><div class="posttext">One way of making your code easier to debug is to ensure that you declare all your variables in a set way.  You put &quot;i&quot; as a prefix on integers, &quot;cmd&quot; as a prefix on command buttons, &quot;cmb&quot; as a prefix on a combo box etc.<br />
+<br />
+For a bit more info to help your debugging, what is &quot;unit&quot;?  <br />
+<br />
+When you have the line 'if Unit = &quot;Units&quot; then', the compiler automatically looks at the default property for the object of &quot;unit&quot; type.  If &quot;unit&quot; is a textbox, then that line is fine.  If it is a combobox or something else, it may not work.....<br />
+<br />
+I normally put the object property in even if it is the default property.<br />
+<br />
+Eg. If Unit.Text = &quot;Units&quot; then...<br />
+<br />
+Note that VB is case-sensitive.  If the entered text is units rather than Units, it will not run the &quot;true&quot; clause.<br />
+<br />
+<br />
+<br />
+<br />
+Ooops - reading further, I see that &quot;unit&quot; is combo1.seltext.<br />
+<br />
+the .seltext returns or sets the selected text of the control.  Basically, all this does is highlight the text, as if you'd run your cursor over it!<br />
+<br />
+When using comboboxes, its much easier to just work with the ListIndex of the control - in your case, this will do away with the need to have all the if statements, and the timers - you probably don't even need to command_button, if you use the _Change event for the combobox:<br />
+<br />
+<br />
+<br />
+Private sub combo1_change()<br />
+<br />
+Select case combo1.listindex<br />
+<br />
+case 0<br />
+    'it hasn't been changed<br />
+case 1<br />
+     'pixels<br />
+    Form1.Main.ScaleMode = 3<br />
+case 2<br />
+    'Inches<br />
+    Form1.Main.ScaleMode = 5<br />
+case 3<br />
+    'Centimeters<br />
+    Form1.Main.ScaleMode = 7<br />
+case 4<br />
+    'Millimeters<br />
+    Form1.Main.ScaleMode = 6<br />
+case else<br />
+end select<br />
+<br />
+  Form1.Main.Width = Text1.Text<br />
+  Form1.Main.Height = Text2.Text<br />
+  Form1.Main.Enabled = True<br />
+  Form1.Main.Visible = True</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Sep 23, 2002, 04:18 PM</div></div><div class="posttext">King of Camelot,<br />
+<br />
+Another good thing to do besides ainwood's advice is to learn about the debugger. Then you can step through the code and see how the variables change or set breakpoints so you can find out when certain things are actually taking place. Learning the various ways that objects interact with each other will take you a long way toward understanding how to orchestrate the events that occur in your code. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Sep 24, 2002, 12:46 AM</div></div><div class="posttext">Ok, now I have a new question. This time I want to create a macro in MS WORD 97 that each time the document is opened increments a number by 1. This is my try at the code:<br />
+<br />
+<br />
+Sub Auto_open()<br />
+<br />
+    Dim orderNum As Integer<br />
+    <br />
+Selection.GoTo What:=wdGoToBookmark, Name:=&quot;myBm&quot;<br />
+    orderNum = Val(ActiveDocument.Bookmarks(&quot;myBm&quot;).Value) + 1<br />
+Selection.Delete Unit:=wdCharacter, Count:=1<br />
+Selection.InsertAfter orderNum<br />
+ActiveDocument.Bookmarks.Add Range:=Selection.Range, _<br />
+   Name:=&quot;myBm&quot;<br />
+   <br />
+End Sub<br />
+<br />
+<br />
+The selection and repacement of the bookmark works, but I only got it working for text. The .Value doesn't apparently work with the bookmarks property. :confused:<br />
+<br />
+The bookmark myBm must of course be created before running the macro.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 24, 2002, 01:45 AM</div></div><div class="posttext">Can I take it that you are trying to go to a bookmark that is a number, read it, increment it by one, and then write the value back?<br />
+<br />
+The problem is that a bookmark is defined to be of &quot;text&quot; type, and doesn't have a &quot;value&quot; property.  What you need to do is select the bookmark text, and convert that text to an integer.<br />
+<br />
+<br />
+<br />
+<br />
+Sub Auto_open()<br />
+<br />
+Dim orderNum As Integer<br />
+    <br />
+Selection.GoTo What:=wdGoToBookmark, Name:=&quot;mybm&quot;<br />
+ActiveDocument.Bookmarks(&quot;mybm&quot;).Select<br />
+orderNum = CInt(Selection.Text) + 1<br />
+Selection.Delete Unit:=wdCharacter, Count:=1<br />
+Selection.InsertAfter orderNum<br />
+ActiveDocument.Bookmarks.Add Range:=Selection.Range, _<br />
+   Name:=&quot;mybm&quot;<br />
+   <br />
+End Sub<br />
+ <br />
+<br />
+:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurricane</div><div class="date">Sep 24, 2002, 03:00 AM</div></div><div class="posttext">Great! Thanks a bunch, ainwood! :)<br />
+<br />
+I really got frustrated with this one. You see, Microsoft had an example on the MSDN pages which used Autotext entries to do the thing, but it ended in an overflow error after a few tries. :mad: I mean, what kind of developers are that! <br />
+<br />
+This solution is much simpler and more elegant. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 24, 2002, 05:02 AM</div></div><div class="posttext">For reference, an &quot;overflow&quot; error occurs when you try to put a value into a variable of the wrong type.  For example, an &quot;integer&quot; type can hold a maximum value of 32767.  If you try and put a number greater than this into an integer data type, you get an &quot;overflow&quot;. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Sep 27, 2002, 10:47 PM</div></div><div class="posttext">ainwood.<br />
+<br />
+Please check your PM's about my offer.  Also, how did you format your code before to include proper vb colors :confused:<br />
+<br />
+Also, I've created a replacement for the Common Dialog box.  It includes saving and opening abilities and uses all native controls so it doesn't require any extra runtimes.<br />
+<br />
+Here is the code if you want to browse it. :)<br />
+And I'll upload the form shortly.  It's basically complete.  Unless I or anyone else finds a problem.<br />
+<br />
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''<br />
+' This Form Created By: Thomas Hawkins, CornEmpire Software<br />
+' This can be used freely.<br />
+'<br />
+' Common Dialog Replacement for Open and Save Functions v1.0<br />
+' Also includes a prompt if a file exists and will be overwritten<br />
+'<br />
+' To use in your program you must call the form and then the<br />
+' style you want displayed.<br />
+' For an open file box:<br />
+' opendialog.Show<br />
+' opendialog.opendialogbox<br />
+'<br />
+' For a Save Box:<br />
+' opendialog.Show<br />
+' opendialog.savedialogbox<br />
+'<br />
+' This formats the buttons for the style you need.<br />
+'<br />
+' You will also have to configure the file types, patterns<br />
+' and open/save code<br />
+'<br />
+' *For Form_Load you will enter the default pattern and sellected<br />
+' option in the combo box.  Then add all other options for the<br />
+' combo box.<br />
+' *For Combo1_Click you will need to list the patterns for each<br />
+' item added to the combo box on form load IN ORDER.<br />
+' *For openfile and savefile subs...this is where you type<br />
+' your open and save code.  It will be used by the form when<br />
+' needed.<br />
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''<br />
+Public strfilename As String, strfilepath As String, strsavefilename As String<br />
+Dim pathcheck<br />
+<br />
+Private Sub openfile()<br />
+'Code to open file goes here<br />
+MsgBox strfilepath<br />
+End Sub<br />
+<br />
+Private Sub savefile()<br />
+'Code to save file goes here<br />
+MsgBox strfilepath<br />
+End Sub<br />
+<br />
+Public Sub opendialogbox()<br />
+opendialog.location.Caption = &quot;Select Location&quot;<br />
+opendialog.filetype.Caption = &quot;Open File of Type:&quot;<br />
+opendialog.Caption = &quot;Open File&quot;<br />
+opendialog.Command1(0).Caption = &quot;Open&quot;<br />
+opendialog.filename.Locked = True<br />
+opendialog.filelist.SetFocus<br />
+opendialog.file_name.Caption = &quot;File Path&quot;<br />
+End Sub<br />
+<br />
+Public Sub savedialogbox()<br />
+opendialog.location.Caption = &quot;Select Location&quot;<br />
+opendialog.filetype.Caption = &quot;Save File as Type:&quot;<br />
+opendialog.Caption = &quot;Save File&quot;<br />
+opendialog.Command1(0).Caption = &quot;Save&quot;<br />
+opendialog.filename.Locked = False<br />
+opendialog.filename.SetFocus<br />
+opendialog.file_name.Caption = &quot;Save as File Name:&quot;<br />
+End Sub<br />
+<br />
+Private Sub pathchecker()<br />
+' Checks the paths to the files to insure no double \\'s<br />
+' will be present<br />
+pathcheck = Dirlist.List(Dirlist.ListIndex)<br />
+pathcheck = UCase(pathcheck) ' Converts drive to upper case<br />
+If Command1(0).Caption = &quot;Save&quot; Then<br />
+ If pathcheck = &quot;A:\&quot; Or pathcheck = &quot;B:\&quot; Or pathcheck = &quot;C:\&quot; Or pathcheck = &quot;D:\&quot; Or pathcheck = &quot;E:\&quot; Or pathcheck = &quot;F:\&quot; Or pathcheck = &quot;G:\&quot; Or pathcheck = &quot;H:\&quot; Or pathcheck = &quot;I:\&quot; Or pathcheck = &quot;J:\&quot; Or pathcheck = &quot;K:\&quot; Or pathcheck = &quot;L:\&quot; Or pathcheck = &quot;M:\&quot; Or pathcheck = &quot;N:\&quot; Or pathcheck = &quot;O:\&quot; Or pathcheck = &quot;P:\&quot; Or pathcheck = &quot;Q:\&quot; Or pathcheck = &quot;R:\&quot; Or pathcheck = &quot;S:\&quot; Or pathcheck = &quot;T:\&quot; Or pathcheck = &quot;U:\&quot; Or pathcheck = &quot;V:\&quot; Or pathcheck = &quot;W:\&quot; Or pathcheck = &quot;X:\&quot; Or pathcheck = &quot;Y:\&quot; Or pathcheck = &quot;Z:\&quot; Then<br />
+  strfilepath = Dirlist.List(Dirlist.ListIndex) &amp; filename.Text<br />
+ Else<br />
+  strfilepath = Dirlist.List(Dirlist.ListIndex) &amp; &quot;\&quot; &amp; filename.Text<br />
+ End If<br />
+ElseIf Command1(0).Caption = &quot;Open&quot; Then<br />
+ If pathcheck = &quot;A:\&quot; Or pathcheck = &quot;B:\&quot; Or pathcheck = &quot;C:\&quot; Or pathcheck = &quot;D:\&quot; Or pathcheck = &quot;E:\&quot; Or pathcheck = &quot;F:\&quot; Or pathcheck = &quot;G:\&quot; Or pathcheck = &quot;H:\&quot; Or pathcheck = &quot;I:\&quot; Or pathcheck = &quot;J:\&quot; Or pathcheck = &quot;K:\&quot; Or pathcheck = &quot;L:\&quot; Or pathcheck = &quot;M:\&quot; Or pathcheck = &quot;N:\&quot; Or pathcheck = &quot;O:\&quot; Or pathcheck = &quot;P:\&quot; Or pathcheck = &quot;Q:\&quot; Or pathcheck = &quot;R:\&quot; Or pathcheck = &quot;S:\&quot; Or pathcheck = &quot;T:\&quot; Or pathcheck = &quot;U:\&quot; Or pathcheck = &quot;V:\&quot; Or pathcheck = &quot;W:\&quot; Or pathcheck = &quot;X:\&quot; Or pathcheck = &quot;Y:\&quot; Or pathcheck = &quot;Z:\&quot; Then<br />
+  strfilepath = Dirlist.List(Dirlist.ListIndex) &amp; filelist.List(filelist.ListIndex)<br />
+ Else<br />
+  strfilepath = Dirlist.List(Dirlist.ListIndex) &amp; &quot;\&quot; &amp; filelist.List(filelist.ListIndex)<br />
+ End If<br />
+End If<br />
+End Sub<br />
+<br />
+Private Sub Combo1_Click()<br />
+'load file patterns based on item selected.  ListIndex = &quot;0&quot;<br />
+'is the first item in the combo box.  ListIndex = &quot;1&quot; is the<br />
+'second item, etc.<br />
+'These Indices are loaded on form load under &quot;Load All File Types&quot;<br />
+If Combo1.ListIndex = &quot;0&quot; Then<br />
+ filelist.Pattern = &quot;*.html;*.htm&quot;<br />
+ElseIf Combo1.ListIndex = &quot;1&quot; Then<br />
+ filelist.Pattern = &quot;*.*&quot;<br />
+End If<br />
+End Sub<br />
+<br />
+Private Sub command1_Click(Index As Integer)<br />
+If Index = &quot;0&quot; Then<br />
+ If Command1(0).Caption = &quot;Open&quot; Then<br />
+  strfilename = filelist.List(filelist.ListIndex)<br />
+  pathchecker<br />
+  openfile<br />
+ ElseIf Command1(0).Caption = &quot;Save&quot; Then<br />
+  strsavefilename = filename.Text<br />
+  pathchecker<br />
+  'Checks to see if file exists, and prompts to overwrite<br />
+   Set fso = CreateObject(&quot;Scripting.FileSystemObject&quot;)<br />
+   If fso.FileExists(strfilepath) Then<br />
+    If MsgBox(&quot;File Already Exists.  Overwrite?&quot;, vbYesNo Or vbCritical, &quot;File Exists&quot;) = vbYes Then<br />
+     savefile<br />
+    End If<br />
+   Else<br />
+    savefile<br />
+   End If<br />
+  End If<br />
+ElseIf Index = &quot;1&quot; Then<br />
+ Unload opendialog<br />
+End If<br />
+End Sub<br />
+<br />
+Private Sub Dirlist_Change()<br />
+filelist.Path = Dirlist.Path<br />
+End Sub<br />
+<br />
+Private Sub Drivelist_Change()<br />
+Dirlist.Path = Drivelist.Drive<br />
+End Sub<br />
+<br />
+Private Sub filelist_Click()<br />
+'On Open writes path to filename box.  On save, writes file name<br />
+'to filename box.<br />
+If file_name.Caption = &quot;File Path&quot; Then<br />
+ pathchecker<br />
+ filename.Text = strfilepath<br />
+ElseIf file_name.Caption = &quot;Save as File Name:&quot; Then<br />
+ filename.Text = filelist.List(filelist.ListIndex)<br />
+End If<br />
+End Sub<br />
+<br />
+Private Sub Form_Load()<br />
+'load default file pattern/Type<br />
+filelist.Pattern = &quot;*.html;*.htm&quot;<br />
+Combo1.Text = &quot;Webpages (*.html;*.htm)&quot;<br />
+'Load All File Types<br />
+Combo1.AddItem &quot;Webpages (*.html;*.htm)&quot;<br />
+Combo1.AddItem &quot;All Files (*.*)&quot;<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Sep 28, 2002, 03:13 AM</div></div><div class="posttext">Corn,  <br />
+<br />
+Yep got it :D<br />
+<br />
+You may want to edit you code above - its making this page rather wide :lol:.<br />
+<br />
+re the colour formatting, I wrote some code that just parses the text and converts it to put the little {color=XXX} {/color} tags into the code.  It doesn't work properly, so I then have to edit it a bit.  I'll post it when I get back to work.  Have you ever used PretyCodePrint??  It basically lets you print your code on a colour printer, plus links the For/next &amp; If/then loops.  I think you can download it at www.vbcity.com???<br />
+<br />
+P.S. Like your common dialog :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Sep 28, 2002, 08:11 AM</div></div><div class="posttext">Nice Site.  I'm going to check it out.<br />
+<br />
+I downloaded a program that converts a VB file to HTML.<br />
+<br />
+Going to be useful for the new resource page. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Oct 23, 2002, 04:20 AM</div></div><div class="posttext">Haven't had much time lately to add to this thread.<br />
+<br />
+Firstly, some news!  I have joined Cornmaster at &quot;CornEmpire software&quot;.  Haven't yet been able to add anything to his site yet, but come visit it (the link is in my sig :) )<br />
+<br />
+<br />
+<br />
+Anyway, here's some code to retrieve the temporary directory:<br />
+<br />
+<br />
+Private Declare Function GetTempPathA Lib &quot;kernel32&quot; _<br />
+   (ByVal nBufferLength As Long, ByVal lpBuffer As String) As Long<br />
+ <br />
+Public Function GetTempPath() As String<br />
+Dim lngSize As Long<br />
+Dim strTemp As String<br />
+Dim lngLength As Long<br />
+ <br />
+strTemp = Space$(256)<br />
+lngSize = Len(strTemp)<br />
+lngLength = GetTempPathA(lngSize, strTemp)<br />
+GetTempPath = Left(strTemp, lngLength)<br />
+    <br />
+End Function<br />
+<br />
+ <br />
+<br />
+<br />
+<br />
+P.S. Corn - can you edit your sub above to decrease the width of this page :lol:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Oct 30, 2002, 06:28 AM</div></div><div class="posttext">We have a lan at home, and I thought that it would be a good idea to make a program that connects the two computers. It maps drives, I can shut down the other computer and other useful/less useful stuff. I also tried to see if I got send whatever is in the clipboard to the other computer's clipboard, and it works perfect as long as the clipboard contains text. I solved the pictureproblem by saving the picture to a file and copy it to the other computer where I load it into the clipboard, which only works if the drives are mapped. Do you know any good way to send a picture (IPictureDisp) or any other class through a winsock connection. <br />
+<br />
+I downloaded an example from a VB site where I could send files through winsock connections, splitting it up in chunks before sending, but I would like to transfer the picture without saving it as a file at all.<br />
+<br />
+Grateful for any help:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Nov 01, 2002, 07:28 AM</div></div><div class="posttext">Sorry, Haven't done anything like this before.  If you have some sample code, I would be interested in having a look at it though :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Nov 02, 2002, 10:52 AM</div></div><div class="posttext">This is the way I do it now, I haven't tested it very much though:<br />
+<br />
+Computer A:<br />
+SavePicture Clipboard.GetData(), &quot;copypic.bmp&quot;<br />
+FileCopy &quot;copypic.bmp&quot;, &quot;j:\clas\copypic.bmp&quot;<br />
+ws.SendData &quot;ok&quot;<br />
+Computer B:<br />
+Dim pic As IPictureDisp<br />
+ws.GetData s<br />
+if s = &quot;ok&quot; then<br />
+Set pic = LoadPicture(&quot;c:\clas\copypic.bmp&quot;)<br />
+Clipboard.SetData pic<br />
+end if<br />
+<br />
+As I said I have a codesample that splits the file and send it in bytes, but I still have to save it as a file. Apparently I can't send data of the type &quot;object&quot; with winsock.:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Nov 14, 2002, 12:20 PM</div></div><div class="posttext">If you're in to APIs you probably like to use BitBlt, but there is a VB version of this function called PaintPicture. It's a method in Picturebox, form and Printer objects and paints a part of or the whole picture in another object.<br />
+<br />
+object.PaintPicture picture, x1, y1, width1, height1, x2, y2, width2, height2, opcode <br />
+<br />
+Object: The object to paint the new picture in<br />
+Picture: Source picture, from a form, picturebox<br />
+x1, y1: Indicates the coordinates where to start painting the new picture<br />
+width1, height1: New picture's size. Should be omitted unless you want to resize the picture.<br />
+x2, y2: Coordinates in source picture where to start clipping the picture<br />
+width2, height2: Size of the clip from source picture.<br />
+opcode: Bitwise operations performed on the picture before painting it. E.g. vbSrcCopy, vbMergeCopy, SrcAnd<br />
+<br />
+The scalemode property determines what units to measure in. E.g. points, pixels, twips, mm<br />
+<br />
+destinationpic.PaintPicture sourcepic, 35, 40,10 ,15 , 0, 5, 20, 30, vbSrcAnd <br />
+<br />
+This command will copy a picture from sourcepic to destinationpic. A square starting at x45 and y40 in sourcepic with the size w10 and h15 will be copied to fill a square starting at x0 and y5 in destinationpic with the size w20 and h30. The new picture will be twice as large as the old picture (20/10 and 30/15).<br />
+Opcodes can only be used with bitmaps. The opcode in this example will paint the new picture by taking a point from the source and add it to the destination with the operator AND.<br />
+<br />
+     11110000<br />
+10101010AND <br />
+     10100101<br />
+<br />
+The default opcode is SrcCopy, which paints the new picture exactly the same as the source picture.<br />
+<br />
+I hope this is clear enough:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Nov 17, 2002, 12:04 PM</div></div><div class="posttext">Just wanted to promote my site.  I added a new tutorial today.  Bring the total to 3.  With one custom form, and one tip.<br />
+<br />
+Visit there.  And e-mail any tips, files or tutorials you would like added!<br />
+<br />
+http://cornempire.newezone.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Nov 18, 2002, 10:43 AM</div></div><div class="posttext">Originally posted by CornMaster <br />
+Just wanted to promote my site.  I added a new tutorial today.  Bring the total to 3.  With one custom form, and one tip.<br />
+<br />
+Visit there.  And e-mail any tips, files or tutorials you would like added!<br />
+<br />
+http://cornempire.newezone.com <br />
+<br />
+:goodjob: :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ferenginar</div><div class="date">Nov 22, 2002, 07:51 AM</div></div><div class="posttext">1) How to set up a progress bar in excel<br />
+<br />
+<br />
+Set up a userform &quot;ProgressBar&quot; with too labels on to of each other, lbFixed and lbindicate.<br />
+<br />
+Add the following code to the form<br />
+<br />
+Sub pcProgress(pcTitle As String, iPercent As Integer)<br />
+ProgressBar.Caption = pcTitle<br />
+lbIndicate.Width = iPercent / 100 * lbFixed.Width<br />
+DoEvents<br />
+End Sub<br />
+<br />
+From main module<br />
+<br />
+'Start progress Bar<br />
+<br />
+<br />
+for myValue = 1 to 10,000<br />
+<br />
+ProgressBar.Show vbModeless<br />
+PartComplete = Int(myValue * 100 / 10,000)<br />
+TempTitle = &quot;Current Progess&quot;<br />
+ProgressBar.pcProgress TempTitle, PartComplete<br />
+<br />
+' other code goes here<br />
+<br />
+Next myValue<br />
+<br />
+unload ProgressBar<br />
+<br />
+' As the form is loaded vbModeless then the rest of the code will continue to execute. Label lbIndicate grows in width as myValue increases until it covers lbFixed. The form is then unloaded.<br />
+<br />
+2) Use of Status bar<br />
+<br />
+If you are using application.screenupdating = false to speed up your code then you might try using the status bar to keep the user informed.<br />
+<br />
+application.statusbar = &quot;Your Message&quot;<br />
+<br />
+don't forget to end sub with <br />
+application.statusbar = false<br />
+to return control to the program<br />
+<br />
+<br />
+ferenginar</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Dec 04, 2002, 11:06 AM</div></div><div class="posttext">How to automatically select the text in a textbox when a user clicks in it:<br />
+<br />
+Put the following code in the &quot;GotFocus&quot; event of a textbox (called &quot;txtMyText&quot;<br />
+<br />
+<br />
+<br />
+Sub txtMyText_GotFocus()<br />
+    txtMyText.SelStart = 0<br />
+    txtMyText.SelLength = Len(txtMyText.text)<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Dec 17, 2002, 04:55 AM</div></div><div class="posttext">Some windows API calls require that you pass the handle of calling object as a parameter.  However, in VBA the handle is not a standard property of an object.  So what do you do?<br />
+<br />
+If you want the handle to something, you can simply pass its caption to the FindWindow API.  Very easy!<br />
+<br />
+<br />
+<br />
+Public Declare Function FindWindow Lib &quot;user32&quot; Alias &quot;FindWindowA&quot; _<br />
+    (ByVal lpClassName As String, ByVal lpWindowName As String) As Long<br />
+<br />
+<br />
+Private Sub UserForm_Initialize()<br />
+DimlngFormHwnd As Long<br />
+lngFormHwnd = FindWindow(vbNullString, Me.Caption)<br />
+End Sub<br />
+<br />
+You may even find a use for this approach in VB (getting the handle to a command button maybe?:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">greyghost</div><div class="date">Feb 01, 2003, 10:30 PM</div></div><div class="posttext">I have a few questions.<br />
+<br />
+1) Is there any way to load compressed images into a VB Resource file (JPEG, GIF... files)<br />
+2) How do you get a form to be a specific shape?<br />
+<br />
+I'd appreciate any help I can get!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Feb 10, 2003, 11:24 PM</div></div><div class="posttext">Re the compressed formats, it can be done, but I believe that you need a custom control....  Basically, these formats are licensed, so MS doesn't ship controls that support them - you need to pay.  Not completely sure, so perhaps you can have a look on the web. :)<br />
+<br />
+Getting a form to be a specific shape is do-able, but requires the use of the windows API.  I'm being a bit lazy here in not giving sample code, but you can see some sample code (with comments in french :mischief: here (http://www.experts-exchange.com/Programming/Programming_Languages/Visual_Basic/Q_20124209.html) :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Feb 12, 2003, 06:21 PM</div></div><div class="posttext">Hey...you are still alive.  How come you haven't been on MSN. :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sirp</div><div class="date">Feb 17, 2003, 04:01 AM</div></div><div class="posttext">I have a question: In VB, how do I tell if an array is empty?<br />
+<br />
+-Sirp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Feb 18, 2003, 06:07 PM</div></div><div class="posttext">Sirp,<br />
+<br />
+It really depends on what sort of array you are working with....<br />
+<br />
+If you are working with a string array, it is do-able in a clever - but fast - manner.  If you're not, then it is doable, but a bit slower.<br />
+<br />
+Basically, for any array, just loop through from the lower bound to the upper bound and test each value.  <br />
+<br />
+<br />
+Eg:<br />
+<br />
+Private Function CheckArray(vArray() As Variant) As Boolean<br />
+Dim vTest As Variant<br />
+For Each vTest In vArray<br />
+    If (vTest &lt;&gt; 0) Then<br />
+        CheckArray = False<br />
+        Exit Function<br />
+    End If<br />
+Next vTest<br />
+<br />
+CheckArray = True<br />
+End Function<br />
+<br />
+For stringarrays, you can use the join function to check it a bit faster...<br />
+<br />
+Private Function CheckStringArray(sArray() As String) As Boolean<br />
+Dim sTotal As String<br />
+sTotal = Join(sArray, &quot;&quot;)<br />
+If Len(sTotal) = 0 Then<br />
+    CheckStringArray = True<br />
+Else<br />
+    CheckStringArray = False<br />
+End If<br />
+End Function<br />
+<br />
+These functions will both return &quot;true&quot; for an empty array, false otherwise. :)  I haven't tried it on control or object arrays though....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sirp</div><div class="date">Feb 19, 2003, 02:48 AM</div></div><div class="posttext">ainwood: that's how to test if all the members of an array are empty values. I want to know if the array doesn't have any items in it at all.<br />
+<br />
+i.e. code equivalent to empty() for a container in C++. Not code equivalent to<br />
+<br />
+find_if(v.begin(),v.end(),identity)<br />
+<br />
+in C++, like you've shown....<br />
+<br />
+(apologies if you don't happen to know C++, but that's what I program in, I've just got this annoying VB code I have to interface with a COM object I wrote and it's driving me insane!)<br />
+<br />
+-Sirp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Feb 19, 2003, 11:05 AM</div></div><div class="posttext">Sirp, you should be able to use 'sizeof' to determine if any space has been allocated to the array. HTH.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sirp</div><div class="date">Feb 19, 2003, 03:00 PM</div></div><div class="posttext">Cartouche Bee: sizeof? Is that a VB Function? What's the syntax for using it?<br />
+<br />
+-Sirp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Feb 19, 2003, 04:11 PM</div></div><div class="posttext">Originally posted by Sirp <br />
+Cartouche Bee: sizeof? Is that a VB Function? What's the syntax for using it?<br />
+<br />
+-Sirp. <br />
+<br />
+Ooops, I thought you were asking for C++, sizeof() could be used for C. <br />
+<br />
+You can use the LBound and Ubound functions in VB to determine how many elements are in an array (you will get a trappable error at this point if the array is indeed empty with no elements, and that is rather strange for VB).  If the array is truely empty (from erasing?) you will get an error if you try to access it (lets say the LBound element). Trapping the error would then be the way to determine if your array is empty.<br />
+<br />
+Are you passing the array to the Com Object?<br />
+<br />
+If you need a more specific solution for a particular problem, maybe PM me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Feb 19, 2003, 04:50 PM</div></div><div class="posttext">CB is right - you can check for an uninitialised array by checking the Ubound, and then trapping the error.  If an error is raised (err.number = 9) then the array is not initialised.  Stupidity of VB not to have that function, but.... :rolleyes:<br />
+<br />
+One special case is if you use a variant data type to hold the array: - you can then redimension the variable as an array, and use the IsEmpty function:<br />
+<br />
+Sub testit()<br />
+Dim aArray As Variant<br />
+If IsEmpty(aArray) Then<br />
+    Debug.Print &quot;Empty&quot;<br />
+Else<br />
+    Debug.Print &quot;Initialised&quot;<br />
+End If<br />
+ReDim aArray(3) As Variant<br />
+aArray(3) = &quot;s&quot;<br />
+If IsEmpty(aArray) Then<br />
+    Debug.Print &quot;Empty&quot;<br />
+Else<br />
+    Debug.Print &quot;Initialised&quot;<br />
+End If<br />
+End Sub<br />
+<br />
+<br />
+Problem being that you are then using variants, so its not as efficient.  Note too, that in the initial declaration, you must declare it as a variable only, not a variant array!<br />
+<br />
+For the trappable error thingy:<br />
+<br />
+<br />
+Sub testit()<br />
+Dim aArray() As String<br />
+Debug.Print IsArrayEmpty(aArray)<br />
+ReDim aArray(5) As String<br />
+aArray(3) = &quot;s&quot;<br />
+Debug.Print IsArrayEmpty(aArray)<br />
+End Sub<br />
+<br />
+<br />
+Function IsArrayEmpty(InputArray As Variant) As Boolean<br />
+On Error GoTo ErrorHandler<br />
+    If UBound(InputArray) Then<br />
+        'An empty array will generate an error<br />
+    End If<br />
+    <br />
+    'else - no error so it is not populated!<br />
+    IsArrayEmpty = False<br />
+    Exit Function<br />
+<br />
+ErrorHandler:<br />
+    IsArrayEmpty = True<br />
+End Function<br />
+<br />
+<br />
+<br />
+Note that as soon as you give an array dimensions (ie from the redim above), it becomes 'initialised', with all elements set to the default data type (eg 0 for numeric arrays, an empty string for string arrays etc).  Not sure how the C++ works.<br />
+<br />
+You may also want to check out the LenB function - it is as close to the C / C++ SizeOf function as you are ever going to get with VB ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sirp</div><div class="date">Feb 20, 2003, 05:16 AM</div></div><div class="posttext">eek! So much code to tell if an array is empty! :) But thanks...it seems to work! Although my code just ended up having an 'isEmpty' flag.<br />
+<br />
+CB: hmm....sizeof() wouldn't work in C or C++ either, since you can't have an empty array in C or C++. In fact a popular idiom to ensure a type is complete in C++ is<br />
+<br />
+char type_not_fully_defined[sizeof(sometype)]<br />
+<br />
+is sometype is complete, the code will compile fine and type_not_fully_defined will be optimized away since it's not referenced. If sometype is incomplete, then sizeof(sometype) is zero, making the array definition illegal, and the compiler will propagate an error, hopefully including the variable name, giving the programmer a clue as to what the problem is.<br />
+<br />
+This is used to see if a type is complete before calling delete on that type for instance.<br />
+<br />
+Of course, the C++ equivalent to VB arrays is the standard vector class template, but, you don't use sizeof() to find if one of them is empty either: you use the empty function.<br />
+<br />
+-Sirp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Feb 20, 2003, 09:35 AM</div></div><div class="posttext">Sirp, you a 100% correct, I normally just think of the root of an array as a pointer, so my answer was over simplified. An unassigned pointer is set to null, which essentially is an empty array in  most languages. Of course you can't point to a size 0 buffer, that would be a bug. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sirp</div><div class="date">Feb 20, 2003, 03:11 PM</div></div><div class="posttext">CB: well if you're using a dynamic/pointer-based array, you can't use sizeof to find the size of the array either....<br />
+<br />
+char* ptr = NULL;<br />
+<br />
+sizeof(ptr); //returns the size of a pointer, 4 on intel<br />
+sizeof(*ptr); //returns the same as sizeof(char) which is 1<br />
+<br />
+But, I rarely use dynamic arrays directly in C++. It's far too unsafe, using standard containers normally, and builtin arrays when the speed is really necessary is far better imo.<br />
+<br />
+-Sirp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cartouche Bee</div><div class="date">Feb 20, 2003, 05:00 PM</div></div><div class="posttext">Originally posted by Sirp <br />
+CB: well if you're using a dynamic/pointer-based array, you can't use sizeof to find the size of the array either....<br />
+ <br />
+<br />
+either?<br />
+<br />
+You can use sizeof on statically dimensioned arrays and the sizeof function will also allow you determine the sizeof the elements in the array. But... they can't be empty by your own definition cause the compiler will optimize them out or halt on a compiler error. A pointer to an empty dynamic array will be set to NULL on intialization and memory deallocation.<br />
+<br />
+Anyway the crux of the problem was that you were interfacing a com object with VB, with an array, that apparently was dynamic and at times empty. Sounds like you resolved the issue by modifying the VB software. :goodjob:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Feb 24, 2003, 11:44 AM</div></div><div class="posttext">I just installed Visual Studio on my new Win XP machine, but was pretty disappointed that the all the controls didn't follow the theme in windows. The theme-controls have rounder corners and for example the command buttons gets an orange border when you move the mouse over it. <br />
+I therefore checked the microsoft knowledgebase and found an example of how to do it, but according to them it wasn't really supported by VB. The annoying part was that you had to make an additional file and place it in the same folder as the exe-file, and it only works after you've compiled the file.<br />
+<br />
+My idea was that it would be nice if the program itself could create that extra file, so I placed the text found in the additional file in a resourcefile, which I added to the project and programmed it to create the file in the same folder.<br />
+<br />
+So, if you want XP-themecontrols in your VB program without distributing the extra file with the program, use the project below as the base of your program, and before making the exe-file comment out &quot;exit sub&quot; in &quot;Form_initialize&quot; to activate the code. <br />
+<br />
+If anyone have a better solution to the problem, please help me improve it:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Feb 24, 2003, 11:45 AM</div></div><div class="posttext">Here's (http://support.microsoft.com/default.aspx?scid=kb;en-us;309366)  the link to the microsoft page with the instructions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Feb 24, 2003, 03:04 PM</div></div><div class="posttext">Funxus,<br />
+<br />
+Looks good :goodjob:<br />
+<br />
+What happens when you try the executable on a non-XP machine?  When you call the control initialise function, does it crash or simply load whichever win 9x version of the same function?<br />
+<br />
+I guess you could always wrapper this in a IfWinXP() type function :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Feb 25, 2003, 12:05 PM</div></div><div class="posttext">That shouldn't be so hard to try. I'll get to it soon :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funxus</div><div class="date">Feb 25, 2003, 12:13 PM</div></div><div class="posttext">Yes, the program worked in Win ME, but it still creates the manifest. I guess it shouldn't be too hard to check which OS it is and only create the file if it's XP.:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CornMaster</div><div class="date">Mar 15, 2003, 11:02 PM</div></div><div class="posttext">Winsock.<br />
+<br />
+I've been messing with it...and are writing 4 different chat programs.  All for different purposes.  Anyway...I want to add file transfering to them.<br />
+<br />
+Any tutorials?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ainwood</div><div class="date">Mar 16, 2003, 06:55 PM</div></div><div class="posttext">Originally posted by CornMaster <br />
+Winsock.<br />
+<br />
+I've been messing with it...and are writing 4 different chat programs.  All for different purposes.  Anyway...I want to add file transfering to them.<br />
+<br />
+Any tutorials? <br />
+<br />
+Your wish is my command ;)<br />
+<br />
+This is NOT my tutorial.  can't remember where I found it, but it does give the basics. :)  Hopefully its of some use.  Perhaps you could weed out the rubbish and repost what you come up with? :)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

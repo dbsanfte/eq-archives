@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>Civilization Fanatics' Forums - C Help</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="civilization,civ2,civ3,civ4,civilization iii,civilization ii,civilization iv,downloads,scenarios,modpacks,maps,sid meier,firaxis,strategy,tips,reference" />
+	<meta name="description" content="Dedicated to the entire Sid Meier's Civilization series." />
+	<link rel="stylesheet" href="http://forums.civfanatics.com/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Civilization Fanatics' Forums</a> &gt; <a href="f-3.html">COLOSSEUM</a> &gt; <a href="f-73.html">Computer Talk</a> &gt; C Help</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forums.civfanatics.com/showthread.php?t=36371">C Help</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Eli</div><div class="date">Nov 11, 2002, 10:37 AM</div></div><div class="posttext">--------------------Configuration: Maman12 - Win32 Debug--------------------<br />
+Linking...<br />
+main.obj : error LNK2005: _main already defined in disk.obj<br />
+main.obj : error LNK2005: _freespace already defined in disk.obj<br />
+LIBCD.lib(wincrt0.obj) : error LNK2001: unresolved external symbol _WinMain@16<br />
+Debug/Maman12.exe : fatal error LNK1120: 1 unresolved externals<br />
+Error executing link.exe.<br />
+<br />
+Maman12.exe - 4 error(s), 0 warning(s)<br />
+<br />
+<br />
+WTF is that supposed to mean?<br />
+<br />
+I have 3 files.<br />
+main.c<br />
+disk.c<br />
+disk.h<br />
+<br />
+main.c<br />
+--------<br />
+#include [stdio.h]      [ and ] are actually &lt; and &gt;<br />
+#include &quot;disk.h&quot;<br />
+<br />
+<br />
+void main(void)<br />
+{	<br />
+}<br />
+<br />
+disk.c<br />
+-------<br />
+#include [stdio.h]  [ and ] are actually &lt; and &gt;<br />
+#include &quot;disk.h&quot;<br />
+<br />
+void main(void)<br />
+{}<br />
+<br />
+disk.h<br />
+-------<br />
+<br />
+#define NAMELIMIT 10<br />
+<br />
+typedef struct /* one memory cell */<br />
+{<br />
+	char ch;<br />
+	int track;<br />
+	int position;<br />
+	struct cell *next;<br />
+} cell;<br />
+<br />
+typedef struct /* one cell in the &quot;files&quot; table */<br />
+{<br />
+	char name[NAMELIMIT];<br />
+	char info;<br />
+	cell *file_start;<br />
+} file;<br />
+<br />
+typedef struct /* the disk itself */<br />
+{<br />
+	cell *tracks[6];<br />
+	file *files;<br />
+} disk;<br />
+<br />
+int freespace[3]={252,252,252}; /* indicates how much free space there is left on every */<br />
+								/* disk. Disks are empty at first, so it is initialized */<br />
+								/* to 4+8+16+32+64+128=252								*/<br />
+<br />
+<br />
+<br />
+I hate this course.<br />
+An advanced C course... And the first thing we need to do is a project, but we arent even familiar with the language yet. :crook:<br />
+<br />
+(this is only the skeleton of the project of course)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jpowers</div><div class="date">Nov 11, 2002, 11:17 AM</div></div><div class="posttext">Well, I know you can't have two main() functions.  Are you redefining freespace somewhere as well?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eli</div><div class="date">Nov 11, 2002, 11:22 AM</div></div><div class="posttext">Originally posted by jpowers <br />
+Well, I know you can't have two main() functions.  Are you redefining freespace somewhere as well? <br />
+<br />
+Ok, renaming the main function in disk.c reduced the number of errors to 3.<br />
+<br />
+My first post contained the entire source code, so i'm doing nothing else with freespace.<br />
+<br />
+--------------------Configuration: Maman12 - Win32 Debug--------------------<br />
+Linking...<br />
+main.obj : error LNK2005: _freespace already defined in disk.obj<br />
+LIBCD.lib(wincrt0.obj) : error LNK2001: unresolved external symbol _WinMain@16<br />
+Debug/Maman12.exe : fatal error LNK1120: 1 unresolved externals<br />
+Error executing link.exe.<br />
+<br />
+Maman12.exe - 3 error(s), 0 warning(s)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eli</div><div class="date">Nov 11, 2002, 11:24 AM</div></div><div class="posttext">Hmmm....<br />
+<br />
+After removing the initialization of freespace :<br />
+int freespace[3];<br />
+<br />
+I got it down to two errors.<br />
+<br />
+--------------------Configuration: Maman12 - Win32 Debug--------------------<br />
+Compiling...<br />
+disk.c<br />
+Linking...<br />
+LIBCD.lib(wincrt0.obj) : error LNK2001: unresolved external symbol _WinMain@16<br />
+Debug/Maman12.exe : fatal error LNK1120: 1 unresolved externals<br />
+Error executing link.exe.<br />
+<br />
+Maman12.exe - 2 error(s), 0 warning(s)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bobgote</div><div class="date">Nov 21, 2002, 06:07 AM</div></div><div class="posttext">Damn, I hate unresolved externals.  I had some in a C++ assignment, unfortunately i can't remember how i got rid of them.  The code looks a little weird, but i don't know C, only C++ (ie struct implementation).</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.5, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

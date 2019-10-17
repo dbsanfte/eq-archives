@@ -1,0 +1,124 @@
+// Can the user accept cookies
+var WM_acceptsCookies = false;
+if(document.cookie == '') {
+    document.cookie = 'WM_acceptsCookies=yes'; // Try to set a cookie.
+    if(document.cookie.indexOf('WM_acceptsCookies=yes') != -1) {
+	WM_acceptsCookies = true; 
+    }// If it succeeds, set variable
+} else { // there was already a cookie
+  WM_acceptsCookies = true;
+}
+
+function WM_setCookie (name, value, hours, path, domain) {
+    if (WM_acceptsCookies) { 
+		var numHours = (new Date((new Date()).getTime() + hours*3600000)).toGMTString();
+		// Set the cookie, adding any parameters that were specified.
+		document.cookie = name + '=' + escape(value) + ';expires=' + numHours + ';path=' + path + ((domain)?';domain=' + domain:''); 
+    }
+}
+
+function WM_readCookie(name) {
+    if(document.cookie == '') {
+	return false; 
+    } else { 
+	var firstChar, lastChar;
+	var theBigCookie = document.cookie;
+	firstChar = theBigCookie.indexOf(name);	// find the start of 'name'
+	var NN2Hack = firstChar + name.length;
+	if((firstChar != -1) && (theBigCookie.charAt(NN2Hack) == '=')) { // if you found the cookie
+	    firstChar += name.length + 1; // skip 'name' and '='
+	    lastChar = theBigCookie.indexOf(';', firstChar); // Find the end of the value string (i.e. the next ';').
+	    if(lastChar == -1) lastChar = theBigCookie.length;
+	    return unescape(theBigCookie.substring(firstChar, lastChar));
+	} else {
+	    return false;
+	}
+    }	
+}
+
+function WM_killCookie(name, path) {
+  var theValue = WM_readCookie(name); 
+  if(theValue) {
+      document.cookie = name + '=' + theValue + '; expires=Fri, 13-Apr-1970 00:00:00 GMT' + ';path=' + path; // set an already-expired cookie
+  }
+}
+
+flashVer = 0;
+browser = "0";
+
+
+// Netscape detection,
+// returns the full version of Flash plugin found or 0.0
+if (navigator.mimeTypes && (navigator.userAgent.indexOf('Win') != -1)) {
+	flashVer = detection_flashNsVersion();
+	browser = "Netscape" + parseFloat(navigator.appVersion);
+}
+
+function detection_flashNsVersion()
+{
+  // this function returns an integer which should be the major version of the Flash plugin or 0
+  // this function only returns useful information if called from Netscape or IE Mac 5.0+
+  // Set these local variables to avoid the Netscape 4 crashing bug.
+  var thearray = navigator.plugins
+  var arraylen = thearray.length
+
+  // Step through each plugin in the array.
+  for (var i=0; i < arraylen; i++) {
+    // Set these local variables to avoid the Netscape 4 crashing bug.
+    theplugin = thearray[i]
+    thename   = theplugin.name
+    thedesc   = theplugin.description
+
+    // If the plugin is Flash...
+    if (thename.indexOf("Shockwave") != -1 && thename.indexOf("Flash") != -1)
+    {
+		return thedesc.substring(thedesc.indexOf("Flash ") + 6,thedesc.indexOf("Flash ") + 7);
+    }
+  }
+  
+  return 0;
+}
+
+
+//Now checking IE for Flash ActiveX
+// this is where we write out the VBScript for MSIE Windows
+var WM_startTagFix = '</';
+var msie_windows = 0;
+if ((navigator.userAgent.indexOf('MSIE') != -1) && (navigator.userAgent.indexOf('Win') != -1)){
+  msie_windows = 1;
+  document.writeln('<script language="VBscript">');
+  document.writeln('\'This will scan for plugins for all versions of Internet Explorer that have a VBscript engine version 2 or greater.');
+  document.writeln('\'This includes all versions of IE4 and beyond and some versions of IE 3.');
+  document.writeln('Dim WM_detect_through_vb');
+  document.writeln('WM_detect_through_vb = 0');
+  document.writeln('If ScriptEngineMajorVersion >= 2 then');
+  document.writeln('  WM_detect_through_vb = 1');
+  document.writeln('End If');
+  document.writeln('Function WM_activeXDetect(activeXname)');
+  document.writeln('  on error resume next');
+  document.writeln('  If ScriptEngineMajorVersion >= 2 then');
+  document.writeln('     WM_activeXDetect = False');
+  document.writeln('     WM_activeXDetect = IsObject(CreateObject(activeXname))');
+  document.writeln('     If (err) then');
+  document.writeln('        WM_activeXDetect = False');
+  document.writeln('     End If');
+  document.writeln('   Else');
+  document.writeln('     WM_activeXDetect = False');
+  document.writeln('   End If');
+  document.writeln('End Function');
+  document.writeln(WM_startTagFix+'script>');
+}
+
+// check for an IE Flash ActiveX 
+function lookForFlashDirectX(activeXname) {
+	return WM_activeXDetect(activeXname);
+}
+
+if ((navigator.userAgent.indexOf('MSIE') != -1) && (navigator.userAgent.indexOf('Win') != -1)){
+	browser = "IE" + navigator.userAgent.substr(navigator.userAgent.indexOf('MSIE')+5, 3);
+
+	if(lookForFlashDirectX('ShockwaveFlash.ShockwaveFlash.3')) {flashVer = 3;}
+	if(lookForFlashDirectX('ShockwaveFlash.ShockwaveFlash.4')) {flashVer = 4;}
+	if(lookForFlashDirectX('ShockwaveFlash.ShockwaveFlash.5')) {flashVer = 5;}
+	if(lookForFlashDirectX('ShockwaveFlash.ShockwaveFlash.6')) {flashVer = 6;}
+}
