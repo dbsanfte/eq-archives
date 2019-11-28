@@ -1,0 +1,1373 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>ジャマイカン酒場</title>
+<STYLE TYPE="text/css">
+<!--
+A:link {text-decoration: none }
+A:visited {text-decoration: none }
+A:hover {text-decoration: none;}
+body,tr,td,th { font-size:9pt; }
+-->
+</STYLE>
+</head>
+<body text="#000000">
+<div align="center">
+<img src="img/bbs-jamaican-title.jpg" width="350" height="100">
+<br><br><a href="http://www.tokyo2001.com/game/eq/index.html" target="_top"><img src="img/home.gif" width="31" height="9" border="0"></a> 
+<a href="./nbs.cgi?mode=del"><img src="img/del.gif" width="31" height="9" border="0"></a> 
+<a href="./nbs.cgi?mode=rank"><img src="img/rank.gif" width="31" height="9" border="0"></a> 
+<a href="./nbs.cgi"><img src="img/main.gif" width="31" height="9" border="0"></a>
+</div>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">Welcome to Jamaican Bar</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td nowrap><b>お名前</b></td>
+<td><input type="text" name="name" value=""></td>
+</tr>
+<tr>
+<td nowrap><b>性別</b></td>
+<td><input type="radio" name="sex" value="0" checked>男性<input type="radio" name="sex" value="1">女性</td>
+</tr>
+<tr>
+<td nowrap><b>URL</b></td>
+<td><input type="text" name="url" value=""></td>
+</tr>
+<tr>
+<td nowrap><b>MAIL</b></td>
+<td><input type="text" name="email" value=""></td>
+</tr>
+<tr>
+<td nowrap><b>コメント</b></td>
+<td><textarea name="com" cols="40" rows="5"></textarea></td>
+</tr>
+<tr>
+<td nowrap><b></b></td>
+<td>＊ メッセージ中「＠＠＠」を使うと<img src="img/heart.gif">に変換されます</td></tr><tr>
+<td nowrap><b>アイコン</b></td>
+<td><select name="icon">
+<option value="01.gif">女性1
+<option value="02.gif">女性2
+<option value="03.gif">女性3
+<option value="04.gif">女性4
+<option value="05.gif">女性5
+<option value="11.gif">女性6
+<option value="12.gif">女性7
+<option value="13.gif">女性8
+<option value="06.gif">男性1
+<option value="07.gif">男性2
+<option value="08.gif">男性3
+<option value="09.gif">男性4
+<option value="14.gif">男性5
+<option value="15.gif">男性6
+<option value="16.gif">男性7
+<option value="non.gif">不明
+</select>
+　<a href="./nbs.cgi?mode=list"><img src="img/list.gif" width="31" height="9" border="0"></a></td>
+</tr>
+<tr>
+<td nowrap><b>文字の色</b></td>
+<td nowrap>
+<input type="radio" name="color" value="#0000FF" checked><font size="+1" color="#0000FF">▼</font>
+<input type="radio" name="color" value="#FF3333"><font size="+1" color="#FF3333">▼</font>
+<input type="radio" name="color" value="#336633"><font size="+1" color="#336633">▼</font>
+<input type="radio" name="color" value="#660066"><font size="+1" color="#660066">▼</font>
+<input type="radio" name="color" value="#663333"><font size="+1" color="#663333">▼</font>
+<input type="radio" name="color" value="#666600"><font size="+1" color="#666600">▼</font>
+<input type="radio" name="color" value="#FF6633"><font size="+1" color="#FF6633">▼</font>
+</tr>
+<tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="page" value=""><input type="checkbox" name="cookie" value="ok" checked>登録情報を保存する</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div align="right">管理者はパスワードを入力
+<input type="password" name="pass" value="" size="10">
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="newmain"><input type="submit" name="submit" value="投稿"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第183<br>2001年11月13日火曜日 18時11分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">読者諸君、いつもジャマイカン酒場をご利用いただいているお礼をここで述べさせていただきたいと思う。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+<br>
+<font color="#0000FF">「EQで動き無いのでネタ提供の意味あいでマシン組み立て実況でも。<br><br><br>いい加減PenII300+Voodoo2マシンをリプレースすべき事態が訪れた（EQでGlideサポート無しに・・）ので、重い腰上げてマシン組み立てのパーツを集め始める・・・が数ヶ月もかかってるし。<br><br>・CPU:AthlonXP1600+<br>・MB:GA-7DXR<br>(BIOSがXP対応版じゃないし・・)<br>・HDD:BarracudaIV<br>（床に落とした記憶が・・・）<br>・MM：DDR256MB<br>（今激安になったよね・・・）<br><br>別マシンから剥いだ<br>・Video：SpectraX20(Geforce3)<br>（既に型落ち）<br>・CD-RW/DVD-ROMドライブ<br>（激安品）<br><br>あとは<br>・FANはPanafloに総入れ替え<br>・電源も静音なのに取替え予定<br>・OSでドライバパッチ面倒なのでWindowsXP<br><br>でと。集めた期間が長かったので、購入時に最新だったのが今や微妙にお古漂うのはちょっと悲しい。<br><br>しかもCPUをMBに付け、ケースFANを付けようとした所でFANのコードの長さが足りないのに気が付き面倒になって作業止める。<br><br>果たしてSoLまでに完成するのだろうか？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">yujigoというウェイトレスが話に入ってきた。こういうところは抜け目がない。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/12.gif"></td>
+<td valign="top" width=100%><b>ウェイトレス yujigo</b>
+　<font size="-1">2001年11月14日水曜日 23時35分</font>
+<br>
+<font color="#336633">「俺もそろそろ300Aからなんとかしたい・・（ｗ<br>とりあえずCPU・M/Bだけでも<img src=img/heart.gif>」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">こういう場合は適当に相槌をうっとく。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月18日日曜日 19時08分</font>
+<br>
+<font color="#0000FF">「朝からマシン組み立ててWinXPインストール開始。<br>が、ファイルコピー後に"SXS.DLL"関連で整合性エラーが・・ってのでインストール失敗。<br>数回トライするも青画面まで出る始末。<br>泣ける。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">実際には存在しないJashgunなる架空の人物が話に花を咲かせた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>ヒモ Jashgun</b>
+　<font size="-1">2001年11月21日水曜日 00時03分</font>
+<br>
+<font color="#336633">「ぐふふ<br>俺も先週ニューパーツ購入して今日付けたよ。<br><br>CPU:AthlonXP 1500+<br>M/B:GIGABYTE GA-7VTXE<br>CPU:cooler Canopus Firebird R7<br>HDD:BarracudaIV<br>MEMORY: PC2100 DDR 256MB<br><br>春に買ったM/Bがくそったれで、半年間もサウンド無しでプレイしとった・・・<br>オンボードサウンドチップは壊れてるし、BIOSアップデートしないとサウンドブラスターシリーズが使えないとは。<br>しかも、BIOSアップデートを受け付けないからどうもならんかったよ。<br><br>・・・EQパッチもう落とせたかな？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Jashgunは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>博徒 Jashgun</b>
+　<font size="-1">2001年11月21日水曜日 00時10分</font>
+<br>
+<font color="#336633">「＞実際には存在しないJashgunなる架空の人物が話に花を咲かせた。<br><br>既に俺は存在しないんですか　：p<br><br>HDDは控えめに20GB。<br>今メモリーは価格高騰してる時期で5000円したよ。<br>上記パーツは今のところどれも素晴らしいぞ。<br><br>・・・SoVのパッチが特に長いな。<br>これでSoLが来ると大変。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">こういう場合は適当に相槌をうっとく。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月21日水曜日 15時41分</font>
+<br>
+<font color="#0000FF">「原因はほぼ特定。<br>メモリ周りの異常のようです。<br>Win98ではすんなりインストールできますが、WinXP(NT系)だとメモリ管理がシビアなのか必ずこけます。<br>メモリ指す位置を変えたら嘘のようにインストールはできましたが、怪しいエラーログを吐きまくるのでどうにもならん。<br><br>週末店に行って交換してもらおうかな。<br>（購入時は3000円ほどだったけどねぇ)<br><br>あとCPUのヒートシンクはアルファのPALでもと思ったが、マザボに付かないのでSwiftechのMC370を。安定して冷えてます。」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="183"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第185<br>2001年11月19日月曜日 17時41分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店も賑わいを見せる頃、見なれない一人のガキ大将が店に入ってきた。ガキ大将は店内中の貴婦人に投げキッスをし、このガキ大将が話すことといえば、いつも同じである。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>職業不明 博打</b>
+<br>
+<font color="#0000FF">「すみません質問です。<br>beast Lordというのは、なんなんですか？<br>どうしたら就けるのですか？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">何を言いたいのかサッパリ分からない。</td></tr>
+<tr>
+<td colspan="2">今は亡き己|フフ|の言葉をふと思い出した。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>職業不明 己|フフ|</b>
+　<font size="-1">2001年11月19日月曜日 18時09分</font>
+<br>
+<font color="#0000FF">「次の拡張パックで使えるようになる新職業だと思いますよ。<br><br>上下のコメントが藁えます。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">とにかく、ここは一旦相手を落ち着かせなければならない。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月19日月曜日 18時24分</font>
+<br>
+<font color="#0000FF">「戦士＋動物使いかな。<br>上に書いてあるとおり、SoLで新たに加わる予定の職業です。<br>確かSHMができる種族に導入だったかな？」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="185"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第184<br>2001年11月14日水曜日 10時54分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">まだお日様が高いうちに、割りとよく来るEmilia@AyonaeRoが入ってきた。老婆はウィンクを店にいたタフガイに送り（片目だけのウィンクはできないらしい）、自分の人生が今までどんなに不幸だったかを延々と話し始めた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+<br>
+<font color="#0000FF">「Muffin不足は解消したらしい。<br><br>&gt;You say， 'Hail， Innkeep Morpa'<br>&gt;Innkeep Morpa says 'Hullo. Buy sum of my stuff. <br><br>…さて、120個のMuffinをどう処分すべきか(泣」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">とてもタフガイを恐れている。私はそう直感した。</td></tr>
+<tr>
+<td colspan="2">そこに通行人Aの登場である。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>職業不明 昼夜骨身</b>
+　<a href="mailto:cossin@mb.infoweb.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://village.infoweb.ne.jp/~fwkp5343/index.htm"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月16日金曜日 01時51分</font>
+<br>
+<font color="#666600">「＼(￣□￣；)／もうマフィンで各地のファクション稼ぎできないということでしょうか？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoはこうも言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月16日金曜日 02時34分</font>
+<br>
+<font color="#0000FF">「Karanaの疫病が片付いたのでそれが原因で入ってた<br>Questはもう無くなってると思いますよ。<br>それ以前からあるQuestならOKかと…。(WFPとか。)<br><br>確認した範囲では<br>Innkeep Morpa(Feerrott)<br>Innkeep Wuleran(Kelethin)<br>は駄目でした。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">昼夜骨身は話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>職業不明 昼夜骨身</b>
+　<a href="mailto:cossin@mb.infoweb.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://village.infoweb.ne.jp/~fwkp5343/index.htm"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月16日金曜日 05時23分</font>
+<br>
+<font color="#666600">「＼(￣□￣；)／残念～<br>急いでスキル挙げもしてそろそろと考えていたのですが（＾＾；）<br><br>WFPのFactionはどこのなのでしょうか？<br>以前DWFに半殺しにあいました(T-T)」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そこに小刻みに震えているMinosol@TPが走ってきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>職業不明 Minosol@TP</b>
+　<font size="-1">2001年11月16日金曜日 13時47分</font>
+<br>
+<font color="#0000FF">「TP鯖ではまだFixされてません。<br>Innkeep Morpa(Feerrott)<br>keywordをいうと箱がもらえます。」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="184"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第182<br>2001年11月07日水曜日 23時43分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">さて、物語はここで大きく転換期を迎えるが、その前に少しばかり私からヒントを差し上げたい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/"><img src="img/url.gif" width="26" height="9" border="0"></a>
+<br>
+<font color="#663333">「パッチメッセージより：Project M<br><br>PvP鯖でモンスターになれる？！<br>GnollになってBBで過ごす夢が遂に！！！」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そこにyujigoの登場である。全員が愛想笑いを始めた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/12.gif"></td>
+<td valign="top" width=100%><b>ティッシュ配り yujigo</b>
+　<font size="-1">2001年11月08日木曜日 01時04分</font>
+<br>
+<font color="#336633">「ホントならＥＱ復帰するぞ（ｗ<img src=img/heart.gif>」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私にも一言言わせてくれ！とJahannaという職業不明がしゃしゃり出てきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/03.gif"></td>
+<td valign="top" width=100%><b>職業不明 Jahanna</b>
+　<font size="-1">2001年11月08日木曜日 10時20分</font>
+<br>
+<font color="#663333">「Testサーバーで体験できますが、ZoneとMob指定できないので、下手すると世界一周させられます。BBまで１時間かかりましたTT」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">さびしがり屋のMob希望が話に割って入った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 Mob希望</b>
+　<font size="-1">2001年11月08日木曜日 21時04分</font>
+<br>
+<font color="#666600">「どうやるとMobになれるんですか？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私はこういう場合は穏やかに話すことにしている。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月08日木曜日 23時22分</font>
+<br>
+<font color="#663333">「testサーバに入ってキャラ選択画面の右上にある「Monster」ボタンをクリックするだけ。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">世間知らず＠初心者が現れた。場の雰囲気が一瞬にして凍りつく・・・・。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 世間知らず＠初心者</b>
+　<font size="-1">2001年11月09日金曜日 19時11分</font>
+<br>
+<font color="#0000FF">「お初にお目にかかります～<br>ものすごい初級の質問で恐縮なんですが・・・<br>Testserverって<br>なんて名前のServerですか？<br>申し訳無いです<br>どうかご教授お願いします」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">ちょうど会話が一段落したころ、時代遅れのしゅらいんが顔を覗かせた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/07.gif"></td>
+<td valign="top" width=100%><b>職業不明 しゅらいん</b>
+　<font size="-1">2001年11月09日金曜日 19時24分</font>
+<br>
+<font color="#0000FF">「TestEverQuestというファイルからEQ起動すると行けます。<br>ただ、これでずっと起動してなかったと思われるので、<br>大量パッチが待ってるでしょう＾＾；」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">世間知らず＠初心者は話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 世間知らず＠初心者</b>
+　<font size="-1">2001年11月09日金曜日 21時12分</font>
+<br>
+<font color="#0000FF">「おお～<br>なるほど・・・<br>Icon消したからすっかり忘れてたｗ<br>どうもご教授ありがとうございます<br>Ｔｈｘ～」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そこに通行人Aの登場である。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>ヒモ Jashgun</b>
+　<font size="-1">2001年11月10日土曜日 20時53分</font>
+<br>
+<font color="#336633">「DIABLO2のハードコアよろしく、<br>1回死ぬと終わりらしいですな　^^;<br><br>こうゆうの挑戦するのは外人さんだと思うので、最高記録が出るの楽しみにしてます<br>勿論PowerLeveling禁止でしょう」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Jahannaは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/03.gif"></td>
+<td valign="top" width=100%><b>職業不明 Jahanna</b>
+　<font size="-1">2001年11月13日火曜日 02時18分</font>
+<br>
+<font color="#663333">「普通のHumanのときWiiowispに殴られました。低LVLだと反撃不可能で、結構極悪MOBです。」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="182"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第181<br>2001年11月06日火曜日 21時46分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">他の客も酔いが回ってきた頃に、割りとよく来るOzunuが入ってきた。人を2、3人平気で殺してそうなタイプだ・・・・。自分が愛していたのは少女だけだったんだと言い始めた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>ポン引き Ozunu</b>
+<br>
+<font color="#0000FF">「[Tue Nov 06 21:37:23 2001] You say， 'Hail， Sentry Emil'<br>[Tue Nov 06 21:37:23 2001] Sentry Emil says 'Greetings stranger， watch your step around here lest you end up on someone's dinner plate. <br>こっ殺さないで(泣)」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">なぜここまで自信たっぷりに話せるのだろうか。・・・・理解に苦しむ。</td></tr>
+<input type="hidden" name="num" value="181"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第175<br>2001年10月17日水曜日 04時24分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">深夜過ぎに、何回かこの店を利用している貴婦人が入ってきた。貴婦人はウィンクを店にいた若造に送り（片目だけのウィンクはできないらしい）、職業不明は私にざくろジュースを注文してこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>職業不明 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+<br>
+<font color="#0000FF">「WestKaranaでGM Eventがあって参加してきたのですが、<br>Karanaの疫病問題でRodcet Nifeが動いたようです。<br><br>で、このEventに関連して現在WestKaranaは<br>Western Plains of Karanaから<br>Rejuvenating Plains of Karanaに変更されており、<br>緑の霧は晴れたものの動物やBandit/Vendorが逃げ出して<br>かなり閑散とした感じのZoneになっています。<br><br>このまま昔の状態に戻るのか、<br>それとも単なる伏線に過ぎないのか…。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そう言いながらEmilia@AyonaeRoは恍惚の表情を浮かべた。</td></tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoはさらにこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>職業不明 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月17日水曜日 04時35分</font>
+<br>
+<font color="#0000FF">「書き忘れ。<br><br>おそらくZoneが元に戻る、あるいは次の変化が<br>起こるまでの期間限定だと思うのですが、<br>bandit looter退治のQuestが追加されています。(Faction変動が主ですが)」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">カウンターの隅で飲んでいたNyaga@Saryrnが天井を見ながらつぶやいた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/08.gif"></td>
+<td valign="top" width=100%><b>職業不明 Nyaga@Saryrn</b>
+　<font size="-1">2001年10月17日水曜日 09時57分</font>
+<br>
+<font color="#FF3333">「う～ん。。。<br>どうもBadge Questが途中で進められなくなったという話も。。。<br><br>NewsでKaranaに変更があったから5thも探してみたけど、<br>入ってないのか、もうこのQuestは賞味期限が切れたのか。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そのとき、背後から声をかけて来た者がいた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>ヒモ Zek信者</b>
+　<a href="http://www.aurora.dti.ne.jp/~handim/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月18日木曜日 02時35分</font>
+<br>
+<font color="#663333">「いつのまにか（去年からぽいが）Fangbreakers<br>のセリフ変わってたのね。<br>是非6～7th辺りで彼らに絡んできてほしい・・。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Nyaga@Saryrnは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/08.gif"></td>
+<td valign="top" width=100%><b>職業不明 Nyaga@Saryrn</b>
+　<font size="-1">2001年10月21日日曜日 13時50分</font>
+<br>
+<font color="">「3rdで飲まれるという話を耳にしました・・・<br><br>GM Eventではなんかものすごいitemが出たという<br>話ですが、どうでした？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoはまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>職業不明 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月21日日曜日 15時37分</font>
+<br>
+<font color="#0000FF">「&gt;GM Eventではなんかものすごいitemが出たという<br><br>Brazier of Rodcet Nife(全19ヶ所)を探してその中に<br>Blessed Smudge Stickを入れるというQuestを達成した人が<br>貰ったのはBlessed Ring pf Nifeという<br>AC1 WIS2 Greater Healing(1) ALL/ALLのRingです。<br>これ自体は参加賞的意味合いだと思うので置いといて…。<br><br>Event終盤にBrazierをFillした数が多い4人が指名されて<br>その4人を絡めた形で話が進行していったのですが、<br>そのうちの1人(3Fillで2位の人)がArtifactを受け取っているのが確認されています。<br>KazeのWebのDiary No.371に少しその事が書かれています。<br><br><a href="http://www13.big.or.jp/~marz/kaze/" target="_blank">http://www13.big.or.jp/~marz/kaze/</a><br><br>最後にBrazierに点火するという重要な役割を果たしたから貰えたのか、<br>それとも4人全員が何らかのArtifactを受け取ったのかは確認が取れなかったので不明…。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">こう言えば分かってもらえるだろうか。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月21日日曜日 23時25分</font>
+<br>
+<font color="#FF6633">「<a href="http://everquest.allakhazam.com/db/item.html?item=6854" target="_blank">http://everquest.allakhazam.com/db/item.html?item=6854</a><br><br>GMイベントはKichi森のしか行った事無し。<br>しかし壊れた性能ですね。<br>刑事としては報酬よりもイベントに参加してみたいんだがねぇ・・。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Nyaga@Saryrnはまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/08.gif"></td>
+<td valign="top" width=100%><b>職業不明 Nyaga@Saryrn</b>
+　<font size="-1">2001年10月23日火曜日 13時22分</font>
+<br>
+<font color="">「ああ　そうです<br>oocで聞いた性能ではこんな感じのもので<br>とても信じられないものでした。<br><br>たまたま5th BadgeのQuestがはいってないか<br>調査にいって、Karanaの農民あたりを探ろうと<br>していたらほどなくして花火があがり、Eventが<br>終了した模様です。残念。<br>でoocで性能をいっていた人がいたので、<br>ほんとかいな？と思っていたのですが<br>存在するのですね、、、<br><br>このSTAとHPではかなりHPの総量が増えそうですね。<br><br>以前伝説の魔法使いのGM Eventに参加したときは<br>くさったitemしかくれなかったのに偉い違いだ（ｗ」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">dualという職業不明が話に入ってきた。こういうところは抜け目がない。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>職業不明 dual</b>
+　<font size="-1">2001年10月25日木曜日 06時39分</font>
+<br>
+<font color="#0000FF">「GMイベントっていろいろあるんだねー<br><br>＠ドワーフとDelfの戦い<br>＠オアシスのちちゃいSG<br>＠WcomonのHT連射する巨大骨＆狼人間<br>＠gnomeの町前の眠るドラゴン<br>＠クリスマスイベント<br>＠cazic、innyに会いに行く<br>＠Glayにtunareあらわれる<br>」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">もっともらしい顔をして昼夜骨身（Chunchanpai@Karanaを改め）がしゃしゃり出てきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 昼夜骨身（Chunchanpai@Karanaを改め）</b>
+　<a href="mailto:cossin@mb.infoweb.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://village.infoweb.ne.jp/~fwkp5343/index.htm"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月25日木曜日 08時31分</font>
+<br>
+<font color="#666600">「お久しぶりです。<br>GMイベントはどのような形で解るのでしょうか？<br>どなたか教えてください」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>職業不明 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月25日木曜日 12時40分</font>
+<br>
+<font color="#0000FF">「重要な、もしくはある程度規模の大きいEventに関しては事前に告知があるかと。<br><br>今回のやつは一部Zone(Karanaのみ?)で1回だけこんな感じに<br>&gt;a town crier shouts， <br>&gt;'Hear ye-hear ye! Great news from the Priests of LIfe!<br>&gt; The ceremony to rid the Karana Plains of the plague is<br>&gt; about to commence! Any interested in the assisting with<br>&gt; the ritual should meet at the Miller's Farmstead!'<br>情報が流れたみたいです。<br><br>それ以外の小ネタ、例えば<br>Lake IllでGM操作のuniqueなNPCが出た時は同じZoneにいるにもかかわらず<br>何の告知も無かったです。(PCが騒ぎ出してはじめて気付いた)<br><br>なんにせよ狙って飛びこむのはかなり難しいかと(泣。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そのとき、壁に向かってブツブツ喋っている老婆がいた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>職業不明 Astraea@vee</b>
+　<font size="-1">2001年10月25日木曜日 15時17分</font>
+<br>
+<font color="#0000FF">「日本時間で日曜の明け方あたりに突発GMイベント<br>やってることありますよ～。向こうにはいい<br>時間帯だからね。<br><br>ずいぶん以前にFerrottで、Evil属向けGMイベン<br>トがあって、DELFのGM操作NPCに率いられたDELF PCの<br>一団にあったことがある。NPCがDark語で話すので、<br>Evil属向け。<br><br>この前は日本時間の夕方だかに、Karnor周辺で<br>First、Second、Thirdって名前の3人のDELF ROG<br>と戦うミニイベントがありました。2回死んだけど（笑）」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">dualは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>職業不明 dual</b>
+　<font size="-1">2001年10月26日金曜日 09時07分</font>
+<br>
+<font color="#0000FF">「そういやNAJENAでもGM操作Delfでまくってたな。昔。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私はその時、かつての恩師の言葉を思い出した・・・・。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>職業不明 昼夜骨身</b>
+　<a href="mailto:cossin@mb.infoweb.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://village.infoweb.ne.jp/~fwkp5343/index.htm"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月28日日曜日 02時17分</font>
+<br>
+<font color="#666600">「なるほどお色々あるんですねえ<br>出くわしたいものです(^ー^)゛」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoはまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月01日木曜日 05時52分</font>
+<br>
+<font color="#0000FF">「ARoでは本日eventラッシュでした。<br>(というか現在も一部で進行中)<br><br>NRoではZombieが、E-KaranaではGhoulやSkeltonやSpecやEEもどきが、<br>Rathe MtではGargoや骨Dragon、黒い馬など…。<br>あと、QeynosHillやW-Commonでも何かあった模様です。<br><br>で、私はと言うとE-KaranaのMobがSoloで十分行けたので<br>調子に乗ってRatheに乗りこんだらSnare/Root耐性持ってるわ、<br>足速いわ、ADDしまくるわでGreenのmobだったのに死亡…(泣。<br><br>ちなみにRatheにはLv60から青のMobがいるらしいです…。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">昼夜骨身はまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>職業不明 昼夜骨身</b>
+　<a href="mailto:cossin@mb.infoweb.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://village.infoweb.ne.jp/~fwkp5343/index.htm"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月01日木曜日 08時18分</font>
+<br>
+<font color="#666600">「空の色が通常寄りも変わっている事が多いようです。<br>Ratheでは死体が山ほど出来ます<br>巨大な骨龍が暴れます<br>Lvl60の１パーティーで倒せたそうです<br>おおよそ名前がそれぞれ日頃そのzoneにいないモノなのでその当たりでも解ります」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月01日木曜日 21時37分</font>
+<br>
+<font color="#0000FF">「Ratheのイベントまだ続行中(ARo)。<br>出るべきQuestItemが全然出ないので<br>Quest壊れてる説が有力に…(w」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">昼夜骨身は話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/14.gif"></td>
+<td valign="top" width=100%><b>職業不明 昼夜骨身</b>
+　<a href="mailto:cossin@mb.infoweb.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://village.infoweb.ne.jp/~fwkp5343/index.htm"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月02日金曜日 00時02分</font>
+<br>
+<font color="#666600">「クエストについて詳しく解りますでしょうか<br>Nroでもクエストみたいなのが有りますが<br>何もゲット出来ず<br>先に進めるのか、どうかも不明です。<br>Rathe Nro Wcom ともども巨大なモンスターが出てきます<br>どれもなかなかのアイテムがでるようです」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">ヒモが話に参加してきたのはそのときである。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>ヒモ Okota</b>
+　<a href="http://www5a.biglobe.ne.jp/~hawkwood/eqpoison/"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月02日金曜日 04時45分</font>
+<br>
+<font color="#FF6633">「　指定されたアイテムを集めてEast KaranaのEventを終了させました。もらえたアイテムは、<br>Essence Emerald（NECのres spell等の材料でした。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Ryuziはまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>職業不明 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月06日火曜日 00時28分</font>
+<br>
+<font color="#663333">「E'ciのKCであったVS と Brell of Knight（DWF神）の戦いのSSを頂いたので早くても明日にはUpします。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Jashgunというヒモが話に参加してきた。この紳士は誰にも相手にされていない。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>ヒモ Jashgun</b>
+　<font size="-1">2001年11月06日火曜日 18時55分</font>
+<br>
+<font color="#336633">「おおっ楽しみだ<br>最近のトップＳＳの更新もいいぞ～　ｗ<br><br>イベント続きのＥＱですが、遅きに失した感がありますな<br>ライバルが登場してから焦っても遅いのですよ・・・<br>愛は永遠と限らないことを感じたJashでした」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="175"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第180<br>2001年11月05日月曜日 16時15分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店はまだ開店前だと言うのに、見なれない一人のベイビーが店に入ってきた。Clariceは数人の愛人をはべらせ上機嫌そうに、バーボングラスをみつめながら、つぶやきはじめた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/05.gif"></td>
+<td valign="top" width=100%><b>職業不明 Clarice</b>
+<br>
+<font color="#336633">「何を思ったか、今からEQ初めても楽しめますか？@<br>（UOなら２年前に1年半ぐらい、堪能しました）」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">なぜここまで自信たっぷりに話せるのだろうか。・・・・理解に苦しむ。</td></tr>
+<tr>
+<td colspan="2">私は相手に誤解を与えないように噛み砕くように説明してやった。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月05日月曜日 19時03分</font>
+<br>
+<font color="#663333">「んー例えばドラクエやっててファイナルファンタジーも楽しめるかどうか？といった感じでしょうか。<br><br>UOは一人でもそれなりに遊べます。<br>キャラの成長も初期の段階でMAXになる為、モンスターを刈るのが主目的ではなくなっていきます。<br><br>それに比べてEQはモンスターを倒してキャラを育てるのを楽しむ（苦しむ？ｗ）のが大半を占めます。<br><br>そして個々のキャラに能力差が無く、モンスターも弱いUOが必然的にPK戦などに重点が移っていくのに対し、EQではClassごとに大きな長所と短所を持ち合わせているため一人ではほとんど何も出来なくなっています。<br>そしてモンスターも圧倒的な強さに設定されている為、数十人集まって倒すような事が目的ともなっていたりします。<br><br>システムの雰囲気としては<br>・UO：シムシティシリーズに近い。社会的な役割を作り出し楽しむ。<br>・EQ：Wizardryに近い。ひたすらLv上げに励んだりムラマサ求めて延々ダンジョン潜る所など似ている。<br><br>ゲームの勢いとしてはEQ出た後のUOと思えばいいかな。」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="180"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第179<br>2001年11月04日日曜日 21時31分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">他の客も酔いが回ってきた頃に、見なれない一人の野人が店に入ってきた。一瞬、刑事かと思ったが、そうではなかった。前々から悩んでいることがあるらしく、眉間に皺を寄せながら相談してきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Kensyou</b>
+<br>
+<font color="#660066">「EQで昨日一昨日とGMイベントがあったらしいですが、どこで調べたりするのでしょうか？情報提供をお願いします。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">この台詞を最後にして、この野人は旅立った・・・・・。</td></tr>
+<tr>
+<td colspan="2">その人物の恋の奴隷だと名乗るAstraea@veeという奥さんが現れた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>職業不明 Astraea@vee</b>
+　<font size="-1">2001年11月05日月曜日 01時38分</font>
+<br>
+<font color="#0000FF">「イベントを事前に調べるのは困難です。大抵予告なし<br>に始まりますから。今回はイベントに合わせてイベン<br>トのあるゾーンのファイルが更新されましたので、update<br>時にどこのゾーンで何か起こりそうだくらいの見当は<br>つけられましたが。<br><br>すでにあったイベントについては、こことかEverQuest<br>研究所を見ればよいかと。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そこにEmilia@AyonaeRoという家出娘がやってきた。このEmilia@AyonaeRoは私の空想上の登場人物だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月05日月曜日 04時23分</font>
+<br>
+<font color="#0000FF">「どこで、って…。<br>自分の足使って調べます。あと、Game内で聞いたり。<br>webに出るの待ってたらEvent終わっちゃいます…(TT。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私は満面の営業スマイルを浮かべてこう答えた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月05日月曜日 18時44分</font>
+<br>
+<font color="#663333">「あとはGMの行方をチェックしてたりｗ」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="179"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第173<br>2001年10月10日水曜日 13時15分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店はまだ開店前だと言うのに、見なれない一人のガキ大将が店に入ってきた。最近、肉体に衰えを感じると嘆いているらしい。Zubatt@Queは私のむなぐらをつかむと今にもあばれそうな勢いでこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 Zubatt@Que</b>
+<br>
+<font color="#0000FF">「RatheMt.にあるLanysの神殿にNPCが配置されましたね。<br>Mag，Nec，Wiz，Enc，Shd，War，Rog，Brd(!)のGuildMaster(スキル習える人）が配置されて、<br>HElfBardからAppeでした。<br><br>CaptainからQuestがもらえて、同神殿のMagにScroll渡してそっから・・・ってのがあるんですが、<br>Magから先がいきなり切れてますｗ<br>「SroにeveningだけPOPするRog（実際にはAMの間だけ）にこのMessageをもっていけ」と言うのですが、<br>何かがもらえるわけでもキーワードを教えてくれるわけでもなく、<br>SroのNPCにも「肉えぐられる前に帰りな」といわれるていたらくですｗ<br><br>朝４時まで色々Message試したのにーｗ<br>後は専門職の刑事におまかせということで一つ御願いします。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">一部不適切な表現があったことをここでお詫びする。</td></tr>
+<tr>
+<td colspan="2">どこから聞きつけたのか、ゆかわという職業不明が現れた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 ゆかわ</b>
+　<font size="-1">2001年10月11日木曜日 01時52分</font>
+<br>
+<font color="#0000FF">「SHMいないのねT0T」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">こういう客はどう返事していいものか悩む。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月12日金曜日 18時03分</font>
+<br>
+<font color="#0000FF">「昨夜行ってみました。<br>場所は南端のEvilスフィンクス（何時の間にかGreen・・・）の丘の北西。<br><br>Ryuzi(Lv60/ERU/Prexus)からみてYellowでRtA。DELF変身でもRtAでした。<br><br>&gt;Mag，Nec，Wiz，Enc，Shd，War，Rog，Brd(!)のGuildMaster(スキル習える人）が配置<br><br>Lanysって事でDELFの職種のマスターがいるのは判るが、BRDってのは謎。<br>しかも何故俺からRtAなんだろう？CCBには殆ど行ってないし、DELFGuard、WCommのDELFもnonKoS。PrexusとLanysは仲悪いのか？<br>要調査。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私は満面の営業スマイルを浮かべてこう答えた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月12日金曜日 18時06分</font>
+<br>
+<font color="#0000FF">「あとこのCampにいるCaptain LaraiからSouthRoに配置された「Izera N`Kar」へと続くQuestもあるみたいだ。壊れているようだが。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私は相手を怒らせないように冷静に対処した。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月12日金曜日 21時11分</font>
+<br>
+<font color="#0000FF">「CampにHUMタイプいる所から見るとやはりGodベース（LanysFaction？）で判別してる感じだ。<br>Zubatt@Queさんの情報通り現在もMAGで止まってます。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Zubatt@Queはこうも言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 Zubatt@Que</b>
+　<font size="-1">2001年10月16日火曜日 10時29分</font>
+<br>
+<font color="#0000FF">「調査お疲れ様です。<br>AgnosticだとAppeでした。<br>InnyだとThreatenでしたのでやはりGodベースなのでしょうね。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">通りすがりのAstraeaが声をかけてきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>家出娘 Astraea</b>
+　<font size="-1">2001年10月21日日曜日 18時48分</font>
+<br>
+<font color="#336633">「Primordial Maliceのfacですが、WCのKizdean Gix<br>を殺すと上がります。Fac変動Mesの最下段<br>なので、変動量は少ないでしょうが。<br>#Dragoonでは変動しなかった、かな<br><br>WCに駐留しているDelfたちでも変動あるかも<br>しれませんねぇ。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そのとき、なんの関係もないKimexe@Veeという男が話に加わってきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>職業不明 Kimexe@Vee</b>
+　<a href="mailto:kim_exe@techeight.co.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.techeight.co.jp/kim_exe/KimexeCalmbow.shtml"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月02日金曜日 20時58分</font>
+<br>
+<font color="#0000FF">「カキコお初だっけかな？ お世話になってまーす<br>Izera N`Karですが、偶然 EAST Karananoでtrackにhitしました。Lv35 Druからは赤かったです&lt;w<br>橋の方面でしたが目視する前に誰かにKilledでしたん。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Emilia@AyonaeRoという家出娘が話に参加してきた。この女は誰にも相手にされていない。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年11月04日日曜日 03時49分</font>
+<br>
+<font color="#0000FF">「Lv53から黄色でした。&gt;EKのIzera」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">愛らしい顔立ちのval(Valhire)@E'ciのお出ましだ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 val(Valhire)@E'ci</b>
+　<font size="-1">2001年11月04日日曜日 12時29分</font>
+<br>
+<font color="#FF3333">「SRoのIzeraはLv54から黄色。TunareRanger<br>から見てRtAであせりました（ｗ）」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="173"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第177<br>2001年10月24日水曜日 11時01分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">まだお日様が高いうちに、割りとよく来るShepherd@E'ciが入ってきた。老人が入ってくるなり店内が静まりかえった。ここだけの話と前置きをしてから、長い話を始めた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/08.gif"></td>
+<td valign="top" width=100%><b>ポン引き Shepherd@E'ci</b>
+　<a href="http://www.din.or.jp/~cai/eq/"><img src="img/url.gif" width="26" height="9" border="0"></a>
+<br>
+<font color="#0000FF">「<a href="http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000358.html" target="_blank">http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000358.html</a><br><br>　壊れたQuestがあったら報告モトム！　とのことらしい……。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">隣のテーブルで１人の子猫ちゃんがShepherd@E'ciの様子を見て笑っていた。</td></tr>
+<tr>
+<td colspan="2">こういう場合は適当に相槌をうっとく。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月24日水曜日 14時56分</font>
+<br>
+<font color="#FF6633">「ほほう、SoL出る前に旧世界のQuestで不完全なものの洗い出しを手伝ってくれと。<br>例：SkyshrineのパイQuest<br><br>ぱっと出るのはQHillのGnollSlayerとかAkanonのT.B.I(Clockwork Dragon)とか。<br>マイナーではFPの釣り竿やNECのサイクロプスの目とか。<br><br>新聞のほうをまとめるのが落ち着いたらチェックしてみるかな。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そこにdualが現れた。・・・他の人の顔が困惑の表情に変わる。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>職業不明 dual</b>
+　<font size="-1">2001年10月25日木曜日 06時33分</font>
+<br>
+<font color="#0000FF">「RVの案山子の頭はどうなった！？<br><br>PS，mazeのminoは安心して狩れますか？<img src=img/heart.gif>」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そう言えばこういう名言をはいた人物がいた・・・・。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/11.gif"></td>
+<td valign="top" width=100%><b>家出娘 Emilia@AyonaeRo</b>
+　<a href="mailto:feez@d1.dion.ne.jp"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.d1.dion.ne.jp/~feez/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月25日木曜日 12時42分</font>
+<br>
+<font color="#0000FF">「あと、LGukも(w」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私は一つの古い話を客に聞かせてやった。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月25日木曜日 17時59分</font>
+<br>
+<font color="#663333">「野生のモーモーは自己責任で！（Gnomeより）<br><br>で、海外では<br>・Mistyの昆虫採集のTerrorantula編<br>・Fabianの楽器の弦。FPで中途半端にStop<br>・Kaelの胸紐<br>・Qeynosの娘探し。Neriakの酒場で・・・<br><br>だそうだ。<br>あとは<br>・Nkaranaの愉快な仲間達<br>・Thurgadinのマグカップ<br>・IcewellのDWF伝説の数々<br>・Kaelの釣り（解決してたっけ？）<br>・RatheMtのスフィンクス（何のために存在？）<br>・TimourouDeepの孤島のInnの海賊（消されてる）<br>・FVのKatanaなど<br>・HighKeepのカジノ（関係ないけどできたらいいな・・）」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">生前、Okotaという人物がこういう言葉を残している。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/16.gif"></td>
+<td valign="top" width=100%><b>ヒモ Okota</b>
+　<a href="http://www5a.biglobe.ne.jp/~hawkwood/eqpoison/"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月25日木曜日 18時09分</font>
+<br>
+<font color="#FF6633">「　丸ごとごっそり・・ていう意味では、Hero Questとか。彼らの話すコインとかが今でも<br>気になって仕方ありません。<br><br>　Terrorantulaの話は私も報告しようかと思っていたので、やってくれた人がいるのは嬉しい<br>です。やはりHalflingとしては気になるのです。虫ぃ。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">その人物の恋の奴隷だと名乗るOzunuというオヤジが現れた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>ポン引き Ozunu</b>
+　<font size="-1">2001年10月25日木曜日 20時32分</font>
+<br>
+<font color="#0000FF">「先日の事ですが、Thuargadinで趣味のお買い物チェックをしていたら<br>Gnoll Slayer が売られているのを発見しました。<br>おお、これがあの幻の名剣と感動しましたが、slotを埋めるに値しないと<br>思って購入はしませんでした。少なくとも入手した人は居るみたいです。<br><br>vs gnoll 2倍ダメージとかなら、、、、40upperのgnollっていたっけか？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">逃げ出したい気持ちを押さえ、私はこう返事した。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月26日金曜日 11時00分</font>
+<br>
+<font color="#663333">「BB育ちの人の間では<br>「Epic質に入れてもGnollSlayerを買え」<br>ということわざがあります（?!）。<br><br>そういえば愛すべきモンスターとも言うべきGnoll。<br>VIも好きな人がいるのか、公式サイトにも１コーナーを設けてあります。<br><br>Fippy Facts<br><a href="http://everquest.station.sony.com/featured_content/fippyfacts/index.jsp" target="_blank">http://everquest.station.sony.com/featured_content/fippyfacts/index.jsp</a><br><br>データマニアには必見です。どの言語がマイナーとか出てます。<br>最もマイナーなのがOrc語。またFippy君とちゃんと話せる人は451人とか。<br>他にも信仰神別の人数とかもあります。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">仕方がないので、こう答えてやった。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2001年10月26日金曜日 11時10分</font>
+<br>
+<font color="#663333">「あ、あと別コーナーに<br><br>Dear Mennix <br><a href="http://everquest.station.sony.com/hht/weekly.jsp" target="_blank">http://everquest.station.sony.com/hht/weekly.jsp</a><br><br>というハーフリングのおっさんがプレイヤーの糞質問に答えるコーナーもアホらしくて必見。<br><br>質問：何故HillGiantはあんな大金を持っているのですか？どこから手に入れたの？それにあんなでかい図体で小さなコインを持つ意味は無いと思うんですが？（Inno鯖のNECより）<br><br>答え：それはね、君みたいなアホな冒険者と遊ぶ為に餌として持っているんだよ。大金を持っていないGiantなんて誰も相手にしないだろ？<br>あとお金の調達先はモンクにでも文句言いたまえ（ｗ<br>奴らはすぐ「重量オーバーだ」といってそこいらに金を捨てるだろ。それを拾っているのさ（ｗ<br><br><br>とこんな調子。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">また、Astraeaが口をはさんできた。自分からは発言しないが、人の話題には入りたいらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>家出娘 Astraea</b>
+　<font size="-1">2001年10月28日日曜日 00時32分</font>
+<br>
+<font color="#336633">「TimoDeepから始まるCaptain Vekerosですが、<br>Erud Xingにて死体で発見されました。猫島の<br>北の水中にいます。<br><br>しかし肝心のクエストのスタートNPCがTimoか<br>ら消えており、Captainに何をすればいいのやら」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="177"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<center>
+<a href="./nbs.cgi?page=10"><img src="img/next.gif" width="26" height="9" border="0"></a>
+</center>
+<center>
+Narration BBS Ver 2.1<br>
+-[<a href="http://www.area-s.com/" target="_blank">MISSINGLINK</a> & <a href="http://www.fayreal.com/" target="_blank">Fayreal</a>]-</font>
+</center>
+</body>
+</html>

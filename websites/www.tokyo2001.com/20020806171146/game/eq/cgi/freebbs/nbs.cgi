@@ -1,0 +1,715 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>ジャマイカン酒場</title>
+<STYLE TYPE="text/css">
+<!--
+A:link {text-decoration: none }
+A:visited {text-decoration: none }
+A:hover {text-decoration: none;}
+body,tr,td,th { font-size:9pt; }
+-->
+</STYLE>
+</head>
+<body text="#000000">
+<div align="center">
+<img src="img/bbs-jamaican-title.jpg" width="350" height="100">
+<br><br><a href="http://www.tokyo2001.com/game/eq/index.html" target="_top"><img src="img/home.gif" width="31" height="9" border="0"></a> 
+<a href="./nbs.cgi?mode=del"><img src="img/del.gif" width="31" height="9" border="0"></a> 
+<a href="./nbs.cgi?mode=rank"><img src="img/rank.gif" width="31" height="9" border="0"></a> 
+<a href="./nbs.cgi"><img src="img/main.gif" width="31" height="9" border="0"></a>
+</div>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">Welcome to Jamaican Bar</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td nowrap><b>お名前</b></td>
+<td><input type="text" name="name" value=""></td>
+</tr>
+<tr>
+<td nowrap><b>性別</b></td>
+<td><input type="radio" name="sex" value="0" checked>男性<input type="radio" name="sex" value="1">女性</td>
+</tr>
+<tr>
+<td nowrap><b>URL</b></td>
+<td><input type="text" name="url" value=""></td>
+</tr>
+<tr>
+<td nowrap><b>MAIL</b></td>
+<td><input type="text" name="email" value=""></td>
+</tr>
+<tr>
+<td nowrap><b>コメント</b></td>
+<td><textarea name="com" cols="40" rows="5"></textarea></td>
+</tr>
+<tr>
+<td nowrap><b></b></td>
+<td>＊ メッセージ中「＠＠＠」を使うと<img src="img/heart.gif">に変換されます</td></tr><tr>
+<td nowrap><b>アイコン</b></td>
+<td><select name="icon">
+<option value="01.gif">女性1
+<option value="02.gif">女性2
+<option value="03.gif">女性3
+<option value="04.gif">女性4
+<option value="05.gif">女性5
+<option value="11.gif">女性6
+<option value="12.gif">女性7
+<option value="13.gif">女性8
+<option value="06.gif">男性1
+<option value="07.gif">男性2
+<option value="08.gif">男性3
+<option value="09.gif">男性4
+<option value="14.gif">男性5
+<option value="15.gif">男性6
+<option value="16.gif">男性7
+<option value="non.gif">不明
+</select>
+　<a href="./nbs.cgi?mode=list"><img src="img/list.gif" width="31" height="9" border="0"></a></td>
+</tr>
+<tr>
+<td nowrap><b>文字の色</b></td>
+<td nowrap>
+<input type="radio" name="color" value="#0000FF" checked><font size="+1" color="#0000FF">▼</font>
+<input type="radio" name="color" value="#FF3333"><font size="+1" color="#FF3333">▼</font>
+<input type="radio" name="color" value="#336633"><font size="+1" color="#336633">▼</font>
+<input type="radio" name="color" value="#660066"><font size="+1" color="#660066">▼</font>
+<input type="radio" name="color" value="#663333"><font size="+1" color="#663333">▼</font>
+<input type="radio" name="color" value="#666600"><font size="+1" color="#666600">▼</font>
+<input type="radio" name="color" value="#FF6633"><font size="+1" color="#FF6633">▼</font>
+</tr>
+<tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="page" value=""><input type="checkbox" name="cookie" value="ok" checked>登録情報を保存する</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div align="right">管理者はパスワードを入力
+<input type="password" name="pass" value="" size="10">
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="newmain"><input type="submit" name="submit" value="投稿"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第213<br>2002年08月02日金曜日 23時00分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">他の客も酔いが回ってきた頃に、見なれない一人の大男が店に入ってきた。Vという名前は覚えるのに一苦労だ。自分が愛していたのは素敵なレディだけだったんだと言い始めた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 V</b>
+<br>
+<font color="#0000FF">「周りがJFのQで盛り上がってる中、密かにWWのToV前DragonにQuestっぽいのが追加されていたり…<br><br>Ancient Runeがどーこー、Dragonの力に興味があるかー？とかちょっと気になる事を言ってたり。<br><br>SSのLord Yの近く（？）にいるWurmが情報を持ってるっぽいけど、そこから先が進めず。<br><br>だれか調べてくれないかしら<img src=img/heart.gif>」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">とても素敵なレディを恐れている。私はそう直感した。</td></tr>
+<tr>
+<td colspan="2">私は相手を怒らせないように冷静に対処した。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年08月07日水曜日 00時42分</font>
+<br>
+<font color="#660066">「多分GiantBarn<br><a href="http://www.tokyo2001.com/game/eq/quest/skyshrine/skyshrine09.html" target="_blank">http://www.tokyo2001.com/game/eq/quest/skyshrine/skyshrine09.html</a><br>だと思います。<br>ただ別のNPCが・・調査中」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="213"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第212<br>2002年08月01日木曜日 11時43分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">まだお日様が高いうちに、見なれない一人の少年が店に入ってきた。職業不明仲間の間じゃそうとうの実力者だそうだ。Enoowdは甘えた声でこう言ってきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 Enoowd</b>
+<br>
+<font color="#336633">「BBでGnoll Corier(?)というちょこっと強めのGnoll倒したらNDの指輪を落としましたよ。<br>これって「Powerful Warrior」に関係するものなのかも…」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">一部不適切な表現があったことをここでお詫びする。</td></tr>
+<tr>
+<td colspan="2">ちょうど会話が一段落したころ、時代遅れのTech@Eciが顔を覗かせた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+　<font size="-1">2002年08月02日金曜日 07時19分</font>
+<br>
+<font color="#0000FF">「Courier 出るんですね。<br>JF Openより遥か前 LegendにJFが追加された後あたりに<br>Qeynos Hillsの Surefall前の焚き火の所に<br>皮屋兄妹じゃないNPCが居ました。<br>その人がCourier関連のItemを入手してくるように<br>言っていた記憶があります。<br>Battle PlanとOrderと合計４個だったかと。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Enoowdはこうも言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 Enoowd</b>
+　<font size="-1">2002年08月02日金曜日 09時26分</font>
+<br>
+<font color="#336633">「あ、そうそうCourierです(^^;<br>ふむ、他にも色々とあるんですね。<br>引き続き調査をしてみますか。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Enoowdは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/09.gif"></td>
+<td valign="top" width=100%><b>職業不明 Enoowd</b>
+　<font size="-1">2002年08月02日金曜日 09時31分</font>
+<br>
+<font color="#336633">「外国のHPで調べてみたらGnoll Courierは４８時間POPみたいですね。<br>どこにPOPするまでかは分かりませんでしたが、私はBridgeで襲われました。<br>返り討ちにしたところ、外人パーティーのShoutで「誰がCourierをKillしやがった！ｺﾞﾙｧ！」と…<br>う～む。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そこにその人物に金を貸しているというOzunuが現れた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>ポン引き Ozunu</b>
+　<font size="-1">2002年08月03日土曜日 06時53分</font>
+<br>
+<font color="#0000FF">「みらー兄妹と一緒に焚き火を囲んでいたお姉さんの言うところ<br><br>Rilca Leafrunner says 'Well， it seems that you have something of importance that you wish to speak to me about?  No?  Then perhaps you can do something [for me].'<br><br>Rilca Leafrunner says 'Well I need some information.  It appears that some gnolls are planning an [invasion] of Surefall.  I believe there are some gnoll couriers that are running information.  If you could bring me their marching orders， invasion plans， area maps， and their encryption key.  Your best chance to catch a courier is probably inside Blackburrow.'<br><br>Rilca Leafrunner says 'Apparently they've heard of our plans to reopen the entrance to Jaggedpine inside Surefall.  It seems they believe the think they have a chance to stop us.  While most of us have little concern about a gnoll invasion force the information you provide would be of great assistance.'」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Tech@Eciはまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+　<font size="-1">2002年08月03日土曜日 20時45分</font>
+<br>
+<font color="#0000FF">「Plans(必要とされるものかは分からない）は<br>木のpitから落ちた先の池の周りにpopする<br>tactician だか そんな名前のGnollから<br>出た気がします。<br><br>他にreserch pg とか出ますけどこっちは<br>何でしょう？」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="212"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第211<br>2002年07月27日土曜日 19時26分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店も賑わいを見せる頃、前に見たことがある客が入ってきた。Tech@Eciは数人の愛人をはべらせ上機嫌そうに、Tech@Eciは怪しい封筒を取り出して話しかけてきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+<br>
+<font color="#0000FF">「NewZone : Jaggedpine Forest<br>観光スポット<br><br>FortJaggedpine :<br>人間の小さな砦 まれに Gnollの砦と化す。<br><br>Poachers：<br>密猟者の一団のキャンプ 砦より広いですよ。<br><br>Potameids:<br>川のニンフ。<br>Queenにお目通りをお願いしたいのですが丁寧に排除されました。（Melee105 Double）<br><br>Sabertooth Clan：<br>BBのGnollの一族。青いGnoll。<br>（41から見て 青から赤。 54から見て青以下）<br>分岐多し、落とし穴あり、の洞窟に住んでいて<br>なかなか楽しめそうです。<br>族長さんとの面会はびっくりする事確実。<br><br>Brell Temple（仮称）;<br>Brell信者の白Gnollが集う神殿。<br>Bankも店もあります（幾つか）<br>無理難題を吹っかけてきますが<br>融通のある方々なので多めに見ましょう。<br>BB直通 高速通路あり（らしい）。<br><br>動物達：<br>怖いものが結構・・・。<br><br>謎のフェアリー・サークル：<br>キノコの円陣に囲まれた所に<br>変なおじさんが座っています。<br>一緒に座ると何かあるかも？（嘘）<br><br><br>なお 腕に自信の無い方はBB回りでどうぞ。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">そういう話は犬にでもしてもらいたいものだ。</td></tr>
+<tr>
+<td colspan="2">こういう客はどう返事していいものか悩む。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年07月29日月曜日 15時55分</font>
+<br>
+<font color="#660066">「Gnollなだけに犬か・・・やるなｗ」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="211"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第210<br>2002年07月26日金曜日 07時09分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">朝っぱらから、前に見たことがある客が入ってきた。今度、モロッコで性転換するらしい。Tech@Eciは笑いながら話してきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+<br>
+<font color="#FF3333">「Bazaar 楽しいです  重いのは愛嬌で。<br>スキルの表示が完全数字化で言語を覚えるのが楽。<br>ChatWindowは増やせるけど 画面は狭いです。<br>Spellbookの構造が変わったので整理が。<br>呪文のアイコン変わりました。<br>Socialは行編集機能がとうとう導入。<br>新Zone、誰か一緒に行く人募集。<br><br>パッチサーバーに繋がりにくいです。<br><br>という感じでしょうか。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">思ったほど面白い話ではなかった。</td></tr>
+<tr>
+<td colspan="2">Tech@Eciはこうも言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+　<font size="-1">2002年07月26日金曜日 07時10分</font>
+<br>
+<font color="#0000FF">「レスしっぱい。<br><br>性転換はしませんよ？（笑）」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">明らかに他の客の迷惑になりそうだったので、私はこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年07月26日金曜日 15時51分</font>
+<br>
+<font color="#660066">「すまんのう、最近顔出してなくて。<br>あまりにどうしようもない状況で日々生きて<br>行くのが精一杯。その為か白髪が一気に増えちまった・・（まだ若いのに）。<br><br>今日辺り顔出すのでNewZoneにでもいきましょう。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">Tech@Eciは話が長いので有名だ。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+　<font size="-1">2002年07月26日金曜日 19時14分</font>
+<br>
+<font color="#0000FF">「NewZoneは ４０＋で ５５＋のGnollが居るらしいです。<br>楽しむ為にはTracker必須との事。<br><br>ですが いきなり緊急パッチ落ち ３時間（笑）<br>１０時には復帰する予定らしいですが今日はダメかもしれませぬ。<br><br>/<br><br>たまに思い出した頃に顔を出せれば充分かと。<br>余裕が出来たらまた色々できると思います」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="210"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第209<br>2002年07月25日木曜日 16時36分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店はまだ開店前だと言うのに、見なれない一人のキツネ目の男が店に入ってきた。この前、サツにつかまったと聞いていたが、違う人物だったらしい。Tech@Eciは私にペコペコお辞儀をすると、童子のような眼で、語り出した。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>職業不明 Tech@Eci</b>
+<br>
+<font color="#0000FF">「凄いパッチでした。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">このキツネ目の男からこの話が出てくるとは思わなかった。</td></tr>
+<input type="hidden" name="num" value="209"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第208<br>2002年06月09日日曜日 18時24分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">ここで少しばかり私から読者諸氏に重要なお知らせを話したいと思う。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+<br>
+<font color="#660066">「キャベツQuestメモ<br><br><a href="http://www.tokyo2001.com/game/eq/ryuzi/ryuzi_memo08.html" target="_blank">http://www.tokyo2001.com/game/eq/ryuzi/ryuzi_memo08.html</a><br><br>Misty Thicket Picnicの最終で失敗は痛かった。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私は満面の営業スマイルを浮かべてこう答えた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年06月13日木曜日 15時46分</font>
+<br>
+<font color="#660066">「==メモ==<br>・Misty Thicket Picnic<br>Baking162でも成功せず。180台は必要か？<br><br>・Ceremonial Solstice Robes<br>240台だと2割の確率で成功らしい。<br>160台だと80回で1回成功との報告（5kpp消費）<br>E'ciでTailor250の人探すべきか・・・」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">とにかく、ここは一旦相手を落ち着かせなければならない。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年06月14日金曜日 17時08分</font>
+<br>
+<font color="#660066">「・Mistletoe Cutting Sickle(Smith&gt;250)<br>240台だと50～75%で成功<br>200台だと1割程度・・・らしい。<br><br>・Misty Thicket Picnic(Baking)<br>180台だと成功率5%程度。170～200では差は無く運任せ（しかも成功率低し）らしい。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">噂好きのSalessが話に参加してきた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/non.gif"></td>
+<td valign="top" width=100%><b>職業不明 Saless</b>
+　<font size="-1">2002年07月09日火曜日 10時19分</font>
+<br>
+<font color="#0000FF">「Sickle Smith 220 で 25% 前後。1Try 330pp。<br>単純に計算すれば 1320pp なんだけど実際には<br>6回やって全部失敗とかが続いたりもする(TT」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="208"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第207<br>2002年06月03日月曜日 19時59分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店も賑わいを見せる頃、割りとよく来るdualが入ってきた。ガキ大将は愛玩のバービー人形を自分の席の隣に座らせた。このガキ大将が話すことといえば、いつも同じである。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/01.gif"></td>
+<td valign="top" width=100%><b>ポン引き dual</b>
+<br>
+<font color="#0000FF">「GFのcon　blueのgrimling<br>pop後すぐはしっていってdepopする怪しいのが<br>最近でてますが。<br>あれ、かなりいたいんですが。。。<br><br>max137dam　meleeで、<br>caster　typeなら1060damのICE　DDうってきますが。。。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">大した内容ではなかった。</td></tr>
+<input type="hidden" name="num" value="207"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第206<br>2002年05月30日木曜日 20時09分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店も賑わいを見せる頃、前に見たことがある客が入ってきた。着やせはするが、体には自信があるらしい。職業不明という職業が気に入っているらしく、こんな話をはじめた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/07.gif"></td>
+<td valign="top" width=100%><b>職業不明 ほにゃまる</b>
+<br>
+<font color="#663333">「なんか今日変なメールきませんでした？<br>なんつ～んでしょう・・・ねずみ講みたいな？（＾＾；<br><br>２アカ増やしたいのかな？<img src=img/heart.gif>」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">このほにゃまるの発言は無視していただいて構わない。</td></tr>
+<tr>
+<td colspan="2">ほにゃまるはさらにこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/07.gif"></td>
+<td valign="top" width=100%><b>職業不明 ほにゃまる</b>
+　<font size="-1">2002年05月30日木曜日 20時10分</font>
+<br>
+<font color="#663333">「いやあの無視ですか（＾＾；<br>ううう・・・」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">こういう場合は適当に相槌をうっとく。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年05月31日金曜日 17時57分</font>
+<br>
+<font color="#660066">「FFに対する危機感から<br>「EQはユーザ数世界一！（前月比100%増!!）」<br>と言いたいだけだったりして・・。」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="206"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第205<br>2002年05月29日水曜日 23時31分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">他の客も酔いが回ってきた頃に、割りとよく来るOzunuが入ってきた。一見してカタギじゃないことが人相で分かる。Ozunuは何を思ったか自分は戦前の生まれなんだと激しく主張しはじめた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>ポン引き Ozunu</b>
+<br>
+<font color="#0000FF">「かのデザイナーは既に去っているとのことですが、<br>quest中に<br>「Oooooは、XXXXXだ！！」という叫びがZoneに響き渡るquestはもう、、、、<br>(あまりやりたくない気もするけど)Raincallerもそうでしたね」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">・・・この偉丈夫は危なすぎる。</td></tr>
+<tr>
+<td colspan="2">Ozunuはさらにこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>ポン引き Ozunu</b>
+　<font size="-1">2002年05月29日水曜日 23時32分</font>
+<br>
+<font color="#0000FF">「あっ、思いっきりミス投稿、すみません」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="205"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<form action="./nbs.cgi" method="POST">
+<table border="0" cellspacing="0" cellpadding="3" background="img/wood.gif" width="80%" align="center">
+<tr>
+<td>
+<div align="center"><b><font color="#FFFFFF">捜査日誌 第203<br>2002年04月30日火曜日 19時32分</font></b></div><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" align="center" background="img/darkcork.gif">
+<tr>
+<td colspan="2">店も賑わいを見せる頃、割りとよく来るOzunuが入ってきた。裏の世界しか見てこなかった、世の中にはそういう人間もいる。ポン引きは私にざくろジュースを注文してこう言った。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/06.gif"></td>
+<td valign="top" width=100%><b>ポン引き Ozunu</b>
+<br>
+<font color="#0000FF">「いきなりですが。<br>「WIZ Epic」と「Coldain Ring」と「Coldain Shawl」と「Qeynos Batch」、<br>「猫BSTの爪」と「Earring of Veracity」(Seru始まりのKatta quest)は、<br>同じデザイナーが作ったに違いない。と感じるのですが、如何でしょうか。<br>「Qeynosの馬鹿息子ガード」も似た空気を持っていますね。<br>何と申しますか、人をくったところがあるとでも言いましょうか。<br><br>CrazyなDesignerだと思います。」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">とても美女を恐れている。私はそう直感した。</td></tr>
+<tr>
+<td colspan="2">そう言えばこういう名言をはいた人物がいた・・・・。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/15.gif"></td>
+<td valign="top" width=100%><b>職業不明 己|フフ|</b>
+　<font size="-1">2002年05月01日水曜日 06時45分</font>
+<br>
+<font color="#0000FF">「Seruの（というかKattaの）EarringQuestの続報ってあるんでしょうか（ｗ<br>誰か3rdゲットしました？」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">己|フフ|はまだ言う事があるらしい。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/15.gif"></td>
+<td valign="top" width=100%><b>職業不明 己|フフ|</b>
+　<font size="-1">2002年05月01日水曜日 06時57分</font>
+<br>
+<font color="#0000FF">「って4thとかまで出とるのか・・・<br>ちょっとやってみますかのう（ｗ」</font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">私は答えに窮したがとりあえずこう答えておいた。</td></tr>
+<tr>
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td valign="top"><img src="icon/admin.jpg"></td>
+<td valign="top" width=100%><b>刑事 Ryuzi</b>
+　<a href="mailto:ryuzi@tokyo2001.com"><img src="img/mail.gif" width="26" height="9" border="0"></a>
+　<a href="http://www.tokyo2001.com/game/eq/index.html"><img src="img/url.gif" width="26" height="9" border="0"></a>
+　<font size="-1">2002年05月25日土曜日 14時32分</font>
+<br>
+<font color="#660066">「確かになんともいえない微妙なクセがありますね。<br>て事は逆にあのクソ報酬の割にレア絡みなXXXなQuestとか△△△なQuestとかも別の同一人物が作ったのか？！」</font></td></tr>
+</table>
+</td>
+</tr>
+<input type="hidden" name="num" value="203"><input type="hidden" name="page" value="0"><tr>
+<td colspan="2">
+<div align="right">
+<input type="hidden" name="mode" value="res"><input type="submit" name="submit" value="返信"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<center>
+<a href="./nbs.cgi?page=10"><img src="img/next.gif" width="26" height="9" border="0"></a>
+</center>
+<center>
+Narration BBS Ver 2.1<br>
+-[<a href="http://www.area-s.com/" target="_blank">MISSINGLINK</a> & <a href="http://www.fayreal.com/" target="_blank">Fayreal</a>]-</font>
+</center>
+</body>
+</html>

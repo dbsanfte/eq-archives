@@ -1,0 +1,319 @@
+<HTML><HEAD>
+<TITLE>
+HackersQuest Discussion Board - Edit this post
+</TITLE>
+
+
+</HEAD>
+ <BODY bgcolor="#000000"  text="#ffffff" link="#00ff00" alink="#00ff00" vlink="#00ff00" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+
+<table border=0 cellpadding=0 border=0 cellspacing=1 width=95% align=center>
+<TR><TD>
+<A HREF="http://www.hackersquest.org/cgi-bin/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://www.hackersquest.org/ubb/../images/hq-title-shock.gif"  BORDER=0></A></td>
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" color="#ffffff">
+<B>
+Forum: <FONT COLOR="#00ff00">HackersQuest Main Forum </FONT>
+<BR>
+Topic: <FONT COLOR="#00ff00">Lots more Tutorial Hacking</FONT>
+</B>
+</FONT>
+
+</td></tr></table>
+<center>
+<FORM ACTION="http://www.hackersquest.org/cgi-bin/postings.cgi" NAME="REPLIER" METHOD="POST">
+
+<table border=0 cellpadding=4 border=0 cellspacing=1 width=95% align=center>
+<tr bgcolor="#000000"><TD COLSPAN=2>
+<FONT SIZE="1" FACE="Verdana, Arial" color="#00ff00"><B>Only forum leaders (Innoruuk, Cazic Thule) or the person that posted this message may edit this message (and only registered users may edit/delete posts)<P>Note: Only forum leaders may delete posts.</B></FONT></td></tr>
+<TR bgcolor="#1f1f1f"><TD colspan=2><FONT SIZE="1" FACE="Verdana, Arial" COLOR="#ffffff">
+<INPUT TYPE="CHECKBOX" NAME="DeletePost" VALUE="yes"><b>Delete?</b>  To delete this post, check this box.<BR>Note: deleting this post will result in the deletion of the entire topic, since this post is the first post in the topic.</font>
+</td></tr>
+<tr bgcolor="#1f1f1f"><td>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff"><b>Your UserName:</b></FONT></td>
+<td>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td></tr>
+<tr bgcolor="#1f1f1f">
+<td>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff"><b>Your Password:</b></FONT></td>
+<td><INPUT TYPE="PASSWORD" NAME="Password" VALUE=""  SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://www.hackersquest.org/cgi-bin/Ultimate.cgi?action=lostpw">Forget your password?</A></font>
+</td></tr>
+<TR bgcolor="#1f1f1f"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff"><b>Message to Edit:</b></FONT><p>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#00ff00">
+*HTML is OFF<BR>
+*UBB Code is OFF<BR>
+<p><A HREF="http://www.hackersquest.org/ubb/smilies.html" target=_blank>Smilies Legend</A></font></td>
+<td><FONT SIZE="1" FACE="Verdana, Arial" COLOR="#00ff00">Originally posted by saintly on 05-25-2001 01:37 PM<BR></FONT>
+<TEXTAREA NAME="EditedMessage" ROWS=10 COLS=45 WRAP="VIRTUAL">Well, okay, so using the tutorial as a zone
+explorer (with EZE) has a few issues.  A 
+bunch of zones start you off in a GM teleport
+box you can't get out of, or it's dark, or
+the dude runs/swims to slow, or whatever.
+
+After messing with my tutorial.exe a bit, I
+was able to find a way to add a few more
+features to it beyond changing the zone file
+it loads.  Go nuts...
+
+The version of the tutorial I have shows a 
+Last Modified date of 05/11/1999, and is 
+1,845,248 bytes long.  The EZE page
+mentions other versions, so it would prolly
+be a *BAD* idea to go patching offsets in
+your tutorial file if your version isn't
+the same.
+
+You already know where to change the zone,
+but just to keep all the info together, I'll
+mention it again: There are 11 bytes starting
+at offset 19797C where you can put in the
+zone you want to load, so long as its 
+followed by hex 00 (NULL).
+
+Change the race of the player at D511C.  It
+starts at 01 (Human), to make it Dark Elf
+for ultravision, set it to 06.  It will take
+values 01-0C for other races and doesn't 
+know about Iksar.
+
+If having to talk to the tutorial mobs
+annoys you, get rid of them by patching 
+offsets D1818-D181C to all hex 90s.
+
+Hex code 90 is the assembler instruction
+"NOP" (a do-nothing command), so its used
+to disable certain instructions.
+
+You can have it report your current X,
+Y,Z, coords, heading and some other stuff
+in your message box:
+
+Write hex 90 to offsets: 
+ B3002-7, 
+ B300F-14, 
+ B30E5
+Change offset: B2ECD to EB
+Starting at offset B30D6, write: 
+ 0D A0 73 70 00 
+Change offset: B30DF to 94
+Starting at offset B30E7, write: 
+ 90 E8 E3 9C 01 00	   
+
+Note: if you combine this with the 
+flying patch below, it will make it a bit
+harder to fly (you have to angle up more
+to get off the ground).
+
+If you're having trouble exploring the
+plane of Sky or whatever, you can allow
+the player to fly (like swimming, angle the
+view up or down):
+At offset D9F7E, change 75 to EB
+Change offsets D9FE7-E8 to 90 90
+
+Improve the swimming (and flying) speed:
+He swims very slow, giving it a 4x increase
+makes him swim a little faster than he
+walks:
+
+At offsets D9FF3-F6 write CD CC 4C 3E
+At offsets DA003-06 write CD CC 4C 3F
+
+Note, these correspond to the values 0.1
+and 0.8.  The first (at D9FF3) controls 
+the swimming horizontal speed, the second
+controls the vertical speed.  If you set
+the second to some huge number, like 60
+instead of 0.8 you will take huge dolphin
+leaps out of the water!  It's hilarious.
+You won't be able to explore much underwater
+though, since any move that goes up or down
+will send you zooming to the top or bottom
+of the zone.
+
+You can increase the response time for all
+movement (making you turn, swim and walk
+faster):
+At offset 166D48, write in either:
+   8FC2 F53C (for a 50% speed increase)
+or 0AD7 233D (for a 100% speed increase)
+
+Much more than 100% becomes very 
+disorienting when you turn, but makes moving
+long distances a snap.
+
+Lastly, you can make it start the zone at
+any arbitrary location, but this is a bit
+trickier than just pasting in the patches
+mentioned above.  
+
+To enable this trick, patch all the 
+following offsets to hex 90:
+A8AD-A8B2, A902-A907, A954-A959, A9A6-A9AB, A9F8-A9F9
+
+Now you have to get the X,Y,Z coords into 
+the number format used in the tutorial 
+program.  This is the IEEE-754 hex 
+notation with a reversed byte order.
+
+There is a web page with a tool that turns
+decimal numbers into IEEE-754 notation:
+
+http://babbage.cs.qc.edu/courses/cs341/IEEE-754.html
+
+It uses javascript, you type in the number
+in decimal, click "ROUNDED" and it tells
+you the hex code you need to write.  Then
+you have to REVERSE the order of what it
+says.  Example:
+
+You go to the Hole, and you see the message
+on the wall: Go to 800, 200, 0.
+
+Go to the web page and type in 800, it
+comes back with "44480000" (under Hexadecimal
+under "Single Precision").  Now reverse the
+bytes: 00 00 48 44  (don't just reverse the
+individual digits).  Now look up 200: it
+comes back with "43480000", that becomes
+00 00 48 43.  Zero is still "00000000".
+
+Locations for the coords:
+X: Offsets C1E32 - C1E35 
+Y: Offsets C1E3C - C1E3F 
+Z: Offsets C1E46 - C1E49 
+
+So write 0000 4844 to C1E32, 0000 4843 to
+C1E3C, and 0000 0000 to C1E46.
+
+It's not *THAT* hard to do, really... it
+just sounds difficult until you try it.
+
+Once you've patched your tutorial.exe, you
+can use EZE to explore different zones 
+rather than manually editing the zone each
+time.  Get EZE from:
+
+http://home.tampabay.rr.com/estembler/tristram/eze.htm
+
+Have fun...
+ - The Saint!</TEXTAREA>
+</td></tr>
+<tr bgcolor="#1f1f1f"><td>&nbsp;</td>
+<td>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#ffffff">
+<INPUT TYPE="CHECKBOX" NAME="DisableSmilies" VALUE="yes"> <b>Disable Smilies in This Post</b>.
+</FONT>
+</td></tr>
+<tr bgcolor="#000000"><td colspan=2>
+<FONT SIZE="1" FACE="Verdana, Arial" color="#00ff00">
+*If HTML and/or UBB Code are enabled, this means you can use HTML and/or UBB Code in your message. 
+</font>
+</td></tr>
+</table>
+
+<p>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="submitedit">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Lots more Tutorial Hacking">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="HackersQuest Main Forum">
+<INPUT TYPE="HIDDEN" NAME="ReplyNum" VALUE="000000">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="1">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="002765.cgi">
+
+ <FONT SIZE="2" FACE="Verdana, Arial" COLOR="#00ff00">
+
+</font>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Now">
+
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<P>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+	document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.EditedMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+
+<P>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:ashran@hackersquest.org">Contact Us</A> | <A HREF="http://www.hackersquest.org" target=_top>HackersQuest</A> 
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+		<a href="http://infopop.com"><IMG SRC="http://www.hackersquest.org/ubb/powered_by2.gif" border=0></a><br>
+      Ultimate Bulletin Board Version 5.47
+<br><br>
+</FONT>
+</CENTER></font>
+<center>
+<IFRAME WIDTH=468 HEIGHT=60 NORESIZE SCROLLING=No FRAMEBORDER=0
+MARGINHEIGHT=0 MARGINWIDTH=0 NAME="Werbung"
+SRC="http://data.gomp.net/werbung.htm">
+ <!-- Werbebanner von Krawall.de -->
+
+ <SCRIPT LANGUAGE="JavaScript"> <!--
+_version=10; //--> </script>
+<SCRIPT LANGUAGE="JavaScript1.1"> <!--
+_version=11;
+if (navigator.userAgent.indexOf('Mozilla/3') != -1){
+_version=10;} // --> </script>
+<SCRIPT LANGUAGE="JavaScript"> <!--
+var server = 'oas.krawall.de';
+var sitepage = "www.gomp.ch/homepage";
+var position ="Top!Top";
+if (! (RN)) {
+var RN = new String (Math.random());
+var RNS = RN.substring (2, 11);
+}
+var oas='http://' + server + '/RealMedia/ads/';
+var oaspage= sitepage + '/1' + RNS + '@' + position;
+if (_version < 11) {
+  document.write ('<A HREF="' + oas + 'click_nx.ads/'+ oaspage + '"
+TARGET="_blank" ><IMG SRC="' + oas + 'adstream_nx.ads/' + oaspage + '"
+BORDER="0"  WIDTH="468" HEIGHT="60"  ALT="Hier klicken!" ></a>');
+} else {
+  document.write ('<SCRIPT LANGUAGE="JavaScript1.1" SRC="' + oas +
+'adstream_jx.ads/' + oaspage + '">');
+  document.write ('\<\!-- --\>');
+  document.write ('\<\/SCRIPT\>');
+  document.write ('\<\!-- --\>');
+}
+// -->
+</script>
+
+</iframe></enter> </p>
+</body></html>

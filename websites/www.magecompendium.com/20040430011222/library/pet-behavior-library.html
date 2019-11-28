@@ -1,0 +1,103 @@
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/tr/html4/strict.dtd">
+<HTML><HEAD><TITLE>The Mage Compendium Library - Pet Behavior</TITLE>
+<META http-equiv="content-type" content="text/html; charset=utf-8">
+<META http-equiv="content-style-type" content="text/css">
+<LINK rel=stylesheet type="text/css" href="library_style.css">
+</HEAD>
+<!-- Author: Xalmat. xalmat@magecompendium.com -->
+<!-- Copyright 2004 -->
+
+<BODY>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+<tr>
+<td class="bodyline">
+
+<P><CENTER><span class="maintitle">The Mage Compendium</span><br>
+<span class="gen">The EverQuest website for the Magician class.</span></CENTER></P>
+
+<table class="forumline" width="100%" cellspacing="0" cellpadding="3" border="0"><tr><td class=postbody>
+<P><span class=header1>Pet Behavior</span><br>
+
+<P class=hide><a href="index.html">Return to Library Index</a></P>
+
+<P class=hide><a href="http://forum.magecompendium.com/viewtopic.php?t=578" target="_blank">View the Forums for extra details</a>
+
+</td></tr><tr><td class=postbody>
+
+<P>The following is the first draft of a guide on how pets behave, and the various /pet commands effect their behavior. There are some simplifications and guesses here, and I welcome any feedback. 
+
+<P>Basic Pet modes: Attack or Free 
+
+<P>Pet behavior is largely determined by whether a pet is Attacking or Free. If a pet has anyone on their Hate List within its Attack Range, and is not Held, then it will Attack, following the nearest Path to the enemy within range nearest the top of its Hate List and attack them as soon as the pet is within Combat Range, either by direct melee or by casting. A pet with no one within Attack Range on their Hate List or which is Held is said to be Free and will follow its Movement Mode along the nearest Path. 
+
+<P>Attack Range is the furthest distance at which a pet will Attack an enemy and start moving towards them. Enemies outside this range remain on the Hate List, but are not attacked. 
+
+<P>Combat Range is the furthest distance at which a pet can directly attack an enemy. At the outermost Combat Range, the pet can only cast. It must be closer in order to melee. 
+
+<P>The Hate List is a ranked list of an NPC's immediate enemies. An NPC, such as a pet, will generally attack whichever enemy within Combat Range that is highest on its Hate List. This is discussed in more detail later. 
+
+<P>Movement modes: Follow, Guard, Sit 
+
+<P>The Movement Mode determines where the pet goes if it is not attacking, that is, if it is Free. The command /pet follow me puts the pet in Follow mode. The pet will then follow the nearest Path to the Path Point nearest its owner. The command /pet guard here pets the pet in Guard mode, and sets the Guard Point to the current location. The pet then follows the nearest Path to the Path Point nearest the Guard Point. Note that this means that the pet does not always return to the same location. /pet sit puts the pet in Sit mode. If it is not attacking, it will no move from its current location. 
+
+<P>In order to simplify programming, NPCs use Path Points in order to determine their movement. When a zone is created, and its terrain and other features laid out, the zone is sprinkled with Path Points. In order for an NPC to move from its current location to another location, for example, to attack an enemy, it first finds and moved toward the nearest Path Point. From there, it moves to the nearest Path Point that is closer to its goal, travelling from Path Point to Path Point until it arrives near its goal. 
+
+<P>The purpose of these Path Points is to simplify programming the behavior of NPCs. In particular, it eliminates the need for Collision Detection for NPCs, that is, there is no need to prevent NPCs from going through walls or other obstacles. These Path Points are laid out by the designers of the zone, and vary greatly in quality. Some places in some zones are notorious for Bad Pathing: poorly chosen Path Points that cause NPCs to wander great distances, "warp" or teleport, or even despawn, including pets. 
+
+<P>Before The Great Patch the fear of Bad Pathing greatly limited the use of pets, as the risk of a sudden pet detour aggroing distant mobs and causing a wipeout prevented all but the most reputable pet owners from using pets in those places. 
+
+<P>NPCs maintain a ranked Hate List of immediate enemies, and, in general, will chase down and attack whichever enemy within Attack Range is currently the highest on their list. The Hate List is constantly changing as characters against the NPC and its allies. The following discussion is simplified somewhat to focus on pets and their behaviour, but applies, with some modification and caveats, to NPCs in general. 
+
+<P>Hate: Direct and indirect actions against an NPC add a specific amount of Hate to the score of that individual on the NPC's Hate List. The value of the Hate added appears to decay over time, so that more recent actions weigh more heavily than those a while ago. That is, Hate appears to "age," and become weaker over time. That is why one must be careful how often one nukes an enemy. 
+
+<P>The primary determinant of the Hate Value of an attack is the potential damage that attack could have normally done. Thus Hate ignores both resists and criticals. All attacks with the same weapon or spell generate the same amount of Hate regardless of how much damage they actually dealt, even if they miss or are fully resisted. Spells that do not do damage have a Hate value assigned to them. Some, like Tash and Slow spells, have a high Hate values. Others, like Cancel Magic or Malosini, have a low Hate value. Healing and buffing an NPC's enemies also generates Hate. 
+
+<P>Taunting a second time: When a character successfully Taunts an NPC, that character moves up to the top of that NPC's Hate List, but just barely. By default, pets have Taunt On, which means they constantly try to taunt their enemies. However, because of special rules designed primarily to prevent abuses of Charmed Pets, an NPC will almost always chose to attack a Player Character if one is within melee distance, even when a pet is at the top of its Hate List. It is not known precisely what these "special rules" are, but in practice they prevent pets from tanking in the presence of player characters within melee distance of the mob. 
+
+<P>Any creature that attacks a pet's owner is added to the pet's Hate List. 
+
+<P>Pets cannot attack a creature which has been charmed by a player character, but such creatures remain (?) on the pet's Hate List. 
+
+<P>If a Mezzed enemy reaches the top of a pet's Hate List, the pet removes (?) from its Hate List instead of attacking. 
+
+<P>Based on the preceding analysis, here is nearly complete list of the /pet commands and what they do. 
+
+<P>/pet follow me puts the pet in Follow mode. This is the initial mode of a newly summoned pet. 
+
+<P>/pet guard here puts the pet in Guard mode. 
+
+<P>/pet sit down puts the pet in Sit mode. 
+
+<P>/pet attack puts the owners current target at the top (?) of the pet's Hate List, and ends Hold. Unless Player versus Player is enabled, you cannot add a player or a player charmed NPC to a pet's Hate List. 
+
+<P>/pet kill name takes whatever would be selected by the command /target name (?) and puts it at the top (?) of the pet's Hate List. While it is not entirely clear what the most distant range this command will add to the Hate List, the target may be outside Attack Range and thus not immediately attacked. This command also ends Hold. 
+
+<P>/pet back off empties the pet's Hate List, causing it to stop attacking. However, there are no guarantees that the pet's Hate List will stay empty for long, so it may immediately resume attacking. 
+
+<P>/pet hold causes the pet to be Held, that is, it ignores its Hate List and goes into Free mode, resuming its regular movement (either follow, guard, or sit). The pet does however continue to maintain its Hate List, which it will act upon as soon as either /pet attack or /pet kill are issued. / is only available to level 59 or higher Magicians who have obtained the magician class AA skill Pet Discipline. 
+
+<P>/pet taunt off disables pet taunting, that is the pet will not taunt during fights. 
+
+<P>/pet taunt on enables pet taunting. 
+
+<P>It is not always possible to chose your pet's target when there are multiple enemies. While /pet back off empties the pet's Hate List, an enemy may get back on it be attacking the pet or the pet's owner. The Great Patch also eliminated the delay between serial /pet commands, so that a macro of /pet back off, /pet attack will work most of the time. However, another enemy may still strike and get to the top of the pet's Hate List, so this is no guarantee. 
+
+<P>When a pet's movement mode is Sit, it will not move from its current location in response to a /pet back off or /pet hold, and enemies will likely soon add themselves to the pet's Hate List. However, if a pet's movement mode is Follow or Guard, then /pet back off or especially /pet hold will cause the pet to attempt to withdraw from combat to either its owner or its guard point, generally making it easier to select its next target with less interference. 
+
+<P>The macro /pet hold, /pet back off can be useful, as it first causes the pet to ignore its Hate List, and then empties it. 
+
+<P>Monster Summoning pets do not cast, and so can be easier to control, as the only way they can get on an enemy's Hate List is by meleeing. A meandering Monster pet thus gives a longer interval for the owner to call it off, and avoid inadvertent aggroing. 
+
+<P>As I said, there are some guesses and simplifications here, and I look forward to your thoughtful feedback. 
+
+<P>Master ArchMage Razamatazz Pizzazz 
+
+</td></tr><tr><td class=postbody>
+
+<P class=hide><a href="index.html">Return to Library Index</a></P>
+
+<P><I>Version: 2004.03.07</I></P>
+</td></tR></table>
+</td></tR></table>
+</BODY>
+</HTML>
