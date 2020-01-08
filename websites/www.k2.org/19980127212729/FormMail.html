@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!-- net.html -->
+<!-- (c) Copyright 1996, Enteract -->
+<!-- Document created by Dovetail Web Design -->
+<!-- http://www.enteract.com/~spooky/WebDesign/WebDesign.html -->
+
+<!-- Change History:  ------------->
+<!-- 3/20/96 Site created -->
+<!-- 20 June 1996 dannytweaks -->
+
+<HTML>
+<HEAD>
+<TITLE>HOW THE INTERNET WORKS</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff" text="#110860" link="#0fa214" vlink="#a20f14">
+
+<CENTER>
+<IMG SRC="GIFS/SBEA.gif" ALT="EnterAct">
+<BR>
+<IMG SRC="GIFS/how.gif" ALT="Internet Header">
+</CeNTer>
+
+
+
+<h1>Forms without scripting!</h1>
+<p>Some of the possible uses of this script are:
+<ol>
+<li>You can create a form that will be mailed to you, without having to 
+write a script to do it.
+<li>You can have one single script parse and mail all of your forms to you.
+</ol>
+
+</p><hr>
+
+<h2>Setting Up the FormMail Script</h2>
+
+<dl>
+<dt><b>Form Configuration</b>
+<dd>The action of your form needs to point towards this script 
+(obviously), and 
+the method must be POST or GET in capital letters.  Version 1.5 of FormMail 
+offers many new ways to code your form to tailor the resulting HTML page 
+and the way the script performs.  Below is a list of form fields you can 
+use and how to implement them.
+</dl>
+
+<hr width=80%>
+
+<h2>Necessary Form Fields</h2>
+
+<p>There is only one form field that you must have in your form, for 
+FormMail to work correctly.  This is the recipient field.
+
+<h3>Field: recipient</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>This form field allows you to specify to whom you wish for your 
+form results to be mailed.  Most likely you will want to configure this 
+option as a hidden form field with a value equal to that of your e-mail 
+address.
+<dt><b>Syntax</b>
+<dd><code>&lt;input type=hidden name="recipient" 
+value="email@your.host.xxx"&gt;</code> 
+</dl>
+
+<hr width=80%>
+
+<h2>Optional Form Fields</h2>
+
+<h3>Field: subject</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>The subject field will allow you to specify the 
+subject that 
+you wish to appear in the e-mail that is sent to you after this form has 
+been filled out.  If you do not have this option turned on, then the 
+script will default to a message subject: WWW Form Submission
+<dt><b>Syntax</b>
+<dd>If you wish to choose what the subject is:
+<br><code>&lt;input type=hidden name="subject" value="Your 
+Subject"&gt;</code> 
+<p>To allow the user to choose a subject:
+<br><code>&lt;input type=text name="subject"&gt;</code>
+</dl>
+
+<h3>Field: email</h3>
+<dl>
+<dt><b>Description</b>
+<dd>This form field will allow the user to specify 
+their return 
+e-mail address.  If you want to be able to return e-mail to your user, I 
+strongly suggest that you include this form field and allow them to fill 
+it in.  This will be put into the From: field of the message you receive.
+<dt><b>Syntax</b>
+<dd><code>&lt;input type=text name="email"&gt;</code>
+</dl>
+
+<h3>Field: realname</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>The realname form field will allow the user to 
+input their 
+real name.  This field is useful for identification purposes and will 
+also be put into the From: line of your message header.
+<dt><b>Syntax</b> 
+<dd><code>&lt;input type=text name="realname"&gt;</code>
+</dl>
+
+<h3>Field: redirect</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>If you wish to redirect the user to a 
+different URL, rather 
+than having them see the default response to the fill-out form, you can 
+use this hidden variable to send them to a pre-made HTML page.
+<dt><b>Syntax</b>
+<dd>To choose the URL they will end up at: 
+<br><code>&lt;input type=hidden name="redirect" 
+value="http://your.address.xxx/to/file.html"&gt;</code>
+<p>To allow them to specify a URL they wish to travel to once the form is 
+filled out: 
+<br><code>&lt;input type=text name="redirect"&gt;</code>
+</dl>
+
+<h3>Field: required</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>You can now require for certain fields in your 
+form to be 
+filled in before the user can successfully submit the form.  Simply place 
+all field names that you want to be mandatory into this field.  If the 
+required fields are not filled in, the user will be notified of what they 
+need to fill in, and a link back to the form they just submitted will be 
+provided.
+<dt><b>Syntax</b>
+<dd>If you want to require that they fill in the email and phone fields in 
+your form, so that you can reach them once you have received the mail, 
+use a syntax like: 
+<br><code>&lt;input type=hidden name="required" 
+value="email,phone"&gt;</code>
+</dl>
+
+<h3>Field: env_report</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>Allows you to have Environment variables 
+included in the 
+e-mail message you receive after a user has filled out your form.  Useful 
+if you wish to know what browser they were using, what domain they were 
+coming from or any other attributes associated with environment 
+variables.  The following is a short list of valid environment variables 
+that might be useful:
+<dt><var>REMOTE_HOST</var> 
+<dd>Sends the hostname making a request.
+<dt><var>REMOTE_ADDR</var> 
+<dd>Sends the IP address of the remote host 
+making the request.
+<dt><var>REMOTE_USER</var> 
+<dd>If server supports authentication and 
+script is 
+                  protected, this is the username they have authenticated as.
+                  *This is not usually set.*
+<dt><var>REMOTE_IDENT</var>
+<dd>If HTTP server supports RFC 931 
+identification, then 
+                  this variable will be set to the remote user name 
+                  retrieved from the server. *This is not usually set.*
+<dt><var>HTTP_USER_AGENT</var>
+<dd>The browser the client is using to send the 
+request.  
+                  General format: software/version library/version
+
+There are others, but these are a few of the most useful.
+<dt><b>Syntax</b>
+<dd>If you wanted to find the remote host and browser sending the request, 
+you would put the following into your form:
+<br><code>&lt;input type=hidden name="env_report" 
+value="REMOTE_HOST,HTTP_USER_AGENT"&gt;</code>
+</dl>
+     
+<h3>Field: sort</h3>
+
+<dl>
+<dt><b>Description</b> 
+<dd>This field allows you to choose the order in 
+which you wish 
+for your variables to appear in the e-mail that FormMail generates.  You 
+can choose to have the field sorted alphabetically or specify a set order 
+in which you want the fields to appear in your mail message.  By leaving 
+this field out, the order will simply default to the order in which the 
+browsers sends the information to the script (which isn't always the 
+exact same order they appeared in the form.)  When sorting by a set order 
+of fields, you should include the phrase "order:" as the first part of 
+your value for the sort field, and then follow that with the field names 
+you want to be listed in the e-mail message, separated by commas.
+<dt><b>Syntax</b>
+<dd>To sort alphabetically:
+<br><code>&lt;input type=hidden name="sort" value="alphabetic"&gt;</code>
+<p>To sort by a set field order:
+<br><code>&lt;input type=hidden name="sort" 
+value="order:name1,name2,etc..."&gt;</code> 
+</dl>
+
+<dd> Please make sure to substitute "name1, name2, etc" with your named
+variables (i.e. "order:name, city, state, etc").
+ 
+<p>
+<h3>Field: print_config</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>Allows you to specify which 
+of the config 
+variables you would like to have printed in your e-mail message.  By 
+default, no config fields are printed to your e-mail.  This is because 
+the important form fields, like email, subject, etc. are included in 
+the header of the message.  However some users have asked for this option 
+so they can have these fields printed in the body of the message.  The 
+config fields that you wish to have printed should be in the value 
+attribute of your input tag separated by commas.
+<dt><b>Syntax:</b>
+<dd>If you want to print the email and subject fields in the body of your 
+message, you would place the following form tag:
+<br><code>&lt;input type=hidden name="print_config" value="email,subject"&gt;</code>
+</dl>
+
+<h3>Field: title</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>This form field allows you to specify the title 
+and header 
+that will appear on the resulting page if you do not specify a redirect URL.
+<dt><b>Syntax</b>
+<dd>If you wanted a title of 'Feedback Form Results':
+<br><code>&lt;input type=hidden name="title" value="Feedback Form 
+Results"&gt;</code>
+</dl>
+
+<h3>Field: return_link_url</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>This field allows you to specify a URL that 
+will appear, as 
+return_link_title, on the following report page.  This field will not 
+be used if you have the redirect field set, but it is useful if you allow 
+the user to receive the report on the following page, but want to offer 
+them a way to get back to your main page.
+<dt><b>Syntax</b>
+<dd><code>&lt;input type=hidden name="return_link_url" 
+value="http://your.host.xxx/main.html"&gt;</code>
+</dl>
+     
+<h3>Field: return_link_title</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>This is the title that will be used to link the user back to 
+the page you specify with return_link_url.  The two fields will be shown 
+on the resulting form page as:
+<br>
+<code>
+&lt;ul&gt;<br>
+&lt;li&gt;&lt;a href="return_link_url"&gt;return_link_title&lt;/a&gt;<br>
+&lt;/ul&gt;<br>
+</code>
+
+<dt><b>Syntax</b>
+<dd><code>
+&lt;input type=hidden name="return_link_title" value="Back to Main Page"&gt;
+</code>
+</dl>
+
+<h3>Field: background</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd> This form field allow you to specify a background image 
+that will appear if you do not have the redirect field set.  This image 
+will appear as the background to the form results page.
+
+<dt><b>Syntax</b>
+<dd><code>
+&lt;input type=hidden name="background" value="http://your.host.xxx/image.gif"&gt;
+</code>
+</dl>
+
+<h3>Field: bgcolor</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd>  This form field allow you to specify a bgcolor for the 
+form results page in much the way you specify a background image.  This 
+field should not be set if the redirect field is.
+
+<dt><b>Syntax</b>
+
+<dd>For a background color of White:
+<dd><code>
+&lt;input type=hidden name="bgcolor" value="#FFFFFF"&gt;
+</code>
+</dl>
+
+<h3>Field: text_color</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd> This field works in the same way as bgcolor, except that it 
+will change the color of your text.
+
+<dt><b>Syntax</b>
+
+<dd>For a text color of Black:
+<dd><code>
+&lt;input type=hidden name="text_color" value="#000000"&gt;
+</code>
+</dl>
+
+<h3>Field: link_color</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd> Changes the color of links on the resulting page.  Works in 
+the same way as text_color.  Should not be defined if redirect is.
+
+<dt><b>Syntax</b>
+
+<dd>For a link color of Red:
+<dd><code>
+&lt;input type=hidden name="link_color" value="#FF0000"&gt;
+</code>
+</dl>
+
+<h3>Field: vlink_color</h3>
+<dl>
+<dt><b>Description</b>
+<dd> Changes the color of visited links on the resulting page.  
+Works exactly the same as link_color.  Should not be set if redirect is.
+
+<dt><b>Syntax</b>
+
+<dd>For a visited link color of Blue:
+<dd><code>
+&lt;input type=hidden name="vlink_color" value="#0000FF"&gt;
+</code>
+</dl>
+
+<h3>Field: alink_color</h3>
+
+<dl>
+<dt><b>Description</b>
+<dd> Changes the color of active links on the resulting page. 
+Works exactly the same as link_color.  Should not be set if redirect is.
+
+<dt><b>Syntax</b>
+
+<dd>For a visited link color of Blue:
+<dd><code>
+&lt;input type=hidden name="alink_color" value="#0000FF"&gt;
+</code>
+</dl>
+
+<p>
+
+Any other form fields that appear in your script will be mailed back to 
+you and displayed on the resulting page if you do not have the redirect 
+field set.  There is no limit as to how many other form fields you can 
+use with this form, except the limits imposed by browsers and your server.
+
+
+
+
+<CENTER>
+<A HREF="form.html">
+<IMG SRC="GIFS/DGback.gif" BORDER=0 ALT="SERVICES MENU"></A>
+<IMG SRC="GIFS/spacer.gif" WIDTH=90 HEIGHT=20 ALT="">	
+<A HREF="index.html">
+<IMG SRC="GIFS/DGmain.gif" BORDER=0 ALT="MAIN MENU"></A>
+<IMG SRC="GIFS/spacer.gif" WIDTH=90 ALT="">	
+<A HREF="contact.html">
+<IMG SRC="GIFS/DGcontact.gif" BORDER=0 ALT="CONTACT US"></A>	
+</CENTER>
+
+<!--GH_SEARCH-->
+<center>
+<table border=1><tr border=0>
+<td><FORM method=get ACTION=/cgi-bin/webglimpse/usr/local/src/webglimpse/enteract>
+<INPUT NAME=query size=20>
+<INPUT TYPE=submit VALUE="Search">
+<INPUT name=file type=hidden value="/usr/local/www/data/FormMail.html">
+<a href=/cgi-bin/webglimpse-fullsearch/usr/local/src/webglimpse/enteract?file=/usr/local/www/data/FormMail.html>
+Search Options</a></td></tr>
+<tr><td colspan=2>
+Search:	
+<INPUT TYPE=radio NAME=scope VALUE=neighbor CHECKED>
+The neighborhood of this page
+<INPUT TYPE=radio NAME=scope VALUE=full>The full archive
+</td></tr></form></table></center>
+<!--GH_END-->
+</BODY>
+</HTML>

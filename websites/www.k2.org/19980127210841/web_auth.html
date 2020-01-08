@@ -1,0 +1,173 @@
+<document type=html3>
+
+
+<META Document ID=Enteract2.0>
+<!-- web-auth.html -->
+<!-- (c) Copyright 1996, Enteract -->
+<!-- Document created by Jennifer Myers <jdm@enteract.com>-->
+
+<!-- Change History:  ------------->
+<!-- 7/17/96 created -->
+
+
+
+<HTML>
+
+<HEAD>
+	<TITLE> How do I set up passwords for my web pages? </TITLE>
+</HEAD>
+
+
+<BODY bgcolor="#ffffff" background="/GIFS/how2.gif" text="#110860" link="#206030" vlink="#602020">
+
+	<IMG HEIGHT=40 WIDTH=1 SRC="/GIFS/spacer.gif" ALT="Dead Space"><BR>
+	<IMG SRC="/GIFS/spacer.gif" ALT="Dead Space" WIDTH=65 HEIGHT=1550 ALIGN=LEFT>
+<H1>How do I set up passwords for my web pages?</H1>
+<BR>
+
+You may have the need to password-protect some parts of your web space
+(for example, you might want to put your web stats on your web site,
+but restrict their viewing to only yourself).  To set this up, after
+logging in to enteract.com via a telnet application, follow the steps
+below:<p>
+
+<b><font size="+1">1. </font></b> 
+Place all the files you want commonly
+password-protected in their own directory, for example,
+~/public_html/private/.
+
+<font color="#000000"><pre>
+   mkdir ~/public_html/private
+   mv secret_file.html ~/public_html/private/secret_file.html
+</pre></font>
+
+<p>
+<b><font size="+1">2. </font></b> 
+Tell the web server that this directory is password protected.
+You do this by creating a file named <tt>.htaccess</tt> in the directory
+you just created.
+
+<font color="#000000"><pre>
+   cd ~/public_html/private
+   pico .htaccess
+</pre></font>
+
+And then place the following in that file:
+
+<font color="#000000"><pre>
+   AuthUserFile /home/yourusernamehere/public_html/private/.htpasswd
+   AuthGroupFile /dev/null
+   AuthName ByPassword
+   AuthType Basic
+
+   &lt;Limit GET POST&gt;
+   require user jdm tqbf
+   &lt;/Limit&gt;
+</pre>
+<ol>
+<li>Remember to replace <em>yourusernamehere</em> with your own username!
+
+<li>If you have a CompleteAct account, the path in the AuthUserFile line 
+will not work for you.  Your line should look like this:
+<p>
+AuthUserFile /CompleteAct/domains/yourdomain.com/http-docs/private/.htpasswd
+<p>
+<li>In this example we're not using a "group" file, so we supply a group
+file of /dev/null, which indicates that the file does not exist.
+</ol>
+</font>
+<p>
+
+<b><font size="+1">3. </font></b> 
+Give the users you supplied in the <em>require user</em> line passwords.
+
+<pre><font color="#000000">
+   cd ~/public_html/private
+
+   htpasswd -c .htpasswd jdm
+   <em>Adding password for jdm.</em>
+   <em>New password:</em>[enter password here]
+   <em>Re-type new password:</em>[enter password again]
+
+   htpasswd .htpasswd tqbf
+   <em>Adding password for tqbf.</em>
+   <em>New password:</em>[enter password here]
+   <em>Re-type new password:</em>[enter password again]
+</font></pre>
+
+The example above gives an example of the use of the program htpasswd.
+The htpasswd program constructs your password file for you, provided
+you supply it with the name of the password file, the user and the
+password.  The passwords are stored in encrypted form.
+
+<br>htpasswd takes two arguments: (1) the name of the
+password file (commonly .htpasswd), and (2) the name of the
+user to be given a password.  An optional flag -c tells
+htpasswd to create the password file.  You will need to use
+that flag the first time you enter a user into a particular password
+file.  (Note that we didn't use the -c flag for giving tqbf a
+password, because the password file already existed).
+
+<p>
+The file .htpasswd will look something like this:
+<font color = "#000000"><pre>
+   jdm:$1$hH$sCtEGuWVmN2bD5N22t/hr1
+   tqbf:$1$vq$FUsPx0Ofzt/AzXVtLMVrw.
+</pre></font>
+
+<p>
+To delete a user, edit the .htpasswd file with pico and delete
+the line corresponding to that user.
+
+<p> To change a user's password run "<font
+color="#000000"><tt>htpasswd .htpasswd <em>user</em></tt></font>" and you will
+be prompted for the user's new password.
+
+<p>
+<b>That's all there is to it!</b>
+<p>
+
+There are more complicated examples of things you can do (for example,
+assign users to groups and permit access by group membership).  For
+these more complicated examples, consult the <a href =
+"http://hoohoo.ncsa.uiuc.edu/docs-1.5/tutorials/user.html">Mosaic User
+Authentication Tutorial</a>.
+
+<p>
+<CENTER>
+
+<A HREF="/net.html">
+	<IMG SRC="/GIFS/DGback.gif" BORDER=0 ALT="SERVICES MENU"></A>
+
+<IMG SRC="/GIFS/spacer.gif" WIDTH=90 HEIGHT=20 ALT="Spacer">	
+	
+
+<A HREF="/">
+	<IMG SRC="/GIFS/DGmain.gif" BORDER=0 ALT="MAIN MENU"></A>
+
+<IMG SRC="/GIFS/spacer.gif" WIDTH=90 height=1 ALT="Spacer">	
+	
+<A HREF="/contact.html">
+	<IMG SRC="/GIFS/DGcontact.gif" BORDER=0 ALT="CONTACT US"></A>	<BR>
+
+<IMG SRC="/GIFS/spacer.gif" ALT="Dead Space" WIDTH=1 HEIGHT=20><BR>
+</CENTER>
+
+<!--GH_SEARCH-->
+<center>
+<table border=1><tr border=0>
+<td><FORM method=get ACTION=/cgi-bin/webglimpse/usr/local/src/webglimpse/enteract>
+<INPUT NAME=query size=20>
+<INPUT TYPE=submit VALUE="Search">
+<INPUT name=file type=hidden value="/usr/local/www/data/web_auth.html">
+<a href=/cgi-bin/webglimpse-fullsearch/usr/local/src/webglimpse/enteract?file=/usr/local/www/data/web_auth.html>
+Search Options</a></td></tr>
+<tr><td colspan=2>
+Search:	
+<INPUT TYPE=radio NAME=scope VALUE=neighbor CHECKED>
+The neighborhood of this page
+<INPUT TYPE=radio NAME=scope VALUE=full>The full archive
+</td></tr></form></table></center>
+<!--GH_END-->
+</BODY>
+</HTML>

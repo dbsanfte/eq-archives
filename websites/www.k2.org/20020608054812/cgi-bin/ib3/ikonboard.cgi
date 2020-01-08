@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+      <title>
+        
+        iB::Log In
+
+      </title>
+
+      <meta name="GENERATOR" content="Ikonboard 3.0.2a">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+      <style type='text/css'>
+<!--
+/* Base class, the rest inherit from this */
+
+TABLE, TR, TD     { font: 10px Verdana; color:#000021}
+
+BODY      { font: 10px Verdana; color:#000000; background-color: #BABBB6 }
+
+a:link, a:visited, a:active  { text-decoration: none; color: #000021}
+
+a:hover                      { text-decoration: underline; color: #4C2222; }
+
+
+
+/* Category Headers - Navigation - Misc Stuff */
+
+#category         { font-size:12px; font-weight : bold; color : #F5F5F5 }
+
+#category a:link, #category a:visited,#category a:active  { text-decoration: none; color : #F5F5F5 }
+
+#category a:hover { text-decoration: underline; color : #F5F5F5 }
+
+#nav              { font-size:12px; font-weight : bold;  }
+
+#nav a:link, #nav a:visited,#nav a:active  { text-decoration: underline; color : #000021 }
+
+#nav a:hover { text-decoration: underline; color : #4C2222 }
+
+#redirect         { font-size:11px; font-weight:bold;  }
+
+#highlight        { font-size : 10px; color : #000021 }
+
+#highlight a:link, #highlight a:visited, #highlight a:active { text-decoration: none; color:#000021 }
+
+#highlight a:hover{ text-decoration: underline; color : #4C2222 }
+
+
+
+/* Viewing Topics Stuff */
+
+#signature         { font-size:10px; color:#542524 }
+
+#postdetails       { font-size:10px; }
+
+#postcolor         { font-size:11px; line-height : 150%; }
+
+#membertitle       { font-size:10px; line-height:150%; color:#000021 }
+
+#normalname        { font-size:11px; font-weight : bold; color:#542524; padding-bottom:2px }
+
+#unreg             { font-size:11px; font-weight:bold;  color:#990000 }
+
+
+
+/* Titles n' stuff */
+
+#titlelarge          { font-size:13px; font-weight:bold; line-height:150%; color : #111111 }
+
+#titlelarge a:link, #titlelarge a:visited, #titlelarge a:active { color:#F5F5F5 }
+
+#titlemedium         { font-size:13px; font-weight:bold; line-height:150%; color:#111111}
+
+#titlemedium  a:link, #titlemedium  a:visited, #titlemedium  a:active { text-decoration: none; color : #F5F5F5 }
+
+#titlemedium a:hover { text-decoration: underline }
+
+
+
+/* Menu - Control Panel Stuff */
+
+#controlpanel    { font-size:10px; font-weight:bold; line-height:150% }
+
+#usermenu        { font-size : 13px; line-height:150%; color : #FFFFFF }
+
+#tabs            { border:1px solid #333366; vertical-align:middle; font-size: 11px; }
+
+
+
+/* Forum Links - Topic Links */
+
+#linkthru         { font-size:13px; color : #000021 }
+
+#linkthru  a:link, #linkthru  a:visited, #linkthru  a:active   { text-decoration: underline; color : #000021 }
+
+#linkthru a:hover { text-decoration: underline; color : #4C2222 }
+
+
+
+/* Copyright and bottom info */
+
+#copyright        { font-family: Verdana; font-size : 9px; text-decoration: none; line-height : 12px; color: #000000; letter-spacing: 1px}
+
+
+
+/* Ikon Code */
+
+#CODE   { font-family:Monaco, Courier, Courier New; font-size:11px; color: #000099;  background-color: #FFFFFF; border-top:#000000 thin solid;border-bottom:#000000 thin solid;border-right:#000000 thin solid;border-left:#000000 thin solid; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; width:95%;}
+
+#QUOTE  { font-family:Verdana, Arial; font-size:10px; color: #000000; background-color: #FFFFFF; border-top:#000000 thin solid;border-bottom:#000000 thin solid;border-right:#000000 thin solid;border-left:#000000 thin solid; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; width:95%;}
+
+#ME     { font-family:Verdana, Arial; font-size:12px; color: #CC0000; text-align:center; font-weight: bold; }
+
+.bottom { vertical-align: bottom }
+
+.forminput    { font-size: 8pt; background-color: #CCCCCC; font-family: verdana, helvetica, sans-serif; vertical-align:middle; COLOR: #333333 }
+
+.textinput    { font-size: 10pt; font-family: verdana, helvetica, sans-serif;vertical-align:middle; COLOR: #333333; background-color: #CCCCCC }
+
+
+//-->
+</style>
+
+      
+      
+    </head>
+
+<body bgcolor='#FFFFFF' leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" alink='#000000' vlink='#000000'>
+
+
+
+    <!-- Cgi-bot Begin Header -->
+<!-- Cgi-bot End Header -->
+    
+
+
+
+    <!-- Cgi-bot Begin Panel-->
+    <br>
+    <table cellpadding='4' cellspacing='1' border='0'  width='60%' align='center'>
+        <tr id='controlpanel'>
+            <td bgcolor="#BABBB6" valign='middle' align='right'>
+                Welcome Guest, <b><a href='http://www.k2.org/cgi-bin/ib3/ikonboard.cgi?s=3d019aa94c18ffff;act=Login;CODE=00'>Log In</a></b> :: <b><a href='http://www.k2.org/cgi-bin/ib3/ikonboard.cgi?s=3d019aa94c18ffff;act=Reg;CODE=00'>Register</a></b>
+            </td>
+        </tr>
+    </table>
+    <!-- Cgi-bot End Panel -->
+    
+
+
+        <!-- Cgi-bot Begin Navigation -->
+        <table cellpadding='0' cellspacing='0' border='0' width='60%' bgcolor='#111111' align='center'>
+            <tr>
+                <td>
+                    <table cellpadding='4' cellspacing='1' border='0' width='100%'>
+                        <tr>
+                            <td bgcolor="#BABBB6" valign='middle' id='nav'><img src="http://www.k2.org/ib3/non-cgi/Skin/SKIN-5/images/nav_img.gif" border="0"  alt="">  
+ 
+<a href="http://www.k2.org/cgi-bin/ib3/ikonboard.cgi?s=3d019aa94c18ffff">Ebonlore Forums</a> > Log In
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <!-- Cgi-bot End Navigation -->
+        
+
+
+
+     <table cellpadding='0' cellspacing='1' border='0' width='60%' bgcolor='#111111' align='center'>
+        <tr>
+            <td>
+                <table cellpadding='5' cellspacing='1' border='0' width='100%'>
+                <tr>
+                <td bgcolor='#B1B3AB' valign='top' align='left' id='highlight'><b>The following errors were found:</b><hr noshade size='1' color='#111111'>The board administrator requires that all members log in before viewing the board</td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+    <script language='JavaScript'>
+    <!--
+    function ValidateForm() {
+        var Check = 0;
+        if (document.LOGIN.UserName.value == '') { Check = 1; }
+        if (document.LOGIN.PassWord.value == '') { Check = 1; }
+        if (Check == 1) {
+            alert("Please enter your name and password before continuing");
+            return false;
+        } else {
+            document.LOGIN.submit.disabled = true;
+            return true;
+        }
+    }
+    //-->
+    </script>     
+     <br>
+     <table cellpadding='3' cellspacing='1' border='0' align='center' width='60%'>
+     <tr>
+     <td align='left'><b>Not Registered?  <a href='http://www.k2.org/cgi-bin/ib3/ikonboard.cgi?act=Reg;CODE=00'>Register Now!</a></b></td>
+     </tr>
+     <tr>
+     <td align='left'><b>Forgotton your password and/or log in details? <a href='http://www.k2.org/cgi-bin/ib3/ikonboard.cgi?act=LostPass;CODE=00'>Click here!</a></b></td>
+     </tr>
+     </table>
+     <form action="http://www.k2.org/cgi-bin/ib3/ikonboard.cgi" method="post" name='LOGIN' onSubmit='return ValidateForm()'>
+     <input type='hidden' name='act' value='Login'>
+     <input type='hidden' name='CODE' value='01'>
+     <input type='hidden' name='s' value='3d019aa94c18ffff'>
+     <input type='hidden' name='referer' value="">
+     <table cellpadding='0' cellspacing='0' border='0' width='60%' bgcolor='#111111' align='center'>
+        <tr>
+            <td>
+                <table cellpadding='3' cellspacing='1' border='0' width='100%'>
+                <tr>
+                <td background="http://www.k2.org/ib3/non-cgi/Skin/SKIN-5/images/bar2.gif" bgcolor='#BABBB6' align='left' colspan='2' id='titlelarge'>Please enter your details below to log in</td>
+                </tr>
+                <tr>
+                <td bgcolor='#BABBB6' width='40%'>Please enter your name</td>
+                <td bgcolor='#BABBB6'><input type='text' size='20' maxlength='64' name='UserName' class='forminput'></td>
+                </tr>
+                <tr>
+                <td bgcolor='#BABBB6' width='40%'>Please enter your password</td>
+                <td bgcolor='#BABBB6'><input type='password' size='20' name='PassWord' class='forminput'></td>
+                </tr>
+                <tr>
+                <td background="http://www.k2.org/ib3/non-cgi/Skin/SKIN-5/images/bar2.gif" bgcolor='#BABBB6' align='left' colspan='2' id='titlelarge'>Options</td>
+                </tr>
+                <tr>
+                <td bgcolor='#BABBB6' width='40%' align='left' valign='top'><b>Remember my log in details?</b><br>If enabled, you will be automatically logged in again when you visit</td>
+                <td bgcolor='#BABBB6' width='40%'><input type="radio" name="CookieDate" value="1" checked>Yes<br><input type="radio" name="CookieDate" value="0">No</td>
+                </tr>
+                <tr>
+                <td bgcolor='#BABBB6' width='40%' align='left' valign='top'><b>Privacy</b>, do you want to appear on the active users list?</td>
+                <td bgcolor='#BABBB6' width='40%'><input type="checkbox" name="Privacy" value="1">Don't add me to the active users list</td>
+                </tr>
+                <tr>
+                <td bgcolor='#DFDFDF' align='center' colspan='2'>
+                <input type="submit" name='submit' value="Log me in" class='forminput'>
+                </td></tr></table>
+                </td></tr></table>
+                </form>
+
+
+
+
+<!-- iB Copyright Information -->
+
+<p><table width='80%' align='center' cellpadding='3' cellspacing='0'><tr><td align='center' valign='middle' id='copyright'>&copy; 2002 K2 Consulting<br>Powered by <a href="http://www.ikonboard.com" class="copyright" target='_blank'>Ikonboard</a> 3.0.2a &copy; 2001 <a href='http://www.ikonboard.com' target='_blank'>Ikonboard</a></td></tr></table><p>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Worthless Wonders Home Page</title>
+<SCRIPT LANGUAGE="JavaScript"> 
+<!-- 
+
+// Script to generate proper tags for MIDI playing, preferably with Crescendo.
+// Note: spaces inside quotes *are* significant and should not be deleted.
+// modified version 1.1 -- See http://www.liveupdate.com/playmidi.html.
+
+function PlayMIDI(SongURL) // Copyright (C) 1996 LiveUpdate division of LABTECH 
+                           // Permission for use granted to all music lovers on the net 
+{
+  var WriteLegend = "yes"        //  Change to "no" if you don't want legend.
+  var PlayIfNoCrescendo = "no"   // Change to "yes" to try to play if Crescendo is not present.
+  var NotCrescendo = "You don't have Crescendo, the <B>only</B><BR>" +
+        "streaming MIDI player for the web.<BR>" +
+        "<B><A HREF='http://www.liveupdate.com/dl.html'>Download Crescendo now</A> -- it's free!</B>"
+  var CrescendoIsPresent = "no"
+  var CrescendoIndex = 0
+  var CrescendoVersion = ""
+  var Legend = ""
+  var DocString = ""
+
+  document.open();
+  if (navigator.appName == "Netscape") {                  // Find out if the browser is Navigator.
+    var NSMajorVersion = navigator.appVersion.charAt(0)   // Find major version number.
+    if (NSMajorVersion > "2") {                           // Is major version greater than 2?
+      // This is version 3 of Netscape (or greater).
+      // See if Crescendo is present.
+      for (var i = 0; i < navigator.plugins.length; i++) {
+        if (navigator.plugins[i].name.substring(0,20) == "LiveUpdate Crescendo") {
+          CrescendoIsPresent = "yes"
+          CrescendoIndex = i
+          CrescendoVersion = 
+            navigator.plugins[i].name.substring(21,navigator.plugins[i].name.length)
+          break
+          }
+      }
+      if (CrescendoIsPresent == "yes") {
+        if (navigator.plugins[CrescendoIndex][0].type == "music/crescendo") {
+          // This is version 2.3 of Crescendo or greater.
+          DocString = '<EMBED TYPE="music/crescendo" '
+          DocString = DocString + 'SONG="' + SongURL + '" '
+          Legend = "This is Crescendo " + CrescendoVersion
+                   //  " running on Netscape " + NSMajorVersion
+          if (CrescendoVersion.length > 5)
+             Legend = Legend + " with auto-detach."
+        } else {
+          // This is a pre-2.3 version of Crescendo.
+          DocString = '<EMBED SRC="' + SongURL + '" '
+          Legend = "This is a pre-2.3 version of Crescendo -" +
+            " running on Netscape " + NSMajorVersion + ".<BR>" +
+            "<B><A HREF='http://www.liveupdate.com/dl.html'>Upgrade Crescendo now</A> -- it's free!</B>"
+        }
+      } else {
+        if (PlayIfNoCrescendo == "yes") {
+          // This is some other plug-in besides Crescendo, so use MIME type to load the first
+          // MIDI plug-in that matches the file's MIME type or, if the file MIME type is 
+          // not matched by any plug-in, Mplayer.exe will be OLE-embedded on Windows.
+          DocString = '<EMBED SRC="' + SongURL + '" '
+        }
+        Legend = NotCrescendo
+      }
+    } else {
+      // This is version 2 of Netscape, so use MIME type to load the first
+      // MIDI plug-in that matches the file's MIME type or, if the file MIME type is 
+      // not matched by any plug-in, Mplayer.exe will be OLE-embedded on Windows.
+      DocString = DocString + 'SRC="' + SongURL + '" '
+      // Legend = "This could be any MIDI plug-in, or the Windows Media Player."
+      Legend = NotCrescendo
+    }
+    if (DocString.substring(0,6) == "<EMBED") {
+      DocString = DocString + 'PLUGINSPAGE="http://www.liveupdate.com/dl.html" ' 
+      DocString = DocString + 'HEIGHT=55 WIDTH=200 '   // Use HEIGHT=2 WIDTH=0 for invisible.
+      // Optional Crescendo parmeters -- See http://www.liveupdate.com//cpauth.html for docs.
+      // DocString = DocString + 'AUTOSTART="false" ' // Uncomment this for no autostart.
+      // DocString = DocString + 'DELAY=5 '           // Uncomment this for start delay (5 s).
+      // DocString = DocString + 'BGCOLOR="#000000" ' // Uncomment this for black color.
+      DocString = DocString + 'DETACH="true" '     // Uncomment this for auto-detach.
+      DocString = DocString + '>'
+    }
+
+  } else {   // Find out if the browser is Microsoft Internet Explorer 3.0 or greater.
+    if (navigator.appName == "Microsoft Internet Explorer") {
+       // Load the ActiveX version of Crescendo or Crescendo PLUS if it's installed.
+          DocString = '<OBJECT ID=Crescendo '
+          DocString = DocString + 'CLASSID="clsid:0FC6BF2B-E16A-11CF-AB2E-0080AD08A326" '
+          DocString = DocString + 'CODEBASE="http://activex.liveupdate.com/controls/cres.cab#Version=2,3,0,35" '
+          DocString = DocString + 'HEIGHT=55 '
+          DocString = DocString + 'WIDTH=200>'
+          DocString = DocString + '<PARAM NAME="Song" VALUE="' + SongURL + '">'
+          // Optional parmeters -- See http://www.liveupdate.com//cpauth.html for docs.
+          // DocString = DocString + '<PARAM NAME="AUTOSTART" VALUE="false">'
+          // DocString = DocString + '<PARAM NAME="DELAY" VALUE="5">'
+          // DocString = DocString + '<PARAM NAME="BGCOLOR" VALUE="#000000">'
+          DocString = DocString + '<PARAM NAME="DETACH" VALUE="true">'
+
+          // If the ActiveX Crescendo is not installed, this EMBED tag will cause MSIE
+          // to load any Netscape plug-in that is associated with *.MID files.
+          // The browser will only "see" this EMDED tag if the ActiveX Crescendo is not 
+          // registered.  This is for versions of MSIE that don't see <OBJECT> but do see <EMBED>.
+          DocString = DocString + '<EMBED SRC="' + SongURL + '" '
+          DocString = DocString + 'PLUGINSPAGE="http://www.liveupdate.com/dl.html" '
+          DocString = DocString + 'HEIGHT=55 WIDTH=200>'
+          DocString = DocString + '</OBJECT>'  // Close the OBJECT tag.
+    } else {
+
+      // The browser may be Netscape 1.x, or MSIE 2.0, or some other browser.  For MSIE 2.0,
+      DocString = DocString + '<BGSOUND SRC="' + SongURL + '">' + '<BR>'
+      }
+  }
+  DocString = DocString + "\n"
+  document.write(DocString)
+  // Write legend.
+  if (WriteLegend == "yes")  document.write("<BR><FONT SIZE=-1>" + Legend + "</FONT>")
+  document.close()
+}
+//--> 
+</SCRIPT></head>
+
+<body bgcolor="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF">
+
+<p align="center"><font size="2"><strong>[This site is best
+viewed at 800x600 resolution with thousands of colors...]</strong></font></p>
+
+<p align="center"><SCRIPT LANGUAGE="JavaScript"><!--
+
+PlayMIDI('jazzy.mid')
+
+//--></SCRIPT></p>
+
+<p align="left"><img src="welcome.jpg" align="absmiddle"
+width="192" height="34"></p>
+
+<p align="center"><img src="wonders.jpg" align="absmiddle"
+width="480" height="67"></p>
+
+<p align="center"><img src="icon.gif" align="absmiddle"
+width="96" height="96"><img src="useless.jpg" align="absmiddle"
+width="250" height="50"><img src="icon.gif" align="absmiddle"
+width="96" height="96"></p>
+
+<p align="center"><img src="homerule.jpg" width="575" height="15"></p>
+
+<blockquote>
+    <blockquote>
+        <p>Hello, I am your host, Sean McKay (aka Cynical_1) and
+        this is my personal home page. I named my home page such
+        because that's what I feel it is. Most home pages are
+        interesting to only a small subset of the internet world,
+        and to the rest it is completely trivial and useless.
+        Therefore, I make no claims that my pages are anything
+        other than what they truly are... Worthless Wonders... </p>
+    </blockquote>
+</blockquote>
+
+<blockquote>
+    <blockquote>
+        <p>Now, I am not sure what you're doing here. Obviously
+        you are like me and enjoy wasting your time. 8^)
+        &nbsp;But while you're here, go ahead and peruse my
+        pages. Learn a little about myself and my family
+        (especially Connor, our son, born on April 26, 1996), my
+        favorite hobbies, and my academic work, which
+        unfortunately is still ongoing.... Enjoy! </p>
+    </blockquote>
+</blockquote>
+
+<p align="center"><img src="homerule.jpg" width="575" height="15">
+</p>
+
+<p align="center"><img src="menu01.jpg" width="432" height="32"><br>
+<img src="menu02.jpg" width="92" height="77"><a href="mckay.htm"><img
+src="menu03.jpg" border="0" width="247" height="77"></a><img
+src="menu04.jpg" width="93" height="77"><br>
+<img src="menu05.jpg" width="50" height="73"><a
+href="academic.htm"><img src="menu06.jpg" border="0" width="331"
+height="73"></a><img src="menu07.jpg" width="51" height="73"><br>
+<img src="menu08.jpg" width="39" height="70"><a
+href="vidgames.htm"><img src="menu09.jpg" border="0" width="351"
+height="70"></a><img src="menu10.jpg" width="42" height="70"><br>
+<img src="menu11.jpg" width="432" height="39"></p>
+
+<p align="center"><img src="homerule.jpg" width="575" height="15">
+<br>
+</p>
+
+<blockquote>
+    <blockquote>
+        <p><a href="mailto:jsmckay@enteract.com"><img
+        src="mailbutn.gif" align="left" border="0" hspace="0"
+        width="96" height="96"></a>Well, if you're here I guess
+        you have no semblance of what we call a &quot;life.&quot;
+        &nbsp;8^) Nevertheless, I'm glad you're here. So browse
+        around, and if you have any comments or suggestions about
+        these pages, just click on the &quot;Mail Me!!&quot; icon
+        and send me a note... <br>
+        <br>
+        <br>
+        </p>
+    </blockquote>
+</blockquote>
+
+<p align="center"><img src="homerule.jpg" width="575" height="15"></p>
+
+<p align="center">This site is best viewed/listened to with <a
+href="http://home.netscape.com/comprod/mirror/index.html"><img
+src="netnow3.gif" align="absmiddle" width="88" height="31"></a>
+&nbsp;or with &nbsp;<a href="http://www.microsoft.com/ie/"><img
+src="ielogo.gif" align="absmiddle" border="0" width="88"
+height="31"></a>. </p>
+</body>
+</html>

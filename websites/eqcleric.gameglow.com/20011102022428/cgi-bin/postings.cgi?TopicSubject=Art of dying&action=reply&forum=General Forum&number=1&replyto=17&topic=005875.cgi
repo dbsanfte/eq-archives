@@ -1,0 +1,192 @@
+<HTML><HEAD><TITLE>EQ Cleric - Forums - Reply to Topic</TITLE>
+
+</HEAD>
+ <BODY bgcolor="#FFFFFF"  text="#000000" link="#000080" alink="" vlink="#2f2f4f" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<center>
+<!--- Start Everyone.net network logo, no edit without explicit permission from Everyone.net -->
+<!--- <A HREF="http://onlinegames.everyone.net">
+<img src="http://static.everyone.net/adservice/images/games/onlinegames.gif" border="0" width="100" height="60"></A> -->
+  
+<!--- End Everyone.net network logo -->
+  
+<!--- Start Everyone.net banner, no edit without explicit permission from Everyone.net -->
+<!--- <iframe
+src="http://engage.everyone.net/hserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?"
+noresize scrolling="no" hspace="0" vspace="0" frameborder="0"
+marginheight="0" marginwidth="0" width="468" height="60">
+<script
+src="http://engage.everyone.net/jserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+</script>
+<noscript>
+ <a
+href="http://engage.everyone.net/adclick/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+  <img
+src="http://engage.everyone.net/iserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+</noscript>
+</iframe> -->
+<!-- End Everyone.net banner -->
+</center>
+</font>
+<table border=0 width=95%>
+<TR><TD>
+<A HREF="Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://eqcleric.gameglow.com/ubb/EQC-BBTitle.jpg"  BORDER=0></A></td>
+<td align=center>
+
+<table border=0>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Forum:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">General Forum</FONT></td></tr>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Topic:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Art of dying</FONT></td></tr></table>
+
+</td></tr></table>
+<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://eqcleric.gameglow.com/cgi-bin/Ultimate.cgi?action=agree">Want to register?</a></FONT>
+
+<FORM ACTION="postings.cgi" NAME="REPLIER" METHOD="POST">
+<center>
+
+<table border=0 cellpadding=4 cellspacing=1 width=95%>
+<tr bgcolor="#D5E6E1">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Who Can Post?
+</font>
+</td>
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Any registered users may post a reply.
+</font>
+</td></tr>
+
+<tr bgcolor="#D5E6E1">
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+About Registration
+</font></td><td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+You must be registered in order to post a topic or reply in this forum.</font></td></tr>
+<tr bgcolor="#dedfdf"><td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your UserName:</B></FONT></td>
+<td valign=top>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td>
+</tr>
+
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Password:</B></FONT></td>
+<td valign=top><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="Ultimate.cgi?action=lostpw">Forget your password?</A></font></td></tr>
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Message Icon:</B></FONT></td>
+<td><INPUT type="radio" name="MsgIcon" value="1" CHECKED>&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon1.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="10"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon10.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="11"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon11.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="12"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon12.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="13"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon13.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="14"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon14.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="2"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon2.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR><INPUT type="radio" name="MsgIcon" value="3"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon3.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="4"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon4.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="5"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon5.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="6"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon6.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="7"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon7.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="8"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon8.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="9"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon9.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR></td></tr>
+<TR bgcolor="#dedfdf"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Reply:</B></FONT>
+<p><BR>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#2f2f4f">
+*HTML is ON<BR>
+<A HREF="http://eqcleric.gameglow.com/ubb/ubbcode.html" target=_blank>*UBB Code is ON</A><BR>
+<p><A HREF="http://eqcleric.gameglow.com/ubb/smilies.html" target=_blank>Smilies Legend</A></font>
+</td>
+<td>
+<TEXTAREA NAME="ReplyMessage" ROWS=10 COLS=45 WRAP="VIRTUAL">[QUOTE]Originally posted by Caleal:
+[B]A few more for the list, not sure how many points to give.  =)
+
+Wizard low on live cating a rain spell on a pack of MOBs, and getting summoned into the rain by one of them.
+
+Cleric(me) casting stun command on a group of 4 level 51+ MOBs, they all resist, I don't... causing me to spend 7 seconds being beat on by 4 MOBs, well, ok, 6 secons, died before stun was gone.  =)
+
+Cleric(me) casts divine light on a paladin then starts CH on a warrior. MOB that hits for 500ish didn't like the DL so he flurries on me 2x, I regain concentration on the CH, warrior is healed, the MOB then kicks me for 49 damage and I die.
+
+Olden days of PoF, before PoH opened, when we were all level 50 and bord. Puller dies bringing a worry wraith to camp. Cleric(me) being eager to see worry wraiths die, runs out to bring it the rest of the way in. Little did I know that Dracolich was hiding just over a little rise and was in agro range. I ran all the way back to camp before someone pointed out that Dracolich was on my tail. 30+ people died, all were unbuffed and some not even looted, we were doing CR from a train. Oh, kicker is, I was the only survivor. =0
+
+Trak raid fun:
+Cleric(me) only group member to die, after casting word of restoration 1 time mid fight.
+
+Cleric(me) only group member to die, mid fight, had cast 0 spells, only thing I did to Trak was resist his poosae AE and stand on his tail.
+
+Cleric(me) only group member to die, mid fight, cast word of restoration once, blinded, ported to shrooms. Regained sight in time to realize I had one bubble of health and had used all my mana spamming word of restoration on myself. Cast DA, stood there for 18 seconds, danced with a bard that got ported to shrooms then died.  =)
+[/B][/QUOTE]
+
+</TEXTAREA>
+</td></tr>
+<TR bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<B>Options</B>
+</FONT></td>
+<td valign=top><FONT SIZE="1" FACE="Verdana, Arial">
+<BR><INPUT TYPE="CHECKBOX" NAME="DisableSmilies" VALUE="yes"> <B>Disable Smilies in This Post. <BR><INPUT TYPE="CHECKBOX" NAME="Signature" VALUE="yes"> <B>Show Signature:</B> include your profile  signature.  Only registered users may have signatures.
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="postreply">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Art of dying">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="General Forum">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="1">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="005875.cgi">
+<CENTER>
+ <FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+<P>
+If you have previously registered, but forgotten your password, <A HREF="Ultimate.cgi?action=lostpw">click here</A>.
+</font>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Reply">
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<P>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#FF0000">*If HTML and/or <A HREF="http://eqcleric.gameglow.com/ubb/ubbcode.html" target=_blank>UBB Code</A> are enabled, this means you can use HTML and/or UBB Code in your message.</FONT>
+<br>
+<P><FONT SIZE="2" FACE="Verdana, Arial">
+<TABLE BORDER=0 cellpadding=4 border=0 cellspacing=1 WIDTH="95%"><TR bgcolor="#D5E6E1"><TD COLSPAN=2><CENTER><FONT SIZE="2" COLOR="#000080" FACE="Verdana, Arial">T O P I C  &nbsp;&nbsp;&nbsp; R E V I E W</font></CENTER></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Saarem</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Recently I have been hearing reports of deaths occuring among the populace of Norrath. Not only do more and more deaths occur each day, but these are being accomplished in an extremely shoddy and amateurish fashion.<P>After over a year of effort, constantly polishing my style, I have come up with a point system that I believe may help improve the quality of deaths in Norrath. The point system is primarily based on style, with higher scores indicating better performance. It is my aim to edify the general populace and perhaps point out a few style enhancements that may prove worthwhile.<P>The point system starts out with a base of Zero (being the basic newbie death) and extends upwards. It is not a fixed system, so particularly noteworthy style issues may be allotted extra points. Remember to add or subtract all point scores that apply.<P>General (Any class)<BR>Inches from zone line: +20<BR>Massive train: +10<BR>You were helping someone when massive train occurs behind you: +10<BR>Trying to solo something completely impossible and (almost) succeeding: +30<BR>Causing a massive train, which kills you along with others: -10/person<BR>Causing massive train, but dying before the train gets anywhere (thus only YOU die) +10<BR>Having your "Train to Zone! message interrupted by death: +10 points.<BR>Having your second "Train to Zone! message interrupted, but getting first one out: +20<BR>Getting lost while trying to zone: +5<BR>Getting lost spectacularly (IE going in the opposite direction from zone): +15<BR>Losing camo or invisibility while in an area populated by more than 3 mobs over 3 levels higher than you: +30<BR>Smacking into a door that has just closed in front of you in a cartoonish fashion on the way to the zone: +40<BR>Falling into Lava: +20<BR>Falling into Lava while trying to retrieve the corpse you lost in the lava: +30<BR>Falling into Lava while trying to retrieve another person's corpse lost in lava: +50<BR>Falling into Lava because you didn't noticed the levitation Icon was blinking: +20<BR>Bonus for original witty remark on the way down (Hot time in the old town tonight and other cliches do NOT count, while "Wheeeee!" may, depending on review of death): +40<BR>Actually zoning, but dying immediately on the other side: +100<BR>Any witty remark ("It's only a flesh wound!" may result in a penalty) just before death: +20<BR>Everyone else in your area went LD when the BIG SPAWN occurs: +40<BR>...if you make a witty remark anyway, an additional: +10<BR>...if anyone in your party gets back in time to hear it: +50<BR>A heal gets off just as the LOADING, PLEASE WAIT message appears: +20<P>Healer Types:<BR>You were tanking: -30<BR>You weren't planning to tank: +20<BR>You manage to get a heal off on yourself before dying: +10<BR>You manage to get a heal off on someone else before dying: +30<BR>The heal you got off is what caused you to die: +10<BR>Everyone else survived: +10<BR>Got bored and decided to pull: -40<BR>(Druids only) Evaccing party and healing the member who's hitpoints suddenly plummet, not reaizing the druids and treeants around are responsible: +50<BR>...if rest of party survives: +60<P>Caster types:<BR>DoT'd self accidentally: -30<BR>...if you manage to get an original witty remark off before you die: +10<BR>...if the DoT kills you after you zone or the partie's safety is ensured: +30<BR>Nuked Self: -20<BR>...if you manage to get an original witty remark off before you die ("Oops!" or "D'oh!" may result in a penalty): +10<BR>Repeated death due to binding badly: +20 per death<BR>Lost level due to binding badly: +5 per level<BR>Managing an original witty remark before dying: +30 per successful remark<BR>...if each makes sense in relation to the others (ie Ack! This Really isn'thelping me level: +20 per completed phrase<P>Melee types (may include casters of any type who decide to melee)<BR>Forgot to get buffs: -10<BR>Tried to get buffs but failed (caster OOM or not available): +15<BR>Manage to get a critical hit as you fall: +40<BR>Getting trained while pulling: +20<BR>Bringing full train to party while dying: -10 per member that dies<BR>Bringing full train all the way to the zone, turning to fight, and suddenly realizing there are a LOT more than you started with: +30<BR>Managing to bind wounds successfully before dying to the next train: +35<BR>Breaking an enchanter's mez against their wishes: -30<BR>...if the enchanter is really annoying and they get killed: +10 for each person who's game experience is thus enhanced.<P>Enchanting types:<BR>Mezmerizing self: -20 points<BR>...because someone dragged mob closer than they should have been: +30<BR>Saving entire party only to be killed by all the mezzed mobs: +60<BR>...if you manage an original witty remark about it: +20<BR>...if you nearly make it to safety: +20<P>Leader types:<BR>Killing new members within 5 minutes of being in guild: +20 per new member<BR>...each additional death while recovering corpses: +10<BR>...if the person is the bard tracking your corpse: +30<BR>...bonus if it's a married couple: +5<P>Puller types:<BR>getting lost on way back to group: +10<BR>...starting huge train in the progress: +15<BR>...eventually finding the group, bringing the train: +20<BR>...bonus for killing every member of the party: +30<P>As you can see, this is still very much a work in progress. Of course, discovering all the nuances involved in the art of dying will be the work of many years and may not be attainable at all, yet I have undertaken to make it my life's work. Many do not understand this subtle art yet and seem to see each death as a bad thing, not the opportunity for improvement and character development that it really is. My personal best score on this scale so far is 185.<P>So, print this list out, all, and start working on your form! No more will death be reviled... soon, really good deaths will get the respect they deserve.<P>Author: Ferralis "Instadeath" Wildwood</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Tarf</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">This is an excellent list and I think it merits careful consideration.  I would like to see attention given to the following situations:<P>Medding at the zone, being trained and killed and shouting "Thanks for the train"  points: -50<P>Any death resulting from rooting or snaring oneself should be +30 points.<P>Druids and Wizards should get -10 for evaccing anyone KoS to the druids to an unfriendly port spot<P>I think due consideration should be given to famous last words sorts of things being said prior to the death event beginning:  No problem, I can DA if things go bad.  Then, when things do go bad and DA is attempted or accomplished, and it still does no good, -25<P>I once doubted our evaccers abilitiy to get an evac off.  Accordingly, as her health was reduced toa  sliver I punched DA and sat down to mem gate.  As I stood up and stood waiting for the Gate icon to clear I realised that the others were all gone.  They didn't evac by much, but they did evac.  As it happens, I was able to channel through a gate with the last of my mana. However, a death in these circumstances should be positive or negative points, I am just not sure which.<P>Thank you for this work in progress, I enjoyed it very much<P>Tarf</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Cenge</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial"> <BLOCKQUOTE><font size="1" face="Verdana, Arial">quote:</font><HR>Originally posted by Tarf:<BR><B>I once doubted our evaccers abilitiy to get an evac off.  Accordingly, as her health was reduced toa  sliver I punched DA and sat down to mem gate.  As I stood up and stood waiting for the Gate icon to clear I realised that the others were all gone.  They didn't evac by much, but they did evac.  As it happens, I was able to channel through a gate with the last of my mana. However, a death in these circumstances should be positive or negative points, I am just not sure which.<BR></B><HR></BLOCKQUOTE><P>I would have to say neg a few points.  I mean you are in a group and you don't think they are goign to get you out.  Ohh ye of little faith.<P>Neg even more points if ya actualy die because of it  <IMG SRC="http://eqcleric.gameglow.com/ubb/wink.gif"> hehe<P>------------------<BR>Do I look like a "happy" healer to you? ~ Cenge</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Cenge</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Let me clear that up, neg points if you die, neg even more points if you fiz out of mana and die.<P>------------------<BR>Do I look like a "happy" healer to you? ~ Cenge</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Armag</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Hehe, pretty funny, he's few<P>Taunting a lvl 51 gnoll, cause your favorite cleric hit "a" while trying to talk to him: +10<BR>You favorite cleric is able to gate and zone: +20<P>Falling for 1000+ damage of the ramp in EK: -10<BR>If you were running up the ramp while drunk and almost made it to the top: +20<P>Thinking Dvinn won't follow you into the moat after you cast DA: +5<P>Druid/Ranger types:<BR>Snared self instead of casting SoW: +5<BR>You were kiting something: +5<BR>What you were kiting was a sand giant and some drybone friends: +20<BR>Root self instead of casting damage shield: +5<BR>You are able to recast damage shield: +5<BR>The damage shield does more damage than your weapons/spells: +10<P>------------------<BR>Armag Eden<BR>Cleric of the 39th Life<BR>Canaras Swiftarrow<BR>Pathfinder<BR>Arias'Tama<BR>Fennin Ro</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Dikmer</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I got one that may be impossible at my level now, but I did once.<P>Cast a heal on a tank during a train in Split Paw, went to DA myself and didnt have enough mana!!<P>What is DA? 10 mana?!?<P>Well, I lived long enough to get the mana to DA and zone.</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Kimbera</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">How many points for getting into an argument with the paladin about who gets to stay and take the death?</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Huffadopolis</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">+20 if you both die due to the time spent arguing<P>------------------<BR>Huffadopolis Polychronopolis<BR>Level 52 Halfling Vicar<BR>Arma Aquetatis<BR>Lanys T`Vyl</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Mahtan Honorshield</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">There are way too many negative points for killing off the entire party...:-)<P>I would like to add:<BR>Die because gate fails to go off...<BR>...since you're not standing up, due to being unconscious: 100p.<BR>...due to it being unstable and collapsing: 20p.<BR></FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Fhylden</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">How about....<P>Bards:<BR>If a party member dies because he/she got too far from the bard and lost Selos/Invis/EB/lev/etc: +20 per group member</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Linky DeVir</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I've seen that list somewhere else beofore.</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Copperhead</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">You just pulled to camp and start whacking the mob only to find that you have no group. +20 or so<BR>..That happened because the group changed camp spots--AT YOUR OWN SUGGESTION. -50 or so<P>Copperhead Fang --The Imperial Order--<BR>Grandmaster, Ayonae Ro<BR></FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Cenge</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">You DA and jump, only to have DA run out before you hit the ground. -100<P>My friend did this... he forgot he had levitate on, so he pops off a DA and steps off.<P>Him "Hey, I'm floating."<BR>Me "levitate"<BR>Him "oh yea"<BR>*waits a sec*<BR>*pop, he starts to fall*<BR>Him "**** DA wore off"<P>That was so stupid of him.  Alteast he didn't lose EXP =p<P>------------------<BR>Do I look like a "happy" healer to you? ~ Cenge</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">KamuelaTZ</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">How many points do I get for killing myself with a mod rod while rezing a wiped out raid?<P>How many more do I get for doing it again 2 minutes later?<P>------------------<BR>Teir' Dal Vicar<BR>Tallon Zek</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Talura cwn'Zeylon</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I've done something like the modrod thing...sitting at the zone in MM, playing around (with rez effects still on) with a Kevorkian stone, got down to about 3 hp, start to cast a heal... "Train to zone!!!" Oh bugger...  <IMG SRC="http://eqcleric.gameglow.com/ubb/frown.gif"> My friend who rezed me was someplace between amused and annoyed. =P</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Talura cwn'Zeylon</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Grr. double-double lag-lag post-post.  <IMG SRC="http://eqcleric.gameglow.com/ubb/frown.gif">  <IMG SRC="http://eqcleric.gameglow.com/ubb/frown.gif"><p>[This message has been edited by Talura cwn'Zeylon (edited 04-03-2001).]</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">GooberPrime</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Died in the pit in Mistmore last night.  Here's my score (note I had to add a few things to the list..).<P>Inches from zone line: +20<BR>Massive train: +10<BR>You weren't planning to tank: +20<BR>Trained on by another team: +20 (new)<BR>Did not have gate memmed: -40 (new)<BR>Landed at bind spot to find half of Neriak, Grobb, and Oggok raiding lesser faydark: +30 (new)<P>That's not too bad I guess...<P>(One caster in my group lived, but died to the Darkie hoarde)<P><BR>-------------------<BR>* Jowfus Stonemender 31 Cleric Tallon Zek (PVP Teams)<BR>* Me 27 Computer Programmer LA (PVP Gangs)</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Caleal</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">A few more for the list, not sure how many points to give.  =)<P>Wizard low on live cating a rain spell on a pack of MOBs, and getting summoned into the rain by one of them.<P>Cleric(me) casting stun command on a group of 4 level 51+ MOBs, they all resist, I don't... causing me to spend 7 seconds being beat on by 4 MOBs, well, ok, 6 secons, died before stun was gone.  =)<P>Cleric(me) casts divine light on a paladin then starts CH on a warrior. MOB that hits for 500ish didn't like the DL so he flurries on me 2x, I regain concentration on the CH, warrior is healed, the MOB then kicks me for 49 damage and I die.<P>Olden days of PoF, before PoH opened, when we were all level 50 and bord. Puller dies bringing a worry wraith to camp. Cleric(me) being eager to see worry wraiths die, runs out to bring it the rest of the way in. Little did I know that Dracolich was hiding just over a little rise and was in agro range. I ran all the way back to camp before someone pointed out that Dracolich was on my tail. 30+ people died, all were unbuffed and some not even looted, we were doing CR from a train. Oh, kicker is, I was the only survivor. =0<P>Trak raid fun:<BR>Cleric(me) only group member to die, after casting word of restoration 1 time mid fight.<P>Cleric(me) only group member to die, mid fight, had cast 0 spells, only thing I did to Trak was resist his poosae AE and stand on his tail.<P>Cleric(me) only group member to die, mid fight, cast word of restoration once, blinded, ported to shrooms. Regained sight in time to realize I had one bubble of health and had used all my mana spamming word of restoration on myself. Cast DA, stood there for 18 seconds, danced with a bard that got ported to shrooms then died.  =)<P>------------------<BR>Caleal P`Terak<BR>BATTLE CLERIC of Innoruuk<BR>Cazic-Thule server<BR>Officer, Shadowed Soul</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Eloren</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I've got a good one!<P>Your 3 parties zone into Fear, get annihilated. You manage to camp invis in the corner.<P>You log back in and the only other living guy, the ranger who invised you to camp suddenly loses invis, aggroing multiple Clerics of Innoruk!  After the finish beating him down you suddenly realize they see you too!<P>You didn't have either DA memmed.<P>You have gate memmed!<P>You begin to cast Gate.<BR><insert cleric being pummelled for 4 bubbles of health here><BR>You regain your concentration and continue casting!<BR><LOADING PLEASE WAIT> (You begine laughing in insane hysterical relief)<BR>You have entered Nagafen's Lair.<BR>DOH!<BR>Helloooo there Mr Fire Giant Wizard!<P>I had forgotten I had bound myself right outside Nagafen's room for a dragon hunt the night before...Never have you seen happiness turn to horror so quickly!</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Hinanar</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">In a Vox raid - falling down a hole and getting killed by the mobs below when trying to chase Vox. +50<BR>You were tanking: -30<BR>You weren't planning to tank: +20<P>------------------<BR>Hinanar Goodhammer<BR>Vicar of Brell Seliris<BR>Cazic-Thule Server<BR>Guild of Albion "Death before Dishonour!"<P>'Clerics can tank...we're just no good at dealing damage'<p>[This message has been edited by Hinanar (edited 04-03-2001).]</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Gabriel</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">How would this death rate...<P>I'm grouped with a mage and we're fighting bandits about 4-6 levels higher than ourselves. Mage thought we could take them, and rushes in. <P>Next thing I know, the mage is down to less than a bubble of health, so I start casting those heals. Mage manages to escape since the bandits are now pummelling me!<P>I cast divine armor as my health drops rapidly. Next thing I know I'm unconsous on the ground while six bandits are hacking away at me and ..but you are INVULNERABLE shows. I remain unconsous throughout and promptly die when the divine armor disipates.</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Kasm Suvarov</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Not sure if its been posted but:<BR>  Landing a divine AFTER you are knocked unconcious:<P>You begin casting Divine Aura<BR>YOU have been hit by mob X for 110 damage!<BR>YOU have been knocked unconcious by mob X!<BR>You are surrounded by a divine aura<BR>+50<P>Happened to me before  <IMG SRC="http://eqcleric.gameglow.com/ubb/frown.gif"><P>Also:<BR>forgetting you switched the macro on your heal, so when you think youre casting cheal at a critical time, you actually cast retribution, with a 7 second cast, thus dooming the tank.<BR>-50<P>Stunning yourself off a ledge to death.<BR>-30<P>Going afk while underwater for a few minutes, forgetting your limited breating ability.<BR>-40<P>Trying to run from a mob but not realize that you have walk, not run selected, resulting in a death not far from where you started to flee<BR>-15<P>Trying to solo while anything less than FM<BR>-60<P>Kasm Suvarov<BR>54th Cleric<P></FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">KarekSolRo</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">How about....<P>Pulling about 12 frogs on your team<BR>Tanking and Urd Ghoul wizard and going DA<BR>Group evacs <BR>You self gate but forgot you bound at zone<BR>Urd wizard begins to cast a spell<BR>Urd wizard dies to dot<BR>You have been slain (Inches from the zoneline) by an Urd ghoul wizard's corpse?<P><P>------------------<BR>Karek Kaedotik<BR>High Priest of Karana<BR></FONT></TD></TR></TABLE>
+</FONT>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.ReplyMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+<P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:Rayne@gameglow.com">Contact Us</A> | <A HREF="http://eqcleric.gameglow.com" target=_top>EQ Cleric</A>
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board (UltimateBB), Version 5.43a<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>

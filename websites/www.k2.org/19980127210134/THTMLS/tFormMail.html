@@ -1,0 +1,346 @@
+<document type=html3>
+
+
+<META Document ID=Enteract2.0>
+<!-- tFormMail.html -->
+<!-- (c) Copyright 1996, Enteract -->
+<!-- Document created by Dovetail Web Design -->
+<!-- http://www.enteract.com/~spooky/WebDesign/WebDesign.html -->
+
+<!-- Change History:  ------------->
+<!-- 3/20/96 Site created -->
+
+
+
+
+<HTML>
+
+<HEAD>
+	<TITLE>Enteract User's Only</TITLE>
+</HEAD>
+
+
+<BODY bgcolor="#ffffff" text="#110860" link="#0ga214" vlink="#a20g14">
+
+
+
+<BR><BR><BR>
+
+
+
+<h1><center>Forms without scripting!</center></h1>
+<p>
+Some of the possible uses of this script are:
+<p>
+<ol>
+<strong><li></strong>You want to have a form that will be mailed to you, but aren't sure how to 
+   write the scripting for it.
+<strong><li></strong>Want to have one script to parse all of your html forms and mail them 
+   to you.
+</ol>
+<p>
+<p>
+
+<p>
+<h2>Setting Up the FormMail Script:</h2>
+
+
+
+        <li>Form Configuration:
+
+
+The action of your form needs to point towards this script (obviously), and 
+the method must be POST or GET in capital letters.  Version 1.5 of FormMail 
+offers many new ways to code your form to tailor the resulting HTML page 
+and the way the script performs.  Below is a list of form fields you can 
+use and how to implement them.
+<p>
+        <li><h2>Necessary Form Fields</h2>
+
+<ul>
+<p>
+                There is only one form field that you must have in your form, for 
+                FormMail to work correctly.  This is the recipient field.
+<p>
+<hr>
+                <li><h3>Field: recipient</h3>
+<p>
+<strong>Description</strong>: This form field allows you to specify to whom you wish for your 
+form results to be mailed.  Most likely you will want to configure this 
+option as a hidden form field with a value equal to that of your e-mail 
+address.
+<p>
+<strong>Syntax:</strong><br>
+<code>
+&ltinput type=hidden name="recipient" value="email@your.host.xxx"&gt
+</code>
+<p>
+<hr>
+<p>
+</ul>
+        <li><h2>Optional Form Fields:</h2>
+<ul>
+<hr>
+<p>
+<li><h3>Field: subject</h3>
+<p>
+<strong>Description</strong>: The subject field will allow you to specify the subject that 
+you wish to appear in the e-mail that is sent to you after this form has 
+been filled out.  If you do not have this option turned on, then the 
+script will default to a message subject: WWW Form Submission
+<p>
+<strong>Syntax:</strong><br>
+
+If you wish to choose what the subject is:<br>
+<code>
+&ltinput type=hidden name="subject" value="Your Subject"&gt
+</code>
+<p>
+To allow the user to choose a subject:<br>
+<code>
+&ltinput type=text name="subject"&gt
+</code>
+<p>
+<hr>
+
+<li><h3>Field: email</h3>
+<p>
+<strong>Description</strong>: This form field will allow the user to specify their return 
+e-mail address.  If you want to be able to return e-mail to your user, I 
+strongly suggest that you include this form field and allow them to fill 
+it in.  This will be put into the From: field of the message you receive.
+<p>
+<strong>Syntax:</strong>
+<br>
+<code>
+&ltinput type=text name="email"&gt
+</code>
+<p>
+<hr>
+
+        <li><h3>Field: realname</h3>
+
+<strong>Description</strong>:  The realname form field will allow the user to input their 
+real name.  This field is useful for identification purposes and will 
+also be put into the From: line of your message header.
+<p>
+<strong>Syntax</strong>: 
+<br>
+<code>
+&ltinput type=text name="realname"&gt
+</code>
+<hr>
+
+        <li><h3>Field: redirect</h3>
+
+<strong>Description</strong>:  If you wish to redirect the user to a different URL, rather 
+than having them see the default response to the fill-out form, you can 
+use this hidden variable to send them to a pre-made HTML page.
+<p>
+<strong>Syntax</strong>:
+<br>
+To choose the URL they will end up at:<br>
+<code>
+&ltinput type=hidden name="redirect" value="http://your.address/to/file.html"&gt
+</code>
+<p>
+
+To allow them to specify a URL they wish to travel to once the form is 
+filled out:<br>
+<code>
+&ltinput type=text name="redirect"&gt
+</code>
+<hr>
+
+
+        <li><h3>Field: required</h3>
+
+<strong>Description</strong>: You can now require for certain fields in your form to be 
+filled in before the user can successfully submit the form.  Simply place 
+all field names that you want to be mandatory into this field.  If the 
+required fields are not filled in, the user will be notified of what they 
+need to fill in, and a link back to the form they just submitted will be 
+provided.
+<p>
+<strong>Syntax:</strong>
+<br>
+If you want to require that they fill in the email and phone fields in 
+your form, so that you can reach them once you have received the mail, 
+use a syntax like:<br>
+<code>
+&ltinput type=hidden name="required" value="email,phone"&gt
+</code>
+<hr>
+
+
+        <li><h3>Field: env_report</h3>
+
+<strong>Description</strong>: Allows you to have Environment variables included in the 
+e-mail message you receive after a user has filled out your form.  Useful 
+if you wish to know what browser they were using, what domain they were 
+coming from or any other attributes associated with environment 
+variables.  The following is a short list of valid environment variables 
+that might be useful:
+<p>
+<pre>
+REMOTE_HOST     - Sends the hostname making a request.
+REMOTE_ADDR     - Sends the IP address of the remote host making the request.
+REMOTE_USER     - If server supports authentication and script is 
+                  protected, this is the username they have authenticated as.
+                  *This is not usually set.*
+REMOTE_IDENT    - If HTTP server supports RFC 931 identification, then 
+                  this variable will be set to the remote user name 
+                  retrieved from the server. *This is not usually set.*
+HTTP_USER_AGENT - The browser the client is using to send the request.  
+                  General format: software/version library/version
+</pre>
+
+There are others, but these are a few of the most useful.
+<p>
+<strong>Syntax:</strong>
+
+If you wanted to find the remote host and browser sending the request, 
+you would put the following into your form:<br>
+<code>
+&ltinput type=hidden name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT"&gt
+</code>
+<hr>
+
+        <li><h3>Field: sort</h3>
+
+
+<strong>Description</strong>: This field allows you to choose the order in which you wish 
+for your variables to appear in the e-mail that FormMail generates.  You 
+can choose to have the field sorted alphabetically or specify a set order 
+in which you want the fields to appear in your mail message.  By leaving 
+this field out, the order will simply default to the order in which the 
+browsers sends the information to the script (which isn't always the 
+exact same order they appeared in the form.)  When sorting by a set order 
+of fields, you should include the phrase "order:" as the first part of 
+your value for the sort field, and then follow that with the field names 
+you want to be listed in the e-mail message, separated by commas.
+<p>
+
+<strong>Syntax:</strong>
+<br>
+To sort alphabetically:<br>
+<code>
+&ltinput type=hidden name="sort" value="alphabetic"&gt
+</code>
+<p>
+To sort by a set field order:<br>
+<code>
+&ltinput type=hidden name="sort" value="order:name1,name2,etc..."&gt
+</code>
+<hr>
+
+        <li><h3>Field: print_config</h3>
+
+Version Added: 1.5
+<p>
+<strong>Description</strong>: print_config allows you to specify which of the config 
+variables you would like to have printed in your e-mail message.  By 
+deafult, no config fields are printed to your e-mail.  This is because 
+the important form fields, like email, subject, etc... are included in 
+the header of the message.  However some users have asked for this option 
+so they can have these fields printed in the body of the message.  The 
+config fields that you wish to have printed shoul dbe in the value 
+attribute of your input tag separated by commas.
+<p>
+<strong>Syntax:</strong>
+<br>
+If you want to print the email and subject fields in the body of your 
+message, you would place the following form tag:<br>
+<code>
+&ltinput type=hidden name="print_config" value="email,subject"&gt
+</code>
+<hr>
+
+        <li><h3>Field: title</h3>
+
+Version Added: 1.3
+<p>
+<strong>Description</strong>: This form field allows you to specify the title and header 
+that will appear on the resulting page if you do not specify a redirect URL.
+<p>
+<strong>Syntax:</strong>
+<br>
+If you wanted a title of 'Feedback Form Results':<br>
+<code>
+&ltinput type=hidden name="title" value="Feedback Form Results"&gt
+</code>
+<hr>
+
+        <li><h3>Field: return_link_url</h3>
+
+Version Added: 1.3
+<p>
+<strong>Description</strong>:  This field allows you to specify a URL that will appear, as 
+return_link_title, on the following report page.  This field will not 
+be used if you have the redirect field set, but it is useful if you allow 
+the user to receive the report on the following page, but want to offer 
+them a way to get back to your main page.
+<p>
+<strong>Syntax:</strong>
+<br>
+<code>
+&ltinput type=hidden name="return_link_url" 
+                                     value="http://your.host.xxx/main.html"&gt
+</code>
+<hr>
+
+        <li><h3>Field: return_link_title</h3>
+
+Version Added: 1.3
+<p>
+<strong>Description</strong>: This is the title that will be used to link the user back to 
+the page you specify with return_link_url.  The two fields will be shown 
+on the resulting form page as:
+<p>
+
+<code>
+&ltul><br>
+&ltli><a href="return_link_url">&gtreturn_link_title</a><br>
+&lt/ul><br>
+</code>
+<p>
+<strong>Syntax:</strong>
+<br>
+<code>
+&ltinput type=hidden name="return_link_title" value="Back to Main Page"&gt
+</code>
+<hr>
+
+        <li><h3>Field: background</h3>
+
+Version Added: 1.3
+<p>
+<strong>Description</strong>: This form field allow you to specify a background image 
+that will appear if you do not have the redirect field set.  This image 
+will appear as the background to the form results page.
+<p>
+<strong>Syntax:</strong>
+<br>
+
+
+
+
+
+
+<CENTER>
+<BR><BR><BR>
+<A HREF="tform.html">
+	Back</A>
+
+<A HREF="tmenu.html">
+	Main Menu</A>
+	
+<A HREF="tcontact.html">
+	Contacting EnterAct</A>	<BR>
+	
+	<BR><BR><BR>
+
+</CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+ <!-- <#achk_ver#> -->	
+ <html>
+ <head>
+ <script>
+ 	<!--
+ 	var cTL 		= null;
+ 	var bEnbl  		= <#enabled#>;
+ 	var nTm			= <#timeout#>;
+ 	var sLang		= '<#lang#>';
+ 	var bLayter		= false;
+ 	var bInWork		= false;
+ 	var send_action     	= 'parent.cTL.form.submit()';
+ 
+ 	var TimeoutID		= null;
+ 
+ 	var cur_srvr_id 	= 0;
+ 
+ 	var msrvr		= "<#msrvr#>";
+ 	var scndsrvr		= "<#scndsrvr#>";
+ 	var expdate		= -1;
+ 
+ 	var main_server		= "<#main_server#>";
+ 	var second_servers 	= "<#second_servers#>";
+ 	var fsec_srvrs 		= second_servers.split(";");
+ 	var doc_process 	= "<#doc_process#>";
+ 
+ 	var optWin;
+ 	var optOpen = false;
+ 
+ 	var lastresult;
+ 
+ 	var exp	= "Fri Jan 1 00:00:00 2038 GMT";
+ 	document.cookie = "sptq=0; expires=" + exp + "; path=/";
+ 
+ 	var IsProxyVer = ((navigator.appVersion.indexOf("MSIE 5") != -1) && (navigator.appVersion.indexOf("Mac") != -1)) || (navigator.appVersion.indexOf('4.5 ') != -1);
+ 
+ 	function adjustOptions()
+ 	{
+ 		optWin = window.open("<#self_name#>?cmd=opts", "<#op_w_name#>", "width=340,height=150,toolbar=no,resizable=no");
+ 		optWin.focus();
+ 	}
+ 	function isAutoSpellCheckEnabled()
+ 	{
+ 		return bEnbl;
+ 	}	
+ 	function setAutoSpellCheckEnabling(enabling)
+ 	{
+ 		setOptions(enabling, sLang, nTm);
+ 	}
+ 	function checkText(ctrl)
+ 	{
+ 		write_ch_f();
+ 
+ 	        lastresult = null;
+ 
+ 		if (!ctrl)
+ 			return false;
+ 		if (!bEnbl)
+ 			return true;
+ 		if (ctrl.value.match(/^\s*$/))
+ 			return true;
+ 		if (!window.frames)
+ 			return false;
+ 		if (!window.frames.length)
+ 			return false;
+ 		if (!window.frames['<#ch_f_name#>'].document)
+ 			return false;
+ 		if (!window.frames['<#ch_f_name#>'].document.forms)
+ 			return false;
+ 		if (!window.frames['<#ch_f_name#>'].document.forms.length)
+ 			return false;
+ 		if (!window.frames['<#ch_f_name#>'].document.forms[0])
+ 			return false;
+ 		if (!window.frames['<#sp_f_name#>'].doSpell)
+ 			return false;
+ 
+ 		bInWork	= false;
+ 		bLayter	= false;
+ 
+ 		cTL = ctrl;
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].text.value = ctrl.value;
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].slang.value = sLang;
+ 		if ( ( (document.cookie != '') && (GetCookie('cursrv') == null) ) || ( (document.cookie == '') && (new Date().getTime() > expdate) && (expdate !=-1) ) ) {
+ 			main_server = msrvr;
+ 			second_servers = scndsrvr;
+ 			fsec_srvrs = second_servers.split(";");
+ 		}
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].frameid.value = "http://"+main_server+"/spellcheck/";
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].ssrv_host.value = main_server;
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].ssrv_port.value = "<#def_ssrv_port#>";
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].ssrv_path.value = "<#def_ssrv_path#>";
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].customerid.value = <#frameref#>['<#sp_f_name#>'].customerid;
+ 		cur_srvr_id = 0;
+ 
+ 		TimeoutID = window.setTimeout('OnTimerOut()', nTm*1000);
+ 		<#frameref#>['<#ch_f_name#>'].document.forms[0].submit();
+ 
+ 		return false;
+ 	}
+ 	////////////////////////////////////////////////////////////////////
+ 	function setOptions(enabling, language, timeout)
+ 	{
+ 		bEnbl	= enabling;
+ 		sLang	= language;
+ 		nTm		= timeout;
+ 		
+ 		var d	= new Date();
+ 		d.setDate(d.getDate() + 30);
+ 		
+ 		var NEx	= "Fri Jan 1 00:00:00 2038 GMT";
+ 		var Ex	= d.toGMTString();
+ 		
+ 		document.cookie = "acpars=" + sLang + ":" + nTm + ":" + bEnbl +
+ 						  "; expires=" + (bEnbl ? NEx : Ex) + "; path=/";
+ 	}
+ 
+ 	function doLoad()
+ 	{
+ 		if(parent.SetEnabling_ASC) {
+ 			parent.SetEnabling_ASC(bEnbl);
+ 			return;
+ 		}
+ 
+ 		for(i=0; i<parent.frames.length; i++)
+ 			if(parent.frames[i].SetEnabling_ASC) {
+ 				parent.frames[i].SetEnabling_ASC(bEnbl);
+ 				return;
+ 			}
+ 	}
+ 	
+ 	function doUnload()
+ 	{
+ 		if (optOpen) {
+ 			optWin.parentOpen = false;
+ 			optWin.close();
+ 		}
+ 	}
+ 
+ 	function getServerName(url) {
+ 		var x = url.indexOf('//');
+ 		if (x != -1) url=url.substring(x+2, url.length);
+ 
+ 		x = url.indexOf('/');
+ 		if (x != -1) url = url.substring(0,x);
+ 		return url;
+ 	}
+ 
+ 	function write_ch_f() {
+ 		if (!<#frameref#>['<#ch_f_name#>'].document.ssrvurl) {
+ 			var s = '<body bgcolor=#FFFFFF>'+
+ 				'<form method=post action="<#self_name#>">'+
+ 				'<input type=hidden name=cmd value="acheck">'+
+ 				'<input type=hidden name=trg_url value="<#self_name#>">'+
+ 				'<input type=hidden name=slang value="<#lang#>">'+
+ 				'<input type=hidden name=text value="">'+
+ 				'<input type=hidden name=frameid value="<#frameid#>">'+
+ 				'<input type=hidden name=ssrv_host value="">'+
+ 				'<input type=hidden name=ssrv_port value="">'+
+ 				'<input type=hidden name=ssrv_path value="">'+
+ 				'<input type=hidden name=customerid value="">'+
+ 			'</form>'+
+ 			'</body>';
+ 
+ 			<#frameref#>['<#ch_f_name#>'].document.open();
+ 			<#frameref#>['<#ch_f_name#>'].document.write(s);
+ 			<#frameref#>['<#ch_f_name#>'].document.close();
+ 		}
+ 	}
+ 
+ 	function GetSecondSrvrs(newsrv)
+ 	{
+ 		if (scndsrvr == '') return msrvr;
+ 		if (scndsrvr.indexOf(newsrv) == -1) return scndsrvr;
+ 		
+ 		var res = msrvr;
+ 
+ 		var fval = scndsrvr.split(";");
+ 		for (i=0; i<fval.length; i++) {
+ 			if (fval[i] != newsrv) {
+ 				if (res != '') res = res + ';';
+ 				res = res + fval[i];
+ 			}
+ 		}
+ 		return res;
+ 	}
+ 
+ 	function GetCookie(sName)
+ 	{
+ 		var aCookie = document.cookie.split("; ");
+ 		for (var i=0; i < aCookie.length; i++)
+ 		{
+ 			var aCrumb = aCookie[i].split("=");
+ 			if (sName == aCrumb[0]) 
+ 			return unescape(aCrumb[1]);
+ 		}
+ 
+ 		return null;
+ 	}
+ 
+ 	function OnTimerOut()
+ 	{
+ 		bLayter	= true;
+ 		TimeoutID = null;
+ 		if (bInWork)
+ 			return;
+ 
+ 		write_ch_f();
+ 
+ 		if (second_servers != "")	
+ 		if (cur_srvr_id < fsec_srvrs.length) {
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].text.value = cTL.value;
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].slang.value = sLang;
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].frameid.value = 'http://' + fsec_srvrs[cur_srvr_id] + '/spellcheck/';
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].ssrv_host.value = getServerName(fsec_srvrs[cur_srvr_id]);
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].ssrv_port.value = '<#def_ssrv_port#>';
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].ssrv_path.value = '<#def_ssrv_path#>';
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].customerid.value = <#frameref#>['<#sp_f_name#>'].customerid;
+ 
+ 			<#frameref#>['<#ch_f_name#>'].document.forms[0].submit();
+ 			cur_srvr_id++;
+ 			TimeoutID = window.setTimeout('OnTimerOut()', nTm*1000);
+ 			bInWork	= false;
+ 			bLayter	= false;
+ 
+ 			return;
+ 		}
+ 		cur_srvr_id = 0;
+ 
+ 		if (window.confirm('The SpellChecker server is not available or is responding slowly.  To\ndisable auto spell checking, you can uncheck "Auto Spell Check."\nDo you want to post your message without spell checking?'))
+ 			if (cTL)
+ 				cTL.form.submit();
+ 	}
+ 	//-->
+ 	</script>
+ 	</head>
+ 	<#framesetbeg#>
+ 		<#framebeg#>=<#ch_f_name#> src="<#self_name#>?cmd=chk_fr" <#frameend#>
+ 		<#framebeg#>=<#sp_f_name#> src="<#self_name#>?cmd=sp_func" <#frameend#>
+ 	<#framesetend#>
+ </html>
+ <!-- <#achk_ver#> -->	

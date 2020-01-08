@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="Everquest, World of Warcraft, WoW, Druids, Priest, Community, Forums, News, talents" />
+<link rel="stylesheet" href="/style/tdg.css" type="text/css" />
+<title>The Druids Grove - An Online Gaming Community</title>
+
+<!-- Google site search -->
+<script>
+  (function() {
+    var cx = '002816320266636894998:lkwhboepjps';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+</head>
+
+<body>
+<p class="logo"><img src="images/tdg-header-3.png" alt="The Druids Grove&reg;" /></p>
+<p class="tagline">
+The MMO gaming resource for the druid class.
+</p>
+
+<p class="forumlink"><a href="https://thedruidsgrove.org/forums/">Forums</a></p>
+<p><a href="https://thedruidsgrove.org/archive/eq/">TDG - EverQuest post archives</a><br/>(2003 - Oct 2010)</p>
+<p><a href="https://thedruidsgrove.org/archive/wow/">TDG - World of Warcraft post archives</a><br/>(2003 - Oct 2010)</p>
+<p class="search">Search posts on TDG<br/>
+<gcse:searchbox-only></gcse:searchbox-only></p>
+
+</body>
+</html>

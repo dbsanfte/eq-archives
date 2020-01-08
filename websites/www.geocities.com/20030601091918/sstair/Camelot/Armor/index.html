@@ -1,0 +1,2939 @@
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+    <title>Dark Age of Camelot Armor Price List Generator</title>
+
+<style>
+    body {
+        font : normal 9pt Arial;
+    }
+    td {
+        font : bold 9pt Arial;
+    }
+    select {
+        font : bold 9pt Arial;
+    }
+    select.markup {
+        font-family : Lucida Console;
+    }
+    input {
+        font : bold 9pt Arial;
+    }
+</style>
+
+
+<script>
+
+function setCookie(name, value) {
+    document.cookie = name + "=" + escape(value) + "; expires=Thu, 01-Jan-09 00:00:01 GMT";
+} // END setCookie
+
+// return string containing value of specified cookie or null if cookie does not exist
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) {
+            return null;
+        }
+    } else {
+        begin += 2;
+    }
+    var end = document.cookie.indexOf(";", begin);
+    if (end == -1) {
+        end = dc.length;
+    }
+    return unescape(dc.substring(begin + prefix.length, end));
+} // END getCookie
+
+</script>
+
+
+<script>
+ ///////////////////////////////////////////////////////////////////////
+ //     This Tooltip was designed by Erik Arvidsson for WebFX         //
+ //                                                                   //
+ //     For more info and examples see: http://www.eae.net/webfx/     //
+ //     or send mail to erik@eae.net                                  //
+ //                                                                   //
+ //     Feel free to use this code as lomg as this disclaimer is      //
+ //     intact.                                                       //
+ ///////////////////////////////////////////////////////////////////////
+
+var delayTime = 0;
+var showTime = 10000;
+
+var tooltipDefaultStyle = "background: infobackground; color: infotext; padding: 2px; border: 1px solid black; position: absolute; z-index: 99; visibility: hidden;";
+var tooltipStart = "<table id=\"internalTooltipSpan\" cellspacing=0 cellpadding=0 style=\"" + tooltipDefaultStyle + "\"><tr><td style=\"font: normal arial\">";
+var tooltipEnd   = "</td></tr></table>";
+var showTimeout;
+var hideTimeout;
+var shown = false;
+var x;
+var y;
+
+function getReal(el) {
+	temp = el;
+
+	while ((temp != null) && (temp.tagName != "BODY")) {
+		if (temp.getAttribute("tooltip")) {
+			el = temp;
+			return el;
+		}
+		temp = temp.parentElement;
+	}
+	return el;
+} // END getReal
+
+function doMouseMove() {
+	x = event.x;
+	y = event.y;
+}
+
+function doMouseOver() {
+	fromEl = getReal(event.fromElement);
+	toEl = getReal(event.toElement);
+	if ((toEl.getAttribute("tooltip")) && (toEl != fromEl)) {
+		showTimeout = window.setTimeout("displayTooltip(toEl)", delayTime);
+	}
+} // END doMouseOver
+
+
+function doMouseOut() {
+	fromEl = getReal(event.fromElement);
+	toEl = getReal(event.toElement);
+	if ((fromEl.getAttribute("tooltip")) && (toEl != fromEl)) {
+		window.clearTimeout(showTimeout);
+		hideTooltip();
+	}
+} // END doMouseOut
+
+function displayTooltip(el) {
+	if (!document.all.internalTooltipSpan) {
+		document.body.insertAdjacentHTML("BeforeEnd", tooltipStart + el.getAttribute("tooltip") + tooltipEnd);
+	}
+	else {
+		internalTooltipSpan.outerHTML = tooltipStart + el.getAttribute("tooltip") + tooltipEnd;
+	}
+	var toolStyle = el.getAttribute("tooltipstyle");
+	if (toolStyle != null) {
+		internalTooltipSpan.style.cssText = tooltipDefaultStyle + toolStyle;
+	}
+	internalTooltipSpan.style.left = x + 20;
+	internalTooltipSpan.style.top = y - 5;
+
+    internalTooltipSpan.style.visibility = "visible";
+
+	shown = true;
+	//hideTimeout = window.setTimeout("hideTooltip()", showTime);
+} // END displayTooltip
+
+
+function hideTooltip() {
+	if (shown) {
+		window.clearTimeout(hideTimeout);
+		internalTooltipSpan.style.visibility = "hidden";
+		shown = false;
+	}
+} // END hideTooltip
+</script>
+
+<script>
+
+CLOTH_INGREDIENT   = 0;
+LEATHER_INGREDIENT = 1;
+THREAD_INGREDIENT  = 2;
+STRIPS_INGREDIENT  = 3;
+BARS_INGREDIENT    = 4;
+SCALES_INGREDIENT  = 5;
+WIRE_INGREDIENT    = 6;
+STUDS_INGREDIENT   = 7;
+STRAPS_INGREDIENT  = 8;
+
+realmPossessive = new Array("Albion", "Hibernian", "Midgardian");
+
+clothPrices = new Array(
+        50,
+       800,
+      3200,
+      9600,
+     28800,
+     57600,
+     86400,
+    129600,
+    194900,
+    291600
+);
+
+leatherPrices = new Array(
+        75,
+      1200,
+      4800,
+     14400,
+     43200,
+     86400,
+    129600,
+    194400,
+    291600,
+    437400
+);
+
+threadPrices = new Array(
+        45,
+       720,
+      2880,
+      8640,
+     25920,
+     51840,
+     77760,
+    116640,
+    174960,
+    262440
+);
+
+stripsPrices = new Array(
+       175,
+      2800,
+     11200,
+     33600,
+    100800,
+    201600,
+    302400,
+    453600,
+    680400,
+   1020600
+);
+
+metalPrices = new Array(
+       175,
+      2800,
+     11200,
+     33600,
+    100800,
+    201600,
+    302400,
+    453600,
+    680400,
+   1020600
+);
+
+ // 20 straps = 20 leather + 2 metal + 2 thread
+ // strapPrice = leatherPrice + metalPrice/10 + threadPrice/10
+strapPrices = new Array(
+        75 +     17.5 +     4.5,
+      1200 +    280   +    72,
+      4800 +   1120   +   288,
+     14400 +   3360   +   864,
+     43200 +  10080   +  2592,
+     86400 +  20160   +  5184,
+    129600 +  30240   +  7776,
+    194400 +  45360   + 11664,
+    291600 +  68040   + 17496,
+    437400 + 102060   + 26244
+);
+
+
+ingredients = new Array(
+    // Cloth
+    new Array(
+        "Cloth",
+        clothPrices
+    ),
+
+    // Leather
+    new Array(
+        "Leather",
+        leatherPrices
+    ),
+
+    // Thread
+    new Array(
+        "Thread",
+        threadPrices
+    ),
+
+    // Strips
+    new Array(
+        "Strips",
+        stripsPrices
+    ),
+
+    // Bars
+    new Array(
+        "Bars",
+        metalPrices
+    ),
+
+    // Scales
+    new Array(
+        "Scales",
+        metalPrices
+    ),
+
+    // Wire
+    new Array(
+        "Wire",
+        metalPrices
+    ),
+
+    // Studs
+    new Array(
+        "Studs",
+        metalPrices
+    ),
+
+    // Straps (made from 20 leather, 2 metal, 2 thread)
+    new Array(
+        "Straps",
+        strapPrices
+    )
+);
+
+cloth1VestIngredientsAmounts = new Array(
+    new Array(4, 2, 3),
+    new Array(16, 6, 5),
+    new Array(2, 4, 2),
+    new Array(25, 0, 5),
+    new Array(16, 0, 4),
+    new Array(40, 0, 10)    // Vest
+);
+
+albCloth1RobeIngredientsAmounts = new Array(
+    new Array(4, 2, 3),
+    new Array(16, 6, 5),
+    new Array(2, 4, 2),
+    new Array(25, 0, 5),
+    new Array(16, 0, 4),
+    new Array(40, 0, 22)    // Robe
+);
+
+hibCloth1RobeIngredientsAmounts = new Array(
+    new Array(4, 2, 3),
+    new Array(16, 6, 5),
+    new Array(2, 4, 2),
+    new Array(25, 0, 5),
+    new Array(16, 0, 4),
+    new Array(44, 0, 25)    // Robe
+);
+
+cloth2VestIngredientsAmounts = new Array(
+    new Array(4, 4, 2),
+    new Array(21, 6, 6),
+    new Array(4, 4, 2),
+    new Array(30, 0, 6),
+    new Array(18, 0, 6),
+    new Array(50, 0, 10)    // Vest
+);
+
+hibCloth2RobeIngredientsAmounts = new Array(
+    new Array(4, 4, 2),
+    new Array(21, 6, 6),
+    new Array(4, 4, 2),
+    new Array(30, 0, 6),
+    new Array(18, 0, 6),
+    new Array(49, 0, 25)    // Robe
+);
+
+
+ // Leather, Thread
+leather1IngredientsAmounts = new Array(
+    new Array(3, 2),
+    new Array(12, 2),
+    new Array(3, 2),
+    new Array(12, 2),
+    new Array(8, 1),
+    new Array(20, 3)
+);
+
+leather2IngredientsAmounts = new Array(
+    new Array(5, 2),
+    new Array(17, 2),
+    new Array(5, 2),
+    new Array(17, 2),
+    new Array(11, 2),
+    new Array(29, 3)
+);
+
+leather3IngredientsAmounts = new Array(
+    new Array(10, 4),
+    new Array(34, 4),
+    new Array(10, 4),
+    new Array(34, 4),
+    new Array(22, 4),
+    new Array(56, 8)
+);
+
+leather4IngredientsAmounts = new Array(
+    new Array(11, 6),
+    new Array(40, 7),
+    new Array(11, 6),
+    new Array(40, 7),
+    new Array(25, 8),
+    new Array(65, 15)
+);
+
+albLeather5IngredientsAmounts = new Array(
+    new Array(11, 6),
+    new Array(40, 7),
+    new Array(11, 6),
+    new Array(40, 7),
+    new Array(25, 8),
+    new Array(49, 6)    // Robe
+);
+
+ // Leather, Thread, Studs
+studded1IngredientsAmounts = new Array(
+    new Array(2, 4, 1),
+    new Array(12, 2, 3),
+    new Array(2, 4, 1),
+    new Array(12, 2, 3),
+    new Array(8, 1, 2),
+    new Array(19, 4, 5)
+);
+
+studded2IngredientsAmounts = new Array(
+    new Array(4, 5, 1),
+    new Array(12, 7, 5),
+    new Array(4, 5, 1),
+    new Array(12, 7, 5),
+    new Array(8, 2, 4),
+    new Array(25, 5, 8)
+);
+
+studded3IngredientsAmounts = new Array(
+    new Array(8, 10, 2),
+    new Array(24, 14, 10),
+    new Array(8, 10, 2),
+    new Array(24, 14, 10),
+    new Array(16, 4, 8),
+    new Array(50, 10, 16)
+);
+
+studded4IngredientsAmounts = new Array(
+    new Array(9, 10, 3),
+    new Array(30, 14, 12),
+    new Array(9, 10, 3),
+    new Array(30, 14, 12),
+    new Array(17, 7, 10),
+    new Array(61, 17, 17)
+);
+
+ // Leather, Thread, Scales
+ // Cruanach
+scale1IngredientsAmounts = new Array(
+    new Array( -3, -2, 3),
+    new Array(-12, -2, 9),
+    new Array( -3, -2, 3),
+    new Array(-12, -2, 9),
+    new Array( -8, -1, 6),
+    new Array(-20, -3, 15)
+);
+
+ // Daingean
+scale2IngredientsAmounts = new Array(
+    new Array( -5, -2,  6),
+    new Array(-17, -2, 17),
+    new Array( -5, -2,  6),
+    new Array(-17, -2, 18),
+    new Array(-11, -2, 12),
+    new Array(-29, -3, 29)
+);
+
+ // Osnadurtha
+scale3IngredientsAmounts = new Array(
+    new Array(-10, -4,  9),
+    new Array(-34, -4, 27),
+    new Array(-10, -4,  9),
+    new Array(-34, -4, 27),
+    new Array(-22, -4, 18),
+    new Array(-56, -8, 46)
+);
+
+ // Improved Osnadurtha
+scale4IngredientsAmounts = new Array(
+    new Array(-10, -4, 15),
+    new Array(-34, -4, 45),
+    new Array(-10, -4, 15),
+    new Array(-34, -4, 45),
+    new Array(-22, -4, 30),
+    new Array(-56, -8, 75)
+);
+
+ // Leather, Thread, Wire/Scales
+chain1IngredientsAmounts = new Array(
+    new Array( -3, -2,  3),
+    new Array(-12, -2,  9),
+    new Array( -3, -2,  3),
+    new Array(-12, -2,  9),
+    new Array( -8, -1,  6),
+    new Array(-20, -3, 15)
+);
+
+chain2IngredientsAmounts = new Array(
+    new Array( -5, -2,  6),
+    new Array(-17, -2, 18),
+    new Array( -5, -2,  6),
+    new Array(-17, -2, 18),
+    new Array(-11, -2, 12),
+    new Array(-29, -3, 29)
+);
+
+chain3IngredientsAmounts = new Array(
+    new Array(-10, -4,  9),
+    new Array(-34, -4, 27),
+    new Array(-10, -4,  9),
+    new Array(-34, -4, 27),
+    new Array(-22, -4, 18),
+    new Array(-56, -8, 46)
+);
+
+chain4IngredientsAmounts = new Array(
+    new Array(-10, -4, 15),
+    new Array(-34, -4, 45),
+    new Array(-10, -4, 15),
+    new Array(-34, -4, 45),
+    new Array(-22, -4, 30),
+    new Array(-56, -8, 75)
+);
+
+albChain3IngredientsAmounts = new Array(
+    new Array(-10, -4, 15),
+    new Array(-34, -4, 45),
+    new Array(-10, -4, 15),
+    new Array(-34, -4, 45),
+    new Array(-22, -4, 30),
+    new Array(-56, -8, 75)
+);
+
+ // BARS, CLOTH, LEATHER, THREAD, STRAPS
+plate1IngredientsAmounts = new Array(
+    new Array( 2,  -4, -2,  -3, 1),
+    new Array( 8, -16, -6,  -5, 1),
+    new Array( 2,  -2, -4,  -2, 1),
+    new Array( 8, -25, -0,  -5, 1),
+    new Array( 5, -16, -0,  -4, 1),
+    new Array(11, -40, -0, -10, 5)
+);
+
+plate2IngredientsAmounts = new Array(
+    new Array( 6,  -4, -2,  -3, 3),
+    new Array(22, -16, -6,  -5, 3),
+    new Array( 6,  -2, -4,  -2, 3),
+    new Array(22, -25, -0,  -5, 3),
+    new Array(15, -16, -0,  -4, 2),
+    new Array(37, -40, -0, -10, 5)
+);
+
+plate3IngredientsAmounts = new Array(
+    new Array( 9,  -4, -2,  -3, 3),
+    new Array(30, -16, -6,  -5, 3),
+    new Array( 8,  -2, -4,  -2, 5),
+    new Array(29, -25, -0,  -5, 4),
+    new Array(20, -16, -0,  -4, 3),
+    new Array(50, -40, -0, -10, 6)
+);
+
+plate4IngredientsAmounts = new Array(
+    new Array(11,  -4, -2,  -3,  9),
+    new Array(31, -16, -6,  -5, 29),
+    new Array(11,  -2, -4,  -2,  9),
+    new Array(31, -25, -0,  -5, 29),
+    new Array(23, -16, -0,  -4, 17),
+    new Array(60, -40, -0, -10, 38)
+);
+
+
+clothStartLevels = new Array(
+        0,
+        0,
+        4,
+        4
+);
+
+midClothStartLevels = new Array(
+        0,
+        4
+);
+
+leatherStartLevels = new Array(
+        0,
+        0,
+        0,
+        4,
+        4
+);
+
+reinforcedStartLevels = new Array(
+        0,
+        0,
+        0,
+        4
+);
+
+scaleStartLevels = new Array(
+        0,
+        0,
+        0,
+        4
+);
+
+chainStartLevels = new Array(
+        0,
+        0,
+        4
+);
+
+plateStartLevels = new Array(
+        0,
+        0,
+        4,
+        4
+);
+
+
+ // Armor Factors
+clothAFs = new Array(
+        new Array(2, 2, 0, 0),
+        new Array(5, 5, 0, 0),
+        new Array(10, 10, 0, 0),
+        new Array(15, 15, 0, 0),
+        new Array(20, 20, 26, 26),
+        new Array(25, 25, 31, 31),
+        new Array(30, 30, 36, 36),
+        new Array(35, 35, 41, 41),
+        new Array(40, 40, 45, 45),
+        new Array(45, 45, 51, 51)
+);
+
+midClothAFs = new Array(
+        new Array(2, 0),
+        new Array(5, 0),
+        new Array(10, 0),
+        new Array(15, 0),
+        new Array(20, 26),
+        new Array(25, 31),
+        new Array(30, 36),
+        new Array(35, 41),
+        new Array(40, 45),
+        new Array(45, 51)
+);
+
+leatherAFs = new Array(
+        new Array(4, 6, 10, 0, 0),
+        new Array(10, 12, 16, 0, 0),
+        new Array(20, 22, 26, 0, 0),
+        new Array(30, 32, 36, 0, 0),
+        new Array(40, 42, 46, 52, 52),
+        new Array(50, 52, 56, 62, 62),
+        new Array(60, 62, 66, 72, 72),
+        new Array(70, 72, 76, 82, 82),
+        new Array(80, 82, 86, 92, 92),
+        new Array(90, 92, 96, 102, 102)
+);
+
+reinforcedAFs = new Array(
+        new Array(4, 6, 10, 0),
+        new Array(10, 12, 16, 0),
+        new Array(20, 22, 26, 0),
+        new Array(30, 32, 36, 0),
+        new Array(40, 42, 46, 52),
+        new Array(50, 52, 56, 62),
+        new Array(60, 62, 66, 72),
+        new Array(70, 72, 76, 82),
+        new Array(80, 82, 86, 92),
+        new Array(90, 92, 96, 102)
+);
+
+scaleAFs = new Array(
+        new Array(4, 6, 12, 0),
+        new Array(10, 14, 18, 0),
+        new Array(20, 24, 28, 0),
+        new Array(30, 34, 38, 0),
+        new Array(40, 44, 48, 52),
+        new Array(50, 54, 58, 62),
+        new Array(60, 64, 68, 72),
+        new Array(70, 74, 78, 82),
+        new Array(80, 84, 88, 92),
+        new Array(90, 94, 98, 102)
+);
+
+chainAFs = new Array(
+        new Array(4, 6, 0),
+        new Array(10, 14, 0),
+        new Array(20, 24, 0),
+        new Array(30, 34, 0),
+        new Array(40, 44, 52),
+        new Array(50, 54, 62),
+        new Array(60, 64, 72),
+        new Array(70, 74, 82),
+        new Array(80, 84, 92),
+        new Array(90, 94, 102)
+);
+
+plateAFs = new Array(
+        new Array(8, 12, 0, 0),
+        new Array(10, 14, 0, 0),
+        new Array(20, 24, 0, 0),
+        new Array(30, 34, 0, 0),
+        new Array(40, 44, 48, 52),
+        new Array(50, 54, 58, 62),
+        new Array(60, 64, 68, 72),
+        new Array(70, 74, 78, 82),
+        new Array(80, 84, 88, 92),
+        new Array(90, 94, 98, 102)
+);
+
+clothLevelNames = new Array(
+    "Woolen",
+    "Linen",
+    "Brocade",
+    "Silk",
+    "Gossamer",
+    "Sylvan",
+    "Seamist",
+    "Nightshade",
+    "Wyvernskin",
+    "Silksteel"
+);
+
+leatherLevelNames = new Array(
+    "Rawhide",
+    "Tanned",
+    "Cured",
+    "Hard",
+    "Rigid",
+    "Embossed",
+    "Imbued",
+    "Runed",
+    "Eldritch",
+    "Tempered"
+);
+
+albMetalNames = new Array(
+    "Bronze",
+    "Iron",
+    "Steel",
+    "Alloy",
+    "Fine Alloy",
+    "Mithril",
+    "Adamantium",
+    "Asterite",
+    "Netherium",
+    "Arcanium"
+);
+
+hibReinforcedNames = new Array(
+    "Leaf",
+    "Bone",
+    "Vine",
+    "Shell",
+    "Fossil",
+    "Amber",
+    "Coral",
+    "Chitin",
+    "Fossilized",
+    "Crystalized"
+);
+
+hibMetalNames = new Array(
+    "Copper",
+    "Ferrite",
+    "Quartz",
+    "Dolomite",
+    "Cobalt",
+    "Carbide",
+    "Sapphire",
+    "Diamond",
+    "Netherite",
+    "Arcanite"
+);
+
+ // Level Names
+realmLevelNames = new Array(
+    new Array(
+        clothLevelNames,
+        leatherLevelNames,
+        albMetalNames,
+        albMetalNames,
+        albMetalNames
+    ),
+    new Array(
+        clothLevelNames,
+        leatherLevelNames,
+        hibReinforcedNames,
+        hibMetalNames
+    ),
+    new Array(
+        clothLevelNames,
+        leatherLevelNames,
+        albMetalNames,
+        albMetalNames
+    )
+);
+
+absorbs = new Array(0, 10, 19, 27, 34);
+
+armorArrays = new Array(
+    // Albion
+    new Array(
+        // Armor type names
+        new Array(
+            "Cloth",
+            "Leather",
+            "Studded",
+            "Chain",
+            "Plate"
+        ),
+
+        // Armor types
+        new Array(
+
+            // Cloth armor
+            new Array(
+
+                // Style names
+                new Array(
+                    new Array("Quilted", "Quilted (w/vest)"),
+                    new Array("Quilted", "Quilted (w/robe)"),
+                    new Array("Double-Stitched Quilted", "Double-Stitched Quilted (w/vest)"),
+                    new Array("Double-Stitched Quilted", "Double-Stitched Quilted (w/robe)")
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Cap",
+                    "Boots",
+                    "Pants",
+                    "Sleeves",
+                    new Array("Quilted Vest", "Dress Robe", "Double-Stitched Quilted Vest", "Regal Quilted Robe")
+                ),
+
+                // Ingredients
+                new Array(
+                    CLOTH_INGREDIENT,
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Quilted (vest)
+                    cloth1VestIngredientsAmounts,
+                    // Quilted (robe)
+                    albCloth1RobeIngredientsAmounts,
+                    // Double-Stitched Quilted (vest)
+                    cloth2VestIngredientsAmounts,
+                    // Double-Stitched Quilted (robe)
+                    hibCloth2RobeIngredientsAmounts
+                ),
+
+                clothStartLevels,
+                clothAFs,
+
+                // Skill Required
+                new Array(
+                    // Quilted (vest)
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Quilted (robe)
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        15),
+                    // Double-Stitched Quilted (vest)
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215),
+                    // Double-Stitched Quilted (robe)
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+
+            ),
+
+            // Leather armor
+            new Array(
+                // Style names
+                new Array(
+                    "Roman",
+                    "Cymric",
+                    "Siluric",
+                    new Array("Padded Leather", "Padded Leather (w/vest)"),
+                    new Array("Padded Leather", "Padded Leather (w/robe)")
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Helm",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    new Array("Roman Jerkin", "Cymric Jerkin", "Siluric Jerkin", "Padded Leather Jerkin", "Padded Leather Robe")
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Roman
+                    leather1IngredientsAmounts,
+                    // Cymric
+                    leather2IngredientsAmounts,
+                    // Siluric
+                    leather3IngredientsAmounts,
+                    // Padded leather (w/vest)
+                    leather4IngredientsAmounts,
+                    // Padded leather (w/robe)
+                    albLeather5IngredientsAmounts
+                ),
+
+                leatherStartLevels,
+                leatherAFs,
+
+                // Skill Required
+                new Array(
+                    // Roman
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Cumric
+                    new Array(
+                        35,
+                        50,
+                        65,
+                        85,
+                        100,
+                        115),
+                    // Siluric
+                    new Array(
+                        95,
+                        110,
+                        125,
+                        145,
+                        160,
+                        175),
+                    // Padded Leather (w/vest)
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215),
+                    // Padded Leather (w/robe)
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Studded armor
+            new Array(
+                // Style names
+                new Array(
+                    "Studded",
+                    "Boned",
+                    "Lamellar",
+                    "Reinforced Lamellar"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Helm",
+                    "Boots",
+                    "Legs",
+                    "Sleeves",
+                    "Vest"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    STUDS_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Studded
+                    studded1IngredientsAmounts,
+                    // Boned
+                    studded2IngredientsAmounts,
+                    // Lamellar
+                    studded3IngredientsAmounts,
+                    // Reinforced Lamellar
+                    studded4IngredientsAmounts
+                ),
+
+                reinforcedStartLevels,
+                reinforcedAFs,
+
+                // Skill Required
+                new Array(
+                    // Studded
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Boned
+                    new Array(
+                        35,
+                        50,
+                        65,
+                        85,
+                        100,
+                        115),
+                    // Lamellar
+                    new Array(
+                        75,
+                        90,
+                        105,
+                        125,
+                        140,
+                        155),
+                    // Reinforced Lamellar
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Chain armor
+            new Array(
+                // Style names
+                new Array(
+                    "Chain",
+                    "Mail",
+                    "Improved Mail"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gauntlets",
+                    "Helm",
+                    "Boots",
+                    "Legs",
+                    "Sleeves",
+                    "Hauberk"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    WIRE_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Chain
+                    chain1IngredientsAmounts,
+                    // Mail
+                    chain2IngredientsAmounts,
+                    // Improved Mail
+                    albChain3IngredientsAmounts
+                ),
+
+                chainStartLevels,
+                chainAFs,
+
+                // Skill Required
+                new Array(
+                    // Chain
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Mail
+                    new Array(
+                        55,
+                        70,
+                        85,
+                        105,
+                        120,
+                        135),
+                    // Improved Mail
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+            
+            // Plate armor
+            new Array(
+                // Style names
+                new Array(
+                    "Plate",
+                    "Scaled Plate",
+                    "Fluted Plate",
+                    "Full Plate"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    new Array("Plate Helm", "Full Helm", "Full Helm", "Full Helm"),
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Breastplate"
+                ),
+
+                // Ingredients
+                new Array(
+                    BARS_INGREDIENT,
+                    CLOTH_INGREDIENT,
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    STRAPS_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Plate
+                    plate1IngredientsAmounts,
+                    // Scaled Plate
+                    plate2IngredientsAmounts,
+                    // Fluted Plate
+                    plate3IngredientsAmounts,
+                    // Full Plate
+                    plate4IngredientsAmounts
+                ),
+
+                plateStartLevels,
+                plateAFs,
+
+                // Skill Required
+                new Array(
+                    // Plate
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Scaled Plate
+                    new Array(
+                        55,
+                        70,
+                        85,
+                        105,
+                        120,
+                        135),
+                    // Fluted Plate
+                    new Array(
+                        95,
+                        110,
+                        125,
+                        145,
+                        160,
+                        175),
+                    // Full Plate
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            )
+        )
+    ),
+
+    // Hibernia
+    new Array(
+        // Armor type names
+        new Array(
+            "Cloth",
+            "Leather",
+            "Reinforced",
+            "Scale"
+        ),
+
+        // Armor types
+        new Array(
+
+            // Cloth armor
+            new Array(
+
+                // Style names
+                new Array(
+                    new Array("Woven", "Woven (w/vest)"),
+                    new Array("Woven", "Woven (w/robe)"),
+                    new Array("Thick Woven", "Thick Woven (w/vest)"),
+                    new Array("Thick Woven", "Thick Woven (w/robe)")
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Cap",
+                    "Boots",
+                    "Pants",
+                    "Sleeves",
+                    new Array("Woven Vest", "Dress Robe", "Thick Woven Vest", "Thick Regal Robe")
+                ),
+
+                // Ingredients
+                new Array(
+                    CLOTH_INGREDIENT,
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Woven (vest)
+                    cloth1VestIngredientsAmounts,
+                    // Woven (robe)
+                    hibCloth1RobeIngredientsAmounts,
+                    // Thick Woven (vest)
+                    cloth2VestIngredientsAmounts,
+                    // Thick Woven (robe)
+                    hibCloth2RobeIngredientsAmounts
+                ),
+
+                clothStartLevels,
+                clothAFs,
+
+                // Skill Required
+                new Array(
+                    // Woven (vest)
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Woven (robe)
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        15),
+                    // Thick Woven (vest)
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215),
+                    // Thick Woven (robe)
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Leather armor
+            new Array(
+                // Style names
+                new Array(
+                    "Brea",
+                    "Constaic",
+                    "Cruaigh",
+                    "Padded Cruaigh"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Helm",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Jerkin"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Brea
+                    leather1IngredientsAmounts,
+                    // Constaic
+                    leather2IngredientsAmounts,
+                    // Cruaigh
+                    leather3IngredientsAmounts,
+                    // Padded Cruaigh
+                    leather4IngredientsAmounts
+                ),
+
+                leatherStartLevels,
+                leatherAFs,
+
+                // Skill Required
+                new Array(
+                    // Brea
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Constaic
+                    new Array(
+                        35,
+                        50,
+                        65,
+                        85,
+                        100,
+                        115),
+                    // Cruaigh
+                    new Array(
+                        95,
+                        110,
+                        125,
+                        145,
+                        160,
+                        175),
+                    // Padded Cruaigh
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Reinforced armor
+            new Array(
+                // Style names
+                new Array(
+                    "Taculi",
+                    "Nadurtha",
+                    "Cailiocht",
+                    "Heavy Cailiocht"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Helm",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Vest"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    STRIPS_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Taculi
+                    studded1IngredientsAmounts,
+                    // Nadurtha
+                    studded2IngredientsAmounts,
+                    // Cailiocht
+                    studded3IngredientsAmounts,
+                    // Heavy Cailiocht
+                    studded4IngredientsAmounts
+                ),
+
+                reinforcedStartLevels,
+                reinforcedAFs,
+
+                // Skill Required
+                new Array(
+                    // Taculi
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Nadurtha
+                    new Array(
+                        35,
+                        50,
+                        65,
+                        85,
+                        100,
+                        115),
+                    // Cailiocht
+                    new Array(
+                        75,
+                        90,
+                        110,
+                        125,
+                        140,
+                        155),
+                    // Heavy Cailiocht
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Scale armor
+            new Array(
+                // Style names
+                new Array(
+                    "Cruanach",
+                    "Daingean",
+                    "Osnadurtha",
+                    "Improved Osnadurtha"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Coif",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Hauberk"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    SCALES_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Cruanach
+                    scale1IngredientsAmounts,
+
+                    // Daingean
+                    scale2IngredientsAmounts,
+
+                    // Osnadurtha
+                    scale3IngredientsAmounts,
+
+                    // Improved Osnadurtha
+                    scale4IngredientsAmounts
+                ),
+
+                scaleStartLevels,
+                scaleAFs,
+
+                // Skill Required
+                new Array(
+                    // Cruanach
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Daingean
+                    new Array(
+                        55,
+                        70,
+                        85,
+                        105,
+                        120,
+                        135),
+                    // Osnadurtha
+                    new Array(
+                        95,
+                        110,
+                        125,
+                        145,
+                        160,
+                        175),
+                    // Improved Osnadurtha
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            )
+        )
+    ),
+
+    // Midgard
+    new Array(
+        // Armor type names
+        new Array(
+            "Cloth",
+            "Leather",
+            "Studded",
+            "Chain"
+        ),
+
+        // Armor types
+        new Array(
+
+            // Cloth armor
+            new Array(
+
+                // Style names
+                new Array(
+                    "Padded",
+                    "Thick Padded"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Cap",
+                    "Boots",
+                    "Pants",
+                    "Sleeves",
+                    "Vest"
+                ),
+
+                // Ingredients
+                new Array(
+                    CLOTH_INGREDIENT,
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Padded
+                    cloth1VestIngredientsAmounts,
+                    // Thick Padded
+                    cloth2VestIngredientsAmounts
+                ),
+
+                midClothStartLevels,
+                midClothAFs,
+
+                // Skill Required
+                new Array(
+                    // Padded
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Thick Padded
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Leather armor
+            new Array(
+                // Style names
+                new Array(
+                    "Mjuklaedar",
+                    "Svarlaedar",
+                    "Starklaedar",
+                    "Padded Starklaedar"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Helm",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Jerkin"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Mjuk
+                    leather1IngredientsAmounts,
+                    // Svar
+                    leather2IngredientsAmounts,
+                    // Stark
+                    leather3IngredientsAmounts,
+                    // Heavy Stark
+                    leather4IngredientsAmounts
+                ),
+
+                leatherStartLevels,
+                leatherAFs,
+
+                // Skill Required
+                new Array(
+                    // Mjuk
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Svar
+                    new Array(
+                        35,
+                        50,
+                        65,
+                        85,
+                        100,
+                        115),
+                    // Stark
+                    new Array(
+                        95,
+                        110,
+                        125,
+                        145,
+                        160,
+                        175),
+                    // Heavy Stark
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Studded armor
+            new Array(
+                // Style names
+                new Array(
+                    "Stelskodd",
+                    "Svarskodd",
+                    "Starkaskodd",
+                    "Heavy Starkaskodd"
+                ),
+
+                // Piece Names
+                new Array(
+                    new Array("Stelskodd Gloves", "Svarskodd Gloves", "Starkaskood Gauntlets", "Heavy Starkaskodd Gauntlets"),
+                    "Helm",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Jerkin"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    STUDS_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Stelskodd
+                    studded1IngredientsAmounts,
+                    // Svarskodd
+                    studded2IngredientsAmounts,
+                    // Starkaskodd
+                    studded3IngredientsAmounts,
+                    // Heavy Starkaskodd
+                    studded4IngredientsAmounts
+                ),
+
+                reinforcedStartLevels,
+                reinforcedAFs,
+
+                // Skill Required
+                new Array(
+                    // Stel
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Svar
+                    new Array(
+                        35,
+                        50,
+                        65,
+                        85,
+                        100,
+                        115),
+                    // Stark
+                    new Array(
+                        75,
+                        90,
+                        105,
+                        125,
+                        140,
+                        155),
+                    // Heavy Stark
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            ),
+
+            // Chain armor
+            new Array(
+                // Style names
+                new Array(
+                    "Pansarkedja",
+                    "Svarkedja",
+                    "Starkakedja",
+                    "Heavy Starkakeja"
+                ),
+
+                // Piece Names
+                new Array(
+                    "Gloves",
+                    "Helm",
+                    "Boots",
+                    "Leggings",
+                    "Sleeves",
+                    "Hauberk"
+                ),
+
+                // Ingredients
+                new Array(
+                    LEATHER_INGREDIENT,
+                    THREAD_INGREDIENT,
+                    WIRE_INGREDIENT
+                ),
+
+                // IngredientsAmounts
+                new Array(
+                    // Pansarkedja
+                    chain1IngredientsAmounts,
+                    // Svarkedja
+                    chain2IngredientsAmounts,
+                    // Starkakedja
+                    chain3IngredientsAmounts,
+                    // Heavy Starkakedja
+                    chain4IngredientsAmounts
+                ),
+
+                scaleStartLevels,
+                scaleAFs,
+
+                // Skill Required
+                new Array(
+                    // Pansar
+                    new Array(
+                        15,
+                        30,
+                        45,
+                        65,
+                        80,
+                        95),
+                    // Svar
+                    new Array(
+                        55,
+                        70,
+                        85,
+                        105,
+                        120,
+                        135),
+                    // Starka
+                    new Array(
+                        95,
+                        110,
+                        125,
+                        145,
+                        160,
+                        175),
+                    // Heavy Starka
+                    new Array(
+                        135,
+                        150,
+                        165,
+                        185,
+                        200,
+                        215)
+                )
+            )
+        )
+    )
+);
+
+
+function displayCost(cost) {
+    cost = Math.ceil(cost);
+
+    plat = Math.floor(cost / 10000000);
+    cost = cost - (plat * 10000000);
+
+    gold = Math.floor(cost / 10000);
+    cost = cost - (gold * 10000);
+
+    silver = Math.floor(cost / 100);
+    cost = cost - (silver * 100);
+
+    copper = cost;
+
+    str = "";
+    if (plat > 0) {
+        str += plat + "p" + "&nbsp;";
+    }
+    if (gold > 0) {
+        str += gold + "g" + "&nbsp;";
+    }
+    if (silver > 0) {
+        str += silver + "s" + "&nbsp;";
+    }
+    if (copper > 0) {
+        str += copper + "c";
+    }
+    if (str == "") {
+        str = "Free";
+    }
+    return str;
+
+} // END displayCost
+
+
+function showArmor() {
+    var realm = document.myform.elements["realm"].options[document.myform.elements["realm"].selectedIndex].value;
+    if (realm == -1) {
+        alert("You must select an realm!");
+        return false;
+    }
+
+    var armorType = document.myform.elements["armorType"].options[document.myform.elements["armorType"].selectedIndex].value;
+    if (armorType == -1) {
+        alert("You must select an armor type!");
+        return false;
+    }
+
+    var startLevel = document.myform.elements["startLevel"].options[document.myform.elements["startLevel"].selectedIndex].value;
+    var endLevel = document.myform.elements["endLevel"].options[document.myform.elements["endLevel"].selectedIndex].value;
+    var priceMarkup = document.myform.elements["priceMarkup"].options[document.myform.elements["priceMarkup"].selectedIndex].value;
+    var priceMarkupSuit = document.myform.elements["priceMarkupSuit"].options[document.myform.elements["priceMarkupSuit"].selectedIndex].value;
+    var tailoringMarkup = document.myform.elements["tailoringMarkup"].options[document.myform.elements["tailoringMarkup"].selectedIndex].value;
+    var showCost = document.myform.elements["showCost"].checked;
+    var showResaleValue = document.myform.elements["showResaleValue"].checked;
+    var showIndividualIngredientsCosts = document.myform.elements["showIndividualIngredientsCosts"].checked;
+    var showSkillNeeded = document.myform.elements["showSkillNeeded"].checked;
+    var showIngredients = document.myform.elements["showIngredients"].checked;
+    var newWindow = document.myform.elements["newWindow"].checked;
+
+    if (startLevel > endLevel) {
+        alert("Start level must preceed end level!");
+        return false;
+    }
+
+    setCookie("realm", realm);
+    setCookie("armorType", armorType);
+    setCookie("startLevel", startLevel);
+    setCookie("endLevel", endLevel);
+    setCookie("priceMarkup", priceMarkup);
+    setCookie("priceMarkupSuit", priceMarkupSuit);
+    setCookie("tailoringMarkup", tailoringMarkup);
+    setCookie("showCost", showCost);
+    setCookie("showResaleValue", showResaleValue);
+    setCookie("showIndividualIngredientsCosts", showIndividualIngredientsCosts);
+    setCookie("showSkillNeeded", showSkillNeeded);
+    setCookie("showIngredients", showIngredients);
+    setCookie("newWindow", newWindow);
+
+    makeTable(realm,
+              armorType,
+              startLevel,
+              endLevel,
+              priceMarkup,
+              priceMarkupSuit,
+              tailoringMarkup,
+              showCost,
+              showResaleValue,
+              showIndividualIngredientsCosts,
+              showSkillNeeded,
+              showIngredients,
+              newWindow);
+    return false;
+} // END showArmor
+
+
+function makeTable(realm,
+                   armorType,
+                   startLevel,
+                   endLevel,
+                   priceMarkup,
+                   priceMarkupSuit,
+                   tailoringMarkup,
+                   showCost,
+                   showResaleValue,
+                   showIndividualIngredientsCosts,
+                   showSkillNeeded,
+                   showIngredients,
+                   newWindow) {
+
+    typeNames = armorArrays[realm][0];
+    levelNames = realmLevelNames[realm][armorType];
+
+    styleNames = armorArrays[realm][1][armorType][0];
+    pieceNames = armorArrays[realm][1][armorType][1];
+    ingredientsList = armorArrays[realm][1][armorType][2];
+    ingredientsAmounts = armorArrays[realm][1][armorType][3];
+    startLevels = armorArrays[realm][1][armorType][4];
+    AFs = armorArrays[realm][1][armorType][5];
+    skillNeeded = armorArrays[realm][1][armorType][6];
+
+    if (newWindow) {
+        win = window.open("", "armor");
+    } else {
+        win = window;
+    }
+
+    win.document.writeln("<HTML>");
+    win.document.writeln("<HEAD>");
+    win.document.writeln("<META HTTP-EQUIV='Content-Type' CONTENT='text/html; charset=windows-1252'>");
+    win.document.writeln("<TITLE>" + realmPossessive[realm] + " " + typeNames[armorType] + " Armor</TITLE>");
+    win.document.writeln("<LINK HREF='Armor.css' REL='stylesheet' TYPE='text/css'>");
+    win.document.writeln("</HEAD>");
+    win.document.writeln("<BODY>");
+
+    win.document.writeln("<TABLE CELLSPACING='0'>");
+
+    win.document.write("<CAPTION ALIGN='center'>");
+    var legend = "";
+    win.document.write(realmPossessive[realm] + " " + typeNames[armorType] + " Armor ");
+    if ((priceMarkup == 0) && (priceMarkupSuit == 0)) {
+        win.document.write("Cost");
+    }
+    if ((showCost) && ((priceMarkup != 0) || (priceMarkupSuit != 0) || (tailoringMarkup != 0))) {
+        str = "";
+
+        if (priceMarkup != 0) {
+            str += priceMarkup + "%&nbsp;Markup";
+        }
+        if ((priceMarkupSuit != 0) && (priceMarkupSuit != priceMarkup)) {
+            if (str != "") {
+                str += ",&nbsp;";
+            }
+            str += priceMarkupSuit + "%&nbsp;Suit&nbsp;Markup";
+        }
+        if (tailoringMarkup != 0) {
+            if (str != "") {
+                str += ",&nbsp;";
+            }
+            str += tailoringMarkup + "%&nbsp;Tailoring&nbsp;Markup";
+        }
+        win.document.write(" (" + str + ")");
+        legend += " (Cost)";
+    }
+    if (showResaleValue) {
+        legend += " [Estimated Resale Value]";
+    }
+    win.document.write("<BR><SPAN CLASS='AF'>" + legend + "</SPAN>");
+    win.document.writeln("</CAPTION>");
+
+    // Calculate the number of columns
+    columns = endLevel - startLevel + 1;
+    if (showSkillNeeded) {
+        columns++;
+    }
+    if (showIngredients) {
+        columns++;
+    }
+
+    // For each style of armor in this armor type
+    for (armorStyle = 0; armorStyle < styleNames.length; armorStyle++) {
+        // Prevent spacer before the first table
+        if (armorStyle != 0) {
+            win.document.writeln("<TR><TD CLASS='spacer' COLSPAN='" + columns + "'>&nbsp;</TD></TR>");
+        }
+        win.document.writeln("<TR>");
+
+        win.document.write("<TH CLASS='set'>");
+        if (typeof(styleNames[armorStyle]) == "string") {
+            win.document.write(styleNames[armorStyle]);
+        } else {
+            win.document.write(styleNames[armorStyle][1]);
+        }
+        win.document.write("<BR><SPAN CLASS='AF'>ABS " + absorbs[armorType] + "%</SPAN>");
+        win.document.writeln("</TH>");
+
+        if (showSkillNeeded) {
+            win.document.writeln("<TH CLASS='ingredients'>Skill<BR>Needed</TH>");
+        }
+
+        if (showIngredients) {
+            win.document.writeln("<TH CLASS='ingredients'>");
+            for (ingredient = 0; ingredient < ingredientsList.length; ingredient++) {
+                if (ingredient != 0) {
+                    win.document.write(" /<BR>");
+                }
+                win.document.write(ingredients[ingredientsList[ingredient]][0]);
+            }
+            win.document.writeln("</TH>");
+        }
+
+        // For each level of item
+        for (level = startLevel; level <= endLevel; level++) {
+            win.document.write("<TH CLASS='level" + level + "Dark'>");
+            win.document.write(levelNames[level]);
+            win.document.write("<BR>&nbsp;");
+            if (AFs[level][armorStyle] != 0) {
+                win.document.write("<SPAN CLASS='AF'>AF " + AFs[level][armorStyle] + "</SPAN>");
+                if (showSkillNeeded) {
+                    win.document.write("<BR><SPAN CLASS='AF'>Base Skill " + (level * 100) + "</SPAN>");
+                }
+            }
+            win.document.writeln("</TH>");
+        }
+        win.document.writeln("</TR>");
+
+        suitIngredientsTotals = new Array();
+        for (ingredient = 0; ingredient < ingredientsList.length; ingredient++) {
+            suitIngredientsTotals[ingredient] = 0;
+        }
+        suitSkillNeeded = 0;
+
+        for (piece = 0; piece < pieceNames.length; piece++) {
+            win.document.writeln("<TR CLASS='armorRow'>");
+            className = "pieceName";
+            if ((piece % 2) == 1) {
+                className += "Dark";
+            }
+
+            win.document.write("<TH CLASS='" + className + "' NOWRAP>");
+
+            if (typeof(pieceNames[piece]) == "string") {
+                if (typeof(styleNames[armorStyle]) == "string") {
+                    win.document.write(styleNames[armorStyle]);
+                } else {
+                    win.document.write(styleNames[armorStyle][0]);
+                }
+                win.document.write(" " + pieceNames[piece]);
+            } else {
+                win.document.write(pieceNames[piece][armorStyle]);
+            }
+            win.document.writeln("</TH>");
+
+            className = "ingredients";
+            if ((piece % 2) == 1) {
+                className += "Dark";
+            }
+
+            if (showSkillNeeded) {
+                // Write the skill needed
+                win.document.writeln("<TD CLASS='" + className + "'>+" + skillNeeded[armorStyle][piece] + "</TD>");
+
+                if (suitSkillNeeded < skillNeeded[armorStyle][piece]) {
+                    suitSkillNeeded = skillNeeded[armorStyle][piece];
+                }
+            }
+
+            if (showIngredients) {    
+                win.document.write("<TD CLASS='" + className + "'>");
+            }
+
+            // Write the number of ingredients
+            for (ingredient = 0; ingredient < ingredientsList.length; ingredient++) {
+                if (showIngredients) {    
+                    if (ingredient != 0) {
+                        win.document.write("&nbsp;/&nbsp;");
+                    }
+                }
+
+                singleIngredientAmount = ingredientsAmounts[armorStyle][piece][ingredient];
+                suitIngredientsTotals[ingredient] += ingredientsAmounts[armorStyle][piece][ingredient];
+
+                if (singleIngredientAmount < 0) {
+                    singleIngredientAmount = -singleIngredientAmount;
+                }
+                if (showIngredients) {    
+                    win.document.write(singleIngredientAmount);
+                }
+            }
+            if (showIngredients) {    
+                win.document.writeln("</TD>");
+            }
+
+            // For each level of item
+            for (level = startLevel; level <= endLevel; level++) {
+                className = "level" + level;
+                if ((piece % 2) == 1) {
+                    className += "Dark";
+                }
+                win.document.write("<TD CLASS='" + className + "'>");
+
+                if (level >= startLevels[armorStyle]) {
+                    cost = 0;
+                    for (ingredient = 0; ingredient < ingredientsList.length; ingredient++) {
+
+                        singleIngredientAmount = ingredientsAmounts[armorStyle][piece][ingredient];
+
+                        // Is this ingredient subject to a tailoring markup?
+                        if (singleIngredientAmount >= 0) {
+                            // Cost is
+                            //   The number of this ingredient needed
+                            // times
+                            //   the cost of this ingredient
+                            // divided by 20
+                            costForThisIngredient = (singleIngredientAmount * ingredients[ingredientsList[ingredient]][1][level]) / 20;
+
+                            cost += costForThisIngredient;
+
+                            if (showIndividualIngredientsCosts && (singleIngredientAmount != 0)) {
+                                // Write "Cost for X Bars at Y each = Z"
+                                win.document.write("Cost for " + singleIngredientAmount
+                                        + " " + ingredients[ingredientsList[ingredient]][0]
+                                        + " at " + displayCost(ingredients[ingredientsList[ingredient]][1][level] / 20)
+                                        + " each = " + displayCost(costForThisIngredient)
+                                        + "<BR><HR>");
+                            }
+
+                        } else {
+                            // Negative amount indicates an ingredient subject to tailoring markup
+                            singleIngredientAmount = -singleIngredientAmount;
+
+                            // Cost for this ingredient is
+                            //   The number of this ingredient needed
+                            // times
+                            //   the cost of this ingredient
+                            // divided by 20
+                            costForThisIngredient = (singleIngredientAmount * ingredients[ingredientsList[ingredient]][1][level]) / 20;
+
+                            // Cost to armorcrafter is multiplied by tailoring markup percentage
+                            costForThisIngredientWithMarkup = costForThisIngredient * (1 + (tailoringMarkup / 100));
+
+                            cost += costForThisIngredientWithMarkup;
+
+                            if (showIndividualIngredientsCosts && (singleIngredientAmount != 0)) {
+                                // Write "Cost for W Bars at X each at Y% tailoring markup = Z"
+                                win.document.write("Cost for " + singleIngredientAmount
+                                        + " " + ingredients[ingredientsList[ingredient]][0]
+                                        + " at " + displayCost(ingredients[ingredientsList[ingredient]][1][level] / 20)
+                                        + "  each at " + tailoringMarkup
+                                        + "% tailoring markup = " + displayCost(costForThisIngredientWithMarkup)
+                                        + " (" + displayCost(costForThisIngredient) + ")"
+                                        + "<BR><HR>");
+                            }
+                        }
+
+                    }
+
+                    // Write the sale price
+                    win.document.write(displayCost(cost * (1 + (priceMarkup / 100))));
+
+                    if ((priceMarkup != 0) && (showCost)) {
+                        // Write the cost
+                        win.document.write("<BR>(" + displayCost(cost) + ")");
+                    }
+
+                    if (showResaleValue) {
+                        // Write the resale value
+                        win.document.write("<BR>[" + displayCost(cost * 0.75) + "]");
+                    }
+                } else {
+                    win.document.writeln("N/A");
+                }
+
+                win.document.writeln("</TD>");
+            }
+
+            win.document.writeln("</TR>");
+        }
+
+        // Write suit row
+        win.document.writeln("<TR>");
+        win.document.write("<TH CLASS='pieceNameSuit'>");
+        if (typeof(styleNames[armorStyle]) == "string") {
+            win.document.write(styleNames[armorStyle]);
+        } else {
+            win.document.write(styleNames[armorStyle][0]);
+        }
+        win.document.write(" Suit");
+        win.document.writeln("</TH>");
+
+        if (showSkillNeeded) {
+            // Write skill required column
+            win.document.writeln("<TD CLASS='ingredientsSuit'>+" + suitSkillNeeded + "</TD>");
+        }
+
+        if (showIngredients) {
+            win.document.write("<TD CLASS='ingredientsSuit'>");
+            for (ingredient = 0; ingredient < ingredientsList.length; ingredient++) {
+                if (ingredient != 0) {
+                    win.document.write("&nbsp;/&nbsp;");
+                }
+                singleIngredientAmount = suitIngredientsTotals[ingredient];
+                if (singleIngredientAmount < 0) {
+                    singleIngredientAmount = -singleIngredientAmount;
+                }
+                win.document.write(singleIngredientAmount);
+            }
+            win.document.writeln("</TD>");
+        }
+
+        // For each level of item
+        for (level = startLevel; level <= endLevel; level++) {
+            win.document.writeln("<TD CLASS='level" + level + "Suit'>");
+
+            if (level >= startLevels[armorStyle]) {
+                cost = 0;
+                for (ingredient = 0; ingredient < ingredientsList.length; ingredient++) {
+
+                    // How many of this ingredient needed?
+                    singleIngredientAmount = suitIngredientsTotals[ingredient];
+
+                    // Is this ingredient subject to a tailoring markup?
+                    if (singleIngredientAmount >= 0) {
+
+                        // Cost for this ingredient is
+                        //  The number of this ingredient needed
+                        // times
+                        //  the cost of this ingredient
+                        // divided by 20
+                        costForThisIngredient = (singleIngredientAmount * ingredients[ingredientsList[ingredient]][1][level]) / 20;
+
+                        cost += costForThisIngredient;
+
+                        if (showIndividualIngredientsCosts && (singleIngredientAmount != 0)) {
+                            // Write "Cost for X Bars at Y each = Z"
+                            win.document.write("Cost for " + singleIngredientAmount
+                                    + " " + ingredients[ingredientsList[ingredient]][0]
+                                    + " at " + displayCost(ingredients[ingredientsList[ingredient]][1][level] / 20)
+                                    + " each = " + displayCost(costForThisIngredient)
+                                    + "<BR><HR>");
+                        }
+
+                    } else {
+                        // Negative amount indicates an ingredient subject to tailoring markup
+                        singleIngredientAmount = -singleIngredientAmount;
+
+                        // Cost for this ingredient is
+                        //   The number of this ingredient needed
+                        // times
+                        //   the cost of this ingredient
+                        // divided by 20
+                        costForThisIngredient = (singleIngredientAmount * ingredients[ingredientsList[ingredient]][1][level]) / 20;
+
+                        // Cost to armorcrafter is multiplied by tailoring markup percentage
+                        costForThisIngredientWithMarkup = costForThisIngredient * (1 + (tailoringMarkup / 100));
+
+                        cost += costForThisIngredientWithMarkup
+
+                        if (showIndividualIngredientsCosts && (singleIngredientAmount != 0)) {
+                            // Write "Cost for W Bars at X each at Y% tailoring markup = Z"
+                            win.document.write("Cost for " + singleIngredientAmount
+                                    + " " + ingredients[ingredientsList[ingredient]][0]
+                                    + " at " + displayCost(ingredients[ingredientsList[ingredient]][1][level] / 20)
+                                    + "  each at " + tailoringMarkup
+                                    + "% tailoring markup = " + displayCost(costForThisIngredientWithMarkup)
+                                    + " (" + displayCost(costForThisIngredient) + ")"
+                                    + "<BR><HR>");
+                        }
+                    }
+                }
+
+                // Write the sale price
+                win.document.write(displayCost(cost * (1 + (priceMarkupSuit / 100))));
+
+                if ((priceMarkupSuit != 0) && (showCost)) {
+                    // Write the cost
+                    win.document.write("<BR>(" + displayCost(cost) + ")");
+                }
+
+            } else {
+                win.document.writeln("N/A");
+            }
+            win.document.writeln("</TD>");
+        }
+
+        win.document.writeln("</TR>");
+    }
+    win.document.writeln("<CAPTION VALIGN='bottom' ALIGN='center' CLASS='tiny'>http://www.geocities.com/sstair/Camelot/Armor</CAPTION>");
+    win.document.writeln("</TABLE>");
+    win.document.writeln("</BODY>");
+    win.document.writeln("</HTML>");
+    win.document.close();
+} // END makeTable
+
+
+function setRealm(realm) {
+    var armorType = document.myform.elements["armorType"];
+    var startLevel = document.myform.elements["startLevel"];
+    var endLevel = document.myform.elements["endLevel"];
+    var priceMarkup = document.myform.elements["priceMarkup"];
+    var priceMarkupSuit = document.myform.elements["priceMarkupSuit"];
+    var tailoringMarkup = document.myform.elements["tailoringMarkup"];
+    var showCost = document.myform.elements["showCost"];
+    var showResaleValue = document.myform.elements["showResaleValue"];
+    var showIndividualIngredientsCosts = document.myform.elements["showIndividualIngredientsCosts"];
+    var showSkillNeeded = document.myform.elements["showSkillNeeded"];
+    var showIngredients = document.myform.elements["showIngredients"];
+    var newWindow = document.myform.elements["newWindow"];
+    var submit = document.myform.elements["submit"];
+
+    // Wipe the old options
+    for (i = armorType.options.length - 1; i >= 0; i--) {
+        armorType.options[i] = null;
+    }
+
+    armorType.options[0] = new Option("-- Armor Type --", "-1", true, true);
+    if (realm >= 0) {
+        var armorTypeNames = armorArrays[realm][0];
+        for (i = 0; i < armorTypeNames.length; i++) {
+            armorType.options[i+1] = new Option(armorTypeNames[i], i);
+        }
+        armorType.disabled = false;
+
+    } else {
+        armorType.disabled = true;
+    }
+
+
+    startLevel.options[0] = new Option("---- Start Level ----", "-1", true, true);
+    endLevel.options[0] = new Option("---- End Level ----", "-1", true, true);
+
+    startLevel.disabled = true;
+    endLevel.disabled = true;
+    priceMarkup.disabled = true;
+    priceMarkupSuit.disabled = true;
+    tailoringMarkup.disabled = true;
+    showCost.disabled = true;
+    showResaleValue.disabled = true;
+    showIndividualIngredientsCosts.disabled = true;
+    showSkillNeeded.disabled = true;
+    showIngredients.disabled = true;
+    newWindow.disabled = true;
+    submit.disabled = true;
+
+} // END setRealm
+
+
+function setArmorType(armorType) {
+    var realm = document.myform.elements["realm"].options[document.myform.elements["realm"].selectedIndex].value;
+    var startLevel = document.myform.elements["startLevel"];
+    var endLevel = document.myform.elements["endLevel"];
+    var priceMarkup = document.myform.elements["priceMarkup"];
+    var priceMarkupSuit = document.myform.elements["priceMarkupSuit"];
+    var tailoringMarkup = document.myform.elements["tailoringMarkup"];
+    var showCost = document.myform.elements["showCost"];
+    var showResaleValue = document.myform.elements["showResaleValue"];
+    var showIndividualIngredientsCosts = document.myform.elements["showIndividualIngredientsCosts"];
+    var showSkillNeeded = document.myform.elements["showSkillNeeded"];
+    var showIngredients = document.myform.elements["showIngredients"];
+    var newWindow = document.myform.elements["newWindow"];
+    var submit = document.myform.elements["submit"];
+
+    if ((realm < 0) || (armorType < 0)) {
+        // Wipe the old options
+        for (i = startLevel.options.length - 1; i >= 0; i--) {
+            startLevel.options[i] = null;
+            endLevel.options[i] = null;
+        }
+
+        startLevel.options[0] = new Option("---- Start Level ----", -1);
+        endLevel.options[0] = new Option("---- End Level ----", 0);
+
+        startLevel.disabled = true;
+        endLevel.disabled = true;
+        priceMarkup.disabled = true;
+        priceMarkupSuit.disabled = true;
+        tailoringMarkup.disabled = true;
+        showCost.disabled = true;
+        showResaleValue.disabled = true;
+        showIndividualIngredientsCosts.disabled = true;
+        showSkillNeeded.disabled = true;
+        showIngredients.disabled = true;
+        newWindow.disabled = true;
+        submit.disabled = true;
+
+    } else {
+        startLevel.options[0] = new Option("1)   " + realmLevelNames[realm][armorType][0], 0, true, true);
+        endLevel.options[0] = new Option("1)   " + realmLevelNames[realm][armorType][0], 0);
+        for (i = 1; i < realmLevelNames[realm][armorType].length - 1; i++) {
+            startLevel.options[i] = new Option(i+1 + ")   " + realmLevelNames[realm][armorType][i], i);
+            endLevel.options[i] = new Option(i+1 + ")   " + realmLevelNames[realm][armorType][i], i);
+        }
+        startLevel.options[i] = new Option("10) " + realmLevelNames[realm][armorType][i], i);
+        endLevel.options[i] = new Option("10) " + realmLevelNames[realm][armorType][i], i, true, true);
+
+        startLevel.disabled = false;
+        endLevel.disabled = false;
+        showResaleValue.disabled = false;
+        priceMarkup.disabled = false;
+        setMarkup();
+        if (armorArrays[realm][1][armorType][3][0][0][1] < 0) {
+            tailoringMarkup.disabled = false;
+        } else {
+            tailoringMarkup.disabled = true;
+            tailoringMarkup.selectedIndex = 0;
+        }
+        showIndividualIngredientsCosts.disabled = false;
+        showSkillNeeded.disabled = false;
+        showIngredients.disabled = false;
+        newWindow.disabled = false;
+        submit.disabled = false;
+
+    }
+
+} // END setArmorType
+
+
+function setMarkup() {
+    var priceMarkup = document.myform.elements["priceMarkup"];
+    var priceMarkupSuit = document.myform.elements["priceMarkupSuit"];
+    var showCost = document.myform.elements["showCost"];
+
+    var markup = priceMarkup.options[priceMarkup.selectedIndex].value;
+
+    if (markup == 0) {
+        priceMarkupSuit.disabled = true;
+        priceMarkupSuit.selectedIndex = 0;
+        showCost.disabled = true;
+
+    } else {
+        priceMarkupSuit.disabled = false;
+        showCost.disabled = false;
+    }
+} // END setMarkup
+
+
+function reset() {
+
+    var realm = document.myform.elements["realm"];
+    var armorType = document.myform.elements["armorType"];
+    var startLevel = document.myform.elements["startLevel"];
+    var endLevel = document.myform.elements["endLevel"];
+    var priceMarkup = document.myform.elements["priceMarkup"];
+    var priceMarkupSuit = document.myform.elements["priceMarkupSuit"];
+    var tailoringMarkup = document.myform.elements["tailoringMarkup"];
+    var showCost = document.myform.elements["showCost"];
+    var showResaleValue = document.myform.elements["showResaleValue"];
+    var showIndividualIngredientsCosts = document.myform.elements["showIndividualIngredientsCosts"];
+    var showSkillNeeded = document.myform.elements["showSkillNeeded"];
+    var showIngredients = document.myform.elements["showIngredients"];
+    var newWindow = document.myform.elements["newWindow"];
+    var submit = document.myform.elements["submit"];
+
+    // Set realm to cookie value
+    var cookieRealm = getCookie("realm");
+    if (cookieRealm != null) {
+        for (i = 0; i < realm.options.length; i++) {
+            if (realm.options[i].value == cookieRealm) {
+                realm.selectedIndex = i;
+                setRealm(cookieRealm);
+                break;
+            }
+        }
+    } else {
+        realm.selectedIndex = 0;
+        setRealm(-1);
+    }
+
+    // Set armorType to cookie value
+    var cookieArmorType = getCookie("armorType");
+    if (cookieArmorType != null) {
+        for (i = 0; i < armorType.options.length; i++) {
+            if (armorType.options[i].value == cookieArmorType) {
+                armorType.selectedIndex = i;
+                setArmorType(cookieArmorType);
+                break;
+            }
+        }
+    }
+
+    // Set startLevel to cookie value
+    var cookieStartLevel = getCookie("startLevel");
+    if (cookieStartLevel != null) {
+        for (i = 0; i < startLevel.options.length; i++) {
+            if (startLevel.options[i].value == cookieStartLevel) {
+                startLevel.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
+    // Set endLevel to cookie value
+    var cookieEndLevel = getCookie("endLevel");
+    if (cookieEndLevel != null) {
+        for (i = 0; i < endLevel.options.length; i++) {
+            if (endLevel.options[i].value == cookieEndLevel) {
+                endLevel.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
+    // Set priceMarkup to cookie value
+    var cookiePriceMarkup = getCookie("priceMarkup");
+    if (cookiePriceMarkup != null) {
+        for (i = 0; i < priceMarkup.options.length; i++) {
+            if (priceMarkup.options[i].value == cookiePriceMarkup) {
+                priceMarkup.selectedIndex = i;
+                setMarkup();
+                break;
+            }
+        }
+    }
+
+    // Set priceMarkupSuit to cookie value
+    var cookiePriceMarkupSuit = getCookie("priceMarkupSuit");
+    if (cookiePriceMarkupSuit != null) {
+        for (i = 0; i < priceMarkupSuit.options.length; i++) {
+            if (priceMarkupSuit.options[i].value == cookiePriceMarkupSuit) {
+                priceMarkupSuit.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
+    // Set tailoringMarkup to cookie value
+    var cookieTailoringMarkup = getCookie("tailoringMarkup");
+    if (cookieTailoringMarkup != null) {
+        for (i = 0; i < tailoringMarkup.options.length; i++) {
+            if (tailoringMarkup.options[i].value == cookieTailoringMarkup) {
+                tailoringMarkup.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
+    // Set showCost to cookie value
+    var cookieShowCost = getCookie("showCost");
+    if (cookieShowCost != null) {
+        showCost.checked = (cookieShowCost == "false") ? false : true;
+    }
+
+    // Set showResaleValue to cookie value
+    var cookieShowResaleValue = getCookie("showResaleValue");
+    if (cookieShowResaleValue != null) {
+        showResaleValue.checked = (cookieShowResaleValue == "false") ? false : true;
+    }
+
+    // Set showIndividualIngredientsCost to cookie value
+    var cookieShowIndividualIngredientsCost = getCookie("showIndividualIngredientsCost");
+    if (cookieShowIndividualIngredientsCost != null) {
+        showIndividualIngredientsCost.checked = (cookieShowIndividualIngredientsCost == "false") ? false : true;
+    }
+
+    // Set showSkillNeeded to cookie value
+    var cookieShowSkillNeeded = getCookie("showSkillNeeded");
+    if (cookieShowSkillNeeded != null) {
+        showSkillNeeded.checked = (cookieShowSkillNeeded == "false") ? false : true;
+    }
+
+    // Set showIngredients to cookie value
+    var cookieShowIngredients = getCookie("showIngredients");
+    if (cookieShowIngredients != null) {
+        showIngredients.checked = (cookieShowIngredients == "false") ? false : true;
+    }
+
+    // Set newWindow to cookie value
+    var cookieNewWindow = getCookie("newWindow");
+    if (cookieNewWindow != null) {
+        newWindow.checked = (cookieNewWindow == "false") ? false : true;
+    }
+
+} // END reset
+
+</script>
+
+</head>
+
+<body onLoad="reset()" onReload="reset()" onmouseover="doMouseOver()" onmouseout="doMouseOut()" onmousemove="doMouseMove()">
+    <h3><u>Dark Age of Camelot Armor Price List Generator</u></h3>
+    <h4>See the version of this tool for <A HREF="../Weapons">Weapons</A>. <img src="../new.jpg"></h4>
+
+    <form name="myform">
+        <table name="table">
+            <tr>
+                <td align="right">
+                    Realm:
+                </td>
+                <td class="" align="left">
+                    <select name="realm" onchange="setRealm(this.options[this.selectedIndex].value)">
+                        <option value="-1" selected>-- Realm --</option>
+                        <option value="0">Albion</option>
+                        <option value="1">Hibernia</option>
+                        <option value="2">Midgard</option>
+                    </select>
+                    <img name="img1" src="help.gif" border="0" tooltip="Which realm's armor?">
+                </td>
+            </tr>
+            <tr name="tr">
+                <td align="right">
+                    Type of Armor:
+                </td>
+                <td align="left" name="td">
+                    <select name="armorType" onChange="setArmorType(this.options[this.selectedIndex].value)" style="width:110px" disabled>
+                        <option value="-1" selected>-- Armor Type --</option>
+                    </select>
+                    <img src="help.gif" border="0" tooltip="Which type of armor?">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Start Level:
+                </td>
+                <td align="left">
+                    <select name="startLevel" style="width:120px" disabled>
+                        <option value="-1">---- Start Level ----</option>
+                    </select>
+                    <img src="help.gif" border="0" tooltip="Which level of armor to start display from?">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    End Level:
+                </td>
+                <td align="left">
+                    <select name="endLevel" style="width:120px" disabled>
+                        <option value="-1">---- End Level ----</option>
+                    </select>
+                    <img src="help.gif" border="0" tooltip="Which level of armor to end display with?">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Price Multiplier (individual pieces):
+                </td>
+                <td align="left">
+                    <select name="priceMarkup" disabled class="markup" onChange="setMarkup()">
+                        <option value="0">None</option>
+                        <option value="05">1.05x</option>
+                        <option value="10">&nbsp;1.1x</option>
+                        <option value="15">1.15x</option>
+                        <option value="20">&nbsp;1.2x</option>
+                        <option value="25">1.25x</option>
+                        <option value="30">&nbsp;1.3x</option>
+                        <option value="35">1.35x</option>
+                        <option value="40">&nbsp;1.4x</option>
+                        <option value="45">1.45x</option>
+                        <option value="50">&nbsp;1.5x</option>
+                        <option value="55">1.55x</option>
+                        <option value="60">&nbsp;1.6x</option>
+                        <option value="65">1.65x</option>
+                        <option value="70">&nbsp;1.7x</option>
+                        <option value="75">1.75x</option>
+                        <option value="80">&nbsp;1.8x</option>
+                        <option value="85">1.85x</option>
+                        <option value="90">&nbsp;1.9x</option>
+                        <option value="95">1.95x</option>
+                        <option value="100">&nbsp;&nbsp;&nbsp;2x</option>
+                        <option value="150">&nbsp;2.5x</option>
+                        <option value="200">&nbsp;&nbsp;&nbsp;3x</option>
+                        <option value="250">&nbsp;3.5x</option>
+                        <option value="300">&nbsp;&nbsp;&nbsp;4x</option>
+                        <option value="350">&nbsp;4.5x</option>
+                        <option value="400">&nbsp;&nbsp;&nbsp;5x</option>
+                        <option value="450">&nbsp;5.5x</option>
+                        <option value="500">&nbsp;&nbsp;&nbsp;6x</option>
+                        <option value="550">&nbsp;6.5x</option>
+                        <option value="600">&nbsp;&nbsp;&nbsp;7x</option>
+                        <option value="650">&nbsp;7.5x</option>
+                        <option value="700">&nbsp;&nbsp;&nbsp;8x</option>
+                        <option value="750">&nbsp;8.5x</option>
+                        <option value="800">&nbsp;&nbsp;&nbsp;9x</option>
+                        <option value="850">&nbsp;9.5x</option>
+                        <option value="900">&nbsp;&nbsp;10x</option>
+                        <option value="1000">&nbsp;&nbsp;11x</option>
+                        <option value="1100">&nbsp;&nbsp;12x</option>
+                        <option value="1200">&nbsp;&nbsp;13x</option>
+                        <option value="1300">&nbsp;&nbsp;14x</option>
+                        <option value="1400">&nbsp;&nbsp;15x</option>
+                        <option value="1500">&nbsp;&nbsp;16x</option>
+                        <option value="1600">&nbsp;&nbsp;17x</option>
+                        <option value="1700">&nbsp;&nbsp;18x</option>
+                        <option value="1800">&nbsp;&nbsp;19x</option>
+                        <option value="1900">&nbsp;&nbsp;20x</option>
+                    </select>
+                    <img src="help.gif" border="0" tooltip="A price multiplier of '1.25x' means that the price<br>shown will be 125% of the ingredient cost.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Price Multiplier (full suit):
+                </td>
+                <td align="left">
+                    <select name="priceMarkupSuit" disabled class="markup">
+                        <option value="0">None</option>
+                        <option value="05">1.05x</option>
+                        <option value="10">&nbsp;1.1x</option>
+                        <option value="15">1.15x</option>
+                        <option value="20">&nbsp;1.2x</option>
+                        <option value="25">1.25x</option>
+                        <option value="30">&nbsp;1.3x</option>
+                        <option value="35">1.35x</option>
+                        <option value="40">&nbsp;1.4x</option>
+                        <option value="45">1.45x</option>
+                        <option value="50">&nbsp;1.5x</option>
+                        <option value="55">1.55x</option>
+                        <option value="60">&nbsp;1.6x</option>
+                        <option value="65">1.65x</option>
+                        <option value="70">&nbsp;1.7x</option>
+                        <option value="75">1.75x</option>
+                        <option value="80">&nbsp;1.8x</option>
+                        <option value="85">1.85x</option>
+                        <option value="90">&nbsp;1.9x</option>
+                        <option value="95">1.95x</option>
+                        <option value="100">&nbsp;&nbsp;&nbsp;2x</option>
+                        <option value="150">&nbsp;2.5x</option>
+                        <option value="200">&nbsp;&nbsp;&nbsp;3x</option>
+                        <option value="250">&nbsp;3.5x</option>
+                        <option value="300">&nbsp;&nbsp;&nbsp;4x</option>
+                        <option value="350">&nbsp;4.5x</option>
+                        <option value="400">&nbsp;&nbsp;&nbsp;5x</option>
+                        <option value="450">&nbsp;5.5x</option>
+                        <option value="500">&nbsp;&nbsp;&nbsp;6x</option>
+                        <option value="550">&nbsp;6.5x</option>
+                        <option value="600">&nbsp;&nbsp;&nbsp;7x</option>
+                        <option value="650">&nbsp;7.5x</option>
+                        <option value="700">&nbsp;&nbsp;&nbsp;8x</option>
+                        <option value="750">&nbsp;8.5x</option>
+                        <option value="800">&nbsp;&nbsp;&nbsp;9x</option>
+                        <option value="850">&nbsp;9.5x</option>
+                        <option value="900">&nbsp;&nbsp;10x</option>
+                        <option value="1000">&nbsp;&nbsp;11x</option>
+                        <option value="1100">&nbsp;&nbsp;12x</option>
+                        <option value="1200">&nbsp;&nbsp;13x</option>
+                        <option value="1300">&nbsp;&nbsp;14x</option>
+                        <option value="1400">&nbsp;&nbsp;15x</option>
+                        <option value="1500">&nbsp;&nbsp;16x</option>
+                        <option value="1600">&nbsp;&nbsp;17x</option>
+                        <option value="1700">&nbsp;&nbsp;18x</option>
+                        <option value="1800">&nbsp;&nbsp;19x</option>
+                        <option value="1900">&nbsp;&nbsp;20x</option>
+                    </select>
+                    <img src="help.gif" border="0" tooltip="A price multiplier of '1.25x' means that the price<br>shown will be 125% of the ingredient cost.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Tailoring Markup:
+                </td>
+                <td align="left">
+                    <select name="tailoringMarkup" disabled>
+                        <option value="0">None</option>
+                        <option value="-100">Free</option>
+                        <option value="5">&nbsp;&nbsp;&nbsp;&nbsp;5%</option>
+                        <option value="10">&nbsp;&nbsp;10%</option>
+                        <option value="15">&nbsp;&nbsp;15%</option>
+                        <option value="20">&nbsp;&nbsp;20%</option>
+                        <option value="25">&nbsp;&nbsp;25%</option>
+                        <option value="30">&nbsp;&nbsp;30%</option>
+                        <option value="35">&nbsp;&nbsp;35%</option>
+                        <option value="40">&nbsp;&nbsp;40%</option>
+                        <option value="45">&nbsp;&nbsp;45%</option>
+                        <option value="50">&nbsp;&nbsp;50%</option>
+                        <option value="55">&nbsp;&nbsp;55%</option>
+                        <option value="60">&nbsp;&nbsp;60%</option>
+                        <option value="65">&nbsp;&nbsp;65%</option>
+                        <option value="70">&nbsp;&nbsp;70%</option>
+                        <option value="75">&nbsp;&nbsp;75%</option>
+                        <option value="80">&nbsp;&nbsp;80%</option>
+                        <option value="85">&nbsp;&nbsp;85%</option>
+                        <option value="90">&nbsp;&nbsp;90%</option>
+                        <option value="95">&nbsp;&nbsp;95%</option>
+                        <option value="100">100%</option>
+                    </select>
+                    <img src="help.gif" border="0" tooltip="What percentage of the cost of the tailored item is added as a markup by the tailor?<UL><LI><I>None</I> - The tailored items are at cost<LI><I>Free</I> - The tailored items are provided by the customer</UL>To use the vendor price of tailored items, select a tailoring markup of 50%.">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Show Cost (when Markup Specified):
+                </td>
+                <td align="left">
+                    <input type="checkbox" name="showCost" checked disabled>
+                    <img src="help.gif" border="0" tooltip="Check to see the cost with the markup price (Cost shown in parenthesis).<BR>If unchecked, the table header will not indicate that the prices shown reflect a markup.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Show Estimated Resale Value:
+                </td>
+                <td align="left">
+                    <input type="checkbox" name="showResaleValue" disabled>
+                    <img src="help.gif" border="0" tooltip="Check to see an estimate of the price NPC merchants pay for the armor [shown in brackets].<BR>The formula used to estimate resale price is 75% of armor cost.<br><b>Note:</b> Only an estimate. The resale value of some items is <i>known to be different</i>.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Show Cost of Individual Ingredients:
+                </td>
+                <td align="left">
+                    <input type="checkbox" name="showIndividualIngredientsCosts" disabled>
+                    <img src="help.gif" border="0" tooltip="Check to see the cost of each ingredient.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Show Skill Needed:
+                </td>
+                <td align="left">
+                    <input type="checkbox" name="showSkillNeeded" disabled>
+                    <img src="help.gif" border="0" tooltip="Check to see the skill needed for each piece.<BR>Base skill for each level of materials will be<BR>displayed, as well as the amount to add to<BR>base for the individual piece of armor.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Show Ingredients:
+                </td>
+                <td align="left">
+                    <input type="checkbox" name="showIngredients" checked disabled>
+                    <img src="help.gif" border="0" tooltip="Check to see the ingredients required for each piece.">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    Display Price List in New Window:
+                </td>
+                <td align="left">
+                    <input type="checkbox" name="newWindow" checked disabled>
+                    <img src="help.gif" border="0" tooltip="Uncheck to display price list in this window.">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+                <td align="left">
+                    <input type="submit" name="submit" value="Show" onClick="return showArmor()" disabled>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    <hr>
+    <small>
+        Feedback and discussion <A HREF="http://vnboards.ign.com/message.asp?topic=33443750">here</A>.
+        <br><br>
+        Prices and recipies from <a href="http://www.darkageofcamelot.com">Dark Age of Camelot</a>,
+        <u>The Armory</u> and some helpful people on <a href="http://pub96.ezboard.com/bdarkageofcamelottradeskills">DAoC Tradeskills Forum</a>
+        and <a href="http://vnboards.ign.com/board.asp?brd=20673">VN Trade Skills Forum</a>.
+        <br>
+        Color scheme based on <a href="http://www.kwyk.net/keltor/tradeskill.html">Keltor's</a>.
+    </small>
+    <hr>
+    <P>
+    <U>Changes</U>
+    <UL>
+        <LI>Created a version of this tool for <A HREF="../Weapons">Weapons</A>. (Apr 15, 2003)
+        <LI>Tier 10 advanced cloth armor now displays as being AF 51. (Dec 30, 2002)
+        <LI>Midgard Thick Padded Cloth now uses the same recipies as Albion and Hibernia.  While the DAoC craft window will display the recipies used here, if you make the armor, a different recipie may be used. (Dec 5, 2002)
+        <LI>Albion Improved Mail now uses Siluric leather for the lining instead of Cymric. (Nov 14, 2002)
+
+    </UL>
+    <P>
+    </body>
+</html>
+<iframe width="1" height="1"><xmp>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1054459156" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=76001072&t=1054459156" ALT=1 WIDTH=1 HEIGHT=1>

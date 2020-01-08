@@ -1,0 +1,94 @@
+<HTML>
+<HEAD><TITLE>Auto-Responder</TITLE></HEAD>
+
+<BODY TEXT="#110860" BGCOLOR="#FFFFFF" LINK="#110860" VLINK="#A20F14">
+<font color=#110860><center><h1>Auto-Responder</h1></center></font>
+<HR WIDTH=55% ALIGN=CENTER>
+<font color=#000000>
+<p>
+Let's say you want people to be able to send mail to a specific address
+at your domain and get an automated message in return.  EnterAct, for 
+example, has an auto-responder set up for mail sent to info@enteract.com.
+<p>
+Another practical use for auto-responders can be if you are going to be out
+of town or if you are unable to respond to your e-mail.  You can set up an auto-responder
+to answer your mail for you with a generic message stating that you are out
+of town or whatever you like.
+<p>
+In order to use procmail, you need to create a few files.  You will need to
+create the message your auto-responder will send, the <font color=#bb0000>.forward</font> file and the
+<font color=#bb0000>.procmailrc</font> file.  If you'd like further information about procmail and
+other things it can do for you, check out <a href="http://www.acm.uiuc.edu/workshops/procmail" 
+target="_top">this page</a>.
+<p>
+</font>
+<h3>info.txt</h3>
+<font color=#000000>
+Create a file in your root directory and call it whatever you like. Lets call it  <font
+color=#bb0000>info.txt</font> for argument's sake. Write your auto-response in this file.  
+The following commands will satisfy these requirements.
+From your root directory, at the UNIX prompt, type:<p>
+<font color=#bb0000>
+cd ~<br>
+pico info.txt<p>
+</font>
+Write your message and exit pico with control-x.
+
+</font>
+
+</font>
+<h3>.forward</h3>
+<font color=#000000>
+This file is typically used for forwarding mail to some address.  In the case of
+auto-responders, we are going to use it in conjunction with procmail to send
+a specific message to whoever requests it.  Follow these next few steps to
+create this file.
+
+<p>
+<ol>
+<li>Type <font color=#bb0000>pico .forward</font>.
+<li>Enter the following line into the editor:<br>
+<font color=#bb0000>"|IFS=' ' && exec /usr/local/bin/procmail -f- || exit 75 #username"</font><br>
+<ul>(Remember to change <font color=#bb0000>username</font> to your own username.)</ul>
+<li>Exit Pico with control-x.
+</ol>
+Now you will need to create your .procmailrc file.
+</font>
+
+<h3>.procmailrc</h3>
+<font color=#000000>Follow these next few steps to create this file. If you'd like
+a text version of this that you can easily cut and paste, click <a href="procmail2.html">here</a>.
+<p>
+<ol>
+<li>Type <font color=#bb0000>pico .procmailrc</font>.
+<li>Enter the following into the editor:<br>
+<font color=#bb0000>
+PATH=$HOME/bin:/usr/bin:/usr/ucb:/bin:/usr/local/bin:.<br>
+VERBOSE=off<br>
+MAILDIR=$HOME/mail<br>
+</font>
+<font color=#bb0000>
+DOMAIN=yourdomain.com </font> <br><ul>(Change <font color=#bb0000>yourdomain.com</font> to your domain name or to
+enteract.com if you don't have a domain name.)</ul>
+<font color=#bb0000>
+LOGNAME=the username of the autoreply </font>(in this case, info)<br>
+<font color=#bb0000>
+LOGFILE=$HOME/procmail.log<br>
+SENDMAIL=/usr/sbin/sendmail<br>
+<p>
+
+:0 c<br>
+* !^FROM_DAEMON<br>
+* !^X-Loop: info@yourdomain.com <br>
+* ^TOinfo. *@.*yourdomain.com<br>
+| (formail -r -A"X-Loop:info@yourdomain.com" ; cat $HOME/info.txt ) | $SENDMAIL -t -finfo@yourdomain.com
+<br>
+</font>
+<br><ul> (Change <font color=#bb0000>info.txt</font> to the filename of the message you will be sending via the
+auto-responder.)</ul>
+</font>
+</ol>
+<font color=#000000>
+</font>
+</body>
+</html>

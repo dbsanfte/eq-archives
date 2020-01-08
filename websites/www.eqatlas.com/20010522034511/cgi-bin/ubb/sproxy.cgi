@@ -1,0 +1,1 @@
+<html><head></head><body><b>sproxy.(Perl) v.0.9.22 (c) SpellChecker.Net 2000</b><br>SCRIPT FILENAME: sproxy.cgi</body></html>

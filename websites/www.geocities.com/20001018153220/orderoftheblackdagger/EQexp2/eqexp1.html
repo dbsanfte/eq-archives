@@ -1,0 +1,365 @@
+<HTML>
+<TITLE>EQ Experience Calculator</TITLE>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+// <!--
+var NUMRACES = 13
+var NUMCLASSES = 14
+
+var race = 8
+var clas = 12
+var mobleveldiff = 0
+
+var Bard	= 1
+var Cleric	= 2
+var Druid	= 4
+var Enchanter	= 8
+var Magician	= 16
+var Monk	= 32
+var Necromancer	= 64
+var Paladin	= 128
+var Ranger	= 256
+var Rogue	= 512
+var ShadowKnight= 1024
+var Shaman	= 2048
+var Warrior	= 4096
+var Wizard	= 8192
+
+
+RaceArray = new Array(NUMRACES)
+RaceArray[0] = new Array("Barbarian", "105",	Rogue + Shaman + Warrior)
+RaceArray[1] = new Array("Dark Elf", "100",	Cleric + Enchanter + Magician + Necromancer + Rogue + ShadowKnight + Warrior + Wizard)
+RaceArray[2] = new Array("Dwarf", "100",	Cleric + Paladin + Rogue + Warrior)
+RaceArray[3] = new Array("Erudite", "100",	Cleric + Enchanter + Magician + Necromancer + Paladin + ShadowKnight + Wizard)
+RaceArray[4] = new Array("Gnome", "100",	Cleric + Enchanter + Magician + Necromancer + Rogue + Warrior + Wizard)
+RaceArray[5] = new Array("Half Elf", "100",	Bard + Druid + Paladin + Ranger + Rogue + Warrior)
+RaceArray[6] = new Array("Halfling", "95",	Cleric + Druid + Rogue + Warrior)
+RaceArray[7] = new Array("High Elf", "100",	Cleric + Enchanter + Magician + Paladin + Wizard)
+RaceArray[8] = new Array("Human", "100",	Bard + Cleric + Druid + Enchanter + Magician + Monk + Necromancer + Paladin + Ranger + Rogue + ShadowKnight + Warrior + Wizard)
+RaceArray[9] = new Array("Iksar", "120",        Monk + Necromancer + ShadowKnight + Shaman + Warrior)
+RaceArray[10] = new Array("Ogre", "115",	ShadowKnight + Shaman + Warrior)
+RaceArray[11] = new Array("Troll", "120",	ShadowKnight + Shaman + Warrior)
+RaceArray[12] = new Array("Wood Elf", "100",	Bard + Druid + Ranger + Rogue + Warrior)
+
+ClasArray = new Array(NUMCLASSES)
+ClasArray[0] = new Array("Bard", "14")
+ClasArray[1] = new Array("Cleric", "10")
+ClasArray[2] = new Array("Druid", "10")
+ClasArray[3] = new Array("Enchanter", "11")
+ClasArray[4] = new Array("Magician", "11")
+ClasArray[5] = new Array("Monk", "12")
+ClasArray[6] = new Array("Necromancer", "11")
+ClasArray[7] = new Array("Paladin", "14")
+ClasArray[8] = new Array("Ranger", "14")
+ClasArray[9] = new Array("Rogue", "9.05")
+ClasArray[10] = new Array("Shadow Knight", "14")
+ClasArray[11] = new Array("Shaman", "10")
+ClasArray[12] = new Array("Warrior", "9")
+ClasArray[13] = new Array("Wizard", "11")
+
+function C(level) {
+        var val;
+	if (level <= 30)
+		val = 1.0;
+	else if (level <= 35)
+		val = 1.1;
+	else if (level <= 40)
+		val = 1.2;
+	else if (level <= 45)
+		val = 1.3;
+	else if (level <= 51)
+		val = 1.4;
+	else if (level <= 54)
+		val = 1.3 + ((level - 50) / 10);
+	else if (level <= 59)
+		val = 1.9 + ((level - 55) / 5);
+	else if (level == 60)
+		val = 3.0;
+	else
+		val = 3.1;
+        return(val);
+}
+
+function XPToLevel(level, raceMult, classMult) {
+	return(Math.floor(C(level) * raceMult * classMult * Math.pow(level - 1, 3)));
+} // END XPToLevel
+
+
+function doTable() {
+	var base = RaceArray[race][1] * ClasArray[clas][1];
+	base = Math.round(base * 100) / 100;
+	if (top.two) {
+		top.two.document.open("text/html", "replace");
+		var win = top.two;
+	} else {
+		var win = window.open("eqexp2.html", "two", "scrollbars");
+	}
+
+	var title = RaceArray[race][0] + "/" + ClasArray[clas][0] + " (" + RaceArray[race][1] + " * " + ClasArray[clas][1] + " = " + base + ")";
+	win.document.writeln("<HTML><HEAD><TITLE>" + title + "</TITLE></HEAD>");
+	win.document.writeln("<BODY><DIV ALIGN=CENTER>");
+	win.document.writeln("<TABLE BORDER><CAPTION><B><FONT SIZE=+1>" + title + "<FONT></B></CAPTION>");
+	win.document.writeln("<TR>" +
+	    "<TH>Level</TH>" +
+	    "<TH ALIGN=CENTER>Total XP<BR>needed to<BR>reach level</TH>" +
+	    "<TH>Total XP<BR>needed to<BR>complete<BR>level</TH>" +
+	    "<TH>Difference<BR>(XP needed<BR>to fill level's<BR>XP bar)</TH>" +
+	    "<TH>Approx. # of<BR>mobs of level<BR>selected needed<BR>to fill level's XP bar</TH>" +
+	    "</TR>");
+
+	for (var l = 1; l <= 60; l++) {
+
+		var begin = XPToLevel(l, RaceArray[race][1], ClasArray[clas][1]);
+		var end = XPToLevel(l + 1, RaceArray[race][1], ClasArray[clas][1]);
+		var diff = end - begin;
+		
+		var numberofkills = "";
+		if ((l + mobleveldiff) > 0) {
+			var XPperkill = 75 * ((l + mobleveldiff) * (l + mobleveldiff));
+			var MaxXP = diff * 0.11;
+			if (XPperkill > MaxXP) {
+				XPperkill = MaxXP;
+				limited = 1;
+			} else {
+				limited = 0;
+			}
+			numberofkills = Math.floor(diff / XPperkill);
+			numberofkills += "";		// make it a string...
+			var string = ""
+			while (numberofkills.length > 3) {
+				u = numberofkills.length;
+				string = "," + numberofkills.slice(u - 3, u) + string;
+				numberofkills = numberofkills.slice(0, u - 3);
+			}
+			string = numberofkills + string;
+		} else {
+			string = "N/A";
+		}
+
+		begin += "";		// make it a string...
+		var begins = ""
+		while (begin.length > 3) {
+			u = begin.length;
+			begins = "," + begin.slice(u - 3, u) + begins;
+			begin = begin.slice(0, u - 3);
+		}
+		begins = begin + begins;
+
+		end += "";		// make it a string...
+		var ends = ""
+		while (end.length > 3) {
+			u = end.length;
+			ends = "," + end.slice(u - 3, u) + ends;
+			end = end.slice(0, u - 3);
+		}
+		ends = end + ends;
+
+		diff += "";		// make it a string...
+		var diffs = ""
+		while (diff.length > 3) {
+			u = diff.length;
+			diffs = "," + diff.slice(u - 3, u) + diffs;
+			diff = diff.slice(0, u - 3);
+		}
+		diffs = diff + diffs;
+
+
+		hell = ((l == 30) || (l == 35) || (l == 40) || (l == 45) || (l > 50));
+		win.document.writeln("<TR>" +
+		    "<TD ALIGN=CENTER><FONT SIZE=-1>" + l + "</FONT></TD>" +
+		    "<TD ALIGN=RIGHT><FONT SIZE=-1>" + begins + "</FONT></TD>" +
+		    "<TD ALIGN=RIGHT><FONT SIZE=-1>" + ends + "</FONT></TD>" +
+		    "<TD ALIGN=RIGHT><FONT SIZE=-1>" + (hell ? "<B>" : "") + diffs + (hell ? "</B>" : "") + "</FONT></TD>" +
+		    "<TD ALIGN=CENTER><FONT SIZE=-1>" + (hell ? "<B>" : "") + string + (limited ? "*" : " ") + (hell ? "</B>" : "") + "</FONT></TD>" +
+		    "</TR>");
+	}
+
+	win.document.writeln("<TR>" +
+	    "<TH>Level</TH>" +
+	    "<TH ALIGN=CENTER>Total XP<BR>needed to<BR>reach level</TH>" +
+	    "<TH>Total XP<BR>needed to<BR>complete<BR>level</TH>" +
+	    "<TH>Difference<BR>(XP needed<BR>to fill level's<BR>XP bar)</TH>" +
+	    "<TH>Approx. # of<BR>mobs of level<BR>selected needed<BR>to fill level's XP bar</TH>" +
+	    "</TR>");
+	win.document.write("</TABLE>");
+	win.document.write("<BR><BR><SMALL>* - XP per kill is limited to approximately 11% of the XP required to fill the level's XP bar</SMALL>");
+	win.document.write("</DIV>");
+	win.document.write("</BODY></HTML>");
+	win.document.close();
+} // END doTable
+
+
+function changedRace() {
+	for (var i = 0; i < NUMRACES; i++) {
+		if (document.xpc.race[i].checked) {
+			race = i
+			ValidateCombo();
+			return
+		}
+	}
+	alert("Error")
+} // END changedRace
+
+function changedClass() {
+	for (var i = 0; i < NUMCLASSES; i++) {
+		if (document.xpc.clas[i].checked) {
+			clas = i
+			ValidateCombo();
+			return
+		}
+	}
+	alert("Error")
+} // END changedClass
+
+function changedMobLevel() {
+	if (document.xpc.moblevel.selectedIndex != -1) {
+		mobleveldiff = new Number(document.xpc.moblevel.options[document.xpc.moblevel.selectedIndex].value)
+		//alert("mobleveldiff = " + mobleveldiff)
+		doTable()
+	}
+} // END changedMobLevel
+
+function ValidateCombo() {
+	//alert("RaceArray[race][2] = " + RaceArray[race][2]);
+	//alert("1 << clas = " + (1 << clas));
+	if (RaceArray[race][2] & (1 << clas)) {
+		doTable();
+	} else {
+		top.two.document.open("text/html", "replace");
+		top.two.document.writeln("\
+<HTML>\
+<HEAD>\
+	<TITLE>Invalid Race/Class Combintion</TITLE>\
+</HEAD>\
+</HTML>\
+<BODY>\
+	<H1 ALIGN=CENTER>Invalid Race/Class Combintion</H1>\
+</BODY>\
+</HTML>");
+
+	}
+	return
+}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY onLoad=doTable()>
+<DL>
+<DT>The formula for the amount of experience to complete a level is as follows:
+        <DD><FONT SIZE=+1><CODE><B>Total XP to<BR>complete a level = L<SUP>3</SUP> * C * R * H</B></CODE></FONT>
+<DT>Where:
+        <DD><DL>
+        <DT><B>C</B> = Class Multiplier
+        <DT><B>R</B> = Race Multiplier
+        <DT><B>H</B> = Hell Multiplier (based on level)
+                <DD><TABLE><TR><TD><TABLE WIDTH=100 BORDER=1>
+		<TR><TH>Level</TH><TH>Multipler</TH></TR>
+                <TR><TD ALIGN=CENTER>1-29</TD><TD ALIGN=CENTER>1.0</TD></TR>
+                <TR><TD ALIGN=CENTER>30-34</TD><TD ALIGN=CENTER>1.1</TD></TR>
+                <TR><TD ALIGN=CENTER>35-39</TD><TD ALIGN=CENTER>1.2</TD></TR>
+                <TR><TD ALIGN=CENTER>40-44</TD><TD ALIGN=CENTER>1.3</TD></TR>
+                <TR><TD ALIGN=CENTER>45-50</TD><TD ALIGN=CENTER>1.4</TD></TR>
+                </TABLE></TD>
+
+                <TD><TABLE WIDTH=100 BORDER=1>
+                <TR><TH>Level</TH><TH>Multipler</TH></TR>
+<!--
+<SCRIPT>
+for (var i = 51; i <= 60; i++) {
+        document.writeln("\t\t<TR><TD ALIGN=CENTER>" + i +
+            "</TD><TD ALIGN=CENTER>" + C(level) + "</TD></TR>");
+}
+</SCRIPT>
+-->
+                <TR><TD ALIGN=CENTER>51</TD><TD ALIGN=CENTER>1.5</TD></TR>
+                <TR><TD ALIGN=CENTER>52</TD><TD ALIGN=CENTER>1.6</TD></TR>
+                <TR><TD ALIGN=CENTER>53</TD><TD ALIGN=CENTER>1.7</TD></TR>
+                <TR><TD ALIGN=CENTER>54</TD><TD ALIGN=CENTER>1.9</TD></TR>
+                <TR><TD ALIGN=CENTER>55</TD><TD ALIGN=CENTER>2.1</TD></TR>
+                <TR><TD ALIGN=CENTER>56</TD><TD ALIGN=CENTER>2.3</TD></TR>
+                <TR><TD ALIGN=CENTER>57</TD><TD ALIGN=CENTER>2.5</TD></TR>
+                <TR><TD ALIGN=CENTER>58</TD><TD ALIGN=CENTER>2.7</TD></TR>
+                <TR><TD ALIGN=CENTER>59</TD><TD ALIGN=CENTER>3.0</TD></TR>
+                <TR><TD ALIGN=CENTER>60</TD><TD ALIGN=CENTER>3.1</TD></TR>
+
+                </TABLE></TD></TR>
+                </TABLE>
+        </DL>
+</DL>
+This formula is known to be off at very low levels (1-3).
+
+<HR>
+<DL>
+<DT>The formula for the amount of XP earned for soloing a <FONT COLOR=BLUE>blue</FONT> or higher mob is as follows:
+<DD><FONT SIZE=+1><CODE><B>XP = L<SUP>2</SUP> * C</B></CODE></FONT>
+<DT>Where:
+        <DD><DL>
+        <DT><B>L</B> = Level of mob being soloed.
+	<BR>
+	<SMALL>(If the mob is green, the xp earned will be 50%, 25% or 0% of the stated value.)</SMALL>
+        <DT><B>C</B> = A number that seems to vary.
+	In most outdoor zones it is 75, in most dungeons it is 80, in some newbie zones it is 100.
+	The table to the right is calculated assuming a value of 75.
+	</DL>
+</DL>
+<BR>
+<B>Note</B> - The maximum XP that can be earned from a single mob is approximately 11% of the XP required to fill the level's XP bar.
+<HR>
+
+<B>Select a different race, class or mob level to change the XP table</B>
+<FORM NAME="xpc" onSubmit="return false">
+<TABLE><TR>
+<TD VALIGN=TOP><TABLE BORDER=1>
+<TR><TH></TH><TH>RACE</TH><TH>Mult</TH></TR>
+<SCRIPT>
+for (i = 0; i < NUMRACES; i++) {
+	document.writeln("<TR><TD><INPUT TYPE=RADIO NAME='race' VALUE='" + i +
+	"' onClick='changedRace()'" + ((i == 8) ? " CHECKED" : "") + "></TD><TD>" + RaceArray[i][0]  +
+	"</TD><TD ALIGN=RIGHT>" + RaceArray[i][1] + "</TD></TR>")
+}
+</SCRIPT>
+
+</TABLE></TD>
+
+<TD VALIGN=TOP><TABLE BORDER=1>
+<TR><TH></TH><TH>CLASS</TH><TH>Mult</TH></TR>
+<SCRIPT>
+for (i = 0; i < NUMCLASSES; i++) {
+	document.writeln("<TR><TD><INPUT TYPE=RADIO NAME='clas' VALUE='" + i +
+	"' onClick='changedClass()'" + ((i == 12) ? " CHECKED" : "") + "></TD><TD>" + ClasArray[i][0]  +
+	"</TD><TD ALIGN=RIGHT>" + ClasArray[i][1] + "</TD></TR>")
+}
+</SCRIPT>
+
+</TABLE></TD>
+
+<TD VALIGN=TOP ALIGN=CENTER><B>Level difference of mobs you hunt</B><BR>
+<SELECT NAME="moblevel" onChange="changedMobLevel()">
+<SCRIPT>
+for (i = -13; i <= 10; i++) {
+	document.writeln("<OPTION VALUE=" + i + ((i == 0) ? " SELECTED" : "") + ">" + i)
+}
+</SCRIPT>
+</SELECT></TD></TR></TABLE>
+</FORM>
+
+<SMALL>
+</SMALL>
+
+<HR>
+All formulae and numbers from
+<A HREF="http://www.hackersquest.gomp.ch/cgi-bin/Ultimate.cgi" TARGET="_top">posts</A>
+on <A HREF="http://www.hackersquest.gomp.ch" TARGET="_top">HackersQuest</A>
+<BR><BR>
+Don't flame me if they are wrong, just send me any <A HREF="MAILTO:sstair@iname.com">corrections</A>.
+<HR>
+<DIV ALIGN="CENTER">
+<IMG SRC="http://visit.geocities.com/counter.gif">
+</DIV>
+
+</BODY>
+</HTML>
+
+<IMG SRC="http://geo.yahoo.com/serv?s=76000011&t=971883137" ALT=1 WIDTH=1 HEIGHT=1>
+<!-- <SERVICE NAME="toto"> --><SCRIPT LANGUAGE="javascript">window.open('http://geocities.yahoo.com/toto?s=76000011', '_geo_toto', 'width=515,height=125');</SCRIPT><!-- </SERVICE> --><script language="JavaScript" src="http://a372.g.a.yimg.com/f/372/27/1d/www.geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.com/visit.gif" border=0 width=1 height=1></noscript>

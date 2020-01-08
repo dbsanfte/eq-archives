@@ -1,0 +1,183 @@
+<HTML><HEAD><TITLE>EQ Cleric - Forums - Reply to Topic</TITLE>
+
+</HEAD>
+ <BODY bgcolor="#FFFFFF"  text="#000000" link="#000080" alink="" vlink="#2f2f4f" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<center>
+<!--- Start Everyone.net network logo, no edit without explicit permission from Everyone.net -->
+<!--- <A HREF="http://onlinegames.everyone.net">
+<img src="http://static.everyone.net/adservice/images/games/onlinegames.gif" border="0" width="100" height="60"></A> -->
+  
+<!--- End Everyone.net network logo -->
+  
+<!--- Start Everyone.net banner, no edit without explicit permission from Everyone.net -->
+<!--- <iframe
+src="http://engage.everyone.net/hserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?"
+noresize scrolling="no" hspace="0" vspace="0" frameborder="0"
+marginheight="0" marginwidth="0" width="468" height="60">
+<script
+src="http://engage.everyone.net/jserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+</script>
+<noscript>
+ <a
+href="http://engage.everyone.net/adclick/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+  <img
+src="http://engage.everyone.net/iserver/aamsz=468x60/site=392859_HQGAMING.COM/area=AS.GAME.OL/acc_random=1234?">
+</noscript>
+</iframe> -->
+<!-- End Everyone.net banner -->
+</center>
+</font>
+<table border=0 width=95%>
+<TR><TD>
+<A HREF="Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://eqcleric.gameglow.com/ubb/EQC-BBTitle.jpg"  BORDER=0></A></td>
+<td align=center>
+
+<table border=0>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Forum:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">General Forum</FONT></td></tr>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Topic:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Duoing and the new nasty casters</FONT></td></tr></table>
+
+</td></tr></table>
+<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://eqcleric.gameglow.com/cgi-bin/Ultimate.cgi?action=agree">Want to register?</a></FONT>
+
+<FORM ACTION="postings.cgi" NAME="REPLIER" METHOD="POST">
+<center>
+
+<table border=0 cellpadding=4 cellspacing=1 width=95%>
+<tr bgcolor="#D5E6E1">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Who Can Post?
+</font>
+</td>
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Any registered users may post a reply.
+</font>
+</td></tr>
+
+<tr bgcolor="#D5E6E1">
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+About Registration
+</font></td><td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+You must be registered in order to post a topic or reply in this forum.</font></td></tr>
+<tr bgcolor="#dedfdf"><td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your UserName:</B></FONT></td>
+<td valign=top>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td>
+</tr>
+
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Password:</B></FONT></td>
+<td valign=top><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="Ultimate.cgi?action=lostpw">Forget your password?</A></font></td></tr>
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Message Icon:</B></FONT></td>
+<td><INPUT type="radio" name="MsgIcon" value="1" CHECKED>&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon1.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="10"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon10.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="11"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon11.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="12"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon12.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="13"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon13.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="14"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon14.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="2"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon2.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR><INPUT type="radio" name="MsgIcon" value="3"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon3.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="4"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon4.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="5"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon5.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="6"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon6.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="7"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon7.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="8"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon8.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="9"  >&nbsp;&nbsp;<IMG SRC="http://eqcleric.gameglow.com/ubb/icons/icon9.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR></td></tr>
+<TR bgcolor="#dedfdf"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Reply:</B></FONT>
+<p><BR>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#2f2f4f">
+*HTML is ON<BR>
+<A HREF="http://eqcleric.gameglow.com/ubb/ubbcode.html" target=_blank>*UBB Code is ON</A><BR>
+<p><A HREF="http://eqcleric.gameglow.com/ubb/smilies.html" target=_blank>Smilies Legend</A></font>
+</td>
+<td>
+<TEXTAREA NAME="ReplyMessage" ROWS=10 COLS=45 WRAP="VIRTUAL">[QUOTE]Originally posted by Vamenea:
+[B]Ive been duoing alot at zone in/fort/zoneout/the tunnel that leads to serg/bridgekeeper in Chardok after the patch where they upgraded the mobs.
+
+
+Myself (60cleric) and a friend 60 mage with epic pet and we have no problems at all that been said there are not that many caster mobs that area of chardok and even when we do get a caster I resist most of what they cast on me (Im the puller for our group so when pulling caster Im likely to be casted on once/twice before the pet picks up aggro)
+
+Vamenea Deryther
+Australian High Priest
+<~Wreckers~> Tholuxe Paells[/B][/QUOTE]
+
+</TEXTAREA>
+</td></tr>
+<TR bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<B>Options</B>
+</FONT></td>
+<td valign=top><FONT SIZE="1" FACE="Verdana, Arial">
+<BR><INPUT TYPE="CHECKBOX" NAME="DisableSmilies" VALUE="yes"> <B>Disable Smilies in This Post. <BR><INPUT TYPE="CHECKBOX" NAME="Signature" VALUE="yes"> <B>Show Signature:</B> include your profile  signature.  Only registered users may have signatures.
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="postreply">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Duoing and the new nasty casters">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="General Forum">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="1">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="008695.cgi">
+<CENTER>
+ <FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+<P>
+If you have previously registered, but forgotten your password, <A HREF="Ultimate.cgi?action=lostpw">click here</A>.
+</font>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Reply">
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<P>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#FF0000">*If HTML and/or <A HREF="http://eqcleric.gameglow.com/ubb/ubbcode.html" target=_blank>UBB Code</A> are enabled, this means you can use HTML and/or UBB Code in your message.</FONT>
+<br>
+<P><FONT SIZE="2" FACE="Verdana, Arial">
+<TABLE BORDER=0 cellpadding=4 border=0 cellspacing=1 WIDTH="95%"><TR bgcolor="#D5E6E1"><TD COLSPAN=2><CENTER><FONT SIZE="2" COLOR="#000080" FACE="Verdana, Arial">T O P I C  &nbsp;&nbsp;&nbsp; R E V I E W</font></CENTER></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Bram</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Hi folks.  We have done the duoing thing to death but the new AI throws some kinks into it and I would appreciate hearing what you all think and know over the next few days as people get used to the new AI.<P>I'm hearing that skellies in HS are casting AEs.  This will make things much more difficult for duoing with my tank.  Also, froggies in Seb casting IC will put a crimp in my day.  1100 damage on my tank with his paltry 3600 or so will not go over too well.<P>What I would like is for people to post where they have found good duo spots and where we might now want to avoid given the new AI.<P>Thanks much.<P>Bram</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">electrae</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">It's rather alarming how difficult it can be without an enchanter to mez and suck the mana out of everything.</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Belkram_BB</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Re-evaluate current wisdom and get resists back up. Load 2 or 3 Stuns. Focus on single pulls. Get a more rounded group with a bashers and/or proc stunning weapons. Get a Naki's ring to cast heals faster to offset the caster damage. Get a bard or necro to suck the mana out of mobs. <P>You have many options besides getting an enchanter. Looks like its back to basics from way back when a mob casting Ice Comet stood a good chance of offing at least one person in your party unless everyone was on their toes. About time. <P>Belkram<P><BR></FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Rayne</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Kill things that don't cast.<P>There are plenty of places to go for a duo/trio.</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">electrae</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">From my own experience resist buffs don't help since the mobs are dispelling like crazy.  Unless you can chain stun or have great resist gear, you might want to avoid caster mobs.<P>Not sure where you can go to avoid caster mobs though...</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Rayne</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Resist buffs help plenty.<P>Have tank self buff 2-3 slots.  Harder maybe for Warriors and Monks, but easy for everyone else.  When tank gets dispelled they reaplly.  I have to do that all the time with my SK.<P>Nice things to have:<P>Grim Aura earring (any tank)<BR>8th Coldain Ring (any tank)<BR>Eyepatch of Plunder (any tank, although not so easily acquired)<BR>Shai'din Revenant Bauble (SKs are your preferred tank right? =P)<P>Put a few self buffs on top of that if a hybrid and that settles most dispelling issues.  Sure, the bastards will get Aego eventually, but protecting it will help a lot.<P>Really hard for me to feel very sorry for duo's with regard to the latest caster changes.  Imo everyone duo'ing for their AA points hurts a lot of classes, especially Clerics.  Time to get OUT of Sebilis and get into harder places (e.g. Cazic).<P>Rayne</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">electrae</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I was having my buffs stripped ala the enchanter pillage enchantment buff.  I started the fight with a dozen and ended with .. well, dead, but they were pretty much gone.  That was with earring.</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Kaysha Soulsinger</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Grouped in Seb this weekend, took the NGE spot (Necrosis - Guardian - Exit, for those who don't know). Yes, the Froglok Wizards cast Ice Comet, root, etc ... and the Shammies also have started to become more of a challenge by better spell selection. Was interesting to say the least. They weren't chain nuking or chain dispelling (in fact, at one point I was somewhat disappointed that they still melee'd very often), but they did cast high level spells for sure. Group was composed of 55 CLR (me), 58 DRU, 58 WAR, 60 BRD (who went LD about halfway during the camp, didn't get back), 60 ROG and 59 WIZ.<P>On the other hand, the day after we were in HoT when we got a double pull on Wurms. One was a Fiery Guardian, the other an Ancient Frost Guardian. Nasty, especially since they can CHeal. However, they didn't heal each other at all during the fight - which enabled us to kill them with just 3 dead.<P>------------------<BR>- Kaysha Soulsinger<BR>Templar in the 55th Circle of Erollisi Marr on Lanys T'Vyl<BR><I>The road to Heaven is paved with stones from Hell</I></FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Vamenea</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Ive been duoing alot at zone in/fort/zoneout/the tunnel that leads to serg/bridgekeeper in Chardok after the patch where they upgraded the mobs.<P><BR>Myself (60cleric) and a friend 60 mage with epic pet and we have no problems at all that been said there are not that many caster mobs that area of chardok and even when we do get a caster I resist most of what they cast on me (Im the puller for our group so when pulling caster Im likely to be casted on once/twice before the pet picks up aggro)<P>Vamenea Deryther<BR>Australian High Priest<BR><~Wreckers~> Tholuxe Paells</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">electrae</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Ok, tonight in Sebilis I was pulling with my 60 rogue.  Have resists of 200+.  I got nuked in Kitchen for 1000+ several times.  1100+ once.  <P>Fun part is the dispells.  The frogs are dispelling 2 buffs at a time.  And they are somewhat random.  So crap buffs don't really help, nor do insta-cast items. Although it seems to be safe to put Aegolism after about buff 8 or so.<P>The caster mobs are WAY overpowered, IMHO.</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Morainne</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">That's not suprising, so are the PC's...<P>Go go gadget manaburn!</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Aladain</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">ROFL If you are even thinking of comparing NPCs balance vs. PCs, then give my level 1 wizzy garrisons and we'll talk about overpowering.  Gimmie a break dude.</FONT></TD></TR></TABLE>
+</FONT>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.ReplyMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+<P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:Rayne@gameglow.com">Contact Us</A> | <A HREF="http://eqcleric.gameglow.com" target=_top>EQ Cleric</A>
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board (UltimateBB), Version 5.43a<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>
