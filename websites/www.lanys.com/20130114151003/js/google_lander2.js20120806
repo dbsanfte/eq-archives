@@ -1,0 +1,869 @@
+
+var render;
+
+function google_afd_ad_request_done(google_afd_response) {
+    render(google_afd_response);
+}
+
+(function(google_afd_response) {
+    // where to put what
+    var render_ids = {
+        afd_ads: '#afd_ads',
+        afs_top_ads: '#afs_top_ads',
+        afs_bot_ads: '#afs_bottom_ads',
+        ws_results: '#ws_results',
+        rs_kws: '#rs_kws',
+        related_kws: '#related_keywords',
+        pc_kws: '#pc_kws',
+        search_box:  '.search_box',
+        error: '#error',
+        tabs: '#tabs'
+    };
+
+    // needed for click tracking
+    var client = '';
+    var channel = '';
+
+    function g(afd_response) {
+        $(render_ids.error).find('input[name="loaded"]').val(1);
+    
+        log(afd_response);
+        
+        // error checking
+        // determine 'status' of request
+        var status = '';
+        if (afd_response.faillisted) {
+            status = 'faillist';
+        } else if (/^true$/.test(afd_response.needsreview)) {
+            status = 'needsreview';
+        } else if(/^true$/.test(afd_response.blocked)) {
+            status = 'blocked';
+        } else if (/^true$/.test(afd_response.adult) &&
+                    !(/_adult_/.test(afd_response.client))) {
+            status = 'adult';
+        }
+        
+        if(status.length) {
+            logStatus(status);
+            return; // return to prevent keywords being added when ads are unable to be displayed
+        } else if(afd_response.error_code) {
+            logStatus('google_error_code_' + afd_response.error_code);
+        }
+        
+        // remember vars for click tracking
+        client = afd_response.client ? afd_response.client : '';
+        channel = afd_response.channel ? afd_response.channel : '';
+        
+        // render ads
+        if(afd_response.feed == 'afc') {
+            process_afd_ads(afd_response);
+        } else {
+            process_afs_ads(afd_response);
+        }
+
+
+        
+        // cheat and look at the page_type global variable
+        
+        // render related searches
+        if(page_type == 'AFS_LM') {
+            process_rs_kws(afd_response, 4);    
+        } else if(page_type == 'AFS_L') {
+            process_rs_kws(afd_response, 3);    
+        } else if(page_type == 'AFS_T') {
+            process_rs_kws(afd_response, 2);
+        } else {
+            process_rs_kws(afd_response, 1);
+        }
+        
+        // render popular categories
+        process_pc_kws(afd_response);
+        
+        // render search box
+        if(page_type == 'AFS_LM' || page_type == 'AFS_SM') {
+            disp_searchbox_mobile(afd_response);
+        } else {
+            disp_searchbox(afd_response);
+        }
+
+        // render tabs
+        //disp_tabs(afd_response);
+
+    }
+    
+    // process afd ads
+    function process_afd_ads(afd_response) {
+        if(afd_response.ads && afd_response.ads.length > 0) {
+            disp_afd_ads($(render_ids.afd_ads), 
+                         afd_response.ads,
+                         afd_response.sponsored_listings_feedback_url);
+        } 
+    }
+    
+    // process afs ads
+    function process_afs_ads(afd_response) {
+        var num_top_ads = 0;
+
+        if(afd_response.ads && afd_response.ads.length > 0) {
+            num_top_ads = disp_afs_ads($(render_ids.afs_top_ads), 
+                                       $(render_ids.afs_bot_ads), 
+                                       afd_response.ads);   
+                         
+            disp_ws_results($(render_ids.ws_results), num_top_ads);
+        } else { 
+            logStatus("noads");
+            displayCantLoadMessage();
+        }
+    }
+
+    // process popular categories 
+    function process_pc_kws(afd_response) {
+        if(afd_response.categories && afd_response.categories.length > 0) {
+            // filter keywords
+            var filtered_categories = [];
+            
+            // filter heading terms. If heading term is filtered the sub terms will also
+            // be dropped
+            var filtered_categories = filter_keywords(afd_response.categories); 
+            
+            for(i = 0; i < filtered_categories.length; i++) {
+                filtered_categories[i].subcategories = filter_keywords(filtered_categories[i].subcategories);
+            }
+                
+            disp_pc_kws($(render_ids.pc_kws), filtered_categories, afd_response.category_token);
+        }
+    }
+
+    function process_rs_kws(afd_response, layout) {
+        var idx, radlinks = [], feedback_url;
+         
+        if (afd_response.radlinks && afd_response.radlinks.length > 0) {                
+            radlinks = afd_response.radlinks;
+            feedback_url = afd_response.related_searches_feedback_url;
+        } else {
+            // use related_keywords for failback 
+            for(idx = 0; idx < related_keywords.length; idx++) {
+                radlinks.push({term: related_keywords[idx], token: afd_response.search_token});
+            }
+            feedback_url = '';      
+        }
+        
+        // filter keywords
+        radlinks = filter_keywords(radlinks);
+        
+        switch(layout) {
+            case 4:
+                disp_rs_kws_mobile($(render_ids.rs_kws), radlinks, feedback_url);
+                break;
+            case 1:
+                disp_rs_kws_one($(render_ids.rs_kws), radlinks, feedback_url);
+                break;
+            case 3:
+                disp_rs_kws_center($(render_ids.rs_kws), radlinks, feedback_url);
+                break;
+            case 2:
+            default:
+                disp_rs_kws_two($(render_ids.rs_kws), radlinks, feedback_url);
+                break;      
+        }           
+    }
+
+    // display afs ads: top ads, bottom ads
+    function disp_afs_ads(jobj_top, jobj_bot, ads) {
+        var idx, html = '', 
+            top_ads_html = '',
+            bot_ads_html = '',
+            num_top_ads = 0, num_bot_ads = 0;
+    
+        for(idx = 0; idx < ads.length; idx++) {
+            if(ads[idx].position && ads[idx].position == 'Top') {
+                num_top_ads++;          
+                if (typeof sponsoredlisting_searchresults_disp_result == 'function') {
+                    top_ads_html += sponsoredlisting_searchresults_disp_result(make_ad(ads[idx]));
+                } else {
+                    top_ads_html += '<li>' +  make_ad(ads[idx]) + '</li>';
+                }
+            } else {
+                num_bot_ads++;
+                if (typeof sponsoredlisting_searchresults_disp_result == 'function') {
+                    bot_ads_html += sponsoredlisting_searchresults_disp_result(make_ad(ads[idx]));
+                } else {
+                    bot_ads_html += '<li>' +  make_ad(ads[idx]) + '</li>';
+                }
+            }
+        }
+        
+        if(num_top_ads > 0) {           
+            if (typeof sponsoredlisting_searchresults_heading == 'function') {
+                html = sponsoredlisting_searchresults_heading('Sponsored Listings');
+            } else {
+                html = '<h3>Sponsored Listings</h3>';
+            }
+
+            if (typeof sponsoredlisting_searchresults_disp_result_header == 'function') {
+                html += sponsoredlisting_searchresults_disp_result_header();
+            } else {
+                html += '<ul>';
+            }
+            html += top_ads_html;
+            
+            if (typeof sponsoredlisting_searchresults_disp_result_footer == 'function') {
+                html += sponsoredlisting_searchresults_disp_result_footer();
+            } else {
+                html += '</ul>';
+            }   
+
+            jobj_top.html(html);    
+            jobj_top.addClass('ads_list');
+        }
+        
+        
+        if(num_bot_ads > 0) {
+            if (typeof sponsoredlisting_searchresults_heading == 'function') {
+                html = sponsoredlisting_searchresults_heading('Sponsored Listings');
+            } else {
+                html = '<h3>Sponsored Listings</h3>';
+            }
+
+            if (typeof sponsoredlisting_searchresults_disp_result_header == 'function') {
+                html += sponsoredlisting_searchresults_disp_result_header();
+            } else {
+                html += '<ul>';
+            }
+
+            html += bot_ads_html;
+
+            if (typeof sponsoredlisting_searchresults_disp_result_footer == 'function') {
+                html += sponsoredlisting_searchresults_disp_result_footer();
+            } else {
+                html += '</ul>';
+            }   
+            
+            jobj_bot.html(html);        
+            jobj_bot.addClass('ads_list');
+        }   
+        
+        // add click tracking
+        jobj_top.delegate('a.gct', 'mousedown', function() {
+            click_track('ad');
+        });
+        jobj_bot.delegate('a.gct', 'mousedown', function() {
+            click_track('ad');
+        });
+
+        // record the number of ads
+        num_ads_displayed = ads.length;
+        
+        // return the number of top ads 
+        return num_top_ads;
+    }
+    
+    function bold_search_terms(query, text) {
+        var term_words = query.split(" ");
+
+        $.each(term_words, function(index, value) {
+            // Need to be a bit clever to make sure we match kits for term kit,
+            // and kit for search term kits
+            var search_term=value;
+            if (value.charAt(value.length-1) == "s") {
+                search_term=search_term+"?"; 
+            } else {
+                search_term=search_term+"s?";
+            }
+            text = text.replace(new RegExp(search_term, "gi"), "<b>$&</b>");
+        }); 
+
+        return text;
+    }   
+
+    
+    function disp_ws_results(jobj, num_ads) {
+        // need to display web search results   
+        var html = '';  
+        if(num_ads < 5) {
+            num_ads = 5;
+        }
+        
+        var terms = GetParam('term');
+        $.ajaxSetup({ cache: false });  // turn off ie caching 
+        $.getJSON('/websearch.php', 
+                  {term: terms, max: num_ads}, 
+                  function(data) {      
+            $.ajaxSetup({ cache: true });
+            
+            if(data && data.length > 0) {
+                if (typeof sponsoredlisting_searchresults_heading == 'function') {
+                    html += sponsoredlisting_searchresults_heading('Search Results');
+                } else {
+                    html = '<h3>Search Results</h3>';
+                }
+
+                if (typeof sponsoredlisting_searchresults_disp_result_header == 'function') {
+                    html += sponsoredlisting_searchresults_disp_result_header();
+                } else {
+                    html += '<ul>';
+                }
+
+                $.each(data, function(idx, r) {             
+                    r.title = bold_search_terms(terms, r.title);
+                    r.description = bold_search_terms(terms, r.description);
+                    
+                    if (typeof sponsoredlisting_searchresults_disp_result == 'function') {
+                        html += sponsoredlisting_searchresults_disp_result(make_ws(r));
+                    } else {
+                        html += '<li>' + make_ws(r) + '</li>';
+                    }
+                });
+
+                if (typeof sponsoredlisting_searchresults_disp_result_footer == 'function') {
+                    html += sponsoredlisting_searchresults_disp_result_footer();
+                } else {
+                    html += '</ul>';
+                }
+                
+                jobj.html(html);
+                jobj.addClass('ads_list');
+
+                // add click tracking
+                jobj.delegate('a.gct', 'mousedown', function() {
+                    click_track('ws');
+                });
+            }
+        }); 
+    }   
+
+    function disp_afd_ads(jobj, ads, feedback_url) {
+        var idx, html = '';     
+        
+        if (typeof sponsoredlisting_searchresults_heading == 'function') {
+            html += sponsoredlisting_searchresults_heading('Sponsored Listings');
+        } else {
+            html += '<h3>' + make_feedback_url('Sponsored Listings', feedback_url) + '</h3>';
+        }
+
+        if (typeof sponsoredlisting_searchresults_disp_result_header == 'function') {
+            html += sponsoredlisting_searchresults_disp_result_header();
+        } else {
+            html += '<ul>';
+        }
+
+        for(idx = 0; idx < ads.length; idx++) {
+            if (typeof sponsoredlisting_searchresults_disp_result == 'function') {
+                html += sponsoredlisting_searchresults_disp_result(make_ad(ads[idx]));
+            } else {
+                html += '   <li>' + make_ad(ads[idx]) + '</li>';
+            }
+        }   
+    
+        if (typeof sponsoredlisting_searchresults_disp_result_footer == 'function') {
+            html += sponsoredlisting_searchresults_disp_result_footer();
+        } else {
+            html += '</ul>';        
+        }
+        
+        jobj.html(html);
+        jobj.addClass('ads_list');
+
+        // add click tracking
+        jobj.delegate('a.gct', 'mousedown', function() {
+            click_track('ad');
+        });
+        
+    }
+
+    // Default way to "decorate" a key word term for display (because of custom CSS
+    // or whatever) is to not do anything to it
+    function default_decorate_kw_term(term) {
+        return term;
+    }
+
+    // display rs keywords in single column format(1click and results page)
+    function disp_rs_kws_one(jobj, link_units, feedback_url) {
+        var idx, html = '';
+        if (typeof rs_kws_one_disp_header == 'function') {
+            html += rs_kws_one_disp_header(make_feedback_url('Related Searches', feedback_url));
+        } else {
+            html += '<strong>' + make_feedback_url('Related Searches', feedback_url) + '</strong>';
+            html += '<ul>'; 
+        }
+
+        for(idx = 0; idx < link_units.length && idx < 10; idx++) {
+            if (typeof rs_kws_one_disp_result == 'function') {
+                html += rs_kws_one_disp_result(make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token));
+            } else {
+                html += '<li>' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+            }
+        }   
+
+        if (typeof rs_kws_one_disp_footer == 'function') {
+            html += rs_kws_one_disp_footer();
+        } else {
+            html += '</ul>';
+        }
+        
+        jobj.html(html);
+        jobj.addClass('kws_list kws_list_single');
+    }
+    
+    
+    // display rs keywords in double column format(2click lander)
+    function disp_rs_kws_two(jobj, link_units, feedback_url) {
+        var idx, html = '';
+        
+        html += '<strong>' + make_feedback_url('Related Searches', feedback_url) + '</strong>';
+        html += '<table border="0" cellspacing="0" cellpadding="0" width="100%">';
+        html += '<tr>';
+        html += '   <td width="50%" align="left" valign="top">';
+        html += '       <ul>';
+        for(idx = 0; idx < link_units.length && idx < 5; idx++) {
+            html += '       <li>' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+        }   
+        html += '       </ul>';
+        html += '       <br/>';
+        html += '       <ul>';
+        for(; idx < link_units.length && idx < 10; idx++) {
+            html += '       <li>' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+        }   
+        html += '       </ul>';
+        html += '   </td>';
+        html += '   <td width="50%" valign="top">';
+        html += '       <ul>';
+        for(;idx < link_units.length && idx < 15; idx++) {
+            html += '       <li>' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+        }       
+        html += '       </ul>'; 
+        html += '       <br/>';
+        html += '       <ul>';
+        for(;idx < link_units.length && idx < 20; idx++) {
+            html += '       <li>' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+        }       
+        html += '       </ul>'; 
+        html += '   </td>';
+        html += '</tr>';
+        html += '</table>';     
+            
+        jobj.html(html);
+        jobj.addClass('kws_list kws_list_double');
+    }
+    
+    
+    function disp_rs_kws_center(jobj, link_units, feedback_url) {
+        var idx, html = '';
+        
+        // Components of how this is rendered can be overriden by predefined functions
+        // If they aren't defined, we fall back the way we worked before.. 
+        // Not perfect, but also not wanting to rip this apart right now...
+        if (typeof rs_kws_center_disp_header == 'function') {
+            html += rs_kws_center_disp_header(make_feedback_url('Related Searches', feedback_url));
+        } else {
+            html += '<strong>' + make_feedback_url('Related Searches', feedback_url) + '</strong>';
+            html += '<table border="0" cellspacing="0" cellpadding="0" width="100%">';
+            html += '<tr>';
+        }
+
+        if (typeof rs_kws_center_disp_left_column_header == 'function') {
+            html += rs_kws_center_disp_left_column_header();
+        } else {
+            html += '   <td valign="top" width="50%">';
+            html += '       <ul>';
+        }
+
+        for(idx = 0; idx < link_units.length && idx < 5; idx++) {
+            if (typeof rs_kws_center_disp_result == 'function' &&
+                typeof rs_kws_center_transform_term == 'function') {
+                html += rs_kws_center_disp_result(
+                    make_kw_link(link_units[idx].term, rs_kws_center_transform_term, 
+                                 link_units[idx].token));
+            } else {
+                html += '       <li class="related_searches_results">' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+            }
+        }   
+
+        if (typeof rs_kws_center_disp_left_column_footer == 'function') {
+            html += rs_kws_center_disp_left_column_footer();
+        } else {
+            html += '       </ul>';     
+            html += '   </td>';
+        }
+
+        if (typeof rs_kws_center_disp_right_column_header == 'function') {
+            html += rs_kws_center_disp_right_column_header();
+        } else {
+            html += '   <td valign="top" width="50%">';
+            html += '       <ul>';
+        }
+
+        for(; idx < link_units.length && idx < 10; idx++) {
+            if (typeof rs_kws_center_disp_result == 'function' &&
+                typeof rs_kws_center_transform_term == 'function') {
+                html += rs_kws_center_disp_result(
+                    make_kw_link(link_units[idx].term, rs_kws_center_transform_term, 
+                                 link_units[idx].token));
+            } else {
+                html += '       <li class="related_searches_results">' + make_kw_link(link_units[idx].term, default_decorate_kw_term, link_units[idx].token) + '</li>';
+            }
+        }   
+
+        if (typeof rs_kws_center_disp_right_column_footer == 'function') {
+            html += rs_kws_center_disp_right_column_footer();
+        } else {
+            html += '       </ul>';
+            html += '   </td>';
+        }
+        
+        if (typeof rs_kws_center_disp_footer == 'function') {
+            html += rs_kws_center_disp_footer();
+        } else {
+            html += '</tr>';
+            html += '</table>';     
+        }
+
+        jobj.html(html);
+        jobj.addClass('kws_list kws_list_double kws_list_center');
+    }
+
+    //mobile display for keywords
+    function disp_rs_kws_mobile(jobj, link_units, feedback_url) {
+        var idx, html = '';
+        for(idx = 0; idx < link_units.length && idx < 10; idx++) {
+            html += make_mobile_link(link_units[idx].term, link_units[idx].token);
+        }
+        
+        jobj.html(html);
+        jobj.addClass('kws_list kws_list_single');
+    }
+
+    // display popular categories 
+    function disp_pc_kws(jobj, categories, token) {
+        var idx, idx2, html = '';
+        
+        html += '<strong>Popular Categories</strong>';
+        html += '<table border="0" width="100%">';
+        html += '<tr>';
+        
+        for(idx = 0; idx < categories.length && idx < 4; idx++) {
+            html += '<td width="25%">';
+            html += '<ul>';
+            
+            html += '<li style="font-style:italic">' + categories[idx].term + '</li>';
+            for(idx2 = 0; idx2 < categories[idx].subcategories.length; idx2++) {            
+                html += '<li>' + 
+                        make_kw_link(categories[idx].subcategories[idx2].term, default_decorate_kw_term, token) + 
+                        '</li>';                    
+            }
+                    
+            html += '</ul>';
+            html += '</td>';
+        }
+        
+        html += '</tr>';
+        html += '</table>';
+        
+        jobj.html(html);
+        jobj.addClass('pc_list');
+    }
+
+    //render and displays tabs from related keywords
+    function disp_tabs(afd_response) {
+        var html = '',key_words = [],words=[],words_length=0,index=0;
+        key_words = related_keywords;
+        html += '<ul>';
+        html += '<li><strong>' + make_feedback_url('Related Searches', afd_response.related_searches_feedback_url) + '</strong></li>';
+        //for loop to figure out how many key words to add to the tabs
+        for (i=0;i<key_words.length;i++)
+        {
+            words_length = words_length+key_words[i].length;
+            if(words_length<=90){
+                words_length+=6;
+                words[index]=i;
+                index++;
+            }
+            else{
+                words_length=words_length-key_words[i].length;
+            }
+        }
+        //for loop to add the tab contents
+        for(i=0;i<words.length;i++)
+        {
+            html += '<li>';
+            html += make_kw_link(key_words[words[i]],default_decorate_kw_term,afd_response.search_token);
+            html += '</li>';
+        }
+        html += '</ul>';
+        $(render_ids.tabs).html(html);
+    }
+
+    // set search token 
+    function disp_searchbox(afd_response) { 
+        // set the search token
+        if(afd_response.search_token) {
+            var html = '';      
+            
+            if (typeof rs_kws_searchbox_header == 'function') {
+                html += rs_kws_searchbox_header();
+            } else {
+                html += '<div>';
+                html += '<form name="search_form" style="padding: 0px; margin: 0px;" method="get" action="search.php">';
+                html += '    <strong>Search</strong>';
+            }
+
+            html += '    <input type="hidden" name="token" value="'+afd_response.search_token+'">';
+            html += '    <input type="hidden" name="uid" value="'+GetParam('uid')+'">';
+            html += '    <input type="hidden" name="src" value="'+GetParam('src')+'">';
+            html += '    <input type="hidden" name="sec" value="sb">';
+
+            if (typeof rs_kws_searchbox_input_fields == 'function') {
+                html += rs_kws_searchbox_input_fields();
+            } else {
+                html += '    <input type="text" name="term" size="40" class="sbt" style="width:400px;" />';
+                html += '    <input type="submit" name="Submit" class="sbbtn" value="Search" />';
+            }
+
+            if (typeof rs_kws_searchbox_footer == 'function') {
+                html += rs_kws_searchbox_footer();
+            } else {
+                html += '</form>';
+                html += '</div>';
+            }
+                    
+            $(render_ids.search_box).html(html);
+        }
+    }
+    function disp_searchbox_mobile(afd_response) {  
+        // set the search token
+        if(afd_response.search_token) {
+            var html = '';      
+            
+            html += '<form id="search_form" name="search_form" method="get" action="search.php">';
+            html += '   <div class="search_bar_content">';
+            html += '       <input type="hidden" name="token" value="'+afd_response.search_token+'">';
+            html += '       <input type="hidden" name="uid" value="'+GetParam('uid')+'">';
+            html += '       <input type="hidden" name="src" value="'+GetParam('src')+'">';
+            html += '       <input type="hidden" name="sec" value="sb">';
+            html += '       <div class="search_bar_display"><input id="search_bar" type="text" name ="term" value placeholder="Enter search here"></div>';
+            html += '       <div class="search_button_display"><input id="search_button" type="submit" name="Submit" value="Search"></div>';
+            html += '   </div>';
+            html += '</form>';
+                    
+            $(render_ids.search_box).html(html);
+        }
+    }
+
+    function make_kw_link(term, decorate_term, token) {
+        // $link = "search.php?$gparam&term=" .urlencode($pl[$i]) ."&args=$ptermargs&sec=pl"
+        return '<a href="/search.php?uid='+ GetParam('uid') +
+                '&src=' + GetParam('src') +
+                '&term=' + encodeURIComponent(term) + 
+                '&token=' + token + '">' +
+                decorate_term(term) + '</a>';  
+    }
+
+    function make_mobile_link(term, token) {
+        var link = '';
+        link += "<div class=\"links\" onclick=";
+        link += "\"location.href='";
+        link += '/search.php?uid='+ GetParam('uid') +
+                '&src=' + GetParam('src') +
+                '&term=' + encodeURIComponent(term) + 
+                '&token=' + token;
+        link += "'\"";
+        link += "><p>";
+        link += term;
+        link += '</p></div>';
+        return link;
+    }
+
+    function make_feedback_url(label, feedback_url) {
+        if(feedback_url && feedback_url != '') {
+            return '<a href="' + feedback_url + '" target="_blank" class="feedback_url">' + label + '</a>';
+        } else {
+            return '<div class="feedback_url">' + label + "</div>";
+        }
+    }
+
+    // need to handle ads with multiple links and rating
+    // * <sitelinks>    (can be up to 10 sitelinks)
+    // * <seller_ratings> 
+    function make_ad(ad) {  
+        var idx, html = '';
+        
+        if (typeof sponsoredlisting_searchresults_format_ad == 'function') {
+            html += sponsoredlisting_searchresults_format_ad(ad);
+        } else {
+            html += '<a class="ad_title gct" href="' + ad.url + '" target="_blank">' + ad.line1 + '</a><br/>';
+            html += '<span class="ad_text">' + ad.line2;    
+            if(ad.line3) {  // convert to wide ad 
+                html += ' ' + ad.line3;
+            }
+            html += '</span><br/><a class="ad_url gct" href="' + ad.url + '" target="_blank">';
+            html += ad.visible_url + '</a>';
+        }
+        
+        // <seller_ratings>
+        if(ad.seller_ratings) {
+            var text = ad.seller_ratings.text;
+            text = text.replace('{{RATING}}', 
+                        '<img width="49" height="9" src="'+ad.seller_ratings.rating_img_url+'">');
+            text = text.replace('{{LINK_START}}', 
+                        '<a target="_blank" href="'+ad.seller_ratings.source_url+'">');
+            text = text.replace('{{LINK_END}}', '</a>');
+            
+
+            if (typeof sponsoredlisting_searchresults_format_rating_header == 'function') {
+                html += sponsoredlisting_searchresults_format_rating_header();
+            } else {
+                html += '<br/><span class="seller_ratings">';
+            }
+
+            html += text;
+
+            if (typeof sponsoredlisting_searchresults_format_rating_footer == 'function') {
+                html += sponsoredlisting_searchresults_format_rating_footer();
+            } else {
+                html += '</span>';
+            }
+        }
+            
+        // <sitelinks>
+        if(ad.sitelinks && ad.sitelinks.length > 0) {
+            if (typeof sponsoredlisting_searchresults_format_sitelink_header == 'function') {
+                html += sponsoredlisting_searchresults_format_sitelink_header();
+            } else {
+                html += '<br/><table class="sitelinks" cellspacing="0" cellpadding="0">';
+            }
+    
+            for(idx = 0; idx < ad.sitelinks.length; idx++) {
+                if(idx == 0) {
+                    html += '<tr>';
+                } else if(!(idx % 2)) {
+                    // odd numbers
+                    html += '</tr><tr>';
+                }           
+                
+                html += '<td><a class="gct" href="'+ ad.sitelinks[idx].url +
+                        '" target="_blank">' + ad.sitelinks[idx].link_text +'</a></td>';                        
+            }
+            if(idx % 2) {
+                html += '<td></td>';    // place holder for odd number of results 
+            }
+            html += '</tr>';
+            html += '</table>';
+            
+            // ie adds extra line break after table even with display: inline;
+            if(!jQuery.browser.msie)  { 
+                html += '<br/>';
+            }
+        } else {
+            //html += '<br/>';
+        }
+        
+        //html += '<br/>';
+        
+        return html;
+    }
+
+    function make_ws(r) {
+        var html = '';
+        if (typeof sponsoredlisting_searchresults_format_searchresult == 'function') {
+            html += sponsoredlisting_searchresults_format_searchresult(r);
+        } else {
+            html += '<a class="ad_title gct" href="' + r.url + '" target="_blank">' + r.title + '</a><br/>';
+            html += '<span class="ad_text">' + r.description + '<br/></span>';
+            html += '<a class="ad_url gct" href="' + r.url + '" target="_blank">';
+            html += r.display_url + '</a><br/>';
+        }
+    
+        return html;
+    }
+
+    // remove any filter keywords 
+    function filter_keywords(keywords) {
+        var idx, new_keywords = [];
+        if(typeof keyword_filter !== 'undefined' && keyword_filter.length > 0) {
+            for(idx = 0; idx < keywords.length; idx++) {
+                if(!match_keyword_filter(keywords[idx].term.toLowerCase())) {
+                    new_keywords.push(keywords[idx]);           
+                }       
+            }
+            return new_keywords;
+        } else {        
+            return keywords;
+        }
+    }
+
+    // term is lowercase 
+    function match_keyword_filter(term) {
+        var idx;
+        
+        if(typeof keyword_filter !== 'undefined' && keyword_filter.length > 0) {
+            for(idx = 0; idx < keyword_filter.length; idx++) {
+                if(term.toLowerCase().indexOf(keyword_filter[idx].toLowerCase()) >= 0) {
+                    return true;
+                }       
+            }
+        }
+        return false;
+    }
+
+    function log(str) {
+        if (window.console && window.console.log) {
+            window.console.log(str);
+        }
+    }
+    
+    function logStatus(type) {
+        $.ajax({
+            cache: false,
+            global: false,
+            async: true,
+            type: "POST",
+            url: '/logpstatus.php',
+            data: {uid: GetParam('uid'), type: type}
+        });
+    }
+
+    function displayCantLoadMessage() {
+        $('#error').find('.msg').html('Failed to load page content');
+    }
+
+    function click_track(type) {
+        term = GetParam('term');
+        if(!term) term = '';
+
+        var url =
+            '/gct.php?uid='+encodeURIComponent(GetParam('uid'))+
+            '&type=' + encodeURIComponent(type) + 
+            '&term=' + encodeURIComponent(term) +
+            '&pt=' + encodeURIComponent(page_type) + 
+            '&cid=' + encodeURIComponent(client) +
+            '&ch=' + encodeURIComponent(channel) +
+            '&t=' + (new Date());
+
+        var i = new Image();
+        i.src = url;
+    }
+
+    function GetParam(name) {
+        var match = new RegExp(name +
+            "=*([^&]+)*", "i").exec(location.search);
+        if (match == null)
+            match = new RegExp(name + "=(.+)", "i").exec(location.search);
+        if (match == null) return null;
+            match = match + "";
+        //**convert match to a string
+        result = match.split(",");
+        return decodeURIComponent(result[1]);
+    }
+    
+    setTimeout(
+    function() {
+        if( $(render_ids.error).find('input[name="loaded"]').val() == 0 ) {
+           logStatus("noresponse");
+           displayCantLoadMessage();
+        }
+    }, 5000);
+
+    render = g;
+})();
+
+

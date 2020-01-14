@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="file,mytest.c,directory,include,version,error,i./usr/include,fatal,exit,failed,status,open,collect2,returned,files,stdio.h,search,4.0.2,i386-pc-solaris2.8,copying,/var/tmp//cc0xsv4r.o,header,ignoring,nonexistent,/var/tmp//ccjr136j.s,quiet,starts,crt1.o,param,install,2.17,lgcc,l/opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2,values-xa.o,solaris,world,function,main,lgcc_eh,written,enable-java-awt=xlib,/i386-pc-solaris2.8/include,/opt/csw/gcc4/include,/opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2,output,./usr/include,list,/usr/include,/opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/include,/opt/csw/include" />
+	<meta name="description" content="goladus@gleeok:~ 
+$ gcc mytest.c 
+mytest.c:1:19: error: stdio.h: No such file or directory 
+mytest.c:2:20: error: stdlib.h: No such file or directory 
+mytest.c:3:20: error: string.h: No such file or directory 
+mytest.c: In function 'main': 
+mytest.c:10: warning: incompatible implicit declaration of built-in function 'printf' 
+ 
+goladus@gleeok:~ 
+$ cat mytest.c" />
+	
+	<title> gcc on Solaris 10 [Archive]  - Graffë Forums</title>
+	<link rel="stylesheet" type="text/css" href="http://www.graffe.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://www.graffe.com/forums/archive/index.php?s=5e0bc65f2c703a8d416d22ba6d48f4d7">Graffë Forums</a> &gt; <a href="http://www.graffe.com/forums/archive/index.php/f-111.html?s=5e0bc65f2c703a8d416d22ba6d48f4d7">General Discussion Forums</a> &gt; <a href="http://www.graffe.com/forums/archive/index.php/f-102.html?s=5e0bc65f2c703a8d416d22ba6d48f4d7">Technical Support Forum</a> &gt;  gcc on Solaris 10</div>
+<hr />
+<div class="pda"><a href="http://www.graffe.com/forums/archive/index.php/t-51792.html?s=5e0bc65f2c703a8d416d22ba6d48f4d7&amp;pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.graffe.com/forums/showthread.php?51792-gcc-on-Solaris-10&amp;s=5e0bc65f2c703a8d416d22ba6d48f4d7">gcc on Solaris 10</a></p>
+<hr />
+<div class="floatcontainer">  </div><br />
+<div class="post"><div class="posttop"><div class="username">Goladus</div><div class="date">August 4th, 2007, 04:59 PM</div></div><div class="posttext">[19:34:22]goladus@gleeok:~<br />
+$ gcc mytest.c<br />
+mytest.c:1:19: error: stdio.h: No such file or directory<br />
+mytest.c:2:20: error: stdlib.h: No such file or directory<br />
+mytest.c:3:20: error: string.h: No such file or directory<br />
+mytest.c: In function 'main':<br />
+mytest.c:10: warning: incompatible implicit declaration of built-in function 'printf'<br />
+<br />
+<br />
+[19:37:03]goladus@gleeok:~<br />
+$ cat mytest.c<br />
+#include &lt;stdio.h&gt;<br />
+#include &lt;stdlib.h&gt;<br />
+#include &lt;string.h&gt;<br />
+<br />
+char* world;<br />
+<br />
+int main(){<br />
+  world=&quot;This is a nasty C string&quot;;<br />
+<br />
+  printf(&quot;Hi there, %s\n&quot;, world);<br />
+}<br />
+<br />
+I can't find stdio.h anywhere on the drive.  I have never seen this problem before.  I've had issues with header files, but never the normal ones like stdio.h.  <br />
+<br />
+I tried copying the header files from my cygwin installation to my homedir, and I get this error:<br />
+<br />
+<br />
+[19:50:29]goladus@gleeok:~<br />
+$ gcc -I./usr/include mytest.c<br />
+ld: fatal: file crt1.o: open failed: No such file or directory<br />
+collect2: ld returned 1 exit status<br />
+[19:51:06]goladus@gleeok:~<br />
+$ gcc -I./usr/include mytest.c -omytestobj<br />
+ld: fatal: file crt1.o: open failed: No such file or directory<br />
+collect2: ld returned 1 exit status<br />
+I'm a bit frustrated.  I'm trying to create a new system install script, and manually downloading and copying include files and finding all the right install directories isn't exactly desireable.<br />
+<br />
+Note, I get a similar error trying to use gcc4 from Blastwave.<br />
+<br />
+<br />
+[19:54:19]goladus@gleeok:~<br />
+$ /opt/csw/gcc4/bin/gcc -v -I./usr/include mytest.c<br />
+Reading specs from /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/specs<br />
+Target: i386-pc-solaris2.8<br />
+Configured with: ../sources/gcc-4.0.2/configure --prefix=/opt/csw/gcc4 --with-local-prefix=/opt/csw --with-gnu-as --with-as=/opt/csw/bin/gas --without-gnu-ld --with-ld=/usr/ccs/bin/ld --enable-threads=posix --enable-shared --enable-multilib --enable-nls --with-included-gettext --with-libiconv-prefix=/opt/csw --with-x --enable-java-awt=xlib --with-system-zlib --enable-languages=c,c++,f95,java,objc,ada<br />
+Thread model: posix<br />
+gcc version 4.0.2<br />
+ /opt/csw/gcc4/libexec/gcc/i386-pc-solaris2.8/4.0.2/cc1 -quiet -v -I./usr/include mytest.c -quiet -dumpbase mytest.c -auxbase mytest -version -o /var/tmp//ccjR136j.s<br />
+ignoring nonexistent directory &quot;/opt/csw/gcc4/include&quot;<br />
+ignoring nonexistent directory &quot;/opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/../../../../i386-pc-solaris2.8/include&quot;<br />
+#include &quot;...&quot; search starts here:<br />
+#include &lt;...&gt; search starts here:<br />
+ ./usr/include<br />
+ /opt/csw/include<br />
+ /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/include<br />
+ /usr/include<br />
+End of search list.<br />
+GNU C version 4.0.2 (i386-pc-solaris2.8)<br />
+        compiled by GNU C version 4.0.2.<br />
+GGC heuristics: --param ggc-min-expand=64 --param ggc-min-heapsize=65479<br />
+ gas --traditional-format -V -Qy -s -o /var/tmp//cc0xSV4R.o /var/tmp//ccjR136j.s<br />
+GNU assembler version 2.17 (i386-pc-solaris2.8) using BFD version 2.17<br />
+ /opt/csw/gcc4/libexec/gcc/i386-pc-solaris2.8/4.0.2/collect2 -V -R /opt/csw/gcc4/lib -Y P,/opt/csw/gcc4/lib:/usr/ccs/lib:/usr/lib -Qy /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/crt1.o /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/crti.o values-Xa.o /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/crtbegin.o -L/opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2 -L/usr/ccs/bin -L/usr/ccs/lib -L/opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/../../.. /var/tmp//cc0xSV4R.o -lgcc -lgcc_eh -lc -lgcc -lgcc_eh /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/crtend.o /opt/csw/gcc4/lib/gcc/i386-pc-solaris2.8/4.0.2/crtn.o<br />
+ld: Software Generation Utilities - Solaris Link Editors: 5.10-1.482<br />
+ld: fatal: file values-Xa.o: open failed: No such file or directory<br />
+ld: fatal: File processing errors. No output written to a.out<br />
+collect2: ld returned 1 exit status<br />
+[19:54:32]goladus@gleeok:~<br />
+$<br />
+Still get the linker error.<br />
+<br />
+urgh, I've never had basic problems with gcc before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goladus</div><div class="date">August 4th, 2007, 05:53 PM</div></div><div class="posttext">http://gcc.gnu.org/install/specific.html#x-x-solaris2<br />
+<br />
+pkgadd -d /mnt/cdrom/Solaris_10/Product SUNWarc<br />
+pkgadd -d /mnt/cdrom/Solaris_10/Product SUNWhea<br />
+<br />
+Corrected the problem.<br />
+<br />
+[20:49:49]goladus@gleeok:~<br />
+$ gcc mytest.c<br />
+[20:50:18]goladus@gleeok:~<br />
+$ ./a.out<br />
+Hi there, This is a nasty C string<br />
+<br />
+Now that I have my compiler, I'm ready to watch radar.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yyidth</div><div class="date">August 6th, 2007, 10:03 AM</div></div><div class="posttext">What radar are you watching?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vdou</div><div class="date">August 6th, 2007, 10:14 AM</div></div><div class="posttext">Goladus, I really really wish I could understand half of the things you say. :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Melcar</div><div class="date">August 7th, 2007, 06:20 AM</div></div><div class="posttext">Goladus, I really really wish I could understand half of the things you say. <br />
+<br />
+<br />
+pkgadd -d /mnt/cdrom/Solaris_10/Product SUNWarc<br />
+pkgadd -d /mnt/cdrom/Solaris_10/Product SUNWhea<br />
+<br />
+<br />
+Translation - My GCC (Unix C Complier) was not installed properly - I installed it from the Solaris 10 CD.  <br />
+<br />
+<br />
+[20:49:49]goladus@gleeok:~<br />
+$ gcc mytest.c<br />
+[20:50:18]goladus@gleeok:~<br />
+$ ./a.out<br />
+Hi there, This is a nasty C string Now it works like a champ.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yyidth</div><div class="date">August 7th, 2007, 08:26 AM</div></div><div class="posttext">Na, his c library include files where not installed. That's what he got off the cd.</div></div><hr />
+
+ 
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.0 Copyright &copy; 2013 vBulletin Solutions, Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1091 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<!-- end no cache headers -->
+	<title>Graffe Forums - powered by vBulletin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.3" />
+<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+<meta name="description" content="This is a discussion forum powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Graffe's Wizard Compilation' (styleid: 2) */
+body
+{
+	background-color: #000000;
+	color: #FFFFFF;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+}
+a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover, a:active
+{
+	background: #6300CE;
+	color: #FFFFFF;
+	text-decoration: underline overline;
+}
+.page
+{
+	background-color: #000000;
+	color: #FFFFFF;
+}
+.page a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.page a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.page a:hover, .page a:active
+{
+	background: #6300CE;
+	color: #FFFFFF;
+	text-decoration: underline overline;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #330066;
+	color: #FFFFFF;
+	border: 1px solid #330066;
+}
+.tcat
+{
+	background: #330066 url(images/graffe/gradients/gradient1.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	background: #6300CE;
+	color: #FFFFFF;
+	text-decoration: underline overline;
+}
+.thead
+{
+	background: #330066 url(images/graffe/gradients/bar_back.gif) repeat;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #FFFFFF;
+}
+.thead a:visited
+{
+	color: #FFFFFF;
+}
+.thead a:hover, .thead a:active
+{
+	background: #6300CE;
+	color: #FFFFFF;
+	text-decoration: underline overline;;
+}
+.tfoot
+{
+	background: #663399 url(images/graffe/gradients/bar_back.gif) repeat;
+	color: #FFFFFF;
+}
+.alt1, .alt1Active
+{
+	background-color: #000033;
+	color: #FFFFFF;
+}
+.alt2, .alt2Active
+{
+	background-color: #260052;
+	color: #FFFFFF;
+}
+.alt3
+{
+	background-color: #D5D8E5;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #CCCCCC;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	background-color: #000033;
+	color: #FFFFFF;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #FFFFFF;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #CC66FF;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background-color: #260052;
+	color: #FFFFFF;
+	padding: 10px;
+	border: 1px;
+}
+.panel a:link
+{
+	color: #CCCCCC;
+}
+.panel a:visited
+{
+	color: #CCCCCC;
+}
+.panel a:hover, .panel a:active
+{
+	color: #CCCCCC;
+}
+.panelsurround
+{
+	background-color: #000033;
+	color: #FFFFFF;
+}
+legend
+{
+	color: #FFFFFF;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #000033;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	background: #6300CE;
+	color: #FFFFFF;
+	text-decoration: underline overline;
+}
+.vbmenu_popup
+{
+	background-color: #330066;
+	color: #FFFFFF;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #330066;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #6300CE;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;";
+var IMGDIR_MISC = "images/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="clientscript/vbulletin_global.js"></script>
+
+</head>
+<body>
+<!-- logo -->
+<a name="top"></a>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+  <tr> 
+    <td colspan="8" align="center"><a href="index.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;"><img src="images/graffe/header.gif" border="0" alt="Graffe Forums" /></a></td>
+  </tr>
+  <tr> 
+    <td width="12%" align="center"><a href="http://www.graffe.com/">News</a>&nbsp;<img src=http://www.graffe.com/newsflash.php></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=aaguide">AA Guide</a></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=contacts">Contacts</a></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=equipment">Equipment</a></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=library">Library</a></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=quests">Quests</a></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=spells">Spells</a></td>
+    <td width="12%" align="center"><a href="http://www.graffe.com/?body=irc">IRC</a></td>
+  </tr>
+</table><!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Are you sure you want to log out?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+<br />
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<div class="navbar" style="font-size:10pt"><a href="index.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;"><img class="inlineimg" src="images/misc/navbits_start.gif" alt="" border="0" /></a> <strong>Graffe Forums</strong></div>
+		
+	</td>	
+	
+	
+		
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+			
+		<!-- login form -->
+		<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont">User Name</td>
+			<td><input type="text" class="button" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="1" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" colspan="2" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" /></td>
+			<td><input type="submit" class="button" value="Log in" tabindex="4" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="5772fe7768a091cd1fb36d3b1bdf1bb1" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />			
+		<input type="hidden" name="vb_login_md5password" />
+		</form>
+		<!-- / login form -->
+			
+		</td>
+		
+		
+	
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+	<tr align="center">	
+		<!--<td class="vbmenu_control"><a href="index.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">Home</a></td>-->
+		
+		
+		
+			<td class="vbmenu_control"><a href="register.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">Register</a></td>
+		
+		<td class="vbmenu_control"><a href="faq.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">FAQ</a></td>
+		<td class="vbmenu_control"><a href="memberlist.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">Members List</a></td>
+		<td class="vbmenu_control"><a href="calendar.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">Calendar</a></td>
+				
+			
+				<td class="vbmenu_control"><a href="search.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">Search</a></td>
+				
+				<td class="vbmenu_control"><a href="search.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;do=getdaily">Today's Posts</a></td>
+				
+			
+			<td class="vbmenu_control"><a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;do=markread">Mark Forums Read</a></td>
+						
+		
+		
+	</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+
+
+
+<br />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><div align="center"><a href="http://www.graffe.com/forums/forumdisplay.php?f=45"><img src="images/eq2.gif" alt="Jump to EverQuest II Forums" width="74" height="30" border="0"></a></div></td>
+    <td><div align="center"><a href="http://www.graffe.com/forums"><img src="images/eq.gif" alt="Jump to EverQuest and General Forums" width="87" height="30" border="0"></a></div></td>
+    <td><div align="center"><a href="http://www.graffe.com/forums/forumdisplay.php?f=53"><img src="images/wow.gif" alt="Jump to World of Warcraft Forums" width="74" height="30" border="0"></a></div></td>
+  </tr>
+</table>
+<br />
+
+
+
+<!-- main -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<thead>
+	
+	<!-- guest welcome message -->
+	<tr>
+		<td class="tcat" colspan="6">Welcome to the Graffe Forums.</td>
+	</tr>
+	<tr>
+		<td class="alt1" colspan="6">
+			If this is your first visit, be sure to check out the <a href="faq.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;"><strong>FAQ</strong></a> by clicking the link above.
+You may have to <a href="register.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;"><strong>register</strong></a> before you can post: click the register link above to proceed.
+To start viewing messages, select the forum that you want to visit from the selection below.
+		</td>
+	</tr>
+	<!-- / guest welcome message -->
+	
+	
+<tbody>
+	<tr>
+		<td class="tfoot" align="center" colspan="6"><div class="smallfont"><strong>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;do=markread">Mark Forums Read</a>
+			&nbsp; &nbsp;
+			<a href="showgroups.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">View Forum Leaders</a>
+		</strong></div></td>
+	</tr>
+</tbody>
+<tr align="center">
+	  <td class="thead">&nbsp;</td>
+	  <td class="thead" width="100%" align="left">Forum</td>
+	  <td class="thead" width="175">Last Post</td>
+	  <td class="thead">Threads</td>
+	  <td class="thead">Posts</td>
+	  
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td class="tcat" colspan="5">
+			<a style="float:right" href="#top" onclick="return toggle_collapse('forumbit_4')"><img id="collapseimg_forumbit_4" src="images/buttons/collapse_tcat.gif" alt="" border="0" /></a>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=4">EverQuest Forums</a>
+			
+			
+		</td>
+	</tr>
+</tbody>
+
+<tbody id="collapseobj_forumbit_4" style="">
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f5">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=5"><strong>General EQ Discussion</strong></a>
+			<span class="smallfont">(68 Viewing)</span>
+		</div>
+		<div class="smallfont">Discuss the latest EverQuest news or bring up your concerns in this forum.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20456" title="Go to first unread post in thread 'TP, TL and Gate to Barindu are on Test'"><strong>TP, TL and Gate to Barindu...</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=5">Khael</a>
+	</div>
+	<div align="right">
+		Today <span class="time">08:42 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20456"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">4,686</td>
+	<td class="alt2">93,871</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f7">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=7"><strong>Class Balance &amp; Class Bugs</strong></a>
+			<span class="smallfont">(7 Viewing)</span>
+		</div>
+		<div class="smallfont">Issues and bugs involving the Wizard class directly.  Post your concerns, problems, or thoughts here.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=19597" title="Go to first unread post in thread 'Thought for Wiz Epic V2'"><strong>Thought for Wiz Epic V2</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=7">Istari</a>
+	</div>
+	<div align="right">
+		Today <span class="time">12:47 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=19597"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">658</td>
+	<td class="alt2">11,685</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f8">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=8"><strong>Equipment Forum</strong></a>
+			<span class="smallfont">(4 Viewing)</span>
+		</div>
+		<div class="smallfont">Need to know what you should upgrade your Shiny Metallic Robes to?  Ask here!</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20490" title="Go to first unread post in thread 'need some help on equipment'"><strong>need some help on equipment</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=8">Neulovimey</a>
+	</div>
+	<div align="right">
+		Today <span class="time">07:20 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20490"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">817</td>
+	<td class="alt2">5,886</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f21">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=21"><strong>Secrets and Spoilers of the Trade</strong></a>
+			<span class="smallfont">(2 Viewing)</span>
+		</div>
+		<div class="smallfont">Want to know what to do in a specific situation?  Have you found something that may help others?  Share your information or ask your questions here.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		<img class="inlineimg" src="images/icons/icon5.gif" alt="Question" border="0" />
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20480" title="Go to first unread post in thread 'Thurg dungeon ?'"><strong>Thurg dungeon ?</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=21">akanay</a>
+	</div>
+	<div align="right">
+		Today <span class="time">12:49 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20480"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">1,233</td>
+	<td class="alt2">10,148</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f16">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=16"><strong>Quest Discussion</strong></a>
+			<span class="smallfont">(5 Viewing)</span>
+		</div>
+		<div class="smallfont">If you've written a walk-through or simply need help finding that pesky Arantir - post it here!</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20141" title="Go to first unread post in thread 'Wayward Wyvern Timed or Ph spawn?'"><strong>Wayward Wyvern Timed or Ph...</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=16">seraphita</a>
+	</div>
+	<div align="right">
+		Today <span class="time">02:41 AM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20141"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">986</td>
+	<td class="alt2">8,035</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f12">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=12"><strong>Discussion of Inter-Species Tension</strong></a>
+			<span class="smallfont">(1 Viewing)</span>
+		</div>
+		<div class="smallfont">Slain a dragon?  Reached the pinnacle of your career as a Wizard?  Have a problem with that Gnome?  Tell your stories here.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=19810" title="Go to first unread post in thread 'A Victory for Migraine Sufferers Everywhere'"><strong>A Victory for Migraine...</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=12">Ibuin Zy' Kazil</a>
+	</div>
+	<div align="right">
+		August 2nd, 2004 <span class="time">01:48 AM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=19810"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">545</td>
+	<td class="alt2">11,265</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f32">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=32"><strong>Interface Discussion</strong></a>
+			<span class="smallfont">(2 Viewing)</span>
+		</div>
+		<div class="smallfont">A place to share your interfaces and ask questions about problems with them.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		<img class="inlineimg" src="images/icons/icon1.gif" alt="Post" border="0" />
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=19898" title="Go to first unread post in thread 'Gemdiver UI 4.5 - 7/18/04'"><strong>Gemdiver UI 4.5 - 7/18/04</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=32">slimb</a>
+	</div>
+	<div align="right">
+		Today <span class="time">02:15 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=19898"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">44</td>
+	<td class="alt2">452</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f11">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=11"><strong>The Library (read only)</strong></a>
+			<span class="smallfont">(1 Viewing)</span>
+		</div>
+		<div class="smallfont">A read-only forum filled with informative posts from the forum that may be useful to many.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		<img class="inlineimg" src="images/icons/icon1.gif" alt="Post" border="0" />
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=19888" title="Go to first unread post in thread 'GemDiver Update - 7/18'"><strong>GemDiver Update - 7/18</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=58">Alikat Astrae</a>
+	</div>
+	<div align="right">
+		July 26th, 2004 <span class="time">11:29 AM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=19888"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">138</td>
+	<td class="alt2">2,237</td>
+	
+</tr>
+
+
+</tbody>
+
+<tbody>
+	<tr>
+		<td class="tcat" colspan="5">
+			<a style="float:right" href="#top" onclick="return toggle_collapse('forumbit_57')"><img id="collapseimg_forumbit_57" src="images/buttons/collapse_tcat.gif" alt="" border="0" /></a>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=57">General Forums</a>
+			
+			
+		</td>
+	</tr>
+</tbody>
+
+<tbody id="collapseobj_forumbit_57" style="">
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f6">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=6"><strong>Off-Topic Discussion</strong></a>
+			<span class="smallfont">(51 Viewing)</span>
+		</div>
+		<div class="smallfont">Political, debatable, questionable... if it's not EverQuest related it should go on here!  Beware, this is considered a mature forum.</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20492" title="Go to first unread post in thread 'ever notice'"><strong>ever notice</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=6">Grindel</a>
+	</div>
+	<div align="right">
+		Today <span class="time">09:02 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20492"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">6,446</td>
+	<td class="alt2">163,765</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f9">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=9"><strong>Rant Forum</strong></a>
+			<span class="smallfont">(8 Viewing)</span>
+		</div>
+		<div class="smallfont">Mad that someone KS'd your fire beetle?  Bad experience with sha... nm!   Post about it here!  Just about anything goes... note the "just about anything."</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20468" title="Go to first unread post in thread 'Another Smoking Rant....'"><strong>Another Smoking Rant....</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=9">Aayse of the Nexus</a>
+	</div>
+	<div align="right">
+		Today <span class="time">07:52 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20468"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">799</td>
+	<td class="alt2">34,767</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f10">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=10"><strong>Poster Made Polls</strong></a>
+			<span class="smallfont">(1 Viewing)</span>
+		</div>
+		<div class="smallfont">Create polls and get results!</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		<img class="inlineimg" src="images/misc/poll_posticon.gif" alt="Poll" border="0" />
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=17476" title="Go to first unread post in thread 'Which God is cooler?'"><strong>Which God is cooler?</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=10">Lunal Toadsnatcher</a>
+	</div>
+	<div align="right">
+		Yesterday <span class="time">12:05 PM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=17476"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">142</td>
+	<td class="alt2">2,093</td>
+	
+</tr>
+
+<tr align="center">
+	<td class="alt2"><img src="images/statusicon/forum_old.gif" alt="" border="0" /></td>
+	<td class="alt1Active" align="left" id="f61">
+		<div>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;f=61"><strong>Forum Feature Requests &amp; Bug Reporting</strong></a>
+			
+		</div>
+		<div class="smallfont">Get one on one with the code behind the board...</div>
+		
+		
+	</td>
+	<td class="alt2" nowrap="nowrap">
+<div class="smallfont" align="left">
+	<div style="clear:both">
+		
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=newpost&amp;t=20250" title="Go to first unread post in thread 'Warning System Discussion'"><strong>Warning System Discussion</strong></a>
+	</div>
+	<div>
+		by <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;find=lastposter&amp;f=61">Ikeya</a>
+	</div>
+	<div align="right">
+		Today <span class="time">10:21 AM</span>
+		<a href="showthread.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;goto=lastpost&amp;t=20250"><img class="inlineimg" src="images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+	<td class="alt1">17</td>
+	<td class="alt2">149</td>
+	
+</tr>
+
+
+</tbody>
+
+
+<tbody>
+	<tr>
+		<td class="tfoot" align="center" colspan="6"><div class="smallfont"><strong>
+			<a href="forumdisplay.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;do=markread">Mark Forums Read</a>
+			&nbsp; &nbsp;
+			<a href="showgroups.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">View Forum Leaders</a>
+		</strong></div></td>
+	</tr>
+</tbody>
+</table>
+<!-- /main -->
+
+<br />
+<br />
+
+<!-- what's going on box -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<thead>
+	<tr>
+		<td class="tcat" colspan="2">What's Going On?</td>
+	</tr>
+</thead>
+
+<!-- logged-in users -->
+<tbody>
+	<tr>
+		<td class="thead" colspan="2">
+			<a style="float:right" href="#top" onclick="return toggle_collapse('forumhome_activeusers')"><img id="collapseimg_forumhome_activeusers" src="images/buttons/collapse_thead.gif" alt="" border="0" /></a>
+			<a href="online.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;">Currently Active Users</a>: 207 (78 members and 129 guests)
+		</td>
+	</tr>
+</tbody>
+<tbody id="collapseobj_forumhome_activeusers" style="">
+	<tr>
+		<td class="alt2"><a href="online.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;"><img src="images/statusicon/forum_link.gif" alt="View Who's Online" border="0" /></a></td>
+		<td class="alt1" width="100%">
+			<div class="smallfont">
+				<div style="white-space: nowrap">Most users ever online was 4505, March 18th, 2004 at 08:02 PM.</div>
+				<div><a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=2075">Aayse of the Nexus</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=592">Actinic</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3213">Altanis Blazewielder</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=438">Antionides</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=49">Apallohadas</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=4704">Aridon</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=355">Ayralin</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=842">Blunbad Kaaboom</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6016">Bonaq</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=73"><i>Brahma Atman</i></a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=5677">Bunsen</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=16">camrael</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3180">Deabn</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=204">Delaregar</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=209">Delkhaan</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=5196">Devexus</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=195">Dloc</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6042">Elaira</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1314">Eoghnved</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=181">Fallenone</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=698">Fisbik</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3034">Flambe</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1096">Fyrie</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=396">Grindel</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=695">Hamnat</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=2128">Ialnyien</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=5634">Ilvidus</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=2938">iota</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1202">JMorgana</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6032">Karsus</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=23">Khael</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=2678">langleysoryu</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=453">Lanlaorn</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1144">Lascaris</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1528">Lilbennie</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=709">liquid</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=5692">lonskil</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=426">Lysandor</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6266">Mihoko Ishii</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6073">monolith</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=981">muddvz</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=21">Nadiar</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=386">Nattik Frostreaver</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6124">pousch</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=721">Rahkil</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6374">Rasaella Parallax</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=4671">Raven</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=802">Rikluz</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=455">Ruldar</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=196">santerai</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=51">Seriati</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3139">Shenjairo-Prexus</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3309">SimpleMinded</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=139">Snapdragyn</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=2952">Susitna</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=256">Synjun</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1573">Thistlenote</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=226">Turonyen</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=4403">Uthaeu</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=136">Varressa Evocara</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=235">vladius</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1345">Voldrak</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3178">Wylder</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=3028">wysmiu</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=5005">Xenoce</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=2750">xenten</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=1194">Xitix</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=183">Zoal</a>, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=312">Zyphyr</a></div>
+			</div>
+		</td>
+	</tr>
+</tbody>
+<!-- end logged-in users -->
+
+<tbody>
+	<tr>
+		<td class="thead" colspan="2">
+			<a style="float:right" href="#top" onclick="return toggle_collapse('forumhome_stats')"><img id="collapseimg_forumhome_stats" src="images/buttons/collapse_thead.gif" alt="" border="0" /></a>
+			Graffe Forums Statistics
+		</td>
+	</tr>
+</tbody>
+<tbody id="collapseobj_forumhome_stats" style="">
+	<tr>
+		<td class="alt2">&nbsp;</td>
+		<td class="alt1" width="100%">
+		<div class="smallfont">
+			<div>Threads: 18,042, Posts: 367,977, Members: 6,430</div>
+			<div>Welcome to our newest member, <a href="member.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;u=6443">Zuse NukeUDead</a></div>
+		</div>
+		</td>
+	</tr>
+</tbody>
+
+<!-- today's birthdays -->
+<tbody>
+	<tr>
+		<td class="thead" colspan="2">
+			<a style="float:right" href="#top" onclick="return toggle_collapse('forumhome_birthdays')"><img id="collapseimg_forumhome_birthdays" src="images/buttons/collapse_thead.gif" alt="" border="0" /></a>
+			Today's Birthdays
+		</td>
+	</tr>
+</tbody>
+<tbody id="collapseobj_forumhome_birthdays" style="">
+	<tr>
+		<td class="alt2"><a href="calendar.php?s=5772fe7768a091cd1fb36d3b1bdf1bb1&amp;do=getday&amp;day=2004-08-04&amp;sb=1"><img src="images/statusicon/forum_link.gif" alt="View Birthdays" border="0" /></a></td>
+		<td class="alt1"><div class="smallfont"><a href="member.php?u=2485">Faeadari-BS</a>, <a href="member.php?u=3750">Villail</a>, <a href="member.php?u=497">dlaren4444</a> (53)</div></td>
+	</tr>
+</tbody>
+<!-- end today's birthdays -->
+
+
+</table>
+<br />
+<!-- end what's going on box -->
+
+<!-- icons and login code -->
+<table cellpadding="0" cellspacing="2" border="0" width="100%">
+<tr valign="bottom">
+	<td>
+		<table cellpadding="2" cellspacing="0" border="0">
+		<tr>
+			<td><img src="images/statusicon/forum_new.gif" alt="Contains New Posts" border="0" /></td>
+			<td class="smallfont">&nbsp; Forum Contains New Posts</td>
+		</tr>
+		<tr>
+			<td><img src="images/statusicon/forum_old.gif" alt="Contains No New Posts" border="0" /></td>
+			<td class="smallfont">&nbsp; Forum Contains No New Posts</td>
+		</tr>
+		<tr>
+			<td><img src="images/statusicon/forum_old_lock.gif" alt="A Closed Forum" border="0" /></td>
+			<td class="smallfont">&nbsp; Forum is Closed for Posting</td>
+		</tr>
+		</table>
+	</td>
+	
+</tr>
+</table>
+<!-- / icons and login code -->
+
+<br />
+<div class="smallfont" align="center">All times are GMT -8. The time now is <span class="time">09:03 PM</span>.</div>
+<br />
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+	
+<table cellpadding="6" cellspacing="0" border="0" width="100%" class="page" align="center">
+<tr>
+	
+		<td class="tfoot">
+			<select name="styleid" id="ressel" onchange="switch_styleid(this)">
+				<optgroup label="Quick Style Chooser">
+					<option value="2" class="" selected="selected">-- Graffe's Wizard Compilation</option>
+<option value="1" class="" >---- vBulletin 3 White</option>
+<option value="8" class="" >------ White Fullscreen</option>
+<option value="10" class="" >---- vBulletin 3 Grey</option>
+<option value="11" class="" >------ Grey Fullscreen</option>
+<option value="13" class="" >---- Dark Theme</option>
+<option value="14" class="" >------ Dark Fullscreen</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	<td class="tfoot" align="right">
+		<div class="smallfont">
+			<strong>
+				<a href="mailto:rombus@graffe.com">Contact Us</a> -
+				<a href="http://www.graffe.com/">Graffe's Wizard Compilation</a> -
+				
+				
+				<a href="archive/index.php">Archive</a> -
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Top</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</table>
+
+<br />
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	Powered by: vBulletin Version 3.0.3<br />Copyright &copy;2000 - 2004, Jelsoft Enterprises Ltd.
+	<!-- Do not remove this copyright notice -->
+	</div>
+	
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	
+	</div>
+</div>
+
+</form>
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+
+	// Initialize 'Active' Table Cells
+	//activecells_init();
+//-->
+</script>
+</body>
+</html>
