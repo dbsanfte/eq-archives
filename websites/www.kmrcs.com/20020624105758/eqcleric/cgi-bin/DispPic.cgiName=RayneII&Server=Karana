@@ -1,0 +1,104 @@
+#!/usr/bin/perl
+
+use DBI;
+
+my $dbh = DBI->connect("DBI:mysql:database=kmrcs", 'kmrcs', 'kmrcs714');
+
+
+$TOCTxt = '/usr/home/kmrcs/www/eqcleric/toc.html';
+open (TocLines, $TOCTxt) or die "$!";
+@lines = <TocLines>;
+close TocLines;
+&parse_form;
+
+
+$CharName = $FORM{"Name"};
+$ServerName = $FORM{"Server"};
+$len = length ($CharName);
+
+
+
+
+print STDOUT "Content-type: text/html\r\n\r\n";
+print STDOUT "<HTML>";
+print STDOUT "<HEAD><TITLE>EQ Cleric [Character Gallery $CharName]</TITLE></HEAD>";
+print STDOUT "<body>";
+
+print STDOUT "<table border=\"1\" width=\"100%\">";
+print STDOUT "<td width=\"14%\" bgcolor=\"#D7D7D7\" valign=\"top\">";
+
+foreach $line (@lines){
+	$line =~ s/<html>//;
+	$line =~ s/<head>//;
+	$line =~ s/<title>//;
+	$line =~ s/<\/title>//;
+	$line =~ s/<\/head>//;
+	$line =~ s/<body>//;
+	$line =~ s/<\/body>//;
+	$line =~ s/<\/html>//;
+	}
+
+print STDOUT @lines;
+print STDOUT "</td>";
+
+print STDOUT "<td width=\"86%\" valign=\"top\"><h2 align=\"center\"><font color=\"#004080\"><em><strong>Character Gallery</strong></em></font></h2>";
+
+my $sql = "select * from pics where Name = \"$CharName\" and Server = \"$ServerName\"";
+#print STDOUT "<BR>$sql<br>";
+my $sth = $dbh->prepare($sql);
+$sth->execute();
+$sth->bind_columns(undef, \$Name, \$LastName, \$ClassName, \$LevelName, \$Password, \$GuildName, \$Comments, \$ServerName);
+while ($sth->fetch()){
+print STDOUT "<table border=\"0\" width=\"100%\">";
+print STDOUT "<tr>";
+print STDOUT "<td><h3>$CharName $LastName - $ServerName Server</h3></td>";
+print STDOUT "</tr>";
+print STDOUT "<tr><td>Guild: $GuildName</td></tr>";
+print STDOUT "<tr><td>$ClassName - Level $LevelName</td></tr>";
+print STDOUT "<tr><td>Comments: $Comments</td></tr>";
+
+print STDOUT "</table></p>";
+#print STDOUT "<tr><td>";
+print STDOUT "<p><img src=\"/eqcleric/gallery/$ServerName/$CharName.jpg\"></p>";
+#print STDOUT "</td></tr>";
+}
+print STDOUT "<p>&nbsp;</td>";
+print STDOUT "</tr>";
+print STDOUT "</table>";
+print STDOUT "</BODY>";
+print STDOUT "</HTML>";
+
+
+exit;
+
+
+sub parse_form {
+
+    # Get the input
+   $buffer = $ENV{'QUERY_STRING'};
+
+	 #print $buffer;
+
+   # Split the name-value pairs
+   @pairs = split(/&/, $buffer);
+
+   foreach $pair (@pairs) {
+     ($name, $value) = split(/=/, $pair);
+      # Un-Webify plus signs and %-encoding
+      $value =~ tr/+/ /;
+      $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+      $value =~ s/<!--(.|\n)*-->//g;
+
+      if ($allow_html != 1) {
+         $value =~ s/<([^>]|\n)*>//g;
+      }
+      else {
+         unless ($name eq 'body') {
+	    $value =~ s/<([^>]|\n)*>//g;
+         }
+      }
+
+      $FORM{$name} = $value;
+   }
+
+}
