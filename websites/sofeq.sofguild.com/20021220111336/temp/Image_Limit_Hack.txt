@@ -1,0 +1,137 @@
+******************************************************************************
+*       MOD NAME: Image Limit Hack (For UBB 6.1x)			     *
+******************************************************************************
+*    DESCRIPTION: Let admin set the limit of images allowed in a post.       *
+******************************************************************************
+*             BY: Zackary (I did not write this hack, I ported it to work on *
+*		  UBB 6.1x)						     *
+*           DATE: November 23, 2001                                          *
+*        VERSION: 1.4			                                     *
+*ORIGINAL AUTHORS:TyRaN - Added the portion to integrate to CP (UBB 6.0x).   *
+*		  ClanKiller - Original Author of Image Limit Hack           *
+******************************************************************************
+*   REQUIREMENTS: A full version of UBB 6.1x                                 *
+*  COMPATABILITY: tested on 6.1.0.3 (should work on all 6.1x I hope)         *
+******************************************************************************
+* FILES MODIFIED: ubb_lib_posting.cgi, cp_lib.cgi, vars_display.cgi          *
+*                 cp_vars_display.pl(template)                               *
+******************************************************************************
+*           INFO: To set the value go to: cp >> Primary Settings >> General  *
+*                 Display Settings >> Number of images allowed per post      *
+******************************************************************************
+*     DISCLAIMER: By using this mod, the user implicitly agrees that they    *
+*                 are willingly modifying any and all files at their own     *
+*                 risk.  Should any errors occur either as a direct or       *
+*                 indirect result of said modifications the user agrees not  *
+*                 to hold Infopop Corporation or any of the individuals      *
+*                 listed above accountable.                                  *
+*                                                                            *
+*                                                                            *
+*    IN OTHER WORDS: PLEASE MAKE BACKUP COPIES OF EVERY FILE YOU PLAN TO     *
+*                      MODIFY PRIOR TO MODIFICATION!!                        *
+*                                                                            *
+*                                                                            *
+*     FOR MORE TIPS AND TRICKS FOR USE WITH THE ULTIMATE BULLETIN BOARD      *
+*                       PLEASE GIVE US A VISIT AT:                           *
+*                                                                            *
+*                               http://www.ubbdev.com                        *
+*                                                                            *
+******************************************************************************
+
+********************************
+*  Open ubb_lib_posting.cgi
+********************************
+
+**FIND >>
+
+sub excess_smilies_check {
+	my $max_smilies  = 8;
+	my $smilie_count = 0;
+	while ($_[0] =~ m/\<IMG.+?SRC/gi) { $smilie_count++; }
+	if ($smilie_count > $max_smilies) { &StandardHTML("$vars_wordlets_err{excess_images}"); }
+}    # end smilie check
+
+**REPLACE WITH >>
+
+sub excess_smilies_check {
+	my $max_smilies = "$vars_display{ImgLimit}";
+	my $smilie_count = 0;
+	while ($_[0] =~ m/\<IMG.+?SRC/gi) {  $smilie_count++; }
+	if ($smilie_count > $max_smilies) { &StandardHTML("$vars_wordlets_err{excess_images} $vars_display{ImgLimit}."); }
+}    # end smilie check
+
+
+********************************
+*  Open vars_display.cgi
+********************************
+
+**FIND >>
+***NOTE: This line MAY be different from the following, depending on your setting for number
+***of replies to count as a HOT TOPIC!!! Check your Hot Topic settings to verify! In my case I
+***have 10 set as a hot topic.***
+
+q~HotCount~ => q~10~, 
+
+**ADD THIS BELOW >>
+
+q~ImgLimit~ => q~8~,
+
+********************************
+* Open cp_lib.cgi
+********************************
+
+**FIND >>
+***NOTE: This line MAY be different from the following, depending on your setting for number
+***of replies to count as a HOT TOPIC!!! Same as the previous step, verify your number!***
+
+			$vars_display{HotCount}            = "15";
+
+**ADD THIS BELOW >>
+
+			$vars_display{ImgLimit} 	   = "8";
+
+
+**FIND >>
+
+	my @ValidateArray = ("HomePageURL", "MyHomePage", "BBEmail", "ContactLinkType", "DaysPruneDefault", "ShowMods", "CategoryView", "CategoriesOnly", "ForumDescriptions", "ForumDisplayMax", "HTMLDisplayMax", "NewestMemberWelcome", "homepage_icon_link", "AllowSignature", "HotIcons", "user_ratings", "DisplayMemberTotal");
+
+**REPLACE WITH >>
+
+	my @ValidateArray = ("HomePageURL", "MyHomePage", "BBEmail", "ContactLinkType", "DaysPruneDefault", "ShowMods", "CategoryView", "CategoriesOnly", "ForumDescriptions", "ForumDisplayMax", "HTMLDisplayMax", "NewestMemberWelcome", "homepage_icon_link", "AllowSignature", "HotIcons", "ImgLimit", "user_ratings", "DisplayMemberTotal");
+
+
+**FIND >>
+
+		'HotIcons'            => "$in{HotIcons}",
+
+**ADD THIS BELOW >>
+
+		'ImgLimit' 	      => "$in{ImgLimit}",
+
+
+********************************
+* Open cp_vars_display.pl <TEMPLATES>
+********************************
+
+**FIND >>
+
+&RegField("Minimum Number of Replies to Qualify as Hot Topic", "HotCount", "", "2", "3", "Leave blank if you are not using Hot Topics.", "$vars_display{HotCount}");
+
+**ADD THIS BELOW >>
+
+&RegField("Number of images allowed per post", "ImgLimit", "yes", "2", "2", "This is the allowed limit of images in one post.", "$vars_display{ImgLimit}");
+
+
+********************************
+* Go to: control panel >> wordlets >> Error Message Wordlets
+********************************
+
+Change the following wordlet:
+
+wordlet name:"excess_images"
+
+and just remove the "8." in the wordlet. (Don't forget the . after the 8!)
+
+Done.
+
+Save, upload(ascii) and chmod.

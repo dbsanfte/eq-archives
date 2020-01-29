@@ -1,0 +1,416 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>contents</title>
+
+
+<style type="text/css">
+
+a
+{text-decoration: none;}
+
+.title
+{position: absolute;
+width: 100px;
+height: 20px;
+left: 10px;
+z-index: 10;
+font-family: Tahoma,Verdana,Arial,Helvetica;
+font-weight: bold;
+font-size: 12px;}
+
+.submenu
+{position: absolute;
+left: 10px;
+width: 140px;
+font-family: Tahoma,Verdana,Arial,Helvetica;
+font-size: 12px;
+line-height: 15px;
+visibility: hidden;}
+
+.other
+{position: absolute;
+left: 10px;
+z-index: 10;
+font-family: Tahoma,Verdana,Arial,Helvetica2;
+font-weight: normal;
+font-size: 10px;}
+
+</style>
+
+<script language="JavaScript">
+<!--
+
+// A cascading menu script by Fredrik Fridsten 2000 (c)
+// Feel free to use this, but please mention in a comment in the code.
+
+// To configure the script:
+// Change the nom value to the number of menus that you want to use
+// Note: Always make sure that this is correct, otherwise you might get a javascript error.
+
+// The phrases "images/opened.gif" and "images/closed.gif" should be referring to the
+// pictures you might use.
+// If you don't want to use images, just remove the picopen and picclose functions.
+// Also remove the lines in the toggle function that refer to those.
+
+// The input variables to the toggle function are the number of the submenu to open/close,
+// starting with 1, and the number of pixels to move the objects below.
+// For example toggle(2,60) opens/closes the second submenu and moves the objects below 60 pixels.
+
+var nom = 10; // Number of menus
+
+var tits = new Array(); // An array for the title objects
+var subs = new Array(); // An array for the submenu objects
+var lastn;
+var lastmove;
+var isIE4;
+var isNav4;
+var isNav6;
+
+function setbrowser() {
+	if (navigator.appVersion.charAt(0) == "4") {
+		if (navigator.appName.indexOf("Explorer") >= 0) {
+			isIE4 = true;
+		}
+		else {
+			isNav4 = true;
+		}
+	}
+	else if (navigator.appVersion.charAt(0) > "4") {
+		isNav6 = true;
+	}
+	if (isNav4) { // Setting the visibility for NN and IE
+		visible = 'show';
+		hidden = 'hide';
+	}
+	else if (isIE4) {
+		visible = 'visible';
+		hidden = 'hidden';
+	}
+	else if (isNav6) {
+		visible = 'visible';
+		hidden = 'hidden';
+	}
+}
+
+for (var i = 1; i <= nom; i++) { // Fills the arrays with title and submenu objects
+	tits[i] = ('title' + i);
+	subs[i] = ('submenu' +i);
+}
+
+// A couple of small functions that changes the image by the clicked menu
+function picopen(n) {
+	title = ('title' + n);
+	pic = ('pic' + n);
+	if (isNav4) {
+		document.layers[title].document.images[pic].src = "images/opened.gif";
+	}
+	else if (isIE4) {
+		document.all(pic).src = "images/opened.gif";
+	}
+	else if (isNav6) {
+		document.getElementById(pic).src = "images/opened.gif";
+	}
+}
+
+function picclose(n) {
+	title = ('title' + n);
+	pic = ('pic' + n);
+	if (isNav4) {
+		document.layers[title].document.images[pic].src = "images/closed.gif";
+	}
+	else if (isIE4) {
+		document.all(pic).src = "images/closed.gif";
+	}
+	else if (isNav6) {
+		document.getElementById(pic).src = "images/closed.gif";
+	}
+}
+
+// The main script for toggling the selected menu
+// Input variables:
+// n = the number of the submenu to show/hide
+// move = the number of pixels for moving the objects below
+
+lastn = (nom + 1);
+lastmove = 0;
+
+function lasttoggle(n,move) {
+	if (n <= nom) {
+		menu = ('submenu' + n);
+		if (isNav4) {
+			submenu = document.layers[menu];
+		}
+		else if (isIE4) {
+			submenu = document.all(menu).style;
+		}
+		else if (isNav6) {
+			submenu = document.getElementById(menu).style;
+		}
+		if (submenu.visibility == visible) {
+			submenu.visibility = hidden;
+			picclose(n); // Remove this if you don't use pictures
+			for (var i = (n+1); i <= nom; i++) {
+				if (isNav4) {
+					var tit = document.layers[tits[i]];
+					var subm = document.layers[subs[i]];
+				}
+				else if (isIE4) {
+					var tit = document.all(tits[i]).style;
+					var subm = document.all(subs[i]).style;
+				}
+				else if (isNav6) {
+					var tit = document.getElementById(tits[i]).style;
+					var subm = document.getElementById(subs[i]).style;
+				}
+				tit.top = (parseInt(tit.top) - move);
+				subm.top = (parseInt(subm.top) - move);
+			}
+		}
+	}
+}
+
+function toggle(n,move) {
+	var menu = ('submenu' + n);
+	if (isNav4) {
+		submenu = document.layers[menu];
+	}
+	else if (isIE4) {
+		submenu = document.all(menu).style;
+	}
+	else if (isNav6) {
+		submenu = document.getElementById(menu).style;
+	}
+	if (submenu.visibility == visible) {
+		submenu.visibility = hidden;
+		picclose(n); // Remove this if you don't use pictures
+		for (var i = (n+1); i <= nom; i++) {
+			if (isNav4) {
+				var tit = document.layers[tits[i]];
+				var subm = document.layers[subs[i]];
+			}
+			else if (isIE4) {
+				var tit = document.all(tits[i]).style;
+				var subm = document.all(subs[i]).style;
+			}
+			else if (isNav6) {
+				var tit = document.getElementById(tits[i]).style;
+				var subm = document.getElementById(subs[i]).style;
+			}
+			tit.top = (parseInt(tit.top) - move);
+			subm.top = (parseInt(subm.top) - move);
+		}
+	}
+	else {
+		submenu.visibility = visible;
+		picopen(n); // Remove this if you don't use pictures
+		if (lastn != n) {
+			lasttoggle(lastn,lastmove);
+		}
+		for (var i = (n+1); i <= nom; i++) {
+			if (isNav4) {
+				var tit = document.layers[tits[i]];
+				var subm = document.layers[subs[i]];
+			}
+			else if (isIE4) {
+				var tit = document.all(tits[i]).style;
+				var subm = document.all(subs[i]).style;
+			}
+			else if (isNav6) {
+				var tit = document.getElementById(tits[i]).style;
+				var subm = document.getElementById(subs[i]).style;
+			}
+			tit.top = (parseInt(tit.top) + move);
+			subm.top = (parseInt(subm.top) + move);
+		}
+	}
+	lastn = n;
+	lastmove = move;
+}
+
+// -->
+</script>
+<base target="main">
+</head>
+
+<body onLoad="setbrowser();"
+	bgcolor="#174242"
+	link="#FFCC00"
+	alink="#FFCC00"
+	vlink="#FFCC00" text="#FFFFFF" background="images/background.gif">
+
+<div class="title" id="title1" style="top: 0px; width: 48; height: 20">
+<a target="main" href="home.htm"><font color="#FFFFFF"><img name="pic1" id="pic1" src="images/clear.gif" border="0" width="7" height="7">Home</font></a>
+</div>
+
+<div class="submenu" id="submenu1" style="top: 0px"></div>
+
+<div class="title" id="title2" style="top: 20px; width: 80; height: 28">
+<a target="main" href="forms.htm"><font color="#FFFFFF"><img name="pic2" id="pic2" src="images/clear.gif" border="0" width="7" height="7">Guild Forms</font></a>
+</div>
+
+<div class="submenu" id="submenu2" style="top: 0px"></div>
+
+<div class="title" id="title3" style="top: 40px; width: 65; height: 20">
+<a href="#" onclick="javascript: toggle(3,80); return false"><font color="#FFFFFF"><img name="pic3" id="pic3" src="images/closed.gif" border="0" width="7" height="7">Guild Hall</font></a>
+</div>
+
+<div class="submenu" id="submenu3" style="top: 60px; width: 124; height: 90">
+&nbsp&nbsp<a target="main" href="charter.htm">- Guild Charter</a><br>
+&nbsp&nbsp<a target="main" href="history.htm">- Guild History</a><br>
+&nbsp&nbsp<a target="main" href="organization.htm">- Guild Organization</a><br>
+&nbsp&nbsp<a target="main" href="roster.htm">- Guild Roster</a><br>
+&nbsp&nbsp<a target="main" href="hc.htm">- High Council</a>
+</div>
+
+<div class="title" id="title4" style="top: 60px; width: 56; height: 20">
+<a href="#" onclick="javascript: toggle(4,50); return false"><font color="#FFFFFF"><img name="pic4" id="pic4" src="images/closed.gif" border="0" width="7" height="7">Library</font></a>
+</div>
+
+<div class="submenu" id="submenu4" style="top: 80px; width: 105; height: 45">
+&nbsp&nbsp<a target="main" href="strategy.htm">- Strategy & Lore</a><br>
+&nbsp&nbsp<a target="main" href="zone.htm">- Zone Guide</a><br>
+&nbsp&nbsp<a target="main" href="http://sofrealm.sofguild.com/rambler.html">- SoF Rambler</a>
+</div>
+
+<div class="title" id="title5" style="top: 80px; width: 55; height: 20">
+<a href="#" onclick="javascript: toggle(5,95); return false"><font color="#FFFFFF"><img name="pic5" id="pic5" src="images/closed.gif" border="0" width="7" height="7">Tavern</font></a>
+</div>
+
+<div class="submenu" id="submenu5" style="top: 100px; width: 122; height: 90">
+&nbsp&nbsp<a target="main" href="allies.htm">- Allies</a><br>
+&nbsp&nbsp<a target="main" href="database/links.asp">- Member Links</a><br>
+&nbsp&nbsp<a target="main" href="bard.htm">- Bard's Corner</a><br>
+&nbsp&nbsp<a target="main" href="gallery.htm">- Members Gallery</a><br>
+&nbsp&nbsp<a target="main" href="tales.htm">- Tales of SoF</a><br>
+&nbsp&nbsp<a target="main" href="scenes.htm">- Scenes of Norrath</a>
+</div>
+
+<div class="title" id="title6" style="top: 100px; width: 50; height: 20">
+<a href="#" onclick="javascript: toggle(6,50); return false"><font color="#FFFFFF"><img name="pic6" id="pic6" src="images/closed.gif" border="0" width="7" height="7">E-Mail</font></a>
+</div>
+
+<div class="submenu" id="submenu6" style="top: 120px; width: 130; height: 45">
+&nbsp&nbsp<a target="main" href="http://mail.sofguild.com">- Check SoFmail</a><br>
+&nbsp&nbsp<a target="main" href="mailto:high_council@sofguild.com">- Email High Council</a><br>
+&nbsp&nbsp<a target="main" href="mailto:zack@sofguild.com">- Email Webmaster</a>
+</div>
+
+<div class="title" id="title7" style="top: 120px; width: 53; height: 20">
+<a target="main" href="calendar.htm"><font color="#FFFFFF"><img name="pic7" id="pic7" src="images/clear.gif" border="0" width="7" height="7">Calendar</font></a>
+</div>
+
+<div class="submenu" id="submenu7" style="top: 0px"></div>
+
+<div class="title" id="title8" style="top: 140px; width: 53; height: 20">
+<a target="main" href="forum.htm"><font color="#FFFFFF"><img name="pic8" id="pic8" src="images/clear.gif" border="0" width="7" height="7">Forum</font></a>
+</div>
+
+<div class="submenu" id="submenu8" style="top: 0px"></div>
+
+<div class="title" id="title9" style="top: 160px; width: 53; height: 20">
+<a target="main" href="credits.htm"><font color="#FFFFFF"><img name="pic9" id="pic9" src="images/clear.gif" border="0" width="7" height="7">Credits</font></a>
+</div>
+
+<div class="submenu" id="submenu9" style="top: 0px"></div>
+
+<div class="title" id="title10" style="top: 180px; width: 53; height: 20">
+<a target="main" href="memorial.htm"><font color="#FFFFFF"><img name="pic9" id="pic9" src="images/clear.gif" border="0" width="7" height="7">Memorial</font></a>
+</div>
+
+<div class="submenu" id="submenu10" style="top: 0px"></div>
+
+
+<div class="title" id="title11" style="top: 310px; width: 65; height: 31">
+<!-- Begin PayPal Logo -->
+<FORM ACTION="https://secure.paypal.com/cgi-bin/webscr" METHOD="POST">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="_xclick">
+<INPUT TYPE="hidden" NAME="business" VALUE="zack@sofguild.com"><INPUT TYPE="hidden" NAME="return" VALUE="http://www.sofguild.com">
+<INPUT TYPE="hidden" NAME="item_name" VALUE="Soldiers of Fortune Donation for Website & Server Maintenance"><INPUT TYPE="image" SRC="http://images.paypal.com/images/x-click-but7.gif" NAME="submit" ALT="Please donate to help with our website costs.">
+</FORM>
+<!-- End PayPal Logo -->
+</div>
+
+<div class="submenu" id="submenu11" style="top: 0px"></div>
+
+<div class="title" id="title12" style="top: 350px; width: 103; height: 31">
+<!--webbot bot="HTMLMarkup" startspan --><!-- START OF WEBTRENDS LIVE TAG -->
+<!-- Copyright 1999-2000 WebTrends Corporation -->
+<!-- eCommerce Revenue Tracking (patent pending) -->
+
+<!-- Visit us at http://www.webtrendslive.com -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// You may customize the values of the variables below to suit your website.
+// Simply insert your own values between the double-quotes.
+// Here are some examples:
+//   var ORDER= "D2,Business to Consumer,Pocket FM Radio,Audio Products,10,499.99;";
+//   var SERVER= "MyServerName";
+//   var CONTENTGROUP= "ContentGroupOfThisPage";
+
+var ORDER= "";
+var SERVER= "";
+var CONTENTGROUP= "";
+//-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// Modification of this code is not allowed and will permanently disable your account!
+// SiteName: SoF Guild
+var W="tagver=3&SiteId=55583&Sid=0013-01-2-22-226687-55583&Tz=-600&firstwkday=sunday&Edition=personal&Button=13";
+W+="&server="+escape(SERVER);
+W+="&order="+escape(ORDER);
+W+="&Group="+escape(CONTENTGROUP);
+W+="&browserDate="+escape(new Date());
+W+="&title="+escape(document.title);
+W+="&url="+window.document.URL;
+W+="&referrer="+window.document.referrer;
+W+="&appname="+escape(navigator.appName);
+W+="&appversion="+escape(navigator.appVersion);
+W+="&cookieOK="+(navigator.cookieEnabled?"Yes":"No");
+W+="&userLanguage="+(navigator.appName=="Netscape"?navigator.language:navigator.userLanguage);
+W+="&platform="+navigator.platform;
+W+="&bgColor="+escape(document.bgColor);
+W+="&javaOK=Yes";
+if(typeof(screen)=="object")
+{
+W+="&screenResolution="+screen.width+"x"+screen.height;
+W+="&colorDepth="+screen.colorDepth;
+W+="&NSpluginList=";
+for( var i=0; i< navigator.plugins.length; i++)
+W+=escape(navigator.plugins[i].name)+";";
+}
+document.write('<A TARGET="_blank" HREF="http://www.webtrendslive.com/redirect.asp?siteID=55583">');
+document.write('<IMG BORDER="0" WIDTH="100" HEIGHT="30" SRC="http://statse.webtrendslive.com/S0013-01-2-22-226687-55583/button3.asp?'+W+'">');
+document.write('</A>');
+//-->
+</SCRIPT>
+
+<NOSCRIPT>
+<A TARGET="_blank" HREF="http://www.webtrendslive.com/redirect.asp?siteID=55583">
+<IMG BORDER="0" WIDTH="100" HEIGHT="30" SRC="http://statse.webtrendslive.com/S0013-01-2-22-226687-55583/button3.asp?tagver=3&SiteId=55583&Sid=001-00-3-10-6692-7351&Tz=-600&firstwkday=sunday&Edition=personal&Button=13&title=NO%20SCRIPT&url=http://noscript&javaOK=No&">
+</A>
+</NOSCRIPT>
+<!-- END OF WEBTRENDS LIVE TAG -->
+
+</div>
+
+<div class="submenu" id="submenu12" style="top: 0px"></div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+<!--webbot bot="HTMLMarkup" endspan -->
+</div>

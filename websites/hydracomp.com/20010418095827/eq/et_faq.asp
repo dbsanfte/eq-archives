@@ -1,0 +1,73 @@
+<!-- BASE_INC.ASP -->
+<HTML><HEAD><TITLE>EverTools - Support - FAQ</TITLE></HEAD><STYLE TYPE='text/css'> <!-- A.menu { text-decoration: none; } A:hover { text-decoration: underline; color: FFFF00 } //--> </STYLE><BODY BGCOLOR='000000' TEXT='FFFFFF' LINK='00FFFF' VLINK='0099FF' ALINK='FFFF00'><CENTER><TABLE BORDER='0' CELLSPACING='0' CELLPADDING='0'><TR><!-- START Menu Include -->
+<!-- MENU_INC.ASP -->
+<TD WIDTH=180 VALIGN='TOP'><FONT FACE='VERDANA,ARIAL' SIZE='2'><BR><TABLE BORDER='0' CELLSPACING='0' CELLPADDING='1' BGCOLOR='104080' WIDTH='119'><TR><TD><TABLE BORDER='0' CELLSPACING='2' CELLPADDING='3' BGCOLOR='600010' BACKGROUND='/images/table-head-bg.jpg' WIDTH='100%'><TR><TD ALIGN='CENTER'><FONT FACE='VERDANA,ARIAL' SIZE='3' COLOR='FFF000'><B><TT>EverTools</TT></B></FONT></TD></TR></TABLE><TABLE BORDER='0' CELLSPACING='1' CELLPADDING='10' BGCOLOR='103050' BACKGROUND='/images/table-bg.jpg' WIDTH='100%'><TR><TD><FONT FACE='VERDANA,ARIAL' SIZE='1'><IMG SRC='/images/offArrow.gif'><a class='menu' href=et_about.asp>About</a><BR><IMG SRC='/images/offArrow.gif'><a class='menu' href=et_news.asp>Latest News</a><BR><IMG SRC='/images/offArrow.gif'><IMG SRC='/images/overArrow.gif'><a class='menu' href=/eq/et_faq.asp?MT=4>Discussions</a><BR><IMG SRC='/images/offArrow.gif'><a class='menu' href=et_download.asp>Download</a><BR><IMG SRC='/images/offArrow.gif'><IMG SRC='/images/overArrow.gif'><a class='menu' href=/eq/et_faq.asp?MT=8>Support</a><BR><IMG SRC='/images/offArrow.gif'><IMG SRC='/images/overArrow.gif'><a class='menu' href=/eq/et_faq.asp?MT=13>Technical</a><BR></FONT></TD></TR></TABLE></TD></TR></TABLE><BR><TABLE BORDER='0' CELLSPACING='0' CELLPADDING='1' BGCOLOR='104080' WIDTH='119'><TR><TD><TABLE BORDER='0' CELLSPACING='2' CELLPADDING='3' BGCOLOR='600010' BACKGROUND='/images/table-head-bg.jpg' WIDTH='100%'><TR><TD ALIGN='CENTER'><FONT FACE='VERDANA,ARIAL' SIZE='3' COLOR='FFF000'><B><TT>Other</TT></B></FONT></TD></TR></TABLE><TABLE BORDER='0' CELLSPACING='1' CELLPADDING='10' BGCOLOR='103050' BACKGROUND='/images/table-bg.jpg' WIDTH='100%'><TR><TD><FONT FACE='VERDANA,ARIAL' SIZE='1'><IMG SRC='/images/offArrow.gif'><a class='menu' href=../default.asp>Hydra Main</a><BR><IMG SRC='/images/offArrow.gif'><a class='menu' href=default.asp>EverQuest Main</a><BR></FONT></TD></TR></TABLE></TD></TR></TABLE><TABLE BORDER='0' CELLSPACING='0' CELLPADDING='1' WIDTH='108'><TR><TD ALIGN='CENTER'><FONT FACE='VERDANA' SIZE='-2'><A CLASS='menu' HREF='http://www.hydracomp.com/'><IMG SRC='/images/hydracomp_logo.gif' BORDER='0'><BR>HydraSoft</A></TD></TR></TABLE></TD>
+<!-- END Menu Include -->
+<!-- MainCellStart --><TD VALIGN='TOP'><!--- start of focusIN code --->
+<center>
+<script language="JavaScript">
+<!-- 
+   var now = new Date();
+   var uaid = now.getTime() % Math.floor(8640000 - Math.random()*1000);
+   document.write('<iframe src="http://focusin.ads.targetnet.com/ad/id=egavas&opt=hhj&cv=210&uid=' + uaid + '" height=60 width=468 frameborder=0 marginheight=0 marginwidth=0 scrolling="no">');
+   document.write('<a href="http://focusin.ads.targetnet.com/ad/id=egavas&opt=cij&cv=210&uid=' + uaid + '" target="_top">');
+   document.write('    <img src="http://focusin.ads.targetnet.com/ad/id=egavas&opt=hij&cv=210&uid=' + uaid + '" alt="Click here to visit our sponsor" width=468 height=60 border=0>');
+   document.write('</a><br><font face="arial" size="1"><a href="http://www.focusin.com">focusIN Specialty Web Network</a></font></iframe>');
+//-->
+</script>
+<noscript>
+   <iframe src="http://focusin.ads.targetnet.com/ad/id=egavas&opt=hhn&cv=210&uid=1" height=60 width=468 frameborder=0 marginheight=0 marginwidth=0 scrolling="no">
+   <a href="http://focusin.ads.targetnet.com/ad/id=egavas&opt=cin&cv=210&uid=1" target="_top"><br>
+   <img src="http://focusin.ads.targetnet.com/ad/id=egavas&opt=hin&cv=210&uid=1" alt="Click here to visit our sponsor" width=468 height=60 border=0>
+   </a><br><font face="arial" size="1"><a href="http://www.focusin.com">focusIN Specialty Web Network</a></font></iframe>
+</noscript>
+</center>
+<!------------ end of focusIN code ------------>
+<hr size=0>
+<CENTER><table border=0 cellpadding=5 bgcolor=#DDDDDD width=50% background='/images/table-head-bg.jpg'><tr><td background=''><table border=0 cellpadding=5 bgcolor=#BB0000 width=100%><tr><td width=50% background='/images/table-bg.jpg'><b><font size=+3 color=#FFF000><center>Frequently Asked Questions<center></font></b></td></tr></table></td></tr></table></center><HR SIZE=1 WIDTH=80%></CENTER><BR>
+
+<a name="install"></a>
+<B><U><FONT SIZE=+1>Installation Questions</FONT></U></B><BR>
+
+
+<p><b>Q: When I try to install EverTools Release 6 Beta I get Release 5, or
+some other software that is not even EverTools.  What should I do?</b></p>
+
+<p>A: Because of the way the installer for EverTools Release 6 works, if
+existing setup files are already in the directory you try to run the
+installer in, it will use the old files already there.  To prevent against
+this, make sure you preform the following steps :</p>
+
+<ul>
+<li>Make sure you have downloaded the correct file.  Either <b>evertools_6_beta_lg.exe</b>
+or <b>evertools_6_beta_sm.exe</b>.
+<li>Make sure you did not download the file to your Desktop
+<li>Make sure the following files do not exist in the same directory: <b>setup.exe, setup.lst,</b> or <b>evertools.cab</b>
+</ul>
+
+<a name="evermon"></a>
+<B><U><FONT SIZE=+1>EverMon Questions</FONT></U></B><BR>
+
+<p><b>Q: Sometimes I will see the server status turn yellow, and EverMon will
+report the status as being LINK or LOAD.  What do these mean?</b></p>
+
+<p>A: LINK and LOAD are threshholds to indicate if their are too few or too
+many people on a server for it to be working correctly.  If a server has the
+status of LINK that means that EverMon thinks that not enough people are on
+the server for the server to be working.  For example, If you ever see 50
+people listed as being on Fennin Ro, this would be a clear indicateion that
+a problem exists, thus the LINK status to show the server is up, but possibly
+broken.</p>
+
+<p>If you see a status listed as LOAD that means that the server is overloaded,
+or has too many people on the server, and that you may have connection problems
+accessing that server.  If the chat server has more than 300 people, it will
+be listed as LOAD, meaning the chat server is up, but if you try to log on,
+you will probably have problems because the chat server will turn you away if
+too many people are on.  The LOAD limit for play servers is currently set at
+2500.</p>
+
+<p>At some point in the future, LINK and LOAD threshholds will be able to be
+changed by the user, but for now they are hard coded into the software.</p>
+
+<br><hr width=80% size=1><br><center><a href='/default.asp'><img src='/images/logoblack.jpg' border=0 alt='Home' width=50 height=38></a></center></table></table></center></BODY></HTML>

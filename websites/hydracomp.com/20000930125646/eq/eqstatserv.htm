@@ -1,0 +1,164 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Bryon Quackenbush">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (Win98; I) [Netscape]">
+   <TITLE>EverQuest Status Server Protocol</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER><B><U><FONT SIZE=+2>EverQuest Status Server Protocol</FONT></U></B></CENTER>
+
+<P><B>PURPOSE : </B>The EverQuest Status Server is created and maintained
+by Verant to provide support for the EverQuest Status Server Protocol.&nbsp;
+The EverQuest Status Server Protocol is used by any application software
+that needs to get information as to the current status of all everquest
+chat, world, and zone servers.&nbsp; By using the Everquest Status Server
+protocol, it is possible to get the following information :
+<UL>
+<LI>
+If the chat server, or any of the world or zone servers are up or down.</LI>
+
+<LI>
+How many users are on the chat server.</LI>
+
+<LI>
+How many users are playing on each world server</LI>
+
+<LI>
+Up/Down status of each zone for each world.</LI>
+</UL>
+<B>USAGE :</B> Communication with the EQ Status Server is accomplished
+via the UDP protocol using host <B>status.everquest.com</B> on port <B>24252</B>.&nbsp;
+The protocol uses a series of very basic command and reply sequences, which
+are explained below :
+<P><B>COMMANDS :</B>&nbsp; Currently, the Status Server Protocol supports
+two commands.&nbsp; One to request a list of all server names, and another
+to request player zone status information for all servers. The commands
+that are sent from the client are very basic, and use the same format.&nbsp;
+Each command consists of 4 bytes of data.&nbsp; The first two bytes are
+always the same (0xFFFF), the second two bytes represent the actual command
+code.&nbsp; either 0x0001 for Server Names, or 0x0003 for Server Status.&nbsp;
+Here is a summary of current commands, and the complete 4 byte command
+sequence that should be sent from client :
+<BR>&nbsp;
+<CENTER><TABLE BORDER COLS=2 WIDTH="50%" >
+<TR>
+<TD>
+<CENTER><B>Command</B></CENTER>
+</TD>
+
+<TD>
+<CENTER><B>Sequence</B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER>Request Server Names&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>0xFFFF0100</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER>Request Status Data</CENTER>
+</TD>
+
+<TD>
+<CENTER>0xFFFF0300</CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<BLOCKQUOTE>NOTE 1 : You should only need to send the Request Server Names
+command once, at the start of your application to get the current list
+of server names.
+<P>NOTE 2 : When coding your client application you should try to ensure
+that there is a buffer between sending Request Status Data commands, as
+to prevent clients from flooding the status server.&nbsp; I try to not
+allow clients to refresh more than once ever 20 to 30 seconds.</BLOCKQUOTE>
+<B>REPLIES :</B> After you send one of the commands to the Status Server,
+you will get a reply back for that command.&nbsp; For each of the commands
+above, there is an associated reply.&nbsp; The first 4 bytes of each reply
+contain the same 4 bytes that were sent as the command.&nbsp; After that,
+the rest of the reply is based on the command being sent.
+<BLOCKQUOTE><B><U>Request Server Names Reply</U></B><B></B>
+<P>This reply contains a listing of current server names, including the
+chat server, and uses the following format :
+<BLOCKQUOTE>BYTE 1 to BYTE 4 - Command Code (0xFFFF0100)
+<BR>BYTE 5 - Total number of server names
+<BR>BYTE 6 - Total number of zones in each server
+<BR>BYTE 7+ - Name Data Stream - The rest of the data is each name of each
+server seperated by a null (0x00) character.&nbsp; The number of names
+returned is equal to the total number of server names count provided in
+BYTE 5</BLOCKQUOTE>
+Example :
+<BLOCKQUOTE><FONT COLOR="#990000">FF FF 01 00</FONT> <FONT COLOR="#CC6600">02</FONT>
+<FONT COLOR="#666600">46</FONT> <FONT COLOR="#006600">43 68</FONT>&nbsp;
+-&nbsp; <FONT COLOR="#006600">61 74 20 53 65 72 76 65</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+......Chat Serve
+<BR><FONT COLOR="#006600">72 00 54 65 73 74 20 53</FONT>&nbsp; -&nbsp;&nbsp;
+<FONT COLOR="#006600">65 72 76 65 72 00</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+r.Test Server.</BLOCKQUOTE>
+This example shows a server count of 2, a zone count of 70 (0x46), and
+lists the two server names as Chat Server, and Test Server.&nbsp; You will
+note that Chat server is returned as one of the total servers.
+<P><B><U>Request Status Data Reply</U></B>
+<P>This reply contains the real data!&nbsp; Here you will get the actual
+server status, player counts, and zone status fields.&nbsp; The structure
+of the returned data is as follows :
+<BLOCKQUOTE>BYTE 1 to BYTE 4 - Command Code (0xFFFF0300)
+<BR>BYTE 5 - Total Number of Chat Servers
+<BR>BYTE 6 to BYTE 7 - User count on chat Server <B>*</B>
+<BR>BYTE 8 - Total Number of World Servers
+<BR>BYTE 9+ - World Server Data (Size = 19 Bytes * Total Number of World
+Servers)
+<BLOCKQUOTE>(World Server Data Block)
+<BR>BYTE 1 to BYTE 2 - Total number of players on this world server
+<BR>BYTE 3 - Total number of zones in this world
+<BR>BYTE 4 to BYTE 19 - Binary Zone Status Data (16 bytes total - each
+bit in each byte represents a zone as being up or down)</BLOCKQUOTE>
+NOTE 1 : Although the EverQuest Status Server provides bit field data indicating
+if each zone is up or down, Verant has decided not to document the name
+of each zone that belongs to each zone bit, therefore the data is pretty
+useless, other than converting the bit field data into a total zone count
+to show the total number of zones that are either up or down for a given
+server.
+<P>NOTE 2 : Right now, Verant only has 1 chat server, although that may
+never change, when the protocol was first developed, it was not clear as
+to if additional chat servers would be added in the future.&nbsp; If at
+some point a 2nd chat server were to be added, then BYTE 8 to BYTE 9 would
+be the total player count on chat server 2, and the Total Number of World
+Servers would be shifted down to BYTE 10.</BLOCKQUOTE>
+Example :
+<BLOCKQUOTE><FONT COLOR="#990000">FF FF 03&nbsp; 00</FONT> <FONT COLOR="#CC6600">01</FONT>
+<FONT COLOR="#999900">00 09</FONT> <FONT COLOR="#009900">01</FONT>&nbsp;
+-&nbsp; <FONT COLOR="#3333FF">00 91</FONT> <FONT COLOR="#993366">46</FONT>
+<FONT COLOR="#FF6666">FF FF FF FF FF</FONT>
+<BR><FONT COLOR="#FF6666">FF FF FF 3F 00 00 00 00&nbsp; -&nbsp; 00 00 00</FONT><FONT COLOR="#000000"></FONT></BLOCKQUOTE>
+<FONT COLOR="#000000">This example shows one chat server with 9 people
+on it, followed by one world server with all zones currently up.&nbsp;
+You will notice that Zone data is not returned for the chat server because
+the chat server is not the same as the other world servers, in that there
+are no zones in the chat server.</FONT></BLOCKQUOTE>
+<FONT COLOR="#000000"><B>ADDITIONAL INFORMATION :</B> If you have any problems
+or questions in regards to the EverQuest Status Server, or it's protocol,
+please contact Graeme "Fippy" Ing at fippy@verant.com, Graeme is the Senior
+Programmer for EverQuest, and one of the people without which the EverQuest
+Status Server would not have existed.&nbsp; Also, Graeme has requested
+that anyone who plans on using the EverQuest Status Server protocol in
+their own software application, to please send him an e-mail, that way
+he has some contact information and can contact you if there are changes
+to the protocol in the future, etc.</FONT>
+<BLOCKQUOTE>
+<BLOCKQUOTE>&nbsp;</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>
