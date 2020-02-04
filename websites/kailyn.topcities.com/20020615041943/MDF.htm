@@ -1,0 +1,157 @@
+<HTML><HEAD><TITLE>Melee Damage Formula</title></head>
+<body><!--
+	TOPCITIES MEMBER, IF THIS BANNER IS MESSING UP YOUR PAGE LAYOUT, VISIT 
+	http://www.topcities.com/help/banner.html
+	FOR INSTRUCTIONS ON HOW TO FIX IT
+-->
+
+<CENTER>
+<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="#000000" SRC="http://65.208.179.196/stuff_tc/index.htm"></iframe>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		
+      <TD> <A HREF="http://www.topcities.com/cgi-bin/affiliates/clickcount.cgi?url=www.thefreesite.com" TARGET="_top"> <IMG SRC="http://65.208.179.196/stuff_tc/mb_thefreesite156x20.gif" WIDTH=156 HEIGHT=20 BORDER=0></A></TD>
+		
+      <TD> <A HREF="http://www.topcities.com/cgi-bin/affiliates/clickcount.cgi?url=www.topcities.com/cgi-bin/home/signup" TARGET="_top"> 
+        <IMG SRC="http://65.208.179.196/stuff_tc/mb_topcities312x20.gif" WIDTH=312 HEIGHT=20 BORDER=0 ALT="Get Your Free 150 MB Website Now!"></A></TD>
+	</TR>
+</TABLE>
+</CENTER>
+
+<!-- START TOPCITIES HEADER CODE -->
+
+
+<!-- END TOPCITIES HEADER CODE -->
+
+
+
+
+
+<font face=verdana>
+<center>Melee Damage Formula</center>
+<BR><BR><BR><BR><BR>
+I have written this like a thousand times. I will come up with a new an elegent version of the formula when I have the time. For now I am just cutting and pasting a post I have written on the Everquest message board. Any questions please fee free to ask.<BR><BR>
+
+This is going to be a dump of the information, I, Romidar Truebalde and may others (the <a href=http://www2.hpcdsb.edu.on.ca/~jeff_cameron/>Paladins of Norrath</a>, <a href=http://eqss.stratics.com>EQStratics</a> <a href=http://boards.stratics.com/cgi-bin/forums/postlist.pl?cat=9&Board=eqpaladins>Paladin</a>, <a Href=http://boards.stratics.com/cgi-bin/forums/postlist.pl?cat=9&Board=eqshadowknights>Shadow Knight</a> and <a href=http://boards.stratics.com/cgi-bin/forums/postlist.pl?cat=9&Board=eqwarriors>Warriors</a> boards in particular) have help put together. There will be more that a little bit of math in the following. The best way to confirm this stuff is get a copy of <a href=http://kqp.mpog.com/EQParse>EQ Parse</a> and look at your own combat logs.<BR><BR>
+
+
+Basic Definitions:
+<BR>
+Magic Number: For levels 25+ (and possibly 20+) there is a number you will hit for most often with any given weapon at any given level. You can get a feel for this number by just looking at the damage as it goes by, but it becomes most apparent when you look at the histogram of your damage. There will be several peaks on the histogram. The tallest one will usually be the Magic Number (Mode). With 100% accuracy at high levels we can predict this number. It is <BR>
+<BR>
+MN = 2* damage + (level-25)/3
+<BR><BR>
+The other characteristic of the magic number is that there is a drop off of the number of hits that are greater than it. <BR>
+<BR>
+There is another peak in the damage histogram. This one is at you minimum hit. Min is (level -25)/3. Most hit will in fact fall between Min and MN. 
+<BR><BR>
+Both Min and MN apply to weapons in the primary hand only. (The off hands peak, when duel wielding are at 1 and 2* damage.)
+<BR><BR>
+The Min and MN let us create a formula that give a very good "real world" rating about how effective a weapon is in combat. At high levels the effects of Min on a weapons performance is significant. At 60th (assuming the behaviors seen in the first 50 levels hold true, and this may not be a valid assumption) a weapons damage rating becomes almost trivial and its speed paramount. By taking an average of MN and Min and dividing by delay we have (simplified):<BR><BR>
+
+(damage + Min)/delay<BR><BR>
+
+If you multiply the result by 10 you have a reasonable accurate prediction of damage per second (at high level: the formula ignores hit rates and DW and DA, but the effect more or less cancel themselves out). This formula though is biased in favor of the faster weapon, as it ignores all hit above MN. On higher damage weapons this range is bigger and so they are penalized more.
+<BR><BR>
+Currently we have a good (but by no means perfect) formula for the maximum hit a player will get: <BR><BR>
+
+Max = ((Str + Skill + Level)/100)* damage<BR>
+<BR>
+By using a weighted average with Max, MN and Min we can get a good figure for damage per second. (And if you do not divide by delay a good number for average damage per swing, though the mechanics of doing damage are not understood.) I will show the simplified formula for a weighted average with Max:<BR>
+<BR>
+(0.9 * (damage + Min) + 0.1 * Max)/delay<BR>
+<BR>
+This formula, while a bit cumbersome is a very good predictor of "real world" weapon performance in the primary hand. Also it explains the reason melee classes from 1h to 2h and then back and which levels they do it at. It explains why 2 handed weapons are not preferred at the highest levels and why the Revultant whip is so effective as a weapon (5/14). IMHO it is one of the most unbalanced weapons in the game, along with the FS Dagger, and BTC.<BR>
+<BR>
+The off hand formula is 0.42 ((0.9* damage + 0.1 * Max)/delay)<BR>
+<BR>
+Here are some quick numbers for various weapons, using a 50th level charicter with 150 strength and primary hand only:<BR><BR>
+
+<table align="center" width=80% Border=1>
+	<TR><!-- 1st row -->
+		<TH>Weapon</TH>
+		<TH>Dam/Delay</TH>
+		<TH>Performance</TH>
+		<TH>Dam/Delay %</TH>
+	</TR>
+	<TR><!-- 2nd row -->
+		<td>Mith 2H with haste</td>
+		<td align="center">21/32</td>
+		<td align="center">10.86</td>
+		<td align="center">0.656</td>		
+	</tr>
+	<tr><!-- 3rd row -->
+		<td>God Drop</td>
+		<td align="center">30/45 (any)</td>
+		<td align="center">10.33</td>
+		<td align="center">0.667</td>
+	</tr>
+	<tr><!-- 4th row -->
+		<td>Revultant Whip</td>
+		<td align="center">5/14</td>
+		<td align="center">10.00</td>
+		<td align="center">0.357</td>
+	</tr>
+	<tr><!-- 5th row -->
+		<td>Spined Dragon Claws</td>
+		<td align="center">10/21</td>
+		<td align="center">9.76</td>
+		<td align="center">0.476</td>
+	</tr>
+	<tr><!-- 6th Row -->
+		<td>Ashenbone Ax</td>
+		<td align="center">24/42</td>
+		<td align="center">9.21</td>
+		<td align="center">0.571</td>	
+	</tr>
+	<tr><!-- 7th Row -->
+		<td>Mith 2H without haste</td>
+		<td align="center">21/40</td>
+		<td align="center">8.70</td>
+		<td align="center">0.525</td>
+	</tr>
+	<tr><!-- 8th row -->
+		<td>Ghoulbane</td>
+		<td align="center">15/34</td>
+		<td align="center">7.94</td>
+		<td align="center">0.441</td>
+	</tr>
+	<tr><!-- 9th Row -->
+		<td>Wakazashi</td>
+		<td align="center">7/21</td>
+		<td align="center">7.90</td>
+		<td align="center">0.333</td>
+	</tr>
+	<tr><!-- 10th row -->
+		<td>Amydgalyn Tendril</td>
+		<td align="center">9/25</td>
+		<td align="center">7.68</td>
+		<td align="center">0.360</td>
+	</tr>
+	<tr><!-- 11th row -->
+		<td>Ykesha</td>
+		<td align="center">8/24</td>
+		<td align="center">7.46</td>
+		<td align="center">0.333</td>	
+	</tr>
+	<tr><!-- 12th row -->
+		<TD>Bladed Thulean Claws</TD>
+		<TD align="center">5/19</TD>
+		<td align="center">7.37</td>
+		<td align="center">0.263</td>
+	</tr>
+</table>
+<BR>
+Remember that this is for the primary hand only. Many weapons will be wielded with a second weapon and possibly a haste item. (Haste items should preserve the relative differences but I have not confirmed this by sitting down and doing the math.) <font color="red">Notice!</font> The damage/delay is a poor performance indicator. 
+<BR>
+<BR>
+<center><a href=http://www.topcities.com/VideoGames/kailyn/>back</a></center>
+</font>
+
+
+<!-- START TOPCITIES FOOTER CODE -->
+
+
+<!-- END TOPCITIES FOOTER CODE -->
+</body>
+</html>
