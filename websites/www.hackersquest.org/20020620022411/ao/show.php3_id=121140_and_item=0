@@ -1,0 +1,132 @@
+<?php
+	$ao_db=mysql_pconnect("localhost","ao","koktskinke");
+	$ao_res=mysql_select_db("ao",$ao_db);
+
+        $profs = array('Agent'=>'Agent','Soldier'=>'Soldier','Martial Artist'=>'Martial Artist',
+                       'Doctor'=>'Doctor','Nano-Technician'=>'Nano-Technician','Meta-Physicist'=>'Meta-Physicist',
+                       'Engineer'=>'Engineer','Fixer'=>'Fixer','Adventurer'=>'Adventurer',
+                       'Trader'=>'Trader','Bureaucrat'=>'Bureaucrat','Enforcer'=>'Enforcer',
+                       'Generic'=>'Generic');
+ 
+        $skills = array ('MatMet'=>'MaterialMetamorphose','BioMet'=>'BiologicalMetamorphose','PsyMod'=>'PsychologicalModification','MatCre'=>'MaterialCreation',
+                         'TimeSpace'=>'MaterialLocation','SensImp'=>'SenseImprovement');
+
+        if (isset($id) && is_numeric($id) && isset($item) && is_numeric($item)) {
+          $result=mysql_query("SELECT sec,val FROM info WHERE isitem=$item AND id=$id");
+          $cresult=mysql_query("SELECT * FROM cache WHERE isitem=$item AND id=$id");
+          while (($row=mysql_fetch_array($result))) {
+             $info[$row["sec"]]=$row["val"];
+          }
+          if (! ($cache=mysql_fetch_array($cresult))) {
+            $cache=array();
+          }
+          aoheader($cache["name"]);
+          boxstart($cache["name"]);
+          echo "<table>\n";
+          echo "<tr><th>Name</th><td colspan=\"2\">".$cache["name"]."</td></tr>\n";
+          echo "<tr><th>Desc</th><td colspan=\"2\">".$cache["descr"]."</td></tr>\n";
+          echo "<tr><th>QL/NCU Cost</th><td colspan=\"2\">".$info["Level"]."</td></tr>\n";
+	  if (isset($info["Icon"])) 
+            echo "<tr><th>Icon</th><td colspan=\"2\"><img src=\"dbicons/pic.".$info["Icon"].".png\" alt=\"Item Icon\" /></td></tr>\n";
+	  if (isset($info["Price"])) 
+            echo "<tr><th>Price</th><td colspan=\"2\">".$info["Price"]."</td></tr>\n";
+          if (isset($info["NanoPoints"]))
+            echo "<tr><th>NanoCost</th><td colspan=\"2\">".$info["NanoPoints"]."</td></tr>\n";
+          if (isset($info["AttackRange"]))
+            echo "<tr><th>Range</th><td colspan=\"2\">".$info["AttackRange"]."m</td></tr>\n";
+          if (isset($info["TimeExist"]))
+            echo "<tr><th>Time</th><td colspan=\"2\">".$info["TimeExist"]/100.0."s</td></tr>\n";
+          if (isset($info["ItemDelay"])) 
+            echo "<tr><th>Attack Delay</th><td colspan=\"2\">".$info["ItemDelay"]/100.0."s</td></tr>\n";
+          if (isset($info["EquipDelay"])) 
+            echo "<tr><th>Equip Delay</th><td colspan=\"2\">".$info["EquipDelay"]/100.0."s</td></tr>\n";
+          if (isset($info["MaxEnergy"])) 
+            echo "<tr><th>Ammo/Energy</th><td colspan=\"2\">".$info["MaxEnergy"]."</td></tr>\n";
+          if (isset($info["RechargeDelay"])) 
+            echo "<tr><th>Recharge Delay</th><td colspan=\"2\">".$info["RechargeDelay"]/100.0."s</td></tr>\n";
+          if (isset($info["LR_MultipleWeapon"])) 
+            echo "<tr><th>LR Multiple Weapon</th><td colspan=\"2\">".$info["LR_MultipleWeapon"]."</td></tr>\n";
+          if (isset($info["MinDamage"]) && isset($info["MaxDamage"]) && isset($info["DamageBonus"])) 
+            echo "<tr><th>Damage</th><td colspan=\"2\">".$info["MinDamage"]."-".$info["MaxDamage"]."(".$info["DamageBonus"].")</td></tr>\n";
+          $result=mysql_query("SELECT sec,var,value FROM skill WHERE isitem=$item AND id=$id");
+          while (($row=mysql_fetch_array($result))) {
+            echo "<tr><th>".$row["sec"]."</th><td>".$row["var"]."</td><td>".$row["value"]."</td></tr>\n";
+          }
+          $result=mysql_query("SELECT sec,var,value FROM req WHERE isitem=$item AND id=$id"); 
+          while (($row=mysql_fetch_array($result))) {
+            echo "<tr><th>To ".$row["sec"]."</th><td>".$row["var"]."</td><td>".$row["value"]."</td></tr>\n";
+          }
+          $result=mysql_query("SELECT sec,cmd,info FROM code WHERE isitem=$item AND id=$id"); 
+          while (($row=mysql_fetch_array($result))) {
+            echo "<tr><th>".$row["sec"]."</th><td>".$row["cmd"]."</td><td>".$row["info"]."</td></tr>\n";
+          }
+          echo "</table>\n";
+          boxend();
+        } else if (isset($prof) && isset($profs[$prof]) && isset($byskill)) { 
+          $result=mysql_query("SELECT id,name FROM cache WHERE isitem=0 AND prof=\"$prof\" ORDER BY skill");
+          aoheader("NF List for $prof");
+          boxstart("Skillsorted NF List for $prof");
+          echo "<table>\n";
+          echo "<tr><th>Name</th>";
+          foreach ($skills as $s=>$v) {
+            echo "<th>$s</th>";
+          }
+          echo "</tr>\n"; 
+          while (($row=mysql_fetch_array($result))) {
+             $id=$row["id"];
+             echo "<tr><td><a href=\"show.php3?id=$id&amp;item=0\">".$row["name"]."</a></td>";
+             $rres=mysql_query("SELECT var,value FROM req WHERE id=$id AND isitem=0");
+             $req=array();
+             while (($rrow=mysql_fetch_array($rres))) {
+               $req[$rrow["var"]]=$rrow["value"];
+             }
+             foreach ($skills as $s=>$v) {
+               echo "<td>$req[$v]</td>";
+             }
+             echo "</tr>\n";
+          }
+          echo "</table>\n";
+          boxend();
+        } else if (isset($prof) && isset($profs[$prof])) {
+          $result=mysql_query("SELECT id,name FROM cache WHERE isitem=0 AND prof=\"$prof\" ORDER BY name");
+          aoheader("NF List for $prof");
+          boxstart("Namesorted NF List for $prof");
+          while (($row=mysql_fetch_array($result))) {
+            echo "<a href=\"show.php3?id=".$row["id"]."&amp;item=0\">".$row["name"]."</a><br />\n";
+          }
+          boxend();
+        } else if (isset($iname) && strlen($iname)>3) {
+          $result=mysql_query("SELECT id,name,ql FROM cache WHERE isitem=1 AND name like '%".addslashes($iname)."%' ORDER BY name LIMIT 100");
+          aoheader("Item List");
+          boxstart("Search Results");
+          while (($row=mysql_fetch_array($result))) {
+            echo "<a href=\"show.php3?id=".$row["id"]."&amp;item=1\">".$row["name"]."(".$row["ql"].")</a><br />\n";
+          }
+          boxend();
+        } else if (isset($item) && is_numeric($item) && $item == 1) {
+          aoheader("Item Search");
+          boxstart("Item Search");
+          echo "<p>";
+          echo "This will perform a caseinsensitive substring search through item names.\n";
+          echo "Only 30 items will be returned on each request. The search pattern must be at least 4 characters long.\n";
+          echo "</p>\n";
+          echo "<form method=\"get\" action=\"show.php3\">\n";
+          echo "<p>\n";
+          echo "<input type=\"text\" name=\"iname\" size=\"32\" maxlength=\"64\" />\n";
+          echo "<input type=\"hidden\" name=\"item\" value=\"1\" />\n";
+          echo "<input type=\"submit\" value=\"Search\" />\n";
+          echo "</p>\n";
+          echo "</form>\n";
+          boxend();
+        } else {
+           sort($profs);
+           reset($profs);
+           aoheader("NanoFormula List");
+           boxstart("NanoFormula List");
+           foreach($profs as $p) {
+             echo "<a href=\"show.php3?prof=$p\">NF List for $p</a> ";
+             echo "<a href=\"show.php3?prof=$p&amp;byskill=1\"> (by skill)</a><br />\n";
+           }
+           boxend();
+        }
+?>

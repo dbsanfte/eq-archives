@@ -1,0 +1,1295 @@
+<html>
+<head>
+<title>·BUTTeR· [Bubbles]</title>
+<center>
+<font color="white" size="13" face="arial">
+<b>Bubbles</b>
+</font>
+</center>
+<script language="javascript" src="level.js"></script>
+<script language="javascript">
+var isIE4=false,isNN4=false;
+
+var baseX=0,baseY=0;
+var baseWidth=207,baseMiddle=103,baseBottom=288,baseHeight=308,baseLine=196;
+var baseMargin=5,borderLeft=0,borderRight=0;
+
+var bubbleSize=25;
+var bubbleStep=20;
+var bubbleRadiusSmall=12,bubbleRadiusLarge=13;
+var bubbleDistance=23;
+var bubbleMax=10,bubbleNormal=8;
+var bubbleTableSize=8,bubbleTable=new Array();
+var bubbleChecked=0,bubbleTrain=0;
+var bubbleX=0,bubbleY=0,bubbleStepX=0,bubbleStepY=0,bubbleUnitX=0.0,bubbleUnitY=0.0;
+var bubbleFired=false;
+var bubbleNum=0;
+var bubbleCount=0;
+var bubbleBounce=0;
+var bubbleTimer=0;
+var bubbleID="";
+var bubbleIDNum=0;
+var bubbleBonus=100;
+
+var bubbleHammer=8,bubbleMulti=9;
+var bubbleMultiCount=0,bubbleMultiX=new Array(),bubbleMultiY=new Array(),bubbleMultiChecked=new Array();
+
+var bubbleDropFinished=true,bubbleLevelStarted=false;
+
+var touchingX=0,touchingY=0,touchedX=0,touchedY=0,lastDimX=0,lastDimY=0;
+var deltaLength=new Array(25,25,25,25,25,25,25,25,24,24,23,23,22,22,21,21,20,19,18,17,16,15,13,11,9);
+var hitSide=false,hitTop=false,hitBubble=false;
+
+var bubbleLevelMax=0,bubbleLevel=0,bubbleFeedingMax=0,bubbleFeeding=0;
+
+var bubbleImage=new Array();
+function loadBubble() {
+  for (var i=0; i<bubbleMax; i++) {
+    bubbleImage[i]=new Image(bubbleSize,bubbleSize); bubbleImage[i].src=("bubble"+i+".gif");
+  }
+}
+loadBubble();
+
+var bubbleTag1='<img src="',bubbleTag2='" width='+bubbleSize+' height='+bubbleSize+' border=0>';
+
+var pointSize=3,pointRadius=1;
+var pointImage=new Image(pointSize,pointSize); pointImage.src="point.gif";
+
+var dotSize=5,dotRadius=2;
+var dotImage=new Image(dotSize,dotSize); dotImage.src="dot.gif";
+
+var infoSize=15,infoRadius=7;
+var infoImage=new Image(infoSize,infoSize); infoImage.src="info.gif";
+var infoX=0,infoY=0;
+
+var clockSize=15,clockRadius=7;
+var clockImage=new Image(clockSize,clockSize); clockImage.src="clock.gif";
+var clockX=0,clockY=0;
+
+var radianUnit=Math.PI/180;
+
+var meterSize=5,meterRadius=2;
+var meterImage=new Image(meterSize,meterSize); meterImage.src="meter.gif";
+var meterTimer=0,meterSlice=8,meterCenter=2,meterStep=2;
+var meterOffset=new Array();
+
+var gunX=0,gunY=0;
+var gunAngleStep=3,gunAngleSlice=180/gunAngleStep,gunAngleCenter=gunAngleSlice/2,gunAngles=new Array();
+var gunOffset=new Array(Math.ceil(-bubbleSize*8/3),Math.ceil(-bubbleSize*4/3),0,Math.floor(bubbleSize*4/3),Math.floor(bubbleSize*8/3));
+var gunLevelOffset=0;
+var gunPointMax=5,gunPoint=new Array(57,47,37,27,17);
+var gunPointEnd=67,gunPointBegin=17;
+var gunMargin=gunPointBegin+dotRadius;
+var gunMoveDirection=1;
+var gunAngle=gunAngleCenter,gunAngleBegin=0,gunAngleEnd=0;
+var gunDirection=0;
+var gunTimer=0;
+
+var layerCount=-1;
+var layerStatus=new Array();
+var layerDrop=new Array();
+var layerStep=new Array();
+var layerTimer=0;
+var layerString1='<div id="',layerString2='" style="position:absolute; top:'+(-bubbleSize)+'; left:'+(-bubbleSize)+'; width:'+bubbleSize+'; height:'+bubbleSize+'; visibility:visible; z-index:3;"></div>'
+
+var numberWidth=10,numberHeight=15;
+var numbers=new Array();
+function loadNumber() {
+  for (var i=0; i<10; i++) {
+    numbers[i]=new Image(numberWidth,numberHeight); numbers[i].src=(""+i+".gif");
+  }
+}
+loadNumber();
+
+var numberX=0,numberY=0;
+var numberPosition=new Array();
+var scoreSize=4;
+var gameScoreNumber=0,highScoreNumber=1;
+var numberDigit=new Array(new Array(new Array(0,0),new Array(0,0),new Array(0,0),new Array(0,0)),new Array(new Array(0,0),new Array(0,0),new Array(0,0),new Array(0,0)));
+var numberShown=new Array(new Array(1,1,1,1),new Array(1,1,1,1));
+var numberID="number",numberCount=0;
+var numberTag1= '<table align=center width='+numberWidth+' height='+numberHeight+' cellpadding=0 cellspacing=0 border=0><tr><td align=left valign=top><img src="',numberTag2='" width='+numberWidth+' height='+numberHeight+' border=0></td></tr></table>';
+
+var highScore=0,gameScore=0;
+
+var infoWindow=null;
+
+function showInformation() {
+  if (infoWindow==null)
+    infoWindow=window.open("info.html","infoWindow","width=480,height=450,titlebar=1")
+  else if (infoWindow.closed)
+    infoWindow=window.open("info.html","infoWindow","width=480,height=450,titlebar=1")
+  else
+    infoWindow.focus();
+}
+
+function moveMeter() {
+  meterStep=(meterStep>0) ? meterStep-1 : meterSlice-1;
+  moveLayerTo("meter",clockX+meterOffset[meterStep].x-meterRadius,clockY-meterOffset[meterStep].y-meterRadius);
+
+  if (meterStep==meterCenter) {
+    if (!bubbleFired)
+      fireBubble();
+  }
+  else
+    meterTimer=setTimeout("moveMeter()",bubbleControls[bubbleLevel][2]);
+}
+
+function restoreMeter() {
+  meterStep=meterCenter;
+  moveLayerTo("meter",clockX-meterRadius,clockY-clockRadius-meterRadius);
+}
+
+function newMeter(meterIndex) {
+  this.x=Math.round(Math.cos(meterIndex*45*radianUnit)*clockRadius);
+  this.y=Math.round(Math.sin(meterIndex*45*radianUnit)*clockRadius);
+}
+
+function setMeter() {
+  for (var i=0; i<meterSlice; i++)
+    meterOffset[i]=new newMeter(i);
+}
+
+function newAngle(angleIndex) {
+  this.x=Math.cos(angleIndex*gunAngleStep*radianUnit);
+  this.y=Math.sin(angleIndex*gunAngleStep*radianUnit);
+}
+
+function setAngle() {
+  for (var i=0; i<gunAngleSlice; i++)
+    gunAngles[i]=new newAngle(i);
+}
+
+function setLayer() {
+  showLayer("tableb",baseY-baseMargin,baseX-baseMargin,baseWidth+baseMargin*2,baseHeight+baseMargin*2,1,'<table width='+(baseWidth+baseMargin*2)+' height='+(baseHeight+baseMargin*2)+' border=4 cellpadding=0 cellspacing=0 bgcolor=#C0C0C0><tr><td> </td></tr></table>');
+  showLayer("tablef1",baseY,baseX,baseWidth,baseLine,2,'<table width='+baseWidth+' height='+baseLine+' border=0 cellpadding=0 cellspacing=0 bgcolor=#000000><tr align=center valign=middle><td> </td></tr></table>');
+  showLayer("tablef2",baseY+baseLine+1,baseX,baseWidth,baseHeight-(baseLine+1),2,'<table width='+baseWidth+' height='+(baseHeight-(baseLine+1))+' border=0 cellpadding=9 cellspacing=0 bgcolor=#000000><tr align=center valign=top><td> </td></tr></table>');
+  showLayer("point1",gunY-gunPoint[0]-pointRadius,gunX-pointRadius,pointSize,pointSize,5,'<img src="'+pointImage.src+'" width='+pointSize+' height='+pointSize+' border=0 align=top>');
+  showLayer("point2",gunY-gunPoint[1]-pointRadius,gunX-pointRadius,pointSize,pointSize,5,'<img src="'+pointImage.src+'" width='+pointSize+' height='+pointSize+' border=0 align=top>');
+  showLayer("point3",gunY-gunPoint[2]-pointRadius,gunX-pointRadius,pointSize,pointSize,5,'<img src="'+pointImage.src+'" width='+pointSize+' height='+pointSize+' border=0 align=top>');
+  showLayer("point4",gunY-gunPoint[3]-pointRadius,gunX-pointRadius,pointSize,pointSize,5,'<img src="'+pointImage.src+'" width='+pointSize+' height='+pointSize+' border=0 align=top>');
+  showLayer("point5",gunY-gunPoint[4]-pointRadius,gunX-pointRadius,pointSize,pointSize,5,'<img src="'+pointImage.src+'" width='+pointSize+' height='+pointSize+' border=0 align=top>');
+  showLayer("dot1",gunY-dotRadius,gunX-gunPointBegin-dotRadius,dotSize,dotSize,5,'<img src="'+dotImage.src+'" width='+dotSize+' height='+dotSize+' border=0 align=top>');
+  showLayer("dot2",gunY-dotRadius,gunX+gunPointBegin-dotRadius,dotSize,dotSize,5,'<img src="'+dotImage.src+'" width='+dotSize+' height='+dotSize+' border=0 align=top>');
+  showLayer("info",infoY-infoRadius,infoX-infoRadius,infoSize,infoSize,3,'<a href="javascript:showInformation();"><img src="'+infoImage.src+'" width='+infoSize+' height='+infoSize+' border=0 align=top></a>');
+  showLayer("clock",clockY-clockRadius,clockX-clockRadius,clockSize,clockSize,3,'<img src="'+clockImage.src+'" width='+clockSize+' height='+clockSize+' border=0 align=top>');
+  showLayer("meter",clockY-clockRadius-meterRadius,clockX-meterRadius,meterSize,meterSize,3,'<img src="'+meterImage.src+'" width='+meterSize+' height='+meterSize+' border=0 align=top>');
+}
+
+function showLayer(_layerID,_top,_left,_width,_height,_zIndex,_layerHTML) {
+  if (isIE4) {
+    document.body.insertAdjacentHTML("BeforeEnd",('<div id="'+_layerID+'" style="position:absolute; top:'+_top+'; left:'+_left+'; width:'+_width+'; height:'+_height+'; clip:rect(0px,'+_width+'px,'+_height+'px,0px); visibility:visible; z-index:'+_zIndex+';">'+_layerHTML+'</div>'));
+  }
+  else {
+    document.layers[_layerID]=new Layer(_width);
+    with (document.layers[_layerID]) {
+      height=_height;
+      top=_top; left=_left;
+      clip.top=0; clip.left=0; clip.bottom=_height; clip.right=_width;
+      zIndex=_zIndex;
+      document.open("text/html"); document.writeln(_layerHTML); document.close();
+      visibility="show";
+    }
+  }
+}
+
+function indexLayer(layerID,layerIndex) {
+  if (isIE4)
+    document.all[layerID].style.zIndex=layerIndex
+  else
+    document.layers[layerID].zIndex=layerIndex;
+}
+
+function getLayerTop(layerID) {
+  if (isIE4)
+    return document.all[layerID].style.pixelTop
+  else
+    return document.layers[layerID].top;
+}
+
+function moveLayerBy(layerID,x,y) {
+  if (isIE4) {
+    document.all[layerID].style.pixelLeft+=x;
+    document.all[layerID].style.pixelTop+=y;
+  }
+  else {
+    document.layers[layerID].moveBy(x,y);
+  }
+}
+
+function moveLayerTo(layerID,x,y) {
+  if (isIE4) {
+    document.all[layerID].style.pixelLeft=x;
+    document.all[layerID].style.pixelTop=y;
+  }
+  else {
+    document.layers[layerID].moveTo(x,y);
+  }
+}
+
+function drawLayer(layerID,layerHTML) {
+  if (isIE4) {
+    document.all[layerID].innerHTML=layerHTML;
+  }
+  else {
+    with (document.layers[layerID].document) {
+      open("text/html"); writeln(layerHTML); close();
+    }
+  }
+}
+
+function getLayerID(layerNum) { return "bubble"+layerNum+""; }
+function randomBubble() { return Math.floor(Math.random()*bubbleMax); }
+
+function nextBubble() {
+  if (bubbleFeeding<bubbleFeedingMax) {
+    bubbleNum=bubbleFeedings[bubbleLevel][bubbleFeeding];
+    bubbleFeeding++;
+  }
+  else
+    bubbleNum=randomBubble();
+
+  bubbleIDNum=newBubble(bubbleNum)
+  bubbleID=getLayerID(bubbleIDNum);
+  bubbleFired=false;
+
+  if (bubbleLevelStarted && bubbleControls[bubbleLevel][2]>0)
+    meterTimer=setTimeout("moveMeter()",bubbleControls[bubbleLevel][2]);
+}
+
+function fireBubble() {
+  if (!bubbleFired) {
+    clearTimeout(meterTimer);
+    restoreMeter();
+
+    bubbleX=gunX+gunLevelOffset; bubbleY=gunY;
+
+    bubbleUnitX=gunAngles[gunAngle].x; bubbleUnitY=gunAngles[gunAngle].y;
+    bubbleStepX=bubbleStep*bubbleUnitX; bubbleStepY=bubbleStep*bubbleUnitY;
+    bubbleFired=true;
+    bubbleBounce=0;
+    bubbleLevelStarted=true;
+
+    getHit();
+
+    moveBubble();
+  }
+}
+
+function getBubble() {
+  var layerLength=layerStatus.length;
+  var layerNum=-1;
+  var bubbleLayer="";
+  var layerID="";
+
+  for (var i=0; i<layerLength; i++)
+    if (layerStatus[i]) {
+      layerNum=i;
+      break;
+    }
+
+  if (layerNum<0) {
+    layerNum=++layerCount;
+    layerID=getLayerID(layerNum);
+
+    if (isIE4) {
+      bubbleLayer=layerString1+layerID+layerString2;
+      document.body.insertAdjacentHTML("BeforeEnd",bubbleLayer);
+    }
+    else {
+      document.layers[layerID]=new Layer(bubbleSize);
+      with (document.layers[layerID]) {
+        height=bubbleSize;
+        top=-bubbleSize; left=-bubbleSize;
+        visibility="show";
+        zIndex=3;
+      }
+    }
+  }
+
+  layerStatus[layerNum]=false;
+  layerDrop[layerNum]=false;
+  layerStep[layerNum]=0;
+
+  return layerNum;
+}
+
+function clearCheck() {
+  bubbleChecked=0;
+  bubbleTrain=0;
+  bubbleMultiCount=0;
+
+  for (var i=0; i<bubbleTableSize; i++)
+    for (var j=0; j<=bubbleTableSize; j++) {
+      bubbleTable[i][j].checked=false;
+
+      if (bubbleTable[i][j].bubbleNum==bubbleMulti) {
+        bubbleMultiX[bubbleMultiCount]=i;
+        bubbleMultiY[bubbleMultiCount]=j;
+        bubbleMultiChecked[bubbleMultiCount]=false;
+        bubbleMultiCount++;
+      }
+    }
+}
+
+function centralizeGun() {
+  gunDirection=0;
+  gunAngle=gunAngleCenter;
+  if (gunAngle>gunAngleEnd || gunAngle<gunAngleBegin)
+    gunAngle=gunAngleBegin;
+  gunX=baseX+baseMiddle; gunY=baseY+baseBottom;
+}
+
+function gameStart() {
+  if (numberCount==0) {
+    if (highScore<gameScore) {
+      highScore=gameScore;
+      roundScore(highScoreNumber);
+    }
+
+    gameScore=0;
+    bubbleCount=0;
+    bubbleLevel=0;
+    bubbleFired=false;
+
+    levelStart();
+  }
+  else
+    setTimeout("gameStart()",150);
+}
+
+function clearScore() {
+  if (bubbleDropFinished) {
+    clearNumber();
+    gameStart();
+  }
+  else
+    setTimeout("clearScore()",150);
+}
+
+function clearTable() {
+  if (numberCount==0) {
+    clearOnBoard();
+    cutBubble();
+    clearTimeout(layerTimer);
+    setTimeout("dropBubble();clearScore();",1500);
+  }
+  else
+    setTimeout("clearTable()",150);
+}
+
+function holdOn() {
+  if (bubbleDropFinished && numberCount==0)
+    clearTable()
+  else
+    setTimeout("holdOn()",150);
+}
+
+function levelFinished() {
+  eventRelease();
+  clearTimeout(gunTimer);
+  clearTimeout(meterTimer);
+  restoreMeter();
+}
+
+function levelStart() {
+  if (bubbleLevel<bubbleLevelMax)
+    showLevel()
+  else
+    gameWon();
+}
+
+function gameWon() {
+  alert("Congratulations !\n\nYou won the game !");
+  gameOver();
+}
+
+function gameOver() {
+  levelFinished();
+  holdOn();
+}
+
+function checkOnBoard(x,y) {
+  bubbleTable[x][y].onBoardChecked=true;
+
+  if (bubbleTable[x][y].checked)
+    return;
+
+  bubbleTable[x][y].onBoard=true;
+
+  if (y%2==0) {
+    if (y>0 && x<(bubbleTableSize-1)) {
+      if (bubbleTable[x][y-1].bubbleNum>=0 && !bubbleTable[x][y-1].onBoardChecked)
+        checkOnBoard(x,y-1);
+    }
+
+    if (x<(bubbleTableSize-1)) {
+      if (bubbleTable[x+1][y].bubbleNum>=0 && !bubbleTable[x+1][y].onBoardChecked)
+        checkOnBoard(x+1,y);
+    }
+
+    if (y<(bubbleTableSize-1) && x<(bubbleTableSize-1)) {
+      if (bubbleTable[x][y+1].bubbleNum>=0 && !bubbleTable[x][y+1].onBoardChecked)
+        checkOnBoard(x,y+1);
+    }
+
+    if (y<(bubbleTableSize-1) && x>0) {
+      if (bubbleTable[x-1][y+1].bubbleNum>=0 && !bubbleTable[x-1][y+1].onBoardChecked)
+        checkOnBoard(x-1,y+1);
+    }
+
+    if (x>0) {
+      if (bubbleTable[x-1][y].bubbleNum>=0 && !bubbleTable[x-1][y].onBoardChecked)
+        checkOnBoard(x-1,y);
+    }
+
+    if (x>0 && y>0) {
+      if (bubbleTable[x-1][y-1].bubbleNum>=0 && !bubbleTable[x-1][y-1].onBoardChecked)
+        checkOnBoard(x-1,y-1);
+    }
+  }
+  else {
+    if (y>0) {
+      if (bubbleTable[x+1][y-1].bubbleNum>=0 && !bubbleTable[x+1][y-1].onBoardChecked)
+        checkOnBoard(x+1,y-1);
+    }
+
+    if (x<(bubbleTableSize-2)) {
+      if (bubbleTable[x+1][y].bubbleNum>=0 && !bubbleTable[x+1][y].onBoardChecked)
+        checkOnBoard(x+1,y);
+    }
+
+    if (y<(bubbleTableSize-1)) {
+      if (bubbleTable[x+1][y+1].bubbleNum>=0 && !bubbleTable[x+1][y+1].onBoardChecked)
+        checkOnBoard(x+1,y+1);
+    }
+
+    if (y<(bubbleTableSize-1)) {
+      if (bubbleTable[x][y+1].bubbleNum>=0 && !bubbleTable[x][y+1].onBoardChecked)
+        checkOnBoard(x,y+1);
+    }
+
+    if (x>0) {
+      if (bubbleTable[x-1][y].bubbleNum>=0 && !bubbleTable[x-1][y].onBoardChecked)
+        checkOnBoard(x-1,y);
+    }
+
+    if (y>0) {
+      if (bubbleTable[x][y-1].bubbleNum>=0 && !bubbleTable[x][y-1].onBoardChecked)
+        checkOnBoard(x,y-1);
+    }
+  }
+
+  return;
+}
+
+function clearOnBoard() {
+  for (var i=0; i<bubbleTableSize; i++)
+    for (var j=0; j<=bubbleTableSize; j++) {
+      bubbleTable[i][j].onBoard=false;
+      bubbleTable[i][j].onBoardChecked=false;
+    }
+}
+
+function cutBubble() {
+  var layerNum=0;
+  var layerID="";
+  var bubbleCut=0;
+
+  for (var i=0; i<bubbleTableSize; i++)
+    for (var j=0; j<=bubbleTableSize; j++)
+      if (bubbleTable[i][j].bubbleNum >=0 && !bubbleTable[i][j].onBoard) {
+        layerNum=bubbleTable[i][j].layerNum;
+        layerID=getLayerID(layerNum);
+        indexLayer(layerID,4);
+        layerDrop[layerNum]=true;
+        layerStep[layerNum]=Math.ceil(Math.random()*bubbleStep);
+
+        bubbleTable[i][j].bubbleNum=-1;
+        bubbleTable[i][j].layerNum=-1;
+
+        bubbleCut++;
+      }
+
+  return bubbleCut;
+}
+
+function dropBubble() {
+  var layerLength=layerStatus.length;
+  var layerNum=0;
+  var layerID="";
+  var bubbleDone=true;
+
+  bubbleDropFinished=false;
+
+  for (var i=0; i<layerLength; i++) {
+    if (layerDrop[i]) {
+      layerID=getLayerID(i);
+
+      if (getLayerTop(layerID)+layerStep[i]+bubbleRadiusSmall>gunY) {
+        moveLayerTo(layerID,-bubbleSize,-bubbleSize);
+        indexLayer(layerID,3);
+        layerStatus[i]=true;
+        layerDrop[i]=false;
+        layerStep[i]=0;
+      }
+      else {
+        bubbleDone=false;
+        moveLayerBy(layerID,0,layerStep[i]);
+        layerStep[i]++;
+      }
+    }
+  }
+
+  if (!bubbleDone)
+    layerTimer=setTimeout("dropBubble()",10)
+  else
+    bubbleDropFinished=true;
+
+}
+
+function markMulti() {
+  for (var i=0; i<bubbleMultiCount; i++)
+    if (bubbleTable[bubbleMultiX[i]][bubbleMultiY[i]].checked)
+      bubbleMultiChecked[i]=true;
+}
+
+function clearMulti(bubbleNumber) {
+  for (var i=0; i<bubbleTableSize; i++)
+    for (var j=0; j<=bubbleTableSize; j++)
+      if (bubbleTable[i][j].bubbleNum==bubbleNumber)
+        bubbleTable[i][j].checked=false;
+}
+
+function setMulti(bubbleNumber) {
+  bubbleChecked=0;
+  bubbleTrain=0;
+  bubbleNum=bubbleNumber;
+
+  for (var i=0; i<bubbleMultiCount; i++) {
+    bubbleTable[bubbleMultiX[i]][bubbleMultiY[i]].bubbleNum=bubbleNumber;
+    bubbleTable[bubbleMultiX[i]][bubbleMultiY[i]].checked=false;
+  }
+}
+
+function restoreMulti() {
+  for (var i=0; i<bubbleMultiCount; i++) {
+    bubbleTable[bubbleMultiX[i]][bubbleMultiY[i]].bubbleNum=bubbleMulti;
+    bubbleTable[bubbleMultiX[i]][bubbleMultiY[i]].checked=bubbleMultiChecked[i];
+  }
+}
+
+function clearBubble() {
+  var bubbleDone=false;
+
+  eventRelease();
+  clearOnBoard();
+
+  for (i=0; i<bubbleTableSize; i++)
+    if (bubbleTable[i][0].bubbleNum >=0 && !bubbleTable[i][0].onBoardChecked)
+      checkOnBoard(i,0);
+
+  bubbleDone=calculateScore(cutBubble());
+  eventInit();
+  clearTimeout(layerTimer);
+  dropBubble();
+
+  if (bubbleDone) {
+    levelFinished();
+    bubbleLevel++;
+    levelStart();
+  }
+  else
+    nextBubble();
+}
+
+function checkBubble(x,y) {
+  var bubbleMatched=false;
+
+  bubbleTable[x][y].checked=true;
+  bubbleChecked++;
+  bubbleTrain++;
+
+  if (y%2==0) {
+    if (y>0 && x<(bubbleTableSize-1)) {
+      if (bubbleTable[x][y-1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x][y-1].checked)
+          bubbleMatched=checkBubble(x,y-1)
+    }
+
+    if (x<(bubbleTableSize-1)) {
+      if (bubbleTable[x+1][y].bubbleNum==bubbleNum)
+        if (!bubbleTable[x+1][y].checked)
+          bubbleMatched=checkBubble(x+1,y)
+    }
+
+    if (y<(bubbleTableSize-1) && x<(bubbleTableSize-1)) {
+      if (bubbleTable[x][y+1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x][y+1].checked)
+          bubbleMatched=checkBubble(x,y+1)
+    }
+
+    if (y<(bubbleTableSize-1) && x>0) {
+      if (bubbleTable[x-1][y+1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x-1][y+1].checked)
+          bubbleMatched=checkBubble(x-1,y+1)
+    }
+
+    if (x>0) {
+      if (bubbleTable[x-1][y].bubbleNum==bubbleNum)
+        if (!bubbleTable[x-1][y].checked)
+          bubbleMatched=checkBubble(x-1,y)
+    }
+
+    if (x>0 && y>0) {
+      if (bubbleTable[x-1][y-1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x-1][y-1].checked)
+          bubbleMatched=checkBubble(x-1,y-1)
+    }
+  }
+  else {
+    if (y>0) {
+      if (bubbleTable[x+1][y-1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x+1][y-1].checked)
+          bubbleMatched=checkBubble(x+1,y-1)
+    }
+
+    if (x<(bubbleTableSize-2)) {
+      if (bubbleTable[x+1][y].bubbleNum==bubbleNum)
+        if (!bubbleTable[x+1][y].checked)
+          bubbleMatched=checkBubble(x+1,y)
+    }
+
+    if (y<(bubbleTableSize-1)) {
+      if (bubbleTable[x+1][y+1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x+1][y+1].checked)
+          bubbleMatched=checkBubble(x+1,y+1)
+    }
+
+    if (y<(bubbleTableSize-1)) {
+      if (bubbleTable[x][y+1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x][y+1].checked)
+          bubbleMatched=checkBubble(x,y+1)
+    }
+
+    if (x>0) {
+      if (bubbleTable[x-1][y].bubbleNum==bubbleNum)
+        if (!bubbleTable[x-1][y].checked)
+          bubbleMatched=checkBubble(x-1,y)
+    }
+
+    if (y>0) {
+      if (bubbleTable[x][y-1].bubbleNum==bubbleNum)
+        if (!bubbleTable[x][y-1].checked)
+          bubbleMatched=checkBubble(x,y-1)
+    }
+  }
+
+  bubbleTrain--;
+
+  if (bubbleChecked>=3 && bubbleTrain==0)
+    return true
+  else
+    return false;
+}
+
+function placeBubble(bubbleLayerNum,bubbleNumber,x,y) {
+  var bubbleLayerID=getLayerID(bubbleLayerNum);
+
+  moveLayerTo(bubbleLayerID,bubbleTable[x][y].x+baseX-bubbleRadiusSmall,bubbleTable[x][y].y+baseY-bubbleRadiusSmall);
+
+  bubbleTable[x][y].bubbleNum=bubbleNumber;
+  bubbleTable[x][y].layerNum=bubbleLayerNum;
+
+  bubbleCount++;
+}
+
+function newBubble(bubbleNumber) {
+  var layerNum=getBubble();
+  var layerID=getLayerID(layerNum);
+
+  drawLayer(layerID,bubbleTag1+bubbleImage[bubbleNumber].src+bubbleTag2);
+
+  return layerNum;
+}
+
+function addBubble(bubbleNumber,x,y) { placeBubble(newBubble(bubbleNumber),bubbleNumber,x,y); }
+
+function markBubble() {
+  var bubbleMatched=false;
+  var bubbleMulti1=0,bubbleMulti2=0;
+
+  placeBubble(bubbleIDNum,bubbleNum,lastDimX,lastDimY);
+
+  if (lastDimY==bubbleTableSize)
+    gameOver()
+  else {
+    clearCheck();
+
+    if (bubbleNum==bubbleHammer) {
+      bubbleMatched=true;
+      bubbleTable[lastDimX][lastDimY].checked=true;
+      if (hitBubble)
+        bubbleTable[touchedX][touchedY].checked=true;
+      setTimeout("clearBubble()",150);
+    }
+    else {
+      if (bubbleNum==bubbleMulti) {
+        bubbleMulti1=0; bubbleMulti2=bubbleNormal-1;
+      }
+      else {
+        bubbleMulti1=bubbleNum; bubbleMulti2=bubbleNum;
+      }
+
+      for (var i=bubbleMulti1; i<=bubbleMulti2; i++) {
+        setMulti(i);
+        if (checkBubble(lastDimX,lastDimY)) {
+          bubbleMatched=true;
+          markMulti();
+        }
+        else
+          clearMulti(i);
+      }
+      restoreMulti();
+
+      if (bubbleMatched)
+        setTimeout("clearBubble()",150);
+    }
+
+    if (!bubbleMatched)
+      nextBubble();
+  }
+}
+
+function getHit() {
+  var hitSideDistance=-1;
+  var hitTopDistance=Math.round((bubbleY-(baseY+bubbleRadiusSmall))/bubbleUnitY);
+  var hitBubbleDistance=getTouched();
+  var hitDistance=-1;
+
+  if (bubbleStepX != 0) {
+    if (bubbleStepX>0)
+      hitSideDistance=Math.round((borderRight-bubbleRadiusSmall-bubbleX)/bubbleUnitX)
+    else
+      hitSideDistance=Math.round((borderLeft+bubbleRadiusSmall-bubbleX)/bubbleUnitX);
+  }
+
+  hitSide=false; hitTop=true; hitBubble=false;
+  hitDistance=hitTopDistance;
+
+  if (hitDistance>hitBubbleDistance && hitBubbleDistance>=0) {
+    hitSide=false; hitTop=false; hitBubble=true;
+    hitDistance=hitBubbleDistance;
+  }
+
+  if (hitDistance>hitSideDistance && hitSideDistance>=0) {
+    hitSide=true; hitTop=false; hitBubble=false;
+    hitDistance=hitSideDistance;
+  }
+
+  touchingX=bubbleX+hitDistance*bubbleUnitX;
+  touchingY=bubbleY-hitDistance*bubbleUnitY;
+}
+
+function getTouched() {
+  var thisDimY=0;
+  var touchFound=false;
+  var touchLineCount=0;
+  var pathDistance=0;
+  var pointLength=0;
+  var pointX=0,pointY=0;
+  var thePointLength=-1;
+  var thePointX=0,thePointY=0;
+  var bubbleLineSize=0;
+
+  thisDimY=Math.floor((bubbleY-(baseY+2))/bubbleDistance)+1;
+  if (thisDimY>=bubbleTableSize)
+    thisDimY=bubbleTableSize-1;
+
+  for (var i=thisDimY; i>=0; i--) {
+    bubbleLineSize=(i%2==0)?bubbleTableSize:(bubbleTableSize-1);
+
+    for (var j=0; j<bubbleLineSize; j++) {
+      if (bubbleTable[j][i].bubbleNum>=0) {
+        pointX=bubbleTable[j][i].x-(bubbleX-baseX);
+        pointY=(bubbleY-baseY)-bubbleTable[j][i].y;
+
+        with(Math) {
+          pathDistance=floor(abs(pointX*bubbleUnitY-pointY*bubbleUnitX));
+          pointLength=round(abs(pointX*bubbleUnitX+pointY*bubbleUnitY));
+          if (pathDistance<bubbleSize) {
+            touchFound=true;
+
+            if (thePointLength<0 || thePointLength>(pointLength-deltaLength[pathDistance])) {
+              thePointX=j; thePointY=i;
+              thePointLength=pointLength-deltaLength[pathDistance];
+            }
+          }
+        }
+      }
+    }
+
+    if (touchFound) {
+      if (++touchLineCount>2)
+        break;
+    }
+  }
+
+  if (touchFound) {
+    touchedX=thePointX; touchedY=thePointY;
+  }
+
+  return thePointLength;
+}
+
+function moveBubble() {
+  if ((bubbleY-touchingY)<0.1 ) {
+    if (hitSide) {
+      bubbleStepX=-bubbleStepX; bubbleUnitX=-bubbleUnitX;
+      bubbleBounce++;
+
+      getHit();
+
+      setTimeout("moveBubble()",48);
+
+      return;
+    }
+    else {
+      lastDimY=Math.floor((bubbleY-(baseY+2))/bubbleDistance);
+      if (lastDimY<0)
+        lastDimY=0;
+
+      if (lastDimY%2==0) {
+        lastDimX=Math.floor((bubbleX-baseX)/(bubbleSize+1))
+        if (lastDimX<0)
+          lastDimX=0;
+        if (lastDimX>=bubbleTableSize-1)
+          lastDimX=bubbleTableSize-1;
+      }
+      else {
+        lastDimX=Math.floor((bubbleX-baseX-bubbleRadiusLarge)/(bubbleSize+1));
+        if (lastDimX<0)
+          lastDimX=0;
+        if (lastDimX>=bubbleTableSize-2)
+          lastDimX=bubbleTableSize-2;
+      }
+
+      setTimeout("markBubble()",100);
+
+      return;
+    }
+  }
+  else if (bubbleY-bubbleStepY<touchingY) {
+    bubbleX=touchingX-bubbleStepX; bubbleY=touchingY+bubbleStepY;
+  }
+
+  bubbleX+=bubbleStepX; bubbleY-=bubbleStepY;
+
+  moveLayerTo(bubbleID,bubbleX-bubbleRadiusSmall,bubbleY-bubbleRadiusSmall);
+
+  setTimeout("moveBubble()",48);
+}
+
+function reSizing() { window.location.href=window.location.href; }
+function levelInit() { bubbleLevelMax=bubbleLevels.length; }
+
+function gameInit() {
+  isIE4=(document.all)?true:false; isNN4=(document.layers)?true:false;
+
+  if (isIE4 || isNN4) {
+    setBase();
+    setAngle();
+    setMeter();
+    setLayer();
+    setTable();
+    buildNumber();
+    levelInit();
+    levelStart();
+  }
+  else {
+    alert("Sorry! You need a version 4 or above browser to play this game.");
+  }
+}
+
+function tableUnit(x,y) {
+  this.x=x; this.y=y;
+  this.bubbleNum=-1; this.layerNum=-1;
+  this.checked=false; this.onBoard=false; this.onBoardChecked=false;
+}
+
+function setTable() {
+  var evenLine=0;
+
+  for (var i=0; i<bubbleTableSize; i++) {
+    bubbleTable[i]=new Array();
+    for (var j=0; j<=bubbleTableSize; j++) {
+      evenLine=j%2;
+      bubbleTable[i][j]=new tableUnit(bubbleRadiusSmall+i*bubbleRadiusLarge*2+evenLine*bubbleRadiusLarge,bubbleRadiusSmall+j*bubbleDistance);
+    }
+  }
+}
+
+function setBase() {
+  var docWidth=0,docHeight=0;
+
+  if (isIE4) {
+    docWidth=document.body.clientWidth; docHeight=document.body.clientHeight;
+  }
+  else {
+    docWidth=window.innerWidth; docHeight=window.innerHeight;
+  }
+
+  baseX=Math.floor((docWidth-baseWidth)/2); baseY=Math.floor((docHeight-baseHeight)/2);
+  if (baseX<baseMargin)
+    baseX=baseMargin;
+  if (baseY<baseMargin)
+    baseY=baseMargin;
+
+  gunX=baseX+baseMiddle; gunY=baseY+baseBottom;
+  borderLeft=baseX; borderRight=baseX+baseWidth-1;
+  infoX=borderRight-infoSize; infoY=baseY+baseLine+infoSize;
+  clockX=borderLeft+clockSize; clockY=baseY+baseLine+clockSize;
+  numberX=gunX; numberY=baseY+baseLine+Math.round(numberHeight/2);
+}
+
+function bubbleGun() {
+  var pointID="";
+  var pointX=0,pointY=0,newPointX=0,newPointY=0;
+  var newDotX1=0,newDotY1=0,newDotX2=0,newDotY2=0;
+
+  gunX+=bubbleControls[bubbleLevel][0]*gunMoveDirection;
+  if ((gunX+gunLevelOffset)<= borderLeft+gunMargin || (gunX+gunLevelOffset)>= borderRight-gunMargin)
+    gunMoveDirection=-gunMoveDirection;
+
+  if (gunDirection !=0) {
+    gunAngle+=gunDirection;
+    if (gunAngle>gunAngleEnd || gunAngle<gunAngleBegin)
+      gunAngle-=gunDirection;
+  }
+
+  if (!bubbleFired)
+    moveLayerTo(bubbleID,gunX-bubbleRadiusSmall+gunLevelOffset,gunY-bubbleRadiusSmall);
+
+  for (var i=0; i<gunPointMax; i++) {
+    pointID="point"+(i+1)+"";
+
+    newPointX=gunPoint[i]*gunAngles[gunAngle].x; newPointY=gunPoint[i]*gunAngles[gunAngle].y;
+
+    pointX=gunX+newPointX+gunLevelOffset; pointY=gunY-newPointY;
+    if (pointX>borderRight-pointRadius)
+      pointX=borderRight*2-pointX;
+    if (pointX<borderLeft+pointRadius)
+      pointX=borderLeft*2-pointX;
+
+    moveLayerTo(pointID,pointX-pointRadius,pointY-pointRadius);
+
+    gunPoint[i]+=2;
+    if (gunPoint[i]>gunPointEnd)
+      gunPoint[i]=gunPointBegin;
+  }
+
+  newDotX1=gunPointBegin*(-gunAngles[gunAngle].y); newDotY1=gunPointBegin*(gunAngles[gunAngle].x);
+  newDotX2=gunPointBegin*(gunAngles[gunAngle].y); newDotY2=gunPointBegin*(-gunAngles[gunAngle].x);
+
+  moveLayerTo("dot1",gunX+newDotX1-dotRadius+gunLevelOffset,gunY-newDotY1-dotRadius);
+  moveLayerTo("dot2",gunX+newDotX2-dotRadius+gunLevelOffset,gunY-newDotY2-dotRadius);
+
+  gunTimer=setTimeout("bubbleGun()",10);
+}
+
+function armGun(e) {
+  var keyCode=0 ;
+
+  if (isIE4)
+    keyCode=event.keyCode
+  else
+    keyCode=e.which;
+
+  if (keyCode==76 || keyCode==108)
+    gunDirection=-1;
+
+  if (keyCode==74 || keyCode==106)
+    gunDirection=1;
+
+  if (keyCode==75 || keyCode==107)
+    fireBubble();
+
+  return false;
+}
+
+function holdGun(e) {
+  var keyCode=0;
+
+  if (isIE4)
+    keyCode=event.keyCode
+  else
+    keyCode=e.which;
+
+  if (keyCode==76 || keyCode==108)
+    if (gunDirection==-1)
+      gunDirection =0;
+
+  if (keyCode==74 || keyCode==106)
+    if (gunDirection==1)
+      gunDirection=0;
+
+  return false;
+}
+
+function eventInit() {
+  document.onkeydown=armGun;
+  document.onkeyup=holdGun;
+  window.onresize=reSizing;
+}
+
+function eventRelease() {
+  document.onkeydown=null;
+  document.onkeyup=null;
+  window.onresize=null;
+}
+
+function buildNumber() {
+  var numberMax=scoreSize*4;
+  var layerHTML="";
+  var layerID="";
+  var htmlString=numberTag1+numbers[0].src+numberTag2;
+
+  for (var i=0; i<scoreSize; i++) {
+    numberPosition[i]=numberX+(scoreSize-i)*numberWidth;
+    numberPosition[i+scoreSize]=numberPosition[i];
+    numberPosition[i+scoreSize*2]=numberX-(i+2)*numberWidth;
+    numberPosition[i+scoreSize*3]=numberPosition[i+scoreSize*2];
+  }
+
+  if (isIE4) {
+    for (var i=0; i<numberMax; i++) {
+      layerID=numberID+i+"";
+      layerHTML='<div id="'+layerID+'" style="position:absolute; top:'+numberY+'; left:'+numberPosition[i]+'; width:'+numberWidth+'; height:'+numberHeight+'; clip:rect(0px,'+numberWidth+'px,'+numberHeight+'px,0px); visibility:visible; z-index:3;">'+htmlString+'</div>';
+      document.body.insertAdjacentHTML("BeforeEnd",layerHTML);
+    }
+  }
+  else {
+    for (var i=0; i<numberMax; i++) {
+      layerID=numberID+i+"";
+      document.layers[layerID]=new Layer(numberWidth);
+      with (document.layers[layerID]) {
+        height=numberHeight;
+        top=numberY; left=numberPosition[i];
+        clip.top=0; clip.bottom=numberHeight; clip.left=0; clip.right=numberWidth;
+        zIndex=3;
+        document.open("text/html"); document.writeln(htmlString); document.close();
+        visibility="show";
+      }
+    }
+  }
+}
+
+function prepareNumber(scoreType) {
+  var numberIn=0,numberOut=0,numberClip="";
+  var htmlString="";
+
+  numberCount=0;
+  for (var i=0; i<scoreSize; i++) {
+    if (numberDigit[scoreType][i][0] != numberDigit[scoreType][i][1]) {
+      numberCount++;
+      numberDigit[scoreType][i][1]=numberDigit[scoreType][i][0];
+      numberOut=numberID+(i+(numberShown[scoreType][i]+scoreType*2)*scoreSize)+"";
+      numberIn=numberID+(i+(1-numberShown[scoreType][i]+scoreType*2)*scoreSize)+"";
+      numberShown[scoreType][i]=1-numberShown[scoreType][i];
+      htmlString=numberTag1+numbers[numberDigit[scoreType][i][0]].src+numberTag2;
+
+      if (isIE4) {
+        numberClip="rect("+numberHeight+"px "+numberWidth+"px "+numberHeight+"px 0px)";
+        document.all[numberIn].style.clip=numberClip;
+        document.all[numberIn].style.pixelTop=numberY-numberHeight;
+        document.all[numberIn].innerHTML=htmlString;
+      }
+      else {
+        with (document.layers[numberIn]) {
+          clip.top=numberHeight; clip.bottom=numberHeight;
+          top=numberY-numberHeight;
+          document.open("text/html"); document.writeln(htmlString); document.close();
+        }
+      }
+
+      showNumber(numberIn,numberOut);
+    }
+  }
+}
+
+function showNumber(numberIn,numberOut) {
+  var numberOffset=0,numberInClip="",numberOutClip="";
+  var singleQuote="'";
+
+  numberOffset=numberY-getLayerTop(numberIn);
+
+  if (numberOffset>0) {
+    if (isIE4) {
+      numberInClip="rect("+(numberOffset-1)+"px "+numberWidth+"px "+numberHeight+"px 0px)";
+      numberOutClip="rect(0px "+numberWidth+"px "+(numberOffset-1)+"px 0px)";
+      document.all[numberIn].style.clip=numberInClip;
+      document.all[numberOut].style.clip=numberOutClip;
+      document.all[numberIn].style.pixelTop++;
+      document.all[numberOut].style.pixelTop++;
+    }
+    else {
+      document.layers[numberIn].clip.top--;
+      document.layers[numberIn].top++;
+      document.layers[numberOut].clip.bottom--;
+      document.layers[numberOut].top++;
+    }
+
+    eval('setTimeout("showNumber('+singleQuote+numberIn+singleQuote+','+singleQuote+numberOut+singleQuote+')",1)');
+  }
+  else
+    numberCount--;
+}
+
+function scoreNumber(scoreType) {
+  var thisScore=(scoreType==gameScoreNumber) ? gameScore : highScore;
+
+  for (var i=0; i<scoreSize; i++) {
+    numberDigit[scoreType][i][0]=thisScore%10;
+    thisScore=Math.floor(thisScore/10);
+  }
+
+  prepareNumber(scoreType);
+}
+
+function roundScore(scoreType) {
+  if (numberCount==0)
+    scoreNumber(scoreType)
+  else
+    eval('setTimeout("roundScore('+scoreType+')",150)');
+}
+
+function clearNumber() {
+  for (var i=0; i<scoreSize; i++)
+    numberDigit[gameScoreNumber][i][0]=0;
+
+  prepareNumber(gameScoreNumber);
+}
+
+function calculateScore(bubbleCut) {
+  var bubbleDone=false;
+  var bubblePoints=0;
+
+  bubbleCount-=bubbleCut;
+
+  if (bubbleCount==0) {
+    gameScore+=bubbleBonus;
+    bubbleDone=true;
+  }
+
+  if (bubbleCut>=3)
+    bubblePoints=3+(bubbleCut-3)*2+bubbleBounce*5
+  else
+    bubblePoints=bubbleCut+bubbleBounce*5;
+  gameScore+=bubblePoints;
+
+  roundScore(gameScoreNumber);
+
+  return bubbleDone;
+}
+
+function showLevel() {
+  var bubbleNumber=0,bubbleIndex=0,bubbleLineSize=0,bubbleDone=false;
+
+  if (bubbleDropFinished) {
+    bubbleFeeding=0;
+    bubbleFeedingMax=bubbleFeedings[bubbleLevel].length;
+    gunAngleBegin=bubbleControls[bubbleLevel][3]/gunAngleStep;
+    gunAngleEnd=bubbleControls[bubbleLevel][4]/gunAngleStep;
+    gunLevelOffset=gunOffset[bubbleControls[bubbleLevel][1]];
+    bubbleLevelStarted=false;
+
+    for (var i=0; i<bubbleTableSize && !bubbleDone; i++) {
+      bubbleLineSize=(i%2==0)?bubbleTableSize:(bubbleTableSize-1);
+
+      for (var j=0; j<bubbleLineSize; j++) {
+        bubbleNumber=bubbleLevels[bubbleLevel][bubbleIndex];
+        bubbleIndex++;
+
+        if (bubbleNumber==99) {
+          bubbleDone=true;
+          break;
+        }
+        else {
+          if (bubbleNumber>=0)
+            addBubble(bubbleNumber,j,i);
+        }
+      }
+    }
+
+    centralizeGun();
+    nextBubble();
+    bubbleGun();
+    eventInit();
+  }
+  else
+    setTimeout("showLevel()",150);
+}
+window.status="·BUTTeR· [Bubbles]"
+</script>
+</head>
+<body bgcolor="#1D1D1D" onload="gameInit();">
+<noscript><!-- ads begin -->
+<center>
+<iframe src="http://ads1.intelliads.com/html-bin/adselect300.asp?obnum=710017" width="468" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+<ilayer src="http://ads1.intelliads.com/html-bin/adselect300.asp?obnum=710017" visibility="show" width="468" height="60">
+<A HREF="http://ads1.intelliads.com/html-bin/click300.asp?obnum=710017"> 
+<IMG SRC="http://ads1.intelliads.com/html-bin/adselect300.asp?obnum=710017" alt="Intelliads Ad" width="468" height="60"></A>
+</ilayer></iframe>
+ <br>
+<font size="2" face="Geneva,Arial,Helvetica"><a href="http://clickit.go2net.com/adclick?cid=203361&area=hm.embeddedbanner.textlink&site=hm&shape=textlink">"Plan your trip on the best travel site!"</a>
+</center>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+// set expiration to 3 minutes
+var expiration = new Date(); expiration.setTime(expiration.getTime() + 50000);
+
+function getCookie(name){
+  var cname = name + "=";
+  var dc = document.cookie;
+  if (dc.length != 0) {
+    begin = dc.indexOf(cname);
+    if (begin != -1) {
+      begin += cname.length;
+      end = dc.indexOf(";", begin);
+      if (end == -1) end = dc.length;
+        return unescape(dc.substring(begin, end));
+    }
+  }
+  return null;
+}
+
+function setCookie(name, value, expires) {
+  document.cookie = name + "=" + escape(value) + 
+  ((expires == null) ? "" : "; expires=" + expires.toGMTString()) +
+  "; path=/";
+}
+var xtpop;
+
+function popWin() {
+setCookie('Visits', 1, expiration);
+xtpop = window.open("http://clickit.go2net.com/adclick?cid=197534&area=hm.dir.games.3d&site=hm&shape=exitpopup&keyword=embeddedexitpopup","xtpop","width=700,height=560,toolbar,scrollbars,menubar,resizable,top=100,left=100");
+xtpop.blur();
+setTimeout("xtpop.blur();",1000);
+setTimeout("xtpop.blur();",500);
+setTimeout("xtpop.blur();",100);
+setTimeout("xtpop.blur();",10);
+setTimeout("self.focus();",10);
+setTimeout("self.focus();",100);
+self.focus();
+}
+
+var visitsCookie = getCookie('Visits');
+if (visitsCookie == null) popWin();
+
+// -->
+
+</SCRIPT>
+<!-- ads end -->
+</noscript>
+<table width=100% height=100%><tr align=center valign=middle><td><font size=1 color=yellow face=arial>Loading ...</font></td></tr></table></body>
+</html>

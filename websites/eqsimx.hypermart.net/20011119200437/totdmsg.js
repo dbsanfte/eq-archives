@@ -1,0 +1,16 @@
+todmsg=new Array();
+todmsg[0]="To play EQSim you MUST have the latest version of the Shockwave Player which can be downloaded <a href=\"http://sdc.shockwave.com/shockwave/download/triggerpages_mmcom/default.html\">here</a>.";
+todmsg[1]="EQSim is no longer being updated.";
+todmsg[2]="To bookmark this site, simply press CTRL and the letter \"D\" at the same time.";
+todmsg[3]="You can disable tips by unchecking the box in the bottom left corner of this window.";
+todmsg[4]="EQSim is the ONLY EverQuest simulator built completely in <a href=\"http://www.macromedia.com\">Flash</a>.";
+todmsg[5]="You can get your own eMail at eqsim.zzn.com by clicking the \"FREE Email\" link on the left and choose \"Sign Up\".";
+todmsg[6]="The \"Downloads\" section has some of the most useful programs for EverQuest on the net.";
+todmsg[7]="Want to add a tip?  <a href=\"mailto:j.ski@angelfire.com\">eMail</a> me with suggestions or inquiries.";
+todmsg[8]="I converted every song in the game to MIDI format and posted each in the new \"Music\" section.";
+todmsg[9]="<a href=\"mailto:j.ski@angelfire.com\">JuiCe</a> is this site's creator.";
+todmsg[10]="I've opened a great automotive/audio/computer online store!  <a href=\"http://www.ebaystores.com/usaok\">Click Here</a> to check it out!";
+todmsg[11]="I am in the process of remodeling this site.";
+todmsg[12]="If only <i>100</i> people buy my <b>Kill Bin Laden!</b> game located in the menu to the left, I will have enough money to install my new transmission!";
+todmsg[13]="There is a new messageboard on the site which I think you will like.";
+todmsg[14]="For a <b>true</b> emulation of EverQuest, please visit <a href=\"http://www.hackersquest.gomp.ch\" target=\"page\">HackersQuest</a>.";

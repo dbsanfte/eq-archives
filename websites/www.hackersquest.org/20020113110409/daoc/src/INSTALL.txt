@@ -1,0 +1,152 @@
+
+===============
+READ THIS FIRST
+===============
+
+If you fail to follow these simple installation instructions
+TO THE LETTER, and then come whining on the boards or channels, expect to
+be publicly ridiculed.
+
+===================
+System Requirements
+===================
+
+These are the general system requirements for the machine running OE.
+These requirements assume that the machine isn't doing anything else, if
+it is, adjust as required.
+
+- Pentium 233Mhz
+- SVGA Graphics card with at least 512 KiB memory, supported by your
+  Linux distribution.
+- 64 MB Main Memory
+- 256 MB Virtual Memory
+- 750 MB free HD space (550 of which is for QT 3.0.1)
+
+============================
+Verifying your network setup
+============================
+
+You need to set up a sniffing environment. How to do that is
+beyond the scope of this simple INSTALL file, but look around the
+net; there are many guides.
+To verify that your sniffing setup is correct, run the following command
+on your would-be OE box WHILE playing DAOC:
+
+tcpdump -n host <IP of your Windows Machine playing DAOC>
+
+You should (hopefully) see two-way traffic, that is traffic both to AND
+from your windows machine. If you don't, you don't have a sniffing
+setup, and you should fix that first.
+
+===============================
+Checking your UNIX distribution
+===============================
+
+You absolutely, 100% sure, without a doubt need:
+- A recent version of X11
+- A somewhat recent C++ compiler
+- An OpenGL impementation. Mesa will do fine.
+- Libpcap. A version recent enough that it handles the cooked-mode "any" device.
+- QT X11 Free version 3.0.1
+
+My personal build platform is RH 7.2
+If you installed RH 7.2 with "everything", the only thing you need to
+update is QT 3.0.1 (instructions below).
+If you don't have RH 7.2 or didn't install with "everything", you're on
+your own. If it doesn't work for you AND you manage to fix it, send me a
+patch. If it doesn't work for you and you can't fix it; BE QUIET and
+wait for someone else to fix it.
+
+================
+Become superuser
+================
+
+If you're not already root, type "su" and fill in the superuser password
+at the prompt.
+
+===================
+Installing QT 3.0.1
+===================
+
+Please follow these steps to the letter. If you don't, and it doesn't work,
+don't clutter the message boards or the developer's mailboxes with messages.
+
+1) Remove any vendor-supplied version of QT3
+   For RedHat this is:
+     rpm -e $(rpm -qa | grep -i qt3)
+     cd /usr/lib
+     rm -rf qt-3.0.0
+
+2) cd /usr/lib/
+3) ncftpget ftp://ftp.trolltech.com/qt/source/qt-x11-free-3.0.1.tar.gz
+4) tar xvvfz qt-x11-free-3.0.1.tar.gz
+5) mv qt-x11-free-3.0.1 qt-3.0.1
+6) rm qt-x11-free-3.0.1.tar.gz
+7) cd qt-3.0.1
+8) export QTDIR=$(pwd)
+9) ./configure -thread
+10) make
+
+Make will take several hours. It's supposed to, so don't panic.
+
+====================================
+Downloading and compiling Odin's Eye
+====================================
+
+1) cd ~
+2) mkdir odinseye
+3) cd odinseye
+4) lynx -source http://www.hackersquest.org/daoc/src/odinseye-latest.tar.gz | tar xvvfz -
+5) export QTDIR=/usr/lib/qt-3.0.1
+6) /usr/lib/qt-3.0.1/bin/qmake odinseye.pro
+7) make
+
+==============================
+Getting the DAOC Crypt library
+==============================
+
+1) cd ~/odinseye
+2) lynx -source http://www.hackersquest.org/daoc/daoccrypt.tar.gz | tar xvvfz -
+
+==================
+Running Odin's Eye
+==================
+
+1) cd ~/odinseye
+2) ifconfig eth0 promisc     # Replace eth0 with whatever card you normally use
+3) ulimit -c unlimited
+4) ./odinseye --update
+
+The program will display a few lines, but nothing else will happen.
+==> This is as it should be. <==
+
+Go to your windows machine and log on DAOC. You must not start the DAOC
+Client before OE is running, or you will get nothing.
+
+The first time the window opens, you probably want to go to the "Settings"
+menu and click on "Reload Maplist" to make sure your newly downloaded maps
+are used.
+
+==================
+Running the Editor
+==================
+
+The editor is a standalone Java program. You need at least JDK 1.3
+to run it, but 1.4 or better is encouraged.
+
+To see your java version, type:
+
+java -version
+
+To run the editor, make sure you have java installed (http://java.sun.com)
+and type:
+
+java -jar editor.java
+
+
+To get the editor to link to OE, you need to start OE like this:
+
+./odinseye --link
+
+When you connect to DAOC, the port number the editor needs will be show in
+the window title of OE.
