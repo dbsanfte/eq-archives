@@ -1,11 +1,16 @@
-One spdat was sourced from Project 1999:
+Two spdats were sourced from the Phase4 and Vanilla CD .iso's on Archive.org, I gave them their file modified dates as names:
 
-spdat.14.03.2000.eff
+- spdat-phase4-beta-cd.26.01.1999.eff
+- spdat.original-retail-cd.16.02.1999.eff
 
-The rest were sourced from a wayback_machine_downloader dump of the various EQPatch.zip files on www.everquest.com.tw, you can find them in those zips. 
+One spdat was sourced from Project 1999 and its date is as given to me:
 
-I have renamed them to their patch dates for convenience.
+- spdat.14.03.2000.eff
 
-If you need a program to read these, EQCaster should work:
+The rest were sourced from a wayback_machine_downloader dump of the various EQPatch.zip files on www.everquest.com.tw, you can find them in those zips under the /websites/www.everquest.com.tw folder. I have named them to their patch dates for convenience.
+
+If you need a program to read these, EQCaster should work. I have added two EXEs here, a latest version and an older version. The web archive link is the following if you want it:
 
 http://web.archive.org/web/20000622035148/http://www.eqcaster.com/
+
+
