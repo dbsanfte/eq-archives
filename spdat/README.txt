@@ -7,7 +7,7 @@ One spdat from May 1999 was found on the Newsgroups, given in text format with s
 
 - spdat.20.05.1999.eff.txt
 
-One spdat was sourced from Project 1999 and its date is as given to me:
+One spdat was sourced from Project 1999 and it corresponds to the spdat.eff on the Kunark CD:
 
 - spdat.14.03.2000.eff
 
