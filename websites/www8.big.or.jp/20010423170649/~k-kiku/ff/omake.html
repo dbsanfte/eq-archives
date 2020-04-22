@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//IBM//DTD HPB HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>おまけ</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<div align="center">
+	<table border=0>
+    	<TD HEIGHT="100">
+      <P><CENTER><A href="http://www8.big.or.jp/~k-kiku/ff/stamp.cgi?minu" target="_self"><img src="title.gif" border=0></a></CENTER></TD>
+	</table>
+<BR>
+</div>
+<H2 align="center"><FONT color="#804040">おまけページ</FONT></H2>
+<P>
+<BR>
+</P>
+<P align="center">
+このＦＦＡ(改)＋で使用している改造部分の一部紹介<BR>
+<BR>
+<table border=0>
+<td>◎ベースソースはＧＵＮさんのＦＦＡ（改）V1.040以降です。最新版でも多分大丈夫(^^;)</td>
+<tr>
+<td>◎他のサイトや改造情報掲示板をヒント改造しました。(Special Thanksを参照)</td>
+<tr>
+<td>◎主な改造点は以下のものです。</td>
+</table>
+<li>Javascriptでの改造
+<table border=0>
+<td><a href="#tra">トランジション効果をつける</a></td>
+<tr>
+<td><a href="#bgm">アクセス毎にＢＧＭを変更する</a></td>
+</table>
+<ul>
+<a name="tra"></a><li>トランジション効果<br></name>
+</ul>
+画面が切り替わる時にジワジワ画面が切り替わったりするので視覚的に見せる(^_^;)
+<table border=10>
+<td>
+<pre>
+&lt;head&gt;
+
+&lt;meta http-equiv=&quot;Page-Enter&quot; content=&quot;revealTrans(Duration=4,Transition=23)&quot;&gt;
+&lt;meta http-equiv=&quot;Page-Exit&quot; content=&quot;revealTrans(Duration=4,Transition=23)&quot;&gt;
+
+&lt;/head&gt;
+</pre>
+</td>
+<tr>
+<td>
+<li>&lt;head&gt;内に上の２つのMETAタグを入れるだけ。
+<li>ＩＥ４以上でネスケでは動きません。
+<li>duration は、ページの切り替えが終わるまでの時間(秒)です。
+<li>transition は、効果の種類(番号)です。<br>
+0:Box in<br>
+1:Box out<br>
+2:Circle in<br>
+3:Circle out<br>
+4:Wipe up<br>
+5:Wipe down<br>
+6:Wipe right<br>
+7:Wipe left<br>
+8:Vertical blinds<br>
+9:Horizontal blinds<br>
+10:Checkerboard across<br>
+11:Checkerboard down<br>
+12:Random dissolve<br>
+13:Split vertical in<br>
+14:Split vertical out<br>
+15:Split horizontal in<br>
+16:Split horizontal out<br>
+17:Strips left down<br>
+18:Strips left up<br>
+19:Strips right down<br>
+20:Strips right up<br>
+21:Random bars horizontal<br>
+22:Random bars vertical<br>
+23:Random<br>
+<P>例は２３なので「ランダム」です。
+</td>
+</table>
+<BR>
+<ul>
+<a name="bgm"></a><li>アクセス毎にBGMを変える<br>
+</ul>
+ステータス画面に戻る度に違うＢＧＭを流してます。
+<table border=10>
+<td>
+<pre>
+&lt;script language=&quot;JavaScript&quot;&gt;&lt;!--
+mySoundCnt = 3;                           // 下記のＢＧＭの数
+mySound = new Array(                      // ＢＧＭファイル名の設定
+ &quot;bgm1.mid&quot;,                    //  ←BGMファイル名をカンマ区切りで
+ &quot;bgm2.mid&quot;,                    //　　上記で設定した数だけ書き込みます。
+ &quot;bgm3.mid&quot;			  //  ←最後だけカンマはいりません
+);
+myRnd = Math.floor(Math.random()*mySoundCnt);  // 0～(mySoundCnt-1)の乱数を求める
+document.write('&lt;embed src=&quot;' ,mySound[myRnd] ,'&quot;
+ loop=&quot;true&quot; repeat=&quot;true&quot; autostart=&quot;true&quot; width=2 Height=2&gt;');
+// --&gt;&lt;/script&gt;
+</pre>
+</td>
+<tr>
+<td>
+<li>&lt;head&gt;内に&lt;script&gt;から&lt;/script&gt;までをいれるだけ。
+<li>注意点はＢＧＭを増やしたらその分数も変えるってとこくらいかな。
+</td>
+</table>
+<BR>
+<BR>
+<li>ちょっとプラスした改造
+<table border=0>
+<td><a href="#sta">新規登録後にチャンプ戦をしなくてもよくする</a></td>
+<tr>
+<td><a href="#err">エラー時に自動的にトップページまで戻す</a></td>
+</table>
+
+<ul>
+<a name="sta"></a><li>新規登録後にチャンプ戦をしなくてもよくする改造<br></name>
+</ul>
+デフォルトでは新規キャラを作成後、チャンプ戦をまずしないと何もできないのは不便なので(^_^;)
+<table border=10>
+<td>
+<pre>
+	if(!$hit and $in{'new'} eq 'new'){
+		$lp=int(rand(15));
+		$hp = int(($in{'n_3'} + $kiso_nouryoku[3]) + (rand($lp) + 1)) + $kiso_hp;
+		$ex=0;
+		$lv=1;
+		$gold=0;
+		$n_0 = $kiso_nouryoku[0] + $in{'n_0'};
+		$n_1 = $kiso_nouryoku[1] + $in{'n_1'};
+		$n_2 = $kiso_nouryoku[2] + $in{'n_2'};
+		$n_3 = $kiso_nouryoku[3] + $in{'n_3'};
+		$n_4 = $kiso_nouryoku[4] + $in{'n_4'};
+		$n_5 = $kiso_nouryoku[5] + $in{'n_5'};
+		$n_6 = $kiso_nouryoku[6] + $in{'n_6'};
+		$c_syoku = $in{'syoku'};
+		<font color="red">$n_mons = $sentou_limit;</font>
+		unshift(@new,"$in{'id'}<>$in{'pass'}<>$in{'site'}<>$in{'url'}<>$in{'c_name'}<>
+$in{'sex'}<>$in{'chara'}<>$n_0<>$n_1<>$n_2<>$n_3<>$n_4<>$n_5<>$n_6<>$c_syoku<>$hp<>$hp<>$ex<>$lv<>
+$gold<>$lp<>$total<>$kati<>$waza<>$item<font color="red"><>$n_mons<></font>$host<>$date<>$mori<>$def<>$tac<>\n");
+	}
+</pre>
+</td>
+<tr>
+<td>
+<li>「regist.pl」内で上記の部分を探して<font color="red">赤字の部分を</font>追加してください。
+<li>変数部分を適当に改行しているのでコピー＆ペーストはしないほうがいいです
+</td>
+</table>
+<br>
+<br>
+<ul>
+<a name="err"></a><li>エラー時に自動的にトップページまで戻す改造<br></name>
+</ul>
+<table border=10>
+<td>
+<pre>
+#--------------#
+#  エラー処理  #
+#--------------#
+sub error {
+	if (-e $lockfile) { unlink($lockfile); }
+	if (-e $cntlock)  { unlink($cntlock); }
+
+	<font color="red">&header1;</font>
+	print "&lt;center&gt;&lt;hr width=400&gt;&lt;h3&gt;ERROR !&lt;/h3&gt;\n";
+	<font color="red">print "そのままお待ち下さい。\n";</font>
+	print "&lt;P&gt;&lt;font color=red&gt;&lt;B&gt;$_[0]&lt;/B&gt;&lt;/font&gt;\n";
+	print "&lt;P&gt;&lt;hr width=400&gt;&lt;/center&gt;\n";
+	print "&lt;/body&gt;&lt;/html&gt;\n";
+	<font color="blue">&footer;</font>
+	exit;
+}
+</pre>
+</td>
+<tr>
+<td>
+<li>「regist.pl」内の上記の部分を探して<font color="red">赤字の部分を</font>追加してください。
+<li><font color="blue">青字の部分を</font>追加するとなお良いです(^_^;)
+<li>そして新たに下のソースを加えます。
+</td>
+<tr>
+<td>
+<pre>
+#------------------#
+#  HTMLのヘッダー  #
+#------------------#
+sub header1 {
+	print "Cache-Control: no-cache\n";
+	print "Pragma: no-cache\n";
+	print "Content-type: text/html\n\n";
+	print <<"EOM";
+&lt;html&gt;
+&lt;head&gt;
+&lt;META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS"&gt;
+<font color="red">&lt;meta http-equiv="refresh" content="10;URL=ここにトップページのＵＲＬをいれます"&gt;</font>
+
+EOM
+
+
+	print <<"EOM";
+&lt;STYLE type="text/css"&gt;
+&lt;!--
+body,tr,td,th { font-size: 10pt }
+a:hover { color: $alink }
+.b1 {background: #9ac;border-color: #ccf #669 #669 #ccf;color:#fff; border-style: solid; border-width: 1px;}
+.b2 {background: #669;border-color: #99c #336 #336 #99c;color:#fff; border-style: solid; border-width: 1px; text-align: center}
+.b3 {background: #fff;border-color: #ccf #669 #669 #ccf;}
+.dmg { color: #FF0000; font-size: 18pt }
+.clit { color: #0000FF; font-size: 18pt }
+-->
+&lt;/STYLE&gt;
+EOM
+	print "&lt;title&gt;$main_title&lt;/title&gt;&lt;/head&gt;\n";
+	print "&lt;body background=\"$backgif\" bgcolor=\"$bgcolor\" text=\"$text\" link=\"$link\" vlink=\"$vlink\" alink=\"$alink\"&gt;\n";
+}
+
+1;
+</pre>
+</td>
+<tr>
+<td>
+<li>上記全部を「regist.pl」内に入れて<font color="red">赤字の部分を</font>自分のURLに修正してください。
+<li>content="１０の「１０」は「１０秒後」を現してます。
+<li>エラーがでた時にfooterでも戻れますし、何もしなければ１０秒後にトップページにジャンプします。
+</td>
+</table>
+
+
+<H3 align="center"><FONT color="#ff0080"><a href="ffadownlord.html">ファイルのダウンロード</a></FONT></H3>
+<p>※試しに作成してみました。一部のファイルはタダではＤＬできませんが興味のある人はＦＦＡ(改)+に積極的に参加してみてください。
+<br>
+<H3 align="center"><FONT color="#ff0080"><a href="quiz.cgi">おまけのクイズ</a></FONT></H3>
+<P>※暇つぶしにどうぞ。「リンクエラー」がでた場合は申し訳ありませんがはじめからになります。
+<BR>
+</P>
+<HR>
+<P>
+<A href="index.html" target="_self">戻る</A>
+</P>
+</BODY>
+</HTML>

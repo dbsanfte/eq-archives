@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=euc-jp">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Pragma" content="no-cache">
+	<style type="text/css"><!--
+	 .min{ font-size: 9pt; }
+	 input , textarea { font-size: 10pt;}
+	 hr.r{ color: "#FFCC00";}
+	 .resform{ padding-right: 5px; padding-left: 5px; font-size: 10pt; border-left: 0.1mm solid #FFCC00; border-right: 0.1mm solid #FFCC00;}
+	 textarea, .fm{ border:1 ; border-color: #2222AA ; border-style: solid ;border-width: 1px; }
+	 .stamp{ font-size:7pt; font-style: italic; color: #2222AA;}
+	 strong.subj { color:#666699; font-weight: bold; }
+	 strong.name { color:green; font-weight: bold; }
+	 address{ text-align:right; font-style:normal; font-size: 9pt; font-family:TicagoFix,Helvetica;}
+	 #pagertabs{ border-bottom: 0.2mm solid #DDDDFF; }
+	 #modesel{ border: 0.2mm solid #DDDDFF; }
+	 #msglist{ font-size:10pt; background: #FAFAFC; width: 100%; border:1px; margin: 5px 25px;}
+	--></style>
+	<title>Freetalk bbs</title>
+</head>
+
+<body bgcolor="#fcfcfc" text="#555555" link="#1111bb" vlink="#7777cc">
+<script type="text/javascript" defer><!--
+ function colsel() { window.open('ealis_sub.cgi?pickcolor','colsel','scrollbars=no,status=no,height=160,width=370'); }
+// --></script>
+
+<table border=0 align=right><tr><td align=right valign=top nowrap>
+	<small class="min">lastpost : <font color="#996633">01/04/05 10:21:55 48war</font> , [<font color="#996633">crawl6-public.alexa.com</font>]
+	<br><a href="http://www4.org1.com/~tinydust/eqtrader.htm">戻る</a> <a href="ealis_sub.cgi?mode=howto">掲示板の使い方</a> <a href="ealis_sub.cgi?mode=find">全文検索</a> <a href="ealis_sub.cgi?mode=delete">記事削除</a> <a href="ealis_sub.cgi">管理用</a></small></td></tr>
+</table>
+<a name=0></a>
+<p><div align="center"><font color="#BBAEB3" size=5 face="Verdana" style="font-size:18pt;"> - freetalk bbs -</font></div></p>
+
+<div align=center>
+
+<form method=POST action="ealis_wri.cgi?">
+	<table border=0><tr><td colspan=2>
+	<table border=0><tr><th align=right><u>Name</u></th>
+	<td><input type=text name="name" size=20 value="" class="fm"></td>
+	<th align=right>Mail</th><td><input type=text name="email" size=20 value="" class="fm"></td></tr>
+	<tr><th align=right>Subj</th>
+	<td><input type=text name="subj" size=25 class="fm"></td>
+	<th align=right>　Key</th><td><input type=text name="pwd" size=10 maxlength=8 value="" class="fm"><small>(英数字8以内)</small></td></tr>
+	<tr><th align=right>URL</th>
+	<td colspan=3><input type=text size=50 name="url" value="http://" class="fm"></td></tr></table></td></tr>
+	<tr><td colspan=4><textarea cols=56 rows=7 name="comment" wrap="soft"></textarea></td></tr>
+	<tr><td nowrap colspan=2 class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a>
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</tr><tr><td align=left class="min">allow tags / autolink
+	</td><td class="min" align=right><input type=submit value="　　投稿　　"><input type=reset value="消去"></td></tr></table>
+
+<table border=0 align=center cellspacing=0 cellpadding=0 class="min"><tr>
+	<td nowrap bgcolor="#DDDDFF">View Mode : </td>
+	<td nowrap id="modesel">　<a href="ealis.cgi?start=0&amp;show=8">Normal mode</a> / <a href="ealis.cgi?dhtml&amp;start=0&amp;show=8">DynamicHTML mode</a> / <a href="ealis.cgi?thread&amp;start=0&amp;show=8">Thread view</a> / <a href="ealis.cgi?lapse&amp;show=8">Lapse view</a> / <small style="font-size:8pt;">レスの付いた記事は上に移動されます</small></td>
+</tr></table>
+</form>
+
+
+<hr><a name=1></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">40</font>:　<strong class="subj">rebreathersを・・</strong>
+	<small>　From: </small><strong class="name">48war</strong>
+	<small>　on 01/03/20 04:40:21 　 </small></td>
+	<td align=right nowrap><a href="#0">∧</a><a href="#2">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#FF8040">作れるVeeのGnome細工師の方いませんか？<br></font><!-- nat084.spacelan.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Jicchan/Tinker</b><!-- odwr001002.catv.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#0000ff">在庫（4個）あるので売りますよう〜1個2300ppでどうでしょ？受け渡しはＦＰbankで＾＾</font>
+		<span class="stamp">(01/03/20 23:13:21)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>48war</b><!-- nat084.spacelan.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">うひーーー＞＜<br>思ってたより高いんですね＾＾；<br>貯金がかなり足りないんでがんばってお金ためますーーー（TT</font>
+		<span class="stamp">(01/03/29 00:54:37)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>48war</b><!-- nat084.spacelan.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">お金たまりましたーーー＾＾<br>まだ在庫あったら売ってくださーーーい</font>
+		<span class="stamp">(01/04/03 00:50:12)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>48war</b><!-- nat084.spacelan.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">ちなみに２個必要です</font>
+		<span class="stamp">(01/04/03 00:56:12)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Jicchan</b><!-- d016012.ap.plala.or.jp --> &gt;</font></td>
+		<td><font color="#0000ff">残り１個なのでもう１個作っておきますね〜JicchanかKeythてキャラにTellを</font>
+		<span class="stamp">(01/04/04 23:17:12)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>48war</b><!-- nat084.spacelan.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">了解ですー</font>
+		<span class="stamp">(01/04/05 10:21:55)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=40&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=2></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">41</font>:　<strong class="subj">お疲れさまでした ：）</strong>
+	<small>　From: </small><strong class="name">Gazloy</strong>
+	<small>　on 01/03/22 04:09:02 　 </small></td>
+	<td align=right nowrap><a href="#1">∧</a><a href="#3">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#0000ff">また、どこかで...<br>つかできればRodcet Nifeで再開の方向で(w<br><br></font><!-- nttoska14165.ppp.infoweb.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Gazloy</b><!-- nttoska14165.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#0000ff">再開＞再開かつ再会(w</font>
+		<span class="stamp">(01/03/22 04:10:11)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Tango</b><!-- 202.248.62.210 --> &gt;</font></td>
+		<td><font color="#800000">あう、今Topページ見た。<br>お疲れさま。お世話になりました。<br>そのうち殺りたくなったら戻って来てー。</font>
+		<span class="stamp">(01/03/22 13:30:42)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#666699"><b>Minosol</b><!-- z211-19-65-236.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#666699">がーん（TT</font>
+		<span class="stamp">(01/03/22 13:46:22)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>Aludas</b><!-- 210.149.54.5 --> &gt;</font></td>
+		<td><font color="#008040">おちかれー。気力が萎えたらひと休みするのも手ですな。<br>戻ってきてくれると信じてまっせー。</font>
+		<span class="stamp">(01/03/22 18:57:07)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>Oshou</b><!-- nat021.spacelan.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">むー、一休みして気力が復活したらゼヒ。<br>ともかく、今はotsukaresamaでした、と。<br>・・・なんでこんな変換するんだ（W</font>
+		<span class="stamp">(01/03/22 21:34:36)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#040404"><b>Nahdir</b><!-- 210.96.39.101 --> &gt;</font></td>
+		<td><font color="#040404">ども、なんか弔問のやうな気配がありますがｗ<br>今はアイテム収集の原点回帰とか言ってWizやってます。<br>そんな気分になったらふらりと戻ってくるかもしれませんが<br>その時はまたよろしくです。<br></font>
+		<span class="stamp">(01/03/26 15:07:54)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#C100C1"><b>Altena</b><!-- ipcsd2.office.web.ad.jp --> &gt;</font></td>
+		<td><font color="#C100C1">今更ですが、ようやく気づきました（笑<br>いつかまたどこかで(w</font>
+		<span class="stamp">(01/03/30 22:39:27)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=41&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=3></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">44</font>:　<strong class="subj">Hazeシリーズ</strong>
+	<small>　From: </small><strong class="name">Duchess</strong>
+	<small>　on 01/03/29 08:01:12 　 </small></td>
+	<td align=right nowrap><a href="#2">∧</a><a href="#4">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#800000">STR,STA,DEXとRogueにとってはたまらない<br>シリーズなのですが、皮を集めるのがかなり<br>困難らしいですね。<br>もし、成功した場合の相場などを教えて<br>いただきたいのですが。。。<br>ほしい部分はBoots、Grove、Cloak、Sholderです。</font><!-- 210.145.159.10 -->
+	</blockquote>	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=44&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=4></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">42</font>:　<strong class="subj">(無題)</strong>
+	<small>　From: </small><strong class="name">Lumlain</strong>
+	<small>　on 01/03/22 20:39:53 　 </small></td>
+	<td align=right nowrap><a href="#3">∧</a><a href="#5">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#800000">うう・・・取り敢えずお疲れ様です。<br>全くというくらい一緒に遊ぶことはありませんでしたが、私のいきなりの質問に親切に答えていただいたこともあって大変助かりました。きちんと礼もしていませんがありがとうございました。私、五ヶ月程ＥＱから離れて戻ってきた口なので、また戻ってきていただける日をお待ちしております。<br><br>では、またＮｏｒｒａｔｈのどこかで。</font><!-- hsncc-02p63.ppp.odn.ad.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#040404"><b>Nahdir</b><!-- 210.96.39.101 --> &gt;</font></td>
+		<td><font color="#040404">どうもですー<br>Lumlainさんには情報提供もしていただき助かりました。<br>またどこかでお会いしたらよろしくお願いします。</font>
+		<span class="stamp">(01/03/26 15:28:39)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>Yukiko</b><!-- h224.p505.iij4u.or.jp --> &gt;</font></td>
+		<td><font color="#000080">ビバ　もろこし　意味なし・・<br>またどこかで　ｗ</font>
+		<span class="stamp">(01/03/27 20:00:23)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=42&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=5></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">43</font>:　<strong class="subj">残念です(T T)</strong>
+	<small>　From: </small><strong class="name">Yurichan@Veeshan</strong>
+	<small>　on 01/03/23 00:57:56 　 </small></td>
+	<td align=right nowrap><a href="#4">∧</a><a href="#6">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#C100C1">ゆりはEQ TRADERSさんを見て、鍛冶や裁縫などいろんなトレードスキルを<br>上げていました。レシピなどわかりやすくプリントアウトして使っています。<br>また時々、こちらでトレードスキルの変更点など確認させていただいてます。<br><br>今日、更新の凍結ということでびっくりしました。EQにとって、また<br>日本人のプレイヤーさんにとって大切な存在の方がやめてしまわれた<br>というのはすごく残念です。<br><br>ゆりに物を作る楽しみを教えてくれたNahdirさん、このホームページに<br>ありがとうございましたと言いたかったので書き込みさせていただきます。<br><br>本当にお疲れ様でしたm(_ _)m<br></font><!-- n23cc-06p103.ppp11.odn.ad.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#040404"><b>Nahdir</b><!-- 210.96.39.101 --> &gt;</font></td>
+		<td><font color="#040404">EQを始めた当初は生産スキルに関する情報がほとんど無く、<br>それなら自分で作ってしまおうというのがこのサイトの始まりでした。<br>EQも発売から２年が経過し、トレードスキルに関する環境も色々と変わり実用的なものも増えました。<br>このサイトはトレードスキルに興味を持った方へのある程度の助力になれたと思っています。<br>ありがとうございました。</font>
+		<span class="stamp">(01/03/26 16:06:36)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=43&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=6></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">39</font>:　<strong class="subj">HD クラッシュ！</strong>
+	<small>　From: </small><strong class="name">Admad Vance</strong>
+	<small>　on 01/03/06 21:44:15 　 </small></td>
+	<td align=right nowrap><a href="#5">∧</a><a href="#7">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">あ〜、個人のなら、まだ許せるさ。。<br>忙しかったんだよ、本気で。。。<br>正月からバックアップなんてとる暇無かったんだよ。。。。<br><br>みんな、、、、仕事で使ってるマシンのバックアップは最低でも、<br>毎週月曜日くらいには取らんとこうなるぞ。（号泣＋吐血）<br><br>はは、、、ショックでかすぎて早上がりしちまった。。<br>マジ、、、夜逃げでもしてえ。<br><br>滅多に顔出さんのにスマン。<br>バックアップみんなしっかりとれよ〜〜〜〜〜！！！！！<br></font><!-- cache.ksky.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>奈緒</b><!-- ip1a0137.ngn.mesh.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">ぐはっ（吐血</font>
+		<span class="stamp">(01/03/06 22:08:52)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>Oshou</b><!-- nat021.spacelan.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">ぬを（号泣</font>
+		<span class="stamp">(01/03/07 02:11:28)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=39&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=7></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">38</font>:　<strong class="subj">Questの裏技？</strong>
+	<small>　From: </small><strong class="name">奈緒</strong>
+	<small>　on 01/03/02 13:23:14 　 </small></td>
+	<td align=right nowrap><a href="#6">∧</a><a href="#8">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#800000">今って、Login直後とかNPCへのFactionがIndだよね？<br>あれを利用してInvisiしてQuestMobの目の前でlogout<br>login&gt;quest実行&gt;Invisi or Gate でKoSでも色々できないかな？</font><!-- server1.concordia.com.ar -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>水蓮</b><!-- ip1a0166.ngn.mesh.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">反応しないのでは。</font>
+		<span class="stamp">(01/03/03 01:59:02)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Gazloy</b><!-- nttoska16129.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#0000ff">EQ2001さんとこの掲示板（ジャマイカンな方）でいろいろ書いてありますね。今のとこfaction持ちのnpcに対しては有効な模様。<br>fixされる前にtry!(w</font>
+		<span class="stamp">(01/03/03 05:02:37)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>奈緒</b><!-- ip1a0019.ngn.mesh.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">おおおおお、Gazloyさん情報thxです。<br>では、さっそく・・・ITEMを集めるところから（ｗ</font>
+		<span class="stamp">(01/03/04 08:30:53)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=38&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=8></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">37</font>:　<strong class="subj">リンクの御報告です</strong>
+	<small>　From: </small><strong class="name">ｒｅｉｇａ</strong>
+	<small>　on 01/02/26 23:26:09 　 <a href="http://www5.kannet.ne.jp/users/reiga/index.html" target="_top" class="min">www5.kannet.ne.jp/users/reiga/index.html</a></small></td>
+	<td align=right nowrap><a href="#7">∧</a><a href="#9">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#000080">今回、当サイトからリンクをさせて頂きましたので<br>御報告を致します。<br>Ｅｖｅｒ　Ｑｕｅｓｔ関連はまだあまり増えてはおりませんが、<br>宜しければいらして下さい。<br><br>それでは失礼致します。</font><!-- pm302-pt07.kannet.ne.jp -->
+	</blockquote>	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=37&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+<a name=9></a>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<strong>1</strong>
+	<a href="ealis.cgi?start=8&amp;show=8">2</a>
+	<a href="ealis.cgi?start=16&amp;show=8">3</a>
+	<a href="ealis.cgi?start=24&amp;show=8">4</a>
+	<a href="ealis.cgi?start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?start=40&amp;show=8">6</a>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?start=0&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+</div><hr>
+
+
+
+<address>- <a href="http://kano.vis.ne.jp/erial/">ealis 2.56a</a> -</address>
+
+</body>
+</html>

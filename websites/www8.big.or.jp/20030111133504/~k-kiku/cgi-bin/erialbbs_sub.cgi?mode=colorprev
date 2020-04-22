@@ -1,0 +1,73 @@
+<HTML><HEAD>
+<TITLE>Color Pickup Window</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS">
+
+<SCRIPT LANGUAGE="JavaScript">
+var hexChars = "0123456789ABCDEF";
+
+function initArray() {
+	this.length = initArray.arguments.length ;
+	for ( var r1 = 0 ; r1 < this.length ; r1++ ) {
+		this[r1] = initArray.arguments[r1] ;
+	}
+}
+
+function Dec2Hex (Dec){
+	var a = Dec % 16;
+	var b = (Dec - a)/16;
+	hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+	return hex;
+}
+
+function setColor(hexStr){
+	document.fgColor = "#" + hexStr;
+	document.bgColor = "#" + hexStr;
+	window.opener.document.forms[0].color2.value = "#" + hexStr;
+}
+
+function printColorMap(){
+ var red, blue, green, hexStr;
+  for (red=0;red<256;red+=51){
+    document.writeln("<TR>");
+    for (green=0;green<256;green+=51){
+      for (blue=0;blue<256;blue+=51){
+        hexStr = Dec2Hex(red) + Dec2Hex(green) + Dec2Hex(blue);
+        if ( navigator.appName.indexOf("Explorer") != -1 &&           // for MS-IE 3.x
+             navigator.appVersion.indexOf("2")  == 0 ) {
+          document.writeln("<TD BGCOLOR=\"#" + hexStr + "\">" +
+                           "<A HREF=\"javascript:IE3Fraud()\" BORDER=0 " +
+                           "onClick=\"setColor('" + hexStr + "'); return false;\"" +
+                           "onMouseOver=\"document.forms[0].COLOR.value = '" + hexStr + "'; return true;\">" +
+                           "<img src=\"foo.gif\" width=6 height=6  border=0></A></TD>") ;
+        } else { // for Others
+          document.writeln("<TD BGCOLOR=\"#" + hexStr + "\">" +
+                           "<A HREF=\"javascript:'<BODY BGCOLOR=#" + hexStr + "></BODY>'\" BORDER=0 " +
+                           "onClick=\"setColor('" + hexStr + "'); return false;\"" +
+                           "onMouseOver=\"document.forms[0].COLOR.value = '" + hexStr + "'; return true;\">" +
+                           "<img src=\"foo.gif\" width=6 height=6 border=0></A></TD>") ;
+        }
+      }
+    }
+    document.writeln("</TR>");
+  }
+}
+
+</SCRIPT></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<div align="center">
+<TABLE BORDER=1 bgcolor="white">
+	<TR><TD COLSPAN=36 ALIGN="middle" BGCOLOR="white">
+	<FORM><FONT SIZE="2" COLOR="#2222AA">
+	<B>ColorMap Value:</B><INPUT NAME="COLOR" MAXLENGTH=8 SIZE=8 TYPE=TEXT onChange="setColor(this.value);" onSubmit="setColor(this.value);">
+	</FONT><input type="hidden" name="mode" value="colorprev"></FORM>
+	<small>クリックすると掲示板のコード入力欄に反映されます</small>
+	</TD></TR>
+
+	<SCRIPT LANGUAGE="JavaScript"><!--
+		printColorMap() ;
+	//--></SCRIPT>
+
+	<tr><td COLSPAN=36 align=right><font size=1 color="#2222AA"><a href="http://www.coara.or.jp/~passy/" target="_brank">Color Match Ver 1.22 Powered by GLT.</a> Edited by ENT.</font></td></tr>
+</TABLE></div>
+</BODY>
+</HTML>

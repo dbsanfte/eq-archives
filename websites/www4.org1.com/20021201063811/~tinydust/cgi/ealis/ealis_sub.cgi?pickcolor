@@ -1,0 +1,64 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML><HEAD>
+<TITLE>ealis Color Pickup Window</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=euc-jp">
+
+<SCRIPT LANGUAGE="JavaScript">
+var hexChars = "0123456789ABCDEF";
+
+function Dec2Hex (Dec){
+	var a = Dec % 16;
+	var b = (Dec - a)/16;
+	hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+	return hex;
+}
+
+function setColor(hexStr){
+	document.forms[0].COLOR.value = hexStr;
+	document.fgColor = "#" + hexStr;
+	document.bgColor = "#" + hexStr;
+	for (i=0; i < window.opener.document.forms.length; i++){
+		window.opener.document.forms[i].color2.value = "#" + hexStr;
+	}
+}
+
+function printColorMap(irohaba,imgsize,cstart,cend){
+	var red, blue, green, hexStr;
+	document.writeln("<table border=0 cellspacing=1 cellpadding=0><tr>");
+	for (red=0; red<256; red+=irohaba){
+		for (green=cstart; green<cend; green+=irohaba){
+			for (blue=0; blue<256; blue+=irohaba){
+				hexStr = Dec2Hex(red) + Dec2Hex(green) + Dec2Hex(blue);
+				document.writeln("<td bgcolor=\"#" + hexStr + "\">");
+				document.writeln("<a href=\"javascript:setColor('" + hexStr + "')\" BORDER=0>");
+				document.writeln("<img src='?nullimg' width=" + imgsize + " height=11 border=0></A></TD>");
+			}
+		}
+		document.writeln("<TR></TR>");
+	}
+	document.writeln("</table>");
+}
+</script></head>
+
+<body bgcolor="#eeeeee"><form action="javascript:">
+
+<div align=center>
+<table border=1 cellpadding=4 cellspacing=0 bgcolor="#FAFAFC">
+	<tr><td align=middle bgcolor="#FAFAFC" style="font-size: 9pt;">
+	<div style="color:#2222AA;"><small>[<a href="javascript:colsel2();">大型版</a>]</small>　　<strong>value:</strong> <big>#</big>
+	<input name="COLOR" maxlength=6 size=9 type=text onChange="setColor(this.value);">
+	←手動入力時はTabで確定</div>
+
+	<div style="font-size:11pt;">クリックすると掲示板のコード入力欄に反映されます</div>
+		<script type="text/javascript"><!--
+		 function colsel2() {
+		   window.open("ealis_sub.cgi?pickcolor_L",'','scrollbars=no,status=no,height=330,width=390');
+		   close();
+		 }
+		printColorMap(51,8,0,256);
+		//--></script>
+	</td></tr>
+</table></div>
+
+<div style="display:none;"><xmp></xmp></div>
+</body></html>

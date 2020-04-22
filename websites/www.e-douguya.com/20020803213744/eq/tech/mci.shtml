@@ -1,0 +1,439 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<!-- あ -->
+<link rel="SHORTCUT ICON" href="./img/eqt.ico">
+
+<title>MCIコマンド解説</title>
+
+</head>
+
+<body bgcolor=#F0FFF0 text=#000000>
+
+<a name="top"></a>
+
+<center>
+<h2><b><font color=#008800>MCIコマンド解説</font></b></h2><br>
+</center>
+<h4 align="right">
+11,219
+<hr>
+</h4>
+<table width=100% border=0 cellspacing=0 cellpadding=4>
+<tr bgcolor=#FFE4E1>
+<td align=left>
+<font color=#FF1493>MCIによるメディアデバイスの操作方法</font>
+</td></tr>
+<tr bgcolor=#FFFFF8><td>
+<p>
+<br>
+
+　いつのまにか、/mcicontrolなるコマンドがＥＱクライアントに導入されていたようで、
+大分前からヘルプにあったけど、デバッグ用かと思っていたら、使えるみたいですね。<br>
+<br>
+　そこで、ＭＣＩ関連の技術情報をまとめておきます。<br>
+<br>
+　そもそも、ＭＣＩとは、メディアコントロールインターフェースの頭文字で、
+Windowsのマルチメディア制御用I/Fのうちのひとつなんですが、
+このAPI群は変わった事に、文字列を渡してデバイスを制御する事ができます。<br>
+（プログラム的には数字定数版の方が便利なのですが）<br>
+　どうやら、ＥＱの/mcicontrolコマンドは、
+　MCIの文字列制御APIにそのまま文字列を渡しているだけのふしがあります。<br>
+というか絶対そう（ｗ<br>
+　と言う事は、CDのみならずMCIでサポートしているデバイスは全て再生できるはずです。<br>
+　まぁ、このMCIコマンドは、デバイスによって方言があって、かならずしも以下のコマンドが
+通用するとは限りませんが、大体は同じような操作で再生できます。<br>
+<br>
+　コマンドは文字列なので、お気に入りのＢＧＭなどはSocialsに登録しておくとよいかも知れません。<br>
+<br>
+</td></tr>
+<tr bgcolor=#FFE4E1>
+<td align=left>
+<font color=#FF1493>ＣＤの再生方法</font>
+</td></tr>
+<tr bgcolor=#FFFFF8><td>
+<br>
+　最初にデバイスをオープンします。<br>
+　（ちなみに、cdaudioの場合はオープンしないでも再生できます。）<br>
+<br>
+/mcicontrol open cdaudio<br>
+<br>
+　cdaudioというのは、Windowsに登録された、ＣＤ用のＭＣＩデバイス名です。<br>
+　ＭＣＩでは基本的に全てのコマンドにデバイス名を指定しなければなりません。<br>
+<br>
+　オープンしたら再生が可能になります。<br>
+<br>
+/mci play cdaudio<br>
+<br>
+　ＥＱのコマンドは他と区別がつく限り省略ができるので、/mciとしてみました（ｗ<br>
+　オープン直後なら、これで最初のトラックから再生が始まるはずです。<br>
+<br>
+　停止するには<br>
+<br>
+/mci stop cdauio<br>
+<br>
+　です。<br>
+<br>
+　ところで、cdaudioって打つのに長すぎていやになりませんか？（ｗ<br>
+　そういう時はaliasオプションを使うとよいです。<br>
+　エイリアスとは、別名定義で、オープン時に指定すると、<br>
+以後のコマンドでデバイス名ではなくその名前でデバイスがコントロールできます。<br>
+<br>
+/mci open cdaudio alias cd<br>
+<br>
+　こうすると、cdという名前で別名定義されるので、<br>
+<br>
+/mci play cd<br>
+/mci stop cd<br>
+<br>
+　などのように使用できます。<br>
+<br>
+　ところで、ストップしてから再生を行なうと、その位置から再生が始まります。<br>
+　最後のトラックまで再生し終えると、次に再生コマンドを送っても再生されません。<br>
+　再生位置が一番後ろに来ているからです。<br>
+　その場合は、playコマンドにスタート位置を指定するか、シークさせてから再生します。<br>
+　まずは、シークコマンドです。<br>
+　ただ、このシークコマンドはかなり面倒です。（元々プログラム用なので）<br>
+　シーク位置の指定は、現在の時間フォーマットで指定する必要があります。<br>
+　現在のタイムフォーマットを得るには、<br>
+<br>
+/mci status cd time format<br>
+<br>
+　フォーマットを指定するには、<br>
+<br>
+/mci set cd time format XXX<br>
+<br>
+　XXXの位置には以下のどれかが使用できます。<br>
+<br>
+<table border=1>
+<tr><td>milliseconds
+<td>nnnnnn ミリ秒単位の数字指定
+<tr><td>ms
+<td>nnnnnn ミリ秒単位の数字指定
+<tr><td>msf
+<td>mm:ss:ff 分:秒:コンマ秒の形式
+<tr><td>tmsf
+<td>tt:mm:ss:ff トラック番号:分:秒:コンマ秒の形式
+</table>
+<br>
+　トラック単位でシーク位置を指定したいならば、あらかじめtime format tmsfを行なっておいて
+シークコマンドを利用します。<br>
+<br>
+/mci set cd time format tmsf<br>
+/mci seek cd to 3:00:00:00<br>
+<br>
+　これでトラック３の先頭にシークします。<br>
+<br>
+　このシークの位置指定はplayコマンドでも同じで、<br>
+<br>
+/mci play cd from 4:00:00:00<br>
+<br>
+　とすることで、トラック４の先頭から再生を開始します。<br>
+　シークしただけでは再生は始まりません。<br>
+<br>
+　例えば、トラック15だけを再生したい場合は、
+<br>
+/mci play cd from 15:00:00:00 to 16:00:00:00<br>
+<br>
+と指定します。<br>
+<br>
+　そして、最後に必ずデバイスをクローズしましょう。<br>
+　（オープンしなかった場合は必要ありません。）<br>
+<br>
+/mci close cd<br>
+<br>
+　ＣＤの場合は平気だと思いますが、ファイルを利用するデバイス等は、
+クローズしないと、リソースを消費したままになるかも知れません。<br>
+　リセットすれば大丈夫ですが（ｗ<br>
+<br>
+コマンド使用例)<br>
+<br>
+/mci open cdaudio alias cd<br>
+/mci set cd time format tmsf<br>
+/mci play cd<br>
+/mci play cd from 15:00:00:00 to 16:00:00:00<br>
+/mci stop cd<br>
+/mci seek cd to 3:00:00:00<br>
+/mci close cd<br>
+<br>
+　ＣＤドライブが２台以上ある場合は、若いドライブ記号のものが選択されますが、
+オープン時にドライブを指定する事も出来ます。<br>
+<br>
+　例えば、Ｄ：とＥ：が双方ともＣＤドライブで、Ｅ：の方を再生したい場合は
+以下のように記述します。<br>
+<br>
+/mci open e:\ type cdaudio alias cd<br>
+<br>
+　デバイス名にパスを指定し、デバイスタイプを明示的に指定します。<br>
+<br>
+　ＣＤーＲＯＭは、サウンドカードに接続している方を選択しないと再生しても
+聞こえませんので注意。<br>
+<br>
+</td></tr>
+<tr bgcolor=#FFE4E1>
+<td align=left>
+<font color=#FF1493>ＭＩＤＩ、ＭＰ３、ＷＡＶＥの再生方法</font>
+</td></tr>
+<tr bgcolor=#FFFFF8><td>
+<br>
+　ＭＩＤＩやＭＰ３の場合は、デバイス名の代わりにファイル名を指定します。<br>
+<br>
+/mci open c:\mididata\abc.mid alias midi<br>
+<br>
+　のような感じです。<br>
+　ファイル名はフルパスで指定する必要があるので、コマンドのたびにタイプするのは
+大変なので、エイリアスを必ず指定しましょう。<br>
+　また、ＭＰ３の場合は、拡張子が関連付けされていない可能性があり、その場合は
+オープン時にデバイスタイプを明示的に指定します。<br>
+<br>
+/mci open c:\mp3data\xyz.mp3 type Mpegvideo alias mp3<br>
+<br>
+　ＭＰ３とは、ＭＰＥＧビデオフォーマットの音声トラックの事で、音声だけの
+ＭＰＥＧムービーと考えてください。<br>
+　したがって再生デバイスはMpegvideoになります。<br>
+　また、古いメディアプレーヤーではサポートされていませんので、
+最新のメディアプレーヤーが入っている必要があると思います。<br>
+　ちなみにＭＩＤＩの場合はデバイスタイプはMidiaudioではなくSequencerです。<br>
+<br>
+　どのタイプのファイルがどのデバイスタイプで再生可能かは、Windowsディレクトリの
+win.iniに記述があります。<br>
+<br>
+[mci extensions]<br>
+mid=Sequencer<br>
+rmi=Sequencer<br>
+wav=waveaudio<br>
+avi=AVIVideo<br>
+cda=CDAudio<br>
+aif=MPEGVideo<br>
+aifc=MPEGVideo<br>
+aiff=MPEGVideo<br>
+au=MPEGVideo<br>
+m1v=MPEGVideo<br>
+m3u=MPEGVideo<br>
+midi=Sequencer<br>
+mov=MPEGVideo<br>
+mp2=MPEGVideo<br>
+mp3=MPEGVideo<br>
+mpa=MPEGVideo<br>
+mpe=MPEGVideo<br>
+mpeg=MPEGVideo<br>
+mpg=MPEGVideo<br>
+mpv2=MPEGVideo<br>
+qt=MPEGVideo<br>
+snd=MPEGVideo<br>
+asf=MPEGVideo2<br>
+asx=MPEGVideo2<br>
+ivf=MPEGVideo2<br>
+lsf=MPEGVideo2<br>
+lsx=MPEGVideo2<br>
+mp2v=MPEGVideo<br>
+wax=MPEGVideo2<br>
+wvx=MPEGVideo2<br>
+wm=MPEGVideo2<br>
+wma=MPEGVideo2<br>
+wmv=MPEGVideo2<br>
+wmx=MPEGVideo2<br>
+wmp=MPEGVideo2<br>
+<br>
+　と、こんな感じで[mci extensions]セクションに定義されています。<br>
+<br>
+　MIDIやMP3のような、ファイルの場合は、通常トラックが単一なので、
+時間フォーマットはmsfでplayやseekを行なうとよいと思います。<br>
+<br>
+コマンド使用例)<br>
+<br>
+/mci open c:\mididata\abc.mid alias midi<br>
+/mci set midi time format msf<br>
+/mci play midi<br>
+/mci stop midi<br>
+/mci seek midi to 00:00:00<br>
+/mci close midi<br>
+<br>
+/mci open c:\mp3data\xyz.mp3 type Mpegvideo alias mp3<br>
+/mci set mp3 time format msf<br>
+/mci play mp3<br>
+/mci stop mp3<br>
+/mci seek mp3 to 00:00:00<br>
+/mci close mp3<br>
+<br>
+/mci open c:\wavdata\zxr.wav alias wav<br>
+/mci set wav time format msf<br>
+/mci play wav<br>
+/mci stop wav<br>
+/mci seek wav to 00:00:00<br>
+/mci close wav<br>
+<br>
+</td></tr>
+<tr bgcolor=#FFE4E1>
+<td align=left>
+<font color=#FF1493>コマンド一覧</font>
+</td></tr>
+<tr bgcolor=#FFFFF8><td>
+<br>
+　以下に、一般的にMCIで利用できるコマンドをまとめます。<br>
+　色々試してください。<br>
+　ただ、MCIの戻り値も文字列であるため、日本語Windowsでは漢字が返ってくる事があります。<br>
+　その場合、EQクライアントでは文字化けしてしまいます。<br>
+　device_nameのところにCDの場合はcdaudioが入ります。<br>
+　device_nameにはパス名を指定する事も出来ます。<br>
+ただ、パス名から拡張子が判別できない場合は、エラーになるので、オープン時に
+typeオプションでデバイスタイプを指定する必要があります。<br>
+　openの時にaliasを指定したならば、aliasで指定した文字列が代わりに使用できます。<br>
+<br>
+<table border=1 rows=3 bgcolor=#FFFFF8>
+<tr valign=top bgcolor=#FFF0FE><th>コマンド
+<th>解説
+<th>戻り値
+<tr valign=top><td>open device_name alias device_alias shareable
+<td>デバイスのオープン<br>
+shareableを指定すると共有可能
+<td><br>
+<tr valign=top><td>close device_name
+<td>デバイスを閉じる
+<td><br>
+<tr valign=top><td>play device_name from position to position
+<td>再生、from positionを省略した場合は<br>
+現在位置から再生、<br>
+positionのフォーマットは<br>現在の時間フォーマット
+<td><br>
+<tr valign=top><td>seek device_name to position
+<td>positonへのシーク、<br>
+指定は現在の時間フォーマット
+<td><br>
+<tr valign=top><td>capability device_name can eject
+<td>イジェクト可否
+<td>true:Eject可能<br>false:Eject不可
+<tr valign=top><td>capability device_name can play
+<td>再生可否
+<td>true:再生可能<br>false:再生不可
+<tr valign=top><td>capability device_name can record
+<td>録音可否
+<td>true:録音可能<br>false:録音不可
+<tr valign=top><td>capability device_name can save
+<td>保存可否
+<td>true:保存可能<br>false:保存不可
+<tr valign=top><td>capability device_name compound device
+<td>要オープン
+<td>true:要オープン<br>false:オープン不要
+<tr valign=top><td>capability device_name device type
+<td>デバイスのタイプ
+<td>cdaudio
+<tr valign=top><td>capability device_name has audio
+<td>音声トラックを持つかどうか
+<td>true:音声トラックあり<br>false:音声トラックなし
+<tr valign=top><td>capability device_name has video
+<td>映像トラックを持つかどうか
+<td>true:映像トラックあり<br>false:映像トラックなし
+<tr valign=top><td>capability device_name uses files
+<td>デバイスがファイルを使用するかどうか
+<td>true:ファイル使用<br>false:ファイル未使用
+<tr valign=top><td>info device_name product
+<td>プロダクト名の表示
+<td><br>
+<tr valign=top><td>stop device_name
+<td>再生の停止
+<td><br>
+<tr valign=top><td>pause device_name
+<td>一時停止
+<td><br>
+<tr valign=top><td>set device_name audio all off
+<td>オーディオのOFF
+<td><br>
+<tr valign=top><td>set device_name audio all on
+<td>オーディオのON
+<td><br>
+<tr valign=top><td>set device_name audio left off
+<td>左オーディオのOFF
+<td><br>
+<tr valign=top><td>set device_name audio left on
+<td>左オーディオのON
+<td><br>
+<tr valign=top><td>set device_name audio right off
+<td>右オーディオのOFF
+<td><br>
+<tr valign=top><td>set device_name audio right on
+<td>右オーディオのON
+<td><br>
+<tr valign=top><td>set device_name video off
+<td>VIDEOのOFF
+<td><br>
+<tr valign=top><td>set device_name video on
+<td>VIDEOのON
+<td><br>
+<tr valign=top><td>set device_name door closed
+<td>ドアを閉じる
+<td><br>
+<tr valign=top><td>set device_name door open
+<td>ドアを開ける
+<td><br>
+<tr valign=top><td>set device_name time format milliseconds
+<td>時間フォーマットをミリ秒表記にする
+<td><br>
+<tr valign=top><td>set device_name time format ms
+<td>時間フォーマットをミリ秒表記にする
+<td><br>
+<tr valign=top><td>set device_name time format msf
+<td>時間フォーマットをmm:ss:ffにする
+<td><br>
+<tr valign=top><td>set device_name time format tmsf
+<td>時間フォーマットをTrack:mm:ss:ffにする
+<td><br>
+<tr valign=top><td>status device_name current track
+<td>現在のトラック番号を表示
+<td><br>
+<tr valign=top><td>status device_name length
+<td>メディアの長さを表示
+<td><br>
+<tr valign=top><td>status device_name length track track_number
+<td>track_numberのトラックの長さを表示
+<td><br>
+<tr valign=top><td>status device_name media present
+<td>メディアが入っているかどうかを表示
+<td><br>
+<tr valign=top><td>status device_name mode
+<td>現在の状態を表示
+<td><br>
+<tr valign=top><td>status device_name number of tracks
+<td>総トラック数を表示
+<td><br>
+<tr valign=top><td>status device_name position
+<td>現在位置を表示
+<td><br>
+<tr valign=top><td>status device_name position track track_number
+<td>track_numberのトラックの先頭位置を表示
+<td><br>
+<tr valign=top><td>status device_name ready
+<td>デバイスの準備が整っているかを表示
+<td><br>
+<tr valign=top><td>status device_name start position
+<td>デバイスの先頭位置を表示
+<td><br>
+<tr valign=top><td>status device_name time format
+<td>現在の時間フォーマットを表示
+<td><br>
+</table>
+<br>
+　デバイスによってはサポートしていないコマンドもあります。<br>
+　また、ビデオ系のデバイスではWindow制御等のコマンドもありますが、
+EQプレイ中にはどうせ見れませんから、割愛しました。<br>
+<br>
+　ＳＥＥＫやＰＬＡＹのポジションの指定は、現在のタイムフォーマットで指定
+しなければなりません。違うフォーマットで指定した場合はエラーになります。<br>
+　また、start positionより前や、start position＋lengthより後を指定しても、
+エラーになります。<br>
+<br>
+</p>
+</td></tr>
+</table>
+<p></p>
+<hr>
+<a href="http://www.e-douguya.com/" target="_top">Copyright &copy;2000 ｅ道具屋さん</a><br>
+このウェブサイトに掲載されている作品の著作権はｅ道具屋にあります。<br>
+このサイトはリンクフリーですが、データへの直接リンク、無断転載等は禁じます。<br>
+フレーム構成のため、リンクは
+<a href="http://www.e-douguya.com/" target="_top">トップページ</a>にお願いします。<br>
+よかったらトップページ最下段のバナーをご利用下さい。<br>
+<hr>
+
+</body>
+</html>

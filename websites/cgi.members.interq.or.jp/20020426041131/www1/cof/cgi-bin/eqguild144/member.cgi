@@ -1,0 +1,67 @@
+<html><head><title>ギルド TedClub メムバリスト(ﾟдﾟ)</title></head><BODY BGCOLOR=#689ff2 TEXT=##c9bf03><FONT SIZE=+2>ギルド TedClub メムバリスト(ﾟдﾟ)</FONT><BR><BR>
+<A HREF="./entryform.cgi">新規登録</A>　<A HREF="./member.cgi?dsp_trade=off">初期表示</A>　<A HREF="./member.cgi?dsp_trade=on">詳細を表示</A>　<A HREF="http://cgi.office.interq.or.jp/www1/cof/">戻る</A><BR><BR>
+
+<TABLE BORDER="0"><TR BGCOLOR=#ffa980><TD><A HREF="./member.cgi?sort=entryname&dsp_trade=off">Name</A></TD><TD><A HREF="./member.cgi?sort=level&dsp_trade=off">Lv</a></TD><TD><A HREF="./member.cgi?sort=race&dsp_trade=off">Race</a></TD><TD><A HREF="./member.cgi?sort=class&dsp_trade=off">Class</a></TD><TD>Comments</TD><TD><A HREF="./member.cgi?sort=update&dsp_trade=off">UpDate</a></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Abaterl</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>54</FONT></TD><TD>Vah Shir</TD><TD>BST</TD><TD>のんびりーー</TD><TD><A HREF="./entryform.cgi?entryname=abaterl">02/04/24</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Deema</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>Erudite</TD><TD>ENC</TD><TD>60 ni natte simai masita (nagakatta... w</TD><TD><A HREF="./entryform.cgi?entryname=deema">02/04/25</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Zenchi</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>56</FONT></TD><TD>Halfling</TD><TD>DRU</TD><TD>oningyou kakaete hasiru hasiru (nazo</TD><TD><A HREF="./entryform.cgi?entryname=zenchi">02/04/25</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Hayai</TD><TD ALIGN=RIGHT>23</TD><TD>Iksar</TD><TD>MNK</TD><TD>haste gloves wa-i wa-i ^^</TD><TD><A HREF="./entryform.cgi?entryname=hayai">02/04/25</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Eishauno</TD><TD ALIGN=RIGHT>49</TD><TD>High Elf</TD><TD>MAG</TD><TD>NewSpell～！！</TD><TD><A HREF="./entryform.cgi?entryname=eishauno">02/04/03</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Eishadue</TD><TD ALIGN=RIGHT>21</TD><TD>Erudite</TD><TD>ENC</TD><TD>元々は、こいつが 2ndのはずだった。(謎)</TD><TD><A HREF="./entryform.cgi?entryname=eishadue">02/04/06</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Eishaqua</TD><TD ALIGN=RIGHT>24</TD><TD>Human</TD><TD>RNG</TD><TD>Range 100over は偉大だ｡（＾＾；</TD><TD><A HREF="./entryform.cgi?entryname=eishaqua">02/03/07</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Eishazero</TD><TD ALIGN=RIGHT>22</TD><TD>Dwarf</TD><TD>CLR</TD><TD>DWF いいなー。(笑)</TD><TD><A HREF="./entryform.cgi?entryname=eishazero">02/04/06</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Eishadrei</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>51</FONT></TD><TD>Halfling</TD><TD>DRU</TD><TD>SH Get ～ ！！！</TD><TD><A HREF="./entryform.cgi?entryname=eishadrei">02/04/06</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Eishatre</TD><TD ALIGN=RIGHT>14</TD><TD>Wood Elf</TD><TD>DRU</TD><TD>Rivervaleにて休眠中。</TD><TD><A HREF="./entryform.cgi?entryname=eishatre">01/11/03</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Fnix</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>54</FONT></TD><TD>Dark Elf</TD><TD>WAR</TD><TD>先生、いまいち廃人になりきれません</TD><TD><A HREF="./entryform.cgi?entryname=fnix">02/03/23</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Hakosan</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>50</FONT></TD><TD>Dwarf</TD><TD>PAL</TD><TD>１年３ヶ月かかり、やっと５０踏みました　（＾＾</TD><TD><A HREF="./entryform.cgi?entryname=hakosan">02/04/16</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Orokia</TD><TD ALIGN=RIGHT>27</TD><TD>Wood Elf</TD><TD>DRU</TD><TD>死ぬために生きている・・・</TD><TD><A HREF="./entryform.cgi?entryname=orokia">01/12/28</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Helissio</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>Dwarf</TD><TD>ROG</TD><TD>引退考えなきゃ駄目かな・・・（謎</TD><TD><A HREF="./entryform.cgi?entryname=helissio">02/04/12</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Mild</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>54</FONT></TD><TD>Halfling</TD><TD>DRU</TD><TD>今の状況だとPoGゲットなんて絶対無理だ・・・</TD><TD><A HREF="./entryform.cgi?entryname=mild">02/04/12</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Irenebear</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>54</FONT></TD><TD>Erudite</TD><TD>WIZ</TD><TD>ToVならWiz55にして参加のほうがいいのかな？</TD><TD><A HREF="./entryform.cgi?entryname=irenebear">02/04/12</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Himika</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>59</FONT></TD><TD>High Elf</TD><TD>CLR</TD><TD>60に向かってまっしぐら～～！（＞＜</TD><TD><A HREF="./entryform.cgi?entryname=himika">02/04/07</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Rickdias</TD><TD ALIGN=RIGHT>41</TD><TD>Wood Elf</TD><TD>DRU</TD><TD>GD,EJのＧＧができるようになりました！</TD><TD><A HREF="./entryform.cgi?entryname=rickdias">02/02/28</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Judecca</TD><TD ALIGN=RIGHT>37</TD><TD>Troll</TD><TD>WAR</TD><TD>FP素通りできるようになったよ</TD><TD><A HREF="./entryform.cgi?entryname=judecca">02/04/23</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Antinora</TD><TD ALIGN=RIGHT>18</TD><TD>High Elf</TD><TD>ENC</TD><TD>本当はAntenoraって名前のはずだったのです・・・</TD><TD><A HREF="./entryform.cgi?entryname=antinora">01/10/05</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Jimi</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>Barbarian</TD><TD>SHM</TD><TD>1hb 200達成　次は目指せHtH75</TD><TD><A HREF="./entryform.cgi?entryname=jimi">02/02/07</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Aeroplane</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>51</FONT></TD><TD>Dwarf</TD><TD>WAR</TD><TD>やっとこchampionに</TD><TD><A HREF="./entryform.cgi?entryname=aeroplane">02/02/02</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Kirisame</TD><TD ALIGN=RIGHT>34</TD><TD>Half Elf</TD><TD>WAR</TD><TD>前田利家には負けられない！！</TD><TD><A HREF="./entryform.cgi?entryname=kirisame">02/01/21</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Kisou</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>Half Elf</TD><TD>BRD</TD><TD>嗚呼・・・ツカレタ、ツカレタ（ｗ</TD><TD><A HREF="./entryform.cgi?entryname=kisou">02/03/19</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Yurikamome</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>56</FONT></TD><TD>Wood Elf</TD><TD>DRU</TD><TD>新交通。Yuriシリーズ２式。</TD><TD><A HREF="./entryform.cgi?entryname=yurikamome">02/04/20</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Yuriel</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>57</FONT></TD><TD>High Elf</TD><TD>MAG</TD><TD>可憐に咲くユリはひそかにDingしてたのでした</TD><TD><A HREF="./entryform.cgi?entryname=yuriel">02/03/12</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Masayoshi</TD><TD ALIGN=RIGHT>40</TD><TD>Half Elf</TD><TD>PAL</TD><TD>ひっそり育ってます</TD><TD><A HREF="./entryform.cgi?entryname=masayoshi">02/03/22</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Kiyomori</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>Half Elf</TD><TD>DRU</TD><TD>ほほほ　ついに熊ペット！ラヴ（謎）</TD><TD><A HREF="./entryform.cgi?entryname=kiyomori">02/01/10</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Megaella</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>53</FONT></TD><TD>High Elf</TD><TD>CLR</TD><TD>Young Dragonなんて全然やらないので53に　とりあえず目指せ56</TD><TD><A HREF="./entryform.cgi?entryname=megaella">02/02/09</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Chinigami</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>50</FONT></TD><TD>Halfling</TD><TD>WAR</TD><TD>50hit達成　記録は74時間45分でした（謎）</TD><TD><A HREF="./entryform.cgi?entryname=chinigami">01/06/24</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Magdall</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>54</FONT></TD><TD>Dark Elf</TD><TD>SHD</TD><TD>もはやSC専用キャラ</TD><TD><A HREF="./entryform.cgi?entryname=magdall">01/06/21</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Maaya</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>50</FONT></TD><TD>Half Elf</TD><TD>WAR</TD><TD>最近ＰＣがカーネルエラーで落ちますが　何か？</TD><TD><A HREF="./entryform.cgi?entryname=maaya">02/04/15</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Mahiru</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>High Elf</TD><TD>CLR</TD><TD>あ～りがと～♪</TD><TD><A HREF="./entryform.cgi?entryname=mahiru">02/02/04</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Darksayo</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>52</FONT></TD><TD>Dark Elf</TD><TD>NEC</TD><TD>隠れキャラ。倒すと１ＵＰ。（謎</TD><TD><A HREF="./entryform.cgi?entryname=darksayo">02/01/17</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Darkgem</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>Dark Elf</TD><TD>WAR</TD><TD>目標：ＳｙａｋａＫｉｌｌ</TD><TD><A HREF="./entryform.cgi?entryname=darkgem">02/01/17</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Mariyagu</TD><TD ALIGN=RIGHT>17</TD><TD>Barbarian</TD><TD>WAR</TD><TD>最近、外人さんと一緒が多いです（汗；</TD><TD><A HREF="./entryform.cgi?entryname=mariyagu">01/11/18</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Mcgand</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>56</FONT></TD><TD>Human</TD><TD>WIZ</TD><TD>じわじわ</TD><TD><A HREF="./entryform.cgi?entryname=mcgand">02/04/20</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Mistio</TD><TD ALIGN=RIGHT>46</TD><TD>Half Elf</TD><TD>BRD</TD><TD>平日リアルHell中…（najo</TD><TD><A HREF="./entryform.cgi?entryname=mistio">02/03/31</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Persona</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>High Elf</TD><TD>MAG</TD><TD>マターリとBaroness～～　（´Д｀）ｙ-’</TD><TD><A HREF="./entryform.cgi?entryname=persona">02/01/29</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Misa</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>52</FONT></TD><TD>Wood Elf</TD><TD>DRU</TD><TD>52DRUです（謎</TD><TD><A HREF="./entryform.cgi?entryname=misa">01/11/19</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Ranyan</TD><TD ALIGN=RIGHT>16</TD><TD>Vah Shir</TD><TD>WAR</TD><TD>LVLの差が戦力の差であることを大いに思い知っていますｗ</TD><TD><A HREF="./entryform.cgi?entryname=ranyan">02/02/09</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Robozo</TD><TD ALIGN=RIGHT>18</TD><TD>Human</TD><TD>ROG</TD><TD>今のところ、初心者街道まっしぐら、といったところです。</TD><TD><A HREF="./entryform.cgi?entryname=robozo">01/06/30</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Rukarin</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>58</FONT></TD><TD>Erudite</TD><TD>CLR</TD><TD>Looking for Naltron's Mark... Pleaseeeee (TwT</TD><TD><A HREF="./entryform.cgi?entryname=rukarin">02/02/01</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Mokuren</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>52</FONT></TD><TD>High Elf</TD><TD>ENC</TD><TD>Looking for Group miso.... (TwT</TD><TD><A HREF="./entryform.cgi?entryname=mokuren">02/02/01</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Gyokuran</TD><TD ALIGN=RIGHT>24</TD><TD>Dark Elf</TD><TD>WAR</TD><TD>Darkgemには勝てない（謎</TD><TD><A HREF="./entryform.cgi?entryname=gyokuran">01/07/24</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Serpentwind</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>Iksar</TD><TD>SHD</TD><TD>21日まで休止中。lvl差がつくのが悲しい。</TD><TD><A HREF="./entryform.cgi?entryname=serpentwind">02/04/18</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Angra</TD><TD ALIGN=RIGHT>31</TD><TD>Iksar</TD><TD>SHM</TD><TD>ゾロアスター教のAngra-Mainyu。kurehaxにかわる次期主力sub</TD><TD><A HREF="./entryform.cgi?entryname=angra">02/04/18</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Kurehax</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>Halfling</TD><TD>DRU</TD><TD>何気にDef skill200あります。</TD><TD><A HREF="./entryform.cgi?entryname=kurehax">02/03/27</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Shoko</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>High Elf</TD><TD>ENC</TD><TD>♪epic～epicあと３つ～。</TD><TD><A HREF="./entryform.cgi?entryname=shoko">02/02/19</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Karua</TD><TD ALIGN=RIGHT>29</TD><TD>Dwarf</TD><TD>WAR</TD><TD>何気に育ってます（ｗ</TD><TD><A HREF="./entryform.cgi?entryname=karua">02/02/19</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Komaki</TD><TD ALIGN=RIGHT>30</TD><TD>Half Elf</TD><TD>WIZ</TD><TD>wizっていいよね～</TD><TD><A HREF="./entryform.cgi?entryname=komaki">01/09/21</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Hitosi</TD><TD ALIGN=RIGHT>19</TD><TD>Human</TD><TD>PAL</TD><TD>ＴＥＤ伝説のＰＡＬ　（微妙</TD><TD><A HREF="./entryform.cgi?entryname=hitosi">01/09/21</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Syaka</TD><TD ALIGN=RIGHT><FONT COLOR=#FF00FF>60</FONT></TD><TD>Half Elf</TD><TD>PAL</TD><TD>やっと６０～、まだまだがんばりまっせ。</TD><TD><A HREF="./entryform.cgi?entryname=syaka">01/09/11</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Mathilda</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>High Elf</TD><TD>ENC</TD><TD>よく「ガンダムの？」って言われるけど、そっちは知りません、ｗ</TD><TD><A HREF="./entryform.cgi?entryname=mathilda">02/01/09</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Miumiu</TD><TD ALIGN=RIGHT>27</TD><TD>Half Elf</TD><TD>BRD</TD><TD>BRDは戦闘ちうはしゃべりません、あしからず（謎</TD><TD><A HREF="./entryform.cgi?entryname=miumiu">01/10/20</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Takarnn</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>55</FONT></TD><TD>Human</TD><TD>PAL</TD><TD>ひげナイト</TD><TD><A HREF="./entryform.cgi?entryname=takarnn">01/08/12</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Takuya</TD><TD ALIGN=RIGHT>20</TD><TD>Dark Elf</TD><TD>NEC</TD><TD>根性</TD><TD><A HREF="./entryform.cgi?entryname=takuya">02/04/17</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Tikaraudon</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>50</FONT></TD><TD>Halfling</TD><TD>DRU</TD><TD>PlanGの為、お休み中</TD><TD><A HREF="./entryform.cgi?entryname=tikaraudon">01/07/19</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Toshirou</TD><TD ALIGN=RIGHT>35</TD><TD>High Elf</TD><TD>PAL</TD><TD>GHゲットまであと４つ。</TD><TD><A HREF="./entryform.cgi?entryname=toshirou">02/04/10</A></TD></TR>
+<TR BGCOLOR=#EEFFEE><TD>Mamapasta</TD><TD ALIGN=RIGHT>5</TD><TD>High Elf</TD><TD>WIZ</TD><TD>ノラスになれる為の練習キャラです。今寝てます。（ｗ</TD><TD><A HREF="./entryform.cgi?entryname=mamapasta">01/10/02</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Voigt</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>54</FONT></TD><TD>Barbarian</TD><TD>SHM</TD><TD>アルケミー、サボりまくり(w。</TD><TD><A HREF="./entryform.cgi?entryname=voigt">01/06/24</A></TD></TR>
+<TR BGCOLOR=#CCFFCC><TD>Wint</TD><TD ALIGN=RIGHT><FONT COLOR=#FF0000>50</FONT></TD><TD>Wood Elf</TD><TD>BRD</TD><TD>つ、遂に”殿堂入り”？（笑</TD><TD><A HREF="./entryform.cgi?entryname=wint">02/02/18</A></TD></TR>
+</TABLE><HR>Now <FONT SIZE=+2>29</FONT> members.( only main character )<BR>Level average <FONT SIZE=+2>48.6 </FONT>( only main character )<BR><HR><SMALL><A HREF="http://www.ai.wakwak.com/~aihya/cgi-bin/script/fb.cgi?name=EG1.43">EQ Guild V1.43</A></SMALL></body></html>
