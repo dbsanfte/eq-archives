@@ -1,0 +1,79 @@
+<HTML><HEAD>
+<META NAME="GENERATOR" CONTENT="NICOLE Board.cgi v3.4">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis">
+<STYLE>
+A:link { text-decoration: none; color: #003399 }
+A:visited { text-decoration: none; color: #003399 }
+A:active { text-decoration: none; color: #F05C00 }
+A:hover { text-decoration: underline; color: #F05C00; }
+EM { text-decoration:none; font-style: normal; font-weight: bold; color: #F05C00; }
+TD { vertical-align: top; }
+</STYLE>
+<TITLE>Majop Diablo2 BBS</TITLE>
+</HEAD>
+<BODY TEXT=#000000 BGCOLOR=#FFFFFF LINK=#003399 ALINK=#003399 VLINK=#003399 BACKGROUND="">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#000050><TR><TD><FONT COLOR=#FFFFFF><B><CENTER>
+記事の削除
+</B></CENTER></TD></TR></TABLE>
+<DIV ALIGN=right><FONT SIZE=2>READONLY</FONT></DIV>
+
+<BR>
+
+<BR>
+<EM>この記事には既にコメントがついていますので、管理者だけが記事を削除できます</EM><P>
+この記事を削除しますか？<P>
+記事に設定したパスワード（管理者なら管理パスワード）を入力して「削除」ボタンを押して下さい。
+やめる場合は、そのまま「中止」ボタンを押して下さい。
+<P>
+<TABLE BORDER=0><TR>
+<TD><FORM METHOD="POST" ACTION="board.cgi">
+<INPUT TYPE=hidden NAME=board VALUE="1">
+<INPUT TYPE=hidden NAME=cmd VALUE=delete>
+<INPUT TYPE=hidden NAME=wparam VALUE="229">
+<INPUT TYPE=password NAME=pwd SIZE=10>
+<INPUT TYPE=submit VALUE="はい削除します">
+</FORM></TD>
+<TD><FORM METHOD="POST" ACTION="board.cgi">
+<INPUT TYPE=hidden NAME=board VALUE="1">
+<INPUT TYPE=submit VALUE="いいえ中止します">
+</FORM></TD>
+</TR></TABLE>
+
+<A NAME="topic229"></A>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+<TR>
+<TD WIDTH=99% BGCOLOR=#000050><FONT COLOR=#FFFFFF><B>Router de DIA2</B></TD>
+<TD WIDTH=1% BGCOLOR=#000050 NOWRAP ALIGN=right><FONT COLOR=#FFFFFF SIZE=2>No.229</TD>
+</TR>
+<TR><TD COLSPAN=2 BGCOLOR=#F0F0F0><FONT COLOR=#000000>
+<FONT SIZE=2><FONT SIZE=2>2000/07/12 (水) 02:20</FONT> 　 </FONT><P><P>ダイアルアップRouterを使っている人で、Openで自分がCrateしたGameに他人がJoin出来ない、という症状の人は読んでみて下さい。<BR>私はそれほどネットワークに詳しいわけではなく、またかなり簡略化して書いているので正確な記述ではありません。ツッコミ、訂正は歓迎します。<BR><BR>Routerによって設定方法は異なるので、具体的な設定方法は自分の使ってるRouterのマニュアルを読んで下さい。<BR><BR>■なぜそうなるのか<BR>Routerは、大抵拡張NATという機能を使うように設定されています。<BR>この機能は、1個しか無いグローバルIPアドレスを、ローカルネットワークに接続された複数の機器から使えるという便利な機能です。<BR><BR>IPアドレスはTCP/IPネットワーク機器1個につき１個必要な物で、Internetにアクセスする為にはグローバルIPというものが無くてはいけません。<BR>しかし現在IPアドレスは不足しているし、IPアドレスの取得は面倒なので、LAN内などInternetとは分離された環境ではローカルIPアドレスというものを使用します。<BR>これはIPアドレスの一部をローカルネットワークで好きに使ってよいと定めたもので、具体的には192.168.xxx.yyy等が代表的なローカルIPアドレスです。<BR><BR>このローカルIPアドレスはLAN外に出て行く事は出来ませんが、RouterがISPにダイヤルアップすることによってグローバルIPを得、LAN側からInternetアドレスに対して出されたデータ要求を「Routerが要求している事にして(=アドレス変換=NAT)」Internetに要求するのがNAT機能です。<BR>これだけだと、LAN内の1台の機器しかInternetにアクセスする事が出来ませんが、さらにポート番号も変換することにより、複数の機器で同時にInternetアクセスを行えるようにしたのが拡張NAT機能です。<BR>#拡張NAT機能は、メーカー/機種によって呼称が違い、例えばNECのComsterzシリーズなら「NATe」です。<BR><BR>しかしながら拡張NATでは、外部からいきなり送りつけられたパケットを何処に送ればいいのか、Routerには判断出来ません。<BR>DIA2 Openでホストをやっている状況は正にこれです。<BR>外部からLogin要求のパケットが送られてきているにも関わらず、RouterはどのPCにそのパケットを送ればいいのかわからないのです。<BR><BR>■解決法1 - 拡張NATを止める<BR>拡張NATを止めて普通のNATにし、ホストにしたいPCから自動接続するようにすれば解決する筈です。<BR>しかしこの方法は、1台のPCしかInternetを使えなくなるので、Routerは使っているけどPCが1台しか無いような環境でしか使えません。<BR><BR>■解決法2 - 静的ルーティングの設定<BR>大抵のRouterでは、静的ルーティングが設定できるようになっています。<BR>これは、「Routerのポートn番にいきなり送りつけられたパケットをLAN内のどのPCに送るか」という設定です。<BR>DIA2は4000,6112～6119を使用していますので、そのポートのルーティングを設定すれば使える筈です。<BR><BR>TCP/IP gameでも、Routerに割り当てられているグローバルIPアドレスを指定すればOKです。<BR><BR>2acc/2pcでやる場合でも、Routerに設定したPCでホストになれば、BNからのLoginは可能だし、もう1個のPC/AccでそのゲームにJoinする場合もホストのPCのローカルIPアドレスを入れればいけるんじゃないかと思います。<BR>#要するに、外からのLoginはRouterに割り振られたグローバルIPアドレス、LAN内からのLoginはホストのPCのローカルアドレスを使うわけです。<BR><BR>但しこの方法を使う場合、RouterのDHCP機能は、ホストにしたいPCに対して固定アドレスを割り振るように設定しないといけません。<BR>この設定が出来ないRouterでは、DHCP機能を停止する必要があります。<BR>また、外部に対してホストになれるPCは、Routerに設定した1台のみです。</P>
+<HR NOSHADE SIZE=1}>
+<FONT SIZE=2> <FONT SIZE=2>07/12 (水) 02:38</FONT><BLOCKQUOTE><P><FONT COLOR=#A0A020>&gt;但しこの方法を使う場合、RouterのDHCP機能は、ホストにしたいPCに対して固定アドレスを割り振るように設定しないといけません。</FONT><BR>ルーターのDHCP機能がどうなってるかはその機器によるんだろうが、普通DHCPってのはIPアドレスの貸し出し期間ってのが決まってて、それが普通は1週間弱くらいだから毎日パソコンを起動するような環境なら半静的なアドレスになってると思うんだが、それでも駄目なのかのう？<BR>(大きな会社などではセキュリティ等の関係で毎日変わるが、ホームユース用のルーターならそれが一般的だと思う。)</P></BLOCKQUOTE></FONT>
+<HR NOSHADE SIZE=1}>
+<FONT SIZE=2> <FONT SIZE=2>07/12 (水) 07:20</FONT><BLOCKQUOTE><P>DHCPの仕様については詳しく知らないんですが、シャットダウンするときにアドレスを返却するとかしないのかな？<BR>返却があるとすると、立ち上げる順番によってアドレスが変化したり、割り当てのアルゴリズムによっては前回と違うアドレスが割り当てられる可能性が考えられます。<BR><BR>ちなみにうちのルータには「アドレス固定」というチェックボックスが設定画面にあり、LANカードのMACアドレスとIPアドレスを対応させるようになってます。<BR>#という事はチェックしないとアドレス変わるんじゃないかな、と思ったわけです。<BR><BR>まあ、ホストになるPCのアドレスさえ変わらなければいいので、DHCPに関しては深く考える必要は無いかもしれません。(^^;</P></BLOCKQUOTE></FONT>
+<HR NOSHADE SIZE=1}>
+<FONT SIZE=2> <FONT SIZE=2>07/12 (水) 11:47</FONT><BLOCKQUOTE><P><FONT COLOR=#A0A020>&gt;シャットダウンするときにアドレスを返却するとかしないのかな？</FONT><BR>返却はするよ。<BR>でも、貸し出したホストのIPアドレスと名前(DNS上の名前解決)をデータベースに持ってて、最後に貸し出した日から何日間かは有効になってるはず。(リース期間って奴ね)<BR><BR>つまり、Aというホストが借りたIPアドレスは、Aがネットワークから落ちて返却したとしても、IPアドレスの有効期間が5日だったとしたら新たにネットワークに入って来た他のホストに5日間は割り振らない。<BR>で、5日以内にAというホストがネットワークに入ってきたら前と同じIPアドレスが割り振られる。<BR>って感じのはず。<BR><BR>ちなみにアドレス固定っていうのはMACアドレス(名前じゃない)で固有のIPアドレスを永久的に予約することで、普通はIPアドレスが変わったら困るようなDNSサーパーとかのサーバー類に割り振るもの。<BR>アドレスを固定するのだったらDHCPの予約使うより、単純にDHCP切ったほうがいいと思うが．．．どうだろ？<BR></P></BLOCKQUOTE></FONT>
+<HR NOSHADE SIZE=1}>
+<FONT SIZE=2> <FONT SIZE=2>07/12 (水) 21:01</FONT><BLOCKQUOTE><P>さっそくmajopサーバー入りました。<BR>Rinがすでにいました。<BR>一緒に遊びました。軽かったです。<BR><BR>ありがとうPekoe様Tatsu様。：）</P></BLOCKQUOTE></FONT>
+<HR NOSHADE SIZE=1}>
+<FONT SIZE=2> <FONT SIZE=2>07/12 (水) 21:04</FONT><BLOCKQUOTE><P>aaaaaah<BR><BR>違うところにResつけたぁ（TT</P></BLOCKQUOTE></FONT>
+<HR NOSHADE SIZE=1}>
+<FONT SIZE=2> <FONT SIZE=2>07/13 (木) 04:16</FONT><BLOCKQUOTE><P>DHCPの仕様は、Tatsu説で合っているようですので、アドレスの固定云々はあまり考える必要はなさそうです。<BR><BR>しかし私がCreateしたゲームはMajopBNがすぐに忘れてしまうとか(Joinで直接ゲーム名を入力すれば入る事は出来る)、入った人がたまに落ちるとかの問題があって、さらに原因究明中です。<BR><BR>RoRの時は、NATを使おうが静的ルーティングにしようがマルチでは動かなくて、結局諦めてTA借りたんだよなぁ...</P></BLOCKQUOTE></FONT>
+</TD></TR></TABLE><BR><DIV ALIGN=right><FONT SIZE=2><A HREF="#list">↑</A></FONT></DIV>
+<HR NOSHADE SIZE=1>
+<FONT SIZE=2>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+<TR>
+<TD NOWRAP><FONT SIZE=2>
+<A HREF="board.cgi?board=1&cmd=">記事表示</A> | 
+<A HREF="board.cgi?board">掲示板一覧</A> | <A HREF="http://www.izu.co.jp/~suimin/majoptop.htm">ホームページ</A> |
+<A HREF="admin.cgi">管理画面</A>
+ | <A HREF="board.cgi?board=1&cmd=new">新規投稿</A><TD NOWRAP ALIGN=right><FONT SIZE=2>
+管理者 <A HREF="mailto:johnny@mars.dti.ne.jp"><B>Majop</B></A>
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+<FONT SIZE=2><CENTER><A HREF="http://www10.big.or.jp/~nicole/" TARGET="_blank">Board v3.4</A> - Script written by <A HREF="mailto:nicole@big.or.jp">NICOLE</A></CENTER></FONT>
+</BODY></HTML>

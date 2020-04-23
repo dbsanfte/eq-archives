@@ -1,0 +1,88 @@
+<html><head><title>天龍(仮)サポートＢＢＳ</title></head>
+<body bgcolor="#000000" text="#ffffff" link="#ffffff" alink="#ff0000" vlink="#ffffff">
+
+<P>
+<DIV ALIGN=RIGHT><FONT SIZE=2>インターネット対戦対応麻雀ゲーム </FONT>天龍（仮） <FONT SIZE=2>for Windows95/98</FONT><HR SIZE=1>This site is japanese only.<TABLE WIDTH=100%>
+<TR>
+<TD ALIGN=CENTER BGCOLOR="#008040"><TABLE>
+<TR>
+<TD ALIGN=CENTER WIDTH=90><A HREF="http://www.mediamuse.co.jp/sarah/works/majong/index.html"><FONT SIZE=2 COLOR="#ffffff"><B>トップ</B></FONT></A></TD><TD ALIGN=CENTER WIDTH=90><A HREF="http://www.mediamuse.co.jp/sarah/works/majong/content.html"><FONT SIZE=2 COLOR="#ffffff"><B>作品仕様</B></FONT></A></TD><TD ALIGN=CENTER WIDTH=90><A HREF="http://www.mediamuse.co.jp/sarah/works/majong/info.html"><FONT SIZE=2 COLOR="#ffffff"><B>お知らせ</B></FONT></A></TD><TD ALIGN=CENTER WIDTH=90><A HREF="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi"><FONT SIZE=2 COLOR="#ffffff"><B>掲示板</B></FONT></A></TD><TD ALIGN=CENTER WIDTH=90><A HREF="http://www.mediamuse.co.jp/sarah/works/majong/download.html"><FONT SIZE=2 COLOR="#ffffff"><B>ダウンロード</B></FONT></A></TD><TD ALIGN=CENTER WIDTH=90><A HREF="http://www.mediamuse.co.jp/sarah/works/majong/staff.html"><FONT SIZE=2 COLOR="#ffffff"><B>スタッフ</B></FONT></A></TD>
+</TD>
+</TR>
+</TABLE></TD>
+</TR>
+</TABLE><BR></DIV>
+<DIV ALIGN=CENTER><FONT SIZE=4><B>天龍(仮)サポートＢＢＳ</B></FONT><BR></DIV></P>	<font size=-1>
+	■このＢＢＳはネットワーク対戦対応麻雀ゲーム「天龍(仮)」のサポートを目的としたＢＢＳです。<br>
+	■アルファテスター及びベータテスターの登録はメールでのみ受け付けております。
+	</font>
+	<p>
+
+<h3><hr size=3>
+《最新の記事から20件》
+[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi?cmd=form">投稿(修正)する</a>]
+[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi">更新</a>]
+[<a href="http://www.mediamuse.co.jp/sarah/works/majong/index.html" target="_top">終了</a>]
+[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi?cmd=rm">削除</a>]
+<hr size=3></h3><p>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#40c040><font size=+1><b>いろいろと</b></font></td></tr></table>
+<ul><li>by <b>ＭＡＮ次郎</b> at 2.22(月)19:04
+<li><font size=-1>Number:0222190427</font> <font size=-1>Host:</font> <font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; MSN 2.5; Windows 98)</font> <font size=-1>Length:20 bytes</font><p>
+</ul><blockquote>
+お世話になります････<br>
+<p>
+</blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#40c040><font size=+1><b>で、</b></font></td></tr></table>
+<ul><li>by <b>吉嶺</b> &lt;<a href="mailto:ikesarah@mediamuse.co.jp">ikesarah@mediamuse.co.jp</a>&gt; at 2.19(金)22:43
+<li><font size=-1>Number:0219224359</font> <font size=-1>Host:</font> <font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)</font> <font size=-1>Length:129 bytes</font><p>
+</ul><blockquote>
+天龍て名前、’９６年にボーステックが既に出してたんですねぇ・・・。<br>
+しかも同じ麻雀ゲームで。<br>
+なわけで、タイトルは近々変更します。<br>
+<br>
+<p>
+</blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#40c040><font size=+1><b>ご迷惑をおかけしております</b></font></td></tr></table>
+<ul><li>by <b>吉嶺</b> &lt;<a href="mailto:ikesarah@mediamuse.co.jp">ikesarah@mediamuse.co.jp</a>&gt; at 2.18(木)03:38
+<li><font size=-1>Number:0218033806</font> <font size=-1>Host:</font> <font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)</font> <font size=-1>Length:118 bytes</font><p>
+</ul><blockquote>
+開発の遅れに伴いアルファー版の公開がヒジョーに遅れております。<br>
+今しばらくお待ち下さるよう、よろしくお願いいたします。<br>
+<br>
+<p>
+</blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#40c040><font size=+1><b>あ・・・</b></font></td></tr></table>
+<ul><li>by <b>SEI</b> &lt;<a href="mailto:kage0325@alles.or.jp">kage0325@alles.or.jp</a>&gt; at 2.2(火)02:06
+<li><font size=-1>Number:0202020636</font> <font size=-1>Host:</font> <font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.0; Windows 95; Yahoo! JAPAN Version Windows 95/NT CD-ROM Edition 1.0.)</font> <font size=-1>Length:37 bytes</font><p>
+</ul><blockquote>
+もう募集終わっちゃったんですね（^_^;<br>
+<br>
+<p>
+</blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#40c040><font size=+1><b>祝♪いけさら雀荘～</b></font></td></tr></table>
+<ul><li>by <b>青エピ♪</b> &lt;<a href="mailto:epi@curio-city.com">epi@curio-city.com</a>&gt; at 1.13(水)14:31
+<li><font size=-1>Number:0113143110</font> <font size=-1>Host:</font> <font size=-1>Agent:Mozilla/4.5 [en] (Win95; I)</font> <font size=-1>Length:153 bytes</font><p>
+</ul><blockquote>
+ども、久しぶりっす、<br>
+なんかいつのまにかプログラムの勉強してたたぁさすが鉄人、やることがちゃうっすね(笑)<br>
+完成したら速攻打ちに行きますよ（期待♪）<br>
+それでは<br>
+<p>
+</blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#40c040><font size=+1><b>このＢＢＳについて</b></font></td></tr></table>
+<ul><li>by <b>吉嶺</b> &lt;<a href="mailto:ikesarah@mediamuse.co.jp">ikesarah@mediamuse.co.jp</a>&gt; at 1.12(火)12:56
+<li><font size=-1>Number:0112125638</font> <font size=-1>Host:</font> <font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)</font> <font size=-1>Length:155 bytes</font><p>
+</ul><blockquote>
+サポート用のＢＢＳを作りました。<br>
+本格稼動まではまだ時間がありますが、なにかお気づきの点がありましたらこちらに書きこんで頂くか、メールにてお願いいたします。<br>
+<p>
+</blockquote>
+<br><h4><hr size=3>[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi?cmd=form">投稿/修正する</a>] [<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi">更新</a>] [<a href="http://www.mediamuse.co.jp/sarah/works/majong/index.html" target="_top">終了</a>] [<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi?cmd=rm">削除</a>] <hr size=3></h3>
+<h5 align=right><a href="http://www.rescue.ne.jp/" target="_top"><img src="http://www.mediamuse.co.jp/sarah/cgi/bbs/majong.cgi?cmd=copyright" border=0 alt="MiniBBS2 v1.33"></a></h4>
+</body></html>
+

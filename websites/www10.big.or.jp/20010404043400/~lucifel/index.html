@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<meta http-equiv="Content-Type"content="text/html; charset=x-sjis">
+<META name="keywords" content="Game,News,ネットゲーム,Baldur's Gate,BG,Ever Quest,EQ">
+<title>Prelude</title>
+
+<script language="JavaScript"><!--
+state_close=0;		// フォルダが閉じているときの状態
+state_open =1;		// フォルダが開いているときの状態
+max_root_folder=10;	// 最大のルートフォルダ数
+
+flags=new Flags(max_root_folder); // 状態管理領域
+
+// 状態管理領域の生成関数
+function Flags(n_folder){
+  for(var i=0; i<n_folder; i++) this[i]=new Folder(state_close,new Flags(0));
+  this.length=n_folder;
+}
+// フォルダ管理オブジェクトの生成関数
+function Folder(state,folder){
+  this.state=state;
+  this.subFolder=folder;
+}
+// サブフォルダの登録関数
+function registerFolder(n,m){
+  flags[n].subFolder[m]=new Folder(state_close,null);
+  flags[n].subFolder.length++;
+}
+// フォルダ状態取得関数
+function getFlagState(n,m){
+  if(m==-1) return flags[n].state;
+  if(!flags[n].subFolder[m]) registerFolder(n,m);
+  if(flags[n].state==state_open){
+    return flags[n].subFolder[m].state;
+  }
+  return state_close;
+}
+// フォルダ状態変更関数
+function changeFlagState(n,m){
+  if(m==-1) flags[n].state=(flags[n].state==state_open)?state_close:state_open;
+  else {
+    if(!flags[n].subFolder[m]) registerFolder(n,m);
+    flags[n].subFolder[m].state=(flags[n].subFolder[m].state==state_open)?state_close:state_open;
+  }
+}
+// 状態管理領域クリア関数
+function initFlags(){
+  for(var i=0; i<flags.length; i++){
+    flags[i].state=state_close; flags[i].subFolder=null;
+  }
+}
+document.writeln(
+  '<frameset cols="195,*" BORDER="0" FRAMEBORDER="NO" FRAMESPACING="0">'+
+    '<frameset rows="*,140" BORDER="0" FRAMEBORDER="NO" FRAMESPACING="0">'+
+      '<frame name="contents" src="./contents.htm">'+
+      '<frame name="footer" src="./footer.htm">'+
+    '</frameset>'+
+    '<frame name="migi"     src="./cgi/diary/diary.cgi">'+
+  '</frameset>'
+  );
+// --></script><noscript>
+<!--
+  JavaScript を解釈しない、あるいは、オフしているブラウザのためには
+  Menu3Contents.htm で考慮するか、非JavaScript版 Menu3Contents.htm を指定する
+-->
+<frameset cols="100%,*" BORDER="0" FRAMEBORDER="NO" FRAMESPACING="0">
+  <frame name="contents" src="./noscript.htm">
+  <frame name="migi"     src="./noscript.htm">
+</frameset>
+</noscript>
+</head></html>

@@ -1,0 +1,952 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+	<title>Uenaelar - Mon histoire dans EVERQUEST</title>
+
+<SCRIPT LANGUAGE="Javascript">
+<!--
+function fenetre(intitule,params) { 
+var fen = window.open(intitule,'zoom',params); 
+
+}
+
+var Zone;
+Zone=new Array("City of Myst","Dulak's Harbor","Freeport","Grieg's End","Guk","Kaladim","Katta Castellum","Highpass Keep","Kurns Tower","Mistmoore Castle","Najena","Plane of Hate","Plane of Justice","Plane of Knowledge","Plane of Valor","Sanctus Seru","Solusek's Eye (SolA)","Thurgadin","Tower of Frozen Shadow","Unrest");
+var ZoneSelected;
+ZoneSelected = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+var max_lit;
+max_lit = 20;
+var solution;
+solution = new Array(5,17,13,8,14,12,16,9,4,11,6,1,20,10,18,19,3,15,7,2);
+
+function lit_change(form,lit)
+{
+	var champ_lit = "lit" + lit;
+	
+	form.resultat.value = "";
+	// on récupère le choix joueur
+	var choix = eval("form." + champ_lit + ".options[form." + champ_lit + ".selectedIndex].value");
+	
+	// on reforme la liste pour le lit choisi
+	for (; eval("form." + champ_lit + ".options.length > 0") ; )
+	{
+		eval("form." + champ_lit+ ".options[0] = null");
+	}
+	eval("form." + champ_lit + ".options[form." + champ_lit + ".options.length] = new Option(Zone[choix - 1],choix)");
+	eval("form." + champ_lit + ".selectedIndex = 0");
+	
+	ZoneSelected[choix-1] = 1;
+	
+	// on élimine cette zone des autres choix possibles
+	for (j=1 ; j <=  max_lit; j++)
+	{
+		s = String(j + 100);
+		s = s.substring(1,3);
+		// on compte le nombre de valeurs encore dispo
+		f = "form.lit" + s + "";
+		VNum = eval(f + ".options.length");
+		if (VNum != 1)
+		{
+			if (VNum != 3) 
+			{
+				// il reste des choix possibiles
+				for (; eval(f + ".options.length > 0") ; )
+				{
+					eval(f + ".options[0] = null");
+				}		
+				eval(f + ".options[" + f + ".options.length] = new Option('Sélectionnez une zone',0)");
+				for (k = 0 ; k < 20 ; k ++)
+				{
+					if (ZoneSelected[k] != 1)
+					{
+						eval(f + ".options[" + f + ".options.length] = new Option(Zone[k],k+1)");
+					}
+				}
+			}
+			else
+			{
+				// plus qu'une suele valeur à attribuer
+				for (k = 0 ; k < 20; k++)
+				{
+					if (ZoneSelected[k] == 0)
+					{
+						ZoneSelected[k] = 1;
+						// on reforme la liste pour le lit choisi
+						for (; eval(f + ".options.length > 0") ; )
+						{
+							eval(f + ".options[0] = null");
+						}	
+						eval(f + ".options[" + f + ".options.length] = new Option(Zone[k],k+1)");
+						eval(f + ".selectedIndex = 0");
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+function razero(form)
+{
+	for (k = 0 ; k < 20 ; k ++)
+	{
+		ZoneSelected[k] = 0;
+	}
+	
+	for (j=1 ; j <=  max_lit; j++)
+	{
+		s = String(j + 100);
+		s = s.substring(1,3);
+		// on compte le nombre de valeurs encore dispo
+		f = "form.lit" + s + "";
+		for (; eval(f + ".options.length > 0") ; )
+		{
+			eval(f + ".options[0] = null");
+		}		
+		eval(f + ".options[" + f + ".options.length] = new Option('Sélectionnez une zone',0)");
+		for (k = 0 ; k < 20 ; k ++)
+		{
+			eval(f + ".options[" + f + ".options.length] = new Option(Zone[k],k+1)");
+		}
+		
+	}
+	form.resultat.vlaue="";
+}
+
+function valid(form)
+{
+	var Choix;
+	var ok = 1;
+	
+	Choix = new Array;
+	for (j=1 ; j<= max_lit ; j++)
+	{
+		s = String(j + 100);
+		s = s.substring(1,3);
+		// on compte le nombre de valeurs encore dispo
+		f = "form.lit" + s;
+		
+		VNum = eval(f + ".options.length");
+		if (VNum != 1) 
+		{
+			ok = 0;
+		}
+	}
+	if (ok == 0)
+	{
+		form.resultat.value = "Vous n'avez pas répodnu à toutes les questions...";
+	}
+	else
+	{
+		bon = 0;
+		for (j=1 ; j<= max_lit ; j++)
+		{
+			s = String(j + 100);
+			s = s.substring(1,3);
+			// on compte le nombre de valeurs encore dispo
+			f = "form.lit" + s;
+			Choix[j-1] = eval(f + ".options[" + f + ".selectedIndex].value");
+			if (Choix[j-1] == solution[j-1]) bon++;
+		}
+		form.resultat.value = bon + "/20";
+	
+	}
+}
+
+function ooops(form,lit)
+{
+	// on compte le nombre de valeurs encore dispo
+	f = "form.lit" + lit;
+	
+	VNum = eval(f + ".options.length");
+	if (VNum == 1)
+	{ 	
+		c = eval(f + ".options[" + f + ".selectedIndex].value");
+		ZoneSelected[c-1] = 0;
+		for (j=1 ; j<= max_lit ; j++)
+		{
+			s = String(j + 100);
+			s = s.substring(1,3);
+			// on compte le nombre de valeurs encore dispo
+			f = "form.lit" + s;
+			if (s != lit)
+			{
+				V = eval(f + ".options.length");
+				if (V != 1)
+				{
+					for (; eval(f + ".options.length > 0") ; )
+					{
+						eval(f + ".options[0] = null");
+					}		
+					eval(f + ".options[" + f + ".options.length] = new Option('Sélectionnez une zone',0)");
+					for (k = 0 ; k < 20 ; k ++)
+					{
+						if (ZoneSelected[k] != 1)
+						{
+							eval(f + ".options[" + f + ".options.length] = new Option(Zone[k],k+1)");
+						}
+					}
+					
+				}
+			}
+			else
+			{
+				for (; eval(f + ".options.length > 0") ; )
+				{
+					eval(f + ".options[0] = null");
+				}		
+				eval(f + ".options[" + f + ".options.length] = new Option('Sélectionnez une zone',0)");
+				for (k = 0 ; k < 20 ; k ++)
+				{
+					if (ZoneSelected[k] != 1)
+					{
+						eval(f + ".options[" + f + ".options.length] = new Option(Zone[k],k+1)");
+					}
+				}
+			}
+		}
+	}
+}
+
+//-->
+</script>
+
+<style>
+.nom {color:#660000;text-decoration:none;font-weight:normal;}
+.jonili {color:#000066;text-decoration:none;font-weight:normal;}
+a.lientexte {color:#660000;text-decoration:none;}
+a.lientexte:hover{color:#660000;text-decoration:underline;}
+</style>
+</head>
+
+<BODY text=#000000 vLink=#660000 aLink=#660000 link=#660000 bgColor=#bdaf88 leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<table width="780" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr><td align="center" valign="top">	
+<!-- Entente chapitre -->
+	<a href="../../../index.htm"><img src="../../../img/commun/petittitre.gif" width="196" height="65" border="0" alt=""></a><br>
+	
+	<table width="780" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<td width="200" align="left" valign="bottom">
+	<font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="1" color="Red">
+	&nbsp;&nbsp;
+	<!-- <a href="ren009.htm" class=lientexte>< Renaissance 9</a> -->
+	</font>
+	</td>
+	<td width="380" align="center" >	
+	<font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="3" color="black">
+	<img src="../../../img/commun/vir02g.gif" width="36" height="20" border="0" alt="">
+	<b>LE GRAND JEU DES LITS</b>
+	<img src="../../../img/commun/vir02d.gif" width="36" height="20" border="0" alt="">
+	</font>
+	</td>
+	<td width="200" align="right" valign="bottom">
+	<font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="1" color="Red">
+	<!-- <a href="ren011.htm" class=lientexte>Renaissance 11 ></a> -->
+	&nbsp;&nbsp;
+	</font>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+<tr><td>
+<!-- Barre de séparation -->
+		<TABLE cellSpacing=0 width=780 align=center border=0>
+	    <TR><TD width=780>
+		<br>
+		<DIV align=center><IMG height=2 src="../../../img/commun/bar.png" width=780></DIV>
+		<br>
+		</TD></TR>
+		</TABLE>
+		<!-- fin barre de sépration -->
+</td></tr>
+
+<!-- Texte Entete -->
+<tr><td align="center">
+	<table width="700" border="0" cellspacing="0" cellpadding="5">
+	<tr>
+	<!-- Parite gauche -->
+	<td>	
+	<font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="2">
+	<span class="nom">
+	<b>
+	Chic chic chic ! Un nouveau jeu !
+	<br>&nbsp;<br>
+	Et cette fois il n'y a rien à gagner, bien fait pour vous.
+	<br>&nbsp;<br>
+	La règle du jeu est simple (il faut bien que vous compreniez...), il faut attribuer le lit à la bonne zone. Cliquez sur un lit pour zoomer... A vos oreillers !
+	<br>&nbsp;<br>
+	</b>
+	</span>
+	</font>
+	</td</tr></table>
+</td></tr>
+<form>
+<!-- Texte Jeu -->
+<tr><td align="center">
+	<table width="700" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="130"><img src="img/spacer.gif" width="130" height="1" border="0" alt=""></td>
+		<td width="10"><img src="img/spacer.gif" width="10" height="1" border="0" alt=""></td>
+		<td width="190"><img src="img/spacer.gif" width="190" height="1" border="0" alt=""></td>
+		<td width="40"><img src="img/spacer.gif" width="40" height="1" border="0" alt=""></td>
+		<td width="130"><img src="img/spacer.gif" width="130" height="1" border="0" alt=""></td>
+		<td width="10"><img src="img/spacer.gif" width="10" height="1" border="0" alt=""></td>
+		<td width="190"><img src="img/spacer.gif" width="190" height="1" border="0" alt=""></td>
+		
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom01.htm','width=700,height=570')"><img src="img/a01.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit01" size="1" onChange="lit_change(form,'01');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops01" value="Ooooops !" onClick="ooops(form,'01');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom02.htm','width=700,height=570')"><img src="img/a02.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit02" size="1" onChange="lit_change(form,'02');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops02" value="Ooooops !" onClick="ooops(form,'02');">
+		</td>
+	</tr>
+
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom03.htm','width=700,height=570')"><img src="img/a03.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit03" size="1" onChange="lit_change(form,'03');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops03" value="Ooooops !" onClick="ooops(form,'03');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom04.htm','width=700,height=570')"><img src="img/a04.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit04" size="1" onChange="lit_change(form,'04');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops04" value="Ooooops !" onClick="ooops(form,'04');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom05.htm','width=700,height=570')"><img src="img/a05.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit05" size="1" onChange="lit_change(form,'05');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops05" value="Ooooops !" onClick="ooops(form,'05');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom06.htm','width=700,height=570')"><img src="img/a06.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit06" size="1" onChange="lit_change(form,'06');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops06" value="Ooooops !" onClick="ooops(form,'06');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom07.htm','width=700,height=570')"><img src="img/a07.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit07" size="1" onChange="lit_change(form,'07');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops07" value="Ooooops !" onClick="ooops(form,'07');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom08.htm','width=700,height=570')"><img src="img/a08.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit08" size="1" onChange="lit_change(form,'08');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops08" value="Ooooops !" onClick="ooops(form,'08');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom09.htm','width=700,height=570')"><img src="img/a09.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit09" size="1" onChange="lit_change(form,'09');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops09" value="Ooooops !" onClick="ooops(form,'09');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom10.htm','width=700,height=570')"><img src="img/a10.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit10" size="1" onChange="lit_change(form,'10');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops10" value="Ooooops !" onClick="ooops(form,'10');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom11.htm','width=700,height=570')"><img src="img/a11.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit11" size="1" onChange="lit_change(form,'11');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops11" value="Ooooops !" onClick="ooops(form,'11');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom12.htm','width=700,height=570')"><img src="img/a12.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit12" size="1" onChange="lit_change(form,'12');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops12" value="Ooooops !" onClick="ooops(form,'12');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom13.htm','width=700,height=570')"><img src="img/a13.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit13" size="1" onChange="lit_change(form,'13');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops13" value="Ooooops !" onClick="ooops(form,'13');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom14.htm','width=700,height=570')"><img src="img/a14.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit14" size="1" onChange="lit_change(form,'14');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops14" value="Ooooops !" onClick="ooops(form,'14');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom15.htm','width=700,height=570')"><img src="img/a15.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit15" size="1" onChange="lit_change(form,'15');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops15" value="Ooooops !" onClick="ooops(form,'15');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom16.htm','width=700,height=570')"><img src="img/a16.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit16" size="1" onChange="lit_change(form,'16');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops16" value="Ooooops !" onClick="ooops(form,'16');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom17.htm','width=700,height=570')"><img src="img/a17.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit17" size="1" onChange="lit_change(form,'17');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops17" value="Ooooops !" onClick="ooops(form,'17');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom18.htm','width=700,height=570')"><img src="img/a18.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit18" size="1" onChange="lit_change(form,'18');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops18" value="Ooooops !" onClick="ooops(form,'18');">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><a href="javascript:fenetre('zoom19.htm','width=700,height=570')"><img src="img/a19.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td></td>
+		<td align="left" valign="top">	
+		<select name="lit19" size="1" onChange="lit_change(form,'19');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops19" value="Ooooops !" onClick="ooops(form,'19');">
+		</td>
+		<td></td>
+		<td align="right"><a href="javascript:fenetre('zoom20.htm','width=700,height=570')"><img src="img/a20.jpg" width="128" height="96" border="0" alt=""></a><br>&nbsp;<br></td>
+		<td align="right"></td>
+		<td align="left" valign="top">	
+		<select name="lit20" size="1" onChange="lit_change(form,'20');">
+		<option value="0">S&eacute;lectionner une zone</option>
+		<option value="1">City of Myst</option>
+		<option value="2">Dulak's Harbor</option>
+		<option value="3">Freeport</option>
+		<option value="4">Grieg's End</option>
+		<option value="5">Guk</option>
+		<option value="6">Kaladim</option>
+		<option value="7">Katta Castellum</option>
+		<option value="8">Highpass Keep</option>
+		<option value="9">Kurns Tower</option>
+		<option value="10">Mistmoore Castle</option>
+		<option value="11">Najena</option>
+		<option value="12">Plane of Hate</option>
+		<option value="13">Plane of Justice</option>
+		<option value="14">Plane of Knowledge</option>
+		<option value="15">Plane of Valor</option>
+		<option value="16">Sanctus Seru</option>
+		<option value="17">Solusek's Eye (SolA)</option>
+		<option value="18">Thurgadin</option>
+		<option value="19">Tower of Frozen Shadow</option>
+		<option value="20">Unrest</option>
+		</select>
+		<br>&nbsp;<br>
+		&nbsp;<input type="button" name="oops20" value="Ooooops !" onClick="ooops(form,'20');">
+		</td>
+	</tr>
+	
+	
+	<tr> 
+		<td align="center" colspan="7"><font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="2"><b>Résultat</b></font>
+		<input name="resultat" align="LEFT" size="50" onFocus="blur();" value="">
+		<br>&nbsp;<br>
+		</td>
+	</tr>
+	<tr> 
+		
+		<td align="center" colspan="3"><input type="button" name="raz" value="Remise à zéro" onClick="razero(form);"></td>
+		<td></td>
+		<td align="center" colspan="3"> <input type="button" name="valide" value="Validation" onClick="valid(form);"></td>
+	</tr>
+	</table>
+
+</td></tr>
+</form>
+
+
+<!-- Frise du bas -->
+<tr><td align="center">
+<img src="../../../img/commun/frise01.gif" width="295" height="27" border="0" alt="">
+</td></tr>
+<!-- fin frise du bas -->
+
+</table>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<html><head><title>EQ Board</title></head>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#8080FF" VLINK="#8080FF">
+
+	<P>
+	<CENTER>
+	<FONT SIZE=7 FACE="'Impact'">EverQuest Board</FONT><br>
+	とりあえず、名前の欄にはＥＱ世界での名前を書いてね。
+	</CENTER>
+	<p>
+
+<center>No,3328</center>
+<h3><hr size=3>
+《最新の記事から20件》
+[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi?cmd=form">投稿(修正)する</a>]
+[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi">更新</a>]
+[<a href="http://www.mediamuse.co.jp/sarah/index.html" target="_top">終了</a>]
+[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi?cmd=rm">削除</a>]
+<hr size=3></h3><p>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>だから、早く入りなさいって＞ＴＭＣ</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>ikesarah</b></font> at 9.15(水)06:30
+<li><font size=-1>Number:0915063003</font> <!-- ns2.mediamuse.co.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+同じぐらいのレベルで１ｐａｒｔｙは組めるぞ（ｗ<br>
+ｎｅｅｄ Ｔａｎｋ（ｗ<br>
+<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>あ、見っけ =)</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Matador@vee</b></font> &lt;<a href="mailto:kuro777@ff.iij4u.or.jp">kuro777@ff.iij4u.or.jp</a>&gt; at 9.14(火)08:29
+<li><font size=-1>Number:0914082915</font> <!-- h018.p114.iij4u.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)</font> <br><br>
+うろうろしてたらここにたどり着きました。<br>
+Non Guildで暇な毎日です。。また遊んでください (w<br>
+では、またー。<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>ぬ？（ｗ</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Ikesarah</b></font> &lt;<a href="mailto:ikearah@mediamuse.co.jp">ikearah@mediamuse.co.jp</a>&gt; at 9.14(火)05:01
+<li><font size=-1>Number:0914050114</font> <!-- h158.p008.iij4u.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+死んでいたはずの、掲示板に書き込みが（ｗ<br>
+<br>
+＞祈願（MMのbreast）まで必死こきましょう。<br>
+<br>
+Aeonが言っていた黒Bracerもゲットしたいところ（ｗ<br>
+情報ほとんど無し（ｗ<br>
+<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>大発見。</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Swain@vee</b></font> at 9.8(水)18:29
+<li><font size=-1>Number:0908182948</font> <!-- INS31.sapporo-ap2.dti.ne.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)</font> <br><br>
+みっけた（w<br>
+祈願（MMのbreast）まで必死こきましょう。<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>レベル</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>ラヴ</b></font> at 8.5(木)00:14
+<li><font size=-1>Number:0805001412</font> <!-- h091.p008.iij4u.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+死んでるわけじゃないのに<br>
+なんでレベル上がらないのカシラ？<br>
+１日１ＢＵＢが精一杯。<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>おお、こんなPageがあったなんて（ｗ</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Mina</b></font> &lt;<a href="mailto:naohisa@lares.dti.ne.jp">naohisa@lares.dti.ne.jp</a>&gt; at 8.1(日)09:47
+<li><font size=-1>Number:0801094525</font> <!-- PPP12.mitaka-ap2.dti.ne.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+初めて知った・・・しかも掲示板まで（ｗ<br>
+<br>
+しかし、死に方ですか・・・<br>
+最近死んでないな・・・Kingに撲殺されたときだけかも・・・（ｗ<br>
+目の前にいるなら範囲Stun、Sleep、Charmを死ぬ気で掛け捲るけどね・・・<br>
+その間にGGとか発動してくれればもうけものだし(^^;;;<br>
+よほど予想外なSpawnしない限りOOM にはめったにならないように調整してますね。<br>
+一番減るのがBuff直後かな・・・<br>
+そもそも、Encって消費マナ少ないし、RecastTime長いの多いから他のクラスより<br>
+Mana減らすの辛いんですよね・・・(^^;;;<br>
+Stunでも消費２０と４０程度だしSleepでも似たようなものだしね・・・<br>
+Charmは２００近いけど１戦闘中に１回使うかどうかなので・・・<br>
+個人的には死んだ場合に謝るより何が問題だったか話し合うほうが良いような(^^<br>
+<br>
+しかし、他の人みてるとつくづく自分はSolo下手だなと実感してしまいまふ（TT<br>
+確かにSoloできはしますけど、Soloの方の効率はPartyの効率の１割程度な気分（ｗ<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>今日はありがとうございました。</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Makoto</b></font> at 7.10(土)10:39
+<li><font size=-1>Number:0710103915</font> <!-- cse4-29.ibaraki.mbn.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 95)</font> <br><br>
+ いきなりのTellにもかかわらず助けに来て下さって、まじで感謝してます。<br>
+一人奥で死んじゃって、それを回収する途中で死者続出という最悪の事態で<br>
+、自分達だけでは絶対無理でした(^^;;途中、他のメンバーが呼んだ人たちが<br>
+来てちょっとややこしくなってしまってすいませんでした。あの後は、皆<br>
+無事にGukを脱出することができました。また緊急時にTellするかもしれない<br>
+のでその時はよろしくお願いします（笑<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>大スクープ！！！</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Zann</b></font> &lt;<a href="mailto:iron@michinoku.ne.jp">iron@michinoku.ne.jp</a>&gt; at 7.9(金)15:20
+<li><font size=-1>Number:0709152051</font> <!-- 210.169.189.111 -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Mac_PowerPC)</font> <br><br>
+KwonryuのHP発見！（笑<br>
+<br>
+http://surf.to/kwon<br>
+<br>
+さぁぁチェッケラッ！！<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>死に方って言うか</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>ikesarah</b></font> &lt;<a href="mailto:ikesarah@mediamuse.co.jp">ikesarah@mediamuse.co.jp</a>&gt; at 7.7(水)18:16
+<li><font size=-1>Number:0707181252</font> <!-- 19.pool18.tokyo.att.ne.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)</font> <br><br>
+Healerのマナ申告は、まじめにやってほしいなと。<br>
+なくなってから（OOMの）申告されても、逃げ切れんと思うのだが。<br>
+こっちはHeal期待して、魔法打ってるわけだし。<br>
+ていうかね、ごめんの一言ぐらいあっても良かったんじゃないかと。<br>
+あれだけ俺が言って、しかもこっそりTELLで謝られた日にゃあ、なんかねー。<br>
+そんなに自分のミスが恥ずかしいのかね。俺なんかミスしすぎて恥ずかしくなくなってるのかな(笑)<br>
+プライドが高いのはわかるけど、それを前面に出されるとね。<br>
+腕がいいのはマジ認めてる。<br>
+でもミスしたときは一言誤ってくれると、気が納まるってもんだよ。<br>
+納得がいかなかったのはその部分だけ。<br>
+つーかマジ申告してくれよマナ残量、頼むから。<br>
+全員のマナを見てタンクもプルしに動くんだしさ。<br>
+ってことでひとつ(笑)。<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>kekeke</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norton</b></font> &lt;<a href="mailto:norton@fat.coara.or.jp">norton@fat.coara.or.jp</a>&gt; at 7.7(水)16:55
+<li><font size=-1>Number:0707165535</font> <!-- hita28.coara.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; RIMNET01)</font> <br><br>
+いや、ある意味Tank3はすばらC<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>さよならCazicこんにちはGuk Bottom（深い意味なし）</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Zann</b></font> &lt;<a href="mailto:iron@michinoku.ne.jp">iron@michinoku.ne.jp</a>&gt; at 7.7(水)12:45
+<li><font size=-1>Number:0707124523</font> <!-- pm3-tel37.michinoku.ne.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 4.01; Mac_PowerPC)</font> <br><br>
+みんなカキコしてるので、私もしたくなりました。（笑<br>
+<br>
+昨日はパーティ運に恵まれず、<br>
+（組んだ外人パーティはZealot一匹倒して大喜びしてた。カンベンして。笑）<br>
+早々に抜けてパーティ探すも、ない。<br>
+やっぱりCazicがオイシイLvを過ぎると、パーティ見つけるの大変ですね。<br>
+Guildsayで募集も効果無し。（笑<br>
+<br>
+そのうちに、いつものごとくZoneで落ちたので、そのまま寝ました。<br>
+<br>
+私的には、死んだときよりパーティ見つからない時の方が、<br>
+泣けますね。（笑<br>
+<br>
+というわけで、今日もInvite Plz(w<br>
+今夜は朝までやれまっせ。<br>
+<br>
+（ちなみにレベル離れて一番ヤバイのは前衛ですね。（汗）<br>
+頑張りますけど、要らないときは言って下さい。いやマジで。（笑））<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>いまいちｗ</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norton</b></font> &lt;<a href="mailto:norton@fat.coara.or.jp">norton@fat.coara.or.jp</a>&gt; at 7.6(火)17:10
+<li><font size=-1>Number:0706171033</font> <!-- hita27.coara.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; RIMNET01)</font> <br><br>
+なんか日本語になってないなｗ<br>
+意味わかるかな？ｗ<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>昨日の件</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norton</b></font> &lt;<a href="mailto:norton@fat.coara.or.jp">norton@fat.coara.or.jp</a>&gt; at 7.6(火)17:09
+<li><font size=-1>Number:0706170926</font> <!-- hita27.coara.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; RIMNET01)</font> <br><br>
+色々考えたんだが<br>
+まー固定６人でやってるPartyってなかなかないと思うんだ<br>
+でさ、ほじくりかえしたくないんだが<br>
+何はとも納得いった死に方ってなかなかないと思う<br>
+まー俺が道に迷って死ぬのはちと違うけど<br>
+でまー色々あると思うけど<br>
+そこは、ぐっとこらえてkekeke OKOKですまさない？<br>
+Syoichiが死んだときもたぶんかなり納得いってないと思えた<br>
+けどSyoichiは　あーゆう感じだったし<br>
+で納得いかないときはこのBBS使わせてもらうとか　どう？<br>
+きのう早めに落ちたけど、どーも眠いってゆーより<br>
+いまいち、やる気が出なかった<br>
+Gameやってるときはまじで楽しくやりたいっすｗ　どう？<br>
+<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>で</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>ikesarah</b></font> at 7.5(月)21:53
+<li><font size=-1>Number:0705215237</font> <!-- ns2.mediamuse.co.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+やっぱＥＮＣ欲しいな＞Ｍｉｎａ<br>
+さて、あっちの世界に行って来ま。<br>
+<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>kekeke</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norton</b></font> &lt;<a href="mailto:norton@fat.coara.or.jp">norton@fat.coara.or.jp</a>&gt; at 7.5(月)19:44
+<li><font size=-1>Number:0705194430</font> <!-- hita23.coara.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; RIMNET01)</font> <br><br>
+あと０.５なんだ<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>endure boots plz</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Clair</b></font> &lt;<a href="mailto:j_toyo@db3.so-net.ne.jp">j_toyo@db3.so-net.ne.jp</a>&gt; at 7.5(月)17:38
+<li><font size=-1>Number:0705173853</font> <!-- okigate2.oki.co.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+今日遅刻しました（汗<br>
+<br>
+なぜ、”目標level 40 lol”などと言ってるかというと<br>
+最近ちょっと焦りがあるからです<br>
+なるべく他の人と差をつけて、どんどん先に行きたいからですね<br>
+もう、2,3levelあればNajenaの時だって<br>
+Drelznaを含んだローテーションで巡回できただろうしね（ＴＴ<br>
+昔、人全然いなかったし<br>
+<br>
+Norton, Ikesarah, 私の３人が今のペースでがんばっていれば<br>
+Norn, Archeは今ぐらいのlevel差があってもpartyとしては<br>
+ぜんぜん問題ないと思う<br>
+個々の職業を考慮に入れると、よけいそう<br>
+<br>
+個人的に、固定メンバーでやるほうが好きなので<br>
+（メリットも大きいし）<br>
+Nornには、いて欲しいです<br>
+<br>
+※それにしても、昔自分がlevel 19の頃、chitin shell shieldでcamp中に<br>
+guk bottomの入り口で出会った憧れの人：Raganork (Barbarian/shaman,<br>
+当時level 40)と同じlevelになったというのは非常に感慨深いです<br>
+（本当はあと1bubble足りないけど(^^;）<br>
+<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>つーかね</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>ikeesarah</b></font> &lt;<a href="mailto:ikesarah@mediamuse.co.jp">ikesarah@mediamuse.co.jp</a>&gt; at 7.5(月)10:29
+<li><font size=-1>Number:0705102832</font> <!-- h211.p008.iij4u.or.jp -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)</font> <br><br>
+もうすでに終わり（Ｌｖ５０）は見えてるわけで、しかもＨＥＬＬっつーふざけた仕様のおかげで、逆にＬｖ５以上は開かないでしょ。<br>
+死んでブルーになるのは誰でも同じ。みんなもそれは十分わかってる。<br>
+ただそれを表に出すと、一緒にやってる人たちまでブルーになってしまわないかな？って事を言いたいだけ。<br>
+マイナス方向に考えずに常に上を見て欲しいなと。<br>
+ちなみに俺は見えないところでかなり死んでます。ええ。<br>
+あと、誰とは言わないけど、レベルの差がつくと非常に悔しい相手もいます(笑)。<br>
+死んだときはそっちの方が堪えます。でも誰にも愚痴こぼしてないし、言っても意味ないし。<br>
+なんか、めちゃくちゃな文章になってるけど勘弁プリーズってことで。<br>
+あと敵対心むき出しもよくないよ、みんなどうして良いかわからなくなるから(笑)<br>
+で今日は早めにアソコいくべ。ＥＸＰがっぽだぞ(笑)<br>
+<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>Clair</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norton</b></font> &lt;<a href="mailto:norton@fat.coara.or.jp">norton@fat.coara.or.jp</a>&gt; at 7.5(月)10:06
+<li><font size=-1>Number:0705100617</font> <!-- 210.151.156.100 -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; RIMNET01)</font> <br><br>
+たぶん今日はClair死ねるな<br>
+今日できるかな？<br>
+少し心配<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>Norn</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norton</b></font> &lt;<a href="mailto:norton@fat.coara.or.jp">norton@fat.coara.or.jp</a>&gt; at 7.5(月)10:04
+<li><font size=-1>Number:0705100411</font> <!-- 210.151.156.100 -->
+<font size=-1>Agent:Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; RIMNET01)</font> <br><br>
+おげ　つーか　CRLいないしな<br>
+探すのめんどいし<br>
+まー死んで落ち込んでてもさ<br>
+Manaの報告さえしてくれればOK<br>
+で寝るｗ<br>
+</ul></blockquote>
+<hr size=3>
+<table width=100% border=0 cellpadding=3 cellspacing=3><tr><td bgcolor=#8080FF><font size=+1 color=#FFFFFF><b>追加</b></font></td></tr></table>
+<ul><li>by <font size=+1 color=#8080FF><b>Norn</b></font> &lt;<a href="mailto:aloser@geocities.co.jp">aloser@geocities.co.jp</a>&gt; at 7.5(月)03:13
+<li><font size=-1>Number:0705031336</font> <!-- MITcc-01p63.ppp.odn.ad.jp -->
+<font size=-1>Agent:Mozilla/4.6 [ja] (Win98; I)</font> <br><br>
+もう少し素直に言うと、<br>
+これからもEQを続けるために、Partyに入れて欲しいです。<br>
+基本的に普通にPartyで遊んでいる分にはEQは楽しく、1日に2回も死んだり<br>
+Lvが下がったりしない限り下に書いたような気分にはならないのですが、<br>
+もしそうなった時には、(誰だってそういう状況ではモニターの前で、くそ、ふざけんじゃねーぞ<br>
+とか、むかつくぜ、EQなんか止めたる位のことは言っているはずですけどね。)<br>
+下に書いたことを念頭において接してくれると嬉しいです。<br>
+NortonにTellしたときは、SpectreでSoloしていたら、Spookした1匹目がSpawnした2匹目を連れて来て<br>
+死んでLvが下がって、なおかつ目の前のSlayersにLvが抜かれていて、再度挑戦しても歯が立たず、<br>
+しかも当のNortonは他のPartyにいて行き場が無くて、完全に混乱した状態だったのです。<br>
+<br>
+</ul></blockquote>
+<br><h4><hr size=3>[<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi?cmd=form">投稿/修正する</a>] [<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi">更新</a>] [<a href="http://www.mediamuse.co.jp/sarah/index.html" target="_top">終了</a>] [<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi?cmd=rm">削除</a>] [<a href="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi?ff=453">↓次のページ</a>] <hr size=3></h3>
+<h5 align=right><a href="http://www.rescue.ne.jp/" target="_top"><img src="http://www.mediamuse.co.jp/sarah/cgi/bbs/eq.cgi?cmd=copyright" border=0 alt="MiniBBS2 v1.33"></a></h4>
+</body></html>
+

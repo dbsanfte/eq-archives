@@ -1,0 +1,76 @@
+<HTML><HEAD><TITLE>とりあたまカレンダー</TITLE>
+<STYLE>
+<!--
+A:link { text-decoration:none font-weight:normal;  color:#408080 }
+A:visited { text-decoration:none font-weight:normal; color:#7869B1 }
+A:active { text-decoration:underline color:#cf5090 }
+A:hover { text-decoration:underline color:#ff80c0 }
+.style01:link { text-decoration:none; font-weight:normal;  color:#408080 }
+.style01:visited { text-decoration:none; font-weight:normal; color:#7869B1 }
+.style01:active { text-decoration:none; font-weight:bold; color:#cf5090 }
+.style01:hover { text-decoration:none; font-weight:bold; color:#ff80c0 }
+-->
+</STYLE>
+</HEAD><BODY BGCOLOR="ffc0cb" BACKGROUND="http://www2u.biglobe.ne.jp/~ulf/!images/back.gif"  TEXT="745C74" LINK="4f7c4f" VLINK="6859a1" ALINK="cf5090">
+<FORM METHOD="GET" ACTION="koyomi.cgi">
+
+<CENTER>
+<IMG SRC="karenda-.gif" ALT="とりあたまカレンダー" HEIGHT=139 WIDTH=191><BR><BR>
+物忘れ防止用の覚え書きカレンダーです<BR>
+あなたの誕生日、ゲームイベント、ゲームの発売日など<BR>
+どんどん気軽に登録して行ってあげてくださいね<BR>
+<BR>
+<HR><BR>
+<B>【現在は 11月18日 (木) 14:07 です】</B><BR>
+<BR>
+
+<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=2>
+<TR><TH colspan=7 BGCOLOR=#aaaaaa><FONT SIZE=4 color=ffffff>1999年 11月</FONT></TH></TR>
+<TR BGCOLOR=#ffffff><TD><FONT color=cf5090>SUN</FONT></TD><TD>MON</TD><TD>TUE</TD>
+<TD>WEN</TD><TD>THU</TD><TD>FRI</TD><TD><FONT color=4169E1>SUT</FONT></TD></TR>
+<TR BGCOLOR=#ffffff><TH><FONT color=cf5090 size=5>　</FONT></TH><TH><FONT size=5>1</FONT></TH><TH><FONT size=5>2</FONT></TH><TH><FONT size=5>3</FONT></TH><TH><FONT size=5>4</FONT></TH><TH><FONT size=5>5</FONT></TH><TH><FONT color=RoyalBlue size=5>6</FONT></TH></TR>
+<TR BGCOLOR=#ffffff><TH><FONT color=cf5090 size=5>7</FONT></TH><TH><FONT size=5>8</FONT></TH><TH><FONT size=5>9</FONT></TH><TH><FONT size=5>10</FONT></TH><TH><FONT size=5>11</FONT></TH><TH><FONT size=5>12</FONT></TH><TH><FONT color=RoyalBlue size=5>13</FONT></TH></TR>
+<TR BGCOLOR=#ffffff><TH><FONT color=cf5090 size=5>14</FONT></TH><TH><FONT size=5>15</FONT></TH><TH><FONT size=5>16</FONT></TH><TH><FONT size=5>17</FONT></TH><TH><FONT size=5>18</FONT></TH><TH><FONT size=5>19</FONT></TH><TH><FONT color=RoyalBlue size=5>20</FONT></TH></TR>
+<TR BGCOLOR=#ffffff><TH><FONT color=cf5090 size=5>21</FONT></TH><TH><FONT size=5>22</FONT></TH><TH><FONT size=5>23</FONT></TH><TH><FONT size=5>24</FONT></TH><TH><FONT size=5>25</FONT></TH><TH><FONT size=5>26</FONT></TH><TH><FONT color=RoyalBlue size=5>27</FONT></TH></TR>
+<TR BGCOLOR=#ffffff><TH><FONT color=cf5090 size=5>28</FONT></TH><TH><FONT size=5>29</FONT></TH><TH><FONT size=5>30</FONT></TH><TH><FONT size=5></FONT></TH><TH><FONT size=5></FONT></TH><TH><FONT size=5></FONT></TH><TH><FONT color=RoyalBlue size=5></FONT></TH></TR>
+</TABLE>
+【<A HREF="koyomi.cgi?year1=1999&month1=10">先月</A>】　　　　　　　　　　　【<A HREF="koyomi.cgi?year1=1999&month1=12">来月</A>】<BR>
+<INPUT TYPE=text NAME="year1" VALUE="1999" SIZE="5">年
+<INPUT TYPE=text NAME="month1" VALUE="11" SIZE="5">月を
+<INPUT TYPE=submit NAME="cc" VALUE="見る">
+<INPUT TYPE=reset VALUE="やめ"></FORM>
+
+<HR>
+<BR>
+<FONT SIZE=4><B>● 今月の予定 ●</B></FONT><BR>
+<BR>
+<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=3 WIDTH=100% >
+<TR BGCOLOR=#aaaaaa><TH NOWRAP><FONT color=ffffff>日付</FONT></TH><TH NOWRAP><FONT color=ffffff>予定</FONT></TH><TH NOWRAP><FONT color=ffffff>コメント</FONT>　　　　　</TH></TR><TR BGCOLOR=#ffffff><TH NOWRAP>02</TH><TH NOWRAP>大移動日</TH><TD>Diablo2発売予定日</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>03</TH><TH NOWRAP>文化の日</TH><TD>休日。「文字化けの日」では無い。</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>15</TH><TH NOWRAP>七五三</TH><TD>左上＞ニュートラル＞右下というコマンドではない（ｗ 千歳飴食うべし☆ミ</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>16</TH><TH NOWRAP>DIABLO2発売予定日</TH><TD>予約した？</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>18</TH><TH NOWRAP>じゅんぺー誕生日</TH><TD>23歳らしいゾ。</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>23</TH><TH NOWRAP>勤労感謝の日</TH><TD>休日。勤労してないんですが休んでも宜しいんでしょうか…？</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>26</TH><TH NOWRAP><A HREF="http://www.panda.co.jp/index2a.htm">QuakeIIIArena発売！！！</A></TH><TD>ついに、ついに！Ｐ＆Ａから発売決定！待ちに待った超大作！買え！そしてやろう！いや！殺れ！</TD></TR>
+<TR BGCOLOR=#ffffff><TH NOWRAP>26</TH><TH NOWRAP>ＡｏＫ日本語版発売</TH><TD>あおき一緒にやろーよ☆ミ</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<BR>
+<B>▼ 登録はこちら ▼</B><br>
+タグは全て無効にしてあるので注意なさってくださいね<BR>
+<FORM METHOD="GET" ACTION="koyomi.cgi">
+<INPUT TYPE=hidden NAME="year1" VALUE="1999" >
+<INPUT TYPE=hidden NAME="month1" VALUE="11" >
+<TABLE  border=0><TR><TD nowrap><B>予定日</B>（半角でお願いします）</TD><TD><INPUT TYPE=text NAME="w-month" SIZE="3" VALUE="11">月
+<INPUT TYPE=text NAME="w-day"  SIZE="3">日</TD></TR>
+<TR><TD nowrap><B>予定内容</B>（全角で20文字まで）</TD><TD><INPUT TYPE=text NAME="what"  SIZE="20"></TD></TR>
+<TR><TD nowrap><B>関連者メール</B>or<B>関連サイト</B></TD><TD><INPUT TYPE=text NAME="mail"  SIZE="30"></TD></TR>
+<TR><TD nowrap><B>コメント</B>（全角で80文字まで）</TD><TD><INPUT TYPE=text NAME="comment"  SIZE="60"></TD></TR>
+<TR><TD></TD><TD><INPUT TYPE=submit NAME="cc" VALUE="登録するにゃ～">
+<INPUT TYPE=reset VALUE="猫リセットボタン"></TD></TR></TABLE>
+</FORM>
+<HR><DIV ALIGN=right><FORM METHOD="GET" ACTION="koyomi.cgi">
+<INPUT TYPE=text NAME="pass"  SIZE="10"><INPUT TYPE=submit VALUE="記事管理"></FORM></DIV>
+<H5 ALIGN=right><A HREF="http://www.cup.com/yui/index.html">こよみ(Free)</A></H5></BODY></HTML>
+
