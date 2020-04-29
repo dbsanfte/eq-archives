@@ -1,0 +1,113 @@
+
+	<HTML><HEAD><TITLE>Forums</TITLE><LINK REL="stylesheet" TYPE="text/css" HREF="foren.css">
+	<script language="JavaScript" type="text/JavaScript" src="/js/scriptloft.js"></script></HEAD>
+	<BODY MARGINHEIGHT="0" TOPMARGIN="0" text=#FFFFFF background=grafix/bgmain_gameloft.gif link=#FACF08 vlink=#FFFFFF alink=#AAAAAA>
+ 
+<TABLE BORDER="0" WIDTH="100%" align="center"><TR><TD align="center">
+<table width="753" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="/imagenav2/blank.gif" width="2" height="2"></td>
+    <td><img src="/imagenav2/blank.gif" width="2" height="2"></td>
+    <td><img src="/imagenav2/blank.gif" width="468" height="2"></td>
+    <td><img src="/imagenav2/blank.gif" width="9" height="2"></td>
+    <td><img src="/imagenav2/blank.gif" width="2" height="2"></td>
+  </tr>
+  <tr bgcolor=#304131>
+      <td align="center"><a href="http://www.gameloft.com"><img src="/imagenav2/gllogo.gif" width="134" height="54" border="0" alt="GameLoft.com"></a><br>
+      <img src="/imagenav2/blank.gif" width="134" height="8"></td>
+    <td align="left"><img src="/imagenav2/blank.gif" width="8" height="62"></td>
+      <td valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="468" height="60">
+          <param name=movie value="/jeux/jeuxroles/everquest/images/banherc.swf">
+          <param name=quality value=high>
+          <embed src="/jeux/jeuxroles/everquest/images/banherc.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="468" height="60">
+          </embed> 
+        </object><br>
+<img src="/imagenav2/blank.gif" width="468" height="2"></td>
+    <td><img src="/imagenav2/blank.gif" width="9" height="62"></td>
+      <td align="center"><a href="http://www.gameloft.com"><img src="/imagenav2/gllogo.gif" width="134" height="54" border="0" alt="GameLoft.com"></a><br>
+      <img src="/imagenav2/blank.gif" width="134" height="8"></td>
+  </tr>
+</table>
+  
+  <table width="753" border="0" cellspacing="0" cellpadding="0" background="/jeux/jeuxroles/everquest/images/headeqloft1.jpg">
+    <tr bgcolor=#304131> 
+      <td> 
+        <table width="753" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td valign="top" colspan="2" background=""><!-- #BeginLibraryItem "/Library/buttonsfr.lbi" --><a href="/download/index.html"><img src="/imagenav2/jouermaintenant.gif" width="259" height="17" border="0"></a><a href="/index.html"><img src="/imagenav2/nav00.gif" width="24" height="17" border="0" alt="Accueil"></a><a href="/download/index.html"><img src="/imagenav2/nav01.gif" width="24" height="17" border="0" alt="Game Service"></a><a href="javascript:login()"><img src="/imagenav2/nav02.gif" width="24" height="17" border="0" alt="Log In"></a><a href="#"><img src="/imagenav2/nav03.gif" width="24" height="17" border="0" alt="Recherche : bient&ocirc;t disponible"></a><a href="#"><img src="/imagenav2/nav04.gif" width="24" height="17" border="0" alt="Aide : bient&ocirc;t disponible"></a><a href="/download/index.html"><img src="/imagenav2/nav05.gif" width="24" height="17" border="0" alt="T&eacute;l&eacute;charger"></a><a href="#"><img src="/imagenav2/nav06.gif" width="24" height="17" border="0" alt="Boutique : bient&ocirc;t disponible"></a><a href="/index.html"><img src="/imagenav2/nav07.gif" width="91" height="17" border="0" alt="Section Jeux"></a><a href="/outils/index.html"><img src="/imagenav2/nav08.gif" width="101" height="17" border="0" alt="Section Outils"></a><a href="/index.html"><img src="/imagenav2/nav09.gif" width="134" height="17" border="0" alt="Section Lifestyle"></a><!-- #EndLibraryItem --></td>
+          </tr>
+          <tr> 
+            <td background=""><img src=grafix/headeqloft.jpg width="549" height="84"><br>
+            </td>
+            <td background=""><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="200" height="79">
+                <param name=movie value="/images/login.swf">
+                <param name=quality value=high>
+                <embed src="/images/login.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="200" height="79">
+                </embed> 
+              </object></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  
+ 	  <table width="753" height=21 border="0" cellspacing="0" cellpadding="0" background=grafix/searchnav_gameloft.gif>
+		 <tr>
+		 	<td >
+			&nbsp;&nbsp;<a href="../../index.html"><font face="Arial, Helvetica, 
+			sans-serif" size="1" color="#1C3800">Accueil</font></a>
+			<font face="Arial, Helvetica, sans-serif" size="1" color="#1C3800">&gt;</font>
+			<font face="Arial, Helvetica, sans-serif" size="1" color="#1C3800"><i>Forum</i></font>
+			</td>
+		</tr>
+	  </table>
+        </td>
+    </tr>
+  </table>
+ 
+		<TABLE BORDER=0  width="753" align=center>
+		<tr>
+			<td><font face="verdana" size=-2> <a href="Javascript:login('','c')" class="forenselect">
+				<img src=grafix/register_gameloft.gif border="0" alt="" align="center">s'enregistrer</a></td>
+			<td><font face="verdana" size=-2> <a href="./login.php?id=1" class="forenselect">
+				<img src=grafix/login_gameloft.gif border="0" alt="" align="center">login</a></td>
+			<td><font face="verdana" size=-2> <a href="./profile.php?id=1" class="forenselect">
+				<img src=grafix/profile_gameloft.gif border="0" alt="" align="center">profil</a></td>
+			<td align=center valign=middle colspan=2 rowspan=2><font face="verdana" size=-1> <b>Bienvenue</b><br>
+	<b>Anonyme</b>
+			</td>
+			</tr>
+			<tr>
+				<td><font face="verdana" size=-2> <a href="./search.php?id=1" class="forenselect">
+					<img src=grafix/search_gameloft.gif border="0" alt="" align="center">recherche</a></td>
+				<td><font face="verdana" size=-2> <a href="./rules.php?id=1" class="forenselect">
+					<img src=grafix/rules_everquest.gif border="0" alt="" align="center">règlements</a></td>
+				<td><!--<font face="verdana" size=-2> <a href="./help.php?id=1" class="forenselect">
+					<img src=grafix/help_gameloft.gif border="0" alt="" align="center">aide</a>--></td>
+			</tr>
+			<tr>
+				<td colspan=2 align=left valign=top><br><font face="verdana" size=-2> Membres inscrits: <b>145150</b>
+				<br><font face="verdana" size=-2> bienvenue à notre dernier membre en date : <b>LINAS</b><br><font face="verdana" size=-2> nombre de membres actuellement en ligne : <b>4</b></td>
+				<td colspan=2 align=center>
+				</td>
+			</tr>
+			</table>
+	
+		 <br>
+		<table WIDTH=753 align=center BORDER=0  bgcolor=#FACF08 cellpadding=3 cellspacing=1>
+		<tr>
+			<td background=grafix/bgmain_gameloft.gif align=center >
+				<B><font face="verdana" size=-1> <font color=#FFFFFF> Gameloft Forum</B>
+		 	</td>
+		</tr>
+		</table>
+	<TABLE BORDER=0 WIDTH=753 cellpadding=3 cellspacing=1 bgcolor=#FACF08  align=center><TR>
+				<TD bgcolor=#2E3280 width=200 valign=topline>
+
+  <font face="verdana" size=-1> <font color=#D0B94C> <b>Nouvelles du forum</b></font><p><font face="verdana" size=-2> [ <b></b> ]<br></center><p>Nombre de forums: <b>29</b><br><p></TD>
+<TD bgcolor=#2E3280 valign=topline rowspan=2><font face="verdana" size=-1> <font color=#D0B94C> <b>Résumé des forums</b></FONT><p>
+<TABLE BORDER=0 width=100% CELLPADDING=6 CELLSPACING=2 bgcolor=#FACF08 border=1>
+</TABLE></td><TD bgcolor=#2E3280 width=170 valign=topline rowspan=2><font face="verdana" size=-1> <font color=#D0B94C>
+				<b>Favoris</b></FONT></font><BR><br><br><TABLE width=100% border=0 cellspacing=0 callpadding=0><TR><td bgcolor=#2E3280><br><p></TD></TR></TABLE></TD></TR>
+<TR><TD bgcolor=#2E3280 valign=topline width=200><font face="verdana" size=-1> <font color=#D0B94C> <b>catégories</b></font><p><font face="verdana" size=-2>- <a href="./indexx.php?k=1"><font color=#D0B94C>FORUMS GAMELOFT</a></font><br><div align=justify>&nbsp;&nbsp;Bienvenue sur le forum GameLoft ! Ici, tu pourras discuter pendant des heures avec les fous de strategie, d'action, de réflexion ou de simulation. Bref de tous les jeux en ligne existants et à venir ! Partage tes informations, tes idées, lance des débats et des défis... Ce lieu d'échange est là pour toi !</div><p>- <a href="./indexx.php?k=3"><font color=#D0B94C>FORUMS EVERQUEST</a></font><br><div align=justify>&nbsp;&nbsp;Bienvenue sur les forums d'EQLoft auguste aventurier aventurier ! Fais une halte dans cette humble taverne, partage une bonne pinte d'hydromel avec les autres voyageurs et échange tes souvenirs d'aventures, achète, vend et troque les trésors que tu possèdes ou les connaissances rares qui t'ont été incultquées. Tous sont conviés en cet endroit, vétérans comme graines de héros, alors pousse la porte et rejoins nous !</div><p>- <a href="./indexx.php?k=4"><font color=#D0B94C>FORUMS DE LA NATION ELFE</a></font><br><div align=justify>&nbsp;&nbsp;Bienvenue sur les forums de la Nation Elfe ! Notre guilde lutte contre le mal sur le serveur Karana et oeuvre à l'union du peuple elfe sous l'égide d'Elandil, fils de Tunare.</div><p>- <a href="./indexx.php?k=5"><font color=#D0B94C>FORUMS DE LA FRATERNITE</a></font><br><div align=justify>&nbsp;&nbsp;Bienvenue à vous sur les Forums de la Faternité de Norrath. Notre guilde officie sur le serveur the 7th Hammer et prône l'union de toutes les races dans la paix. </div><p></TD></TR></TABLE><br><font face="verdana,arial"><CENTER><FONT SIZE=-2 COLOR=AAAAAA>&copy 2000 by Game
+	<font color=#FFFF00>Loft</font>.com<BR>adapted by Gameloft.com</FONT></CENTER></FONT><br><br>

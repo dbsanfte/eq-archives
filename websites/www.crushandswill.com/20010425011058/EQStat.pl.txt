@@ -1,0 +1,180 @@
+#!/usr/bin/perl -w
+##############################################################################
+# Name: EQStat.pl - Everquest status server parsing script                   #
+# Author: Bertog Stinkyfoots (Keith Greene) <Bertog@crushandswill.com>       #
+# Description: This script querries the Everquest Status server and returns  #
+# the results in HTML format. Alternate use: Pass it a server name and it    #
+# will only return the results for that server, eg: EQStat.pl?server=Povar   #
+# Note that spaces in server names must be replaced with the + (plus) sign,  #
+# eg: EQStat.pl?server=Test+Server                                           #
+# This script is also available in php flavor                                #
+#                                                                            #
+# If you use this script on your site, please post a link to                 #
+# http://www.crushandswill.com and give me a little credit                   #
+#                                                                            #
+# official download: http://www.crushandswill.com/stat.php3                  #
+##############################################################################
+# COPYRIGHT NOTICE                                                           #
+# Copyright 2001 Keith Greene.  All Rights Reserved.                         #
+#                                                                            #
+# EQStat may be used and modified free of charge by anyone so                #
+# long as this copyright notice and the comments above remain intact.  By    #
+# using this this code you agree to indemnify Keith Greene from any          #
+# liability that might arise from it's use.                                  #  
+#                                                                            #
+# Selling the code for this program without prior written consent is         #
+# expressly forbidden.  In other words, please ask first before you try and  #
+# make money off of my program.                                              #
+#                                                                            #
+# Obtain permission before redistributing this software over the Internet or #
+# in any other medium.	In all cases copyright and header must remain intact.#
+##############################################################################
+
+print "Content-type: text/html\n\n";
+    use strict;
+    use Socket;
+    my ($in, @in, $server, $remote, $port, $iaddr, $paddr, $proto, $line, $trlen, $trigger, $cz, $zond, $zn, $junk, $serv, $zct, $zone, $zones, @servlist, @usr, @zone, $cht, $us1, $us2, $ct, $ud, @svrst, $zoneu, $zonedown, $znstatus, $plyct, $tm1, $tm2, $updnclr);
+    $in = $ENV{'QUERY_STRING'};
+    @in = split(/=/,$in);
+    @in[1] =~ s/\+/ /g;
+    $server = @in[1];
+# set up vars for status server connection
+    $remote  = 'status.everquest.com';
+    $port    = 24252;
+    $iaddr   = inet_aton($remote)               || die "no host: $remote";
+    $paddr   = sockaddr_in($port, $iaddr);
+    $proto   = getprotobyname('udp');
+
+# initiate the connection to the status server
+    socket(SOCK, PF_INET, SOCK_DGRAM, $proto)  || die "socket: $!";
+    connect(SOCK, $paddr)    || die "connect: $!";
+
+# Set up the FFFF0100 command(world server list) as $trigger and send it to the status server
+    $trigger = chr(hex('FF')).chr(hex('FF')).chr(hex('01')).chr(hex('00'));
+    send(SOCK, $trigger,0);
+    recv(SOCK, $junk, 4096, 0);			# Grab all the data the server sends back
+      $serv = substr($junk, 4,1);     		# Grab the number of servers in the list
+      $serv=ord($serv); 			# convert to dec
+      $zone = substr($junk, 5,1);		# grab zones per server
+      $zone=ord($zone); 			# convert to dec
+$zones = substr($junk, 6);			# Grab the rest of the data (Server names)
+@servlist = split(chr(hex('00')), $zones);	# Split on NULL into @zonelist array
+#print @servlist[1], "<BR>";
+
+# set up the FFFF0200 command (World Server Up/Down Flags) as $trigger and send it to the status server
+    $trigger = chr(hex('FF')).chr(hex('FF')).chr(hex('02')).chr(hex('00'));
+    send(SOCK, $trigger,0);
+    recv(SOCK, $junk, 4096, 0);			# Grab all the data the server sends back
+$ct = 0;
+while($ct<=length($junk)){
+      $cht = ord(substr($junk, 4+$ct,1));		# Grab the number of Chat Servers
+
+	$ud =ord($cht); 
+	if($cht==0){
+		@svrst[$ct]="Down";
+	}
+	if($cht==1){
+		@svrst[$ct]="Up";
+	}
+	if($cht==2){
+		@svrst[$ct]="02";
+	}
+	if($cht==3){
+		@svrst[$ct]="03";
+	}
+	$ct++;
+}
+
+# Set up the FFFF0300 command(Actual zone data) as $trigger and send it to the status server
+    $trigger = chr(hex('FF')).chr(hex('FF')).chr(hex('03')).chr(hex('00'));
+    send(SOCK, $trigger,0);
+    recv(SOCK, $junk, 4096, 0);			# Grab all the data the server sends back
+      $cht = ord(substr($junk, 4,1));		# Grab the number of Chat Servers
+$ct = 0;
+while($ct<$cht){
+      $us1 = ord(substr($junk, (5+$ct),1));		# Grab the number of Chat Server users in 2 passes
+      $us2 = ord(substr($junk, (6+$ct),1));		# 
+      @usr[$ct] = int($us1.$us2);			# concat into a readable user count
+$ct++;
+}
+      $us1 = ord(substr($junk, 7,1));		# Grab the number of World Servers
+$zct=0;
+while($zct<$us1){
+	$us2 = substr($junk, (7+($zct*19)), 19);					# Grab the last 19 bytes of data
+		$tm1 = unpack "H*", substr($us2, 1, 1);
+		$tm2 = unpack "H*", substr($us2, 2, 1);
+		@usr[$ct] = hex($tm1.$tm2);						# Grab the user count for this server (2 bytes)
+		$cz=0;
+		$zn = '';
+		while($cz<16){								# Cycle through the last 16 bytes of data
+		$zn .= unpack "B*", reverse pack "I*", (ord(substr($us2, (4+$cz), 1)));	# Convert to binary & concat it into a list of zone up/down flags
+		$cz++;
+		}
+		@zone[$ct]=$zn;								# Assign flags to @zone array
+		$ct++;
+		$zct++;
+	}
+
+if(!$server){
+$ct=1;
+while($ct<=@servlist){
+$plyct = $plyct+@usr[$ct];
+$ct++;
+}
+print "<center><font size=-2 face='Arial, Helvetica'> ", $plyct, " EQ players online</font></center>";
+print "<center><table border=0><tr><td align=left><font size=-2 face='Arial, Helvetica'>Server Name</font></td><td align=center><font size=-2 face='Arial, Helvetica'>Status</font></td><td align=center><font size=-2 face='Arial, Helvetica'>Players</font></td><td align=right><font size=-2 face='Arial, Helvetica'>Zone Status</font></td></tr>\n";
+$ct=0;
+while($ct<@servlist){
+	if(@servlist[$ct]=="Chat Server"){
+		if(@usr[$ct]>0){
+		@svrst[$ct]="Up";
+		} else {
+		@svrst[$ct]="Down";
+		}
+	}
+if(@svrst[$ct] eq "Up" && @usr[$ct]==0){
+	@svrst[$ct]="Link";
+	}
+		@zone[$ct] =~ s/0//g;
+		$zoneu = length(@zone[$ct]);
+		if(($zones-$zoneu)>0){
+			$zonedown = $zones-$zoneu;
+			$znstatus = $zonedown." zones down";
+		} else {
+			$znstatus="All zones up";
+		}
+if(@svrst[$ct] eq "Up") {
+			$updnclr="#007700";
+	}
+if(@svrst[$ct] eq "Down") {
+			$updnclr="#FF0000";
+	}
+if(@svrst[$ct] eq "Link") {
+			$updnclr="#777700";
+	}
+	print "<tr><td align=left><font size=-2 face='Arial, Helvetica' color='$updnclr'>@servlist[$ct]</font></td><td align=center><font size=-2 face='Arial, Helvetica' color='$updnclr'>@svrst[$ct]</font></td><td align=center><font size=-2 face='Arial, Helvetica'>@usr[$ct]</font></td><td align=right><font size=-2 face='Arial, Helvetica' color='$updnclr'>$znstatus</font></td></tr>";
+$ct++;
+}
+print "</table></center>";
+} else {
+$ct=0;
+while($ct<@servlist){
+if($server eq @servlist[$ct]){
+		@zone[$ct] =~ s/0//g;
+		$zoneu = length(@zone[$ct]);
+		if(($zones-$zoneu)>0){
+			$zonedown = $zones-$zoneu;
+			$znstatus = "but there are $zonedown zones down";
+		} else {
+			$znstatus="and all zones are running";
+		}
+		if(@usr[$ct]==0 or ($zones-$zoneu)>0 or @svrst[$ct] eq "Down"){
+			$updnclr="#FF0000";
+		} else {
+			$updnclr="#007700";
+		}
+	print "<center><font size=-2 face='Arial, Helvetica' color='$updnclr'>@servlist[$ct] is @svrst[$ct]. There are @usr[$ct] players online $znstatus.</font></center>";
+}
+	$ct++;
+}
+}

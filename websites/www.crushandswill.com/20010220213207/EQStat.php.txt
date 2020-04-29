@@ -1,0 +1,220 @@
+<?php
+##############################################################################
+# Name: EQStat.php - Everquest status server parsing script, php 4.0.4+      #
+# Author: Bertog Stinkyfoots (Keith Greene) <Bertog@crushandswill.com>       #
+# Version: 1.1                                                               #
+# Description: This script querries the Everquest Status server and returns  #
+# the results in HTML format. Alternate use: Pass it a server name and it    #
+# will only return the results for that server, eg: EQStat.php?server=Povar  #
+# Note that spaces in server names must be replaced with the + (plus) sign,  #
+# eg: EQStat.php?server=Test+Server                                          #
+# The EQ Banner message can be turned on or off by default, and the default  #
+# can be overridden on the command line. For instance, if you have the banner#
+# turned off by default, it can be turned on in the command line:            #
+# eg: EQStat.php?server=Test+Server&banner=1                                 #
+# This script is also available in perl flavor                               #
+# New Feature: Colors, font and table borders are now configurable. See the  #
+# secion just below this header.                                             #
+#                                                                            #
+# If you use this script on your site, please post a link to                 #
+# http://www.crushandswill.com and give me a little credit                   #
+#                                                                            #
+# official download: http://www.crushandswill.com/stat.php3                  #
+##############################################################################
+# COPYRIGHT NOTICE                                                           #
+# Copyright 2001 Keith Greene.  All Rights Reserved.                         #
+#                                                                            #
+# EQStat may be used and modified free of charge by anyone so                #
+# long as this copyright notice and the comments above remain intact.  By    #
+# using this this code you agree to indemnify Keith Greene from any          #
+# liability that might arise from it's use.                                  #
+#                                                                            #
+# Selling the code for this program without prior written consent is         #
+# expressly forbidden.  In other words, please ask first before you try and  #
+# make money off of my program.                                              #
+#                                                                            #
+# Obtain permission before redistributing this software over the Internet or #
+# in any other medium.	In all cases copyright and header must remain intact.#
+##############################################################################
+#                      Setup Colors and font here                            #
+##############################################################################
+$bgcol="#FFFFFF";            # Page Background Color
+$lnkcol="#990000";           # Link Color
+$vlnkcol="#990000";          # Visited Link Color
+$alnkcol="#990000";          # Active Link Color
+$upcol='#007700';            # Color for servers that are "Up"
+$dncol='#FF0000';            # Color for servers that are "Down"
+$lkcol='#777700';            # Color for servers that are "Locked"
+$bancol='#FF6600';           # Color for EQ Banner Message
+$txtcol='#000000';           # Color for all other text
+$bdrsize=0;                  # Table border size
+$fntface='Arial, Helvetica'; # Font face for all text
+if(!$banner){
+$banner=1;                   # Banner display default setting. 1 = on, 0 = 0ff
+}                            # You can override this by setting the flag on the command line
+##############################################################################
+
+echo "<body bgcolor='$bgcol' link='$lnkcol' alink='$alnkcol' vlink='$vlinkcol'>";
+
+# The following section is the engine of the script.
+# It does the connecting, collecting and parsing of the Status Server Data
+
+	$fp = fsockopen("udp://status.everquest.com", 24252, &$errno, &$errstr, .2);
+if (!$fp) {
+     echo "Status Server not available";
+} else {
+	socket_set_timeout($fp, 2); # If we don't get something in 2 seconds, assume the status server is down or slow
+	    #set up trigger for server list and zone count		
+	    $trigger = chr(hexdec('FF')).chr(hexdec('FF')).chr(hexdec('01')).chr(hexdec('00'));
+
+	    fwrite($fp,$trigger);		# Send trigger to the status server
+	    $junk = fread($fp, 4);     		# discard echoed command from status server
+	    $servx = fread($fp, 1);    		# grab server count
+		$servd=ord($servx); 		# convert to dec
+	    $zonex = fread($fp, 1);    		# grab zones per server
+		$zoned=ord($zonex); 		# convert to dec
+		
+# Loop to read incoming data
+$sct = 1;					# set server counter and array index to 1
+while($sct<=$servd){				# while we havent run out of server names 
+	$ind = fread($fp, 1);			# grab the next character
+	if(ord($ind)!=0){ 			# if it is not NULL 
+		$svr[$sct].=chr(ord($ind));	# add it to the current server name in the array
+	} else {				# When we run into a NULL, move to next array element
+		$sct++;
+	}
+}
+# set up trigger for actual user count and zone up/down flags
+	    $trigger = chr(hexdec('FF')).chr(hexdec('FF')).chr(hexdec('05')).chr(hexdec('00'));
+
+	    fwrite($fp,$trigger);		# Send trigger to the status server
+	    $data = fread($fp, 4);     		# discard echoed command from status server
+	    $cservx = fread($fp, 1);    	# grab chat server count
+		$cservd=ord($cservx); 		# convert to dec
+		$ccs = 1;
+		while ($ccs<=$cservd){
+	    $ctuser1x = fread($fp, 1);    	# grab users on chat server in 2 bytes
+	    $ctuser2x = fread($fp, 1);
+	    sleep(1);
+	    $cu1=dechex(ord($ctuser1x));
+	    $cu2=dechex(ord($ctuser2x));
+	    $users[$ccs]=hexdec($cu1.$cu2);	# convert to dec and assign to user array
+	   	if($users[$ccs]==65535){
+		$users[$ccs]=0;
+		}
+	    $ccs++;
+	    }
+	    $wservx = fread($fp, 1);    	# grab world server count
+	    $wservd=ord($wservx); 		# *should* match $servd-1 above
+
+# Loop to read incoming data
+$uct = $ccs;					# set user counter and array index to 2
+while($uct<=($wservd+1)){			# while we havent run out of world servers 
+	$ind1 = fread($fp, 1);			# grab the user count for this server in 2 bytes
+	$ind2 = fread($fp, 1);
+	$u1=dechex(ord($ind1));
+	$u2=dechex(ord($ind2));
+	$svrst[$uct]="Up";			# if there are more than 0 and less than 65535 players, assume the server is up
+	$users[$uct]=hexdec($u1.$u2);		# add it to the current server in the user array
+	if($users[$uct]==65535||$users[$uct]==0){
+	$users[$uct]=0;				# if there are 0 or 65535, assume server is down
+	$svrst[$uct]="Down";
+	}
+	$zone[$uct] = ord(fread($fp, 1));	# grab the zone count for this server
+	$junk = fread($fp, 1);			# grab the last byte of data (Total Zones Up)
+	$zones=ord($junk);
+$zonesup[$uct]=$zones;
+	$uct++;
+}
+
+# set up trigger for Server Banner Message
+	    $trigger = chr(hexdec('FF')).chr(hexdec('FF')).chr(hexdec('09')).chr(hexdec('00'));
+
+	    fwrite($fp,$trigger);		# Send trigger to the status server
+	    $data = fread($fp, 4);     		# discard echoed command from status server
+	    $msgb = fread($fp, 1);    		# grab msg 1 byte at a time
+		$msg=chr(ord($msgb));
+	while(ord($msgb)!='00'){		# check for NULL byte. If we get it, stop reading
+	    $msgb = fread($fp, 1);    		# grab next byte
+		$msgraw.=ord($msgb);
+		$msg.=chr(ord($msgb));
+		}
+$msg = str_replace(chr(00),"",$msg);            # Remove any Nulls still left in the EQ Banner Message
+
+# The following section is the All Servers Display.
+# It displays stats for all servers and the banner (if banner display is turned on)
+
+if(!$server){
+$ct=1;
+while($ct<=count($svr)){			# Add up all the server players
+$plyct = $plyct+$users[$ct];			# to get total players online
+$ct++;
+}
+echo "<center><font size=-2 face='$fntface' color='$txtcol'>$plyct EQ players online</font></center>";
+if($banner==1){
+echo "<center><font size=-2 face='$fntface' color='$bancol'>Banner Msg:$msg</font></center>";
+}
+echo "<center><table border=$bdrsize><tr><td align=left><font size=-2 face='$fntface' color='$txtcol'>Server Name</font></td><td align=center><font size=-2 face='$fntface' color='$txtcol'>Status</font></td><td align=center><font size=-2 face='$fntface' color='$txtcol'>Players</font></td><td align=right><font size=-2 face='$fntface' color='$txtcol'>Zone Status</font></td></tr>";
+$ct=1;
+while($ct<=count($svr)){
+	if($svr[$ct]=="Chat Server"){		# Determine status of Chat server
+		if($users[$ct]>0){		# by counting players.
+		$svrst[$ct]="Up";
+		} else {
+		$svrst[$ct]="Down";
+		}
+	}
+if($svrst[$ct]=="Down"&&$zonesup[$ct]==$zone[$ct]){
+	$svrst[$ct]="Locked";
+	}
+		if(($zone[$ct]-$zonesup[$ct])>0){# compare zone count with total zones to determine if any zones are down
+			$zonedown = $zone[$ct]-$zonesup[$ct];
+			$znstatus="$zonedown zones down";
+		} else {
+			$znstatus="All zones up";
+		}
+switch ($svrst[$ct]) {				# determine color to display based on up/down/locked status
+	case "Up":
+			$updnclr=$upcol;
+	BREAK;
+	case "Down":
+			$updnclr=$dncol;
+	BREAK;
+	case "Locked":
+			$updnclr=$lkcol;
+	BREAK;
+}
+	echo "<tr><td align=left><font size=-2 face='$fntface' color='$updnclr'>$svr[$ct]</font></td><td align=center><font size=-2 face='$fntface' color='$updnclr'>$svrst[$ct]</font></td><td align=center><font size=-2 face='$fntface' color='$txtcol'>$users[$ct]</font></td><td align=right><font size=-2 face='$fntface' color='$updnclr'>$znstatus</font></td></tr>";
+	$ct++;
+}
+echo "</table></center>";
+} else {
+
+# The following section is the single server Display.
+# It displays stats for a single server and the banner (if banner display is turned on)
+
+$ct=1;
+while($ct<=count($svr)){
+if($server==$svr[$ct]){
+		if(($zone[$ct]-$zonesup[$ct])>0){
+			$zonedown = $zone[$ct]-$zonesup[$ct];
+			$znstatus="but there are $zonedown zones down";
+		} else {
+			$znstatus="and all zones are running";
+		}
+		if($users[$ct]==0||($zone[$ct]-$zonesup[$ct])>0||$svrst[$ct]=="Down"){
+			$updnclr=$dncol;
+		} else {
+			$updnclr=$upcol;
+		}
+	echo "<center><font size=-2 face='$fntface' color='$updnclr'>$svr[$ct] is $svrst[$ct]. There are $users[$ct] players online $znstatus.</font></center>";
+if($banner==1){
+echo "<center><font size=-2 face='$fntface' color='$bancol'>Banner Msg: $msg</font></center>";
+}
+}
+	$ct++;
+}
+}
+fclose($fp);
+}
+?>
