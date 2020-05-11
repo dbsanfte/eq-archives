@@ -11,7 +11,11 @@ One spdat was sourced from Project 1999 and it corresponds to the spdat.eff on t
 
 - spdat.14.03.2000.eff
 
-The rest were sourced from a wayback_machine_downloader dump of the various EQPatch.zip files on www.everquest.com.tw, you can find them in those zips under the /websites/www.everquest.com.tw folder. I have named them to their patch dates for convenience.
+The rest were sourced from a wayback_machine_downloader dump of the various EQPatch.zip files on www.everquest.com.tw, you can find those archives here, along with links to the original Wayback Machine source links:
+
+https://github.com/dbsanfte/eq-archives/tree/master/eq-patches
+
+I have renamed each spdat to its patch date for convenience.
 
 If you need a program to read these, EQCaster should work. I have added two EXEs here, a latest version and an older version. The web archive link is the following if you want it:
 
