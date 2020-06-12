@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="IBM HomePage Builder 2000 V4.0.2  for Windows">
+<TITLE>番外編 RAIDでEQ高速化</TITLE>
+</HEAD>
+<BODY background="eqimage/wall10.jpg">
+<H2>番外編 RAIDでEQ高速化</H2>
+<P>筆者は遅れます。<BR>
+<BR>
+みんなと一緒にゾーンしたはずなのに、出てくるのは一番最後とか。<BR>
+理由ははっきりしています。回線が重いんです。<BR>
+<BR>
+筆者は地方プロバイダとNiftyを利用しているのですが、テレホーダイの時間になると、どちらを利用してもロスパケットの値は10%前後をうろうろし始めます。<BR>
+<BR>
+でも、簡単にプロバイダを変えるわけには行きません。ではどうしましょう。うー。</P>
+<H3 align="center">RAID 0でストライプセットを組みましょう</H3>
+<P>組みましょう。<BR>
+この忙しいときにやらなくてもと思うのですが、ほら、あるじゃないですか。試験前に部屋掃除とか（笑）<BR>
+<BR>
+密かに流行中のRAID（この場合はRAID 0）を簡単に説明すると、データを2台（以上）のHDDに分けて記録することで高速化する技術の事です。<BR>
+これにより、データ送受信が終わった後のHDD読み込み時間の短縮を図ります。Zoning処理のほとんどはデータの送受信なので、HDDを高速化したところでそれほどの効果は見込めないとは思いますが、EQに限らず他のアプリ全般にも効果が期待できます。次のハマリゲーっぽいDiablo2もロード時間長そうだし。<BR>
+早速お近くのPCショップに駆け込み、18GBのHDD(7200rpm,ATA66)とRAIDボード(FastTrak66)を購入してきました。RAID0には同容量（できれば同型番）のHDDが2台以上必要ですが、今までデータドライブとして使用していたのが18GのHDDだったので、これと同じ物を1台購入しました。しめて約4万円です。<BR>
+<BR>
+導入は簡単でした。Stripeセットを組み、16GBと20GBで領域確保。待避してあった元Cドライブのイメージをコピーして、再起動。無事、元の環境を復元できました。<BR>
+早速効果を調べてみます。<BR>
+<BR>
+使用環境<BR>
+CPU:Celeron(300MHz)<BR>
+RAM:128MB<BR>
+VIDEO:RIVA-TNT2<BR>
+HDD: <BR>
+導入前 5400rpm, ATA33,10GB<BR>
+導入後 7200rpm, ATA66,36GB(18GBx2 Stripe)</P>
+<TABLE border="1">
+  <TBODY>
+    <TR>
+      <TD align="center">分類</TD>
+      <TD align="center">項目</TD>
+      <TD>導入前</TD>
+      <TD>導入後</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4" align="center">EverQuest</TD>
+      <TD>サーバを選択してからキャラ選択まで</TD>
+      <TD align="right">60.0</TD>
+      <TD align="right">57.8</TD>
+    </TR>
+    <TR>
+      <TD>キャラ選択から操作可能になるまで</TD>
+      <TD align="right">51.0</TD>
+      <TD align="right">45.0</TD>
+    </TR>
+    <TR>
+      <TD>Zoning(SkaranaからNkarana）</TD>
+      <TD align="right">61.4</TD>
+      <TD align="right">52.2</TD>
+    </TR>
+    <TR>
+      <TD>Zoning(NkaranaからSkarana）</TD>
+      <TD align="right">61.2</TD>
+      <TD align="right">49.4</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6" align="center">その他</TD>
+      <TD>Windows起動時間</TD>
+      <TD align="right">120.0</TD>
+      <TD align="right">96.2</TD>
+    </TR>
+    <TR>
+      <TD>Netscape4.6起動時間</TD>
+      <TD align="right">19.4</TD>
+      <TD align="right">8.6</TD>
+    </TR>
+    <TR>
+      <TD>Excel起動時間</TD>
+      <TD align="right">2.5</TD>
+      <TD align="right">1.6</TD>
+    </TR>
+    <TR>
+      <TD>HDBench(Read)</TD>
+      <TD align="right">8,237</TD>
+      <TD align="right">33,907</TD>
+    </TR>
+    <TR>
+      <TD>HDBench(Write)</TD>
+      <TD align="right">7,345</TD>
+      <TD align="right">28,054</TD>
+    </TR>
+    <TR>
+      <TD>Diablo（HDD起動。Loadから操作可能になるまで）</TD>
+      <TD align="right">10.5</TD>
+      <TD align="right">9.7</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<P>EQの実験は、木曜日の０時～２時に行いました。試行回数はそれぞれ1回なので参考程度に。<BR>
+単位は、HDBench以外は秒です。<BR>
+<BR>
+結果はご覧の通りで、それなりに効果は出ています。<BR>
+EQに関しては、もともとそれほどの伸びは無いと思っていたので、Zoningが10秒近く短縮されたのには満足しています。次回、パーティを組んだ際のZoneOut時が楽しみです。他メンバーのHPが淡色表示されているでしょうか。いつも真っ赤だったし（泣）。たまに自分以外が淡色になっていて、やったーとか思っていたら実は自分だけ死んでたり（号泣）<BR>
+<BR>
+その他の結果に付いては、HDBenchは驚異的に伸びていますが、体感上はそれほどでも無いです。アプリの起動速度に関しては、ベンチをとれば倍近く高速化されているのが分かるのですが、これまでもさして不満はなかったので^^;。<BR>
+Diabloの結果が奮わないのはちょっと不満です。とはいっても猿化していた頃、CD-ROM起動だった頃の30秒Overに比べれば凄い進化ですが。<BR>
+<BR>
+総合的に見ると、かなり満足しています。いろんなアプリを試してみましたが、どれもこれも起動が速いです。RAIDカードの値段自体は\17,000程ですし、無印Fasttrakなら\10,000程度です。HDDを入れ替えたいとか、新しく一台組もう、といった向きには十分お勧めできます。<BR>
+<BR>
+個人的には、うるさいWDのHDDを取り外して、静かなIBMのHDDに統一できたのも嬉しいです。次は電源を静かなものに取り替えたいですね。このままではうるさくて、おちおち寝落ちもできません。</P>
+<HR>
+<P>RAIDに関しての情報は、現在（1999/10上旬）なら、<BR>
+<BR>
+TRY-PC(1999年10月号)<BR>
+<BR>
+が詳しいです。また、NiftyserveのFPCUDIYSにも専用フォーラムがあります。興味を持たれた方はどぞ。</P>
+<HR>
+<P>Fasttrak66は、ベースクロックと非同期に動作するとの事で（Fasttrak無印は違うそうです）、クロックアップにも比較的強いとの事です。<BR>
+そこで、クロックを少しだけ上げて計りなおしてみました。</P>
+<TABLE border="1">
+  <TBODY>
+    <TR>
+      <TD align="center">分類</TD>
+      <TD align="center">項目</TD>
+      <TD>導入前</TD>
+      <TD align="center">導入後<BR>
+      (66x4.5=300MHz)</TD>
+      <TD align="center">導入後<BR>
+      (83x4.5=375MHz)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4" align="center">EverQuest</TD>
+      <TD>サーバを選択してからキャラ選択まで</TD>
+      <TD align="right">60.0</TD>
+      <TD align="right">57.8</TD>
+      <TD align="right">32.3</TD>
+    </TR>
+    <TR>
+      <TD>キャラ選択から操作可能になるまで</TD>
+      <TD align="right">51.0</TD>
+      <TD align="right">45.0</TD>
+      <TD align="right">40.9</TD>
+    </TR>
+    <TR>
+      <TD>Zoning(SkaranaからNkarana）</TD>
+      <TD align="right">61.4</TD>
+      <TD align="right">52.2</TD>
+      <TD align="right">45.3</TD>
+    </TR>
+    <TR>
+      <TD>Zoning(NkaranaからSkarana）</TD>
+      <TD align="right">61.2</TD>
+      <TD align="right">49.4</TD>
+      <TD align="right">42.2</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6" align="center">その他</TD>
+      <TD>Windows起動時間</TD>
+      <TD align="right">120.0</TD>
+      <TD align="right">96.2</TD>
+      <TD align="right">81.3</TD>
+    </TR>
+    <TR>
+      <TD>Netscape4.6起動時間</TD>
+      <TD align="right">19.4</TD>
+      <TD align="right">8.6</TD>
+      <TD align="right">8.3</TD>
+    </TR>
+    <TR>
+      <TD>Excel起動時間</TD>
+      <TD align="right">2.5</TD>
+      <TD align="right">1.6</TD>
+      <TD align="right">1.5</TD>
+    </TR>
+    <TR>
+      <TD>HDBench(Read)</TD>
+      <TD align="right">8,237</TD>
+      <TD align="right">33,907</TD>
+      <TD align="right">32099</TD>
+    </TR>
+    <TR>
+      <TD>HDBench(Write)</TD>
+      <TD align="right">7,345</TD>
+      <TD align="right">28,054</TD>
+      <TD align="right">34593</TD>
+    </TR>
+    <TR>
+      <TD>Diablo（HDD起動。Loadから操作可能になるまで）</TD>
+      <TD align="right">10.5</TD>
+      <TD align="right">9.7</TD>
+      <TD align="right">8.2</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<P>EQに関しては、クロックアップ前がテレホーダイ中で、クロックアップ後がテレホーダイ前（21:00）ということで、あまり参考にはならないと思います。<BR>
+その他は良い感じで上昇しています。筆者はあまりクロックアップはしないほうなのですが、この結果を見ると心揺らぎます。</P>
+<HR>
+<P align="right"><A href="sikanikki.htm"><IMG src="eqimage/btn_back.gif" width="95" height="25" border="0"></A></P>
+</BODY>
+</HTML>

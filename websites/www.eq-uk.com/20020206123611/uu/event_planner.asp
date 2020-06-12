@@ -1,0 +1,414 @@
+
+<HTML>
+<HEAD>
+<TITLE>Event Planner</TITLE>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+</HEAD>
+<BODY>
+<style>
+.tabletitle
+{
+    BACKGROUND-COLOR: #ffffff;
+    COLOR: black;
+    FONT-FAMILY: Verdana,Arial;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+}
+.tablecontent1
+{
+    BACKGROUND-COLOR: #bbddbb;
+    COLOR: black;
+    FONT-FAMILY: Verdana,Arial;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal;
+}
+.tablecontent2
+{
+    BACKGROUND-COLOR: #aaccaa;
+    COLOR: black;
+    FONT-FAMILY: Verdana,Arial;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal;
+}
+.subhead
+{
+	BACKGROUND-COLOR: #88aa88;
+    COLOR: white;
+    FONT-FAMILY: verdana,Arial;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    MARGIN-BOTTOM: 10px
+}
+.buttons
+{
+	BACKGROUND-COLOR: #aaccaa;
+    COLOR: black;
+
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    MARGIN-BOTTOM: 10px
+}
+</style>
+<!-- PAGE HEADING START  -->
+<TABLE border=0 cellPadding=0 cellSpacing=0>  
+  <TR>
+    <TD height=12 width=12><IMG height=12 src="images/border-topleft.gif" width=12></TD>
+    <TD background=images/border-topmid.gif height=12 width=800></TD>
+    <TD height=12 width=12><IMG height=12 src="images/border-topright.gif" width=12></TD>
+  </TR>
+  <TR>
+    <TD background=images/border-leftmid.gif width=12></TD>
+    <TD align=middle><IMG src="images/unseenbanner.gif" width=800></TD>
+    <TD background=images/border-rightmid.gif width=12></TD>
+  </TR>
+  <TR>
+    <TD width=12><IMG height=12 src="images/border-botleft.gif" width=12></TD>
+    <TD background=images/border-botmid.gif height=12 width=800></TD>
+    <TD width=12><IMG height=12 src="images/border-botright.gif" width=12></TD>
+  </TR>
+</TABLE>
+
+<!-- PAGE HEADING END -->
+
+<!-- CONTENT TABLE START -->
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+	<td width="110" valign="top">
+	  <!-- NAVIGATE START -->
+      
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+    <td width="86" height="12" background="images/border-topmid.gif"><IMG height=12 src="images/border-topmid.gif" width=12></td>
+    <td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+  </tr>
+  <tr>
+    <td width="12" background="images/border-leftmid.gif"><IMG height=12 src="images/border-leftmid.gif" width=12></td>
+    <td><b>Site Features</b><br>
+      
+        ¤ <a href="uu_main.asp" onMouseOver="window.status='Main News Page'; return true;" onMouseOut="window.status=''; return true;">News</a><br>
+        ¤ <a href="uu_members.asp" onMouseOver="window.status='Listing of all Guild members'; return true;" onMouseOut="window.status=''; return true;">Member List</a><br>
+        ¤ <a href="uu_journals.asp" onMouseOver="window.status='Members Journals Area'; return true;" onMouseOut="window.status=''; return true;">Journals</a><br>
+        ¤ <a href="uu_apply.asp" onMouseOver="window.status='Application Guidelines'; return true;" onMouseOut="window.status=''; return true;">Application</a><br>
+        ¤ <a href="uu_charter.asp" onMouseOver="window.status='Guild Charter'; return true;" onMouseOut="window.status=''; return true;">Charter</a><br>
+        ¤ <a href="http://pub5.ezboard.com/bunseenuniversity" onMouseOver="window.status='Discussion Forums'; return true;" onMouseOut="window.status=''; return true;">Forums</a><br>
+        ¤ <a href="uu_links.asp" onMouseOver="window.status='Other Everquest Links'; return true;" onMouseOut="window.status=''; return true;">Links</a><br>
+        ¤ <a href="uu_bgh_rules.asp" onMouseOver="window.status='UU Big Game Hunt Rules'; return true;" onMouseOut="window.status=''; return true;">BGH Rules</a><br>
+        ¤ <a href="event_planner.asp" onMouseOver="window.status='Event Planner'; return true;" onMouseOut="window.status=''; return true;">Event Planner</a><br>
+        
+    </td>
+    <td width="12" background="images/border-rightmid.gif"><IMG height=12 src="images/border-rightmid.gif" width=12></td>
+  </tr>
+  <tr>
+    <td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+    <td width="86" height="12" background="images/border-botmid.gif"><IMG height=12 src="images/border-botmid.gif" width=12></td>
+    <td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+  </tr>
+</table>
+
+      <!-- NAVIGATE END -->
+      <!-- LOGON START -->
+	  <table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+    <td width="86" height="12" background="images/border-topmid.gif"></td>
+    <td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+  </tr>
+  <tr>
+    <td width="12" background="images/border-leftmid.gif"></td>
+    <td width="86" nowrap>
+    
+		<form method="post" action="uu_logon.asp">
+		Logon Id: <input type="text" name="userid" size="10" maxlength="10"><br>
+		Password: <input type="password" name="pwd" size="10" maxlength="10"><br>
+		<input type="submit" name="logon" value="Logon" onMouseOver="window.status='Click to Logon'; return true;" onMouseOut="window.status=''; return true;">
+		</form>
+		
+    </td>
+    <td width="12" background="images/border-rightmid.gif"></td>
+  </tr>
+  <tr>
+    <td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+    <td width="86" height="12" background="images/border-botmid.gif"></td>
+    <td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+  </tr>
+</table>
+
+
+<SCRIPT language='javascript'>
+<!--
+  function getbrowser()
+  {
+    var retval;
+    retval = "N4";
+    return retval;
+  }
+  
+	function sniff_and_write(section, html) 
+	{
+		if (document.all) 
+		{	// IE is the browser
+			section = "div_" + section;
+			document.getElementById(section).innerHTML=html
+		} else if (document.layers) 
+		{	// Netscape is the browser
+			section = "layer_" + section;
+			document.layers[section].document.open(); 
+			document.layers[section].document.write(html) ; 
+			document.layers[section].document.close(); 
+		} else if (document.getElementById) 
+		{	// A DOM aware browser
+			section = "div_" + section;
+			document.getElementById(section).innerHTML=html
+		}
+	}
+//-->
+</SCRIPT>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+    <td width="86" height="12" background="images/border-topmid.gif"></td>
+    <td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+  </tr>
+  <tr>
+    <td width="12" background="images/border-leftmid.gif"></td>
+    <td width="86" nowrap>
+      <FORM name='frmCharSelect' method='post' action='uu_select_char.asp'>
+        <table border='0' cellspacing='0' cellpadding='0'>
+          <tr><td height='15' valign='top' align='center'>
+            Using Netscape<br><br>
+            Optimised for<br>
+            <a href='http://www.microsoft.com/windows/ie/download/ie55sp1.htm' target='new'><img border='0' src='http://www.microsoft.com/windows/ie/images/lgoIE.gif'></a>
+		  	  </td></tr>
+			  </table>
+      </FORM>
+    </td>
+    <td width="12" background="images/border-rightmid.gif"></td>
+  </tr>
+  <tr>
+    <td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+    <td width="86" height="12" background="images/border-botmid.gif"></td>
+    <td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+  </tr>
+</table>
+
+      <!-- LOGON END -->
+	</td>  
+    <td width="714" valign="top">
+	  <!-- MAIN CONTENT START -->
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+          <td width="690" height="12" background="images/border-topmid.gif"><IMG height=12 src="images/border-topmid.gif" width=12></td>
+          <td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+        </tr>
+        <tr>
+          <td width="12" background="images/border-leftmid.gif"><IMG height=12 src="images/border-leftmid.gif" width=12></td>
+          <td>
+
+
+<table align=left border=0 cellpadding=0 cellspacing=2>
+<tr>
+	<td valign=top>
+		<table border=1 cellpadding=2 bordercolor=darkgreen bgcolor=#ddeedd>
+		<tr>
+			<td valign=top width=150>
+			<table cellpadding=2 cellspacing=2 border=0>
+				<tr>
+				<td colspan=7 align=center><a href="event_planner.asp?today=1/6/02"><<</a>&nbsp;<b>6/2/2002</b>&nbsp;<a href="event_planner.asp?today=3/6/02">>></a></td>
+				</tr>
+				<tr>
+				
+						<td align=center>F</td>
+					
+						<td align=center bgcolor=LightGreen>S</td>
+					
+						<td align=center bgcolor=LightGreen>S</td>
+					
+						<td align=center>M</td>
+					
+						<td align=center>T</td>
+					
+						<td align=center>W</td>
+					
+						<td align=center>T</td>
+					
+				</tr>
+				<tr>
+				
+					<td align=center bgcolor="#00ff00">
+					
+					<a href="event_planner.asp?today=2/1/02">1</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/2/02">2</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/3/02">3</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/4/02">4</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/5/02">5</a></td>
+					
+					<td align=center  bordercolor="#000000">
+					<b><font color="#001100">6</font></b>
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/7/02">7</a></td>
+					
+				</tr>
+				<tr>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/8/02">8</a></td>
+					
+					<td align=center bgcolor="#00ff00">
+					
+					<a href="event_planner.asp?today=2/9/02">9</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/10/02">10</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/11/02">11</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/12/02">12</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/13/02">13</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/14/02">14</a></td>
+					
+				</tr>
+				<tr>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/15/02">15</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/16/02">16</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/17/02">17</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/18/02">18</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/19/02">19</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/20/02">20</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/21/02">21</a></td>
+					
+				</tr>
+				<tr>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/22/02">22</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/23/02">23</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/24/02">24</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/25/02">25</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/26/02">26</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/27/02">27</a></td>
+					
+					<td align=center >
+					
+					<a href="event_planner.asp?today=2/28/02">28</a></td>
+					
+				</tr>
+				<tr>
+					
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td align=center><b>Today:</b> <a href="event_planner.asp?today=2/6/02">6/2/2002</a></td>
+		</tr>
+		<tr>
+			<td align=center class="subhead">This Months Events</td>
+		</tr>
+		
+				<tr class="tablecontent1"><td align=center><font color=#004400><b>1/2/2002</b></font> - Siixie<br><a href="event_planner.asp?today=2/1/02">Explore Luclin</a></td></tr>
+			
+				<tr class="tablecontent1"><td align=center><font color=#004400><b>9/2/2002</b></font> - Hamalin<br><a href="event_planner.asp?today=2/9/02">Interguild Duck Do</a></td></tr>
+			
+		<form name="search" method="post" action="event_search.asp?today=2/6/02">
+		<tr><td align=center class="buttons"><INPUT type="text" id=search name=search size=12><br><a href="javascript:document.search.submit();">Search</a></td></tr>
+		</form>
+		</table>
+	</td>
+	<td valign=top width=100%>
+		<table align=right border=0 cellpadding=2 cellspacing=1 width=100%>
+		<tr>
+			<td>
+		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+					<table width=80% border=0 cellpadding=2 cellspacing=0>
+					<tr>
+						<td align=center class=subhead>There are no events today</td>
+					</tr>
+					</table>
+				
+			</td>
+		</tr>		
+		</table>
+	</td>
+</tr>
+</table>
+          </td>
+          <td width="12" background="images/border-rightmid.gif"><IMG height=12 src="images/border-rightmid.gif" width=12></td>
+        </tr>
+        <tr>
+          <td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+          <td width="514" height="12" background="images/border-botmid.gif"><IMG height=12 src="images/border-botmid.gif" width=12></td>
+          <td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+        </tr>
+      </table>
+      <!-- MAIN CONTENT END -->
+</BODY>
+</HTML>

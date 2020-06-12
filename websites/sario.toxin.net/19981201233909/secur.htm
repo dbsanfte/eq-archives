@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [ja] (Win95; I) [Netscape]">
+   <META NAME="Author" CONTENT="hisa">
+   <TITLE>セキュリティ</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<HR SIZE=1 WIDTH="100%"></CENTER>
+
+<CENTER><B><FONT SIZE=+2>Microsoft Windows 95 / NT4.0 で</FONT></B></CENTER>
+
+<CENTER><B><FONT SIZE=+2>ネットワークゲームをする上で問題になるセキュリティの対応</FONT></B></CENTER>
+
+<CENTER>
+<HR SIZE=1 WIDTH="100%"></CENTER>
+
+<CENTER><I>ここで紹介するのは個人的にいろんなホームページで調べたものですが、</I></CENTER>
+
+<CENTER><I>曲解とか間違いの可能性もあります。</I></CENTER>
+
+<CENTER><I>この内容を信じて「知ったかぶり」をしてると恥をかく可能性が高いです(^^;)</I></CENTER>
+
+<CENTER><I>しかも無保証です。</I></CENTER>
+
+<CENTER><I>あくまでも参考程度にしておいて下さい。</I></CENTER>
+
+<CENTER>
+<HR SIZE=1 WIDTH="100%"></CENTER>
+
+
+<P><B><FONT SIZE=+1>■ パッチのススメ</FONT></B>
+<UL>　ネットワークゲームやＩＣＱなどが流行ってくるにしたがって、ネットワークの向こうの相手に自分のＩＰアドレスをオープンにする状況が増えてきました。しかし、WindowsではIPアドレスがバレると、Windowsのセキュリティホールをついた攻撃を受ける可能性があります。これでは安心してゲームやコミュニケーションができません。
+<BR>　大半のユーザはダイアルアップのため、ＩＰアドレスが動的に振られます。そのおかげで特定の個人に向けた攻撃を受けずにすんでいますが、これは単なる副産物だと認識するべきです。
+<BR>　極力ＩＰアドレスを隠していれば安全という対応が通用しない場合だってあります。　たとえば、WEBサーフィンで無差別に攻撃するような悪意のサイトに当たれば無力です。
+<BR>　幸い、これらの問題を解決するパッチが発表されています。
+<BR>　ここでは何を当てればいいのか、という部分を具体的に示します。</UL>
+<B><FONT SIZE=+1>■ 日本語Windows 95 OSR1からOSR2.1まで全てのバージョン(PCAT)共通の問題</FONT></B>
+<UL>Windows95では英語版ながら、二つのパッチが発表されています。
+<BR>どちらも当てましょう。
+<BR>具体的な問題の内容とそのパッチの存在場所を示します。</UL>
+<B>【 OOB(Out-Of-Band) Attack 】</B>
+<UL>　特殊なOOBデータ・パケットを受信したとき、次のようなメッセージを出て以降、データの送受信ができなくなります。
+<BR>　この問題はPC98シリーズのWindows95では発生しません。</UL>
+
+<UL>Fatal exception 0E at 0028:&lt;address> in VxD MSTCP(01) + 000041AE.
+<BR>This was called from 0028:&lt;address> in VxD NDIS(01) + 00000D7C.
+<BR>＊メッセージはおそらく英語版のもの
+
+<P>　Windowsは、OOBと呼ばれるパケットを正しく処理できません。OOBは本来データの送受信の中断指示などの制御のためのものですが、このOOBが不正なデータだった場合、TCP/IPスタックの一部が異常終了してしまうようです。
+<BR>　復帰するには再起動するしかありません。
+
+<P><B>Microsoftから公開されているパッチ</B>
+<BR><B><A HREF="ftp://ftp.microsoft.com/Softlib/MSLFILES/Vtcpupd.exe">ftp://ftp.microsoft.com/Softlib/MSLFILES/Vtcpupd.exe</A></B></UL>
+
+<UL>このパッチは英語版です。
+<BR>実行すると、コードページの違うプログラムがあるが現在のファイルを保管するかと聞かれます。
+<BR>保管を選択して下さい。
+<BR>保管を選択しても目的のVtcp.386とVnbt.386は問題なく更新されます。</UL>
+<B>【 Ping'o Death &amp; ICMP-PING 問題 】</B>
+<UL>　Ping'o Deathについて、多くのＯＳは規定以上のパケット長を持つデータを受信すると問題が発生します。もちろんWindowsも例外ではなく、これを食らうとフリーズします。
+Windows標準のPingこそこのパケットを送りつけることが可能なプログラムだったということのほうが問題の本質のような気がします(^^;)
+<BR>　ICMP-PINGについて、ICMPリクエストというものは、パケットを分割することが可能です。分割されたパケットデータの長さ自体は確かに規定以下でも、各分割パケットにオフセット値の情報が付加されることにより受信したWindowsがこれを再構成するとき規定以上になる場合があります。そしてフリーズします。
+
+<P><B>Microsoftから公開されているパッチ</B>
+<BR><B><A HREF="ftp://ftp.microsoft.com/Softlib/MSLFILES/vipup11.exe">ftp://ftp.microsoft.com/Softlib/MSLFILES/vipup11.exe</A></B>
+
+<P>このパッチは英語版です。
+<BR>実行すると、コードページの違うプログラムがあるが現在のファイルを保管するかと聞かれます。
+（もっとも私はvipup11.exeでは聞かれませんでした）
+<BR>保管を選択して下さい。
+<BR>保管を選択しても目的のVip.386は問題なく更新されます。
+<BR>もしリンクが切れてしまった場合、こちらを参照してください。
+<BR><A HREF="http://www.microsoft.com/security/icmpping.htm">http://www.microsoft.com/security/icmpping.htm</A></UL>
+<B><FONT SIZE=+1>■ 日本語Windows NT4.0での対応</FONT></B>
+<UL>同様の問題はWindows NT4.0にもあります。
+<BR>Windows95とちがって、<B>NT4.0では英語版のパッチは当てられません。</B>
+<BR>日本語版のNT4.0でのこの問題の対応状況を見てみます。
+<BR>まず、前項のうち、Ping'o DeathのみServicePack2の時点で対応がされているようです。
+<BR>残りの問題は、次のパッチを当てることで解決できるようです。 このパッチはServicePack
+3の補足ファイルのため、<B>ServicePack 3が当たった状態でないと当てられません。</B>
+
+<P><B>Microsoftから公開されているパッチ</B>
+<BR><B><A HREF="http://download.jp.microsoft.com/products/ntupdate/nt4sp3/tcpfixi.exe">http://download.jp.microsoft.com/products/ntupdate/nt4sp3/tcpfixi.exe</A></B></UL>
+以上
+<BR>
+<HR SIZE=1 WIDTH="100%">
+<BR>間違いについてのご指摘は<A HREF="mailto:hisa@kk.iij4u.or.jp">こちら</A>まで。
+</BODY>
+</HTML>
+

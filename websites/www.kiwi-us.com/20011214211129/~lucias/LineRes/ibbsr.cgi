@@ -1,0 +1,304 @@
+<html><head>
+<STYLE TYPE="text/css">
+<!--
+A:link   { text-decoration:none; }
+A:visited{ text-decoration:none; }
+A:hover  { color:#E88C8E; text-decoration:underline; }
+BODY,TD,TH{ font-family:"ＭＳ Ｐゴシック"; font-size:10pt; }
+
+-->
+</STYLE>
+<!--I-BOARD/LR v2.1-->
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=x-sjis">
+<title>I-BOARD/LR</title></head>
+<body text=#FFFFFF link=#9e8b75 vlink=#9e8b75 bgcolor=#cbb99c>
+<!--ヘッダ広告タグ挿入位置▽-->
+
+<!--△ここまで-->
+<center>
+<font color=#9e8b75 face="Times New Roman" size=6>I-BOARD/LR</font>
+<hr width=90%>
+□<a href="../main.html"> MENU</a>　
+□<a href="./ibbsr.cgi?mode=man"> MANUAL</a>　
+□<a href="./rsrch.cgi"> SEARCH</a>
+
+<hr width=80%><table><tr><td>
+<small>
+・どんどんかいていってね！
+</small>
+
+
+</td></tr></table><hr width=80%>
+<form action="./ibbsr.cgi" method="POST">
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=0>
+<table>
+<tr><td bgcolor=#9e8b75>Name</td>
+<td>/<input type=text name="name" value="" size=25></td>
+<td bgcolor=#9e8b75>E-Mail</td>
+<td>/<input type=text name="email" value="" size=25></td></tr>
+<tr><td bgcolor=#9e8b75>Title</td><td>/<input type=text name="d_may" size=25></td>
+<td bgcolor=#9e8b75>削除キー</td><td>/<input type=password name=delkey value="" size=8>
+<small>(半角8文字以内)</small>
+<tr><td colspan=4 bgcolor=#9e8b75>Comment/ <small>(適当に改行を入れて下さい)</small><br>
+<textarea name="comment" rows=6 cols=70 wrap=soft></textarea></td></tr>
+<tr><td bgcolor=#9e8b75>URL</td>
+<td colspan=3>/<input type=text name="url" value="http://" size=65></td></tr>
+<tr><td bgcolor=#9e8b75>Color</td><td colspan=3>/
+<input type=radio name=font value="#808080" checked><font color=#808080>■</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>■</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>■</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>■</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>■</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>■</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>■</font>
+</td></tr><tr><td></td><td></td><td colspan=2><input type=submit value="送信する">
+<input type=reset value="リセット"></td></tr></table></form><hr>
+<table width=80% bgcolor=#332a29 border=1 bordercolor=#9e8b75><tr><td>
+<table width=100%><tr><th bgcolor=#9e8b75 colspan=2>
+<font color=#332a29><small>231</small>/ No Title</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Kaban<br>
+・投稿日/ 2001/12/08(Sat) 13:42:08</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#E199FD">着せ替えいちごのSoLバージョン希望　ｗ。<br>あと<br>ヤクのくすりやさん<br>ひとりでLINK<br>とか　謎</font></td></tr></table></ul><br>
+<ul><hr color=#9e8b75 size=1>
+<font color="#808080">■ ルキアス =&gt; まーたへんなことばっかいって！謎</font> <small>(2001/12/08(Sat) / NO.232)</small><br>
+<font color="#808080">■ ルキアス =&gt; SoLバージョンはねぇ・・・重くなるからあんまりやりたくないのよねｗ</font> <small>(2001/12/08(Sat) / NO.233)</small><br>
+<font color="#E199FD">■ Kaban =&gt; 更新しようよーInnoの日記とか　謎</font> <small>(2001/12/08(Sat) / NO.234)</small><br>
+<font color="#808080">■ ルキアス =&gt; UPしてあるじゃんｗPoH日記</font> <small>(2001/12/09(Sun) / NO.235)</small><br>
+<font color="#E199FD">■ Kaban =&gt; う。とっつぁ～んをクリックしたつもりが、スカイハイだったみたいだ。ちくしょう　謎</font> <small>(2001/12/09(Sun) / NO.236)</small><br>
+<font color="#808080">■ ルキアス =&gt; ついでに着せ替えいちごSoLバージョンもUPしたよ！どうだ！（謎</font> <small>(2001/12/10(Mon) / NO.237)</small><br>
+<font color="#808080">■ ルキアス =&gt; あとタイトルで言うのやめれ。なんか恥ずい（謎）もう、意味なんてないんだから（謎</font> <small>(2001/12/10(Mon) / NO.238)</small><br>
+<font color="#E199FD">■ Kaban =&gt; 何か新しい項目増えないかなと　ｗ。</font> <small>(2001/12/11(Tue) / NO.239)</small><br>
+<font color="#E199FD">■ Kaban =&gt; 復讐だから気にしないで　謎</font> <small>(2001/12/11(Tue) / NO.240)</small><br>
+<font color="#808080">■ ルキアス =&gt; 何をやれと言うのだー　謎</font> <small>(2001/12/11(Tue) / NO.241)</small><br>
+<font color="#8C98E8">■ Juu@追剥 =&gt; まあ･･･Barbがアレだから気持ちはわかるよ（謎</font> <small>(2001/12/11(Tue) / NO.242)</small><br>
+<font color="#8C98E8">■ Juu@追剥 =&gt; そうだな･･･あとひとりでいちごとか（謎</font> <small>(2001/12/11(Tue) / NO.244)</small><br>
+<font color="#808080">■ ルキアス =&gt; Barba War Barba Rog Barba Shmがここに終結！（謎）とりあえず怖くてBarbaのグラフィック変えられないShifです　謎</font> <small>(2001/12/11(Tue) / NO.245)</small><br>
+<font color="#E199FD">■ Kaban =&gt; &gt;Barba War Barba Rog Barba Shmがここに終結！マッスルドッキング！</font> <small>(2001/12/13(Thu) / NO.247)</small><br>
+<font color="#8C98E8">■ Ephemera =&gt; 古ｗ</font> <small>(2001/12/13(Thu) / NO.248)</small><br>
+<font color="#E199FD">■ Kaban =&gt; 最近どこ逝ってもレスラー扱いさ。。。マッスルドッキンガーさ。こんちくしょう　謎</font> <small>(2001/12/13(Thu) / NO.249)</small><br>
+<font color="#808080">■ ルキアス =&gt; ネタわからんのですがｗ</font> <small>(2001/12/13(Thu) / NO.255)</small><br>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.231 に返信△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=231>
+Name /<input type=text name="name" value="" size=10>/
+FontColor/<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>/
+<input type=submit value=" レス ">
+<input type=reset value="リセット"><br>
+E-Mail/<input type=text name=email size=10 value="">/
+コメント/<input type=text name="comment" size=33>
+/削除キー/<input type=password name="delkey" size=4 value=""><br>
+</td></tr></table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#332a29 border=1 bordercolor=#9e8b75><tr><td>
+<table width=100%><tr><th bgcolor=#9e8b75 colspan=2>
+<font color=#332a29><small>250</small>/ はじめまして＆お願い</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Mat<br>
+・投稿日/ 2001/12/13(Thu) 18:36:55</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">はじめまして、EciでBarSHMやってるMatsuriという者です。<br>流浪の裁縫屋さんからのLinkでたどり着きましたが、ここのHPは面白くてよかったです。<br>49目指してたとき(現在51)EJでぼーっとSoloしながら日記面白く読んでました。<br>で、ふと気づくとFoMだったり(^^<br><br>で、特によかったのがEpicがらみの日記で。<br>ChuppaさんのHPがなくなってしまってEpicの話が全然わからないよ、って思ってましたがここで読んではじめてなるほど-、って判りました。どうもありがとうございました。(今のところSoWBootGetで3つの本取ったとこまで)<br><br>で、お願いなのですが54になったらEpic後半戦に挑戦しようと思うのですがその際ここに乗ってるEpicからみの翻訳したものまとめてうちのGuildのBBSに載せたいのですが使わせてもらえないでしょうか？<br>どうせHelpに来てもらうなら大まかな話は判ってもらった方がいいかな-と思ってるので。<br><br>もしよければお願いします。<br><br><br>＃Mustangさんの日記といいBarSHMの日記は面白いの多いですね、KK編がある分Mustangさんの勝ちですがこっちも非常に面白かったです(^^</font></td></tr></table></ul><br>
+<ul><hr color=#9e8b75 size=1>
+<font color="#808080">■ ルキアス =&gt; いらっさいませ～。日記しかないHPへようこそ（謎）Saryrn以外の方が来るのはめずらしいですね・・・＾＾；更新遅めですがこれからもよろですｗ</font> <small>(2001/12/13(Thu) / NO.251)</small><br>
+<font color="#808080">■ ルキアス =&gt; 転載の件ですが全然NPですよー。Chuppaさんとこなくなっちゃったしね＾＾；</font> <small>(2001/12/13(Thu) / NO.252)</small><br>
+<font color="#808080">■ ルキアス =&gt; Mustangて、How to Barbarian Shamanのとこの人ですよね・・・あそこの日記面白いからなぁ。勝手にライバル視してるんですが、どうでしょ　謎</font> <small>(2001/12/13(Thu) / NO.253)</small><br>
+<font color="#808080">■ Matsuri =&gt; どうもありがとうございます。Mustangさんは最近EQやってないから追い抜き負い越せですね(^^</font> <small>(2001/12/13(Thu) / NO.254)</small><br>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.250 に返信△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=250>
+Name /<input type=text name="name" value="" size=10>/
+FontColor/<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>/
+<input type=submit value=" レス ">
+<input type=reset value="リセット"><br>
+E-Mail/<input type=text name=email size=10 value="">/
+コメント/<input type=text name="comment" size=33>
+/削除キー/<input type=password name="delkey" size=4 value=""><br>
+</td></tr></table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#332a29 border=1 bordercolor=#9e8b75><tr><td>
+<table width=100%><tr><th bgcolor=#9e8b75 colspan=2>
+<font color=#332a29><small>222</small>/ hakkeso</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Takatem<br>
+・投稿日/ 2001/12/04(Tue) 10:43:50</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">何気なく　HPを　まわっていたら　どこかで見たことある名前の人のところらしい<br>HPが<br>そしてItigoさんが　SHM　の　先輩だったとはしらんかった（Epic持ちか～<br>装備ください<br>ついでに　Troll　は駄目ですか？ｗ　Troll　ラブリ～なのにぃ<br><br>5th　肩までやってるとはｗ　ってことで　158まで　キリキリSkill<br>Up　して　先の肩やろうよぅ　１３０じゃもったいないよぅ<br><br>ってことで～　それだけです</font></td></tr></table></ul><br>
+<ul><hr color=#9e8b75 size=1>
+<font color="#808080">■ ルキアス =&gt; いらっさいませｗそう、実は私はSHMのキャラがいたりするのです・・・謎。裁縫はめんどいのでやりたくありません（激謎</font> <small>(2001/12/04(Tue) / NO.226)</small><br>
+<font color="#808080">■ ルキアス =&gt; ちなみに装備はありません（謎）５０頃までTotemicで通し、PoHアーマーを今つかってますのでｗ</font> <small>(2001/12/04(Tue) / NO.227)</small><br>
+<font color="#808080">■ Takatem =&gt; tor 　の　脚装備は　皮装備なのに　皆　裸だ　変態　と言います　何故ですか？</font> <small>(2001/12/05(Wed) / NO.229)</small><br>
+<font color="#808080">■ ルキアス =&gt; Trollの裸姿は公害に指定されています　謎</font> <small>(2001/12/05(Wed) / NO.230)</small><br>
+<font color="#8C98E8">■ Juu@追剥 =&gt; いつも思うのだが、Takatemの書き込みのそのSpaceは何？ｗ</font> <small>(2001/12/11(Tue) / NO.243)</small><br>
+<font color="#808080">■ ルキアス =&gt; 謎すぎるｗ　問い詰めたい　謎</font> <small>(2001/12/11(Tue) / NO.246)</small><br>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.222 に返信△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=222>
+Name /<input type=text name="name" value="" size=10>/
+FontColor/<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>/
+<input type=submit value=" レス ">
+<input type=reset value="リセット"><br>
+E-Mail/<input type=text name=email size=10 value="">/
+コメント/<input type=text name="comment" size=33>
+/削除キー/<input type=password name="delkey" size=4 value=""><br>
+</td></tr></table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#332a29 border=1 bordercolor=#9e8b75><tr><td>
+<table width=100%><tr><th bgcolor=#9e8b75 colspan=2>
+<font color=#332a29><small>223</small>/ 日記の</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Yoko<br>
+・投稿日/ 2001/12/04(Tue) 18:41:46</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#8C98E8">更新した日記のリンクが前の日記と同じポイよ？<br>まぁ、読んじゃったけど（謎<br>でもHateのEnc robeってさぁ、見た目ishvaと同じじゃなかった？ｗ</font></td></tr></table></ul><br>
+<ul><hr color=#9e8b75 size=1>
+<font color="#808080">■ ルキアス =&gt; 気づいたので直しましたｗ突っ込みｔｈｘ　謎</font> <small>(2001/12/04(Tue) / NO.224)</small><br>
+<font color="#808080">■ ルキアス =&gt; 見た目はIshvaと同じなのか～。でも性能がいいからやっぱほしいぽい　謎</font> <small>(2001/12/04(Tue) / NO.225)</small><br>
+<font color="#8C98E8">■ Viola@DW =&gt; いや一緒じゃない　微妙～～～～～～～～～～～に色が違う（笑）</font> <small>(2001/12/04(Tue) / NO.228)</small><br>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.223 に返信△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=223>
+Name /<input type=text name="name" value="" size=10>/
+FontColor/<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>/
+<input type=submit value=" レス ">
+<input type=reset value="リセット"><br>
+E-Mail/<input type=text name=email size=10 value="">/
+コメント/<input type=text name="comment" size=33>
+/削除キー/<input type=password name="delkey" size=4 value=""><br>
+</td></tr></table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#332a29 border=1 bordercolor=#9e8b75><tr><td>
+<table width=100%><tr><th bgcolor=#9e8b75 colspan=2>
+<font color=#332a29><small>193</small>/ ヒマだ</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Kaban<br>
+・投稿日/ 2001/11/21(Wed) 09:01:49</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#E199FD">おしゃれなできるもん！<br>ひとりでくすりやさん<br>着せ替え売人手帳<br>ヤクのいちご<br>謎</font></td></tr></table></ul><br>
+<ul><hr color=#9e8b75 size=1>
+<font color="#E199FD">■ Kaban =&gt; ひとりで写真集</font> <small>(2001/11/21(Wed) / NO.194)</small><br>
+<font color="#808080">■ ルキアス =&gt; 暇なのはいいが謎なカキコはやめてくれｗ　ちょっと笑ったがｗ</font> <small>(2001/11/21(Wed) / NO.195)</small><br>
+<font color="#E199FD">■ Kaban =&gt; うう。怒られた　ｗ</font> <small>(2001/11/22(Thu) / NO.196)</small><br>
+<font color="#8C98E8">■ Rukarin =&gt; 激しくﾜﾗﾀ</font> <small>(2001/11/22(Thu) / NO.202)</small><br>
+<font color="#808080">■ ルキアス =&gt; るかりそすっかり２CHチックですか？　謎</font> <small>(2001/11/24(Sat) / NO.205)</small><br>
+<font color="#E199FD">■ Kaban =&gt; 今までの２chのスレ全部Rukaの自作自演ですから。はい。</font> <small>(2001/11/25(Sun) / NO.207)</small><br>
+<font color="#808080">■ ルキアス =&gt; るかりそ、そんなことしてたのか！ｗ</font> <small>(2001/11/25(Sun) / NO.208)</small><br>
+<font color="#808080">■ Juu@追剥 =&gt; ヤクのLinkとか（謎</font> <small>(2001/11/28(Wed) / NO.212)</small><br>
+<font color="#808080">■ ルキアス =&gt; あぶないLinkだなｗヤ○ザのHPにでも飛ぶのか？ｗ</font> <small>(2001/11/28(Wed) / NO.213)</small><br>
+<font color="#E199FD">■ Kaban =&gt; いや、だからこのＨＰに飛ぶんだってば　ｗ</font> <small>(2001/11/28(Wed) / NO.215)</small><br>
+<font color="#E199FD">■ Kaban =&gt; それかDivine　Wingに飛ぶ　謎</font> <small>(2001/11/28(Wed) / NO.216)</small><br>
+<font color="#808080">■ ルキアス =&gt; まだ言ってるｗちゃんと直したよ！ｗ</font> <small>(2001/11/30(Fri) / NO.217)</small><br>
+<font color="#808080">■ <a href=mailto:DZB07651@nifty.com>Snuphkin</a> =&gt; 最後に「s」が抜けてるぞｗ</font> <small>(2001/11/30(Fri) / NO.219)</small><br>
+<font color="#808080">■ ルキアス =&gt; さりげないDWへの攻撃続行中　謎</font> <small>(2001/11/30(Fri) / NO.220)</small><br>
+<font color="#E199FD">■ Kaban =&gt; ちゃんとは直ってないから　ｗ</font> <small>(2001/12/01(Sat) / NO.221)</small><br>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.193 に返信△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=193>
+Name /<input type=text name="name" value="" size=10>/
+FontColor/<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>/
+<input type=submit value=" レス ">
+<input type=reset value="リセット"><br>
+E-Mail/<input type=text name=email size=10 value="">/
+コメント/<input type=text name="comment" size=33>
+/削除キー/<input type=password name="delkey" size=4 value=""><br>
+</td></tr></table><hr width=80% size=5></form><br>
+<table border=0><tr>
+<td><form method="post" action="./ibbsr.cgi">
+<input type=hidden name=page value="5">
+<input type=submit value="次の記事5件">
+</form></td>
+</tr></table>全ページ数 / [<b>0</b>] 
+[<A HREF="./ibbsr.cgi?page=5">1</A>]
+[<A HREF="./ibbsr.cgi?page=10">2</A>]
+[<A HREF="./ibbsr.cgi?page=15">3</A>]
+[<A HREF="./ibbsr.cgi?page=20">4</A>]
+[<A HREF="./ibbsr.cgi?page=25">5</A>]
+[<A HREF="./ibbsr.cgi?page=30">6</A>]
+[<A HREF="./ibbsr.cgi?page=35">7</A>]
+[<A HREF="./ibbsr.cgi?page=40">8</A>]
+[<A HREF="./ibbsr.cgi?page=45">9</A>]
+[<A HREF="./ibbsr.cgi?page=50">10</A>]
+[<A HREF="./ibbsr.cgi?page=55">11</A>]
+[<A HREF="./ibbsr.cgi?page=60">12</A>]
+[<A HREF="./ibbsr.cgi?page=65">13</A>]
+</table></center>
+<form action="./ibbsr.cgi" method=POST>
+<input type=hidden name=mode value=key>
+<table><tr><th bgcolor=#9e8b75 colspan=2>削除フォーム</th></tr><tr><td>
+記事NO<br><small>(半角数字)</small></td><td>/ <input type=text name=del size=4>
+<select name=mode>
+<option value=key>削除
+<option value=nam>編集
+</select>
+</td></tr><tr><td>
+削除キー</td><td>/ <input type=password name=delkey size=8>
+<input type=submit value=" 送信 ">
+</td></tr></table></form><hr width=90%>
+<div align=right><form action="./ibbsr.cgi" method=POST>
+<input type=hidden name=mode value=del>
+<input type=password name=pass size=6><input type=submit value="管理用"><br>
+</form></div>
+<!--著作権表示 削除不可-->
+<center><hr width=90%>- <a href="http://www.cj-c.com/" target="_top">I-BOARD/LR</a> -
+<!--フッタ広告タグ挿入位置▽-->
+
+<!--△ここまで-->
+</center>
+</body></html>

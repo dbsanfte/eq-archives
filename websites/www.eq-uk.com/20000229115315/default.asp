@@ -1,0 +1,199 @@
+<!-- Top Of Page -->
+<HTML>
+<HEAD>
+<meta name="keywords" content="EverQuest, EQ, EQ-UK, EverQuestUK">
+<meta name="description" content="EQ-UK, Web Home for European players of EverQuest.  Find players.">
+<title>{EverQuest United Kingdom}</title>
+</HEAD>
+
+<BODY>
+<LINK rel="stylesheet" type="text/css" href="equk-style.css">
+
+<table border=0 width=800 cellpadding=0 cellspacing=0>
+  <tr>
+    <td colspan="3" width="100%" valign="top"><p align="center"><img id="IMG1" alt="EQ-UK" height="119" width="300" src="images/equksml.jpg"></p></td>
+
+  </tr>
+  <tr>
+    <td valign=top width=145>
+<table border=0 width=100% cellspacing=0 cellspacing=0 bgcolor=lightblue>
+	<tr><td colspan=3>&nbsp;</td></tr>
+	<tr>
+		<td rowspan=26>&nbsp;</td><td align="center" width="100%" valign="top">
+	<p>	
+<A HREF="adRedirectBooks.asp?url=http://www.amazon.co.uk/exec/obidos/ASIN/0761519718/everquestuk&image=books/eq-cover.gif" ><IMG SRC="books/eq-cover.gif" ALT="Amazon.co.uk" WIDTH=114 HEIGHT=140 BORDER=0></A>
+	
+	  <br>Save Between<br>5 and 20%<br>Off RRP Now!
+	  </p>
+	  <p><img src="images/uk_w_iaw_logo.gif" border="0" alt="In Associtation with Amazon.co.uk" WIDTH="110" HEIGHT="40"></a></p>
+	  <form method="GET" action="http://www.egroups.com/subscribe" id="form1" name="form1">
+	  <b>Join EverquestUK Mailing List</b><br>
+	  <input type="hidden" name="listname" value="everquestuk">
+	  <input type="hidden" name="SubmitAction" value="Subscribe">
+	  <input type="text" name="emailaddr" value="your e-mail" size="15">
+	  <input type="image" border="0" alt="Click here to join EverQuestUK" name="Click here to join everquestuk" SRC="images/subscriptionBoxButton.gif" WIDTH="88" HEIGHT="31">
+	</form>
+	<p>
+	<table width="100%" border="0", cellpadding="0" cellspacing="0">
+	<tr><td width="40%" align="right"><font color="Red">Active:</font></td><td>1</td></tr>
+	<tr><td width="40%" align="right"><font color="Red">Visitors:</font></td><td>1644</td></tr>
+	<tr><td width="40%" align="right"><font color="Red"><br>Users:</font></td><td><br>204</td></tr>
+	<tr><td width="40%" align="right"><font color="Red">Chars:</font></td><td>47</td></tr>
+	</table>
+
+	</p>
+</td>
+
+<td rowspan=26>&nbsp;</td>
+	</tr>
+	<tr>
+		<td><hr noshade=1 color=Black></td></tr>
+	<tr>
+		<td align=center>
+			
+				<FORM action="userpage.asp" method=POST>
+				User Name<br><INPUT type="text" size=14 id=Log1 name=Log1><br>
+				Password<br><INPUT type="password" size=14 id=Log2 name=Log2><br>&nbsp;<br>
+				<INPUT type="submit" value="Log On" id=But1 name=But1>
+				</FORM><p>
+				<a href="UserCreate.asp">Register FREE</a>
+				
+		</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=red>General</font></td></tr>
+	<tr>
+		<td>
+			<a href="default.asp">EQ-UK News</a><br>
+			EQ-UK Site News<br>
+			EQ-UK Events<br>
+			EQ Links<br>
+			EQ-UK Forums<br>
+			</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=Red>Search</font></td></tr>
+	<tr>
+		<td>
+
+			<a href="userlist.asp">View Users</a><br>
+			<a href="charlist.asp">View Characters</a><br>
+			View Guilds<br>
+			View Events<br>
+		</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=Red>Columns</font></td></tr>
+	<tr>
+		<td>
+			<a href="columns.asp">All Columns</a><br>
+				<a href="columns.asp?col=Khelor">Khelor</a><br><a href="columns.asp?col=Koz">Koz</a><br><a href="columns.asp?col=Cubie">Cubie</a><br><a href="columns.asp?col=Talanna">Talanna</a><br><a href="columns.asp?col=Tallis">Tallis</a><br><a href="columns.asp?col=Tyvelis">Tyvelis</a><br>
+				
+		</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=red>Guides</font></td></tr>
+	<tr>
+		<td>
+			Paladin<br>
+		</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=red>Trade Skills</font></td></tr>
+	<tr>
+		<td>
+			Fletching<br>
+			Blacksmithing<br>
+			Cooking<br>
+			Tailoring<br>
+		</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td>Credits</td></tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=Red>Contact EQ-UK</font></td></tr>
+	<tr>
+		<td>
+			
+			<a href="mailto:news@eq-uk.com">Send News</a><br>
+			<a href="mailto:khelor@eq-uk.com">Mail Khelor</a><br>
+			
+		</td>
+	</tr>
+	<tr><td><hr noshade=1 color=Black></td></tr>
+	<tr><td align=center><font color=Red>Change Language</font></td></tr>
+	<tr>
+		<td>
+
+			<a href="javascript:location.href=('http://babelfish.altavista.com/cgi-bin/translate?doit=done&lp=en_fr&urltext='+escape(window.document.location));">Français</a><br>
+			<a href="javascript:location.href=('http://babelfish.altavista.com/cgi-bin/translate?doit=done&lp=en_de&urltext='+escape(window.document.location));">Deutsch</a><br>
+			<a href="javascript:location.href=('http://babelfish.altavista.com/cgi-bin/translate?doit=done&lp=en_es&urltext='+escape(window.document.location));">Español</a><br>
+			<a href="javascript:location.href=('http://babelfish.altavista.com/cgi-bin/translate?doit=done&lp=en_it&urltext='+escape(window.document.location));">Italiano</a><br>
+
+		</td>
+	</tr>	
+	<tr><td colspan=3>&nbsp;</td></tr>
+</table>
+
+
+
+
+</td>
+    <td valign=top width=5>&nbsp;</td>
+    <td valign=top width=650 align=center><A HREF="adRedirect.asp?url=http://www.amazon.co.uk/exec/obidos/redirect-home/everquestuk&image=images/azlost_banner.gif" ><IMG SRC="images/azlost_banner.gif" ALT="Amazon.co.uk" WIDTH=468 HEIGHT=60 BORDER=0></A>
+    
+    <!-- Bottom Of Top Page -->
+	<table border=0 width=100% cellspacing=0 cellspacing=0>
+		<tr><td width=5%>&nbsp;</td>
+			<td width=90%><br>
+			<table width=100% border=1 cellpadding=2 cellspacing=0 bgcolor=LightBlue bordercolor=Blue>
+				<tr>
+					<td width="75%">
+							18/02/00 [PST] - <a href="#1">Patch Message</a><br>
+							18/02/00 [PST] - <a href="#2">Paineel goes live!</a><br>
+							
+					</td>
+					<td width="25%" valign="middle" align="center"><a href="weekly/hhp-fightlg.jpg"><img width="100" src="weekly/hhp-fightsm.jpg"></a><br>An Orc Mercenary meets it's match
+					</td>
+				</tr>
+			</table>
+			<br>
+			</td>
+			<td width=5%>&nbsp;</td>
+
+  <tr bgcolor=#4169e1>
+    <td colspan=2 valign="middle"><a name="1"><font face="Arial" color="white" size="3"><b>&nbsp;Patch Message</b></font></td>
+  </tr>
+  <tr bgcolor="white">
+    <td colspan=2 valign="top" align="right"><font face="Arial">18 February 00 01:59 PM [PST] - 
+    <a href="mailto:khelor@eq-uk.com">Khelor</a></font></td>
+  </tr>
+  <tr>
+    <td colspan="2">*EverQuest Expansion Information*<br><br>All existing EverQuest customers will be given the opportunity to upgrade to the Expansion directly (via the Login server) and at a discounted upgrade-only rate. This opportunity will most likely happen during the month of April, prior to launch. The upgrade package will include an upgrade CD-ROM and a new world map.<br><br>IMPORTANT: The retail EverQuest box will be replaced with a new box that will include both EverQuest and the Expansion. You may have already begun to see advertisements for this box at a regular retail price. If you are already an existing EverQuest customer you do NOT need to purchase the box at retail -- you will be given an opportunity to buy an upgrade only package directly and at a discounted price.<br><br>Pricing for the upgrade will be announced shortly. <br><br><br>February 17th, 3:00pm<br>---------------------<br><br>***Supplemental Patch Message***<br><br>There's one minor issue with Paineel that we neglected to mention in the patch message. At the entrance to the city, there is an elevator that must be activated with a key. The "keyhole" in this instance is a rock that is on the ground near the lift. A minor bug exists that does not allow people to click on the rock to activate the elevator. In order to activate the elevator, players will need to hold the key on their pointer, hover it over the rock, and press the "U" key. This will be fixed in a future patch.<br><br>In addition, the patch message made reference to a teleporter being placed within the Plane of Hate.  The information provided concerning this teleporter was incorrect. The information should read as follows:<br><br>- A bug exists within the Plane of Hate that sometimes causes people to be transported to an inactive portion of the zone, from which there is no exit.  A teleporter has been placed within this area to transport people who are trapped back to the entrance of Hate.<br><br><br>- The EverQuest Team<br><br><br><br>February 17th, 7:00am<br>---------------------<br><br>***Announcements***<br><br>The City of Paineel, home to the infamous Heretics of Erudin, is now available via the Optional Patch.  In addition, Erudites may now also be Shadowknights in addition to the other classes available to them.  All Erudite Necromancers, Shadowknights, and Clerics who worship the God of Fear, Cazic-Thule, now start in the City of Paineel.  As such, if you wish to create a character of this type from this point forward, you *must* download the Paineel zone-files via the Optional Patch.<br><br>Please note that if you downloaded the Paineel zone files recently, you must run the Optional Patch again to insure you have the correct version of the files.<br><br>In related news, all of the entrances to the Qeynos Catacombs have been fixed.<br><br>Enjoy!<br><br><br>***Patch Message***<br><br>The following changes have been implemented on the live servers:<br><br>*Spell Changes*<br><br>- The recast delay for many of the Shaman buff-spells have been reduced.<br>- "Reoccurring Amnesia" has had its casting time reduced.<br>- "Yaulp" and "Augmentation" should now stack.<br>- "Solidarity of Vision" has had its duration increased.<br>- The Druid spell, "Skin Like Nature", has been returned to its former status due to popular opinion. As such, the damage-shield component has been removed and the regeneration component has been re-applied.<br>- "Sense Magic" has been replaced in all cases by the "True North" spell.  If you have already inscribed the "Sense Magic" spell, the spell icon will now automatically reflect "True North".<br>- A bug that existed with several damage-shield spells, causing their damage to be subtracted rather than added when stacked, has been corrected.  The spells will now stack properly.<br>- The "Feign Death" spell, when cast by a Necromancer, will now have a fixed duration.  The Necromancer will receive several warnings prior to the spell wearing off. This change was necessary because some Necromancers found a way to gain experience through their pet while being AFK for an extended duration, such as being in bed for the night.  Note: This does not affect Shadowknights or Monks.<br>- New Necromancer spells are now in game.  Check your spell vendors.<br>- Alchemy has been revamped.  Check with your local Shaman.<br>- DOT (Damage Over Time) spells will no longer hinder camping.<br><br><br>*General Changes/Fixes*<br><br>- The dungeon of Paw has again received a minor update to slightly reduce the difficulty of the zone. <br><br>- All known issues with the SBLive soundcard have been corrected.<br><br>- From this point forward, deleting a character will cause all corpses belonging to that character to likewise be deleted.  This change was made primarily to stop a no-drop transfer bug.  It also has the added effect of cleaning up corpses for characters that people no longer intend to play.<br><br>- Crippling Blows will now display the correct damage in the "You have scored a Crippling Blow (###)" line.<br><br><br>*Corpse Looting Exploit*<br><br>Recently, an exploit was discovered that allowed certain unsavory individuals to loot the corpses of other players without their consent.  The precise symptom of this is that the owner would find their corpse stripped of everything except for no-drop items, and items in a bag with no-drop items.  This exploit was fixed in this patch.<br><br>If you were affected by this exploit recently, you are entitled to a reimbursement of your lost items assuming that we still have a record of what you had.  Please contact a GM in-game to arrange for an investigation.  <br><br>During the course of the investigation, people who have exploited this bug will be subject to disciplinary action by our GM staff up to and including item wipes, suspension, and/or banishment.   <br><br><br>*Rogue Enhancements*<br><br>Rogues received several enhancements as part of this patch:<br><br>- The chance to score a critical hit with a throwing weapon has been increased significantly.<br><br>- When throwing a weapon from behind the NPC in question, a rogue now has a chance to score a "Deadly Strike", for enhanced damage above and beyond that of a critical hit.<br><br>- A new rogue-specific ability has been added to the "Hide" skill.  It is called "Evade".  This skill has the effect of lowering the amount that the targeted NPC hates the rogue, and has the potential of making the engaged NPC switch to another target (preferably a tank) within the rogue's group.  It is essentially a "reverse taunt".  This ability helps mitigate the negative effects of the rogue's exceedingly high damage-output potential. It also will in-turn help the rogue do even more damage as the NPC is much more likely to expose its back.  It is engaged by targeting the NPC you wish to "Evade" and pressing the "Hide" button.  As a note, you must not be in combat mode in order to use this ability.<br><br><br>*Mistwalker*<br><br>The Mistwalker will once again cast its spell as often as it used to prior to the last patch.  However, the resulting pet will now automatically "dissipate" after one combat round.  The change that reduced the "proc" percentage on the weapon was made due to an unintended interaction between the pet and the target when several users of this weapon were attacking the same target.  Since the new pet now automatically dissipates after one round, the reduced "proc" percentage was no longer necessary.<br><br><br>*Class-Specific Armor Quests*<br><br>Class-Specific armor quests, especially those belonging to Clerics, Paladins, and Shadowknights, have been reduced in terms of how long it will take the average person to acquire the armor.  These classes, and others that found particular pieces of their armor exceedingly difficult to obtain should find it much easier now.<br><br>In addition, a bug that hindered completion of the Bracer of Ro quest for some races has been corrected.<br><br><br>*Tallon Zek*<br><br>Loot rules for PvP deaths on the PvP-Teams server, Tallon Zek, have been changed from "Coin + 1 item" to "Coin Only".  This change was made to study the impact of loot-rules upon server population in reference to the loot/efficiency disparity between caster and melee characters.  This change is a test, and may or may not be retained or rolled out across the other PvP servers, pending the results of the server population study over the next few weeks.  <br><br><br>*Plane Changes*<br><br>Several changes have been implemented in the Planes as part of this patch:<br><br>- Characters will now lose all enchantments upon entering the Plane of Sky<br><br>- Due to the fact that the levitate-series no longer works within the Plane of Sky, a teleporter has been placed to allow entrance into the quest room.<br><br>- A teleporter has been placed within the Plane of Hate in order to give non-casters a way out of the zone besides death, potion, or group teleport.<br><br><br>*Loot Messages*<br><br>Messages indicating what has been looted from a corpse will now be broadcast to everyone within the looters group.  This change was made due to public request and to encourage trust within the group.  We may, in the future, employ filters to allow people to choose whether or not they wish to receive loot messages.<br><br><br>*Fiery Avenger*<br><br>The greatly anticipated defining blade of the Paladin, the "Fiery Avenger", is again available within game via a quest.  The *first* devout Paladin to wield this blade and be validated by a GM in-game will be publicly congratulated within a patch message and on the Official EverQuest web-site at www.everquest.com.<br> <br>- The EverQuest Team<br>&nbsp;</td>
+  </tr>
+
+  <tr bgcolor=#4169e1>
+    <td colspan=2 valign="middle"><a name="2"><font face="Arial" color="white" size="3"><b>&nbsp;Paineel goes live!</b></font></td>
+  </tr>
+  <tr bgcolor="white">
+    <td colspan=2 valign="top" align="right"><font face="Arial">18 February 00 01:56 PM [PST] - 
+    <a href="mailto:khelor@eq-uk.com">Khelor</a></font></td>
+  </tr>
+  <tr>
+    <td colspan="2">Evil Erudites will soon be roaming around Norrath with the openning of a new zone, Paineel.<br><br>Paineel can be downloaded via the Optional Patch.<br>&nbsp;</td>
+  </tr>
+
+	</table>
+	</td>
+	</tr>
+  <tr>
+  
+  <td valign=top colspan=4>
+  <p align="center"><font size="1">Copyright '99 <a href="http://www.eq-uk.com">www.eq-uk.com</a> - All copyrights acknowledged</font></p>
+
+  </td>
+  </tr>
+</table>
+
+</BODY>
+</HTML>

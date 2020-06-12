@@ -1,0 +1,727 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="GENERATOR" content="IBM HomePage Builder 2000  for Windows">
+<TITLE>もうね。</TITLE>
+<SCRIPT language=JavaScript>
+<!--
+dCol='006400';//date colour.
+fCol='006400';//face colour.
+sCol='006400';//seconds colour.
+mCol='006400';//minutes colour.
+hCol='006400';//hours colour.
+ClockHeight=38;
+ClockWidth=38;
+ClockFromMouseY=60;
+ClockFromMouseX=60;
+
+//Alter nothing below! Alignments will be lost!
+//rATbAstard ownz j00
+d=new Array("SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY");
+m=new Array("JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER");
+date=new Date();
+day=date.getDate();
+year=date.getYear();
+if (year < 2000) year=year+1900;
+
+TodaysDate=" "+d[date.getDay()]+" "+day+" "+m[date.getMonth()]+" "+year;
+D=TodaysDate.split('');
+H='...';
+H=H.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+Face='1 2 3 4 5 6 7 8 9 10 11 12';
+font='Arial';
+size=1;
+speed=0.6;
+ns=(document.layers);
+ie=(document.all);
+Face=Face.split(' ');
+n=Face.length;
+a=size*10;
+ymouse=0;
+xmouse=0;
+scrll=0;
+props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+Split=360/n;
+Dsplit=360/D.length;
+HandHeight=ClockHeight/4.5
+HandWidth=ClockWidth/4.5
+HandY=-7;
+HandX=-2.5;
+scrll=0;
+step=0.06;
+currStep=0;
+y=new Array();x=new Array();Y=new Array();X=new Array();
+for (i=0; i < n; i++){y[i]=0;x[i]=0;Y[i]=0;X[i]=0}
+Dy=new Array();Dx=new Array();DY=new Array();DX=new Array();
+for (i=0; i < D.length; i++){Dy[i]=0;Dx[i]=0;DY[i]=0;DX[i]=0}
+if (ns){
+for (i=0; i < D.length; i++)
+document.write('<layer name="nsDate'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props2+D[i]+'</font></center></layer>');
+for (i=0; i < n; i++)
+document.write('<layer name="nsFace'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props+Face[i]+'</font></center></layer>');
+for (i=0; i < S.length; i++)
+document.write('<layer name=nsSeconds'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+sCol+'><center><b>'+S[i]+'</b></center></font></layer>');
+for (i=0; i < M.length; i++)
+document.write('<layer name=nsMinutes'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+mCol+'><center><b>'+M[i]+'</b></center></font></layer>');
+for (i=0; i < H.length; i++)
+document.write('<layer name=nsHours'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+hCol+'><center><b>'+H[i]+'</b></center></font></layer>');
+}
+if (ie){
+document.write('<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < D.length; i++)
+document.write('<div id="ieDate" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props2+D[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < n; i++)
+document.write('<div id="ieFace" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props+Face[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++)
+document.write('<div id="ieHours" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+hCol+';text-align:center;font-weight:bold">'+H[i]+'</div>');
+document.write('</div></div>');
+document.write('<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++)
+document.write('<div id="ieMinutes" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+mCol+';text-align:center;font-weight:bold">'+M[i]+'</div>');
+document.write('</div></div>')
+document.write('<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++)
+document.write('<div id="ieSeconds" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+sCol+';text-align:center;font-weight:bold">'+S[i]+'</div>');
+document.write('</div></div>')
+}
+(ns)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ymouse = (ns)?evnt.pageY+ClockFromMouseY-(window.pageYOffset):event.y+ClockFromMouseY;
+xmouse = (ns)?evnt.pageX+ClockFromMouseX:event.x+ClockFromMouseX;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+if (ie){
+Od.style.top=window.document.body.scrollTop;
+Of.style.top=window.document.body.scrollTop;
+Oh.style.top=window.document.body.scrollTop;
+Om.style.top=window.document.body.scrollTop;
+Os.style.top=window.document.body.scrollTop;
+}
+for (i=0; i < n; i++){
+ var F=(ns)?document.layers['nsFace'+i]:ieFace[i].style;
+ F.top=y[i] + ClockHeight*Math.sin(-1.0471 + i*Split*Math.PI/180)+scrll;
+ F.left=x[i] + ClockWidth*Math.cos(-1.0471 + i*Split*Math.PI/180);
+ }
+for (i=0; i < H.length; i++){
+ var HL=(ns)?document.layers['nsHours'+i]:ieHours[i].style;
+ HL.top=y[i]+HandY+(i*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=x[i]+HandX+(i*HandWidth)*Math.cos(hrs);
+ }
+for (i=0; i < M.length; i++){
+ var ML=(ns)?document.layers['nsMinutes'+i]:ieMinutes[i].style;
+ ML.top=y[i]+HandY+(i*HandHeight)*Math.sin(min)+scrll;
+ ML.left=x[i]+HandX+(i*HandWidth)*Math.cos(min);
+ }
+for (i=0; i < S.length; i++){
+ var SL=(ns)?document.layers['nsSeconds'+i]:ieSeconds[i].style;
+ SL.top=y[i]+HandY+(i*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=x[i]+HandX+(i*HandWidth)*Math.cos(sec);
+ }
+for (i=0; i < D.length; i++){
+ var DL=(ns)?document.layers['nsDate'+i]:ieDate[i].style;
+ DL.top=Dy[i] + ClockHeight*1.5*Math.sin(currStep+i*Dsplit*Math.PI/180)+scrll;
+ DL.left=Dx[i] + ClockWidth*1.5*Math.cos(currStep+i*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=(ns)?window.pageYOffset:0;
+Dy[0]=Math.round(DY[0]+=((ymouse)-DY[0])*speed);
+Dx[0]=Math.round(DX[0]+=((xmouse)-DX[0])*speed);
+for (i=1; i < D.length; i++){
+Dy[i]=Math.round(DY[i]+=(Dy[i-1]-DY[i])*speed);
+Dx[i]=Math.round(DX[i]+=(Dx[i-1]-DX[i])*speed);
+}
+y[0]=Math.round(Y[0]+=((ymouse)-Y[0])*speed);
+x[0]=Math.round(X[0]+=((xmouse)-X[0])*speed);
+for (i=1; i < n; i++){
+y[i]=Math.round(Y[i]+=(y[i-1]-Y[i])*speed);
+x[i]=Math.round(X[i]+=(x[i-1]-X[i])*speed);
+}
+ClockAndAssign();
+setTimeout('Delay()',20);
+}
+if (ns||ie)window.onload=Delay;
+-->
+</SCRIPT>
+
+
+</HEAD>
+<BODY bgcolor="#D7BB84" background="BACKRED.jpg" text="#cccccc" link="#00cccc" vlink="#ff00ff">
+<P><A href="http://www.kk.iij4u.or.jp/~soni/EQ/">TOP</A>//<A href="http://www.kk.iij4u.or.jp/~soni/EQ/rasii.htm">らしい。</A>//<A href="moune.htm" target="_blank">もうね。</A>//<A href="http://www.ba.wakwak.com/~soni/cgi-bin/ealis/ealis.cgi?" target="_blank">銀ちゃんBBS</A>//<A href="nikki1.htm">=記=</A>//<A href="http://www.kk.iij4u.or.jp/~soni/EQ/link.htm" target="_blank">LINK (ぼちぼち)</A>　公開されている有用な情報へのリンク、メモ他。情報元の人に勝手に感謝。</P>
+<P align="right"><A href="http://www.ba.wakwak.com/~soni/EQ/log1rasii.htm" target="_blank">log1</A>//<A href="http://www.ba.wakwak.com/~soni/EQ/log2rasii.htm" target="_blank">log2</A>//<A href="http://www.ba.wakwak.com/~soni/EQ/log3rasii.htm" target="_blank">log3</A>//<A href="http://www.ba.wakwak.com/~soni/EQ/log4rasii.htm" target="_blank">log4</A>//<A href="http://www.ba.wakwak.com/~soni/EQ/log5rasii.htm" target="_blank">log5</A>//<A href="http://www.ba.wakwak.com/~soni/EQ/log6rasii.htm" target="_blank">log6</A>//<A href="http://www.kk.iij4u.or.jp/~soni/EQ/pog.htm" target="_blank">G</A>//<A href="http://www.kk.iij4u.or.jp/~soni/EQ/sov.htm" target="_blank">表</A>//<A href="http://www.kk.iij4u.or.jp/~soni/vf4index.htm" target="_blank">VF4</A>//<A href="http://www.kk.iij4u.or.jp/~soni/EQ/BBSL2.htm" target="_blank">_</A> //<A href="http://www.ba.wakwak.com/~soni/JPG/HON/honlog.htm" target="_blank">画像Log</A></P>
+<P>もうね。は個人メモの為に解説が少ないが気にせずに。「It's
+cold out no one can help you but you」 from
+Elle/Bare Foot</P>
+<HR>
+<P>○Povarでも広まるElleブーム。うにゃはナイフ、moonさんはbarefootがお気に入りの模様。Junoはまだきーてない。<BR>
+○公式BBSメンバー<A href="http://www.dynamord.com/elle/bbs/resbbs3.cgi" target="_blank">直</A>レスしまくり。<BR>
+　＞渋谷のタワレコに用があって行ったら、１階にエルレコーナーが２箇所もあった。１つはほそみさんのサインありだし。<BR>
+サインは4/3。上の階にも解説つきのがありますた。タワレコ太鼓判大プッシュですな。<BR>
+○ 『PATi・PATi』 に風の日についての話等が載ってた。ちゃこふぃる載っててやってんなーって気をとられたがｗ<BR>
+○こんなの<A href="http://www.brains-corp.co.jp/sound/" target="_blank">発見</A>。<A href="http://216.239.33.100/search?q=cache:lQegHI84gcYC:www.j-wave.co.jp/original/jwavedx/supernova/nova0107.htm+ELLEGARDEN&hl=ja" target="_blank">ぁ</A>。<A href="http://216.239.33.100/search?q=cache:L4TyBZsjqi8C:sach-gun.hoops.ne.jp/etc/011125.html+ELLEGARDEN&hl=ja" target="_blank">4枚目</A>ELLE。<A href="http://www.usen440.com/cup/ranking.html" target="_blank">有線@インディーズ</A>4月チャート　ELLE指輪が13～17位。流れてるのだなぁ。<A href="http://web.archive.org/web/*/http://home.att.ne.jp/green/blindeye/" target="_blank">ここ</A>が<A href="http://home.att.ne.jp/green/blindeye/" target="_blank">元URL</A>だったらしい。<A href="http://web.archive.org/web/20010831204520/www.dynamord.com/elle/tour.html" target="_blank">北海道</A>でめちゃめちゃstreetまくり。<A href="http://web.archive.org/web/20010831203358/www.dynamord.com/elle/profile.html" target="_blank">古い</A>画像とか。<BR>
+インディーズとメジャーアーティストの違いについて細美氏の書き込みがあったらしくそれについて<A href="http://www2.diary.ne.jp/user/124587/" target="_blank">ここ</A>の3/27に。なるほど。<BR>
+<BR>
+&gt;バンド名の由来を教えてください。 <BR>
+&gt;生形：それは特にないです(笑)。響きがカッコイイなあ～と思って付けました(笑)。<BR>
+&gt;細美：バンド名に意味はないんだけれど、単語には意味がある！
+&quot;ELLE（エルレー）&quot;っていうのはフランス語で、英語でいう&quot;She&quot;の意味がある。<BR>
+<A href="http://216.239.35.100/search?q=cache:LAk1oCtIaRQC:www.yaneura.co.jp/FEATURE.HTM+ELLEGARDEN&hl=ja" target="_blank">必見ぎみ</A>。<A href="http://www.hiroshima-fm.co.jp/indiego/guest2001/guest1013.html" target="_blank">ついカー</A>。ELLEの<A href="http://tokyo.cool.ne.jp/kouchi/cd.html" target="_blank">CDジャケ</A>デザインしている人!? DAの<A href="http://tokyo.cool.ne.jp/kouchi/dragon1.html" target="_blank">あれ</A>描いた人らしい。下の方でメモLINK<A href="http://www4.justnet.ne.jp/~sugahara/livesonota.htm#010225elle" target="_blank">貼った</A>ところの<A href="http://www4.justnet.ne.jp/~sugahara/" target="_blank">TOP</A><BR>
+。そりゃ<A href="http://216.239.33.100/search?q=cache:z0B7lW7HzkkC:www.pure.cc/~kee-a/kokoro0111.htm+ELLEGARDEN&hl=ja" target="_blank">嫌い</A>ーって人もいる<A href="http://extra.bird.to/live/live13.html" target="_blank">わけ</A>で。この２つは同じぽいので対極なのかな。<BR>
+--------------<BR>
+○窓の社。ここの<A href="http://www.geocities.co.jp/SiliconValley-Bay/2027/" target="_blank">ソフト</A>がいいかん<A href="http://www2s.biglobe.ne.jp/~yanai/" target="_blank">じ</A>。<BR>
+○攻殻2は押井監督の手で2004年。公開予定が2003年から2004年に1年延期。<BR>
+○情報。東西NTT，FTTHサービスに新メニュー。<A href="http://itpro.nikkeibp.co.jp/free/NCC/NEWS/20020405/1/" target="_blank">100メガで月6000円以下</A>を検討 <BR>
+○感想。4GAMER <A href="http://www.4gamer.net/previews/pre_sb.html" target="_blank">SB</A>雑感<BR>
+○AOM。懐かしのAGE News Network of JAPAN<A href="http://www.hi-ho.ne.jp/slow_97kameko/" target="_blank">りにゅーある</A>。AoMはベータ完成で米での発売が2002 9月とか。<BR>
+○FF11。ファイナルファンタジーXI利用料金:1,280円/月(税抜)<BR>
+○ガンダム。ガンダムネットワークオペレーション
+4月1日。どうなのか。<BR>
+○懐かしいAOE系の人々のPAGEを回った。なんか凄い人だらけ。<BR>
+○FLASH SITE。<A href="http://tenma.org/" target="_blank">COOOOL</A> SITE。かなり最高。神秘的なTOP。音楽。軽い。<BR>
+○Flash。<A href="http://members.tripod.co.jp/mona222/" target="_blank">ラルクモナー</A><BR>
+○ソスト。メモリークリーナー<A href="http://software.wakusei.ne.jp/free/sysmemview.html" target="_blank">探してたら</A>偶然みっけたKITTのフォンフォンとかもある<A href="http://www.ne.jp/asahi/sk/k2000/DownLoad/DL_Soft.htm#FreeMemory" target="_blank">SITE</A>。<BR>
+○外付けHDかビデオキャプチャーボードを買う予定。カメラ付き携帯と。<A href="http://www.kuroutoshikou.com/katarukai/katarukaifset.html" target="_blank">玄人志向</A> [PRODUCTS]<BR>
+<BR>
+○ELLE。あの時写真とったのを勝手にあれはまずいのでパス付けてこっそりの予定。だがまだインスタントカメラのフィルム使い切ってない。<BR>
+○ELLEGARDEN<A href="http://www.dynamord.com/elle/" target="_blank">公式</A>PAGEのTOP画像はランダム表示である。普通の写真からエフェクトで加工されたものまで。<BR>
+んで！今見たら<B>UFOがいた</B>のだよ！w　こういうのつぼ。最高。<BR>
+http://www.dynamord.com/elle/change/change.cgi?page=top<BR>
+れっつリロード。→UFOめちゃレアぽい・・・w<BR>
+○ELLE。<BR>
+＞札幌パルス２１の先週の新譜アルバム売上ベスト１０
+『DON'T TRUST ANYONE BUT US』が セリーヌ・ディオンを抜いて堂々の１位！
+<BR>
+！せりーぬPCクラッシュCDなんか<B>ウッテッカラダヨ</B>！</P>
+<HR>
+<P>
+○にきと車とかバイクの話してたんです。んでふとAKIRAのバイクとか<A href="http://www.lcv.ne.jp/~aiaki/kitt/kit2/fr.html" target="_blank">赤いぴろぴろ</A>の話になって。んでこのSITEなんですがこの人<A href="http://www.lcv.ne.jp/~aiaki/kitt/kitt.html" target="_blank"><B>本気</B></A>です。バイク版も<A href="http://www.platon.co.jp/~take6/vfr/2myvfr.htm" target="_blank">はけーん</A>。RMぴろぴろ<A href="http://www.platon.co.jp/~take6/vfr/vfr.rm" target="_blank">マイコー</A>。ぴろぴろ<A href="http://www.markscustomkits.com/" target="_blank">販売会社</A>。求むAKIRAの<A href="http://www.urban.ne.jp/home/madr/contents/graffiti/2001.04/2001.04.htm" target="_blank">金田</A>の<A href="http://www.tanomi.com/metoo/naiyou.html?kid=2698" target="_blank">ばいく</A>。未来<A href="http://www.jvcmusic.co.jp/m-serve/megazone/gallery/cg.html" target="_blank">けー</A>。<BR>
+○VS H氏Lau　63勝37敗<BR>
+○相も変わらずラルクのflowerは良い。PVは、イマイチかも。<BR>
+○今更ながらZONEのsecret base。<BR>
+○月火1限・・・。<BR>
+○エルレと略す人とエルガと略す人がいる。エルレのがいいと思うのだが。<BR>
+&gt;タワレコのフリーペーパーのＴｏｗｅｒ17Pにもエルレ載ってます。<BR>
+だそーです。<BR>
+○ねがでぃぶはっぴーのラジオの話とその曲について<A href="http://www.asahi-net.or.jp/~WF9R-TNGC/nikko.html" target="_blank">裏工業</A>に。<BR>
+○<A href="http://www03.u-page.so-net.ne.jp/ya2/cita/" target="_blank">森</A>さんの工作室ともう１冊なんか写真たくさんのが出てた。まぁいいや。リスト<A href="http://www.mars.dti.ne.jp/~nakahasi/mori.html" target="_blank">壱</A>　<A href="http://www.asahi-net.or.jp/~ue4k-ngt/bnavi/morihiro.html" target="_blank">弐</A>。<BR>
+前どっかに書いた気がするけど「詩的私的ジャック」はラルクのことなのだとか。<BR>
+○コンシューマgame雑誌をながらく見ていないので知らぬのだがリコモモロンというアレ系なGAMEのBGMをDepthの曲を作った人たちが作っているとかなんとか。結局ICOもRezも手を出していない。<BR>
+○1400円で<A href="http://www.rangsjapan.co.jp/SNAPWATCH/snapwatch.htm" target="_blank">買ってきた</A>。結構お気に入り。<BR>
+○にき、平、とVF4。引き分け<BR>
+○毎朝100%座れるVIP定期を買った。<BR>
+○WEB全然みてない・・・のでリンクをはれぬ。<BR>
+3分でニュースを見るのならニュー速<BR>
+○日本の<A href="http://news.2ch.net/test/read.cgi/newsplus/1018147787/" target="_blank">核武装論</A>
+</P>
+<HR>
+<P>
+○&gt;著作権法に問題があると思うなら、堂々と国会議員に立候補して「著作権法のここが問題だから俺が改正する」と主張<A href="http://news.2ch.net/test/read.cgi/newsplus/1018158486/" target="_blank">しろ</A>。<BR>
+おうきえい。了解。んでJASRACは音楽として<A href="http://www.accsjp.or.jp/" target="_blank">ACCS</A>を知らぬのだが何はともあれGoogle様様なわけで<BR>
+<BR>
+&gt;社団法人コンピュータソフトウェア著作権協会（ACCS）は、デジタル著作物の権利保護や<BR>
+&gt;著作権思想の普及活動を通じて、 コンピュータ社会における文化の発展に寄与しています。
+<BR>
+とのこと。発展バンザイ。<BR>
+<BR>
+○<A href="http://storm.s6.xrea.com/otherfile/8toushin.swf" target="_blank">この</A>Flashの曲がpillowsらしいのだが借りたアルバムにはなかった/cry<BR>
+→ピロウズの最近出たアルバム&quot;SMILE&quot;の2曲目とのこと。著作権というのはいいのか悪いのか解らなくなってくるな。<BR>
+♪<BR>
+最近のレンタルやCD購入はNET上でのFileが動機。目的なくCD屋へはあまりいかない＝偶然テクノＣＤを買うこともなかった。<BR>
+TV RADIO 街 PC-Filesで聞いた音楽で<BR>
+・凄くいいと思ったもの→意地で探し出して買う<BR>
+・いいと思ったもの→曲名探し出してレンタルなきゃ買う<BR>
+・ちょっといいと思ったもの→レンタルorPC-FilesのQualityて満足＝結局買わない。<BR>
+・他→しかと<BR>
+故にレンタルするかしないかの差。最近の当局によるアーティスト単位の売上が減っているという主張はNET等の媒体により顧客のアンテナが伸びインディーズやジャンル面で購買層が分散した所による割合が多いのではないか。故に金儲けを目的としないBGMとしてちょっと使うくらいならイイジャン、となってはくれませんか。ちなみにアーティストがJASRACに委託しなければ良いがメンドイから任せる人が多い。らしい。<BR>
+と考察の振りした言い訳をしてみた。<BR>
+関連で最近のコピー防止CD<BR>
+&gt;「売上げ落ちたのはコピーのせい」って散々言ってるんだから
+これで売上が回復しなかったらみんなで笑ってやろうぜ。<BR>
+&gt; 「コピープロテクトにお金つぎこむくらいならプロテクトかけずに
+安く出したほうがトータルで儲かる」 だった筈<BR>
+&gt;レンタルコピーしてたのって、どうでもいいアーティストのだったりする。コピー出来ないから
+買うって寸法にはならないのでは<BR>
+2CHは時に鋭い。 買ったCDもMP3にしてソート楽にできるようにしてるから・・・完全防止は<A href="http://www.excite.co.jp/News/computers/story/?nc=020405-01&nd=20020405150625&sc=te" target="_blank">だるい</A>。<BR>
+--------------------------<BR>
+45<BR>
+Bare Foot<BR>
+風の日<BR>
+A Thousand Smiles<BR>
+STUPID<BR>
+月<BR>
+サンタクロース<BR>
+MY Favorite Song<BR>
+指輪<BR>
+ナイフ<BR>
+Can You Feel Like I Do<BR>
+The End Of World<BR>
+Sliding Door<BR>
+Rain drops<BR>
+Lonesome<BR>
+Middle Of Nowhere<BR>
+Don't Trust Anyone But Us<BR>
+花<BR>
+PUNK<BR>
+It arranged in my favorite order.</P>
+<HR>
+<P>いきなり日記になりつつある変なページ。</P>
+<P>アルバム 「DON'T TRUST ANYONE BUT US」に同名曲入ってない。これは指輪の3曲目。<BR>
+4/3にA Thousand Smilesをやってたのを思い出した。これはBareFootの3曲目。良い。少しHANSONが思い浮かんだ。<BR>
+そしてミニアルバムELLEGARDENのLAST「ナイフ」。<BR>
+ちょっと臭い言い方になるが、「次の交差点を」この一言を渋谷の夜空にあんなにカッコヨク歌うELLEは最高だと思った。<BR>
+あれほどカッコイイナァと思ったのはラルクのDriver's
+High以来。<BR>
+「ねぇ」という曲はどこだ・・・→ナイフのことか。<BR>
+<BR>
+・TECHNO CDも買ってきたしpillowsとweezerも4枚ビバップもレンタルしたのだけど・・・いつ聴くのかなぁ。<BR>
+・↑<A href="http://www.qfront.co.jp/ayubihs/records/word/067.html" target="_blank">Sound Republic Mixed by DJ Q'HEY</A>。From タワレコテクノ試聴コーナー。誰だか知らぬがかなり良い。<BR>
+・メモ<A href="http://www.eurus.dti.ne.jp/~spinn/mnemonic/utilities/ut01.html" target="_blank">TECHNIQUE</A>他。次はROTTELDAM TECHNOを。<A href="http://www.tbl.org/main.htm" target="_blank">下記の</A>MEGADEMO150M落とした。<BR>
+・いいかげん上遠野さんの小説に手を出した。壁紙は天才に貰ったlain。BGMは言うまでもなく。ALL
+RDY。<BR>
+・RING OF イモムシを（64Kで）落とし終わったのでZzz<BR>
+→のはずが風呂入ったりで朝日が昇っちゃう罠。</P>
+<HR>
+<P>○ELLE'S STREET LIVE !!　勿論警察が来るまでなのだが9時ちょいまえにちかくで事件があって救急車消防車パトカーがではらってるかんじで。<BR>
+→いろいろ！THE END OF THE WORLDのイントロを細美氏が弾いたり。<BR>
+→かなり馬鹿が２名？程乱入。皆の殺意の篭った冷たい視線はすんでの所で彼女を殺すに至らなかった模様。<BR>
+→まぁ盛り上ってたから・・・。<BR>
+→警察にLAST1曲といって演奏終り。<BR>
+→と見せかけて<BR>
+→MC 「やっぱラストはこの曲じゃないと終われないと思うんだよね」<BR>
+→ナイフ！<BR>
+→演奏しきり。警官さん離れるも信頼してのことなので裏切れない故に綺麗に終了。途中で止めないナイス警官！おつ。<BR>
+タワレコで大プッシュされてた。1コーナー設けてありプロモ流れてたり別階Indiesコーナーでは解説つきだったり。<BR>
+しかし去年は期間があいているからともかく、一昨日警察にお世話になったばかりでも結構するところが！<BR>
+当分3回目はないね。捕まっちゃうよw<BR>
+日記<A href="http://www.memorize.ne.jp/diary/78/00233/" target="_blank">発見</A>。<BR>
+-------<BR>
+○Elle。渋谷のタワレコinfoカウンターで4/21インストアliveの整理券ただで配ってる。</P>
+<HR>
+<P>「Don't forget that we are here to have fun
+Not to throw blame around」 from Elle/45<BR>
+<BR>
+○Elle。4/5　PM9～同場所でストリートAgain。<BR>
+○EQ。忘れないうちに昨日のメモをw　かくかくいんいーえむ、CoHやらない。<BR>
+○吉野家。<A href="http://achiai.tripod.co.jp/img/0329/9.html" target="_blank">必見。</A><BR>
+○芸術。<A href="http://achiai.tripod.co.jp/img/0329/3.html" target="_blank">秀逸</A>。<BR>
+○Bump <A href="http://www.m-net.ne.jp/~ri5dan/music%20K.html" target="_blank">K</A>。俺も天才もきました。同siteの<A href="http://www.m-net.ne.jp/~ri5dan/phototop.html" target="_blank">写真コーナー</A>。ないす。<BR>
+○再認識。今更ながらWEBのありがたみを実感。<BR>
+○眠い。花粉症の薬はかくも睡魔を呼び起こすものなのかとカッコつけるくらい眠い。目覚し時計5個じゃ全然足りない。<BR>
+-------------------<BR>
+軽くぐぐる　俺メモ<BR>
+●CD.Journal.com<BR>
+4/3発売のアルバム<B>以外</B>は<A href="http://www.cdjournal.com/index.html" target="_blank">CDJournal.com</A>でRM<A href="http://www.cdjournal.com/indies/label/358.html" target="_blank">試聴可能</A>。<A href="http://www.fm802.co.jp/minami/photo/a24.html" target="_blank">ここ</A>でほんの少しきける。<BR>
+○<A href="http://www.cdjournal.com/guide/BECCC/BECCC7C4.html" target="_blank">
+Bare Foot<BR>
+</A>○<A href="http://www.cdjournal.com/guide/BEDAC/BEDACE87.html" target="_blank">
+指輪<BR></A>○<A href="http://www.cdjournal.com/guide/BEDAF/BEDAF4FF.html" target="_blank">ELLEGARDEN</A>
+<BR>
+ここの→「R?[Research]は、音楽に関する疑問を解決するためのページ→CMの曲等が<A href="http://www.cdjournal.com/research/backnb/car/2001/1023.html" target="_blank">解る</A>。同系<A href="http://www.tv-marker.com/main/tv_music/tvmusictu_cm02.html" target="_blank">TVマーカー</A>）<BR>
+<BR>
+他：<A href="http://www.emedia.co.jp/indies.html" target="_blank">eMEIA</A>@<A href="http://catalog.emedia.co.jp/indies/detail/1000246633.html" target="_blank">指輪</A>//無料歌詞検索<A href="http://www.uta-net.com/" target="_blank">uta-net</A>//<A href="http://www.spoo.co.jp/top/" target="_blank">OOPS</A>//<A href="http://www.jmusic.ne.jp/" target="_blank">Jmusicさーち</A>//<A href="http://www.cdv-j.or.jp/" target="_blank">みゅしね</A>//<A href="http://www.hmv.co.jp/" target="_blank">HMV</A>//<A href="http://www.tsutaya.co.jp/index.zhtml" target="_blank">TUTAYA</A>//<A href="http://www.towerrecords.co.jp/sitemap/SiteManager.jsp" target="_blank">タワレコ</A> @<A href="http://www.towerrecords.co.jp/sitemap/CSfSearchResults.jsp?keyword=ArtistId&SEARCH_GENRE=ALL&entry=320142&GOODS_SORT_CD=101" target="_blank">ELLE</A>//HI!SOFT@<A href="http://www.high-soft.com/html/music/e/barefoot_ellegarden.shtml" target="_blank">ELLE</A>ELLE公式<A href="http://www.dynamord.com/elle/i/" target="_blank">@ i</A>//<A href="http://www.vanda.co.jp/d/d.php?AR=ELLEGARDEN" target="_blank">Vandaレコード</A>//JAPANESE POPS&amp;ROCK<A href="http://revaeb.tripod.co.jp/beaver/jpopind.html" target="_blank">INDIES</A>//ELLE<A href="http://tokyo.cool.ne.jp/kouchi/cd.html" target="_blank">ジャケット</A>//<A href="http://www4.justnet.ne.jp/~sugahara/livesonota.htm" target="_blank">ここ</A>みると前回は6.8、7.13だった模様//<A href="http://www4.justnet.ne.jp/~sugahara/" target="_blank">他１</A> <A href="http://www.jvcmusic.co.jp/bugy/live/index.html" target="_blank">他２</A>//<A href="http://ap.e-direct.ne.jp/" target="_blank">e-direct</A></P>
+<HR>
+<P>「祝AoW Killed→Isyaさん→Bare Foot→アルバム購入→WEB」<BR>
+<BR>
+○エルレガーデンアルバム発売。→渋谷西武前で夜9時前後ストリートライブ@警察のお世話になるけどそれまでやるぜーと某所できゃっち。<BR>
+ぼけーと電車のってたら→六本木・・・Aye?→8:40渋谷の駅前マックでだぶるばーがー。<BR>
+9時頃1台のバンが渋谷駅前交差点西武前<A href="http://www.sh.rim.or.jp/~tvw/sibuya/sibuya31-35/sibuya351.jpg" target="_blank">へ</A>Incoming(写真ぱくり)。(゜∀゜)。ぞくぞく機材が！ぽりすめんに見つからないようにさくさく準備！<BR>
+反対側の人の少ない所に立ってた。ら、機材を運んでいる時にドラムの高橋氏とふと目があった。「やるぜー」ってアイコンタクト。<BR>
+中田の気持ちが解りました。マイクの具合が悪く調整にちょい時間を食うも無事セッティング完了。いええい。一番まーえ。<BR>
+Bare Foot！<BR>
+風の日(イイ)<BR>
+Bare Foot(Again!!)<BR>
+んーこの辺でA Thousand Smilesやったかも。<BR>
+サンタクロース<BR>
+My Favorite Song（だったかな？）<BR>
+45(ここ逆かも)<BR>
+ナイフ・・・の途中でぽりすめん<B>Aggro</B>！<BR>
+/shout ==%t Mez Mez Dooonot Attack !　Facup
+Kitekite Blur Blur Fluxxxx==<BR>
+仕事ですから警官さん乱入するもメンバーはギター片手に警官に背を向けて1回転！w<BR>
+流石に途中で演奏を止めて真横にいる警察官へ一言。<BR>
+Vo「あっ、はい？」<BR>
+みな大ウケ。→警官の方は増援待ちぽい。少し距離をとって誰かとお話をしている→もう１曲できるっヤッチャエ！<BR>
+→らすとダ曲変更！Sliding Door爆音で。警官を蹴散らせとばかりに皆ノリノリ。無事演奏しきって終了。<BR>
+陣営の方が始末書をこっそり書いていました。ラスト1曲やらせてくれた警官ナイス。ないすです。/app<BR>
+終わってからVo細美氏、Dr高橋氏と両手で！がっちり握手！<A href="http://www.ba.wakwak.com/~soni/ELLEGARDEN2.jpg" target="_blank">さんきう！</A>ふりーぺーぱー<A href="http://www.ba.wakwak.com/~soni/FREEPAPER1.jpg" target="_blank">表</A>　<A href="http://www.ba.wakwak.com/~soni/FREEPAPER2.jpg" target="_blank">裏</A>。ストリートカッコヨカッタ。<BR>
+→帰ってきたら外は雨ざーざーw　hehehe。<BR>
+<BR>
+ps：Isyaさん！ありがとう！ｗ</P>
+<HR>
+<P>
+<BR>
+○リアルワールド。未来の俺へ。○○関連のWEBをみた。一部なのか大半なのか知る術もなく。気分を害する理由は見出せましたか。20020402<BR>
+→特定の日になったら自分にMAILが送信されるシステムがほしい。<BR>
+○FF11記事。<A href="http://www.zdnet.co.jp/broadband/0204/01/ff11.html" target="_blank">ZDNET</A>//<A href="http://gamespot.com/gamespot/filters/products/media/0,11100,197345,00.html" target="_blank">Gamespot</A><BR>
+○電気。虹のVoの<A href="http://music.2ch.net/test/read.cgi/musicj/1012304392/" target="_blank">人</A><BR>
+○日常。掃除機　おじさん　<A href="http://www.google.com/search?hl=ja&q=%8Fa%92J%81@%91%7C%8F%9C%8B@%81@%82%A8%82%B6%82%B3%82%F1&lr=" target="_blank">ぐぐる</A><BR>
+○日常。エルレガーデン(AoW KILLムービーのBGMのバンド)のアルバムと某人に勧められた某gameのサントラを買って来た。さいこー。いえい。<BR>
+<BR>
+&gt;ELLEGARDEN 1st Album 2002.04.03 OUT 『<A href="http://www.dynamord.com/elle/works/" target="_blank">DON'T TRUST ANYONE BUT US</A>』 全12曲収録 <BR>
+&gt;4/3リリースファーストアルバムの限定パッケージが
+TOWER RECORDSの8店鋪にて限定販売される。ビデオとTシャツがつく。<BR>
+&gt;限定パッケージの中身は(1)CD(2)プロモビデオ『指輪』(3)Tシャツ(TOWER
+RECORDSバージョン)値段：\3,800(税抜)<BR>
+&gt;渋谷のタワレコ <BR>
+&gt;スペースシャワーＴＶ４／２放送の「ＲＥＬＥＡＳＥ　ＩＮＤＥＸ」22:00～22:30
+で「指輪」のビデオクリップが流れる。<BR>
+&gt;アルバムの発売日、４月３日に渋谷の西武前でストリートライブをやります！<BR>
+<B>今日カチャッタヨ！w</B>　おお4/3。<BR>
+<BR>
+<BR>
+○こっそりEQ。唐突だがTPサバのとあ<A href="http://home.att.ne.jp/sun/doudaro/" target="_blank">る</A>ギルドのドメインが<A href="http://www.fde-jpn.net/vf/" target="_blank">ネオタワー</A>氏と同じ事に気がつきTOPへ→<A href="http://www.fde-jpn.net/" target="_blank">Free and Easy</A>。<BR>
+○記事。<A href="http://sega.jp/release/nr020330_1.html" target="_blank">VF RPG</A><BR>
+○ネタ。ムネオハウスが<A href="http://muneo.coolsurf-records.com/" target="_blank">見つかりません</A>
+<BR>
+-----------------------------------------<BR>
+○メモ。<FONT size="+1"><B>pillows</B></FONT> // <B><FONT size="+1">ELLEGARDEN</FONT></B><BR>
+<BR>
+<FONT color="#ccccff">
+えるれがーでんちょっとハマッタ。Isyaさん機会をありがとう！w</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+○英語上手いなと思った。</FONT><FONT color="#ccccff"><BR>
+</FONT>→<FONT color="#ccccff">
+&gt;&gt;Vocal．細美武士さんは、サンフランシスコに住んでいたことがあるらしい</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+○2001年</FONT><FONT color="#ccccff"><A href="http://www.cdv-j.or.jp/indies/indies_cd200112.html" target="_blank">12月</A></FONT><FONT color="#ccccff">/2001</FONT><FONT color="#ccccff"><A href="http://www.cdv-j.or.jp/indies/indies_cd2001.html" target="_blank">統計</A></FONT><FONT color="#ccccff">のインディーズランキング。すごいなぁ　Bump3つも入ってるわエルレガーデンも！</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+→上のsite topレンタルショップ総合サイト**</FONT><FONT color="#ccccff"><A href="http://www.cdv-j.or.jp/indies/indies.html" target="_blank">ミュー・シネ・オンライン</A></FONT><FONT color="#ccccff">**</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+→top newsが「エルレガーデン初の日本語詞シングル」</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+○2001/10/12　</FONT><FONT color="#ccccff"><A href="http://www.dynamord.com/elle/" target="_blank">ELLEGARDEN</A></FONT><FONT color="#ccccff">/ Bare Foot　</FONT><FONT color="#ccccff"><A href="http://www.dynamord.com/elle/works/bare.html" target="_blank">日本語訳</A></FONT><FONT color="#ccccff">　メモ</FONT><FONT color="#ccccff"><A href="http://www.geocities.co.jp/Bookend-Ohgai/2016/single.html" target="_blank">褒</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.vanda.co.jp/d/d.php?AR=ELLEGARDEN" target="_blank">壱</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.ongakudb.com/qanda/answer.asp?code=344" target="_blank">弐</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.daiki-sound.com/japan/News/0107.htm" target="_blank">参</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.geocities.co.jp/Bookend-Ohgai/2016/underthesky.html" target="_blank">四</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.cdjournal.com/research/backnb/car/2001/1023.html" target="_blank">五</A></FONT><FONT color="#ccccff">Google</FONT><FONT color="#ccccff"><A href="http://www.google.com/search?hl=ja&q=%83G%83%8B%83%8C%83K%81%5B%83f%83%93&lr=" target="_blank">エルレガーデン</A></FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">○エルレガーデンでみっけた</FONT><FONT color="#ccccff"><A href="http://www.geocities.co.jp/Bookend-Ohgai/2016/music.html" target="_blank">SITE</A></FONT><FONT color="#ccccff">でpillowsがべた褒め気味でチェックしよーと思ったら先週GETしたフリクリの曲がpillowsだった罠。良い。</FONT><FONT color="#ccccff"><BR>
+</FONT>
+<FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+→エルレガーデンのこの曲はWeezerに似ているとかなんとかweezerとは？</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+→Weezerの新作は4月30日　</FONT><FONT color="#ccccff"><A href="http://sloon.cool.ne.jp/us/usvwx/weezer.html" target="_blank">０</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://homepage1.nifty.com/hiro_t/live2001/010421.htm" target="_blank">１</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.spoo.co.jp/info/view.html?oid=672" target="_blank">２</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.netlaputa.ne.jp/~RANKO/w/weezer.html" target="_blank">３</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.geocities.co.jp/Hollywood-Stage/6132/" target="_blank">４</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.amazon.co.jp/exec/obidos/ASIN/B00005ICAW/250-3941236-1097043" target="_blank">５</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.mars.sphere.ne.jp/kusu/0204/artistnews/weezer.html" target="_blank">６</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://isweb17.infoseek.co.jp/art/amisweez/links.html" target="_blank">７</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://pop-site.com/weezer/" target="_blank">８</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://www.creativeman.co.jp/010106pages/weezer-GOODS.html" target="_blank">９</A></FONT><FONT color="#ccccff">　BBS </FONT><FONT color="#ccccff"><A href="http://isweb17.infoseek.co.jp/art/wbbs/cgi-bin/weezerbbs.cgi" target="_blank">壱</A></FONT><FONT color="#ccccff">　</FONT><FONT color="#ccccff"><A href="http://bbs4.otd.co.jp/403024/bbs_plain" target="_blank">弐</A></FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+○洋楽総合情報サイト ここ</FONT><FONT color="#ccccff"><A href="http://sloon.cool.ne.jp/index.html" target="_blank">良い</A></FONT><FONT color="#ccccff">。</FONT><FONT color="#ccccff"><BR>
+</FONT><FONT color="#ccccff">
+○オンラインミュージック</FONT><FONT color="#ccccff"><A href="http://www.soundinfo.net/index.html" target="_blank">検索エンジン</A></FONT><FONT color="#ccccff">SOUNDinfo</FONT><FONT color="#ccccff"><BR>
+</FONT>
+<BR>
+<BR>
+○むねおSITE、<A href="http://www17.xdsl.ne.jp/~t-otsuka/log/mur.html#muneo" target="_blank">みゅるみゅれ</A><BR>
+○メガデモ。<A href="http://www.tbl.org/main.htm" target="_blank">あとで落とす</A><BR>
+○IRCで懐かしい話になったり。<A href="http://members.xoom.virgilio.it/zenigweb/" target="_blank">りあるるぱん</A><BR>
+○Forうにゃ。<A href="http://www.jvcmusic.co.jp/akino/disco/" target="_blank">あるばむ</A>？<BR>
+○ど～も君。NHKのどーも君があっちで流行な模様。<A href="http://drew.corrupt.net/think-of-the-domokun.jpg" target="_blank">domokun</A>　<A href="http://pubweb.acns.nwu.edu/~sts839/domo/" target="_blank">壱</A>　<A href="http://die.signmyguestbook.com/" target="_blank">弐</A>　<A href="http://www.mittenboy.com/bcr19374/domokun.html" target="_blank">参</A>　konichiwa。コラージュで出てくると<A href="http://www.morphxtech.com/Storage/domomeetshooters.jpg" target="_blank">面白い</A><BR>
+○卓球Flash。pyaより。<A href="http://www.albinoblacksheep.com/flash/pingis.html" target="_blank">回転</A>かけられる！<BR>
+○テンプレート。もしかすると・・<A href="http://choco.2ch.net/test/read.cgi/news/1017424894/" target="_blank">・</A><BR>
+○何方かのAvalon<A href="http://www.faireal.net/articles/5/08/#d20328" target="_blank">感想</A><BR>
+○富野セリフの<A href="http://www.geocities.co.jp/AnimeComic/3815/serifu.htm" target="_blank">作り方</A><BR>
+○Flash。<A href="http://www20.u-page.so-net.ne.jp/rc5/exelion/" target="_blank">むねおRAVE</A>。むちゃカッコイイ。ナイナイの深夜ラジオで紹介されたとかなんとか・・・w<BR>
+○<A href="http://comboy.cool.ne.jp/romanesque/" target="_blank">リアル</A>ぽすぺ。おもしろい。<BR>
+○VF4。<A href="http://home.catv.ne.jp/hh/bros/main.html" target="_blank">INSERT　1　COIN</A>より//<A href="http://www5d.biglobe.ne.jp/~heita_yk/movie_room.htm" target="_blank">チャリオット</A>杯//<A href="http://beat-tribe.com/vfr/2002bay/index.html" target="_blank">VF-R</A>ベイエリアカップ　すごいことに。<BR>
+○mkadさんIsyaさん両者のuberムビcoming soonかも？<BR>
+○Isyaさんの所で発見なソレパクリヤン<A href="http://www.cuc.ac.jp/~j630501/todono/" target="_blank">な漫画</A>。剣舞なんてあんま使わないよなぁ。<BR>
+○宮本さん。オンラインゲームに<A href="http://www.mainichi.co.jp/life/hobby/game/news/news/2002/03/28-4.html" target="_blank">ついて</A>。<BR>
+○JPG。<A href="http://aisube.tripod.co.jp/img/0318/14.jpg" target="_blank">フロッピィ</A>。<A href="http://aisube.tripod.co.jp/img/0316/14.jpg" target="_blank">マウス</A>。<BR>
+○Flash。<A href="http://isweb41.infoseek.co.jp/diary/ipa2323/uchipanashi.swf" target="_blank">インベーダー</A>。始めて10秒くらいで異変に気が付く。。。w<BR>
+○ムネオ。<A href="http://www.zdnet.co.jp/news/bursts/0203/27/07.html" target="_blank">ZDNN</A> !<BR>
+○アホ画像。その他の<A href="http://www5a.biglobe.ne.jp/~yoshinor/news/JCOM.jpg" target="_blank">使い方</A>・・・w　<A href="http://ehtgbd.tripod.co.jp/img/0313/6.jpg" target="_blank">弐</A><BR>
+○DIA系。めもNeverwinter <A href="http://www.bioware.com/games/neverwinter_nights/" target="_blank">Nights。</A><BR>
+○2ch<A href="http://www7.plala.or.jp/mneko/2cher/index.html" target="_blank"> iconたくさん</A>。<BR>
+○こっそり<A href="http://www.ba.wakwak.com/~soni/EQ/rashii.jpg" target="_blank">こっち</A>に。Povarは昼休みにWEB見ている社会人が多いと。<BR>
+Site作ってから丁度11ヶ月。まさか1年も続けるとは思わなかった。最近やたら増えてて日に500、合計8万PVといったところ。同じ人が日に2～3回見ているとしても200人は凄い。</P>
+<HR>
+<P>
+○コピーガード。<A href="http://www.sankei.co.jp/news/020319/0319sha124.htm" target="_blank">DAI</A><BR>
+○NHK BS2にて劇場版パトレイバー２作品放映<BR>
+3/26（火）「機動警察パトレイバー劇場版」
+<BR>
+3/27（水）AM9:15～「機動警察パトレイバー２
+the Movie」 <BR>
+劇場版は良い。<BR>
+○VF4。<A href="http://member.nifty.ne.jp/CYCHP/index.htm" target="_blank">大会ゲスト　Shinz！</A> 旭川～。ステップむび<A href="http://www.geocities.co.jp/Playtown-King/5962/step_60_4.zip" target="_blank">追加</A>。<BR>
+○Flash。カウントダウンＴＶ風に宗雄ハウス全曲紹介＋落ちつき。。。w　<A href="http://www5d.biglobe.ne.jp/~yakamome/" target="_blank">必見</A>。<BR>
+○秘書むるあか<A href="http://www.bh.wakwak.com/~bill/mov/murucore.swf" target="_blank">ハードコア</A>Flash。<BR>
+○ムネオ全曲＋Flash＋ARTコレクション。<A href="http://muneo.ath.cx/" target="_blank">ドメイン</A>。<A href="http://sample0.tripod.co.jp/sample.html" target="_blank">イベント</A>開くらしい。<BR>
+○ナイスFlash <A href="http://www7.plala.or.jp/ungeromeppa/flash/index.html" target="_blank">site</A>。ウンゲロメッパ<BR>
+○JPG。<A href="http://orsm.net/fem/artnudes/index.html" target="_blank">自力</A>光学迷彩<BR>
+○記事。『鉄拳4』×『VF4』開発者<A href="http://www.dengekionline.com/news/200203/18/n20020318tek4vsvf4.html" target="_blank">対談</A><BR>
+○記事。ほしの<A href="http://www.mangazoo.com/news/news.php3?id=913" target="_blank">こえ</A><BR>
+○Flash。PYAよりうさぎと亀。亀を<A href="http://hotwired.lycos.com/animation/lycos_news/ramon_olivera/hare_cut/" target="_blank">なめるな</A>！と。</P>
+<HR>
+<P>
+○メモ。望遠鏡だしてなんか騒いでるので見てみたら月と土星が重なってどうのこうのが良く見えました。<BR>
+実は俺、あそこにBindしてあるんだ。らくりんって知ってる？<BR>
+○JPG。平和は<A href="http://210.136.179.189/cgi-bin/etc_pic/42.jpg" target="_blank">こうして</A>守られた。<BR>
+○HTML。ニュース系サイト<A href="http://sapporo.cool.ne.jp/pog_media/news.htm" target="_blank">リンク集</A><BR>
+○HTML。だんじょんしーじ<A href="http://www.microsoft.com/games/dungeonsiege/8.asp" target="_blank">公式</A><BR>
+○のりのりフラッシュ。アスキーアート元ネタ知ってるとちょっと<A href="http://www.yeah.ne.jp/~flash/flash/uwan.swf" target="_blank">面白い</A>。<BR>
+○むねおふらっしゅ。宗雄ハウスが<A href="http://www.geocities.co.jp/Foodpia/7148/movie/movie4.swf" target="_blank">Flash化</A><BR>
+○むび。にゅーすより　けみかるStar Guiter<A href="http://www.thechemicalbrothers.com/disco/videos/star/" target="_blank">プロモ</A>。<BR>
+○写真。<A href="http://pya.cside1.jp/titl/dog2.jpg" target="_blank">最高すぎる</A>。PYAいいなぁ。<BR>
+○あめこみ。<A href="http://homepage2.nifty.com/gameparty/DD/DD1.htm" target="_blank">D&amp;D</A><BR>
+○重力なフラッシュ<A href="http://www.albinoblacksheep.com/flash/spacedpenguin.html" target="_blank">GAME</A>。37万点だった。<BR>
+○ふらっしゅ<A href="http://www.miniclip.com/pacman.htm" target="_blank">パックマン</A>。面白い。白い球とったとき敵も食べられるの初めて知った。<BR>
+○2CH書き込み<A href="http://www24.big.or.jp/~faru/ranking.txt" target="_blank">らんきんぐ</A>。電波・お花畑は97位でした。<BR>
+○ラーゼフォンというアニメが移動で深夜放送になる<A href="http://www.fujitv.co.jp/jp/b_hp/rahxe/" target="_blank">らしい</A>。一回見てみようメモ。<BR>
+○「ほしのこえ」<A href="http://www2.odn.ne.jp/~ccs50140/stars/" target="_blank">TV</A>放送決定。北海道。<BR>
+○VF4.1はまだでない<A href="http://www.tcp-ip.or.jp/~minaduki/game-n/etc/2002-03/14-01.htm" target="_blank">らしい</A>。<BR>
+○俺にゅーすより　<A href="http://www13.xdsl.ne.jp/~techle/2002/03/13.txt" target="_blank">ムネオハウス　アルバムミラー</A><BR>
+○PYAより　ねこムービー<A href="http://www.punkasspunk.com/sleepy_kitty.mpg" target="_blank">1.5M</A>。ねちゃう・・・かも。<BR>
+○サイクス氏の<A href="http://www.dive-in.to/~mb-arts/" target="_blank">LIME CHAT</A> VERUP　設定で半角カナOK<BR>
+○侍魂の健さんが鉄拳4の<A href="http://www.dengekionline.com//news/200203/14/n20020314tekken.html" target="_blank">CM</A>に。。。w</P>
+<HR>
+<P>●スマタグのtaka-kiさんのweb<A href="http://isweb23.infoseek.co.jp/art/taka-ki/music/dl.htm" target="_blank">にも</A>テクノが。「捨て子あトランス」とか「viveupper」民族ドラムンちっくな「Fantomic
+Figure」最高。もう一日中垂れ流し。<BR>
+「viveupper」のサンプリング元解説があって<BR>
+&gt;&gt;この声は誰？攻殻ネタ？とよく聞かれますが∀ガンダムのサントラから。元ZABADAKの上野洋子さんの声であるようです。
+<BR>
+とのこと。攻殻だと思っッテタ。<BR>
+ローランドコンペティション<A href="http://www.roland.co.jp/groove/main.html#" target="_blank">2001</A>の1 3 9もお気に入り。<BR>
+○テクノMP3。ガンダムコラージュテクノ　<A href="http://erika.piedey.co.jp/vtohno/columnIndex.aspx?keyword=%e8%ac%8eG%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88" target="_blank">1～11</A></P>
+<P>○VF4ムービー。VFR <A href="http://www.beat-tribe.com/vfr/2002bay/index.html" target="_blank">3試合落とせる</A><BR>
+○テクノMP3。<A href="http://isweb6.infoseek.co.jp/art/tgs/stamag/index.htm" target="_blank">スマタグ</A>　イイ!　omelette fromage。俺もテクノサークル入りたかったなぁ・・・(丁度1年前にここに来てDLしたことがあったらしい・・)<BR>
+○テクノMP3。ローランド・グルーブ・コンペティション・ジャパン
+<A href="http://www.roland.co.jp/groove/main.html#" target="_blank">2001</A> / <A href="http://www.roland.co.jp/groove/RPT2000.html" target="_blank">2000</A> / <A href="http://www.roland.co.jp/groove/RPT1999.html" target="_blank">1999</A><BR>
+●フラッシュ。スオウム以降必ず出てくる馬鹿テクノ。サイコウデスカやアッキーなどダイスキ。宗雄テクノ。ジャンルデータには<A href="http://www.geocities.co.jp/Playtown-Rook/2172/munespi.mp3" target="_blank">House</A>（ネタ）。いかした<A href="http://www.goodbreeze.com/~maro/" target="_blank">フラッシュ</A>達。<BR>
+●テクノMP3、フラッシュ。アシッドハウス＝ムネオハウス　<A href="http://music.2ch.net/test/read.cgi/techno/1013613060/411-" target="_blank">アルバム</A>完成気味//<A href="http://www22.tok2.com/home/bc5/img-up/img-box/img20020314012631.jpg" target="_blank">ジャケット</A>//EU盤<A href="http://jp.y42.briefcase.yahoo.co.jp/bc/shikaraba743/vwp?.dir=/&.dnm=MU-NEOCD774.jpg&.src=bc&.view=l&.done=http%3a//jp.y42.briefcase.yahoo.co.jp/bc/shikaraba743/lst%3f%26.dir=/%26.src=bc%26.view=l" target="_blank">表</A>//<A href="http://jp.y42.briefcase.yahoo.co.jp/bc/shikaraba743/vwp?.dir=/&.dnm=MU-NEOCD774_back.jpg&.src=bc&.view=l&.done=http%3a//jp.y42.briefcase.yahoo.co.jp/bc/shikaraba743/lst%3f%26.dir=/%26.src=bc%26.view=l" target="_blank">裏</A>//<A href="http://www.goodbreeze.com/%7Emaro/muneohouse.swf" target="_blank">フラッシュ</A>//<A href="http://www.dragonfly-h.com/g-sp.html" target="_blank">裏むねむね会</A>//<FONT size="+1"><B><A href="http://muneo.s10.xrea.com/" target="_blank">NEW</A>(全</B><B>曲UP)<A href="http://www17.xdsl.ne.jp/~t-otsuka/log/mur.html#muneo" target="_blank">ミラー</A>。<BR>
+</B></FONT>moune。はmuneo houseを応援していま<A href="http://www.freewebz.com/muneo_house/" target="_blank">す</A>。<BR>
+○MP3。<A href="http://66.34.113.184/articles/swirlvision/725.asp" target="_blank">デイトナ</A><BR>
+●ねがてぃぶはっぴー。NHKの滝本竜彦スレへ<A href="http://natto.2ch.net/test/read.cgi/magazin/1001955148/" target="_blank">ようこそ</A>。<A href="http://www.boiledeggs.com/download/download2.html" target="_blank">ON-LINE版</A>500円。<A href="http://www.bk1.co.jp/cgi-bin/srch/srch_message.cgi/3b0cb1e402f880107063?aid=&tpl=ranking/sales/01010000.html" target="_blank">1位</A>。ねがてぃぶのネット版の話が<A href="http://natto.2ch.net/test/read.cgi/magazin/1001955148/38-46" target="_blank">ちょろっと</A>。<A href="http://comiclove.tripod.co.jp/nhk.htm" target="_blank">特設</A>。<BR>
+滝本さんの<A href="http://6918.teacup.com/syaken/bbs" target="_blank">書き込み</A>。ちょと前までweb.archive.orgで昔の見れたらしい/CRY</P>
+<HR>
+<P>
+○秋葉原って<A href="http://www.saitosite.com/zakki/z0102/kaiga.html" target="_blank">絵画</A>よく売ってる。その話。<BR>
+○ネットで<A href="http://www.rbbtoday.com/news/20020313/6630.html" target="_blank">単位</A>がもらえる。イイナァ。<BR>
+○フラッシュ<A href="http://www.renge.sakura.ne.jp/~radio/graphic/animation/00kimi_to_boku/block/01_kimi.html" target="_blank">キミとボク</A>。猫の物語。王道ながらBGMとのマッチが絶妙。うちのチワワ17年目ここ数ヶ月具合が悪い。ハスキー10年目。<BR>
+○100連勝Itemでもとるかーと組み手をPS2電源入れッぱなしでやってたんですええ。そしたらDURALにJSで放り出されてリングアウト負けしちゃってあーあと思いながら結構やったなー何連勝したかなーと見てみると・・・<B>97</B>連勝なんです・・・。　ヽ(`Д´)ﾉ<BR>
+○<A href="http://www.divx.com/" target="_blank">DIV5</A>。入れましょう。<BR>
+○<A href="http://www.wafu.ne.jp/~tomi/wall.shtml" target="_blank">真・壁紙番長</A>。オモシロSITE。<BR>
+○苗字の最初の文字と名前の最初の文字を入れ<A href="http://homepage2.nifty.com/sledge_hammer_web/names.htm" target="_blank">替えてみました</A>。腹痛い。オモシロSITE。<BR>
+○たくさんゲームミュージックがMIDで<A href="http://www.vgmusic.com/" target="_blank">聴ける</A>。外国。<BR>
+○銀英伝<A href="http://www.ginei.com/DVD.html" target="_blank">DVD23万円</A>。某天才氏お買い上げポイ。<BR>
+○<A href="http://www.din.or.jp/~nakakita/flash/lesson.htm" target="_blank">ピアノレッスン</A>←面白いフラッシュ。JAVA-SCRIPTで右クリック封じ対抗策がかの<A href="http://www.geocities.co.jp/Milano-Killer/9134/" target="_blank">ラサイト</A>で学べる。関連で<A href="http://www.geocities.co.jp/Hollywood-Stage/8157/" target="_blank">バンザイ</A>フラッシュSITE。ぶらんきー。人類は<A href="http://isweb21.infoseek.co.jp/play/noz01/fla/" target="_blank">おしまい</A>。<A href="http://www.flyingpuppet.com/menu.html" target="_blank"><BR>
+</A>
+-----------<BR>
+&lt;MEMO&gt;あとで読む<A href="http://xxkjjg.virtualave.net/" target="_blank">めも</A>　<A href="http://home.impress.co.jp/magazine/dosvpr/q-a/9906/qa9906_2.htm" target="_blank">弐</A>　<A href="http://www.fides.dti.ne.jp/%7Etengu/title.html" target="_blank">参</A>　<A href="http://www5a.biglobe.ne.jp/~randam6/" target="_blank">四</A>→<A href="http://www5a.biglobe.ne.jp/~randam6/niea/genoge.htm" target="_blank">NieA_7</A>　<A href="http://isweb19.infoseek.co.jp/play/nosfera/" target="_blank">のんちゃん</A>　<A href="http://k-tai.impress.co.jp/cda/article/news_toppage/0,,8604,00.html" target="_blank">AU</A>　<A href="http://www.h3.dion.ne.jp/~kuba/index.html" target="_blank">俺様</A>　なんでも<A href="http://homepage.mac.com/techist/" target="_blank">リンク</A>　 　<A href="http://www.bookpark.ne.jp/gentosha-c/hitsuji.asp" target="_blank">羊のうた</A>　<A href="http://www.flyingpuppet.com/menu.html" target="_blank">芸術</A>&lt;/MEMO&gt;<BR>
+</P>
+<HR>
+<P>○MSダンジョン シージ日本語版<A href="http://www.4gamer.net/news/history/2002.03/20020311213252detail.html" target="_blank">ムービー</A><BR>
+○がくと<A href="http://g-forum2.com/bbs2/ibo37/ibo.cgi?mode=tp&digest=1&page=1&file=20020314090808" target="_blank">らじお</A>インタビュー<BR>
+○自作テクノ<A href="http://music.2ch.net/test/read.cgi/techno/1011561128/" target="_blank">すれっど</A>。<BR>
+○素人音楽発信基地？<A href="http://www.muzie.co.jp/" target="_blank">muzie</A><BR>
+○漫画映画Ghost in the Shellの動画像スクリ－ンセ－バ－とか書いてあるスクリーンセイバーたくさんある<A href="http://www.screensaverjapan.com/" target="_blank">所</A>。<A href="http://www.ultratheme.com/" target="_blank">他</A>。<A href="http://village.infoweb.ne.jp/~amay/ssdt.htm" target="_blank">弐</A>。<BR>
+○<A href="http://2ch.tora3.net/" target="_blank">有料</A>2CHの<A href="http://page.freett.com/oissu/index.html" target="_blank">まとめ</A>。<BR>
+○<A href="http://choco.2ch.net/test/read.cgi/news/1015314558/" target="_blank">WCで日本が優勝する方法</A><BR>
+○DVDドライブ&amp;メディア<A href="http://akiba.ascii24.com/akiba/news/2002/03/07/634186-000.html" target="_blank">実売価格調査</A><BR>
+○バイアグステップ　フレーム<A href="http://jbbs.shitaraba.com/game/bbs/read.cgi?BBS=499&KEY=1014293527&START=248&END=248&NOFIRST=TRUE" target="_blank">完全版</A>　/ 使用キャラ<A href="http://www.gpara.com/cgi-bin/vf4/index.cgi" target="_blank">らんきんぐ</A> / <A href="http://www2u.biglobe.ne.jp/~amact/movie.htm" target="_blank">むび</A>
+<BR>
+○谷口隆一氏<A href="http://www.tinami.com/x/riuichi/23/" target="_blank">プロフ</A>　<A href="http://www.asahi-net.or.jp/~WF9R-TNGC/nikko.html" target="_blank">裏工業</A><BR>
+<BR>
+○Microsoft International Games FestivalでMS新作<A href="http://www.4gamer.net/specials/igf/index.html" target="_blank">10作</A>。内の<A href="http://www.4gamer.net/news/history/2002.02/20020228222757detail.html" target="_blank">AoM</A>。9月らしい。欧米では「夏」発売。日本語版も開発。<BR>
+○『ＮＨＫにようこそ！』番外編　<A href="http://www.boiledeggs.com/nhk/nhkinfo2.html" target="_blank">マジでＮＨＫに潜入しちゃったよ！</A>//裏工業<A href="http://www.asahi-net.or.jp/~WF9R-TNGC/nikko.html" target="_blank">3月5日より</A>。<BR>
+○http://char.milkcafe.to/f/pakuri.swf　　ドリルが永遠に回り続けたら地獄<BR>
+○WEB GAME <A href="http://www.t3.rim.or.jp/~naoto/j_sm2/index.html" target="_blank">すーまり</A> //ぱずるぼぶる<A href="http://www.pbo.jp/" target="_blank">ONLINE</A><BR>
+○#UKUREREで　ＦＣのくにお君大乱闘そっくりな８人<A href="http://www.getamped.org/" target="_blank">ねっと対戦版</A>がブーム。→結構いけてる。<BR>
+○bounce.comインタビュー<A href="http://www.bounce.com/contents/interview/file/20020228_bump/" target="_blank">[ BUMP OF CHICKEN ]</A>　&gt;&gt;千葉県佐倉市出身<BR>
+○<A href="http://www.h5.dion.ne.jp/~hakuryu/nagoya.swf" target="_blank">なごや</A>ふらっしゅ<BR>
+○宗雄＠ZAKZAK<A href="http://www.zakzak.co.jp/we/muneo-story/" target="_blank">・・・</A>
+<BR>
+○GAME表紙　海外版<A href="http://mushi.net/hanashi/horror/index.html" target="_blank">・・・</A><BR>
+○<A href="http://www.geocities.co.jp/Playtown-Darts/8210/100ninkumite.htm" target="_blank">UO</A>SITE/<A href="http://mypage.naver.co.jp/tenpai/" target="_blank">UO</A>SITE2<BR>
+○FCキャプ翼ネタ　<A href="http://piza2.2ch.net/mona/kako/1006/10060/1006088793.html" target="_blank">一</A>　<A href="http://sports.2ch.net/test/read.cgi/football/1007285328/" target="_blank">ニ</A>　<A href="http://homepage2.nifty.com/numaou/" target="_blank">森崎</A>　<A href="http://www.kcat.zaq.ne.jp/gozaru/capmona.html" target="_blank">ふらっしゅ</A><BR>
+○「AoM」2002年9月<A href="http://www.4gamer.net/news/history/2002.02/20020228222757detail.html" target="_blank">予定</A>。<A href="http://www.4gamer.net/news/history/2002.02/20020228191305detail.html" target="_blank">ん</A>？<BR>
+○VF4がX-BOX...AC 4.1とか・・・<A href="http://hpcgi2.nifty.com/fand/VF2000/" target="_blank">2000</A>か<A href="http://homepage1.nifty.com/noise/" target="_blank">DLMANI</A>へ。</P>
+<HR>
+<P>○<A href="http://homepage1.nifty.com/noise/" target="_blank">バイアグステップ</A>についてまとまってる。<BR>
+◎Shinz <A href="http://tbzone.gameshot.net/download/korea/shinz_step_1.avi" target="_blank">壱</A>　<A href="http://tbzone.gameshot.net/download/korea/shinz_step_2.avi" target="_blank">弐</A>　<A href="http://tbzone.gameshot.net/download/korea/shinz_step_3.avi" target="_blank">参</A>　//◎バイアグステップ　<A href="http://www.geocities.co.jp/Playtown-King/5962/step_60.zip" target="_blank">壱</A>　<A href="http://www.geocities.co.jp/Playtown-King/5962/step_60_2.zip" target="_blank">弐</A> //◎バイアグ氏<A href="http://baiagu.hoops.ne.jp/" target="_blank">本家（2個）</A>/◎韓国の大会での<A href="http://zzipper.x-y.net/nick/nomercy/vs020.html" target="_blank">shinzのムビ</A>。<BR>
+<BR>
+やっぱshinzステップかっこいいｗ 　ARMをこちょこちょ。何回か見れたけど顕著なのは8試合目の１本目KO後。→トレーニングでこちょこちょやったらできた。波動拳と竜巻コマンドいれたらなんかできる。他には6試合目4本目なめっぷりがイイ!
+　ステップについては5試合目の試合慣れしてる感じのリオンが最初押すも、だんだん負け行く様はあのステップの影響もあるような・・・。shinzの前D&gt;&gt;しゃがみD&gt;&gt;前Dは<B>１回</B>ならなんとか、バイアグ氏のは慣れればできる。PADで台湾まくり、レバーで韓国だったのだけどレバーで台湾やってた人ならやり方さえ解ればいけると思った。しかしshinzステップは特殊な事をしないでまともに入力してるのだろうか・・・。かぶせ持ちなんだがぶっさしのがステップはやりやすいのかな？と思いきやあっちはレバーのタマがないんだっけ・・・。PS2一番上の段位になった。リプレイにDVDに数試合収録されていることに気が付く。MEMO
+<A href="http://jbbs.shitaraba.com/game/bbs/read.cgi?BBS=499&KEY=1014293527&START=154&END=154&NOFIRST=TRUE" target="_blank">154</A><BR>
+---------<BR>
+○フラッシュ<A href="http://www.albinoblacksheep.com/games/" target="_blank">GAMESITE</A>の<A href="http://www.albinoblacksheep.com/flash/donkeykong.html" target="_blank">ドンキー</A><BR>
+○<A href="http://lemax.tripod.co.jp/" target="_blank">Lemax</A> 浜村<A href="http://lemax.tripod.co.jp/flash/hama2.htm" target="_blank">TCP/IP</A>通信<BR>
+○<A href="http://www.asahi.com/business/update/0301/011.html" target="_blank">ザウス閉鎖</A><BR>
+○FF11　<A href="http://www.playonline.com/ff11/info/01.html" target="_blank">2002年5月16日（木）</A>
+</P>
+<HR>
+<P>
+「When the morning」<BR>
+○全言語のページからbump of chicken jupiterを検索しました。
+約1,700件<BR>
+<A href="http://www.amazon.co.jp/exec/obidos/ASIN/B00005V4Z6/ref%3Dm%5Fhp%5Fls%5F2%5F9/250-4844408-6321864" target="_blank">
+Amazonレビュー</A><BR>
+<A href="http://music.lycos.co.jp/pickup/bump_of_chicken/" target="_blank">
+Lycosミュージック</A><BR>
+<A href="http://www.oikake.net/artists/Bump_of_Chicken/" target="_blank">
+j-pop追いかけネット</A><BR>
+<A href="http://www.toysfactory.co.jp/artist/artist_top.cfm?artistcode=1626" target="_blank">
+TOY'S FACTORY</A><BR>
+<A href="http://www.beatrip.com/bump/" target="_blank">BEATRIP</A><BR>
+<A href="http://www.bumpofchicken.com/" target="_blank">
+オフィシャル</A><BR>
+<A href="http://www.grugru.net/data/concert_jp/bump_of_chicken.asp" target="_blank">
+LIVE情報</A></P>
+<HR>
+<P>○<A href="http://www.alle-gra.com/" target="_blank">花粉症対策本部</A><BR>
+○<A href="http://www.geocities.co.jp/MusicStar-Piano/1088/soundroom.htm" target="_blank">メタルで童話</A><BR>
+○<A href="http://www.sponichi.co.jp/entertainment/kiji/2002/02/25/02.html" target="_blank">プロジェクトＸ</A><BR>
+○VF4 <A href="http://jbbs.shitaraba.com/game/bbs/read.cgi?BBS=499&KEY=1014293527" target="_blank">ステップ</A><BR>
+○癒されたい人と<A href="http://hsefdf.tripod.co.jp/img/0126/index.html" target="_blank">向け</A><BR>
+<BR>
+○<A href="http://www.sawadaspecial.com/mirror/technoflash.htm" target="_blank">テクノフラッシュ</A>すれ<BR>
+/Bone slippy使ってる<A href="http://www.newgrounds.com/portal/uploads/8000/8777_ng_logo.swf" target="_blank">フラッシュ</A><BR>
+/<A href="http://streams.omroep.nl/nps/dekortefilm/mixedup/flow/flow.swf" target="_blank">すばらしい</A>フラッシュ。<BR>
+/<A href="http://www.din.or.jp/~aroa/" target="_blank">むちゃくちゃかっこいい</A>SITE。ビート最高。<BR>
+</P>
+<P>→勿論今回も恒例のおふざけ爆進のアホ曲＠隠しトラック。<BR>
+ここまでメジャーで売れそうなＣＤでも遠慮なし。</P>
+<P>○イエスタデイをうたって、無限の住人、蟲師、Bump
+of chickenのアルバム「jupiter」購入。<BR>
+<B><FONT size="+4">良い。</FONT></B><BR>
+バンプ最高すぎる。１曲目の疾走感からもう・・・。初回得点ポキレツ知恵袋。やりたい放題。このアルバムが売れないわけがない。レジにチラシあって知ったのだが唯一のプロモ集ビデオ「ポキール」がDVD化とのこと。ランプとリトルブレイバーとグロリアスレボリューションとか。ビデオ見てより好きになった。これで半年はＣＤ代浮くな。</P>
+<HR>
+<P>○友人がPC買ってBBでネットに繋がりPSOはじめたりしてたりしてのメモ<BR>
+俺のふるーい方のブックマークより抜粋<BR>
+ソフト <A href="http://www2.lint.ne.jp/~lrc/" target="_blank">LRC</A>　<A href="http://www.forest.impress.co.jp/" target="_blank">社</A>　<A href="http://www.vector.co.jp/" target="_blank">Vector</A> <A href="http://www.wakusei.ne.jp/software/free/" target="_blank">ふりっぽ</A>　<A href="http://www.nifty.com/download/" target="_blank">nifty</A> <A href="http://www.mars.dti.ne.jp/~akatsuka/" target="_blank">97</A> <A href="http://muchy.com/review/" target="_blank">謎</A>
+<BR>
+DeskTop改造系　<A href="http://www.imasy.or.jp/~ferdia/" target="_blank">壱</A>　<A href="http://www.venus.dti.ne.jp/~mueji/factory.htm" target="_blank">弐</A><BR>
+<BR>
+○VF4BBS移動関連の話が<A href="http://homepage1.nifty.com/noise/" target="_blank">DL-MANIAX</A>に。かちゅーしゃでみてたのだが。ま、<A href="http://www3.to/vf4bbs/" target="_blank">ここ</A>。<BR>
+○スーマリ<A href="http://osaka.cool.ne.jp/k1/mariotop.html" target="_blank">マニア</A>。超。<BR>
+○今月のONLINE PLAYER誌の 102ページにちょっといい話が載ってます。<BR>
+○#ukurere 00:23:06 tot_tot: http://timidmacer.s5.xrea.com/x/html/tire_monar.htm<BR>
+○VF4-ＰＳ版情報は<A href="http://www.interq.or.jp/silver/choakira/" target="_blank">ここ</A>。<BR>
+○クイズとかいろいろな<A href="http://www.geocities.co.jp/Playtown-Spade/4619/westriverTV2.html" target="_blank">フラッシュ</A>（特に意味なし）<BR>
+○Moonブラウザ<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8986/" target="_blank">更新</A><BR>
+○昔から続いているJBBS <A href="http://green.jbbs.net/game/bbs/read.cgi?BBS=517&KEY=1010136229&LAST=100" target="_blank">JAKスレ</A>(JBSはかちゅでみれる）でPS2版発売当初BBKからのコンボが話題になってた。<BR>
+それが<A href="http://www.joy.hi-ho.ne.jp/d13492/" target="_blank">デイリー</A>により<A href="http://www.geocities.co.jp/HeartLand/3879/combo.mpg" target="_blank">ムービー</A>1.4Mで。いつの間にかコンボ表にダメージゲージまでついてる。<BR>
+それよりもJAKの溜め攻撃があたらないんだけど・・・。<BR>
+</P>
+<HR>
+<P>
+○<A href="http://organ.dyndns.org/~mon/" target="_blank">ここ</A>の左からいかれたBMムービーが２個落とせる。人間業じゃない・・・。札幌スガイ、、お？<BR>
+○ダサいホームページ<A href="http://www.geocities.co.jp/Bookend-Soseki/4377/" target="_blank">作成マニュアル</A>凝縮版。　<A href="http://green.jbbs.net/computer/bbs/read.cgi?BBS=39&KEY=972202958" target="_blank">a...</A>ｗ　一番したの「参考サイト（作為的に作られたページ)」は凄すぎて笑える。<BR>
+○Tommy feb6 オリコン<A href="http://www.zakzak.co.jp/top-xus/top0212_1_02.html" target="_blank">１位</A>。結構話題気味。80年代テクノがどーとか。<BR>
+○<A href="http://cgi.ebay.com/aw-cgi/eBayISAPI.dll?ViewItem&item=1700585461" target="_blank">WTS F18</A><BR>
+○AOが2001年度の&quot;Best MMORPG&quot;賞を<A href="http://www.4gamer.net/news/history/2002.02/20020213102513detail.html" target="_blank">獲得 </A><BR>
+○&lt;memo&gt;<A href="http://www.google.com/search?q=%83%8D%83b%83e%83%8B%83_%83%80%81@%83e%83N%83m&hl=ja&lr=" target="_blank">ロッテルダム　テクノ</A>で検索してたらたどり着いたオンラインミュージックグループ<A href="http://www.ucpzone.com/" target="_blank">UCP</A>&lt;/memo&gt;<BR>
+○メトロネットワーク路線図@<A href="http://www.tokyometro.go.jp/network/map_japanese.html" target="_blank">フラッシュ</A><BR>
+○うにゃに教えてもらった<A href="http://www.ksky.ne.jp/~seahorse/" target="_blank">イカスソフト</A><BR>
+○Underworld - <A href="http://www.sing365.com/music/lyric.nsf/singerAllSongs/3BC669671A099ECE4825699D002B17B4" target="_blank">All Lyrics</A><BR>
+○<A href="http://choco.2ch.net/test/read.cgi/kao/1006871105/" target="_blank">おでんマン</A><BR>
+○<A href="http://green.jbbs.net/game/bbs/read.cgi?BBS=517&KEY=1013486299" target="_blank">VF-NET</A><BR>
+○<A href="http://www.zdnet.co.jp/gamespot/gsnews/0202/13/news11.html" target="_blank">ボンバーマン・オンライン（仮）</A><BR>
+<BR>
+○PS2のガンダムを購入。BUT AC版をやったことがない。Qによる<A href="http://homepage2.nifty.com/q_chan/gundam.htm" target="_blank">説明書</A>/<A href="http://homepage2.nifty.com/q_chan/gundam/gundam.htm" target="_blank">おまけ</A>。ブライトさんがうるさい。少し黙れと。<BR>
+○「2ちゃんねる」事業化<A href="http://www.businessstandard.jp/trend/art.asp?newsid=%7BABA4FE2D%2D0CF0%2D43EE%2DB34F%2D202AFB488F9C%7D" target="_blank">始まる</A>(?)<BR>
+○<A href="http://homepage1.nifty.com/noise/" target="_blank">DL MANIAX</A>にバーチャムービーと小小系列へのリンクが。ここの<A href="http://homepage1.nifty.com/noise/vf4.htm" target="_blank">VF4コーナー</A>凄い。ちび太<A href="http://www2u.biglobe.ne.jp/~amact/movie.htm" target="_blank">たくさん</A>。<BR>
+○下にある「<A href="http://www2.odn.ne.jp/~ccs50140/" target="_blank">ほし</A>の<A href="http://crossing.jp/distantstar/topics/index.html" target="_blank">こえ</A>」を観た。凄い。DVDが出る予定らしい。サントラほしいかも。<BR>
+<BR>
+フラッシュ系に詳しい<A href="http://www.watersupply.co.jp/nubonba/" target="_blank">NuBoNBa</A>より<BR>
+○ゴルゴフラッシュポエ山氏による　<A href="http://quino-lilo.hoops.ne.jp/index.html" target="_blank">quino</A>。移転予定<A href="http://www.g-7.ne.jp/%7Epoeyama/quino/" target="_blank">先</A>。<BR>
+○xiaoxiao８作目 NuBoNBaによる<A href="http://www.c3-net.ne.jp/~nubonba/xxiao08.swf" target="_blank">ミラー</A>。</P>
+<HR>
+<P>「SMALL POTATO'S MIND」</P>
+<P>そんなことより聞いてくれよ・・・。EQ関連とぐだぐだメモ関連を分けても良いかな。とか思ったんです。んで名前なににすっかなーと思ってふと「らしい」とGoogleで<A href="http://www.google.com/search?q=%82%E7%82%B5%82%A2&hl=ja&lr=" target="_blank">検索</A>したら <B>約5,040,000件中</B>1 - 10件目とか出てきてそりゃ当然なんですが。なんと１番上にあるんです。もうね、これは凄いことなんじゃないかと。<A href="http://dictionary.goo.ne.jp/cgi-bin/jp-more_print.cgi?MT=%A4%E9%A4%B7%A4%A4&ID=a4e9/21085600.txt&sw=2" target="_blank">らしい</A>ですよ<A href="http://dictionary.goo.ne.jp/cgi-bin/jp-more_print.cgi?MT=%A4%E9%A4%B7%A4%A4&ID=a4e9/21085700.txt&sw=2" target="_blank">らしい</A>。勿論前者のほうなんですが日本語のいち助動詞である「らしい」といえば、で、Googleに認められたのですよ！だからなんだって？いやピリオドとかつんくがどうとかじゃなくって。日本語の中から１つだけ単語なり名詞なり選べ！といわれたら何を選びますか。とか書こうと思ったけどわざとらしいので終り。</P>
+<P>○凄い盛り上がり気味の<A href="http://game.2ch.net/test/read.cgi/game/997376929/" target="_blank">PC版VF2スレッド</A>//<A href="http://pc.2ch.net/test/read.cgi/jisaku/982873058/" target="_blank">IF-SEGAスレッド</A>//<A href="http://www5d.biglobe.ne.jp/~kin/atrusb.html" target="_blank">SS-USB</A><BR>
+○<A href="http://www.f2.dion.ne.jp/~e.two/gobi.htm" target="_blank">（ニヤリング）</A>
+<BR>
+○みに劇場<A href="http://homepage1.nifty.com/tollywood/tollywood.htm" target="_blank">トリウッド</A>。<BR>
+○いろんなムビの落とせる<A href="http://www.mangazoo.com/mztv/" target="_blank">ところ</A>。森本晃司の永久家族がストリムサバではなくhttpだったので落とせた。他にもいろいろ。<BR>
+○アルベド語変換<A href="http://www.wars.f2s.com/albedo.html" target="_blank">ツール</A>/<A href="http://www.forest.impress.co.jp/article/2001/07/31/arubedogohenkantool.html" target="_blank">ソフト</A>。私シンを倒します。<BR>
+鯨が出てきました。BTW困ったことにスフィア盤の画面で上が切れてアビリティが見えないんです。もうね。画面アジャストくらいつけろと。<BR><BR>
+/mode morimoto on<BR>
+//<A href="http://www.beyond-c.co.jp/survival/beyond.html" target="_blank">ABOUT STUDI4℃</A>。ブロードバンドになったらケンイシイのEXTRAをごにょごにょ<BR>
+//<A href="http://www.tdx.co.jp/movie/mpage/html/537/L38.asp" target="_blank">森本晃司コレクション</A><BR>
+//2002年１月25日発売 <A href="http://www.shinseido.co.jp/anime/akira.html" target="_blank">STUDIO4℃ コレクション</A> リミテッド・ボックス<BR>
+//<A href="http://www.beyond-c.co.jp/" target="_blank">ＢＥＹＯＮＤ ＣＩＴＹ</A></P>
+<HR>
+<P>○<A href="http://www.web-sink.com/read/w_read_t.html" target="_blank">SINK</A><BR>
+○<A href="http://www.uta-net.com/phplib/maphp002.php3?sentaku5=02127" target="_blank">さよなら人類</A>　サイコウ。<BR>
+○AC4-なかなか、Gundam-意外とよい、FF10-uwa...<BR>
+EQやってる間にコンシューマが凄いことに。震えるコントローラーにびびったり。何年遅れてますか。<BR>
+○Rezの<A href="http://www.musicmine.com/release/details.asp?pid=0000000488" target="_blank">CDサントラ</A>。Rez優勝<A href="http://rez.u-ga.com/news/contest.html" target="_blank">むび</A>。REZ<A href="http://www.u-ga.com/rez/" target="_blank">公式</A>。GAMEもってないが。//飛んで<A href="http://www.i-c-o.net/" target="_blank">ICO</A>公式。気になるGAMEたくさんだ...PS2<BR>
+<BR>
+○「イエスタデイをうたって」第3巻 2月19日<BR>
+○「ＮＨＫにようこそ！」滝本 竜彦著：角川書店
+2002.1<BR>
+○Bump of chicken 2/20 NEWアルバム「jupiter」<BR>
+<BR>
+○MM2iうろうろしていたら発見したウルトラかっこいい<A href="http://fx.sakura.ne.jp/~tkb/hori/flash/xyz00.html" target="_blank">SITE</A>。ムビも凄い。思わずキャッシュで保存。<BR>
+○<A href="http://www.production-ig.co.jp/" target="_blank">Production I.G</A>によるPS2の<A href="http://www.scej.jp/surveillance/top/top.html" target="_blank">GAME</A>なんだとか。<BR>
+○で思い出したのがまえIRCで教えてもらった個人製作の凄い<A href="http://www2.odn.ne.jp/~ccs50140/" target="_blank">ところ</A>。Preview 4個目が。下北で上映していてDVD予定もあり。<BR>
+○Impressの<A href="http://www.watch.impress.co.jp/game/docs/20020208/vf.htm" target="_blank">VF歴史解説</A>。書いてる人はかなりやりこんでた人と思われる。<BR>
+○「バーチャファイター」で<A href="http://itpro.nikkeibp.co.jp/free/NNB/NEWS/20020207/1/" target="_blank">ネット対戦可能に</A>
+<BR>
+○<A href="http://www.watersupply.co.jp/nubonba/" target="_blank">ここ</A>に錯覚騙し絵のリンクが。<A href="http://www2.gol.com/users/atoz/3descher/index.html" target="_blank">ここ</A>で3DCGで再現＋解説が載っててかなりよかった。<A href="http://www.brl.ntt.co.jp/IllusionForum/index2.html" target="_blank">こっち</A>は錯覚絵＋音関連も。<BR>
+○電話INC@ネガティブハッピー入荷<BR>
+--------<BR>
+○ROD3巻みた。んで解ったのがNeneneがSukeのALT
+ENCだということ。<BR>
+○ええ良くできていましたから。<A href="http://www.bnn-s.com/bnn/bnnTopics?news_cd=220011023521" target="_blank">壱</A>　<A href="http://snow666.tripod.co.jp/sfes2002/sfes2002_00.html" target="_blank">弐</A>　<A href="http://yasai.2ch.net/test/read.cgi/event/981615314/-100" target="_blank">参</A>。入念な計画の元に。<BR>
+○コンシューマー<A href="http://game.2ch.net/test/read.cgi/famicom/1013056120/" target="_blank">VF4スレッド</A>。<BR>
+○先日のVF4全国決勝大会<A href="http://www.dengekionline.com/news/200202/05/n20020205vf.html" target="_blank">ばちゃむび配信</A><BR>
+<A href="http://www.d-levelup.com/special/20020205/vf4_01.rm" target="_blank">準決勝第1</A>(8MB)<BR>
+<A href="http://www.d-levelup.com/special/20020205/vf4_02.rm" target="_blank">準決勝第2</A>(5MB)<BR>
+<A href="http://www.d-levelup.com/special/20020205/vf4_03.rm" target="_blank">3位決定戦</A>(7MB)<BR>
+<A href="http://www.d-levelup.com/special/20020205/vf4_04.rm" target="_blank">決勝</A>(14MB)<BR>
+と<A href="http://homepage1.nifty.com/noise/" target="_blank">ここ</A>に書いてありました(逃)。避けガード投げ抜け。<BR>
+○<A href="http://home.att.ne.jp/delta/polygon/html/inu/home.htm" target="_blank">犬飼氏</A>の所にも他のムビが。マスク談義。<BR>
+○トーナメント表の<A href="http://isweb26.infoseek.co.jp/play/nakamunw/vf4taikai01kekka1.jpg" target="_blank">右下</A>、ちび太　ナポレオンと同ブロックの影<A href="http://www5b.biglobe.ne.jp/~arimaru/" target="_blank">ありまる氏</A>。SFC。<BR>
+○&lt;memo&gt;<A href="http://sto-2.cside7.com/douyo/tokyohead.html" target="_blank">東京</A> <A href="http://www.boiledeggs.com/nhk/nhkinfo.html" target="_blank">NHK</A><BR>
+○NikiとVF4。偶然同段位、勝敗数もほぼ同じでキャラも同じという。結果・・・
+確か61勝60敗。やらせ？</P>
+<P><A href="http://cgi.members.interq.or.jp/hokkaido/asato/upload/jam3ddr/OB000988.jpg" target="_blank">北海道</A>。<BR>
+<A href="http://gazoo.direct.ne.jp/up/fun/img20020201101735.jpg" target="_blank">FD</A>。<BR>
+<A href="http://www.c3-net.ne.jp/~nubonba/fucking_cat.jpg" target="_blank">FU</A>。</P>
+<HR>
+<P>
+○月曜で試験が終了予定。終了の意味が・・・結構大事。<BR>
+○PS2版VF4の<A href="http://green.jbbs.net/game/bbs/read.cgi?BBS=517&KEY=1012393395" target="_blank">話</A>。覇王の上にたくさんあるらしい。<BR>
+覇王→帝王→拳王→魔王→風神→雷神→龍神→皇帝。他に闘神、天帝　鉄人。みんな偉そう。校長とか教皇とかCEOとか？<BR>
+○ダイオウに<A href="http://www.daioh.com/" target="_blank">帝王</A>のムービーが。ということは家庭用の皇帝はACの3段くらい？<BR>
+○専用レバー、日吉の駅ビルの中の店に20-40個在庫あり。御１人様１個までと張り紙のせいか。<BR>
+○PS2メモカデータをPCへ吸出し機が3-4Kで売っていた。これ使用すればAI対決やリプレイもNETを通じて交換可能ぽい。<BR>
+○今日の<A href="http://www.sega-am2.co.jp/dailyam2/index.html" target="_blank">全国大会</A>。ここの<A href="http://green.jbbs.net/game/bbs/read.cgi?BBS=517&KEY=1011368959" target="_blank">後半</A>と<A href="http://green.jbbs.net/game/bbs/read.cgi?BBS=517&KEY=1012717495" target="_blank">ここ</A>。<A href="http://www.zdnet.co.jp/gamespot/gsnews/0202/03/news02.html" target="_blank">ZD</A>。<A href="http://www.watch.impress.co.jp/game/docs/20020204/vf4.htm" target="_blank">Impress</A>。<A href="http://isweb26.infoseek.co.jp/play/nakamunw/vf4taikai0202.htm" target="_blank">Kurumest</A>。</P>
+<P>PS2買いに行ったんですPS2。そしたらなんか垂れ幕下がってて<B>「専用レバー売り切れ再販なし」</B>とか書いてあるんです。<A href="http://green.jbbs.net/game/bbs/read.cgi?BBS=517&KEY=1012369433" target="_blank">もうね</A>。<BR>
+PADでもASやしゅらドッポでるけどね！店員のおじさんが「バーチャルファイター」と。久しぶりに聴きました。<BR>
+しかし未だにPS-SS変換を使うハメになるとは。限定販売レバー探しの旅へ秋葉へ行かないといけないのか・・・。<BR>
+→ホコリ被ったPSレバー発見。<BR>
+しかしOPかっこよすぎ。降参。こんな円盤１枚で・・・。<BR>
+--------</P>
+<P><B><FONT size="+4">ヴァ</FONT></B><FONT size="+3"><B>ア</B></FONT><FONT size="+2"><B>ア</B></FONT><B><FONT size="+1">ア</FONT></B><B>ア</B><BR>
+<B><FONT size="+4">チャ。</FONT></B><BR>
+「君、更迭です更迭。」<BR>
+「了解致しました。」<BR>
+「投げ確」<BR>
+「え？」<BR>
+「いや別に。君もいろいろ大変だね。」<BR>
+「ええまぁそれなりには。」<BR>
+「ぱくさおなこー」<BR>
+「はい？」<BR>
+「いや気にしないで。」<BR>
+/VF4 ON　SOON 　：O)　PS2を買いに行かねば。<BR>
+</P>
+<P>---ほか--<BR>
+○<A href="http://www.bk1.co.jp/cgi-bin/srch/srch_rev.cgi/3b0cb1e402f880107063?aid=p-hyakkei02585&bibid=02101592&volno=0000&revid=0000053985" target="_blank">ちぇーんそーえっじ</A> </P>
+</BODY>
+</HTML>

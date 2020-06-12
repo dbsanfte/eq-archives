@@ -1,0 +1,539 @@
+<HTML>
+
+<HEAD>
+<TITLE>NOTICE -- You are out of the frames page. This script will not work until you return to it.</TITLE>
+</HEAD>
+
+<SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*  EQ XP CALCULATOR :: DRAIGON [draigon@purplenet.net] *
+********************************************************
+*                                                      *
+*  This script was originally programmed by the kind   *
+*  folks over at the Order of the Black Dagger. They   *
+*  were kind enough for me to take parts of their web  *
+*  script so that I could develop this one. If you are *
+*  going to take any part of this script for your own  *
+*  usage, please leave a small comment tag somewhere   *
+*  in the script that gives Order of the Black Dagger  *
+*  and Draigon credit for their work.  Thanks!  :)     *
+*                                                      *
+*    Draigon:  draigon@purplenet.net                   *
+*                                                      *
+* ...and once again thanks Order of the Black Dagger:  *
+*     http://www.geocities.com/orderoftheblackdagger   *
+*                                                      *
+********************************************************
+* VERSION DATE: Monday, April 03, 2000                 *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// Race Multipliers and possible classes...
+race = new Array(13)
+//			    0		   1	         2      3   4   5   6  7    8   9  10  11   12  13  14  15  16
+//		          RACE NAME  IMAGE NAME  MULT. BAR CLR DRU ENC MAG MON NEC PAL RAN ROG SHK SHA WAR WIZ
+race[0]  = new Array('Barbarian','barbarian','105','0','0','0','0','0','0','0','0','0','1','0','1','1','0')
+race[1]  = new Array('Dark Elf', 'darkelf',  '100','0','1','0','1','1','0','1','0','0','1','1','0','1','1')
+race[2]  = new Array('Dwarf',    'dwarf',    '100','0','1','0','0','0','0','0','1','0','1','0','0','1','0')
+race[3]  = new Array('Erudite',  'erudite',  '100','0','1','0','1','1','0','1','1','0','0','1','0','0','1')
+race[4]  = new Array('Gnome',    'gnome',    '100','0','1','0','1','1','0','1','0','0','1','0','0','1','1')
+race[5]  = new Array('Half Elf', 'halfelf',  '100','1','0','1','0','0','0','0','1','1','1','0','0','1','0')
+race[6]  = new Array('Halfling', 'halfling', '95', '0','1','1','0','0','0','0','0','0','1','0','0','1','0')
+race[7]  = new Array('High Elf', 'highelf',  '100','0','1','0','1','1','0','0','1','0','0','0','0','0','1')
+race[8]  = new Array('Human',    'human',    '100','1','1','1','1','1','1','1','1','0','1','1','0','1','1')
+race[9]  = new Array('Ogre',     'ogre',     '115','0','0','0','0','0','0','0','0','0','0','1','1','1','0')
+race[10] = new Array('Iksar',    'iksar',    '120','0','0','0','0','0','1','1','0','0','0','1','1','1','0')
+race[11] = new Array('Troll',    'troll',    '120','0','0','0','0','0','0','0','0','0','0','1','1','1','0')
+race[12] = new Array('Wood Elf', 'woodelf',  '100','1','0','1','0','0','0','0','0','1','1','0','0','1','0')
+
+// Class Multipliers
+classes = new Array(14)
+//		       RACE NAME      IMAGE NAME     MULT.
+classes[0]  = new Array('Bard',         'bard',        '14')
+classes[1]  = new Array('Cleric',       'cleric',      '10')
+classes[2]  = new Array('Druid',        'druid',       '10')
+classes[3]  = new Array('Enchanter',    'enchanter',   '11')
+classes[4]  = new Array('Magician',     'magician',    '11')
+classes[5]  = new Array('Monk',         'monk',        '12')
+classes[6]  = new Array('Necromancer',  'necromancer', '11')
+classes[7]  = new Array('Paladin',      'paladin',     '14')
+classes[8]  = new Array('Ranger',       'ranger',      '14')
+classes[9]  = new Array('Rogue',        'rogue',       '9.05')
+classes[10] = new Array('Shadow Knight','shadowknight','14')
+classes[11] = new Array('Shaman',       'shaman',      '10')
+classes[12] = new Array('Warrior',      'warrior',     '9')
+classes[13] = new Array('Wizard',       'wizard',      '11')
+
+// Defaults and Image Variables...
+var BGcolor = "103050";
+var BGcolorHell = "503010";
+var prevRace = null;
+var prevClass = null;
+var newRace = null;
+var newClass = null;
+
+barbarianUP = new Image;
+barbarianUP.src = "/xpchart/barbarian-u.jpg";
+barbarianDOWN = new Image;
+barbarianDOWN.src = "/xpchart/barbarian-d.jpg";
+
+darkelfUP = new Image;
+darkelfUP.src = "/xpchart/darkelf-u.jpg";
+darkelfDOWN = new Image;
+darkelfDOWN.src = "/xpchart/darkelf-d.jpg";
+
+dwarfUP = new Image;
+dwarfUP.src = "/xpchart/dwarf-u.jpg";
+dwarfDOWN = new Image;
+dwarfDOWN.src = "/xpchart/dwarf-d.jpg";
+
+eruditeUP = new Image;
+eruditeUP.src = "/xpchart/erudite-u.jpg";
+eruditeDOWN = new Image;
+eruditeDOWN.src = "/xpchart/erudite-d.jpg";
+
+gnomeUP = new Image;
+gnomeUP.src = "/xpchart/gnome-u.jpg";
+gnomeDOWN = new Image;
+gnomeDOWN.src = "/xpchart/gnome-d.jpg";
+
+halfelfUP = new Image;
+halfelfUP.src = "/xpchart/halfelf-u.jpg";
+halfelfDOWN = new Image;
+halfelfDOWN.src = "/xpchart/halfelf-d.jpg";
+
+halflingUP = new Image;
+halflingUP.src = "/xpchart/halfling-u.jpg";
+halflingDOWN = new Image;
+halflingDOWN.src = "/xpchart/halfling-d.jpg";
+
+highelfUP = new Image;
+highelfUP.src = "/xpchart/highelf-u.jpg";
+highelfDOWN = new Image;
+highelfDOWN.src = "/xpchart/highelf-d.jpg";
+
+humanUP = new Image;
+humanUP.src = "/xpchart/human-u.jpg";
+humanDOWN = new Image;
+humanDOWN.src = "/xpchart/human-d.jpg";
+
+iksarUP = new Image;
+iksarUP.src = "/xpchart/iksar-u.jpg";
+iksarDOWN = new Image;
+iksarDOWN.src = "/xpchart/iksar-d.jpg";
+
+ogreUP = new Image;
+ogreUP.src = "/xpchart/ogre-u.jpg";
+ogreDOWN = new Image;
+ogreDOWN.src = "/xpchart/ogre-d.jpg";
+
+trollUP = new Image;
+trollUP.src = "/xpchart/troll-u.jpg";
+trollDOWN = new Image;
+trollDOWN.src = "/xpchart/troll-d.jpg";
+
+woodelfUP = new Image;
+woodelfUP.src = "/xpchart/woodelf-u.jpg";
+woodelfDOWN = new Image;
+woodelfDOWN.src = "/xpchart/woodelf-d.jpg";
+
+bardUP = new Image;
+bardUP.src = "/xpchart/bard-u.jpg";
+bardDOWN = new Image;
+bardDOWN.src = "/xpchart/bard-d.jpg";
+bardNA = new Image;
+bardNA.src = "/xpchart/bard-n.jpg";
+
+clericUP = new Image;
+clericUP.src = "/xpchart/cleric-u.jpg";
+clericDOWN = new Image;
+clericDOWN.src = "/xpchart/cleric-d.jpg";
+clericNA = new Image;
+clericNA.src = "/xpchart/cleric-n.jpg";
+
+druidUP = new Image;
+druidUP.src = "/xpchart/druid-u.jpg";
+druidDOWN = new Image;
+druidDOWN.src = "/xpchart/druid-d.jpg";
+druidNA = new Image;
+druidNA.src = "/xpchart/druid-n.jpg";
+
+enchanterUP = new Image;
+enchanterUP.src = "/xpchart/enchanter-u.jpg";
+enchanterDOWN = new Image;
+enchanterDOWN.src = "/xpchart/enchanter-d.jpg";
+enchanterNA = new Image;
+enchanterNA.src = "/xpchart/enchanter-n.jpg";
+
+magicianUP = new Image;
+magicianUP.src = "/xpchart/magician-u.jpg";
+magicianDOWN = new Image;
+magicianDOWN.src = "/xpchart/magician-d.jpg";
+magicianNA = new Image;
+magicianNA.src = "/xpchart/magician-n.jpg";
+
+monkUP = new Image;
+monkUP.src = "/xpchart/monk-u.jpg";
+monkDOWN = new Image;
+monkDOWN.src = "/xpchart/monk-d.jpg";
+monkNA = new Image;
+monkNA.src = "/xpchart/monk-n.jpg";
+
+necromancerUP = new Image;
+necromancerUP.src = "/xpchart/necromancer-u.jpg";
+necromancerDOWN = new Image;
+necromancerDOWN.src = "/xpchart/necromancer-d.jpg";
+necromancerNA = new Image;
+necromancerNA.src = "/xpchart/necromancer-n.jpg";
+
+paladinUP = new Image;
+paladinUP.src = "/xpchart/paladin-u.jpg";
+paladinDOWN = new Image;
+paladinDOWN.src = "/xpchart/paladin-d.jpg";
+paladinNA = new Image;
+paladinNA.src = "/xpchart/paladin-n.jpg";
+
+rangerUP = new Image;
+rangerUP.src = "/xpchart/ranger-u.jpg";
+rangerDOWN = new Image;
+rangerDOWN.src = "/xpchart/ranger-d.jpg";
+rangerNA = new Image;
+rangerNA.src = "/xpchart/ranger-n.jpg";
+
+rogueUP = new Image;
+rogueUP.src = "/xpchart/rogue-u.jpg";
+rogueDOWN = new Image;
+rogueDOWN.src = "/xpchart/rogue-d.jpg";
+rogueNA = new Image;
+rogueNA.src = "/xpchart/rogue-n.jpg";
+
+shadowknightUP = new Image;
+shadowknightUP.src = "/xpchart/shadowknight-u.jpg";
+shadowknightDOWN = new Image;
+shadowknightDOWN.src = "/xpchart/shadowknight-d.jpg";
+shadowknightNA = new Image;
+shadowknightNA.src = "/xpchart/shadowknight-n.jpg";
+
+shamanUP = new Image;
+shamanUP.src = "/xpchart/shaman-u.jpg";
+shamanDOWN = new Image;
+shamanDOWN.src = "/xpchart/shaman-d.jpg";
+shamanNA = new Image;
+shamanNA.src = "/xpchart/shaman-n.jpg";
+
+warriorUP = new Image;
+warriorUP.src = "/xpchart/warrior-u.jpg";
+warriorDOWN = new Image;
+warriorDOWN.src = "/xpchart/warrior-d.jpg";
+warriorNA = new Image;
+warriorNA.src = "/xpchart/warrior-n.jpg";
+
+wizardUP = new Image;
+wizardUP.src = "/xpchart/wizard-u.jpg";
+wizardDOWN = new Image;
+wizardDOWN.src = "/xpchart/wizard-d.jpg";
+wizardNA = new Image;
+wizardNA.src = "/xpchart/wizard-n.jpg";
+
+// Functions -- Switch Race, Switch Class, Calculations, and Display...
+function switchRaceTo(newRace)
+{
+	if(newRace != prevRace)
+	{
+		if(prevRace){document.images[prevRace].src = eval(prevRace + "UP.src");}
+		if(prevClass){document.images[prevClass].src = eval(prevClass + "UP.src");}
+		document.images[newRace].src = eval(newRace + "DOWN.src");
+		setRaceClasses(newRace);
+		top.active.document.open("text/html", "replace");
+		top.active.document.write("<HTML>\n\n<BODY background=\"styled01.jpg\" bgcolor=\"FFFFFF\"  TEXT=\"000000\">\n</BODY>\n</HTML>\n");
+		top.active.document.close();
+		prevClass = null;
+	}
+	prevRace = newRace;
+}
+
+function switchClassTo(newClass)
+{
+	if((prevRace) && (newClass != prevClass) && (confirmValid(prevRace,newClass) == true))
+	{
+		if(prevClass){document.images[prevClass].src = eval(prevClass + "UP.src");}
+		document.images[newClass].src = eval(newClass + "DOWN.src");
+		printData(prevRace,newClass);
+		prevClass = newClass;
+	}
+}
+
+function confirmValid(prevRace,newClass)
+{
+	for(var i = 0; i < 13; i++)
+	{
+		if(prevRace == race[i][1])
+		{
+			for(var z = 0; z < 14; z++)
+			{
+				if(newClass == classes[z][1])
+				{
+					if(race[i][z + 3] == '1')
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+		}
+	}	
+}
+
+function setRaceClasses(newRace)
+{
+	var iC = 0;
+	for(var i = 0; i < 13; i++)
+	{
+		if(newRace == race[i][1])
+		{
+			for(var z = 3; z <= 16; z++)
+			{
+				if(race[i][z] == '1')
+				{
+					curImageName = classes[(z - 3)][1];
+					document.images[curImageName].src = eval(classes[iC][1] + "UP.src");
+				}
+				else
+				{
+					curImageName = classes[(z - 3)][1];
+					document.images[curImageName].src = eval(classes[iC][1] + "NA.src");
+				}
+				iC++;
+			}
+		}
+	}
+}
+
+function calcXP(level,raceMult,classMult)
+{
+	var c = (level > 30) ? 1 + Math.floor((level - 30 + 4) / 5) * 0.1 : 1;
+	if (level <= 30){c = 1}
+	else if (level <= 35){c = 1.1}
+	else if (level <= 40){c = 1.2}
+	else if (level <= 45){c = 1.3}
+	else {c = 1.4}
+	return(Math.floor(c * raceMult * classMult * Math.pow(level - 1, 3)));
+}
+
+function printData(chosenRace,chosenClass)
+{
+	top.active.document.open("text/html", "replace");
+	for(var i = 0; i < 13; i++)
+	{
+		if(chosenRace == race[i][1])
+		{
+			for(var z = 0; z < 14; z++)
+			{
+				if(chosenClass == classes[z][1])
+				{
+					if(race[i][z + 3] == '1')
+					{
+						raceName = race[i][0];
+						className = classes[z][0];
+						raceValue = i;
+						classValue = z;
+					}
+				}
+			}
+		}
+	}
+
+	top.active.document.write("<HTML>\n\n<BODY background=\"styled01.jpg\" bgcolor=\"FFFFFF\"  TEXT=\"FFFFFF\">\n<CENTER>\n<FONT FACE=\"VERDANA,ARIAL\" SIZE=\"4\" COLOR=\"000000\"><B>" + raceName + " " + className + "</B></FONT><P>\n\n<TABLE BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"0\" BGCOLOR=\"000000\" WIDTH=\"500\">\n <TR>\n  <TD><TABLE BORDER=\"0\" CELLSPACING=\"3\" CELLPADDING=\"4\" WIDTH=\"100%\">\n	 <TR>\n	  <TD ALIGN=\"CENTER\" BGCOLOR=\"803020\"><FONT FACE=\"VERDANA,ARIAL\" SIZE=\"1\" COLOR=\"FFFFFF\"><B>LEVEL</B></FONT></TD>\n	  <TD ALIGN=\"CENTER\" BGCOLOR=\"803020\"><FONT FACE=\"VERDANA,ARIAL\" SIZE=\"1\" COLOR=\"FFFFFF\"><B>LEVEL BEGINNING</B></FONT></TD>\n	  <TD ALIGN=\"CENTER\" BGCOLOR=\"803020\"><FONT FACE=\"VERDANA,ARIAL\" SIZE=\"1\" COLOR=\"FFFFFF\"><B>LEVEL ENDING</B></FONT></TD>\n	  <TD ALIGN=\"CENTER\" BGCOLOR=\"803020\"><FONT FACE=\"VERDANA,ARIAL\" SIZE=\"1\" COLOR=\"FFFFFF\"><B>XP GAINED PER LEVEL</B></FONT></TD>\n	 </TR>\n");
+	for(var l = 1; l <= 50; l++)
+	{
+                var lvlStartingXP = calcXP(l,race[raceValue][2],classes[classValue][2]);
+                var lvlEndingXP = calcXP(l+1,race[raceValue][2],classes[classValue][2]);
+                var lvlDifference = lvlEndingXP - lvlStartingXP;
+		
+		lvlStartingXP += "";
+		var lvlStartXP = "";
+		while(lvlStartingXP.length > 3)
+		{
+			lvlStartXP = "," + lvlStartingXP.slice(lvlStartingXP.length-3,lvlStartingXP.length) + lvlStartXP;
+			lvlStartingXP = lvlStartingXP.slice(0,lvlStartingXP.length-3);
+		}
+		lvlStartXP = lvlStartingXP + lvlStartXP;
+		
+		lvlEndingXP += "";
+		var lvlEndXP = "";
+		while(lvlEndingXP.length > 3)
+		{
+			lvlEndXP = "," + lvlEndingXP.slice(lvlEndingXP.length-3,lvlEndingXP.length) + lvlEndXP;
+			lvlEndingXP = lvlEndingXP.slice(0,lvlEndingXP.length-3);
+		}
+		lvlEndXP = lvlEndingXP + lvlEndXP;
+
+		lvlDifference += "";
+		var lvlDiff = "";
+		while(lvlDifference.length > 3)
+		{
+                        lvlDiff = "," + lvlDifference.slice(lvlDifference.length-3,lvlDifference.length) + lvlDiff;
+                        lvlDifference = lvlDifference.slice(0,lvlDifference.length-3);
+		}
+		lvlDiff = lvlDifference + lvlDiff;
+
+		lvlHell = ((l == 30) || (l == 35) || (l == 40) || (l == 45) || (l == 50));
+		
+		top.active.document.write("	 <TR>\n	  <TD BGCOLOR=" + (lvlHell? BGcolorHell:BGcolor) + " ALIGN=\"CENTER\"><FONT FACE=\"COURIER NEW,COURIER\" SIZE=" + (lvlHell? "3":"2") + "><B>" + l + "</B></FONT></TD>\n	  <TD BGCOLOR=" + (lvlHell? BGcolorHell:BGcolor) + " ALIGN=\"RIGHT\"><FONT FACE=\"COURIER NEW,COURIER\" SIZE=" + (lvlHell? "3":"2") + ">" + (lvlHell? "<B>":"") + lvlStartXP + (lvlHell? "</B>":"") + "</FONT></TD>\n	  <TD BGCOLOR=" + (lvlHell? BGcolorHell:BGcolor) + " ALIGN=\"RIGHT\"><FONT FACE=\"COURIER NEW,COURIER\" SIZE=" + (lvlHell? "3":"2") + ">" + (lvlHell? "<B>":"") + lvlEndXP + (lvlHell? "</B>":"") + "</FONT></TD>\n	  <TD BGCOLOR=" + (lvlHell? BGcolorHell:BGcolor) + " ALIGN=\"RIGHT\"><FONT FACE=\"COURIER NEW,COURIER\" SIZE=" + (lvlHell? "3":"2") + ">" + (lvlHell? "<B>":"") + lvlDiff + (lvlHell? "</B>":"") + "</FONT></TD>\n	 </TR>\n");
+	}
+	top.active.document.write("	</TABLE></TD>\n </TR>\n</TABLE>\n</CENTER>\n</BODY>\n</HTML>");
+	top.active.document.close();
+}
+
+// Allow the user to reset...
+function killEverything(eraseButton)
+{
+	if(eraseButton){document.images['erase'].src = "/xpchart/erase-d.jpg";eraseButton = 0;setTimeout("document.images['erase'].src = \"\/xpchart\/erase-u.jpg\";",1000);}
+	if(prevRace){document.images[prevRace].src = eval(prevRace + "UP.src");}
+	for(var x = 0; x <= 13; x++)
+	{
+		document.images[classes[x][1]].src = eval(classes[x][1] + "UP.src");
+	}
+	prevRace = null;
+	prevClass = null;
+	newRace = null;
+	newClass = null;
+	top.active.document.open("text/html", "replace");
+	top.active.document.write("<HTML>\n\n<BODY background=\"styled01.jpg\" bgcolor=\"FFFFFF\"  TEXT=\"000000\">\n</BODY>\n</HTML>\n");
+	top.active.document.close();
+}
+//-->
+</SCRIPT>
+
+<body background="styled01.jpg" bgcolor="#FFFFFF" link="#000080" vlink="#000080" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" alink="#808080" onLoad="killEverything();">
+<FONT FACE="VERDANA,ARIAL" SIZE="2">
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="10">
+ <TR>
+  <TD VALIGN="TOP"><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="1" BGCOLOR="000000">
+	 <TR>
+	  <TD><TABLE BORDER="0" CELLSPACING="1" CELLPADDING="0" BGCOLOR="203080" WIDTH="100%">
+		 <TR>
+		  <TD ALIGN="CENTER"><FONT FACE="VERDANA,ARIAL" SIZE="1" COLOR="AACCFF"><B>- RACE -</B></FONT></TD>
+		 </TR>
+		</TABLE></TD>
+	 </TR>
+	 <TR>
+	  <TD ALIGN="CENTER"><TABLE BORDER="0" CELLSPACING="1" CELLPADDING="0">
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('barbarian')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/barbarian-u.jpg" NAME="barbarian" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('darkelf')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/darkelf-u.jpg" NAME="darkelf" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('dwarf')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/dwarf-u.jpg" NAME="dwarf" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('erudite')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/erudite-u.jpg" NAME="erudite" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('gnome')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/gnome-u.jpg" NAME="gnome" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('halfelf')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/halfelf-u.jpg" NAME="halfelf" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('halfling')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/halfling-u.jpg" NAME="halfling" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('highelf')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/highelf-u.jpg" NAME="highelf" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('human')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/human-u.jpg" NAME="human" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('iksar')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/iksar-u.jpg" NAME="iksar" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('ogre')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/ogre-u.jpg" NAME="ogre" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('troll')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/troll-u.jpg" NAME="troll" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchRaceTo('woodelf')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/woodelf-u.jpg" NAME="woodelf" BORDER="0"></A></TD>
+		 </TR>
+		</TABLE></TD>
+	 </TR>
+	</TABLE></TD>
+  <TD ROWSPAN="2" VALIGN="TOP"><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="1" BGCOLOR="000000">
+	 <TR>
+	  <TD><TABLE BORDER="0" CELLSPACING="1" CELLPADDING="0" BGCOLOR="203080" WIDTH="100%">
+		 <TR>
+		  <TD ALIGN="CENTER"><FONT FACE="VERDANA,ARIAL" SIZE="1" COLOR="AACCFF"><B>- CLASS -</B></FONT></TD>
+		 </TR>
+		</TABLE></TD>
+	 </TR>
+	 <TR>
+	  <TD ALIGN="CENTER"><TABLE BORDER="0" CELLSPACING="1" CELLPADDING="0">
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('bard')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/bard-u.jpg" NAME="bard" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('cleric')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/cleric-u.jpg" NAME="cleric" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('druid')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/druid-u.jpg" NAME="druid" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('enchanter')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/enchanter-u.jpg" NAME="enchanter" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('magician')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/magician-u.jpg" NAME="magician" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('monk')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/monk-u.jpg" NAME="monk" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('necromancer')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/necromancer-u.jpg" NAME="necromancer" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('paladin')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/paladin-u.jpg" NAME="paladin" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('ranger')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/ranger-u.jpg" NAME="ranger" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('rogue')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/rogue-u.jpg" NAME="rogue" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('shadowknight')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/shadowknight-u.jpg" NAME="shadowknight" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('shaman')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/shaman-u.jpg" NAME="shaman" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('warrior')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/warrior-u.jpg" NAME="warrior" BORDER="0"></A></TD>
+		 </TR>
+		 <TR>
+		  <TD><A HREF="javascript:switchClassTo('wizard')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/wizard-u.jpg" NAME="wizard" BORDER="0"></A></TD>
+		 </TR>
+		</TABLE></TD>
+		 </TR>
+	</TABLE></TD>
+ </TR>
+ <TR>
+  <TD ALIGN="CENTER" VALIGN="TOP"><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="1" BGCOLOR="000000">
+	 <TR>
+	  <TD><TABLE BORDER="0" CELLSPACING="1" CELLPADDING="0">
+		 <TR>
+		  <TD><A HREF="javascript:killEverything('1')" onMouseOver="window.status='';return true" onMouseOut="window.status='';return true"><IMG SRC="/xpchart/erase-u.jpg" NAME="erase" BORDER="0"></A></TD>
+		 </TR>
+		</TABLE></TD>
+	 </TR>
+	</TABLE></TD>
+ </TR>
+</TABLE>
+
+</FONT>
+</BODY>
+</HTML>
