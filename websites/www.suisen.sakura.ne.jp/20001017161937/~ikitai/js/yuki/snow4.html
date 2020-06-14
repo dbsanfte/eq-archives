@@ -1,0 +1,231 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<TITLE>複数枚ある画像のうち１種類のみにLINKを張る</TITLE>
+</HEAD>
+<BODY bgcolor="#000000" text="#ffffff" link="#00ff00" vlink="#00cc00">
+<H1>「雪を振らせる」の改造<BR>
+複数枚ある画像のうち１種類のみにLINKを張る。</H1>
+<HR>
+<P>　このサンプルは <IMG src="images/snow.gif" width="24" height="24" border="0"> ← の画像にリンクが張られてます。</P>
+<HR>
+<PRE>&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+&lt;!-- Begin
+//&lt;!-- Original:  Altan (snow@altan.hr) --&gt;
+//&lt;!-- Web Site:  http://www.altan.hr/snow --&gt;
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)
+
+var no = 15; // snow number １画面に出る画像の枚数
+var speed = 10; // smaller number moves the snow faster
+var link = &quot;snow2.html&quot;;        // 画像に張るURL
+var chgNo = 0;          // どの画像にLINKを張るかの指定。番号は下のsnow[?]の数字。
+snow = new Array();
+snow[0] = &quot;images/snow.gif&quot;;          // 画像の指定。snow[?]の数字は0から始まる
+snow[1] = &quot;images/star02.gif&quot;;
+snow[2] = &quot;images/star03.gif&quot;;
+snow[3] = &quot;images/star04.gif&quot;;
+snow[4] = &quot;images/star05.gif&quot;;
+snow[5] = &quot;images/star06.gif&quot;;
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 1800;
+
+if (ns4up) {
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+} else if (ie4up) {
+        doc_width = document.body.clientWidth;
+        doc_height = document.body.clientHeight;
+}
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+j = 0;
+
+for (i = 0; i &lt; no; ++ i) {
+        dx[i] = 0;                        // set coordinate variables
+        xp[i] = Math.random()*(doc_width-50);  // set position variables
+        yp[i] = Math.random()*doc_height;
+        am[i] = Math.random()*20;         // set amplitude variables
+        stx[i] = 0.02 + Math.random()/10; // set step variables
+        sty[i] = 0.7 + Math.random();     // set step variables
+        if (ns4up) {                      // set layers
+                if (j == chgNo) {
+                        document.write(&quot;&lt;layer name=\&quot;dot&quot;+ i +&quot;\&quot; left=\&quot;15\&quot; top=\&quot;15\&quot; visibility=\&quot;show\&quot;&gt;&lt;A href=\&quot;&quot; + link + &quot;\&quot;&gt;&lt;img src=\&quot;&quot; + snow[j] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/A&gt;&lt;/layer&gt;&quot;);
+                } else {
+                        document.write(&quot;&lt;layer name=\&quot;dot&quot;+ i +&quot;\&quot; left=\&quot;15\&quot; top=\&quot;15\&quot; visibility=\&quot;show\&quot;&gt;&lt;img src=\&quot;&quot; + snow[j] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/layer&gt;&quot;);
+                }
+        } else if (ie4up) {
+                if (j == chgNo) {
+                        document.write(&quot;&lt;div id=\&quot;dot&quot;+ i +&quot;\&quot; style=\&quot;POSITION: absolute; Z-INDEX: &quot;+ i +&quot;; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\&quot;&gt;&lt;A href=\&quot;&quot; + link + &quot;\&quot;&gt;&lt;img src=\&quot;&quot; + snow[j] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/A&gt;&lt;/div&gt;&quot;);
+                } else {
+                        document.write(&quot;&lt;div id=\&quot;dot&quot;+ i +&quot;\&quot; style=\&quot;POSITION: absolute; Z-INDEX: &quot;+ i +&quot;; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\&quot;&gt;&lt;img src=\&quot;&quot; + snow[j] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/div&gt;&quot;);
+                }
+        }
+        if (j == (snow.length-1)) { j = 0; } else { j += 1; }
+}
+
+function snowNS() {  // Netscape main animation function
+        for (i = 0; i &lt; no; ++ i) {  // iterate for every dot
+                yp[i] += sty[i];
+                if (yp[i] &gt; doc_height-50) {
+                        xp[i] = Math.random()*(doc_width-am[i]-30);
+                        yp[i] = 0;
+                        stx[i] = 0.02 + Math.random()/10;
+                        sty[i] = 0.7 + Math.random();
+                        doc_width = self.innerWidth;
+                        doc_height = self.innerHeight;
+                }
+                dx[i] += stx[i];
+                document.layers[&quot;dot&quot;+i].top = yp[i];
+                document.layers[&quot;dot&quot;+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+        }
+        setTimeout(&quot;snowNS()&quot;, speed);
+}
+
+function snowIE() {  // IE main animation function
+        for (i = 0; i &lt; no; ++ i) {  // iterate for every dot
+                yp[i] += sty[i];
+                if (yp[i] &gt; doc_height-50) {
+                        xp[i] = Math.random()*(doc_width-am[i]-30);
+                        yp[i] = 0;
+                        stx[i] = 0.02 + Math.random()/10;
+                        sty[i] = 0.7 + Math.random();
+                        doc_width = document.body.clientWidth;
+                        doc_height = document.body.clientHeight;
+                }
+                dx[i] += stx[i];
+                document.all[&quot;dot&quot;+i].style.pixelTop = yp[i];
+                document.all[&quot;dot&quot;+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+        }
+        setTimeout(&quot;snowIE()&quot;, speed);
+}
+
+if (ns4up) {
+        snowNS();
+} else if (ie4up) {
+        snowIE();
+}
+
+// End --&gt;
+&lt;/SCRIPT&gt;
+
+<BR>
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Begin
+//<!-- Original:  Altan (snow@altan.hr) -->
+//<!-- Web Site:  http://www.altan.hr/snow -->
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)
+
+var no = 15; // snow number １画面に出る画像の枚数
+var speed = 10; // smaller number moves the snow faster
+var link = "snow2.html";	// 画像に張るURL
+var chgNo = 0;		// どの画像にLINKを張るかの指定。番号は下のsnow[?]の数字。
+snow = new Array();
+snow[0] = "images/snow.gif";		// 画像の指定。snow[?]の数字は0から始まる
+snow[1] = "images/star02.gif";
+snow[2] = "images/star03.gif";
+snow[3] = "images/star04.gif";
+snow[4] = "images/star05.gif";
+snow[5] = "images/star06.gif";
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 1800;
+
+if (ns4up) {
+	doc_width = self.innerWidth;
+	doc_height = self.innerHeight;
+} else if (ie4up) {
+	doc_width = document.body.clientWidth;
+	doc_height = document.body.clientHeight;
+}
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+j = 0;
+
+for (i = 0; i < no; ++ i) {
+	dx[i] = 0;                        // set coordinate variables
+	xp[i] = Math.random()*(doc_width-50);  // set position variables
+	yp[i] = Math.random()*doc_height;
+	am[i] = Math.random()*20;         // set amplitude variables
+	stx[i] = 0.02 + Math.random()/10; // set step variables
+	sty[i] = 0.7 + Math.random();     // set step variables
+	if (ns4up) {                      // set layers
+		if (j == chgNo) {
+			document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><A href=\"" + link + "\"><img src=\"" + snow[j] + "\" border=\"0\"></A></layer>");
+		} else {
+			document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\"" + snow[j] + "\" border=\"0\"></layer>");
+		}
+	} else if (ie4up) {
+		if (j == chgNo) {
+			document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><A href=\"" + link + "\"><img src=\"" + snow[j] + "\" border=\"0\"></A></div>");
+		} else {
+			document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + snow[j] + "\" border=\"0\"></div>");
+		}
+	}
+	if (j == (snow.length-1)) { j = 0; } else { j += 1; }
+}
+
+function snowNS() {  // Netscape main animation function
+	for (i = 0; i < no; ++ i) {  // iterate for every dot
+		yp[i] += sty[i];
+		if (yp[i] > doc_height-50) {
+			xp[i] = Math.random()*(doc_width-am[i]-30);
+			yp[i] = 0;
+			stx[i] = 0.02 + Math.random()/10;
+			sty[i] = 0.7 + Math.random();
+			doc_width = self.innerWidth;
+			doc_height = self.innerHeight;
+		}
+		dx[i] += stx[i];
+		document.layers["dot"+i].top = yp[i];
+		document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+	}
+	setTimeout("snowNS()", speed);
+}
+
+function snowIE() {  // IE main animation function
+	for (i = 0; i < no; ++ i) {  // iterate for every dot
+		yp[i] += sty[i];
+		if (yp[i] > doc_height-50) {
+			xp[i] = Math.random()*(doc_width-am[i]-30);
+			yp[i] = 0;
+			stx[i] = 0.02 + Math.random()/10;
+			sty[i] = 0.7 + Math.random();
+			doc_width = document.body.clientWidth;
+			doc_height = document.body.clientHeight;
+		}
+		dx[i] += stx[i];
+		document.all["dot"+i].style.pixelTop = yp[i];
+		document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+	}
+	setTimeout("snowIE()", speed);
+}
+
+if (ns4up) {
+	snowNS();
+} else if (ie4up) {
+	snowIE();
+}
+
+// End -->
+</SCRIPT></PRE>
+
+</BODY>
+</HTML>

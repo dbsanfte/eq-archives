@@ -1,0 +1,283 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<TITLE>花火</TITLE>
+</HEAD>
+<BODY bgcolor="#000000" text="#ffffff" link="#00ffff" vlink="#00cccc" alink="#ffff00">
+
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!--
+var fireNo = 6;
+var fireSize = 150;
+var speed = 5;
+var wa = 6;
+var space = 15
+var fireColor = new Array('#ffffff','#ff0000','#00ff00','#ffff00','#00ffff','#ff00ff','#ff8000','#ff80ff','#ff0080');
+
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var fireLay="";
+for (i=0; i<fireNo*wa; i++) {
+    if (_dom == 1 || _dom == 3) {
+        fireLay += '<DIV id="fire' + i + '" style="position:absolute; width:1px; height:1px left:0px; top=0px; font-size:1px; background:#FFFFFF;"></DIV>';
+    }
+    if (_dom == 2) {
+        fireLay += '<LAYER name="fire'+ i +'" left="0" top="0" clip="0,0,1,1" bgcolor="#FFFFFF"></LAYER>\n';
+    }
+}
+document.writeln(fireLay);
+
+function getWindowSize() {
+    if(_dom == 1 || _dom == 2) {
+        win_width = self.innerWidth;
+        win_height = self.innerHeight;
+    }
+    if (_dom == 3) {
+        win_width = document.body.clientWidth;
+        win_height = document.body.clientHeight;
+    }
+}
+
+function getScrollPosY() {
+    if (_dom == 1) return scrollY;
+    if (_dom == 2) return pageYOffset;
+    if (_dom == 3) return document.body.scrollTop;
+}
+
+function showLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";
+    if (_dom == 2) document.layers[layerName].visibility = "show";
+    if (_dom == 3) document.all(layerName).style.visibility = "visible";
+}
+
+function hideLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";
+    if (_dom == 2) document.layers[layerName].visibility = "hide";
+    if (_dom == 3) document.all(layerName).style.visibility = "hidden";
+}
+
+function hanabi() {
+	for (i=0; i<fireNo*wa; i++) {
+		if (_dom == 1) var div = document.getElementById("fire" + i).style;
+		if (_dom == 2) var div = document.layers["fire" + i];
+		if (_dom == 3) var div = document.all("fire" + i).style;
+		zure1 = Math.floor(i/fireNo)%2 == 0 ? 0:(Math.PI / fireNo);
+		zure2 = Math.floor(i/fireNo) * space;
+		ran = (radius1>(fireSize*0.8)) ? Math.floor(Math.random()*20-10) : 0;
+		radius2 = (radius1 - zure2) > 0 ? radius1 - zure2 : 0;
+		if ((radius1 - zure2) > fireSize) { hideLayer("fire" + i); }
+		else { showLayer("fire" + i); }
+		div.left = centerX + Math.cos(i * (Math.PI * 2 / fireNo) + zure1) * (radius2) + ran;
+		div.top = centerY + Math.sin(i * (Math.PI * 2 / fireNo) + zure1) * (radius2) + ran;
+		if (radius2 < fireSize * 0.4) {
+			if (_dom == 1 || _dom == 3) {
+				div.background = startColor;
+				div.width = 1;
+				div.height = 1;
+			}
+			if (_dom == 2){
+				div.bgColor = startColor;
+				div.clip.width = 1;
+				div.clip.height = 1;
+			}
+		} else if (radius2 < fireSize * 0.8) {
+			if (_dom == 1 || _dom == 3) {
+				div.width = 2;
+				div.height = 2;
+			}
+			if (_dom == 2){
+				div.clip.width = 2;
+				div.clip.height = 2;
+			}
+		} else {
+			if (_dom == 1 || _dom == 3) {
+				div.background = fireColor[Math.floor(Math.random() * fireColor.length)];
+				div.width = Math.floor(Math.random()*2+1);
+				div.height = Math.floor(Math.random()*2+1);
+			}
+			if (_dom == 2){
+				div.bgColor = fireColor[Math.floor(Math.random() * fireColor.length)];
+				div.clip.width = Math.floor(Math.random()*2+1);
+				div.clip.height = Math.floor(Math.random()*2+1);
+			}
+		}
+	}
+	radius1 += speed;
+	if (radius1 > (fireSize + space * wa)) { setHanabiPos(); }
+	else { setTimeout("hanabi()",10);}
+}
+
+function setHanabiPos() {
+	rev = 0; radius1 = 0;
+	getWindowSize(); sclY = getScrollPosY();
+	startColor = fireColor[Math.floor(Math.random() * fireColor.length)];
+    centerX =  Math.floor(Math.random() * (win_width - (fireSize + space * wa) * 2) + (fireSize + space * wa));
+    centerY =  Math.floor(Math.random() * (win_height - (fireSize + space * wa) * 2) + (fireSize + space * wa)) + sclY;
+    setTimeout("hanabi()",1000);
+}
+
+setHanabiPos();
+
+// -->
+</SCRIPT>
+
+<TABLE width=100% Height=100%><TR><TD valign=top>
+
+<P><B><FONT size="6">花火</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4以上　NN4以上</FONT></B></P>
+<HR>
+<A href="#SOURCE">SOURCEは下 ↓</A>
+
+</TD></TR></TABLE>
+<BR>
+<A name="SOURCE">&nbsp;</A><BR>
+BODY内へ入れる。<BR>
+(花火の音はただのBGMなのでこのScriptに機能ではありません)<BR>
+<BR>
+
+<SCRIPT type="text/javascript" language="JavaScript1.2">
+<!--
+	function CopyToClipBoard() {
+	textRange = document.body.createTextRange();
+	textRange.moveToElementText(source);
+	textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+	document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+	document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+<BR>
+&lt;SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript"><BR>
+&lt;!--<BR>
+var fireNo = 6;<BR>
+var fireSize = 150;<BR>
+var speed = 5;<BR>
+var wa = 6;<BR>
+var space = 15<BR>
+var fireColor = new Array('#ffffff','#ff0000','#00ff00','#ffff00','#00ffff','#ff00ff','#ff8000','#ff80ff','#ff0080');<BR>
+<BR>
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+var fireLay="";<BR>
+for (i=0; i&lt;fireNo*wa; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fireLay += '&lt;DIV id="fire' + i + '" style="position:absolute; width:1px; height:1px left:0px; top=0px; font-size:1px; background:#FFFFFF;">&lt;/DIV>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fireLay += '&lt;LAYER name="fire'+ i +'" left="0" top="0" clip="0,0,1,1" bgcolor="#FFFFFF">&lt;/LAYER>\n';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+document.writeln(fireLay);<BR>
+<BR>
+function getWindowSize() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(_dom == 1 || _dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = self.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function getScrollPosY() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return scrollY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return pageYOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.body.scrollTop;<BR>
+}<BR>
+<BR>
+function showLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "show";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "visible";<BR>
+}<BR>
+<BR>
+function hideLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "hide";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "hidden";<BR>
+}<BR>
+<BR>
+function hanabi() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;fireNo*wa; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) var div = document.getElementById("fire" + i).style;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) var div = document.layers["fire" + i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) var div = document.all("fire" + i).style;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zure1 = Math.floor(i/fireNo)%2 == 0 ? 0:(Math.PI / fireNo);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zure2 = Math.floor(i/fireNo) * space;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ran = (radius1>(fireSize*0.8)) ? Math.floor(Math.random()*20-10) : 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radius2 = (radius1 - zure2) > 0 ? radius1 - zure2 : 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((radius1 - zure2) > fireSize) { hideLayer("fire" + i); }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else { showLayer("fire" + i); }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.left = centerX + Math.cos(i * (Math.PI * 2 / fireNo) + zure1) * (radius2) + ran;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.top = centerY + Math.sin(i * (Math.PI * 2 / fireNo) + zure1) * (radius2) + ran;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (radius2 &lt; fireSize * 0.4) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.background = startColor;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.width = 1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.height = 1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.bgColor = startColor;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.clip.width = 1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.clip.height = 1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (radius2 &lt; fireSize * 0.8) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.width = 2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.height = 2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.clip.width = 2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.clip.height = 2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.background = fireColor[Math.floor(Math.random() * fireColor.length)];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.width = Math.floor(Math.random()*2+1);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.height = Math.floor(Math.random()*2+1);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.bgColor = fireColor[Math.floor(Math.random() * fireColor.length)];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.clip.width = Math.floor(Math.random()*2+1);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.clip.height = Math.floor(Math.random()*2+1);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;radius1 += speed;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (radius1 > (fireSize + space * wa)) { setHanabiPos(); }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else { setTimeout("hanabi()",10);}<BR>
+}<BR>
+<BR>
+function setHanabiPos() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rev = 0; radius1 = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;getWindowSize(); sclY = getScrollPosY();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;startColor = fireColor[Math.floor(Math.random() * fireColor.length)];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;centerX =&nbsp;&nbsp;Math.floor(Math.random() * (win_width - (fireSize + space * wa) * 2) + (fireSize + space * wa));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;centerY =&nbsp;&nbsp;Math.floor(Math.random() * (win_height - (fireSize + space * wa) * 2) + (fireSize + space * wa)) + sclY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("hanabi()",1000);<BR>
+}<BR>
+<BR>
+setHanabiPos();<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT><BR>
+</NOBR></TT></DIV>
+
+<BR><BR><BR>
+
+<OBJECT ID=video1 CLASSID="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA" HEIGHT="26" WIDTH="44">
+<param name="controls" value="PlayButton">
+<param name="console" value="Clip1">
+<param name="autostart" value="true">
+<param name="src" value="hanabi.rpm">
+<embed src="hanabi.rpm" type="audio/x-pn-realaudio-plugin" console="all" controls="Clip1" height="26" width="44" autostart="true" nojava="true" pluginspage="http://www.jp.real.com/"></EMBED>
+</OBJECT>
+
+</BODY>
+</HTML>

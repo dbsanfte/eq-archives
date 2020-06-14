@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>マイキャラクター</TITLE>
+
+<!--メッセージのフォントサイズ、行間-->
+<style type="text/css"><!--
+.s1{font-size:15px; line-height:17px; font-weight:bold; color:#0066FF;}
+--></STYLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!---
+
+// メッセージ設定
+var st = "Strength = 140\n"+
+"Endurance = 95\n"+
+"Coordination = 163\n"+
+"Quickness = 163\n"+
+"Focus = 90\n"+
+"Self = 70\n"+
+"Health = 110\n"+
+"Stamina = 150\n"+
+"Mana = 120\n"+
+"\n"+
+"Specialized Skill\n"+
+"Arcane Lore = 125\n"+
+"Item Enchantment = 145\n"+
+"Unarmed Combat = 198\n"+
+"\n"+
+"Trained Skill\n"+
+"Creature Enchantment = 110\n"+
+"Healing = 140\n"+
+"Jump = 180\n"+
+"Lockpick = 115\n"+
+"Loyalty = 24\n"+
+"Magic Defense = 82\n"+
+"Melee Defense = 169\n"+
+"Missile Defense = 110\n"+
+"Run = 200";
+
+var wait = 10;		//次の文字を表示するまでの待ち時間
+var tugi = "_";		//次の文字の所に出力するキャラクター
+
+function writeDiv(name,mes) {
+	if (document.all) document.all(name).innerHTML=mes;
+	if (document.layers) {
+		document.layers[name].document.open();
+		document.layers[name].document.write(mes);
+		document.layers[name].document.close();
+	}
+}
+
+charsuu=0;
+var stDiv;
+function init(){
+	charsuu=document.layer?2:1;
+}
+
+cct=0;         // 出力中の文字数
+mct=st.length; // 出力すべき文字列の長さ
+function mess1(){
+	cct+=charsuu;
+	if(cct>mct) cct=mct;
+	Typeout='<NOBR><SPAN class="s1">'
+	       +st.substring(0,cct).replace(/\n/g,'<BR>')
+	       +(cct<mct?tugi:'')
+	       +'</SPAN></NOBR>';
+	writeDiv('status',Typeout);
+	if(cct<mct) tid=setTimeout('mess1()',wait);
+}
+
+function resize(){ if(document.layers) location.reload(); }
+
+// --->
+</SCRIPT>
+
+</HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0066FF" alink="#FF3366" vlink="#000099" onload="init(); mess1();" onResize="resize();">
+
+<!-- キャラ名の出力位置 -->
+<DIV id="name" style="position:absolute; left:150px; top:35px; visibility:visible;">
+<FONT size="+3" color="#FF3366">翡翠(Hisui)　LV26</FONT>
+</DIV>
+
+<!-- 画像の出力位置 -->
+<DIV id="Hisui" style="position:absolute; left:50px; top:100px; visibility:visible;">
+<IMG src="images/hisui.jpg" width="253" height="425" border="0" alt="翡翠">
+</DIV>
+
+<!-- ステータスの出力位置 -->
+<DIV id="status" style="position:absolute; left:350px; top:100px; visibility:visible;"></DIV>
+
+</BODY>
+</HTML>
+
+

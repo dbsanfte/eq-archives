@@ -1,0 +1,262 @@
+jQuery(document).ready(function($) {
+/* SUPERFISH MENU PLUGIN */
+ jQuery('.sf-menu').supersubs({
+        minWidth: 6,
+        maxWidth: 10,
+        extraWidth: 1
+    }).superfish({
+        autoArrows: true,
+        dropShadows: false,
+        animation: {opacity:'show', height:'show'}
+    });
+
+/* TABS */
+$('.tabs-wrapper').each(function() {
+		$(this).find(".tab_content").hide(); //Hide all content
+		$(this).find("ul.tabs li:first").addClass("active").show(); //Activate first tab
+		$(this).find(".tab_content:first").show(); //Show first tab content
+	});
+	
+	$("ul.tabs li").click(function(e) {
+		$(this).parents('.tabs-wrapper').find("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(this).parents('.tabs-wrapper').find(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		$(this).parents('.tabs-wrapper').find(activeTab).fadeIn(); //Fade in the active ID content
+		
+		e.preventDefault();
+	});
+	
+	$("ul.tabs li a").click(function(e) {
+		e.preventDefault();
+	})
+
+/* JCAROUSELLITE 0 */
+	$('.scrolly').each(function() {
+		var id = $(this).attr('id');
+		var number = id.replace('scrolly_', '');
+		$('#'+id).jCarouselLite({
+        auto: 3000,
+        vertical: true,
+        speed: 2000
+	    });
+	});
+
+/* JCAROUSELLITE 1 */
+	$('.scrollyoff').each(function() {
+		var id = $(this).attr('id');
+		var number = id.replace('scrollyoff_', '');
+		$('#'+id).jCarouselLite({
+        vertical: true,
+        speed: 2000
+	    });
+	});
+
+/* JCAROUSELLITE 2 */
+	$('.miniscroller').each(function() {
+		var id = $(this).attr('id');
+		var numbers = id.replace('miniscroller_', '');
+		$('#'+id).jCarouselLite({
+        auto: 3000,
+        speed: 1000,
+        visible: 7,
+            btnPrev: "#prev_"+numbers,
+	        btnNext: "#next_"+numbers
+	    });
+	});
+
+/* JCAROUSELLITE 3 */
+	$('.miniscrolleroff').each(function() {
+		var id = $(this).attr('id');
+		var numbers = id.replace('miniscrolleroff_', '');
+		$('#'+id).jCarouselLite({
+        speed: 1000,
+        visible: 7,
+	        btnNext: "#next_"+numbers,
+	        btnPrev: "#prev_"+numbers
+	    });
+	});
+	
+/* JCAROUSELLITE 4 */
+	$('.Carousel').each(function() {
+		var id = $(this).attr('id');
+		var number = id.replace('Carousel_', '');
+		$('#'+id).jCarouselLite({
+        auto: 3000,
+        speed: 1000,
+        visible: 3,
+	        btnNext: "#next_"+number,
+	        btnPrev: "#prev_"+number
+	    });
+	});
+
+/* JCAROUSELLITE AUTOPLAY-OFF */
+	$('.Carouselstatic').each(function() {
+		var id = $(this).attr('id');
+		var number = id.replace('Carouselstatic_', '');
+		$('#'+id).jCarouselLite({
+        visible: 3,
+        speed: 1000,
+	        btnNext: "#next_"+number,
+	        btnPrev: "#prev_"+number
+	    });
+	});
+
+/* TOGGLE CONTENT */	
+	$(".toggle-content").hide(); 
+
+	$("h5.toggle").toggle(function(){
+		$(this).addClass("active");
+		}, function () {
+		$(this).removeClass("active");
+	});
+
+	$("h5.toggle").click(function(){
+		$(this).next(".toggle-content").slideToggle();
+	});
+
+/* CONTACT FORM */
+	$('#contactForm').live('submit', function(e) {
+		var form = $(this);
+		var name = $(this).find('[name=tigu_name]').val();
+		var email = $(this).find('[name=tigu_email]').val();
+		var message = $(this).find('[name=tigu_message]').val();
+		
+		if(name == '') {
+			$(this).find('[name=tigu_name]').addClass('error');
+			$(this).find('[name=tigu_name]').parent().find('.error_msg').fadeIn();
+			
+			return false;
+		} else {
+			$(this).find('[name=tigu_name]').removeClass('error');
+			$(this).find('[name=tigu_name]').parent().find('.error_msg').fadeOut();
+		}
+		
+		var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		if(email == ''  || !email_regex.test(email)) {
+			$(this).find('[name=tigu_email]').addClass('error');
+			$(this).find('[name=tigu_email]').parent().find('.error_msg').fadeIn();
+			
+			return false;
+		} else {
+			$(this).find('[name=tigu_email]').removeClass('error');
+			$(this).find('[name=tigu_email]').parent().find('.error_msg').fadeOut();
+		}
+		
+		if(message == '') {
+			$(this).find('[name=tigu_message]').addClass('error');
+			$(this).find('[name=tigu_message]').parent().find('.error_msg').fadeIn();
+			
+			return false;
+		} else {
+			$(this).find('[name=tigu_message]').removeClass('error');
+			$(this).find('[name=tigu_message]').parent().find('.error_msg').fadeOut();
+		}
+		
+		$.ajax({
+			url: GameleonVars.ajaxUrl,
+			data: jQuery(form).serialize()+'&action=tigu_contact_form',
+			type: 'POST',
+			success: function() {
+				$('.email_sent').fadeIn(400).delay(5000).fadeOut(400);
+			}
+		});
+		
+		e.preventDefault();
+	});
+});
+
+/* TOGGLE LIGHTS */
+	function toggle () {
+			var shadow = document.getElementById("shadow");
+			if (shadow.style.display != "block")
+				shadow.style.display = "block";
+			else
+				shadow.style.display = "none"; 
+
+		}
+
+/* SHOW-HIDE FOOTER */
+    jQuery('.hidefooter').live('click', function(){
+		jQuery('#wrapper-footer').animate({height:'327px'},{duration:500,queue:false}, 'easeInOutExpo')
+
+		jQuery('.hidefooter').animate({opacity:'hide'},{duration:300,queue:false}, 'easeOutSine')
+		jQuery('.showfooter').animate({opacity:'show'},{duration:300,queue:false}, 'easeOutSine')
+
+    	jQuery('html, body').animate({ scrollTop: jQuery(document).height()},{duration:300,queue:false}, 'easeOutSine'); 
+		setTimeout(function() {
+			jQuery('html, body').animate({ scrollTop: jQuery(document).height()},{duration:300,queue:false}, 'easeOutSine'); 
+		},300);
+	});
+    
+    jQuery('.showfooter').live('click', function(){
+		jQuery('#wrapper-footer').animate({height:'0px'},{duration:500,queue:false}, 'easeInOutExpo')
+
+		jQuery('.hidefooter').animate({opacity:'show'},{duration:300,queue:false}, 'easeOutSine')
+		jQuery('.showfooter').animate({opacity:'hide'},{duration:300,queue:false}, 'easeOutSine')
+
+	
+	});
+
+/* SCROLL TO BOTTOM */	 
+jQuery(document).ready(function ($) {
+             $('#scrollBottom').click(function () {
+                 $('html, body').animate({
+                     scrollTop: $(document).height()
+                 },
+                 2000);
+                 return false;
+             });
+
+         });
+         
+  
+/* TOOLTIP */
+jQuery(document).ready(function ($) {
+  $(".tooltip").tipTip();
+  
+  function randomtip() {
+        var length = $("#randomize li").length;
+        var ran = Math.floor(Math.random()*length) + 1;
+        $("#randomize li:nth-child(" + ran + ")").show();
+  }
+  randomtip();  
+});
+
+/* PRETTYPHOTO */
+jQuery(document).ready(function ($) {
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+
+/* CLICK SOUND EFECT by JavaScript Kit (www.javascriptkit.com) */
+/* Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code*/
+
+var html5_audiotypes={
+	"mp3": "audio/mpeg",
+	"mp4": "audio/mp4",
+	"ogg": "audio/ogg",
+	"wav": "audio/wav"
+}
+function createsoundbite(sound){
+	var html5audio=document.createElement('audio')
+	if (html5audio.canPlayType){
+		for (var i=0; i<arguments.length; i++){
+			var sourceel=document.createElement('source')
+			sourceel.setAttribute('src', arguments[i])
+			if (arguments[i].match(/\.(\w+)$/i))
+				sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+			html5audio.appendChild(sourceel)
+		}
+		html5audio.load()
+		html5audio.playclip=function(){
+			html5audio.pause()
+			html5audio.currentTime=0
+			html5audio.play()
+		}
+		return html5audio
+	}
+	else{
+		return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+	}
+}

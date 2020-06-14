@@ -1,0 +1,243 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>座標を表示</TITLE>
+
+
+<SCRIPT language="JavaScript1.2">
+<!--
+
+var coef = 50/300;	// 座標の換算に用いる係数。(座標の幅/画像の幅)
+var luX = -10;		// 画像の左上の座標 横
+var luY = 40;		// 画像の左上の座標 縦
+var dp = true;  	// 小数点以下第一位まで表示するならture。正数ならfalse;
+var v = true;		// Xは縦か横か？。縦ならtrue; 横ならfalse;
+var mX = 12;		// 座標の表示位置。マウスからの離れ横
+var mY = -12;		// 座標の表示位置。マウスからの離れ縦
+var adX = 0;		// 横調整量。上手く合わない場合に適当に調整してください。
+var adY = 1;		// 縦調整量
+
+
+var state = false;
+var ie = false;
+var nc = false;
+if (document.all) { ie = true; }
+if (document.layers) { nc = true; }
+
+function init(){
+	if (nc) {
+		window.captureEvents(Event.MOUSEMOVE);
+		window.onmousemove=coordinate;
+		document.layers.map.captureEvents(Event.MOUSEOVER);
+		document.layers.map.onmouseover=visiMap;
+	}
+	if (ie) {
+		document.onmousemove=coordinate;
+	}
+}
+
+function visiMap() {
+	if (ie) { document.all.coor.style.visibility = "visible"; }
+	if (nc) { document.layers.coor.visibility = "show"; }
+	state = true;
+}
+
+function hideMap() {
+	if (ie) { document.all.coor.style.visibility = "hidden"; }
+	if (nc) { document.layers.coor.visibility = "hide"; }
+	state = false;
+}
+
+function coordinate(e) {
+	if (state) {
+		var l,t,w,h
+		if(nc) {
+			l = document.layers.map.left; t = document.layers.map.top;
+			w = document.layers.map.clip.width; h = document.layers.map.clip.height;
+			if (e.pageX < l || e.pageX > l+w || e.pageY < t || e.pageY > t+h) { hideMap(); }
+
+			var div = document.layers["coor"];
+	    	div.moveTo(e.pageX + mX,  e.pageY + mY);
+	   		MOUSE_X = (e.layerX + adX) * coef + luX;
+	   		MOUSE_Y = (e.layerY + adY) * coef - luY;
+	   		x = v ? MOUSE_Y : MOUSE_X; if (v) x = 0 - x;
+	   		y = v ? MOUSE_X : MOUSE_Y; if (!v) y = 0 - y;
+	   		x = decimal(x,dp);
+	   		y = decimal(y,dp);
+
+			div.document.open();
+			div.document.write('<TABLE><TR><TD nowrap><FONT color="#000000">X='+x+' Y='+y+'</FONT></TD></TR></TABLE>');
+			div.document.close();
+		}
+		if(ie) {
+			l = document.all.map.offsetLeft; t = document.all.map.offsetTop;
+			w = document.all.map.clientWidth; h = document.all.map.clientHeight;
+			if (event.x < l || event.x > l+w || event.y < t || event.y > t+h) { hideMap(); }
+
+			div = document.all.coor;
+	    	div.style.pixelWidth = 1;
+			div.style.posLeft= document.body.scrollLeft + event.clientX + mX;
+			div.style.posTop = document.body.scrollTop + event.clientY + mY;
+	   		MOUSE_X = (event.offsetX + adX) * coef + luX;
+	   		MOUSE_Y = (event.offsetY + adY) * coef - luY;
+	   		x = v ? MOUSE_Y : MOUSE_X; if (v) x = 0 - x;
+	   		y = v ? MOUSE_X : MOUSE_Y; if (!v) y = 0 - y;
+	   		x = decimal(x,dp);
+	   		y = decimal(y,dp);
+
+			div.innerHTML = '<TABLE><TR><TD nowrap><FONT color="#000000">X='+x+' Y='+y+'</FONT></TD></TR></TABLE>';
+		}
+	}
+	return true;
+}
+
+function decimal(r,p){
+		if(p) {
+			a = Math.round(Math.abs(r)*10) + "";
+			if (Math.abs(r) < 1) { a= "0" + a; }
+			if (r < 0) { a = "-" + a; }
+			a = a.substring(0,a.length-1)+"."+a.substring(a.length-1,a.length);
+		} else {
+			a=Math.round(r);
+		}
+		return a;
+}
+
+window.onload=init
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0066FF" alink="#FF3366" vlink="#000099">
+<FONT size="6"><B>マップなどの座標を表示</B></FONT><BR>
+<FONT size="4" color="#ff0000"><B>IE4.x/5.x　NN4.x専用</B></FONT>
+<HR>
+<DIV id="map" style="position:absolute; left:50; cursor:crosshair" onmouseover="visiMap()"><IMG src="images/map.gif" width="300" height="300" border="0"></DIV>
+<DIV id="coor" style="position:absolute; visibility:hidden; background-color:#ffffaa;layer-background-color:#ffffaa;"></DIV>
+<TABLE border="0" height="300"><TR><TD></TD></TR></TABLE>
+<HR>
+<P>以前、使ってたJavaScriptを改良し汎用的にしたものです。<BR>
+以前使ってた物は <A href="../../ac/map.html">こちら</A> 。 このScriptとはソースが違うので使用例としてみてください。</P>
+<HR>
+<B><FONT color="#ff0000" size="4">1.HEAD内に入れる</FONT></B><BR>
+　　太文字の所が設定箇所。
+<PRE>&lt;SCRIPT language=&quot;JavaScript1.2&quot;&gt;
+&lt;!--
+
+<B>var coef = 50/300;      // 座標の換算に用いる係数。(座標の幅/画像の幅)
+var luX = -10;    // 画像の左上の座標 横
+var luY = 40;     // 画像の左上の座標 縦
+var dp = true;    // 小数点以下第一位まで表示するならture。正数ならfalse;
+var v = true;     // Xは縦か横か？。縦ならtrue; 横ならfalse;
+var mX = 12;      // 座標の表示位置。マウスからの離れ横
+var mY = -12;     // 座標の表示位置。マウスからの離れ縦
+var adX = 0;      // 横調整量。上手く合わない場合に適当に調整してください。
+var adY = 1;      // 縦調整</B>量
+
+
+var state = false;
+var ie = false;
+var nc = false;
+if (document.all) { ie = true; }
+if (document.layers) { nc = true; }
+
+function init(){
+  if (nc) {
+    window.captureEvents(Event.MOUSEMOVE);
+    window.onmousemove=coordinate;
+    document.layers.map.captureEvents(Event.MOUSEOVER);
+    document.layers.map.onmouseover=visiMap;
+  }
+  if (ie) {
+    document.onmousemove=coordinate;
+  }
+}
+
+function visiMap() {
+  if (ie) { document.all.coor.style.visibility = &quot;visible&quot;; }
+  if (nc) { document.layers.coor.visibility = &quot;show&quot;; }
+  state = true;
+}
+
+function hideMap() {
+  if (ie) { document.all.coor.style.visibility = &quot;hidden&quot;; }
+  if (nc) { document.layers.coor.visibility = &quot;hide&quot;; }
+  state = false;
+}
+
+function coordinate(e) {
+  if (state) {
+    var l,t,w,h
+    if(nc) {
+      l = document.layers.map.left; t = document.layers.map.top;
+      w = document.layers.map.clip.width; h = document.layers.map.clip.height;
+      if (e.pageX &lt; l || e.pageX &gt; l+w || e.pageY &lt; t || e.pageY &gt; t+h) { hideMap(); }
+
+      var div = document.layers[&quot;coor&quot;];
+      div.moveTo(e.pageX + mX,  e.pageY + mY);
+      MOUSE_X = (e.layerX + adX) * coef + luX;
+      MOUSE_Y = (e.layerY + adY) * coef - luY;
+      x = v ? MOUSE_Y : MOUSE_X; if (v) x = 0 - x;
+      y = v ? MOUSE_X : MOUSE_Y; if (!v) y = 0 - y;
+      x = decimal(x,dp);
+      y = decimal(y,dp);
+
+      div.document.open();
+      div.document.write('&lt;TABLE&gt;&lt;TR&gt;&lt;TD nowrap&gt;&lt;FONT color=&quot;#000000&quot;&gt;X='+x+' Y='+y+'&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;');
+      div.document.close();
+    }
+    if(ie) {
+      l = document.all.map.offsetLeft; t = document.all.map.offsetTop;
+      w = document.all.map.clientWidth; h = document.all.map.clientHeight;
+      if (event.x &lt; l || event.x &gt; l+w || event.y &lt; t || event.y &gt; t+h) { hideMap(); }
+
+      div = document.all.coor;
+      div.style.pixelWidth = 1;
+      div.style.posLeft= document.body.scrollLeft + event.clientX + mX;
+      div.style.posTop = document.body.scrollTop + event.clientY + mY;
+      MOUSE_X = (event.offsetX + adX) * coef + luX;
+      MOUSE_Y = (event.offsetY + adY) * coef - luY;
+      x = v ? MOUSE_Y : MOUSE_X; if (v) x = 0 - x;
+      y = v ? MOUSE_X : MOUSE_Y; if (!v) y = 0 - y;
+      x = decimal(x,dp);
+      y = decimal(y,dp);
+
+      div.innerHTML = '&lt;TABLE&gt;&lt;TR&gt;&lt;TD nowrap&gt;&lt;FONT color=&quot;#000000&quot;&gt;X='+x+' Y='+y+'&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;';
+    }
+  }
+  return true;
+}
+
+function decimal(r,p){
+    if(p) {
+      a = Math.round(Math.abs(r)*10) + &quot;&quot;;
+      if (Math.abs(r) &lt; 1) { a= &quot;0&quot; + a; }
+      if (r &lt; 0) { a = &quot;-&quot; + a; }
+      a = a.substring(0,a.length-1)+&quot;.&quot;+a.substring(a.length-1,a.length);
+    } else {
+      a=Math.round(r);
+    }
+    return a;
+}
+
+window.onload=init
+
+//--&gt;
+&lt;/SCRIPT&gt;</PRE>
+
+<B><FONT color="#ff0000" size="4">2.BODY内に入れる</FONT></B><BR>
+　　太文字の所が設定箇所。left:50は横位置を調整。TABLEのheightは画像のheightと同じにする。<BR>
+　　注）TABLEで囲まないこと。
+<PRE>&lt;DIV id=&quot;map&quot; style=&quot;position:absolute; left:<B>50</B>; cursor:crosshair&quot; onmouseover=&quot;visiMap()&quot;&gt;
+&lt;IMG src=&quot;<B>map.gif</B>&quot; width=&quot;<B>300</B>&quot; height=&quot;<B>300</B>&quot; border=&quot;0&quot;&gt;
+&lt;/DIV&gt;
+&lt;DIV id=&quot;coor&quot; style=&quot;position:absolute; visibility:hidden; background-color:#ffffaa;layer-background-color:#ffffaa;&quot;&gt;&lt;/DIV&gt;
+&lt;TABLE border=&quot;0&quot; height=&quot;<B>300</B>&quot;&gt;&lt;TR&gt;&lt;TD&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</PRE>
+<P><BR>
+<BR>
+<BR>
+<BR>
+</P>
+</BODY>
+</HTML>

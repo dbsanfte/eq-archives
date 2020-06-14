@@ -1,0 +1,283 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>フォームの入力チェック</TITLE>
+
+<SCRIPT language="javascript">
+<!--
+
+function check1(str) {
+  var us = "0123456789";  // OKな文字を入れればいいだけ
+  for (i=0; i<str.length; i++) {
+    if (us.indexOf(str.charAt(i)) == -1) {
+      alert("ERROR");
+      break;
+    }
+  }
+}
+
+function check2(str) {
+  var us = "0123456789+-.";  // OKな文字を入れればいいだけ
+  for (i=0; i<str.length; i++) {
+    if (us.indexOf(str.charAt(i)) == -1) {
+      alert("ERROR");
+      break;
+    }
+  }
+}
+
+function check3(str) {
+  var us = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";  // OKな文字を入れればいいだけ
+  for (i=0; i<str.length; i++) {
+    if (us.indexOf(str.charAt(i)) == -1) {
+      alert("ERROR");
+      break;
+    }
+  }
+}
+
+function check4(str) {
+  var flag = false;
+  if ("あ".length == 2) flag = true;  // 全角(2バイト文字)を2文字として数えるNN対策。確か4.06以上なら1文字
+  for (i=0; i<str.length; i++) {
+    var e = escape(str.charAt(i));
+    if (e.charAt(0) == "%") {         // escapeされないのは無視
+      if(document.all) {
+        var c = eval("0x" + e.substring(2,e.length))
+        if (0xFF61<=c && c<=0xFF9F) {   // IE4以上はユニコード
+          alert("ERROR");
+          break;
+        }
+      } else {
+        if (flag) {
+          cb = eval("0x"+e.charAt(1));
+          if ((cb==8) || (cb==9) || (cb==14) || (cb==15)) i++; // 1バイト目が8,9,14,15なら2バイト文字。
+        }
+        var c = eval("0x" + e.substring(1,3));
+        if (0xA1<=c && c<=0xDF) {   // NN,IE3はシフトJIS
+          alert("ERROR");
+          break;
+        }
+      }
+    }
+  }
+}
+
+function comma(num,fm) {
+  var a = Math.abs(num);  // マイナスは取る。
+  var f = Math.floor(a);  // 正数
+  a += "";                // 数字を文字列に
+  if (a.indexOf(".") != -1)  var s = a.substring(a.indexOf("."),a.length);  // 少数点以下
+  else s = "";
+  f += "";                // 数字を文字列に
+  var temp = "", cnum = "";
+  for (i=f.length; i>=0; i--) {
+    temp += f.charAt(i);  // 最後の数字を抜き出す
+    if((f.length-i-1)%3 == 2 && i != 0) temp += ",";    // 3桁ごとに,を付加
+  }
+  if (num < 0) temp += "-";   // マイナス付加
+  for (i=temp.length-1; i>=0; i--) cnum += temp.charAt(i);  // 逆順を戻す。
+  cnum = cnum + s;        // 少数以下を付加
+  fm.value = cnum;
+}
+
+function zen2han(str,fm) {
+  var zen = "０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"; // 全角
+  var han = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; // 半角
+  var flag = false;
+  if ("あ".length == 2) flag = true;
+  var cs = "";
+  for (i=0; i<str.length; i++) {
+    cb = eval("0x"+ escape(str.charAt(i)).charAt(1));
+    if (flag && ((cb==8) || (cb==9) || (cb==14) || (cb==15))) {
+      zs = str.substring(i,i+2);
+      i++;
+    } else {
+      zs = str.charAt(i);
+    }
+    n = zen.indexOf(zs);
+    if (flag) n = n/2;
+    if (n >= 0) cs += han.charAt(n);
+    else cs += zs;
+  }
+  fm.value = cs;
+}
+
+// -->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P><B><FONT color="#0066FF" size="7"><A name="top">フォームの入力チェック</A></FONT></B><FONT size="3"><BR>
+たぶん</FONT><B><FONT color="#ff0000" size="4">NN2 IE3以上</FONT></B>です(^^;。動作確認は NN3.3 / NN4.7 / IE5.5
+/ Mozilla M17</P>
+<OL>
+  <LI><A href="#1">半角数字正数のみ可</A>
+  <LI><A href="#2">半角数字、小数点、+-記号のみ可</A>
+  <LI><A href="#3">半角英字のみ可</A>
+  <LI><A href="#4">半角カタカナチェック</A>
+  <LI><A href="#5">数字3桁ごとに，をいれる</A>
+  <LI><A href="#6">全角英数字を半角に</A>
+</OL>
+<FORM>
+<HR><BR>
+<B><A name="1">1.半角数字正数のみ可</A></B><BR>
+<INPUT type="text" name="text1" style="ime-mode:disabled;"> <INPUT type="button" value="CHECK" onClick="check1(this.form.text1.value)"><BR>
+<BR>
+<B><A name="2">2.半角数字、小数点、+-記号のみ可</A></B><BR>
+<INPUT type="text" name="text2" style="ime-mode:disabled;"> <INPUT type="button" value="CHECK" onClick="check2(this.form.text2.value)"><BR>
+<BR>
+<B><A name="3">3.半角英字のみ可</A></B><BR>
+<INPUT type="text" name="text3" style="ime-mode:disabled;"> <INPUT type="button" value="CHECK" onClick="check3(this.form.text3.value)"><BR>
+<BR>
+function check1(str) {<BR>
+&nbsp;&nbsp;var us = &quot;<B>下の説明を参照</B>&quot;;&nbsp;&nbsp;<FONT color="#009900">// 入力可の文字を入れてやる。</FONT><BR>
+&nbsp;&nbsp;for (i=0; i&lt;str.length; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (us.indexOf(str.charAt(i)) == -1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;ERROR&quot;);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+1番の場合 var us = &quot;01234567890&quot;;<BR>
+2番の場合 var us = &quot;01234567890.+-&quot;;<BR>
+3番の場合 var us = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;<BR>
+<BR>
+&lt;FORM&gt;<BR>
+&lt;INPUT type=&quot;text&quot; name=&quot;text3&quot;
+<FONT color="#ff00ff">style=&quot;ime-mode:disabled;&quot;</FONT>&gt;<BR>
+&lt;INPUT type=&quot;button&quot; value=&quot;CHECK&quot;
+onClick=&quot;check3(this.form.text3.value)&quot;&gt;<BR>
+&lt;/FORM&gt;<BR>
+<FONT color="#ff00ff">＊ IE5以上はCSSで半角しか入力できなくする。(日本語入力を強制的にOFF＆ONに出来ない)</FONT><BR>
+<BR>
+　<A href="#top">TOP</A>
+<BR>
+<HR>
+<BR>
+<B><A name="4">4.半角カタカナチェック</A></B><BR>
+<INPUT type="text" name="text4"> <INPUT type="button" value="CHECK" onClick="check4(this.form.text4.value)"><BR>
+<BR>
+function check4(str) {<BR>
+&nbsp;&nbsp;var flag = false;<BR>
+&nbsp;&nbsp;if (&quot;あ&quot;.length ==
+2) flag = true;&nbsp;&nbsp;<FONT color="#009900">// 全角(2バイト文字)を2文字として数えるNN対策。確か4.06以上なら1文字</FONT><BR>
+&nbsp;&nbsp;for (i=0; i&lt;str.length; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;var e = escape(str.charAt(i));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (e.charAt(0) ==
+&quot;%&quot;) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT color="#009900">// escapeされないのは無視</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(document.all) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var c = eval(&quot;0x&quot; + e.substring(2,e.length))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+(0xFF61&lt;=c &amp;&amp; c&lt;=0xFF9F) {&nbsp;&nbsp;
+<FONT color="#009900">// IE4以上はユニコード</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;ERROR&quot;);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (flag) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb = eval(&quot;0x&quot;+e.charAt(1));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+((cb==8) || (cb==9) || (cb==14) || (cb==15))
+i++; <FONT color="#009900">// 1バイト目が8,9,14,15なら2バイト文字。</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var c = eval(&quot;0x&quot; + e.substring(1,3));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+(0xA1&lt;=c &amp;&amp; c&lt;=0xDF) {&nbsp;&nbsp;
+<FONT color="#009900">// NN,IE3はシフトJIS</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;ERROR&quot;);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+&lt;FORM&gt;<BR>
+&lt;INPUT type=&quot;text&quot; name=&quot;text4&quot;&gt;<BR>
+&lt;INPUT type=&quot;button&quot; value=&quot;CHECK&quot;
+onClick=&quot;check4(this.form.text4.value)&quot;&gt;<BR>
+&lt;/FORM&gt;<BR>
+<BR>
+　<A href="#top">TOP</A>
+<BR>
+<HR>
+<BR>
+<B><A name="5">5.数字3桁ごとに，をいれる</A></B><BR>
+<INPUT type="text" name="text5" style="ime-mode:disabled;"> <INPUT type="button" value="CHANGE" onClick="comma(this.form.text5.value,this.form.text5)"><BR>
+<BR>
+function comma(num,fm) {<BR>
+&nbsp;&nbsp;var a = Math.abs(num);&nbsp;&nbsp;<FONT color="#009900">// マイナスは取る。</FONT><BR>
+&nbsp;&nbsp;var f = Math.floor(a);&nbsp;&nbsp;<FONT color="#009900">// 正数</FONT><BR>
+&nbsp;&nbsp;a += &quot;&quot;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#009900">// 数字を文字列に</FONT><BR>
+&nbsp;&nbsp;if (a.indexOf(&quot;.&quot;) != -1)&nbsp;&nbsp;var s = a.substring(a.indexOf(&quot;.&quot;),a.length);&nbsp;&nbsp;<FONT color="#009900">// 少数点以下</FONT><BR>
+&nbsp;&nbsp;else s = &quot;&quot;;<BR>
+&nbsp;&nbsp;f += &quot;&quot;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#009900"> // 数字を文字列に</FONT><BR>
+&nbsp;&nbsp;var temp = &quot;&quot;, cnum = &quot;&quot;;<BR>
+&nbsp;&nbsp;for (i=f.length; i&gt;=0; i--) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;temp += f.charAt(i);&nbsp;&nbsp;<FONT color="#009900">// 最後の数字を抜き出す</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if((f.length-i-1)%3 == 2 &amp;&amp; i != 0) temp += &quot;,&quot;;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#009900">// 3桁ごとに,を付加</FONT><BR>
+&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;if (num &lt; 0) temp += &quot;-&quot;;&nbsp;&nbsp; <FONT color="#009900">// マイナス付加</FONT><BR>
+&nbsp;&nbsp;for (i=temp.length-1; i&gt;=0; i--) cnum += temp.charAt(i);&nbsp;&nbsp;<FONT color="#009900">// 逆順を戻す。</FONT><BR>
+&nbsp;&nbsp;cnum = cnum + s;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#009900">// 少数以下を付加</FONT><BR>
+&nbsp;&nbsp;fm.value = cnum;<BR>
+}<BR>
+<BR>
+&lt;FORM&gt;<BR>
+&lt;INPUT type=&quot;text&quot; name=&quot;text5&quot;
+style=&quot;ime-mode:disabled;&quot;&gt;<BR>
+&lt;INPUT type=&quot;button&quot; value=&quot;CHANGE&quot;
+onClick=&quot;comma(this.form.text5.value,this.form.text5)&quot;&gt;<BR>
+&lt;/FORM&gt;<BR>
+<BR>
+　<A href="#top">TOP</A>
+<BR>
+<HR>
+<BR>
+<B><A name="6">6.全角英数字を半角に</A></B><BR>
+<INPUT type="text" name="text6"> <INPUT type="button" value="CHANGE" onClick="zen2han(this.form.text6.value,this.form.text6)"><BR>
+<BR>
+function zen2han(str,fm) {<BR>
+&nbsp;&nbsp;var zen = &quot;０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ&quot;;
+<FONT color="#009900">// 全角</FONT><BR>
+&nbsp;&nbsp;var han = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;
+<FONT color="#009900">// 半角</FONT><BR>
+&nbsp;&nbsp;var flag = false;<BR>
+&nbsp;&nbsp;if (&quot;あ&quot;.length == 2) flag = true;<BR>
+&nbsp;&nbsp;var cs = &quot;&quot;;<BR>
+&nbsp;&nbsp;for (i=0; i&lt;str.length; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cb = eval(&quot;0x&quot;+ escape(str.charAt(i)).charAt(1));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (flag &amp;&amp;
+((cb==8) || (cb==9) || (cb==14) || (cb==15)))
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#009900">// 2バイト文字か？</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zs =
+str.substring(i,i+2);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#009900">// 2文字分取得</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zs = str.charAt(i);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;n = zen.indexOf(zs);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (flag) n = n/2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (n &gt;= 0) cs += han.charAt(n);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else cs += zs;<BR>
+&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;fm.value = cs;<BR>
+}<BR>
+<BR>
+&lt;FORM&gt;<BR>
+&lt;INPUT type=&quot;text&quot; name=&quot;text6&quot;&gt;<BR>
+&lt;INPUT type=&quot;button&quot; value=&quot;CHANGE&quot;
+onClick=&quot;zen2han(this.form.text6.value,this.form.text6)&quot;&gt;<BR>
+&lt;/FORM&gt;<BR>
+<BR>
+　<A href="#top">TOP</A>
+<BR>
+<HR>
+<BR>
+<BR>
+</FORM>
+</BODY>
+</HTML>

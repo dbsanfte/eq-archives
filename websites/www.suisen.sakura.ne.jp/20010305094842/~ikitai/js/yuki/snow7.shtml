@@ -1,0 +1,321 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>画像の中だけ雪を振らせる</TITLE>
+
+<STYLE type="text/css">
+<!-- /* 507が画像の幅、380が画像の高さ */
+.snowArea { width:507; height:380; clip:rect(0px 507px 380px 0px); }
+#snowlayerNN { position:relative; }
+#snowlayerIE { position:absolute; top:0; left:0; }
+-->
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#ffffff" onload="init()">
+<H1>「雪を振らせる」の改造<BR>
+画像の中だけ雪を振らせる</H1>
+<HR>
+
+<center>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD><DIV id="snowlayerNN" class="snowArea">
+<IMG src="images/originnightyew.jpg" width="507" height="380" border="0">
+<DIV id="snowlayerIE" class="snowArea"></DIV></DIV></TD></TR></TABLE>
+</center>
+
+<HR>
+<P>
+1.雪を振らせたい<FONT color="#ff0000">画像のタグ(赤)</FONT>の両側に<FONT color="#ff00ff">紫色の行</FONT>を挿入する。<BR>
+2.<FONT color="#0000ff">スタイルシート(青)</FONT>をHEAD内へ挿入し画像の大きさに合わせ数値を変える。<BR>
+3.BODYタグ内へ <FONT color="#009900"><B>onload=&quot;init()&quot;</B></FONT> を挿入<BR>
+4.<FONT color="#990000">JavaScript(茶)</FONT>をBODY内へ挿入し太文字の所を説明に合わせて変更する。画像のタグは1番の赤色の所と同じものを入れてください。</P>
+<HR>
+
+
+<SCRIPT type="text/javascript" language="JavaScript1.2">
+<!--
+	function CopyToClipBoard() {
+	textRange = document.body.createTextRange();
+	textRange.moveToElementText(source);
+	textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+	document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+	document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>画像の中だけ雪を振らせる&lt;/TITLE><BR>
+<BR>
+<FONT color="#0000ff">
+&lt;STYLE type="text/css"><BR>
+&lt;!-- /* 507が画像の幅、380が画像の高さ */<BR>
+.snowArea { width:507; height:380; clip:rect(0px 507px 380px 0px); }<BR>
+#snowlayerNN { position:relative; }<BR>
+#snowlayerIE { position:absolute; top:0; left:0; }<BR>
+--><BR>
+&lt;/STYLE></FONT><BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY bgcolor=&quot;#ffffff&quot; <FONT color="#009900"><B>onload=&quot;init()&quot;</B></FONT>&gt;<BR><BR>
+<BR>
+&lt;center><BR>
+<FONT color="#ff00ff">
+&lt;TABLE border="0" cellpadding="0" cellspacing="0">&lt;TR>&lt;TD>&lt;DIV
+id="snowlayerNN" class="snowArea"></FONT><BR>
+<FONT color="#ff0000">&lt;IMG src=&quot;originnightyew.jpg&quot;
+width=&quot;507&quot; height=&quot;380&quot;
+border=&quot;0&quot;&gt;</FONT><BR>
+<FONT color="#ff00ff">
+&lt;DIV id="snowlayerIE" class="snowArea">&lt;/DIV>&lt;/DIV>&lt;/TD>&lt;/TR>&lt;/TABLE></FONT><BR>
+&lt;/center><BR>
+<BR>
+<BR>
+<FONT color="#990000">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;<BR>
+&lt;!-- Begin<BR>
+//&lt;!-- Original:&nbsp;&nbsp;Altan (snow@altan.hr) --><BR>
+//&lt;!-- Web Site:&nbsp;&nbsp;http://www.altan.hr/snow --><BR>
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)<BR>
+<BR>
+<B>var no = 15; // １画面に出る雪画像の枚数</B><BR>
+var speed = 10; // smaller number moves the snow faster<BR>
+<B>
+var snowflake = &quot;snow.gif&quot;; //
+雪の画像</B><BR>
+<B>
+var imgW = 507; // 画像の幅</B><BR>
+<B>
+var imgH = 380; // 画像の高さ</B><BR>
+<B>
+var imgTag= '&lt;IMG src=&quot;originnightyew.jpg&quot;
+width=&quot;507&quot; height=&quot;380&quot;
+border=&quot;0&quot;&gt;';&nbsp;&nbsp;&nbsp;&nbsp;//
+画像のタグ</B><BR>
+<BR>
+var ns4up = (document.layers) ? 1 : 0;&nbsp;&nbsp;// browser sniffer<BR>
+var ie4up = (document.all) ? 1 : 0;<BR>
+var dx, xp, yp;&nbsp;&nbsp;&nbsp;&nbsp;// coordinate and position variables<BR>
+var am, stx, sty;&nbsp;&nbsp;// amplitude and step variables<BR>
+var i;<BR>
+<BR>
+dx = new Array();<BR>
+xp = new Array();<BR>
+yp = new Array();<BR>
+am = new Array();<BR>
+stx = new Array();<BR>
+sty = new Array();<BR>
+<BR>
+function init() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ns4up) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay = document.layers["snowlayerNN"];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.open();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.write('&lt;layer name="imglay">'+imgTag+'&lt;/layer>');<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (ie4up) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay = document.all("snowlayerIE");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; no; ++ i) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] = 0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set coordinate variables<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(imgW-50);&nbsp;&nbsp;// set position variables<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = Math.random()*imgH;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;am[i] = Math.random()*20;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // set amplitude variables<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10; // set step variables<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();&nbsp;&nbsp;&nbsp;&nbsp; // set step variables<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ns4up) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set layers<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == 0) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.write("&lt;layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\">&lt;img src=\""<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ snowflake + "\" border=\"0\">&lt;/layer>");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.write("&lt;layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\">&lt;img src=\""<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ snowflake + "\" border=\"0\">&lt;/layer>");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (ie4up) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == 0) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.insertAdjacentHTML('BeforeEnd',"&lt;div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\">&lt;img src=\"" + snowflake <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ "\" border=\"0\">&lt;/div>");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.insertAdjacentHTML('BeforeEnd',"&lt;div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\">&lt;img src=\"" + snowflake <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ "\" border=\"0\">&lt;/div>");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ns4up) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.close();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.layers["imglay"].moveTo(0,0);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowNS();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (ie4up) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowIE();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function snowNS() {&nbsp;&nbsp;// Netscape main animation function<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; no; ++ i) {&nbsp;&nbsp;// iterate for every dot<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] += sty[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (yp[i] > imgH) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(imgW-30);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_width = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_height = self.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += stx[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.layers["dot"+i].top = yp[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("snowNS()", speed);<BR>
+}<BR>
+<BR>
+function snowIE() {&nbsp;&nbsp;// IE main animation function<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; no; ++ i) {&nbsp;&nbsp;// iterate for every dot<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] += sty[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (yp[i] > imgH) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(imgW-30);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_width = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_height = document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += stx[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.all["dot"+i].style.pixelTop = yp[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lay.document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("snowIE()", speed);<BR>
+}<BR>
+<BR>
+// End --><BR>
+&lt;/SCRIPT></FONT><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+
+
+<!--------- ここからJavaScript ------------------->
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Begin
+//<!-- Original:  Altan (snow@altan.hr) -->
+//<!-- Web Site:  http://www.altan.hr/snow -->
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)
+
+var no = 15; // snow number １画面に出る画像の枚数
+var speed = 10; // smaller number moves the snow faster
+var snowflake = "images/snow.gif";
+var imgW = 507;	// 画像の幅
+var imgH = 380; // 画像の高さ
+var imgTag= '<IMG src="images/originnightyew.jpg" width="507" height="380" border="0">';	// 画像のタグ
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i;
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+
+function init() {
+	if (ns4up) {
+		lay = document.layers["snowlayerNN"];
+		lay.document.open();
+		lay.document.write('<layer name="imglay">'+imgTag+'</layer>');
+	} else if (ie4up) {
+		lay = document.all("snowlayerIE");
+	}
+
+	for (i = 0; i < no; ++ i) {
+		dx[i] = 0;                        // set coordinate variables
+		xp[i] = Math.random()*(imgW-50);  // set position variables
+		yp[i] = Math.random()*imgH;
+		am[i] = Math.random()*20;         // set amplitude variables
+		stx[i] = 0.02 + Math.random()/10; // set step variables
+		sty[i] = 0.7 + Math.random();     // set step variables
+		if (ns4up) {                      // set layers
+			if (i == 0) {
+				lay.document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""
+				+ snowflake + "\" border=\"0\"></layer>");
+			} else {
+				lay.document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""
+				+ snowflake + "\" border=\"0\"></layer>");
+			}
+		} else if (ie4up) {
+			if (i == 0) {
+				lay.insertAdjacentHTML('BeforeEnd',"<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "
+				+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + snowflake
+				+ "\" border=\"0\"></div>");
+			} else {
+				lay.insertAdjacentHTML('BeforeEnd',"<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "
+				+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + snowflake
+				+ "\" border=\"0\"></div>");
+			}
+		}
+	}
+
+	if (ns4up) {
+		lay.document.close();
+		lay.document.layers["imglay"].moveTo(0,0);
+		snowNS();
+	} else if (ie4up) {
+		snowIE();
+	}
+}
+
+function snowNS() {  // Netscape main animation function
+	for (i = 0; i < no; ++ i) {  // iterate for every dot
+		yp[i] += sty[i];
+		if (yp[i] > imgH) {
+			xp[i] = Math.random()*(imgW-30);
+			yp[i] = 0;
+			stx[i] = 0.02 + Math.random()/10;
+			sty[i] = 0.7 + Math.random();
+			doc_width = self.innerWidth;
+			doc_height = self.innerHeight;
+		}
+		dx[i] += stx[i];
+		lay.document.layers["dot"+i].top = yp[i];
+		lay.document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+	}
+	setTimeout("snowNS()", speed);
+}
+
+function snowIE() {  // IE main animation function
+	for (i = 0; i < no; ++ i) {  // iterate for every dot
+		yp[i] += sty[i];
+		if (yp[i] > imgH) {
+			xp[i] = Math.random()*(imgW-30);
+			yp[i] = 0;
+			stx[i] = 0.02 + Math.random()/10;
+			sty[i] = 0.7 + Math.random();
+			doc_width = document.body.clientWidth;
+			doc_height = document.body.clientHeight;
+		}
+		dx[i] += stx[i];
+		lay.document.all["dot"+i].style.pixelTop = yp[i];
+		lay.document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+	}
+	setTimeout("snowIE()", speed);
+}
+
+// End -->
+</SCRIPT>
+
+</BODY>
+</HTML>

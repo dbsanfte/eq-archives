@@ -1,0 +1,310 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<TITLE>淡雪</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!--
+
+var snowImgSizeW = new Array(); var snowImgSizeH = new Array();
+
+var snowArea = 2;	// 雪の降る範囲。0:TOPのWindowエリアのみ　1:PAGE全体　2:スクロールに合わせて動く。
+var snowNo = 15;	// 雪の数
+var snowImg = "images/yuki.gif";	// 雪の画像のパス
+snowImgSizeW[0] = 9;	// 画像の幅
+snowImgSizeH[0] = 9;	// 画像の高さ
+
+
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var dx = new Array(), snowPosX = new Array(), snowPosY = new Array(), size = new Array();
+var yure = new Array(), cycle = new Array(), sonwSpeed = new Array(), way = new Array();
+snowImgSizeW[1] = Math.round((snowImgSizeW[0] / 3) * 2); snowImgSizeH[1] = Math.round((snowImgSizeH[0] / 3) * 2);
+snowImgSizeW[2] = Math.round(snowImgSizeW[0] / 3); snowImgSizeH[2] = Math.round(snowImgSizeH[0] / 3);
+
+function getSnowArea() {
+	if(_dom == 1 || _dom == 2) {
+		docWidth = self.innerWidth;
+		docHeight = (snowArea == 1 && document.height > window.innerHeight) ? document.height : window.innerHeight;
+	}
+	if (_dom == 3) {
+		docWidth = document.body.clientWidth;
+		docHeight = (snowArea == 1 && document.body.scrollHeight > document.body.clientHeight) ? document.body.scrollHeight : document.body.clientHeight;
+	}
+}
+
+function getScrollPosY() {
+    if (_dom == 1) return scrollY;
+    if (_dom == 2) return pageYOffset;
+    if (_dom == 3) return document.body.scrollTop;
+}
+
+function snowPosInit(num, start) {
+	yure[num] = Math.random()*10;
+	snowPosX[num] = Math.random()*(docWidth - yure[num] - snowImgSizeW[0] - 10);
+	snowPosY[num] = 0;
+	cycle[num] = 0.5 + Math.random();
+	if (size[num] == 0) sonwSpeed[num] = 2.0 + Math.random() * 0.5;	// 大サイズ雪のスピード
+	if (size[num] == 1) sonwSpeed[num] = 1.5 + Math.random() * 0.0;	// 中サイズ
+	if (size[num] == 2) sonwSpeed[num] = 1.0 + Math.random() * 0.5;	// 小サイズ
+	way[num] = Math.random() * 1 - 0.5;
+	if (start) {
+		dx[num] = 0;
+		snowPosY[num] = Math.random()*(docHeight - snowImgSizeH[0] - 10);
+	}
+}
+
+function moveLayerTo(layerName, x, y){
+    if (_dom == 1) {
+        document.getElementById(layerName).style.left = x;
+        document.getElementById(layerName).style.top = y;
+    }
+    if (_dom == 2) {
+        document.layers[layerName].left = x;
+        document.layers[layerName].top = y;
+    }
+    if (_dom == 3) {
+        document.all(layerName).style.pixelLeft = x;
+        document.all(layerName).style.pixelTop = y;
+    }
+}
+
+function moveSnow() {
+	for (i=0; i<snowNo; i++) {
+		snowPosY[i] += sonwSpeed[i];
+		if (snowPosY[i] > (docHeight + snowImgSizeH[0] + 10) || snowPosX[i] < (0 - snowImgSizeW[0] -5) ||
+		 snowPosX[i] > (docWidth + 5)) snowPosInit(i);
+		dx[i] += cycle[i];
+		if ((Math.random() * 1000) < 10) {
+			if (way[i] < 0) way[i] = 0 - Math.random() * 0.5 + 0.1;
+			if (way[i] > 0) way[i] = Math.random() * 0.5 - 0.1;
+		}
+		if ((Math.random() * 3000) < 10 && (docHeight / 2) < snowPosY[i]) snowPosInit(i);
+		snowPosX[i] += way[i];
+		sclY = snowArea == 2 ? getScrollPosY() : sclY = 0;
+		moveLayerTo("snow"+i,Math.floor(snowPosX[i]+yure[i]*(Math.sin(dx[i]*Math.PI/180))), Math.floor(snowPosY[i])+sclY);
+	}
+	setTimeout("moveSnow()", 10);
+}
+
+function resize(){
+	if (_dom == 2) location.reload();
+	getSnowArea();
+	if (_dom==1 || _dom==3) moveLayerTo("dmy", docWidth + snowImgSizeW[0] + 15, docHeight + snowImgSizeH[0] + 15);
+}
+
+window.onresize = resize;
+
+// -->
+</SCRIPT>
+
+</HEAD>
+<BODY bgcolor="#000000" text="#cccccc">
+<P><B><FONT size="7">淡雪</FONT></B><BR>
+<B><FONT size="4" color="#ff0000">IE4/5　NN4/6</FONT></B></P>
+<HR>
+<P><FONT size="2">
+名前は取り敢えず淡雪に決定。
+意味が「うっすらと積もった、やわらかで消えやすい春の雪」なので<BR>
+積もる処理も入れないとダメかなぁ？(^^;。（絶対無理）<BR>
+引き続き名前募集～。<BR>
+<BR>
+<BR>
+「雪を降らせるを」もっとリアルに出来ないかなと以前から作っていたのですがこれ以上リアルは難しそうなので公開します。<BR>
+使用画像は黒背景用ですがこちら → <IMG src="images/yuki.gif" width="9" height="9" border="0"><BR>
+<BR>
+「雪を降らせる」との違いは<BR>
+　真っ直ぐ降らないで多少左右に移動するようにした。<BR>
+　小さい画像ほど動きを遅くして遠近感を持たせた。<BR>
+　適当なところでランダムに溶けて消える。(溶けるようには見えないか(&gt;&lt;)）<BR>
+　縦長のPAGEへの対応を簡単にした。<BR><BR>
+雪の降るスピードについて<BR>
+　スクリプト中の <B>sonwSpeed[num] = 2.0 + Math.random() * 0.5;　//
+？サイズ雪のスピード</B> の<BR>
+　式を変更することにより変えられます。Math.random()は0から1までの数字をランダムで出すので上の場合は<BR>
+　2+（0から1）*0.5 = 2から2.5のspeedになります。このspeedはパソコンの性能によって変わります。<BR>
+　私はＰ２－300を使ってますがNNはOKなんですがＩＥの場合は少し遅くてダメですわ(&gt;&lt;)。雪の数が10ぐらいまでは<BR>
+　意図したspeedで動くのですが10以上は数が増えるほどＩＥはspeedが遅くなります。NN4の場合は30ぐらいまでは<BR>
+　ほぼ同じspeedで動きました。IEは数が多い物は苦手。NN4ある程度はOKぽいですね。<BR>
+　この辺はIEとNN4の性能の違いなので仕様がないですね。<BR>
+　ちなみにこれは「雪降り改造」や「アニメ」にある物全部に当てはまります。<BR>
+<BR>
+簡単な説明<BR>
+　黄色をHEAD内へ入れる。<BR>
+　緑色をBODY内へ入れる。<BR>
+　黄色の設定箇所をお好みに合わせて設定し完成。</FONT></P>
+<HR>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+<!--
+	function CopyToClipBoard() {
+	textRange = document.body.createTextRange();
+	textRange.moveToElementText(source);
+	textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+	document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+	document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>淡雪&lt;/TITLE><BR>
+<BR>
+<FONT color="#cccc00">
+&lt;SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript"><BR>
+&lt;!--<BR>
+<BR>
+var snowImgSizeW = new Array(); var snowImgSizeH = new Array();<BR>
+<BR>
+var snowArea = <B>0</B>;&nbsp;&nbsp; // 雪の降る範囲。0:TOPのWindowエリアのみ　1:PAGE全体　2:スクロールに合わせて動く。<BR>
+var snowNo = <B>20</B>;&nbsp;&nbsp;&nbsp;&nbsp;// 雪の数<BR>
+var snowImg = &quot;<B>yuki.gif</B>&quot;;&nbsp;&nbsp;&nbsp;&nbsp;// 雪の画像のパス<BR>
+snowImgSizeW[0] = <B>9</B>;&nbsp;&nbsp;&nbsp;&nbsp;// 画像の幅<BR>
+snowImgSizeH[0] = <B>9</B>;&nbsp;&nbsp;&nbsp;&nbsp;// 画像の高さ<BR>
+<BR>
+<BR>
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+var dx = new Array(), snowPosX = new Array(), snowPosY = new Array(), size = new Array();<BR>
+var yure = new Array(), cycle = new Array(), sonwSpeed = new Array(), way = new Array();<BR>
+snowImgSizeW[1] = Math.round((snowImgSizeW[0] / 3) * 2); snowImgSizeH[1] = Math.round((snowImgSizeH[0] / 3) * 2);<BR>
+snowImgSizeW[2] = Math.round(snowImgSizeW[0] / 3); snowImgSizeH[2] = Math.round(snowImgSizeH[0] / 3);<BR>
+<BR>
+function getSnowArea() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(_dom == 1 || _dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docWidth = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docHeight = (snowArea == 1 && document.height > window.innerHeight) ? document.height : window.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docWidth = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docHeight = (snowArea == 1 && document.body.scrollHeight > document.body.clientHeight) ? document.body.scrollHeight : document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function getScrollPosY() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return scrollY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return pageYOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.body.scrollTop;<BR>
+}<BR>
+<BR>
+function snowPosInit(num, start) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yure[num] = Math.random()*10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;snowPosX[num] = Math.random()*(docWidth - yure[num] - snowImgSizeW[0] - 10);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;snowPosY[num] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cycle[num] = 0.5 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (size[num] ==
+0) sonwSpeed[num] = 2.0 + Math.random() *
+0.5; // 大サイズ雪のスピード<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (size[num] == 1) sonwSpeed[num] = 1.5 + Math.random() * 0.0; // 中サイズ<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (size[num] == 2) sonwSpeed[num] = 1.0 + Math.random() * 0.5; // 小サイズ<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;way[num] = Math.random() * 1 - 0.5;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (start) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[num] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowPosY[num] = Math.random()*(docHeight - snowImgSizeH[0] - 10);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function moveLayerTo(layerName, x, y){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelLeft = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelTop = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function moveSnow() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;snowNo; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowPosY[i] += sonwSpeed[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (snowPosY[i] > (docHeight + snowImgSizeH[0] + 10) || snowPosX[i] &lt; (0 - snowImgSizeW[0] -5) ||<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; snowPosX[i] > (docWidth + 5)) snowPosInit(i);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += cycle[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((Math.random() * 1000) &lt; 10) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (way[i] &lt; 0) way[i] = 0 - Math.random() * 0.5 + 0.1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (way[i] > 0) way[i] = Math.random() * 0.5 - 0.1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((Math.random() * 3000) &lt; 10 && (docHeight / 2) &lt; snowPosY[i]) snowPosInit(i);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowPosX[i] += way[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sclY = snowArea == 2 ? getScrollPosY() : sclY = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("snow"+i,Math.floor(snowPosX[i]+yure[i]*(Math.sin(dx[i]*Math.PI/180))), Math.floor(snowPosY[i])+sclY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(&quot;moveSnow()&quot;,
+10);<BR>
+}<BR>
+<BR>
+function resize(){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) location.reload();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;getSnowArea();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom==1 || _dom==3) moveLayerTo("dmy", docWidth + snowImgSizeW[0] + 15, docHeight + snowImgSizeH[0] + 15);<BR>
+}<BR>
+<BR>
+window.onresize = resize;<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT></FONT><BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY bgcolor="#000000" text="#ffffff"><BR>
+<BR>
+<BR>
+<FONT color="#009900">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;
+TYPE=&quot;text/javascript&quot;&gt;<BR>
+&lt;!--<BR>
+<BR>
+if (_dom) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;getSnowArea(); var j = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;var snowLay = '&lt;DIV id="dmy" style="position:absolute;visibility:hidden;">&amp;nbsp;&lt;/DIV>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;snowNo; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size[i] = j; snowPosInit(i, true);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom==2) snowLay += '&lt;LAYER name="snow' + i + '" left="-100" top="-100" visibility="show">&lt;img src="'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '">&lt;/LAYER>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom==1 || _dom==3) snowLay += '&lt;DIV id="snow' + i<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ '" style="position:absolute; top:-100px; left:-100px; width:1;">&lt;IMG src="'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '">&lt;/DIV>'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (j == 2) { j = 0; } else { j += 1; }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.write(snowLay);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom != 2) moveLayerTo("dmy", docWidth + snowImgSizeW[0] + 15, docHeight + snowImgSizeH[0] + 15);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;moveSnow();<BR>
+}<BR>
+// End --><BR>
+&lt;/SCRIPT></FONT><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!--
+
+if (_dom) {
+	getSnowArea(); var j = 0;
+	var snowLay = '<DIV id="dmy" style="position:absolute;visibility:hidden;">&nbsp;</DIV>';
+	for (i=0; i<snowNo; i++) {
+		size[i] = j; snowPosInit(i, true);
+		if (_dom==2) snowLay += '<LAYER name="snow' + i + '" left="-100" top="-100" visibility="show"><img src="'
+		+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '"></LAYER>';
+		if (_dom==1 || _dom==3) snowLay += '<DIV id="snow' + i
+		+ '" style="position:absolute; top:-100px; left:-100px; width:1;"><IMG src="'
+		+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '"></DIV>'
+		if (j == 2) { j = 0; } else { j += 1; }
+	}
+	document.write(snowLay);
+	if (_dom != 2) moveLayerTo("dmy", docWidth + snowImgSizeW[0] + 15, docHeight + snowImgSizeH[0] + 15);
+	moveSnow();
+}
+// End -->
+</SCRIPT>
+
+</BODY>
+</HTML>

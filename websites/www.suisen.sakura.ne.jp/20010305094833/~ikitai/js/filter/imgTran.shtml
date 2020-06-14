@@ -1,0 +1,313 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>トランジションで画像を表示</TITLE>
+
+<SCRIPT language="JavaScript">
+<!--
+var imgnum=0;
+
+var img = new Array();
+img[0] = "images/scene08.jpg";	// イメージのパス
+img[1] = "images/scene09.jpg";
+img[2] = "images/scene13.jpg";
+img[3] = "images/scene14.jpg";
+img[4] = "images/scene16.jpg";
+img[5] = "images/scene17.jpg";
+img[6] = "images/scene19.jpg";
+
+var imgName = new Array();
+imgName[0] = "画像１";	// 画像の題名
+imgName[1] = "画像２";
+imgName[2] = "画像３";
+imgName[3] = "画像４";
+imgName[4] = "画像５";
+imgName[5] = "画像６";
+imgName[6] = "画像７";
+
+
+var trn = new Array(12,22,10,9,19,2,14);	// トランジション番号
+
+function chgimg(num,sel) {
+	document.navi.imgNo.focus();
+	imgnum = imgnum + num;
+	if (sel) imgnum = parseInt(num);
+	if (imgnum >= img.length) imgnum=0;
+	if (imgnum < 0) imgnum = img.length-1;
+	if (!sel) document.navi.selImg.selectedIndex = imgnum;
+	document.navi.imgNo.value = (imgnum+1)+"/"+(img.length);
+	if (document.all) {
+		el=document.all('tranImg');
+		el.filters["revealTrans"].transition = trn[imgnum];
+		el.filters["revealTrans"].Apply();
+		document.tranImg.src = img[imgnum];
+		el.filters["revealTrans"].Play();
+	} else {
+		document.tranImg.src = img[imgnum];
+	}
+}
+
+var cachenum = 0;
+var cacheState = false;
+function imgCache() {
+	var str = "LOADING...　";
+	for (var i=1; i<=img.length; i++) {
+		if (cachenum >= (i-1)) str += "<B>"+ i + "</B> ";
+		else str += i + " ";
+	}
+	document.all("loadImg").innerHTML = str;
+	obj = document.navi.selImg.options;
+	obj[obj.length] = new Option(imgName[cachenum],cachenum);
+	cachenum++;
+	if (cachenum < img.length) {
+		document.all("cache").insertAdjacentHTML('BeforeEnd','<IMG src="'+ img[cachenum] +'" onload="imgCache()">');
+	} else {
+		cacheState = true;
+		setTimeout('document.all("loadImg").style.visibility = "hidden"',2000);
+	}
+}
+
+function checkImg() {
+	if (imgnum == 0 && !cacheState) document.navi.prevImg.disabled = true;
+	else document.navi.prevImg.disabled = false;
+	if (cachenum <= imgnum+1) {
+		document.navi.nextImg.disabled = true;
+		document.navi.nextImg.value = "読 込 中";
+	} else {
+		document.navi.nextImg.disabled = false;
+		document.navi.nextImg.value = "次の画像";
+	}
+	if(!cacheState) setTimeout("checkImg()",100);
+	else {
+		document.navi.nextImg.disabled = false;
+		document.navi.nextImg.value = "次の画像";
+	}
+}
+
+function init() {
+	if (document.all) {
+		document.navi.imgNo.style.textAlign = "center";
+		checkImg();
+		imgCache();
+		el=document.all('tranImg');
+		el.filters["revealTrans"].transition=trn[0];
+		el.filters["revealTrans"].Apply();
+		el.style.visibility = "visible";
+		el.filters["revealTrans"].Play();
+	}
+	document.navi.imgNo.value = "1/"+(img.length);
+}
+
+window.onload=init;
+
+// -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<P><B><FONT size="6">トランジションで画像を表示</FONT></B><BR>
+<FONT color="#ff0000"><B>トランジション効果はIE4以上、NNは効果無しで画像表示</B></FONT></P>
+<HR>
+<P>LOADINGの効果が分かりやすいように少しファイルサイズの大きい画像を使用してます。<BR>
+画像はロードされた物のみに移動できるようになってます。</P>
+
+<FORM name="navi">
+<TABLE><TR><TD>
+<INPUT type="button" name="prevImg" onclick="chgimg(-1)" value="前の画像" disabled=true>
+<INPUT type="text" name="imgNo" size="5" onfocus="this.blur()">
+<INPUT type="button" name="nextImg" onclick="chgimg(1)" value="次の画像">
+<SELECT name="selImg" onchange="chgimg(this.options[this.selectedIndex].value,1)">
+<SCRIPT language="JavaScript"><!--
+if (!document.all) {
+	for (i=0; i< imgName.length; i++) {
+		document.write('<OPTION value="'+i+'">'+imgName[i]+'</OPTION>');
+	}
+}
+// --></SCRIPT>
+</SELECT>
+</TD><TD width="20">&nbsp;</TD><TD><DIV id="loadImg">
+<SCRIPT language="JavaScript"><!--
+if (document.all) {
+	document.navi.nextImg.disabled = true;
+	document.navi.nextImg.value = "読 込 中";
+	var str = "LOADING...　";
+	for (var i=1; i<=img.length; i++) str += i+" ";
+	document.write(str);
+}
+// --></SCRIPT>
+</DIV></TD></TR></TABLE>
+</FORM>
+
+<IMG SRC="images/scene08.jpg" NAME="tranImg" style="filter:revealTrans(Duration=2)">
+<SCRIPT language="JavaScript"><!--
+if (document.all) document.all('tranImg').style.visibility = "hidden";
+// --></SCRIPT>
+
+<DIV ID="cache" style="display:none"></DIV>
+
+<HR>
+<P><FONT color="red"><B>このScriptを編集するときは出来るだけメモ帳などのテキストエディターで手書きで編集してください。<BR>
+特に間違いを自動で修正するタイプのＨＰ作成ソフトを使うと動かなくなる可能性が大きいです。</B></FONT><BR>
+<BR>
+<B>太文字</B>の所を設定する。<BR>
+　　img[?]を0から順に画像の表示したい順で設定する。<BR>
+　　トランジション番号はイメージの数と同じだけ用意する。番号と効果の関係は<A href="../filter/Transition.html">こちら</A>で調べてください。<BR>
+　　この例ですと1番の画像が12の効果で2番が22、3番が10・・・・・となってます。<BR>
+　　&lt;IMG srcにはimg[0]と同じイメージのパスを入れる。<BR>
+　　Duration=2 は効果にかかる秒数です。</P>
+<HR>
+
+
+<PRE>
+
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;トランジションで画像を表示&lt;/TITLE&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;
+&lt;!--
+var imgnum=0;
+
+var img = new Array();
+img[0] = &quot;<B>scene08.jpg</B>&quot;;	// イメージのパス
+img[1] = &quot;<B>scene09.jpg</B>&quot;;
+img[2] = &quot;<B>scene13.jpg</B>&quot;;
+img[3] = &quot;<B>scene14.jpg</B>&quot;;
+img[4] = &quot;<B>scene16.jpg</B>&quot;;
+img[5] = &quot;<B>scene17.jpg</B>&quot;;
+img[6] = &quot;<B>scene19.jpg</B>&quot;;
+
+var imgName = new Array();
+imgName[0] = &quot;<B>画像１</B>&quot;;	// 画像の題名
+imgName[1] = &quot;<B>画像２</B>&quot;;
+imgName[2] = &quot;<B>画像３</B>&quot;;
+imgName[3] = &quot;<B>画像４</B>&quot;;
+imgName[4] = &quot;<B>画像５</B>&quot;;
+imgName[5] = &quot;<B>画像６</B>&quot;;
+imgName[6] = &quot;<B>画像７</B>&quot;;
+
+
+var trn = new Array(<B>12,22,10,9,19,2,14</B>);	// トランジション番号
+
+function chgimg(num,sel) {
+	imgnum = imgnum + num;
+	if (sel) imgnum = parseInt(num);
+	if (imgnum &gt;= img.length) imgnum=0;
+	if (imgnum &lt; 0) imgnum = img.length-1;
+	if (!sel) document.navi.selImg.selectedIndex = imgnum;
+	document.navi.imgNo.value = (imgnum+1)+&quot;/&quot;+(img.length);
+	if (document.all) {
+		el=document.all('tranImg');
+		el.filters[&quot;revealTrans&quot;].transition = trn[imgnum];
+		el.filters[&quot;revealTrans&quot;].Apply();
+		document.tranImg.src = img[imgnum];
+		el.filters[&quot;revealTrans&quot;].Play();
+	} else {
+		document.tranImg.src = img[imgnum];
+	}
+}
+
+var cachenum = 0;
+var cacheState = false;
+function imgCache() {
+	var str = &quot;LOADING...　&quot;;
+	for (var i=1; i&lt;=img.length; i++) {
+		if (cachenum &gt;= (i-1)) str += &quot;&lt;B&gt;&quot;+ i + &quot;&lt;/B&gt; &quot;;
+		else str += i + &quot; &quot;;
+	}
+	document.all(&quot;loadImg&quot;).innerHTML = str;
+	obj = document.navi.selImg.options;
+	obj[obj.length] = new Option(imgName[cachenum],cachenum);
+	cachenum++;
+	if (cachenum &lt; img.length) {
+		document.all(&quot;cache&quot;).insertAdjacentHTML('BeforeEnd','&lt;IMG src=&quot;'+ img[cachenum] +'&quot; onload=&quot;imgCache()&quot;&gt;');
+	} else {
+		cacheState = true;
+		setTimeout('document.all(&quot;loadImg&quot;).style.visibility = &quot;hidden&quot;',2000);
+	}
+}
+
+function checkImg() {
+	if (imgnum == 0 &amp;&amp; !cacheState) document.navi.prevImg.disabled = true;
+	else document.navi.prevImg.disabled = false;
+	if (cachenum &lt;= imgnum+1) {
+		document.navi.nextImg.disabled = true;
+		document.navi.nextImg.value = &quot;読 込 中&quot;;
+	} else {
+		document.navi.nextImg.disabled = false;
+		document.navi.nextImg.value = &quot;次の画像&quot;;
+	}
+	if(!cacheState) setTimeout(&quot;checkImg()&quot;,100);
+	else {
+		document.navi.nextImg.disabled = false;
+		document.navi.nextImg.value = &quot;次の画像&quot;;
+	}
+}
+
+function init() {
+	if (document.all) {
+		document.navi.imgNo.style.textAlign = &quot;center&quot;;
+		checkImg();
+		imgCache();
+		el=document.all('tranImg');
+		el.filters[&quot;revealTrans&quot;].transition=trn[0];
+		el.filters[&quot;revealTrans&quot;].Apply();
+		el.style.visibility = &quot;visible&quot;;
+		el.filters[&quot;revealTrans&quot;].Play();
+	}
+	document.navi.imgNo.value = &quot;1/&quot;+(img.length);
+}
+
+window.onload=init;
+
+// --&gt;
+&lt;/SCRIPT&gt;
+
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+&lt;FORM name=&quot;navi&quot;&gt;
+&lt;TABLE&gt;&lt;TR&gt;&lt;TD&gt;
+&lt;INPUT type=&quot;button&quot; name=&quot;prevImg&quot; onclick=&quot;chgimg(-1)&quot; value=&quot;前の画像&quot; disabled=true&gt;
+&lt;INPUT type=&quot;text&quot; name=&quot;imgNo&quot; size=&quot;5&quot; onfocus=&quot;this.blur()&quot;&gt;
+&lt;INPUT type=&quot;button&quot; name=&quot;nextImg&quot; onclick=&quot;chgimg(1)&quot; value=&quot;次の画像&quot;&gt;
+&lt;SELECT name=&quot;selImg&quot; onchange=&quot;chgimg(this.options[this.selectedIndex].value,1)&quot;&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;&lt;!--
+if (!document.all) {
+	for (i=0; i&lt; imgName.length; i++) {
+		document.write('&lt;OPTION value=&quot;'+i+'&quot;&gt;'+imgName[i]+'&lt;/OPTION&gt;');
+	}
+}
+// --&gt;&lt;/SCRIPT&gt;
+&lt;/SELECT&gt;
+&lt;/TD&gt;&lt;TD width=&quot;20&quot;&gt;&amp;nbsp;&lt;/TD&gt;&lt;TD&gt;&lt;DIV id=&quot;loadImg&quot;&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;&lt;!--
+if (document.all) {
+	document.navi.nextImg.disabled = true;
+	document.navi.nextImg.value = &quot;読 込 中&quot;;
+	var str = &quot;LOADING...　&quot;;
+	for (var i=1; i&lt;=img.length; i++) str += i+&quot; &quot;;
+	document.write(str);
+}
+// --&gt;&lt;/SCRIPT&gt;
+&lt;/DIV&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;
+&lt;/FORM&gt;
+
+&lt;IMG SRC=&quot;<B>scene08.jpg</B>&quot; NAME=&quot;tranImg&quot; style=&quot;filter:revealTrans(Duration=<B>2</B>)&quot;&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;&lt;!--
+if (document.all) document.all('tranImg').style.visibility = &quot;hidden&quot;;
+// --&gt;&lt;/SCRIPT&gt;
+
+&lt;!-- 次のはBODY内の最後の方に書く --&gt;
+&lt;DIV ID=&quot;cache&quot; style=&quot;display:none&quot;&gt;&lt;/DIV&gt;
+
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+
+</PRE>
+
+</BODY>
+</HTML>

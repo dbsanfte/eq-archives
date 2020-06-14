@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=euc-jp">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Pragma" content="no-cache">
+	<style type="text/css"><!--
+	 .min{ font-size: 9pt; }
+	 input , textarea { font-size: 10pt;}
+	 hr.r{ color: "#FFCC00";}
+	 .resform{ padding-right: 5px; padding-left: 5px; font-size: 10pt; border-left: 0.1mm solid #FFCC00; border-right: 0.1mm solid #FFCC00;}
+	 textarea, .fm{ border:1 ; border-color: #2222AA ; border-style: solid ;border-width: 1px; }
+	 .stamp{ font-size:7pt; font-style: italic; color: #2222AA;}
+	 strong.subj { color:#666699; font-weight: bold; }
+	 strong.name { color:green; font-weight: bold; }
+	 address{ text-align:right; font-style:normal; font-size: 9pt; font-family:TicagoFix,Helvetica;}
+	 #pagertabs{ border-bottom: 0.2mm solid #DDDDFF; }
+	 #modesel{ border: 0.2mm solid #DDDDFF; }
+	 #msglist{ font-size:10pt; background: #FAFAFC; width: 100%; border:1px; margin: 5px 25px;}
+	--></style>
+	<title>掲示板 - DHTML</title>
+</head>
+
+<body bgcolor="#fcfcfc" text="#555555" link="#1111bb" vlink="#7777cc">
+<script type="text/javascript" defer><!--
+ function colsel() { window.open('ealis_sub.cgi?pickcolor','colsel','scrollbars=no,status=no,height=160,width=370'); }
+  function view(name) {
+   var txtObj = document.all(name);
+   if (txtObj.style.display != 'none') { txtObj.style.display = 'none'; }
+   else { txtObj.style.display = ''; }
+  }
+// --></script>
+
+<table border=0 align=right><tr><td align=right valign=top nowrap>
+	<small class="min">lastpost : <font color="#996633">02/07/15 18:52:05 Monar</font> , [<font color="#996633">66.28.250.171</font>]
+	<br><a href="http://www.bf.wakwak.com/~kaccou/">戻る</a> <a href="ealis_sub.cgi?mode=howto">掲示板の使い方</a> <a href="ealis_sub.cgi?mode=find">全文検索</a> <a href="ealis_sub.cgi?mode=delete">記事削除</a> <a href="ealis_sub.cgi">管理用</a></small></td></tr>
+</table>
+<a name=0></a>
+<p><div align="center"><font color="#BBAEB3" size=5 face="Verdana" style="font-size:18pt;"> - 掲示板 -</font></div></p>
+
+<div align=center>
+
+<form method=POST action="ealis_wri.cgi?dhtml">
+	<table border=0><tr><td colspan=2>
+	<table border=0><tr><th align=right><u>Name</u></th>
+	<td><input type=text name="name" size=20 value="" class="fm"></td>
+	<th align=right>Mail</th><td><input type=text name="email" size=20 value="" class="fm"></td></tr>
+	<tr><th align=right>Subj</th>
+	<td><input type=text name="subj" size=25 class="fm"></td>
+	<th align=right>　Key</th><td><input type=text name="pwd" size=10 maxlength=8 value="" class="fm"><small>(英数字8以内)</small></td></tr>
+	<tr><th align=right>URL</th>
+	<td colspan=3><input type=text size=50 name="url" value="http://" class="fm"></td></tr></table></td></tr>
+	<tr><td colspan=4><textarea cols=56 rows=7 name="comment" wrap="soft"></textarea></td></tr>
+	<tr><td nowrap colspan=2 class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a>
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</tr><tr><td align=left class="min">allow tags / autolink
+	</td><td class="min" align=right><input type=submit value="　　投稿　　"><input type=reset value="消去"></td></tr></table>
+
+<table border=0 align=center cellspacing=0 cellpadding=0 class="min"><tr>
+	<td nowrap bgcolor="#DDDDFF">View Mode : </td>
+	<td nowrap id="modesel">　<a href="ealis.cgi?start=48&amp;show=8">Normal mode</a> / <a href="ealis.cgi?dhtml&amp;start=48&amp;show=8">DynamicHTML mode</a> / <a href="ealis.cgi?thread&amp;start=48&amp;show=8">Thread view</a> / <a href="ealis.cgi?lapse&amp;show=8">Lapse view</a> / <small style="font-size:8pt;">レスの付いた記事は上に移動されます</small></td>
+</tr></table>
+</form>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<a href="ealis.cgi?dhtml&amp;start=0&amp;show=8">1</a>
+	<a href="ealis.cgi?dhtml&amp;start=8&amp;show=8">2</a>
+	<a href="ealis.cgi?dhtml&amp;start=16&amp;show=8">3</a>
+	<a href="ealis.cgi?dhtml&amp;start=24&amp;show=8">4</a>
+	<a href="ealis.cgi?dhtml&amp;start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?dhtml&amp;start=40&amp;show=8">6</a>
+	<strong>7</strong>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?dhtml&amp;start=48&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+
+
+<hr><a name=1></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">14</font>:　<strong class="subj">装備公開希望</strong>
+	<small>　From: </small><strong class="name">barao</strong>
+	<small>　on 01/10/29 17:48:13 　 </small></td>
+	<td align=right nowrap><a href="#0">∧</a><a href="#2">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#800000">毎度へんなTellばかりでごめん（ｗ<br>今結構皆さんの協力のもとに装備が揃い始めてきたけど、参考に装備の所を<br>更新してくれませんか？外見はよくなったんだけど所々にへぼいItemが結構<br>あってその辺をClearすれば結構硬くなってToVNとかでもPullいけると<br>思うので。よろしゅー。ただHPがまだBuff貰って5kJustくらいでRngとかに<br>負けそうなのが・・・（ｗ</font><!-- p29-dna05kokuryo.gunma.ocn.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">そーいや、装備欄はめんどいので更新してませんね、ワタクシ（ｗ<br>ここ1Week忙しいので、暇なときにでも更新しておきます。</font>
+		<span class="stamp">(01/10/29 19:51:35)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO14');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=14&amp;icon=INHERIT&amp;dhtml" id="NO14" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=2></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">12</font>:　<strong class="subj">(無題)</strong>
+	<small>　From: </small><strong class="name">Ｍａｚｙｉ</strong>
+	<small>　on 01/10/24 16:20:03 　 </small></td>
+	<td align=right nowrap><a href="#1">∧</a><a href="#3">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#FF8040">Makdさんの日記読むとTormaxなんか変わったらしいけど変わってたっけ？<br>HP増えたけどYelinakほどじゃないし・・ま　適当でいこかｗ<br><br></font><!-- nttchba011059.flets.ppp.infoweb.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#666699"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#666699">Pullで1ついてくるぐらいだべ。<br>ありゃMe切るんでNP（ｗ<br>適当で行こうか！</font>
+		<span class="stamp">(01/10/24 20:45:22)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- gateway2.dwango.co.jp --> &gt;</font></td>
+		<td><font color="#800000">なぜかTormax裏の3sentiもペットと同じ動きしてたんです＾＾；<br>前は無視してたんですけどかなりsoul linkチックな動きをしてくれるので（といってもgateまでは歩いてくるんですがｗ）念を入れてbankまで下がったらうまくいったかな。<br>1回橋からgate側にmobがくるとTormax+護衛2+Sentiが全部Gateまで巡回してくるような感じだったけどそんなことなかったですか？<br>あとHPに関してはブランクがあったのと40人中15人がHealerTypeだったとかいう攻撃力バランスの問題かもしれませぬｗ</font>
+		<span class="stamp">(01/10/24 22:52:38)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">前からそうでしたね。基本的にSoulLinkはHate消えた地点まで歩いてくるって言う認識でやってました。<br>TormaxのSoulLinkは側近２、Delayで４（？）くらいだったはずです。<br>側近２がちとPath変更あったのか今回くっつくようになって難しい感じ。</font>
+		<span class="stamp">(01/10/25 00:54:46)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">1stPullで落とすはずだったのがくるようなったので2ndでさらに減らす感じで今やってます。Tormax裏に関してはMz君補足もとむ（ｗ<br>VaneではRog2なんでRog5はうらやましい限りですよｗ</font>
+		<span class="stamp">(01/10/25 00:57:53)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">そーいやVの護衛だが、あれはやっぱPullerにのかってきたんだと思う。足遅いからあいつやるときCoH徹底で（ｗ</font>
+		<span class="stamp">(01/10/25 01:00:28)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- xdsl033046.061200.metallic.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">最近ALに取られっぱなしでブランクあったんですけどTormax裏が遅延付で来るようになったのここ1ヶ月くらいですかね。<br>前は完全に反応しなかったんだけどな・・。<br>うちはROGは最高10人くらい集まるんだけど1stでまともにPOPしてるMONKが一人しかいなくてさびしい限りですｗ</font>
+		<span class="stamp">(01/10/25 02:04:24)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">MMは大変ですね、Warderいないし　；；<br>こっちもReconの人海戦術にやられてるのでお気持ち察するに余りあり（ｗ　MMの場合弱肉強食っぽいから余計ひどそうだけど　；；<br><br>Rogの数はうらやましい限りですねぇ　＞＿＜<br>MNKは2人ですね、MzクンがReal捨ててくれれば安泰なのですが（ｗ<br>Pullは絶対的にMNKのが優秀なので、MakdさんはMNK生活をば･･･Pull楽しいですよ（ｗ<br>っと、本題。遅延で橋までくるのは前からだと思います。たしか1stKillのときも来た覚えあるし、毎回来てますｗ　かなりPullPlan違いそうなので、参考なりませんが（守秘義務もあって電波状態ともいうｗ）。</font>
+		<span class="stamp">(01/10/25 03:07:07)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">参考までに、私の見解だと、Tormax自身にSoulLink（以下、SL）するのが側近２、側近2（正確にはRoyalRoom内のNamed）に対し裏のMobがSLする仕様になっていると思います。<br>この辺に、謎があるかと</font>
+		<span class="stamp">(01/10/25 03:13:43)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- xdsl033046.061200.metallic.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">弱肉強食とはいえ案外安定してたりしますけどね＾＾；<br>ALはちょろちょろmobを取られても余裕な立場だし<br>FRとはnorth以外基本的にtargetがかぶらない（warderいないからｗ）、ので。</font>
+		<span class="stamp">(01/10/25 05:35:05)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- xdsl033046.061200.metallic.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">でTormax不在のときに護衛2匹のPullを試したときは裏のSentiはaddしなかったんだけどTormaxがいるときいないときでaggroパターンが違うんですかね。それともたまたまなのか、俺の勘違いなのか。<br>いずれにせよKaccouさんの見解を聞いて納得。Thxですｗ<br><br>ちなみにPuller不在時に自分あるいは他人のMNK使ってPullしたりしてるので楽しいのは感じてたりします（下手ですがｗ）<br>でも不思議とどのクラスをやってもDruidから<br>蔵がえそうとは思わないんですよね。<br>Druidがどこまでできるのかを極めたいよね、とは誰かの受け売りなんですがそんだけDruidが好きってことなんでしょうかｗ</font>
+		<span class="stamp">(01/10/25 05:53:11)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">あ、あれれ（ｗ<br>たしかTormaxいないときに護衛2Pullすると裏が来たような気が･･･ｗ　Mzクンのレスを待つｗ</font>
+		<span class="stamp">(01/10/25 11:31:53)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>Mazyi</b><!-- N52cc-02p125.ppp.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#FF8040">君君　俺がそんなコト覚えているとでも？ｗ</font>
+		<span class="stamp">(01/10/25 15:54:51)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- xdsl034014.061122.metallic.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">うう、なんかそういわれると自信なしｗ 調べなおして出直します・・ｗ<br>そういえば壁際のnamedとtormaxはナイフだとaddせずSpellだと<br>linkするとか言ってたけど関係あるのかな＾＾；</font>
+		<span class="stamp">(01/10/25 16:35:59)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">Mzクン･･･　；；　Monar並ですね<br>SpellだとLinkRange広がる感じはありますねぇ。<br>な、わけで、最近まで弓準備してませんでしたが、最近だと常備です（ｗ<br>MNKはJaveがいいかもかも。あれあると世界が変わるっぽい</font>
+		<span class="stamp">(01/10/25 16:52:24)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x3.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">おいおいおいおいいおおいおいおいおい<br>俺をナンだと思ってるのだ！！<br>ちなみに、こいつFireだっけIceだっけ？<br>は日常茶飯事です。<br></font>
+		<span class="stamp">(01/10/25 23:07:01)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>Mazyi</b><!-- N52cc-03p250.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#FF8040">Monar=カス　これVaneの常識<br>ちなみに俺=肉も常識らしい┐(´_`)┌<br><br>Javelin持ってないMonkとShurikenでPullするMonkは別Classですｗいやまじで。</font>
+		<span class="stamp">(01/10/26 09:12:30)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>Mazyi</b><!-- N52cc-03p250.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#FF8040">↑は俺の勝手な見解ねｗ</font>
+		<span class="stamp">(01/10/26 09:13:53)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">┐(´_`)┌<br>これいいね（ｗ　ってわけで参考なりませんね･･･</font>
+		<span class="stamp">(01/10/26 20:05:43)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- xdsl034014.061122.metallic.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">こんなものあったのか・・<br>世界が変わりました、はいTT</font>
+		<span class="stamp">(01/10/27 17:25:09)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">Welcome New World ! (w<br></font>
+		<span class="stamp">(01/10/27 18:19:44)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">あとMakdさんのBBSにてYの話で。むこうにレス付けるのもあれだしここで（ｗ<br>＞SK1HS以外<br>こないだのPatchで21/19という化け物1HSに変わりました。ST産のKnightSwordにはかなわないでしょうが（Stats上昇の関係で）<br>Looksは変わらずBloodFire（むきｗ）<br>現在使いどころの難しい1HSですが、どこもInfo流してないので一応書いておきます（ｗ</font>
+		<span class="stamp">(01/10/27 18:27:40)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>makd</b><!-- xdsl034014.061122.metallic.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">なんかこっそり多方面からツッコミ頂きました。<br>もしかしてその変更って今回のパッチからですか？<br>今日のTormaxはDNPのVanikiさんよろしくとてもPullが楽でしたが<br>いつもあの動きしてくれると楽ですがｗ<br>（bind pointでstackされてえらい目にあったのは内緒でｗ）<br>EciはDtVが2匹に増えてたりしませんか？＾＾；</font>
+		<span class="stamp">(01/10/28 03:14:08)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#666699"><b>feenal</b><!-- PPP384.tokyo-ip.dti.ne.jp --> &gt;</font></td>
+		<td><font color="#666699">trakanon以外増産されてません。suck差別!</font>
+		<span class="stamp">(01/10/28 05:32:49)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>kaccou</b><!-- N02cc-03p10.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#0000ff">やや、先生が･･･（ｗ<br><br>変更は火曜日パッチからです。<br>知ってる限りだと、GreeveOfDeepseaの色が緑色になってがっくりとか。某Rng様のコケ色発言で、なぜかいじめTell多数でしたよ？（ｗ<br>MMなんかすごいことなってますね（ｗ<br>Bugなのかなぁ（ｗ</font>
+		<span class="stamp">(01/10/28 13:38:43)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO12');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=12&amp;icon=INHERIT&amp;dhtml" id="NO12" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+<a name=3></a>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<a href="ealis.cgi?dhtml&amp;start=0&amp;show=8">1</a>
+	<a href="ealis.cgi?dhtml&amp;start=8&amp;show=8">2</a>
+	<a href="ealis.cgi?dhtml&amp;start=16&amp;show=8">3</a>
+	<a href="ealis.cgi?dhtml&amp;start=24&amp;show=8">4</a>
+	<a href="ealis.cgi?dhtml&amp;start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?dhtml&amp;start=40&amp;show=8">6</a>
+	<strong>7</strong>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?dhtml&amp;start=48&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+</div><hr>
+
+
+
+<address>- <a href="http://kano.vis.ne.jp/erial/">ealis 2.58f</a> -</address>
+
+</body>
+</html>

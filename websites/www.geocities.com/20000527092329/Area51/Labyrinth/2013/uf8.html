@@ -1,0 +1,323 @@
+<HTML>
+<HEAD>
+<TITLE>
+TZ Vancouver Player's Guild Main Page
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR = "#000000" TEXT = "#C08B6B" LINK = "#C08B6B"  VLink = "#C08B6B" ALINK = "#000094">
+<div id="dot0" style="position: absolute; visibility: hidden; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot1" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot2" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot3" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot4" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot5" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot6" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+
+<script LANGUAGE="JavaScript">
+<!-- hide code
+
+/*
+Elastic Trail script (By Philip Winston @ pwinston@yahoo.com, URL:http://members.xoom.com/ebullets)
+Script featured on Dynamicdrive.com
+For this and 100's more DHTML scripts, visit http://dynamicdrive.com
+*/
+
+
+// Thanks to Troels Jakobsen <tjak@get2net.dk>
+// for fix which makes it work when the page is scrolled
+
+var nDots = 7;
+if (document.all&&window.print)
+document.body.style.cssText="overflow-x:hidden;overflow-y:scroll"
+var Xpos = 0;
+var Ypos = 0;
+
+  // fixed time step, no relation to real time
+var DELTAT = .01;
+  // size of one spring in pixels
+var SEGLEN = 10;
+  // spring constant, stiffness of springs
+var SPRINGK = 10;
+  // all the physics is bogus, just picked stuff to
+  // make it look okay
+var MASS = 1;
+var GRAVITY = 50;
+var RESISTANCE = 10;
+  // stopping criterea to prevent endless jittering
+  // doesn't work when sitting on bottom since floor
+  // doesn't push back so acceleration always as big
+  // as gravity
+var STOPVEL = 0.1;
+var STOPACC = 0.1;
+var DOTSIZE = 11;
+  // BOUNCE is percent of velocity retained when 
+  // bouncing off a wall
+var BOUNCE = 0.75;
+
+var isNetscape = navigator.appName=="Netscape";
+
+  // always on for now, could be played with to
+  // let dots fall to botton, get thrown, etc.
+var followmouse = true;
+
+var dots = new Array();
+init();
+
+function init()
+{
+    var i = 0;
+    for (i = 0; i < nDots; i++) {
+        dots[i] = new dot(i);
+    }
+    
+    if (!isNetscape) {
+        // I only know how to read the locations of the 
+        // <LI> items in IE
+        //skip this for now
+        // setInitPositions(dots)
+    }
+    
+    // set their positions
+    for (i = 0; i < nDots; i++) {
+        dots[i].obj.left = dots[i].X;
+        dots[i].obj.top = dots[i].Y;
+    }
+    
+    
+    if (isNetscape) {
+        // start right away since they are positioned
+        // at 0, 0
+        startanimate();
+    } else {
+        // let dots sit there for a few seconds
+        // since they're hiding on the real bullets
+        setTimeout("startanimate()", 2000);
+    }
+}
+
+
+
+function dot(i) 
+{
+    this.X = Xpos;
+    this.Y = Ypos;
+    this.dx = 0;
+    this.dy = 0;
+    if (isNetscape) {	
+        this.obj = eval("document.dot" + i);
+    } else {
+        this.obj = eval("dot" + i + ".style");
+    }
+}
+
+
+function startanimate() {	
+    setInterval("animate()", 20);
+}
+
+
+// This is to line up the bullets with actual LI tags on the page
+// Had to add -DOTSIZE to X and 2*DOTSIZE to Y for IE 5, not sure why
+// Still doesn't work great
+function setInitPositions(dots)
+{
+    // initialize dot positions to be on top 
+    // of the bullets in the <ul>
+    var startloc = document.all.tags("LI");
+    var i = 0;
+    for (i = 0; i < startloc.length && i < (nDots - 1); i++) {
+        dots[i+1].X = startloc[i].offsetLeft
+            startloc[i].offsetParent.offsetLeft - DOTSIZE;
+        dots[i+1].Y = startloc[i].offsetTop +
+            startloc[i].offsetParent.offsetTop + 2*DOTSIZE;
+    }
+    // put 0th dot above 1st (it is hidden)
+    dots[0].X = dots[1].X;
+    dots[0].Y = dots[1].Y - SEGLEN;
+}
+
+// just save mouse position for animate() to use
+function MoveHandler(e)
+{
+    Xpos = e.pageX;
+    Ypos = e.pageY;	  
+    return true;
+}
+
+// just save mouse position for animate() to use
+function MoveHandlerIE() {
+    Xpos = window.event.x + document.body.scrollLeft;
+    Ypos = window.event.y + document.body.scrollTop;	  
+}
+
+if (isNetscape) {
+    document.captureEvents(Event.MOUSEMOVE);
+    document.onMouseMove = MoveHandler;
+} else {
+    document.onmousemove = MoveHandlerIE;
+}
+
+
+function vec(X, Y)
+{
+    this.X = X;
+    this.Y = Y;
+}
+
+// adds force in X and Y to spring for dot[i] on dot[j]
+function springForce(i, j, spring)
+{
+    var dx = (dots[i].X - dots[j].X);
+    var dy = (dots[i].Y - dots[j].Y);
+    var len = Math.sqrt(dx*dx + dy*dy);
+    if (len > SEGLEN) {
+        var springF = SPRINGK * (len - SEGLEN);
+        spring.X += (dx / len) * springF;
+        spring.Y += (dy / len) * springF;
+    }
+}
+
+
+function animate() {	
+    // dots[0] follows the mouse,
+    // though no dot is drawn there
+    var start = 0;
+    if (followmouse) {
+        dots[0].X = Xpos;
+        dots[0].Y = Ypos;	
+        start = 1;
+    }
+    
+    for (i = start ; i < nDots; i++ ) {
+        
+        var spring = new vec(0, 0);
+        if (i > 0) {
+            springForce(i-1, i, spring);
+        }
+        if (i < (nDots - 1)) {
+            springForce(i+1, i, spring);
+        }
+        
+        // air resisitance/friction
+        var resist = new vec(-dots[i].dx * RESISTANCE,
+            -dots[i].dy * RESISTANCE);
+        
+        // compute new accel, including gravity
+        var accel = new vec((spring.X + resist.X)/ MASS,
+            (spring.Y + resist.Y)/ MASS + GRAVITY);
+        
+        // compute new velocity
+        dots[i].dx += (DELTAT * accel.X);
+        dots[i].dy += (DELTAT * accel.Y);
+        
+        // stop dead so it doesn't jitter when nearly still
+        if (Math.abs(dots[i].dx) < STOPVEL &&
+            Math.abs(dots[i].dy) < STOPVEL &&
+            Math.abs(accel.X) < STOPACC &&
+            Math.abs(accel.Y) < STOPACC) {
+            dots[i].dx = 0;
+            dots[i].dy = 0;
+        }
+        
+        // move to new position
+        dots[i].X += dots[i].dx;
+        dots[i].Y += dots[i].dy;
+        
+        // get size of window
+        var height, width;
+        if (isNetscape) {
+            height = window.innerHeight + document.scrollTop;
+            width = window.innerWidth + document.scrollLeft;
+        } else {	
+            height = document.body.clientHeight + document.body.scrollTop;
+            width = document.body.clientWidth + document.body.scrollLeft;
+        }
+        
+        // bounce of 3 walls (leave ceiling open)
+        if (dots[i].Y >=  height - DOTSIZE - 1) {
+            if (dots[i].dy > 0) {
+                dots[i].dy = BOUNCE * -dots[i].dy;
+            }
+            dots[i].Y = height - DOTSIZE - 1;
+        }
+        if (dots[i].X >= width - DOTSIZE) {
+            if (dots[i].dx > 0) {
+                dots[i].dx = BOUNCE * -dots[i].dx;
+            }
+            dots[i].X = width - DOTSIZE - 1;
+        }
+        if (dots[i].X < 0) {
+            if (dots[i].dx < 0) {
+                dots[i].dx = BOUNCE * -dots[i].dx;
+            }
+            dots[i].X = 0;
+        }
+        
+        // move img to new position
+        dots[i].obj.left = dots[i].X;			
+        dots[i].obj.top =  dots[i].Y;		
+    }
+}
+
+// end code hiding -->
+</script>
+
+<p align="center"><b>
+<font size="3" color="#FDA135">
+<marquee>... Due to the LACK of Activity and Interest, TZ Vancouver will be Closing Down ...</marquee>
+
+
+</font>
+</b></p>
+
+
+<CENTER> <H4></H4> <IMG SRC = "line.gif" ALIGN = "MIDDLE" BORDER = "0" WIDTH = "602" HEIGHT = "55" VSPACE = "0" HSPACE = "0">
+<BR>
+
+
+<BR><BR>
+<TABLE WIDTH=50% BORDER=0 COL=2 ROW=1><TR><TD>
+<IMG SRC ="femelf.gif" ALIGN = "MIDDLE" BORDER = "0" WIDTH = "124" HEIGHT = "187" VSPACE = "0" HSPACE = "0"></TD><TD>Our Feature Animation is from WebX.<BR>The X-rated version of this animation has been removed.</TD></TR></TABLE>
+
+<BR><BR> 
+<center><IMG SRC = "line.gif" ALIGN = "MIDDLE" BORDER = "0" WIDTH = "602" HEIGHT = "55" VSPACE = "0" HSPACE = "0">
+<BR><BR> 
+
+<CENTER> <font size="2">
+Throughout Time the Light and Dark forces have been oppossing each other in their eternal struggle for dominance and the battle continues today with EverQuest. Members of the TZ Vancouver Player's Guild join this struggle and do so in the spirit of Role Playing.  If you are offended by Evil or Goodness and can not conduct yourself or express your opinions in a mature manner in the spirit of RPG'ing then please do not go any further.
+<BR><BR>
+<img src=/cgi-bin/geoplus_apps/clock>
+<BR><BR>
+This web site designed and maintained by Snotgobber<BR><BR>
+<CENTER>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+<TD ALIGN=RIGHT WIDTH=150><STRONG>Solar X-rays: <BR><BR>Geomagnetic Field:</STRONG>
+<TD><TABLE BORDER=3 CELLSPACING=0 CELLPADDING=0>
+<TD ALIGN=CENTER>  <CENTER><A HREF="http://www.maj.com/sun/noaa.html"><IMG WIDTH=121 
+HEIGHT=21 BORDER=0 ALT="Status" SRC="http://www.maj.com/sun/images/status.gif"></A></CENTER>
+<TR><TD ALIGN=CENTER>  <CENTER><A HREF="http://www.maj.com/sun/noaa.html"><IMG WIDTH=121 
+HEIGHT=21 BORDER=0 ALT="Status" SRC="http://www.maj.com/sun/images/kpstatus.gif"></A></CENTER>
+</TABLE><TD WIDTH=150> </TABLE><BR>
+From <A HREF="http://www.maj.com/sun/noaa.html">maj.com</A></CENTER>
+</CENTER>
+<BR><BR>
+
+
+
+      <center>
+      <b>
+     <font size="-1"> This page hosted by 
+      <a href="/"><img src="/pictures/gc_icon.gif" border=0
+      align=middle></a> 
+      Get your own <a href="/">Free Home Page</a></font></b></center>
+</CENTER>
+
+
+</BODY>
+
+</HTML>
+
+<IMG SRC="http://geo.yahoo.com/serv?s=76000009&t=959419412" ALT=1 WIDTH=1 HEIGHT=1>
+<script language="JavaScript" src="http://a372.g.a.yimg.com/f/372/27/1d/www.geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.com/visit.gif" border=0 width=1 height=1></noscript>

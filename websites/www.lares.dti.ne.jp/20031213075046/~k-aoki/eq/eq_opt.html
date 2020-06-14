@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>Dummy</TITLE>
+</HEAD>
+<BODY BGCOLOR="#DEC9A3" TEXT="#603A02" LINK="#900000" VLINK="#900000" ALINK="#900000">
+<BASEFONT SIZE = "4" COLOR="black">
+<PRE>
+フレッツでＥＱ
+
+--
+Proxy/Firewall Information　投稿者：B 　投稿日： 5月21日(月)17時10分08秒 
+
+パッチサーバが7000、ログインサーバが5999、チャットサーバが5998です。
+さらにゲームサーバでは1024-65535のポートを使用するため、具体的には
+以下のようになります。(すべてUDP datagram connection)
+
+#!/bin/sh
+# eqfw - Accept UDP packets being sent to/from EverQuest Servers
+# Patch/Login/Chat Servers
+ipfwadm -I -a accept -P udp -S patch.everquest.com 7000
+ipfwadm -I -a accept -P udp -S eqlogin1.989studios.com 5999
+ipfwadm -I -a accept -P udp -S eqchat1.989studios.com 5998
+ipfwadm -I -a accept -P udp -S eqchat1.989studios.com 5999
+# Game Servers
+ipfwadm -I -a accept -P udp -S 63.241.40.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 63.241.41.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 63.241.42.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 63.241.43.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 64.37.148.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 64.37.149.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 64.37.150.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 64.37.151.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 192.215.33.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 192.215.37.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 192.215.54.0/24 1024:65535
+ipfwadm -I -a accept -P udp -S 192.215.55.0/24 1024:65535
+
+とりあえずLinuxのipfwadm風味に書きましたが、大体どういったルールなのかは
+わかると思います。なお、以前はチャットサーバで5999を使用していたため、
+上記の例ではいちおう許可してあります。
+
+ついでにYamaha系のルータ(RTA52iとか)で基本的に全ポートrejectにしているなら
+ip filter 101 pass 63.241.40.0/24 X.X.X.X(自分側IP address) udp * *
+などといったルールを定義し、ip pp secure filter inに追加すればよいでしょう。
+
+# 実際には9000および1030-1630までをゲームサーバとの通信で使用しているようです。
+
+## サーバのIP address/hostnameは頻繁に変更されるので、Veeshanがどのサブネットに
+## あるのかはわかりません。(以前はeqworld-17.989studios.comでした - 現在は不使用)
+
+### Patchサーバは現在3台あります。Login/Chatサーバは以前は同じマシンでしたが
+### 現在は分離され、それぞれ1台ずつあります。
+
+#### 各ゲームサーバは、さらに24のゾーンサーバを持ちます。
+#### 例：eqworld-80.989studios.com
+#### 　　eqzone-80-01.989studios.com から eqzone-80-24.989studios.com まで使用
+
+Re: !?(フレッツでEQ)　投稿者：B 　投稿日： 5月22日(火)12時46分40秒 
+
+パッチサーバとの通信に使用しているプロトコルはTCPでした。
+ファイル転送などがありますから、UDPだと実用的ではありませんね。
+
+http://everquest.station.sony.com/support/connection/firewall_proxy_information.jsp
+
+ゲームサーバとの通信はここに書いてある通り、UDPだけで
+やっていそうな気がします。
+(おそらくUDPでも問題がない＆ゲームの性格上UDPのほうが
+効率がよいと思われるため)
+
+なお実際にはFiltering Ruleの異なる環境(もっと緩やかです)で
+EQをプレイしているため、設定サンプルでの動作確認はしていません。
+サンプルはドキュメントにある条件を満たすための最低限の設定
+なので、うまくいかない場合TCPも許可したほうがいいかもしれないです。
+
+--
+
+Baldioさんありがとー
+</PRE>
+</BODY>
+</HTML>

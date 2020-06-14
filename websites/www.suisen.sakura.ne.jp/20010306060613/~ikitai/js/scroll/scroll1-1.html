@@ -1,0 +1,202 @@
+<HTML>
+<HEAD>
+<TITLE>部分スクロール1-1</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+var step = 1;		// スクロールの動く間隔。１なら１ドットずつ動く
+var timer = 10;		// スクロールのスピード。1/1000秒。
+var stopSpeed  = 2000;	// スクロールが止まってる時間
+var blinkSpeed = 500;	// 点滅の間隔
+var blinkCount = 3;		// 点滅の回数(１以上)
+
+
+var ie = document.all ? 1 : 0;
+var nn = document.layers ? 1 : 0;
+var scrolled = 0, maxHeight, blink = 0;
+
+function startScroll() {
+    if (scrolled < maxHeight) {
+		scrolled += step;
+		if (ie) frames["scrollFrame"].scrollTo(0,scrolled);
+		if (nn) document.layers['parentLay'].layers['scrollLay'].top = -scrolled;
+		setTimeout("startScroll()",timer);
+	} else {
+		scrolled = 0;
+		setTimeout("blinkScroll()",stopSpeed);
+	}
+}
+
+function blinkScroll() {
+	blink ++;
+	if (blink <= (blinkCount*2)) {
+		if (blink%2 == 0) var visible = "inherit";
+		else  var visible = "hidden";
+		if (ie) document.all.scrollFrame.style.visibility = visible;
+		if (nn) document.layers['parentLay'].layers['scrollLay'].visibility = visible;
+		if (blink == (blinkCount*2-1)) {
+			if (ie) frames["scrollFrame"].scrollTo(0,0);
+			if (nn) document.layers['parentLay'].layers['scrollLay'].top = 0;
+		}
+		setTimeout("blinkScroll()",blinkSpeed);
+	} else {
+		blink = 0;
+		setTimeout("startScroll()",stopSpeed);
+	}
+}
+
+function getScrollHight() {
+	if (nn) {
+		var h = document.layers['parentLay'].layers['scrollLay'].document.height;
+		var wh = document.layers['parentLay'].clip.height;
+	}
+	if (ie) {
+		var h = frames["scrollFrame"].document.body.scrollHeight;
+		var wh = document.all.scrollFrame.offsetHeight;
+		frames["scrollFrame"].scrollTo(0,0)
+	}
+	if (ie || nn) maxHeight = h - wh;
+	scrollTim=setTimeout("startScroll()",stopSpeed);
+}
+
+window.onload = getScrollHight;
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P><B><FONT size="6">部分スクロール1-1</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4.x/5.x　NN4.x</FONT></B></P>
+<HR>
+
+
+<!--
+600が表示幅、200が表示高、#000000が枠の色。
+child.htmlがスクロールしたいHTML
+-->
+<!-- ↓ここから　表示したいところに入れる -->
+<DIV style="border:thin solid #000000; width:600px; height:200px;">
+<ILAYER name="parentLay" width="600" height="200" clip="0,0,600,200"><LAYER name="scrollLay" src="child.html">
+<IFRAME src="child.html" name="scrollFrame" scrolling="no" width="600" height="200" frameborder="0">
+</IFRAME></LAYER></ILAYER></DIV>
+<!-- ↑ここまで　表示したいところに入れる -->
+
+<HR>
+
+<TT>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>部分スクロール&lt;/TITLE><BR>
+<BR>
+&lt;SCRIPT LANGUAGE="JavaScript"><BR>
+&lt;!--<BR>
+<BR>
+var step = 1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// スクロールの動く間隔。１なら１ドットずつ動く<BR>
+var timer = 10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// スクロールのスピード。1/1000秒。<BR>
+var stopSpeed&nbsp;&nbsp;= 2000;&nbsp;&nbsp;&nbsp;&nbsp;// スクロールが止まってる時間<BR>
+var blinkSpeed = 500;&nbsp;&nbsp;&nbsp;&nbsp;// 点滅の間隔<BR>
+var blinkCount = 3;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 点滅の回数(１以上)<BR>
+<BR>
+<BR>
+var ie = document.all ? 1 : 0;<BR>
+var nn = document.layers ? 1 : 0;<BR>
+var scrolled = 0, maxHeight, blink = 0;<BR>
+<BR>
+function startScroll() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (scrolled &lt; maxHeight) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrolled += step;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ie) frames["scrollFrame"].scrollTo(0,scrolled);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nn) document.layers['parentLay'].layers['scrollLay'].top = -scrolled;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("startScroll()",timer);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrolled = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("blinkScroll()",stopSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function blinkScroll() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;blink ++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (blink &lt;= (blinkCount*2)) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (blink%2 == 0) var visible = "inherit";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;&nbsp;var visible = "hidden";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ie) document.all.scrollFrame.style.visibility = visible;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nn) document.layers['parentLay'].layers['scrollLay'].visibility = visible;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (blink == (blinkCount*2-1)) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ie) frames["scrollFrame"].scrollTo(0,0);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nn) document.layers['parentLay'].layers['scrollLay'].top = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("blinkScroll()",blinkSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blink = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("startScroll()",stopSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function getScrollHight() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (nn) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var h = document.layers['parentLay'].layers['scrollLay'].document.height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var wh = document.layers['parentLay'].clip.height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ie) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var h = frames["scrollFrame"].document.body.scrollHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var wh = document.all.scrollFrame.offsetHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frames["scrollFrame"].scrollTo(0,0)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ie || nn) maxHeight = h - wh;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;scrollTim=setTimeout("startScroll()",stopSpeed);<BR>
+}<BR>
+<BR>
+window.onload = getScrollHight;<BR>
+<BR>
+//--><BR>
+&lt;/SCRIPT><BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY><BR>
+<BR>
+<BR>
+<FONT color="#009900">&lt;!--<BR>
+</FONT><FONT color="#ff0000"><B>600</B></FONT><FONT color="#009900">が表示幅、</FONT><FONT color="#0000ff"><B>200</B></FONT><FONT color="#009900">が表示高、</FONT><FONT color="#ff00ff"><B>#000000</B></FONT><FONT color="#009900">が枠の色。<BR>
+</FONT><FONT color="#660000"><B>child.html</B></FONT><FONT color="#009900">がスクロールしたいHTML<BR></FONT><FONT color="#009900">
+--></FONT><BR>
+<FONT color="#009999"><B>
+&lt;!-- ↓ここから　表示したいところに入れる
+--></B></FONT><BR>
+&lt;DIV style=&quot;border:thin solid <B><FONT color="#ff00ff">#000000</FONT></B>; float:left; width:<B><FONT color="#ff0000">600</FONT></B>px; height:<B><FONT color="#0000ff">200</FONT></B>px;&quot;&gt;<BR>
+&lt;ILAYER name=&quot;parentLay&quot; width=&quot;<B><FONT color="#ff0000">600</FONT></B>&quot; height=&quot;<B><FONT color="#0000ff">200</FONT></B>&quot; clip=&quot;0,0,<B><FONT color="#ff0000">600</FONT></B>,<B><FONT color="#0000ff">200</FONT></B>&quot;&gt;&lt;LAYER name=&quot;scrollLay&quot;
+src=&quot;<B><FONT color="#660000">child.html</FONT></B>&quot;&gt;<BR>
+&lt;IFRAME src=&quot;<B><FONT color="#660000">child.html</FONT></B>&quot; name=&quot;scrollFrame&quot; scrolling=&quot;no&quot;
+width=&quot;<B><FONT color="#ff0000">600</FONT></B>&quot; height=&quot;<B><FONT color="#0000ff">200</FONT></B>&quot; frameborder=&quot;0&quot;&gt;<BR>
+&lt;/IFRAME>&lt;/LAYER>&lt;/ILAYER>&lt;/DIV><BR>
+<B><FONT color="#009999">
+&lt;!-- ↑ここまで　表示したいところに入れる
+--></FONT></B><BR>
+<BR>
+<BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+<BR><BR>
+<BR>
+</TT>
+<P><B><FONT size="4">child.html</FONT></B><BR>
+普通のHTMLファイルのBODYに以下の２つの属性を設定したもの。</P>
+<TT>
+&lt;HTML><BR>
+&lt;BODY <B>topmargin=&quot;3&quot; leftmargin=&quot;3&quot;</B>&gt;<BR>
+<BR>
+<FONT size="5">スクロールしたい文章</FONT><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</TT>
+<P><BR>
+<BR>
+<BR>
+<BR>
+</P>
+</BODY>
+</HTML>

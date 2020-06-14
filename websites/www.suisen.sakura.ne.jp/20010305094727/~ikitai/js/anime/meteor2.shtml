@@ -1,0 +1,464 @@
+<HTML>
+<HEAD>
+<TITLE>流れ星 + 星降り</TITLE>
+
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+
+var move = true;    	// 星をスクロールに合わせて移動するか？。する：true　しない:false
+var meteorRate = 200;	// 流れ星の出やすさ。小さいほど良く出る。
+var dl = 50;			// 流れ星の動く早さ。
+
+// 流れ星の大きさ数の設定
+var size = 2;			// １番小さい流れ星の大きさ。単位px
+var sizeStep = 2;		// 流れ星の大きくなる幅。単位px
+var meteorNo = 5;		// 流れ星の数。
+// 上から順に 2 2 5 の場合、流れ星の大きさは小さい順に「2 4 6 8 10」になる。
+// 3 3 6 なら「3 6 9 12 15 18」。sizeStepが0なら全て同じ大きさ。
+
+// 流れ星の絵の設定
+var useImg = 0;         // 流れ星の絵は文字or画像。 0:文字　1:画像
+var meteorImg = "images/star.gif";  // 画像のパス　useImg = 1;の場合に設定。
+
+// 星振りの設定
+var no = 15			// 振る星の数
+hosi = new Array();
+hosi[0] = "../yuki/images/star01.gif";	// 降る星の画像。hosi[?]の数字は0から始まる連続した数字。
+hosi[1] = "../yuki/images/star02.gif";
+hosi[2] = "../yuki/images/star03.gif";
+hosi[3] = "../yuki/images/star04.gif";
+hosi[4] = "../yuki/images/star05.gif";
+hosi[5] = "../yuki/images/star06.gif";
+
+
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+function getWindowSize() {
+    if(_dom == 1 || _dom == 2) {
+        win_width = self.innerWidth;
+        win_height = self.innerHeight;
+    }
+    if (_dom == 3) {
+        win_width = document.body.clientWidth;
+        win_height = document.body.clientHeight;
+    }
+}
+
+function getScrollPosX() {
+    if (_dom == 1) return scrollX;
+    if (_dom == 2) return pageXOffset;
+    if (_dom == 3) return document.body.scrollLeft
+}
+
+function getScrollPosY() {
+    if (_dom == 1) return scrollY;
+    if (_dom == 2) return pageYOffset;
+    if (_dom == 3) return document.body.scrollTop;
+}
+
+function showLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";
+    if (_dom == 2) document.layers[layerName].visibility = "show";
+    if (_dom == 3) document.all(layerName).style.visibility = "visible";
+}
+
+function hideLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";
+    if (_dom == 2) document.layers[layerName].visibility = "hide";
+    if (_dom == 3) document.all(layerName).style.visibility = "hidden";
+}
+
+function moveLayerTo(layerName, x, y){
+    if (_dom == 1) {
+        document.getElementById(layerName).style.left = x;
+        document.getElementById(layerName).style.top = y;
+    }
+    if (_dom == 2) {
+        document.layers[layerName].left = x;
+        document.layers[layerName].top = y;
+    }
+    if (_dom == 3) {
+        document.all(layerName).style.pixelLeft = x;
+        document.all(layerName).style.pixelTop = y;
+    }
+}
+
+var sx = new Array(), sy = new Array(), sclW = 0, sclH = 0;
+function initMeteor() {
+	if (_dom && meteorFlag == 0) {
+        var ran = Math.random()*meteorRate;
+        if (ran < 10) {
+			getWindowSize();
+			if (move) sclW = getScrollPosX(), sclH = getScrollPosY();
+		    sX =  Math.floor(Math.random()*(win_width-meteorMaxSize-5)) + sclW;
+		    sY =  Math.floor(Math.random()*(win_height-meteorMaxSize-5)) + sclH;
+		    eX =  Math.floor(Math.random()*(win_width-meteorMaxSize-5)) + sclW;
+		    eY =  Math.floor(Math.random()*(win_height-meteorMaxSize-5)) + sclH;
+			for (m=0; m<5; m++) {
+				moveLayerTo("meteor"+m, sX, sY);
+				sx[m] = sX; sy[m] = sY;
+			}
+			moveMeteor();
+		}
+	}
+	setTimeout("initMeteor()", 100);
+}
+
+var meteorFlag = 0;
+function moveMeteor() {
+	var l, xp, yp, stopflag = false;
+	for (var m=0; m<5; m++) {
+		if (meteorFlag >= m) {
+			l = Math.abs(Math.sqrt(Math.pow((eX - sx[m]),2) + Math.pow((eY - sy[m]),2)));
+			if (l > dl) {
+				xp = dl / l * (eX - sx[m]) + sx[m];
+				if (eX - sx[m] == 0) {
+					if (sy[m] < eY) yp = sy[m] + dl;
+					else yp = sy[m] - dl;
+				} else yp = (sy[m] - eY) / (sx[m] - eX) * xp + sy[m] - (sy[m] - eY) / (sx[m] - eX) * sx[m];
+				sx[m] = xp; sy[m] = yp;
+				showLayer("meteor"+m);
+				moveLayerTo("meteor"+m, sx[m], sy[m]);
+			} else {
+				hideLayer("meteor"+m);
+				if (m == 4) stopflag = true;
+			}
+		}
+	}
+	if (!stopflag) { meteorFlag += 1; tim = setTimeout("moveMeteor()", 10); }
+	else { clearTimeout(tim); meteorFlag = 0; }
+}
+
+var speed = 10, j = 0, i, dx, xp, yp, am, stx, sty, sclX = 0, sclY = 0;
+dx = new Array(); xp = new Array(); yp = new Array();
+am = new Array(); stx = new Array(); sty = new Array();
+
+function hosihuri() {
+	for (i = 0; i < no; ++ i) {
+		yp[i] += sty[i];
+		if (yp[i] > win_height-20) {
+			getWindowSize();
+			xp[i] = Math.random()*(win_width-am[i]-30);
+			yp[i] = 0;
+			stx[i] = 0.02 + Math.random()/10;
+			sty[i] = 0.7 + Math.random();
+		}
+		dx[i] += stx[i];
+		if (move) { sclX = getScrollPosX(); sclY = getScrollPosY(); }
+		moveLayerTo("dot"+i, xp[i]+am[i]*Math.sin(dx[i])+sclX, yp[i]+sclY);
+	}
+	setTimeout("hosihuri()", speed);
+}
+
+//-->
+</SCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="black" TEXT="white">
+
+<P><B><FONT size="6">流れ星 + 星降り</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4以上　NN4以上</FONT></B></P>
+<HR>
+<P>2000/11/13<BR>
+　　・流れ星の絵に画像も指定できるようにした。<BR>
+　　・大きさや数の調整を出来るようにした。<BR>
+<BR>
+水色をHEAD内へ入れる。<BR>
+黄色をBODY内の最後へ入れる。
+<HR>
+
+<SCRIPT type="text/javascript">
+<!--
+function CopyToClipBoard() {
+textRange = document.body.createTextRange();
+textRange.moveToElementText(source);
+textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>流れ星 + 星降り&lt;/TITLE><BR>
+<BR>
+<FONT color="#00ffff">&lt;SCRIPT TYPE=&quot;text/javascript&quot;
+LANGUAGE=&quot;JavaScript&quot;&gt;<BR>
+&lt;!--<BR>
+<BR>
+var move = true;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 星をスクロールに合わせて移動するか？。する：true　しない:false<BR>
+var meteorRate = 200;&nbsp;&nbsp;&nbsp;&nbsp;// 流れ星の出やすさ。小さいほど良く出る。<BR>
+var dl = 50;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 流れ星の動く早さ。<BR>
+<BR>
+// 流れ星の大きさ数の設定<BR>
+var size = 2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// １番小さい流れ星の大きさ。単位px<BR>
+var sizeStep = 2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 流れ星の大きくなる幅。単位px<BR>
+var meteorNo = 5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 流れ星の数。<BR>
+// 上から順に 2 2 5 の場合、流れ星の大きさは小さい順に「2 4 6 8 10」になる。<BR>
+// 3 3 6 なら「3 6 9 12 15 18」。sizeStepが0なら全て同じ大きさ。<BR>
+<BR>
+// 流れ星の絵の設定<BR>
+var useImg = 0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 流れ星の絵は文字or画像。 0:文字　1:画像<BR>
+var meteorImg = "images/star.gif";&nbsp;&nbsp;// 画像のパス　useImg = 1;の場合に設定。<BR>
+<BR>
+// 星振りの設定<BR>
+var no = 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 振る星の数<BR>
+hosi = new Array();<BR>
+hosi[0] = "star01.gif";&nbsp;&nbsp;&nbsp;&nbsp;// 降る星の画像。hosi[?]の数字は0から始まる連続した数字。<BR>
+hosi[1] = "star02.gif";<BR>
+hosi[2] = "star03.gif";<BR>
+hosi[3] = "star04.gif";<BR>
+hosi[4] = "star05.gif";<BR>
+hosi[5] = "star06.gif";<BR>
+<BR>
+<BR>
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+<BR>
+function getWindowSize() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(_dom == 1 || _dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = self.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function getScrollPosX() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return scrollX;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return pageXOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.body.scrollLeft<BR>
+}<BR>
+<BR>
+function getScrollPosY() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return scrollY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return pageYOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.body.scrollTop;<BR>
+}<BR>
+<BR>
+function showLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "show";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "visible";<BR>
+}<BR>
+<BR>
+function hideLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "hide";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "hidden";<BR>
+}<BR>
+<BR>
+function moveLayerTo(layerName, x, y){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelLeft = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelTop = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+var sx = new Array(), sy = new Array(), sclW = 0, sclH = 0;<BR>
+function initMeteor() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom && meteorFlag == 0) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var ran = Math.random()*meteorRate;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ran &lt; 10) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getWindowSize();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (move) sclW = getScrollPosX(), sclH = getScrollPosY();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sX =&nbsp;&nbsp;Math.floor(Math.random()*(win_width-meteorMaxSize-5)) + sclW;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sY =&nbsp;&nbsp;Math.floor(Math.random()*(win_height-meteorMaxSize-5)) + sclH;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eX =&nbsp;&nbsp;Math.floor(Math.random()*(win_width-meteorMaxSize-5)) + sclW;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eY =&nbsp;&nbsp;Math.floor(Math.random()*(win_height-meteorMaxSize-5)) + sclH;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (m=0; m&lt;5; m++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("meteor"+m, sX, sY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sx[m] = sX; sy[m] = sY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveMeteor();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("initMeteor()", 100);<BR>
+}<BR>
+<BR>
+var meteorFlag = 0;<BR>
+function moveMeteor() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;var l, xp, yp, stopflag = false;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (var m=0; m&lt;5; m++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (meteorFlag >= m) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l = Math.abs(Math.sqrt(Math.pow((eX - sx[m]),2) + Math.pow((eY - sy[m]),2)));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (l > dl) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp = dl / l * (eX - sx[m]) + sx[m];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (eX - sx[m] == 0) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sy[m] &lt; eY) yp = sy[m] + dl;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else yp = sy[m] - dl;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else yp = (sy[m] - eY) / (sx[m] - eX) * xp + sy[m] - (sy[m] - eY) / (sx[m] - eX) * sx[m];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sx[m] = xp; sy[m] = yp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showLayer("meteor"+m);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("meteor"+m, sx[m], sy[m]);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hideLayer("meteor"+m);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (m == 4) stopflag = true;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (!stopflag) { meteorFlag += 1; tim = setTimeout("moveMeteor()", 10); }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else { clearTimeout(tim); meteorFlag = 0; }<BR>
+}<BR>
+<BR>
+var speed = 10, j = 0, i, dx, xp, yp, am, stx, sty, sclX = 0, sclY = 0;<BR>
+dx = new Array(); xp = new Array(); yp = new Array();<BR>
+am = new Array(); stx = new Array(); sty = new Array();<BR>
+<BR>
+function hosihuri() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; no; ++ i) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] += sty[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (yp[i] > win_height-20) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getWindowSize();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(win_width-am[i]-30);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += stx[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (move) { sclX = getScrollPosX(); sclY = getScrollPosY(); }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("dot"+i, xp[i]+am[i]*Math.sin(dx[i])+sclX, yp[i]+sclY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("hosihuri()", speed);<BR>
+}<BR>
+<BR>
+//--><BR>
+&lt;/SCRIPT></FONT><BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY BGCOLOR="black" TEXT="white"><BR>
+<BR>
+<BR>
+<B><FONT size="6">
+ここに文章</FONT></B><BR>
+<BR>
+<BR>
+<FONT color="#ffff00">&lt;SCRIPT LANGUAGE="JavaScript1.2"><BR>
+&lt;!--<BR>
+<BR>
+var starLay = '&lt;SPAN id="dmy" style="position:absolute; visibility:hidden;">&lt;/SPAN>';<BR>
+for (i=meteorNo-1; i>=0; i--) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;size += sizeStep; meteorMaxSize = size;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (useImg == 0) starLay += '&lt;SPAN id="meteor' + i +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '" style="position:absolute; width:' + size + 'px; font-size:' + size +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'px; color:#FFFF00; z-index:10; visibility:hidden;">★&lt;/SPAN>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (useImg == 1) starLay += '&lt;SPAN id="meteor' + i +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'" style="position:absolute; width:1px; z-index:10; visibility:hidden;">&lt;IMG src="' +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; meteorImg + '" width="' + size + '" height="' + size + '">&lt;/SPAN>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (size == 1) size = 2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (useImg == 0) starLay += '&lt;LAYER name="meteor'+ i +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'" z-index="10" visibility=\"hide\">&lt;FONT color="#FFFF00" style="font-size:'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + size + 'px;">★&lt;/FONT>&lt;/LAYER>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (useImg == 1) starLay += '&lt;LAYER name="meteor'+ i +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'" z-index="10" visibility=\"hide\">&lt;IMG src="' + meteorImg + '" width="' + size +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '" height="' + size + '">&lt;/LAYER>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+getWindowSize();<BR>
+for (i = 0; i &lt; no; ++ i) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dx[i] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(win_width-20);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = Math.random()*(win_height-20);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;am[i] = Math.random()*20;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starLay += "&lt;layer name=\"dot"+ i +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"\" left=\"15\" top=\"15\" visibility=\"show\" z-index=\"10\">&lt;img src=\"" + hosi[j] + "\" border=\"0\">&lt;/layer>";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (_dom==1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starLay
++= &quot;&lt;div id=\&quot;dot&quot;+ i +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;\&quot;
+style=\&quot;POSITION: absolute; Z-INDEX:10;
+VISIBILITY: visible; TOP: 15px; LEFT: 15px;
+width:1;\&quot;&gt;&lt;img src=\&quot;&quot;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
++ hosi[j] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/div&gt;&quot;;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (j == (hosi.length-1)) { j = 0; } else { j += 1; }<BR>
+}<BR>
+<BR>
+document.writeln(starLay);<BR>
+<BR>
+if (_dom) { hosihuri(); initMeteor(); }<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT></FONT><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+
+var starLay = '<SPAN id="dmy" style="position:absolute; visibility:hidden;"></SPAN>';
+for (i=meteorNo-1; i>=0; i--) {
+	size += sizeStep; meteorMaxSize = size;
+    if (_dom == 1 || _dom == 3) {
+        if (useImg == 0) starLay += '<SPAN id="meteor' + i +
+         '" style="position:absolute; width:' + size + 'px; font-size:' + size +
+         'px; color:#FFFF00; z-index:10; visibility:hidden;">★</SPAN>';
+        if (useImg == 1) starLay += '<SPAN id="meteor' + i +
+        '" style="position:absolute; width:1px; z-index:10; visibility:hidden;"><IMG src="' +
+         meteorImg + '" width="' + size + '" height="' + size + '"></SPAN>';
+    }
+    if (_dom == 2) {
+        if (size == 1) size = 2;
+        if (useImg == 0) starLay += '<LAYER name="meteor'+ i +
+        '" z-index="10" visibility=\"hide\"><FONT color="#FFFF00" style="font-size:'
+         + size + 'px;">★</FONT></LAYER>';
+        if (useImg == 1) starLay += '<LAYER name="meteor'+ i +
+        '" z-index="10" visibility=\"hide\"><IMG src="' + meteorImg + '" width="' + size +
+         '" height="' + size + '"></LAYER>';
+    }
+}
+
+getWindowSize();
+for (i = 0; i < no; ++ i) {
+	dx[i] = 0;
+	xp[i] = Math.random()*(win_width-20);
+	yp[i] = Math.random()*(win_height-20);
+	am[i] = Math.random()*20;
+	stx[i] = 0.02 + Math.random()/10;
+	sty[i] = 0.7 + Math.random();
+	if (_dom == 2) {
+		starLay += "<layer name=\"dot"+ i +
+		"\" left=\"15\" top=\"15\" visibility=\"show\" z-index=\"10\"><img src=\"" + hosi[j] + "\" border=\"0\"></layer>";
+	} else if (_dom==1 || _dom == 3) {
+		starLay += "<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX:10; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + hosi[j] + "\" border=\"0\"></div>";
+	}
+	if (j == (hosi.length-1)) { j = 0; } else { j += 1; }
+}
+
+document.writeln(starLay);
+
+if (_dom) { hosihuri(); initMeteor(); }
+
+// -->
+</SCRIPT>
+
+</BODY>
+</HTML>

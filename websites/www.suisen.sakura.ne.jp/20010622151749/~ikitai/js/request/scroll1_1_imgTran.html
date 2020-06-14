@@ -1,0 +1,469 @@
+<HTML>
+<HEAD>
+<TITLE>部分スクロール1-1 ＋ トランジションで画像</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+var imgnum=0;
+
+var img = new Array();
+img[0] = "../filter/images/scene08.jpg";	// イメージのパス
+img[1] = "../filter/images/scene09.jpg";
+img[2] = "../filter/images/scene13.jpg";
+img[3] = "../filter/images/scene14.jpg";
+img[4] = "../filter/images/scene16.jpg";
+img[5] = "../filter/images/scene17.jpg";
+img[6] = "../filter/images/scene19.jpg";
+
+var imgName = new Array();
+imgName[0] = "画像１";	// 画像の題名
+imgName[1] = "画像２";
+imgName[2] = "画像３";
+imgName[3] = "画像４";
+imgName[4] = "画像５";
+imgName[5] = "画像６";
+imgName[6] = "画像７";
+
+
+var trn = new Array(12,22,10,9,19,2,14);	// トランジション番号
+
+var step = 1;		// スクロールの動く間隔。１なら１ドットずつ動く
+var timer = 10;		// スクロールのスピード。1/1000秒。
+var stopSpeed  = 2000;	// スクロールが止まってる時間
+var blinkSpeed = 500;	// 点滅の間隔
+var blinkCount = 3;		// 点滅の回数(１以上)
+
+function chgimg(num,sel) {
+	document.navi.imgNo.focus();
+	imgnum = imgnum + num;
+	if (sel) imgnum = parseInt(num);
+	if (imgnum >= img.length) imgnum=0;
+	if (imgnum < 0) imgnum = img.length-1;
+	if (!sel) document.navi.selImg.selectedIndex = imgnum;
+	document.navi.imgNo.value = (imgnum+1)+"/"+(img.length);
+	if (document.all) {
+		el=document.all('tranImg');
+		el.filters["revealTrans"].transition = trn[imgnum];
+		el.filters["revealTrans"].Apply();
+		document.tranImg.src = img[imgnum];
+		el.filters["revealTrans"].Play();
+	} else {
+		document.tranImg.src = img[imgnum];
+	}
+}
+
+var cachenum = 0;
+var cacheState = false;
+function imgCache() {
+	var str = "LOADING...　";
+	for (var i=1; i<=img.length; i++) {
+		if (cachenum >= (i-1)) str += "<B>"+ i + "</B> ";
+		else str += i + " ";
+	}
+	document.all("loadImg").innerHTML = str;
+	obj = document.navi.selImg.options;
+	obj[obj.length] = new Option(imgName[cachenum],cachenum);
+	cachenum++;
+	if (cachenum < img.length) {
+		document.all("cache").insertAdjacentHTML('BeforeEnd','<IMG src="'+ img[cachenum] +'" onload="imgCache()">');
+	} else {
+		cacheState = true;
+		setTimeout('document.all("loadImg").style.visibility = "hidden"',2000);
+	}
+}
+
+function checkImg() {
+	if (imgnum == 0 && !cacheState) document.navi.prevImg.disabled = true;
+	else document.navi.prevImg.disabled = false;
+	if (cachenum <= imgnum+1) {
+		document.navi.nextImg.disabled = true;
+		document.navi.nextImg.value = "読 込 中";
+	} else {
+		document.navi.nextImg.disabled = false;
+		document.navi.nextImg.value = "次の画像";
+	}
+	if(!cacheState) setTimeout("checkImg()",100);
+	else {
+		document.navi.nextImg.disabled = false;
+		document.navi.nextImg.value = "次の画像";
+	}
+}
+
+var ie = document.all ? 1 : 0;
+var nn = document.layers ? 1 : 0;
+var scrolled = 0, maxHeight, blink = 0;
+
+function startScroll() {
+    if (scrolled < maxHeight) {
+		scrolled += step;
+		if (ie) frames["scrollFrame"].scrollTo(0,scrolled);
+		if (nn) document.layers['parentLay'].layers['scrollLay'].top = -scrolled;
+		setTimeout("startScroll()",timer);
+	} else {
+		scrolled = 0;
+		setTimeout("blinkScroll()",stopSpeed);
+	}
+}
+
+function blinkScroll() {
+	blink ++;
+	if (blink <= (blinkCount*2)) {
+		if (blink%2 == 0) var visible = "inherit";
+		else  var visible = "hidden";
+		if (ie) document.all.scrollFrame.style.visibility = visible;
+		if (nn) document.layers['parentLay'].layers['scrollLay'].visibility = visible;
+		if (blink == (blinkCount*2-1)) {
+			if (ie) frames["scrollFrame"].scrollTo(0,0);
+			if (nn) document.layers['parentLay'].layers['scrollLay'].top = 0;
+		}
+		setTimeout("blinkScroll()",blinkSpeed);
+	} else {
+		blink = 0;
+		setTimeout("startScroll()",stopSpeed);
+	}
+}
+
+function getScrollHight() {
+	if (nn) {
+		var h = document.layers['parentLay'].layers['scrollLay'].document.height;
+		var wh = document.layers['parentLay'].clip.height;
+	}
+	if (ie) {
+		var h = frames["scrollFrame"].document.body.scrollHeight;
+		var wh = document.all.scrollFrame.offsetHeight;
+		frames["scrollFrame"].scrollTo(0,0)
+	}
+	if (ie || nn) maxHeight = h - wh;
+	scrollTim=setTimeout("startScroll()",stopSpeed);
+}
+
+function init() {
+	getScrollHight();
+	if (document.all) {
+		document.navi.imgNo.style.textAlign = "center";
+		checkImg();
+		imgCache();
+		el=document.all('tranImg');
+		el.filters["revealTrans"].transition=trn[0];
+		el.filters["revealTrans"].Apply();
+		el.style.visibility = "visible";
+		el.filters["revealTrans"].Play();
+	}
+	document.navi.imgNo.value = "1/"+(img.length);
+}
+
+window.onload=init;
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+
+
+<!-- ↓ここから　スクロール -->
+<DIV style="border:thin solid #000000; width:600px; height:200px;">
+<ILAYER name="parentLay" width="600" height="200" clip="0,0,600,200"><LAYER name="scrollLay" src="child.html">
+<IFRAME src="child.html" name="scrollFrame" scrolling="no" width="600" height="200" frameborder="0">
+</IFRAME></LAYER></ILAYER></DIV>
+<!-- ↑ここまで　スクロール -->
+
+
+
+
+
+<HR>
+
+
+
+
+<!-- ↓ここから　画像 -->
+<FORM name="navi">
+<TABLE><TR><TD>
+<INPUT type="button" name="prevImg" onclick="chgimg(-1)" value="前の画像" disabled=true>
+<INPUT type="text" name="imgNo" size="5" onfocus="this.blur()">
+<INPUT type="button" name="nextImg" onclick="chgimg(1)" value="次の画像">
+<SELECT name="selImg" onchange="chgimg(this.options[this.selectedIndex].value,1)">
+<SCRIPT language="JavaScript"><!--
+if (!document.all) {
+	for (i=0; i< imgName.length; i++) {
+		document.write('<OPTION value="'+i+'">'+imgName[i]+'</OPTION>');
+	}
+}
+// --></SCRIPT>
+</SELECT>
+</TD><TD width="20">&nbsp;</TD><TD><DIV id="loadImg">
+<SCRIPT language="JavaScript"><!--
+if (document.all) {
+	document.navi.nextImg.disabled = true;
+	document.navi.nextImg.value = "読 込 中";
+	var str = "LOADING...　";
+	for (var i=1; i<=img.length; i++) str += i+" ";
+	document.write(str);
+}
+// --></SCRIPT>
+</DIV></TD></TR></TABLE>
+</FORM>
+
+<IMG SRC="../filter/images/scene08.jpg" NAME="tranImg" style="filter:revealTrans(Duration=2)">
+<SCRIPT language="JavaScript"><!--
+if (document.all) document.all('tranImg').style.visibility = "hidden";
+// --></SCRIPT>
+
+<DIV ID="cache" style="display:none"></DIV>
+<!-- ↑ここまで　画像 -->
+
+
+<HR>
+
+<SCRIPT type="text/javascript">
+<!--
+function CopyToClipBoard() {
+textRange = document.body.createTextRange();
+textRange.moveToElementText(source);
+textRange.execCommand("Copy");
+}
+if ((navigator.appVersion.indexOf("MSIE") > 0) && (parseInt(navigator.appVersion) >= 4)) {
+document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>部分スクロール1-1 ＋ トランジションで画像&lt;/TITLE><BR>
+<BR>
+&lt;SCRIPT LANGUAGE="JavaScript"><BR>
+&lt;!--<BR>
+<BR>
+var imgnum=0;<BR>
+<BR>
+var img = new Array();<BR>
+img[0] = "../filter/images/scene08.jpg";&nbsp;&nbsp;&nbsp;&nbsp;// イメージのパス<BR>
+img[1] = "../filter/images/scene09.jpg";<BR>
+img[2] = "../filter/images/scene13.jpg";<BR>
+img[3] = "../filter/images/scene14.jpg";<BR>
+img[4] = "../filter/images/scene16.jpg";<BR>
+img[5] = "../filter/images/scene17.jpg";<BR>
+img[6] = "../filter/images/scene19.jpg";<BR>
+<BR>
+var imgName = new Array();<BR>
+imgName[0] = "画像１";&nbsp;&nbsp;// 画像の題名<BR>
+imgName[1] = "画像２";<BR>
+imgName[2] = "画像３";<BR>
+imgName[3] = "画像４";<BR>
+imgName[4] = "画像５";<BR>
+imgName[5] = "画像６";<BR>
+imgName[6] = "画像７";<BR>
+<BR>
+<BR>
+var trn = new Array(12,22,10,9,19,2,14);&nbsp;&nbsp;&nbsp;&nbsp;// トランジション番号<BR>
+<BR>
+var step = 1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // スクロールの動く間隔。１なら１ドットずつ動く<BR>
+var timer = 10;&nbsp;&nbsp;&nbsp;&nbsp; // スクロールのスピード。1/1000秒。<BR>
+var stopSpeed&nbsp;&nbsp;= 2000;&nbsp;&nbsp;// スクロールが止まってる時間<BR>
+var blinkSpeed = 500;&nbsp;&nbsp; // 点滅の間隔<BR>
+var blinkCount = 3;&nbsp;&nbsp;&nbsp;&nbsp; // 点滅の回数(１以上)<BR>
+<BR>
+function chgimg(num,sel) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.navi.imgNo.focus();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;imgnum = imgnum + num;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (sel) imgnum = parseInt(num);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (imgnum >= img.length) imgnum=0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (imgnum &lt; 0) imgnum = img.length-1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (!sel) document.navi.selImg.selectedIndex = imgnum;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.navi.imgNo.value = (imgnum+1)+"/"+(img.length);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (document.all) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el=document.all('tranImg');<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.filters["revealTrans"].transition = trn[imgnum];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.filters["revealTrans"].Apply();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.tranImg.src = img[imgnum];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.filters["revealTrans"].Play();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.tranImg.src = img[imgnum];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+var cachenum = 0;<BR>
+var cacheState = false;<BR>
+function imgCache() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;var str = "LOADING...　";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (var i=1; i&lt;=img.length; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (cachenum >= (i-1)) str += "&lt;B>"+ i + "&lt;/B> ";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else str += i + " ";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.all("loadImg").innerHTML = str;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;obj = document.navi.selImg.options;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;obj[obj.length] = new Option(imgName[cachenum],cachenum);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cachenum++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (cachenum &lt; img.length) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all("cache").insertAdjacentHTML('BeforeEnd','&lt;IMG src="'+ img[cachenum] +'" onload="imgCache()">');<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cacheState = true;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout('document.all("loadImg").style.visibility = "hidden"',2000);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function checkImg() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (imgnum == 0 && !cacheState) document.navi.prevImg.disabled = true;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else document.navi.prevImg.disabled = false;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (cachenum &lt;= imgnum+1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.disabled = true;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.value = "読 込 中";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.disabled = false;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.value = "次の画像";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(!cacheState) setTimeout("checkImg()",100);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.disabled = false;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.value = "次の画像";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+var ie = document.all ? 1 : 0;<BR>
+var nn = document.layers ? 1 : 0;<BR>
+var scrolled = 0, maxHeight, blink = 0;<BR>
+<BR>
+function startScroll() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (scrolled &lt; maxHeight) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrolled += step;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ie) frames["scrollFrame"].scrollTo(0,scrolled);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nn) document.layers['parentLay'].layers['scrollLay'].top = -scrolled;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("startScroll()",timer);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrolled = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("blinkScroll()",stopSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function blinkScroll() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;blink ++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (blink &lt;= (blinkCount*2)) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (blink%2 == 0) var visible = "inherit";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;&nbsp;var visible = "hidden";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ie) document.all.scrollFrame.style.visibility = visible;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nn) document.layers['parentLay'].layers['scrollLay'].visibility = visible;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (blink == (blinkCount*2-1)) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ie) frames["scrollFrame"].scrollTo(0,0);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nn) document.layers['parentLay'].layers['scrollLay'].top = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("blinkScroll()",blinkSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blink = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("startScroll()",stopSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function getScrollHight() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (nn) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var h = document.layers['parentLay'].layers['scrollLay'].document.height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var wh = document.layers['parentLay'].clip.height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ie) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var h = frames["scrollFrame"].document.body.scrollHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var wh = document.all.scrollFrame.offsetHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frames["scrollFrame"].scrollTo(0,0)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ie || nn) maxHeight = h - wh;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;scrollTim=setTimeout("startScroll()",stopSpeed);<BR>
+}<BR>
+<BR>
+function init() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;getScrollHight();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (document.all) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.navi.imgNo.style.textAlign = "center";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checkImg();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imgCache();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el=document.all('tranImg');<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.filters["revealTrans"].transition=trn[0];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.filters["revealTrans"].Apply();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.style.visibility = "visible";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.filters["revealTrans"].Play();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.navi.imgNo.value = "1/"+(img.length);<BR>
+}<BR>
+<BR>
+window.onload=init;<BR>
+<BR>
+//--><BR>
+&lt;/SCRIPT><BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY><BR>
+<BR>
+<BR>
+<BR>
+&lt;!-- ↓ここから　スクロール --><BR>
+&lt;DIV style="border:thin solid #000000; width:600px; height:200px;"><BR>
+&lt;ILAYER name="parentLay" width="600" height="200" clip="0,0,600,200">&lt;LAYER name="scrollLay" src="child.html"><BR>
+&lt;IFRAME src="child.html" name="scrollFrame" scrolling="no" width="600" height="200" frameborder="0"><BR>
+&lt;/IFRAME>&lt;/LAYER>&lt;/ILAYER>&lt;/DIV><BR>
+&lt;!-- ↑ここまで　スクロール --><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;HR><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;!-- ↓ここから　画像 --><BR>
+&lt;FORM name="navi"><BR>
+&lt;TABLE>&lt;TR>&lt;TD><BR>
+&lt;INPUT type="button" name="prevImg" onclick="chgimg(-1)" value="前の画像" disabled=true><BR>
+&lt;INPUT type="text" name="imgNo" size="5" onfocus="this.blur()"><BR>
+&lt;INPUT type="button" name="nextImg" onclick="chgimg(1)" value="次の画像"><BR>
+&lt;SELECT name="selImg" onchange="chgimg(this.options[this.selectedIndex].value,1)"><BR>
+&lt;SCRIPT language="JavaScript">&lt;!--<BR>
+if (!document.all) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt; imgName.length; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;OPTION value="'+i+'">'+imgName[i]+'&lt;/OPTION>');<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+// -->&lt;/SCRIPT><BR>
+&lt;/SELECT><BR>
+&lt;/TD>&lt;TD width="20">&nbsp;&lt;/TD>&lt;TD>&lt;DIV id="loadImg"><BR>
+&lt;SCRIPT language="JavaScript">&lt;!--<BR>
+if (document.all) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.disabled = true;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.navi.nextImg.value = "読 込 中";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;var str = "LOADING...　";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (var i=1; i&lt;=img.length; i++) str += i+" ";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;document.write(str);<BR>
+}<BR>
+// -->&lt;/SCRIPT><BR>
+&lt;/DIV>&lt;/TD>&lt;/TR>&lt;/TABLE><BR>
+&lt;/FORM><BR>
+<BR>
+&lt;IMG SRC="../filter/images/scene08.jpg" NAME="tranImg" style="filter:revealTrans(Duration=2)"><BR>
+&lt;SCRIPT language="JavaScript">&lt;!--<BR>
+if (document.all) document.all('tranImg').style.visibility = "hidden";<BR>
+// -->&lt;/SCRIPT><BR>
+<BR>
+&lt;DIV ID="cache" style="display:none">&lt;/DIV><BR>
+&lt;!-- ↑ここまで　画像 --><BR>
+<BR>
+<BR>
+&lt;HR><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+<BR>
+</NOBR></TT></DIV>
+
+
+
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,234 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>TypeWrite</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!---
+
+var st = new Array();
+
+// メッセージ設定  \nが改行です。
+st[0] =									// st[?]の数字は0から始まる連番。
+"タイプライター風に文字を書き出します。\n"+
+"複数行に対応してます。\n"+
+"文字サイズ行間の調整が出来ます。\n"+
+"タグは使えません。\n"+
+"\n"+									// \nだけだと空行。
+"テステステス\n"+
+"ただいまタイプのテスト中(笑)";			// 最後の行は\nと＋は付けないで；で終わらす。
+
+st[1] =
+"複数メッセージに対応しました。\n"+
+"自由な位置に置けるようにしました。\n"+
+"ループするようになりました。\n"+
+"NN6にも対応しました。\n"+
+"NN6でちらつくのは仕様です";
+
+// タイプのスタイルシート。左から文字サイズ、行間、色、太文字
+var typeStyle = "font-size:15px; line-height:17px; color:#ff0000; font-weight:bold;";
+var typeSpeed = 50;		// 次の文字を表示するまでの待ち時間。1000=１秒
+var tugi = "_";			// 次の文字の所に出力するキャラクター
+var loop = true;		// ループするか？。する：true　しない：false
+var msgWait = 2000;		// 次のメッセージに移るまでの待ち時間。1000=１秒
+
+
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+function writeTypeMsg(mes) {
+	if (_dom == 1) {
+		var div = document.getElementById("type");
+		while(div.hasChildNodes()) div.removeChild(div.lastChild);
+    	var range=document.createRange();
+		range.selectNodeContents(div);
+		range.collapse(true);
+		var cf=range.createContextualFragment(mes);
+		div.appendChild(cf);
+	}
+	if (_dom == 2) {
+		var div = document.layers["typeN4"].layers["type"];
+		div.document.open();
+		div.document.write(mes);
+		div.document.close();
+	}
+	if (_dom == 3) document.all("type").innerHTML = mes;
+}
+
+charsuu=0;
+if (("あ".length) == 1) charsuu = 1;
+else charsuu = 2;
+cct = 0;
+msgNo = 0;
+mct = st[0].length;
+
+function typing(){
+	cct += charsuu;
+	if (cct > mct) cct = mct;
+	Typeout = '<SPAN style="' + typeStyle + '">'
+	       + st[msgNo].substring(0,cct).replace(/\n/g, '<BR>')
+	       + (cct < mct ? tugi : '')
+	       + '</SPAN>';
+	writeTypeMsg(Typeout);
+	if (cct < mct) setTimeout('typing()', typeSpeed);
+	else {
+		msgNo = (msgNo >= st.length-1) ? 0 : msgNo + 1;
+		mct = st[msgNo].length; cct = 0;
+		if (!(!loop && msgNo == 0)) setTimeout('typing()', msgWait);
+	}
+}
+
+window.onload = typing;
+
+// --->
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<P><B><FONT size="6">TypeWrite</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4/5　NN4/6</FONT></B></P>
+<HR>
+
+<!--
+400はメッセージ領域の幅、120は高さ。
+幅は１番文字数の多い行にに合わせて設定してください。
+高さは最低でもメッセージの行数×行間を確保すること。
+-->
+<!-- ↓ここから　表示したいところへ入れる -->
+<TABLE border="0" cellpadding="0" cellspacing="0"><TR>
+<TD width="400" height="120" valign="top"><ILAYER name="typeN4" width="400" height="120">
+<DIV id="type" style="position:absolute; width:400px; height:120px; clip:rect(0px 400px 120px 0px);"></DIV>
+</ILAYER></TD></TR></TABLE>
+<!-- ↑ここまで　表示したいところへ入れる -->
+
+<HR>
+
+<SCRIPT type="text/javascript">
+<!--
+function CopyToClipBoard() {
+textRange = document.body.createTextRange();
+textRange.moveToElementText(source);
+textRange.execCommand("Copy");
+}
+if ((navigator.appVersion.indexOf("MSIE") > 0) && (parseInt(navigator.appVersion) >= 4)) {
+document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>TypeWrite&lt;/TITLE><BR>
+<BR>
+&lt;SCRIPT LANGUAGE="JavaScript"><BR>
+&lt;!---<BR>
+<BR>
+var st = new Array();<BR>
+<BR>
+// メッセージ設定&nbsp;&nbsp;\nが改行です。<BR>
+st[0] =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // st[?]の数字は0から始まる連番。<BR>
+"タイプライター風に文字を書き出します。\n"+<BR>
+"複数行に対応してます。\n"+<BR>
+"文字サイズ行間の調整が出来ます。\n"+<BR>
+"タグは使えません。\n"+<BR>
+"\n"+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // \nだけだと空行。<BR>
+"テステステス\n"+<BR>
+"ただいまタイプのテスト中(笑)";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 最後の行は\nと＋は付けないで；で終わらす。<BR>
+<BR>
+st[1] =<BR>
+"複数メッセージに対応しました。\n"+<BR>
+"自由な位置に置けるようにしました。\n"+<BR>
+"ループするようになりました。\n"+<BR>
+"NN6にも対応しました。\n"+<BR>
+"NN6でちらつくのは仕様です";<BR>
+<BR>
+// タイプのスタイルシート。左から文字サイズ、行間、色、太文字<BR>
+var typeStyle = "font-size:15px; line-height:17px; color:#ff0000; font-weight:bold;";<BR>
+var typeSpeed = 50;&nbsp;&nbsp;&nbsp;&nbsp; // 次の文字を表示するまでの待ち時間。1000=１秒<BR>
+var tugi = "_";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 次の文字の所に出力するキャラクター<BR>
+var loop = true;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ループするか？。する：true　しない：false<BR>
+var msgWait = 2000;&nbsp;&nbsp;&nbsp;&nbsp; // 次のメッセージに移るまでの待ち時間。1000=１秒<BR>
+<BR>
+<BR>
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+<BR>
+function writeTypeMsg(mes) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var div = document.getElementById("type");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(div.hasChildNodes()) div.removeChild(div.lastChild);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var range=document.createRange();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.selectNodeContents(div);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.collapse(true);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var cf=range.createContextualFragment(mes);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.appendChild(cf);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var div = document.layers["typeN4"].layers["type"];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.open();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.write(mes);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.close();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all("type").innerHTML = mes;<BR>
+}<BR>
+<BR>
+charsuu=0;<BR>
+if (("あ".length) == 1) charsuu = 1;<BR>
+else charsuu = 2;<BR>
+cct = 0;<BR>
+msgNo = 0;<BR>
+mct = st[0].length;<BR>
+<BR>
+function typing(){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cct += charsuu;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (cct > mct) cct = mct;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Typeout = '&lt;SPAN style="' + typeStyle + '">'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + st[msgNo].substring(0,cct).replace(/\n/g, '&lt;BR>')<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + (cct &lt; mct ? tugi : '')<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + '&lt;/SPAN>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;writeTypeMsg(Typeout);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (cct &lt; mct) setTimeout('typing()', typeSpeed);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgNo = (msgNo >= st.length-1) ? 0 : msgNo + 1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mct = st[msgNo].length; cct = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!(!loop && msgNo == 0)) setTimeout('typing()', msgWait);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+window.onload = typing;<BR>
+<BR>
+// ---><BR>
+&lt;/SCRIPT><BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY><BR>
+<BR>
+&lt;!--<BR>
+400はメッセージ領域の幅、120は高さ。<BR>
+幅は１番文字数の多い行にに合わせて設定してください。<BR>
+高さは最低でもメッセージの行数×行間を確保すること。<BR>
+--><BR>
+&lt;!-- ↓ここから　表示したいところへ入れる --><BR>
+&lt;TABLE border="0" cellpadding="0" cellspacing="0">&lt;TR><BR>
+&lt;TD width="400" height="120" valign="top">&lt;ILAYER name="typeN4" width="400" height="120"><BR>
+&lt;DIV id="type" style="position:absolute; width:400px; height:120px; clip:rect(0px 400px 120px 0px);">&lt;/DIV><BR>
+&lt;/ILAYER>&lt;/TD>&lt;/TR>&lt;/TABLE><BR>
+&lt;!-- ↑ここまで　表示したいところへ入れる --><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+<BR>
+<BR>
+</NOBR></TT></DIV>
+
+
+</BODY>
+</HTML>
+
+

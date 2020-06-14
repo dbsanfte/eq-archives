@@ -1,0 +1,227 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<TITLE>雪を振らせるの改造 「IE4でスクロールバーを動かなくする」</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+<P><B><FONT size="4">「雪を振らせる」の改造</FONT></B><BR>
+<FONT size="6">「IE4でスクロールバーを動かなくする」</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4以上　NN4以上</FONT></B></P>
+<HR>
+
+<SCRIPT type="text/javascript" language="JavaScript1.2">
+<!--
+	function CopyToClipBoard() {
+	textRange = document.body.createTextRange();
+	textRange.moveToElementText(source);
+	textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+	document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+	document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>雪を振らせるの改造 「IE4でスクロールバーを動かなくする」&lt;/TITLE><BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY bgcolor="#ffffff"><BR>
+<BR>
+&lt;SCRIPT LANGUAGE="JavaScript1.2"><BR>
+&lt;!-- Begin<BR>
+//&lt;!-- Original:&nbsp;&nbsp;Altan (snow@altan.hr) --><BR>
+//&lt;!-- Web Site:&nbsp;&nbsp;http://www.altan.hr/snow --><BR>
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)<BR>
+<BR>
+var no = 15; // １画面に出る画像の枚数<BR>
+var snowflake = "images/snow.gif"; // 画像のパス<BR>
+var imgSize = 40; // １番大きい画像の高さ＋10ぐらいを指定する。<BR>
+<BR>
+// _dom : 0=other, 1=Mozilla, 2=NN4, 3=IE4/5<BR>
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+var dx, xp, yp;<BR>
+var am, stx, sty;<BR>
+var i;<BR>
+<BR>
+<BR>
+function getDocumentSize() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(_dom == 1 || _dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_width = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_height = self.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_width = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc_height = document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+getDocumentSize();<BR>
+<BR>
+dx = new Array();<BR>
+xp = new Array();<BR>
+yp = new Array();<BR>
+am = new Array();<BR>
+stx = new Array();<BR>
+sty = new Array();<BR>
+<BR>
+for (i = 0; i &lt; no; ++ i) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dx[i] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(doc_width-imgSize);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = Math.random()*doc_height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;am[i] = Math.random()*20;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom==2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\">&lt;img src=\"" + snowflake + "\" border=\"0\">&lt;/layer>");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (_dom==1 || _dom==3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\">&lt;img src=\"" + snowflake + "\" border=\"0\">&lt;/div>");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function snowLoop() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; no; ++ i) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] += sty[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (yp[i] > doc_height-imgSize) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getDocumentSize();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(doc_width-am[i]-imgSize);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += stx[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowMove("dot"+i,yp[i],xp[i] + am[i]*Math.sin(dx[i]));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("snowLoop()", 10);<BR>
+}<BR>
+<BR>
+function snowMove(lay,t,l) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(lay).style.top&nbsp;&nbsp;= t;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(lay).style.left = l;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[lay].top = t;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[lay].left = l;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all[lay].style.pixelTop = t;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all[lay].style.pixelLeft = l;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+if (_dom) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;snowLoop();<BR>
+}<BR>
+<BR>
+// End --><BR>
+&lt;/SCRIPT><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+
+
+
+<!--------- ここからJavaScript ------------------->
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Begin
+//<!-- Original:  Altan (snow@altan.hr) -->
+//<!-- Web Site:  http://www.altan.hr/snow -->
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)
+
+var no = 15; // １画面に出る画像の枚数
+var snowflake = "images/snow.gif"; // 画像のパス
+var imgSize = 40; // １番大きい画像の高さ＋10ぐらいを指定する。
+
+// _dom : 0=other, 1=Mozilla, 2=NN4, 3=IE4/5
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var dx, xp, yp;
+var am, stx, sty;
+var i;
+
+
+function getDocumentSize() {
+	if(_dom == 1 || _dom == 2) {
+		doc_width = self.innerWidth;
+		doc_height = self.innerHeight;
+	}
+	if (_dom == 3) {
+		doc_width = document.body.clientWidth;
+		doc_height = document.body.clientHeight;
+	}
+}
+
+getDocumentSize();
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+
+for (i = 0; i < no; ++ i) {
+	dx[i] = 0;
+	xp[i] = Math.random()*(doc_width-imgSize);
+	yp[i] = Math.random()*doc_height;
+	am[i] = Math.random()*20;
+	stx[i] = 0.02 + Math.random()/10;
+	sty[i] = 0.7 + Math.random();
+	if (_dom==2) {
+		document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\"" + snowflake + "\" border=\"0\"></layer>");
+	} else if (_dom==1 || _dom==3) {
+		document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + snowflake + "\" border=\"0\"></div>");
+	}
+}
+
+function snowLoop() {
+	for (i = 0; i < no; ++ i) {
+		yp[i] += sty[i];
+		if (yp[i] > doc_height-imgSize) {
+			getDocumentSize();
+			xp[i] = Math.random()*(doc_width-am[i]-imgSize);
+			yp[i] = 0;
+			stx[i] = 0.02 + Math.random()/10;
+			sty[i] = 0.7 + Math.random();
+		}
+		dx[i] += stx[i];
+		snowMove("dot"+i,yp[i],xp[i] + am[i]*Math.sin(dx[i]));
+	}
+	setTimeout("snowLoop()", 10);
+}
+
+function snowMove(lay,t,l) {
+	if (_dom == 1) {
+		document.getElementById(lay).style.top	= t;
+		document.getElementById(lay).style.left = l;
+	}
+	if (_dom == 2) {
+		document.layers[lay].top = t;
+		document.layers[lay].left = l;
+	}
+	if (_dom == 3) {
+		document.all[lay].style.pixelTop = t;
+		document.all[lay].style.pixelLeft = l;
+	}
+}
+
+if (_dom) {
+	snowLoop();
+}
+
+// End -->
+</SCRIPT>
+
+</BODY>
+</HTML>

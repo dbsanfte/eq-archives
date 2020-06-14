@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=euc-jp">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Pragma" content="no-cache">
+	<style type="text/css"><!--
+	 .min{ font-size: 9pt; }
+	 input , textarea { font-size: 10pt;}
+	 hr.r{ color: "#FFCC00";}
+	 .resform{ padding-right: 5px; padding-left: 5px; font-size: 10pt; border-left: 0.1mm solid #FFCC00; border-right: 0.1mm solid #FFCC00;}
+	 textarea, .fm{ border:1 ; border-color: #2222AA ; border-style: solid ;border-width: 1px; }
+	 .stamp{ font-size:7pt; font-style: italic; color: #2222AA;}
+	 strong.subj { color:#666699; font-weight: bold; }
+	 strong.name { color:green; font-weight: bold; }
+	 address{ text-align:right; font-style:normal; font-size: 9pt; font-family:TicagoFix,Helvetica;}
+	 #pagertabs{ border-bottom: 0.2mm solid #DDDDFF; }
+	 #modesel{ border: 0.2mm solid #DDDDFF; }
+	 #msglist{ font-size:10pt; background: #FAFAFC; width: 100%; border:1px; margin: 5px 25px;}
+	--></style>
+	<title>掲示板</title>
+</head>
+
+<body bgcolor="#fcfcfc" text="#555555" link="#1111bb" vlink="#7777cc">
+<script type="text/javascript" defer><!--
+ function colsel() { window.open('ealis_sub.cgi?pickcolor','colsel','scrollbars=no,status=no,height=160,width=370'); }
+// --></script>
+
+<table border=0 align=right><tr><td align=right valign=top nowrap>
+	<small class="min">lastpost : <font color="#996633">02/09/29 11:05:49 kaccou</font> , [<font color="#996633">209.237.238.164</font>]
+	<br><a href="http://www.bf.wakwak.com/~kaccou/">戻る</a> <a href="ealis_sub.cgi?mode=howto">掲示板の使い方</a> <a href="ealis_sub.cgi?mode=find">全文検索</a> <a href="ealis_sub.cgi?mode=delete">記事削除</a> <a href="ealis_sub.cgi">管理用</a></small></td></tr>
+</table>
+<a name=0></a>
+<p><div align="center"><font color="#BBAEB3" size=5 face="Verdana" style="font-size:18pt;"> - 掲示板 -</font></div></p>
+
+<div align=center>
+
+<form method=POST action="ealis_wri.cgi?50">
+	<table border=0><tr><td colspan=2>
+	<table border=0><tr><th align=right><u>Name</u></th>
+	<td><input type=text name="name" size=20 value="" class="fm"></td>
+	<th align=right>Mail</th><td><input type=text name="email" size=20 value="" class="fm"></td></tr>
+	<tr><th align=right>Subj</th>
+	<td><input type=text name="subj" size=25 class="fm"></td>
+	<th align=right>　Key</th><td><input type=text name="pwd" size=10 maxlength=8 value="" class="fm"><small>(英数字8以内)</small></td></tr>
+	<tr><th align=right>URL</th>
+	<td colspan=3><input type=text size=50 name="url" value="http://" class="fm"></td></tr></table></td></tr>
+	<tr><td colspan=4><textarea cols=56 rows=7 name="comment" wrap="soft"></textarea></td></tr>
+	<tr><td nowrap colspan=2 class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a>
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</tr><tr><td align=left class="min">allow tags / autolink
+	</td><td class="min" align=right><input type=submit value="　　投稿　　"><input type=reset value="消去"></td></tr></table>
+
+<table border=0 align=center cellspacing=0 cellpadding=0 class="min"><tr>
+	<td nowrap bgcolor="#DDDDFF">View Mode : </td>
+	<td nowrap id="modesel">　<a href="ealis.cgi?start=16&amp;show=8">Normal mode</a> / <a href="ealis.cgi?dhtml&amp;start=16&amp;show=8">DynamicHTML mode</a> / <a href="ealis.cgi?thread&amp;start=16&amp;show=8">Thread view</a> / <a href="ealis.cgi?lapse&amp;show=8">Lapse view</a> / <small style="font-size:8pt;">レスの付いた記事は上に移動されます</small></td>
+</tr></table>
+</form>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<a href="ealis.cgi?start=0&amp;show=8">1</a>
+	<a href="ealis.cgi?start=8&amp;show=8">2</a>
+	<strong>3</strong>
+	<a href="ealis.cgi?start=24&amp;show=8">4</a>
+	<a href="ealis.cgi?start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?start=40&amp;show=8">6</a>
+	<a href="ealis.cgi?start=48&amp;show=8">7</a>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?start=16&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+
+
+<hr><a name=1></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">52</font>:　<strong class="subj">Monao江</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/03/22 11:45:49 　 </small></td>
+	<td align=right nowrap><a href="#0">∧</a><a href="#2">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#008040">ひさびさにICQ入れなおしたんでICQ#あとでおせーて！</font><!-- pd3365f.sndiac00.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- pd3365f.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">Carot san ni korosarekakemasita(maru</font>
+		<span class="stamp">(02/03/22 15:45:37)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">なにKattaのFac上げてるの！？<br>わけわかんない！ｗ<br></font>
+		<span class="stamp">(02/03/23 23:06:30)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- pd3365f.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">よし、俺様の遂行なる目的を教えてやろう。<br>KattaでよKattaなんちて。</font>
+		<span class="stamp">(02/03/24 10:56:44)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- pd3365f.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">･･･<br>とりあえず、両方NonKoSにしてから考えたいｗ<br>つーか、あげてもあげてもEyeがKoS解除されなそうなんでKattaに乗換えとも言うｗ</font>
+		<span class="stamp">(02/03/24 10:57:42)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- pd3365f.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">ついでにすまね　＞＿＜<br>RealがちくちくとHellなんで</font>
+		<span class="stamp">(02/03/24 22:54:09)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">まぁ、しゃーないっぺ。<br>今度また機会あったらって事でｗ</font>
+		<span class="stamp">(02/03/25 21:50:36)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=52&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=2></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">53</font>:　<strong class="subj">質問いいですか</strong>
+	<small>　From: </small><strong class="name"><a href="mailto:kannod@jcom.home.ne.jp">かんすけ＠ＭＭ</a></strong>
+	<small>　on 02/03/22 17:32:47 　 </small></td>
+	<td align=right nowrap><a href="#1">∧</a><a href="#3">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#666699">お久しぶりです。<br>で、いきなり質問なんですが、良かったら教えて下さい。<br>MMの某Mさんの仮説によると、AC1500程度越えるとあんまり変わらないからそれくらい<br>になったらHP装備の方がいいよってことらしいんですが、Isyaさんの装備見るとfull <br>buff(tapとかも込み)でAC1700近く行けそうですよね。<br>で、ぶっちゃけて1500と1700で違いありますか？<br></font><!-- z61-115-106-237.dialup.wakwak.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#666699"><b>かんすけ＠ＭＭ</b><!-- z61-115-106-237.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#666699">補足。特にSKにとってってのを知りたかったんでここで質問してます。WARの場合Defとかあるからまた別っぽいし。</font>
+		<span class="stamp">(02/03/22 17:34:34)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- pd3365f.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">Tap Full で入れる状況ないので1700は無理ですわねｗ<br>Fullでいれても1700は行かないかと思われますが。<br>仮に今のAC1621で話をしたとしても、EQのシステム上、実感できる違いはないと思います。<br>あくまで、私はPull装備でACNeedだと考えているので高めているだけです。WarはCCHあるからHPのが重要でしょうが、Pullerの場合はCamp持ってきてHateとってもらうまでが勝負。どれだけDMGを減らせるか、CHじゃなくHateの少ないHealをもらえるかが鍵だと思いますので、平均DMGを減らす意図でACをあげています。</font>
+		<span class="stamp">(02/03/22 19:46:48)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#666699"><b>かんすけ＠ＭＭ</b><!-- z61-115-107-112.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#666699">レス有り難うございます。<br>ん〜、実感できる違いは無しですか。<br>ちなみにTapに関しては本気でAC上げたい時は目玉出して目玉からtapしてます。(D tap入らない相手のATK buffにも)<br>SKの場合HPを増やしてCHの効率を良くするよりもできるだけ食らわず自力で回復できるのが理想かなと思ってるんで、そういう意味でもHPよりもACを重視したいんですよね。<br>まあ意味が無いならHPを増やした方がましっぽいですが。</font>
+		<span class="stamp">(02/03/22 20:22:24)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=53&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=3></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">51</font>:　<strong class="subj">ひいいいい</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/03/12 11:20:25 　 </small></td>
+	<td align=right nowrap><a href="#2">∧</a><a href="#4">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#008040">MonaoさんのBBSが消えてる！</font><!-- p2978a7.sndiac00.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>Sera</b><!-- sv02.shimizu-pharm.co.jp --> &gt;</font></td>
+		<td><font color="#000080">言うなれば自然消滅。</font>
+		<span class="stamp">(02/03/12 16:38:38)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">しょうがないね！</font>
+		<span class="stamp">(02/03/13 04:38:29)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">くそう、きちんと保存活動すればよかった　；；</font>
+		<span class="stamp">(02/03/13 12:49:17)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">言うなれば無問題</font>
+		<span class="stamp">(02/03/14 02:44:09)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">ああ、宇井君からメール来ました。なんか携帯に送ってけられたってすねてましたよ！　Monao伝言Thxｗ</font>
+		<span class="stamp">(02/03/14 19:37:09)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">奴は敵です。<br>言うなれば草です。</font>
+		<span class="stamp">(02/03/14 23:58:34)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">草ってなんだよｗ<br>ところでだれかVane表BBSのアホにレスしないんでしょうかｗ</font>
+		<span class="stamp">(02/03/15 11:29:56)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>Sera</b><!-- p299687.tkyoac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#000080">むしろ手伝ってやれ</font>
+		<span class="stamp">(02/03/15 20:29:39)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">殺生な　；；ｗ</font>
+		<span class="stamp">(02/03/17 11:11:05)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">個人の経緯に興味深々！<br>あんなことやこんなこと…( ﾟДﾟ) </font>
+		<span class="stamp">(02/03/17 13:37:24)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>barao</b><!-- p2144-ipad01kokuryo.gunma.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">2chやっぱりMonarがいかす。三角耳のモナー。</font>
+		<span class="stamp">(02/03/18 10:24:27)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">折を見て、主観抜きで語れたらいいね！ｗ</font>
+		<span class="stamp">(02/03/18 11:07:59)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=51&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=4></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">50</font>:　<strong class="subj">さらば青春の光</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/02/12 14:44:13 　 </small></td>
+	<td align=right nowrap><a href="#3">∧</a><a href="#5">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">Shep様のWatchReportより<br><br>Eye of Zomm Change！！<br><br>どうしよう…ｗ</font><!-- pd336db.sndiac00.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">ｷﾀ━━━━━(ﾟ∀ﾟ)━━━━━ｯ !!</font>
+		<span class="stamp">(02/02/14 01:45:40)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>Mazyi</b><!-- ntchba020144.adsl.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">ZとItVがだるそｗ<br><br>Magelo普段持ち歩いてる物も編集できるからのっけておくといいよｗ</font>
+		<span class="stamp">(02/02/14 07:53:29)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- p29f87c.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">OKOK、編集しとこｗ<br><br>あああItVもか　TT<br>Zだけだと思って鬱なってたらさらに鬱に。<br>しかもいま気づいたがテーブルずれてるしな・・・Monaoしんじゃえ！</font>
+		<span class="stamp">(02/02/14 10:42:41)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- p29f87c.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">ああ、これOperaとネスケだけか…むずい　；；</font>
+		<span class="stamp">(02/02/14 10:56:47)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">石油切れで間接が動きません( ﾟДﾟ) </font>
+		<span class="stamp">(02/02/15 18:27:39)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- p29f8a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">omae nani mon dayo... w</font>
+		<span class="stamp">(02/02/16 16:55:51)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">キッショイ！<br></font>
+		<span class="stamp">(02/02/20 00:12:34)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">|-`)元気？</font>
+		<span class="stamp">(02/03/03 21:31:07)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">|彡サッ</font>
+		<span class="stamp">(02/03/03 21:31:43)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">毎日の仕事と風邪悪化させてもうやばげｗ<br>病院行って点滴打たれてもっと仕事やばげ。<br>あけたばっかりのペットボトルをゴミ箱に捨てようとするほど熱にうなされ。<br>宇井＠きっしょいクンにくだらないメールしたらシカトされてやばげ、きちんと教育しておいてください！<br>EQははやくて来週になるでしょう　；；</font>
+		<span class="stamp">(02/03/04 10:25:15)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">|-`)最近POPしてないや…</font>
+		<span class="stamp">(02/03/05 19:51:39)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>barao</b><!-- p51-dna05kokuryo.gunma.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">子育てだるだる。いま唯一の楽しみは車を注文したので納車くらい<br>かな！いま、実は実家にいるからEQできないってかPCが無い訳で・・</font>
+		<span class="stamp">(02/03/06 17:15:44)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- p2978a7.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">子育てだるくなったら親として終了かと（;´Д｀）<br>しっかりがんばってくださいｗ<br>どうも職場のシフトが朝重視なりそうで不安。EQできなくなったらどうしようかね　；；</font>
+		<span class="stamp">(02/03/06 22:03:09)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=50&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=5></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">49</font>:　<strong class="subj">nto</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/02/09 17:40:38 　 </small></td>
+	<td align=right nowrap><a href="#4">∧</a><a href="#6">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">俺も美味いがMonaoも美味いってことか…</font><!-- pd336db.sndiac00.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">( ﾟДﾟ)ｳﾏｰ</font>
+		<span class="stamp">(02/02/09 20:14:59)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=49&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=6></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">48</font>:　<strong class="subj">例</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/02/06 19:57:17 　 </small></td>
+	<td align=right nowrap><a href="#5">∧</a><a href="#7">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">通販しました。<br>手違いで別なパーツが来ました。交換申請しました。<br>某所だと1日で対応、某某所でも1日で対応。<br>なぜ某某某は1weekかかりますか…<br><br>ともあれ、昨日のIVは完璧でしたね。<br>死人０でパーフェクト。Lootはなにだったけど（ｗ<br>そろそろこういうネタもそろうころだしリニューアルしたい感じです。<br>今のままだと更新めんどい…</font><!-- p29f837.sndiac00.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">わっしょいわっしょい！</font>
+		<span class="stamp">(02/02/07 15:41:48)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>kaenl</b><!-- p2007-ipad01sapodoori.hokkaido.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#000080">ヒキが悪くてすいません...</font>
+		<span class="stamp">(02/02/09 01:58:43)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=48&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=7></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">47</font>:　<strong class="subj">風邪につき</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/01/22 20:34:45 　 </small></td>
+	<td align=right nowrap><a href="#6">∧</a><a href="#8">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">DownDown…</font><!-- p29f83a.sndiac00.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>Azaryun</b><!-- ns.nccnet.co.jp --> &gt;</font></td>
+		<td><font color="#DF0000">昨日はAEFD君にTry…するもabout36pplで35%残しでFail．<br>40pplいればいけそう…かな、かなりの手応え感じただけに残念(ﾈﾁﾈﾁ<br>まあ養生すれ〜</font>
+		<span class="stamp">(02/01/23 10:17:49)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- pd336ef.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">ijime kakowarui >_<<br>あいつ好きなんだよな…、おのれええ<br>関係ありませんが、ADSL入りました。風邪はOKそうだけど、LD多発しそうで心配…</font>
+		<span class="stamp">(02/01/23 11:06:45)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">最近呼び出しでPOPままならず⊂( ⊂(=´ω`)つ</font>
+		<span class="stamp">(02/02/03 14:17:43)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">忙しいなぁ〜<br>⊂"⌒⊃´∀`)⊃ｺﾞﾛｺﾞﾛ~⊂⌒~⊃｡Д｡)⊃ </font>
+		<span class="stamp">(02/02/03 20:41:39)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- p29f851.sndiac00.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">Monarさんがいないとつまらないです、はよPOPしろVoke</font>
+		<span class="stamp">(02/02/04 10:13:10)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x5.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">寝過ごしたぁ〜<br>⊂( ⊂(=´ω`)つ</font>
+		<span class="stamp">(02/02/05 02:19:58)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=47&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+
+
+<hr><a name=8></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">46</font>:　<strong class="subj">Kattaでやってみた</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 02/01/18 11:18:50 　 </small></td>
+	<td align=right nowrap><a href="#7">∧</a><a href="#9">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#008040">KnightWatchで話題だったKattaで少しやってみました。<br>うわさのEXPボーナスあるのか、LightBlueでFungusキノコ１ぐらいGet。BlueだけNonStopでやれればかなりおいしそう。<br>けど、Mobが異常に強いです。<br>Max100ぐらいだけどATKが高い感じで、ばしばしあててきます。<br>で、TryするはDark＞Fearのコンボ。1回目、Bankから延々と走り去るGuardを横目にFD…しまいには階段登って帰ってきませんでした（まる<br>2回目、TSからZone直後のストレートでTry。途中でStackして死にました（まる<br>2accまぜてやれれば異常においしそう。<br>昨日の戦利品はKattaGuard装備のBPです（ｗ　カコイイヨ！<br>つーわけでＫａｔｔａ駄目でした　；；&gt;Criden（見てないねｗ</font><!-- pdf5e31.miygnt01.ap.so-net.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>かんすけ＠ＭＭ</b><!-- z61-115-109-6.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">SoLのDN Fear kiteならいいとこありますよ。<br>あんまり知れ渡ると混んじゃうから今までどこにも書かなかったけど、そろそろ飽きた<br>しサーバも違うからいいかなと(笑)<br>場所はDawnshroud Peaksで、相手はSanctus Seru前に居るguardです。<br>こいつら60からでも青くて、59Hellの時でも1kill毎に1dotずつ動きました。<br>meleeは大して痛くないし、HPもそれほど多い訳ではないし、SVMが低いんでDarknessや<br>fearがさくさく入ります。<br>addするのはムカデ(green)くらいなんでSKなら殴られても全然問題ありません。<br>で、guardのくせに殺してもfac hitしないので仮に今後Seru facを上げたいと思ってい<br>ても全然npです。<br>2popでrepopが5minくらいだと思うんで、SK soloだと殺してちょっと休むと次が出る感<br>じでちょうどいいと思います。<br>ちなみにSeru fac捨ててもいい(まあもともとRtAだけど)ならSanctus Seruの内側も<br>fear kite可能です。(outdoorだしかなり広いので)</font>
+		<span class="stamp">(02/01/18 14:50:23)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>kaccou</b><!-- pdf5e67.miygnt01.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">おーそらいいこと聞いた。<br>さっそくやってみます。<br>MeはFearKite苦手なので殴り合いで！<br>2popだと時間足りなそげなのが問題か…（ｗ</font>
+		<span class="stamp">(02/01/18 20:12:00)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- p291696.miygnt01.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">やってみた、Dark＞Fearなしじゃ効率悪く、Dark＞FearでやっちゃうとRepop待ちがつらかったです　；；<br>2accでKatta行くのが一番Bestだと感じてきた今日この頃。<br>Facがどうなるか不安でたまりません（ｗ</font>
+		<span class="stamp">(02/01/19 10:40:38)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>かんすけ</b><!-- cj3123585-a.kasiw1.kn.home.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">確かにもう1popくらい居れば文句無いんですよね。<br>でもDN fear kiteでつらいほどrepopしないのは僕よりも装備がい<br>いからではないかと(笑)<br>僕の場合はkillしてからちょっとmediしてるとpopしますね。</font>
+		<span class="stamp">(02/01/19 16:04:59)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- pdf5e17.miygnt01.ap.so-net.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">答え：54Magがお供にいたから、らしいですｗ</font>
+		<span class="stamp">(02/01/20 01:21:47)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>かんすけ＠ＭＭ</b><!-- z61-115-106-114.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">実は僕も58MAGと44CLRがお供に居て3accだったりするんで本気でやると2popじゃ足りな<br>いですね。<br>でもSK soloだとあそこってちょうどいいくらいじゃないかなと思うんで書いてみまし<br>た。<br>ちなみに58MAGって言っても使ってるeleは54ele(with Mastery Staff)だし、DD撃つと<br>KSするんでやってることは54MAGと大差無いです(笑)<br>CLRの方も普段は何もしないでmod2で減ったHPを回復するだけだし。<br>あの場所が気に入っている一番のポイントはAFKできるからってのがでかいですね。<br>soloでまったりexp campをしていると息抜きに席を立つことが多いんで、席を立つ度に<br>rebreakが必要だったり危険なNPCがうろついている場所だと面倒なんですよ。</font>
+		<span class="stamp">(02/01/21 11:58:30)</span></td></tr></table>
+	</td></tr>
+</table>
+
+<form method=POST action="ealis_wri.cgi?resno=46&amp;icon=INHERIT">
+	<table border=0 cellspacing=0 cellpadding=0 class="resform" bgcolor="#eeeeee" class="min"><tr>
+	<td nowrap align=right>Name</td>
+	<td nowrap><input type=text name="name" size=8 value="" class="fm"></td>
+	<td rowspan=2 nowrap><textarea cols=50 rows=2 name="comment" wrap="soft" class="fm"></textarea></td>
+				<td nowrap><select name="color2" class="min"><option value="#800000">茶<option value="#DF0000">赤<option value="#008040">緑<option value="#0000ff">青<option value="#C100C1">紫<option value="#FF80C0">桃<option value="#FF8040">橙<option value="#000080">藍<option value="#666699">萄<option value="">＃</option></select></td></tr>
+	<tr><td nowrap align=right>key</td>
+	<td><input type=text name="pwd" size=8 maxlength=8 value="" class="fm"></td>
+	<td align=center><input type=submit value="返信" class="min"></td></tr></table>
+</form>
+<a name=9></a>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<a href="ealis.cgi?start=0&amp;show=8">1</a>
+	<a href="ealis.cgi?start=8&amp;show=8">2</a>
+	<strong>3</strong>
+	<a href="ealis.cgi?start=24&amp;show=8">4</a>
+	<a href="ealis.cgi?start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?start=40&amp;show=8">6</a>
+	<a href="ealis.cgi?start=48&amp;show=8">7</a>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?start=16&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+</div><hr>
+
+
+
+<address>- <a href="http://kano.vis.ne.jp/erial/">ealis 2.58f</a> -</address>
+
+</body>
+</html>

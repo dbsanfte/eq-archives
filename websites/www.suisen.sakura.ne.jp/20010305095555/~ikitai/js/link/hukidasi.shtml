@@ -1,0 +1,255 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>吹き出しでリンク説明</TITLE>
+
+<SCRIPT language="JavaScript">
+<!--
+
+////////////////// 設定 //////////////////
+var LMsg=new Array();
+LMsg[0]='メッセージの長さに合わせて吹き出しの大きさが変わります。<BR><BR>でも多分MacのIE5.0ではBugか仕様かは知らないがエラーが出ると思う。<BR>（&lt;TABLE&gt;を吐き出すとエラーが出るらしい？。Macは持ってないので未確認）';
+LMsg[1]='メニュー２';
+LMsg[2]='メニュー３';
+///////////////// ここまで ///////////////
+
+// _dom : 0=other, 1=Mozilla, 2=NN4, 3=IE4/5
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+function writeDivHTML(div,op,cl){
+	var mes='';
+	for(var i=3; i<arguments.length; i++) mes+=arguments[i];
+
+	var s='<TABLE border="0" cellspacing="0" cellpadding="0"><TR><TD></TD><TD valign="bottom"><IMG src="images/top_left.gif" width="10" height="10"></TD><TD bgcolor="#FFFFFF"><IMG src="images/ffffff.gif" width="1" height="1"></FONT></TD><TD valign="bottom"><IMG src="images/top_right.gif" width="10" height="10" border="0"></TD></TR><TR><TD valign="top"><IMG src="images/triangul_left.gif" width="32" height="16" border="0"></TD><TD bgcolor="#FFFFFF"><IMG src="images/ffffff.gif" width="1" height="1"></TD><TD bgcolor="#FFFFFF">' + mes + '</TD><TD bgcolor="#FFFFFF"><IMG src="images/ffffff.gif" width="1" height="1"></TD></TR><TR><TD></TD><TD valign="top"><IMG src="images/bottom_left.gif" width="10" height="10" border="0"></TD><TD bgcolor="#FFFFFF"><IMG src="images/ffffff.gif" width="1" height="1"></FONT></TD><TD valign="top"><IMG src="images/bottom_right.gif" width="10" height="10" border="0"></TD></TR></TABLE>';
+
+	if(_dom==1){
+		if(op){
+			while(div.hasChildNodes()) div.removeChild(div.lastChild);
+		}
+		var range=document.createRange();
+		range.selectNodeContents(div);
+		range.collapse(true);
+		var cf = range.createContextualFragment(s);
+		div.appendChild(cf);
+	}
+	if(_dom==2){
+		if(op) div.document.open('text/html','replace');
+		div.document.write(s);
+		if(cl) div.document.close();
+	}
+	if(_dom==3){
+		if(op) div.innerHTML='';
+		div.insertAdjacentHTML('BeforeEnd',s);
+	}
+}
+
+function setDivVisibility(div,visible){
+  if(_dom==2){ div.visibility=(visible)?'inherit':'hide'; return; }
+  if(_dom==1 || _dom==3){
+    div.style.visibility=(visible)?'inherit':'hidden';
+    return;
+  }
+}
+
+function getDivFromName(nm){
+  if(_dom==1) return document.getElementById(nm);
+  if(_dom==2){
+    var s='';
+    for(var i=1; i<arguments.length; i++)
+      s+='document.layers.'+arguments[i]+'.';
+    return eval(s+'document.layers.'+nm);
+  }
+  if(_dom==3) return document.all(nm);
+  return null;
+}
+
+
+function showMsg(num){
+	if (_dom) {
+		LayN=getDivFromName("LMsg2","LMsg1")
+		writeDivHTML(LayN,true,true,LMsg[num]);
+		setDivVisibility(LayN,true);
+	}
+}
+
+function hideMsg(){
+	if (_dom) {
+		setDivVisibility(getDivFromName("LMsg2","LMsg1"),false);
+	}
+}
+
+
+// -->
+</SCRIPT>
+
+<STYLE type="text/css">
+<!--
+.cLMsg {width:250px; height:200px;clip:rect(0px 250px 200px 0px);}
+#LMsg1 {position:relative}
+#LMsg2 {position:absolute;}
+-->
+</STYLE>
+</HEAD>
+
+<BODY bgcolor="#99ff99">
+<H1>リンクにマウスが乗ると吹き出しで説明表示</H1>
+<P>MAC IE5ではエラーが出るかも？</P>
+<HR>
+<A HREF="page1.html" onMouseOver="showMsg(0)" onMouseOut="hideMsg()">メニュー１</A><BR>
+<A HREF="page1.html" onMouseOver="showMsg(1)" onMouseOut="hideMsg()">メニュー２</A><BR>
+<A HREF="page1.html" onMouseOver="showMsg(2)" onMouseOut="hideMsg()">メニュー３</A><BR>
+<BR>
+<BR>
+
+<TABLE border =0  CELLSPACING="0" CELLPADDING="0"><TR>
+<TD><IMG src="images/lady.gif" width=124 height=290></TD>
+<TD width=250 valign=top><TABLE BORDER="0" height="20"><TR><TD></TD></TR></TABLE>
+
+<!-- メッセージの表示される場所 -->
+<DIV id="LMsg1" class="cLMsg"><SPAN id="LMsg2" class="cLMsg"></SPAN></DIV>
+
+</TD>
+      <TD valign="top" align="center">　　　吹き出しに使ってる画像<BR>
+      <BR>
+<IMG src="images/ffffff.gif" width="10" height="10" border="0"><BR>
+      <BR>
+      <IMG src="images/triangul_left.gif" width="32" height="16" border="0"><BR>
+      <BR>
+      <IMG src="images/top_left.gif" width="15" height="15" border="0"><BR>
+      <BR>
+      <IMG src="images/top_right.gif" width="15" height="15" border="0"><BR>
+      <BR>
+      <IMG src="images/bottom_left.gif" width="15" height="15" border="0"><BR><BR>
+      <IMG src="images/bottom_right.gif" width="15" height="15" border="0">
+      <BR>
+      </TD>
+    </TR></TABLE>
+<HR>
+<P><B>このScriptは<A href="http://www.din.or.jp/~hagi3/JavaScript/JSTips/Default.htm">Java Script(TM) Tips collection</A>のライブラリーを使用して作成しました。</B></P>
+<PRE>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;吹き出し&lt;/TITLE&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;
+&lt;!--
+
+////////////////// 設定 //////////////////
+var LMsg=new Array();  <B>// ↓ 横に長くなるので改行してますが実際に設置するときは改行しないで１行で書いてください。</B>
+LMsg[0]='メッセージの長さに合わせて吹き出しの大きさが変わります。
+         &lt;BR&gt;&lt;BR&gt;でも多分MacのIE5.0ではBugか仕様かは知らないがエラーが出ると思う。&lt;BR&gt;
+        （&amp;lt;TABLE&amp;gt;を吐き出すとエラーが出るらしい？。Macは持ってないので未確認）';
+         <B>// ↑ここまで１行にする</B>
+LMsg[1]='メニュー２';
+LMsg[2]='メニュー３';
+///////////////// ここまで ///////////////
+
+// _dom : 0=other, 1=Mozilla, 2=NN4, 3=IE4/5
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+function writeDivHTML(div,op,cl){
+        var mes='';
+        for(var i=3; i&lt;arguments.length; i++) mes+=arguments[i];
+
+        <B>// ↓ 横に長くなるので改行してますが実際に設置するときは改行しないで１行で書いてください。</B>
+        var s='&lt;TABLE border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;&lt;TR&gt;&lt;TD&gt;&lt;/TD&gt;
+               &lt;TD valign=&quot;bottom&quot;&gt;&lt;IMG src=&quot;top_left.gif&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;&lt;/TD&gt;
+               &lt;TD bgcolor=&quot;#FFFFFF&quot;&gt;&lt;IMG src=&quot;ffffff.gif&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/FONT&gt;&lt;/TD&gt;
+               &lt;TD valign=&quot;bottom&quot;&gt;&lt;IMG src=&quot;top_right.gif&quot; width=&quot;10&quot; height=&quot;10&quot; border=&quot;0&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;
+               &lt;TR&gt;&lt;TD valign=&quot;top&quot;&gt;&lt;IMG src=&quot;triangul_left.gif&quot; width=&quot;32&quot; height=&quot;16&quot; border=&quot;0&quot;&gt;&lt;/TD&gt;
+               &lt;TD bgcolor=&quot;#FFFFFF&quot;&gt;&lt;IMG src=&quot;ffffff.gif&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/TD&gt;&lt;TD bgcolor=&quot;#FFFFFF&quot;&gt;'
+                + mes + '&lt;/TD&gt;&lt;TD bgcolor=&quot;#FFFFFF&quot;&gt;&lt;IMG src=&quot;ffffff.gif&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;
+               &lt;TR&gt;&lt;TD&gt;&lt;/TD&gt;&lt;TD valign=&quot;top&quot;&gt;&lt;IMG src=&quot;bottom_left.gif&quot; width=&quot;10&quot; height=&quot;10&quot; border=&quot;0&quot;&gt;&lt;/TD&gt;
+               &lt;TD bgcolor=&quot;#FFFFFF&quot;&gt;&lt;IMG src=&quot;ffffff.gif&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/FONT&gt;&lt;/TD&gt;&lt;TD valign=&quot;top&quot;&gt;
+               &lt;IMG src=&quot;bottom_right.gif&quot; width=&quot;10&quot; height=&quot;10&quot; border=&quot;0&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;';
+               <B>// ↑ここまで１行にする</B>
+
+        if(_dom==1){
+                if(op){
+                        while(div.hasChildNodes()) div.removeChild(div.lastChild);
+                }
+                var range=document.createRange();
+                range.selectNodeContents(div);
+                range.collapse(true);
+                var cf = range.createContextualFragment(s);
+                div.appendChild(cf);
+        }
+        if(_dom==2){
+                if(op) div.document.open('text/html','replace');
+                div.document.write(s);
+                if(cl) div.document.close();
+        }
+        if(_dom==3){
+                if(op) div.innerHTML='';
+                div.insertAdjacentHTML('BeforeEnd',s);
+        }
+}
+
+function setDivVisibility(div,visible){
+  if(_dom==2){ div.visibility=(visible)?'inherit':'hide'; return; }
+  if(_dom==1 || _dom==3){
+    div.style.visibility=(visible)?'inherit':'hidden';
+    return;
+  }
+}
+
+function getDivFromName(nm){
+  if(_dom==1) return document.getElementById(nm);
+  if(_dom==2){
+    var s='';
+    for(var i=1; i&lt;arguments.length; i++)
+      s+='document.layers.'+arguments[i]+'.';
+    return eval(s+'document.layers.'+nm);
+  }
+  if(_dom==3) return document.all(nm);
+  return null;
+}
+
+
+function showMsg(num){
+        if (_dom) {
+                LayN=getDivFromName(&quot;LMsg2&quot;,&quot;LMsg1&quot;)
+                writeDivHTML(LayN,true,true,LMsg[num]);
+                setDivVisibility(LayN,true);
+        }
+}
+
+function hideMsg(){
+        if (_dom) {
+                setDivVisibility(getDivFromName(&quot;LMsg2&quot;,&quot;LMsg1&quot;),false);
+        }
+}
+
+
+// --&gt;
+&lt;/SCRIPT&gt;
+
+&lt;STYLE type=&quot;text/css&quot;&gt;
+&lt;!--
+.cLMsg {width:250px; height:200px;clip:rect(0px 250px 200px 0px);}
+#LMsg1 {position:relative}
+#LMsg2 {position:absolute;}
+--&gt;
+&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+
+&lt;BODY bgcolor=&quot;#99ff99&quot;&gt;
+
+&lt;A HREF=&quot;page1.html&quot; onMouseOver=&quot;showMsg(0)&quot; onMouseOut=&quot;hideMsg()&quot;&gt;メニュー１&lt;/A&gt;&lt;BR&gt;
+&lt;A HREF=&quot;page1.html&quot; onMouseOver=&quot;showMsg(1)&quot; onMouseOut=&quot;hideMsg()&quot;&gt;メニュー２&lt;/A&gt;&lt;BR&gt;
+&lt;A HREF=&quot;page1.html&quot; onMouseOver=&quot;showMsg(2)&quot; onMouseOut=&quot;hideMsg()&quot;&gt;メニュー３&lt;/A&gt;&lt;BR&gt;
+&lt;BR&gt;
+&lt;BR&gt;
+
+&lt;TABLE border =0  CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;&gt;&lt;TR&gt;
+&lt;TD&gt;&lt;IMG src=&quot;lady.gif&quot; width=124 height=290&gt;&lt;/TD&gt;
+&lt;TD width=250 valign=top&gt;&lt;TABLE BORDER=&quot;0&quot; height=&quot;20&quot;&gt;&lt;TR&gt;&lt;TD&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;
+
+&lt;!-- メッセージの表示される場所 --&gt;
+&lt;DIV id=&quot;LMsg1&quot; class=&quot;cLMsg&quot;&gt;&lt;SPAN id=&quot;LMsg2&quot; class=&quot;cLMsg&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+
+&lt;/TD&gt;
+&lt;/TR&gt;&lt;/TABLE&gt;
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;</PRE>
+</BODY>
+</HTML>

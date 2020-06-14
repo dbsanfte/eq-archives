@@ -1,0 +1,186 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>EverQuest Headings</title>
+</head>
+
+<body background="images/frack.gif">
+
+<h1 align="center">EverQuest Headings</h1>
+
+<p>As a Wood Elf Ranger (<i>Legadwen</i> on Tarew Marr) in <a
+href="http://www.station.sony.com/everquest/">EverQuest</a>, a
+sense of direction is very important to my trade and survival.
+Contained herein are some observations I've made that may be of
+help to you also, and a <a href="#headingApplet">heading
+calculator</a>. Fare thee well, and maybe we'll meet online. Note
+that this information is not a substitute for constant use of
+your <em>Sense Heading</em> skill; a good ranger should always
+keep sense heading at maximum.</p>
+
+<p>Using the <b>/loc</b> command gives you 4 numbers: the <b>X</b>,
+<b>Y</b>, <b>Z</b> coordinates of your current location, and your
+<i>heading</i> (the direction you're facing). Empirical evidence
+suggests that headings are in the range [0..512), where 0 is
+North, West is 128, South 256, East 384. This is captured in the
+following table: </p>
+<div align="center"><center>
+
+<table border="1" width="300">
+    <caption align="top"><strong>EverQuest Headings</strong></caption>
+    <tr>
+        <th>Direction</th>
+        <th>Center</th>
+        <th>Range</th>
+    </tr>
+    <tr>
+        <td>North</td>
+        <td align="center">0 (512)</td>
+        <td align="center">480 to 32</td>
+    </tr>
+    <tr>
+        <td>Northwest</td>
+        <td align="center">64</td>
+        <td align="center">32 to 96</td>
+    </tr>
+    <tr>
+        <td>West</td>
+        <td align="center">128</td>
+        <td align="center">96 to 160</td>
+    </tr>
+    <tr>
+        <td>Southwest</td>
+        <td align="center">192</td>
+        <td align="center">160 to 224</td>
+    </tr>
+    <tr>
+        <td>South</td>
+        <td align="center">256</td>
+        <td align="center">224 to 288</td>
+    </tr>
+    <tr>
+        <td>Southeast</td>
+        <td align="center">320</td>
+        <td align="center">288 to 352</td>
+    </tr>
+    <tr>
+        <td>East</td>
+        <td align="center">384</td>
+        <td align="center">352 to 416</td>
+    </tr>
+    <tr>
+        <td>Northeast</td>
+        <td align="center">448</td>
+        <td align="center">416 to 480</td>
+    </tr>
+</table>
+</center></div>
+
+<p><strong>Note:</strong> a recent patch changed the <strong>/loc</strong>
+command to only give the <strong>X</strong> and <strong>Y</strong>
+values; this is sufficient to compute headings, but removes the
+fine grain heading information.</p>
+
+<p>Additional evidence suggests that travelling in a straight
+line due south decreases the X coordinate, and travelling a
+straight line due west increases the Y coordinate. Thus, the
+coordinate system is &quot;rotated&quot; 90 degrees from how I'd
+normally think about it (but makes sense if you think about it
+some more). Thus the following, where heading values are in []'s:</p>
+
+<pre>
+                  [0]            
+        [64]       <b>N</b> (+x)  [448]
+            <b>NW</b>     ^     <b>NE</b>
+                   |
+                   |
+ [128] (+y) <b>W</b> <----+----> <b>E</b> (-y) [384]
+                   |
+                   |
+            <b>SW</b>     V     <b>SE</b> 
+       [192]       <b>S</b> (-x)  [320]
+                 [256]
+</pre>
+
+<p>A simple java-based console program to compute a heading from
+a given (current) location (<b>/loc</b> (x,y)) to a destination
+location (<b>/loc</b> (x,y)) is <a href="software/EQHeading.exe">here</a>
+(there has been enough interest in the source code, so <a
+href="software/EQHeading.java">here it is</a>, and a <a
+href="software/EQHeading.zip">zip file</a> with the source, .exe,
+.class, and this HTML file)). To clear up some confusion about
+the program: it is a Win32 executable console application that
+should run on any system (Win95, Win98, WinNT) that has just
+about any form of Microsoft Java VM installed (i.e., if you have
+java-enabled Internet Explorer installed, this should run). It
+also should run on any version of SUN JDK 1.1 and later. To run
+the Win32 version, from the command line, type:</p>
+
+<blockquote>
+    <p><strong>EQHeading currentX currentY destinationX
+    destinationY</strong></p>
+</blockquote>
+
+<p>Where <em>currentX</em>, <em>currentY</em>, <em>destinationX</em>,
+<em>destinationY</em> are <strong>/loc</strong> (x,y) coordinates
+of your current location and destination location, respectively.
+If I have time, I'll turn it into a java applet, probably hanging
+off this page (or, if anyone else does this, or makes a nicer
+form with a GUI, please <a href="mailto:rbkweb@home.com">let me
+know</a>, so I can link to it from here).</p>
+
+<hr>
+
+<h1 align="center"><a name="headingApplet"></a>Heading Calculator</h1>
+
+<p><applet code="EQHeading.class" codebase="EQHeading" archive="eqheading.zip"
+align="left" hspace="2" width="170" height="106">
+</applet>
+I tried
+my hand at turning the above Java program into an applet. Usage
+should be intuitive: enter the numbers, tab between the fields;
+when you tab out of the destination Y field, it computes the
+heading (or, hit the Heading button). It's simple, but it gets
+you there. Since a recent patch removed the fine grain heading
+value from the <strong>/loc</strong> command, the detailed
+heading values are not as useful; however, if you have a really
+good idea which direction you're facing, they give a much better
+idea of direction (e.g., <strong>north</strong> is any one of 64
+different actual heading values, so the heading value tells you
+just <em>how</em> north to go). Comments &amp; suggestions to <a
+href="mailto:rbkweb@home.com">rbkweb@home.com</a>.<br clear="all">
+</p>
+
+<hr>
+
+<h1 align="center">Other Implementations</h1>
+
+<p>A web-page (javascript) implementation of this is available
+from <a
+href="http://www.research.umbc.edu/~haddaway/EQ/FindLocation.html">Todd
+Haddaway</a> (<a href="mailto:haddaway@umbc.edu">haddaway@umbc.edu</a>)
+(thanks, Todd!).</p>
+
+<p>Maas the Bard provides an <a
+href="http://www.eqvault.com/guidebook/editorials/eqhead.xls">Excel
+Spreadsheet implementation</a> (from EQVault, 4/3/1999).</p>
+
+<p>There's a nice <a
+href="http://www.eqvault.com/guidebook/editorials/compass.shtml">compass
+picture</a> on EQVault.</p>
+
+<hr>
+
+<p>Feedback, questions, praise, complaints, corrections, etc, to:
+<a href="mailto:rbkweb@home.com">rbkweb@home.com</a>. </p>
+
+<p><a href="index.html">Back to Home Page</a> </p>
+
+<p><font size="2"><em>Last Updated: <!--webbot bot="Timestamp"
+startspan s-type="EDITED" s-format="%B %d, %Y" -->April 08, 1999<!--webbot
+bot="Timestamp" i-checksum="18073" endspan --></em></font></p>
+</body>
+</html>

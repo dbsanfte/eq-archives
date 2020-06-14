@@ -1,0 +1,527 @@
+<html>
+<head>
+<title>EverQuest Mana Calculaor</title>
+
+<STYLE Type="text/css">
+<!--
+.posabs  { position:absolute }
+
+#msg0    { left:70px; top:300px; visibility:hidden }
+#msg1    { left:70px; top:300px; visibility:hidden }
+#msg2    { left:70px; top:300px; visibility:hidden }
+#msg3    { left:70px; top:300px; visibility:hidden }
+
+#option0 { left:50px; top:80px }
+
+//-->
+</STYLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function showLAYER(layName){
+	if(document.getElementById)
+			document.getElementById(layName).style.visibility 	= 'visible' //NN6,Mozilla,IE5用
+	else if(document.all)document.all(layName).style.visibility = 'visible'	//IE4用
+	else if(document.layers)document.layers[layName].visibility = 'show'	//NN4用
+}
+
+function hideLAYER(layName){ 
+	if(document.getElementById)
+			document.getElementById(layName).style.visibility    = 'hidden'	//NN6,Mozilla,IE5用
+	else if(document.all)document.all(layName).style.visibility = 'hidden'	//IE4用
+	else if(document.layers)document.layers[layName].visibility = 'hide' 	//NN4用
+}
+
+function hideALL(){
+    hideLAYER('msg0')
+    hideLAYER('msg1')
+    hideLAYER('msg2')
+    hideLAYER('msg3')
+}
+
+// -->
+</SCRIPT>
+
+
+<SCRIPT language="JavaScript">
+<!--
+function mes1(){
+    var form = document.manacheck;
+
+	if (form.select1.selectedIndex == 0){			//クラス選んで無い場合
+		document.write('XXX');
+	} else if (form.select1.selectedIndex == 1){	//INT Caster
+		document.write('INT');
+	} else if (form.select1.selectedIndex == 2){	//WIS Caster
+		document.write('WIS');
+	} else if (form.select1.selectedIndex == 3){	//INT Hybrid
+		document.write('INT');
+	} else if (form.select1.selectedIndex == 4){	//WIS Hybrid
+		document.write('WIS');
+	} else if (form.select1.selectedIndex == 5){	//Melee
+		document.write('XXX');
+	}
+}
+
+// ---------------------------------------------------- //
+// Spell Resistance Calculator, Created  1999/6/20      //
+// 								Modifyed 2001/12/18     //
+// ---------------------------------------------------- //
+
+/* 計算ルーチン */
+function calc(form)
+{
+    var form = document.manacheck;
+    var sel  = form.select1.selectedIndex;
+
+	if (sel == 0){			// クラス選んで無い場合
+		//cls();
+    	alert('クラス選べって');
+    } else if (sel == 5){	// Melee
+		cls();
+    	alert('だから、君はMana無いんだって');
+    	return;
+    } else {
+
+        /* -----------------  */
+	    /*     Level処理      */
+        /* -----------------  */
+
+	    var l_lng = form.lvl.value.length;	// 入力値の長さ
+	    var lvl = parseFloat(form.lvl.value);
+
+		// 値が入力されたかどうかの判定
+		if (l_lng == 0){	// 値が入力されていない場合
+			alert('Level入力してよ～');
+			return;
+		} else {			// 値が入力されている場合
+		    if (isNaN(lvl)){		// 数字が入力されてるかどうかの判定
+		    	alert('ちゃんとLevelの数字を入れようよ');
+		    	lvl = 1;
+			} else if (Math.floor(lvl) < lvl){ // 整数かどうかの判定
+			    alert('Levelはキリの良いとこでタノム');
+		    	lvl = Math.floor(lvl);
+		    } else if (lvl > 60){	// Levelが61以上になってないかの判定
+		    	alert('Lv61以上はありえねぇ');
+				lvl = 60;
+			} else if ((lvl < 9) && ((sel == 3) || (sel == 4))){
+			    alert('Lv9未満はMana無いよ～ん');
+				//cls();
+			    return;
+			} else if (lvl < 1){	// INTが  1未満になってないかの判定
+		    	alert('Lv1未満はありえねぇ');
+				lvl = 1;
+			}
+		}
+	    form.lvl.value = lvl;
+
+
+        /* -----------------  */
+	    /*    Intの値は？     */
+        /* -----------------  */
+
+	    var i_lng = form.int.value.length;	// 入力値の長さ
+	    var int   = parseFloat(form.int.value);
+
+		// 値が入力されたかどうかの判定
+		if (i_lng == 0){	// 値が入力されていない場合
+			alert('INT/WIS入力してよ～');
+			return;
+		} else {			// 値が入力されている場合
+		    if (isNaN(int)){		// 数字が入力されてるかどうかの判定
+		    	alert('ちゃんとINT/WISの値に数字を入れようよ');
+		    	int = 1;
+		    } else if (int > 255){	// INTが256以上になってないかの判定
+		    	alert('正直、INT/WIS Capは今いくつだろ？');
+				int = 255;
+			} else if (int < 1){	// INTが  1未満になってないかの判定
+		    	alert('馬鹿に用は無い');
+				int = 1;
+			} else if (Math.floor(int) < int){	// 整数かどうかの判定
+			    alert('INT/WIS値は、キリの良いとこでタノム');
+		    	int = Math.floor(int);
+			}
+		}
+	    form.int.value = int;
+
+
+        /* -----------------  */
+	    /* Mana Boostの値は？ */
+        /* -----------------  */
+
+	    var b_lng = form.boost.value.length;	// 入力値の長さ
+	    var boost = parseFloat(form.boost.value);
+
+		// 値が入力されたかどうかの判定
+		if (b_lng == 0){	// 値が入力されていない場合
+			//alert('MANA Boost 0 かよ');
+	    	boost = 0;
+		} else {			// 値が入力されている場合
+		   	if (isNaN(boost)){						// 数字が入力されてるかどうかの判定
+		    	alert('ちゃんとMANA Boost値は数字で入れようよ');
+		    	boost = 0;
+			} else if (Math.floor(boost) < boost){	// 整数かどうかの判定
+			    alert('MANA Boost値は、キリの良いとこでタノム');
+		    	boost = Math.floor(boost);
+			}
+		}
+	    form.boost.value = boost;
+
+	    /* Manaの計算式～ */
+	    
+       	if ((sel == 1) || (sel == 2)){	// Pure Caster & Healer
+       		if (int > 200){	// INTが201以上の場合
+       			var mana1 = ( (200/5) + 5) * lvl;	// INT200までのMANA量
+				var mana2 = (int-200) * (lvl/10);	// INT200以上の増加分
+       			var mana = mana1 + mana2; 			// 合計
+				//alert(mana1);
+				//alert(mana2);
+       		} else  {		// INTが200以下の場合
+       		    var mana = ( (int/5) + 5) * lvl;
+       		}
+       	} else {						// Hybrid
+       		if (int > 200){ // INTが201以上の場合
+       			var mana1 = ( (200/5) + 5) * (lvl-8);	// INT200までのMANA量
+				var mana2 = (int-200) * ( (lvl-8)/10 );	// INT200以上の増加分
+      			var mana = mana1 + mana2; 			// 合計
+				//alert(mana1);
+				//alert(mana2);
+			} else { 		// INTが200以下の場合
+			    var mana = ( (int/5) + 5) * (lvl - 8);
+			}
+		}
+	    var mana = mana + boost;
+	    form.mana.value = Math.round(mana);
+    }
+
+
+}
+
+/* 値のリセット */
+function cls(form){
+    var form = document.manacheck;
+    form.lvl.value = 0;
+    form.int.value = 0;
+    form.boost.value = 0;
+    form.mana.value = 0;
+}
+
+// ---------------------------------------------------- //
+// クッキー関連                 Created  2001/12/19     //
+// 								Modifyed -              //
+// ---------------------------------------------------- //
+
+//引数nameで指定した文字の値を返す関数
+function getCookie(name) {
+var cookieStr = document.cookie
+var existNum  = cookieStr.indexOf(name)
+	if(existNum != -1) {
+		start = existNum + name.length + 1;
+		end = cookieStr.indexOf(";" , start);
+		if(end == -1) {
+			end = cookieStr.length;
+		}
+		var cookieValue = cookieStr.substring(start,end);
+		return cookieValue;
+	} else {
+		return "";
+	}
+}
+
+//フォームに入力された情報をクッキーに記憶する。
+//フォームの寿命は入力されたときから1年
+function memoryCookie()	{
+    var form = document.manacheck;
+	expires = new Date();
+	expires.setTime(expires.getTime() + 24*60*60*1000*365);
+	var exp =' ; expires=' + expires.toGMTString();
+	document.cookie = "lvl=" + form.lvl.value + exp;
+	document.cookie = "int=" + form.int.value + exp;
+	document.cookie = "boost=" + form.boost.value + exp;
+	instruct();
+}
+
+function instruct()	{
+    var form = document.manacheck;
+	var str = "次の情報が記憶されました。\n\n";
+	str += "レベル： " + form.lvl.value + "\n";
+	str += "INT(WIS)： " + form.int.value + "\n";
+	str += "MANA Boost量： " + form.boost.value + "\n\n";
+	str += "次回、このページにアクセスされたときは、\n";
+	str += "以上の情報を使わせていただきます。";
+	alert(str);
+}
+
+//クッキーに"lvl"、"int"、"boost"という文字列が含まれているかチェック
+//あれば、フォームにその値を表示
+//getCookie("xxx")の返り値が""なら何もしない
+function custmizePage()	{
+    var form  = document.manacheck;
+	var check = getCookie("lvl");
+	if(check != "")	{
+		form.lvl.value = getCookie("lvl");
+	}
+
+	var check2 = getCookie("int");
+	if(check2 != "") {
+		form.int.value = getCookie("int");
+	}
+
+	var check3 = getCookie("boost");
+	if(check3 != "") {
+		form.boost.value = getCookie("boost");
+	}
+}
+// おまけ１ - cookieの内容を見る
+function viewCookie(){
+	alert(document.cookie);
+}
+
+// おまけ２ - cookieの内容を消す
+function clearCookie() {
+    var form = document.manacheck;
+	expires = new Date();
+	expires.setTime(expires.getTime() + 24*60*60*1000*-1);
+	var exp =' ; expires=' + expires.toGMTString();
+	document.cookie = "lvl=" + 0 + exp;
+	document.cookie = "int=" + 0 + exp;
+	document.cookie = "boost=" + 0 + exp;
+}
+
+function showStat() {
+	var form  = document.manacheck;
+	//var str = form.select1.value + "\n";
+	//str += form.select1.selectedIndex + "\n";
+	var str = mana1 + "\n";
+	str += mana2 + "\n";
+	alert(str);
+}
+
+
+//	var selNameList = new Array("あなたのクラスを選んでね",
+//								"INT Caster : WIZ / MAG / ENC / NEC",
+//								"WIS Caster : CLR / SHM / DRU",
+//								"INT Hybrid : SHD / BRD",
+//								"WIS Hybrid : PAL / RNG / BST",
+//								"Melee Only : WAR / ROG / MNK");
+//	var selValueList = new Array("hideALL();alert('選ばんかい！ゴルァ！');",
+//								 "hideALL();showLAYER('msg0');",
+//								 "2", "3", "4", "5");
+//	var defaultSelName = selValueList[0];
+//
+//	if  (( selName = getCookie("selName")) == "") {
+//		selName = defaultSelName;
+//	}
+
+// -->
+</SCRIPT>
+
+</head>
+<body background="./paper3.jpg" bgcolor="#ede2cd" text="#000000" link="#800000" alink="#dddddd" vlink="#993300" topmargin="0" onLoad="custmizePage()">
+<base font="3">
+<br>
+<center><h3>あなたのManaの量は？</h3></center>
+	
+<FORM NAME="manacheck">
+<table align="center" border="1">
+<tr>
+  <td bgcolor="#800000" align="center">
+  <img src="whitedot.gif" height="2" width="30">
+  <font color="#ffffcc">EverQuest Mana Check! </font>
+  <img src="whitedot.gif" height="2" width="30">
+  </td>
+</tr>
+<tr>
+  <td align="center" bgcolor="#dddddd">該当欄に適切な値を入力</td>
+</tr>
+<tr>
+  <td>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td><img src="whitedot.gif" height="2" width="10"><b>1.</b></font></td>
+      <td align="right" nowrap>　あなたの<b>Class</b>はなんですか？:&nbsp;&nbsp;</td>
+      <td>
+        <select name="select1" onChange="eval(this.options[this.selectedIndex].value)">
+        <option value="hideALL();alert('選ばんかい！ゴルァ！')">あなたのクラスを選んでね
+        <option value="hideALL();showLAYER('msg0');">INT Caster : WIZ / MAG / ENC / NEC
+        <option value="hideALL();showLAYER('msg1');">WIS Caster : CLR / SHM / DRU
+        <option value="hideALL();showLAYER('msg2');">INT Hybrid : SHD / BRD
+        <option value="hideALL();showLAYER('msg3');">WIS Hybrid : PAL / RNG / BST
+        <option value="hideALL();alert('魔法つかえないってば')" >Melee Only : WAR / ROG / MNK
+        </select>
+<!--
+	<SCRIPT language="JavaScript">
+		document.write("<SELECT NAME='select1' onChange='eval(this.options[this.selectedIndex].value);'>");
+		for (i = 0; i < selNameList.length; i++){
+//			if ( selName == selValueList[i]){
+//				document.write("<OPTION VALUE='" + selValueList[i] + "' SELECTED>" + selNameList[i]);
+//			} else {
+				document.write("<OPTION VALUE='" + selValueList[i] + "'>" + selNameList[i]);
+//			}
+		}
+		document.write("</SELECT>");
+	</SCRIPT>
+-->
+    </tr>
+    <tr>
+      <td><img src="whitedot.gif" height="2" width="10"><b>2.</b></font></td>
+      <td align="right" nowrap>キャラクターの<b>レベル</b>を入力:&nbsp;&nbsp;</td>
+      <td><INPUT TYPE="text" NAME="lvl" SIZE="4" value=""></td>
+    </tr>
+    <tr>
+      <td><img src="whitedot.gif" height="2" width="10"><b>3.</b></font></td>
+      <td align="right" nowrap>キャラクターの<b>INT(WIS)の値</b>を入力:&nbsp;&nbsp;</td>
+      <td><INPUT TYPE="text" NAME="int" SIZE="4" value=""></td>
+    </tr>
+    <tr>
+      <td><img src="whitedot.gif" height="2" width="10"><b>4.</b></font></td>
+      <td align="right" nowrap><b>MANA Boostの値</b>を入力:&nbsp;&nbsp;</td>
+      <td><INPUT TYPE="text" NAME="boost" SIZE="4" value=""></td>
+    </tr>
+  <tr><td align="left" bgcolor="#800000" colspan="3" width="80%"><img src="reddot.gif" height="2" width="2"></td></tr>
+  <tr>
+    <td align="right" colspan="2">
+		<b>MANAの量:</b>&nbsp;&nbsp;
+	</td>
+	<td>
+	    <INPUT TYPE="text" NAME="mana" SIZE="4" value="">
+	</td>
+  </tr>
+</td>
+
+  </tr>
+</table>
+
+</td></tr>
+</table>
+
+<p>
+<center>
+<INPUT TYPE="button" value="けいさーん" onClick="calc(this.form)">
+&nbsp;&nbsp;
+<INPUT TYPE="button" value="保存" onClick="memoryCookie()">
+<!--
+&nbsp;&nbsp;
+<INPUT TYPE="button" value="見る" onClick="viewCookie()">
+&nbsp;&nbsp;
+<INPUT TYPE="button" value="消す" onClick="clearCookie()">
+&nbsp;&nbsp;
+<INPUT TYPE="button" value="でばっぐ" onClick="showStat()">
+-->
+</center>
+</FORM>
+
+<p>
+<center>
+----------------------------------------------------------------
+</center>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<div class="posabs" id="msg0">
+<b>Pure Caster</b>のMana計算をします。<br>
+SoL以降、INT200 の Capが外れたらしいので、それに対応してます。<br>
+(と、言っても現在上限は255にしてあります。)<br>
+※200を超えた分は、1増加に付き、200までの上昇率(Level / 5)が、半分(Level / 10)になる<br>
+※情報がありますので、それに対応しています。<br>
+<p>
+ちなみに計算式は…<br>
+<p>
+<font color="#ff0000">■INT 200 以下■</font><br>
+<b>{(int/5) + 5} x Level + ManaBoost = Total Mana</b><br>
+<p>
+<font color="#ff0000">■INT 201 以上■</font><br>
+<b>{(200/5) + 5} x Level +　　// INT200までのMana量<br>
+   (int-200) x (Level/10) +　　// INT200を超えた分のMana量<br>
+   ManaBoost = Total Mana</b><br>
+<p>
+と、なります。<br>
+INT200 Overはややこしいですね（ｗ
+</div>
+
+<div class="posabs" id="msg1">
+<b>Wis Caster</b>(Healer)のMana計算をします。<br>
+SoL以降、WIS200 の Capが外れたらしいので、それに対応してます。<br>
+(と、言っても現在上限は255にしてあります。)<br>
+<p>
+ちなみに計算式は…<br>
+<p>
+<font color="#ff0000">■WIS 200 以下■</font><br>
+<b>{(wis/5) + 5} x Level + ManaBoost = Total Mana</b><br>
+<p>
+<font color="#ff0000">■WIS 201 以上■</font><br>
+<b>{(200/5) + 5} x Level +　　// WIS200までのMana量<br>
+   (wis-200) x (Level/10) +　　// WIS200を超えた分のMana量<br>
+   ManaBoost = Total Mana</b><br>
+<p>
+と、なります。<br>
+WIS200 Overはややこしいですね（ｗ
+</div>
+
+<div class="posabs" id="msg2">
+<b>INT Base Hybrid Class</b>のMana計算をします。<br>
+Shadow Knightですね。<br>
+あと、Bardも INT Baseと言われています…が。<br>
+この計算式が当てはまるかは知りません(笑<br>
+<p>
+Hybrid Classで、Level1のSpellが使用可能になるLevel<br>
+(要するにManaが得られるLevel)は9ですので、計算式は…<br>
+<p>
+<font color="#ff0000">■INT 200 以下■</font><br>
+<b>{(int/5) + 5} x (Level - 8) + ManaBoost = Total Mana</b><br>
+<p>
+<font color="#ff0000">■INT 201 以上■</font><br>
+<b>{(200/5) + 5} x (Level - 8) +　　　// INT200までのMana量<br>
+   (int-200) x {(Level - 8) / 10} +　　// INT200を超えた分のMana量<br>
+   ManaBoost = Total Mana</b><br>
+<p>
+と、なりますね。<br>
+あってるかどうかは知りません（ｗ
+</div>
+
+<div class="posabs" id="msg3">
+<b>WIS Base Hybrid Class</b>のMana計算をします。<br>
+Paladin、Rangerですね。<br>
+SoLで新しく追加された、Beast Lordも、恐らくこの計算式になると思います。<br>
+<p>
+Hybrid Classで、Level1のSpellが使用可能になるLevel<br>
+(要するにManaが得られるLevel)は9ですので、計算式は…<br>
+<p>
+<font color="#ff0000">■WIS 200 以下■</font><br>
+<b>{(wis/5) + 5} x (Level - 8) + ManaBoost = Total Mana</b><br>
+<p>
+<font color="#ff0000">■INT 201 以上■</font><br>
+<b>{(200/5) + 5} x (Level - 8) +　　　// WIS200までのMana量<br>
+   (wis-200) x {(Level - 8) / 10} +　　// WIS200を超えた分のMana量<br>
+   ManaBoost = Total Mana</b><br>
+<p>
+と、なりますね。<br>
+あってるかどうかは知りません（ｗ
+</div>
+
+
+
+<div align="center">
+<br>
+<script language="JavaScript">
+<!--
+	document.write("Last Modified ",document.lastModified)
+// -->
+</script>
+<br>
+----------------------------------------------------------------<br>
+<table border="0">
+<tr>
+	<td nowwap>
+	2002/01/15 --- INT/WISが200以上の際の、計算値修正。(あってるかどうかは知りません)<br>
+	2001/12/19 --- 中途半端にcookieに対応。コンボボックスはめんどいヨ…<br>
+	2001/12/18 --- 大幅改造。ソースにべた書き（笑<br>
+	2000/10/11 --- 暇つぶしに作成。Netscapeでの動作にバグあり(泣<br>
+	</td>
+</tr>
+</table>
+</div>
+<p>
+</body></html>

@@ -1,0 +1,317 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>画像を４方向混在に動かす</TITLE>
+
+<STYLE><!--B.set{color : red;}
+--></STYLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000">
+<H1>「雪を振らせる」の改造<BR>
+画像を４方向混在に動かす</H1>
+<HR>
+<BR>
+<TABLE border="1">
+  <TBODY>
+    <TR>
+      <TD colspan="2"><B>赤が設定箇所</B><BR>
+      <B>img[?] = new Array(&quot;画像のパス&quot;，数，方向，最小スピード，最大スピード，最小揺れ幅，最大揺れ幅，揺れ速度，画像サイズ);<BR>
+      [?]の数字は0から始まり必要な数だけ用意してください。途中の番号を飛ばしたりダブらせたりしないこと。<BR>
+      </B></TD>
+    </TR>
+    <TR>
+    <TD valign="top">画像のパス</TD>
+    <TD valign="top">動かす画像のパス。　&quot; &quot; で必ず括ること。</TD>
+  </TR>
+  <TR>
+    <TD>数</TD>
+    <TD>上記で設定した画像の１画面に表示する数。</TD>
+  </TR>
+  <TR>
+    <TD>方向</TD>
+    <TD>画像の動く方向。　0=上から下　1=下から上　2=左から右　3=右から左
+      に動きます。</TD>
+  </TR>
+  <TR>
+    <TD>最小スピード<BR>
+    最大スピード</TD>
+    <TD>進むスピード。設定した数値の間でランダムにスピードが決まる。</TD>
+  </TR>
+  <TR>
+    <TD>最小揺れ幅<BR>
+    最大揺れ幅</TD>
+    <TD>揺れの幅。設定した数値の間でランダムに幅が決まる。</TD>
+  </TR>
+  <TR>
+    <TD>揺れ速度</TD>
+    <TD>揺れる速度。数値が大きくなると小刻みに揺れます。同じ数字を指定してもスピードが違うと動きが違います。</TD>
+  </TR>
+  <TR>
+    <TD>画像サイズ</TD>
+    <TD>画像の縦か横の大きい方のサイズを指定する。<BR>
+    画像より小さい数値を指定すると画像が画面から出ていく前に消えます。</TD>
+  </TR>
+    <TR>
+      <TD colspan="2">・各数値は適当に設定して動きを見ながら調整してください。<BR>
+      ・必ず ，で区切り全て設定してください。<BR>
+      ・画像の数を多くすると動きが遅くなります（パソコンの性能に左右されます）。合計で２０以下にすると良いと思います。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<P><B>おまけ</B>　このJavaScriptの使用例　<A href="suisou.shtml">suisou.shtml</A></P>
+<HR>
+<PRE>
+&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+&lt;!--
+// Original:  Altan (snow@altan.hr) Web Site:  http://www.altan.hr/snow
+// Script arranged by Hisa (http://www.suisen.sakura.ne.jp/~ikitai/js/)
+
+img = new Array();
+// 画像の指定。
+// img[?] = new Array(&quot;画像のパス&quot;,数,方向,最小スピード,最大スピード,最小揺れ幅,最大揺れ幅,揺れ速度,画像サイズ);
+<B class=set>img[0] = new Array(&quot;1candy.gif&quot;,2,0,0.5,1.5,20,20,8,45);
+img[1] = new Array(&quot;2candy.gif&quot;,2,1,1.0,2.0,10,20,5,45);
+img[2] = new Array(&quot;3candy.gif&quot;,3,2,1.5,2.5,0,10,3,45);
+img[3] = new Array(&quot;4candy.gif&quot;,3,3,2.0,4.0,0,5,5,45);</B>
+
+var ns = (document.layers) ? 1 : 0;
+var ie = (document.all) ? 1 : 0;
+var doc_width = 800, doc_height = 1800;
+
+if (ns) {
+  doc_width = self.innerWidth;
+  doc_height = self.innerHeight;
+} else if (ie) {
+  doc_width = document.body.clientWidth;
+  doc_height = document.body.clientHeight;
+}
+
+var dx = new Array();
+var xp = new Array();
+var yp = new Array();
+var am = new Array();
+var stl = new Array();
+var stw = new Array();
+
+for (i=0; i&lt;img.length; i++) {
+  dx[i] = new Array();
+  xp[i] = new Array();
+  yp[i] = new Array();
+  am[i] = new Array();
+  stl[i] = new Array();
+  stw[i] = new Array();
+}
+
+var maxsize = 0;
+
+for (i=0; i&lt;img.length; i++) {
+  for (j=0; j&lt;img[i][1]; j++) {
+    dx[i][j] = 0;
+    xp[i][j] = Math.random()*(doc_width-img[i][8]);
+    yp[i][j] = Math.random()*(doc_height-img[i][8]);
+    am[i][j] = Math.random()*(img[i][6]-img[i][5]) + img[i][5];
+    stl[i][j] = img[i][7] + Math.random()/10;
+    stw[i][j] = Math.random()*(img[i][4]-img[i][3]) + img[i][3];
+    if ( maxsize &lt; img[i][8] ) maxsize = img[i][8];
+    if (ns) {
+        document.write(&quot;&lt;layer name=\&quot;dot&quot;+ i + &quot;_&quot; + j +&quot;\&quot; left=\&quot;15\&quot; top=\&quot;15\&quot; visibility=\&quot;show\&quot;&gt;&lt;img src=\&quot;&quot; + img[i][0] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/layer&gt;&quot;);
+    } else if (ie) {
+      document.write(&quot;&lt;div id=\&quot;dot&quot;+ i + &quot;_&quot; + j +&quot;\&quot; style=\&quot;POSITION: absolute; Z-INDEX: &quot;+ i +&quot;; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\&quot;&gt;&lt;img src=\&quot;&quot; + img[i][0] + &quot;\&quot; border=\&quot;0\&quot;&gt;&lt;/div&gt;&quot;);
+    }
+  }
+}
+if (ie) document.write(&quot;&lt;div id=\&quot;damy\&quot; style=\&quot;POSITION: absolute; width:1; Z-INDEX: &quot;+ i +&quot; VISIBILITY: visible; TOP:&quot; + (doc_height+maxsize) + &quot;px; LEFT: &quot; + (doc_width+maxsize) + &quot;px;\&quot;&gt;&amp;nbsp;&lt;/div&gt;&quot;);
+maxsize += 10;
+
+function ugoki() {
+  for (i=0; i&lt;img.length; i++) {
+    for (j=0; j&lt;img[i][1]; j++) {
+      if (img[i][2] == 0) {
+        yp[i][j] += stw[i][j];
+        if (yp[i][j] &gt; doc_height+10) {
+          xp[i][j] = Math.random()*(doc_width-am[i][j]-img[i][8]);
+          yp[i][j] = 0;
+        }
+        dx[i][j] += stl[i][j];
+        if (j%2) moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180),yp[i][j]);
+        else  moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180),yp[i][j]);
+      } else if (img[i][2] == 1) {
+        yp[i][j] -= stw[i][j];
+        if (yp[i][j] &lt; 0-img[i][8]) {
+          xp[i][j] = Math.random()*(doc_width-am[i][j]-img[i][8]);
+          yp[i][j] = doc_height+10;
+        }
+        dx[i][j] += stl[i][j];
+        if (j%2) moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180),yp[i][j]);
+        else  moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180),yp[i][j]);
+      } else if (img[i][2] == 2) {
+        xp[i][j] += stw[i][j];
+        if (xp[i][j] &gt; doc_width+10) {
+          yp[i][j] = Math.random()*(doc_height-am[i][j]-img[i][8]);
+          xp[i][j] = 0-maxsize;
+        }
+        dx[i][j] += stl[i][j];
+        if (j%2) moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j],yp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180));
+        else  moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j],yp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180));
+      } else if (img[i][2] == 3) {
+        xp[i][j] -= stw[i][j];
+        if (xp[i][j] &lt; 0-maxsize) {
+          yp[i][j] = Math.random()*(doc_height-am[i][j]-img[i][8]);
+          xp[i][j] = doc_width+10;
+        }
+        dx[i][j] += stl[i][j];
+        if (j%2) moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j],yp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180));
+        else  moveLay(&quot;dot&quot;+i+&quot;_&quot;+j,xp[i][j],yp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180));
+      }
+    }
+  }
+  setTimeout(&quot;ugoki()&quot;,10);
+}
+
+function moveLay(name,x,y) {
+  if (ns) {
+    document.layers[name].top = y;
+    document.layers[name].left = x;
+  } else if (ie) {
+    document.all[name].style.pixelTop = y;
+    document.all[name].style.pixelLeft = x;
+  }
+}
+
+if (ns || ie) ugoki();
+
+// End --&gt;
+&lt;/SCRIPT&gt;</PRE>
+<BR>
+
+<!--------- ここからJavaScript ------------------->
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+// Original:  Altan (snow@altan.hr) Web Site:  http://www.altan.hr/snow
+// Script arranged by Hisa(http://www.suisen.sakura.ne.jp/~ikitai/js/)
+
+img = new Array();
+
+// 画像の指定。
+// img[?] = new Array("画像のパス",数,方向,最小スピード,最大スピード,最小揺れ幅,最大揺れ幅,揺れ速度,画像サイズ);
+img[0] = new Array("images/1candy.gif",2,0,0.5,1.5,20,20,8,45);
+img[1] = new Array("images/2candy.gif",2,1,1.0,2.0,10,20,5,45);
+img[2] = new Array("images/3candy.gif",3,2,1.5,2.5,0,10,3,45);
+img[3] = new Array("images/4candy.gif",3,3,2.0,4.0,0,5,5,45);
+
+var ns = (document.layers) ? 1 : 0;
+var ie = (document.all) ? 1 : 0;
+var doc_width = 800, doc_height = 1800;
+
+if (ns) {
+	doc_width = self.innerWidth;
+	doc_height = self.innerHeight;
+} else if (ie) {
+	doc_width = document.body.clientWidth;
+	doc_height = document.body.clientHeight;
+}
+
+var dx = new Array();
+var xp = new Array();
+var yp = new Array();
+var am = new Array();
+var stl = new Array();
+var stw = new Array();
+
+for (i=0; i<img.length; i++) {
+	dx[i] = new Array();
+	xp[i] = new Array();
+	yp[i] = new Array();
+	am[i] = new Array();
+	stl[i] = new Array();
+	stw[i] = new Array();
+}
+
+var maxsize = 0;
+
+for (i=0; i<img.length; i++) {
+	for (j=0; j<img[i][1]; j++) {
+		dx[i][j] = 0;
+		xp[i][j] = Math.random()*(doc_width-img[i][8]);
+		yp[i][j] = Math.random()*(doc_height-img[i][8]);
+		am[i][j] = Math.random()*(img[i][6]-img[i][5]) + img[i][5];
+		stl[i][j] = img[i][7] + Math.random()/10;
+		stw[i][j] = Math.random()*(img[i][4]-img[i][3]) + img[i][3];
+		if ( maxsize < img[i][8] ) maxsize = img[i][8];
+		if (ns) {
+				document.write("<layer name=\"dot"+ i + "_" + j +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\"" + img[i][0] + "\" border=\"0\"></layer>");
+		} else if (ie) {
+			document.write("<div id=\"dot"+ i + "_" + j +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + img[i][0] + "\" border=\"0\"></div>");
+		}
+	}
+}
+
+if (ie) document.write("<div id=\"damy\" style=\"POSITION: absolute; width:1; Z-INDEX: "+ i +" VISIBILITY: visible; TOP:" + (doc_height+maxsize) + "px; LEFT: " + (doc_width+maxsize) + "px;\">&nbsp;</div>");
+maxsize += 10;
+
+
+function ugoki() {
+	for (i=0; i<img.length; i++) {
+		for (j=0; j<img[i][1]; j++) {
+			if (img[i][2] == 0) {
+				yp[i][j] += stw[i][j];
+				if (yp[i][j] > doc_height+10) {
+					xp[i][j] = Math.random()*(doc_width-am[i][j]-img[i][8]);
+					yp[i][j] = 0;
+				}
+				dx[i][j] += stl[i][j];
+				if (j%2) moveLay("dot"+i+"_"+j,xp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180),yp[i][j]);
+				else  moveLay("dot"+i+"_"+j,xp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180),yp[i][j]);
+			} else if (img[i][2] == 1) {
+				yp[i][j] -= stw[i][j];
+				if (yp[i][j] < 0-img[i][8]) {
+					xp[i][j] = Math.random()*(doc_width-am[i][j]-img[i][8]);
+					yp[i][j] = doc_height+10;
+				}
+				dx[i][j] += stl[i][j];
+				if (j%2) moveLay("dot"+i+"_"+j,xp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180),yp[i][j]);
+				else  moveLay("dot"+i+"_"+j,xp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180),yp[i][j]);
+			} else if (img[i][2] == 2) {
+				xp[i][j] += stw[i][j];
+				if (xp[i][j] > doc_width+10) {
+					yp[i][j] = Math.random()*(doc_height-am[i][j]-img[i][8]);
+					xp[i][j] = 0-maxsize;
+				}
+				dx[i][j] += stl[i][j];
+				if (j%2) moveLay("dot"+i+"_"+j,xp[i][j],yp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180));
+				else  moveLay("dot"+i+"_"+j,xp[i][j],yp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180));
+			} else if (img[i][2] == 3) {
+				xp[i][j] -= stw[i][j];
+				if (xp[i][j] < 0-maxsize) {
+					yp[i][j] = Math.random()*(doc_height-am[i][j]-img[i][8]);
+					xp[i][j] = doc_width+10;
+				}
+				dx[i][j] += stl[i][j];
+				if (j%2) moveLay("dot"+i+"_"+j,xp[i][j],yp[i][j]+am[i][j]*Math.sin(dx[i][j]*Math.PI/180));
+				else  moveLay("dot"+i+"_"+j,xp[i][j],yp[i][j]+am[i][j]*Math.cos(dx[i][j]*Math.PI/180));
+			}
+		}
+	}
+	setTimeout("ugoki()",10);
+}
+
+function moveLay(name,x,y) {
+	if (ns) {
+		document.layers[name].top = y;
+		document.layers[name].left = x;
+	} else if (ie) {
+		document.all[name].style.pixelTop = y;
+		document.all[name].style.pixelLeft = x;
+	}
+}
+
+if (ns || ie) ugoki();
+
+// End -->
+</SCRIPT>
+
+</BODY>
+</HTML>

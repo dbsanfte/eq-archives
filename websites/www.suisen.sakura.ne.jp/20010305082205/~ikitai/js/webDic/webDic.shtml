@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<TITLE>Web Dictionary</TITLE>
+
+
+<META http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+
+<LINK rel="stylesheet" type="text/css" href="webDic.css">
+<SCRIPT LANGUAGE="JavaScript" src="webDic.js"></SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="loading">Now loading...</DIV>
+
+<DIV id="srt"><SPAN class="sortmsg">クリックする度にソート順が変わります</SPAN></DIV>
+
+<DIV class="search">
+<FORM name="fm">
+
+<!-- 検索数・リセット -->
+<FIELDSET>
+<LEGEND>検索数・リセット</LEGEND>
+<DIV align="center">
+<INPUT name="cnt" type="text" size="3" style="text-align:right" onfocus="this.blur()">件
+　　　　　<INPUT type="BUTTON" class="btn" onclick="filterReset();this.blur();" value="RESET">
+</DIV>
+</FIELDSET>
+
+<!-- 頭文字検索 -->
+<FIELDSET>
+<LEGEND>INDEX検索</LEGEND>
+<INPUT type="button" class="az" onclick="a2z(this)" value="＊" name="kome" title="ALL">
+<INPUT type="button" class="az" onclick="a2z(this)" value="A" title="A">
+<INPUT type="button" class="az" onclick="a2z(this)" value="B" title="B">
+<INPUT type="button" class="az" onclick="a2z(this)" value="C" title="C">
+<INPUT type="button" class="az" onclick="a2z(this)" value="D" title="D">
+<INPUT type="button" class="az" onclick="a2z(this)" value="E" title="E">
+<INPUT type="button" class="az" onclick="a2z(this)" value="F" title="F">
+<INPUT type="button" class="az" onclick="a2z(this)" value="G" title="G">
+<INPUT type="button" class="az" onclick="a2z(this)" value="H" title="H">
+<INPUT type="button" class="az" onclick="a2z(this)" value="I" title="I">
+<INPUT type="button" class="az" onclick="a2z(this)" value="J" title="J">
+<INPUT type="button" class="az" onclick="a2z(this)" value="K" title="K">
+<INPUT type="button" class="az" onclick="a2z(this)" value="L" title="L">
+<INPUT type="button" class="az" onclick="a2z(this)" value="M" title="M">
+<INPUT type="button" class="az" onclick="a2z(this)" value="N" title="N">
+<INPUT type="button" class="az" onclick="a2z(this)" value="O" title="O">
+<INPUT type="button" class="az" onclick="a2z(this)" value="P" title="P">
+<INPUT type="button" class="az" onclick="a2z(this)" value="Q" title="Q">
+<INPUT type="button" class="az" onclick="a2z(this)" value="R" title="R">
+<INPUT type="button" class="az" onclick="a2z(this)" value="S" title="S">
+<INPUT type="button" class="az" onclick="a2z(this)" value="T" title="T">
+<INPUT type="button" class="az" onclick="a2z(this)" value="U" title="U">
+<INPUT type="button" class="az" onclick="a2z(this)" value="V" title="V">
+<INPUT type="button" class="az" onclick="a2z(this)" value="W" title="W">
+<INPUT type="button" class="az" onclick="a2z(this)" value="X" title="X">
+<INPUT type="button" class="az" onclick="a2z(this)" value="Y" title="Y">
+<INPUT type="button" class="az" onclick="a2z(this)" value="Z" title="Z">
+<INPUT type="button" class="az" onclick="a2z(this)" value="0" title="数字"><BR>
+<INPUT type="button" class="az" onclick="a2z(this)" value="あ" title="あ行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="か" title="か行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="さ" title="さ行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="た" title="た行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="な" title="な行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="は" title="は行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="ま" title="ま行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="や" title="や行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="ら" title="ら行">
+<INPUT type="button" class="az" onclick="a2z(this)" value="わ" title="わ行">
+</FIELDSET>
+
+<!-- 分類検索 -->
+<FIELDSET>
+<LEGEND>GROUP検索</LEGEND>
+<DIV align="center">
+<SELECT NAME="bunrui" onchange="selCls(this)">
+	<OPTION SELECTED VALUE="column4=*">ALL
+</SELECT>
+</DIV>
+</FIELDSET>
+
+<!-- ワード検索 -->
+<FIELDSET>
+<LEGEND>ワード検索</LEGEND>
+<DIV align="center">
+<INPUT id="srh" type="text" name="word" onfocus="this.value=''" title="検索後に条件を外す時は文字を消してから&#13SEARCHを押すことによってALLになります">
+<INPUT type="button" class="btn" onClick="words(this.form);this.blur();" value="SEARCH"><BR>
+<INPUT type="checkbox" name="srhgrp1" checked onfocus="this.blur();" title="INDEXを検索する場合はチェックを付ける">Index
+<INPUT type="checkbox" name="srhgrp2" checked onfocus="this.blur();" title="GROUPを検索する場合はチェックを付ける">Group
+<INPUT type="checkbox" name="srhgrp3" checked onfocus="this.blur();" title="説明文を検索する場合はチェックを付ける">説明文
+</DIV>
+</FIELDSET>
+
+</FORM>
+</DIV>
+
+<!-- メニュー -->
+<DIV class="menu">
+<TABLE id="menu" datasrc="#aoData" border="1" cellspacing="0" cellpadding="3">
+	<!-- 見出し表示 -->
+	<THEAD>
+		<TR align="center" class="midasi" onclick="idxSort()" onmouseover="visiSort(1)" onmouseout="visiSort()" style="cursor:hand">
+		<TD class="index">INDEX</TD>
+		<TD class="group">GROUP</TD>
+		</TR>
+	</THEAD>
+	<!-- データ表示 -->
+	<TBODY>
+		<TR style="cursor:hand;" onclick="chRecord(this)" onmouseover="trOver(this)" onmouseout="trOut(this)">
+		<TD class="index"><SPAN datafld="column3"></SPAN></TD>
+		<TD id="grp" class="group"><SPAN datafld="column4"></SPAN></TD>
+		</TR>
+	</TBODY>
+</TABLE>
+</DIV>
+
+
+<!-- 詳細 -->
+<DIV id="detail1">
+<TABLE border="1" width="100%" cellspacing="0" cellpadding="3" style="margin-bottom:5px;">
+	<TR class="midasi"><TD><SPAN id="span1" datasrc="#aoData" datafld="column3"></SPAN></TD></TR>
+	<TR><TD><SPAN id="span2" datasrc="#aoData" datafld="column4"></SPAN></TD></TR>
+	<TR><TD><SPAN id="span3" datasrc="#aoData" datafld="column5" dataformatas="html"></SPAN></TD></TR>
+</TABLE>
+* 太字（リンク）をクリックするとその詳細が上に重なって現れます。<BR>
+<BR>
+<A href="http://www.suisen.sakura.ne.jp/~ikitai/" target="_blank">- Web Dictionary 2.3 -</A>
+<!-- 詳細2 -->
+<DIV id="detail2">
+<TABLE border="1" width="100%" cellspacing="0" cellpadding="3">
+	<TR class="midasi"><TD width="100%"><SPAN id="span1" datasrc="#aoData2" datafld="column3"></SPAN></TD>
+	<TD class="close" onclick="hideDetail()" nowrap>閉じる</TD></TR>
+	<TR><TD colspan="2"><SPAN id="span2" datasrc="#aoData2" datafld="column4"></SPAN></TD></TR>
+	<TR><TD colspan="2"><SPAN id="span3" datasrc="#aoData2" datafld="column5" dataformatas="html"></SPAN></TD></TR>
+</TABLE>
+</DIV>
+</DIV>
+
+<SCRIPT language="JavaScript">
+	menu.onreadystatechange = check;	// 読み込み監視スタート
+</SCRIPT>
+
+<!-- データソースオブジェクトの指定 メニュー及び詳細１用 -->
+<OBJECT id="aoData" classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+	<PARAM name="DataURL" value="dic.csv">	<!-- CSVファイルの指定 -->
+	<PARAM name="UseHeader" value="false">	<!-- ファイルにヘッダ行が有るか無いか -->
+	<PARAM name="CaseSensitive" value="false">	<!-- 大文字小文字の区別 -->
+	<!--<PARAM NAME="Sort" VALUE="+column3">-->	<!-- 読み込み時にソート -->
+	<PARAM NAME="CharSet" VALUE="Shift_JIS"> <!-- CSVファイルの文字コード -->
+</OBJECT>
+
+<!-- データソースオブジェクトの指定2 詳細２用 -->
+<OBJECT id="aoData2" classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+	<PARAM name="DataURL" value="dic.csv">	<!-- CSVファイルの指定 -->
+	<PARAM name="UseHeader" value="false">	<!-- ファイルにヘッダ行が有るか無いか -->
+	<PARAM name="CaseSensitive" value="false">	<!-- 大文字小文字の区別 -->
+	<PARAM NAME="CharSet" VALUE="Shift_JIS"> <!-- CSVファイルの文字コード -->
+</OBJECT>
+
+</BODY>
+</HTML>

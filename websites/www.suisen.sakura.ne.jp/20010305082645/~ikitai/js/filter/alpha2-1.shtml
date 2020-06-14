@@ -1,0 +1,346 @@
+<HTML>
+<HEAD>
+
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>うたかたの夢2</TITLE>
+
+
+<SCRIPT language="JavaScript">
+<!--
+
+var img = new Array();
+img[0] = new Image(); img[0].src = "../../images/ao/ao07.jpg";	// img[?]の数字は０から始まる連番。
+img[1] = new Image(); img[1].src = "../../images/ao/ao08.jpg";	// 必要な数だけ用意する。
+img[2] = new Image(); img[2].src = "../../images/ao/ao12.jpg";
+img[3] = new Image(); img[3].src = "../../images/uwo/uwo09.jpg";
+img[4] = new Image(); img[4].src = "../../images/uwo/uwo12.jpg";
+img[5] = new Image(); img[5].src = "../../images/uwo/uwo19.jpg";
+
+imgMaxSizeW = 200;		// １番大きい画像の横幅
+imgMaxSizeH = 150;      // １番大きい画像の縦幅
+ml = 5;                 // スピード
+maxOp = 105;            // 実際の濃さの画像が出てる時間。100以上を指定。
+nextImgTimer = 1000;    // 次の画像に移るまでの時間。１秒=1000
+
+
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+function setAlpha(layerName,o) {
+	if (_dom == 3) {
+		document.all(layerName).filters["alpha"].opacity = o;
+	}
+}
+
+
+function getWindowSize() {
+    if(_dom == 1 || _dom == 2) {
+        win_width = self.innerWidth;
+        win_height = self.innerHeight;
+    }
+    if (_dom == 3) {
+        win_width = document.body.clientWidth;
+        win_height = document.body.clientHeight;
+    }
+}
+
+function showLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";
+    if (_dom == 2) document.layers[layerName].visibility = "show";
+    if (_dom == 3) document.all(layerName).style.visibility = "visible";
+}
+
+function hideLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";
+    if (_dom == 2) document.layers[layerName].visibility = "hide";
+    if (_dom == 3) document.all(layerName).style.visibility = "hidden";
+}
+
+function moveLayerTo(layerName, x, y){
+    if (_dom == 1) {
+        document.getElementById(layerName).style.left = x + scrollX;
+        document.getElementById(layerName).style.top = y + scrollY;
+    }
+    if (_dom == 2) {
+        document.layers[layerName].left = x + pageXOffset;
+        document.layers[layerName].top = y + pageYOffset;
+    }
+    if (_dom == 3) {
+        document.all(layerName).style.pixelLeft = x + document.body.scrollLeft
+        document.all(layerName).style.pixelTop = y + document.body.scrollTop;
+    }
+}
+
+function writeHTML(layerName,html) {
+	if (_dom == 1) {
+		var div = document.getElementById(layerName);
+		while(div.hasChildNodes()) div.removeChild(div.lastChild);
+    	var range=document.createRange();
+		range.selectNodeContents(div);
+		range.collapse(true);
+		var cf=range.createContextualFragment(html);
+		div.appendChild(cf);
+	}
+	if (_dom == 2) {
+		var div = document.layers[layerName];
+		div.document.open();
+		div.document.write(html);
+		div.document.close();
+	}
+	if (_dom == 3) document.all(layerName).innerHTML = html;
+}
+
+var imgCount = 0;
+function initAlphaImgPos() {
+	writeHTML("imgLay",'<IMG src="' + img[imgCount].src + '" border="0">');
+	imgCount++; if (imgCount >= img.length) imgCount = 0;
+	getWindowSize();
+	iml = win_width > win_height ? Math.floor((win_height - imgMaxSizeH) * 0.9) : Math.floor((win_width - imgMaxSizeW) * 0.9);
+	iak = Math.floor(iml / ml); iml = ml *iak; adk = maxOp / (iak / 2);
+	sX = Math.floor(Math.random()*(win_width-imgMaxSizeW-10));
+    sY = Math.floor(Math.random()*(win_height-imgMaxSizeH-10));
+	do {
+		theta = Math.floor(Math.random()*360);
+		eX = Math.sin(theta)*iml + sX;
+		eY = Math.cos(theta)*iml + sY;
+	} while (eX < 0 || eY < 0 || eX > (win_width-imgMaxSizeW-10) || eY > (win_height-imgMaxSizeH-10))
+	moveLayerTo("imgLay",sX,sY);
+	showLayer("imgLay");
+	alphaCount = 0;
+	slideAlphaImg("imgLay",sX,sY,eX,eY,ml,50);
+}
+
+function slideAlphaImg(layerName,sx,sy,ex,ey,dl,sp) {
+	var l, xp, yp, tim, z, dl2;
+	l=Math.abs(Math.sqrt(Math.pow((ex-sx),2)+Math.pow((ey-sy),2)));
+	if (l > dl) {
+		xp = dl/l*(ex-sx)+sx;
+		if (ex-sx == 0) {
+			if (sy<ey) yp = sy+dl;
+			else yp = sy-dl;
+		} else yp = (sy-ey)/(sx-ex)*xp+sy-(sy-ey)/(sx-ex)*sx;
+		if (_dom == 3) {
+			alphaCount++; op = alphaCount*adk; op = op > maxOp ? maxOp-(op-maxOp) : op;
+			setAlpha("imgLay",op);
+		}
+		moveLayerTo(layerName,xp,yp);
+		tim = setTimeout("slideAlphaImg('"+layerName+"',"+xp+","+yp+","+ex+","+ey+","+dl+","+sp+")",sp);
+	} else {
+		hideLayer(layerName);
+		clearTimeout(tim);
+		tim = setTimeout("initAlphaImgPos()",nextImgTimer);
+	}
+}
+
+window.onload = initAlphaImgPos;
+
+// -->
+</SCRIPT>
+
+<STYLE type="text/css">
+<!--
+
+#imgLay {
+   filter: alpha(style=0);
+}
+
+-->
+</STYLE>
+
+</HEAD>
+
+<BODY>
+
+<DIV ID="imgLay" STYLE="position:absolute; width:1; height:1; top:0; left:0;"></DIV>
+
+<P><FONT size="6"><B>うたかたの夢2</B></FONT><BR>
+<B><FONT size="4" color="red">IE4.x/5.x</FONT></B></P>
+
+<HR>
+<P>・ネスケの場合は画像は表示されますがフェードはしません。<BR>
+・PAGE内の全ての画像及び設定した画像が全て読み込まれてから動くので<BR>
+　画像の枚数が多いときや画像のサイズが大きいとスタートするまで時間がかかります。<BR>
+<BR>
+<BR>
+<BR>
+赤色をHEAD内へ入れる。<BR>
+緑色をBODY内へ入れる。</P>
+<HR>
+
+<SCRIPT type="text/javascript" language="JavaScript1.2">
+<!--
+	function CopyToClipBoard() {
+	textRange = document.body.createTextRange();
+	textRange.moveToElementText(source);
+	textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+	document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+	document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+<BR>
+&lt;TITLE>うたかたの夢2&lt;/TITLE><BR>
+<BR>
+<FONT color="#ff0000">&lt;SCRIPT language="JavaScript"><BR>
+&lt;!--<BR>
+<BR>
+var img = new Array();<BR>
+img[0] = new Image(); img[0].src = "ao07.jpg";&nbsp;&nbsp;// img[?]の数字は０から始まる連番。<BR>
+img[1] = new Image(); img[1].src = "ao08.jpg";&nbsp;&nbsp;// 必要な数だけ用意する。<BR>
+img[2] = new Image(); img[2].src = "ao12.jpg";<BR>
+img[3] = new Image(); img[3].src = "uwo09.jpg";<BR>
+img[4] = new Image(); img[4].src = "uwo12.jpg";<BR>
+img[5] = new Image(); img[5].src = "uwo19.jpg";<BR>
+<BR>
+imgMaxSizeW = 200;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// １番大きい画像の横幅<BR>
+imgMaxSizeH = 150;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// １番大きい画像の縦幅<BR>
+ml = 5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // スピード<BR>
+maxOp = 105;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 実際の濃さの画像が出てる時間。100以上を指定。<BR>
+nextImgTimer = 1000;&nbsp;&nbsp;&nbsp;&nbsp;// 次の画像に移るまでの時間。１秒=1000<BR>
+<BR>
+<BR>
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+<BR>
+function setAlpha(layerName,o) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).filters["alpha"].opacity = o;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+<BR>
+function getWindowSize() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(_dom == 1 || _dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = self.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function showLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "show";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "visible";<BR>
+}<BR>
+<BR>
+function hideLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "hide";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "hidden";<BR>
+}<BR>
+<BR>
+function moveLayerTo(layerName, x, y){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.left = x + scrollX;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.top = y + scrollY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].left = x + pageXOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].top = y + pageYOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelLeft = x + document.body.scrollLeft<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelTop = y + document.body.scrollTop;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function writeHTML(layerName,html) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var div = document.getElementById(layerName);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(div.hasChildNodes()) div.removeChild(div.lastChild);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var range=document.createRange();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.selectNodeContents(div);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.collapse(true);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var cf=range.createContextualFragment(html);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.appendChild(cf);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var div = document.layers[layerName];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.open();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.write(html);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.close();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).innerHTML = html;<BR>
+}<BR>
+<BR>
+var imgCount = 0;<BR>
+function initAlphaImgPos() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;writeHTML("imgLay",'&lt;IMG src="' + img[imgCount].src + '" border="0">');<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;imgCount++; if (imgCount >= img.length) imgCount = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;getWindowSize();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;iml = win_width > win_height ? Math.floor((win_height - imgMaxSizeH) * 0.9) : Math.floor((win_width - imgMaxSizeW) * 0.9);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;iak = Math.floor(iml / ml); iml = ml *iak; adk = maxOp / (iak / 2);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;sX = Math.floor(Math.random()*(win_width-imgMaxSizeW-10));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;sY = Math.floor(Math.random()*(win_height-imgMaxSizeH-10));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;do {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta = Math.floor(Math.random()*360);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eX = Math.sin(theta)*iml + sX;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eY = Math.cos(theta)*iml + sY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} while (eX &lt; 0 || eY &lt; 0 || eX > (win_width-imgMaxSizeW-10) || eY > (win_height-imgMaxSizeH-10))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("imgLay",sX,sY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;showLayer("imgLay");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;alphaCount = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;slideAlphaImg("imgLay",sX,sY,eX,eY,ml,50);<BR>
+}<BR>
+<BR>
+function slideAlphaImg(layerName,sx,sy,ex,ey,dl,sp) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;var l, xp, yp, tim, z, dl2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;l=Math.abs(Math.sqrt(Math.pow((ex-sx),2)+Math.pow((ey-sy),2)));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (l > dl) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp = dl/l*(ex-sx)+sx;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ex-sx == 0) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sy&lt;ey) yp = sy+dl;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else yp = sy-dl;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else yp = (sy-ey)/(sx-ex)*xp+sy-(sy-ey)/(sx-ex)*sx;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alphaCount++; op = alphaCount*adk; op = op > maxOp ? maxOp-(op-maxOp) : op;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setAlpha("imgLay",op);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo(layerName,xp,yp);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tim = setTimeout("slideAlphaImg('"+layerName+"',"+xp+","+yp+","+ex+","+ey+","+dl+","+sp+")",sp);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hideLayer(layerName);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearTimeout(tim);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tim = setTimeout("initAlphaImgPos()",nextImgTimer);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+window.onload = initAlphaImgPos;<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT><BR>
+<BR>
+&lt;STYLE type="text/css"><BR>
+&lt;!--<BR>
+<BR>
+#imgLay {<BR>
+&nbsp;&nbsp; filter: alpha(style=0);<BR>
+}<BR>
+<BR>
+--><BR>
+&lt;/STYLE></FONT><BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY><BR>
+<BR>
+<FONT color="#009900">&lt;DIV ID="imgLay" STYLE="position:absolute; width:1; height:1; top:0; left:0;">&lt;/DIV></FONT><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+
+</BODY>
+</HTML>

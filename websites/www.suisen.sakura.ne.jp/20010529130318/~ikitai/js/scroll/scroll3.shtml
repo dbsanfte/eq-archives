@@ -1,0 +1,274 @@
+
+<HTML>
+<HEAD>
+<TITLE>部分スクロール3</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var step = 1;		// スクロールの動く間隔。１なら１ドットずつ動く
+var timer = 50;		// スクロールのスピード。1/1000秒。
+var scrollMsg = new Array();
+// 以下メッセージ設定
+// scrollMsg[?]の数字は０から始まる連番。途中の番号が抜けたり重ならなければ特に上限はありません。
+// メッセージは''で囲む。メッセージ内に ' を使いたい時は \' と書くこと。
+scrollMsg[0] = '<CENTER><FONT size=2>部分スクロール2-1を複数メッセージに対応させました。</FONT></CENTER>';
+scrollMsg[1] = '<CENTER><FONT size=2 color=red>メッセージ部分には<FONT size=3 color=blue>タグ</FONT>や<IMG src="../../images/arrow06.gif">画像も使えます。</FONT></CENTER>';
+scrollMsg[2] = '<CENTER><FONT size=2 color=blue>TABLEタグは使えません<BR>使うとMacIE５がbugでおかしくなります。<BR>MacIE５を無視するなら使っても可(笑)<BR>他のタグは殆ど使えるはずです未確認(^^;</FONT></CENTER>';
+scrollMsg[3] = '<CENTER><FONT size=2 color=green>NN6では最初の１回目だけ動作が少し変です。原因不明(><)</FONT></CENTER>';
+
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var scrolled = 0, scrollHeight, div, msgCount = 0;
+
+function startScroll() {
+    if (scrolled > -scrollHeight) {
+		scrolled -= step;
+		if (_dom == 1 || _dom == 3) div.style.top = scrolled;
+		if (_dom == 2) div.top = scrolled;
+		setTimeout("startScroll()",timer);
+	} else {
+		msgCount ++;
+		if (msgCount >= scrollMsg.length) msgCount = 0;
+		scrolled = startPos;
+		setStartPos();
+		writeScrollMsg(msgCount);
+		scrollHeight = getScrollHight();
+		showScroll();
+		setTimeout("startScroll()",timer);
+	}
+}
+
+function setStartPos() {
+	if (_dom == 1 || _dom == 3) div.style.top = startPos;
+	if (_dom == 2) div.top = startPos;
+}
+
+function writeScrollMsg(num) {
+	if (_dom == 1) {
+		while(div.hasChildNodes()) div.removeChild(div.lastChild);
+    	var range=document.createRange();
+		range.selectNodeContents(div);
+		range.collapse(true);
+		var cf=range.createContextualFragment(scrollMsg[num]);
+		div.appendChild(cf);
+	}
+	if (_dom == 2) {
+		div.document.open();
+		div.document.write(scrollMsg[num]);
+		div.document.close();
+	}
+	if (_dom == 3) div.innerHTML = scrollMsg[num];
+}
+
+function showScroll() {
+	if (_dom == 1 || _dom == 3) div.style.visibility = "visible";
+	if (_dom == 2) div.visibility = "show";
+}
+
+function getScrollHight() {
+	if (_dom == 1) return div.offsetHeight;
+	if (_dom == 2) return div.clip.height;
+	if (_dom == 3) return div.offsetHeight;
+}
+
+function getClipHight() {
+	if (_dom == 1) return parseInt(document.getElementById("clipLay").style.height);
+	if (_dom == 2) return document.layers['parentLay'].layers['clipLay'].clip.height;
+	if (_dom == 3) return document.all("clipLay").style.pixelHeight;
+}
+
+
+function init() {
+	if (_dom == 1) div = document.getElementById("scrollLay");
+	if (_dom == 2) div = document.layers['parentLay'].layers['clipLay'].layers['scrollLay'];
+	if (_dom == 3) div = document.all("scrollLay");
+	if (div) {
+		startPos = getClipHight(); scrolled = startPos;
+		setStartPos();
+		writeScrollMsg(0);
+		scrollHeight = getScrollHight();
+		showScroll();
+		startScroll();
+	}
+}
+window.onload = init;
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P><B><FONT size="6">部分スクロール3</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4/5　NN4/6</FONT></B></P>
+<HR>
+
+<!--
+600が表示幅、200が表示高、5が余白幅、615が枠幅、215が枠高、610はNN4の調整用。
+枠の幅、高さは表示部に余白×２＋５を足す。NNの調整用は表示幅＋10を指定する。
+#000000が枠の色。(注) NN4の枠の幅、高さは幅が表示部+20、高さが+10ぐらいになる。
+スクロール部の背景にBODYの背景色や背景画像と違う物を使いたいときは
+１番最初の<DIV>のstyleを次のようにしてください。
+背景色　 style="background-color:#FF0000; border:～～以下元のと同じ
+背景画像 style="background-image: url(kabegami.gif); border:～～以下元のと同じ
+-->
+<!-- ↓ここから　表示したいところへ入れる -->
+<DIV style="border:thin solid #000000; width:415px; height:85px;">
+<ILAYER name="parentLay" width="410" height="70">
+<DIV id="clipLay" style="position:absolute; width:400px; height:70px; clip:rect(0px 400px 70px 0px); margin:5px;">
+<DIV id="scrollLay" style="position:absolute; width:400px; visibility:hidden;"></DIV></DIV></ILAYER></DIV>
+<!-- ↑ここまで　表示したいところへ入れる -->
+
+<HR>
+
+<SCRIPT type="text/javascript">
+<!--
+function CopyToClipBoard() {
+textRange = document.body.createTextRange();
+textRange.moveToElementText(source);
+textRange.execCommand("Copy");
+}
+if ((navigator.appVersion.indexOf("MSIE") > 0) && (parseInt(navigator.appVersion) >= 4)) {
+document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><FONT color="#00cc00"><NOBR></FONT>&lt;HTML&gt;<BR>
+&lt;HEAD><BR>
+&lt;TITLE>部分スクロール3&lt;/TITLE><BR>
+<BR>
+&lt;SCRIPT LANGUAGE="JavaScript"><BR>
+&lt;!--<BR>
+var step = 1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // スクロールの動く間隔。１なら１ドットずつ動く<BR>
+var timer = 50;&nbsp;&nbsp;&nbsp;&nbsp; // スクロールのスピード。1/1000秒。<BR>
+var scrollMsg = new Array();<BR>
+// 以下メッセージ設定<BR>
+// scrollMsg[?]の数字は０から始まる連番。途中の番号が抜けたり重ならなければ特に上限はありません。<BR>
+// メッセージは''で囲む。メッセージ内に ' を使いたい時は \' と書くこと。<BR>
+scrollMsg[0] = '&lt;CENTER>&lt;FONT size=2>部分スクロール2-1を複数メッセージに対応させました。&lt;/FONT>&lt;/CENTER>';<BR>
+scrollMsg[1] = '&lt;CENTER>&lt;FONT size=2 color=red>メッセージ部分には&lt;FONT size=3 color=blue>タグ&lt;/FONT>や&lt;IMG src="../../images/arrow06.gif">画像も使えます。&lt;/FONT>&lt;/CENTER>';<BR>
+scrollMsg[2] = '&lt;CENTER>&lt;FONT size=2 color=blue>TABLEタグは使えません&lt;BR>使うとMacIE５がbugでおかしくなります。&lt;BR>MacIE５を無視するなら使っても可(笑)&lt;BR>他のタグは殆ど使えるはずです未確認(^^;&lt;/FONT>&lt;/CENTER>';<BR>
+scrollMsg[3] = '&lt;CENTER>&lt;FONT size=2 color=green>NN6では最初の１回目だけ動作が少し変です。原因不明(>&lt;)&lt;/FONT>&lt;/CENTER>';<BR>
+<BR>
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+var scrolled = 0, scrollHeight, div, msgCount = 0;<BR>
+<BR>
+function startScroll() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (scrolled > -scrollHeight) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrolled -= step;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) div.style.top = scrolled;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) div.top = scrolled;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("startScroll()",timer);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgCount ++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (msgCount >= scrollMsg.length) msgCount = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrolled = startPos;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setStartPos();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeScrollMsg(msgCount);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrollHeight = getScrollHight();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showScroll();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("startScroll()",timer);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function setStartPos() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) div.style.top = startPos;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) div.top = startPos;<BR>
+}<BR>
+<BR>
+function writeScrollMsg(num) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(div.hasChildNodes()) div.removeChild(div.lastChild);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var range=document.createRange();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.selectNodeContents(div);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.collapse(true);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var cf=range.createContextualFragment(scrollMsg[num]);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.appendChild(cf);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.open();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.write(scrollMsg[num]);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.close();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) div.innerHTML = scrollMsg[num];<BR>
+}<BR>
+<BR>
+function showScroll() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1 || _dom == 3) div.style.visibility = "visible";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) div.visibility = "show";<BR>
+}<BR>
+<BR>
+function getScrollHight() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return div.offsetHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return div.clip.height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return div.offsetHeight;<BR>
+}<BR>
+<BR>
+function getClipHight() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return parseInt(document.getElementById("clipLay").style.height);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return document.layers['parentLay'].layers['clipLay'].clip.height;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.all("clipLay").style.pixelHeight;<BR>
+}<BR>
+<BR>
+<BR>
+function init() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) div = document.getElementById("scrollLay");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) div = document.layers['parentLay'].layers['clipLay'].layers['scrollLay'];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) div = document.all("scrollLay");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (div) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPos = getClipHight(); scrolled = startPos;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setStartPos();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeScrollMsg(0);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scrollHeight = getScrollHight();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showScroll();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startScroll();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+window.onload = init;<BR>
+<BR>
+//--><BR>
+&lt;/SCRIPT><BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY><BR>
+&lt;P>&lt;B>&lt;FONT size="6">部分スクロール3&lt;/FONT>&lt;/B>&lt;BR><BR>
+&lt;B>&lt;FONT color="#ff0000" size="4"><BR>
+IE4/5　NN4/6&lt;/FONT>&lt;/B>&lt;/P><BR>
+&lt;HR><BR><BR>
+<FONT color="#00cc00">&lt;!--<BR>
+<B><FONT color="#ff0000">400</FONT></B>が表示幅、<B><FONT color="#ff8000">70</FONT></B>が表示高、<B><FONT color="#ff00ff">5</FONT></B>が余白幅、<B><FONT color="#0000ff">415</FONT></B>が枠幅、<B><FONT color="#660000">85</FONT></B>が枠高、<B><FONT color="#009999">410</FONT></B>はNN4の調整用。<BR>
+枠の幅、高さは表示部に余白×２＋５を足す。NNの調整用は表示幅＋10を指定する。<BR>
+</FONT><FONT color="#000000"><B>#000000</B></FONT><FONT color="#00cc00">が枠の色。(注) NN4の枠の幅、高さは幅が表示部+20、高さが+10ぐらいになる。<BR>
+スクロール部の背景にBODYの背景色や背景画像と違う物を使いたいときは<BR>
+１番最初の&lt;DIV&gt;のstyleを次のようにしてください。<BR>
+背景色　 style=&quot;background-color:#FF0000;
+border:～～以下元のと同じ<BR>
+背景画像 style=&quot;background-image: url(kabegami.gif);
+border:～～以下元のと同じ<BR>
+--&gt;<BR>
+&lt;!-- ↓ここから　表示したいところへ入れる
+--&gt;</FONT><BR>
+&lt;DIV style=&quot;border:thin solid <B>#000000</B>; width:<B><FONT color="#0000ff">415</FONT></B>px; height:<B><FONT color="#660000">85</FONT></B>px;&quot;&gt;<BR>
+&lt;ILAYER name=&quot;parentLay&quot; width=&quot;<B><FONT color="#009999">410</FONT></B>&quot; height=&quot;<B><FONT color="#ff8040">70</FONT></B>&quot;&gt;<BR>
+&lt;DIV id=&quot;clipLay&quot; style=&quot;position:absolute;
+width:<B><FONT color="#ff0000">400</FONT></B>px; height:<B><FONT color="#ff8040">70</FONT></B>px; clip:rect(0px <B><FONT color="#ff0000">400</FONT></B>px <B><FONT color="#ff8040">70</FONT></B>px 0px); margin:<B><FONT color="#ff00ff">5</FONT></B>px;&quot;&gt;<BR>
+&lt;DIV id=&quot;scrollLay&quot; style=&quot;position:absolute;
+width:<B><FONT color="#ff0000">400</FONT></B>px; visibility:hidden;&quot;&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/ILAYER&gt;&lt;/DIV&gt;<BR>
+<FONT color="#00cc00">&lt;!-- ↑ここまで　表示したいところへ入れる --></FONT><BR>
+<BR>
+&lt;HR><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+<BR>
+</NOBR></TT></DIV>
+
+
+
+</BODY>
+</HTML>
+

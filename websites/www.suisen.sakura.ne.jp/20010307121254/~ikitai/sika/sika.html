@@ -1,0 +1,897 @@
+<!-- Edit EirGrabber 2.50 -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<TITLE>SIKA?</TITLE>
+<meta name="Author" content="ShinSoft">
+<!-- meta http-equiv="Pragma" content="no-cache" -->
+<!-- please do not edit nor delete these comment!
+            「DHTML版 タイトル（普及版）」
+1. 概要
+  このスクリプトは「はぎさんの JavaScript Tips集」で使用している
+  DHTML版タイトル ページの普及版で、多少パフォーマンスは落ちますが
+  カスタマイズし易くしてあります。
+
+2. 動作範囲
+  Internet Explorer 4 又は Netscape Communicator 4 以上
+
+  ※ 一応以下の環境で確認しています。
+     Internet Explorer 4.01 日本語版 - 4.72.3110.8 (Windows98)
+     Netscape Communicator 4.51[Ja]                (Windows98)
+
+3. 著作権
+  著作権は放棄していません。はぎさん（ 萩原 真一 ）が保有しています。
+
+4. 修正履歴
+  1.0 created on 05/22/99, original
+
+5. その他
+  配布・改ざんについては気にしませんし、
+  できるだけのサポート( mailto:hagiwara@m2.sys.to.casio.co.jp )はしますが、
+  如何なる場合もサポートの義務はありません。
+
+  このスクリプトを元に修正して使用する限り、このコメントは削除しないで下さい。
+  ( このスクリプトを参考にして新たに別のものを作成される場合には、
+    この限りではありません。 )
+-->
+<style type="text/css"><!--
+/* Cross Over 用 font スタイル */
+.co { font-family:Osaka,Arial; font-weight:bold; font-size:256px; }
+/* Stage in 用 font スタイル */
+.si { font-family:Osaka,Arial; font-weight:bold; font-size:15px; color:#0066FF; }
+/* Zoom in 用 font スタイル */
+.zi0{ font-family:Osaka,Arial; font-weight:bold; font-size:10px; }
+.zi1{ font-family:Osaka,Arial; font-weight:bold; font-size:15px; }
+.zi2{ font-family:Osaka,Arial; font-weight:bold; font-size:20px; }
+.zi3{ font-family:Osaka,Arial; font-weight:bold; font-size:25px; }
+.zi4{ font-family:Osaka,Arial; font-weight:bold; font-size:30px; }
+.zi5{ font-family:Osaka,Arial; font-weight:bold; font-size:35px; }
+.zi6{ font-family:Osaka,Arial; font-weight:bold; font-size:40px; }
+.zi7{ font-family:Osaka,Arial; font-weight:bold; font-size:45px; }
+.zi8{ font-family:Osaka,Arial; font-weight:bold; font-size:50px; }
+.zi9{ font-family:Osaka,Arial; font-weight:bold; font-size:55px; }
+/* SoldShape 用 font スタイル */
+.ss { font-family:Osaka,Arial; font-weight:bold; font-size:55px; }
+/* Gradate 用 font スタイル */
+.gd { font-family:Osaka,Arial; font-weight:bold; font-size:55px; }
+/* CutIn 用 font スタイル */
+.ci { font-family:Osaka,Arial; font-weight:bold; font-size:100px; }
+/* Explanation 用 font スタイル */
+.ep { font-size:20px; font-weight:bold; }
+.exp{ font-family:Osaka,Arial; font-size:20px; font-weight:bold; text-decoration:none; }
+--></style>
+<SCRIPT language="JavaScript1.2"><!--
+// ===================================================================
+// カスタマイズ可能項目
+// ===================================================================
+// 共通項目
+
+interval=100;			// インターバルタイマ
+main_line=0.4;			// タイトルの位置( ウィンドウ上部からの%比率 )
+// ===================================================================
+// << Stage 1. Cross Over >>
+//    左右から文字が交差する
+cross_over=true;				// 実行するかどうか
+co_html1='<font %class; %c0;>Sika Is King</font>';	// 右から出てくる文字列
+co_html2='<font %class; %c0;>of the Animals</font>';	// 左から出てくる文字列
+co_class  ='co';				// 文字列のクラス名( %class; )
+co_dropshadow = true;				// ドロップシャドウを生成するか
+co_colors1=new Array('#ff6666');		// 文字列の色( co_html1の %c*; )
+co_colors2=new Array('#6699ff');		// 文字列の色( co_html2の %c*; )
+co_dx=10; co_dy=50;				// 影レイアの変異( pixel )
+co_speed=5;					// 移動スピード( degree - 180で割切れる数 )
+co_wtimer=0;					// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// << Stage 2. Stage In >>
+stage_in=true;			// 実行するかどうか
+si_chars=new Array(		// 表示する文字列( １文字単位 )
+  '<FONT color=#FF3366>S</FONT>','i','k','a','&nbsp;','<FONT color=#FF3366>I</FONT>',
+  's','&nbsp;','<FONT color=#FF3366>K</FONT>','i','n','g','&nbsp;','o','f','&nbsp;',
+  't','h','e','&nbsp;','<FONT color=#FF3366>A</FONT>','n','i','m','a','l','s'
+  );
+si_class='si';
+si_style='s';			// 移動スタイル( s:spiral in, l:line in )
+si_speed=5;			// 移動スピード( degree - 90で割切れる数 )
+si_spiral_angle=10;		// spiral in 時の回転スピード
+si_spiral_speed=10;		// spiral in 時の収束スピード
+si_hide=true;			// 動作完了後非表示にするか
+si_wtimer=0;			// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// << Stage 3. Zoom In >>
+zoom_in=true;			// 実行するかどうか
+zi_html='<font %class; %c0;>S<font %c3;>ika</font>'	// 表示する文字列
+       +'　I<font %c3;>s</font>　K<font %c3;>ing　of　the</font>'
+       +'　A<font %c3;>nimals</font></font>';
+zi_class='zi'; zi_nclass=10;	// 文字列クラス名と定義数
+zi_colors1=new Array(		// 最初の色
+  //   %c0;            %c1;            %c2;            %c3;
+  0xff,0xff,0xff, 0xff,0xff,0xff, 0xff,0xff,0xff, 0xff,0xff,0xff
+  );
+zi_colors2=new Array(		// 最後の色
+  //   %c0;            %c1;            %c2;            %c3;
+  0xff,0x33,0x66, 0xff,0xcc,0x66, 0x99,0x66,0xff, 0x00,0x66,0xff
+  );
+zi_hide=true;			// 動作完了後非表示にするか
+zi_wtimer=0;			// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// << Stage4. Solid Shape >>
+solid_shape=true;		// 実行するかどうか
+ss_html=zi_html;		// 表示する文字列
+ss_class='ss';			// 文字列クラス名
+ss_colors1=new Array(		// 本体の色
+  // %c0;       %c1;       %c2;       %c3;
+  '#ff3366', '#ffcc66', '#9966ff', '#0066ff'
+  );
+ss_colors2=new Array(		// 光沢の色
+  // %c0;       %c1;       %c2;       %c3;
+  '#ff66cc', '#ffeecc', '#eeccff', '#3399ff'
+  );
+ss_colors3=new Array(		// 影の色
+  // %c0;       %c1;       %c2;       %c3;
+  '#ff0000', '#ccaa33', '#6633cc', '#6666cc'
+  );
+ss_colors4=new Array(		// ドロップシャドウの色
+  // %c0;       %c1;       %c2;       %c3;
+  '#6699ff', '#dd66ff', '#ffcc66', '#ff6666'
+//  '#0066ff', '#dd66ff', '#ffcc66', '#ff3366'
+  );
+ss_shadow_thick=3;		// 影の部分の厚み( pixel )
+ss_drop_x=8; ss_drop_y=8;	// ドロップシャドウの変移
+ss_hide=false;			// 動作完了後非表示にするか
+ss_wtimer=0;			// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// << Stage5. Gradate >>
+gradate=true;			// 実行するかどうか
+gd_html=ss_html;		// 表示する文字列
+gd_class='gd';			// 文字列クラス名
+gd_colors1=new Array(		// 最初の色
+  //   %c0;            %c1;            %c2;            %c3;
+  0xff,0x33,0x66, 0xff,0xcc,0x66, 0x99,0x66,0xff, 0x00,0x66,0xff
+  );
+gd_colors2=new Array(		// 最後の色
+  //   %c0;            %c1;            %c2;            %c3;
+  0xff,0x66,0x99, 0xff,0xff,0x99, 0xcc,0x99,0xff, 0x33,0x99,0xff
+  );
+gd_ngradate=6;			// 階調数
+gd_dir='v';			// グラデーションの方向( 縦:'v', 横:'h' )
+gd_overrap=true;		// 最初の色のレイアを作成するかどうか
+gd_hide=false;			// 動作完了後非表示にするか
+gd_wtimer=0;			// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// << Stage6. CutIn >>
+cut_in=true;			// 実行するかどうか
+ci_html='<center><font %c0; size=5>SIKA</font><BR><font %class; %c0;>'	// 表示する文字列
+       +'鹿'
+       +'</font></center>';
+ci_class='ci';			// 文字列クラス名
+ci_colors=new Array(		// 文字列の色
+  // %c0;
+  '#ff5588'
+  );
+ci_delta_x=-50; ci_delta_y=-30;// ウィンドウ中心からの変移
+ci_steps=10;			// 移動に要するステップ数
+ci_hide=false;			// 動作完了後非表示にするか
+ci_wtimer=5;			// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// << Stage7. Explanation >>
+explanation=true;		// 実行するかどうか
+ep_html='<center><TABLE><TR><TD nowrap>'	// 表示する文字列
+       +'<font %class; %c0;>'
+       +'SIKAはEvan Quest Veeshanサーバーに存在するギルドです。<br>'
+//       +'鹿のレア度維持のため新メンバーは募集しておりません。<BR>'
+       +'鹿は生息数が非常に少なくなかなかお目にかかれません。<br>'
+       +'見かけた時点でその日の幸運を使い切ってしまうのでご注意下さい。<BR>'
+       +'鹿を見かけてもエサは与えないでください。つけ上がります。<br>'
+       +'話しかける時は<A href="http://homepage1.nifty.com/lap/eq/eq_dic.html">鹿的EQ用語辞典</A>'
+       +'を見ないと何を言ってるか分かりません。<BR>'
+       +'</font></TD></TR></TABLE></center>';
+ep_class='ep';			// 文字列クラス名
+ep_shadow=false;		// ドロップシャドウを作成するか
+ep_drop_x=5; ep_drop_y=5;	// ドロップシャドウの距離
+ep_colors1=new Array(		// ドロップシャドウの色
+  // %c0;
+  '#0066ff'
+  );
+ep_colors2=new Array(		// 文字列の色
+  // %c0;
+  '#0066ff'
+  );
+ep_delta_y=60;			// ウィンドウの中心からの距離
+ep_hide=false;			// 動作完了後非表示にするか
+ep_wtimer=0;			// 次のステップまでの待ち時間( ×interval msec )
+// ===================================================================
+// --></SCRIPT>
+<SCRIPT language="JavaScript"><!--
+function init(){}
+function cancel(){}
+// --></SCRIPT>
+<SCRIPT language="JavaScript1.2"><!--
+/*
+   このタグ内のスクリプトは DHTML用ライブラリ Lib5.js の一部です。
+   ( version 04/04/99 )
+   機能の追加・変更する場合はオリジナルの Lib5.js から必要な部分を
+   差し替えて使用することをお勧めします。
+*/
+_ie5=(navigator.appVersion.indexOf('MSIE 5')>=0);
+/* _____________________________________________________________________ */
+
+function getWindowWidth (){
+  if(document.layers)   return window.innerWidth;
+  else if(document.all) return document.body.clientWidth;
+  return 0;
+}
+function getWindowHeight(){
+  if(document.layers)   return window.innerHeight;
+  else if(document.all) return document.body.clientHeight;
+  return 0;
+}
+function getDivFromName(nm){
+  if(document.layers){
+    var s='';
+    for(var i=1; i<arguments.length; i++) s+='document.layers.'+arguments[i]+'.';
+    return eval(s+'document.layers.'+nm);
+  } else if(document.all) return document.all(nm);
+  return null;
+}
+_createLayerNo = 0;
+function createLayer(left,top,width,height,parentLayer){
+  if(document.layers){
+    var div;
+    if(parentLayer) div = new Layer(width,parentLayer);
+    else            div = new Layer(width);
+    if(height>0) div.resizeTo(width,height);
+    div.moveTo(left,top);
+    return div;
+  } else if(document.all){
+    var bd, divName = '_js_layer_'+_createLayerNo;
+    _createLayerNo++;
+    var ha=(height>0)?(';height:'+height):'';
+    if(arguments.length>4 && parentLayer)
+         bd = parentLayer;
+    else bd = document.body;
+    bd.insertAdjacentHTML('BeforeEnd',
+      '<div id="'+divName+
+      '" style="position:absolute;left:'+left+';top:'+top+
+      ';width:'+width+ha+';visibility:hidden;"></div>');
+    return document.all(divName);
+  }
+  return null;
+}
+function initDivPos(div){
+  if(document.all){
+    div.style.pixelLeft = div.offsetLeft; div.style.pixelTop = div.offsetTop;
+  }
+}
+function getDivLeft(div){
+  if(document.layers)   return div.left;
+  else if(document.all) return _ie5?div.offsetLeft:div.style.pixelLeft;
+  return null;
+}
+function getDivTop(div){
+  if(document.layers)   return div.top;
+  else if(document.all) return _ie5?div.offsetTop:div.style.pixelTop;
+  return null;
+}
+function moveDivTo(div,left,top){
+  if(document.layers) div.moveTo(left,top);
+  else if(document.all){
+    div.style.pixelLeft = left; div.style.pixelTop  = top;
+  }
+}
+function moveDivBy(div,left,top){
+  if(document.layers) div.moveBy(left,top);
+  else if(document.all){
+    if(_ie5){
+      div.style.pixelLeft = div.offsetLeft+left+0.5; div.style.pixelTop  = div.offsetTop+top +0.5;
+    }
+    else {
+      div.style.pixelLeft += left+0.5; div.style.pixelTop  += top +0.5;
+    }
+  }
+}
+function initDivSize(div){
+  if(document.all){
+    div.style.pixelWidth  = div.offsetWidth;
+    div.style.pixelHeight = div.offsetHeight;
+  }
+}
+function getDivWidth (div){
+  if(document.layers)   return div.clip.width;
+  else if(document.all) return _ie5?div.offsetWidth:div.style.pixelWidth;
+  return 0;
+}
+function getDivHeight(div){
+  if(document.layers)   return div.clip.height;
+  else if(document.all) return _ie5?div.offsetHeight:div.style.pixelHeight;
+  return 0;
+}
+function resizeDivTo(div,width,height){
+  if(document.layers) div.resizeTo(width,height);
+  else if(document.all){
+    div.style.pixelWidth = width;
+    div.style.pixelHeight = height;
+  }
+}
+function resizeDivBy(div,width,height){
+  if(document.layers) div.resizeBy(width,height);
+  else if(document.all){
+    if(_ie5){
+      div.style.pixelWidth  = div.offsetWidth +width+0.5;
+      div.style.pixelHeight = div.offsetHeight+height+0.5;
+    }
+    else {
+      div.style.pixelWidth  += width+0.5;
+      div.style.pixelHeight += height+0.5;
+    }
+  }
+}
+function setDivVisibility(div,visible){
+  if(document.layers)   div.visibility = (visible)?'inherit':'hide';
+  else if(document.all) div.style.visibility=(visible)?'inherit':'hidden';
+}
+function setDivClip(div,top,right,bottom,left){
+  if(document.layers){
+    div.clip.top = top;      div.clip.right = right;
+    div.clip.bottom = bottom;div.clip.left  = left;
+  } else if(document.all){
+    div.style.clip = 'rect('+top+' '+right+' '+bottom+' '+left+')';
+  }
+}
+function writeDivHTML(div,op,cl){
+  if(document.layers){
+    var s='';
+    if(op) div.document.open('text/html','replace');
+    for(var i=3; i<arguments.length; i++) s+=arguments[i];
+    div.document.write(s);
+    if(cl) div.document.close();
+  }
+  if(document.all){
+    var s='';
+    for(var i=3; i<arguments.length; i++) s+=arguments[i];
+    if(op) div.innerHTML = '';
+    div.insertAdjacentHTML('BeforeEnd',s);
+  }
+}
+function setDivBackgroundColor(div,color){
+  if(document.layers)   div.bgColor=color;
+  else if(document.all) div.style.backgroundColor=color;
+}
+function setDivBackgroundImage(div,url){
+  if(document.layers)   div.background.src=url;
+  else if(document.all) div.style.backgroundImage = 'url('+url+')';
+}
+function getDivZIndex(div){
+  if(document.layers)   return div.zIndex;
+  else if(document.all) return _ie5?div.currentStyle.zIndex:div.style.zIndex;
+  return 0;
+}
+function setDivZIndex(div,order){
+  if(document.layers)   div.zIndex = order;
+  else if(document.all) div.style.zIndex = order;
+}
+// ========================================================================
+// --></SCRIPT>
+<SCRIPT language="JavaScript1.2"><!--
+
+// << scheduler >>
+function Scheduler(nm){
+  this.name   = nm;
+  this.stage  = new Array();
+  this.stageNo= 0;
+  this.tid    = null;
+  this.init   = 0;
+  this.wtcount= 0;
+  return this;
+}
+Scheduler.prototype.add     = function(obj,hide,wtimer){
+  var stageNo=this.stageNo;
+  this.stage[stageNo]=obj;
+  this.stage[stageNo].need_hide=hide;
+  this.stage[stageNo].wait_timer=wtimer;
+  this.stageNo++;
+}
+Scheduler.prototype.start   = function(){ this.stageNo=0; this.tid=setTimeout(this.name+'.doStage()',interval); }
+Scheduler.prototype.cancel  = function(){ if(this.tid){ clearTimeout(this.tid); this.tid=null; } }
+Scheduler.prototype.doStage = function(){
+  if(this.init==0){
+    for(var i=0; i<this.stage.length; i++)
+      if(this.stage[i].initialize) this.stage[i].initialize();
+    this.init=1;
+  }
+  for(;;){
+    var stageNo=this.stageNo;
+    if(stageNo>=this.stage.length) break;
+    var stage=this.stage[stageNo];
+    if(this.wtcount>0){
+      this.wtcount--;
+      if(this.wtcount>0) break;
+      this.stageNo++;
+      if(stage.need_hide) stage.hide();
+      else break;
+    } else if(stage.doStep()){
+      if(stage.wait_timer>0){ this.wtcount=stage.wait_timer; break; }
+      else if(stage.need_hide){ stage.hide(); this.stageNo++; }
+      else { this.stageNo++; }
+    } else break;
+  }
+  if(this.stageNo<this.stage.length)
+    this.tid=setTimeout(this.name+'.doStage()',interval);
+  else this.tid=null;
+}
+
+ww=0; wh=0; // window width and height
+sch=null;   // schedule object
+
+function init(){
+  ww=getWindowWidth(); wh=getWindowHeight();
+  sch=new Scheduler('sch');
+  if(cross_over ) sch.add(new CrossOver(),  false,  co_wtimer);
+  if(stage_in   ) sch.add(new StageIn(),    si_hide,si_wtimer);
+  if(zoom_in    ) sch.add(new ZoomIn(),     zi_hide,zi_wtimer);
+  if(solid_shape) sch.add(new SolidShape(), ss_hide,ss_wtimer);
+  if(gradate    ) sch.add(new Gradate(),    gd_hide,gd_wtimer);
+  if(cut_in     ) sch.add(new CutIn(),      ci_hide,ci_wtimer);
+  if(explanation) sch.add(new Explanation(),ep_hide,ep_wtimer);
+  sch.start();
+}
+function cancel(){ if(sch) sch.cancel(); }
+function resize(){ if(document.layers) location.reload(); }
+
+// ===================================================================
+// << Common functions >>
+
+// number to hexadecimal
+function _num2hex(n){
+  var _hextbl='0123456789ABCDEF';
+  if(n>=255) return 'FF';
+  if(n<=0)   return '00';
+  return _hextbl.charAt(Math.floor(n/16))+_hextbl.charAt(n%16);
+}
+
+// string service functions
+function createClassString(str,cls,colors){
+  var re=/%class;/g;
+  var html=str.replace(re,' class="'+cls+'"');
+  for(var i=0; i<colors.length; i++){
+    re=new RegExp('%c'+i+';','g');
+    html=html.replace(re,' color="'+colors[i]+'"');
+  }
+  return '<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap>'
+        +html
+        +'</td></tr></table>';
+}
+function createClassChar(chr,cls,color){
+  var clsstr=(cls==null)?'':(' class="'+cls+'"');
+  var clrstr=(color==null)?'':(' color="'+color+'"');
+  var fntstr1='',fntstr2='';
+  if(clsstr!='' || clrstr!=''){
+    fntstr1='<font'+clsstr+clrstr+'>';
+    fntstr2='</font>';
+  }
+  return fntstr1+chr+fntstr2;
+}
+function createClassStringZ(str,cls,ncls,vcls,rgbss,rgbse,n){
+  var re=/%class;/g;
+  var html=str.replace(re,' class="'+(vcls?(cls+n):cls)+'"');
+  var nrgbs=Math.floor(rgbss.length/3);
+  var n1=ncls-1;
+  for(var i=0; i<nrgbs; i++){
+    var j=i*3;
+    var rs=rgbss[j],    gs=rgbss[j+1],    bs=rgbss[j+2];
+    var rd=rgbse[j]-rs, gd=rgbse[j+1]-gs, bd=rgbse[j+2]-bs;
+    var r=Math.floor(rd*n/n1)+rs; g=Math.floor(gd*n/n1)+gs; b=Math.floor(bd*n/n1)+bs;
+    re=new RegExp('%c'+i+';','g');
+    html=html.replace(re,' color="'+'#'+_num2hex(r)+_num2hex(g)+_num2hex(b)+'"');
+  }
+  return '<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap>'
+        +html
+        +'</td></tr></table>';
+}
+function createStringLayer(str){
+  var div=createLayer(0,0,1,0);
+  writeDivHTML(div,true,true,str);
+  return div;
+}
+
+// ===================================================================
+function CrossOver(){
+  this.divs1=new Array();
+  if(co_dropshadow)
+    this.divs1[1]=createStringLayer(createClassString(co_html1,co_class,co_colors2));
+  this.divs1[0]=createStringLayer(createClassString(co_html1,co_class,co_colors1));
+  this.deg1=0;
+
+  this.divs2=new Array();
+  if(co_dropshadow)
+    this.divs2[1]=createStringLayer(createClassString(co_html2,co_class,co_colors2));
+  this.divs2[0]=createStringLayer(createClassString(co_html2,co_class,co_colors1));
+  this.deg2=180;
+  return this;
+}
+CrossOver.prototype.initialize = function(){
+  var div=this.divs1[0]; initDivSize(div);
+  var w=getDivWidth(div), h=getDivHeight(div);
+  for(var i=0; i<this.divs1.length; i++){
+    div=this.divs1[i]; moveDivTo(div,-w,-h); setDivVisibility(div,true);
+  }
+  this.deg1=90;
+
+  div=this.divs2[0]; initDivSize(div);
+  w=getDivWidth(div); h=getDivHeight(div);
+  for(var i=0; i<this.divs2.length; i++){
+    div=this.divs2[i]; moveDivTo(div,-w,-h); setDivVisibility(div,true);
+  }
+  this.deg2=270;
+}
+CrossOver.prototype.doStep = function(){
+  var div=this.divs1[0];
+  var w=getDivWidth(div); h=getDivHeight(div);
+  var cx=w+co_dx, cy=wh*main_line;
+  this.deg1+=co_speed;
+  var x=Math.floor((Math.sin(this.deg1*Math.PI/180)*(ww+cx)+ww-cx)/2);
+  var y=Math.floor(cy-h/2);
+
+  moveDivTo(div,x,y);
+
+  if(this.divs1.length>1) moveDivTo(this.divs1[1],x+co_dx,y+co_dy);
+
+  div=this.divs2[0];
+  w=getDivWidth(div); h=getDivHeight(div);
+  cx=w+co_dx;
+  this.deg2-=co_speed;
+  x=Math.floor((Math.sin(this.deg2*Math.PI/180)*(ww+cx)+ww-cx)/2);
+  y=Math.floor(cy-h/2);
+  moveDivTo(div,x,y);
+
+  if(this.divs2.length>1) moveDivTo(this.divs2[1],x+co_dx,y+co_dy);
+
+  if(this.deg1>=270){
+     setDivVisibility(this.divs1[0],false);
+     if(this.divs1.length>1) setDivVisibility(this.divs1[1],false);
+     setDivVisibility(this.divs2[0],false);
+     if(this.divs2.length>1) setDivVisibility(this.divs2[1],false);
+     return true;
+  }
+  return false;
+}
+CrossOver.prototype.hide = function(){}
+
+// ===================================================================
+function StageIn(){
+  this.stageNo=0;
+  this.divs=new Array();
+  for(var i=0; i<si_chars.length; i++) this.divs[i]=createStringLayer(createClassChar(si_chars[i],si_class,null));
+  this.actions=new Array();
+  this.step=0;
+  switch(si_style){
+  case 's': this.actions[0]=this.spiralIn; break;
+  default:
+  case 'l': this.actions[0]=this.lineIn; break;
+  }
+  return this;
+}
+StageIn.prototype.initialize = function(){
+  var tw=0,ty=wh*main_line;
+  var dl=this.divs.length;
+  var mh=0;
+  for(var i=0; i<dl; i++){
+    var div=this.divs[i]; initDivSize(div);
+    var w=getDivWidth(div), h=getDivHeight(div);
+    div.tx=tw; tw+=w; div.ty=Math.floor(ty-h/2); div.tw=w;
+    if(h>mh) mh=h;
+  }
+  var tx=Math.floor((ww-tw)/2);
+  this.maxh=mh;
+  for(var i=0; i<dl; i++){
+    this.divs[i].tx+=tx;
+  }
+  this.stageNo=0;
+  this.step=0;
+}
+StageIn.prototype.doStep = function(){
+  var stageNo=this.stageNo;
+  var nactions=this.actions.length;
+  if(stageNo>=nactions) return true;
+  if(this.actions[stageNo](this)){
+    this.stageNo++; this.step=0;
+  }
+  if(this.stageNo>=nactions) return true;
+  return false;
+}
+StageIn.prototype.lineIn = function(obj){
+  var div,cc;
+  if(obj.step==0){
+    cc=Math.ceil(si_chars.length/2);
+    for(var i=0; i<obj.divs.length; i++){
+      div=obj.divs[i];
+      div.deg=i<cc?0:90;
+      moveDivTo(div,i<cc?(-getDivWidth(div)):ww,div.ty);
+      if(obj.stageNo==0) setDivVisibility(div,true);
+    }
+  }
+  var moved=false;
+  cc=Math.ceil(si_chars.length/2);
+  for(var i=0; i<cc; i++){
+    div=obj.divs[cc-i-1], deg=div.deg;
+    if(deg<90){
+      div.deg+=si_speed; if(div.deg>90) div.deg=90;
+      moveDivTo(div,Math.floor(Math.sin(div.deg*Math.PI/180)*(div.tw+div.tx)-div.tw),div.ty);
+      moved=true;
+    }
+    if((cc+i)>=obj.divs.length) break;
+    div=obj.divs[cc+i], deg=div.deg;
+    if(deg<180){
+      div.deg+=si_speed; if(div.deg>180) div.deg=180;
+      moveDivTo(div,Math.floor(Math.sin(div.deg*Math.PI/180)*(ww-div.tx)+div.tx),div.ty);
+      moved=true;
+    }
+    if(deg==90) break;
+  }
+  obj.step++;
+  if(moved==false) return true;
+  return false;
+  if(moveL==false && moveR==false) return true;
+  return false;
+}
+StageIn.prototype.altOut = function(obj){
+  if(obj.step==0){
+    for(var i=0; i<obj.divs.length; i++){
+      var div=obj.divs[i];
+      div.deg=90;
+      moveDivTo(div,div.tx,div.ty);
+      if(obj.stageNo==0) setDivVisibility(div,true);
+    }
+  }
+  var moved=false;
+  for(var i=0; i<obj.divs.length; i++){
+    var div=obj.divs[i];
+    if(div.deg<180){
+      div.deg+=si_speed;
+      if(div.deg>180) div.deg=180;
+      var r=(i%2==0)?(-div.ty-getDivHeight(div)):(wh-div.ty);
+      moveDivTo(div,div.tx,Math.floor((1-Math.sin(div.deg*Math.PI/180))*r+div.ty));
+      moved=true;
+    }
+  }
+  obj.step++;
+  if(moved) return false;
+  return true;
+}
+StageIn.prototype.spiralIn = function(obj){
+  if(obj.step==0){
+    var wl=wh*main_line;
+    var rx=ww/2, ry=(wl<(wh/2))?(wh-wl):wl;
+    obj.radius=Math.floor(Math.sqrt(rx*rx+ry*ry));
+    var dl=obj.divs.length;
+    for(var i=0; i<dl; i++){
+      var div=obj.divs[i];
+      div.deg=i*360/dl;
+      moveDivTo(div,Math.floor(obj.radius*Math.sin(div.deg*Math.PI/180))+div.tx,Math.floor(obj.radius*Math.cos(div.deg*Math.PI/180))+div.ty);
+      if(obj.stageNo==0) setDivVisibility(div,true);
+    }
+    obj.step++;
+  }
+  obj.radius-=si_spiral_speed;
+  if(obj.radius<0){ obj.step++; return true; }
+  for(var i=0; i<obj.divs.length; i++){
+    var div=obj.divs[i];
+    div.deg+=si_spiral_angle;
+    moveDivTo(div,Math.floor(obj.radius*Math.sin(div.deg*Math.PI/180))+div.tx,Math.floor(obj.radius*Math.cos(div.deg*Math.PI/180))+div.ty);
+  }
+  obj.step++;
+  return false;
+}
+StageIn.prototype.hide = function(){
+  for(var i=0; i<this.divs.length; i++) setDivVisibility(this.divs[i],false);
+}
+
+// ===================================================================
+function ZoomIn(){
+  this.divs=new Array();
+  this.step=0;
+  for(var i=0; i<zi_nclass; i++)
+    this.divs[i]=createStringLayer(createClassStringZ(zi_html,zi_class,zi_nclass,true,zi_colors1,zi_colors2,i));
+  return this;
+}
+ZoomIn.prototype.initialize = function(){
+  for(var i=0; i<this.divs.length; i++){
+    var div=this.divs[i]; initDivSize(div);
+    var w=getDivWidth(div), h=getDivHeight(div);
+    var x=Math.floor((ww-w)/2), y=Math.floor(wh*main_line-h/2);
+    moveDivTo(div,x,y);
+  }
+  this.step=0;
+}
+ZoomIn.prototype.doStep = function(){
+  if(this.step<zi_nclass){
+    if(this.step!=0) setDivVisibility(this.divs[this.step-1],false);
+    setDivVisibility(this.divs[this.step],true);
+    this.step++;
+    return false;
+  }
+  return true;
+}
+ZoomIn.prototype.hide = function(){
+  for(var i=0; i<this.divs.length; i++) setDivVisibility(this.divs[i],false);
+}
+// ===================================================================
+function SolidShape(){
+  this.divs=new Array();
+  this.step=0;
+  this.divs[0]=createStringLayer(createClassString(ss_html,ss_class,ss_colors4));
+  for(var i=0; i<ss_shadow_thick; i++)
+    this.divs[i+1]=createStringLayer(createClassString(ss_html,ss_class,ss_colors3));
+  this.divs[ss_shadow_thick+1]=createStringLayer(createClassString(ss_html,ss_class,ss_colors2));
+  this.divs[ss_shadow_thick+2]=createStringLayer(createClassString(ss_html,ss_class,ss_colors1));
+  return this;
+}
+SolidShape.prototype.initialize = function(){
+  var div=this.divs[0]; initDivSize(div);
+  var w=getDivWidth(div), h=getDivHeight(div);
+  var x=Math.floor((ww-w)/2), y=Math.floor(wh*main_line-h/2);
+  moveDivTo(div,x+ss_drop_x,y+ss_drop_y);
+  for(var i=ss_shadow_thick; i>0; i--) moveDivTo(this.divs[i],x+i,y+i);
+  moveDivTo(this.divs[ss_shadow_thick+1],x-1,y-1);
+  moveDivTo(this.divs[ss_shadow_thick+2],x,y);
+  this.step=0;
+}
+SolidShape.prototype.doStep = function(){
+  if(this.step==0)
+    setDivVisibility(this.divs[ss_shadow_thick+2],true);
+  else if(this.step==1){
+    setDivVisibility(this.divs[ss_shadow_thick+1],true);
+    setDivVisibility(this.divs[1],true);
+  } else if(this.step<=ss_shadow_thick)
+    setDivVisibility(this.divs[this.step++],true);
+  else if(this.step==ss_shadow_thick+1)
+    setDivVisibility(this.divs[0],true);
+  else return true;
+  this.step++;
+  return false;
+}
+SolidShape.prototype.hide = function(){
+  for(var i=0; i<this.divs.length; i++) setDivVisibility(this.divs[i],false);
+}
+// ===================================================================
+function Gradate(){
+  this.divs=new Array();
+  this.step=0;
+  var nl,bs;
+  var bs=gd_overrap?1:0;
+  for(var i=bs; i<gd_ngradate; i++)
+    this.divs[i-bs]=createStringLayer(createClassStringZ(gd_html,gd_class,gd_ngradate,false,gd_colors1,gd_colors2,i));
+  return this;
+}
+Gradate.prototype.initialize = function(){
+  var div=this.divs[0]; initDivSize(div);
+  var w=getDivWidth(div), h=getDivHeight(div);
+  var x=Math.floor((ww-w)/2), y=Math.floor(wh*main_line-h/2);
+  var bs=gd_overrap?1:0;
+  var ct=0,cr=w,cb=h,cl=0;
+  for(var i=0; i<this.divs.length; i++){
+    div=this.divs[i];
+    moveDivTo(div,x,y);
+    switch(gd_dir){
+    default:
+    case 'v': ct=Math.floor(h*(i+bs)/(gd_ngradate-1)); break;
+    case 'h': cl=Math.floor(w*(i+bs)/(gd_ngradate-1)); break;
+    }
+    setDivClip(div,ct,cr,cb,cl);
+  }
+  this.step=0;
+}
+Gradate.prototype.doStep = function(){
+  setDivVisibility(this.divs[this.step++],true);
+  if(this.step>=this.divs.length) return true;
+  return false;
+}
+Gradate.prototype.hide = function(){
+  for(var i=0; i<this.divs.length; i++) setDivVisibility(this.divs[i],false);
+}
+// ===================================================================
+function CutIn(){
+  this.divs=new Array();
+  for(var i=0; i<5; i++)
+    this.divs[i]=createStringLayer(createClassString(ci_html,ci_class,ci_colors));
+  return this;
+}
+CutIn.prototype.initialize = function(){
+  var div=this.divs[0]; initDivSize(div);
+  var w=getDivWidth(div), h=getDivHeight(div);
+  var x=Math.floor(ww/2+ci_delta_x-(ci_delta_x>0?w:0));
+  var y=Math.floor(wh*main_line+ci_delta_y-(ci_delta_y>0?0:h));
+  var x41=Math.floor(h/4), x43=Math.floor(h*3/4), y2=Math.floor(w/2);
+
+  moveDivTo(div,x,-h);
+  div.dx=0; div.dy=y+h; div.speedx=0; div.speedy=Math.ceil(div.dy/ci_steps);
+  setDivClip(div,0,w,x41,0);    setDivVisibility(div,true);
+
+  div=this.divs[1];
+  moveDivTo(div,ww,y);
+  div.dx=x-ww; div.dy=0; div.speedx=-Math.ceil((ww-x)/ci_steps); div.speedy=0;
+  setDivClip(div,x41,w,x43,y2); setDivVisibility(div,true);
+
+  div=this.divs[2];
+  moveDivTo(div,x,wh);
+  div.dx=0;    div.dy=y-wh; div.speedx=0; div.speedy=-Math.ceil((wh-y)/ci_steps);
+  setDivClip(div,x43,w,h,0);    setDivVisibility(div,true);
+
+  div=this.divs[3];
+  moveDivTo(div,-w,y);
+  div.dx=x+w;  div.dy=0; div.speedx=Math.ceil(div.dx/ci_steps); div.speedy=0;
+  setDivClip(div,x41,y2,x43,0); setDivVisibility(div,true);
+
+  // IE のクリップしたレイアの移動または描画に問題があるので
+  // しょうがなく不要なレイアをつくることにする
+  moveDivTo(this.divs[4],x,y);
+}
+CutIn.prototype.doStep = function(){
+  var moved=false, rest=false;
+  for(var i=0; i<4; i++){
+    var div=this.divs[i];
+    var dx=div.dx, dy=div.dy;
+    if(dx>0){
+      if(dx>div.speedx) dx=div.speedx;
+    } else if(dx<0){
+      if(dx<div.speedx) dx=div.speedx;
+    } else {
+      dx=0;
+    }
+    div.dx-=dx;
+    if(dy>0){
+      if(dy>div.speedy) dy=div.speedy;
+    } else if(dy<0){
+      if(dy<div.speedy) dy=div.speedy;
+    } else {
+      dy=0;
+    }
+    div.dy-=dy;
+    if(dx!=0 || dy!=0){ moveDivBy(div,dx,dy); moved=true; }
+    if(div.dx!=0 || div.dy!=0) rest=true;
+  }
+  if(rest) return false;
+  setDivVisibility(this.divs[4],true);
+  for(var i=0; i<4; i++) setDivVisibility(this.divs[i],false);
+  return true;
+}
+CutIn.prototype.hide = function(){
+  for(var i=0; i<this.divs.length; i++) setDivVisibility(this.divs[i],false);
+}
+// ===================================================================
+function Explanation(){
+  this.divs=new Array();
+  if(ep_shadow)
+    this.divs[1]=createStringLayer(createClassString(ep_html,ep_class,ep_colors2));
+  this.divs[0]=createStringLayer(createClassString(ep_html,ep_class,ep_colors1));
+  return this;
+}
+Explanation.prototype.initialize = function(){
+  var div=this.divs[0]; initDivSize(div);
+  var w=getDivWidth(div), h=getDivHeight(div);
+  var x=Math.floor((ww-w)/2);
+  var y=Math.floor(wh*main_line+ep_delta_y-(ep_delta_y>0?0:h));
+  if(ep_shadow) moveDivTo(this.divs[1],x+ep_drop_x,y+ep_drop_y);
+  moveDivTo(this.divs[0],x,y);
+}
+Explanation.prototype.doStep = function(){
+  if(ep_shadow) setDivVisibility(this.divs[1],true);
+  setDivVisibility(this.divs[0],true);
+  return true;
+}
+Explanation.prototype.hide = function(){
+  for(var i=0; i<this.divs.length; i++) setDivVisibility(this.divs[i],false);
+}
+// ===================================================================
+// --></SCRIPT>
+</head>
+<BODY bgColor="#FFFFFF" text="#000000" link="#0066FF" alink="#0066FF" vlink="#0066FF" scroll="no" onLoad="init();" onUnload="cancel();" onResize="resize();">
+<table border=0 cellspacing=0 width="100%" height="100%">
+<tr height="90%"><td align="center" valign="middle">
+<script language="JavaScript">
+<!--
+if(!document.all && !document.layers) document.write('IE4,NN4以上で見ていただくとまた違う物が見れます<BR>Evan Quest Veeshanサーバーに存在するギルド<br>鹿は生息数が非常に少なくなかなかお目にかかれない貴重な動物です');
+// -->
+</script><noscript>
+IE4,NN4以上でJavaScript ONで見ていただくとまた違う物が見れます<BR>Evan Quest Veeshanサーバーに存在するギルド<br>鹿は生息数が非常に少なくなかなかお目にかかれない貴重な動物です</noscript>
+</td></tr></table>
+</body></html>

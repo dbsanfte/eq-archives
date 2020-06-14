@@ -1,0 +1,302 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<TITLE>ボタンを使ったダイナミックメニュー</TITLE>
+
+<STYLE type="text/css">
+<!--
+INPUT.button {       /* menuの開閉スイッチ */
+    font-weight : bold;  /* 太文字 */
+    color : #FF3366;     /* 文字色 */
+    background-color : white;  /* 背景色 */
+}
+
+INPUT.menu {         /* Menu */
+    font-weight : bold;  /* 太文字 */
+    color : #FF3366;     /* 文字色 */
+    background-color : white;  /* 背景色 */
+}
+B.aka{color : red;}
+B.ao{color : blue;}
+B.mura{color : fuchsia;}
+B.midori{color : green;}
+-->
+</STYLE>
+
+</HEAD>
+
+<BODY>
+<P><B><FONT size="6">ボタンを使ったダイナミックメニュー</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4以上</FONT></B><BR>
+NNではメニューが開閉しない＆色が付かないですがJUMPは出来るのでNNの訪問者がいても見た目以外の問題は起きません。<A href="sample/nn.gif">NNの見た目画像</A></P>
+<HR>
+
+<FORM name="dynaMenu">
+
+<INPUT type="button" class="button" name="btn" onFocus="this.blur()" onClick="mMenu(0)" value="雪降り"><!--
+ --><INPUT type="button" class="menu" name="menu0" onFocus="this.blur()" value="バルーン" onClick="jump('../yuki/balloon.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu0" onFocus="this.blur()" value="水族館" onClick="jump('../yuki/fish.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu0" onFocus="this.blur()" value="　鳥　" onClick="jump('../yuki/tori.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu0" onFocus="this.blur()" value="水　槽" onClick="jump('../yuki/suisou.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu0" onFocus="this.blur()" value="　星　" onClick="jump('../yuki/snow2.shtml')"><BR>
+
+<INPUT type="button" class="button" name="btn" onFocus="this.blur()" onClick="mMenu(1)" value="フォーム"><!--
+ --><INPUT type="button" class="menu" name="menu1"onFocus="this.blur()" value="未入力・未選択" onClick="jump('formCheck.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu1"onFocus="this.blur()" value="入力チェック" onClick="jump('formCheck2.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu1"onFocus="this.blur()" value="出したり消したり" onClick="jump('hideForm.shtml')"><!--
+ --><INPUT type="button" class="menu" name="menu1"onFocus="this.blur()" value="生　成" onClick="jump('createForm.shtml')"><BR>
+
+<INPUT type="button" class="button" name="btn" onClick="mMenu(2)" value="イメージ" onFocus="this.blur()"><!--
+ --><INPUT type="button" class="menu" name="menu2" onFocus="this.blur()" value="ランダム" onClick="jump('../img/randomImg.shtml','_blank')"><!--
+ --><INPUT type="button" class="menu" name="menu2" onFocus="this.blur()" value="座標表示" onClick="jump('../img/map.shtml','_blank')"><!--
+ --><INPUT type="button" class="menu" name="menu2" onFocus="this.blur()" value="距離表示" onClick="jump('../img/map2.shtml','_blank')"><!--
+ --><INPUT type="button" class="menu" name="menu2" onFocus="this.blur()" value="ズーム" onClick="jump('../img/imgsizeIE.shtml','_blank')"><!--
+ --><INPUT type="button" class="menu" name="menu2" onFocus="this.blur()" value="電　飾" onClick="jump('../img/border.shtml','_blank')"><BR>
+
+</FORM>
+
+<HR>
+<P>・ソースの貼り付け方。<BR>
+　STYLEをHEAD内へ入れる。<BR>
+　FORMをメニューの表示したい箇所へ入れる。<BR>
+　SCRIPTをBODY内の最後へ入れる。<BR>
+<BR>
+・設定<BR>
+　赤の数字は０から始まる連続した番号でグループ事に同じ番号を付ける。<BR>
+　青はボタンに表示される文字<BR>
+　緑はボタンをクリックした際のJUMP先URL。<BR>
+　紫はURLを新しいWindowに出すときに付ける。<BR><BR>
+・その他注意点<BR>
+　グループ、メニューともに最低２つ無いと動きません。<BR>
+　メニューの数は余り多くしないことWindowの幅より長くなると端で折り返されます。<BR>
+　メニューの最後は&lt;!--を&lt;BR&gt;に変える。変えないと動きません。<BR>
+<BR>
+・フレームで使う場合は<BR>
+　紫の_blankを次の表の説明を見て設定する。フレームの<A href="sample/frame.html">サンプル</A></P>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR><TD>_top</TD><TD>jump('URL','_top')</TD><TD>フレームを解除して表示</TD></TR>
+<TR><TD>_self</TD><TD>jump('URL','_self')</TD><TD>同じWindow(フレーム)に表示</TD></TR>
+<TR><TD>_blank</TD><TD>jump('URL','_blank')</TD><TD>新しいWindowに表示</TD></TR>
+<TR><TD>フレーム名</TD><TD>jump('URL','フレーム名')</TD><TD>指定フレームに表示</TD></TR>
+<TR><TD>指定無し</TD><TD>jump('URL')</TD><TD>同じWindow(フレーム)に表示</TD></TR>
+</TABLE>
+
+<HR>
+<PRE>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;ボタンを使ったダイナミックメニュー&lt;/TITLE&gt;
+
+&lt;STYLE type=&quot;text/css&quot;&gt;
+&lt;!--
+INPUT.button {       /* menuの開閉スイッチ */
+    font-weight : <B>bold</B>;  /* 太文字 */
+    color : <B>#FF3366</B>;     /* 文字色 */
+    background-color : <B>white</B>;  /* 背景色 */
+}
+
+INPUT.menu {         /* Menu */
+    font-weight : <B>bold</B>;  /* 太文字 */
+    color : <B>#FF3366</B>;     /* 文字色 */
+    background-color : <B>white</B>;  /* 背景色 */
+}
+--&gt;
+&lt;/STYLE&gt;
+
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+&lt;FORM name=&quot;dynaMenu&quot;&gt;
+
+&lt;INPUT type=&quot;button&quot; class=&quot;button&quot; name=&quot;btn&quot; onClick=&quot;mMenu(<B class="aka">0</B>)&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">雪降り</B>&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">0</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">バルーン</B>&quot; onClick=&quot;jump('<B class="midori">../yuki/balloon.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">0</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">水族館</B>&quot; onClick=&quot;jump('<B class="midori">../yuki/fish.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">0</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">　鳥　</B>&quot; onClick=&quot;jump('<B class="midori">../yuki/tori.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">0</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">水　槽</B>&quot; onClick=&quot;jump('<B class="midori">../yuki/suisou.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">0</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">　星　</B>&quot; onClick=&quot;jump('<B class="midori">../yuki/snow2.shtml</B>')&quot;&gt;<B>&lt;BR&gt;</B>
+
+&lt;INPUT type=&quot;button&quot; class=&quot;button&quot; name=&quot;btn&quot; onClick=&quot;mMenu(<B class="aka">1</B>)&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">フォーム</B>&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">1</B>&quot;onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">未入力・未選択</B>&quot; onClick=&quot;jump('<B class="midori">formCheck.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">1</B>&quot;onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">入力チェック</B>&quot; onClick=&quot;jump('<B class="midori">formCheck2.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">1</B>&quot;onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">出したり消したり</B>&quot; onClick=&quot;jump('<B class="midori">hideForm.shtml</B>')&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">1</B>&quot;onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">生　成</B>&quot; onClick=&quot;jump('<B class="midori">createForm.shtml</B>')&quot;&gt;<B>&lt;BR&gt;</B>
+
+&lt;INPUT type=&quot;button&quot; class=&quot;button&quot; name=&quot;btn&quot; onClick=&quot;mMenu(<B class="aka">2</B>)&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">イメージ</B>&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">2</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">ランダム</B>&quot; onClick=&quot;jump('<B class="midori">../img/randomImg.shtml</B>'<B class="mura">,'_blank'</B>)&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">2</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">座標表示</B>&quot; onClick=&quot;jump('<B class="midori">../img/map.shtml</B>'<B class="mura">,'_blank'</B>)&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">2</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">距離表示</B>&quot; onClick=&quot;jump('<B class="midori">../img/map2.shtml</B>'<B class="mura">,'_blank'</B>)&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">2</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">ズーム</B>&quot; onClick=&quot;jump('<B class="midori">../img/imgsizeIE.shtml</B>'<B class="mura">,'_blank'</B>)&quot;&gt;&lt;!--
+ --&gt;&lt;INPUT type=&quot;button&quot; class=&quot;menu&quot; name=&quot;menu<B class="aka">2</B>&quot; onFocus=&quot;this.blur()&quot; value=&quot;<B class="ao">電　飾</B>&quot; onClick=&quot;jump('<B class="midori">../img/border.shtml</B>'<B class="mura">,'_blank'</B>)&quot;&gt;<B>&lt;BR&gt;</B>
+
+&lt;/FORM&gt;
+
+
+&lt;SCRIPT language=&quot;JavaScript1.2&quot; type=&quot;text/javascript&quot;&gt;
+&lt;!--
+
+var speed = <B>40</B>; // Menuのアニメスピード。
+var start = <B>1</B>;  // アクセス時のMenuのアニメのON OFF。1がON,0がOFF
+var anime = <B>1</B>;  // menuのアニメのON OFF。1がON,0がOFF。
+
+function mMenu(num) {
+    if (document.all) {
+        if (flag[num]) {
+            if (menuFlag[num]) { pushMenu(num,maxMenu[num]); menuFlag[num] = false; }
+            else { pullMenu(num,maxMenu[num]-1); menuFlag[num] = true; }
+        }
+    }
+}
+
+function pushMenu(num,no) {
+    flag[num] = false;
+    if (anime) {
+        if (document.dynaMenu.elements[&quot;menu&quot;+num][now[num]].style.pixelWidth &lt; menuWidth[num][now[num]] ) {
+            document.dynaMenu.elements[&quot;menu&quot;+num][now[num]].style.pixelWidth += speed;
+        } else { now[num] += 1; }
+        if (now[num] &lt; no) { tim[num] = setTimeout('pushMenu('+num+','+no+')',0); }
+        else { document.dynaMenu.btn[num].value = btnValue[num]+&quot; &lt;&quot;; now[num] = 0; clearTimeout(tim[num]); flag[num] = true; }
+    } else {
+        for (i=0; i&lt;no; i++) {
+            document.dynaMenu.elements[&quot;menu&quot;+num][i].style.pixelWidth = menuWidth[num][i];
+        }
+        document.dynaMenu.btn[num].value = btnValue[num]+&quot; &lt;&quot;; flag[num] = true;
+    }
+}
+
+function pullMenu(num,no) {
+    flag[num] = false;
+    if (anime) {
+        if (document.dynaMenu.elements[&quot;menu&quot;+num][no].style.pixelWidth &gt; 0 ) {
+            document.dynaMenu.elements[&quot;menu&quot;+num][no].style.pixelWidth -= speed;
+        } else { no -= 1; }
+        if (no &gt;= 0) { tim[num] = setTimeout('pullMenu('+num+','+no+')',0); }
+        else { document.dynaMenu.btn[num].value = btnValue[num]+&quot; &gt;&quot;; clearTimeout(tim[num]); flag[num] = true; }
+    } else {
+        for (i=0; i&lt;=no; i++) {
+            document.dynaMenu.elements[&quot;menu&quot;+num][i].style.pixelWidth = 0;
+        }
+        document.dynaMenu.btn[num].value = btnValue[num]+&quot; &gt;&quot;; flag[num] = true;
+    }
+}
+
+function jump(url,frm) {
+    if (frm==&quot;_top&quot;) top.location.href=url;
+    else if (frm==&quot;_self&quot;) self.location.href=url;
+    else if (frm==&quot;_blank&quot;) window.open(url);
+    else if (parent.frames[frm]) parent.frames[frm].location.href=url;
+    else location.href = url;
+}
+
+if (document.all) {
+    maxBtn = document.dynaMenu.btn.length; menuWidth = new Array(); var maxSize = 0;
+    maxMenu = new Array(); menuFlag = new Array(); btnValue = new Array();
+    now = new Array(); tim = new Array(); flag = new Array(); sumWidth =  new Array();
+    for (j=0; j&lt;maxBtn; j++) {
+        document.dynaMenu.btn[j].style.textAlign = &quot;right&quot;;
+        if (maxSize &lt; document.dynaMenu.btn[j].offsetWidth) maxSize = document.dynaMenu.btn[j].offsetWidth
+    }
+    for (j=0; j&lt;maxBtn; j++) {
+        var menu = document.dynaMenu.elements[&quot;menu&quot;+j]; menuWidth[j] = new Array();
+        maxMenu[j] = menu.length; menuFlag[j] = true; now[j] = 0; flag[j] = true;
+        btnValue[j] = document.dynaMenu.btn[j].value;
+        document.dynaMenu.btn[j].value += &quot; &gt;&quot;;
+        document.dynaMenu.btn[j].style.width = maxSize;
+        for (i=0; i&lt;maxMenu[j]; i++) {
+            menuWidth[j][i] = menu[i].offsetWidth;
+            menu[i].style.width = menuWidth[j][i];
+            if (!start) menu[i].style.pixelWidth = -menuWidth[j][i]%speed;
+        }
+        if (start) pullMenu(j,maxMenu[j]-1);
+    }
+}
+
+// --&gt;
+&lt;/SCRIPT&gt;
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;</PRE>
+<SCRIPT language="JavaScript1.2" type="text/javascript">
+<!--
+
+var speed = 40;	// Menuのアニメスピード。
+var start = 1;	// アクセス時のMenuのアニメのON OFF。1がON,0がOFF
+var anime = 1;	// menuのアニメのON OFF。1がON,0がOFF。
+
+function mMenu(num) {
+	if (document.all) {
+		if (flag[num]) {
+			if (menuFlag[num]) { pushMenu(num,maxMenu[num]); menuFlag[num] = false; }
+			else { pullMenu(num,maxMenu[num]-1); menuFlag[num] = true; }
+		}
+	}
+}
+
+function pushMenu(num,no) {
+	flag[num] = false;
+	if (anime) {
+		if (document.dynaMenu.elements["menu"+num][now[num]].style.pixelWidth < menuWidth[num][now[num]] ) {
+			document.dynaMenu.elements["menu"+num][now[num]].style.pixelWidth += speed;
+		} else { now[num] += 1; }
+		if (now[num] < no) { tim[num] = setTimeout('pushMenu('+num+','+no+')',0); }
+		else { document.dynaMenu.btn[num].value = btnValue[num]+" <"; now[num] = 0; clearTimeout(tim[num]); flag[num] = true; }
+	} else {
+		for (i=0; i<no; i++) {
+			document.dynaMenu.elements["menu"+num][i].style.pixelWidth = menuWidth[num][i];
+		}
+		document.dynaMenu.btn[num].value = btnValue[num]+" <"; flag[num] = true;
+	}
+}
+
+function pullMenu(num,no) {
+	flag[num] = false;
+	if (anime) {
+		if (document.dynaMenu.elements["menu"+num][no].style.pixelWidth > 0 ) {
+			document.dynaMenu.elements["menu"+num][no].style.pixelWidth -= speed;
+		} else { no -= 1; }
+		if (no >= 0) { tim[num] = setTimeout('pullMenu('+num+','+no+')',0); }
+		else { document.dynaMenu.btn[num].value = btnValue[num]+" >"; clearTimeout(tim[num]); flag[num] = true; }
+	} else {
+		for (i=0; i<=no; i++) {
+			document.dynaMenu.elements["menu"+num][i].style.pixelWidth = 0;
+		}
+		document.dynaMenu.btn[num].value = btnValue[num]+" >"; flag[num] = true;
+	}
+}
+
+function jump(url,frm) {
+	if (frm=="_top") top.location.href=url;
+	else if (frm=="_self") self.location.href=url;
+	else if (frm=="_blank") window.open(url);
+	else if (parent.frames[frm]) parent.frames[frm].location.href=url;
+	else location.href = url;
+}
+
+if (document.all) {
+	maxBtn = document.dynaMenu.btn.length; menuWidth = new Array(); var maxSize = 0;
+	maxMenu = new Array(); menuFlag = new Array(); btnValue = new Array();
+	now = new Array(); tim = new Array(); flag = new Array(); sumWidth =  new Array();
+	for (j=0; j<maxBtn; j++) {
+		document.dynaMenu.btn[j].style.textAlign = "right";
+		if (maxSize < document.dynaMenu.btn[j].offsetWidth) maxSize = document.dynaMenu.btn[j].offsetWidth
+	}
+	for (j=0; j<maxBtn; j++) {
+		var menu = document.dynaMenu.elements["menu"+j]; menuWidth[j] = new Array();
+		maxMenu[j] = menu.length; menuFlag[j] = true; now[j] = 0; flag[j] = true;
+		btnValue[j] = document.dynaMenu.btn[j].value;
+		document.dynaMenu.btn[j].value += " >";
+		document.dynaMenu.btn[j].style.width = maxSize;
+		for (i=0; i<maxMenu[j]; i++) {
+			menuWidth[j][i] = menu[i].offsetWidth;
+			menu[i].style.width = menuWidth[j][i];
+			if (!start) menu[i].style.pixelWidth = -menuWidth[j][i]%speed;
+		}
+		if (start) pullMenu(j,maxMenu[j]-1);
+	}
+}
+
+// -->
+</SCRIPT>
+
+</BODY>
+</HTML>

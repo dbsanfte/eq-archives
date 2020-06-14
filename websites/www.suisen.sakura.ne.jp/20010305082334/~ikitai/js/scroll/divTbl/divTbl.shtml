@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<TITLE>表分割スクロール</TITLE>
+
+</HEAD>
+
+<SCRIPT language=javascript1.2>
+<!--
+
+var nn = document.layers ? true : false;
+var ie = document.all ? true : false;
+
+//////////////// 設定箇所 ////////////////
+var top_left = "0.html";		// 左上のHTML (何も表示しないならabout:blank)
+var top_right = "1.html"		// 右上のHTML
+var bottom_left = "2.html";		// 左下のHTML
+var bottom_right = "3.html";	// 右下のHTML
+
+var top_height = 50;			// 右上の表の高さ
+var bottom_width = 100;			// 左下の表の幅
+//////////////// ここまで ////////////////
+
+if (ie) { top_height += 5; bottom_width += 5; }
+if (nn) { top_height += 30; bottom_width += 30; }
+
+var sb = "";
+if (ie) sb = ' scrolling="NO"';
+
+function frmScroll(){
+	if (nn) {
+		scroll1[0]=frames[3].pageXOffset;
+		scroll1[1]=frames[1].pageXOffset;
+		scroll1[2]=frames[3].pageYOffset;
+		scroll1[3]=frames[2].pageYOffset;
+	}
+	if (ie) {
+		scroll1[0]=frames[3].document.body.scrollLeft;
+		scroll1[1]=frames[1].document.body.scrollLeft;
+		scroll1[2]=frames[3].document.body.scrollTop;
+		scroll1[3]=frames[2].document.body.scrollTop;
+	}
+	if(scroll1[0]!=scroll2[0]){
+		frames[1].scrollTo(scroll1[0],0);
+		scroll2[0]=scroll1[0];
+		scroll2[1]=scroll1[0];
+	} else {
+		if(scroll1[1]!=scroll2[1]){
+			frames[3].scrollTo(scroll1[1],0);
+			scroll2[0]=scroll1[1];
+			scroll2[1]=scroll1[1];
+		}
+	}
+	if(scroll1[2]!=scroll2[2]){
+		frames[2].scrollTo(0,scroll1[2]);
+		scroll2[2]=scroll1[2];
+		scroll2[3]=scroll1[2];
+	} else {
+		if(scroll1[3]!=scroll2[3]){
+			frames[3].scrollTo(0,scroll1[3]);
+			scroll2[2]=scroll1[3];
+			scroll2[3]=scroll1[3];
+		}
+	}
+	setTimeout("frmScroll()",10);
+}
+
+function init(){
+	if(nn | ie){
+		scroll1 = new Array(0,0,0,0);
+		scroll2 = new Array(0,0,0,0);
+		frmScroll();
+	}
+}
+
+window.onload=init;
+
+var frm = '<FRAMESET rows="'+top_height+',*" frameborder="0" BORDER="0">';
+frm += '<FRAMESET cols="'+bottom_width+',*" frameborder="0" BORDER="0">';
+frm += '<FRAME src="'+top_left+'"'+sb+'>';
+frm += '<FRAME src="'+top_right+'"'+sb+'>';
+frm += '</FRAMESET>';
+frm += '<FRAMESET cols="'+bottom_width+',*" frameborder="0" BORDER="0">';
+frm += '<FRAME src="'+bottom_left+'"'+sb+'>';
+frm += '<FRAME src="'+bottom_right+'">';
+frm += '</FRAMESET></FRAMESET>';
+
+document.write(frm);
+
+// -->
+</SCRIPT>
+
+</HTML>

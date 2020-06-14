@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>時間によって背景・文字色を変更</TITLE>
+
+<SCRIPT language="JavaScript">
+<!--
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+day = new Date();
+hour = day.getHours();
+
+writeStyle(0,3,'red','#0000ff','#990099','#ff0000','lightgreen','images/wall1.gif',1,0,'','');
+writeStyle(3,6,'#0000FF','#0000ff','#990099','#ff0000','#FFFFFF','images/wall2.gif',0,1,'','');
+writeStyle(6,9,'#000000','#0000ff','#990099','#ff0000','#FFFFFF','images/wall3.gif',2,1,'center top','');
+writeStyle(9,12,'#4f0000','#0000ff','#990099','#ff0000','#FFFFFF','images/back02.gif',2,0,'','10px 10px 10px 50px');
+writeStyle(12,15,'#000000','#0000ff','#990099','#ff0000','#FFFFFF','images/back11.gif',2,1,'','10px 10px 10px 100px');
+writeStyle(15,18,'#FF00CC','#0000ff','#990099','#ff0000','#FFFFFF','images/wall6.gif',0,1,'','');
+writeStyle(18,21,'#000000','#0000ff','#990099','#ff0000','#FFFFFF','images/wall7.gif',3,1,'center center','');
+writeStyle(21,24,'#FFFFFF','#00ffff','#00ff00','#ffff00','#000000','images/back03.gif',1,1,'','');
+
+function writeStyle(stime,etime,txt,link,vlink,alink,bgclr,bgimg,rpt,ath,pos,mgn) {
+	if (hour >= stime && hour < etime) {
+		if (_dom) {
+			document.write('<STYLE type="text/css">');
+			document.write('BODY,TH,TD{color:'+ txt + '}');	// TH TDはNN4のBug回避
+			document.write('BODY{background:' + bgclr + ' url(' + bgimg + ')');
+			if (rpt==1) document.write(' repeat-x');
+			if (rpt==2) document.write(' repeat-y');
+			if (rpt==3) document.write(' no-repeat');
+			if (ath==1) document.write(' fixed');
+			if (pos) document.write(' ' + pos);
+			document.write(';');
+			if (mgn) document.write('margin:' + mgn + ';');
+			document.write('}');
+			document.write('A:link{color:' + link + '}');
+			document.write('A:visited{color:' + vlink + '}');
+			document.write('A:active{color:' + alink + '}');
+			document.write('</STYLE>');
+		} else {
+			document.write('<BODY TEXT="' + txt + '" LINK="' + link + '" VLINK="' + vlink +
+			'" ALINK="' + alink + '" BGCOLOR="' + bgclr + '" BACKGROUND="' + bgimg + '">');
+		}
+	}
+}
+
+function resize(){ if(_dom==2) location.reload(); }
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onResize="resize();">
+<H1>時間によって背景変更</H1>
+<HR>
+<P>背景画像を横一列、縦一列、中央に1枚のみ、スクロールしないなどが出来ます。</P>
+<HR>
+<H2>設定の説明</H2>
+<TABLE border="1" cellpadding="3">
+
+    <TR>
+      <TD colspan="2"><B>ソースの太文字部分のように以下の書式で必要な数だけ複数書き込む。<BR>
+      時間が重なったり空きが出来たりしないように注意して設定してください。<BR>
+      writeStyle(sTime,eTime,'Text','Link','vLink','aLink','bgColor','bgImage',repeat,attachment,'Position','margin');</B></TD>
+    </TR>
+    <TR><TD>sTime,eTime</TD><TD>開始時間,終了時間　時間帯が他のと被らないように注意してください。<BR>
+      1,5で１時00分０秒から４時59分59秒までになります。</TD></TR>
+<TR><TD>Text</TD><TD>NN2 IE2以上に対応。<BR>
+      テキストカラー　&lt;BODY&gt;のTEXTに同じ<BR>
+      RGBや色の名前で指定する。　例）'#000000'　'Black'</TD></TR>
+<TR><TD>Link</TD><TD>NN2 IE2以上に対応。<BR>
+      リンクカラー　&lt;BODY&gt;のLINKに同じ<BR>
+      RGBや色の名前で指定する。　例）'#000000'　'Black'</TD></TR>
+<TR><TD>vLink</TD><TD>NN2 IE2以上に対応。<BR>
+      訪問済みリンクカラー　&lt;BODY&gt;のVLINKに同じ<BR>
+      RGBや色の名前で指定する。　例）'#000000'　'Black'</TD></TR>
+<TR><TD>aLink</TD><TD>NN2 IE2以上に対応。<BR>
+      クリック中のリンクカラー　&lt;BODY&gt;のALINKに同じ<BR>
+      RGBや色の名前で指定する。　例）'#000000'　'Black'</TD></TR>
+<TR><TD>bgColor</TD><TD>NN2 IE2以上に対応。<BR>
+      背景色　&lt;BODY&gt;のBGCOLORに同じ<BR>
+      RGBや色の名前で指定する。　例）'#000000'　'Black'</TD></TR>
+<TR><TD>bgImage</TD><TD>NN2 IE2以上に対応。<BR>
+      背景画像のURL　&lt;BODY&gt;のBACKGROUNDに同じ<BR>
+      例）'wall1.gif'　'images/wall1.gif'</TD></TR>
+<TR><TD>repeat</TD><TD>IE4 NN4以上に対応。それ以外は0と同じになる。<BR>
+      背景画像の並べ方。<BR>
+      0,1,2,3の何れかで指定。0=全面　1=横に並べる　2=縦に並べる　3=１枚のみ表示</TD></TR>
+<TR><TD>attachment</TD><TD>IE4 NN6以上に対応。それ以外は0と同じになる。<BR>
+      スクロールしたときに画像をスクロールするかし無いか。<BR>
+      0か１を指定する。　0=する 1=しない</TD></TR>
+<TR><TD>position</TD><TD>IE4 NN6以上に対応。それ以外は指定しないのと同じになる。<BR>
+      背景画像の始まる位置。　0～100%,left,center,right,top,center,bottomで指定。<BR>
+      横　縦の順でスペースで区切り指定する。１つだけ指定した場合は横の値と解釈され縦は50%になります。<BR>
+      指定しない場合は '' にする<BR>
+      例）'center center'　'50% 50%'</TD></TR>
+<TR><TD>margin</TD><TD>IE4 NN4以上に対応。それ以外は指定しないのと同じになる。<BR>
+      マージン（余白）の指定。数値,0～100%をスペースで区切り指定する。<BR>
+      ・１つの場合　上下左右にその値が設定されます。<BR>
+      ・２つの場合　１つめが上下、２つめが左右に設定されます。<BR>
+      ・３つの場合　各値が上・右・下に設定され、左は右と同様に設定されます。<BR>
+      ・４つの場合　各値が上・右・下・左の順で設定されます。<BR>
+      指定しない場合は '' にする。<BR>
+      例）'5%'　'2cm 2cm'　'1px 3px 5px 7px'</TD></TR>
+    <TR>
+      <TD>サンプル</TD>
+      <TD><A href="sample/0.html">0- 3</A>　　<A href="sample/3.html">3-6</A>　　<A href="sample/6.html">6-9</A>　　<A href="sample/9.html">9-12</A><BR>
+      <A href="sample/12.html">12-15</A>　　<A href="sample/15.html">15-18</A>　　<A href="sample/18.html">18-21</A>　　<A href="sample/21.html">21-24</A>　　格好悪いサンプルでゴメンね(&gt;&lt;)</TD>
+    </TR>
+  </TABLE>
+<P>動作確認はWindows98 NN4.7 IE4.0 MozillaM17で行いました。その為、表記の対応バージョンは多少当てにならないかも(^^;<BR>
+またIE4以上になってるものでも実際にはIE3から使えるのもありますが条件分岐が大変だったので一律IE４以上の場合に使われるようにしました。</P>
+<HR>
+<H2>
+ソース</H2>
+<PRE>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;時間によって背景を変更&lt;/TITLE&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;
+&lt;!--
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+
+day = new Date();
+hour = day.getHours();
+
+<B>writeStyle(0,3,'red','#0000ff','#990099','#ff0000','lightgreen','wall1.gif',1,0,'','');
+writeStyle(3,6,'#0000FF','#0000ff','#990099','#ff0000','#FFFFFF','wall2.gif',0,1,'','');
+writeStyle(6,9,'#000000','#0000ff','#990099','#ff0000','#FFFFFF','wall3.gif',2,1,'center top','');
+writeStyle(9,12,'#4f0000','#0000ff','#990099','#ff0000','#FFFFFF','back02.gif',2,0,'','10px 10px 10px 50px');
+writeStyle(12,15,'#000000','#0000ff','#990099','#ff0000','#FFFFFF','back11.gif',2,1,'','10px 10px 10px 100px');
+writeStyle(15,18,'#FF00CC','#0000ff','#990099','#ff0000','#FFFFFF','wall6.gif',0,1,'','');
+writeStyle(18,21,'#000000','#0000ff','#990099','#ff0000','#FFFFFF','wall7.gif',3,1,'center center','');
+writeStyle(21,24,'#FFFFFF','#00ffff','#00ff00','#ffff00','#000000','back03.gif',1,1,'','');</B>
+
+function writeStyle(stime,etime,txt,link,vlink,alink,bgclr,bgimg,rpt,ath,pos,mgn) {
+  if (hour &gt;= stime &amp;&amp; hour &lt; etime) {
+    if (_dom) {  // IE4 NN4以上
+      document.write('&lt;STYLE type=&quot;text/css&quot;&gt;');
+      document.write('BODY,TH,TD{color:'+ txt + '}'); // TH TDはNN4のBug回避
+      document.write('BODY{background:' + bgclr + ' url(' + bgimg + ')');
+      if (rpt==1) document.write(' repeat-x');
+      if (rpt==2) document.write(' repeat-y');
+      if (rpt==3) document.write(' no-repeat');
+      if (ath==1) document.write(' fixed');
+      if (pos) document.write(' ' + pos);
+      document.write(';');
+      if (mgn) document.write('margin:' + mgn + ';');
+      document.write('}');
+      document.write('A:link{color:' + link + '}');
+      document.write('A:visited{color:' + vlink + '}');
+      document.write('A:active{color:' + alink + '}');
+      document.write('&lt;/STYLE&gt;');
+    } else {  // IE4 NN4未満
+      document.write('&lt;BODY TEXT=&quot;' + txt + '&quot; LINK=&quot;' + link + '&quot; VLINK=&quot;' + vlink +
+      '&quot; ALINK=&quot;' + alink + '&quot; BGCOLOR=&quot;' + bgclr + '&quot; BACKGROUND=&quot;' + bgimg + '&quot;&gt;');
+    }
+  }
+}
+
+function resize(){ if(_dom==2) location.reload(); }  // NN4のBug回避
+
+//--&gt;
+&lt;/SCRIPT&gt;
+&lt;/HEAD&gt;
+&lt;BODY onResize=&quot;resize();&quot;&gt;
+
+
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;</PRE>
+</BODY>
+</HTML>

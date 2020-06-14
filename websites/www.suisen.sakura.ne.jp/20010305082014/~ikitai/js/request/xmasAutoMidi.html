@@ -1,0 +1,653 @@
+<HTML>
+<HEAD>
+<TITLE>サンタ + AUTO MIDI + Link</TITLE>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+var midi = new Array()
+
+// 上から順に
+// MIDIのパス
+// 曲の長さ(秒)
+// 曲のファイルサイズ(KB)
+// 曲のタイトル
+// 著作権１行目
+// 著作権２行目
+
+midi[0] = new Array(
+	'../music/midi/05-0098.mid',
+	55,
+	3,
+	'Tiny Bells #2',
+	'Comp. by Teruyasu Oishi<BR><A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web</A>',
+	'(C) Teruyasu Oishi 1997 All right reserved.'
+);
+
+midi[1] = new Array(
+	'../music/midi/05-0099.mid',
+	108,
+	6,
+	'Tiny Bells #3',
+	'Comp. by Teruyasu Oishi<BR><A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web</A>',
+	'(C) Teruyasu Oishi 1997 All right reserved.'
+);
+
+midi[2] = new Array(
+	'../music/midi/05-0100.mid',
+	78,
+	4,
+	'Tiny Bells #4',
+	'Comp. by Teruyasu Oishi<BR><A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web</A>',
+	'(C) Teruyasu Oishi 1997 All right reserved.'
+);
+
+midi[3] = new Array(
+	'../music/midi/05-0105.mid',
+	53,
+	2,
+	'O Come, All Ye Haithful',
+	'Comp. by Teruyasu Oishi<BR><A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web</A>',
+	'(C) Teruyasu Oishi 1997 All right reserved.'
+);
+
+midi[4] = new Array(
+	'../music/midi/05-0109.mid',
+	45,
+	4,
+	'Tannenbaum (O Christmas Tree)',
+	'Comp. by Teruyasu Oishi<BR><A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web</A>',
+	'(C) Teruyasu Oishi 1997 All right reserved.'
+);
+
+midi[5] = new Array(
+	'../music/midi/05-0087.mid',
+	165,
+	50,
+	'Starry Night',
+	'Comp. by Teruyasu Oishi<BR><A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web</A>',
+	'(C) Teruyasu Oishi 1997 All right reserved.'
+);
+
+// 次の２行は最初に鳴らすMIDIの設定です。どちらかの使わない方の先頭に//をいれる。
+// １行目は曲を指定。上のmidi[?]の数字を指定する。
+// ２行目は最初の曲がランダムに選ばれます。
+//var midiCount = 0;
+var midiCount = Math.floor(Math.random() * midi.length);
+
+
+// この時間はMIDIファイルのＤＬ時間です。
+// 曲が終わらないうちに次の曲に行くなら適当に増やしてください。
+// 転送速度の遅い夜などを考えて少し長めの方が良いかも
+var late = midi[midiCount][2]/3+3;	// ファイルサイズ÷3KB+3秒
+
+
+// 以下サンタの設定。
+
+var move = true;	// スクロールに合わせて動かすか？　動かす:true 動かさない:false
+var santaImg_r = "../anime/images/sori_anime_01R.gif"	// 右向きサンタの画像
+var santaImg_l = "../anime/images/sori_anime_01.gif"		// 左向きサンタの画像
+var santaSizeW = 100;	// 画像の横幅
+var santaSizeH = 44;	// 画像の縦幅
+var santaStep = 3;		// サンタの動く早さ
+var timing = 1;			// 落とすタイミング 0:ランダム　1:一定
+var drop = 400;			// timing = 0の場合に指定。落とす確率。低いほどよく落とす。
+var toyTimer = 2000;	// timing = 1の場合に指定。落とす間隔。1000=１秒。
+var toyNo = 20;			// １画面内に落とす最大数。
+var linkUrl = "../anime/xmas.shtml";	// URL
+var linkNo = 0;		// どの画像にリンクを張るか？。
+toy = new Array();
+toy[0] = "../anime/images/xmasico2.gif";		// 落とす画像のパス
+toy[1] = "../anime/images/xmasico5.gif";		// hosi[?]の数字は0から始まる連番。
+toy[2] = "../anime/images/xmasico7.gif";		// 画像の枚数分用意する。
+toy[3] = "../anime/images/xmasico8.gif";
+toy[4] = "../anime/images/xmasico11.gif";
+toy[5] = "../anime/images/xmasico12.gif";
+toy[6] = "../anime/images/xmasico15.gif";
+toy[7] = "../anime/images/xmasico16.gif";
+
+
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var starCount = 0, j = 0, i, dx, xp, yp, am, stx, sty, sclX = 0, sclY = 0;
+dx = new Array(); xp = new Array(); yp = new Array(); toyMove = new Array;
+am = new Array(); stx = new Array(); sty = new Array();
+
+function getWindowSize() {
+    if(_dom == 1 || _dom == 2) {
+        win_width = self.innerWidth;
+        win_height = self.innerHeight;
+    }
+    if (_dom == 3) {
+        win_width = document.body.clientWidth;
+        win_height = document.body.clientHeight;
+    }
+}
+
+function getScrollPosX() {
+    if (_dom == 1) return scrollX;
+    if (_dom == 2) return pageXOffset;
+    if (_dom == 3) return document.body.scrollLeft
+}
+
+function getScrollPosY() {
+    if (_dom == 1) return scrollY;
+    if (_dom == 2) return pageYOffset;
+    if (_dom == 3) return document.body.scrollTop;
+}
+
+function showLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";
+    if (_dom == 2) document.layers[layerName].visibility = "show";
+    if (_dom == 3) document.all(layerName).style.visibility = "visible";
+}
+
+function hideLayer(layerName){
+    if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";
+    if (_dom == 2) document.layers[layerName].visibility = "hide";
+    if (_dom == 3) document.all(layerName).style.visibility = "hidden";
+}
+
+function moveLayerTo(layerName, x, y){
+    if (_dom == 1) {
+        document.getElementById(layerName).style.left = x;
+        document.getElementById(layerName).style.top = y;
+    }
+    if (_dom == 2) {
+        document.layers[layerName].left = x;
+        document.layers[layerName].top = y;
+    }
+    if (_dom == 3) {
+        document.all(layerName).style.pixelLeft = x;
+        document.all(layerName).style.pixelTop = y;
+    }
+}
+
+function moveSanta() {
+	way = santaStep>0 ? 0:1;
+	if (move) sclY = getScrollPosY(); else sclY = 0;
+    if ((santaX < win_width+10 && !way) || (santaX > 0-santaSizeW-10 && way)) {
+		santaX += santaStep;
+		moveLayerTo("santa"+way,santaX,santaY+sclY);
+		if (way) dropWidth = win_width-80-santaSizeW; else dropWidth = win_width-80;
+		if (santaX > 30 && santaX < dropWidth) {
+			now = new Date(); time = now.getTime(); var ran = Math.random()*drop;
+			if (((time-oldTime > toyTimer && timing) || (ran < 10 && !timing)) && !toyMove[starCount]) {
+				if (!way) { xp[starCount] = santaX; yp[starCount] = santaY+santaSizeH; }
+				else { xp[starCount] = santaX+santaSizeW; yp[starCount] = santaY+santaSizeH; }
+				moveLayerTo("toy"+starCount,xp[starCount], yp[starCount]+sclY);
+				toyMove[starCount] = true; oldTime = time; starCount++;
+			}
+			if (starCount >= toyNo-1) starCount = 0;
+		}
+	} else {
+		hideLayer("santa"+way); getWindowSize(); santaStep *= -1;
+		way = santaStep>0 ? 0:1; showLayer("santa"+way);
+	    santaY =  Math.floor(Math.random()*(win_height/3-santaSizeH-5));
+	}
+	setTimeout("moveSanta()",50);
+}
+
+function dropToy() {
+	for (i = 0; i < toyNo; ++ i) {
+		if (toyMove[i]) {
+			yp[i] += sty[i];
+			if (yp[i] > win_height-20) {
+				xp[i] = -100; yp[i] = -100; toyMove[i] = false;
+				stx[i] = 0.02 + Math.random()/10;
+				sty[i] = 0.7 + Math.random();
+			}
+			dx[i] += stx[i];
+			moveLayerTo("toy"+i, xp[i]+am[i]*Math.sin(dx[i])+sclX, yp[i]+sclY);
+		}
+	}
+	setTimeout("dropToy()", 30);
+}
+
+var ie = (document.all) ? 1 : 0;
+var nc = (document.layers) ? 1 : 0;
+
+function writeDiv(mes) {
+	if (ie) document.all.midi2.innerHTML=mes;
+	if (nc) {
+		div = document.layers.midi1.document.layers.midi2;
+		div.document.open();
+		div.document.write(mes);
+		div.document.close();
+	}
+}
+
+function midiPlay() {
+	if (midiCount < midi.length) {
+		str =
+		'<TABLE border=1 width="300" height="100" bgcolor="#000ddd"><TR><TD align="center">'+
+		'<P><B>「'+ midi[midiCount][3] +'」</B></P>'+               // タイトル
+		'<EM><SMALL>'+ midi[midiCount][4] +'</SMALL></EM><BR>'+     // 著作権１行目
+		'<EM><SMALL>'+ midi[midiCount][5] +'</SMALL></EM>'+         // 著作権２行目
+		'</TD></TR></TABLE>';
+		if (navigator.appName == "Netscape") {
+        	str +=
+        	'<EMBED src="'+ midi[midiCount][0] +
+			'" hidden="true" autostart="true" loop="false" repeat="false">';
+        } else {
+        	str += '<BGSOUND SRC="' + midi[midiCount][0] + '" loop="1">';
+        }
+		writeDiv(str);
+		midiCount++;
+		tID = setTimeout("midiPlay()",(midi[midiCount-1][1] + late) * 1000);
+	} else {
+		midiCount = 0;
+		midiPlay();
+	}
+}
+
+function init() {
+	midiPlay();
+	now = new Date(); oldTime = now.getTime();
+	getWindowSize();
+    santaY =  Math.floor(Math.random()*(win_height/3-santaSizeH-5));
+    santaX = -santaSizeW;
+	moveLayerTo("santa0",santaX,santaY);
+	moveLayerTo("dmy",win_width+20+santaSizeW,win_height+20)
+	moveSanta();
+	dropToy();
+}
+
+window.onload = init;
+
+// -->
+</SCRIPT>
+
+<STYLE type="text/css">
+/* 300がメッセージの幅、100が高さ。*/
+.midi {width:300px; height:100px;clip:rect(0px 300px 100px 0px);}
+#midi1 {position:relative;}
+#midi2 {position:absolute;}
+</STYLE>
+
+
+</HEAD>
+<BODY bgColor="#000000" text="#FFFFFF">
+
+<B><FONT size="6">サンタ + AUTO MIDI + Link</FONT><BR>
+<FONT color="#ff0000" size="4">IE4/5　NN4/6</FONT></B>
+<HR>
+<P><B><FONT color="#ffff00" size="4">このScriptの画像は「<A href="http://www.alles.or.jp/~queen/" style="color : #ffffff;text-decoration : none;">Queen's　FREE　World</A>」さんのフリー素材を使用してます。<A href="http://www.alles.or.jp/~queen/" target="_blank"><IMG src="../anime/images/q_link_05w.gif" width="88" height="31" border="0"></A></FONT><BR>
+<FONT color="#ffff00" size="4">
+画像はこのPAGEからはダウンロードしないで「<A href="http://www.alles.or.jp/~queen/" style="color : #ffffff;text-decoration : none;">Queen's　FREE　World</A>」からダウンロードしてください。</FONT></B></P>
+<HR>
+<CENTER>
+
+<!-- 次の３行を表示する場所に入れる。300がメッセージの幅、100がの高さ。上のStyleの設定と同じ数字にすること-->
+<TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="300" height="100" valign="top">
+<DIV id="midi1"><SPAN id="midi2" class="midi"></SPAN></DIV>
+</TD></TR></TABLE>
+
+</CENTER>
+<HR>
+
+<SCRIPT type="text/javascript">
+<!--
+function CopyToClipBoard() {
+textRange = document.body.createTextRange();
+textRange.moveToElementText(source);
+textRange.execCommand("Copy");
+}
+if ((navigator.appVersion.indexOf("MSIE") > 0) && (parseInt(navigator.appVersion) >= 4)) {
+document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE>サンタ + AUTO MIDI + Link&lt;/TITLE><BR>
+<BR>
+&lt;SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript"><BR>
+&lt;!--<BR>
+var midi = new Array()<BR>
+<BR>
+// 上から順に<BR>
+// MIDIのパス<BR>
+// 曲の長さ(秒)<BR>
+// 曲のファイルサイズ(KB)<BR>
+// 曲のタイトル<BR>
+// 著作権１行目<BR>
+// 著作権２行目<BR>
+<BR>
+midi[0] = new Array(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'../music/midi/05-0098.mid',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;55,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;3,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Tiny Bells #2',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Comp. by Teruyasu Oishi&lt;BR>&lt;A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web&lt;/A>',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'(C) Teruyasu Oishi 1997 All right reserved.'<BR>
+);<BR>
+<BR>
+midi[1] = new Array(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'../music/midi/05-0099.mid',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;108,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;6,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Tiny Bells #3',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Comp. by Teruyasu Oishi&lt;BR>&lt;A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web&lt;/A>',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'(C) Teruyasu Oishi 1997 All right reserved.'<BR>
+);<BR>
+<BR>
+midi[2] = new Array(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'../music/midi/05-0100.mid',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;78,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;4,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Tiny Bells #4',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Comp. by Teruyasu Oishi&lt;BR>&lt;A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web&lt;/A>',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'(C) Teruyasu Oishi 1997 All right reserved.'<BR>
+);<BR>
+<BR>
+midi[3] = new Array(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'../music/midi/05-0105.mid',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;53,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;2,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'O Come, All Ye Haithful',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Comp. by Teruyasu Oishi&lt;BR>&lt;A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web&lt;/A>',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'(C) Teruyasu Oishi 1997 All right reserved.'<BR>
+);<BR>
+<BR>
+midi[4] = new Array(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'../music/midi/05-0109.mid',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;45,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;4,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Tannenbaum (O Christmas Tree)',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Comp. by Teruyasu Oishi&lt;BR>&lt;A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web&lt;/A>',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'(C) Teruyasu Oishi 1997 All right reserved.'<BR>
+);<BR>
+<BR>
+midi[5] = new Array(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'../music/midi/05-0087.mid',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;165,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;50,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Starry Night',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'Comp. by Teruyasu Oishi&lt;BR>&lt;A href="http://mcw.interactive.co.jp" TARGET="_top">Music Clipboard on the Web&lt;/A>',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;'(C) Teruyasu Oishi 1997 All right reserved.'<BR>
+);<BR>
+<BR>
+// 次の２行は最初に鳴らすMIDIの設定です。どちらかの使わない方の先頭に//をいれる。<BR>
+// １行目は曲を指定。上のmidi[?]の数字を指定する。<BR>
+// ２行目は最初の曲がランダムに選ばれます。<BR>
+//var midiCount = 0;<BR>
+var midiCount = Math.floor(Math.random() * midi.length);<BR>
+<BR>
+<BR>
+// この時間はMIDIファイルのＤＬ時間です。<BR>
+// 曲が終わらないうちに次の曲に行くなら適当に増やしてください。<BR>
+// 転送速度の遅い夜などを考えて少し長めの方が良いかも<BR>
+var late = midi[midiCount][2]/3+3;&nbsp;&nbsp;// ファイルサイズ÷3KB+3秒<BR>
+<BR>
+<BR>
+// 以下サンタの設定。<BR>
+<BR>
+var move = true;&nbsp;&nbsp;&nbsp;&nbsp;// スクロールに合わせて動かすか？　動かす:true 動かさない:false<BR>
+var santaImg_r = "../anime/images/sori_anime_01R.gif"&nbsp;&nbsp; // 右向きサンタの画像<BR>
+var santaImg_l = "../anime/images/sori_anime_01.gif"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 左向きサンタの画像<BR>
+var santaSizeW = 100;&nbsp;&nbsp; // 画像の横幅<BR>
+var santaSizeH = 44;&nbsp;&nbsp;&nbsp;&nbsp;// 画像の縦幅<BR>
+var santaStep = 3;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// サンタの動く早さ<BR>
+var timing = 1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 落とすタイミング 0:ランダム　1:一定<BR>
+var drop = 400;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // timing = 0の場合に指定。落とす確率。低いほどよく落とす。<BR>
+var toyTimer = 2000;&nbsp;&nbsp;&nbsp;&nbsp;// timing = 1の場合に指定。落とす間隔。1000=１秒。<BR>
+var toyNo = 20;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // １画面内に落とす最大数。<BR>
+var linkUrl = "../anime/xmas.shtml";&nbsp;&nbsp;&nbsp;&nbsp;// URL<BR>
+var linkNo = 0;&nbsp;&nbsp;&nbsp;&nbsp; // どの画像にリンクを張るか？。<BR>
+toy = new Array();<BR>
+toy[0] = "../anime/images/xmasico2.gif";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 落とす画像のパス<BR>
+toy[1] = "../anime/images/xmasico5.gif";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// hosi[?]の数字は0から始まる連番。<BR>
+toy[2] = "../anime/images/xmasico7.gif";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 画像の枚数分用意する。<BR>
+toy[3] = "../anime/images/xmasico8.gif";<BR>
+toy[4] = "../anime/images/xmasico11.gif";<BR>
+toy[5] = "../anime/images/xmasico12.gif";<BR>
+toy[6] = "../anime/images/xmasico15.gif";<BR>
+toy[7] = "../anime/images/xmasico16.gif";<BR>
+<BR>
+<BR>
+_dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+var starCount = 0, j = 0, i, dx, xp, yp, am, stx, sty, sclX = 0, sclY = 0;<BR>
+dx = new Array(); xp = new Array(); yp = new Array(); toyMove = new Array;<BR>
+am = new Array(); stx = new Array(); sty = new Array();<BR>
+<BR>
+function getWindowSize() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if(_dom == 1 || _dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = self.innerWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = self.innerHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_width = document.body.clientWidth;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_height = document.body.clientHeight;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function getScrollPosX() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return scrollX;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return pageXOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.body.scrollLeft<BR>
+}<BR>
+<BR>
+function getScrollPosY() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) return scrollY;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) return pageYOffset;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) return document.body.scrollTop;<BR>
+}<BR>
+<BR>
+function showLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "visible";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "show";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "visible";<BR>
+}<BR>
+<BR>
+function hideLayer(layerName){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) document.getElementById(layerName).style.visibility = "hidden";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) document.layers[layerName].visibility = "hide";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) document.all(layerName).style.visibility = "hidden";<BR>
+}<BR>
+<BR>
+function moveLayerTo(layerName, x, y){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.layers[layerName].top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelLeft = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelTop = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function moveSanta() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;way = santaStep>0 ? 0:1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (move) sclY = getScrollPosY(); else sclY = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if ((santaX &lt; win_width+10 && !way) || (santaX > 0-santaSizeW-10 && way)) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;santaX += santaStep;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("santa"+way,santaX,santaY+sclY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (way) dropWidth = win_width-80-santaSizeW; else dropWidth = win_width-80;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (santaX > 30 && santaX &lt; dropWidth) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now = new Date(); time = now.getTime(); var ran = Math.random()*drop;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (((time-oldTime > toyTimer && timing) || (ran &lt; 10 && !timing)) && !toyMove[starCount]) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!way) { xp[starCount] = santaX; yp[starCount] = santaY+santaSizeH; }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else { xp[starCount] = santaX+santaSizeW; yp[starCount] = santaY+santaSizeH; }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("toy"+starCount,xp[starCount], yp[starCount]+sclY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toyMove[starCount] = true; oldTime = time; starCount++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (starCount >= toyNo-1) starCount = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hideLayer("santa"+way); getWindowSize(); santaStep *= -1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;way = santaStep>0 ? 0:1; showLayer("santa"+way);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;santaY =&nbsp;&nbsp;Math.floor(Math.random()*(win_height/3-santaSizeH-5));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("moveSanta()",50);<BR>
+}<BR>
+<BR>
+function dropToy() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; toyNo; ++ i) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (toyMove[i]) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp[i] += sty[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (yp[i] > win_height-20) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = -100; yp[i] = -100; toyMove[i] = false;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += stx[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("toy"+i, xp[i]+am[i]*Math.sin(dx[i])+sclX, yp[i]+sclY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("dropToy()", 30);<BR>
+}<BR>
+<BR>
+var ie = (document.all) ? 1 : 0;<BR>
+var nc = (document.layers) ? 1 : 0;<BR>
+<BR>
+function writeDiv(mes) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ie) document.all.midi2.innerHTML=mes;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (nc) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div = document.layers.midi1.document.layers.midi2;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.open();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.write(mes);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.close();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function midiPlay() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (midiCount &lt; midi.length) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str =<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;TABLE border=1 width="300" height="100" bgcolor="#000ddd">&lt;TR>&lt;TD align="center">'+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;P>&lt;B>「'+ midi[midiCount][3] +'」&lt;/B>&lt;/P>'+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // タイトル<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;EM>&lt;SMALL>'+ midi[midiCount][4] +'&lt;/SMALL>&lt;/EM>&lt;BR>'+&nbsp;&nbsp;&nbsp;&nbsp; // 著作権１行目<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;EM>&lt;SMALL>'+ midi[midiCount][5] +'&lt;/SMALL>&lt;/EM>'+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 著作権２行目<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;/TD>&lt;/TR>&lt;/TABLE>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (navigator.appName == "Netscape") {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str +=<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;EMBED src="'+ midi[midiCount][0] +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'" hidden="true" autostart="true" loop="false" repeat="false">';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += '&lt;BGSOUND SRC="' + midi[midiCount][0] + '" loop="1">';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeDiv(str);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midiCount++;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tID = setTimeout("midiPlay()",(midi[midiCount-1][1] + late) * 1000);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midiCount = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midiPlay();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function init() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;midiPlay();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;now = new Date(); oldTime = now.getTime();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;getWindowSize();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;santaY =&nbsp;&nbsp;Math.floor(Math.random()*(win_height/3-santaSizeH-5));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;santaX = -santaSizeW;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("santa0",santaX,santaY);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("dmy",win_width+20+santaSizeW,win_height+20)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;moveSanta();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dropToy();<BR>
+}<BR>
+<BR>
+window.onload = init;<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT><BR>
+<BR>
+&lt;STYLE type="text/css"><BR>
+/* 300がメッセージの幅、100が高さ。*/<BR>
+.midi {width:300px; height:100px;clip:rect(0px 300px 100px 0px);}<BR>
+#midi1 {position:relative;}<BR>
+#midi2 {position:absolute;}<BR>
+&lt;/STYLE><BR>
+<BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY bgColor="#000000" text="#FFFFFF"><BR>
+<BR>
+<BR><BR>
+<BR>
+&lt;!-- 次の３行を曲名を表示する場所に入れる。300がメッセージの幅、100がの高さ。上のStyleの設定と同じ数字にすること--&gt;<BR>
+&lt;TABLE border="0" cellpadding="0" cellspacing="0">&lt;TR>&lt;TD width="300" height="100" valign="top"><BR>
+&lt;DIV id="midi1">&lt;SPAN id="midi2" class="midi">&lt;/SPAN>&lt;/DIV><BR>
+&lt;/TD>&lt;/TR>&lt;/TABLE><BR>
+<BR><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;!-- BODYの最後へ --><BR>
+&lt;SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript"><BR>
+&lt;!--<BR>
+<BR>
+var santaLay = '&lt;DIV ID="dmy" STYLE="position:absolute; width:1; left:-100; top:-100; z-index:10; visibility:hidden;">&nbsp;&lt;/DIV>'<BR>
++ '&lt;DIV ID="santa0" STYLE="position:absolute; width:'+santaSizeW+'; height:'+santaSizeH+'; left:-100; top:-100; z-index:10;">&lt;IMG src="'+santaImg_r+'" border="0" width="'+santaSizeW+'" height="'+santaSizeH+'" border="0">&lt;/DIV>'<BR>
++ '&lt;DIV ID="santa1" STYLE="position:absolute; width:'+santaSizeW+'; height:'+santaSizeH+'; left:-100; top:-100; z-index:10;">&lt;IMG src="'+santaImg_l+'" border="0" width="'+santaSizeW+'" height="'+santaSizeH+'" border="0">&lt;/DIV>';<BR>
+<BR>
+getWindowSize();<BR>
+for (i=0; i&lt;toyNo; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dx[i] = 0; toyMove[i] = false;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;xp[i] = Math.random()*(win_width-20);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yp[i] = Math.random()*(win_height-20);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;am[i] = Math.random()*20;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;stx[i] = 0.02 + Math.random()/10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;sty[i] = 0.7 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (j == linkNo) santaLay += '&lt;layer name="toy' + i + '" left="-100" top="-100" visibility="show" z-index="10">&lt;a href="'+linkUrl+'">&lt;img src="' + toy[j] + '" border="0">&lt;/a>&lt;/layer>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else santaLay += '&lt;layer name="toy' + i + '" left="-100" top="-100" visibility="show" z-index="10">&lt;img src="' + toy[j] + '" border="0">&lt;/layer>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (_dom==1 || _dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (j == linkNo) santaLay += '&lt;div id="toy'+ i +'" style="position:absolute; Z-index:10; visibility:visible; top:-100px; left:-100px; width:1;">&lt;a href="'+linkUrl+'">&lt;img src="' + toy[j] + '" border="0">&lt;/a>&lt;/div>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else santaLay += '&lt;div id="toy'+ i +'" style="position:absolute; Z-index:10; visibility:visible; top:-100px; left:-100px; width:1;">&lt;img src="' + toy[j] + '" border="0">&lt;/div>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (j == (toy.length-1)) { j = 0; } else { j += 1; }<BR>
+}<BR>
+<BR>
+document.writeln(santaLay);<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT><BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+
+
+<!-- BODYの最後へ -->
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+
+var santaLay = '<DIV ID="dmy" STYLE="position:absolute; width:1; left:-100; top:-100; z-index:10; visibility:hidden;">&nbsp;</DIV>'
++ '<DIV ID="santa0" STYLE="position:absolute; width:'+santaSizeW+'; height:'+santaSizeH+'; left:-100; top:-100; z-index:10;"><IMG src="'+santaImg_r+'" border="0" width="'+santaSizeW+'" height="'+santaSizeH+'" border="0"></DIV>'
++ '<DIV ID="santa1" STYLE="position:absolute; width:'+santaSizeW+'; height:'+santaSizeH+'; left:-100; top:-100; z-index:10;"><IMG src="'+santaImg_l+'" border="0" width="'+santaSizeW+'" height="'+santaSizeH+'" border="0"></DIV>';
+
+getWindowSize();
+for (i=0; i<toyNo; i++) {
+	dx[i] = 0; toyMove[i] = false;
+	xp[i] = Math.random()*(win_width-20);
+	yp[i] = Math.random()*(win_height-20);
+	am[i] = Math.random()*20;
+	stx[i] = 0.02 + Math.random()/10;
+	sty[i] = 0.7 + Math.random();
+	if (_dom == 2) {
+		if (j == linkNo) santaLay += '<layer name="toy' + i + '" left="-100" top="-100" visibility="show" z-index="10"><a href="'+linkUrl+'"><img src="' + toy[j] + '" border="0"></a></layer>';
+		else santaLay += '<layer name="toy' + i + '" left="-100" top="-100" visibility="show" z-index="10"><img src="' + toy[j] + '" border="0"></layer>';
+	} else if (_dom==1 || _dom == 3) {
+		if (j == linkNo) santaLay += '<div id="toy'+ i +'" style="position:absolute; Z-index:10; visibility:visible; top:-100px; left:-100px; width:1;"><a href="'+linkUrl+'"><img src="' + toy[j] + '" border="0"></a></div>';
+		else santaLay += '<div id="toy'+ i +'" style="position:absolute; Z-index:10; visibility:visible; top:-100px; left:-100px; width:1;"><img src="' + toy[j] + '" border="0"></div>';
+	}
+	if (j == (toy.length-1)) { j = 0; } else { j += 1; }
+}
+
+document.writeln(santaLay);
+
+// -->
+</SCRIPT>
+
+</BODY>
+</HTML>

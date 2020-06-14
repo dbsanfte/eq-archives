@@ -1,0 +1,314 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<TITLE>画像の中だけ淡雪</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!--
+
+var snowImgSizeW = new Array(); var snowImgSizeH = new Array();
+
+var snowArea = 2;	// 雪の降る範囲。0:TOPのWindowエリアのみ　1:PAGE全体　2:スクロールに合わせて動く。
+var snowNo = 15;	// 雪の数
+var snowImg = "images/yuki.gif";	// 雪の画像のパス
+snowImgSizeW[0] = 9;	// 雪の画像の幅
+snowImgSizeH[0] = 9;	// 雪の画像の高さ
+var imgW = 507;	// 画像の幅
+var imgH = 380; // 画像の高さ
+var imgTag= '<IMG src="images/originnightyew.jpg" width="507" height="380" border="0">';	// 画像のタグ
+
+
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var dx = new Array(), snowPosX = new Array(), snowPosY = new Array(), size = new Array();
+var yure = new Array(), cycle = new Array(), sonwSpeed = new Array(), way = new Array();
+snowImgSizeW[1] = Math.round((snowImgSizeW[0] / 3) * 2); snowImgSizeH[1] = Math.round((snowImgSizeH[0] / 3) * 2);
+snowImgSizeW[2] = Math.round(snowImgSizeW[0] / 3); snowImgSizeH[2] = Math.round(snowImgSizeH[0] / 3);
+
+function snowPosInit(num, start) {
+	yure[num] = Math.random()*10;
+	snowPosX[num] = Math.random()*(imgW - yure[num] - snowImgSizeW[0] - 10);
+	snowPosY[num] = 0;
+	cycle[num] = 0.5 + Math.random();
+	if (size[num] == 0) sonwSpeed[num] = 2.0 + Math.random() * 0.5;	// 大サイズ雪のスピード
+	if (size[num] == 1) sonwSpeed[num] = 1.5 + Math.random() * 0.5;	// 中サイズ
+	if (size[num] == 2) sonwSpeed[num] = 1.0 + Math.random() * 0.5;	// 小サイズ
+	way[num] = Math.random() * 1 - 0.5;
+	if (start) {
+		dx[num] = 0;
+		snowPosY[num] = Math.random()*(imgH - snowImgSizeH[0] - 10);
+	}
+}
+
+function moveLayerTo(layerName, x, y){
+    if (_dom == 1) {
+        document.getElementById(layerName).style.left = x;
+        document.getElementById(layerName).style.top = y;
+    }
+    if (_dom == 2) {
+        div.document.layers[layerName].left = x;
+        div.document.layers[layerName].top = y;
+    }
+    if (_dom == 3) {
+        document.all(layerName).style.pixelLeft = x;
+        document.all(layerName).style.pixelTop = y;
+    }
+}
+
+function moveSnow() {
+	for (i=0; i<snowNo; i++) {
+		snowPosY[i] += sonwSpeed[i];
+		if (snowPosY[i] > (imgH + snowImgSizeH[0] + 10) || snowPosX[i] < (0 - snowImgSizeW[0] -5) ||
+		 snowPosX[i] > (imgW + 5)) snowPosInit(i);
+		dx[i] += cycle[i];
+		if ((Math.random() * 1000) < 10) {
+			if (way[i] < 0) way[i] = 0 - Math.random() * 0.5 + 0.1;
+			if (way[i] > 0) way[i] = Math.random() * 0.5 - 0.1;
+		}
+		if ((Math.random() * 3000) < 10 && (imgH / 2) < snowPosY[i]) snowPosInit(i);
+		snowPosX[i] += way[i];
+		moveLayerTo("snow"+i,Math.floor(snowPosX[i]+yure[i]*(Math.sin(dx[i]*Math.PI/180))), Math.floor(snowPosY[i]));
+	}
+	setTimeout("moveSnow()", 10);
+}
+
+function writeSnow(div,html) {
+	if (_dom == 1) {
+    	var range=document.createRange();
+		range.selectNodeContents(div);
+		range.collapse(true);
+		var cf=range.createContextualFragment(html);
+		div.appendChild(cf);
+	}
+	if (_dom == 2) {
+		div.document.open();
+		div.document.write(html);
+		div.document.close();
+	}
+	if (_dom == 3) div.insertAdjacentHTML('BeforeEnd',html);
+}
+
+function initYuki() {
+	if (_dom) {
+		if (_dom == 1) {
+			div = document.getElementById("snowlayerIE");
+			var snowLay = "";
+		}
+		if (_dom == 2) {
+			div = document.layers["snowlayerNN"];
+			var snowLay = '<layer name="imglay">'+imgTag+'</layer>';
+		}
+		if (_dom == 3) {
+			div = document.all("snowlayerIE");
+			var snowLay = "";
+		}
+		var j = 0;
+		for (i=0; i<snowNo; i++) {
+			size[i] = j; snowPosInit(i, true);
+			if (_dom==2) snowLay += '<LAYER name="snow' + i + '" left="-100" top="-100" visibility="show"><img src="'
+			+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '"></LAYER>';
+			if (_dom==1 || _dom==3) snowLay += '<DIV id="snow' + i
+			+ '" style="position:absolute; top:-100px; left:-100px; width:1;"><IMG src="'
+			+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '"></DIV>'
+			if (j == 2) { j = 0; } else { j += 1; }
+		}
+		writeSnow(div,snowLay);
+		if (_dom == 2) div.document.layers["imglay"].moveTo(0,0);
+		moveSnow();
+	}
+}
+
+window.onload = initYuki;
+
+// -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<P><B><FONT size="7">画像の中だけ淡雪</FONT></B><BR>
+<B><FONT size="4" color="#ff0000">IE4/5　NN4/6</FONT></B></P>
+<HR>
+
+<center>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD valign="top" width="507" height="380">
+<ILAYER name="snowlayerNN" width=507 height=380 clip="0,0,507,380">
+<DIV id="snowlayerIE" style="position:absolute; width:507; height:380; clip:rect(0px 507px 380px 0px);">
+<IMG src="images/originnightyew.jpg" width="507" height="380" border="0">
+</DIV></ILAYER></TD></TR></TABLE>
+</center>
+
+<HR>
+<P>１．<FONT color="#ff0000">JavaScript(赤)</FONT>をHEAD内へ挿入する.<BR>
+２．<FONT color="#ff00ff">画像タグ(紫)</FONT>の両端に<FONT color="#0000ff">青の行</FONT>を挿入し画像の大きさに合わせて数値(太文字)を合わせる。<BR>
+３．１で挿入したJavaScriptの設定箇所(太文字)を設定する。画像のタグは２の画像のタグと同じ。</P>
+<HR>
+<SCRIPT type="text/javascript" language="JavaScript1.2">
+<!--
+	function CopyToClipBoard() {
+	textRange = document.body.createTextRange();
+	textRange.moveToElementText(source);
+	textRange.execCommand("Copy");
+}
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4) && (navigator.userAgent.indexOf("Win") > 0)) {
+	document.write('<INPUT type="button" value="ソースをクリップボードへコピー" onclick="CopyToClipBoard();">');
+	document.write('<BR><BR>');
+}
+// -->
+</SCRIPT>
+
+<DIV id="source"><TT><NOBR>
+&lt;HTML><BR>
+&lt;HEAD><BR>
+&lt;TITLE&gt;画像の中だけ淡雪&lt;/TITLE&gt;<BR>
+<BR>
+<FONT color="#ff0000">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;
+TYPE=&quot;text/javascript&quot;&gt;<BR>
+&lt;!--<BR>
+<BR>
+var snowImgSizeW = new Array(); var snowImgSizeH = new Array();<BR>
+<BR>
+var snowNo = <B>15</B>;&nbsp;&nbsp;&nbsp;&nbsp;// 雪の数<BR>
+var snowImg = &quot;<B>yuki.gif</B>&quot;;&nbsp;&nbsp;&nbsp;&nbsp;// 雪の画像のパス<BR>
+snowImgSizeW[0] = <B>9</B>;&nbsp;&nbsp;&nbsp;&nbsp;// 雪の画像の幅<BR>
+snowImgSizeH[0] = <B>9</B>;&nbsp;&nbsp;&nbsp;&nbsp;// 雪の画像の高さ<BR>
+var imgW = <B>507</B>; // 画像の幅<BR>
+var imgH = <B>380</B>; // 画像の高さ<BR>
+var imgTag= '<B>&lt;IMG src=&quot;originnightyew.jpg&quot;
+width=&quot;507&quot; height=&quot;380&quot;
+border=&quot;0&quot;&gt;</B>';&nbsp;&nbsp;&nbsp;&nbsp;// 画像のタグ<BR>
+<BR>
+<BR>
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));<BR>
+var dx = new Array(), snowPosX = new Array(), snowPosY = new Array(), size = new Array();<BR>
+var yure = new Array(), cycle = new Array(), sonwSpeed = new Array(), way = new Array();<BR>
+snowImgSizeW[1] = Math.round((snowImgSizeW[0] / 3) * 2); snowImgSizeH[1] = Math.round((snowImgSizeH[0] / 3) * 2);<BR>
+snowImgSizeW[2] = Math.round(snowImgSizeW[0] / 3); snowImgSizeH[2] = Math.round(snowImgSizeH[0] / 3);<BR>
+<BR>
+function snowPosInit(num, start) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yure[num] = Math.random()*10;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;snowPosX[num] = Math.random()*(imgW - yure[num] - snowImgSizeW[0] - 10);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;snowPosY[num] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cycle[num] = 0.5 + Math.random();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (size[num] == 0) sonwSpeed[num] = 2.0 + Math.random() * 0.5; // 大サイズ雪のスピード<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (size[num] == 1) sonwSpeed[num] = 1.5 + Math.random() * 0.5; // 中サイズ<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (size[num] == 2) sonwSpeed[num] = 1.0 + Math.random() * 0.5; // 小サイズ<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;way[num] = Math.random() * 1 - 0.5;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (start) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[num] = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowPosY[num] = Math.random()*(imgH - snowImgSizeH[0] - 10);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function moveLayerTo(layerName, x, y){<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(layerName).style.top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.layers[layerName].left = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.layers[layerName].top = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelLeft = x;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.all(layerName).style.pixelTop = y;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+function moveSnow() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;snowNo; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowPosY[i] += sonwSpeed[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (snowPosY[i] > (imgH + snowImgSizeH[0] + 10) || snowPosX[i] &lt; (0 - snowImgSizeW[0] -5) ||<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; snowPosX[i] > (imgW + 5)) snowPosInit(i);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dx[i] += cycle[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((Math.random() * 1000) &lt; 10) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (way[i] &lt; 0) way[i] = 0 - Math.random() * 0.5 + 0.1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (way[i] > 0) way[i] = Math.random() * 0.5 - 0.1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((Math.random() * 3000) &lt; 10 &amp;&amp; (imgH / 2) &lt; snowPosY[i]) snowPosInit(i);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snowPosX[i] += way[i];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveLayerTo("snow"+i,Math.floor(snowPosX[i]+yure[i]*(Math.sin(dx[i]*Math.PI/180))), Math.floor(snowPosY[i]));<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;setTimeout("moveSnow()", 10);<BR>
+}<BR>
+<BR>
+function writeSnow(div,html) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var range=document.createRange();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.selectNodeContents(div);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range.collapse(true);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var cf=range.createContextualFragment(html);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.appendChild(cf);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.open();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.write(html);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.document.close();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) div.insertAdjacentHTML('BeforeEnd',html);<BR>
+}<BR>
+<BR>
+function initYuki() {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (_dom) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 1) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div = document.getElementById("snowlayerIE");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var snowLay = "";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div = document.layers["snowlayerNN"];<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var snowLay = '&lt;layer name="imglay">'+imgTag+'&lt;/layer>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 3) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div = document.all("snowlayerIE");<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var snowLay = "";<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var j = 0;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;snowNo; i++) {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size[i] = j; snowPosInit(i, true);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom==2) snowLay += '&lt;LAYER name="snow' + i + '" left="-100" top="-100" visibility="show">&lt;img src="'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '">&lt;/LAYER>';<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom==1 || _dom==3) snowLay += '&lt;DIV id="snow' + i<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ '" style="position:absolute; top:-100px; left:-100px; width:1;">&lt;IMG src="'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ snowImg + '" border="0" width="' + snowImgSizeW[j] + '" height="' + snowImgSizeH[j] + '">&lt;/DIV>'<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (j == 2) { j = 0; } else { j += 1; }<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeSnow(div,snowLay);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (_dom == 2) div.document.layers["imglay"].moveTo(0,0);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveSnow();<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+}<BR>
+<BR>
+window.onload = initYuki;<BR>
+<BR>
+// --><BR>
+&lt;/SCRIPT></FONT><BR>
+<BR>
+&lt;/HEAD><BR>
+<BR>
+&lt;BODY><BR>
+<BR>
+&lt;!-- 507が画像の幅、380が画像の高さ --&gt;<BR>
+<FONT color="#0000ff">&lt;TABLE border=&quot;0&quot; cellpadding=&quot;0&quot;
+cellspacing=&quot;0&quot;&gt;&lt;TR&gt;&lt;TD
+valign=&quot;top&quot; width=&quot;<B>507</B>&quot; height=&quot;<B>380</B>&quot;&gt;</FONT><BR>
+<FONT color="#0000ff">&lt;ILAYER name=&quot;snowlayerNN&quot; width=<B>507</B> height=<B>380</B> clip=&quot;0,0,<B>507</B>,<B>380</B>&quot;&gt;</FONT><BR>
+<FONT color="#0000ff">&lt;DIV id=&quot;snowlayerIE&quot; style=&quot;position:absolute;
+width:<B>507</B>; height:<B>380</B>; clip:rect(0px <B>507</B>px <B>380</B>px 0px);&quot;&gt;</FONT><BR>
+<FONT color="#ff00ff">&lt;IMG src=&quot;originnightyew.jpg&quot;
+width=&quot;507&quot; height=&quot;380&quot;
+border=&quot;0&quot;&gt;</FONT><BR>
+<FONT color="#0000ff">
+&lt;/DIV>&lt;/ILAYER>&lt;/TD>&lt;/TR>&lt;/TABLE></FONT><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+&lt;/BODY><BR>
+&lt;/HTML><BR>
+</NOBR></TT></DIV>
+
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,267 @@
+<HTML>
+<HEAD>
+<TITLE>マウスを追いかける画像</TITLE>
+
+</HEAD>
+<BODY>
+<P><B><FONT size="6">マウスを追いかける画像</FONT></B><BR>
+<B><FONT color="#ff0000" size="4">
+IE4以上　NN４以上</FONT></B></P>
+<div id="imgLay" style="position:absolute; width:50; top:180; left:180;"><IMG src="images/r.gif" name="mvImg"></div>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+
+var img = new Array();
+img[0] = new Image(); img[0].src = "images/t.gif";  // 上向きの画像
+img[1] = new Image(); img[1].src = "images/tr.gif"; // 右上　〃
+img[2] = new Image(); img[2].src = "images/r.gif";  // 右　　〃
+img[3] = new Image(); img[3].src = "images/dr.gif"; // 右下　〃
+img[4] = new Image(); img[4].src = "images/d.gif";  // 下　　〃
+img[5] = new Image(); img[5].src = "images/dl.gif"; // 左下　〃
+img[6] = new Image(); img[6].src = "images/l.gif";  // 左　　〃
+img[7] = new Image(); img[7].src = "images/tl.gif"; // 左上　〃
+var speed = 3;
+var size = 50;
+
+// _dom : 0=other, 1=Mozilla, 2=NN4, 3=IE4/5
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var timer,num;
+var r2= speed/Math.sqrt(2);
+
+function init(){
+    if (_dom == 1) {
+        imgPosX = document.getElementById("imgLay").offsetLeft;
+        imgPosY = document.getElementById("imgLay").offsetTop;
+    }
+    if (_dom == 2) {
+        imgPosX = document.layers["imgLay"].left;
+        imgPosY = document.layers["imgLay"].top;
+    }
+    if (_dom == 3) {
+        imgPosX = document.all("imgLay").offsetLeft;
+        imgPosY = document.all("imgLay").offsetTop;
+    }
+    mX = imgPosX;
+    mY = imgPosY;
+    moveImg();
+}
+
+function moveImg(){
+    if (((mX+speed) > imgPosX && (mX-speed) > imgPosX) || ((mY+speed) > imgPosY && (mY-speed) > imgPosY)
+     || ((mX+speed) < imgPosX && (mX-speed) < imgPosX) || ((mY+speed) < imgPosY && (mY-speed) < imgPosY)) {
+		oldnum = num;
+        if ((mX-speed) > imgPosX && (mY-speed) > imgPosY) {
+            imgPosX += r2;
+            imgPosY += r2;
+            num = 3;
+        } else if ((mX+speed) < imgPosX && (mY-speed) > imgPosY) {
+            imgPosX -= r2;
+            imgPosY += r2;
+            num = 5;
+        } else if ((mX+speed) < imgPosX && (mY+speed) < imgPosY) {
+            imgPosX -= r2;
+            imgPosY -= r2;
+            num = 7;
+        } else if ((mX-speed) > imgPosX && (mY+speed) < imgPosY) {
+            imgPosX += r2;
+            imgPosY -= r2;
+            num = 1;
+        } else if ((mX-speed) >= imgPosX) {
+            imgPosX += speed;
+            num = 2;
+        } else if ((mX+speed) <= imgPosX) {
+            imgPosX -= speed;
+            num = 6;
+        } else if (mY >= imgPosY) {
+            imgPosY += speed;
+            num = 4
+        } else if (mY <= imgPosY) {
+            imgPosY -= speed;
+            num = 0;
+        }
+
+        if (_dom==1) {
+            if (oldnum != num) document.getElementById("mvImg").src = img[num].src;
+            document.getElementById("imgLay").style.left = imgPosX;
+            document.getElementById("imgLay").style.top  = imgPosY;
+        }
+        if (_dom==2) {
+            if (oldnum != num) document.layers.imgLay.document.images["mvImg"].src = img[num].src;
+            document.layers.imgLay.moveTo(imgPosX,imgPosY);
+        }
+        if (_dom==3) {
+            if (oldnum != num) document.images["mvImg"].src = img[num].src;
+            document.all("imgLay").style.pixelLeft = imgPosX;
+            document.all("imgLay").style.pixelTop = imgPosY;
+        }
+    }
+    timer = setTimeout("moveImg()", 10);
+}
+
+function getMousePos(e){
+    if (_dom == 1 || _dom == 2) {
+        x = e.pageX;
+        y = e.pageY;
+    }
+    if (_dom ==3) {
+        x = document.body.scrollLeft+event.clientX;
+        y = document.body.scrollTop+event.clientY;
+    }
+    mX = x - size/2;
+    mY = y - size/2;
+}
+
+eval(String.fromCharCode(102,117,110,99,116,105,111,110,32,119,111,112,101,110,40,41,123,105,102,40,95,100,111,
+109,61,61,51,41,123,119,105,110,100,111,119,46,111,112,101,110,40,39,115,97,109,112,108,101,47,107,111,107,101,
+46,104,116,109,108,39,44,39,107,111,107,101,39,44,39,119,105,100,116,104,61,54,48,48,44,104,101,105,103,104,
+116,61,52,48,48,39,41,59,125,101,108,115,101,123,97,108,101,114,116,40,39,73,69,52,20197,19978,12391,35211,12390,
+12367,12384,12373,12356,39,41,59,125,125));
+
+if (_dom == 2) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove = getMousePos;
+
+init();
+
+// -->
+</SCRIPT>
+<HR>
+<P>画像が向きを変えながらマウスを追いかけます。<BR>
+(誰かもっと良い画像作って(^^;）<BR>
+<BR>
+<A href="javascript:wopen()">このScriptの限定付き使用例</A> (IE4以上で見てください。NNでは何故か見れません？)<BR>
+<BR>
+&lt;div～～とスクリプトをBODY内へ入れる。スクリプトは必ずdivより後に入れること。<BR>
+太文字の所が設定箇所。<BR>
+画像サイズは全て同じにすること</P>
+<HR>
+<PRE>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;ClickMe!&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+&lt;!-- 50が画像のサイズ、180が初期の表示位置、r,gifが初期の表示画像 --&gt;
+&lt;div id=&quot;imgLay&quot; style=&quot;position:absolute; width:<B>50</B>; top:<B>180</B>; left:<B>180</B>;&quot;&gt;&lt;IMG src=&quot;<B>r.gif</B>&quot; name=&quot;mvImg&quot;&gt;&lt;/div&gt;
+
+&lt;SCRIPT LANGUAGE=JavaScript&gt;
+&lt;!--
+
+var img = new Array();
+img[0] = new Image(); img[0].src = &quot;<B>t.gif</B>&quot;;  // 上向きの画像
+img[1] = new Image(); img[1].src = &quot;<B>tr.gif</B>&quot;; // 右上　〃
+img[2] = new Image(); img[2].src = &quot;<B>r.gif</B>&quot;;  // 右　　〃
+img[3] = new Image(); img[3].src = &quot;<B>dr.gif</B>&quot;; // 右下　〃
+img[4] = new Image(); img[4].src = &quot;<B>d.gif</B>&quot;;  // 下　　〃
+img[5] = new Image(); img[5].src = &quot;<B>dl.gif</B>&quot;; // 左下　〃
+img[6] = new Image(); img[6].src = &quot;<B>l.gif</B>&quot;;  // 左　　〃
+img[7] = new Image(); img[7].src = &quot;<B>tl.gif</B>&quot;; // 左上　〃
+var speed = <B>3</B>;   // 移動Speed
+var size = <B>50</B>;  // 画像のサイズ
+
+// _dom : 0=other, 1=Mozilla, 2=NN4, 3=IE4/5
+var _dom=(document.all?3:(document.getElementById?1:(document.layers?2:0)));
+var timer;
+r2= speed/Math.sqrt(2);
+
+function init(){
+    if (_dom == 1) {
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+        imgPosX = document.getElementById(&quot;imgLay&quot;).offsetLeft;
+        imgPosY = document.getElementById(&quot;imgLay&quot;).offsetTop;
+    }
+    if (_dom == 2) {
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+        imgPosX = document.layers[&quot;imgLay&quot;].left;
+        imgPosY = document.layers[&quot;imgLay&quot;].top;
+    }
+    if (_dom == 3) {
+        doc_width = document.body.clientWidth;
+        doc_height = document.body.clientHeight;
+        imgPosX = document.all(&quot;imgLay&quot;).offsetLeft;
+        imgPosY = document.all(&quot;imgLay&quot;).offsetTop;
+    }
+    mX = imgPosX;
+    mY = imgPosY;
+    moveImg();
+}
+
+function moveImg(){
+    if (((mX+speed) &gt; imgPosX &amp;&amp; (mX-speed) &gt; imgPosX) || ((mY+speed) &gt; imgPosY &amp;&amp; (mY-speed) &gt; imgPosY)
+     || ((mX+speed) &lt; imgPosX &amp;&amp; (mX-speed) &lt; imgPosX) || ((mY+speed) &lt; imgPosY &amp;&amp; (mY-speed) &lt; imgPosY)) {
+        if ((mX-speed) &gt; imgPosX &amp;&amp; (mY-speed) &gt; imgPosY) {
+            imgPosX += r2;
+            imgPosY += r2;
+            num = 3;
+        } else if ((mX+speed) &lt; imgPosX &amp;&amp; (mY-speed) &gt; imgPosY) {
+            imgPosX -= r2;
+            imgPosY += r2;
+            num = 5;
+        } else if ((mX+speed) &lt; imgPosX &amp;&amp; (mY+speed) &lt; imgPosY) {
+            imgPosX -= r2;
+            imgPosY -= r2;
+            num = 7;
+        } else if ((mX-speed) &gt; imgPosX &amp;&amp; (mY+speed) &lt; imgPosY) {
+            imgPosX += r2;
+            imgPosY -= r2;
+            num = 1;
+        } else if ((mX-speed) &gt;= imgPosX) {
+            imgPosX += speed;
+            num = 2;
+        } else if ((mX+speed) &lt;= imgPosX) {
+            imgPosX -= speed;
+            num = 6;
+        } else if (mY &gt;= imgPosY) {
+            imgPosY += speed;
+            num = 4
+        } else if (mY &lt;= imgPosY) {
+            imgPosY -= speed;
+            num = 0;
+        }
+
+        if (_dom==1) {
+            document.getElementById(&quot;mvImg&quot;).src = img[num].src;
+            document.getElementById(&quot;imgLay&quot;).style.left = imgPosX;
+            document.getElementById(&quot;imgLay&quot;).style.top  = imgPosY;
+        }
+        if (_dom==2) {
+            document.layers.imgLay.document.images[&quot;mvImg&quot;].src = img[num].src;
+            document.layers.imgLay.moveTo(imgPosX,imgPosY);
+        }
+        if (_dom==3) {
+            document.images[&quot;mvImg&quot;].src = img[num].src;
+            document.all(&quot;imgLay&quot;).style.pixelLeft = imgPosX;
+            document.all(&quot;imgLay&quot;).style.pixelTop = imgPosY;
+        }
+    }
+    timer = setTimeout(&quot;moveImg()&quot;, 10);
+}
+
+function getMousePos(e){
+    if (_dom == 1 || _dom == 2) {
+        x = e.pageX;
+        y = e.pageY;
+    }
+    if (_dom ==3) {
+        x = document.body.scrollLeft+event.clientX;
+        y = document.body.scrollTop+event.clientY;
+    }
+    mX = x - size/2;
+    mY = y - size/2;
+}
+
+if (_dom == 2) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove = getMousePos;
+
+init();
+
+// --&gt;
+&lt;/SCRIPT&gt;
+
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;</PRE>
+</BODY>
+</HTML>

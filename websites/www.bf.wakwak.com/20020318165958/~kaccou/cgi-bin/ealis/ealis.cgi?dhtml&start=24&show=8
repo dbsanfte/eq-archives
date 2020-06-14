@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=euc-jp">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Pragma" content="no-cache">
+	<style type="text/css"><!--
+	 .min{ font-size: 9pt; }
+	 input , textarea { font-size: 10pt;}
+	 hr.r{ color: "#FFCC00";}
+	 .resform{ padding-right: 5px; padding-left: 5px; font-size: 10pt; border-left: 0.1mm solid #FFCC00; border-right: 0.1mm solid #FFCC00;}
+	 textarea, .fm{ border:1 ; border-color: #2222AA ; border-style: solid ;border-width: 1px; }
+	 .stamp{ font-size:7pt; font-style: italic; color: #2222AA;}
+	 strong.subj { color:#666699; font-weight: bold; }
+	 strong.name { color:green; font-weight: bold; }
+	 address{ text-align:right; font-style:normal; font-size: 9pt; font-family:TicagoFix,Helvetica;}
+	 #pagertabs{ border-bottom: 0.2mm solid #DDDDFF; }
+	 #modesel{ border: 0.2mm solid #DDDDFF; }
+	 #msglist{ font-size:10pt; background: #FAFAFC; width: 100%; border:1px; margin: 5px 25px;}
+	--></style>
+	<title>掲示板 - DHTML</title>
+</head>
+
+<body bgcolor="#fcfcfc" text="#555555" link="#1111bb" vlink="#7777cc">
+<script type="text/javascript" defer><!--
+ function colsel() { window.open('ealis_sub.cgi?pickcolor','colsel','scrollbars=no,status=no,height=160,width=370'); }
+  function view(name) {
+   var txtObj = document.all(name);
+   if (txtObj.style.display != 'none') { txtObj.style.display = 'none'; }
+   else { txtObj.style.display = ''; }
+  }
+// --></script>
+
+<table border=0 align=right><tr><td align=right valign=top nowrap>
+	<small class="min">lastpost : <font color="#996633">02/03/18 11:07:59 kaccou</font> , [<font color="#996633">66.28.98.5</font>]
+	<br><a href="http://www.bf.wakwak.com/~kaccou/">戻る</a> <a href="ealis_sub.cgi?mode=howto">掲示板の使い方</a> <a href="ealis_sub.cgi?mode=find">全文検索</a> <a href="ealis_sub.cgi?mode=delete">記事削除</a> <a href="ealis_sub.cgi">管理用</a></small></td></tr>
+</table>
+<a name=0></a>
+<p><div align="center"><font color="#BBAEB3" size=5 face="Verdana" style="font-size:18pt;"> - 掲示板 -</font></div></p>
+
+<div align=center>
+
+<form method=POST action="ealis_wri.cgi?dhtml">
+	<table border=0><tr><td colspan=2>
+	<table border=0><tr><th align=right><u>Name</u></th>
+	<td><input type=text name="name" size=20 value="" class="fm"></td>
+	<th align=right>Mail</th><td><input type=text name="email" size=20 value="" class="fm"></td></tr>
+	<tr><th align=right>Subj</th>
+	<td><input type=text name="subj" size=25 class="fm"></td>
+	<th align=right>　Key</th><td><input type=text name="pwd" size=10 maxlength=8 value="" class="fm"><small>(英数字8以内)</small></td></tr>
+	<tr><th align=right>URL</th>
+	<td colspan=3><input type=text size=50 name="url" value="http://" class="fm"></td></tr></table></td></tr>
+	<tr><td colspan=4><textarea cols=56 rows=7 name="comment" wrap="soft"></textarea></td></tr>
+	<tr><td nowrap colspan=2 class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a>
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</tr><tr><td align=left class="min">allow tags / autolink
+	</td><td class="min" align=right><input type=submit value="　　投稿　　"><input type=reset value="消去"></td></tr></table>
+
+<table border=0 align=center cellspacing=0 cellpadding=0 class="min"><tr>
+	<td nowrap bgcolor="#DDDDFF">View Mode : </td>
+	<td nowrap id="modesel">　<a href="ealis.cgi?start=24&amp;show=8">Normal mode</a> / <a href="ealis.cgi?dhtml&amp;start=24&amp;show=8">DynamicHTML mode</a> / <a href="ealis.cgi?thread&amp;start=24&amp;show=8">Thread view</a> / <a href="ealis.cgi?lapse&amp;show=8">Lapse view</a> / <small style="font-size:8pt;">レスの付いた記事は上に移動されます</small></td>
+</tr></table>
+</form>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<a href="ealis.cgi?dhtml&amp;start=0&amp;show=8">1</a>
+	<a href="ealis.cgi?dhtml&amp;start=8&amp;show=8">2</a>
+	<a href="ealis.cgi?dhtml&amp;start=16&amp;show=8">3</a>
+	<strong>4</strong>
+	<a href="ealis.cgi?dhtml&amp;start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?dhtml&amp;start=40&amp;show=8">6</a>
+	<a href="ealis.cgi?dhtml&amp;start=48&amp;show=8">7</a>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?dhtml&amp;start=24&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+
+
+<hr><a name=1></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">28</font>:　<strong class="subj">某日記レス</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 01/11/28 20:04:08 　 </small></td>
+	<td align=right nowrap><a href="#0">∧</a><a href="#2">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">＞・某SKに捧ぐ。<br><br>＞  頑張れ！<br><br><br>がんばた！<br>つーかプレミ〜6のFullVerください</font><!-- z211-19-86-184.dialup.wakwak.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF80C0"><b>kaccou</b><!-- z211-19-86-184.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#FF80C0">と、さりげなく小細工しつつ</font>
+		<span class="stamp">(01/11/28 20:04:44)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Hagi</b><!-- earth.cyberfront.co.jp --> &gt;</font></td>
+		<td><font color="#0000ff">プレミアあっても結局DV機器とか必要っぽいよ（ｗ</font>
+		<span class="stamp">(01/11/29 17:12:50)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- z211-19-64-135.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#DF0000">DV機器Rdy！だよ？ｗ</font>
+		<span class="stamp">(01/11/29 21:47:07)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO28');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=28&amp;icon=INHERIT&amp;dhtml" id="NO28" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=2></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">27</font>:　<strong class="subj">んんんんんん</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 01/11/27 20:15:46 　 </small></td>
+	<td align=right nowrap><a href="#1">∧</a><a href="#3">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#FF80C0">SoL発売日が6日になったそうで（ｗ<br><br>Meあわせて休みとったんですが、いじめですか、いじめですね</font><!-- z211-19-64-162.dialup.wakwak.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x6.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">宇宙の真理です</font>
+		<span class="stamp">(01/11/28 11:26:46)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>mazyi</b><!-- nttchba014114.flets.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#FF8040">別にいつも休みだからNP〜</font>
+		<span class="stamp">(01/11/28 14:01:42)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO27');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=27&amp;icon=INHERIT&amp;dhtml" id="NO27" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=3></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">26</font>:　<strong class="subj">nnnnnn</strong>
+	<small>　From: </small><strong class="name">kaccou</strong>
+	<small>　on 01/11/26 12:58:16 　 </small></td>
+	<td align=right nowrap><a href="#2">∧</a><a href="#4">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">Reconなめてますか？（ｗ</font><!-- z211-19-65-19.dialup.wakwak.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>barao</b><!-- p111-dna05kokuryo.gunma.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">何か事情があるのか、それともただの嫌がらせか<br>俺のFaction返せ  (；´Д｀)</font>
+		<span class="stamp">(01/11/26 16:37:50)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO26');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=26&amp;icon=INHERIT&amp;dhtml" id="NO26" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=4></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">24</font>:　<strong class="subj">早く帰宅したら</strong>
+	<small>　From: </small><strong class="name">Kaccou</strong>
+	<small>　on 01/11/20 21:07:48 　 </small></td>
+	<td align=right nowrap><a href="#3">∧</a><a href="#5">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#DF0000">LoginServer落ちてるYO！<br><br>いじめかっこわるい！</font><!-- AOBfi-01p2-95.ppp11.odn.ad.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>mazyi</b><!-- nttchba014114.flets.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#FF8040">俺なんか居なくても余裕ですねｗ<br></font>
+		<span class="stamp">(01/11/21 15:03:55)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">君Popするとかのたまってなかった？（ｗ</font>
+		<span class="stamp">(01/11/21 15:37:19)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>Ｍａｚｙｉ</b><!-- nttchba014114.flets.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#FF8040">こー本能の赴くままに行動してしまったよ・・・<br></font>
+		<span class="stamp">(01/11/22 00:21:15)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>Sera</b><!-- sv02.shimizu-pharm.co.jp --> &gt;</font></td>
+		<td><font color="#000080">今日Argoはいる?って電話あった時点で麻雀だなと確信しまちた</font>
+		<span class="stamp">(01/11/22 10:45:07)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">CD屋で何気に物色してたら「肉」なるタイトルのCD発見、本能にあわせて衝動買い。中身は駄目でした　；；<br>こういうことですね＞本能の赴くまま</font>
+		<span class="stamp">(01/11/22 10:48:38)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO24');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=24&amp;icon=INHERIT&amp;dhtml" id="NO24" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=5></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">21</font>:　<strong class="subj">ATKについて考える</strong>
+	<small>　From: </small><strong class="name">Kaccou</strong>
+	<small>　on 01/11/15 11:20:41 　 </small></td>
+	<td align=right nowrap><a href="#4">∧</a><a href="#6">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#008040">戦術の核でもなければ、戦略の肝でもなし。<br>大して重要でもないのでここで（ｗ<br><br>昨晩のY戦で、普段入れてないATKTAPをいれてみた。<br>普段入れない理由として、<br>・ATKを20程度下げたところで大勢に影響はない<br>・ACはAttackerの数に比例して効果をあげるが、ATKは1対1的な感覚である<br>・ATK自体、どこまで戦闘に効果があるか不明である<br>・SK2でDebuffするのにACTAPのHateがきつすぎて、ATKまで回らない<br>・BuffSlotが2個もあけられない（ｗ<br>メリットとして、<br>・RampのDMG減少に期待できる（かも知れない）<br>・WARの生存率が（ちょっぴり）あがる（かも知れない）<br>・SKのATKがちょっぴりあがるのでいいかもしれない<br><br>昨日はBaraoさんに内緒でSTRまで吸ってました（ｗ<br>意外といけるかもしれないので、Meleeお化け相手には極力ATKも吸う方向で。ただ、死ぬんだよね、下手に吸うと（ｗ<br><br>やれるだけやって38人 VS Y ＞Killedだし、すごいうれしかね。<br>Azaいわく「このときがあるからEQやめられねー」<br>もっともです（ｗ</font><!-- AOBfi-01p2-95.ppp11.odn.ad.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">効果的にWARの生存率UPが大きいよね<br>CCH自体のFollowにはならないけど、予想外のFurryやら予想外のMaxHitの可能性を1%でもさげれるならば！ってことかな</font>
+		<span class="stamp">(01/11/15 11:23:11)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>barao</b><!-- p41-dna05kokuryo.gunma.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">ふむう。いろいろ試す価値はあるねーー。昨日もYがあと1mmって所<br>でHateが上がっていたらしくてSummon＆Death。ただ全体でみて攻略<br>に手助けできるならSK1の死亡なんてどうせPullで死んだと思えば<br>たいした損害でもないはず・・（ｗ。幸いにして一人で全てをいれず<br>分担できるのが今の利点か。StrTapは盲点だったかも（ｗ</font>
+		<span class="stamp">(01/11/15 16:45:20)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x3.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">またーり後ろからDbane(´∀｀ )</font>
+		<span class="stamp">(01/11/15 17:06:20)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>Sera</b><!-- sv02.shimizu-pharm.co.jp --> &gt;</font></td>
+		<td><font color="#000080">またーりMonarから300kb/sでchu- chu-</font>
+		<span class="stamp">(01/11/16 13:29:27)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#C100C1"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#C100C1">どういうこと？！（ｗ</font>
+		<span class="stamp">(01/11/16 20:00:48)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>barao</b><!-- p89-dna06kokuryo.gunma.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">SKSK。思ったよりも最近駄目な面が目に付く。素晴らしいClassだと<br>思うけどMnkほどFDうまくないし。EQのClassBalanceだから隣の芝生<br>状態なんだろうけど、Pullに関してはMnkの方が良いね。<br>もっと頑張らねば＞＜。　しっかし眠いよ！無理しないはずが最近<br>かなり遅い時間までやってる自分が怖い</font>
+		<span class="stamp">(01/11/17 11:00:34)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#C100C1"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#C100C1">SoLでSkillなるDP（ThxShepさん！）のおかげでMNKよりよくなる予感Inc、ってかEXPためないと。<br>SKの利点は偵察＞Pullのつなぎが比較的容易であることに限るかと思います（CoSNerfされれば終わりだけどね）<br>今後の発展しだいではDebuff担当、Pull担当分けるのもありかな。</font>
+		<span class="stamp">(01/11/17 15:53:29)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">MNKはTry後のリスクがほぼないから、その点、優秀だね。<br>FDがHate消しの能力ではなく、RDの確立を減少させる道具としての能力ならMNKが随一でしょう。<br>Javeがない時代、SKの遠距離PullはやはりMNKから見れば羨望だったわけで、JaveSuckっておちでよろしい感じ！</font>
+		<span class="stamp">(01/11/17 15:56:42)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#008040"><b>かんすけ</b><!-- z61-115-110-34.dialup.wakwak.ne.jp --> &gt;</font></td>
+		<td><font color="#008040">初めまして、某ＭＭ的集団でSKやってるものです。<br>ATK tapですが、僕の場合はincした時にすぐ(slowと同じtimingで)入れてます。<br>slowが入るまでが一番痛い訳であって、そこを少しでも緩和できればって思ってるので。<br>また、ATK tap単体ではそれほどhateが上がらないんでいきなり入れてもtaunt取ったりしませんね。<br>AC tapに関してはある程度WARのhateが上がってから分担して入れてます。<br>STR tapはDRU辺りのDoTが入ってるとholdするんでやらないですね。(Dark Reaverでも使えば入るのかもしれないけど)<br>ちなみにATK tapのメリットでSKのATKが上がるって書いてますが、CotPが消えちゃうんで逆に下がりますね。<br><br>同じSKとして活躍を楽しみにしていますので頑張ってください。<br>また、AC1450overの装備で自分との違いにも興味があるんで、できれば装備を更新してください(笑)</font>
+		<span class="stamp">(01/11/21 18:04:22)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">初めまして、MMとKaranaはちょこちょこCheckしてるので、お名前存じております！　Server違うと気楽に話せないのが難点ですね　；；<br>ATKTAP自体は、おっしゃるとおりHateさほどないですねぇ、Raid以外だと使用価値見出せないほど弱い（ｗ<br>確かにCCHの安定まで緩和という発想もありだと思います、勉強なります。私的にはただCheckenなので初手でTryできなかったっていう（ｗ</font>
+		<span class="stamp">(01/11/21 19:06:53)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO21');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=21&amp;icon=INHERIT&amp;dhtml" id="NO21" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=6></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">23</font>:　<strong class="subj">Duelについて考える</strong>
+	<small>　From: </small><strong class="name">barao</strong>
+	<small>　on 01/11/18 17:10:52 　 </small></td>
+	<td align=right nowrap><a href="#5">∧</a><a href="#7">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#800000">今日WyardがふらっとPOPしたのでDuelしました。<br>結果!1HS vs 1HSで負け。Barao=2HS(primal) vs Wyard=1HSで僅差でBarao<br>の勝ち。Barao=2HS vs Wyard=EpicでBarao死亡。<br>ACとHPの具合はHPはWyardの方が多く、ACはBaraoの方が高い。こんな状況<br>でしたが。く、悔しい（ｗ<br></font><!-- p76-dna06kokuryo.gunma.ocn.ne.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#C100C1"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#C100C1">DuelするならEpicが最強と思われ</font>
+		<span class="stamp">(01/11/19 00:00:40)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">ってかUsaさんはやくPOP希望… TT</font>
+		<span class="stamp">(01/11/19 00:00:54)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>barao</b><!-- p05-dna06kokuryo.gunma.ocn.ne.jp --> &gt;</font></td>
+		<td><font color="#800000">まだ当分駄目っぽいよ・・</font>
+		<span class="stamp">(01/11/19 17:32:22)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#000080"><b>Sera</b><!-- sv02.shimizu-pharm.co.jp --> &gt;</font></td>
+		<td><font color="#000080">しかしこの不況下で新規出店で忙しいとくりゃ、そりゃもう夜のお店としか考えられないよなぁw</font>
+		<span class="stamp">(01/11/20 10:29:02)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#800000"><b>Monar</b><!-- tk0004-202x226x145x3.ap-TK.usen.ad.jp --> &gt;</font></td>
+		<td><font color="#800000">もしくはカジノとか！ｗ<br>怖い怖いｗ</font>
+		<span class="stamp">(01/11/20 17:18:08)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO23');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=23&amp;icon=INHERIT&amp;dhtml" id="NO23" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=7></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">18</font>:　<strong class="subj">oyo</strong>
+	<small>　From: </small><strong class="name">Kaccou</strong>
+	<small>　on 01/11/06 13:15:40 　 </small></td>
+	<td align=right nowrap><a href="#6">∧</a><a href="#8">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#0000ff">某MM的集団さまのHPがリニューアルしてますよ！<br>そしてLinkされてますよ！（ｗ<br>ThxThx、おつおつ　＞＿＜<br><br>某所の日記がUPDATEしたのでさっそく…<br>１月分って何気にすごいですね（ｗ 楽しく読ませていただきました<br>私のDEになりたい今日この頃…　あのMaskのND解除してくれないかなぁ　TT<br><br>某H氏が崖から落ちたとかで。<br>最初Kael前の崖で死んだかと思って笑ってましたが、リアルで落ちたっぽい（ｗ　これは笑えないので慌てて謝りつつ。ってか崖から落ちてEQPOPするとは普通おもわねーだろ。<br></font><!-- N02cc-03p118.ppp11.odn.ad.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#FF8040"><b>mazyi</b><!-- nttchba013161.flets.ppp.infoweb.ne.jp --> &gt;</font></td>
+		<td><font color="#FF8040">人生思っても見ない経験ってのは突然来る物だ・・。ｗ<br></font>
+		<span class="stamp">(01/11/07 11:43:44)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>Hagi</b><!-- 211.120.1.222 --> &gt;</font></td>
+		<td><font color="#0000ff">首痛くて寝れないからEQやってましたが何か？</font>
+		<span class="stamp">(01/11/16 16:11:19)</span></td></tr></table>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#DF0000"><b>Kaccou</b><!-- AOBfi-01p2-95.ppp11.odn.ad.jp --> &gt;</font></td>
+		<td><font color="#DF0000">いえ、なんでも。<br><br>＞某Hさんへ<br>知り合い関係はお金請求しにくいから駄目ってよくいわれるんだけど、保険屋的には点数ほしいんでNPです！<br>お金払うの保険会社なんだし気にしてほしくないんだけどね。<br>と愚痴ってもしょうがないわな（ｗ</font>
+		<span class="stamp">(01/11/16 20:02:05)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO18');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=18&amp;icon=INHERIT&amp;dhtml" id="NO18" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+
+
+<hr><a name=8></a><table border=0 width="92%" cellspacing=0 cellpadding=2 bgcolor="#eeeeff"><tr><td>
+	<font color="green">22</font>:　<strong class="subj">某Hさんへ</strong>
+	<small>　From: </small><strong class="name">Kaccou</strong>
+	<small>　on 01/11/15 21:03:30 　 </small></td>
+	<td align=right nowrap><a href="#7">∧</a><a href="#9">∨</a></td></tr>
+</table>
+<table border=0 width="92%" cellpadding=0 bgcolor="#FAFAFC"><tr><td>
+	<blockquote>
+		<font color="#C100C1">保険はきちんと選びましょう（ｗ<br>ディーラーが兼業してるとこはあんましよろしくないです、うちなんかどうよ？（ｗ</font><!-- AOBfi-01p2-95.ppp11.odn.ad.jp -->
+	</blockquote><br><hr width="95%" size=1 class=r noshade>
+	<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap valign=top>
+	<font color="#0000ff"><b>某H</b><!-- 211.120.1.222 --> &gt;</font></td>
+		<td><font color="#0000ff">チューリッヒだったザマスヨ。<br>んで、知り合いのやってるとこに変えようとしてた途端の出来事でした（ｗ</font>
+		<span class="stamp">(01/11/16 16:06:40)</span></td></tr></table>
+	</td></tr><tr><td align=right><a href="javascript:view('NO22');">レス欄生成▼</a>
+	</td></tr>
+</table>
+
+<br><form method=POST action="ealis_wri.cgi?resno=22&amp;icon=INHERIT&amp;dhtml" id="NO22" style="display:none;">
+	<table border=0 bgcolor="#eeeeee" style="font-size: 10pt;" class="fm"><tr><td>	 Name<input type=text name="name" size=12 value="" class="fm">　　	key<input type=text name="pwd" size=9 maxlength=8 value="" class="fm">	</td>
+	<td align=right><input type=submit value="返信"></td></tr>
+	<tr><td align=center valign=top colspan=2>
+	<textarea cols=70 rows=6 name="comment" wrap=soft class="fm"></textarea>
+	<div class="min"><a href="ealis_sub.cgi?mode=prev_color" target="elsprv">&lt;color&gt;</a> 
+				<input type=radio name="color" value="#800000" checked><font color="#800000">■</font><input type=radio name="color" value="#DF0000"><font color="#DF0000">■</font><input type=radio name="color" value="#008040"><font color="#008040">■</font><input type=radio name="color" value="#0000ff"><font color="#0000ff">■</font><input type=radio name="color" value="#C100C1"><font color="#C100C1">■</font><input type=radio name="color" value="#FF80C0"><font color="#FF80C0">■</font><input type=radio name="color" value="#FF8040"><font color="#FF8040">■</font><input type=radio name="color" value="#000080"><font color="#000080">■</font><input type=radio name="color" value="#666699"><font color="#666699">■</font><input type=radio name="color" value="">□<small><input type=text name="color2" value="#" size=8 class="fm"><a href="javascript:colsel()">選択</a></small>
+	</div></td></tr></table>
+</form>
+<a name=9></a>
+
+<table border=0 cellspacing=0 cellpadding=0 style="margin-top:2pt; font-size:10pt;">
+	<tr><td nowrap bgcolor="#DDDDFF"> Log Pager :</td><td id="pagertabs">　
+	<a href="ealis.cgi?dhtml&amp;start=0&amp;show=8">1</a>
+	<a href="ealis.cgi?dhtml&amp;start=8&amp;show=8">2</a>
+	<a href="ealis.cgi?dhtml&amp;start=16&amp;show=8">3</a>
+	<strong>4</strong>
+	<a href="ealis.cgi?dhtml&amp;start=32&amp;show=8">5</a>
+	<a href="ealis.cgi?dhtml&amp;start=40&amp;show=8">6</a>
+	<a href="ealis.cgi?dhtml&amp;start=48&amp;show=8">7</a>
+	<a href="ealis_log.cgi">File</a>
+	 - <small>[ 8件/page <a href="ealis.cgi?dhtml&amp;start=24&amp;show=18">+10</a> , max: 50件 ]</small></td></tr>
+</table>
+
+</div><hr>
+
+
+
+<address>- <a href="http://kano.vis.ne.jp/erial/">ealis 2.58f</a> -</address>
+
+</body>
+</html>

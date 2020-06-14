@@ -1,0 +1,83 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<STYLE type="text/css">
+<!--
+body,tr,td,th { font-size: 11pt }
+a:link        { font-size: 11pt; color:#FFFFC0 }
+a:visited     { font-size: 11pt; color:#CCCC00 }
+a:active      { font-size: 11pt; color:#FF6699 }
+a:hover       { font-size: 11pt; color:#FF6699 }
+span          { font-size: 18pt }
+big           { font-size: 13pt }
+small         { font-size: 9pt }
+-->
+</STYLE>
+<title>EQ Tree BBS</title></head>
+<body bgcolor=#000060 text=#FFFFFF link=#FFFFC0 vlink=#CCCC00 alink=#FF6699>
+
+[<a href=./wforum.cgi?page=0>リストへもどる</a>]<br>
+<table width='100%'><tr><th bgcolor="#0000A0">
+<font color="#FFFFFF">一 括 講 読</font></th></tr></table>
+<UL>
+<LI><a href="#1">Rebuffマクロ</a> - <B>Hal*@Majop</B> 05/01/14(Fri) 19:49 <font color="#F0F0F0">No.1359</font>
+<UL><LI><a href="#2">Re: Rebuffマクロ</a> - <B>POS</B> 05/01/21(Fri) 12:53 <font color="#F0F0F0">No.1360</font>
+</UL><UL><UL><LI><a href="#3">Re^2: Rebuffマクロ</a> - <B>HAL</B> 05/01/24(Mon) 16:17 <font color="#F0F0F0">No.1361</font>
+</UL></UL></UL>
+<hr><center>
+<a name="1"></a>
+<table border=1 width='95%' cellpadding=5>
+<tr><td bgcolor=#000040>
+<TT><font face="ＭＳ ゴシック">
+投稿時間：05/01/14(Fri) 19:49<br>投稿者名：<b>Hal*@Majop</b><br>
+Ｅメール：<br>ＵＲＬ　：<br>
+タイトル：<font color=#FF9999><b>Rebuffマクロ</b></font><br>
+<blockquote><pre>local _units          = { [0] = 'player', 'party1', 'party2', 'party3', 'party4' }<br><br>function isUnitBuffUp(sUnitname, sBuffname) <br>  local iIdx = 1<br>  while (UnitBuff(sUnitname, iIdx)) do<br>    if (string.find(UnitBuff(sUnitname, iIdx), sBuffname)) then<br>      return iIdx<br>    end<br>    iIdx = iIdx + 1<br>  end<br>  return 0<br>end<br><br>function isReBuff(sUnitname, sBuffname, iTimeout) <br>  local bRet = true<br>  local _buff_id = isUnitBuffUp( sUnitname, sBuffname )<br>  if( _buff_id ) then<br>    if( iTimeout &gt;= GetPlayerBuffTimeLeft( _buff_id ) ) then<br>      CastSpellByName( sBuffname )<br>    else<br>      bRet = false<br>    end<br>  else<br>    CastSpellByName( sBuffname )<br>  end<br>  return bRet<br>end<br><br>function GrpReBuff(sBuffname, iTimeout)<br>  local bRet         = false<br>  local memberCount  = GetNumPartyMembers()<br>  local grpindex     = 1<br>  local message_text = nil<br><br>  for grpindex = 1,memberCount do<br>    TargetUnit( _units[grpindex] )<br>    bRet = isReBuff( "target", sBuffname, iTimeout )<br><br>    if (string.find(UnitClass( _units[grpindex] ), "Hunter")) then<br>      TargetUnitsPet( _units[grpindex] );<br>      if ( UnitIsUnit("pet", "target") ) then<br>        bRet = isReBuff( "target", sBuffname, iTimeout )<br>      end<br>    end<br>    if (string.find(UnitClass( _units[grpindex] ), "Warlock")) then<br>      TargetUnitsPet( _units[grpindex] );<br>      if ( UnitIsUnit("pet", "target") ) then<br>        bRet = isReBuff( "target", sBuffname, iTimeout )<br>      end<br>    end<br>  end<br><br>  if( bRet ) then<br>    message_text = 'Casting &lt; %s &gt; on [ %t ]',<br>    message_text = string.gsub(message_text, '%%s', sBuffname)<br>    message_text = string.gsub(message_text, '%%t', UnitName("target"))<br>  else<br>    message_text = 'No Need Rebuff &lt; %s &gt;'<br>    message_text = string.gsub(message_text, '%%s', sBuffname)<br>  end<br>  SendChatMessage(message_text, 'PARTY')<br>end</pre></blockquote></font></TT>
+<div align=right>
+<form action="./wforum.cgi#msg" method="POST">
+<input type=hidden name=mode value=msg_view>
+<input type=hidden name=reno value=no>
+<input type=hidden name=no value=1359>
+<input type=hidden name=oya value=1359>
+<input type=hidden name=page value="0">
+<input type=submit value="返信する"></form></div>
+</td></tr></table><br>
+<a name="2"></a>
+<table border=1 width='95%' cellpadding=5>
+<tr><td bgcolor=#000040>
+<TT><font face="ＭＳ ゴシック">
+投稿時間：05/01/21(Fri) 12:53<br>投稿者名：<b>POS</b><br>
+Ｅメール：<br>ＵＲＬ　：<br>
+タイトル：<font color=#FF9999><b>Re: Rebuffマクロ</b></font><br>
+<blockquote>&gt;   local iIdx = 1<br>&gt;   while (UnitBuff(sUnitname, iIdx)) do<br>&gt;     if (string.find(UnitBuff(sUnitname, iIdx), sBuffname)) then<br>&gt;       return iIdx<br>&gt;     end<br>&gt;     iIdx = iIdx + 1<br>&gt;   end<br><br>なんで for じゃなくて while と思ったら<br>for(iIdx=1;UnitBuff(sUnitname, iIdx);iIdx ++)<br>とか書けないんだね しょぼーん<br><br>GrpReBuff の bRet を判定してメッセージだすところは Loopの中か<br>isReBuff の中がいいんじゃない？</blockquote></font></TT>
+<div align=right>
+<form action="./wforum.cgi#msg" method="POST">
+<input type=hidden name=mode value=msg_view>
+<input type=hidden name=reno value=1359>
+<input type=hidden name=no value=1360>
+<input type=hidden name=oya value=1359>
+<input type=hidden name=page value="0">
+<input type=submit value="返信する"></form></div>
+</td></tr></table><br>
+<a name="3"></a>
+<table border=1 width='95%' cellpadding=5>
+<tr><td bgcolor=#000040>
+<TT><font face="ＭＳ ゴシック">
+投稿時間：05/01/24(Mon) 16:17<br>投稿者名：<b>HAL</b><br>
+Ｅメール：<br>ＵＲＬ　：<br>
+タイトル：<font color=#FF9999><b>Re^2: Rebuffマクロ</b></font><br>
+<blockquote>&gt; なんで for じゃなくて while と思ったら<br>&gt; for(iIdx=1;UnitBuff(sUnitname, iIdx);iIdx ++)<br>&gt; とか書けないんだね しょぼーん<br>ここはどこかのコピペなので、あまり考えてないよ。:)<br><br>&gt; GrpReBuff の bRet を判定してメッセージだすところは Loopの中か<br>&gt; isReBuff の中がいいんじゃない？<br>Manaの関係とSpellのCoolDownもあって1回実行で一人にBuffだと思ってます。<br>ので、NoNeedとでるまでペチペチ押そうかなと。。<br><br>現状はisReBuff()の第一引数のUnitNameがなぜかnilでまるで動かない<br>OTL</blockquote></font></TT>
+<div align=right>
+<form action="./wforum.cgi#msg" method="POST">
+<input type=hidden name=mode value=msg_view>
+<input type=hidden name=reno value=1360>
+<input type=hidden name=no value=1361>
+<input type=hidden name=oya value=1359>
+<input type=hidden name=page value="0">
+<input type=submit value="返信する"></form></div>
+</td></tr></table><br>
+</center>
+<br><br><center><small><!-- Web Forum v2.5 -->
+- <a href="http://www.kent-web.com/" target="_top">Web Forum</a> -
+</small></center>
+</body></html>
