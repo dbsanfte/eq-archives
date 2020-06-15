@@ -1,0 +1,105 @@
+<HTML><HEAD>
+<TITLE>Ｃｌｕｂ　Ｒｏｄｃｅｔ</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide script from old browsers
+function NameFocus() {
+if (document.entform) {
+if (document.entform.nm) {
+document.entform.nm.focus();
+}
+}
+}
+// end hide -->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="DARKTURQUOISE" TEXT="BLACK" LINK="BLUE" onLoad="NameFocus()">
+<FONT SIZE=5><B>
+<FONT COLOR="WHITE">Ｃ</FONT><FONT COLOR="FLORALWHITE">ｌ</FONT><FONT COLOR="LIGHTGREY">ｕ</FONT><FONT COLOR="SILVER">ｂ</FONT><FONT COLOR="DARKGRAY">Ｒ</FONT><FONT COLOR="WHITE">ｏ</FONT><FONT COLOR="FLORALWHITE">ｄ</FONT><FONT COLOR="LIGHTGREY">ｃ</FONT><FONT COLOR="SILVER">ｅ</FONT><FONT COLOR="WHITE">ｔ</FONT>
+</B></FONT><BR>
+<TABLE><TR>
+<TD><FORM NAME="entform" METHOD="POST" ACTION="ent.cgi">
+名前<INPUT TYPE="text" NAME="nm" SIZE=20 MAXLENGTH=20 VALUE="">
+<INPUT TYPE="submit" NAME="btn" VALUE="入　室"><BR>
+メール<INPUT TYPE="text" NAME="ml" SIZE=40 MAXLENGTH=40 VALUE=""><BR>
+<INPUT TYPE="checkbox" NAME="aclr" VALUE="on" >自動クリア
+<INPUT TYPE="checkbox" NAME="hr" VALUE="on" >仕切り線<BR>
+色<SELECT NAME="cl">
+<OPTION VALUE="0" >　白　
+<OPTION VALUE="1" >　黒　
+<OPTION VALUE="2" >　赤　
+<OPTION VALUE="3" >　緑　
+<OPTION VALUE="4" >　青　
+<OPTION VALUE="5" >　黄　
+<OPTION VALUE="6" >　紫　
+<OPTION VALUE="7" >　水　
+<OPTION VALUE="8" >ミント
+<OPTION VALUE="9" >小紅色
+<OPTION VALUE="10" >みかん
+<OPTION VALUE="11" >桃　色
+<OPTION VALUE="12" >青空色
+</SELECT>
+サイズ<SELECT NAME="sz">
+<OPTION VALUE="0" >標準
+<OPTION VALUE="1" >大１
+<OPTION VALUE="2" >大２
+<OPTION VALUE="3" >大３
+<OPTION VALUE="4" >最大
+<OPTION VALUE="5" >小１
+<OPTION VALUE="6" >最小
+</SELECT>
+背景色<SELECT NAME="bgcl">
+<OPTION VALUE="0" >薄青緑
+<OPTION VALUE="1" >暗薄青
+<OPTION VALUE="2" >濃青緑
+<OPTION VALUE="3" >暗濃青
+<OPTION VALUE="4" >海緑色
+<OPTION VALUE="5" >森林緑
+<OPTION VALUE="6" >カーキ
+<OPTION VALUE="7" >チョコ
+<OPTION VALUE="8" >薄　紫
+<OPTION VALUE="9" >ピンク
+<OPTION VALUE="10" >プラム
+<OPTION VALUE="11" >濃紫紅
+<OPTION VALUE="12" >薄灰色
+<OPTION VALUE="13" >灰　色
+<OPTION VALUE="14" >濃灰色
+</SELECT><BR>
+表示行数<SELECT NAME="ln">
+<OPTION VALUE="0" >10
+<OPTION VALUE="1" >20
+<OPTION VALUE="2" >30
+<OPTION VALUE="3" >40
+<OPTION VALUE="4" >50
+</SELECT>
+自動リロード<SELECT NAME="ref">
+<OPTION VALUE="0" >OFF
+<OPTION VALUE="1" >15
+<OPTION VALUE="2" >20
+<OPTION VALUE="3" >30
+<OPTION VALUE="4" >45
+<OPTION VALUE="5" >60
+<OPTION VALUE="6" >90
+<OPTION VALUE="7" >150
+</SELECT></TD>
+<TD VALIGN=TOP><INPUT TYPE="submit" NAME="btn" VALUE="更　新"></TD>
+<TD><INPUT TYPE="hidden" NAME="dummy">
+</FORM></TD>
+<TD VALIGN=TOP><A HREF="../eq_main.html">ＥＱルームへ</A></TD>
+</TR></TABLE>
+<HR SIZE=4 ALIGN=CENTER>
+<TABLE WIDTH="100%" BORDER="2"><TR><TD WIDTH="85%">
+<FONT COLOR="BLACK"><B>Ａｎｅｍｏｍｏ</B> <FONT COLOR="BLUE"><B>あるく</B></FONT>さんが<FONT COLOR="RED">退室</FONT>しました。</FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月22日(木)00時48分06秒] (202.248.143.53)</FONT><BR>
+<FONT COLOR="#000000">(<B>あるく</B>) <FONT SIZE=3><B>ＣＬＲ需要はゴニョゴニョなクラスの１兆倍ですよん</B></FONT></FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月22日(木)00時45分37秒]</FONT><BR>
+<FONT COLOR="#000000">(<B>あるく</B>) <FONT SIZE=3><B>夢はきっと叶うよ。</B></FONT></FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月22日(木)00時43分21秒]</FONT><BR>
+<FONT COLOR="#000000">(<B>あるく</B>) <FONT SIZE=3><B>自分を信じてがんばれば</B></FONT></FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月22日(木)00時42分58秒]</FONT><BR>
+<FONT COLOR="BLACK"><B>Ａｎｅｍｏｍｏ</B> <FONT COLOR="BLUE"><B>あるく</B></FONT>さんが<FONT COLOR="YELLOW">入室</FONT>しました。</FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月22日(木)00時41分53秒] (202.248.143.53)</FONT><BR>
+<FONT COLOR="BLACK"><B>Ａｎｅｍｏｍｏ</B> <FONT COLOR="BLUE"><B>わだ</B></FONT>さんが<FONT COLOR="RED">退室</FONT>しました。</FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月20日(火)01時25分11秒] (210.159.167.245)</FONT><BR>
+<FONT COLOR="#FFFFFF">(<B>わだ</B>) <FONT SIZE=3><B>CLR足りないっぽいから、どこでも居場所はあると思うぞ。Lv47Rngより</B></FONT></FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月20日(火)01時25分05秒]</FONT><BR>
+<FONT COLOR="BLACK"><B>Ａｎｅｍｏｍｏ</B> <FONT COLOR="BLUE"><B>わだ</B></FONT>さんが<FONT COLOR="YELLOW">入室</FONT>しました。</FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月20日(火)01時24分02秒] (210.159.167.245)</FONT><BR>
+<FONT COLOR="BLACK"><B>Ａｎｅｍｏｍｏ</B> <FONT COLOR="BLUE"><B>鼻粉</B></FONT>さんが<FONT COLOR="RED">退室</FONT>しました。</FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月14日(水)03時03分57秒] (211.7.107.117)</FONT><BR>
+<FONT COLOR="#FFFFFF">(<B>鼻粉</B>) <FONT SIZE=3><B>SEXYさんの死体の上で/shrugしてスクリーンショットにおさめるのが夢だったのに！</B></FONT></FONT> <FONT COLOR="BLUE" SIZE=2>[101年 2月14日(水)03時03分47秒]</FONT><BR>
+</TD><TD BGCOLOR="CYAN" VALIGN="TOP">
+</TD></TR></TABLE>
+<HR SIZE=4 ALIGN=CENTER>
+<SMALL><ADDRESS>HyperChat Version 2.40 by <A HREF="mailto:masahiro@sh.rim.or.jp">Masahiro F.</A></ADDRESS></SMALL>
+</BODY></HTML>

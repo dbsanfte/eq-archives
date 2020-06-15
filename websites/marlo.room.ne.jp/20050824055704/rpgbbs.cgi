@@ -1,0 +1,729 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<style type="text/css">
+<!--
+body,tr,td,th	{ font-size: 9pt; font-family: Verdana; }
+a:link		{ color:#88ffff; text-decoration: none;}
+a:visited	{ color:#aaccff; text-decoration: none;}
+a:active	{ color:#11aaff; text-decoration: none;}
+a:hover		{ color:#ffff00; text-decoration: underline;}
+big		{ font-size: 16pt; }
+small	{ font-size: 8pt; }
+-->
+</style>
+<title>- GAME FREE RPG BBS -</title></head>
+<body text=#ffffff link=#88ffff vlink=#aaccff alink=#11aaff background="./image/arasi.jpg">
+<div align=center>
+<table border=2 bordercolor=#22aabb bgcolor=#eeeeff cellpadding=2 cellspacing=2>
+<tr bgcolor=#22aabb align=center>
+<td width=70>[<a href="game_main.html">GAME 部屋</a>]</td>
+<td width=70>[<a href="rpgbbs.cgi">記事表示</a>]</td>
+<td width=70>[<a href="rpgbbs.cgi?action=sview">記事検索</a>]</td>
+<td width=70>[<a href="rpgbbs.cgi?action=newch">キャラ登録</a>]</td>
+<td width=70>[<a href="rpgbbs.cgi?action=login">ログイン</a>]</td>
+<td width=70>[<a href="rpgbbs.cgi?action=rankdisp">ランキング</a>]</td></tr></table>
+<br><br><table border=2 bordercolor=#22aabb bgcolor=#eeeeff cellpadding=2 cellspacing=2>
+<td bgcolor=#22aabb><big><b>- GAME FREE RPG BBS -</b></big></td></tr></table><br></div>
+<br><div align=center><table border=2 bordercolor=#22aabb bgcolor=#eeeeff cellpadding=2 cellspacing=2 width=200>
+<tr><td width=50% bgcolor=#22aabb align=center><a href="rpgbbs.cgi?action=newview">新規投稿</a></td>
+<td width=50% bgcolor=#22aabb align=center><a href="rpgbbs.cgi?action=sortbyres">レス新着記事</a></tr></td></table></div><br>
+<div align=center>
+<table border=2 bordercolor=#22aabb bgcolor=#eeeeff cellpadding=2 cellspacing=2><tr><td colspan=3 align=center bgcolor=#22aabb>
+<b> 1 <a href="rpgbbs.cgi?page=2">&gt;2</a> 
+<a href="rpgbbs.cgi?page=3">&gt;3</a> 
+<a href="rpgbbs.cgi?page=4">&gt;4</a> 
+<a href="rpgbbs.cgi?page=5">&gt;5</a> 
+<a href="rpgbbs.cgi?page=6">&gt;6</a> 
+<a href="rpgbbs.cgi?page=7">&gt;7</a> 
+<a href="rpgbbs.cgi?page=8">&gt;8</a> 
+<a href="rpgbbs.cgi?page=9">&gt;9</a> 
+</b></td></tr>
+<td bgcolor=#22aabb width=33%>&nbsp;</td>
+<td bgcolor=#22aabb width=33% align=center>
+<b>[Page 1/15]</b></td>
+<td bgcolor=#22aabb width=33% align=right>
+<a href="rpgbbs.cgi?page=2"><b>Next≫</b></a></td>
+</tr></table><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[782] conjの新spell</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=782">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 29 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11984</font> <font color=#ccccff>BOM: 5063</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ついにきましたよ！<br>同じZone内にいる仲間を自分の所に呼び寄せるCoHがｶﾞｶﾞｶﾞ！<br>EQ1ではMagicianの存在意義そのものと言ってもいいくらい超重要spellだったんだけど<br>これがついにEQ2にも導入されます<br><br>はよLV50にせねば！</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 71pt 獲得! </font>
+<br><font color=#22aabb> 8/22(Mon) 10:12</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=782&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=782&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[781] NARUOうずまき忍法伝</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=781">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 29 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11880</font> <font color=#ccccff>BOM: 5063</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>アクションは楽しいんだけど<br>難易度かなり高いっす<br><br>火影から依頼をうけて道中の妨害をクリアしつつ依頼を達成してくんだけど<br>たまに味方同士でもやりあうのよこれ<br>支援キャラのときは頼もしい事この上ないんだが、これが敵にまわると脅威名訳で<br>多彩なアクションを自在に使いこなせないとなかなかクリアは厳しいかも<br>任務の合間にちょこちょこ出かけられるんで、チマチマ経験値稼いで<br>ごり押しできるまで強化してくしかないなー<br><br>たぶん極めれば空中100hitとかできそうな感じなんだけど<br>タイミングとボタンおお過ぎて俺にはﾑﾘｗ<br><br>是非TOXINEにやってもらいたい感じのゲームだ</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 2pt 獲得! △BOM 1pt 獲得!</font>
+<br><font color=#cc2200><font color=#666644>Shadowfang</font> を手に入れた。</font>
+<br><font color=#22aabb> 8/22(Mon) 07:28</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=781&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=781&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[780] フェローシップ</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=780">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 28 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11069</font> <font color=#ccccff>BOM: 4765</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>これがなかなか．．．ユファファﾀﾝ(・∀・)ｲｲ!!<br>今日はファストブレード撃ってくれるようになりますた<br>白、召じゃ連携だせないよ(´･ω･`)<br><br>にしても、今日は１０匹倒したところでゴブの開幕自爆で即死しますた(´･ω･`)ｱｳｱｳ</font><div align=right><small>
+<br><font color=#cc2200> △BOM 6pt 獲得!</font>
+<br><font color=#22aabb> 8/16(Tue) 06:26</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=780&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=780&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;＠ちゃみぃ<small> <font color=#ffcc44>(Lv: 17 BlackReavers
+ <font color=#ffcc66>ATK: 3457</font> <font color=#ccccff>DEF: 2408</font>)</font>&nbsp;[<a href="mailto:chamy@brown.plala.or.jp">MAIL</a>-<a href="http://www1.plala.or.jp/minoru/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//kuma.gif" border=0>
+</td><td width=90%><font color=#000000>どんだけ強いゴブとやってんだ？<br>基本的にフェローから見た敵のLVで経験値入ってくから<br>最初ならLV３５程度の敵で十分だよ。<br><br>わしがアルテパでやってるのは<br>少しだけど自分の分も経験値稼ぎ出来るからなんだが(^^;<br>とりあえず、↓のサイト見て勉強しとけ～ｗ<br><br><A HREF="http://ff11.s111.xrea.com/index.php?Fellowship" TARGET="_blank"><font color=#ff4400>http://ff11.s111.xrea.com/index.php?Fellowship</font></A><br></font>
+<div align=right><small>
+<br><font color=#559955><b>ステータスブースト！</b></font>
+<br><font color=#cc2200>△ATK 164pt 獲得! △DEF 177pt 獲得!</font>
+<br><font color=#22aabb> 8/16(Tue) 10:32</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=780&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=780&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[779] 2nd</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=779">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 28 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11069</font> <font color=#ccccff>BOM: 4755</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>conjが29になりました<br>そろそろsoloが面倒になってきた<br>ただ、その気になればいつでも稼げるんで気楽でいい<br>外人さんもTankいないときなんかは、MyPetをTANKとして当て込んで誘ってくるんで<br>なかなか新鮮だったりします<br>ってかまじでTANKできちゃうってのがすごいと思うなりよ<br>Pet用のHealも2つ目覚えたらちゃんとtimer別なんで回復量が2.5倍になったし（お<br>なーんかメインのIlluがGrayの△＋２に殺されてるのが夢のような強さですｗ<br></font><div align=right><small>
+<br><font color=#cc2200>△Rapid 25pt 獲得! △BOM 1pt 獲得!</font>
+<br><font color=#22aabb> 8/10(Wed) 12:08</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=779&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=779&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[778] ＪＥ版もひどいが</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=778">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 28 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11069</font> <font color=#ccccff>BOM: 4755</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>英語版もかなりやばいことになってます<br>どうやらお金をdupeしたやつがいるらしーく<br>なんでも200ppほど作ったとか<br>当然dupeした本人はBanなんですが、なんと<br>Dupeしたお金を受けとった人までBanされてるもよう<br><br>受け取ったというのは承諾、未承諾を問わず無差別banなわけで<br>Dupeした本人がたまたま購入した品物を売っていた人もBanされてるもよう<br>品物を購入した時点で有無をいわせずDupeしたお金を受け取ったとみなされてるわけで<br>これはBanされた人も納得いかんわな<br><br>なんかもちっとスマートな解決策はないものか？<br>同じGuildのメンバーも数名Banされたらしーく<br>JE版に移ってしまった模様...このままguild崩壊するかも?ってな雰囲気に<br>なってきますた(´･ω･`)ｼｮﾎﾞｰﾝ</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 25pt 獲得! △BOM 1pt 獲得!</font>
+<br><font color=#22aabb> 8/10(Wed) 12:08</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=778&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=778&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;TOXINE<small> <font color=#ffcc44>(Lv: 21 BlackReavers
+ <font color=#ffcc66>ATK: 5856</font> <font color=#ccccff>DEF: 3169</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>そら凄いね……。(;'д')<br><br>■みたいに見て見ぬふりを決め込むと、FF11みたいな<br>経済崩壊になってしまうからなぁ。<br>迅速で厳しい対応が必要なのはわかるが。</font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 2pt 獲得! △DEF 6pt 獲得!</font>
+<br><font color=#22aabb> 8/12(Fri) 13:19</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=778&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=778&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 28 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11069</font> <font color=#ccccff>BOM: 4755</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>一応dupeした金を受け取った方の人は凍結処理って事だったらしーく<br>一人一人log解析しつつ、白だったひとは復帰してるっぽい<br>もっともうちのguildmenはすでにJE版をエンジョイしてるとかで<br>戻ってこないかもねｗ</font>
+<div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 8/12(Fri) 17:05</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=778&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=778&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[777] ＥＱ２の新戦闘システム</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=777">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 28 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11035</font> <font color=#ccccff>BOM: 4754</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>あちこちでＮＤＡ違反バリバリナンですがｗ<br>Illuに関してはMisoの回復が現状60から20くらいになってるらしーく<br>んでPowRegen系のCAPが下がった<br>あとGroupBuffになってＦＦみたいにRaid組んでても他groupにMisoできないから<br>Miso欲しいgroupには必須っぽ<br><br>こりゃ相当DPSあげてもらわないとならんね<br>24人枠に4人とか参加枠ないしなー&gt;ENC系<br>まぁ、これも調整次第なんだろうけど．．．<br><br>そうそう、InqのDDが1000dmg超えてるらしぃ（うほ<br>あと、DrigeがCaster系のBuff（Raidみんなにかかる20/tickのMisoとか）<br>BardがMelee系のBuffらしい<br><br>しかし．．．ほんとに一から作り直しだねこりゃ．．．<br>いまさらこんな変更かけてシャッフルしちゃうとこ見るに<br>やっぱ1年早過ぎたんだよな．．．<br><br>ＥＱ２ってどのクラスもなんとなく得意な分野をもちつつ、他のクラスでも<br>贅沢いわなきゃ補えるようなクラス構成、スキル配分だったのに<br>今回の変更入ると、特定のクラスの特徴が突出して代わりができるクラスがなくなってるよな．．．<br>だんだんＥＱ１っぽくなってってるよね<br>この変更でユーザーが離れていかなければいいが</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 9pt 獲得! △BOM 1pt 獲得!</font>
+<br><font color=#cc2200><font color=#666644>Culwen's Point</font> を手に入れた。</font>
+<br><font color=#22aabb> 8/ 7(Sun) 20:40</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=777&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=777&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 28 Felwhiteの民
+ <font color=#ffcc66>Rapid: 11035</font> <font color=#ccccff>BOM: 4754</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ＰＣもmobもDMGがサイヤ化してるから<br>ちょっとしたミスで命取りになるだろうし<br>ずいぶんと戦闘もシビアになって、こりゃ、とてもカジュアルプレイヤーが<br>のほほんとＴＶ見ながら遊んだりなんてできなくなりそうだね</font>
+<div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 8/ 7(Sun) 20:43</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=777&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=777&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[776] なんか</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=776">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10142</font> <font color=#ccccff>BOM: 4457</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ＪＥ版はすごい事になっとるみたいね<br>さすが■ｅｸｫﾘﾃｨﾀｶｽ</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 5pt 獲得! △BOM 2pt 獲得!</font>
+<br><font color=#22aabb> 8/ 4(Thu) 20:06</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=776&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=776&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;＠ちゃみぃ<small> <font color=#ffcc44>(Lv: 16 BlackReavers
+ <font color=#ffcc66>ATK: 3234</font> <font color=#ccccff>DEF: 2197</font>)</font>&nbsp;[<a href="mailto:chamy@brown.plala.or.jp">MAIL</a>-<a href="http://www1.plala.or.jp/minoru/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//kuma.gif" border=0>
+</td><td width=90%><font color=#000000>なになに、なんかあったの？<br>ＥＱ2は全く触って無いから<br>情報全然仕入れてないんだけど<br>何があった？<br>詳しく</font>
+<div align=right><small>
+<br><font color=#cc2200> △DEF 7pt 獲得!</font>
+<br><font color=#22aabb> 8/ 6(Sat) 10:05</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=776&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=776&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10218</font> <font color=#ccccff>BOM: 4457</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>課金サーバーの不調のあおりで<br>Loginサーバーとかキャラのデータベースサーバーまで<br>吹っ飛んだらしいよ<br><br>ＥＱ２のキャラが消えたとかなんとか．．．<br>今も課金情報が正常じゃないから、課金してるのに<br>課金してないとか言われて入れない人多数</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 60pt 獲得! </font>
+<br><font color=#22aabb> 8/ 6(Sat) 19:23</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=776&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=776&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;TOXINE<small> <font color=#ffcc44>(Lv: 21 BlackReavers
+ <font color=#ffcc66>ATK: 5853</font> <font color=#ccccff>DEF: 3158</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>マジスカ？((((;ﾟДﾟ))))<br>先日遊んだばかりだが、大丈夫だろうか……。</font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 15pt 獲得! </font>
+<br><font color=#22aabb> 8/ 9(Tue) 01:38</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=776&rno=3"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=776&rno=3
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[775] Desert of Flame</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=775">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10135</font> <font color=#ccccff>BOM: 4454</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>どうやらＳＯＶで導入された派閥のシステムがはいるもよう<br>ＥＱ１の時はプレイヤー毎に派閥管理があったんで<br><br>Raidにでかけたときとか、派閥があわない連中がいると<br>素通りできるところも特定の派閥に属してるＰＣはMobに<br>襲われたりして、えらい進行に時間かかったり<br>敵対派閥の街でRaidしたら、ＢＡＮＫＥＲ殺すなｸﾞｫﾗｧｱ!とかshoutされたり<br>いろいろマズイ事があったんだけど<br><br>ＥＱ２の派閥システムはどうやらサーバー全体で優位な派閥が決まる模様<br>自分が属してる派閥の恩恵を受けたければ、Facが上がる行為をがんばれと．．．<br>そゆ事らしいですな<br><br>これで派閥が優位にたってるときに特定の報償とかＩＴＥＭがもらえる<br>なんて事になるとＦＦのシステムまんまだね</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 10pt 獲得! △BOM 4pt 獲得!</font>
+<br><font color=#22aabb> 7/30(Sat) 06:04</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=775&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=775&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[774] 猿蛇合戦</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=774">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#228866>&nbsp;&nbsp;らんばだ 
+<small> <font color=#ffcc44>(Lv: 17 BlackReavers
+ <font color=#ffcc66>ATK: 3651</font> <font color=#ccccff>DEF: 2277</font>)</font>&nbsp;[<a href="mailto:tanokin@hotmail.com">MAIL</a>-<a href="http://homepage1.nifty.com/butterfly" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//saru.gif" border=0>
+</td><td width=90%><font color=#000000>今さらだけど、誰か持ってたっけ？<br><A HREF="http://jpn01.konami.co.jp/movie/mgs3/mgs3_svsm.wmv" TARGET="_blank"><font color=#ff4400>http://jpn01.konami.co.jp/movie/mgs3/mgs3_svsm.wmv</font></A></font><div align=right><small>
+<br><font color=#cc2200>△ATK 3pt 獲得! △DEF 33pt 獲得!</font>
+<br><font color=#22aabb> 7/27(Wed) 23:20</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=774&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=774&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10123</font> <font color=#ccccff>BOM: 4448</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ＭＧＳ３はもってないなー<br>サルゲッチュー３でも買うべしｗ</font>
+<div align=right><small>
+<br><font color=#996633><b>buffゲット！</b></font>
+<br><font color=#cc2200>△Rapid 98pt 獲得! </font>
+<br><font color=#22aabb> 7/28(Thu) 21:13</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=774&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=774&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;TOXINE<small> <font color=#ffcc44>(Lv: 21 BlackReavers
+ <font color=#ffcc66>ATK: 5831</font> <font color=#ccccff>DEF: 3158</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>イカスなー。<br>猿の虐殺シーンでも乱舞するのかと思ったけど、<br>思ったよりかライトテイストですねぃ(ぉ</font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 7pt 獲得! </font>
+<br><font color=#22aabb> 7/29(Fri) 00:41</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=774&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=774&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;らんばだ<small> <font color=#ffcc44>(Lv: 17 BlackReavers
+ <font color=#ffcc66>ATK: 3723</font> <font color=#ccccff>DEF: 2277</font>)</font>&nbsp;[<a href="mailto:tanokin@hotmail.com">MAIL</a>-<a href="http://homepage1.nifty.com/butterfly" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//saru.gif" border=0>
+</td><td width=90%><font color=#000000>このへんに裏話が。<br><A HREF="http://www.watch.impress.co.jp/game/docs/20050727/saru.htm" TARGET="_blank"><font color=#ff4400>http://www.watch.impress.co.jp/game/docs/20050727/saru.htm</font></A></font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 45pt 獲得! </font>
+<br><font color=#22aabb> 7/30(Sat) 00:44</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=774&rno=3"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=774&rno=3
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[773] そうそう</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=773">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9864</font> <font color=#ccccff>BOM: 4440</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ＷＤの1万回転のHDDｘ２おごってRaid組んでみたんだけど<br>その前に使ってた普通の8MBCacheのHDDのほうがどうもアクセス速いんだよこれが<br>街中でHDD読み出しカクカク酷いし（常にテクスチャガリガリ読んでるんで<br>程度の差こそあれカクカクはするんだけど）<br>Zoneも遅くなった．．．なんでだろね<br><br>MotherにはNforce4のRaidとSilliconのRaidchipの2種類があるんだけど<br>NForceの方使ったほうがいいのかのぉ<br><br>ちと明日切り替えてみよ</font><div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 7/24(Sun) 02:02</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=773&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=773&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9998</font> <font color=#ccccff>BOM: 4448</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>結局Nforceのほうもやっぱりダメダメで、以前のＰＣＩ接続のATA133のRaidのが速かった...<br>Raid用に２台買ったんだけど、シブシブ単体で使うように設定したら<br>あら不思議、ぜんぜん速いじゃないですか！！<br><br>ついでにあまった１台もつけてPagefile作ったら<br>更に速くなったという....<br><br>なーんか、非常に、最強に納得できない状況なんだけど<br>とりあえず以前の環境より若干速くなったからﾖｼとしよう（お<br><br>nforceとSilliconのRaidchipと相性悪いのかのぉ</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 84pt 獲得! △BOM 4pt 獲得!</font>
+<br><font color=#22aabb> 7/27(Wed) 02:06</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=773&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=773&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[772] ということで</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=772">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9864</font> <font color=#ccccff>BOM: 4440</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>SudekiはChammyにまかせた（お</font><div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 7/24(Sun) 01:59</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=772&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=772&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;＠ちゃみぃ<small> <font color=#ffcc44>(Lv: 16 BlackReavers
+ <font color=#ffcc66>ATK: 3234</font> <font color=#ccccff>DEF: 2189</font>)</font>&nbsp;[<a href="mailto:chamy@brown.plala.or.jp">MAIL</a>-<a href="http://www1.plala.or.jp/minoru/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//kuma.gif" border=0>
+</td><td width=90%><font color=#000000>まぁ割と遊べるかもかも<br>多分前半終って半ばに入ったっぽいんだけど<br>色んな場所に楽に行けるようになったので<br>未消化のクエとかアイテム回収などをする予定<br>システム的に微妙な所はあるが、遊べるな。<br>思ってた程悪くないｗ</font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 41pt 獲得! </font>
+<br><font color=#22aabb> 7/26(Tue) 01:32</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=772&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=772&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9892</font> <font color=#ccccff>BOM: 4442</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>もう半分かいｗ<br>はやいな<br><br>ＢＡＳＡＲＡはようやく５人クリアしたのみ<br>前田利家クリアしたときに出てくる嫁の「まつ」が使えるようになったんだけど<br>モデルが違うだけの、必殺技のエフェクトから技の繰り出し方まで、マンマ上杉謙信のままでちょっと萎えた<br><br>今晩は織田信長で気分転換する予定ｗ</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 22pt 獲得! △BOM 1pt 獲得!</font>
+<br><font color=#22aabb> 7/26(Tue) 07:44</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=772&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=772&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[771] 戦国ＢＡＳＡＲＡ</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=771">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9864</font> <font color=#ccccff>BOM: 4440</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>あいやー、こりゃまたすごいハッチャケぶりっすな<br>無双のストーリーとか戦略ってのをバッサリ削ぎ落として<br>オラオラー！！！って力押しする爽快感だけを抽出した感じ<br>一応占領する領土によって展開が変わってくるみたいだけど<br>このあたりは隠しキャラの出し方にかかわってくるだけっぽい<br><br>とにかくアッサリと１０００人斬りできちゃうのが<br>いい感じっすよｗ</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 26pt 獲得! △BOM 2pt 獲得!</font>
+<br><font color=#22aabb> 7/24(Sun) 01:58</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=771&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=771&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[770] 今回の</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=770">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9831</font> <font color=#ccccff>BOM: 4437</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000><A HREF="http://www.asahi-net.or.jp/~ai6m-mtu/eq2uiset.lzh" TARGET="_blank"><font color=#ff4400>http://www.asahi-net.or.jp/~ai6m-mtu/eq2uiset.lzh</font></A><br>ＵＩパラメータの追加で色々調べてたら<br>TargetのHP%表示するやつ見つけたんで付けてみた<br><br>結局DynamicFillterのbitが1個ずれてただけっぽ（お<br><br>新旧あわせて表示するようにしたんでよろす</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 4pt 獲得! △BOM 4pt 獲得!</font>
+<br><font color=#22aabb> 7/22(Fri) 23:34</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=770&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=770&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[769] ライトセイバーで</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=769">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10469</font> <font color=#ccccff>BOM: 4922</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000><A HREF="http://www.watch.impress.co.jp/game/docs/20050720/gdex.htm" TARGET="_blank"><font color=#ff4400>http://www.watch.impress.co.jp/game/docs/20050720/gdex.htm</font></A><br>力尽きますた．．．あとはたのんだ．．．ﾊﾟﾀ</font><div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 7/20(Wed) 19:36</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;＠ちゃみぃ<small> <font color=#ffcc44>(Lv: 16 ゴットバード
+ <font color=#ffcc66>ATK: 2919</font> <font color=#ccccff>DEF: 2193</font>)</font>&nbsp;[<a href="mailto:chamy@brown.plala.or.jp">MAIL</a>-<a href="http://www1.plala.or.jp/minoru/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//kuma.gif" border=0>
+</td><td width=90%><font color=#000000>とうとうきたね、こういうコントローラー…<br>ＭＤ時代似非バーチャルなこんな奴あったけど<br>格段に進歩してるなｗ<br>誰かダイブしないかね？</font>
+<div align=right><small>
+<br><font color=#cc2200>▼ATK -10pt 損失.. ▼DEF -2pt 損失..</font>
+<br><font color=#cc2200><font color=#666644>Azurewrath</font> が壊れてしまった。</font>
+<br><font color=#22aabb> 7/21(Thu) 10:17</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9815</font> <font color=#ccccff>BOM: 4431</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ところでXBOXユーザー諸君<br>Ｓｕｄｅｋｉ遊んでみる気はないかね<br>久々のARPGですよ！<br><br>ってか、例によって2本頼んじまった．．．．戦国ＢＡＳＡＲＡだと思って<br>宅配の箱あけて出てきたソフトがすでに持っているＳｕｄｅｋｉですた(ﾊﾟﾀｯ</font>
+<div align=right><small>
+<br><font color=#666666><b>バカマントにやられた</b></font>
+<br><font color=#cc2200>▼Rapid -515pt 損失.. ▼BOM -325pt 損失..</font>
+<br><font color=#22aabb> 7/21(Thu) 21:14</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;らんばだ<small> <font color=#ffcc44>(Lv: 17 BlackReavers
+ <font color=#ffcc66>ATK: 3646</font> <font color=#ccccff>DEF: 2222</font>)</font>&nbsp;[<a href="mailto:tanokin@hotmail.com">MAIL</a>-<a href="http://homepage1.nifty.com/butterfly" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//saru.gif" border=0>
+</td><td width=90%><font color=#000000>漏れはこっちにトキメキました。<br><A HREF="http://pc.watch.impress.co.jp/docs/2005/0715/lebedev.htm" TARGET="_blank"><font color=#ff4400>http://pc.watch.impress.co.jp/docs/2005/0715/lebedev.htm</font></A></font>
+<div align=right><small>
+<br><font color=#cc2200> △DEF 21pt 獲得!</font>
+<br><font color=#22aabb> 7/21(Thu) 23:52</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=3"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=3
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9808</font> <font color=#ccccff>BOM: 4433</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>これはまだ製品化の予定もないんでない？<br>製品化されたときはもちろん買うつもりでいるが<br><br>ＥＱ２用にWDの10000rpmの74Gモデルｘ２でRaid0組んでみた<br>爆音ゆるすまじ！！クワッ！！<br>明日静音＆冷却機能付のＨＤＤケース買ってきます<br>まだ秋葉に９８０円アルミケースあまってるといいんだが．．．<br><br>あと300Gの16MBcacheのやつも手に入れたんで、データ用に使う予定<br><br>んでいまRaid組んでるHITACHの128GBのIDEが2台あまるんで<br>白箱でもかって2台まとめてＮＡＳにでもしようかと．．．</font>
+<div align=right><small>
+<br><font color=#cc2200>▼Rapid -6pt 損失.. △BOM 1pt 獲得!</font>
+<br><font color=#22aabb> 7/22(Fri) 19:53</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=4"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=4
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;＠ちゃみぃ<small> <font color=#ffcc44>(Lv: 16 ゴットバード
+ <font color=#ffcc66>ATK: 3178</font> <font color=#ccccff>DEF: 2189</font>)</font>&nbsp;[<a href="mailto:chamy@brown.plala.or.jp">MAIL</a>-<a href="http://www1.plala.or.jp/minoru/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//kuma.gif" border=0>
+</td><td width=90%><font color=#000000>ちょっとやって見たい自分ガイル＞Sudeki<br>あ、あとukeru.jpの100万Hitプレゼントで<br>ライデンファイターズのＤＶＤもろたｗ<br>当時のメスト記事集めたミニ本付き</font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 20pt 獲得! ▼DEF -3pt 損失..</font>
+<br><font color=#cc2200><font color=#666644>Wirt's Leg</font> を手に入れた。</font>
+<br><font color=#22aabb> 7/22(Fri) 00:06</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=5"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=5
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 26 Felwhiteの民
+ <font color=#ffcc66>Rapid: 9825</font> <font color=#ccccff>BOM: 4431</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>なんですとー！<br>それは是非よこしなさい＞ＤＶＤ<br>とりあえず週末取りにきてちょ</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 14pt 獲得! ▼BOM -1pt 損失..</font>
+<br><font color=#22aabb> 7/22(Fri) 19:52</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=769&rno=6"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=769&rno=6
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[768] spilitpaw sagaのRaidシーン</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=768">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10474</font> <font color=#ccccff>BOM: 4915</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>難易度高くすると結構ＢＯＳＳが強いです<br>Resistできないと12000DMGとか食らうAE使ってきたりするよ（お<br><br><A HREF="http://www.asahi-net.or.jp/~ai6m-mtu/EQ2ss_001.jpg" TARGET="_blank"><font color=#ff4400>http://www.asahi-net.or.jp/~ai6m-mtu/EQ2ss_001.jpg</font></A><br><br>あと、Frapsってツール使ってるんだけど、こいつの付属機能に<br>Movie撮影ってのがあります、ちょいとRaidの様子を撮ってみたんでドゾｗ<br><br><A HREF="http://www.asahi-net.or.jp/~ai6m-mtu/EQ2movie001.avi" TARGET="_blank"><font color=#ff4400>http://www.asahi-net.or.jp/~ai6m-mtu/EQ2movie001.avi</font></A></font><div align=right><small>
+<br><font color=#cc2200>△Rapid 1pt 獲得! △BOM 5pt 獲得!</font>
+<br><font color=#22aabb> 7/17(Sun) 02:50</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=768&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=768&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10469</font> <font color=#ccccff>BOM: 4922</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>よく見れば下のaviファイル400MBもありんすｗ<br>ＨＰ容量100MBの実に4倍（お<br>そんなわけで削除しました<br><br>変わりにSummonerlv24のsoloの状況を収めたwmvファイルに<br>置き換えておいたんでトクとご覧あれ<br>もうね、Yellowだって矢印でてなきゃ余裕っすよ（ぷ</font>
+<div align=right><small>
+<br><font color=#cc2200>▼Rapid -4pt 損失.. △BOM 5pt 獲得!</font>
+<br><font color=#22aabb> 7/20(Wed) 19:02</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=768&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=768&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10469</font> <font color=#ccccff>BOM: 4922</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000><A HREF="http://www.asahi-net.or.jp/~ai6m-mtu/EQ2movie001.wmv" TARGET="_blank"><font color=#ff4400>http://www.asahi-net.or.jp/~ai6m-mtu/EQ2movie001.wmv</font></A><br>フォーマット変えてるの忘れてましたｗ<br><br>ちなみにＨＯは使わずにpetと自前のDotのみで倒してます<br>そんなわけで、ＤＤも交えてＨＯも使えばまだまだいけますぞー<br>このMovieの敵だと３－４匹休憩なしに連続でやれます<br></font>
+<div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 7/20(Wed) 19:22</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=768&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=768&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[767] 先生っ</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=767">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#228866>&nbsp;&nbsp;TOXINE 
+<small> <font color=#ffcc44>(Lv: 21 BlackReavers
+ <font color=#ffcc66>ATK: 5822</font> <font color=#ccccff>DEF: 3146</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>先生、質問ですっ。(｀Д´)ﾉシ<br><br>アントニカのクエストで、「A Tour of Antonica」てやつなのですが。<br>まあとにかく指定された場所に行けばいいだけなんですけど、<br>最後から2番目の奴が全然場所わからねーだす。<br><br>OGamingによると、<br>Hidden Vale - Entrance to Hidden Vale is south of<br> Steppes Griffin Tower at -2058, -19, +706<br>とあるので/locを頼りに行ってみたのですが、それらしき谷など存在せず。<br>Z軸見ると、地中みたいな高さなんで、台地の周りの崖に入り口でも<br>あるんかいなーと歩き回って見るもわからず。<br><br>この隠れ谷って、どうやって行ったらいいんでしょうか。(´・ω・｀)<br><br>p.s.Lv20になり、ダージになりますた。</font><div align=right><small>
+<br><font color=#cc2200>△ATK 51pt 獲得! △DEF 2pt 獲得!</font>
+<br><font color=#cc2200><font color=#666644>Gold Skin</font> が壊れてしまった。</font>
+<br><font color=#22aabb> 7/15(Fri) 13:03</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=767&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=767&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10473</font> <font color=#ccccff>BOM: 4907</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>HiddenValeってのは、ＴＳ側のGriffonStationから東だったかな<br>ＴＳいかずにＢＢにもどりつつ、岩肌をなめて走ってると<br>畑に差し掛かる手前左手に抜け道みたいなのがあって<br>その道を上がっていくと村がある<br><br>たしかHazeKodiakが道に一匹俳諧してるんで<br>それkillせんとたどり着けないよ<br>村にはいらなくても村の入り口まででOKなはず</font>
+<div align=right><small>
+<br><font color=#999900><b>会心の一撃！！</b></font>
+<br><font color=#cc2200>△Rapid 36pt 獲得! △BOM 59pt 獲得!</font>
+<br><font color=#cc2200><font color=#666644>Life Potion</font> を手に入れた。</font>
+<br><font color=#22aabb> 7/15(Fri) 20:44</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=767&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=767&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;TOXINE<small> <font color=#ffcc44>(Lv: 21 BlackReavers
+ <font color=#ffcc66>ATK: 5821</font> <font color=#ccccff>DEF: 3158</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>ありがとーん。行ってみまっする。('Д')ゞ</font>
+<div align=right><small>
+<br><font color=#cc2200>▼ATK -1pt 損失.. △DEF 6pt 獲得!</font>
+<br><font color=#22aabb> 7/16(Sat) 11:09</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=767&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=767&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[766] リネ２は</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=766">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#228866>&nbsp;&nbsp;らんばだ 
+<small> <font color=#ffcc44>(Lv: 17 BlackReavers
+ <font color=#ffcc66>ATK: 3646</font> <font color=#ccccff>DEF: 2187</font>)</font>&nbsp;[<a href="mailto:tanokin@hotmail.com">MAIL</a>-<a href="http://homepage1.nifty.com/butterfly" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//saru.gif" border=0>
+</td><td width=90%><font color=#000000>こうやって遊ぶのか(違<br><A HREF="http://pya.cc/pyaimg/pimg.php?imgid=13357" TARGET="_blank"><font color=#ff4400>http://pya.cc/pyaimg/pimg.php?imgid=13357</font></A></font><div align=right><small>
+<br><font color=#996633><b>buffゲット！</b></font>
+<br><font color=#cc2200>△ATK 59pt 獲得! </font>
+<br><font color=#22aabb> 7/13(Wed) 00:38</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=766&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=766&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10263</font> <font color=#ccccff>BOM: 4818</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>やれやれだｗ</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 37pt 獲得! </font>
+<br><font color=#22aabb> 7/13(Wed) 22:52</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=766&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=766&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;TOXINE<small> <font color=#ffcc44>(Lv: 21 伝説の勇者
+ <font color=#ffcc66>ATK: 6216</font> <font color=#ccccff>DEF: 3221</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>何かひとつのことに打ち込む姿は美しい（ありえな</font>
+<div align=right><small>
+<br><font color=#cc2200>△ATK 4pt 獲得! </font>
+<br><font color=#22aabb> 7/14(Thu) 02:45</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=766&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=766&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;＠ちゃみぃ<small> <font color=#ffcc44>(Lv: 16 ゴットバード
+ <font color=#ffcc66>ATK: 3164</font> <font color=#ccccff>DEF: 2380</font>)</font>&nbsp;[<a href="mailto:chamy@brown.plala.or.jp">MAIL</a>-<a href="http://www1.plala.or.jp/minoru/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//kuma.gif" border=0>
+</td><td width=90%><font color=#000000>やってる人(´・ω・｀)ｶﾜｲｿｽ</font>
+<div align=right><small>
+<br><font color=#666666><b>バカマントにやられた</b></font>
+<br><font color=#cc2200>▼ATK -134pt 損失.. ▼DEF -98pt 損失..</font>
+<br><font color=#22aabb> 7/14(Thu) 11:08</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=766&rno=3"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=766&rno=3
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[765] ついに</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=765">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10217</font> <font color=#ccccff>BOM: 4818</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>LV20に到達！念願のConjureになったと同時に<br>Class専門化spellでAdept2のpetをゲッツ<br><br>見た目がかっちょええ蜘蛛からちょっと無骨なRockになってナニだけど．．．<br>この専門化spellのpetのＬＶキャップがいくつかわからないけど<br>こいつはキャップ到達まで現役でいる予感<br>LV20到達時に普通に覚えた火エレペットが霞んで見ますｗ<br>こいつの強さは折り紙付っすよ！<br>YellowのMobにぶつけてもまったく体力が減る気配がありませぬｗ<br><br>このペットでLV30くらいまではsolo安泰の予感<br>もうちょっとすると今みたいにpetもご主人様と一緒に<br>Lvupしなくなってしまうんで、今のうちにあげきらねば！</font><div align=right><small>
+<br><font color=#009999><b>SoW,Misoゲット！</b></font>
+<br><font color=#cc2200> △BOM 71pt 獲得!</font>
+<br><font color=#22aabb> 7/11(Mon) 19:46</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=765&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=765&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#228866>&nbsp;&nbsp;&nbsp;TOXINE<small> <font color=#ffcc44>(Lv: 21 伝説の勇者
+ <font color=#ffcc66>ATK: 6216</font> <font color=#ccccff>DEF: 3221</font>)</font>&nbsp;[<a href="mailto:toxine@zmail.ne.jp">MAIL</a>-<a href="http://www.uranus.dti.ne.jp/~toxine/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//uni.gif" border=0>
+</td><td width=90%><font color=#000000>既に拙者のキャラはぶち抜かれてますよ(ぉ<br>まぁ、他のゲームやったりもしてるし、あんましゲーム自体<br>やってないので当然と言えば当然ですが。<br><br>ただいまLv19でつ。(´・ω・｀)</font>
+<div align=right><small>
+<br><font color=#cc2200> </font>
+<br><font color=#22aabb> 7/14(Thu) 02:47</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=765&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=765&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[764] 2nd</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=764">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10217</font> <font color=#ccccff>BOM: 4711</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ConjureにすべくSummonerやってます<br>二日でLV13って感じなんだけど、結構クエストＮＰＣのいる場所忘れとるねｗ<br>8slotBagのところは覚えてたけど、40過ぎてからsoloでさくさくとりまくった<br>初期の街で受けられるHerritage品とかかなーり忘れてるもようｗ<br>Ogamingとか見ながらやったからな～<br>苦労してないのはまったくもってサッパーリ忘れてますよ（お<br><br>Summonerやった感想は、とにかくペットが強いの一言<br>Orangeなやつにもペットだけで勝てますｗ<br>まぁ、ペットはAdept3とか1st時代には想像できないような高級Spellつかってるけどさ<br>あと最初に覚えるRootは相当Breakしずらく変更されてるもよう<br>ＤＤ２－３発じゃほとんど剥がれません。しかも足止め時間も長いような...<br>専門Spellは迷わずDD選んだんで、これも効いてるかもしれず<br>Cast1secで威力はAdept2相当なんで、結構なDMGのDDをボンボン連射できます<br><br>ENCほどではないけど、複数のGroupMobもpetをうまく使うとやれるね<br>複数といっても3匹くらいまでだけど<br><br>Conjureになった後は、しょぼい召喚spell（13.5で覚えるEndurebeathの石はEBEarring取るのにつかえそうだけど）<br>とペット召喚、PetBuffとDDしかないね<br>20台と40台の中間あたりにProcBuffがあるんだけど、最終的にこいつが<br>Raidで使えるSpellになるかな<br><br>Petに愛がないとやってけないClassだなこりゃ</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 30pt 獲得! </font>
+<br><font color=#22aabb> 7/ 6(Wed) 19:44</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=764&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=764&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#22aabb bgcolor=#eeeeff border=2 width=80%>
+<tr><td bgcolor=#22aabb><font color=#ffcc44><b>■[763] というわけで</b>
+<div align=right><a href="rpgbbs.cgi?action=resview&resno=763">
+<img src="http://marlo.room.ne.jp/icon//res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#cc6622>&nbsp;&nbsp;Marlo 
+<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10036</font> <font color=#ccccff>BOM: 4703</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>早速新しくできたInstanceで遊んでみました<br>といってもこの時間では人がいなくて、soloInstanceに挑戦<br><br>結果はお約束って感じで、全然歯がたちませぬｗ<br>CasterなんてHealerのHPbuffなきゃHP2000くらいしかないし<br>頼みのMezのCastは2secなのに、Mobは1.5secおきに２５０dmgとか<br>平気で叩き込んできます<br><br>んで、Cast中にStunしてInturrupt・そのままStunが解ける事なく死にますたｗ<br><br>OfficialForumでも真っ先にIllusionistがsoloｄけきねーぞ<br>ちゃんとilluでテストしたのかコノヤロウ！なんてわめいてますが<br>速攻resはいって<br>soloではなく、soloもしくはSmallgroup向けだから2人とか<br>3人でやれば？huhってな具合で．．．ええ<br><br>それならちゃんと入り口にsoloだけじゃなくsolo/Smallgroupとでも<br>書いておいて欲しいよなー、みんな勘違いしてるね<br><br>ちなみにそこのスレッド一通り読んでみたけど<br>硬めのTank連中とHealerは普通にsoloでいけるみたいだね<br>ＮＰＣに話しかけなきゃ次のMobはでてこないからHP/MPともにMAXの<br>状態でやれるのがポイント</font><div align=right><small>
+<br><font color=#cc2200>△Rapid 7pt 獲得! </font>
+<br><font color=#22aabb> 6/30(Thu) 04:00</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=763&rno=0"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=763&rno=0
+"><font color=#22aabb>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10071</font> <font color=#ccccff>BOM: 4705</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ってかですね、その後の調査で、どうやらsoloと明記されてる所にには<br>一人しか入れない模様<br>本格的に難易度調整してもらわんとどうしようもないなこれは<br><br>そういやもう片方のtrialのsoloのほうはかなり面白くて<br>中でクエスト進めていくと突然自分が英雄になっちゃいます<br>一人で何百という敵を相手にすることができるよう<br>HPやMPが倍くらいになって、おまけにHPMPRegeneが1000/tickみたいな<br>もうね、いくらspell使いまくってもまったくMPbarが動きませんよ？<br>Yellowｘ６匹とかに殴られてるのにＨＰもボンボン回復しますｗ<br>こりゃ楽しいね</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 28pt 獲得! △BOM 1pt 獲得!</font>
+<br><font color=#22aabb> 7/ 1(Fri) 19:00</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=763&rno=1"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=763&rno=1
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#cc6622>&nbsp;&nbsp;&nbsp;Marlo<small> <font color=#ffcc44>(Lv: 27 Felwhiteの民
+ <font color=#ffcc66>Rapid: 10180</font> <font color=#ccccff>BOM: 4711</font>)</font></td></tr><tr><td align=center><img src="http://marlo.room.ne.jp/icon//pen.gif" border=0>
+</td><td width=90%><font color=#000000>ふぉおおおお！8回目のチャレンジににしてようやくsoloArenaをクリアしますたよ！<br>死に掛けのところでMobがMissAttack連発したり、MezのResiが一回もなかったりと<br>超ラッキーの大放出ｗ<br><br>なんせいつも３匹目にMezResi&gt;殴られてStun&gt;Artsでhp半分もっていかれて&gt;更に殴られて再度stun＞THEENDとか一発のresistが命取りになる事多数<br>いやーほんとによかった。<br><br>クリアするのに２時間かかったけど．．．もうこんな運任せのsoloInstanceは<br>二度とやりたくないな（お</font>
+<div align=right><small>
+<br><font color=#cc2200>△Rapid 87pt 獲得! △BOM 4pt 獲得!</font>
+<br><font color=#22aabb> 7/ 3(Sun) 12:13</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="rpgbbs.cgi?action=edit&lno=763&rno=2"><font color=#22aabb>編集</font></a>]
+[<a href="rpgbbs.cgi?action=delete&lno=763&rno=2
+"><font color=#22aabb>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table border=2 bordercolor=#22aabb bgcolor=#eeeeff cellpadding=2 cellspacing=2><tr><td colspan=3 align=center bgcolor=#22aabb>
+<b> 1 <a href="rpgbbs.cgi?page=2">&gt;2</a> 
+<a href="rpgbbs.cgi?page=3">&gt;3</a> 
+<a href="rpgbbs.cgi?page=4">&gt;4</a> 
+<a href="rpgbbs.cgi?page=5">&gt;5</a> 
+<a href="rpgbbs.cgi?page=6">&gt;6</a> 
+<a href="rpgbbs.cgi?page=7">&gt;7</a> 
+<a href="rpgbbs.cgi?page=8">&gt;8</a> 
+<a href="rpgbbs.cgi?page=9">&gt;9</a> 
+</b></td></tr>
+<td bgcolor=#22aabb width=33%>&nbsp;</td>
+<td bgcolor=#22aabb width=33% align=center>
+<b>[Page 1/15]</b></td>
+<td bgcolor=#22aabb width=33% align=right>
+<a href="rpgbbs.cgi?page=2"><b>Next≫</b></a></td>
+</tr></table><br>
+<br><br></div>
+<div align=right>
+<table border=2 bordercolor=#22aabb bgcolor=#eeeeff cellpadding=2 cellspacing=2>
+<tr><td bgcolor=#22aabb align=right><!a href="http://www18.big.or.jp/~sugar/diablo" target=_new>
+GAMEBBS Created by Sug<!/a><br>Version 1.03</tr></td></table></div>
+</body></html>
