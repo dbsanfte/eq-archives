@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS">
+<TITLE>Tunare Raid BBS</TITLE>
+</HEAD>
+<BODY bgcolor="#A9C2D6" text="#000000" link="#CC0000" vlink="#CC0000" alink="#CC0000">
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の上部に表示されます -->
+<!--end-->
+<FORM action="./im_trbbs.cgi" method="post">
+
+<DIV align="right">
+<TABLE><TR>
+<TD>JST</FONT></I><TD><INPUT NAME="jsp" SIZE=8>
+<TD>EST</FONT></I><TD><INPUT NAME="est" SIZE=8> 
+<TD>CST</FONT></I><TD><INPUT NAME="cst" SIZE=8> 
+<TD>PST</FONT></I><TD><INPUT NAME="pst" SIZE=8> 
+<TD>GMT</FONT></I><TD><INPUT NAME="gmt" SIZE=8> 
+</TABLE>
+</DIV>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// 引数arg_yearで指定された年のサマータイム開始時刻を内部阜ｻで返す。
+//
+function GetDstStart(arg_year) {
+	var dst_start = new Date(arg_year, 3, 1, 2, 0, 0); // 第2引数の3は、4月を浮ｷ。
+	for (var i = 1; i <= 7; i++) {
+		dst_start.setDate(i);
+		if (0 == dst_start.getDay()) {
+			break;
+		}
+	}
+	return dst_start.getTime();
+}
+
+// 引数arg_yearで指定された年のサマータイム終了時刻を内部阜ｻで返す。
+//
+function GetDstEnd(arg_year) {
+	var dst_end = new Date(arg_year, 9, 31, 1, 0, 0);
+	for (var i = 31; i > 24; i--) {
+		dst_end.setDate(i);
+		if (0 == dst_end.getDay()) {
+			break;
+		}
+	}
+	return dst_end.getTime();
+}
+
+
+// まず今が何年か調べます。
+today = new Date();
+year = today.getYear();
+if (year < 100) {
+	year += 1900;
+}
+// ここまでで、yearに今年の年(1998など)が入っています。
+
+var tz_offset = today.getTimezoneOffset();
+
+pos_start = GetDstStart(year);
+pos_end = GetDstEnd(year);
+
+tz_jst =  9 * 60; // GMT+9
+tz_est = -5 * 60; // GMT-09
+tz_cst = -6 * 60; // GMT-05
+tz_pst = -8 * 60; // GMT-05
+tz_gmt =  0 * 60; // GMT
+
+function nowat(now_t, tz, st) {
+	var hour, min, sec;
+
+	var pos_t = now_t + (tz_offset + tz) * 60 * 1000;
+
+	if (0 != st) {
+		// サマータイム処理
+		if ((pos_start <= pos_t) && (pos_end > pos_t)) {
+			pos_t += 60 * 60 * 1000;
+		}
+	}			
+	var t = new Date();
+	t.setTime(pos_t);
+
+	hour = t.getHours();
+	min = t.getMinutes();
+	sec = t.getSeconds();
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (min < 10) {
+		min = "0" + min;
+	}
+	if (sec < 10) {
+		sec = "0" + sec;
+	}
+	return hour + ":" + min + ":" + sec; 
+}
+
+function update_watch() {
+	now = new Date();
+	n_t = now.getTime();
+	jst = nowat(n_t, tz_jst, 0);
+	est = nowat(n_t, tz_est, 1);
+	cst = nowat(n_t, tz_cst, 2);
+	pst = nowat(n_t, tz_pst, 3);
+	gmt = nowat(n_t, tz_gmt, 4);
+
+	document.forms[0].elements[0].value = jst;
+	document.forms[0].elements[1].value = est;
+	document.forms[0].elements[2].value = cst;
+	document.forms[0].elements[3].value = pst;
+	document.forms[0].elements[4].value = gmt;
+	setTimeout('update_watch()', 999); // 1000msec = 1sec
+}
+
+update_watch();
+//-->
+</SCRIPT>
+
+<HR>
+<center>
+<TABLE border="2" cellspacing="2" cellpadding="2">
+<tr><td align="center"><font color="red"><b>いんふぉめーしょん</b></font></td></tr>
+<tr><td><b>現在利用者が居ない状況ですので、近々閉鎖いたします。<br>
+長らくのご利用有難う御座いました。     2002.01.31 Rein</b></td></tr>
+</table>
+
+</font>
+</center>
+<br>
+<DIV align="center"><B>Tunare Raid BBS</B>
+</DIV>
+
+<HR>
+<CENTER>
+<TABLE border="0">
+<TR>
+  <TD nowrap><B>データ</B></TD>
+  <TD><SELECT name="df"><OPTION value="bbs.dat">最新データ
+    <OPTION value="1499.log">#1499以前
+    <OPTION value="1429.log">#1429以前
+    <OPTION value="1283.log">#1283以前
+    <OPTION value="1195.log">#1195以前
+    <OPTION value="1101.log">#1101以前
+    <OPTION value="0940.log">#0940以前
+    <OPTION value="0891.log">#0891以前
+    <OPTION value="0633.log">#0633以前
+    <OPTION value="0552.log">#0552以前
+    <OPTION value="0453.log">#0453以前
+    <OPTION value="0306.log">#0306以前</SELECT></TD>
+  <TD nowrap><B>ページ</B></TD>
+  <TD><INPUT type="submit" name="back" value="&lt;"></TD>
+  <TD><SELECT name="pg">
+    <OPTION value="1" selected>0001
+    <OPTION value="2">0002
+    <OPTION value="3">0003
+    <OPTION value="-1">ALL</SELECT></TD>
+  <TD><INPUT type="submit" name="next" value="&gt;"></TD>
+  <TD><INPUT type="submit" name="reload" value="読込"></TD>
+  <TD nowrap><B>記事</B></TD>
+  <TD><SELECT name="pm">
+    <OPTION value="N" selected>タイトルだけ
+    <OPTION value="L">１行だけ
+    <OPTION value="T">２行だけ
+    <OPTION value="A">最後まで</SELECT></TD>
+  <TD nowrap><B>表示</B></TD>
+  <TD><SELECT name="pt">
+    <OPTION value="TA" selected>ツリー（全記事）
+    <OPTION value="TR">ツリー（親記事）
+    <OPTION value="SA">新着順（全記事）</SELECT></TD>
+  <TD><INPUT type="submit" name="pset" value="設定"></TD></TR>
+<TR>
+  <TD nowrap align="right" colspan="4">
+  <B>[<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=NTAN&pg=1">新規投稿</A>]</B>
+  </TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=HTAN&pg=1">利用方法</A>]</B></TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trset.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1">掲示板管理</A>]</B></TD>
+  <TD nowrap align="center"><B>[<A href="http://ran.sakura.ne.jp/~rein/eq/" target="_top">トップページ</A>]</B></TD>
+  <TD nowrap align="right" colspan="2">
+    <INPUT type="hidden" name="uid" value="raid">
+    <INPUT type="hidden" name="old_prm" value="TAN">
+    <INPUT type="hidden" name="old_pt" value="TA">
+    <INPUT type="hidden" name="max_pg" value="3">
+    <INPUT type="hidden" name="old_df" value="bbs.dat">
+    <INPUT type="checkbox" name="rset" value="on">全記事既読</TD>
+  <TD nowrap align="right">
+    <INPUT type="checkbox" name="dset" value="on">設定保存</TD></TR>
+</TABLE>
+</CENTER>
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1767#1767">▽</A> <A name="1767">1767</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1767#1767">Ｋｅａｌ　8/10　２２：00　</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/04-08:34〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1768">1768</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1768#1768">参加者リスト　ＣＬＲ</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/04-08:38〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1773">1773</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1773#1773">逝きたいです～</A> Anko <SMALL>〔2001/08/04-14:34〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1780">1780</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1780#1780">Clr Maybea</A> Maybea <SMALL>〔2001/08/08-01:40〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <FONT color="#FF0000"><A name="1787">1787</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1787#1787">参加</A> Varsya <SMALL>〔2001/08/10-09:03〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1769">1769</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1769#1769">参加者リスト　プレートクラス</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/04-08:39〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1775">1775</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1775#1775">Lv60 PAL Suezo</A> Suezo <SMALL>〔2001/08/05-21:29〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1776">1776</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1776#1776">Jaian参加</A> TOPON <SMALL>〔2001/08/06-10:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <FONT color="#FF0000"><A name="1783">1783</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1783#1783">RE:参加者リスト　プレートクラス</A> Monputhi/59Pal <SMALL>〔2001/08/09-18:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <FONT color="#FF0000"><A name="1784">1784</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1784#1784">RE:参加者リスト　プレートクラス</A> Banisu <SMALL>〔2001/08/10-04:59〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <FONT color="#FF0000"><A name="1785">1785</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1785#1785">57 Knight Of Love</A> Rosso <SMALL>〔2001/08/10-05:23〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <FONT color="#FF0000"><A name="1789">1789</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1789#1789">RE:参加者リスト　プレートクラス</A> Lamiel <SMALL>〔2001/08/10-13:00〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1770">1770</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1770#1770">参加リスト　チェインクラス　</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/04-08:41〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1779">1779</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1779#1779">参加</A> Reeferz <SMALL>〔2001/08/07-15:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <FONT color="#FF0000"><A name="1788">1788</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1788#1788">RE:参加</A> Reeferz <SMALL>〔2001/08/10-10:57〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1771">1771</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1771#1771">参加者リスト　皮</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/04-08:42〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1778">1778</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1778#1778">RE:参加者リスト　皮</A> kanzi <SMALL>〔2001/08/07-07:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1781">1781</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1781#1781">ikiます。でも(ほぼ)確実に遅れます（笑）</A> Koma <SMALL>〔2001/08/08-22:22〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1772">1772</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1772#1772">参加してくれる人　キャスター　</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/04-08:43〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1774">1774</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1774#1774">RE:参加してくれる人　キャスター　</A> Warlen <SMALL>〔2001/08/04-15:23〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <FONT color="#FF0000"><A name="1790">1790</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1790#1790">残念なり～</A> Warlen <SMALL>〔2001/08/10-17:53〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1782">1782</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1782#1782">RE:参加してくれる人　キャスター　</A> Zizi@STAR <SMALL>〔2001/08/09-02:40〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <FONT color="#FF0000"><A name="1786">1786</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1786#1786">Sepias　51　Necro</A> Sepias <SMALL>〔2001/08/10-06:58〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="1791">1791</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1791#1791">お疲れ様</A> menmen　お猿の暗殺者 <SMALL>〔2001/08/11-02:51〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <FONT color="#FF0000"><A name="1792">1792</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1792#1792">ほんまにお疲れさま</A> Zizi <SMALL>〔2001/08/11-10:07〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1777#1777">▽</A> <A name="1777">1777</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1777#1777">8/3 PoH RareGem</A> Suezo <SMALL>〔2001/08/06-13:01〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1#1750">△</A> <A name="1750">1750</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1#1750">Chardok King for CLR Epic 第４弾（Shrine・Anko）</A> Shrine@Asuka <SMALL>〔2001/06/26-11:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　　　　　　　　　　　　　<SMALL><A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=RTAN&pg=1&no=1750&rn=0000&pn=1750&tm=993521538"><B>Res</B>ponse</A> : <A href="http://meldia.cool.ne.jp/EQ_People/" target="_top">HomePage</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=ETAN&pg=1&no=1750&rn=0000&pn=1750&tm=993521538">Edit</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=DTAN&pg=1&no=1750&rn=0000&pn=1750&tm=993521538">Delete</A></SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　<FONT color="#000000">Ankoと２人で話し合った結果、８月４日（土）を予定しています。</FONT><BR>
+　　│　　　<FONT color="#000000">かなり先なので募集はまだしませんが、参加出来そうな人は頭の片隅に入れて置いてください＾＾；</FONT><BR>
+　　│　　　</TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1765">1765</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1#1765">Chardok King for CLR Epic 第４弾　日時変更します</A> Anko <SMALL>〔2001/07/21-03:03〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　　　　　　　　　　　　　　　　　<SMALL><A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=RTAN&pg=1&no=1765&rn=1750&pn=1750&tm=995652229"><B>Res</B>ponse</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=ETAN&pg=1&no=1765&rn=1750&pn=1750&tm=995652229">Edit</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=DTAN&pg=1&no=1765&rn=1750&pn=1750&tm=995652229">Delete</A></SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　　　<FONT color="#000000">当初8/4(土)を予定していましたが、諸々の事情があり日時を変更します。</FONT><BR>
+　　　　│　　　<FONT color="#000000">それと、今回はAnkoの分のみとなりますので、Kingを1回Killするのが目的です。</FONT><BR>
+　　　　│　　　<FONT color="#000000">みなさまのご協力をよろしくお願いします！</FONT><BR>
+　　　　│　　　<FONT color="#000000"></FONT><BR>
+　　　　│　　　<FONT color="#000000">日時：7/27(金)　22:00　</FONT><BR>
+　　　　│　　　<FONT color="#000000">集合場所：BurningWood Chardok前集合</FONT><BR>
+　　　　│　　　<FONT color="#000000">中止条件：３Party未満の場合、または戦力的に無理だと判断した場合</FONT><BR>
+　　　　│　　　<FONT color="#000000"></FONT><BR>
+　　　　│　　　<FONT color="#000000">LootについてはCLREpic第３弾までのときと同じでお願いします。</FONT><BR>
+　　　　│　　　<FONT color="#000000">参加表明をなるべく前日までに、RaidMemberBBSに書きこみお願いします。</FONT><BR>
+　　　　│　　　<FONT color="#000000"><A HREF="http://monputhi.cool.ne.jp/Tunare/" target="_migi">http://monputhi.cool.ne.jp/Tunare/</A></FONT><BR>
+　　　　│　　　<FONT color="#000000">もしものときのCR用の埋め込みCharaも募集します、あわせてカキコ願います。</FONT><BR>
+　　　　│　　　</TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1766">1766</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1#1766">ゲットしました！Thx！</A> Anko <SMALL>〔2001/07/28-02:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　　　　　　　　　　　　　　　　　　　<SMALL><A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=RTAN&pg=1&no=1766&rn=1765&pn=1750&tm=996253500"><B>Res</B>ponse</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=ETAN&pg=1&no=1766&rn=1765&pn=1750&tm=996253500">Edit</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=DTAN&pg=1&no=1766&rn=1765&pn=1750&tm=996253500">Delete</A></SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　　　　　<FONT color="#000000">無事にEpicItemをゲットすることができました。</FONT><BR>
+　　　　　　　　　　<FONT color="#000000">たくさんの方に集まっていただき、本当にうれしかったです。</FONT><BR>
+　　　　　　　　　　<FONT color="#000000">まとめるのもはじめてで、全然Leadできていませんでした。(&gt;_&lt;)</FONT><BR>
+　　　　　　　　　　<FONT color="#000000">それでも最後までお付き合い頂き、感謝の気持ちでいっぱいです。</FONT><BR>
+　　　　　　　　　　<FONT color="#000000">本当にありがとうございました！</FONT><BR>
+　　　　　　　　　　<FONT color="#000000"></FONT><BR>
+　　　　　　　　　　<FONT color="#000000">Drop品については、</FONT><BR>
+　　　　　　　　　　<FONT color="#000000"><A HREF="http://monputhi.cool.ne.jp/Tunare/" target="_migi">http://monputhi.cool.ne.jp/Tunare/</A></FONT><BR>
+　　　　　　　　　　<FONT color="#000000">にて報告＆Randomに載せますので、参照してくださいね。</FONT><BR>
+　　　　　　　　　　<FONT color="#000000"></FONT><BR>
+　　　　　　　　　　<FONT color="#000000">あと、触媒などもらってない方いましたら、レスつけるか、Ankoまで直Tellしてplz</FONT><BR>
+　　　　　　　　　　</TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1715#1715">▽</A> <A name="1715">1715</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1715#1715">6月23日 21時　ClericEpicRaid～Chardok Overking～第2弾（＾＾；</A> Rinda@Asuka <SMALL>〔2001/06/05-19:16〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1741">1741</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1741#1741">集合時間変更　22時開始にします（＾＾）と、他伝達事項</A> Rinda@Asuka <SMALL>〔2001/06/23-08:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1743">1743</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1743#1743">Getできました、本当にありがとうございました（＾＾）</A> Rinda@Asuka <SMALL>〔2001/06/24-07:14〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="1744">1744</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1744#1744">RE:Getできました、本当にありがとうございました（＾＾）</A> Sanoh <SMALL>〔2001/06/25-00:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　└ <A name="1745">1745</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1745#1745">RE:気にしないでね（＾＾）</A> Rinda@Asuka <SMALL>〔2001/06/25-02:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1748">1748</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1748#1748">ご協力ありがとうございました。</A> Maybea <SMALL>〔2001/06/26-00:42〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1764">1764</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1764#1764">RE:Drop　Spell</A> Maybea <SMALL>〔2001/07/08-21:24〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1759#1759">▽</A> <A name="1759">1759</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1759#1759">7/7 PoF 22:00集合</A> Suezo <SMALL>〔2001/07/03-18:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1763">1763</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1763#1763">お疲れ様でした～。</A> Suezo <SMALL>〔2001/07/08-04:36〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1758#1758">▽</A> <A name="1758">1758</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1758#1758">業務連絡</A> Reeferz@Raid資金管理 <SMALL>〔2001/07/03-14:37〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1760">1760</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1760#1760">RE:業務連絡</A> Monputhi <SMALL>〔2001/07/03-19:45〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1761">1761</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1761#1761">RE:業務連絡</A> Anko@Asuka <SMALL>〔2001/07/04-01:51〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1762">1762</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1762#1762">RE:業務連絡</A> Reeferz@Raid資金管理 <SMALL>〔2001/07/04-10:42〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1731#1731">▽</A> <A name="1731">1731</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1731#1731">6/30 23:00 Chardok ～CLR Epic 第3弾～</A> Agharta <SMALL>〔2001/06/13-11:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1753">1753</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1753#1753">当日の進行など・解説</A> Agharta <SMALL>〔2001/06/29-16:48〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1754">1754</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1754#1754">RE:当日の進行など・解説</A> Garadriel <SMALL>〔2001/06/30-17:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　└ <A name="1755">1755</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1755#1755">参加について</A> Agharta <SMALL>〔2001/06/30-17:31〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1756">1756</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1756#1756">本日決行予定</A> Agharta <SMALL>〔2001/06/30-17:34〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　└ <A name="1757">1757</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1757#1757">無事ゲットできました。</A> Agharta <SMALL>〔2001/07/01-02:43〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1751#1751">▽</A> <A name="1751">1751</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1751#1751">Kelorek`Dar 6/28 21:00 ~ 25:00</A> みるこ <SMALL>〔2001/06/27-14:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1752">1752</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1752#1752">待ち人？来ず</A> みるこ <SMALL>〔2001/06/29-10:17〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1725#1725">▽</A> <A name="1725">1725</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1725#1725">6/13　5:00現在RF　Camp成功</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-05:24〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1726">1726</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1726#1726">RE:状況変更</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-07:15〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1727">1727</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1727#1727">RE:6/13　5:00現在RF　Camp成功</A> Garadriel <SMALL>〔2001/06/13-08:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1728">1728</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1728#1728">RE:6/13　5:00現在RF　Camp成功</A> TOPON <SMALL>〔2001/06/13-10:02〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="1733">1733</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1733#1733">RE:6/13　5:00現在RF　Camp成功</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-11:44〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1729">1729</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1729#1729">お久しぶり^^;</A> kaim/honehone/bricky <SMALL>〔2001/06/13-10:07〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="1734">1734</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1734#1734">RE:お久しぶり^^;</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-11:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　　　└ <A name="1746">1746</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1746#1746">RE:お久しぶり^^;</A> DG <SMALL>〔2001/06/25-05:57〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　　　　　└ <A name="1747">1747</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1747#1747">RE:お久しぶり^^;</A> Ville/Foret@街と森 <SMALL>〔2001/06/25-11:11〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　　　　　　　└ <A name="1749">1749</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1749#1749">RE:お久しぶり^^;</A> DG <SMALL>〔2001/06/26-08:44〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1732">1732</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1732#1732">RE:6/13　5:00現在RF　Camp成功</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-11:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1730">1730</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1730#1730">RE:6/13　10:45min にQuesterPOPしやした</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-10:58〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1735">1735</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1735#1735">RE:6/13　10:45min にQuesterPOPしやした</A> Garadriel <SMALL>〔2001/06/13-12:41〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="1737">1737</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1737#1737">RE:6/13　10:45min にQuesterPOPしやした</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-13:10〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1736">1736</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1736#1736">RE:6/13　12:58にKillされました</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-13:00〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1738">1738</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1738#1738">RE:rand１つだけ訂正CofはTank　Only　Randにします</A> Ville/Foret@町と森 <SMALL>〔2001/06/13-21:45〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1740#1740">▽</A> <A name="1740">1740</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1740#1740">6/22(FRI) 22:00~ PoH RAIDメンバー急募</A> Lamiel <SMALL>〔2001/06/22-00:11〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1742">1742</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1742#1742">お疲れさまでした</A> Lamiel/Savina <SMALL>〔2001/06/23-20:26〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1739#1739">▽</A> <A name="1739">1739</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1739#1739">6/21 RF CAMP Helpのお願い</A> Ville/Foret <SMALL>〔2001/06/21-15:35〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1719#1719">▽</A> <A name="1719">1719</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1719#1719">6/10(日) PM10:30 Faydedar</A> Diadora <SMALL>〔2001/06/08-01:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1720">1720</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1720#1720">補足説明</A> みるこ <SMALL>〔2001/06/08-12:01〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1723">1723</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1723#1723">集合場所変更します</A> Diadora <SMALL>〔2001/06/10-20:48〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1724">1724</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1724#1724">Epic GETしました。みなさんＴＨＸでした。</A> Diadora <SMALL>〔2001/06/11-01:30〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1721#1721">▽</A> <A name="1721">1721</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1721#1721">6/9　Mnk　Epic　LaastBattle(予定)</A> Milfatia <SMALL>〔2001/06/09-01:48〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1722">1722</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1722#1722">EPICゲットしました。皆さんHELPありがとうございました。</A> Milfatia <SMALL>〔2001/06/10-02:11〕</SMALL></TD></TR>
+</TABLE>
+<HR>
+<DIV align="right"><B>アクセス数: 8634</B> (今日: 3 / 昨日: 3)</DIV><HR>
+<TABLE boder="0">
+<TR>
+  <TD nowrap><B>検索キーワード</B></TD>
+  <TD><INPUT type="text" name="skey" size="24" maxlength="24">
+  <TD><INPUT type="submit" name="search" value="全文検索"></TD>
+  <TD nowrap>（合致する文字を含む記事が、番号順に１画面で表示されます）</TD></TR>
+</TABLE>
+<HR>
+</FORM>
+<DIV align="right"><SMALL>original <A href="http://www.cgi-club.com/">imTRBBS(ver1.04)</A></SMALL> Modified <STRONG>Rein!!</STRONG></DIV>
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の下部に表示されます -->
+<!--end-->
+</BODY>
+</HTML>

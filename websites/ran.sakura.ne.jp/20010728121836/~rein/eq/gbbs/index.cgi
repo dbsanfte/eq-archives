@@ -1,0 +1,667 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<style type="text/css">
+<!--
+body,tr,td,th	{ font-size: 9pt; font-family: Verdana; }
+a:link		{ color:#ffdd88; text-decoration: none;}
+a:visited	{ color:#ffcc88; text-decoration: none;}
+a:active	{ color:#ffaa11; text-decoration: none;}
+a:hover		{ color:#ffff00; text-decoration: underline;}
+big		{ font-size: 16pt; }
+small	{ font-size: 8pt; }
+-->
+</style>
+<!-- AllowtelmethodAccess -->
+<title>EQ なんでも BBS</title></head>
+<body text=#ffffff link=#ffdd88 vlink=#ffcc88 alink=#ffaa11 bgcolor=#A9C2D6>
+<div align=center>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2>
+<tr bgcolor=#000099 align=center>
+<td width=80>[<a href="../">ホーム</a>]</td>
+<td width=80>[<a href="index.cgi">記事表示</a>]</td>
+<td width=80>[<a href="index.cgi?action=sview">記事検索</a>]</td>
+<td width=80>[<a href="info.html">説明書</a>]</td></tr><tr bgcolor=#000099 align=center>
+<td width=80>[<a href="index.cgi?action=newch">キャラ登録</a>]</td>
+<td width=80>[<a href="index.cgi?action=login">ログイン</a>]</td>
+<td width=80>[<a href="index.cgi?action=rankdisp">ランキング</a>]</td>
+<td width=80>[<a href="index.cgi?action=iconview">ICONリスト</a>]</td></tr></table>
+<br><br><table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2>
+<td bgcolor=#000099><big><b>EQ なんでも BBS</b></big></td></tr></table><br></div>
+<br><div align=center><table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2 width=200>
+<tr><td width=50% bgcolor=#000099 align=center><a href="index.cgi?action=newview">新規投稿</a></td>
+<td width=50% bgcolor=#000099 align=center><a href="index.cgi?action=sortbyres">レス新着記事</a></tr></td></table></div><br>
+<div align=center>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2><tr><td colspan=3 align=center bgcolor=#000099>
+<b> 1 <a href="index.cgi?page=2">&gt;2</a> 
+<a href="index.cgi?page=3">&gt;3</a> 
+<a href="index.cgi?page=4">&gt;4</a> 
+<a href="index.cgi?page=5">&gt;5</a> 
+<a href="index.cgi?page=6">&gt;6</a> 
+<a href="index.cgi?page=7">&gt;7</a> 
+<a href="index.cgi?page=8">&gt;8</a> 
+<a href="index.cgi?page=9">&gt;9</a> 
+</b></td></tr>
+<td bgcolor=#000099 width=33%>&nbsp;</td>
+<td bgcolor=#000099 width=33% align=center>
+<b>[Page 1/22]</b></td>
+<td bgcolor=#000099 width=33% align=right>
+<a href="index.cgi?page=2"><b>Next≫</b></a></td>
+</tr></table><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[219] CLR BoTB</b>
+<div align=right><a href="index.cgi?action=resview&resno=219">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;Ean 
+<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1185</font> <font color=#9999ff>Mana: 2855</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>お暇だったので出ようかとも思ったんだが。<br>面倒だったのもあるが、/w 60 cle all してArenaにいた<br>メンツをみて辞めました（ｗ<br>紫な人誰もいないし～（ｗ；<br><br>やっぱりというかなんというかMMではArele嬢が勝ったようで。<br>Blackstarの威力恐るべしな感じですか。<br>つうかなんすか、あの装備は……<br>もう取るものないじゃん　0(&gt;_&lt;)0<br><br>CLRはsvMが80程度あるともうSpellは殆ど効かない感じなので<br>ごついHasteItemとごつい1HB、んで何回自分でHealできるかが<br>勝負の分かれ目な感じ？<br>HasteItemなんか借りてたらその勢いで出てたくさいが（ｗ<br><br>なんにせよ、CLR Duelの基本は殴り合いっぽい。<br>まぁCHのTiming勝負とかしても仕方ないのでね（ｗ<br><br>＃何気なくAniesに「どうよ？ｗ」とかtellしてみたけど<br>＃「めんどいっす」とのたまってBank前で<br>＃AFK LDこいておられました（ｗ</font><div align=right><small>
+<br><font color=#990000>△HP 9pt 獲得! △Mana 6pt 獲得!</font>
+<br><font color=#000099> 7/25(Wed) 12:59</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=219&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=219&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Teru<small> <font color=#ffaaaa>(Lv: 5 奇術師
+ <font color=#ff8800>HP: 228</font> <font color=#9999ff>Mana: 393</font>)</font></td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000><br>やっぱ長いのかな？　戦闘時間（汗；<br><br>短すぎるのはＷｉｚですｗ<br></font>
+<div align=right><small>
+<br><font color=#990000> △Mana 7pt 獲得!</font>
+<br><font color=#990000><font color=#666644>Folwing Black Silk Sash</font> を手に入れた。</font>
+<br><font color=#000099> 7/26(Thu) 23:45</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=219&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=219&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Ean<small> <font color=#ffaaaa>(Lv: 15 魔導師
+ <font color=#ff8800>HP: 1388</font> <font color=#9999ff>Mana: 3197</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>以前KC前がたむろ場所だった頃、暇つぶしに<br>Marcにbonk連射して遊んでたら（ぉ）/dされたので、<br>傍にいたShonanにRBG借りてから/dしたことあって。（セコイ<br><br>マジでstunとかresistしまくりで…<br>5回に1回入るかどうかってなもんで。<br>あのころよりsv品が多い現在、Duel仕様装備にしたらまず<br>spellは意味なさげ。<br><br>で、すげー時間かかりましたよ、Duelは。<br>Healしつつの殴り合いなんで、キリないつうか（ｗ<br>相手に殴られないように、回り込みながら攻撃したりとか<br>色々コスイ戦法使ってましたが、すげえ疲れた感じ。<br>結局どこだか行くことになって勝負はつきませんでした。<br>いつかスーコロ（ｗ</font>
+<div align=right><small>
+<br><font color=#990000>△HP 8pt 獲得! △Mana 22pt 獲得!</font>
+<br><font color=#990000><font color=#666644>Class専用armor</font> を手に入れた。</font>
+<br><font color=#000099> 7/27(Fri) 06:00</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=219&rno=2"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=219&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;Anies</td></tr><tr><td align=center><img src="./icon/mnkf01.png" border=0>
+</td><td width=90%><font color=#000000>うう・・ばらすなよ、トップシークレットなのに（ｗ＞AFK LD<br><br>BotBはやっぱ撲殺ですね・・<br>BuffやBuff系のHealとかNullとかCM飛ばしたり・・<br>CLRに無縁の打撃に於ける消耗戦こそが真の姿なのかも・・・・殴るの好きだがな(ﾆﾔ<br><br></font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/27(Fri) 11:16</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=219&rno=3"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=219&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[218] ぐぅぅ・・・RarePOP</b>
+<div align=right><a href="index.cgi?action=resview&resno=218">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;Ean 
+<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1187</font> <font color=#9999ff>Mana: 2832</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>LFayに出るZombie、rancorous ghastってのrare・・・<br>Tunare信仰用Questのmobなんだが。<br>Sonan大活躍させつつしばしやってみたが、2killで心臓1。<br>うぅ、あと3つ（泣<br><br>同時進行でそれの続きQuestで使用する、Headを取るため<br>MM付近のUndead Towerも見張るがPHばかり。<br>だっむ～～～～～～～～ん(T-T</font><div align=right><small>
+<br><font color=#666666><b>サモンされた</b></font>
+<br><font color=#990000>▼HP -27pt 損失.. ▼Mana -27pt 損失..</font>
+<br><font color=#000099> 7/18(Wed) 19:14</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=218&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=218&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Ean<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1187</font> <font color=#9999ff>Mana: 2826</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>サモンされてさらにだっむ～～～～～～～～ん(T-T</font>
+<div align=right><small>
+<br><font color=#990000> ▼Mana -3pt 損失..</font>
+<br><font color=#000099> 7/18(Wed) 19:15</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=218&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=218&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Ean<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1174</font> <font color=#9999ff>Mana: 2735</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>うう、2個目のQuestItemが先に揃ってしまった。<br>rancorous ghast、マジでない...nadaもあるし(T-T</font>
+<div align=right><small>
+<br><font color=#666666><b>サモンされた</b></font>
+<br><font color=#990000>▼HP -11pt 損失.. ▼Mana -47pt 損失..</font>
+<br><font color=#000099> 7/21(Sat) 10:51</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=218&rno=2"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=218&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Halt<small> <font color=#ffaaaa>(Lv: 21 賢者
+ <font color=#ff8800>HP: 3235</font> <font color=#9999ff>Mana: 5671</font>)</font>&nbsp;[<a href="mailto:eyenos@gundam.com">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/rng.gif" border=0>
+</td><td width=90%><font color=#000000>最終的にどんな物体ができんの？</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/23(Mon) 07:36</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=218&rno=3"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=218&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Ean<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1174</font> <font color=#9999ff>Mana: 2844</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>うに、もう完成しただす。<br>Makokoんとこに載せといたので見るべしべし。<br>性能自体はどうでもよくて、effectがね。<br>でも昨日のTrakanon戦で、なんかとholdしなかったんだよね（ｗ<br>DMF・Resist Poison/Diseaseは大丈夫なの確認したんだけど。<br>BRD Songかな・・・</font>
+<div align=right><small>
+<br><font color=#009999><b>みそをもらった</b></font>
+<br><font color=#990000> △Mana 56pt 獲得!</font>
+<br><font color=#000099> 7/23(Mon) 15:14</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=218&rno=4"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=218&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[217] うーむ、最近。</b>
+<div align=right><a href="index.cgi?action=resview&resno=217">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;Gerpart 
+<small> <font color=#ffaaaa>(Lv: 7 魔戦士
+ <font color=#ff8800>HP: 510</font> <font color=#9999ff>Mana: 430</font>)</font>&nbsp;[<a href="mailto:namako@bremen.or.jp">MAIL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>ＡＯのせいで、TunareのNapは壊滅状態（ｗ<br>ＥＱ遊びたくてもどこもいけない状態。<br>５４ＬＶだとどこも連れてってもらえないし。<br>（某人物に足手まといって言われてめげました）<br><br>そんな中、キャラの移動が金出せばできるように<br>なったらしく、今悩んでます。<br>Ｄｒｉｎａｌ逝ったら遊んでもらえるかなぁ・・<br>当方５４ｌｖクレリックです。</font><div align=right><small>
+<br><font color=#990000> △Mana 21pt 獲得!</font>
+<br><font color=#000099> 7/ 9(Mon) 12:08</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Kaim<small> <font color=#ffaaaa>(Lv: 10 魔法剣士
+ <font color=#ff8800>HP: 709</font> <font color=#9999ff>Mana: 1168</font>)</font></td></tr><tr><td align=center><img src="./icon/nec.gif" border=0>
+</td><td width=90%><font color=#000000>Gerpartなら、もちWelcomeっす。<br>ただし、Raid続きなので、かなり遊び方変わるかも。<br><br>Lv54だと、間違いなくRaidに拉致されますな。<br></font>
+<div align=right><small>
+<br><font color=#666666><b>サモンされた</b></font>
+<br><font color=#990000>▼HP -47pt 損失.. ▼Mana -23pt 損失..</font>
+<br><font color=#990000><font color=#666644>Short Sword of the Ykesha</font> を手に入れた。</font>
+<br><font color=#000099> 7/ 9(Mon) 18:46</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Teru<small> <font color=#ffaaaa>(Lv: 5 奇術師
+ <font color=#ff8800>HP: 208</font> <font color=#9999ff>Mana: 386</font>)</font></td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>ひ～らーおいでｗ<br><br>ここ書くのひさびさ＾＾</font>
+<div align=right><small>
+<br><font color=#990000>△HP 1pt 獲得! △Mana 12pt 獲得!</font>
+<br><font color=#000099> 7/10(Tue) 03:35</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=2"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Rolant<small> <font color=#ffaaaa>(Lv: 18 大魔導師
+ <font color=#ff8800>HP: 2503</font> <font color=#9999ff>Mana: 3891</font>)</font>&nbsp;[<a href="mailto:alex_sea@hotmail.com">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>AO、よい？</font>
+<div align=right><small>
+<br><font color=#990000> ▼Mana -5pt 損失..</font>
+<br><font color=#000099> 7/10(Tue) 04:41</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=3"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;Marmix</td></tr><tr><td align=center><img src="./icon/enc.gif" border=0>
+</td><td width=90%><font color=#000000>歓迎す～<br>移動される場合は、Item等できる限り援助しますよ<br>Plane予約制じゃないし、簡単に装備整うかも<br><br>LamielさんはAO行った?</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/10(Tue) 10:04</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=4"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Gerpart<small> <font color=#ffaaaa>(Lv: 7 魔戦士
+ <font color=#ff8800>HP: 514</font> <font color=#9999ff>Mana: 428</font>)</font>&nbsp;[<a href="mailto:namako@bremen.or.jp">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>移動の手続きしました。いつ移動なのかわからんけど、<br>移ったときはよろしくお願いします。</font>
+<div align=right><small>
+<br><font color=#990000>△HP 3pt 獲得! ▼Mana -2pt 損失..</font>
+<br><font color=#000099> 7/12(Thu) 00:20</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=5"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=5
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Kaim<small> <font color=#ffaaaa>(Lv: 10 魔法剣士
+ <font color=#ff8800>HP: 736</font> <font color=#9999ff>Mana: 1166</font>)</font></td></tr><tr><td align=center><img src="./icon/nec.gif" border=0>
+</td><td width=90%><font color=#000000>いえーい。おいでませー。<br>ちょうど、JejeのEpic itemのためにPoHに通っているので、<br>さくさくCLR Armorぶち壊しているところです・・・<br><br>Sv Itemも集めないとのう。<br></font>
+<div align=right><small>
+<br><font color=#990000>△HP 17pt 獲得! ▼Mana -1pt 損失..</font>
+<br><font color=#000099> 7/12(Thu) 09:10</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=6"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=6
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Ean<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1238</font> <font color=#9999ff>Mana: 2764</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>だいぶ処分してしまってCleric用な装備、あまり残ってなかったり…（；＿＿＿；）<br>Armor壊しまくりな昨今のPoH、2・3回いったらCompleteするような予感もあったりなかったり。</font>
+<div align=right><small>
+<br><font color=#990000>△HP 2pt 獲得! △Mana 48pt 獲得!</font>
+<br><font color=#000099> 7/12(Thu) 09:13</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=7"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=7
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;Dinn</td></tr><tr><td align=center><img src="./icon/shm.gif" border=0>
+</td><td width=90%><font color=#000000>Gerpertどんだー　ひさひさー<br>WIS系は色々あまり中。<br>全部、俺が復帰したときにみんなから貰ったものなので、是非使ってください。<br></font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/12(Thu) 17:25</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=8"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=8
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;eje</td></tr><tr><td align=center><img src="./icon/mag.gif" border=0>
+</td><td width=90%><font color=#000000>しかしGerpartとEQで遊んだのはすごく初期の頃。(Wizの頃ｗ)<br>懐かしいね、また遊べて嬉しいっす（＞＜<br><br>GEBがJejeの銀行に1個あるですYO。<br>良ければもらってちょー<br><br></font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/12(Thu) 19:31</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=9"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=9
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#003366>&nbsp;&nbsp;&nbsp;Jeje<small> <font color=#ffaaaa>(Lv: 13 剣聖
+ <font color=#ff8800>HP: 1521</font> <font color=#9999ff>Mana: 1969</font>)</font></td></tr><tr><td align=center><img src="./icon/mag.gif" border=0>
+</td><td width=90%><font color=#000000>誰だ、ejeって（ToT</font>
+<div align=right><small>
+<br><font color=#990000> △Mana 26pt 獲得!</font>
+<br><font color=#000099> 7/12(Thu) 19:32</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=10"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=10
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Gerpart<small> <font color=#ffaaaa>(Lv: 7 魔戦士
+ <font color=#ff8800>HP: 466</font> <font color=#9999ff>Mana: 579</font>)</font>&nbsp;[<a href="mailto:namako@bremen.or.jp">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>GMに「月曜に登録したのになんでまだここにいるの？<br>いつまで私はここにいるの？教えてPLZ」とpetiしてみたら、<br>Guideの人が、「Verantは君の申し出を見てから２週間ほど<br>たってから行うでしょう。そんときはメールがいくよ。」だって。<br><br>ってことは、あと１週間以上はかかるってことですね。<br><br>も一度アイテムとお金戻してTradeskillでもあげとくかな（ｗ<br>そのころにはやっとこ待ってたＡＤＳＬも入る予定なので、<br>快適ＥＱ生活が始まるのかな？（廃人生活ともいうかも）<br></font>
+<div align=right><small>
+<br><font color=#009900><b>リッチにへんしん</b></font>
+<br><font color=#990000>▼HP -34pt 損失.. △Mana 140pt 獲得!</font>
+<br><font color=#000099> 7/14(Sat) 00:13</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=11"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=11
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Reins<small> <font color=#ffaaaa>(Lv: 20 英雄
+ <font color=#ff8800>HP: 4842</font> <font color=#9999ff>Mana: 3572</font>)</font>&nbsp;[<a href="mailto:rein@ran.sakura.ne.jp">MAIL</a>-<a href="http://ran.sakura.ne.jp/~rein/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/brd.gif" border=0>
+</td><td width=90%><font color=#000000>うふふ、装備準備しておまちしておりまふ  (^^)</font>
+<div align=right><small>
+<br><font color=#666666><b>サモンされた</b></font>
+<br><font color=#990000>▼HP -18pt 損失.. ▼Mana -13pt 損失..</font>
+<br><font color=#000099> 7/14(Sat) 04:27</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=12"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=12
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#003366>&nbsp;&nbsp;&nbsp;Jeje<small> <font color=#ffaaaa>(Lv: 13 剣聖
+ <font color=#ff8800>HP: 1383</font> <font color=#9999ff>Mana: 1835</font>)</font></td></tr><tr><td align=center><img src="./icon/mag.gif" border=0>
+</td><td width=90%><font color=#000000>卵もあるヨー！（＞＜/</font>
+<div align=right><small>
+<br><font color=#666666><b>なまえを呼ばれた</b></font>
+<br><font color=#990000>▼HP -87pt 損失.. ▼Mana -97pt 損失..</font>
+<br><font color=#000099> 7/14(Sat) 04:34</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=13"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=13
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Ean<small> <font color=#ffaaaa>(Lv: 14 魔導師
+ <font color=#ff8800>HP: 1221</font> <font color=#9999ff>Mana: 2884</font>)</font>&nbsp;[<a href="http://members.tripod.co.jp/eaninya/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>Donal's Arm & Gloveは貸し出し可能っす。<br>あとたいしたものなかった（ｗ；</font>
+<div align=right><small>
+<br><font color=#009900><b>リッチにへんしん</b></font>
+<br><font color=#990000>▼HP -14pt 損失.. △Mana 62pt 獲得!</font>
+<br><font color=#000099> 7/14(Sat) 06:39</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=14"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=14
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Halt<small> <font color=#ffaaaa>(Lv: 21 賢者
+ <font color=#ff8800>HP: 3235</font> <font color=#9999ff>Mana: 5671</font>)</font>&nbsp;[<a href="mailto:eyenos@gundam.com">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/rng.gif" border=0>
+</td><td width=90%><font color=#000000>俺もまともな復帰してぇ～よ～<br>最近面白そうなんだもんな～</font>
+<div align=right><small>
+<br><font color=#990000>△HP 61pt 獲得! △Mana 16pt 獲得!</font>
+<br><font color=#000099> 7/17(Tue) 07:14</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=15"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=15
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Misk<small> <font color=#ffaaaa>(Lv: 8 騎士
+ <font color=#ff8800>HP: 705</font> <font color=#9999ff>Mana: 697</font>)</font>&nbsp;[<a href="www.misk.nu" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/dru.gif" border=0>
+</td><td width=90%><font color=#000000>迅速な復帰希望！！</font>
+<div align=right><small>
+<br><font color=#990000>△HP 26pt 獲得! </font>
+<br><font color=#000099> 7/18(Wed) 13:00</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=16"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=16
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Hokuto<small> <font color=#ffaaaa>(Lv: 1 地の民
+ <font color=#ff8800>HP: </font> <font color=#9999ff>Mana: </font>)</font>&nbsp;[<a href="mailto:kairou@rb3.so-net.ne.jp">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>うお、久々にここみたら、そんなことに（ｗ<br><br>機会があれば遊びましょ（ｗ</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/24(Tue) 17:19</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=217&rno=17"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=217&rno=17
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[216] しつもーん（EQと関係なしぃ）</b>
+<div align=right><a href="index.cgi?action=resview&resno=216">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;kuno 
+<small> <font color=#ffaaaa>(Lv: 4 学者
+ <font color=#ff8800>HP: 139</font> <font color=#9999ff>Mana: 246</font>)</font>&nbsp;[<a href="mailto:kila@moon.co.jp">MAIL</a>-<a href="http://www.snu.ne.jp/~kira/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>しばらくEQ休止中なんだけど、それいいとして（！？）．<br><br><A HREF="http://www.apnic.net/" TARGET="_blank"><font color=#ff0000>http://www.apnic.net/</font></A><br><A HREF="http://www.ripe.net/" TARGET="_blank"><font color=#ff0000>http://www.ripe.net/</font></A><br><br>のようなとこって一体どんなサービスしてるの？<br>IPアドレスを貸してるとかなんとかいまいちわからず（笑）．<br><br>荒らし君がよく使ってきてるホストを調べると<br>でてきたんだけど、英語が堪能な方わかります？<br></font><div align=right><small>
+<br><font color=#559955><b>ShamanからBuffをもらった！</b></font>
+<br><font color=#990000>△HP 7pt 獲得! △Mana 18pt 獲得!</font>
+<br><font color=#000099> 5/29(Tue) 04:27</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Reins<small> <font color=#ffaaaa>(Lv: 20 英雄
+ <font color=#ff8800>HP: 4879</font> <font color=#9999ff>Mana: 3593</font>)</font>&nbsp;[<a href="mailto:rein@ran.sakura.ne.jp">MAIL</a>-<a href="http://ran.sakura.ne.jp/~rein/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/brd.gif" border=0>
+</td><td width=90%><font color=#000000>APNIC(Asia Pacific Network Infomation Center)は、アジア太平洋地域のIPアドレスの割当業務などを行なう団体<br><br>RIPE(Resource IP Europeens Network Coordination Centre)<br>ヨーロッパやその周辺地域において、各国のNICやインターネットサービスプロバイダへのIPアドレスの割り当てを行う機関<br><br>日本のJPNICと同じようなものかな、管轄違うけど<br>なので、荒らしの場合は管轄の所からIP調べれば誰に<br>割り当てられたIPかは調べれまふ<br>まあ、最近串とか使ってるの多いので串できたらをアクセス拒否かな（笑）</font>
+<div align=right><small>
+<br><font color=#009900><b>リッチにへんしん</b></font>
+<br><font color=#990000>▼HP -47pt 損失.. △Mana 100pt 獲得!</font>
+<br><font color=#000099> 5/29(Tue) 15:21</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;kuno<small> <font color=#ffaaaa>(Lv: 4 学者
+ <font color=#ff8800>HP: 139</font> <font color=#9999ff>Mana: 273</font>)</font>&nbsp;[<a href="mailto:kila@moon.co.jp">MAIL</a>-<a href="http://www.snu.ne.jp/~kira/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>ありがとうー！なるほど！<br><br>ってことは日本以外のアクセスってことか．<br>するってーと串かな（笑）．<br><br>最近は全然減ってるのかと思ったらひそかに<br>あるのね．管理者達はわざと使わせてるのかな～＜串</font>
+<div align=right><small>
+<br><font color=#990000> △Mana 26pt 獲得!</font>
+<br><font color=#000099> 5/30(Wed) 13:08</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=2"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Komusume<small> <font color=#ffaaaa>(Lv: 5 奇術師
+ <font color=#ff8800>HP: 275</font> <font color=#9999ff>Mana: 353</font>)</font></td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>わーい おひさァ！ (^^)/<br><br><font color=#0055cc>&gt;しばらくEQ休止中なんだけど、それいいとして（！？）．</font><br><br>ダメｗ</font>
+<div align=right><small>
+<br><font color=#990000>△HP 3pt 獲得! △Mana 42pt 獲得!</font>
+<br><font color=#990000><font color=#666644>Rune of xxxxxx</font> を手に入れた。</font>
+<br><font color=#000099> 5/30(Wed) 16:42</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=3"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;kuno<small> <font color=#ffaaaa>(Lv: 5 学者
+ <font color=#ff8800>HP: 141</font> <font color=#9999ff>Mana: 302</font>)</font>&nbsp;[<a href="mailto:kila@moon.co.jp">MAIL</a>-<a href="http://www.snu.ne.jp/~kira/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>あれ？UOやってるって聞いたけど？（笑）</font>
+<div align=right><small>
+<br><font color=#990000>△HP 2pt 獲得! △Mana 29pt 獲得!</font>
+<br><font color=#000099> 5/31(Thu) 17:31</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=4"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Komusume<small> <font color=#ffaaaa>(Lv: 6 奇術師
+ <font color=#ff8800>HP: 305</font> <font color=#9999ff>Mana: 360</font>)</font></td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>ＵＯ・・<br>ファッションはとっても気に入ったんだけど、<br>（ＴＤだけど）２Ｄの、自分がちっちゃぁぁぁくしか<br>見えないのが残念で１日でやめちまいました＾＾；<br><br>ＡＯの網タイ履きたい</font>
+<div align=right><small>
+<br><font color=#990000>△HP 26pt 獲得! △Mana 6pt 獲得!</font>
+<br><font color=#000099> 5/31(Thu) 18:04</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=5"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=5
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#003366>&nbsp;&nbsp;&nbsp;Warlen<small> <font color=#ffaaaa>(Lv: 11 魔術師
+ <font color=#ff8800>HP: 499</font> <font color=#9999ff>Mana: 1923</font>)</font>&nbsp;[<a href="mailto:can?soft@hotmail.com">MAIL</a>-<a href="http://www3.ocn.ne.jp/~cansoft" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/enc.gif" border=0>
+</td><td width=90%><font color=#000000><font color=#0055cc>&gt;しばらくEQ休止中なんだけど、それいいとして（！？）．</font><br>休止だけなら、きちんと戻ってくるんだね？</font>
+<div align=right><small>
+<br><font color=#990000> △Mana 36pt 獲得!</font>
+<br><font color=#990000><font color=#666644>Bone Chips</font> を手に入れた。</font>
+<br><font color=#000099> 6/ 5(Tue) 10:02</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=216&rno=6"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=216&rno=6
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[215] Deleted</b>
+</td></tr>
+<tr><td bgcolor=#000000>&nbsp;&nbsp;こころ 
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/blank.gif" border=0>
+</td><td width=90%><font color=#000000>このスレッドは削除されました。</font><div align=right><small>
+<br><font color=#000099> 5/16(Wed) 19:18</font></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[214] DragonBane は Ｌｏｒｄ Ｙｅｌｉｎａｋ，ＴｏＶ用</b>
+<div align=right><a href="index.cgi?action=resview&resno=214">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;Teru 
+<small> <font color=#ffaaaa>(Lv: 5 奇術師
+ <font color=#ff8800>HP: 207</font> <font color=#9999ff>Mana: 373</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000><br>巨人族の宿敵（Yelinak血族）に対する呪いのＤＤという<br>設定らしく、以下のドラゴンにはまったく効きませんで<br>した。<br><br>　DL Dragon, EJ Dragon, SF Dragon, Trakanon<br>　WW Dragons, CS Dragons<br><br>それじゃ効くドラゴンはどれ？　といえば、、、<br><br>　Lord Yelinak, ToV Dragons<br><br>です。どひ<br><br></font><div align=right><small>
+<br><font color=#990000> △Mana 16pt 獲得!</font>
+<br><font color=#000099> 5/16(Wed) 04:34</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=214&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=214&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#003366>&nbsp;&nbsp;&nbsp;Fendill<small> <font color=#ffaaaa>(Lv: 1 氷の民
+ <font color=#ff8800>HP: </font> <font color=#9999ff>Mana: </font>)</font></td></tr><tr><td align=center><img src="./icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>どひー。全く何考えてんすかね、Verant。<br>Dmg/Mana効率の話とかで、改善するためにBane入れてるとかってレスしてますが、<br>ほぼ嘘って事ですな。なめんなゴルァ。<br>Magのマナ吸いDDの半分以下という現状で満足しろって事すかね。しくしく。<br>Lv上げる気力が、しゅるるー。</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 5/16(Wed) 16:50</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=214&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=214&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[213] 暇なのでmy装備をまとめてみた。</b>
+<div align=right><a href="index.cgi?action=resview&resno=213">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#003366>&nbsp;&nbsp;Zeller 
+<small> <font color=#ffaaaa>(Lv: 3 魔法屋
+ <font color=#ff8800>HP: 95</font> <font color=#9999ff>Mana: 148</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/magm01.png" border=0>
+</td><td width=90%><font color=#000000>アイテムもぼちぼちそろってきた今日この頃。<br>暇なのでmy装備をまとめてみた。<br><A HREF="http://www.ag.wakwak.com/~yamajun/Equip2.html" TARGET="_blank"><font color=#ff0000>http://www.ag.wakwak.com/~yamajun/Equip2.html</font></A><br><br>改めて眺めてみると、SoVのAll Stats Sv系がやっぱゴツイすな。てかオカシイすな。<br>まあRoKで欲しいアイテムほとんどなかった反動か。<br></font><div align=right><small>
+<br><font color=#990000>△HP 2pt 獲得! </font>
+<br><font color=#990000><font color=#666644>Bone Chips</font> を手に入れた。</font>
+<br><font color=#000099> 5/ 9(Wed) 17:40</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=213&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=213&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[212] Level 60 - 2</b>
+<div align=right><a href="index.cgi?action=resview&resno=212">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;Reins 
+<small> <font color=#ffaaaa>(Lv: 20 英雄
+ <font color=#ff8800>HP: 4975</font> <font color=#9999ff>Mana: 3433</font>)</font>&nbsp;[<a href="mailto:rein@ran.sakura.ne.jp">MAIL</a>-<a href="http://ran.sakura.ne.jp/~rein/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/brd.gif" border=0>
+</td><td width=90%><font color=#000000>やっと、Lv60 になったぁ(T_T)<br><br>あとは、白鱗のみ・・・ どうしょう・・</font><div align=right><small>
+<br><font color=#990000>△HP 23pt 獲得! ▼Mana -1pt 損失..</font>
+<br><font color=#000099> 4/29(Sun) 06:43</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=212&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=212&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Kaim<small> <font color=#ffaaaa>(Lv: 10 魔法剣士
+ <font color=#ff8800>HP: 737</font> <font color=#9999ff>Mana: 1197</font>)</font></td></tr><tr><td align=center><img src="./icon/nec.gif" border=0>
+</td><td width=90%><font color=#000000>HoleのナゾEruditeからはRed scaleしかでんのけ？<br><br>お試しにちとやってみては？</font>
+<div align=right><small>
+<br><font color=#996633><b>Symbolもらった</b></font>
+<br><font color=#990000>△HP 62pt 獲得! </font>
+<br><font color=#000099> 4/29(Sun) 18:48</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=212&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=212&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[211] Level 60</b>
+<div align=right><a href="index.cgi?action=resview&resno=211">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;Rolant 
+<small> <font color=#ffaaaa>(Lv: 18 大魔導師
+ <font color=#ff8800>HP: 2496</font> <font color=#9999ff>Mana: 3895</font>)</font>&nbsp;[<a href="mailto:alex_sea@hotmail.com">MAIL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>…にやっとこさなったのはいいけど、なんだかなぁ。<br><br>Lv60になっちゃうともうExpはいらないから、あとはRaid自体の<br>楽しさと、アイテム集めくらいしか惹きつけるものがないんだ<br>よねー。<br><br>SoVではほとんどRaidレベルで物事が進行するから、誰かが指揮を<br>とって企画しないと何も進まないし。ウチのギルドはあんまり<br>リードするヤツがいないもんで、なんかちょっと今やることなくて<br>困ってます。自分がそういうことポンポン企画できる性格だったら<br>よかったんだけど、もうEpic QuestのときのRaid Leadでコリゴリ<br>って感じだし。<br><br>てなわけでちょっと気が抜けてます(笑)。<br>ちょっと休養して、セカンドに力入れようかな～。</font><div align=right><small>
+<br><font color=#990000>▼HP -2pt 損失.. △Mana 31pt 獲得!</font>
+<br><font color=#000099> 4/ 5(Thu) 07:21</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=211&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=211&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#003366>&nbsp;&nbsp;&nbsp;Sada<small> <font color=#ffaaaa>(Lv: 1 氷の民
+ <font color=#ff8800>HP: </font> <font color=#9999ff>Mana: </font>)</font></td></tr><tr><td align=center><img src="./icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>60ですかおめで。<br>最近まで仕事IncIncでまったくLvがあがってません。<br>Naldiaは３ヶ月以上58の状態（ｗ<br>遅く入って早く落ちるものでGroupの空きが無いときは<br>Iks@Necの2ndなんてのをしてます。あ～とかげ最高っすー！<br>ただ、Res依頼のTellがCS依頼のTellにかわり、それの対処にこまってるぐらいかな（笑）<br><br><br></font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 4/ 5(Thu) 12:11</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=211&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=211&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Rolant<small> <font color=#ffaaaa>(Lv: 18 大魔導師
+ <font color=#ff8800>HP: 2503</font> <font color=#9999ff>Mana: 3900</font>)</font>&nbsp;[<a href="mailto:alex_sea@hotmail.com">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/cle.gif" border=0>
+</td><td width=90%><font color=#000000>58、59って相当ツライもんね～。<br>僕も60のAegolismを事前に手に入れてなければ、<br>60になるモティベーションがなかったので、まだ59だったかも。<br><br>昨日Bardを試しに作ってみました。<br>今のところ結構楽しい感じ(笑)。</font>
+<div align=right><small>
+<br><font color=#990000>△HP 5pt 獲得! △Mana 3pt 獲得!</font>
+<br><font color=#000099> 4/ 6(Fri) 07:14</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=211&rno=2"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=211&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Teru<small> <font color=#ffaaaa>(Lv: 5 学者
+ <font color=#ff8800>HP: 194</font> <font color=#9999ff>Mana: 327</font>)</font></td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000><br>２ｎｄいいですねー<br><br>あと１バブルくらい残っているので、さくっとＬｖ６０に<br>したいですー<br><br>Ｗｉｚａｒｄって、Ｒａｉｄだとちょっと脇役っぽくて<br>クラス上しょうがないんだけど、うぷぷのぷですな（謎ｗ<br><br>あまりにも苦痛だったら、タンクかヒーラーで遊びたい<br>なーっと個人的に。<br><br>ちょっと本音いってみたかったりｗ</font>
+<div align=right><small>
+<br><font color=#990000>△HP 11pt 獲得! ▼Mana -8pt 損失..</font>
+<br><font color=#990000><font color=#666644>Star Ruby</font> を手に入れた。</font>
+<br><font color=#000099> 4/ 8(Sun) 16:24</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=211&rno=3"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=211&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;Makoko</td></tr><tr><td align=center><img src="./icon/war.gif" border=0>
+</td><td width=90%><font color=#000000>Lv60。経験値をあまり気にしないで済む事。<br>それはつまりハイリスクな事に挑戦出来る事。<br>OoM になったらＲＤしてマナ復活とかが躊躇無く出来る事。<br>４人で Kael の Dlammaz Stormslayer に挑戦する事。<br>そしてＨＰ残り１０％で燃え尽きる事（ｗ<br>懲りずに５人で再挑戦して勝つ事（ｗｗ</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 4/ 9(Mon) 17:17</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=211&rno=4"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=211&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Teru<small> <font color=#ffaaaa>(Lv: 5 奇術師
+ <font color=#ff8800>HP: 207</font> <font color=#9999ff>Mana: 356</font>)</font></td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>やっとLv60になれました。<br>DDもこれまでで最高に性能がよいものが使えるようになって、<br>これで少しは戦闘が楽しめるのかな。あとはDragonBane系な<br>DDもゲットできれば最高なんだけどなぁ。。。<br><br>Lv50 のとき、1120ダメージ／6.3秒／400マナ<br>Lv51 のとき、 688ダメージ／3.0秒／215マナ<br>Lv57 のとき、 733ダメージ／3.0秒／215マナ<br>Lv60 のとき、1200ダメージ／4.0秒／300マナ<br><br></font>
+<div align=right><small>
+<br><font color=#559955><b>ShamanからBuffをもらった！</b></font>
+<br><font color=#990000>△HP 12pt 獲得! △Mana 27pt 獲得!</font>
+<br><font color=#000099> 4/21(Sat) 05:12</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=211&rno=5"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=211&rno=5
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[210] 表示がおかしい</b>
+<div align=right><a href="index.cgi?action=resview&resno=210">
+<img src="./icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;kuno 
+<small> <font color=#ffaaaa>(Lv: 4 学者
+ <font color=#ff8800>HP: 130</font> <font color=#9999ff>Mana: 219</font>)</font>&nbsp;[<a href="mailto:kila@moon.co.jp">MAIL</a>-<a href="http://www.snu.ne.jp/~kira/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>EQとは関係ないんだけど、<br>ノートのwindowsの最大化とか最小化の表示がおかしくなちゃった．<br><A HREF="http://www.snu.ne.jp/~kira/bug/bug.jpg" TARGET="_blank"><font color=#ff0000>http://www.snu.ne.jp/~kira/bug/bug.jpg</font></A><br><br>直し方分かる人いますう？<br><br>原因は、謎です．<br>ゲームとかインストールしてたけど、直後には症状でてなかったし．<br><br>昔ネットの知り合いで同じ症状の人がいたような気がするけど．<br>まさか自分も同じ症状になるとは（笑）<br></font><div align=right><small>
+<br><font color=#990000> △Mana 67pt 獲得!</font>
+<br><font color=#000099> 3/30(Fri) 11:18</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=210&rno=0"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=210&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#003366>&nbsp;&nbsp;&nbsp;hitoo<small> <font color=#ffaaaa>(Lv: 1 氷の民
+ <font color=#ff8800>HP: 51</font> <font color=#9999ff>Mana: 53</font>)</font>&nbsp;[<a href="mailto:hito@ss.iij4u.or.jp">MAIL</a>]
+</td></tr><tr><td align=center><img src="./icon/shm.gif" border=0>
+</td><td width=90%><font color=#000000><A HREF="http://homepage2.nifty.com/winfaq/" TARGET="_blank"><font color=#ff0000>http://homepage2.nifty.com/winfaq/</font></A><br><br>これでどでしょ、ttcacheが壊れたのが原因かと<br>詳しい直し方はここにあると思います。</font>
+<div align=right><small>
+<br><font color=#990000>△HP 1pt 獲得! △Mana 3pt 獲得!</font>
+<br><font color=#000099> 3/30(Fri) 18:15</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=210&rno=1"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=210&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;kuno<small> <font color=#ffaaaa>(Lv: 4 学者
+ <font color=#ff8800>HP: 131</font> <font color=#9999ff>Mana: 228</font>)</font>&nbsp;[<a href="mailto:kila@moon.co.jp">MAIL</a>-<a href="http://www.snu.ne.jp/~kira/eq/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="./icon/wiz.gif" border=0>
+</td><td width=90%><font color=#000000>めちゃめちゃいいサイトありがとう～．<br>治りました．<br>フリーズがおおいPCなんで、強制終了が多かったのが<br>原因かもしれません．</font>
+<div align=right><small>
+<br><font color=#990000>△HP 1pt 獲得! △Mana 9pt 獲得!</font>
+<br><font color=#000099> 3/30(Fri) 20:08</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="index.cgi?action=edit&lno=210&rno=2"><font color=#000099>編集</font></a>]
+[<a href="index.cgi?action=delete&lno=210&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2><tr><td colspan=3 align=center bgcolor=#000099>
+<b> 1 <a href="index.cgi?page=2">&gt;2</a> 
+<a href="index.cgi?page=3">&gt;3</a> 
+<a href="index.cgi?page=4">&gt;4</a> 
+<a href="index.cgi?page=5">&gt;5</a> 
+<a href="index.cgi?page=6">&gt;6</a> 
+<a href="index.cgi?page=7">&gt;7</a> 
+<a href="index.cgi?page=8">&gt;8</a> 
+<a href="index.cgi?page=9">&gt;9</a> 
+</b></td></tr>
+<td bgcolor=#000099 width=33%>&nbsp;</td>
+<td bgcolor=#000099 width=33% align=center>
+<b>[Page 1/22]</b></td>
+<td bgcolor=#000099 width=33% align=right>
+<a href="index.cgi?page=2"><b>Next≫</b></a></td>
+</tr></table><br>
+<br><br></div>
+<div align=right>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2>
+<tr><td bgcolor=#000099 align=right><a href="http://www18.big.or.jp/~sugar/diablo" target=_new>
+GAMEBBS Created by Sug</a><br>Version 1.03</tr></td></table></div>
+</body></html>

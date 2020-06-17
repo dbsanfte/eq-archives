@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS">
+<TITLE>Drinal Raid BBS</TITLE>
+</HEAD>
+<BODY bgcolor="#CCCCCC" text="#000000" link="#0000FF" vlink="#0000FF">
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の上部に表示されます -->
+<!--end-->
+<FORM action="./im_trbbs.cgi" method="post">
+
+<DIV align="right">
+<TABLE><TR>
+<TD>JST</FONT></I><TD><INPUT NAME="jsp" SIZE=8>
+<TD>EST</FONT></I><TD><INPUT NAME="est" SIZE=8> 
+<TD>CST</FONT></I><TD><INPUT NAME="cst" SIZE=8> 
+<TD>PST</FONT></I><TD><INPUT NAME="pst" SIZE=8> 
+<TD>GMT</FONT></I><TD><INPUT NAME="gmt" SIZE=8> 
+</TABLE>
+</DIV>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// 引数arg_yearで指定された年のサマータイム開始時刻を内部阜ｻで返す。
+//
+function GetDstStart(arg_year) {
+	var dst_start = new Date(arg_year, 3, 1, 2, 0, 0); // 第2引数の3は、4月を浮ｷ。
+	for (var i = 1; i <= 7; i++) {
+		dst_start.setDate(i);
+		if (0 == dst_start.getDay()) {
+			break;
+		}
+	}
+	return dst_start.getTime();
+}
+
+// 引数arg_yearで指定された年のサマータイム終了時刻を内部阜ｻで返す。
+//
+function GetDstEnd(arg_year) {
+	var dst_end = new Date(arg_year, 9, 31, 1, 0, 0);
+	for (var i = 31; i > 24; i--) {
+		dst_end.setDate(i);
+		if (0 == dst_end.getDay()) {
+			break;
+		}
+	}
+	return dst_end.getTime();
+}
+
+
+// まず今が何年か調べます。
+today = new Date();
+year = today.getYear();
+if (year < 100) {
+	year += 1900;
+}
+// ここまでで、yearに今年の年(1998など)が入っています。
+
+var tz_offset = today.getTimezoneOffset();
+
+pos_start = GetDstStart(year);
+pos_end = GetDstEnd(year);
+
+tz_jst =  9 * 60; // GMT+9
+tz_est = -5 * 60; // GMT-09
+tz_cst = -6 * 60; // GMT-05
+tz_pst = -8 * 60; // GMT-05
+tz_gmt =  0 * 60; // GMT
+
+function nowat(now_t, tz, st) {
+	var hour, min, sec;
+
+	var pos_t = now_t + (tz_offset + tz) * 60 * 1000;
+
+	if (0 != st) {
+		// サマータイム処理
+		if ((pos_start <= pos_t) && (pos_end > pos_t)) {
+			pos_t += 60 * 60 * 1000;
+		}
+	}			
+	var t = new Date();
+	t.setTime(pos_t);
+
+	hour = t.getHours();
+	min = t.getMinutes();
+	sec = t.getSeconds();
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (min < 10) {
+		min = "0" + min;
+	}
+	if (sec < 10) {
+		sec = "0" + sec;
+	}
+	return hour + ":" + min + ":" + sec; 
+}
+
+function update_watch() {
+	now = new Date();
+	n_t = now.getTime();
+	jst = nowat(n_t, tz_jst, 0);
+	est = nowat(n_t, tz_est, 1);
+	cst = nowat(n_t, tz_cst, 2);
+	pst = nowat(n_t, tz_pst, 3);
+	gmt = nowat(n_t, tz_gmt, 4);
+
+	document.forms[0].elements[0].value = jst;
+	document.forms[0].elements[1].value = est;
+	document.forms[0].elements[2].value = cst;
+	document.forms[0].elements[3].value = pst;
+	document.forms[0].elements[4].value = gmt;
+	setTimeout('update_watch()', 999); // 1000msec = 1sec
+}
+
+update_watch();
+//-->
+</SCRIPT>
+
+<!--
+<HR>
+<center>
+<font color="red"><b>いんふぉめーしょん</b></font><p>
+<font size="-1">
+<b>Tunare Server 分割対象になりました。移動しますか？のこりますか？<br>
+<a href="http://ran.sakura.ne.jp/~rein/eq/bbs/im_trbbs.cgi?uid=split">http://ran.sakura.ne.jp/~rein/eq/bbs/im_trbbs.cgi?uid=split</a>
+</font>
+</center>
+-->
+<br>
+<DIV align="center"><B>Drinal Raid BBS</B>
+</DIV>
+
+<HR>
+<CENTER>
+<TABLE border="0">
+<TR>
+  <TD nowrap><B>データ</B></TD>
+  <TD><SELECT name="df"><OPTION value="bbs.dat">最新データ
+    <OPTION value="0272.log">#0272以前</SELECT></TD>
+  <TD nowrap><B>ページ</B></TD>
+  <TD><INPUT type="submit" name="back" value="&lt;"></TD>
+  <TD><SELECT name="pg">
+    <OPTION value="1" selected>0001
+    <OPTION value="2">0002
+    <OPTION value="3">0003
+    <OPTION value="4">0004
+    <OPTION value="5">0005
+    <OPTION value="6">0006
+    <OPTION value="7">0007
+    <OPTION value="8">0008
+    <OPTION value="9">0009
+    <OPTION value="-1">ALL</SELECT></TD>
+  <TD><INPUT type="submit" name="next" value="&gt;"></TD>
+  <TD><INPUT type="submit" name="reload" value="読込"></TD>
+  <TD nowrap><B>記事</B></TD>
+  <TD><SELECT name="pm">
+    <OPTION value="N" selected>タイトルだけ
+    <OPTION value="L">１行だけ
+    <OPTION value="T">２行だけ
+    <OPTION value="A">最後まで</SELECT></TD>
+  <TD nowrap><B>表示</B></TD>
+  <TD><SELECT name="pt">
+    <OPTION value="TA" selected>ツリー（全記事）
+    <OPTION value="TR">ツリー（親記事）
+    <OPTION value="SA">新着順（全記事）</SELECT></TD>
+  <TD><INPUT type="submit" name="pset" value="設定"></TD></TR>
+<TR>
+  <TD nowrap align="right" colspan="4">
+  <B>[<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=NTAN&pg=1">新規投稿</A>]</B>
+  </TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=HTAN&pg=1">利用方法</A>]</B></TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trset.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1">掲示板管理</A>]</B></TD>
+  <TD nowrap align="center"><B>[<A href="http://ran.sakura.ne.jp/&#126;rein/eq/" target="_top">トップページ</A>]</B></TD>
+  <TD nowrap align="right" colspan="2">
+    <INPUT type="hidden" name="uid" value="DrinalRaid">
+    <INPUT type="hidden" name="old_prm" value="TAN">
+    <INPUT type="hidden" name="old_pt" value="TA">
+    <INPUT type="hidden" name="max_pg" value="9">
+    <INPUT type="hidden" name="old_df" value="bbs.dat">
+    <INPUT type="checkbox" name="rset" value="on">全記事既読</TD>
+  <TD nowrap align="right">
+    <INPUT type="checkbox" name="dset" value="on">設定保存</TD></TR>
+</TABLE>
+</CENTER>
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0803#0803">▽</A> <FONT color="#FF0000"><A name="0803">0803</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0803#0803">Kael patched? </A> Dinn/Pokee <SMALL>〔2001/08/06-16:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="0804">0804</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0804#0804">ん・・・</A> Dinn/Pokee <SMALL>〔2001/08/06-16:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><B><A name="0805">0805</A></B></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0805#0805">あーとりあえず</A> Makoko <SMALL>〔2001/08/07-10:55〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0798#0798">▽</A> <FONT color="#FF0000"><A name="0798">0798</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0798#0798">Velketor the Sorcerer Raid お疲れさま</A> Emotion <SMALL>〔2001/07/28-03:40〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="0799">0799</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0799#0799">RE:Velketor the Sorcerer Raid お疲れさま</A> Teru <SMALL>〔2001/07/28-16:36〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <FONT color="#FF0000"><A name="0800">0800</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0800#0800">もひひｗ</A> Teru <SMALL>〔2001/07/29-13:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="0801">0801</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0801#0801">RE:Velketor the Sorcerer Raid お疲れさま</A> Dinn/Pokee <SMALL>〔2001/07/29-15:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="0802">0802</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0802#0802">RE:Velketor the Sorcerer Raid お疲れさま</A> Emotion <SMALL>〔2001/07/30-04:07〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0794#0794">▽</A> <A name="0794">0794</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0794#0794">Trakanon おつつ</A> Makoko <SMALL>〔2001/07/23-01:39〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0795">0795</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0795#0795">Maxwells触媒清算済みリスト</A> Jeje <SMALL>〔2001/07/23-09:15〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="0796">0796</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0796#0796">RE:Trakanon おつつ</A> Serisu <SMALL>〔2001/07/23-16:07〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="0797">0797</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0797#0797">FEと清算完了</A> Jeje <SMALL>〔2001/07/24-06:44〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0789#0789">▽</A> <A name="0789">0789</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0789#0789">Jugg Camp のブツ</A> Makoko <SMALL>〔2001/07/21-04:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0790">0790</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0790#0790">RE:訂正</A> Goby <SMALL>〔2001/07/21-12:34〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0791">0791</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0791#0791">RE:Jugg Camp のブツ</A> Dinn/Pokee <SMALL>〔2001/07/21-22:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0792">0792</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0792#0792">RE:Jugg Camp のブツ</A> Anies <SMALL>〔2001/07/22-12:07〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0793">0793</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0793#0793">RE:Jugg Camp のブツ</A> Anies <SMALL>〔2001/07/22-12:11〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0788#0788">▽</A> <A name="0788">0788</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0788#0788">投稿者削除<!--#DELETE--></A> ***** <SMALL>〔2001/07/21-04:51〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0776#0776">▽</A> <A name="0776">0776</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0776#0776">Zlandicar Tree</A> Dinn/Pokee <SMALL>〔2001/07/19-12:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0777">0777</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0777#0777">Caster Group</A> Dinn/Pokee <SMALL>〔2001/07/19-13:38〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0779">0779</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0779#0779">RE:Caster Group</A> Juubei <SMALL>〔2001/07/19-14:36〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="0780">0780</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0780#0780">RE:Caster Group</A> Juubei <SMALL>〔2001/07/19-15:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0778">0778</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0778#0778">RE:とりあえずデータ(60Warからみて）</A> Juubei <SMALL>〔2001/07/19-14:22〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0783">0783</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0783#0783">AE</A> Dinn/Pokee <SMALL>〔2001/07/19-16:43〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="0785">0785</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0785#0785">RE:AE</A> Dinn/Pokee <SMALL>〔2001/07/19-21:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　└ <A name="0786">0786</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0786#0786">RE:AE</A> Juubei <SMALL>〔2001/07/20-14:10〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0781">0781</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0781#0781">RE:Zlandicar Tree</A> Gaugau <SMALL>〔2001/07/19-15:19〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0787">0787</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0787#0787">Main Taunt team</A> kaim/honehone/bricky <SMALL>〔2001/07/20-20:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0782">0782</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0782#0782">位置取り</A> Zeller <SMALL>〔2001/07/19-15:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0784">0784</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0784#0784">RE:Zlandicar Tree</A> Emotion <SMALL>〔2001/07/19-19:01〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0775#0775">▽</A> <A name="0775">0775</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0775#0775">Gorenaire Raid Result</A> Emotion <SMALL>〔2001/07/15-15:18〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0774#0774">▽</A> <A name="0774">0774</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0774#0774">Severilous Raid Result</A> Emotion <SMALL>〔2001/07/14-13:33〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0766#0766">▽</A> <A name="0766">0766</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0766#0766">Epic完成～</A> Anies <SMALL>〔2001/07/11-17:49〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0767">0767</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0767#0767">RF DropItem&#39;sの行方</A> Anies <SMALL>〔2001/07/11-18:13〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0769">0769</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0769#0769">RE:RF DropItem&#39;sの行方</A> Ｋｎｏｂｙ <SMALL>〔2001/07/12-05:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0770">0770</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0770#0770">おめおめ</A> kaim/bricky/honehone/kensirou <SMALL>〔2001/07/12-11:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0771">0771</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0771#0771">Congratz!</A> Emotion <SMALL>〔2001/07/12-14:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0772">0772</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0772#0772">RE:Epic完成～</A> Gakusya <SMALL>〔2001/07/13-00:45〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0773">0773</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0773#0773">おめでとー！</A> Basia <SMALL>〔2001/07/13-11:55〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0763#0763">▽</A> <A name="0763">0763</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0763#0763">PoHraregemKeep</A> DG <SMALL>〔2001/07/10-21:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0764">0764</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0764#0764">RE:PoHraregemKeep</A> Dinn <SMALL>〔2001/07/11-14:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0765">0765</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0765#0765">普通のDiaを２個預かってます</A> kaim/bricky/honehone/kensirou <SMALL>〔2001/07/11-11:36〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="0768">0768</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0768#0768">忘れていた</A> kaim/bricky/honehone/kensirou <SMALL>〔2001/07/11-18:46〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0751#0751">▽</A> <A name="0751">0751</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0751#0751">Gorenare Raid</A> Emotion <SMALL>〔2001/07/08-04:09〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0752">0752</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0752#0752">RE:Gorenare Raid</A> Ean <SMALL>〔2001/07/08-05:10〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0753">0753</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0753#0753">RE:Gorenare Raid</A> Dinn/Pokee <SMALL>〔2001/07/08-20:40〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0755">0755</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0755#0755">RE:Gorenare Raid</A> Teru <SMALL>〔2001/07/08-11:53〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0756">0756</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0756#0756">RE:Gorenare Raid</A> makoko <SMALL>〔2001/07/08-12:37〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0757">0757</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0757#0757">RE:Gorenare Raid</A> Mejojo <SMALL>〔2001/07/08-13:07〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0758">0758</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0758#0758">RE:Gorenare Raid</A> Miya <SMALL>〔2001/07/08-14:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0759">0759</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0759#0759">RE:Gorenare Raid(ManaSieve)</A> Basia <SMALL>〔2001/07/08-14:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0760">0760</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0760#0760">RE:Gorenare Raid</A> kaim/bricky/honehone/kensirou <SMALL>〔2001/07/09-19:14〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0761">0761</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0761#0761">感想</A> Zeller <SMALL>〔2001/07/10-15:11〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="0762">0762</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0762#0762">RE:感想</A> Zeller <SMALL>〔2001/07/10-15:39〕</SMALL></TD></TR>
+</TABLE>
+<HR>
+<DIV align="right"><B>アクセス数: 38317</B> (今日: 30 / 昨日: 97)</DIV><HR>
+<TABLE boder="0">
+<TR>
+  <TD nowrap><B>検索キーワード</B></TD>
+  <TD><INPUT type="text" name="skey" size="24" maxlength="24">
+  <TD><INPUT type="submit" name="search" value="全文検索"></TD>
+  <TD nowrap>（合致する文字を含む記事が、番号順に１画面で表示されます）</TD></TR>
+</TABLE>
+<HR>
+</FORM>
+<DIV align="right"><SMALL>original <A href="http://www.cgi-club.com/">imTRBBS(ver1.04)</A></SMALL> Modified <STRONG>Rein!!</STRONG></DIV>
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の下部に表示されます -->
+<!--end-->
+</BODY>
+</HTML>

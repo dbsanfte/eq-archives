@@ -1,0 +1,1233 @@
+
+
+
+
+
+
+<head>
+<title>EverQuestLive.com - Official EverQuest News</title>
+
+<script language="JavaScript">
+<!--
+<!--
+function handleResize()
+{
+        if (navigator.appName == "Netscape")
+        {
+                location.reload();
+                return true;
+        }
+        else
+        {
+                gnav_init();
+        }
+}
+// -->
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+<script language="JavaScript">
+<!-- 
+var sName="POPCIDIL";
+function setCookie(nVal) {
+  var oToday=new Date();
+  var oExp=new Date();
+  oExp.setTime(oToday.getTime()+1000*60*60*24*30);
+  document.cookie=sName+"="+nVal+"; expires="+oExp.toGMTString()+"; path=/";
+}
+function getCookie() {
+  var sSearch=sName+"=";
+  var nOffset,End;
+  if(document.cookie.length>0) {
+    nOffset=document.cookie.indexOf(sSearch);
+    if(nOffset!=-1) {
+      nOffset+=sSearch.length;
+      nEnd=document.cookie.indexOf(";",nOffset);
+      if(nEnd==-1) { nEnd=document.cookie.length; }
+      return(parseFloat(document.cookie.substring(nOffset,nEnd)));
+    }
+  }
+}
+function openPopup(sURL,sName,sOpt) {
+  var nCoo=getCookie();
+
+  if(nCoo==null) { nCoo=0; }
+  if(nCoo<3) {
+    nCoo=nCoo+1;
+//  setCookie(nCoo);
+    window.open(sURL,sName,sOpt);
+  }
+}
+// -->
+</script>
+
+<link rel="stylesheet" href="eqlive.css" type="text/css">
+
+<script language="JavaScript"><!--
+var axel = Math.random() + "";
+var ord = axel * 1000000000000000000;
+// -->
+</script>
+
+<SCRIPT language=javascript SRC="/common/detector/detectorDB.js"></SCRIPT>
+</head>
+<body bgcolor="#000000" text="#CCCCCC" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="images/rock_bg.jpg" onResize="handleResize();" onLoad="visInit();start=1;release=1;MM_preloadImages('images/subscribe_on.jpg');wow(240,'EQLV');">
+<!-- begin global nav -->
+<center>
+	
+
+
+
+
+
+
+
+<div id="gnav_main" style="position:absolute; top:0px;left:0;width:780;height:70; z-index:21;"><img src="/common/images/global_nav/globalnav.gif" width="780" height="70" usemap="#Map" border="0"></div>
+<div id="gnav_ident" style="position:absolute; top:0;left:0;width:302;height:47; z-index:22;"><a href="http://www.station.com"><IMG SRC="/common/images/global_nav/ident.gif" width="302" height="47" border="0"></a></div>
+<div id="gnav_players" style="position:absolute; top:20;left:485;width:165;height:15; clip:rect(0px 165px 15px 0px); color:#000000;font-family:Verdana,Arial,Helvetica;font-size:12px;font-weight:bold;text-align:center; z-index:22;">81,357 Players Online</div>
+<div id="gnav_avicon" style="position:absolute; top:47;left:0;width:27;height:21; z-index:22;">
+					    
+						&nbsp;
+					    
+</div>
+<div id="gnav_welcome" style="position:absolute; top:47;left:26;height:9; z-index:22;"><img src="/common/images/global_nav/welcome.gif" border="0" width="150" height="9"></div>
+<div id="gnav_username" style="position:absolute; top:55;left:26;width:213;height:12; clip:rect(0px 213px 12px 0px); color:#FFFFFF;font-family:Verdana,Arial,Helvetica;font-size:10px;font-weight:bold;text-align:left; z-index:22;">&nbsp;</div>
+<div id="gnav_commstation" style="position:absolute; top:47;left:240;width:75;height:21; z-index:22;">
+	
+	  
+	    
+	    
+	       
+	          <a href="http://www.station.sony.com/en/commstation/stationgram.jsp" target="comm_station"><img src="/common/images/global_nav/comm_off.gif" border="0" width="75" height="21"></a>
+	          
+	       
+	    
+	  
+	
+</div>
+
+
+<div id="gnav_menu" style="visibility:hidden; position:absolute; top:65;left:321;width:112; background-color:#FFFFFF;border-color:#000000;border-style:solid;border-width:1;padding:0px; z-index:23;">
+	<!-- This should all be generated from a user specified file -->
+	<a href="javascript:gnav_call('http://everquest.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">EverQuest</a>
+<a href="javascript:gnav_call('http://everquestonlineadventures.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">EverQuest&nbsp;Online &nbsp;Adventures</a>
+<a href="javascript:gnav_call('http://starwarsgalaxies.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Star&nbsp;Wars&nbsp;Galaxies</a>
+<a href="javascript:gnav_call('http://planetside.station.sony.com/');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">PlanetSide</a>
+<a href="javascript:gnav_call('http://everquest2.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">EverQuest 2</a>
+<a href="javascript:gnav_call('http://sovereign.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Sovereign</a>
+<hr>
+<a href="javascript:gnav_call('http://tanarus.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Tanarus&nbsp; &nbsp; &nbsp;</a>
+<a href="javascript:gnav_call('http://infantry.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Infantry&nbsp; &nbsp; &nbsp;</a>
+<a href="javascript:gnav_call('http://cosmicrift.station.sony.com');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Cosmic Rift</a>
+<hr>
+<a href="javascript:gnav_call('http://jeopardy.station.sony.com/play.jsp');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Jeopardy!</a>
+<a href="javascript:gnav_call('http://wheel.station.sony.com/home.jsp');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Wheel&nbsp;of&nbsp;Fortune</a>
+<a href="javascript:gnav_call('http://www.station.sony.com/en/games.jsp');" class="gnav_menu" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">Other Free Games</a>
+
+
+
+</div>
+
+
+
+
+<script language="JavaScript">
+//<!--
+	var gnav_isNav, gnav_isIE;
+	var gnav_coll="";
+	var gnav_styleObj="";
+	var gnav_menutimer="null";
+	var gnav_isMoz=false;
+	
+	if (parseInt(navigator.appVersion)>=4){
+		if (navigator.appName=="Netscape"){
+			gnav_isNav=true;
+			if (parseInt(navigator.appVersion)>=5){
+				gnav_isMoz=true;
+			}
+		}
+		else{
+			gnav_isIE=true;
+			gnav_coll="all.";
+			gnav_styleObj=".style";
+		}
+	}
+	
+	// Convert string object names in to object references.
+	function gnav_getobject(obj)
+	{
+		var theObj;
+		if (typeof obj == "string")
+		{
+			if (eval("document."+gnav_coll+obj))
+			{
+				theObj=eval("document."+gnav_coll+obj+gnav_styleObj);
+			}
+			else
+			{
+				theObj=false;
+			}
+		}
+		else
+			theObj=obj;
+			
+		return theObj;
+	}
+
+
+	// Returns the browser's width for IE or Netscape
+	function gnav_getbrowserwidth()
+	{
+		if (gnav_isNav)
+			return window.innerWidth;
+		else
+			return document.body.clientWidth;
+	}
+	
+	function gnav_center(obj, offset)
+	{
+		contentWidth=780;	// SET IN JSP FROM A TAG PARAM
+		
+		if (gnav_isMoz)
+		{
+			return false;
+		}
+		
+		theObj=gnav_getobject(obj);
+		if (!theObj)
+		{
+			return false;
+		}
+			
+		startpos=(gnav_getbrowserwidth()/2)-(contentWidth/2);
+		if (startpos<0)
+			startpos=0;
+		newpos=startpos+offset;
+		
+		if (gnav_isNav)
+		{
+			objtop=theObj.top;
+			theObj.moveTo(newpos, objtop);
+		}
+		else
+		{
+			theObj.pixelLeft=newpos;
+		}
+	}
+	
+	function gnav_show(obj, vis)
+	{
+		if (gnav_isMoz)
+		{
+			return false;
+		}
+		
+		theObj=gnav_getobject(obj);
+		if (!theObj)
+		{
+			return false;
+		}
+		
+		if (vis)
+			theObj.visibility="visible";
+		else
+			theObj.visibility="hidden";
+	}
+	
+	function gnav_showncenter(obj, offset)
+	{
+		gnav_center(obj, offset);
+		gnav_show(obj, true);
+	}
+
+	function gnav_showmenu()
+	{
+	    
+		if (gnav_menutimer!="null")
+			clearTimeout(gnav_menutimer)
+		gnav_show("gnav_menu", true);
+	    
+	}
+	
+	function gnav_clearmenu()
+	{
+		gnav_show("gnav_menu", false);
+	}
+	
+	function gnav_hidemenu()
+	{
+		gnav_menutimer=setTimeout('gnav_clearmenu()', 500);
+	}
+	
+	function gnav_call(url)
+	{
+		samewindow=true;
+		if (samewindow)
+		{
+			document.location=url;
+		}
+		else
+		{
+			window.open(url, "Main");
+		}
+	}
+
+	function gnav_init()
+	{
+		
+		gnav_showncenter("gnav_main", 0);
+		gnav_showncenter("gnav_ident", 0);
+		gnav_showncenter("gnav_players", 485);
+		gnav_showncenter("gnav_avicon", 0);
+		gnav_showncenter("gnav_welcome", 26);
+		gnav_showncenter("gnav_username", 26);
+
+		gnav_showncenter("gnav_commstation", 240);
+
+		gnav_center("gnav_menu", 321);
+		
+	}
+	
+	gnav_init();
+
+
+
+//-->
+</script>
+
+<map name="Map"> 
+  <!-- Sign in    --><area shape="rect" coords="318,18,389,36" href="javascript:gnav_call('https://login.station.sony.com/login/station/login.jsp?returnURL=http://eqlive.station.sony.com/index.jsp?null');">
+  <!-- Join free  --><area shape="rect" coords="393,19,471,35" href="javascript:gnav_call('https://www.station.sony.com/secure/en/registration/registration.jsp?returnURL=http://eqlive.station.sony.com/index.jsp');">
+  <!-- SONY       --><area shape="rect" coords="664,12,775,44" href="javascript:gnav_call('http://www.sony.com');">
+  <!-- Play Games --><area shape="rect" coords="322,47,431,64" href="javascript:gnav_call('http://www.station.sony.com');" onmouseover="gnav_showmenu();" onmouseout="gnav_hidemenu();">
+  <!-- Win        --><area shape="rect" coords="435,47,473,64" href="javascript:gnav_call('http://www.station.sony.com/en/win/');">
+  <!-- Community  --><area shape="rect" coords="479,47,556,64" href="javascript:gnav_call('http://www.station.sony.com/en/community.jsp');">
+  <!-- Shop       --><area shape="rect" coords="563,47,600,64" href="javascript:gnav_call('https://store.station.sony.com');">
+  <!-- My Account --><area shape="rect" coords="607,47,683,64" href="javascript:gnav_call('https://www.station.sony.com/secure/en/registration/edit.jsp');">
+  <!-- Help       --><area shape="rect" coords="693,47,726,64" href="javascript:gnav_call('http://www.station.sony.com/en/services/help/help.jsp');">
+</map>
+
+
+
+	<table>
+	<tr>
+		<td img src="spacer.gif" height="67">
+	</tr>
+</table>
+</center>	
+
+<!-- end global nav -->
+<!-- begin main body -->
+<table width="780" border="0" cellspacing="0" cellpadding="0" align="center" background="images/tiling_bg.jpg">
+  <tr>
+    <td>
+      <table width="780" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr align="center">
+          <!-- begin menu -->
+          <td width="166" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/main_left_bg.jpg">
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/main_left_bg.jpg">
+                    <tr> 
+                      <td align="center" background=""><img width="166" height="38" src="images/eq_top.jpg"></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" background=""><img width="166" height="67" src="images/eq_btm.jpg"></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" background=""> 
+                        <p>
+                          <script type="text/javascript" src="http://eqlive.station.sony.com/includes/cookie.js"></script>
+<script type="text/javascript" src="http://eqlive.station.sony.com/includes/list.js"></script>
+<script type="text/javascript" src="http://eqlive.station.sony.com/includes/menucontent.js"></script>
+<script type="text/javascript" src="http://eqlive.station.sony.com/includes/menuarw.js"></script>
+<script type="text/javascript" language="JavaScript">
+<!--
+var ToSwinhandle=null;
+function openToS(tosURL)
+{	
+	ToSwinhandle=window.open(tosURL, "tosWin", "width=500,height=400,titlebar=no,menubar=no,toolbar=no,status=no,scrollbars=yes,resizeable=no");
+	ToSwinhandle.focus();
+	return false;
+}
+//-->
+</script>
+
+<table border="0" cellspacing="0" cellpadding="0" width="152">
+
+
+  <tr>
+    <td colspan="2">
+
+      <div id="mlHome" class="mlevel1"> <img src="http://eqlive.station.sony.com/includes/images/menuBall.gif" width="12" height="12" border="0"> 
+        <a href="http://eqlive.station.sony.com/index.jsp" class="mlinklevel1">Home</a> 
+      </div>
+      <div id="mlProfile" class="mlevel1"> </div>
+      
+	  <div id="mlForums" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcForums');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcForums"></a> 
+        <a href="http://eqlive.station.sony.com/forums/index.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcForums');">Forums</a> 
+        <div id="mcForums" class="mlevel2"> <a href="http://eqlive.station.sony.com/community/dev_view.jsp" class="mlinklevel2">Developer's 
+          Corner</a> <a href="http://boards.station.sony.com/ubb/everquest/cgi-bin/forumdisplay.cgi?action=topics&forum=Quality+Assurance+-+Testing&number=2&DaysPrune=20&LastLogin=" class="mlinklevel2">QA/Testing</a> 
+          <a href="http://boards.station.sony.com/ubb/everquest/cgi-bin/forumdisplay.cgi?action=topics&forum=Technical+Help&number=3&DaysPrune=20&LastLogin=" class="mlinklevel2">Technical 
+          Help</a> <a href="http://boards.station.sony.com/ubb/everquest/cgi-bin/forumdisplay.cgi?action=topics&forum=The+Newbie+Zone&number=4&DaysPrune=20&LastLogin=" class="mlinklevel2">The 
+          Newbie Zone</a> <a href="http://boards.station.sony.com/ubb/everquest/cgi-bin/forumdisplay.cgi?action=topics&forum=Harpy|APO|s+Head+Tavern&number=5&DaysPrune=20&LastLogin=" class="mlinklevel2">Harpy's 
+          Head Tavern</a> <a href="http://boards.station.sony.com/ubb/everquest/cgi-bin/forumdisplay.cgi?action=topics&forum=Events&number=6&DaysPrune=20&LastLogin=" class="mlinklevel2">Events</a> 
+        </div>
+      </div>
+	  
+      <div id="mlEvents" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcEvents');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcEvents"></a> 
+        <a href="http://eqlive.station.sony.com/events/index.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcEvents');">Official Events</a> 
+        <div id="mcEvents" class="mlevel2"> <a href="http://everquest.station.sony.com/fanfaire/en/" class="mlinklevel2">Fan 
+          Faire</a>
+		  <a href="http://eqlive.station.sony.com/events/gencon.jsp" class="mlinklevel2">Gencon</a></div>
+      </div>
+      
+	  <div id="mlFeatured" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcFeatured');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcFeatured"></a> 
+        <a href="http://eqlive.station.sony.com/community/index.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcFeatured');">Community</a> 
+        <div id="mcFeatured" class="mlevel2"> <a href="http://eqlive.station.sony.com/community/dear_mennix.jsp" class="mlinklevel2">Dear 
+          Mennix</a> <a href="http://eqlive.station.sony.com/community/fippy_facts.jsp" class="mlinklevel2">Fippy's 
+          Facts</a> <a href="http://eqlive.station.sony.com/community/hammerfel.jsp" class="mlinklevel2">Hammerfel</a> 
+          <a href="http://eqlive.station.sony.com/community/newsletter.jsp" class="mlinklevel2">Newsletter</a> 
+          <a href="http://eqlive.station.sony.com/community/articles_archive.jsp" class="mlinklevel2">Articles</a> <a href="http://eqlive.station.sony.com/community/links.jsp" class="mlinklevel2">Links</a></div>
+      </div>
+      
+	  <div id="mlStats" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcStats');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcStats"></a> 
+        <a href="http://eqlive.station.sony.com/multimedia/index.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcStats');">Multimedia</a> 
+        <div id="mcStats" class="mlevel2"> <a href="http://eqlive.station.sony.com/multimedia/desktops.jsp" class="mlinklevel2">Desktops</a> 
+          <a href="http://eqlive.station.sony.com/multimedia/movies.jsp" class="mlinklevel2">Movies</a> 
+			<a href="http://eqlive.station.sony.com/multimedia/box_art_and_more.jsp" class="mlinklevel2">Box Art & More</a> 
+			
+			<a href="http://eqlive.station.sony.com/multimedia/concept_art.jsp" class="mlinklevel2">Concept Art</a>
+			<a href="http://eqlive.station.sony.com/multimedia/screensaver.jsp" class="mlinklevel2">Screensaver</a></div>
+      </div>
+	  
+      <div id="mlLibrary" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcLibrary');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcLibrary"></a> 
+        <a href="http://eqlive.station.sony.com/library/index.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcLibrary');">The Library</a> 
+        <div id="mcLibrary" class="mlevel2"> <a href="http://eqlive.station.sony.com/library/faqs/faq_index.jsp" class="mlinklevel2">FAQ's</a> 
+          <a href="http://eqlive.station.sony.com/manual/index.jsp" class="mlinklevel2">Manual</a> <a href="http://eqlive.station.sony.com/library/races.jsp" class="mlinklevel2">Races</a> <a href="http://eqlive.station.sony.com/library/classes.jsp" class="mlinklevel2">Classes</a> 
+          <a href="http://eqlive.station.sony.com/library/deities.jsp" class="mlinklevel2">Deities</a> <a href="http://eqlive.station.sony.com/library/sub_deities.jsp" class="mlinklevel2">Sub 
+          Deities</a> <a href="http://eqlive.station.sony.com/library/skills.jsp" class="mlinklevel2">Skills</a> 
+          <a href="http://eqlive.station.sony.com/library/atlas/index.jsp" class="mlinklevel2">Atlas</a> <a href="http://eqlive.station.sony.com/library/special_servers.jsp" class="mlinklevel2">Special Servers</a></div>
+      </div>
+	  
+      <div id="mlSupport" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcSupport');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcSupport"></a> 
+        <a href="http://eqlive.station.sony.com/support/index.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcSupport');">Support</a> 
+        <div id="mcSupport" class="mlevel2">
+			<a href="https://store.station.sony.com/eq_char_moves/" class="mlinklevel2">Character Transfer Service</a> 
+			<a href="https://store.station.sony.com/eq_char_renames/" class="mlinklevel2">Name Change Service</a>  
+			<a href="http://eqlive.station.sony.com/renames/" class="mlinklevel2">Name Change List</a>
+			<a href="http://help.station.sony.com/esupport/esupport/consumer/esupport.asp" class="mlinklevel2">Knowledge Base</a> 
+			<a href="http://eqlive.station.sony.com/support/customer_service.jsp" class="mlinklevel2">Customer Service</a> 
+			<a href="http://eqlive.station.sony.com/support/tech_support.jsp" class="mlinklevel2">Tech Support</a> 
+			<a href="http://eqlive.station.sony.com/support/accounts_billing.jsp" class="mlinklevel2">Accounts and Billing</a> 
+			<a href="http://eqlive.station.sony.com/support/network_status.jsp" class="mlinklevel2">Network Status</a> 
+			<a href="http://eqlive.station.sony.com/support/server_status.jsp" class="mlinklevel2">Server Status</a> 
+			<a href="http://eqlive.station.sony.com/support/scheduled_downtime.jsp" class="mlinklevel2">Scheduled Downtime</a> 
+			<a href="http://eqlive.station.sony.com/support/customer_service/cs_patch_message.jsp" class="mlinklevel2">Latest Patch Message</a> </div>
+      </div>
+	  
+      <div id="mlRulesPolicies" class="mlevel1"> <a href="JavaScript:toggleMenuContent('mcRulesPolicies');" class="mexpander"><img src="http://eqlive.station.sony.com/includes/images/menuDown.gif" width="12" height="12" border="0" id="iconmcRulesPolicies"></a>
+        <a href="http://eqlive.station.sony.com/support/rulesandpolicies.jsp" class="mlinklevel1" onclick="forceMenuOpen('mcRulesPolicies');">Rules &amp; Policies</a>
+        <div id="mcRulesPolicies" class="mlevel2">
+			<a href="http://eqlive.station.sony.com/support/customer_service/cs_EULA.jsp" class="mlinklevel2">License Agreement</a>
+			<a href="http://sonyonline.com/tos/tos.jsp" class="mlinklevel2" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp');">SOE Terms of Service</a>
+			<a href="http://eqlive.station.sony.com/support/customer_service/cs_rules_of_conduct.jsp" class="mlinklevel2">Rules of Conduct</a>
+			<a href="http://eqlive.station.sony.com/support/customer_service/cs_naming_policy.jsp" class="mlinklevel2">Naming Policy</a>
+			<a href="http://eqlive.station.sony.com/support/customer_service/cs_reimbursement.jsp" class="mlinklevel2">Item Reimbursement Policy</a>
+			<a href="http://sonyonline.com/tos/tos.jsp#privacy" class="mlinklevel2" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp#privacy');">SOE Privacy Policy</a>
+      </div>
+      
+      <div id="mlContactUs" class="mlevel1"> <img src="http://eqlive.station.sony.com/includes/images/menuBall.gif" width="12" height="12" border="0"> 
+        <a href="http://eqlive.station.sony.com/contact_us.jsp" class="mlinklevel1">Contact Us</a> </div>
+      <div id="mlContactGM" class="mlevel1"> <img src="http://eqlive.station.sony.com/includes/images/menuBall.gif" width="12" height="12" border="0"> 
+        <a href="http://www.station.sony.com/en/services/help/eqGM.jsp" class="mlinklevel1">Contact 
+        Your GM</a> </div>
+		
+      <div id="mlContactGM" class="mlevel1"> <img src="http://eqlive.station.sony.com/includes/images/menuBall.gif" width="12" height="12" border="0"> 
+        <a href="http://66.129.87.69/candidate/" class="mlinklevel1">Employment</a> 
+      </div>
+		<div id="mlContactGM" class="mlevel1"> <img src="http://eqlive.station.sony.com/includes/images/menuBall.gif" width="12" height="12" border="0"> 
+        <a href="http://everquest.station.sony.com/" class="mlinklevel1">EverQuest.com</a> </div>
+    </td>
+  </tr>
+
+
+</table>
+
+<script language="JavaScript">
+initMenuContent();
+defaultMenuClosed("mcForums,mcEvents,mcFeatured,mcStats,mcLibrary,mcSupport,mcRulesPolicies");
+//window.alert(document.cookie);
+
+</script>
+
+                        </p>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td align="center" background=""><img src="images/menu_btm.gif" width="166" height="15"></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" background="">
+					  	<!--<b><br>
+                        *LANG SELECT*</b>--></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" background=""> 
+                        <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                          <tr> 
+                            <td align="center" background="" height="32" valign="top"><a href="http://services.station.sony.com/en/photosens.jsp"><img src="images/eqlive_seizure_warning.gif" alt="Photosensitive Seizure Warning" width="109" height="22" border="0" vspace="3"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><img src="images/products_header.gif" width="125" height="12" border="0"></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://everquest.station.sony.com/"><img src="images/eq_logo.gif" width="125" height="43" border="0"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://everquest.station.sony.com/trilogy.jsp"><img src="images/tril_logo.gif" width="125" height="46" border="0"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://everquest.station.sony.com/kunark.jsp"><img src="images/rok_logo.gif" width="125" height="45" border="0"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://everquest.station.sony.com/velious.jsp"><img src="images/sov_logo.gif" width="125" height="29" border="0" vspace="3"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://everquest.station.sony.com/luclin.jsp"><img src="images/sol_logo.gif" width="125" height="31" border="0" vspace="2"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://everquest.station.sony.com/power/"><img src="images/pop_logo.gif" width="125" height="25" border="0" vspace="3"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center" background=""><a href="http://legends.everquest.station.sony.com/"><img src="images/eqleg_logo.gif" width="125" height="33" border="0" vspace="3"></a></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td align="center" background=""> 
+                        <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                          <tr> 
+                            <td align="center"><a href="community/newsletter.jsp"><img src="images/newsletter_header.jpg" width="152" height="70" border="0"></a></td>
+                          </tr>
+                          <tr> 
+                            <td align="center"><font face="Arial, Helvetica, sans-serif"><b><font color="FFCC33" size="-1"><a class="mlinklevel1" href="community/newsletter.jsp">Subscribe 
+                              to the<br>
+                              EverQuest Newsletter!</a></font></b></font></td>
+                          </tr>
+                          <tr> 
+                            <td align="center"> 
+                                <p>This official newsletter provides an inside 
+                                  look at all things EverQuest<font face="Arial, Helvetica, sans-serif" size="-1">.</font></p>
+                                <p align="center"><a href="community/newsletter.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','images/subscribe_on.jpg',1)"><img src="images/subscribe_off.jpg" width="118" height="27" border="0" name="Image1"></a></p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <!-- end menu -->
+          <!-- begin content -->
+          <td width="479" background="" valign="top">
+            <img width="479" height="38" src="images/trbl_mid.jpg"><br>
+            <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td> 
+                  <table width="471" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_lt.gif" width="36" height="8"></td>
+                      <td rowspan="2" width="62" height="9" background="/images/sub_heading_bg.gif"> 
+                        <div align="center"><b><font face="Arial, Helvetica, sans-serif" size="2">Featured</font></b></div>
+                      </td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_rt.gif" width="36" height="8"></td>
+                      <td width="412" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tl.gif" width="10" height="9"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_t.gif" width="9" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_lb.gif" width="36" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_rb.gif" width="36" height="9"></td>
+                      <td width="412" height="8" bgcolor="#000016" background="/images/cbb_t.gif"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_tr_l.gif" width="9" height="9"></td>
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tr_c.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                  <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr valign="top" bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="450" colspan="6" bgcolor="#000016" rowspan="3"> 
+                        <!-- begin page content -->
+                        <!--
+						<img src="images/visShrink.gif" alt="Shrink/Expand this section. (IE Only)" border="0" onClick="visToggle('Featured');" style="cursor:hand;"><br>
+						<div id="visBlockFeatured" style="display:block;">
+						-->
+                        <table border="0">
+                           
+                          <tr> 
+                            <td width="50%" valign="top"> 
+                              
+                              <a href="http://pc.ign.com/articles/377/377881p1.html"> 
+                              
+                              
+                              <img src="http://eqlive.station.sony.com/images/featured/big/EQII_movies.jpg" alt="EQII Movies" border="0"> 
+                              
+                              
+                              </a> 
+                              
+                            </td>
+                            <td width="50%" valign="top"> 
+                              
+                              <a href="http://pc.ign.com/articles/377/377881p1.html" class="smalltitle">EverQuest II Movies at IGN</a> 
+                              
+                              <br>
+                              NVIDIA has released a <A href="http://pc.ign.com/articles/377/377881p1.html">seven minute video</A> featuring EverQuest II run on their new GeForce FX card. The movie also includes commentary from EQII Senior Producer John Blakely and Art Director Stuart Compton. </td>
+                          </tr>
+                           
+                          <tr><td colspan="2" height="1" background="images/cbg_t.gif"><img src="images/spacer.gif" height="1" width="10"></td></tr>
+                          <tr>  
+                            
+                             
+                            
+                            <td width="50%" valign="top"> 
+                              
+                              <a href="http://eqlive.station.sony.com/lowsrc/"> 
+                              
+                              
+                              <img src="http://eqlive.station.sony.com/images/featured/small/EQLive_losrc_sm.jpg" alt="lowsrc" border="0"> 
+                              
+                              
+                              </a> 
+                              
+                              <br>
+                              
+                              <a href="http://eqlive.station.sony.com/lowsrc/" class="smalltitle">EverQuestLive.com "lowsrc" Version</a> 
+                              
+                              <br>
+                              The EverQuestLive.com "lowsrc" site provides all the same EQ information in HTML 1.0 and can be viewed by almost any browser. <A href="http://eqlive.station.sony.com/lowsrc/">Check it out!</A> </td>
+                            
+                             
+                            
+                            <td width="50%" valign="top"> 
+                              
+                              <a href="http://www.station.sony.com/en/message_boards.jsp"> 
+                              
+                              
+                              <img src="http://eqlive.station.sony.com/images/featured/small/NewForums_sm_05.jpg" alt="New Game Forums" border="0"> 
+                              
+                              
+                              </a> 
+                              
+                              <br>
+                              
+                              <a href="http://www.station.sony.com/en/message_boards.jsp" class="smalltitle">New Forums</a> 
+                              
+                              <br>
+                              SOE opened three new game forums for upcoming releases: <A href="http://boards.station.sony.com/ubb/planetside/cgi-bin/Ultimate.cgi">PlanetSide</A>, <A href="http://boards.station.sony.com/ubb/eqoa/cgi-bin/Ultimate.cgi">EverQuest Online Adventures</A>, and <A href="http://boards.station.sony.com/ubb/eqpocket/cgi-bin/Ultimate.cgi">EverQuest for the Pocket PC</A>. Stop by and visit. </td>
+                            
+                             </tr>
+                        </table>
+						<!-- end page content -->
+                      </td>
+                      <td width="10"  bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_tr_b.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="10" bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr valign="bottom" bgcolor="000016"> 
+                      <td background="/images/cbb_l.gif" width="10" bgcolor="000016"><img src="/images/cbb_bl_t.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_r.gif" width="10" bgcolor="000016"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_bl_c.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_bl_r.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="62" align="center" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="412" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_br.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p> 
+              <!-- end featured -->
+			 </p>
+			 <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td> 
+                  <table width="471" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_lt.gif" width="36" height="8"></td>
+                      <td rowspan="2" width="62" height="9" background="/images/sub_heading_bg.gif"> 
+                        <div align="center"><b><font face="Arial, Helvetica, sans-serif" size="2">Developers'&nbsp;Corner</font></b></div>
+                      </td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_rt.gif" width="36" height="8"></td>
+                      <td width="412" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tl.gif" width="10" height="9"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_t.gif" width="9" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_lb.gif" width="36" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_rb.gif" width="36" height="9"></td>
+                      <td width="412" height="8" bgcolor="#000016" background="/images/cbb_t.gif"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_tr_l.gif" width="9" height="9"></td>
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tr_c.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                  <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr valign="top" bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="451" colspan="6" bgcolor="#000016" rowspan="3"> 
+					    
+                         
+    	                    <a href="community/dev_view.jsp?id=52848" class="smalltitle">EverQuest Instant Messenger</a>
+							
+							<p>
+                         
+    	                    <a href="community/dev_view.jsp?id=52825" class="smalltitle">Music Player tips</a>
+							<br>Here are a few useful tips about using the Music Player.
+							<p>
+                         
+    	                    <a href="community/dev_view.jsp?id=52721" class="smalltitle">The Developer's Corner submission form is now fixed!</a>
+							<br>Thanks to the web folks for making such a quick repair.  Please send in your comments!
+							<p>
+                         
+    	                    <a href="community/dev_view.jsp?id=52687" class="smalltitle">Some Station services will be unavailable briefly on the morning of Nov. 13th, 2002</a>
+							<br>This outage will be short, less than an hour, starting at 7:30 am.  Please click the link above and read the message for details about what specific services will be affected.
+							<p>
+                         
+    	                    <a href="community/dev_view.jsp?id=52609" class="smalltitle">NPC Slow Mitigation</a>
+							<br>A bit of new functionality for Planes of Power gameplay, but it's bugged.
+							<p>
+                         
+                        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                          <tr> 
+                            <td align="left"><a href="community/dev_feedback.jsp" class="smalllink">Submit 
+                              Comment</a></td>
+                          </tr>
+                        </table>
+                         </td>
+                      <td width="10"  bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_tr_b.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="10" bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr valign="bottom" bgcolor="000016"> 
+                      <td background="/images/cbb_l.gif" width="10" bgcolor="000016"><img src="/images/cbb_bl_t.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_r.gif" width="10" bgcolor="000016"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_bl_c.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_bl_r.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="62" align="center" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="412" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_br.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+			 <p>
+              <!-- begin headlines -->
+            </p>
+            <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td> 
+                  <table width="471" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_lt.gif" width="36" height="8"></td>
+                      <td rowspan="2" width="62" height="9" background="/images/sub_heading_bg.gif"> 
+                        <div align="center"><b><font face="Arial, Helvetica, sans-serif" size="2">Headlines</font></b></div>
+                      </td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_rt.gif" width="36" height="8"></td>
+                      <td width="412" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tl.gif" width="10" height="9"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_t.gif" width="9" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_lb.gif" width="36" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_rb.gif" width="36" height="9"></td>
+                      <td width="412" height="8" bgcolor="#000016" background="/images/cbb_t.gif"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_tr_l.gif" width="9" height="9"></td>
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tr_c.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                  <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr valign="top" bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="451" colspan="6" bgcolor="#000016" rowspan="3"> 
+					    
+                        
+                         
+                        
+							<a href="news_section/newsview.jsp?story=53003" class="smalltitle">GameSpy Raves About the EQOA Beta!</a>
+							<br>In the latest edition of GameSpy, you can check out their glowing preview article on the EverQuest Online Adventures beta.
+							<p>
+                         
+                        
+							<a href="news_section/newsview.jsp?story=52875" class="smalltitle">SOE's BattleBot Mangles Another</a>
+							<br>S.O.B tears into another foe and enters the semi-finals
+							<p>
+                         
+                        
+							<a href="news_section/newsview.jsp?story=52864" class="smalltitle">Special Price for Luclin Expansion Pack and Strategy Guide</a>
+							<br>The Station Store is offering this $49.98 value (if purchased separately) at a special bundle price of $39.99.
+							<p>
+                         
+                        
+							<a href="news_section/newsview.jsp?story=52840" class="smalltitle">NVIDIA-EverQuest II Movie Released</a>
+							<br>NVIDIA has released a seven minute video featuring EverQuest II run on their new GeForce FX card.  The movie also includes commentary from EQII Producer John Blakely and Art Director Stuart Compton.  <A href="http://pc.ign.com/articles/377/377881p1.html" target="_new">Visit IGN.com to view the movie</a>!
+							<p>
+                         
+                        
+							<a href="news_section/newsview.jsp?story=52574" class="smalltitle">Announcing the EverQuest Gold Edition!</a>
+							<br>EverQuest Gold is now available at the Station Store.
+							<p>
+                         
+                        <table border="0" width="100%">
+                          <tr>
+                            <td align="right"><a href="news_section/newsarchive.jsp" class="smalllink">News 
+                              Archives &gt;&gt;</a></td>
+                          </tr>
+                        </table>
+						
+                      </td>
+                      <td width="10"  bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_tr_b.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="10" bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr valign="bottom" bgcolor="000016"> 
+                      <td background="/images/cbb_l.gif" width="10" bgcolor="000016"><img src="/images/cbb_bl_t.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_r.gif" width="10" bgcolor="000016"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_bl_c.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_bl_r.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="62" align="center" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="412" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_br.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p>
+              <!-- begin comunity -->
+            </p>
+            <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td> 
+                  <table width="471" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="36" height="8"><img src="/images/cbg_trbl_lt.gif" width="36" height="8"></td>
+                      <td rowspan="2" width="62" height="9" background="/images/sub_heading_bg.gif"> 
+                        <div align="center"><b><font face="Arial, Helvetica, sans-serif" size="2">Community</font></b></div>
+                      </td>
+                      <td width="36" height="8"><img src="/images/cbg_trbl_rt.gif" width="36" height="8"></td>
+                      <td width="412" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbg_tl.gif" width="10" height="9"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbg_t.gif" width="9" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbg_trbl_lb.gif" width="36" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbg_trbl_rb.gif" width="36" height="9"></td>
+                      <td width="412" height="8" bgcolor="#000016" background="/images/cbg_t.gif"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbg_tr_l.gif" width="9" height="9"></td>
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbg_tr_c.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                  <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr valign="top" bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbg_l.gif"><img src="/images/cbg_l.gif" width="10" height="9"></td>
+                      <td width="451" colspan="6" bgcolor="#000016" rowspan="3"> 
+					    
+                         
+						
+    	                    <a href="news_section/communitynewsview.jsp?story=52727" class="smalltitle">Karana Council of Guilds Meeting</a>
+							<br>Karana Council of Guilds meeting announced.
+							<p>
+                         
+						
+    	                    <a href="news_section/communitynewsview.jsp?story=52726" class="smalltitle">Fan Faire Developer Transcripts from Casters Realm</a>
+							<br>Fan Faire developer discussion transcripts now available at Casters Realm.
+							<p>
+                         
+						
+    	                    <a href="news_section/communitynewsview.jsp?story=52695" class="smalltitle">PlanetEQ Interviews Creator of GU Comics</a>
+							<br>Check out PlanetEQ for an interview with GU Comics creator, Woody Hearn.
+							<p>
+                         
+						
+    	                    <a href="news_section/communitynewsview.jsp?story=52372" class="smalltitle">EQ Stratics Dev Q&A</a>
+							<br>EQ Stratics <a href="http://eq.stratics.com/content/features/devquestions.shtml" >posts developer answers</a> to player submitted questions.
+							<p>
+                         
+						
+    	                    <a href="news_section/communitynewsview.jsp?story=52373" class="smalltitle">Bristlebane's Battle of the Craftkeepers</a>
+							<br>A contest of skill in the use of magic recently held on Bristlebane and reported by Guide Meladi.
+							<p>
+                         
+						<table border="0" width="100%">
+						  <tr> 
+						  	<td align="left"><a href="community/comm_feedback.jsp" class="smalllink">Submit Community News</a></td>
+							<td align="right"><a href="news_section/communitynewsarchive.jsp" class="smalllink">Community 
+							  Archives &gt;&gt;</a></td>
+						  </tr>
+						</table>
+						
+						</td>
+                      <td width="10"  bgcolor="000016" background="/images/cbg_r.gif"><img src="/images/cbg_tr_b.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbg_l.gif"><img src="/images/cbg_l.gif" width="10" height="9"></td>
+                      <td width="10" bgcolor="000016" background="/images/cbg_r.gif"><img src="/images/cbg_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr valign="bottom" bgcolor="000016"> 
+                      <td background="/images/cbg_l.gif" width="10" bgcolor="000016"><img src="/images/cbg_bl_t.gif" width="10" height="9"></td>
+                      <td background="/images/cbg_r.gif" width="10" bgcolor="000016"><img src="/images/cbg_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016"><img src="/images/cbg_bl_c.gif" width="10" height="9"></td>
+                      <td background="/images/cbg_b.gif" width="9" bgcolor="000016"><img src="/images/cbg_bl_r.gif" width="9" height="9"></td>
+                      <td background="/images/cbg_b.gif" width="36" bgcolor="000016"><img src="/images/cbg_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbg_b.gif" width="62" align="center" bgcolor="000016"><img src="/images/cbg_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbg_b.gif" width="36" bgcolor="000016"><img src="/images/cbg_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbg_b.gif" width="412" bgcolor="000016"><img src="/images/cbg_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbg_b.gif" width="9" bgcolor="000016"><img src="/images/cbg_b.gif" width="9" height="9"></td>
+                      <td width="10" bgcolor="000016"><img src="/images/cbg_br.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p> 
+              <!-- end comunity -->
+            <!-- begin phat lewtz -->
+            <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td> 
+                  <table width="471" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_lt.gif" width="36" height="8"></td>
+                      <td rowspan="2" width="62" height="9"> 
+                        <div align="center"><b><font face="Arial, Helvetica, sans-serif" size="2">Phat&nbsp;Lewt 
+                          </font></b></div>
+                      </td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_rt.gif" width="36" height="8"></td>
+                      <td width="412" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10" height="9"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="9" height="9"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="36" height="9"><img src="/images/cbb_trbl_lb.gif" width="36" height="9"></td>
+                      <td width="36" height="9"><img src="/images/cbb_trbl_rb.gif" width="36" height="9"></td>
+                      <td width="412" height="8"><img src="images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="9"><img src="images/cbb_t.gif" width="10" height="9"></td>
+                      <td width="10" height="9"><img src="images/cbb_tr_c.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                  <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr valign="top"> 
+                      <td width="10"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="451" colspan="6" rowspan="3"> 
+                        <!-- Start Featured Products -->
+                        <table border="0">
+                          <tr>  
+                            <td width="33%" valign="top" align="center"> <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQPOP-HG-SW1002-POPORL">	
+                              
+                              <img src="/images/store_images/PoP_Box2.gif" alt="" border="0"> 
+                              
+                              </a> <br>
+                              <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQPOP-HG-SW1002-POPORL" class="smalltitle">EverQuest: The Planes of Power</a> 
+                              <br>
+                              Unlock the door to new&nbsp;adventure in this latest EQ Expansion.<br>
+                              <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQPOP-HG-SW1002-POPORL">Buy It!</a> </td>
+                             
+                            <td width="33%" valign="top" align="center"> <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SG1002-EQATLS">	
+                              
+                              <img src="/images/store_images/phat_lewt_altascd1.gif" alt="" border="0"> 
+                              
+                              </a> <br>
+                              <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SG1002-EQATLS" class="smalltitle">EverQuest Atlas</a> 
+                              <br>
+                              Discover a rich and mysterious world<br>
+                              <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SG1002-EQATLS">Buy It!</a> </td>
+                             
+                            <td width="33%" valign="top" align="center"> <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0802-EQZPPO">	
+                              
+                              <img src="/images/store_images/eq_necro_zippo.gif" alt="" border="0"> 
+                              
+                              </a> <br>
+                              <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0802-EQZPPO" class="smalltitle">EQ Necromancer Zippo!</a> 
+                              <br>
+                              The best name in lighters meets the best name in gaming!<br>
+                              <a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0802-EQZPPO">Buy It!</a> </td>
+                             </tr>
+                        </table>
+						<!-- End Featured Products -->
+                      </td>
+                      <td width="10"><img src="images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="10"><img src="images/spacer.gif" width="5" height="5"></td>
+                    </tr>
+                    <tr valign="bottom"> 
+                      <td width="10"><img src="images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="10"><img src="images/spacer.gif" width="5" height="5"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10"><img src="images/cbb_bl_c.gif" width="10" height="9"></td>
+                      <td width="9"><img src="images/cbb_b.gif" width="9" height="9"></td>
+                      <td width="36"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="74" align="center"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="36"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="299"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="9"><img src="images/spacer.gif" width="5" height="5"></td>
+                      <td width="10"><img src="images/spacer.gif" width="5" height="5"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p>
+              <!-- end phat lewt -->
+              <!-- begin server status -->
+            </p>
+            <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td> 
+                  <table width="471" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_lt.gif" width="36" height="8"></td>
+                      <td rowspan="2" width="62" height="9" background="/images/sub_heading_bg.gif"> 
+                        <div align="center"><b><font face="Arial, Helvetica, sans-serif" size="2">Server&nbsp;Status</font></b></div>
+                      </td>
+                      <td width="36" height="8"><img src="/images/cbb_trbl_rt.gif" width="36" height="8"></td>
+                      <td width="412" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="8"><img src="/images/spacer.gif" width="9" height="8"></td>
+                      <td width="10" height="8"><img src="/images/spacer.gif" width="10" height="8"></td>
+                    </tr>
+                    <tr> 
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tl.gif" width="10" height="9"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_t.gif" width="9" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_lb.gif" width="36" height="9"></td>
+                      <td width="36" height="9" bgcolor="#000016"><img src="/images/cbb_trbl_rb.gif" width="36" height="9"></td>
+                      <td width="412" height="8" bgcolor="#000016" background="/images/cbb_t.gif"><img src="/images/spacer.gif" width="10" height="8"></td>
+                      <td width="9" height="9" bgcolor="#000016"><img src="/images/cbb_tr_l.gif" width="9" height="9"></td>
+                      <td width="10" height="9" bgcolor="#000016"><img src="/images/cbb_tr_c.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                  <table width="471" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr valign="top" bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="451" colspan="6" bgcolor="#000016" rowspan="3"> 
+                        <a href="/support/server_status.jsp">Server Status</a> 
+                        has moved to the <a href="/support/index.jsp">Support 
+                        section</a>. <br>
+                        <a href="/support/server_status.jsp">Click here for the 
+                        new page.</a> </td>
+                      <td width="10"  bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_tr_b.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016" background="/images/cbb_l.gif"><img src="/images/cbb_l.gif" width="10" height="9"></td>
+                      <td width="10" bgcolor="000016" background="/images/cbb_r.gif"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr valign="bottom" bgcolor="000016"> 
+                      <td background="/images/cbb_l.gif" width="10" bgcolor="000016"><img src="/images/cbb_bl_t.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_r.gif" width="10" bgcolor="000016"><img src="/images/cbb_r.gif" width="10" height="9"></td>
+                    </tr>
+                    <tr bgcolor="000016"> 
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_bl_c.gif" width="10" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_bl_r.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="62" align="center" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="36" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="412" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td background="/images/cbb_b.gif" width="9" bgcolor="000016"><img src="/images/cbb_b.gif" width="9" height="9"></td>
+                      <td width="10" bgcolor="000016"><img src="/images/cbb_br.gif" width="10" height="9"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p>
+              <!-- end server status -->
+              <br>
+            </p>
+            </td>
+          <!-- end content -->
+          <!-- ads -->
+          <td width="135" background="" valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td align="center" background=""><img width="135" height="38" src="images/trbl_right.jpg"></td>
+              </tr>
+              <tr> 
+                <td align="center" background=""> 
+                  <p><a href="http://everquest.station.sony.com/power/"><img src="images/popad.jpg" width="120" height="110" border="0"></a><br>
+                    <br>
+                  </p>
+                  </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top" background=""> 
+                  <p><a href="eqinvasion/index.jsp"><img src="images/eqinvasion_button.jpg" width="120" height="81" border="0"></a><br>
+                    <br>
+                    <a href="http://everquest.station.sony.com/fanfaire/en/" target="_top"><img src="images/FanFaire_sm.jpg" width="120" height="81" border="0"></a><br>
+                    <br>
+                    <a href="https://store.station.sony.com/eq_char_moves/" target="_top"><img src="images/Chrctr_change_sm.jpg" border="0"></a><br>
+                    <br>
+                    <a href="https://store.station.sony.com/eq_char_renames/" target="_top"><img src="images/Name_change_sm.jpg" border="0"></a><br>
+                    <br>
+                  </p>
+                  </td>
+              </tr>
+              <tr> 
+                <td align="center" background=""><br>
+                  <a href="http://sonyonline.com"><img src="images/soe_logo.gif" width="101" height="62" border="0"></a></td>
+              </tr>
+			  <tr>
+			  	<td align="center"><br><br><SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<CENTER><TABLE CELLPADDING="0" CELLSPACING="0"BORDER="0"><TR><TD>');
+document.write('<NOLAYER>');
+document.write('<IFRAME SRC="http://ad.doubleclick.net/adi/games.premium.spde.dart/eqhome_120x600;eq=eq_13;dcopt=ist;sz=120x600;tile=13;ord=' + ord + '?" width="120" height="600" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">');
+document.write('<A HREF="http://ad.doubleclick.net/jump/games.premium.spde.dart/eqhome_120x600;eq=eq_13;dcopt=ist;sz=120x600;tile=13;ord=' + ord + '?" target="_blank"><IMG SRC="http://ad.doubleclick.net/ad/games.premium.spde.dart/eqhome_120x600;eq=eq_13;dcopt=ist;sz=120x600;tile=13;ord=' + ord + '?" width="120" height="600" border="0"></A>');
+document.write('</IFRAME>');
+document.write('</NOLAYER>');
+document.write('<ilayer id="ph13" visibility="hide" width="120" height="600"></ilayer>');
+document.write('</TD></TR></TABLE></CENTER>');
+//-->
+</SCRIPT></td>
+			  </tr>
+			  
+            </table>
+          </td>
+          <!-- end ads -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table width="780" border="0" cellspacing="0" cellpadding="5" align="center" background="images/2nd_bg.jpg">
+  <tr>
+    <td align="center">                    
+      <p> 
+        <script language="JavaScript">
+var ToSwinhandle=null;
+function openToS(tosURL)
+{	
+	ToSwinhandle=window.open(tosURL, "tosWin", "width=500,height=400,titlebar=no,menubar=no,toolbar=no,status=no,scrollbars=yes,resizeable=no");
+	ToSwinhandle.focus();
+	return false;
+}
+</script>
+<a href="http://sonyonline.com/tos/tos.jsp#privacy" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp#privacy');" class="ToS">Sony Online Privacy Policy</a>
+<span class="ToS">|</span>
+<a href="http://sonyonline.com/tos/tos.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp');" class="ToS">Sony Online Terms Of Service</a>
+      <p> <font size="-2" face="Arial, Helvetica, sans-serif" color="#FFFFCC">EverQuest 
+        and You’re in Our World Now are registered trademarks and The Ruins of 
+        Kunark, The Scars of Velious, The Shadows of Luclin and The Planes of 
+        Power are trademarks of Sony Computer Entertainment America Inc. The Station, 
+        SOE and the SOE logo are trademarks of Sony Online Entertainment Inc. 
+        © 2002 Sony Computer Entertainment America Inc.; portions copyright 2002 
+        Sony Online Entertainment Inc. All other trademarks are properties of 
+        their respective owners. All rights reserved. </font>
+    </td>
+  </tr>
+</table>
+<!-- begin main body -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<layer src="http://ad.doubleclick.net/adl/games.everquest.spde.dart/home_120x600;eq=eq_13;sz=120x600;tile=13;ord=' + ord + '?" width="120" height="600" visibility="hide" onload="moveToAbsolute(ph13.pageX, ph13.pageY); visibility=\'show\';" clip="120,600"></layer>');
+//-->
+
+</SCRIPT>
+
+<!-- Must be called after the menu.html file as that file has all the includes needed by this one -->
+<script type="text/javascript" src="/includes/vis.js"></script>
+
+<SCRIPT LANGUAGE="JavaScript">
+ord=Math.random()*10000000000000000;
+document.write('<SCRIPT LANGUAGE="JavaScript1.1" SRC="http://ad.doubleclick.net/adj/games.everquest.spde.dart/unicast_1x1;dcopt=ist;eq=eq_10;tile=10;sz=1x1;ord=' + ord + '?" ><\/SCRIPT>');
+</SCRIPT>
+<script>
+if ((!document.images && navigator.userAgent.indexOf("Mozilla/2.") >= 0)  || navigator.userAgent.indexOf("WebTV")>= 0) {
+document.write('<A HREF="http://ad.doubleclick.net/jump/games.everquest.spde.dart/unicast_1x1;dcopt=ist;eq=eq_10;tile=10;sz=1x1;ord=' + ord + '?" TARGET="_blank">');
+document.write('<IMG SRC="http://ad.doubleclick.net/ad/games.everquest.spde.dart/unicast_1x1;dcopt=ist;eq=eq_10;tile=10;sz=1x1;ord=' + ord + '?" WIDTH="1" HEIGHT="1" BORDER="0" ALT=""></A>');
+}
+</script>
+ 
+<NOSCRIPT>
+<A HREF="http://ad.doubleclick.net/jump/games.everquest.spde.dart/unicast_1x1;dcopt=ist;eq=eq_10;tile=10;sz=1x1;ord=123456789?" TARGET="_blank">
+<IMG SRC="http://ad.doubleclick.net/ad/games.everquest.spde.dart/unicast_1x1;dcopt=ist;eq=eq_10;tile=10;sz=1x1;ord=123456789?" WIDTH="1" HEIGHT="1" BORDER="0" ALT=""></A>
+</NOSCRIPT>
+
+</body>
+</html>

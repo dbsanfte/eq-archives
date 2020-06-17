@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS">
+<TITLE>Drinal Raid BBS</TITLE>
+</HEAD>
+<BODY bgcolor="#CCCCCC" text="#000000" link="#0000FF" vlink="#0000FF">
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の上部に表示されます -->
+<!--end-->
+<FORM action="./im_trbbs.cgi" method="post">
+
+<DIV align="right">
+<TABLE><TR>
+<TD>JST</FONT></I><TD><INPUT NAME="jsp" SIZE=8>
+<TD>EST</FONT></I><TD><INPUT NAME="est" SIZE=8> 
+<TD>CST</FONT></I><TD><INPUT NAME="cst" SIZE=8> 
+<TD>PST</FONT></I><TD><INPUT NAME="pst" SIZE=8> 
+<TD>GMT</FONT></I><TD><INPUT NAME="gmt" SIZE=8> 
+</TABLE>
+</DIV>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// 引数arg_yearで指定された年のサマータイム開始時刻を内部阜ｻで返す。
+//
+function GetDstStart(arg_year) {
+	var dst_start = new Date(arg_year, 3, 1, 2, 0, 0); // 第2引数の3は、4月を浮ｷ。
+	for (var i = 1; i <= 7; i++) {
+		dst_start.setDate(i);
+		if (0 == dst_start.getDay()) {
+			break;
+		}
+	}
+	return dst_start.getTime();
+}
+
+// 引数arg_yearで指定された年のサマータイム終了時刻を内部阜ｻで返す。
+//
+function GetDstEnd(arg_year) {
+	var dst_end = new Date(arg_year, 9, 31, 1, 0, 0);
+	for (var i = 31; i > 24; i--) {
+		dst_end.setDate(i);
+		if (0 == dst_end.getDay()) {
+			break;
+		}
+	}
+	return dst_end.getTime();
+}
+
+
+// まず今が何年か調べます。
+today = new Date();
+year = today.getYear();
+if (year < 100) {
+	year += 1900;
+}
+// ここまでで、yearに今年の年(1998など)が入っています。
+
+var tz_offset = today.getTimezoneOffset();
+
+pos_start = GetDstStart(year);
+pos_end = GetDstEnd(year);
+
+tz_jst =  9 * 60; // GMT+9
+tz_est = -5 * 60; // GMT-09
+tz_cst = -6 * 60; // GMT-05
+tz_pst = -8 * 60; // GMT-05
+tz_gmt =  0 * 60; // GMT
+
+function nowat(now_t, tz, st) {
+	var hour, min, sec;
+
+	var pos_t = now_t + (tz_offset + tz) * 60 * 1000;
+
+	if (0 != st) {
+		// サマータイム処理
+		if ((pos_start <= pos_t) && (pos_end > pos_t)) {
+			pos_t += 60 * 60 * 1000;
+		}
+	}			
+	var t = new Date();
+	t.setTime(pos_t);
+
+	hour = t.getHours();
+	min = t.getMinutes();
+	sec = t.getSeconds();
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (min < 10) {
+		min = "0" + min;
+	}
+	if (sec < 10) {
+		sec = "0" + sec;
+	}
+	return hour + ":" + min + ":" + sec; 
+}
+
+function update_watch() {
+	now = new Date();
+	n_t = now.getTime();
+	jst = nowat(n_t, tz_jst, 0);
+	est = nowat(n_t, tz_est, 1);
+	cst = nowat(n_t, tz_cst, 2);
+	pst = nowat(n_t, tz_pst, 3);
+	gmt = nowat(n_t, tz_gmt, 4);
+
+	document.forms[0].elements[0].value = jst;
+	document.forms[0].elements[1].value = est;
+	document.forms[0].elements[2].value = cst;
+	document.forms[0].elements[3].value = pst;
+	document.forms[0].elements[4].value = gmt;
+	setTimeout('update_watch()', 999); // 1000msec = 1sec
+}
+
+update_watch();
+//-->
+</SCRIPT>
+
+<HR>
+<center>
+<font color="red"><b>いんふぉめーしょん</b></font><p>
+<font size="-1">
+<b>ただいま、BBSテスト中　試しに使ってみてください</b><br>
+<a href="http://ran.sakura.ne.jp/~rein/eq/YaBB/cgi-bin/YaBB.cgi">http://ran.sakura.ne.jp/~rein/eq/YaBB/cgi-bin/YaBB.cgi</a>
+</font>
+</center>
+<br>
+<DIV align="center"><B>Drinal Raid BBS</B>
+</DIV>
+
+<HR>
+<CENTER>
+<TABLE border="0">
+<TR>
+  <TD nowrap><B>データ</B></TD>
+  <TD><SELECT name="df"><OPTION value="bbs.dat">最新データ
+    <OPTION value="0629.log">#0629以前
+    <OPTION value="0272.log">#0272以前</SELECT></TD>
+  <TD nowrap><B>ページ</B></TD>
+  <TD><INPUT type="submit" name="back" value="&lt;"></TD>
+  <TD><SELECT name="pg">
+    <OPTION value="1" selected>0001
+    <OPTION value="2">0002
+    <OPTION value="3">0003
+    <OPTION value="4">0004
+    <OPTION value="5">0005
+    <OPTION value="6">0006
+    <OPTION value="7">0007
+    <OPTION value="-1">ALL</SELECT></TD>
+  <TD><INPUT type="submit" name="next" value="&gt;"></TD>
+  <TD><INPUT type="submit" name="reload" value="読込"></TD>
+  <TD nowrap><B>記事</B></TD>
+  <TD><SELECT name="pm">
+    <OPTION value="N" selected>タイトルだけ
+    <OPTION value="L">１行だけ
+    <OPTION value="T">２行だけ
+    <OPTION value="A">最後まで</SELECT></TD>
+  <TD nowrap><B>表示</B></TD>
+  <TD><SELECT name="pt">
+    <OPTION value="TA" selected>ツリー（全記事）
+    <OPTION value="TR">ツリー（親記事）
+    <OPTION value="SA">新着順（全記事）</SELECT></TD>
+  <TD><INPUT type="submit" name="pset" value="設定"></TD></TR>
+<TR>
+  <TD nowrap align="right" colspan="4">
+  <B>[<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=NTAN&pg=1">新規投稿</A>]</B>
+  </TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=HTAN&pg=1">利用方法</A>]</B></TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trset.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1">掲示板管理</A>]</B></TD>
+  <TD nowrap align="center"><B>[<A href="http://ran.sakura.ne.jp/&#126;rein/eq/" target="_top">トップページ</A>]</B></TD>
+  <TD nowrap align="right" colspan="2">
+    <INPUT type="hidden" name="uid" value="DrinalRaid">
+    <INPUT type="hidden" name="old_prm" value="TAN">
+    <INPUT type="hidden" name="old_pt" value="TA">
+    <INPUT type="hidden" name="max_pg" value="7">
+    <INPUT type="hidden" name="old_df" value="bbs.dat">
+    <INPUT type="checkbox" name="rset" value="on">全記事既読</TD>
+  <TD nowrap align="right">
+    <INPUT type="checkbox" name="dset" value="on">設定保存</TD></TR>
+</TABLE>
+</CENTER>
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1031#1031">▽</A> <FONT color="#FF0000"><A name="1031">1031</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1031#1031">Fake TrakanonのKeep　Item</A> Emotion <SMALL>〔2001/11/19-15:54〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1024#1024">▽</A> <FONT color="#FF0000"><A name="1024">1024</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1024#1024">Epic　Got　It　Thx　All</A> DkCobla＠Cobra <SMALL>〔2001/11/06-03:39〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="1025">1025</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1025#1025">RE:Epic　Got　It　Thx　All</A> Juubei <SMALL>〔2001/11/06-16:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="1028">1028</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1028#1028">続々と</A> Gerpart <SMALL>〔2001/11/07-11:07〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="1030">1030</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1030#1030">RE:Epic　Got　It　Thx　All</A> Emotion <SMALL>〔2001/11/07-15:39〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1026#1026">▽</A> <FONT color="#FF0000"><A name="1026">1026</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1026#1026">Epic　Got　Thx　All　TxT</A> Sandy <SMALL>〔2001/11/06-18:04〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="1027">1027</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1027#1027">うに、これで</A> Gerpart <SMALL>〔2001/11/07-11:04〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="1029">1029</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1029#1029">RE:Epic　Got　Thx　All　TxT</A> Emotion <SMALL>〔2001/11/07-15:37〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1021#1021">▽</A> <A name="1021">1021</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1021#1021">Shadow Knight Epic Quest Completed</A> Syura <SMALL>〔2001/10/30-19:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <FONT color="#FF0000"><A name="1022">1022</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1022#1022">RE:Shadow Knight Epic Quest Completed</A> Emotion <SMALL>〔2001/10/31-15:33〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="1023">1023</A></FONT> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1023#1023">おめおめ</A> Gerpart <SMALL>〔2001/11/01-09:32〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1020#1020">▽</A> <A name="1020">1020</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1020#1020">10/27 PoFの戦利品分配</A> Honehone/kaim <SMALL>〔2001/10/28-15:56〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1018#1018">▽</A> <A name="1018">1018</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1018#1018">EpicGot Thanks All!</A> Armide <SMALL>〔2001/10/24-05:23〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1019">1019</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1019#1019">ついでに私もEpicGot</A> Raygun <SMALL>〔2001/10/24-06:16〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1017#1017">▽</A> <A name="1017">1017</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1017#1017">pof ClericBelt</A> Gald <SMALL>〔2001/10/24-04:57〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1009#1009">▽</A> <A name="1009">1009</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1009#1009">Pos</A> Gaugau <SMALL>〔2001/10/14-00:23〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1010">1010</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1010#1010">RE:Pos</A> Gaugau <SMALL>〔2001/10/14-00:26〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1011">1011</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1011#1011">RE:Pos</A> Ean <SMALL>〔2001/10/14-00:58〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1012">1012</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1012#1012">RE:Pos</A> Raygun <SMALL>〔2001/10/14-04:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1013">1013</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1013#1013">RE:Pos</A> Armide <SMALL>〔2001/10/14-04:19〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1014">1014</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1014#1014">RE:Pos</A> Hinagiku/Turugi <SMALL>〔2001/10/14-14:02〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1015">1015</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1015#1015">RE:Pos</A> Lz <SMALL>〔2001/10/17-16:51〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1016">1016</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1016#1016">RE:Pos</A> Gaugau <SMALL>〔2001/10/20-13:38〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1002#1002">▽</A> <A name="1002">1002</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1002#1002">Chardok～</A> Basia <SMALL>〔2001/10/01-02:24〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1003">1003</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1003#1003">RE:Chardok～</A> Armide <SMALL>〔2001/10/01-17:03〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1004">1004</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1004#1004">Red なんたら</A> Makoko <SMALL>〔2001/10/04-15:00〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="1005">1005</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1005#1005">シュノケルる</A> Armide <SMALL>〔2001/10/05-15:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1008">1008</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1008#1008">results</A> Basia <SMALL>〔2001/10/09-11:58〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=1006#1006">▽</A> <A name="1006">1006</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1006#1006">Reaver relotto</A> Gald <SMALL>〔2001/10/09-08:46〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1007">1007</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1007#1007">RE:Reaver relotto</A> Raygun <SMALL>〔2001/10/09-11:31〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0988#0988">▽</A> <A name="0988">0988</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0988#0988">CT おつかれさま。さらばＲＢＧ</A> Makoko <SMALL>〔2001/09/20-03:15〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0989">0989</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0989#0989">ふぅ、おつ。</A> Dinn <SMALL>〔2001/09/20-04:01〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0990">0990</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0990#0990">おつおつ</A> kaim/honehone/bricky <SMALL>〔2001/09/20-13:44〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0991">0991</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0991#0991">RE:おつおつ</A> Makoko <SMALL>〔2001/09/20-14:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　├ <A name="0992">0992</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0992#0992">RE:おつおつ</A> Ean <SMALL>〔2001/09/20-15:10〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="0995">0995</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0995#0995">Casterも明日のために</A> Zeller <SMALL>〔2001/09/20-19:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0993">0993</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0993#0993">RE:おつおつ</A> Emotion <SMALL>〔2001/09/20-15:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0996">0996</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0996#0996">RE:CT おつかれさま。さらばＲＢＧ</A> Mejojo <SMALL>〔2001/09/20-19:45〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0997">0997</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0997#0997">RE:ぬぅ！！おれのいない間に！！！</A> Juubei <SMALL>〔2001/09/21-12:32〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0998">0998</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0998#0998">RE:ぬぅ！！おれのいない間に！！！</A> Dinn/Pokee <SMALL>〔2001/09/21-14:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1001">1001</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1001#1001">RE:ぬぅ！！おれのいない間に！！！</A> Gald <SMALL>〔2001/09/22-07:38〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0999">0999</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0999#0999">結局最後何人だったっけ？</A> Zeller <SMALL>〔2001/09/21-20:45〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1000">1000</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=1000#1000">RE:39 Character 37 People</A> ばしあ <SMALL>〔2001/09/21-21:11〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&pn=0886#0886">▽</A> <A name="0886">0886</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0886#0886">Statue</A> Dinn/Pokee <SMALL>〔2001/09/09-05:54〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0887">0887</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0887#0887">RE:Statue</A> Gald <SMALL>〔2001/09/09-13:41〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0889">0889</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0889#0889">RE:Statue</A> Zeller <SMALL>〔2001/09/09-11:40〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="0891">0891</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0891#0891">RE:Statue</A> Gald <SMALL>〔2001/09/09-12:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0888">0888</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0888#0888">RE:Statue</A> Fendill <SMALL>〔2001/09/09-11:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0890">0890</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0890#0890">RE:Statue</A> Zeller <SMALL>〔2001/09/09-11:58〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0892">0892</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0892#0892">RE:Statue</A> Makoko <SMALL>〔2001/09/09-13:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0893">0893</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0893#0893">RE:Statue</A> Zeller <SMALL>〔2001/09/09-14:01〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="0894">0894</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0894#0894">RE:Statue</A> Makoko <SMALL>〔2001/09/09-14:20〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0899">0899</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0899#0899">RE:Statue</A> Ean <SMALL>〔2001/09/10-01:20〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0906">0906</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1#0906">RE:Statue</A> Juubei <SMALL>〔2001/09/10-12:50〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　　　　　　　　　　　　　　　　　<SMALL><A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=RTAN&pg=1&no=0906&rn=0892&pn=0886&tm=1000093853"><B>Res</B>ponse</A> : <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=ETAN&pg=1&no=0906&rn=0892&pn=0886&tm=1000093853">Edit</A> : <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=DTAN&pg=1&no=0906&rn=0892&pn=0886&tm=1000093853">Delete</A></SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　　　<FONT color="#000000">&gt;Juubei が 1st taunt なのは Willsapper の Slow 期待でって事だったんだが、</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">&gt;大失敗でしたな。お供のＧとかならいざ知らず、Statue に弓届かんからって</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">&gt;突っ込んでプルはかなりアレでナニ。最初ワシが 1st の予定だったので既にＣＭ棒は</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">&gt;準備してあったんだが。ついでにＣＭ玉の方も使えるようにしてました。</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">&gt;Pick up は他の人・・・PAL とかがベストなのかな～。</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">&gt;その場合、ＣＣＨ前のＬＨが使えないかも知れんけど。２，３人 PAL 居ればＯＫ？</FONT><BR>
+　　│　│　│　　　<FONT color="#000000"></FONT><BR>
+　　│　│　│　　　<FONT color="#000000">確かにうかつなPickは申し訳ないと思う。が、「Juubei選んで大失敗」的なとこまで</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">いわれる筋合いは無いな。Raidの最初にStatueは初めてだと伝えて、何か注意するこ</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">とはあるかと聞いたはず。Pickのとき弓あたらんからCM棒を用意しとけなんて聞かさ</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">れてない。それとも前回は弓あたったのかな？</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">Makokoが事前にCM用意してたのは、弓があたらないことがあるのを知ってたからかな？</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">それとも別の理由？</FONT><BR>
+　　│　│　│　　　<FONT color="#000000"></FONT><BR>
+　　│　│　│　　　<FONT color="#000000">前回のStatueの時と、PullしてPickする場所と方法は何か変えたの？</FONT><BR>
+　　│　│　│　　　<FONT color="#000000">弓とかでのPickはできたの？それとも他の方法でPickしたのかな？</FONT><BR>
+　　│　│　│　　　<FONT color="#000000"></FONT><BR>
+　　│　│　│　　　<FONT color="#000000">質問ばかりですまんが、前回成功したときと何が違うか教えてください。</FONT><BR>
+　　│　│　│　　　</TD></TR>
+<TR><TD nowrap>
+　　│　│　├ <A name="0907">0907</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0907#0907">RE:Statue</A> Dinn/Pokee <SMALL>〔2001/09/10-13:39〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　└ <A name="0916">0916</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0916#0916">Pick and Turn</A> Makoko <SMALL>〔2001/09/10-16:34〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　├ <A name="0908">0908</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0908#0908">RE:Statue</A> Misk <SMALL>〔2001/09/10-14:32〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="0913">0913</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0913#0913">RE:Statue</A> Makoko <SMALL>〔2001/09/10-15:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　　　└ <A name="0920">0920</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0920#0920">RE:Statue</A> Juubei <SMALL>〔2001/09/10-18:11〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0924">0924</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0924#0924">RE:Statue</A> DkCobla＠Cobra <SMALL>〔2001/09/11-07:10〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0895">0895</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0895#0895">RE:Statue</A> Gaugau <SMALL>〔2001/09/09-15:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0896">0896</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0896#0896">RE:Statue</A> Emotion <SMALL>〔2001/09/09-18:29〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0898">0898</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0898#0898">RE:Statue</A> Serisu <SMALL>〔2001/09/09-22:09〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0901">0901</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0901#0901">RE:Statue</A> Fendill <SMALL>〔2001/09/10-01:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="0902">0902</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0902#0902">RE:Statue</A> Serisu <SMALL>〔2001/09/10-04:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　├ <A name="0903">0903</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0903#0903">RE:Statue</A> Emotion <SMALL>〔2001/09/10-05:44〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　├ <A name="0905">0905</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0905#0905">RE:Statue</A> Misk <SMALL>〔2001/09/10-12:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　├ <A name="0909">0909</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0909#0909">RE:Statue</A> Zeller <SMALL>〔2001/09/10-14:51〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　└ <A name="0912">0912</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0912#0912">RE:Statue</A> Fendill <SMALL>〔2001/09/10-15:04〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　　　├ <A name="0914">0914</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0914#0914">Raid BBS</A> Makoko <SMALL>〔2001/09/10-16:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　　　└ <A name="0923">0923</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0923#0923">RE:Statue</A> Serisu <SMALL>〔2001/09/10-23:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0904">0904</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0904#0904">位置とか</A> Emotion <SMALL>〔2001/09/10-05:54〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0922">0922</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0922#0922">RE:CLRのMana</A> Ean <SMALL>〔2001/09/10-18:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　├ <A name="0927">0927</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0927#0927">RE:CLRのMana</A> Dinn/Pokee <SMALL>〔2001/09/11-15:38〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　└ <A name="0928">0928</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0928#0928">RE:CLRのMana</A> sandynarua <SMALL>〔2001/09/11-19:43〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　　　└ <A name="0966">0966</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0966#0966">Sub Healの入り具合について(デカいTreeを持ち上げてスマンｗ</A> Dinn/Pokee <SMALL>〔2001/09/17-22:19〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　　　　　└ <A name="0975">0975</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0975#0975">RE:Sub Healの入り具合について(デカいTreeを持ち上げてスマンｗ</A> DG <SMALL>〔2001/09/18-12:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　│　　　　　　　└ <A name="0980">0980</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0980#0980">RE:Sub Healの入り具合について(デカいTreeを持ち上げてスマンｗ</A> Dinn/Pokee <SMALL>〔2001/09/18-13:37〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　│　└ <A name="0932">0932</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0932#0932">RE:CLRのMana</A> Anies <SMALL>〔2001/09/12-13:36〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="0930">0930</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0930#0930">RE:位置とか</A> Metis <SMALL>〔2001/09/11-20:10〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0933">0933</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0933#0933">RE:CLRのPositionPlay</A> Anies <SMALL>〔2001/09/12-13:57〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="0994">0994</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0994#0994">RE:CLRのPositionPlay</A> Fendill <SMALL>〔2001/09/20-17:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0925">0925</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0925#0925">次、こんなんどうでしょ</A> Misk <SMALL>〔2001/09/11-12:14〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="0926">0926</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0926#0926">RE:次、こんなんどうでしょ</A> Dinn/Pokee <SMALL>〔2001/09/11-15:30〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="0929">0929</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0929#0929">RE:Statue</A> Metis <SMALL>〔2001/09/11-20:00〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="0931">0931</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0931#0931">Zombie Attck 要るような</A> Zeller <SMALL>〔2001/09/12-12:36〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="0934">0934</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0934#0934">RE:Zombie Attck 要るような</A> Gald <SMALL>〔2001/09/12-15:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　└ <A name="0936">0936</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0936#0936">ふむ～</A> Zeller <SMALL>〔2001/09/12-18:18〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="0935">0935</A> <A href="./im_trbbs.cgi?uid=DrinalRaid&df=bbs.dat&prm=TAN&pg=1&no=0935#0935">RE:Zombie Attck 要るような</A> Fendill <SMALL>〔2001/09/12-15:00〕</SMALL></TD></TR>
+</TABLE>
+<HR>
+<DIV align="right"><B>アクセス数: 51985</B> (今日: 17 / 昨日: 14)</DIV><HR>
+<TABLE boder="0">
+<TR>
+  <TD nowrap><B>検索キーワード</B></TD>
+  <TD><INPUT type="text" name="skey" size="24" maxlength="24">
+  <TD><INPUT type="submit" name="search" value="全文検索"></TD>
+  <TD nowrap>（合致する文字を含む記事が、番号順に１画面で表示されます）</TD></TR>
+</TABLE>
+<HR>
+</FORM>
+<DIV align="right"><SMALL>original <A href="http://www.cgi-club.com/">imTRBBS(ver1.04)</A></SMALL> Modified <STRONG>Rein!!</STRONG></DIV>
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の下部に表示されます -->
+<!--end-->
+</BODY>
+</HTML>

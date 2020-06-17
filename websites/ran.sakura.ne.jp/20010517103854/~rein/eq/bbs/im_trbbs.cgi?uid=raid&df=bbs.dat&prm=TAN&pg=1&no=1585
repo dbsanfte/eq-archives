@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS">
+<TITLE>Tunare Raid BBS</TITLE>
+</HEAD>
+<BODY bgcolor="#A9C2D6" text="#000000" link="#CC0000" vlink="#CC0000" alink="#CC0000">
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の上部に表示されます -->
+<!--end-->
+<FORM action="./im_trbbs.cgi" method="post">
+
+<DIV align="right">
+<TABLE><TR>
+<TD>JST</FONT></I><TD><INPUT NAME="jsp" SIZE=8>
+<TD>EST</FONT></I><TD><INPUT NAME="est" SIZE=8> 
+<TD>CST</FONT></I><TD><INPUT NAME="cst" SIZE=8> 
+<TD>PST</FONT></I><TD><INPUT NAME="pst" SIZE=8> 
+<TD>GMT</FONT></I><TD><INPUT NAME="gmt" SIZE=8> 
+</TABLE>
+</DIV>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// 引数arg_yearで指定された年のサマータイム開始時刻を内部阜ｻで返す。
+//
+function GetDstStart(arg_year) {
+	var dst_start = new Date(arg_year, 3, 1, 2, 0, 0); // 第2引数の3は、4月を浮ｷ。
+	for (var i = 1; i <= 7; i++) {
+		dst_start.setDate(i);
+		if (0 == dst_start.getDay()) {
+			break;
+		}
+	}
+	return dst_start.getTime();
+}
+
+// 引数arg_yearで指定された年のサマータイム終了時刻を内部阜ｻで返す。
+//
+function GetDstEnd(arg_year) {
+	var dst_end = new Date(arg_year, 9, 31, 1, 0, 0);
+	for (var i = 31; i > 24; i--) {
+		dst_end.setDate(i);
+		if (0 == dst_end.getDay()) {
+			break;
+		}
+	}
+	return dst_end.getTime();
+}
+
+
+// まず今が何年か調べます。
+today = new Date();
+year = today.getYear();
+if (year < 100) {
+	year += 1900;
+}
+// ここまでで、yearに今年の年(1998など)が入っています。
+
+var tz_offset = today.getTimezoneOffset();
+
+pos_start = GetDstStart(year);
+pos_end = GetDstEnd(year);
+
+tz_jst =  9 * 60; // GMT+9
+tz_est = -5 * 60; // GMT-09
+tz_cst = -6 * 60; // GMT-05
+tz_pst = -8 * 60; // GMT-05
+tz_gmt =  0 * 60; // GMT
+
+function nowat(now_t, tz, st) {
+	var hour, min, sec;
+
+	var pos_t = now_t + (tz_offset + tz) * 60 * 1000;
+
+	if (0 != st) {
+		// サマータイム処理
+		if ((pos_start <= pos_t) && (pos_end > pos_t)) {
+			pos_t += 60 * 60 * 1000;
+		}
+	}			
+	var t = new Date();
+	t.setTime(pos_t);
+
+	hour = t.getHours();
+	min = t.getMinutes();
+	sec = t.getSeconds();
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (min < 10) {
+		min = "0" + min;
+	}
+	if (sec < 10) {
+		sec = "0" + sec;
+	}
+	return hour + ":" + min + ":" + sec; 
+}
+
+function update_watch() {
+	now = new Date();
+	n_t = now.getTime();
+	jst = nowat(n_t, tz_jst, 0);
+	est = nowat(n_t, tz_est, 1);
+	cst = nowat(n_t, tz_cst, 2);
+	pst = nowat(n_t, tz_pst, 3);
+	gmt = nowat(n_t, tz_gmt, 4);
+
+	document.forms[0].elements[0].value = jst;
+	document.forms[0].elements[1].value = est;
+	document.forms[0].elements[2].value = cst;
+	document.forms[0].elements[3].value = pst;
+	document.forms[0].elements[4].value = gmt;
+	setTimeout('update_watch()', 999); // 1000msec = 1sec
+}
+
+update_watch();
+//-->
+</SCRIPT>
+
+<!--
+<HR>
+<center>
+<font color="red"><b>いんふぉめーしょん</b></font><p>
+<font size="-1">
+<b>Tunare Server 分割対象になりました。移動しますか？のこりますか？<br>
+<a href="http://ran.sakura.ne.jp/~rein/eq/bbs/im_trbbs.cgi?uid=split">http://ran.sakura.ne.jp/~rein/eq/bbs/im_trbbs.cgi?uid=split</a>
+</font>
+</center>
+-->
+<br>
+<DIV align="center"><B>Tunare Raid BBS</B>
+</DIV>
+
+<HR>
+<CENTER>
+<TABLE border="0">
+<TR>
+  <TD nowrap><B>データ</B></TD>
+  <TD><SELECT name="df"><OPTION value="bbs.dat">最新データ
+    <OPTION value="1429.log">#1429以前
+    <OPTION value="1283.log">#1283以前
+    <OPTION value="1195.log">#1195以前
+    <OPTION value="1101.log">#1101以前
+    <OPTION value="0940.log">#0940以前
+    <OPTION value="0891.log">#0891以前
+    <OPTION value="0633.log">#0633以前
+    <OPTION value="0552.log">#0552以前
+    <OPTION value="0453.log">#0453以前
+    <OPTION value="0306.log">#0306以前</SELECT></TD>
+  <TD nowrap><B>ページ</B></TD>
+  <TD><INPUT type="submit" name="back" value="&lt;"></TD>
+  <TD><SELECT name="pg">
+    <OPTION value="1" selected>0001
+    <OPTION value="2">0002
+    <OPTION value="3">0003
+    <OPTION value="4">0004
+    <OPTION value="-1">ALL</SELECT></TD>
+  <TD><INPUT type="submit" name="next" value="&gt;"></TD>
+  <TD><INPUT type="submit" name="reload" value="読込"></TD>
+  <TD nowrap><B>記事</B></TD>
+  <TD><SELECT name="pm">
+    <OPTION value="N" selected>タイトルだけ
+    <OPTION value="L">１行だけ
+    <OPTION value="T">２行だけ
+    <OPTION value="A">最後まで</SELECT></TD>
+  <TD nowrap><B>表示</B></TD>
+  <TD><SELECT name="pt">
+    <OPTION value="TA" selected>ツリー（全記事）
+    <OPTION value="TR">ツリー（親記事）
+    <OPTION value="SA">新着順（全記事）</SELECT></TD>
+  <TD><INPUT type="submit" name="pset" value="設定"></TD></TR>
+<TR>
+  <TD nowrap align="right" colspan="4">
+  <B>[<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=NTAN&pg=1">新規投稿</A>]</B>
+  </TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=HTAN&pg=1">利用方法</A>]</B></TD>
+  <TD nowrap align="center" colspan="2"><B>[<A href="./im_trset.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1">掲示板管理</A>]</B></TD>
+  <TD nowrap align="center"><B>[<A href="http://ran.sakura.ne.jp/~rein/eq/" target="_top">トップページ</A>]</B></TD>
+  <TD nowrap align="right" colspan="2">
+    <INPUT type="hidden" name="uid" value="raid">
+    <INPUT type="hidden" name="old_prm" value="TAN">
+    <INPUT type="hidden" name="old_pt" value="TA">
+    <INPUT type="hidden" name="max_pg" value="4">
+    <INPUT type="hidden" name="old_df" value="bbs.dat">
+    <INPUT type="checkbox" name="rset" value="on">全記事既読</TD>
+  <TD nowrap align="right">
+    <INPUT type="checkbox" name="dset" value="on">設定保存</TD></TR>
+</TABLE>
+</CENTER>
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1667#1667">▽</A> <FONT color="#FF0000"><A name="1667">1667</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1667#1667">5/5PoFのルートに関する件</A> みるこ <SMALL>〔2001/05/15-10:55〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1666#1666">▽</A> <FONT color="#FF0000"><A name="1666">1666</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1666#1666">5/19(土) 22:00～ Rogue Epic Last Battle</A> Reeferz <SMALL>〔2001/05/11-09:46〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1650#1650">▽</A> <A name="1650">1650</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1650#1650">Plane of Fear 5/5 21:00 ～</A> みるこ <SMALL>〔2001/05/01-11:29〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1651">1651</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1651#1651">※各種ルール【必読】</A> みるこ <SMALL>〔2001/05/01-12:23〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1652">1652</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1652#1652">MemberBBSは現在使用不可能なので用意しました</A> Monputhi <SMALL>〔2001/05/01-18:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1653">1653</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1653#1653">OK,上記BBSに参加書き込みしてね。（T/O)</A> みるこ <SMALL>〔2001/05/01-20:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1654">1654</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1654#1654">RE:MemberBBSは現在使用不可能なので用意しました</A> Ville/Foret@町と森 <SMALL>〔2001/05/02-02:19〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1655">1655</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1655#1655">結果報告</A> Milfatia <SMALL>〔2001/05/06-19:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1656">1656</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1656#1656">触媒報告ツリー</A> Milfatia <SMALL>〔2001/05/06-19:09〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <FONT color="#FF0000"><A name="1658">1658</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1658#1658">Pearl ９コ～(T/O)</A> Agrippe <SMALL>〔2001/05/07-23:59〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <FONT color="#FF0000"><A name="1664">1664</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1664#1664">Peri 18個 Perl 0個</A> Agharta <SMALL>〔2001/05/10-11:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1657">1657</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1657#1657">LootItem取得に関して</A> Milfatia <SMALL>〔2001/05/06-19:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <FONT color="#FF0000"><A name="1659">1659</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1659#1659">すっかり忘れてた取得一覧</A> みるこ <SMALL>〔2001/05/08-17:37〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <FONT color="#FF0000"><A name="1660">1660</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1660#1660">RE:すっかり忘れてた取得一覧</A> Anko@Asuka <SMALL>〔2001/05/08-19:04〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　└ <FONT color="#FF0000"><A name="1665">1665</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1665#1665">RE:すっかり忘れてた取得一覧</A> こまーち <SMALL>〔2001/05/10-17:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <FONT color="#FF0000"><A name="1661">1661</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1661#1661">RE:すっかり忘れてた取得一覧</A> Zophy <SMALL>〔2001/05/08-19:41〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <FONT color="#FF0000"><A name="1662">1662</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1662#1662">補足</A> Monputhi <SMALL>〔2001/05/08-19:52〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <FONT color="#FF0000"><A name="1663">1663</A></FONT> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1663#1663">Dru Item Loot</A> Haghag <SMALL>〔2001/05/09-00:42〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1649#1649">▽</A> <A name="1649">1649</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1649#1649">投稿者削除<!--#DELETE--></A> ***** <SMALL>〔2001/05/01-10:47〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1642#1642">▽</A> <A name="1642">1642</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1642#1642">Chardok Royal Kill 2 Queen 2 King 1 Prince</A> Laronda/Yeeng <SMALL>〔2001/04/23-14:35〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1646">1646</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1646#1646">RE:Yeeengggggggg  &gt; &lt;</A> Odeen <SMALL>〔2001/04/24-01:59〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1648">1648</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1648#1648">緊急募集 </A> Ｍｅｎｍｅｎ <SMALL>〔2001/04/25-01:13〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1629#1629">▽</A> <A name="1629">1629</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1629#1629">4/21(土) Hate Raid 21:30 Gfay</A> Monputhi <SMALL>〔2001/04/17-15:51〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1632">1632</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1632#1632">RE:4/21(土) Hate Raid 21:30 Gfay</A> Garadriel <SMALL>〔2001/04/21-18:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1633">1633</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1633#1633">EMARGENCY DOWN</A> Agharta <SMALL>〔2001/04/22-01:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1634">1634</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1634#1634">ごめんなさい　ちと問題起こって　今帰宅っす</A> Zizi <SMALL>〔2001/04/22-02:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1636">1636</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1636#1636">ふふふ・・・。</A> Monputhi <SMALL>〔2001/04/22-06:07〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="1637">1637</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1637#1637">ゴメンネ（心）</A> Skurd <SMALL>〔2001/04/22-13:14〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1635">1635</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1635#1635">RE:4/21(土) Hate Raid 結果</A> Monputhi <SMALL>〔2001/04/22-06:06〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1638">1638</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1638#1638">RE:4/21(土) Hate Raid (参加者必読)</A> Monputhi <SMALL>〔2001/04/23-08:29〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　├ <A name="1641">1641</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1641#1641">LOST品</A> Agharta <SMALL>〔2001/04/23-11:24〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　├ <A name="1643">1643</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1643#1643">Lost品</A> Suezo@Asuka <SMALL>〔2001/04/23-17:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　├ <A name="1644">1644</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1644#1644">GMからの返答</A> Suezo@Asuka <SMALL>〔2001/04/23-19:01〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　├ <A name="1645">1645</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1645#1645">RE:4/21(土) Hate Raid (参加者必読)</A> Oruson@Momo <SMALL>〔2001/04/24-01:55〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　└ <A name="1647">1647</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1647#1647">4/21(土) Hate Raid (参加者必読)</A> Reeferz <SMALL>〔2001/04/24-10:48〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1631#1631">▽</A> <A name="1631">1631</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1631#1631">ClrEPICの消費触媒まとめ(4/23修正）</A> Ville/Foret@町と森 <SMALL>〔2001/04/23-02:13〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1639">1639</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1639#1639">RE:ClrEPICの消費触媒まとめ(4/23修正）</A> Shrine@Asuka <SMALL>〔2001/04/23-09:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1640">1640</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1640#1640">RE:ClrEPICの消費触媒まとめ(4/23修正）</A> Ville/Foert@町と森 <SMALL>〔2001/04/23-11:05〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1612#1612">▽</A> <A name="1612">1612</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1612#1612">4/13(金)hate raid(21:30~)</A> kyasilya <SMALL>〔2001/04/12-03:57〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1615">1615</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1615#1615">RE:4/13(金)hate raid(21:30~)</A> Monputhi <SMALL>〔2001/04/14-05:03〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1617">1617</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1617#1617">非常に申し訳ない　and　Monpサンクス！</A> kyasilya <SMALL>〔2001/04/14-06:22〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1616">1616</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1616#1616">RE:4/13(金)hate raid（消費触媒報告Tree）</A> Monputhi <SMALL>〔2001/04/14-05:05〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1618">1618</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1618#1618">RE:Peri14個、Pearl2個(T/O)</A> Anko@Asuka <SMALL>〔2001/04/14-06:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1619">1619</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1619#1619">Peri 12個 (T/O)</A> Agharta <SMALL>〔2001/04/14-11:13〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1620">1620</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1620#1620">RE:Peri6個(T/O)</A> Maybea@Asuka <SMALL>〔2001/04/14-14:46〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1621">1621</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1621#1621">RE:Peri20個（T/O)</A> Shrine <SMALL>〔2001/04/14-17:16〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1622">1622</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1622#1622">Pearl6コ、ただし。。。</A> Agrippe <SMALL>〔2001/04/15-15:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1630">1630</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1630#1630">RE:消費触媒報告</A> Monputhi <SMALL>〔2001/04/17-17:09〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1603#1603">▽</A> <A name="1603">1603</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1603#1603">3/14(土) PoF 21:30～</A> みるこ <SMALL>〔2001/04/10-13:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1604">1604</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1604#1604">RE:4/14(土) PoF 21:30～ ・・・だよね？（Ｔ／Ｏ）</A> TOPON <SMALL>〔2001/04/10-17:38〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1605">1605</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1605#1605">YEAHHH　4/14ですｗ（Ｔ／Ｏ）</A> Milfatia <SMALL>〔2001/04/11-00:28〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1607">1607</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1607#1607">RE:3/14(土) PoF 行きたいけど逝けないＴｗＴ</A> Ville/Foret@町と森 <SMALL>〔2001/04/11-02:08〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1623">1623</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1623#1623">RE:3/14(土) PoF 21:30～</A> みるこ <SMALL>〔2001/04/16-10:14〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1625">1625</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1625#1625">Result追加</A> Reeferz <SMALL>〔2001/04/16-12:56〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1626">1626</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1626#1626">RE:触媒・・・</A> Maybea@Asuka <SMALL>〔2001/04/16-14:22〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1628">1628</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1628#1628">RE:追加～</A> Saibaba <SMALL>〔2001/04/16-15:58〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1624">1624</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1624#1624">↑終了報告　これ宝石報告</A> みるこ <SMALL>〔2001/04/16-10:18〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1627">1627</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1627#1627">RE:↑終了報告　これ宝石報告</A> Zophy <SMALL>〔2001/04/16-15:34〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1566#1566">▽</A> <A name="1566">1566</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1566#1566">Clr　Epicの今後について</A> Ville/Foret@町と森 <SMALL>〔2001/03/29-21:09〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1608">1608</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1608#1608">RE:Clr　Epicの今後について</A> Maybea@Asuka <SMALL>〔2001/04/11-17:50〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1610">1610</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1610#1610">RE:Clr　Epicの今後について</A> Ville/Foret@町と森 <SMALL>〔2001/04/11-18:39〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　└ <A name="1613">1613</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1613#1613">RE:Clr　Epicの今後について</A> Anko@Asuka <SMALL>〔2001/04/12-02:47〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　　　　　└ <A name="1614">1614</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1614#1614">RE:Clr　Epicの今後について</A> Ville/Foret@町と森 <SMALL>〔2001/04/13-13:50〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1575#1575">▽</A> <A name="1575">1575</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1575#1575">今後のPox　Raid予約とお願いについて</A> Asukaa <SMALL>〔2001/03/31-17:48〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1611">1611</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1611#1611">RE:今後のPox　Raid予約とお願いについて</A> kyasilya <SMALL>〔2001/04/12-01:14〕</SMALL></TD></TR>
+<TR><TD><HR></TD></TR>
+<TR><TD nowrap>
+<A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&pn=1565#1565">▽</A> <A name="1565">1565</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1565#1565">4/7　第二次　Clr　Epic　大会　in　BW　23:00～Start</A> Ville/Foret@町と森 <SMALL>〔2001/03/29-14:13〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1568">1568</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1568#1568">(4)外人さんが参加を希望した場合</A> Laronda/Yeeng <SMALL>〔2001/03/30-02:42〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1569">1569</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1569#1569">kekeke</A> Odeen <SMALL>〔2001/03/30-21:11〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1570">1570</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1570#1570">RE:(4)外人さんが参加を希望した場合</A> kyasilya <SMALL>〔2001/03/30-22:17〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　├ <A name="1571">1571</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1571#1571">RE:(4)外人さんが参加を希望した場合</A> Ville/Foret@町と森 <SMALL>〔2001/03/31-05:19〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1590">1590</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1590#1590">RE:同時通訳？</A> Rolant <SMALL>〔2001/04/04-05:54〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="1592">1592</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1592#1592">RE:同時通訳？</A> Ville/Foret@町と森 <SMALL>〔2001/04/04-15:14〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　├ <A name="1583">1583</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1583#1583">Ｌａｒｏｎｄａ氏参加確認したいなり＞Ｖｉｌｌｅ氏へ</A> menmen <SMALL>〔2001/04/02-01:21〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　└ <A name="1585">1585</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1#1585">RE:Ｌａｒｏｎｄａ氏参加確認したいなり＞Ｖｉｌｌｅ氏へ</A> Ville/Foret <SMALL>〔2001/04/02-15:42〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　│　　　　　　　　　　　　　　　　　<SMALL><A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=RTAN&pg=1&no=1585&rn=1583&pn=1565&tm=986193764"><B>Res</B>ponse</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=ETAN&pg=1&no=1585&rn=1583&pn=1565&tm=986193764">Edit</A> : <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=DTAN&pg=1&no=1585&rn=1583&pn=1565&tm=986193764">Delete</A></SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　│　　　<FONT color="#000000">&gt;今日、Laronda氏から参加したいと、ＴＥＬＬがありました。</FONT><BR>
+　　│　　　│　　　<FONT color="#000000">　参加についてはokです。</FONT><BR>
+　　│　　　│　　　<FONT color="#000000"></FONT><BR>
+　　│　　　│　　　<FONT color="#000000">　ただRaidリーダーがヘタレで英語が下手だということは伝えてください。＞＜</FONT><BR>
+　　│　　　│　　　<FONT color="#000000">　あと一緒にくる人がいたらあわせて教えてもらえると助かります。</FONT><BR>
+　　│　　　│　　　<FONT color="#000000"></FONT><BR>
+　　│　　　│　　　<FONT color="#000000">&gt;Larondaに今夜回答のTELLしたいので、僕かLarondaにＴＥＬＬしてくだされ。</FONT><BR>
+　　│　　　│　　　<FONT color="#000000">&gt;お願いします。　（＾＾</FONT><BR>
+　　│　　　│　　　<FONT color="#000000">　どちらかPOPしたらTellしますor私を見かけたらTellでもええっす。</FONT><BR>
+　　│　　　│　　　</TD></TR>
+<TR><TD nowrap>
+　　│　　　└ <A name="1588">1588</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1588#1588">報告と質問</A> menmen <SMALL>〔2001/04/03-20:27〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　└ <A name="1589">1589</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1589#1589">RE:報告と質問</A> Ville/Foret@町と森 <SMALL>〔2001/04/04-01:51〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　│　　　　　　　└ <A name="1591">1591</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1591#1591">Cough Cough</A> Laronda/Yeeng <SMALL>〔2001/04/04-14:24〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　└ <A name="1595">1595</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1595#1595">RE:第二次ClrEpic終了報告</A> Ville/Foret@町と森 <SMALL>〔2001/04/09-17:13〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1596">1596</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1596#1596">使用触媒Perdot2個(T/O）</A> Ville/Foret@町と森 <SMALL>〔2001/04/08-10:37〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1597">1597</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1597#1597">RE:Peri17、Jas2(T/O)</A> Maybea <SMALL>〔2001/04/08-14:12〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1598">1598</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1598#1598">RE:使用触媒Peri11個Pearl4個(T/O)</A> Anko@Asuka <SMALL>〔2001/04/08-14:34〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1599">1599</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1599#1599">RE:あううDropItemがちがいまするうう</A> Agrippe <SMALL>〔2001/04/09-12:25〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　└ <A name="1600">1600</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1600#1600">RE:おう　のう　ごめん</A> Ville/Foret@町と森 <SMALL>〔2001/04/09-17:09〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　　　└ <A name="1601">1601</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1601#1601">/bow</A> Laronda/Yeeng <SMALL>〔2001/04/09-21:19〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　│　　　　　└ <A name="1606">1606</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1606#1606">RE:/bow</A> Ville/Foret@町と森 <SMALL>〔2001/04/11-00:31〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　├ <A name="1602">1602</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1602#1602">RE:Peri16個（T/O）</A> Rinda@Asuka <SMALL>〔2001/04/09-21:56〕</SMALL></TD></TR>
+<TR><TD nowrap>
+　　　　└ <A name="1609">1609</A> <A href="./im_trbbs.cgi?uid=raid&df=bbs.dat&prm=TAN&pg=1&no=1609#1609">RE:Ｐｅｒｉ６個とPeal６個</A> Shrine@Asuka <SMALL>〔2001/04/11-17:52〕</SMALL></TD></TR>
+</TABLE>
+<HR>
+<DIV align="right"><B>アクセス数: 1572</B> (今日: 54 / 昨日: 59)</DIV><HR>
+<TABLE boder="0">
+<TR>
+  <TD nowrap><B>検索キーワード</B></TD>
+  <TD><INPUT type="text" name="skey" size="24" maxlength="24">
+  <TD><INPUT type="submit" name="search" value="全文検索"></TD>
+  <TD nowrap>（合致する文字を含む記事が、番号順に１画面で表示されます）</TD></TR>
+</TABLE>
+<HR>
+</FORM>
+<DIV align="right"><SMALL>original <A href="http://www.cgi-club.com/">imTRBBS(ver1.04)</A></SMALL> Modified <STRONG>Rein!!</STRONG></DIV>
+<!--start-->
+<!--ここに書いたＨＴＭＬタグは掲示板の下部に表示されます -->
+<!--end-->
+</BODY>
+</HTML>
