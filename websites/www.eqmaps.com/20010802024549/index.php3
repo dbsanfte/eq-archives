@@ -1,0 +1,416 @@
+<html>
+<head>
+<title>EQmaps.com News</title>
+<META NAME="DESCRIPTION" CONTENT="An EverQuest website dedicated to bringing you maps, item lists, landmarks, bestiary, and zone exits for every zone in the game! Every aspect of the site can be discussed so players can share their knowledge with everyone.">
+<META NAME="KEYWORDS" CONTENT="everquest, eq, rpg, game, mmorpg, online, database, verant, sony, map, maps, item, items, quest, quests, landmark, landmarks, bestiary, zone, loc, location, screenshot, screenshots, 3dfx, tnt, dungeons, towns, norrath">
+<META NAME="ABSTRACT" CONTENT="EverQuest maps, items, bestiary, and landmarks!">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="Content-Language" CONTENT="en">
+<link rel="stylesheet" type="text/css" href="styles/base.css">
+<script language="JavaScript" src="eqmaps.js"></script>
+</head>
+
+<body bgcolor="#000000" text="#F3CE57" link="#FFFFFF" vlink="#AAAAAA" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
+<table width="780" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="780" height="80" colspan="3" background="images/eqmapslogo2.jpg"><table width="780" height="80" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="240"><img src="images/logo.jpg"></td>
+<td width="468" align="center"><font size="1">EQ Maps: banner free since April 1st, 2001.</font></td>
+<td width="72">&nbsp;</td>
+</tr>
+</table></td>
+  </tr>
+  <tr>
+    <td width="780" height="5" colspan="3"><img src="images/dot.gif"></td>
+  </tr>
+  <tr>
+    <td width="3"><img src="images/dot.gif"></td>
+    <td width="152" valign="top"><table width="152" bgcolor="#122134" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+<td width="128" height="12" background="images/border-topmid.gif"><img src="images/dot.gif"></td>
+<td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+</tr>
+<tr>
+<td width="12" background="images/border-leftmid.gif"><img src="images/dot.gif"></td>
+<td width="128" valign="top" align="right"><form method="POST" action="search.php3" name="qsearch">
+<center>
+<input type="text" name="query" value="Quick Search" class="istyle" size="14" maxlength="45" onFocus="document.qsearch.query.value=''"><br>
+<select name="tid" class="istyle">
+<option value="1">Item
+<option value="2">NPC
+<option value="3">Landmark
+<option value="4">Zone
+<option value="5">Spell
+</select> <input class="istyle" type="submit" name="submit" value="GO">
+</center><br>
+<b>Free Content</b><br>
+<a href="index.php3">EQmaps News</a> ¤<br>
+<a href="maplist.php3">Map List By Zone</a> ¤<br>
+<a href="npclist.php3">Advanced NPC List</a> ¤<br>
+<a href="itemlist.php3">Advanced Item List</a> ¤<br>
+<a href="spell_list.php3">Advanced Spell List</a> ¤<br>
+<a href="search.php3">Search Database</a> ¤<br>
+<a href="locsheet.php3" target="_blank">Locations Sheet</a> ¤<br>
+<a href="staff.php3">EQmaps Staff</a> ¤<br>
+<a href="links.php3">Wicked Links</a> ¤<br>
+</form><form>
+<b>Flashlink Only</b><br>
+<select name="norrath" onChange="loadM(this)">
+<option>Continents
+<option>---------------------
+<option value="norrath">Norrath
+<option value="antonica">Antonica
+<option value="faydwer">Faydwer
+<option value="kunark">Kunark
+<option value="odus">Odus
+<option value="velious">*Velious
+</select><br>
+<select name="towns" onChange="loadM(this)">
+<option>Towns
+<option>-----------------------
+<option value="akanon">Ak'Anon
+<option value="ecabilis">Cabilis, East
+<option value="wcabilis">Cabilis, West
+<option value="erudnext">Erudin Docks
+<option value="erudnint">Erudin Palace
+<option value="felwithea">Felwithe, North
+<option value="felwitheb">Felwithe, South
+<option value="firiona">Firiona Vie
+<option value="freporte">Freeport, East
+<option value="freportn">Freeport, North
+<option value="freportw">Freeport, West
+<option value="grobb">Grobb
+<option value="halas">Halas
+<option value="highkeep">High Keep
+<option value="icewell">*Icewell Keep
+<option value="drakkal">*Kael Drakkal
+<option value="kaladima">Kaladim, North
+<option value="kaladimb">Kaladim, South
+<option value="kelethin">Kelethin
+<option value="neriaka">Foreign Quarter
+<option value="neriakb">Neriak Commons
+<option value="neriakc">Neriak 3rd Gate
+<option value="ogguk">Oggok
+<option value="paineel">Paineel
+<option value="qeynos2">Qeynos, North
+<option value="qeynos1">Qeynos, South
+<option value="qcat">Qeynos Catacombs
+<option value="rivervale">Rivervale
+<option value="soltemple">Temple of Solusek
+<option value="thurgadin">*Thurgadin
+</select><br>
+<select name="world" onChange="loadM(this)">
+<option>World Zones
+<option>-------------------------
+<option value="arena">Arena
+<option value="burningwoods">Burning Woods
+<option value="butcher">Butcherblock Mtns
+<option value="cobaltscar">*Cobalt Scar
+<option value="ecommons">Commonlands, East
+<option value="wcommons">Commonlands, West
+<option value="cauldron">Dagnor's Cauldron
+<option value="dreadlands">Dreadlands
+<option value="emjungle">Emerald Jungle
+<option value="erudsxing">Erud's Crossing
+<option value="everfrost">Everfrost Peaks
+<option value="gfaydark">Faydark, Greater
+<option value="lfaydark">Faydark, Lesser
+<option value="feerrott">Feerrott
+<option value="bonefield">Field of Bone
+<option value="frontier">Frontier Mtns
+<option value="tgd">*Great Divide, The
+<option value="highpass">Highpass Hold
+<option value="iceclad">*Iceclad Ocean
+<option value="innothule">Innothule Swamp
+<option value="eastkarana">Karana, East
+<option value="northkarana">Karana, North
+<option value="southkarana">Karana, South
+<option value="qey2hh1">Karana, West
+<option value="kerraridge">Kerra Ridge
+<option value="beholder">King Xorbb's Maze
+<option value="kithicor">Kithicor Forest
+<option value="lakeofillomen">Lake Of Ill Omen
+<option value="lakerathe">Lake Rathetear
+<option value="lavastorm">Lavastorm Mtns
+<option value="misty">Misty Thicket
+<option value="nektulos">Nektulos Forest
+<option value="oasis">Oasis of Marr
+<option value="oot">Ocean of Tears
+<option value="overthere">Overthere, The
+<option value="qeytoqrg">Qeynos Hills
+<option value="rathemtn">Rathe Mtns
+<option value="nro">Ro, North
+<option value="sro">Ro, South
+<option value="skyfire">Skyfire Mtns
+<option value="steamfont">Steamfont Mtns
+<option value="surefall">Surefall Glade
+<option value="swampofnohope">Swamp Of No Hope
+<option value="timourous">Timorous Deep
+<option value="tox">Toxxullia Forest
+<option value="traksteeth">Trakanon's Teeth
+<option value="vpeak">Veeshan's Peak
+<option value="veksar">Veksar
+<option value="wakeland">*Wakening Land
+<option value="warsliks">Warsliks Wood
+<option value="ewastes">*Wastes, Eastern
+<option value="wwastes">*Wastes, Western
+</select><br>
+<select name="dungeons" onChange="loadM(this)">
+<option>Dungeons
+<option>-------------------------
+<option value="befallen">Befallen
+<option value="blackburrow">Blackburrow
+<option value="cazicthule">Cazic-Thule
+<option value="chardok">Chardok
+<option value="mistcity">City of Mist
+<option value="crushbone">Crushbone
+<option value="crystalcav">*Crystal Caverns
+<option value="dalnir">Dalnir, Crypt Of
+<option value="necropolis">*Dragon Necropolis
+<option value="dlab">*Drovrag Labryrinth
+<option value="gukbottom">Guk, Lower
+<option value="guktop">Guk, Upper
+<option value="thehole">Hole, The
+<option value="howlingstones">Howling Stones
+<option value="paw">Infected Paw
+<option value="kaesora">Kaesora
+<option value="karnor">Karnor's Castle
+<option value="kedge">Kedge Keep
+<option value="kurntower">Kurn's Tower
+<option value="minesofnurga">Mines of Nurga
+<option value="mistmoore">Mistmoore, Castle
+<option value="soldunb">Nagafen's Lair
+<option value="najena">Najena
+<option value="permafrost">Permafrost
+<option value="runnyeye">Runnyeye Citadel
+<option value="sebilis">Sebilis
+<option value="sirens">*Siren's Grotto
+<option value="skyshrine">*Skyshrine
+<option value="sleepers">*Sleeper's Tomb
+<option value="soldunga">Solusek's Eye
+<option value="droga">Temple of Droga
+<option value="toveeshan">*Temple of Veeshan
+<option value="tofs">*Tower Of Shadow
+<option value="unrest">Unrest, Estate of
+<option value="vlab">*Velketor Labyrinth
+<option value="warrens">*Warrens, The
+</select><br>
+<select name="planes" onChange="loadM(this)">
+<option>Alter Planes
+<option>-----------------------
+<option value="airplane">Plane of Air
+<option value="fearplane">Plane of Fear
+<option value="pog">*Plane of Growth
+<option value="hateplane">Plane of Hate
+<option value="pom">*Plane of Mischief
+</select><br>
+<select name="special" onChange="loadM(this)">
+<option>Special
+<option>---------------------
+<option value="artifact">Artifacts
+<option value="gmevent">GM Events
+<option value="unknown">Origin Unknown
+</select></form>
+</td>
+<td width="12" background="images/border-rightmid.gif"><img src="images/dot.gif"></td>
+</tr>
+<tr>
+<td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+<td width="128" height="12" background="images/border-botmid.gif"><img src="images/dot.gif"></td>
+<td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+</tr>
+</table>
+<br>
+<center><a href="http://www.flashlink.com/index.php?s=1"><img src="images/flashlink.gif" width="100" height="60" alt="Premium Flashlink Gaming Site" border="0"></a></center></td>
+    <td width="625" valign="top">
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#122134">
+        <tr>
+          <td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+          <td width="601" height="12" background="images/border-topmid.gif"><img src="images/dot.gif"></td>
+          <td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+        </tr>
+        <tr>
+          <td background="images/border-leftmid.gif"><img src="images/dot.gif"></td>
+          <td width="601" valign="top">
+            <form>
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="200" valign="top"><b>News Headlines</b>
+<br>
+[07/20] <a href="#262">Another GeForce2 Drawing</a>
+<br>
+[07/13] <a href="#261">Part 1/2</a>
+<br>
+[07/10] <a href="#260">New Item Look</a>
+<br>
+[07/9] <a href="#259">New Features</a>
+<br>
+[07/8] <a href="#258">Improved Search Engine</a>
+<br>
+[07/3] <a href="#257">Recent Patch</a>
+<br>
+[06/21] <a href="#256">Fixing Things</a>
+<br>
+[06/21] <a href="#255">Something Big</a>
+<br>
+[06/7] <a href="#254">Nice addition to the Advanc...</a>
+<br>
+[06/2] <a href="#253">Runnyeye Citadel</a>
+<br>
+[06/2] <a href="#252">GeForce3 Drawing Winner</a>
+<br>
+</td>
+                <td width="220" valign="top"><b>Items Database</b> 5470 total
+<br>
+[08/1] <a href="zone.php3?tag=norrath&item=5634">Imbued Black Pearl Platinum Ring</a>
+<br>
+[08/1] <a href="zone.php3?tag=toveeshan&item=5633">Blackstar, Mace of Night</a>
+<br>
+[08/1] <a href="zone.php3?tag=gmevent&item=5632">Heartstinger Earring</a>
+<br>
+[07/31] <a href="zone.php3?tag=drakkal&item=5631">Flayed Barbarian Hide Mask</a>
+<br>
+[07/30] <a href="zone.php3?tag=necropolis&item=5630">Forged Velium Battlehammer</a>
+<br>
+[07/30] <a href="zone.php3?tag=drakkal&item=5629">Blade of Carnage</a>
+<br>
+[07/30] <a href="zone.php3?tag=drakkal&item=5628">Ring of Destruction</a>
+<br>
+[07/27] <a href="zone.php3?tag=toveeshan&item=5627">Ancient Wyvern Hide Robe</a>
+<br>
+[07/27] <a href="zone.php3?tag=rivervale&item=5626">Protector of Brell Bracer</a>
+<br>
+[07/27] <a href="zone.php3?tag=drakkal&item=5625">Torn Enchanted Silk Sleeves</a>
+<br>
+		[-more-] <a href="itemadditions.php3">Last 200 Additions</a>
+		</td>
+                <td width="180" valign="top"><b>NPC Updates</b><br>
+[08/1] <a href="zone.php3?tag=frontier&npc=4052">A Sarnak Assassin</a>
+<br>
+[08/1] <a href="zone.php3?tag=kithicor&npc=5970">War Priestess T'Zan</a>
+<br>
+[08/1] <a href="zone.php3?tag=vlab&npc=5041">An Icepaw Kobold Priest</a>
+<br>
+[08/1] <a href="zone.php3?tag=runnyeye&npc=5883">Battlewizard Unak</a>
+<br>
+[08/1] <a href="zone.php3?tag=befallen&npc=6139">Arisen Knight</a>
+<br>
+[08/1] <a href="zone.php3?tag=toveeshan&npc=6100">Lady Nevederia</a>
+<br>
+[07/31] <a href="zone.php3?tag=necropolis&npc=4818">A Phase Spider</a>
+<br>
+[07/30] <a href="zone.php3?tag=tgd&npc=6101">Taskmaster Aboytt</a>
+<br>
+[07/30] <a href="zone.php3?tag=drakkal&npc=4825">A Lesser Storm Giant Noble</a>
+<br>
+[07/30] <a href="zone.php3?tag=fearplane&npc=332">A Boogeyman</a>
+<br>
+		[-more-] <a href="npcupdates.php3">Last 200 Updates</a>
+		</td>
+              </tr>
+              <tr><td colspan="3"><hr width="100%" size="1"></td></tr>
+              <tr><td colspan="3"><img src="images/dot.gif" width="5" height="5"></td></tr>
+              <tr><td colspan="3"><a class="headline" name="262">Another GeForce2 Drawing</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Friday, July 20th at 12:15am EST<br>
+<br>
+Starting today July 20th until August 5th, 2001 EQ Maps will be holding another drawing for a <a href="http://www.3dblaster.com/products/annihilator2/" target="_blank">Creative Labs</a> GeForce2 GTS graphics card! Submissions for the drawing will be in the form of valid price entries on any item. To submit a price simply look up the item you know the price of, click "Price Details", scroll to the bottom and add a price. The more prices you enter, the better chance you have to win!
+<br><br>
+Price entries will be monitored by myself and I encourage everyone to report bogus prices. If an obviously bogus price is found, ALL of your price entries will be deleted. You MUST enter your e-mail address if you want to win, otherwise I cannot contact you. The winner will be randomly selected and announced on August 6th. The GeForce2 will be shipped to their door the very same day.
+<br><br>
+The reason I'm doing this is to encourage everyone to add more prices to the database. To keep the database fresh with new prices and as accurate as possible. This is a small gift I can give back to you, the EQ Maps fan. Thank you!<br>
+<br>
+<br>
+<a class="headline" name="261">Part 1/2</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Friday, July 13th at 06:42pm EST<br>
+<br>
+Well I decided that I had slacked off enough and it was time to add all those missing sets of smithing, tailoring, and tinkered items to our database.  I have completed the following sets of armor: Northman Ringmail, Imbued Northman Ringmail, Teir'Dal Chainmail, Enchanted Teir'Dal Chainmail, Imbued Teir'Dal Chainmail, Teir'Dal Adamantite, Imbued Teir'Dal Adamantite, Enchanted Dwarven Plate, Imbued Dwarven Plate, Imbued Enchanted Dwarven Plate, Clockwork Watchman, Koada'Dal Mithril, Imbued Koada'Dal Mithril, Enchanted Koada'Dal Mithril, Elven Chainmail, Imbued Elven Chainmail, Enchanted Elven Chainmail, Seafarer's Ringmail, Imbued Steelsilk, Imbued Mithril Studded, Ogre Splintmail, Ogre Imbued Splintmail, Imbued Ogre War Plate, Cabilis Scale, Enchanted Cabilis Scale, Field Plate, Imbued Field Plate (all 7 versions), Full Plate, and Enchanted Full Plate Armor.
+<br><br>
+Some of the above armor sets are currently lacking descriptions and recipies but those will be added this coming week once I get a bit more time.  Needless to say my hand hurts right now, so I'm gonna stop typing.  Enjoy :P<br>
+<br>
+<br>
+<a class="headline" name="260">New Item Look</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Tuesday, July 10th at 12:48pm EST<br>
+<br>
+After many hours of tweaking, I believe the way items are now displayed looks much better then before. It's a bit cleaner and gives more room to items with a large boost, race, and class list.
+<br><br>
+With any new interface it may take a while for the brain to adjust, but give it a try. I'd like to hear your comments and suggestions, since based on those I will keep it or switch back to the old one. I'll also be adjusting the printable version to match the new format.<br>
+<br>
+<br>
+<a class="headline" name="259">New Features</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Monday, July 9th at 02:28pm EST<br>
+<br>
+The new sections for the Artifacts and items handed out during GM Events can be found on the left, under the special drop down menu.  I've wanted to add this section for a long time now and finally had some free time.  I'm hoping that it will be like a hall of fame for all those unique or super rare items that exist in the world of Norrath.  For those that have received special artifacts or gm quest rewards, send me an email of what the event was about and I'll add it to the description.  On another note I've added the Expendable, and No Rent tags to items.  I'll be updating our database to reflect these changes.  Expect some more surprises in the near future.
+<br><br>
+I would also like to thank Aurelio Silverdawn from the Solusek Ro server for all the item updates, screenshots and corrections he's sent in, it has helped me tremendously in getting this database up to date.  Thanks :)<br>
+<br>
+<br>
+<a class="headline" name="258">Improved Search Engine</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Sunday, July 8th at 09:21pm EST<br>
+<br>
+I recently upgraded the backend database used for EQ Maps from MySQL 3.22.32 to 3.23.39. What does this mean to you? Well thanks to the newly implemented Full Text Search abilities of MySQL: faster and more accurate search results! Taking advantage of this new feature I was able to create a new <a href="search.php3">search script</a> in a matter of a few hours. Once again you can quickly and easily search through the Item, NPC, Landmark, Zone, and Spell tables. While I have done extensive testing, let me know if you run across any problems.<br>
+<br>
+<br>
+<a class="headline" name="257">Recent Patch</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Tuesday, July 3rd at 08:21pm EST<br>
+<br>
+With the recent patch that went in last week, there were numerous updates to <a href="http://www.eqmaps.com/zone.php3?tag=vlab">Velketor's Labyrinth</a> and <a href="http://www.eqmaps.com/zone.php3?tag=toveeshan">Temple of Veeshan</a> items.  A lot of these items have gotten major overhauls including the <a href="http://www.eqmaps.com/zone.php3?tag=toveeshan&item=4889">Chestplate of Fiery Might</a> (AC60), the <a href="http://www.eqmaps.com/zone.php3?tag=drakkal&item=4660">Breastplate of Eradication</a> (AC55), and the <a href="http://www.eqmaps.com/zone.php3?tag=toveeshan&item=4675">True Mithril Breastplate</a> (AC57).  I've been busy updating them all, but if you notice anything wrong please email me.   
+<br><br>
+I've also been busy working on all the new items coming in from <a href="http://www.eqmaps.com/zone.php3?tag=befallen">Befallen</a> as it was recently upgraded to a mid level range dungeon.  Some of these new items are pretty good for mid level characters, including some 10/30 weapons and some nice new armor.  My mail box is nearly empty, which is weird, so keep sending in those screenshots of npc's and new equipment that you notice we are missing in our databases.  A final note, the GM section will be added shortly after I finally fix a piece of code that's been bugging me.  <br>
+<br>
+<br>
+<a class="headline" name="256">Fixing Things</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Thursday, June 21st at 02:55pm EST<br>
+<br>
+Well it seems as if things have finally calmed down a bit on the equipment front.  Not many new items have been submitted this last week, so it's given me a bit of time to focus on tiding up our databases here at EQmaps.  This week I spent some time checking every quest item in our database to make sure that it had a corresponding level, a complete description and I made sure that it would pop up when performing a quest search.
+<br><br>
+I was also able to update our NPC database with all the new creatures that have been appearing throughout the lands of Norrath, and all the ones we had missing.  I have also spent some time organizing the items handed out during GM Events.  I hope to have them organized under their own special drop down list on the left, and as well have an option under the advanced item list so that they won't pop up while doing searches for regular equipment.  These items will be in more of a hall of fame, as most of them are unique and very difficult to obtain.<br>
+<br>
+<br>
+<a class="headline" name="255">Something Big</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Thursday, June 21st at 08:02am EST<br>
+<br>
+I know the news has been slow lately, we continue to work on adding things in the background as always. I've recently become extremely addicted (again) to a game I last played nearly four years ago. The game? <a href="http://www.meridian59.ru/" target="_blank">Meridian 59</a>, the FIRST 3D massively multiplayer online role playing game. Currently a FREE (donations appreciated) server is being run out of Russia (client is English) that seems fairly fast with a great community. If you have any questions I'll be playing as NiteRaven.
+<br><br>
+Anyways, back to the big news more EverQuest and EQMaps related. Tsigo and I have been working very hard the last few days trying to finish up the spells database Darnavian started a long time ago. I'm very close to getting the spells imported into the database and will have it done by the end of the day. This should answer those "what does that effect do" questions and will also provide a quick search function to access the spells.<br>
+<br>
+<br>
+<a class="headline" name="254">Nice addition to the Advanced Item List</a><br>
+Submitted by: <a href="mailto:tsigo@eqmaps.com">Tsigo</a> on Thursday, June 7th at 07:45pm EST<br>
+<br>
+After receiving numerous e-mails offering suggestions on how to improve the <a href="itemlist.php3">Advanced Item List</a>, I decided it's about time we made some improvements in the script. From now on, after you've completed a search, you may select any items that you wish to list in a stat-by-stat comparison. This new feature is available to everyone, including those not subscribed to <a href="http://www.flashlink.com/index.php?s=1">Flashlink</a>. Expect more additions to this and other scripts soon.<br>
+<br>
+<br>
+<a class="headline" name="253">Runnyeye Citadel</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Saturday, June 2nd at 03:57pm EST<br>
+<br>
+Hey all, finally got a nice sized update done from the newly upgraded <a href="http://www.eqmaps.com/zone.php3?tag=runnyeye">Runnyeye Citadel</a>.  Many new monsters and pieces of equipment are trickling in, which I was able to add.  
+<br><br>
+I was also able to finally add the walkthroughs for the Wizard's epic, <a href="http://www.eqmaps.com/zone.php3?tag=soltemple&item=3044">Staff of the Four</a>, and the Necromancer's epic, <a href="http://www.eqmaps.com/zone.php3?tag=lakerathe&item=2848">Scythe of the Shadowed Soul</a>. The magician one will be up this week as well as all the new steps in the revamped epic quests.<br>
+<br>
+<br>
+<a class="headline" name="252">GeForce3 Drawing Winner</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Saturday, June 2nd at 01:31am EST<br>
+<br>
+The winners of the Flashlink GeForce3 graphics card drawing have been <a href="http://www.flashlink.com/index.php?p=geforce3&s=1">announced</a>. Congratulations to the winners and thank you to everyone who entered! Please stay tuned as we announce the prizes in our next monthly drawing.<br>
+<br>
+<br>
+</td></tr>
+            </table>
+            </form>
+          </td>
+          <td background="images/border-rightmid.gif"><img src="images/dot.gif"></td>
+        </tr>
+        <tr>
+          <td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+          <td height="12" width="601" align="center" background="images/border-botmid.gif"><img src="images/dot.gif"></td>
+          <td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+</body>
+</html>
