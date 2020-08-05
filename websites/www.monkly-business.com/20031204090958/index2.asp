@@ -1,0 +1,205 @@
+
+<html>
+<head>
+<title>Welcome to Monkly-Business. Your One-Stop Monk Shop!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body BGCOLOR="#cccccc" LINK="#2f2f4f" VLINK="#2f2f4f" ALINK="#FF0000">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#cccccc">
+<tr>
+<td>
+      <p align=center><a href="/"><img src="logo.gif" alt="Monkly Business - Everquest Monks" border="0"></a><br>
+	  
+	  <a href="http://www.mysupersales.com"><img src="http://www.mysupersales.com/images/newbanner1.gif" ALT="Everquest Platinum for Sale" border=0></a> 
+	  
+	  </p>
+</td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+  <tr> 
+    <td width="15%" bgcolor="#778899" align="left" valign="top"> 
+      <FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff"> 
+      
+<p><a href="/index2.asp">News</a></p>
+      <p><a href="/archives.asp">News Archives</a></p>
+      <p><a href="http://pub38.ezboard.com/bmonklybusiness43508">Message Boards</a></p>
+      <p><a href="/equipment.asp">Monk Equipment</a></p> 
+      <p><a href="chat.asp">Monk Chat</a></p>
+      <p><a href="/articles.asp?ArticleId=1">Quests: Epic</a></p> 
+      <p><a href="/articles.asp?ArticleId=2">Quests: Monk</a></p>
+      <p><a href="/articles.asp?ArticleId=3">Quests: General</a></p> 
+      <p><a href="/articles.asp?ArticleId=4">Skills: Trades</a></p>
+      <p><a href="/articles.asp?ArticleId=5">Skills: Monk</a></p>
+      <p><a href="/articles.asp?ArticleId=6">Zone Guides</a></p> 
+      <p><a href="/articles.asp?ArticleId=7">Monks in Norrath</a></p>
+      <p><a href="/articles.asp?ArticleId=8">Editorials</a></p>
+      <p><a href="/articles.asp?ArticleId=9">Rants</a></p>
+      <p><a href="/articles.asp?ArticleId=10">Stories</a></p>
+      <p><a href="/articles.asp?ArticleId=11">Humour</a></p>
+      <p><a href="/articles.asp?ArticleId=12">Links</a></p>
+      <p><a href="/credits.asp">Credits</a></p>
+      <p><a href="/submit.asp">Submissions</a></p>
+      </FONT>
+    </td>
+    <td valign="top" align="left">
+      <ul>
+        <br>
+        <br>
+        <span class="MB_Submit"> Got any information you want to share with the 
+        monk community? email us <a href="mailto:news@monkly-business.com">here</a></span>. 
+        
+        <p class="MB_Heading">Wednesday, December 03, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="977"></a>World of Warcraft update on FoH site</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/3/2003 2:25:08 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Furor - Leader of the Guild that the masses on the Bnet boards love to hate since he has friends who work for blizzard, has posted a NEW update on classes in World of Warcraft- the Paladin and the Rogue. You can Read the update <a href='http://www.fohguild.org/'> Here</a> on the Fires of Heaven Website.
+</p>
+<p>
+Personally, I Cannot Wait to try a Rogue or Warrior out....
+</p></p>
+        </ul>
+        
+        <p class="MB_Heading">Tuesday, December 02, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="976"></a>Melee changes on Test Now, </span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/2/2003 10:36:22 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Go check em out...
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="975"></a>Horizons: Empire of Istaria Gone gold and shipping </span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/2/2003 11:45:35 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Horizons Empire if Istaria, a fairly highly anticipated MMog where you can actually be a dragon has gone gold and the european version has shipped for its release on the 5th, the US version will ship on the 9th and then we all can experience a new mmog.
+</p>
+<p>
+Having Been in the Beta, and Despite the NDA being in effect. IF the content is there (content was lacking severely in beta) then you might enjoy this game, otherwise, you won't. Crafters will enjoy the game since Crafting in game is VERY well done. 
+</p>
+<p>
+I personally recommend you take a Wait and See approach. wait before buying to see what the people playing the Live Game say about it, then make your decision by being more informed. I will say this, I will never pay to play what is essentially an open beta, and that is what - in my opinion - the release of Horizons is going to be - a pay to play open beta.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="974"></a>City of Heroes entering Closed Beta</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/2/2003 11:44:21 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+While Beta Applications are not Open YET, People who previously registered on their messageboard and are active participants will be invited to the first phase of Closed Beta testing, as soon as that is done, the Beta Applications will be opened so that people can test, break, maim and destroy the servers while they play the game.
+</p></p>
+        </ul>
+        
+        <p class="MB_Heading">Monday, December 01, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="973"></a>Server Xfers for FFXI & news</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/1/2003 3:22:50 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+from MMorpg.com:
+</p>
+<p>
+In addition to giving their Playonline homepage a new holiday look, Square-Enix has given us a quick peak at their latest update planned for December 16th, 2003 (on a Tuesday). There are many exciting changes that are to be made in this update, including an increased level cap from 70 to 75 (Square-Enix does not currently have any plans to raise the level cap beyond 75 however). The proposed "limbo areas" will probably not be making a debut into the December update. 
+</p>
+<p>
+  Just in case you were wondering, the developers of Final Fantasy XI have explained a little bit about the new "limbo areas". Essentially they are high level areas in a sort of alternate dimension, requiring multiple alliances (3 groups of 18 people) to successfully navigate through. Only time will tell what these limbo areas will hold, but it looks like we'll have to wait a little bit longer to see them.
+</p>
+<p>
+   At the time this was written, the Playonline website did not have this article. By the time you are reading this, the article may be up at their official Playonline website. Otherwise you can read more about the December 16th version update in your Playonline viewer. (Read this in the General section of the information screen). I highly encourage you to read the article put out by Square-Enix, as the changes they are making are quite numerous in amount (so numerous, Square-Enix hasn't even listed them all yet).
+</p>
+<p>
+Also on the Patch december 8th all Server Xfer requests will go thru.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="972"></a>Fun Wan Online open Beta</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/1/2003 3:19:20 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+The team over at <a href='http://fwo.edenii.com/'>Fun Wan Online</a> has posted the news that the Open Beta for their game is going to start December 22nd - if you are interested in a martial arts themed MMo, then head on over to the site and sign up for the Open Beta.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="971"></a>Lords of Everquest Pre-order</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 12/1/2003 9:32:27 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Do not want to see the Preorder window when you log into EQ?
+</p>
+<p>
+Add this to your Eqclient.ini file
+</p>
+<p>
+LoEPopUpLastView=1100000000
+</p>
+<p>
+that Should take care of the problem - also Beware if you do not add this, they just Switched the No and the Preorder buttons...
+</p>
+<p>
+Shame on SoE for doing that, No is NO. accidentally pressing the preorder just means someone has to go and Cancel.
+</p></p>
+        </ul>
+        
+      </ul>
+    </td>
+    <td align="left" valign="top" width="15%" bgcolor="#778899"> 
+      <html>
+<body>
+
+<FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff"> 
+New Articles
+</FONT>
+<br><br>
+<script language="Javascript" src="http://www.rpgexpert.com/ssi.php?get=latest&js=1&cat=1&total=40"></script>
+<br><br>
+
+
+<FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff"> 
+Highest Ranked Articles
+</FONT>
+<br><br>
+<script language="Javascript" src="http://www.rpgexpert.com/ssi.php?get=toprated&js=1&cat=1&total=40"></script>
+<br><br>
+
+<FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff"> 
+Most Popular Articles
+</FONT>
+<br><br>
+<script language="Javascript" src="http://www.rpgexpert.com/ssi.php?get=popular&js=1&cat=1&total=40"></script>
+<br><br>
+
+</body>
+</html>
+
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

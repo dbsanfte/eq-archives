@@ -1,0 +1,631 @@
+
+<html>
+<head>
+<title>Welcome to Monkly-Business. Your One-Stop Monk Shop!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body BGCOLOR="#cccccc" LINK="#2f2f4f" VLINK="#2f2f4f" ALINK="#FF0000">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#cccccc">
+<tr>
+<td>
+      <p align=center><a href="/index2.asp"><img src="logo.gif" alt="Monkly Business" border="0"></a><br>Sponsored by the EQ Gamers Superstore at <a href="http://www.mysupersales.com">www.mysupersales.com</a></p>
+</td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+  <tr> 
+    <td width="15%" bgcolor="#778899" align="left" valign="top"> 
+      <FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff"> 
+      
+<p><a href="/index2.asp">News</a></p>
+      <p><a href="/archives.asp">News Archives</a></p>
+      <p><a href="http://pub38.ezboard.com/bmonklybusiness43508">Message Boards</a></p>
+      <p><a href="/equipment.asp">Monk Equipment</a></p> 
+      <p><a href="chat.asp">Monk Chat</a></p>
+      <p><a href="/articles.asp?ArticleId=1">Quests: Epic</a></p> 
+      <p><a href="/articles.asp?ArticleId=2">Quests: Monk</a></p>
+      <p><a href="/articles.asp?ArticleId=3">Quests: General</a></p> 
+      <p><a href="/articles.asp?ArticleId=4">Skills: Trades</a></p>
+      <p><a href="/articles.asp?ArticleId=5">Skills: Monk</a></p>
+      <p><a href="/articles.asp?ArticleId=6">Zone Guides</a></p> 
+      <p><a href="/articles.asp?ArticleId=7">Monks in Norrath</a></p>
+      <p><a href="/articles.asp?ArticleId=8">Editorials</a></p>
+      <p><a href="/articles.asp?ArticleId=9">Rants</a></p>
+      <p><a href="/articles.asp?ArticleId=10">Stories</a></p>
+      <p><a href="/articles.asp?ArticleId=11">Humour</a></p>
+      <p><a href="/articles.asp?ArticleId=12">Links</a></p>
+      <p><a href="/credits.asp">Credits</a></p>
+      <p><a href="/submit.asp">Submissions</a></p>
+      </FONT>
+    </td>
+    <td valign="top" align="left">
+      <ul>
+        <br>
+        <br>
+        <span class="MB_Submit"> Got any information you want to share with the 
+        monk community? email us <a href="mailto:news@monkly-business.com">here</a></span>. 
+        
+        <p class="MB_Heading">Thursday, February 06, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="542"></a>Star Wars: Galaxies - Dev Chat Reminder</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/6/2003 1:18:51 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+There is a Developers chat on the main Starwars:galaxies site tonite at 9pm eastern. expect tons of questions and possibly a beta 3 announcment.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="541"></a>PAtch day Fun: Feb. 6th</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/6/2003 9:51:00 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+gotta love PATCH DAYS
+</p>
+<p>
+<ul>
+<i>
+** Interface **
+</p>
+<p>
+- All settings for the Songs window should now be saved properly when the player logs out.
+</p>
+<p>
+- Fixed a bug that could cause the Bit Depth and Refresh Rate setting to not save properly upon exit.
+</p>
+<p>
+- Users of Windows XP should no longer be seeing their Windows mouse cursor or other windows 'bleed through' into the game.
+</p>
+<p>
+** Gameplay **
+</p>
+<p>
+- Changing from an old model character to a Luclin model character at character select should no longer result in the character having no hair.
+</p>
+<p>
+- Fixed a bug that caused merchants to charge a little extra or less (1 copper).
+</p>
+<p>
+- Merchants will no longer claim that they will pay 1 copper for starting equipment (they have never actually purchased such items).
+</p>
+<p>
+** Spells **
+</p>
+<p>
+- Fixed a problem with the Giantsbane Spell quest NPCs not spawning in Skyshrine.
+</p>
+<p>
+- Failing to hide while invisible will now make the invisibility icon disappear.
+</p>
+<p>
+** Trade Skills **
+</p>
+<p>
+- Many Planar Recipes can now be used in collapsible containers. Some Planar Tailoring can only be done in the Tanaan Loom as opposed to the Planar Sewing Kit.  Nothing that was previously made in the Loom was added to the collapsible tailoring kit.  Skills changed were Baking, Sewing, Jewel Craft, and Fletching.
+</p>
+<p>
+- Added gnome cultural recipe book to Ak'Anon.
+</p>
+<p>
+- Changed the weights on Spiritstones to be more in line with Faithstones.
+</p>
+<p>
+- Changed Collapsible Jeweler's Kit to 6 slots from 4.
+</p>
+<p>
+** Zones **
+</p>
+<p>
+- Grummus is much more likely to stay in his home.
+</p>
+<p>
+- Fixed the door to the Ak'Anon zoo, by request of the Zookeeper's Union #23.
+</p>
+<p>
+- Newly created Wood Elf Druids will now make their first appearance in the world much closer to their guild master.
+</p>
+<p>
+- Fennin Ro is now more durable, more in line with the other elemental plane gods.
+</p>
+<p>
+-Rallos Zek now moves considerably faster then before, as do his cohorts. He will also become very, VERY angry should he be removed from his lair(s).  
+</p>
+<p>
+- Skyshrine will once again require a key for exit into the Cobalt Scar.  The fact that the key was not needed was a bug.  We do understand that few people actually walk through this area considering the other methods of transport available, but the dragons aren't leaving their doors open.
+</p>
+<p>
+** Items **
+</p>
+<p>
+- Corrected the inventory icon for the Acrylia Studded Legs and the Two-Handed Practice Sword.
+</ul>
+</i>
+</p>
+<p>
+Over all an interesting little patch. I KNEW the skyshrine zone to cobalt scar key requirement was a bug-since the requirement vanished on the revamp of skyshrine. One little bit of worry i have, just like the patch jan 28 or 29th i am getting reports of different .xml file downloads, i got the bigbank, others got inventory, even others got the char select. Those .xml files are not supposed to be "live" until the 24th. so this is a bit of a warning, if you crash alot, its probably SoE's fault.
+</p>
+        </ul>
+        
+        <p class="MB_Heading">Wednesday, February 05, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="540"></a>Star Wars: Galaxies - Info Overload Day</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/5/2003 11:06:47 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+The Developers over at SW:G have release the Features page, shots of the UI, a Revamped professions list, and a list of what was left OUT from initial release. here you go with the links:
+</p>
+<p>
+<a href='http://starwarsgalaxies.station.sony.com/features/features.jsp'>Features list</a>
+</p>
+<p>
+<a href='http://starwarsgalaxies.station.sony.com/features/swg_manual/cha5.jsp'>Professions update</a> where they went up to 35 professions from 28.
+</p>
+<p>
+An initial look at the User Interface <a href='http://starwarsgalaxies.station.sony.com/features/swg_manual/cha3.jsp'> UI flash tutor</a>
+</p>
+ <p>
+and a partial list of what was left OUT of initial Release : <a href='http://boards.station.sony.com/ubb/starwars/Forum3/HTML/100801.html'> Content left out thread</a> most notably player cities, player vehicles and Dark Jedi. all of which will be implemented post release as soon as they are done and done well.
+</p>
+<p>
+Naturally the messageboards are up in arms about evertyhing
+</p>
+</p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="539"></a>Soe: We meant to do that..about the affliction change</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/5/2003 10:49:23 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+<i>
+<ul>
+With the patch on February 4th we fixed a bug with Affliction foci, but we failed to mention it in the patch message. We corrected a bug that was allowing these foci to work for too many spell types, including things like snares and slow. Affliction foci now only work on damage over time spells. 
+</p>
+<p>
+We apologize for not mentioning this fix in the patch message. 
+</p>
+<p>
+The very high savings in cast time and mana, as well as the extended duration, were planned to only work on damage over time spells. These spells needed more help than all other detrimental spells. The affliction foci for haste and mana are dramatically better (more than twice as effective) than other items of the type. The extension focus is better than any other as well, though not to such a degree. These items are only so much better than others because they were intended only to improve the effect of damage over time spells to bolster their value. 
+</p>
+<p>
+We fixed a similar bug in June of 2002. Some time between then and now the bug resurfaced. The bug was fixed while another was being addressed, and because it wasn't the targeted bug fix it didn't make it into the patch message. We certainly wouldn't have left this information out on purpose. 
+</p>
+<p>
+We understand that this change has an effect on some players. But these foci have always been intended to work exclusively on DoT spells, and we do not plan to undo the bug fix. We'll look at other detrimental spells and see if there are some lines that should benefit from similar focus items, but that will be done on a case-by-case basis and not by reverting this recent bug fix. 
+</p>
+<p>
+Alan
+</ul>
+</i> 
+</p>
+<p>
+So they Meant to change the Affliction and debuff focus change/
+</p></p>
+        </ul>
+        
+        <p class="MB_Heading">Tuesday, February 04, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="538"></a>Oops They Did it Again, ie SoE broke something-Shaman</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/4/2003 5:21:52 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Got This From Henora:
+</p>
+<p>
+The shamans over at the Crucible have discovered the
+Affliction focus items have stopped working on
+debuffs.  There's some extended history on this issue.
+The effect came into game, on Affliction Efficiency
+(mana save), Affliction Haste (spell haste) and
+Affliction Extension (spell duration) at the same time
+as all the other focus items.
+</p>
+<p>
+At that time they worked on all DoTs and Debuffs. 
+They were soon changed to work only on DoTs.  Then
+unannounced, they were changed back to all DoTs and
+Debuffs and have been that way for months and months
+now.  Today they were changed back to only DoTs
+without a patch message.  I suspect this is VI working
+to nerf charm but I don't really know.  
+</p>
+<p>
+This is actually a very dramatic nerf to shaman. 
+Particularly in regard to Affliction Haste.  
+Turgurs cast time increases from 1.7 seconds, back to
+3.0 and Malo cast time from something like 3.4 seconds
+back to 6.  Also Affliction Efficiency,
+Malo/Slow/Root/Cripple now all uneffected by
+Afflicition focus, now all cost 33% more mana.
+</p>
+<p>
+Many people have designed their gear around focus
+items, have spent guild loot points and cash for items
+with these effects.  Many guilds, including my own
+have based loot awards around focus effects and their
+value to the classes these items are given to.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="537"></a>Legacy of Ykesha - Update- Guild Management</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/4/2003 3:11:25 PM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Lengthy description, so i'll cheat, Visit the site at <a href='http://www.legacyofykesha.com/f_guildtool.jsp'> Ykesha Guild Management Page</a>. Looks like it will be a good addition to the game for officers and guildleaders.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="536"></a>Feb 4th Patch Message</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/4/2003 8:09:26 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+For a small patch, lots of content, now lets see if they Fixed the problem alot of people are having with framerate over time stuff like i have been having since last weeks patch where i'll log on and its fine but after an hr or so i have to restart the game since the framerate drops to oh 1 or 2 a SECOND. and i see they did some text fixes in skyshrine, maybe the Crusaders actually will give ALL their text-shrug will find out later after work.
+</p>
+<p>
+<i>
+<ul>
+February 4, 2003  3:00 am
+</p>
+<p>
+Note:  Some folks have had trouble getting the elves' beard colors to work properly.  In order to get them to show up, you may need to set DoProperTinting=TRUE in your Eqclient.ini file.  You can do that by typing /dopropertinting in game.
+</p>
+<p>
+ALSO NOTE:  We have changed a lot of UI Files.  Here's the list:
+</p>
+<p>
+** UI File Changes **
+</p>
+<p>
+EQUI.xml			 
+EQUI_Animations.xml		 
+EQUI_CharacterCreate.xml
+EQUI_FacePick.xml
+EQUI_NoteWindow.xml
+EQUI_OptionsWindow.xml 
+window_pieces04.tga	
+EQUI_JournalCatWnd.xml - NEW FILE
+EQUI_JournalTextWnd.xml - NEW FILE
+EQUI_JournalNPCWnd.xml - NEW FILE
+EQUI_BigBankWnd.xml	- NEW FILE 
+</p>
+<p>
+** Interface and Gameplay **
+</p>
+<p>
+- The melee button for Ulaks, Martial weapons and Two-Handed Piercing weapons should appear to be depressed when attacking.
+</p>
+<p>
+- Increased the size of the Notes window in the new UI.
+</p>
+<p>
+- /viewport fixed.
+</p>
+<p>
+- Fixed bug where action and hot-buttons for innate abilities would revert to numbers (1-6) instead of their name when a skin was loaded using /loadskin. It now reloads the names too.
+</p>
+<p>
+- Fixed a bug that could cause a client crash if too many full containers were open and the ALT key was pressed.
+</p>
+<p>
+** Spells **
+</p>
+<p>
+- Lowered the mana cost of Yaulp I, Yaulp II, Yaulp III, and Yaulp IV to increase the value of these spells
+</p>
+<p>
+- Theft of Thought works properly now, it was draining all of the caster's mana, no matter who the target was.
+</p>
+<p>
+- Damage over Time type Area of Effect spells will no longer do damage when player character resists the spell.
+</p>
+<p>
+- All pet spells will now get focused from any pet focusing spell/item.  This means, for example, that summoning haste will work on Beastlord and Necromancer pets.
+</p>
+<p>
+- Fixed a bug that caused pet health bar to disappear if when trying to charm when a pet already exists.
+</p>
+<p>
+- Divine Barrier now does all of its healing in a single burst instead of as regeneration.
+</p>
+<p>
+- Removed the erroneous message "Returning to your own perspective" that occurred when a character was changed into something using an illusion.
+</p>
+<p>
+** Quests **
+</p>
+<p>
+- Dillon the Drowned should now respond properly when hailed.
+</p>
+<p>
+- Corrected a problem with a 'quest' for the hermit in South Karana.
+</p>
+<p>
+- Animist Poren now gives the correct recipe for his Handwraps Quest (shadeling silk instead of shade silk).
+</p>
+<p>
+- Noirin Khalen now gives out the proper jewelry book.
+</p>
+<p>
+- Supreme Loachsmith Psorin now returns items that he does not need or want.
+** Items **
+</p>
+<p>
+- Removed Rogues from the list of classes on the Elegant Darkwood Katana, since it is a two-handed slashing weapon.
+</p>
+<p>
+- Removed the "secondary" tag from the Flametongue, as this item is for Int. casters only and they can't equip this item in their secondary slot.
+</p>
+<p>
+- The Nathsar Greatsword and Fester now have the proper inventory icon.
+</p>
+<p>
+** Tradeskills **
+</p>
+<p>
+- Added new potions for Vah Shir Shaman (and all other Shaman): Shadeweaver Portal.
+</p>
+<p>
+- Renamed one of two items called Figwort.  The Figwort sold in Shar Vahl has been renamed Ground Figwort to reduce confusion.
+</p>
+<p>
+- Renamed one of two items called Drachling Silk.  The Drachling Silk that was once no drop is now tradable and named Drachnid Silk.
+</p>
+<p>
+- Adventurers have learned new techniques for fighting Cyclopes.  These great beasts are now much more likely to have their eye intact when killed.
+</p>
+<p>
+- Fixed the recipe for the potion "Soul of Incorporeal" to use a "feather".
+</p>
+<p>
+- Fixed the recipe for the potion "Troll's Essence".
+</p>
+<p>
+- Fixed the cast time on any 5 and 10 dose potions that were inconsistent with their single dose versions.
+</p>
+<p>
+- General Bragmur in Iceclad should now avoid ice flows that he was having a problem crossing in the past.
+</p>
+<p>
+- Terrorantula Silk, Feather, branch of sylvan oak, branch of planar oak, Drachnid Silk, and Drachling Silk are now stackable.
+</p>
+<p>
+- Silicorrosive Grease is now tradable and stackable.
+</p>
+<p>
+- Potions Aquatic Haunt and Serpents Drink no longer require reagents.
+</p>
+<p>
+- Grandmaster Alchemist will now have a way to prove their ability.
+</p>
+<p>
+** Alternate Advancement **
+</p>
+<p>
+- Extended Notes now works on area of Effect songs as well as group songs.
+</p>
+<p>
+** PvP **
+</p>
+<p>
+- Fixed a bug with Root and Snare spells that prevented the target player character from being affected until they zoned.
+</p>
+<p>
+- Fixed a bug with mesmerization spells being unbreakable by normal means.
+</p>
+<p>
+** Zones ** 
+</p>
+<p>
+- Fixed some text and grammar errors in Skyshrine.
+</p>
+<p>
+- Ikurenm the Sly should no longer disappear when trying to chase his enemies.
+</p>
+<p>
+- Repaired some "safe spots" in Echo Caverns, Paludal Caverns and Grieg's End.
+</p>
+<p>
+- Fixed a pathing issue in Kurn's Tower that was causing some NPCs to disappear.
+</p>
+<p>
+- The Golem Master in Charasis now looks like a golem.
+</p>
+<p>
+- The Orc Arsonist will no longer have his torch disappear when looted (as long as he had it to begin with).
+</p>
+<p>
+- The Sands of Fire event will now be restricted to the intended four groups.  Alternate methods of getting characters into the event have been removed.
+</p>
+<p>
+- Corrected doors in Kaladim, Blackburrow and Erudin that opened the wrong way and one door in Kaesora that was way off its hinges.  Also, the Dwarves have installed a door in one of their guard huts to prevent drafts.
+</p>
+<p>
+- Moved an oven in North Freeport that was poking through a ceiling.
+</p>
+<p>
+- Wraith of a Shissar should no longer attack its compatriots, so they should no longer be killing it in retaliation.
+</p>
+<p>
+- Corrected some respawn issues in the Plane of Air.
+</p>
+<p>
+- Rallos Zek is much less likely to need to leave the arena in order to deal with his enemies...
+</p>
+<p>
+** Miscellaneous **
+</p>
+<p>
+- Changed "wode" to "woad" in the face picker.
+</p>
+<p>
+- Corrected a spelling error in the text of the Purify Body ability (affect to effect).
+</p>
+<p>
+- PCs under illusions should appear with hair if the race can have hair, even if the PC's race can't have hair.  Fixed a few other bugs with illusions and their effect on hair and eyes.
+</p>
+<p>
+- Vah Shir will now see "punches" when punching instead of "hits".
+</i>
+</ul>
+</p>
+</p>
+        </ul>
+        
+        <p class="MB_Heading">Sunday, February 02, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="535"></a>Everquest Crashing to Desktop after Character Select</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/2/2003 9:52:29 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+A decent amount of people have been having problems with EQ crashing to desktop
+after selecting their character, and not being able to log in with THAT character. The most common Solution - well besides trusting someone to log in your character to move 1 zone over- is to go into your Everquest directory and to delete the following files. ss.opt and all *.opt files that have to do with that character's name. interestingly enough if you have memory leak/framerate problem, doing this also seems to fix framerate problems as well. It did for me.
+</p></p>
+        </ul>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="534"></a>Patch filled Week ahead- Tuesday & Thursday</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/2/2003 9:45:58 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Two for the price of one. Lets hope we don't need patches to fix the patches. On a side note, anyone else having problems with memory leaks with only 1 of their characters? i play Lenardo and have to camp and restart the game every few hrs to fix framerate issues, but if i play my cleric i can play for 6hrs and have it be smooth as glass the entire time.
+</p>
+<p>
+On Tuesday, February 4th, at 3AM PST, (11AM GMT), all EverQuest servers will be brought down for a brief update. The estimated downtime is 2 hours.
+</p>
+<p>
+The EverQuest Operations Team 
+</p>
+<p>
+On Thursday, February 6th, at 3AM PST, (11AM GMT), all EverQuest servers will be brought down for a scheduled patch. The estimated downtime is 4 hours. 
+</p>
+<p>
+The EverQuest Operations Team
+</p>
+</p>
+        </ul>
+        
+        <p class="MB_Heading">Saturday, February 01, 2003</p>
+        
+        <p class="MB_Submit"><br>
+          <span class="MB_SubHead"><a name="533"></a>Armor Tinting</span> 
+          
+          <br>
+          Submitted by <a href="mailto:lenardo@monkly-business.com">Lenardo</a> on 2/1/2003 12:02:34 AM</p>
+        <ul>
+          <p class="MB_Body"><p>
+Finally up, interesting to say the least, Show of hands here,, how many monks are going for an all black or blueblack look? i know i am <a href='http://www.legacyofykesha.com/f_armordyes.jsp'> Armor Tinting</a>
+</p></p>
+        </ul>
+        
+      </ul>
+    </td>
+    <td align="left" valign="top" width="15%" bgcolor="#778899"> 
+      
+<link rel="stylesheet" href="style.css" type="text/css">
+<hr>
+<table width="100%" border="0" cellspacing="8" cellpadding="0">
+<tr><td>
+<span class="MB_Headlines">Latest News</span>
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#542">Star Wars: Galaxies - Dev Chat Reminder</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#541">PAtch day Fun: Feb. 6th</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#540">Star Wars: Galaxies - Info Overload Day</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#539">Soe: We meant to do that..about the affliction change</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#538">Oops They Did it Again, ie SoE broke something-Shaman</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#537">Legacy of Ykesha - Update- Guild Management</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#536">Feb 4th Patch Message</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#535">Everquest Crashing to Desktop after Character Select</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#534">Patch filled Week ahead- Tuesday & Thursday</a></span> 
+</td></tr>
+
+<tr><td>
+<span class="MB_HeadlineList"><a href="index2.asp#533">Armor Tinting</a></span> 
+</td></tr>
+
+  </table>
+  <hr>
+  <table width="100%" border="0" cellspacing="8" cellpadding="0">
+  <tr><td> 
+  <span class="MB_Headlines">Latest Articles</span>
+  </td></tr>
+  
+<tr><td>
+<span class="MB_HeadlineList"><a href="articles2.asp?ArticleNum=175">Crown of Deceit Guide by Punches of Fennin Ro</a></span> 
+</td></tr>
+  	
+<tr><td>
+<span class="MB_HeadlineList"><a href="articles2.asp?ArticleNum=174">10th Coldain Ring War Guide by Azathool - Part one</a></span> 
+</td></tr>
+  	
+<tr><td>
+<span class="MB_HeadlineList"><a href="articles2.asp?ArticleNum=173">10th Coldain Ring War Guide by Azathool - Part two</a></span> 
+</td></tr>
+  	
+<tr><td>
+<span class="MB_HeadlineList"><a href="articles2.asp?ArticleNum=172">10th Coldain Ring War Guide by Azathool - Part three</a></span> 
+</td></tr>
+  	
+<tr><td>
+<span class="MB_HeadlineList"><a href="articles2.asp?ArticleNum=171">Alternate Experience - Monk skills and abilities</a></span> 
+</td></tr>
+  	
+  </table>
+<hr>
+  
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

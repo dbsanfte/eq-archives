@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Monkly Business. Your Daily EQ Monk News site</title>
+<body BGCOLOR="#cccccc" LINK="#2f2f4f" VLINK="#2f2f4f" ALINK="#FF0000">
+</head>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#cccccc">
+<tr>
+<td>
+<p align=center><img src="http://www.btinternet.com/~wulf/pics/logo.gif" alt="Monkly Business"></p>
+</td>
+</tr>
+</table>
+<table cellpadding="5" cellspacing="0" border="0" bgcolor="#cccccc">
+<tr>
+<td width="15%" bgcolor="#778899" valign="top" align="left">
+<FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff">
+<p><a href="/index.asp">News</a></p>
+<p><a href="/archives/index.asp">News Archives</a></p>
+<p><a href="http://pub38.ezboard.com/bmonklybusiness43508">Message Boards</a></p>
+<p><a href="/chat/index.asp">Monk Chat</a></p>
+<p><a href="/zones/index.asp">Zone Guides</a></p>
+<p><a href="/skills/index.asp">Skill Guides</a></p>
+<p><a href="/quests/index.asp">Quest Guides</a></p>
+<p><a href="/equipment/index.asp">Monk Equipment</a></p>
+<p><a href="/editorials/index.asp">Editorials</a></p>
+<p><a href="/stories/index.asp">Stories</a></p>
+<p><a href="/rants/index.asp">Rants</a></p>
+<p><a href="/humour/index.asp">EQ Humour</a></p>
+<p><a href="/links/index.asp">Links</a></p>
+<p><a href="/credits/index.asp">Credits</a></p>
+<p><a href="/submit/index.asp">Submissions</a></p>
+
+</FONT>
+</td>
+<td valign="top" width="64%">
+<ul>
+
+
+<script language="JavaScript"  src="popup.js">
+</script>
+
+<br><br>
+<p><FONT size=5 face="Arial, Helvetica, sans-serif" color="#334455"><b><u>Monk Chat.</u></b></FONT><p><ul><FONT size=3 face="Arial, Helvetica, sans-serif" color="#8b1a1a">Welcome to the entry portal for the Monkly-Business Chat Room!</p><p>You can either log in by typing in a user name in the box below and clicking 'ENTER', or if you prefer, you can use an IRC client, connect to irc.inside3d.net and come into room #monkly-business.</p><p>If you want help setting up an IRC client, then try this site: <a href="http://www.irchelp.org/">IRCHelp</a> for advice.</p><br>
+<FORM NAME="UserInfo">
+<ul>Enter your Nickname:<br>
+<p><input TYPE=TEXT NAME="NICKNAME" SIZE=12></p>
+<p><INPUT TYPE="BUTTON" VALUE="ENTER" onClick="send()"></p>
+</FORM></FONT>
+
+</td>
+<td width="15%" bgcolor="#778899" valign="top" align="center">
+<FONT size=3 face="Arial, Helvetica, sans-serif" color="#ffffff">Server Status</FONT>
+
+<FONT size=2 face='Arial, Helvetica, sans-serif' color=#ffffff><hr>Server Status Currently Unavailable<hr></font>
+
+</FONT></td>
+</table>
+</html>

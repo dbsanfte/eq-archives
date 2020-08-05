@@ -1,0 +1,772 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.51 [en] (Win95; I) [Netscape]">
+<title>Neriak.com</title>
+<style TYPE="text/css">
+<!--
+a:hover { color: #FFAA00; text-decoration: none }
+a:link { color: #00AAFF; text-decoration: none }
+a:visited { color: #00AAFF; text-decoration: none }
+a:active { color: #00AAFF; text-decoration: none }
+-->
+</style>
+<script language="JavaScript">
+<!--
+function getDHTMLObj(docName, objName) {return eval(docName + theBrowser.DHTMLRange + '.' + objName + theBrowser.DHTMLStyleObj);}
+function getDHTMLObjTop(theObj) {return (theBrowser.code == "MSIE") ? theObj.pixelTop : theObj.top;}
+function getDHTMLImg(docName, objName, imgName) {
+	if (theBrowser.code == 'MSIE') {
+		return eval(docName + '.all.' + imgName);
+	} else {
+		return getDHTMLObj(docName, objName).document.images[imgName];
+	}
+}
+function simpleArray() {this.item = 0;}
+function imgStoreItem(theName, theSrc, w, h) {
+	this.name = theName;
+	this.src = theSrc;
+	this.obj = null;
+	this.w = w;
+	this.h = h;
+	if (theBrowser.canCache) {
+		if (theSrc) {
+			this.obj = new Image(w, h);
+			this.obj.src = theSrc;
+		}
+	}
+}
+function imgStoreObject() {
+	this.count = -1;
+	this.img = new imgStoreItem;
+	this.find = imgStoreFind;
+	this.add = imgStoreAdd;
+	this.getSrc = imgStoreGetSrc;
+	this.getTag = imgStoreGetTag;
+}
+function imgStoreFind(theName) {
+	var foundItem = -1;
+	for (var i = 0; i <= this.count; i++) {if (this.img[i].name == theName) {foundItem = i;break;}}
+	return foundItem;
+}
+function imgStoreAdd(theName, theSrc, width, height) {
+	var i = this.find(theName);
+	if (i == -1) {
+		this.img[++this.count] = new imgStoreItem(theName, theSrc, width, height);
+	} else {
+		with (this.img[i]) {
+			name = theName;
+			src = theSrc;
+			w = width;
+			h = height;
+			if (theBrowser.canCache) {
+				obj = new Image(w, h);
+				obj.src = src;
+			}
+		}
+	}
+}
+function imgStoreGetSrc(theName) {
+	var i = this.find(theName);
+	return (i == -1) ? '' : this.img[i].src;
+}
+function imgStoreGetTag(theName, iconID) {
+	var i = this.find(theName);
+	var Found = '';
+	if (i >= 0) {
+		with (this.img[i]) {
+			if (src != '') {
+				Found = '<img src=' + '"' + src +  '" width=' + w + ' height=' + h + ' border=0 align="top"';
+				Found += (iconID != '') ? ' name="' + iconID + '"' : '';
+			}
+		}
+		Found += '>';
+	}
+	return Found;
+}
+function MenuItem (id, type, text, url, status, nItem, pItem, parent) {
+	this.id = id;
+	this.type = type;
+	this.text = text;
+	this.url = url;
+	this.status = status;
+	this.target = "text";
+	this.onClickFunc = "";
+	this.nextItem = nItem;
+	this.prevItem = pItem;
+	this.FirstChild = -1;
+	this.parent = parent;
+	this.isopen = false;
+	this.isSelected = false;
+	this.draw = DrawItem;
+	this.PMIconName = getPMIconName;
+	this.docIconName = getDocIconName;
+	this.setImg = setImage;
+	this.setIsOpen = SetIsOpen;
+	this.setSelected = SetSelected;
+	this.mouseOver = mouseOver;
+	this.mouseOut = mouseOut;
+	var i = (imgStore) ? imgStore.find(type) : -1;
+	this.height = (i > -1) ? imgStore.img[i].h : 0;
+}
+function DrawItem (indentStr) {
+	var tmp = '="return parent.theMenu.entry[' + this.id + '].';
+	var iconTag = imgStore.getTag(this.PMIconName(), 'plusMinusIcon' + this.id);
+	var aLine = '<nobr>' + indentStr;
+	if (this.FirstChild != -1) {
+		var theUrl = 'parent.theMenu.toggle(' + this.id + ')';
+		if (theBrowser.canJSVoid) { theUrl = 'void(' + theUrl + ')'; }
+		aLine += '<A HREF="javascript:' + theUrl + ';" name="plusMinus' + this.id + '" ';
+		aLine += 'onMouseOver' + tmp + 'mouseOver(\'plusMinusIcon\');" ';
+		aLine += 'onMouseOut' + tmp + 'mouseOut(\'plusMinusIcon\');">' + iconTag + '</A>';
+	} else {
+		aLine += iconTag;
+	}
+	var imgName = this.docIconName();
+	var theEntry = imgStore.getTag(imgName, 'docIcon' + this.id) + this.text;
+	aLine += '<SPAN CLASS="' + ((this.FirstChild != -1) ? 'node' : 'leaf') + '">';
+	theUrl = (((this.url == '') && theBrowser.canJSVoid && theMenu.showAllAsLinks) || (theMenu.wizardInstalled)) ? 'javascript:void(0);' : ((this.url == '') ? '' : (this.url + '" TARGET="' + this.target));
+	if (theUrl != '') {
+		aLine += '<A HREF="' + theUrl + '" onClick="parent.theMenu.itemClicked(' + this.id + ');';
+		aLine += (this.onClickFunc != '') ? 'parent.' + this.onClickFunc + ';" ' : '" ';
+		aLine += 'onMouseOver' + tmp + 'mouseOver(\'docIcon\');" ';
+		aLine += 'onMouseOut' + tmp + 'mouseOut(\'docIcon\');">' + theEntry + '</A>';
+	} else {
+		aLine += theEntry;
+	}
+	aLine += '</SPAN></nobr><BR>';
+	return aLine
+}
+function getPMIconName() {
+	var iconName = 'icon' + ((this.FirstChild != -1) ? ((this.isopen == true) ? 'Minus' : 'Plus') : 'Join');
+	iconName += (this.id == 0) ? ((this.nextItem == -1) ? 'Only' : 'Top') : ((this.nextItem == -1) ? 'Bottom' : '');
+	return iconName;
+}
+function getDocIconName() {
+	var n = this.type;
+	n += ((this.isopen) && (imgStore.getSrc(n + 'Expanded') != '')) ? 'Expanded' : '';
+	n += ((this.isSelected) && (imgStore.getSrc(n + 'Selected') != '')) ? 'Selected' : '';
+	return n;
+}
+function setImage(imgID, imgName) {
+	var imgSrc = imgStore.getSrc(imgName);
+	if ((imgSrc != '') && (theBrowser.canCache) && (!theMenu.amBusy)) {
+		var img = (theBrowser.hasDHTML) ? getDHTMLImg('self.menu.document', 'entryDIV' + this.id, imgID) : self.menu.document.images[imgID];
+		if (img) {img.src = imgSrc;}
+	}
+}
+function SetIsOpen (isOpen) {
+	if (this.isopen != isOpen) {
+		this.isopen = isOpen;
+		this.setImg('plusMinusIcon' + this.id, this.PMIconName());
+		this.setImg('docIcon' + this.id, this.docIconName(false));
+		return true;
+	} else {return false;}
+}
+function SetSelected (isSelected) {
+	this.isSelected = isSelected;
+	this.setImg('docIcon' + this.id, this.docIconName(false));
+}
+function mouseOver(imgName) {
+	self.menu.status = '';  //Needed for setStatus to work on MSIE 3 - Go figure!?
+	var newImg = '';
+	if (imgName == 'plusMinusIcon') {
+		newImg = this.PMIconName();
+		setStatus('Click to ' + ((this.isopen == true) ? 'collapse.' : 'expand.'));
+	} else {
+		if (imgName == 'docIcon') {
+			newImg = this.docIconName();
+			setStatus(this.status);
+		}
+	}
+	if (theBrowser.canOnMouseOut) {this.setImg(imgName + this.id, newImg + 'MouseOver');}
+	return true;
+}
+function mouseOut(imgName) {
+	clearStatus();
+	var newImg = '';
+	if (imgName == 'plusMinusIcon') {
+		newImg = this.PMIconName();
+	} else {
+		if (imgName == 'docIcon') { newImg = this.docIconName(); }
+	}
+	this.setImg(imgName + this.id, newImg);
+	return true;
+}
+// The Menu object.  This is basically an array object although the data in it is a tree.
+function Menu () {
+	this.count = -1;
+	this.version = '2.2.1';
+	this.firstEntry = -1;
+	this.autoScrolling = false;
+	this.modalFolders = false;
+	this.linkOnExpand = false;
+	this.toggleOnLink = true;
+	this.showAllAsLinks = true;
+	this.savePage = true;
+	this.lastPMClicked = -1;
+	this.selectedEntry = -1;
+	this.wizardInstalled = false;
+	this.amBusy = true;
+	this.maxHeight = 0;
+	this.entry = new MenuItem;
+	this.getEmptyEntry = getEmptyEntry;
+	this.addMenu = AddMenu;
+	this.addChild = AddChild;
+	this.rmvEntry = rmvEntry;
+	this.rmvChildren = rmvChildren;
+	this.draw = MenuDraw;
+	this.drawALevel = DrawALevel;
+	this.refresh = refreshMenu;
+	this.reload = reloadMenu;
+	this.refreshDHTML = refreshMenuDHTML;
+	this.itemClicked = itemClicked;
+	this.setEntry = setEntry;
+	this.setEntryByURL = setEntryByURL;
+	this.setAllChildren = setAllChildren;
+	this.setAll = setAll;
+	this.openAll = openAll;
+	this.closeAll = closeAll;
+	this.findEntry = findEntry;
+	this.toggle = toggle;
+}
+function getEmptyEntry() {
+	for (var i = 0; i <= this.count; i++) {if (this.entry[i] == null) {break;}}
+	if (i > this.count) {this.count = i;}
+	return i
+}
+function AddMenu (addTo, type, text, url, status) {
+	var theNI = -1;
+	var theP = -1;
+	if (addTo == -1) {
+		for (var i = this.count; i >= 0; i--) {if (this.entry[i] != null) {break;}}
+		addTo = i;
+	}
+	var eNum = this.getEmptyEntry();
+	if (addTo != -1) {
+		var e = this.entry[addTo];
+		theNI = e.nextItem;
+		theP = e.parent;
+		e.nextItem = eNum;
+	}
+	this.entry[eNum] = new MenuItem(eNum, type, text, url, status, theNI, addTo, theP);
+	if (theNI > -1) {this.entry[theNI].prevItem = eNum;}
+	if (this.firstEntry == -1) {this.firstEntry = eNum;}
+	return eNum;
+}
+function AddChild (addTo, type, text, url, status) {
+	var eNum = -1;
+	if (this.count == -1) {
+		eNum = this.addMenu (addTo, type, text, url, status);
+	} else {
+		if (addTo < 0) {addTo = this.count;}
+		var childID = this.entry[addTo].FirstChild;
+		if (childID < 0) {
+			eNum = this.getEmptyEntry();
+			this.entry[eNum] = new MenuItem(eNum, type, text, url, status, -1, -1, addTo);	
+			this.entry[addTo].FirstChild = eNum;
+		} else {
+			while (this.entry[childID].nextItem != -1) {
+				childID = this.entry[childID].nextItem;
+			}
+			eNum = this.addMenu (childID, type, text, url, status)
+		}
+	}
+	return eNum;
+}
+function rmvEntry (theEntry) {
+	var e = this.entry[theEntry];
+	var p = e.prevItem;
+	var n = e.nextItem;
+	if (e.FirstChild == -1) {this.rmvChildren(theEntry);}
+	if (this.firstEntry == theEntry) {this.firstEntry = n}
+	if (p > -1) {this.entry[p].nextItem = n;}
+	if (n > -1) {this.entry[n].prevItem = p;}
+	this.entry[theEntry] = null;
+}
+function rmvChildren (theParent) {
+	var currEntry = this.entry[theParent].FirstChild;
+	var temp;
+	var e;
+	while (currEntry > -1) {
+		e = this.entry[currEntry];
+		if (e.FirstChild > -1) {this.rmvChildren(currEntry);}
+		temp = currEntry;
+		currEntry = e.nextItem;
+		this.entry[temp] = null;
+	}
+	this.entry[theParent].FirstChild = -1;
+}
+function MenuDraw() {
+	this.maxHeight = 0;
+	var toWrite = this.drawALevel(this.firstEntry, '', true);
+	if (theBrowser.hasDHTML == false) {
+		if ((this.lastPMClicked > 0) && theBrowser.mustMoveAfterLoad) {
+			setTimeout('self.menu.location.href = "' + self.menu.location.pathname + '#plusMinus' + this.lastPMClicked + '";', 100);
+		}
+	}
+	return toWrite;
+}
+function DrawALevel(firstItem, indentStr, isVisible) {
+	var currEntry = firstItem;
+	var tempStr = "";
+	var aLine = "";
+	var allLines = "";
+	var e = null;
+	while (currEntry > -1) {
+		e = this.entry[currEntry];
+		aLine = e.draw(indentStr);
+		if (theBrowser.hasDHTML) {
+			var divName = 'entryDIV' + currEntry;
+			var spanName = 'entrySPAN' + currEntry;
+			allLines += '<DIV ID="' + divName + '" CLASS="menuItem">' + aLine + '</DIV>\n';
+		} else { allLines += aLine; }
+		this.maxHeight += e.height;
+		if (e.FirstChild > -1) {
+			if (theBrowser.hasDHTML || (e.isopen && isVisible)) {
+				tempStr = (e.nextItem == -1) ? 'iconBlank' : 'iconLine';
+				allLines += this.drawALevel(e.FirstChild, indentStr + imgStore.getTag(tempStr, ''), (e.isopen && isVisible));
+			}
+		}
+		currEntry = e.nextItem;
+	}
+	return allLines;
+}
+function refreshMenu(positionMenu) {
+	if (theBrowser.hasDHTML) {
+		if (this.amBusy == false) {this.refreshDHTML(positionMenu);}
+	} else {
+		this.reload(positionMenu);
+	}
+}
+function reloadMenu(positionMenu) {
+	if (this.amBusy == false) {
+		this.amBusy = true;
+		if (theBrowser.hasDHTML) {
+			self.menu.location.reload();
+		} else {
+			var newLoc = self.menu.location.pathname;
+			if ((positionMenu) && (theBrowser.mustMoveAfterLoad == false)) {
+				newLoc += "#plusMinus" + this.lastPMClicked;
+			}
+			var rm = theBrowser.reloadMethod;
+			var l = self.menu.location;
+			if (rm == 'replace') {
+				l.replace(newLoc);
+			} else {
+				if (rm == 'reload') {
+					l.reload(false);
+				} else {
+					if (rm == 'timeout') {
+						setTimeout("self.menu.location.href ='" + newLoc + "');", 100);
+					} else {
+						l.href = newLoc;
+					}
+				}
+			}
+		}
+	}
+}
+function refreshMenuDHTML(positionMenu) {
+	var nextItemArray = new simpleArray;
+	var level = 1;
+	var currEntry = this.firstEntry;
+	var isVisible = true;
+	var lastVisibleLevel = 1;
+	var yPos = self.menu.menuStart;
+	var e = null;
+	var s = null;
+	while (level > 0) {
+		e = this.entry[currEntry];
+		s = getDHTMLObj('self.menu.document', 'entryDIV' + currEntry);
+		if (isVisible) {
+			s.top = yPos;
+			s.visibility = 'visible';
+			yPos += e.height;
+			lastVisibleLevel = level;
+		} else {
+			s.visibility = 'hidden';
+		}
+		if (e.FirstChild > -1) {
+			isVisible = (e.isopen == true) && isVisible;
+			nextItemArray[level++] = e.nextItem;
+			currEntry = e.FirstChild;
+		} else {
+			if (e.nextItem != -1) {
+				currEntry = e.nextItem;
+			} else {
+				while (level > 0) {
+					if (nextItemArray[--level] != -1) {
+						currEntry = nextItemArray[level];
+						isVisible = (lastVisibleLevel >= level);
+						break;
+					}
+				}
+			}
+		}
+	}
+	var pmc = (positionMenu) ? this.lastPMClicked : -1;
+	self.menu.setMenuHeight(yPos);
+	if (pmc >= 0) {
+		e = this.entry[pmc];
+		var srTop = getDHTMLObjTop(getDHTMLObj('self.menu.document', 'entryDIV' + pmc))
+		var srBot = (e.nextItem > 0) ? getDHTMLObjTop(getDHTMLObj('self.menu.document', 'entryDIV' + e.nextItem)) : yPos;
+		if (theBrowser.code == 'MSIE') {
+			var curTop = self.menu.document.body.scrollTop;
+			var curBot = curTop + self.menu.document.body.scrollHeight;
+		} else {
+			var curTop = self.menu.pageYOffset;
+			var curBot = curTop + self.menu.innerHeight;
+		}
+		if ((srBot > curBot) || (srTop < curTop)) {
+			var scrBy = srBot - curBot;
+			if (srTop < (curTop + scrBy)) {scrBy = srTop - curTop;}
+			self.menu.scrollBy(0, scrBy);
+		}
+	}
+}
+function itemClicked(entryNo) {
+	var e = this.entry[entryNo]
+	if ((e.url != '') && (e.url != 'javascript:void(0);')) {
+		if (this.selectedEntry >= 0) {this.entry[this.selectedEntry].setSelected(false);}
+		this.selectedEntry = entryNo;
+		if (entryNo >= 0) {e.setSelected(true);}
+	}
+	if (this.wizardInstalled) {
+		self.text.menuItemClicked(entryNo);
+	}
+	if ((this.toggleOnLink) && (e.FirstChild > -1)) {
+		if (theBrowser.hasDHTML) {
+			theMenu.toggle(entryNo);
+		} else {
+			setTimeout('theMenu.toggle(' + entryNo + ');', 100);
+		}
+	}
+}
+function setEntry(entryNo, state) {
+	var mc = false;
+	var cl = ',' + entryNo + ',';
+	var e = this.entry[entryNo];
+	this.lastPMClicked = entryNo;
+	mc |= e.setIsOpen(state);
+	var p = e.parent;
+	while (p >= 0) {
+		cl += p + ',';
+		e = this.entry[p];
+		mc |= (e.setIsOpen(true));
+		p = e.parent;
+	}
+	if (this.modalFolders) {
+		for (var i = 0; i <= this.count; i++) {
+			if (cl.indexOf(',' + i + ',') < 0) {
+				mc |= this.entry[i].setIsOpen(false);
+			}
+		}
+	}
+	return mc;
+}
+function setEntryByURL(theURL, state) {
+	var i = this.findEntry(theURL, 'URL');
+	if (i != -1) {
+		if (this.entry[i].parent != -1) {return this.setEntry(this.entry[i].parent, state);}
+	}
+}
+function setAllChildren(state, parentID) {
+	var hasChanged = false;
+	if (parentID > -1) {
+		var currEntry = theMenu.entry[parentID].FirstChild;
+	} else {
+		var currEntry = 0;
+	}
+	while (currEntry > -1) {
+		var e = this.entry[currEntry]
+		hasChanged |= e.setIsOpen(state);
+		if (e.FirstChild > -1) {
+			hasChanged |= this.setAllChildren(state, currEntry);
+		}
+		currEntry = e.nextItem;
+	}
+	return hasChanged;
+}
+function setAll(state, parentID) {
+    if (theBrowser.version >= 4) {
+    	if (parentID == 'undefined') {parentID = -1;}
+	} else {
+	    if (parentID == null) {parentID = -1;}
+	}
+	var hasChanged = false;
+	if (parentID > -1) {
+		hasChanged |= this.entry[parentID].setIsOpen(state);
+	}
+	hasChanged |= this.setAllChildren(state, parentID);
+	if (hasChanged) {this.lastPMClicked = this.firstEntry;this.refresh(true);}
+}
+function openAll() {this.setAll(true, -1);}
+function closeAll() {this.setAll(false, -1)}
+
+function findEntry(theStr, srchType) {
+	if (theBrowser.version >= 4) {
+	    if (srchType == 'undefined') {srchType = 'URL';}
+	} else {
+	    if (srchType == null) {srchType = 'URL';}
+	}
+	var res = -1;
+	var currVal;
+	for (var i = 0; i <= this.count; i++) {
+		currVal = (srchType.toUpperCase() == 'URL') ? this.entry[i].url : this.entry[i].text
+		if (currVal == theStr) {
+			res = i;
+			break;
+		}
+	}
+	return res;
+}
+function toggle(entryNo) {
+	var e = this.entry[entryNo];
+	var chg = this.setEntry(entryNo, e.isopen ^ 1);
+	if (this.linkOnExpand && e.isopen && (e.url != '')) {
+		if (myOpener != null) {
+			myOpener.text.location = e.url;
+		} else {
+			self.text.location = e.url;
+		}
+		this.itemClicked(entryNo);
+	}
+	if (chg) {this.refresh(this.autoScrolling && (this.lastPMClicked > 0));}
+}
+function browserInfo() {
+	this.code = 'unknown';
+	this.version = 0;
+	this.platform = 'Win';
+
+	var i = navigator.userAgent.indexOf('MSIE');
+	if (i >= 0) {
+		this.code = 'MSIE';
+		this.version = parseFloat(navigator.userAgent.substring(i+5, i+9));
+	} else {
+		i = navigator.userAgent.indexOf('Mozilla/');
+		if (i >= 0) {
+			this.code = 'NS';
+			this.version = parseFloat(navigator.userAgent.substring(i+8, i+12));
+		}
+	}
+	if (navigator.userAgent.indexOf('Mac') >= 0) {this.platform = 'Mac';}
+	if (navigator.userAgent.indexOf('OS/2') >= 0) {this.platform = 'OS/2';}
+	if (navigator.userAgent.indexOf('X11') >= 0) {this.platform = 'UNIX';}
+	
+	var c = this.code;
+	var v = this.version;
+	this.canCache = ((c == 'NS') && (v >= 3)) || ((c == 'MSIE') && (v >= 4));
+	this.canOnMouseOut = this.canCache;
+	this.canJSVoid = !(((c == 'NS') && (v < 3)) || ((c == 'MSIE') && (v < 4)));
+	this.mustMoveAfterLoad = this.canCache;
+	if ((c == 'NS') && (v >= 3)) {
+		this.reloadMethod = 'replace';
+	} else {
+		if ((c == 'MSIE') && (v >= 4)) {
+			this.reloadMethod = 'reload';
+		} else {
+			this.reloadMethod =  ((c == 'NS') && (v == 2.01) && (this.platform != 'Win')) ? 'timeout' : 'href';
+		}
+	}
+	this.hasDHTML = ((c == 'NS') && (v >= 4)) || ((c == 'MSIE') && (v >= 4));
+	this.DHTMLRange = (c == 'MSIE') ? '.all' : '';
+    this.DHTMLStyleObj = (c == 'MSIE') ? '.style' : '';
+	this.DHTMLDivHeight = (c == 'MSIE') ? '.offsetHeight' : '.clip.height';
+}
+function setStatus(theText) {
+	var theWindow = window;
+	if (getMode() == 'Floating') {theWindow = myOpener;}
+	if (theWindow) {
+		theWindow.status = theText;
+		if (theBrowser.canOnMouseOut == false) {
+			clearTimeout(statusTimeout);
+			statusTimeout = setTimeout('clearStatus()', 5000);}}
+	return true;
+}
+function clearStatus() {
+	var theWindow = window;
+	if (getMode() == 'Floating') {theWindow = myOpener;}
+	if (theWindow != null) {theWindow.status = '';}
+}
+function unloadFloating() {
+	if (myOpener != null) {
+		if (theBrowser.code == 'MSIE') {
+			myOpener.setTimeout('menuClosed();', 100);
+		} else {
+			myOpener.menuClosed();
+		}
+	}
+}
+function getMode() {
+	var cookieText = document.cookie;
+	var theResult = "Frames";
+	if (cookieText.length > 0) {
+		if (cookieText.indexOf("mode=Floating") >= 0) {
+			theResult = "Floating";
+		} else {
+			if (cookieText.indexOf("mode=NoFrames") >= 0) {
+				theResult = "NoFrames";
+			}
+		}
+	}
+	return theResult;
+}
+
+var theMenu = new Menu;
+var theBrowser = new browserInfo;
+var imgStore = new imgStoreObject;
+var statusTimeout = 0;
+var floatingMode = (getMode() == 'Floating');
+var myOpener = null;
+if (floatingMode == true) {
+	if (window.opener) {
+		myOpener = window.opener;
+		myOpener.setTimeout('setGlobals();', 100);
+	} else {
+		document.cookie = 'mode=Frames';
+		floatingMode = false;
+	}
+} else {
+	document.cookie = 'mode=Frames';
+}
+
+
+function initOutlineIcons() {
+	var ip = '';
+	
+	imgStore.add('iconPlusTop', ip + 'plus.gif', 13, 13);
+	imgStore.add('iconPlus', ip + 'plus.gif', 13, 13);
+	imgStore.add('iconPlusBottom', ip + 'plus.gif', 13, 13);
+	imgStore.add('iconPlusOnly', ip + 'plus.gif', 13, 13);
+	imgStore.add('iconMinusTop', ip + 'minus.gif', 13, 13);
+	imgStore.add('iconMinus', ip + 'minus.gif', 13, 13);
+	imgStore.add('iconMinusBottom', ip + 'minus.gif', 13, 13);
+	imgStore.add('iconMinusOnly', ip + 'minus.gif', 13, 13);
+	imgStore.add('iconLine', ip + 'blank.gif', 7, 13);
+	imgStore.add('iconBlank', ip + 'blank.gif', 7, 13);
+	imgStore.add('iconJoinTop', ip + 'join.gif', 7, 13);
+	imgStore.add('iconJoin', ip + 'join.gif', 7, 13);
+	imgStore.add('iconJoinBottom', ip + 'join.gif', 7, 13);
+
+	imgStore.add('Folder', ip + 'folderclosed.gif', 18, 16);
+	var di = ip + ((theBrowser.code == 'NS') ? 'document2.gif' : 'document.gif');
+    imgStore.add('Document', ip + 'join.gif', 1, 13);
+	imgStore.add('Blank', ip + 'blank.gif', 1, 16);
+}
+function initialise() {
+	theMenu.autoScrolling = true;	
+	theMenu.modalFolders = false;
+	theMenu.linkOnExpand = false;
+	theMenu.toggleOnLink = true;
+	theMenu.showAllAsLinks = true;
+	theMenu.savePage = true;
+	
+	initOutlineIcons();
+	
+	// Now set up the menu with a whole lot of addMenu and addChild function calls
+	var level1ID = -1;
+	var level2ID = -1;
+	var level3ID = -1;
+	var level4ID = -1;
+	var level5ID = -1;
+
+	level1ID = theMenu.addMenu(-1, "Blank", "<font face=Arial,Helvetica size=2><STRONG>Neriak.com News</STRONG></font>", "http://www.neriak.com/cgi-bin/cgiwrap/pazuzu/powernews.cgi", "Neriak.com News");
+	theMenu.entry[level1ID].isopen = true;
+	
+	level1ID = theMenu.addMenu(level1ID, "Blank", "<font face=Arial,Helvetica size=2><STRONG>Information</STRONG></font>", "", "Information");
+	level2ID = theMenu.addChild(level1ID, "Blank", "About Neriak.com", "about.html", "About Neriak.com");
+
+	level1ID = theMenu.addMenu(level1ID, "Blank", "<font face=Arial, Helvetica size=2><STRONG>Neriak Vendor Catalog</STRONG></font>", "", "Neriak Vendor Catalog");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Third Gate", "vendors_third_gate.html", "Third Gate");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Commons", "vendors_commons.html", "Commons");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Foreign Quarter", "vendors_foreign_quarter.html", "Foreign Quarter");
+
+	level1ID = theMenu.addMenu(level1ID, "Blank", "<font face=Arial, Helvetica size=2><STRONG>Lore &amp; History</STRONG></font>", "", "Lore &amp; History");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Origin of the Lights", "lore_neriak_lights.html", "Origin of the Lights");
+
+	level1ID = theMenu.addMenu(level1ID, "Blank", "<font face=Arial, Helvetica size=2><STRONG>Guides</STRONG></font>", "", "Guides");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Overview", "guide_over.html", "Guides Overview");
+	level2ID = theMenu.addChild(level1ID, "Blank", "RP Guides", "", "General RP Guides");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Dark Race RP", "dark_rp.html", "Dark Race RPing and Helping Others");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Forming Your Character", "roleplaying_forming_your_character.html", "A Guide on Forming Your Character");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Class Guides", "", " ");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Coming Soon", "comingsoon.html", "Coming Soon");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Coming Soon", "comingsoon.html", "Coming Soon");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Trade Guides", "", " ");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Coming Soon", "comingsoon.html", "Coming Soon");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Coming Soon", "comingsoon.html", "Coming Soon");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Travel Guides", "", " ");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Coming Soon", "comingsoon.html", "Coming Soon");
+	level3ID = theMenu.addChild(level2ID, "Blank", "Coming Soon", "comingsoon.html", "Coming Soon");
+
+	level1ID = theMenu.addMenu(level1ID, "Blank", "<font face=Arial, Helvetica size=2><STRONG>Links</STRONG></font>", "", "Other sites to visit");
+	level2ID = theMenu.addChild(level1ID, "Blank", "Guilds", "", "Guilds");
+    level3ID = theMenu.addChild(level2ID, "Blank", "Dalharen D`Oloth", "http://www.dalharen.com/", "Dalharen D`Oloth - Xegony - We are members. :)");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "Darkmoon", "http://www.graffe.com/darkmoon/", "Darkmoon - Xegony");
+	theMenu.entry[level3ID].target = "_blank";
+	level2ID = theMenu.addChild(level1ID, "Blank", "General EQ Sites", "", "General EQ Sites");
+    level3ID = theMenu.addChild(level2ID, "Blank", "EverQuest.COM", "http://www.everquest.com/", "EverQuest.COM - Official EQ Home");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "EQVault", "http://www.eqvault.com/", "EQVault - Best News Site");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "EQ Stratics", "http://eq.stratics.com/", "EQ Stratics - Great News/Reference Site");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "EQ'Lizer", "http://gameznet.com/eq/", "EQ'Lizer - Best Item/Quest/Spell Reference Online");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "AllaKhazam's", "http://everquest.gamestats.com/", "AllaKhazam's Mystical Realm - Quest Info, Guides, Etc");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "EverLore", "http://www.everlore.com/", "EverLore - Great Maps, and ability to discuss zones/MOBs.  Also great player guides.");
+	theMenu.entry[level3ID].target = "_blank";
+    level3ID = theMenu.addChild(level2ID, "Blank", "EQAtlas", "http://www.eqatlas.com/", "EQAtlas - Hands down best map site.  Hand drawn and extremely accurate.");
+	theMenu.entry[level3ID].target = "_blank";
+	level2ID = theMenu.addChild(level1ID, "Blank", "Specific Race/Class Sites", "", "Specific Race/Class Sites");
+    level3ID = theMenu.addChild(level2ID, "Blank", "EQClerics", "http://www.kmrcs.com/eqcleric/", "EQCleric - Best Cleric-specific site online.");
+	theMenu.entry[level3ID].target = "_blank";
+}
+
+
+window.defaultStatus = "";	
+//-->
+</script>
+<script LANGUAGE="JavaScript">
+<!--
+if (self.name == 'menu') {
+	self.location.href = "menu.html";
+} else {
+	initialise();
+
+	var thePage = 'http://www.neriak.com/cgi-bin/cgiwrap/pazuzu/powernews.cgi';
+	var theSearch = self.location.search;
+	if (theSearch != null && theSearch !='') {
+		if (theSearch.length > 1) {
+			thePage = theSearch.substring(1, theSearch.length);
+			theMenu.setEntryByURL(thePage, true);
+		}
+	}
+	
+	if (floatingMode) {
+		self.document.writeln('<frameset cols="100%" rows="*,48" onUnload="unloadFloating();">');
+		self.document.writeln('<frame name="menu" src="menu.html" scrolling="auto" marginwidth="0" marginheight="0" >');
+		self.document.writeln('<frame name="menuCntrl" src="menucntrl.html" scrolling="no" marginwidth="0" marginheight="0">');
+		self.document.writeln('</frameset>');
+	} else {
+		self.document.writeln('<frameset cols="180,*" rows="100%">');
+		self.document.writeln('<frame name="menu" src="menu.html" scrolling="auto" noresize border="no" marginwidth="0" marginheight="0" frameborder="0">');
+		self.document.writeln('<frameset cols="100%" rows="105,*">');
+		self.document.writeln('<frame name="title" src="title.html" scrolling="no" noresize border="no" marginwidth="0" marginheight="0" frameborder="0">');
+		self.document.writeln('<frame name="text" src="' + thePage + '" scrolling="auto" noresize border="no" marginwidth="0" marginheight="0" frameborder="0">');
+		self.document.writeln('</frameset>');
+		self.document.writeln('</frameset>');
+	}
+}
+//-->
+</script>
+<noscript>
+</head>
+<body text="#00AAFF" bgcolor="#390055" link="#00AAFF" vlink="#00AAFF" alink="#00AAFF">
+</body>
+</noscript>
+</html>
+
