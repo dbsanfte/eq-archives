@@ -1,0 +1,298 @@
+<html>
+
+<head>
+<title>LOA Discussion Center Forums</title>
+<meta name="copyright" content="This code is Copyright (C) 2000-01 Michael Anderson and Pierre Gorissen">
+
+<script language="JavaScript">
+<!-- hide from JavaScript-challenged browsers
+function openWindow(url) {
+  popupWin = window.open(url,'new_page','width=400,height=400')
+}
+function openWindow2(url) {
+  popupWin = window.open(url,'new_page','width=400,height=450')
+}
+function openWindow3(url) {
+  popupWin = window.open(url,'new_page','width=400,height=450,scrollbars=yes')
+}
+function openWindow4(url) {
+  popupWin = window.open(url,'new_page','width=400,height=525')
+}
+function openWindow5(url) {
+  popupWin = window.open(url,'new_page','width=450,height=525,scrollbars=yes,toolbars=yes,menubar=yes,resizable=yes')
+}
+// done hiding -->
+</script>
+<style type=text/css>
+<!--
+a:link    {color:red;text-decoration:underline}
+a:visited {color:maroon;text-decoration:underline}
+a:hover   {color:red;text-decoration:overline}
+input.radio {background: lightsteelblue; color:#000000}
+-->
+</style>
+</head>
+
+<body bgColor="white" background="loa_marble1.jpg" text="darkslateblue" link="red" aLink="red" vLink="red">
+<a name="top"></a><font face="Verdana, Arial, Helvetica">
+
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td valign="top" width="50%"><a href="default.asp"><img alt="LOA Discussion Center Forums" border="0" src="loa_logo_forums.gif"></a></td>
+    <td align="center" valign="top" width="50%">
+    <table border="0" cellPadding="2" cellSpacing="0">
+      <tr>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2"><b>LOA Discussion Center Forums</b></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="1">
+        <a href="http://www.lostorder.com"><acronym title="Homepage">Home</acronym></a>
+        |
+        <a href="pop_profile.asp?mode=Edit"><acronym title="Edit your personal profile...">Profile</acronym></a>
+        |
+        <a href="policy.asp"><acronym title="Register to post to our forum...">Register</acronym></a>
+        |
+        <a href="active.asp"><acronym title="See what topics have been active since your last visit...">Active Topics</acronym></a>
+        |
+        <a href="members.asp"><acronym title="Current members of these forums...">Members</acronym></a>
+        |
+        <a href="search.asp"><acronym title="Perform a search by keyword, date, and/or name...">Search</acronym></a>
+        |
+        <a href="faq.asp"><acronym title="Answers to Frequently Asked Questions...">FAQ</acronym></a>
+
+        </font></td>
+      </tr>
+
+      <form action="/forums/active.asp" method="post" id=form1 name=form1>
+      <INPUT type="hidden" name="Method_Type" value="login">
+      <tr>
+        <td align="center">
+        <table>
+          <tr>
+
+            <td><font face="Verdana, Arial, Helvetica" size="1"><b>Username:</b></font><br>
+            <INPUT type="text" name="Name" size="10" value=""></td>
+            <td><font face="Verdana, Arial, Helvetica" size="1"><b>Password:</b></font><br>
+            <INPUT type="password" name="Password" size="10" value=""></td>
+            <td valign="bottom">
+
+            <INPUT src=button_login.gif type="image" value="Login" id=submit1 name=submit1 border=0 hspace=4>
+
+            </td>
+	</tr>
+	<tr>
+	<td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+	<INPUT type="checkbox" name="SavePassWord" value="true" CHECKED><b> Save Password</b></font>
+	</td>
+
+          </tr>
+
+          <tr>
+            <td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+            <a href="JavaScript:openWindow('pop_pword.asp')">Forgot your Password?</a>
+
+           </font></td>
+         </tr>
+
+       </table>
+       </td>
+     </tr>
+     </form>
+
+   </table>
+   </td>
+ </tr>
+</table>
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="95%">
+  <tr>
+    <td>
+
+<script language="JavaScript">
+<!--
+function autoReload()	{ 	document.ReloadFrm.submit()		}
+function SetLastDate()	{	document.LastDateFrm.submit()	}
+function jumpTo(s)	{	if (s.selectedIndex != 0) top.location.href = s.options[s.selectedIndex].value;return 1;}
+// -->
+</script>
+<table width="100%" border="0">
+  <tr>
+    <td><form name="LastDateFrm" action="active.asp" method="post">
+    <font face="Verdana, Arial, Helvetica" size="2"><img src="icon_folder_open.gif" border=0>&nbsp;<a href="default.asp">All Forums</a><br><img src="icon_bar.gif" border=0><img src="icon_folder_open_topic.gif" border=0>&nbsp;Active Topics Since     <select name="ShowSinceDateTime" size="1" onchange="SetLastDate();">
+        <option value="LastVisit" SELECTED>&nbsp;Last Visit on 06/01/2002 22:46:45&nbsp;</option>
+        <option value="LastFifteen">&nbsp;Last 15 minutes</option>
+        <option value="LastThirty">&nbsp;Last 30 minutes</option>
+        <option value="LastFourtyFive">&nbsp;Last 45 minutes</option>
+        <option value="LastHour">&nbsp;Last Hour</option>
+        <option value="TwoHour">&nbsp;Last 2 Hours</option>
+        <option value="LastDay">&nbsp;Yesterday</option>
+        <option value="LastWeek">&nbsp;Last Week</option>
+        <option value="LastMonth">&nbsp;Last Month</option>
+     </select>
+   <input type="hidden" name="Cookie" value="2">   </font>
+   </form>
+   </td>
+   <td align="center">&nbsp;</td>
+   <td align="center">
+		<form name="ReloadFrm" action="active.asp" method="post">
+			<font face="Verdana, Arial, Helvetica" size="2"><br>
+				<select name="RefreshTime" size="1" onchange="autoReload();">
+					<option value="0" SELECTED>Don't reload automatically</option>
+					<option value="1">Reload page every minute</option>
+					<option value="5">Reload page every 5 minutes</option>
+					<option value="10">Reload page every 10 minutes</option>
+					<option value="15">Reload page every 15 minutes</option>
+				</select>
+				<input type="hidden" name="Cookie" value="1">
+				</font>
+			</form>
+		</td>
+	</tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" align="center">  <tr>
+	  <td bgcolor="black">
+		<table border="0" width="100%" cellspacing="1" cellpadding="4">
+			<tr>
+				<td align=center bgcolor="black" valign=center>
+			&nbsp;</td>
+	  <td align="center" bgcolor="black">
+		<b><font face="Verdana, Arial, Helvetica" size="2" color="white">Topic</font></b>
+	  </td>
+	  <td align="center" bgcolor="black">
+		<b><font face="Verdana, Arial, Helvetica" size="2" color="white">Author</font></b>
+	  </td>
+	  <td align="center" bgcolor="black">
+		<b><font face="Verdana, Arial, Helvetica" size="2" color="white">Replies</font></b>
+	  </td>
+	  <td align="center" bgcolor="black">
+		<b><font face="Verdana, Arial, Helvetica" size="2" color="white">Read</font></b>
+	  </td>
+	  <td align="center" bgcolor="black">
+		<b><font face="Verdana, Arial, Helvetica" size="2" color="white">Last Post</font></b>
+	  </td>
+	 </tr>
+	 <tr>
+		<td height="20" colspan="6" bgcolor="midnightblue" valign="center">
+			<a href="forum.asp?FORUM_ID=3"><font face="Verdana, Arial, Helvetica" size="2" color="white"><b>The Conclave - General Discussion - EQ</b></font>
+			</a>
+		</td>
+	 </tr>
+	 <tr>
+		<td bgcolor="ivory" align="center" valign="center"><a href="topic.asp?TOPIC_ID=3128"><img src="icon_folder_new.gif" alt="New Topic" border="0"></a>
+		</td>
+		<td bgcolor="ivory" valign="center">
+			<font face="Verdana, Arial, Helvetica" size="2"><a href="topic.asp?TOPIC_ID=3128">The state of Walterus in Charasis...</a>&nbsp;</font>
+		</td>
+		<td bgcolor="ivory" valign="center" align="center"> <font face="Verdana, Arial, Helvetica" size="2" color="midnightblue">Zlater</font></td>
+		<td bgcolor="ivory" valign="center" align="center"> <font face="Verdana, Arial, Helvetica" size="2" color="midnightblue">4</font></td>
+		<td bgcolor="ivory" valign="center" align="center"> <font face="Verdana, Arial, Helvetica" size="2" color="midnightblue">74</font></td>
+		<td bgcolor="ivory" valign=center align="center"nowrap><font face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><b>06/07/2002</b>&nbsp; 08:15:59<br>by: <a href="pop_profile.asp?mode=display&id=371">Fallanthas Woodhelven</a></font></td>
+	</tr>
+	 <tr>
+		<td bgcolor="ivory" align="center" valign="center"><a href="topic.asp?TOPIC_ID=3156"><img src="icon_folder_new.gif" alt="New Topic" border="0"></a>
+		</td>
+		<td bgcolor="ivory" valign="center">
+			<font face="Verdana, Arial, Helvetica" size="2"><a href="topic.asp?TOPIC_ID=3156">This is what happends when I get left some where.</a>&nbsp;</font>
+		</td>
+		<td bgcolor="ivory" valign="center" align="center"> <font face="Verdana, Arial, Helvetica" size="2" color="midnightblue">zerocool2024</font></td>
+		<td bgcolor="ivory" valign="center" align="center"> <font face="Verdana, Arial, Helvetica" size="2" color="midnightblue">0</font></td>
+		<td bgcolor="ivory" valign="center" align="center"> <font face="Verdana, Arial, Helvetica" size="2" color="midnightblue">15</font></td>
+		<td bgcolor="ivory" valign=center align="center"nowrap><font face="Verdana, Arial, Helvetica" size="1" color="midnightblue"><b>06/05/2002</b>&nbsp; 16:50:12<br>by: <a href="pop_profile.asp?mode=display&id=506">zerocool2024</a></font></td>
+	</tr>
+		</tr>
+	</table>
+	</td>
+	</tr>
+</table>
+<table width=100% border=0 align=center>
+	<tr>
+		<td align=right>
+<!-- START JUMP TO -->
+    <form name="Stuff">		<font face="Verdana, Arial, Helvetica" size="2"><b>Jump To:</b></font>
+	    <select name="SelectMenu" size="1" onchange="jumpTo(this)">
+		    <option value="./">Select Forum</option>
+      <option value='default.asp'>Gateway of Akalabeth - General</option>
+      <option value='forum.asp?FORUM_ID=18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Say What?!" - Off Topic Discussions from RL</option>
+      <option value='forum.asp?FORUM_ID=62'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Lost Order of Akalabeth - General</option>
+      <option value='forum.asp?FORUM_ID=15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New and Upcoming Virtual Worlds - General</option>
+      <option value='forum.asp?FORUM_ID=43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots/Images from all our Chapters</option>
+      <option value='default.asp'>Neverwinter Nights Forums</option>
+      <option value='forum.asp?FORUM_ID=61'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NWN Dungeon Master - Registered Users</option>
+      <option value='forum.asp?FORUM_ID=60'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NWN General Discussion - Public Access</option>
+      <option value='default.asp'>EverQuest Chapter Forums</option>
+      <option value='forum.asp?FORUM_ID=3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Conclave - General Discussion - EQ</option>
+      <option value='forum.asp?FORUM_ID=2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trade Skill and Service Request Discussions - EQ</option>
+      <option value='default.asp'>EverQuest - Veeshan Alliance Forums</option>
+      <option value='forum.asp?FORUM_ID=55'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Veeshan Alliance (Diplomacy Forum)</option>
+      <option value='forum.asp?FORUM_ID=54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Veeshan Alliance (Epic Forum)</option>
+      <option value='forum.asp?FORUM_ID=53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Veeshan Alliance (Raid Forum)</option>
+      <option value='forum.asp?FORUM_ID=52'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Veeshan Alliance (General Discussion)</option>
+      <option value='default.asp'>Asherons Call Chapter Forums</option>
+      <option value='forum.asp?FORUM_ID=7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Journal - General Discussions - AC</option>
+      <option value='default.asp'>Dark Age of Camelot Forums</option>
+      <option value='forum.asp?FORUM_ID=21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Haven - Albion & General Discussion - DAoC</option>
+      <option value='default.asp'>Shadowbane Chapter Forums</option>
+      <option value='forum.asp?FORUM_ID=6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White Lion Tavern - General Discussion - SB</option>
+		<option value="">&nbsp;--------------------</option>
+		<option value="http://www.lostorder.com">Home</option>
+		<option value="active.asp">Active Topics</option>
+		<option value="faq.asp">Frequently Asked Questions</option>
+		<option value="members.asp">Member Information</option>
+		<option value="search.asp">Search Page</option>
+	</select>
+</form>
+<!-- END JUMP TO -->
+		</td>
+	</tr>
+</table>
+
+<SCRIPT>
+<!--
+if (document.ReloadFrm.RefreshTime.options[document.ReloadFrm.RefreshTime.selectedIndex].value > 0) {
+	reloadTime = 60000 * document.ReloadFrm.RefreshTime.options[document.ReloadFrm.RefreshTime.selectedIndex].value
+	self.setInterval('autoReload()', 60000 * document.ReloadFrm.RefreshTime.options[document.ReloadFrm.RefreshTime.selectedIndex].value)
+}
+//-->
+</SCRIPT>
+
+
+<table width=100% border=0 bgcolor="white" background="loa_marble1.jpg" cellpadding="0" cellspacing = "4"> 
+  <tr bgcolor="white" background="loa_marble1.jpg">
+    <td bgcolor="white" background="loa_marble1.jpg">
+    <table border=0 width="100%" align="center" cellpadding="4" cellspacing="0">
+      <tr>
+        <td bgcolor="ivory" align=left valign=top nowrap><font face="Verdana, Arial, Helvetica" size="1">
+        <p align=left>LOA Discussion Center Forums</p>
+        </font></td>
+        <td bgcolor="ivory" align=right valign=top nowrap><font face="Verdana, Arial, Helvetica" size="1">
+        <p align=right>© 2000-01 Snitz Communications</p>
+        </font></td>
+        <td bgcolor="ivory" width=10 nowrap><a href="#top"><img src="icon_go_up.gif" height=15 width=15 border="0" align="right" alt="Go To Top Of Page"></a></font></td>    
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<table border=0 width="100%" align="center" cellpadding="4" cellspacing="0">
+  <tr>
+    <td align="right"><font face="Verdana, Arial, Helvetica" size="1">
+    <a href="http://forum.snitz.com"><acronym title="Powered By: Snitz Forums 2000 Version 3.3.03">Snitz Forums 2000</acronym></a>
+
+    </font></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+
+</font>
+</body>
+<!-- timer
+<center>
+<font face="Verdana, Arial, Helvetica" size="1">82007.25</font>
+</center>
+end timer -->
+</html>
+
+
+

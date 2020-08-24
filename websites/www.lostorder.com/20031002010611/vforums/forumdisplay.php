@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head><title>LOA Forums</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.0 Beta 5" />
+<meta name="keywords" content="guild,LOA,akalabeth,community,RPG,roleplaying,ultima,daoc,shadowbane,everquest,asherons,swg,star wars,vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+<meta name="description" content="This is a discussion forum for the Lost Order of Akalabeth - an online roleplaying guild involved in several MMORPGs." />
+
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Avatar' (styleid: 2) */
+body {
+	background: #E8D9BC;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+body a:link {
+	color: #5B441D;
+	text-decoration: underline;
+}
+body a:visited {
+	color: #261B0C;
+	text-decoration: underline;
+}
+body a:hover, body a:active {
+	color: #BC7B18;
+	text-decoration: underline;
+}
+.page {
+	background: #E5CEA7;
+}
+.tborder {
+	background: #AA8038;
+}
+.tcat {
+	background: #685534;
+	color: #D38E17;
+	font-size: 10pt;
+}
+.tcat a:link {
+	color: #D38E17;
+	text-decoration: none;
+}
+.tcat a:visited {
+	color: #D38E17;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active {
+	color: #FFAB1C;
+	text-decoration: underline;
+}
+.thead {
+	background: #D6B17A;
+	color: #5B441D;
+	font-size: 10px;
+	font-weight: bold;
+}
+.thead a:link {
+	color: #5B441D;
+}
+.thead a:visited {
+	color: #5B441D;
+}
+.thead a:hover, .thead a:active {
+	color: #FFAB1C;
+}
+.tfoot {
+	background: #D6B17A;
+	color: #5B441D;
+}
+.tfoot a:link {
+	color: #5B441D;
+}
+.tfoot a:visited {
+	color: #5B441D;
+}
+.tfoot a:hover, .tfoot a:active {
+	color: #FFAB1C;
+}
+.alt1, .alt1Active {
+	background: #E8D9BC;
+}
+.alt2, .alt2Active {
+	background: #E5D0B0;
+}
+td, th, p, li {
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput {
+	background: #E5D1B9;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button {
+	background: #E5D1B9;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select {
+	background: #E5D1B9;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont {
+	font: 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time {
+	color: #666686;
+}
+.navbar {
+	font-weight: bold;
+}
+.highlight {
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjdpth0 {
+	background: #E5D1B9;
+	color: #000000;
+}
+label {
+cursor: default;
+}
+
+.quotebox {
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 10px;
+margin-bottom: 10px;
+padding: 5px;
+background-color: #8888AA;
+color: #000000;
+border-width: 1px 1px 1px 1px;
+border-color: black;
+border-style: solid;
+}
+
+.userinfo_chapter {
+color: #708446;
+}
+
+.userinfo_rank {
+color: #E07A55;
+}
+-->
+</style>
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=3130a391b623beecb951419ba3de3c9a&amp;";
+
+
+// -->
+</script>
+<script type="text/javascript" src="clientscript/generic.js"></script>
+
+</head>
+<body>
+<!-- logo and buttons -->
+<a name="top"></a>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tr valign="bottom">
+	<td align="left"><a href="index.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/avatar_forum_logo.png" border="0" alt="LOA Forums" /></a></td>
+	<td align="right">
+	
+	
+	<a href="register.php?s=3130a391b623beecb951419ba3de3c9a&amp;do=signup"><img src="images/top_register.gif" alt="top_register.gif" title="Registration is free!" border="0" vspace="8" /></a>
+	<a href="calendar.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/top_calendar.gif" alt="top_calendar.gif" title="Calendar" border="0" vspace="8" /></a>
+	<a href="memberlist.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/top_members.gif" alt="top_members.gif" title="Find other members" border="0" vspace="8" /></a>
+	<a href="faq.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/top_faq.gif" alt="top_faq.gif" title="Frequently Asked Questions" border="0" vspace="8" /></a>
+	<a href="search.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/top_search.gif" alt="top_search.gif" title="Search" border="0" vspace="8" /></a>
+	<a href="index.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/top_home.gif" alt="top_home.gif" title="Home" border="0" vspace="8" /></a>
+	&nbsp; &nbsp;
+	
+	</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table width="100%" cellpadding="10" cellspacing="0" border="0" align="center" class="page">
+<tr>
+  <td>
+
+<br />
+
+<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+<input type="hidden" name="s" value="3130a391b623beecb951419ba3de3c9a" />
+<input type="hidden" name="do" value="login" />
+<input type="hidden" name="forceredirect" value="1" />
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr valign="middle">
+	<td class="alt2"><a href="index.php?s=3130a391b623beecb951419ba3de3c9a&amp;"><img src="images/vb_bullet.gif" alt="vb_bullet.gif" title="LOA Forums: Powered by vBulletin version 3.0.0 Beta 5" border="0" /></a></td>
+	<td class="alt1" width="100%"><span class="navbar">
+		
+			<a href="index.php?s=3130a391b623beecb951419ba3de3c9a&amp;">LOA Forums</a> &gt;
+
+vBulletin Message
+
+				
+	</span></td>
+	
+		<td class="alt2" nowrap="nowrap"><span class="smallfont">
+			<script type="text/javascript" src="clientscript/md5.js"></script>
+			<input type="text" class="button" name="vb_login_username" size="10" accesskey="u" tabindex="1" />
+			<input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" />
+			<input type="hidden" name="vb_login_md5password" />
+			<input type="submit" class="button" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" tabindex="4" />
+			<br /><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser_navbar" accesskey="c" tabindex="3" checked="checked" />Remember username/password?</label>
+		</span></td>
+	
+</tr>
+</table>
+</td></tr></table>
+</form>
+
+&nbsp;</td></tr></table>
+
+<table width="100%" height="50%" cellpadding="0" cellspacing="0" border="0" class="page" align="center">
+<tr>
+	<td>
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="70%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="thead" width="100%"><img src="images/vb_bullet.gif" alt="vb_bullet.gif" title="vBulletin" align="absmiddle"  border="0" /> <b>vBulletin Message</b></td>
+</tr>
+<tr>
+	<td class="alt1" width="100%">
+	<p>&nbsp;</p><blockquote>
+	No Forum specified. If you followed a valid link, please notify the <a href="mailto:brimstone@lostorder.com">webmaster</a>
+	</blockquote><p>&nbsp;</p>
+	</td>
+</tr>
+</table>
+</td></tr></table>
+
+<p align="center"><table cellpadding="0" cellspacing="0" border="0">
+<tr><td nowrap="nowrap">
+	<form action="forumdisplay.php" method="get" style="display:inline;">
+	<span class="smallfont">
+	<input type="hidden" name="s" value="3130a391b623beecb951419ba3de3c9a" />
+	<input type="hidden" name="daysprune" value="" />
+	<b>Forum Jump:</b>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="-1" selected="selected">Please select one:</option>
+			<option value="cp" >User Control Panel</option>
+			<option value="pm" >Private Messages</option>
+			<option value="subs" >Subscriptions</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forums">
+		<option value="1" class="fjdpth0" > LOA General Forums</option><option value="2" class="fjdpth1" >&nbsp; &nbsp;  Say What!?!?</option><option value="7" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Creative Expression</option><option value="6" class="fjdpth1" >&nbsp; &nbsp;  Other Gaming Topics</option><option value="24" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  WOW: The Great Beyond</option><option value="8" class="fjdpth1" >&nbsp; &nbsp;  Membership and Recruiting</option><option value="3" class="fjdpth0" > LOA Official Chapters</option><option value="18" class="fjdpth1" >&nbsp; &nbsp;  EQ: The Conclave</option><option value="9" class="fjdpth1" >&nbsp; &nbsp;  DAOC: The Frontier</option><option value="20" class="fjdpth1" >&nbsp; &nbsp;  SWG: The Cantina</option><option value="15" class="fjdpth0" > LOA Unofficial Chapters</option><option value="26" class="fjdpth1" >&nbsp; &nbsp;  AC: The Journal</option><option value="22" class="fjdpth1" >&nbsp; &nbsp;  SB: White Lion Tavern</option>
+		</optgroup>
+	</select><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  /></span>
+	</form>
+</td></tr>
+</table></p>
+
+	</td>
+</tr>
+</table>
+
+
+<table class="page" width="100%" cellpadding="10" cellspacing="0" border="0" align="center">
+<tr>
+  <td>
+
+</td>
+</tr>
+</table>
+
+<!-- /content area table -->
+
+
+
+<p align="center">
+
+  <b>&lt; <a href="sendmessage.php">Contact Us</a> - <a href="http://www.lostorder.com">Lost Order of Akalabeth</a> - <a href="archive/index.php/">Archive</a>
+<!-- - <a href="">Privacy Statement</a> --> &gt;</b><br />
+
+<span class="smallfont"><a href="#top">Return to Top</a></span></p>
+
+
+
+<p align="center"><span class="smallfont">
+
+<!-- Do not remove this copyright notice -->
+
+  Powered by: vBulletin Version 3.0.0 Beta 5<br />Copyright &copy;2000 - 2003, Jelsoft Enterprises Ltd.<br />
+
+<!-- Do not remove this copyright notice -->
+
+2003-2004 All Rights Reserved
+
+</span></p>
+
+
+</body>
+</html>

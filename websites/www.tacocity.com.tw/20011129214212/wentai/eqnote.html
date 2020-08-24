@@ -1,0 +1,311 @@
+
+<SCRIPT><!--
+msgWindow=window.open('http://ad2.taconet.com.tw/server/popin/index.php?adino=180','dctwpopin','scrollbars=no,resizable=no,menubar=no,toolbar=no,location=no,status=no,width=220,height=280');
+//--></SCRIPT><html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>EQNOTE</title>
+</head>
+
+<body background="background.jpg" bgcolor="#FAFAD2"
+text="#3034D0" link="#683498" vlink="#68FF30" alink="#FF6500"
+bgproperties="fixed">
+
+<h1 align="center">我的EQ日記</h1>
+
+<hr>
+<div align="center"><center>
+
+<table border="0" cellpadding="2" cellspacing="0" width="550">
+    <tr>
+        <td><p align="center">撰寫：阿泰(WenTai) </p>
+        </td>
+    </tr>
+</table>
+</center></div><script>
+
+<!--  Activate Cloaking Device
+
+
+
+// used to track position in message
+
+   var i = 0; 
+
+// used to cycle thru messages                                          
+
+   var TextNumber = -1;
+
+// array of messages                        
+
+   var TextInput = new Object();
+
+// used to load manipulate message          
+
+   var HelpText="";                              
+
+// used to load message
+
+   var Text = "";  
+
+// length of timeout (smaller is faster)                                  
+
+   var Speed=0;
+
+// used to display message number
+
+   var message=1;
+
+// used to position text in ver 2.0
+
+   var addPadding="\r\n";
+
+// 換行指令為 \r
+
+// 訊息區.
+TextInput[1] ="9/16:\r1.今天去位於 Wcomm 的地下城 BF (Befallen)探險.遇到好心的其他冒險的玩家, 帶我去拿了二把鑰匙,可以用來開地下第一層的房門.這地下城蠻多的召喚師NPC, 我覺得魔法師來這裡好像比較好一些(有個戰士型的同伴是最好的), 因為可以用來對付召喚師NPC.\r2.在淩晨終於有人發現 Dunedigger 了!!! (可惜沒有人發現 Rahotep 的蹤影)正當我要衝過去時...已經有人幹掉 Dunedigger 了...\rPS:Dunedigger 可得相當好的盾(CLR可用), Rahotep 可得相當好的 1H Blunt 的武器說.."
+
+TextInput[0] ="10/26:\r1.死了二次在HighKeep.死Train.\r2.死了一次在MM.又是Train.\r總計今天損失1.5 bubble exps....."
+
+
+
+
+
+TotalTextInput = 1
+ // (0, 1, 2, 3, 4, 5, 6, 7)
+
+
+
+// Positioning and speed vary between versions.
+
+var Version =  navigator.appVersion;  
+
+if (Version.substring(0, 1)==3)
+
+   {
+
+   Speed=10;
+
+   addPadding="";
+
+   }
+
+
+
+for (var addPause = 0; addPause <= TotalTextInput; addPause++) 
+
+   {TextInput[addPause]=addPadding+TextInput[addPause];}
+
+
+
+var TimerId
+
+var TimerSet=false;
+
+
+
+// Called by >>> button (display next message) .
+
+function nextMessage()  
+
+   {
+
+   if (!TimerSet)
+
+      {
+
+      TimerSet=true;
+
+      clearTimeout (TimerId);
+
+      if (TextNumber>=TotalTextInput)
+
+         { 
+
+         alert("這是最舊的訊息了~");
+
+         TimerSet=false;
+
+         }
+
+      else
+
+         {
+
+         TextNumber+=1;
+
+         message=TextNumber+1;
+
+         document.forms[0].elements[2].value= message;
+
+         Text = TextInput[TextNumber];
+
+         HelpText = Text;
+
+         }
+
+      teletype();
+
+      }
+
+   }
+
+
+
+// Gets and displays character from rollMessage() . 
+
+// Variable Speed controls length of timeout and thus the speed of typing.
+
+function teletype() 
+
+   {
+
+   if (TimerSet)
+
+      {
+
+      Text=rollMessage();
+
+      TimerId = setTimeout("teletype()", Speed);
+
+      document.forms[0].elements[0].value=Text;
+
+      }
+
+   }
+
+
+
+// Pulls one character at a time from string and returns (as Text) to function teletype() for displaying.
+
+function rollMessage () 
+
+   {
+
+   i++;
+
+   var CheckSpace = HelpText.substring(i-1, i);
+
+   CheckSpace = "" + CheckSpace;
+
+   if (CheckSpace == " ") 
+
+      {i++;}
+
+   if (i >= HelpText.length+1) 
+
+      {
+
+      TimerSet=false;
+
+      Text = HelpText.substring(0, i);
+
+      i=0; 
+
+      return (Text);
+
+      }
+
+   Text = HelpText.substring(0, i);
+
+   return (Text);
+
+   }
+
+
+
+// Initially called by onLoad in BODY tag to load title. 
+
+function initTeleType() 
+
+   {
+
+   Text="\r\n           請按下面按鈕可看訊息";
+
+   document.forms[0].elements[0].value=Text;
+
+   }
+
+
+
+// Called by <<< button (get previous message).
+
+function lastMessage() 
+
+   {
+
+   if (!TimerSet && TextNumber!=-1)
+
+      {
+
+      TimerSet=true;
+
+      clearTimeout (TimerId);
+
+      if (TextNumber<=0)
+
+         { 
+
+         alert("這是最新的訊息了~");
+
+         TimerSet=false;
+
+         }
+
+      else 
+
+         {
+
+         TextNumber-=1;
+
+         message=TextNumber+1;
+
+         document.forms[0].elements[2].value= message;
+
+         Text = TextInput[TextNumber];
+
+         HelpText = Text;
+
+         } 
+
+      teletype();  
+
+      }
+
+   }
+
+
+
+// Deactivate Cloaking -->
+
+</script>
+
+<p align="center"><br>
+</p>
+
+<form>
+    <p align="center"><textarea name="teletype" rows="10"
+    cols="70" wrap="yes"></textarea> <br>
+    <br>
+    </p>
+    <div align="center"><center><table border="0" width="250">
+        <tr>
+            <td align="center"><input type="button"
+            value="回顧訊息" onclick="lastMessage()"> </td>
+            <td align="center"><input type="text" size="3"> </td>
+            <td align="center"><input type="button"
+            value="瀏覽訊息" onclick="nextMessage()"> </td>
+        </tr>
+    </table>
+    </center></div>
+</form>
+
+<hr>
+
+<p align="center">E-mail: <a
+href="mailto:wentaiz@my.netvigator.com.tw"></a> <br>
+我的ICQ: 5462011 </p>
+</body>
+</html>

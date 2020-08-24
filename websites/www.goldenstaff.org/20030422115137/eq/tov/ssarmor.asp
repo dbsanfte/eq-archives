@@ -1,0 +1,1221 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>The Order of the Goldenstaff</title>
+<link rel="stylesheet" type="text/css" href="../../main.css" />
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="162"><img border="0" src="../../images/ogs_logo.jpg" /></td>
+    <td align="center"><img border="0" src="../images/eq.gif" align="center" /></td>
+    <td align="right"><font class="time">Tuesday, April 22, 2003</font>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" width="162">
+    <a class="navLink" target="_parent" href="../../">Home</a><br><br>
+<font class="nav">EVERQUEST</font><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_parent" href="../default.asp">News</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_parent" href="../skills.asp">Guide to Skills</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_parent" href="../epic/epic.htm">Epic Chart</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_blank" href="../../bb">EQ 
+Message Board</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_parent" href="../roster1.htm">Roster</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_parent" href="../recruitment.asp">Recruitment</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_parent" href="../raidguide.asp">Raid Rules</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" target="_blank" href="loot/ToVQuestArmor.htm">ToV Loot Chart</a><br>
+&nbsp;&nbsp; <a class="navlink" target="_parent" href="lootrules.asp">ToV Loot Rules</a><br><br><br>
+<font class="nav">Games</font><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" href="../../nwn">NWN</a></font><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" href="../../fw">Forgotten World</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" href="../../daoc">DAoC</a><br><br>
+<font class="nav">Other</font><br>
+<!-- &nbsp;&nbsp;&nbsp;<a class="navlink" href="../../admin/">Login</a><br> -->
+&nbsp;&nbsp;&nbsp;<a class="navlink" href="../../charter.asp">Charter</a><br>
+&nbsp;&nbsp;&nbsp;<a class="navlink" href="../../oath.asp">Oath</a><br>
+&nbsp;&nbsp;&nbsp;History<br>
+&nbsp;&nbsp;&nbsp;Links<br>&nbsp;</td>
+    <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="80%" id="AutoNumber1">
+      <tr>
+        <td width="100%" align="center"><font class="cap">W</font>elcome to the
+        <font class="cap">O</font>rder of the <font class="cap">G</font>oldenstaff&#39;s 
+        EverQuest web site.&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="100%">
+        <table border="1" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+<td colspan="17" class="nav">Cleric - Akkirus&#39; Armor of the Risen</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Helm</td><td>22</td><td>3</td><td>2</td><td>.</td><td.</td><td>6</td><td>.</td><td>.</td><td>.</td><td>4</td><td>3</td><td>.</td><td>3</td><td>30</td><td>35</td><td>&nbsp;</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Breast</td><td>50</td><td>.</td><td>9</td><td>5</td><td>.</td><td>15</td><td>.</td><td>.</td><td>8</td><td>8</td><td>9</td><td>8</td><td>8</td><td>50</td><td>90</td><td>Mark of Karn</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>25</td><td>.</td><td>3</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>35</td><td>20</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Bracer</td><td>19</td><td>2</td><td>5</td><td>.</td><td>.</td><td>6</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>5</td><td>35</td><td>20</td><td>Unlimited Food</td>
+          </tr>
+          <tr>
+<td>Bracer</td><td>19</td><td>2</td><td>5</td><td>.</td><td>.</td><td>6</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>5</td><td>35</td><td>20</td><td>Unlimited Food</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>19</td><td>.</td><td>.</td><td>.</td><td>3</td><td>3</td><td>.</td><td>7</td><td>.</td><td>5</td><td>3</td><td>.</td><td>.</td><td>.</td><td>40</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>31</td><td>.</td><td>5</td><td>.</td><td>.</td><td>10</td><td>.</td><td>.</td><td>1</td><td>1</td><td>5</td><td>1</td><td>1</td><td>80</td><td>70</td><td>Word of Health</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>24</td><td>3</td><td>6</td><td>.</td><td>.</td><td>.</td><td>.</td><td>2</td><td>.</td><td>2</td><td>.</td><td>2</td><td>2</td><td>20</td><td>20</td><td>Abundant Drink</td>
+          </tr>
+          <tr>
+<td>Total</td><td>209</td><td>10</td><td>35</td><td>5</td><td>3</td><td>51</td><td>0</td><td>9</td><td>10</td><td>21</td><td>21</td><td>12</td><td>25</td><td>285</td><td>315</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Druid - Woven Grass Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>8</td><td>3</td><td>.</td><td>.</td><td>3</td><td>10</td><td>.</td><td>.</td><td>.</td><td>5</td><td>3</td><td>.</td><td>3</td><td>.</td><td>15</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>20</td><td>5</td><td>7</td><td>.</td><td>.</td><td>14</td><td>.</td><td>.</td><td>9</td><td>9</td><td>.</td><td>9</td><td>.</td><td>50</td><td>80</td><td>Regrowth of the Grove</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>7</td><td>.</td><td>2</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>30</td><td>30</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>7</td><td>.</td><td>.</td><td>.</td><td>.</td><td>9</td><td>.</td><td>.</td><td>4</td><td>4</td><td>.</td><td>.</td><td>4</td><td>30</td><td>30</td><td>Drones of Doom</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>7</td><td>.</td><td>.</td><td>.</td><td>.</td><td>9</td><td>.</td><td>.</td><td>4</td><td>4</td><td>.</td><td>.</td><td>4</td><td>30</td><td>30</td><td>Drones of Doom</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>8</td><td>.</td><td>2</td><td>.</td><td>2</td><td>3</td><td>.</td><td>.</td><td>.</td><td>5</td><td>5</td><td>.</td><td>.</td><td>.</td><td>45</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>9</td><td>.</td><td>5</td><td>6</td><td>.</td><td>9</td><td>.</td><td>.</td><td>3</td><td>.</td><td>.</td><td>.</td><td>.</td><td>20</td><td>90</td><td>Circle of Misty</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>8</td><td>.</td><td>.</td><td>.</td><td>15</td><td>.</td><td>.</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>.</td><td>50</td><td>Spirit of the Wolf</td>
+          </tr>
+          <tr>
+<td>Total</td><td>74</td><td>8</td><td>16</td><td>6</td><td>20</td><td>59</td><td>0</td><td>0</td><td>22</td><td>29</td><td>10</td><td>11</td><td>13</td><td>160</td><td>370</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Enchanter - Illusionist&#39;s Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>6</td><td>.</td><td>7</td><td>.</td><td>.</td><td>.</td><td>10</td><td>15</td><td>2</td><td>7</td><td>2</td><td>2</td><td>2</td><td>15</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>12</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>15</td><td>7</td><td>6</td><td>6</td><td>6</td><td>6</td><td>10</td><td>80</td><td>.</td><td>Rune IV</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>6</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>5</td><td>7</td><td>1</td><td>1</td><td>4</td><td>1</td><td>1</td><td>10</td><td>20</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>5</td><td>5</td><td>.</td><td>.</td><td>5</td><td>.</td><td>1</td><td>1</td><td>2</td><td>1</td><td>2</td><td>40</td><td>.</td><td>Reclaim Energy</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>5</td><td>5</td><td>.</td><td>.</td><td>5</td><td>.</td><td>1</td><td>1</td><td>2</td><td>1</td><td>2</td><td>40</td><td>.</td><td>Reclaim Energy</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>5</td><td>.</td><td>.</td><td>10</td><td>.</td><td>.</td><td>10</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>30</td><td>45</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>7</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>2</td><td>4</td><td>1</td><td>3</td><td>1</td><td>2</td><td>2</td><td>20</td><td>50</td><td>Clarity</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>5</td><td>.</td><td>7</td><td>.</td><td>.</td><td>.</td><td>.</td><td>5</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>30</td><td>35</td><td>Invisibility</td>
+          </tr>
+          <tr>
+<td>Total</td><td>49</td><td>0</td><td>34</td><td>20</td><td>0</td><td>0</td><td>52</td><td>38</td><td>18</td><td>25</td><td>23</td><td>19</td><td>25</td><td>265</td><td>150</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Magician - Prestidigitator&#39;s Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>6</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>10</td><td>.</td><td>2</td><td>7</td><td>2</td><td>.</td><td>4</td><td>35</td><td>35</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>12</td><td>.</td><td>15</td><td>.</td><td>.</td><td>.</td><td>15</td><td>.</td><td>7</td><td>7</td><td>7</td><td>7</td><td>10</td><td>60</td><td>90</td><td>Shield of Lava</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>6</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>5</td><td>.</td><td>1</td><td>1</td><td>4</td><td>1</td><td>1</td><td>50</td><td>25</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>3</td><td>5</td><td>.</td><td>.</td><td>6</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>25</td><td>20</td><td>Reclaim Energy</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>3</td><td>5</td><td>.</td><td>.</td><td>6</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>25</td><td>20</td><td>Reclaim Energy</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>5</td><td>3</td><td>.</td><td>10</td><td>.</td><td>.</td><td>10</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>35</td><td>25</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>7</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>2</td><td>4</td><td>2</td><td>3</td><td>3</td><td>45</td><td>50</td><td>Burnout III</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>5</td><td>3</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>15</td><td>40</td><td>Summon Bandages</td>
+          </tr>
+          <tr>
+<td>Total</td><td>49</td><td>6</td><td>36</td><td>20</td><td>0</td><td>0</td><td>55</td><td>0</td><td>23</td><td>30</td><td>26</td><td>22</td><td>29</td><td>290</td><td>305</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Necromancer - Rotting Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>6</td><td>.</td><td>8</td><td>.</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>10</td><td>.</td><td>.</td><td>4</td><td>35</td><td>30</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>12</td><td>.</td><td>15</td><td>.</td><td>.</td><td>.</td><td>15</td><td>7</td><td>5</td><td>3</td><td>10</td><td>3</td><td>10</td><td>70</td><td>50</td><td>Conjure Corpse</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>6</td><td>.</td><td>5</td><td>.</td><td>2</td><td>.</td><td>8</td><td>.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>35</td><td>10</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>.</td><td>.</td><td>5</td><td>.</td><td>3</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>20</td><td>20</td><td>Reclaim Energy</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>.</td><td>.</td><td>5</td><td>.</td><td>3</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>20</td><td>20</td><td>Reclaim Energy</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>5</td><td>2</td><td>6</td><td>.</td><td>.</td><td>.</td><td>10</td><td>6</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>25</td><td>10</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>7</td><td>.</td><td>6</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>2</td><td>4</td><td>2</td><td>3</td><td>3</td><td>45</td><td>50</td><td>Augment Death</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>5</td><td>.</td><td>4</td><td>.</td><td>.</td><td>.</td><td>6</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>50</td><td>.</td><td>Invis to Undead</td>
+          </tr>
+          <tr>
+<td>Total</td><td>49</td><td>2</td><td>44</td><td>0</td><td>12</td><td>0</td><td>53</td><td>13</td><td>18</td><td>28</td><td>23</td><td>17</td><td>28</td><td>300</td><td>190</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Shaman - Wolf Caller&#39;s Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>19</td><td>6</td><td>.</td><td>.</td><td>.</td><td>7</td><td>.</td><td>.</td><td>.</td><td>4</td><td>.</td><td>.</td><td>.</td><td>.</td><td>25</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>43</td><td>6</td><td>6</td><td>6</td><td>6</td><td>15</td><td>.</td><td>.</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>45</td><td>90</td><td>Riotous Health</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>19</td><td>3</td><td>3</td><td>.</td><td>3</td><td>3</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>.</td><td>.</td><td>10</td><td>15</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>16</td><td>.</td><td>.</td><td>.</td><td>2</td><td>7</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>20</td><td>15</td><td>Ultravison</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>16</td><td>.</td><td>.</td><td>.</td><td>2</td><td>7</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>20</td><td>15</td><td>Ultravison</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>16</td><td>2</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>.</td><td>20</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>26</td><td>.</td><td>.</td><td>5</td><td>.</td><td>12</td><td>.</td><td>.</td><td>1</td><td>7</td><td>1</td><td>1</td><td>1</td><td>50</td><td>80</td><td>Abolish Disease</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>21</td><td>.</td><td>6</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>20</td><td>25</td><td>Extinguish Fatigue</td>
+          </tr>
+          <tr>
+<td>Total</td><td>176</td><td>17</td><td>15</td><td>11</td><td>13</td><td>59</td><td>0</td><td>2</td><td>6</td><td>19</td><td>6</td><td>6</td><td>6</td><td>165</td><td>285</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Wizard - Icicle Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>6</td><td>.</td><td>7</td><td>.</td><td>.</td><td>.</td><td>7</td><td>.</td><td>.</td><td>7</td><td>.</td><td>2</td><td>2</td><td>30</td><td>35</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>12</td><td>2</td><td>15</td><td>.</td><td>.</td><td>.</td><td>15</td><td>.</td><td>5</td><td>10</td><td>5</td><td>5</td><td>10</td><td>60</td><td>90</td><td>Enticement of Flame</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>6</td><td>.</td><td>9</td><td>.</td><td>.</td><td>.</td><td>6</td><td>.</td><td>.</td><td>.</td><td>4</td><td>.</td><td>.</td><td>35</td><td>35</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>6</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>15</td><td>25</td><td>Chill Sight</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>4</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>6</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>15</td><td>25</td><td>Chill Sight</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>5</td><td>.</td><td>3</td><td>9</td><td>.</td><td>.</td><td>10</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>15</td><td>35</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>7</td><td>.</td><td>8</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>25</td><td>40</td><td>Elemental Armor</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>5</td><td>.</td><td>5</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>25</td><td>45</td><td>Okeil&#39;s Radiation</td>
+          </tr>
+          <tr>
+<td>Total</td><td>49</td><td>2</td><td>47</td><td>19</td><td>0</td><td>0</td><td>53</td><td>0</td><td>18</td><td>30</td><td>22</td><td>20</td><td>25</td><td>220</td><td>330</td><td>&nbsp;</td>          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Bard - Armor of Twilight</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>22</td><td>.</td><td>5</td><td>.</td><td>5</td><td>.</td><td>.</td><td>5</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>.</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>50</td><td>11</td><td>11</td><td>11</td><td>.</td><td>.</td><td>.</td><td>11</td><td>5</td><td>10</td><td>5</td><td>5</td><td>5</td><td>60</td><td>.</td><td>Selo&#39;s Song of Travel</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>25</td><td>5</td><td>4</td><td>.</td><td>.</td><td>.</td><td>.</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>20</td><td>.</td><td>&nbsp;</td>
+         </tr>
+          <tr>
+<td>Wrist</td><td>18</td><td>3</td><td>2</td><td>5</td><td>.</td><td>.</td><td>.</td><td>.</td><td>1</td><td>5</td><td>1</td><td>1</td><td>1</td><td>.</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>18</td><td>3</td><td>2</td><td>5</td><td>.</td><td>.</td><td>.</td><td>.</td><td>1</td><td>5</td><td>1</td><td>1</td><td>1</td><td>.</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>17</td><td>4</td><td>3</td><td>3</td><td>3</td><td>.</td><td>.</td><td>3</td><td>.</td><td>3</td><td>.</td><td>3</td><td>3</td><td>15</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>31</td><td>7</td><td>7</td><td>7</td><td>7</td><td>.</td><td>.</td><td>5</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>60</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>22</td><td>4</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>4</td><td>.</td><td>3</td><td>.</td><td>2</td><td>2</td><td>.</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Total</td><td>203</td><td>37</td><td>34</td><td>31</td><td>15</td><td>0</td><td>0</td><td>32</td><td>17</td><td>36</td><td>17</td><td>22</td><td>22</td><td>155</td><td>0</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Monk - White Lotus Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>6</td><td>6</td><td>.</td><td>10</td><td>.</td><td>.</td><td>.</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>.</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>18</td><td>14</td><td>5</td><td>13</td><td>13</td><td>.</td><td>.</td><td>.</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>60</td><td>.</td><td>Invigorate</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>7</td><td>7</td><td>5</td><td>.</td><td>7</td><td>.</td><td>.</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>45</td><td>.</td><td>&nbsp;</td>
+         </tr>
+         <tr>
+<td>Wrist</td><td>6</td><td>5</td><td>.</td><td>.</td><td>3</td><td>.</td><td>.</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>30</td><td>.</td><td>&nbsp;</td>
+        </tr>
+          <tr>
+<td>Wrist</td><td>6</td><td>5</td><td>.</td><td>.</td><td>3</td><td>.</td><td>.</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td30</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>6</td><td>.</td><td>8</td><td>6</td><td>4</td><td>.</td><td>.</td><td>.</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>60</td><td>.</td><td>Spirit of the Ox</td>
+          </tr>          <tr>
+<td>Feet</td><td>7</td><td>9</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>40</td><td>.</td><td>Firefist</td>
+          </tr>
+          <tr>
+<td>Total</td><td>56</td><td>46</td><td>18</td><td>29</td><td>30</td><td>0</td><td>0</td><td>0</td><td>18</td><td>18</td><td>18</td><td>18</td><td>18</td><td>265</td><td>0</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Paladin - Scaled Knight Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td><td><b>AC</b></td><td><b>STR</b></td><td><b>STA</b></td><td>
+<b>AGI</b></td><td><b>DEX</b></td><td><b>WIS</b></td><td><b>INT</b></td><td><b>CHA</b></td><td>
+<b>Poi</b></td><td><b>Mgc</b></td><td><b>Dis</b></td><td><b>Fire</b></td><td><b>Cold</b></td><td>
+<b>Hit</b></td><td><b>Mana</b></td><td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td><td>22</td><td>3</td><td>6</td><td>.</td><td>.</td><td>6</td><td>.</td><td>.</td><td>.</td><td>5</td><td>.</td><td>.</td><td>5</td><td>30</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td><td>50</td><td>14</td><td>8</td><td>8</td><td>8</td><td>9</td><td>.</td><td>.</td><td>.</td><td>9</td><td>5</td><td>.</td><td>.</td><td>70</td><td>60</td><td>Shield of Words</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>25</td><td>4</td><td>7</td><td>.</td><td>3</td><td>.</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>3</td><td>.</td><td>50</td><td>.</td><td>&nbsp;</td>          </tr>
+          <tr>
+<td
+>Wrist</td>
+<td
+>18</td>
+<td
+>3</td>
+<td
+>4</td>
+<td
+>2</td>
+<td
+>2</td>
+<td
+>3</td>
+<td>
+.</td>
+<td>
+.</td>
+<td
+>1</td>
+<td>
+.</td>
+<td>
+.</td>
+<td>
+.</td>
+<td>
+.</td>
+<td
+>10</td>
+<td
+>10</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>18</td><td>3</td><td>4</td><td>2</td><td>2</td><td>3</td><td>.</td><td>.</td><td>1</td><td>.</td><td>.</td><td>.</td><td>.</td><td>10</td><td>10</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td>
+<td>18</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>5</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>40</td>
+<td>10</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td>
+<td>31</td>
+<td>7</td>
+<td>5</td>
+<td>.</td>
+<td>10</td>
+<td>7</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>60</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Feet</td>
+<td>24</td>
+<td>3</td>
+<td>6</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td
+>Total</td>
+<td>206</td>
+<td>40</td>
+<td>43</td>
+<td>15</td>
+<td>28</td>
+<td>32</td>
+<td>0</td>
+<td>0</td>
+<td>9</td>
+<td>26</td>
+<td>12</td>
+<td>7</td>
+<td>9</td>
+<td>270</td>
+<td>90</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Ranger - Golden Leaf Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td>
+<td><b>AC</b></td>
+<td><b>STR</b></td>
+<td><b>STA</b></td>
+<td><b>AGI</b></td>
+<td><b>DEX</b></td>
+<td><b>WIS</b></td>
+<td><b>INT</b></td>
+<td><b>CHA</b></td>
+<td><b>Poi</b></td>
+<td><b>Mgc</b></td>
+<td><b>Dis</b></td>
+<td><b>Fire</b></td>
+<td><b>Cold</b></td>
+<td><b>Hit</b></td>
+<td><b>Mana</b></td>
+<td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td>
+<td>19</td>
+<td>5</td>
+<td>.</td>
+<td>.</td>
+<td>5</td>
+<td>5</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>40</td>
+<td>20</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td>
+<td>43</td>
+<td>10</td>
+<td>8</td>
+<td>10</td>
+<td>8</td>
+<td>10</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>10</td>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+<td>70</td>
+<td>30</td>
+<td>Call of Earth</td>
+          </tr>
+          <tr>
+<td>Arms</td>
+<td>19</td>
+<td>5</td>
+<td>10</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>30</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td>
+<td>16</td>
+<td>7</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>10</td>
+<td>10</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td>
+<td>16</td>
+<td>7</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>10</td>
+<td>10</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td>
+<td>16</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>.</td>
+<td>10</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td>
+<td>26</td>
+<td>8</td>
+<td>5</td>
+<td>.</td>
+<td>10</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>60</td>
+<td>20</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Feet</td>
+<td>21</td>
+<td>4</td>
+<td>4</td>
+<td>.</td>
+<td>4</td>
+<td>&nbsp;</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>20</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Total</td>
+<td>176</td>
+<td>49</td>
+<td>29</td>
+<td>12</td>
+<td>29</td>
+<td>24</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+<td>21</td>
+<td>8</td>
+<td>10</td>
+<td>6</td>
+<td>240</td>
+<td>100</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Rogue - Shadow Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td>
+<td><b>AC</b></td>
+<td><b>STR</b></td>
+<td><b>STA</b></td>
+<td><b>AGI</b></td>
+<td><b>DEX</b></td>
+<td><b>WIS</b></td>
+<td><b>INT</b></td>
+<td><b>CHA</b></td>
+<td><b>Poi</b></td>
+<td><b>Mgc</b></td>
+<td><b>Dis</b></td>
+<td><b>Fire</b></td>
+<td><b>Cold</b></td>
+<td><b>Hit</b></td>
+<td><b>Mana</b></td>
+<td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td>
+<td>19</td>
+<td>6</td>
+<td>.</td>
+<td>6</td>
+<td>6</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>20</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td>
+<td>43</td>
+<td>12</td>
+<td>8</td>
+<td>16</td>
+<td>12</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>10</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>90</td>
+<td>.</td>
+<td>
+Invigorate</td>
+          </tr>
+          <tr>
+<td>Arms</td>
+<td>19</td>
+<td>3</td>
+<td>7</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>25</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td>
+<td>16</td>
+<td>6</td>
+<td>.</td>
+<td>5</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>25</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td>
+<td>16</td>
+<td>6</td>
+<td>.</td>
+<td>5</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>25</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td>
+<td>16</td>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td>
+<td>26</td>
+<td>5</td>
+<td>5</td>
+<td>.</td>
+<td>10</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>60</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Feet</td>
+<td>21</td>
+<td>3</td>
+<td>6</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>20</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td
+>Total</td>
+<td>176</td>
+<td>46</td>
+<td>28</td>
+<td>41</td>
+<td>34</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>12</td>
+<td>28</td>
+<td>10</td>
+<td>9</td>
+<td>10</td>
+<td>265</td>
+<td>0</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Warrior - Armor of the Myrmidon</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td>
+<td><b>AC</b></td>
+<td><b>STR</b></td>
+<td><b>STA</b></td>
+<td><b>AGI</b></td>
+<td><b>DEX</b></td>
+<td><b>WIS</b></td>
+<td><b>INT</b></td>
+<td><b>CHA</b></td>
+<td><b>Poi</b></td>
+<td><b>Mgc</b></td>
+<td><b>Dis</b></td>
+<td><b>Fire</b></td>
+<td><b>Cold</b></td>
+<td><b>Hit</b></td>
+<td><b>Mana</b></td>
+<td><b>Effect</b></td>
+          </tr>
+          <tr>
+<td>Head</td>
+<td>27</td>
+<td>3</td>
+<td>2</td>
+<td>.</td>
+<td>12</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>5</td>
+<td>35</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td>
+<td>54</td>
+<td>15</td>
+<td>10</td>
+<td>7</td>
+<td>7</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>10</td>
+<td>10</td>
+<td>5</td>
+<td>5</td>
+<td>90</td>
+<td>.</td>
+<td>Invigorate</td>
+          </tr>
+          <tr>
+<td>Arms</td>
+<td>30</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>6</td>
+<td>.</td>
+<td>25</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td>
+<td>22</td>
+<td>2</td>
+<td>5</td>
+<td>9</td>
+<td>2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>3</td>
+<td>3</td>
+<td>15</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td>
+<td>22</td>
+<td>2</td>
+<td>5</td>
+<td>9</td>
+<td>2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>3</td>
+<td>.</td>
+<td>3</td>
+<td>3</td>
+<td>15</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td>
+<td>27</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>8</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>90</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td>
+<td>40</td>
+<td>9</td>
+<td>.</td>
+<td>9</td>
+<td>9</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>40</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Feet</td>
+<td>28</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>25</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Total</td>
+<td>250</td>
+<td>36</td>
+<td>31</td>
+<td>39</td>
+<td>42</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>25</td>
+<td>11</td>
+<td>18</td>
+<td>17</td>
+<td>335</td>
+<td>0</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17">&nbsp;</td>
+          </tr>
+          <tr>
+<td colspan="17" class="nav">Shadowknight - Blood Lord's Armor</td>
+          </tr>
+          <tr>
+<td><b>Name</b></td>
+<td><b>AC</b></td>
+<td><b>STR</b></td>
+<td><b>STA</b></td>
+<td><b>AGI</b></td>
+<td><b>DEX</b></td>
+<td><b>WIS</b></td>
+<td><b>INT</b></td>
+<td><b>CHA</b></td>
+<td><b>Poi</b></td>
+<td><b>Mgc</b></td>
+<td><b>Dis</b></td>
+<td><b>Fire</b></td>
+<td><b>Cold</b></td>
+<td><b>Hit</b></td>
+<td><b>Mana</b></td>
+<td><b>Effect</b></td>
+          </tr>
+         <tr>
+<td>Head</td>
+<td>22</td>
+<td>6</td>
+<td>6</td>
+<td>&nbsp;</td>
+<td>3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>4</td>
+<td>40</td>
+<td>.</td>
+<td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Chest</td>
+<td>50</td>
+<td>9</td>
+<td>8</td>
+<td>9</td>
+<td>9</td>
+<td>.</td>
+<td>9</td>
+<td>.</td>
+<td>.</td>
+<td>10</td>
+<td>4</td>
+<td>.</td>
+<td>.</td>
+<td>70</td>
+<td>.</td>
+<td>Invigorate</td>
+          </tr>
+          <tr>
+<td>Arms</td><td>25</td><td>.</td><td>.</td><td>.</td><td>10</td><td>.</td><td>.</td><td>.</td><td>.</td><td>7</td><td>.</td><td>4</td><td>.</td><td>50</td><td>20</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>18</td><td>4</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>2</td><td>5</td><td>.</td><td>.</td><td>.</td><td>20</td><td>10</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Wrist</td><td>18</td><td>4</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>2</td><td>5</td><td>.</td><td>.</td><td>.</td><td>20</td><td>10</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Hands</td><td>18</td><td>5</td><td>3</td><td>3</td><td>3</td><td>.</td><td>3</td><td>.</td><td>.</td><td>4</td><td>.</td><td>.</td><td>.</td><td>.</td><td>10</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Legs</td><td>31</td><td>6</td><td>9</td><td>.</td><td>.</td><td>.</td><td>9</td><td>.</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>70</td><td>30</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Feet</td><td>24</td><td>4</td><td>6</td><td>.</td><td>.</td><td>.</td><td>3</td><td>.</td><td>1</td><td>.</td><td>1</td><td>.</td><td>1</td><td>.</td><td>.</td><td>&nbsp;</td>
+          </tr>
+          <tr>
+<td>Total</td><td>206</td><td>38</td><td>32</td><td>12</td><td>25</td><td>0</td><td>24</td><td>0</td><td>8</td><td>38</td><td>8</td><td>7</td><td>8</td><td>270</td><td>80</td><td>&nbsp;</td>
+          </tr>
+ </table>
+        </td>
+      </tr>
+      <tr>
+        <td width="100%"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>
