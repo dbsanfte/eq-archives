@@ -1,3 +1,5 @@
+(NOTE: Yahoo Groups is no more. I did manage to clone all of the Everquest groups I could find before it went down for good.)
+
 Archived from here:
 https://groups.yahoo.com/api/v1/groups/${GROUP_NAME}
 
