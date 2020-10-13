@@ -1,0 +1,250 @@
+
+<HTML>
+<HEAD><TITLE>Calendar Administration : Edit Events</TITLE>
+<META HTTP-EQUIV="expires" CONTENT="now">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<style>
+INPUT.button { background-color:#EEEEEE;font:arial;font-weight:bold;color:#004040; }
+A.mainmenu { text-decoration:none; font-weight:bold; }
+A.mainmenu:hover { text-decoration:underline; }
+TD.thinborder { border:solid black 1px; }
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+function edit_event(id) {
+	var theform = document.forms["mainform"];
+	theform.command.value = "edit_event_form";
+	theform.template.value = "add_edit_event.html";
+	theform.EVENT_id.value = id;
+	theform.submit();
+	}
+function delete_event(id,occurrence_id, recurrence_id, recurring) {
+	var theform = document.forms["mainform"];
+	var c = false;
+//	if (occurrence_id) {
+//		c = confirm("This event is scheduled on multiple dates!\n\nAre you sure you want to delete every occurrence of this event?\n\nTHIS ACTION CANNOT BE UNDONE!");
+//		}
+	if (recurring==1) {
+		c = confirm("This is a recurring event!\n\nAre you sure you want to delete every occurrence of this event?\n\nTHIS ACTION CANNOT BE UNDONE!");
+		}
+	else {
+		c = confirm("Are you sure you want to delete this event?\nTHIS ACTION CANNOT BE UNDONE!");
+		}
+	if (c) {
+		theform.command.value = "delete_event";
+		theform.template.value = "edit_delete_events.html";
+		theform.EVENT_id.value = id;
+		theform.submit();
+		}
+	}
+function reschedule_event(id,occurrence_id, recurrence_id, recurring) {
+	var theform = document.forms["mainform"];
+	var c = true;
+//	if (occurrence_id) {
+//		c = confirm("This event is scheduled on multiple dates!\n\nSchedule changes will affect all occurrences of this event!");
+//		}
+	if (recurring==1) {
+		c = confirm("This is a recurring event!\n\nSchedule changes will affect all occurrences of this event!");
+		}
+	if (c) {
+		theform.template_value.value = "edit_delete_events.html";
+		theform.command.value = "reschedule_event";
+		if (recurring==1) {
+			theform.template.value = "schedule_event_recurring.html";
+			}
+		else {
+			theform.template.value = "schedule_event_non_recur.html";
+			}
+		theform.EVENT_id.value = id;
+		theform.submit();
+		}
+	}
+function dosearch(obj) {
+	var theform = obj.form;
+	if (theform.newsearch.value=="") {
+		alert("Search cannot be blank!");
+		return false;
+		}
+	theform.search.value = theform.newsearch.value;
+	theform.month.value = theform.newmonth.options[theform.newmonth.selectedIndex].value;
+	theform.year.value = theform.newyear.options[theform.newyear.selectedIndex].value;
+	theform.command.value = "";
+	theform.template.value = "edit_delete_events.html";
+	theform.submit();
+	}
+function doSubmit(theform) {
+	if (theform.newsearch.value!="") {
+		dosearch(theform.newsearch);
+		}
+	return true;
+	}
+function next_month() {
+	var theform = document.forms["mainform"];
+	theform.month.value++;
+	if (theform.month.value > 12) {
+		theform.month.value=1;
+		theform.year.value++;
+		}
+	theform.search.value = "";
+	theform.command.value = "";
+	theform.template.value = "edit_delete_events.html";
+	theform.submit();
+	}
+function last_month() {
+	var theform = document.forms["mainform"];
+	theform.month.value--;
+	if (theform.month.value < 1) {
+		theform.month.value=12;
+		theform.year.value--;
+		}
+	theform.search.value = "";
+	theform.command.value = "";
+	theform.template.value = "edit_delete_events.html";
+	theform.submit();
+	}
+function gotoYear() {
+	var theform = document.forms["mainform"];
+	theform.month.value = theform.newmonth.options[theform.newmonth.selectedIndex].value;
+	theform.year.value = theform.newyear.options[theform.newyear.selectedIndex].value;
+	theform.search.value = "";
+	theform.command.value = "";
+	theform.template.value = "edit_delete_events.html";
+	theform.submit();
+	}
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FF9900">
+<CENTER>
+<TABLE BORDER=1 BORDERCOLOR="#008080" CELLSPACING=0 CELLPADDING=1 WIDTH=600>
+<TR>
+	<TD BGCOLOR="#000000">
+		<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+		<TR>
+			<TD ALIGN="left"><FONT COLOR="#FFFFFF" FACE="arial"><B>Calendar Administration : Edit Events</B></FONT></TD>
+			<TD ALIGN="right">
+				
+				<TABLE BORDER="1" CELLPADDING="0" CELLSPACING="0">
+				<TR><TD BGCOLOR="#EEEEEE"><b>anonymous</b> [<font size="-2"><a href="/calendar/calendar_admin.cgi?command=logout" onClick="return confirm('Are you sure you want to logout?')">Logout</a><font>]</TD></TR>
+				</TABLE>
+				
+			</TD>
+		</TR>
+		</TABLE>
+	</TD>
+</TR>
+
+<TR>
+	<TD BGCOLOR="#CC9966">
+
+
+<CENTER>
+<BR>
+<FORM ACTION="/calendar/calendar_admin.cgi" METHOD="POST">
+
+<SCRIPT LANGUAGE="JavaScript">
+function menu_navigate(theform) {
+	var command = theform.commandlist.options[theform.commandlist.selectedIndex].value;
+	if (command=="viewcalendar") {
+		window.location.href = "http://www.flamekeepers.com/calendar/calendar.cgi?calendar=default";
+		return false;
+		}
+	if (command == "") {
+		return false;
+		}
+	theform.template.value = command;
+	theform.submit();
+	}
+</SCRIPT>
+<INPUT TYPE="hidden" NAME="template" VALUE="main.html">
+<INPUT TYPE="hidden" NAME="command" VALUE="">
+<b>Menu:</b>
+	<SELECT NAME="commandlist" onChange="if(this.options[this.selectedIndex].value==''){this.selectedIndex=0;}menu_navigate(this.form);">
+		<OPTION VALUE="">-- Select Command --
+		<OPTION VALUE="viewcalendar">View Calendar (default)
+		<OPTION VALUE="main.html">Main Menu
+		<OPTION VALUE="select_calendar.html">Change Calendars
+		
+		<OPTION VALUE="" STYLE="background-color:#cccccc;text-decoration:underline;">Events
+		
+		<OPTION VALUE="add_edit_event.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#149;&nbsp;Add Event
+		<OPTION VALUE="edit_delete_events.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#149;&nbsp;Edit/Delete Events
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+
+	</SELECT>
+&nbsp;
+
+</FORM>
+
+
+
+<FORM NAME="mainform" ACTION="/calendar/calendar_admin.cgi" METHOD="POST" onSubmit="return doSubmit(this)">
+<INPUT TYPE="hidden" NAME="fromTemplate" VALUE="edit_delete_events.html">
+<INPUT TYPE="hidden" NAME="template" VALUE="edit_delete_events.html">
+<INPUT TYPE="hidden" NAME="template_value" VALUE="">
+<INPUT TYPE="hidden" NAME="command" VALUE="">
+<INPUT TYPE="hidden" NAME="EVENT_id" VALUE="">
+<INPUT TYPE="hidden" NAME="month" VALUE="12">
+<INPUT TYPE="hidden" NAME="year" VALUE="2003">
+<INPUT TYPE="hidden" NAME="search" VALUE="">
+
+<b><A HREF="#" onClick="last_month();return false;">&lt;&lt;</A></b>&nbsp;&nbsp;
+<SELECT NAME="newmonth">
+<OPTION VALUE="1">January</OPTION><OPTION VALUE="2">February</OPTION><OPTION VALUE="3">March</OPTION><OPTION VALUE="4">April</OPTION><OPTION VALUE="5">May</OPTION><OPTION VALUE="6">June</OPTION><OPTION VALUE="7">July</OPTION><OPTION VALUE="8">August</OPTION><OPTION VALUE="9">September</OPTION><OPTION VALUE="10">October</OPTION><OPTION VALUE="11">November</OPTION><OPTION VALUE="12" SELECTED>December</OPTION>
+</SELECT>
+<SELECT NAME="newyear">
+
+<OPTION VALUE="1998">1998</OPTION><OPTION VALUE="1999">1999</OPTION><OPTION VALUE="2000">2000</OPTION><OPTION VALUE="2001">2001</OPTION><OPTION VALUE="2002">2002</OPTION><OPTION VALUE="2003" SELECTED>2003</OPTION><OPTION VALUE="2004">2004</OPTION><OPTION VALUE="2005">2005</OPTION><OPTION VALUE="2006">2006</OPTION><OPTION VALUE="2007">2007</OPTION><OPTION VALUE="2008">2008</OPTION>
+</SELECT>
+<INPUT TYPE="button" CLASS="button" VALUE="Go" onClick="gotoYear()">
+&nbsp;&nbsp;<b><A HREF="#" onClick="next_month();return false;">&gt;&gt;</A></b>
+<BR>
+<INPUT TYPE="text" NAME="newsearch" VALUE=""> <INPUT TYPE="button" CLASS="button" VALUE="Search" onClick="dosearch(this)">
+<BR><BR>
+
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+	<TH>Action</TH>
+	
+	<TH>Start Date - Time</TH>
+	
+	<TH>Event Title</TH>
+</TR>
+
+
+<TR>
+	<TD COLSPAN="4" ALIGN="center">No Events</TD>
+</TR>
+
+</TABLE>
+<FONT COLOR="red">*</FONT> = Recurring Event
+<BR>
+
+</FORM>
+
+</CENTER>
+	</TD>
+</TR>
+<TR>
+	<TD BGCOLOR="#000000" ALIGN="center">
+		<FONT color="#FFFFFF" SIZE="-1">Powered by <A HREF="http://www.CalendarScript.com/" STYLE="color:#FFFFFF;">CalendarScript 3.0</A></FONT>
+	</TD>
+</TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

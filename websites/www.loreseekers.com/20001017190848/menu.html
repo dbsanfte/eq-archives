@@ -1,0 +1,412 @@
+<!--
+                 This page has been created by Renaissance IT
+   Renaissance Internet Technologies Copyright (c) 1999 All Rights Reserved.
+
+             for more info on our products, please visit :
+                        http://www.renaissance.nl/
+
+	These scripts are copyright Andy Forest, 1998.
+    If you wish to use them, go ahead, I can't stop you.
+    Just include this copyright notice.
+    If you want to hire me, mail andy@soup.net.
+
+	This script has been edited by Roy Boverhof <rboverhof@renaissance.nl>
+	
+        Pagename                : menu.html
+        Last Updated    		: 27-7-1999
+-->
+
+<HTML>
+<HEAD>
+    <TITLE>Menu Bar</TITLE>
+
+</SCRIPT> 
+ 
+<!--        
+
+-->
+
+<script language="JavaScript">
+<!--
+    
+    goodVersion = false
+// -->
+</SCRIPT>
+<script language="JavaScript1.1">
+<!--
+    goodVersion = true
+// -->
+</SCRIPT>
+
+<script language="JavaScript">
+<!--
+    
+    function imgSwap(imgName, swapSrc) {
+        if (goodVersion == true) {
+            document[imgName].src = swapSrc
+        }
+    }
+        
+    DHTMLversion = "Disabled"
+    if (navigator.appVersion.substring(0, 1) >= 4) {
+        if (navigator.userAgent.indexOf("MSIE", 0) > -1) {
+            DHTMLversion = "MSIE"
+        } else if (navigator.userAgent.indexOf("Mozilla", 0) > -1) {
+            DHTMLversion = "NS"
+        }
+    }
+    
+	// +18 pixels per menu item
+	
+    menuSizes = new Array(0,85,85,121,175,157)
+    menuButton = 31
+    menuPosArray = new Array()
+    for (var i=0;i<7;i++) {
+        var temp = new Array(0)
+        for (var f=0;f<6;f++) {
+            if ((f < i) || (i == 0)) {
+                // Below the menu that is opening
+                temp[f] = 33 + menuButton *f
+            } else {
+                temp[f] = 33 + (menuButton *f) + menuSizes[i] -31
+            }
+        }
+        menuPosArray[i] = temp
+    }
+    
+    currentMenuPos = menuPosArray[0]
+    
+    timeOutID = 0
+    
+    function newMenu(whichMenu) {
+        currentMenuPos = menuPosArray[whichMenu]
+        timeOutID = setTimeout('moveMenu()', 50)
+    }
+    
+    function moveMenu() {
+      if (DHTMLversion != "Disabled") {
+        var alldone = false
+        for (var i=0;i<6;i++) {
+            
+            if (DHTMLversion == "MSIE") {
+                var myObject = document.all["MenuLayer" + (i+1)].style
+            } else {
+                var myObject = document.layers["MenuLayer" + (i+1)]
+            }
+            var finalY = currentMenuPos[i]
+            var nowY = parseInt(myObject.top)
+            var pixelsLeftY = finalY -nowY
+            var speed = 10
+            
+            if (Math.abs(pixelsLeftY) <= speed) {
+                myObject.top = finalY
+            } else {
+                alldone = true
+                if (pixelsLeftY > 0) {
+                    myObject.top = nowY + speed
+                } else {
+                    myObject.top = nowY - speed
+                }
+            }
+            
+        }
+        clearTimeout(timeOutID)
+        if (alldone == true) {
+            timeOutID = setTimeout('moveMenu()', 50)
+        }
+      }
+    }
+    
+    function MenuImgSwap (layerNum, imgNum, Act) {
+        if (goodVersion == true) {
+            var ImageNames = new Array("", "news_sub", "charter_sub", "members_sub", "library_sub", "feedback_sub")
+            var layerName = "MenuLayer" + layerNum
+            if (Act == 1) {
+                var swapSrc = "images/" + ImageNames[layerNum] + imgNum + "_on.jpg"
+            } else {
+                var swapSrc = "images/" + ImageNames[layerNum] + imgNum + "_off.jpg"
+            }
+            var imgName = ImageNames[layerNum] + imgNum
+            //alert ("img: " + imgName)
+            if (DHTMLversion == "NS") {
+                document.layers[layerName].document[imgName].src = swapSrc
+            } else {
+                document[imgName].src = swapSrc
+            }
+        }
+    }
+    
+    function layerImgSwap(imgName, swapSrc, layerName) {
+        if (goodVersion == true) {
+            if (layerName == null) {
+                layerName = 0
+            }
+            if (DHTMLversion == "NS") {
+                document.layers[layerName].document[imgName].src = swapSrc
+            } else {
+            }
+        }
+    }
+    
+    function dw(what) {
+        document.write(what)
+    }
+    
+    function writeLayers() {
+        var gifs = new Array("aboutus_grn.gif", "serv_grn.gif", "clients_grn.gif", "links_grn.gif", "games_grn.gif", "clients_grn.gif")
+        for (var i=0;i<gifs.length;i++) {
+            dw('<div id="MenuLayer' + (i+1) + ' style="position:absolute; left:0px; top:')
+            dw(menuPosArray[0][i] + 'px; width:150px; height:142px">')
+            dw('<A href="#" onMouseover="newMenu(' +(i+1)+ ')"><IMG')
+            dw(' SRC="IMAGES/test.jpg" BORDER=0')
+            dw(' name="services" alt=""></A><BR></div>')
+        }
+    }
+    function turnOn(imgName) {
+        if (document.images) 
+        document[imgName + "p"].src = eval(imgName + 'on.src');
+    }
+
+function turnOff(imgName) {
+ if (document.images)
+ document[imgName + "p"].src = eval(imgName + 'off.src');
+}
+
+    if (goodVersion) {
+        var PageImages = new Array();
+        var PageAltImages = new Array();
+    }
+    
+    function getImage(inputName) {
+        var myImage = document [inputName];
+        browserName = navigator.appName;
+        browserVer = parseInt(navigator.appVersion);
+        if (browserName == "Netscape" && browserVer == 3) {
+            if (myImage.length) {
+                return myImage[myImage.length-1];
+            } else return myImage;
+        } else {
+            return myImage;
+        }
+    }
+    
+    function resetMenus() {
+        for (var i=0;i<5;i++) {
+            layerImgSwap(menuHeaders[i], "images/" + menuHeaders[i] + "off.jpg", "MenuLayer" + (i+1))
+        }
+    }
+	
+	function onResize() {
+		if (DHTMLversion == "NS") {
+			location.reload();
+		}
+	}
+	
+	function ParseForm (name) {
+	    name = name + "=";
+	    var Data = location.search.substring(1, location.search.length);    
+	    var valueStart = Data.indexOf(name);
+	    if (valueStart == -1) {
+	        return "";
+	    } else {
+	        valueStart = valueStart +name.length;
+	    }
+	    var valueEnd = Data.indexOf("&", valueStart);
+	    if ((valueEnd == -1) || (valueEnd < valueStart)) {
+	        valueEnd = Data.length;
+	    }
+	    var value = Data.substring(valueStart, valueEnd);
+		value = unescape(value)
+	    return value;
+  	}
+	
+	function preload() {
+                         this.length = preload.arguments.length;
+                         for (var i = 0; i < this.length; i++) {
+                            this[i] = new Image();
+                            this[i].src = preload.arguments[i];
+                         }
+                      }
+	
+	
+	function initMenu() {
+		section = ParseForm ("section")
+		
+		var stuff = new preload(
+	   "images/charter_sub1_on.jpg",
+	   "images/charter_sub2_on.jpg",
+	   "images/charter_sub3_on.jpg",
+	   "images/feedback_sub1_on.jpg",
+	   "images/feedback_sub2_on.jpg",
+	   "images/feedback_sub3_on.jpg",
+	   "images/feedback_sub4_on.jpg",
+	   "images/feedback_sub5_on.jpg",
+	   "images/feedback_sub6_on.jpg",
+	   "images/feedback_sub7_on.jpg",
+	   "images/library_sub1_on.jpg",
+	   "images/library_sub2_on.jpg",
+	   "images/library_sub3_on.jpg",
+	   "images/library_sub4_on.jpg",
+	   "images/library_sub5_on.jpg",
+	   "images/library_sub6_on.jpg",
+	   "images/library_sub7_on.jpg",
+	   "images/library_sub8_on.jpg",
+	   "images/members_sub1_on.jpg",
+	   "images/members_sub2_on.jpg",
+	   "images/members_sub3_on.jpg",
+	   "images/members_sub4_on.jpg",
+	   "images/members_sub5_on.jpg",
+	   "images/news_sub1_on.jpg",
+	   "images/news_sub2_on.jpg",
+	   "images/news_sub3_on.jpg");
+	   
+		if (section != "") {
+			section = parseInt(section)
+			if (section < 6) {
+				newMenu(section)
+				hilightMenu(section)
+			}
+		}
+	}
+
+
+browser = (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 3 )) || ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4 )))             
+
+  newsOn = new Image();          
+  newsOn.src = "images/newson.jpg";
+  newsOn.msg = "News";  
+  newsOff = new Image();   
+  newsOff.src = "images/newsoff.jpg";
+  newslayer = "MenuLayer1"
+  
+  charterOn = new Image();          
+  charterOn.src = "images/charon.jpg";
+  charterOn.msg = "News";  
+  charterOff = new Image();   
+  charterOff.src = "images/charoff.jpg";
+  charterlayer = "MenuLayer2"
+  
+  membersOn = new Image();          
+  membersOn.src = "images/membon.jpg";
+  membersOn.msg = "News";  
+  membersOff = new Image();   
+  membersOff.src = "images/memboff.jpg";
+  memberslayer = "MenuLayer3"
+ 
+  libraryOn = new Image();          
+  libraryOn.src = "images/libron.jpg";
+  libraryOn.msg = "News";  
+  libraryOff = new Image();   
+  libraryOff.src = "images/libroff.jpg";
+  librarylayer = "MenuLayer4"
+  
+  feedbackOn = new Image();          
+  feedbackOn.src = "images/feedon.jpg";
+  feedbackOn.msg = "News";  
+  feedbackOff = new Image();   
+  feedbackOff.src = "images/feedoff.jpg";
+  feedbacklayer = "MenuLayer5"
+  
+  mainOn = new Image();          
+  mainOn.src = "images/mainon.jpg";
+  mainOn.msg = "News";  
+  mainOff = new Image();   
+  mainOff.src = "images/mainoff.jpg";
+  mainlayer = "MenuLayer6"
+  
+  
+function img_act(imgName) {
+        if (browser) {
+        imgOn = eval(imgName + "On.src");
+                msg = eval(imgName + "On.msg")
+                window.status = msg;
+						
+				if (DHTMLversion == "NS") {
+	                document.layers[imgName + "layer"].document[imgName].src = imgOn;
+	           		}
+				else {
+	                document[imgName].src = imgOn;
+	          		}                
+        }
+}
+
+function img_inact(imgName) {
+  if (browser) {
+        imgOff = eval(imgName + "Off.src");
+        window.status = "";
+		
+		if (DHTMLversion == "NS") {
+        	document.layers[imgName + "layer"].document[imgName].src = imgOff;
+           	}
+		else {
+        	document[imgName].src = imgOff;
+          	}
+        }
+}
+
+function message(msg) {
+        window.status = msg;		
+}
+
+// -->
+</SCRIPT>
+    
+</HEAD>
+
+<BODY BACKGROUND="images/menu_back.jpg" bgcolor="#000000" text="#000000" onload="initMenu();" MARGINWIDTH="0"  marginheight="0">
+
+
+<div id="MenuLayer1" style="HEIGHT: 200px; LEFT: 2px; POSITION: absolute; TOP: 33px; WIDTH: 140px">
+<A href="news.php3" TARGET="mainwin" onmouseover="newMenu(1);img_act('news');message('News')" onmouseout="img_inact('news');message('the Seekers of Lore')"><IMG border=0 height=31 name=news src="images/newsoff.jpg" width=139></A><br>
+<A href="guildnews.php3" TARGET="mainwin" onmouseout="MenuImgSwap (1, 1, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (1, 1, 1);message('Guild News')"><IMG border=0 height=18 name=news_sub1 src="images/news_sub1_off.jpg" width=139></a><br>
+<A href="eqnews.php3" TARGET="mainwin" onmouseout="MenuImgSwap (1, 2, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (1, 2, 1);message('EverQuest News')"><IMG border=0 height=18 name=news_sub2 src="images/news_sub2_off.jpg" width=139></a><br>
+<A href="sitenews.php3" TARGET="mainwin" onmouseout="MenuImgSwap (1, 3, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (1, 3, 1);message('News about this site')"><IMG border=0 height=18 name=news_sub3 src="images/news_sub3_off.jpg" width=139></a><br>
+</div>
+
+<div id="MenuLayer2" style="HEIGHT: 200px; LEFT: 2px; POSITION: absolute; TOP: 64px; WIDTH: 140px">
+<A href="charter.phtml" TARGET="mainwin" onmouseover="newMenu(2);img_act('charter');message('Charter')" onmouseout="img_inact('charter')"><IMG border=0 height=31 name=charter src="images/charoff.jpg" width=139></A><br>
+<A href="rules.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (2, 1, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (2, 1, 1);message('Guild Rules')"><IMG border=0 height=18 name=charter_sub1 src="images/charter_sub1_off.jpg" width=139></a><br>
+<A href="roleplaying.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (2, 2, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (2, 2, 1);message('General Rules which apply to roleplaying')"><IMG border=0 height=18 name=charter_sub2 src="images/charter_sub2_off.jpg" width=139></a><br>
+<A href="faq.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (2, 3, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (2, 3, 1);message('the FAQ')"><IMG border=0 height=18 name=charter_sub3 src="images/charter_sub3_off.jpg" width=139></a><br>
+</div>
+
+<div id="MenuLayer3" style="HEIGHT: 200px; LEFT: 2px; POSITION: absolute; TOP: 95px; WIDTH: 140px">
+<A href="members.phtml" TARGET="mainwin" onmouseover="newMenu(3);img_act('members')" onmouseout="img_inact('members');message('the Seekers of Lore')"><IMG border=0 height=31 name=members src="images/memboff.jpg" width=139 OnMouseOver='window.status = "Members";' ></A><br>
+<A href="mem_list.php3" TARGET="mainwin" onmouseout="MenuImgSwap (3, 1, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (3, 1, 1)"><IMG border=0 height=18 name=members_sub1 src="images/members_sub1_off.jpg" width=139 OnMouseOver='window.status = "View a list of all our members";' ></a><br>
+<A href="members.php3" TARGET="mainwin" onmouseout="MenuImgSwap (3, 2, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (3, 2, 1)"><IMG border=0 height=18 name=members_sub2 src="images/members_sub2_off.jpg" width=139 OnMouseOver='window.status = "Search for a specific member";' ></a><br>
+<A href="apply.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (3, 3, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (3, 3, 1)"><IMG border=0 height=18 name=members_sub3 src="images/members_sub3_off.jpg" width=139 OnMouseOver='window.status = "Join the Seekers of Lore";' ></a><br>
+<A href="restricted/mem_change.php3" TARGET="mainwin" onmouseout="MenuImgSwap (3, 4, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (3, 4, 1)"><IMG border=0 height=18 name=members_sub4 src="images/members_sub4_off.jpg" width=139 OnMouseOver='window.status = "Change you info";'></a><BR>
+<A href="restricted/" TARGET="mainwin" onmouseout="MenuImgSwap (3, 5, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (3, 5, 1)"><IMG border=0 height=18 name=members_sub5 src="images/members_sub5_off.jpg" width=139 OnMouseOver='window.status = "Enter the members-only area";'></a><BR>
+</div>
+
+<div id="MenuLayer4" style="HEIGHT: 200px; LEFT: 2px; POSITION: absolute; TOP: 126px; WIDTH: 140px">
+<A href="library.phtml" TARGET="mainwin" onmouseover="newMenu(4);img_act('library')" onmouseout="img_inact('library');message('the Seekers of Lore')"><IMG border=0 height=31 name=library src="images/libroff.jpg" width=139 OnMouseOver='window.status = "Library";' ></A><br>
+<A href="maps.php3" TARGET="mainwin" onmouseout="MenuImgSwap (4, 1, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 1, 1)"><IMG border=0 height=18 name=library_sub1 src="images/library_sub1_off.jpg" width=139 OnMouseOver='window.status = "Maps of Norrath, and detailed zone maps";'></a><BR>
+<A href="arcane.php3" TARGET="mainwin" onmouseout="MenuImgSwap (4, 2, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 2, 1)"><IMG border=0 height=18 name=library_sub2 src="images/library_sub2_off.jpg" width=139 OnMouseOver='window.status = "The Arcane, a list of all available spells";'></a><BR>
+<A href="quests.php3" TARGET="mainwin" onmouseout="MenuImgSwap (4, 3, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 3, 1)"><IMG border=0 height=18 name=library_sub3 src="images/library_sub3_off.jpg" width=139 OnMouseOver='window.status = "Answers and solutions for Quests";'></a><BR>
+<A href="guides.php3" TARGET="mainwin" onmouseout="MenuImgSwap (4, 4, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 4, 1)"><IMG border=0 height=18 name=library_sub4 src="images/library_sub4_off.jpg" width=139 OnMouseOver='window.status = "Guides on various races, classes, etc";'></a><BR>
+<A href="beast_search.php3" TARGET="mainwin" onmouseout="MenuImgSwap (4, 5, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 5, 1)"><IMG border=0 height=18 name=library_sub5 src="images/library_sub5_off.jpg" width=139 OnMouseOver='window.status = "Detailed info on all the Beasts of Norrath";'></a><BR>
+<A href="npc.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (4, 6, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 6, 1)"><IMG border=0 height=18 name=library_sub6 src="images/library_sub6_off.jpg" width=139 OnMouseOver='window.status = "Detailed info on all the non player characters in Norrath";'></a><BR>
+<A href="items.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (4, 7, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 7, 1)"><IMG border=0 height=18 name=library_sub7 src="images/library_sub7_off.jpg" width=139 OnMouseOver='window.status = "Detailed info on all the Lore items in Norrah";'></a><BR>
+<A href="books.php3" TARGET="mainwin" onmouseout="MenuImgSwap (4, 8, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (4, 8, 1)"><IMG border=0 height=18 name=library_sub8 src="images/library_sub8_off.jpg" width=139 OnMouseOver='window.status = "All the available books of Norrath";'></a><BR>
+</div>
+
+<div id="MenuLayer5" style="HEIGHT: 200px; LEFT: 2px; POSITION: absolute; TOP: 157px; WIDTH: 140px">
+<A href="misc.phtml" TARGET="mainwin" onmouseover="newMenu(5);img_act('feedback')" onmouseout="img_inact('feedback');message('the Seekers of Lore')"><IMG border=0 height=31 name=feedback src="images/feedoff.jpg" width=139 OnMouseOver='window.status = "Feedback";' ></A><br>
+<A href="links.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (5, 2, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 2, 1)"><IMG border=0 height=18 name=feedback_sub2 src="images/feedback_sub2_off.jpg" width=139 OnMouseOver='window.status = "Links to other sites";' ></a><br>
+<A href="files.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (5, 1, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 1, 1)"><IMG border=0 height=18 name=feedback_sub1 src="images/feedback_sub1_off.jpg" width=139 OnMouseOver='window.status = "EQ files";' ></a><br>
+<A href="guestbook.php3" TARGET="mainwin" onmouseout="MenuImgSwap (5, 3, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 3, 1)"><IMG border=0 height=18 name=feedback_sub3 src="images/feedback_sub3_off.jpg" width=139 OnMouseOver='window.status = "Guestbook";' ></a><br>
+<A href="screenshots.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (5, 4, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 4, 1)"><IMG border=0 height=18 name=feedback_sub4 src="images/feedback_sub4_off.jpg" width=139 OnMouseOver='window.status = "Screenshots";' ></a><br>
+<A href="phorum306/" TARGET="mainwin" onmouseout="MenuImgSwap (5, 5, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 5, 1)"><IMG border=0 height=18 name=feedback_sub5 src="images/feedback_sub5_off.jpg" width=139 OnMouseOver='window.status = "Messageboards";' ></a><br>
+<A href="tales.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (5, 6, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 6, 1)"><IMG border=0 height=18 name=feedback_sub6 src="images/feedback_sub6_off.jpg" width=139 OnMouseOver='window.status = "Norrathian Tales";' ></a><br>
+<A href="credits.phtml" TARGET="mainwin" onmouseout="MenuImgSwap (5, 7, 0);message('the Seekers of Lore')" onmouseover="MenuImgSwap (5, 7, 1)"><IMG border=0 height=18 name=feedback_sub7 src="images/feedback_sub7_off.jpg" width=139 OnMouseOver='window.status = "Credits";' ></a><br>
+</div>
+
+<div id="MenuLayer6" style="HEIGHT: 200px; LEFT: 2px; POSITION: absolute; TOP: 188px; WIDTH: 140px">
+<A href="main.phtml" TARGET="mainwin" onmouseover="newMenu(6);img_act('main')" onmouseout="img_inact('main');message('the Seekers of Lore')"><IMG border=0 height=31 name=main src="images/mainoff.jpg" width=139 OnMouseOver='window.status = "The main menu";' ></A><BR>
+<IMG border=0 height=190 src="images/cover.jpg" width=139><br>
+</div>
+ 
+</BODY>
+</HTML>
+

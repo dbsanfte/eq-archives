@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>GreyHaven - The Rathe - Everquest</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+<META NAME="AUTHOR" CONTENT="GreyHaven - The Rathe - Everquest">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by GreyHaven - The Rathe - Everquest">
+<META NAME="KEYWORDS" CONTENT="">
+<META NAME="DESCRIPTION" CONTENT="Forged from the fires of chaos and the Rock of Order">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+<META NAME="RATING" CONTENT="GENERAL">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke 5.3.1 - http://phpnuke.org">
+<LINK REL="StyleSheet" HREF="themes/Kaput/style/style.css" TYPE="text/css">
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+<br>
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/up-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/up2.gif" align="center" width="100%" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/up-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    <tr>
+    <td background="themes/Kaput/images/left2.gif" width="15">&nbsp;</td>
+    <td bgcolor="ffffff" width="100%"><table border="0"><tr><td rowspan="2"><a href="index.php"><img src="themes/Kaput/images/logo.gif" border="0" alt="Welcome to GreyHaven - The Rathe - Everquest" align="left"></a></td><td align=right width=100%><form action="search.php" method="post"><font class="content" color="#000000"><b>Search </b><input type="text" name="query" size="14"></font></form></td></tr><tr><td align="right" valign="bottom" width="100%"><font class="content"><b><A href="/">Home</a>&nbsp;&middot;&nbsp;<A href="topics.php">News</a>&nbsp;&middot;&nbsp<A href="http://www.greyhaven.cc/calendar/calendar.pl" target="Calendar">Calendar</a>&nbsp;&middot;&nbsp;<A href="user.php">Your Account</a>&nbsp;&middot;&nbsp;<A href="forum.php">Forums</a>&nbsp;&middot;&nbsp;<A href="http://www.greyhaven.cc/modules.php?name=Web_Links">Links</a></b></font></td></tr></table>
+</td>
+    <td background="themes/Kaput/images/right2.gif">&nbsp;</td></tr>
+    <tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/down-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/down2.gif" align="center" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/down-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    </td></tr></table>
+    <br><table cellpadding="0" cellspacing="0" width="99%" border="0" align="center" bgcolor="#ffffff">
+<tr><td bgcolor="#ffffff" valign="top">
+<table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Main Menu</b></font></center><br><font class="content"><strong><big>·</big></strong> <a href="index.php">Home</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/phpBB/" target="Board">Message Board</a><br>
+<strong><big>·</big></strong> <a href="joining.php">Join Us Today!</a><br>
+<strong><big>·</big></strong> <a href="topics.php">Topics</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/calendar/calendar.pl" target="Calendar">Calendar</a><br>
+<strong><big>·</big></strong> <a href="rank-index.php">Rank And File</a><br>
+<strong><big>·</big></strong> <a href="Charter.php">Charter</a><br>
+<strong><big>·</big></strong> <a href="newroster.php">Roster</a><br>
+<strong><big>·</big></strong> <a href="Trades-Index.php">Tradeskills</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/modules.php?name=Web_Links">Links</a><br>
+<strong><big>·</big></strong> <a href="user.php">Your Account</a><br>
+<strong><big>·</big></strong> <a href="submit.php">Submit News</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/OldGH/pictorials/picindex2.html" target="Pictorial">Pictorials</a><br>
+<strong><big>·</big></strong> <a href="http://pub8.ezboard.com/bgreyhavenguild" target="OldBoard">Message Board Archive</a><br>
+</font></td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Login</b></font></center><br><form action="user.php" method="post"><center><font class="content">Nickname<br><input type="text" name="uname" size="8" maxlength="25"><br>Password<br><input type="password" name="pass" size="8" maxlength="20"><br><input type="hidden" name="op" value="login"><input type="submit" value="Login"></font></center></form><center><font class="content">Don't have an account yet? You can <a href="user.php">create one</a>. As registered user you have some advantages like theme manager, comments configuration and post comments with your name.</font></center></td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Who's Online</b></font></center><br><center><font class="content">There are currently, 1 guest(s) and 1 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="user.php">here</a></font></center></td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Modules</b></font></center><br><strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Members_List">Members List</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Web_Links">Web Links</a><br>
+</td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br></td><td><img src="themes/NukeNews/images/pixel.gif" width="15" height="1" border="0" alt=""></td><td width="100%" valign=top>
+<center><h2>Rank and Insignia</h2></center><center><h4><a href='Rank-Ranks.php'>Ranks</a> <a href='Rank-Officers.php'>Officer Ranks</a> <a href='Rank-Awards.php'>Awards</a></h4></center>Throughout history every culture has had a military of some sort. Within these Armies there was a structure. Rank and Insignia actually started within Religious Cults. Being extremely Chaotic in Nature these vast hordes needed a way to control internal turmoil.<br><br>Originally the use of an insignia was a customary practice of vain religious leaders who wore vast amounts of jewelry to show everyone their superiority. Eventually this became a common method of showing honor and pride for ones personal rank. In recent times this practice has taken on a formal approach using standard insignias to represent ranks within an Army.<br><br>The name GreyHaven itself is a 2 part symbolic word of historical meaning dating back to the beginning of time. Grey is an ancient religious Color representing a balance of all things. White, representing purity of essence and the combination of all colors signifying a vibrant soul; and Black, representing complete corruption of essence and a void of colors signifying the darkness of the soul.. Haven is an age old word meaning protected place and signifies Neutral Ground where all are respected and can rest Safely.<br><br>Our Guild has carried this tradition into its very Charter and Own Rank Structure giving each Rank a significant Color and Insignia, so that all Members (be they Human, Elf, Dwarf, Ogre, or any other race)can wear their given Rank with Honor and Pride.<br><br>Guild Councils - These Councils will be volunteer for the most part and consist of no more than 6 members per council. A Council Leader will be appointed by the Guild Leader and the Officers of Greyhaven and chosen from those volunteers.<br><br>Additionally the officer Ranks will maintain a structure of 6. There will be a Captain for every 6 Disciples and a Commander for every 6 Captains. The Ranks of Knight , Lord, and Lady are Special Ranks to symbolize your time and status with Greyhaven.</td></tr></table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/up-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/up2.gif" align="center" width="100%" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/up-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    <tr>
+    <td background="themes/Kaput/images/left2.gif" width="15">&nbsp;</td>
+    <td bgcolor="ffffff" width="100%"><center><font class="tiny">
+This web site was made with <a href="http://phpnuke.org">PHP-Nuke</a>, a web portal system written in PHP. PHP-Nuke is Free Software released under the <a href="http://www.gnu.org">GNU/GPL license</a>.<br>
+<br>
+<br>
+<br>
+</font></center>
+</td>
+    <td background="themes/Kaput/images/right2.gif">&nbsp;</td></tr>
+    <tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/down-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/down2.gif" align="center" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/down-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    </td></tr></table>
+    <br></body>
+</html>

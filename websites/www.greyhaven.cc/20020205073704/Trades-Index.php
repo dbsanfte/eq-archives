@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>GreyHaven - The Rathe - Everquest</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+<META NAME="AUTHOR" CONTENT="GreyHaven - The Rathe - Everquest">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by GreyHaven - The Rathe - Everquest">
+<META NAME="KEYWORDS" CONTENT="">
+<META NAME="DESCRIPTION" CONTENT="Forged from the fires of chaos and the Rock of Order">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+<META NAME="RATING" CONTENT="GENERAL">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke 5.3.1 - http://phpnuke.org">
+<LINK REL="StyleSheet" HREF="themes/Kaput/style/style.css" TYPE="text/css">
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+<br>
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/up-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/up2.gif" align="center" width="100%" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/up-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    <tr>
+    <td background="themes/Kaput/images/left2.gif" width="15">&nbsp;</td>
+    <td bgcolor="ffffff" width="100%"><table border="0"><tr><td rowspan="2"><a href="index.php"><img src="themes/Kaput/images/logo.gif" border="0" alt="Welcome to GreyHaven - The Rathe - Everquest" align="left"></a></td><td align=right width=100%><form action="search.php" method="post"><font class="content" color="#000000"><b>Search </b><input type="text" name="query" size="14"></font></form></td></tr><tr><td align="right" valign="bottom" width="100%"><font class="content"><b><A href="/">Home</a>&nbsp;&middot;&nbsp;<A href="topics.php">News</a>&nbsp;&middot;&nbsp<A href="http://www.greyhaven.cc/calendar/calendar.pl" target="Calendar">Calendar</a>&nbsp;&middot;&nbsp;<A href="user.php">Your Account</a>&nbsp;&middot;&nbsp;<A href="forum.php">Forums</a>&nbsp;&middot;&nbsp;<A href="http://www.greyhaven.cc/modules.php?name=Web_Links">Links</a></b></font></td></tr></table>
+</td>
+    <td background="themes/Kaput/images/right2.gif">&nbsp;</td></tr>
+    <tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/down-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/down2.gif" align="center" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/down-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    </td></tr></table>
+    <br><table cellpadding="0" cellspacing="0" width="99%" border="0" align="center" bgcolor="#ffffff">
+<tr><td bgcolor="#ffffff" valign="top">
+<table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Main Menu</b></font></center><br><font class="content"><strong><big>·</big></strong> <a href="index.php">Home</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/phpBB/" target="Board">Message Board</a><br>
+<strong><big>·</big></strong> <a href="joining.php">Join Us Today!</a><br>
+<strong><big>·</big></strong> <a href="topics.php">Topics</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/calendar/calendar.pl" target="Calendar">Calendar</a><br>
+<strong><big>·</big></strong> <a href="rank-index.php">Rank And File</a><br>
+<strong><big>·</big></strong> <a href="Charter.php">Charter</a><br>
+<strong><big>·</big></strong> <a href="newroster.php">Roster</a><br>
+<strong><big>·</big></strong> <a href="Trades-Index.php">Tradeskills</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/modules.php?name=Web_Links">Links</a><br>
+<strong><big>·</big></strong> <a href="user.php">Your Account</a><br>
+<strong><big>·</big></strong> <a href="submit.php">Submit News</a><br>
+<strong><big>·</big></strong> <a href="http://www.greyhaven.cc/OldGH/pictorials/picindex2.html" target="Pictorial">Pictorials</a><br>
+<strong><big>·</big></strong> <a href="http://pub8.ezboard.com/bgreyhavenguild" target="OldBoard">Message Board Archive</a><br>
+</font></td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Login</b></font></center><br><form action="user.php" method="post"><center><font class="content">Nickname<br><input type="text" name="uname" size="8" maxlength="25"><br>Password<br><input type="password" name="pass" size="8" maxlength="20"><br><input type="hidden" name="op" value="login"><input type="submit" value="Login"></font></center></form><center><font class="content">Don't have an account yet? You can <a href="user.php">create one</a>. As registered user you have some advantages like theme manager, comments configuration and post comments with your name.</font></center></td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Who's Online</b></font></center><br><center><font class="content">There are currently, 2 guest(s) and 0 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="user.php">here</a></font></center></td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0 width=150><tr><td width=17 height=17><img src=themes/Kaput/images/up-left.gif alt="" border=0></td><td background=themes/Kaput/images/up.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/up-right.gif width=17 height=17 alt="" border=0></td></tr><tr><td background=themes/Kaput/images/left.gif width=17>&nbsp;</td><td background=themes/Kaput/images/backdot.gif width=126><center><font class=content><b>Modules</b></font></center><br><strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Members_List">Members List</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Web_Links">Web Links</a><br>
+</td><td background=themes/Kaput/images/right.gif>&nbsp;</td></tr><tr><td width=17 height=17><img src=themes/Kaput/images/down-left.gif alt="" border=0></td><td background=themes/Kaput/images/down.gif align=center width=100% height=17>&nbsp;</td><td><img src=themes/Kaput/images/down-right.gif width=17 height=17 alt="" border=0></td></tr></td></tr></table><br></td><td><img src="themes/NukeNews/images/pixel.gif" width="15" height="1" border="0" alt=""></td><td width="100%" valign=top>
+
+<center><h2>Tradesmen</h2></centeR>
+<hr>
+<p>&nbsp;&nbsp;</p>
+<ul>
+  <li><a href="trades-smithing.php"><font size="3">Smiths</font></a></li>
+  <li><a href="trades-tailoring.php"><font size="3">Tailors</font></a></li>
+  <li><a href="trades-brewing.php"><font size="3">Brewers</font></a></li>
+  <li><a href="trades-pottery.php"><font size="3">Potters</font></a></li>
+  <li><a href="trades-fletching.php"><font size="3">Fletchers</font></a></li>
+  <li><a href="trades-fishing.php"><font size="3">Fishers</font></a></li>
+  <li><a href="trades-alchemy.php"><font size="3">Alchemists</font></a></li>
+  <li><a href="trades-jewelcraft.php"><font size="3">Jewelers</font></a></li>
+  <li><a href="trades-tinkering.php"><font size="3">Tinkers</font></a></li>
+  <li><a href="trades-baking.php"><font size="3">Bakers</font></a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</td></tr></table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/up-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/up2.gif" align="center" width="100%" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/up-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    <tr>
+    <td background="themes/Kaput/images/left2.gif" width="15">&nbsp;</td>
+    <td bgcolor="ffffff" width="100%"><center><font class="tiny">
+This web site was made with <a href="http://phpnuke.org">PHP-Nuke</a>, a web portal system written in PHP. PHP-Nuke is Free Software released under the <a href="http://www.gnu.org">GNU/GPL license</a>.<br>
+<br>
+<br>
+<br>
+</font></center>
+</td>
+    <td background="themes/Kaput/images/right2.gif">&nbsp;</td></tr>
+    <tr>
+    <td width="15" height="15"><img src="themes/Kaput/images/down-left2.gif" alt="" border="0"></td>
+    <td background="themes/Kaput/images/down2.gif" align="center" height="15">&nbsp;</td>
+    <td><img src="themes/Kaput/images/down-right2.gif" width="15" height="15" alt="" border="0"></td></tr>
+    </td></tr></table>
+    <br></body>
+</html>

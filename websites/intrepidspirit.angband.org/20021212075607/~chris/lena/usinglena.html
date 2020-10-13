@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Lena: Learning Email Negation Agent: Amoral Email</title> 
+</head>
+
+<body bgcolor=000000 text=ffffff>
+
+<h2>Lena: A Better Way to Pray</h2>
+
+By utilizing history, we are capable of fortelling the future, kind of.
+For all words in our message frequency distribution ( M ), we look to see
+if there exists a word ( w ) in our history ( H ).  If w exists in H, then
+we use it in our probability calculation.  If it doesn't, different things
+happen based on the exact engine, but in general, one of two events occur,
+One: we use a default value that is fairly low as an estimate, or Two: we
+ignore it.
+<p>
+The calculation engine returns a probability that is then compared with
+the user parameter corresponding to the threshold of sure-ity.  If the
+spaminess of the message exceeds the threshhold, the message is routed to
+SPAM_DEST ( /dev/null, a file for monitoring, whatever ).  If not, it is
+delivered to MAIL_DEST.
+<p>
+Lena has two main modes of operation: delivery and learning.  We've seen
+delivery.  Learning takes place after the message has been delivered.
+When a message is received, the user reads it to verify the message was
+delivered to the appropriate location.  If not, the user "trains" Lena by
+telling it the message should be clean, or dirty, as appropriate.   There
+are probably many was to train Lena, but I took the following route:
+<p>
+<menu>
+  <li> Take a large body of spam free mail ( roughly 200 messages )
+  <li> cat cleanfile | formail -s lena -learn -addClean
+  <li> As spammy messages get delivered, tag them as dirty
+</menu>
+<p>
+This approach ensures that it errs on the side of caution.  Simple mutt
+macros enable the user to easily tag the message as spam or clean as need
+be.  The macros are included below.
+<p>
+<pre>
+macro index \ed "| ~/usr/bin/lena -learn -addSpam^Md"
+macro index \es "| ~/usr/bin/lena -learn^M"
+</pre>
+These macros set up alt-s and alt-d to tag messages.  The ^M is one
+character, not two.  The delete-as-spam macro also deletes the email.  It
+may take a week or two for lena to overcome its positive bias from the
+pre-seeding.  However, if you get a lot of email, it could be much faster.
+<p>
+So how do you get lena to monitor your email for ya?  Use .forward! ojv (
+"Man, its obvious!" );  .forward below...
+<p>
+<pre>
+|/home/chris/usr/bin/lena -deliver -quiet
+</pre>
+</body>
+</html>

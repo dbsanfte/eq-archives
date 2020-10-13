@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Lena: Learning Email Negation Agent: What Design?</title>
+</head>
+
+<body bgcolor=000000 text=ffffff>
+
+<h2>Lena: The Spam Sp00ker</h2>
+Born on a Thursday while I was, uh, testing stuff at work, Lena has been
+handling my email filtering needs for a a while now.  I used to use
+<a href=http://www.spamassassin.org target=_parent>SpamAssassin</a>, which
+really is a great piece of software that works really well, but the appeal
+of the probabilistic model coupled with an innate geekiness to see if I
+could make something that worked drove me to make Lena.
+<p>
+So, your humble author sux0rz at math ( well, not really sux0rz, but isn't
+in danger of winning any <a href=http://www.nobel.se target=_parent>Nobel
+Prizes</a> ).  Anyway, I had somebody send me the 411 on the Bayesian
+probability function ( or what we thought the function was ).  After
+putting in a few special "sumpin'-sumpin'"'s, Lena was off to the races.
+<p>
+The design is fairly straight forward.  Well, the Chris School of Design
+calls for making a bunch of stuff, and then rearranging it to make more
+sense.  The boxes we have here are the file ops routines ( used for
+reading in the history file, config files, etc ), the email message
+abstraction, and the calculation component.  Oh sure, there are other
+thingies too, like semaphores and reporting tools and fun stuffs like
+that, but basically there you have it.
+<p>
+The message class reads the text of an email ( provided to it by .forward
+) and breaks it up on a per word basis.  Punctuation is stripped, and
+multi-part words are broken down ( such as emailaddr@company.com beccomes
+emailaddr, company, and com ).  An optional "exempt list" is used to toss
+out the most common words ( the, for example ).  Adding to the exempt list
+is trivial, and very useful ( all my email have my address in them, so it
+is pointless to make decisions based on it ).  To avoid chugging large
+encoded files, we throw out words that are over an arbitrary length ( 14
+chars ), or under 2 chars ( words like "I'm", tokenizied to "I" and "m"
+don't need to be processed ).  After sorting and striping the message, we
+pass the frequency distribution of the message and the history
+distribution off to the calculation engine.
+<p> 
+</body>
+</html>

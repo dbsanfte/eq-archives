@@ -1,0 +1,415 @@
+<html>
+
+<head>
+<bgsound src="midi/upbeat.mid" loop="1">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title></title>
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body onload="dynAnimation()" stylesrc="http://www.lolclan.com/backgrd.htm" bgcolor="#000000" text="#CCCCCC" link="#FF0000" vlink="#FF0000" alink="#FF0000">
+
+<table CELLPADDING="5" WIDTH="100%" BORDER="0">
+  <tr>
+    <td WIDTH="20%">
+    <applet code="AnWater.class" codebase="http://www.lolclan.com/" width="150" height="263">
+      <param name="image" value="http://www.lolclan.com/lolimages/lollogo2.GIF">
+      <param name="res" value="1">
+      <param name="light" value="YES">
+      <param name="autodesign" value="YES">
+      <param name="density" value="4">
+      <param name="fishnum" value="0">
+      <param name="cross" value="NO">
+      <param name="crossfactor" value="30">
+      <param name="rainsize" value="0">
+      <param name="rainfactor" value="10">
+      <param name="srainsize" value="0">
+      <param name="srainfactor" value="10"><b>Sorry, your browser doesn't support Java.</b>
+    </applet>
+    </td>
+    <td WIDTH="80%"><div align="center"><center><table BORDER="0" height="207">
+      <tr>
+        <td height="203"><img SRC="lolimages/welcome.gif" WIDTH="462" HEIGHT="80" BORDER="0"> <br>
+        <a href="q2open.htm"><img SRC="lolimages/frontpage.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <a href="news.htm"><img SRC="lolimages/newsletter.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <a href="roster.htm"><img SRC="lolimages/roster.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <img SRC="lolimages/dethsquad.gif" BORDER="0" WIDTH="125" HEIGHT="21"> <br>
+        <a href="download.htm"><img SRC="lolimages/downloads.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <a href="roadshow98/rs1.html"><img SRC="lolimages/roadshow.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <a href="misguy.htm"><img SRC="lolimages/funnystory.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <a href="members.html"><img SRC="lolimages/links.gif" BORDER="0" WIDTH="125" HEIGHT="21"></a> <p align="center"><small><small><font color="#00C864">Grafix courtesy of {LOL}TheFoe</font></small></small></td>
+      </tr>
+    </table>
+    </center></div></td>
+  </tr>
+</table>
+
+<p align="left" dynamicanimation="dropWord" style="position: relative !important; left: 10000 !important"><img SRC="lolimages/lolbar.gif" BORDER="0" WIDTH="750" HEIGHT="30"> </p>
+
+<p align="center" dynamicanimation="dropWord" style="position: relative !important; left: 10000 !important"><font face="Bauhaus 93" color="#0C4923"><u><big><big><big><big><big><big><big><big><big><big><strong><blink><big><big>Da
+News</big></big></blink></strong></big></big></big></big></big></big></big></big></big></big></u></font></p>
+
+<p align="center"><font color="#FF0000" face="Copperplate Gothic Bold"><strong><blink><big><big><big><big><marquee border="0" width="95%" height="1%" style="font-family: Comic Sans MS; font-size: 8pt; background-color: rgb(0,0,255); color: rgb(255,255,255)" align="middle" behavior="alternate">WE ARE BACK AND WE ARE BAD!!!     11 Oct 98 Edition</marquee></big></big></big></big></blink></strong></font></p>
+
+<p align="center"><font face="Allegro BT" color="#00FF00">The oldest and best Clan in
+continuous existance on Kali</font></p>
+
+<p align="center"><font face="Allegro BT" color="#00FF00">(as far as we know!)</font></p>
+
+<p align="center"><font face="Allegro BT" color="#00FF00">So far, only <!--webbot bot="HitCounter" i-image="4" i-digits="0" PREVIEW="&lt;strong&gt;[Hit Counter]&lt;/strong&gt;" u-custom i-resetvalue="10151" startspan --><img src="_vti_bin/fpcount.exe/?Page=news.htm|Image=4" alt="Hit Counter"><!--webbot bot="HitCounter" endspan i-checksum="6777" --> folks have seen this edition</font></p>
+
+<p align="center"><img src="lolimages/bluline.gif" width="90%" alt="bluline.gif (11170 bytes)"></p>
+
+<p align="left"><font color="#00C864" face="Comic Sans MS">1 Oct 98&nbsp;&nbsp; EXEC
+COUNCIL MEETS !!!</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">Your beloved Prez has been
+dipping into his own pockets for most of the actual expenses involved with this happy
+family.&nbsp; Due to some unforseen &quot;stuff&quot; he has not been able to dip quite so
+deep this year.&nbsp; Alot of very fine folks have volunteered to dip a bit, but rather
+than have just a few stalwart folks carry the load it was decided that we would levy ALL
+folks for some money.&nbsp; It isnt going to be very much and it is NOT mandatory. &nbsp;
+It will be $20 a year per member or $30 dollars a year for multimember households. &nbsp;
+Let me repeat, it is NOT mandatory!! But those that care for the Clan and all it stands
+for will find a way.&nbsp;&nbsp; Checks may be sent to Barb. Details on address and such
+are available from her (dont think they would appreciate haveing their home address
+published )</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">The actual annual&nbsp; costs
+are as follows:</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">Domain Hosting:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$240 &nbsp; (courtesy of mike and Unreal City)</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">KALI Server license:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $100</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">INTERNIC Domain register:
+&nbsp; $150 intially and $50 a year after the first 2 years</font></p>
+
+<p align="left"><font color="#127637">&nbsp;</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">Any money collected in excess
+of immediate needs will be held for possible hardware upgrade donations to servers
+maintained by our members.&nbsp;&nbsp; If we have enough money on hand and nothing in
+particular that needs paying, we will probably declare a dividend and cease collecting for
+a while.&nbsp; Hopefully we will be able to figger out a way to password a page on the web
+and post a Treasurers Report or some such thing to keep all members posted on where there
+money is.</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">So crank up those checkbooks
+and lets support our selves :)</font></p>
+
+<p align="center"><font color="#127637"><img src="lolimages/bluline.gif" width="90%" alt="bluline.gif (11170 bytes)"></font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#00C864">10 Oct 98&nbsp;&nbsp; &nbsp;
+THE SATURDAY NIGHT TOURNEY IS BACK!!!!!</font></p>
+
+<p align="left"><font color="#127637">Well, yall asked for it and it was done.&nbsp; The
+first ever Saturday Night Q2 2 v 2 tournaey was held last night and what a hoot it
+was.&nbsp; Despite some initial false starts and a bit of rule changeing on the fly the
+tourney took off. &nbsp; Rules are simple, 2 people per team, 1 LPB teamed with one Not So
+LPB.&nbsp; Maps are standard 1v1 Q2 maps and are decided and announced in advance, first
+team to 20 points wins and progresses to next round.&nbsp;&nbsp; </font></p>
+
+<p align="left"><font color="#127637">LET THE FRAGGING BEGIN!!&nbsp;&nbsp; When all the
+smoke and giblets had cleared the winning team was&nbsp;&nbsp; Brian {LOL}Duked2 and Kevin
+{LOL}Phalanx &nbsp; played most valiantly by Alex {LOL}DarkNight and Sam
+{LOL}ElHefeDogg.&nbsp; The map was&nbsp; Railgun Stadium.</font></p>
+
+<p align="left"><font color="#127637">The Tourney will be a weekly thing on Sat nights, at
+8 PM EST, 7 Central, 6 Mountain and 5 Pacific.&nbsp; Teams MAY be permanent or will be
+made up that night. &nbsp; Also trying to get the old LOL Duke Ladder suitably modded so
+we can use it also, more on that later. </font></p>
+
+<p align="center"><font color="#127637"><img src="lolimages/bluline.gif" width="90%" alt="bluline.gif (11170 bytes)"><font face="Comic Sans MS"> </font></font></p>
+
+<p align="left"><font color="#127637">&nbsp;</font></p>
+
+<p align="left"><font color="#127637">&nbsp;</font></p>
+
+<p align="left"><font color="#127637">&nbsp;</font></p>
+
+<p align="left"><font color="#127637">&nbsp;</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">THE {LOL}Clan news letter will
+be returning shortly on a monthly and &quot;as needed&quot; basis.</font></p>
+
+<p align="left"><font face="Comic Sans MS" color="#127637">WHat I would like is
+&quot;stuff&quot; from yall to put in here. personal, proffesional, rumours, facts, jokes,
+funny stories, techy tips, etc etc etc.</font></p>
+
+<p align="center"><font color="#127637"><img src="lolimages/email1.gif" alt="email1.gif (19746 bytes)" WIDTH="83" HEIGHT="75"></font></p>
+
+<p align="center"><font color="#127637">&nbsp;</font></p>
+
+<p align="center" dynamicanimation="flyBottom" style="position: relative !important; left: 10000 !important"><font color="#127637"><img src="lolimages/bluline.gif" width="90%" alt="bluline.gif (11170 bytes)"></font></p>
+
+<p align="center"><small><small><font color="#127637"><font face="AdLib BT">Return me
+to&nbsp; {LOL} Clan home page&nbsp;&nbsp;&nbsp; <a href="q2open.htm"><img src="lolimages/10home.gif" alt="8home.gif (1347 bytes)" border="0" WIDTH="61" HEIGHT="19"></a>&nbsp;&nbsp; Email
+the bozo that wrote this stuff&nbsp;&nbsp; </font><a href="mailto://prez@lolclan.com"><img src="lolimages/clownanim.gif" alt="clownanim.gif (18844 bytes)" border="0" WIDTH="80" HEIGHT="60"></a></font></small></small></p>
+
+<p align="center"><font color="#127637"><img src="lolimages/bluline.gif" width="90%" alt="bluline.gif (11170 bytes)"></font></p>
+
+<p align="center"><font face="AdLib BT" color="#127637"><em><big><big>Rich {LOL}FXDB</big></big></em></font></p>
+
+<p align="center"><img src="lolimages/qtex.jpg" border="0" alt="qtex.jpg (2173 bytes)" WIDTH="88" HEIGHT="31"></p>
+
+<p align="center">&nbsp;<img src="lolimages/topbar.gif" alt="topbar.gif (2819 bytes)" WIDTH="420" HEIGHT="46"></p>
+</body>
+</html>
