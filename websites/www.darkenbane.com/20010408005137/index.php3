@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>Darkenbane</title>
+<STYLE TYPE="text/css">
+BODY {
+background-color: #000000;
+font-family: "Arial";
+font-size: 12pt;
+color: #FFFFFF;
+}
+
+A {
+font-family: "Arial, Helvetica";
+text-decoration: none;
+}
+
+TD {
+font-family: "Arial, Helvetica";
+color: #FFFFFF;
+}
+
+H3 {
+font-family: "Arial";
+font-size: 12pt;
+color: #FFFFFF;
+}
+
+A:link{
+font-family: "Arial";
+color: #EA8C37;
+}
+
+A:visited{
+font-family: "Arial";
+color: #EA8C37;
+}
+
+A:hover{
+color: #FFFFFF;
+}
+
+</STYLE>  
+</head>
+<body bgcolor="#000000" marginwidth="0" marginheight="0">
+<center>
+<table cellspacing="0" cellpadding="10" border="0" width="100%">
+<tr><td align="center" width="100%" colspan="2">
+<!-- LOGO -->
+<a href="/members/kills/viewkill.php3?killid=8491"><img src="/pictures/105/1672/small/8491.jpg" border="0"></a>
+
+<img src="/dblogo.gif" border="0">
+
+<a href="/members/kills/viewkill.php3?killid=8490"><img src="/pictures/155/279/small/8490.jpg" border="0"></a>
+<br><center>"Those who are feared, are hated." --Benjamin Franklin</center>
+</td></tr>
+<tr><td valign="top">
+<!-- MENU -->
+<b>Main:</b><br>
+<li><a href="/index.php3">News</a>
+<li><a href="/charter.php3">Charter</a>
+<li><a href="/history.php3">History</a>
+<li><a href="/apply.php3">Apply</a>
+<p>
+<b>Features:</b><br>
+<li><a href="/members/index.php3">DB Scum</a>
+<li><a href="/guild/index.php3">Guilds</a>
+<li><a href="/victims/index.php3">Victims</a>
+<li><a href="/latest.php3">Latest</a>
+<li><a href="/statistics/index.php3">Top 10's</a>
+<li><a href="/chat/index.php3">Chat</a>
+<li><a href="/status.php3">Servers</a>
+<li><a href="/points/index.php3">Points</a>
+<li><a href="/ladder/index.php3">Ladder</a>
+<p>
+<!-- <li><a href="/uploads/index.php3">Once Blind</a> -->
+<p>
+<b>Members:</b><br>
+<li><a href="/login/index.php3">Logon</a>
+<p>
+<b>Forums:</b><br>
+<li><a href="http://boards.gamers.com/messages/overview.asp?name=darkenbane" target="_blank">Everquest</a>
+<li><a href="http://boards.gamers.com/messages/overview.asp?name=cocolake" target="_blank">Recruits</a>
+<li><a href="http://www.gamers.com/messages/overview.asp?name=DBprivate" target="_blank">Shadowbane</a>
+<p>
+<b>Contact:</b><br>
+<li><a href="mailto:grayrage@darkenbane.com">Guildmaster</a>
+<li><a href="mailto:webmaster@darkenbane.com">Webmaster</a>
+<p>
+"Fear preserves you by a dread of punishment that never fails." --Machiavelli
+</td><td valign="top" width="100%">
+
+<!-- NEWS -->
+<table cellspacing="0" cellpadding="4" border="0" width="100%">
+<tr bgcolor="#7A7AA5"><td><b>Patch day! Bye to Rump :(  Hello to RUMP!</b></td><td align="right"><b>04-04-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 04-04-2001 13:53</font><p>Well, I read the <a href="http://eq.castersrealm.com/viewarticle.asp?Article=3365"target="_blank">patch message</a> and, among all the other interesting stuff, The Guild Message of the Day stood out rather ominously.  *Looks at offciers*.  It seems any officers of the guild will be able to leave messages of the day for the guild so that whenever a guildmember logs on their screen will be spammed with the guild messages.  Let's save the Guild messages of the day for important stuff so it actually won't be ignored by everyone when they logon ;p<br>
+<br>
+I would like to say farewell (for now) to Rumproasta (the original)!  He has decided to take a break from EQ (he says forever...but we know how that goes hehe) and has contributed the services of Rump to the guild!  Wotonn will be taking up Rump's charge as Priest of Darkenbane!  Rump will always be welcome back in DB when he realizes EQ addiction can't be shaken that easily! (Actually he is graduating college and wants to have his head straight for his new job.  Go RUMP!)<br>
+<br>
+Hey!  What is there to do when the server are down all day?  Well how bout checking out some <a href="http://www.nep.nu/falcons/movies/harmy.swf"target="_blank">Ogre dancing lessons</a>....or better yet, <a href="http://server49.hypermart.net/voxton/flash/bell.html"target="_blank">REAL OGRE DANCING LESSONS!</a><br>
+<br>
+After Fear on Saturday we did Fear on Sunday too!  The usual stuff dropped.  Check your points and make sure they are correct!  I will be getting them set up today. Also grats to Frobin who got his Monk Pet off a Guardian Wurm last night!<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>Celeco account stolen.  Fraud.</b></td><td align="right"><b>03-04-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 03-04-2001 16:48</font><p>The Celoco account was sold by it's original owner to a guy who later joined DB for $230.  I don't give a crap that Verant does not want accounts sold, but I do give a shit about thieves.  Selling an account is NOT a crime, stealing it back AFTER taking money for it <i>IS</i> a crime.<br>
+<br>
+If you have any detailed information regarding THIS thief or any other account thief, please email me at grayrage@darkenbane.com.   <br>
+<br>
+<a href="http://boards.gamers.com/messages/message_view-topic.asp?name=darkenbane&id=zyzlh"target="_blank">Click here for the details and information we have so far on this theft and the thief as well as his logs in game after he stole it back</a>.<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>The day of the booty!</b></td><td align="right"><b>01-04-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 01-04-2001 00:32</font><p>During a 4 hour clearing of the Plane of Fear, DB managed to dig up, among other things, Verm Boots, Carmine Boots and Blighted Boots!  Man oh man 30 wizzies can just blow right through Fear ;p  (that's a goof for you tards out there that didn't get it).<br>
+<br>
+Great job!  Here's the details:<br>
+<br>
+1. Hamadryass...err butt...ad hehe (sorry typos): Ranger danger gloves (that's Thorney Vine Gloves).<br>
+2. Ebula: Turmoil Skin Belt.<br>
+3. Frobin: Blighted Boots.<br>
+4. Kulumalda: Some nifty Shield that makes lightning shoot out her arse....errr or is that me? ;p<br>
+5. Ekimus: Blighted Trowsers<br>
+6. Sieges: Vermiculated Bracer<br>
+7. Meter: Verm Booties.<br>
+8. Aakor: Carmine Shoes.<br>
+9. Rotted: Monk BP (hint...we need a monk :)<br>
+<br>
+Thanks Meter.  Your leadership on these raids is invaluable.<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>Officers selected!</b></td><td align="right"><b>31-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 31-03-2001 16:21</font><p>Many folks wonder why we get all crazy when someone leaves Darkenbane.  WHy we hunt them...why we kill them, their family and everyone they spoke to.  You wonder, is it because we don't like to lose folks?  Maybe becasue they know secrets and we need to silence them?  Well the answer is no.  The reason we get nuts about it is becasue they betrayed us.  They took a knife and stabbed it right in our hearts.  No family should do that to their brethren...ever.<br>
+<br>
+Some say our anger is not distributed evenly.  Gavotte, for example, left DB and we sadly said goodbye and that was the end of it.  Why, you may ask, do we "care" less when such as Gavotte leaves Db as opposed to long timers Stoffer, Danubi and 801?  The difference is these folks were OFFICERS and, as such, we TRUE Darkenbane.  They were part of the Company for real and then turned their backs on us.<br>
+<br>
+I would like to take this opportunity to welcome back our straying family members, Stoffer and Danubi.  FOr a time they will feel our lingering anger at them, but after the kicking and screaming it is nice to be almost whole once again.<br>
+<br>
+They will have quite the journey, however, to achieve Officer status among us again.  In the mean time, some DBers find themselves on the brink of becoming full on nasty bastard (or bitches) as they don the mantle of Darkenbane leadership!<br>
+<br>
+These new officers now are full members of DB and, as such, have a grave responsibility tot heir brethren of maintaining their loyalty to each other until the end of days!  Through unity and loyalty to each other none can stand before our power!   I welcome each of you among us forever!<br>
+<br>
+The following recruits are now full Darkenbane members and will be awarded officer status:<br>
+<br>
+Einnod: I need to talk to you first.<br>
+Azzazz: I also need to talk to you first.<br>
+Sieges: Happy birthday little brother.<br>
+Shiya/Zagg:  A Very worthy new member.<br>
+Uaelaeliu: One of the better PKs in the game.<br>
+Fizzletwit: Loyalty incarnate.<br>
+<br>
+Congratulations to you all!  You loyalty and respect inthe guild has earned you place among the wolves of Norrath!<br>
+<br>
+Oh....did I forget Hama?  ;p<br>
+<br>
+Hamadryad:  I think she is in deep enough now. ;p<br>
+<br>
+Grats brothers and sisters!<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>Quit <i>Fucking</i> around!</b></td><td align="right"><b>30-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 30-03-2001 19:20</font><p>Resistance is futile puny mortals!  Darkenbane rampages over the fertile lands of Norrath destroying and enslaving all who stand in it's path!  Resist us no longer <b>fools</b> for even YOU must see the inevitable end.<br>
+<br>
+For years the sheep of the land have scoffed at the ability of the wolves to eat them all. The sheer numbers of sheep prevented that as they hid in cowardly groups groveling and praying the darkness did not fall upon them, but still comfortable knowing that likely the guy NEAR them would prolly get eaten before them!<br>
+<br>
+This 'school of fish' mentality is over! We RULE this land now and you are our SLAVES!  Submit now to our rule and perhaps we will make it easy on you after a time of some...torture! *cackle*<br>
+<br>
+OOC:  If yer 40+, like to kill folks, wear clean underwear oNCe per week, enjoy (and participate) in organized group raids as well as have the ability to fend for yourself, click the <a href="http://www.darkenbane.com/apply.php3"target="_blank">apply</a> button to your left. Follow the instructions you receive and enjoy the RIDE!<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>Status page</b></td><td align="right"><b>29-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:meter@darkenbane.com">Meter</a> on 29-03-2001 12:09</font><p>The <a href="http://www.darkenbane.com/status.php3">server status page</a> works again, enjoy.<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>Some Spring cleaning!</b></td><td align="right"><b>28-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 28-03-2001 20:23</font><p>I cleaned out some names from the DB Scum section on folks that mostly has been inactive lately.  If your name has been removed wrongly please email me!<br>
+<br>
+Speaking of some changes, the Guild Shortenbane has not been living up to our hopes of a low level DB guild.  After receiving a multitude of complaints from applicants not receiving answers and poor organization, DB is canceling it's support of that guild.<br>
+<br>
+Taking Shortenbane's place will be the infamous and well renowned guild Flowers of Happiness!  aLL sub 40th level applications will be sent to FOH representative, Talonna, for processing! (starting tommorow so don't submit until the application page has FOH's name on it).<br>
+<br>
+Db will make every effort to support this guild and plans to add them to the PvP ladder when it is done!  Good luck FOH brethren!!<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>14 hours of FEAR!</b></td><td align="right"><b>26-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 26-03-2001 11:27</font><p>In an EPIC day of battle against Casic THule and his minions, Darkenbane blasted, slashed and ground their way through the Plane of Fear!<br>
+<br>
+Some DBers stayed the entire 14 hours, ordering chinese or pizza and being fed by slaves (errr loved ones) whilst others took breaks for such useless chores as showering and using the toilet (duh...no one has heard of diapers? My god we gotta get these guys straight ;p).<br>
+<br>
+The marathon began like usual with OUR version of a breakin (killing any players that do not surrender or flee).  In a few short hours the plane was cleared and it was time to test Mr. Thule and his Lt.s.  After getting our asses kicked a few times (we had only ONE freagin' cleric the whole time...jeez) the zone was nice enough to spawn again.<br>
+<br>
+Cleared it a second time then got our asses kicked again by Casic's big boys  (oooooo  we got those fuukers next time though.  We know their deal now :).<br>
+<br>
+Loot?!  Yeeeehaw!  Innoruuk musta been chattin' with his pal Casic on our behalf, cause he HOOKED us up!  CHeck it out:<br>
+<br>
+1. Graraige:  Carmine Gloves, Arms.<br>
+2. Meter:  Verm Gloves (Gay intel on these?)<br>
+3. Frobin:  Blighted Robe, Cryo Choker<br>
+4. Ever:  Carmine Gloves.<br>
+5. Celoco:  Misc Thorny Vine (a full freagin' suit dropped practically).<br>
+6. Valkar:  SK Bracers.  A BP dropped and it ROTTED before we could rez him...he was like 2 steps from corpse of MOB when it poofed!!!!!!!  /sob<br>
+7. Ekimus:  Cryo Cloak, Blighted Gloves<br>
+8. Zagg:  Blue Diamond.<br>
+9. Yaari:  Diamond.<br>
+<br>
+Along with various money loot items, runes, words, wands and other crapola the following items rotted (or was picked up by Genaside to aggravate people with):<br>
+<br>
+1. Pali legs and helm.<br>
+2. SK pieces (Valkar already had)<br>
+3. Flux axe (s) (rangers had them)<br>
+4. 4 Monk drops.<br>
+5. Shaman boots (from jello)<br>
+6. Bard bracers (from jello)<br>
+7. Mage robe (from jello)<br>
+8. Just kidding about mage robe to aggravate 801.<br>
+9. Some other stuff I can't recall.<br>
+<br>
+Good work fellow scum!  Was fun!  *eats more pizza*<br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>Fixing bugs in PvP!</b></td><td align="right"><b>23-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 23-03-2001 20:49</font><p>As an ongoing effort, we will try and get some of the more glaring bugs in PvP fixed through bringing them public for the programmers to work on.<br>
+<br>
+All of us have fallen victim to Bards being able to poof our pets with a simple song. Additionally, their unique ability to use clickable CAST time items while running is being discussed on EQ gameplay forum.  The ONLY way this will be fixed is if we make enough noise for them to actually LOOK at the post and the issue so your support IS needed to keep it up front and in the spotlight until it is addressed.<br>
+<br>
+To post on the EQ Forums u have to use your USERNAME and Password for EQ.  But PLEASE don't fucking (oops) curse or be a nasty cocksmoker (oops again) on the forums, cause they will ban yah if you do.<br>
+<br>
+<a href="http://boards.station.sony.com/everquest/Forum2/HTML/070516.html"target="_blank">Please support NERFING BARD (*cough* Nyce *cough*)PvP Exploits HERE!!</a><br><br></td></tr>
+<tr bgcolor="#7A7AA5"><td><b>A rulebook for Rallos Zek!</b></td><td align="right"><b>22-03-2001</b></td></tr>
+<tr><td colspan="2"><font size="1">Submitted by <a href="mailto:grayrage@darkenbane.com">Grayrage</a> on 22-03-2001 13:51</font><p>On Saturday night a squad of DBers were warned for ZONE camping on the Oasis/South RO border.  Lots of issues came up inculding the GM indicating a NEW rule advising we were NOT allowed to chase foes across zone boundries!<br>
+<br>
+We all know this is silly, but he SAID it!  The bottom line?  Our server needs a freagin' RULE book.  <a href="http://boards.gamers.com/messages/message_view-topic.asp?name=darkenbane&id=zzaxv"target="_blank">Here's the log of the GM warning us.</a><br>
+<br>
+Incidentally, did you know that Bard Charm 'poofs' pets?  Can someone explain to me why a simple bard song can make a pet poof whilst it takes a 60th level Druid or Mage spell with a 80 plat regent to do it (and it is resisted on top of that).  Druids and MAges are the "masters" of summoned damage, so why is it a Bard can kill a pet so much easier with no resistance at such an earlier level?  I will tell you why, it is a bug.  FIX IT, please.<br>
+<br>
+Hmmmm.  Not to pick on Bards to much (ummm Nyce), but does everyone know that Bards can use a crystalized pumice WHILE running?  Or ANY clickable items for that matter.  Well now....this does not seem to be fair to me.  Why can't EVERYONE run and use clickable cast time items?  Because it is a BUG!  FIX IT, please.<br>
+<br>
+Look for some links regarding these issues on the gameplay forums soon.  /wave Bard.  (apologizes to Gavotte).<br><br></td></tr>
+</table>
+</td></tr>
+</table>
+</center>
+</body>
+</html>

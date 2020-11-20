@@ -1,0 +1,1073 @@
+#! /usr/bin/perl -w
+
+#use Apache::DBI;
+use DBI;
+use CGI;
+use CGI::Carp;
+use strict;
+use vars qw($dbh);
+
+require "/mnt/www/xeno/df/darklib.pl";
+require "/mnt/www/xeno/df/spelllib.pl";
+require "/mnt/www/xeno/df/ilib.pl";
+require "/mnt/www/xeno/df/slib.pl";
+
+BEGIN {
+  @D::magics=('str','sta','cha','dex','intl','agi','wis','savemagic',
+              'savefire','savecold','savedisease','savepoison',
+              'hp','mana','spell');
+  @D::effects=('ac','light','delay','damage','range');
+  @D::specials=('contslots','castlevel','weightred');
+
+  $D::dmgsec='DMGSEC';
+  $D::acwght='(ac / GREATEST(weight/10.0,0.01))';
+}
+
+my $q=datainit();
+
+print $q->header();
+my_start_html(\$q, "Complete EQ Datafile");
+page_top();
+
+my $junk=$Q::cllogic;
+$junk=$S::TARGS{'alpha'};
+$junk=$S::RESIST{'alpha'};
+
+if ($Q::inum) {
+  my $sth = $dbh->prepare("SELECT * from items WHERE inum = $Q::inum");
+  $sth->execute();
+  my $r = $sth->fetchrow_hashref();
+  print "<P CLASS=\"SPELLTITLE\">Data for $$r{'name'}</P>\n";  
+  print "<TABLE CLASS=\"SPELLS\">\n";
+  print "<TR>" .thelp("Name", "name") . "<TD>$$r{'name'}</TD></TR>\n";
+  print "<TR>" .thelp("Icon", "icon") . "<TD><IMG SRC=\"icon/$$r{'icon'}.gif\"></TD></TR>\n";
+  if ($$r{'submitter'}) {
+    print "<TR>" .thelp("Submitted By", "submittedby") . "<TD>$$r{'submitter'}</TD></TR>\n";
+  }
+  printf("<TR>" .thelp("Weight", "weight") . "<TD>%.1f</TD></TR>\n",$$r{'weight'}/10);
+  print "<TR>" .thelp("Flags", "flags") . "<TD>";
+  if (! $$r{'candrop'} ) {
+    print "NODROP ";
+  }
+  if ($$r{'summontype'}==0 ) {
+    print "NOSAVE ";
+  }
+  if ($$r{'ismagic'}==1 ) {
+    print "MAGIC ";
+  }
+  if ($$r{'lore'}==1 ) {
+    print "LORE ";
+  }
+  if ($$r{'charges'} && ! $$r{'spell'}) {
+    print "STACKABLE ";
+  }
+  print "</TD></TR>\n";
+  print "<TR>" .thelp("Size", "size") . "<TD>$$r{'size'}</TD></TR>\n";
+  my $it;
+  if ($$r{'itemtype'}==0) {
+    $it="Normal Item";
+  } elsif ($$r{'itemtype'}==1) {
+    $it="Container";
+  } else {
+    $it="Book";
+  }
+  print "<TR>" .thelp("Item Type", "itemtype") . "<TD>$it</TD></TR>\n";
+  if ($$r{'slots'}) {
+    print "<TR>" .thelp("Slots", "slots") . "<TD>";
+    my $i=0;
+    foreach my $c (@I::slots) {
+      if ($$r{'slots'} & (1<<$i)) {
+        print "$c ";
+      }
+      $i++;
+    }
+    print "</TD></TR>\n";
+  }
+  print "<TR>" .thelp("Class(es)", "classes") . "<TD>";
+  if (($$r{'class'}==16383) || ($$r{'class'}==-1)) {
+    print "All";
+  } else {
+    my $i=0;
+    foreach my $c (@I::classes) {
+      if ($$r{'class'} & (1<<$i)) {
+        print "$c ";
+      }
+      $i++;
+    }
+  }
+  print "</TD></TR>\n";
+  print "<TR>" .thelp("Race(s)", "races") . "<TD>";
+  if (($$r{'race'}==4095) || ($$r{'class'}==-1)) {
+    print "All";
+  } else {
+    my $i=0;
+    foreach my $rc (@I::races) {
+      if ($$r{'race'} & (1<<$i)) {
+        print "$rc ";
+      }
+      $i++;
+    }
+  }
+  print "</TD></TR>\n";
+
+  if ($$r{'material'}) {
+    print "<TR>" .thelp("Texture", "texture"). "<TD>";
+    if ($$r{'color'}) {
+      printf("<FONT COLOR=#%06x>",$$r{'color'});
+    }
+    my $a=$$r{'material'};
+    if ($a==1) {
+      print "Leather";
+    } elsif ($a==2) {
+      print "Ringmail";
+    } elsif ($a==3) {
+      print "Platemail";
+    } else {
+      print "Unknown material $a";
+    }
+    if ($$r{'color'}) {
+      print "</FONT>";
+    }
+    print "</TD></TR>\n";
+  }
+  if (defined($$r{'category'})) {
+    print "<TR>" .thelp("Category", "category"). "<TD>$I::cat{$$r{'category'}}</TD></TR>\n";
+  }
+  print "<TR>" .thelp("Price", "price") . "<TD>";
+  print pricestring($$r{'price'});
+  print "</TD></TR>\n";
+   
+  print "</TABLE>\n";
+
+  my $showmagic=0;
+  my $showeffects=0;
+
+  foreach my $sm (@D::magics) {
+    if (($sm !~ 'spell') && $$r{$sm}) {
+      $showmagic=1;
+    }
+  }
+  foreach my $se (@D::effects) {
+    if ($$r{$se}) {
+      $showeffects=1;
+    }
+  }
+
+  if ($showeffects) {
+    print "<P CLASS=\"SPELLTITLE\">Item Data</P>\n";  
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    foreach my $se (@D::effects) {
+      if ($$r{$se}) {
+        print "<TR><TH>$I::CN{$se}</TH><TD>$$r{$se}</TD></TR>\n";
+      }
+    }
+#    if ($$r{'damage'} && $$r{'delay'}) {
+#      printf("<TR>" .thelp("Damage/Sec", "damagesec"). "<TD>%.2f</TD><TR>\n", ($$r{'damage'}*2.0 + 1) / ($$r{'delay'} / 10));
+#    }
+    if ($$r{'ac'} && $$r{'weight'}) {
+      printf("<TR>" .thelp("AC/Weight", "acweight"). "<TD>%.2f</TD><TR>\n", $$r{'ac'} / ( $$r{'weight'} / 10.0) );
+    }
+    print "</TABLE>\n";
+  }
+
+  if ($$r{'damage'} && $$r{'delay'}) {
+    print "<P CLASS=\"SPELLTITLE\">Weapon Damage per Second</P>\n";
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    foreach my $s ('1|Under lvl 31 or Offhand','2|Level 31+','3|Level 34+','4|Level 37+','5|Level 40+','6|Level 43+','7|Level 46+','8|Level 49+') {
+      my ($bonus,$txt)=split(/\|/,$s);
+      printf("<TR><TH>$txt</TH><TD>%.3f</TD></TR>\n",($$r{'damage'} * 2.0 + $bonus) / ($$r{'delay'} / 10));
+    }
+    print "</TABLE>\n";
+  }
+
+  if ($showmagic) {
+    print "<P CLASS=\"SPELLTITLE\">Magical Bonuses</P>\n";  
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    foreach my $sm (@D::magics) {
+      if ($$r{$sm} && (!($sm eq 'spell'))) {
+        print "<TR><TH>$I::CN{$sm}</TH><TD>$$r{$sm}</TD></TR>\n";
+      }
+    }
+    print "</TABLE>\n";
+  }
+
+  if ($$r{'castlevel'} || $$r{'spell'}) {
+    print "<P CLASS=\"SPELLTITLE\">Magical Effect</P>\n";  
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    print "<TR><TH>Name</TH><TD>" . getspelllink($$r{'spell'}) . "</TD></TR>\n";
+    print "<TR>" .thelp("Charges", "charges") . "<TD>$$r{'maxcharges'}</TD></TR>\n";
+    if ($$r{'castlevel'}) {
+      print "<TR>" .thelp("Casting Level", "castinglevel") . "<TD>$$r{'castlevel'}</TD></TR>\n";
+    }
+    print "</TABLE>\n";
+  }
+
+  if ($$r{'contslots'}) {
+    print "<P CLASS=\"SPELLTITLE\">Container Info</P>\n";  
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    print "<TR>" .thelp("Slots", "contslots") . "<TD>$$r{'contslots'}</TD></TR>\n";
+    print "<TR>" .thelp("Max Size", "contsize") . "<TD>$$r{'contsize'}</TD><TR>\n";
+    if ($$r{'weightred'}) {
+      print "<TR>" .thelp("Weight Reduction", "weightreduction") . "<TD>$$r{'weightred'}\%</TD><TR>\n";
+    }
+    print "</TABLE>\n";
+  }
+
+  my $inum=$$r{'inum'};
+
+  my %I;
+
+  $sth= $dbh->prepare("SELECT * FROM trades WHERE tnum=$inum");
+  $sth->execute();
+  if ($sth->rows() > 0) {
+    my $r=$sth->fetchrow_hashref();
+    print "<P CLASS=\"SPELLTITLE\">TradeSkill Information</P>\n";  
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    print "<TR>" .thelp("Skill", "t_skill") . "<TD>$T::SKILLS{$$r{'skill'}}</TD></TR>\n";
+    print "<TR>" .thelp("Min Skill", "t_minskill") . "<TD>$$r{'minskill'}</TD></TR>\n";
+    print "<TR>" .thelp("Trivial Skill", "t_trivialskill") . "<TD>$$r{'maxskill'}</TD></TR>\n";
+    $sth=$dbh->prepare("SELECT cnum,cname FROM tradecont WHERE tcnum=$inum");
+    $sth->execute();
+    while ((my $r=$sth->fetchrow_hashref())) {
+      print "<TR>" .thelp("Container", "t_container") . "<TD>";
+      if ($$r{'cnum'}) {
+        $I{$$r{'cnum'}}=1;
+        print getitemlink($$r{'cnum'});
+      } else {
+        print $$r{'cname'};
+      }
+      print "</TD></TR>\n";
+    }
+    $sth->finish();
+    $sth=$dbh->prepare("SELECT itnum,ammount FROM tradeitem WHERE tinum=$inum");
+    $sth->execute();
+    while ((my $r=$sth->fetchrow_hashref())) {
+      $I{$$r{'itnum'}}=1;
+      print "<TR><TH>Ingredient</TH><TD>";
+      print getitemlink($$r{'itnum'});
+      print "($$r{'ammount'})</TD></TR>\n";
+    }
+    $sth->finish();
+    print "</TABLE>\n";
+  }
+
+  if ($DF::USER{'privs'} > 0) {
+    print $q->startform(-action=>'trade.cgi');
+    print $q->hidden(-name=>'tnum',-value=>$Q::inum);
+    print $q->hidden(-name=>'return',-value=>$q->url(-full=>1,-query=>1));
+    print $q->hidden(-name=>'mode');
+    print $q->submit(-value=>'Make a Trade');
+    print $q->endform();
+  }
+
+  $sth=$dbh->prepare("SELECT tinum FROM tradeitem WHERE itnum=$inum");
+  $sth->execute();
+  while ((my $r=$sth->fetchrow_hashref())) {
+    $I{$$r{'tinum'}}=1;
+  }
+
+  my $str = "SELECT s.snum FROM spells=s,spellitem=i WHERE ( s.snum=i.spnum AND i.itemnum=$$r{'inum'} ) ";
+  if ($$r{'spell'}) {
+    $str.= " OR s.snum=$$r{'spell'} ";
+  }
+
+  my %S;
+
+  $sth = $dbh->prepare($str. " ORDER BY s.name");
+  $sth->execute();
+  while ((my $r = $sth->fetchrow_hashref())) {
+    $S{$$r{'snum'}}=1;
+  }
+  $sth->finish();
+
+  $sth = $dbh->prepare("SELECT spnum FROM spelleff WHERE effect = 32 AND min = $inum");
+  $sth->execute();
+  while ((my $r = $sth->fetchrow_hashref())) {
+    $S{$$r{'spnum'}}=1;
+  }
+  $sth->finish();
+
+  if (keys %S) {
+    print "<P CLASS=\"SPELLTITLE\">Related Spells</P>\n";
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    foreach my $s (sort keys %S) {
+      print "<TR><TD>" . getspelllink($s) . "</TD></TR>\n";
+    }
+    print "</TABLE>\n";
+  }
+
+  if (keys %I) {
+    print "<P CLASS=\"SPELLTITLE\">Related Items</P>\n";
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    foreach my $i (sort keys %I) {
+      print "<TR><TD>" . getitemlink($i) . "</TD></TR>\n";
+    }
+    print "</TABLE>\n";
+  }
+
+  printchat(\$q, "i" . $Q::inum);
+} elsif ($Q::snum) {
+  my $sth = $dbh->prepare("SELECT * from spells WHERE snum = $Q::snum");
+  $sth->execute();
+  my $r = $sth->fetchrow_hashref();
+  my $mana=$$r{'mana'};
+  my $snum=$$r{'snum'};
+  print "<P CLASS=\"SPELLTITLE\">Data for $$r{'name'}</P>\n";
+  print "<TABLE CLASS=\"SPELLS\">\n";
+  print "<TR>" .thelp("Name", "name") . "<TD>$$r{'name'}</TD></TR>\n";
+  print "<TR>" .thelp("Icons", "icon") . "<TD><IMG SRC=\"icon/$$r{'bookicon'}.gif\"><IMG SRC=\"icon/$$r{'memicon'}.gif\"></TD></TR>\n";
+  print "<TR>" .thelp("Mana Cost", "manacost") . "<TD>$$r{'mana'}</TD></TR>\n";
+  print "<TR>" .thelp("Skill", "skill") . "<TD>$S::SKILLS{$$r{'skill'}}</TD></TR>\n";
+  print "<TR>" .thelp("Target Type", "targettype") . "<TD>$S::TARGS{$$r{'target'}}";
+  if ($$r{'targrestr'}==0) {
+    print " (Enemy)";
+  } elsif ($$r{'targrestr'}==2) {
+    print " (Group)";
+  }
+  print "</TD></TR>\n";
+  if ($$r{'maxrange'} > 0) {
+    print "<TR>" .thelp("Max Range", "maxrange") . "<TD>$$r{'maxrange'}</TD></TR>\n";
+  }
+  print "<TR>" .thelp("Class(es)", "classes") . "<TD>";
+  foreach my $c (sort @S::classes) {
+    if ($$r{$c}) {
+      print "$c($$r{$c}) ";
+    }
+  }
+  print "</TD></TR>\n";
+  printf("<TR>" .thelp("Casting Time", "castingtime") . "<TD>%.1f sec</TD></TR>\n",$$r{'casttime'} / 1000.0);
+  printf("<TR>" .thelp("Recovery Time", "recoverytime") . "<TD>%.1f sec</TD></TR>\n",$$r{'rectime'} / 1000.0);
+  if ($$r{'thisrectime'}) {
+    printf("<TR>" .thelp("Hold Time", "holdtime") . "<TD>%.1f sec</TD></TR>\n",$$r{'thisrectime'} / 1000.0);
+  }
+  my $durtype=$$r{'durtype'};
+  my $durticks=0;
+  if ($$r{'durtype'} || $$r{'durticks'}) {
+    print "<TR>" .thelp("Duration", "duration") ."<TD>";
+    my ($l,$i);
+    $i=$$r{'durticks'};
+    if ($i) {
+       if ($$r{'durtype'} == 0) {
+          $i*=0.5;
+       } elsif ($$r{'durtype'} == 3) {
+#          $i+=2;
+       } elsif ($$r{'durtype'} == 11) {
+          $i+=2;
+       }
+    } else {
+       if ($$r{'durtype'} == 1) {
+         $l=0.5;
+       } elsif ($$r{'durtype'} == 2) {
+         $l=2.0/3.0;
+       } elsif ($$r{'durtype'} == 3) {
+         $l=2;
+         $i=20;
+       } elsif ($$r{'durtype'} == 5) {
+         $l=0;
+         $i=3;
+       } elsif ($$r{'durtype'} == 6) {
+         $l=0.5;
+       } elsif ($$r{'durtype'} == 7) {
+         $l=1;
+       } elsif ($$r{'durtype'} == 8) {
+         $l=1;
+         $i=10;
+       } elsif ($$r{'durtype'} == 9) {
+         $l=2;
+         $i=10;
+       } elsif ($$r{'durtype'} == 10) {
+         $l=3;
+         $i=10;
+       }
+    }
+    my $s;
+    if ($l) {
+      $s.="(Level";
+      if ($l>1) {
+        $s.=" * $l";
+      } elsif ($l<1) {
+        $s.=sprintf(" / %.1f", 1.0/$l); 
+      }
+      $s.=")";
+      if ($i) {
+        $s.=" + ";
+      }
+    }
+    if ($i) {
+      $s.=$i;
+    }
+    $s.=" ticks";
+    print "$s</TD></TR>\n";
+    if (($l==0) && ($i>0)) {
+      $durticks=$i;
+    }
+  }  
+
+  if ($$r{'outdoors'}) {
+    print "<TR>" .thelp("Restrictions", "restrictions") . "<TD>Outdoors</TD></TR>\n";
+  }
+  print "<TR>" .thelp("Toughness", "toughness") . "<TD>$$r{'toughness'}</TD></TR>\n";
+  if ($$r{'aoetime'}) {
+    printf("<TR>" .thelp("AoE Duration", "aoeduration") . "<TD>%.1f secs</TD></TR>\n",($$r{'aoetime'} >= 1000) ? ($$r{'aoetime'} / 1000.0) : $$r{'aoetime'});
+  }
+  if ($$r{'aoerange'} > 0) {
+    print "<TR>" .thelp("AoE Range", "aoerange") . "<TD>$$r{'aoerange'}</TD></TR>\n";
+  }
+  if ($$r{'light'}) {
+    print "<TR>". thelp("Light") . "<TD>$$r{'light'}</TD></TR>\n";
+  }
+  if ($$r{'resist'}) {
+    print "<TR><TH>Resisted By</TH><TD>$S::RESIST{$$r{'resist'}} Resist</TD></TR>\n";
+  }
+  my $si=getinfo("s" . $$r{'snum'});
+  if (length($si)) {
+    print "<TR><TH>Short Desc</TH><TD>$si</TD></TR>\n";
+  }
+  print "<TR><TH>Unknown</TH><TD>$$r{'unknown'}</TD></TR>\n";
+  print "</TABLE>\n";
+  $sth->finish();
+
+
+  my %S;
+
+  print "<P CLASS=\"SPELLTITLE\">Effects</P>\n";  
+
+  $sth = $dbh->prepare("SELECT * from spelleff WHERE spnum = $Q::snum ORDER BY effect DESC");
+  $sth->execute();
+  my $dotdamage=0;
+  my $dotmatch=0;
+  while ((my $r = $sth->fetchrow_hashref())) {
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    print "<TR><TH>Effect</TH><TD>$S::EFFECTS{$$r{'effect'}}";
+    my $domana=1;
+    if (($$r{'effect'} == 0) && $durtype) {
+      print " DoT";
+      $domana=0;
+      $dotmatch+=2;
+      if ($durticks) {
+        my $d=$$r{'max'} ? $$r{'max'} : $$r{'min'};
+        $dotdamage+=$d*$durticks;
+      }
+    } elsif (($$r{'effect'} == 79) && $durtype) {
+      my $d=$$r{'max'} ? $$r{'max'} : $$r{'min'};
+      $dotdamage+=$d;
+      $dotmatch++;
+      $domana=0;
+    }
+    print "</TD></TR>\n";
+    if ($$r{'min'}) {
+      my $s;
+      my $m;
+      if ($$r{'effect'} == 32) {
+        $S{$$r{'min'}}=1;
+        $s=getitemlink($$r{'min'});
+        $domana=0;
+      } elsif ($$r{'effect'} == 85) {
+        $s=getspelllink($$r{'min'});
+        $domana=0;
+      } else {
+        $m=abs($$r{'min'});
+        if ($$r{'level'}>0) {
+          $s=sprintf("$$r{'min'} %s (level * %3.1f)",($$r{'min'} > 0 ) ? '+' : '-',$$r{'level'});
+        } else {
+          $s=$$r{'min'};
+        }
+      }
+      print "<TR><TH>Ammount/Data</TH><TD>$s</TD></TR>\n";
+      if ($$r{'max'}) {
+        print "<TR><TH>Max Ammount</TH><TD>$$r{'max'}</TD></TR>\n";
+        $m=$$r{'max'};
+      }
+      if ($domana && $mana) {
+        printf("<TR><TH>Mana efficiency</TH><TD>%4.2f</TD></TR>\n",$m/$mana)
+      }
+    }
+    print "</TABLE>\n";
+  }
+  $sth->finish();
+
+  if ($durtype && $dotdamage && ($dotmatch >= 2)) {
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    print "<TR><TH>Total DoT</TH><TD>$dotdamage</TD></TR>\n";
+    if ($mana) {
+      printf("<TR><TH>Mana efficiency</TH><TD>%4.2f</TD></TR>\n",abs($dotdamage)/$mana);
+    }
+    print "</TABLE>\n";
+  }
+
+  $sth = $dbh->prepare("SELECT * from spellitem WHERE spnum = $Q::snum");
+  $sth->execute();
+  if ($sth->rows()>0) {
+    print "<P CLASS=\"SPELLTITLE\">Item Requirements</P>\n";
+    while ((my $r = $sth->fetchrow_hashref())) {
+      $S{$$r{'itemnum'}}=1;
+      print "<TABLE CLASS=\"SPELLS\">\n";
+      print "<TR><TH>Item</TH><TD>" . getitemlink($$r{'itemnum'}) . "</TD></TR>\n";
+      print "<TR><TH>Ammount Used</TH><TD>$$r{'ammount'}</TD></TR>\n";
+      print "</TABLE>\n";
+    }
+  }
+  $sth->finish();
+  
+  $sth = $dbh->prepare("SELECT inum FROM items WHERE spell=$snum");
+  $sth->execute();
+  while ((my $r = $sth->fetchrow_hashref())) {
+    $S{$$r{'inum'}}=1;
+  }
+  $sth->finish();
+    
+  if (keys %S) {
+    print "<P CLASS=\"SPELLTITLE\">Related Items</P>\n";
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    foreach my $i (sort keys %S) {
+      print "<TR><TD>" . getitemlink($i) . "</TD></TR>\n";
+    }
+    print "</TABLE>\n";
+  }
+
+  printchat(\$q, "s" . $Q::snum);
+} elsif ($Q::spelllist) {
+  my $lastlevel=0;
+  my $hasheader=0;
+  $Q::spelllist =~ s/\W//g;
+  $Q::spelllist =~ y/A-Z/a-z/;
+  my $sth = $dbh->prepare("SELECT * FROM spells WHERE $Q::spelllist>0 ORDER BY $Q::spelllist,name");
+  $sth->execute();
+  print "<P CLASS=\"SPELLTITLE\">Spell List: $Q::spelllist</P>\n";
+  print getinfo("cl_" . $Q::spelllist) . "<BR>\n";
+  print "<TABLE CLASS=\"SPELLLIST\">\n";
+  while ((my $r=$sth->fetchrow_hashref())) {
+    if ($$r{$Q::spelllist} != $lastlevel) {
+      $lastlevel=$$r{$Q::spelllist};
+#      if ($hasheader) {
+#        print "</TABLE>\n";
+#      }
+#      $hasheader=1;
+#      print "<TABLE CLASS=\"SPELLLIST\">\n";
+      print "<TR><TH COLSPAN=5 CLASS=\"LEVELHEAD\">Spells obtained at level $lastlevel</TH></TR>\n";
+      print "<TR><TH>Name</TH><TH>Description</TH><TH>Skill</TH><TH>CT</TH><TH ALIGN=RIGHT>Mana</TH></TR>\n";
+    }
+    print "<TR>";
+    print "<TD><A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&snum=$$r{'snum'}\">";
+    print "<IMG SRC=\"icon/m$$r{'bookicon'}.gif\" BORDER=0>&nbsp;";
+    $$r{'name'} =~ s/ /\&nbsp\;/g;
+    print "$$r{'name'}</A></TD>";
+    print "<TD>$S::TARGS{$$r{'target'}}: " . getinfo("s" . $$r{'snum'}) . "</TD>";
+    print "<TD>$S::SKILLS{$$r{'skill'}}</TD>";
+    printf("<TD>%.1f</TD>",$$r{'casttime'}/1000);
+    print "<TD ALIGN=RIGHT>$$r{'mana'}</TD>";
+    print "</TR>\n";
+  }    
+  print "</TABLE>\n";
+} elsif ($Q::newlist) {
+  print "<TABLE CLASS=\"SPELLS\">\n";
+  print "<TR><TH>Name</TH></TR>\n";
+  my $sth=$dbh->prepare("SELECT inum,name,icon FROM items ORDER BY added DESC LIMIT 200");
+  $sth->execute();
+  while ((my $r=$sth->fetchrow_hashref())) {
+    print "<TR><TD><A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&inum=$$r{'inum'}\">";
+    print "<IMG SRC=\"icon/m$$r{'icon'}.gif\" BORDER=0> $$r{'name'}</A></TD></TR>\n";
+  }
+  print "</TABLE>\n";
+} else {
+  if (! $Q::nomenu ) {
+    print $q->startform(-action=>$q->url() . "#DATA");
+    print $q->hidden(-name=>'mode');
+    print $q->hidden(-name=>'search');
+    print $q->hidden(-name=>'sort',-default=>['name']);
+    print "<TABLE CLASS=\"SPELLS\">\n";
+    print "<TR><TH>Display</TH><TD>";
+    print $q->checkbox(-name=>'icons',-checked=>'checked',-value=>'ON',-label=>'Show Icons');
+    print $q->checkbox(-name=>'uline',-checked=>'checked',-value=>'ON',-label=>'Underline Links');
+    print "</TD></TR>\n";
+    if ($Q::search eq 'item') {
+      $DF::USER{'class'} =~ y/A-Z/a-z/;
+      $DF::USER{'race'} =~ y/A-Z/a-z/;
+      print "<TR><TH>Classes</TH><TD>";
+      print $q->checkbox_group(-name=>'classes',-values=>[@I::classvalues],-labels=>\%I::classbyval,-rows=>2,-defaults=>[$I::classbyname{$DF::USER{'class'}}]);
+      print $q->radio_group(-name=>'cllogic',-values=>['AND','OR'],-default=>'OR');
+      print "</TD></TR>\n";
+      print "<TR><TH>Races</TH><TD>";
+      print $q->checkbox_group(-name=>'races',-values=>[@I::racevalues],-labels=>\%I::racebyval,-rows=>2,-defaults=>[$I::racebyname{$DF::USER{'race'}}]);
+      print $q->radio_group(-name=>'ralogic',-values=>['AND','OR'],-default=>'OR');
+      print "</TD></TR>\n";
+      print "<TR><TH>Slots</TH><TD>";
+      print $q->checkbox_group(-name=>'slots',-values=>[@I::slotvalues],-labels=>\%I::slotbyval,-rows=>3);
+      print $q->radio_group(-name=>'sllogic',-values=>['AND','OR'],-default=>'OR');
+      print "</TD></TR>\n";
+      print "<TR><TH>Effects</TH><TD>";
+      print $q->checkbox_group(-name=>'effects',-values=>[(@D::magics,@D::effects,@D::specials,$D::acwght)],-labels=>\%I::CN,-rows=>4);
+      print $q->radio_group(-name=>'eflogic',-values=>['AND','OR'],-default=>'OR');
+      print "<BR>\n";
+      print $q->checkbox(-name=>'dmgsec',-value=>'1',-label=>'Calculate Damage/Second for ');
+      print $q->checkbox(-name=>'dmgsecprimary',-checked=>'checked',-value=>'1',-label=>'primary hand at level ');
+      print $q->textfield(-name=>'dmgseclevel',-default=>$DF::USER{'level'},-size=>2,-maxlength=>2);
+      print "</TD></TR>\n";
+      print "<TR><TH>Categories</TH><TD>";
+      print $q->checkbox_group(-name=>'category',-values=>[(keys %I::cat)],-labels=>\%I::cat,-rows=>5);
+      print "</TD></TR>\n";
+      print "<TR><TH>Selections</TH><TD>";
+      print $q->checkbox(-name=>'magic',-value=>'ON',-label=>'Only Magical');
+      print $q->checkbox(-name=>'junk',-value=>'ON',-label=>'Exclude Junk');
+      print $q->checkbox(-name=>'price',-value=>'ON',-label=>'Reference Price');
+      print $q->checkbox(-name=>'weight',-value=>'ON',-label=>'Weight');
+      print "</TD></TR>\n";
+      print "<TR><TH>Name</TH><TD>";
+      print $q->textfield(-name=>'name',-length=>32,-maxlength=>32);
+      print "</TD></TR>\n";
+      print "</TABLE>\n";
+      print $q->submit(-value=>'Get Items');
+    } else {
+      print "<TR><TH>Classes</TH><TD>";
+      print $q->checkbox_group(-name=>'classes',-values=>[sort @S::classes,'monster'],-rows=>3);
+      print $q->radio_group(-name=>'cllogic',-values=>['AND','OR'],-default=>'OR');
+      print "</TD></TR>\n";
+      print "<TR><TH>Skills</TH><TD>";
+      print $q->checkbox_group(-name=>'skills',-values=>[keys %S::SKILLS],-labels=>\%S::SKILLS,-rows=>2);
+      print "</TD></TR>\n";
+      print "<TR><TH>Has effect</TH><TD>";
+      print $q->popup_menu(-name=>'effect',-values=>[-1,sort {$S::EFFECTS{$a} cmp $S::EFFECTS{$b}} keys %S::EFFECTS],-labels=>\%S::EFFECTS);
+      print "</TD></TR>\n";
+      print "<TR><TH>Resisted By</TH><TD>";
+      print $q->popup_menu(-name=>'resist',-values=>[sort keys %S::RESIST],-labels=>\%S::RESIST);
+      print "</TD></TR>\n";
+      print "<TR><TH>Target Type</TH><TD>";
+      print $q->popup_menu(-name=>'ttype',-values=>[-1,sort {$S::TARGS{$a} cmp $S::TARGS{$b}} keys %S::TARGS],-labels=>\%S::TARGS);
+      print "</TD></TR>\n";
+      print "<TR><TH>Levels</TH><TD>";
+      print $q->textfield(-name=>'lvfrom',-size=>'2',-maxlength=>'2');
+      print " to ";
+      print $q->textfield(-name=>'lvto',-size=>'2',-maxlength=>'2');
+      print "</TD></TR>\n";
+      print "<TR><TH>Name</TH><TD>";
+      print $q->textfield(-name=>'name',-length=>32,-maxlength=>32);
+      print "</TD></TR>\n";
+      print "</TABLE>\n";
+      print $q->hidden(-name=>'hack');
+      print $q->submit(-value=>'Get Spells');
+    }
+    print $q->endform();
+    print "<A NAME=\"DATA\"></A>\n";
+  }
+  if (@Q::sort) {
+    my %fields;
+    my $fi=0;
+    my $str="";
+
+    if (@Q::classes) {
+      if ($Q::search eq 'item') {
+        if (($#Q::classes > 0) && ($Q::cllogic eq "OR")) {
+          $fields{'class'}=1;
+        }
+        my $clm=0;
+        foreach my $c (@Q::classes) {
+          $clm |= $c;
+        }
+        $str.="((class & $clm) ";
+        if ($Q::cllogic eq "AND") {
+          $str.="=$clm";
+        } else {
+          $str.="!=0";
+        }
+      } else {
+        $Q::lvfrom =~ s/[^0-9]//g;
+        $Q::lvto =~ s/[^0-9]//g;
+        my $min=0;
+        if ($Q::lvfrom) {
+          $min=$Q::lvfrom;
+        }
+        my $max=60;
+        if ($Q::lvto) {
+          $max=$Q::lvto;
+        }
+        $str .= " ( ";
+        foreach my $s (@Q::classes) {
+          $str .= " ( $s>=$min AND $s<=$max ) $Q::cllogic ";
+        }
+        $str =~ s/ $Q::cllogic \Z//;
+      }
+      $str .= " ) AND ";
+    }
+
+    if (@Q::races) {
+      if (($#Q::races > 0) && ($Q::ralogic eq "OR")) {
+        $fields{'race'}=1;
+      }
+      my $clm=0;
+      foreach my $c (@Q::races) {
+        $clm |= $c;
+      }
+      $str.="((race & $clm) ";
+      if ($Q::ralogic eq "AND") {
+        $str.="=$clm";
+      } else {
+        $str.="!=0";
+      }
+
+      $str.=") AND ";
+    }
+
+    if (@Q::slots) {
+      if (($#Q::slots > 0) && ($Q::sllogic eq "OR")) {
+        $fields{'slots'}=1;
+      }
+      my $clm=0;
+      foreach my $c (@Q::slots) {
+        $clm |= $c;
+      }
+      $str.="((slots & $clm) ";
+      if ($Q::sllogic eq "AND") {
+        $str.="=$clm";
+      } else {
+        $str.="!=0";
+      }
+
+      $str.=") AND ";
+    }
+
+    if (@Q::effects) {
+      $str.="(";
+      foreach my $v (@Q::effects) {
+        $str.=" $v!=0 $Q::eflogic ";
+      } 
+      $str =~ s/ $Q::eflogic $//;
+      $str.=") AND ";
+    }
+
+    if ($Q::dmgsec) {
+      $str.= "damage > 0 AND delay > 0 AND ";
+    }
+
+    if (@Q::category) {
+      if (($#Q::category > 0)) {
+        $fields{'category'}=1;
+      }
+      $str.="(";
+      foreach my $v (@Q::category) {
+        $str.=" category=$v OR ";
+      } 
+      $str =~ s/ OR $//;
+      $str.=") AND ";
+    }
+
+    my @skillkeys=keys %S::SKILLS;
+    if (($#Q::skills > -1) && ($#Q::skills != $#skillkeys)) {
+      my $f=0;
+      $str.="(";
+      foreach my $s (@Q::skills) {
+        $str.="skill=".$dbh->quote($s) . " OR ";
+      }
+      $str =~ s/ OR \Z//;
+      $str.=") AND ";
+    }
+
+    if ($Q::ttype && $Q::ttype != -1) {
+      $str .= "target=$Q::ttype AND ";
+    }
+
+    if ($Q::name) {
+      $str .= "name like " . $dbh->quote($Q::name) . " AND ";
+    }
+
+    if ($Q::resist) {
+      $str .= "resist=$Q::resist AND ";
+    }
+
+    $str =~ s/AND $//;
+
+    if ($str eq '') {
+      $str = "name=" . (($Q::search eq 'item') ? "'Dagger'" : "'Ultradeathspell'");
+    }
+
+    $str.= " ORDER BY ";
+    for my $o (@Q::sort) {
+      my $f=substr($o,0,1);
+      if ($f eq '!') {
+        $str.= substr($o,1) . " DESC, ";
+      } else {
+        $str.= $o . " ASC, ";
+      }
+    }
+    $str =~ s/, \Z/ /;
+    $str.= " LIMIT 300";
+
+# Stringbuilding complete. Time to separate again... Hmm. Hmmmmm...
+
+#     print "$str<BR>\n";
+
+    if ($Q::search eq 'item') {
+      my @fields=('name',sort(keys %fields),@Q::effects);
+      if ($Q::price) {
+        push(@fields,'price');
+      }
+      if ($Q::weight) {
+        push(@fields,'weight');
+      }
+
+      my $fld=join(',',(@fields,'icon','inum'));
+
+      if ($Q::dmgsec) {
+        my $lvlbonus=0;
+        my $lvlmax=10000;
+        if ($Q::dmgsecprimary) {
+          if ($Q::dmgseclevel =~ /\A([0-9]+)\Z/ ) {
+            $lvlbonus=int(($Q::dmgseclevel-25)/3);
+            $lvlmax=int(($Q::dmgseclevel + 1) * 5 / 3);
+          }
+          if ($lvlbonus < 1) {
+            $lvlbonus=1;
+          }
+        }
+        $fld .=", (LEAST(damage * 2.0 + $lvlbonus,$lvlmax) / (delay / 10.0)) AS dmgsec";
+      }
+
+      if ($Q::junk) {
+        $str = "isjunk=0 AND " . $str;
+      }
+      if ($Q::magic) {
+        $str = "ismagic=1 AND " . $str;
+      }
+
+      $str="SELECT $fld from items WHERE $str";
+
+#    print "$str<BR>\n";
+
+
+#      print join(",",@fields);
+      print "<TABLE CLASS=\"SPELLS\">\n";
+      print "<TR>";
+
+      foreach my $h (@fields) {
+        printsorthead(\$q,$I::CN{$h},$h);
+      }
+      if ($Q::dmgsec) {
+        printsorthead(\$q,$I::CN{'dmgsec'},'dmgsec');
+      }
+      print "</TR>\n";
+      my $sth = $dbh->prepare($str);
+      $sth->execute();
+      while ((my $r=$sth->fetchrow_hashref)) {
+        print "<TR>";
+        print "<TD><A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&inum=$$r{'inum'}\">";
+        if ($Q::icons) {
+          print "<IMG SRC=\"icon/m$$r{'icon'}.gif\" BORDER=0>&nbsp;";
+        }
+        print "$$r{'name'}</A></TD>";
+        if ($fields{'category'}) {
+          print "<TD>$I::cat{$$r{'category'}}</TD>";
+        }
+        if ($fields{'class'}) {
+          print "<TD>";
+          foreach my $c (@Q::classes) {
+            if ($$r{'class'} & $c) {
+              print $I::CLS{$I::classbyval{$c}}. " ";
+            }
+          }
+          print "</TD>";
+        }
+        if ($fields{'race'}) {
+          print "<TD>";
+          foreach my $c (@Q::races) {
+            if ($$r{'race'} & $c) {
+              print $I::RACE{$I::racebyval{$c}}. " ";
+            }
+          }
+          print "</TD>";
+        }
+        if ($fields{'slots'}) {
+          print "<TD>";
+          foreach my $c (@Q::slots) {
+            if ($$r{'slots'} & $c) {
+              print $I::slotbyval{$c}. " ";
+            }
+          }
+          print "</TD>";
+        }
+        foreach my $c (@Q::effects) {
+          if ($c eq "spell") {
+            print "<TD>" . getspelllink($$r{$c}) . "</TD>";
+          } else {
+            print "<TD>$$r{$c}</TD>";
+          }
+        }
+        if ($Q::dmgsec) {
+          print "<TD>$$r{'dmgsec'}</TD>";
+        }
+        if ($Q::price) {
+          print "<TD ALIGN=RIGHT>" . pricestring($$r{'price'}) . "</TD>";
+        }
+        if ($Q::weight) {
+          printf("<TD ALIGN=RIGHT>%.1f</TD>",$$r{'weight'}/10);
+        }
+        print "</TR>\n";
+      }
+      print "</TABLE>\n";
+    } else {
+      my $pstr="SELECT snum,name,mana,skill,memicon";
+      if (@Q::classes) {
+        $pstr.= "," . join(',',@Q::classes);
+      }
+      if ($Q::hack) {
+        $pstr.=",durtype,durticks";
+      }
+      $pstr .=" FROM spells";
+      if (defined($Q::effect) && ($Q::effect != -1)) {
+        $pstr.=",spelleff";
+      }
+      $pstr.=" WHERE ";
+      if (defined($Q::effect) && ($Q::effect != -1)) {
+        $pstr.= "snum=spnum AND effect=$Q::effect AND ";
+      }
+      $str = $pstr . $str;
+
+      print "<TABLE CLASS=\"SPELLS\">\n";
+      print "<TR>";
+      printsorthead(\$q,"Spell Name","name");
+      printsorthead(\$q,"Skill","skill");
+      printsorthead(\$q,"Mana","mana");
+      if ($Q::hack) {
+        printsorthead(\$q,"DTY","durtype");
+        printsorthead(\$q,"DTI","durticks");
+      }
+      foreach my $s (@Q::classes) {
+        printsorthead(\$q,$s,"$s");
+      }
+      print "</TR>\n";
+      my $sth = $dbh->prepare($str);
+      $sth->execute();
+      while ((my $r=$sth->fetchrow_hashref)) {
+        print "<TR>";
+        print "<TD><A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&snum=$$r{'snum'}\">";
+        if ($Q::icons) {
+          print "<IMG SRC=\"icon/$$r{'memicon'}.gif\" BORDER=0>&nbsp;";
+        }
+        print "$$r{'name'}</A></TD>";
+        print "<TD>$S::SKILLS{$$r{'skill'}}</TD>";
+        print "<TD>$$r{'mana'}</TD>";
+        if ($Q::hack) {
+          print "<TD>$$r{'durtype'}</TD>";
+          print "<TD>$$r{'durticks'}</TD>";
+        }
+        foreach my $c (@Q::classes) {
+          print "<TD>$$r{$c}</TD>";
+        }
+        print "</TR>\n";
+      }
+      print "</TABLE>\n";
+    }
+  } else {
+    my $sth=$dbh->prepare("SELECT count(*) FROM items");
+    $sth->execute();
+    my $items=$sth->fetchrow();
+    $sth->finish();
+    $sth=$dbh->prepare("SELECT count(*) FROM spells");
+    $sth->execute();
+    my $spells=$sth->fetchrow();
+    $sth->finish();
+    print "There are currently <B>$items</B> items and <B>$spells</B> spells in the database.<BR>\n";
+    print "<A HREF=\"dump.cgi/iprog?mode=$Q::mode\">What happened to the EQ Items program? How can I contribute?</A><BR>\n";
+#    print "You can <A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&newlist=1\">click here</A> to see the last 100 items added.<P>\n";
+#    print "<H2>Top 20 Item Contributors</H2>\n";    
+#    print "These are the top 20 item contributors using the ";
+#    print "<A HREF=\"dump.cgi/iprog?mode=$Q::mode\">EQ Items</A> Program.<BR>";
+#    print "Please download and install it to add more items to this database.<P>";
+#    open(F, "/mnt/www/xeno/df/contr.html");
+#    print <F>;
+#    close(F);
+    open(F, "/mnt/www/xeno/df/datablurb.html");
+    print <F>;
+    close(F);
+  }
+}  
+
+print qq{
+<SCRIPT LANGUAGE="JavaScript1.2" SRC="datahelp.js">
+</SCRIPT>
+};
+
+page_bottom();
+print $q->end_html();
+
+sub printsorthead {
+  my ($q,$tit,$sor)=@_;
+  print "<TH><A HREF=\"";
+  my @s=($sor);
+  my @so=@Q::sort;
+  if ($so[0] eq $sor) {
+    $so[0]="!$sor";
+    @s=@so;
+  } elsif ($so[0] eq "!$sor") {
+    $so[0]=$sor;
+    @s=@so;
+  } else {
+    while (my $s=shift @so) {
+      if (!($s eq $sor)) {
+        push @s,$s;
+      }
+    }
+  } 
+  $$q->param(-name=>'sort',-value=>[@s]);
+  print $$q->url(-full=>1,-query=>1);
+  print "#DATA\">$tit</A></TH>";
+}
+
+sub getspelllink {
+  my ($s)=@_;
+  my $sth=$dbh->prepare("SELECT name FROM spells WHERE snum=$s");
+  $sth->execute();
+  while ((my $r=$sth->fetchrow_hashref())) {
+    return "<A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&snum=$s\">$$r{'name'}</A>";
+  }
+  return "";
+}
+
+sub getitemlink {
+  my ($s)=@_;
+  my $sth=$dbh->prepare("SELECT name FROM items WHERE inum=$s");
+  $sth->execute();
+  while ((my $r=$sth->fetchrow_hashref())) {
+    return "<A HREF=\"data.cgi?mode=$Q::mode&uline=$Q::uline&inum=$s\">$$r{'name'}</A>";
+  }
+  return "UNKNOWN $s";
+}
+
+sub pricestring {
+  use integer;
+  my ($pr)=@_;
+  my $s;
+  if ($pr) {
+    $s.= $pr % 10 . "c";
+    $pr /= 10;
+    if ($pr) {
+      $s= $pr % 10 . "s " . $s;
+      $pr /= 10;
+      if ($pr) {
+        $s= $pr % 10 . "g " . $s;
+        $pr /= 10;
+        if ($pr) {
+          $s = $pr . "p " . $s;
+        }
+      }
+    }
+  }
+  return $s;
+}
+ 
+sub getinfo {
+  my ($item) = @_;
+  my $sth=$dbh->prepare("SELECT data FROM info WHERE item=".$dbh->quote($item));
+  $sth->execute;
+  my $r=$sth->fetchrow();
+  $sth->finish();
+  return $r;
+}
+
+sub thelp {
+  my ($head,$helpid)=@_;
+  if (! $helpid) {
+    $helpid=$head;
+    $helpid=~ s/ +//g;
+    $helpid =~ y/A-Z/a-z/;
+  }
+  return "<TH ID=h_$helpid>$head</TH>";
+}

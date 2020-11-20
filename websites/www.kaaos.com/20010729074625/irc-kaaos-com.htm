@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>The KAAOS Hell Hole - #kaaos - IRC.KAAOS.COM</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2014.210" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<script>version=parseInt(navigator.appVersion); browser='OTHER'; if (navigator.appName=='Netscape'){browser='NS'+version;} if (navigator.appName=='Microsoft Internet Explorer'){browser='MSIE'+version;} if (navigator.appVersion.indexOf('MSIE 3')>0) {browser='MSIE3';}if (browser=='MSIE3') {window.location='http://www.microsoft.com/msdownload/iebuild/ie501_win32/en/ie501_win32.htm?FinishURL=%2Fdownloads%2Frelease%2Easp%3FReleaseID%3D15568%26redirect%3Dno'}if (browser=='NS3') {window.location='http://www.microsoft.com/msdownload/iebuild/ie501_win32/en/ie501_win32.htm?FinishURL=%2Fdownloads%2Frelease%2Easp%3FReleaseID%3D15568%26redirect%3Dno'}if (browser=='NS4') {window.location='http://www.microsoft.com/msdownload/iebuild/ie501_win32/en/ie501_win32.htm?FinishURL=%2Fdownloads%2Frelease%2Easp%3FReleaseID%3D15568%26redirect%3Dno'}if (browser=='NS5') {window.location='http://www.microsoft.com/msdownload/iebuild/ie501_win32/en/ie501_win32.htm?FinishURL=%2Fdownloads%2Frelease%2Easp%3FReleaseID%3D15568%26redirect%3Dno'}if (browser=='OTHER') {window.location='http://www.microsoft.com/msdownload/iebuild/ie501_win32/en/ie501_win32.htm?FinishURL=%2Fdownloads%2Frelease%2Easp%3FReleaseID%3D15568%26redirect%3Dno'}</script>
+<SCRIPT language=VBScript>
+<!--
+     Dim NOT_FOUND
+     NOT_FOUND = "NOT FOUND"
+
+    Sub SetVariable(strVariableName, varVariableValue)
+         Document.Cookie = strVariableName & "=" & varVariableValue
+     End Sub
+
+     Function ReadVariable(strVariableName)
+	 'these five variables are used in the string manipulation
+	 'code that finds the variable in the cookie.
+         Dim intLocation
+	 Dim intNameLength
+	 Dim intValueLength
+	 Dim intNextSemicolon
+	 Dim strTemp
+
+	 'calculate length and location of variable name
+	 intNameLength = Len(strVariableName)
+	 intLocation = Instr(Document.Cookie, strVariableName)
+	
+	 'check for existence of variable name			
+	 If intLocation = 0 Then
+	     'variable not found, so it can't be read
+	     ReadVariable = NOT_FOUND
+	 Else
+	     'get a smaller substring to work with
+	     strTemp = Right(Document.Cookie, Len(Document.Cookie) - intLocation + 1)
+
+	     'check to make sure we found the full string, not just a substring
+	     If Mid(strTemp, intNameLength + 1, 1) <> "=" Then
+	         'oops, only found substring, not good enough
+		 ReadVariable = NOT_FOUND
+
+		 'note that this will incorrectly give a not found result if and only if
+		 'a search for a variable whose name is a substring of a preceding
+		 'variable is undertaken.  For example, this will fail:
+		 '
+		 'search for:		MyVar
+	         'cookie contains: 	MyVariable=2;MyVar=1
+	     Else
+		 'found full string
+		 intNextSemicolon = Instr(strTemp, ";")
+
+		 'if not found, then we need the last element of the cookie
+		 If intNextSemicolon = 0 Then intNextSemicolon = Len(strTemp) + 1
+	
+		 'check for empty variable (Var1=;)
+		 If intNextSemicolon = (intNameLength + 2) Then
+		     'variable is empty
+		     ReadVariable = ""
+		 Else
+		     'calculate value normally
+      		     intValueLength = intNextSemicolon - intNameLength - 2
+		     ReadVariable = Mid(strTemp, intNameLength + 2, intValueLength)
+		 End If
+	     End If
+        End if
+    End Function
+
+
+SUB newnick_onclick
+strVariableName = "ircnick"
+varVariableValue = InputBox("Enter Your New Nickname - Then Click Refresh Chat ")
+SetVariable strVariableName, varVariableValue
+end sub
+
+
+-->
+</SCRIPT>
+
+<SCRIPT language=vbscript>
+dim loaded
+dim players(31,1)
+
+function isReady()
+	if (loaded = 1) and (tavern.channels(1).ChannelState = 2) then isReady = true else IsReady = false
+end function
+
+sub buildlist()
+	for x = 0 to 31
+		if players(x,1) <> "" then listtxt = listtxt & "<font color=white>" & replace(players(x,1),"_"," ") & "</font><br>"
+	next
+	listdiv.innerhtml = listtxt
+end sub
+
+SUB Window_onload()
+tServer = "209.153.162.8:6667 "
+strVariableName = "ircnick"
+name = ReadVariable(strVariableName)
+if name = "NOT FOUND" then
+varVariableValue = InputBox("Enter your IRC Nickname: ")
+SetVariable strVariableName, varVariableValue	
+end if
+testnn = ReadVariable(strVariableName)
+nn = replace(testnn, " " , "_")
+
+   
+Select Case tavern.ConnectionState
+	Case 0, 2:
+	    tavern.Login tServer, nn, nn
+	Case 1, 3:
+	  tavern.CancelConnectLogin
+	Case 4:
+	  tavern.Disconnect
+	Case 5:
+	  statusdiv.innerhtml = "ConnectionState is " + CStr(tavern.ConnectionState)
+	Case Else
+	  statusdiv.innerhtml = "Unexpected ConnectionState = " + CStr(tavern.ConnectionState)
+   End Select
+
+	inbox.focus
+END SUB
+
+Sub Window_OnUnload()
+  Select Case tavern.ConnectionState
+    Case 1,3:
+      tavern.CancelConnectLogin
+    Case 2,4:
+      tavern.Disconnect
+  End Select
+End Sub
+
+Sub AppendHistory(strText)
+	msgdiv.insertadjacenthtml "beforeend",strtext & "<br>"
+	msgdiv.scrolltop = msgdiv.scrollheight + 100
+End Sub
+
+function isnick(nick)
+	for x = 0 to 31
+		if (players(x,1) = nick) and (nick <> "") then
+			isnick = true
+			exit for
+		else
+			isnick = false
+		end if
+	next
+end function
+
+Sub send_message()
+	if window.event.keycode <> "13" then exit sub
+	if not isReady then exit sub
+	If inbox.value = "" Then Exit Sub
+	msg = inbox.value
+	msgtype = 0
+	msgrec = ""
+
+
+	msghelp = msghelp & "<form Name=Form1><center><input type=button name=newnick value=SetNewIRCNick></center></form>" & vbcrlf
+		
+	tmpMsg = split(msg,"++")
+	
+	if tmpmsg(0) = "" then
+		isspecial = true
+		select case tmpmsg(1)
+			case "nick"
+				strvariablename = "ircnick"
+varvariablevalue = InputBox("Enter Your New IRC Nick - Then Click Refresh Chat")
+SetVariable strVariableName, varVariableValue
+window.history.go(0)	
+				exit sub
+			case else
+				isspecial = isnick(lcase(replace(tmpmsg(1)," ","_")))
+				if isspecial then
+					msgtype = 32
+					msgrec = lcase(replace(tmpmsg(1)," ","_"))
+					fcolor = "silver"
+				end if
+		end select
+		if isspecial then tmpmsg(1) = ""
+	end if
+	
+	for x = 0 to ubound(tmpmsg)
+		if usehtml = false then
+			tmpmsg(x) = replace(tmpmsg(x), "<" ,"&lt;")
+			
+		end if
+		select case tmpmsg(x)
+			
+                                                      case "diewhore"
+				if usehtml = true then usehtml = false else usehtml = true
+				tmpmsg(x) = ""
+
+			case else
+		end select
+	next
+	
+	msg = join(tmpmsg,"")  
+
+
+	appendhistory replace(SenderNickname,"_"," ") & msg
+	if msgtype <> 32 then tavern.Channels(1).SendMessage msgtype, msg, msgrec
+	if msgtype = 32 then tavern.SendPrivateMessage 0, msg, msgrec
+	inbox.value = ""
+End Sub
+
+'''''''''''''''''''''
+'''' ocx code '''''''
+'''''''''''''''''''''
+
+SUB tavern_OnConnectionState(NewConnectionState)
+  Select Case NewConnectionState
+    Case 0:
+      statusdiv.innerhtml = "**Disconnected**"
+    Case 1:
+      statusdiv.innerhtml = "Connecting..."
+    Case 2:
+      statusdiv.innerhtml = "Connected"
+    Case 3:
+      statusdiv.innerhtml = "Logging..."
+    Case 4:
+statusdiv.innerhtml = "**Logged**"
+ 		tavern.channels.add
+		tavern.Channels(1).JoinChannel "#kaaos"
+    Case 5:
+      statusdiv.innerhtml = "Disconnecting"
+  End Select
+END SUB
+
+Sub tavern_OnChannelState(ByVal Channel, ByVal NewChannelState)
+  Select Case NewChannelState
+    Case 0:
+      statusdiv.innerhtml = "Not in a room"
+    Case 1:
+statusdiv.innerhtml = "Entering the KAAOS Hell Hole..."
+    Case 2:
+      statusdiv.innerhtml = ""
+  End Select
+End Sub
+
+Sub tavern_OnMessage(Channel, SenderNickname, MessageType, Message, RecipientNicknames, DataMessageTag)
+  Select Case MessageType
+    Case 0:
+ if sendernickname = "#kaaos" then
+		message = replace(message,"<","&lt;")
+message = replace(message,">","&gt;")
+appendhistory replace(SenderNickname,"_"," ") & ": " & message
+    else
+message = replace(message,"<","&lt;")
+message = replace(message,">","&gt;")
+	AppendHistory replace(SenderNickname,"_"," ") & ": " & message
+     end if
+    case 32
+message = replace(message,"<","&lt;")
+message = replace(message,">","&gt;")
+      AppendHistory replace(SenderNickname,"_"," ") & ": " & message
+    Case 128:
+message = replace(message,"<","&lt;")
+message = replace(message,">","&gt;")
+      AppendHistory replace(SenderNickname,"_"," ") & ": " & right(message ,len(message) - (len(tavern.nickname) + 14))
+	case else
+		window.status = cstr(messagetype)
+
+   End Select
+End Sub
+
+Sub tavern_OnAddMember(Channel, Nickname, MemberItems)
+	for x = 0 to 31
+		if players(x,1) = "" then
+			players(x,1) = lcase(nickname)
+			exit for
+		end if
+	next
+	if isready then AppendHistory "<font color=white>" & replace(nickname,"_"," ") & " has entered The Hell Hole</font>" ' 
+	buildlist
+End Sub
+
+Sub tavern_OnDelMember(Channel, Nickname)
+	for x = 0 to 31
+		if players(x,1) = lcase(nickname) then
+			players(x,1) = ""
+			exit for
+		end if
+	next
+	AppendHistory "<font color=white>" & replace(nickname,"_"," ") & " has left The Hell Hole</font>"
+	buildlist
+End Sub
+
+sub tavern_onendenumeration(Channel, EnumType)
+	if enumtype = 5 then loaded = 1
+end sub
+
+Sub tavern_OnConnectionError(ErrorCode, Description, ChannelName)
+  If ErrorCode = 3133 Then
+    Exit Sub
+  End If
+
+  Dim strDisplay
+
+  Select Case VarType(ChannelName)
+    Case 0:
+      strDisplay = "OnConnectionError: " + Description + ", Err: " + CStr(ErrorCode)
+
+    Case 8:
+      strDisplay = "OnConnectionError CN: " + ChannelName + ", " + Description + ", Err: " + CStr(ErrorCode)
+  End Select
+
+  MsgBox strDisplay
+End Sub
+
+Sub tavern_OnChannelError(Channel, ErrorCode, Description)
+  MsgBox "OnChannelError: " + Description + ", Err: " + CStr(ErrorCode)
+End Sub
+
+sub tavern_OnPrivateMessage(SenderNickname, PrivateMessageType, Message, DataMessageTag)
+message = replace(message,"<","&lt;")
+message = replace(message,">","&gt;")
+	appendhistory "<font color=white> -private msg from " & replace(SenderNickname,"_"," ") & "- </font>" & message
+end sub
+</SCRIPT>
+<style type="text/css">
+<!--
+    A:link {text-decoration: none} 
+    A:visited {text-decoration: none} 
+    A:active {text-decoration: none}
+    A:hover {color:white}
+
+div {  font-family:  }
+-->
+</style>
+
+</head>
+
+<body bgcolor="#000000" scrollbar="no" text="#dd0000" topmargin="0" leftmargin="0"  link="darkgray" vlink="darkgray" alink="silver">
+<div id="Layer1" style="position:absolute; width:12%; height:61%; z-index:2; left: 85.5%; top: 1.5%; overflow: visible"> 
+  <p><a href="http://www.kaaos.com" target="myframe">KAAOS.COM</a><br>
+  <a href="http://irc.kaaos.com" target="myframe">irc.kaaos.com<br>
+    <a href="http://www.kaaos.com/board.sht" target="myframe">Boards Home</a><br>
+       <BR>
+    <a href=# onClick=HTMLIRCHELP=window.open('http://www.kaaos.com/irchelp.htm')>Chat Help</a>
+<BR><a href=# onClick=IRCCOMMANDS=window.open('http://irc.kaaos.com')>IRC Help</a>
+<BR><BR><a href=# onClick=history.go(0)>Reload Chat</a></p>
+
+  </div>
+
+<div id="msgDiv" style="font-family: ;position:absolute;height:90%;left:17%;top:1;width:65%;overflow:auto"></div>
+<div id="listdiv" style="font-family:courier ;position:absolute;left: 0%;height:97%;top:2%;width:20%;overflow:auto"></div>
+<input type="text" size="255" style="color: yellow; background-color: black; font-family: ; width: 60%; position: absolute; top: 94.5%; left: 14%; height: 5%; padding: 2" name="inbox" onkeypress="send_message()">
+<div id="statusDiv" style="font-family: ; position: absolute; top: 94%; left: 75%; width: 25%; height: 4%"></div>
+
+<OBJECT ID="tavern"
+	WIDTH=0
+	HEIGHT=1
+	STANDBY="Dowloading Microsoft Chat Protocol 2.0" 
+	CODETYPE="application/x-oleobject"
+	CLASSID="CLSID:039397C0-46DF-11D0-99CB-00C04FD64497"
+	CODEBASE="http://activex.microsoft.com/controls/mschat/mschatpr.cab">
+</OBJECT>
+
+
+
+
+</body>
+</html>
+</HTML>

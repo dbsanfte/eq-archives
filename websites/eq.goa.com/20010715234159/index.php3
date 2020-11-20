@@ -1,0 +1,752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Jeux Online - GOA - EverQuest</title>
+	<meta name="description" content="Nouvelles et Encyclopédie en français sur EverQuest. Retrouvez les aventuriers francophones de Norrath">
+	<meta name="keywords" content="Everquest, EQ, everquest, Kunark, ruins of kunark, RoK, Velious, Scars of Velious, SoV, français, franco, francophone, france, forums, RPG, MMORPG, JDR, JDRMMJ, actualité, nouvelles, news, norrath, verant, Verant, aide, encyclopédie, guide, liens, Aradune, Gordon, Absor, board, message board, forum, discussion, communauté, débutant, races, classes, cartes, maps, sorts, spells, magie, spoiler, soluce, cheat, skills, quest, quêtes, necromancer, enchanter, wizard, magician, cleric, shaman, druid, bard, erudian, human, elf, iksar, hobbit, halflings, troll, ogre, dwarf, dark elf, gnome, barbarian, plane of sky, plane of fear, plane of hate, veeshan peak, sebilis, chardok, internet, multijoueurs, online, multi-joueurs">
+	<link rel="stylesheet" href="jog-everquest.css">
+	<link rel="SHORTCUT ICON" href="favicon.ico">
+</head>
+
+<body background="/images/papierfond.jpg" bgcolor=black text=black link="#660000" vlink="#660000" alink="#CC0000">
+
+<script language="JavaScript" src="http://jeuxonline.goa.com/menuJOG.php3" type="text/javascript"></script>
+
+
+<center><img src="/images/EQ-JOG.gif" alt="Logo EverQuest - JeuxOnline"></center>
+
+<table cellspacing=0 cellpadding=0 border=0 align=center>
+
+<tr>
+	<td align=center><a href="http://www.goa.com" target="_top"><img src="/images/minilogo.gif" alt="GOA" width=50 height=21 border=0></a></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td align=center>
+
+	<form>
+	<script>AfficheMenuJOG();</script>
+	</form>
+
+	</td>
+</tr>
+
+
+
+<tr>
+<td valign=top>
+
+
+<!-- Début du menu latéral gauche -->
+
+<table align=center border=0 width=142 cellspacing=0 cellpadding=0>
+<tr>
+	<td class=bordMenuCentre colspan=3 height=47><div class=stick><img src="/images/col16-top.gif" alt=""></div></td>
+</tr>
+</table>
+
+<script language=JavaScript>
+<!--
+function openChat() {
+window2=open('/chat.html4','chat','width=620,height=540,scrollbars=no,menubar=no,status=no,resizable=no');
+}
+//-->
+</script>
+
+
+<table align=center border=0 width=125 cellspacing=0 cellpadding=0>
+<tr>
+	<td class=bordMenuGauche width=5 >&nbsp;</td>
+
+	<td class=bordMenuCentre valign=top align=center width=115>
+
+
+	<img src="/images/menu-nouvelles.gif" alt="Nouvelles"><br>
+	<table align=center width=106 border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td class=stick><img src="/images/stone-down-top.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td class=bordMenuDownCentre>
+		<div class=liens>
+		&nbsp;&nbsp;<a href="/" class=lien1>Récentes</a><br>
+		&nbsp;&nbsp;<a href="/news/archive.html" class=lien1>Archives</a><br>
+		&nbsp;&nbsp;<a href="/sendinfo.html" class=lien1>Envoyer</a><br>
+		</div>
+		</td>
+	</tr>
+	</table>
+
+	<br>
+	<img src="/images/menu-communaute.gif" alt="Communauté"><br>
+	<table align=center width=106 border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td class=stick><img src="/images/stone-down-top.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td class=bordMenuDownCentre>
+		<div class=liens>
+		&nbsp;&nbsp;<a href="http://boards.goa.com/cgi-bin/ultimatebb.cgi?action=intro&amp;category=9" class=lien1 target=_blank>Forums EQ</a><br>
+		<!--&nbsp;&nbsp;<a href="http://boards.goa.com/cgi-bin/Ultimate.cgi?action=intro&amp;category=12&amp;BypassCookie=true" class=lien1 target=_blank>Forums Serveurs</a><br>-->
+
+
+		&nbsp;&nbsp;<a href="http://boards.station.sony.com/cgi-bin/Ultimate.cgi?action=intro" class=lien1 target=_blank>Forum Officiel</a><br>
+		&nbsp;&nbsp;<a href="http://boards.station.sony.com/ubb/harpys-head/cgi-bin/Ultimate.cgi" class=lien1 target=_blank>Harpy Head Tavern</a><br>
+
+		&nbsp;&nbsp;<a href="http://boards.goa.com/cgi-bin/ultimatebb.cgi?ubb=forum&amp;f=71" class=lien1 target=_blank>La Taverne</a><br>
+		&nbsp;&nbsp;<a href="javascript:openChat()" class=lien1>Chat JeuxOnline</a><br>
+
+
+		<!--&nbsp;&nbsp;<span class=lien2>Sondages</span><br>
+		&nbsp;&nbsp;<span class=lien2>Guildes</span><br>-->
+		&nbsp;&nbsp;<a href="/liens.html" class=lien1>Liens</a><br>
+		<!--&nbsp;&nbsp;<span class=lien2>Récits</span><br>-->
+		</div>
+		</td>
+	</tr>
+	</table>
+
+	<br>
+	<img src="/images/menu-guides.gif" alt="Guides"><br>
+	<table align=center width=106 border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td class=stick><img src="/images/stone-down-top.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td class=bordMenuDownCentre>
+		<div class=liens>
+		&nbsp;&nbsp;<a href="/guides/presentation.html" class=lien1>Présentation</a><br>
+		<!--&nbsp;&nbsp;<span class=lien2>Démarrer</span><br>-->
+		&nbsp;&nbsp;<a href="/guides/classes/classes.html" class=lien1>Classes</a><br>
+		&nbsp;&nbsp;<a href="/guides/races/races-desc.html" class=lien1>Races</a><br>
+		&nbsp;&nbsp;<a href="/guides/dieux/dieux.php" class=lien1>Dieux</a><br>
+		<!--&nbsp;&nbsp;<span class=lien2>Atlas</span><br>-->
+		&nbsp;&nbsp;<a href="/guides/histoire.html" class=lien1>Histoire</a><br>
+		<!--&nbsp;&nbsp;<span class=lien2>Bestiaire</span><br>-->
+		
+		
+		&nbsp;&nbsp;<a href="/guides/objets/search.php" class=lien1>Equipement</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=lien2>Armures</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=lien2>Armes</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/objets/resist.php" class=lien1>Kit Résist</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/objets/new.php" class=lien1>Nouveautés</a><br>
+		
+		
+
+		&nbsp;&nbsp;<span class=lien2>Magie</span><br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=8"  class=lien1>Barde</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=2"  class=lien1>Clerc</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=6"  class=lien1>Druide</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=14" class=lien1>Enchanteur</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=13" class=lien1>Magicien</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=11" class=lien1>Necromancien</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=3"  class=lien1>Paladin</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=4"  class=lien1>Ranger</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=5"  class=lien1>Shadow Knight</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=10" class=lien1>Shaman</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste.php?class=12" class=lien1>Wizard</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/magie/liste2.php" class=lien1>Effets Divers</a><br>
+
+
+
+		
+		<!--&nbsp;&nbsp;<span class=lien2>Glossaire</span><br>-->
+		&nbsp;&nbsp;<span class=lien2>Artisanat</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/brewing/brewing.html" class=lien1>Brewing</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/pottery/poterie.html" class=lien1>Poterie</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/tailoring/tailoring.html" class=lien1>Tailoring</a><br>
+		
+		&nbsp;&nbsp;<a href="/guides/guilde.html" class=lien1>Guildes</a><br>
+		&nbsp;&nbsp;<a href="/guides/emotes.html" class=lien1>Emotes</a><br>
+		
+		&nbsp;&nbsp;<span class=lien2>Expérience</span><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/experience/table.html" class=lien1>Tables</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/guides/experience/bonus.html" class=lien1>Bonus</a><br>	
+		
+		</div>
+		</td>
+	</tr>
+	</table>
+
+	<br>
+	<img src="/images/menu-autre.gif" alt="Autre"><br>
+	<table align=center width=106 border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td class=stick><img src="/images/stone-down-top.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td class=bordMenuDownCentre>
+		<div class=liens>
+		&nbsp;&nbsp;<a href="/fichiers/fichiers.html" class=lien1>Fichiers</a><br>
+		&nbsp;&nbsp;<a href="http://everquest.station.sony.com/netstat/downtime.jsp" class=lien1 target=_blank>Maintenances</a><br>
+		&nbsp;&nbsp;<a href="http://everquest.station.sony.com/netstat/index.jsp" class=lien1 target=_blank>Etat du réseau</a><br>
+		<!--&nbsp;&nbsp;<a href="/display.php3?page=serveurs.php3" class=lien1>Etat des serveurs</a><br>-->
+		&nbsp;&nbsp;<a href="mailto:eltheran@jeuxonline.goa.com?subject=[Contact EverQuest]" class=lien1>Nous contacter</a><br>
+		<!--&nbsp;&nbsp;<span class=lien2>Aider</span><br>
+		&nbsp;&nbsp;<span class=lien2>Ce site</span><br>-->
+		</div>
+		</td>
+	</tr>
+	</table>
+	<br>
+
+	</td>
+
+	<td class=bordMenuDroit width=5 >&nbsp;</td>
+</tr>
+</table>
+
+<table align=center border=0 width=142 cellspacing=0 cellpadding=0>
+<tr>
+	<td class=bordMenuCentre colspan=3 height=47><div class=stick><img src="/images/col16-bottom.gif" alt=""></div></td>
+</tr>
+</table>
+
+<!-- Fin du menu latéral gauche -->
+
+
+</td>
+
+<td width=5>&nbsp;</td>
+
+<td valign=top>
+
+
+<!-- Bandeau Publicitaire -->
+
+<table width=468 cellpadding="0" cellspacing="0" align=center>
+<tr>
+	<td>
+	<!--<nolayer>-->
+	<iframe src='http://ad.fr.doubleclick.net/adi/goa_pop.com/gamer;sz=468x60;ord=1536?' width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 scrolling=no>
+	<a href='http://ad.fr.doubleclick.net/jump/goa_pop.com/gamer;sz=468x60;abr=!ie4;abr=!ie5;ord=1536?'>
+	<img src='http://ad.fr.doubleclick.net/ad/goa_pop.com/gamer;sz=468x60;abr=!ie4;abr=!ie5;ord=1536?' width=468 height=60 alt="" border=0></a>
+	</iframe>
+	<!--</nolayer>-->
+
+	<script type="text/javascript" language="Javascript"><!--
+	tps = new Date();
+	if (tps.getSeconds() < 70)
+	{
+	   document.write("<IMG SRC=\"http://195.25.89.18/goa_p?"
+	                   + tps.getMinutes()
+	                   + "0"
+	                   + tps.getSeconds()
+	                   + "_publicite"
+	                   + "\" WIDTH=1 HEIGHT=1>");}
+	// --></script>
+	</td>
+</tr>
+</table>
+
+
+
+<!-- Début des news -->
+
+<br>
+
+<!--<table align=center width=468 border=0 cellspacing=0 cellpadding=0>-->
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr>
+	<td class=stick><img src="/images/haut-gauche2.gif" width=28 alt=""></td>
+	<td class=bordNewsHautCentre width=545>&nbsp;</td>
+	<td class=stick><img src="/images/haut-droit2.gif"  width=25 alt=""></td>
+</tr>
+<tr>
+	<td class=bordNewsCentreGauche width=28 >&nbsp;</td>
+	<td class=bordNewsCentre width=545 bgcolor=#DFC597>
+
+	
+	<!-- NP v3.7.3 -->
+	<a name="newsitem995216480,43451,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Dimanche 15 Juillet 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/choppe.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Abracadabra !</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 19h01</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/l.gif" align="left" alt="" >a nouvelle section Magie est en ligne ! Les listes de sorts ont été entièrement revues et comptent enfin les sorts de l'extension Scars of Velious, portant à plus de 1800 le nombre de références. Les descriptions sont plus completes, et le nouveau système mis en place permettra de disposer d'informations mises à jour en permanence patch après patch. Vos commentaires sont toujours les bienvenus ! On en compte déjà plus de 500 exprimant diverses remarques, statégies ou précisions sur les effets des sorts.<br><br></div>
+</div>
+<br>
+
+<a name="newsitem995110836,68295,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Samedi 14 Juillet 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/boussole.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>L'expérience à la loupe</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 13h40</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/l.gif" align="left" alt="">e guide sur l'expérience est en ligne ! Il est composé de deux parties, la première reprenant les <a href=/guides/experience/bonus.html>bonus</a> d'expérience en fonction de la zone et de la configuration du groupe, la seconde présentant les <a href=/guides/experience/table.html>tables de progression</a> en expérience en fonction de la race et de la classe de votre personnage.<br><br></div>
+</div>
+<br>
+
+<a name="newsitem994871833,41301,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Mercredi 11 Juillet 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/engrenage2.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Patch de la semaine</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 19h17</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news>Voici le contenu du patch d'hier :<br></div><br><div class=cite><b>Corrections de Bugs</b><ul><li> Un bug dans l'Intelligence Artificielle des PNJs les focalisant irrémédiablement sur les familiers depuis le dernier patch a été corrigé. Cela répare un bug apparu il y a peu et rendant les familiers cibles de la plupart des attaques des PNJs.<br><br><li> Correction du problème d'animation lorsque le mouvement de la partie supérieure du corps était bloqué. Ce phénomène pouvait être observé en démarrant l'invocation d'un sort et en avançant pendant l'animation.<br><br><li> Correction d'un bug empêchant le ciblage des PJs ou des PNJs invisibles avec les touches F7 ou F8 même en ayant <i>See Invisible</i>.<br><br><li> Les problèmes de superposition avec les sorts modifiant l'apparence ont été corrigés. <i>Lich</i> et <i>Clarity</i> ne devrait plus se superposer, ni <i>Spirit of Wolf</i> et <i>Wolfm Form</i>.<br><br><li> Le bug avec les captures d'écran rencontré par certaines personnes utilisant le mode 32 bits devrait être corrigé.</ul><b>Ajustement d'Objets et de Vendeurs</b><ul><li> Modification des <i>Forged Antonian Javelins</i> pour les rendre empilables.<br><br><li> Les <i>Gnome Skin Sleeves</i> peuvent désormais être échangées et ne disparaissent plus à la déconnexion.<br><br><li> Les <i>Spiderling</i> et <i>Spider Silks</i> sont à présent empilables.<br><br><li> Les armes aiguisées valent un peu plus cher sur les vendeurs que les armes rouillées.<br><br><li> Réduction du poids de la <i>Black Pantherskin</i>, l'armure moine.<br><br><li> Toutes les <i>Sheets</i> et <i>Folded Sheets</i> métalliques sont désormais empilables.<br><br><li> Les rangers peuvent maintenant porter la <i>Girdle of Reflection</i>.<br><br><li> Un nouveau vendeur est présent à Felwithe et propose la série des sorts d'enchantement des métaux.</ul><b>Zones et Quêtes</b><ul><li> Les <i>Crazed Ghouls</i> devraient poser moins de problèmes à Unrest.<br><br><li> La quête du bandeau rouge moine est à nouveau disponible.<br><br><li> Nous avons placé quelques sources supplémentaires de <i>Yew Leaf</i>.<br><br><li> La valeur des différents filets de poisson a été réévaluée. Tous les poissonniers devraient retourner à leur état normal, mais ils ne payeront plus autant pour certains objets à base de poisson. Cela résout un problème lié à la valeur accrue des aliments préparés par les joueurs sur Norrath. La valeur de certains produits était trop élevée, les marchands commençaient à s'en plaindre à leurs responsables syndicaux...</ul>- L'Equipe EverQuest<br></div>
+</div>
+<br>
+
+<a name="newsitem994697870,46831,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Lundi 9 Juillet 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/epees.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Nouvelle règle pour Sullon ?</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 18h57</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/d.gif" align="left" alt="">epuis le lancement de Sullon Zek le camp de Bien est très largement dépassé par les forces du mal. Plusieurs solutions ont été envisagées pour rétablir l'équilibre, comme changer de camp l'une des divinités, ou appliquer un bonus ou un malus d'expérience à l'un des camps. Gordon a <a href="http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000239.html" target=_blank>suggéré</a> une idée terriblement séduisante basée sur une observation toute simple. A travers la littérature fantastique, qu'est ce qui permet aux forces du Bien de contrecarrer les plans du Mal malgré leur infériorité numérique ?... Tout simplement la traîtrise et la discorde de leurs adversaires. L'idée serait donc de permettre aux Mauvais de s'entretuer ! Cette règle entrera probablement en vigueur sur Sullon Zek en fonction des remarques des joueurs.<br><br></div>
+</div>
+<br>
+
+<a name="newsitem994695482,97472,"></a><div class=newshead><img src="./images/newsicon/choppe.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Serveur Roleplay à l'étude</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 18h18</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/a.gif" align="left" alt="">vec l'arrivée de la <a href="http://www.darkageofcamelot.com" target=_blank>concurrence</a> il semblerait que SOE/Verant fasse des pieds et des mains pour combler les lacunes depuis longtemps signalées d'EverQuest. Le PvP a le premier profité de cette attention, ce qui nous a mené notamment au lancement de Sullon Zek, le serveur de guerre de religion. Brad s'attaque maintenant à l'aspect <i>Role Play</i> d'EverQuest et <a href="http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000238.html" target=_blank>propose</a> de lancer un serveur expérimental appliquant de nouvelles règles :<ul><li> Chaque combinaison de race et de classe recevra un alignement, soit Bon, Neutre ou Mauvais. Un paladin haut elfe de Tunare sera bon (comme le sera probablement un paladin nain de Brell), un guerrier elfe noir d'Innoruuk sera mauvais. Bons et Mauvais ne pourront pas grouper ensemble, ni se soigner ou s'enchanter mutuellement (les détails spécifiques comme l'invocation des corps reste à déterminer)? Les Neutres pourront collaborer avec les deux camps, ainsi qu'être soignés et enchantés par eux (à discuter).<br><br><li> La Langue Commune deviendrait la Langue Humaine.<br><br><li> L'utilisation des langues sera plus difficile. Cela se concrétisera par la suppression de Langue Commune et une restriction de progression dans les compétences linguistiques (probablement par niveau ou par jour). La suppression du Dark Speech sera certainement nécessaire.<br><br><li> Un seul personnage par compte sur le serveur.<br><br><li> Le canal <code>/ooc</code> sera supprimé.<br><br><li> Le canal <code>/auction</code> utilisera les langues et son utilisation sera restreinte aux villes.<br><br><li> <code>/shout</code> aura une portée réduite.<br><br><li> <code>/emote</code> sera modifié et utilisera la langue du personnage (de sorte que cette commande ne soit pas utilisée pour outrepasser la barrière du langage).<br><br><li> Bons et Mauvais ne pourront pas être membre d'une même guilde.<br><br><li> La commande <code>/who</code> affichera tout le monde en 'anonymous'.<br><br><li> Le code de butin utilisé dans Warrens sera généralisé à toutes les zones. Il ne sera pas possible de récupérer les trésors magiques d'une créature ne donnant pas d'expérience.<br><br><li> Tous les objets pourront être échangés, plus de marqueur <code>NO DROP</code>.<br><br><li> Le serveur sera PvE, et non PvP.</ul>Ces règles ne sont pas définitives, elles évolueront suivant les remarques des joueurs. Aucune date n'est encore annoncée pour le lancement de ce serveur, ce sera probablement l'un des deux prochains mis en ligne.<br><br></div>
+</div>
+<br>
+
+<a name="newsitem994433996,25381,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Vendredi 6 Juillet 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/choppe.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Transferts de personnages</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 17h39</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/v.gif" align="left" alt="">erant envisageait depuis la beta d'autoriser les déplacements de personnages entre serveurs, l'idée fut finalement abandonnée devant les difficultés de mise en &#339;uvre à grande échelle. Les rumeurs d'un éventuel service de migration payant circulaient depuis la dernière <i>Fan Faire</i>, cette fois c'est <a href=https://store.station.sony.com/eq_char_moves/index.jsp target=_blank>officiel</a>, les personnages pourront être transférés d'un serveur à un autre, mais également vers un compte différent. Voilà qui devrait redonner espoir à tous ceux qui ont commencé EverQuest sur le compte d'un proche mais ne peuvent acheter le jeu sans recommencer à zéro. Le service est intéressant mais le prix reste assez prohibitif.<br><br><br>L'offre dans le détail :<br><br>Pour déplacer des personnages sur le même compte d'un serveur à un autre :<br>1 Personnage $50 (390FF)<br>2 Personnages $75 (580FF)<br>3 à 8 personnages $150 (1160FF)<br><br>Pour déplacer des personnages d'un de vos comptes à un autre de vos comptes mais sans changer de serveur :<br>1 Personnage $50 (390FF)<br>2 Personnages $75 (580FF)<br>3 à 8 personnages $150 (1160FF)<br><br>Pour déplacer des personnages d'un de vos comptes à un autre de vos comptes et en changeant de serveur :<br>1 Personnage $100 (775FF)<br>2 Personnages $150 (1160FF)<br>3 à 8 personnages $300 (2320FF)<br><br><br>Les personnages déplacés vers un serveur différent seront transférés SANS leur équipement. <br><br>Les transferts ne sont pas ouverts vers les serveurs vieux de moins de 3 mois. Sullon Zek et le Test Server sont isolés, aucun personnage ne peut être transféré de ou sur ces deux serveurs.<br><br>Pour les transferts de compte à compte les informations de facturation doivent être identiques sur les deux comptes, et le propriétaire d'origine des deux comptes doit être la même personne.<br><br></div>
+</div>
+<br>
+
+<a name="newsitem994417417,47847,"></a><div class=newshead><img src="./images/newsicon/idole.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Nouvelle collection automne/hiver Velious</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 13h03</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/l.gif" alt="" align="left">es armures Velious ont subit un petit lifting, on devrait voir disparaître quelques protubérances des armures masculines.</div><br><div class=cite>Au cours des 6 prochains jours nous allons diffuser de nouveaux fichiers pour les armures de Velious par le biais du <i>patcher</i> Velious, accessible depuis l'interface du programme de mise à jour automatique. Comme ces fichiers sont assez volumineux, nous n'en placerons qu'un par jour sur le serveur. Il est recommandé de lancer la mise à jour de Velious chaque jour pour éviter de devoir les télécharger tous à la fois.<br></div>
+</div>
+<br>
+
+<a name="newsitem994076949,4131,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Lundi 2 Juillet 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/engrenage2.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Interruption de Jeux Online mardi</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:mind@wanadoo.fr">Mind</a> à 14h29</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news>Mardi 3 juillet, toute la plateforme GOA sera déménagée vers une nouvelle plateforme d'hébergement. Il en résultera un <b>arrêt du serveur de Jeux Online</b> pendant la majeure partie de la journée. N'attendez pas un retour du serveur avant au moins 18 heures. Veuillez nous excuser pour le dérangement.</div>
+</div>
+<br>
+
+<a name="newsitem994076911,58715,"></a><div class=newshead><img src="./images/newsicon/engrenage2.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Patch du jour</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Mind</a> à 14h28</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/v.gif" align=left alt="">oici le contenu du patch d'aujourd'hui, il apporte de nombreuses améliorations du code de superposition des effets magiques, une modification notable des sorts de téléportation de Kunark qui rendra à coup sûr plus agréable les voyages vers ce continent, et une restriction que l'on redoutait hélas suite à l'affaire Conquest sur le sort <i>Call of the Hero</i> des magiciens. Les aspects PvP sont toujours au coeur des préoccupation de Verant avec quelques innovations intéressantes... en attendant Sullon le serveur des guerres de religion toujours en phase de test.</div><br><div class=cite><ul><li> Agressivité: Nous avons ajusté la façon dont les PNJs choisissent leur cible. C'est une modification relativement simple et faisant preuve de bon sens. Nous voulons juste vous prévenir de sorte que vous ne soyez pas trop surpris et que vous ne pensiez qu'il s'agit d'un bug. Les PNJs sont désormais mieux conscient de la vulnérabilité (ou, plus précisément, de l'invulnérabilité) de leur cible. Il est très peu probable qu'un PNJ attaque un adversaire qu'il ne pourrait blesser.<br><br><li> Interruption de sorts et d'effets: S'accroupir interromps maintenant un sort instantanément. Vous ne pouvez plus vous asseoir tout en utilisant l'effet d'un objet ou en lançant un sort. Cela n'affecte pas les chants bardes, ils fonctionnent toujours comme auparavant, mais cela touche tous les objets, y compris ceux disposant d'un effet semblable à un chant.</ul><b>Sorts</b><ul><li> <i>Skin Like Nature</i> et <i>Natureskin</i> devraient se superposer avec davantage de sorts (mais pas l'un avec l'autre).<br><br><li> <i>Aegolism</i> peut être désactivé en cliquant dessus.<br><br><li> Le niveau du sort <i>Imbue Ivory</i> a été abaissé à 29.<br><br><li> <i>Shard of the Core</i> peut désormais être échangé.<br><br><li> <i>Shroud of Hate</i> et <i>Visions of Grandeur</i> devraient maintenant se superposer convenablement.<br><br><li> De nouveaux sorts de <i>Translocation</i> on été ajoutés.<br><br><li> <i>Call of the Hero</i> ne retirera plus la cible de la liste d'ennemis des PNJs si la cible n'est pas invoquée assez loin.<br><br><li> <i>Egress</i> fonctionne à présent en intérieur.<br><br><li> Les restrictions additionnelles sur <i>Wind of the North</i>, <i>Wind of the South</i>, <i>Markar's Relocation</i> et <i>Tishan's Relocation</i> ont été supprimées, ces sorts peuvent être utilisés depuis n'importe quelle zone ou d'autres sorts similaires peuvent être lancés.<br><br><li> <i>Summon Companion</i> peut maintenant être utilisé par les Necromenciens, les Shamans, les Enchanteurs et les Shadowknights en plus des Magiciens.<br><br><li> <i>Deadeye</i> devrait maintenant se superposer avec <i>Dead Man Floating</i>, mais pas avec <i>Acumen</i>.<br><br><li> <i>Plainsight</i> se superpose à présent avec <i>Dead Man Floating</i>, mais pas avec <i>Acumen</i>.<br><br><li> Les sorts de portail vers Great Divide sont passés au niveau 39 au lieu du niveau 44.<br><br><li> <i>Spirit of Oak</i> ne sera plus écrasé par d'autres sorts bénéfiques.<br><br><li> Les sorts de type <i>Paralyzing Poison</i> ne devraient plus être rompus par les sorts à dégâts directs.<br><br><li> <i>Hsagra's Wrath</i> et <i>Porlos' Fury</i> ont désormais un délai de réutilisation de 5 secondes.</ul><b>Objets</b><ul><li> L'effet sur le 10eme anneau Coldain devrait moins rentrer en conflit avec les autres sorts de hâte.<br><br><li> L'effet de l'arme épique moine, <i>Celestial Tranquility</i>, se cumule avec les sorts de hâte de haut niveau. Gardez en tête que le plus haut niveau de hâte l'emportera toujours. Cela signifie que les sorts se superposeront, mais les composantes de hâte ne s'additionneront pas.<br><br><li> La durée de <i>Speed of the Shissar</i> a été augmentée de 20 à 30 minutes. Cet effet ne devrait plus entrer en conflit avec <i>Call of Earth</i>.<br><br><li> Le <i>Bone Ring of Condemnation</i> n'est plus utilisable en main gauche, il ne se porte qu'au doigt.<br><br><li> La couleur de l'armure de quete druide de Skyshrine a été changée de sorte à paraître plus unique.<br><br><li> Le <i>Circlet of Shadow</i> a été retiré des tables de trésors. Le <i>Circlet of Shadows</i> le remplace. Cet objet diffère uniquement de l'original par son temps d'invocation de cinq secondes. Les <i>Circlet of Shadow</i> existants conserveront leur fonctionnalité précédente, cependant nous pourrions être amené à changer les Circlet existants dans le futur.</ul><b>Quêtes</b><ul><li> King Tormax est désormais un peu plus regardant sur ceux auxquels il attribue ses quêtes.<br><br><li> La quête du 6eme Skull/cudgel pour les Shamans Iksar devrait fonctionner à présent.<br><br><li> Selon la rumeur une nouvelle source d'écailles de dragon vers serait disponible sur Norrath.</ul><b>PvP</b><ul><li> Si vous êtes déconnecté sur un serveur PvP et que vous êtes tué votre corps pourra tout de même être fouillé.<br><br><li> Quand un joueur devient invisible (or parvient à se dissimuler) tout autre joueur l'ayant ciblé le perdra de son colimateur. C'est valable pour tous les serveurs, mais les plus grandes implications concernent les serveurs PvP. L'utilisation d'un sort permettant de voir l'invisible vous évitera de perdre votre cible si cette cible se cache ou se rend invisible.<br><br><li> Faction sur Rallos Zek : Tuer une personne dans sa ville natale provoquera un abaissement de faction avec les résidents de cette ville.</ul><b>Divers</b><ul><li> Nous avons rectifié bon nombre d'erreurs de syntaxe et de grammaire au cours des dernières semaines. Par exemple nous avons corrigé toutes les fautes de frappe à "<i>deity</i>" dans les messages délivrés aux joueurs, nous avons changé <i>Cantana</i> en <i>Cantata</i>, et bien d'autres encore.<br><br><li> Les '<i>Fab Four</i>' dans <i>Dagnor's Cauldron</i> n'aideront plus les <i>Undertow Skeletons</i>.<br><br><li> <i>Instill Doubt/Intimidation</i> ne peut plus être utilisé assis, s'asseoir après l'avoir déclencher l'annulera.<br><br><li> La maîtrise des compétences linguistiques se situe désormais à 100 et non à 101. Cela représentait un problème pour les maîtres en langues puisque les compétences linguistiques ne peuvent pas dépasser 100.<br><br><li> Lorsque vous buvez ou mangez les messages "<i>Chomp... Chomp,</i>" ou "<i>Glug... Glug...</i>" s'afficheront afin qu'ils ne puissent être imités par des emotes.<br><br><li> Les casques des Barbares, Trolls et Ogres ne devraient plus leur boucher la vue pendant les combats.<br><br><li> <i>Sirens Grotto</i> a été quelque peu modifiée. Cette zone devrait être plus intéressante à présent.</ul><b>Note</b><br><br>Des cris bruyants retentissent à travers les terres alors que les livreurs annoncent l'arrivée du dernier numéro des journaux de leur ville.  Les citoyens se précipitent pour obtenir une copie de ces publications et lire les articles, les derniers potins, et les nouvelles de leur ville natale.<br><br>- L'Equipe EverQuest<br></div>
+</div>
+<br>
+
+<a name="newsitem993666029,13756,"></a>
+<br>
+<table border=0 align=center width=95% cellspacing=0>
+<tr bgcolor=#000000>
+	<td><font face=Arial color=white size=3>&nbsp;&nbsp;<b>Mercredi 27 Juin 2001</b></font></td>
+</tr>
+</table>
+<br>
+
+<div class=newshead><img src="./images/newsicon/engrenage2.gif" alt="Icone" align=left>
+<!-- titre -->
+<span class=newstitle>Patch du jour</span><br>
+<span class=signature>rédigé par <a class=signature href="mailto:eltheran@jeuxonline.goa.com">Eltheran</a> à 20h20</span>
+</div>
+<p>
+
+<!-- texte -->
+<div class=news>
+<div class=news><img src="/lettrines/v.gif" align=left alt="">oici le contenu du patch d'aujourd'hui, il apporte de nombreuses améliorations du code de superposition des effets magiques, une modification notable des sorts de téléportation de Kunark qui rendra à coup sûr plus agréable les voyages vers ce continent, et une restriction que l'on redoutait hélas suite à l'affaire Conquest sur le sort <i>Call of the Hero</i> des magiciens. Les aspects PvP sont toujours au coeur des préoccupation de Verant avec quelques innovations intéressantes... en attendant Sullon le serveur des guerres de religion toujours en phase de test.</div><br><div class=cite><ul><li> Agressivité: Nous avons ajusté la façon dont les PNJs choisissent leur cible. C'est une modification relativement simple et faisant preuve de bon sens. Nous voulons juste vous prévenir de sorte que vous ne soyez pas trop surpris et que vous ne pensiez qu'il s'agit d'un bug. Les PNJs sont désormais mieux conscient de la vulnérabilité (ou, plus précisément, de l'invulnérabilité) de leur cible. Il est très peu probable qu'un PNJ attaque un adversaire qu'il ne pourrait blesser.<br><br><li> Interruption de sorts et d'effets: S'accroupir interromps maintenant un sort instantanément. Vous ne pouvez plus vous asseoir tout en utilisant l'effet d'un objet ou en lançant un sort. Cela n'affecte pas les chants bardes, ils fonctionnent toujours comme auparavant, mais cela touche tous les objets, y compris ceux disposant d'un effet semblable à un chant.</ul><b>Sorts</b><ul><li> <i>Skin Like Nature</i> et <i>Natureskin</i> devraient se superposer avec davantage de sorts (mais pas l'un avec l'autre).<br><br><li> <i>Aegolism</i> peut être désactivé en cliquant dessus.<br><br><li> Le niveau du sort <i>Imbue Ivory</i> a été abaissé à 29.<br><br><li> <i>Shard of the Core</i> peut désormais être échangé.<br><br><li> <i>Shroud of Hate</i> et <i>Visions of Grandeur</i> devraient maintenant se superposer convenablement.<br><br><li> De nouveaux sorts de <i>Translocation</i> on été ajoutés.<br><br><li> <i>Call of the Hero</i> ne retirera plus la cible de la liste d'ennemis des PNJs si la cible n'est pas invoquée assez loin.<br><br><li> <i>Egress</i> fonctionne à présent en intérieur.<br><br><li> Les restrictions additionnelles sur <i>Wind of the North</i>, <i>Wind of the South</i>, <i>Markar's Relocation</i> et <i>Tishan's Relocation</i> ont été supprimées, ces sorts peuvent être utilisés depuis n'importe quelle zone ou d'autres sorts similaires peuvent être lancés.<br><br><li> <i>Summon Companion</i> peut maintenant être utilisé par les Necromenciens, les Shamans, les Enchanteurs et les Shadowknights en plus des Magiciens.<br><br><li> <i>Deadeye</i> devrait maintenant se superposer avec <i>Dead Man Floating</i>, mais pas avec <i>Acumen</i>.<br><br><li> <i>Plainsight</i> se superpose à présent avec <i>Dead Man Floating</i>, mais pas avec <i>Acumen</i>.<br><br><li> Les sorts de portail vers Great Divide sont passés au niveau 39 au lieu du niveau 44.<br><br><li> <i>Spirit of Oak</i> ne sera plus écrasé par d'autres sorts bénéfiques.<br><br><li> Les sorts de type <i>Paralyzing Poison</i> ne devraient plus être rompus par les sorts à dégâts directs.<br><br><li> <i>Hsagra's Wrath</i> et <i>Porlos' Fury</i> ont désormais un délai de réutilisation de 5 secondes.</ul><b>Objets</b><ul><li> L'effet sur le 10eme anneau Coldain devrait moins rentrer en conflit avec les autres sorts de hâte.<br><br><li> L'effet de l'arme épique moine, <i>Celestial Tranquility</i>, se cumule avec les sorts de hâte de haut niveau. Gardez en tête que le plus haut niveau de hâte l'emportera toujours. Cela signifie que les sorts se superposeront, mais les composantes de hâte ne s'additionneront pas.<br><br><li> La durée de <i>Speed of the Shissar</i> a été augmentée de 20 à 30 minutes. Cet effet ne devrait plus entrer en conflit avec <i>Call of Earth</i>.<br><br><li> Le <i>Bone Ring of Condemnation</i> n'est plus utilisable en main gauche, il ne se porte qu'au doigt.<br><br><li> La couleur de l'armure de quete druide de Skyshrine a été changée de sorte à paraître plus unique.<br><br><li> Le <i>Circlet of Shadow</i> a été retiré des tables de trésors. Le <i>Circlet of Shadows</i> le remplace. Cet objet diffère uniquement de l'original par son temps d'invocation de cinq secondes. Les <i>Circlet of Shadow</i> existants conserveront leur fonctionnalité précédente, cependant nous pourrions être amené à changer les Circlet existants dans le futur.</ul><b>Quêtes</b><ul><li> King Tormax est désormais un peu plus regardant sur ceux auxquels il attribue ses quêtes.<br><br><li> La quête du 6eme Skull/cudgel pour les Shamans Iksar devrait fonctionner à présent.<br><br><li> Selon la rumeur une nouvelle source d'écailles de dragon vers serait disponible sur Norrath.</ul><b>PvP</b><ul><li> Si vous êtes déconnecté sur un serveur PvP et que vous êtes tué votre corps pourra tout de même être fouillé.<br><br><li> Quand un joueur devient invisible (or parvient à se dissimuler) tout autre joueur l'ayant ciblé le perdra de son colimateur. C'est valable pour tous les serveurs, mais les plus grandes implications concernent les serveurs PvP. L'utilisation d'un sort permettant de voir l'invisible vous évitera de perdre votre cible si cette cible se cache ou se rend invisible.<br><br><li> Faction sur Rallos Zek : Tuer une personne dans sa ville natale provoquera un abaissement de faction avec les résidents de cette ville.</ul><b>Divers</b><ul><li> Nous avons rectifié bon nombre d'erreurs de syntaxe et de grammaire au cours des dernières semaines. Par exemple nous avons corrigé toutes les fautes de frappe à "<i>deity</i>" dans les messages délivrés aux joueurs, nous avons changé <i>Cantana</i> en <i>Cantata</i>, et bien d'autres encore.<br><br><li> Les '<i>Fab Four</i>' dans <i>Dagnor's Cauldron</i> n'aideront plus les <i>Undertow Skeletons</i>.<br><br><li> <i>Instill Doubt/Intimidation</i> ne peut plus être utilisé assis, s'asseoir après l'avoir déclencher l'annulera.<br><br><li> La maîtrise des compétences linguistiques se situe désormais à 100 et non à 101. Cela représentait un problème pour les maîtres en langues puisque les compétences linguistiques ne peuvent pas dépasser 100.<br><br><li> Lorsque vous buvez ou mangez les messages "<i>Chomp... Chomp,</i>" ou "<i>Glug... Glug...</i>" s'afficheront afin qu'ils ne puissent être imités par des emotes.<br><br><li> Les casques des Barbares, Trolls et Ogres ne devraient plus leur boucher la vue pendant les combats.<br><br><li> <i>Sirens Grotto</i> a été quelque peu modifiée. Cette zone devrait être plus intéressante à présent.</ul><b>Note</b><br><br>Des cris bruyants retentissent à travers les terres alors que les livreurs annoncent l'arrivée du dernier numéro des journaux de leur ville.  Les citoyens se précipitent pour obtenir une copie de ces publications et lire les articles, les derniers potins, et les nouvelles de leur ville natale.<br><br>- L'Equipe EverQuest<br></div>
+</div>
+<br>
+
+
+	<br><br><br>
+
+	</td>
+	<td class=bordNewsCentreDroit width=25 >&nbsp;</td>
+</tr>
+<tr>
+	<td class=stick><img src="/images/bas-gauche2.gif" width=28 alt=""></td>
+	<td class=bordNewsBasCentre width=545>&nbsp;</td>
+	<td class=stick><img src="/images/bas-droit2.gif"  width=25 alt=""></td>
+</tr>
+</table>
+<br>
+<div class=footnote>Tous droits réservés ©2000 Réseau Jeux Online. Site hébergé par Goa.</div>
+<br>
+
+<!-- Fin des news -->
+
+</td>
+
+<td width=5>&nbsp;</td>
+
+<td valign=top>
+
+
+<table align=center border=0 width=142 cellspacing=0 cellpadding=0>
+<tr>
+	<td class=bordMenuCentre height=47 colspan=3><div class=stick><img src="./images/col16-top.gif" alt=""></div></td>
+</tr>
+</table>
+
+<table align=center border=0 width=125 cellspacing=0 cellpadding=0>
+<tr>
+
+	<td class=bordMenuGauche width=5 >&nbsp;</td>
+
+	<td class=bordMenuCentre valign=top align=center width=115>
+
+	<img src="./images/menu-nouvelles.gif" alt="Nouvelles"><br>
+	<table align=center width=106 border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td class=stick><img src="./images/stone-down-top.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td class=bordMenuDownCentre>
+		
+<div class=lienHeadlines><a href="http://eq.goa.com/index.php3#newsitem995216480,43451," class=lienHeadlines>Abracadabra !</a></div>
+
+<div class=lienHeadlines><a href="http://eq.goa.com/index.php3#newsitem995110836,68295," class=lienHeadlines>L'expérience à la loupe</a></div>
+
+<div class=lienHeadlines><a href="http://eq.goa.com/index.php3#newsitem994871833,41301," class=lienHeadlines>Patch de la semaine</a></div>
+
+<div class=lienHeadlines><a href="http://eq.goa.com/index.php3#newsitem994697870,46831," class=lienHeadlines>Nouvelle règle pour Sullon ?</a></div>
+
+<div class=lienHeadlines><a href="http://eq.goa.com/index.php3#newsitem994695482,97472," class=lienHeadlines>Serveur Roleplay à l'étude</a></div>
+		</td>
+	</tr>
+	</table>
+	<br>
+
+
+	<img src="./images/menu-serveurs.gif" alt="Serveurs"><br>
+	<table align=center width=106 border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td class=stick><img src="./images/stone-down-top.gif" alt=""></td>
+	</tr>
+	<tr>
+		<td class=bordMenuDownCentre>
+
+		<table width="100%" cellspacing=0 cellpadding=0>
+		<tr>
+			<td align=left> <span class=serveurNom>&nbsp;Chat Server</span></td>
+			<td align=right><span class=serveurUp>452&nbsp;</span></td>
+		</tr>
+
+
+					<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Ayonae Ro</span></td>
+				<td align=right><span class=serveurUp>2062&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Bertoxxulous</span></td>
+				<td align=right><span class=serveurUp>2418&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Brell Serilis</span></td>
+				<td align=right><span class=serveurUp>2215&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Bristlebane</span></td>
+				<td align=right><span class=serveurUp>2403&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Cazic-Thule</span></td>
+				<td align=right><span class=serveurUp>2018&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Drinal</span></td>
+				<td align=right><span class=serveurUp>1997&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Druzzil Ro</span></td>
+				<td align=right><span class=serveurUp>2046&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;E'ci</span></td>
+				<td align=right><span class=serveurUp>2041&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Erollisi Marr</span></td>
+				<td align=right><span class=serveurUp>2096&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Fennin Ro</span></td>
+				<td align=right><span class=serveurUp>2192&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Innoruuk</span></td>
+				<td align=right><span class=serveurUp>2196&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Karana</span></td>
+				<td align=right><span class=serveurUp>2203&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Lanys T'Vyl</span></td>
+				<td align=right><span class=serveurUp>1984&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Luclin</span></td>
+				<td align=right><span class=serveurUp>1931&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Mithaniel Marr</span></td>
+				<td align=right><span class=serveurUp>1922&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Morell-Thule</span></td>
+				<td align=right><span class=serveurUp>1508&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Povar</span></td>
+				<td align=right><span class=serveurUp>2012&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Prexus</span></td>
+				<td align=right><span class=serveurUp>2448&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Quellious</span></td>
+				<td align=right><span class=serveurUp>2195&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Rallos Zek</span></td>
+				<td align=right><span class=serveurUp>1361&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Rodcet Nife</span></td>
+				<td align=right><span class=serveurUp>2126&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Saryrn</span></td>
+				<td align=right><span class=serveurUp>1931&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Solusek Ro</span></td>
+				<td align=right><span class=serveurUp>2089&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Sullon Zek</span></td>
+				<td align=right><span class=serveurUp>2436&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Tallon Zek</span></td>
+				<td align=right><span class=serveurUp>1497&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Tarew Marr</span></td>
+				<td align=right><span class=serveurUp>2323&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Terris-Thule</span></td>
+				<td align=right><span class=serveurUp>2141&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Test Server</span></td>
+				<td align=right><span class=serveurUp>476&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Nameless</span></td>
+				<td align=right><span class=serveurUp>2104&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Rathe</span></td>
+				<td align=right><span class=serveurUp>2059&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;7th Hammer</span></td>
+				<td align=right><span class=serveurUp>2037&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Tribunal</span></td>
+				<td align=right><span class=serveurUp>2082&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Tholuxe Paells</span></td>
+				<td align=right><span class=serveurUp>2005&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Torvonnilous</span></td>
+				<td align=right><span class=serveurUp>1982&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Tunare</span></td>
+				<td align=right><span class=serveurUp>2477&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Vallon Zek</span></td>
+				<td align=right><span class=serveurUp>1456&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Vazaelle</span></td>
+				<td align=right><span class=serveurUp>1926&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Veeshan</span></td>
+				<td align=right><span class=serveurUp>2065&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Xegony</span></td>
+				<td align=right><span class=serveurUp>2312&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Xev</span></td>
+				<td align=right><span class=serveurUp>2067&nbsp;</span></td>
+			</tr>
+						<tr>
+				<td align=left ><span class=serveurNom>&nbsp;Zebuxoruk</span></td>
+				<td align=right><span class=serveurUp>1898&nbsp;</span></td>
+			</tr>
+			
+		<!--
+		<tr>
+			<td align=left> <span class=serveurNom>&nbsp;<b>Total</b></span></td>
+			<td align=right><span class=serveurUp><b>83189</b>&nbsp;</span></td>
+		</tr>
+		-->
+		</table>
+
+
+
+		</td>
+	</tr>
+	</table>
+	<br>
+
+	</td>
+
+	<td class=bordMenuDroit width=5 >&nbsp;</td>
+</tr>
+</table>
+
+<table align=center border=0 width=142 cellspacing=0 cellpadding=0>
+<tr>
+	<td class=bordMenuCentre height=47 colspan=3><div class=stick><img src="./images/col16-bottom.gif" alt=""></div></td>
+</tr>
+</table></td>
+
+
+
+</tr>
+</table>
+
+
+<!-- eStat Javascript Début -->
+<script language="Javascript" type="text/javascript">
+<!--
+function spc(_serial, _page, _class)
+{
+	document.write("<IMG src=\"http://prof.estat.com/cgi-bin/ft/"
+			+  _serial+ "?"
+			+ "&n=" + Math.round (Math.random () * 1000000000000000)
+			+ "&page=" + _page
+			+ "&class="+ _class
+			+ "&referer=" + escape(document.referrer)
+			+ "\" border=0 alt=\"\">" );
+}
+
+
+spc("10000037099","3_jeu_everq","jol");
+
+//-->
+</script>
+<!-- eStat Javascript Fin -->
+</body>
+
+
+</html>

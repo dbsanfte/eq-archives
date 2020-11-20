@@ -1,0 +1,154 @@
+<HTML><HEAD><TITLE>EQ Atlas Message Boards - Reply to Topic</TITLE>
+
+
+</HEAD>
+ <BODY bgcolor="#FFFFFF" background="http://www.eqatlas.com/ubb/../images/bg.jpg" text="#000000" link="#000080" alink="#800000" vlink="#871f78" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<center>  
+      <!--#include virtual="/Ad?"-->
+</center>
+</font>
+<table border=0 width=95% align=center>
+<TR><TD>
+<A HREF="http://www.eqatlas.com/cgi-bin/ubb/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://www.eqatlas.com/ubb/logo.jpg"  BORDER=0></A></td>
+<td align=center>
+<table border=0>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Forum:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Travel Tales</FONT></td></tr>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Topic:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Boats</FONT></td></tr></table>
+</td></tr>
+<tr><td colspan=2><FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://www.eqatlas.com/cgi-bin/ubb/Ultimate.cgi?action=agree">Want to register?</a></FONT>
+</td></tr>
+</table>
+<FORM ACTION="http://www.eqatlas.com/cgi-bin/ubb/postings.cgi" NAME="REPLIER" METHOD="POST">
+<center>
+
+<table border=0 cellpadding=4 cellspacing=1 width=95%>
+<tr bgcolor="#D5E6E1">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Who Can Post?
+</font>
+</td>
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+Any registered users may post a reply.
+</font>
+</td></tr>
+
+<tr bgcolor="#D5E6E1">
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+About Registration
+</font></td><td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+You must be registered in order to post a topic or reply in this forum.</font></td></tr>
+<tr bgcolor="#dedfdf"><td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your UserName:</B></FONT></td>
+<td valign=top>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td>
+</tr>
+
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Password:</B></FONT></td>
+<td valign=top><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://www.eqatlas.com/cgi-bin/ubb/Ultimate.cgi?action=lostpw">Forget your password?</A></font></td></tr>
+
+<tr bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Message Icon:</B></FONT></td>
+<td><INPUT type="radio" name="MsgIcon" value="1" CHECKED>&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon1.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="10"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon10.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="11"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon11.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="12"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon12.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="13"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon13.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="14"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon14.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="2"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon2.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR><INPUT type="radio" name="MsgIcon" value="3"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon3.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="4"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon4.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="5"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon5.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="6"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon6.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="7"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon7.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="8"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon8.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="9"  >&nbsp;&nbsp;<IMG SRC="http://www.eqatlas.com/ubb/icons/icon9.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR></td></tr>
+<TR bgcolor="#dedfdf"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Reply:</B></FONT>
+<p><BR>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#871f78">
+*HTML is OFF<BR>
+<A HREF="http://www.eqatlas.com/ubb/ubbcode.html" target=_blank>*UBB Code is ON</A><BR>
+[IMG] UBB Code Not Allowed!<p><A HREF="http://www.eqatlas.com/ubb/smilies.html" target=_blank>Smilies Legend</A></font>
+</td>
+<td>
+<TEXTAREA NAME="ReplyMessage" ROWS=10 COLS=45 WRAP="VIRTUAL"></TEXTAREA>
+</td></tr>
+<TR bgcolor="#dedfdf">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<B>Options</B>
+</FONT></td>
+<td valign=top><FONT SIZE="1" FACE="Verdana, Arial">
+<INPUT TYPE="CHECKBOX" NAME="DisableSmilies" VALUE="yes"> <b>Disable Smilies in This Post</b>. <BR><INPUT TYPE="CHECKBOX" NAME="Signature" VALUE="yes"> <B>Show Signature:</B> include your profile  signature.  Only registered users may have signatures.
+</font>
+</td>
+</tr>
+<tr bgcolor="#D5E6E1"><td colspan=2>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#000080">*If HTML and/or UBB Code are enabled, this means you can use HTML and/or UBB Code in your message.</FONT>
+</td></tr>
+</table>
+
+</center>
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="postreply">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Boats">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="Travel Tales">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="7">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="000001.cgi">
+<CENTER>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Reply">
+
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#000080">
+<P>
+If you have previously registered, but forgotten your password, <A HREF="http://www.eqatlas.com/cgi-bin/ubb/Ultimate.cgi?action=lostpw">click here</A>.
+</font>
+
+<P><FONT SIZE="2" FACE="Verdana, Arial">
+<TABLE BORDER=0 cellpadding=4 border=0 cellspacing=1 WIDTH="95%"><TR bgcolor="#D5E6E1"><TD COLSPAN=2><CENTER><FONT SIZE="2" COLOR="#000080" FACE="Verdana, Arial">T O P I C  &nbsp;&nbsp;&nbsp; R E V I E W</font></CENTER></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Macrai</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">When I was but a wee lad of 18 years, the warrior spirit within forced me to hop a boat and wander to the new land know as Kunark.  Wandering the docks of the floating city I was approached by Jenora, one of my guild.  We wandered out into Lake of Ill Omen and comenced to fight goblins and some large red lizards walking upright.  Alas my group decided to breakup and go to the winds.  Being one from the cold reaches of Ever Frost I started longing for more familiar areas to explore.  I made my way back to the floating city and boarded the boat bound for(or so i thought) free port.  Now many know that Barbarians have exceptional NIGHT vision and thus would never become lost ona  boat.  But as fate would have I did and proceeded to step unto what I thought was the ramp down to the shuttle.  Alas the last thing I remember thinking was that the side of the boat sure was moving upwards at a greater spend then I thought I could possibly walk down the ramp.<BR>Yup I had stepped right off the boat into Tiomerous Deep Ocean.  Now normally this wouldn't of been to bad but for the fact it was night time(did I mention barbarian's exceptional night sight?).  So as I got my bearings and turned to try and reboard the boat it began to move.  As many know the Kunark big ship is rather quick and my swiming was, though powerful, no where near what was needed.  Thus the boat disappeared over the horizon.  I began to swim(much to the ammusment of my Guildmates).  and swim<BR>and swim and swim and swim, (ooc I swam for over 45mins real life time).  Once i got stuck in some unexplained whirlpool of power that would not allow me to move either direction(acted like getting stuck up in the corner of a building or some such).  I became fatigued and start to drown, by some freak of nature I was able to move once again.  Pulling hard for the surface and the promise of air kept me goin.  Once I hit the surface I turned 90 degrees and TADA there was this GIGANTIC Lizardman standing upon a mountain.  Fearing for my life but neededing to rest I swam for the mountain.  It was a deserted isle I had happened upon and fell over to the ground from pure DELIGHT at not being dead and exhaustion from swiming for the better part of an entire night.  Once I was able to get my bearings and let my Guild Mistress know where was I washed up she was able to come to my rescue and show me the way back.  For which I will be for ever thankful.<P>Thus the moral of this story is this...Barbarians don't EVER trust your excelent night vision to be taking a stroll on the deck of a boat for you might be finding yourself swiming.<P>Macrai Dragorath, Way of the Wolf<P>OOC...btw I raised my swiming skill from 47 to 79 whilst swiming in the deep blue sea.</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Rigor</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">The way I look at it, if you survived your ordeal AND got some skill points somewhere, it was a successful journey. I fell off the boat there and encountered the weird walls of force in the middle of the ocean. I think that they are where the boats zone in and out. <P>------------------<BR>Luclin - Rigor</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Rylius</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I too had a hair raising experience in the Timorous Deep. As a Paladin of Tunare, I could not resist to call to arms to vanquish new evils discovered on a long forgotten continent of Norrath. So, I left good friends I had met battling the Aviaks in Southern Karana and journeyed to ButcherBlock to take the new boat run by my high elven brothers and sisters.<P>I arrived at the docks and sat down on one of the small barges to wait for my journey to begin. The wait was long, but finally the barge took flight and I was on my way. No sooner did we get fairly deep into ocean and finally I glimpsed the great vessel that would make the treacherous trip to the land known as Kunark.<P>With the small barges all lined up, a strange thing happened and caused me a great panic! One of the barges with other passengers began moving towards the great boat, but mine didn't. Well, this being my first trip and not knowing what to expect, I can't explain why, but I panicked. Yes, sadly, I jumped from my barge thinking that I should be on this other barge that is actually moving.<P>&lt;big sigh&gt;<P>And so began many a Norrath day (hour and a half IRL) of swimming from island to island, talking to as many adventurers as would speak to me until finally I found a map of the ocean called Timorous Deep (IRL I logged and printed off a map).<P>With map in hand I headed to the island with the Ogres. On my way I saw a race that resembled the Aviaks, as well as some undead that I Warded off. Being careful not to run into the ogres, I found a rickety raft waiting to push off. Praying it would stay afloat I boarded and soon I was kissing the sands of Oasis! Never was I happier to hear the blood curdling screams of the unfortunates that were running from a Sand Giant. Ahhhh.... safety at last!<P>Many thanks to my Guildmates as well for their support both moral and informative!<P>Rylius Elfheart<BR>Paladin of Tunare, 24th season<BR>Dragonhood of Marr<BR>Mith Marr server</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Wik</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">A young wood elf Scout I knew was travelling to Freeport across the Ocean of Tears once.  He has a habit of hailing the Allizewsaur when the boat passes its isle.  In his eagerness to greet the beast, he took one step too many and toppled from the boat.  He tried, in vain, to overtake the boat.  As the boat vanished in the distance, a sense of dread swept through him.<BR>Already fatigued from the rough boat ride and further exhausted trying to catch the boat, his chances of survival seemed slim.  Crying out to other adventurers in the Ocean, he sought direction to the nearest port.  He was soon directed to the Island of the Sisters of Erollisi.<BR>After a seemingly eternal swim, the island came into view.  His strokes became surer, but a faint instinct held him back a moment.  Peering carefully toward the shore, he made out the shape of a prowling shark.  Waiting patiently, he let the danger pass, and made a final dash for shore, his heart pounding in his chest the whole way (ooc- real-life, maybe I'm getting too involved in the game :).<BR>Crawling to shore, he shouted in exhultation, made his way to the dock, and promptly hid in the shadows.  When the boat for Faydwer stopped at the dock, he crawled on board and planted himself firmly next to the main mast.<BR>It has been a long time since he's been on the boat again.</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Rodrinh</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I too have a tale of near woe involving a boat.<BR>At level 16 my enchanter thought it would be a fine thing to travel to Firona Vie and obtain a copy of the spell Breeze. I paid for a teleport from West commons to BB then ran to the docks to discover that the shuttle boats were ready and waiting (a good thing as I was told some people have waited for 90 minutes for them to show). There was one other person travelling with me who asked if this was my first trip, he then explained that after the shuttles zoned I would need to jump onto the new boat. After zoning I discovered that this person was standing on another shuttle so I attempted to jump on to it, of course I missed and found myself swimming in the water. All was not lost though as I swam towards the huge boat I could see. I climbed on the prow just above the water line looking for a way on board and it was at this stage that the boat began to move. I travelled the whole way on the front of the ship and reaching FV was able to swim around until I found a ladder that let me up onto the docks. My new friend from the boat even helped me locate the bank and spell merchant to make up for the joke he played on me.<P>PS I posted a screenshot of me to some friends doing my best Kate Winslow impersonatio on the prow of the boat ala Titanic. I found that /dance got me to wave my arms in the appropriate manner  <IMG SRC="http://www.eqatlas.com/ubb/smile.gif"></FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Fluvius</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I'm always reminded of Chef from "Apocalypse Now" after they're chased back onto the boat by a tiger and Chef keeps screaming "Never get off the boat! I'm never getting off the boat!"<P>Often words to live by in the Ocean of Tears. On the other hand, I do have a screenshot of the OoT dino. And I lived.<P><P>------------------<BR>Fluvius Rex of Freeport<BR>Founder, the Guild With No Name<BR>Rogue of 27 seasons<BR>Proud Citizen of Torvonnilous</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Sionar</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">As an enchanter we are capable of doing the Stein og Moggok quest, which is a very popular item to any int based charachter. And since i wanted to help i guildmate i gave him mine and thought i could easily do the quest again.<P>I might have been a bit lasy, and a bir unlucky. When arriveing in Qeynos i wnet to the harbour in the search for the boat to Erudin. When standing at the dock i meet some nice people and even a married couple (both in EQ and IRL). We talked and had some fun. We showed our skills to eachother and made some more jokes.<P>Finally the boat arrivad and we all went onboard... when the ship started sailing, somthing went wrong... i went through the planks and found myself swimming !! and so was 1 of the other persons.<P>We went back to waiting for the next ship. When that arrived i wanted to make sure i did not fall through tha planks again ! I found a place in the middle of the ship facing the sailing direction. When the ship started moving i started running... and ran until we zoned. After arraving at the new zone i suddenly found myself standaing half way to the top off the shipmast. But before i could figure out what to do, i heard i sudden loud noice.. That was my new friend who had materialized on top off the mast, and when he wanted to move he fell to the ground and died... i took my own faal, but luckily i survived, after attaining my breath i mourned the death off my new found friend, who found death to early.<P>But my travles and ordeals where not over yet.. when arriving in Erudin i thought I would show myself from my best side, and use my Erudith illusion. But stupid litlle me had forgotten that i had rearrenged my spells on the docks... and when i used my illusion i turned into an ogre.. and that suddenly got the attention from every guard on the docks.. and i found a grave standing on the docks trying to explain to the guards that it only was an illusion... they didn't believe me...</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Odwyn the Mad</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Maybe its because I'm a wood elf, but I have never enjoyed seagoing.  The first time was breath-taking, until I forgot to get off at my stop! (ooc- my computer crashed and I went around and around between Freeport and Butcherblock!)<BR>I would have thought the shipwrights would have done their craft better, but I went through the hull once down in the hold.  As I am not a very good swimmer at all, I immediately panicked and thrashed towards the departing ship.  Fortunately, we were close to an island, so I was able to crawl out of the surf, begin humming Selo'c Accelerando and sprint to where my ship has just docked to let off some passengers.  I  put my arms around the mast and held on for the rest of the trip!<P><P>------------------<BR>Odwyn</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Sjoc</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I too have a Timorous deep story that led to a nice long swim.<P>On the advice of a friend, I decided that I should venture from my home in the Butcherblock Mountains to Freeport. Being new to adventuring and having never ventured off shore before I did not know which dock to wait on. Picking the one to the left I boarded a barge and was promptly whisked off to the Timorous Deep. After zoning I lost my bearings and stepped off the barge. Being a weak swimmer all that was left to me was to find an Island and hope I would be safe.<P>This was harder than expected but after what seemed like an eternity I too found the Isle with the Giant Lizardman Statue. I wandered arround and found no dangers and rested. I was dismayed though to find little of anything else. And soon took to swiming again. This swim took me to a reef of abandoned ships with bandits camping Avoiding them I hid in an empty hull until I felt that I had rested enough to attempt another wet venture. This trip took me to an Elven out post with a dock. I promptly boarded the island shuttle and got to the Maiden's Voyage. When She stopped for the barges I boarded them and was home.<P>My friend now says that this was my first real quest and I did get a reward. Better swiming.</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Dumathoin</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Being a dwarven paladin from Kaladim, I did not start out with natural swimming ability. I knew this from the beginning, and so I set out to "practice" swimming lessons off the dock on Port Faydwer (west of ButcherBlock).<P>On the second day that I was taking swimming lessons off the beach at Port Faydwer, I was attacked and mauled by (what seemed to be) an Aqua Goblin "wizard". <P>I barely escaped the bloody encounter, thrashing my arms and lunging toward the beach sands for dear life. There was no way I could have won the encounter, the goblin wizard was casting malicious spells at me from UNDERWATER... it was an enemy unseen.<P>I barely survived. <P>Let this be a lesson. There are more than just sharks lurking in the coastal waters. <P></FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Katarr</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Gather round lad's and lasses and hear a tale of sea travel that would chill a man's soul...  <P>Once, when I was a young Paladin of the 12th Circle, I ventured abroad to the land of Faydwar.  Along the way, I stopped off the Island of the Sisters, thinking I had arrived.  I was soon attacked by some nasty Water Goblins and soon died.  Back at Freeport, my new life re-boarded the ship to find its long lost past self. I approached the Island this time and saw my corpse on the dock.  I corpse dragged it onto the ship, not wanting to risk getting attacked again.  Big mistake.  While on the boat, you are not able to loot yourself!  The boat began to move and I just figured I would carry my body to Butcherblock.  The time had come to zone to BB.  The ship zoned, I zoned but to my horror, my corpse did not!  I looked all over but it was gone!  Panicking, I began to hail the gods (ooc petition the GM) for help as I returned to the scene of the crime, the Sister Island.  Finally, a god like being (GM) appeared and answered my hails and told me my body would come to me.  After a few minutes, he returned with my corpse and laid it gently on the dock.  I was grateful for his help.  He had said, it was lost at sea, deep in the middle of the ocean!  Thankfully he helped!</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">daren</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I experienced a similar mishap. I was looking for a journal, left on a dock "before Freeport". I arrived at the Isle of the sisters of Erollisi and explored. After a while I settled down by a guard to remain safe and was promptly killed by a pirate! On being reborn, I once again boarded a ship and settled in behind the mast, thinking this would be a safe place to wait. <P>The next thing I know, the horizon is tilting all about me! I look to see if something has grabbed me (ooc I check I'm not leaning on the spacebar or something!). The next thing I know I'm at the top of the mast!! I twitch in panic and fall to my death. On being reborn yet again, I try to find my corpse to reclaim my meagre belongings. To no avail!!<P>What's with the rising up the mast thing anyway?</FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Tenuvas</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">I also had an encounter in the dreaded ocean of TD witch had a good ending.<BR> I a Ranger of the 39th set out from visiting my homelands in Quenos meeting my druid friend. He offered me a lift thru the teleporting abilitys he has mastred long ago(for he was lvl 51 at the time)to the distant land of Butcher Block Mountains in witch I departed his companionship in order to seek out the dock. This takeing some time I should of known I had a very long jurney ahead of me. But being the stubern ranger who has always found his way took no such heed to the godly warning of time.<BR> Finaly I reached the docks just in time to depart with the shuttles. Climbing onboard I prepared to depart like I have done in the past. As we zoned I noticed I was under the main flooring of the shuttle so I paniced when I saw the Maiden's Voyage so I tryed to jump up on the main floor but to no avail but ding maybe if I were to jump in the water I could cast Levitation on myself and float back up to the lower deck and then to the main deck so I could board the ship. Come to find out I forgot to med the spell and the shuttles and ship left me in a speachless aww being stuck in the middle of the ocean. Of corse I dident panic for I was a strong swimmer (skill of 140) when I set out for land. two hours (RL Time) passed and to no avail I found no land and I could pick up no tracks to follow (tracking was also high of 150) Untill I found the floating feathers of an Avark guard so with new hope I set tword the track but again to no avail the avark was in the middle of the ocean. About 2 and a half hours passed sence the accident happend is when I stumbled onto land<BR>for I only servived by letting my body get drug under watter while casting my stamina spell and Spirit of wolf for I was all out of fish scales for enduring breath with no chance to find any.<BR> So to the moral of the story is I was So Freeking lucky that this was a day when mister lizasoras was offline and my swimming skill reached 168 in that period of time <BR>P.S. How the heck can you forage in the watter but not fish ??</FONT></TD></TR><TR bgcolor="#f7f7f7"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Manadins the druid</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Well, I've got a tale of boat troubles in the Timouros Deep. The other week, when I was first going to Kunark to hunt with a friend, an extremely strange thing happened to me.<P>I was taking the boat from Butcherblock, to Firiona Vie, when my friend and I decided to set up camp on the boat (IRL log out.) We were already on the ship so we thought that we wouldn't fall into the sea from the shuttles.<P>However, when we wake up we are not on the boat, but on a island! I SoW myself, and camo to scout out the island. I find several ruined stone buildings, a giant chessboard, and some sort of parrot, luckily they are not hostile as they could easily kill us.<BR>We decide to shout out requests to be teleported away, but there is no one around.<P>I'm starting to form an idea in my head, because we may be stranded here for days, (a few hours IRL.) we must get away. I can gate away, but unfortunately, my friend who is a bard would be stuck there.<P>So, instead I have him give me all his valauble items, then slay him in a duel. I then gate away with his things, and find him unharmed back at the North Karana wizard Spires.<P>So, never set up a camp on a boat.<P></FONT></TD></TR><TR bgcolor="#dedfdf"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Maevwyn</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">My own tale of Timorous Deep actually doesn't involve a boat (or at least, only incidentally)...<P>Some time ago, being at that point a druid of 20 seasons or so, I took myself off to Kunark and bound myself on the docks there.  Since I had mastered the spells to transport myself to all the other continents (Velious at that point had not yet been discovered), I decided I would stay bound there so I could Gate to Kunark if I liked, or teleport myself anywhere else.<P>For some reason that I no longer remember, I needed to get myself to Halas.  Since at that time it wasn't possible to teleport to Surefall Glade, I was looking at the long run across the Karanas to get there...until I remembered what my older sister had told me about told me about the ancient transportation point deep under the waters of Timorous Deep, which would take me right to Halas!<P>So I got on the boat in Firiona Vie, having made sure to cast Spirit of Wolf and Levitate first, went out into Timorous, and as the ship reached the southernmost point in its route, leapt off the boat and ran off to the southeast.<P>A long way south of the boat, I saw the tips of the spires poking up out of the water and knew I was nearly there.  I hadn't been looking for any kind of tracks, as I'd seen no signs of life since I left the chessboard island behind me, but as I ran in between the spires and get ready to dive, I saw a very large disturbance in the water...and at that same moment, a huge red, scaly head rose up.  I turned to run, and then the fireball hit me and left my lifeless corpse drifting slowly down to the ocean floor...<P>(/ooc:  Just as I came up to the spires, I happened to hit my track key again, and there at the top of the list saw "Faydedar"...and thought, "Dragon?  DRAGON!!"...LOADING...Please wait...  My ranger, on the other hand, has used the firepot room many times, and never yet seen the dragon.)<BR></FONT></TD></TR></TABLE>
+</FONT>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.ReplyMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+<P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:Muse@eqatlas.com">Contact Us</A> | <A HREF="http://www.eqatlas.com" target=_top>EQ Atlas</A> 
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">All Contents Copyright 1999-2001 by EQ Atlas.
+<P>
+		Powered by Infopop <a href="http://infopop.com"> <font color="#dedfdf">www.infopop.com</font></a> &copy; 2000<br>
+      Ultimate Bulletin Board Version 5.47d
+<br><br>
+</FONT>
+</CENTER></font>
+ </p>
+</body></html>

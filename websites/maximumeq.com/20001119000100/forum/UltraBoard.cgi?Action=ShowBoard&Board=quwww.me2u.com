@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>ACCESS DENIED</title>
+
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#0080FF" vlink="#0080FF" alink="#C0C0C0">
+
+<!-- Site Logo and Ad Banner -->
+<p align="center"><A HREF="http://www.maximumeq.com"><img src="http://www.maximumeq.com/images/maxeqlogomain.gif" alt="Welcome to Maximum EverQuest" Border=0></A></p>
+
+<p align="center">
+
+
+<!--MaximumEQ Content Page 468x60-->
+<iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=pc&page=111&site=maximumeq&size=468x60">
+
+<script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=pc&page=111&site=maximumeq&size=468x60"> </script>
+
+<noscript>
+<a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=pc&page=111&site=maximumeq&size=468x60">
+<img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=pc&page=111&site=maximumeq&size=468x60" border=0></a>
+</noscript>
+</iframe>
+
+<br>
+</p>
+
+
+<!-- Header of UltraBoard -->
+<table width="100%" border="0" bgcolor="000000" cellspacing="0" cellpadding="0" align="CENTER">
+<tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr><td bgcolor="EEEEEE"><font face="Verdana" size="-1" color="Black"><b>EverQuest</b></font><br><font face="Verdana" size="-2" color="Black">A forum for discussing the most addictive game on the internet - EverQuest!</font></td></tr>
+<tr><td bgcolor="DDDDDD">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><a href="UltraBoard.cgi?Idle=&Sort=&Order=&Session=" OnMouseOver="window.status='Back to EverQuest';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Home</font></a><font face="Verdana" size="1" color="000000 "> | </font><a href="UltraBoard.cgi?Action=SignIn&Ref=ShowBoard&Category=&Board=quwww.me2u.com&Post=&ID=&Idle=&Sort=&Order=&Page=&Session=" OnMouseOver="window.status='Sign In';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Sign In</font></a><font face="Verdana" size="1" color="000000 "> | </font><a href="UltraBoard.cgi?Action=SignUp&Ref=ShowBoard&Category=&Board=quwww.me2u.com&Post=&ID=&Idle=&Sort=&Order=&Page=&Session=" OnMouseOver="window.status='Sign Up for a New Account';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Sign Up</font></a><font face="Verdana" size="1" color="000000 "> | </font><a href="UltraBoard.cgi?Action=SearchThreads&Idle=&Sort=&Order=&Page=&Session=" OnMouseOver="window.status='Search Threads';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Search</font></a><font face="Verdana" size="1" color="000000 "> | </font><a href="UltraBoard.cgi?Action=Help&Idle=&Sort=&Order=&Page=&Session=" OnMouseOver="window.status='Help';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Help</font></a><font face="Verdana" size="1" color="000000 "> | </font><a href="http://www.maximumeq.com" target="_TOP" OnMouseOver="window.status='Back to Maximum EverQuest';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Maximum EverQuest</font></a></td><td align="RIGHT"><a href="UltraBoard.cgi?Action=NewPost&Post=&Board=quwww.me2u.com&Idle=&Sort=&Order=&Page=&Session=" OnMouseOver="window.status='Post new Topic';return true;" OnMouseOut="window.status=''"><font face="Verdana" size="1" color="000000 ">Post a New Message</font></a></td></tr></table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+
+<!-- Body of UltraBoard -->
+<p><table width="100%" border="0" cellspacing="0" cellpadding="0" align="CENTER" bgcolor="000000">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="3" align="CENTER">
+<tr bgcolor="999999">
+<td colspan="2"><font face="Verdana" size="1" color="EEEEEE"><b>ACCESS DENIED</b></font></td></tr><tr bgcolor="EEEEEE">
+<td colspan="2"><table width="100%" border="0" cellspacing="10" cellpadding="10" align="CENTER">
+<tr>
+<td><font face="Verdana" size="2" color="000000">The board that you want access is not found.<br>Please contact the webmaster (<a href="mailto:jay@maximumgaming.com">jay@maximumgaming.com</a>) for more information.</font></td></tr></table></td></tr><tr bgcolor="CCCCCC">
+<td colspan="2"><center><input type="Button" value="< BACK" align="MIDDLE" style="width:100%" class="Button" onclick="history.go(-1)"></center></td></tr><tr bgcolor="DDDDDD">
+<td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="RIGHT"><font face="Verdana" size="1" color="000000">Powered by <a href="http://www.UltraScripts.com/" target="_blank" title="Powered by UltraBoard v1.61">UltraBoard v1.61</a></font></td></tr></table></td></tr></table>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
