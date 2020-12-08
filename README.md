@@ -1,6 +1,10 @@
 # eq-archives
 Dolalin's assorted collection of old Everquest archive links and files.
 
+Now searchable in Azure!
+
+https://eqarchives.azurewebsites.net/
+
 See READMEs in various folders for more info.
 
 ## Checking out on Windows
