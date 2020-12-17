@@ -3,7 +3,7 @@ Dolalin's assorted collection of old Everquest archive links and files.
 
 See READMEs in various folders for more info.
 
-# Checking out on Linux
+## Checking out on Linux
 Use git clone. As of Dec 2020 the archive can still be cloned on Linux as per usual.
 
 ## Checking out on Windows
