@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Remedy</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META NAME="AUTHOR" CONTENT="Remedy">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2001 by Remedy">
+<META NAME="KEYWORDS" CONTENT="News, news, New, New, Technology, technology, Headlines, headlines, Nuke, nuke, PHP-Nuke, phpnuke, php-nuke, Geek, geek, Geeks, geeks, Hacker, hacker, Hackers, hackers, Linux, linux, Windows, windows, Software, software, Download, download, Downloads, downloads, Free, FREE, free, Community, community, MP3, mp3, Forum, forum, Forums, forums, Bulletin, bulletin, Board, board, Boards, boards, PHP, php, Survey, survey, Kernel, kernel, Comment, comment, Comments, comments, Portal, portal, ODP, odp, Open, open, Open Source, OpenSource, Opensource, opensource, open source, Free Software, FreeSoftware, Freesoftware, free software, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, *nix, unix, MySQL, mysql, SQL, sql, Database, DataBase, database, Mandrake, mandrake, Red Hat, RedHat, red hat, Slackware, slackware, SUSE, SuSE, suse, Debian, debian, Gnome, GNOME, gnome, Kde, KDE, kde, Enlightenment, enlightenment, Intercative, interactive, Programming, programming, Extreme, extreme, Game, game, Games, games, Web Site, web site, Weblog, WebLog, weblog, Guru, GURU, guru">
+<META NAME="DESCRIPTION" CONTENT="">
+<META NAME="GENERATOR" CONTENT="PHP-Nuke 5.0 - http://phpnuke.org">
+
+
+<LINK REL="StyleSheet" HREF="themes/Remedy2/style/style.css" TYPE="text/css">
+
+
+<SCRIPT type="text/javascript">
+<!--
+function showimage() {
+if (!document.images)
+return
+document.images.avatar.src=
+'http://www.lozit.com/remedy/website/images/forum/avatar/' + document.Register.user_avatar.options[document.Register.user_avatar.selectedIndex].value
+}
+//-->
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+
+<!--
+function x () {
+return;
+}
+
+function DoSmilie(addSmilie) {
+
+var addSmilie;
+var revisedMessage;
+var currentMessage = document.coolsus.message.value;
+revisedMessage = currentMessage+addSmilie;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+function DoPrompt(action) {
+var revisedMessage;
+var currentMessage = document.coolsus.message.value;
+
+if (action == "url") {
+var thisURL = prompt("Enter the URL for the link you want to add.", "http://");
+var thisTitle = prompt("Enter the web site title", "Page Title");
+var urlBBCode = "[URL="+thisURL+"]"+thisTitle+"[/URL]";
+revisedMessage = currentMessage+urlBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "email") {
+var thisEmail = prompt("Enter the email address you want to add.", "");
+var emailBBCode = "[EMAIL]"+thisEmail+"[/EMAIL]";
+revisedMessage = currentMessage+emailBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "bold") {
+var thisBold = prompt("Enter the text that you want to make bold.", "");
+var boldBBCode = "[B]"+thisBold+"[/B]";
+revisedMessage = currentMessage+boldBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "italic") {
+var thisItal = prompt("Enter the text that you want to make italic.", "");
+var italBBCode = "[I]"+thisItal+"[/I]";
+revisedMessage = currentMessage+italBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "image") {
+var thisImage = prompt("Enter the URL for the image you want to display.", "http://");
+var imageBBCode = "[IMG]"+thisImage+"[/IMG]";
+revisedMessage = currentMessage+imageBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "quote") {
+var quoteBBCode = "[QUOTE]  [/QUOTE]";
+revisedMessage = currentMessage+quoteBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "code") {
+var codeBBCode = "[CODE]  [/CODE]";
+revisedMessage = currentMessage+codeBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "listopen") {
+var liststartBBCode = "[LIST]";
+revisedMessage = currentMessage+liststartBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "listclose") {
+var listendBBCode = "[/LIST]";
+revisedMessage = currentMessage+listendBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+if (action == "listitem") {
+var thisItem = prompt("Enter the new list item. Note that each list group must be preceeded by a List Close and must be ended with List Close.", "");
+var itemBBCode = "[*]"+thisItem;
+revisedMessage = currentMessage+itemBBCode;
+document.coolsus.message.value=revisedMessage;
+document.coolsus.message.focus();
+return;
+}
+
+}
+//--></SCRIPT>
+
+<script type="text/javascript">
+<!--
+function openwindow(){
+	window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+//-->
+</SCRIPT>
+
+</head>
+
+<body bgcolor="#630000" text="#FFFFFF" link="#FF7D00" vlink="#FF7D00" alink="#FF7D00" topMargin="0" marginheight="0" leftmargin="0"
+marginwidth="0">
+<br>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#630000">
+<tr>
+<td bgcolor="#630000">
+<div align="center"><a href="index.php"><img src="themes/Remedy2/images/Rem/remedy.jpg" align="center" alt="Welcome to Remedy" border="0"></a></div></td>
+</tr></table>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#000000">
+<tr>
+<td bgcolor="#000000" colspan="4"><IMG src="themes/NukeNews/images/pixel.gif" width="1" height=1 alt="" border="0" hspace="0"></td>
+</tr>
+<tr valign="middle" bgcolor="#000000">
+<td width="15%" nowrap><font size="2" color="#FF7D00"><b>
+&nbsp;&nbsp;<b><font color="#363636"><a href="user.php">Create</a></font> an account</b>
+</b></font></td>
+<td align="center" height="20" width="70%"><font size="2"><B>
+<A href="index.php">Home</a>
+&nbsp;&middot;&nbsp;
+<A href="roster.php">Roster</a>
+&nbsp;&middot;&nbsp;
+<A href="search.php?query=&topic=13">Archives</a>
+&nbsp;&middot;&nbsp;
+<A href="forum.php">Forum</a>
+&nbsp;&middot;&nbsp;
+<A href="links.php">Link</a>
+&nbsp;&middot;&nbsp;
+<A href="download.php">Downloads</a>
+&nbsp;&middot;&nbsp;
+<A href="user.php">Your Account</a>
+&nbsp;&middot;&nbsp;
+<A href="modules.php?op=modload&name=Members_List&file=index">Members List</a>
+&nbsp;&middot;&nbsp;
+<A href="join.php">Joining Remedy</a>
+&nbsp;&middot;&nbsp;
+<A href="admin.php">Remedy Only</a>
+</B></font>
+</td>
+<td align="right" width="15%"><font size="2"><b>
+<script type="text/javascript">
+
+<!--   // Array ofmonth Names
+var monthNames = new Array( "January","February","March","April","May","June","July","August","September","October","November","December");
+var now = new Date();
+thisYear = now.getYear();
+if(thisYear < 1900) {thisYear += 1900}; // corrections if Y2K display problem
+document.write(monthNames[now.getMonth()] + " " + now.getDate() + ", " + thisYear);
+// -->
+
+</script></b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+</tr>
+</table>
+<!-- FIN DEL TITULO -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#630000" align="center"><tr valign="top">
+<td bgcolor="#630000"><img src="themes/NukeNews/images/pixel.gif" width="1" height="20" border="0" alt=""></td></tr></table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#630000" align="center"><tr valign="top">
+<td bgcolor="#630000"><img src="themes/NukeNews/images/pixel.gif" width="10" height="1" border="0" alt=""></td>
+<td bgcolor="#630000" width="150" valign="top">
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#630000" width="150"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align=left>
+<font size="2" color="#FF7D00"><b>Login</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="150">
+<tr valign="top"><td bgcolor="#595959">
+<form action="user.php" method="post"><center><font size="2">Nickname<br><input type="text" name="uname" size="12" maxlength="25"><br>Password<br><input type="password" name="pass" size="12" maxlength="20"><br><input type="hidden" name="op" value="login"><input type="submit" value="Login"></font></center></form><center><font size="2">Don't have an account yet? You can <a href="user.php">create one</a>. As registered user you have some advantages like theme manager, comments configuration and post comments with your name.</font></center>
+</td></tr></table>
+<br>
+
+
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#630000" width="150"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align=left>
+<font size="2" color="#FF7D00"><b>Who's Online</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="150">
+<tr valign="top"><td bgcolor="#595959">
+<center><font size="2">There are currently, 8 guest(s) and 5 member(s) that are online.<br><br>You are Anonymous user. You can register for free by clicking <a href="user.php">here</a></font></center>
+</td></tr></table>
+<br>
+
+
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#630000" width="150"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align=left>
+<font size="2" color="#FF7D00"><b>Survey</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="150">
+<tr valign="top"><td bgcolor="#595959">
+<form action="pollBooth.php" method="post"><input type="hidden" name="pollID" value="15"><input type="hidden" name="forwarder" value="pollBooth.php?op=results&amp;pollID=15"><font size="2"><b>Who's Name appears more on updates?</b></font><br><br>
+<input type="radio" name="voteID" value="1"> <font size="2">1) Larcenciel:The God of Gay</font> <br>
+<input type="radio" name="voteID" value="2"> <font size="2">2) Rtyui:McPigger</font> <br>
+<input type="radio" name="voteID" value="3"> <font size="2">3) Silverx:Balanec</font> <br>
+<input type="radio" name="voteID" value="4"> <font size="2">4) Rinderwahn:Legendary Helm</font> <br>
+<input type="radio" name="voteID" value="5"> <font size="2">5) Other:You know who you are !!</font> <br>
+<br><center><font size="2"><input type="submit" value="Vote"></font><br><font size="2">[ <a href="pollBooth.php?op=results&amp;pollID=15&amp;mode=&amp;order=&amp;thold="><b>Results</b></a> | <a href="pollBooth.php"><b>Polls</b></a> ]<br><br>Votes: <b>112</b> | Comments: <b>0</b>
+
+</font></center></form>
+
+
+</td></tr></table>
+<br>
+
+
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#630000" width="150"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align=left>
+<font size="2" color="#FF7D00"><b>Search</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="150">
+<tr valign="top"><td bgcolor="#595959">
+<form action="search.php" method="get"><br><center><input type="text" name="query" size="14"></center></form>
+</td></tr></table>
+<br>
+
+
+</td><td><img src="themes/NukeNews/images/pixel.gif" width="15" height="1" border="0" alt=""></td><td width="100%">
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#595959" width="100%"><tr><td>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align="left">
+<font size="3" color="#FF7D00"><b>Vex Thal CLEARED!</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="5" width="100%"><tr><td>
+<font color="#FFFFFF"><b><a href="search.php?query=&amp;topic=13"><img src="images/topics/pix.gif" border="0" Alt="News" align="right" hspace="10" vspace="10"></a></B></font><br>
+<font size="2" color="#FFFFFF"><b><center><h1>Aten Ha Ra DEAD!</h1></b><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/remedy.JPG></center><br><br>Here is a picture of the proud Remedy slayers that stayed up until 5am to put down this big momma! Total determination to finish this zone, and put down the big lady showed itself tonight when we put down Aten Ha Ra. Wow, what a rush. Excellent teamwork showed by 44 guildmates and a very welcome guest paid off, and she fell after a long, long, long fight. Here's the loot she put out.<br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/atenharacorpse.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/atenharaneck.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/atenharaplate.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/atenhararobe.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/atenharamask.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/atenharaspell.JPG></center><br><br>A huge round of applause goes out to <b>Caladar</b> on the Robe of Secrets and I cant think of a single person more deserving. Grats <b>Flippett</b> on the Great Shadow Platemail and <b>Sylidan</b> on the Mask of Judgement. <b>Presley</b>, our only guest was awarded the Ancient spell. Grats guys! The Talisman was looted by myself. For the record, we've killed every single boss mob in Vex Thal now on 1st try, including Aten Ha Ra herself.<br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/vaxiatencorpse.JPG></center><br><br>We also encoutered this momma for the first time tonight, and sure as hell, she went down like the bitch she is. Gotta say she was a fun fight, and I think our warriors still feel the pain in the rear from when she decided to go medieval on them. During this fight, I think every single one of our warriors died atleast twice. Well, I know Ghazaki did anyway. This fine Canadian managed to not die once, but TWICE to enrage during this fight. Let's give him a round of applause. Oh and right, here's the loot.<br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/vaxiatenneck.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/vaxiatensleeve.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/vaxiatentunic.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/vaxiatenspell.JPG></center><br><br>Grats goes out to <b>Karynna</b> on the Armplates, <b>Vipsindsyg</b> on the Fungi, <b>Mokia</b> on the Necklace and <b>Koshh</b> on the Ancient.<br><br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxixinthallcorpse.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxinthallrobe.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxixinthallbelt.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxixinthallring.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxixinthallspell.JPG></center><br><br>Well yeah, as you can see this guy died too. The Gods of loot grace us well, as long as Vipsindsyg doesn't touch the corpses, and for this fight he was grouped with the Enchanters. <b>Eueinu</b> looted the newbie robe, which I must say has a very very ugly grey color. He looks like a walking ashtray now. <b>Hratli</b> looted the Belt o_O. <b>Lowi</b> was awarded the Ring, and sugarbuns, also known as <b>Zahlia</b> was awarded the Ancient.<br><br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/keluncorpse.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/kaascorpse.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxivacorpse.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/temarielcorpse.JPG><br><br><b>Thall Va Kelun loots:<br></b><img src=http://www.amm-electronics.net/remedy/Kelun/kelunmask.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/kelundrums.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/kelunhands.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/kelungloves.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/kelunbelt.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/kelunancient.JPG><br><br><b>Diabo Xi Va Temariel loots:</b><br><img src=http://www.amm-electronics.net/remedy/Kelun/temarielcloak.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/temarielsleeves.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/temarielarms.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/temarielshroud.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/temarielspell.JPG><br><br><b>Kaas Thox Xi Ans Dyek loots:</b><br><img src=http://www.amm-electronics.net/remedy/Kelun/kaasmantle.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/kaasorb.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/kaasboots.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/kaasamulet.JPG><br><br><b>Diabo Xi Va loot:</b><br><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxivabook.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxivahelm.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxivaring.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxivasleeves.JPG><br><img src=http://www.amm-electronics.net/remedy/Kelun/diaboxivastaff.JPG><br><br>If anyone is bored and adds up all the stats of everything that's dropped and mentioned so far in this update, I'll make sure you get a blowjob from Sterne or Rogger next time you log in. Holy shit that was alot of loot pictures...Time to take a look at what happened in Ssraeshza...<br><br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/emperorcorpse.JPG></center><br><br>Ah yes, Emperor Ssraeshza. We've had a few interesting fights with him, one of them we won really easy with no deaths and was rewarded with a horse, and the other was one hell of a fight. We only had like 50 people, and lost about 10 at the beginning. If you wanna talk about close fights, that was it. Took like, half an hour or more also. Loot on that kill was awesome though. Here's two new things we've picked up:<br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/empshawl.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/emphorse.JPG></center><br><br>Yay! Horse!<br></center><br><br>Now gather round my hearties, for I shall tell you a tale. Like any good story, this one has a villain and a hero. The villain in this story was our old friends at Verant and the good heroes are the brave members of Remedy.<br><br>Well, once upon a time in Ssraeshza Temple, our heroes Remedy were killing Vyzh´dra the Cursed. But OH NO! Something we hadnt quite planned on happened!<br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cursedstory1.JPG><br><br>We looked over at Vyzh´dra the Cursed, he was still biting back and at 70%. Another message from the villain appeared on our heroes screens!<br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cursedstory2.JPG><br><br>Dozens of boos and obscenities were shouted at this nasty villain, but it was all to no avail. Our heroes regained their focus on the target, pulled out the dildo and pressed it hard up into the snakes vile ass... The result of which can be seen here:<br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cursedstory3.JPG><br><br>For the record, the items he was talking about are these:<br><center><img src=http://www.amm-electronics.net/remedy/Kelun/cresentpants.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/coldironbracer.JPG></center><br><br>Nanei and Choupie managed to loot a Chain BP each, amazingly enough, but this fine weapon poofed along with the corpse...<br><center><img src=http://www.amm-electronics.net/remedy/Kelun/goldenrod.JPG></center><br><br>To add to the shittyness of the Goldenrod, which Ciladar's twink would have loved, the Blood of Ssraeshza also despawned so we missed out on Emperor Ssraeshza that day like we had planned. Oh well, cant win all the time, right? Well, we did get a few Ssraeshza kills in between Vex Thal... Here's what we got:<br><br><center><img src=http://www.amm-electronics.net/remedy/Kelun/cursedloot.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/creatorloot.JPG><img src=http://www.amm-electronics.net/remedy/Kelun/archlichloot.JPG></center><br><br>Amazingly, we got our first Bloodfrenzy. That was pretty nice. The only thing we havnt had drop yet is a Nocnivin's book... The rarity of this stupid book is unbelieveable. Oh well, hopefully some will come soon... Yeah right. There's less chance of that than Robert Downey JR going clean. Oh for those wondering what a Bloodfrenzy is, here's a picture.. What the hell, already done like 400 loot pics this update, one more cant hurt.<br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cursedbloodfrenzy.JPG><br><br>On a side note, I would like give out a special thank you to Hratli who has been running his own prozak factory and shipping it out to all of us to keep us in VT. Yeah, it may be hard, it may be dark, it may not really be fun, it may suck, it may take extremely long time, but there's nothing his prozak cant help with. Thank you Bagger. Goddam I'm tired, here's the quotes. You wont get any RL pic today. No one has offended me enough to deserve the ridicule.<br><br><br><b>Inspect Info of the day!</b><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/inspectinfo.JPG><br><br><br><b>Quotes of the day!</b><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/bayla.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/canofwhoopass.JPG><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cheiranthus.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cheiranthus2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cheiranthus3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cheiranthus4.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cheiranthus5.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cheiranthus6.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cutepai.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cutepai2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/cutepai3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/dageony.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/emmgel.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/eternelle.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/flippett.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/harmtouch.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/ghazaki.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/hratli.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/hratli2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/hratli3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/karynna.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/leandred.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/lydek.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/moster.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/rogger.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/silverx.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/silverx2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/silverx3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/simana.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/sterne.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/vipsindsyg.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/vipsindsyg2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Kelun/vipsindsyg3.GIF><br><br><b>~Arbaal</b></font>
+</td></tr></table></table>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#efefef" width="100%"><tr><td align="center">
+<font color="#000000" size="1">Posted by <a href="admin_pass">arbaal</a> on Monday, September 30 @ 07:35:59 CEST  (2 reads)<br></font>
+<font size="2">( <a href="article.php?sid=132&amp;mode=thread&amp;order=0&amp;thold=0">comments?</a> | <a href="print.php?sid=132"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width="15" height="11"></a>&nbsp; <a href="friend.php?op=FriendSend&amp;sid=132"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width="15" height="11"></a> )</font>
+</td></tr></table></td></tr></table>
+<br><br><br>
+
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#595959" width="100%"><tr><td>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align="left">
+<font size="3" color="#FF7D00"><b>Diabo Xi Va and Diabo Xi Xin - Deadder than rap</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="5" width="100%"><tr><td>
+<font color="#FFFFFF"><b><a href="search.php?query=&amp;topic=13"><img src="images/topics/pix.gif" border="0" Alt="News" align="right" hspace="10" vspace="10"></a></B></font><br>
+<font size="2" color="#FFFFFF"><b><h1>The scent of dirty Euro runs afoul in Vex Thal!</h1></b><br><br><br>Yeah ok, it's been a while since last update. Let's just say that I got sued for slogpunching Don Johnson, and had to do some time, ok? Great! So what have we been doing? Apart from enjoying that they removed blind from Vex Thal, which quite honestly was an annoying pisser, we've actually managed to kill stuff there and collect in. I'll be honest now, for a zone that requires you to kill Emperor Ssraeshza, arguably the hardest mob in the game, it sure sucks donkey balls. Something tells me Verant struck a deal with some bigshot pharmaceutical company, and various booze distributors because i just cant seem to do without headache pills and large amounts of vodka while in there. Anyway, we've killed these guys...<br><br><center><img src=http://www.amm-electronics.net/remedy/Diabo/diaboxixin.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/diaboxiva.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/kaascorpse.JPG><br><br>And for those wondering, here's the loot!<br><br><img src=http://www.amm-electronics.net/remedy/Diabo/orbofthesky.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/tinybonebracelet.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/silverskingauntlets.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/diaboxivarune.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/diaboxivawand.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/diaboxivascepter.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/kaasamulet.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/kaasearring.JPG><br><br></center>One of the funny things is we actually killed all three of these on first shot, knowing like... almost nothing about them. Ah well, we must have used ShowEQ or something. Come on now, we're Europeans. Cant expect us to actually be able to think for ourselves and come up with improvisations or strategies, right? No No No. And by the way, I hate necromancers. Especially Silverx!<br><br>We also found this little lady... Hopefully we'll be giving her a special treat soon...Assuming ofcourse, that 25 Akhevan Warders dont block our way!<br><img src=http://www.amm-electronics.net/remedy/Diabo/atenhara.JPG><br><br><br>Well, being the farmers we are, we've also farmed Thall Va Xakra to death. Naturally. And yes, you're damn right. That's an Ancient song. Huge grats to <b>Bayla</b> on being promoted to fulltime manasinger.<br><br><center><img src=http://www.amm-electronics.net/remedy/Diabo/thallvaxakraloot.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/thallvaxakraloot2.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/thallvaxakraloot3.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/thallvaxakraloot4.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/thallvaxakraloot5.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/thallvaxakraloot6.JPG><br><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/cloakoficyshadows.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/ancientlcea.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/bootsofsilentdreams.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/bracerofsilentstar.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/gorgetofsuperiority.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/steelskinarmplates.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/umbracitebracer.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/shadowfootpads.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/cordofmidnight.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/livingsymbol.JPG></center><br><br>Now, Vex Thal is made in this beautyful way that if you look at the amount of boss mobs we've killed and multiply the amount by 200, that's how much yard trash we've killed. It's simply beautyful, you can spend hours and hours and hours, and when you look down the hall, you notice you've moved about 50 meters. To make matters even better, the /assist function doesn't really work in there. Atleast it seems like that for several people... Our Enchanter death roll is higher than ever before, and we are all collecting money to buy prozak to send out to each of them as compensation. Well, that and a boob job for Caladar. How cute.<br><br><center><img src=http://www.amm-electronics.net/remedy/Diabo/emperorcorpse.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/empring.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/emptorque.JPG></center><br><br>Well, we did pay another visit to the Emperor, and smacked him down good. Honest to God, every time I see this guy I cant help but wonder what Verant is smoking. I mean, I cant possibly imagine anything that could be harder... This guy has the package. What's left for PoP? A bunch of sombrero slinging Mickey Rooneys running around screaming stuff in Spanish? Yeh... I'm damn glad they fixed him being Turgurable. That had to be the final low blow to every guild that has killed him. Oh, and while we're at Ssraeshza, the Farm Fest has continued...<br><br><center><img src=http://www.amm-electronics.net/remedy/Diabo/cursedloot.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/cursedloot2.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/cursedloot3.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/cursedloot4.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/archlichloot.JPG><br><img src=http://www.amm-electronics.net/remedy/Diabo/highpriestloot.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/highpriestloot2.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/creatorloot.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/creatorloot2.JPG><br><br>We actually managed to rake in a few new loots from Cursed!<br><img src=http://www.amm-electronics.net/remedy/Diabo/vengefulmail.JPG><img src=http://www.amm-electronics.net/remedy/Diabo/vyzhdrasrenderofsouls.JPG></center><br><br>Now, I'm sure you want to know the secret behind it all...? Well, apart from obviously using SEQ to learn how to kill stuff, this is it.<br>
+<img src=http://www.amm-electronics.net/remedy/Diabo/pets.JPG><br>That picture isnt even half bad. We've had some fights with a hell of a lot more, and it's just plain nasty! Go to hell! I guess that's all for now, I'm tired and need to go do drugs.<br><br>To finish off, I'd like to say a goodbye to a very special person. <b>Doublethread Evilhealers</b> is leaving us to go to the Taiwanese army. Over the last year, he has time and time again stood out as a top notch cleric, and more importantly, a great friend. From everyone in Remedy, we wish you the best of luck Doublethread, and hope you will drop by from time to time to say hello and tell us how you're doing. /salute<br><br><br><b>Joke of the day</b><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/jokeoftheday.GIF><br><br><b>The funnay</b><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/ailly.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/bayla.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/caladar.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/cheiranthus.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/cheiranthus2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/chwing.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/chwing2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/cutepai.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/doublethread.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/doublethread2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/emmgel.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/emmgel2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/emmgel3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/flippett.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/laneser.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/larcenciel.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/larcenciel2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/leandred.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/lydek.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/rogger.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/rogger2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/rogger3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/rogger4.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/rogger5.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/rogger6.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/silverx.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/sterne.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/sterne2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/sterne3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/sterne4.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/stygiana.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/stygiana2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/stygiana3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/simana.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/tanatloc.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/zahlia.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/zahlia2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/vipsindsyg.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/vipsindsyg2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/Diabo/vipsindsyg3.GIF><br><br><br><b>Guildmate RL pic of the day: Karynna getting visit from Richard Simmons</b><br><br><img src=http://www.fatchicksinpartyhats.com/images/fathat223.jpg><br><br><b>~Arbaal</b></font>
+</td></tr></table></table>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#efefef" width="100%"><tr><td align="center">
+<font color="#000000" size="1">Posted by <a href="admin_pass">Arbaal</a> on Thursday, September 19 @ 04:12:10 CEST  (6 reads)<br></font>
+<font size="2">( <a href="article.php?sid=131&amp;mode=thread&amp;order=0&amp;thold=0">comments?</a> | <a href="print.php?sid=131"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width="15" height="11"></a>&nbsp; <a href="friend.php?op=FriendSend&amp;sid=131"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width="15" height="11"></a> )</font>
+</td></tr></table></td></tr></table>
+<br><br><br>
+
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#595959" width="100%"><tr><td>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align="left">
+<font size="3" color="#FF7D00"><b>Site best viewed in 1280x1024</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="5" width="100%"><tr><td>
+<font color="#FFFFFF"><b><a href="search.php?query=&amp;topic=13"><img src="images/topics/pix.gif" border="0" Alt="News" align="right" hspace="10" vspace="10"></a></B></font><br>
+<font size="2" color="#FFFFFF"><center><img src=http://www.amm-electronics.net/remedy/cow/empcorpse.JPG></center><br><br>
+
+Emperor who? We took down the Emperor Ssraeshza for the second time, in another awesome fight. This time it was alot faster too, think we are down to 32 mins now. But hey who cares about that right? What really matters is Rtyui died 17 times on this fight. Loot was, if you'll excuse me, pretty damn kick ass too.<br><br><center><img src=http://www.amm-electronics.net/remedy/cow/emprobe.JPG><img src=http://www.amm-electronics.net/remedy/cow/empboots.JPG><br><img src=http://www.amm-electronics.net/remedy/cow/empshield.JPG><br><br></center>
+
+Our local druglord <b>Escobar</b> picked up the kickass Robe, <b>Tanatloc</b> the boots, <b>Leandred</b> the Shield and <b>Cheiranthus</b> the Garrisons. <br><br><br>
+Actually, it was one of the more 'interesting' fights if you like, as something fun happened. Some dumbass hit Exodus right as the Emperor fight started, so 5 wizards and a bard ended up down at inzone. Fortunately, we did manage to get CoH back up and get back into the fight, after a rather bumpy ride through the buffroom. Anyway, here's a list of excuses...<br><br>
+
+<b>A:</b> The wizard was twoboxing another wizard and had mixed up the hotkeys on them, so he accidently hit Exodus instead of Manaburn.<br><br>
+
+<b>B:</b> The wizard's girlfriend had switched the Exodus hotkey and Manaburn hotkey around, because she's so goddam funny!<br><br>
+
+<b>C:</b> Some bard and his dumb AE song was responsible. It's always the goddam bards...<br><br>
+
+If your guess is one of the above, you're...<br><br><b><i>WRONG</i></b><br><br>Truth is I was a dumbass and hit the wrong button. Shit happens. I'd have sold my left hand to homosexual slavery to see the expressions on the other's faces when they popped up down at inzone, but unfortunately I dont live in Canada so that isnt possible. Anyway, let's forget everything about that and move onto something that's actually relevant. Take a look at <b>this!</b><br><br><img src=http://www.amm-electronics.net/remedy/cow/lydeksmiled.JPG><br><br>That's right, Lydek smiled. Awww how cute. Are we away from the Exodus subject? Good... Here's some loot pics of stuff we've killed. Thanks to the timezone advantage, we only got a few mobs on repop this week :(<br><br><center><img src=http://www.amm-electronics.net/remedy/cow/archlichloot.JPG><img src=http://www.amm-electronics.net/remedy/cow/archlichloot2.JPG><img src=http://www.amm-electronics.net/remedy/cow/avatarofwarloot.JPG><img src=http://www.amm-electronics.net/remedy/cow/highpriestloot.JPG><img src=http://www.amm-electronics.net/remedy/cow/bloodloot.JPG></center><br><br>We actually killed a load of stuff more than that, but stupid people wont ever let me on the corpse. I feel like Jack Nicholsen trying to get into a Hard Rock Cafe when I'm right clicking that damn corpse, but neither Jack nor me are getting in.<br><br><br>In other news, we have officially renamed the event in N ToV known as "The Ring of Vulak" into a new more appropriate "Ring of fucking Vulak", but we might have to change that soon. The thing is buggy as hell. I can hardly say it was funny with 50 people charging in and getting Eradicated for 32k damage while the rest of ToV was clear. Shit happens, we're learning and dealing with it. We've killed Zruk the Lifestealer, Rarthek the Swiftclaw and Vethrol the Skycaller so far, with no sign of mister V yet. I've gotta say though, that this is one of the most brutal events there is. Some of the stuff that spawns is so nasty that even if you dont have your pants down, you better damn well not suck or you're dead meat. Anyway, expect Vulak's dead corpse soon, assuming no bugs hold us back...again.<br><br><br><b>Quotes of the day</b><br><br><img src=http://www.amm-electronics.net/remedy/cow/roggercontrolewarder.JPG><br><br><img src=http://www.amm-electronics.net/remedy/cow/amarnia.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/cheiranthus.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/cutepai.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/doublethread.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/emmgel.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/emmgel2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/eueinu.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/everlegency.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/flippett.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/gann.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/khaunshar.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/moster.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/nerk.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/larcenciel.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rogger.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui2.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui3.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui4.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui5.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui6.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/rtyui7.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/silverx.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/tarkien.GIF><br><br><img src=http://www.amm-electronics.net/remedy/cow/vipsindsyg.GIF><br><br><br><b>Guildmate RL pic of the day: Lasam<br><br><img src=http://www.fatchicksinpartyhats.com/images/fathat368.jpg><br><br><b>~Arbaal</b></font>
+</td></tr></table></table>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#efefef" width="100%"><tr><td align="center">
+<font color="#000000" size="1">Posted by <a href="admin_pass">Arbaal</a> on Tuesday, September 03 @ 09:17:46 CEST  (9 reads)<br></font>
+<font size="2">( <a href="article.php?sid=130&amp;mode=thread&amp;order=0&amp;thold=0">comments?</a> | <a href="print.php?sid=130"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width="15" height="11"></a>&nbsp; <a href="friend.php?op=FriendSend&amp;sid=130"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width="15" height="11"></a> )</font>
+</td></tr></table></td></tr></table>
+<br><br><br>
+
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#595959" width="100%"><tr><td>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align="left">
+<font size="3" color="#FF7D00"><b>Ssraeshza Temple CLEARED!</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="5" width="100%"><tr><td>
+<font color="#FFFFFF"><b><a href="search.php?query=&amp;topic=13"><img src="images/topics/pix.gif" border="0" Alt="News" align="right" hspace="10" vspace="10"></a></B></font><br>
+<font size="2" color="#FFFFFF"><center><h1>Emperor Ssraeshza DEAD!!!</h1></center><br><br><center><img src=http://www.amm-electronics.net/remedy/empdead/emperorcorpse.JPG></center><br><br>
+Tonight, 55 Remedy people and 6 guests showed up with determination in their eyes... Emperor had to die. So we engaged him, and an insane battle unfolded. The fight lasted 45 minutes, and then his corpse finally hit the cold stone floor. That fight reminded me of what I really love in this game... I was shaking 30 minutes afterwards, and something tells me i wont be sleeping tonight. I dont think the people that recieved these loots will either...<br><br><center><img src=http://www.amm-electronics.net/remedy/empdead/slippers.JPG><img src=http://www.amm-electronics.net/remedy/empdead/sword.JPG><br><img src=http://www.amm-electronics.net/remedy/empdead/garrisons.JPG></center><br><br>A huge grats goes out to <b>Dinadmera</b> and <b>Cutepai</b> on the Boots, and <b>Khaunshar</b> on the sword. And some black Puerto Rican guy was seen running off with the Garrisons.<br><br><br><b>More to come soon...</b><br><br><img src=http://www.amm-electronics.net/remedy/empdead/vexthal.JPG><br><br>~Arbaal</font>
+</td></tr></table></table>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#efefef" width="100%"><tr><td align="center">
+<font color="#000000" size="1">Posted by <a href="admin_pass">arbaal</a> on Friday, August 23 @ 02:21:41 CEST  (27 reads)<br></font>
+<font size="2">( <a href="article.php?sid=129&amp;mode=thread&amp;order=0&amp;thold=0">comments?</a> | <a href="print.php?sid=129"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width="15" height="11"></a>&nbsp; <a href="friend.php?op=FriendSend&amp;sid=129"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width="15" height="11"></a> )</font>
+</td></tr></table></td></tr></table>
+<br><br><br>
+
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#595959" width="100%"><tr><td>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#000000" width="100%"><tr><td align="left">
+<font size="3" color="#FF7D00"><b>Just posting this so we dont have to look at Rinder...</b></font>
+</td></tr></table></td></tr></table>
+<table border="0" cellpadding="1" cellspacing="5" width="100%"><tr><td>
+<font color="#FFFFFF"><b><a href="search.php?query=&amp;topic=13"><img src="images/topics/pix.gif" border="0" Alt="News" align="right" hspace="10" vspace="10"></a></B></font><br>
+<font size="2" color="#FFFFFF"><center><h2>The scent of dirty Euro runs afoul in Ssra!</h2></center>
+
+With our massive zerg force of 53 guildies, about 10 of which are two-boxed and some guests, we took another stab at Emperor. We managed to keep it running along for 26 minutes, before it all fell apart.
+<br><br>
+<center><img src=http://www.amm-electronics.net/remedy/emperor.JPG></center
+<br><br>~Arbaal</font>
+</td></tr></table></table>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="100%"><tr><td>
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#efefef" width="100%"><tr><td align="center">
+<font color="#000000" size="1">Posted by <a href="admin_pass">arbaal</a> on Sunday, August 18 @ 18:57:51 CEST  (23 reads)<br></font>
+<font size="2">( <a href="article.php?sid=128&amp;mode=thread&amp;order=0&amp;thold=0">comments?</a> | <a href="print.php?sid=128"><img src="images/print.gif" border=0 Alt="Printer Friendly Page" width="15" height="11"></a>&nbsp; <a href="friend.php?op=FriendSend&amp;sid=128"><img src="images/friend.gif" border=0 Alt="Send this Story to a Friend" width="15" height="11"></a> )</font>
+</td></tr></table></td></tr></table>
+<br><br><br>
+
+
+</td><td><img src="themes/NukeNews/images/pixel.gif" width="15" height="1" border="0" alt=""></td><td valign="top" width="150">
+</td><td bgcolor="#630000"><img src="themes/NukeNews/images/pixel.gif" width=10 height=1 border=0 alt="">
+</td></tr></table>
+<table width="99%" cellpadding="0" cellspacing="0" border="0" bgcolor="#630000" align="center"><tr valign="top">
+</tr></table>
+<br>
+    </body>
+
+    </html>
