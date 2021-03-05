@@ -17,3 +17,9 @@ https://web.archive.org/web/20010614090653/http://www.eqic.net/downloads/Zone-NP
 This dump seems to have been taken in the mid- to late-summer of 2000. It has Classic and Kunark zones only.
 
 https://web.archive.org/web/20020202085251/http://www.geocities.com/ficticiousname9/
+
+## Loreseekers EQ NPCs Sheet
+
+This seems to be derived from the Zone-NPC-List-Level sheet. It looks like it has the same info, but without mob counts. It is dated Jan 28th 2000.
+
+https://web.archive.org/web/20010612210748/http://www.loreseekers.com/files/eq_npcs_mar05.zip
