@@ -11,3 +11,9 @@ I have added some formatting and included some extracts from the main sheet as e
 Original source here:
 
 https://web.archive.org/web/20010614090653/http://www.eqic.net/downloads/Zone-NPC-List-Level.zip
+
+## Geocities fictitiousname9 Dump
+
+This dump seems to have been taken in the mid- to late-summer of 2000. It has Classic and Kunark zones only.
+
+https://web.archive.org/web/20020202085251/http://www.geocities.com/ficticiousname9/
