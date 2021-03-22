@@ -23,3 +23,9 @@ https://web.archive.org/web/20020202085251/http://www.geocities.com/ficticiousna
 This seems to be derived from the Zone-NPC-List-Level sheet. It looks like it has the same info, but without mob counts. It is dated Jan 28th 2000.
 
 https://web.archive.org/web/20010612210748/http://www.loreseekers.com/files/eq_npcs_mar05.zip
+
+## The Nameless Knights - NPC list
+
+This seems to be derived from the fictitiousname9 dumps. It was only partially archived in 2004 but was miraculously still active so I finished the capture in 2019.
+
+https://web.archive.org/web/20191118210527/https://nkeq.tripod.com/html/spawn.htm
