@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Lotus Cult - An everquest Guild :: Karma is everything.</title>
+<meta name="KEYWORDS" content="Lotus Cult, everquest, guild" />
+<meta name="DESCRIPTION" content="Karma is everything." />
+<meta name="ROBOTS" content="INDEX,FOLLOW" />
+<meta name="resource-type" content="document" />
+<meta http-equiv="expires" content="0" />
+<meta name="author" content="Lotus Cult - An everquest Guild" />
+<meta name="copyright" content="Copyright (c) 2001 by Lotus Cult - An everquest Guild" />
+<meta name="revisit-after" content="1 days" />
+<meta name="distribution" content="Global" />
+<meta name="generator" content="PostNuke 0.7.1 - http://postnuke.com" />
+<meta name="rating" content="General" />
+<link rel="StyleSheet" href="themes/LotusCult/style/styleNN.css" type="text/css" />
+<link rel="StyleSheet" href="themes/LotusCult/style/lootguide.css" type="text/css" />
+<style type="text/css">@import url("themes/LotusCult/style/style.css"); </style>
+<script type="text/javascript" src="javascript/showimages.php"></script>
+
+<script type="text/javascript" src="javascript/openwindow.php?hlpfile="></script>
+
+<body topmargin='0' marginheight='0' leftmargin='0' MARGINWIDTH='0' bgcolor='#efece7'><script language='javascript' src='themes/LotusCult/eqpicwin.js'></script>
+<table border=0 width=100% cellspacing=0 cellpadding=0 bgcolor='#000831'><tr><td valign=bottom width=100% align='left'><a href=index.php><img src='themes/LotusCult/images/lc_banner_01.gif' border='0' alt=='Lotus Cult'></a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=100%><tr><td valign=top nowrap><table border=0 cellspacing=0 cellpadding=3 width=150><tr><td><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td><table cellpadding='0' cellspacing='0' border='0' width='100%'><tr><td bgcolor='#00527f'><table cellpadding='2' cellspacing='0' border='0'><tr><td class='sideboxtitle'>Server Status</td></tr></table></td></tr><tr><td background='themes/LotusCult/images/shadow.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr></table></td></tr><tr><td><table cellpadding='2' cellspacing='0' border='0' width='100%'>
+<tr><td><b>Quellious</b> is </td><td align='right'><font color='green'><b>UP</b></font></td>
+</tr><tr><td>All zones </td><td align='right'><font color='green'><b>UP</b></font></td>
+</tr></table>
+<table cellpadding='0' cellspacing='0' border='0' width='100%'>
+<tr><td align='left'>[&nbsp;<a href='http://lotuscult.com/index.php?module=eqmod&func=server_status'>All Servers</a>&nbsp;]</td></tr>
+</table>
+</td></tr></table></td></tr></table><br/><table border=0 cellspacing=0 cellpadding=3 width=150><tr><td><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td><table cellpadding='0' cellspacing='0' border='0' width='100%'><tr><td bgcolor='#00527f'><table cellpadding='2' cellspacing='0' border='0'><tr><td class='sideboxtitle'>Main Menu</td></tr></table></td></tr><tr><td background='themes/LotusCult/images/shadow.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr></table></td></tr><tr><td><br /><b>Lotus Cult</b><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="index.php" title="Back to the home page.">Lotus Home</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://pub8.ezboard.com/blotuscult" title="Talk with us!">Lotus Forums</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="index.php?module=eqmod&type=user" title="Who's in this guild anyway?">Guild Roster</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.cafepress.com/lotuscult" title="Buy you LC gear">Lotus Store</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.lotuscult.com/lootguide/" title="Drop info for the mobs we raid">Lootguide</a><br /><br /><b>Creative Guildies</b><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="guildie_songs.php" title="Songs by guild members">Songs!</a><br /><br /><b>Account Options</b><br /></td></tr></table></td></tr></table><br/><table border=0 cellspacing=0 cellpadding=3 width=150><tr><td><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td><table cellpadding='0' cellspacing='0' border='0' width='100%'><tr><td bgcolor='#00527f'><table cellpadding='2' cellspacing='0' border='0'><tr><td class='sideboxtitle'>Links</td></tr></table></td></tr><tr><td background='themes/LotusCult/images/shadow.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr></table></td></tr><tr><td><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://everquest.allakhazam.com/" title="">Allakhazam's</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://eq.castersrealm.com" title="">Casters Realm</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.eqmaps.com" title="">EQ Maps</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.eqatlas.com" title="">EQ Atlas</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.gameznet.com/eq/index.shtml" title="">EQ' Lizer</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.eqtraders.com/" title="">EQ Traders</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://pub35.ezboard.com/bthesafehouse" title="">The Safehouse</a><br /><br /><b>Class Sites</b><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.eqdiva.com/" title="">EQ Diva (Bard)</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://eqcleric.gameglow.com/" title="">EQ Cleric</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.eqdruids.com/" title="">EQ Druids</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.magecompendium.com/" title="">Mage Compendium</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.graffe.com" title="">Graffes (Wizard)</a><br /><br /><b>Other Guilds</b><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.fohguild.org" title="">FoH</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.legacyofsteel.net" title="">Legacy of Steel</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://pub20.ezboard.com/britualmisery" title="">Ritual Misery</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.vismaiorguild.com" title="">Vis Maior</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.wraithguild.com/index1.html" title="">Wraith</a><br /><br /><b>Other Fun Stuff</b><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.offlinetshirts.com" title="">Fricka's Store</a><br /></td></tr></table></td></tr></table><br/></td>
+<td>&nbsp;</td><td bgcolor='#bcb09e'><img src='themes/LotusCult/images/pixel.gif' width='1' height='1' border='0' alt=''></td><td bgcolor='#ffffff'><img src='themes/LotusCult/images/pixel.gif' width='5' height='1' border='0' alt=''></td><td width='100%' valign='top' bgcolor='#FFFFFF'><table cellpadding='15' cellspacing='0' border='0' width='100%'>
+<tr><td bgcolor='#ffffff'>
+<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#cfcfbb"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="8" bgcolor="#ffffff"><tr><td>
+
+<table border="0" width="100%">
+<tr><td>
+<table border="0" width="100%"><tr align="left" valign="middle"><td><center><br /><center><font class="pn-title">Server has a new home</font></center><br /><br /></center><center>
+As you may have noticed, the Lotus Cult website has suffered a bit of downtime recently. We had to change hosting providers and there was a bit of a lapse as we got the details worked out. Sorry for the inconveinance; I know alot of you use the use this site to remember the link to the forums. 
+
+<br><br>
+If you're here looking for eqmod, there is 2 incarnations of it, an old php-nuke version which we've moved away from and a new postnuke version. All future development will be done under the postnuke version.
+<br>
+<table cellpadding='2' cellspacing='0' border='0'>
+<tr>
+<td><a href='eqmod-0-1-6.tar.gz'>PHP-NUKE Version</a></td>
+<td><a href='eqmod-pn71-beta1-rev2.tar.gz'>Beta Postnuke Version</a>
+</tr>
+</table>
+</center></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+<img src='themes//images/pixel.gif' height='5' width='1' border='0' alt=''/><br/>
+<br/>
+<table border="0" cellspacing="1" cellpadding="0" width="100%"><tr><td class="article-table" align="left"><table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#cfcfbb"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="8" bgcolor="#ffffff"><tr><td>
+<a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=19&amp;mode=thread&amp;order=0&amp;thold=0">We love Verant!</a><br/></td></tr></table></td></tr></table>
+<img src='themes//images/pixel.gif' height='5' width='1' border='0' alt=''/><br/>
+</td></tr><tr><td class="article-table">No, really.. we do. More on that in a moment!<br />
+<br />
+<DIV ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/emptyroom.jpg" WIDTH="800" HEIGHT="233" ALT="" BORDER="1"><br />
+Notice anything missing?</DIV><br />
+<br />
+Thanks to Verant not being able to patch anything remotely resembling bug-free code, we've had 3 shots at the emp since our first killing, and his chamber has spent a large amount of its time lacking a usually prominent figurehead.<br />
+<br />
+<DIV ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/empcorpse2.jpg" ALT="" WIDTH="292" HEIGHT="159" BORDER="0">    <IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/empcorpse3.jpg" ALT="" WIDTH="253" HEIGHT="153" BORDER="0">   <IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/empcorpse1.jpg" ALT="" WIDTH="303" HEIGHT="167" BORDER="0"></DIV><br />
+No loot pics from the first two kills (due to issues with the new web server), but congrats to Balahd on the torque, Kelsie on the slippers, Ebobulous on the shield, Grongl and Mauleaur on the rings, and Yasunaga on his new horse.<br />
+<br />
+From our most recent kill:<br />
+<TABLE BORDER=0 CELLPADDING=2 CELLSPACING=2 ALIGN="center"><TR><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/azaliilsring.jpg" WIDTH="400" HEIGHT="196" ALT="" BORDER="0"><BR>Grats Rot!</TD><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/shawlofawake.jpg" WIDTH="400" HEIGHT="196" ALT="" BORDER="0"><BR>Grats Rot!</TD></TR><TR><TD COLSPAN=2 ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/velvetslippers.jpg" WIDTH="400" HEIGHT="196" ALT="" BORDER="0"><BR>Grats Rot!</TD></TR></TABLE><br />
+<br />
+That's right, about 30 seconds after those shots were taken, THE WHOLE ***** SERVER CRASHED! Thanks Verant, we really didn't want that loot, or the 40 planar rifts sitting around waiting for us. Of course, as helpful as they try to be, the GMs once again had their hands tied by Verant's general ineptness and couldn't do a damned thing about it. Sure, they were able to res us all and get us out safely, and we're thankful for that, but really Verant simply needs to pick up the game and get a damn clue. It must be very convenient to simply be able to say &quot;but we have no record of your kill&quot;, but it's not a great way to impress your player base.<br />
+<br />
+Bleh! Anyway, we killed a couple of other mobs in between emp slayings and shard camping:<br />
+<TABLE BORDER=0 CELLPADDING=2 CELLSPACING=2 WIDTH="600"><TR><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/alcorpse.jpg" ALT="" WIDTH="254" HEIGHT="155" BORDER="0"></TD><TD ALIGN="left" COLSPAN=2><UL><LI>Hoop of Emptiness - Grats Masadala!</LI><LI>Lava Infused Bludgeon - Grats Me!</LI><LI>Shield of Holy Vigor - Grats Batuda!</LI></UL></TD></TR><TR><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/cursedcorpse.jpg" WIDTH="242" HEIGHT="150" ALT="" BORDER="0"></TD><TD ALIGN="left" COLSPAN=2><UL><LI>Black Runed Pants - Grats Slieoneus and Disruptor!</LI><LI>Fangs of Vyzh'dra - Grats Kinma!</LI></UL></TD></TR><TR><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/rhag1corpse.jpg" ALT="" WIDTH="274" HEIGHT="151" BORDER="0"></TD><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/rhag2corpse.jpg" WIDTH="200" HEIGHT="157" ALT="" BORDER="0"></TD><TD ALIGN="center"><IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/insanitycrawler.jpg" WIDTH="243" HEIGHT="157" ALT="" BORDER="0"></TD><TD></TD></TR></TABLE><br />
+<HR SIZE=1 WIDTH=50% ALIGN=CENTER><br />
+<B>Obligatory Quotes Section:</B><br />
+<br />
+We've been getting into the spirit of cross-server tells:<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/callainquote.jpg" WIDTH="631" HEIGHT="17" ALT="" BORDER="0"><br />
+<br />
+Delores loves the new icons!<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/delorescarebear.jpg" WIDTH="631" HEIGHT="32" ALT="" BORDER="0"><br />
+<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/lumaquote.jpg" WIDTH="623" HEIGHT="31" ALT="" BORDER="0"><br />
+<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/ninnyignore.jpg" WIDTH="632" HEIGHT="49" ALT="" BORDER="0"><br />
+<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/soeekmonkey.jpg" WIDTH="607" HEIGHT="33" ALT="" BORDER="0"><br />
+<br />
+WTB Server Split!<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/ssracrowded.jpg" WIDTH="293" HEIGHT="18" ALT="" BORDER="0"><br />
+<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/treannequote.jpg" WIDTH="518" HEIGHT="46" ALT="" BORDER="0"><br />
+<br />
+<IMG SRC="http://members.iinet.net.au/~freeth/eqscreens/lcupdates/020802/bardstripper.jpg" WIDTH="551" HEIGHT="16" ALT="" BORDER="0"><br />
+<br /><br /></td></tr></table><br/>
+<table cellpadding='0' cellspacing='0' border='0' width='100%'>
+<tr><td background='themes/LotusCult/images/dotted-line.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr>
+</table>
+<img src='themes/LotusCult/images/pixel.gif' height='5' width='1' border='0' alt=''/><br/>
+<table border="0" width="100%" cellspacing="2" cellpadding="0"><tr><td class="article-table" width="80" align="left">18&nbsp;Reads</td><td class="article-table" align="right">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=19"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=19"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></td></tr></table></td></tr>
+</table>
+</td><td bgcolor='#ffffff'><img src='themes/LotusCult/images/pixel.gif' width='5' height='1' border='0' alt=''></td><td bgcolor='#bcb09e'><img src='themes/LotusCult/images/pixel.gif' width='1' height='1' border='0' alt=''></td><td>&nbsp;</td><td valign="top" width='150' nowrap><table border=0 cellspacing=0 cellpadding=3 width=150><tr><td><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td><table cellpadding='0' cellspacing='0' border='0' width='100%'><tr><td bgcolor='#00527f'><table cellpadding='2' cellspacing='0' border='0'><tr><td class='sideboxtitle'>Who's Online</td></tr></table></td></tr><tr><td background='themes/LotusCult/images/shadow.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr></table></td></tr><tr><td><span class="pn-normal">We have 44 guests and 1 member online<br />
+<br />You are an anonymous user. You can register for free by clicking <a href="user.php">here</a></span><br /></td></tr></table></td></tr></table><br/><table border=0 cellspacing=0 cellpadding=3 width=150><tr><td><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td><table cellpadding='0' cellspacing='0' border='0' width='100%'><tr><td bgcolor='#00527f'><table cellpadding='2' cellspacing='0' border='0'><tr><td class='sideboxtitle'>Poll</td></tr></table></td></tr><tr><td background='themes/LotusCult/images/shadow.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr></table></td></tr><tr><td><form action="modules.php?op=modload&amp;name=NS-Polls&amp;file=index" method="post"><input type="hidden" name="pollID" value="5" /><input type="hidden" name="forwarder" value="modules.php?op=modload&amp;name=NS-Polls&amp;file=index&amp;req=results&amp;pollID=5" /><font class="pn-normal"><b>New UI?</b></font><br><br>
+&middot;&nbsp;<span class="pn-normal">Love it.</span><br />
+&middot;&nbsp;<span class="pn-normal">Hate It.</span><br />
+&middot;&nbsp;<span class="pn-normal">Hax0r it.</span><br />
+&middot;&nbsp;<span class="pn-normal">XML is for weenies</span><br />
+<p style="text-align:center"><span class="pn-normal">[ <a class="pn-normal" href="modules.php?op=modload&amp;name=NS-Polls&amp;file=index&amp;req=results&amp;pollID=5&amp;mode=thread&amp;order=0&amp;thold=0"><b>Results</b></a> | <a class="pn-normal" href="modules.php?op=modload&amp;name=NS-Polls&amp;file=index"><b>Polls</b></a> ]</span></p><br /><p style="text-align:center"><span class="pn-normal">Votes: <b>2</b> | Comments: <b>0</b></span></p>
+
+</form>
+
+</td></tr></table></td></tr></table><br/><table border=0 cellspacing=0 cellpadding=3 width=150><tr><td><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td><table cellpadding='0' cellspacing='0' border='0' width='100%'><tr><td bgcolor='#00527f'><table cellpadding='2' cellspacing='0' border='0'><tr><td class='sideboxtitle'>User's Login</td></tr></table></td></tr><tr><td background='themes/LotusCult/images/shadow.gif'><img src='themes/LotusCult/images/pixel.gif' height='6' width='1' border='0' alt=''/></td></tr></table></td></tr><tr><td><form action="user.php" method="post"><table border="0" width="100%" cellspacing="0" cellpadding="1"><tr><td><span class="pn-normal">&nbsp;Username</span></td></tr><tr><td><input type="text" name="uname" size="14" maxlength="25"></td></tr><tr><td><span class="pn-normal">&nbsp;Password</span></td></tr><tr><td><input type="password" name="pass" size="14" maxlength="20"></td></tr><tr><td><input type="checkbox" value="1" name="rememberme" /><span class="pn-normal">&nbsp;Remember me</span></td></tr><tr><td><br><input type="hidden" name="module" value="NS-User" /><input type="hidden" name="op" value="login" /><input type="hidden" name="url" value="/index.php" /><input type="submit" value="Login" /></td></tr><tr><td><br /><span class="pn-normal">Don't have an account yet?  You can <a href="user.php">create one</a>. As a registered user you have some advantages like a theme manager, comments configuration and posting comments with your name.</span></td></tr><tr><td></table></form></td></tr></table></td></tr></table><br/><img src='themes/LotusCult/images/pixel.gif' height='1' width='150' border='0' alt=''><br>
+</td></tr><tr>
+<td colspan='3'><img src='themes/LotusCult/images/pixel.gif' width='1' height='1' border='0' alt=''></td><td colspan='3' bgcolor='#bcb09e'><img src='themes/LotusCult/images/pixel.gif' width='1' height='1' border='0' alt=''></td><td colspan='3'><img src='themes/LotusCult/images/pixel.gif' width='1' height='1' border='0' alt=''></td></tr>
+<tr>
+<td colspan='3'>&nbsp;</td><td colspan='3' bgcolor='#efece7'><font class="pn-sub">
+
+	<br /><center>All logos and trademarks in this site are property of their respective owner. The comments are property of their posters, all the rest © 2002 by me. This web site was made with <a href="http://www.postnuke.com" target="_blank">PostNuke</a>, a web portal system written in PHP. PostNuke is Free Software released under the <a href="http://www.gnu.org" target="_blank">GNU/GPL license</a>.<br/><br>
+
+	</font>
+</td><td colspan='3'>&nbsp;</td></tr>
+<tr>
+<td colspan='9' bgcolor='#bcb09e'><img src='themes/LotusCult/images/pixel.gif' width='1' height='1' border='0' alt=''></td></tr>
+</table></body>
+</html>

@@ -1,0 +1,201 @@
+<? 
+
+include 'Connect.php';
+ 
+
+
+
+$encounterID=0;
+
+$encounterID=$HTTP_GET_VARS["encounter"];
+
+if ($encounterID==0)
+{
+
+  $encounterID=2;
+} 
+
+
+$date=$HTTP_GET_VARS["date"];
+if (strftime("%m/%d/%Y")=="")
+{
+
+  $date="3/14/2001";
+} 
+
+
+// First, make a connection to the database
+// $objConnection is of type "ADODB.Connection"
+
+
+// Now create and populate a recordsets with the data
+// $objRecordset is of type "ADODB.Recordset"
+
+// $rsEncounter is of type "ADODB.Recordset"
+
+// $rsClass is of type "ADODB.Recordset"
+
+
+
+?>
+
+<HTML>
+<HEAD>
+<title>Triton Raid Information</title>
+<STYLE TYPE="text/css">
+	<!--
+
+		:link	 {
+			fontfamily : "Verdana","Arial","Helvetica"                                            ;
+			fontsize : 10pt                                            ;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Color : #000000 ;
+			Text-Decoration : None ;
+			Font-Weight : bold
+			}
+	:visited	 {
+			fontfamily : "Verdana","Arial","Helvetica"                                            ;
+			fontsize : 10pt                                            ;
+			Color : #000000 ;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Text-Decoration : none ;
+			Font-Weight : bold
+		}
+	A:hover	 {
+			fontfamily : "Verdana","Arial","Helvetica"                                            ;
+			fontsize : 10pt                                            ;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Color : #000000 ;
+			Text-Decoration : underline ;
+			Font-Weight : bold
+		}
+	-->
+</style>
+</HEAD>
+<BODY bgcolor=#FFFFFF>
+<font size=2><center>
+<!-- Start Site Header -->
+<div align="center">
+  <center>
+<table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#FFFFFF" width="95%" id="AutoNumber1">
+  <tr>
+    <td width="14%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="javascript:window.close()" style="text-decoration: none"><font size="1" color="#FFFFFF"><B>Close this window...</B></font></a></font></td>
+  </tr>
+</table>
+</center>
+</div>
+<!-- End Site Header -->
+<font face="verdana">
+</font>
+<?
+$sSQL="SELECT * FROM Raid,Encounter WHERE Raid.EncounterID = Encounter.EncounterID AND Raid.RaidID=".$encounterID.";";
+//echo $sSQL;
+$enc = mysql_query($sSQL) or die (mysql_error());
+$rsEnc = mysql_fetch_array($enc);
+$encounter=$rsEnc["Encounter"];
+
+
+
+$sSQL="SELECT count(*) AS RaidAttendees FROM Raid,RaidAttendance "
+  ."where Raid.RaidID=".$encounterID." and RaidAttendance.RaidID=Raid.RaidID ";
+
+//echo $sSQL."<BR>";
+$attend = mysql_query($sSQL) or die (mysql_error());
+$rsAttend = mysql_fetch_array($attend)
+    ?>
+<h2><font face="Verdana"><? echo $encounter; ?> : <? echo strftime("%m/%d/%Y", strtotime($date)); ?> (<? echo $rsAttend["RaidAttendees"]; ?>)<br></font>
+<font size=1 face="Verdana">These are the names of the players present at any time during the raid.<br>
+Not 
+all members listed below were present for the final goal of the encounter.<br>
+</font></font></h2>
+<center>
+<div align="center">
+  <center>
+  <TABLE WIDTH="100%"><TR><TD WIDTH=0%>
+<TABLE border="0" bgcolor=#ffffff border=0 cellpadding=2>
+  <tr>
+    <td colspan=2 bgcolor="#003366" align="center">    <p align="center"><b>
+    <font size=2 face="Verdana" color="#FFFFFF">Attendees</font></b></td>
+
+    </TR>
+   
+
+<? 
+$sSQL="SELECT * FROM Raid,RaidAttendance "
+  ."where Raid.RaidID=".$encounterID." and RaidAttendance.RaidID=Raid.RaidID ";
+//echo $sSQL;
+$enc3 = mysql_query($sSQL) or die (mysql_error());
+
+while ($rsEnc2 = mysql_fetch_array($enc3)) {
+    $x++;
+    $bgcolorkey=$x%2;
+    $raidID = $rsEnc2["RaidID"];
+  $sSQL="SELECT * FROM CharacterInfo,Class "
+    ."WHERE CharacterID='".$rsEnc2["MainCharacterID"]."' AND "
+    ."Class.ClassID=CharacterInfo.ClassID";
+    $class = mysql_query($sSQL) or die (mysql_error());
+$rsClass = mysql_fetch_array($class)
+
+//response.write sSQL		
+?>
+<tr bgcolor=<?   echo $bgcolor[$bgcolorkey]; ?> >
+	<td><font face="verdana" size=2><a href="character.php?name=<?   echo $rsEnc2["MainCharacterID"]; ?>"><?   echo $rsEnc2["MainCharacterID"]; ?></a></font>&nbsp;</td>
+	<td><font face="verdana" size=2><?   echo $rsClass["Class"]; ?></font>&nbsp;</td>
+</tr>
+<? 
+}
+?>
+  </TD></TR></TABLE></TD>
+<?
+$sSQL="SELECT *, REPLACE(ItemName, \" s \", \"'s \") AS ItemName, REPLACE(ItemLocation, \" s \", \"'s \") AS ItemLocation FROM ItemOwner, Item "
+  ."where ItemOwner.raidID=".$encounterID." AND ItemOwner.ItemID=Item.ItemID ORDER BY Item.ItemLocation";
+//echo $sSQL;
+$loot = mysql_query($sSQL) or die (mysql_error());
+if (mysql_num_rows($loot) !=0) {
+?>
+
+<TD VALIGN=top><TABLE>
+  <tr>
+    <td colspan=2 bgcolor="#003366" align="center">    <p align="center"><b>
+    <font size=2 face="Verdana" color="#FFFFFF">Loot</font></b></td>
+
+    </TR>
+<?
+    while ($rsLoot = mysql_fetch_array($loot)) {
+    $x++;
+    $bgcolorkey=$x%2;
+
+    ?>
+    <tr bgcolor=<?   echo $bgcolor[$bgcolorkey]; ?> >
+	    <td><font face="verdana" size=2><a href="character.php?name=<?   echo $rsLoot["MainCharacterID"]; ?>"><?   echo $rsLoot["MainCharacterID"];    ?></a></font>&nbsp;</td>
+    	<td><font face="verdana" size=2><a style="font-weight: normal;"href="whoownsit.php?ID=<? echo $rsLoot["ItemID"]?>&itemName=<? echo $rsLoot["ItemName"]?>"><?   echo $rsLoot["ItemName"]."</A><BR> <font size='-2'><i>".$rsLoot["ItemLocation"]."</i></font>" ?></font>&nbsp;</td>
+    </tr>
+<?
+    }
+}
+
+?>
+</TD></TR></TABLE>
+ 
+<?
+
+// Always clean up by setting objects to nothing
+$objConnection=null;
+
+$objRecordset=null;
+
+$rsEncounter=null;
+
+$rsClass=null;
+
+
+// Now write out the closing HTML tags 
+?>
+  </center>
+</div>
+</BODY>

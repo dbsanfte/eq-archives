@@ -1,0 +1,123 @@
+<?
+include 'Connect.php';
+
+?>
+<HTML>
+<HEAD>
+<title>Recently Awarded Items</title>
+<STYLE TYPE="text/css">
+	<!--
+
+		:link	 {
+			fontfamily : "Verdana","Arial","Helvetica";
+			fontsize : 10pt;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Color : #000000 ;
+			Text-Decoration : None ;
+			Font-Weight : normal
+			}
+	:visited	 {
+			fontfamily : "Verdana","Arial","Helvetica";
+			fontsize : 10pt;
+			Color : #000000 ;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Text-Decoration : none ;
+			Font-Weight : normal
+		}
+	A:hover	 {
+			fontfamily : "Verdana","Arial","Helvetica";
+			fontsize : 10pt;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Color : #000000 ;
+			Text-Decoration : underline ;
+			Font-Weight : normal
+		}
+	TD	 {
+			fontfamily : "Verdana","Arial","Helvetica";
+			fontsize : 10pt;
+			Font-Family : Verdana, Arial, Helvetica ;
+			Font-Size : 10pt ;
+			Color : #000000 ;
+			Text-Decoration : none ;
+			Font-Weight : normal
+		}
+	-->
+</style>
+</HEAD>
+<BODY bgcolor=#FFFFFF>
+<font size=2><center>
+<font face="verdana">
+<!-- Start Site Header -->
+<div align="center">
+  <center>
+<table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#FFFFFF" width="95%" id="AutoNumber1">
+  <tr>
+    <td width="14%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="/index.html" style="text-decoration: none"><font size="1" color="#FFFFFF"><B>Current News</B></font></a></font></td>
+    <td width="14%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="/archives.php" style="text-decoration: none"><font size="1" color="#FFFFFF"><B>News Archives</B></font></a></font></td>
+    <td width="14%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="/db/members.php" style="text-decoration: none">
+    <font size="1" color="#FFFFFF"><B>Members</B></font></a></font></td>
+    <td width="14%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="/apply" style="text-decoration: none"><font size="1" color="#FFFFFF"><B>Apply</B></font></a></font></td>
+    <td width="14%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="http://www.tritonguild.com/cgi-bin/triton/ultimatebb.cgi" style="text-decoration: none">
+    <font size="1" color="#FFFFFF"><B>Forums</B></font></a></font></td>
+    <td width="15%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="/Contact_Us" style="text-decoration: none"><font size="1" color="#FFFFFF"><B>Contact Us</B></font></a></font></td>
+    <td width="15%" bgcolor="#003366"  onmouseover=this.style.backgroundColor='#245192'; onmouseout=this.style.backgroundColor='#003366'; align="center">
+    <font face="Verdana" size="2" color="#FFFFFF">
+    <a href="/Links" style="text-decoration: none"><font size="1" color="#FFFFFF"><B>Links</B></font></a></font></td>
+  </tr>
+</table>
+</center>
+</div>
+<!-- End Site Header -->
+<h2></h2>
+<p align="center"><img border="0" src="http://66.28.74.72/images/banners/members.jpg"></p>
+</font></font>
+<?
+$x=0;
+
+$sSQL = "SELECT Item.ItemID, REPLACE(Item.ItemName, \" s \", \"'s \") AS ItemName, REPLACE(Item.ItemLocation, \" s \", \"'s \") AS ItemLocation, ItemOwner.MainCharacterID, DATE_FORMAT(Raid.Date, '%M %e, %Y') AS Date, ItemOwner.RaidID from ItemOwner, Raid, Item WHERE ItemOwner.RaidID=Raid.RaidID AND ItemOwner.ItemID=Item.ItemID AND Item.ItemID=".$_GET["ID"]." ORDER BY Raid.Date DESC";
+$whoItems = mysql_query($sSQL)  or die(mysql_error());
+
+?><center><TABLE border="0" valign="top" border=0 cellpadding=2 bordercolor="#FFFFFF" width="30%" >
+<tr>
+		<td align=center colspan=2 bgcolor="#BCBFCB"><font face="Verdana" size="2">Owners of <b><?echo stripslashes($_GET["itemName"])?> <a href="http://lucy.fnord.net/itemlist.html?searchtext=<? echo strtr($_GET["itemName"],"'", "")?>"><img src="/images/info.gif" border=0></a></font></b></td>
+</tr>
+    <td align=center colspan=2 bgcolor="#BCBFCB"><? echo mysql_num_rows($whoItems) ?> have been looted </td></tr>
+<?
+
+        while ($rsRecentItems = mysql_fetch_array($whoItems)) {
+    $x++;
+    $bgcolorkey=$x%2;
+    if ($rsRecentItems["RaidID"] !=0) {
+        $strDate = "<a href='raid.php?encounter=".$rsRecentItems["RaidID"]."&date=".$rsRecentItems["Date"]."'>".$rsRecentItems["Date"];
+    } else {
+        $strDate = "No date available";
+    }
+?>
+<font size="2"> 
+  <tr bgcolor=<? echo $bgcolor[$bgcolorkey]?> >
+        <td><a href="character.php?name=<? echo $rsRecentItems["MainCharacterID"]?>"><? echo $rsRecentItems["MainCharacterID"]?></a></td>
+        
+        <td><? echo $strDate ?></td>
+	</tr>
+    <?}?>
+    </TABLE>
+  </center>
+
+</body>
+</html>
+

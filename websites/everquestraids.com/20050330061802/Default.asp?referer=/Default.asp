@@ -1,0 +1,1 @@
+EverQuestRaids.com has closed.

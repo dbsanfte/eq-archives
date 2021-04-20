@@ -1,0 +1,737 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<title>Talisman Guild</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<meta name="CODE_LANGUAGE" Content="C#">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK href="Talisman.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body background="images/greytile.jpg" 
+		bgcolor="#000000" text="#ffffcc" link="#ccffff" alink="#aaffff" 
+		vlink="#aaffff">
+		<form name="formDefault" method="post" action="default.aspx" id="formDefault">
+<input type="hidden" name="__VIEWSTATE" value="dDwxMTAxODgyNjQ7O2w8UGFnZUhlYWRlcjE6X2N0bDA6UmVtZW1iZXJDaGVja2JveDs+Ph06nEQLqW3VQONOgsfKMz1fD1Pd" />
+
+			
+<script language="javascript">
+	function SwapImage(itemName, imageName){
+		if (document.images){
+			document[itemName].src = imageName;
+		}
+	}
+</script>
+
+<table border=0 width="100%">
+<tr>
+<td background=images/header_background.jpg>
+<TABLE background="" id="Table1" height="198" width="100%" border="0">
+	<TR>
+		<td id="PageHeader1_UserDisplayHeaderPane" class="TextBanner" style="HEIGHT: 24px" colspan="5"></td>
+
+	</TR>
+	<TR>
+		<TD colSpan="5" height="110">
+			<table  border="0">
+				<tr>
+					<td id="PageHeader1_UserDisplayPane" width="100%" class="HomeHeader" nowrap="nowrap">
+<table cellSpacing="0" cellPadding="0" align="left" border="0">
+	<tr>
+		<td class="TextBanner">Please login:
+		</td>
+	</tr>
+	<tr>
+		<td class="TextBanner">Username:</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><input name="PageHeader1:_ctl0:username" type="text" size="9" id="PageHeader1__ctl0_username" tabindex="1" class="bgInput" /></td>
+		<td><span class="TextBanner"><input id="PageHeader1__ctl0_RememberCheckbox" type="checkbox" name="PageHeader1:_ctl0:RememberCheckbox" checked="checked" tabindex="4" /><label for="PageHeader1__ctl0_RememberCheckbox">Remember Login</label></span></td>
+	</tr>
+	<tr>
+		<td class="TextBanner">Password:</td>
+		<td><span id="PageHeader1__ctl0_Message" class="ErrorText"></span></td>
+	</tr>
+	<tr>
+		<td><input name="PageHeader1:_ctl0:password" type="password" size="9" id="PageHeader1__ctl0_password" tabindex="2" class="bgInput" /></td>
+		<td><input type="submit" name="PageHeader1:_ctl0:cmdLogon" value="Logon" id="PageHeader1__ctl0_cmdLogon" tabindex="3" class="TextBanner" /><a class="TextNormal" href="http://www.talismanguild.org/TalismanVB/register.php">Register</a>
+		</td>
+	</tr>
+</table>
+</td>
+
+					<td align=right>
+						<IMG alt="Talisman Logo" src="images/talisman_logo_300.gif" border="0" height="76" width="300" vspace="4">
+					</td>
+				</tr>
+			</table>
+		</TD>
+	</TR>
+	<TR>
+		<TD align=center>
+		<A href="default.aspx?ModuleIndex=News" onmouseover="SwapImage('news','images/news_selected.gif')" 
+		onmouseout="SwapImage('news','images/news_selected.gif')">
+		<IMG src=images/news_selected.gif border="0" name="news">
+		</A>
+		</TD>
+		<TD align=center><A href="../TalismanVB" onmouseover="SwapImage('forums','images/forums_selected.gif')" onmouseout="SwapImage('forums','images/forums.gif')"><IMG src="images/forums.gif" border="0" name="forums">
+			</A>
+		</TD>
+		<TD align=center><A href="default.aspx?ModuleIndex=Points" onmouseover="SwapImage('points','images/points_selected.gif')" onmouseout="SwapImage('points','images/points.gif')"><IMG src="images/points.gif" border="0" name="points">
+			</A>
+		</TD>
+		<TD align=center><A href="default.aspx?ModuleIndex=Roster" onmouseover="SwapImage('roster','images/roster_selected.gif')" onmouseout="SwapImage('roster','images/roster.gif')"><IMG src="images/roster.gif" border="0" name="roster">
+			</A>
+		</TD>
+		<TD align=center><A href="default.aspx?ModuleIndex=Info" onmouseover="SwapImage('info','images/info_selected.gif')" onmouseout="SwapImage('info','images/info.gif')"><IMG src="images/info.gif" border="0" name="info">
+			</A>
+		</TD>
+	</TR>
+	<TR>
+		<td id="ltlink" width=100% colSpan=5 align="right" class="TextBanner">
+			&nbsp <br>
+		</td>
+	</TR>
+</TABLE>
+</td></tr></table>
+			<table width="100%" height="65%">
+				<tr>
+					<td id="LeftPane" width="250" valign="top">
+					 <br> 
+<table class="ControlTable" cellSpacing="0" cellPadding="0" width="100%">
+	<tr bgColor="#666666">
+		<td align="left">View News</td>
+	</tr>
+	<tr>
+		<td>
+			<select name="_ctl0:ddlNumberUpdates" id="_ctl0_ddlNumberUpdates" class="bgInput">
+	<option value=""></option>
+	<option value="1">Show Last 1</option>
+	<option value="2">Show Last 2</option>
+	<option selected="selected" value="3">Show Last 3</option>
+	<option value="4">Show Last 4</option>
+	<option value="5">Show Last 5</option>
+
+</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="default.aspx?ModuleIndex=NewsArchive">[Archives]</a>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="_ctl0:cmdGo" value="Go" id="_ctl0_cmdGo" class="EditButton" /></td>
+	</tr>
+</table>
+ <br> 
+<table class="ControlTable" cellSpacing="0" cellPadding="0" width="100%">
+	<tr bgColor="#666666">
+		<td align="left">Links</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://pub13.ezboard.com/btunare">Tunare</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://eq.castersrealm.com/">Caster Realm</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.eqatlas.com/">Maps</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://pub5.ezboard.com/btheconcerthall.html">Bard</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://pub35.ezboard.com/bthesafehouse">Rogue</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://eqcleric.gameglow.com/forums/">Cleric</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.eqdruids.com">Druid</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.monkly-business.com/">Monk</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.graffe.com/forums/">Wizard</a>
+		</td>
+	</tr>
+	
+	<tr>
+		<td width="100%">
+			<a href="http://www.steelwarrior.org/">Warrior</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://pub148.ezboard.com/bpaladinsofnorrath">Paladin</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.eqhunter.com/">Ranger</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://forums.interealms.com/shaman/">Shaman</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://necro.eqclasses.com/">Necromancer</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.therunes.net/forums/">Enchanter</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://forums.interealms.com/shadowknight/">Shadow Knight</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.magecompendium.com/">Mage</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<a href="http://www.eqbeastlord.com/forums/">Beastlord</a>
+		</td>
+	</tr>
+</table>
+
+ <br> </td>
+
+					<td id="CenterPane" valign="top">
+					
+<div align="center">
+	<table id="cNews_NewsTable" width="100%">
+	<tr valign="top">
+		<td id="cNews_NewsTableCell" valign="top" align="middle">
+			
+<table name="157" class="ControlTable" cellSpacing="0" cellPadding="0" width="100%" align="center">
+	<tr bgColor="#666666">
+		<td align="left" width="20"><IMG src="images/mini_t.gif">
+		</td>
+		<td class="TextBanner" style="FONT-SIZE: 18pt" align="left" width="600">
+			Talisman Takes Queen, Mates King for Win!
+		</td>
+		<TD style="FONT-SIZE: 7pt" align="right">
+			10/10/2004
+			<br>
+			Kaitlynn
+		</TD>
+	</tr>
+	<tr>
+		<td class="TextNormal" colspan="3" width="100%">
+			<table width="100%" border="0">
+        <tr>
+          <td class="TextNormal"> <p align="center"><img src="images/101004/KingsThrone_sm.jpg" width="267" height="300"><img src="images/101004/QueensThrone_sm.jpg" width="339" height="300"></p>
+            <p>After a few weeks hiatus from raiding following the release of
+              Omens of War, Talisman is Back In Action!  </p>
+            <table class="TextNormal" width="100%" border="0" cellspacing="0" cellpadding="4">
+              <tr> 
+                <td><p align="right"><a href="images/101004/QueenPyrilonis.jpg"><img src="images/101004/QueenPyrilonis_sm.jpg" width="200" height="204" border="0"></a><br />
+				(Click for larger pic!)</p>
+                </td>
+                <td class="TextNormal"><p>Queen Pyrilonis in Riftseeker's Sanctum had the honor
+                    of being our first 'real' raid target. We warmed up with
+                    a few other events (below), but she was The Chosen.</p>
+                  <p>The first night was experimentation, and getting back into
+                    the swing of actually following directions. And considering
+                    what 'following directions' means for us, you can appreciate
+                    what we might be like when rusty hehe.</p>
+                  <p>We prevailed, winning on the second night! Our efforts were
+                    well rewarded, with Sardonis getting <a href="images/101004/KirasSlippers.gif">Kira's
+                    Slippers</a> and
+                    Glori picking up a shiny new <a href="images/101004/CrystalBreastplate.gif">Crystal
+                    Breastplate</a>. Congrats!</p>
+                  <p>But wait - there's more! Riftseeker's crashed the following
+                    day, which afforded us a Bonus Round! On that one, Kerial
+                    snagged a <a href="images/101004/TotemOfPyrilonis.gif">Totem of
+                    Pyrilonis</a>, and Sanam got a <a href="images/101004/CrystalDagger.gif">Crystal
+                    Dagger</a>!! </p></td>
+              </tr>
+              <tr> 
+                <td class="TextNormal"><p>Following our defeat of the Queen, we took our forces into
+                  the basement where the King lay hiding.</p>
+                  <p>The King's forces have a nice little trick that when if
+                    you aren't paying attention, can lead to some quality AFK
+                    time.
+                    <a href="images/101004/FrozenRaid.jpg">In this pic</a>, you can
+                    see our entire raid totally immobilized and waiting for the
+                    effect to wear off. It takes a LONG time. </p>
+                  <p>Anyway, we finally did get things moving again and we were
+                    able to defeat the King in our first night of trying. Congrats
+                    to Qhue for his <a href="images/101004/CrystalSilkRobe.gif">Crystal
+                    Silk Robe</a>, and Majax for <a href="images/101004/KiranusTiara.gif">Kiranus'
+                    Tiara</a>!</p></td>
+                <td class="TextNormal"><p align="left"><a href="images/101004/KingGelaqua.jpg"><img src="images/101004/KingGelaqua_sm.jpg" width="243" height="214" border="0"></a><br />
+                  (Click for larger pic!)</p>
+                </td>
+              </tr>
+            </table>
+            <p><font size="+1">Random Stuff </font></p>
+            <table class="TextNormal" width="100%" border="0" cellspacing="0" cellpadding="4">
+              <tr> 
+                <td class="TextNormal"><p align="right"><a href="images/101004/CorpseShot.jpg"><img src="images/101004/CorpseShot_sm.jpg" width="300" height="185" border="0"></a><br />
+				</p>
+                </td>
+                <td class="TextNormal"><p>In order to fully prepare for raiding again, we decided
+                    to try some of the raid level instanced encounters found
+                    in Muramite Proving Ground. Here you can see us perfecting
+                    both our CR *and* l33t corpse positioning. Efficiency!</p>
+                  <p>(click
+                      for larger image) </p></td>
+              </tr>
+              <tr> 
+                <td class="TextNormal"><p>Never a guild to throw out any idea, here you see Celestias
+                    attempting to taunt the Queen's forces using the Braveheart
+                    Technique.</p>
+                  <p>The Queen was unimpressed, though we did have to put the
+                    raid on hold while we turned a cold hose on the frenzied
+                    gnomes. </p></td>
+                <td class="TextNormal"><p align="left"><img src="images/101004/CelestiasBraveheart_sm.jpg" width="300" height="313"><br />
+                  </p>
+                </td>
+              </tr>
+              <tr> 
+                <td class="TextNormal"><p align="right"><img src="images/101004/KerialEpic_sm.jpg" width="300" height="335"><br />
+				</p>
+                </td>
+                <td class="TextNormal"><p>One of the many new epics out in the Omens expansion.
+                    Here, Kerial shows off her new Betty Crocker Poultry Rotisserie. </p>
+                  <p>Among the many effects, the wizard one has the bonus ability
+                    of raising your Baking skill. Stick four cornish game hens
+                    (or other meat of choice) onto spits, apply flame, watch
+                    birds twirl and cook. Eat and enjoy!</p>
+                  <p>(Betty Crocker Industries does not condone the use of Wizard
+                    Epic as a cattle prod or other unsavory uses) </p></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+		</td>
+		<TD width="100%"></TD>
+	</tr>
+</table>
+ <br> <br> 
+<table name="156" class="ControlTable" cellSpacing="0" cellPadding="0" width="100%" align="center">
+	<tr bgColor="#666666">
+		<td align="left" width="20"><IMG src="images/mini_t.gif">
+		</td>
+		<td class="TextBanner" style="FONT-SIZE: 18pt" align="left" width="600">
+			Goat Bitch Dead
+		</td>
+		<TD style="FONT-SIZE: 7pt" align="right">
+			8/26/2004
+			<br>
+			Beldon
+		</TD>
+	</tr>
+	<tr>
+		<td class="TextNormal" colspan="3" width="100%">
+			<p align ="center"><img src="images/082604/goat1.jpg"></p>
+<p align ="center"><img src="images/082604/dead_goat.jpg"></p>
+<p>Well, my lazy ass is finally getting around to doing a long overdue update.  Back on August 18th we finally got our first kill of Pixtt Xxeric Kex (or more commonly known as "Goat Bitch"), which yet again proved to be an incredibly difficult encounter to overcome.  After weeks of throwing ourselves at the slaughter, we finally pulled it off.  Since then we've killed her again as well as another couple slayings of Zun'Muram Tkarish Zyk.  Next on our hit list is Pixtt Riel Tavas.  We are making decent progress on her and hope to have her (or is it a him?) dead within another week.</p>
+<p align ="center"><img src="images/082604/riel.jpg"></p>
+<p>In other less exciting news, we've killed the Cragbeast Queen a couple more times and also took down Suled Dar's Shade a couple times to complete our *NEW* Veeshan's Peak keys.  Of course, we haven't stepped foot in the new Veeshan's Peak yet, but... hey... we got our keys!  Hooray for us!</p>
+<p align ="center"><img src="images/082604/cb_corpse.jpg"></p>
+<p align ="center"><img src="images/082604/veeshan_drag.jpg"></p>
+
+<p>Other than that, not much worthy of reporting.  These days we usually find ourselves doing CR in Tacvi with periodic reflagging/farming in earlier zones.  We're pleased to have survived our 5th straight EQ summer slump grinding through what has been the most difficult expansion we've experienced.  We have our fingers crossed that the upcoming Omens of War expansion will prove to be a much smoother release throughout ALL of the content.</p>
+
+<p>
+
+<br>
+<p align="center"><font size="6">Ask Grunties!</font></p>
+
+<font color="#3300ff">anarus wrote:<br>
+Dear grunties, <br>
+Would you give your left testical, or other part of your body to recive this bow? the 175 damage 20 delay one?
+
+If so, what parts would be included?</font>
+
+<br>
+<font color="#009933">anarus:<br>
+I'm pretty attatched to my left testical, we've been through a lot together. I'm not sure if I could ever give up ol' lefty.</font>
+<br><br>
+
+<font color="#3300ff">Sorbid wrote:<br>
+Does size really matter? Or is it really the motion of the ocean?</font>
+<br>
+<font color="#009933">Sorbid:<br>
+Well this is better fielded by a woman, or possibly a gay man, but I'll give it a shot. Yes and No. Yes if you're hung like Nagafen, No if you're hung like Fippy Darkpaw. Doing it in an ocean only complicates things.</font>
+<br><br>
+
+<font color="#3300ff">Detheb wrote:<br>
+Dear Grunties,<br>
+How did Galadir ever become a member of Talisman?
+Also, Why do I die more than Rangers?
+Thx irl~</font>
+<br>
+<font color="#009933">Detheb:<br>
+No freakin clue how Galadir got in. I didn't even know he applied till he was in the guild. We make mistakes too. And you might die more than rangers because you have CDS, or better known as Chronic death syndrom. There is no cure for it, and of course, it's fatal.</font>
+<br><br>
+
+<font color="#3300ff">Paldaan Wrote:
+Dear Grunties:<br>
+Do you think that John Smedley, President of SoE, was destined to become King of the Everquest Geeks since birth? I mean, come on. Smedley? He sure isn't going to grow up to be a baseball player with that last name. Or a football player. Or a boxer. Or an ultimate fighting champion.. I mean, seriously. Do you think he has been doomed since birth?
+Pal</font>
+<br>
+<font color="#009933">Paldaan:
+You haven't heard of the great Carlos Smedly, who pitched a perfect game against the Brooklyn Dodgers in 52?!? Or Augustus Smedly, who lead the NFL in sacks for 6 straight years in the 60s?! Or Chuck "Dirty Napalm" Smedly, who killed a man with his bare hands in a UFC no holds barred cage match?!?! Sheesh man, know your sports history!</font>
+<br><br>
+
+<font color="#3300ff">Funeral wrote:<br>
+Dear Grunties,<br>
+Is there anything cooler in the entire world than the "Pop Beldon's Floating head" game?</font>
+<br>
+<font color="#009933">Funeral:
+That huge gun from Aliens that the chick carried around on her back might be cooler, but that's about it.</font>
+<br><br>
+
+<font color="#3300ff">Ragnrok wrote:<br>
+Dear Gruntilicious,<br>
+Do you think Qhue has more gayness and homosexual loving in his pinky then you do in your whole body?
+What do dingleberries taste like?
+If a dick could not get hard anymore off of cocaineeee...what would u ax it?
+and finally
+If i stick a rod up my own ass and enjoy it, and then try to squeeze a bottle into it, and enjoy that too, should I let Qhue be my butt pirate anal assassin commander?</font>
+<br>
+<font color="#009933">Ragnrok:<br>
+Qhue's gayness is like a foundation for homosexuality. Kind of like a 2x4 is in construction.
+Dingleberries taste kinda like candy cereal stuff, they're good in milk and are a part of a healthy balanced breakfast.. or was that crunchberries...
+Umm.. how's the weather?
+Ragnrok, I really think you just need to come out of the closet and save yourself and everyone else some time.</font>
+<br><br>
+
+<font color="#3300ff">Robyn wrote:<br>
+Grunties, <br>
+Where, in this day in age, might I find a shrubbery?</font>
+<br>
+<font color="#009933">Robyn:
+You must find a shrubber first. I recomend Daniel the Shrubber. He works down at The Shrubber station on 4th, it's in the Shrubber complex down there in Shrubberville.</font>
+<br><br>
+
+<font color="#3300ff">Juleea wrote:<br>
+Grunties~<br>
+How are we supposed to focus on reading your main page with all the sexA pics of Beldon posted on there?</font>
+<br>
+<font color="#009933">Juleea:
+The best way is NOT to focus. Like one of those picture thingies where you let your eyes focus on something else and the image comes out. It never works for me either, so I just downloaded the Beldonblocker 2.0, works wonders.</font>
+<br><br>
+
+<font color="#3300ff">Detheb wrote (again):<br>
+Dear Grunties,<br>
+Does my Surname Really sound Russian, and if So, How come I can't get hot russian babes~</font>
+<br>
+<font color="#009933">Detheb:
+Yeah it sounds a bit russian, and you can't get any hot russian babes because that's a triple oxymoron. Like a small jumbo shrimp.</font>
+<br><br>
+<font color="#3300ff">Tonnerre wrote:<br>
+Dear Grunties,<br>
+Where can I get one of these Mail Order Catalogues?</font>
+<br>
+<font color="#009933">Tonnerre:
+Like any periodical, just steal them from doctor's waiting rooms. I haven't had a subscription to any magazine ever, but I still have every issue of Lady's Home Journal since 1979.</font>
+<br><br>
+
+<font color="#3300ff">Ahleanna wrote:<br>
+Kind Sir,<br>
+How many foos does it take to screw in a lightbulb?
+Have you seen my woobie?</font>
+<br>
+<font color="#009933">Ahleanna:
+Two, but no one is quite sure how they get inside there.
+No, I have not seen your woobie, but I heard you shared it with everyone in that centerfold spread for "The Erotic Warrior Monthly".</font>
+
+<br><br>
+<font color="#3300ff">Gaddilae wrote:<br>
+I am rather disappointed I was looking forward to some grunties knowledge and instead have to look at pics of Beldon. </font>
+<br>
+<font color="#009933">Gaddilae:<br>
+I agree. I can't get enough of that sparkling fresh Grunties knowledge! And as far as Beldon is concerned, along with the BeldonBlocker, there are many other programs. Beldonwatch 1.2, Norton's Anti-Beldon, and my personal favorite, BeldonCastrator 2.1.</font>
+<br><br>
+
+<font color="#3300ff">Tildaor wrote:<br>
+Dear Grunties? how many birthdays have you had since i met you? How old are you now?</font>
+<br>
+<font color="#009933">Tildaor:<br>
+Well, I have to have at least one birthday a month. And the month that my birthday is actually in has a birthday on every day. So that's 33 birthdays a year. I guess I met you maybe 4 years ago so that's 132 birthdays so far give or take a few. Oh and I'm ageless, kinda like, a thing.. that's like.. ageless.... or something.</font>
+<br><br>
+
+<font color="#3300ff">Donkey Wrote:<br>
+Dear Grunties,<br>
+I have two questions:<br>
+1) What happens to the hole in the donut once you have eaten the donut?<br>
+2) If nothing is impossible, is it possible that some things are impossible? <br>
+3) If anything is possible, is it impossible that some things are possible?<br>
+4) Is it possible that anything (and nothing) is BOTH inherently possible and impossible?</font>
+<br>
+<font color="#009933">Donkey:<br>
+1) The hole actually turns into another donut! Then you can eat that one too!!<br>
+2) That's impossible<br>
+3) That's possible<br>
+4) THAT IS SO FREAKIN POSSIBLE IT HURTS!</font>
+
+<br><br>
+<font color="#3300ff">Dokter wrote:<br>
+Dear Grunties,<br>
+Why does my head hurt? When will the voices stop? Will you still love me...tomorrow? 
+Dok</font>
+<br>
+<font color="#009933">Dokter:<br>
+Your head hurts because it has spear through it, that's also why you can't fit through doors.
+Take the spear out, and the voices will go away.
+Only if you give me back my spear.</font>
+<br><br>
+
+<font color="#3300ff">Kielle wrote:<br>
+Dear Grunties,<br>
+Who is the Ranger Class Correspondent?</font>
+<br>
+<font color="#009933">Kielle:<br>
+The Ranger Class Correspondent is a magical fairy that flies around with a wand and grants wishes to all the rangers that have been good for the year. And then it hides easter eggs underneath their pillows and goes back up the chimney. Yes, the real class correspondent is just that made up.</font>
+<br><br>
+<font color="#3300ff">Phallax wrote:<br>
+Dear Grunties,<br>
+Are TalisMEN better then the Thunder Down Under? OR?!?!?! Does the Thunder Down Under = TalisMEN? Can you feel the THUNDER?!?!</font>
+<br>
+<font color="#009933">Phallax:<br>
+TalisMEN and the Thunder down under are in fact part of the same organization. They are all under a branch of the division of the FCC. It's a complicated tangled web of lies and deceit. But yes.. oh yes.. OH MY GOD YES I CAN FEEL THE THUNDER!!</font>
+
+<br><br>
+<font color="#3300ff">Phallax wrote (again):<br>
+Dear Grunties,<br>
+Why isnt Beldon supporting his bad ass shades in the Guild Summit pics like he was in the last years Vegas pic?!</font>
+<br>
+<font color="#009933">Phallax:<br>
+Oh Phallax, you haven't heard of the tragedy of the sunglasses have you? It was a night, much like tonight, where the Retarded Glasses Boogeyman came to get his glasses while he slept. Well his name is kind of confusing.. he wasn't really retarded.. the glasses were.. but he was a boogeyman of glasses, that were retarded, but he wasn't retarded himself, because.. of.. Oh nevermind the story sucked anyway.</font>
+<br><br>
+
+<font color="#3300ff">Montaron wrote:<br>
+Dear Grunties~<br>
+How do you beat Everquest?</font>
+<br>
+<font color="#009933">Montaron:<br>
+Personally, I use a baseball bat. I feel that gives me the best leverage with beatings. Many peope prefer ye ol' sledge hammer, but that's just too akward and unweildy for simple everquest beatings.</font>
+<br><br>
+
+<font color="#3300ff">Kophry wrote:<br>
+O Mighty and Powerful Grunties, I beseech you! Please, please, PLEASE answer these three questions for me!<br>
+1) What is an "elitist bastard"? I've been told that I am an elitist bastard, but I have no idea what one is or how I became one! Is it something I would have signed up for, like the Grub of the Month Club or Archers Anonymous?<br>
+2) I've been told that elitist bastards like to "wave their dicks around". Umm, well, I'm a chick. Where can I get a dick to wave around? How much would it cost?<br>
+3) Why hasn't Talisman washed Eonowyn yet? He's really beginning to smell rancid and those gnomish gas-masks that you all wear don't have enough AC for those bruising Gates of Discord encounters! Not to mention that we can smell Eonowyn all the way over here on Povar...</font>
+<br>
+<font color="#009933">Kophry:<br>
+1) Well, you may not remember becoming one. With many religions they do this proceedure at birth, so it's less tramatic than other stages in life.<br>
+2) They actually meant picks, wave your picks around. So go kill an orc, get his picks and wave them in the air like you just don't care.<br>
+3) Eonowyn purposely greases himself so he's tougher to grab a hold of to try to wash. It's like a weekly event we like to call "Greased retard roundup", we haven't won yet </font>
+<br><br>
+
+<font color="#3300ff">Xcalabor wrote:<br>
+Dear Grunties, <br>
+1. Why do these Blue smurfs keep pestering me? Why wont they just leave me alone!<br>
+2. What is the meaning of Life?</font>
+<br>
+<font color="#009933">Xcalabor:<br>
+1. There are other smurfs besides blue ones?!?! Where have I been living? Oh and to answer the question, it's because they think you're Mother Nature and they're seeking your advice. They mistook Kaitlynn for Father Time.<br>
+2. Well it used to be peace, happiness, love and all that junk, but now it's just finding those multicolored smurfs!!!!</font>
+<br><br>
+
+<font color="#3300ff">Sirulus Delon wrote:<br>
+Dear Grunties,<br>
+As I ponder upon the meaning of life, I have stumbled across this revealation. Life, in it's infinite trickeries, is about coming to terms with oneself. So I want to ask you a few questions;<br>
+1.) Are you my daddy?<br>
+2.) Were you ever a GI Joe? Which one? If you were that would be cool as Pepsi One, with 2/3 less calories.<br>
+3.) When is it okay to pass gas in front of your significant other? Do you go first or go last?<br>
+4.) So you were a GI Joe commando...did you have to undergo surgery to get the Kung-Fu grip?<br>
+5.) What was Cobra commander's real name? Why did he wear that mask? Was it to hide a horribly disfigured and/or scarred face?<br>
+6.) Did Leatherneck know the Marines Hymn?<br>
+7.) There was a Duke and Butch but was there a Hoss? A General Lee???<br>
+8.) Why do you deny your GI Joe heritage????</font>
+<br>
+<font color="#009933">Sirulus Delon:<br>
+1) No, you are your own father. Try to figure that one out!<br>
+2) I was Destro<br>
+3) As long as the first time you do it you make it a "Dutch Oven" you're ok.<br>
+4) I was born with a Kung-Fu grip, even on my feet.<br>
+5) Chuck was his real name, he wore the mask to keep mosquitos away.<br>
+6) Leatherneck could belch the Mariens Hymm.<br>
+7) They nicknamed Lady Jane "General Lee" because they all rode her.. ZING!!<br>
+8) I used to deny it only because I never got to ride the General Lee </font>
+<br><br>
+
+<font color="#3300ff">~aleks wrote:<br>
+Why does the ratio of 2 to 1 Fresca to Gin taste so damn good?
+And why does that make me think of Tordaila, Kwic and Juraveille?</font>
+<br>
+<font color="#009933">~aleks:<br>
+It tastes better if you change the 2 parts Fresca into two parts Gin.
+And it probably makes you think of them because their names in real life are actually Fresca, Fresca, and Gin respectively. Feel free to call them by their real names in game.</font>
+<br><br>
+
+<font color="#3300ff">Beldon wrote:<br>
+Why is Southern such a drama queen?</font>
+<br>
+<font color="#009933">Beldon:<br>
+Well Beldon, just like some people are tall, and some people are short, other people are drama queens. Southern was born with an enlarged drama queen gland. We have to grow to understand people that are different from us Beldon, we must embrace each other in our differences. Southern is not a bad person because of his hyperactive Drama Queen gland, but actually, you are.</font>
+
+<br><br>
+<font color="#3300ff">Ragnrok wrote (again):<br>
+Dear Gruntasaurus,<br>
+Do your balls hang low? Do they wobble to and fro? Can you tie them i a knot or can u tie them in a bow?
+On these hot summer days is it possible to recycle my pee into water just as Kevin Costner did in Water World? because so far it just tastes salty.
+Fagnjock</font>
+<br>
+<font color="#009933">Ragnrok:<br>
+No, but I can throw them over my shoulder like a continental soldier.
+To recycle your pee you need a filter. Try using your T-shirt, then drink your own pee. That should help</font>
+<br><br>
+
+<font color="#3300ff">Beldon wrote (again):<br>
+When you go to the bathroom, specifically #2, are yours solid soldiers?
+Thanks Oh Great One!</font>
+<br>
+<font color="#009933">Beldon:<br>
+I could easily go on about "pinching a loaf", "dropping the kids off at the pool" and "making offerings at the porcelain altar", but I think the fact that you have named your own excrement "soldiers" may do the job better than I can.</font>
+<br><br>
+
+<font color="#3300ff">Kielle wrote:<br>
+Crunties,<br>
+What is the most efficient method for CR after a raid wipes out?</font>
+<br>
+<font color="#009933">Kielle:<br>
+First is to die. That's easy enough. Once you die take an afk, preferably at least 5 minutes. Then come back and complain that CR is taking too long. Then consent the rogues, but make sure to misspell all of their names. Once rez'd if you're a cleric, make sure you MGB Virtue to piss everyone off, if you're a ranger MGB SoT. After being rez'd, don't loot anything, find a mob, and train the CR spot. This is very important not to die before you get to the group, then blame someoene else. Once back to bind, go afk for another 5 minutes, come back and complain the CR is taking too long. Send as many tells to raid officers as you can with strat ideas, but make sure they make no sense and are in some over formal form of technical speak. Bitch a lot about how Sony sucks in guild chat. Then get a rez, and go afk until next wipe.</font>
+
+<br><br>
+
+<p align="center"><font size="6">Quotes</font></p>
+
+<p>Most important Announcement EVER!<br><img src="images/082604/announce.jpg"><br>
+<p>Love letters from Chokidaii...<br><img src="images/082604/chok1.jpg"><br>
+<p>Got Weed?  PST to Heydin...<br><img src="images/082604/heydin1.jpg"><br>
+<p>Karim so sly...<br><img src="images/082604/karim1.jpg"><br>
+<p>Wanna know what Kukan looks for in a cyber partner? <br><img src="images/082604/kukan1.jpg"><br>
+<p>Blatant violation of OOW Beta NDA revealing the Qhue NPC raid target!!<br><img src="images/082604/qhue_kill.jpg"><br>
+<p>Quen's ass remains #1 topic of discussion in Talisman<br><img src="images/082604/quen1.jpg"><br>
+<p>Don't believe me?<br><img src="images/082604/quen_ass.jpg"><br>
+<p>Quen so whipped!!  but by who?<br><img src="images/082604/quen_wife.jpg"><br>
+<p>Hmmm...<br><img src="images/082604/tord1.jpg"><br>
+<p>And finally....for Geshtar of DC, official EQ spokesperson of Chipotle...<br><img src="images/082604/soulmate.jpg"><br>
+
+
+
+<p>Look for more late breaking news from Tacvi soon!!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</td>
+		<TD width="100%"></TD>
+	</tr>
+</table>
+ <br> <br> 
+<table name="155" class="ControlTable" cellSpacing="0" cellPadding="0" width="100%" align="center">
+	<tr bgColor="#666666">
+		<td align="left" width="20"><IMG src="images/mini_t.gif">
+		</td>
+		<td class="TextBanner" style="FONT-SIZE: 18pt" align="left" width="600">
+			Tacvi At Last!!
+		</td>
+		<TD style="FONT-SIZE: 7pt" align="right">
+			7/12/2004
+			<br>
+			Beldon
+		</TD>
+	</tr>
+	<tr>
+		<td class="TextNormal" colspan="3" width="100%">
+			<p align ="center"><img src="images/071204/group.jpg"></p>
+<p align ="center"><img src="images/071204/boss_alive.jpg"></p>
+<p>On July 12th, Talisman defeated Zun'Muram, the final encounter in Txevu standing in our way to Tacvi,the end zone of Gates of Discord.  After a few weeks of trying just about every possible angle to make even a hint of progress on the encounter, it all came together tonight.  Zun'Muram was certainly among the most challenging encounters we've ever faced.  The biggest challenge was just maintaining our sanity as we threw ourselves at this slaughter night after night, but as always, we never gave up and came thru in the end.</p>
+<p align ="center"><img src="images/071204/boss_dead.jpg"></p>
+<p>First steps into Tacvi...  Let the madness of 54 person instanced raids once again begin...</p>
+<p align ="center"><img src="images/071204/enter.jpg"></p>
+
+
+<p>
+
+<br>
+
+<p align="center"><font size="6">Quotes</font></p>
+
+<p>Only worthy quote for this update since I received this tell tonight...<br><img src="images/071204/lip.jpg"><br>
+
+<p>Look for news on Tacvi soon!</p>
+
+
+
+
+		</td>
+		<TD width="100%"></TD>
+	</tr>
+</table>
+ <br> <br> </td>
+	</tr>
+</table>
+
+</div>
+</td>
+
+				</tr>
+			</table>
+		</form>
+	</body>
+</HTML>
