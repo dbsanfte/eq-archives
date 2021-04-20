@@ -1,0 +1,1 @@
+<br><br><br><h2>The cookie is blank.<br>You must login again.<br>Make sure your cookies are activated</h2>
