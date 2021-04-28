@@ -1,1 +1,0 @@
-Please stand by.  The system hosting 'eq.stratics.com' is currently being upgraded.  If this error persists for more than 1/2 hour.  Email stephen@degabriele.com.

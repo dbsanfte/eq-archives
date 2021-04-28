@@ -1,0 +1,296 @@
+<html><!-- #BeginTemplate "/Templates/shbaseres.dwt" -->
+<head>
+<title>The Safehouse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php
+$db = mysql_connect("localhost", "webuser");
+mysql_select_db("safehousedb",$db);
+
+$sql="SELECT * FROM weapons";
+if($type != ""){
+$sql .= " WHERE slot='" . $type . "'";
+}
+if(isset($search)){
+$sql .= " WHERE name LIKE '%" . $search . "%'";
+}
+
+if($sortby == "damage" && $damorder==""){$order = "DESC";} 
+if($wtorder != "") {$order = $wtorder;}
+if($locorder != "") {$order = $locorder;}
+if($nameorder != ""){$order = $nameorder;}
+if($delayorder != ""){$order = $delayorder;}
+if($damorder != ""){$order = $damorder;}
+if($order == ""){$order = "ASC";}
+
+if($sortby != ""){
+$sql .= " ORDER BY " . $sortby . " " . $order;
+} else {
+$order="DESC";
+$sql .= " ORDER BY damage " . $order;
+}
+
+$result = mysql_query($sql);
+
+if($nameorder == ""){
+$nameorder = "ASC";
+} else { if($nameorder == "ASC"){
+$nameorder = "DESC";
+} else {
+$nameorder = "ASC";
+}
+}
+
+if($damorder == ""){
+$damorder = "ASC";
+} else { if($damorder == "ASC"){
+$damorder = "DESC";
+} else {
+$damorder = "ASC";
+}
+}
+
+if($wtorder == ""){
+$wtorder = "ASC";
+} else { if($wtorder == "ASC"){
+$wtorder = "DESC";
+} else {
+$wtorder = "ASC";
+}
+}
+
+if($locorder == ""){
+$locorder = "ASC";
+} else { if($locorder == "ASC"){
+$locorder = "DESC";
+} else {
+$locorder = "ASC";
+}
+}	
+
+if($delayorder == ""){
+$delayorder = "ASC";
+} else { if($delayorder == "ASC"){
+$delayorder = "DESC";
+} else {
+$delayorder = "ASC";
+}
+}	
+?>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+function MM_preloadImages() { //v3.0
+ var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+   var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+   if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function fwLoadMenus() {
+  if (window.fw_menu_0) return;
+    window.fw_menu_0_1 = new Menu("Armor",88,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_1.addMenuItem("Arms","window.open('viewarmor.php?type=Arm', '_self');");
+    fw_menu_0_1.addMenuItem("Back","window.open('viewarmor.php?type=Back', '_self');");
+    fw_menu_0_1.addMenuItem("Chest","window.open('viewarmor.php?type=Chest', '_self');");
+    fw_menu_0_1.addMenuItem("Ears","window.open('viewarmor.php?type=Ear', '_self');");
+    fw_menu_0_1.addMenuItem("Face","window.open('viewarmor.php?type=Face', '_self');");
+    fw_menu_0_1.addMenuItem("Feet","window.open('viewarmor.php?type=Feet', '_self');");
+    fw_menu_0_1.addMenuItem("Fingers","window.open('viewarmor.php?type=Finger', '_self');");
+    fw_menu_0_1.addMenuItem("Hands","window.open('viewarmor.php?type=Hand', '_self');");
+    fw_menu_0_1.addMenuItem("Head","window.open('viewarmor.php?type=Head', '_self');");
+    fw_menu_0_1.addMenuItem("Legs","window.open('viewarmor.php?type=Leg', '_self');");
+    fw_menu_0_1.addMenuItem("Neck","window.open('viewarmor.php?type=Neck', '_self');");
+    fw_menu_0_1.addMenuItem("Shields","window.open('viewarmor.php?type=Shield', '_self');");
+    fw_menu_0_1.addMenuItem("Shoulders","window.open('viewarmor.php?type=Shoulder', '_self');");
+    fw_menu_0_1.addMenuItem("Waist","window.open('viewarmor.php?type=Waist', '_self');");
+    fw_menu_0_1.addMenuItem("Wrist","window.open('viewarmor.php?type=Wrist', '_self');");
+    fw_menu_0_1.addMenuItem("Search Armor","window.open('sharmorsrch.php', '_self');");
+    fw_menu_0_1.addMenuItem("Submit Armor","window.open('#', '_self');");
+     fw_menu_0_1.hideOnMouseOut=true;
+    window.fw_menu_0_2 = new Menu("Weapons",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_2.addMenuItem("Piercing","window.open('viewweapons.php?type=Piercing', '_self');");
+    fw_menu_0_2.addMenuItem("1H Slashing","window.open('viewweapons.php?type=1HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("1H Blunt","window.open('viewweapons.php?type=1HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("2H Slashing","window.open('viewweapons.php?type=2HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("2H Blunt","window.open('viewweapons.php?type=2HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("Ranged","window.open('viewweapons.php?type=Ranged', '_self');");
+    fw_menu_0_2.addMenuItem("Throwing","window.open('viewweapons.php?type=Throwing', '_self');");
+    fw_menu_0_2.addMenuItem("Search Weapons","window.open('shweaponssrch.php', '_self');");
+    fw_menu_0_2.addMenuItem("Submit Weapons","window.open('#', '_self');");
+     fw_menu_0_2.hideOnMouseOut=true;
+  window.fw_menu_0 = new Menu("root",75,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_0.addMenuItem(fw_menu_0_1);
+  fw_menu_0.addMenuItem(fw_menu_0_2);
+  fw_menu_0.addMenuItem("Misc. Items","window.open('shitemmisc.htm', '_self');");
+   fw_menu_0.hideOnMouseOut=true;
+   fw_menu_0.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_1_1 = new Menu("Rogue Skills",83,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_1.addMenuItem("Evade","window.open('shskillevade.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Disarm","window.open('shskilldisarm.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Poison","window.open('shskillpoison.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Locks","window.open('shskillplocks.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Pockets","window.open('shskillppockets.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Safefall","window.open('shskillsafefall.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Sneak / Hide","window.open('shskillsneakhide.htm', '_self');");
+     fw_menu_1_1.hideOnMouseOut=true;
+    window.fw_menu_1_2 = new Menu("Trade Skills",67,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_2.addMenuItem("Alchemy","window.open('shtskillalchemy', '_self');");
+    fw_menu_1_2.addMenuItem("Baking","window.open('shtskillbake.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Brewing","window.open('shtskillbrew.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Fletching","window.open('shtskillfletch.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Jewelry","window.open('shtskilljewel.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Pottery","window.open('shtskillpottery.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Smithing","window.open('shtskillsmith.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tailoring","window.open('shtskilltailor.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tinkering","window.open('shtskilltinker.htm', '_self');");
+     fw_menu_1_2.hideOnMouseOut=true;
+  window.fw_menu_1 = new Menu("root",81,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_1.addMenuItem(fw_menu_1_1);
+  fw_menu_1.addMenuItem(fw_menu_1_2);
+   fw_menu_1.hideOnMouseOut=true;
+   fw_menu_1.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_2_1 = new Menu("Epic Quests",108,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_2_1.addMenuItem("Rogue Epic Quest","window.open('shrogueepic.htm', '_self');");
+    fw_menu_2_1.addMenuItem("Other Epic Quests","window.open('shepic.htm', '_self');");
+     fw_menu_2_1.hideOnMouseOut=true;
+  window.fw_menu_2 = new Menu("root",95,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_2.addMenuItem("Rogue Quests","window.open('shroguequests.htm', '_self');");
+  fw_menu_2.addMenuItem("General Quests","window.open('shquests.htm', '_self');");
+  fw_menu_2.addMenuItem(fw_menu_2_1);
+   fw_menu_2.hideOnMouseOut=true;
+   fw_menu_2.childMenuIcon="../../images/nb/arrows.gif";
+  window.fw_menu_3 = new Menu("root",111,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_3.addMenuItem("Equipment Guides","window.open('shequipguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Rogue Guides","window.open('shrogueguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Zone Guides","window.open('shzoneguide.htm', '_self');");
+   fw_menu_3.hideOnMouseOut=true;
+  window.fw_menu_4 = new Menu("root",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_4.addMenuItem("Safehouse Art","window.open('shart.htm', '_self');");
+   fw_menu_4.hideOnMouseOut=true;
+
+  fw_menu_4.writeMenus();
+} // fwLoadMenus()
+
+//-->
+</script>
+<script language="JavaScript1.2" src="../../images/nb/fw_menu.js"></script>
+</head>
+<body bgcolor="#333333" text="#FFFFFF" link="#FFCC00" vlink="#FFCC00" alink="#FFCC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../../images/nb/shnb2-down.gif','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif','../../images/nb/shnb4-down.gif','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif','../../images/nb/shnb6-down.gif','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif','../../images/nb/shnb8-down.gif','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif','../../images/nb/shnb10-down.gif','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif')">
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" bgcolor="#CCCCCC">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <div align="center"></div>
+      <a name="top" onFocus="if(this.blur)this.blur()"></a><a href="../../ring/warden/RingWarden.shtml" target="_self" onFocus="if(this.blur)this.blur()"><img src="../../images/ring20.gif" width="20" height="20" border="0"></a> 
+      <p></p>
+      <p>&nbsp;</p>
+    </td>
+    <td bgcolor="#333333" bordercolor="#666666" width="685" align="left" valign="top"> 
+      <p align="center"> 
+        <script language="JavaScript1.2">fwLoadMenus();</script>
+      </p>
+      <table border="0" cellpadding="0" cellspacing="0" width="685">
+        <!-- fwtable fwsrc="shhornav1.png" fwbase="shnb.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="7" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+        </tr>
+        <tr> 
+          <td><img name="shnb1" src="../../images/nb/shnb1.gif" width="2" height="20" border="0"></td>
+          <td><a href="http://bloodmoon.net/showarmors.php3?type=feet" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_0,24,23);MM_nbGroup('over','shnb2','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb2','../../images/nb/shnb2-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb2" src="../../images/nb/shnb2.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb3" src="../../images/nb/shnb3.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_1,162,23);MM_nbGroup('over','shnb4','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb4','../../images/nb/shnb4-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb4" src="../../images/nb/shnb4.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb5" src="../../images/nb/shnb5.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_2,299,23);MM_nbGroup('over','shnb6','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb6','../../images/nb/shnb6-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb6" src="../../images/nb/shnb6.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb7" src="../../images/nb/shnb7.gif" width="7" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_3,435,23);MM_nbGroup('over','shnb8','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb8','../../images/nb/shnb8-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb8" src="../../images/nb/shnb8.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb9" src="../../images/nb/shnb9.gif" width="1" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_4,573,23);MM_nbGroup('over','shnb10','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb10','../../images/nb/shnb10-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb10" src="../../images/nb/shnb10.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb11" src="../../images/nb/shnb11.gif" width="2" height="20" border="0"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="20" border="0" name="undefined_2"></td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "shcontent" --> 
+      <p align="center">&nbsp;</p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b><font size="3">Coming 
+        Soon!!</font></b></font></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center"><font color="#FFCC00"><a href="#top" onFocus="if(this.blur)this.blur()">-top-</a></font></p>
+      <p align="center"> <font size="1" face="Arial, Helvetica, sans-serif">This 
+        page last updated on 
+        <!-- #BeginDate format:fcAm1a -->Sunday, April 29, 2001 1:44 PM<!-- #EndDate -->
+        </font><font size="1"> </font> </p>
+    </td>
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" height="45" align="left" valign="top"> 
+      <div align="center"> 
+        <p><font face="Arial, Helvetica, sans-serif" color="#FFCC00"><font size="2"><br>
+          SIte best viewed at 1024x768 or better</font><b><font size="1"><br>
+          </font></b><font size="1"> Painstakenly Optimized for IE 5.0 + and Netscape 
+          6.0 + |<b> Pants</b> optional | No Necros were harmed in the making 
+          of the site (yet)</font></font></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>

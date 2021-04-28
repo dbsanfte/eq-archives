@@ -20,7 +20,8 @@
 				</tr>
 				<tr> 
 					<td><IMG height=60 src="http://eq.crgaming.com/images/lframe.gif" width=9></td><!--do not break up line below or netscape dies-->
-					<td><!-- AdSpace size=468x60 affiliate=castersrealm channel=games subchannel=rpg Network=affiliates rating=g --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor="000000" scrolling=no src="http://ads2.crgaming.com/cgi-bin/AdServ32.dll?GetAdd&amp;region=2&burst=12345"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=castersrealm&channel=games&subchannel=rpg&Network=affiliates&rating=g"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=castersrealm&channel=games&subchannel=rpg&Network=affiliates&rating=g"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=castersrealm&channel=games&subchannel=rpg&Network=affiliates&rating=g" border=0></a></noscript></iframe><!-- /AdSpace --></td><td align=right><img src="http://eq.crgaming.com/images/rframe.gif" width="9" height="60"></td>
+					<td><!-- AdSpace size=468x60 affiliate=castersrealm channel=games subchannel=rpg Network=affiliates rating=g --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor="000000" scrolling=no src="http://ads2.crgaming.com/cgi-bin/AdServ32.dll?GetAdd&amp;region=2&burst=12345"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=castersrealm&channel=games&subchannel=rpg&Network=affiliates&rating=g"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=castersrealm&channel=games&subchannel=rpg&Network=affiliates&rating=g"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=castersrealm&channel=games&subchannel=rpg&Network=affiliates&rating=g" border=0></a></noscript></iframe><!-- /AdSpace --><!-- AdSpace size=1x1 affiliate=castersrealm channel=games subchannel=rpg Network=affiliates rating=g -->
+</td><td align=right><img src="http://eq.crgaming.com/images/rframe.gif" width="9" height="60"></td>
 				</tr>
 				<tr> 
 					<td width="486" height="24" colspan="3" background="http://eq.crgaming.com/images/shopbottomframe.gif" VALIGN="top" class="linkmenu" align="right"><a class="linkmenu" href="http://eq.crgaming.com">EQ</a><font color="#000000"> | </font><a  href="http://sb.crgaming.com" class="linkmenu">SB</a><font color="#000000"> |  </font><a  href="http://swg.crgaming.com" class="linkmenu">SWG</a><font color="#000000"> |  </font><a  href="http://daoc.crgaming.com" class="linkmenu">DAoC</a><font color="#000000"> | </font><a  href="http://jg.crgaming.com" class="linkmenu">JG</a><font color="#000000"> | </font><a  href="http://shop.crgaming.com" class="linkmenu">SHOP</a><font color="#000000"> | </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </td>
@@ -46,17 +47,17 @@
 				&nbsp;&nbsp;- <a class="menu" href="http://forums.crgaming.com/cgi-bin/eq/ultimatebb.cgi?action=intro&category=18&BypassCookie=true" target="_parent">Server Forums</a><br>
 				&nbsp;&nbsp;- <a class="menu" href="http://forums.crgaming.com/cgi-bin/eq/ultimatebb.cgi" target="_parent">EQ Forums</a><br>
 				<br></td></tr><TR><td class="header">&nbsp;&nbsp;Popular Areas</td></tr><tr><td class="menu">
-				&nbsp;&nbsp;- <a class="menu" href="/archetype"><b>AAXP Info</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/data/monsters.asp"><b>Beastiary</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/data/factions.asp"><b>Faction Lists</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/creationguides/skills"><b>Skill Caps</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/menu/spells.asp"><b>Spell Lists</b></a><br>
-				&nbsp;&nbsp;- <a class="menu" href="/tradeskills/tradeskills.asp"><b>Tradeskills</b></a><br>
+				&nbsp;&nbsp;- <a class="menu" href="/spells/sol.asp"><b>Luclin Spells</b></a><br>
+				&nbsp;&nbsp;- <a class="menu" href="/archetypes"><b>Luclin Skills</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/menu/resist.asp"><b>Resist Lists</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/players/editorials.asp" target="_parent"><b>Your Editorials</a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/players/stories.asp" target="_parent"><b>Your Stories</a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/data/maps.asp"><b>Zone Maps</b></a><br>
-				&nbsp;&nbsp;- <a class="menu" href="/data/zones.asp"><b>Zone Guides</b></a><br>
+				&nbsp;&nbsp;- <a class="menu" href="/tradeskills/tradeskills.asp"><b>Tradeskills</b></a><br>
 				&nbsp;&nbsp;- <a class="menu" href="/patches.asp"><b>Patch History</b></a><br>
 				<br></td></tr><TR><td class="header">&nbsp;&nbsp;Class Areas</td></tr><tr><td class="menu">
 				&nbsp;&nbsp;- <a class="menu" href="/menu/bard.asp" target="_parent">Bard</a><br>

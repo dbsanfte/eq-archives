@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>..:: EQBard : le site de Jonili le petit barde ::..</title>
+
+<SCRIPT LANGUAGE="Javascript">
+<!--
+function fenetre(intitule,params) { 
+var fen = window.open(intitule,'zoom',params); 
+}
+//-->
+</script>
+
+<style>
+a.lientexte {color:#0B5040;text-decoration:none;}
+a.lientexte:hover {color:#0B5040;text-decoration:underline;}
+</style>
+</head>
+
+<body bgcolor='#CFE6E3' text='#000000' link='#0B5040' vlink='#000000' alink='#000000'>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr><td>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr>
+<td width='680' align='right' valign='top'>
+<img src='./img/commun/c01/carre80.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre60.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>
+</td></tr>
+<tr><td height='2'><img src='./img/commun/transparent.gif' height='2' alt='' border='0'></td></tr>
+<tr><td width='680' height='1'><img src='./img/commun/c01/carre50.gif' width='680' height='1' alt='' border='0'></td></tr>
+</table>
+</td></tr><tr><td>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr><td width='120' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+<tr><td>
+<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=1&data=1 class=lientexte><b>Accueil</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Equipement</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=32&data=31&inc=armures class=lientexte>Armures</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=33&data=31&inc=armes&order=1&sens=1&bard=1 class=lientexte>Armes</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=35&data=31&inc=slot class=lientexte>Par slot</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Guides</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=41&data=41 class=lientexte>Général</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=42&data=42 class=lientexte>Tactiques</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carreselect.gif' width='5' height='5' border='0' alt=''>&nbsp;Quêtes<br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=44&data=44 class=lientexte>Zones</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=45&data=45 class=lientexte>Procs</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Photos</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=51&data=51 class=lientexte>Atlas</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=52&data=52 class=lientexte>Bardes</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=54&data=54 class=lientexte>GM</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=55&data=55 class=lientexte>Divers</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=8&data=8 class=lientexte><b>Mode</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Spells Sebilis</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1001&data=10 class=lientexte>Barde</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1002&data=10 class=lientexte>Belluaire</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1003&data=10 class=lientexte>Chaman</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1004&data=10 class=lientexte>Clerc</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1005&data=10 class=lientexte>Druide</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1006&data=10 class=lientexte>Enchanteur</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1007&data=10 class=lientexte>Fléau d'ombre</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1009&data=10 class=lientexte>Magicien</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1012&data=10 class=lientexte>Nécromancien</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1013&data=10 class=lientexte>Paladin</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1014&data=10 class=lientexte>Rôdeur</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=1015&data=10 class=lientexte>Sorcier</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=6&data=6 class=lientexte><b>Liens</b></a><br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=7&data=7 class=lientexte><b>Download</b></a><br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href='http://forumsfr.ubi.com/messages/overview.asp?name=eq_themaeq_eqbardes' target='_blank' class=lientexte><b>Forum</b></a><br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=mailto:jonili@eqbard.eqloft.com class=lientexte><b>M'écrire</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=9&data=9 class=lientexte><b>Backstage</b></a><br>&nbsp;<br></font></td></tr></table>
+</td><td width='20' valign='top'><img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre60.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre80.gif' width='10' height='10' border='0' alt=''>
+</td><td width='540' align='left' valign='top'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br><a href='index.php?menu=43&data=43 class=lientexte' class=lientexte><b>< Retour</b></a><br>&nbsp;<br><table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td colspan='2' bgcolor='#0B5040'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='white'><b>&nbsp;Composers armor</b></font></td></tr><tr><td width ='10'>&nbsp;</td><td><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+L'arrivée de Plane of Power est l'occasion pour les bardes de revétir une nouvelle armure...<br>
+Pas beaucoup d'informations pour le moment mais je cherche....
+<br>&nbsp;<br>
+Il faut aller dans Plane of Tranquility et parler à Bor Wharhammer. Je ne sais pas où il se trouve mais je vais chercher.
+<br>&nbsp;<br>
+Pour construire une pièce d'armure, il faut combiner un moule, un emblème, et un certain nombre, suivant la pièce d'armure, de Ethereal metal sheet.
+<br>&nbsp;<br>
+Pour obtenir l'emblème, il suffit de donner 500 pp à Bor. L'emblème est différent suivant la classe.
+<br>&nbsp;<br>
+Les moules se lootent sur les mobs... mais je ne sais pas lesquels encore....
+<br>&nbsp;<br>
+
+</font>&nbsp;<br></td></tr><tr><td colspan='2' bgcolor='#0B5040'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='white'><b>&nbsp;Ethereal metal sheet</b></font></td></tr><tr><td width ='10'>&nbsp;</td><td><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+Smithing, trivial à 220
+<ul>
+<li>Brick of Ethereal Energy (2) Dropped  
+<li>Ethereal Temper (1) (Brewing)
+<li>Tanaan Smithing Hammer (1)
+</ul>
+
+Brick of Ethereal Energy : se trouve sur plein de mobs.
+<br>&nbsp;<br>
+Tanaan Smithing Hammer : vendu par Tallis Paerk, un Wood elf, dans Plane of Knowledge (loc pos63 pos1380)
+<br>&nbsp;<br>
+
+</font>&nbsp;<br></td></tr><tr><td colspan='2' bgcolor='#0B5040'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='white'><b>&nbsp;Ethereal Temper</b></font></td></tr><tr><td width ='10'>&nbsp;</td><td><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+Brewing, trivial à 212
+<ul>
+<li>Celestial Essence (2)
+<li>Emerald Tea Leaf (1) 
+<li>Soda (1) 
+</ul>
+
+Emerald Tea Leaf : vendu par Sirekoth Eshe dans Plane of Knowledge (103, 280) 
+<br>&nbsp;<br>
+Soda : vendu par Caden Zharik dans Plane of Knowledge (-344, 756) 
+<br>&nbsp;<br>
+Cette recette nécessite obligatoirement un niveau minimum en brewing... A 201 en brewing, je ne peux pas la réaliser. Il faut utiliser le brew barrel de PoK pour que ca marche... bon... je monte mon skill brewing....
+<br>&nbsp;<br>
+
+
+</font>&nbsp;<br></td></tr><tr><td colspan='2' bgcolor='#0B5040'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='white'><b>&nbsp;Celestial Essence</b></font></td></tr><tr><td width ='10'>&nbsp;</td><td><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+Aucune compétence requise.
+<ul>
+<li>un composant de recherche (page de grimoire ou autre...)
+<li>Celestial solvent (1)
+<li>Mortar and pestle (container)
+</ul>
+
+Celestial solvent : dans ShadowHaven, vendu par Bargain Merchant, Sedaitam Cournsian (318, -82)
+<br>&nbsp;<br>
+Mortar and pestle : dans ShadowHaven, vendu par Ferusal (206, -44) 
+<br>&nbsp;<br>
+Le mieux est d'acheter plein de solvent, et de monter une petite expédition dans Charasis. Les composants de recherche pleuvent.....
+<br>&nbsp;<br>
+
+</font>&nbsp;<br></td></tr></table>&nbsp;<br></font></td></tr></table>
+</td></tr><tr><td>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr><td width='680' height='1'><img src='./img/commun/c01/carre50.gif' width='680' height='1' alt='' border='0'></td></tr>
+<tr><td height='2'><img src='./img/commun/transparent.gif' height='2' alt='' border='0'></td></tr>
+<tr>
+<td width='680' align='left' valign='top'>
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre60.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre80.gif' width='10' height='10' border='0' alt=''>
+</td></tr>
+</table>
+</td></tr><tr><td align='center'>
+<A target='_blank' href='http://www.eqloft.com/'><img src='./img/commun/hebergement.gif' width='122' height='31' border='0' alt=''></a></td></tr></table>
+
+</body>
+</html>

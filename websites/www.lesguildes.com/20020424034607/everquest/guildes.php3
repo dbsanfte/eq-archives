@@ -1,0 +1,1535 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+window.open('http://www.lesguildes.com/newsletter/insertion.htm','popup1','width=250,height=150,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbar=yes,resizable=yes')
+// -->
+</script>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>Les Guildes - (Everquest, Shadowbane, Anarchy Online et autres MMORPG)</title>
+		<link rel="stylesheet" href="../GeneratedItems/corps_texte.css">
+		<SCRIPT language=JavaScript>
+
+<!--
+ function fwLoadMenus() {
+if (window.fw_menu_0) return;
+
+window.fw_menu_6_1 = new Menu("Everquest",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_1.addMenuItem("News","location='../everquest/index.php3'");
+fw_menu_6_1.addMenuItem("Guildes","location='../everquest/guildes.php3'");
+fw_menu_6_1.addMenuItem("Le jeu","location='../everquest/jeu.php3'");
+fw_menu_6_1.addMenuItem("Dessins","location='../everquest/dessin.php3'");
+fw_menu_6_1.addMenuItem("Site officiel","location='http://everquest.station.sony.com/'");
+fw_menu_6_1.hideOnMouseOut=true;
+
+window.fw_menu_6_2 = new Menu("Asheron's Call",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_2.addMenuItem("News","location='../asheron/index.php3'");
+fw_menu_6_2.addMenuItem("Guildes","location='../asheron/guildes.php3'");
+fw_menu_6_2.addMenuItem("Le jeu","location='../asheron/jeu.php3'");
+fw_menu_6_2.addMenuItem("Site officiel","location='http://www.microsoft.com/games/zone/asheronscall/'");
+fw_menu_6_2.hideOnMouseOut=true;
+
+window.fw_menu_6_3 = new Menu("Anarchy Online",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_3.addMenuItem("News","location='../anarchy_online/index.php3'");
+fw_menu_6_3.addMenuItem("Guildes","location='../anarchy_online/guildes.php3'");
+fw_menu_6_3.addMenuItem("Le jeu","location='../anarchy_online/jeu.php3'");
+fw_menu_6_3.addMenuItem("Site officiel","location='http://www.anarchy-online.com/'");
+fw_menu_6_3.hideOnMouseOut=true;
+
+window.fw_menu_6_4 = new Menu("Dark Age of Camelot",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_4.addMenuItem("News","location='../dark_age_camelot/index.php3'");
+fw_menu_6_4.addMenuItem("Guildes","location='../dark_age_camelot/guildes.php3'");
+fw_menu_6_4.addMenuItem("Le jeu","location='../dark_age_camelot/jeu.php3'");
+fw_menu_6_4.addMenuItem("Site officiel","location='http://www.darkageofcamelot.com/'");
+fw_menu_6_4.addMenuItem("Site officiel fr","location='http://www.camelot-europe.com/'");
+fw_menu_6_4.hideOnMouseOut=true;
+
+window.fw_menu_6_5 = new Menu("La Quatrième Prophétie",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_5.addMenuItem("News","location='../t4c/index.php3'");
+fw_menu_6_5.addMenuItem("Guildes","location='../t4c/guildes.php3'");
+fw_menu_6_5.addMenuItem("Le jeu","location='../t4c/jeu.php3'");
+fw_menu_6_5.addMenuItem("Site officiel","location='http://prophetie.goa.com/'");
+fw_menu_6_5.hideOnMouseOut=true;
+
+window.fw_menu_6_6 = new Menu("Star Wars",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_6.addMenuItem("News","location='../star_wars_galaxies/index.php3'");
+fw_menu_6_6.addMenuItem("Guildes","location='../star_wars_galaxies/guildes.php3'");
+fw_menu_6_6.addMenuItem("Le jeu","location='../star_wars_galaxies/jeu.php3'");
+fw_menu_6_6.addMenuItem("Site officiel","location='http://starwarsgalaxies.station.sony.com/'");
+fw_menu_6_6.hideOnMouseOut=true;
+
+window.fw_menu_6_7 = new Menu("Shadowbane",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_7.addMenuItem("News","location='../shadowbane/index.php3'");
+fw_menu_6_7.addMenuItem("Guildes","location='../shadowbane/guildes.php3'");
+fw_menu_6_7.addMenuItem("Le jeu","location='../shadowbane/jeu.php3'");
+fw_menu_6_7.addMenuItem("Site officiel","location='http://www.shadowbane.com/'");
+fw_menu_6_7.addMenuItem("Site officiel Fr","location='http://shadowbane.swing-games.de/french/index.html'");
+fw_menu_6_7.hideOnMouseOut=true;
+
+window.fw_menu_6_8 = new Menu("Nuntiusvita",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_8.addMenuItem("News","location='../nuntiusvita/index.php3'");
+fw_menu_6_8.addMenuItem("Guildes","location='../nuntiusvita/guildes.php3'");
+fw_menu_6_8.addMenuItem("Le jeu","location='../nuntiusvita/jeu.php3'");
+fw_menu_6_8.addMenuItem("Site officiel","location='http://www.nuntiusvita.com/'");
+fw_menu_6_8.hideOnMouseOut=true;
+
+window.fw_menu_6_9 = new Menu("Horizons",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_9.addMenuItem("News","location='../horizons/index.php3'");
+fw_menu_6_9.addMenuItem("Guildes","location='../horizons/guildes.php3'");
+fw_menu_6_9.addMenuItem("Le jeu","location='../horizons/jeu.php3'");
+fw_menu_6_9.addMenuItem("Site officiel","location='http://www.artifact-entertainment.com/horizons/'");
+fw_menu_6_9.hideOnMouseOut=true;
+
+window.fw_menu_6_10 = new Menu("Neocron",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_10.addMenuItem("News","location='../neocron/index.php3'");
+fw_menu_6_10.addMenuItem("Guildes","location='../neocron/guildes.php3'");
+fw_menu_6_10.addMenuItem("Le jeu","location='../neocron/jeu.php3'");
+fw_menu_6_10.addMenuItem("Site officiel","location='http://www.neocron.com/'");
+fw_menu_6_10.hideOnMouseOut=true;
+
+window.fw_menu_6_11 = new Menu("Citizen Zero",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_11.addMenuItem("News","location='../citizen_zero/index.php3'");
+fw_menu_6_11.addMenuItem("Guildes","location='../citizen_zero/guildes.php3'");
+fw_menu_6_11.addMenuItem("Le jeu","location='../citizen_zero/jeu.php3'");
+fw_menu_6_11.addMenuItem("Site officiel","location='http://www.microforte.com.au/bigworld/'");
+fw_menu_6_11.hideOnMouseOut=true;
+
+window.fw_menu_6_12 = new Menu("World of Warcraft",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_12.addMenuItem("News","location='../worldofwarcraft/index.php3'");
+fw_menu_6_12.addMenuItem("Guildes","location='../worldofwarcraft/guildes.php3'");
+fw_menu_6_12.addMenuItem("Le jeu","location='../worldofwarcraft/jeu.php3'");
+fw_menu_6_12.addMenuItem("Site officiel","location='http://www.blizzard.fr/wow/'");
+fw_menu_6_12.hideOnMouseOut=true;
+
+window.fw_menu_6_13 = new Menu("Atriarch",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_13.addMenuItem("News","location='../atriarch/index.php3'");
+fw_menu_6_13.addMenuItem("Guildes","location='../atriarch/guildes.php3'");
+fw_menu_6_13.addMenuItem("Le jeu","location='../atriarch/jeu.php3'");
+fw_menu_6_13.addMenuItem("Site officiel","location='http://www.atriarch.com/'");
+fw_menu_6_13.hideOnMouseOut=true;
+
+window.fw_menu_6_14 = new Menu("Asheron's Call 2",90,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6_14.addMenuItem("News","location='../asheron2/index.php3'");
+fw_menu_6_14.addMenuItem("Guildes","location='../asheron2/guildes.php3'");
+fw_menu_6_14.addMenuItem("Le jeu","location='../asheron2/jeu.php3'");
+fw_menu_6_14.addMenuItem("Site officiel","location='http://www.microsoft.com/games/zone/asheronscall/ac_the_sequel.asp'");
+fw_menu_6_14.hideOnMouseOut=true;
+
+window.fw_menu_6 = new Menu("root",170,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_6.addMenuItem(fw_menu_6_3);
+fw_menu_6.addMenuItem(fw_menu_6_2);
+fw_menu_6.addMenuItem(fw_menu_6_14);
+fw_menu_6.addMenuItem(fw_menu_6_13);
+fw_menu_6.addMenuItem(fw_menu_6_11);
+fw_menu_6.addMenuItem(fw_menu_6_4);
+fw_menu_6.addMenuItem(fw_menu_6_1);
+fw_menu_6.addMenuItem(fw_menu_6_9);
+fw_menu_6.addMenuItem(fw_menu_6_5);
+fw_menu_6.addMenuItem(fw_menu_6_10);
+fw_menu_6.addMenuItem(fw_menu_6_8);
+fw_menu_6.addMenuItem(fw_menu_6_7);
+fw_menu_6.addMenuItem(fw_menu_6_6);
+fw_menu_6.addMenuItem(fw_menu_6_12);
+fw_menu_6.hideOnMouseOut=true;
+fw_menu_6.childMenuIcon="../images/image_menu_arrows.gif";
+
+window.fw_menu_7_1 = new Menu("Sorti : MERIDIAN 59",160,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_7_1.addMenuItem("Programme gratuit","location='http://www.meridian59.ru/'");
+fw_menu_7_1.addMenuItem("Serveur gratuit","location='http://m59.safaridog.net/'");
+fw_menu_7_1.addMenuItem("Site officiel","location='http://meridian59.neardeathstudios.com/'");
+fw_menu_7_1.hideOnMouseOut=true;
+
+window.fw_menu_7 = new Menu("root",190,17,"Verdana, Arial, Helvetica, sans-serif",10,"#f89c7e","#000000","#000000","#f77979");
+fw_menu_7.addMenuItem("Sorti : ASTONIA 3","location='http://www.astonia.com/'");
+fw_menu_7.addMenuItem("Sorti : EVERNIGHT","location='http://evernight.vr1.com/'");
+fw_menu_7.addMenuItem("Sorti : THE LEGEND OF MIR","location='http://www.legendofmir.net/'");
+fw_menu_7.addMenuItem("Sorti : ULTIMA ONLINE","location='http://www.uo.com/'");
+fw_menu_7.addMenuItem("Sorti : WAR 3 ONLINE","location='http://www.wwiionline.com/'");
+fw_menu_7.addMenuItem(fw_menu_7_1);
+fw_menu_7.addMenuItem("","");
+fw_menu_7.addMenuItem("Sorti : TAUPEDELIRE - FR","location='http://www.taupedelire.fr.fm/'");
+fw_menu_7.addMenuItem("CYBERIALIS - FR","location='http://www.cyberialis.com/'");
+fw_menu_7.addMenuItem("MILCIS - FR","location='http://www.milcis.net/'");
+fw_menu_7.addMenuItem("","");
+fw_menu_7.addMenuItem("A TALE IN THE DESERT","location='http://www.ataleinthedesert.com/'");
+fw_menu_7.addMenuItem("ARCANITY","location='http://www.brickhousetrading.com/'");
+fw_menu_7.addMenuItem("ARCHAEAN","location='http://www.archaean.com/'");
+fw_menu_7.addMenuItem("BEYOND 3000","location='http://www.beyond3000.de/'");
+fw_menu_7.addMenuItem("BLACK MOON","location='http://www.blackmoon-online.com/'");
+fw_menu_7.addMenuItem("CITY OF HEROES","location='http://www.cityofheroes.com/'");
+fw_menu_7.addMenuItem("DARKFALL ONLINE","location='http://www.darkfallonline.com/'");
+fw_menu_7.addMenuItem("DAWN","location='http://www.glitchless.com/dawn.html/'");
+fw_menu_7.addMenuItem("DRAGON EMPIRES","location='http://www.codemasters.com/dragonempires/front.htm'");
+fw_menu_7.addMenuItem("DUNE GENERATIONS","location='http://www.dunegenerations.com/'");
+fw_menu_7.addMenuItem("EARTH AND BEYOND","location='http://ebweb.westwood.ea.com/'");
+fw_menu_7.addMenuItem("EVE ONLINE","location='http://www.eve-online.com/'");
+fw_menu_7.addMenuItem("GATOR HOLE","location='http://gatorhole.com/worldeater/'");
+fw_menu_7.addMenuItem("GLADIUS ONLINE","location='http://www.gladius-online.com/'");
+fw_menu_7.addMenuItem("GRIMM FATE","location='http://www.charrgrimmfate.com/'");
+fw_menu_7.addMenuItem("LA PRISION","location='http://www.laprision.com/'");
+fw_menu_7.addMenuItem("MIDGARD","location='http://www.worldofmidgard.com/'");
+fw_menu_7.addMenuItem("MOTOR CITY ONLINE","location='http://mco.ea.com/'");
+fw_menu_7.addMenuItem("NEVERWINTER NIGHTS","location='http://www.neverwinternights.com/'");
+fw_menu_7.addMenuItem("PLANETSIDE","location='http://www.station.sony.com/planetside/'");
+fw_menu_7.addMenuItem("PROJECT ENTROPIA","location='http://www.project-entropia.com/'");
+fw_menu_7.addMenuItem("STABAT MATER","location='http://www.stabatmater.com/'");
+fw_menu_7.addMenuItem("ULTIMA 1 : A Legend is Reborn","location='http://www.peroxide.dk/ultima/'");
+fw_menu_7.addMenuItem("WARHAMMER ONLINE","location='http://www.warhammeronline.com/'");
+fw_menu_7.childMenuIcon="../images/image_menu_arrows.gif";
+fw_menu_7.writeMenus();
+}
+
+// fwLoadMenus()
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript1.2 src="../GeneratedItems/fw_menu.js"></SCRIPT>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+if (document.images) {
+  image1on = new Image();
+  image1on.src = "../images/bouton_news_on.gif";
+  image2on = new Image();
+  image2on.src = "../images/bouton_guilde_on.gif";
+  image3on = new Image();
+  image3on.src = "../images/bouton_jeu_on.gif";
+  image8on = new Image();
+  image8on.src = "../images/bouton_dessin_on.gif";
+
+  image1off = new Image();
+  image1off.src = "../images/bouton_news_off.gif";
+  image2off = new Image();
+  image2off.src = "../images/bouton_guilde_off.gif";
+  image3off = new Image();
+  image3off.src = "../images/bouton_jeu_off.gif";
+  image8off = new Image();
+  image8off.src = "../images/bouton_dessin_off.gif";
+}
+
+function changeImages() {
+  if (document.images) {
+    for (var i=0; i<changeImages.arguments.length; i+=2) {
+      document[changeImages.arguments[i]].src = eval(changeImages.arguments[i+1] + ".src");
+    }
+  }
+}
+
+function ouvre(url_image,largeur,hauteur){
+
+	today = new Date();
+	var bigNumber = today.getSeconds() * today.getTime() * Math.sqrt(today.getMinutes()); 
+	var randomNum = Math.floor((bigNumber % 100000) + 1);
+
+	var dest='images/'+url_image;
+	
+	largeur= largeur + 36;
+	hauteur= hauteur + 30;
+
+	window.open (dest, randomNum, 'scrollbars=yes,status=no,width='+largeur+',height='+hauteur+',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbar=yes,resizable=yes');
+}
+//-->
+</script>	</head>
+
+	<body background="../images/fond.jpg" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" text="#f89c7e" link="#f77979" alink="#f77979" vlink="#f89c7e">
+		<table border="0" cellpadding="0" cellspacing="0" width="740">
+			<tr height="129">
+				<td rowspan="2" valign="top"><SCRIPT language=JavaScript1.2>fwLoadMenus();</SCRIPT>
+
+<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><img src="../images/gargouille_g.gif" width="104" height="154" border="0"></td>
+		</tr>
+		<tr>
+			<td><a href="index.php3" onmouseover="changeImages('image1', 'image1on'); self.status='Les News'; return true" onmouseout="changeImages('image1', 'image1off'); self.status=''; return true"><img src="../images/bouton_news_off.gif" width="104" height="30" name="image1" border="0" alt="Les News"></a></td>
+		</tr>
+		<tr>
+			<td><a href="guildes.php3" onmouseover="changeImages('image2', 'image2on'); self.status='Les Guildes'; return true" onmouseout="changeImages('image2', 'image2off'); self.status=''; return true"><img src="../images/bouton_guilde_off.gif" width="104" height="31" name="image2" border="0" alt="Les Guildes"></a></td>
+		</tr>
+		<tr>
+			<td><a href="jeu.php3" onmouseover="changeImages('image3', 'image3on'); self.status='Le jeu'; return true" onmouseout="changeImages('image3', 'image3off'); self.status=''; return true"><img src="../images/bouton_jeu_off.gif" width="104" height="31" name="image3" border="0" alt="Le jeu"></a></td>
+		</tr>
+		<tr>
+			<td><a href="dessin.php3" onmouseover="changeImages('image8', 'image8on'); self.status='Les dessins de Grumf'; return true" onmouseout="changeImages('image8', 'image8off'); self.status=''; return true"><img src="../images/bouton_dessin_off.gif" width="104" height="30" name="image8" border="0" alt="Les dessins de Grumf"></a></td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" width="90" cellpadding="0" cellspacing="0">
+				<tr><td><hr width="70%" size="1" noshade color="#f77979"></td></tr>
+				<tr>
+					<td align="center"><a href="#" onmouseover=window.FW_showMenu(window.fw_menu_6,104,160); onmouseout=FW_startTimeout();>Plan du site</a></td>
+				</tr>
+				<tr><td><hr width="70%" size="1" noshade color="#f77979"></td></tr>
+				<tr>
+					<td align="center"><a href="#" target="_blank" onmouseover=window.FW_showMenu(window.fw_menu_7,104,0); onmouseout=FW_startTimeout();>A suivre</a></td>
+				</tr>
+				<tr><td><hr width="70%" size="1" noshade color="#f77979"></td></tr>
+				<tr>
+					<td align="center"><a href="../message_public/news.php3?jeu=Everquest">Publier<br>une news</a></td>
+				</tr>
+				<tr><td><hr width="70%" size="1" noshade color="#f77979"></td></tr>
+				<tr>
+					<td align="center"><a href="../message_public/index.php3?jeu=Everquest">Ajouter<br>une guilde</a></td>
+				</tr>
+				<tr><td><hr width="70%" size="1" noshade color="#f77979"></td></tr>
+				<tr>
+					<td align="center"><a href="/newsletter/insertion.htm" target="popup1" onclick="window.open('','popup1','width=240,height=190,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbar=yes,resizable=yes')" title="Inscription newsletter">Newsletter</a></td>
+				</tr>
+				<tr><td><hr width="70%" size="1" noshade color="#f77979"></td></tr>
+				<tr>
+					<td align="center"><a href="mailto:toro@lesguildes.com">Contact</a></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="../images/rosacebg.gif" width="104" height="62" border="0"></td>
+		</tr>
+</table></td>
+				<td height="129" valign="top" align="center">
+					<div align="center">
+						<img src="../images/titre_everquest.gif" width="426" height="134" border="0">
+					</div>
+				</td>
+				<td rowspan="2" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td><img src="../images/gargouille_d.gif" width="117" height="170" border="0"></td>
+						</tr>
+						<tr>
+							<td>
+								<div align="right">
+									<table border="0" cellpadding="0" cellspacing="0" width="90">
+										<tr>
+											<td align="center"><span class="class"><a href="#" onclick="window.open('/newsletter/insertion.htm','popup2','width=240,height=190,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbar=yes,resizable=yes')">Newsletter</a></span></td>
+										</tr>
+										<tr>
+											<td align="center"></td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><img src="../images/vitrail1.gif" width="117" height="189" border="0"></td>
+						</tr>
+						<tr>
+							<td><img src="../images/rosacebd.gif" width="117" height="62" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top">
+								<p class="class"><span class="class"><img src="../images/letrine_n.gif" width="29" height="34" border="0" align="left">otre nouvelle liste des guildes d'Everquest. Et cette fois-ci, plus de limitation &agrave; Karana, tout le monde est invit&eacute; &agrave; faire connaitre sa guilde.</span>&nbsp;Si vous n'&ecirc;tes pas pr&eacute;sent  cliquez <a href="../message_public/index.php3?jeu=Everquest">ICI</a>. Si vous voulez ajouter un [détail] à votre guilde, <a href="mailto:messager@lesguildes.com">contactez-nous</a>.</p>
+								<div align="center">
+									<table border="0" cellpadding="5" cellspacing="1">
+										<tr>
+											<td colspan="5" bgcolor="#404040">
+												<center>
+													<p><span class="class">LISTE DES GUILDES&nbsp;</span></p>
+												</center>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" bgcolor="#303030"><span class="class">Serveur<br>
+												</span><font size="1">[<a href="guildes.php3?tri=serveur">tri par serveur</a>]</font></td>
+											<td valign="top" bgcolor="#303030">
+												<div align="center">
+													<span class="class">Nom<br>
+													</span><font size="1">[<a href="guildes.php3?tri=nom_guilde">tri par nom</a>]</font></div>
+											</td>
+											<td valign="top" bgcolor="#303030">
+												<div align="center">
+													<span class="class">Site</span></div>
+											</td>
+											<td valign="top" bgcolor="#303030">
+												<div align="center">
+													<span class="class">Forum</span></div>
+											</td>
+											<td valign="top" bgcolor="#303030">
+												<div align="center">
+													<span class="class">Mise &agrave; jour</span><br>
+													<font size="1">[<a href="guildes.php3?tri=date_maj&desc=desc">tri par MAJ</a>]</font></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Antonius Bayle</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=33'>Justice Divine</a></span></td>
+											<td><span class="class"><a href='http://www.justice-divine.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.justice-divine.com/cgi-bin/ikonboard/ikonboard.cgi' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">15-11-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Antonius Bayle</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=354'>Seigneurs de Guerre</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://eqsg.fr.st' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.multimania.com/eqsg/phpbb/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Ayonae Ro</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=18'>Barons (Les )</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Ayonae Ro</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=94'>Neuvieme Cercle (Le)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://9emecercle.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub34.ezboard.com/ble9ecercle6767' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">29-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Ayonae Ro</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=162'>Ordre des Corsaires</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://eqcorsaires.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub23.ezboard.com/focl44946frm1' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">01-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Bertoxxulous</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=82'>Garde Norrathienne (La)</a></span></td>
+											<td><span class="class"><a href='http://respublica.fr/gardenorrathienne' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub58.ezboard.com/beverquest54269' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Bertoxxulous</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=185'>Meute (La )</a></span></td>
+											<td><span class="class"><a href='http://meute.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.multiform.net/iform_sans.asp?iform=ID7602&lg=FR' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Bristlebane</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=316'>Compagnie errante (La )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://compagnie.neyrick.org' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://compagnie.neyrick.org/forum/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">14-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Drinal</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=218'>Cercle Interdit (Le )</a></span></td>
+											<td><span class="class"><a href='http://www.lecercleinterdit.homestead.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://network54.com/Hide/Forum/107107' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Druzzil Ro</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=177'>Tundra Wolves</a></span></td>
+											<td><span class="class"><a href='http://www.angelfire.com/games2/tundrawolves' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub9.ezboard.com/btundrawolves' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">03-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Druzzil Ro</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=79'>X'Agon</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://xagon.eqloft.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/forum.php?id=40&id2=40' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">28-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Erollisi Marr</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=179'>Irréductibles (Les )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://irreductibles.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">01-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Fennin Ro</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=102'>Honos Bonitas</a></span></td>
+											<td><span class="class"><a href='http://www.chez.com/templiersconflitsimpies/eq/pages/tci_eq.htm' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub26.ezboard.com/btempliersconflitsimpies' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Innoruuk</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=78'>Fleur de Lys (La)</a></span></td>
+											<td><span class="class"><a href='http://lafleurdelys.dhs.org' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://lafleurdelys.dhs.org/forum.htm' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">01-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=9'>Aargh</a></span></td>
+											<td><span class="class"><a href='http://www.guildeaargh.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://server3.ezboard.com/beverquest28907' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=3'>Académie (L')</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.academie-eq.org' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub65.ezboard.com/bacademie63919' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">15-02-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=5'>Alliance (L')</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://eqlalliance.free.fr' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub37.ezboard.com/blalliance46206' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">03-04-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=7'>Alliance des Seigneurs (L')</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.seigneurs.org/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.seigneurs.org/cgi-bin/dcf6/dcboard.cgi?az=list&forum=DCForumID1&archive=' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-02-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=215'>Amadeus Mortem</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://perso.wanadoo.fr/amadeusmortem' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub39.ezboard.com/bshiroscorporation51336' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">07-11-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=11'>Amethyst</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"><a href='http://pub14.ezboard.com/bamethyst84845' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=12'>Archanges (Les)</a></span></td>
+											<td><span class="class"><a href='http://archanges.multimania.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub25.ezboard.com/barchanges' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">01-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=61'>Archanges de Mariavel (Les)</a></span></td>
+											<td><span class="class"><a href='http://www.chez.com/ladm' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub49.ezboard.com/blesarchangesdemariavel' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=14'>Armonia</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://home.capp.ch/sab/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub21.ezboard.com/barmonia' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=15'>Arrakis</a></span></td>
+											<td><span class="class"><a href='http://everarrakis.free.fr' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub54.ezboard.com/beqarrakis' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">27-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=204'>Avatars du chaos (Les )</a></span></td>
+											<td><span class="class"><a href='http://www.ladc.free.fr' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.ladc.free.fr/forum/index.php3' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">23-08-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=20'>Cercle d'acier (Le)</a></span></td>
+											<td><span class="class"><a href='http://lecercledacier.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub23.ezboard.com/blecercledacier5670' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=70'>Cercle Spectral (Le)</a></span></td>
+											<td><span class="class"><a href='http://www.multimania.com/lcs2001/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub30.ezboard.com/btyrause' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">05-10-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=23'>Compagnie (La)</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">19-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=313'>Confrerie du Tonnerre</a></b> [detail]</span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"><a href='http://pub49.ezboard.com/btonnerre49545' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-12-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=67'>Créateurs de Légendes (Les)</a></span></td>
+											<td><span class="class"><a href='http://www.chez.com/lcdl/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub48.ezboard.com/blescreateurs' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=63'>Dragon d'Argent (Le)</a></span></td>
+											<td><span class="class"><a href='http://griffesn.multimania.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub86.ezboard.com/bgriffesdenorrath' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-11-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=26'>Drôle de Dames </a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.marie-marine.com/ddd/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub24.ezboard.com/bdrolesdedames' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=60'>Eelshon SheEvid</a></span></td>
+											<td><span class="class"><a href='http://eelshonsheevid.kano-net.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub61.ezboard.com/braiders60347' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=231'>Elysee</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"><a href='http://guildelysee.free.fr' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">12-04-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=171'>Esprit Noir (L')</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.pcfuturis.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub18.ezboard.com/bespritnoir' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">25-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=28'>Exécuteurs</a></span></td>
+											<td><span class="class"><a href='http://airflith.dyndns.org/executeurs' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://airflith.dyndns.org/forums' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">11-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=30'>Génération perdue</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">19-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=53'>Guilde des Templiers (La )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.playnetweb.net/Guildedestempliers.htm' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub6.ezboard.com/blestempliersdeverquest' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">14-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=31'>Guilde du temps</a></span></td>
+											<td><span class="class"><a href='http://www.ifrance.com/evertemps/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub36.ezboard.com/bguildedutemps' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">19-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=230'>Heritage</a></span></td>
+											<td><span class="class"><a href='http://www.guilde-heritage.net' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub96.ezboard.com/bheritage50636' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">21-10-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=312'>Hydre Noire (L')</a></span></td>
+											<td><span class="class"><a href='http://hydrenoire.fr.st' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.yagi.ch/phpBB' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">24-12-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=34'>Lance dragon</a></span></td>
+											<td><span class="class"><a href='http://www.lance-dragon.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.lance-dragon.com/cgi-bin/ikonboard/ikonboard.cgi' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">21-02-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=213'>Larmes du Dragon (les)</a></span></td>
+											<td><span class="class"><a href='http://larmesdudragon.multimania.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://larmesdudragon.multimania.com/forum/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">06-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=35'>Légende celte</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://legendecelte.cjb.net/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub6.ezboard.com/blegendecelte58780' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">06-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=36'>Légion des Dragons</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www3.sympatico.ca/urak' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://network54.com/Forum/21915' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">19-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=214'>Légion Ecarlate (la)</a></span></td>
+											<td><span class="class"><a href='http://www.sanglante.fr.st' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://legionecarlate.multimania.com/xmb/index.php' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">09-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=133'>Lex Tenebrae</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.univercell.fr/LexTenebrae/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.univercell.fr/LexTenebrae/forum/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">23-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=297'>Lost Tribes</a></span></td>
+											<td><span class="class"><a href='http://Lost-Tribes.ifrance.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub33.ezboard.com/blosttribes' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-02-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=251'>Lys Noir</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.lysnoir.t2u.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub36.ezboard.com/blaguildedulysnoir' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">24-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=232'>Maelstroms </a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"><a href='http://pub101.ezboard.com/bmaelstroms' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">16-10-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=38'>Mort subite</a></span></td>
+											<td><span class="class"><a href='http://www.chez.com/mortsubite/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub14.ezboard.com/bmortsubite' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=40'>Navigateurs (Les)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.meyerjc.com/guild/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.meyerjc.com/bbs/guild/indexguild.sht' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">03-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=41'>Neo babylon</a></span></td>
+											<td><span class="class"><a href='http://www.ifrance.com/neobabylon/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub34.ezboard.com/bbabylonelaneuve' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=211'>North Militia</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://northmilitia.fr.st' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub57.ezboard.com/fnorthmilitiafrm1' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">15-02-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=250'>Novae</a></span></td>
+											<td><span class="class"><a href='http://eqnovae.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">15-11-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=350'>Novae</a></span></td>
+											<td><span class="class"><a href='http://novae.dhs.org' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://novae.dhs.org/forum' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">22-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=343'>Odyssee</a></span></td>
+											<td><span class="class"><a href='http://www.ifrance.com/evertemps' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub59.ezboard.com/bodyssee85753' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-03-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=43'>Ordre de la lune noire (L')</a></span></td>
+											<td><span class="class"><a href='http://www.lune-noire.net/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://forums.lune-noire.net/cgi/bbs/index.php?action=forums' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">15-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=255'>Orphans of doom</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.multimania.com/wades' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub23.ezboard.com/bkermitsection' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-12-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=48'>Poils aux pattes</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://PoilsAuxPattes.citeglobe.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub17.ezboard.com/bpoilsauxpattes47579' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">22-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=65'>Pouvoir du Phoenix (Le)</a></span></td>
+											<td><span class="class"><a href='http://www.multimania.com/pouvoirduphoenix' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub33.ezboard.com/blepouvoirduphoenix' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=49'>Princes de Sarnar (Les)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://webhome.infonie.fr/valandar/sarnar/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.netbabbler.com/goto/?forumid=16639' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">23-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=66'>Ptites Jambes (Les)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://ptitesjambes.cjb.net/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub36.ezboard.com/blesptitesjambes' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">24-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=356'>Sanctuaire</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.sanctuaire.firstream.net/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.sanctuaire.firstream.net/forum/index.php' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">29-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=104'>Satori</a></span></td>
+											<td><span class="class"><a href='http://www.satori.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.kaosnuke.f2s.com/forum/index.php' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=64'>Seigneurs de guerre (Les)</a></span></td>
+											<td><span class="class"><a href='http://www.chez.com/lesseigneursdeguerre/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub48.ezboard.com/blesseigneursdeguerre' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=51'>Seigneurs de l'ombre </a></span></td>
+											<td><span class="class"><a href='http://seigneurs.de.l.ombre.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub22.ezboard.com/blesseigneursdelombre' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=52'>Serviteurs de Karana (Les)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://lessdk.free.fr' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub57.ezboard.com/blesserviteursdekarana12530' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">05-03-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=389'>Tombeau des Dieux (Le )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.3fi.com/everquest/ltdd' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub31.ezboard.com/bletombeaudesdieux' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">04-03-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=55'>Triskell</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.triskell.ch' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://forum.ehhb.ch/phpBB/index.php?viewcat=3' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Karana</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=57'>Voix de l'amour (Les)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://lesvoixdelamour.eqloft.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/indexx.php?k=7' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Lanys T</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=88'>Cercle Eternel</a></span></td>
+											<td><span class="class"><a href='http://www.cercle-eternel.fr.fm/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub66.ezboard.com/beverquestguilde' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">07-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Lanys T</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=191'>Venatoris Tenebrae</a></span></td>
+											<td><span class="class"><a href='http://www.ligue-kbr.com/venatoris-tenebrae/introevq.htm' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.ligue-kbr.com/cgi-bin/dcforum/dcboard.cgi' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">29-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Luclin</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=365'>Collecte du Diable (La )</a></b> [detail]</span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">04-02-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Mithaniel Marr</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=219'>Fleurs de Lys (La )</a></span></td>
+											<td><span class="class"><a href='http://www.multimania.com/eqfleurdelys/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/board.php?id=346' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-10-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Mithaniel Marr</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=92'>Korrigans (Les)</a></span></td>
+											<td><span class="class"><a href='http://leskorrigans.net/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub10.ezboard.com/bleskorrigans' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-12-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=134'>Compagnons de l'Aube</a></span></td>
+											<td><span class="class"><a href='http://eqcompagnons.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub55.ezboard.com/bcompagnons' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=93'>Elven Corporation</a></span></td>
+											<td><span class="class"><a href='http://elven.corporation.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub19.ezboard.com/belvencorporation' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=137'>Envol du Phoenix (L')</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.chez.com/envolduphoenix/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub101.ezboard.com/blenvolduphoenix' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">14-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=135'>Faucheurs Noirs (Les )</a></span></td>
+											<td><span class="class"><a href='http://faucheursnoirs.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub55.ezboard.com/bfaucheursnoirs53954' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=96'>Gardiens de Norrath</a></span></td>
+											<td><span class="class"><a href='http://eqgardiens.eqloft.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub83.ezboard.com/blesgardiensdenorrath ' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">28-11-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=83'>Ménestrels </a></b> [detail]</span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"><a href='http://pub59.ezboard.com/bmenestrels' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=136'>Ombres et Lumières</a></span></td>
+											<td><span class="class"><a href='http://eqo.l.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub56.ezboard.com/bombreslumieres80360' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=139'>Ordre du Dragon (L')</a></span></td>
+											<td><span class="class"><a href='http://www.multimania.com/dragoneq' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub101.ezboard.com/bordredudragon24118' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">17-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Morell-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=138'>Pandore</a></span></td>
+											<td><span class="class"><a href='http://eqpandore.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub84.ezboard.com/bpandore27695' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Povar</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=89'>Massilia Compagnons</a></span></td>
+											<td><span class="class"><a href='http://www.citeweb.com/massilia' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://iform.iftouch.net/centreListeMsg.asp?lg=FR&iform=ID649' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Prexus</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=101'>Alliance de l'ordre (L')</a></span></td>
+											<td><span class="class"><a href='http://www.prexus.com/cercledespatriotes/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub33.ezboard.com/fcdp85191frm1' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Rallos Zek </span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=196'>Indésirables (Les )</a></span></td>
+											<td><span class="class"><a href='http://www.indesirables.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.multiform.net/iform.asp?iform=ID20564' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">06-04-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Rodcet Nife</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=100'>Divine Froggies (The)</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.mo5.com/nautes/eq/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.mo5.com/nautes/eq/m_post.htm' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">24-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Saryrn</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=181'>Maitre du temps</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">13-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Solusek Ro</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=85'>Anges déchus (Les)</a></span></td>
+											<td><span class="class"><a href='http://fly.to/anges' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub57.ezboard.com/blesangesdechus' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">25-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Solusek Ro</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=173'>Lords of the Zodiac</a></span></td>
+											<td><span class="class"><a href='http://www.lords-zodiac.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub12.ezboard.com/blordsofthezodiac' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Sullon Zek</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=184'>Keltiex</a></span></td>
+											<td><span class="class"><a href='http://keltiex.eqloft.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://forums.ubisoft.fr/forums/board.php?id=242' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Sullon Zek</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=203'>Night lords</a></span></td>
+											<td><span class="class"><a href='http://nightlords.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/indexx.php?k=215' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">09-08-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Sullon Zek</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=186'>Seigneurs Gris (Les )</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/communaute/bayle/description.html' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/forum.php?id=147&id2=169' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-08-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Tallon Zek </span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=154'>Chevaliers Du Crépuscule (Les )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://cdcrepuscule.multimania.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub66.ezboard.com/bchevalierducrepuscule' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Tallon Zek </span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=169'>Guides de la lumière (Les )</a></span></td>
+											<td><span class="class"><a href='http://www.lesguidesdelalumiere.fr.fm/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub70.ezboard.com/blesguidesdelalumiere53365' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">22-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Tarew Marr</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=103'>Seigneurs de la Lune Noire</a></span></td>
+											<td><span class="class"><a href='http://eqseigneurs.multimania.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://forums.multimania.fr/lire/eqseigneurs/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Terris-Thule</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=209'>Legacy of Justice</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Terris-Thule</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=81'>Ordre du Phoénix (L')</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://phoenix.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub61.ezboard.com/blordreduphoenix' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">11-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Terris-Thule</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=165'>Witchaven</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://student.ulb.ac.be/~fcharlie/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub74.ezboard.com/bwitchaven12822' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">21-08-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">The Nameless</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=95'>Confrerie de Norrath (La)</a></span></td>
+											<td><span class="class"><a href='http://www.laconf.net/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub3.ezboard.com/blaconfreriedenorrath' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">22-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">The Seventh Hammer</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=98'>Fraternité de Norrath  (La )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://lafraternite.gameloft.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/forum.php?id=28&id2=28' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">25-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">The Tribunal</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=99'>Horde (La)</a></span></td>
+											<td><span class="class"><a href='http://www.citeweb.com/lahorde/cadre.html' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub26.ezboard.com/blahorde2892' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">20-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">The Tribunal</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=172'>Ombres et Lumiere</a></span></td>
+											<td><span class="class"><a href='http://leselus.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub63.ezboard.com/bombresetlumiere' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">27-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">The Tribunal</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=90'>Xenopus Eternae</a></span></td>
+											<td><span class="class"><a href='http://www.xenopus.fr.fm' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub97.ezboard.com/bxenopuseternae' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">30-12-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">The Tribunal</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=222'>ZinZins (Les )</a></span></td>
+											<td><span class="class"><a href='http://zinzins.eqloft.com' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub96.ezboard.com/bleszinzins' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">15-10-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Tunare</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=187'>Equinoxe</a></span></td>
+											<td><span class="class"></span></td>
+											<td><span class="class"><a href='http://pub56.ezboard.com/bequinoxe' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-07-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Vallon Zek</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=72'>Alliance de Faydwer (L')</a></span></td>
+											<td><span class="class"><a href='http://hebola.free.fr/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.webstore.fr/webabonnes/eq/forum/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">02-09-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Vallon Zek</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=144'>Horde des Damnés (La )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://lahorde.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/forum.php?id=31&id2=31' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">01-11-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Vallon Zek</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=258'>Nouvelle alliance (La )</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.multimania.com/sanctuairevz/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.webstore.fr/webabonnes/eq/nouvelle-alliance/forum/' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">26-03-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Vazaelle</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=349'>AXIOM</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://www.multimania.com/axiomguild' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.multimania.com/axiomguild/phindex.php' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">22-01-2002</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Vazaelle</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=170'>Droit Divin</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://droitdivin.eqloft.com/' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://www.eqloft.com/forums/board.php?id=42' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">25-06-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#303030'><span class="class">Vazaelle</span></td>
+											<td ><span class="class"><b><a href='liste_popup.php3?nb_rec=301'>Union Fraternelle</a></b> [detail]</span></td>
+											<td><span class="class"><a href='http://perso.wanadoo.fr/cgeolocalisation/index.htm' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://pub94.ezboard.com/bguildefrancophonepoureqsurvazaelle' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">06-12-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td bgcolor='#404040'><span class="class">Xegony</span></td>
+											<td ><span class="class"><a href='liste_popup.php3?nb_rec=105'>Pourfendeurs de dragons</a></span></td>
+											<td><span class="class"><a href='http://www.pourfendeursdedragons.fr.st' target='_blank'>Site</a></span></td>
+											<td><span class="class"><a href='http://perso.wanadoo.fr/fabien.coquel/passe.htm' target='_blank'>Forum</a></span></td>
+											<td >
+												<div align="center">
+													<span class="class"><font size="1">21-05-2001</font></span></div>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="5" valign="top" bgcolor="#303030">
+												<div align="center"><span class="class"><font size="1">Total = 115 guildes</font></span></div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</td>
+							<td><img src="../images/ghost.gif" width="1" height="287" border="0" align="right"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+					<table border="0" cellpadding="0" cellspacing="0" width="740">
+				<tr>
+					<td>
+						<div align="center">
+							&nbsp;<br>
+					<font size="1" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><a href="http://www.lesguildes.com/" target="_top">Les Guildes</a> | <a href="http://www.lesguildes.com/everquest/">Everquest</a> | <a href="http://www.lesguildes.com/asheron/">Asheron's Call</a> | <a href="http://www.lesguildes.com/anarchy_online/">Anarchy Online</a> | <a href="http://www.lesguildes.com/t4c/">La Quatrième Prophétie</a> | <a href="http://www.lesguildes.com/shadowbane/">Shadowbane</a> | <a href="http://www.lesguildes.com/dark_age_camelot/">Dark Age of Camelot<br>
+						</a><a href="http://www.lesguildes.com/star_wars_galaxies/">Star Wars Galaxies</a> | <a href="http://www.lesguildes.com/asheron2/">Asheron's Call 2</a> | <a href="http://www.lesguildes.com/nuntiusvita/">Nuntiusvita</a> | <a href="http://www.lesguildes.com/worldofwarcraft/">World of Warcraft</a> | <a href="http://www.lesguildes.com/horizons/">Horizons</a> | <a href="http://www.lesguildes.com/neocron/">Neocron</a> | <a href="http://www.lesguildes.com/citizen_zero/">Citizen Zero</a> | <a href="http://www.lesguildes.com/atriarch/">Atriarch</a> | <a href="http://www.lesguildes.com/mmorpg.php3">Autres</a></font></div>
+					</td>
+				</tr>
+			</table>	</body>
+</html>

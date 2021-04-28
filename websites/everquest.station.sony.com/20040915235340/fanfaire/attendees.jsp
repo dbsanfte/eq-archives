@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<title>EverQuest FanFaire</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="newfanfaire.css" type="text/css">
+</head>
+<body bgcolor="#000000" text="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" background="images/right_bg.jpg" >
+  <tr width="1"> 
+                
+    <td valign="top" height="1"> 
+      <center><img src="images/attendees_header.gif"></center>
+
+<center>
+
+
+
+<p>
+
+<font color=red><b>You Must Select a Server Name from the List</b></font>
+
+</p>
+
+
+
+</center>
+
+                </td>
+              </tr>
+            </table>
+            
+    </body>
+</html>

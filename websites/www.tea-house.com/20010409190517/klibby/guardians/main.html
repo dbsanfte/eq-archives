@@ -1,0 +1,1006 @@
+<html>
+
+<head>
+<title>New Page 1</title>
+<style type="text/css">
+#divZoom{position:absolute; left:0; top:170; width:100%; text-align:center; visibility:hidden}
+</style>
+</head>
+
+<body background="ffffff" text="#000000">
+<script type="text/javascript" language="JavaScript">
+/********************************************************************************
+Copyright (C) 1999 Thomas Brattli
+This script is made by and copyrighted to Thomas Brattli at www.bratta.com
+Visit for more great scripts. This may be used freely as long as this msg is intact!
+I will also appriciate any links you could give me.
+********************************************************************************/
+//Default browsercheck, added to all scripts!
+function checkBrowser(){
+	this.ver=navigator.appVersion
+	this.dom=document.getElementById?1:0
+	this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+	this.ie4=(document.all && !this.dom)?1:0;
+	this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0;
+	this.ns4=(document.layers && !this.dom)?1:0;
+	this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5)
+	return this
+}
+bw=new checkBrowser()
+/* The code is a little messy, I had to do some nice work arounds :}
+But it works on ie4, ie5, Ns4 and Gecko M10*/
+
+/*Here are the variables you have to set, play with different values:                                                                 
+First the text: (it will stop and fade/change the colors on the last one)*/
+zText=new Array('Welcome','to','the','Guardians of Norrath!')
+  
+//Now the colors:
+//all you have to do is set the color you want to have in here: 
+//(the first color will be the color that the text is when it zooms.)
+zColor=new Array('#00ccff','#424242','#8E8E8E','#C2C2C2','#E8E8E8')
+ 
+var zEndSize=70 //The fontsize in px you want the zoom to end at
+var zSpeed=50 //Zoom speed
+var zAddSize=5 //Px to add to the fontsize on each interval
+var zFadeSpeed=70 //Color change/fade speed
+var zFont='Arial Black,Arial,Helvetica' //Font
+var zHide=true //do you want it to hide when its done? (true or false)
+var zHideWait=200 //Time to wait before hiding
+var zStartSize=10 //The size to start at
+var zEndCode="" // Code to execute when the zoom and fade is finished. ie: "location.href='newpage.html', executes when the hide does.
+
+/*You can remove this if you don't wan't it to start right away.
+You can have it start if someone clicks a link (make a link like this:
+<a href="#" onclick="fadeInit()">Click to Zoomtext</a>)*/
+onload=zoomInit;
+
+/********* You shouldn't really have to set anything below this point ***********/
+
+//Object functions
+function makeZoomObj(obj,font,size,endsize,color,text,zspeed,fadespeed,addsize,hide,hidewait,endcode){
+   	this.css=bw.dom? document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?document.layers[obj]:0;	
+   	this.writeref=bw.dom? document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?document.layers[obj].document:0;	
+	this.zoomWrite=b_zoomWrite;	this.zoomIt=b_zoomIt; this.fadeIt=b_fadeIt;	this.zoomFade=b_zoomFade;
+	this.font=font; this.color=new Array(); this.color=eval(color);	this.text=new Array(); this.text=eval(text);
+	this.zspeed=zspeed; this.fadespeed=fadespeed; this.addsize=addsize; this.endcode=endcode
+	this.hide=hide; this.hidewait=hidewait; this.size=size; this.startsize=size; this.endsize=endsize
+	if(size<endsize){this.way="<"; this.addsize=this.addsize
+    }else{this.way=">"; this.addsize=-this.addsize}
+	if(bw.dom || bw.ie4){ //Setting the style properties
+		this.css.fontFamily=this.font; this.css.fontSize=this.size; this.css.color=this.color[0]
+	}
+	this.obj = obj + "Object"; 	eval(this.obj + "=this"); return this
+}
+function b_zoomFade(num){
+	if(num<this.text.length){
+		this.size=this.startsize
+		this.zoomIt(num,'this.zoomFade('+(num+1)+')')
+	}
+	else if(num==this.text.length) this.fadeIt(0,'this.zoomFade('+(num+1)+')')
+	else if(this.hide) setTimeout(this.obj+".css.visibility='hidden'; eval("+this.obj+".endcode)",this.hidewait)
+}
+function b_zoomWrite(num,cnum){
+	if(bw.ns4){
+		this.writeref.write('<span style="text-align:center; font-size:' +this.size+'px; font-family:'+this.font+'; color:'+this.color[cnum]+'">'+this.text[num]+'</span>')
+		this.writeref.close()
+	}else if(bw.dom){ //M10 workaround, adding span to change color in.
+		spantag=document.createElement("SPAN")
+		spantag.id=this.obj+"span";
+		this.writeref.replaceChild(spantag,this.writeref.childNodes[0])
+		this.writeref.childNodes[0].appendChild(document.createTextNode(""))
+		this.writeref.childNodes[0].replaceChild(document.createTextNode(this.text[num]),this.writeref.childNodes[0].childNodes[0])
+	}else if(bw.ie4) this.writeref.innerHTML=this.text[num]
+}
+function b_zoomIt(num,fn){
+	if(eval(this.size+this.way+this.endsize)){
+		if(this.size==this.startsize || bw.ns4) this.zoomWrite(num,0)
+		if(bw.dom || bw.ie4) this.css.fontSize=this.size
+		this.size=this.size+this.addsize
+		setTimeout(this.obj+".zoomIt("+num+",'"+fn+"')",this.zspeed)
+	}else eval(fn)	
+}
+function b_fadeIt(num,fn){
+	if(num<this.color.length){
+		if(bw.ns4) this.zoomWrite(this.text.length-1,num)
+		else{
+			obj=bw.ie4?this.css:document.getElementById(this.obj+"span").style;
+			obj.color=this.color[num]
+		}
+		num++
+		setTimeout(this.obj+".fadeIt("+num+",'"+fn+"')",this.fadespeed)
+	}else eval(fn)	
+}
+/*Initiates the object, shows it and starts the zoom
+****************************************************************************/
+function zoomInit(){
+	if(bw.bw){
+		oZoom=new makeZoomObj('divZoom',zFont,zStartSize,zEndSize,'zColor','zText',zSpeed,zFadeSpeed,zAddSize,zHide,zHideWait,zEndCode)
+		oZoom.zoomFade(0)
+		oZoom.css.visibility='visible'
+	}
+}
+</script>
+<div id="divZoom"
+align="center"><!-- older browsers will not see this -->
+</div>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%" bgcolor="#000000"><p align="left"><img src="temple.jpg" width="246"
+    height="185" alt="temple.jpg (14768 bytes)"></td>
+    <td width="75%" bgcolor="#000000"><blockquote>
+      <p align="center"><font color="#FFFFFF"><big><big>Welcome to The Guardians of Norrath's
+      realm!</big></big></font></p>
+      <p align="center"><font color="#FFFFFF"><big><big>
+      <applet CODE="FadesInOut2b.class" WIDTH="235" HEIGHT="11">
+        <param name="TextToDisplay"
+        value="Welcome to the Guardians of Norrath;(A.K.A. Norrath's Guardians in game);Welcome to our world!;Web Design by: Golggen; Most Images by: Kakarot">
+        <param name="FontSize" value="12">
+        <param name="FontName" value="TimesRoman">
+        <param name="FontStyle" value="PLAIN">
+        <param name="bgCOLOR" value="000,000,000">
+        <param name="textCOLOR" value="255,0,0">
+        <param name="Delay" value="40">
+        <param name="Steps" value="1">
+        <param name="Author" value="George Eleftheriou">
+        <param name="Email" value="gele@egnatia.ee.auth.gr">Your browser doesn't support java or java is not enabled!
+      </applet>
+      </big></big></font></p>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table border="0" width="79%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">If you have any news about anything
+      related to Everquest at all, please let us know and we will post it.&nbsp; To post a news
+      article click <a href="publishnews.html" style="text-decoration: none">here</a>.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+</center></div><div align="center"><center>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" align="right" height="1">
+  <tr>
+    <td width="15%" height="1" bgcolor="#FFFFFF"><blockquote>
+      <p align="left">&nbsp;</p>
+    </blockquote>
+    </td>
+    <td width="85%" height="1" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><blockquote>
+      <strong><font color="#FFFFFF"><p>&nbsp;</p>
+      </font></strong>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#004080" valign="bottom" checked="false" colspan="2"><font
+    color="#FFFFFF"><strong></strong><big><big>Saturday, March 8<sup>th</sup>, 2000</big></big><strong></strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Guild
+    Domain Name</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Sometime in
+      the near future I will be registering a domain name for the guild website.&nbsp; What is a
+      domain name? A domain name is the url from www to .com.&nbsp; I have come up with sevral
+      ideas for the domain name, they are as follows:</font></p>
+      <blockquote>
+        <p><font face="Abadi MT Condensed" color="#004080">-- www.norraths-guardians.com<br>
+        -- www.norrathsguardians.com<br>
+        -- www.guardiansofnorrath.com<br>
+        -- www.guardians-of-norrath.com<br>
+        -- www.gon.com</font></p>
+      </blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Please click <a
+      href="mailto:webmaster@the-guardians.zzn.com?subject=For the domain, I vote for...">here</a>
+      to vote for the domain you would like to see.&nbsp; Keep in mind, this will also be the
+      extension of your guild email address (ie. If most votes go to www.gon.com my email
+      address would be golggen@gon.com, if most votes went to www.guardiansofnorrath.com my
+      email address would be golggen@guardiansofnorrath.com) Also keep in mind, if it turns out
+      www.gon.com, yes, this is easier to type but does not have as much meening as the others.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; I will be paying for the domain by selling an(some) item(s) on
+      the game that I am currently working on getting, any help with money (In the game only,
+      not asking for real currency) will be accepted.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><strong><font
+    color="#FFFFFF"></font></strong><font face="Abadi MT Condensed" color="#004080">Your Guild
+    leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font><strong><font
+    color="#FFFFFF"></font></strong></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><strong><font
+    color="#FFFFFF"></font></strong></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#004080" valign="bottom" checked="false" colspan="2"><font
+    color="#FFFFFF"><big><big>Saturday, February 19<sup>th</sup>, 2000</big></big></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>New
+    Screenshots Posted!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Two new
+      screenshots have been posted in the screenshots section.&nbsp; Both from the city of
+      Paineel.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#004080" valign="bottom" checked="false" colspan="2"><font
+    color="#FFFFFF"><big><big>Friday, February 11<sup>th</sup>, 2000</big></big></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>ATTENTION
+    MEMBERS</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <strong><font color="#0069D2"><p></font><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp;
+      Just to let all members know, the guild meeting is on <u>SUNDAY, FEBRUARY 13th</u>! NOT
+      Saturday the 12th! I made a mistake in posting it, I have changed the date on the event
+      calendar.</font><font color="#0069D2"></p>
+      </font></strong>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <font color="#0069D2"><strong><p></strong></font><font face="Abadi MT Condensed"
+            color="#004080">Your Guild leader (one of two),<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+            href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font><font
+            color="#0069D2"><strong></p>
+            </strong></font>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>New
+    Additions to the Guild Website Cause Disaster on other features</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Wuh oh... me
+      tinks me screwed up website.&nbsp; Well, OK... maybe I didnt really screw it up much.
+      &nbsp; I dont know how I did it, but I have been known to create havoc on other things
+      while fixing another.&nbsp; The problem is, if some of you may have seen already is that
+      when you try to sign into your member area, you get the normal front page when you should
+      have gotten into the member area.&nbsp; Two possible causes for this, 1) I have no clue...
+      2) username/password authentication was hacked (very doubtful).&nbsp; I am looking into
+      the problem right now... until it is fixed, everybody please use the AOL user sign in.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Upload
+    Script Working!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <font face="Abadi MT Condensed" color="#004080">Well, I got
+      the upload script up and running.&nbsp; It turns out I was actually able to change the
+      access rights on the folders in my web page myself and didnt need my ISP to do it =).
+      &nbsp; Now you dont need to send screenshots or images or your member profiles to me
+      through email.&nbsp; Members, when creating your profile on the pofile wizard, on the
+      images, just type the filename then go to Upload files (under Edit your Profile) to upload
+      the images then I will place them on your profile.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>New
+    Form to Post Your Screenthots!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <font face="Abadi MT Condensed" color="#004080">There is now a
+      way you can post screenshots on the website without sending them through email, you can
+      now upload them right through the website!&nbsp; Just click on screenshots to the left and
+      post your screenshots.&nbsp; Before you post new screenshots please create a .txt or .doc
+      file with the file names of the images you uploaded and upload the document with the
+      image(s), also you can include any comments you want me to post under your screenshot(s)
+      or your name.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#004080" valign="bottom" checked="false" colspan="2"><font
+    color="#FFFFFF"><big><big>Thursday, February 10<sup>th</sup>, 2000</big></big></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>New
+    Additions to the Guild Website</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Wedsnday and
+      today I have contributed a lot of time on working on the web site.&nbsp; Most of the time
+      was preparing the site for the move to a different server.&nbsp; This site is currently
+      hosted on my ISP's server at no extra cost so I figured I would keep it here.&nbsp; Well,
+      I am soon getting a 786Kbps DSL installed, so I will need to move the site from my ISP's
+      server to my new DSL ISP's server once its installed.&nbsp; Most of what I've been doing
+      is making link URLs generic so when I move the site I won't have to fuss with changing
+      every single link to the new location.<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; However, I have also made a couple changes and added some new
+      things.&nbsp; One of which is the new &quot;Welcome... to... the... Guardians of
+      Norrath&quot; zoom/fade DHTML script on the main frame (this frame) on load.&nbsp; If this
+      turns out to be buggy and messes up some things send me an email at <a
+      href="mailto:webmaster@the-guardians.zzn.com">webmaster@the-guardians.zzn.com</a>. Another
+      addition is the new mouseover scrolling menu (left).&nbsp; I did this because the menu is
+      too long to fit on the left bar without scrolling and the scrollbar makes the site not
+      look very professional for some reason.&nbsp; Once again, if these cause any problems for
+      you, send me an email at the email address above and the script will be looked at. &nbsp;
+      The third and last addition is the guild meeting description.&nbsp; Now when I post a
+      guild event on the event calenders I will make it a link with a full description.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Mandatory
+    Guild Meeting Sunday</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" align="center" colspan="3"><blockquote>
+      <p align="left"><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp;
+      Hail Guardians! This Sunday at 4:00PM Pacific time will be a guild meeting in the chat
+      servers on Everquest.&nbsp; For more info on this meeting click <a
+      href="events/Feb00.html">here</a></font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="1" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="1" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Upload
+    CGI Script</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Don't try
+      uploading any images for your member profiles, or screenshots, the CGI script is not
+      working.&nbsp; The folder it is susposed to write to is write protected, that should be
+      fixed soon so until then just send your files to webmaster@the-guardians.zzn.com</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#000080" valign="bottom" checked="false" colspan="2"><font
+    color="#FFFFFF"><big><big>Friday, January 28<sup>th</sup>, 2000</big></big></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>PUBLISHERS
+    WANTED!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; As you can
+      tell since one day there are tons of articles then none for a month and so on... we dont
+      have a big work force on the news, well... actually, only one, ME! (hehe) so basically, we
+      just need people to write news! You dont have to apply to do this or write a certian
+      amount of articles per day, week, whatever, just post a news article whenever you have
+      news, maybe an event youre hosting or something like that.&nbsp; To plst an article just
+      click the link above!</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>AOL
+    sign-in bug actually FIXED!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Ok ok, I can
+      take a hint the last post on December 7th more than a month ago stated that the AOL bug
+      was being fixed.&nbsp; Well, I figured i should probably get to work on fixing it instead
+      of just saying its being fixed.&nbsp; Now AOL users can sign in by clicking Sign-in below
+      &quot;AOL Users&quot; from here you will then click your name then it will ask your
+      password, when you type it in it will take you to your member area.&nbsp; To get to your
+      email, you cannot use the email link in the member area, you must either go to <a
+      href="http://www.the-guardians.zzn.com">www.the-guardians.zzn.com</a> or click out of your
+      member area and click the E-Mail link below &quot;AOL Users&quot;</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Guild
+    Conference Room Added to Member Area</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <font face="Abadi MT Condensed" color="#004080">As always,
+      there has been a new addition to the member area.&nbsp; This new addition is a guild
+      conference room.&nbsp; This will be the location of some of our meetings, also a meeting
+      place when servers are down or just a place for guild members to hang out.&nbsp; </font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#000080" valign="bottom" checked="false" colspan="2"><font
+    color="#FFFFFF"><big><big>Tuesday, December 7<sup>th</sup>, 1999</big></big></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>AOL
+    Sign-in bug being fixed!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; As some of you
+      have noticed, AOL users were not able to sign into their member area.&nbsp; The reason of
+      this was because America Online is not very cooporative with CGI scripts which was being
+      used in the sign in area.&nbsp; For members using AOL, you must click &quot;AOL users
+      click here&quot; below &quot;Guardians Sign-In&quot; to get in.&nbsp; From this link it
+      will take you to a list of all the members, there you will click your name and it will ask
+      for a password only, this password box will use HTML which I KNOW AOL understands. &nbsp;
+      Hopefully this works, when I get it up and running I will have a friend of mine that uses
+      AOL test it with a test username and password, and I will post here that it is up and
+      running.&nbsp; Until I get it up, to sign in, just point your browser to <br>
+      http://www.tea-house.com/klibby/guardians/(member name here)/(member ID here, including
+      prefix).html</font></p>
+      <p><font face="Abadi MT Condensed" color="#004080">For Example... if your username is
+      Joeblow and your ID is A01-1234 you would use this URL (be sure to CAP the first letter of
+      your member name)<br>
+      http://www.tea-house.com/klibby/guardians/members/Joeblow/A011234.html&nbsp;&nbsp; and
+      that would get you in, sorry for the inconvience.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>ATTENTION
+    ALL MEMBERS!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; There will be
+      a &quot;Knighting Ceremony&quot; held THIS weekend! Me and Iceassasin have not figured out
+      a time and date yet or where it will be held, but I should have this posted here by
+      tomarrow.&nbsp; All suggestions on When and Where this should be held will be accepted at <a
+      href="mailto:webmaster@the-guardians.zzn.com">webmaster@the-guardians.zzn.com</a> Dont
+      hesitate to suggest a time or place!&nbsp; Some minor details are here, for a full
+      description of this ceremony check back tomarrow! This ceremony will be basically the
+      promotion of some members into Officers, this will be a semi-roleplaying event and I think
+      some members from the Imperial Dynasty will show up to wittness the ceremony.&nbsp;&nbsp; </font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>CGI
+    Script for Uploading images for screenshots and profiles.</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; As I have
+      mentioned before, I am currently working on fixing the upload problem on the website.
+      &nbsp; I currently have a CGI script I have uploaded into my ISP's CGI-bin that will allow
+      you to upload files straight to a folder in this site where I will then check the images
+      and post them.&nbsp; However, this script is not yet working because, the folder I set it
+      to upload to does not allow other viewers to upload to without FTP access.&nbsp; Also,
+      this script has not yet been added into all the forms.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>News
+    Section</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Yes, I know, I
+      can take a hint. If you look below, the last news article I posted was in Thanksgiving,
+      then I come up 2 weeks later and have tons of news.&nbsp; Well, I have been pretty busy on
+      other aspects on the website, and other work.&nbsp; This may be like this for awhile
+      untill I get the site fully up and running.&nbsp; And, as you can see, I could <em><u>REALLY</u></em>
+      use some journalists to post news that they come up with, just to keep this running.
+      &nbsp; Untill then, just bare with me</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="43%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+    <td width="42%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false"><font
+    face="Abadi MT Condensed" color="#004080">(Gets kinda repetitive huh?)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#DA6107" valign="bottom" checked="false" colspan="2"><blockquote>
+      <font color="#FFFFFF"><strong><p></strong><big><big>Thursday, November 25<sup>th</sup>,
+      1999</big></big><strong></p>
+      </strong></font>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#DA6107"><strong>Happy
+    Thanksgiving!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#DA6107">&nbsp;&nbsp;&nbsp;&nbsp; In behalf of
+      the Guardians of Norrath and the Imperial Dynasty I'd like to wish everybody a happy
+      turkey day!&nbsp; I just cant imagine all the people in South Karana, Lake Rathe, and
+      Ocean of Tears killing Aviaks in hopes to find just the right bird to cook at the very
+      last minute.&nbsp; Well, at least they get their birds fresh and not frozen, all you need
+      is somebody to kill the bird then somebody following you arround to cook it!</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#DA6107">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Jayson's
+    Misfortune with Druid merchants in Lavastorm</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Just
+      yesterday, in Sol Dungeon A, me, Tegdar and Jayson were grouped killing Goblins for
+      experience.&nbsp; Well, they seem to drop a lot of fine steel weapons and after all this
+      fighting away from a bank you tend to get a little encumbered.&nbsp; After awhile, Tegdar
+      went AFK and gave me his stuff he wanted me to sell for him so me and Jayson took off
+      towards the Druid ring to sell.&nbsp; Where Jayson's misfortune comes in, is that he
+      wields a Langseax of the Wolves, he had also looted a Fine Steel Two Hander from a goblin.
+      &nbsp; What happened here, is Jayson was not wielding his LOTW (Langseax of the Wolves)
+      and, instead of selling his FS 2 Hander to the vender he sold his LOTW to the vender for
+      an amazingly cheap price of 6pp!&nbsp; Now me and Jayson are in Nagafen's Lair hoping to
+      loot a fleshripper off the King corpse since they are No drop.&nbsp; If you have any
+      weapons a barbarian warrior can use that you have for sale or trade please give Jayson a
+      tell on the Xegony server, or leave a message with a guild member.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Uploading
+    Files for Screenshots and Profiles &amp; E-mail's up!</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Due to,
+      well... the upload file section not working (it would just send the text location of the
+      file on your local system) I am currently working on a way to let you upload files either
+      to a Geocities account I have as a waypoint for the files, or a way you can upload to my
+      email address via form.&nbsp; I should have the new way to upload files up by probably
+      this week.&nbsp; Until then, if you want to upload a file to put on this site please send
+      your file to <a href="mailto:webmaster@The-Guardians.zzn.com">webmaster@The-Guardians.zzn.com</a>
+      &nbsp; and I will get to it ASAP. </font></p>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; All the people
+      in the guild that currently had no E-mail address like the one I have,
+      Golggen@The-Guardians.zzn.com,&nbsp; your email is now up.&nbsp; On your member area I
+      have posted your username and password (username is the same as your everquest name) along
+      with instructions on how to change your password.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#000080" valign="bottom" checked="false" colspan="2"><blockquote>
+      <font color="#FFFFFF"><p><big><big>Wednesday, November 24<sup>th</sup>, 1999</big></big></p>
+      </font>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>News
+    Section Fixed</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; As you might
+      have noticed, earlier the news section, either had one article when it should have had
+      more, all the articles were written on top of each other, or you just saw nothing at all,
+      and none of the images worked.&nbsp; Well, I have no clue what happened there, just some
+      pretty funky tables when I set them up I guess.&nbsp; However, as you see now, they are
+      fixed! Now you see all articles and one under the other! WOW! how amazing!&nbsp; Instead
+      of taking the hassle of working with a new image every day, I replaced the
+      &quot;datebar&quot; with just a colored background cell with text (a whole lot easier and
+      less nerve racking)</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#000080" valign="bottom" checked="false" colspan="2"><blockquote>
+      <font color="#FFFFFF"><p><big><big>Tuesday, November 23<sup>rd</sup>, 1999</big></big></p>
+      </font>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Press
+    Edition, &quot;Guardians of Norrath&quot;</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Greetings,
+      Golggen here again =)&nbsp; We are in the need of some new reporters to write up articles
+      on the news section.&nbsp; I know, the news hasn't been up long and I realize that. &nbsp;
+      I have no problem making up the news articles for the site, but... more help and more
+      views on topics would be great!&nbsp; If you have anything you need posted please don't
+      hesitate to click on the link above and post your article!&nbsp; There can be more than
+      one article per day, and there does not HAVE to be at least one article per day as I have
+      done so far, just when news happens we will post it.&nbsp; Thanks for your support.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#000080" valign="bottom" checked="false" colspan="2"><blockquote>
+      <big><big><font color="#FFFFFF"><p>Monday, November 22<sup>nd</sup>, 1999</p>
+      </font></big></big>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><font color="#0069D2"><strong>Guild
+    Alliance</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="0" bgcolor="#FFFFFF" colspan="3"><blockquote>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <font face="Abadi MT Condensed" color="#004080">As of today,
+      the two guilds, Norrath's Guardians and the Imperial Dynasty are in alliance.&nbsp; The
+      guild leader of the Imperial Dynasty, Tegdar Fearsong (lvl 24 Wood Elf Bard) is also my
+      real life brother.&nbsp; This alliance does affect some things in the two guilds.&nbsp; On
+      some guild events, members from both guilds will participate.&nbsp; Also, our two guilds
+      will form together in some events to raid a chosen zone.&nbsp; So, if you see somebody
+      from the Imperial Dynasty Hail them like you would a fellow Guardian of Norrath.&nbsp; The
+      Imperial Dynasty website should be coming sometime in the near future,&nbsp; that site
+      will be linked on this site and some of the features from both will be useable by members
+      of both guilds.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"><font
+    face="Abadi MT Condensed" color="#004080">Your Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#FFFFFF" valign="bottom" checked="false" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="0" bgcolor="#FFFFFF"></td>
+    <td width="85%" height="0" bgcolor="#000080" valign="bottom" checked="false" colspan="2"><blockquote>
+      <big><big><font color="#FFFFFF"><p>Sunday, November 21<sup>st</sup>, 1999</p>
+      </font></big></big>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="6" colspan="3"><font color="#0069D2"><strong>Guild Site Updated</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="7" colspan="3"><blockquote>
+      <font color="#0069D2"><strong><p></strong></font><font face="Abadi MT Condensed"
+      color="#004080">Some Problems have been fixed on the site, and some new things have been
+      added.&nbsp; </font><font color="#0069D2"><strong></p>
+      </strong></font><blockquote>
+        <p><font face="Abadi MT Condensed" color="#004080">Bug Fixes:<br>
+        --Due to the huge screen and high resolution I have been building the site on, I did not
+        take into consideration the viewers with slightly smaller monitors and lower resolution.
+        &nbsp; On the menu frame, before there was no scrollbar, so many people could not sign
+        into their member area or E-mail because the sign in link was cut off.&nbsp; I have now
+        implemented an automatic scrollbar on that frame, if you are viewing with high resolution
+        or have a large monitor the scrollbar will not appear because you will not need it. &nbsp;
+        If you are viewing with low resolution or a small monitor the scrollbar will appear<br>
+        --Auction link now works.&nbsp; Use these auctions to sell or buy Everquest items, not
+        paying with real cash but Platinum on Everquest for the item.<br>
+        --If you see any other bugs please let us know at <a
+        href="mailto:webmaster@The-Guardians.zzn.com">webmaster@The-Guardians.zzn.com</a></font></p>
+        <p><font face="Abadi MT Condensed" color="#004080">Updates:<br>
+        --As you can see here, the main page filler has been removed and replaced with news.<br>
+        --Non-members can now post news articles.<br>
+        --Screenshots section added with one screenshot posted by Jayson.<br>
+        --Working on bringing up E-mail addresses for members that do not currently have their
+        The-Guardians.zzn.com Email address</font></p>
+      </blockquote>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="1"></td>
+    <td width="85%" height="1" colspan="2"><font face="Abadi MT Condensed" color="#004080">Your
+    Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+  <tr>
+    <td width="15%" height="1"></td>
+    <td width="85%" height="1" colspan="2"></td>
+  </tr>
+  <tr>
+    <td width="15%" height="1"></td>
+    <td width="85%" height="1" bgcolor="#000080" colspan="2"><blockquote>
+      <font face="Abadi MT Condensed" color="#004080"><p></font><big><big><font
+      face="Times New Roman" color="#FFFFFF">Saturday, November 20</font><font color="#FFFFFF"><sup>th</sup></font><font
+      face="Times New Roman" color="#FFFFFF">, 1999</font></big></big><font
+      face="Abadi MT Condensed" color="#004080"></p>
+      </font>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" colspan="3"><font color="#0069D2"><strong>Birth of &quot;The
+    Guardians of Norrath&quot;</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" colspan="3"><blockquote>
+      <p><font face="Abadi MT Condensed" color="#004080">&nbsp;&nbsp;&nbsp;&nbsp; Today marks
+      the start of a new era in Everquest as the Guardians of Norrath has officially been
+      created!&nbsp; Although we could not get the name we hoped for, our Guild Tag has the name
+      &quot;Norrath's Guardians&quot; however, we will still go by &quot;Guardians of
+      Norrath&quot; (GON).&nbsp; So far we only have the two leaders, Iceassasin Swiftsword, and
+      Golggen Tru'Light and an officer, Jayson Soulguard.&nbsp; All the rest we are currently
+      waiting on so we can invite.&nbsp;&nbsp; Our first guild event will be a ceremony
+      knighting the officers and promoting them, I am not sure where this will be held but I am
+      looking in the direction of the Theater of Tranquil in Freeport.&nbsp; If you have any
+      suggestions on where this should be held please contact us at <a
+      href="mailto:webmaster@The-Guardians.zzn.com">webmaster@The-Guardians.zzn.com</a> all
+      suggestions are welcome.</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" height="1"></td>
+    <td width="85%" height="1" colspan="2"><font face="Abadi MT Condensed" color="#004080">Your
+    Guild leader (one of two),<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Golggen Tru'Light<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<a
+    href="mailto:golggen@The-Guardians.zzn.com">golggen@The-Guardians.zzn.com</a>)</font></td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>

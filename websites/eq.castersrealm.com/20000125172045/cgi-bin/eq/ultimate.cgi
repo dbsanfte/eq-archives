@@ -1,5 +1,3 @@
-Content-type: text/html
-
 <HTML>
 <HEAD><TITLE>EQ Casters Realm Forums - powered by the Ultimate Bulletin Board</title>
 

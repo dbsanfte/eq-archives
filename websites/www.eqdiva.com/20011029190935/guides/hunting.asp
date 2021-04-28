@@ -1,0 +1,563 @@
+<!-- eqdiva.com/guides/hunting.asp page downloaded on 10/29/01 2:09:32 PM
+  //  Designed by Kocho Divah ~ kocho@eqdiva.com	//-->
+
+<html>
+<head>
+	<title>EQdiva.com - Bards of Everquest &nbsp;&nbsp;&nbsp;Bard Hunting Guide</title>
+	<META name="description" content="EQDiva.com - dedicated to the Bards of Everquest. Learn about being a good bard, grouping with a bard, or why you might like being a bard.">
+	<META name="keywords" content="everquest, bard, bards, eq, roleplaying, minstrel, kocho, diva, troubadour, virtuoso">
+	
+
+	<style>
+		a:link       { color: #330099; text-decoration: none; font-weight: bold}
+		a:visited    { color: #330099; text-decoration: none; font-weight: bold}
+		a:active     { color: #990033; text-decoration: none; font-weight: bold}
+		a:hover      { color: #990033; text-decoration: none; font-weight: bold;}
+
+		td {
+			color: #000000;
+			font : 10pt verdana, geneva, Arial, Helvetica, sans-serif;
+		}
+		
+		body { 
+				scrollbar-arrow-color: #FFFFCC;
+				scrollbar-face-color: #666633;
+				scrollbar-base-color: #CCCC99;
+				scrollbar-dark-shadow-color: #333333;
+				scrollbar-highlight-color: #CCCC99;
+				scrollbar-shadow-color: #333333;
+		}
+
+		.clsFormButton {
+			background :#999966;
+			color :#333333;
+			font : Bold 8pt Verdana Geneva Arial Helvetica sans-serif;
+		}
+
+		.clsFormInput {
+			background-color:#eeeeee;
+			color:#333333;
+			font:bold 8pt verdana,arial;
+		}
+
+		.clsColHeader {
+			font : bold;
+			color:#333333;
+		}
+		
+		.clsBold {
+			font: bold;
+		}
+		
+		.clsBoldRed {
+			font: bold;
+			color:#990000;
+		}
+		
+		.clsBoldGreen{
+			font: bold;
+			color:#006600;
+		}
+		
+		.clsBoldWhite {
+			font: bold;
+			color:#ffffff;
+		}
+		
+		.clsSmall {
+			font:8pt;
+		}
+		
+		.red {
+			font: bold;
+			color:#990000;
+		}
+</style>
+
+
+</head>
+
+<body bgcolor="#CCCC99" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="100%" valign="top"><a href="/contact.asp"><img src="/images/imgSKocho.gif" width="60" height="60" hspace="0" vspace="0" border="0" alt="Contact the Diva!"></a><a href="/default.asp"><img src="/images/notes.gif" border="0" alt="EQDiva.com - Bards of Everquest" hspace="0" vspace="0"></a></td>
+	</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td colspan="2" height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr bgcolor="#999966">
+		<td height="15"><font color="FFFFCC"><b>&nbsp;&nbsp;Welcome from <a href="/setPreferences.asp" title="Change Server Preference">Druzzil Ro</a></b></font></td>
+		<td height="15" align="right"><b>Bards of Norrath unite!<img src="/images/trans.gif" width="5" height="15"></b></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#666633"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="7" bgcolor="#999966"><img src="/images/trans.gif" width="1" height="7"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" valign="top">
+	<tr>
+		<td width="100%" valign="top">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="top" bgcolor="#CCCC99">
+				<tr>
+					<td width="120" valign="top" align="center" bgcolor="#666633">
+					
+	<table cellspacing="0" cellpadding="0" width="100" border="0" align="center">
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/default.asp"><font color="#ffffcc">Home</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/news.asp"><font color="#ffffcc">News</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/songs.asp"><font color="#ffffcc">Songs</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/skills.asp"><font color="#ffffcc">Skills</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/items/default.asp"><font color="#ffffcc">Items</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/armor/default.asp"><font color="#ffffcc">Armor</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/maps/default.asp"><font color="#ffffcc">Maps</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/guides/hunting.asp"><font color="#333333">Hunting</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/guides/guides.asp"><font color="#ffffcc">Guides</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/quests/epic/default.asp"><font color="#ffffcc">Epic</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/quests/default.asp"><font color="#ffffcc">Quests</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/screenshots.asp"><font color="#ffffcc">Screenshots</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/humor/default.asp"><font color="#ffffcc">Humor</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/files/default.asp"><font color="#ffffcc">Files</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/about/default.asp"><font color="#ffffcc">About</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/links.asp"><font color="#ffffcc">Links</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/contact.asp"><font color="#ffffcc">Contact</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/chat.asp"><font color="#ffffcc">Chat</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="http://pub45.ezboard.com/beqdivabardsofeverquest"><font color="#ffffcc">Discussions</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+	</table>
+	
+<!-- Begin PayPal Logo -->
+<FORM ACTION="https://www.paypal.com/cgi-bin/webscr" METHOD="POST">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="_xclick">
+<INPUT TYPE="hidden" NAME="business" VALUE="kocho@eqdiva.com">
+<INPUT TYPE="hidden" NAME="return" VALUE="http://www.eqdiva.com/default.asp">
+<INPUT TYPE="image" SRC="http://images.paypal.com/images/x-click-but04.gif" NAME="submit" ALT="Keep EQDiva running fast and ad-free!">
+</FORM>
+<!-- End PayPal Logo --></td>
+					
+					<td width="100%" valign="top">	
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr bgcolor="#FFFFCC">
+								<td width="10">&nbsp;</td>	
+								<td><b>Monday, October 29, 2001</b></td>
+								<td align="right"><font size="1"><b>8 bards singing in an orchestra online</b></font></td>
+								<td width="10">&nbsp;</td>	
+							</tr>
+							<tr bgcolor="#CCCC99">
+								<td width="10">&nbsp;</td>	
+								<td>&nbsp;&nbsp;<font size="1"><b><a href="/default.asp">Home</a> &gt; <a href="">Hunting</a> &gt; Bard Hunting Guide</b></font></td>
+								<td align="right"><font size="1"><a href="/guides/hunting.asp?print=t">[printer-friendly]</a></font></td>
+								<td width="10" align="right">&nbsp;</td>	
+							</tr>
+							
+							<tr bgcolor="#ffffff">
+							
+								<td width="10">&nbsp;</td>	
+								<td colspan="2"><br>
+								<!--<h4>Bard Hunting Guide</h4>-->
+	
+<table width="90%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td align="right"><form method="get" name="frmHuntingLevel" id="frmHuntingLevel" action="/guides/hunting.asp">
+		<b>Hunting Guide for Level:&nbsp;</b><select name="cboHuntingLevel" onChange="document.frmHuntingLevel.submit();">
+		<option value="1">Level 1-4
+<option value="5">Level 5-9
+<option value="10">Level 10-14
+<option value="15">Level 15-19
+<option value="20">Level 20-24
+<option value="25">Level 25-29
+<option value="30">Level 30-34
+<option value="35">Level 35-39
+<option value="40">Level 40-44
+<option value="45">Level 45-49
+<option value="50">Level 50-54
+<option value="55" selected >Level 55-60
+
+		
+		</select>
+		</form></td>
+	</tr>
+	<tr>
+		<td>
+		<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td colspan="3" bgcolor="#999966" align="center"><font size="3"><b>Hunting Guide for Levels 55 - 60</b></font></td></tr>
+<tr><td colspan="3" align="right" bgcolor="#eeeeee"><a href="/guides/submitHunting.asp?level=55">Submit New Hunting Guide</a></td></tr>
+<tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Charasis</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=9"><font size="1">Add Guide for Charasis</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Moya Starsinger</b> (<i>10/4/01</i>) I have been main CC in here a number of times and it's a fun zone.  I recommend having a good monk puller.  We have done a hall with bard/druid/monk/ranger/mage/mage.  Not your  typical group at all and the HT's are the only thing that was a danger to us as they could drop a caster fast.  With a cleric, you should be okay.<br><br></span></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Tenoro Allegro</b> (<i>7/31/01</i>) I recommend bringing both a rogue and a druid/wizard.  This will make your trip a whole lot easier.  The rogue can pick all the locks while the wiz/druid can evac you out.  53 song works quite well for crowd control here and has allowed me to be primary crowd control without problems.  The erudite illusion mask drops here in West Wing, in the room with the glowing gem that teleports you to entrance.</span></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"> (<i>5/24/01</i>) Otherwise known as Howling Stones...</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Chardok</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=10"><font size="1">Add Guide for Chardok</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Cuthbert</b> (<i>10/4/01</i>) I really dont recommend going here til you are lvl 55. The mobs here are all blue con to a level 60 and do some fairly decent damage. Other than that, Experience here is very nice but uber loot is very rare. You can get some decent money here and you can get a ton of xp right at the zone lines. Also it is usually not very crowded at all. Oh one last thing, take a group with you cause there is no real safe spot to sit lfg.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Karnor's Castle</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=44"><font size="1">Add Guide for Karnor's Castle</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Silvendras</b> (<i>5/25/01</i>) Karnors starts to green out around 54 .  For decent exp in 55 you need to go to either the hand room or the drolvarg warlord room.<br><br>Drolvarg warlord room is where the petrified skull drops for the Singing Short Sword Quest, as well as a few other trinkets that are rather nice including among other things...the Harmonic Dagger.<br><br>Another place in Karnors that is good for exp is the basement.  Mostly undead down there but the exp is good.  You can get exp up to level 60 down there.  Needs a solid well balanced group to survive.</span></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"> (<i>5/24/01</i>) Basement.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Labyrinth of Velkator</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=50"><font size="1">Add Guide for Labyrinth of Velkator</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Tenoro Allegro</b> (<i>7/31/01</i>) Just to note that you can use your faction song (charismatic carillion) to safely explore this dungeon.  Just wander to the nearest group killing a spider or gargoyle and hit faction song on it.  You'll go from scowling to dubious.  This dubious faction will be with you while you're in zone and works on everything there.  You can explore the pit area and find the room with 5 kobolds lined up next to each other (This is where the named with lute of the howler spawns).</span></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"> (<i>7/27/01</i>) Spiders are great exp all the way to 60 Kobolds in upper village or pit are good exp not as good as spiders but much more loot also the quest gems for the class armors drop in this zone. You can move around mostly in invis but there are some mobs like Crystaline Eyes that see through invis. Velkator's Labryinth has become a much more popular zone and you can shout for a group and get on pretty easily. The zone for VL is in the top kodiak cavr in GD.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Old Sebilis</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=72"><font size="1">Add Guide for Old Sebilis</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Anarchonixx Melodemise</b> (<i>7/31/01</i>) I would recommend this place only after you get the lvl53 mez.  We become true crowd control then, and it will make your life a lot easier.  You will feel helpless when you get resist after resist on the lower lvl frogs.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Permafrost</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=75"><font size="1">Add Guide for Permafrost</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Nanan</b> (<i>5/30/01</i>) the bear pits can be good exp with small groups, soloing isnt very likely as they do hit hard. good luck getting out tho.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Plane of Mischief</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=79"><font size="1">Add Guide for Plane of Mischief</font></a></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Siren's Grotto</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=86"><font size="1">Add Guide for Siren's Grotto</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Cuthbert</b> (<i>10/4/01</i>) Hunting here can be outstanding. If you can get a GOOD group, you can head down below while invis to the sirrens camp. Have your MR song ready and get ready for bard instruments to drop like candy. Beware though, the Icy elementals are near by, I would suggest not pulling these. Also Black Marbles and Flawless Diamonds drop in abundance here.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Skyfire Mountains</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=87"><font size="1">Add Guide for Skyfire Mountains</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Mercuria Cestlavie</b> (<i>4/19/01</i>) I forgot to say don't mess with the Chromodracs, they are doable, but require a lot of down time.<br>-Don't for get to haveSyvelian's Anti-magic Aura memmed, when a Chromodrac DoT's you you can debuff it.<br>-Do not send a charmed mob against a chromodrac, they love to debuff.<br>-If you absolutely positively have to kill chromodracs, make them your pet. When you finish killing your target, or when the chromodrac is around 20% health or less, kill it.</span></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Mercuria Cestlavie</b> (<i>4/19/01</i>) -Charm kiting in Skyfire Mountains = Awesome experience, and many level 55+ spells.<br>-To do this enter from The Overthere zone, follow the wall north a little way and find a recognizable spot away from the necromancers and druids hunting there.<br>-Find a mob: Wurms, Wyverns, feasters, or Drakes, to fight against another mob of the same type.<br>-Cautions: Stay away from anything higher then old, elder, or skycinder. Skyfire Drakes, some Elder Wyverns and Old Wurms can summon, if that happens keep them charmed and and take them with you to the nearest zone, and then leave.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Skyshrine</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=88"><font size="1">Add Guide for Skyshrine</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Cuthbert</b> (<i>10/4/01</i>) Past the Pool room is not bad xp at all and some ok drops. Best be looking to be on Giant faction though. With a decent group you can lull pull here and usually take out the 3 rooms of mobs. You can go deeper but it will require a well balanced group or even 2 groups. <br><br></span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Solusek B</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=91"><font size="1">Add Guide for Solusek B</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Nanan</b> (<i>5/30/01</i>) 58-60 soloing SS room yealds very good exp. a cleric/sham/druid will only make it faster. while lava bugs and bats are green 90% of the LDC are still blue. nox and stone are also blue and are not to hard to solo at 59.</span></td></tr><tr><td colspan="3"><br>&nbsp;<br></td></tr><tr bgcolor="#CCCC99"><td colspan="2" nowrap><b>Timorous Deep</b></td><td align="right" valign="top">|<a href="/guides/submitHunting.asp?level=55&zone=104"><font size="1">Add Guide for Timorous Deep</font></a></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Wilmik</b> (<i>9/2/01</i>) I used an alternative method as I had a hard time getting so many raptors in AE range while not getting beat up.  Get 5 or so raptors on your tail and charm one.  Turn around, hit F8(target closest monster) and start spamming your &quot;/pet attack&quot; key.  Your pet has to be close for it to get the message.  Four raptors will start to engage your pet(Only four, so be careful if you have more, you'll still have to run).  Repeat until low on health, and then just chant kite it to death.  Takes some experimentation to learn how not to have your pet poof, but once you get used to it it's great experience.  I went through half of 56 in a day with this method.  Just gotta watch out for those druids, they'll get pretty jealous :P</span></td></tr><tr><td colspan="3"><span class="clsSmall"><li type="square"><b>Wono D'Sane</b> (<i>3/2/01</i>) Raptors in TD, need Jboots or Sow potions, and then lvl 2, lvl 18 and lvl 48 AE songs...mad exp.</span></td></tr></table><br><br><br><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="3" bgcolor="#999966" align="center"><font size="3"><b>Songs Received between Levels 55-60</b></font></td></tr>
+<tr><td>&nbsp;&nbsp;<b>55</td><td><a href="/songs.asp?song=61">Cantata of Replenishment</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>55</td><td><a href="/songs.asp?song=62">Brusco's Bombastic Bellow</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>55</td><td><a href="/songs.asp?song=63">Occlusion of Sound</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>56</td><td><a href="/songs.asp?song=64">Song of Midnight</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>56</td><td><a href="/songs.asp?song=65">Song of Highsun</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>57</td><td><a href="/songs.asp?song=66">Cassindra's Insipid Ditty</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>57</td><td><a href="/songs.asp?song=67">McVaxius' Rousing Rondo</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>58</td><td><a href="/songs.asp?song=68">Niv's Harmonic</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>58</td><td><a href="/songs.asp?song=69">Jonathan's Inspiration</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>59</td><td><a href="/songs.asp?song=70">Denon's Bereavement</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>59</td><td><a href="/songs.asp?song=71">Solon's Charismatic Concord</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>60</td><td><a href="/songs.asp?song=72">Kazumi's Note of Preservation</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>60</td><td><a href="/songs.asp?song=73">Anstilich's Assonance</a></b></td></tr><tr><td>&nbsp;&nbsp;<b>60</td><td><a href="/songs.asp?song=74">Composition of Ervaj</a></b></td></tr></table>		</td></tr></table>
+
+								<br>
+								</td>
+								<td width="10">&nbsp;</td>	
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td width="169" valign="top" background="/images/bkgShade.gif">
+		
+		<img src="/images/trans.gif" width="169" height="1"></td>
+	</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" valign="bottom">
+	<tr>
+		<td height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="7" bgcolor="#999966"><img src="/images/trans.gif" width="1" height="7"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#666633"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="15" bgcolor="#999966"><img src="/images/trans.gif" width="1" height="15"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+</table>
+</body>
+</html>
+

@@ -1,1 +1,0 @@
-Access denied, must be logged in and admin

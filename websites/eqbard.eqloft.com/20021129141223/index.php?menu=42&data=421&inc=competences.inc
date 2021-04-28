@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>..:: EQBard : le site de Jonili le petit barde ::..</title>
+
+<SCRIPT LANGUAGE="Javascript">
+<!--
+function fenetre(intitule,params) { 
+var fen = window.open(intitule,'zoom',params); 
+}
+//-->
+</script>
+
+<style>
+a.lientexte {color:#0B5040;text-decoration:none;}
+a.lientexte:hover {color:#0B5040;text-decoration:underline;}
+</style>
+</head>
+
+<body bgcolor='#CFE6E3' text='#000000' link='#0B5040' vlink='#000000' alink='#000000'>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr><td>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr>
+<td width='680' align='right' valign='top'>
+<img src='./img/commun/c01/carre80.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre60.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>
+</td></tr>
+<tr><td height='2'><img src='./img/commun/transparent.gif' height='2' alt='' border='0'></td></tr>
+<tr><td width='680' height='1'><img src='./img/commun/c01/carre50.gif' width='680' height='1' alt='' border='0'></td></tr>
+</table>
+</td></tr><tr><td>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr><td width='120' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+<tr><td>
+<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=1&data=1 class=lientexte><b>Accueil</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=2&data=2&order=1 class=lientexte><b>Chants</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Equipement</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=31&data=31&inc=instruments class=lientexte>Instruments</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=32&data=31&inc=armures class=lientexte>Armures</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=33&data=31&inc=armes&order=1&sens=1&bard=1 class=lientexte>Armes</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=34&data=31&inc=resist class=lientexte>Resist gear</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=35&data=31&inc=slot class=lientexte>Par slot</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Guides</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=41&data=41 class=lientexte>Général</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carreselect.gif' width='5' height='5' border='0' alt=''>&nbsp;Tactiques<br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=43&data=43 class=lientexte>Quêtes</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=44&data=44 class=lientexte>Zones</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=45&data=45 class=lientexte>Procs</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<b>Photos</b><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=51&data=51 class=lientexte>Atlas</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=52&data=52 class=lientexte>Bardes</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=54&data=54 class=lientexte>GM</a><br>
+&nbsp;&nbsp;&nbsp;<img src='./img/commun/c01/carre60.gif' width='5' height='5' border='0' alt=''>&nbsp;<a href=index.php?menu=55&data=55 class=lientexte>Divers</a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=8&data=8 class=lientexte><b>Mode</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=6&data=6 class=lientexte><b>Liens</b></a><br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=7&data=7 class=lientexte><b>Download</b></a><br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href='http://forumsfr.ubi.com/messages/overview.asp?name=eq_themaeq_eqbardes' target='_blank' class=lientexte><b>Forum</b></a><br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=mailto:jonili@eqbard.eqloft.com class=lientexte><b>M'écrire</b></a><br>&nbsp;<br>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>&nbsp;<a href=index.php?menu=9&data=9 class=lientexte><b>Backstage</b></a><br>&nbsp;<br></font></td></tr></table>
+</td><td width='20' valign='top'><img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre60.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre80.gif' width='10' height='10' border='0' alt=''>
+</td><td width='540' align='left' valign='top'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br><a href='index.php?menu=42&data=42 class=lientexte' class=lientexte><b>< Retour</b></a><br>&nbsp;<br><table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td colspan='2' bgcolor='#0B5040'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='white'><b>&nbsp;Les compétences des bardes</b></font></td></tr><tr><td width ='10'>&nbsp;</td><td><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+Les compétences sont décrites par niveau d'apprentissage. Ne sont pas décrites dans cette page les " trade skills " (poterie, forge, couture,etc.). Pour ces dernières, allez voir les sites spécialisés.<br>
+Les compétences augmentent à mesure qu'on les utilise. Plus la compétence est haute, meilleur est le " rendement ".<br>
+&nbsp;<br>
+<i>CONSEIL IMPORTANT : Apprenez toutes les compétences possibles et montez-les au maximum.</i><br>
+&nbsp;<br>
+Pour les compétences d'instruments : profitez des voyages en bateau (on peut chanter sur les bateaux) et de tout moment de libre. Vous pouvez aussi vous mettre dans un coin tranquille (comme dans une ville amie), avec suffisamment de nourriture et d'eau et chanter avec votre instrument. Allez vous coucher. Quand vous vous réveillerez, votre compétence aura sérieusement augmenté. Cela marche aussi pour la natation (attention à ne pas couler) il suffit de se coincer dans le coin d'un bassin.<br>
+Pour le brass, la première chanson que vous avez est un dot de zone ! Le seul endroit vraiment tranquille pour le faire est Arena (pas dans l'arène, mais autour). C'est une zone sans mob et sans NPC.<br>
+&nbsp;<br>
+<b>Attention : les compétences de combat (offense, 1HS, etc.) ne montent que lorsque vous combattez des monstres qui vous donnent de l'expérience !</b><br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 1</b></font><br>
+&nbsp;<br>
+Tout nouveau personnage commence avec toutes ses compétences du niveau 1, même si elles sont toutes à 0. Il n'est pas nécessaire de les apprendre.<br>
+&nbsp;<br>
+
+<b>1H Blunt</b> : utliser les armes contondantes à une main (marteaux, masses, etc.). Votre capacité en attaque dépend de votre niveau et du niveau de compétence dans les armes utilisées. Cette compétence augmente lorsque vous combattez au contact avec une arme appropriée.<br>
+Maximum de points : 5 + 5 par niveau. Maximum à 250.<br>
+&nbsp;<br>
+<b>1H Slashing</b> : utliser les armes tranchantes à une main (épées, cimeterres, etc.). Votre capacité en attaque dépend de votre niveau et du niveau de compétence dans les armes utilisées. Cette compétence augmente lorsque vous combattez au contact avec une arme appropriée.<br>
+Maximum de points : 5 + 5 par niveau. Maximum à 250.<br>
+&nbsp;<br>
+<b>Piercing</b> : utliser les armes perçantes à une main (lances, dagues, etc.). Votre capacité en attaque dépend de votre niveau et du niveau de compétence dans les armes utilisées. Cette compétence augmente lorsque vous combattez au contact avec une arme appropriée.<br>
+Maximum de points : 5 + 5 par niveau. Maximum à 250.<br>
+&nbsp;<br>
+<b>2H Blunt</b> : utliser les armes contondantes à deux mains (marteaux, masses, etc.).<br>
+<i>Même si cette compétence est inscrite dans la liste des compétences de votre personnage, les bardes n'y ont pas accès !</i><br>
+&nbsp;<br>
+<b>2H Slashing</b> : utliser les armes tranchantes à deux mains (épées, etc.).<br>
+<i>Même si cette compétence est inscrite dans la liste des compétences de votre personnage, les bardes n'y ont pas accès !</i><br>
+&nbsp;<br>
+<b>Défense</b> : permet de ne pas se faire toucher au combat par un adversaire. Cette compétence monte toute seule, il suffit d'aller au combat et d'avoir un monstre sur le dos qui nous tape.<br>
+Maximum de points : 5 par niveau. Maximum à 252.<br>
+&nbsp;<br>
+<b>Offense</b> : permet de toucher un adversaire pendant un combat. Cette compétence monte toute seule, il suffit d'aller au combat et de taper un monstre.<br>
+Maximum de points : 5 par niveau. Maximum à 252.<br>
+&nbsp;<br>
+<b>Bind wound</b> : appliquer des bandages sur un personnage pour le soigner. Utilise un bandage à chaque fois. On ne peut pas soigner quelqu'un à plus de 50% de ses points de vie. Marche aussi sur soi-même.<br>
+Maximum de points : 5 + 5 par niveau jusqu'au niveau 19 (100 à la compétence). Après ça doit remonter à partir du niveau 40 mais je ne sais pas de combien. En tout cas, le 200 ne devrait pas pouvoir être atteint avant le niveau 58 je pense.<br>
+Je ne trouve pas cela très utile pour un barde. Je n'ai jamais entraîné cette capacité, je préfère chanter pour soigner.<br>
+&nbsp;<br>
+<b>Hand to Hand</b> : Combat à mains nues.<br>
+Maximum de points : 3 + 3 par niveau. Maximum à 100.<br>
+Peut-être utile sur un serveur PvP. Inutile sur un serveur PvE.<br>
+&nbsp;<br>
+<b>Throwing</b> : Utiliser des armes de jet. Les bardes ne peuvent pas utiliser d'arc.<br>
+Maximum de points : 5 + 5 par niveau. Maximum à 113.<br>
+Je préfère, et de loin, utiliser un chant pour faire des dégâts à distance.<br>
+&nbsp;<br>
+<b>Sense Heading</b> : savoir dans quelle direction on se dirige. C'est indispensable de monter cette compétence très régulièrement et d'être toujours au maximum par rapport à son niveau. Certains utilisent une boussole, mais cela prend un emplacement dans l'inventaire et les bardes ont autre chose à mettre dans leur inventaire (voir " comment twister les chants ").<br>
+Maximum de points : 5 + 5 par niveau. Maximum à 200.<br>
+&nbsp;<br>
+<b>Alcohol Tolerance</b> : résistance à l'alcool. Cette compétence ne sert à rien du tout. On gagne un peu de force et de stamina, au dépend d'une forte baisse en intelligence, sagesse et agilité).<br>
+Maximum de points : 5 + 5 par niveau. Maximum 200<br>
+Le seul truc rigolo, c'est que quand on est bourré, on ne voit plus très clair, on ne peut plus chanter et on n'arrive plus à taper.<br>
+&nbsp;<br>
+<b>Beg</b> : quémander. Cette compétence ne sert à rien du tout.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 200<br>
+Attention : faire "beg" sur un NPC peut le rendre agressif !<br>
+&nbsp;<br>
+<b>Swimming</b> : natation. Tout personnage peut nager sans problème. Par contre, cette compétence est la seule qui influe sur la vitesse en natation. Même les sorts ou chants qui font courir plus vite (sow, selo) ne font pas nager plus vite. Sert aussi à retenir sa respiration plus longtemps (la barre verte met plus longtemps à descendre).<br>
+Maximum de points : 5 par niveau ? Maximum à 200.<br>
+&nbsp;<br>
+<b>Singing</b> : capacité uniquement réservée aux bardes. Sert à chanter les chants "voice". Cette compétence monte lorsque vous chantez.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 235.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 5</b></font><br>
+&nbsp;<br>
+A partir de ce niveau, toute nouvelle compétence devra être apprise pour pouvoir l'utiliser (sauf cas particulier). L'apprentissage se fait dans les guildes de bardes, auprès des NPC.<br>
+On utilise des points pour apprendre une compétence. Chaque personnage obtient 5 points par niveau, qu'il peut utiliser à sa guise. On peut mettre plusieurs points dans une même compétence, mais à partir d'un certain niveau, il faut payer (le montant est indiqué).<br>
+Certaines compétences ne peuvent pas être augmentées avec des points. On a alors un message du genre : "you must raise this skill on field".<br>
+On ne peut pas mettre de point dans une compétence si on est déjà à son maximum.<br>
+&nbsp;<br>
+<b>Percussion</b> : capacité uniquement réservée aux bardes. Sert à chanter les chants utilisant la percussion. Il faut mettre un tambour dans sa main et chanter un chant de percussion pour monter cette compétence.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 235.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 8</b></font><br>
+&nbsp;<br>
+<b>String</b> : capacité uniquement réservée aux bardes. Sert à chanter les chants utilisant les cordes. Il faut mettre un instrument à cordes dans sa main et chanter un chant de cordes pour monter cette compétence.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 235.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 10</b></font><br>
+&nbsp;<br>
+<b>Dodge</b> : capacité d'éviter une attaque pendant un combat. Cette compétence monte toute seule, il suffit d'aller au combat et d'avoir un monstre sur le dos qui nous tape.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 155.<br>
+&nbsp;<br>
+<b>Meditate</b> : capacité de méditer. Cette compétence, indispensable pour les classes utilisant de la mana, ne sert aux bardes qu'à accélérer le temps de mémoriser une chanson. Cette compétence ne se monte pas, et il n'est pas nécessaire de l'apprendre. Elle s'enclenche automatiquement lorsqu'on appuis sur la touche "spells".<br>
+Maximum de points : 1<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 11</b></font><br>
+&nbsp;<br>
+<b>Brass</b> : capacité uniquement réservée aux bardes. Sert à chanter les chants utilisant les cuivres. Il faut mettre un instrument de cuivre dans sa main et chanter un chant de cuivres pour monter cette compétence.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 235.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 12</b></font><br>
+&nbsp;<br>
+<b>Forage</b> : capacité de trouver dans le sol de l'eau et de la nourriture. On peut aussi trouver des asticots pour la pêche et parfois d'autres objets (mais très rarement).<br>
+NB : l'eau foragée ne peut pas être utilisée pour les "trade skills".<br>
+Maximum de points : ? par niveau. Maximum 55. (les elfes des bois ont cette compétence à 50 dès le niveau 1).<br>
+J'arrive à forager plus que nécessaire pour ma nourriture personnelle (j'en donne souvent ou je détruis le surplus) du coup, je n'achète jamais de nourriture ni d'eau.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 14</b></font><br>
+&nbsp;<br>
+<b>Wind </b>: capacité uniquement réservée aux bardes. Sert à chanter les chants utilisant les vents. Il faut mettre un instrument à vent dans sa main et chanter un chant de vents pour monter cette compétence.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 235.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 17</b></font><br>
+&nbsp;<br>
+<b>Dual Wield</b> : capacité d'utiliser 2 armes à une main en même temps (une dans chaque main). Cette compétence n'a pas besoin d'être apprise. Elle monte quand on combat avec 2 armes.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 245.<br>
+&nbsp;<br>
+<b>Sneak</b> : compétence de voleur. Elle permet de se déplacer (très lentement) derrière un mob sans qu'il nous voie. Ne marche pas à tous les coups.<br>
+Maximum de points : 75<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 20</b></font><br>
+&nbsp;<br>
+<b>Sense traps</b> : compétence de voleur. Elle permet de détecter des pièges. On peut utiliser cette compétence n'importe où, n'importe quand pour la monter.<br>
+Maximum de points : 75<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 24</b></font><br>
+&nbsp;<br>
+<b>Safe fall</b> : compétence de voleur. Elle permet de réduire les points de dégâts pris lorsque l'on tombe. Pour s'entraîner, il suffit de tomber (pas de trop haut au début !).<br>
+Maximum de points : 40<br>
+C'est une compétence qui, même si elle ne peut pas monter haut, est extrêmement utile. Elle permet de voyager sans risque dans les zones très accidentées (Frontiers Mountains, Dreadlands, etc.).<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 25</b></font><br>
+&nbsp;<br>
+<b>Hide</b> : compétence de voleur. Elle permet de se cacher sans être vu. Il ne faut pas bouger, ni se retourner, mais on peut s'asseoir et se lever. Certains monstres voient à travers le hide. Le sort "see invisible" permet de voir un personnage en hide.<br>
+Maximum de points : 40.<br>
+
+&nbsp;<br>
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 26</b></font><br>
+&nbsp;<br>
+<b>Instill doubt</b> : compétence de voleur. Elle permet de faire fuir le monstre qu'on attaque. Cela ne marche que rarement, même avec la compétence au maximum. Cette compétence ne peut être apprise qu'auprès de Marsheart, qui est à l'étage de la guilde des bardes dans North Freeport.<br>
+Pour faire monter cette compétence, il suffit d'avoir une cible (même un corps et même sur un bateau en ciblant le bateau). Par contre, si vous ciblez un monstre, ne le faites que si il est en dehors de l'aggro range. C'est cette compétence qui montre le personnage en train de se battre dans le vide. Elle monte très très lentement.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 100<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 30</b></font><br>
+&nbsp;<br>
+<b>Disarm Traps</b> : compétence de voleur. Elle permet de désarmer un piège (temporairement). Cette compétence n'a pas besoin d'être apprise. Le plus difficile pour augmenter cette compétence est de trouver un piège (ils sont très rares).<br>
+Maximum de points : 100<br>
+Je n'ai jamais pu encore augmenter cette compétence. Je n'ai pas encore trouvé de piège dans un coin assez tranquille.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 35</b></font><br>
+&nbsp;<br>
+<b>Track</b> : capacité d'avoir une liste des cibles possibles dans un rayon autour de soi dans la zone. Ensuite, une fois une cible sélectionnée, des messages réguliers nous informent de sa position (devant, derrière, devant et à gauche,…). Les commandes de filtre sur le track ne sont pas accessibles aux bardes.<br>
+Maximum de points : 100<br>
+Cette compétence est géniale. Elle permet de trouver des mobs rares, notamment dans les zones où les monstres se déplacent. Elle permet aussi de retrouver des joueurs. Au niveau 100, le track a une portée d'environ 2 kilomètres tout autour de soi (l'équivalent de 2000 en loc).<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 40</b></font><br>
+&nbsp;<br>
+<b>Pick Lock</b> : compétence de voleur. Elle permet de déverrouiller des portes fermées à clé. Cela nécessite des outils de voleur (à acheter chez les marchands). Il suffit d'avoir les outils sur le curseur et de cliquer sur la porte.<br>
+Maximum de points : 100<br>
+Je me suis entraîné jusqu'au maximum (100) à Beffalen, sur la porte qui mène au second étage. Mais je ne sais pas si c'est toujours possible, depuis qu'ils ont changé cette zone.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 53</b></font><br>
+&nbsp;<br>
+<b>Parry</b> : capacité de parer une attaque. Cette compétence monte toute seule, il suffit d'aller au combat et d'avoir un monstre sur le dos qui nous tape.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 185.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 58</b></font><br>
+&nbsp;<br>
+<b>Riposte</b> : capacité de bloquer, puis de riposter à une attaque (cela donne une attaque supplémentaire). Cette compétence monte toute seule, il suffit d'aller au combat et d'avoir un monstre sur le dos qui nous tape.<br>
+Maximum de points : 5 + 5 par niveau. Maximum 75.<br>
+&nbsp;<br>
+
+
+</font>&nbsp;<br></td></tr></table>&nbsp;<br>&nbsp;<br><table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td colspan='2' bgcolor='#0B5040'><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='white'><b>&nbsp;Les disciplines des bardes</b></font></td></tr><tr><td width ='10'>&nbsp;</td><td><font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2'>&nbsp;<br>
+Les disciplines sont des compétences spéciales, qu'il n'est pas besoin d'apprendre. Elles ont un effet limité dans le temps et il y a un temps de latence avant de lancer une autre discipline. Ce temps diminue avec les niveaux. On ne peut pas lancer plus d'une discipline à la fois.<br>
+Ces disciplines se lancent par une ligne de commande (je vous conseille de faire des boutons).<br>
+Les disciplines ne s'augmentent pas. Leur effet est toujours le même.<br>
+Il faut avoir l'extension Kunark pour pouvoir utiliser une discipline (mais pour pouvoir monter son niveau au dessus de 50 également).<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 51</b></font><br>
+&nbsp;<br>
+<b>Resistance</b> : ajoute 3 à toutes les résistances (magie, froid, chaud, poison, maladie).<br>
+Durée de 5 minutes.<br>
+Temps de réutilisation 1 heure.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 54</b></font><br>
+&nbsp;<br>
+<b>Fearless</b> : insensibilité à tous les sorts de peur.<br>
+Durée de 11 secondes.<br>
+Temps de réutilisation 1 heure.<br>
+&nbsp;<br>
+
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 55</b></font><br>
+&nbsp;<br>
+<b>Deftdance </b>: le dual wield sera actif à chaque attaque et le dodge actif à chaque coup reçu.<br>
+Durée de 15 secondes.<br>
+Temps de réutilisation 1 heure 12 minutes.<br>
+&nbsp;<br>
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>&nbsp<font face='Verdana,Geneva,Arial,Helvetica,sans-serif' size='2' color='#0B5040'><b>Niveau 60</b></font><br>
+&nbsp;<br>
+<b>Puretone</b> : tous les chants ont un bonus comme si ils étaient accompagnés du meilleur instrument.<br>
+Durée de 4 minutes.<br>
+Temps de réutilisation 1 heure 12 minutes.<br>
+
+</font>&nbsp;<br></td></tr></table>&nbsp;<br>
+</font></td></tr></table>
+</td></tr><tr><td>
+<table width='680' border='0' cellspacing='0' cellpadding='0'>
+<tr><td width='680' height='1'><img src='./img/commun/c01/carre50.gif' width='680' height='1' alt='' border='0'></td></tr>
+<tr><td height='2'><img src='./img/commun/transparent.gif' height='2' alt='' border='0'></td></tr>
+<tr>
+<td width='680' align='left' valign='top'>
+<img src='./img/commun/c01/carre50.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre60.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre70.gif' width='10' height='10' border='0' alt=''>
+<img src='./img/commun/c01/carre80.gif' width='10' height='10' border='0' alt=''>
+</td></tr>
+</table>
+</td></tr><tr><td align='center'>
+<A target='_blank' href='http://www.eqloft.com/'><img src='./img/commun/hebergement.gif' width='122' height='31' border='0' alt=''></a></td></tr></table>
+
+</body>
+</html>

@@ -1,4 +1,0 @@
-
-    <meta http-equiv="Refresh" content="0; url=http://www.zam.com/hostnotfound.html">
-    <script>document.location.replace("http://www.zam.com/hostnotfound.html");</script>
-  

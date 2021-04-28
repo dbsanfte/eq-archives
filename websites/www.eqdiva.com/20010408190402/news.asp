@@ -1,0 +1,470 @@
+<!-- www.eqdiva.com/news.asp page downloaded on 4/8/01 3:04:01 PM
+  //  Designed by Kocho Divah ~ kocho@eqdiva.com	//-->
+
+<html>
+<head>
+	<title>EQdiva.com - Bards of Everquest &nbsp;&nbsp;&nbsp;EQDiva News</title>
+	<META name="description" content="EQDiva.com - dedicated to the Bards of Everquest. Learn about being a good bard, grouping with a bard, or why you might like being a bard.">
+	<META name="keywords" content="everquest, bard, bards, eq, roleplaying, minstrel, kocho, diva">
+	
+
+	<style>
+		a:link       { color: #330000; text-decoration: none; font-weight: bold}
+		a:visited    { color: #330000; text-decoration: none; font-weight: bold}
+		a:active     { color: #990033; text-decoration: none; font-weight: bold}
+		a:hover      { color: #990033; text-decoration: none; font-weight: bold;}
+
+		td {
+			color: #000000;
+			font : 10pt verdana, geneva, Arial, Helvetica, sans-serif;
+		}
+
+		.clsFormButton {
+			background :#999966;
+			color :#333333;
+			font : Bold 8pt Verdana Geneva Arial Helvetica sans-serif;
+		}
+
+		.clsFormInput {
+			background-color:#eeeeee;
+			color:#333333;
+			font:bold 8pt verdana,arial;
+		}
+
+		.clsColHeader {
+			font : bold;
+			color:#333333;
+		}
+		
+		.clsBold {
+			font: bold;
+		}
+		
+		.clsBoldRed {
+			font: bold;
+			color:#990000;
+		}
+		
+		.clsBoldGreen{
+			font: bold;
+			color:#006600;
+		}
+		
+		.clsBoldWhite {
+			font: bold;
+			color:#ffffff;
+		}
+		
+		.clsSmall {
+			font:8pt;
+		}
+		
+		.red {
+			font: bold;
+			color:#990000;
+		}
+</style>
+
+
+</head>
+
+<body bgcolor="#CCCC99" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="100%" valign="top"><a href="/contact.asp"><img src="/images/imgSKocho.gif" width="60" height="60" hspace="0" vspace="0" border="0" alt="Contact the Diva!"></a><a href="/default.asp"><img src="/images/notes.gif" border="0" alt="EQDiva.com - Bards of Everquest" hspace="0" vspace="0"></a></td>
+	</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td colspan="2" height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr bgcolor="#999966">
+		<td height="15"><font color="FFFFCC"><b>&nbsp;&nbsp;Welcome from <a href="/setPreferences.asp" title="Change Server Preference">Druzzil Ro</a></b></font></td>
+		<td height="15" align="right"><b>Bards of Norrath unite!<img src="/images/trans.gif" width="5" height="15"></b></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#666633"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="7" bgcolor="#999966"><img src="/images/trans.gif" width="1" height="7"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" valign="top">
+	<tr>
+		<td width="100%" valign="top">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="top" bgcolor="#CCCC99">
+				<tr>
+					<td width="120" valign="top" align="center" bgcolor="#666633">
+					
+	<table cellspacing="0" cellpadding="0" width="100" border="0" align="center">
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/default.asp"><font color="#ffffcc">Home</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/news.asp"><font color="#333333">News</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/songs.asp"><font color="#ffffcc">Songs</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/skills.asp"><font color="#ffffcc">Skills</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/items.asp"><font color="#ffffcc">Items</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/armor.asp"><font color="#ffffcc">Armor</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/maps/default.asp"><font color="#ffffcc">Maps</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/guides/hunting.asp"><font color="#ffffcc">Hunting</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/guides/guides.asp"><font color="#ffffcc">Guides</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/quests/default.asp"><font color="#ffffcc">Quests</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/screenshots.asp"><font color="#ffffcc">Screenshots</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="http://pub45.ezboard.com/beqdivabardsofeverquest"><font color="#ffffcc">Discussions</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/links.asp"><font color="#ffffcc">EQ Links</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+		<tr>
+			<td align="center"><a href="/contact.asp"><font color="#ffffcc">Contact</font></a></td>
+		</tr>
+	
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#000000"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#999966"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+		<tr>
+			<td height="1"><img src="/images/trans.gif" height="1" width="1"></td>
+		</tr>
+
+	</table>
+	
+					<a href="/songs.asp"><img src="/images/imgBard.gif" width="71" height="177" border="0" align="middle" alt="Bard" hspace="2" vspace="2"></a></td>
+					
+					<td width="100%" valign="top">	
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr bgcolor="#FFFFCC">
+								<td width="10">&nbsp;</td>	
+								<td><b>Sunday, April 08, 2001</b></td>
+								<td align="right"><font size="1"><b>6 bards singing in a full group! online</b></font></td>
+								<td width="10">&nbsp;</td>	
+							</tr>
+							<tr bgcolor="#CCCC99">
+								<td width="10">&nbsp;</td>	
+								<td colspan="2">&nbsp;&nbsp;<font size="1"><b><a href="/default.asp">Home</a> &gt; <a href="/news.asp">News</a> &gt; EQDiva News</b></font></td>
+								<td width="10">&nbsp;</td>	
+							</tr>
+							
+							<tr bgcolor="#ffffff">
+							
+								<td width="10">&nbsp;</td>	
+								<td colspan="2"><br>
+		<b>EQ Diva News</b>
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr bgcolor="#666633"><td valign="bottom" colspan="2" class="clsBoldWhite">&nbsp;&nbsp;Patch Day!</b></td></tr>
+<tr bgcolor="#CCCC99"><td valign="bottom" class="clsSmall">&nbsp;<i>Kocho Divah</i></td><td valign="bottom" align="right" class="clsSmall">&nbsp;&nbsp;Tuesday, March 27, 2001&nbsp;&nbsp;1:07pm CST</b></td></tr>
+<tr><td colspan="2" bgcolor="#eeeeee"><br><blockquote>One of the items in this patch pertains to us bards...<br><br>- Changed the effects on the Singing Steel Boots and Greaves. After a fair amount of concern from players, we have removed the summon food and water effects from these items. They have been replaced with modified versions of Aria of the Eagles (boots) and Appalling Screech (greaves).<br><br></blockquote></td></tr>
+<tr><td colspan="2" align="right"><img src="/images/buttons/imgDrum.gif"><br><br></td></tr>
+<tr bgcolor="#666633"><td valign="bottom" colspan="2" class="clsBoldWhite">&nbsp;&nbsp;New! Maps by Draelon Stormsong</b></td></tr>
+<tr bgcolor="#CCCC99"><td valign="bottom" class="clsSmall">&nbsp;<i>Kocho Divah</i></td><td valign="bottom" align="right" class="clsSmall">&nbsp;&nbsp;Friday, March 23, 2001&nbsp;&nbsp;1:42pm CST</b></td></tr>
+<tr><td colspan="2" bgcolor="#eeeeee"><br><blockquote>New to EQDiva is the addition of a maps section! These beautifully rendered maps are created by Draelon Stormsong, a fellow bard. See the new <a href='/maps/default.asp'>Maps section</a>! A word from Draelon: <br><blockquote><b>Draelon Stormsong ~ </b>I've been making maps since January of 2000. At the time there were only a few good map sites available, most notably, Maps of Norrath (http://www.nx.sakura.ne.jp/~chizuya/index2e.html). My early maps were merely an attempt to take the maps of others and put them into one document. My Runnyeye map is a perfect example. I took the Jus Divinum map which was 4 pages long and used it to make 1 layered map so that I could better understand how the tunnels linked up. As time progressed I found myself making maps for areas that had no good available maps. Maps of Norrath made several awesome outdoor maps so I had no need to cover those and he also did the definitive maps for Nagafen's Lair and Lower Guk. I wasn't pleased with his Splitpaw map though and at the time there was no map of Permafrost.<br><br>When Kunark was released I spent a lot of time exploring and started several maps, but I was too old for some areas and never returned to them to complete those maps. (Temple of Droga has been on my drawing board since week 2 of Kunark) Now that Velious has been released I'm focusing more energy on mapping the areas I frequent. Hence the recent Siren's Grotto and Dragon Necropolis maps. Once again, Maps of Norrath has made outstanding outdoor maps for Velious so I have no need to map those.<br><br>I've gotten feedback that people would like to see more spawn information in my maps. Some of the older maps have spawn info, but the newer maps lack it for several reasons. First off, when I do these maps there are few other maps to go on and spawn info is not well known. Secondly I don't want to necessarily spoil any of these areas, I just want to provide solid maps so that when you are lost you can find your way out. Lastly, I think that each map is a living growing thing. Each time I enter a dungeon I've mapped, I make corrections and update information. My printed maps are riddled with pencil marks and eraser stains and I constantly correct all spawn information. I personally find enjoyment from doing this and I want to encourage other people to get involved with learning the lands, not just hand them a map with all the spawn spots marked and all the strategies outlined.<br><br>Currently on the drawing board are Karnor's Castle (including the sewers), Plane of Hate (including levels 2 and 3), Temple of Droga, Kael Drakkal and Skyshrine. I don't have etas for any of these, they depend largely on when I next visit those zones. I'm also planning on doing a survey of Velkator's Labrynth in the near future as I think that is an astounding zone that deserves a worthy map.</blockquote><br>Once again, thank you Draelon for sharing your maps with us!</blockquote></td></tr>
+<tr><td colspan="2" align="right"><img src="/images/buttons/imgDrum.gif"><br><br></td></tr>
+<tr bgcolor="#666633"><td valign="bottom" colspan="2" class="clsBoldWhite">&nbsp;&nbsp;Lots of new screenshots</b></td></tr>
+<tr bgcolor="#CCCC99"><td valign="bottom" class="clsSmall">&nbsp;<i>Kocho Divah</i></td><td valign="bottom" align="right" class="clsSmall">&nbsp;&nbsp;Tuesday, March 13, 2001&nbsp;&nbsp;1:00pm CST</b></td></tr>
+<tr><td colspan="2" bgcolor="#eeeeee"><br><blockquote>I activated alot of screenshots this morning, so you can view these now.<br><br>In case you were wondering why I personally review these and don't allow them to be instantaneously activated upon submission, its not only that we don't get a few questionable pics uploaded as a joke (which hasn't happened yet). Its because alot of people send me their bitmap formats which are over a meg file size. I convert these to the appropriate jpg format with Photoshop. I also brighten and edit all pics so they look better on the web. Finally, I compress them to be less than 35k, unless for some reason it must be higher quality in order to see the words and such.<br><br>Some people send me their Everquest program (everquest.exe). I don't know if they are just experimenting with my file upload, or they truly don't know where to find their screenshots. If this is you, simply go to where you installed EQ (like c:/Program Files/Everquest/) and you should see a bunch of bitmaps. To save everyone time, you may convert the file to a .jpg, or, if you don't know how to do this, you may send me your .bmp screenshot and I can do it. Just remember .jpg files are 1/10th the size of .bmps, so keep that in mind...<br><br>I do plan to make this section a bit more user friendly, with thumbnails, and add Zone information. I will work on this next week.</blockquote></td></tr>
+<tr><td colspan="2" align="right"><img src="/images/buttons/imgDrum.gif"><br><br></td></tr>
+</table>
+	<SCRIPT language="JavaScript">
+	<!--
+	function frmDisplaySubmit() {				
+		document.frmDisplay.submit();
+	}
+	//-->
+	</SCRIPT>
+	<br><br>
+	<table border="0" width="90%" align="center">
+		<tr>
+			<td>
+	
+		<img src="http://www.geekmates.com/images/navigation/norewind.gif" border="0" width="21" height="19" hspace="2" alt="First Page">&nbsp;&nbsp;
+		<img src="http://www.geekmates.com/images/navigation/nobackward.gif" width="10" height="19" border="0" hspace="2" alt="First Page">
+	
+				</td>
+				<td align="center">EQ Diva News Page 1 of 11&nbsp;&nbsp;</td>
+				<td align="right">
+	
+		<a href="news.asp?mode=show&move=next&entries=3&sort=DESC"><img src="http://www.geekmates.com/images/navigation/forward.gif" border="0" height="19" hspace="2" alt="Forward"></a>&nbsp;&nbsp;
+		<a href="news.asp?mode=show&move=last&entries=3&sort=DESC"><img src="http://www.geekmates.com/images/navigation/fastforward.gif" border="0" width="21" height="19" hspace="2" alt="Fast Forward"></a>
+	
+				</td>
+		</tr>
+	</table>
+	
+								<br>
+								</td>
+								<td width="10">&nbsp;</td>	
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td width="169" valign="top" background="/images/bkgShade.gif">
+		
+		<img src="/images/trans.gif" width="169" height="1"></td>
+	</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" valign="bottom">
+	<tr>
+		<td height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="7" bgcolor="#999966"><img src="/images/trans.gif" width="1" height="7"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#666633"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="15" bgcolor="#999966"><img src="/images/trans.gif" width="1" height="15"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#000000"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#FFFFCC"><img src="/images/trans.gif" width="1" height="1"></td>
+	</tr>
+</table>
+</body>
+</html>
+

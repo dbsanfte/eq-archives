@@ -1,0 +1,1192 @@
+<HTML><HEAD><STYLE TYPE="text/css">
+
+    A:HOVER { color: "#FFC209"; }
+
+    BODY {   
+      font-size: 10pt;
+      font-family: helvetica,arial;
+    }
+    P {
+      font-size: 10pt;
+      font-family: helvetica,arial;
+    }
+    TD {
+      font-size: 10pt;
+      font-family: helvetica,arial;
+    }
+    TD.header {
+      font-size: 16pt;
+      font-family: helvetica,arial;
+      color: white;
+    }
+    H3 {
+      font-family: helvetica,arial;
+    }
+    </STYLE>
+  <TITLE>GameRealm Forums</TITLE></HEAD><body bgcolor = "#000000" text = "white" link = "white" vlink = "white" alink = "red"><TABLE BORDER=0 WIDTH="95%" ALIGN="center"><TR><TD><center>
+<table border="0" width="94%" cellspacing="0" cellpadding="0" bgcolor="#000000">
+  <tr>
+    <td width="18%" valign="top"><font face="Arial" size="3" color="#ffffff"><b>gamerealm.com<br>
+      <br>
+      GameRealm Forums<br>
+      </b></font><br>
+      <b><font color="#6633ff" face="Verdana, Arial, Helvetica" size="4">
+
+<script LANGUAGE="JavaScript">
+<!--
+function navbar()
+{
+//Defining Variables
+	url = document.thisForm.selectedsite.value
+	urlindex = document.thisForm.selectedsite.selectedIndex
+	bigthing = document.thisForm.selectedsite.options[urlindex].value
+	if (bigthing=="title")
+//If The Selected Object is not a link then status bar change
+		{
+		window.status=navigator.appName + " " + navigator.appVersion;
+		}
+	else {
+//Makes your browser go to the selected location
+		document.location = bigthing;
+		}
+}
+// -->
+</script>
+<!-- QUICK NAVBAR -->
+
+      </font>
+<p align="left"><font face="Arial" size="1" color="#ff0000">Hosted Sites</font><font color="#6633ff" face="Verdana, Arial, Helvetica" size="4">
+
+<font face="Arial" size="1"><br></font>
+<select onchange="navbar()" name="selectedsite">
+<option value="title" 
+        selected>Select a Site
+<option value="title">-------------------------
+<option value="http://www.gamerealm.com">gamerealm.com
+<option value="http://www.gamerealm.com/reviews">Reviews
+<option value="http://www.gamerealm.com/cheats">Cheats
+<option value="title">-------------------------
+<option value="http://www.gamerealm.com/t4c">The 4th Coming
+<option value="http://www.gamerealm.com/gods">Hall of the Gods
+<option value="http://www.t4cportal.com">T4C Portal
+<option value="title">-------------------------
+<option value="http://www.gamerealm.com/uo">Shadow Realms
+<option value="title">-------------------------
+<option value="http://www.gamerealm.com/kali">Kali
+<option value="http://www.gamerealm.com/quake2">Quake 2
+<option value="http://www.gamerealm.com/unreal">Unreal
+<option value="title">-------------------------
+<option value="http://www.isomedia.com">ISOMEDIA</option>
+
+</select></p>
+
+<center></FONT>
+      </center></b></td>
+
+
+
+    <td width="66%" valign="top">
+      <p align="center"><font size="-1"><a href="http://www72.valueclick.com/cgi-bin/redirect?host=h0082761&amp;b=1" target="_top"><img alt="Please visit our sponsors." height="61" src="http://www72.valueclick.com/cgi-bin/cycle?host=h0082761&amp;b=1" width="444"><br>
+      <br>
+      </a></font><b><font face="Arial" size="3">GAMEREALM.COM - Your
+        RPG/Gaming Connection</font></b><font face="Verdana, Arial, Helvetica" size="-2">&nbsp;</font><font size="-1"><a href="http://www72.valueclick.com/cgi-bin/redirect?host=h0082761&amp;b=1" target="_top"><br>
+      <br>
+      </a>
+      </font></p>
+      <table border="0" cellPadding="2" cellSpacing="0" height="1" width="564">
+        <tbody>
+          <tr>
+            <td align="middle" bgColor="#000000" height="1" vAlign="center" width="427">
+              <p align="center"><font color="#000000" face="Verdana, Arial, Helvetica" size="-2">&nbsp;
+              </font></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+<center>
+    <td width="16%" valign="top">
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="100%">
+            <p align="center"></p></td>
+        </tr>
+      </table>
+      <CENTER></CENTER>
+    <p align="left"><b><font color="#ffff00" face="Arial" size="1"></font></b></p></td>
+  </tr>
+</table>
+
+</CENTER>
+</CENTER>
+<table width=80% align=center>
+<tr><td>
+
+
+
+</TD></TR></TABLE><table cellpadding="0" cellspacing="0" border="0" width="95%" align="center"><tr bgcolor="#475569"><td align="right"><font size="-1">
+      <a href="http://forums.gamerealm.com/cgi-bin/wwwthreads.pl?Cat=">Main Index</a>
+       | 
+      <a href="http://forums.gamerealm.com/cgi-bin/search.pl?Cat=">Search</a>
+       | 
+      <a href="http://forums.gamerealm.com/cgi-bin/newuser.pl?Cat=">New user</a>
+       | 
+      <a href="http://forums.gamerealm.com/cgi-bin/login.pl?Cat=">Login</a>
+       | 
+      <a href="http://forums.gamerealm.com/cgi-bin/online.pl?Cat=">Who's Online</a>
+       | 
+      <a href="http://forums.gamerealm.com/cgi-bin/faq_english.pl?Cat=">FAQ</a>
+    </td></tr><tr><td><img src="/images/hr.gif"></td></tr></table>
+    <table border="0" width="95%" align="center" cellpadding="0" cellspacing="0">
+    <tr><td align="left">
+    545 Registered Users.
+    </td><td align="right">
+  You are not logged in.</td></tr></table>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                The Lost Heavens Network
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=dolphintech">Dolphin Technical Support</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: New board</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=uoannounce">Announcements - Lost Heavens</a>
+          </td>
+          <td width="25%">
+      <font size="-1">4 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/2/00 10:11 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=srgd">General Discussion - Lost Heavens</a>
+          </td>
+          <td width="25%">
+      <font size="-1">516 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 08:25 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=dolphin2">General Discussion - Dolphin</a>
+          </td>
+          <td width="25%">
+      <font size="-1">2 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/26/00 12:31 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=dolphin">Dolphin Beta Testers Forum</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: New board</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                The 4th Coming
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=t4cgd">General Discussion</a>
+          </td>
+          <td width="25%">
+      <font size="-1">884 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 03:43 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=t4crequest">Request Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">208 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 07:26 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=techsupport">T4C Tech Support</a>
+          </td>
+          <td width="25%">
+      <font size="-1">121 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/7/00 09:51 PM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                The 4th Coming - Chaos Server
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Announcementschaos">Announcements</a>
+          </td>
+          <td width="25%">
+      <font size="-1">11 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/27/00 04:29 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=none">General Discussion</a>
+          </td>
+          <td width="25%">
+      <font size="-1">688 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 11:08 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=bounty">Chaos Bounty Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">12 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/14/00 02:01 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=choas">GM Request Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">12 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/10/00 05:18 PM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                The 4th Coming - Main Server
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Announcements">Announcements</a>
+          </td>
+          <td width="25%">
+      <font size="-1">55 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/17/00 11:11 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=T4C">General Discussion</a>
+          </td>
+          <td width="25%">
+      <font size="-1">163 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 11:19 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=hogideas">HOG Ideas</a>
+          </td>
+          <td width="25%">
+      <font size="-1">5 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/27/00 09:38 AM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                T4C GODS
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Gods">Gods Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">46 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/28/00 10:52 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=balak">Balak</a>
+          </td>
+          <td width="25%">
+      <font size="-1">35 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/1/00 02:15 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=charral">Charral</a>
+          </td>
+          <td width="25%">
+      <font size="-1">127 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/18/00 09:41 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=divene">Divene</a>
+          </td>
+          <td width="25%">
+      <font size="-1">7 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/12/00 11:37 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=eliane">Eliane</a>
+          </td>
+          <td width="25%">
+      <font size="-1">37 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 06:37 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=gile">Gile</a>
+          </td>
+          <td width="25%">
+      <font size="-1">103 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/8/00 11:31 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=kyria">Kyria</a>
+          </td>
+          <td width="25%">
+      <font size="-1">29 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/22/00 11:22 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=mashangi">Mashangi</a>
+          </td>
+          <td width="25%">
+      <font size="-1">136 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/16/00 07:26 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=nile">Nile</a>
+          </td>
+          <td width="25%">
+      <font size="-1">146 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/14/00 09:32 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=rocilas">Rocilas</a>
+          </td>
+          <td width="25%">
+      <font size="-1">23 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/26/00 08:00 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=telsia">Telsia</a>
+          </td>
+          <td width="25%">
+      <font size="-1">41 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/3/00 10:33 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Valian">Valian</a>
+          </td>
+          <td width="25%">
+      <font size="-1">268 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 07:07 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=xanos">Xanos</a>
+          </td>
+          <td width="25%">
+      <font size="-1">30 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/12/00 09:58 PM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                Guilds
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=guilds">Guilds Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">9 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/1/00 06:59 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=bop">Bird of Prey</a>
+          </td>
+          <td width="25%">
+      <font size="-1">41 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/13/00 05:30 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=col">Children of the Light - CoL</a>
+          </td>
+          <td width="25%">
+      <font size="-1">4 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/27/00 03:31 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=cob">Crusaders of Blood - CoB</a>
+          </td>
+          <td width="25%">
+      <font size="-1">20 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/26/00 09:59 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=doh">Demons of Hell - DoH</a>
+          </td>
+          <td width="25%">
+      <font size="-1">2 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/30/00 12:45 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=dow">Disciples of War - DoW</a>
+          </td>
+          <td width="25%">
+      <font size="-1">5 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/10/00 03:05 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=FG">Fire Guild - FG</a>
+          </td>
+          <td width="25%">
+      <font size="-1">3 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:09 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=goa">Guardians of the Arts - GoA</a>
+          </td>
+          <td width="25%">
+      <font size="-1">6 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/19/00 10:22 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=knightsofdawn">Knights of Dawn</a>
+          </td>
+          <td width="25%">
+      <font size="-1">3 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/9/00 06:57 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=ldt">Legiao das Trevas - LdT</a>
+          </td>
+          <td width="25%">
+      <font size="-1">8 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/15/00 06:56 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Purifyers">Purifyers - PRF</a>
+          </td>
+          <td width="25%">
+      <font size="-1">17 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 05:37 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=rk">Royal Knights - RK</a>
+          </td>
+          <td width="25%">
+      <font size="-1">5 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/26/00 09:54 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Silentium">Silentium Syndicate</a>
+          </td>
+          <td width="25%">
+      <font size="-1">120 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/18/00 00:16 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=tac">The Arcane Circle - TAC</a>
+          </td>
+          <td width="25%">
+      <font size="-1">5 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/23/00 03:34 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=uoh">Unity of Honor - UoH</a>
+          </td>
+          <td width="25%">
+      <font size="-1">40 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/25/00 09:18 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=xlords">X-Lords</a>
+          </td>
+          <td width="25%">
+      <font size="-1">127 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 01:49 AM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                T4C Portal
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=vircom">Vircom Announcements</a>
+          </td>
+          <td width="25%">
+      <font size="-1">1 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/19/00 11:50 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=t4cportal">T4C Portal Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">180 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/16/00 09:25 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=t4cdev">T4C Development & Bugs</a>
+          </td>
+          <td width="25%">
+      <font size="-1">4 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:22 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=t4ctodo">T4C To Do Board - Players Point of View</a>
+          </td>
+          <td width="25%">
+      <font size="-1">12 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/2/00 03:53 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=playersquest">T4C Player Quest Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">11 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/23/00 08:32 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=account">T4C Account Auction Board</a>
+          </td>
+          <td width="25%">
+      <font size="-1">14 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/16/00 12:13 PM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                T4C Portal - Servers
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=abyssnet">Abyssnet</a>
+          </td>
+          <td width="25%">
+      <font size="-1">4 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/5/00 01:14 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=aliensonline">Aliens Online</a>
+          </td>
+          <td width="25%">
+      <font size="-1">2 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/16/00 05:33 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=arinternet">Ar Internet</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:26 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=artic">Artic</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:27 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Association">Association</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:28 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=atlanta">Atlanta Skyline</a>
+          </td>
+          <td width="25%">
+      <font size="-1">1 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/30/00 03:28 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Battleclub">Battleclub</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:30 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Calagary">Calagary Server</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:30 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Cyberwar">Cyberwar</a>
+          </td>
+          <td width="25%">
+      <font size="-1">1 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/10/00 10:46 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Digicon">Digicon</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:31 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=dragonstar">Dragonstar Online</a>
+          </td>
+          <td width="25%">
+      <font size="-1">81 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/16/00 04:03 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=eAcceleration">eAcceleration</a>
+          </td>
+          <td width="25%">
+      <font size="-1">4 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/25/00 02:31 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Eldorado">Eldorado</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:33 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=GameBoom">Game Boom</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:34 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=GamesUniverse">Games Universe</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:35 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Grapevine">Grapevine</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:35 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Interlynx">Interlynx</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:36 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Jungle">Jungle II</a>
+          </td>
+          <td width="25%">
+      <font size="-1">29 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/18/00 11:01 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=KingdomConnection">Kingdom Connection</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:37 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=LaQuat">La Quatrième Prophétie</a>
+          </td>
+          <td width="25%">
+      <font size="-1">5 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/17/00 04:41 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=LocalLink">Local Link</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:39 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Metropolis">Metropolis</a>
+          </td>
+          <td width="25%">
+      <font size="-1">1 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/3/00 07:05 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=NewAgeGaming">New Age Gaming</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:40 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=NewForce">NewForce</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:40 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Nuthouse">Nuthouse</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:41 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Quasiworld">Quasiworld</a>
+          </td>
+          <td width="25%">
+      <font size="-1">4 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 4/13/00 04:25 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Realmud">Realmud.com</a>
+          </td>
+          <td width="25%">
+      <font size="-1">5 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/11/00 02:43 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Samjung">Samjung</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:42 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=shadowscape">Shadowscape</a>
+          </td>
+          <td width="25%">
+      <font size="-1">7 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 7/31/00 07:29 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Systec">Systec</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:44 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=T4CGamercom">T4CGamer.com</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 6/25/00 02:28 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=T4CKorea">T4C Korea</a>
+          </td>
+          <td width="25%">
+      <font size="-1">1 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/13/00 00:22 AM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Tarlsplace">Tarl's Place</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: New board</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=uol">UOL</a>
+          </td>
+          <td width="25%">
+      <font size="-1">6 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 8/4/00 05:31 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=WizardsRealm">Wizards Realm</a>
+          </td>
+          <td width="25%">
+      <font size="-1">3 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 5/31/00 02:36 PM</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=XBox">X- Box</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: 3/26/00 10:47 PM</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <font size="+1">
+                <b>
+                PlayerAuctions.com
+                </b>
+                </font>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="10">
+                &nbsp;
+              </td>
+              <td>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=Playerauctions">Community</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: New board</font></td></tr></table>
+        
+      <table border="0" width="100%" bgcolor="#475569" cellspacing="0">
+        <tr>
+          <td width="50%">
+            <a href="http://forums.gamerealm.com/cgi-bin/postlist.pl?Cat=&Board=suggestions">Suggestions</a>
+          </td>
+          <td width="25%">
+      <font size="-1">0 posts 
+        </font></td><td width="25%">
+        <font size=-1>Last post: New board</font></td></tr></table>
+        </td></tr><tr><td bgcolor="black" colspan="2"></td></tr></table><TABLE BORDER=0 WIDTH="95%" ALIGN="center"><TR><TD><p>All times are PST</TD></TR></TABLE>
+  <TABLE BORDER=0 WIDTH="95%" align="center">
+  <TR><TD>
+  <center>
+  <br>
+  <a href="http://www.gamerealm.com">GameRealm.com</a>
+  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+  <a href="mailto:gmadmin@gamerealm.com">Contact Us</a>
+  <br><br>
+  </center>
+  </td></tr></table>
+<p align="center">&nbsp;</p>
+</center>
+</TD></TR></TABLE></BODY></HTML>

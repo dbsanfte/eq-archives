@@ -1,0 +1,618 @@
+<html><!-- #BeginTemplate "/Templates/shbaseres.dwt" -->
+<head>
+<title>The Safehouse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php
+$db = mysql_connect("localhost", "webuser");
+mysql_select_db("safehousedb",$db);
+
+$sql="SELECT * FROM weapons";
+if($type != ""){
+$sql .= " WHERE slot='" . $type . "'";
+}
+if(isset($search)){
+$sql .= " WHERE name LIKE '%" . $search . "%'";
+}
+
+if($sortby == "damage" && $damorder==""){$order = "DESC";} 
+if($wtorder != "") {$order = $wtorder;}
+if($locorder != "") {$order = $locorder;}
+if($nameorder != ""){$order = $nameorder;}
+if($delayorder != ""){$order = $delayorder;}
+if($damorder != ""){$order = $damorder;}
+if($order == ""){$order = "ASC";}
+
+if($sortby != ""){
+$sql .= " ORDER BY " . $sortby . " " . $order;
+} else {
+$order="DESC";
+$sql .= " ORDER BY damage " . $order;
+}
+
+$result = mysql_query($sql);
+
+if($nameorder == ""){
+$nameorder = "ASC";
+} else { if($nameorder == "ASC"){
+$nameorder = "DESC";
+} else {
+$nameorder = "ASC";
+}
+}
+
+if($damorder == ""){
+$damorder = "ASC";
+} else { if($damorder == "ASC"){
+$damorder = "DESC";
+} else {
+$damorder = "ASC";
+}
+}
+
+if($wtorder == ""){
+$wtorder = "ASC";
+} else { if($wtorder == "ASC"){
+$wtorder = "DESC";
+} else {
+$wtorder = "ASC";
+}
+}
+
+if($locorder == ""){
+$locorder = "ASC";
+} else { if($locorder == "ASC"){
+$locorder = "DESC";
+} else {
+$locorder = "ASC";
+}
+}	
+
+if($delayorder == ""){
+$delayorder = "ASC";
+} else { if($delayorder == "ASC"){
+$delayorder = "DESC";
+} else {
+$delayorder = "ASC";
+}
+}	
+?>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+function MM_preloadImages() { //v3.0
+ var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+   var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+   if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function fwLoadMenus() {
+  if (window.fw_menu_0) return;
+    window.fw_menu_0_1 = new Menu("Armor",88,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_1.addMenuItem("Arms","window.open('viewarmor.php?type=Arm', '_self');");
+    fw_menu_0_1.addMenuItem("Back","window.open('viewarmor.php?type=Back', '_self');");
+    fw_menu_0_1.addMenuItem("Chest","window.open('viewarmor.php?type=Chest', '_self');");
+    fw_menu_0_1.addMenuItem("Ears","window.open('viewarmor.php?type=Ear', '_self');");
+    fw_menu_0_1.addMenuItem("Face","window.open('viewarmor.php?type=Face', '_self');");
+    fw_menu_0_1.addMenuItem("Feet","window.open('viewarmor.php?type=Feet', '_self');");
+    fw_menu_0_1.addMenuItem("Fingers","window.open('viewarmor.php?type=Finger', '_self');");
+    fw_menu_0_1.addMenuItem("Hands","window.open('viewarmor.php?type=Hand', '_self');");
+    fw_menu_0_1.addMenuItem("Head","window.open('viewarmor.php?type=Head', '_self');");
+    fw_menu_0_1.addMenuItem("Legs","window.open('viewarmor.php?type=Leg', '_self');");
+    fw_menu_0_1.addMenuItem("Neck","window.open('viewarmor.php?type=Neck', '_self');");
+    fw_menu_0_1.addMenuItem("Shields","window.open('viewarmor.php?type=Shield', '_self');");
+    fw_menu_0_1.addMenuItem("Shoulders","window.open('viewarmor.php?type=Shoulder', '_self');");
+    fw_menu_0_1.addMenuItem("Waist","window.open('viewarmor.php?type=Waist', '_self');");
+    fw_menu_0_1.addMenuItem("Wrist","window.open('viewarmor.php?type=Wrist', '_self');");
+    fw_menu_0_1.addMenuItem("Search Armor","window.open('sharmorsrch.php', '_self');");
+    fw_menu_0_1.addMenuItem("Submit Armor","window.open('#', '_self');");
+     fw_menu_0_1.hideOnMouseOut=true;
+    window.fw_menu_0_2 = new Menu("Weapons",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_2.addMenuItem("Piercing","window.open('viewweapons.php?type=Piercing', '_self');");
+    fw_menu_0_2.addMenuItem("1H Slashing","window.open('viewweapons.php?type=1HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("1H Blunt","window.open('viewweapons.php?type=1HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("2H Slashing","window.open('viewweapons.php?type=2HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("2H Blunt","window.open('viewweapons.php?type=2HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("Ranged","window.open('viewweapons.php?type=Ranged', '_self');");
+    fw_menu_0_2.addMenuItem("Throwing","window.open('viewweapons.php?type=Throwing', '_self');");
+    fw_menu_0_2.addMenuItem("Search Weapons","window.open('shweaponssrch.php', '_self');");
+    fw_menu_0_2.addMenuItem("Submit Weapons","window.open('#', '_self');");
+     fw_menu_0_2.hideOnMouseOut=true;
+  window.fw_menu_0 = new Menu("root",75,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_0.addMenuItem(fw_menu_0_1);
+  fw_menu_0.addMenuItem(fw_menu_0_2);
+  fw_menu_0.addMenuItem("Misc. Items","window.open('shitemmisc.htm', '_self');");
+   fw_menu_0.hideOnMouseOut=true;
+   fw_menu_0.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_1_1 = new Menu("Rogue Skills",83,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_1.addMenuItem("Evade","window.open('shskillevade.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Disarm","window.open('shskilldisarm.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Poison","window.open('shskillpoison.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Locks","window.open('shskillplocks.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Pockets","window.open('shskillppockets.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Safefall","window.open('shskillsafefall.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Sneak / Hide","window.open('shskillsneakhide.htm', '_self');");
+     fw_menu_1_1.hideOnMouseOut=true;
+    window.fw_menu_1_2 = new Menu("Trade Skills",67,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_2.addMenuItem("Alchemy","window.open('shtskillalchemy', '_self');");
+    fw_menu_1_2.addMenuItem("Baking","window.open('shtskillbake.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Brewing","window.open('shtskillbrew.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Fletching","window.open('shtskillfletch.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Jewelry","window.open('shtskilljewel.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Pottery","window.open('shtskillpottery.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Smithing","window.open('shtskillsmith.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tailoring","window.open('shtskilltailor.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tinkering","window.open('shtskilltinker.htm', '_self');");
+     fw_menu_1_2.hideOnMouseOut=true;
+  window.fw_menu_1 = new Menu("root",81,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_1.addMenuItem(fw_menu_1_1);
+  fw_menu_1.addMenuItem(fw_menu_1_2);
+   fw_menu_1.hideOnMouseOut=true;
+   fw_menu_1.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_2_1 = new Menu("Epic Quests",108,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_2_1.addMenuItem("Rogue Epic Quest","window.open('shrogueepic.htm', '_self');");
+    fw_menu_2_1.addMenuItem("Other Epic Quests","window.open('shepic.htm', '_self');");
+     fw_menu_2_1.hideOnMouseOut=true;
+  window.fw_menu_2 = new Menu("root",95,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_2.addMenuItem("Rogue Quests","window.open('shroguequests.htm', '_self');");
+  fw_menu_2.addMenuItem("General Quests","window.open('shquests.htm', '_self');");
+  fw_menu_2.addMenuItem(fw_menu_2_1);
+   fw_menu_2.hideOnMouseOut=true;
+   fw_menu_2.childMenuIcon="../../images/nb/arrows.gif";
+  window.fw_menu_3 = new Menu("root",111,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_3.addMenuItem("Equipment Guides","window.open('shequipguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Rogue Guides","window.open('shrogueguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Zone Guides","window.open('shzoneguide.htm', '_self');");
+   fw_menu_3.hideOnMouseOut=true;
+  window.fw_menu_4 = new Menu("root",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_4.addMenuItem("Safehouse Art","window.open('shart.htm', '_self');");
+   fw_menu_4.hideOnMouseOut=true;
+
+  fw_menu_4.writeMenus();
+} // fwLoadMenus()
+
+//-->
+</script>
+<script language="JavaScript1.2" src="../../images/nb/fw_menu.js"></script>
+</head>
+<body bgcolor="#333333" text="#FFFFFF" link="#FFCC00" vlink="#FFCC00" alink="#FFCC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../../images/nb/shnb2-down.gif','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif','../../images/nb/shnb4-down.gif','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif','../../images/nb/shnb6-down.gif','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif','../../images/nb/shnb8-down.gif','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif','../../images/nb/shnb10-down.gif','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif')">
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" bgcolor="#CCCCCC">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <div align="center"></div>
+      <a name="top" onFocus="if(this.blur)this.blur()"></a><a href="../../ring/warden/RingWarden.shtml" target="_self" onFocus="if(this.blur)this.blur()"><img src="../../images/ring20.gif" width="20" height="20" border="0"></a> 
+      <p></p>
+      <p>&nbsp;</p>
+    </td>
+    <td bgcolor="#333333" bordercolor="#666666" width="685" align="left" valign="top"> 
+      <p align="center"> 
+        <script language="JavaScript1.2">fwLoadMenus();</script>
+      </p>
+      <table border="0" cellpadding="0" cellspacing="0" width="685">
+        <!-- fwtable fwsrc="shhornav1.png" fwbase="shnb.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="7" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+        </tr>
+        <tr> 
+          <td><img name="shnb1" src="../../images/nb/shnb1.gif" width="2" height="20" border="0"></td>
+          <td><a href="http://bloodmoon.net/showarmors.php3?type=feet" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_0,24,23);MM_nbGroup('over','shnb2','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb2','../../images/nb/shnb2-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb2" src="../../images/nb/shnb2.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb3" src="../../images/nb/shnb3.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_1,162,23);MM_nbGroup('over','shnb4','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb4','../../images/nb/shnb4-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb4" src="../../images/nb/shnb4.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb5" src="../../images/nb/shnb5.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_2,299,23);MM_nbGroup('over','shnb6','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb6','../../images/nb/shnb6-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb6" src="../../images/nb/shnb6.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb7" src="../../images/nb/shnb7.gif" width="7" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_3,435,23);MM_nbGroup('over','shnb8','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb8','../../images/nb/shnb8-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb8" src="../../images/nb/shnb8.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb9" src="../../images/nb/shnb9.gif" width="1" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_4,573,23);MM_nbGroup('over','shnb10','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb10','../../images/nb/shnb10-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb10" src="../../images/nb/shnb10.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb11" src="../../images/nb/shnb11.gif" width="2" height="20" border="0"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="20" border="0" name="undefined_2"></td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "shcontent" --> 
+      <p>&nbsp;</p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif" size="5" color="#FFFFFF"> 
+        <b><font size="4" color="#FFCC00">THE ROGUE EPIC QUEST WALKTHROUGH<br>
+        The &quot;RAGEBRINGER&quot; <br>
+        </font></b> </font> <B><FONT color=red>WARNING: This quest has changed. 
+        Some details are no longer valid. Please check back for an update or refer 
+        to the Quest Forum</FONT></B> <br><br>
+        <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Thanks 
+        to Quarr Shadowsneaker for putting this <br>
+        together and to the countless rogues who have<br>
+        helped perfect the Rogue Epic Quest. </font></p>
+      <p align="center">&nbsp;</p>
+      <blockquote> 
+        <p><font face="Arial, Helvetica, sans-serif" size="2">(MUST be level 50 
+          to talk to all major quest NPCs and have them respond with the quest 
+          info and to be able to be rewarded with turn-ins, even the side quests)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>1)</b> Find Malka 
+          Rale in the Qeynos Aqueducts at location +380, -210, +80. Say &quot;I 
+          will help&quot; to get &quot;Stanos' Pouch.&quot;<br>
+          &#150; Malka's placeholder is &quot;A courier.&quot;<br>
+          &#150; &quot;A courier&quot; will despawn at 8 p.m. game time, then 
+          Malka will spawn at 10 p.m. game time in the place of the courier.<br>
+          &#150; The courier does NOT need to be killed to get Malka to spawn, 
+          just wait till 10 p.m.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>2a)</b> Travel 
+          to North Kaladim and locate Founy Jestands at location +520, +307, -35. 
+          Pick pocket the &quot;stained parchment top&quot; from him. He is a 
+          rogue GM near the bank.<br>
+          &#150; He will despawn at 8 a.m. game time and respawn at 10 a.m.<br>
+          &#150; He will NOT always spawn with the parchment piece.<br>
+          &#150; If you get caught while PPing then zone ASAP - the zone is close.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>2b)</b> Travel 
+          to Neriak 3rd Gate and locate Tani N'Mar at location +650, -1300. Pick 
+          pocket the &quot;stained parchment bottom&quot; from him. He is a rogue 
+          GM in the rogue guild hall.<br>
+          &#150; He will despawn at 8 p.m. and respawn a total of 5 times between 
+          then and 10 p.m. (This may be a bug)<br>
+          &#150; He will NOT always spawn with the parchment piece.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>3)</b> Find Stanos 
+          Herkanor in Highpass Hold (in secret smugglers camp - must go through 
+          underwater tunnel) at location +10, +325, +45. Give him both the &quot;stained 
+          parchment top&quot; and the &quot;stained parchment bottom&quot; at 
+          the same time to receive the &quot;Combined Parchment.&quot;<br>
+          &#150; If Stanos is not in the camp then give Anson McBale &quot;Stanos' 
+          Pouch&quot; you received from Malka Rale to spawn him. (Be sure to stand 
+          on the table behind Anson when giving him &quot;Stanos' Pouch&quot; 
+          or Stanos may not spawn - this happens because you may be standing on 
+          Stanos' spawn point)<br>
+          &#150; If Anson is not in the camp you will have to kill his smuggler 
+          placeholder.<br>
+          - The smugglers are fairly high level and will require a full well rounded 
+          50+ group to kill. (although they can be killed with less, it is unsafe 
+          to do so)<br>
+          - Stanos was found to have spawned after saying to Anson that &quot;I 
+          need to see Stanos.&quot; He will say it better be important and Stanos 
+          will spawn if you are not standing on his spawn point. NOTE: you may 
+          have to do the pouch method first time though, cause you may need high 
+          faction for this.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>4)</b> Travel 
+          to Lake Rathetear and locate Eldreth in the island tower at location 
+          +2600, -550. Hand Eldreth the &quot;Combined Parchment,&quot; 100 platinum, 
+          and 2 bottles (unstacked) of milk all at once to receive the &quot;Scribbled 
+          Parchment.&quot; If you don't have at least indifferent faction with 
+          him, SNEAK when turning in the items. Eldreth will then despawn.<br>
+          - Eldreth is a totally rondom spawn spanning anywhere from many hours 
+          to a few days (Real Life Time).</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>5)</b> Travel 
+          to the Plane of Hate to pick up the &quot;Book of Souls.&quot; Located 
+          at location -60, +320, the spawn time is 10 hours (rumored to despawn 
+          1 minute after spawning, but still unconfirmed). The book spawns on 
+          the bedside night stand in the bedroom located in the top floor of Maestro 
+          of Rancor's building.<br>
+          &#150; Wandering NPC's and MOBs will pick up the book if left lying, 
+          so be quick in picking it up!</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>6)</b> Travel 
+          to the Steamfont Mountains and locate Yendar Starpyre (a gnome in an 
+          SMR.) After he has been located hail him to keep him from running (saying 
+          &quot;book&quot; also stops him) and give him the &quot;Scribbled Parchment&quot; 
+          you received from Eldreth. He in turn will give you another note called 
+          a &quot;Tattered Parchment&quot; then despawn. After you have received 
+          the &quot;Tattered Parchment&quot; from him, you must wait for him to 
+          respawn. After you locate him a second time give him the &quot;Tattered 
+          Parchment&quot; and the &quot;Book of Souls&quot; at the same time. 
+          He will then despawn and a level 50 female human rogue named Renux Herkanor 
+          will spawn nearby (she quads for 200+ and wields a weapon which procs 
+          clockwork poison - a spinning stun spell.) Quickly engage combat or 
+          she will despawn in a short period of time. After Renux has been killed, 
+          loot the &quot;Jagged Diamond Dagger&quot; and the &quot;Translated 
+          Parchment&quot; from her. She also drops an off-hand only 1HS sword 
+          called the Trochilc's Skean which procs clockwork poison and 2 new pieces 
+          of Ravenscale armor.<br>
+          &#150; Yendar wanders the entire zone so have a tracker.<br>
+          - Yendar is a totally rondom spawn spanning anywhere from many hours 
+          to a few days (Real Life Time).<br>
+          &#150; The &quot;Jagged Diamond Dagger&quot; can also be obtained through 
+          a side-quest involving Vilinus the Small (See Side Quests.)<br>
+          &#150; WARNING: It is said that after Renux is killed, Yender will respawn 
+          immediately after. THIS IS FALSE INFO - YENDAR IS RANDOM SPAWN</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>STRATEGY FOR 
+          DEFEATING RENUX<br>
+          </b></font></p>
+        <hr width="40%" align="left">
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>Key Pointers<br>
+          </b> - Renux will NOT attack pets<br>
+          - She can be outrun with Jboots and/or SoW<br>
+          - Do NOT melee her no matter what, you WILL die if you do.<br>
+          - She will NOT summon<br>
+          - Renux will go after the nearest PC on her agro list<br>
+          - She can be feared and snared, but not easily (especially for lower 
+          lvl chars)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><i><b>Perferred 
+          Method (safest) note: I need her resistance info - anyone?<br>
+          </b> </i> ---------<br>
+          Gather together a force of about 18 people (3 full groups) primarily 
+          composed of casters and pet classes, also, at least 1 res able cleric 
+          (melee classes will not attack, only kite her - unless she has been 
+          feared).</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">- Have all pet classes 
+          summon their pets and arm them (mage weapons work best).<br>
+          - Have SoW cast on EVERYONE, all pets included<br>
+          - Have the cleric buff vital stats (HP and AC) on all PCs - pets not 
+          needed unless you add attack rating. (this is because they will NOT 
+          be attacked)<br>
+          - Have a shaman fully vital stat and speed buff ALL pets. (may also 
+          want to buff meleers if you intend to fear kite)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">- The Fight -</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">- Once Renux has 
+          spawned quickly have a melee char agro her and begin running her around 
+          (be sure NOT to loose agro with her)<br>
+          - Send in ALL pets to chase her<br>
+          - IF you have a sham or magi able to cast malo/mala do so now (casters, 
+          stay as far back as possible when casting)<br>
+          - Once malo/mala has landed (if you have that option) then attempt to 
+          snare and fear her.<br>
+          - If fear sticks then send in all meleers to begin attacking and have 
+          all nukers nuke. (if fear breaks meleers MUST back off ASAP)<br>
+          - If fear does not stick then continue to &quot;pet kite&quot; her and 
+          try again.<br>
+          - Continue trying to fear and if you cannot get it to stick let the 
+          pets kill her off (nuking is not recommended unless she is feared)<br>
+          - If the &quot;kiting tank&quot; dies then have another melee char pick 
+          her up while the cleric resses - if she looses agro for too long she 
+          will despawn causing you to begin the quest over.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">She should quickly 
+          die with this manner of &quot;reverse pet kiting&quot; and/or &quot;fear 
+          kiting.&quot;<br>
+          ---------------------------</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>7)</b> Return 
+          to Highpass Hold and re-locate Stanos (if he is not up see #3 above) 
+          in the smuggler's camp. Give him the &quot;Translated Parchment&quot; 
+          you looted from Renux and in turn you will receive &quot;a sealed box.&quot;</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>8)</b> Travel 
+          to Kithicor Forest and locate the Dark Elf House at location +800, +2400. 
+          Give the box to any one of the night spawns there to spawn General V'Ghera. 
+          Pull the General to a safe spot and kill him. Once he has fallen, loot 
+          the &quot;General's Pouch&quot; from him. Also, if he dropped the rare 
+          &quot;Cazic Quill&quot; loot this item as well. He drops many other 
+          things that are not needed for the quest and may be given to those that 
+          helped you though the quest.<br>
+          &#150; If he did not drop the &quot;Cazic Quill&quot; you must obtain 
+          it through a side quest involving Vilinus the Small (See Side Quests.)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><b>GENERAL V'GHERA 
+          STRATEGY</b> - note that this is only one of the many ways of defeating 
+          him - there are other stratagies that work just as well, if not better 
+          then this one</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">LINK TO STRATEGY 
+          THREAD: <a href="http://pub13.ezboard.com/fthesafehousefrm13.showMessage?topicID=407.topic">General 
+          Strategy Thread</a> <br>
+          </font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">----------------------------------<br>
+          - Gather together at min 36 players (6 full groups - more if they are 
+          split up) or up to about 50 if needed (it is reccomended that you do 
+          NOT get more then 50 or the zone may crash or too many will go LD and 
+          you will loose because of this)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">The Teams are:</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">PULL TEAM: Quest 
+          Rogue with the &quot;sealed box&quot;, 56+ Shadow Knight OR Monk, and 
+          at least 2-3 56+ TANKS, and a 55+ Magi with CoH to summon the rogue 
+          after the hand off (total = 4-6 people)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">TANK TEAM: 56+ Cleric, 
+          56+ Enchanter, 56+ Shaman, and 3 high level TANKS</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">UNDEAD CONTROL DETAIL 
+          TEAM: All enchanters (as high lvl as possible)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">NUKE TEAM (there 
+          may be more then 1 nuke team): As many LURE available Wizards as possible!, 
+          Magi and Necros w/pets</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">OTHERS: the best 
+          teams are composed of 4 tanks and 2 clerics to keep them alive, all 
+          the casters should be grouped into their own groups - no nukers with 
+          the tanks</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Get the highest 
+          level players as possible - if you haven't got at least 2 teams of 56+ 
+          chars it is NOT reccomended you do this battle</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">VITAL STATS ABOUT 
+          GENERAL V'GHERA<br>
+          ------------------------------------------------------------------</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Location: +800, 
+          +2400</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Resistance Info:<br>
+          - Weak to Lure based spells (usually hits for 100% dmg)<br>
+          - Weak to Poison spells (this includes ALL rogue poisions)<br>
+          - Weak to Scent line of spells<br>
+          - Weak to Mala/Malo<br>
+          - Weak to Fire based spells (after mala/malo fire base hits for avg 
+          of 80% dmg)<br>
+          - Strong to Magic based spells</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Level: 63</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Damage: hits for 
+          250-285 (quads) - attacks fast!</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Abilities: Lifetap, 
+          Harm Touch, Stuns, Summons</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Class: Shadowknight</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Pull Tactics: He 
+          will NOT summon undead to his aid, all undead are agroed by the puller, 
+          this means GET AN INVIS TO UNDEAD B4 THE PULL!!</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">THE EPIC BATTLE<br>
+          ------------------------------<br>
+          1) Set up forces at the crossroads - +800, +3200</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">2) 3pm game time: 
+          EVERYONE BUFFS FULLY - GET ALL PETS BUFFED</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">3) 4pm: Pull Team 
+          and Tank Team move to the ridge west of the DE cabin at location +800, 
+          +2400</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">4) Kill ALL PHs 
+          in the cabin by 7pm (EXCEPT the Chaplain - if this guy agros mez and 
+          mem blur him) (note: this is done by ONLY the pull and tank teams)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">5) Kill ALL nearby 
+          undead by 8pm, EVERYTHING</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">6) All pull team 
+          members get an invis to undead from the cleric (except for rogue) - 
+          may want to have spare invis to undead potions</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">7) Tank Team moves 
+          back to crossroads</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">8) 9pm: Chaplain 
+          will despawn - Begin speed buffing and DS buffs</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">9) FD Puller (wether 
+          it be the Shadowknight or Monk) moves into cabin (near where the chaplain 
+          despawns but not on his spawn point) and FDs - NO NPCs should be in 
+          the cabin at this time, if one spawns other then the Coercer, KILL IT 
+          ASAP</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">10) ROG moves to 
+          opposite side of cabin where the FD puller will pull the coming Coercer 
+          to (this location needs to be far enough away from the cabin so that 
+          anyone walking into the cabin will not agro her but far enough away 
+          from all undead)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">11) 11pm: The Coercer 
+          spawns, FD puller pulls to the waiting ROG (who is hidden and sneaking)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">12) ROG gives box 
+          to the Coercer from behind while sneaking then rehides, General V'Ghera 
+          spawns a few seconds later (hand off needs to be fast so the Coercer 
+          does not return to the cabin) If the ROG agros her just sit and die, 
+          DO NOT PULL TO GROUP, the cleric will get you later (make sure you get 
+          LOC) If the hand off is sucessful then have the Magi - who is still 
+          located at the base camp - CoH the ROG back to camp and get rdy for 
+          the incoming General.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">13) Highest lvl 
+          tank on the pull team pulls the General to the waiting forces at the 
+          crossroads - make sure you do not get too far away from the General 
+          or he will go back to the cabin (if the first tank dies while pulling 
+          then the second highest tank ont he pull team will take over and so 
+          on until the General is at the camp) NOTE: Call of Hero can be used 
+          to bring the FD puller and ROG back to camp safely - use this only when 
+          you have a mag in pull team that stays in camp during pull.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">14) All forces at 
+          crossroads engage - EXCEPT the Enchanters... ALL (or at min 2) the Enchanters 
+          will have the sole responsibilty of keeping the undead that arrive mezed 
+          (MAINLY THE HEALERS)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">*Since the General 
+          is lvl 63 his corpse will not rot for 30 mins - the ROG should loot 
+          first, make sure to get the &quot;General's Pouch&quot; and IF it drops 
+          the &quot;Cazic Quill.&quot; All other loot from the General is NOT 
+          needed for the quest and SHOULD be given out to the helping forces - 
+          distribute however you see fit</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">------------------------------------------------------</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">9) After you have 
+          obtained the &quot;Jagged Diamond Dagger,&quot; the &quot;Cazic Quill,&quot; 
+          and the &quot;General's Pouch,&quot; travel to Highpass Hold and give 
+          them all at once to Stanos to receive the Ragebringer. (If Stanos is 
+          not in the camp, see #3 above.)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><br>
+          SIDE QUESTS<br>
+          -------------</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">These three side 
+          quests involve an NPC named Vilinus the Small. He can be located in 
+          Western Karanas in the bandit camp at location +340, -6700. Making him 
+          spawn will take some work. First, be sure all bandits are in the camp. 
+          You must kill and continue to kill the bandit which runs from the camp 
+          to the top of the hill until the &quot;brigand&quot; spawns. The &quot;brigand&quot; 
+          is an ultra-rare spawn. Leave the &quot;brigand&quot; alone, and at 
+          11 p.m. game time Vilinus the Small will spawn in his place. From here, 
+          there are 3 sub-quests you are able to complete all of which earn you 
+          a different item.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">&#150; The first 
+          sub quest will result in the &quot;Jagged Diamond Dagger.&quot; Return 
+          to Vilinus the Small all at once a &quot;Fleshripper&quot; (from the 
+          &quot;Kobold King&quot; in Sol B), a &quot;Painbringer&quot; (from the 
+          &quot;Kobold Champion&quot; in Sol B), a &quot;Mithril Two-Handed Sword&quot; 
+          (from the &quot;Froglok King&quot; in Lower Guk - live side), and a 
+          &quot;Gigantic Zwiehander&quot; (from &quot;Karg Icebear&quot; in Everfrost 
+          Peaks.)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">&#150; The second 
+          quest results in a &quot;Cazic Quill.&quot; Return to Vilinus the Small 
+          all at once a &quot;Robe of the Kedge&quot; (from &quot;Phinigel Autropos&quot; 
+          in Kedge Keep OR the &quot;Coercer&quot; in Kithicor Forest), a &quot;Robe 
+          of Ishva&quot; (from the &quot;Coercer&quot; in Kithicor Forest - and 
+          I think one other place), &quot;Shiny Metallic Robes&quot; (from the 
+          &quot;Ghoul Arch Magi&quot; in Lower Guk), and a &quot;Robe of the Oracle&quot; 
+          (from the Oracle in the Ocean of Tears.)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">&#150; The third 
+          quest results in &quot;Stanos' Pouch.&quot; Yes, that is the same item 
+          Malka Rale gives you in Qeynos Aqueducts. Return to Vilinus the Small 
+          all at once a &quot;Burning Rapier&quot; (obtained from a quest), a 
+          &quot;Martune Rapier&quot; (from &quot;A Scorn Banshee&quot; in the 
+          Plane of Hate), an Eyerazzia (from &quot;A Scareling&quot; in the Plane 
+          of Fear), and a &quot;Well Balanced Rapier&quot; (from the &quot;Shady 
+          Swashbuckler&quot; in East Commons.)</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><br>
+          NOTE: Although the &quot;Side Quests&quot; yield many of the same items 
+          as the quest needs, it soley cannot be done to complete the quest. Renux 
+          drops the &quot;Jagged Diamond Dagger,&quot; Malka Rale gives you &quot;Stanos' 
+          Pouch,&quot; and the General drops the &quot;Cazic Quill,&quot; although 
+          the Quill is VERY rare and will most likely have to be obtained though 
+          the side quest with the midgit. </font></p>
+      </blockquote>
+      <p align="center">&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center"><font color="#FFCC00"><a href="#top" onFocus="if(this.blur)this.blur()">-top-</a></font></p>
+      <p align="center"> <font size="1" face="Arial, Helvetica, sans-serif">This 
+        page last updated on 
+        <!-- #BeginDate format:fcAm1a -->Thursday, May 3, 2001 11:28 PM<!-- #EndDate -->
+        </font><font size="1"> </font> </p>
+    </td>
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" height="45" align="left" valign="top"> 
+      <div align="center"> 
+        <p><font face="Arial, Helvetica, sans-serif" color="#FFCC00"><font size="2"><br>
+          SIte best viewed at 1024x768 or better</font><b><font size="1"><br>
+          </font></b><font size="1"> Painstakenly Optimized for IE 5.0 + and Netscape 
+          6.0 + |<b> Pants</b> optional | No Necros were harmed in the making 
+          of the site (yet)</font></font></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>

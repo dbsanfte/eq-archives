@@ -1,0 +1,578 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>C.L.A.W. Current Members</title>
+<base target="_self">
+
+<script><!-- hide
+        function closeWindow()  {
+               self.close()
+        }
+        //done hiding --></script>
+        
+<script language="javascript">
+
+function instantWindow(winSource, winName) {
+  instant = window.open(winSource,winName,"width=350,height=375,resizable=yes,scrollbars=yes")
+}
+</script>
+<style fprolloverstyle>A:hover {color: #FFFF00; font-weight: bold}
+</style>
+</head>
+<bgcolor="#000000" link="#CCCC00" vlink="#0000FF" alink="#FFFF00">
+</script>
+
+<body bgcolor="#000000" link="#CCCC00" vlink="#0000FF" alink="#FFFF00">
+
+<div align="left">
+  <table border="0" width="800" cellspacing="0" cellpadding="0">
+    <tr>
+      <td bgcolor="#000000" valign="top" align="left" height="30" width="130">
+        <img border="0" src="http://www.pioneernet.net/claw/images/leftmenu.gif" WIDTH="130" HEIGHT="30"></td>
+      <td valign="top" align="left" height="30" width="20"><img border="0" src="images/leftround.gif" width="20" height="30"></td>
+      <td width="34%" valign="top" align="left" height="30"><img border="0" src="images/spacer.gif" width="620" height="1"></td>
+      <td width="30" height="30" colspan="2"><img border="0" src="images/rightround.gif" width="29" height="30"></td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" width="130" bgcolor="#1C0763">&nbsp;<u><b><font face="Verdana" color="#FFFF00" size="2">Class
+        Totals</font></b></u><br>
+        <font face="Verdana" size="1"><font color="#FFFFFF">- <a href="board.asp?Class=Bard"> Bards</a> - 4<br>
+        - <a href="board.asp?Class=Cleric"> Clerics</a> - 6<br>
+        - <a href="board.asp?Class=Druid"> Druids</a> - 11<br>
+        - <a href="board.asp?Class=Enchanter"> Enchanters</a> - 3<br>
+        - <a href="board.asp?Class=Magician"> Magicians</a> - 0<br>
+        - <a href="board.asp?Class=Monk"> Monks</a> - 2<br>
+        - <a href="board.asp?Class=Necromancer"> Necros</a> - 4<br>
+        - <a href="board.asp?Class=Shadow Knight"> Shadow Knight</a> - 1<br>
+        - <a href="board.asp?Class=Shaman"> Shamans</a> - 4<br>
+        - <a href="board.asp?Class=Paladin"> Paladin</a> - 4<br>
+        - <a href="board.asp?Class=Ranger"> Ranger</a> - 2<br>
+        - <a href="board.asp?Class=Rogue"> Rogue</a> - 3<br>
+        - <a href="board.asp?Class=Warrior"> Warriors</a> -  6<br>
+        - <a href="board.asp?Class=Wizard"> Wizards</a> - 1<br>
+        - <a href="board.asp"> All Members</a> - 51<br>
+        </font>
+        <br>
+        </font><font size="1" face="Verdana"><br>
+        -</font><br>
+        <font face="Verdana" size="3" color="#CCCC00">
+        <b>
+        <br>
+        </b>
+        </font></td>
+      <td width="20" valign="top" align="left"></td>
+      <td width="450" valign="top" align="left">
+<table border="1" cellspacing="0" width="503">
+<tr>
+<td width="201"><font color="#FFFF00" face="Verdana" size="2"><b>Name</b></font></td>
+<td width="98"><font color="#FFFF00" face="Verdana" size="2"><b>Level</b></font></td>
+<td width="88"><font color="#FFFF00" face="Verdana" size="2"><b>Race</b></font></td>
+<td width="98"><font color="#FFFF00" face="Verdana" size="2"><b>Class</b></font></td>
+</tr>
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=11">Musashi DragonClaw</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">60</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Monk</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=39">Rodnev Merchant</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">60</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Ogre</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Shaman</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=84">Emblem Silverbow</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">58</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Ranger</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=62">Sarth Frostclaw</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">58</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Barbarian</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Shaman</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=117">Augustus Warhawk </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">57</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Barbarian</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Warrior</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=20">Aluien Shadowstorm</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">57</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=43">Mcduff</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">56</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Monk</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=38">Aeda SkittleClaw</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">56</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Halfling</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Cleric</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=122">Allice</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">55</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Enchanter</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=61">Sunndew Frostclaw</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">55</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=111">Romuleth</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">55</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=108">Eidolon</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">55</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">High Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Cleric</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=138">Siladienae  Silverhawke</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=124">Sakkara </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Rogue</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=48">Aviendia </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Erudite</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Enchanter</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=105">Contessa</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Dark Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Enchanter</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=97">Dogman</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Wizard</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=113">Etheraine </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Ranger</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=115">Rimuran *Trial*</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">54</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Gnome</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Warrior</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=114">Kenlie </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">53</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=29">Wixen DaBomb</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">53</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=133">Rasputian</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Gnome</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Necromancer</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=85">Zoamel</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Dark Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Shadow Knight</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=136">Durinm</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Rogue</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=82">Tandaan</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Barbarian</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Shaman</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=129">Sasquaatch</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Bard</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=31">Dagna Battlehammerr</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Dwarf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Cleric</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=80">Meshia Gustar</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Dark Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Cleric</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=47">Geld Automat</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Necromancer</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=49">Athenia Soulhealer</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">High Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Cleric</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=52">Vram</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">52</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Paladin</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=87">Manba Goodheal</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">51</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Dwarf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Cleric</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=23">Berrona </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">51</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=112">Jamis  </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">50</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Dark Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Warrior</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=57">Bandros</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">50</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=90">Fullon Fuzzyfoot</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">50</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Halfling</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=37">Xitrom Krigare</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">50</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Barbarian</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Shaman</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=76">Atalis</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">49</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Paladin</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=54">Obelen</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">49</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Erudite</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Necromancer</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=66">Scent</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">49</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Iksar</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Necromancer</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=128">Aadania Nightsong </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">48</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Bard</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=32">Avalor Valorsong</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">48</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Bard</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=125">Bullas </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">45</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Halfling</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=55">Vallius Silvercrown</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">43</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Human</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Paladin</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=83">Sylvester</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">42</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Troll</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Warrior</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=137">Kjen *trial*</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">29</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Paladin</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=130">Deedlita </a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">24</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Wood Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Druid</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=139">Leredess *trial*</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">23</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Rogue</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=134">Jador*Trial*</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">22</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Barbarian</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Warrior</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=67">Torfling</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">20</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Gnome</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Warrior</font></td>
+</tr>
+
+
+
+<tr>
+<td width="201"><font size="2" face="Verdana" color="#FFFFFF"><a href="Charinfo.asp?id=131">Kieel</a></font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">10</font></td>
+<td width="88"><font size="2" face="Verdana" color="#FFFFFF">Half-Elf</font></td>
+<td width="98"><font size="2" face="Verdana" color="#FFFFFF">Bard</font></td>
+</tr>
+
+
+</table>
+      <td width="20"><img border="0" src="images/spacer.gif" width="20" height="1"></td>
+      <td bgcolor="#1C0763" valign="top" align="left"><img border="0" src="images/spacer.gif" width="10" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" width="180" bgcolor="#1C0763" colspan="5"><img border="0" src="images/bottom.gif" width="800" height="41"></td>
+    </tr>
+  </table>
+</div>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

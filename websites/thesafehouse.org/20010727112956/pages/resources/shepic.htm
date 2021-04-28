@@ -1,0 +1,2003 @@
+<html><!-- #BeginTemplate "/Templates/shbaseres.dwt" -->
+<head>
+<title>The Safehouse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php
+$db = mysql_connect("localhost", "webuser");
+mysql_select_db("safehousedb",$db);
+
+$sql="SELECT * FROM weapons";
+if($type != ""){
+$sql .= " WHERE slot='" . $type . "'";
+}
+if(isset($search)){
+$sql .= " WHERE name LIKE '%" . $search . "%'";
+}
+
+if($sortby == "damage" && $damorder==""){$order = "DESC";} 
+if($wtorder != "") {$order = $wtorder;}
+if($locorder != "") {$order = $locorder;}
+if($nameorder != ""){$order = $nameorder;}
+if($delayorder != ""){$order = $delayorder;}
+if($damorder != ""){$order = $damorder;}
+if($order == ""){$order = "ASC";}
+
+if($sortby != ""){
+$sql .= " ORDER BY " . $sortby . " " . $order;
+} else {
+$order="DESC";
+$sql .= " ORDER BY damage " . $order;
+}
+
+$result = mysql_query($sql);
+
+if($nameorder == ""){
+$nameorder = "ASC";
+} else { if($nameorder == "ASC"){
+$nameorder = "DESC";
+} else {
+$nameorder = "ASC";
+}
+}
+
+if($damorder == ""){
+$damorder = "ASC";
+} else { if($damorder == "ASC"){
+$damorder = "DESC";
+} else {
+$damorder = "ASC";
+}
+}
+
+if($wtorder == ""){
+$wtorder = "ASC";
+} else { if($wtorder == "ASC"){
+$wtorder = "DESC";
+} else {
+$wtorder = "ASC";
+}
+}
+
+if($locorder == ""){
+$locorder = "ASC";
+} else { if($locorder == "ASC"){
+$locorder = "DESC";
+} else {
+$locorder = "ASC";
+}
+}	
+
+if($delayorder == ""){
+$delayorder = "ASC";
+} else { if($delayorder == "ASC"){
+$delayorder = "DESC";
+} else {
+$delayorder = "ASC";
+}
+}	
+?>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+function MM_preloadImages() { //v3.0
+ var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+   var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+   if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function fwLoadMenus() {
+  if (window.fw_menu_0) return;
+    window.fw_menu_0_1 = new Menu("Armor",88,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_1.addMenuItem("Arms","window.open('viewarmor.php?type=Arm', '_self');");
+    fw_menu_0_1.addMenuItem("Back","window.open('viewarmor.php?type=Back', '_self');");
+    fw_menu_0_1.addMenuItem("Chest","window.open('viewarmor.php?type=Chest', '_self');");
+    fw_menu_0_1.addMenuItem("Ears","window.open('viewarmor.php?type=Ear', '_self');");
+    fw_menu_0_1.addMenuItem("Face","window.open('viewarmor.php?type=Face', '_self');");
+    fw_menu_0_1.addMenuItem("Feet","window.open('viewarmor.php?type=Feet', '_self');");
+    fw_menu_0_1.addMenuItem("Fingers","window.open('viewarmor.php?type=Finger', '_self');");
+    fw_menu_0_1.addMenuItem("Hands","window.open('viewarmor.php?type=Hand', '_self');");
+    fw_menu_0_1.addMenuItem("Head","window.open('viewarmor.php?type=Head', '_self');");
+    fw_menu_0_1.addMenuItem("Legs","window.open('viewarmor.php?type=Leg', '_self');");
+    fw_menu_0_1.addMenuItem("Neck","window.open('viewarmor.php?type=Neck', '_self');");
+    fw_menu_0_1.addMenuItem("Shields","window.open('viewarmor.php?type=Shield', '_self');");
+    fw_menu_0_1.addMenuItem("Shoulders","window.open('viewarmor.php?type=Shoulder', '_self');");
+    fw_menu_0_1.addMenuItem("Waist","window.open('viewarmor.php?type=Waist', '_self');");
+    fw_menu_0_1.addMenuItem("Wrist","window.open('viewarmor.php?type=Wrist', '_self');");
+    fw_menu_0_1.addMenuItem("Search Armor","window.open('sharmorsrch.php', '_self');");
+    fw_menu_0_1.addMenuItem("Submit Armor","window.open('#', '_self');");
+     fw_menu_0_1.hideOnMouseOut=true;
+    window.fw_menu_0_2 = new Menu("Weapons",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_2.addMenuItem("Piercing","window.open('viewweapons.php?type=Piercing', '_self');");
+    fw_menu_0_2.addMenuItem("1H Slashing","window.open('viewweapons.php?type=1HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("1H Blunt","window.open('viewweapons.php?type=1HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("2H Slashing","window.open('viewweapons.php?type=2HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("2H Blunt","window.open('viewweapons.php?type=2HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("Ranged","window.open('viewweapons.php?type=Ranged', '_self');");
+    fw_menu_0_2.addMenuItem("Throwing","window.open('viewweapons.php?type=Throwing', '_self');");
+    fw_menu_0_2.addMenuItem("Search Weapons","window.open('shweaponssrch.php', '_self');");
+    fw_menu_0_2.addMenuItem("Submit Weapons","window.open('#', '_self');");
+     fw_menu_0_2.hideOnMouseOut=true;
+  window.fw_menu_0 = new Menu("root",75,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_0.addMenuItem(fw_menu_0_1);
+  fw_menu_0.addMenuItem(fw_menu_0_2);
+  fw_menu_0.addMenuItem("Misc. Items","window.open('shitemmisc.htm', '_self');");
+   fw_menu_0.hideOnMouseOut=true;
+   fw_menu_0.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_1_1 = new Menu("Rogue Skills",83,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_1.addMenuItem("Evade","window.open('shskillevade.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Disarm","window.open('shskilldisarm.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Poison","window.open('shskillpoison.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Locks","window.open('shskillplocks.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Pockets","window.open('shskillppockets.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Safefall","window.open('shskillsafefall.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Sneak / Hide","window.open('shskillsneakhide.htm', '_self');");
+     fw_menu_1_1.hideOnMouseOut=true;
+    window.fw_menu_1_2 = new Menu("Trade Skills",67,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_2.addMenuItem("Alchemy","window.open('shtskillalchemy', '_self');");
+    fw_menu_1_2.addMenuItem("Baking","window.open('shtskillbake.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Brewing","window.open('shtskillbrew.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Fletching","window.open('shtskillfletch.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Jewelry","window.open('shtskilljewel.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Pottery","window.open('shtskillpottery.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Smithing","window.open('shtskillsmith.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tailoring","window.open('shtskilltailor.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tinkering","window.open('shtskilltinker.htm', '_self');");
+     fw_menu_1_2.hideOnMouseOut=true;
+  window.fw_menu_1 = new Menu("root",81,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_1.addMenuItem(fw_menu_1_1);
+  fw_menu_1.addMenuItem(fw_menu_1_2);
+   fw_menu_1.hideOnMouseOut=true;
+   fw_menu_1.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_2_1 = new Menu("Epic Quests",108,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_2_1.addMenuItem("Rogue Epic Quest","window.open('shrogueepic.htm', '_self');");
+    fw_menu_2_1.addMenuItem("Other Epic Quests","window.open('shepic.htm', '_self');");
+     fw_menu_2_1.hideOnMouseOut=true;
+  window.fw_menu_2 = new Menu("root",95,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_2.addMenuItem("Rogue Quests","window.open('shroguequests.htm', '_self');");
+  fw_menu_2.addMenuItem("General Quests","window.open('shquests.htm', '_self');");
+  fw_menu_2.addMenuItem(fw_menu_2_1);
+   fw_menu_2.hideOnMouseOut=true;
+   fw_menu_2.childMenuIcon="../../images/nb/arrows.gif";
+  window.fw_menu_3 = new Menu("root",111,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_3.addMenuItem("Equipment Guides","window.open('shequipguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Rogue Guides","window.open('shrogueguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Zone Guides","window.open('shzoneguide.htm', '_self');");
+   fw_menu_3.hideOnMouseOut=true;
+  window.fw_menu_4 = new Menu("root",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_4.addMenuItem("Safehouse Art","window.open('shart.htm', '_self');");
+   fw_menu_4.hideOnMouseOut=true;
+
+  fw_menu_4.writeMenus();
+} // fwLoadMenus()
+
+//-->
+</script>
+<script language="JavaScript1.2" src="../../images/nb/fw_menu.js"></script>
+</head>
+<body bgcolor="#333333" text="#FFFFFF" link="#FFCC00" vlink="#FFCC00" alink="#FFCC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../../images/nb/shnb2-down.gif','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif','../../images/nb/shnb4-down.gif','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif','../../images/nb/shnb6-down.gif','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif','../../images/nb/shnb8-down.gif','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif','../../images/nb/shnb10-down.gif','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif')">
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" bgcolor="#CCCCCC">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <div align="center"></div>
+      <a name="top" onFocus="if(this.blur)this.blur()"></a><a href="../../ring/warden/RingWarden.shtml" target="_self" onFocus="if(this.blur)this.blur()"><img src="../../images/ring20.gif" width="20" height="20" border="0"></a> 
+      <p></p>
+      <p>&nbsp;</p>
+    </td>
+    <td bgcolor="#333333" bordercolor="#666666" width="685" align="left" valign="top"> 
+      <p align="center"> 
+        <script language="JavaScript1.2">fwLoadMenus();</script>
+      </p>
+      <table border="0" cellpadding="0" cellspacing="0" width="685">
+        <!-- fwtable fwsrc="shhornav1.png" fwbase="shnb.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="7" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+        </tr>
+        <tr> 
+          <td><img name="shnb1" src="../../images/nb/shnb1.gif" width="2" height="20" border="0"></td>
+          <td><a href="http://bloodmoon.net/showarmors.php3?type=feet" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_0,24,23);MM_nbGroup('over','shnb2','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb2','../../images/nb/shnb2-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb2" src="../../images/nb/shnb2.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb3" src="../../images/nb/shnb3.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_1,162,23);MM_nbGroup('over','shnb4','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb4','../../images/nb/shnb4-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb4" src="../../images/nb/shnb4.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb5" src="../../images/nb/shnb5.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_2,299,23);MM_nbGroup('over','shnb6','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb6','../../images/nb/shnb6-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb6" src="../../images/nb/shnb6.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb7" src="../../images/nb/shnb7.gif" width="7" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_3,435,23);MM_nbGroup('over','shnb8','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb8','../../images/nb/shnb8-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb8" src="../../images/nb/shnb8.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb9" src="../../images/nb/shnb9.gif" width="1" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_4,573,23);MM_nbGroup('over','shnb10','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb10','../../images/nb/shnb10-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb10" src="../../images/nb/shnb10.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb11" src="../../images/nb/shnb11.gif" width="2" height="20" border="0"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="20" border="0" name="undefined_2"></td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "shcontent" --> 
+      <p align="center">&nbsp;</p>
+      <table width="95%" border="1" cellspacing="0" cellpadding="5" align="center" bordercolor="#333333">
+        <tr align="left" bgcolor="#333333" bordercolor="#333333"> 
+          <td height="122" valign="top" colspan="2"> 
+            <p><font face="Arial, Helvetica, sans-serif" size="3" color="#CCCCCC">These 
+              quest spoilers have been gathered from various locations. The Safehouse 
+              Staff accepts no liability for the accuracy of the information found 
+              on this page.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="3" color="#CCCCCC">If 
+              you have any information or updates related to any of the quests 
+              listed here, please forward the information to The Safehouse staff 
+              <a href="mailto:admin@thesafehouse.org?subject=Re: Quest Submitions">admin@thesafehouse.org</a></font></p>
+          </td>
+        </tr>
+        <tr align="left" bgcolor="#333333" bordercolor="#333333"> 
+          <td height="122" valign="top" width="50%"> 
+            <ul>
+              <ul>
+                <ul>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#bard">Bard</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#cleric">Cleric</a></font></li>
+                  <li> 
+                    <div align="left"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#druid">Druid</a></font></div>
+                  </li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#enchanter">Enchanter</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#magician">Magician</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#monk">Monk</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#necro">Necromancer</a></font></li>
+                </ul>
+              </ul>
+            </ul>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </td>
+          <td height="122" valign="top" width="50%"> 
+            <ul>
+              <ul>
+                <ul>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#paladin">Paladin</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#ranger">Ranger</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="res_equests_rogue.htm" target="MyFrame">Rogue</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#sk">Shadow 
+                    Knight</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#shaman">Shaman</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#warrior">Warrior</a></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><a href="#wizard">Wizard</a></font></li>
+                </ul>
+              </ul>
+            </ul>
+          </td>
+        </tr>
+        <tr valign="top" align="left" bgcolor="#333333" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" valign="top" bordercolor="#333333"> 
+          <td colspan="2"><font size="4" color="#FFFFFF"><b><a name="bard"></a><font color="#FFCC00" face="Arial, Helvetica, sans-serif">Bard 
+            Epic Quest &quot;Singing Short Sword&quot;</font></b></font></td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <ol>
+              <li> Baldric Slezaf asks you for 4 items 
+                <ol>
+                  <li> <b>Page 24 Top and Bottom (actually in two halves)</b></li>
+                  <li><b>Page 25 </b></li>
+                  <li><b>Lute made by Forper Fizfla.</b><br>
+                    <br>
+                  </li>
+                </ol>
+              </li>
+              <li>To get top part page 24 go to West Karana and see Konia Swiftfoot. 
+                He gives you a torch and starts a race. Take the torch to Fajio 
+                Knejo in Misty Thicket (close to the wall guards). He gives you 
+                another torch. Then take that torch to Andad Filla in South Ro 
+                (close to innothule zone) who gives you another torch. Then take 
+                that torch to Misty Tekchita in Lake Rathe (by arena zone). This 
+                will get you a ring. Finally, take the ring back to Konia Swiftfoot 
+                and you will get the top part of page 24<br>
+                <br>
+              </li>
+              <li>To get the bottom half of you need to give Konia Swiftfoot Mahlin's 
+                Bongos. Talk to Braenar Swiftsong. He will give you an invoice 
+                after you ask &quot;what doll&quot;. Go to Solusek A and give 
+                the gnome vendor, Marfen the invoice and you will recieve a doll. 
+                Take the doll to the Estate of Unrest and give the doll to Serra, 
+                who is next to the gnomish speulunker. Serra will give you a note. 
+                Then take the note from Serra back to Braenar, who will give a 
+                new note for Maligar. Take the note from Braenar to Maligar. Maligar's 
+                Enraged Doppleganger will attack at that point (bring a group). 
+                Kill the Doppleganger and loot his head. Take the head back to 
+                Braenar and recieve &quot;Mahlin's Bongo's&quot;. Take the Bongo's 
+                to Konia Swiftfoot in West Karana to get the bottom of Page 24<br>
+                <br>
+              </li>
+              <li> 
+                <p> To get page 25 go to South Karana and talk to the woodelf 
+                  bard Kelkin Mekia. She wants 3 items: 1) Guts of a named chromatic 
+                  drake in skyfire (Edrik the Old) 2) guts from the new named 
+                  wrum in Burning Woods (Nezekezena); and 3) guts form the Huge 
+                  Oynx Drake in Rathe Mountains (Blackwing) Give these to her 
+                  and you will get page 25</p>
+              </li>
+              <li>Now you need Forpar's Lute. This is rewarded as head, neck, 
+                body and strings. First you need to get horn from Ocean of Tears 
+                (Alluring horn from Quag Maelstrom). Take the alluring horn from 
+                Ocean of Tears to a half elf bard in Butcherblock, by the docks 
+                (Vedico). Take the note she gives you to Forpar. He then gives 
+                you a note and a list of items he needs: 
+                <ul>
+                  <li> <b>Backbone of an Ancient Fishman - Phnagel's Spine from 
+                    Kedge Keep </b></li>
+                  <li><b> Amalgym Tentacle - Amygdalan Tendril from Plane of Fear</b></li>
+                  <li><b> Petrified skull of a Lycanthrope - petrified werewolf 
+                    skull from Karnor on Drolvarg Warlord</b></li>
+                </ul>
+                <p>&nbsp;</p>
+              </li>
+              <li>Take all 3 items and the note back to Forpar give them to him 
+                and he gives you back the Head and Neck of the Lute and the quest 
+                for the body, which requires the following items: 
+                <ul>
+                  <li><b>Large red Dragon Scale (Talendor of Skyfire's scale works. 
+                    Nagafen's scale also works)</b></li>
+                  <li><b>Large white Dragon Scale (Gorenaire of Dreadlands works, 
+                    Vox's scale also works) </b></li>
+                  <li><b>Two Metal bits (smithed metal bits) </b></li>
+                  <li><b>Finally, get the strings for the Lute - Trakanon Gut 
+                    Strings. These drop from Trakanon himself. </b></li>
+                </ul>
+                <p>&nbsp;</p>
+              </li>
+              <li>Once you have all four, give following to Foplar to recieve 
+                the mystical lute: 
+                <ul>
+                  <li> <b>Head and neck</b></li>
+                  <li><b> Body</b></li>
+                  <li><b> Gut strings</b></li>
+                </ul>
+                <p>&nbsp;</p>
+              </li>
+              <li> You are almost there.To get your singing short sword give following 
+                items to Baldric Slezaf: 
+                <ul>
+                  <li> <b>Top of page 24 </b></li>
+                  <li><b> Bottom of page 24 </b></li>
+                  <li><b> Page 25 </b></li>
+                  <li><b> Mystical lute from Foplar</b></li>
+                </ul>
+              </li>
+            </ol>
+            <p> He will reward you with the singing short sword.</p>
+            <p>&nbsp;</p>
+            <p> 
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p>&nbsp; </p>
+            <p align="center">&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="32"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="cleric"></a><font color="#FFCC00">Cleric 
+            Epic Quest &quot;</font></b></font> <font face="Arial, Helvetica, sans-serif" color="#FFCC00"><b><font size="4">Water 
+            Sprinkler of Nem Ankh&quot;</font></b> </font></td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <blockquote> 
+              <p>&nbsp;</p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                off to Lake Rathe, and talk to <b>Schmendrick Lavawalker</b> [3600, 
+                0]. He spawns near the cabin where the Boots of the Reliant quest 
+                npc is. He will tell you to get him <b>Lord Burgurgle's Crown</b>. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                get a small group and head into the underwater tower below the 
+                Erudite Isle, in Lake Rathe. Enter the Deepwater Goblin Tower 
+                [2800, 150] and head to the top. <b>Lord Burgurgle</b> spawns 
+                on the top floor, in the middle and has a placeholder. Kill him 
+                to loot Lord Burgurgle's Crown. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                back and hand Schmendrick the King Burgurgle's Crown, and you 
+                will receive the<b> Oil of Fennin Ro</b>. Natasha Whitewater will 
+                then spawn nearby and she will proceed to kill Schmendrick. Once 
+                Schmendrick dies a Spirit of Flame will spawn in his place. Kill 
+                the Spirit of Flame and you will receive the Damaged Goblin Crown. 
+                Hand this crown to Natasha and you will be rewarded with the <b>Ornate 
+                Seashell.</b> </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                head off to Timorous Deep and talk to <b>Omat Vastsea </b>[-12000,-200]. 
+                Hand him the Ornate Seashell, and he will give you instructions 
+                on killing the <b>Plasmatic Priest</b>, which spawns in the Temple 
+                of Solusek Ro. He will then hand you the <b>Coral Statue of Tarew</b>. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                head off to the Temple of Solusek Ro and locate the room with 
+                the throne [326,38]. At 9am a Seeker will spawn on the left. Say 
+                the following line to make sure it is the correct spawn, &quot;<b>what 
+                plasmatic priest</b>&quot;. Hand him the Coral Statue of Tarew, 
+                this will cause the Plasmatic Priest to spawn in the seekers place. 
+                Kill him and you can loot the <b>Bloodstained Plasmatic Priest 
+                Robe</b>. He uses Tremor and AoE spells so make sure you pull 
+                him to zone, otherwise the other npc's will kill him. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Next 
+                head over to Solusek's Eye to hunt down and kill <b>Lord Gimblox</b> 
+                who spawns near the King room [-800, -366]. His placeholder is 
+                a Large Fire Goblin. Once you kill the Lord, you can then loot 
+                the <b>Lord Gimblox's Signet Ring</b>. Head back to Omat and hand 
+                him the Bloodstained Plasmatic Priest Robe. He will reward you 
+                with the <b>Orb of Frozen Water </b>and once again Natasha Whitewater 
+                spawn. Hand her Lord Giblok's Signet Ring and she will give you 
+                more quest details and will then hand you another Ornate Seashell 
+                (which when identified is shown as Ornate Seashell II). </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                we head off to the Burning Woods to talk to Naxton Deepwater. 
+                Hand him the second Ornate Seashell and he will in turn hand you 
+                back the Message to Natasha. This will also cause <b>Ixiblat Fer</b> 
+                to spawn. He will tell you to kill the Ixiblat Fer and to obtain 
+                his Scepter. He is a God type mob and will require many groups 
+                to take him down. Charming some or the wandering wurms and using 
+                Fire Elementals works well, as well as pulling him to the Skyfire 
+                zone to fight him is suggested. Kill this elemental and loot the 
+                <b>Scepter of Ixblat Fer</b>. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Next 
+                we head off to Chardok and search out <b>Overking Bathezed</b>. 
+                He is the boss of this dungeon and uses AoE spells which will 
+                aggro mobs in rooms above him causing many trains. Make sure the 
+                room above is empty before attacking him. Kill him to obtain the<b> 
+                Singed Scroll</b>. Now head back to Omat Vastsea and hand him 
+                the Scepter of Ixiblat Fer and the Singed Scroll. He will reward 
+                you with the <b>Orb of Clear Water,</b> and will ask you to head 
+                over to Lord Nagafen's Lair to kill <b>Zordak Ragefire</b> and 
+                return with his heart. Natasha Deepwater will spawn once again 
+                and if you hand her the Message to Natasha she will give you a 
+                <b>Shimmering Pearl </b>which she tells you to hand to Zordak 
+                Ragefire to block some of his powers. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                off to Lord Nagafen's Lair and locate Zardok. Not much is certain 
+                on how to make Zordak spawn, but make sure that all Fire Giants 
+                are dead, as well as Lord Nagafen. Once you locate Zordak bring 
+                him to Nagy's lair and hand him the Shimmering Pearl, which will 
+                cause him to attack you. Kill him and he will spawn once again 
+                into a second form, <b>Zordakalicus Ragefire</b>, a nice red dragon. 
+                Kill this beast and you will be able to loot the <b>Heart of Zordak 
+                Ragefire</b>.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Bring this heart back to Omat and he will reward you with the 
+                <b>Orb of Vapor</b>. This will cause Jhassad Oceanson to spawn. 
+                Run over and hand him all three orbs that you have received so 
+                far, <b>Orb of Frozen Water, Orb of Clear Water, and the Orb of 
+                Vapor</b> and he will hand you back the <b>Orb of the Triumvirate</b>. 
+                An Avatar of Water will spawn nearby, it does not respond to hails, 
+                nor any commands. Just hand it the Orb of the Triumvirate and 
+                you will be rewarded with the <b>Water Sprinkler of Nem Ankh.</b></font></p>
+            </blockquote>
+            <p align="center">&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="druid"></a><font color="#FFCC00">Druid 
+              Epic Quest &quot;Nature Walkers Scimitar&quot;</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <blockquote> 
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>The 
+                Start </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Telin Darkforest in Burning Woods: ask &quot;what action&quot; 
+                and you will get a note. if not, then your faction is too low. 
+                Faction can be built up fast by doing the muffin-quest in Freeport</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Faelin Bloodbriar in Greater Faydark: give her the note and 
+                you receive a ring. Faelin roams the northern part of the zone 
+                near Crushbone. She is a rare spawn and can have orcs as placeholders. 
+                After giving her the note she depops.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Giz X'Tin Kithikor: give him the ring, get a dark metal coin. 
+                Giz roams along the path. After u hand him the ring a lvl 50 Darkelf 
+                Reaver spawns and attacks but u can run away with SoW.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Go back to Telin Darkforest and give him the Coin. He will give 
+                it back to you as worn metal coin. He tells you to find Athele. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Athele in East Karanas: give her the Coin and receive a worn amulet. 
+                give this amulet to Sionae, then to Nuien and finaly to Teloa. 
+                The last step is the trigger for the Dark Elf Corruptor and two 
+                Darkwlf Reavers (all about lvl 50) to spawn. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Find the Corruptor and kill him fast He and the 2 reavers spawn 
+                on top of the hill east of the river (loc -1500, -1000). He will 
+                depop after 10 seconds if not attacked. The 2 Reavers will head 
+                to the 4 Druids and kill them. You dont need to kill the Reavers. 
+                Just kill the corruptor and loot the tome. If the Druids die, 
+                never mind....Athele spawns again in about 1 hour. Give Athele 
+                the tome and get an earthstained Note. Bring this to &quot;she 
+                who walks the land in service blabla...&quot; </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Ella Foodcrafter in Misty Thicket is this wanted women that wanders 
+                the zone. Give her the earthstained note and she will tell you 
+                that she needs a mixture. She will give you her mixing bowl. It 
+                is a Container so you need a free slot in the Inventory. She also 
+                mentions some kind of ancient bowl that she needs. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>The 
+                Hardened Mixture </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                You must forage 4 items that you have to combine in Ella's mixing 
+                bowl.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Frozen Tundra Root from Everfrost Peaks</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Sweetened Mudroots from Misty Thicket </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Speckled Mushrooms from Innothule Swamp </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Heartfruit from Greater Faydark</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - This can take several hours. Combine those 4 items in the bowl 
+                and you get a <i>Hardened -Mixture</i>.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"> 
+                <b>The Runed Bowl</b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Go to the Chess Island (succor will take you there when you 
+                have enterd the zone) in Timorous Deep and ask Alrik Farsight<br>
+                <i>&quot;how do you make an ancient bowl?&quot;</i>. He gives 
+                you a crushed pot and sends you to Felwithe.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Talk to Farios Elianos in Felwithe south. If he dont respond 
+                to you then your faction with Keepers of the Art is too low. You 
+                can build up faction fast with the batwing-quest in Felwithe south. 
+                If Farios talks to you, give him the pot and you receive a grocery 
+                list. He will give you the receipt for the bowl if you do a job 
+                for him.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Bring this grocery list to Merchant Nora in Felwithe north and 
+                she gives you in return a bag of Provisions. Bring it to Farios 
+                and he gives you the receipt for the ancient bowl.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Head back to Alrik Farsight in Timorous Deep . He will give 
+                you an ancient pattern when you give him the receipt.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - The pattern says that you have to combine it with a piece of 
+                echanted clay and platinum speckled powder in a pottery wheel. 
+                NO skill in pottery required. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Platinum speckled powder can be obtained through another subquest. 
+                Forage a Rose of Firiona in Firiona Vie and give it to Merdan 
+                Fleetfoot in Surefall Glades. The old wooden painting that you 
+                receive has to be brought to the human skeleton that roams the 
+                western part of Frontier Mountains. Head back with the silver 
+                chained locket you got from the skeleton to Surefall Galdes and 
+                give it to Niera Farbreeze. She hands you the platinum speckled 
+                pouder.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Enchanted clay can be obtained through Kinlo Strongarm in Kaladim's 
+                Everhot Forge. If you ask him &quot;what mud&quot; and &quot;do 
+                it for me&quot; he will tell you that he would like to have a 
+                colored axe for his service. This is a Jade Reaver that can be 
+                found in the City of Mist. Hand him the axe and you get the enchanted 
+                clay. I think that if you are kos to the dwarfs then you can do 
+                this part invisible. Just go to the Everhot Forge and hand Kinlo 
+                a Jade Reaver to get the clay. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Now combine the pattern, clay and powder in any pottery wheel 
+                to make the Rune Crested Bowl </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>The 
+                Stones </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Go Back to Misty Thicket and hand Ella Foodcrafter the hardened 
+                mixture and the rune crested bowl. She will make for you a softly 
+                glowing stone from it.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Ella tells you to find one such as yourself. For the Druids 
+                this means to seek out Foloal Stormforest in Firiona Vie.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Ask her<i> &quot;are you one such as myself?&quot;</i>,<i> &quot;what 
+                answers?&quot;</i> and <i>&quot;what about Venril Sathir?&quot;</i>. 
+                She tells you to bring her the stone you already have from Ella 
+                and the gem that can be found on Venril Sathir.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Kill Venril Sathir in Karnor's Castle and loot the gem he drops. 
+                Venril is a very tough level 55 Necromancer that can only be beaten 
+                by very strong guilds. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Give the gem and the softly glowing stone to Foloal Stromforest 
+                and get a warm pulsating stone. Now this is the time where the 
+                quest splits up into the Druid and the Ranger parts. Foloal tells 
+                you to take the stone and walk your path.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - The Druid's path leads back to Ealla in Misty Thicket. Give 
+                her the stone and you will get the Elaborate Scimitar (10/30 9wis 
+                10mana 5sv poison and disease)...now you have one of the four 
+                final pieces. She asks you to collect the Cleansed Spirits of 
+                Antonica, Faydwer and Kunark and hand them along with the scimitar 
+                to Xanuusus. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>The 
+                Cleansed Spirits </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>The 
+                Cleansed Spirit of Antonica</b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - The withered treant in North Karana tells you to find the corruption 
+                in the land. He means the Corrupted Mammoth (below lvl 30) in 
+                Everfrost Peaks (pops near Permafrost, Mammoth Calfs are PH), 
+                the Corrupted Aquagoblin Shaman (mid lvl 30) in Lake Rathe (PH 
+                are the sidespawns on top of the underwater-tower. Middle spawn 
+                is for Cleric Epic. Use wolfform to be non-aggro to the other 
+                goblins. They heal each other so kite him away. It can take several 
+                tainted to get the corrupted) and the Corrupted Hill Giant (mid 
+                lvl 30) in Rathe Mountains (HG area south of the hill with the 
+                Guard Tower). </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Give the 3 items looted from them to the treant to receive the 
+                treant heart. Go to Yeka Ias in South Karanas and give him the 
+                heart. He will give you the Cleansed Spirit of Antonica. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>The 
+                Cleansed Spirit of Faydwer</b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - You will meet a pained Unicorn in lesser Faydark. Collect for 
+                him the items looted from the Corrupted Seahorse in Kedge Keep 
+                (lvl 52, 1 or 2 groups needed. As far as I can remeber you have 
+                to pass the area where Estrella is and the named Seahorse), the 
+                Corrupted Cyclops (3-4 ppl, best tactic is fearkiting because 
+                he is lvl 52. PH are the Seafury Cyclops) in Ocean of Tears and 
+                from the Corrupted Brownie (Brownie Scouts are PH. They are green 
+                to 56/57 and give exp. Each can pop the tainted so it is possible 
+                that 2 or even 3 tainted roam the area. They are druids and the 
+                corrupted is a lvl 52 druid so you need help from 2 or 3 people. 
+                Fearkiting is the best tactic) in Lesser Faydark.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                The Unicorn will give you a gleaming horn for the 3 items. This 
+                has to be handed to the gnome Silox Azrix in Ak'anon to get the 
+                Cleansed Spirit of Faydwer. He is near the mines on the left side 
+                of the green river. There is another greeny gnome near him but 
+                you can do this part with super camou on you if you are kos or 
+                otherwise disliked there because you need no faction for Silox. 
+                The </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Cleansed 
+                Spirit of Kunark </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Ulump Pujik, a named Froglok in Swamp of no Hope tells you to 
+                give his own essence along with the 3 corrupted things to the 
+                gnome that hurts the land. Kill Ulump and loot his Essence. Ulump 
+                is a lvl 55 warrior that doubles for 250 and he has 32k hp. He 
+                can't be slowed or tashed. You should have 2 groups with 4-6 melee 
+                and 2-4 nukers (all as high lvl as possible) to kill him. Lure 
+                spells hit for full damage. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                The 3 corrupted mobs of Kunark are the Corrupted Gorilla (mid 
+                40)in Emerald Jungle (root/dot him and stay far away. He has sow-speed 
+                and pops in the northern part of the plateau. Tottering Gorillas 
+                are PH of the tainted and only non-undead tainted will pop the 
+                corrupted), the Corrupted Barracuda (high 40,loc -900, -900) in 
+                Lake of ill Omen (only the blue tainted will pop the corrupted. 
+                Pull it on the land and kite him becaus root breaks fast. Would 
+                be much easier if you have a friend that helps you kill the corrupted) 
+                and the Dragon Faydawer that lives in the sea in Timorous Deep 
+                (Guild needed to kill him).</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                - Hand the 4 items to the Gnome Nekexin Virulence in overthere 
+                to get the Cleansed Spirit of Kunark. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>The 
+                End </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">- 
+                Hand the 3 Cleansed Spirits and the scimitar to Xanuusus the treant 
+                in North Karanas to receive the Druid Epic Weapon. All the parts 
+                that haven't mentioned how many poeple you need can be done solo.</font></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+            <p align="center">&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="enchanter"></a><font color="#FFCC00">Enchanter 
+              Epic Quest</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="5699"> 
+            <p>&nbsp;</p>
+            <blockquote> 
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                'hail Stofo Olan' <br>
+                Stofo Olan: 'Good day, I have discovered something truly wonderful! 
+                If I only had the materials required so I can copy my notes and 
+                send them to my teacher.' </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                'what materials?' <br>
+                Stofo Olan: 'The materials I need are a mechanical pen, ink of 
+                the dark, and white paper. Bring me those and I will give you 
+                a copy of this information.' </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                'who is your teacher?' <br>
+                Stofo Olan: 'My teacher is Jeb Lumsed. He was last seen in the 
+                regions of the newly discovered lands. If you wish to find him 
+                that is where you must seek him out.' </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                need to get 3 items, and return them to Stofo, who will then give 
+                you Copy of Notes which is needed by Jeb Lemused to get to the 
+                meat of the Epic Enchanter quest. </font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>The 
+                  Ink of the Dark</b></font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">In 
+                  Qeynos, talk to Reania Jukle </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'what is the ink of the dark?' <br>
+                  Reania Jukle: 'Ink of the Dark, you say? That isn't an everyday 
+                  item, you know. In fact i can't remember the last time someone 
+                  requested it. I have given up keeping any here with me. You 
+                  are going to need to find your own supply now. Sorry.' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'where can I find the ink of the dark? <br>
+                  Reania Jukle says: 'The ink is the blood of a dark scribe. Tempt 
+                  him and give him this vial. He should cooperate.' <br>
+                  You recieve an Empty Ink Vial. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">If 
+                  you charm the Ghoul Scribe in Lower Guk, and hand him the vial, 
+                  you will recieve the Ink of the Dark. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>A 
+                  Mechanical Pen</b></font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">In 
+                  Akanon talk to Rilgor Plegnog </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What do you know about a mechanical pen?' <br>
+                  Rilgor Plegnog says: 'Why do you want one of those contraptions. 
+                  You will spend more time repairing it then you will writing 
+                  with it. But if you insist on getting one, you are going to 
+                  have to do a small favor.' <br>
+                  Rilgor Plegnog tugs at your robe and grins evilly. Mighty nice 
+                  outfit you have there. Sure beats these drab robes us three 
+                  are wearing. Hmm...my favorite color is purple, in fact a shiny 
+                  metallic purple would do nicely. How bad did you want that pen?' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                  give Rilgor Plegnog a Shiny Metallic Robe. <br>
+                  Rilgor Plegnog says: 'Very nice!! It is perfect! Here take this 
+                  pen. Have fun with it.' <br>
+                  You recieve A Mechanical Pen. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>A 
+                  White Paper</b></font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">In 
+                  West Karana, talk to Chrisln Baker </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'hail Chrislin Baker' <br>
+                  Chrislin Baker slowly lifts her head. 'Have you brought any 
+                  writing materials for me? The last few supplies I had were stolen.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'what writing materials' <br>
+                  Chrislin Baker: 'A passing illusionist gave me some enchanted 
+                  writing materials. He said they would help inspire me to capture 
+                  my mind's images on paper. If you would just be so kind as to 
+                  bring me plain old paper and a quill from Qeynos, I can get 
+                  back to writing. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                  turn in the Paper and Quill <br>
+                  Chrislin Baker: gives you a hug. 'Thank you so much. I did some 
+                  cleaning after you left and found this behind a barrel. It may 
+                  have been left behind by the person who took my materials. You 
+                  can have it.' <br>
+                  You receive a Bandit Sash </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Receiving 
+                  the sash will spawn Thracken Griften, a level 55 very agressive 
+                  Bandit at around loc 800,-11570. You need to kill him to get 
+                  the white paper. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Turn 
+                  in all three pieces to recieve the Copy of Notes. </font></p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Jeb 
+                Lemused is in the form of a Sarnak Imitator in the Burning woods. 
+                He is not always around, and killing the nearby Sarnaks may help 
+                him appear. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'Are you Jeb Lumsed?' <br>
+                <b>A sarnak imitator:</b> <i>'Yes I am. Use your most enlightened 
+                magic to seek the truth of what is around you. When that is done, 
+                you will know what you seek.</i> </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                give the &quot;Copy of Notes&quot; to Jeb Lumsed. <br>
+                <b>A sarnak imitator:</b><i> 'I see that you have what I was waiting 
+                for. Stofo does do excellent work. It seems that you are to start 
+                on a long journey. Take this seal and it will guide you on your 
+                next step. Seek out the masters of enchantment. In time we will 
+                craft the Serpent for you. When you have collected the four parts 
+                of the staff, you must combine them in a bundle for me. If you 
+                need a sack, just let me know.'</i> <br>
+                <font color="#FFFF00">You receive a coin called 'jeb's seal' </font></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'I need a sack' <br>
+                <b>A sarnak imitator:</b><i> 'Take this sack and combine the items 
+                I requested in it. Then return it to me. <br>
+                You receive an enchanter's bag. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'What serpent?' <br>
+                <b>A sarnak imitator:</b> '<i>The first truly powerful enchanter, 
+                Krilan Pedin, crafted the Serpent years ago. He trained his students 
+                to carry on the trade in a five-step process. Each student then 
+                became a master and chose one of their own students to pass the 
+                legacy on to. Four others and I, myself, are current practitioners 
+                of the crafting. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'Who are the four other masters?' <br>
+                <b>A sarnak imitator:</b> <i>'The masters are enchanters who have 
+                reached the plateau of understanding. Their names are Modani Qu'Loni, 
+                Mizzle Gepple, Nadia Starfeast, and Polzin Mrid. All are master 
+                crafters in their own right. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'Who is modani?' <br>
+                <b>A sarnak imitator:</b><i> 'Modani is a master of illusions. 
+                You should seek him out first. Keep a careful eye out for him 
+                - he is never in his true form. The last time I spoke to him, 
+                he seemed very excited about his voyage to the elven outpost. 
+                You may or may not find more clues about his location there. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFF00">Modani 
+                will give you the Test of Illusions. </font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2">Modani Qu'Loni 
+                  is the master of Illusion. He can be found in The Overthere, 
+                  in the form of a Scorpis. He asks that in return for a piece 
+                  of the Staff of the Shissar, you prove your worth by retrieving 
+                  some items for him. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You will 
+                  need to complete the snow blossums quest, the chalice of kings 
+                  quest, and kill two high level Guildmasters. Two groups of 55+ 
+                  should be able to handle both Guildmasters. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You: 'hail 
+                  Modani Qu`Loni' <br>
+                  Modani Qu`Loni: 'The hidden self inside a myriad of magic is 
+                  one that walks quite softly. Yes, that is what you must seek.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You give 
+                  Modani Qu'Loni Jeb's Seal. <br>
+                  Modani Qu`Loni: 'Ah yes, Jeb's seal. The time to craft a Serpent 
+                  must have come. I will need components collected to craft the 
+                  first of the pieces. I will also provide you with a sack in 
+                  which you must combine the items. Are you ready to collect them?' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You: 'I 
+                  am ready to collect them.' <br>
+                  Modani Qu`Loni: 'Scattered throughout the world are various 
+                  items. To prove your worth, go collect these and return them 
+                  to me. The Xolion Rod, Innoruuk's Word, Chalice of Kings, and 
+                  snow blossoms.' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You: 'I 
+                  need a sack.' <br>
+                  Modani Qu'Loni: 'Take this sack and combine the items I requested 
+                  in it. Then return it to me. ' <br>
+                  You receive an Enchanter's Bag </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You: 'What 
+                  is the Chalice of Kings?' <br>
+                  Modani Qu'Loni: 'The Chalice of Kings is the chalice of elven 
+                  kings. Recently thought to be lost to the ages, it was recently 
+                  discovered. I need its magical powers to create a magical liquid.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">The Chalice 
+                  of Kings is found via this quest. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You: 'What 
+                  is the Xolion Rod?' <br>
+                  Modani Qu'Loni: 'This is the rod of an ancient civilization 
+                  found on this continent. Nothing is known of it other than that 
+                  the scaled ones discovered it years ago.' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">The Rod 
+                  is dropped by Vessel Drozlin. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You: 'What 
+                  are Snow Blossoms?' <br>
+                  Modani Qu'Loni: 'These are flowers that are also used in the 
+                  creation process. They were once widespread, but now I am told 
+                  they only grow in select places.' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">Snow Blossums 
+                  are found via this quest. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">Innoruuk's 
+                  Word is found on Verina Tomb. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2">You combine 
+                  the four items in the bag. <br>
+                  You hand Modani Qu'Loni the combined item. <br>
+                  Modani Qu`Loni says: 'Excellent, you have done well. Here is 
+                  the first piece of the staff. Now you must go seek out the second 
+                  master; he will clear the path for you. <br>
+                  You receive a piece of the Staff of the Shissar <br>
+                  </font> </p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'Who is mizzle?' <br>
+                <b>A sarnak imitator:</b> <i>'Mizzle is a gnome who has mastered 
+                the use of enlightened magic. Go to him once you have spoken to 
+                Modani. Mizzle is not one to travel, so you should not have to 
+                look far from his home to find him. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFF00">Mizzle 
+                will give you the Test of Enlightenment </font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">He 
+                  wishes four items be brought to him in return for a piece of 
+                  the Staff of the Shissar. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  Hail Clockwork VIIX! <br>
+                  You: Are you mizzle? <br>
+                  Clockwork VIIX: 'Oh hello! I'm Mizzle, that I am. I bet you 
+                  want to be given true clarity, don't you?' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What are the required components? I am ready to collect them.' 
+                  <br>
+                  Clockwork VIIX: 'Then bring me a spoon, the one key, the lost 
+                  scroll, and the book Charm and Sacrifice. I will then reward 
+                  you with what you seek.' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What spoon?' <br>
+                  Clockwork VIIX: 'Its a giant sized tool I will use to stir my 
+                  magical pot. The spoon will help finish the ritual of crafting.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Spoon can be found on Cazel. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What one key?' <br>
+                  Clockwork VIIX: 'It is a key I lost long ago when I was travelling 
+                  with a companion. We were traveling in the new lands flying 
+                  over some large crevices when the key dropped out of my pocket.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Key can be found on a Mesa in the canyons of The Overthere. 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What lost scroll?' <br>
+                  Clockwork VIIX: 'The lost scroll contains the magical incantation 
+                  I need to help you out. It was penned ages ago by the Elves. 
+                  It was lost along with its protector during one of the raids 
+                  on the Outpost in Firiona. I fear it may be lost for good.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Scroll can be found in the Crypt of Dalnir behind a bed. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What book of charm and sacrifice?' <br>
+                  Clockwork VIIX: 'Oh, that is a book of good reading. If you 
+                  want to take the time to read it. I haven't had much free time 
+                  to read it, but now that you are getting supplies for me, I 
+                  can take a break.' </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  book is on a table in the plane of Sky. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                  place A Spoon into an Enchanter's Bag. <br>
+                  You place The One Key into an Enchanter's Bag. <br>
+                  You place The Lost Scroll into an Enchanter's Bag. <br>
+                  You place Book of Charm and Sacrifice into an Enchanter's Bag. 
+                  <br>
+                  You have fashioned the items together to create something new! 
+                  <br>
+                  You receive A Sack for Mizzle. <br>
+                  You give A Sack for Mizzle to Clockwork VIIX. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Clockwork 
+                  VIIX: 'Oh excellent, you have done what is required. Here take 
+                  this part, and seek the third master, you are well on your way.' 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Your 
+                  faction standing with TrueSpirit got better. <br>
+                  You gain experience!! <br>
+                  You receive the 2nd piece of staff. <br>
+                  <br>
+                  Reward(s): <br>
+                  2nd piece of staff<br>
+                  </font> <br>
+                </p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'Who is Nadia?' <br>
+                <b>A sarnak imitator:</b> <i>'The mistress of charm, Nadia is 
+                very beautiful. She, too, traveled with her relatives to the new 
+                land. I just recently received a letter from her. She says more 
+                and more pilgrims and explorers are arriving every day, and that 
+                the outpost is well defended now. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFF00">Nadia 
+                will give you the Test of Charm </font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">She 
+                  requires you to use the same technique you used on the Ghoul 
+                  Scribe in lower Guk to retrieve four essences from Creatures. 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Once 
+                  you charm a creature, you become amiable to it, allowing you 
+                  to complete these mini-quests. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'hail Nadia Starfeast' <br>
+                  Nadia Starfeast: 'Hello my dear. I am quite pleased to make 
+                  your acquaintance, perhaps even charmed. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'I need a sack.' <br>
+                  Nadia Starfeast: 'Take this sack and combine the items I requested 
+                  in it. Then return it to me. <br>
+                  You receive an Enchanter's Bag. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What gems?' <br>
+                  Nadia Starfeast: 'I have prepared some gems that you will need 
+                  to trap the essence. You will need to force a diamond, sapphire, 
+                  ruby and emerald onto special creatures to obtain their essence. 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What diamond?' <br>
+                  Nadia Starfeast: 'Here is the diamond that I have prepared for 
+                  you. Its only purpose is to trap the essence of a particular 
+                  book worm. If you should fail in your first attempt. Do not 
+                  worry, I will provide you with another. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  diamond is given to the Spectral Librarian in Kaesora. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What sapphire?' <br>
+                  Nadia Starfeast: 'Here is the sapphire that I have prepared 
+                  for you. Take it and give it to the one referred to as the Golden 
+                  Faerie. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Sapphire is given to Faelia Goldenwing, a named Chromodrac in 
+                  Skyfire. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What ruby?' <br>
+                  Nadia Starfeast: 'Blood red is the ruby that I have given you. 
+                  The city that you must travel to has no sun, but still a day 
+                  and night. And at night, the mist could suffocate one. Tis the 
+                  fate of poor Jaxion. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Ruby is given to the Wraith of Jaxion, who is found in the City 
+                  of Mist, near the Lord room. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What emerald?' <br>
+                  Nadia Starfeast jumps. &quot;Eeekk... a scorpian. I thought 
+                  they rid this area of these critters. Those things give me the 
+                  creepers. Take this emerald and be on your way.&quot; </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  emerald is given to Impaler Tzilug, a named scorpion in the 
+                  Overthere. If you have good faction with Venril Sathir, he is 
+                  remarkably easier. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                  Once again, remember to combine the items in the bag provided, 
+                  and then hand in the bag. <br>
+                  Reward(s): <br>
+                  3rd Piece of the Staff<br>
+                  <br>
+                  </font> </p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>You:</b> 
+                'Who is Polzin?' <br>
+                <b>A sarnak imitator: </b><i>'Master of the Phantasms - he is 
+                the last one you will seek out. Hmm...Polzin is native to Erudin, 
+                however, after the incident near Paineel, no one has heard from 
+                him. I hope that he is well. </i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFF00">Polzin 
+                will give you the Test of Phantasm. </font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  items he needs require large groups to obtain. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'Hail Polzin Mrid!' <br>
+                  Polzin Mrid: 'Yes, young one? </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                  give Polzin Mrid Jeb's Seal. <br>
+                  Polzin Mrid: 'Jeb has spoken with you already, excellent. Tell 
+                  me are you ready for the test of the phantasm? <br>
+                  You receive Jeb's Seal back. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'I am ready for the test of the phantasm' <br>
+                  Polzin Mrid: 'It will be simple, go collect these items and 
+                  return them to me. Head of a serpent, essence of a ghost, essence 
+                  of a vampire, and sands of the mystics. Do so and you will receive 
+                  the last of the pieces. Be sure to combine them in a sack first. 
+                  Just ask and I will provide you with one. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What is the head of a serpent?' <br>
+                  Polzin Mrid: 'Serpent is probably not an accurate term form 
+                  what you must return to me. It is actaully the reminants of 
+                  a spirit. The spirit is one which was erradicated long long 
+                  ago by the Iksar. I believe they were called the Shissar. You 
+                  may need to travel to the Iksar city to learn more about these 
+                  creatures. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Wraith of the Shissir spawns after the death of Cazic Thule 
+                  in the plane of Fear. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What is the essence of a ghost?' <br>
+                  Polzin Mrid: 'You don't have to look for to find roaming spirits. 
+                  One in particular though has more meaning then the other sorry 
+                  souls trapped here. You see, Kindle was a dear friend of mine. 
+                  I came in search of him when he stopped writing. Wel....look 
+                  at me now. I fear that I have succumbed to the same fate as 
+                  poor Kindle. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Kinde's 
+                  Ghost can be found deep, deep in the Hole. There are a few shamen 
+                  quest NPCs around as well, so it's wise to kill a few birds 
+                  with this stone. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What is the essence of a vampire?' <br>
+                  Polzin Mrid: 'The essence of a vampire is just that. Only the 
+                  most powerful of these creatures will possess what you need. 
+                  </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Forsaken 
+                  Revenants, both male and female can drop the Essense, though 
+                  it is very rare. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You: 
+                  'What sands of the mystic?' <br>
+                  Polzin Mrid: 'They are sands that were imbued with the magical 
+                  might of the mystics. Mystics use a ritual involving their own 
+                  blood to create a powerful bond with the sand. One will need 
+                  to search the shores. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                  Tangrin is found in the Field of Bone. Bump the Magic resist 
+                  before fighting him. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">All 
+                  four pieces need to be combined in the sack which Polzin provides. 
+                  <br>
+                  Reward(s): <br>
+                  4th Piece of the Staff<br>
+                  <br>
+                  </font> </p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Combine 
+                the 4 items in the sack provided to recieve the Staff of the Serpent.</b></font></p>
+              <p>&nbsp;</p>
+            </blockquote>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="magician"></a><font color="#FFCC00">Magician 
+              Epic Quest</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <p><font size="3" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><b>&quot;Coming 
+              Soon&quot;</b></font></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="monk"></a><font color="#FFCC00">Monk 
+              Epic Quest</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <p><font size="3" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><b>&quot;Coming 
+              Soon&quot;</b></font></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" valign="top" bordercolor="#333333"> 
+          <td colspan="2"><b><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><a name="necro"></a><font color="#FFCC00">Necromancer 
+            Epic Quest &quot;Scythe of Shadowed Souls</font></font><font color="#FFCC00" size="4" face="Arial, Helvetica, sans-serif">&quot;</font></b></td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <ol>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Head to Nektulos Forest and find the female NPC by the river loc 
+                -1000 -700<br>
+                <br>
+                </font> </li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Head to Lake Rathe and find Kazen Facae loc 340 -1600<br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Kill Sir Edwin Motte (level 33 paladin). He is easiest to catch 
+                in tavern by the docks in EFp where he is on a rotation with the 
+                Tumpy Irontoe. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Bring head of Motte to Kazen and recieve a Symbol of the Appretice.<br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Bring Symbol of the Appretice to the DE in Nektulos Forest, she'll 
+                return to you Twisted Symbol of the Apprentice.<br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Go to Najena and camp FBR and when you get it go to Nektulos Forest 
+                and give FBR to DE female and get some moss.<br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Head to Lake Rathe &amp; give moss and Twisted Symbol of the Apprentice 
+                to Kazens apprentice, Emkel. Get Symbol of the Serpant. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Go to Swamp of No Hope and find Ssessthrass loc 3800 1600 give 
+                him Symbol of the Serpant, receive Scaled Symbol of the Serpant. 
+                <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Head to Chardok. Kill Royal Herbalist and loot Manisi Herb (found 
+                on way to overking area, right before the secret door which leads 
+                to overking room). <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Go back to Ssessthrass and give him Scaled Symbol of the Serpant 
+                and herb, and he'll return Refined Manisi Herb. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Head to Lake Rathe and give Emkel Refined Manisi Herb, he will 
+                give you Symbol of Testing. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Have about 12-15 people ready (clerics and tanks are a must) and 
+                give Symbol of Testing to Kazen. 3 mobs will spawn. Kill these, 
+                last drops symbol of Insanity. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Go to Timerous Deep, give Symbol of Insanity to Drendico Metalbones 
+                (near where evil raft drops you off, on hill) and he gives you 
+                his journal. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Gather Cloak of Spiroc Feathers (quest in Sky), Eye of Innoruuk, 
+                and Blood of Cazic Thule. Bring all 3 along with Drendico's journal 
+                to timerous deep. Give to Drendico, he returns to you a PREPARED 
+                REAGENT BOX. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Take PREPARED REAGENT BOX to Kazen, and give to him...you get 
+                back a TOME OF INSTRUCTION. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Go to Plane of Sky, give Thunder Spirit Princess 3pp. Then Clear 
+                isle to 3rd (Gorgalosk) isle. <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Give Gkzzallk the TOME OF INSTRUCTION. You get back GKZZALLK IN 
+                A BOX. (no battle.) <br>
+                <br>
+                </font></li>
+              <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                Go to lake Rathe, give Kazel GKZZALLK IN A BOX. (no battle) Get 
+                back Scythe of Shadowed Souls. DONE!</font></li>
+            </ol>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+            <p align="center">&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="paladin"></a><font color="#FFCC00">Paladin 
+              Epic Quest &quot;Fiery Defender&quot;</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <p>&nbsp;</p>
+            <blockquote> 
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">To 
+                complete this quest you will need to locate three pieces of armor, 
+                and then three items to purify the armor, so that you may be able 
+                to release a tormented soul and lay him to rest. The three pieces 
+                of armor you will need are the Armor, Sword and Shield. The three 
+                items of purification are the Light, Gem and Water. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                off to Kaladim and talk to Jark who can be found near the Mines. 
+                Tell him &quot;some&quot; and he'll tell you the he's waiting 
+                for his dinner. Tell him the &quot;I will get your dinner&quot; 
+                and he will tell you to run and find Nella Stonebraids. She is 
+                standing right outside the Temple. Tell her about the &quot;dinner&quot; 
+                and she will hand you Jark's Dinner. Now run back to Jark and 
+                hand him his meal. He will tell you that he just found a very 
+                tiny pure gem and he would like to give it to you for showing 
+                him kindness. Receive the Gem. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                we travel off to Freeport. There is a peasant woman who can be 
+                found near the Monk guild in West Freeport. If you approach her 
+                and say &quot;what water&quot;. She will tell you that she has 
+                to bring some water to her brother Joshua. Tell her &quot;I will 
+                take it&quot; and she will hand you a Bucket of Water. Bring this 
+                bucket to Joshua, who can be found in the Bakery near the Monk 
+                guild. He will in turn hand you back the Pure Water. The Tainted 
+                Darksteel Breastplate is dropped by a Thought Corrupter in the 
+                Plane of Hate. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">The 
+                Tainted Sword is dropped by the Keeper of Tombs who lives in the 
+                Hole. The Tainted Shield is dropped by Kirak Vil, who can be found 
+                in Nektulos Forest. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                head off to Erudin and talk to Reklon Gnallen who can be found 
+                in the Temple of Quellious. Hand him the Tainted Sword and the 
+                Pure Water, and he will bless the items and return the Gleaming 
+                Crested Sword to you. Next you will have to travel to Felwithe 
+                and talk to Elie the Pure. Hand her the Tainted Shield and she 
+                will return to you the Gleaming Crested Shield. The last step 
+                is to head back over to Erudin. Talk to Reklon Gnallen again and 
+                this time hand him the Tainted Breastplate and the Pure Crystal. 
+                He will hand you back the Gleaming Breastplate. Now hand the Gleaming 
+                Shield, Gleaming Crested Sword and the Gleaming Breastplate back 
+                to Reklon and he will reward you with the Mark of Atonement. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                head to the Plane of Fear and talk to Irak Altil and hand him 
+                the Fiery Avenger and the Mark of Atonement and you will be rewarded 
+                with the Fiery Defender.</font></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="ranger"></a><font color="#FFCC00">Ranger 
+              Epic Quest</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <blockquote> 
+              <p>&nbsp;</p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>QUEST 
+                WALKTHROUGH [SHORT VERSION]</b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                This is a striped down version of the faq. It will tell you exactly 
+                what you need to get and only phrases that must be said to complete 
+                the quest.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">It 
+                does not however provide you with any of the faction checks or 
+                tips that the Complete Version will provide nor will it give suggestions 
+                on correcting or dealing with faction problems. You will need 
+                to remember to con NPCs on your own.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">It 
+                also does not provide information on finding NPCs or mobs [unless 
+                they can be difficult to find] or item descriptions.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                1: Obtain the Shiny Tin Bowl</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Telin Darkforest in Burning Woods. Target him and say 'what 
+                  action should I take' to get the &quot;Worn Note&quot; </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Faelin Bloodbriar in Greater Faydark. Give her the Worn Note 
+                  to get &quot;Faelins Ring&quot;<br>
+                  </font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">[Note: 
+                  She spawns at POS 1500, POS 500; placeholder is an orc pawn.] 
+                  </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Giz X`Tin in Kithicor. Give him Faelin's Ring to get the 
+                  &quot;Dark Metal Coin&quot;<br>
+                  [Note: A Dark Reaver will spawn; just run from it.] </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Telin Darkforest in Burning Woods. Give him the Dark Metal 
+                  Coin to get the &quot;Worn Dark Metal Coin&quot; <br>
+                  [Note: The following part must be done as one sequence and all 
+                  takes place in East Karana]</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Althele. Give her the Worn Dark Metal Coin to get &quot;Braided 
+                  Grass Amulet&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Sionae. Give her the Braided Grass Amulet to get the &quot;Frayed 
+                  Braided Grass Amulet&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Nuien. Give him the Frayed Braided Grass Amulet and he will 
+                  return it to you</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Teloa. Give her the Frayed Braided Grass Amulet and she will 
+                  lead you to the druid gathering</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Kill 
+                  the Dark Elf Corruptor and Reavers that spawn and loot the Fleshbound 
+                  Tomb</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Althele. Give her the Fleshbound Tomb to get the &quot;Earth 
+                  Stained Note&quot; </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Ella Foodcrafter in Misty Thicket. Give her the Earth Stained 
+                  Note to get the &quot;Shiny Tin Bowl&quot; </font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                2: Create the Hardened Mixture</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Everfrost and forage &quot;Chilled Tundra Root&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Greater Faydark and forage &quot;Ripened Heartfruit&quot; 
+                  </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Innothule Swamp and forage &quot;Speckled Molded Mushroom&quot; 
+                  </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Misty Thicket and forage &quot;Sweetened Mudroot&quot; </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Place 
+                  the Chilled Tundra Root, Ripened Heartfruit, Speckled Molded 
+                  Mushroom, and Sweetened Mudroot in the Shiny Tin Bowl. Hit the 
+                  Combine button to create the &quot;Hardened Mixture&quot; </font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                3: Runecrested Bowl Ingrediant #1 [Ancient Pattern]</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Alrik Farsight in Timorous Deep. Target him and say 'I will 
+                  take the artifact' to get the &quot;Crushed Pot&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Farios Elianos in Felwithe [B]. Give him the Crushed Pot 
+                  to get the &quot;Grocery List&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Merchant Nora in Felwithe [A]. Give her the Grocery List 
+                  to get the &quot;Bag of Provisions&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Farios Elianos in Felwithe [B]. Give him the Bag of Provisions 
+                  to get the &quot;Receipt&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Alrik Farsight in Timorous Deep. Give him the Receipt to 
+                  get the &quot;Ancient Pattern&quot;</font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                4: Runecrested Bowl Ingrediant #2 [Platinum Speckled Powder]</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Forage 
+                  a Rose of Firiona in Firiona Vie.</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Merdan Fleetfoot in Surefall Glade. Give him the Rose of 
+                  Firiona to get the &quot;Wood Painting&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Human Skeleton in Frontier Mountains. Give her the Wood Painting 
+                  to get the &quot;Silver Chained Locket&quot;<br>
+                  </font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">[Note: 
+                  Spawns around NEG 2100, POS 2000]</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Niera Farbreeze in Surefall Glade. GIve her the Silver Chained 
+                  Locket to get the &quot;Platinum Speckled Powder&quot;</font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                5: Runecrested Bowl Ingrediant #3 [Enchanted Clay]</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">O</font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">btain 
+                  a Jade Reaver from City of Mist</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Kinlo Strongarm in Kaladim [B]. Give him the Jade Reaver 
+                  to get the &quot;Enchanted Clay&quot;</font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                6: Create the Runecrested Bowl</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Combine 
+                  the Ancient Pattern, Enchanted Clay, and Platinum Speckled Powder 
+                  in a Pottery Wheel to make a Runecrested Bowl.<br>
+                  </font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">[Note: 
+                  This requires no skill in pottery to do and any pottery wheel 
+                  should work.]</font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b>Part 
+                7: Obtain Swiftwind &amp; Earthcaller</b></font></p>
+              <ul>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Give 
+                  Ella Foodcrafter in Misty Thicket the Hardened Mixture and the 
+                  Runecrested Bowl to get the &quot;Softly Glowing Stone&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Kill 
+                  Venril Sathir in Karnor's Castle to get the &quot;Pulsing Green 
+                  Stone&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Foloal Stormforest in Firiona Vie. Give her the Softly Glowing 
+                  Stone and the Pusling Green Stone to get the &quot;Warmly Glowing 
+                  Stone&quot; </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Telin Darkforest in Burning Woods. Give him the Warmly Glowing 
+                  Stone to get the &quot;Ancient Longsword&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Jaeil the Wretched in The Hole. Give him the Shiny Tin Bowl 
+                  to spawn Jaeil the Insane.</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Kill 
+                  Jaeil the Insane and loot the &quot;Soulbound Hammer&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Mairee Silentone in Eurdin. Give her the Soulbound Hammer 
+                  to get the &quot;Dwarven Smiths Hammer&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Island Four of the Plane of Air. Kill the Essensce Tamer 
+                  to get the &quot;Swirling Sphere of Color&quot; </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Mairee Silentone in Eurdin. Give her the Dwarven Smiths Hammer 
+                  and the Swirling Sphere of Color to get the &quot;Hammer of 
+                  the Ancients&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Kinlo Strongarm in Kaladim. Give Kinlo Strongarm the Hammer 
+                  of the Ancients, which causes Usbak the Old to spawn, who gives 
+                  you a &quot;Small bit of Mithril Ore&quot; </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Give 
+                  Usbak the Old the Ancient Longsword to get the &quot;Refined 
+                  Ancient Sword&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Give 
+                  Kinlo Stirngarm the Small bit of Mithril Ore to get the &quot;Refined 
+                  Mithril Blade&quot;</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Telin Darkforest in Burning Woods. Give him the Refined Ancient 
+                  Blade, which causes Faelin to spawn. Telin gives you the Ancient 
+                  Blade back</font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Give 
+                  Faelin the Refined Ancient Sword to get Swiftwind. </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Kill 
+                  Innoruuk in the Plane of Hate to get the &quot;Shattered Emerald 
+                  of Corruption&quot;<br>
+                  [Note: This also a random/rare drop from any of the boss mobs.] 
+                  </font></li>
+                <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Go 
+                  to Xanuusus in North Karana. Give him the Refined Mithril Blade 
+                  and the Shattered Emerald of Corruption. </font></li>
+              </ul>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>The 
+                quest has now been completed!</b></font></p>
+              <p>&nbsp;</p>
+            </blockquote>
+            <p> 
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p>&nbsp; </p>
+            <p align="center">&nbsp;</p>
+            <p align="center">&nbsp; </p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="sk"></a><font color="#FFCC00">Shadow 
+              Knight Epic Quest</font></b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <p>&nbsp;</p>
+            <blockquote> 
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">This 
+                quest begins in the Overthere and results in the shadowknight's 
+                particle weapon. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">This 
+                quest begins at an NPC named Kurron Ni who spawns near the docks 
+                in Fort Danak. This NPC is a rare spawn so don't be discouraged 
+                if he is not there the first few times you check for them. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Do 
+                not worry if you are killed on sight at the fort. Kurron spawns 
+                near the docks and you will be able to swim or invis yourself 
+                to get to him. He is also far enough away from other NPC's that 
+                you do not have to worry about them aggroing you when you are 
+                there.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">If 
+                you ask him what he seeks(do not ask him what his mission is or 
+                he will attack you) and then agree to his terms(tell him &quot;I 
+                agree&quot;) then he will tell you that he seeks three pieces 
+                of darkforge armor(helm, chest and leggings) and 900pp. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Before 
+                turning in these items you need to gather up a good party and 
+                have them accompany you. Two groups would be best. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Handing 
+                these items in to him will simply gain a raise in TrueSpirit faction 
+                and he will say that his mission is nearly complete. He will reward 
+                you with no items. If you ask him what mission he will tell you 
+                of his treachery and then attack you.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">At 
+                this point you must kill him. Upon killing him you will find a 
+                &quot;Note to Duriek&quot; on his corpse. You will need this for 
+                the next portion of the quest.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">NOTE: 
+                You MUST first hand in these items or he will not drop the note. 
+                This has been tested and confirmed.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Duriek 
+                can be found overlooking the newbie area in Paineel. He is upstairs 
+                in the newbie area looking out through the glass. If you hand 
+                him the note he will tell you a story of his apprentice. He will 
+                also tell you to &quot;take this for your efforts.&quot; but no 
+                item will be given. I'm not sure if this is broken or not. I have 
+                contacted Verant about it with no response. Someone has told me 
+                that Verant responded to this on a public board saying that no 
+                item is supposed to be given but I was never able to find the 
+                thread. Either way you receive TrueSpirit faction and are able 
+                to continue the quest.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">If 
+                you ask him what apprentice he will give you further background. 
+                Tell him that you will take his apprentice's place and he will 
+                ask you to prove your worth first. Duriek is aging and is in need 
+                of a cough elixir. This is obtained via a side quest in Neriak. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Upon 
+                returning the cough elixir to Duriek he will inform you that he 
+                was trying to create a corrupted ghoulbane. Unfortunately he is 
+                no condition to gather the components. His previous apprentice 
+                was searching for them when he met his demise. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">He 
+                needs you to find a tome for him. This tome can be found in The 
+                Hole on Ratman Guards. The best place to find these guards is 
+                by taking a left upon entering the first fortress and then take 
+                another left and pass down past the pool. Between this area and 
+                the old city beneath it Ratman Guards spawn fairly commonly as 
+                patrollers. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Beware 
+                that these rats are extremely tough. They hit for 370s, are very 
+                magic resistant and have a ton of hit points. The tome is a rare 
+                drop on them so you are likely going to have to kill several of 
+                them to obtain one. Our first encounter with one we had 7 people 
+                and no deaths but we had a high level party and Turgur's stuck 
+                on the first attempt. In later raids we had as many as 25 people 
+                and might lose 5-8 people each attempt. A lot of it depends on 
+                if you can get Turgurs or another speed reducing spell to stick 
+                early.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Handing 
+                the Tome to Duriek will grant another faction adjustment and will 
+                reveal what items he will need to complete the corrupted ghoulbane. 
+                He requires:</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">1) 
+                Blade of Abrogation from the Plane of Air<br>
+                2) Soul Leech from Cazic Thule in the Plane of Fear<br>
+                3) Ghoulbane from upper guk. <br>
+                4) Decrepit Sheath from a Qeynos side quest.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Returning 
+                this items to him will result in a corrupted ghoulbane(dmg 16 
+                delay 34 effect dismiss undead sk only 1hslash) and will send 
+                you to seek out Lhranc in the City of Mist. This item is not much 
+                use to a shadowknight of this level but it is required for the 
+                next portion of the quest.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Lhranc 
+                spawns approximately at location 0,0 in the City of Mist. This 
+                is just before the Reaver area near the large hut with all of 
+                the Goos. He spawns in the middle hut right past the big goo house. 
+                He spawns at the bottom and the two NPC's who spawn upstairs are 
+                not placeholders. Upon speaking with him he will reveal what he 
+                needs to forge your weapon.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Each 
+                of these steps is accomplished by completing a sub-quest. These 
+                sub-quests all tie in together. The heart of an innocent and the 
+                will of innoruuk are wearable items that are among the best that 
+                shadowknight can attain. As a result these sub-quests are listed 
+                with their own seperate pages that are cross-linked together. 
+                They are listed in the neccessary order of completion.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Heart 
+                of an Innocent<br>
+                The Will of Innoruuk<br>
+                Head of the Valiant</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Return 
+                these three items along with the corrupted ghoulbane to Lhranc 
+                and he will reward you by turning in to a living version of himself 
+                wielding the almighty Innoruuk's Curse. Killing him will allow 
+                you to loot the weapon.</font></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+            <p align="center">&nbsp;</p>
+            <p align="center">&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" valign="top" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="shaman"></a><font color="#FFCC00">Shaman 
+              Epic Quest &quot;Spear of Fate&quot;</font></b></font></div>
+          </td>
+        </tr>
+        <tr valign="top" bgcolor="#333333" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <blockquote> 
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                off to Gornit's island [800, -5400] in the Ocean of Tears. Locate 
+                Captain Surestout and kill him. A lesser spirit will spawn where 
+                he's killed. It will ask you if you killed the Captain, respond 
+                with &quot;he threatened my life&quot; and then ask the spirit 
+                &quot;who are you?&quot; He will hand you A Tiny Gem and tell 
+                you to bring it to another shaman. Head off to North Freeport 
+                now and enter the sewers. Locate Bondl Felligan and hand him the 
+                tiny gem, he will head out to the nearest bar to buy drinks. If 
+                you follow him he will stop and speak to you. Tell him &quot;you 
+                can buy booze&quot; and he will tell you to follow him. He will 
+                enter the Jade Underground and on the third floor there will be 
+                a Greater Spirit waiting for you. Hail it and say the following 
+                if you are a barbarian &quot;I follow justice&quot;, an ogre &quot;I 
+                follow war&quot;, a troll &quot;I follow hate&quot;, or an iksar 
+                &quot;I follow fear&quot;. In the next room another Greater Spirit 
+                will spawn, talk to this one and it will tell you everything about 
+                the spirits and the way of the shaman. You will then receive an 
+                Opaque Gem. Once you have received the gem, say the following 
+                line &quot;I will walk the path of the Heyokah&quot;. This will 
+                cause the Greater Spirit to despawn and will start the next phase 
+                of this quest, the Test of Patience. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                off the Erud's Crossing now, and locate an Ogre Shaman by the 
+                name of Ooglyn [-900, 1600]. Hail her and then hand her the opaque 
+                gem. She will tell you to follow her, and will run off into the 
+                water. Head to [-1600, 4200] and wait for her. She will wait a 
+                bit, then tell you that this is the place, and will leave. Do 
+                not follow her, just wait and soon Srafen and Dillon will spawn. 
+                Talk to both of them and follow their conversation along. After 
+                awhile Froham will spawn and mention something about a magical 
+                arrow. He will then wander off, do NOT follow him, and remain 
+                with the others. After awhile Abe will spawn, talk to him and 
+                then ask him &quot;what Broken Arrow&quot;. Wait a bit and he 
+                will start to talk again, follow along his conversation and he 
+                will then hand you a Broken Arrow. Wait again for a couple of 
+                minutes, the Abe will tell you to follow him. Again remain where 
+                you are as a Greater Spirit is coming to you. Talk with him and 
+                he will tell you that you are now ready to take the Test of Wisdom. 
+                He hands you a Small Gem and tells you to locate the Wandering 
+                Spirit in West Karana [-500, -5300]. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">When 
+                you locate the Wandering Spirit (looks like a willowisp) hand 
+                it the small gem. It will tell you to hurry to Rathe Mountains 
+                and help Tabien the Goodly [6300, 1500] who can be found near 
+                the Unkept Preservers. Kill him to receive the Marr's Promise. 
+                Next head over to [2900, -1900] and you should see Glaron the 
+                Wicked. Kill him to obtain Woe and Envy. Take all three items 
+                back to West Karana and hand them to the Wandering Spirit. It 
+                will hand you a sparkling gem. It will then hand you the Shield 
+                of Falsehood, make sure that you have a free general inventory 
+                slot open, otherwise the shield will disappear. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                off to the Emerald Jungle and hand the sparkling gem to the Sentinel 
+                Spirit which can be found in a small hut like building [1250, 
+                300]. He will then give you the test of Might, which begins in 
+                Castle Mistmoore. Head off to the castle and kill the Advisor. 
+                This will cause the Black Dire Wolf to spawn. Hail it and he will 
+                ask you to join him, to which you respond no. He will then attack 
+                you, and you will need a good group to bring him down. Loot the 
+                corpse to receive the Black Dire Pelt. Head back to the Emerald 
+                Jungle and hand the Sentinel Spirit the pelt. He will fashion 
+                the pelt into a pair of Black Fur Boots for you. He will then 
+                give you the next part of the quest. He wants to learn what happened 
+                to Torsis, and will hand you a booklet. He asks that you search 
+                the city and bring him back a completed report. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                into the City of Mist and start killing everything you see as 
+                all the pieces of this quest drop off random mobs. They are the 
+                Merchant's Letter, Priest's Dairy, Personal Dairy, Written Announcement, 
+                Crier's Scroll, and the Student's Log. Put all six pages into 
+                the booklet and hit combine. Return this to the Sentinel Spirit 
+                and he will tell you that you must now kill Lord Ghiosk. Enter 
+                the City of Mist again and kill this lord. He is tough and you 
+                will need a good group to bring him down. Loot the three books 
+                off his corpse. Head back into the Emerald Jungle and locate the 
+                Spirit Sentinel in the pond [3685, -640]. Hand him the three books 
+                and he will tell you to fetch the High Scale, which again, is 
+                located in the City of Mist, and hand the Icon to High Scale Kirn. 
+                Head into CoM and run over to the temple (on the right side of 
+                the zone). Enter the temple, and turn right. Walk down the stairs 
+                and open the left door and the bottom of the landing. The High 
+                Scale Icon spawns in the corner of this room. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                over to the Hole now and locate High Scale Kirn, who can be found 
+                standing in the middle of the room at the top of the tower in 
+                the Revenant Castle. Hand him the High Scale Icon and he will 
+                attack you. Kill him to obtain the Engraved Ring. </font></p>
+              <p align="left"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                back to the City of Mist and hand the Engraved Ring to Neh'Ashiir. 
+                He will then attack you, kill him to obtain the Neh'Ashiir's Diary. 
+                Head back to the Emerald Jungle and hand the diary to the Sentinel 
+                Spirit in the underwater pond. At this point he will tell you 
+                to bring proof to Lord Rak'Ashiir. Head into the Plane of Fear 
+                and kill the named Golems (Terror, Fright), this will cause an 
+                Iksar Broodling to spawn. Kill it to obtain the Tear. Run back 
+                to the City of Mist and give Rak'Ashiir the child's tear. As of 
+                a recent patch, he will now aggro you after you hand in the tear. 
+                Kill him to obtain the Scale. Head back to Emerald Jungle and 
+                hand the Spirit Sentinel the scale and you will be rewarded with 
+                the Spear of Fate.</font></p>
+              <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+              <p align="center">&nbsp; </p>
+            </blockquote>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="center" bordercolor="#333333"> 
+          <td colspan="2"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="warrior"></a><font color="#FFCC00">Warrior 
+            Epic Quest </font></b></font></td>
+        </tr>
+        <tr bgcolor="#333333" bordercolor="#333333"> 
+          <td colspan="2"> 
+            <blockquote> 
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Kargak 
+                Redblade and Wenden are the two people who handle most aspects 
+                of this quest. Talk to them for the begining quest information, 
+                they can be found standing in East Freeport near the East Gate. 
+                </font> </p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Talk 
+                to Wenden and he will tell you that he can restore the Jeweled 
+                Dragon Head Hilt but only if you can bring him the following items, 
+                Unjeweled Dragon Hilt, Diamond, Jacinth and a Black Sapphire. 
+                Head to Lake RatheTear and swim under the aviak tower, you will 
+                find the Unjeweled Dragon Hilt on the bottom of the lake there. 
+                The three gems will need to be looted from high level mobs, which 
+                spawn in the Planes, High Level Dungeons or from the Dinosaur 
+                in the Ocean of Tears. Hand Wenden all three items and he'll reward 
+                you with the Jeweled Dragon Head Hilt. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Talking 
+                to Wenden again. He will tell you that he needs the following 
+                items to restore the Finely Crafted Dragon Head Hilt, Ball of 
+                Everliving Golem, Rejesium Ore and the Damaged Dragon Head Hilt. 
+                Head off to Timorous Deep and locate the chessboard [-6000, 3000]. 
+                At the bottom of the king piece there is a small bag, pick it 
+                up and you will receive the Damaged Dragon Head Hilt. Next head 
+                off to the Plane of Fear and start killing all the named golems 
+                (Fright, Dread, Terror) to obtain the Ball of Everliving Golem. 
+                Now head to the Dreadlands, to the giant castle near Karnor's 
+                Castle. Kill the Giant Patriarch to obtain the Giant Monocle. 
+                Now run over to the Frontier Mountains to the giant fort there. 
+                Locate Mentrax Mountainbone and hand him the monocle. He will 
+                reward you with the Rejesium Ore. Hand all three items back to 
+                Wenden and he will reward you with the Finely Crafted Dragon Head 
+                Hilt. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Talk 
+                to Denken Strongpick who can be found on the Aviak Island in the 
+                Ocean of Tears. He will tell you what he wants for this rusty 
+                old blade he found on the ocean floor, Keg of Vox Tail Ale, Block 
+                of Perm Frost, Rebreathers (x2). The Keg of Vox Tail Ale can be 
+                bought from many different vendors around Norrath. You can purchase 
+                one from the Sandfishers in North Ro. A Block of Perma Frost is 
+                dropped by Ice Giants who can be found in Permafrost and Everfrost. 
+                The Rebreathers are tinkered by Gnomes. Turn in the four items 
+                and you will receive your Ancient Blade. To obtain the Ancient 
+                Sword Blade kill the Queen of Chardok. You may need to kill her 
+                many times before she drops the loot. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Head 
+                back to Freeport and talk to Kargak Redblade and say the following 
+                line &quot;I will do you a favor&quot;. He will hand you a letter 
+                and ask you to take it to an Ogre in Ferrott named Oknoggin. He 
+                can be found near the stone bridge and the totem. Hand him the 
+                letter and he will reward you with a Tiny Lute. Head back to Kargek 
+                and hand him the Tiny Lute and he will hand you back a Book. Take 
+                this book and run over to Tenal Redblade who can be found at the 
+                bottom of the cliff near the ramp in East Karanas. Hand him the 
+                book and you'll receive the Frozen War Totem. He will ask you 
+                to obtain for him a Frozen Goblin Heart. Head back to Permafrost 
+                and start killing Goblins until you you obtain one. Head back 
+                to East Karanas and hand Tenal the Frozen Goblin Heart and the 
+                Frozen War Totem. You will be rewarded with the Totem of Fiery 
+                War. Tenal will again ask you to obtain two items for him, the 
+                Green Dragon Shield, Red Dragon Shield, and bring them back with 
+                your Totem. The Green Dragon Scale is dropped by Severlious who 
+                can be found in the Emerald Jungle. The Red Dragon Scale is dropped 
+                by Nagafen who can be found in Lord Nagafen's Lair or from Talendor 
+                who lives in Skyfire. Hand all three items back to Tenal and he 
+                will reward you with the Mark of the Sword. He will then tell 
+                you that he needs Maestro's Hand. Head off to the Plane of Hate 
+                and kill the Maestro of Rancor. Return to Tenal and hand him the 
+                Mark and the Hand and you will be rewarded with a Note to Kargek 
+                and yet another Quest. He will tell you to obtain the Spiroc Wingblade 
+                which drops off the Spiroc Lord in the Plane of Air. Head over 
+                to Kargek Redblade and hand him the Spiroc Wingblade and the Note 
+                to Kargek and you'll be rewarded with the Red Scabbard. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Put 
+                all four items into the Scabbard, the Ancient Blade, Ancient Sword 
+                Blade, Finely Crafted Head Hilt, and the Jeweled Dragon Head Hilt. 
+                Hit combine and you will receive the Jagged Blade of War. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Note: 
+                It can be split into two one handed weapons, called the Blade 
+                of Tactics and the Blade of Strategy.</font></p>
+              <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#top">-top-</a></font></div><!-- #EndLibraryItem --> 
+              <p align="center">&nbsp;</p>
+            </blockquote>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="26"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b><a name="wizard"></a><font color="#FFCC00">Wizard 
+              Epic Quest</font></b></font></div>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bgcolor="#333333" bordercolor="#333333"> 
+          <td colspan="2" height="26"> 
+            <p>&nbsp;</p>
+            <p align="center"><font size="3" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><b>&quot;Coming 
+              Soon&quot;</b></font></p>
+            <p align="center">&nbsp;</p>
+            <p align="center">&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+      </table>
+      <p align="center">&nbsp;</p>
+      <!-- #EndEditable --> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center"><font color="#FFCC00"><a href="#top" onFocus="if(this.blur)this.blur()">-top-</a></font></p>
+      <p align="center"> <font size="1" face="Arial, Helvetica, sans-serif">This 
+        page last updated on 
+        <!-- #BeginDate format:fcAm1a -->Sunday, April 29, 2001 1:44 PM<!-- #EndDate -->
+        </font><font size="1"> </font> </p>
+    </td>
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" height="45" align="left" valign="top"> 
+      <div align="center"> 
+        <p><font face="Arial, Helvetica, sans-serif" color="#FFCC00"><font size="2"><br>
+          SIte best viewed at 1024x768 or better</font><b><font size="1"><br>
+          </font></b><font size="1"> Painstakenly Optimized for IE 5.0 + and Netscape 
+          6.0 + |<b> Pants</b> optional | No Necros were harmed in the making 
+          of the site (yet)</font></font></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>

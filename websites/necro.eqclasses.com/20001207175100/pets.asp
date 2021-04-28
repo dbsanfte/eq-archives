@@ -1,0 +1,685 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+        <title>Welcome to Eqnecro.com - Home To the Everquest Necromancer</title>
+    <LINK REL=stylesheet HREF="linkcss.css" TYPE="text/css">
+    <script language="Javascript" src="navcond.js"></script>
+                <script language="JavaScript" src="navhome.js"></script>
+    </head>
+
+<body bgcolor="#000000" marginheight="0" marginwidth="0" leftmargin="0" topmargin="0" onload="init()" text="#FFFFFF" link="#417BA7" vlink="#417BA7" alink="#417BA7"> 
+
+<div align="left">
+
+<table border="0" width="671" cellpadding="0" height="1173" cellspacing="0" background="background.gif" bordercolor="#292994" align="center">
+  <tr>
+    <td width="1057" colspan="4" bgcolor="#000000" height="69" background="blackback.gif" valign="top" align="left">
+<p align="center">
+
+<!--- Start Everyone.net network logo, no edit without explicit permission from Everyone.net -->
+<A HREF="http://onlinegames.everyone.net">
+<img src="http://static.everyone.net/adservice/images/games/onlinegames.gif" border="0" width="100" height="60"></A>
+&nbsp;&nbsp;
+<!--- End Everyone.net network logo -->
+&nbsp;&nbsp;
+<!--- Start Everyone.net banner, no edit without explicit permission from Everyone.net -->
+<SCRIPT LANGUAGE="JavaScript">
+  var ev_rd=1652;	
+  var ev_now = new Date();  
+  ev_rd = ev_now.getTime()%100000000;
+  document.write('<A HREF="http://adservice.everyone.net/adservice/scripts/getAdRoute.pl?cid=376244&cat=games&rd=' + ev_rd + '" TARGET="_top">'); 
+  document.write('<IMG SRC="http://adservice.everyone.net/adservice/scripts/getAdBanner.pl?cid=376244&cat=games&rd=' + ev_rd + '" border=0 width=468 height=60></A>');
+ </SCRIPT>
+ <NOSCRIPT>
+ <A HREF="http://adservice.everyone.net/adservice/scripts/getAdRoute.pl?cid=376244&cat=games" TARGET="_top"><IMG SRC="http://adservice.everyone.net/adservice/scripts/getAdBanner.pl?cid=376244&cat=games" border="0" width="468" height="60"></A>
+ </NOSCRIPT>
+ <!-- End Everyone.net banner --><!-- End of GameGlow Ad. Code -->
+                
+</p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="1057" colspan="4" bgcolor="#000000" height="24" background="blackback.gif" valign="top" align="left">
+      <p align="center"><img border="0" src="logo.gif" width="626" height="138" align="left"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="1057" colspan="4" bgcolor="#000000" height="31" background="blackback.gif" valign="top" align="left"><img name="placeholder" src="newimages/arms.jpg" height="1" width="1" border="0" align="left"></td>
+  </tr>
+  
+  <tr>
+    <td width="112" height="995" bgcolor="#0F152A" background="runes.gif" valign="top" align="left">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>    </td>
+    <td width="48" height="995" valign="top" align="left">&nbsp;
+    </td>
+    <td width="609" height="995" valign="top" align="left">
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">&nbsp;&nbsp;</p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">&nbsp;&nbsp;</p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1"><img border="0" src="newsbar.gif" width="414" height="21"></p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      &nbsp;&nbsp;&nbsp;</p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      <b><font size="4" face="Tahoma">Pet Guide&nbsp;</font></b></p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      &nbsp;&nbsp;
+      </p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      <font size="2" face="Tahoma">Here is a list of the pet commands.
+      also added an initial table with pet skills and numbers. Since I
+      have a lousy memory, I don't really remember much about our pets.
+      So, if you have any information that is not in that list, please let me
+      know.&nbsp; Thanks!<br>
+      &nbsp;&nbsp;&nbsp;</font>
+      </p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      <a href="mailto:lifebane@eqclasses.com" class="Whitelink"><font face="Tahoma" size="2">Lifebane@eqclasses.com</font></a>
+      </p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      &nbsp;&nbsp;&nbsp;
+      </p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">
+      &nbsp;&nbsp;&nbsp;
+      </p>
+      <table border="0" width="95%" cellpadding="15">
+        <tr>
+          <td background="blackback.gif">
+      <p><font face="Tahoma" size="2"><b><font color="#AEC3DB">Pet Commands</font></b></font><p><img border="0" src="newsbar.gif" width="414" height="21">
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">
+      <font face="Tahoma" size="2"><font color="#6382AD">/pet
+      attack</font> - Pet will attack targeted creature</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet guard me</font> - Pet will follow you around
+      and attack anything not friendly around you</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet guard here</font> - Pet will attack anything
+      not friendly around his guarding post</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet as you were</font> - Pet will forget any
+      previous commands</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet back off </font>- Pet will stop attacking
+      targeted creature as long as it is not engaged in melee combat</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      follow me</font> - Pet will follow you around</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      health report</font> - Pet will tell you the percentage of HPs it has left</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      who leader</font> - Pet will tell you who summoned it</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      sit down </font>- Pet will sit down and heal faster</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      stand up</font> - Pet will stand up and guard the spot</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      target</font> - You will target your pet</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      taunt / no taunt </font>- Turns taunt on or off in battle (taunt is on by
+      default)</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2"><font color="#6382AD">/pet
+      get lost</font> - Pet will commit suicide</font>
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;&nbsp;
+      <p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font face="Tahoma" size="2">**Note You can
+      press F1 twice (first selects yourself and second your pet) to select your
+      pet. Easier than typing /pet target or wasting a hot key slot for this
+      command.</font>
+      <p style="word-spacing: 0; margin: 0">&nbsp;&nbsp;
+      <p style="word-spacing: 0; margin: 0">&nbsp;&nbsp;&nbsp;
+      <p style="word-spacing: 0; margin: 0">
+      <font face="Tahoma" size="2"><b><font color="#AEC3DB">Pet
+      Skills</font></b></font>
+      <p style="word-spacing: 0; margin: 0">&nbsp;&nbsp;
+      <p style="word-spacing: 0; margin: 0">
+      <img border="0" src="newsbar.gif" width="414" height="21"><font face="Tahoma" size="2"><br>
+      &nbsp;&nbsp;&nbsp;
+      </font>
+      <table border="0" width="95%">
+        <tr>
+          <td bgcolor="#21456B" align="center"><font size="2" face="Tahoma"><b>Spell</b></font></td>
+          <td bgcolor="#21456B" align="center" width="20%"><font size="2" face="Tahoma"><b>Attribute</b></font></td>
+          <td bgcolor="#21456B" align="center"><font size="2" face="Tahoma"><b>Data</b></font></td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Cavorting
+            Bones</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">1 - 2</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 1)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">15 - 30</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(1 bone chip)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">10</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">None</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Leering
+            Corpse</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">3 - 5</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 4)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">12</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">None</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Bone Walk</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">7 - 9</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 8)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">150 - 200</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">14,&nbsp; Bash 6</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Bash attack</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Convoke
+            Shadow</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">8 - 12</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 12)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">175 - 250</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">16, Bash 6</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Magical attack (on
+            stronger summons)</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Restless
+            Bones</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">12 - 16</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 16)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">300</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">20, Bash 8, Kick 7</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Kick attack</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Animate
+            Dead</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">? - ?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 20)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">375</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">22, Bash 8, Kick 8</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Double Attack (random)</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Haunting
+            Corpse</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">22 - 23</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 24)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">1000</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">26, Bash 8, Kick 8, Double Attack
+            (random)</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">None</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Summon
+            Dead</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">? - ?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 29)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">28, Bash ?, Kick ?, Double Attack
+            (random)</font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Dual Wield</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Invoke
+            Shadow</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">? - ?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 34)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">33, Bash ?, Kick ?, Double Attack
+            (random), Dual Wield<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">None</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Malignant
+            Dead</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">29 - 33</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 39)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">39, Bash ?, Kick ?, Double Attack
+            (random), Dual Wield<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">?</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Cackling
+            Bones</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">? - 37</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 44)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">1300</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">47, Bash 19, Kick 21, Double Attack
+            (random), Dual Wield<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Procs a minor drain life
+            spell (15 - 20)</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Invoke
+            Death</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">33 - 41</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 49)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">2350</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td>
+            <p style="word-spacing: 0; margin: 0"><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></p>
+          </td>
+          <td>
+            <p style="word-spacing: 0; margin: 0"><font size="2" face="Tahoma">55,
+            Bash 25, Kick 20, Double Attack (random), Dual Wield<br>
+            </font></p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Procs a minor drain life
+            spell (20 - 30)</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Minion of
+            Shadows</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">? - 43&nbsp; <font color="#AEC3DB">(ROGUE)</font></font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 53)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">1100 - 1400</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td>
+            <p style="word-spacing: 0; margin: 0"><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></p>
+          </td>
+          <td>
+            <p style="word-spacing: 0; margin: 0"><font size="2" face="Tahoma">57,
+            Dual Wield,
+            Procs a minor drain life
+            spell (?)<br>
+            </font></p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Backstab for up to 165 points, Triple attack (if not
+            dual
+            wielding)</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Servant
+            of Bones</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">?&nbsp;- 44<font color="#AEC3DB"> (MONK)</font></font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 56)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">?</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">59, Dual Wield,
+            Procs a minor drain life
+            spell (?)<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font face="Tahoma" size="2">Flying kicks for 71, duel wields
+            *Needs weapons*</font></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+      <img border="0" src="newsbar.gif" width="414" height="21"></td>
+        </tr>
+        <tr>
+          <td><font size="2" face="Tahoma" color="#6382AD">Emissary
+            of Thule</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Level
+            Range</font></td>
+          <td><font size="2" face="Tahoma">? - 50&nbsp; <font color="#AEC3DB">(SPECTRE)</font></font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(Level 59)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">HP Range</font></td>
+          <td><font size="2" face="Tahoma">2400-2800</font></td>
+        </tr>
+        <tr>
+          <td><font face="Tahoma" size="1">(2 bone chips)</font></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">Max.
+            Damage</font></td>
+          <td><font size="2" face="Tahoma">61, Bash 40, Kick 40, Dual Wield
+            (auto), Triple Attack,
+            Procs a minor drain life
+            spell (?)<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><font size="2" face="Tahoma" color="#AEC3DB">New
+            Abilities</font></td>
+          <td><font size="2" face="Tahoma">Peridot Required to cast spell</font></td>
+        </tr>
+      </table>
+            <p>&nbsp;
+          </td>
+        </tr>
+      </table>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">&nbsp;</p>
+      <p style="word-spacing: -1; line-height: 100%; margin-top: -1; margin-bottom: -1">&nbsp;</p>
+    </td>
+    
+    <td width="118" height="995" valign="top" align="left" background="purpback.gif">
+
+
+
+      <p align="center" style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[News]</font></p>
+      <p align="center" style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Current</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/screens.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">SOTD</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[Guides]</font></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/hg/hg_search.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Hunting Guides</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/cities.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">City Guides</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/zones.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Zone Guides</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/quests.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Quest Guide</font></a></p>
+	  <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/spells.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Spell Guides</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/research.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Research Guide</a></font></a></p>
+	  <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/spells/spellgroups.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Spell Grouping</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/dotstacking.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">DOT Stacking</font></a></p>
+<p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/spells/spellgroups.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Spell Groups</font></a></p>
+	  <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/necromancer.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Necro Guide</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/skills.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Skills Guide</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/attributes.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Attributes Guide</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/pets.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Pet
+      Guide</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/messages.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Con Messages</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/faction.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Faction Guide</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[Item
+      Listings]</font></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/ilist/equipment.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Weapons</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/ilist/equipment.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Armor</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/ilist/equipment.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Bags</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/ilist/equipment.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Misc.
+      Items</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/ilist/equipment.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Jewelry</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[Character
+      Info]</font></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/playerpicture.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Player
+      Pics</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/playerlisting.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Player
+      Listings</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/guilds.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Guild
+      Listings</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[Misc.]</font></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/roleplay.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Roleplay Works</font></a></p>
+
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/editorials.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Editorials</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/contest.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Contests</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/downloads.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Downloads</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/strategies.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Strategies</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/faq.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">FAQ</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/links.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Links</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[Communications]</font></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/forums/" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Message
+      Board</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/chatchat/default.asp" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Chat</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="mailto:reionik@eqclasses.com lifebane@eqclasses.com" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Email Staff</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="mailto:reionik@eqclasses.com" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Email Reionik</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="Mailto:lifebane@eqclasses.com" class="whitelink"><font size="1" face="Tahoma" color="#0099CC">Email Lifebane</font></a></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="1">[Guilds]</font></p>
+      <p align="center" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="http://necro.eqclasses.com/shadowclan/" class="whitelink"><font color="#0099CC" size="1">Shadowclan</font></a></p>
+      &nbsp;
+    </td>
+    
+  </tr>
+</table>
+  </div>
+</html>

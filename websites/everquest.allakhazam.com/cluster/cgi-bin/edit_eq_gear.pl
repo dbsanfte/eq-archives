@@ -1,1 +1,0 @@
-Sorry, you must <a href=/db/user.html>log in</a> in order to use this feature.

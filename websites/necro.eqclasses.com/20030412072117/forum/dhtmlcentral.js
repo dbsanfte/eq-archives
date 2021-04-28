@@ -1,0 +1,72 @@
+oM=new makeCM("oM"); oM.resizeCheck=1; oM.rows=1;  oM.onlineRoot=""; oM.pxBetween =0; 
+oM.fillImg="cm_fill.gif"; oM.fromTop=115; oM.fromLeft=155; oM.wait=300; oM.zIndex=400;
+oM.useBar=1; oM.barWidth="100%"; oM.barHeight="menu"; oM.barX=0;oM.barY="menu"; oM.barClass="clBar";
+oM.barBorderX=1; oM.barBorderY=1;
+oM.level[0]=new cm_makeLevel(90,21,"clT","clTover",1,1,"clB",0,"bottom",0,0,0,0,0);
+oM.level[1]=new cm_makeLevel(200,22,"clS","clSover",1,1,"clB",0,"right",0,0,"images/menu_arrow.gif",10,10);
+oM.level[2]=new cm_makeLevel(110,22,"clS2","clS2over");
+oM.level[3]=new cm_makeLevel(140,22);
+
+oM.makeMenu('m2','','Information','');
+oM.makeMenu('m1','','Focus Items','');
+oM.makeMenu('m3','','Guides','');
+oM.makeMenu('m5','','Forums','../forum');
+oM.makeMenu('m4','','Eqclasses','');
+oM.makeMenu('m8','m2','Latest news','../index.asp');
+oM.makeMenu('m104','m2','Register for Free','../forum/policy.asp');
+oM.makeMenu('m105','m1','Fast Item Search','../itemsearch.asp');
+oM.makeMenu('m106','m1','Advanced Item Search','../itemsearch.asp?action=new');
+oM.makeMenu('m107','m1','Complete List','../itemsearch.asp?action=fastfind');
+oM.makeMenu('m13','m2','Advanced Experience','../abilities.asp');
+oM.makeMenu('m12','m2','Spell Lists','');
+oM.makeMenu('m56','m3','Pet Guide','../pets.asp');
+oM.makeMenu('m14','m3','Player Written','../Guideview.asp');
+oM.makeMenu('m15','m3','Hunting','');
+oM.makeMenu('m19','m15','All','../comingsoon.asp');
+oM.makeMenu('m16','m15','Antonica','../comingsoon.asp');
+oM.makeMenu('m17','m15','Faydwer','../comingsoon.asp');
+oM.makeMenu('m18','m15','Kunark','../comingsoon.asp');
+oM.makeMenu('m20','m3','Class Creation','../creation.asp');
+oM.makeMenu('m41','m4','Staff','../staff.asp');
+oM.makeMenu('m42','m4','Contributors','../contributors.asp');
+oM.makeMenu('m65','m15','Velious','../comingsoon.asp');
+oM.makeMenu('m66','m15','Luclin','../comingsoon.asp');
+oM.makeMenu('m67','m15','Planes of Power','../comingsoon.asp');
+oM.makeMenu('m68','m15','Ykesha','../comingsoon.asp');
+oM.makeMenu('m69','m2','Dire Charmable Mobs','../direcharm.asp');
+oM.makeMenu('m73','m12','Spells by Level','../spells.asp');
+oM.makeMenu('m74','m12','Spells by Group','../spellsort.asp?list=group');
+oM.makeMenu('m79','m12','Spells by Type','../spellsort.asp?list=type');
+oM.makeMenu('m75','m12','Search for a Spell','../spellsearch.asp');
+oM.makeMenu('m76','m12','Search by Words','../wordsearch.asp');
+oM.makeMenu('m77','m4','How to Donate','../donate.asp');
+oM.makeMenu('m78','m4','Shop at Eqclasses','../comingsoon.asp');
+oM.makeMenu('m80','m2','Coffin Vendors','');
+oM.makeMenu('m81','m80','Level 12 Component','../coffins12.asp');
+oM.makeMenu('m82','m80','Level 39 Component','../coffins39.asp');
+oM.makeMenu('m83','m80','Level 57 Component','../coffins57.asp');
+oM.makeMenu('m84','m3','Specialization Guide','../specialization.asp');
+oM.makeMenu('m85','m3','Research Guide','../research.asp');
+oM.makeMenu('m86','m14','Guide Listing','../guideview.asp');
+oM.makeMenu('m87','m14','Create a Guide','../guides.asp?action=new');
+oM.makeMenu('m88','m86','Complete Listing','../Guideview.asp');
+oM.makeMenu('m101','m86','General Guides','../guideview.asp?listing=sort&groupname=General Guide');
+oM.makeMenu('m89','m86','AAXP Guides','../guideview.asp?listing=sort&groupname=AAXP Guide');
+oM.makeMenu('m90','m86','Creation Guides','../guideview.asp?listing=sort&groupname=Creation Guide');
+oM.makeMenu('m91','m86','Farming Guides','../guideview.asp?listing=sort&groupname=Farming Guide');
+oM.makeMenu('m92','m86','Solo Strategy Guides','../guideview.asp?listing=sort&groupname=Solo Strategy Guide');
+oM.makeMenu('m93','m86','Group Strategy Guides','../guideview.asp?listing=sort&groupname=Group Strategy Guide');
+oM.makeMenu('m94','m86','Raid Strategy Guides','../guideview.asp?listing=sort&groupname=Raid Strategy Guide');
+oM.makeMenu('m95','m86','Focus Item Guides','../guideview.asp?listing=sort&groupname=Focus Item Guide');
+oM.makeMenu('m96','m86','Equipment Guides','../guideview.asp?listing=sort&groupname=Equipment Guide');
+oM.makeMenu('m97','m86','Pet Guides','../guideview.asp?listing=sort&groupname=Pet Guide');
+oM.makeMenu('m100','m86','Spells Guides','../guideview.asp?listing=sort&groupname=Spells Guide');
+oM.makeMenu('m102','m2','Focus Effects','../focuslist.asp');
+oM.makeMenu('m103','m2','Raid Resist Listing','../resists.asp');
+oM.makeMenu('m108','m3','Chardok Quests','../chardok.asp');
+
+
+
+var avail="190+((cmpage.x2-235)/7)";
+oM.menuPlacement=new Array(192,avail+"-11",avail+"*2-8",avail+"*3-12",avail+"*4-7",avail+"*5-9",avail+"*6+5")
+oM.construct()

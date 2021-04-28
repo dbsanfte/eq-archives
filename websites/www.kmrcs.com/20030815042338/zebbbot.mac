@@ -1,0 +1,163 @@
+| Zebbbot.mac
+| Program by Rayne in honor of our wayward Wizard 
+| 
+| Version 1.00   07/28/2003 
+| 
+| Usage: /macro zebbbot
+| 
+
+#Event Slainby "You have been slain by a" 
+#Event CastSpell1 "Castspell1"
+#Event CastSpell2 "Castspell2"
+#Event CastSpell3 "Castspell3"
+#Event CastSpell4 "Castspell4"
+#Event CastSpell5 "Castspell5"
+#Event CastSpell6 "Castspell6"
+#Event CastSpell7 "Castspell7"
+#Event CastSpell8 "Castspell8"
+#Event CastFire   "Castfire"
+#Event CastCold   "Castcold"
+#Event CastMagic  "Castmagic"
+#Event CastLure   "Castlure"
+#Event CastBane   "Castbane"
+#Event FollowMe	  "Followme"
+#Event TurnFollowOff "Turnfollowoff"
+#event FollowOff "You are no longer auto-following"
+#event ExeterInvites "Exeter invites you to join a group"
+
+| ----- Trigger Defines --------------------- 
+#Define TURBOAMOUNT     380     | Turbo Amount, Change at your own risk. 
+#Define delFizzleCatcher 5	| Delay to retry spell again in order to get spell off in case of fizzle
+#Define delTargeting     4
+#Define delWaitLoop	 5
+#Define gemFire 6		| Enter gem # for your fire based nuke
+#Define gemCold 4		| Enter gem # for your cold based nuke
+#Define gemMagic 7		| Enter gem # for your magic based nuke
+#Define gemLure 4		| Enter gem # for your lure based nuke
+#Define gemBane 4		| Enter gem # for your bane based nuke
+
+| ----- Varabales ----- 
+#Define tankName       v1
+#Define currentSpell   v2
+#Define followName     v3
+
+#include routines.mac 
+#turbo TURBOAMOUNT 
+
+| ----- Main --------------------------------- 
+| -- Entry point for script 
+| -------------------------------------------- 
+Sub main 
+   /echo "Zebb-bot Version 1.00 Starting" 
+   /echo "Will assist whoever sends trigger command"
+   /varset currentSpell "*none set*"
+   /varset followName "*none set*"
+   /goto :Wait 
+
+/return 
+
+:Wait 
+   /delay delWaitLoop
+   /DoEvents 
+/goto :Wait 
+
+|
+| CastSpell
+| Parameters: $p0 = spell gem slot to cast
+|
+Sub CastSpell
+   |/varset currentSpell "$char(gem,"$p0")" |<---- this line currently crashes EQ regardless of whether I surround the $char command in quotes
+   |/echo "Casting spell $currentSpell..."
+   /echo "CastSpell called"
+   /rtarget
+   /delay delTargeting
+   /assist
+   /delay delTargeting
+   /Cast $p0
+   /delay delFizzleCatcher
+   /Cast $p0
+/return
+
+| ----- Events called by /DoEvents ----- 
+
+Sub Event_CastSpell1
+   /call CastSpell 1
+/return
+
+Sub Event_CastSpell2
+   /call CastSpell 2
+/return
+
+Sub Event_CastSpell3
+   /call CastSpell 3
+/return
+
+Sub Event_CastSpell4
+   /call CastSpell 4
+/return
+
+Sub Event_CastSpell5
+   /call CastSpell 5
+/return
+
+Sub Event_CastSpell6
+   /call CastSpell 6
+/return
+
+Sub Event_CastSpell7
+   /call CastSpell 7
+/return
+
+Sub Event_CastSpell8
+   /call CastSpell 8
+/return
+
+Sub Event_CastFire
+   /call CastSpell gemFire
+/return
+
+Sub Event_CastCold
+   /call CastSpell gemCold
+/return
+
+Sub Event_CastMagic
+   /call CastSpell gemMagic
+/return
+
+Sub Event_CastLure
+   /call CastSpell gemLure
+/return
+
+Sub Event_CastBane
+   /call CastSpell gemBane
+/return
+
+Sub Event_Slainby 
+   /endmacro 
+/return 
+
+Sub Event_FollowMe
+   /rtarget
+   /delay delTargeting
+   /varset followName $target(name)
+   /echo "Following $followName"
+   /follow
+/return
+
+Sub Event_TurnFollowOff
+   /press down
+/return
+
+Sub Event_FollowOff 
+   /press esc 
+   /press esc 
+   /delay delTargeting
+   /tell $followName Auto Follow Off. 
+/return 
+
+Sub Event_ExeterInvites
+   /press esc
+   /press esc
+   /delay delTargeting
+   /invite
+/return

@@ -1,0 +1,626 @@
+<html>
+
+<head>
+<title>Big BADs</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body stylesrc="http://www.ericm.com/members1.htm" topmargin="0" leftmargin="0" onload="dynAnimation()" bgcolor="#000000" text="#FFAC00" link="#FFFFFF" vlink="#005500" alink="#800000">
+
+<p align="center">&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="0" WIDTH="100%" BGCOLOR="#000000">
+  <tr>
+    <td ALIGN="CENTER"><div align="center"><center><table BORDER="0" BGCOLOR="#000000">
+      <tr>
+        <td VALIGN="BOTTOM" ROWSPAN="2"><img SRC="../../TheFlame.gif" HSPACE="15" align="LEFT"></td>
+        <td ROWSPAN="2" BGCOLOR="#000000"><img SRC="eq_smaller2.gif" WIDTH="266" HEIGHT="102"></td>
+        <td ALIGN="RIGHT" VALIGN="BOTTOM" ROWSPAN="2"><img SRC="../../TheFlame.gif" HSPACE="15" align="RIGHT"></td>
+      </tr>
+    </table>
+    </center></div><h1><br>
+    <font face="Comic Sans MS" color="#FF0000">Big BADs</font></h1>
+    <p align="center"><font color="#00FFFF">Current Member's main characters only. Secondary
+    twinks are not listed.</font></p>
+    <p align="center"><font color="#00FFFF">BAD and all its members can be found on the Xegony
+    Server.</font></p>
+    <div align="center"><center><table BORDER="0" WIDTH="100%">
+      <tr>
+        <td height="597"><div align="center"><center><table BORDER="1" WIDTH="752" BGCOLOR="#000000" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF" height="631">
+          <tr>
+            <th height="25" width="163"><font color="#FF0000" face="Century Gothic"><b>Member</b></font></th>
+            <th height="25" width="167"><font color="#FF0000" face="Century Gothic"><b>Race</b></font></th>
+            <th height="25" width="193"><font color="#FF0000" face="Century Gothic"><b>Class</b></font></th>
+            <th height="25" width="229"><font color="#FF0000" face="Century Gothic"><b>More Info</b></font></th>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Abaddoner</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Warrior</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Aryanne</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Dark Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Necromancer</b></font></td>
+            <td height="25" width="229" dynamicanimation="spiral" style="position: relative !important; left: 10000 !important"><font face="Century Gothic" color="#FFFF80"><b><marquee scrollamount="2" scrolldelay="70" border="0">&quot;Buff me... Dave&quot;</marquee></b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Betina</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>High Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><small><b>Brain
+            Bender Betty!!</b></small></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Brangeorge</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><small><b>Could
+            pass for a Ranger</b></small></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Carling</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Shaman</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><b>&quot;LFG&quot;</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Connell</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>High Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Wizard</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><b>Retired
+            Huntmaster</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font color="#FF0000" face="Century Gothic"><a href="mailto:crusader@cei.net"><b>Crusader</b></a></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><b>Council&nbsp; <small>&quot;Dave&quot;</small></b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Eyedie</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Wood Elf&nbsp;</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Druid</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>inactive</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Fiera</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Erudite</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Enchanter</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Gradient</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Dwarf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Karbron</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td height="25" width="229" dynamicanimation="spiral" style="position: relative !important; left: 10000 !important"><font face="Century Gothic" color="#FFFF80"><b><marquee scrollamount="3" scrolldelay="75" border="0">Battle Cleric!!</marquee></b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Kardaan</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Shaman</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Karkas</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Half Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Ranger</b></font></td>
+            <td height="25" width="229"><font color="#FFFF80"><small><small><font face="Century Gothic"><strong>Uses &quot;anon&quot; and says he's a Palad</strong></font></small></small>in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Kevak</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Ogre</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Shaman</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Kilzar</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Dwarf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Warrior</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Lardain</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Warrior</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Lenuvian</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Half Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Ranger</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Liz</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Dwarf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFFFF"><a href="mailto:chixlittle@aol.com"><b>Maaggie</b></a></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>High Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td height="25" width="229"><font color="#FFFF80"><font face="Century Gothic"><strong>Council</strong></font>&nbsp;
+            <small><font face="Century Gothic"><b>bonk-bonk</b></font></small></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Malulani</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><b>&quot;Busy
+            &nbsp; doing a CR&quot;</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Sadonumspa</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>High Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Sanyeni</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>High Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Enchanter</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Sevrin</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Wood Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Ranger</b></font></td>
+            <td height="25" width="229"><font color="#FFFF80"><font face="Century Gothic"><strong><small>Still
+            upset he's not a Paladin</small></strong></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Siona</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Halfling</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Druid</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font color="#FF0000" face="Century Gothic"><a href="mailto:emasuda@home.net"><b>Takumi</b></a></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><b>Retired
+            Council/Web Master</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Treanna</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Wood Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Druid</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Tylab</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Umbrella</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Half Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Bard</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>inactive</b></font><font color="#FFFF80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Ulfgar</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Warrior</b></font></td>
+            <td height="25" width="229"><small><font face="Century Gothic" color="#FFFF80"><b>Lookin
+            for stuff to kill</b></font></small></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font color="#FF0000" face="Century Gothic"><a href="mailto:warwiz@myokay.net"><b>Warwiz</b></a></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Shaman</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#FFFF80"><b>Councilers</b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><b><font face="Century Gothic" color="#FFFF80">Windasani</font></b></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Half Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Ranger</b></font></td>
+            <td height="25" width="229"><b><font face="Century Gothic" color="#000000">active</font></b></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><b><font face="Century Gothic" color="#FFFF80">Wonnie</font></b></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Erudite</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Wizard</b></font></td>
+            <td height="25" width="229"><b><font face="Century Gothic" color="#000000">active</font></b></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Zankin</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Gnome</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Warrior</b></font></td>
+            <td height="25" width="229" dynamicanimation="zoomIn" style="position: relative !important; left: 10000 !important"><font face="Century Gothic" color="#FFFF80"><b><marquee scrollamount="3" scrolldelay="75" border="0" style="text-decoration: blink" behavior="alternate"> ( The ) GNOME</marquee></b></font></td>
+          </tr>
+          <tr>
+            <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Zarkon</b></font></td>
+            <td height="25" width="167"><font face="Century Gothic" color="#FFFF80"><b>Wood Elf</b></font></td>
+            <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Bard</b></font></td>
+            <td height="25" width="229"><font face="Century Gothic" color="#000000"><b>active</b></font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+      <tr>
+        <td ALIGN="CENTER" height="497"><div align="center"><center><table border="1" width="96%" height="125">
+          <tr>
+            <th width="21%" height="25"><font color="#FF0000" face="Century Gothic"><b>Recruits</b></font></th>
+            <th width="23%" height="25"><font color="#FF0000" face="Century Gothic"><b>Race</b></font></th>
+            <th width="26%" height="25"><font color="#FF0000" face="Century Gothic"><b>Class</b></font></th>
+            <th width="30%" height="25"><font color="#FF0000" face="Century Gothic"><b>Sponsor</b></font></th>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Gokkuu</b></font></td>
+            <td width="23%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Halfling</b></font></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Minikaka</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Yeehaw</b></font></td>
+            <td width="23%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Betina</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Faldaar</b></font></td>
+            <td width="23%" height="25"><b><font face="Century Gothic" color="#000000">Human</font></b></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>The secret
+            Sponsor</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Khaleel</b></font></td>
+            <td width="23%" height="25"><b><font face="Century Gothic" color="#FFFF80">Wood Elf</font></b></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Ranger</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Crusader</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Joeker</b></font></td>
+            <td width="23%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Warrior</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Kevak</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Jatranik</b></font></td>
+            <td width="23%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Iksar</b></font></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Monk</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Windasani</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Kewen</b></font></td>
+            <td width="23%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Wood Elf</b></font></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Druid</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Treanna</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Aznna</b></font></td>
+            <td width="23%" height="25"><b><font face="Century Gothic" color="#FFFF80"></font><font face="Century Gothic" color="#000000">Dunno</font><font face="Century Gothic" color="#FFFF80"></font></b></td>
+            <td width="26%" height="25"><b><font face="Century Gothic" color="#FFFF80">Cleric</font></b></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Sevrin</b></font></td>
+          </tr>
+          <tr>
+            <td width="21%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Zwingli</b></font></td>
+            <td width="23%" height="25"><b><font face="Century Gothic" color="#000000"></font><font face="Century Gothic" color="#FFFF80">Dwarf</font><font face="Century Gothic" color="#000000"></font></b></td>
+            <td width="26%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Cleric</b></font></td>
+            <td width="30%" height="25"><font face="Century Gothic" color="#FFFF80"><b>Zarkon</b></font></td>
+          </tr>
+        </table>
+        </center></div><p><strong><font color="#00FFFF">Missing Members and Members Missed.</font>
+        </strong></p>
+        <div align="center"><center><table BORDER="0" WIDTH="100%">
+          <tr>
+            <td><div align="center"><center><table BORDER="1" WIDTH="753" BGCOLOR="#000000" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF" height="100">
+              <tr>
+                <th height="25" width="163"><font color="#FF0000" face="Century Gothic"><b>Member</b></font></th>
+                <th height="25" width="170"><font color="#FF0000" face="Century Gothic"><b>Race</b></font></th>
+                <th height="25" width="193"><font color="#FF0000" face="Century Gothic"><b>Class</b></font></th>
+                <th height="25" width="227"><font color="#FF0000" face="Century Gothic"><b>Status</b></font></th>
+              </tr>
+              <tr>
+                <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Angus</b></font></td>
+                <td height="25" width="170"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+                <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+                <td height="25" width="227"><font face="Century Gothic" color="#FFFF80"><b>MIA</b></font></td>
+              </tr>
+              <tr>
+                <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Eclesias</b></font></td>
+                <td height="25" width="170"><font face="Century Gothic" color="#FFFF80"><b>Human</b></font></td>
+                <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Paladin</b></font></td>
+                <td height="25" width="227"><font face="Century Gothic" color="#FFFF80"><b>MIA</b></font></td>
+              </tr>
+              <tr>
+                <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>Minikaka</b></font></td>
+                <td height="25" width="170"><font face="Century Gothic" color="#FFFF80"><b>Halfling</b></font></td>
+                <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Druid</b></font></td>
+                <td height="25" width="227"><font face="Century Gothic" color="#FFFF80"><b>MIA</b></font></td>
+              </tr>
+              <tr>
+                <td height="25" width="163"><font face="Century Gothic" color="#FFFF80"><b>BRMee</b></font></td>
+                <td height="25" width="170"><font face="Century Gothic" color="#FFFF80"><b>Barbarian</b></font></td>
+                <td height="25" width="193"><font face="Century Gothic" color="#FFFF80"><b>Rogue</b></font></td>
+                <td height="25" width="227"><font face="Century Gothic" color="#FFFF80"><b>MIA</b></font></td>
+              </tr>
+            </table>
+            </center></div><p>&nbsp;</td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp; <a href="mailto:emasuda@home.net">Are you BAD and not on this
+    page? Let me know!!</a></td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>

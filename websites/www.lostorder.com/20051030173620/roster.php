@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Roster</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<!-- metakeywords -->
+<!-- metadescription -->
+<link rel="stylesheet" href="layout.css" type="text/css" title="standard">
+<link rel="stylesheet" href="navmenu.css" type="text/css" title="standard">
+<link rel="icon" href="images/loa_icon2.gif" type="image/gif">
+<style type="text/css">
+<!--
+.content h2 {
+  border: 0px;
+}
+
+.content thead td {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #DDDDDD;
+  border-color: #BBBBBB #888888 #888888 #BBBBBB;
+  padding: 3px;
+}
+
+.content td {
+  font-size: 0.8em;
+  text-align: center;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #888888 #BBBBBB #BBBBBB #888888;
+  padding: 3px;
+}
+
+.content .officer {
+  font-weight: bold;
+}
+/*============================*/
+/* Main Content Layout        */
+#maincontent {
+  margin-top: 0px;
+  margin-left: 180px;
+  margin-right: 175px;
+}
+/*============================*/
+
+/*============================*/
+/* InfoBox Layout             */
+#infobox {
+  float: right;
+  width: 160px;
+  margin: 42px 5px 0px 0px;
+}
+
+#infobox ul { /* since I started by setting all margins and padding to 0, I need to recreate it on those elements where I need it */
+  font-size: 0.7em;
+  list-style: none;
+}
+
+#infobox li {
+  padding: 1px 5px;
+}
+/*============================*/
+
+/*============================*/
+/* InfoBox Primary Layout     */
+.infoboxprimary {
+  width: 100%;
+  font-size: 0.7em;
+  /*border: 1px solid #AA8038;*/
+  padding: 4px 0px 5px 5px;
+  margin-bottom: 5px;
+}
+
+.infoboxprimary h2 {
+  font-size: 0.9em;
+  border-style: solid;
+  border-width: 0px 0px 3px 0px;
+  border-color: #CFAE9A;
+  text-align: right;
+  text-decoration: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+/*============================*/
+
+/*============================*/
+/* Recent Thread block        */
+.infoboxprimary .threadposter {
+  border-width: 0px 0px 1px 1px;
+  border-color: #CFAE9A;
+  border-style: solid;
+  padding-left: 2px;
+  padding-bottom: 1px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+/*============================*/
+
+/*============================*/
+/* Member Spotlight           */
+.infoboxprimary h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.infoboxprimary .spotpicbox {
+  margin: 3px 1px;
+  text-align: center;
+}
+
+.infoboxprimary .spottext {
+
+}
+
+.infoboxprimary .infoboxnocolorcontrol input {
+  background-color: transparent;
+}
+
+.infoboxnoheader img { border: none; }
+.infoboxnoheader { 
+width: 100%;
+  font-size: 0.7em;
+  padding: 4px 0px 5px 5px;
+  margin-bottom: 5px;
+  text-align: right; 
+}
+/*============================*/
+-->
+</style>
+
+<!-- menucss -->
+
+<!-- pagescript -->
+
+</head>
+
+<body>
+	<div id="header">
+		<div class="logo"><a href="index.php" title="Home"><img src="images/avatar_logo.jpg" width="202" height="194"></a></div>
+		<div class="userinfo">
+		<script type="text/javascript" src="http://www.lostorder.com/vforums/clientscript/vbulletin_md5.js"></script>
+		<script type="text/javascript" src="http://www.lostorder.com/vforums/clientscript/vbulletin_global.js"></script>
+		<form action="http://www.lostorder.com/vforums/login.php" method="POST" onsubmit="md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)">
+			<input type="hidden" name="vb_login_md5password">
+			<input type="hidden" name="vb_login_md5password_utf">
+			<input type="hidden" name="url" value="http://www.lostorder.com/roster.php">
+			<input type="hidden" name="do" value="login">
+			<input type="hidden" name="forceredirect" value="1">
+			<input type="hidden" name="s" value="">
+			<input type="text" name="vb_login_username" size="10" tabindex="1">  <input type="password" name="vb_login_password" size="10" tabindex="1">  <input type="submit" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." tabindex="1"><br>
+			<input type="hidden" name="cookieuser" value="1" id="cb_cookieuser_navbar">
+		</form>
+		<a href="http://www.lostorder.com/vforums/register.php?do=signup">Want to register?</a> <a href="http://www.lostorder.com/vforums/login.php?do=lostpw" >Forgotten your password?</a>
+		</div>
+		<div class="topbackground">
+			<img src="images/drk_lostordername.gif" width="206" height="13">
+		</div>
+		<div class="bottombackground"><img src="images/temp_tagline.gif" width="479" height="42"></div>
+
+	</div>
+	<div id="infobox">
+<div class="infoboxprimary">
+	<h2>Users Online</h2>
+	<a href="http://www.lostorder.com/vforums/member.php?u=102" title="View user profile"><b><font color="#002C59">Akaela</font></b></a>, <a href="http://www.lostorder.com/vforums/member.php?u=7" title="View user profile"><b><font color="#002C59">Elkmountain</font></b></a>, <a href="http://www.lostorder.com/vforums/member.php?u=477" title="View user profile"><b><font color="#002C59">Fug</font></b></a>, <a href="http://www.lostorder.com/vforums/member.php?u=366" title="View user profile"><b><font color="#002C59">Morainah</font></b></a>, <a href="http://www.lostorder.com/vforums/member.php?u=83" title="View user profile"><b><font color="#002C59">Timmerfoot</font></b></a>, <a href="http://www.lostorder.com/vforums/member.php?u=76" title="View user profile">Tristan Wolf</a>, <a href="http://www.lostorder.com/vforums/member.php?u=121" title="View user profile"><b><font color="#13589F">Xaul</font></b></a>
+</div><div class="infoboxprimary">
+	<h2>Recent Posts</h2>
+	<a href="http://www.lostorder.com/vforums/showthread.php?t=17464" title="[WOW: The Great Beyond] ">Expansion news</a><br><div class="threadposter"><a href="http://www.lostorder.com/vforums/member.php?u=102" title="View user profile">Akaela</a> :: 12:13</div><a href="http://www.lostorder.com/vforums/showthread.php?t=17464" title="[WOW: The Great Beyond] ">Expansion news</a><br><div class="threadposter"><a href="http://www.lostorder.com/vforums/member.php?u=734" title="View user profile">Jaegerbrau</a> :: 11:50</div><a href="http://www.lostorder.com/vforums/showthread.php?t=17480" title="[Other Gaming Topics]  Call of Duty 2 Review (long)">Call of Duty 2 Review ...</a><br><div class="threadposter"><a href="http://www.lostorder.com/vforums/member.php?u=799" title="View user profile">Harblar</a> :: 11:33</div><a href="http://www.lostorder.com/vforums/showthread.php?t=17492" title="[Graphic and Video Design Forum]  Shooting video for training">Shooting video for tra...</a><br><div class="threadposter"><a href="http://www.lostorder.com/vforums/member.php?u=123" title="View user profile">Vero</a> :: 11:31</div><a href="http://www.lostorder.com/vforums/showthread.php?t=17422" title="[Other Gaming Topics]  Dark and Light FAQ .... large">Dark and Light FAQ ......</a><br><div class="threadposter"><a href="http://www.lostorder.com/vforums/member.php?u=310" title="View user profile">Methus</a> :: 11:07</div><a href="http://www.lostorder.com/vforums/search.php?do=getnew"><strong>View new posts...</strong></a>
+</div><div class="infoboxprimary">
+	<h2>PayPal Donations</h2>
+	<!-- ** PayPal Donations ** -->
+<center>
+<div class="infoboxnocolorcontrol">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="brimstone@lostorder.com">
+<input type="hidden" name="item_name" value="Lost Order of Akalabeth
+Guild Fund">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="tax" value="0">
+<input type="image"
+src="http://www.lostorder.net/images/loa_donation.gif" border="0"
+name="submit" alt="Make payments with PayPal - it's fast, free and
+secure!">
+</form>
+</div>
+</center>
+</div></div>
+
+	<div id="mainnav">
+		<img src="images/smnav_navigateakalabeth.gif" width="160" height="46">
+<div class="navmenu">
+<ul>
+<h2>Commune</h2><li><a href="index.php">Home and News</a></li><li><a href="contact.php">Contact Us</a></li><li><a href="http://www.lostorder.com/vforums/"><b>Message Boards</b></a></li><li class="navmenulevel2"><a href="forum_posting.php">Posting Guidelines</a></li><li><a href="Glossary.php">Glossary of Terms</a></li><li><a href="chat.php">IRC Chat Server</a></li><li class="navmenulevel2"><a href="http://www.lostorder.net/mircstats/akalabeth.stratics.allstats.html">IRC Stats</a></li><li><a href="voicechat.php">Voice Server Info</a></li><li><a href="links.php">Links of Interest</a></li></ul>
+</div>
+<div class="navmenu">
+<ul>
+<h2>Membership</h2><li><a href="mission_statement.php">Mission Statement</a></li><li><a href="benefits.php">Benefits of Membership</a></li><li class="navmenuselected"><a href="roster.php">Roster of Members</a></li><li><a href="policies.php">Rules and Policies</a></li><li><a href="votingprocess.php">Voting Process</a></li></ul>
+</div>
+<div class="navmenu">
+<ul>
+<h2>Oracular Tome (History)</h2><li><a href="Alliances.php">Alliances</a></li><li><a href="awards.php">Awards and Recognition</a></li><li><a href="timelines.php">Historical Timelines</a></li><li><a href="http://www.lostorder.com/memberphotos/">Screenshots & Gallery</a></li><li><a href="tales.php">Tales of Akalabeth</a></li></ul>
+</div>
+<div class="navmenu">
+<ul>
+<h2>Our Worlds</h2><li><a href="chapter_eq.php">EverQuest II</a></li><li><a href="chapter_wow.php">World of Warcraft</a></li><li><a href="chapter_coh.php">City of Heroes</a></li><li><a href="chapter_swg.php">Star Wars Galaxies</a></li><li><a href="chapter_daoc.php">Dark Age of Camelot</a></li><li><a href="chapter_ffxi.php">Final Fantasy XI</a></li><li><a href="chapter_hz.php">Horizons</a></li><li><a href="chapter_ps.php">PlanetSide</a></li></ul>
+</div>
+
+	</div>
+	<div id="maincontent">
+		
+		<div class="content">
+			<form name="filter_roster" action="roster.php" method="POST">
+Select roster to display: 	<select name="chapterfilter" onchange="this.form.submit();"><option value="Entire Guild" selected>Entire Guild</option><option value="None" >None</option><option value="Guild Leadership" >Guild Leadership</option><option value="Asherons Call 2" >Asherons Call 2</option><option value="Battlefield 2" >Battlefield 2</option><option value="City Of Heroes" >City Of Heroes</option><option value="Dark Age of Camelot" >Dark Age of Camelot</option><option value="Dungeons and Dragons Online" >Dungeons and Dragons Online</option><option value="EverQuest" >EverQuest</option><option value="EverQuest II" >EverQuest II</option><option value="Final Fantasy XI" >Final Fantasy XI</option><option value="Guild Wars" >Guild Wars</option><option value="Horizons Online" >Horizons Online</option><option value="Lord of the Rings Online" >Lord of the Rings Online</option><option value="Matrix Online" >Matrix Online</option><option value="Shadowbane" >Shadowbane</option><option value="Star Wars Galaxies" >Star Wars Galaxies</option><option value="Ultima Online" >Ultima Online</option><option value="World of Warcraft" >World of Warcraft</option></select>
+ <input type="submit" class="button" value="Go"></form>
+<center><h2>Roster for: Entire Guild</h2></center>
+<center><h4>Number of Members: 323</h4></center>
+<center><table>
+<thead><tr><td>Member</td><td>Rank</td><td>Chapter</td></tr></thead>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=160">Aalanon</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=736">Able</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=70">Agavar</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=904">aghanim</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=102">Akaela</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=585">Akira_LOA</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=579">Alavon</a></td><td>Member</td><td></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=610">Alex Brightblade</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=649">Alicorn</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=105">Amond</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=42">Angeless</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=19">Antonio Raquel</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=190">antonus</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=869">Aramna</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=249">Archangel</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=536">Aries- Valareia</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=698">asmodi</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=46">Avalloc</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=484">Awakener</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=334">Axiom</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=457">Azzameen</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=612">Baccus</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=803">Baelie</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=28">Baltazir</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=34">Bamalope</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=164">Bard9s</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=218">Barklight</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=48">Barodahn</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=170">Bastila</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=496">Beazer</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=367">Belaz</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=39">Beltaine</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=727">Bessie</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=215">Bheid</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=827">bigbonkdaddy</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=55">Bigno</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=854">Bingisha</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=227">BishO</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=746">Blaydde Ironshadow</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=470">Bliu</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=129">Bote Lewine</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=95">Bott</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=32">Brigadiir</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=2"><span class="officer">Brimstone</span></a></td><td><span class="officer">Guild Leader</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=56">Broog</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=60">Caitlin</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=37">Calan Adan</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=403">Camos</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=44"><span class="officer">carnifex</span></a></td><td><span class="officer">Founder</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=733">Cattiebri</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=552"><span class="officer">ceafo</span></a></td><td><span class="officer">Lord of Initiation</span></td><td><span class="officer">Star Wars Galaxies</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=697">Ceorl</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=209">Cerridwen</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=776">Chalibaeus</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=75">Chandos</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=40">chapel</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=6">Cheech</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=156">Chong</a></td><td>Member</td><td>Asheron's Call</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=106">chpunisher</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=409">Chriswizard</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=778">Circii</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=829">Cluck</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=541">coachmatt</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=173"><span class="officer">Conner MacCrimmon</span></a></td><td><span class="officer">Chapter Leader</span></td><td><span class="officer">Star Wars Galaxies</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=671">cordin</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=128">Corwin of Amber</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=11">Dar</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=881">Darko</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=744">Dazzereth</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=451">DD_LOA</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=835">Def</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=93"><span class="officer">Demeth</span></a></td><td><span class="officer">Advisor</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=203">Denyl</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=115">Descartes</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=696">Deven</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=9"><span class="officer">DrBuzz_LOA</span></a></td><td><span class="officer">Councilor</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=62">Drex</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=3">Drusan</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=222">Dullwin</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=675">Dumari</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=429">Ebell Iriv</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=158">El-Sayed ibn Aly</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=211">Elcyon Lacar</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=434">Elderwin</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=731">Elemarian</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=7">Elkmountain</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=13">Enosh</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=214">Eunity</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=611">Evomayec</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=830">Faa</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=789">Finn</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=486">finoa</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=619">FireEyes</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=732">Fokus</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=96"><span class="officer">Freejack</span></a></td><td><span class="officer">Guild Leader</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=171">Fryn</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=477">Fug</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=72">Gabolass</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=153">Gabrielle_LOA</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=152">Galivan</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=147">Gambit</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=603">Ganelon</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=52">Gileean Crystalthorn</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=166">Gladebourne</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=757">Glar</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=388">GoldenArrow</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=63">Gooba</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=24">GPOX</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=330">Gradishar</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=651">grimlore</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=689">Grimmfang</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=897">Grot</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=69">Gwenneth</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=358">Haef</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=799">Harblar</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=495">Havelcek</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=119">headcrusher</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=198">Hemlocke</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=41">Hibbil</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=804">Hila</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=100">ICBM</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=64">Jade</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=132">Jadis</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=629">Jadzia</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=734">Jaegerbrau</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=122">Jago</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=863">Janais</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=931">Jaxia</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=23">Jeanne</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=109">Jehryn</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=162">Jenni</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=924">Jerith|Tony</a></td><td>Member</td><td>Battlefield 2</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=99">Jerrel</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=12">Jorane</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=538">jovian</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=87">Joxer</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=304">Kaimi</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=247">Kalrom</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=191">Kalyth</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=68">kamui</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=101">Karli</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=49">Kasu</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=259">Katrel</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=280">Kayelle Du'Lione</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=144">Kazza</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=139">Kelsam</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=27">khalia</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=308">Khanis</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=372">Kharn Nykarr</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=494">Khavren</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=686">Kheldin</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=663">Kimberle</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=702">Kindred</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=67">KingTaz</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=193">Kiting</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=195">Kiviale</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=331">Knightshade_LOA</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=26">Kobe</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=833">Konduct</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=584">Kovis</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=903">Krayv Melk</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=692">Krazen</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=784">Kreat</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=322">Kufa</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=416">Kvaser</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=80">Lavendere</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=36">Leaasa</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=745">LegendLowe</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=717">Len</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=580">Leonena</a></td><td>Member</td><td>Horizons</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=384"><span class="officer">Lery</span></a></td><td><span class="officer">Lord of Initiation</span></td><td><span class="officer">World of Warcraft</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=440">Livvyfoot</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=844">Loredai</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=172"><span class="officer">LostintheWood</span></a></td><td><span class="officer">Assistant Chapter Leader</span></td><td><span class="officer">World of Warcraft</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=465">Lothalir</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=107">Lyndee</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=188">Mallicia</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=182">Mallix</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=65">Malthezar</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=114">Maralith</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=921">maren</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=174">Mebbid</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=94">Melianaey Du'Lione</a></td><td>Member</td><td>Final Fantasy XI</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=861">Meshota</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=310">Methus</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=176">Mezz</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=365">Mhul</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=78">Miram</a></td><td>Member</td><td>Guild Wars</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=57">Miraz</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=743">Mizuki</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=238">Montesque</a></td><td>Member</td><td>Guild Wars</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=366">Morainah</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=71">Mornica</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=61">Morning</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=4"><span class="officer">Morrigan</span></a></td><td><span class="officer">Chapter Leader</span></td><td><span class="officer">World of Warcraft</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=216">Mowg</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=169">mrald</a></td><td>Member</td><td>Final Fantasy XI</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=157">Mulan</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=589">Myrddin</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=89"><span class="officer">Namoric</span></a></td><td><span class="officer">Advisor</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=120">Neebear</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=807">Neomeglah</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=155">Nepeta</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=204">Nevyn</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=399">Nijom</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=427">niv</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=289"><span class="officer">Noceth</span></a></td><td><span class="officer">Lord of Initiation</span></td><td><span class="officer">EverQuest II</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=260">Nocixel</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=786">Norga</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=73">Nueves</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=98">Nyxa</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=163">ocelott</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=775">Olf</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=5">Onstill</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=851">Opywann</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=143">Osta</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=97">Paithon Silverbark</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=118">Palehorse</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=543">Palomine</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=797">Phaedrus</a></td><td>Member</td><td>Guild Wars</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=140">Phyleus</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=167">Prophet</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=928">punisher</a></td><td>Member</td><td>Battlefield 2</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=344">Quayludious</a></td><td>Member</td><td>Ultima Online</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=228">QuietclawShadowlynx</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=335">rahdon</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=412">RaskHP</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=66">Ravenhill</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=910">Ravenscar</a></td><td>Member</td><td>Battlefield 2</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=22">Raynah</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=77">Redwulf</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=764">Remsoh</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=197">Rhan_themp_lhan</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=8">Rhi</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=10">Robel</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=91"><span class="officer">Rofah</span></a></td><td><span class="officer">Advisor</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=351">Rouca</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=375">Rowenfindel</a></td><td>Member</td><td>Horizons</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=656">Ruccus</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=231">Runilden Tinuviel</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=374">Saegan</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=29">safire</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=480">Sammaell</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=449">Santiago</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=38">Saron</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=25">Sauer</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=229">Savrous</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=380">SeaJade</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=520">Searos</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=21">Seaux</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=296">ShadowJak</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=640">ShadowRanger</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=178"><span class="officer">Shancy</span></a></td><td><span class="officer">Lord of Merchants</span></td><td><span class="officer">World of Warcraft</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=357">Shinzou</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=127">Simon de Monfort</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=337">Sinasa</a></td><td>Member</td><td>Horizons</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=956">solftest2</a></td><td></td><td></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=798">Sombere</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=724">SoulSapper</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=387">spanky</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=701">Spizmack</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=939">Stampede</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=726">Stinkinstink</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=751">Strak</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=82">Symus Du'Lione</a></td><td>Member</td><td>Final Fantasy XI</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=703">Synner</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=891">TainMarr</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=185">Taleswapper</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=436">Tamaracaran</a></td><td>Member</td><td>Horizons</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=53">Tarin</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=31"><span class="officer">Tasslehof</span></a></td><td><span class="officer">Founder</span></td><td><span class="officer">Guild Leadership</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=657">Teacher</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=30">Telloran</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=33">Telven</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=253">Tempus</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=554">Texicon</a></td><td>Member</td><td></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=855">ThaMan</a></td><td>Member</td><td>Guild Wars</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=126">The Assistant</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=1">Theadus</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=17">Theran</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=856">Tholan</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=136">Thorne</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=340">Thuath</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=83">Timmerfoot</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=725">Torf</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=507">Toriq</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=148">Tormud</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=135">Trevan</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=18">Tsunami</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=895">uggok</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=777">Ulfkyll</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=35">uncle solf</a></td><td></td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=393">Ungood</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=301">Unon</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=396">Vaevictus</a></td><td>Member</td><td>Horizons</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=50">Valoryn</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=781">Vanian</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=123">Vero</a></td><td>Member</td><td>Battlefield 2</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=389">vimaana</a></td><td>Member</td><td>Battlefield 2</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=338">Vindicator013</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=112">Vinnie</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=800">viralmaster</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=111">Vizier</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=461">Voltan Hawkslayer</a></td><td>Member</td><td>EverQuest II</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=390">Vrizzar</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=180">Vulcarus</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=196">Walterus</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=45">WapleSpunK</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=896">Warkella</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=85">Weshy</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=713">Wilowah</a></td><td>Member</td><td>Star Wars Galaxies</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=15"><span class="officer">Wode</span></a></td><td><span class="officer">Chapter Leader</span></td><td><span class="officer">City Of Heroes</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=410">wooze</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=81"><span class="officer">Wutan</span></a></td><td><span class="officer">Lord of War</span></td><td><span class="officer">EverQuest II</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=121"><span class="officer">Xaul</span></a></td><td><span class="officer">Chapter Leader</span></td><td><span class="officer">EverQuest II</span></td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=385">Xavier</a></td><td>Member</td><td>None</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=294">Xerozy</a></td><td>Member</td><td>EverQuest</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=230">Xor</a></td><td>Member</td><td>Shadowbane</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=504">yagerbombs</a></td><td>Member</td><td>City Of Heroes</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=362">zander</a></td><td>Member</td><td>Final Fantasy XI</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=92">Zilmanel</a></td><td>Member</td><td>Dark Age of Camelot</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=20">Zlater</a></td><td>Member</td><td>World of Warcraft</td></tr>
+	<tr><td><a href="http://www.lostorder.com/vforums/member.php?u=88"><span class="officer">Zoolin</span></a></td><td><span class="officer">Assistant Chapter Leader</span></td><td><span class="officer">EverQuest II</span></td></tr>
+</table></center>
+
+			<div class="copyright">
+	Copyright ©2003-2004 - All Rights Reserved<br>
+Contact <a href="mailto:brimstone@lostorder.com">Anthony Pearson</a> regarding rights to duplicate content and/or graphics.<br>
+The Avatar system coded by <a href="http://www.lostorder.com/vforums/sendmessage.php?do=mailmember&u=96">Sam Brown</a>.
+</div>
+		<div class="pagestats">
+Page generated using 10 queries in 0.5180 seconds.<br>
+		</div>
+
+		</div>
+	</div>	
+</body>
+</html>

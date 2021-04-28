@@ -1,0 +1,1133 @@
+<html><!-- #BeginTemplate "/Templates/shbaseres.dwt" -->
+<head>
+<title>The Safehouse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php
+$db = mysql_connect("localhost", "webuser");
+mysql_select_db("safehousedb",$db);
+
+$sql="SELECT * FROM weapons";
+if($type != ""){
+$sql .= " WHERE slot='" . $type . "'";
+}
+if(isset($search)){
+$sql .= " WHERE name LIKE '%" . $search . "%'";
+}
+
+if($sortby == "damage" && $damorder==""){$order = "DESC";} 
+if($wtorder != "") {$order = $wtorder;}
+if($locorder != "") {$order = $locorder;}
+if($nameorder != ""){$order = $nameorder;}
+if($delayorder != ""){$order = $delayorder;}
+if($damorder != ""){$order = $damorder;}
+if($order == ""){$order = "ASC";}
+
+if($sortby != ""){
+$sql .= " ORDER BY " . $sortby . " " . $order;
+} else {
+$order="DESC";
+$sql .= " ORDER BY damage " . $order;
+}
+
+$result = mysql_query($sql);
+
+if($nameorder == ""){
+$nameorder = "ASC";
+} else { if($nameorder == "ASC"){
+$nameorder = "DESC";
+} else {
+$nameorder = "ASC";
+}
+}
+
+if($damorder == ""){
+$damorder = "ASC";
+} else { if($damorder == "ASC"){
+$damorder = "DESC";
+} else {
+$damorder = "ASC";
+}
+}
+
+if($wtorder == ""){
+$wtorder = "ASC";
+} else { if($wtorder == "ASC"){
+$wtorder = "DESC";
+} else {
+$wtorder = "ASC";
+}
+}
+
+if($locorder == ""){
+$locorder = "ASC";
+} else { if($locorder == "ASC"){
+$locorder = "DESC";
+} else {
+$locorder = "ASC";
+}
+}	
+
+if($delayorder == ""){
+$delayorder = "ASC";
+} else { if($delayorder == "ASC"){
+$delayorder = "DESC";
+} else {
+$delayorder = "ASC";
+}
+}	
+?>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+function MM_preloadImages() { //v3.0
+ var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+   var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+   if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function fwLoadMenus() {
+  if (window.fw_menu_0) return;
+    window.fw_menu_0_1 = new Menu("Armor",88,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_1.addMenuItem("Arms","window.open('viewarmor.php?type=Arm', '_self');");
+    fw_menu_0_1.addMenuItem("Back","window.open('viewarmor.php?type=Back', '_self');");
+    fw_menu_0_1.addMenuItem("Chest","window.open('viewarmor.php?type=Chest', '_self');");
+    fw_menu_0_1.addMenuItem("Ears","window.open('viewarmor.php?type=Ear', '_self');");
+    fw_menu_0_1.addMenuItem("Face","window.open('viewarmor.php?type=Face', '_self');");
+    fw_menu_0_1.addMenuItem("Feet","window.open('viewarmor.php?type=Feet', '_self');");
+    fw_menu_0_1.addMenuItem("Fingers","window.open('viewarmor.php?type=Finger', '_self');");
+    fw_menu_0_1.addMenuItem("Hands","window.open('viewarmor.php?type=Hand', '_self');");
+    fw_menu_0_1.addMenuItem("Head","window.open('viewarmor.php?type=Head', '_self');");
+    fw_menu_0_1.addMenuItem("Legs","window.open('viewarmor.php?type=Leg', '_self');");
+    fw_menu_0_1.addMenuItem("Neck","window.open('viewarmor.php?type=Neck', '_self');");
+    fw_menu_0_1.addMenuItem("Shields","window.open('viewarmor.php?type=Shield', '_self');");
+    fw_menu_0_1.addMenuItem("Shoulders","window.open('viewarmor.php?type=Shoulder', '_self');");
+    fw_menu_0_1.addMenuItem("Waist","window.open('viewarmor.php?type=Waist', '_self');");
+    fw_menu_0_1.addMenuItem("Wrist","window.open('viewarmor.php?type=Wrist', '_self');");
+    fw_menu_0_1.addMenuItem("Search Armor","window.open('sharmorsrch.php', '_self');");
+    fw_menu_0_1.addMenuItem("Submit Armor","window.open('#', '_self');");
+     fw_menu_0_1.hideOnMouseOut=true;
+    window.fw_menu_0_2 = new Menu("Weapons",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_0_2.addMenuItem("Piercing","window.open('viewweapons.php?type=Piercing', '_self');");
+    fw_menu_0_2.addMenuItem("1H Slashing","window.open('viewweapons.php?type=1HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("1H Blunt","window.open('viewweapons.php?type=1HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("2H Slashing","window.open('viewweapons.php?type=2HandSlash', '_self');");
+    fw_menu_0_2.addMenuItem("2H Blunt","window.open('viewweapons.php?type=2HandBlunt', '_self');");
+    fw_menu_0_2.addMenuItem("Ranged","window.open('viewweapons.php?type=Ranged', '_self');");
+    fw_menu_0_2.addMenuItem("Throwing","window.open('viewweapons.php?type=Throwing', '_self');");
+    fw_menu_0_2.addMenuItem("Search Weapons","window.open('shweaponssrch.php', '_self');");
+    fw_menu_0_2.addMenuItem("Submit Weapons","window.open('#', '_self');");
+     fw_menu_0_2.hideOnMouseOut=true;
+  window.fw_menu_0 = new Menu("root",75,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_0.addMenuItem(fw_menu_0_1);
+  fw_menu_0.addMenuItem(fw_menu_0_2);
+  fw_menu_0.addMenuItem("Misc. Items","window.open('shitemmisc.htm', '_self');");
+   fw_menu_0.hideOnMouseOut=true;
+   fw_menu_0.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_1_1 = new Menu("Rogue Skills",83,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_1.addMenuItem("Evade","window.open('shskillevade.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Disarm","window.open('shskilldisarm.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Poison","window.open('shskillpoison.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Locks","window.open('shskillplocks.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Pick Pockets","window.open('shskillppockets.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Safefall","window.open('shskillsafefall.htm', '_self');");
+    fw_menu_1_1.addMenuItem("Sneak / Hide","window.open('shskillsneakhide.htm', '_self');");
+     fw_menu_1_1.hideOnMouseOut=true;
+    window.fw_menu_1_2 = new Menu("Trade Skills",67,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_1_2.addMenuItem("Alchemy","window.open('shtskillalchemy', '_self');");
+    fw_menu_1_2.addMenuItem("Baking","window.open('shtskillbake.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Brewing","window.open('shtskillbrew.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Fletching","window.open('shtskillfletch.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Jewelry","window.open('shtskilljewel.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Pottery","window.open('shtskillpottery.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Smithing","window.open('shtskillsmith.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tailoring","window.open('shtskilltailor.htm', '_self');");
+    fw_menu_1_2.addMenuItem("Tinkering","window.open('shtskilltinker.htm', '_self');");
+     fw_menu_1_2.hideOnMouseOut=true;
+  window.fw_menu_1 = new Menu("root",81,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_1.addMenuItem(fw_menu_1_1);
+  fw_menu_1.addMenuItem(fw_menu_1_2);
+   fw_menu_1.hideOnMouseOut=true;
+   fw_menu_1.childMenuIcon="../../images/nb/arrows.gif";
+    window.fw_menu_2_1 = new Menu("Epic Quests",108,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+    fw_menu_2_1.addMenuItem("Rogue Epic Quest","window.open('shrogueepic.htm', '_self');");
+    fw_menu_2_1.addMenuItem("Other Epic Quests","window.open('shepic.htm', '_self');");
+     fw_menu_2_1.hideOnMouseOut=true;
+  window.fw_menu_2 = new Menu("root",95,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_2.addMenuItem("Rogue Quests","window.open('shroguequests.htm', '_self');");
+  fw_menu_2.addMenuItem("General Quests","window.open('shquests.htm', '_self');");
+  fw_menu_2.addMenuItem(fw_menu_2_1);
+   fw_menu_2.hideOnMouseOut=true;
+   fw_menu_2.childMenuIcon="../../images/nb/arrows.gif";
+  window.fw_menu_3 = new Menu("root",111,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_3.addMenuItem("Equipment Guides","window.open('shequipguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Rogue Guides","window.open('shrogueguide.htm', '_self');");
+  fw_menu_3.addMenuItem("Zone Guides","window.open('shzoneguide.htm', '_self');");
+   fw_menu_3.hideOnMouseOut=true;
+  window.fw_menu_4 = new Menu("root",103,15,"Arial, Helvetica, sans-serif",10,"#ffffff","#ffcc00","#000000","#000000");
+  fw_menu_4.addMenuItem("Safehouse Art","window.open('shart.htm', '_self');");
+   fw_menu_4.hideOnMouseOut=true;
+
+  fw_menu_4.writeMenus();
+} // fwLoadMenus()
+
+//-->
+</script>
+<script language="JavaScript1.2" src="../../images/nb/fw_menu.js"></script>
+</head>
+<body bgcolor="#333333" text="#FFFFFF" link="#FFCC00" vlink="#FFCC00" alink="#FFCC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../../images/nb/shnb2-down.gif','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif','../../images/nb/shnb4-down.gif','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif','../../images/nb/shnb6-down.gif','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif','../../images/nb/shnb8-down.gif','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif','../../images/nb/shnb10-down.gif','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif')">
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" bgcolor="#CCCCCC">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <div align="center"></div>
+      <a name="top" onFocus="if(this.blur)this.blur()"></a><a href="../../ring/warden/RingWarden.shtml" target="_self" onFocus="if(this.blur)this.blur()"><img src="../../images/ring20.gif" width="20" height="20" border="0"></a> 
+      <p></p>
+      <p>&nbsp;</p>
+    </td>
+    <td bgcolor="#333333" bordercolor="#666666" width="685" align="left" valign="top"> 
+      <p align="center"> 
+        <script language="JavaScript1.2">fwLoadMenus();</script>
+      </p>
+      <table border="0" cellpadding="0" cellspacing="0" width="685">
+        <!-- fwtable fwsrc="shhornav1.png" fwbase="shnb.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="4" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="7" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="133" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="2" height="1" border="0" name="undefined_2"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="1" border="0" name="undefined_2"></td>
+        </tr>
+        <tr> 
+          <td><img name="shnb1" src="../../images/nb/shnb1.gif" width="2" height="20" border="0"></td>
+          <td><a href="http://bloodmoon.net/showarmors.php3?type=feet" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_0,24,23);MM_nbGroup('over','shnb2','../../images/nb/shnb2-over.gif','../../images/nb/shnb2-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb2','../../images/nb/shnb2-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb2" src="../../images/nb/shnb2.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb3" src="../../images/nb/shnb3.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_1,162,23);MM_nbGroup('over','shnb4','../../images/nb/shnb4-over.gif','../../images/nb/shnb4-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb4','../../images/nb/shnb4-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb4" src="../../images/nb/shnb4.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb5" src="../../images/nb/shnb5.gif" width="4" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_2,299,23);MM_nbGroup('over','shnb6','../../images/nb/shnb6-over.gif','../../images/nb/shnb6-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb6','../../images/nb/shnb6-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb6" src="../../images/nb/shnb6.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb7" src="../../images/nb/shnb7.gif" width="7" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_3,435,23);MM_nbGroup('over','shnb8','../../images/nb/shnb8-over.gif','../../images/nb/shnb8-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb8','../../images/nb/shnb8-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb8" src="../../images/nb/shnb8.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb9" src="../../images/nb/shnb9.gif" width="1" height="20" border="0"></td>
+          <td><a href="#" onMouseOut="MM_nbGroup('out');FW_startTimeout();"  onMouseOver="window.FW_showMenu(window.fw_menu_4,573,23);MM_nbGroup('over','shnb10','../../images/nb/shnb10-over.gif','../../images/nb/shnb10-overdown.gif',1)"  onClick="MM_nbGroup('down','navbar1','shnb10','../../images/nb/shnb10-down.gif',1)" onFocus="if(this.blur)this.blur()" ><img name="shnb10" src="../../images/nb/shnb10.gif" width="133" height="20" border="0"></a></td>
+          <td><img name="shnb11" src="../../images/nb/shnb11.gif" width="2" height="20" border="0"></td>
+          <td><img src="../../images/nb/spacer.gif" width="1" height="20" border="0" name="undefined_2"></td>
+        </tr>
+      </table>
+      <!-- #BeginEditable "shcontent" --> 
+      <p>&nbsp;</p>
+      <p align="center"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFCC00"><b>Rogue 
+        Equipment Guide</b></font></p>
+      <table width="95%" border="1" cellspacing="0" cellpadding="5" align="center" bordercolor="#333333">
+        <tr bgcolor="#333333" bordercolor="#333333"> 
+          <td width="50%" align="left" valign="top"> 
+            <ul>
+              <ul>
+                <ul>
+                  <li><b><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><a href="#br">Burning 
+                    Rapier</a></font></b></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b><a href="#gwh">Gloomwater 
+                    Harpoon</a></b></font></li>
+                  <li><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b><a href="#guise">Guise 
+                    of the Deceiver</a></b></font></li>
+                </ul>
+              </ul>
+            </ul>
+            <p>&nbsp;</p>
+          </td>
+          <td width="50%" align="left" valign="top"> 
+            <ul>
+              <ul>
+                <ul>
+                  <li><font size="2" face="Arial, Helvetica, sans-serif" color="#FFFFFF"><b><a href="#rg">Resist 
+                    Gear</a></b></font></li>
+                  <li><b><font size="2" face="Arial, Helvetica, sans-serif" color="#FFFFFF"><a href="#thb">Trollhide 
+                    Belt</a></font></b></li>
+                </ul>
+              </ul>
+            </ul>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="33"> 
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="25"> 
+            <div align="center"><font color="#FFCC00"><b><font size="3" face="Arial, Helvetica, sans-serif"><a name="br"></a></font></b></font></div>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="33"> 
+            <blockquote> 
+              <p align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><font color="#FFCC00">Rogue 
+                Redemption Quest<br>
+                Burning Rapiert</font><br>
+                </b></font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><i>Compiled 
+                by Many Safehouse Rogues</i></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">1. 
+                Goto Lon the Redeemed (536, -.83) in the temple of Solusek Ro. 
+                He wants you to quest to find two gems (stamina and rightiousness) 
+                which you are to give to Ortallius in Sro. Talk to him, and he 
+                sends you with a note (NO DROP) to his friend the poisoner. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">2. 
+                Go find Conium Darkblade in Dagnor's Cauldron(poison merchant). 
+                Give him the note, and he gives you an axe (NO DROP) called &quot;never 
+                stops chopping&quot; and a clue about the &quot;top of the world&quot;. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">3. 
+                *optional* Talk to Falyn in the back room of &quot;top of the 
+                world&quot; in Highpass, and he sends you to Bryan.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">4. 
+                Goto Bryan on the back deck at the Lumbermill Inn in Highpass. 
+                Give him the axe and he gives you a box (NO DROP) to fill with 
+                10 different beverages from around the world. NOTE: You must have 
+                an empty MAIN slot to hold a new container or you will receive 
+                nothing and lose the axe. The drinks to fill it are:</font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Underfoot 
+                  Triple Boch - Kaladim - Tumpy Irontoe <br>
+                  Tunare's Finest - Felwithe - Wela Muselender <br>
+                  Vasty Deep Ale - Sister Island in OOT - Or in Erudin <br>
+                  Lendel's Grand Lauger - Rivervale - Mac Deeppockets <br>
+                  Gator Gulp Ale - E. Commons Tunnel - <br>
+                  Bubar Frozen Toe Rum - Halas - Scon McDaniel <br>
+                  Oblong Bottle (LORE/NO DROP) - OOT @ location neg 1611, pos 
+                  2924 <br>
+                  Blood Spirits (LORE/NO DROP) - &quot;a hemo enologist&quot;, 
+                  Mistmoore, garden, ~lvl 40 mob and drops more than one every 
+                  time.<br>
+                  Clockwork Oil Stout - Clockwork CX, Solusek A near Gabbie Mardoddle 
+                  - (Pickable) <br>
+                  Blackburrow Swig -<br>
+                  </b></font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><i>Need 
+                  a Blackburrow Cask. Found on Gnoll Brewers/Master Brewers in 
+                  Blackburrow. A common spawn is at loc 32,32 on level 3. Placeholder 
+                  is a Gnoll Guardsman. Brewer is rare spawn, and Master Brewer 
+                  ultra rare</i>.</font></p>
+                <blockquote> 
+                  <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Combine 
+                    in the Blackburrow Cask: (no brewing skill needed to combine 
+                    - DO NOT STACK components) <br>
+                    4 BlackBurrow Gnoll Skins(NOT PELTS), rare drop of elite gnolls 
+                    or commanders<br>
+                    2 gnoll pup scalps<br>
+                    2 casks of Ol' Tum Jumm's fierce brew (made using high brewing 
+                    trade skill)</font></p>
+                </blockquote>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><i>The 
+                  Blackburrow Cask disappears after you correctly combine the 
+                  ingredients to make the Swig. WARNING: Put the cask in a VERY 
+                  safe place - many disheartened Rogues have accidentally drank 
+                  this quest item on accident! Also the swig looks exactly like 
+                  the cask of Ol' Tun Jumm's fierce brew - so be warned. </i></font></p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Once 
+                you have all 10 drinks in the box, hit combine to create the box 
+                of spirits.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">5. 
+                Return the box of spirits to Bryan, and he gives you the Gem of 
+                Stamnia (NO DROP).</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">6. 
+                *optional* Goto the Freeport Sewers and find Toxdil. Ask him about 
+                the gems, and then about the Gem Case. He tells you that he has 
+                the key, but will only give it to you for the gem inside the case. 
+                He says he last sold it to a jewler.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">7. 
+                *optional* Talk to Noresa Sparkle in West Commons. She asks you 
+                to save her from Kiz Gix. She also tells you of a &quot;Gem Case&quot;, 
+                which you would need two keys to open, and would have to return 
+                both box and keys to the &quot;original boxcrafter&quot; to find 
+                what is inside.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">8. 
+                *optional* Kiz Gix roams around befallen side of WC. Upon killing 
+                him you recieve a note writen in Goblin, telling you of a Dark 
+                Elf &quot;Outcast&quot; who stole a sparkling purse.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">9. 
+                Find the Outcast (Lynada the Exiled) in Sol A in the High Shaman 
+                room. Killing the outcast gets you the Sparkle Purse (NO DROP). 
+                Lynada is a ~35th level caster with a pet and can be nasty if 
+                you have to fight goblins nearby as well. She is a 4hour 15min 
+                spawn with no placeholder.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">10. 
+                Return the Sparkle Purse to Noresa Sparkle and she gives you one 
+                of the keys (NO DROP) needed to open the &quot;Gem Case&quot;. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">11. 
+                Find the Gem Case (NO DROP). It is hidden behind a lock door in 
+                the basement of Hallard's Resales in E freeport (loc -100, -500) 
+                that you must pick. (Approx 122+ lockpick skill) It used to be 
+                guarded by a dog named Scrapps. Another will spawn immediately 
+                in its place. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">12. 
+                Go back to Noresa and purchase off her a &quot;Sparkling Saphire&quot; 
+                (this is the Gem Toxdil wanted) (Cost Approx 500-550pp, is NO 
+                DROP). I would recommend asking for a charisma buff (the 49th 
+                Level Enchanter one is GREAT) to help save quite a bit of plat.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">13. 
+                Return this Saphire to Toxdil, and he gives you the other key 
+                (NO DROP) necessary to open the Gem Case. Toxdil is in the Sewers 
+                under W FP. The entrance is at the bend in the north side of the 
+                wall outside of the gate. Just look around for him, but he is 
+                not always spawned. He has place holders of a sewer rat, orc or 
+                a guard. He is not always in the same place, but often can be 
+                found in one of the dead ends in the sewer or across from the 
+                stairs. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">14. 
+                Give the Gem Case and both keys to Bubar in the East Commons Tunnel 
+                to receive the Gem of Righteousness (NO DROP). The Gem of Righteousness 
+                looks just like the sparkling gem (when you right-click it) bought 
+                from Noressa, but if identified it is indeed the real gem. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">15. 
+                Return both Gems to Ortallius (Orc NPC in desert camp on W wall 
+                of SRO), and reap the rewards.</font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b><font size="3">Burning 
+                  Rapier</font></b> <br>
+                  <font color="#00FF00">7 damage<br>
+                  20 delay <br>
+                  Effect: Ignite (37DD)<br>
+                  +5 dex, +5 agi MAGIC LORE NO DROP<br>
+                  Rogue Only <br>
+                  </font> Can be used in either hand but cannot be used in range 
+                  slot <br>
+                  Looks like an ordinary rapier (No special &quot;flame&quot; 
+                  appearance or anything) <br>
+                  The proc will not go off until you are level 30+ .</font></p>
+              </blockquote>
+            </blockquote>
+            <p></p>
+            <p>&nbsp;</p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="1" color="#FFFFFF"><a href="#top"><font size="2">-top-</font></a></font></div><!-- #EndLibraryItem --> 
+            <p align="center">&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="25"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><a name="gwh"></a></b></font></div>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="33"> 
+            <blockquote> 
+              <p align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><font color="#FFCC00">Rogue's 
+                Guide to Upper Kedge Keep (Gloomwater Harpoon)</font><br>
+                </b> </font><i><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Submitted 
+                by Wolvinsbane Latrocinor <br>
+                Edited by Zato </font></i></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">This 
+                guide is written to be as helpful as possible with ANY group makeup. 
+                The group I go to Kedge with is made of of the following. Although 
+                it's high, you do not need this type of firepower to control the 
+                upper level (except for some exceptions, mentioned later). 50th 
+                Cleric 46th Druid 41st Warrior 37th Druid 35th Enchanter 32nd 
+                Rogue (dats me!) </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">First 
+                off, before you go to Kedge Keep, go to the Inn that is in East 
+                Commons RIGHT NEXT TO the zone to West Commons and buy a TON of 
+                Fish Scales for your druid/enchanter so that he can cast Enduring 
+                Breath. Bards can also come in handy with their EB song. You could 
+                also get a Rebreather or Aqualung from an Tinkerer and support 
+                their trade. They can be expensive though. Magicians can also 
+                summon Waterstones for underwater breathing and are great for 
+                those times when your Enduring Breath (EB) is fading during combat 
+                (which it shouldn't, more on that later) and you need to keep 
+                alive till your EBer can recast it on you. You can also purchase 
+                Potions of Water Breathing in Halas I believe. They go for 12pp. 
+                Our group got 6 of them and have them hotkeyed just in case of 
+                emergencies. On the subject of underwater combat. Few things you 
+                should be aware of. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Melee 
+                Classes</b> - When hit underwater by these fish, you get pushed 
+                back. At first it's tough to fight underwater, but you'll get 
+                used to it fast. Generally, you want to find something to prop 
+                yourself against so you don't get pushed out of attack range if 
+                the fish swings around and hits you back. It's not nessecery, 
+                but it is helpful. Just past the Pull Zone (on the map below) 
+                right before it opens up into the room is a ledge (you'll see 
+                it when you get there and understand) that you can prop up against 
+                when your puller drags it into the hallway there. You cannot swim 
+                backwards normally. If you duck (D key) you can swim backwards 
+                though! Also if you have SOW cast on you before you go in you 
+                can swim backwards. You will also run low on stamina alot because 
+                of swimming and fighting. Enchanters should have augmentation 
+                on everyone to help with this, and other classes have stamina 
+                regeration spells if need be. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Casters</b> 
+                - Movement back / forth WILL interupt your casting, up down (without 
+                forward or backward movement) will NOT interupt your casting. 
+                Be aware that if a fish hits you, you WILL float backwards and 
+                thus, interupt your casting. It is HIGHLY suggested that casters 
+                stay in the corners, that way if they're hit, they don't float 
+                back and at least have the chance to roll for a continued casting. 
+                </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>On 
+                Enduring Breath</b> - It is the ENTIRE group's responsibility 
+                to be aware of the time remaining on EB. If someone dies due to 
+                drowning, it's EVERYONE's fault for not keeping on top of it. 
+                Enduring Breath is a 25 minute spell. Have someone in your group 
+                with a stopwatch start timing when the first EB is cast and let 
+                the group know when 20 minutes have elapsed. Recast when he says 
+                the 20 mins are up. Don't wait the full 25 mins, no need to cut 
+                it close. Everyone in the group should be aware of time remaining. 
+                Don't get angry with folks asking &quot;time on EB&quot; ... they 
+                just want to be informed. Casters under level 35 have the problem 
+                of not even being able to tell when it runs out until they are 
+                gulping for air, which is often times too late to save them.</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>On 
+                Rezzing in Kedge</b> - If you have a death in Kedge, and you have 
+                a Cleric who can Rez, have your Druid or Enchanter ready to cast 
+                Enduring Breath on the newly rezzed player. Also have the Cleric 
+                ready on the heal. Rez sickness wipes any and all buffs from the 
+                player, you'll have to be ready with the buffs. Okay, on to the 
+                actual fighting... </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Map 
+                of Kedge Keep's FIRST FLOOR</b></font></p>
+              <p><img src="http://www.wlvrn.com/images/kedge_upper.gif"></p>
+              <p>&nbsp;</p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Creatures 
+                on the First Floor </b></font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>30-31 
+                  - Lancer Swordfish </b>(blue to me at 32) 33 and up - Piercer 
+                  Swordfish (yellow and red to me at 32) 42ish - Impaler Swordfish 
+                  (RED to me) 43ish - Fierce Impaler Swordfish (RED to me) </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Lancers</b> 
+                  - Not too many HPS. They hit hard (60s) and fast (double, triple 
+                  hits). Great XP for a mid 30s group. Lancers are 98% of what 
+                  you will see on the upper level. They are placeholders for the 
+                  ONE Impaler/Fierce Impaler and few Piercers that spawn on this 
+                  floor. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Piercers 
+                  </b>- Can be nasty. They tended to be more RED then Yellow to 
+                  me at 32. I'd say they average in the 34 to 37 levels. They 
+                  are pretty much the same as Lancers 'cept they hit for more 
+                  in the 70s and have a good amount more HPS. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Impalers 
+                  </b>- 42 or so creatures. They are VERY nasty. They hit hard 
+                  (101 was a common theme) and fast (double hit for 101 is fast 
+                  enough for me). They also have a LOT of HPS. Do NOT let your 
+                  casters get these aggro on them, you'll be minus a caster before 
+                  you can do much. Seemed to spawn every half hour instead of 
+                  one of the Lancer spawns on the far end of the room from the 
+                  pull area. Those spawns are near the ceiling. </font></p>
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Fierce 
+                  Impaler </b>- Take an Impaler, give it more HPS and let it hit 
+                  more in the 110-20 range. This creature drops the Gloomwater 
+                  Harpoon that we all are after. It is a RARE spawn that takes 
+                  the place of one of the Impaler spawns. Rare for even a rare 
+                  spawn. I suggest that a mid 30 group be VERY careful with the 
+                  Impaler and Fierce Impaler. You best have a VERY cohesive group. 
+                  I'd venture to say that a upper 30s group could take the Impaler 
+                  and Fierce Impaler spawns. The roaming path marked on the map 
+                  is where the two flanking lancer spawns will roam. They just 
+                  go back and forth. </font></p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Upper 
+                Level Tactics </b>- Tactics used in this area were pretty basic. 
+                Basically, be aware that you're prolly going to be pulling multiple 
+                fishies. We had an Enchanter who could Mez or Charm the extras. 
+                Druids can also Charm the fish. This can be vital during fights 
+                down here as these fish are very nasty critters. I highly suggest 
+                and Enchanter in the group. If not, have your Druid Charm an extra 
+                fish if you get in trouble. Beware that when Charm breaks, the 
+                Charmie is going to be VERY angry at your Druid, so beware. If 
+                you have an Enchanter or Shamen, use a SLOWNESS spell. It's a 
+                GREAT spell down there. Make sure to have your casters wait till 
+                the meleers have taken the creature down a bit before nuking it. 
+                Fish and casters do NOT go well together. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>INFO 
+                for HIGHER level groups camping the Gloomwater Harpoon</b> - If 
+                the upper room is cleared and you want to pull something, there 
+                are some Fanged Tooth Piranna right when you go down on the second 
+                floor. BEWARE of them. They were BLUE to the level 50 cleric in 
+                our group. They hit hard (80s, double attack) and have A CRAPLOAD 
+                of HPS. I'd venture to say they're considerably nastier than Seafury 
+                Cyclopses. Our group (the one outlined at the begining of this 
+                post) could manage 3 of them at a time, but this was ONLY because 
+                of our Enchanter and Druids charming and Mezing, even then, we 
+                found ourselves medding during the fight and, well, it was prolly 
+                the nastiest fight I've witness in my time in EQ, and I've seen 
+                some nasty ones. You WILL pull more than one from the below level. 
+                Be warned, they are VERY nasty. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Other 
+                Facts - Most creatures can NOT see invis</b> </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Conclusions 
+                - This is prolly my favorite zone in all of Norrath. It's great 
+                fun to play down there. The XP is simply GREAT for a mind 30s 
+                group camping the upper level. Do NOT go down there for loot, 
+                it sucks (only got cash of the Shark on the second level). All 
+                in all, it's a GREAT time. I hope this guide has enlighted those 
+                of you wanting to go down there and get your Gloomwaters and helps 
+                you have a good time. Good luck fellow Rogues!</font></p>
+            </blockquote>
+            <p></p>
+            <p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="1" color="#FFFFFF"><a href="#top"><font size="2">-top-</font></a></font></div><!-- #EndLibraryItem --></p> 
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="25"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#333333"><b><a name="guise"></a></b></font></div>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="33"> 
+            <blockquote> 
+              <p align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><font color="#FFCC00">Book 
+                of Knowledge: Getting a Mask of Deception</font> <br>
+                </b></font><i><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Written 
+                by Ralluwen Shadowstar </font></i></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Contents 
+                of the post: </b></font></p>
+              <blockquote> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">What 
+                  you should know before starting <br>
+                  Part I - Getting to Lower Guk Dead Side <br>
+                  Preparations in Lower Guk <br>
+                  Getting to the Bed Room (BR) <br>
+                  Going through the BR, Spider Room, and getting by the GIBs <br>
+                  The Bridge and Dead Tower <br>
+                  Inside the Store Room (SR,ass/supp) <br>
+                  Getting Out <br>
+                  Part II - Getting to Lower Guk Live Side</font></p>
+              </blockquote>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>What 
+                you should know before starting -</b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"> 
+                For a good map and guide check out the Relentless Monks website 
+                at monks.volitionx.com, the lower guk guide is specifically at 
+                http://monks.volitionx.com/lowerguk.htm. I suggest you get these 
+                maps, print them out and follow the guide through with them, marking 
+                your path so you can easily find your way. The maps look pretty 
+                good even when printed in Black and White (Greyscale). The spawn 
+                you are looking for is 'a ghoul assassin' that spawns in the Supply 
+                Room, also called the ass/supp spawn, on the maps the area is 
+                marked as '19'. The mask you are looking for is his common drop, 
+                the Serrated Bone Dirk (8dmg/27dly Pierce, Effect:Engulfing Darkness(Snare/DOT), 
+                Rog Only) is his rare. He has place holders, so it can take a 
+                while to spawn. Before going you should maybe put all your stuff 
+                in the bank, if you die down here you may not get your body back. 
+                At anywhere less then 25 be very careful as if you are trained 
+                you have very little chance of making it out alive. If you have 
+                any questions don't be afraid to ask. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>PART 
+                I - Getting to Lower Guk Dead Side </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">You 
+                should enter lower guk by the dead side entrance, this can be 
+                found if you follow the right wall all the way from the innothule 
+                zone to a lower guk zone. This is generally right as there are 
+                a few spots you can skip and will want to. The only thing on the 
+                way you should run into that can see through your hide/sneak is 
+                the large and giant heart spiders. These are rare spawns and while 
+                going thru the spider rooms (you will know them when you see them) 
+                you can stick to the left wall to aviod them (even thou these 
+                spawns are likely camped or dead) Normal heart spiders can be 
+                snuck upon. After the spider room stick back to the right wall 
+                you will enter the scryre room, just stay on the lower level and 
+                take an exit behind the left water pillar, head down the ramp 
+                here and you will enter a room with stone walls and pillars, head 
+                to straight away from the ramp to the second section and along 
+                it to the left (you can continue to follow the right wall but 
+                you will hit a secret wall, just follow this secret wall as thou 
+                it were solid) Continue allong the right wall, you will pass a 
+                turn off to the left, keep going straight, you will slide down 
+                a slippery section, and at the end it will open into high bluffs 
+                over a watery area, carefully go over this area following the 
+                right edge. Continue following the right wall until you turn into 
+                a hall off from the main one you were just following, there should 
+                be a stone just before the turn and a flaming pot in the hall, 
+                this flaming pot is just opposite the dead side zone to lower 
+                guk. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Preparations 
+                in Lower Guk </b>-</font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">When 
+                you get into lower guk ask immediately if the bedroom is camped 
+                as well as the assassin spawn, if the bedroom isn't you might 
+                have to go out and get a SoW, or get an invis to undead before 
+                proceeding. The reason is that you will run into some water and 
+                unless you swim fast you won't make it under the water sneaking 
+                (I am unsure what swimming skill you need to do it with sneak 
+                on and without it on). Ok, now be careful, invis to undead(itu) 
+                and sneak/hide do not stack and there are both undead and living 
+                things near the zone. More often then not they will be cleared 
+                out. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Getting 
+                to the Bed Room (BR) -</b></font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                proceed down the dead side ramp and when you come to the end turn 
+                to your right, proceed down another ramp (if you go left it will 
+                be a slippery ramp and you will want to go back) You will turn 
+                a gentle corner and come to a river, swim under it and head to 
+                the right, you will agian turn a gentle corner then a sharp corner 
+                (this will be a 180 degree turn) before you come up, to the left 
+                will be the area called the Bed Room(BR), if it isn't camped or 
+                cleared there will be ghouls here, so don't jump out of the water 
+                unless you have a way by them (itu or sneak/hide). </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Going 
+                through the BR, Spider Room, and getting by the GIBs - Once in 
+                the room there will be two halls leading over the underwater passage 
+                you just came though. It is best to hide here but if you try while 
+                ghouls are in the room and only have itu you will become visible. 
+                Once you are hidden (or if you wanna try going with itu) go thru 
+                the left hall, that is the one nearest the water. At the end of 
+                this hall is the spider/bat room. The spiders and bats can't see 
+                thru my invis but it is unknown to me if it is level based, if 
+                you hug the left wall and move quick thou they won't see you. 
+                Now you are in another hall, head down it aways and once you start 
+                turning hug the right wall. To your left you will see a room full 
+                of about 5 greater ice boned skeletons. Hugging the right wall 
+                they won't see you but they don't see my sneak/hide. Just move 
+                quick. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>The 
+                Bridge and Dead Tower -</b></font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Now 
+                you will come to a left turn that will mount some stairs and open 
+                into a bridge with a large tower in front of you, to your right 
+                are gargoyles, they see everything but magic invis. On the other 
+                side of the chasm to the left is a ledge where the ghoul ritualist 
+                spawns, head straight across this area (careful not to fall, i 
+                would not suggest drinking before starting this endevor) and into 
+                that tower you see (this should not be confused with the live 
+                tower and it is more commonly refered to as the bridge area or 
+                dead tower) Once you enter the tower head through it into a room 
+                behind it and turn left, follow a hall way straight to a ladder, 
+                this ladder leads into the Store Room (SR, somtimes called the 
+                ass(assin), supp(lier) or ass/supp) </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Inside 
+                the Store Room (SR,ass/supp) -</b></font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">This 
+                is where the ghoul assassin spawns along with the ghoul supplier. 
+                Now be very careful, if there isn't a group at the camp because 
+                the assassin can see thru rogue hide (although sneak will work 
+                on him as long as you are behind him of course). Now ask the group 
+                there if you can loot the next Mask of Deception, If there is 
+                already someone in the group or one that got there before you 
+                waiting then graciously allow them the first loot and they will 
+                allow you a subsequent mask loot. At this point you have two options, 
+                you can wait until you mask drops or you can ask a member of the 
+                group there if they will tell your alternate when one drops and 
+                you can go play him until the call, with the latter way thou you 
+                may get in trouble if the group evac's, leaves or you take to 
+                long and someone else gets the mask. It can take several hours 
+                for the assassin to spawn and drop a mask, so patience is a virtue 
+                here. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Getting 
+                Out -</b> Getting out can be just as dangerous as getting in, 
+                if someone in the group at the ass spawn is nice they might evac 
+                you to SRo or NRo/WC but don't think they have to. If not you 
+                will have to reverse the aformentioned process and go back the 
+                same way you came. If you are leaving via the dead side you can 
+                take the water exit, but if your swimming is bad it will be a 
+                long and hard swim, at least you will get practice. I am not going 
+                to detail this way as it is longer and generally striaght forward. 
+                If you look at the maps you should figure it out. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>PART 
+                II - Getting to Lower Guk Live Side </b></font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">This 
+                part is only really effective if you are non-KoS to frogs, If 
+                you are KoS I suggest you do the dead side method instead as this 
+                is basically just a little safer and slightly faster to duplicate. 
+                Follow the same directions as in Part I, Step 2 to get to the 
+                lower guk dead side zone, but instead of taking the side hall 
+                to dead zone continue straight down the hall Into a room, take 
+                the other exit out of this room and take your second right, you 
+                will turn into a resevior area, take the wood bridge and then 
+                take the next plank directly right of you. Follow the right wall 
+                until you come to a large open area. Now follow the shore line 
+                to the wall and follow the wall to another plank room, take the 
+                double plank across and then take your left this time. This will 
+                lead to the live side zone. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Getting 
+                to the Patriarch Spawn -</b> Note that if you are KoS by living 
+                frogloks then STOP right now and go back to the dead side zone 
+                and go that method, this ways is only safe of you are non-KoS. 
+                I can't stress this enough. The patriarch is one of the mobs in 
+                live side that sees invisible, and if you are taking this route 
+                you won't need to sneak, just start running on in, the only thing 
+                that would be trained that might attack you is the evil eye, anything 
+                else would go to the dead side zone or the king's back door zone. 
+                Now head straight down the ramp, straight down the hall, across 
+                a bridge and follow the hall straight (stick to the right side, 
+                you will hit a false wall but it has a solid wall right behind 
+                it). Now you will pass one turnoff to the left, then will make 
+                a sharp left turn into room with three exits, This is where the 
+                minotuar patriarch spawns, he casts see invis and wanders. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Getting 
+                to the Elder Spawn -</b> Continue to follow the right wall out 
+                the right exit of the three way exit room. You very shortly come 
+                to another intersenction, one path goes left, one right and another 
+                does a U-turn back on the other side of a wall. Take the left. 
+                Once you have taken the left follow the right wall again past 
+                two left turns and follow it through another for exit room, you 
+                will take a dip under upper cave that you can see a bit of through 
+                a crack and after that take your first left. Once you take the 
+                left take a right and follow the hall past a right turn and into 
+                a room, this room has a pit over on the other side of it where 
+                the minotuar elder spawns, it also cast's see invis. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Getting 
+                to the Bridge - </b>Follow the right wall though this room and 
+                stop before going down the hall, now read this first until i tell 
+                you to continue. There is a pit trap down this hall, if you are 
+                to young to have safe fall it might do you some nasty damage as 
+                well as annoy you. If you are KoS and haven't yet been seen and 
+                you fall down this you might die here, you won't be able to make 
+                it up the ladder with sneak on, it has to be removed. Now to see 
+                this pit trap look for a red mark on the left wall, this mark 
+                indicates where the hole is, take a run at it and jump, you should 
+                make it easily, if not climb up the pit into the room behind you 
+                and try, try again. Ok continue down the hall, through a small 
+                room and to the left up some ramps to a ladder, climb the ladder 
+                into a small round room. Now just outside this room is where it 
+                gets deadly, there are gargoyles out there and they won't like 
+                you regardless of faction, race, or religion. They are living 
+                and see invis to undead and they also see hide/sneak, I think 
+                thou that regular invis will get you by them. Otherwise you will 
+                have to call on someone to pull the gargoyles (many like to since 
+                they aren't to tough and drop eyes that sell for 9pp). </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>The 
+                Bridge and Dead Tower -</b> Once they are pulled put on sneak/hide 
+                and head out, go to the right and you will come to the bridge/undead 
+                tower, From here on out you can follow the dead side directions 
+                from the same number, just be aware you are entering the tower 
+                from a different way and will have to turn to your right on the 
+                bridge. It should be easy to understand when you get there. </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Good 
+                Luck getting your mask</font><font face="Arial, Helvetica, sans-serif" size="2"> 
+                </font> </p>
+            </blockquote>
+            <p>
+            <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="1" color="#FFFFFF"><a href="#top"><font size="2">-top-</font></a></font></div><!-- #EndLibraryItem --> </p> 
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="25"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><a name="rg"></a></b></font></div>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="33"> 
+            <blockquote> 
+              <p align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><font color="#FFCC00">Bluud&#146;s 
+                Guide to Rogue Resist Item Options<br>
+                </font> </b></font><i><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Submitted 
+                by Bluud Thirsty</font></i></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>ARMS 
+                <br>
+                </b> MITHRIL VAMBRACES (AC 10, STR +7, SV MAGIC +5)<br>
+                RAVENSCALE ARMGUARDS (AC 10, DEX +5, SV FIRE +5)<br>
+                SEBILITE SCALE VAMBRACES (AC 12, DEX +4, AGL +4, SV FIRE +2, SV 
+                POISON +2)<br>
+                KYLONG ARMGUARDS (AC12, DEX +3, SV FIRE +6, SV POISON +2)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>BACK</b> <br>
+                CLOAK OF FLAMES (AC 10, DEX +9, HP +50, SV FIRE +15, Effect: Haste)<br>
+                CLOAK OF THE ICE BEAR (AC 8, HP +10, SV COLD +20)<br>
+                CLOAK OF SHADOWS (AC 12, DEX +13, SV DISEASE +10)<br>
+                KUNZAR CLOAK (AC 7, WIS +2, INT +2, SV FIRE +10)<br>
+                MAMMOTH HIDE CLOAK (AC 7, WIS +4, SV COLD +5)<br>
+                POLAR BEAR CLOAK (AC 5, SV COLD +15)<br>
+                SEAHORSE SCALE CLOAK (AC 8, DEX +6, SV COLD +35)<br>
+                SELIBITE SCALE CAPE (AC 8, DEX +4, INT +4, SV COLD +2, SV POISON 
+                +2)<br>
+                SPECTRAL SHROUD (AC 5, SV MAGIC +5, SV POISON +5)<br>
+                WHITE DRAGONSCALE CLOAK (AC 10, WIS +9, INT +9, MANA +75, SV COLD 
+                +25)<br>
+                WHITE WOLF-HIDE CLOAK (AC 7, STR +3, DEX +3, SV COLD +5)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>CHEST </b><br>
+                BANDED ORC VEST (AC 8, CHA &#150;5, SV DISEASE +3)<br>
+                BARNACLE BREASTPLATE (AC 8, SV FIRE +3, SV COLD +3)<br>
+                CHITIN SHELL ARMOR (AC 17, SV POISON +10)<br>
+                DWARVEN RINGMAIL TUNIC (AC 12, SV FIRE +8, SV COLD +8, SV MAGIC 
+                +8)<br>
+                GNOMISH ENVIRONMENTAL SUIT (AC 9, SV FIRE +10, SV COLD +10, SV 
+                POISON +10)<br>
+                RED DRAGONSCALE ARMOR (AC 21, STR +20, SV FIRE +10, SV MAGIC +10)<br>
+                RIBCAGE CHEST ARMOR (AC 6, SV FIRE +2)<br>
+                SARNAK EMBLAZENED TABBARD (AC 14, HP +10, SV MAGIC +10)<br>
+                SEBILITE SCALE COAT (AC 22, STR +6, CHA+ 6, WIS +6, SV DISEASE 
+                +2, SV COLD +2, SV MAGIC +2)<br>
+                SNAKESKIN JERKIN (AC 9, SV POISON +5)<br>
+                SPLIT PAW HIDE TUNIC (AC 9, SV POISON +10)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>EARS</b> <br>
+                EARRING OF DISEASE REFLECTION (AC 1, SV DISEASE +5)<br>
+                EARRING OF ESSENCE (HP +30, SV MAGIC +10)<br>
+                EARRING OF FIRE REFLECTION (AC 1, SV FIRE +5)<br>
+                EARRING OF MAGIC REFLECTION (AC 1, SV MAGIC +5)<br>
+                ELECTRUM LAPIS LAZULI EARRING (SV DISEASE +2)<br>
+                FINGERBONE HOOP (AC 2, STR +5, STA +5, CHR &#150;10, INT +5, SV 
+                FIRE +5, SV DISEASE &#150;8, SV COLD +5, SV POISON &#150;8, SV 
+                MAGIC +5, Effect: See Invisible)<br>
+                GOLDEN TOPAZ EARRINGS (AC 3, SV DISEASE +8)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>FACE</b> <br>
+                GANGEROUS BEETLE MASK (AC 7, STR +5, DEX +5, MANA +20, SV DISEASE 
+                +10)<br>
+                GUISE OF THE DECIEVER (AC 4, CHR +13, SV MAGIC +7, Effect: illusion 
+                dark elf)<br>
+                IKSAR HIDE MASK (AC 4, CHR +13, SV MAGIC +7, Effect: illusion 
+                iksar)<br>
+                LIZARDSKIN TRIBAL MASK (AC 3, AGL +5, SV MAGIC +5)<br>
+                PAIR OF BENT SPECTACLES (MANA +15, SV MAGIC +5)<br>
+                SEBILITE SCALE MASK (AC 8, WIS +4, MANA +10, SV FIRE +2, SV DISEASE 
+                +2)<br>
+                SNAKESKIN MASK (AC 2, SV MAGIC +5)<br>
+                SPLIT PAW HIDE MASK (AC 3, SV MAGIC +5, SV POISON +5)<br>
+                GOLD DIAMOND VEIL (SV FIRE +10, SV DISEASE +5, SV COLD +10, SV 
+                POISON +5, SV MAGIC +3)<br>
+                ELECTRUM DIAMOND VEIL (SV FIRE +5, SV DISEASE +10, SV COLD +5, 
+                SV POISON +10, SV MAGIC +3)<br>
+                ENSHROUDED VEIL (AC 7, INT +2, WIS +2, HP +30, MANA +30, SV FIRE 
+                +10) </font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>FEET</b> <br>
+                SEBELITE SCALE BOOTS (AC 12, STA +4, INT +4, SV COLD +2, SV MAGIC 
+                +2)<br>
+                FIREWALKER BOOTS (AC 4, SV MAGIC +5)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>FINGER</b> <br>
+                BAND OF ETERNAL FLAME (AC 5, STR +4, INT +4, HP +25, MANA +35, 
+                SV FIRE +10, SV COLD &#150;10)<br>
+                GOBLIN GAZUGHI RING (AC 1, SV MAGIC +5, Effect:invisibility versus 
+                animals)<br>
+                HAMEDS RING OF TEARS (MANA +15, SV FIRE +3, SV COLD +3,SV MAGIC 
+                +3)<br>
+                RAT SHAPED RING (SV DISEASE +10, SV POISON +10)<br>
+                RING OF EMPOWERMENT (AC 2, STR +5, STA +5, DEX +5, AGI +5, CHA 
+                +5, WIS +5, INT +5, SV FIRE +2, SV DISEASE +2, SV COLD +2, SV 
+                POISON +2, SV MAGIC +2)<br>
+                SCARAB RING (AC 2, SV FIRE +2, SV DISEASE +2, SV COLD +2, SV POISON 
+                +2, SV MAGIC +2)<br>
+                SPIKED GOBLIN RING (AC 2, STR +3, WIS +2, INT -2, AGI +3, SV DISEASE 
+                +5)<br>
+                PLATINUM DIAMON WEDDING RING (SV FIRE +7, SV DISEASE +7, SV COLD 
+                +7, SV MAGIC +7, SV POISON +7)<br>
+                PLATINUM JACINTH WEDDING RING (SV MAGIC +13)<br>
+                PLATINUM PEARL RING (AC 4, SV POISON +10)<br>
+                PLATINUM PERIDOT RING (AC 4, SV COLD +10)<br>
+                PLATINUM ELECTRUM RING (AC 4, SV FIRE +10)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>HANDS</b> <br>
+                GAUNTLETS OF FIERY MIGHT (AC 10, STR +7, DEX +7, STA +7, SV DISEASE 
+                +7, SV POISON +7)<br>
+                GOLDEN EFREETI GAUNTLETS (AC 12, WIS +5, INT +5, SV DISEASE +10)<br>
+                RAVENSCALE GLOVES (AC 11, STR +1, DEX +1, SV MAGIC +3)SEBILITE 
+                SCALE GAUNTLETS (AC 12, INT +4, AGI +4, SV DISEASE +2, SV MAGIC 
+                +2)<br>
+                WHITE SATIN GLOVES (AC 4, HP +25, MANA +25, SV FIRE +30, SV DISEASE 
+                &#150;5, SV COLD &#150;5, SV MAGIC &#150;5, SV POISON &#150;5)<br>
+                WOVEN SHADOW GAUNTLETS (AC 11, STR +5, DEX +5, SV MAGIC +10)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>HEAD </b><br>
+                BLACKENED IRON CROWN (AC 5, STR +5, SV FIRE +5, SV DISEASE +5, 
+                SV COLD +5, SV MAGIC +5, SV POISON +5)<br>
+                CRESCENT HEADBAND (AC 3, STR +4, WIS +2, SV POISON +2)<br>
+                CROWN OF KING TRANIX (AC 13, CHA +15, SV MAGIC +20, Effect: Serpent 
+                Sight)<br>
+                CROWN OF THE FROGLOCK KING (AC 12, SV FIRE +20, SV COLD +20)<br>
+                FINE SILK TURBIN AC 10, SV FIRE +10)<br>
+                GOLDEN EFREETI TURBAN (AC 10, STR +6, SV FIRE +6, SV DISEASE +6, 
+                SV COLD +6, SV MAGIC +6, SV POISON +6)<br>
+                KYLONG WAR HELM (AC 12, HP +20, MANA +20, SV MAGIC +7, SV POISON 
+                +4)<br>
+                LEATHERFOOT RAIDER SKULLCAP (AC 7, STR +5, CHA +10, AGI +5, SV 
+                MAGIC +5, Effect: Ring of Commons)<br>
+                RAVENSCALE COIF (AC 12, CHA +2, WIS +2, INT +5, SV MAGIC +5<br>
+                SCALED WOLF HIDE CAP (AC 4, INT +2, SV FIRE +3, SV COLD +3)<br>
+                SEBILITE SCALE CAP (AC 12, STR +4, WIS +4, INT +4, SV MAGIC +2, 
+                SV POISON +2)<br>
+                SIRYNN HAIR HOOD (AC 5, CHA +13, SV FIRE +10)<br>
+                WHIRLING HEMATITE (SV FIRE +10)<br>
+                WHIRLING MALACHITE (SV POISON +10)<br>
+                WOVEN SHADOW HELM (AC 14, STR +5, INT +9, SV DISEASE +10)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>LEGS </b><br>
+                CARRION BETTLE LEGGINGS (AC 7, AGI +5, SV DISEASE +5, SV POISON 
+                +5)<br>
+                DARKSCALE GREAVES (AC 14, STR +10, SV FIRE +2, SV DISEASE +2, 
+                SV COLD +2, SV POISON +2, SV MAGIC +2)<br>
+                HAND WOVEN LEGGINGS (AC 8, SV FIRE +10)<br>
+                MAMMOTH HIDE LEGGINGS (AC 6, STA +3, SV COLD +5)<br>
+                MITHRIL GREAVES (AC 10, STR +7, SV MAGIC +5)<br>
+                RAVENSCALE LEGGINGS (AC 12, STA +5, SV DISEASE +5)<br>
+                SCALED WOLF HIDE LEGGINGS (AC 7, SV FIRE +5, SV COLD +5)<br>
+                SEBILITE SCALE LEGGINGS (AC 16, STR +4, CHA +4, WIS +4, SV FIRE 
+                +2, SV POISON +2)<br>
+                SILVERMESH LEGGINGS (AC 7, AGI +3, SV MAGIC +5)<br>
+                WOVEN SHADOW GREAVES (AC 14, WIS +5, AGI +5, SV DISEASE +10)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>NECK</b> <br>
+                ANTI-POISON AMULET (SV POISON +15)<br>
+                AVIAK CHAR (DEX +2, WIS +2, SV POISON +2)<br>
+                BURYNAIBANE CHARM (AC 2, SV DISEASE +2, SV POISON +2)<br>
+                COLLAR OF UNDEAD PROTECTION (AC 5, SV DISEASE +7, SV POISON +7)<br>
+                ELECTRUM HEMATITE CHOKER (SV FIRE +2)<br>
+                FIRE SEARED GORGET (AC 7, SV FIRE +10)<br>
+                A GYPSY MEDALLION (AC 2, CHA +9, SV DISEASE +10)<br>
+                NECKLACE OF SUPERIORITY (STR +5, DEX +5, STA +5, WIS +5, CHA +5, 
+                INT +5, AGI +5, HP +10, MANA +10, SV FIRE +5, SV DISEASE +5, SV 
+                COLD +5, SV MAGIC +5, SV POISON +5)<br>
+                RUNED LAVA PENDANT (AC 5, STR +6, SV FIRE +5)<br>
+                SERPENT INSIGNIA COLLAR (SV FIRE +5, SV DISEASE +5, SV COLD +5, 
+                SV MAGIC +5, SV POISON +5)<br>
+                SPLIT PAW TOOTH NECKLACE (AC 2, CHA +5, SV POISON +5)<br>
+                WHITE GOLD NECKLACE (CHA +5, SV COLD +7, SV FIRE +7, SV MAGIC 
+                +7)<br>
+                PLATINUM WOLF&#146;S EYE AGATE NECKLACE (SV MAGIC +9)<br>
+                GOLDEN PEARL NECKLACE (AC 5, SV POISON +9)<br>
+                PLATINUM TOPAZ NECKLACE (AC 5, SV DISEASE +13)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>SHOULDERS</b> <br>
+                BARNACLE COVERED PAULDRONS (AC 6, SV COLD +5)<br>
+                BLOOD-STAINED MANTLE (AC 6, STR +3, SV MAGIC +10)<br>
+                DROLVARG MANTLE (AC 7, AGI +6, SV FIRE +5)<br>
+                HAND WOVEN SHOULDER GUARDS (AC 5, SV COLD +5)<br>
+                OBULUS DEATH SHROUD (AC 10, STR +3, STA +5, WIS +3, MANA +25, 
+                SV FIRE +1, SV DISEASE +1, SV COLD +1, SV MAGIC +1, SV POISON 
+                +1)<br>
+                SEBILITE SCALE MANTLE (AC 8, STR +4, STA +4, SV FIRE +2, SV DISEASE 
+                +2)<br>
+                TATTERED MANTLE (AC 12, HP +20, SV DISEASE +10)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>WAIST</b> <br>
+                BELT OF FLESHHOOKS (AC 5, CHA &#150;5, SV DISEASE +5, SV POISON 
+                +5)<br>
+                BELT OF THE CENOBITE (AC 5, WIS +7, SV COLD +10)<br>
+                BELT OF TRANSIENTNESS (AC 6, STR +5, DEX +5, SV POISON +10, Effect: 
+                Haste)<br>
+                DRAKE SCALE BELT (AC 5, DEX +3, SV FIRE +10)<br>
+                GIANT SNAKESPINE BELT (AC 4, AGI +5, SV POISON +5)<br>
+                SCALED WOLF HIDE BELT (AC 3, SV DISEASE +3)<br>
+                SEBILITE SCALE BELT (AC 8, HP +20, MANA +20, SV DISEASE +2, SV 
+                MAGIC +2)<br>
+                SPLIT PAW HIDE BELT (AC 5, SV POISON +5)</font></p>
+              <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+                <b>WRIST <br>
+                </b> BRACELET OF BEETLEKIND (AC 2, STR +3, INT &#150;3, SV FIRE 
+                +10, Effect: 10 charges of strengthen)<br>
+                HERO BRACER (AC 9, STR +10, SV DISEASE +5, SV POISON +5)<br>
+                MINOTAUR HERO SHACKLES (AC 4, CHA &#150;5, SV POISON +5)<br>
+                RAVENSCALE BRACER (AC 9, AGI +3, SV POISON +3)<br>
+                SILVER BRACELET (AC 2, INT &#150;3, AGI +3, SV POISON +10, Effect: 
+                14 charges of cure poison)<br>
+                SILVER PLATED BRACER (AC 7, SV DISEASE +5, SV POISON +5)<br>
+                SYMBOL OF LOYALTY TO VOX (AC 7, SV COLD +7)<br>
+                WOVEN SHADOW BRACER (AC 9, STR +3, DEX +3, AGI +3, SV COLD +5, 
+                SV FIRE +5)<br>
+                GOLD WOLF&#146;S EYE AGATE BRACER (SV MAGIC +7)<br>
+                GOLD PERIDOT BRACER (AC 4, SV COLD +6)<br>
+                GOLD EMERALD BRACER (AC 4, SV FIRE +6) </font></p>
+              <p>
+              <!-- #BeginLibraryItem "/Library/top%20link.lbi" -->
+<div align="center"><font face="Arial, Helvetica, sans-serif" size="1" color="#FFFFFF"><a href="#top"><font size="2">-top-</font></a></font></div><!-- #EndLibraryItem --> </p> 
+            </blockquote>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr bgcolor="#333333" align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="25"> 
+            <div align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><a name="thb"></a></b></font></div>
+          </td>
+        </tr>
+        <tr align="left" valign="top" bordercolor="#333333"> 
+          <td colspan="2" height="25"> 
+            <p align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FFFFFF"><b><font color="#FFCC00">Guide 
+              to Obtaining a Trollhide Belt</font> <br>
+              </b> </font><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><i>Compiled 
+              by Wolvinsbane </i></font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">I 
+              made the map below to show Rogues how to get their Troll Hide Belts 
+              solo. Minimum Level: 31 (some fights were close) Enjoy! 131k .gif 
+              loads below this...be patient! </font></p>
+            <p><img src="http://www.wlvrn.com/images/warden.gif"></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><br>
+              Notes: - He casts Invisible on himself a short time after he spawns 
+              if no one attacks him. Either have see invis ready or just unsneak 
+              and he'll aggro on ya. He had done this to me once but since you 
+              sit next to him when he spawns, you can see the message &quot;A 
+              Froglok Warden casts a spell&quot; and know that he's there. </font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Place 
+              Holder / Warden spawn rate is 17 minutes (same throughout the dungeon).</font></p>
+            
+            
+            </td>
+        </tr>
+      </table>
+      <p align="center">&nbsp;</p>
+      <!-- #EndEditable --> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p align="center"><font color="#FFCC00"><a href="#top" onFocus="if(this.blur)this.blur()">-top-</a></font></p>
+      <p align="center"> <font size="1" face="Arial, Helvetica, sans-serif">This 
+        page last updated on 
+        <!-- #BeginDate format:fcAm1a -->Sunday, April 29, 2001 1:44 PM<!-- #EndDate -->
+        </font><font size="1"> </font> </p>
+    </td>
+    <td bgcolor="#000000" bordercolor="#000000" width="20" align="left" valign="top"> 
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<table width="735" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+  <tr> 
+    <td bgcolor="#000000" bordercolor="#000000" height="45" align="left" valign="top"> 
+      <div align="center"> 
+        <p><font face="Arial, Helvetica, sans-serif" color="#FFCC00"><font size="2"><br>
+          SIte best viewed at 1024x768 or better</font><b><font size="1"><br>
+          </font></b><font size="1"> Painstakenly Optimized for IE 5.0 + and Netscape 
+          6.0 + |<b> Pants</b> optional | No Necros were harmed in the making 
+          of the site (yet)</font></font></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>
