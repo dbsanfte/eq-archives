@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Darkwind</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body bgcolor="#000000" text="#CCCCCC">
+<a name="top"></a>
+<table width="700" border="0" cellspacing="0" cellpadding="5">
+  <tr> 
+    <td width="30">&nbsp;</td>
+    <td width="670" background="images/table_header.jpg"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>News</b></font></td>
+  </tr>
+  <tr> 
+    <td width="30">&nbsp;</td>
+    <td width="670"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">July 13 -- <a href="#1">Tkarish, the guardian of Tacvi, falls down<br></a></font></td>
+  </tr>
+</table>
+<br>
+<table width="700" border="0" cellspacing="0" cellpadding="5"><tr><a name="1"></a><td width="30">&nbsp;</td><td width="670" background="images/table_header.jpg"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Tkarish, the guardian of Tacvi, falls down.</b><br>Tuesday, July 13, 20:20 -- Posted by: Alehop</font></td></tr><tr><td width="30">&nbsp;</td><td width="670"><div align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We have been facing this encounter for quite a long time now. All the different versions of it, since it has been tweaked quite a few times. <br />
+<br />
+We expended the last week  reflagging our new people. From Kodtaz to Txevu. We defeated the *new* Noquifiel, wich is quite an annoying fight now. All of this to be able to face Zun with our full force.<br />
+<br />
+The result :<br />
+<br />
+<center><img src="http://darkwind-guild.com/pics/Alehop/13thJulyNews/zunfight.jpg" border=0></a></center><br />
+<br />
+The result couldn't be other than looting our toughest enemy coprse after an exciting battle. Finally our efforts paid off, the entrance to Tacvi opened for Darkwind.<br />
+<br />
+<center><img src="http://darkwind-guild.com/pics/Alehop/13thJulyNews/zuncorpse.jpg" border=0></a></center><br />
+<br />
+There is your pic of the corpse. Send by someone who wanted his minute of fame on this news. I will let you guess who!<br />
+<br />
+Now its the turn for what everybody wants to see, the loot! <br />
+<br />
+<center><img src="http://darkwind-guild.com/pics/Alehop/13thJulyNews/loot1.jpg" border=0></a></center><br />
+<center><img src="http://darkwind-guild.com/pics/Alehop/13thJulyNews/loot2.jpg" border=0></a></center><br />
+<br />
+After everything was sorted we took a peek inside Tacvi, last zone from Discord.<br />
+<br />
+<center><img src="http://darkwind-guild.com/pics/Alehop/13thJulyNews/ins.jpg" border=0></a></center><br />
+<br />
+<br />
+We didn't really explore much since we had to stop in front of this little low dps dude, like all the others guild who reached the zone. Sorry for those who wanted to see new models! They are just the same ones but x2 bigger!<br />
+<br />
+<center><img src="http://darkwind-guild.com/pics/Alehop/13thJulyNews/kex.jpg" border=0></a></center><br />
+<br />
+In any case whole zone is supposed to be tuned and working correctly after Wednesday's patch, so stay tuned!<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br><br>&raquo; <a href="#top">back to top</a><br><br></font></div></td></tr></table>
+</body>
+</html>

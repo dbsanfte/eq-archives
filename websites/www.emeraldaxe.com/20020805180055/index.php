@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Clan of the Emerald Axe </title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+<META NAME="AUTHOR" CONTENT="Clan of the Emerald Axe">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2002 by Clan of the Emerald Axe">
+<META NAME="KEYWORDS" CONTENT="Emerald Axe, EverQuest, Karana, VFA, Valiant Fusion Alliance">
+<META NAME="DESCRIPTION" CONTENT="Clan of the Emerald Axe">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+<META NAME="RATING" CONTENT="GENERAL">
+<LINK REL="StyleSheet" HREF="themes/EmeraldAxe/style/style.css" TYPE="text/css">
+
+
+
+
+
+</head>
+
+
+<BODY BGCOLOR="#FFFFFF" MARGINWIDTH="0" MARGINHEIGHT="0" LEFTMARGIN=0 TOPMARGIN=0>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><TR>
+<TD WIDTH=35 HEIGHT=87 background=themes/EmeraldAxe/images/leftheaderbg.gif><img src="themes/EmeraldAxe/images/0.gif" width="35" height="1" border=0></TD>
+<TD HEIGHT=87 background=themes/EmeraldAxe/images/midheaderbg.gif align="center" valign=middle><img src="themes/EmeraldAxe/images/logo.gif" width="731" hieght="87" border=0></TD>
+<TD WIDTH=32 HEIGHT=87 background=themes/EmeraldAxe/images/rightheaderbg.gif><img src="themes/EmeraldAxe/images/0.gif" width="32" height="1" border=0></TD>
+</TR></TABLE><TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" HEIGHT="21" BORDER="0"><TR>
+<TD WIDTH=35 HEIGHT=21 background=themes/EmeraldAxe/images/leftlinkbg.gif><img src="themes/EmeraldAxe/images/0.gif" width="35" height="1" border=0></TD>
+<TD HEIGHT=21 background=themes/EmeraldAxe/images/midlinkbg.gif align="center" valign=middle>&nbsp;
+</TD>
+<TD WIDTH=32 HEIGHT=21 background=themes/EmeraldAxe/images/rightlinkbg.gif><img src="themes/EmeraldAxe/images/0.gif" width="32" height="1" border=0></TD>
+</TR></TABLE><BR>
+    <table border="0" cellspacing="0" cellpadding="2" width="100%"><tr><td valign="top" width="150"><table border="0" cellspacing="0" cellpadding="3" width="150" bgcolor=#339933><tr><td><font class="boxtitle">Login</font></td></tr><tr><td bgcolor=#f5fff5><font class="content"><form action="modules.php?name=Your_Account" method="post"><center><font class="content">Nickname<br><input type="text" name="uname" size="10" maxlength="25"><br>Password<br><input type="password" name="pass" size="10" maxlength="20"><br><input type="hidden" name="op" value="login"><input type="submit" value="Login"></font></center></form><center><font class="content">Don't have an account yet? You can <a href="modules.php?name=Your_Account">create one</a>. As registered user you have some advantages like theme manager, comments configuration and post comments with your name.</font></center></font></td></tr></table><br><table border="0" cellspacing="0" cellpadding="3" width="150" bgcolor=#339933><tr><td><font class="boxtitle">Navigation</font></td></tr><tr><td bgcolor=#f5fff5><font class="content"><strong><big>&middot;</big></strong>&nbsp;<a href="index.php">Home</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Feedback">Feedback</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Forum">EA Forums</a><br>
+<strong><big>&middot;</big></strong>&nbsp;<a href="modules.php?name=Your_Account">Your Account</a><br>
+</font></td></tr></table><br><table border="0" cellspacing="0" cellpadding="3" width="150" bgcolor=#339933><tr><td><font class="boxtitle">EA Approved Sites</font></td></tr><tr><td bgcolor=#f5fff5><font class="content"><strong><big>·</big></strong> <a href="http://pub82.ezboard.com/bvaliantfusion" TARGET="external">VFA Forums</a><br>
+<strong><big>·</big></strong> <a href="http://pub23.ezboard.com/bgdawn" TARGET="external">G. Dawn's Forums</a><br>
+<strong><big>·</big></strong> <a href="http://pub20.ezboard.com/btheholisticcrusaders1718" TARGET="external">H.Crusaders' Forums</a><br>
+<strong><big>·</big></strong> <a href="http://everquest.allakhazam.com/" TARGET="external">Allakhazam's</a><br>
+<strong><big>·</big></strong> <a href="http://eq.castersrealm.com/" TARGET="external">Caster's Realm</a><br>
+<strong><big>·</big></strong> <a href="http://eq.stratics.com/" TARGET="external">EQ Stratics</a><br>
+<strong><big>·</big></strong> <a href="http://www.eqtraders.com/" TARGET="external">EQ Traders</a><br>
+</font></td></tr></table><br><img src="images/pix.gif" border="0" width="150" height="1"></td><td>&nbsp;&nbsp;</td><td width="100%" valign="top"><table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#bbccbb"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="8" bgcolor="#eeffee"><tr><td>
+<center><font class="option" color="#003300"><b>Welcome to the Emerald Axe!</b></font></center>
+<font class="content"><BR><CENTER><A HREF="/modules.php?name=Content&pa=showpage&pid=1">Emerald Axe Pledge, Goals and Guidelines...</A></CENTER></font></td></tr></table></td></tr></table>
+<br><table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="000000" width="100%"><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%"><tr><td bgcolor="ffffff"><font class="storytitle">New Theme Added...</font><br><font class="tiny">Posted by <b><a href="http://www.hatter.net/pinina/">pinina</a></b> on Sunday, August 04 @ 11:14:50 EDT  (1 reads)<br><b>Topic</b> <a href="modules.php?name=Search&amp;query=&amp;topic=2&amp;author=">EA Website Updates</a><br></font></td></tr><tr><td bgcolor="ffffff"><table border="0" width="100%" cellpadding="4" cellspacing="0"><tr><td><font class="content"><P ALIGN=JUSTIFY>There is a new theme for the website. It's based off of the EAUI and might suit those of you that prefer darker colors.</P>
+
+<P ALIGN=JUSTIFY>You can set your theme in the <A HREF="/modules.php?name=Your_Account">Your Account</A> area of the site.</P>
+
+<P ALIGN=JUSTIFY>Select EmeraldAxe2 to try the new theme.</P>
+
+<P ALIGN=JUSTIFY>As always, send me any bugs you may find.</P>
+
+<P ALIGN=JUSTIFY>-Pin</P></font>
+</td></tr></table></td></tr><tr><td bgcolor="ffffff" align="right"><font class="content">( | Score: 0)</font></td></tr></table></td></tr></table><br><table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="000000" width="100%"><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%"><tr><td bgcolor="ffffff"><font class="storytitle">Photo Gallery Added...</font><br><font class="tiny">Posted by <b><a href="http://www.hatter.net/pinina/">Pinina</a></b> on Friday, August 02 @ 19:29:15 EDT  (0 reads)<br><b>Topic</b> <a href="modules.php?name=Search&amp;query=&amp;topic=2&amp;author=">EA Website Updates</a><br></font></td></tr><tr><td bgcolor="ffffff"><table border="0" width="100%" cellpadding="4" cellspacing="0"><tr><td><font class="content"><P ALIGN=JUSTIFY>I added a Photo Gallery to the site today. It's not thoroughly tested yet so please send me bugs via Private Message or the Feedback option.</P>
+
+<P ALIGN=JUSTIFY>Hope you guys like it.</P>
+
+<P ALIGN=JUSTIFY>-Pin</P></font>
+</td></tr></table></td></tr><tr><td bgcolor="ffffff" align="right"><font class="content">( | Score: 0)</font></td></tr></table></td></tr></table><br><table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="000000" width="100%"><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%"><tr><td bgcolor="ffffff"><font class="storytitle">Woot Jonelin!</font><br><font class="tiny">Posted by <b><a href="">Dimuyen</a></b> on Wednesday, July 31 @ 18:27:56 EDT  (2 reads)<br><b>Topic</b> <a href="modules.php?name=Search&amp;query=&amp;topic=1&amp;author=">Emerald Axe News</a><br></font></td></tr><tr><td bgcolor="ffffff"><table border="0" width="100%" cellpadding="4" cellspacing="0"><tr><td><font class="content">Good stuff a new leaf blower for the guild :) Gratz Buddy!</font>
+</td></tr></table></td></tr><tr><td bgcolor="ffffff" align="right"><font class="content">( | Score: 0)</font></td></tr></table></td></tr></table><br><table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="000000" width="100%"><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%"><tr><td bgcolor="ffffff"><font class="storytitle">BIG Wednesday patch</font><br><font class="tiny">Posted by <b><a href="http://www.hatter.net/pinina/">Pinina</a></b> on Tuesday, July 23 @ 23:24:01 EDT  (2 reads)<br><b>Topic</b> <a href="modules.php?name=Search&amp;query=&amp;topic=3&amp;author=">EverQuest News</a><br></font></td></tr><tr><td bgcolor="ffffff"><table border="0" width="100%" cellpadding="4" cellspacing="0"><tr><td><font class="content"><P ALIGN=JUSTIFY>Wow... Huge changes to Norrath coming in the next patch... Including but not limited to:
+<UL>
+<LI>New UI</LI>
+<LI>Bazaar</LI>
+<LI>Legends Zone: Jaggedpine Forest</LI>
+</UL>
+</P>
+<P ALIGN=JUSTIFY>Sweet Stuff! Any bets on how long it will take for the servers to be back up? My money's on 8pm EST.</P></font>
+</td></tr></table></td></tr><tr><td bgcolor="ffffff" align="right"><font class="content">( | Score: 0)</font></td></tr></table></td></tr></table><br><table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="000000" width="100%"><tr><td><table border="0" cellpadding="3" cellspacing="1" width="100%"><tr><td bgcolor="ffffff"><font class="storytitle">Karana Might Have Network Issues Next Tuesday</font><br><font class="tiny">Posted by <b><a href="http://www.hatter.net/pinina/">Pinina</a></b> on Friday, July 12 @ 13:58:16 EDT  (2 reads)<br><b>Topic</b> <a href="modules.php?name=Search&amp;query=&amp;topic=3&amp;author=">EverQuest News</a><br></font></td></tr><tr><td bgcolor="ffffff"><table border="0" width="100%" cellpadding="4" cellspacing="0"><tr><td><font class="content"><P><B>Tuesday, July 16th, 3AM to 6AM PDT, (11AM-2PM GMT), network maintenance</b></p>
+
+<P>On Tuesday, July 16th, between the hours of 3AM and 6AM PDT, (11AM-2PM GMT), network maintenance will be performed that could lead to some connectivity issues for some customers. The following servers will be affected: Erollisi Marr, Cazic Thule, Brell Serilis, The Rathe, Lanys T'vyl, Torvonnilous, Tunare, Quellious, Xegony, Prexus, Bertoxxulous, Rallos Zek, Veeshan, Rodcet Nife, Karana, The Nameless, Mithaniel Marr, Morell Thule, The Seventh Hammer, Saryrn, Sullon Zek</p>
+
+<P>The EverQuest Operations Team</p></font>
+</td></tr></table></td></tr><tr><td bgcolor="ffffff" align="right"><font class="content">( | Score: 0)</font></td></tr></table></td></tr></table><br></td><td>&nbsp;&nbsp;</td><td valign="top"><table border="0" cellspacing="0" cellpadding="3" width="150" bgcolor=#339933><tr><td><font class="boxtitle">Casters Realm News</font></td></tr><tr><td bgcolor=#f5fff5><font class="content"><strong><big>&middot;</big></strong>&nbsp;<a Href="http://eq.castersrealm.com/" Target="_blank">Back From Fan Faire!</a><br></font></td></tr></table><br><table border="0" cellspacing="0" cellpadding="3" width="150" bgcolor=#339933><tr><td><font class="boxtitle">EverLore News</font></td></tr><tr><td bgcolor=#f5fff5><font class="content"><strong><big>&middot;</big></strong>&nbsp;<font face="verdana" size="1"><a href="http://www.everlore.com/#1" target="new">Possible Bug in New UI</font></a><br><strong><big>&middot;</big></strong>&nbsp;<a href="http://www.everlore.com/#2" target="new">Gamers Haven has opened its doors!</font></a><br><strong><big>&middot;</big></strong>&nbsp;<a href="http://www.everlore.com/#3" target="new">Reduced Support Hours Today</font></a><br><strong><big>&middot;</big></strong>&nbsp;<a href="http://www.everlore.com/#4" target="new">Wedding on Vazaelle</font></a><br><strong><big>&middot;</big></strong>&nbsp;<a href="http://www.everlore.com/#5" target="new">First Aid Day in The Overthere - Saryrn</font></a><br></font></td></tr></table><br><table border="0" cellspacing="0" cellpadding="3" width="150" bgcolor=#339933><tr><td><font class="boxtitle">Allakhazam Updates</font></td></tr><tr><td bgcolor=#f5fff5><font class="content"><font class="content"><strong>Updated Items</strong><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/item.html?item=10413" target="new">A Serrated Pirahna Fang</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/item.html?item=12920" target="new">Sandals of Contemplation</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/item.html?item=10304" target="new">Toxiferious Axe</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/item.html?item=2377" target="new">Driftwood Treasure Chest</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/item.html?item=6241" target="new">Koada'Dal Mithril Collar (Tunare)</a><br>
+<BR><strong>Updated Quests</strong><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/quest.html?quest=68" target="new">Crusaders of Greenmist</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/quest.html?quest=1201" target="new">Crusader's Test of the Hero</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/quest.html?quest=73" target="new">Crusader's Test of Betrayal</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/quest.html?quest=2126" target="new">Emerald Novice Task</a><br>
+<strong><big>&middot;</big></strong><a href="http://everquest.allakhazam.com/db/quest.html?quest=2051" target="new">Sylvan Initiate Further Guidance</a><br>
+<BR><strong>Updated Mobs</strong><br>
+<strong><big>&middot;</big></strong><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=8559" target="new">A Razor Fin Piranha</a><br>
+<strong><big>&middot;</big></strong><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=8776" target="new">Kaas Thox Xi Ans Dyek</a><br>
+<strong><big>&middot;</big></strong><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=1841" target="new">A Cauldron Hammerhead</a><br>
+<strong><big>&middot;</big></strong><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=3430" target="new">A Death Beetle</a><br>
+<strong><big>&middot;</big></strong><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=8373" target="new">A Soul Devourer</a><br>
+<br><a href="http://everquest.allakhazam.com" target="blank"><b>read more...</b></a></font></font></td></tr></table><br></td></td></tr></table></td></tr></table><center><font class="tiny">
+<br><br>
+<font color=white>All logos and trademarks in this site are property of the Emerald Axe. The comments are property of their posters.</font><br>
+<br>
+<br>
+</font></center>
+</body>
+</html>
