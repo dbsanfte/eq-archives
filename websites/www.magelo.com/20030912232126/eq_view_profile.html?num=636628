@@ -1,0 +1,875 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://www.magelo.com/style/eq_profile.css">
+	<title>Magelo profile</title>
+</head>
+<body id="body">
+
+
+		<script type="text/javascript">
+	boutton1= new Image(46,15);
+	boutton1.src = "/res/eq/misc/test.png";
+
+	boutton2 = new Image(46,15);
+	boutton2.src = "/res/eq/misc/test2.png";
+
+	
+	
+	var spell_url='http://www.magelo.com/eq_spell_info.jsp';
+	
+	var lastUpdated = new Date(1058518099254);lastUpdated.setMinutes(lastUpdated.getMinutes()+ (-1*lastUpdated.getTimezoneOffset()));
+	 
+	
+	function getParameter(param)
+	{
+		param+='=';
+		var loc=''+document.location;
+		var deb=loc.indexOf(param)+param.length;
+		var fin=-1;
+		var value='';
+		if(deb!=(-1+param.length))
+		{
+			fin=loc.indexOf('&',deb);
+			if(fin!=-1)
+				value=loc.substring(deb,fin);
+			else
+				value=loc.substring(deb,loc.length);
+		}
+		return unescape(value);
+	}
+	
+	if(getParameter("resize")=="true")
+		window.resizeTo(800,740);
+	
+	function makeArray(n){this.length=n;return this;}
+
+	document.title="Vazzeraal Wretchebone - Dark Elf Shadowknight [Rallos Zek (PvP)]";
+	
+	
+	var ieWin32=(document.all!=null && navigator.platform == "Win32" && navigator.userAgent.indexOf("MSIE")!=-1);
+	var ie = (document.all!=null);
+	
+	function makeArray(n){this.length=n;return this;}
+	
+	function filtre(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\'")
+				tmp+="\\\'";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+	
+	function showItem(position)
+	{
+		document.getElementById("screenshot-text").innerHTML=tabItem[position].desc;
+		showScreenshot()
+	}
+	
+	function getNumSlot(capaciteBag,indice)
+	{
+		if(indice<=capaciteBag/2)
+			return indice;
+		else
+			return (indice+5-(capaciteBag/2));
+	}
+	
+	function openBag(position)
+	{
+		showItem(position);
+		
+		var buffer="";
+		for(var i=1;i<=tabItem[position].capacite;i++)
+		{
+			var index = 0;
+			if(position <2000)
+				index = 250 + 10*(position-22) + i -1;
+			else
+				index = (position-2000)*10+2030+i-1;
+				
+			buffer+=("<div id='bag-slot-"+getNumSlot(tabItem[position].capacite,i)+"' class='slot'><img ");
+			if(tabItem[index]!=null)
+			{
+				buffer+=("style='cursor: pointer' title=\""+tabItem[index].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[index].icon+".png'  onmousedown='showItem("+index+");'>");
+				if(tabItem[index].stackable==true)
+				{
+					if(ieWin32)
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+					else
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+				}
+			}
+			else
+				buffer+=("border=0 src='/res/eq/misc/money_mask.png'>");
+								
+			buffer+=("<\/div>");
+		}
+		
+		buffer+=("<div id='bag-button' style='position: absolute;left:25px' class='button' onmouseover=\"this.style.backgroundImage='url(/res/eq/misc/test2.png)';\" onmouseout=\"this.style.backgroundImage='url(/res/eq/misc/test.png)';\" onclick='closeBag();'>Done<\/div>");
+		
+		document.getElementById("bag").innerHTML=buffer;
+		
+		if(ieWin32)
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+40);
+		else
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+41);
+		document.getElementById("bag").style.height=(tabItem[position].capacite/2*40+40);
+		document.getElementById("bag-button").style.top=(tabItem[position].capacite/2*40+17);
+		
+		document.getElementById("bag-alpha").style.visibility='visible';
+		document.getElementById("bag").style.visibility='visible';
+	}
+	
+	function closeBag()
+	{
+		document.getElementById("bag-alpha").style.visibility='hidden';
+		document.getElementById("bag").style.visibility='hidden';
+		hideScreenshot();
+	
+	}
+	
+	function showBank()
+	{
+		document.getElementById("bank-alpha").style.visibility='visible';
+		document.getElementById("bank").style.visibility='visible';
+	}
+	
+	function hideBank()
+	{
+		document.getElementById("bank").style.visibility='hidden';
+		document.getElementById("bank-alpha").style.visibility='hidden';
+	}
+	
+	function showScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='visible';
+		document.getElementById("magelo-info").style.visibility='hidden';
+	}
+	function hideScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='hidden';
+		document.getElementById("magelo-info").style.visibility='visible';
+	}
+	
+	function showAdv()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("adv").style.visibility='visible';
+	}
+	
+	function showStat()
+	{
+		document.getElementById("adv").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='hidden';
+		document.getElementById("mod").style.visibility='hidden';
+		document.getElementById("keys").style.visibility='hidden';
+		document.getElementById("flags").style.visibility='hidden';
+		
+		document.getElementById("stat").style.visibility='visible';
+	}
+	
+	function showBio()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='visible';
+	}
+	
+	function showSkill()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='visible';
+	}
+	
+	function showSpell()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='visible';
+	}
+	
+	function showFocus()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='visible';
+	}
+	
+	function showMod()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("mod").style.visibility='visible';
+	}
+	
+	function showKeys()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("keys").style.visibility='visible';
+	}
+	
+	function showFlags()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("flags").style.visibility='visible';
+	}
+	
+	var tabAbility = new makeArray(67);function ability(name,cat,nbr_point,nbr_point_max,next_point_cost){this.name=name;this.cat=cat;this.nbr_point=nbr_point;this.nbr_point_max=nbr_point_max;this.next_point_cost=next_point_cost;}tabAbility[1]=new ability('Innate Strength',1,0,5,'1');tabAbility[2]=new ability('Innate Stamina',1,0,5,'1');tabAbility[3]=new ability('Innate Agility',1,0,5,'1');tabAbility[4]=new ability('Innate Dexterity',1,0,5,'1');tabAbility[5]=new ability('Innate Intelligence',1,1,5,'1');tabAbility[6]=new ability('Innate Wisdom',1,0,5,'1');tabAbility[7]=new ability('Innate Charisma',1,0,5,'1');tabAbility[8]=new ability('Innate Fire Protection',1,0,5,'1');tabAbility[9]=new ability('Innate Cold Protection',1,0,5,'1');tabAbility[10]=new ability('Innate Magic Protection',1,2,5,'1');tabAbility[11]=new ability('Innate Poison Protection',1,0,5,'1');tabAbility[12]=new ability('Innate Disease Protection',1,0,5,'1');tabAbility[13]=new ability('First Aid',1,0,3,'1');tabAbility[14]=new ability('Innate Run Speed',1,3,3,'-');tabAbility[15]=new ability('Innate Lung Capacity',1,0,3,'1');tabAbility[16]=new ability('Innate Metabolism',1,0,3,'1');tabAbility[17]=new ability('Innate Regeneration',1,0,3,'1');tabAbility[18]=new ability('New Tanaan Crafting Mastery',1,0,6,'3');tabAbility[19]=new ability('Channeling Focus',2,0,3,'2');tabAbility[20]=new ability('Mental Clarity',2,2,3,'6');tabAbility[21]=new ability('Spell Casting Deftness',2,0,3,'2');tabAbility[22]=new ability('Spell Casting Expertise',2,0,3,'2');tabAbility[23]=new ability('Spell Casting Fury',2,0,3,'2');tabAbility[24]=new ability('Spell Casting Subtlety',2,0,3,'2');tabAbility[25]=new ability('Combat Agility',2,2,3,'6');tabAbility[26]=new ability('Combat Fury',2,2,3,'6');tabAbility[27]=new ability('Combat Stability',2,0,3,'2');tabAbility[28]=new ability('Fear Resistance',2,0,3,'2');tabAbility[29]=new ability('Finishing Blow',2,0,3,'2');tabAbility[30]=new ability('Natural Durability',2,0,3,'2');tabAbility[31]=new ability('Natural Healing',2,0,3,'2');tabAbility[32]=new ability('Body and Mind Rejuvenation',3,0,1,'5');tabAbility[33]=new ability('Physical Enhancement',3,0,1,'5');tabAbility[34]=new ability('Double Riposte',3,0,3,'3');tabAbility[35]=new ability('Pet Discipline',3,0,1,'6');tabAbility[36]=new ability('2 Hand Bash',3,1,1,'-');tabAbility[37]=new ability('Fearless',3,0,1,'6');tabAbility[38]=new ability('Leech Touch',3,0,1,'6');tabAbility[39]=new ability('Soul Abrasion',3,0,3,'3');tabAbility[40]=new ability('Super Harm Touch',3,0,1,'6');tabAbility[41]=new ability('Unholy Steed',3,1,1,'-');tabAbility[42]=new ability('Advanced Innate Strength',4,0,10,'1');tabAbility[43]=new ability('Advanced Innate Stamina',4,0,10,'1');tabAbility[44]=new ability('Advanced Innate Agility',4,0,10,'1');tabAbility[45]=new ability('Advanced Innate Dexterity',4,0,10,'1');tabAbility[46]=new ability('Advanced Innate Intelligence',4,0,10,'1');tabAbility[47]=new ability('Advanced Innate Wisdom',4,0,10,'1');tabAbility[48]=new ability('Advanced Innate Charisma',4,0,10,'1');tabAbility[49]=new ability('Warding of Solusek',4,0,10,'1');tabAbility[50]=new ability('Blessing of E\'ci',4,0,10,'1');tabAbility[51]=new ability('Marr\'s Protection',4,0,10,'1');tabAbility[52]=new ability('Shroud of The Faceless',4,0,10,'1');tabAbility[53]=new ability('Bertoxxulous\'s Gift',4,0,10,'1');tabAbility[54]=new ability('Planar Power',4,0,5,'2');tabAbility[55]=new ability('Planar Durability',4,0,3,'3');tabAbility[56]=new ability('Consumption of the Soul',5,0,3,'3');tabAbility[57]=new ability('Coup de Grace',5,0,3,'2');tabAbility[58]=new ability('Flash of Steel',5,0,3,'3');tabAbility[59]=new ability('Fury of the Ages',5,0,3,'3');tabAbility[60]=new ability('Innate Defense',5,0,5,'3');tabAbility[61]=new ability('Knight\'s Advantage',5,0,3,'2');tabAbility[62]=new ability('Lightning Reflexes',5,0,5,'3');tabAbility[63]=new ability('Mastery of the Past',5,0,3,'3');tabAbility[64]=new ability('Speed of the Knight',5,0,3,'3');tabAbility[65]=new ability('Theft of Life',5,0,3,'1');tabAbility[66]=new ability('Touch of the Wicked',5,0,3,'2');tabAbility[67]=new ability('Unholy Touch',5,0,3,'2');
+	
+	var ability_cat=1;
+	function processAdv()
+	{
+		var ability_cat_name="";
+		switch(ability_cat)
+		{
+			case 1:
+				ability_cat_name="General Abilities";
+				break;
+			case 2:
+				ability_cat_name="Archetype Abilities";
+				break;
+			case 3:
+				ability_cat_name="Class Specific Abilities";
+				break;
+			case 4:
+				ability_cat_name="PoP Advance";
+				break;
+			case 5:
+				ability_cat_name="PoP Ability";
+				break;
+		}
+		document.getElementById("adv-cat").innerHTML=("<table style='width: 220px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td>"+ability_cat_name+"<\/td><td style='width: 19px' align='right'>Cur<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>Max<\/td><td align='center' style='width: 5px'><\/td><td style='width: 22px'>Cost<\/td><\/tr><\/table>");
+		
+		var buffer="<table style='width: 220px;color: #E0E0E0;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>";
+		for(var i=1;i<=tabAbility.length;i++)
+		{
+			if(tabAbility[i].cat==ability_cat)
+			{
+				buffer+="<tr><td>"+tabAbility[i].name+"<\/td><td style='width: 19px;";
+				if(tabAbility[i].nbr_point>0)
+					buffer+="color: #00FF00;";
+				buffer+="' align='right'>"+tabAbility[i].nbr_point+"<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>"+tabAbility[i].nbr_point_max+"<\/td><td align='center' style='width: 5px'><\/td><td align='center' style='width: 22px'>"+tabAbility[i].next_point_cost+"<\/td><\/tr>";
+			}
+		}
+		buffer+="<\/table>";
+		document.getElementById("adv-data").innerHTML=buffer;
+		
+		showAdv();
+	}
+	
+	function mod(composant,slot,org,value_){this.composant=composant;this.slot=slot;this.org=org;this.value_=value_;}
+	var tabMod = new makeArray(141);
+	tabMod[1]=new mod('ac',17,'stat',60);tabMod[2]=new mod('ac',7,'stat',40);tabMod[3]=new mod('ac',2,'stat',34);tabMod[4]=new mod('ac',12,'stat',30);tabMod[5]=new mod('ac',19,'stat',28);tabMod[6]=new mod('ac',5,'stat',25);tabMod[7]=new mod('ac',18,'stat',25);tabMod[8]=new mod('ac',10,'stat',22);tabMod[9]=new mod('ac',20,'stat',20);tabMod[10]=new mod('ac',0,'stat',20);tabMod[11]=new mod('ac',13,'stat',17);tabMod[12]=new mod('ac',9,'stat',15);tabMod[13]=new mod('ac',11,'stat',15);tabMod[14]=new mod('ac',6,'stat',14);tabMod[15]=new mod('ac',8,'stat',10);tabMod[16]=new mod('ac',3,'stat',7);tabMod[17]=new mod('ac',4,'stat',5);tabMod[18]=new mod('ac',15,'stat',5);tabMod[19]=new mod('ac',1,'stat',4);tabMod[20]=new mod('ac',16,'stat',2);tabMod[21]=new mod('agi',18,'stat',25);tabMod[22]=new mod('agi',8,'stat',20);tabMod[23]=new mod('agi',0,'stat',10);tabMod[24]=new mod('agi',13,'stat',8);tabMod[25]=new mod('agi',17,'stat',7);tabMod[26]=new mod('agi',11,'stat',5);tabMod[27]=new mod('cha',13,'stat',8);tabMod[28]=new mod('cha',17,'stat',7);tabMod[29]=new mod('cha',16,'stat',2);tabMod[30]=new mod('cr',2,'stat',10);tabMod[31]=new mod('cr',9,'stat',10);tabMod[32]=new mod('cr',0,'stat',10);tabMod[33]=new mod('cr',12,'stat',9);tabMod[34]=new mod('cr',13,'stat',8);tabMod[35]=new mod('cr',7,'stat',7);tabMod[36]=new mod('cr',17,'stat',7);tabMod[37]=new mod('cr',10,'stat',7);tabMod[38]=new mod('cr',4,'stat',5);tabMod[39]=new mod('cr',16,'stat',2);tabMod[40]=new mod('dex',13,'stat',8);tabMod[41]=new mod('dex',3,'stat',7);tabMod[42]=new mod('dex',17,'stat',7);tabMod[43]=new mod('dex',15,'stat',6);tabMod[44]=new mod('dex',11,'stat',5);tabMod[45]=new mod('dex',6,'stat',2);tabMod[46]=new mod('dr',18,'stat',15);tabMod[47]=new mod('dr',5,'stat',10);tabMod[48]=new mod('dr',9,'stat',10);tabMod[49]=new mod('dr',0,'stat',10);tabMod[50]=new mod('dr',12,'stat',9);tabMod[51]=new mod('dr',13,'stat',8);tabMod[52]=new mod('dr',7,'stat',7);tabMod[53]=new mod('dr',17,'stat',7);tabMod[54]=new mod('dr',10,'stat',7);tabMod[55]=new mod('fr',9,'stat',10);tabMod[56]=new mod('fr',0,'stat',10);tabMod[57]=new mod('fr',12,'stat',9);tabMod[58]=new mod('fr',13,'stat',8);tabMod[59]=new mod('fr',7,'stat',7);tabMod[60]=new mod('fr',17,'stat',7);tabMod[61]=new mod('fr',10,'stat',7);tabMod[62]=new mod('fr',4,'stat',5);tabMod[63]=new mod('fr',1,'stat',2);tabMod[64]=new mod('fr',16,'stat',2);tabMod[65]=new mod('haste',12,'effect',41);tabMod[66]=new mod('hp',0,'stat',90);tabMod[67]=new mod('hp',12,'stat',75);tabMod[68]=new mod('hp',13,'stat',75);tabMod[69]=new mod('hp',4,'stat',55);tabMod[70]=new mod('hp',18,'stat',50);tabMod[71]=new mod('hp',9,'stat',50);tabMod[72]=new mod('hp',10,'stat',50);tabMod[73]=new mod('hp',15,'stat',45);tabMod[74]=new mod('hp',2,'stat',35);tabMod[75]=new mod('hp',17,'stat',30);tabMod[76]=new mod('hp',3,'stat',20);tabMod[77]=new mod('hp',8,'stat',15);tabMod[78]=new mod('hp',6,'stat',10);tabMod[79]=new mod('int',0,'stat',10);tabMod[80]=new mod('int',12,'stat',9);tabMod[81]=new mod('int',4,'stat',8);tabMod[82]=new mod('int',13,'stat',8);tabMod[83]=new mod('int',17,'stat',7);tabMod[84]=new mod('int',1,'stat',5);tabMod[85]=new mod('int',19,'stat',3);tabMod[86]=new mod('int',16,'stat',2);tabMod[87]=new mod('mana',0,'stat',80);tabMod[88]=new mod('mana',12,'stat',75);tabMod[89]=new mod('mana',13,'stat',75);tabMod[90]=new mod('mana',4,'stat',55);tabMod[91]=new mod('mana',15,'stat',35);tabMod[92]=new mod('mana',17,'stat',30);tabMod[93]=new mod('mana',16,'stat',20);tabMod[94]=new mod('mana+',4,'effect',1);tabMod[95]=new mod('mr',5,'stat',25);tabMod[96]=new mod('mr',11,'stat',15);tabMod[97]=new mod('mr',9,'stat',10);tabMod[98]=new mod('mr',0,'stat',10);tabMod[99]=new mod('mr',12,'stat',9);tabMod[100]=new mod('mr',13,'stat',8);tabMod[101]=new mod('mr',7,'stat',7);tabMod[102]=new mod('mr',17,'stat',7);tabMod[103]=new mod('mr',10,'stat',7);tabMod[104]=new mod('mr',6,'stat',6);tabMod[105]=new mod('mr',15,'stat',6);tabMod[106]=new mod('mr',4,'stat',5);tabMod[107]=new mod('pr',5,'stat',10);tabMod[108]=new mod('pr',9,'stat',10);tabMod[109]=new mod('pr',0,'stat',10);tabMod[110]=new mod('pr',12,'stat',9);tabMod[111]=new mod('pr',13,'stat',8);tabMod[112]=new mod('pr',7,'stat',7);tabMod[113]=new mod('pr',17,'stat',7);tabMod[114]=new mod('pr',10,'stat',7);tabMod[115]=new mod('sta',18,'stat',15);tabMod[116]=new mod('sta',0,'stat',15);tabMod[117]=new mod('sta',11,'stat',10);tabMod[118]=new mod('sta',13,'stat',8);tabMod[119]=new mod('sta',17,'stat',7);tabMod[120]=new mod('sta',2,'stat',5);tabMod[121]=new mod('sta',4,'stat',5);tabMod[122]=new mod('sta',1,'stat',2);tabMod[123]=new mod('str',9,'stat',20);tabMod[124]=new mod('str',20,'stat',15);tabMod[125]=new mod('str',0,'stat',15);tabMod[126]=new mod('str',11,'stat',10);tabMod[127]=new mod('str',12,'stat',9);tabMod[128]=new mod('str',13,'stat',8);tabMod[129]=new mod('str',3,'stat',7);tabMod[130]=new mod('str',17,'stat',7);tabMod[131]=new mod('str',15,'stat',6);tabMod[132]=new mod('str',18,'stat',5);tabMod[133]=new mod('str',19,'stat',5);tabMod[134]=new mod('str',10,'stat',5);tabMod[135]=new mod('str',6,'stat',4);tabMod[136]=new mod('str',1,'stat',2);tabMod[137]=new mod('wis',20,'stat',15);tabMod[138]=new mod('wis',12,'stat',9);tabMod[139]=new mod('wis',4,'stat',8);tabMod[140]=new mod('wis',13,'stat',8);tabMod[141]=new mod('wis',17,'stat',7);
+	
+	var mod_cat="hp";
+	function processMod()
+	{
+		document.getElementById("mod-header").innerHTML="Stat: <span style='color: #00FF00;font-size:9px'>"+mod_cat.toUpperCase()+"<\/span>";
+		var buffer="<table style='width: 270px;color: #E0E0E0;font-family: Arial;font-size: 11px;' cellpadding=0 cellspacing=0>";
+		var total = 0;
+		for(var i=1;i<=tabMod.length;i++)
+		{
+			
+			if(tabMod[i].composant==mod_cat)
+			{
+				buffer+="<tr><td><span style='cursor: pointer;color: #739FC1;' onclick='showItem("+tabMod[i].slot+")'>"+tabItem[tabMod[i].slot].name+"<\/span><\/td><td align='center' style='width:45px'>"+slot_name[tabMod[i].slot].toLowerCase()+"<\/td><td align='center' style='width:35px'>"+tabMod[i].org+"<\/td><td align='center' style='width:35px'>"+tabMod[i].value_+"<\/td><\/tr>";
+				total+=tabMod[i].value_;
+			}
+		}
+		
+		if(mod_cat=="haste")
+			total=41;
+	
+		if(total!=0)
+			buffer+="<tr><td colspan='4'><hr><\/td><\/tr><tr><td>TOTAL :<\/td><td colspan='2'><\/td><td align='center'>"+total+"<\/td><\/tr>";
+		buffer+="<\/table>";
+		document.getElementById("mod-data").innerHTML=buffer;
+		showMod();
+	}
+	
+	
+</script>
+<div id="character-alpha"></div>
+<div id="character">
+
+<div id="stat">
+
+<script type="text/javascript">
+	var slot_name = new Array();
+	slot_name[0]="CHARM";
+	slot_name[1]="EAR";
+	slot_name[2]="HEAD";
+	slot_name[3]="FACE";
+	slot_name[4]="EAR";
+	slot_name[5]="NECK";
+	slot_name[6]="SHOULD.";
+	slot_name[7]="ARMS";
+	slot_name[8]="BACK";
+	slot_name[9]="WRIST";
+	slot_name[10]="WRIST";
+	slot_name[11]="RANGE";
+	slot_name[12]="HANDS";
+	slot_name[13]="PRIMARY";
+	slot_name[14]="SEC.";
+	slot_name[15]="FINGER";
+	slot_name[16]="FINGER";
+	slot_name[17]="CHEST";
+	slot_name[18]="LEGS";
+	slot_name[19]="FEET";
+	slot_name[20]="WAIST";
+	slot_name[21]="AMMO";
+	slot_name[10000]="FOOD";
+	slot_name[10001]="DRINK";
+	
+	function item(icon,name,desc,capacite,qt,stackable){this.icon=icon;this.name=name;this.desc=desc;this.capacite=capacite;this.qt=qt;this.stackable=stackable;} var tabItem = new Array();tabItem[2170]=new item(504,'Spell: Omakin\'s Alacrity','Spell: Omakin\'s Alacrity<br>MAGIC ITEM&nbsp;&nbsp;<br>Charges: 1<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=2625\' target=\'_new\'>Omakin\'s Alacrity</a>  (Combat)<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: BST <br>Race: ALL<br>',0,1,false);tabItem[2008]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2095]=new item(782,'Spiderling Silk','Spiderling Silk<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,12,true);tabItem[2066]=new item(913,'Innovative Clockwork Gears','Innovative Clockwork Gears<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,9,true);tabItem[2175]=new item(1003,'Skyash Bile','Skyash Bile<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2037]=new item(659,'Cloak of Lunar Light','Cloak of Lunar Light<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: BACK&nbsp;&nbsp;<br>AC: 9<br>STR: +4&nbsp;&nbsp;DEX: +3&nbsp;&nbsp;HP: +25&nbsp;&nbsp;MANA: +15&nbsp;&nbsp;<br>SV MAGIC: +5&nbsp;&nbsp;<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: PAL RNG SHD BRD <br>Race: ALL<br>',0,1,false);tabItem[2065]=new item(1135,'Small Piece of Acrylia','Small Piece of Acrylia<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,5,true);tabItem[313]=new item(953,'Pearl','Pearl<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,20,true);tabItem[2048]=new item(516,'Malevolent Bracer','Malevolent Bracer<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 21<br>STR: +1&nbsp;&nbsp;DEX: +3&nbsp;&nbsp;INT: +3&nbsp;&nbsp;HP: +10&nbsp;&nbsp;<br>MANA: +10&nbsp;&nbsp;SV FIRE: +1&nbsp;&nbsp;SV DISEASE: +1&nbsp;&nbsp;<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: HUM ERU DEF TRL OGR GNM IKS <br>',0,1,false);tabItem[2176]=new item(948,'Large Shard of Stone','Large Shard of Stone<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[317]=new item(966,'Blue Diamond','Blue Diamond<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,6,true);tabItem[2068]=new item(601,'Nightmarewood Bow Staff','Nightmarewood Bow Staff<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2093]=new item(554,'High Quality Bear Skin','High Quality Bear Skin<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: ALL<br>Race: ALL<br>',0,2,true);tabItem[1]=new item(619,'Shrunken Grimling Skull Earring','Shrunken Grimling Skull Earring<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: EAR&nbsp;&nbsp;<br>AC: 4<br>STR: +2&nbsp;&nbsp;STA: +2&nbsp;&nbsp;INT: +5&nbsp;&nbsp;SV FIRE: +2&nbsp;&nbsp;<br>WT: &nbsp;0.7&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[29]=new item(557,'Bag of the Tinkerers','Bag of the Tinkerers<br>Container: CLOSED<br><br>WT: 1.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 100%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;GIANT<br>',10,1,false);tabItem[2114]=new item(1253,'Valor Crystals','Valor Crystals<br>MAGIC ITEM&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2177]=new item(1030,'Golem shards','Golem shards<br>NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[2070]=new item(531,'Moktor Gauntlets','Moktor Gauntlets<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HANDS&nbsp;&nbsp;<br>AC: 17<br>STR: +5&nbsp;&nbsp;DEX: +5&nbsp;&nbsp;WIS: +1&nbsp;&nbsp;SV DISEASE: +5&nbsp;&nbsp;<br>Recommended level of 50.<br>WT: &nbsp;3.8&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[258]=new item(584,'Water Flask','Water Flask<br>WT: &nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,19,true);tabItem[2113]=new item(1134,'Tiny Bottle and Note','Tiny Bottle and Note<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2096]=new item(1153,'Clockwork Grease','Clockwork Grease<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,7,true);tabItem[2171]=new item(908,'Chromadrac Wing','Chromadrac Wing<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,2,true);tabItem[2069]=new item(1097,'Innovative Bow Cam','Innovative Bow Cam<br>WT: &nbsp;0.3&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2064]=new item(1032,'Innovative Clockwork Bolts','Innovative Clockwork Bolts<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,9,true);tabItem[3]=new item(677,'Grimling Warmask','Grimling Warmask<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: FACE&nbsp;&nbsp;<br>AC: 7<br>Skill Mod: Sneak +3 %<br>STR: +7&nbsp;&nbsp;DEX: +7&nbsp;&nbsp;HP: +20&nbsp;&nbsp;<br>WT: &nbsp;1.5&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2116]=new item(1087,'A Razorfiend Tongue','A Razorfiend Tongue<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[259]=new item(584,'Water Flask','Water Flask<br>WT: &nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,20,true);tabItem[27]=new item(557,'Rallic Pack','Rallic Pack<br>Container: CLOSED<br>LORE ITEM&nbsp;&nbsp;<br>WT: 1.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 85%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;GIANT<br>',10,1,false);tabItem[2089]=new item(1204,'Crystal Spider Brain','Crystal Spider Brain<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2]=new item(746,'Helm of the Deep Sea','Helm of the Deep Sea<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HEAD&nbsp;&nbsp;<br>AC: 34<br>STA: +5&nbsp;&nbsp;HP: +35&nbsp;&nbsp;SV COLD: +10&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=86\' target=\'_new\'>Enduring Breath</a>  (Worn)<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR CLR PAL SHD BRD <br>Race: ALL<br>',0,1,false);tabItem[2172]=new item(1138,'Brick of Ethereal Energy','Brick of Ethereal Energy<br>WT: 10.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,2,true);tabItem[2100]=new item(926,'Smashed War Grubs','Smashed War Grubs<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,2,true);tabItem[2015]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[28]=new item(689,'Bag of Sewn Evil-Eye','Bag of Sewn Evil-Eye<br>Container: CLOSED<br>LORE ITEM&nbsp;&nbsp;<br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 70%<br>Capacity: 8&nbsp;Size Capacity:&nbsp;LARGE<br>',8,1,false);tabItem[2047]=new item(838,'Guardian Robe','Guardian Robe<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: CHEST&nbsp;&nbsp;<br>AC: 12<br>STA: +5&nbsp;&nbsp;INT: +8&nbsp;&nbsp;MANA: +45&nbsp;&nbsp;SV FIRE: +8&nbsp;&nbsp;<br>SV MAGIC: +8&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2046]=new item(1080,'Sleeper\'s Key','Sleeper\'s Key<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2074]=new item(531,'Ancient Tarnished Plate Gauntlets','Ancient Tarnished Plate Gauntlets<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HANDS&nbsp;&nbsp;<br>WT: &nbsp;5.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR CLR PAL SHD BRD <br>Race: ALL<br>',0,1,false);tabItem[262]=new item(695,'10 Dose Gate Potion','10 Dose Gate Potion<br>EXPENDABLE&nbsp;&nbsp;&nbsp;&nbsp;Charges: 10<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=36\' target=\'_new\'>Gate</a>  (Casting Time: 10.0)<br>WT: &nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[23]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2030]=new item(626,'Guardian Choker','Guardian Choker<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: NECK&nbsp;&nbsp;<br>AC: 10<br>STA: +4&nbsp;&nbsp;HP: +10&nbsp;&nbsp;SV DISEASE: +6&nbsp;&nbsp;SV POISON: +6<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[2092]=new item(782,'Nightmare Arachnid Silk','Nightmare Arachnid Silk<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,20,true);tabItem[2060]=new item(1138,'Large Brick of Acrylia Ore','Large Brick of Acrylia Ore<br>WT: 14.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[263]=new item(598,'Arrow','Arrow<br>Slot: AMMO&nbsp;&nbsp;<br>Skill: Archery&nbsp;&nbsp;Atk Delay: 0<br>DMG: 1&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Range: 25&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD ROG <br>Race: ALL<br>',0,20,true);tabItem[2101]=new item(767,'Globe of Darkness','Globe of Darkness<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[7]=new item(543,'Vambraces of Discontent','Vambraces of Discontent<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: ARMS&nbsp;&nbsp;<br>AC: 40<br>SV FIRE: +7&nbsp;&nbsp;SV DISEASE: +7&nbsp;&nbsp;SV COLD: +7&nbsp;&nbsp;SV MAGIC: +7&nbsp;&nbsp;<br>SV POISON: +7<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR CLR PAL RNG SHD BRD ROG SHM <br>Race: ALL<br>',0,1,false);tabItem[2188]=new item(567,'Shissar Battlehammer','Shissar Battlehammer<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;<br>Skill: 1H Blunt&nbsp;&nbsp;Atk Delay: 22<br>DMG: 7&nbsp;&nbsp;<br>WIS: +5&nbsp;&nbsp;<br>WT: &nbsp;3.5&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: WAR CLR PAL RNG SHD DRU MNK BRD ROG SHM BST <br>Race: ALL<br>',0,1,false);tabItem[2115]=new item(938,'A burnt sash','A burnt sash<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[324]=new item(567,'Worker Sledgemallet','Worker Sledgemallet<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;<br>Skill: 2H Blunt&nbsp;&nbsp;Atk Delay: 50<br>DMG: 6&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=1199\' target=\'_new\'>Overthere</a>  (Combat)<br>WT: &nbsp;3.2&nbsp;&nbsp;&nbsp;&nbsp;Size: GIANT<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[260]=new item(812,'Bandages','Bandages<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,7,true);tabItem[2061]=new item(1138,'Large Brick of Acrylia Ore','Large Brick of Acrylia Ore<br>WT: 14.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2000]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[6]=new item(798,'Guardian Pauldrons','Guardian Pauldrons<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: SHOULDERS&nbsp;&nbsp;<br>AC: 14<br>STR: +4&nbsp;&nbsp;DEX: +2&nbsp;&nbsp;HP: +10&nbsp;&nbsp;SV MAGIC: +6&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[2103]=new item(864,'A Coordinate Label','A Coordinate Label<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2073]=new item(578,'Ebon Mace','Ebon Mace<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 1H Blunt&nbsp;&nbsp;Atk Delay: 24<br>DMG: 19&nbsp;&nbsp;<br>WT: &nbsp;2.6&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: SHD <br>Race: ALL<br>',0,1,false);tabItem[24]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2184]=new item(1032,'Flake of Lodestone','Flake of Lodestone<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[2117]=new item(893,'Pearlescent Pebble Formation','Pearlescent Pebble Formation<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2104]=new item(582,'A captured Nifilik','A captured Nifilik<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: RNG <br>Race: ALL<br>',0,1,false);tabItem[2094]=new item(564,'Shaded belt','Shaded belt<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WAIST&nbsp;&nbsp;<br>AC: 4<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2091]=new item(1100,'Condensed Shadow Arrowheads','Condensed Shadow Arrowheads<br>MAGIC ITEM&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,8,true);tabItem[2063]=new item(601,'Nightmarewood Bow Staff','Nightmarewood Bow Staff<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[4]=new item(1072,'Earring of the Solstice','Earring of the Solstice<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: EAR&nbsp;&nbsp;<br>AC: 5<br>STA: +5&nbsp;&nbsp;WIS: +8&nbsp;&nbsp;INT: +8&nbsp;&nbsp;HP: +55&nbsp;&nbsp;<br>MANA: +55&nbsp;&nbsp;SV FIRE: +5&nbsp;&nbsp;SV COLD: +5&nbsp;&nbsp;SV MAGIC: +5&nbsp;&nbsp;<br>Recommended level of 51.<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=1298\' target=\'_new\'>Flowing Thought I</a>  (Worn)<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2102]=new item(1244,'Dense Hammered Casing','Dense Hammered Casing<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[26]=new item(689,'Light Burlap Sack','Light Burlap Sack<br>Container: CLOSED<br>LORE ITEM&nbsp;&nbsp;<br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 65%<br>Capacity: 8&nbsp;Size Capacity:&nbsp;LARGE<br>',8,1,false);tabItem[2071]=new item(622,'Malevolent Vambraces','Malevolent Vambraces<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: ARMS&nbsp;&nbsp;<br>AC: 29<br>STR: +4&nbsp;&nbsp;INT: +7&nbsp;&nbsp;MANA: +30&nbsp;&nbsp;SV MAGIC: +3&nbsp;&nbsp;<br>SV POISON: +2<br>WT: &nbsp;6.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: HUM ERU DEF TRL OGR GNM IKS <br>',0,1,false);tabItem[323]=new item(540,'Guardian Leggings','Guardian Leggings<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: LEGS&nbsp;&nbsp;<br>AC: 12<br>STR: +4&nbsp;&nbsp;CHA: +5&nbsp;&nbsp;WIS: +4&nbsp;&nbsp;HP: +15&nbsp;&nbsp;<br>SV FIRE: +15&nbsp;&nbsp;SV COLD: +15&nbsp;&nbsp;SV MAGIC: +5&nbsp;&nbsp;<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[2119]=new item(1128,'Small Ornate Knife','Small Ornate Knife<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[312]=new item(1379,'Nightmarewood Compound Bow','Nightmarewood Compound Bow<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: RANGE&nbsp;&nbsp;<br>Skill: Archery&nbsp;&nbsp;Atk Delay: 36<br>DMG: 30&nbsp;&nbsp;AC: 5<br>STR: +8&nbsp;&nbsp;DEX: +10&nbsp;&nbsp;INT: +8&nbsp;&nbsp;HP: +25&nbsp;&nbsp;<br>MANA: +50&nbsp;&nbsp;SV MAGIC: +15&nbsp;&nbsp;<br>Recommended level of 61.<br>Required level of 46.<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=370\' target=\'_new\'>Shadow Vortex</a>  (Combat)<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Range: 190&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: WAR PAL RNG SHD ROG <br>Race: ALL<br>',0,1,false);tabItem[261]=new item(1153,'A Vial of Prismatic Dye','A Vial of Prismatic Dye<br>MAGIC ITEM&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2082]=new item(871,'Shissar Eggs','Shissar Eggs<br>NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[25]=new item(519,'Ancient Fire Etched Flamberge','Ancient Fire Etched Flamberge<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 2H Slashing&nbsp;&nbsp;Atk Delay: 44<br>DMG: 46&nbsp;&nbsp;AC: 30<br>STR: +25&nbsp;&nbsp;STA: +10&nbsp;&nbsp;HP: +50&nbsp;&nbsp;SV FIRE: +25&nbsp;&nbsp;<br>SV MAGIC: +14&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=1969\' target=\'_new\'>Flame of the Efreeti</a>  (Combat)<br>WT: &nbsp;4.5&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR PAL SHD <br>Race: ALL<br>',0,1,false);tabItem[2062]=new item(1135,'Chunk of Condensed Shadow','Chunk of Condensed Shadow<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,3,true);tabItem[5]=new item(1058,'Amulet of the Storm','Amulet of the Storm<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: NECK&nbsp;&nbsp;<br>AC: 25<br>SV DISEASE: +10&nbsp;&nbsp;SV MAGIC: +25&nbsp;&nbsp;SV POISON: +10<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2072]=new item(516,'Guardian Bracer','Guardian Bracer<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 9<br>DEX: +3&nbsp;&nbsp;STA: +3&nbsp;&nbsp;HP: +10&nbsp;&nbsp;MANA: +10&nbsp;&nbsp;<br>SV FIRE: +5&nbsp;&nbsp;SV COLD: +5&nbsp;&nbsp;SV MAGIC: +4&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[15]=new item(876,'Electrum Plated Band','Electrum Plated Band<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: FINGERS&nbsp;&nbsp;<br>AC: 5<br>STR: +6&nbsp;&nbsp;DEX: +6&nbsp;&nbsp;HP: +45&nbsp;&nbsp;MANA: +35&nbsp;&nbsp;<br>SV MAGIC: +6&nbsp;&nbsp;<br>Recommended level of 35.<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR PAL RNG SHD MNK BRD ROG BST <br>Race: ALL<br>',0,1,false);tabItem[326]=new item(963,'Blue Resistance Stone','Blue Resistance Stone<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: RANGE&nbsp;&nbsp;<br>AC: 1<br>STR: +1&nbsp;&nbsp;DEX: +1&nbsp;&nbsp;STA: +1&nbsp;&nbsp;CHA: +1&nbsp;&nbsp;<br>WIS: +1&nbsp;&nbsp;INT: +1&nbsp;&nbsp;AGI: +1&nbsp;&nbsp;SV COLD: +35&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2081]=new item(1166,'Primal Velium Battle Axe','Primal Velium Battle Axe<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 2H Slashing&nbsp;&nbsp;Atk Delay: 44<br>DMG: 45&nbsp;&nbsp;AC: 17<br>STR: +8&nbsp;&nbsp;DEX: +8&nbsp;&nbsp;STA: +8&nbsp;&nbsp;CHA: +8&nbsp;&nbsp;<br>WIS: +8&nbsp;&nbsp;INT: +8&nbsp;&nbsp;AGI: +8&nbsp;&nbsp;HP: +75&nbsp;&nbsp;<br>MANA: +75&nbsp;&nbsp;SV FIRE: +8&nbsp;&nbsp;SV DISEASE: +8&nbsp;&nbsp;SV COLD: +8&nbsp;&nbsp;<br>SV MAGIC: +8&nbsp;&nbsp;SV POISON: +8<br>Required level of 55.<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=2434\' target=\'_new\'>Avatar</a>  (Combat)<br>WT: &nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: WAR PAL RNG SHD <br>Race: ALL<br>',0,1,false);tabItem[272]=new item(1260,'Storm Giant Head','Storm Giant Head<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[16]=new item(515,'Gnildaria\'s Ring','Gnildaria\'s Ring<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: FINGERS&nbsp;&nbsp;<br>AC: 2<br>CHA: +2&nbsp;&nbsp;INT: +2&nbsp;&nbsp;MANA: +20&nbsp;&nbsp;SV FIRE: +2&nbsp;&nbsp;<br>SV COLD: +2&nbsp;&nbsp;<br>WT: &nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2111]=new item(724,'Carved Inlaid Box','Carved Inlaid Box<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[251]=new item(853,'Strand of Ether','Strand of Ether<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,3,true);tabItem[2033]=new item(531,'Guardian Gauntlets','Guardian Gauntlets<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HANDS&nbsp;&nbsp;<br>AC: 13<br>STR: +3&nbsp;&nbsp;DEX: +5&nbsp;&nbsp;AGI: +2&nbsp;&nbsp;SV FIRE: +5&nbsp;&nbsp;<br>SV COLD: +5&nbsp;&nbsp;<br>WT: &nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[2001]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2043]=new item(516,'Malevolent Bracer','Malevolent Bracer<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 21<br>STR: +1&nbsp;&nbsp;DEX: +3&nbsp;&nbsp;INT: +3&nbsp;&nbsp;HP: +10&nbsp;&nbsp;<br>MANA: +10&nbsp;&nbsp;SV FIRE: +1&nbsp;&nbsp;SV DISEASE: +1&nbsp;&nbsp;<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: HUM ERU DEF TRL OGR GNM IKS <br>',0,1,false);tabItem[2053]=new item(1102,'Several Parabolic Cut Fletchings','Several Parabolic Cut Fletchings<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,11,true);tabItem[2181]=new item(1031,'Destroyed Steel Plate','Destroyed Steel Plate<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[2112]=new item(927,'A Broken Carapace','A Broken Carapace<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[329]=new item(1244,'Massive Underbulk Shell','Massive Underbulk Shell<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: BACK&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;<br>AC: 35<br>WIS: +6&nbsp;&nbsp;INT: +6&nbsp;&nbsp;HP: +15&nbsp;&nbsp;MANA: +15&nbsp;&nbsp;<br>WT: &nbsp;6.5&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: PAL SHD <br>Race: HUM ERU HIE DEF HEF DWF HFL GNM IKS FRG <br>',0,1,false);tabItem[252]=new item(880,'Ring of Frost','Ring of Frost<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: FINGERS&nbsp;&nbsp;<br>INT: +3&nbsp;&nbsp;MANA: +10&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: CLR DRU SHM NEC WIZ MAG ENC <br>Race: ALL<br>',0,1,false);tabItem[2083]=new item(1129,'Crystalline Carapace','Crystalline Carapace<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[270]=new item(1138,'Block of Velium','Block of Velium<br>WT: 18.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2042]=new item(967,'Mark of Execution','Mark of Execution<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.3&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2014]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[322]=new item(588,'Soul Defiler','Soul Defiler<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 1H Slashing&nbsp;&nbsp;Atk Delay: 19<br>DMG: 21&nbsp;&nbsp;<br>STR: +8&nbsp;&nbsp;HP: +75&nbsp;&nbsp;MANA: +75&nbsp;&nbsp;SV DISEASE: +20&nbsp;&nbsp;<br>SV POISON: +20<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=643\' target=\'_new\'>Call of Bones</a>  (Combat)<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: SHD <br>Race: ALL<br>',0,1,false);tabItem[268]=new item(804,'Bone Chips','Bone Chips<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,7,true);tabItem[2183]=new item(1135,'Small Brick of Yttrium Ore','Small Brick of Yttrium Ore<br>WT: 15.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2135]=new item(1253,'Valor Crystals','Valor Crystals<br>MAGIC ITEM&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,6,true);tabItem[2004]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2013]=new item(521,'Ring of Torden','Ring of Torden<br>Container: CLOSED<br>LORE ITEM&nbsp;&nbsp;NO DROP<br>WT: 1.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 0%<br>Capacity: 4&nbsp;Size Capacity:&nbsp;SMALL<br>',4,1,false);tabItem[250]=new item(1253,'Valor Crystals','Valor Crystals<br>MAGIC ITEM&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2044]=new item(545,'Ancient Tarnished Plate Boots','Ancient Tarnished Plate Boots<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: FEET&nbsp;&nbsp;<br>WT: &nbsp;6.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR CLR PAL SHD BRD <br>Race: ALL<br>',0,1,false);tabItem[18]=new item(635,'Ancient Wyvern Hide Leggings','Ancient Wyvern Hide Leggings<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: LEGS&nbsp;&nbsp;<br>AC: 25<br>STR: +5&nbsp;&nbsp;STA: +15&nbsp;&nbsp;AGI: +25&nbsp;&nbsp;HP: +50&nbsp;&nbsp;<br>SV DISEASE: +15&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2054]=new item(732,'Smithing Chisel','Smithing Chisel<br>LORE ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;<br>Skill: Piercing&nbsp;&nbsp;Atk Delay: 30<br>DMG: 2&nbsp;&nbsp;<br>WT: &nbsp;0.7&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD BRD ROG NEC WIZ MAG ENC <br>Race: ALL<br>',0,1,false);tabItem[2086]=new item(581,'Rocksmasher','Rocksmasher<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 2H Blunt&nbsp;&nbsp;Atk Delay: 41<br>DMG: 47&nbsp;&nbsp;AC: 35<br>STA: +25&nbsp;&nbsp;HP: +100&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=998\' target=\'_new\'>Haste</a>  (Worn)<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR PAL SHD <br>Race: ALL<br>',0,1,false);tabItem[2182]=new item(510,'Symbol of Marr','Symbol of Marr<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2084]=new item(1003,'A Crystalline Spider\'s Heart','A Crystalline Spider\'s Heart<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2079]=new item(746,'Guardian Helmet','Guardian Helmet<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HEAD&nbsp;&nbsp;<br>AC: 11<br>STA: +5&nbsp;&nbsp;WIS: +5&nbsp;&nbsp;HP: +20&nbsp;&nbsp;MANA: +20&nbsp;&nbsp;<br>SV DISEASE: +6&nbsp;&nbsp;SV POISON: +6<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[303]=new item(894,'Zazuzh\'s Idol','Zazuzh\'s Idol<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2055]=new item(977,'Small Groove Nocks','Small Groove Nocks<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,11,true);tabItem[12]=new item(846,'Gauntlets of Dragon Slaying','Gauntlets of Dragon Slaying<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HANDS&nbsp;&nbsp;<br>AC: 30<br>STR: +9&nbsp;&nbsp;WIS: +9&nbsp;&nbsp;INT: +9&nbsp;&nbsp;HP: +75&nbsp;&nbsp;<br>MANA: +75&nbsp;&nbsp;SV FIRE: +9&nbsp;&nbsp;SV DISEASE: +9&nbsp;&nbsp;SV COLD: +9&nbsp;&nbsp;<br>SV MAGIC: +9&nbsp;&nbsp;SV POISON: +9<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=998\' target=\'_new\'>Haste</a>  (Worn)<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[264]=new item(598,'Arrow','Arrow<br>Slot: AMMO&nbsp;&nbsp;<br>Skill: Archery&nbsp;&nbsp;Atk Delay: 0<br>DMG: 1&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Range: 25&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD ROG <br>Race: ALL<br>',0,4,true);tabItem[17]=new item(624,'Chestplate of Fiery Might','Chestplate of Fiery Might<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: CHEST&nbsp;&nbsp;<br>AC: 60<br>STR: +7&nbsp;&nbsp;DEX: +7&nbsp;&nbsp;STA: +7&nbsp;&nbsp;CHA: +7&nbsp;&nbsp;<br>WIS: +7&nbsp;&nbsp;INT: +7&nbsp;&nbsp;AGI: +7&nbsp;&nbsp;HP: +30&nbsp;&nbsp;<br>MANA: +30&nbsp;&nbsp;SV FIRE: +7&nbsp;&nbsp;SV DISEASE: +7&nbsp;&nbsp;SV COLD: +7&nbsp;&nbsp;<br>SV MAGIC: +7&nbsp;&nbsp;SV POISON: +7<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=1367\' target=\'_new\'>Fiery Might</a>  (Casting Time: Instant)<br>WT: 24.4&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR PAL SHD <br>Race: ALL<br>',0,1,false);tabItem[13]=new item(742,'Primal Velium War Lance','Primal Velium War Lance<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 2H Piercing&nbsp;&nbsp;Atk Delay: 44<br>DMG: 45&nbsp;&nbsp;AC: 17<br>STR: +8&nbsp;&nbsp;DEX: +8&nbsp;&nbsp;STA: +8&nbsp;&nbsp;CHA: +8&nbsp;&nbsp;<br>WIS: +8&nbsp;&nbsp;INT: +8&nbsp;&nbsp;AGI: +8&nbsp;&nbsp;HP: +75&nbsp;&nbsp;<br>MANA: +75&nbsp;&nbsp;SV FIRE: +8&nbsp;&nbsp;SV DISEASE: +8&nbsp;&nbsp;SV COLD: +8&nbsp;&nbsp;<br>SV MAGIC: +8&nbsp;&nbsp;SV POISON: +8<br>Required level of 55.<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=2434\' target=\'_new\'>Avatar</a>  (Combat)<br>WT: &nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: WAR PAL SHD <br>Race: ALL<br>',0,1,false);tabItem[2080]=new item(869,'Research Notes - Part 3','Research Notes - Part 3<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2032]=new item(606,'Shield of Midnight','Shield of Midnight<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: SECONDARY&nbsp;&nbsp;<br>AC: 55<br>STR: +20&nbsp;&nbsp;INT: +20&nbsp;&nbsp;HP: +50&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: SHD <br>Race: ALL<br>',0,1,false);tabItem[2118]=new item(803,'A Diseased Shell','A Diseased Shell<br>WT: &nbsp;3.0&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[2002]=new item(883,'Planar Fletching Kit','Planar Fletching Kit<br>Container: CLOSED<br><br>WT: 2.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 0%<br>Capacity: 8&nbsp;Size Capacity:&nbsp;LARGE<br>',8,1,false);tabItem[2090]=new item(632,'Shaded Tunic','Shaded Tunic<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: CHEST&nbsp;&nbsp;<br>AC: 9<br>WT: &nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2136]=new item(504,'Spell: Invoke Death','Spell: Invoke Death<br>MAGIC ITEM&nbsp;&nbsp;<br>Charges: 1<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=443\' target=\'_new\'>Invoke Death</a>  (Combat)<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD NEC <br>Race: ALL<br>',0,1,false);tabItem[269]=new item(598,'Arrow','Arrow<br>Slot: AMMO&nbsp;&nbsp;<br>Skill: Archery&nbsp;&nbsp;Atk Delay: 0<br>DMG: 1&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Range: 25&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD ROG <br>Race: ALL<br>',0,20,true);tabItem[2131]=new item(504,'Spell: Augmentation of Death','Spell: Augmentation of Death<br>MAGIC ITEM&nbsp;&nbsp;<br>Charges: 1<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=1414\' target=\'_new\'>Augmentation of Death</a>  (Combat)<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD NEC <br>Race: ALL<br>',0,1,false);tabItem[2031]=new item(540,'Moktor Greaves','Moktor Greaves<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: LEGS&nbsp;&nbsp;<br>AC: 21<br>STR: +10&nbsp;&nbsp;STA: +10&nbsp;&nbsp;WIS: +6&nbsp;&nbsp;HP: +15&nbsp;&nbsp;<br>Recommended level of 50.<br>WT: &nbsp;5.6&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[2106]=new item(863,'Words of Knowledge','Words of Knowledge<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,true);tabItem[2087]=new item(1003,'A Razorfiend\'s Heart','A Razorfiend\'s Heart<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[254]=new item(570,'Iron Ration','Iron Ration<br>WT: &nbsp;0.6&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,20,true);tabItem[2186]=new item(592,'Embalmers Skinning Knife','Embalmers Skinning Knife<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;<br>Skill: Piercing&nbsp;&nbsp;Atk Delay: 25<br>DMG: 4&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=318\' target=\'_new\'>Summon Bandages</a>  (Combat)<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR RNG SHD BRD ROG NEC WIZ MAG ENC BST <br>Race: ALL<br>',0,1,false);tabItem[2040]=new item(1080,'Shrine Key','Shrine Key<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.3&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2050]=new item(1096,'Geerlok Planing Tool','Geerlok Planing Tool<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill Mod: Fletching +5 %<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[8]=new item(660,'Volatilis Wing Cloak','Volatilis Wing Cloak<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: BACK&nbsp;&nbsp;<br>AC: 10<br>AGI: +20&nbsp;&nbsp;HP: +15&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=1742\' target=\'_new\'>Bobbing Corpse</a>  (Must Equip. Casting Time: 15.0)<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: SHD NEC <br>Race: HUM ERU DEF TRL OGR GNM IKS <br>',0,1,false);tabItem[2130]=new item(504,'Spell: Pact of Hate','Spell: Pact of Hate<br>MAGIC ITEM&nbsp;&nbsp;<br>Charges: 1<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=3488\' target=\'_new\'>Pact of Hate</a>  (Combat)<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: ALL<br>',0,1,false);tabItem[2187]=new item(1031,'Shattered Seal of Warding','Shattered Seal of Warding<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2045]=new item(894,'Trakanon Idol','Trakanon Idol<br>NO DROP&nbsp;&nbsp;<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[327]=new item(976,'Shield of Fury','Shield of Fury<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: SECONDARY&nbsp;&nbsp;<br>AC: 40<br>STR: +10&nbsp;&nbsp;INT: +15&nbsp;&nbsp;HP: +75&nbsp;&nbsp;SV FIRE: +5&nbsp;&nbsp;<br>SV DISEASE: +5&nbsp;&nbsp;SV COLD: +5&nbsp;&nbsp;SV MAGIC: +5&nbsp;&nbsp;SV POISON: +5<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: ALL<br>',0,1,false);tabItem[2075]=new item(624,'Sentry Breastplate','Sentry Breastplate<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: CHEST&nbsp;&nbsp;<br>AC: 20<br>DEX: +6&nbsp;&nbsp;AGI: +6&nbsp;&nbsp;SV FIRE: +8&nbsp;&nbsp;SV MAGIC: +8&nbsp;&nbsp;<br>WT: &nbsp;8.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR CLR PAL RNG SHD BRD ROG SHM <br>Race: ALL<br>',0,1,false);tabItem[22]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2189]=new item(575,'Shissar Knight\'s Sword','Shissar Knight\'s Sword<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 1H Slashing&nbsp;&nbsp;Atk Delay: 22<br>DMG: 10&nbsp;&nbsp;<br>STR: +5&nbsp;&nbsp;<br>WT: &nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: PAL SHD <br>Race: ALL<br>',0,1,false);tabItem[2076]=new item(549,'Guardian Girdle','Guardian Girdle<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WAIST&nbsp;&nbsp;<br>AC: 12<br>STA: +8&nbsp;&nbsp;CHA: +5&nbsp;&nbsp;HP: +10&nbsp;&nbsp;SV MAGIC: +5&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD MNK BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[2006]=new item(892,'Planar Sewing Kit','Planar Sewing Kit<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 0%<br>Capacity: 8&nbsp;Size Capacity:&nbsp;GIANT<br>',8,1,false);tabItem[2085]=new item(869,'Research Notes - Part 2','Research Notes - Part 2<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[9]=new item(520,'Clawed Guardian Bracer','Clawed Guardian Bracer<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 15<br>STR: +20&nbsp;&nbsp;HP: +50&nbsp;&nbsp;SV FIRE: +10&nbsp;&nbsp;SV DISEASE: +10&nbsp;&nbsp;<br>SV COLD: +10&nbsp;&nbsp;SV MAGIC: +10&nbsp;&nbsp;SV POISON: +10<br>WT: &nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD MNK BRD ROG BST <br>Race: ALL<br>',0,1,false);tabItem[265]=new item(812,'Bandages','Bandages<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,20,true);tabItem[2105]=new item(969,'Multifaceted Reflective Rock','Multifaceted Reflective Rock<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2034]=new item(1046,'Polished Mithril Torque','Polished Mithril Torque<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: NECK&nbsp;&nbsp;<br>AC: 7<br>WIS: +13&nbsp;&nbsp;INT: +13&nbsp;&nbsp;<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD MNK BRD ROG BST <br>Race: ALL<br>',0,1,false);tabItem[253]=new item(570,'Iron Ration','Iron Ration<br>WT: &nbsp;0.6&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,13,true);tabItem[2049]=new item(734,'A Glowing Orb of Luclinite','A Glowing Orb of Luclinite<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2035]=new item(752,'Sarnak Earring of Station','Sarnak Earring of Station<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: EAR&nbsp;&nbsp;<br>AC: 5<br>STR: +5&nbsp;&nbsp;<br>WT: &nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[308]=new item(646,'Ssraeshzian Insignia','Ssraeshzian Insignia<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2003]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[19]=new item(524,'Malevolent Boots','Malevolent Boots<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: FEET&nbsp;&nbsp;<br>AC: 28<br>STR: +5&nbsp;&nbsp;INT: +3&nbsp;&nbsp;<br>WT: &nbsp;5.5&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: SHD <br>Race: HUM ERU DEF TRL OGR GNM IKS <br>',0,1,false);tabItem[2041]=new item(1081,'Key to Charasis','Key to Charasis<br>NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2036]=new item(844,'Deathbringer\'s Boots','Deathbringer\'s Boots<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: FEET&nbsp;&nbsp;<br>AC: 10<br>STR: +5&nbsp;&nbsp;INT: +2&nbsp;&nbsp;SV POISON: +5<br>WT: &nbsp;5.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: ALL<br>',0,1,false);tabItem[2088]=new item(972,'A piece of the crystalline globe','A piece of the crystalline globe<br>LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: NONE<br>Race: NONE<br>',0,1,false);tabItem[2078]=new item(597,'Twisted Longbow','Twisted Longbow<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: RANGE&nbsp;&nbsp;<br>Skill: Archery&nbsp;&nbsp;Atk Delay: 38<br>DMG: 32&nbsp;&nbsp;AC: 5<br>Magic&nbsp;DMG:&nbsp;2<br>STR: +5&nbsp;&nbsp;WIS: +5&nbsp;&nbsp;INT: +5&nbsp;&nbsp;HP: +35&nbsp;&nbsp;<br>MANA: +35&nbsp;&nbsp;SV MAGIC: +10&nbsp;&nbsp;<br>Recommended level of 50.<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Range: 185&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: WAR PAL RNG SHD ROG <br>Race: ALL<br>',0,1,false);tabItem[2056]=new item(1110,'Bundled Bone Arrow Shafts','Bundled Bone Arrow Shafts<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,11,true);tabItem[11]=new item(507,'Thunderstone','Thunderstone<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: RANGE&nbsp;&nbsp;<br>AC: 15<br>STR: +10&nbsp;&nbsp;DEX: +5&nbsp;&nbsp;STA: +10&nbsp;&nbsp;AGI: +5&nbsp;&nbsp;<br>SV MAGIC: +15&nbsp;&nbsp;<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2012]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[2107]=new item(1096,'Planing Tool','Planing Tool<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2005]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[255]=new item(1091,'Brick of Electrified Copper','Brick of Electrified Copper<br>WT: &nbsp;5.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,true);tabItem[2051]=new item(1035,'File','File<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[267]=new item(1394,'Zraxthril Forged Axe','Zraxthril Forged Axe<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;<br>Skill: 1H Slashing&nbsp;&nbsp;Atk Delay: 38<br>DMG: 10&nbsp;&nbsp;<br>STR: +2&nbsp;&nbsp;WIS: +1&nbsp;&nbsp;HP: +5&nbsp;&nbsp;MANA: +5&nbsp;&nbsp;<br>WT: &nbsp;7.5&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR PAL RNG SHD BRD ROG <br>Race: ALL<br>',0,1,false);tabItem[2097]=new item(504,'Backpack Pattern','Backpack Pattern<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,3,true);tabItem[2057]=new item(883,'Collapsed Fletching Kit','Collapsed Fletching Kit<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=3610\' target=\'_new\'>Unfold Fletching Kit</a>  (Casting Time: 1.0)<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[266]=new item(504,'Spell: Spear of Decay','Spell: Spear of Decay<br>MAGIC ITEM&nbsp;&nbsp;<br>Charges: 1<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=3491\' target=\'_new\'>Spear of Decay</a>  (Combat)<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: ALL<br>',0,1,false);tabItem[2052]=new item(1100,'Silver Tipped Arrowheads','Silver Tipped Arrowheads<br>MAGIC ITEM&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,11,true);tabItem[2038]=new item(1057,'Nightknife\'s Armband','Nightknife\'s Armband<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: ARMS&nbsp;&nbsp;<br>AC: 10<br>STR: +5&nbsp;&nbsp;HP: +30&nbsp;&nbsp;<br>Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=998\' target=\'_new\'>Haste</a>  (Worn)<br>WT: &nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR PAL RNG SHD BRD ROG NEC WIZ MAG ENC BST <br>Race: ALL<br>',0,1,false);tabItem[328]=new item(798,'Imbued Granite Spauldors','Imbued Granite Spauldors<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: SHOULDERS&nbsp;&nbsp;<br>AC: 20<br>SV FIRE: +10&nbsp;&nbsp;SV DISEASE: +10&nbsp;&nbsp;SV COLD: +10&nbsp;&nbsp;SV MAGIC: +10&nbsp;&nbsp;<br>SV POISON: +10<br>WT: 19.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL RNG SHD MNK BRD ROG SHM <br>Race: HUM BAR ERU ELF HIE DEF HEF VAH FRG <br>',0,1,false);tabItem[256]=new item(1138,'Brick of Ethereal Energy','Brick of Ethereal Energy<br>WT: 10.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,3,true);tabItem[2007]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[325]=new item(742,'Runed Bone Fork','Runed Bone Fork<br>LORE ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;RANGE&nbsp;&nbsp;<br>Skill: Piercing&nbsp;&nbsp;Atk Delay: 29<br>DMG: 5&nbsp;&nbsp;<br>SV FIRE: +10&nbsp;&nbsp;SV COLD: +10&nbsp;&nbsp;SV MAGIC: +10&nbsp;&nbsp;<br>WT: &nbsp;4.5&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR RNG SHD BRD ROG <br>Race: ALL<br>',0,1,false);tabItem[20]=new item(549,'Axgoreth\'s Belt of Defense','Axgoreth\'s Belt of Defense<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WAIST&nbsp;&nbsp;<br>AC: 20<br>STR: +15&nbsp;&nbsp;WIS: +15&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR PAL RNG SHD MNK BRD ROG BST <br>Race: ALL<br>',0,1,false);tabItem[2039]=new item(531,'Malevolent Gauntlets','Malevolent Gauntlets<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: HANDS&nbsp;&nbsp;<br>AC: 21<br>STR: +3&nbsp;&nbsp;DEX: +1&nbsp;&nbsp;STA: +1&nbsp;&nbsp;INT: +3&nbsp;&nbsp;<br>AGI: +1&nbsp;&nbsp;MANA: +10&nbsp;&nbsp;SV MAGIC: +2&nbsp;&nbsp;<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: SHD <br>Race: HUM ERU HIE DEF HEF TRL OGR GNM IKS <br>',0,1,false);tabItem[2067]=new item(601,'Nightmarewood Bow Staff','Nightmarewood Bow Staff<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: LARGE<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2010]=new item(565,'Hand Made Backpack','Hand Made Backpack<br>Container: CLOSED<br><br>WT: 3.0&nbsp;&nbsp;&nbsp;&nbsp;Weight Reduction: 10%<br>Capacity: 10&nbsp;Size Capacity:&nbsp;LARGE<br>',10,1,false);tabItem[10]=new item(620,'Bracelet of the Sky','Bracelet of the Sky<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 22<br>STR: +5&nbsp;&nbsp;HP: +50&nbsp;&nbsp;SV FIRE: +7&nbsp;&nbsp;SV DISEASE: +7&nbsp;&nbsp;<br>SV COLD: +7&nbsp;&nbsp;SV MAGIC: +7&nbsp;&nbsp;SV POISON: +7<br>Focus Effect: <a href=\'http://www.magelo.com/eq_spell_info.jsp?num=2362\' target=\'_new\'>Affliction Haste III</a><br>WT: &nbsp;8.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2077]=new item(516,'Guardian Bracer','Guardian Bracer<br>MAGIC ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 9<br>DEX: +3&nbsp;&nbsp;STA: +3&nbsp;&nbsp;HP: +10&nbsp;&nbsp;MANA: +10&nbsp;&nbsp;<br>SV FIRE: +5&nbsp;&nbsp;SV COLD: +5&nbsp;&nbsp;SV MAGIC: +4&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: WAR CLR PAL SHD BRD <br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[0]=new item(895,'Intricate Wooden Figurine','Intricate Wooden Figurine<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: CHARM&nbsp;&nbsp;<br>AC: 20<br>STR: +15&nbsp;&nbsp;STA: +15&nbsp;&nbsp;INT: +10&nbsp;&nbsp;AGI: +10&nbsp;&nbsp;<br>HP: +90&nbsp;&nbsp;MANA: +80&nbsp;&nbsp;SV FIRE: +10&nbsp;&nbsp;SV DISEASE: +10&nbsp;&nbsp;<br>SV COLD: +10&nbsp;&nbsp;SV MAGIC: +10&nbsp;&nbsp;SV POISON: +10<br>Required level of 51.<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: SHD <br>Race: ALL<br>',0,1,false);
+		
+	for(var i=0;i<=21;i++)
+	{
+		document.write("<div id='slot-ekip-"+i+"' class='slot'>");
+		document.write("<div>&nbsp;"+slot_name[i]+"<\/div><img ");
+		if(tabItem[i]!=null)
+			document.write("style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+		else
+			document.write("border=0 src='/res/eq/misc/money_mask.png'>");
+		document.write("<\/div>");	
+	}
+	
+	for(var i=22;i<30;i++)
+	{
+		document.write("<div id='slot-inv-"+(i-21)+"' class='slot'>");
+		if(tabItem[i]==null)
+			document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+		else if(tabItem[i].capacite==0)
+		{
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+			if(tabItem[i].stackable==true)
+			{
+				if(ieWin32)
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				else
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+			}
+		}
+		else 	
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+		document.write("<\/div>");
+	}
+</script>
+
+<div id="block1" class="block-style">
+Vazzeraal<br>63&nbsp;Shadowknight<br>Innoruuk
+</div>
+
+<div id="block2" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style">
+<tr>
+	<td>HP&nbsp;</td>
+	<td id="hp"></td>
+	
+</tr>
+<tr>
+	<td>AC&nbsp;</td>
+	<td id="ac"></td>
+</tr>
+<tr>
+	<td>ATK&nbsp;</td>
+	<td id="atk"></td>
+</tr>
+</table>
+</div>
+
+<div id="next-level" class="block-style">
+	NEXT LEVEL
+</div>
+
+<div id="bulle-xp">
+	<div style="line-height:0;"><img border=0 alt='bubble' src='/res/eq/misc/bulle.png'></div>
+</div>
+
+<div id="str" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>STR&nbsp;&nbsp;&nbsp;</td>
+	<td id="str-label"></td>	
+</tr>
+<tr>
+	<td>STA&nbsp;&nbsp;&nbsp;</td>
+	<td id="sta"></td>
+</tr>
+<tr>
+	<td>AGI&nbsp;&nbsp;&nbsp;</td>
+	<td id="agi"></td>
+</tr>
+<tr>
+	<td>DEX&nbsp;&nbsp;&nbsp;</td>
+	<td id="dex"></td>
+</tr>
+<tr>
+	<td>WIS&nbsp;&nbsp;&nbsp;</td>
+	<td id="wis"></td>
+</tr>
+<tr>
+	<td>INT&nbsp;&nbsp;&nbsp;</td>
+	<td id="int"></td>
+</tr>
+<tr>
+	<td>CHA&nbsp;&nbsp;&nbsp;</td>
+	<td id="cha"></td>
+</tr>
+</table>
+</div>
+
+<div id="pr">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>POISON&nbsp;&nbsp;&nbsp;</td>
+	<td id="RP"></td>
+</tr>
+<tr>
+	<td>MAGIC&nbsp;&nbsp;&nbsp;</td>
+	<td id="RM"></td>
+</tr>
+<tr>
+	<td>DISEASE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RD"></td>
+</tr>
+<tr>
+	<td>FIRE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RF"></td>
+</tr>
+<tr>
+	<td>COLD&nbsp;&nbsp;&nbsp;</td>
+	<td id="RC"></td>
+</tr>
+</table>
+</div>
+
+<div id="money-platinum" class="money">
+	<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-gold" class="money">
+	<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-silver" class="money">
+	<div class="money-img"><img src="/res/eq/misc/silver.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-copper" class="money">
+	<div class="money-img"><img src="/res/eq/misc/copper.png"></div>
+	<div class="money-text">0</div>
+</div>
+
+<div id="macaron">
+	<img title='Authentic profile' alt='Authentic profile' src='/res/eq/misc/authentic.gif'>
+</div>
+<div id="last-updated"><script type="text/javascript">if(lastUpdated!=null) document.write(lastUpdated.toLocaleString());</script></div>
+
+<div style="position: absolute;top: 173px;left: 8px;" class="button" onclick="processAdv();">Alt Adv</div>
+<div style="position: absolute;top: 190px;left: 8px;" class="button" onclick="processMod();">Modifiers</div>
+
+<div style="position: absolute;top: 218px;left: 8px;" class="button" onclick="showSpell();">Spells</div>
+<div style="position: absolute;top: 235px;left: 8px;" class="button" onclick="showFocus();">Focus</div>
+
+<div style="position: absolute;top: 263px;left: 8px;" class="button" onclick="showSkill();">Skills</div>
+<div style="position: absolute;top: 280px;left: 8px;" class="button" onclick="showKeys();">Keys</div>
+<div style="position: absolute;top: 297px;left: 8px;" class="button" onclick="showFlags();">Flags</div>
+<div style='position: absolute;top: 314px;left: 8px;' class='button' onclick='showBank();'>Bank</div>
+
+<div style='position: absolute;top: 342px;left: 8px;' class='button' onclick='showBio();'>Bio</div>
+
+<div style="position: absolute;top: 378px;left: 8px;" class="button" onclick="window.close();">Done</div>
+
+</div>
+
+<div id="adv" class="box" style="visibility: hidden;">
+	<div id="adv-text">Ability Type:</div>
+	<div id="adv-cat"></div>
+	
+	<div style="position: absolute;top: 9px;left: 80px;" class="button" onclick="ability_cat=1;processAdv();">General</div>
+	<div style="position: absolute;top: 9px;left: 130px;" class="button"  onclick="ability_cat=2;processAdv();">Arch</div>
+	<div style="position: absolute;top: 9px;left: 180px;" class="button"  onclick="ability_cat=3;processAdv();">Class</div>
+	<div style="position: absolute;top: 9px;left: 230px;" class="button"  onclick="ability_cat=4;processAdv();">PoP Adv</div>
+	<div style="position: absolute;top: 9px;left: 280px;" class="button"  onclick="ability_cat=5;processAdv();">PoP Ab</div>
+	<div id="adv-data"></div>
+	
+	<div style="color: #E0E0E0;	font-family: Arial;font-size: 10px;position: absolute;top: 150px;left: 235px;">
+		
+		<table cellpadding="0" cellspacing="0" class="textFont">
+		<tr><td>AA Points:</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		<tr><td>Total Pts Spent:&nbsp;</td><td align="right" style="color:#FFFF00;">35</td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td>Total AA Pts:</td><td align="right" style="color:#FFFF00;">35</td></tr>
+		</table>
+	</div>
+	
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="bio" class="box" style="visibility: hidden;">
+	<div id="bio-text">
+		
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="skill" class="box" style="visibility: hidden;">
+	<div id="skill-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 200px">Skill</td><td align="center">Value</td></tr></table></div>
+	<div id="skill-data">
+		<table style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		<tr><td style='width: 200px'>1H Blunt</td><td align='center'>221</td></tr><tr><td style='width: 200px'>1H Slashing</td><td align='center'>225</td></tr><tr><td style='width: 200px'>2H Blunt</td><td align='center'>225</td></tr><tr><td style='width: 200px'>2H Slashing</td><td align='center'>225</td></tr><tr><td style='width: 200px'>Abjuration</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Alteration</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Archery</td><td align='center'>75</td></tr><tr><td style='width: 200px'>Bind Wound</td><td align='center'>186</td></tr><tr><td style='width: 200px'>Bash</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Channeling</td><td align='center'>215</td></tr><tr><td style='width: 200px'>Conjuration</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Defense</td><td align='center'>252</td></tr><tr><td style='width: 200px'>Disarm</td><td align='center'>70</td></tr><tr><td style='width: 200px'>Divination</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Dodge</td><td align='center'>170</td></tr><tr><td style='width: 200px'>Double Attack</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Evocation</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Hand To Hand</td><td align='center'>16</td></tr><tr><td style='width: 200px'>Hide</td><td align='center'>75</td></tr><tr><td style='width: 200px'>Meditate</td><td align='center'>226</td></tr><tr><td style='width: 200px'>Offense</td><td align='center'>225</td></tr><tr><td style='width: 200px'>Parry</td><td align='center'>205</td></tr><tr><td style='width: 200px'>Piercing</td><td align='center'>225</td></tr><tr><td style='width: 200px'>Riposte</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Sense Heading</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Swimming</td><td align='center'>191</td></tr><tr><td style='width: 200px'>Fishing</td><td align='center'>1</td></tr><tr><td style='width: 200px'>Baking</td><td align='center'>1</td></tr><tr><td style='width: 200px'>Tailoring</td><td align='center'>152</td></tr><tr><td style='width: 200px'>Blacksmithing</td><td align='center'>116</td></tr><tr><td style='width: 200px'>Fletching</td><td align='center'>217</td></tr><tr><td style='width: 200px'>Brewing</td><td align='center'>62</td></tr><tr><td style='width: 200px'>Alcohol Tolerance</td><td align='center'>181</td></tr><tr><td style='width: 200px'>Begging</td><td align='center'>5</td></tr><tr><td style='width: 200px'>Jewellery</td><td align='center'>10</td></tr><tr><td style='width: 200px'>Taunt</td><td align='center'>220</td></tr><tr><td style='width: 200px'>Common Tongue</td><td align='center'>100</td></tr><tr><td style='width: 200px'>Elvish</td><td align='center'>42</td></tr><tr><td style='width: 200px'>Dark Elvish</td><td align='center'>100</td></tr><tr><td style='width: 200px'>Elder Elvish</td><td align='center'>42</td></tr><tr><td style='width: 200px'>Elder Teir\'Dal</td><td align='center'>1</td></tr><tr><td style='width: 200px'>Faerie</td><td align='center'>1</td></tr><tr><td style='width: 200px'>Dragon</td><td align='center'>42</td></tr><tr><td style='width: 200px'>Elder Dragon</td><td align='center'>100</td></tr><tr><td style='width: 200px'>Dark Speech</td><td align='center'>100</td></tr>
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="spell" class="box" style="visibility: hidden;">
+	<div id="spell-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 40px" align="center">Level</td><td>Spell</td></tr></table></div>
+	<div id="spell-data" class="textFont">
+		<table class="textFont" style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		<tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>63</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3403'>Aura of Pain</a></td></tr><tr><td style='width: 40px'  align='center'>63</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3405'>Terror of Thule</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>62</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=456'>Bond of Death</a></td></tr><tr><td style='width: 40px'  align='center'>62</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3428'>Deny Undead</a></td></tr><tr><td style='width: 40px'  align='center'>62</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3401'>Touch of Volatis</a></td></tr><tr><td style='width: 40px'  align='center'>62</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3408'>Zevfeer's Bite</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>61</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3406'>Aura of Darkness</a></td></tr><tr><td style='width: 40px'  align='center'>61</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3400'>Festering Darkness</a></td></tr><tr><td style='width: 40px'  align='center'>61</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=1411'>Improved Invis to Undead</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>60</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=2580'>Cloak of the Akheva</a></td></tr><tr><td style='width: 40px'  align='center'>60</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=1460'>Death Peace</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>58</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=2892'>Deathly Temptation</a></td></tr><tr><td style='width: 40px'  align='center'>58</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=2579'>Torrent of Fatigue</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>56</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=2578'>Torrent of Pain</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>55</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=1459'>Shroud of Death</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>52</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=2576'>Mental Corruption</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>51</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=199'>Harmshield</a></td></tr><tr><td style='width: 40px'  align='center'>51</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=3'>Summon Corpse</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>50</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=1458'>Shroud of Pain</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>49</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=692'>Life Leech</a></td></tr><tr><td colspan=2 style='height=5px'></td></tr><tr><td style='width: 40px'  align='center'>39</td><td><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=1457'>Shroud of Hate</a></td></tr>
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="focus" class="box" style="visibility: hidden;">
+	<div id="focus-header">Focus:</div>
+	<div id="focus-data" class="textFont">
+		<li><a target='new' href='http://www.magelo.com/eq_spell_info.jsp?num=2362'>Affliction Haste III</a><br>
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="mod" class="box" style="visibility: hidden;">
+	<div id="mod-header" style="font-size:10px">Stat:</div>
+	<div id="mod-table-header">
+		<table style="width: 270px;color: #E0E0E0;font-family: Arial;font-size: 11px;" cellpadding="0" cellspacing="0">
+			<tr><td>Item name</td><td style='width:45px' align='center'>Slot</td><td style='width:35px' align='center'>From</td><td align='center' style='width:35px'>Value</td></tr>
+		</table>
+	</div>
+	
+	<div style="position: absolute;top: 20px;left: 8px;" class="button"  onclick="mod_cat='hp';processMod();">HP</div>
+	<div style="position: absolute;top: 37px;left: 8px;" class="button"  onclick="mod_cat='mana';processMod();">MANA</div>
+	<div style="position: absolute;top: 54px;left: 8px;" class="button"  onclick="mod_cat='ac';processMod();">AC</div>
+	<div style="position: absolute;top: 71px;left: 8px;" class="button"  onclick="mod_cat='atk';processMod();">ATK</div>
+	
+	<div style="position: absolute;top: 94px;left: 8px;" class="button"  onclick="mod_cat='str';processMod();">STR</div>
+	<div style="position: absolute;top: 111px;left: 8px;" class="button"  onclick="mod_cat='sta';processMod();">STA</div>
+	<div style="position: absolute;top: 128px;left: 8px;" class="button"  onclick="mod_cat='agi';processMod();">AGI</div>
+	<div style="position: absolute;top: 145px;left: 8px;" class="button"  onclick="mod_cat='dex';processMod();">DEX</div>
+	<div style="position: absolute;top: 162px;left: 8px;" class="button"  onclick="mod_cat='wis';processMod();">WIS</div>
+	<div style="position: absolute;top: 179px;left: 8px;" class="button"  onclick="mod_cat='int';processMod();">INT</div>
+	<div style="position: absolute;top: 196px;left: 8px;" class="button"  onclick="mod_cat='cha';processMod();">CHA</div>
+	
+	<div style="position: absolute;top: 219px;left: 8px;" class="button"  onclick="mod_cat='mr';processMod();">MR</div>
+	<div style="position: absolute;top: 236px;left: 8px;" class="button"  onclick="mod_cat='dr';processMod();">DR</div>
+	<div style="position: absolute;top: 253px;left: 8px;" class="button"  onclick="mod_cat='pr';processMod();">PR</div>
+	<div style="position: absolute;top: 270px;left: 8px;" class="button"  onclick="mod_cat='fr';processMod();">FR</div>
+	<div style="position: absolute;top: 287px;left: 8px;" class="button"  onclick="mod_cat='cr';processMod();">CR</div>
+	
+	<div style="position: absolute;top: 310px;left: 8px;" class="button"  onclick="mod_cat='hp+';processMod();">HP+</div>
+	<div style="position: absolute;top: 327px;left: 8px;" class="button"  onclick="mod_cat='mana+';processMod();">MANA+</div>
+	<div style="position: absolute;top: 344px;left: 8px;" class="button"  onclick="mod_cat='haste';processMod();">HASTE</div>
+	
+	
+	<div id="mod-data"></div>
+	
+	
+	
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="keys" class="box" style="visibility: hidden;">
+	<div id="keys-header">Keys for:</div>
+	<div id="keys-data" class="textFont">
+		<li>Cobalt Scar<br><li>Sebilis<br><li>Sleeper's Tomb<br><li>The Howling Stones<br>
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="flags" class="box" style="visibility: hidden;">
+	<div id="flags-header"><table style="width: 318px;color: #E0E0E0;font-family: Arial;font-size: 11px;" cellpadding="0" cellspacing="0"><tr><td width="270px">Access to:</td><td width="*" align="center">Granted:</td></tr></table></div>
+	<div id="flags-data" class="textFont">
+		<table style="width: 318px;color: #E0E0E0;font-family: Arial;font-size: 11px;" cellpadding="0" cellspacing="0">
+		<tr><td width='270px'>Full PoV/PoS access</td><td width='*' align='center'><span style='color: #00FF00'>Yes</span><tr><td width='270px'>PoJ Seventh Hammer</td><td width='*' align='center'>No<tr><td width='270px'>PoI Factory</td><td width='*' align='center'>No<tr><td width='270px'>Plane of Tactics</td><td width='*' align='center'>No<tr><td width='270px'>Crypt of Decay for exp only</td><td width='*' align='center'>No<tr><td width='270px'>Crypt of Decay</td><td width='*' align='center'>No<tr><td width='270px'>Crypt of Terris Thule</td><td width='*' align='center'>No<tr><td width='270px'>Plane of Torment</td><td width='*' align='center'>No<tr><td width='270px'>Torden, Bastion of Thunder</td><td width='*' align='center'>No<tr><td width='270px'>Halls of Honor for exp only</td><td width='*' align='center'>No<tr><td width='270px'>Halls of Honor</td><td width='*' align='center'>No<tr><td width='270px'>Plane of Torment and Saryrn</td><td width='*' align='center'>No<tr><td width='270px'>To get past Rallos Zek</td><td width='*' align='center'>No<tr><td width='270px'>HoHb, Temple of Marr</td><td width='*' align='center'>No<tr><td width='270px'>PoEarth/PoAir/PoWater</td><td width='*' align='center'>No<tr><td width='270px'>Solusek Ro</td><td width='*' align='center'>No<tr><td width='270px'>Plane of Fire</td><td width='*' align='center'>No<tr><td width='270px'>Plane of Time</td><td width='*' align='center'>No
+		</table>
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+
+
+
+
+</div>
+
+<!-- fenetre magelo             -->
+<div id="magelo-alpha"></div>
+<div id="magelo">
+
+<div id="magelo-info" style="position: absolute;top:3px;line-height: 12px;">
+<span style="color:#FBFB00;font-size: 12px;">MOTD: Welcome to the Magelo Profile System !</span><br>
+<span class="textFont" style="font-size: 9px;">You can visit Magelo <a href="http://www.magelo.com" target="new">here</a></span>
+
+<table class="textFont" cellpadding="0" cellspacing="0" width="330">
+<tr>
+<td valign="top" width="190">
+	
+<table class='textFont' style='line-height: 0.95;' cellpadding=1 cellspacing=0>
+<tr><td height=7></td></tr><tr><td>&nbsp;</td><td>Base</td><td>Direct</td><td>Indirect</td><td>Total</td></tr>
+<tr><td>HP</td><td>2090</td><td>600</td><td>366</td><td>3056</td></tr>
+<tr><td>MANA</td><td>1524</td><td>370</td><td>655</td><td>2549</td></tr>		
+</table>
+<br>
+<table style='line-height: 0.95;' class='textFont' cellpadding=1 cellspacing=0>
+<tr><td></td></tr><tr><td>&nbsp;</td><td align="center">Base</td><td align="center">Item</td><td align="center">Total</td></tr>
+<tr><td>HP Regen</td><td align="center">6/9</td><td align="center">0</td><td align="center">6/9</td></tr>
+<tr><td colspan="4" style="height: 1px;"></td></tr>
+<tr><td colspan='4'>Regen of 3 mana per tick (FT 1)</td></tr><tr><td colspan='4'>Permanent haste: 41%</td></tr>
+</table>
+
+</td>
+<td valign="top">
+	Current profile:Main<br>
+	
+</td>
+</tr></table>
+</div>
+
+<div id="screenshot" style="position: absolute;visibility: hidden;">
+		<div id="screenshot-text" class="textFont"></div>
+		<div style="position: absolute;top: 132px;left: 130px;" class="button"  onclick="hideScreenshot();">Done</div>
+</div>
+
+</div>
+
+<!-- bank                -->
+<div id="bank-alpha"></div>
+<div id="bank">
+	<script type="text/javascript">
+		for(var i=2000;i<2016;i++)
+		{
+			document.write("<div id='bank-slot-"+(i-1999)+"' class='slot'>");
+			if(tabItem[i]==null)
+				document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+			else if(tabItem[i].capacite==0)
+			{
+				document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+				if(tabItem[i].stackable==true)
+				{
+					if(ieWin32)
+						document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+					else
+						document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				}
+			}
+			else 	
+				document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+			document.write("<\/div>");
+		}
+	</script>
+	
+	<div id="bank-platinum" class="bank-money">
+		<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+		<div class="money-text">0</div>
+	</div>
+	<div id="bank-gold" class="bank-money">
+		<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+		<div class="money-text">0</div>	
+	</div>
+	
+	<div style="position: absolute;top: 194px;left: 112px;" class="button"  onclick="hideBank();">Done</div>
+</div>
+
+<!-- bag                        -->
+<div id="bag-alpha"></div>
+<div id="bag"></div>
+
+<div id="debug-alpha"></div>
+<div id="debug">
+&nbsp;Str: 78&nbsp;Offense: 225(1.0)&nbsp;Weapon: 225(1.0)&nbsp;Correction ATK: 0<br>
+&nbsp;Sta: 82&nbsp;Hp boost: 1.0&nbsp;Total HP: 3056<br>
+&nbsp;Agi: 90&nbsp;Defense: 252(1.0)<br>
+<br>
+<table cellpadding="1" cellspacing="0" class="textFont">
+<tr><td colspan="10">AC formula:</td></tr>
+<tr><td>&nbsp;</td><td>Agi</td><td align="center">T</td><td>Items</td><td>Avoidance</td><td>Mitigation</td><td>&nbsp;Total&nbsp;</td><td>+AC</td></tr>
+<tr><td>Base</td><td align='center'>90</td><td align='center'>42</td><td align='center'>0</td><td align='center'>490</td><td align='center'>84</td><td align='center'>677</td><td>677</td></tr><tr><td>Base + mod1</td><td align='center'>90</td><td align='center'>42</td><td align='center'>398</td><td align='center'>490</td><td align='center'>614</td><td align='center'>1303</td><td>626</td></tr><tr><td>Base + mod2</td><td align='center'>165</td><td align='center'>56</td><td align='center'>0</td><td align='center'>504</td><td align='center'>84</td><td align='center'>694</td><td>17</td></tr>
+<tr><td colspan="8"><hr></td></tr>
+<tr><td colspan="7">Total AC from formula:</td><td>1320</td></tr>
+<tr><td colspan="7">Correction value for AC:</td><td>0</td></tr>
+<tr><td colspan="8"><hr></td></tr>
+<tr><td colspan="7">TOTAL AC</td><td>1320</td></tr>
+</table>
+<br>
+<table cellpadding="1" cellspacing="0" class="textFont">
+<tr><td>AA</td><td>Base</td><td>inc</td><td>Pts</td><td>Total</td></tr>
+<tr><td>Innate Intelligence</td><td align='center'>1</td><td align='center'>0</td><td align='center'>1</td><td align='center'>1</td></tr><tr><td>Innate Magic Protection</td><td align='center'>1</td><td align='center'>0</td><td align='center'>2</td><td align='center'>2</td></tr><tr><td>Innate Run Speed</td><td align='center'>1</td><td align='center'>0</td><td align='center'>3</td><td align='center'>3</td></tr><tr><td>Mental Clarity</td><td align='center'>2</td><td align='center'>2</td><td align='center'>2</td><td align='center'>6</td></tr><tr><td>Combat Agility</td><td align='center'>2</td><td align='center'>2</td><td align='center'>2</td><td align='center'>6</td></tr><tr><td>Combat Fury</td><td align='center'>2</td><td align='center'>2</td><td align='center'>2</td><td align='center'>6</td></tr><tr><td>2 Hand Bash</td><td align='center'>6</td><td align='center'>0</td><td align='center'>1</td><td align='center'>6</td></tr><tr><td>Unholy Steed</td><td align='center'>5</td><td align='center'>0</td><td align='center'>1</td><td align='center'>5</td></tr>
+</table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	if(getParameter("debug")=="true")
+	{
+		document.getElementById("debug-alpha").style.visibility='visible';
+		document.getElementById("debug").style.visibility='visible';
+	}
+	
+	if(ieWin32)
+	{
+		document.getElementById("character-alpha").style.backgroundColor='black';
+		document.getElementById("magelo-alpha").style.backgroundColor='black';
+		document.getElementById("bag-alpha").style.backgroundColor='black';
+		document.getElementById("bank-alpha").style.backgroundColor='black';
+		document.getElementById("debug-alpha").style.backgroundColor='black';
+		
+		document.getElementById("adv-cat").style.width  = '345px';
+		document.getElementById("skill-header").style.width  = '345px';
+		document.getElementById("spell-header").style.width  = '345px';
+		document.getElementById("focus-header").style.width  = '345px';
+		document.getElementById("keys-header").style.width  = '345px';
+		document.getElementById("flags-header").style.width  = '345px';
+		
+		
+		document.getElementById("screenshot-text").style.lineHeight = '0.95';
+	}
+	else
+	{
+		document.getElementById("character-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("character-alpha").style.width=346;
+		document.getElementById("character-alpha").style.height=401;
+			
+		document.getElementById("magelo-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("magelo-alpha").style.width=335;
+		document.getElementById("magelo-alpha").style.height=151;
+		document.getElementById("screenshot-text").style.width=325;
+				
+		document.getElementById("bag-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bag-alpha").style.width=97;
+		
+		document.getElementById("money-gold").style.top=196;
+		document.getElementById("money-silver").style.top=219;
+		document.getElementById("money-copper").style.top=242;
+		
+		document.getElementById("bank-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bank-alpha").style.width=186;
+		document.getElementById("bank-alpha").style.height=241;
+		
+		document.getElementById("bank-platinum").style.width=81;
+		document.getElementById("bank-gold").style.width=81;
+		document.getElementById("bank-gold").style.top=197;
+		
+		document.getElementById("debug-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("debug-alpha").style.width=335;
+		document.getElementById("debug-alpha").style.height=241;
+		document.getElementById("debug").style.width=334;
+		
+		document.getElementById("macaron").style.top=256;
+		
+		document.getElementById("bio-text").style.width=315;
+		
+		document.getElementById("mod-header").style.height=398;
+		document.getElementById("mod-table-header").style.left=69;
+		document.getElementById("mod-data").style.left=79;
+		
+	}
+	
+	function getColor(bonus)
+	{
+		var color="#E0E0E0";
+		if(bonus<0)
+			color="#F00000";
+		else if(bonus>0)
+			color="00F000";
+		return color;
+	}
+	
+	// affichage des valeurs dans les emplacements prévus
+	document.getElementById("hp").appendChild(document.createTextNode((3056)+"/"+(3056)));
+	document.getElementById("ac").style.color="#00F000";
+	document.getElementById("ac").innerHTML=("<span style='color:"+getColor(643)+";'>"+1320+"<\/span><\/td>");
+	document.getElementById("atk").style.color="#00F000";
+	document.getElementById("atk").innerHTML=("<span style='color:"+getColor(108)+";'>"+1026+"<\/span><\/td>");
+	
+	document.getElementById("str-label").style.color=getColor(118);
+	document.getElementById("str-label").appendChild(document.createTextNode(196));
+	document.getElementById("sta").style.color=getColor(67);
+	document.getElementById("sta").appendChild(document.createTextNode(149));
+	document.getElementById("agi").style.color=getColor(75);
+	document.getElementById("agi").appendChild(document.createTextNode(165));
+	document.getElementById("dex").style.color=getColor(35);
+	document.getElementById("dex").appendChild(document.createTextNode(110));
+	document.getElementById("wis").style.color=getColor(47);
+	document.getElementById("wis").appendChild(document.createTextNode(130));
+	document.getElementById("int").style.color=getColor(52);
+	document.getElementById("int").appendChild(document.createTextNode(163));
+	document.getElementById("cha").style.color=getColor(17);
+	document.getElementById("cha").appendChild(document.createTextNode(82));
+	document.getElementById("RP").style.color=getColor(68);
+	document.getElementById("RP").appendChild(document.createTextNode(101));
+	document.getElementById("RM").style.color=getColor(115);
+	document.getElementById("RM").appendChild(document.createTextNode(144));
+	document.getElementById("RD").style.color=getColor(83);
+	document.getElementById("RD").appendChild(document.createTextNode(116));
+	document.getElementById("RF").style.color=getColor(67);
+	document.getElementById("RF").appendChild(document.createTextNode(92));
+	document.getElementById("RC").style.color=getColor(75);
+	document.getElementById("RC").appendChild(document.createTextNode(100));
+</script>
+
+
+</body>
+</html>		
+			
+			
+			
+			
+			
+			

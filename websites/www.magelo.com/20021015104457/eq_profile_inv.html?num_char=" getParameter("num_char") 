@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Eq Profile Inventory</title>
+	<link rel="stylesheet" type="text/css" href="./style/magelo.css">
+	<style type="text/css">
+		.slot
+		{
+			position: absolute;
+			width: 40px; 
+			height: 40px;
+		}
+		#slot1 {top: 5;	left: 6px;}
+		#slot2 {top: 53;left: 6px;}
+		#slot3 {top: 103;left: 6px;}
+		#slot4 {top: 153;left: 6px;}
+		#slot5 {top: 5;	left: 56px;}
+		#slot6 {top: 53;left: 56px;}
+		#slot7 {top: 103;left: 56px;}
+		#slot8 {top: 153;left: 56px;}
+	</style>
+</head>
+<body>
+<!-- Header for Magelo -->
+<script type='text/javascript' src="magelo.js"></script>
+<script type='text/javascript' src="http://www.magelo.com/components/eq_profile_inv.jsp"></script>
+
+
+<script type="text/javascript">
+	
+	function open_bag(num_bag)
+	{
+		document.bind_item.slot.value="";
+		document.bind_item.location.value="";
+		
+		var buffer="";
+		
+		buffer+=("<img border=0 alt='inv' src='"+repository+"/misc/inv.png'>");
+		for(var i=1;i<=8;i++)
+		{
+			buffer+=("<div id='slot"+i+"' class='slot'>");
+			buffer+=("<img style='cursor: "+cursor+"' border=0 ");
+			if(tab_item[num_bag+i] !=null)
+				buffer+=("src='"+tab_item[num_bag+i].item_icon+"' alt=\""+tab_item[num_bag+i].item_name+"\" onclick=\"document.bind_item.item_cat[2].disabled=false;document.bind_item.item_cat[1].disabled=true;document.bind_item.inv_num.disabled=true;document.bind_item.item_cat[0].disabled=false;document.bind_item.item_cat[0].checked=true;document.bind_item.slot.value="+(num_bag+i)+";document.bind_item.location.value='Bag "+(num_bag/10)+" Slot "+i+"';\">");
+			else
+				buffer+=("src='"+repository+"/misc/money_mask.png' alt='Slot "+i+"' onclick=\"document.bind_item.item_cat[2].disabled=false;document.bind_item.item_cat[2].checked=true;document.bind_item.inv_num.disabled=false;document.bind_item.item_cat[0].disabled=true;document.bind_item.item_cat[1].disabled=true;document.bind_item.slot.value="+(num_bag+i)+";document.bind_item.location.value='Bag: "+(num_bag/10)+" Slot: "+i+"';\">");
+			buffer+=("<\/div>");
+		}
+		
+		document.getElementById("bag").innerHTML=buffer;
+		document.getElementById("bag").style.visibility='visible';
+		document.getElementById("label").innerHTML=("Bag "+(num_bag/10));
+	}
+</script>
+<br>
+<table align="center" width="95%" cellpadding="0" cellspacing="0">
+<tr><td width="*" rowspan="2" colspan="2">
+<table width="100%" align="center" border="1" style="border-color: #29455A" cellpadding="0" cellspacing="0">
+<tr><td><table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td style="background: url(img/title_bg0.gif)" height="15" class="title">
+		&nbsp;Profile Inventory
+	</td>
+</tr>
+<tr><td class="cadre-bg"><table width="96%" align="center">
+<tr>
+	<td class="text2">
+		<br>
+		
+		<table class="text2" width="100%">
+		<tr>
+			<td>Inventory</td>
+			<td>&nbsp;</td>
+			<td><div id="label"></div></td>
+			<td>&nbsp;</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td valign="top" style="width:100px">
+				<div style="position: relative;">
+					<script type="text/javascript">
+						document.write("<img border=0 alt='inv' src='"+repository+"/misc/inv.png'>");
+						for(var i=1;i<=8;i++)
+						{
+							document.write("<div id='slot"+i+"' class='slot'>");
+							if(i==1)
+								document.write("<img alt='Keyring' border=0 src='"+tab_item[i].item_icon+"'>");
+							else
+							{
+								document.write("<img style='cursor: "+cursor+"' border=0 ");
+								if(tab_item[i]!=null)
+									document.write("src='"+tab_item[i].item_icon+"' alt=\""+tab_item[i].item_name+"\" onclick=\"document.bind_item.item_cat[2].disabled=false;document.bind_item.item_cat[0].checked=true;document.bind_item.item_cat[0].disabled=false;document.bind_item.item_cat[1].disabled=true;document.bind_item.slot.value="+i+";document.bind_item.location.value='Inventory Slot "+i+"';\">");
+								else
+								{
+									if(tab_item [(i-1)*10] !=null)
+										document.write("src='"+tab_item[(i-1)*10].item_icon+"' alt='Bag "+(i-1)+"' onclick=\"document.bind_item.item_cat[0].checked=true;document.bind_item.item_cat[0].disabled=false;document.bind_item.item_cat[1].disabled=true;document.bind_item.item_cat[2].disabled=true;open_bag("+((i-1)*10)+");document.bind_item.location.value='Inventory Slot "+i+"';document.bind_item.slot.value="+i+";\">");
+									else
+										document.write("src='"+repository+"/misc/money_mask.png' alt='Slot "+i+"' onclick=\"document.bind_item.item_cat[2].disabled=false;document.bind_item.item_cat[2].checked=true;document.bind_item.item_cat[1].disabled=false;document.bind_item.inv_num.disabled=false;document.bind_item.item_cat[0].disabled=true;document.bind_item.slot.value="+i+";document.bind_item.location.value='Inventory Slot "+i+"';\">");
+								}
+							}
+							document.write("<\/div>");
+						}
+					</script>
+				</div>
+			</td>
+			<td style="width:20px"></td>
+			<td valign="top" style="width:100px">
+				<div id="bag" style="position: relative;visibility:hidden;"></div>
+			</td>
+			<td style="width:20px"></td>
+			<td valign="top">
+				<form name="bind_item" action="">
+				<input type="Hidden" name="send_to" value="eq_profile_inv_update">
+				<input type="Hidden" name="redirect" value="/eq_profile_inv.html">
+				<input type="Hidden" name="redirect_error" value="/error.html">
+				
+				<input type="Hidden" name="slot">
+				
+				<fieldset style="width:80%">
+				<legend class="text2">Bind an item</legend>
+				<br>
+				&nbsp;Location: <input type="text" name="location" disabled size="25"><br>
+				<br>
+				<input type="radio" name="item_cat" value="nothing" checked onclick="document.bind_item.inv_num.disabled=true;">Nothing<br>
+				<input type="radio" name="item_cat" value="bag" onclick="document.bind_item.inv_num.disabled=true;">Bag<br>
+				<input type="radio" name="item_cat" value="item" onclick="document.bind_item.inv_num.disabled=false;">Item:&nbsp;
+				<script type="text/javascript">
+					document.write("<select name='inv_num' size=1 disabled>");
+					for(var i=1;i<=tab_free_item.length;i++)
+						document.write("<option value='"+tab_free_item[i].num+"'>"+tab_free_item[i].item_name);
+					document.write("<\/select>");
+				</script>
+				<br><br>
+				<div align="center">
+					<img class="pointer" border="0" alt="Proceed" src="img/proceed_off.gif" onmouseover="this.src='img/proceed_on.gif'" onmouseout="this.src='img/proceed_off.gif'" onclick="if(document.bind_item.slot.value!='') document.bind_item.submit();">
+					&nbsp;&nbsp;
+					<a href="javascript:window.history.back();"><img border="0" alt="Retry" src="img/back_off.gif" onmouseover="this.src='img/back_on.gif'" onmouseout="this.src='img/back_off.gif'"></a>
+				</div>
+				<br>
+				</fieldset>
+				
+				</form>
+				<br><br>
+			</td>
+		</tr>
+		</table>
+
+	</td>
+</tr></table></td></tr></table></td></tr></table>
+</td><td width="6" height="8" style="background: url(img/right_shadow.gif)" valign="top"><img alt="" src="img/top_right_shadow.gif" width="6" height="8"></td></tr>
+<tr><td width="6" height="100%" style="background: url(img/right_shadow.gif)"></td></tr>
+<tr>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_left_shadow.gif" width="6" height="8"></td>
+	<td width="*" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_shadow.gif" width="6" height="8"></td>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_right_shadow.gif" width="6" height="8"></td>
+</tr>	
+</table>
+
+<script type='text/javascript' >set_forms();</script>
+</body>
+</html>

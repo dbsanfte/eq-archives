@@ -1,0 +1,655 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://www.magelo.com/style/eq_profile.css">
+	<title>Magelo profile</title>
+</head>
+<body id="body">
+
+
+		<script type="text/javascript">
+	boutton1= new Image(46,15);
+	boutton1.src = "/res/eq/misc/test.png";
+
+	boutton2 = new Image(46,15);
+	boutton2.src = "/res/eq/misc/test2.png";
+
+	
+	
+	var spell_url='http://www.magelo.com/eq_spell_info.html';
+	
+	function getParameter(param)
+	{
+		param+='=';
+		var loc=''+document.location;
+		var deb=loc.indexOf(param)+param.length;
+		var fin=-1;
+		var value='';
+		if(deb!=(-1+param.length))
+		{
+			fin=loc.indexOf('&',deb);
+			if(fin!=-1)
+				value=loc.substring(deb,fin);
+			else
+				value=loc.substring(deb,loc.length);
+		}
+		return unescape(value);
+	}
+	
+	if(getParameter("resize")=="true")
+		window.resizeTo(800,740);
+	
+	function makeArray(n){this.length=n;return this;}
+
+	document.title="Unie  - Human Monk [Xegony]";
+	
+	
+	var ieWin32=(document.all!=null && navigator.platform == "Win32" && navigator.userAgent.indexOf("MSIE")!=-1);
+	var ie = (document.all!=null);
+	
+	function makeArray(n){this.length=n;return this;}
+	
+	function filtre(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\'")
+				tmp+="\\\'";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+	
+	function showItem(position)
+	{
+		document.getElementById("screenshot-text").innerHTML=tabItem[position].desc;
+		showScreenshot()
+	}
+	
+	function getNumSlot(capaciteBag,indice)
+	{
+		if(indice<=capaciteBag/2)
+			return indice;
+		else
+			return (indice+5-(capaciteBag/2));
+	}
+	
+	function openBag(position)
+	{
+		showItem(position);
+		
+		var buffer="";
+		for(var i=1;i<=tabItem[position].capacite;i++)
+		{
+			var index = 250 + 10*(position-22) + i -1;
+			buffer+=("<div id='bag-slot-"+getNumSlot(tabItem[position].capacite,i)+"' class='slot'><img ");
+			if(tabItem[index]!=null)
+			{
+				buffer+=("style='cursor: pointer' title=\""+tabItem[index].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[index].icon+".png'  onmousedown='showItem("+index+");'>");
+				if(tabItem[index].stackable==true)
+				{
+					if(ieWin32)
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+					else
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+				}
+			}
+			else
+				buffer+=("border=0 src='/res/eq/misc/money_mask.png'>");
+								
+			buffer+=("<\/div>");
+		}
+		
+		buffer+=("<div id='bag-button' style='position: absolute;left:25px' class='button' onmouseover=\"this.style.backgroundImage='url(/res/eq/misc/test2.png)';\" onmouseout=\"this.style.backgroundImage='url(/res/eq/misc/test.png)';\" onclick='closeBag();'>Done<\/div>");
+		
+		document.getElementById("bag").innerHTML=buffer;
+		
+		if(ieWin32)
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+40);
+		else
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+41);
+		document.getElementById("bag").style.height=(tabItem[position].capacite/2*40+40);
+		document.getElementById("bag-button").style.top=(tabItem[position].capacite/2*40+17);
+		
+		document.getElementById("bag-alpha").style.visibility='visible';
+		document.getElementById("bag").style.visibility='visible';
+	}
+	
+	function closeBag()
+	{
+		document.getElementById("bag-alpha").style.visibility='hidden';
+		document.getElementById("bag").style.visibility='hidden';
+		hideScreenshot();
+	
+	}
+	
+	function showDesc()
+	{
+		document.getElementById("desc-alpha").style.visibility='visible';
+		document.getElementById("desc").style.visibility='visible';
+		document.getElementById("desc-body").style.visibility='visible';
+	}
+	
+	function hideDesc()
+	{
+		document.getElementById("desc-body").style.visibility='hidden';
+		document.getElementById("desc").style.visibility='hidden';
+		document.getElementById("desc-alpha").style.visibility='hidden';
+	}
+	
+	function showScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='visible';
+		document.getElementById("magelo-info").style.visibility='hidden';
+	}
+	function hideScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='hidden';
+		document.getElementById("magelo-info").style.visibility='visible';
+	}
+	
+	function showAdv()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("adv").style.visibility='visible';
+	}
+	
+	function showStat()
+	{
+		document.getElementById("adv").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='hidden';
+		document.getElementById("stat").style.visibility='visible';
+	}
+	
+	function showBio()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='visible';
+	}
+	
+	function showSkill()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='visible';
+	}
+	
+	function showSpell()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='visible';
+	}
+	
+	function showFocus()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='visible';
+	}
+	
+	var tabAbility = new makeArray(58);function ability(name,cat,nbr_point,nbr_point_max){this.name=name;this.cat=cat;this.nbr_point=nbr_point;this.nbr_point_max=nbr_point_max;}tabAbility[1]=new ability('Innate Strength',1,0,5);tabAbility[2]=new ability('Innate Stamina',1,0,5);tabAbility[3]=new ability('Innate Agility',1,0,5);tabAbility[4]=new ability('Innate Dexterity',1,0,5);tabAbility[5]=new ability('Innate Intelligence',1,0,5);tabAbility[6]=new ability('Innate Wisdom',1,0,5);tabAbility[7]=new ability('Innate Charisma',1,0,5);tabAbility[8]=new ability('Innate Fire Protection',1,0,5);tabAbility[9]=new ability('Innate Cold Protection',1,0,5);tabAbility[10]=new ability('Innate Magic Protection',1,0,5);tabAbility[11]=new ability('Innate Poison Protection',1,0,5);tabAbility[12]=new ability('Innate Disease Protection',1,0,5);tabAbility[13]=new ability('First Aid',1,0,3);tabAbility[14]=new ability('Innate Run Speed',1,0,3);tabAbility[15]=new ability('Innate Lung Capacity',1,0,3);tabAbility[16]=new ability('Innate Metabolism',1,0,3);tabAbility[17]=new ability('Innate Regeneration',1,0,3);tabAbility[18]=new ability('New Tanaan Crafting Mastery',1,0,6);tabAbility[19]=new ability('Combat Agility',2,0,3);tabAbility[20]=new ability('Combat Fury',2,0,3);tabAbility[21]=new ability('Combat Stability',2,0,3);tabAbility[22]=new ability('Fear Resistance',2,0,3);tabAbility[23]=new ability('Finishing Blow',2,0,3);tabAbility[24]=new ability('Natural Durability',2,0,3);tabAbility[25]=new ability('Natural Healing',2,0,3);tabAbility[26]=new ability('Acrobatics',3,0,3);tabAbility[27]=new ability('Ambidexterity',3,0,1);tabAbility[28]=new ability('Physical Enhancement',3,0,1);tabAbility[29]=new ability('Double Riposte',3,0,3);tabAbility[30]=new ability('Critical Mend',3,0,3);tabAbility[31]=new ability('Dragon Punch',3,0,1);tabAbility[32]=new ability('Purify Body',3,0,1);tabAbility[33]=new ability('Rapid Feign',3,0,3);tabAbility[34]=new ability('Return Kick',3,0,3);tabAbility[35]=new ability('Advanced Innate Strength',4,0,10);tabAbility[36]=new ability('Advanced Innate Stamina',4,0,10);tabAbility[37]=new ability('Advanced Innate Agility',4,0,10);tabAbility[38]=new ability('Advanced Innate Dexterity',4,0,10);tabAbility[39]=new ability('Advanced Innate Intelligence',4,0,10);tabAbility[40]=new ability('Advanced Innate Wisdom',4,0,10);tabAbility[41]=new ability('Advanced Innate Charisma',4,0,10);tabAbility[42]=new ability('Warding of Solusek',4,0,10);tabAbility[43]=new ability('Blessing of E\'ci',4,0,10);tabAbility[44]=new ability('Marr\'s Protection',4,0,10);tabAbility[45]=new ability('Shroud of The Faceless',4,0,10);tabAbility[46]=new ability('Bertoxxulous\'s Gift',4,0,10);tabAbility[47]=new ability('Planar Power',4,0,5);tabAbility[48]=new ability('Coup de Grace',5,0,3);tabAbility[49]=new ability('Ferocity',5,0,3);tabAbility[50]=new ability('Flash of Steel',5,0,3);tabAbility[51]=new ability('Fury of the Ages',5,0,3);tabAbility[52]=new ability('Hastened Purification of the Body',5,0,3);tabAbility[53]=new ability('Ingenuity',5,0,3);tabAbility[54]=new ability('Innate Defense',5,0,5);tabAbility[55]=new ability('Lightning Reflexes',5,0,5);tabAbility[56]=new ability('Mending of the Tranquil',5,0,3);tabAbility[57]=new ability('Punishing Blade',5,0,3);tabAbility[58]=new ability('Technique of Master Wu',5,0,5);
+	
+	var ability_cat=1;
+	function processAdv()
+	{
+		var ability_cat_name="";
+		switch(ability_cat)
+		{
+			case 1:
+				ability_cat_name="General Abilities";
+				break;
+			case 2:
+				ability_cat_name="Archetype Abilities";
+				break;
+			case 3:
+				ability_cat_name="Class Specific Abilities";
+				break;
+			case 4:
+				ability_cat_name="PoP Advance";
+				break;
+			case 5:
+				ability_cat_name="PoP Ability";
+				break;
+		}
+		document.getElementById("adv-cat").innerHTML=("<table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td>"+ability_cat_name+"<\/td><td style='width: 19px' align='right'>Cur<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>Max<\/td><\/tr><\/table>");
+		
+		var buffer="<table style='width: 246px;color: #E0E0E0;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>";
+		for(var i=1;i<=tabAbility.length;i++)
+		{
+			if(tabAbility[i].cat==ability_cat)
+			{
+				buffer+="<tr><td>"+tabAbility[i].name+"<\/td><td style='width: 19px;";
+				if(tabAbility[i].nbr_point>0)
+					buffer+="color: #00FF00;";
+				buffer+="' align='right'>"+tabAbility[i].nbr_point+"<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>"+tabAbility[i].nbr_point_max+"<\/td><\/tr>";
+			}
+		}
+		buffer+="<\/table>";
+		document.getElementById("adv-data").innerHTML=buffer;
+		
+		showAdv();
+	}
+	
+	
+	
+</script>
+<div id="character-alpha"></div>
+<div id="character">
+
+<div id="stat">
+
+<script type="text/javascript">
+	var slot_name = new Array();
+	slot_name[1]="EAR";
+	slot_name[2]="HEAD";
+	slot_name[3]="FACE";
+	slot_name[4]="EAR";
+	slot_name[5]="NECK";
+	slot_name[6]="SHOULD.";
+	slot_name[7]="ARMS";
+	slot_name[8]="BACK";
+	slot_name[9]="WRIST";
+	slot_name[10]="WRIST";
+	slot_name[11]="RANGE";
+	slot_name[12]="HANDS";
+	slot_name[13]="PRIMARY";
+	slot_name[14]="SEC.";
+	slot_name[15]="FINGER";
+	slot_name[16]="FINGER";
+	slot_name[17]="CHEST";
+	slot_name[18]="LEGS";
+	slot_name[19]="FEET";
+	slot_name[20]="WAIST";
+	slot_name[21]="AMMO";
+	
+	function item(icon,name,desc,capacite,qt,stackable){this.icon=icon;this.name=name;this.desc=desc;this.capacite=capacite;this.qt=qt;this.stackable=stackable;} var tabItem = new Array();
+		
+	for(var i=1;i<=21;i++)
+	{
+		document.write("<div id='slot-ekip-"+i+"' class='slot'>");
+		document.write("<div>&nbsp;"+slot_name[i]+"<\/div><img ");
+		if(tabItem[i]!=null)
+			document.write("style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+		else
+			document.write("border=0 src='/res/eq/misc/money_mask.png'>");
+		document.write("<\/div>");	
+	}
+	
+	for(var i=22;i<30;i++)
+	{
+		document.write("<div id='slot-inv-"+(i-21)+"' class='slot'>");
+		if(tabItem[i]==null)
+			document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+		else if(tabItem[i].capacite==0)
+		{
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+			if(tabItem[i].stackable==true)
+			{
+				if(ieWin32)
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				else
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+			}
+		}
+		else 	
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+		document.write("<\/div>");
+	}
+</script>
+
+<div id="block1" class="block-style">
+Unie<br>63&nbsp;Monk<br>Quellious
+</div>
+
+<div id="block2" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style">
+<tr>
+	<td>HP&nbsp;</td>
+	<td id="hp"></td>
+	
+</tr>
+<tr>
+	<td>AC&nbsp;</td>
+	<td id="ac"></td>
+</tr>
+<tr>
+	<td>ATK&nbsp;</td>
+	<td id="atk"></td>
+</tr>
+</table>
+</div>
+
+<div id="next-level" class="block-style">
+	NEXT LEVEL
+</div>
+
+<div id="bulle-xp">
+	<div style="line-height:0;"><img border=0 alt='bubble' src='/res/eq/misc/bulle.png'></div>
+</div>
+
+<div id="str" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>STR&nbsp;&nbsp;&nbsp;</td>
+	<td id="str-label"></td>	
+</tr>
+<tr>
+	<td>STA&nbsp;&nbsp;&nbsp;</td>
+	<td id="sta"></td>
+</tr>
+<tr>
+	<td>AGI&nbsp;&nbsp;&nbsp;</td>
+	<td id="agi"></td>
+</tr>
+<tr>
+	<td>DEX&nbsp;&nbsp;&nbsp;</td>
+	<td id="dex"></td>
+</tr>
+<tr>
+	<td>WIS&nbsp;&nbsp;&nbsp;</td>
+	<td id="wis"></td>
+</tr>
+<tr>
+	<td>INT&nbsp;&nbsp;&nbsp;</td>
+	<td id="int"></td>
+</tr>
+<tr>
+	<td>CHA&nbsp;&nbsp;&nbsp;</td>
+	<td id="cha"></td>
+</tr>
+</table>
+</div>
+
+<div id="pr">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>POISON&nbsp;&nbsp;&nbsp;</td>
+	<td id="RP"></td>
+</tr>
+<tr>
+	<td>MAGIC&nbsp;&nbsp;&nbsp;</td>
+	<td id="RM"></td>
+</tr>
+<tr>
+	<td>DISEASE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RD"></td>
+</tr>
+<tr>
+	<td>FIRE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RF"></td>
+</tr>
+<tr>
+	<td>COLD&nbsp;&nbsp;&nbsp;</td>
+	<td id="RC"></td>
+</tr>
+</table>
+</div>
+
+<div id="money-platinum" class="money">
+	<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-gold" class="money">
+	<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-silver" class="money">
+	<div class="money-img"><img src="/res/eq/misc/silver.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-copper" class="money">
+	<div class="money-img"><img src="/res/eq/misc/copper.png"></div>
+	<div class="money-text">0</div>
+</div>
+
+
+
+<div id="autoequip"><div style="position: absolute; top: 50px; left: 5px; text-align: center;">AUTO EQUIP<br>AREA</div></div>
+
+
+<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="window.close();">Done</div>
+<div style="position: absolute;top: 378px;left: 90px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="processAdv();">Alt Adv</div>
+<div style="position: absolute;top: 378px;left: 140px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showSpell();">Spell</div>
+<div style="position: absolute;top: 378px;left: 190px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showFocus();">Focus</div>
+<div style="position: absolute;top: 378px;left: 240px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showSkill();">Skill</div>
+
+
+</div>
+
+<div id="adv" class="box" style="visibility: hidden;">
+	<div id="adv-text">Ability Type:</div>
+	<div id="adv-cat"></div>
+	
+	<div style="position: absolute;top: 9px;left: 80px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=1;processAdv();">General</div>
+	<div style="position: absolute;top: 9px;left: 130px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=2;processAdv();">Arch</div>
+	<div style="position: absolute;top: 9px;left: 180px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=3;processAdv();">Class</div>
+	<div style="position: absolute;top: 9px;left: 230px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=4;processAdv();">PoP Adv</div>
+	<div style="position: absolute;top: 9px;left: 280px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=5;processAdv();">PoP Ab</div>
+	<div id="adv-data"></div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="bio" class="box" style="visibility: hidden;">
+	<div id="bio-text"></div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="skill" class="box" style="visibility: hidden;">
+	<div id="skill-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 200px">Skill</td><td align="center">Value</td></tr></table></div>
+	<div id="skill-data">
+		<table style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		<tr><td style='width: 200px'>1H Blunt</td><td align='center'>0</td></tr><tr><td style='width: 200px'>2H Blunt</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Bind Wound</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Block</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Defense</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Disarm</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dodge</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Double Attack</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dragon Punch</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dual Wield</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Eagle Strike</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Feign Death</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Flying Kick</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Forage</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Hand To Hand</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Kick</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Mend</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Offense</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Riposte</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Round Kick</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Safe Fall</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Sense Heading</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Sneak</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Swimming</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Throwing</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Tiger Claw</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Fishing</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Baking</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Tailoring</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Blacksmithing</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Fletching</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Brewing</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Alcohol Tolerance</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Begging</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Jewellery</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Pottery</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Intimidation</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Common Tongue</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Barbarian</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Erudian</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Elvish</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dark Elvish</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dwarvish</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Troll</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Ogre</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Gnomish</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Halfling</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Thieves Cant</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Old Erudian</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Elder Elvish</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Froglok</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Goblin</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Gnoll</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Combine Tongue</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Elder Teir\'Dal</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Lizardman</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Orcish</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Faerie</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dragon</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Elder Dragon</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Dark Speech</td><td align='center'>0</td></tr><tr><td style='width: 200px'>Vah Shir</td><td align='center'>0</td></tr>
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="spell" class="box" style="visibility: hidden;">
+	<div id="spell-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 40px" align="center">Level</td><td>Spell</td></tr></table></div>
+	<div id="spell-data">
+		<table style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="focus" class="box" style="visibility: hidden;">
+	<div id="focus-header">Focus:</div>
+	<div id="focus-data">
+		
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+</div>
+
+<!-- fenetre magelo             -->
+<div id="magelo-alpha"></div>
+<div id="magelo">
+
+<div id="magelo-info" style="position: absolute;top:3px;line-height: 12px;">
+<span style="color:#FBFB00;font-size: 12px;">MOTD: Welcome to the Magelo Profile System !</span><br>
+<span class="textFont" style="font-size: 9px;">You can visit Magelo <a href="http://www.magelo.com" target="new">here</a></span>
+
+<table class="textFont" cellpadding="0" cellspacing="0" width="330">
+<tr>
+<td valign="top" width="190">
+	
+<table class='textFont' style='line-height: 0.95;' cellpadding=1 cellspacing=0>
+<tr><td height=7></td></tr><tr><td>&nbsp;</td><td>Base</td><td>Direct</td><td>Indirect</td><td>Total</td></tr>
+<tr><td>HP</td><td>1693</td><td>0</td><td>0</td><td>1693</td></tr>
+		
+</table>
+<br>
+<table style='line-height: 0.95;' class='textFont' cellpadding=1 cellspacing=0>
+<tr><td></td></tr><tr><td>&nbsp;</td><td align="center">Base</td><td align="center">Item</td><td align="center">Total</td></tr>
+<tr><td>HP Regen</td><td align="center">4/7</td><td align="center">0</td><td align="center">4/7</td></tr>
+<tr><td colspan="4" style="height: 1px;"></td></tr>
+
+</table>
+
+</td>
+<td valign="top">
+	Current profile:Main<br>
+	
+</td>
+</tr></table>
+</div>
+
+<div id="screenshot" style="position: absolute;visibility: hidden;">
+		<div id="screenshot-text" class="textFont"></div>
+		<div style="position: absolute;top: 132px;left: 130px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="hideScreenshot();">Done</div>
+</div>
+
+</div>
+
+<!-- fenetre util                -->
+<div id="desc-alpha"></div>
+<div id="desc">
+	<div id="desc-body" class="textFont"></div>
+	<div style="position: absolute;top: 222px;left: 139px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="hideDesc();">Done</div>
+</div>
+
+<!-- bag                        -->
+<div id="bag-alpha"></div>
+<div id="bag">
+
+
+</div>
+
+
+
+<script type="text/javascript">
+	
+	if(ieWin32)
+	{
+		document.getElementById("character-alpha").style.backgroundColor='black';
+		document.getElementById("magelo-alpha").style.backgroundColor='black';
+		document.getElementById("desc-alpha").style.backgroundColor='black';
+		document.getElementById("bag-alpha").style.backgroundColor='black';
+		
+		document.getElementById("adv-cat").style.width  = '345px';
+		document.getElementById("skill-header").style.width  = '345px';
+		document.getElementById("spell-header").style.width  = '345px';
+		document.getElementById("focus-header").style.width  = '345px';
+		
+		document.getElementById("screenshot-text").style.lineHeight = '0.95';
+	}
+	else
+	{
+		document.getElementById("character-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("character-alpha").style.width=346;
+		document.getElementById("character-alpha").style.height=401;
+			
+		document.getElementById("magelo-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("magelo-alpha").style.width=335;
+		document.getElementById("magelo-alpha").style.height=151;
+		document.getElementById("screenshot-text").style.width=325;
+		
+		document.getElementById("desc-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("desc-alpha").style.width=335;
+		document.getElementById("desc-alpha").style.height=241;
+		document.getElementById("desc-body").style.width=330;
+		
+		document.getElementById("bag-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bag-alpha").style.width=97;
+		
+		document.getElementById("money-gold").style.top=196;
+		document.getElementById("money-silver").style.top=219;
+		document.getElementById("money-copper").style.top=242;
+	}
+	
+	function getColor(bonus)
+	{
+		var color="#E0E0E0";
+		if(bonus<0)
+			color="#F00000";
+		else if(bonus>0)
+			color="00F000";
+		return color;
+	}
+	
+	// affichage des valeurs dans les emplacements prévus
+	document.getElementById("hp").appendChild(document.createTextNode((1693)+"/"+(1693)));
+	document.getElementById("ac").style.color="#00F000";
+	document.getElementById("ac").innerHTML=("<span style='color:"+getColor(0)+";'>"+0+"<\/span><\/td>");
+	document.getElementById("atk").style.color="#00F000";
+	document.getElementById("atk").innerHTML=("<span style='color:"+getColor(0)+";'>"+13+"<\/span><\/td>");
+	
+	document.getElementById("str-label").style.color=getColor(0);
+	document.getElementById("str-label").appendChild(document.createTextNode(80));
+	document.getElementById("sta").style.color=getColor(0);
+	document.getElementById("sta").appendChild(document.createTextNode(102));
+	document.getElementById("agi").style.color=getColor(0);
+	document.getElementById("agi").appendChild(document.createTextNode(85));
+	document.getElementById("dex").style.color=getColor(0);
+	document.getElementById("dex").appendChild(document.createTextNode(85));
+	document.getElementById("wis").style.color=getColor(0);
+	document.getElementById("wis").appendChild(document.createTextNode(75));
+	document.getElementById("int").style.color=getColor(75);
+	document.getElementById("int").appendChild(document.createTextNode(75));
+	document.getElementById("cha").style.color=getColor(0);
+	document.getElementById("cha").appendChild(document.createTextNode(75));
+	document.getElementById("RP").style.color=getColor(0);
+	document.getElementById("RP").appendChild(document.createTextNode(28));
+	document.getElementById("RM").style.color=getColor(0);
+	document.getElementById("RM").appendChild(document.createTextNode(25));
+	document.getElementById("RD").style.color=getColor(0);
+	document.getElementById("RD").appendChild(document.createTextNode(28));
+	document.getElementById("RF").style.color=getColor(0);
+	document.getElementById("RF").appendChild(document.createTextNode(47));
+	document.getElementById("RC").style.color=getColor(0);
+	document.getElementById("RC").appendChild(document.createTextNode(25));
+</script>
+
+
+</body>
+</html>		
+			
+			
+			
+			
+			
+			

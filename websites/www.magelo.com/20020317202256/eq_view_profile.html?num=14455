@@ -1,0 +1,644 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://www.magelo.com/style/eq_profile.css">
+	<title>Magelo profile</title>
+</head>
+<body id="body">
+<script type='text/javascript' src="http://www.magelo.com/eq_view_profile.jsp"></script>
+
+<script type='text/javascript'>
+	var ie_win32=(document.all!=null && navigator.platform == "Win32");
+	var ie = (document.all!=null);
+	var cursor="pointer";
+	if(ie==true)
+		cursor="hand";
+
+	/*if(typeof(pr_bonus)=='undefined')
+		document.location="./profile_error.html";*/
+	
+	if(background_opt==1)
+			document.getElementById("body").style.backgroundPosition = "center";
+	else if(background_opt==2)
+		document.getElementById("body").style.backgroundRepeat = "repeat";
+	if(background_url!=null)
+		document.getElementById("body").style.backgroundImage = 'url('+background_url+')';
+		
+	var title=name+" "+surname+" - "+race+" "+class_eq;
+	if(guild!=null)
+		title+=" of "+guild;
+	title+="    ["+server+"]";
+	document.title=title;
+	
+	var slot_name = new Array();
+	slot_name[1]="EAR";
+	slot_name[2]="NECK";
+	slot_name[3]="FACE";
+	slot_name[4]="HEAD";
+	slot_name[5]="EAR";
+	slot_name[6]="FINGER";
+	slot_name[7]="WRIST";
+	slot_name[8]="ARMS";
+	slot_name[9]="HANDS";
+	slot_name[10]="WRIST";
+	slot_name[11]="FINGER";
+	slot_name[12]="SHOULD.";
+	slot_name[13]="CHEST";
+	slot_name[14]="BACK";
+	slot_name[15]="WAIST";
+	slot_name[16]="LEGS";
+	slot_name[17]="FEET";
+	slot_name[18]="PRIMARY";
+	slot_name[19]="SEC.";
+	slot_name[20]="RANGE";
+	slot_name[21]="AMMO";
+		
+	var layer="";
+	function drag_drop(e)
+	{
+	   	if (!document.all)
+	    {
+	        document.getElementById(layer).style.left = tempx + e.clientX - offsetx;
+	        document.getElementById(layer).style.top  = tempy + e.clientY - offsety;
+	    }
+	    else
+	    {
+	        document.getElementById(layer).style.left = tempx + event.clientX - offsetx;
+	        document.getElementById(layer).style.top  = tempy + event.clientY - offsety;
+			if(ie_win32==true)
+			{
+				document.getElementById(layer+"-trans").style.left = tempx + event.clientX - offsetx;
+	        	document.getElementById(layer+"-trans").style.top  = tempy + event.clientY - offsety;
+	    	}
+		} 
+	}
+	
+	function startdnd(event)
+	{
+	    offsetx = event.clientX;
+	    offsety = event.clientY;
+			    
+	    tempx = parseInt( document.getElementById(layer).style.left );
+	    tempy = parseInt( document.getElementById(layer).style.top );
+	    
+	    document.onmousemove=drag_drop;
+	}
+	
+	function stopdnd(e)
+	{
+	    document.onmousemove='';
+	}
+	
+	function setAlphaChannel(id)
+	{
+	    if (ie_win32==false)
+	    	document.getElementById(id).style.backgroundImage="url("+repository+"/misc/alpha50_black.png)";
+	}
+		
+	
+	function show_item(num)
+	{
+		if(num==0)
+		{
+			document.getElementById("item-info").style.visibility='hidden';
+			document.getElementById("details").style.visibility='visible';
+			document.getElementById("upperbox2").style.visibility='visible';
+		}
+		else
+		{
+			document.getElementById("item-info").innerHTML=(tab_item[num].text);
+			document.getElementById("item-info").style.visibility='visible';
+			document.getElementById("details").style.visibility='hidden';
+			document.getElementById("upperbox2").style.visibility='hidden';
+		}
+	}
+	
+	function open_bag(index)
+	{
+		var buffer="";
+		
+		
+				
+		buffer+=("<div id='upperbox' onMousedown=\"layer='alpha-bag';startdnd(event);\" onMouseup='stopdnd();' onSelectStart='return false;'><\/div>");
+		for(var i=1;i<=8;i++)
+		{
+			buffer+=("<div id='slot-bag-"+i+"' class='slot'>");
+			if(tab_item[index+i]==null)
+				buffer+=("<img border=0 alt='' src='"+repository+"/misc/money_mask.png'>");
+			else
+				buffer+=("<img style='cursor: "+cursor+"' border=0 align='' src='"+tab_item[index+i].icon+"'  onmousedown='show_item("+(index+i)+");' onmouseup='show_item(0);' onmouseout='show_item(0);'>");
+			buffer+=("<\/div>");
+		}
+		buffer+=("<div id='slot-bag-done'><img style='cursor: "+cursor+"' alt='done' src='"+repository+"/misc/done_off.png' onmousedown=\"this.src='"+repository+"/misc/done_on.png'\" onclick=\"this.src='"+repository+"/misc/done_off.png';close_bag();\"><\/div>");
+		
+		document.getElementById("alpha-bag").innerHTML=buffer;
+		document.getElementById("alpha-bag").style.visibility='visible';
+		document.getElementById("alpha-bag-trans").style.visibility='visible';
+	}
+	
+	function close_bag()
+	{
+		document.getElementById("alpha-bag").style.visibility='hidden';
+		document.getElementById("alpha-bag-trans").style.visibility='hidden';
+	}
+	
+	var skill_index=-1;
+	function show_skill()
+	{
+		document.getElementById("skill").innerHTML=("<img alt='skill' src='"+repository+"/misc/skill_on.png'>");
+		document.getElementById("stat").innerHTML=("<img style='cursor: "+cursor+"' alt='stat' src='"+repository+"/misc/stat_off.png' onclick='show_stat()'>");
+		
+		document.getElementById("skill-area").style.visibility='visible';
+		
+		document.getElementById("block1").style.visibility='hidden';
+		document.getElementById("block2").style.visibility='hidden';
+		document.getElementById("next-level").style.visibility='hidden';
+		document.getElementById("bulle-xp").style.visibility='hidden';
+		document.getElementById("str").style.visibility='hidden';
+		document.getElementById("pr").style.visibility='hidden';
+		
+		var buffer="";
+		for(var i=skill_index*6+1; i<=skill_index*6+6 && i<=tab_skill.length ;i++)
+		{
+			var level_name="";
+			if(tab_skill[i].nbr_point>=100)
+				level_name="master";
+			else if(tab_skill[i].nbr_point>=90 && tab_skill[i].nbr_point<100)
+				level_name="excellent";
+			else if(tab_skill[i].nbr_point>=80 && tab_skill[i].nbr_point<90)
+				level_name="verygood";
+			else if(tab_skill[i].nbr_point>=70 && tab_skill[i].nbr_point<80)
+				level_name="good";
+			else if(tab_skill[i].nbr_point>=50 && tab_skill[i].nbr_point<70)
+				level_name="average";
+			else if(tab_skill[i].nbr_point>=40 && tab_skill[i].nbr_point<50)
+				level_name="belowaverage";
+			else if(tab_skill[i].nbr_point>=30 && tab_skill[i].nbr_point<40)
+				level_name="bad";
+			else if(tab_skill[i].nbr_point>=20 && tab_skill[i].nbr_point<30)
+				level_name="verybad";
+			else if(tab_skill[i].nbr_point>=10 && tab_skill[i].nbr_point<20)
+				level_name="feeble";
+			else
+				level_name="awful";
+			
+			buffer+="<div style='position: relative;'><img alt='' src='"+repository+"/skill/skill_bck.png'><div id='skill-name'><img alt='' src='"+repository+"/skill/"+tab_skill[i].num+".png'><\/div><div id='skill-level'>"+tab_skill[i].nbr_point+"<\/div><div id='skill-level-name'><img alt='' src='"+repository+"/skill/skill_"+level_name+".png'><\/div><\/div>";
+		
+		
+		}
+		buffer+="<div id='skill-up'><img style='cursor: "+cursor+"' alt='' src='"+repository+"/skill/up_off.png' onmousedown=\"this.src='"+repository+"/skill/up_on.png'\" onmouseup=\"this.src='"+repository+"/skill/up_off.png'\" onclick='skill_up();'><\/div><div id='skill-down'><img style='cursor: "+cursor+"' alt='' src='"+repository+"/skill/down_off.png' onmousedown=\"this.src='"+repository+"/skill/down_on.png'\" onmouseup=\"this.src='"+repository+"/skill/down_off.png'\" onclick='skill_down();'><\/div>"
+		document.getElementById("skill-area").innerHTML=buffer;
+	}
+	
+	function show_stat()
+	{
+		document.getElementById("skill").innerHTML=("<img style='cursor: "+cursor+"' alt='skill' src='"+repository+"/misc/skill_off.png' onclick='skill_index=0;show_skill();'>");
+		document.getElementById("stat").innerHTML=("<img alt='stat' src='"+repository+"/misc/stat_on.png'>");
+		
+		document.getElementById("skill-area").style.visibility='hidden';
+		skill_index=-1;
+		
+		document.getElementById("block1").style.visibility='visible';
+		document.getElementById("block2").style.visibility='visible';
+		document.getElementById("next-level").style.visibility='visible';
+		document.getElementById("bulle-xp").style.visibility='visible';
+		document.getElementById("str").style.visibility='visible';
+		document.getElementById("pr").style.visibility='visible';
+	}
+	
+	function skill_up()
+	{
+		if(skill_index!=0)
+			skill_index--;
+		show_skill();
+	}
+	
+	function skill_down()
+	{
+		if( skill_index<Math.floor(tab_skill.length/6))
+			skill_index++;
+		show_skill();
+	}
+	
+	function show_bio()
+	{
+		document.getElementById("main").style.visibility='hidden';
+		document.getElementById("skill-area").style.visibility='hidden';
+		
+		document.getElementById("block1").style.visibility='hidden';
+		document.getElementById("block2").style.visibility='hidden';
+		document.getElementById("next-level").style.visibility='hidden';
+		document.getElementById("bulle-xp").style.visibility='hidden';
+		document.getElementById("str").style.visibility='hidden';
+		document.getElementById("pr").style.visibility='hidden';
+			
+		document.getElementById("bio").style.visibility='visible';
+	}
+	
+	function show_adv()
+	{
+		document.getElementById("main").style.visibility='hidden';
+		document.getElementById("skill-area").style.visibility='hidden';
+		
+		document.getElementById("block1").style.visibility='hidden';
+		document.getElementById("block2").style.visibility='hidden';
+		document.getElementById("next-level").style.visibility='hidden';
+		document.getElementById("bulle-xp").style.visibility='hidden';
+		document.getElementById("str").style.visibility='hidden';
+		document.getElementById("pr").style.visibility='hidden';
+			
+		document.getElementById("adv").style.visibility='visible';
+	}
+	
+	function show_main()
+	{
+		document.getElementById("bio").style.visibility='hidden';
+		document.getElementById("adv").style.visibility='hidden';
+		document.getElementById("main").style.visibility='visible';
+		if(skill_index==-1)
+		{
+			document.getElementById("block1").style.visibility='visible';
+			document.getElementById("block2").style.visibility='visible';
+			document.getElementById("next-level").style.visibility='visible';
+			document.getElementById("bulle-xp").style.visibility='visible';
+			document.getElementById("str").style.visibility='visible';
+			document.getElementById("pr").style.visibility='visible';
+		}
+		else
+			document.getElementById("skill-area").style.visibility='visible';
+	}
+	
+	var ability_cat=1;
+	function process_adv()
+	{
+		var ability_cat_name="";
+		switch(ability_cat)
+		{
+			
+			case 1:
+				ability_cat_name="General Abilities";
+				document.getElementById("adv-general").innerHTML=("<img alt='' src='"+repository+"/misc/aa_general_on.png'>");
+				document.getElementById("adv-arch").innerHTML=("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/aa_arch_off.png' onmousedown=\"this.src='"+repository+"/misc/aa_arch_on.png'\" onclick='ability_cat=2;process_adv();'>");
+				document.getElementById("adv-class").innerHTML=("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/aa_class_off.png' onmousedown=\"this.src='"+repository+"/misc/aa_class_on.png'\" onclick='ability_cat=3;process_adv();'>");
+				break;
+			case 2:
+				ability_cat_name="Archetype Abilities";
+				document.getElementById("adv-arch").innerHTML=("<img alt='' src='"+repository+"/misc/aa_arch_on.png'>");
+				document.getElementById("adv-general").innerHTML=("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/aa_general_off.png' onmousedown=\"this.src='"+repository+"/misc/aa_general_on.png'\" onclick='ability_cat=1;process_adv();'>");
+				document.getElementById("adv-class").innerHTML=("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/aa_class_off.png' onmousedown=\"this.src='"+repository+"/misc/aa_class_on.png'\" onclick='ability_cat=3;process_adv();'>");
+				break;
+			case 3:
+				ability_cat_name="Class Specific Abilities";
+				document.getElementById("adv-class").innerHTML=("<img alt='' src='"+repository+"/misc/aa_class_on.png'>");
+				document.getElementById("adv-general").innerHTML=("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/aa_general_off.png' onmousedown=\"this.src='"+repository+"/misc/aa_general_on.png'\" onclick='ability_cat=1;process_adv();'>");
+				document.getElementById("adv-arch").innerHTML=("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/aa_arch_off.png' onmousedown=\"this.src='"+repository+"/misc/aa_arch_on.png'\" onclick='ability_cat=2;process_adv();'>");
+				break;
+		}
+		document.getElementById("adv-cat").innerHTML=("<table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td>"+ability_cat_name+"<\/td><td style='width: 19px' align='right'>Cur<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>Max<\/td><\/tr><\/table>");
+		
+		var buffer="<table style='width: 246px;color: #E0E0E0;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>";
+		for(var i=1;i<=tab_ability.length;i++)
+		{
+			if(tab_ability[i].cat==ability_cat)
+			{
+				buffer+="<tr><td>"+tab_ability[i].name+"<\/td><td style='width: 19px;";
+				if(tab_ability[i].nbr_point>0)
+					buffer+="color: #00FF00;";
+				buffer+="' align='right'>"+tab_ability[i].nbr_point+"<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>"+tab_ability[i].nbr_point_max+"<\/td><\/tr>";
+			}
+		}
+		buffer+="<\/table>";
+		document.getElementById("adv-data").innerHTML=buffer;
+	}
+		
+	function getColor(bonus)
+	{
+		var color="#E0E0E0";
+		if(bonus==0)
+			color="#F00000";
+		else if(bonus==2)
+			color="00F000";
+		return color;
+	}
+	
+	function page_setup(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\n")
+				tmp+="<br>";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+			
+</script>
+
+<script type="text/javascript">
+
+	if(ie_win32==true)
+	{
+		document.write("<div id='alpha-trans'><\/div>");
+		document.write("<div id='alpha-magelo-trans'><\/div>");
+		document.write("<div id='alpha-bag-trans'><\/div>");
+	}
+	document.write("<div id='alpha'><div id='upperbox' style='cursor: move;' onMousedown=\"layer='alpha';startdnd(event);\" onMouseup='stopdnd();' onSelectStart='return false;'><\/div><div id='main' class='box'>");
+
+	for(var i=1;i<=21;i++)
+	{
+		document.write("<div id='slot-ekip-"+i+"' class='slot'>");
+		document.write("<div>&nbsp;"+slot_name[i]+"<\/div><img ");
+		if(tab_item[i]!=null)
+			document.write("style='cursor: "+cursor+"' border=0 src='"+tab_item[i].icon+"'  onmousedown='show_item("+i+");' onmouseup='show_item(0);' onmouseout='show_item(0);'>");
+		else
+			document.write("border=0 src='"+repository+"/misc/money_mask.png'>");
+		document.write("<\/div>");	
+	}
+</script>
+
+<div id="skill"><script type="text/javascript">document.write("<img onclick='skill_index=0;show_skill();' style='cursor: "+cursor+"' alt='skill' src='"+repository+"/misc/skill_off.png'>");</script></div>
+<div id="skill-area" class="box2"></div>
+
+<div id="stat"><script type="text/javascript">document.write("<img alt='stat' src='"+repository+"/misc/stat_on.png'>");</script></div>
+
+
+<div id="block1" class="block-style">
+<script type="text/javascript">
+	document.write(name+"<br>"+level);
+	if(level<10)
+		document.write("&nbsp;");
+	document.write("&nbsp;"+class_eq+"<br>"+deity);
+</script>
+</div>
+
+<div id="block2" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style">
+<tr>
+	<td>HP&nbsp;</td>
+	<td id="hp"></td>
+	
+</tr>
+<tr>
+	<td>AC&nbsp;</td>
+	<td id="ac"></td>
+</tr>
+<tr>
+	<td>ATK&nbsp;</td>
+	<td id="atk"></td>
+</tr>
+</table>
+</div>
+
+<div id="next-level" class="block-style">
+	NEXT LEVEL
+</div>
+
+<div id="bulle-xp">
+	<div style="line-height:0;"><script type="text/javascript">document.write("<img border=0 alt='bubble' src='"+repository+"/misc/bulle.png'>");</script></div>
+</div>
+
+<div id="str" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>STR&nbsp;&nbsp;&nbsp;</td>
+	<td id="str-label"></td>	
+</tr>
+<tr>
+	<td>STA&nbsp;&nbsp;&nbsp;</td>
+	<td id="sta"></td>
+</tr>
+<tr>
+	<td>AGI&nbsp;&nbsp;&nbsp;</td>
+	<td id="agi"></td>
+</tr>
+<tr>
+	<td>DEX&nbsp;&nbsp;&nbsp;</td>
+	<td id="dex"></td>
+</tr>
+<tr>
+	<td>WIS&nbsp;&nbsp;&nbsp;</td>
+	<td id="wis"></td>
+</tr>
+<tr>
+	<td>INT&nbsp;&nbsp;&nbsp;</td>
+	<td id="int"></td>
+</tr>
+<tr>
+	<td>CHA&nbsp;&nbsp;&nbsp;</td>
+	<td id="cha"></td>
+</tr>
+</table>
+</div>
+
+<div id="pr">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>POISON&nbsp;&nbsp;&nbsp;</td>
+	<td id="RP"></td>
+</tr>
+<tr>
+	<td>MAGIC&nbsp;&nbsp;&nbsp;</td>
+	<td id="RM"></td>
+</tr>
+<tr>
+	<td>DISEASE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RD"></td>
+</tr>
+<tr>
+	<td>FIRE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RF"></td>
+</tr>
+<tr>
+	<td>COLD&nbsp;&nbsp;&nbsp;</td>
+	<td id="RC"></td>
+</tr>
+</table>
+</div>
+
+<div id="money-platinum" class="money"><div style="width:77px;text-align: center;">PLATINUM<br><script type="text/javascript">document.write(money);</script></div><script type="text/javascript">document.write("<img alt='' border=0 src='"+repository+"/misc/money_mask.png'>");</script></div>
+<div id="money-gold" class="money"><div style="width:77px;text-align: center;">GOLD<br>0</div><script type="text/javascript">document.write("<img alt='' border=0 src='"+repository+"/misc/money_mask.png'>");</script></div>
+<div id="money-silver" class="money"><div style="width:77px;text-align: center;">SILVER<br>0</div><script type="text/javascript">document.write("<img alt='' border=0 src='"+repository+"/misc/money_mask.png'>");</script></div>
+<div id="money-copper" class="money"><div style="width:77px;text-align: center;">COPPER<br>0</div><script type="text/javascript">document.write("<img alt='' border=0 src='"+repository+"/misc/money_mask.png'>");</script></div>
+
+
+
+<div id="autoequip"><div style="position: absolute; top: 50px; left: 5px; text-align: center;">AUTO EQUIP<br>AREA</div></div>
+
+
+<script type="text/javascript">
+	var cursor="pointer";
+	if(ie==true)
+		cursor="hand";
+	for(var i=1;i<=8;i++)
+	{
+		document.write("<div id='slot-inv-"+i+"' class='slot'>");
+		var index_inv = 21+i;
+		var index = 21+i*10;
+		
+		if(tab_item[index_inv]!=null)
+			document.write("<img style='cursor: "+cursor+"' border=0 align='' src='"+tab_item[index_inv].icon+"'  onmousedown='show_item("+index_inv+");' onmouseup='show_item(0);' onmouseout='show_item(0);'>");
+		else if(tab_item[index]!=null)	
+			document.write("<img style='cursor: "+cursor+"' border=0 alt='' src='"+tab_item[index].icon+"' onclick='open_bag("+index+");'>");
+		else
+			document.write("<img border=0 alt='' src='"+repository+"/misc/money_mask.png'>");
+		document.write("<\/div>");
+	}
+</script>
+
+<div id="weight">WEIGHT ALLOWANCE&nbsp;&nbsp;<script type='text/javascript'>document.write(weight+"/"+str);</script></div>
+<script type="text/javascript">
+	document.write("<div class='done-button'><img style='cursor: "+cursor+"' alt='Done' src='"+repository+"/misc/done_off.png' onmousedown=\"this.src='"+repository+"/misc/done_on.png'\" onmouseup=\"this.src='"+repository+"/misc/done_off.png'\" onclick='window.close();'><\/div>");
+	document.write("<div id='adv-button'><img style='cursor: "+cursor+"' alt='Adv' src='"+repository+"/misc/adv_off.png' onmousedown=\"this.src='"+repository+"/misc/adv_on.png'\" onmouseup=\"this.src='"+repository+"/misc/adv_off.png'\" onclick='ability_cat=1;process_adv();show_adv();'><\/div>");
+	document.write("<div id='bio-button'><img style='cursor: "+cursor+"' alt='Bio' src='"+repository+"/misc/bio_off.png' onmousedown=\"this.src='"+repository+"/misc/bio_on.png'\" onmouseup=\"this.src='"+repository+"/misc/bio_off.png'\" onclick='show_bio();'><\/div>");
+
+	// Fin du layer Main
+	document.write("<\/div>");
+</script>
+	
+	
+<div id="bio" style="visibility: hidden" class="box">
+	<div id="bio-text"><script type="text/javascript">if(bio!=null) document.write(page_setup(bio));</script></div>
+	<div class="done-button"><script type="text/javascript">document.write("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/done_off.png' onmousedown=\"this.src='"+repository+"/misc/done_on.png'\" onmouseup=\"this.src='"+repository+"/misc/done_off.png'\" onclick='show_main();'>");</script></div>
+</div>
+
+<div id="adv" class="box" style="visibility: hidden;">
+	<div id="adv-text">Show Ability Type:</div>
+	<div id="adv-cat"></div>
+	<script type="text/javascript">if(ie==true) document.getElementById("adv-cat").style.width  = '345px';</script>
+	
+	<div id="adv-general"></div>
+	<div id="adv-arch"></div>
+	<div id="adv-class"></div>
+	<div id="adv-data"></div>
+	<div class="done-button"><script type="text/javascript">document.write("<img style='cursor: "+cursor+"' alt='' src='"+repository+"/misc/done_off.png' onmousedown=\"this.src='"+repository+"/misc/done_on.png'\" onmouseup=\"this.src='"+repository+"/misc/done_off.png'\" onclick='show_main();'>");</script></div>
+</div>
+
+<!-- Fin du layer alpha -->
+<script type="text/javascript">document.write("<\/div>");</script>
+
+<div id="alpha-magelo"><div id="upperbox2" onMousedown="layer='alpha-magelo';startdnd(event);" onMouseup="stopdnd();"></div>
+
+<div id="item-info"></div>
+<div id="details">
+<span style="color:#FBFB00;font-size: 12px;">
+		MOTD: Welcome to the Magelo Profile System !
+	</span>
+	<br>
+	<span class="textFont" style="font-size: 9px;">You can visit Magelo <a href="http://www.magelo.com" target="new">here</a></span>
+	<br><br>
+	
+	
+	
+	<table class="textFont" cellpadding="0" cellspacing="0" width="330">
+	<tr>
+		<td valign="top" width="190">
+		
+			Current profile: <script type="text/javascript">document.write(profil_name);</script>
+			
+			<script type="text/javascript">
+				document.write("<table class='textFont' cellpadding=2 cellspacing=0>");
+				document.write("<tr><td height=7><\/td><\/tr><tr><td>&nbsp;<\/td><td>Base<\/td><td>Direct<\/td><td>Indirect<\/td><td>Total<\/td><\/tr>");
+				document.write("<tr><td>HP<\/td><td>"+hp+"<\/td><td>"+mod1_hp+"<\/td><td>"+mod2_hp+"<\/td><td>"+(hp+mod1_hp+mod2_hp)+"<\/td><\/tr>");
+				if(mana!=0)
+					document.write("<tr><td>MANA<\/td><td>"+mana+"<\/td><td>"+mod1_mana+"<\/td><td>"+mod2_mana+"<\/td><td>"+(mana+mod1_mana+mod2_mana)+"<\/td><\/tr>");
+				document.write("<\/table>");
+			</script>
+					
+			<script type="text/javascript">
+				document.write("<table class='textFont' cellpadding=0 cellspacing=0>");
+				if(haste!=0)
+					document.write("<tr><td colspan=6>Permanent haste: "+haste+"%<\/td><\/tr>");
+				if(hp_regen!=0)
+					document.write("<tr><td colspan=6>Regen of "+hp_regen+" hp per tick<\/td><\/tr>");
+				if(mana_regen!=0)
+					document.write("<tr><td colspan=6>Regen of "+mana_regen+" mana per tick<\/td><\/tr>");
+				document.write("<\/table>");
+			</script>
+			
+		</td>
+		<td valign="top">
+			<script type='text/javascript' >
+				if(tab_profile.length!=0)
+				{
+					document.write("<table cellpadding=1 cellspacing=0 class='textFont'><tr><td>Alternate Profile");
+					if(tab_profile.length>1)
+						document.write("s");
+					document.write(":<\/td><\/tr><tr><td height=5><\/td><\/tr><tr><td>");
+					for(var i=1;i<=tab_profile.length;i++)
+						document.write("<li><a href='eq_view_profile.html?num="+tab_profile[i].num+"'>"+tab_profile[i].name+"<\/a><br>");
+					document.write("<\/td><\/tr><\/table>");
+				}
+			</script>
+		</td>
+	</tr>
+	</table>
+</div>
+
+<!-- Fin du layer magelo -->
+</div>
+
+<div id="alpha-bag"></div>
+
+<script type="text/javascript">
+	document.getElementById("alpha").style.top  = '90';
+	document.getElementById("alpha").style.left = '60';
+	document.getElementById("alpha-magelo").style.top  = '340';
+	document.getElementById("alpha-magelo").style.left = '415';
+	document.getElementById("alpha-bag").style.top  = '90';
+	document.getElementById("alpha-bag").style.left = '415';
+	
+	document.getElementById("skill-area").style.top  = '25';
+	document.getElementById("skill-area").style.left = '256';
+	
+	if(ie_win32==true)
+	{
+		document.getElementById("alpha-trans").style.top  = '90';
+		document.getElementById("alpha-trans").style.left = '60';
+		document.getElementById("alpha-magelo-trans").style.top  = '340';
+		document.getElementById("alpha-magelo-trans").style.left = '415';
+		document.getElementById("alpha-bag-trans").style.top  = '90';
+		document.getElementById("alpha-bag-trans").style.left = '415';
+	}
+	
+	
+	setAlphaChannel("alpha");
+	setAlphaChannel("alpha-magelo");
+	setAlphaChannel("alpha-bag");
+	
+	// affichage des valeurs dans les emplacements prévus
+	document.getElementById("hp").appendChild(document.createTextNode((hp+mod1_hp+mod2_hp)+"/"+(hp+mod1_hp+mod2_hp)));
+	document.getElementById("ac").style.color="#00F000";
+	document.getElementById("ac").innerHTML=("<span style='color:"+getColor(ac_bonus)+";'>"+ac+"<\/span>/1000<\/td>");
+	document.getElementById("atk").style.color="#00F000";
+	document.getElementById("atk").innerHTML=("<span style='color:"+getColor(atk_bonus)+";'>"+atk+"<\/span>/1000<\/td>");
+	document.getElementById("str-label").style.color=getColor(str_bonus);
+	document.getElementById("str-label").appendChild(document.createTextNode(str));
+	document.getElementById("sta").style.color=getColor(sta_bonus);
+	document.getElementById("sta").appendChild(document.createTextNode(sta));
+	document.getElementById("agi").style.color=getColor(agi_bonus);
+	document.getElementById("agi").appendChild(document.createTextNode(agi));
+	document.getElementById("dex").style.color=getColor(dex_bonus);
+	document.getElementById("dex").appendChild(document.createTextNode(dex));
+	document.getElementById("wis").style.color=getColor(wis_bonus);
+	document.getElementById("wis").appendChild(document.createTextNode(wis));
+	document.getElementById("int").style.color=getColor(int_bonus);
+	document.getElementById("int").appendChild(document.createTextNode(inte));
+	document.getElementById("cha").style.color=getColor(cha_bonus);
+	document.getElementById("cha").appendChild(document.createTextNode(cha));
+	document.getElementById("RP").style.color=getColor(pr_bonus);
+	document.getElementById("RP").appendChild(document.createTextNode(pr));
+	document.getElementById("RM").style.color=getColor(mr_bonus);
+	document.getElementById("RM").appendChild(document.createTextNode(mr));
+	document.getElementById("RD").style.color=getColor(dr_bonus);
+	document.getElementById("RD").appendChild(document.createTextNode(dr));
+	document.getElementById("RF").style.color=getColor(fr_bonus);
+	document.getElementById("RF").appendChild(document.createTextNode(fr));
+	document.getElementById("RC").style.color=getColor(cr_bonus);
+	document.getElementById("RC").appendChild(document.createTextNode(cr));
+</script>
+
+</body>
+</html>

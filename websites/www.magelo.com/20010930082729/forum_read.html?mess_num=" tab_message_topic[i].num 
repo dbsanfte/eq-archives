@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
+<html>
+<head>
+	<title>Forum - Thread view</title>
+	<link rel="stylesheet" type="text/css" href="./style/magelo.css">
+</head>
+<body>
+<!-- Header for Projet -->
+<script type='text/javascript' language='JavaScript' src="http://www.magelo.com/components/function.jsp"></script>
+<script type='text/javascript' language='JavaScript' src="http://www.magelo.com/components/forum_read.jsp"></script>
+<!-------------------------->
+<style>
+	.author { font-family: Verdana; color:#285472; font-size: 11pt}
+	.rank { font-family: Verdana; color:#B42C29; font-size: 7pt}
+	.date { font-family: Verdana; color:#23798F; font-size: 8pt}
+	.edited { font-family: Verdana;  font-size: 7pt}
+</style>
+
+<br>
+<table align="center" width="99%" cellpadding="0" cellspacing="0">
+<tr><td width="*" rowspan="2" colspan="2">
+<table width="100%" align="center" border="1" bordercolor="#29455A" cellpadding="0" cellspacing="0">
+<tr><td><table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td background="img/title_bg0.gif" height="15" class="title">
+		&nbsp;Forum
+	</td>
+</tr>
+<tr><td class="cadre_bg"><table width="98%" align="center">
+<tr>
+	<td class="text2">
+		<br>
+		<table width="100%"><tr><td align="center" colspan="2" class="text" style="font-size: 14px;font-weight: bold;">
+		<script type='text/javascript' language='JavaScript'>
+			document.write("<a href='./forum.html'>Forums</a>");
+			if(typeof(forum_num)!='undefined')
+			{
+				document.write("&nbsp;>&nbsp;");
+				if(expanded==true)
+					document.write("<a href='./forum_e.html?forum_num="+forum_num+"'>"+forum_name+"</a>");
+				else
+					document.write("<a href='./forum_c.html?forum_num="+forum_num+"'>"+forum_name+"</a>");
+				
+				if(typeof(mess_num)!='undefined')
+				{
+					document.write("&nbsp;>&nbsp;");
+					if(flat==true)
+						document.write("<a href='./forum_flat.html?mess_num="+topic_num+"&page_num="+page_num+"'>"+mess_title+"</a>");
+					else
+						document.write("<a href='./forum_read.html?mess_num="+mess_num+"'>"+mess_title+"</a>");
+				}
+				
+				document.write("<\/td><\/tr><tr><td align='left'><br>");
+				document.write("<a href='http://www.magelo.com/components/forum_flat_view.jsp?redirect=/forum_flat.html?mess_num="+topic_num+"&b=true'><img alt='Flat view' border=0 src='img/flat_view_off.gif' onmouseover=\"this.src='img/flat_view_on.gif'\" onmouseout=\"this.src='img/flat_view_off.gif'\"></a><a href='./forum_search.html?mess_num="+topic_num+"&page_num=10'><img alt='Search' border=0 src='img/search_off.gif' onmouseover=\"this.src='img/search_on.gif'\" onmouseout=\"this.src='img/search_off.gif'\"></a>");
+				document.write("<\/td>");
+				if(forum_post==true)
+					document.write("<td align='right'><br><a href='./forum_post.html?forum_num="+forum_num+"'><img border=0 alt='New topic' src='img/new_topic_off.gif' onmouseover=\"this.src='img/new_topic_on.gif'\" onmouseout=\"this.src='img/new_topic_off.gif'\"></a><\/td>");
+			}
+			else
+				document.location="./forum.html";
+		</script>
+		</tr></table>
+		<br>
+		<table align="center" width="90%" cellpadding="5" cellspacing="1">
+		<tr>
+		<td colspan="2" align="right">
+		<script type='text/javascript' language='JavaScript'>
+			if(forum_reply==true)
+				document.write("<a href='./forum_reply.html?mess_num="+topic_num+"'><img alt='Reply to this topic' border=0 src='img/reply_to_off.gif' onmouseover=\"this.src='img/reply_to_on.gif'\" onmouseout=\"this.src='img/reply_to_off.gif'\"></a>");
+		</script>
+		</td></tr>	
+		<script type='text/javascript' language='JavaScript'>
+		var i=1;
+		{
+			document.write("<a name='"+tab_message[i].num+"'></a>");
+			document.write("<tr><td bgcolor='#9CADCE' valign='top' width='25%' class='text2'><span class='author'>"+tab_message[i].author+"</span><br><span class='rank'>["+tab_message[i].author_rank+"]</span><br><span class='date'>"+tab_message[i].date+"</span><br>");
+			
+			if(tab_message[i].approved==true)
+				if(forum_reply==true)
+					document.write("<a href='./forum_reply.html?mess_num="+tab_message[i].num+"'>Reply</a>");
+			else
+				if(forum_moderator==true)
+					document.write("<a href='http://www.magelo.com/components/forum_valid_mess.jsp?mess_num="+tab_message[i].num+"&b=true'>Approve</a>&nbsp;-&nbsp;<a href='http://www.magelo.com/components/forum_valid_mess.jsp?mess_num="+tab_message[i].num+"&b=false'>Remove</a>");
+			if(tab_message[i].edit==true)
+				document.write("&nbsp;-&nbsp;<a href='./forum_edit_mess.html?mess_num="+tab_message[i].num+"'>Edit</a>");
+			if(forum_admin==true)
+				document.write("&nbsp;-&nbsp;<a class='admin_link' href='./forum_move_mess.html?mess_num="+tab_message[i].num+"'>Move</a>");
+			if(tab_message[i].del==true)
+				document.write("&nbsp;-&nbsp;<a class='admin_link' href='http://www.magelo.com/components/forum_delete_mess.jsp?mess_num="+tab_message[i].num+"'>Delete</a>");
+			
+			if(tab_message[i].photo_url!=null)
+				document.write("<br><img src='"+tab_message[i].photo_url+"'><br>");
+			document.write("</td><td bgcolor='#9CADCE' valign='top' width='*'>");
+			
+			//message here ( title + body)
+			var ident=(tab_message[i].level-1)*25;
+			if(ident<0)
+				ident=0;
+			document.write("<table border=0 width='100%' cellpadding=0 cellspacing=0 class='text2'><tr><td width="+ident+"></td><td><b>");
+			document.write(tab_message[i].title+"</b><hr><br>"+page_setup(tab_message[i].body)+"<br>");
+			if(tab_message[i].sig!=null)
+				document.write("<br><span class='body'>"+page_setup(tab_message[i].sig)+"</span><br>");
+			if(tab_message[i].modified_author!=null)
+				document.write("<br><span class='edited'>Edited by "+tab_message[i].modified_author+" - "+tab_message[i].modified_date+"</span>");
+			document.write("</td></tr></table>");
+			
+			document.write("</td></tr>");
+		}
+		
+		if(forum_admin==true)
+		{
+			document.write("<tr><td colspan=2 align='center'>");
+			if(topic_locked==true)
+				document.write("<a href='http://www.magelo.com/components/forum_lock_topic.jsp?mess_num="+tab_message[1].num+"&b=false'><img alt='Unlock this topic' border=0 src='img/unlock_topic_off.gif' onmouseover=\"this.src='img/unlock_topic_on.gif'\" onmouseout=\"this.src='img/unlock_topic_off.gif'\"></a>");
+			else
+				document.write("<a href='http://www.magelo.com/components/forum_lock_topic.jsp?mess_num="+tab_message[1].num+"&b=true'><img alt='Lock this topic' border=0 src='img/lock_topic_off.gif' onmouseover=\"this.src='img/lock_topic_on.gif'\" onmouseout=\"this.src='img/lock_topic_off.gif'\"></a>");
+			document.write("</td></tr>");
+		}
+		
+		
+		//now we display the topic
+		document.write("<tr><td colspan=2 class='text2'>");
+		for(var i=1;i<=tab_message_topic.length;i++)
+		{
+			if(tab_message_topic[i].level==0)
+			{
+				document.write("<br>");
+				if(tab_message_topic[i].locked==true)
+					document.write("<img src='./img/locked_folder.gif' height=16 width=13 title='Locked topic'>");
+				else
+				{
+					if(tab_message_topic[i].new_one==true)
+					{
+						if(tab_message_topic[i].replies>25)
+							document.write("<img src='./img/hot_red_folder.gif' height=16 width=13 title='Active new topic'>");
+						else
+							document.write("<img src='./img/red_folder.gif' height=16 width=13 title='New topic'>");
+					}
+					else
+					{
+						if(tab_message_topic[i].replies>25)
+							document.write("<img src='./img/hot_folder.gif' height=16 width=13 title='Active topic'>");
+						else
+							document.write("<img src='./img/folder.gif' height=16 width=13 title='Topic'>");
+					}
+				}
+			}
+			if(tab_message_topic[i].level==0)
+				document.write("<img src='./img/dot.gif' height=1 width="+tab_message_topic[i].level*20+">");
+			else
+				document.write("<img src='./img/dot.gif' height=1 width="+(13+tab_message_topic[i].level*20)+">");
+			if(tab_message_topic[i].num==tab_message[1].num)
+				document.write(tab_message_topic[i].title);
+			else
+				document.write("<a href='./forum_read.html?mess_num="+tab_message_topic[i].num+"'>"+tab_message_topic[i].title+"</a>");
+			document.write("<b>-</b> <span class='author'>"+tab_message_topic[i].author+"</span> <span class='date'>"+tab_message_topic[i].date+"</span><br>");
+		}
+		document.write("</td></tr>");
+		</script>
+		</table>
+		<br>
+			
+	</td>
+</tr></table></td></tr></table></td></tr></table>
+</td><td width="6" height="8" background="img/right_shadow.gif" valign="top"><img src="img/top_right_shadow.gif" width="6" height="8"></td></tr>
+<tr><td width="6" height="100%" background="img/right_shadow.gif"></td></tr>
+<tr>
+	<td width="6" height="8" background="img/bottom_shadow.gif"><img src="img/bottom_left_shadow.gif" width="6" height="8"></td>
+	<td width="*" height="8" background="img/bottom_shadow.gif"><img src="img/bottom_shadow.gif" width="6" height="8"></td>
+	<td width="6" height="8" background="img/bottom_shadow.gif"><img src="img/bottom_right_shadow.gif" width="6" height="8"></td>
+</tr>	
+</table>
+
+
+</body>
+</html>

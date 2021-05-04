@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>EQ - Profile</title>
+	<link rel="stylesheet" type="text/css" href="./style/magelo.css">
+	<style type="text/css">
+		.help { font-family: Arial; font-size: 9pt;}
+		select { width : 25em; }
+		.button { width : 6em; margin-bottom : 3px;}
+		
+		.slot
+		{
+			position: absolute;
+			width: 40px; 
+			height: 40px;
+		}
+		
+		#slot1 {top: 11px;	left: 16px;}
+		#slot5 {top: 11px;	left: 64px;}
+		#slot3 {top: 11px;	left: 112px;}
+		#slot2 {top: 11px;	left: 160px;}
+		#slot4 {top: 11px;	left: 208px;}
+		
+		#slot15 {top: 77px;	left: 16px;}
+		#slot9 {top: 77px;	left: 64px;}
+		#slot7 {top: 77px;	left: 112px;}
+		#slot12 {top: 77px;	left: 160px;}
+		#slot10 {top: 77px;	left: 208px;}
+		#slot16 {top: 77px;	left: 256px;}
+		
+		#slot6 {top: 143px; left: 16px;}
+		#slot17 {top: 143px;left: 64px;}
+		#slot8 {top: 143px;	left: 112px;}
+		#slot20 {top: 143px;	left: 160px;}
+		#slot18 {top: 143px;	left: 208px;}
+		#slot19 {top: 143px;	left: 256px;}
+		
+		#slot13 {top: 209px;	left: 16px;}
+		#slot14 {top: 209px;	left: 64px;}
+		#slot11 {top: 209px;	left: 112px;}
+		#slot21 {top: 209px;	left: 160px;}
+		#slot0  {top: 209px;	left: 208px;}
+		
+		
+	</style>
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"> 
+<META HTTP-EQUIV="PRAGMAS" CONTENT="NO-CACHE">
+</head>
+<body>
+<!-- Header for Magelo -->
+<script type='text/javascript' src="magelo.js"></script>
+<script type='text/javascript' src="/components/eq_alt_profile.jsp"></script>
+
+<script type="text/javascript">
+	function filtre(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\'")
+				tmp+="\\\'";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+	
+	function enable_form(status)
+	{
+		switch(status)
+		{
+			case 0:
+				document.update_equipment.action_cat[0].disabled=false;
+				if(getParameter("dream")!='')
+					document.update_equipment.action_cat[1].checked=true;
+				else
+					document.update_equipment.action_cat[0].checked=true;
+				
+				document.update_equipment.action_cat[1].disabled=false;
+				document.update_equipment.item.disabled=false;
+				document.update_equipment.action_cat[2].disabled=true;
+				
+				document.update_equipment.send_to.value='eq_alt_profile_add_step1';
+				document.update_equipment.redirect.value='/eq_alt_profile_add.html';
+				set_forms();
+				break;
+			case 1:
+				document.update_equipment.action_cat[0].disabled=true;
+				document.update_equipment.action_cat[1].disabled=true;
+				document.update_equipment.item.disabled=true;
+				document.update_equipment.action_cat[2].disabled=false;
+				document.update_equipment.action_cat[2].checked=true;
+				
+				document.update_equipment.send_to.value='eq_alt_profile_undo_switch';
+				document.update_equipment.redirect.value='/eq_alt_profile.html';
+				set_forms();
+				break;
+			case 2:
+				document.update_equipment.action_cat[0].disabled=true;
+				document.update_equipment.action_cat[1].disabled=true;
+				document.update_equipment.item.disabled=true;
+				document.update_equipment.action_cat[2].disabled=true;
+				break;
+		}
+	}
+	
+	function displayAugments(itemPosition)
+	{
+		var buffer="";
+		if(tab_item[itemPosition].slotAugType1!=0)
+		{
+			buffer+="Slot 1 -> type "+tab_item[itemPosition].slotAugType1+": ";
+			if(tab_item[itemPosition].augId1!= null)
+				buffer+="<a href='eq_item_info.html?num="+tab_item[itemPosition].augId1+"'>"+(tab_item[itemPosition].augName1)+"<\/a>";
+			else
+				buffer+="empty";
+			
+			if(tab_item[itemPosition].status==1 && tab_item[itemPosition].owned==false)
+				buffer+=" [<a href='eq_alt_item_update_aug.jsp?numPerso="+char_num+"&pos="+itemPosition+"&slot=1'>Update</a>]";
+		}
+		
+		if(tab_item[itemPosition].slotAugType2!=0)
+		{
+			buffer+="<br>Slot 2 -> type "+tab_item[itemPosition].slotAugType2+": ";
+			if(tab_item[itemPosition].augId2!= null)
+				buffer+="<a href='eq_item_info.html?num="+tab_item[itemPosition].augId2+"'>"+(tab_item[itemPosition].augName2)+"<\/a>";
+			else
+				buffer+="empty";
+			
+			if(tab_item[itemPosition].status==1 && tab_item[itemPosition].owned==false)
+				buffer+=" [<a href='eq_alt_item_update_aug.jsp?numPerso="+char_num+"&pos="+itemPosition+"&slot=2'>Update</a>]";
+		}
+		
+		if(tab_item[itemPosition].slotAugType3!=0)
+		{
+			buffer+="<br>Slot 3 -> type "+tab_item[itemPosition].slotAugType3+": ";
+			if(tab_item[itemPosition].augId3!= null)
+				buffer+="<a href='eq_item_info.html?num="+tab_item[itemPosition].augId3+"'>"+(tab_item[itemPosition].augName3)+"<\/a>";
+			else
+				buffer+="empty";
+			
+			if(tab_item[itemPosition].status==1 && tab_item[itemPosition].owned==false)
+				buffer+=" [<a href='eq_alt_item_update_aug.jsp?numPerso="+char_num+"&pos="+itemPosition+"&slot=3'>Update</a>]";
+		}
+		
+		if(tab_item[itemPosition].slotAugType4!=0)
+		{
+			buffer+="<br>Slot 4 -> type "+tab_item[itemPosition].slotAugType4+": ";
+			if(tab_item[itemPosition].augId4!= null)
+				buffer+="<a href='eq_item_info.html?num="+tab_item[itemPosition].augId4+"'>"+(tab_item[itemPosition].augName4)+"<\/a>";
+			else
+				buffer+="empty";
+			if(tab_item[itemPosition].status==1 && tab_item[itemPosition].owned==false)
+				buffer+=" [<a href='eq_alt_item_update_aug.jsp?numPerso="+char_num+"&pos="+itemPosition+"&slot=4'>Update</a>]";
+		}
+		
+		return buffer;
+	}
+	
+	function displayLink(itemPosition)
+	{
+		var buffer=(tab_item[itemPosition].name+"<a href='eq_item_info.html?num="+tab_item[itemPosition].num);
+		
+		
+		if(tab_item[itemPosition].slotAugType1!=0 && tab_item[itemPosition].augId1!= null)
+			buffer+="&slot1="+tab_item[itemPosition].augId1;
+		if(tab_item[itemPosition].slotAugType2!=0 && tab_item[itemPosition].augId2!= null)
+			buffer+="&slot2="+tab_item[itemPosition].augId2;
+		if(tab_item[itemPosition].slotAugType3!=0 && tab_item[itemPosition].augId3!= null)
+			buffer+="&slot3="+tab_item[itemPosition].augId3;
+		if(tab_item[itemPosition].slotAugType4!=0 && tab_item[itemPosition].augId4!= null)
+			buffer+="&slot4="+tab_item[itemPosition].augId4;
+		
+		buffer+="'><img alt='View item info' border=0 src='/img/eye.gif'><\/a>";
+		
+		
+		
+		return buffer;
+	}
+</script>
+
+
+<br>
+<table align="center" width="100%" cellpadding="0" cellspacing="5" border="0">
+<tr><td valign="top" width="40%">
+
+<table align="center" width="100%" cellpadding="0" cellspacing="0">
+<tr><td width="*" rowspan="2" colspan="2">
+
+<table width="100%" align="center" border="1" style="border-color: #29455A" cellpadding="0" cellspacing="0">
+<tr><td><table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td style="background: url(img/title_bg0.gif)" height="15" class="title">
+		&nbsp;Vital stats
+	</td>
+</tr>
+<tr><td class="cadre-bg"><table width="98%" align="center">
+<tr>
+	<td class="text2">
+		<br>
+			<script type='text/javascript' >
+				index=getParameter("index");
+				document.write(char_name+" "+char_surname+"<br><br>");
+				document.write("LVL "+char_level+"<br>"+char_class_eq+"<br>"+char_deity+"<br><br>");
+			</script>
+			<table class='text2' cellpadding=1 cellspacing=0 width='85%'>
+			<tr><td></td></tr><tr><td>&nbsp;</td><td align="center">Base</td><td align="center">Item</td><td align="center">Total</td></tr>
+			<script type='text/javascript' >
+				document.write("<tr><td>HP Regen<\/td><td align='center'>"+(hp_regen_stand)+"/"+hp_regen_sit+"<\/td><td align='center'>"+hp_regen+"<\/td><td align='center'>"+(hp_regen_stand+hp_regen)+"/"+(hp_regen_sit+hp_regen)+"<\/td><\/tr>");
+				document.write("<tr><td colspan='4' style='height: 1px;'><\/td><\/tr>");
+				if(mana_regen!=0)
+					document.write("<tr><td colspan='4'>Regen of "+mana_regen+" mana per tick ("+ft+" from items)<\/td></tr>");
+				if(haste!=0)
+					document.write("<tr><td colspan='4'>Permanent haste: "+haste+"%<\/td><\/tr>");
+			</script>
+			</table>
+			
+			<br>
+			
+			<script type='text/javascript' >
+				document.write("<table class='text2' width='98%'>");
+				document.write("<tr><td><\/td><td>Base<\/td><td>Modifiers 1<\/td><td>Modifiers 2<\/td><td>Total<\/td><\/tr>");
+				document.write("<tr><td height='4' colspan=10><\/td><\/tr>");
+				document.write("<tr><td>HP<\/td><td>"+char_hp+"<\/td><td>"+mod1_hp+"<\/td><td>"+mod2_hp+"<\/td><td>"+(char_hp+mod1_hp+mod2_hp)+"<\/td><\/tr>");
+				if(char_mana!=0) document.write("<tr><td>MANA<\/td><td>"+char_mana+"<\/td><td>"+mod1_mana+"<\/td><td>"+mod2_mana+"<\/td><td>"+(char_mana+mod1_mana+mod2_mana)+"<\/td><\/tr>");
+					document.write("<tr><td>AC<\/td><td>"+char_ac+"<\/td><td>"+mod1_ac+"<\/td><td>"+mod2_ac+"<\/td><td>"+(char_ac+mod1_ac+mod2_ac+mod3_ac)+"<\/td><\/tr>");
+				document.write("<tr><td>ATK<\/td><td>"+char_atk+"<\/td><td>"+mod1_atk+"<\/td><td>"+mod2_atk+"<\/td><td>"+(char_atk+mod1_atk+mod2_atk+mod3_atk)+"<\/td><\/tr>");
+				document.write("<\/table>");
+			</script>
+			
+			<br>
+					
+			<script type='text/javascript' >
+				document.write("<table class='text2' cellpadding=1 cellspacing=0 width='80%'>");
+				document.write("<tr><td>&nbsp;<\/td><td>Base<\/td><td>Modifiers<\/td><td>Total<\/td><td>Cap<\/td><\/tr>");
+				document.write("<tr><td height='4' colspan=10><\/td><\/tr>");
+				document.write("<tr><td>STR<\/td><td>"+char_str+"<\/td><td>"+mod_str+"<\/td><td>"+(char_str+mod_str)+"<\/td><td>"+statCap1+"<\/td><\/tr>");
+				document.write("<tr><td>STA<\/td><td>"+char_sta+"<\/td><td>"+mod_sta+"<\/td><td>"+(char_sta+mod_sta)+"<\/td><td>"+statCap1+"<\/td><\/tr>");
+				document.write("<tr><td>AGI<\/td><td>"+char_agi+"<\/td><td>"+mod_agi+"<\/td><td>"+(char_agi+mod_agi)+"<\/td><td>"+statCap1+"<\/td><\/tr>");
+				document.write("<tr><td>DEX<\/td><td>"+char_dex+"<\/td><td>"+mod_dex+"<\/td><td>"+(char_dex+mod_dex)+"<\/td><td>"+statCap1+"<\/td><\/tr>");
+				document.write("<tr><td>WIS<\/td><td>"+char_wis+"<\/td><td>"+mod_wis+"<\/td><td>"+(char_wis+mod_wis)+"<\/td>");
+				if(baseSpell==1)
+					document.write("<td>"+statCap2+"<\/td><\/tr>");
+				else
+					document.write("<td>"+statCap1+"<\/td><\/tr>");
+				document.write("<tr><td>INT<\/td><td>"+char_int+"<\/td><td>"+mod_int+"<\/td><td>"+(char_int+mod_int)+"<\/td>");
+				if(baseSpell==2)
+					document.write("<td>"+statCap2+"<\/td><\/tr>");
+				else
+					document.write("<td>"+statCap1+"<\/td><\/tr>");
+				document.write("<tr><td>CHA<\/td><td>"+char_cha+"<\/td><td>"+mod_cha+"<\/td><td>"+(char_cha+mod_cha)+"<\/td><td>"+statCap1+"<\/td><\/tr>");
+				document.write("<\/table>");
+			</script>
+			
+			<br>
+			
+			<script type='text/javascript' >
+				document.write("<table class='text2' cellpadding=1 cellspacing=0 width='60%'>");
+				document.write("<tr><td><\/td><td>Base<\/td><td>Modifiers<\/td><td>Total<\/td><\/tr>");
+				document.write("<tr><td height='4' colspan=10><\/td><\/tr>");
+				document.write("<tr><td>POISON<\/td><td>"+char_pr+"<\/td><td>"+mod_pr+"<\/td><td>"+(char_pr+mod_pr)+"<\/td><\/tr>");
+				document.write("<tr><td>MAGIC<\/td><td>"+char_mr+"<\/td><td>"+mod_mr+"<\/td><td>"+(char_mr+mod_mr)+"<\/td><\/tr>");
+				document.write("<tr><td>DISEASE<\/td><td>"+char_dr+"<\/td><td>"+mod_dr+"<\/td><td>"+(char_dr+mod_dr)+"<\/td><\/tr>");
+				document.write("<tr><td>FIRE<\/td><td>"+char_fr+"<\/td><td>"+mod_fr+"<\/td><td>"+(char_fr+mod_fr)+"<\/td><\/tr>");
+				document.write("<tr><td>COLD<\/td><td>"+char_cr+"<\/td><td>"+mod_cr+"<\/td><td>"+(char_cr+mod_cr)+"<\/td><\/tr>");
+				document.write("<\/table>");
+			</script>
+			
+			<br><br>
+	</td>
+</tr></table>
+</td></tr></table>
+</td></tr></table>
+</td><td width="6" height="8" style="background: url(img/right_shadow.gif)" valign="top"><img alt="" src="img/top_right_shadow.gif" width="6" height="8"></td></tr>
+<tr><td width="6" height="100%" style="background: url(img/right_shadow.gif)"></td></tr>
+<tr>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_left_shadow.gif" width="6" height="8"></td>
+	<td width="*" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_shadow.gif" width="6" height="8"></td>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_right_shadow.gif" width="6" height="8"></td>
+</tr>	
+</table>
+
+</td><td width="*" valign="top" rowspan="2">
+
+<table align="center" width="100%" cellpadding="0" cellspacing="0">
+<tr><td width="*" rowspan="2" colspan="2">
+<table width="100%" align="center" border="1" style="border-color: #29455A" cellpadding="0" cellspacing="0">
+<tr><td><table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td style="background: url(img/title_bg0.gif)" height="15" class="title">
+		&nbsp;Equipment
+	</td>
+</tr>
+<tr><td class="cadre-bg"><table width="98%" align="center">
+<tr>
+	<td class="text2">
+		
+		<br>
+		
+		<table class="text2" width="98%">
+		<tr>
+			<td>
+				<div style="position: relative;">
+					<img alt="" src="/res/eq/misc/equipment.png">
+					
+					<script type="text/javascript">
+					for(var i=0;i<=21;i++)
+					{
+						document.write("<div id='slot"+i+"' class='slot'>");
+						if(tab_item[i].icon!=null)
+						{
+							// Gestion du onclick sur l item
+							var onclick="document.update_equipment.pos.value="+i+";";
+							onclick+="document.getElementById('selected_slot').innerHTML=displayLink("+i+");";
+							onclick+="enable_form("+tab_item[i].status+");document.getElementById('augments').innerHTML=displayAugments("+i+");";
+							
+							// on affiche l icone
+							document.write("<img src='/res/eq/itemicon/"+tab_item[i].icon+".png' alt=\""+tab_item[i].name+"\" border=0 style='cursor: "+cursor+"' onclick=\" "+onclick+" \" >");
+							
+						}
+						else if(tab_item[i].status!=2)
+							document.write("<img src='/res/eq/misc/money_mask.png' alt='"+tab_item[i].name+"' border=0 style='cursor: "+cursor+"' onclick=\" document.update_equipment.pos.value="+i+";document.getElementById('selected_slot').innerHTML='"+tab_item[i].name+"';	enable_form("+tab_item[i].status+"); \" >");
+						document.write("<\/div>");
+					}
+						
+					</script>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+				
+				<form name="update_equipment" action="">
+				<input type="Hidden" name="send_to" value="eq_alt_profile_add_step1">
+				<input type="Hidden" name="redirect" value="/eq_alt_profile_add.html">
+				<input type="Hidden" name="redirect_error" value="/error.html">
+				
+				<script type="text/javascript">
+					if(document.all!=null)
+						document.write("<fieldset style='width:95%'><legend class='text2'>Create an alternate profile</legend><br>");
+				</script>
+							
+				<input type="Hidden" name="pos" value="-1">
+							
+				<table class="text2"  width="90%">
+				<tr><td valign="bottom" style="width:95px;height:24px">Selected Slot:&nbsp;</td><td valign="bottom"><div id="selected_slot" style="color: red;">NONE</div></td></tr>
+				<tr>
+					<td valign="top" style="width:95px;height:24px">
+						Augments:&nbsp;
+					</td>
+					<td valign="top">
+						<div id="augments"></div>
+					</td>
+				</tr>
+				</table>
+				<br><br>
+				
+				<table class="text2" cellpadding="2" cellspacing="2">
+				<tr>
+					<td valign="top"><input type="radio" name="action_cat" value="update_from_player" disabled onclick="document.update_equipment.send_to.value='eq_alt_profile_add_step1';document.update_equipment.redirect.value='/eq_alt_profile_add.html';set_forms();"></td>
+					<td>Switch the item in the selected slot with an item from your inventory or your bank</td>
+				</tr>
+				<tr><td height="15"></td></tr>
+				<tr>
+					<td valign="top"><input type="radio" name="action_cat" value="update_from_db" disabled onclick="document.update_equipment.send_to.value='eq_alt_profile_add_step1';document.update_equipment.redirect.value='/eq_alt_profile_add.html';set_forms();"></td>
+					<td>Switch the item in the selected slot with the following item:<br>Item ID or partial name:&nbsp;<input class="input" type="text" name="item" size="25" maxlength="40" value="" disabled><br><span style="color:red;font-size:10px;">Use this option only for items you dont own ( dream profiles, wish list, etc..)</span></td>
+				</tr>
+				<tr><td height="15"></td></tr>
+				<tr>
+					<td valign="top"><input type="radio" name="action_cat" value="clear" disabled onclick="document.update_equipment.send_to.value='eq_alt_profile_undo_switch';document.update_equipment.redirect.value='/eq_alt_profile.html';set_forms();"></td>
+					<td>Undo the switch for the selected slot</td>
+				</tr>
+				</table>
+				
+				<br><br>
+				<div align="center">
+				<div align="center">
+					<img class="pointer" border="0" alt="Proceed" src="img/proceed_off.gif" onmouseover="this.src='img/proceed_on.gif'" onmouseout="this.src='img/proceed_off.gif'" onclick="if(document.update_equipment.pos.value!=-1) document.update_equipment.submit();">
+					&nbsp;&nbsp;
+					<a href="/eq_char.html"><img border="0" alt="Back" src="img/back_off.gif" onmouseover="this.src='img/back_on.gif'" onmouseout="this.src='img/back_off.gif'"></a>
+				</div></div>
+				
+				<b>Other operations:</b>
+				<ul>
+					<li><a href="/components/eq_alt_profile_clear_all.jsp">Clear all switched items</a></li>
+				</ul>
+				
+				</form>
+							
+				<script type="text/javascript">	if(document.all!=null) document.write("</fieldset>"); </script>
+				
+				<br><br>		
+			</td>
+		</table>
+	</td>
+</tr></table></td></tr></table></td></tr></table>
+</td><td width="6" height="8" style="background: url(img/right_shadow.gif)" valign="top"><img alt="" src="img/top_right_shadow.gif" width="6" height="8"></td></tr>
+<tr><td width="6" height="100%" style="background: url(img/right_shadow.gif)"></td></tr>
+<tr>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_left_shadow.gif" width="6" height="8"></td>
+	<td width="*" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_shadow.gif" width="6" height="8"></td>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_right_shadow.gif" width="6" height="8"></td>
+</tr>	
+</table>
+
+</td></tr>
+<tr><td>
+
+<table align="center" width="100%" cellpadding="0" cellspacing="0">
+<tr><td width="*" rowspan="2" colspan="2">
+<table width="100%" align="center" border="1" style="border-color: #29455A" cellpadding="0" cellspacing="0">
+<tr><td><table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td style="background: url(img/title_bg0.gif)" height="15" class="title">
+		&nbsp;Manage alternate profile(s)
+	</td>
+</tr>
+<tr><td class="cadre-bg"><table width="98%" align="center">
+<tr>
+	<td class="text2">
+		<br>
+		<form name="profile" action="">
+		
+		<input type="Hidden" name="send_to" value="eq_alt_profile_update">
+		<input type="Hidden" name="redirect" value="/eq_alt_profile.html">
+		<input type="Hidden" name="redirect_error" value="/error.html">
+		
+		<input type="Hidden" name="action_cat" value="">
+		
+		
+		Save current alternate profile as:<br>
+		<input type="Text" name="name" style="width:80%">
+		&nbsp;&nbsp;<img class="pointer" alt="save as"   name="save"  src="img/save_off.gif" onmouseover="this.src='img/save_on.gif'" onmouseout="this.src='img/save_off.gif'" onClick="document.profile.action_cat.value='save';document.profile.submit();">
+		<input type="checkbox" name="private" value="1">Do not show this alternate profile in profile(s).<br>
+		<br><br>
+		Stored alternate profile(s):<br>
+		<table width="100%" align="center" class="text2" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<script type='text/javascript'>
+					document.write("<select class='input' name='tab_profile' size=5 style='width:98%'>");
+					for(var i=1;i<=tab_profile.length;i++)
+						document.write("<option value='"+tab_profile[i].num+"'>"+tab_profile[i].name);
+					document.write("<\/select>");
+				</script>
+				
+			</td>
+		</tr>
+		
+		<tr><td height="5"></td></tr>
+		<tr>
+			<td align="center">
+				<img class="pointer" alt="load"   name="load"  src="img/load_off.gif" onmouseover="this.src='img/load_on.gif'" onmouseout="this.src='img/load_off.gif'" onClick="document.profile.action_cat.value='load';if(document.profile.tab_profile.selectedIndex!=-1) document.profile.submit();">
+				<img class="pointer" alt="delete" name="delete" src="img/delete_off.gif" onmouseover="this.src='img/delete_on.gif'" onmouseout="this.src='img/delete_off.gif'" onClick="document.profile.action_cat.value='delete';if(document.profile.tab_profile.selectedIndex!=-1)if(confirm('Are you sure you want to delete this alternate profile ?')==true) document.profile.submit();"><br>
+			</td>
+		</tr>
+		</table>
+		</form>
+		
+	</td>
+</tr></table></td></tr></table></td></tr></table>
+</td><td width="6" height="8" style="background: url(img/right_shadow.gif)" valign="top"><img alt="" src="img/top_right_shadow.gif" width="6" height="8"></td></tr>
+<tr><td width="6" height="100%" style="background: url(img/right_shadow.gif)"></td></tr>
+<tr>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_left_shadow.gif" width="6" height="8"></td>
+	<td width="*" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_shadow.gif" width="6" height="8"></td>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_right_shadow.gif" width="6" height="8"></td>
+</tr>	
+</table>
+
+</td></tr>
+
+</table>
+
+<script type='text/javascript' >
+	if(typeof(profile_name)!='undefined')
+	{
+		document.profile.name.value=profile_name;
+		document.profile.private.checked=profile_private;
+	}
+</script>
+
+
+<script type='text/javascript' >set_forms();</script>
+</body>
+</html>

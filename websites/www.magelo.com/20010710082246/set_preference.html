@@ -1,0 +1,188 @@
+<!-- Header for Projet -->
+<script src="http://www.magelo.com/components/function.jsp"></script>
+<script src="http://www.magelo.com/components/user_pref.jsp"></script>
+<!-------------------------->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>User settings</title>
+	<link rel="stylesheet" type="text/css" href="./style/magelo.css">
+</head>
+<body onload="set_forum_pref();">
+<style>
+	.quota { font-family: Arial; color:#FF0000; font-size: 8pt}
+</style>
+<br>
+<script>
+	document.writeln("<div align='center' class='website'>"+website_name+"</div>");
+</script>
+<br>
+<div align="center">
+	<a href="./forum.html">Go back to forums</a><br><br>
+	<script>
+	document.writeln("Preferences");
+	if(account_security.rank==true)
+		document.writeln(" - <a href='./set_rank.html'>Rank</a>");
+	if(account_security.member==true)
+		document.writeln(" - <a href='./set_member.html'>Member</a>");
+	if(account_security.rank==true)
+		document.writeln(" - <a href='./set_website.html'>Website</a>");
+	if(account_security.forum==true)
+		document.writeln(" - <a href='./set_forum.html'>Forum</a>");
+	</script>
+</div>
+<br>
+<table cellpadding=0 cellspacing=0 align="center" width="95%">
+<tr>
+	<td valign="top" width="49%">
+		
+		<table cellpadding=0 cellspacing=0 width="100%">
+		<tr><td align="center" bgcolor="#406886">Account</td></tr>
+		<tr>
+			<td>
+				<script>
+					document.writeln("<br>Login: "+account.login+"<br><br>");
+					document.writeln("Email: "+account.email+"<br>");
+					document.writeln("ICQ: "+account.icq+"<br>");
+					document.writeln("My email / icq are private: ");
+					if(account.private_info==true)
+						document.write("yes<br><br>");
+					else
+						document.write("no<br><br>");
+					document.writeln("Timezone: "+account.timezone+"<br>");
+					document.writeln("Am Pm: ");
+					if(account.am_pm==true)
+						document.write("yes<br><br>");
+					else
+						document.write("no<br><br>");
+				</script>
+				<div align="center">Update<br><a href="./preference_update.html">Preferences</a> - <a href="./password_update.html">Password</a></div>
+				<br>
+			</td>
+		</tr>
+		</table>
+		
+	</td>
+	<td width="2%">&nbsp;</td>
+	<td valign="top" width="49%">
+		<form name="resign">
+		<input type="Hidden" name="send_to" value="resign">
+		<input type="Hidden" name="redirect" value="/logoff.html">
+		<table cellpadding=0 cellspacing=0 width="100%">
+		<tr><td align="center" bgcolor="#406886"><script>document.write(website_name);</script></td></tr>
+		<tr><td><br>Rank: <script>document.write(account_security.rank_name);</script></td></tr>
+		<tr><td height="3"><img src='./img/dot.gif' width=1 height=1></td></tr>
+		<tr><td>Rights:</td></tr>
+		<tr><td height="3"><img src='./img/dot.gif' width=1 height=1></td></tr>
+		<tr>
+			<td>
+				<table cellpadding=5 cellspacing=0 border=1 width="80%">
+				<tr>
+					<td>
+						<table>
+						<tr><td>Rank</td><td><input type="checkbox" name="rank" value="true" disabled></td><td>Member</td><td><input type="checkbox" name="member" value="true" disabled></td><td>Forum</td><td><input type="checkbox" name="forum" value="true" disabled></td></tr>
+						<tr><td>News</td><td><input type="checkbox" name="news" value="true" disabled></td><td>Event</td><td><input type="checkbox" name="event" value="true" disabled></td><td>Poll</td><td><input type="checkbox" name="poll" value="true" disabled></td></tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<script>
+			//Based on the account_security, we set rights
+			set_rights();
+			
+			//Admin cant resign neither guest
+			if(account_security.rank_level!=100 && account_security.rank_level>0)
+				document.write("<tr><td align='center'><br><input type='submit' name='resign' value='Resign'></td></tr>");
+		</script>
+		</table>
+		</form>
+	</td>
+</tr>
+<tr>
+	<td width="100%" colspan="3">
+		
+		<table cellpadding=0 cellspacing=0 width="100%">
+		<tr><td align="center" bgcolor="#406886">Forum</td></tr>
+		<tr>
+			<td>
+				<br>
+				<form name="forum_pref">
+				<input type="Hidden" name="send_to" value="forum_update_preference">
+				<input type="Hidden" name="redirect" value="/set_preference.html">
+				<input type="Hidden" name="redirect_error" value="/error.html">
+				<table align="center" width="100%">
+				<tr>
+				<td valign="top" width="49%">
+						
+					<table>
+					<tr>
+						<td valign="top">View post in </td>
+						<td valign="top">
+							<input type="Radio" name="post" value="true">flat model.<br>
+							<input type="Radio" name="post" value="false">thread model.
+						</td>
+					</tr>
+					<tr><td height="10"></td></tr>
+					<tr>
+						<td valign="top">View board with </td>
+						<td valign="top">
+							<input type="Radio" name="board" value="true">all messages.<br>
+							<input type="Radio" name="board" value="false">topics only.
+						</td>
+					</tr>
+					</table>
+					<br>
+					<table>
+					<tr><td>Filter photo</td><td><input type="checkbox" name="filter_photo" value="true"></td></tr>
+					<tr><td>Filter signature</td><td><input type="checkbox" name="filter_sig" value="true"></td></tr>
+					</table>
+					<br>
+					&nbsp;Show <input type="text" name="nbr_mess" size="2" maxlength="2"> messages per page<br>
+					&nbsp;Auto fill subject in reply <input type="checkbox" name="auto_fill" value="true"><br>
+					&nbsp;View only new topics <input type="checkbox" name="new_topic_only" value="true"><br>
+					&nbsp;Automatically move new topics to top <input type="checkbox" name="topic_to_top" value="true"><br><br> 
+					
+ 
+				</td>
+				<td width="2%">&nbsp;</td>
+				<td valign="top" width="49%">
+						&nbsp;Signature (optional)<br>
+					&nbsp;<textarea cols="45" rows="6" name="signature"></textarea><br>
+					<script>
+						if(forum_pref.quota_sig==0)
+							document.write("&nbsp;<span class='quota'>Images in the sig are not allowed</span><br><br>");
+						else
+							document.write("&nbsp;<span class='quota'>Quota for size of images in the sig is: "+forum_pref.quota_sig+"Kb</span><br><br>");
+					</script>
+					&nbsp;Url of a photo (optional)<br>
+					&nbsp;<input type="text" name="photo_url" size="50" maxlength="100"><br>
+					<script>
+						if(forum_pref.quota_photo==0)
+						{
+							document.write("&nbsp;<span class='quota'>Photo option is disabled</span><br>");
+							document.forum_pref.photo_url.disabled=true;
+						}
+						else
+							document.write("&nbsp;<span class='quota'>Quota for size of the photo is: "+forum_pref.quota_photo+"Kb</span><br><br>");
+						
+						if(forum_pref.quota!=0)
+							document.write("&nbsp;Quota for both photo and sig is: "+forum_pref.quota+"Kb<br><br>");
+					</script>
+					<div align="center"><input type="submit" name="update" value="Update"></div>
+				</td>
+				</tr>
+				</table>
+				</form>
+			</td>
+		</tr>
+		</table>
+	
+	</td>
+</tr>
+</table>
+<script>set_forms();</script>
+
+</body>
+</html>

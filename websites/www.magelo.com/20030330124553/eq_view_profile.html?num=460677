@@ -1,0 +1,869 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://www.magelo.com/style/eq_profile.css">
+	<title>Magelo profile</title>
+</head>
+<body id="body">
+
+
+		<script type="text/javascript">
+	boutton1= new Image(46,15);
+	boutton1.src = "/res/eq/misc/test.png";
+
+	boutton2 = new Image(46,15);
+	boutton2.src = "/res/eq/misc/test2.png";
+
+	
+	
+	var spell_url='http://www.magelo.com/eq_spell_info.html';
+	
+	var lastUpdated = new Date(1047930640447);lastUpdated.setMinutes(lastUpdated.getMinutes()+ (-1*lastUpdated.getTimezoneOffset()));
+	 
+	
+	function getParameter(param)
+	{
+		param+='=';
+		var loc=''+document.location;
+		var deb=loc.indexOf(param)+param.length;
+		var fin=-1;
+		var value='';
+		if(deb!=(-1+param.length))
+		{
+			fin=loc.indexOf('&',deb);
+			if(fin!=-1)
+				value=loc.substring(deb,fin);
+			else
+				value=loc.substring(deb,loc.length);
+		}
+		return unescape(value);
+	}
+	
+	if(getParameter("resize")=="true")
+		window.resizeTo(800,740);
+	
+	function makeArray(n){this.length=n;return this;}
+
+	document.title="Casnova Decasson - Human Druid [Erollisi Marr]";
+	
+	
+	var ieWin32=(document.all!=null && navigator.platform == "Win32" && navigator.userAgent.indexOf("MSIE")!=-1);
+	var ie = (document.all!=null);
+	
+	function makeArray(n){this.length=n;return this;}
+	
+	function filtre(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\'")
+				tmp+="\\\'";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+	
+	function showItem(position)
+	{
+		document.getElementById("screenshot-text").innerHTML=tabItem[position].desc;
+		showScreenshot()
+	}
+	
+	function getNumSlot(capaciteBag,indice)
+	{
+		if(indice<=capaciteBag/2)
+			return indice;
+		else
+			return (indice+5-(capaciteBag/2));
+	}
+	
+	function openBag(position)
+	{
+		showItem(position);
+		
+		var buffer="";
+		for(var i=1;i<=tabItem[position].capacite;i++)
+		{
+			var index = 0;
+			if(position <2000)
+				index = 250 + 10*(position-22) + i -1;
+			else
+				index = (position-2000)*10+2030+i-1;
+				
+			buffer+=("<div id='bag-slot-"+getNumSlot(tabItem[position].capacite,i)+"' class='slot'><img ");
+			if(tabItem[index]!=null)
+			{
+				buffer+=("style='cursor: pointer' title=\""+tabItem[index].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[index].icon+".png'  onmousedown='showItem("+index+");'>");
+				if(tabItem[index].stackable==true)
+				{
+					if(ieWin32)
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+					else
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+				}
+			}
+			else
+				buffer+=("border=0 src='/res/eq/misc/money_mask.png'>");
+								
+			buffer+=("<\/div>");
+		}
+		
+		buffer+=("<div id='bag-button' style='position: absolute;left:25px' class='button' onmouseover=\"this.style.backgroundImage='url(/res/eq/misc/test2.png)';\" onmouseout=\"this.style.backgroundImage='url(/res/eq/misc/test.png)';\" onclick='closeBag();'>Done<\/div>");
+		
+		document.getElementById("bag").innerHTML=buffer;
+		
+		if(ieWin32)
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+40);
+		else
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+41);
+		document.getElementById("bag").style.height=(tabItem[position].capacite/2*40+40);
+		document.getElementById("bag-button").style.top=(tabItem[position].capacite/2*40+17);
+		
+		document.getElementById("bag-alpha").style.visibility='visible';
+		document.getElementById("bag").style.visibility='visible';
+	}
+	
+	function closeBag()
+	{
+		document.getElementById("bag-alpha").style.visibility='hidden';
+		document.getElementById("bag").style.visibility='hidden';
+		hideScreenshot();
+	
+	}
+	
+	function showBank()
+	{
+		document.getElementById("bank-alpha").style.visibility='visible';
+		document.getElementById("bank").style.visibility='visible';
+	}
+	
+	function hideBank()
+	{
+		document.getElementById("bank").style.visibility='hidden';
+		document.getElementById("bank-alpha").style.visibility='hidden';
+	}
+	
+	function showScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='visible';
+		document.getElementById("magelo-info").style.visibility='hidden';
+	}
+	function hideScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='hidden';
+		document.getElementById("magelo-info").style.visibility='visible';
+	}
+	
+	function showAdv()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("adv").style.visibility='visible';
+	}
+	
+	function showStat()
+	{
+		document.getElementById("adv").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='hidden';
+		document.getElementById("mod").style.visibility='hidden';
+		document.getElementById("keys").style.visibility='hidden';
+		document.getElementById("flags").style.visibility='hidden';
+		
+		document.getElementById("stat").style.visibility='visible';
+	}
+	
+	function showBio()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='visible';
+	}
+	
+	function showSkill()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='visible';
+	}
+	
+	function showSpell()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='visible';
+	}
+	
+	function showFocus()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='visible';
+	}
+	
+	function showMod()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("mod").style.visibility='visible';
+	}
+	
+	function showKeys()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("keys").style.visibility='visible';
+	}
+	
+	function showFlags()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("flags").style.visibility='visible';
+	}
+	
+	var tabAbility = new makeArray(60);function ability(name,cat,nbr_point,nbr_point_max,next_point_cost){this.name=name;this.cat=cat;this.nbr_point=nbr_point;this.nbr_point_max=nbr_point_max;this.next_point_cost=next_point_cost;}tabAbility[1]=new ability('Innate Strength',1,0,5,'1');tabAbility[2]=new ability('Innate Stamina',1,0,5,'1');tabAbility[3]=new ability('Innate Agility',1,0,5,'1');tabAbility[4]=new ability('Innate Dexterity',1,0,5,'1');tabAbility[5]=new ability('Innate Intelligence',1,0,5,'1');tabAbility[6]=new ability('Innate Wisdom',1,0,5,'1');tabAbility[7]=new ability('Innate Charisma',1,0,5,'1');tabAbility[8]=new ability('Innate Fire Protection',1,0,5,'1');tabAbility[9]=new ability('Innate Cold Protection',1,0,5,'1');tabAbility[10]=new ability('Innate Magic Protection',1,0,5,'1');tabAbility[11]=new ability('Innate Poison Protection',1,0,5,'1');tabAbility[12]=new ability('Innate Disease Protection',1,0,5,'1');tabAbility[13]=new ability('First Aid',1,0,3,'1');tabAbility[14]=new ability('Innate Run Speed',1,0,3,'1');tabAbility[15]=new ability('Innate Lung Capacity',1,0,3,'1');tabAbility[16]=new ability('Innate Metabolism',1,0,3,'1');tabAbility[17]=new ability('Innate Regeneration',1,0,3,'1');tabAbility[18]=new ability('New Tanaan Crafting Mastery',1,0,6,'3');tabAbility[19]=new ability('Channeling Focus',2,0,3,'2');tabAbility[20]=new ability('Mental Clarity',2,0,3,'2');tabAbility[21]=new ability('Spell Casting Fury',2,0,3,'2');tabAbility[22]=new ability('Spell Casting Mastery',2,0,3,'2');tabAbility[23]=new ability('Spell Casting Reinforcement',2,0,3,'2');tabAbility[24]=new ability('Combat Agility',2,0,3,'2');tabAbility[25]=new ability('Combat Stability',2,0,3,'2');tabAbility[26]=new ability('Natural Durability',2,0,3,'2');tabAbility[27]=new ability('Healing Adept',2,0,3,'2');tabAbility[28]=new ability('Healing Gift',2,0,3,'2');tabAbility[29]=new ability('Mass Group Buff',3,0,1,'9');tabAbility[30]=new ability('Spell Casting Reinforcement Mastery',3,0,1,'8');tabAbility[31]=new ability('Dire Charm',3,0,1,'9');tabAbility[32]=new ability('Enhanced Root',3,0,1,'5');tabAbility[33]=new ability('Exodus',3,0,1,'6');tabAbility[34]=new ability('Innate Camouflage',3,0,1,'5');tabAbility[35]=new ability('Quick Damage',3,0,3,'3');tabAbility[36]=new ability('Quick Evacuation',3,0,3,'3');tabAbility[37]=new ability('Advanced Innate Strength',4,0,10,'1');tabAbility[38]=new ability('Advanced Innate Stamina',4,0,10,'1');tabAbility[39]=new ability('Advanced Innate Agility',4,0,10,'1');tabAbility[40]=new ability('Advanced Innate Dexterity',4,0,10,'1');tabAbility[41]=new ability('Advanced Innate Intelligence',4,0,10,'1');tabAbility[42]=new ability('Advanced Innate Wisdom',4,0,10,'1');tabAbility[43]=new ability('Advanced Innate Charisma',4,0,10,'1');tabAbility[44]=new ability('Warding of Solusek',4,0,10,'1');tabAbility[45]=new ability('Blessing of E\'ci',4,0,10,'1');tabAbility[46]=new ability('Marr\'s Protection',4,0,10,'1');tabAbility[47]=new ability('Shroud of The Faceless',4,0,10,'1');tabAbility[48]=new ability('Bertoxxulous\'s Gift',4,0,10,'1');tabAbility[49]=new ability('Planar Power',4,0,5,'2');tabAbility[50]=new ability('Innate Enlightenment',4,0,5,'3');tabAbility[51]=new ability('Advanced Healing Adept',5,0,3,'2');tabAbility[52]=new ability('Advanced Healing Gift',5,0,3,'2');tabAbility[53]=new ability('Fury of Magic',5,0,3,'3');tabAbility[54]=new ability('Hastened Exodus',5,0,3,'2');tabAbility[55]=new ability('Innate Defense',5,0,5,'3');tabAbility[56]=new ability('Lightning Reflexes',5,0,5,'3');tabAbility[57]=new ability('Radiant Cure',5,0,3,'2');tabAbility[58]=new ability('Spirit of the Wood',5,0,3,'4');tabAbility[59]=new ability('Viscid Roots',5,0,1,'5');tabAbility[60]=new ability('Wrath of the Wild',5,0,3,'3');
+	
+	var ability_cat=1;
+	function processAdv()
+	{
+		var ability_cat_name="";
+		switch(ability_cat)
+		{
+			case 1:
+				ability_cat_name="General Abilities";
+				break;
+			case 2:
+				ability_cat_name="Archetype Abilities";
+				break;
+			case 3:
+				ability_cat_name="Class Specific Abilities";
+				break;
+			case 4:
+				ability_cat_name="PoP Advance";
+				break;
+			case 5:
+				ability_cat_name="PoP Ability";
+				break;
+		}
+		document.getElementById("adv-cat").innerHTML=("<table style='width: 220px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td>"+ability_cat_name+"<\/td><td style='width: 19px' align='right'>Cur<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>Max<\/td><td align='center' style='width: 5px'><\/td><td style='width: 22px'>Cost<\/td><\/tr><\/table>");
+		
+		var buffer="<table style='width: 220px;color: #E0E0E0;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>";
+		for(var i=1;i<=tabAbility.length;i++)
+		{
+			if(tabAbility[i].cat==ability_cat)
+			{
+				buffer+="<tr><td>"+tabAbility[i].name+"<\/td><td style='width: 19px;";
+				if(tabAbility[i].nbr_point>0)
+					buffer+="color: #00FF00;";
+				buffer+="' align='right'>"+tabAbility[i].nbr_point+"<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>"+tabAbility[i].nbr_point_max+"<\/td><td align='center' style='width: 5px'><\/td><td align='center' style='width: 22px'>"+tabAbility[i].next_point_cost+"<\/td><\/tr>";
+			}
+		}
+		buffer+="<\/table>";
+		document.getElementById("adv-data").innerHTML=buffer;
+		
+		showAdv();
+	}
+	
+	function mod(composant,slot,org,value_){this.composant=composant;this.slot=slot;this.org=org;this.value_=value_;}
+	var tabMod = new makeArray(61);
+	tabMod[1]=new mod('ac',18,'stat',14);tabMod[2]=new mod('ac',17,'stat',14);tabMod[3]=new mod('ac',14,'stat',10);tabMod[4]=new mod('ac',8,'stat',7);tabMod[5]=new mod('ac',19,'stat',6);tabMod[6]=new mod('ac',20,'stat',6);tabMod[7]=new mod('ac',6,'stat',4);tabMod[8]=new mod('ac',5,'stat',4);tabMod[9]=new mod('ac',12,'stat',4);tabMod[10]=new mod('ac',9,'stat',4);tabMod[11]=new mod('ac',10,'stat',4);tabMod[12]=new mod('ac',2,'stat',3);tabMod[13]=new mod('ac',1,'stat',2);tabMod[14]=new mod('ac',4,'stat',2);tabMod[15]=new mod('agi',1,'stat',3);tabMod[16]=new mod('agi',4,'stat',3);tabMod[17]=new mod('agi',2,'stat',2);tabMod[18]=new mod('cha',5,'stat',5);tabMod[19]=new mod('cr',18,'stat',5);tabMod[20]=new mod('cr',2,'stat',4);tabMod[21]=new mod('dex',19,'stat',6);tabMod[22]=new mod('dex',8,'stat',5);tabMod[23]=new mod('dex',1,'stat',3);tabMod[24]=new mod('dex',2,'stat',3);tabMod[25]=new mod('dex',4,'stat',3);tabMod[26]=new mod('dex',12,'stat',3);tabMod[27]=new mod('dr',18,'stat',5);tabMod[28]=new mod('hp',19,'stat',20);tabMod[29]=new mod('hp',2,'stat',7);tabMod[30]=new mod('int',5,'stat',5);tabMod[31]=new mod('mr',20,'stat',5);tabMod[32]=new mod('mr',11,'stat',2);tabMod[33]=new mod('sta',17,'stat',10);tabMod[34]=new mod('sta',20,'stat',5);tabMod[35]=new mod('str',17,'stat',10);tabMod[36]=new mod('str',3,'stat',7);tabMod[37]=new mod('str',18,'stat',6);tabMod[38]=new mod('str',7,'stat',3);tabMod[39]=new mod('str',13,'stat',3);tabMod[40]=new mod('str',8,'stat',3);tabMod[41]=new mod('str',9,'stat',3);tabMod[42]=new mod('wis',8,'stat',10);tabMod[43]=new mod('wis',14,'stat',9);tabMod[44]=new mod('wis',3,'stat',7);tabMod[45]=new mod('wis',2,'stat',6);tabMod[46]=new mod('wis',15,'stat',6);tabMod[47]=new mod('wis',16,'stat',6);tabMod[48]=new mod('wis',17,'stat',6);tabMod[49]=new mod('wis',19,'stat',6);tabMod[50]=new mod('wis',6,'stat',5);tabMod[51]=new mod('wis',5,'stat',5);tabMod[52]=new mod('wis',18,'stat',5);tabMod[53]=new mod('wis',9,'stat',5);tabMod[54]=new mod('wis',20,'stat',5);tabMod[55]=new mod('wis',10,'stat',5);tabMod[56]=new mod('wis',1,'stat',3);tabMod[57]=new mod('wis',7,'stat',3);tabMod[58]=new mod('wis',4,'stat',3);tabMod[59]=new mod('wis',13,'stat',3);tabMod[60]=new mod('wis',11,'stat',3);tabMod[61]=new mod('wis',12,'stat',2);
+	
+	var mod_cat="hp";
+	function processMod()
+	{
+		document.getElementById("mod-header").innerHTML="Stat: <span style='color: #00FF00;font-size:9px'>"+mod_cat.toUpperCase()+"<\/span>";
+		var buffer="<table style='width: 270px;color: #E0E0E0;font-family: Arial;font-size: 11px;' cellpadding=0 cellspacing=0>";
+		var total = 0;
+		for(var i=1;i<=tabMod.length;i++)
+		{
+			
+			if(tabMod[i].composant==mod_cat)
+			{
+				buffer+="<tr><td><span style='cursor: pointer;color: #739FC1;' onclick='showItem("+tabMod[i].slot+")'>"+tabItem[tabMod[i].slot].name+"<\/span><\/td><td align='center' style='width:45px'>"+slot_name[tabMod[i].slot].toLowerCase()+"<\/td><td align='center' style='width:35px'>"+tabMod[i].org+"<\/td><td align='center' style='width:35px'>"+tabMod[i].value_+"<\/td><\/tr>";
+				total+=tabMod[i].value_;
+			}
+		}
+	
+		if(total!=0)
+			buffer+="<tr><td colspan='4'><hr><\/td><\/tr><tr><td>TOTAL :<\/td><td colspan='2'><\/td><td align='center'>"+total+"<\/td><\/tr>";
+		buffer+="<\/table>";
+		document.getElementById("mod-data").innerHTML=buffer;
+		showMod();
+	}
+	
+	
+</script>
+<div id="character-alpha"></div>
+<div id="character">
+
+<div id="stat">
+
+<script type="text/javascript">
+	var slot_name = new Array();
+	slot_name[1]="EAR";
+	slot_name[2]="HEAD";
+	slot_name[3]="FACE";
+	slot_name[4]="EAR";
+	slot_name[5]="NECK";
+	slot_name[6]="SHOULD.";
+	slot_name[7]="ARMS";
+	slot_name[8]="BACK";
+	slot_name[9]="WRIST";
+	slot_name[10]="WRIST";
+	slot_name[11]="RANGE";
+	slot_name[12]="HANDS";
+	slot_name[13]="PRIMARY";
+	slot_name[14]="SEC.";
+	slot_name[15]="FINGER";
+	slot_name[16]="FINGER";
+	slot_name[17]="CHEST";
+	slot_name[18]="LEGS";
+	slot_name[19]="FEET";
+	slot_name[20]="WAIST";
+	slot_name[21]="AMMO";
+	slot_name[10000]="FOOD";
+	slot_name[10001]="DRINK";
+	
+	function item(icon,name,desc,capacite,qt,stackable){this.icon=icon;this.name=name;this.desc=desc;this.capacite=capacite;this.qt=qt;this.stackable=stackable;} var tabItem = new Array();tabItem[1]=new item(757,'Forest Loop','Forest Loop<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: EAR&nbsp;&nbsp;<br>AC: 2<br>DEX: +3&nbsp;&nbsp;WIS: +3&nbsp;&nbsp;AGI: +3&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[3]=new item(1062,'Platinum Ruby Veil','Platinum Ruby Veil<br>Slot: FACE&nbsp;&nbsp;<br>STR: +7&nbsp;&nbsp;WIS: +7&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[2]=new item(640,'Othmir Fur Cap','Othmir Fur Cap<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: HEAD&nbsp;&nbsp;<br>AC: 3<br>DEX: +3&nbsp;&nbsp;WIS: +6&nbsp;&nbsp;AGI: +2&nbsp;&nbsp;HP: +7&nbsp;&nbsp;<br>SV COLD: +4&nbsp;&nbsp;<br>WT: &nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[7]=new item(521,'Platinum Armband','Platinum Armband<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: ARMS&nbsp;&nbsp;<br>STR: +3&nbsp;&nbsp;WIS: +3&nbsp;&nbsp;<br>Focus Effect: <a href=\'http://www.magelo.com/eq_spell_info.html?num=2342\' target=\'_new\'>Mana Preservation I</a><br>WT: &nbsp;0.3&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[6]=new item(668,'Braided Ivy Cords','Braided Ivy Cords<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: SHOULDERS&nbsp;&nbsp;<br>AC: 4<br>WIS: +5&nbsp;&nbsp;<br>Focus Effect: <a href=\'http://www.magelo.com/eq_spell_info.html?num=2357\' target=\'_new\'>Enhancement Haste I</a><br>WT: &nbsp;0.3&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: DRU BRD ENC <br>Race: ALL<br>',0,1,false);tabItem[4]=new item(757,'Forest Loop','Forest Loop<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: EAR&nbsp;&nbsp;<br>AC: 2<br>DEX: +3&nbsp;&nbsp;WIS: +3&nbsp;&nbsp;AGI: +3&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[5]=new item(754,'Greater Talisman of Wistfulness','Greater Talisman of Wistfulness<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: NECK&nbsp;&nbsp;<br>AC: 4<br>CHA: +5&nbsp;&nbsp;WIS: +5&nbsp;&nbsp;INT: +5&nbsp;&nbsp;<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: CLR DRU SHM NEC WIZ MAG ENC <br>Race: ALL<br>',0,1,false);tabItem[15]=new item(1051,'Platinum Jasper Ring','Platinum Jasper Ring<br>Slot: FINGERS&nbsp;&nbsp;<br>WIS: +6&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[16]=new item(1051,'Platinum Jasper Ring','Platinum Jasper Ring<br>Slot: FINGERS&nbsp;&nbsp;<br>WIS: +6&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[14]=new item(805,'Charred Guardian Shield','Charred Guardian Shield<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: SECONDARY&nbsp;&nbsp;<br>AC: 10<br>WIS: +9&nbsp;&nbsp;<br>WT: &nbsp;8.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR CLR PAL RNG SHD DRU BRD ROG SHM <br>Race: ALL<br>',0,1,false);tabItem[18]=new item(635,'Kromrif Military Leggings','Kromrif Military Leggings<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: LEGS&nbsp;&nbsp;<br>AC: 14<br>STR: +6&nbsp;&nbsp;WIS: +5&nbsp;&nbsp;SV DISEASE: +5&nbsp;&nbsp;SV COLD: +5&nbsp;&nbsp;<br>WT: &nbsp;4.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: ALL<br>Race: ALL<br>',0,1,false);tabItem[12]=new item(636,'Split Paw Hide Gloves','Split Paw Hide Gloves<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: HANDS&nbsp;&nbsp;<br>AC: 4<br>DEX: +3&nbsp;&nbsp;WIS: +2&nbsp;&nbsp;<br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR CLR PAL RNG SHD DRU MNK BRD ROG SHM BST <br>Race: ALL<br>',0,1,false);tabItem[17]=new item(632,'Acrylia Reinforced Tunic','Acrylia Reinforced Tunic<br>Slot: CHEST&nbsp;&nbsp;<br>AC: 14<br>STR: +10&nbsp;&nbsp;STA: +10&nbsp;&nbsp;WIS: +6&nbsp;&nbsp;<br>WT: &nbsp;0.7&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR CLR PAL RNG SHD DRU MNK BRD ROG SHM BST <br>Race: ALL<br>',0,1,false);tabItem[13]=new item(1216,'Velium Etched Stone Mace','Velium Etched Stone Mace<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;<br>Skill: 1H Blunt&nbsp;&nbsp;Atk Delay: 22<br>DMG: 7&nbsp;&nbsp;<br>STR: +3&nbsp;&nbsp;WIS: +3&nbsp;&nbsp;<br>WT: &nbsp;6.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: CLR PAL RNG DRU SHM BST <br>Race: ALL<br>',0,1,false);tabItem[8]=new item(660,'Acrylia Studded Cloak','Acrylia Studded Cloak<br>Slot: BACK&nbsp;&nbsp;<br>AC: 7<br>STR: +3&nbsp;&nbsp;DEX: +5&nbsp;&nbsp;WIS: +10&nbsp;&nbsp;<br>WT: &nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: WAR CLR PAL RNG SHD DRU MNK BRD ROG SHM BST <br>Race: ALL<br>',0,1,false);tabItem[9]=new item(671,'Runed Mithril Bracer','Runed Mithril Bracer<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 4<br>STR: +3&nbsp;&nbsp;WIS: +5&nbsp;&nbsp;<br>Focus Effect: <a href=\'http://www.magelo.com/eq_spell_info.html?num=2332\' target=\'_new\'>Reagent Conservation III</a><br>WT: &nbsp;2.3&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM VAH FRG <br>',0,1,false);tabItem[19]=new item(633,'Repugnant Leather Boots','Repugnant Leather Boots<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;<br>Slot: FEET&nbsp;&nbsp;<br>AC: 6<br>DEX: +6&nbsp;&nbsp;WIS: +6&nbsp;&nbsp;HP: +20&nbsp;&nbsp;<br>Recommended level of 34.<br>WT: &nbsp;0.8&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: DRU MNK BST <br>Race: ALL<br>',0,1,false);tabItem[11]=new item(1007,'Idol of Karana','Idol of Karana<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: PRIMARY&nbsp;&nbsp;SECONDARY&nbsp;&nbsp;RANGE&nbsp;&nbsp;<br>WIS: +3&nbsp;&nbsp;SV MAGIC: +2&nbsp;&nbsp;<br>WT: &nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;Size: TINY<br>Class: WAR CLR PAL RNG DRU BRD ROG WIZ MAG ENC <br>Race: HUM ELF HIE HEF HFL <br>Deity: Karana <br>',0,1,false);tabItem[20]=new item(548,'Girdle of the Holy Wanderer','Girdle of the Holy Wanderer<br>MAGIC ITEM&nbsp;&nbsp;LORE ITEM&nbsp;&nbsp;NO DROP&nbsp;&nbsp;<br>Slot: WAIST&nbsp;&nbsp;<br>AC: 6<br>STA: +5&nbsp;&nbsp;WIS: +5&nbsp;&nbsp;SV MAGIC: +5&nbsp;&nbsp;<br>WT: &nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;Size: MEDIUM<br>Class: CLR DRU SHM <br>Race: ALL<br>',0,1,false);tabItem[10]=new item(505,'Chipped Bone Bracelet','Chipped Bone Bracelet<br>MAGIC ITEM&nbsp;&nbsp;<br>Slot: WRIST&nbsp;&nbsp;<br>AC: 4<br>WIS: +5&nbsp;&nbsp;<br>Focus Effect: <a href=\'http://www.magelo.com/eq_spell_info.html?num=2364\' target=\'_new\'>Affliction Efficiency II</a><br>WT: &nbsp;2.0&nbsp;&nbsp;&nbsp;&nbsp;Size: SMALL<br>Class: ALL<br>Race: ALL<br>',0,1,false);
+		
+	for(var i=1;i<=21;i++)
+	{
+		document.write("<div id='slot-ekip-"+i+"' class='slot'>");
+		document.write("<div>&nbsp;"+slot_name[i]+"<\/div><img ");
+		if(tabItem[i]!=null)
+			document.write("style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+		else
+			document.write("border=0 src='/res/eq/misc/money_mask.png'>");
+		document.write("<\/div>");	
+	}
+	
+	for(var i=22;i<30;i++)
+	{
+		document.write("<div id='slot-inv-"+(i-21)+"' class='slot'>");
+		if(tabItem[i]==null)
+			document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+		else if(tabItem[i].capacite==0)
+		{
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+			if(tabItem[i].stackable==true)
+			{
+				if(ieWin32)
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				else
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+			}
+		}
+		else 	
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+		document.write("<\/div>");
+	}
+</script>
+
+<div id="block1" class="block-style">
+Casnova<br>47&nbsp;Druid<br>Karana
+</div>
+
+<div id="block2" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style">
+<tr>
+	<td>HP&nbsp;</td>
+	<td id="hp"></td>
+	
+</tr>
+<tr>
+	<td>AC&nbsp;</td>
+	<td id="ac"></td>
+</tr>
+<tr>
+	<td>ATK&nbsp;</td>
+	<td id="atk"></td>
+</tr>
+</table>
+</div>
+
+<div id="next-level" class="block-style">
+	NEXT LEVEL
+</div>
+
+<div id="bulle-xp">
+	<div style="line-height:0;"><img border=0 alt='bubble' src='/res/eq/misc/bulle.png'></div>
+</div>
+
+<div id="str" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>STR&nbsp;&nbsp;&nbsp;</td>
+	<td id="str-label"></td>	
+</tr>
+<tr>
+	<td>STA&nbsp;&nbsp;&nbsp;</td>
+	<td id="sta"></td>
+</tr>
+<tr>
+	<td>AGI&nbsp;&nbsp;&nbsp;</td>
+	<td id="agi"></td>
+</tr>
+<tr>
+	<td>DEX&nbsp;&nbsp;&nbsp;</td>
+	<td id="dex"></td>
+</tr>
+<tr>
+	<td>WIS&nbsp;&nbsp;&nbsp;</td>
+	<td id="wis"></td>
+</tr>
+<tr>
+	<td>INT&nbsp;&nbsp;&nbsp;</td>
+	<td id="int"></td>
+</tr>
+<tr>
+	<td>CHA&nbsp;&nbsp;&nbsp;</td>
+	<td id="cha"></td>
+</tr>
+</table>
+</div>
+
+<div id="pr">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>POISON&nbsp;&nbsp;&nbsp;</td>
+	<td id="RP"></td>
+</tr>
+<tr>
+	<td>MAGIC&nbsp;&nbsp;&nbsp;</td>
+	<td id="RM"></td>
+</tr>
+<tr>
+	<td>DISEASE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RD"></td>
+</tr>
+<tr>
+	<td>FIRE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RF"></td>
+</tr>
+<tr>
+	<td>COLD&nbsp;&nbsp;&nbsp;</td>
+	<td id="RC"></td>
+</tr>
+</table>
+</div>
+
+<div id="money-platinum" class="money">
+	<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-gold" class="money">
+	<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-silver" class="money">
+	<div class="money-img"><img src="/res/eq/misc/silver.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-copper" class="money">
+	<div class="money-img"><img src="/res/eq/misc/copper.png"></div>
+	<div class="money-text">0</div>
+</div>
+
+<div id="macaron">
+	
+</div>
+<div id="last-updated"><script type="text/javascript">if(lastUpdated!=null) document.write(lastUpdated.toLocaleString());</script></div>
+
+<div style="position: absolute;top: 173px;left: 8px;" class="button" onclick="processAdv();">Alt Adv</div>
+<div style="position: absolute;top: 190px;left: 8px;" class="button" onclick="processMod();">Modifiers</div>
+
+<div style="position: absolute;top: 218px;left: 8px;" class="button" onclick="showSpell();">Spells</div>
+<div style="position: absolute;top: 235px;left: 8px;" class="button" onclick="showFocus();">Focus</div>
+
+<div style="position: absolute;top: 263px;left: 8px;" class="button" onclick="showSkill();">Skills</div>
+<div style="position: absolute;top: 280px;left: 8px;" class="button" onclick="showKeys();">Keys</div>
+<div style="position: absolute;top: 297px;left: 8px;" class="button" onclick="showFlags();">Flags</div>
+<div style='position: absolute;top: 314px;left: 8px;' class='button' onclick='showBank();'>Bank</div>
+
+<div style='position: absolute;top: 342px;left: 8px;' class='button' onclick='showBio();'>Bio</div>
+
+<div style="position: absolute;top: 378px;left: 8px;" class="button" onclick="window.close();">Done</div>
+
+</div>
+
+<div id="adv" class="box" style="visibility: hidden;">
+	<div id="adv-text">Ability Type:</div>
+	<div id="adv-cat"></div>
+	
+	<div style="position: absolute;top: 9px;left: 80px;" class="button" onclick="ability_cat=1;processAdv();">General</div>
+	<div style="position: absolute;top: 9px;left: 130px;" class="button"  onclick="ability_cat=2;processAdv();">Arch</div>
+	<div style="position: absolute;top: 9px;left: 180px;" class="button"  onclick="ability_cat=3;processAdv();">Class</div>
+	<div style="position: absolute;top: 9px;left: 230px;" class="button"  onclick="ability_cat=4;processAdv();">PoP Adv</div>
+	<div style="position: absolute;top: 9px;left: 280px;" class="button"  onclick="ability_cat=5;processAdv();">PoP Ab</div>
+	<div id="adv-data"></div>
+	
+	<div style="color: #E0E0E0;	font-family: Arial;font-size: 10px;position: absolute;top: 150px;left: 235px;">
+		
+		<table cellpadding="0" cellspacing="0" class="textFont">
+		<tr><td>AA Points:</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		<tr><td>Total Pts Spent:&nbsp;</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td>Total AA Pts:</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		</table>
+	</div>
+	
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="bio" class="box" style="visibility: hidden;">
+	<div id="bio-text">
+		
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="skill" class="box" style="visibility: hidden;">
+	<div id="skill-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 200px">Skill</td><td align="center">Value</td></tr></table></div>
+	<div id="skill-data">
+		<table style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		<tr><td style='width: 200px'>1H Slashing</td><td align='center'>150</td></tr><tr><td style='width: 200px'>2H Blunt</td><td align='center'>170</td></tr><tr><td style='width: 200px'>Abjuration</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Alteration</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Channeling</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Conjuration</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Defense</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Divination</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Dodge</td><td align='center'>75</td></tr><tr><td style='width: 200px'>Evocation</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Meditate</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Offense</td><td align='center'>180</td></tr><tr><td style='width: 200px'>Sense Heading</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Specialize Evocation</td><td align='center'>230</td></tr><tr><td style='width: 200px'>Swimming</td><td align='center'>100</td></tr><tr><td style='width: 200px'>Tracking</td><td align='center'>75</td></tr><tr><td style='width: 200px'>Baking</td><td align='center'>134</td></tr><tr><td style='width: 200px'>Tailoring</td><td align='center'>39</td></tr>
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="spell" class="box" style="visibility: hidden;">
+	<div id="spell-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 40px" align="center">Level</td><td>Spell</td></tr></table></div>
+	<div id="spell-data" class="textFont">
+		<table class="textFont" style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="focus" class="box" style="visibility: hidden;">
+	<div id="focus-header">Focus:</div>
+	<div id="focus-data" class="textFont">
+		<li><a target='new' href='http://www.magelo.com/eq_spell_info.html?num=2342'>Mana Preservation I</a><br><li><a target='new' href='http://www.magelo.com/eq_spell_info.html?num=2357'>Enhancement Haste I</a><br><li><a target='new' href='http://www.magelo.com/eq_spell_info.html?num=2332'>Reagent Conservation III</a><br><li><a target='new' href='http://www.magelo.com/eq_spell_info.html?num=2364'>Affliction Efficiency II</a><br>
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="mod" class="box" style="visibility: hidden;">
+	<div id="mod-header" style="font-size:10px">Stat:</div>
+	<div id="mod-table-header">
+		<table style="width: 270px;color: #E0E0E0;font-family: Arial;font-size: 11px;" cellpadding="0" cellspacing="0">
+			<tr><td>Item name</td><td style='width:45px' align='center'>Slot</td><td style='width:35px' align='center'>From</td><td align='center' style='width:35px'>Value</td></tr>
+		</table>
+	</div>
+	
+	<div style="position: absolute;top: 20px;left: 8px;" class="button"  onclick="mod_cat='hp';processMod();">HP</div>
+	<div style="position: absolute;top: 37px;left: 8px;" class="button"  onclick="mod_cat='mana';processMod();">MANA</div>
+	<div style="position: absolute;top: 54px;left: 8px;" class="button"  onclick="mod_cat='ac';processMod();">AC</div>
+	<div style="position: absolute;top: 71px;left: 8px;" class="button"  onclick="mod_cat='atk';processMod();">ATK</div>
+	
+	<div style="position: absolute;top: 94px;left: 8px;" class="button"  onclick="mod_cat='str';processMod();">STR</div>
+	<div style="position: absolute;top: 111px;left: 8px;" class="button"  onclick="mod_cat='sta';processMod();">STA</div>
+	<div style="position: absolute;top: 128px;left: 8px;" class="button"  onclick="mod_cat='agi';processMod();">AGI</div>
+	<div style="position: absolute;top: 145px;left: 8px;" class="button"  onclick="mod_cat='dex';processMod();">DEX</div>
+	<div style="position: absolute;top: 162px;left: 8px;" class="button"  onclick="mod_cat='wis';processMod();">WIS</div>
+	<div style="position: absolute;top: 179px;left: 8px;" class="button"  onclick="mod_cat='int';processMod();">INT</div>
+	<div style="position: absolute;top: 196px;left: 8px;" class="button"  onclick="mod_cat='cha';processMod();">CHA</div>
+	
+	<div style="position: absolute;top: 219px;left: 8px;" class="button"  onclick="mod_cat='mr';processMod();">MR</div>
+	<div style="position: absolute;top: 236px;left: 8px;" class="button"  onclick="mod_cat='dr';processMod();">DR</div>
+	<div style="position: absolute;top: 253px;left: 8px;" class="button"  onclick="mod_cat='pr';processMod();">PR</div>
+	<div style="position: absolute;top: 270px;left: 8px;" class="button"  onclick="mod_cat='fr';processMod();">FR</div>
+	<div style="position: absolute;top: 287px;left: 8px;" class="button"  onclick="mod_cat='cr';processMod();">CR</div>
+	
+	<div style="position: absolute;top: 310px;left: 8px;" class="button"  onclick="mod_cat='hp+';processMod();">HP+</div>
+	<div style="position: absolute;top: 327px;left: 8px;" class="button"  onclick="mod_cat='mana+';processMod();">MANA+</div>
+	<div style="position: absolute;top: 344px;left: 8px;" class="button"  onclick="mod_cat='haste';processMod();">HASTE</div>
+	
+	
+	<div id="mod-data"></div>
+	
+	
+	
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="keys" class="box" style="visibility: hidden;">
+	<div id="keys-header">Keys for:</div>
+	<div id="keys-data" class="textFont">
+		
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+<div id="flags" class="box" style="visibility: hidden;">
+	<div id="flags-header">Flags for:</div>
+	<div id="flags-data" class="textFont">
+		
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button"  onclick="showStat();">Done</div>
+</div>
+
+
+
+
+
+</div>
+
+<!-- fenetre magelo             -->
+<div id="magelo-alpha"></div>
+<div id="magelo">
+
+<div id="magelo-info" style="position: absolute;top:3px;line-height: 12px;">
+<span style="color:#FBFB00;font-size: 12px;">MOTD: Welcome to the Magelo Profile System !</span><br>
+<span class="textFont" style="font-size: 9px;">You can visit Magelo <a href="http://www.magelo.com" target="new">here</a></span>
+
+<table class="textFont" cellpadding="0" cellspacing="0" width="330">
+<tr>
+<td valign="top" width="190">
+	
+<table class='textFont' style='line-height: 0.95;' cellpadding=1 cellspacing=0>
+<tr><td height=7></td></tr><tr><td>&nbsp;</td><td>Base</td><td>Direct</td><td>Indirect</td><td>Total</td></tr>
+<tr><td>HP</td><td>909</td><td>27</td><td>36</td><td>972</td></tr>
+<tr><td>MANA</td><td>1081</td><td>0</td><td>923</td><td>2004</td></tr>		
+</table>
+<br>
+<table style='line-height: 0.95;' class='textFont' cellpadding=1 cellspacing=0>
+<tr><td></td></tr><tr><td>&nbsp;</td><td align="center">Base</td><td align="center">Item</td><td align="center">Total</td></tr>
+<tr><td>HP Regen</td><td align="center">1/3</td><td align="center">0</td><td align="center">1/3</td></tr>
+<tr><td colspan="4" style="height: 1px;"></td></tr>
+
+</table>
+
+</td>
+<td valign="top">
+	Current profile:Main<br>
+	<li><a href='http://www.magelo.com/eq_view_profile.html?num=460677&alt=48319'>Goalsdruid</a>
+</td>
+</tr></table>
+</div>
+
+<div id="screenshot" style="position: absolute;visibility: hidden;">
+		<div id="screenshot-text" class="textFont"></div>
+		<div style="position: absolute;top: 132px;left: 130px;" class="button"  onclick="hideScreenshot();">Done</div>
+</div>
+
+</div>
+
+<!-- bank                -->
+<div id="bank-alpha"></div>
+<div id="bank">
+	<script type="text/javascript">
+		for(var i=2000;i<2016;i++)
+		{
+			document.write("<div id='bank-slot-"+(i-1999)+"' class='slot'>");
+			if(tabItem[i]==null)
+				document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+			else if(tabItem[i].capacite==0)
+			{
+				document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+				if(tabItem[i].stackable==true)
+				{
+					if(ieWin32)
+						document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+					else
+						document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				}
+			}
+			else 	
+				document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+			document.write("<\/div>");
+		}
+	</script>
+	
+	<div id="bank-platinum" class="bank-money">
+		<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+		<div class="money-text">0</div>
+	</div>
+	<div id="bank-gold" class="bank-money">
+		<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+		<div class="money-text">0</div>	
+	</div>
+	
+	<div style="position: absolute;top: 194px;left: 112px;" class="button"  onclick="hideBank();">Done</div>
+</div>
+
+<!-- bag                        -->
+<div id="bag-alpha"></div>
+<div id="bag"></div>
+
+<div id="debug-alpha"></div>
+<div id="debug">
+&nbsp;Str: 85&nbsp;Offense: 180(1.0)&nbsp;Weapon: 0(1.0)&nbsp;Correction ATK: 0<br>
+&nbsp;Sta: 85&nbsp;Hp boost: 1.0&nbsp;Total HP: 972<br>
+&nbsp;Agi: 75&nbsp;Defense: 200(1.0)<br>
+<br>
+<table cellpadding="1" cellspacing="0" class="textFont">
+<tr><td colspan="10">AC formula:</td></tr>
+<tr><td>&nbsp;</td><td>Agi</td><td align="center">T</td><td>Items</td><td>Avoidance</td><td>Mitigation</td><td>&nbsp;Total&nbsp;</td><td>+AC</td></tr>
+<tr><td>Base</td><td align='center'>75</td><td align='center'>39</td><td align='center'>0</td><td align='center'>394</td><td align='center'>66</td><td align='center'>543</td><td>543</td></tr><tr><td>Base + mod1</td><td align='center'>75</td><td align='center'>39</td><td align='center'>84</td><td align='center'>394</td><td align='center'>178</td><td align='center'>675</td><td>132</td></tr><tr><td>Base + mod2</td><td align='center'>83</td><td align='center'>42</td><td align='center'>0</td><td align='center'>397</td><td align='center'>66</td><td align='center'>546</td><td>3</td></tr>
+<tr><td colspan="8"><hr></td></tr>
+<tr><td colspan="7">Total AC from formula:</td><td>678</td></tr>
+<tr><td colspan="7">Correction value for AC:</td><td>0</td></tr>
+<tr><td colspan="8"><hr></td></tr>
+<tr><td colspan="7">TOTAL AC</td><td>678</td></tr>
+</table>
+<br>
+<table cellpadding="1" cellspacing="0" class="textFont">
+<tr><td>AA</td><td>Base</td><td>inc</td><td>Pts</td><td>Total</td></tr>
+
+</table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	if(getParameter("debug")=="true")
+	{
+		document.getElementById("debug-alpha").style.visibility='visible';
+		document.getElementById("debug").style.visibility='visible';
+	}
+	
+	if(ieWin32)
+	{
+		document.getElementById("character-alpha").style.backgroundColor='black';
+		document.getElementById("magelo-alpha").style.backgroundColor='black';
+		document.getElementById("bag-alpha").style.backgroundColor='black';
+		document.getElementById("bank-alpha").style.backgroundColor='black';
+		document.getElementById("debug-alpha").style.backgroundColor='black';
+		
+		document.getElementById("adv-cat").style.width  = '345px';
+		document.getElementById("skill-header").style.width  = '345px';
+		document.getElementById("spell-header").style.width  = '345px';
+		document.getElementById("focus-header").style.width  = '345px';
+		document.getElementById("keys-header").style.width  = '345px';
+		document.getElementById("flags-header").style.width  = '345px';
+		
+		
+		document.getElementById("screenshot-text").style.lineHeight = '0.95';
+	}
+	else
+	{
+		document.getElementById("character-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("character-alpha").style.width=346;
+		document.getElementById("character-alpha").style.height=401;
+			
+		document.getElementById("magelo-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("magelo-alpha").style.width=335;
+		document.getElementById("magelo-alpha").style.height=151;
+		document.getElementById("screenshot-text").style.width=325;
+				
+		document.getElementById("bag-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bag-alpha").style.width=97;
+		
+		document.getElementById("money-gold").style.top=196;
+		document.getElementById("money-silver").style.top=219;
+		document.getElementById("money-copper").style.top=242;
+		
+		document.getElementById("bank-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bank-alpha").style.width=186;
+		document.getElementById("bank-alpha").style.height=241;
+		
+		document.getElementById("bank-platinum").style.width=81;
+		document.getElementById("bank-gold").style.width=81;
+		document.getElementById("bank-gold").style.top=197;
+		
+		document.getElementById("debug-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("debug-alpha").style.width=335;
+		document.getElementById("debug-alpha").style.height=241;
+		document.getElementById("debug").style.width=334;
+		
+		document.getElementById("macaron").style.top=256;
+		
+		document.getElementById("bio-text").style.width=315;
+		
+		document.getElementById("mod-header").style.height=398;
+		document.getElementById("mod-table-header").style.left=69;
+		document.getElementById("mod-data").style.left=79;
+		
+	}
+	
+	function getColor(bonus)
+	{
+		var color="#E0E0E0";
+		if(bonus<0)
+			color="#F00000";
+		else if(bonus>0)
+			color="00F000";
+		return color;
+	}
+	
+	// affichage des valeurs dans les emplacements prévus
+	document.getElementById("hp").appendChild(document.createTextNode((972)+"/"+(972)));
+	document.getElementById("ac").style.color="#00F000";
+	document.getElementById("ac").innerHTML=("<span style='color:"+getColor(135)+";'>"+678+"<\/span><\/td>");
+	document.getElementById("atk").style.color="#00F000";
+	document.getElementById("atk").innerHTML=("<span style='color:"+getColor(32)+";'>"+289+"<\/span><\/td>");
+	
+	document.getElementById("str-label").style.color=getColor(35);
+	document.getElementById("str-label").appendChild(document.createTextNode(120));
+	document.getElementById("sta").style.color=getColor(15);
+	document.getElementById("sta").appendChild(document.createTextNode(100));
+	document.getElementById("agi").style.color=getColor(8);
+	document.getElementById("agi").appendChild(document.createTextNode(83));
+	document.getElementById("dex").style.color=getColor(23);
+	document.getElementById("dex").appendChild(document.createTextNode(98));
+	document.getElementById("wis").style.color=getColor(103);
+	document.getElementById("wis").appendChild(document.createTextNode(208));
+	document.getElementById("int").style.color=getColor(5);
+	document.getElementById("int").appendChild(document.createTextNode(80));
+	document.getElementById("cha").style.color=getColor(5);
+	document.getElementById("cha").appendChild(document.createTextNode(80));
+	document.getElementById("RP").style.color=getColor(0);
+	document.getElementById("RP").appendChild(document.createTextNode(15));
+	document.getElementById("RM").style.color=getColor(7);
+	document.getElementById("RM").appendChild(document.createTextNode(32));
+	document.getElementById("RD").style.color=getColor(5);
+	document.getElementById("RD").appendChild(document.createTextNode(20));
+	document.getElementById("RF").style.color=getColor(0);
+	document.getElementById("RF").appendChild(document.createTextNode(25));
+	document.getElementById("RC").style.color=getColor(9);
+	document.getElementById("RC").appendChild(document.createTextNode(34));
+</script>
+
+
+</body>
+</html>		
+			
+			
+			
+			
+			
+			

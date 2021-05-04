@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Character bank</title>
+	<link rel="stylesheet" type="text/css" href="./style/magelo.css">
+	<style type="text/css">
+		
+		.slot
+		{
+			position: absolute;
+			width: 40px; 
+			height: 40px;
+		}
+		
+		#slot1 {top: 5px;	left: 6px;}
+		#slot2 {top: 53px;left: 6px;}
+		#slot3 {top: 103px;left: 6px;}
+		#slot4 {top: 153px;left: 6px;}
+		#slot5 {top: 203px;left: 6px;}
+		
+		#slot6 {top: 5px;	left: 56px;}
+		#slot7 {top: 53px;left: 56px;}
+		#slot8 {top: 103px;left: 56px;}
+		#slot9 {top: 153px;left: 56px;}
+		#slot10 {top: 203px;left: 56px;}
+		
+		.qt
+		{
+			position: absolute;
+			top:	29px;
+			left:	23px;
+			width: 19px;
+			height: 15px;
+		}
+		
+		.qt-text
+		{
+			position: absolute;
+			top: 3px;
+			left: 5px;
+			
+			font-size: 8px;
+			font-family: Arial;
+			color: #E0E0E0;
+		}
+		
+		.desc
+		{
+			color: #FF0000;
+		}
+		
+	</style>
+</head>
+<body onload="document.update_inv.pos.value=0;disabled_form();">
+<!-- Header for Magelo -->
+<script type='text/javascript' src="magelo.js"></script>
+<script type='text/javascript' src="http://www.magelo.com/components/eq_bank.jsp"></script>
+
+<script type="text/javascript">
+	
+	function open_bag(num_bag)
+	{
+		var buffer="";
+		
+		for(var i=0;i<(tab_item[num_bag].bag_size/2);i++)
+			buffer+=("<img border=0 alt='inv' src='"+repository+"/misc/inv.png'><br>");
+		
+		for(var i=1;i<=tab_item[num_bag].bag_size;i++)
+		{
+			buffer+=("<div id='slot"+getNumSlot(tab_item[num_bag].bag_size,i)+"' class='slot'>");
+						
+			buffer+=("<img ");
+			if(typeof(tab_item[((num_bag-2000)*10+2030+i-1)])!='undefined')
+			{
+				// on affiche l icone
+				var item_link="<a href='http://www.magelo.com/eq_item_info.html?num="+tab_item[(num_bag-2000)*10+2030+i-1].num+"'>"+tab_item[(num_bag-2000)*10+2030+i-1].name+"</a>";
+				buffer+=("src='"+tab_item[(num_bag-2000)*10+2030+i-1].icon+"' alt=\""+tab_item[(num_bag-2000)*10+2030+i-1].name+"\" border=0 style='cursor: "+cursor+"' onclick=\" document.update_inv.pos.value="+((num_bag-2000)*10+2030+i-1)+";document.getElementById('selected_slot').innerHTML='"+filtre(tab_item[num_bag].name)+" Slot "+i+" ["+filtre(item_link)+"]';enable_form(0);  \" >");
+							
+				// est ce que l'item est stackable ?
+				if(tab_item[(num_bag-2000)*10+2030+i-1].stackable==true && tab_item[(num_bag-2000)*10+2030+i-1].lore==false)
+					buffer+=("<div class='qt'><img src='"+repository+"/misc/qt.png'><div class='qt-text'>"+tab_item[(num_bag-2000)*10+2030+i-1].qt+"<\/div><\/div>");
+			}
+			else
+				buffer+=("src='"+repository+"/misc/money_mask.png' alt='slot"+i+"' border=0 style='cursor: "+cursor+"' onclick=\" document.update_inv.pos.value="+((num_bag-2000)*10+2030+i-1)+";document.getElementById('selected_slot').innerHTML='"+filtre(tab_item[num_bag].name)+" Slot "+i+"';enable_form(1); \" >");
+			
+			buffer+=("<\/div>");
+		}	
+		
+		document.getElementById("bag").innerHTML=buffer;
+		document.getElementById("bag").style.visibility='visible';
+	}
+	
+	function close_bag()
+	{
+		document.getElementById("bag").style.visibility='hidden';
+	}
+	
+	function enable_form(empty_slot)
+	{
+		document.update_inv.action_cat[0].disabled=false;
+		document.update_inv.item.disabled=false;
+		if(empty_slot==0)
+			document.update_inv.action_cat[1].disabled=false;
+		else
+			document.update_inv.action_cat[1].disabled=true;
+		
+	}
+	
+	function disabled_form()
+	{
+		document.update_inv.action_cat[0].disabled=true;
+		document.update_inv.action_cat[1].disabled=true;
+		document.update_inv.item.disabled=true;
+	}
+	
+	function getNumSlot(capaciteBag,indice)
+	{
+		if(indice<=capaciteBag/2)
+			return indice;
+		else
+			return (indice+5-(capaciteBag/2));
+	}
+	
+	function filtre(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\'")
+				tmp+="\\\'";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+	
+</script>
+
+
+<br>
+<table align="center" width="95%" cellpadding="0" cellspacing="0">
+<tr><td width="*" rowspan="2" colspan="2">
+<table width="100%" align="center" border="1" style="border-color: #29455A" cellpadding="0" cellspacing="0">
+<tr><td><table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td style="background: url(img/title_bg0.gif)" height="15" class="title">
+		&nbsp;Character bank
+	</td>
+</tr>
+<tr><td class="cadre-bg"><table width="96%" align="center">
+<tr>
+	<td class="text2">
+		<br>
+			
+		<table class="text2" width="100%">
+		<tr>
+			<td>Bank</td>
+			<td>&nbsp;</td>
+			<td><div id="label"></div></td>
+			<td>&nbsp;</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td valign="top" style="width:100px">
+			<div style="position: relative;">
+				<script type="text/javascript">
+					for(var i=0;i<4;i++)
+						document.write("<img border=0 alt='inv' src='"+repository+"/misc/inv.png'><br>");
+					
+					for(var i=1;i<=8;i++)
+					{
+						document.write("<div id='slot"+getNumSlot(8,i)+"' class='slot'>");
+						
+						document.write("<img ");
+						if(typeof(tab_item[(1999+i)])!='undefined')
+						{
+							
+							// Gestion du onclick sur l item
+							var item_link="<a href='http://www.magelo.com/eq_item_info.html?num="+tab_item[(1999+i)].num+"'>"+tab_item[(1999+i)].name+"</a>";
+							var onclick="document.update_inv.pos.value="+(1999+i)+";";
+							onclick+="document.getElementById('selected_slot').innerHTML='Bank slot "+i+" ["+filtre(item_link)+"]';";
+							if(tab_item[(1999+i)].bag_size>0)
+								onclick+="open_bag("+(1999+i)+");";
+							else
+								onclick+="close_bag();"
+							onclick+="enable_form(0);";
+							
+							// on affiche l icone
+							document.write("src='"+tab_item[(1999+i)].icon+"' alt=\""+tab_item[(1999+i)].name+"\" border=0 style='cursor: "+cursor+"' onclick=\""+onclick+" \" >");
+							
+							// est ce que l'item est stackable ?
+							if(tab_item[(1999+i)].stackable==true && tab_item[(1999+i)].lore==false)
+								document.write("<div class='qt'><img src='"+repository+"/misc/qt.png'><div class='qt-text'>"+tab_item[(1999+i)].qt+"<\/div><\/div>");
+						}
+						else
+							document.write("src='"+repository+"/misc/money_mask.png' alt='slot"+i+"' border=0 style='cursor: "+cursor+"' onclick=\" document.update_inv.pos.value="+(1999+i)+";close_bag();document.getElementById('selected_slot').innerHTML='Bank slot "+i+"';enable_form(1); \" >");
+						document.write("<\/div>");
+					}
+				</script>	
+			</div>
+			
+			
+			</td>
+			<td style="width:20px"></td>
+			<td valign="top" style="width:100px">
+				<div id="bag" style="position: relative;"></div>
+			</td>
+			<td style="width:20px" valign="top"></td>
+			<td valign="top">
+				<form name="update_inv" action="">
+				<input type="Hidden" name="send_to" value="eq_bank_add_step1">
+				<input type="Hidden" name="redirect" value="/eq_bank_add.html">
+				<input type="Hidden" name="redirect_error" value="/error.html">
+				
+				<input type="hidden" name="pos" value="0">
+			
+				<fieldset style="width:95%">
+				<legend class="text2">Manage your bank</legend>
+				<br><br>
+				<table class="text2"  width="100%">
+				<tr><td style="width:95px" valign="top">Selected Slot:&nbsp;</td><td><div id="selected_slot" style="color: red;position: relative;">NONE</div></td></tr>
+				</table>
+				<br><br>
+				<input type="radio" name="action_cat" value="update" checked disabled onclick="document.update_inv.send_to.value='eq_bank_add_step1';document.update_inv.redirect.value='/eq_bank_add.html';set_forms();"> Update the selected slot with the following item:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item ID or partial name:&nbsp;<input class="input" type="text" name="item" size="25" maxlength="40" value="" disabled><br>
+				<br><br>
+				<input type="radio" name="action_cat" value="clear" disabled onclick="document.update_inv.send_to.value='eq_bank_remove_item';document.update_inv.redirect.value='/eq_bank.html';set_forms();"> Remove the item from the selected slot<br>
+				<br><br>
+				<div align="center">
+				<div align="center">
+					<img class="pointer" border="0" alt="Proceed" src="img/proceed_off.gif" onmouseover="this.src='img/proceed_on.gif'" onmouseout="this.src='img/proceed_off.gif'" onclick="if(document.update_inv.pos.value!=0) document.update_inv.submit();">
+					&nbsp;&nbsp;
+					<a href="http://www.magelo.com/eq_char.html"><img border="0" alt="Retry" src="img/back_off.gif" onmouseover="this.src='img/back_on.gif'" onmouseout="this.src='img/back_off.gif'"></a>
+				</div></div>
+				</fieldset>
+				
+				</form>
+				<br><br><br>
+			</td>
+		</tr>
+		</table>
+		
+		
+
+	</td>
+</tr></table></td></tr></table></td></tr></table>
+</td><td width="6" height="8" style="background: url(img/right_shadow.gif)" valign="top"><img alt="" src="img/top_right_shadow.gif" width="6" height="8"></td></tr>
+<tr><td width="6" height="100%" style="background: url(img/right_shadow.gif)"></td></tr>
+<tr>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_left_shadow.gif" width="6" height="8"></td>
+	<td width="*" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_shadow.gif" width="6" height="8"></td>
+	<td width="6" height="8" style="line-height:0;background: url(img/bottom_shadow.gif)"><img alt="" src="img/bottom_right_shadow.gif" width="6" height="8"></td>
+</tr>	
+</table>
+
+<script type='text/javascript' >set_forms();</script>
+</body>
+</html>

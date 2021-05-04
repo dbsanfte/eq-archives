@@ -1,0 +1,148 @@
+<!-- Header for Projet -->
+<script src="http://www.magelo.com/components/function.jsp"></script>
+<script src="http://www.magelo.com/components/forum_flat.jsp"></script>
+<!-------------------------->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Message / Flat view</title>
+	<link rel="stylesheet" type="text/css" href="./style/magelo.css">
+</head>
+<body>
+<style>
+	.author { font-family: Verdana; color:#A5B2E7; font-size: 11pt}
+	.rank { font-family: Verdana; color:#ff0000; font-size: 7pt}
+	.date { font-family: Arial; color:#23798F; font-size: 8pt}
+	.title { font-family: Comic Sans MS; color:#EFEBEF; font-size: 12pt; font-style : bold}
+	.body { font-family: Comic Sans MS; color:#EFEBEF; font-size: 10pt}
+	.edited { font-family: Arial;  font-size: 7pt}
+	
+	.admin { font-family: Arial; color:#197DC9; font-size: 12pt;}
+	.admin_link { font-family: Arial; color:#197DC9; font-size: 10pt}
+</style>
+<br>
+<script>
+	document.writeln("<div align='center' class='website'>"+website_name+"</div>");
+</script>
+<br>
+<div align="center">
+<script>
+	document.write("<a href='./forum.html'>Forums</a>");
+	if(typeof(forum_num)!='undefined')
+	{
+		document.write("&nbsp;>>&nbsp;");
+		if(expanded==true)
+			document.write("<a href='./forum_e.html?forum_num="+forum_num+"'>"+forum_name+"</a>");
+		else
+			document.write("<a href='./forum_c.html?forum_num="+forum_num+"'>"+forum_name+"</a>");
+		
+		if(typeof(mess_num)!='undefined')
+		{
+			document.write("&nbsp;>>&nbsp;");
+			if(flat==true)
+				document.write("<a href='./forum_flat.html?mess_num="+topic_num+"&page_num="+page_num+"'>"+mess_title+"</a>");
+			else
+				document.write("<a href='./forum_read.html?mess_num="+mess_num+"'>"+mess_title+"</a>");
+		}
+		if(logged==true && (forum_post_level==true || forum_admin==true))
+			document.write("&nbsp;&nbsp;&nbsp;[ <a href='./forum_post.html?forum_num="+forum_num+"'>New Topic</a> ]");
+
+		document.write("<br><br><a href='http://www.magelo.com/components/forum_flat_view.jsp?redirect=/forum_read.html?mess_num="+topic_num+"&b=false'>Thread view</a>&nbsp;|&nbsp;<a href='./forum_search.html?mess_num="+topic_num+"&page_num="+current_page+"'>Search</a>");
+	}
+	else
+		document.location="./forum.html";
+</script>
+</div>
+<br>
+<table align="center" width="90%" cellpadding="5" cellspacing="1">
+<tr>
+	<td>
+	Page
+	<script>
+	for(var i=1;i<=nbr_page;i++)
+	{
+		if(current_page==i)
+			document.write(i+"&nbsp;");
+		else
+			document.write("<a href='./forum_flat.html?mess_num="+topic_num+"&page_num="+i+"'>"+i+"</a>&nbsp;");
+	}
+	</script>
+	</td>
+<td colspan="2" align="right">
+<script>
+	if(logged==true && tab_message[1].approved==true)
+		if(forum_admin==true || (forum_reply_level==true && topic_locked==false))
+				document.write("<a href='./forum_reply.html?mess_num="+topic_num+"&page_num="+current_page+"'>Add Reply</a>");
+</script>
+</td></tr>	
+<script>
+var color1="#292C4A";
+var color2="#393839";
+var color=color2;
+for(var i=1;i<=tab_message.length;i++)
+{
+	if(color==color1)
+		color=color2;
+	else
+		color=color1;
+	
+	document.write("<tr><td bgcolor='"+color+"' valign='top' width='25%'><span class='author'>"+tab_message[i].author+"</span><br><span class='rank'>["+tab_message[i].author_rank+"]</span><br><span class='date'>"+tab_message[i].date+"</span><br>");
+	if(logged==true)
+	{
+		if(tab_message[i].approved==true)
+			if(forum_admin==true || (forum_reply_level==true && topic_locked==false ))
+				document.write("<a href='./forum_reply.html?mess_num="+tab_message[i].num+"&page_num="+current_page+"'>Reply</a>");
+		else
+			if(forum_admin==true || forum_moderator==true)
+				document.write("<a href='http://www.magelo.com/components/forum_valid_mess.jsp?mess_num="+tab_message[i].num+"&b=true'>Approve</a>&nbsp;-&nbsp;<a href='http://www.magelo.com/components/forum_valid_mess.jsp?mess_num="+tab_message[i].num+"&b=false'>Remove</a>");
+		
+		if(forum_admin==true || (tab_message[i].owner==true && topic_locked==false))
+			document.write("&nbsp;-&nbsp;<a href='./forum_edit_mess.html?mess_num="+tab_message[i].num+"&page_num="+current_page+"'>Edit</a>");
+		
+		if(forum_admin==true)
+		{
+			document.write("&nbsp;-&nbsp;<a class='admin_link' href='./forum_move_mess.html?mess_num="+tab_message[i].num+"&page_num="+current_page+"'>Move</a>");
+			if(tab_message[i].approved==true)
+				document.write("&nbsp;-&nbsp;<a class='admin_link' href='http://www.magelo.com/components/forum_delete_mess.jsp?mess_num="+tab_message[i].num+"'>Delete</a>");
+		}
+	}
+	if(tab_message[i].photo_url!=null)
+		document.write("<br><img src='"+tab_message[i].photo_url+"'><br>");
+	document.write("</td><td bgcolor='"+color+"' valign='top' width='*'><span class='title'>"+tab_message[i].title+"</span><br><br><span class='body'>"+page_setup(tab_message[i].body)+"</span><br>");
+	if(tab_message[i].sig!=null)
+		document.write("<br><span class='body'>"+page_setup(tab_message[i].sig)+"</span><br>");
+	if(tab_message[i].modified_author!=null)
+		document.write("<br><span class='edited'>Edited by "+tab_message[i].modified_author+" - "+tab_message[i].modified_date+"</span>");
+	document.write("</td></tr>");
+}
+</script>
+<tr>
+	<td>
+		Page
+		<script>
+		for(var i=1;i<=nbr_page;i++)
+		{
+			if(current_page==i)
+				document.write(i+"&nbsp;");
+			else
+				document.write("<a href='./forum_flat.html?mess_num="+topic_num+"&page_num="+i+"'>"+i+"</a>&nbsp;");
+		}
+		</script>
+	</td>
+</tr>
+</table>
+<script>
+if(forum_admin==true)
+{
+	document.write("<br><table width='100%'><tr><td align='center'>");
+	if(topic_locked==true)
+		document.write("<a class='admin_link' href='http://www.magelo.com/components/forum_lock_topic.jsp?mess_num="+tab_message[1].num+"&b=false'>Unlock this topic</a>");
+	else
+		document.write("<a class='admin_link' href='http://www.magelo.com/components/forum_lock_topic.jsp?mess_num="+tab_message[1].num+"&b=true'>Lock this topic</a>");
+	document.write("</td></tr></table>");
+}
+</script>
+<br>
+</body>
+</html>

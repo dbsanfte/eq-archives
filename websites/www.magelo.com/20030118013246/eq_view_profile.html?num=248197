@@ -1,0 +1,737 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://www.magelo.com/style/eq_profile.css">
+	<title>Magelo profile</title>
+</head>
+<body id="body">
+
+
+		<script type="text/javascript">
+	boutton1= new Image(46,15);
+	boutton1.src = "/res/eq/misc/test.png";
+
+	boutton2 = new Image(46,15);
+	boutton2.src = "/res/eq/misc/test2.png";
+
+	
+	
+	var spell_url='http://www.magelo.com/eq_spell_info.html';
+	
+	function getParameter(param)
+	{
+		param+='=';
+		var loc=''+document.location;
+		var deb=loc.indexOf(param)+param.length;
+		var fin=-1;
+		var value='';
+		if(deb!=(-1+param.length))
+		{
+			fin=loc.indexOf('&',deb);
+			if(fin!=-1)
+				value=loc.substring(deb,fin);
+			else
+				value=loc.substring(deb,loc.length);
+		}
+		return unescape(value);
+	}
+	
+	if(getParameter("resize")=="true")
+		window.resizeTo(800,740);
+	
+	function makeArray(n){this.length=n;return this;}
+
+	document.title="Peaden Ismarkus - Half-Elf Druid [Solusek Ro]";
+	document.getElementById('body').style.backgroundPosition = 'center';
+	
+	var ieWin32=(document.all!=null && navigator.platform == "Win32" && navigator.userAgent.indexOf("MSIE")!=-1);
+	var ie = (document.all!=null);
+	
+	function makeArray(n){this.length=n;return this;}
+	
+	function filtre(txt)
+	{
+		var tmp="";
+		for(var i=0;i<txt.length;i++)
+		{
+			if(txt.charAt(i)=="\'")
+				tmp+="\\\'";
+			else
+				tmp+=txt.charAt(i);
+		}
+		return tmp;
+	}
+	
+	function showItem(position)
+	{
+		document.getElementById("screenshot-text").innerHTML=tabItem[position].desc;
+		showScreenshot()
+	}
+	
+	function getNumSlot(capaciteBag,indice)
+	{
+		if(indice<=capaciteBag/2)
+			return indice;
+		else
+			return (indice+5-(capaciteBag/2));
+	}
+	
+	function openBag(position)
+	{
+		showItem(position);
+		
+		var buffer="";
+		for(var i=1;i<=tabItem[position].capacite;i++)
+		{
+			var index = 0;
+			if(position <2000)
+				index = 250 + 10*(position-22) + i -1;
+			else
+				index = (position-2000)*10+2030+i-1;
+				
+			buffer+=("<div id='bag-slot-"+getNumSlot(tabItem[position].capacite,i)+"' class='slot'><img ");
+			if(tabItem[index]!=null)
+			{
+				buffer+=("style='cursor: pointer' title=\""+tabItem[index].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[index].icon+".png'  onmousedown='showItem("+index+");'>");
+				if(tabItem[index].stackable==true)
+				{
+					if(ieWin32)
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+					else
+						buffer+=("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[index].qt+"<\/div>");
+				}
+			}
+			else
+				buffer+=("border=0 src='/res/eq/misc/money_mask.png'>");
+								
+			buffer+=("<\/div>");
+		}
+		
+		buffer+=("<div id='bag-button' style='position: absolute;left:25px' class='button' onmouseover=\"this.style.backgroundImage='url(/res/eq/misc/test2.png)';\" onmouseout=\"this.style.backgroundImage='url(/res/eq/misc/test.png)';\" onclick='closeBag();'>Done<\/div>");
+		
+		document.getElementById("bag").innerHTML=buffer;
+		
+		if(ieWin32)
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+40);
+		else
+			document.getElementById("bag-alpha").style.height=(tabItem[position].capacite/2*40+41);
+		document.getElementById("bag").style.height=(tabItem[position].capacite/2*40+40);
+		document.getElementById("bag-button").style.top=(tabItem[position].capacite/2*40+17);
+		
+		document.getElementById("bag-alpha").style.visibility='visible';
+		document.getElementById("bag").style.visibility='visible';
+	}
+	
+	function closeBag()
+	{
+		document.getElementById("bag-alpha").style.visibility='hidden';
+		document.getElementById("bag").style.visibility='hidden';
+		hideScreenshot();
+	
+	}
+	
+	function showBank()
+	{
+		document.getElementById("bank-alpha").style.visibility='visible';
+		document.getElementById("bank").style.visibility='visible';
+	}
+	
+	function hideBank()
+	{
+		document.getElementById("bank").style.visibility='hidden';
+		document.getElementById("bank-alpha").style.visibility='hidden';
+	}
+	
+	function showScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='visible';
+		document.getElementById("magelo-info").style.visibility='hidden';
+	}
+	function hideScreenshot()
+	{
+		document.getElementById("screenshot").style.visibility='hidden';
+		document.getElementById("magelo-info").style.visibility='visible';
+	}
+	
+	function showAdv()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("adv").style.visibility='visible';
+	}
+	
+	function showStat()
+	{
+		document.getElementById("adv").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='hidden';
+		document.getElementById("stat").style.visibility='visible';
+	}
+	
+	function showBio()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("bio").style.visibility='visible';
+	}
+	
+	function showSkill()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("skill").style.visibility='visible';
+	}
+	
+	function showSpell()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("spell").style.visibility='visible';
+	}
+	
+	function showFocus()
+	{
+		document.getElementById("stat").style.visibility='hidden';
+		document.getElementById("focus").style.visibility='visible';
+	}
+	
+	var tabAbility = new makeArray(60);function ability(name,cat,nbr_point,nbr_point_max){this.name=name;this.cat=cat;this.nbr_point=nbr_point;this.nbr_point_max=nbr_point_max;}tabAbility[1]=new ability('Innate Strength',1,0,5);tabAbility[2]=new ability('Innate Stamina',1,0,5);tabAbility[3]=new ability('Innate Agility',1,0,5);tabAbility[4]=new ability('Innate Dexterity',1,0,5);tabAbility[5]=new ability('Innate Intelligence',1,0,5);tabAbility[6]=new ability('Innate Wisdom',1,0,5);tabAbility[7]=new ability('Innate Charisma',1,0,5);tabAbility[8]=new ability('Innate Fire Protection',1,0,5);tabAbility[9]=new ability('Innate Cold Protection',1,0,5);tabAbility[10]=new ability('Innate Magic Protection',1,0,5);tabAbility[11]=new ability('Innate Poison Protection',1,0,5);tabAbility[12]=new ability('Innate Disease Protection',1,0,5);tabAbility[13]=new ability('First Aid',1,0,3);tabAbility[14]=new ability('Innate Run Speed',1,0,3);tabAbility[15]=new ability('Innate Lung Capacity',1,0,3);tabAbility[16]=new ability('Innate Metabolism',1,0,3);tabAbility[17]=new ability('Innate Regeneration',1,0,3);tabAbility[18]=new ability('New Tanaan Crafting Mastery',1,0,6);tabAbility[19]=new ability('Channeling Focus',2,0,3);tabAbility[20]=new ability('Mental Clarity',2,0,3);tabAbility[21]=new ability('Spell Casting Fury',2,0,3);tabAbility[22]=new ability('Spell Casting Mastery',2,0,3);tabAbility[23]=new ability('Spell Casting Reinforcement',2,0,3);tabAbility[24]=new ability('Combat Agility',2,0,3);tabAbility[25]=new ability('Combat Stability',2,0,3);tabAbility[26]=new ability('Natural Durability',2,0,3);tabAbility[27]=new ability('Healing Adept',2,0,3);tabAbility[28]=new ability('Healing Gift',2,0,3);tabAbility[29]=new ability('Mass Group Buff',3,0,1);tabAbility[30]=new ability('Spell Casting Reinforcement Mastery',3,0,1);tabAbility[31]=new ability('Dire Charm',3,0,1);tabAbility[32]=new ability('Enhanced Root',3,0,1);tabAbility[33]=new ability('Exodus',3,0,1);tabAbility[34]=new ability('Innate Camouflage',3,0,1);tabAbility[35]=new ability('Quick Damage',3,0,3);tabAbility[36]=new ability('Quick Evacuation',3,0,3);tabAbility[37]=new ability('Advanced Innate Strength',4,0,10);tabAbility[38]=new ability('Advanced Innate Stamina',4,0,10);tabAbility[39]=new ability('Advanced Innate Agility',4,0,10);tabAbility[40]=new ability('Advanced Innate Dexterity',4,0,10);tabAbility[41]=new ability('Advanced Innate Intelligence',4,0,10);tabAbility[42]=new ability('Advanced Innate Wisdom',4,0,10);tabAbility[43]=new ability('Advanced Innate Charisma',4,0,10);tabAbility[44]=new ability('Warding of Solusek',4,0,10);tabAbility[45]=new ability('Blessing of E\'ci',4,0,10);tabAbility[46]=new ability('Marr\'s Protection',4,0,10);tabAbility[47]=new ability('Shroud of The Faceless',4,0,10);tabAbility[48]=new ability('Bertoxxulous\'s Gift',4,0,10);tabAbility[49]=new ability('Planar Power',4,0,5);tabAbility[50]=new ability('Innate Enlightenment',4,0,5);tabAbility[51]=new ability('Advanced Healing Adept',5,0,3);tabAbility[52]=new ability('Advanced Healing Gift',5,0,3);tabAbility[53]=new ability('Fury of Magic',5,0,3);tabAbility[54]=new ability('Hastened Exodus',5,0,3);tabAbility[55]=new ability('Innate Defense',5,0,5);tabAbility[56]=new ability('Lightning Reflexes',5,0,5);tabAbility[57]=new ability('Radiant Cure',5,0,3);tabAbility[58]=new ability('Spirit of the Wood',5,0,3);tabAbility[59]=new ability('Viscid Roots',5,0,1);tabAbility[60]=new ability('Wrath of the Wild',5,0,3);
+	
+	var ability_cat=1;
+	function processAdv()
+	{
+		var ability_cat_name="";
+		switch(ability_cat)
+		{
+			case 1:
+				ability_cat_name="General Abilities";
+				break;
+			case 2:
+				ability_cat_name="Archetype Abilities";
+				break;
+			case 3:
+				ability_cat_name="Class Specific Abilities";
+				break;
+			case 4:
+				ability_cat_name="PoP Advance";
+				break;
+			case 5:
+				ability_cat_name="PoP Ability";
+				break;
+		}
+		document.getElementById("adv-cat").innerHTML=("<table style='width: 230px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td>"+ability_cat_name+"<\/td><td style='width: 19px' align='right'>Cur<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>Max<\/td><\/tr><\/table>");
+		
+		var buffer="<table style='width: 230px;color: #E0E0E0;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>";
+		for(var i=1;i<=tabAbility.length;i++)
+		{
+			if(tabAbility[i].cat==ability_cat)
+			{
+				buffer+="<tr><td>"+tabAbility[i].name+"<\/td><td style='width: 19px;";
+				if(tabAbility[i].nbr_point>0)
+					buffer+="color: #00FF00;";
+				buffer+="' align='right'>"+tabAbility[i].nbr_point+"<\/td><td align='center' style='width: 8px'>/<\/td><td style='width: 22px'>"+tabAbility[i].nbr_point_max+"<\/td><\/tr>";
+			}
+		}
+		buffer+="<\/table>";
+		document.getElementById("adv-data").innerHTML=buffer;
+		
+		showAdv();
+	}
+	
+	
+	
+</script>
+<div id="character-alpha"></div>
+<div id="character">
+
+<div id="stat">
+
+<script type="text/javascript">
+	var slot_name = new Array();
+	slot_name[1]="EAR";
+	slot_name[2]="HEAD";
+	slot_name[3]="FACE";
+	slot_name[4]="EAR";
+	slot_name[5]="NECK";
+	slot_name[6]="SHOULD.";
+	slot_name[7]="ARMS";
+	slot_name[8]="BACK";
+	slot_name[9]="WRIST";
+	slot_name[10]="WRIST";
+	slot_name[11]="RANGE";
+	slot_name[12]="HANDS";
+	slot_name[13]="PRIMARY";
+	slot_name[14]="SEC.";
+	slot_name[15]="FINGER";
+	slot_name[16]="FINGER";
+	slot_name[17]="CHEST";
+	slot_name[18]="LEGS";
+	slot_name[19]="FEET";
+	slot_name[20]="WAIST";
+	slot_name[21]="AMMO";
+	
+	function item(icon,name,desc,capacite,qt,stackable){this.icon=icon;this.name=name;this.desc=desc;this.capacite=capacite;this.qt=qt;this.stackable=stackable;} var tabItem = new Array();
+		
+	for(var i=1;i<=21;i++)
+	{
+		document.write("<div id='slot-ekip-"+i+"' class='slot'>");
+		document.write("<div>&nbsp;"+slot_name[i]+"<\/div><img ");
+		if(tabItem[i]!=null)
+			document.write("style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+		else
+			document.write("border=0 src='/res/eq/misc/money_mask.png'>");
+		document.write("<\/div>");	
+	}
+	
+	for(var i=22;i<30;i++)
+	{
+		document.write("<div id='slot-inv-"+(i-21)+"' class='slot'>");
+		if(tabItem[i]==null)
+			document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+		else if(tabItem[i].capacite==0)
+		{
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+			if(tabItem[i].stackable==true)
+			{
+				if(ieWin32)
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				else
+					document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+			}
+		}
+		else 	
+			document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+		document.write("<\/div>");
+	}
+</script>
+
+<div id="block1" class="block-style">
+Peaden<br>60&nbsp;Druid<br>Tunare
+</div>
+
+<div id="block2" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style">
+<tr>
+	<td>HP&nbsp;</td>
+	<td id="hp"></td>
+	
+</tr>
+<tr>
+	<td>AC&nbsp;</td>
+	<td id="ac"></td>
+</tr>
+<tr>
+	<td>ATK&nbsp;</td>
+	<td id="atk"></td>
+</tr>
+</table>
+</div>
+
+<div id="next-level" class="block-style">
+	NEXT LEVEL
+</div>
+
+<div id="bulle-xp">
+	<div style="line-height:0;"><img border=0 alt='bubble' src='/res/eq/misc/bulle.png'></div>
+</div>
+
+<div id="str" class="block-style">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>STR&nbsp;&nbsp;&nbsp;</td>
+	<td id="str-label"></td>	
+</tr>
+<tr>
+	<td>STA&nbsp;&nbsp;&nbsp;</td>
+	<td id="sta"></td>
+</tr>
+<tr>
+	<td>AGI&nbsp;&nbsp;&nbsp;</td>
+	<td id="agi"></td>
+</tr>
+<tr>
+	<td>DEX&nbsp;&nbsp;&nbsp;</td>
+	<td id="dex"></td>
+</tr>
+<tr>
+	<td>WIS&nbsp;&nbsp;&nbsp;</td>
+	<td id="wis"></td>
+</tr>
+<tr>
+	<td>INT&nbsp;&nbsp;&nbsp;</td>
+	<td id="int"></td>
+</tr>
+<tr>
+	<td>CHA&nbsp;&nbsp;&nbsp;</td>
+	<td id="cha"></td>
+</tr>
+</table>
+</div>
+
+<div id="pr">
+<table cellpadding="0" cellspacing="0" class="block-style" style="line-height: 15px;">
+<tr>
+	<td>POISON&nbsp;&nbsp;&nbsp;</td>
+	<td id="RP"></td>
+</tr>
+<tr>
+	<td>MAGIC&nbsp;&nbsp;&nbsp;</td>
+	<td id="RM"></td>
+</tr>
+<tr>
+	<td>DISEASE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RD"></td>
+</tr>
+<tr>
+	<td>FIRE&nbsp;&nbsp;&nbsp;</td>
+	<td id="RF"></td>
+</tr>
+<tr>
+	<td>COLD&nbsp;&nbsp;&nbsp;</td>
+	<td id="RC"></td>
+</tr>
+</table>
+</div>
+
+<div id="money-platinum" class="money">
+	<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-gold" class="money">
+	<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-silver" class="money">
+	<div class="money-img"><img src="/res/eq/misc/silver.png"></div>
+	<div class="money-text">0</div>
+</div>
+<div id="money-copper" class="money">
+	<div class="money-img"><img src="/res/eq/misc/copper.png"></div>
+	<div class="money-text">0</div>
+</div>
+
+
+
+<div id="autoequip"><div style="position: absolute; top: 50px; left: 5px; text-align: center;">AUTO EQUIP<br>AREA</div></div>
+
+
+<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="window.close();">Done</div>
+<div style="position: absolute;top: 378px;left: 90px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="processAdv();">Alt Adv</div>
+<div style="position: absolute;top: 378px;left: 140px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showSpell();">Spell</div>
+<div style="position: absolute;top: 378px;left: 190px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showFocus();">Focus</div>
+<div style="position: absolute;top: 378px;left: 240px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showSkill();">Skill</div>
+<div style='position: absolute;top: 378px;left: 290px;' class='button' onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick='showBio();'>Bio</div>
+
+
+</div>
+
+<div id="adv" class="box" style="visibility: hidden;">
+	<div id="adv-text">Ability Type:</div>
+	<div id="adv-cat"></div>
+	
+	<div style="position: absolute;top: 9px;left: 80px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=1;processAdv();">General</div>
+	<div style="position: absolute;top: 9px;left: 130px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=2;processAdv();">Arch</div>
+	<div style="position: absolute;top: 9px;left: 180px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=3;processAdv();">Class</div>
+	<div style="position: absolute;top: 9px;left: 230px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=4;processAdv();">PoP Adv</div>
+	<div style="position: absolute;top: 9px;left: 280px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="ability_cat=5;processAdv();">PoP Ab</div>
+	<div id="adv-data"></div>
+	
+	<div style="color: #E0E0E0;	font-family: Arial;font-size: 10px;position: absolute;top: 150px;left: 235px;">
+		
+		<table cellpadding="0" cellspacing="0" class="textFont">
+		<tr><td>AA Points:</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		<tr><td>Total Pts Spent:&nbsp;</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td>Total AA Pts:</td><td align="right" style="color:#FFFF00;">0</td></tr>
+		</table>
+	</div>
+	
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="bio" class="box" style="visibility: hidden;">
+	<div id="bio-text">This story follows the life of Peaden, first of the three children. <br>Eldest and the one who holds the origonal flag of SkyHaven, that which <br>was embued by Markus's power. With the history of the vast city long <br>decayed......<br><br>Peaden chose to leave the family home some 40 years ago, Although he <br>still only looked 19, for elf blood ran his veins. Forever youthing <br>him, decieveing grandfather times plan. Hideing him from age.<br><br>Over the time Peaden had spent wandering the vast forests, plains, and <br>deserts of the now fully changed earth. A earth that bears no <br>resemblence now to the one Markus walked upon eons ago. Peaden <br>searches. Searches for that which has been a wisper in his line since <br>as far back as anyone can remember. A wisper that spoke of <br>brother-hood and Knights. A wisper that spoke of vast power and great <br>goodness. Supposibly his family was once decended from ancient <br>SkyHaven, the city of the first Paladins. Although everyone chose to <br>disbelive in SkyHaven, thinking in no way could a city ever stand so <br>strong agaist so much evil, After all. Did it not fall to evil?<br><br>Peaden on the other hand, unlike his brothers, chose to believe the <br>tales. Chose to dream at night, giving shape and sight to the whispers <br>of history. Sometimes, when it was very dark and he was sure no one <br>was awake. He would remove the ancient flag from its hideing spot, the <br>flag his father told him never to let anyone see, for ancient fury's <br>seak to destroy this flag. As it was said by his father, this flag <br>held the secret of Skyhaven's rebirth.<br><br>Peaden had set forth one night, determined to find the resting place <br>of SkyHaven. Determined to desifer the secrets of the flag, of his <br>history, of the blood that ran his veins. Knowing this search would <br>not be easy he secretly prepared for a long time. Training in his <br>magic, the magic trained to him by his father. Ancient magic, in many <br>ways, forbiddon magic.... When he was assured by him self he was <br>prepared. Peaden set out in the dead of night, toward destiny.<br><br>Many years pass..... So many that the youngest child, that which was <br>named Suepeterson. Is now an adult, Suepeterson unfortunatly is trully <br>human. Ageing at normal time. Forced to live under grandfather times <br>cruel clock.<br><br>Peaden sat in a heap. The sun bakeing the earth of this decimated <br>land. He had walked for what seamed years since the last city. Looking <br>around Peaden did not recongize where he was, he was lost. The sky had <br>an eerie glow all around him, night was falling.. Peaden found him <br>self growing horribly tired, so tired he could not stay awake. Falling <br>into a deep sleep, Peaden dreampt.. Peaden drempt of SkyHaven, but <br>this time his dream was real, he walked in a body he did not know. <br>Cursed to watch through these eyes as the city was decimated by a <br>black hoard that beared no name... Cursed to watch the destruction, <br>the blood shed. He saw mighty generals fall, he saw the look in there <br>eyes, he saw self dishonour, these grand generals felt they had failed <br>there lord. Such loyalty he saw in the eyes of SkyHaven. All fighthing <br>and dieing for there "lord". Who was this lord they all spoke of? Who <br>was this man they all died for, a leader of such mighty command that <br>they give their lives for him. It was then he realized HE was the <br>mighty leader, or at least, This body was. Peaden in his dreaming <br>state lived out the last moments of Glorious Dream-Striker, Lord of <br>the Knights of SkyHaven. Greatest of all the ArchSkyKnights before <br>him. Yet, it seamed this man was eternally old. Old behond that elves <br>which he knew, this man seamed older then time. As if there was never <br>any ArchSkyKnights before him. As if he was the only one.......<br><br>Peaden sat bolt upright, sweat pouring off his brow, stinking his eyes <br>and leaveing a sour salt taste on his dry lips. Whipeing his eyes he <br>looked up into the eyes of an ancient man. So old this man was, Older <br>then any elder Peaden had ever known. Deep lines of age ran deep and <br>true in his face, yet his eyes were eternally young. Something inside <br>him stired. Instatly Peaden knew he would give his life for this man, <br>it was then he realized it was Arch SkyKnight Dream-Striker.......Yet <br>in a way it wasnt.... A shade of him, a ghost perhapse.... This <br>"Ghost" Spoke, with a commanding voice, filled with compasion yet <br>stern leadership...<br><br>"Peaden, I see through you, I know what you were, are, and shall be."<br><br>Peaden was confused by this mans words, what could he mean.<br><br>"I see your line through generations, I trace your blood back to the <br>beginning, when earth was young."<br><br>Peaden gawked at this "ghost" Not out of fear, but awe. He would <br>charge into a brick wall if this "ghost" asked him to. Weird, as he <br>had always thought of him self as a loner...Even tho he already knew <br>the answer, he had to ask.....But his voice came out in shakeing <br>wispers.<br><br>"Are....A...R....Are.... Y... You.. Dre...am...Strrrri...ker..."<br><br>"Do not ask questions to which you already know the answer, my time is <br>short. It took great magic to bring me back for this time, For you see <br>my soul resides in the Hall of Heros. The Great gods have given me <br>leave for a short time to speak to you which must be said"<br><br>"Listen to me Peaden. Decendent of Markus, Knight of SkyHaven. Keeper <br>of the lore and its magic. You are charged with the rebuilding of <br>SkyHaven, Although its city will never live again. You must rebuild <br>its army. Great evil is afoot, and the Knights of SkyHaven are needed <br>again. Do you accept this creed"<br><br>Peaden, as stated before would have ran into a wall if this "ghost" <br>asked him to. Yet this he trully desired to do, not just becuase this <br>great man asked him to, but becuase he knew he had been destined for <br>this."<br><br>"Yes M'Lord. I shall not fail you"<br><br>"I am pleased Peaden, You do your father proud. He aslo awaits you in <br>the Hall of Heros. I feel I must warn you before I leave, Beware the <br>line of Dream-Striker. It is fouled and twisted. The lines mighty <br>magic has been prevursed to be the servent of evil, This line will <br>presue you once you accept this creed. They know all, for they hold <br>the wisdom of Dream-Striker, and I see all. What I know, they know. <br>Beware the line of Dream-Striker... ... Beware."<br><br>END.<br><br>This story was getting way to long so I stoped it. I shall write part <br>2 of this particular story in a bit :) Hope yall enjoy<br><br>Sadule Dra'Anark - The Ancient One<br></div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="skill" class="box" style="visibility: hidden;">
+	<div id="skill-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 200px">Skill</td><td align="center">Value</td></tr></table></div>
+	<div id="skill-data">
+		<table style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		<tr><td style='width: 200px'>1H Blunt</td><td align='center'>135</td></tr><tr><td style='width: 200px'>1H Slashing</td><td align='center'>175</td></tr><tr><td style='width: 200px'>2H Blunt</td><td align='center'>108</td></tr><tr><td style='width: 200px'>Abjuration</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Alteration</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Channeling</td><td align='center'>220</td></tr><tr><td style='width: 200px'>Conjuration</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Defense</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Divination</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Evocation</td><td align='center'>235</td></tr><tr><td style='width: 200px'>Forage</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Meditate</td><td align='center'>252</td></tr><tr><td style='width: 200px'>Offense</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Sense Heading</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Swimming</td><td align='center'>200</td></tr><tr><td style='width: 200px'>Tracking</td><td align='center'>125</td></tr><tr><td style='width: 200px'>Baking</td><td align='center'>105</td></tr><tr><td style='width: 200px'>Tailoring</td><td align='center'>116</td></tr><tr><td style='width: 200px'>Pottery</td><td align='center'>122</td></tr>
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="spell" class="box" style="visibility: hidden;">
+	<div id="spell-header"><table style='width: 246px;color: white;	font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0><tr><td style="width: 40px" align="center">Level</td><td>Spell</td></tr></table></div>
+	<div id="spell-data" class="textFont">
+		<table class="textFont" style='width: 246px;color: white;font-family: Arial;	font-size: 11px;' cellpadding=0 cellspacing=0>
+		
+		</table>
+	
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+<div id="focus" class="box" style="visibility: hidden;">
+	<div id="focus-header">Focus:</div>
+	<div id="focus-data" class="textFont">
+		
+	</div>
+	<div style="position: absolute;top: 378px;left: 8px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="showStat();">Done</div>
+</div>
+
+</div>
+
+<!-- fenetre magelo             -->
+<div id="magelo-alpha"></div>
+<div id="magelo">
+
+<div id="magelo-info" style="position: absolute;top:3px;line-height: 12px;">
+<span style="color:#FBFB00;font-size: 12px;">MOTD: Welcome to the Magelo Profile System !</span><br>
+<span class="textFont" style="font-size: 9px;">You can visit Magelo <a href="http://www.magelo.com" target="new">here</a></span>
+
+<table class="textFont" cellpadding="0" cellspacing="0" width="330">
+<tr>
+<td valign="top" width="190">
+	
+<table class='textFont' style='line-height: 0.95;' cellpadding=1 cellspacing=0>
+<tr><td height=7></td></tr><tr><td>&nbsp;</td><td>Base</td><td>Direct</td><td>Indirect</td><td>Total</td></tr>
+<tr><td>HP</td><td>1160</td><td>0</td><td>0</td><td>1160</td></tr>
+<tr><td>MANA</td><td>1260</td><td>0</td><td>0</td><td>1260</td></tr>		
+</table>
+<br>
+<table style='line-height: 0.95;' class='textFont' cellpadding=1 cellspacing=0>
+<tr><td></td></tr><tr><td>&nbsp;</td><td align="center">Base</td><td align="center">Item</td><td align="center">Total</td></tr>
+<tr><td>HP Regen</td><td align="center">4/7</td><td align="center">0</td><td align="center">4/7</td></tr>
+<tr><td colspan="4" style="height: 1px;"></td></tr>
+
+</table>
+
+</td>
+<td valign="top">
+	Current profile:Main<br>
+	
+</td>
+</tr></table>
+</div>
+
+<div id="screenshot" style="position: absolute;visibility: hidden;">
+		<div id="screenshot-text" class="textFont"></div>
+		<div style="position: absolute;top: 132px;left: 130px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="hideScreenshot();">Done</div>
+</div>
+
+</div>
+
+<!-- bank                -->
+<div id="bank-alpha"></div>
+<div id="bank">
+	<script type="text/javascript">
+		for(var i=2000;i<2008;i++)
+		{
+			document.write("<div id='bank-slot-"+(i-1999)+"' class='slot'>");
+			if(tabItem[i]==null)
+				document.write("<img border=0 alt='' src='/res/eq/misc/money_mask.png'>");
+			else if(tabItem[i].capacite==0)
+			{
+				document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 align='' src='/res/eq/itemicon/"+tabItem[i].icon+".png'  onclick='showItem("+i+");'>");
+				if(tabItem[i].stackable==true)
+				{
+					if(ieWin32)
+						document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:26px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+					else
+						document.write("<div style='position: absolute;padding-top: 2px;text-align: center;width:19px;height:15px;top:24px;left:22px;z-index:6;background-image:url(/res/eq/misc/qt.png)'>"+tabItem[i].qt+"<\/div>");
+				}
+			}
+			else 	
+				document.write("<img style='cursor: pointer' title=\""+tabItem[i].name+"\" border=0 alt='' src='/res/eq/itemicon/"+tabItem[i].icon+".png' onclick='openBag("+i+");'>");
+			document.write("<\/div>");
+		}
+	</script>
+	
+	<div id="bank-platinum" class="bank-money">
+		<div class="money-img"><img src="/res/eq/misc/platinum.png"></div>
+		<div class="money-text">0</div>
+	</div>
+	<div id="bank-gold" class="bank-money">
+		<div class="money-img"><img src="/res/eq/misc/gold.png"></div>
+		<div class="money-text">0</div>	
+	</div>
+	
+	<div style="position: absolute;top: 222px;left: 25px;" class="button" onmouseover="this.style.backgroundImage='url(/res/eq/misc/test2.png)';" onmouseout="this.style.backgroundImage='url(/res/eq/misc/test.png)';" onclick="hideBank();">Done</div>
+</div>
+
+<!-- bag                        -->
+<div id="bag-alpha"></div>
+<div id="bag"></div>
+
+<div id="debug-alpha"></div>
+<div id="debug">
+&nbsp;Str: 70&nbsp;Offense: 200(1.0)&nbsp;Weapon: 0(1.0)&nbsp;Correction ATK: 0<br>
+&nbsp;Sta: 85&nbsp;Hp boost: 1.0&nbsp;Total HP: 1160<br>
+&nbsp;Agi: 90&nbsp;Defense: 200(1.0)<br>
+<br>
+<table cellpadding="1" cellspacing="0" class="textFont">
+<tr><td colspan="10">AC formula:</td></tr>
+<tr><td>&nbsp;</td><td>Agi</td><td align="center">T</td><td>Items</td><td>Avoidance</td><td>Mitigation</td><td>&nbsp;Total&nbsp;</td><td>+AC</td></tr>
+<tr><td>Base</td><td align='center'>90</td><td align='center'>42</td><td align='center'>0</td><td align='center'>397</td><td align='center'>66</td><td align='center'>546</td><td>546</td></tr><tr><td>Base + mod1</td><td align='center'>90</td><td align='center'>42</td><td align='center'>0</td><td align='center'>397</td><td align='center'>66</td><td align='center'>546</td><td>0</td></tr><tr><td>Base + mod2</td><td align='center'>90</td><td align='center'>42</td><td align='center'>0</td><td align='center'>397</td><td align='center'>66</td><td align='center'>546</td><td>0</td></tr>
+<tr><td colspan="8"><hr></td></tr>
+<tr><td colspan="7">Total AC from formula:</td><td>546</td></tr>
+<tr><td colspan="7">Correction value for AC:</td><td>0</td></tr>
+<tr><td colspan="8"><hr></td></tr>
+<tr><td colspan="7">TOTAL AC</td><td>546</td></tr>
+</table>
+<br>
+<table cellpadding="1" cellspacing="0" class="textFont">
+<tr><td>AA</td><td>Base</td><td>inc</td><td>Pts</td><td>Total</td></tr>
+
+</table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	if(getParameter("debug")=="true")
+	{
+		document.getElementById("debug-alpha").style.visibility='visible';
+		document.getElementById("debug").style.visibility='visible';
+	}
+	
+	if(ieWin32)
+	{
+		document.getElementById("character-alpha").style.backgroundColor='black';
+		document.getElementById("magelo-alpha").style.backgroundColor='black';
+		document.getElementById("bag-alpha").style.backgroundColor='black';
+		document.getElementById("bank-alpha").style.backgroundColor='black';
+		document.getElementById("debug-alpha").style.backgroundColor='black';
+		
+		document.getElementById("adv-cat").style.width  = '345px';
+		document.getElementById("skill-header").style.width  = '345px';
+		document.getElementById("spell-header").style.width  = '345px';
+		document.getElementById("focus-header").style.width  = '345px';
+		
+		document.getElementById("screenshot-text").style.lineHeight = '0.95';
+	}
+	else
+	{
+		document.getElementById("character-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("character-alpha").style.width=346;
+		document.getElementById("character-alpha").style.height=401;
+			
+		document.getElementById("magelo-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("magelo-alpha").style.width=335;
+		document.getElementById("magelo-alpha").style.height=151;
+		document.getElementById("screenshot-text").style.width=325;
+				
+		document.getElementById("bag-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bag-alpha").style.width=97;
+		
+		document.getElementById("money-gold").style.top=196;
+		document.getElementById("money-silver").style.top=219;
+		document.getElementById("money-copper").style.top=242;
+		
+		document.getElementById("bank-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)'
+		document.getElementById("bank-alpha").style.width=97;
+		document.getElementById("bank-alpha").style.height=241;
+		
+		document.getElementById("bank-platinum").style.width=81;
+		document.getElementById("bank-gold").style.width=81;
+		document.getElementById("bank-gold").style.top=197;
+		
+		document.getElementById("debug-alpha").style.backgroundImage='url(/res/eq/misc/alpha50_black.png)';
+		document.getElementById("debug-alpha").style.width=335;
+		document.getElementById("debug-alpha").style.height=241;
+		document.getElementById("debug").style.width=334;
+	}
+	
+	function getColor(bonus)
+	{
+		var color="#E0E0E0";
+		if(bonus<0)
+			color="#F00000";
+		else if(bonus>0)
+			color="00F000";
+		return color;
+	}
+	
+	// affichage des valeurs dans les emplacements prévus
+	document.getElementById("hp").appendChild(document.createTextNode((1160)+"/"+(1160)));
+	document.getElementById("ac").style.color="#00F000";
+	document.getElementById("ac").innerHTML=("<span style='color:"+getColor(0)+";'>"+546+"<\/span><\/td>");
+	document.getElementById("atk").style.color="#00F000";
+	document.getElementById("atk").innerHTML=("<span style='color:"+getColor(0)+";'>"+270+"<\/span><\/td>");
+	
+	document.getElementById("str-label").style.color=getColor(0);
+	document.getElementById("str-label").appendChild(document.createTextNode(70));
+	document.getElementById("sta").style.color=getColor(0);
+	document.getElementById("sta").appendChild(document.createTextNode(85));
+	document.getElementById("agi").style.color=getColor(0);
+	document.getElementById("agi").appendChild(document.createTextNode(90));
+	document.getElementById("dex").style.color=getColor(0);
+	document.getElementById("dex").appendChild(document.createTextNode(85));
+	document.getElementById("wis").style.color=getColor(0);
+	document.getElementById("wis").appendChild(document.createTextNode(95));
+	document.getElementById("int").style.color=getColor(0);
+	document.getElementById("int").appendChild(document.createTextNode(75));
+	document.getElementById("cha").style.color=getColor(0);
+	document.getElementById("cha").appendChild(document.createTextNode(75));
+	document.getElementById("RP").style.color=getColor(0);
+	document.getElementById("RP").appendChild(document.createTextNode(15));
+	document.getElementById("RM").style.color=getColor(0);
+	document.getElementById("RM").appendChild(document.createTextNode(25));
+	document.getElementById("RD").style.color=getColor(0);
+	document.getElementById("RD").appendChild(document.createTextNode(15));
+	document.getElementById("RF").style.color=getColor(0);
+	document.getElementById("RF").appendChild(document.createTextNode(25));
+	document.getElementById("RC").style.color=getColor(0);
+	document.getElementById("RC").appendChild(document.createTextNode(25));
+</script>
+
+
+</body>
+</html>		
+			
+			
+			
+			
+			
+			

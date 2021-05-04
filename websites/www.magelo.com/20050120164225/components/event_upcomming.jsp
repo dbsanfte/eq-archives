@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var website_up=true;var website_name='Magelo';var new_member=false;var logged=false;var am_pm=true;var tab_event=new makeArray(0);
+
