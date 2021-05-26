@@ -1,0 +1,125 @@
+
+
+
+
+<HTML>
+ <HEAD>
+ <TITLE>EQ Damage Calculator</TITLE>
+ </HEAD>
+ <SCRIPT LANGUAGE=javascript>
+ <!--
+ function CalculateDamage(){
+  var log = new String(document.logform.logfile.value);
+  var max=0;
+  var min=1;
+  var avg=2;
+  var tot=3;
+  var you = new Array(0,1000,0,0);
+  var players = new Array(10000);
+  var playerName = new Array(10000);
+  var playerDamageType = new Array(10000);
+  var playersTot = 0;
+  var lastIndexOf = 0;
+  var lines = new Array;
+  var line = new String;
+  var nextIndexOf = 0;
+  var lastIndexOf = 0;
+  var damageTypeStart = 0;
+  var damageTypeEnd = 0;
+  var personStart = 0;
+  var personEnd = 0;
+  var damageStart = 0;
+  var damageEnd = 0;
+  var i = 0;
+  var HTML = new String;
+  var sHTML = new String;
+  do{
+   nextIndexOf=log.indexOf('\n',lastIndexOf+1);
+   line=log.substr(lastIndexOf,nextIndexOf-lastIndexOf);
+   damageEnd=line.indexOf(' points of damage.');
+   if (damageEnd>0){
+    damageStart=line.lastIndexOf(' for ',damageEnd)+5;
+    damage=line.substr(damageStart,damageEnd-damageStart);
+    damage=parseInt(damage);
+    personStart=line.indexOf(']')+2;
+    personEnd=line.indexOf(' ',personStart);
+    person=line.substr(personStart,personEnd-personStart);
+    damageTypeStart=personEnd+1;
+    damageTypeEnd=line.indexOf(' ',damageTypeStart);
+    damageType=line.substr(damageTypeStart,damageTypeEnd-damageTypeStart);
+    if (!isNaN(damage)){
+     if (person=='You'){
+      you[avg]=(you[tot]*you[avg])+damage;
+      you[tot]++;
+      you[avg]=you[avg]/you[tot];
+      if (you[max]<damage){you[max]=damage};
+      if (you[min]>damage){you[min]=damage};
+     }
+     eval('t=typeof('+person+damageType+');');
+     if (t=="undefined"){
+      eval('var '+person+damageType+' = new Array(0,1000,0,0);');
+      players[playersTot]=person+damageType;
+      playerName[playersTot]=person;
+      playerDamageType[playersTot]=damageType;
+      playersTot++;
+     }
+     eval(person+damageType+'[avg]=('+person+damageType+'[tot]*'+person+damageType+'[avg])+damage');
+     eval(person+damageType+'[tot]++');
+     eval(person+damageType+'[avg]='+person+damageType+'[avg]/'+person+damageType+'[tot]');
+     eval('if ('+person+damageType+'[max]<damage){'+person+damageType+'[max]=damage}');
+     eval('if ('+person+damageType+'[min]>damage){'+person+damageType+'[min]=damage}');
+    }
+   }
+   lastIndexOf=nextIndexOf;
+  }while (lastIndexOf>0);
+  HTML='<table border=1><tr><td><b>Person</b></td><td><b>Damage Type</b></td><td><b>Maximum Damage</b></td><td><b>Minimum Damage</b></td><td><b>Average Damage</b></td><td><b>Total Hits</b></td></tr>';
+  HTML=HTML+'<tr><td><b>You</b></td><td>All Damage</td><td>'+you[max]+'</td><td>'+you[min]+'</td><td>'+parseInt(you[avg]*100)/100+'</td><td>'+you[tot]+'</td></tr>';
+  do{
+   if (playerName[i]=='You'){
+    HTML=HTML+'<tr><td><b>You</b></td><td>'+playerDamageType[i]+'</td><td>';
+    HTML=HTML+eval(playerName[i]+playerDamageType[i]+'[max]')+'</td><td>'+eval(playerName[i]+playerDamageType[i]+'[min]')+'</td><td>'+parseInt(eval(playerName[i]+playerDamageType[i]+'[avg]')*100)/100+'</td><td>'+eval(playerName[i]+playerDamageType[i]+'[tot]')+'</td></tr>';
+   }else{
+    sHTML=sHTML+'<tr><td><b>'+playerName[i]+'</b></td><td>'+playerDamageType[i]+'</td><td>';
+    sHTML=sHTML+eval(playerName[i]+playerDamageType[i]+'[max]')+'</td><td>'+eval(playerName[i]+playerDamageType[i]+'[min]')+'</td><td>'+parseInt(eval(playerName[i]+playerDamageType[i]+'[avg]')*100)/100+'</td><td>'+eval(playerName[i]+playerDamageType[i]+'[tot]')+'</td></tr>';
+   }
+  i++;
+  }while(i<playersTot);
+  HTML=HTML+sHTML+'</table>';
+  IEDamage.innerHTML = HTML;
+ }
+ //-->
+ </SCRIPT>
+
+ <BODY>
+  <center>
+   <table width=80% border=0>
+    <tr><td align=center>    
+     Here is a simple damage calculator for EQ log files. 
+     Simply copy the part of the logfile you want to analyze and paste it into the textbox below. 
+     It isn't perfect in that it will incorrectly parse monsters' names, but other than that, it is a relatively nice little tool.
+     This page hasn't been tested with Netscape (only IE), but a few minor modifications such as &lt;div&gt; tag modifications should make it workable.
+     All of the processing is done on the client side, so you don't need to worry about your bashing statistics going across the internet.
+     If anyone wants to make any modifications or additions - please feel free. 
+    </tr></td>
+   </table>
+   <form name=logform onload="javascript:CalculateDamage()">
+    <textarea name=logfile cols=70 rows="1"></textarea>
+    <br>
+    <input type=button value="Calculate Damage" onclick="javascript:CalculateDamage()">
+   </form><br>
+   <div name=IEDamage id=IEDamage>
+    <table border=1>
+     <tr>
+      <td><b>Person</b></td>
+      <td><b>Damage Type</b></td>
+      <td><b>Maximum Damage</b></td>
+      <td><b>Minimum Damage</b></td>
+      <td><b>Average Damage</b></td>
+      <td><b>Total Hits</b></td>
+     </tr>
+    </table>
+   </div>
+  </center>
+  i
+ </BODY>
+</HTML>

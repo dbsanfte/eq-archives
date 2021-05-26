@@ -1,0 +1,561 @@
+<HTML>
+<HEAD>
+<TITLE>EQ Client INI Modifier</TITLE>
+<SCRIPT LANGUAGE=javascript>
+<!--
+function colorBar(picture){
+	return 'width:256;height:8;z-index:1;visibility:visible;background-image:url('+picture+');layer-background-image:url('+picture+');clip:rect(0px 255px 8px 0px);'
+}
+var p='position:absolute;'
+var font='font-family:helvetica,arial; font-size:8pt;'
+var slider='width:10;height:10;z-index:2;visibility:visible;background-image:url(slider.jpg);layer-background-image:url(slider.jpg);clip:rect(0px 10px 10px 0px);'
+
+var titleTop=20
+var sliderTop=titleTop+30
+
+var sliderTopOffset=15
+var dd=40
+var rTop=sliderTop
+var gTop=sliderTop+sliderTopOffset
+var bTop=sliderTop+2*sliderTopOffset
+var dTop=sliderTop+3*sliderTopOffset
+var rsTop=sliderTop-1
+var gsTop=sliderTop+sliderTopOffset-1
+var bsTop=sliderTop+sliderTopOffset+sliderTopOffset-1
+var gLeft=20
+var sLeft=gLeft-4
+var dLeft=gLeft+256+10
+var bc=dLeft+dd+10
+var bcTop=sliderTop
+var eqTop=dTop+50
+var eqDTop=eqTop+100
+document.writeln('<style type="text/css">')
+document.writeln('<!--')
+
+document.writeln('BODY{'+font+'}')
+document.writeln('TD{'+font+'}')
+
+document.writeln('#title { font-family:helvetica,arial; font-size:13pt; font-weight:bold; }')
+
+document.writeln('#red {'+p+' left:'+gLeft+'; top:'+rTop+';'+colorBar('redgrad.jpg')+'}')
+document.writeln('#green {'+p+' left:'+gLeft+'; top:'+gTop+';'+colorBar('greengrad.jpg')+'}')
+document.writeln('#blue {'+p+' left:'+gLeft+'; top:'+bTop+';'+colorBar('bluegrad.jpg')+'}')
+
+document.writeln('#redSlider {'+p+'left:'+sLeft+';top:'+rsTop+';'+slider+'}')
+document.writeln('#greenSlider {'+p+'left:'+sLeft+';top:'+gsTop+';'+slider+'}')
+document.writeln('#blueSlider {'+p+'left:'+sLeft+';top:'+bsTop+';'+slider+'}')
+
+document.writeln('#display {'+p+'left:'+dLeft+'; top:'+sliderTop+'; width:'+dd+'px; height:'+dd+'px; z-index:1; visibility:visible; background-color:#000000; layer-background-color:#000000; }')
+document.writeln('#colorValue {'+p+'left:'+gLeft+'; top:'+dTop+'; width:310; height:20; z-index:1; visibility:visible;}')
+document.writeln('#titleBar {'+p+'left:'+gLeft+'; top:'+titleTop+'; width:310; height:20; z-index:1; background-color:#DDDDDD; layer-background-color:#DDDDDD;}')
+document.writeln('#baseColors {'+p+'left:'+bc+'; top:'+bcTop+'; width:320; height:200; z-index:1; visibility:visible;}')
+
+document.writeln('#eqCmd { '+p+' left:'+gLeft+'; top:'+eqTop+'; width:540; height:200; z-index:1; visibility:visible; layer-background-color:#DDDDDD;}')
+
+document.writeln('#eqDisplay{ '+p+' left:'+gLeft+'; top:'+eqDTop+'; width:660; height:200; z-index:1; visibility:visible; layer-background-color:#DDDDDD;}')
+
+document.writeln('//-->')
+document.writeln('</style>')
+
+function init() {
+	sliderMin = sLeft;
+	sliderMax = sLeft+256;
+	rValue=0;
+	gValue=0;
+	bValue=0;
+	r1 = '0';
+	r2 = '0';
+	g1 = '0';
+	g2 = '0';
+	b1 = '0';
+	b2 = '0';
+	Rgb = '0';
+	rGb = '0';
+	rgB = '0';
+	rActive = false;
+	gActive = false;
+	bActive = false;
+	document.onmousedown = mouseDown
+	document.onmousemove = mouseMove
+	document.onmouseup = mouseUp
+
+
+	domRed = redSlider.style;
+	domRed.xpos = redSlider.offsetLeft;
+	domRed.ypos = redSlider.offsetTop;
+	domRed.w = redSlider.clientWidth;
+	domRed.h = redSlider.clientHeight;
+	
+	domGreen = greenSlider.style;
+	domGreen.xpos = greenSlider.offsetLeft;
+	domGreen.ypos = greenSlider.offsetTop;
+	domGreen.w = greenSlider.clientWidth;
+	domGreen.h = greenSlider.clientHeight;
+
+	domBlue = blueSlider.style;
+	domBlue.xpos = blueSlider.offsetLeft;
+	domBlue.ypos = blueSlider.offsetTop;
+	domBlue.w = blueSlider.clientWidth;
+	domBlue.h = blueSlider.clientHeight;
+	
+	domDisplay = display;
+	domValue = frmValue.valueDisp;
+	domredValue = frmValue.RgbDisp;
+	domgreenValue = frmValue.rGbDisp;
+	domblueValue = frmValue.rgBDisp;
+
+	hexArray = new Array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
+}
+function mouseDown(e) {
+	if (event.button!=1) return true;
+	var x = event.x+document.body.scrollLeft;
+	var y = event.y+document.body.scrollTop;
+	if (x > domRed.xpos && x < domRed.xpos+domRed.w && y > domRed.ypos && y < domRed.ypos+domRed.h){ rActive = true; dragObject = domRed; }
+	if (x > domGreen.xpos && x < domGreen.xpos+domGreen.w && y > domGreen.ypos && y < domGreen.ypos+domGreen.h){ gActive = true; dragObject = domGreen; }
+	if (x > domBlue.xpos && x < domBlue.xpos+domBlue.w && y > domBlue.ypos && y < domBlue.ypos+domBlue.h){ bActive = true; dragObject = domBlue; }
+	if (rActive==true || gActive==true || bActive==true){
+	if (x>=dragObject.xpos && x<=dragObject.xpos+dragObject.w) {
+		dragObject.dragOffsetX = x-dragObject.xpos
+	}
+	return false
+}else {
+	return true
+}
+}
+function mouseMove(e) {
+	var x = event.x+document.body.scrollLeft;
+	var y = event.y+document.body.scrollTop;
+	if (rActive) {
+		rMoveTo = x-dragObject.dragOffsetX;
+		if (rMoveTo > sliderMax) rMoveTo = sLeft+256;
+		if (rMoveTo < sliderMin) rMoveTo = sLeft;
+		domRed.xpos = rMoveTo;
+		domRed.left = domRed.xpos;
+		rValue = (domRed.xpos+4)-sLeft;
+		calcValue(rMoveTo-sLeft, 'red');
+	}
+	if (gActive) {
+		gMoveTo = x-dragObject.dragOffsetX;
+		if (gMoveTo > sliderMax) gMoveTo = sliderMax;
+		if (gMoveTo < sliderMin) gMoveTo = sliderMin;
+		domGreen.xpos = gMoveTo;
+		domGreen.left = domGreen.xpos;
+		gValue = (domGreen.xpos+4)-sLeft;
+		calcValue(gMoveTo-sLeft, 'green');
+	}
+	if (bActive) {
+		bMoveTo = x-dragObject.dragOffsetX;
+		if (bMoveTo > sliderMax) bMoveTo = sliderMax;
+		if (bMoveTo < sliderMin) bMoveTo = sliderMin;
+		domBlue.xpos = bMoveTo;
+		domBlue.left = domBlue.xpos;
+		bValue = (domBlue.xpos+4)-sLeft;
+		calcValue(bMoveTo-sLeft, 'blue');
+	}
+	return true
+}
+function mouseUp(e) {
+	var x = event.x+document.body.scrollLeft
+	var y = event.y+document.body.scrollTop
+	rActive = false;
+	gActive = false;
+	bActive = false;
+	return true
+}
+function calcValue(base, color) {
+	base -= 1;
+	if (base < 16) { 
+		first = 0; 
+	}else{ 
+		first = parseInt(base/16); 
+	}
+	if (base < 0 ) {
+		second = 0; base = 0; 
+	}else{ 
+		second = parseInt(base%16); 
+	}
+	c1=hexArray[first];
+	c2=hexArray[second]; 
+	if (color == 'red') { r1 = c1; r2 = c2; Rgb=base; }
+	else if (color == 'green') {
+		g1 = c1; g2 = c2; rGb=base; 
+	}else{
+		b1 = c1; b2 = c2; rgB=base; 
+	}
+	color= eval('"#'+r1+r2+g1+g2+b1+b2+'"')
+	domredValue.value = eval('"'+Rgb+'"');
+	domgreenValue.value = eval('"'+rGb+'"');
+	domblueValue.value = eval('"'+rgB+'"');
+	domDisplay.style.backgroundColor = color; 
+	if (selectedCmd==-1){
+		eqClientDisplay.bgColor=color
+		eqbgColor=color
+	}else{
+		eval('eqcmd'+selectedCmd+'.innerHTML=\'<font color='+color+'>'+sampleActions[selectedCmd]+'\'')
+		cmdColors[selectedCmd]=color;
+	}
+	showSource()
+return true;
+}
+function manualSet(value,color) {
+	if (value < 0) value=0;
+	if (value > 255) value=255;
+	++value;
+	calcValue(value,color);
+	if (color == 'red'){ 
+		domRed.xpos = value+sliderMin-4; domRed.left = domRed.xpos;
+	}
+	else if (color == 'green'){ 
+		domGreen.xpos = value+sliderMin-4; domGreen.left = domGreen.xpos; 
+	}else { 
+		domBlue.xpos = value+sliderMin-4; domBlue.left = domBlue.xpos; 
+	}
+}
+function convertHex(hexString) {
+	if(hexString == null) hexString = domDisplay.style.backgroundColor
+	inputHexArray = new Array(6);
+	for(i=0;i<=5;++i) {
+		inputHexArray[i] = hexString.charAt(i);
+	}
+	for(i=0;i<=5;++i) {
+		tempHexVal = inputHexArray[i];
+		for(j=0;j<=15;++j) {
+			if(tempHexVal == hexArray[j]) tempHexVal = j;
+		}
+		inputHexArray[i] = tempHexVal;
+	}
+	Rgb = (inputHexArray[0]*16)+inputHexArray[1]+1;
+	calcValue(Rgb,'red');
+	manualSet(Rgb,'red');
+	rGb = (inputHexArray[2]*16)+inputHexArray[3]+1;
+	calcValue(rGb,'green');
+	manualSet(rGb,'green');
+	rgB = (inputHexArray[4]*16)+inputHexArray[5]+1;
+	calcValue(rgB,'blue');
+	manualSet(rgB,'blue');
+}
+
+function showSource(){
+
+        //if (document.readyState!=='complete'){return true}else{setTimeout(showSource
+
+
+        var source = ''
+	var hexIndex= String("0123456789ABCDEF")
+        source='<textarea rows=18 cols=17 onblur="javascript:convertSource(this.value)">'
+	var i=1
+        source=source+'[TextColors]\n'
+	for (action=0;action<actions.length;++action){
+		source=source+'User_'+(action+i)+'_Red='
+		source=source+(hexIndex.indexOf(cmdColors[action].substr(1,1))*16+hexIndex.indexOf(cmdColors[action].substr(2,1)))+'\n'
+		source=source+'User_'+(action+i)+'_Green='
+		source=source+(hexIndex.indexOf(cmdColors[action].substr(3,1))*16+hexIndex.indexOf(cmdColors[action].substr(4,1)))+'\n'
+		source=source+'User_'+(action+i)+'_Blue='
+		source=source+(hexIndex.indexOf(cmdColors[action].substr(5,1))*16+hexIndex.indexOf(cmdColors[action].substr(6,1)))+'\n'
+		if (action==14){
+			source=source+'User_16_Red=0\nUser_16_Green=0\nUser_16_Blue=0\n'
+			source=source+'User_17_Red=0\nUser_17_Green=0\nUser_17_Blue=0\n'
+			i=i+2
+		}else if (action==15){
+			source=source+'User_19_Red=0\nUser_19_Green=0\nUser_19_Blue=0\n'
+			i++
+		}
+	}
+	source=source+'User_27_Red=0\nUser_27_Green=0\nUser_27_Blue=0\n'
+	source=source+'User_28_Red=0\nUser_28_Green=0\nUser_28_Blue=0\n'
+	source=source+'User_29_Red=0\nUser_29_Green=0\nUser_29_Blue=0\n'
+	source=source+'User_30_Red=0\nUser_30_Green=0\nUser_30_Blue=0\n'
+	source=source+'User_31_Red=0\nUser_31_Green=0\nUser_31_Blue=0\n'
+	source=source+'User_32_Red=0\nUser_32_Green=0\nUser_32_Blue=0\n'
+	source=source+'[Defaults]\n'
+	source=source+'RunMode='+frmEQDisplay.runMode.value+'\n'
+	source=source+'ScreenMode='+frmEQDisplay.screenMode.value+'\n'
+        source=source+'</textarea>';
+
+//        alert(source);
+        eqINI.innerHTML=source
+}
+
+function convertSource(source){
+	var oselectedCmd=selectedCmd
+	source=source.toLowerCase()
+	var s0=0
+	var i=0
+	var lastCmd=0
+	do{
+		i++
+		s1=source.indexOf('_',s0+1)
+		s2=source.indexOf('_',s1+1)
+		id=parseInt(source.substring(s1+1,s2))
+		if (!isNaN(id)){
+			s3=source.indexOf('=',s2+1)
+			s4=source.indexOf('\n',s3)
+			num=parseInt(source.substring(s3+1,s4))
+			if (!isNaN(num)){
+				
+				
+				if (id<16){
+					selectedCmd=id-1
+				}else if(id==18){
+					selectedCmd=15
+				}else if((id-3)>actions.length){
+					break
+				}else if(id==16 || id==17 || id==19){
+					selectedCmd=-1		
+				}else{
+					selectedCmd=id-4
+				}
+				if (selectedCmd>0){
+					switch(source.substring(s2+2,s3)){
+						case 'ed':
+							manualSet(num,'red')
+							break
+						case 'reen':
+							manualSet(num,'green')
+							break
+						case 'lue':
+							manualSet(num,'blue')
+							break
+						default:
+					}
+				}				
+			}else{
+				alert('NAN-'+num)
+			}
+		}
+		else{
+			alert('NAN-'+id)
+		}
+		s0=s4+1
+		s0=source.indexOf('\n',s4)
+	}while(s0>-1)
+
+
+	if (source.indexOf('runmode=true')>0){
+		frmEQDisplay.runMode.selectedIndex=1
+	}else{
+		frmEQDisplay.runMode.selectedIndex=0
+	}
+	
+	if (source.indexOf('screenmode=full')>0){
+		frmEQDisplay.screenMode.selectedIndex=1
+	}else{
+		frmEQDisplay.screenMode.selectedIndex=0
+	}
+	
+
+	selectedCmd=oselectedCmd
+	
+	if (selectedCmd=-1){
+		convertHex(eqbgColor.substring(1,7))
+	}else{
+		convertHex(cmdColors[selectedCmd].substring(1,7))
+	}
+}
+
+
+
+function RGB(Red,Green,Blue){
+	R=Hex(Red);
+	G=Hex(Green);
+	B=Hex(Blue);
+	RGB='#'+R+G+B;
+return RGB
+}
+
+function Hex(Decimal){
+	var hexChars='0123456789ABCDEF';
+	var L=Decimal%16;
+	var H=(Decimal-L)/16;
+	Hexidecimal=''+hexChars.charAt(H)+hexChars.charAt(L);
+return Hexidecimal;
+}
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR=#ffffff vlink=#0000ff>
+
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+
+<div id="redSlider"></div>
+<div id="greenSlider"></div>
+<div id="blueSlider"></div>
+<div id="baseColors">
+<table border=0 cellpadding=0 cellspacing=1 bgcolor=#EEEEEE>
+<tr><!--<td colspan=30 align=center id="subtext">Base Colors</td></tr>-->
+<script>
+<!--
+clr = new Array('00','33','66','99','CC','FF');
+var m=0
+for(R=0;R<6;++R){
+	for(G=0;G<6;++G){
+		for(B=0;B<6;++B){
+		document.write('<td bgcolor=#'+clr[R]+clr[G]+clr[B]+'>');
+		document.write('<a ');
+		document.write('onClick="convertHex(\''+clr[R]+clr[G]+clr[B]+'\')\;">');
+		document.write('<img src=blank.gif width=10 height=10 border=0></a></td>\n');
+		m++;
+		if (m%31==0){document.write('</tr><tr>\n')}
+		}
+	}
+}
+//-->
+</script>
+</table>
+</div>
+<div id="display"><img src="blank.gif" width=40 height=40 border=0></div>
+<div id="titleBar">
+	<table border=0 cellpadding=2 cellspacing=0 width=660>
+		<tr><td id="title">EQ Client INI Modifier</td></tr>
+	</table>
+</div>
+<div name=colorValue id=colorValue>
+	<form name="frmValue">
+		<table border=0 cellpadding=2 cellspacing=0 width=310 bgcolor=#EEEEEE>
+			<tr>
+				<td align=center valign=top>
+					<table border=0 cellpadding=2 cellspacing=0>
+						<tr>
+							<td valign=middle>Red: <input type=text size=3 maxlength=3 name="RgbDisp" value="0" onkeyup="manualSet(this.value,'red');"></td>
+							<td valign=middle>Green: <input type=text size=3 maxlength=3 name="rGbDisp" value="0" onkeyup="manualSet(this.value,'green');"></td>
+							<td valign=middle>Blue: <input type=text size=3 maxlength=3 name="rgBDisp" value="0" onkeyup="manualSet(this.value,'blue');"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+<div name=eqCmd id="eqCmd">
+<form name=frmEQCmd>
+<SCRIPT LANGUAGE=javascript>
+<!--
+var actions = new Array('Say','Tell','Group','Guild','OOC','Auction','Shout','Emote','Spells','Your&nbsp;Hits','Others&nbsp;Hits','Your&nbsp;Misses','Others&nbsp;Misses','Some&nbsp;Broadcasts&nbsp;(duels)','Skills&nbsp;','Default&nbsp;text','Merchant&nbsp;Offer&nbsp;Price','Merchant&nbsp;Buy/Sell','Your&nbsp;Death&nbsp;Message','Others&nbsp;Death&nbsp;Message','Other&nbsp;Damage&nbsp;Other','Other&nbsp;Miss&nbsp;Other','/who&nbsp;Command')
+var sampleActions = new Array('Say - ScriptGuy says, \'is it possible to do that with a web browser?\'','Tell - Somebody tells you, \'Something you already know.\'','Group - ScriptGuy tells the group, \'aaaah! the variables are running away!\'','Guild - EmbeddedSystemsGuy tells the guild, \'This guy has too much free time...\'','OOC - Somebody says out of character, \'something really off topic\'','Auction - WTB Something that never drops...','Shout - What\'s the loc on the gate?','Emote - ScriptGuy hugs Whoever','Spells - Somebody begins to cast a spell','Your Hits - You bash a keyboard for 8 point of damage','Others Hits - Great Coffee burns YOU for 4 points of damage.','Your Misses - You try to slash a programmer, but a programmer parries!','Others Misses - greater script tries to confuse YOU, but you parry!','Some Broadcasts (duels) - A has defeated B in a duel to the death! B has fled...','You have become better at javascript! (197)','Default text - I don\'t know, what _do_ you type by default?','Merchant Offer Price - I\'ll give you 1 platinum 8 silver 1 copper per web page','Merchant Buy/Sell - You receive 1 platinum 8 silver 1 copper from Company for the Web Page(s).','Your Death Message - AAARRRRGGGGHHHHH!','Others Death Message - Another one bites the dust...','Other Damage Other - Code confuses Programmer for 0xFC points of damage','Other Miss Other - a Programmer tries to debug Code and misses','/who Command - There are no players in this web page who match those filters.')
+var sampleActions = new Array('Say - ScriptGuy says, \\\'is it possible to do that with a web browser?\\\'','Tell - Somebody tells you, \\\'Something you already know.\\\'','Group - ScriptGuy tells the group, \\\'aaaah! the variables are running away!\\\'','Guild - EmbeddedSystemsGuy tells the guild, \\\'This guy has too much free time...\\\'','OOC - Somebody says out of character, \\\'something really off topic\\\'','Auction - WTB Something that never drops...','Shout - What\\\'s the loc on the gate?','Emote - ScriptGuy hugs Whoever','Spells - Somebody begins to cast a spell','Your Hits - You bash a keyboard for 8 points of damage','Others Hits - Great Coffee burns YOU for 4 points of damage.','Your Misses - You try to slash a programmer, but a programmer parries!','Others Misses - greater script tries to confuse YOU, but you parry!','Some Broadcasts (duels) - A has defeated B in a duel to the death! B has fled...','You have become better at javascript! (197)','Default text - I don\\\'t know, what _do_ you type by default?','Merchant Offer Price - I\\\'ll give you 1 platinum 8 silver 1 copper per web page','Merchant Buy/Sell - You receive 1 platinum 8 silver 1 copper from Company for the Web Page(s).','Your Death Message - AAARRRRGGGGHHHHH!','Others Death Message - Another one bites the dust...','Other Damage Other - Code confuses Programmer for 0xFC points of damage','Other Miss Other - a Programmer tries to debug Code and misses','/who Command - There are no players in this web page who match those filters.')
+
+var cmdColors = new Array('#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000')
+var cmdColors = new Array('#000000','#780078','#00FCF8','#00FC00','#007C00','#007C00','#F80000','#000078','#000078','#000000','#F80000','#000000','#000000','#F0F000','#000078','#000000','#000000','#F0F000','#000000','#000000','#000000','#000000','#780078','#000000','#000000','#000000','#000000','#000000','#000000')
+eqbgColor='#778899'
+document.writeln('<table border=0><tr><td valign=top>')
+
+document.writeln('<input type=radio name=eqcommand value=-1 onclick="javascript:selectedCmd=-1;convertHex(eqbgColor.substring(1,7))" selected>*Background*')
+for (action=0;action<actions.length;++action){
+
+		document.writeln('<input type=radio name=eqcommand value='+action+' onclick="javascript:selectedCmd='+action+';convertHex(cmdColors['+action+'].substring(1,7))">'+actions[action]+'</option><br>')	
+		if ((action+2)%4==0)document.writeln('</td><td valign=top>')		
+}
+document.writeln('</td></tr></table>')
+var selectedCmd=-1
+//-->
+</SCRIPT>
+
+</form>
+</div>
+
+
+
+
+
+<div id=eqDisplay name=eqDisplay>
+<form name=frmEQDisplay>
+<table border=0 width=660>
+	<tr>
+		<td height=200 width=660 id=eqClientDisplay bgcolor=>
+		<div name=eqcmdsample id=eqcmdsample></div>
+<SCRIPT LANGUAGE=javascript>
+<!--
+for (action=0;action<actions.length;++action){
+
+		document.writeln('<div name=eqcmd'+action+' id=eqcmd'+action+'><font color='+cmdColors[action]+'>'+eval('\''+sampleActions[action]+'\'')+'</div>')
+	}
+//-->
+</SCRIPT>
+		
+		
+
+		</td>
+		<td>
+			<select name=runMode onchange=javascript:showSource()>
+				<option value=FALSE>Walk</option>
+				<option value=TRUE>Run</option>
+			</select>
+			<select name=screenMode onchange=javascript:showSource()>
+				<option value=NORMAL>Normal</option>
+				<option value=FULL>Full Screen</option>
+			</select>
+			<div name=eqINI id=eqINI></div>
+		</td>
+	</tr>
+</table>
+<div id=about><a name=#about><a href=#about onclick=javascript:aboutit()>about</a></div>
+</form>
+</div>
+
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+init()
+frmEQCmd.eqcommand[0].status=true
+
+selectedCmd=-1
+var t=0
+init1()
+function init1(){                       
+        if (document.readyState=='complete'){
+                if (t>0)clearTimeout(t);
+                convertHex('778899')
+        }else{
+                if (t>0)clearTimeout(t);
+                t=setTimeout('init1()',10)
+
+        }
+}
+
+
+
+babout=false
+function aboutit(){
+	if (babout==true){
+		about.innerHTML='<a name=#about><a href=#about onclick=javascript:aboutit()>about</a>';
+		babout=false
+		return true
+	}else{
+		sabout='<a name=#about><a href=#about onclick=javascript:aboutit()>about</a><BR>';	
+		sabout=sabout+'...Whew!'
+		
+		sabout=sabout+'<BR><BR>8/12/2000 - I wanted to get this out by August 12th, and I did. '
+		sabout=sabout+'I plan on going back later and adding the functionality to be able to paste in or directly modify the \'User_x_\' variables, but that will have to wait. '
+		sabout=sabout+'Once again, this has only been tested on MSIE, but it should be possible to port over to Netscape. '
+		sabout=sabout+'If anyone wants to take on that task, I would greatly appreciate it. '
+		sabout=sabout+'I will be going back through to clean up some of the code a little later. '
+		sabout=sabout+'Other than that if anyone wants to make any modifications or additions - please feel free. '
+		
+		sabout=sabout+'<BR><BR>8/13/2000 - Update - I went ahead and added the functionality to be able to directly edit the \'User_x_\' variables in the text box. '
+		sabout=sabout+'This makes it much easier to load in your current configuration. I also found out that I did a very poor job of supporting older versions of IE. '
+		sabout=sabout+'Apologies to all - If anyone out there would like to take on the task of trying to retrofit it or port it for Netscape - now is the time. '
+		sabout=sabout+'I just don\'t have the resources (or patience) to do it right now. '
+		
+		sabout=sabout+'<BR><BR>8/16/2000 - Update - I fixed the IE4 problems that were happening - sorry for the inconvenience. '
+		sabout=sabout+'It appears that the scripting engine was initializing before the page was completely loaded. '
+		sabout=sabout+'I didn\'t think that there would have been that much of a difference in the scripting engines, but I guess I was wrong - anyway, enjoy.'
+		
+		about.innerHTML=sabout
+		
+		babout=true
+		return true
+	}
+}
+
+
+//-->
+</SCRIPT>
+
+
+
+</body>
+</html>
