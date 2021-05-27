@@ -1,0 +1,2957 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head><title>Interealms - The Shaman's Crucible - Auto &quot;rewind&quot; implemented... and its awful</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.0 Beta 2" />
+<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+<meta name="description" content="This is a discussion forum powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Interealms - The Shaman's Crucible vBulletin 3 Style' (styleid: 1) */
+body {
+	background: #666696;
+	color: #000000;
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+body a:link {
+	color: #000030;
+	text-decoration: underline;
+}
+body a:visited {
+	color: #000000;
+	text-decoration: underline;
+}
+body a:hover, body a:active {
+	color: #FF4400;
+	text-decoration: underline;
+}
+.page {
+	background: #FFFFFF;
+}
+.tborder {
+	background: #555576;
+}
+.tcat {
+	background: #606096;
+	color: #FFF788;
+	font-size: 10pt;
+}
+.tcat a:link {
+	color: #FFF788;
+	text-decoration: none;
+}
+.tcat a:visited {
+	color: #FFF788;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active {
+	color: #FFF788;
+	text-decoration: underline;
+}
+.thead {
+	background: #8080A6;
+	color: #EEEEFF;
+	font-size: 10px;
+	font-weight: bold;
+}
+.thead a:link {
+	color: #EEEEFF;
+}
+.thead a:visited {
+	color: #EEEEFF;
+}
+.thead a:hover, .thead a:active {
+	color: #EEEEFF;
+}
+.tfoot {
+	background: #8080A6;
+	color: #EEEEFF;
+}
+.tfoot a:link {
+	color: #EEEEFF;
+}
+.tfoot a:visited {
+	color: #EEEEFF;
+}
+.tfoot a:hover, .tfoot a:active {
+	color: #EEEEFF;
+}
+.alt1, .alt1Active {
+	background: #F1F1F1;
+}
+.alt2, .alt2Active {
+	background: #DFDFDF;
+}
+td, th, p, li {
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+textarea, .bginput {
+	background: #CFCFCF;
+	color: #000000;
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+.button {
+	background: #CFCFCF;
+	color: #000000;
+	font: 11px verdana,arial,helvetica,sans-serif;
+}
+select {
+	background: #CFCFCF;
+	color: #000000;
+	font: 11px verdana,arial,helvetica,sans-serif;
+}
+.smallfont {
+	font: 10px verdana,verdana,arial,helvetica,sans-serif;
+}
+.time {
+	color: #666686;
+}
+.navbar {
+	font-weight: bold;
+}
+.highlight {
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel {
+	background: #8080A6;
+	color: #EEEEFF;
+}
+.fjdpth0 {
+	background: #F7F7F7;
+	color: #000000;
+}
+.fjdpth1 {
+	background: #EFEFEF;
+	color: #000000;
+}
+.fjdpth2 {
+	background: #E7E7E7;
+	color: #000000;
+}
+.fjdpth3 {
+	background: #DFDFDF;
+	color: #000000;
+}
+-->
+</style>
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=bc1f208a18042bae6f8944fe33c61000&amp;";
+
+
+// -->
+</script>
+<script type="text/javascript" src="clientscript/generic.js"></script>
+<script type="text/javascript">
+<!--
+function reputation(postid)
+{
+	window.open("reputation.php?" + SESSIONURL + "postid=" + postid, "Reputation", "toolbar=no,scrollbars=yes,resizable=yes,width=400,height=300");
+}
+function changemode(mode, which)
+{
+	if (mode == "hybrid")
+	{
+		window.location = "showthread.php?" + SESSIONURL + "mode=hybrid&threadid=20560";
+		return false;
+	}
+	else if (which == "first")
+	{
+		window.location = "showthread.php?" + SESSIONURL + "postid=" + FIRSTPOSTID + "&mode=" + mode + "#post" + FIRSTPOSTID;
+		return false;
+	}
+	else if (which == "last")
+	{
+		window.location = "showthread.php?" + SESSIONURL + "postid=" + LASTPOSTID + "&mode=" + mode + "#post" + LASTPOSTID;
+		return false;
+	}
+}
+var FIRSTPOSTID = "237826";
+var LASTPOSTID = "238820";
+// -->
+</script>
+</head>
+<body>
+<!-- logo and buttons -->
+<a name="top"></a>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tr valign="top">
+	<td align="left"><a href="index.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/crucible2.gif" border="0" alt="Interealms - The Shaman's Crucible" /></a></td>
+	<td align="right" nowrap="nowrap" valign="top">
+	<a href="http://tracking.ige.com/a/148"><img src="http://forums.interealms.com/ranger/images/bnr_468_60_eq_2.gif" border="0" target="_blank"></a><br><br>
+	
+	<a href="register.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=signup"><img src="images/top_register.gif" alt="top_register.gif" title="Registration is free!" border="0" vspace="8" /></a>
+	<a href="calendar.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/top_calendar.gif" alt="top_calendar.gif" title="Calendar" border="0" vspace="8" /></a>
+	<a href="memberlist.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/top_members.gif" alt="top_members.gif" title="Find other members" border="0" vspace="8" /></a>
+	<a href="faq.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/top_faq.gif" alt="top_faq.gif" title="Frequently Asked Questions" border="0" vspace="8" /></a>
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/top_search.gif" alt="top_search.gif" title="Search" border="0" vspace="8" /></a>
+	<a href="index.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/top_home.gif" alt="top_home.gif" title="Home" border="0" vspace="8" /></a>
+	&nbsp; &nbsp;
+	
+	</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table width="100%" cellpadding="10" cellspacing="0" border="0" align="center" class="page">
+<tr>
+  <td>
+
+<br />
+
+<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+<input type="hidden" name="s" value="bc1f208a18042bae6f8944fe33c61000" />
+<input type="hidden" name="do" value="login" />
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr valign="middle">
+	<td class="alt2"><a href="index.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/vb_bullet.gif" alt="vb_bullet.gif" title="Interealms - The Shaman's Crucible: Powered by vBulletin version 3.0.0 Beta 2" border="0" /></a></td>
+	<td class="alt1" width="100%"><span class="navbar">
+		
+			<a href="index.php?s=bc1f208a18042bae6f8944fe33c61000&amp;">Interealms - The Shaman's Crucible</a> &gt;
+
+<a href="forumdisplay.php?s=bc1f208a18042bae6f8944fe33c61000&amp;forumid=1">General</a>
+&gt;
+
+Auto &quot;rewind&quot; implemented... and its awful
+
+				
+	</span></td>
+	
+		<td class="alt2" nowrap="nowrap"><span class="smallfont">
+			<script type="text/javascript" src="clientscript/md5.js"></script>
+			<input type="text" class="button" name="vb_login_username" size="10" accesskey="u" tabindex="1" />
+			<input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" />
+			<input type="hidden" name="vb_login_md5password" />
+			<input type="submit" class="button" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" tabindex="4" />
+			<br /><input type="checkbox" name="cookieuser" value="1" accesskey="c" tabindex="3" checked="checked" /> Remember username/password?
+		</span></td>
+	
+</tr>
+</table>
+</td></tr></table>
+</form>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<form action="search.php" method="post">
+<tr>
+	<td class="smallfont" align="right">		
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="20560" />
+		<b>Search this Thread:</b> <input type="text" class="bginput" style="font:11px tahoma" name="query" /><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  />		
+	</td>
+</tr>
+</form>
+</table>
+
+
+
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center" id="poststable"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="alt1" width="30%" align="left"><span class="smallfont">
+		<a href="newthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;forumid=1"><img src="images/newthread.gif" alt="newthread" title="Post a new thread in this forum" border="0" /></a>
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;noquote=1&amp;postid=237826"><img src="images/reply.gif" alt="reply" title="Post a reply to the first message on this page" border="0" /></a>
+		
+	</span></td>
+	<td class="alt1" width="40%" align="center"><span class="smallfont">
+		<a href="forumdisplay.php?s=bc1f208a18042bae6f8944fe33c61000&amp;forumid=1">General</a><br />
+		<img src="images/prev.gif" alt="prev.gif" border="0" />
+		<a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;goto=nextoldest">Last Thread</a>
+		|
+		<a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;goto=nextnewest">Next Thread</a>
+		<img src="images/next.gif" alt="next.gif" border="0" />
+	</span></td>
+	<td class="alt2" width="10%"><span class="smallfont"><a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;mode=linear" onclick="changemode('linear', 'first'); return false;"><img src="images/mode_linear.gif" alt="" border="0" /></a> Linear</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;mode=hybrid" onclick="changemode('hybrid', 'first'); return false;"><img src="images/mode_hybrid.gif" alt="" border="0" /></a> Hybrid</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;mode=threaded" onclick="changemode('threaded', 'first'); return false;"><img src="images/mode_threaded.gif" alt="" border="0" /></a> Threaded</span></td>
+</tr>
+</table>
+</td></tr></table>
+
+
+<br />
+
+<a name="poststop"></a>
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center" id="poststable"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="tcat" colspan="2">
+	
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td> <b>Auto &quot;rewind&quot; implemented... and its awful</b></td>
+		<td align="right" class="smallfont">&nbsp;</td>
+	</tr>
+	</table>
+	
+	</td>
+</tr>
+
+
+<tr title="Post 237826">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post237826">&nbsp;</a> 03-26-2004, 05:09 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td width="20"><img src="images/icons/icon4.gif" alt="" title="Exclamation" border="0" /></td>
+		<td class="smallfont"><b>Auto &quot;rewind&quot; implemented... and its awful</b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237826&postcount=1" target="new">1</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Tyck</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Oct 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Wow.   The /rewind command never seems to have gone live, so with this patch they make it happen automatically.<br />
+<br />
+This means that if you hit an object you 'bounce' back along your path to the last waypoint the game saved for you. <br />
+<br />
+What does this do?<br />
+<br />
+1.  If your last waypoint saved was before an evac, upon zoning back into the zone and hitting somebody in your way at the zone line, you will port to the point you evac'd from.<br />
+<br />
+2.  If you zone in and do not have a waypoint saved and hit somebody, you can end up under the world.<br />
+<br />
+3.  If you're fighting a mob and he pushes you into a wall, you'll bounce out of the wall (mostlikely with him behind you).   Can you say "instant free backshot".<br />
+<br />
+4.  If you've pulled a mob into a corner so his Directional AoE or Rampage only hits you (cornering the mob) then if you move back just a hair too far and Touch the corner behind you... BAM! you are out of the corner, the mob turns around and WIPEOUT!<br />
+<br />
+5.  If you're running across a zone and hit a tree, you will Ping*Pong back and forth along your path.<br />
+<br />
+6.  If you're trying to 'scoot' along a narrow ledge you'll be bounced back and likely fall because your facing stays the same and your rate of movement stays the same.   Try scooting along the ledge that leads into Freeport Sewers over the pool of drownded citizens.   <br />
+<br />
+7.  If you run into another player or MoB, you will bounce.  Now, think of the places in the game where you're walking along narrow bridges where there is a lot of crowding (hello DEEP!) or paths along lava (hello OS!).<br />
+<br />
+Man... I get motion sickness now just running thru town every time I hit a door or corner of the building! <img src="images/smilies/eek.gif" border="0" alt="" title="eek!" smilieid="10" /></p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237826">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=237826">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 67 <img src="images/reputationpos.gif" alt="Tyck is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Tyck is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=23683" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Tyck" border="0" /></a>
+
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=23683"><img src="images/find.gif" alt="find.gif" title="Find more posts by Tyck" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=23683"><img src="images/buddy.gif" alt="buddy.gif" title="Add Tyck to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(237826)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Tyck's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=237826"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=237826"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 237847">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post237847">&nbsp;</a> 03-26-2004, 06:05 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237847&postcount=2" target="new">2</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Nytmare</b>
+<span class="smallfont">
+	<br />
+	Oracle<br />
+		
+	
+	<br />
+	Joined: Sep 1999<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>In Plane of Tranquility, the little mountain that is the zone-in to Plane of Storms -- I used to run right over it every time without trouble, on the way to and from BoT. Last night I hit the depressions in the center of that mountain and it bounces me backwards, repeat infininum. Very silly, but I'm sure they'll fix it sometime within the next year.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=377153" target="_blank">Mukkul Runumuk</a><br />
+65 Iksar Prophet<br />
+Torvonnilous</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237847">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=237847">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 1,152 <img src="images/reputationpos.gif" alt="Nytmare will become famous soon enough" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Nytmare will become famous soon enough" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Nytmare is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=1756" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Nytmare" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=1756"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Nytmare a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=1756"><img src="images/find.gif" alt="find.gif" title="Find more posts by Nytmare" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=1756"><img src="images/buddy.gif" alt="buddy.gif" title="Add Nytmare to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(237847)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Nytmare's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=237847"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=237847"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 237860">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post237860">&nbsp;</a> 03-26-2004, 06:41 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237860&postcount=3" target="new">3</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>malden</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Jul 2002<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Sounds like the good ol' days in Anarchy Online. Run halfway across the zone and get rubberbanded back. Gooood times.</p>
+	
+	
+	
+		<div>__________________<br />Malden ShrinkerofMurn<br />
+Shaman of the Tribunal<br />
+Legacy of The Companions<br />
+Bristlebane</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237860">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=237860">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 18 <img src="images/reputationpos.gif" alt="malden " border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="malden is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=18246" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for malden" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=18246"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send malden a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=18246"><img src="images/find.gif" alt="find.gif" title="Find more posts by malden" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=18246"><img src="images/buddy.gif" alt="buddy.gif" title="Add malden to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(237860)"><img src="images/newannounce.gif" border="0" alt="" title="Add to malden's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=237860"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=237860"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 237982">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post237982">&nbsp;</a> 03-27-2004, 04:35 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237982&postcount=4" target="new">4</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Stolastorv</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Jan 2003<br />
+	Location: Grobb
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Its annoying as hell, was pulling mobs in sola with an unshrunk barbi and kept getting bounced back. I hate this feature with a passion.</p>
+	
+	
+	
+		<div>__________________<br />Stolas Punchyaface 65 Troll Prophet wit da pointy stick<br />
+<br />
+Veteran Roddo Manatheren 65 Human Forest Stalker<br />
+Dynamic Dou of Torvo</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237982">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=237982">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 547 <img src="images/reputationpos.gif" alt="Stolastorv is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Stolastorv is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=20286" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Stolastorv" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=20286"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Stolastorv a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=20286"><img src="images/find.gif" alt="find.gif" title="Find more posts by Stolastorv" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=20286"><img src="images/buddy.gif" alt="buddy.gif" title="Add Stolastorv to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(237982)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Stolastorv's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=237982"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=237982"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 237987">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post237987">&nbsp;</a> 03-27-2004, 04:56 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237987&postcount=5" target="new">5</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>enokk</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Jan 2004<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Wait till you try a raid with a gflux mob, meh. Wish they would test this garbage before making it live. Game's 5yrs old, there's just no excuse for it.</p>
+	
+	
+	
+		<div>__________________<br />Thank you SoE, may I have another.<br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=646352" target="_blank">Nok</a></div></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=237987">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=237987">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 34 <img src="images/reputationpos.gif" alt="enokk is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="enokk is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=24643" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for enokk" border="0" /></a>
+
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=24643"><img src="images/find.gif" alt="find.gif" title="Find more posts by enokk" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=24643"><img src="images/buddy.gif" alt="buddy.gif" title="Add enokk to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(237987)"><img src="images/newannounce.gif" border="0" alt="" title="Add to enokk's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=237987"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=237987"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238085">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238085">&nbsp;</a> 03-27-2004, 08:06 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238085&postcount=6" target="new">6</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>jzak</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Mar 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Just wait until you die with a DoT on you.  Then you have the pleasure of getting stuck in a death loop sequence because the DoTs no longer go away after you die.</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238085">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238085">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 210 <img src="images/reputationbalance.gif" alt="jzak can only hope to improve" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="jzak is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=21315" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for jzak" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=21315"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send jzak a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=21315"><img src="images/find.gif" alt="find.gif" title="Find more posts by jzak" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=21315"><img src="images/buddy.gif" alt="buddy.gif" title="Add jzak to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238085)"><img src="images/newannounce.gif" border="0" alt="" title="Add to jzak's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238085"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238085"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238160">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238160">&nbsp;</a> 03-28-2004, 10:00 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238160&postcount=7" target="new">7</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Torp</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Jul 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>I would like to reiterate # 3 and 4.<br />
+--------<br />
+3. If you're fighting a mob and he pushes you into a wall, you'll bounce out of the wall (mostlikely with him behind you). Can you say "instant free backshot".<br />
+<br />
+4. If you've pulled a mob into a corner so his Directional AoE or Rampage only hits you (cornering the mob) then if you move back just a hair too far and Touch the corner behind you... BAM! you are out of the corner, the mob turns around and WIPEOUT!<br />
+--------</p>
+	
+	
+	
+	
+		<div class="smallfont"><i>Last edited by Torp on 03-28-2004 at <span class="time">10:03 AM</span>. </i></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238160">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238160">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 12 <img src="images/reputationpos.gif" alt="Torp is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Torp is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=22721" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Torp" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=22721"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Torp a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=22721"><img src="images/find.gif" alt="find.gif" title="Find more posts by Torp" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=22721"><img src="images/buddy.gif" alt="buddy.gif" title="Add Torp to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238160)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Torp's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238160"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238160"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238195">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238195">&nbsp;</a> 03-28-2004, 06:31 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238195&postcount=8" target="new">8</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Jaeydee</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Mar 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Death loops are fun.....<br />
+<br />
+At least you only lose exp like once or so.<br />
+<br />
+I had a grand time trying to save my guildmates from it last night in Time.  It can be done!</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=226786" target="_blank"><img src="http://home.mchsi.com/~ngoff/wsb/media/384409/site1049.gif" border="0" alt=""> </a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238195">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238195">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 63 <img src="images/reputationpos.gif" alt="Jaeydee is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Jaeydee is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=21322" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Jaeydee" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=21322"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Jaeydee a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=21322"><img src="images/find.gif" alt="find.gif" title="Find more posts by Jaeydee" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=21322"><img src="images/buddy.gif" alt="buddy.gif" title="Add Jaeydee to your buddy list" border="0" /></a>
+		
+
+<a href="#" onclick="return aimwindow('JaeydeeDruu')"><img src="images/aim_icon.gif" alt="aim_icon.gif" title="Send an AIM message to Jaeydee" border="0" /></a>
+<a href="http://edit.yahoo.com/config/send_webmesg?.target=redbirdfan247&.src=pg" target="_blank"><img src="http://opi.yahoo.com/online?u=redbirdfan247&m=g&t=1" alt="Send a message to Jaeydee" alt="Jaeydee's Yahoo Messenger Online Status" border="0" /></a>
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238195)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Jaeydee's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238195"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238195"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238305">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238305">&nbsp;</a> 03-29-2004, 08:36 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238305&postcount=9" target="new">9</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Kannath</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Feb 2004<br />
+	Location: Brell
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>A couple of days ago my roommate was camping the named mummy in befallen with his 29th level cleric and a gnome necro (who is played by one of his co-workers) told him in the channel that his co-workers use that she was in a death loop in that zone and could he come help.  He got to the location--not sure exactly where, but it was a slope near a door (I was looking over his shoulder after he got there).  She had somehow gotten at the top of the slope and fallen down taking enough damage to go "purple" (you know less than 0 hps, but not dead) so she fell down unconscious.  When she would fall down she would be inside the floor and "rewind" back to the place she fell from with the same hps as before the fall, but unable to not fall again.  Over and over.  My roommate unsuccessfully tried to heal her a couple of times, then memed his first level heal and that cast fast enough and she didn't go fall over from going purple--so ending the loop.  ROFL!  Was funny as hell to see, but I'd of hated to have had it happen to me!  <img src="images/smilies/eek.gif" border="0" alt="" title="eek!" smilieid="10" /></p>
+	
+	
+	
+		<div>__________________<br /><font color="purple"><font face="tahoma">Kannath~Vah Shir Shaman~<a href="http://www.magelo.com/eq_view_profile.html?num=907810" target="_blank">magelo profile</a><br />
+<br />
+Cathon~Gnome Necromancer~<a href="http://www.magelo.com/eq_view_profile.html?num=907830" target="_blank">magelo profile</a> </font></font></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238305">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238305">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 4 <img src="images/reputationpos.gif" alt="Kannath is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Kannath is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=24752" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Kannath" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=24752"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Kannath a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=24752"><img src="images/find.gif" alt="find.gif" title="Find more posts by Kannath" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=24752"><img src="images/buddy.gif" alt="buddy.gif" title="Add Kannath to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238305)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Kannath's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238305"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238305"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238342">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238342">&nbsp;</a> 03-29-2004, 02:15 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238342&postcount=10" target="new">10</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Rathjar</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Apr 2000<br />
+	Location: South Bend, IN USA
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>GOtta love beta testing</p>
+	
+	
+	
+		<div>__________________<br />Rathjar Maruuka<br />
+Shaman of the 61th level.<br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=718997" target="_blank">Magelo Profile</a><br />
+Bristlebane Server</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238342">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238342">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 193 <img src="images/reputationpos.gif" alt="Rathjar " border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Rathjar is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=7534" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Rathjar" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=7534"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Rathjar a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=7534"><img src="images/find.gif" alt="find.gif" title="Find more posts by Rathjar" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=7534"><img src="images/buddy.gif" alt="buddy.gif" title="Add Rathjar to your buddy list" border="0" /></a>
+		
+
+
+<a href="http://edit.yahoo.com/config/send_webmesg?.target=fiction_pimp&.src=pg" target="_blank"><img src="http://opi.yahoo.com/online?u=fiction_pimp&m=g&t=1" alt="Send a message to Rathjar" alt="Rathjar's Yahoo Messenger Online Status" border="0" /></a>
+<a href="#" onclick="return msnwindow('fiction18@hotmail.com')"><img src="images/msn_icon.gif" alt="msn_icon.gif" title="Send an MSN message to Rathjar" border="0" /></a>
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238342)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Rathjar's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238342"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238342"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238343">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238343">&nbsp;</a> 03-29-2004, 02:15 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238343&postcount=11" target="new">11</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Nytmare</b>
+<span class="smallfont">
+	<br />
+	Oracle<br />
+		
+	
+	<br />
+	Joined: Sep 1999<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Had a fun time in Ssra when my spirit call pets pushed the mob through the wall in a 2nd floor hallway. That never happened before. So the mob ends up in the basement, and so do I after he summons me! It was just great luck that I got no adds <i>and</i> was able to invis back to my original fight spot.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=377153" target="_blank">Mukkul Runumuk</a><br />
+65 Iksar Prophet<br />
+Torvonnilous</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238343">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238343">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,152 <img src="images/reputationpos.gif" alt="Nytmare will become famous soon enough" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Nytmare will become famous soon enough" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Nytmare is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=1756" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Nytmare" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=1756"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Nytmare a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=1756"><img src="images/find.gif" alt="find.gif" title="Find more posts by Nytmare" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=1756"><img src="images/buddy.gif" alt="buddy.gif" title="Add Nytmare to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238343)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Nytmare's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238343"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238343"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238349">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238349">&nbsp;</a> 03-29-2004, 03:00 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238349&postcount=12" target="new">12</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Landragoran Heronwing</b>
+<span class="smallfont">
+	<br />
+	GNOMERCY!<br />
+		
+	
+	<br />
+	Joined: Oct 2000<br />
+	Location: back to cally to cally
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>happened to my monk last night.  Zoned into PoK from PoT and must have hit something immediately cuz the next thing I saw was clouds and stars.  Under the world . . or over it, or whatever, I didn't recognize the place, couldn't move, and was stuck in exactly the sort of place I would need a GM or guide to remove me from.  This rewind thing seems to be causing waaaay more problems than it is worth.</p>
+	
+	
+	
+		<div>__________________<br /><a href = "http://www.magelo.com/eq_view_profile.html?num=125470">Elder Landragoran Heronwing</a><br />
+Prophet of Justice<br />
+<a href = "http://pub47.ezboard.com/bridersoftheapocalypse57129">Riders of the Apocalypse</a><br />
+Lanys<br />
+<img src = "http://photo1.matchnet.com/beta/2002/09/03/12344510.jpg"><br />
+<br />
+"And I saw a man upon a pale horse, and the name of the man was Death, and all Hell followed with him"</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238349">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238349">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 2,860 <img src="images/reputationpos.gif" alt="Landragoran Heronwing has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Landragoran Heronwing has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Landragoran Heronwing is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=13099" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Landragoran Heronwing" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=13099"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Landragoran Heronwing a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=13099"><img src="images/find.gif" alt="find.gif" title="Find more posts by Landragoran Heronwing" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=13099"><img src="images/buddy.gif" alt="buddy.gif" title="Add Landragoran Heronwing to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238349)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Landragoran Heronwing's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238349"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238349"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238359">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238359">&nbsp;</a> 03-29-2004, 04:09 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238359&postcount=13" target="new">13</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Ronax</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Jun 2002<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>In temple of droga last night, tried to jam myself in a corner to reduce interrupts, kept "rewinding".  Couldn't get in a corner no matter how hard I tried.  Definately sucks!</p>
+	
+	
+	
+		<div>__________________<br />----------          ----------          ----------<br />
+<br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=406230" target="_blank">Somee Berry</a> <br />
+<br />
+<a href="http://goodguysguild.com/" target="_blank">Good Guys Guild</a> <br />
+<br />
+<a href="http://pub148.ezboard.com/b7thhammer" target="_blank">The Seventh Hammer</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238359">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238359">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 248 <img src="images/reputationpos.gif" alt="Ronax is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Ronax is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=18084" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Ronax" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=18084"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Ronax a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=18084"><img src="images/find.gif" alt="find.gif" title="Find more posts by Ronax" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=18084"><img src="images/buddy.gif" alt="buddy.gif" title="Add Ronax to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238359)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Ronax's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238359"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238359"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238361">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238361">&nbsp;</a> 03-29-2004, 04:13 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238361&postcount=14" target="new">14</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Donar</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Mar 2002<br />
+	Location: Behind you! Look out!
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>It makes the Coirnav fight interesting. There were a fair number of people who had to be CoTH'd multiple times. They'd get called down, hit a wall or person and *blam* be back at the zone-in area.  Fun stuff. =\</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=190517">Donar Spiritborne</a><br />
+Yawning Prophet<br />
+Ayonae Ro</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238361">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238361">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 552 <img src="images/reputationpos.gif" alt="Donar " border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Donar is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=16968" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Donar" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=16968"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Donar a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=16968"><img src="images/find.gif" alt="find.gif" title="Find more posts by Donar" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=16968"><img src="images/buddy.gif" alt="buddy.gif" title="Add Donar to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238361)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Donar's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238361"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238361"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238363">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238363">&nbsp;</a> 03-29-2004, 04:16 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238363&postcount=15" target="new">15</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Karaab Stormbringer</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Jan 2003<br />
+	Location: Wisconsin, US
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>If you turn "Allow Auto-Duck" on, apparently this rewinding is prevented.</p>
+	
+	
+	
+		<div>__________________<br />Venerable Karaab Silverwind, Prophet of the Dar Khura<br />
+Rodcet Nife<br />
+<a href=http://www.magelo.com/eq_view_profile.html?num=80537 target=_blank>Inspect</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238363">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238363">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 109 <img src="images/reputationpos.gif" alt="Karaab Stormbringer is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Karaab Stormbringer is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=20301" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Karaab Stormbringer" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=20301"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Karaab Stormbringer a Private Message" border="0" /></a>
+
+
+
+	<a href="http://promisance.sourceforge.net" target="_blank"><img src="images/home.gif" alt="home.gif" title="Visit Karaab Stormbringer's homepage!"  border="0" /></a>
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=20301"><img src="images/find.gif" alt="find.gif" title="Find more posts by Karaab Stormbringer" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=20301"><img src="images/buddy.gif" alt="buddy.gif" title="Add Karaab Stormbringer to your buddy list" border="0" /></a>
+		
+<a href="http://wwp.icq.com/2673738#pager" target="_blank"><img src="http://wwp.icq.com/scripts/online.dll?icq=2673738&img=5" alt="ICQ Status" title="Karaab Stormbringer's ICQ status" border="0" /></a>
+<a href="http://wwp.icq.com/scripts/search.dll?to=2673738"><img src="images/uinadd.gif" alt="ICQ Add" title="Add Karaab Stormbringer to your ICQ contact list" border="0" /></a>
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238363)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Karaab Stormbringer's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238363"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238363"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238367">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238367">&nbsp;</a> 03-29-2004, 04:28 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238367&postcount=16" target="new">16</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Grafsha McDaughts</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Aug 2002<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />If you turn "Allow Auto-Duck" on, apparently this rewinding is prevented.<hr size="1" /></blockquote>It's not totally prevented. You still bounce back from items/walls/people. It is just not as often.<br />
+<br />
+I find it amusing that I can bounce off some other players and run through other (or pets.) Nothing quite as ironic as a troll bouncing off a gnome but running thru another troll or orge.</p>
+	
+	
+	
+		<div>__________________<br /><b>Zlow Dendot</b><br />
+Innoruuk's Prophet<br />
+Specialty: Toasted Halflings<br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=846399" target="_blank">Zlow's Stuff</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238367">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238367">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 97 <img src="images/reputationpos.gif" alt="Grafsha McDaughts is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Grafsha McDaughts is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=18748" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Grafsha McDaughts" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=18748"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Grafsha McDaughts a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=18748"><img src="images/find.gif" alt="find.gif" title="Find more posts by Grafsha McDaughts" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=18748"><img src="images/buddy.gif" alt="buddy.gif" title="Add Grafsha McDaughts to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238367)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Grafsha McDaughts's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238367"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238367"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238373">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238373">&nbsp;</a> 03-29-2004, 05:05 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238373&postcount=17" target="new">17</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Harwel</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Aug 2002<br />
+	Location: New Hampshire, USA
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>#1 happened to my friend's wizzy on an adventure the other day.  We had no idea what happened to him at the time, but that explains it.<br />
+<br />
+Getting into and out of the Dogle bank (halfling bank, south bank, cabbage bank, whatever you want to call it) it PoK has been ugly (even for half-elf).  <br />
+<br />
+Even something simple like pulling along a wall in a place like Droga with a lot of angles has been ridiculous.  We were camping the supplier area in Droga for a quest drop for a friend yesterday, parked in a room with a bunch of barrels... everyone kept getting stuck on the barrels.  <br />
+<br />
+Not rewind related but related to the new dx9 dll... If a mob gets pushed into a wall more than say halfway, melee will get "Cannot see target" messages and whiff.  Also I was doing the caller cycle in FG the other day, one of the named tried to follow me and ended getting stuck inside a rock.  We couldn't get him out, he couldn't follow, we couldn't get LOS on him, I tried using PBAE DOTS on my bard to kill him but he was blocked from the PBAEs too.  Eventually he despawned.  Thankfully he was only holding that crappy hammer.<br />
+<br />
+MO' TESTIN, less puttin GARBAGE on live servers kkplzthxl8r.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=294811" target="_blank">Harwel Spiritwalker</a><br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=776546" target="_blank">Waeland Mistnote</a><br />
+"What's a Shaman?" -Brenlo</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238373">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238373">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 731 <img src="images/reputationpos.gif" alt="Harwel will become famous soon enough" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Harwel will become famous soon enough" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Harwel is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=18469" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Harwel" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=18469"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Harwel a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=18469"><img src="images/find.gif" alt="find.gif" title="Find more posts by Harwel" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=18469"><img src="images/buddy.gif" alt="buddy.gif" title="Add Harwel to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238373)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Harwel's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238373"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238373"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238435">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238435">&nbsp;</a> 03-29-2004, 09:00 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238435&postcount=18" target="new">18</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Koushirou</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Aug 2003<br />
+	Location: Maryland
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Was doing an AD raid the other day and after we pulled it, it kept hitting this tiny little hill and rewinding.  Took it maybe 15 tries to finally get over it.</p>
+	
+	
+	
+		<div>__________________<br /><font color="Blue" face=Courier New>Koushirou Neo`Clarg  -- Serving the Will of Veen'Eshteni for three years</font><br />
+<font size=1 face=Courier New color="Purple">Always the first, and only, to die...</font><br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=217137"><font face=Courier New color=#AAAAFF>The Gifts of Veen`Eshteni</font></ahref></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238435">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238435">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 77 <img src="images/reputationpos.gif" alt="Koushirou is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Koushirou is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=23301" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Koushirou" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=23301"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Koushirou a Private Message" border="0" /></a>
+
+
+
+	<a href="http://trinityliger.tripod.com/agoh" target="_blank"><img src="images/home.gif" alt="home.gif" title="Visit Koushirou's homepage!"  border="0" /></a>
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=23301"><img src="images/find.gif" alt="find.gif" title="Find more posts by Koushirou" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=23301"><img src="images/buddy.gif" alt="buddy.gif" title="Add Koushirou to your buddy list" border="0" /></a>
+		
+
+<a href="#" onclick="return aimwindow('Geno Hydra')"><img src="images/aim_icon.gif" alt="aim_icon.gif" title="Send an AIM message to Koushirou" border="0" /></a>
+
+<a href="#" onclick="return msnwindow('AkumaYukiYamamon@hotmail.com')"><img src="images/msn_icon.gif" alt="msn_icon.gif" title="Send an MSN message to Koushirou" border="0" /></a>
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238435)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Koushirou's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238435"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238435"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238442">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238442">&nbsp;</a> 03-29-2004, 09:15 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238442&postcount=19" target="new">19</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Beafly</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Dec 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Trees in Emerald Jungle gave me a hell of a time getting to CoM. I'm also having problems targeting mobs through small branches and such. I also give a warning to those who frequent the eTop camp in BoT. If you are shrunk there are a number of places along the walls in each corner that you will fall through. This will warp you back to the zone in. Bye Bye dogdog from the invis-run back if you're lucky. Say hello to the frequent trains there if you're not.</p>
+	
+	
+	
+		<div>__________________<br />65 Prophet <a href="http://www.magelo.com/eq_view_profile.html?num=998779" target="_blank">Beafly Cakes</a> of <a href="http://valiant-spirit.com" target="_blank">Valiant Spirit</a>  -- "I fully expect to poop myself"</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238442">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238442">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 51 <img src="images/reputationpos.gif" alt="Beafly is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Beafly is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=24277" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Beafly" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=24277"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Beafly a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=24277"><img src="images/find.gif" alt="find.gif" title="Find more posts by Beafly" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=24277"><img src="images/buddy.gif" alt="buddy.gif" title="Add Beafly to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238442)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Beafly's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238442"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238442"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238710">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238710">&nbsp;</a> 03-30-2004, 06:41 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238710&postcount=20" target="new">20</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>junkilo</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Jul 2003<br />
+	Location: cali
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Ronax</b><br /><i>In temple of droga last night, tried to jam myself in a corner to reduce interrupts, kept "rewinding".  Couldn't get in a corner no matter how hard I tried.  Definately sucks!</i><hr size="1" /></blockquote>yea means no more droga farming for us until its fixed <img src="images/smilies/frown.gif" border="0" alt="" title="frown" smilieid="2" /></p>
+	
+	
+	
+		<div>__________________<br /><img src="http://www.callatg.com/~kmcm/pix/final.jpg" border="0" alt=""><br />
+&nbsp;&nbsp;&nbsp;<a href="http://www.magelo.com/eq_view_profile.html?num=736513" target="_blank"><font face="verdana"><font size="2"><b>Junkilo</a></b></font></font></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238710">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238710">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 743 <img src="images/reputationpos.gif" alt="junkilo will become famous soon enough" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="junkilo is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=22811" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for junkilo" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=22811"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send junkilo a Private Message" border="0" /></a>
+
+
+
+	<a href="http://www.themcminns.com" target="_blank"><img src="images/home.gif" alt="home.gif" title="Visit junkilo's homepage!"  border="0" /></a>
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=22811"><img src="images/find.gif" alt="find.gif" title="Find more posts by junkilo" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=22811"><img src="images/buddy.gif" alt="buddy.gif" title="Add junkilo to your buddy list" border="0" /></a>
+		
+
+<a href="#" onclick="return aimwindow('kilonox')"><img src="images/aim_icon.gif" alt="aim_icon.gif" title="Send an AIM message to junkilo" border="0" /></a>
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238710)"><img src="images/newannounce.gif" border="0" alt="" title="Add to junkilo's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238710"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238710"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238715">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238715">&nbsp;</a> 03-30-2004, 06:54 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238715&postcount=21" target="new">21</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Gart Egilsson</b>
+<span class="smallfont">
+	<br />
+	Heyokah<br />
+		
+	
+	<br />
+	Joined: Jan 2000<br />
+	Location: Halas, Maine
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>My ogre warrior was bouncing about in upper guk like a pinball, and ended up getting shot out into the middle of innothule.<br />
+<br />
+I don't like this feature so far.  But I guess it beats getting glued into a wall, which happened to me before.  <br />
+<br />
+Not a great set of options though...<br />
+<br />
+But I like the idea of them trying to upgrade the graphics.  They've got to soldier on, I can imagine it's a very big and difficult task.  <br />
+<br />
+So, I'm patient.  Hopefully they are still tinkering on it because it's not done yet.</p>
+	
+	
+	
+		<div>__________________<br /><br><br />
+<a href=http://www.magelo.com/eq_view_profile.html?num=54513&amp;resize=true newwindow>Gart Egilsson</a><br />
+<a href=http://www.interealms.com/shaman>Prophet</a>, <a href=http:\\\\www.innoruuk.com>Innoruuk</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238715">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238715">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 2,104 <img src="images/reputationpos.gif" alt="Gart Egilsson has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Gart Egilsson has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Gart Egilsson has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Gart Egilsson is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=5252" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Gart Egilsson" border="0" /></a>
+
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=5252"><img src="images/find.gif" alt="find.gif" title="Find more posts by Gart Egilsson" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=5252"><img src="images/buddy.gif" alt="buddy.gif" title="Add Gart Egilsson to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238715)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Gart Egilsson's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238715"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238715"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238780">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238780">&nbsp;</a> 03-30-2004, 10:29 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238780&postcount=22" target="new">22</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Denero Creed</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Feb 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>anyone check the client.ini for a /autorewind = 1 or something like that.</p>
+	
+	
+	
+		<div>__________________<br />My Name Is <a href="http://www.magelo.com/eq_view_profile.html?num=292475" target="_blank">Denero Creed</a><br />
+&amp; I'm a 64th Barbarian Oracle</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238780">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238780">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 176 <img src="images/reputationpos.gif" alt="Denero Creed is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Denero Creed is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=20966" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Denero Creed" border="0" /></a>
+
+
+	<a href="private.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newpm&amp;userid=20966"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Denero Creed a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=20966"><img src="images/find.gif" alt="find.gif" title="Find more posts by Denero Creed" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=20966"><img src="images/buddy.gif" alt="buddy.gif" title="Add Denero Creed to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238780)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Denero Creed's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238780"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238780"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 238820">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post238820">&nbsp;</a> 03-31-2004, 01:18 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238820&postcount=23" target="new">23</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Diabalein</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Apr 2002<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>I died to this new feature, couldnt backinto a corner to channel gate, gave up trying and stood there casting it but the damn mobs would push me far enough to make me bounce anyway<br />
+<br />
+<br />
+I love it <img src="images/smilies/frown.gif" border="0" alt="" title="frown" smilieid="2" /><br />
+<br />
+<br />
+oh yeah and the dot death loop of doom is really funny when you see it the first time. but the 5th time you have to /q to get out of it is really really old.</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=bc1f208a18042bae6f8944fe33c61000&amp;postid=238820">Report Post</a> | IP: <a href="postings.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=getip&postid=238820">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 237 <img src="images/reputationpos.gif" alt="Diabalein is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Diabalein is offline" border="0" />
+		
+
+	<a href="member.php?s=bc1f208a18042bae6f8944fe33c61000&amp;userid=17372" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Diabalein" border="0" /></a>
+
+
+
+
+
+	<a href="search.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=finduser&amp;userid=17372"><img src="images/find.gif" alt="find.gif" title="Find more posts by Diabalein" border="0" /></a>
+
+
+	<a href="profile.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=addlist&amp;userlist=buddy&amp;userid=17372"><img src="images/buddy.gif" alt="buddy.gif" title="Add Diabalein to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(238820)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Diabalein's Reputation" /></a>
+		<a href="editpost.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=editpost&amp;postid=238820"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;postid=238820"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr>
+
+
+
+
+<tr>
+	<td class="thead" colspan="2">
+	<!-- time zone and post buttons -->
+	<table border="0" cellspacing="0" cellpadding="0" class="tfoot" width="100%">
+	<tr>
+		<td class="smallfont"><a href="#top">Return to Top</a></td>
+		<td class="smallfont" align="right">&nbsp;</td>
+	</tr>
+	</table>
+	<!-- /time zone and post buttons -->
+	</td>
+</tr>
+</table>
+</td></tr></table>
+
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center" id="poststable"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="alt1" width="30%" align="left"><span class="smallfont">
+		<a href="newthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;forumid=1"><img src="images/newthread.gif" alt="newthread" title="Post a new thread in this forum" border="0" /></a>
+		
+		<a href="newreply.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=newreply&amp;noquote=1&amp;postid=238820"><img src="images/reply.gif" alt="reply" title="Post a reply to the last message on this page" border="0" /></a>
+		
+	</span></td>
+	<td class="alt1" width="40%" align="center"><span class="smallfont">
+		<a href="forumdisplay.php?s=bc1f208a18042bae6f8944fe33c61000&amp;forumid=1">General</a><br />
+		<img src="images/prev.gif" alt="prev.gif" border="0" />
+		<a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;goto=nextoldest">Last Thread</a>
+		|
+		<a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;goto=nextnewest">Next Thread</a>
+		<img src="images/next.gif" alt="next.gif" border="0" />
+	</span></td>
+	<td class="alt2" width="10%"><span class="smallfont"><a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;mode=linear" onclick="changemode('linear', 'first'); return false;"><img src="images/mode_linear.gif" alt="" border="0" /></a> Linear</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;mode=hybrid" onclick="changemode('hybrid', 'first'); return false;"><img src="images/mode_hybrid.gif" alt="" border="0" /></a> Hybrid</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560&amp;mode=threaded" onclick="changemode('threaded', 'first'); return false;"><img src="images/mode_threaded.gif" alt="" border="0" /></a> Threaded</span></td>
+</tr>
+</table>
+</td></tr></table>
+
+<br />
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="alt1">
+	
+	<!-- thread options -->
+	<table cellpadding="2" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/printer.gif" alt="printer.gif" title="Show Printable Version" border="0" /></td>
+		<td class="smallfont"><a href="printthread.php?s=bc1f208a18042bae6f8944fe33c61000&amp;threadid=20560">Show Printable Version</a></td>
+	</tr>
+	<tr>
+		<td><img src="images/sendtofriend.gif" alt="sendtofriend.gif" title="Email This Page" border="0" /></td>
+		<td class="smallfont"><a href="sendmessage.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=sendtofriend&threadid=20560">Email This Page</a></td>
+	</tr>
+	
+	</table>
+	<!-- / thread options -->
+	
+	</td>
+	<td class="alt1" align="right">
+	
+	<!-- forum jump / thread rate -->
+	
+	<table cellpadding="0" cellspacing="0" border="0">
+	<form action="threadrate.php" method="post"><tr><td>
+		<span class="smallfont">
+		<input type="hidden" name="s" value="bc1f208a18042bae6f8944fe33c61000" />
+		<input type="hidden" name="threadid" value="20560" />
+		<b>Rate This Thread:</b>
+		<select name="vote">
+			<option value="-1" selected="selected">Select [a] Rating...</option>
+			<option value="5" >5 .. Best</option>
+			<option value="4" >4</option>
+			<option value="3" >3 .. Average</option>
+			<option value="2" >2</option>
+			<option value="1" >1 .. Worst</option>
+		</select><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  />
+		</span>
+	</td></tr></form>
+	</table>
+	<br />
+	
+	<table cellpadding="0" cellspacing="0" border="0">
+<form action="forumdisplay.php" method="get"><tr><td nowrap>
+	<span class="smallfont">
+	<input type="hidden" name="s" value="bc1f208a18042bae6f8944fe33c61000" />
+	<input type="hidden" name="daysprune" value="" />
+	<b>Forum Jump:</b>
+	<select name="forumid" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="-1" >Please select one:</option>
+			<option value="pm" >Private Messages</option>
+			<option value="cp" >User Control Panel</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forums">
+		<option value="25" class="fjdpth0" > The Medicine Cabinet</option><option value="1" class="fjsel" selected="selected"> General</option><option value="7" class="fjdpth0" > Equipment</option><option value="5" class="fjdpth0" > Quests</option><option value="4" class="fjdpth0" > Spells</option><option value="6" class="fjdpth0" > Alchemy</option><option value="3" class="fjdpth0" > Hunting Grounds</option><option value="16" class="fjdpth1" >&nbsp; &nbsp;  1 to 20</option><option value="17" class="fjdpth1" >&nbsp; &nbsp;  20 to 30</option><option value="18" class="fjdpth1" >&nbsp; &nbsp;  30 to 40</option><option value="19" class="fjdpth1" >&nbsp; &nbsp;  40 to 50</option><option value="20" class="fjdpth1" >&nbsp; &nbsp;  50 to 60</option><option value="22" class="fjdpth1" >&nbsp; &nbsp;  60 to 65</option><option value="28" class="fjdpth0" > Other games</option><option value="29" class="fjdpth1" >&nbsp; &nbsp;  World of Warcraft</option><option value="30" class="fjdpth1" >&nbsp; &nbsp;  Lineage II</option><option value="31" class="fjdpth1" >&nbsp; &nbsp;  Horizons</option><option value="10" class="fjdpth0" > The Spirit Realm</option><option value="9" class="fjdpth1" >&nbsp; &nbsp;  The Grey</option><option value="27" class="fjdpth1" >&nbsp; &nbsp;  Fan Fiction</option><option value="8" class="fjdpth0" > Buy/Sell/Trade</option><option value="12" class="fjdpth0" > Tech Help</option><option value="21" class="fjdpth1" >&nbsp; &nbsp;  UI Area</option><option value="14" class="fjdpth0" > Test Forum</option>
+		</optgroup>
+	</select><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  /></span>
+</td></tr></form>
+</table>
+	<!-- end forum jump / thread rate -->
+	
+	</td>
+</tr>
+</table>
+</td></tr></table>
+
+<br />
+
+<!-- forum rules and admin links -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td><span class="smallfont"><b>Forum Rules:</b><table cellpadding="0" cellspacing="0" border="0" class="tborder"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0">
+<tr>
+	<td class="alt1"><span class="smallfont">
+		You <b>may not</b> post new threads<br />
+		You <b>may not</b> post replies<br />
+		You <b>may not</b> post attachments<br />
+		You <b>may not</b> edit your posts
+	</span></td>
+	<td class="alt1"><span class="smallfont">
+		HTML code is <b>On</b><br />
+		<a href="misc.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=bbcode" target="_blank">vB code</a> is <b>On</b><br />
+		<a href="misc.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=showsmilies" target="_blank">Smilies</a> are <b>On</b><br />
+		<a href="misc.php?s=bc1f208a18042bae6f8944fe33c61000&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> code is <b>On</b>
+	</span></td>
+</tr>
+</table>
+</td></tr></table></span></td>
+	<td class="smallfont" align="right">
+		
+		<br />
+		All times are GMT +1 hour. The time now is <span class="time">08:23 AM</span>.
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%"><tr><td class="alt1">
+<span class="smallfont"><!--  style="font-weight:bold" -->
+<a href="index.php?s=bc1f208a18042bae6f8944fe33c61000&amp;"><img src="images/vb_bullet.gif" alt="" border="0" align="absmiddle" /></a>
+<a href="index.php?s=bc1f208a18042bae6f8944fe33c61000&amp;">Interealms - The Shaman's Crucible</a>
+&gt;
+
+<a href="forumdisplay.php?s=bc1f208a18042bae6f8944fe33c61000&amp;forumid=1">General</a>
+&gt;
+
+Auto &quot;rewind&quot; implemented... and its awful
+
+</span>
+</td></tr></table>
+</td></tr></table>
+
+</td>
+</tr>
+</table>
+
+<!-- /content area table -->
+
+
+
+<p align="center">
+
+  <b>< <a href="mailto:sunmoon@interealms.com">Contact Us</a> - <a href="http://www.interealms.com/shaman">The Shaman's Crucible</a> -  <a href="archive/index.php/">Archive</a>
+<!-- - <a href="">Privacy Statement</a> --> ></b><br />
+
+<span class="smallfont"><a href="#top">Return to Top</a></span></p>
+
+
+
+<p align="center"><span class="smallfont">
+
+<!-- Do not remove this copyright notice -->
+
+  Powered by: vBulletin Version 3.0.0 Beta 2<br />Copyright &copy;2000 - 2004, Jelsoft Enterprises Ltd.<br />
+
+<!-- Do not remove this copyright notice -->
+
+
+
+</span></p>
+
+</div>
+</form>
+</body>
+</html>

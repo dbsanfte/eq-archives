@@ -1,0 +1,1113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<!-- end no cache headers -->
+	<title>Interealms - The Ranger's Glade - powered by vBulletin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.0 Beta 2" />
+<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+<meta name="description" content="This is a discussion forum powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Interealms - The Ranger's Glade vBulletin 3 Style' (styleid: 1) */
+body {
+	background: #E2E2C7;
+	color: #000000;
+	font: 10pt arial,helvetica,sans-serif;
+}
+body a:link, body a:visited
+	{
+	color: #000000;
+}
+body a:hover, body a:active {
+	color: #000000;
+}
+.page {
+	background: #E2E2C7;
+}
+.page a:link, .page a:visited
+	{
+	color: #000000;
+}
+.page a:hover, .page a:active {
+	color: #000000;
+}
+.tborder {
+	background: #333300;
+}
+.tcat {
+	background: #333300;
+	color: #FFF788;
+	font-size: 10pt;
+}
+.tcat a:link, .tcat a:visited
+	{
+	color: #000000;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active {
+	color: #000000;
+	text-decoration: underline;
+}
+.thead {
+	background: #333300;
+	color: #EEEEFF;
+	font-size: 10px;
+	font-weight: bold;
+}
+.thead a:link, .thead a:visited
+	{
+	color: #000000;
+}
+.thead a:hover, .thead a:active {
+	color: #000000;
+}
+.tfoot {
+	background: #333300;
+	color: #EEEEFF;
+}
+.tfoot a:link, .tfoot a:visited
+	{
+	color: #000000;
+}
+.tfoot a:hover, .tfoot a:active {
+	color: #000000;
+}
+.alt1, .alt1Active {
+	background: #CCCC99;
+}
+.alt1, .alt1Active a:link, .alt1, .alt1Active a:visited
+	{
+	color: #000000;
+}
+.alt1, .alt1Active a:hover, .alt1, .alt1Active a:active {
+	color: #000000;
+}
+.alt2, .alt2Active {
+	background: #B0B08A;
+}
+.alt2, .alt2Active a:link, .alt2, .alt2Active a:visited
+	{
+	color: #000000;
+}
+.alt2, .alt2Active a:hover, .alt2, .alt2Active a:active {
+	color: #000000;
+}
+td, th, p, li {
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+textarea, .bginput {
+	background: #CFCFCF;
+	color: #000000;
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+.button {
+	background: #CFCFCF;
+	color: #000000;
+	font: 11px verdana,arial,helvetica,sans-serif;
+}
+select {
+	background: #CFCFCF;
+	color: #000000;
+	font: 11px verdana,arial,helvetica,sans-serif;
+}
+.smallfont {
+	font: 10px verdana,verdana,arial,helvetica,sans-serif;
+}
+.time {
+	color: #666686;
+}
+.navbar {
+	font-weight: bold;
+}
+.navbar a:link, .navbar a:visited
+	{
+	color: #000000;
+}
+.navbar a:hover, .navbar a:active {
+	color: #000000;
+}
+.highlight {
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel {
+	background: #8080A6;
+	color: #EEEEFF;
+}
+.fjdpth0 {
+	background: #F7F7F7;
+	color: #000000;
+}
+.fjdpth1 {
+	background: #EFEFEF;
+	color: #000000;
+}
+.fjdpth2 {
+	background: #E7E7E7;
+	color: #000000;
+}
+.fjdpth3 {
+	background: #DFDFDF;
+	color: #000000;
+}
+-->
+</style>
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=340d4a975d4fce2c406d0ea8e318b4c9&amp;";
+
+
+// -->
+</script>
+<script type="text/javascript" src="clientscript/generic.js"></script>
+</head>
+<body>
+<!-- logo and buttons -->
+<a name="top"></a>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#333300">
+<tr valign="bottom">
+	<td align="left" bgcolor="#333300"><a href="index.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/trg_logo.gif" border="0" alt="Interealms - The Ranger's Glade" /></a></td>
+	<td align="right" bgcolor="#333300" nowrap="nowrap">
+	
+	
+	<a href="register.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;do=signup"><img src="images/top_register.gif" alt="top_register.gif" title="Registration is free!" border="0" vspace="8" /></a>
+	<a href="calendar.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/top_calendar.gif" alt="top_calendar.gif" title="Calendar" border="0" vspace="8" /></a>
+	<a href="memberlist.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/top_members.gif" alt="top_members.gif" title="Find other members" border="0" vspace="8" /></a>
+	<a href="faq.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/top_faq.gif" alt="top_faq.gif" title="Frequently Asked Questions" border="0" vspace="8" /></a>
+	<a href="search.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/top_search.gif" alt="top_search.gif" title="Search" border="0" vspace="8" /></a>
+	<a href="index.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/top_home.gif" alt="top_home.gif" title="Home" border="0" vspace="8" /></a>
+	&nbsp; &nbsp;
+	
+	</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table width="100%" cellpadding="10" cellspacing="0" border="0" align="center" class="page">
+<tr>
+  <td>
+
+<br />
+
+<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+<input type="hidden" name="s" value="340d4a975d4fce2c406d0ea8e318b4c9" />
+<input type="hidden" name="do" value="login" />
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="2" cellspacing="1" border="0" width="100%">
+<tr valign="middle">
+	<td class="alt2"><a href="index.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/vb_bullet.gif" alt="vb_bullet.gif" title="Interealms - The Ranger's Glade: Powered by vBulletin version 3.0.0 Beta 2" border="0" /></a></td>
+	<td class="alt1" width="100%"><span class="navbar">
+		
+			Interealms - The Ranger's Glade
+				
+	</span></td>
+	
+		<td class="alt2" nowrap="nowrap"><span class="smallfont">
+			<script type="text/javascript" src="clientscript/md5.js"></script>
+			<input type="text" class="button" name="vb_login_username" size="10" accesskey="u" tabindex="1" />
+			<input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" />
+			<input type="hidden" name="vb_login_md5password" />
+			<input type="submit" class="button" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" tabindex="4" />
+			<br /><input type="checkbox" name="cookieuser" value="1" accesskey="c" tabindex="3" checked="checked" /> Remember username/password?
+		</span></td>
+	
+</tr>
+</table>
+</td></tr></table>
+</form>
+
+<!-- text -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+
+<!-- guest welcome message -->
+<tr>
+	<td colspan="2">
+	<b>Welcome to the Interealms - The Ranger's Glade.</b>
+	<div class="smallfont">
+		If this is your first visit, be sure to check out the <a href="misc.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;do=faq"><b>FAQ</b></a> by clicking the link above.
+		You may have to <a href="register.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><b>register</b></a> before you can post: click the register link above to proceed.
+		To start viewing messages, select the forum that you want to visit from the selection below.
+		<hr />
+	</div>
+	</td>
+</tr>
+<!-- end guest welcome message -->
+
+<tr valign="top">
+	<td class="page" style="font-size: larger; font-variant: small-caps"><b>Interealms - The Ranger's Glade</b></td>
+	<td class="page" align="right"><span class="smallfont">
+	Members: 13,499, Threads: 23,951, Posts: 322,256<br />
+	Welcome to our newest member, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=24192" target="_blank">eepjr24</a>
+	</span></td>
+</tr>
+</table>
+<!-- /text -->
+
+<!-- main -->
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="2" cellspacing="1" border="0" width="100%">
+<tr align="center">
+  <td class="thead"><span class="smallfont">&nbsp;</span></td>
+  <td class="thead" width="100%" align="left"><span class="smallfont"><b>Forum</b></span></td>
+  <td class="thead" width="75"><span class="smallfont"><b>Posts</b></span></td>
+  <td class="thead" width="75"><span class="smallfont"><b>Threads</b></span></td>
+  <td class="thead" width="150"><span class="smallfont"><b>Last Post</b></span></td>
+  
+</tr>
+<tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f1">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=1"><b>General</b></a>
+		
+			 <span class="smallfont">(28 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">150,405</td>
+	<td class="alt1">9,067</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25745" title="Go to first unread post in thread 'Hi. Need help regarding Gamepad please'"><b>Hi. Need help regarding...</b></a><br />
+			Today
+			
+				<span class="time">12:55 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=1">Lanandrin</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25745"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f14">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=14"><b>Real Life</b></a>
+		
+			 <span class="smallfont">(13 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			Believe it not, we all have one.. here's the place to talk about it!
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">95,733</td>
+	<td class="alt1">4,365</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25737" title="Go to first unread post in thread 'Someone at Google has a sense of humor..'"><b>Someone at Google has a sense...</b></a><br />
+			Today
+			
+				<span class="time">12:59 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=14">ueauvan</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25737"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f12">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=12"><b>Equipment (Weapons/Armor/Items)</b></a>
+		
+			 <span class="smallfont">(1 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">30,804</td>
+	<td class="alt1">4,190</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left"><img src="images/icons/icon5.gif" border="0" alt="Question" />&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25853" title="Go to first unread post in thread 'Parser pls'"><b>Parser pls</b></a><br />
+			Today
+			
+				<span class="time">01:00 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=12">ueauvan</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25853"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f4">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=4"><b>Quests and Special Items</b></a>
+		
+			 <span class="smallfont">(3 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">7,188</td>
+	<td class="alt1">977</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=23954" title="Go to first unread post in thread 'New Quests with Gfay and Hate'"><b>New Quests with Gfay and Hate</b></a><br />
+			Today
+			
+				<span class="time">05:30 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=4">Treece Oakheart</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=23954"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f3">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=3"><b>Spells</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">4,101</td>
+	<td class="alt1">386</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25819" title="Go to first unread post in thread 'Call of the Falcon -- Level 54 Spell'"><b>Call of the Falcon -- Level...</b></a><br />
+			Today
+			
+				<span class="time">12:37 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=3">Elured</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25819"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f5">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=5"><b>Skills and Stats</b></a>
+		
+			 <span class="smallfont">(1 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">4,993</td>
+	<td class="alt1">587</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25776" title="Go to first unread post in thread 'Pulling with IC'"><b>Pulling with IC</b></a><br />
+			Today
+			
+				<span class="time">05:18 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=5">splunge</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25776"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f23">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=23"><b>Legacy of Ykesha</b></a>
+		
+		<br />
+		<span class="smallfont">
+			Discuss and explore the new expansion
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">1,470</td>
+	<td class="alt1">105</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25370" title="Go to first unread post in thread 'Frog class'"><b>Frog class</b></a><br />
+			07-06-2003
+			
+				<span class="time">04:21 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=23">Leauven</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25370"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f16">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=16"><b>Planes of Power</b></a>
+		
+			 <span class="smallfont">(2 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			Discuss issues/loot/exploring with Planes of Power here please
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">7,089</td>
+	<td class="alt1">484</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25521" title="Go to first unread post in thread 'Flagging and Charm/AA tie-in'"><b>Flagging and Charm/AA tie-in</b></a><br />
+			Today
+			
+				<span class="time">10:41 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=16">Taewen</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25521"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f26">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=26"><b>World of Warcraft</b></a>
+		
+		<br />
+		<span class="smallfont">
+			Discuss the next upcoming  MMORPG featuring Hunters (Rangers!)
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">211</td>
+	<td class="alt1">26</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25839" title="Go to first unread post in thread 'Frozen Throne hints at a few new WoW races:'"><b>Frozen Throne hints at a few...</b></a><br />
+			Today
+			
+				<span class="time">04:10 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=26">Talyandrei Thistleshade</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25839"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f19">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=19"><b>Upcoming - Everquest 2</b></a>
+		
+		<br />
+		<span class="smallfont">
+			It's been announced, so here's where you go to talk it over, offer suggestions and more
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">600</td>
+	<td class="alt1">63</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=24640" title="Go to first unread post in thread 'Death to Camping?'"><b>Death to Camping?</b></a><br />
+			07-09-2003
+			
+				<span class="time">10:50 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=19">thanth</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=24640"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f6">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=6"><b>Combat and Tactics</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">1,424</td>
+	<td class="alt1">182</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25852" title="Go to first unread post in thread 'Hunting Justice'"><b>Hunting Justice</b></a><br />
+			Today
+			
+				<span class="time">11:23 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=6">Salty</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25852"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f13">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=13"><b>The Hunt</b></a>
+		
+			 <span class="smallfont">(2 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			A place to discuss various areas for specific level ranges and hunting
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">5,576</td>
+	<td class="alt1">881</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=24763" title="Go to first unread post in thread 'Solo Spots - Post Patch'"><b>Solo Spots - Post Patch</b></a><br />
+			Today
+			
+				<span class="time">11:02 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=13">Arroigon</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=24763"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f20">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=20"><b>Guides</b></a>
+		
+		<br />
+		<span class="smallfont">
+			A forum for discussing guides from the main site.
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">706</td>
+	<td class="alt1">103</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25458" title="Go to first unread post in thread 'phat farming fo teh realz!'"><b>phat farming fo teh realz!</b></a><br />
+			07-08-2003
+			
+				<span class="time">08:09 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=21">Derraj</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25458"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><map name="fl21">
+	<area shape="rect" coords="0,0,11,8" title="Search this forum" href="javascript:simplesearch(21)" />
+	<area shape="rect" coords="0,9,11,19" title="Post new thread" href="newthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=21" />
+	<area shape="rect" coords="0,20,11,27" title="Subscribe to this forum" href="subscription.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;do=addsubscription&forumid=21" />
+</map>
+<tr align="center">
+	<td class="alt2" valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+	<td class="alt1Active" align="left" id="f21">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=21"><b>New Guides</b></a>
+		<span class="smallfont">
+			
+			<br />Have a guide you want someone to create, or want someone to critique yours before you send it in? Here you go!
+			
+			
+		</span>
+		</td>
+		<td align="right"><!--<img src="images/forumlinks.gif" alt="" title="" border="0" usemap="#fl21" />--> </td>
+	</tr>
+	</table>
+	</td>
+	<td class="alt2">519</td>
+	<td class="alt1">48</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25458" title="Go to first unread post in thread 'phat farming fo teh realz!'"><b>phat farming fo teh realz!</b></a><br />
+			07-08-2003
+			
+				<span class="time">08:09 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=21">Derraj</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25458"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f7">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=7"><b>Wish List</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">297</td>
+	<td class="alt1">53</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left"><img src="images/icons/icon10.gif" border="0" alt="Talking" />&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25810" title="Go to first unread post in thread 'Befriend animals, Quiver, cloak graphic'"><b>Befriend animals, Quiver,...</b></a><br />
+			Yesterday
+			
+				<span class="time">02:28 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=7">Sylvanel</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25810"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f9">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=9"><b>Tales o' the Ranger</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">56</td>
+	<td class="alt1">21</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=23409" title="Go to first unread post in thread 'pg. 361 (continued)'"><b>pg. 361 (continued)</b></a><br />
+			05-25-2003
+			
+				<span class="time">04:33 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=9">Balerion</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=23409"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f15">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=15"><b>Numbuk Rangerfriend</b></a>
+		
+		<br />
+		<span class="smallfont">
+			A moderated forum for Numbuk and his followers, his music and his "Da Tale of Tales!"
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">258</td>
+	<td class="alt1">17</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left"><img src="images/smiles/biggrin.gif" border="0" alt="" />&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=850" title="Go to first unread post in thread 'Please Post Comments/Suggestions/Rants About Me Story Here!'"><b>Please Post...</b></a><br />
+			07-14-2003
+			
+				<span class="time">06:55 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=15">Warriox</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=850"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f17">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=17"><b>Test</b></a>
+		
+		<br />
+		<span class="smallfont">
+			Here you can play with sigs, HTML message formatting, etc. I also test board functions here.
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">1,888</td>
+	<td class="alt1">1,001</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25835" title="Go to first unread post in thread 'more testing'"><b>more testing</b></a><br />
+			Today
+			
+				<span class="time">01:02 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=17">Rufeo</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25835"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f11">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=11"><b>Rantin' and Ravin'</b></a>
+		
+			 <span class="smallfont">(2 Viewing)</span>
+		
+		<br />
+		<span class="smallfont">
+			This forum is not moderated at all.. you are warned!
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">5,833</td>
+	<td class="alt1">362</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=24767" title="Go to first unread post in thread 'Has the new grouping xp bonus made grouping easier??'"><b>Has the new grouping xp bonus...</b></a><br />
+			Today
+			
+				<span class="time">04:47 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=11">RatGuy</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=24767"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f10">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=10"><b>Archives</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">15</td>
+	<td class="alt1">5</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=874" title="Go to first unread post in thread 'How to kill the Sleeper (A joke.)'"><b>How to kill the Sleeper (A...</b></a><br />
+			03-24-2003
+			
+				<span class="time">01:51 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=10">Corenia</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=874"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f18">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=18"><b>Buy/Sell/Trade</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">1,786</td>
+	<td class="alt1">788</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25831" title="Go to first unread post in thread 'WTB SEoC MQ on Rodcet Nife'"><b>WTB SEoC MQ on Rodcet Nife</b></a><br />
+			Yesterday
+			
+				<span class="time">10:42 PM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=18">mutalib</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25831"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr><tr align="center">
+	<td class="alt1Active" colspan="2" align="left" id="f8">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/off.gif" alt="off.gif" title="" border="0"  ></td>
+		<td><img src="images/clear.gif" alt="clear.gif" title="" width="9" height="0" border="0"  ></td>
+		<td>
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;forumid=8"><b>Zone Information</b></a>
+		
+		<br />
+		<span class="smallfont">
+			
+			
+			
+		</span>
+		</td>
+	</tr></table>
+	</td>
+	<td class="alt2">1,612</td>
+	<td class="alt1">260</td>
+	<td class="alt2"><span class="smallfont">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td align="left">&nbsp;</td>
+		<td nowrap><span class="smallfont">
+			<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=newpost&threadid=25742" title="Go to first unread post in thread 'Veksar'"><b>Veksar</b></a><br />
+			07-15-2003
+			
+				<span class="time">12:58 AM</span>
+			
+			(<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;find=lastposter&forumid=8">nightop</a>)</span></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;goto=lastpost&threadid=25742"><img src="images/lastpost.gif" alt="lastpost.gif" title="Go to last post" border="0"  ></a></td>
+	</tr></table></span></td>
+	
+</tr>
+<tr>
+	<td class="tfoot" colspan="5" align="center">
+		<a href="forumdisplay.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;do=markread">Mark All Forums Read</a> | <a href="showgroups.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;">View Forum Leaders</a>
+	</td>
+</tr>
+</table>
+</td></tr></table>
+<!-- /main -->
+
+<br />
+
+
+<!-- what's going on box -->
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="2" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="tcat" colspan="2"><b>What's Going On?</b></td>
+</tr>
+
+<!-- logged-in users -->
+<tr>
+	<td class="thead" colspan="2">Currently Active Users: 63 (33 members and 30 guests)</td>
+</tr>
+<tr valign="top">
+	<td class="alt2"><a href="online.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;"><img src="images/icons/icon2.gif" alt="" title="(temporary button) View Who's Online" border="0" /></a></td>
+	<td class="alt1" width="100%"><span class="smallfont">
+		<span style="white-space: nowrap">Most users ever online was 462, 09-04-2002 at 09:18 PM.</span><br />
+		<a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=8512">A Lone Ranger</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=21837">Arborlon</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=17205">Bindamel</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=1496">Carnagh</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=21748">Catwalkk</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=23472">Cerivel</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=17530">Dangrim</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=14853">Deras Shadowbow</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=9203">Dividian</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=21346">Dranex Tical</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=24192">eepjr24</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=21089">Gladerunner</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=13209">Kedawen</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=8443">Kimexe Calmbow</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=11464">Lanandrin</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=21405">Naindrathil</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=18553">Natric</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=23040">Oddy</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=4886">Sharidann</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=18444">Snakeater</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=23246">StubbHS</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=15547">Sylnathorn</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=22433">thistlebea</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=17826">Tromor</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=16028">ueauvan</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=5722">Underbrush</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=19616">wend</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=23413">Wuddaan</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=13376">Xequecal</a>, <a href="member.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;userid=18162">Xyrauth</a>
+	</span></td>
+</tr>
+<!-- end logged-in users -->
+
+
+<!-- today's birthdays -->
+<tr>
+	<td class="thead" colspan="2">Today's Birthdays</td>
+</tr>
+<tr valign="top">
+	<td class="alt2"><a href="calendar.php?s=340d4a975d4fce2c406d0ea8e318b4c9&amp;do=getday&amp;day=2003-07-17"><img src="images/icons/icon2.gif" alt="" title="(temporary button) View Birthdays" border="0" /></a></td>
+	<td class="alt1"><span class="smallfont"> <a href="member.php?userid=22527">Rinnk</a> (49), <a href="member.php?userid=17330">Rotane Shagaminn</a> (34), <a href="member.php?userid=17114">Colphax</a> (34), <a href="member.php?userid=15215">Talistan</a> (31), <a href="member.php?userid=15196">Kromusla Tragonon</a> (31), <a href="member.php?userid=17749">Anuvil</a> (31), <a href="member.php?userid=6449">Stumpz</a> (30), <a href="member.php?userid=16105">Ayalina</a> (30), <a href="member.php?userid=15603">VeridianEntropy</a> (30), <a href="member.php?userid=21132">alaco2</a> (27), <a href="member.php?userid=17181">jontait</a> (26), <a href="member.php?userid=16943">Dalero</a> (24), <a href="member.php?userid=21638">Trost</a> (24), <a href="member.php?userid=18950">Acraea</a> (23), <a href="member.php?userid=21623">Aklos Tiklaar</a> (22)</span></td>
+</tr>
+<!-- end today's birthdays -->
+
+
+</table>
+</td></tr></table>
+<br />
+<!-- end what's going on box -->
+
+
+<!-- icons and login code -->
+<!--<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>-->
+<table cellpadding="2" cellspacing="1" border="0" width="100%">
+<tr valign="top">
+	<td class="_alt1">
+	
+	<table cellpadding="2" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/on.gif" alt="on.gif" title="Contains New Posts" border="0" /></td>
+		<td class="smallfont">&nbsp; Forum Contains New Posts</td>
+	</tr>
+	<tr>
+		<td><img src="images/off.gif" alt="off.gif" title="Contains No New Posts" border="0" /></td>
+		<td class="smallfont">&nbsp; Forum Contains No New Posts</td>
+	</tr>
+	<tr>
+		<td><img src="images/lock.gif" alt="lock.gif" title="A Closed Forum" border="0" /></td>
+		<td class="smallfont">&nbsp; Forum is Closed for Posting</td>
+	</tr>
+	</table>
+	
+	</td>
+	<td class="_alt1" align="right">
+		
+		<!-- guest login -->	
+		<table border="0" cellpadding="0" cellspacing="0">
+		<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+		<tr>
+			<td nowrap="nowrap" class="smallfont"><b>Not cookied?</b> Login with username and password:</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">
+			<script type="text/javascript" src="clientscript/md5.js"></script>
+			<input type="hidden" name="vb_login_md5password" />
+			<input type="hidden" name="s" value="340d4a975d4fce2c406d0ea8e318b4c9" />
+			<input type="hidden" name="do" value="login" />
+			<input type="text" class="bginput" name="vb_login_username" size="7" />
+			<input type="password" class="bginput" name="vb_login_password" size="7" />
+			<input type="submit" class="button" value="Login!" />
+			<br /><span class="smallfont"><input type="checkbox" name="cookieuser" value="1" checked="checked" /> Remember username/password?</span></td>
+		</tr>
+		</form>
+		</table>
+		<!-- end guest welcome and logout -->
+		
+	</td>
+</tr>
+</table>
+<!--</td></tr></table>-->
+<!-- / icons and login code -->
+
+<br />
+
+<!-- timezone -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td class="smallfont" align="right">All times are GMT +1 hour. The time now is <span class="time">01:01 PM</span>.</td>
+</tr>
+</table>
+<!-- /timezone -->
+
+</td>
+</tr>
+</table>
+
+<!-- /content area table -->
+
+
+
+<p align="center">
+
+  <b>< <a href="mailto:sunmoon@interealms.com">Contact Us</a> - <a href="http://forums.interealms.com/ranger">The Ranger's Glade</a> -  <a href="archive/index.php/">Archive</a>
+<!-- - <a href="">Privacy Statement</a> --> ></b><br />
+
+<span class="smallfont"><a href="#top">Return to Top</a></span></p>
+
+
+
+<p align="center"><span class="smallfont">
+
+<!-- Do not remove this copyright notice -->
+
+  Powered by: vBulletin Version 3.0.0 Beta 2<br />Copyright &copy;2000 - 2003, Jelsoft Enterprises Ltd.<br />
+
+<!-- Do not remove this copyright notice -->
+
+
+
+</span></p>
+</div>
+</form>
+</body>
+</html>

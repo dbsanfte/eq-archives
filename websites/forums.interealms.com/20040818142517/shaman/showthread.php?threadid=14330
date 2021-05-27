@@ -1,0 +1,3966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head><title>Interealms - The Shaman's Crucible - Parsing pet DPS with buffs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.0 Beta 2" />
+<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+<meta name="description" content="This is a discussion forum powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Interealms - The Shaman's Crucible vBulletin 3 Style' (styleid: 1) */
+body {
+	background: #666696;
+	color: #000000;
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+body a:link {
+	color: #000030;
+	text-decoration: underline;
+}
+body a:visited {
+	color: #000000;
+	text-decoration: underline;
+}
+body a:hover, body a:active {
+	color: #FF4400;
+	text-decoration: underline;
+}
+.page {
+	background: #FFFFFF;
+}
+.tborder {
+	background: #555576;
+}
+.tcat {
+	background: #606096;
+	color: #FFF788;
+	font-size: 10pt;
+}
+.tcat a:link {
+	color: #FFF788;
+	text-decoration: none;
+}
+.tcat a:visited {
+	color: #FFF788;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active {
+	color: #FFF788;
+	text-decoration: underline;
+}
+.thead {
+	background: #8080A6;
+	color: #EEEEFF;
+	font-size: 10px;
+	font-weight: bold;
+}
+.thead a:link {
+	color: #EEEEFF;
+}
+.thead a:visited {
+	color: #EEEEFF;
+}
+.thead a:hover, .thead a:active {
+	color: #EEEEFF;
+}
+.tfoot {
+	background: #8080A6;
+	color: #EEEEFF;
+}
+.tfoot a:link {
+	color: #EEEEFF;
+}
+.tfoot a:visited {
+	color: #EEEEFF;
+}
+.tfoot a:hover, .tfoot a:active {
+	color: #EEEEFF;
+}
+.alt1, .alt1Active {
+	background: #F1F1F1;
+}
+.alt2, .alt2Active {
+	background: #DFDFDF;
+}
+td, th, p, li {
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+textarea, .bginput {
+	background: #CFCFCF;
+	color: #000000;
+	font: 10pt verdana,arial,helvetica,sans-serif;
+}
+.button {
+	background: #CFCFCF;
+	color: #000000;
+	font: 11px verdana,arial,helvetica,sans-serif;
+}
+select {
+	background: #CFCFCF;
+	color: #000000;
+	font: 11px verdana,arial,helvetica,sans-serif;
+}
+.smallfont {
+	font: 10px verdana,verdana,arial,helvetica,sans-serif;
+}
+.time {
+	color: #666686;
+}
+.navbar {
+	font-weight: bold;
+}
+.highlight {
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel {
+	background: #8080A6;
+	color: #EEEEFF;
+}
+.fjdpth0 {
+	background: #F7F7F7;
+	color: #000000;
+}
+.fjdpth1 {
+	background: #EFEFEF;
+	color: #000000;
+}
+.fjdpth2 {
+	background: #E7E7E7;
+	color: #000000;
+}
+.fjdpth3 {
+	background: #DFDFDF;
+	color: #000000;
+}
+-->
+</style>
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=9086237e0b373bbfa7d272e8eab4e342&amp;";
+
+
+// -->
+</script>
+<script type="text/javascript" src="clientscript/generic.js"></script>
+<script type="text/javascript">
+<!--
+function reputation(postid)
+{
+	window.open("reputation.php?" + SESSIONURL + "postid=" + postid, "Reputation", "toolbar=no,scrollbars=yes,resizable=yes,width=400,height=300");
+}
+function changemode(mode, which)
+{
+	if (mode == "hybrid")
+	{
+		window.location = "showthread.php?" + SESSIONURL + "mode=hybrid&threadid=14330";
+		return false;
+	}
+	else if (which == "first")
+	{
+		window.location = "showthread.php?" + SESSIONURL + "postid=" + FIRSTPOSTID + "&mode=" + mode + "#post" + FIRSTPOSTID;
+		return false;
+	}
+	else if (which == "last")
+	{
+		window.location = "showthread.php?" + SESSIONURL + "postid=" + LASTPOSTID + "&mode=" + mode + "#post" + LASTPOSTID;
+		return false;
+	}
+}
+var FIRSTPOSTID = "157103";
+var LASTPOSTID = "205340";
+// -->
+</script>
+</head>
+<body>
+<!-- logo and buttons -->
+<a name="top"></a>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tr valign="top">
+	<td align="left"><a href="index.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/crucible2.gif" border="0" alt="Interealms - The Shaman's Crucible" /></a></td>
+	<td align="right" nowrap="nowrap" valign="top">
+	<a href="http://tracking.ige.com/a/148"><img src="http://forums.interealms.com/ranger/images/bnr_468_60_eq_2.gif" border="0" target="_blank"></a><br><br>
+	
+	<a href="register.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=signup"><img src="images/top_register.gif" alt="top_register.gif" title="Registration is free!" border="0" vspace="8" /></a>
+	<a href="calendar.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/top_calendar.gif" alt="top_calendar.gif" title="Calendar" border="0" vspace="8" /></a>
+	<a href="memberlist.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/top_members.gif" alt="top_members.gif" title="Find other members" border="0" vspace="8" /></a>
+	<a href="faq.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/top_faq.gif" alt="top_faq.gif" title="Frequently Asked Questions" border="0" vspace="8" /></a>
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/top_search.gif" alt="top_search.gif" title="Search" border="0" vspace="8" /></a>
+	<a href="index.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/top_home.gif" alt="top_home.gif" title="Home" border="0" vspace="8" /></a>
+	&nbsp; &nbsp;
+	
+	</td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table width="100%" cellpadding="10" cellspacing="0" border="0" align="center" class="page">
+<tr>
+  <td>
+
+<br />
+
+<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+<input type="hidden" name="s" value="9086237e0b373bbfa7d272e8eab4e342" />
+<input type="hidden" name="do" value="login" />
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr valign="middle">
+	<td class="alt2"><a href="index.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/vb_bullet.gif" alt="vb_bullet.gif" title="Interealms - The Shaman's Crucible: Powered by vBulletin version 3.0.0 Beta 2" border="0" /></a></td>
+	<td class="alt1" width="100%"><span class="navbar">
+		
+			<a href="index.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;">Interealms - The Shaman's Crucible</a> &gt;
+
+<a href="forumdisplay.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;forumid=7">Equipment</a>
+&gt;
+
+Parsing pet DPS with buffs
+
+				
+	</span></td>
+	
+		<td class="alt2" nowrap="nowrap"><span class="smallfont">
+			<script type="text/javascript" src="clientscript/md5.js"></script>
+			<input type="text" class="button" name="vb_login_username" size="10" accesskey="u" tabindex="1" />
+			<input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" />
+			<input type="hidden" name="vb_login_md5password" />
+			<input type="submit" class="button" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" tabindex="4" />
+			<br /><input type="checkbox" name="cookieuser" value="1" accesskey="c" tabindex="3" checked="checked" /> Remember username/password?
+		</span></td>
+	
+</tr>
+</table>
+</td></tr></table>
+</form>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<form action="search.php" method="post">
+<tr>
+	<td class="smallfont" align="right">		
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="14330" />
+		<b>Search this Thread:</b> <input type="text" class="bginput" style="font:11px tahoma" name="query" /><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  />		
+	</td>
+</tr>
+</form>
+</table>
+
+
+
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center" id="poststable"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="alt1" width="30%" align="left"><span class="smallfont">
+		<a href="newthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;forumid=7"><img src="images/newthread.gif" alt="newthread" title="Post a new thread in this forum" border="0" /></a>
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;noquote=1&amp;postid=157103"><img src="images/reply.gif" alt="reply" title="Post a reply to the first message on this page" border="0" /></a>
+		
+	</span></td>
+	<td class="alt1" width="40%" align="center"><span class="smallfont">
+		<a href="forumdisplay.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;forumid=7">Equipment</a><br />
+		<img src="images/prev.gif" alt="prev.gif" border="0" />
+		<a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;goto=nextoldest">Last Thread</a>
+		|
+		<a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;goto=nextnewest">Next Thread</a>
+		<img src="images/next.gif" alt="next.gif" border="0" />
+	</span></td>
+	<td class="alt2" width="10%"><span class="smallfont"><a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;mode=linear" onclick="changemode('linear', 'first'); return false;"><img src="images/mode_linear.gif" alt="" border="0" /></a> Linear</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;mode=hybrid" onclick="changemode('hybrid', 'first'); return false;"><img src="images/mode_hybrid.gif" alt="" border="0" /></a> Hybrid</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;mode=threaded" onclick="changemode('threaded', 'first'); return false;"><img src="images/mode_threaded.gif" alt="" border="0" /></a> Threaded</span></td>
+</tr>
+</table>
+</td></tr></table>
+
+
+<br />
+
+<a name="poststop"></a>
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center" id="poststable"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="tcat" colspan="2">
+	
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td> <b>Parsing pet DPS with buffs</b></td>
+		<td align="right" class="smallfont">&nbsp;</td>
+	</tr>
+	</table>
+	
+	</td>
+</tr>
+
+
+<tr title="Post 157103">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157103">&nbsp;</a> 06-14-2003, 08:28 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b>Parsing pet DPS with buffs</b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157103&postcount=1" target="new">1</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Nytmare</b>
+<span class="smallfont">
+	<br />
+	Oracle<br />
+		
+	
+	<br />
+	Joined: Sep 1999<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Used EQ Companion to parse doggy damage vs evil cliff golems today.<br />
+<br />
+61 True Spirit<br />
+level 58<br />
+hit max: 60, min: 14<br />
+kick max: 24, min: 13<br />
+bash max: 24, min: 13<br />
+<br />
+a cliff golem<br />
+level 58<br />
+30000 HP exactly<br />
+regen 1 hp/tick<br />
+<br />
+Pet Damage Per Second; Swings Per Second; average hit amount -- buffs<br />
+-----------------------------------------------------------------------<br />
+12.7 DPS; 0.65 SPS; 36.1 ave hit -- base unbuffed<br />
+22.9 DPS; 1.04 SPS; 37.9 ave hit -- SLTW<br />
+33.5 DPS; 1.59 SPS; 37.4 ave hit -- SLTW + dual wield (two rusty weapons)<br />
+38.0 DPS; 1.63 SPS; 40.8 ave hit -- SLTW + dual wield + Maniacal Str<br />
+37.3 DPS; 1.62 SPS; 41.2 ave hit -- SLTW + dual wield + Focus of Soul<br />
+42.9 DPS; 1.56 SPS; 47.4 ave hit -- SLTW + dual wield + Focus of Soul + Ferine Avatar<br />
+<br />
+Conclusions:<br />
+<br />
+SLTW = 1.60 haste (60%) as advertised<br />
+dual wield = essentially 1.54x haste<br />
+total haste = 2.46 (146%)<br />
+<br />
+STR or Focus increases the average hit amount significantly<br />
+So does Avatar<br />
+<br />
+Note: <strike>The average hit appears lower on the unhasted pet because kick and bash are independent of haste, so will occur relatively more often without it, thus their lower damage output will drag down the average hit amount.</strike> After inspecting the log file, I see kick and bash are hasted in proportion to bite (60%). So I don't know right now why the ave hit amount went up from unbuffed to haste buffed.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=377153" target="_blank">Mukkul Runumuk</a><br />
+65 Iksar Prophet<br />
+Torvonnilous</div>
+	
+		<div class="smallfont"><i>Last edited by Nytmare on 06-16-2003 at <span class="time">10:56 PM</span>. </i></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157103">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157103">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,337 <img src="images/reputationpos.gif" alt="Nytmare has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Nytmare has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Nytmare is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=1756" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Nytmare" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=1756"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Nytmare a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=1756"><img src="images/find.gif" alt="find.gif" title="Find more posts by Nytmare" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=1756"><img src="images/buddy.gif" alt="buddy.gif" title="Add Nytmare to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157103)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Nytmare's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157103"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157103"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157110">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157110">&nbsp;</a> 06-14-2003, 10:18 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157110&postcount=2" target="new">2</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Wolfen</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Feb 2000<br />
+	Location: Manchester, England
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Nytmare</b><br /><i>Used EQ Companion to parse doggy damage vs evil cliff golems today.</i><hr size="1" /></blockquote>Nice work, thanks. <img src="images/smilies/smile.gif" border="0" alt="" title="smile" smilieid="1" /></p>
+	
+	
+	
+		<div>__________________<br />Jherek SpiritReaver.<br />
+Shaman of the Tribunal.<br />
+Tarew Marr.</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157110">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157110">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 5 <img src="images/reputationpos.gif" alt="Wolfen " border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Wolfen is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=5979" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Wolfen" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=5979"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Wolfen a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=5979"><img src="images/find.gif" alt="find.gif" title="Find more posts by Wolfen" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=5979"><img src="images/buddy.gif" alt="buddy.gif" title="Add Wolfen to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157110)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Wolfen's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157110"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157110"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157317">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157317">&nbsp;</a> 06-15-2003, 05:55 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157317&postcount=3" target="new">3</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Irksome</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: May 2002<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>It would be cool to see the cumulative addition of Spirit Quickening, see if it's worth trying to keep that up as well.<br />
+<br />
+Great info as it stands, tho.  =)</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=148320">Irksome Annoyance</a><br />
+65 Barbarian Shaman<br />
+Forlorn<br />
+E'ci</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157317">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157317">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 141 <img src="images/reputationpos.gif" alt="Irksome is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Irksome is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=17643" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Irksome" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=17643"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Irksome a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=17643"><img src="images/find.gif" alt="find.gif" title="Find more posts by Irksome" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=17643"><img src="images/buddy.gif" alt="buddy.gif" title="Add Irksome to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157317)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Irksome's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157317"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157317"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157320">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157320">&nbsp;</a> 06-15-2003, 06:30 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157320&postcount=4" target="new">4</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>PennyAntics</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Nov 2002<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>very nice work... just curious... how large of a sample did you take for each of these?</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157320">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157320">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 684 <img src="images/reputationbalance.gif" alt="PennyAntics can only hope to improve" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="PennyAntics is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=19655" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for PennyAntics" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=19655"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send PennyAntics a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=19655"><img src="images/find.gif" alt="find.gif" title="Find more posts by PennyAntics" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=19655"><img src="images/buddy.gif" alt="buddy.gif" title="Add PennyAntics to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157320)"><img src="images/newannounce.gif" border="0" alt="" title="Add to PennyAntics's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157320"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157320"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157360">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157360">&nbsp;</a> 06-15-2003, 10:21 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157360&postcount=5" target="new">5</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Nytmare</b>
+<span class="smallfont">
+	<br />
+	Oracle<br />
+		
+	
+	<br />
+	Joined: Sep 1999<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>One full fight each, 100% damage from pet, 40 min for the lowest DPS, 11:40 for the highest. Not sure I want to bother with SQ.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=377153" target="_blank">Mukkul Runumuk</a><br />
+65 Iksar Prophet<br />
+Torvonnilous</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157360">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157360">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,337 <img src="images/reputationpos.gif" alt="Nytmare has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Nytmare has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Nytmare is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=1756" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Nytmare" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=1756"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Nytmare a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=1756"><img src="images/find.gif" alt="find.gif" title="Find more posts by Nytmare" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=1756"><img src="images/buddy.gif" alt="buddy.gif" title="Add Nytmare to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157360)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Nytmare's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157360"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157360"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157385">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157385">&nbsp;</a> 06-16-2003, 01:12 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157385&postcount=6" target="new">6</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>bigbadbowlindude</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: May 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>/nod it would be cool to see if there is a difference with spirit quickening, or maybe I should get my lazy self to figure it out myself.. <img src="images/smilies/smile.gif" border="0" alt="" title="smile" smilieid="1" /></p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157385">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157385">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 296 <img src="images/reputationpos.gif" alt="bigbadbowlindude is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/on.gif" alt="on.gif" title="bigbadbowlindude is online now" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=21975" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for bigbadbowlindude" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=21975"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send bigbadbowlindude a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=21975"><img src="images/find.gif" alt="find.gif" title="Find more posts by bigbadbowlindude" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=21975"><img src="images/buddy.gif" alt="buddy.gif" title="Add bigbadbowlindude to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157385)"><img src="images/newannounce.gif" border="0" alt="" title="Add to bigbadbowlindude's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157385"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157385"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157391">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157391">&nbsp;</a> 06-16-2003, 03:10 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157391&postcount=7" target="new">7</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Mardark</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Jan 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>If you get really bored, try and get some mage items and try it some more.</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157391">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157391">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 184 <img src="images/reputationpos.gif" alt="Mardark is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Mardark is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=20344" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Mardark" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=20344"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Mardark a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=20344"><img src="images/find.gif" alt="find.gif" title="Find more posts by Mardark" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=20344"><img src="images/buddy.gif" alt="buddy.gif" title="Add Mardark to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157391)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Mardark's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157391"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157391"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157407">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157407">&nbsp;</a> 06-16-2003, 05:44 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157407&postcount=8" target="new">8</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Ivloney</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Mar 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Hehe I am like Wow you killed that golem?!?</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=843061" target="_blank">Venerable Ivloney</a><br />
+65 Prophit of Druzzil Ro</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157407">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157407">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 166 <img src="images/reputationpos.gif" alt="Ivloney is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Ivloney is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=21302" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Ivloney" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=21302"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Ivloney a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=21302"><img src="images/find.gif" alt="find.gif" title="Find more posts by Ivloney" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=21302"><img src="images/buddy.gif" alt="buddy.gif" title="Add Ivloney to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157407)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Ivloney's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157407"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157407"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157448">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157448">&nbsp;</a> 06-16-2003, 11:10 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157448&postcount=9" target="new">9</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Grippa</b>
+<span class="smallfont">
+	<br />
+	Oracle<br />
+		
+	
+	<br />
+	Joined: Nov 2001<br />
+	Location: Grobb
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Does the haste component of Spirit Quickening stack with normal haste? If it doesn't, the only benefit from SQ would be another 30 Str.</p>
+	
+	
+	
+		<div>__________________<br />Venerable Grippa Grimjaw<br />
+Fat Green Oracle, Torv</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157448">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157448">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,193 <img src="images/reputationpos.gif" alt="Grippa is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Grippa is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=15863" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Grippa" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=15863"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Grippa a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=15863"><img src="images/find.gif" alt="find.gif" title="Find more posts by Grippa" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=15863"><img src="images/buddy.gif" alt="buddy.gif" title="Add Grippa to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157448)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Grippa's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157448"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157448"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157566">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157566">&nbsp;</a> 06-16-2003, 06:14 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157566&postcount=10" target="new">10</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Stolastorv</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Jan 2003<br />
+	Location: Grobb
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>I've never parsed the damage but its noticable with pet duel wielding. Nice parse ya got here, would be nice to see with pet weapons/spirit quickening etc.</p>
+	
+	
+	
+		<div>__________________<br />Baron Stolas Roddoson 65 Troll Prophet wit da pointy stick<br />
+<br />
+Veteran Roddo Manatheren 65 Human Forest Stalker<br />
+Dynamic Dou of Torvo<br />
+<br />
+If ya like what I wrote rep bump me please.</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157566">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157566">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 625 <img src="images/reputationpos.gif" alt="Stolastorv will become famous soon enough" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Stolastorv is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=20286" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Stolastorv" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=20286"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Stolastorv a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=20286"><img src="images/find.gif" alt="find.gif" title="Find more posts by Stolastorv" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=20286"><img src="images/buddy.gif" alt="buddy.gif" title="Add Stolastorv to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157566)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Stolastorv's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157566"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157566"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157704">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157704">&nbsp;</a> 06-17-2003, 12:25 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157704&postcount=11" target="new">11</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Villianna Skye</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Apr 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Thank you so much for taking the time to do this.  That was exactly what I was looking for.</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157704">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157704">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 8 <img src="images/reputationpos.gif" alt="Villianna Skye is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Villianna Skye is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=21763" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Villianna Skye" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=21763"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Villianna Skye a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=21763"><img src="images/find.gif" alt="find.gif" title="Find more posts by Villianna Skye" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=21763"><img src="images/buddy.gif" alt="buddy.gif" title="Add Villianna Skye to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157704)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Villianna Skye's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157704"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157704"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 157734">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post157734">&nbsp;</a> 06-17-2003, 02:44 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157734&postcount=12" target="new">12</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Edarb</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Aug 2002<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Villianna Skye</b><br /><i>Thank you so much for taking the time to do this.  That was exactly what I was looking for.</i><hr size="1" /></blockquote>That is an awesome study.  I have been away from the game for 2 months due to RL issues - Wife said pick me or EQ so EQ lost for the mean time.  I still check boards a little and this is some awesome research.<br />
+<br />
+WTG<br />
+<br />
+Ed</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=310494">Edarb Mac Ewan</a><Br>Barbarian Shaman<Br>Druzzil Ro</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=157734">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=157734">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 61 <img src="images/reputationpos.gif" alt="Edarb is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Edarb is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=18461" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Edarb" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=18461"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Edarb a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=18461"><img src="images/find.gif" alt="find.gif" title="Find more posts by Edarb" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=18461"><img src="images/buddy.gif" alt="buddy.gif" title="Add Edarb to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(157734)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Edarb's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=157734"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=157734"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 158718">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post158718">&nbsp;</a> 06-19-2003, 10:12 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=158718&postcount=13" target="new">13</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>GotSandDunes</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Oct 2001<br />
+	Location: Scottsdale, AZ
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Edarb Everbuzz</b><br /><i>Wife said pick me or EQ so EQ lost for the mean time.</i><hr size="1" /></blockquote>smart choice.... see .. shamans are smart!<br />
+<br />
+As for the duel wield.. which leads to the next DPS area.. procs and proc rates..... Time to bust out the loggers!</p>
+	
+	
+	
+		<div>__________________<br /><div align="center">Gheff "<i>offending one woman at a time</i>" Gutterbrains<br />
+65 Elder Prophet on Veeshan</div></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=158718">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=158718">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 40 <img src="images/reputationpos.gif" alt="GotSandDunes " border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="GotSandDunes is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=15629" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for GotSandDunes" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=15629"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send GotSandDunes a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=15629"><img src="images/find.gif" alt="find.gif" title="Find more posts by GotSandDunes" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=15629"><img src="images/buddy.gif" alt="buddy.gif" title="Add GotSandDunes to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(158718)"><img src="images/newannounce.gif" border="0" alt="" title="Add to GotSandDunes's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=158718"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=158718"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 158721">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post158721">&nbsp;</a> 06-19-2003, 10:31 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td width="20"><img src="images/icons/icon6.gif" alt="" title="Cool" border="0" /></td>
+		<td class="smallfont"><b>thanks!</b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=158721&postcount=14" target="new">14</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Frekkels</b>
+<span class="smallfont">
+	<br />
+	Hail!<br />
+		
+	
+	<br />
+	Joined: Apr 2001<br />
+	Location: Connecticut
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Hail,<br />
+<br />
+Excellent post.  Thanks very much for sharing.<br />
+<br />
+If you do another run, can you include one where you throw Strength of the Daiku on top of Focus of Soul , SLTW, and Ferine Avatar please?<br />
+<br />
+I'd also be interested (as others have replied) in seeing what effect Mage summoned pet weapons have on DPS, and what the final DPS # would be with the Mage pet haste mask equipped has on dogdog as well.<br />
+<br />
+Spirit Quickening doesn't personally interest me, as I'm not going to be bothered to recast it every 11 minutes or so (w/ 70% buff extension) even if it does have a slight bonus.  FA is bad enough in that regard.<br />
+<br />
+Thanks again,</p>
+	
+	
+	
+		<div>__________________<br /><select name=Frekkels><br />
+<option>Frekkels of E. Marr<br />
+<option>Barbarian Elder Prophet  (65)<br />
+</select><br />
+<img><br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=642761" target="_blank">My stuff</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=158721">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=158721">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 1,215 <img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Frekkels is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=14182" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Frekkels" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=14182"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Frekkels a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=14182"><img src="images/find.gif" alt="find.gif" title="Find more posts by Frekkels" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=14182"><img src="images/buddy.gif" alt="buddy.gif" title="Add Frekkels to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(158721)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Frekkels's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=158721"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=158721"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 161185">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post161185">&nbsp;</a> 07-03-2003, 01:41 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=161185&postcount=15" target="new">15</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Bedalin</b>
+<span class="smallfont">
+	<br />
+	Initiate<br />
+		
+	
+	<br />
+	Joined: Mar 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>i parsed my doggy(lvl 55 one) with 50% haste then with 50% haste + spirit quickening<br />
+<br />
+the result is that spirit quickening haste is NOT stacking<br />
+<br />
+the haste DOES NOT stack like the burnout series of spell(see lucy, section stacking and u'll see spirit quickening is like a burnout)<br />
+<br />
+the only benefict is the 30str</p>
+	
+	
+	
+		<div>__________________<br /><a href=http://www.magelo.com/eq_view_profile.html?num=119324>Chypie</a> and <a href=http://www.magelo.com/eq_view_profile.html?num=526512>Eléa</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=161185">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=161185">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 32 <img src="images/reputationpos.gif" alt="Bedalin is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Bedalin is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=21314" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Bedalin" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=21314"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Bedalin a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=21314"><img src="images/find.gif" alt="find.gif" title="Find more posts by Bedalin" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=21314"><img src="images/buddy.gif" alt="buddy.gif" title="Add Bedalin to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(161185)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Bedalin's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=161185"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=161185"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 166274">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post166274">&nbsp;</a> 07-24-2003, 07:40 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166274&postcount=16" target="new">16</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Caanus Grey</b>
+<span class="smallfont">
+	<br />
+	Dying differently everyday<br />
+		
+	
+	<br />
+	Joined: Jun 2002<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Just for those of you who haven't thought of it yourselves yet.  When you equip the pet with proc gear and don't plan on it tanking for you, don't use Focus of Sprit.<br />
+<br />
+  Mortal Deftness + Strength of Daiku + Infusion of Spirit + Ferine Avatar = massive proc machine<br />
+<br />
+  I normally don't bother with adding in Spirit quickening, but I think it has more dex.</p>
+	
+	
+	
+		<div>__________________<br /><a target=\"_blank\" href=http://www.magelo.com/eq_view_profile.html?num=83158>Caanus Grey</a><BR/><br />
+Barbarian Prophet</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166274">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=166274">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 900 <img src="images/reputationpos.gif" alt="Caanus Grey has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Caanus Grey has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Caanus Grey has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/on.gif" alt="on.gif" title="Caanus Grey is online now" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=17889" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Caanus Grey" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=17889"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Caanus Grey a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=17889"><img src="images/find.gif" alt="find.gif" title="Find more posts by Caanus Grey" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=17889"><img src="images/buddy.gif" alt="buddy.gif" title="Add Caanus Grey to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(166274)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Caanus Grey's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=166274"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=166274"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 166344">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post166344">&nbsp;</a> 07-25-2003, 12:07 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166344&postcount=17" target="new">17</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Jaruden</b>
+<span class="smallfont">
+	<br />
+	Iksar &gt; All~<br />
+		
+	
+	<br />
+	Joined: Nov 1999<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" /><br />
+Mortal Deftness + Strength of Daiku + Infusion of Spirit + Ferine Avatar = massive proc machine<br />
+<hr size="1" /></blockquote>How do pet stats work?  Are they capped?  Where do they start?  Otherwise, that setup is going to give 140 + 60(ish) for just FA and deftness (replace with fosoul as needed).  That's +200 dex, which has to put the dog at 255+ dex.  The other 2 just don't seem like they'd add that much, unless pets have no cap and there's an actual noticeable benefit over 255.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=604731" target="_blank">Cakaris</a><br />
+Prophet of Cabilis<br />
+Wielder of the Ancients [The Nameless]<br />
+<br />
+Jaruden<br />
+Retired Barbarian Shaman [Cazic-Thule]</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166344">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=166344">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,662 <img src="images/reputationpos.gif" alt="Jaruden has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Jaruden has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Jaruden is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=3402" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Jaruden" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=3402"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Jaruden a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=3402"><img src="images/find.gif" alt="find.gif" title="Find more posts by Jaruden" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=3402"><img src="images/buddy.gif" alt="buddy.gif" title="Add Jaruden to your buddy list" border="0" /></a>
+		
+<a href="http://wwp.icq.com/21097868#pager" target="_blank"><img src="http://wwp.icq.com/scripts/online.dll?icq=21097868&img=5" alt="ICQ Status" title="Jaruden's ICQ status" border="0" /></a>
+<a href="http://wwp.icq.com/scripts/search.dll?to=21097868"><img src="images/uinadd.gif" alt="ICQ Add" title="Add Jaruden to your ICQ contact list" border="0" /></a>
+<a href="#" onclick="return aimwindow('Jaruden')"><img src="images/aim_icon.gif" alt="aim_icon.gif" title="Send an AIM message to Jaruden" border="0" /></a>
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(166344)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Jaruden's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=166344"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=166344"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 166503">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post166503">&nbsp;</a> 07-25-2003, 04:09 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166503&postcount=18" target="new">18</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Radag</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Jun 2001<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Nytmare</b><br /><i><br />
+33.5 DPS; 1.59 SPS; 37.4 ave hit -- SLTW + dual wield (two rusty weapons)<br />
+38.0 DPS; 1.63 SPS; 40.8 ave hit -- SLTW + dual wield + Maniacal Str<br />
+37.3 DPS; 1.62 SPS; 41.2 ave hit -- SLTW + dual wield + Focus of Soul<br />
+42.9 DPS; 1.56 SPS; 47.4 ave hit -- SLTW + dual wield + Focus of Soul + Ferine Avatar<br />
+</i><hr size="1" /></blockquote>Maniacal Str adds 4.5 DPS for  8640 sec / 150 mana =   259.2 dam / mana<br />
+Focus of the Soul  3.8 DPS for 4800 sec / 600 mana = 30.4 dam / mana<br />
+Ferine Avatar 5.6 DPS for 390 sec / 350 mana = 6.24 dam / mana<br />
+<br />
+Clearly, this is assuming base spell duration and mana expenditure and constant combat.  Ferine Avatar has a mana efficiency that is comparable to BoU and I normally consider it as such.  I also use Focus of Soul over Maniacal Str for the added HP on the pet but after reviewing this I might not do that after a spawn is broken and FoS needs refreshing.</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166503">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=166503">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 646 <img src="images/reputationbalance.gif" alt="Radag has a little shameless behaviour in the past" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Radag is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=14610" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Radag" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=14610"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Radag a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=14610"><img src="images/find.gif" alt="find.gif" title="Find more posts by Radag" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=14610"><img src="images/buddy.gif" alt="buddy.gif" title="Add Radag to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(166503)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Radag's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=166503"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=166503"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 166535">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post166535">&nbsp;</a> 07-25-2003, 05:38 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166535&postcount=19" target="new">19</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>weissblau</b>
+<span class="smallfont">
+	<br />
+	Heyokah<br />
+		
+	
+	<br />
+	Joined: May 2001<br />
+	Location: Halas
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>I usually use SLTW + Focus of Soul + Strength of Diaku + Primal Essence if I go all out on pet buffage.  Lasts much longer than Primal Avatar, and I don't have Ferine yet.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=529003">Twoflower Tourist</a> - <a href="http://www.unionofpower.org">Union of Power</a><br />
+65 Prophet<br />
+   ... finally<br />
+Rodcet Nife</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=166535">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=166535">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,798 <img src="images/reputationpos.gif" alt="weissblau is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="weissblau is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="weissblau is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="weissblau is just really nice" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="weissblau is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=14521" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for weissblau" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=14521"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send weissblau a Private Message" border="0" /></a>
+
+
+
+	<a href="http://www.unionofpower.org" target="_blank"><img src="images/home.gif" alt="home.gif" title="Visit weissblau's homepage!"  border="0" /></a>
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=14521"><img src="images/find.gif" alt="find.gif" title="Find more posts by weissblau" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=14521"><img src="images/buddy.gif" alt="buddy.gif" title="Add weissblau to your buddy list" border="0" /></a>
+		
+
+<a href="#" onclick="return aimwindow('TwoflowerTourist')"><img src="images/aim_icon.gif" alt="aim_icon.gif" title="Send an AIM message to weissblau" border="0" /></a>
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(166535)"><img src="images/newannounce.gif" border="0" alt="" title="Add to weissblau's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=166535"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=166535"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 167020">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post167020">&nbsp;</a> 07-28-2003, 01:56 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167020&postcount=20" target="new">20</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Ruatonim</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: May 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>the nice thing about your logs is it shows some buffs do help pet...However, your sample size might be too small and thats why average hit went up between one sample and another (the haste only one as you mention).  I'll agree that haste helps dps and definitely dual wielding, but the other buffs i just dont totally agree it could just be error due to the sample size, and i'm NOT saying they definitely dont help but the other buffs might have no effect whatsoever and the varience is simple chance error here....especially because we all know how "random" the RNG is in eq................</p>
+	
+	
+	
+		<div>__________________<br />(Cancelled my account--March 2004)<br />
+[Ryan "The Spell Guy"] said that slow was a huge effect, even if it only lasted the last 10 seconds of a 30 second fight.<br />
+But [shaman] are so good in long fights! It wouldnt be balanced to increase their short battle strength.</div>
+	
+		<div class="smallfont"><i>Last edited by Ruatonim on 07-28-2003 at <span class="time">01:59 AM</span>. </i></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167020">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=167020">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 741 <img src="images/reputationpos.gif" alt="Ruatonim is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Ruatonim is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=22214" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Ruatonim" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=22214"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Ruatonim a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=22214"><img src="images/find.gif" alt="find.gif" title="Find more posts by Ruatonim" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=22214"><img src="images/buddy.gif" alt="buddy.gif" title="Add Ruatonim to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(167020)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Ruatonim's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=167020"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=167020"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 167042">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post167042">&nbsp;</a> 07-28-2003, 04:49 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167042&postcount=21" target="new">21</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Nytmare</b>
+<span class="smallfont">
+	<br />
+	Oracle<br />
+		
+	
+	<br />
+	Joined: Sep 1999<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>I would put the margin of error at +/- 1 or 2 DPS (i.e. less than 2 DPS difference, don't worry about it). I have a lot of other samples I haven't posted yet, and the numbers are fairly consistent.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=377153" target="_blank">Mukkul Runumuk</a><br />
+65 Iksar Prophet<br />
+Torvonnilous</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167042">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=167042">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,337 <img src="images/reputationpos.gif" alt="Nytmare has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Nytmare has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Nytmare is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=1756" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Nytmare" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=1756"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Nytmare a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=1756"><img src="images/find.gif" alt="find.gif" title="Find more posts by Nytmare" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=1756"><img src="images/buddy.gif" alt="buddy.gif" title="Add Nytmare to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(167042)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Nytmare's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=167042"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=167042"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 167120">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post167120">&nbsp;</a> 07-28-2003, 01:45 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167120&postcount=22" target="new">22</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Agrik Umbathri</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Jul 2003<br />
+	Location: Califa
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>um..  FoSoul adds 75 str   manical adds 68 str...  the only way manical could be adding more dps to your pet is from random numbers... ei. that 1-2% margin of error factor.<br />
+Beside FoS adds HP.. which I know I use esspecially when soloing...  uberr mobs hit hard unslowd.. I usually  Malo, /pet attack, slow.   dogdog is a nice delay.<br />
+<br />
+moral of the story?  yes pet weps are worth lugging around, and toss on avatar if you have it up (you had avatar up while soloing, just for pet?  ewww)<br />
+<br />
+<br />
+<br />
+--Agrik Umabthri<br />
+Elder iksar Phrophet of Vis Veres, Tribunal</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167120">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=167120">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 1 <img src="images/reputationpos.gif" alt="Agrik Umbathri is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Agrik Umbathri is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=22879" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Agrik Umbathri" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=22879"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Agrik Umbathri a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=22879"><img src="images/find.gif" alt="find.gif" title="Find more posts by Agrik Umbathri" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=22879"><img src="images/buddy.gif" alt="buddy.gif" title="Add Agrik Umbathri to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(167120)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Agrik Umbathri's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=167120"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=167120"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 167179">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post167179">&nbsp;</a> 07-28-2003, 04:57 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167179&postcount=23" target="new">23</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>shamuofxev</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Jan 2002<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>hmm, I think the mana/dps calculation is flawed.  Assuming that the pet's str is capped, FA alone might have the same effect as FoS/FA combined (capped str and ATK buff for more hits).  <br />
+I usually keep FA on my pet as a timer (knowing that I have to restart the FA on pet, and group members whenever it pops again).  I rarely focus my pet since I got fo7, but when I do I don't realy see a difference in dps.</p>
+	
+	
+	
+		<div>__________________<br />Shamu Whitewale<br />
+Elder, Xev<br />
+<img src="http://mywebpages.comcast.net/jgosau/jan65sig.GIF" border="0" alt=""><br />
+There are only seven gods, and <a href="http://www.magelo.com/eq_view_profile.html?num=260848" target="_blank"><br />
+Shamu</a> is their prophet</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167179">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=167179">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 619 <img src="images/reputationpos.gif" alt="shamuofxev is on a distinguished road" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="shamuofxev is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=16238" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for shamuofxev" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=16238"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send shamuofxev a Private Message" border="0" /></a>
+
+
+
+	<a href="http://mywebpages.comcast.net/jgosau/Shamu.htm" target="_blank"><img src="images/home.gif" alt="home.gif" title="Visit shamuofxev's homepage!"  border="0" /></a>
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=16238"><img src="images/find.gif" alt="find.gif" title="Find more posts by shamuofxev" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=16238"><img src="images/buddy.gif" alt="buddy.gif" title="Add shamuofxev to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(167179)"><img src="images/newannounce.gif" border="0" alt="" title="Add to shamuofxev's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=167179"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=167179"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 167312">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post167312">&nbsp;</a> 07-28-2003, 10:51 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167312&postcount=24" target="new">24</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Warador</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: Aug 2000<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>NPCs don't follow the same rules as PCs, you all should know this by now.</p>
+	
+	
+	
+		<div>__________________<br />Loid Kristmas<br />
+Barbarian Shaman<br />
+Sullon Zek<br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=660045" target="_blank">My Crappy Gear</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=167312">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=167312">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 557 <img src="images/reputationbalance.gif" alt="Warador can only hope to improve" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Warador is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=11046" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Warador" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=11046"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Warador a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=11046"><img src="images/find.gif" alt="find.gif" title="Find more posts by Warador" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=11046"><img src="images/buddy.gif" alt="buddy.gif" title="Add Warador to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(167312)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Warador's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=167312"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=167312"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 183818">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post183818">&nbsp;</a> 09-25-2003, 06:22 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b>Maniacal Strength stacks with Focus of Spirit</b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=183818&postcount=25" target="new">25</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Kajer</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Apr 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>if you're worried about Maniacal Strength Vs. Focus of Soul you can always just use Focus of Spirit instead and cast Maniacal Strength first. When you cast Maniacal Strength before Focus of Spirit (not Soul) they stack but not the other way around. If pets strength has no cap then this should help raise his attack and the loss off hp is minor between fospirit and fosoul, atleast on your pet.</p>
+	
+	
+	
+	
+		<div class="smallfont"><i>Last edited by Kajer on 09-26-2003 at <span class="time">06:28 PM</span>. </i></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=183818">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=183818">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 21 <img src="images/reputationpos.gif" alt="Kajer is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Kajer is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=21425" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Kajer" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=21425"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Kajer a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=21425"><img src="images/find.gif" alt="find.gif" title="Find more posts by Kajer" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=21425"><img src="images/buddy.gif" alt="buddy.gif" title="Add Kajer to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(183818)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Kajer's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=183818"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=183818"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 183927">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post183927">&nbsp;</a> 09-25-2003, 11:48 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=183927&postcount=26" target="new">26</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Ruatonim</b>
+<span class="smallfont">
+	<br />
+	Mystic<br />
+		
+	
+	<br />
+	Joined: May 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>since this thread was resurrected today...<br />
+<br />
+1-2 DPS error is an ~8-10% margin..quite substantial IMO<br />
+<br />
+and using the worst case (2 DPS error) from your samples the following happens:<br />
+(all dual wielding)<br />
+just haste: 35 DPS<br />
+SLTW+ maniacal str: 36 DPS<br />
+SLTW+ FoSoul: 35.3 DPS<br />
+SLTW+ FOSoul+Ferine avatar: 40.9 DPS<br />
+<br />
+which is believable to me since avatar increases attack and would increase average hit.  I still think the data itself is just too small; especially if your error % was so high.<br />
+<br />
+The other thing that was bugging me was your min hit you list as 14..IMO a miss is a hit for 0 and should be reported as such.</p>
+	
+	
+	
+		<div>__________________<br />(Cancelled my account--March 2004)<br />
+[Ryan "The Spell Guy"] said that slow was a huge effect, even if it only lasted the last 10 seconds of a 30 second fight.<br />
+But [shaman] are so good in long fights! It wouldnt be balanced to increase their short battle strength.</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=183927">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=183927">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 741 <img src="images/reputationpos.gif" alt="Ruatonim is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Ruatonim is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=22214" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Ruatonim" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=22214"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Ruatonim a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=22214"><img src="images/find.gif" alt="find.gif" title="Find more posts by Ruatonim" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=22214"><img src="images/buddy.gif" alt="buddy.gif" title="Add Ruatonim to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(183927)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Ruatonim's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=183927"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=183927"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 184169">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post184169">&nbsp;</a> 09-26-2003, 06:19 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=184169&postcount=27" target="new">27</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Shandy Orcbane</b>
+<span class="smallfont">
+	<br />
+	Easily Amused<br />
+		
+	
+	<br />
+	Joined: Mar 2002<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Technically, you're half right.  A miss is either a clean miss (including blocks, parries, etc) or a hit that mitigates to 0, which is reported to the client as a "miss."  Uncertain how the mitigated-to-zero "hits" can be separated from the "misses," so listing a minimum hit seems appropriate.<br />
+<br />
+Just not super useful, other than to see if a high-damage 1H weap changes base damage much.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=478045"><img src="http://www.users.qwest.net/~taleisin/sigs/ShanEQsig.jpg" width="470" height="96" border="0"></a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=184169">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=184169">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,409 <img src="images/reputationpos.gif" alt="Shandy Orcbane has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Shandy Orcbane has a spectacular aura about" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Shandy Orcbane has a spectacular aura about" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Shandy Orcbane is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=17128" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Shandy Orcbane" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=17128"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Shandy Orcbane a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=17128"><img src="images/find.gif" alt="find.gif" title="Find more posts by Shandy Orcbane" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=17128"><img src="images/buddy.gif" alt="buddy.gif" title="Add Shandy Orcbane to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(184169)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Shandy Orcbane's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=184169"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=184169"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 187142">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post187142">&nbsp;</a> 10-09-2003, 08:38 AM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=187142&postcount=28" target="new">28</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Naffy</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Mar 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>i had planned on doing a detailed parsing of this myself, but good job.<br />
+<br />
+I do have a couple questions however<br />
+1) was the dog on the front or back? dodge, block, riposte obviously effect dps<br />
+2) was the dog tanking said cliff golem? pretty much the same, and getting stunned would obviously lower dps, and they would have added riposte damage (assuming they riposte?)</p>
+	
+	
+	
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=187142">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=187142">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 6 <img src="images/reputationpos.gif" alt="Naffy is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Naffy is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=21374" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Naffy" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=21374"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Naffy a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=21374"><img src="images/find.gif" alt="find.gif" title="Find more posts by Naffy" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=21374"><img src="images/buddy.gif" alt="buddy.gif" title="Add Naffy to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(187142)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Naffy's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=187142"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=187142"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 203698">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post203698">&nbsp;</a> 12-09-2003, 01:26 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b>Use Kraggs</b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=203698&postcount=29" target="new">29</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Benedorf</b>
+<span class="smallfont">
+	<br />
+	Lurker<br />
+		
+	
+	<br />
+	Joined: Oct 2003<br />
+	
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Caanus Grey</b><br /><i>Just for those of you who haven't thought of it yourselves yet.  When you equip the pet with proc gear and don't plan on it tanking for you, don't use Focus of Sprit.<br />
+<br />
+  Mortal Deftness + Strength of Daiku + Infusion of Spirit + Ferine Avatar = massive proc machine<br />
+<br />
+  I normally don't bother with adding in Spirit quickening, but I think it has more dex.</i><hr size="1" /></blockquote>I use FOS, Daiku, SLTW, SQ, Anc Guard, Wrulan, and FA<br />
+<br />
+I've have alternated to IOS/Kraggs and then stacking Mani Str and Moral Deftness in addition to Daiku but note no gain in PROCING with Mage toys and the recast requirements outweigh a small PROC gain.<br />
+<br />
+I've also been know to 2 box with my Druid and keep skin and DS up on pet, Tanking a bit with shammie and using druid for heals other than Q Healing.<br />
+<br />
+Benedorf - 65th Season Shaman on Tribunal</p>
+	
+	
+	
+	
+		<div class="smallfont"><i>Last edited by Benedorf on 12-09-2003 at <span class="time">01:28 PM</span>. </i></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=203698">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=203698">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 15 <img src="images/reputationpos.gif" alt="Benedorf is an unknown quantity at this point" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Benedorf is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=23854" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Benedorf" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=23854"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Benedorf a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=23854"><img src="images/find.gif" alt="find.gif" title="Find more posts by Benedorf" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=23854"><img src="images/buddy.gif" alt="buddy.gif" title="Add Benedorf to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(203698)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Benedorf's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=203698"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=203698"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 205201">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post205201">&nbsp;</a> 12-15-2003, 12:13 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=205201&postcount=30" target="new">30</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Hyperd</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Aug 2003<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p>Were in hate yesterday. Duoed with mage with son of Rathe. Full mage kit on both pets. Burnout on mage pet, celerity on my pet. DEX + IOS on mine. <br />
+<br />
+My pet outtaunted the earth pet easily, which was quite annoying since his pet was supposed to be the tank <img src="images/smilies/smile.gif" border="0" alt="" title="smile" smilieid="1" /><br />
+<br />
+Dex+ios (and avatar if you got it, I havnt) will lead to an awesome/awful proccing machine.</p>
+	
+	
+	
+		<div>__________________<br />Regards,<br />
+Aere, Regent Troll<br />
+<br />
+"Races are not that out of homes" -Evil frog</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=205201">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=205201">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 194 <img src="images/reputationbalance.gif" alt="Hyperd has a little shameless behaviour in the past" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Hyperd is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=23156" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Hyperd" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=23156"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Hyperd a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=23156"><img src="images/find.gif" alt="find.gif" title="Find more posts by Hyperd" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=23156"><img src="images/buddy.gif" alt="buddy.gif" title="Add Hyperd to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(205201)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Hyperd's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=205201"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=205201"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 205241">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post205241">&nbsp;</a> 12-15-2003, 03:28 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=205241&postcount=31" target="new">31</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" width="175" align="center" valign="top" nowrap="nowrap"><b>Frekkels</b>
+<span class="smallfont">
+	<br />
+	Hail!<br />
+		
+	
+	<br />
+	Joined: Apr 2001<br />
+	Location: Connecticut
+</span></td>
+	
+	<td class="alt1" valign="top">
+	
+	<!-- message -->
+	<p>Hail,<blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Hyperd</b><br /><i>Were in hate yesterday. Duoed with mage with son of Rathe. Full mage kit on both pets. Burnout on mage pet, celerity on my pet. DEX + IOS on mine. <br />
+<br />
+My pet outtaunted the earth pet easily, which was quite annoying since his pet was supposed to be the tank <img src="images/smilies/smile.gif" border="0" alt="" title="smile" smilieid="1" /><br />
+<br />
+Dex+ios (and avatar if you got it, I havnt) will lead to an awesome/awful proccing machine.</i><hr size="1" /></blockquote>Were you rooting the mobs?  If so, dogdog will almost always have aggro because he attacks with his teeth (even w/ weapons equipped) as the focal point of his physical attacks.  That puts him in closer proximity to the mob and of course rooted mobs attack whoever is closest to them.  This can be clearly demonstrated in Tactics with a charmed Frenzied Initiate (who flurries and can do some NASTY DPS w/ mage toys) compared to 20-30dps dogdog w/ no weapons and taunt off and dogdog will still take aggro frequently.  Rather annoying. <img src="images/smilies/rolleyes.gif" border="0" alt="" title="roll eyes (sarcastic)" smilieid="8" /> <br />
+I can't wait until we can shrink dogdog again, which seemed to help with this.<br />
+<br />
+Oh, and next time give the mage pet buffs too! <img src="images/smilies/biggrin.gif" border="0" alt="" title="big grin" smilieid="4" /><br />
+Take care,</p>
+	
+	
+	
+		<div>__________________<br /><select name=Frekkels><br />
+<option>Frekkels of E. Marr<br />
+<option>Barbarian Elder Prophet  (65)<br />
+</select><br />
+<img><br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=642761" target="_blank">My stuff</a></div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=205241">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=205241">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt1" align="center"><span class="smallfont">Posts: 1,215 <img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /><img src="images/reputationpos.gif" alt="Frekkels is just really nice" border="0" align="middle" /></span></td>
+	<td class="alt1">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Frekkels is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=14182" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Frekkels" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=14182"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Frekkels a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=14182"><img src="images/find.gif" alt="find.gif" title="Find more posts by Frekkels" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=14182"><img src="images/buddy.gif" alt="buddy.gif" title="Add Frekkels to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(205241)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Frekkels's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=205241"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=205241"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr><tr title="Post 205340">
+	<td class="thead" width="175" align="center">
+	
+	<!-- 1 -->
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/posticon.gif" alt="folder icon" title="Old Post" border="0" /></td>
+		<td class="smallfont"><a name="post205340">&nbsp;</a> 12-15-2003, 07:30 PM </td>
+	</tr>
+	</table>
+	<!-- /1 -->
+	
+	</td>
+	<td class="thead">
+	
+	<!-- 2 -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		
+		<td class="smallfont"><b></b></td>
+		<td class="smallfont" align="right" wrap="nowrap">Post #<b><a href="showpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=205340&postcount=32" target="new">32</a></b></td>
+	</tr>
+	</table>
+	<!-- /2 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" width="175" align="center" valign="top" nowrap="nowrap"><b>Barliman</b>
+<span class="smallfont">
+	<br />
+	Disciple<br />
+		
+	
+	<br />
+	Joined: Mar 2002<br />
+	
+</span></td>
+	
+	<td class="alt2" valign="top">
+	
+	<!-- message -->
+	<p><blockquote><span class="smallfont">Quote:</span><hr size="1" />Originally Posted by <b>Frekkels</b><br /><i>Hail,<br />
+Were you rooting the mobs?  If so, dogdog will almost always have aggro because he attacks with his teeth (even w/ weapons equipped) as the focal point of his physical attacks.  That puts him in closer proximity to the mob and of course rooted mobs attack whoever is closest to them.  This can be clearly demonstrated in Tactics with a charmed Frenzied Initiate (who flurries and can do some NASTY DPS w/ mage toys) compared to 20-30dps dogdog w/ no weapons and taunt off and dogdog will still take aggro frequently.  Rather annoying. <img src="images/smilies/rolleyes.gif" border="0" alt="" title="roll eyes (sarcastic)" smilieid="8" /> <br />
+I can't wait until we can shrink dogdog again, which seemed to help with this.<br />
+<br />
+Oh, and next time give the mage pet buffs too! <img src="images/smilies/biggrin.gif" border="0" alt="" title="big grin" smilieid="4" /><br />
+Take care,</i><hr size="1" /></blockquote>Since it was an earth pet the mage was using it was definitely rooted since thats what the earth pet does.  Like Frekkels said our pets get much closer to the mobs than most other classes' pets.  As far as the charmed pets even if they are out taunting a PC the mob will attack the PC and the same seems to hold true for an actual pet.</p>
+	
+	
+	
+		<div>__________________<br /><a href="http://www.magelo.com/eq_view_profile.html?num=165145" target="_blank"> <br />
+Elder Barliman Butterbur<br />
+</a>65th Barbarian Prophet<br />
+The Seventh Hammer</div>
+	
+	
+		<div class="smallfont"><a href="report.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;postid=205340">Report Post</a> | IP: <a href="postings.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=getip&postid=205340">Logged</a></div>
+	
+	<!-- / message -->
+		
+	</td>
+</tr>
+<tr>
+	<td class="alt2" align="center"><span class="smallfont">Posts: 210 <img src="images/reputationpos.gif" alt="Barliman will become famous soon enough" border="0" align="middle" /></span></td>
+	<td class="alt2">
+	
+	<!-- 3 -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="bottom">
+		<td><span class="smallfont">
+		
+<img src="images/off.gif" alt="off.gif" title="Barliman is offline" border="0" />
+		
+
+	<a href="member.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;userid=16835" target="_blank"><img src="images/profile.gif" alt="profile.gif" title="Click Here to See the Profile for Barliman" border="0" /></a>
+
+
+	<a href="private.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newpm&amp;userid=16835"><img src="images/sendpm.gif" alt="sendpm.gif" title="Click here to Send Barliman a Private Message" border="0" /></a>
+
+
+
+
+	<a href="search.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=finduser&amp;userid=16835"><img src="images/find.gif" alt="find.gif" title="Find more posts by Barliman" border="0" /></a>
+
+
+	<a href="profile.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=addlist&amp;userlist=buddy&amp;userid=16835"><img src="images/buddy.gif" alt="buddy.gif" title="Add Barliman to your buddy list" border="0" /></a>
+		
+
+
+
+
+</span></td>
+		<td align="right" nowrap><span class="smallfont">
+				
+		<a href="#" onclick="return reputation(205340)"><img src="images/newannounce.gif" border="0" alt="" title="Add to Barliman's Reputation" /></a>
+		<a href="editpost.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=editpost&amp;postid=205340"><img src="images/edit.gif" alt="edit.gif" title="Edit/Delete Message" border="0" /></a>
+		
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;postid=205340"><img src="images/reply_small.gif" alt="reply.gif" title="Reply w/Quote" border="0" width="55" height="17" /></a>
+
+		</span></td>
+	</tr>
+	</table>
+	<!-- /3 -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="tcat" colspan="2"><img src="images/clear.gif" alt="" width="1" height="1" /></td>
+</tr>
+
+
+
+
+<tr>
+	<td class="thead" colspan="2">
+	<!-- time zone and post buttons -->
+	<table border="0" cellspacing="0" cellpadding="0" class="tfoot" width="100%">
+	<tr>
+		<td class="smallfont"><a href="#top">Return to Top</a></td>
+		<td class="smallfont" align="right">&nbsp;</td>
+	</tr>
+	</table>
+	<!-- /time zone and post buttons -->
+	</td>
+</tr>
+</table>
+</td></tr></table>
+
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center" id="poststable"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="alt1" width="30%" align="left"><span class="smallfont">
+		<a href="newthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;forumid=7"><img src="images/newthread.gif" alt="newthread" title="Post a new thread in this forum" border="0" /></a>
+		
+		<a href="newreply.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=newreply&amp;noquote=1&amp;postid=205340"><img src="images/reply.gif" alt="reply" title="Post a reply to the last message on this page" border="0" /></a>
+		
+	</span></td>
+	<td class="alt1" width="40%" align="center"><span class="smallfont">
+		<a href="forumdisplay.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;forumid=7">Equipment</a><br />
+		<img src="images/prev.gif" alt="prev.gif" border="0" />
+		<a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;goto=nextoldest">Last Thread</a>
+		|
+		<a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;goto=nextnewest">Next Thread</a>
+		<img src="images/next.gif" alt="next.gif" border="0" />
+	</span></td>
+	<td class="alt2" width="10%"><span class="smallfont"><a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;mode=linear" onclick="changemode('linear', 'first'); return false;"><img src="images/mode_linear.gif" alt="" border="0" /></a> Linear</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;mode=hybrid" onclick="changemode('hybrid', 'first'); return false;"><img src="images/mode_hybrid.gif" alt="" border="0" /></a> Hybrid</span></td>
+	<td class="alt1" width="10%"><span class="smallfont"><a href="showthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330&amp;mode=threaded" onclick="changemode('threaded', 'first'); return false;"><img src="images/mode_threaded.gif" alt="" border="0" /></a> Threaded</span></td>
+</tr>
+</table>
+</td></tr></table>
+
+<br />
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="alt1">
+	
+	<!-- thread options -->
+	<table cellpadding="2" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/printer.gif" alt="printer.gif" title="Show Printable Version" border="0" /></td>
+		<td class="smallfont"><a href="printthread.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;threadid=14330">Show Printable Version</a></td>
+	</tr>
+	<tr>
+		<td><img src="images/sendtofriend.gif" alt="sendtofriend.gif" title="Email This Page" border="0" /></td>
+		<td class="smallfont"><a href="sendmessage.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=sendtofriend&threadid=14330">Email This Page</a></td>
+	</tr>
+	
+	</table>
+	<!-- / thread options -->
+	
+	</td>
+	<td class="alt1" align="right">
+	
+	<!-- forum jump / thread rate -->
+	
+	<table cellpadding="0" cellspacing="0" border="0">
+	<form action="threadrate.php" method="post"><tr><td>
+		<span class="smallfont">
+		<input type="hidden" name="s" value="9086237e0b373bbfa7d272e8eab4e342" />
+		<input type="hidden" name="threadid" value="14330" />
+		<b>Rate This Thread:</b>
+		<select name="vote">
+			<option value="-1" selected="selected">Select [a] Rating...</option>
+			<option value="5" >5 .. Best</option>
+			<option value="4" >4</option>
+			<option value="3" >3 .. Average</option>
+			<option value="2" >2</option>
+			<option value="1" >1 .. Worst</option>
+		</select><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  />
+		</span>
+	</td></tr></form>
+	</table>
+	<br />
+	
+	<table cellpadding="0" cellspacing="0" border="0">
+<form action="forumdisplay.php" method="get"><tr><td nowrap>
+	<span class="smallfont">
+	<input type="hidden" name="s" value="9086237e0b373bbfa7d272e8eab4e342" />
+	<input type="hidden" name="daysprune" value="" />
+	<b>Forum Jump:</b>
+	<select name="forumid" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="-1" >Please select one:</option>
+			<option value="pm" >Private Messages</option>
+			<option value="cp" >User Control Panel</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forums">
+		<option value="25" class="fjdpth0" > The Medicine Cabinet</option><option value="1" class="fjdpth0" > General</option><option value="7" class="fjsel" selected="selected"> Equipment</option><option value="5" class="fjdpth0" > Quests</option><option value="4" class="fjdpth0" > Spells</option><option value="6" class="fjdpth0" > Alchemy</option><option value="3" class="fjdpth0" > Hunting Grounds</option><option value="16" class="fjdpth1" >&nbsp; &nbsp;  1 to 20</option><option value="17" class="fjdpth1" >&nbsp; &nbsp;  20 to 30</option><option value="18" class="fjdpth1" >&nbsp; &nbsp;  30 to 40</option><option value="19" class="fjdpth1" >&nbsp; &nbsp;  40 to 50</option><option value="20" class="fjdpth1" >&nbsp; &nbsp;  50 to 60</option><option value="22" class="fjdpth1" >&nbsp; &nbsp;  60 to 65</option><option value="28" class="fjdpth0" > Other games</option><option value="29" class="fjdpth1" >&nbsp; &nbsp;  World of Warcraft</option><option value="30" class="fjdpth1" >&nbsp; &nbsp;  Lineage II</option><option value="31" class="fjdpth1" >&nbsp; &nbsp;  Horizons</option><option value="32" class="fjdpth1" >&nbsp; &nbsp;  City of Heroes</option><option value="33" class="fjdpth1" >&nbsp; &nbsp;  Everquest 2</option><option value="10" class="fjdpth0" > The Spirit Realm</option><option value="9" class="fjdpth1" >&nbsp; &nbsp;  The Grey</option><option value="27" class="fjdpth1" >&nbsp; &nbsp;  Fan Fiction</option><option value="8" class="fjdpth0" > Buy/Sell/Trade</option><option value="12" class="fjdpth0" > Tech Help</option><option value="21" class="fjdpth1" >&nbsp; &nbsp;  UI Area</option><option value="14" class="fjdpth0" > Test Forum</option>
+		</optgroup>
+	</select><!-- go button -->
+<!--<input type="image" src="images/go.gif" border="0" 
+align="absbottom"  />-->
+<input type="submit" class="button" value="Go"  /></span>
+</td></tr></form>
+</table>
+	<!-- end forum jump / thread rate -->
+	
+	</td>
+</tr>
+</table>
+</td></tr></table>
+
+<br />
+
+<!-- forum rules and admin links -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td><span class="smallfont"><b>Forum Rules:</b><table cellpadding="0" cellspacing="0" border="0" class="tborder"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0">
+<tr>
+	<td class="alt1"><span class="smallfont">
+		You <b>may not</b> post new threads<br />
+		You <b>may not</b> post replies<br />
+		You <b>may not</b> post attachments<br />
+		You <b>may not</b> edit your posts
+	</span></td>
+	<td class="alt1"><span class="smallfont">
+		HTML code is <b>On</b><br />
+		<a href="misc.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=bbcode" target="_blank">vB code</a> is <b>On</b><br />
+		<a href="misc.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=showsmilies" target="_blank">Smilies</a> are <b>On</b><br />
+		<a href="misc.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> code is <b>On</b>
+	</span></td>
+</tr>
+</table>
+</td></tr></table></span></td>
+	<td class="smallfont" align="right">
+		
+		<br />
+		All times are GMT +1 hour. The time now is <span class="time">03:23 PM</span>.
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="tborder" width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0" width="100%"><tr><td class="alt1">
+<span class="smallfont"><!--  style="font-weight:bold" -->
+<a href="index.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;"><img src="images/vb_bullet.gif" alt="" border="0" align="absmiddle" /></a>
+<a href="index.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;">Interealms - The Shaman's Crucible</a>
+&gt;
+
+<a href="forumdisplay.php?s=9086237e0b373bbfa7d272e8eab4e342&amp;forumid=7">Equipment</a>
+&gt;
+
+Parsing pet DPS with buffs
+
+</span>
+</td></tr></table>
+</td></tr></table>
+
+</td>
+</tr>
+</table>
+
+<!-- /content area table -->
+
+
+
+<p align="center">
+
+  <b>< <a href="mailto:sunmoon@interealms.com">Contact Us</a> - <a href="http://www.interealms.com/shaman">The Shaman's Crucible</a> -  <a href="archive/index.php/">Archive</a>
+<!-- - <a href="">Privacy Statement</a> --> ></b><br />
+
+<span class="smallfont"><a href="#top">Return to Top</a></span></p>
+
+
+
+<p align="center"><span class="smallfont">
+
+<!-- Do not remove this copyright notice -->
+
+  Powered by: vBulletin Version 3.0.0 Beta 2<br />Copyright &copy;2000 - 2004, Jelsoft Enterprises Ltd.<br />
+
+<!-- Do not remove this copyright notice -->
+
+
+
+</span></p>
+
+</div>
+</form>
+</body>
+</html>

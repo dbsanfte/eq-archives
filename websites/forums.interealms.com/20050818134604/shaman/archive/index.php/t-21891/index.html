@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Interealms - The Shaman's Crucible</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="http://forums.interealms.com/shaman/archive/archive.css" />
+	<style type="text/css">
+	<!--
+	div.username { behavior: url(http://forums.interealms.com/shaman/archive/post.htc); }
+	#thread a { behavior: url(http://forums.interealms.com/shaman/archive/thread.htc); }
+	-->
+	</style>
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Interealms - The Shaman's Crucible</a> &gt; <a href="f-1">General</a> &gt; Parsing and Analysis, Vol. 1: STR [Long, some math]</div>
+<hr />
+<p class="largefont">Click here for full thread: <a href="http://forums.interealms.com/shaman/showthread.php?threadid=21891">Parsing and Analysis, Vol. 1: STR [Long, some math]</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Shabura Naarteban</b></div><div class="posttext" id="p1">[Edited: realized that 42 = 21*2 - yes, yes, i know - and so gave a theory for the origin of the modal spike.]<br />
+[Edited: fixed a serious division error.  the effect on max hit sucks more than i first typed.]<br />
+<br />
+The following is posted here for the elucidation of the Shaman community, and has been sent directly to Brenlo as well, as per his wishes.<br />
+<br />
+I've begun a series of reasonably in-depth parses and statistical analysis concerning shaman issues.  I started with strength, because its generally been considered a fairly well-understood game mechanic (thanks to the folks at Steel Warrior for your years of work!) and because its one that is reasonably easy to test the properties of in a small span of time.  I've found some interesting - and unexpected - results.<br />
+<br />
+First ... the testing conditions.  All data in this parse was collected using my level 65 shaman as a test subject.  I wielded the Mace of Confusion the entire time (21/22 1hb).  My 1hb and Offense skills are at the shaman maxima of 200 each.  In order to ensure that mob defensive properties were not variable, all this testing was not only done against the same type of mob, but the physically exact same instance of that mob (in this case Guard Fintran in North Ro, who conveniently spawned as the amazingly-high-regen version, allowing him to survive the testing).  Some might question my choice in the use of a shaman melee combattant (rather than a more &quot;functional&quot; melee class) and my selection of a green-con combat dummy.  Selecting myself as the subject was done for testing purposes - because shaman cannot double attack or dual wield, and do not receive a damage bonus, there were less complicating factors that might obscure the effects of strength on damage output.  In short, if strength works at all, it should work for me.  Likewise, I felt that the choice of a green target was beneficial, as it ensured a higher ratio of successful attacks, and, thus, more parsable data - after all, this is not a parse of potential DPS, but instead an examination of the properties of combat on the per-hit level.<br />
+<br />
+In order to acquire a suitably large spread of strength values, I was unable to hold completely stable all other possible conditions.  Notably, dexterity was not held constant during the parsing exercise.  It is largely presumed (and there has been no indication from Verant or SOE to believe otherwise) that dexterity does not alter melee weapon damage (its effects on bows, for rangers, are suitably documented at their forum).  However, ATK was held constant --to the extent that it was not modified by strength--.  That is to say, no items granting a raw +ATK bonus were added or removed during the exercise, and no buffs (such as FA) that provide a raw ATK bonus were applied.<br />
+<br />
+Approximately 15 minutes of data was collected at each of 5 strength values : 95, 170, 205, 280, 305 - meant to provide a varied, but intentionally uneven, spread of tests.  This provided between 377 and 647 swings per test (case 3 is admittedly a weak sample size, but fortunately its results are not out of line with the other data).<br />
+<br />
+Analysis 1: Attack Accuracy<br />
+<br />
+I first attempted to discern if strength had a demonstrable attempt on accuracy - the percentage of attacks that are successful, dealing at least 1 point of damage.  I theorized before examining the data that it would not; I believe ATK (like AC) consists of 2 components - one related to accuracy, and the other to damage - with the displayed value being some form of compromise or hybrid.  <br />
+<br />
+Initial examination of the data appeared to lend credance to this theory.  Accuracy percentages at (95, 170, 205, 280, 305) strength were (45.1, 49.1, 50.1, 47.3, 46.9) - providing no statistically significant evidence of corrolation.  Concerned that the (presumably) mob-skill-based dodge/parry/riposte numbers were skewing the data and obfuscating a trend, I altered the percentages to remove those instances, yielding (50.9, 56.3, 58.0, 53.2, 55.9), again providing no convincing evidence of corrolation.<br />
+<br />
+Analysis 2: Attack Damage<br />
+<br />
+Here is where the bread and butter of strength should shine, I believed.  Or in all honesty, where I expected it to fizzle weekly.  My faith in the effects of any stats in this game has been traditionally poor.  As the numbers would demonstrate, however, the effect of strength is measurable ... but likewise flawed.<br />
+<br />
+I began with the easiest statistical measurement, the simple mean.  Averaging the values of the successful strikes in each attempt, I quickly discovered a visible trend.  The average damage from each set was (26.7, 29.3, 35.0, 38.8, 40.3).  Some quick manipulation with a regression function revealed a clear trend using an already available value as the constant intercept.  D(ave) = STR/16 + 21 (the constant in this case being the damage value of the weapon used, a trend I expect would continue for any weapon without a damage bonus - a hypothesis I may parse later when I have time).  The R^2 value (a measure of how accurately a regression line fits the data) for this function is a startling 0.95 (1.0 is perfect - meaning no data noise or flaws at all).  What divergence there is from this formula can clearly be attributed to the rounding and truncation inherent in Everquest.<br />
+<br />
+Thus, every 16 points of strength adds 1 point of damage to the average melee attack.<br />
+<br />
+But ... I was unsatisfied.  Clearly there was more at work here than a simple linear increase, or there would not be nearly the confusion about strength that there has been in the past.  I decided to examine the consistency of these average values - that is to say, how likely it was that any given hit would be an average hit, rather than an extreme value.  I did this by computing the bias-adjusted standard deviation for each of the data sets.  I expected a reasonably small value for the standard deviation, indicating a fairly bell-shaped damage curve centered around the average values.  I was wrong.  The standard deviations were (15.7, 17.8, 19.9, 21.8, 20.1).  One of the important pieces of information standard deviation provides is the assurance that roughly 68% of data points lie within one standard deviation of the mean (above or below).  But - especially on the scale of damage numbers to begin with - these standard deviations were enormous!  This means that either the distribution of values was very diffuse (hits near the mean were not much more likely than extreme values) or perhaps even that a reverse bell-curve was in effect (where extreme values are more common, and hits near the mean relatively rare).  I re-examined the frequency of each damage value, looking for what was occuring.  I believe that what I found is the first flaw in the strength-to-damage system.<br />
+<br />
+Independant of strength, the damage distribution in all five tests has a huge frequency spike at 42 damage.<br />
+<br />
+My first explanation for this value is that it is twice the weapon's damage rating.  Substantially more parsing would be needed to confirm this, however.  However, the reason for its existence is not as important (at the player end) as the simple fact of its existence.  Put in plain English, I am more likely to hit for 42 than for any other specific number on any given swing, regardless of my strength at the time.  I cannot conclude from this data set if my strength alters the likelyhood of hitting for 42.  I will require substantially longer parses before I can make any determination of that claim.  But the sheer magnitude of this frequency spike is shocking - in two data sets, over 17% of my hits were for this value.  This value is completely independant of strength, and is hugely distorting.  Because this modal value is greater than the mean damage in all of these cases, it is currently working in the players' favor.  If the strength scale were expanded, and the mean value were to increase beyond 42, then this artificially frequent value would work against the player, mitigating some of the effects of that strength increase.<br />
+<br />
+Having found one flaw in the strength-to-damage relationship, I began to search for another.  And, indeed, there was one there to find.  Searching for other unusual data points, like the huge frequency spike at 42, I began to examine the extreme points - those at the very high and very low end of the scale.  Naturally, looking at the damage maxima followed shortly thereafter.  The idea of the damage maximum is easy to understand, and one that we are all used to in Everquest - it is the biggest number you can hit for under your current conditions.  Charting the damage maxima from the first four data sets, I was beginning to see a very nice, clean, linear relationship.  Indeed, I was able to fit a regression line to those four data points almost exactly.  D(max) = 0.137*strength + 50, for the conditions I was testing under.  Roughly every 7 points of strength increase the maximum damage by 1.  Although I had no in-game values to support these numbers (50?  0.137??), the fit was astoudingly exact, with an R^2 value of 0.998.  In short, that function IS the determination for damage maxima over those four data points.  Oh ... but I did five tests, you say?  And therein lies the second problem in the strength-to-damage relationship.<br />
+<br />
+Damage is capped.<br />
+<br />
+We're all used to hearing about damage caps, like the one that is lifted at level 20.  This damage cap is similar, but it is based on strength.  Simply put, the maximum damage parsed at strength 280 is 88 ... and the maximum damage parsed at strength 305 is 88, when the regression line tells us that it &quot;should&quot; be 92.  There could be any number of reasons for this problem, from a hard cap in the code set before the stat caps were fully lifted, to an improper implementation of Planar Power, to any number of other code-based concerns.  But none of that escapes the fact that the cap is there, in the parsed data.<br />
+<br />
+Conclusion 1: What does this mean for strength buffs now?<br />
+<br />
+Strength makes a measurable - but not impressive - difference.  Every 7 points of strength up to 280 raises the maximum hit by 1 point, and every 16 points of strength raises the average damage per hit by 1.  Its not a big difference, though.  Basically, if you're getting the strength while in the process of getting something else (like gear, Focus, or FA), then strength is a good thing to have.  But (assuming DW/DA and damage bonuses do not substantially alter these formulae) if a player attacked twice per second (possible with dual wield/double attack), the difference between a 95 strength and a 305 strength is 26 dps - or roughly the same as adding a shaman's dog pet to the combat.  And nothing affects the modal damage.<br />
+<br />
+Conclusion 2: What does this mean for cap-exceeding strength buffs later?<br />
+<br />
+The news here is grim.  The maximum damage cap will prevent the curve from growing in the manner it did previous to 280.  Additionally, as the mean damage reaches, and then exceeds the modal value (at approximately strength 333), the effect of that strange modal behavior will further retard the damage-per-strength exchange rate.  These two flaws are synergistic - and their effects would be increasingly visible as strength increased beyond 333.  In fact, I believe that these two factors are sufficient to prevent average damage from ever reaching substantially beyond the modal spike value.  If in fact the frequency of the modal value is dependant on strength as I have personally come to believe (that is, if higher strength causes a higher percentage of hits to be modal hits), then being able to push the average above the mode is even more unlikely.<br />
+<br />
+By means of final conclusion ... this data does not bode well for stat buffs, a conclusion that will doubtless not surprise many shaman.  The conversion rate of strength to damage is poor.  The game's internal math appears badly flawed.  Unless both of these were to drastically change - requiring a major code overall, I am certian, and likely altering NPC mechanics greatly - I could not in good conscience recommend a strength buff to any melee character with reasonably high unbuffed strength (~200 or more), regardless of how far above the cap it might be allowed to go.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>KurthMcdonough</b></div><div class="posttext" id="p2">simply amazing post.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Piglet</b></div><div class="posttext" id="p3">Very very nicely done.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Adonnisninaste</b></div><div class="posttext" id="p4">Yup, pretty much what we thought :P<br />
+<br />
+Spraggon<br />
+Bristlebane</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Shabura Naarteban</b></div><div class="posttext" id="p5">Expect the dexterity/proc-per-minute parse to be soon, maybe by the week-end.  I know I badly need to do an Agility study to confirm what the beastlords found, but avoidance numbers are SO small that those parses will have to be sooooooooooo long.  Lol.  Maybe early next week, if I haven't gone insane by then.   :rolleyes: <br />
+<br />
+Then I'll start trying to clean up the details, like figuring out just what the heck is up with that modal spike!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Goldark</b></div><div class="posttext" id="p6">I think that the damage distribution will be skewed towards more max hits against lower level low AC mobs, and more min hits against higher level high AC mobs. It would be interesting to see parses against a dark blue luclin type mob for example, to compare against.<br />
+<br />
+Secondly, for some stats it would seem that there are diminishing returns over around 200-250 or so. This may well be why there seems to be a max damage cap that doesn't increase between str 280-305. Whether it is a case of diminishing returns or simply a cap I don't know - perhaps further parsing could reveal this by taking some more str data points in the 200-305 range.<br />
+<br />
+Very interesting read so far, looking forward to hearing more :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>Spiritblood</b></div><div class="posttext" id="p7">If you somehow manage to prove that STR buffs doesnt matter much I bet Rytan or Brenlo will shoot it down by saying that warriors and monks and all the other melee classes have different damagetables and that STR will matter for them. I also read somewhere that your amount of endurance is dependent on all 4 melee stats (str, dex, sta and agi) so that is also a usable counterargument for them. They might even be right. I personally dont think they are but I also dont care enough to do any parses to find out :-)<br />
+<br />
+&quot;the difference between a 95 strength and a 305 strength is 26 dps&quot;<br />
+<br />
+But what is a normal STR rating for a character that is able to reach 305 as max? A str-buff will only add whatever is left between stats from equipment and the 305 max value.<br />
+<br />
+PS. Impressive work though! I just fear it wont change anything.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Shabura Naarteban</b></div><div class="posttext" id="p8">Actually, it can't be diminishing returns in the 200-250 range.  That was my first thought, too.  But the regression line y=0.137x+50 is a dead-on exact match for that relationship, up to and including x=280.  So the problem is somewhere between 280 and 305 - either the returns diminish in a BIG hurry, or there's a cap in place there.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Diabalein</b></div><div class="posttext" id="p9">Magic numbers (and LOL at yours being 42 omg thats hillarious) are well known to melees, espcially the rogue comunity, they are so common in Backstabs that it is visible to the naked eye (as in you dont need a parse to know you are hitting one number more often than all the others)<br />
+<br />
+to make the math even crappier, when they implemented min backstab=current lvl they coded it as follows<br />
+if bs damage &lt;current lvl then lvl (or whatever the code would look like) what this means for rogues is that the higher lvl you get the more min backstabs you get because the damage range isnt lvl-max damage its 1-max damage then bump to lvl if its lower.<br />
+<br />
+it really makes you wonder what the hell these guys do in order to get paid cause it sure as hell isnt a good days work.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>Drinnar</b></div><div class="posttext" id="p10">Wow, maybe I should've stayed awake in stat class.  Thanks for putting the effort in</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>Haleice</b></div><div class="posttext" id="p11">I hated statistics at college it's such a dry subject.<br />
+<br />
+Very nice post and will be a good part of our evidence that stat buffs are largely useless. I look forward to reading your future analysis.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u12"><b>veeshanMurtak</b></div><div class="posttext" id="p12">From what I remember of the early (Kunark era) STR parsings dama distribution is pretty much a very flat bell curve around the modal hit. It is skewed by the peaks at the min and max hit.<br />
+<br />
+STR does two things:<br />
+it raises the max hit.<br />
+it shifts the distribution towards the max.<br />
+<br />
+Thus STR should have the most effect when you hit for your min hit a lot, which happens on high AC MOBs like the snakes in Luclin. PoP and GoD MOBs have pretty weak AC overall I believe and the STR will help less.<br />
+<br />
+It also means that shaman benefit a lot more from STR then melees with their already high stats (ATK, skill). So we really do need parses by melee classes and we need to do them on appropriately leveled MOBs. That is not to say your parses were useless though - just that the effects you noticed will likely be a lot less in &quot;the real world&quot;.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u13"><b>Juujuu</b></div><div class="posttext" id="p13">Any chance you can post a bar graph of counts of melee hits of certain values by str?<br />
+I'd like to see what the bell curve looks like for each str.<br />
+If you could put that into a 3d surface graph comparing str, hit, and frequency, that would rock.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u14"><b>KurthMcdonough</b></div><div class="posttext" id="p14">a line graph would show, and this is spot on.<br />
+<br />
+a slow upward slope to 50, once up to 55 its almost a plateau. and at 60+ there is no increase.<br />
+<br />
+but, when we keep pushing stat caps back, the only thing that improves is mana and hps(only if your stamina isn't max already). so melee's thank uncle sony for not increasing you :D</div></div><hr />
+
+
+<div class="post"><div class="username" id="u15"><b>Forty-SoN</b></div><div class="posttext" id="p15">The game's internal math appears badly flawed.<br />
+<br />
+Boy when I read that bells went off.  Could have sworn the devs said something to like this a few years back, before Brenlo or Ryan ever joined SoE.  I just remember something about the math being done incorrectly and that it was too embedded into the code for them to ever want to look at.  Or something like that...seems to me it was about the time the Epics went into the game.  Maybe one of the other old timers remember that or maybe I'm confusing issues  /shrug<br />
+<br />
+This stuff has been hashed and rehashed so many time over the last fives years proving that it has very little if any effect it's mind boggling.  But then you have new people join a company and this is all &quot;new&quot; to them and you have to prove it all over again.  Sad very sad.  =/</div></div><hr />
+
+
+<div class="post"><div class="username" id="u16"><b>Shabura Naarteban</b></div><div class="posttext" id="p16">One surface graph, coming up (and available for the next 120 days, since I'm cheap and used free hosting!):<br />
+<br />
+http://www.free-image-hosting.org/pic.php?pic=061004060777605.gif<br />
+<br />
+Take a look at that mountain at 42!  Otherwise, its a fairly flat almost-bell-curve, centered probably around 21 (likely because shaman melee skills are poor, overall), with a roundoff-induced spike at 2.<br />
+<br />
+And as to better &quot;real-world&quot; data ... that's actually not true *in this case*.  Real mobs with real AC  are more useful for dps calculations, but the simpler the situation, the easier it is to see the direct correlation between the stat and some outcome.  In the case of this data, something in the code is generating that spike.  Even if I parsed against Xerkizh the Creator (and so just got a whole bunch of min damage hits, haha!), whatever caused that spike is still there, in the code, and still influencing the numbers.  It doesn't mean I won't get a &quot;live&quot; melee parse to help out the cause - but this sort of controlled test is better for the initial analysis of how things work.  Its sort of the experimental science vs. engineering contrast. =)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u17"><b>veeshanMurtak</b></div><div class="posttext" id="p17">And as to better &quot;real-world&quot; data ... that's actually not true *in this case*.  Real mobs with real AC  are more useful for dps calculations, but the simpler the situation, the easier it is to see the direct correlation between the stat and some outcome.  In the case of this data, something in the code is generating that spike.  Even if I parsed against Xerkizh the Creator (and so just got a whole bunch of min damage hits, haha!), whatever caused that spike is still there, in the code, and still influencing the numbers.  It doesn't mean I won't get a &quot;live&quot; melee parse to help out the cause - but this sort of controlled test is better for the initial analysis of how things work.  Its sort of the experimental science vs. engineering contrast. =)<br />
+Oh yes certainly - but we not only want to know how str buffs work, we want to know how well they work. We already know they add to damage. We need to know by how much in order to tell if a 85-point-past-the-cap str buff is actually useful.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u18"><b>Naagruz</b></div><div class="posttext" id="p18">I believe that was the first ever competant statitical study done with buffs that actually tried to control for variables.  Kudos to you Shabura! :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u19"><b>KurthMcdonough</b></div><div class="posttext" id="p19">I believe that was the first ever competant statitical study done with buffs that actually tried to control for variables.  Kudos to you Shabura! :)<br />
+<br />
+<br />
+no, its in fact the third or fourth. we lost alot of posts when the boards moved around.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u20"><b>Warren Maguson Emarr</b></div><div class="posttext" id="p20">Well part of the problem when Brenlo challenged us to come up with convincing proof he could give to Rytan was that SOE/Verant has ALWAYS insisted in the mystery of their coding which includes things like making sure mana, stamina, experience numerical values were not visable anywhere.<br />
+<br />
+Our attempts to reverse engineer their code and figure things out could also even technically be construed as against the EULA.  <br />
+<br />
+Challenges like Brenlo's are inherently unfair since all we can do is try to develop a test to see the effect of something and therefore determine the formula used. <br />
+<br />
+SOE simply looks at the formula and says, &quot;Oh yes, Str does something.&quot; and can simply adhere to this argument everytime it comes up.  I applaud the amount of work you put into this Shabura, it's certainly fascinating to me and a lot of other people and I do look forward to reading your summations on other parses on other stats, but ultimately this has to impress SOE.  <br />
+<br />
+The aggravating outcome of all this will be if Rytan responds with a dismissive wave of his hand and says something mysterious like, &quot;oh you're not factoring in everything str does for a melee&quot;.  Which could be true but leaves us back at the painful task of figuring out what he meant. <br />
+<br />
+<br />
+And the really important thing to remember through all of this is, even if it is proven that stat buffs 'matter' will it matter enough to the average melee across enough situations that they will desire them (and therefore us) again.  <br />
+<br />
+Consider the new model of the new fights, 30 second long engagements, does the extra dps kicked out by a 75 str increase really matter?   In a 30 second fight, how much is a melee really losing and is it really relevant?   Back in the old days of Velious where fights could last in upwards of 10 minutes, every DPS counted and added up to a large amount of damage.  Now, a small change matters very very little as to be inconsequential. <br />
+<br />
+<br />
+<br />
+Warren</div></div><hr />
+
+
+<div class="post"><div class="username" id="u21"><b>Naagruz</b></div><div class="posttext" id="p21">Seriously Kurth, I think it was the 1st solid experiment I have seen posted on topic.  All the others I can recall always had some huge overriding design flaw that invalidated the experiment.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u22"><b>Orgak</b></div><div class="posttext" id="p22">One surface graph, coming up (and available for the next 120 days, since I'm cheap and used free hosting!):<br />
+<br />
+<br />
+<br />
+Shab, I will gladly grant this some space on my server along with any other related material you generate.  Email me with whatever you want posted:  Orgak@geekcondo.com.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u23"><b>Juujuu</b></div><div class="posttext" id="p23">Surface graph is good.  Can you stretch it a bit wider in any way?  :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u24"><b>Houndhammer</b></div><div class="posttext" id="p24">Overall, very nice study. <br />
+Hope it makes a dent</div></div><hr />
+
+
+<div class="post"><div class="username" id="u25"><b>Toppo</b></div><div class="posttext" id="p25">Nice study, good design and well presented :) <br />
+<br />
+Of course Brenlo or Rytan can always pull the magic &quot;x&quot; factor out of the hat to say the data is flawed (where x= something mysterious in the code...not revealed by the numbers observed in the real world)<br />
+<br />
+Quality data is good; it removes the BS factor from swaying the debate<br />
+<br />
+Thank you Shabura Naarteban :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u26"><b>hillaan</b></div><div class="posttext" id="p26">Boy when I read that bells went off.  Could have sworn the devs said something to like this a few years back, before Brenlo or Ryan ever joined SoE.  I just remember something about the math being done incorrectly and that it was too embedded into the code for them to ever want to look at.  Or something like that...seems to me it was about the time the Epics went into the game.  Maybe one of the other old timers remember that or maybe I'm confusing issues  /shrug<br />
+<br />
+This stuff has been hashed and rehashed so many time over the last fives years proving that it has very little if any effect it's mind boggling.  But then you have new people join a company and this is all &quot;new&quot; to them and you have to prove it all over again.  Sad very sad.  =/<br />
+<br />
+They did say that but I thought it was in relation to hell levels. But I guess if they screwed the math up there it could be screwed up every where.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u27"><b>Sudedor</b></div><div class="posttext" id="p27">Of course Brenlo or Rytan can always pull the magic &quot;x&quot; factor out of the hat to say the data is flawed (where x= something mysterious in the code...not revealed by the numbers observed in the real world)<br />
+<br />
+While I agree it is possible they could try to pull something like that, it would be, on their part, an invalid arguement.  If we don't see it &quot;in the real world&quot; then it doesn't matter.  It must manifest itself in a measureable way or our initial surmise that &quot;stats don't matter&quot; is correct.  There must be a measureable effect.<br />
+<br />
+I too would like to thank the author of this for their hard work in getting it done.  I agree with some of the other posters that in addition to this parse, one should be done with a true &quot;melee&quot; character running the hits.  Its the only real flaw I can see at this point.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u28"><b>Lumor2000</b></div><div class="posttext" id="p28">Derrict does a bunch of parsing over on the safehouse, I think I recall him doing a parse that primarily focused on attack.  His posts showed a similar distribution, with spikes at the min and max values, with the distribution shifting to more Max hits as attack went up.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u29"><b>Sudedor</b></div><div class="posttext" id="p29">One more suggestion I would like to pass along here . . .<br />
+<br />
+<br />
+In regards to that spike at 42, I would like to suggest that you switch to a different weapon to determine if that spike is in fact 2xweapon damage or if the 42 is some bug in the damage formula.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u30"><b>Gart Egilsson</b></div><div class="posttext" id="p30">The answer is 42 eh?  How interesting.  Those who've read Douglas Adam's books would not be surprised by this!<br />
+<br />
+Tudamorf did studies way back pre-Kunark with him beating on West Freeport guards.  He concluded then that STR had a pretty marginal impact.  I wish that still floated about.  It was mighty impressive.  <br />
+<br />
+The issue is twofold:<br />
+1) how much magnitude do stats provide; and<br />
+2) do stat buffs matter to reach that level of magnitude?  <br />
+<br />
+So, if it matters, do you need stat buffs to get there?  It's not a job that matters, whether there's a marginal impact or not.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u31"><b>niwggib</b></div><div class="posttext" id="p31">Very nice, this is exactly what we need... keep them up!!!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u32"><b>Gloriana</b></div><div class="posttext" id="p32">Simply amazing. <br />
+<br />
+Shabura, would you please a link to this thread in the calm, rational spell discussion thread. This well detailed post was exactly what I hoped for.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u33"><b>Uggok</b></div><div class="posttext" id="p33">Way back when all the analysis was done on stat buffs during Kunark on the old boards, I believe that the conclusion was that STR has no effect on modal damage, which was the main source of its ineffectiveness.  That is in accord with your results.  Keep up the good work.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u34"><b>bara cudar</b></div><div class="posttext" id="p34">great post. many thanks pleas do more. if they still insist stats are great.. well i cant say it:)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u35"><b>Kenneth</b></div><div class="posttext" id="p35">So, if I am lucky and Diaku and Focus actually added 120 str to my target, I increase their average hit by 7.5.  And, if they hit (not just attack) twice per second, I increase their DPS by 15.<br />
+<br />
+However, I'm not so lucky.  For my guild (in SSRA), I get an average of about 40 increase to str for my melees (excluding the observed cap).  That means I get 2.5 more out of their average hit, for an increase of 5 DPS.<br />
+<br />
+And, I find it very interesting that the max increases at more than double the rate of the average.  That would tend to give the perception that the effect is more than what it actually is (since max hits catch our eye).<br />
+<br />
+Great Post!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u36"><b>Tugela</b></div><div class="posttext" id="p36">I took off PP on my magelo to see what affect the last 25 STR has on ATK. It results in a drop of 23 (from 1560 to 1537), so basically roughly the equivalent effect of vengeance 4 or 5. The overbuff on strength would be 75, so you would probably be looking at a change in the max atk of about 60-70 I expect.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u37"><b>Xilinx</b></div><div class="posttext" id="p37">I took off PP on my magelo to see what affect the last 25 STR has on ATK. It results in a drop of 23 (from 1560 to 1537), so basically roughly the equivalent effect of vengeance 4 or 5. The overbuff on strength would be 75, so you would probably be looking at a change in the max atk of about 60-70 I expect.<br />
+<br />
+ATK: 0 This value will be added to your total ATK<br />
+<br />
+The above values are used to adjust the formuale that are used for AC/ATK until we find the correct formuale.<br />
+Do not provide your base AC/ATK here, just values that you miss when formulae are used<br />
+Do not forget to provide accurate skill informations (Offense-Defense-Weapon) <br />
+<br />
+Just remember what it shows is magelo doesn't have an accurate formula for calculating atk and AC.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u38"><b>Beeg</b></div><div class="posttext" id="p38">Congratulations on discovering modal damage and that increases in ATK only shift the bell curve?<br />
+<br />
+It sucks that people have to re-prove that stats are crap when melee have been doing that for years now.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u39"><b>Shabura Naarteban</b></div><div class="posttext" id="p39">I took off PP on my magelo to see what affect the last 25 STR has on ATK. It results in a drop of 23 (from 1560 to 1537), so basically roughly the equivalent effect of vengeance 4 or 5. The overbuff on strength would be 75, so you would probably be looking at a change in the max atk of about 60-70 I expect.<br />
+<br />
+The problem with this is that the ATK display lies.  This is no secret, really - a lot of people have always at least suspected that it does, because the AC display lies.  <br />
+<br />
+Okay, to catch up the folks who haven't been following game statistics for four years... =)  There are (admitted by Verant, even!) 2 different defensive values in Everquest.  One is &quot;mitigation AC&quot;, and the other is &quot;avoidance AC&quot;.  They are used to compute, obviously, mitigation and avoidance, respectively.  A lot of stuff - like actual gear - probably adds to both values.  Regardless, we have only one value displayed.  We have no particular way to know how the displayed AC related to either mAC or aAC - I have substantial reason to suggest that it is NOT just a simple average.<br />
+<br />
+Likewise, I've taken the first step to demonstrating that ATK is also a composite value.  Strength did not, to any statistically significant degree, improve accuracy.  If anything, it should have been MORE visible in my test than with a melee had it done so, since shaman melee accuracy is poor.  But strength did affect the damage numbers (albeit in an minimal, quirky way).  While there are several possible explanations for this observation, the most likely would be that there are 2 server-side ATK values.  Strength alters dATK, but not aATK, as it were - contributing to damage but not accuracy.<br />
+<br />
+Which means that we can't just compare strength buffs to vengeance increases on even footing ... they aren't doing the same things.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u40"><b>Drinnar</b></div><div class="posttext" id="p40">Brenlo? Rytan?  <br />
+<br />
+Oh look, data that says stats are useless and the SOE reps are nowhere to be found.  You guys asked for it, the least you could do is thank the guy for the time and effort he put in.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u41"><b>Shabura Naarteban</b></div><div class="posttext" id="p41">To their credit, Drinnar, this post has been up for less than 10 hours now, mostly over the nighttime PST hours - and even SOE reps sleep sometimes.  That aside, I have received email communication from Brenlo (Alan Crosby).  They are aware of my work.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u42"><b>Tugela</b></div><div class="posttext" id="p42">Just remember what it shows is magelo doesn't have an accurate formula for calculating atk and AC.<br />
+<br />
+It may not be accurate but it does come up with a reasonable estimate. It should be easy enough to get proper values though by buffing a naked 65 warrior with various buffs and seeing what happens (which is probably how magelo came up with their estimates of the effects).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u43"><b>Beafly</b></div><div class="posttext" id="p43">Fabulous analysis Shabura. We need more voices like yours here on the Crucible.<br />
+<br />
+I've seen very similar parses to this on Paladins of Norrath. If someone has the time, it might be of value to assemble a thread of links to parses done by other class boards. We may find some very useful information and save our brothers and sisters alot of time and effort re-creating known results.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u44"><b>veeshanMurtak</b></div><div class="posttext" id="p44">To their credit, Drinnar, this post has been up for less than 10 hours now, mostly over the nighttime PST hours - and even SOE reps sleep sometimes.  That aside, I have received email communication from Brenlo (Alan Crosby).  They are aware of my work.<br />
+Would you mind asking Brenlo to have Rytan/Ryan give us hard numbers as to what the cap exceeding stat buffs are supposed to add to 65 players who already have 305 in all stats?<br />
+<br />
+How much DPS is that Str buff supposed to add?<br />
+By how many % will it increase DPS?<br />
+How many HPs will the stamina buff add?<br />
+How many hits will Agi avoid?<br />
+and so on</div></div><hr />
+
+
+<div class="post"><div class="username" id="u45"><b>Wilcas</b></div><div class="posttext" id="p45">WOW<br />
+<br />
+Great research very well written up.  Thanks.<br />
+<br />
+Wouldn't you like to be around for the SOE response?  The internal one not what we will see after they batten the hatches and put the best face on this...<br />
+<br />
+It would be interesting to see if the cap is adjusted with the increase in max levels.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u46"><b>Macheras</b></div><div class="posttext" id="p46">Shabura, you are my freaking hero!  I'm an engineer and I personally love this stuff.  We use statistical methods at work to determine maintenance intervals and predict piping thickness data all the time.  But enough of that. :)  I guess it's time for me to download a parser and get my copy of WinSmith installed hehe.<br />
+<br />
+Magic numbers (and LOL at yours being 42 omg thats hillarious) are well known to melees, espcially the rogue comunity, they are so common in Backstabs that it is visible to the naked eye (as in you dont need a parse to know you are hitting one number more often than all the others)<br />
+<br />
+to make the math even crappier, when they implemented min backstab=current lvl they coded it as follows<br />
+if bs damage &lt;current lvl then lvl (or whatever the code would look like) what this means for rogues is that the higher lvl you get the more min backstabs you get because the damage range isnt lvl-max damage its 1-max damage then bump to lvl if its lower.<br />
+<br />
+it really makes you wonder what the hell these guys do in order to get paid cause it sure as hell isnt a good days work.<br />
+<br />
+Ok, I don't have any parses/logs to prove this, but I agree that this modal value is readily seen with the naked eye as well.  And not only on greens.  I've noticed this on light blues and dark blues (in Velk's and Nadox respectively).  I like to use my souped up Soulstripper (has another lifetap aug in it!) and tank mobs.  Damage on a Soulstripper is 15.  The value I see come up most often... ALL the time (independent of mob con, at least up to dark blue)... you guessed it... 30!<br />
+<br />
+Great work.  Patiently waits for the SOE rebuttal.<br />
+<br />
+Mach</div></div><hr />
+
+
+<div class="post"><div class="username" id="u47"><b>Sudedor</b></div><div class="posttext" id="p47">Now that you mention it, I too used Soulstripper a lot and seem to recall a significant number of 30's.<br />
+<br />
+(Put a 125 Poison DD in mine.)  ;)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u48"><b>bonestomper</b></div><div class="posttext" id="p48">very good work.  greatly done.  the work you, and other shaman; have put into our class makes me proud to even be a shaman.<br />
+<br />
+of course the response from SoE will probably make baby jesus cry; but i am sure by now it will not be a major surprise.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u49"><b>Tugela</b></div><div class="posttext" id="p49">The problem with this is that the ATK display lies.  This is no secret, really - a lot of people have always at least suspected that it does, because the AC display lies.  <br />
+<br />
+Okay, to catch up the folks who haven't been following game statistics for four years... =)  There are (admitted by Verant, even!) 2 different defensive values in Everquest.  One is &quot;mitigation AC&quot;, and the other is &quot;avoidance AC&quot;.  They are used to compute, obviously, mitigation and avoidance, respectively.  A lot of stuff - like actual gear - probably adds to both values.  Regardless, we have only one value displayed.  We have no particular way to know how the displayed AC related to either mAC or aAC - I have substantial reason to suggest that it is NOT just a simple average.<br />
+<br />
+Likewise, I've taken the first step to demonstrating that ATK is also a composite value.  Strength did not, to any statistically significant degree, improve accuracy.  If anything, it should have been MORE visible in my test than with a melee had it done so, since shaman melee accuracy is poor.  But strength did affect the damage numbers (albeit in an minimal, quirky way).  While there are several possible explanations for this observation, the most likely would be that there are 2 server-side ATK values.  Strength alters dATK, but not aATK, as it were - contributing to damage but not accuracy.<br />
+<br />
+Which means that we can't just compare strength buffs to vengeance increases on even footing ... they aren't doing the same things.<br />
+<br />
+I wonder, for stuff like AC, would it go something like [reported AC] = [base mitigation * level modifier] + [base evasion * level modifier] + [raw AC * mitigation modifier] + [raw A *evasion modifier] + [AGI effect] + [AC effect], where AGI spells adjust base evasion, and AC spells affect base mitigation. Equipment AC would then adjust the two values based on factors in class tables.<br />
+<br />
+So what would affect offense? if it was based on the same idea then it would look something like [reported atk] = [base damage * level modifier] + [base accuracy * level modifier] + [raw atk * damage modifier] + [raw atk * accuracy modifier] + [STR effect] + [DEX effect], where STR affects base damage and DEX affects accuracy? Damage and accuracy modifiers being determined by class tables of course.<br />
+<br />
+If the equations do look something like that I would think that AGI and DEX buffs would have difficult to spot effects, while AC and STR might be more apparent, particularly if damage given/taken is constrained by DB/DI restrictions.<br />
+<br />
+It would take a lot of data to separate all of that, it would be much easier if Sony would just hand over the algorithims  :D</div></div><hr />
+
+
+<div class="post"><div class="username" id="u50"><b>Diabalein</b></div><div class="posttext" id="p50">Dex has never been parsed to show an effect on accuracy, procc rate yes.<br />
+<br />
+as far as atk affecting your accuracy it looks like the only way to get that is with raw atk, str doesnt affect it and there is no stat that does. raw atk does both I beleive although thats one parse I dont believe I have seen.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u51"><b>Jormal</b></div><div class="posttext" id="p51">One more suggestion I would like to pass along here . . .<br />
+<br />
+<br />
+In regards to that spike at 42, I would like to suggest that you switch to a different weapon to determine if that spike is in fact 2xweapon damage or if the 42 is some bug in the damage formula.<br />
+<br />
+I ran a couple tests against the same guard as Shabura Naarteban using two weapons with max strength and max skills and found that modal damage was 2x weapon base for both 1hb and 2hb using Thundering Mace (19/22) and Corpsegrinder (30/34).<br />
+<br />
+Jormal Dawnhammer<br />
+Prophet of Winter<br />
+Bristlebane</div></div><hr />
+
+
+<div class="post"><div class="username" id="u52"><b>Merwenn</b></div><div class="posttext" id="p52">Great post, however, as usual, I am skeptical as to the response that might be given by any number of SOE devs/reps. I have a feeling they will somehow disclaim your post.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u53"><b>Rehunh</b></div><div class="posttext" id="p53">Great job Shabura. For parsing the avoidance affects of AGI you might want to just train yourself with as many mobs as you can manage to heal over. Hmmm except I am not sure you can dodge or anything while you are casting a spell. So you might have to use another character for that. Just get someone else to run around in the warrens gathering a huge train then keep them healed with Q and zone out to dump off any agro.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u54"><b>Viscerator</b></div><div class="posttext" id="p54">Pretty graph, same results I have been seeing for the past 4 years.<br />
+<br />
+Only quirk new to me was the str over 280 had zero effect, that is the only thing we should be questioning now.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u55"><b>Toppo</b></div><div class="posttext" id="p55">I wonder if this would replicate a study I once saw. Adjustments to str have the affects you noted, but direct increases to ATK have a far more dramatic impact.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u56"><b>Shabura Naarteban</b></div><div class="posttext" id="p56">Only quirk new to me was the str over 280 had zero effect, that is the only thing we should be questioning now.<br />
+<br />
+Its not totally without effect.  The average still advances upward, its just the max hit that seems capped above 280.  But, yeah, that's still something that needs evaluation.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u57"><b>Grizlor</b></div><div class="posttext" id="p57">I'll have a parse against Chronographer in PoI in a few days... Gonna do 4 tests with a warrior guildie... one with naked strength, 1 with capped, and then check SEWS procrate with naked and max dex. I plan on a very large sample size, probably at least 4 hours each just so I know there will be as little deviation as possible.</div></div><hr />
+
+<div id="copyright">Powered by: vBulletin Version 3.0.0 Beta 2<br />Copyright &copy;2000 - 2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

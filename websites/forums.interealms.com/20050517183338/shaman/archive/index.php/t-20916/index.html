@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Interealms - The Shaman's Crucible</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="http://forums.interealms.com/shaman/archive/archive.css" />
+	<style type="text/css">
+	<!--
+	div.username { behavior: url(http://forums.interealms.com/shaman/archive/post.htc); }
+	#thread a { behavior: url(http://forums.interealms.com/shaman/archive/thread.htc); }
+	-->
+	</style>
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Interealms - The Shaman's Crucible</a> &gt; <a href="f-1">General</a> &gt; Code Behind Bad Pulls</div>
+<hr />
+<p class="largefont">Click here for full thread: <a href="http://forums.interealms.com/shaman/showthread.php?threadid=20916">Code Behind Bad Pulls</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Tordail Farstryder</b></div><div class="posttext" id="p1">Thought I'd cross this for you guys off of my guild's private boards. We all got a kick out of it, lol. No idea if this is original or if it was from somewhere else. :)<br />
+<br />
+***********************<br />
+<br />
+Background: So one day after a particularly bad pull and nasty wipe in a GoD Expedition I decided to set out to discover what dynamics were in place during a bad pull. After much searching and researching I finally unearthed the actual code that is called on the Sony servers during such a pull. I am sure many of you are not programmers but Sony's code is pretty easy to follow and the developer has kindly placed comments in places to clarify things. The code gives a great insight into what goes on server side when you experience a bad pull.  <br />
+ <br />
+ <br />
+Sub Bad_Pull  <br />
+ <br />
+Mob.Area_Effect_Agro = ON  <br />
+Mob.Agro_Unrelated_Mobs = TRUE  <br />
+ <br />
+Mob.Target = Mob.Friends(ALL)  <br />
+Mob.Friends(ALL).Agro = 220%  <br />
+ <br />
+Mobs(ALL).Rampage.Mode = ON  <br />
+Mobs(ALL).Flurry.Mode = ON  <br />
+ <br />
+Raid.Rangers.Instant_Death_Mode = ALWAYS_ON  <br />
+***** Dev Note: Don't really need this line as this is the default mode for the Ranger Class.... *****  <br />
+ <br />
+Mob.Move_Mode = FULL_TRAIN  <br />
+Mob.Attack_Direction = MULTIPLE_RANDOM  <br />
+ <br />
+Train.Destination = RAID_CAMP  <br />
+Train.Wipe_Mode = ENTIRE_RAID  <br />
+Train.Go  <br />
+ <br />
+Do Until Raid.IsWiped = TRUE  <br />
+ <br />
+Target Raid.Rangers(ALL)  <br />
+Summon Raid.Rangers(ALL)  <br />
+Kill Raid.Rangers(ALL)  <br />
+**** Dev Note: Snicker  ****  <br />
+ <br />
+Do Until Raid.Clerics = 0  <br />
+Target Raid.Cleric  <br />
+Summon Raid.Cleric  <br />
+Kill Raid.Cleric  <br />
+Loop  <br />
+ <br />
+If Raid.Wizard.Casting = EVAC_TYPE_SPELL then Spell.Fizzle_Mode = TRUE  <br />
+Kill Raid.Wizard  <br />
+If Raid.Druid.Casting = EVAC_TYPE_SPELL then Spell.Fizzle_Mode = TRUE  <br />
+Kill Raid.Druid  <br />
+**** Dev Note: Mwuhahaha Time to die a Dr00d! ****  <br />
+ <br />
+If Raid.Monk.FeignDeath = TRUE Then CastSpell.Target = Raid.Monk  <br />
+Kill Raid.Monk  <br />
+If Raid.Necro.FeignDeath = TRUE Then CastSpell.Target = Raid.Necro  <br />
+Kill Raid.Necro  <br />
+If Raid.ShadowKnight.FeignDeath = TRUE Then CastSpell.Target = Raid.ShadowKnight  <br />
+Kill Raid.ShadowKnight  <br />
+ <br />
+If Rand(100) &gt; 50 Then  <br />
+Mob.Gate  <br />
+Mob.HP = 100%  <br />
+Mob.Buff = ALL  <br />
+Mob.Agro_Unrelated_Mobs = TRUE  <br />
+Mob.Destination = RAID_CAMP  <br />
+Mob.Go  <br />
+End If  <br />
+ <br />
+Target Raid.Casters(ALL)  <br />
+Summon Raid.Casters(ALL)  <br />
+Kill Raid.Casters(ALL)  <br />
+ <br />
+If Raid.Player.IsDead = FALSE Then Summon Raid.Player  <br />
+Kill Raid.Player  <br />
+ <br />
+Raid.IsWiped = TRUE  <br />
+ <br />
+End Loop  <br />
+ <br />
+**** Dev Note: All dead now! Mwuhahaha ****  <br />
+ <br />
+Set Zone.Summon_Corpse = FALSE  <br />
+Set Mobs(ALL).Corpse_Camp_Mode = ON  <br />
+Set Mobs(ALL).See_Invis = TRUE  <br />
+Set Mobs(ALL).See_SOS = TRUE  <br />
+ <br />
+IF Raid.Player.Can_Rez = TRUE Then Raid.Player.Force_Link_Dead = TRUE  <br />
+ <br />
+Tell Each Raid.Player &quot;You have entered - &quot; &amp; HOME_ZONE &amp; &quot; LOADING PLEASE WAIT....&quot;  <br />
+ <br />
+Raid.Players(ALL).XP = Raid.Players(ALL).XP - (10000 * Rand(100))  <br />
+ <br />
+Say SystemWide &quot;Grettings Norrath! All servers will be coming down in 5 minutes for an update. The estimated downtime will be 7 hours. Please plan accordingly!&quot;  <br />
+ <br />
+Player.Force_Full_Repatch = TRUE  <br />
+PatcherServer.Mode = OFF_LINE  <br />
+ <br />
+Server.Players(ALL).Kick = TRUE  <br />
+ <br />
+Goto Calculate_Profits  <br />
+ <br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Litgruv</b></div><div class="posttext" id="p2">Someone spends too much time readin VB manuals ;)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>lightus_rn</b></div><div class="posttext" id="p3">Maybe if the dev team learn a real language then we would have less bugs ?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>WastreldaLeezurd</b></div><div class="posttext" id="p4">Not sure what is more scary.<br />
+<br />
+The time taken to make that joke, or that I actually understood most of it, or that I could see it as being true.<br />
+<br />
+Wastrel da Leezurd.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>ciccero</b></div><div class="posttext" id="p5">At least they're not coding in PL/SQL.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>eximius</b></div><div class="posttext" id="p6">I'd like to see that  in assembler now.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>ciccero</b></div><div class="posttext" id="p7">BALR 12,0<br />
+USING *,12<br />
+L 4,AE00FF02     <br />
+A 4,CA009801<br />
+STM 4,12<br />
+<br />
+Bah, enough of this ... I have to get back to some real work - I haven't touched assembler in nearly 15 years anyway :(</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Drinnar</b></div><div class="posttext" id="p8">I know this is supposed to be a joke, but it makes me very very sad<br />
+<br />
+I'm feel obligated to comment on a few of these things, though there are quite a few more that make me cringe<br />
+<br />
+***********************<br />
+<br />
+Background: So one day after a particularly bad pull and nasty wipe in a<br />
+ GoD Expedition I decided to set out to discover what dynamics were in <br />
+place during a bad pull. After much searching and researching I finally<br />
+ unearthed the actual code that is called on the Sony servers during <br />
+such a pull. I am sure many of you are not programmers but Sony's code<br />
+ is pretty easy to follow and the developer has kindly placed comments<br />
+ in places to clarify things. The code gives a great insight into what <br />
+goes on server side when you experience a bad pull.  <br />
+ <br />
+ <br />
+Sub Bad_Pull  <br />
+ <br />
+Mob.Area_Effect_Agro = ON  <br />
+Mob.Agro_Unrelated_Mobs = TRUE  <br />
+<br />
+are we using on or true?  who makes an enumerated type for on when true is just as good<br />
+<br />
+<br />
+Mob.Target = Mob.Friends(ALL)  <br />
+Mob.Friends(ALL).Agro = 220%  <br />
+ <br />
+Mobs(ALL).Rampage.Mode = ON  <br />
+Mobs(ALL).Flurry.Mode = ON  <br />
+ <br />
+Raid.Rangers.Instant_Death_Mode = ALWAYS_ON  <br />
+***** Dev Note: Don't really need this line as this is the default <br />
+mode for the Ranger Class.... *****  <br />
+<br />
+<br />
+what kinda of crappy language has ***** as the code for comments? seriously<br />
+ <br />
+Mob.Move_Mode = FULL_TRAIN  <br />
+Mob.Attack_Direction = MULTIPLE_RANDOM  <br />
+ <br />
+Train.Destination = RAID_CAMP  <br />
+<br />
+raid camp is a defined thing?  I can understand training a raid, I couldn't think of any reason to have <br />
+RAID_CAMP defined as anything<br />
+<br />
+Train.Wipe_Mode = ENTIRE_RAID  <br />
+Train.Go  <br />
+ <br />
+Do Until Raid.IsWiped = TRUE  <br />
+ <br />
+Target Raid.Rangers(ALL)  <br />
+Summon Raid.Rangers(ALL)  <br />
+Kill Raid.Rangers(ALL)  <br />
+**** Dev Note: Snicker  ****  <br />
+ <br />
+Do Until Raid.Clerics = 0  <br />
+Target Raid.Cleric  <br />
+Summon Raid.Cleric  <br />
+Kill Raid.Cleric  <br />
+Loop  <br />
+ <br />
+If Raid.Wizard.Casting = EVAC_TYPE_SPELL then Spell.Fizzle_Mode = TRUE  <br />
+Kill Raid.Wizard  <br />
+If Raid.Druid.Casting = EVAC_TYPE_SPELL then Spell.Fizzle_Mode = TRUE  <br />
+Kill Raid.Druid  <br />
+**** Dev Note: Mwuhahaha Time to die a Dr00d! ****  <br />
+ <br />
+If Raid.Monk.FeignDeath = TRUE Then CastSpell.Target = Raid.Monk  <br />
+Kill Raid.Monk  <br />
+If Raid.Necro.FeignDeath = TRUE Then CastSpell.Target = Raid.Necro  <br />
+Kill Raid.Necro  <br />
+If Raid.ShadowKnight.FeignDeath = TRUE Then CastSpell.Target = Raid.ShadowKnight  <br />
+Kill Raid.ShadowKnight  <br />
+ <br />
+If Rand(100) &gt; 50 Then  <br />
+Mob.Gate  <br />
+Mob.HP = 100%  <br />
+Mob.Buff = ALL  <br />
+Mob.Agro_Unrelated_Mobs = TRUE  <br />
+Mob.Destination = RAID_CAMP  <br />
+Mob.Go  <br />
+End If  <br />
+ <br />
+Target Raid.Casters(ALL)  <br />
+Summon Raid.Casters(ALL)  <br />
+Kill Raid.Casters(ALL)  <br />
+ <br />
+If Raid.Player.IsDead = FALSE Then Summon Raid.Player  <br />
+Kill Raid.Player  <br />
+ <br />
+Raid.IsWiped = TRUE  <br />
+ <br />
+End Loop  <br />
+ <br />
+**** Dev Note: All dead now! Mwuhahaha ****  <br />
+ <br />
+Set Zone.Summon_Corpse = FALSE  <br />
+Set Mobs(ALL).Corpse_Camp_Mode = ON  <br />
+Set Mobs(ALL).See_Invis = TRUE  <br />
+Set Mobs(ALL).See_SOS = TRUE  <br />
+<br />
+have to use set to assign values now?  are we using true/false or on/off<br />
+<br />
+ <br />
+IF Raid.Player.Can_Rez = TRUE Then Raid.Player.Force_Link_Dead = TRUE  <br />
+ <br />
+Tell Each Raid.Player &quot;You have entered - &quot; &amp; HOME_ZONE &amp; &quot; LOADING PLEASE WAIT....&quot;  <br />
+ <br />
+Raid.Players(ALL).XP = Raid.Players(ALL).XP - (10000 * Rand(100))  <br />
+ <br />
+Say SystemWide &quot;Grettings Norrath! All servers will be coming <br />
+down in 5 minutes for an update. The estimated downtime will be 7 <br />
+hours. Please plan accordingly!&quot;  <br />
+<br />
+used a tell for &quot;you have entered&quot; and say as the command for a systemwide..... seems very very wrong. <br />
+ And what happened ro raid.player(all), it's become Each raid.player??<br />
+<br />
+<br />
+Player.Force_Full_Repatch = TRUE  <br />
+PatcherServer.Mode = OFF_LINE  <br />
+ <br />
+Server.Players(ALL).Kick = TRUE  <br />
+ <br />
+Goto Calculate_Profits  <br />
+End Sub<br />
+<br />
+goto....  so much for OOP :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Drinnar</b></div><div class="posttext" id="p9">tables fixed</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>Adonnisninaste</b></div><div class="posttext" id="p10">Since when do Rangers need special coding to die?  :p</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>lightus_rn</b></div><div class="posttext" id="p11">And i have found the code for the patcher and thats in even a worst language  :) <br />
+<br />
+#c:/players/sucks/we/get/rich/perl<br />
+<br />
+$username=$ARVG[0];<br />
+$FU=$random;<br />
+<br />
+@playerbase=`cat /tmp/players.com`;<br />
+<br />
+while (@playerbase){<br />
+   if ($_ =~ $login ){<br />
+      if($FU =~ /[13579]$/){<br />
+         # we dont overload our PI box to much !<br />
+         print &quot;1001&quot;;<br />
+      }elsif ($FU =~ /[2468]$/){<br />
+         # max users is currently 78 on all servers !!!<br />
+         print &quot;1018&quot;;<br />
+      }else{<br />
+         # WE NEED TO KEEP UP SOME FAITH WITH THE F00LS !<br />
+         &amp;LoadServerSelection;<br />
+      }<br />
+   }<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="username" id="u12"><b>Haleice</b></div><div class="posttext" id="p12">I know this is supposed to be a joke, but it makes me very very sad<br />
+<br />
+I'm feel obligated to comment on a few of these things, though there are quite a few more that make me cringe<br />
+<br />
+<br />
+Oh you big killjoy  :p <br />
+<br />
+I know what you mean I can't stand sloppy programming, but I must admit I've seen worse!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u13"><b>ciccero</b></div><div class="posttext" id="p13">Any of you guys ever work on DAMES?  (Defense Automated Message Exchange System) ?? I know just &quot;dames&quot; sounds kind of strange... especially on a resume ... &quot;yeah with Sikorsky, I mostly just did Dames all day.&quot;<br />
+<br />
+I had to interface one of our MILSPEC inventory systems at Sikorsky into DAMES one time, and we needed some of their code to do it ... that was about the worst I'd seen.  I still have copies of the source, but I'm not sure if I can repost it or not - so just take my word on it.</div></div><hr />
+
+<div id="copyright">Powered by: vBulletin Version 3.0.0 Beta 2<br />Copyright &copy;2000 - 2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>
