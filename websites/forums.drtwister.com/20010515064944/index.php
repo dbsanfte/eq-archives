@@ -1,0 +1,463 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Dr.Twister's Online Games Forums - Forum Index</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#789CCD" VLINK="#789CCD">
+<font face="arial">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="314">
+<table border="0" cellspacing="0" cellpadding="0">
+
+
+<tr valign="middle">
+
+
+<td height="59">
+
+
+<form>
+
+
+<div align="right">
+
+
+<font face="Arial, Helvetica, sans-serif" size="1">
+<select name="dtnetwork" onChange="selecturl(this)" style="background-color: #ffffff; color: #000000; font-family: Arial; font-size: 10">
+<option value="http://forums.drtwister.com" selected>Online Game Forums</option>
+<option value="http://ao.drtwister.com">Anarchy Online</option>
+<option value="http://ac.drtwister.com">Asheron's Call</option>
+<option value="http://camelot.drtwister.com">Dark Ages of Camelot</option>
+<option value="http://dawn.drtwister.com">Dawn</option>
+<option value="http://eq.drtwister.com">Everquest</option>
+<option value="http://fa.drtwister.com">Fallen Age</option>
+<option value="http://hz.drtwister.com">Horizons</option>
+<option value="http://neo.drtwister.com">Neocron</option>
+<option value="http://pe.drtwister.com">Project Entropia</option>
+<option value="http://sb.drtwister.com">Shadowbane</option>
+<option value="http://sw.drtwister.com">Star Wars Online</option>
+<option value="http://ww2.drtwister.com">WWII Online</option>
+<option value="http://www.drtwister.com">Bug Alert</option>
+<option value="http://www.drtwister.com">Beta Alert</option>
+</select>
+
+        </font></div>
+</form>
+<div align="right"><font face="Arial, Helvetica, sans-serif" size="1"><!-- Network Nav -->
+
+
+<script language="JavaScript">		
+
+
+
+		function selecturl(s) {
+
+
+
+			var gourl = s.options[s.selectedIndex].value;
+
+
+
+			window.top.location.href = gourl;
+
+
+
+		}		
+
+
+
+		</script>
+
+        <!-- End Network Nav --></font></div>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="679" valign="bottom">
+<div align="right"><a href="http://adserver.atomicrhino.com/cgi-bin/adcafe_click.cgi?site=drtwister"><img src="http://adserver.atomicrhino.com/cgi-bin/adcafe_gif.cgi?site=drtwister"
+alt="Check Out This Great Site!" border=0 height="60" width="468"></a></div>
+</td>
+<td width="10"> </td>
+</tr>
+<tr>
+<td width="314" background="http://eq.drtwister.com/images/b-back.jpg"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">.</font><font face="Arial, Helvetica, sans-serif" size="1"><a href="mailto:info@drtwister.com" class="link1">Contact </a> - Copyright 2001, The Dr.Twister Network</font></td>
+<td width="679" background="http://eq.drtwister.com/images/b-fog.jpg" valign="bottom">
+<div align="right"><font face="Arial, Helvetica, sans-serif" size="1">.
+</font></div>
+</td>
+<td width="10">
+<div align="right"><img src="http://eq.drtwister.com/images/b-space.jpg" width="15" height="35"></div>
+</td>
+</tr>
+</table>
+<TABLE BORDER=0 WIDTH="95%" CELLPADDING="5" ALIGN="CENTER">
+<TR>                    
+        <TD ALIGN="CENTER" WIDTH="50%" ROWSPAN="2"><a href="/index.php"><IMG SRC="images/header-dark.jpg" border="0"></a><br>
+			</TD>
+	<TD ALIGN="CENTER">
+		<FONT FACE="arial" SIZE="+1" COLOR="#FFFFFF">Dr.Twister's Online Games Forums</font>
+	</TD>
+</TR>
+<TR>
+	<TD ALIGN="CENTER">
+		<FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">
+		[<a href="/bb_register.php?mode=agreement">Register</a>]&nbsp;
+		[<a href="/bb_profile.php?mode=edit">Edit Profile</a>]&nbsp;
+		[<a href="/prefs.php">Edit Your Preferences</a>]&nbsp;
+		[<a href="/search.php">Search</a>]<br>
+		
+		[<a href="/viewpmsg.php">Private Messages</a>]&nbsp;
+		[<a href="/bb_memberlist.php">Memberslist</a>]&nbsp;
+		[<a href="/faq.php">FAQ</a>]&nbsp;
+		[<a href="/login.php">Login</a>]
+&nbsp;		
+		</font>
+	</TD>
+</TR>
+<TR>
+	<TD COLSPAN="2" ALIGN="RIGHT">
+		<FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">
+		Our users have posted a total of -921- Messages.<br>
+We have -163- Registered Users.<br>
+The newest Registered User is -<a href="/bb_profile.php?mode=view&user=164">Woodchuck Midget</a>-.<br>
+-6- users are <a href="/whosonline.php">currently browsing</a> the forums.<br><b>Not logged in. <a href="/login.php">Login.</a></b><br>
+		</font>
+	</TD>
+</TR>
+</TABLE>
+
+<TABLE BORDER="0" WIDTH="95%" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP"><TR><TD BGCOLOR="#001100">
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="1" WIDTH="100%">
+<TR BGCOLOR="#454545" ALIGN="LEFT">
+	<TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="MIDDLE">&nbsp;</TD>
+	<TD><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF"><B>Forum</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF"><B>Topics</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF"><B>Posts</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF"><B>Last Post</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF"><B>Moderator</B></font></TD>
+</TR>
+
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=3">Asheron's Call</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=19&28">AC Bug Alert</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Found a bug in the game, let someone know here.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">4</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">28</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 23:59<br>by dloweinc</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=26&2">AC Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-11 08:44<br>by Talisin</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=3&47">AC General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">16</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">47</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 22:59<br>by Dr.Twister</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=4">Asheron's Call 2</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=27&0">AC2 Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=4&1">AC2 General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-05 20:49<br>by Brent Ua</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=1">Adellion</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=24&0">Adellion Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=1&2">Adellion General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-04-30 10:04<br>by Guzzlr</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=2">Anarchy Online</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=18&0">AO Bug Alert</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Found a bug in the game, let someone know here.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=6">Malachlite</a>, <BR><a href="bb_profile.php?mode=view&user=8">Quantum</a>, <a href="bb_profile.php?mode=view&user=25">Barrdash</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=25&0">AO Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=6">Malachlite</a>, <BR><a href="bb_profile.php?mode=view&user=8">Quantum</a>, <a href="bb_profile.php?mode=view&user=25">Barrdash</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=2&51">AO General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">8</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">51</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-13 17:55<br>by Quantum</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=6">Malachlite</a>, <BR><a href="bb_profile.php?mode=view&user=8">Quantum</a>, <a href="bb_profile.php?mode=view&user=25">Barrdash</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=5">Atriarch</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=5&3">AT General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">3</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-11 10:54<br>by Dr.Twister</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=28&0">Atriarch Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=6">Dark Ages of Camelot</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=20&0">Camelot Bug Alert</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Found a bug in the game, let someone know here.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=49">Bailey</a>, <BR><a href="bb_profile.php?mode=view&user=19">Kampfschwein</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=6&21">DAoC General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">3</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">21</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-09 13:59<br>by Bailey</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=19">Kampfschwein</a>, <BR><a href="bb_profile.php?mode=view&user=49">Bailey</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=29&0">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=49">Bailey</a>, <BR><a href="bb_profile.php?mode=view&user=19">Kampfschwein</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=7">Dawn</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=7&197">Dawn General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">21</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">197</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-13 13:30<br>by Brent Ua</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=30&2">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-09 05:21<br>by Malacar</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=8">EverQuest</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=31&0">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=3">MrOrange</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=21&8">EQ Bug Alert</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Found a bug in the game, let someone know here.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">8</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-11 12:48<br>by Mr. Phisto</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=3">MrOrange</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=8&88">EQ General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">10</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">88</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 18:30<br>by Gobartik</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=3">MrOrange</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=9">EverQuest 2</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=32&12">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">12</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-13 23:42<br>by Kros</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=9&12">EQ2 General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">12</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 23:09<br>by Brisk</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=19">EVE: The Second Genesis</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=43&0">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=49">Bailey</a>, <a href="bb_profile.php?mode=view&user=6">Malachlite</a>, <BR><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=42&4">Eve General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">4</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-06 11:15<br>by Malachlite</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=49">Bailey</a>, <a href="bb_profile.php?mode=view&user=6">Malachlite</a>, <BR><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=10">Fallen Age</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=33&4">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">4</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 23:12<br>by Brisk</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=10&2">FA General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-09 22:07<br>by Joe_</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=11">Horizons</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=34&3">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">3</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-13 18:46<br>by Dipes</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=94">Dipes</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=11&27">HZ General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">7</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">27</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 14:07<br>by Dipes</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=94">Dipes</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=12">Neocron</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=35&0">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=12&1">Neocron General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-04-30 04:35<br>by Tilwin Soulfire</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=13">Project Entropia</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=36&13">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">4</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">13</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-12 16:29<br>by Quantum</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=123">BuDDaHCHRiST</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=13&8">PE General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">8</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-15 00:02<br>by Atrayo</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=123">BuDDaHCHRiST</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=14">Shadowbane</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=37&0">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=109">Sadism</a>, <BR><a href="bb_profile.php?mode=view&user=45">Malcolm</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=22&0">SB Bug Alert</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Found a bug in the game, let someone know here.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">0</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">No Posts</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=45">Malcolm</a>, <BR><a href="bb_profile.php?mode=view&user=109">Sadism</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=14&12">SB General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">3</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">12</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 23:28<br>by Brisk</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=45">Malcolm</a>, <BR><a href="bb_profile.php?mode=view&user=109">Sadism</a>, <a href="bb_profile.php?mode=view&user=67">LordPixie</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=18">DTN Staff</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=41&323">Staff General Chat</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Private forum for staff of The Dr.Twister Network</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">56</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">323</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-15 00:34<br>by Malachlite</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a>, <a href="bb_profile.php?mode=view&user=35">Fool</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=15">Star Wars Galaxies Online</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=38&1">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-02 20:29<br>by Kenshin703</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=15&2">SW General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 05:32<br>by Kenshin703</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=16">Ultima Online</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=39&2">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-12 00:45<br>by Deo Knix</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=23&14">UO Bug Alert</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Found a bug in the game, let someone know here.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">9</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">14</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 14:45<br>by Zen Lunatic</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=16&18">UO General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">6</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">18</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-14 20:03<br>by timmae</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#454545"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><B><a href="/index.php?viewcat=17">WWII Online</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=40&5">Development Information</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Share insights with the development of the game.</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">1</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">5</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-13 16:21<br>by Brisk</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#454545" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/images/red_folder.gif"></TD><TD BGCOLOR="#333333"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><a href="viewforum.php?forum=17&8">WW2 Online General Discussion</a></font>
+<br><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">Talk about whatever...</font></TD>
+<TD BGCOLOR="#454545" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">2</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">8</font></TD>
+<TD BGCOLOR="#454545" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">2001-05-13 20:07<br>by Womper</font></TD>
+<TD BGCOLOR="#333333" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF"><a href="bb_profile.php?mode=view&user=1">Dr.Twister</a></font></td></tr>
+
+<!-- Begin Private Messages Hack -->
+
+<TR ALIGN="LEFT" VALIGN="TOP">
+	<TD COLSPAN="6" BGCOLOR="#454545">
+		<FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">
+		<B>Private Messages</B>
+		</FONT>
+	</TD>
+</TR>
+
+<TR ALIGN="LEFT" VALIGN="TOP">
+
+<TD ALIGN="CENTER" VALIGN="MIDDLE" BGCOLOR="#454545"><IMG SRC="/images/nopm.gif" BORDER="0"></TD><TD COLSPAN="6" BGCOLOR="#333333"><FONT FACE="arial" SIZE="1" COLOR="#FFFFFF"><A HREF="/viewpmsg.php"><B>Inbox</B></A><br>Login to check your Private Messages.
+		</FONT>
+	</TD>
+</TR>
+
+<!-- End Private Messages Hack -->
+
+<!-- Begin Who's Online Hack -->
+
+<TR ALIGN="LEFT" VALIGN="TOP">
+	<TD COLSPAN=6 BGCOLOR="#454545">
+		<FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">
+		<B>Who's Online</B>
+		</FONT>
+	</TD>
+</TR>
+
+<TR ALIGN="LEFT" VALIGN="TOP">
+	<TD ALIGN="CENTER" VALIGN="MIDDLE" BGCOLOR="#454545">
+		<IMG SRC="/images/online.gif">
+	</TD>
+	<TD COLSPAN=6 BGCOLOR="#333333">
+		<FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">
+		<A HREF="/whosonline.php"><B>Currently Browsing the Boards</B></A>&nbsp;(6)
+		<br>
+
+<b>6</b> guests.
+		</FONT>
+	</TD>
+</TR>
+
+<!-- End Who's Online Hack -->  
+
+     </TABLE></TD></TR></TABLE>
+<TABLE ALIGN="CENTER" BORDER="0" WIDTH="95%"><TR><TD>
+<FONT FACE="arial" SIZE="1" COLOR="#FFFFFF">
+<IMG SRC="/images/red_folder.gif"> = New Posts since your last visit.
+<BR><IMG SRC="/images/folder.gif"> = No New Posts since your last visit.
+</FONT></TD></TR></TABLE>
+
+<FONT FACE="arial" SIZE="-2" COLOR="#FFFFFF">
+<CENTER>Powered by <a href="http://www.phpbb.com/" target="_blank">phpBB</a> Version 1.4.0<BR>
+Copyright &copy; 2000 - 2001 <a href="http://www.phpbb.com/credits.php" target="_blank">The phpBB Group</a>
+</CENTER>
+</font><BR>
+
+<center><font size=-2>phpBB Created this page in 0.119178 seconds.</font></center>
+</FONT>
+</BODY>
+</HTML>
+

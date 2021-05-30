@@ -1,0 +1,1328 @@
+#!/usr/bin/perl
+# ********************************************************************************* #
+#                     EverQuest Character Profile Script                            #
+#                        Developed by Matt Harrison                                 #
+#                            February 9th, 2000                                     #
+# ********************************************************************************* #
+#                                                                                   #
+# ********************************************************************************* #
+$pfile_directory = 'profiles/';
+$datafile = $pfile_directory;
+$datafile = $datafile.'profiledat.dat';
+$scriptfile = 'profile_write.cgi';
+$Mainpwrd = 'dokutt';
+$Logo = 'http://www.tapr.org/~OutridersKarana/jpeg/profile.jpeg';
+$blackimg = 'http://www.tapr.org/~OutridersKarana/jpeg/blackimg.jpeg';
+
+print "Content-type: text/html\n\n";
+&Get_Form_Input;
+&Parse_Data;
+
+# Storing profile data.
+if ($procedure eq "write"){
+	&Write_File;
+
+	$article_file = $lastfilenum;
+	$article_file = $article_file.'.pfl';
+
+	&Open_File;
+	&HTML_Header;
+	&HTML_ProfileView;
+	&HTML_Footer;
+	
+# Viewing someone's profile.
+} elsif ($procedure eq "view"){
+	$article_file = $usrfile;
+	$article_file = $article_file.'.pfl';
+
+	&Open_File;
+	&HTML_Header;
+	&HTML_ProfileView;
+	&HTML_Footer;
+	
+# Display Search Form.
+} elsif ($procedure eq "list"){
+	&HTML_Header;
+	&HTML_Search;
+	&HTML_List;
+	&HTML_Footer;
+	
+# Listing available profiles to view.
+} elsif ($procedure eq "search"){
+	&read_dir;
+	&HTML_Header;
+	&List_Header;
+	foreach $article_file (@foundfiles) {
+		&List_File;
+	}
+	&List_Footer;
+	&HTML_List;
+	&HTML_Footer;
+	
+# Print a form to create a profile.
+} elsif ($procedure eq "create"){
+	if ($field{'pword'} eq $Mainpwrd) {
+		&HTML_Header;
+		&HTML_ProfileForm;
+		&HTML_Footer;
+	}else {
+		print "Badd Password\n";
+	}
+	
+# Print a create form with info filled in on the appropriate character.
+} elsif ($procedure eq "edit"){
+	$article_file = $usrfile;
+	$article_file = $article_file.'.pfl';
+
+	&Open_File;
+	&HTML_Header;
+	&HTML_ProfileForm;
+	&HTML_Footer;
+}
+# ********************************************************************************* #
+#                                   Procedures.                                     #
+# ********************************************************************************* #
+sub Open_File{
+	open (FILEHANDLE, "$pfile_directory$article_file");
+		@FileInfo = <FILEHANDLE>;
+	close FILEHANDLE;
+}
+
+sub read_dir{
+	# open incoming directory, read all files found, and push them to an array
+	
+	opendir (DIR, $pfile_directory) || die "Directory Read Failed \n";
+		while (defined($scanfile = readdir(DIR) ) ){
+			if ($scanfile ne '.' && $scanfile ne '..'){
+				if (substr($scanfile, length($scanfile) - 3, 3) eq "pfl"){
+#					if (length($scanfile) > '4'){
+						push (@foundfiles, $scanfile);
+#					}
+				}
+			}
+		}
+	closedir(DIR);
+}
+
+sub List_File{
+	$oldpassword = "";
+	&Open_File;
+	$siRace = 0;
+	$siClass = 0;
+	$siLevel = 0;
+	$siTZ = 0;
+
+	if  ($field{'RaceSearch'} eq "Race"){
+		$siRace = 1;
+	}else{
+		if($field{'RaceSearch'} eq substr($FileInfo[6],0,length($FileInfo[6])-1)){
+			$siRace = 1;
+		}
+	}		
+	
+	if  ($field{'ClassSearch'} eq "Class"){
+		$siClass = 1;
+	}else{
+		if($field{'ClassSearch'} eq substr($FileInfo[5],0,length($FileInfo[5])-1)){
+			$siClass = 1;
+		}
+	}		
+
+	if  ($field{'TZSearch'} eq "TimeZone"){
+		$siLevel = 1;
+	}else{
+		if($field{'TZSearch'} eq substr($FileInfo[13],0,length($FileInfo[13])-1)){
+			$siLevel = 1;
+		}
+	}		
+
+	if  ($field{'LevelSearch'} eq "0"){
+		$siTZ = 1;
+	}else{
+		if($field{'LevelSearch'} eq "1" && substr($FileInfo[4],0,length($FileInfo[4])-1) > "0" && substr($FileInfo[4],0,length($FileInfo[4])-1) < "11"){
+			$siTZ = 1;
+		}
+		elsif ($field{'LevelSearch'} eq "2" && substr($FileInfo[4],0,length($FileInfo[4])-1) > "10" && substr($FileInfo[4],0,length($FileInfo[4])-1) < "21"){
+			$siTZ = 1;
+		}
+		elsif ($field{'LevelSearch'} eq "3" && substr($FileInfo[4],0,length($FileInfo[4])-1) > "20" && substr($FileInfo[4],0,length($FileInfo[4])-1) < "31"){
+			$siTZ = 1;
+		}
+		elsif ($field{'LevelSearch'} eq "4" && substr($FileInfo[4],0,length($FileInfo[4])-1) > "30" && substr($FileInfo[4],0,length($FileInfo[4])-1) < "41"){
+			$siTZ = 1;
+		}
+		elsif ($field{'LevelSearch'} eq "5" && substr($FileInfo[4],0,length($FileInfo[4])-1) > "40" && substr($FileInfo[4],0,length($FileInfo[4])-1) < "51"){
+			$siTZ = 1;
+		}
+	}		
+	
+	if ($siRace == "1" && $siClass == "1" && $siLevel == "1" && $siTZ == "1"){
+		&Add_To_List;
+	}
+}
+
+sub Add_To_List{
+	# *************************************
+	print "              <TR>\n";
+	print "                <TD><A HREF=\"$scriptfile?procedure=view&filename=$FileInfo[1]\">$FileInfo[2]</A></TD>\n";
+	print "                <TD>Level $FileInfo[4] $FileInfo[5]</TD>\n";
+	print "                <TD>$FileInfo[3]</TD>\n";
+	print "              </TR>\n";
+}
+
+sub View_File{
+	open (FILEHANDLE, "$pfile_directory$usrfile");
+		@FileInfo = <FILEHANDLE>;
+	close FILEHANDLE;
+
+	print @FileInfo;	
+}
+
+sub Parse_Data{
+	$usrfile = $field{'filename'};
+	$hp = $field{'hp'};
+	$ac = $field{'ac'};
+	$atk = $field{'atk'};
+	$lastfilenum = $usrfile;
+	$procedure = $field{'procedure'};
+	$name = $field{'name'};	 
+	$class = $field{'class'};
+	$strength = $field{'strength'};	 
+	$server = $field{'server'};	 
+	$stamina = $field{'stamina'};	 
+	$deity = $field{'deity'};	 
+	$dexterity = $field{'dexterity'};	 
+	$roleplay = $field{'roleplay'};	 
+	$agility = $field{'agility'};	 
+	$tz = $field{'tz'};	 
+	$wisdom = $field{'wisdom'};	 
+	$race = $field{'race'};	 
+	$intelligence = $field{'intelligence'};	 
+	$sex = $field{'sex'};	 
+	$charisma = $field{'charisma'};	 
+	$level = $field{'level'};	 
+	$guild = $field{'guild'};	 
+	$email = $field{'email'};	 
+	$web = $field{'web'};	 
+	$ear = $field{'ear'};	 
+	$shoulders = $field{'shoulders'};	 
+	$ear2 = $field{'ear2'};	 
+	$chest = $field{'chest'};	 
+	$neck = $field{'neck'};	 
+	$back = $field{'back'};	 
+	$face = $field{'face'};	 
+	$waist = $field{'waist'};	 
+	$head = $field{'head'};	 
+	$legs = $field{'legs'};	 
+	$finger = $field{'finger'};	 
+	$feet = $field{'feet'};	 
+	$finger2 = $field{'finger2'};	 
+	$weapon = $field{'weapon'};	 
+	$wrist = $field{'wrist'};	 
+	$weapon2 = $field{'weapon2'};	 
+	$wrist2 = $field{'wrist2'};	 
+	$ranged = $field{'ranged'};	 
+	$hands = $field{'hands'};	 
+	$ammo = $field{'ammo'};	 
+	$arms = $field{'arms'};	 
+	$baking = $field{'baking'};	 
+	$brewing = $field{'brewing'};	 
+	$fletching = $field{'fletching'};	 
+	$jewelcraft = $field{'jewelcraft'};	 
+	$pottery = $field{'pottery'};	 
+	$smithing = $field{'smithing'};	 
+	$tailoring = $field{'tailoring'};	 
+	$history = $field{'history'};	 
+	$journal = $field{'journal'};	 
+	$pword = $field{'pword'};	 
+	$submit = $field{'submit'};	 
+	$reset = $field{'reset'};	 
+	$picture = $field{'picture'};	 
+
+	$message = "";
+	$found_err = "";
+
+	if ($procedure eq "write") {
+		$errmsg = "<p>Field 'Name' must be filled in.</p>\n";
+		if ($name eq "") {
+		    $message = $message.$errmsg;
+		    $found_err = 1; 
+		}
+		
+		$errmsg = "<p>Field 'Password' must be filled in.</p>\n";
+		if ($pword eq "") {
+		    $message = $message.$errmsg;
+		    $found_err = 1; 
+		}
+		
+		if ($found_err) {
+		    &PrintError; 
+		}
+	}
+}
+
+sub PrintError{ 
+    print $message;
+
+    exit 0;
+    return 1; 
+}
+
+sub Get_Form_Input{
+	(*fval) = @_ if @_ ;
+	local ($buf);
+	if ($ENV{'REQUEST_METHOD'} eq 'POST') {
+		read(STDIN,$buf,$ENV{'CONTENT_LENGTH'});
+	}else {
+		$buf=$ENV{'QUERY_STRING'};
+	}
+	if ($buf eq "") {
+			return 0 ;
+	}else {
+ 		@fval=split(/&/,$buf);
+		foreach $i (0 .. $#fval){
+			($name,$val)=split (/=/,$fval[$i],2);
+			$val=~tr/+/ /;
+			$val=~ s/%(..)/pack("c",hex($1))/ge;
+			$name=~tr/+/ /;
+			$name=~ s/%(..)/pack("c",hex($1))/ge;
+
+			if (!defined($field{$name})) {
+				$field{$name}=$val;
+			}else {
+				$field{$name} .= ",$val";
+		 	
+		 		# if you want multi-selects to goto into an array change to:
+				# $field{$name} .= "\0$val";
+			}
+		}
+	}
+    return 1;
+}
+
+sub Write_File{
+	if ($pword eq ""){
+		print "You must enter a password\n";
+		return 0;
+	}
+	if ($usrfile eq ""){
+		$lastfilenum = 0;
+		open (FILEHANDLE, "$datafile") || die "bad file\n";
+			$lastfilenum = <FILEHANDLE>;
+		close FILEHANDLE;
+		$lastfilenum++;
+		$usrfile = $lastfilenum;
+		open (FILEHANDLE, ">$datafile");
+			print FILEHANDLE $lastfilenum;
+		close FILEHANDLE;
+	}else {
+		$lastfilenum = $usrfile; #substr($usrfile, 0, length($usrfile)-1);
+	}
+	$usrfile = $usrfile.'.pfl';
+	$oldpassword = "";
+	open (FILEHANDLE, "$pfile_directory$usrfile");
+		@FileInfo = <FILEHANDLE>;
+	close FILEHANDLE;
+	
+	$oldpword = substr($FileInfo[0], 0, length($FileInfo[0])-1);
+	$oldpassword = $oldpword;
+	if ($oldpassword eq ""){
+		$oldpassword = $pword;
+	}
+	if ($pword ne $oldpassword){
+		print "Bad Password\n";
+	}else{
+		open (FILEHANDLE, ">$pfile_directory$usrfile") || die "Could not open article for writing\n" ;
+			$writefile = "";
+			# Main Char Data.
+			$writefile = "$writefile$field{'pword'}\n";	 
+			$writefile = "$writefile$lastfilenum\n";
+			$writefile = "$writefile$field{'name'}\n";	 
+			$writefile = "$writefile$field{'server'}\n";	 
+			$writefile = "$writefile$field{'level'}\n";	 
+			$writefile = "$writefile$field{'class'}\n";
+			$writefile = "$writefile$field{'race'}\n";	 
+			$writefile = "$writefile$field{'deity'}\n";	 
+			$writefile = "$writefile$field{'sex'}\n";
+			$writefile = "$writefile$field{'guild'}\n";	 
+			$writefile = "$writefile$field{'email'}\n";	 
+			$writefile = "$writefile$field{'web'}\n";	 
+			$writefile = "$writefile$field{'roleplay'}\n";	 
+			$writefile = "$writefile$field{'tz'}\n";	 
+			$writefile = "$writefile$field{'picture'}\n";	 
+			
+			# Stats.
+			$writefile = "$writefile$field{'strength'}\n";	 
+			$writefile = "$writefile$field{'stamina'}\n";	 
+			$writefile = "$writefile$field{'dexterity'}\n";	 
+			$writefile = "$writefile$field{'agility'}\n";	 
+			$writefile = "$writefile$field{'wisdom'}\n";	 
+			$writefile = "$writefile$field{'intelligence'}\n";	 
+			$writefile = "$writefile$field{'charisma'}\n";	 
+			
+			# Equipment.
+			$writefile = "$writefile$field{'ear'}\n";	 
+			$writefile = "$writefile$field{'neck'}\n";	 
+			$writefile = "$writefile$field{'face'}\n";	 
+			$writefile = "$writefile$field{'head'}\n";	 
+			$writefile = "$writefile$field{'ear2'}\n";	 
+
+			$writefile = "$writefile$field{'finger'}\n";	 
+			$writefile = "$writefile$field{'wrist'}\n";	 
+			$writefile = "$writefile$field{'hands'}\n";	 
+			$writefile = "$writefile$field{'arms'}\n";	 
+			$writefile = "$writefile$field{'wrist2'}\n";	 
+			$writefile = "$writefile$field{'finger2'}\n";	 
+
+			$writefile = "$writefile$field{'shoulders'}\n";	 
+			$writefile = "$writefile$field{'back'}\n";	 
+			$writefile = "$writefile$field{'waist'}\n";	 
+			$writefile = "$writefile$field{'chest'}\n";	 
+			$writefile = "$writefile$field{'legs'}\n";	 
+			$writefile = "$writefile$field{'feet'}\n";	 
+
+			$writefile = "$writefile$field{'weapon'}\n";	 
+			$writefile = "$writefile$field{'weapon2'}\n";	 
+			$writefile = "$writefile$field{'ranged'}\n";	 
+			$writefile = "$writefile$field{'ammo'}\n";	 
+			
+			# Misc.
+			$writefile = "$writefile$field{'history'}\n";	 
+			$writefile = "$writefile$field{'journal'}\n";	 
+			$writefile = "$writefile$field{'hp'}\n";
+			$writefile = "$writefile$field{'ac'}\n";
+			$writefile = "$writefile$field{'atk'}\n";
+			print FILEHANDLE $writefile;
+		close (FILEHANDLE);
+	}
+}
+
+# ********************************************************************************* #
+#                                   HTML Output.                                    #
+# ********************************************************************************* #
+sub HTML_Header{
+	print "<STYLE type=\"text/css\">\n";
+	print "  <!--\n";
+	print "    A:link {text-decoration: none} A:visited {text-decoration: none}\n";
+	print "    A:active {text-decoration: none}\n";
+	print "  -->\n";
+	print "</STYLE>\n";
+	print "<HTML>\n";
+	print "  <TITLE> Character Profiles </TITLE>\n";
+	print "  <BODY TEXT=\"#C0C0C0\" BGCOLOR=\"#000000\" LINK=\"#7070FF\" VLINK=\"#7070FF\" ALINK=\"#FF0000\">\n";
+	print "    <table WIDTH=\"800\">\n";
+	print "      <TR>\n";
+	print "        <TD>\n";
+	print "          <center><IMG SRC=\"$Logo\"></center><BR>\n";
+}
+
+sub List_Header{
+	print "          <CENTER>\n";
+	print "            <TABLE WIDTH=\"650\">\n";
+	print "              <H1>Character Profiles</H1><BR>\n";
+}
+	
+sub List_Footer{
+	print "            </TABLE>\n";
+	print "          <p><hr width=75%></CENTER>\n";
+}
+
+sub HTML_Footer{
+	print "          <BR><BR>\n";
+	print "          <CENTER>\n";
+	print "            <HR width=75%>\n";
+	print "            <I>\n";
+	print "              <H5>\n";
+	print "                Script created and maintained by: <A HREF=\"mailto:faerin\@idirect.com\">Matt Harrison</A><BR>\n";
+	print "                Last updated on Wednesday, February 9th, 2000 12:44:00\n";
+	print "              </H5>\n";
+	print "            </I>\n";
+	print "          </CENTER>\n";
+	print "        </TD>\n";
+	print "      </TR>\n";
+	print "    </TABLE>\n";
+	print "  </BODY>\n";
+	print "</HTML>\n";
+}
+
+sub HTML_List{
+	print "      <FORM ACTION=\"$scriptfile\" METHOD=\"POST\">\n";
+	print "        <BR>\n";
+	print "        <TABLE WIDTH=\"600\" BORDER=\"0\" CELLSPACING=\"2\" CELLPADDING=\"2\">\n";
+	print "          <TR ALIGN=\"center\">\n";
+	print "            <TD COLSPAN=\"5\" HEIGHT=\"10\" ALIGN=\"center\"><CENTER><FONT FACE=\"Arial, Helvetica, sans-serif\" SIZE=\"2\" COLOR=\"ffffff\"><B> Username: <INPUT TYPE=\"text\" NAME=\"name\" SIZE=\"10\"><BR>Password : <INPUT TYPE=\"password\" NAME=\"pword\" SIZE=\"10\"></FONT></CENTER></B>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR ALIGN=\"cebter\">\n";
+	print "            <TD COLSPAN=\"5\" HEIGHT=\"10\" ALIGN=\"center\">\n";
+	print "              <CENTER><input type=\"submit\" name=\"submit\" value=\"Create a new Profile\"></CENTER>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "        </table><input type=\"hidden\" name=\"procedure\" value=\"create\">\n";
+	print "      </form>\n";
+}
+
+sub HTML_Search{
+	print<<ENDDOC;
+            <CENTER>
+              <H2>Search for Member Profiles</H2>
+              Leave fields as they are to display all profiles.<BR><BR>
+              <FORM action="profile_write.cgi" method="POST">
+              <FONT face="Arial, Helvetica, sans-serif" size="2"> 
+              <SELECT NAME="ClassSearch">
+                <OPTION VALUE="Class">Class</OPTION>
+                <OPTION VALUE="ShadowKnight">ShadowKnight</OPTION>
+                <OPTION VALUE="Bard">Bard</OPTION>
+                <OPTION VALUE="Ranger">Ranger</OPTION>
+                <OPTION VALUE="Paladin">Paladin</OPTION>
+                <OPTION VALUE="Warrior">Warrior</OPTION>
+                <OPTION VALUE="Monk">Monk</OPTION>
+                <OPTION VALUE="Rogue">Rogue</OPTION>
+                <OPTION VALUE="Cleric">Cleric</OPTION>
+                <OPTION VALUE="Druid">Druid</OPTION>
+                <OPTION VALUE="Shaman">Shaman</OPTION>
+                <OPTION VALUE="Wizard">Wizard</OPTION>
+                <OPTION VALUE="Enchanter">Enchanter</OPTION>
+                <OPTION VALUE="Magician">Magician</OPTION>
+                <OPTION VALUE="Necromancer">Necromancer</OPTION>
+              </SELECT>
+              </FONT><BR><BR>
+              <FONT face="Arial, Helvetica, sans-serif" size="2"> 
+                <SELECT NAME="RaceSearch">
+                  <OPTION VALUE="Race">Race</OPTION>
+                  <OPTION VALUE="Human">Human</OPTION>
+                  <OPTION VALUE="Barbarian">Barbarian</OPTION>
+                  <OPTION VALUE="Erudite">Erudite</OPTION>
+                  <OPTION VALUE="Woodland Elf">Woodland Elf</OPTION>
+                  <OPTION VALUE="High Elf">High Elf</OPTION>
+                  <OPTION VALUE="Dark Elf">Dark Elf</OPTION>
+                  <OPTION VALUE="Half Elf">Half Elf</OPTION>
+                  <OPTION VALUE="Dwarf">Dwarf</OPTION>
+                  <OPTION VALUE="Troll">Troll</OPTION>
+                  <OPTION VALUE="Ogre">Ogre</OPTION>
+                  <OPTION VALUE="Halfling">Halfling</OPTION>
+                  <OPTION VALUE="Gnome">Gnome</OPTION>
+                </SELECT>
+              </FONT><BR><BR>
+              <FONT face="Arial, Helvetica, sans-serif" size="2"> 
+                <SELECT NAME="TZSearch" VALUE="">
+                  <OPTION VALUE="TimeZone">TimeZone</Option>
+                  <OPTION VALUE="CST">CST</OPTION>
+                  <OPTION VALUE="EST">EST</OPTION>
+                  <OPTION VALUE="MST">MST</OPTION>
+                  <OPTION VALUE="PST">PST</OPTION>
+                  <OPTION VALUE="Australia">Australia</OPTION>
+                  <OPTION VALUE="Asia">Asia</OPTION>
+                  <OPTION VALUE="Europe">Europe</OPTION>
+                  <OPTION VALUE="Other">Other</OPTION>
+                </SELECT>
+              </FONT><BR><BR>
+              <FONT face="Arial, Helvetica, sans-serif" size="2"> 
+                <SELECT NAME="LevelSearch" VALUE="">
+                  <OPTION VALUE="0">Level</OPTION>
+                  <OPTION VALUE="1">1 To 10</OPTION>
+                  <OPTION VALUE="2">11 To 20</OPTION>
+                  <OPTION VALUE="3">21 To 30</OPTION>
+                  <OPTION VALUE="4">31 to 40</OPTION>
+                  <OPTION VALUE="5">41 to 50</OPTION>
+                </SELECT>
+              </FONT><BR><BR>
+         
+              <INPUT type="submit" name="Submit" value="Search Profiles">
+              <input type="hidden" name="procedure" value="search">
+              </FORM>
+            </CENTER>
+ENDDOC
+}
+
+sub HTML_ProfileForm{
+	print "    <CENTER>\n";
+	print "      <FORM ACTION=\"$scriptfile\" METHOD=\"POST\">\n";
+	print "        <BR>\n";
+	print "        <TABLE WIDTH=\"600\" BORDER=\"0\" CELLSPACING=\"2\" CELLPADDING=\"2\">\n";
+	print "          <TR ALIGN=\"center\">\n";
+	print "            <TD COLSPAN=\"5\" HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" SIZE=\"2\" COLOR=\"ffffff\"><B>Name: <INPUT TYPE=\"text\" NAME=\"name\" SIZE=\"30\" VALUE=\"$FileInfo[2]\"></FONT></B>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <td width=\"203\" rowspan=\"16\" align=\"left\" valign=\"top\">\n";
+	
+	# Greg Jones 2/12/2000
+	#
+	$greg = $FileInfo[14];
+	chop($greg);
+	if ($greg ne "") {
+		print "              <font size=\"2\"><img src=\"$FileInfo[14]\" width=\"200\" height=\"350\"></font>\n";
+		} else {
+		print "               <font size=\"3\">No Photo at this time.<br><img src=\"$blackimg\" width=\"200\" height=\"350\"></font>\n";
+		};
+
+	print "            </td>\n";
+	print "            <TD WIDTH=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" SIZE=\"2\" COLOR=\"ffffff\">Strength:</FONT></B></TD>\n";
+	print "            <TD WIDTH=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" SIZE=\"2\"><INPUT TYPE=\"text\" NAME=\"strength\" SIZE=\"3\" VALUE=\"$FileInfo[15]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Class:</FONT></B></TD>\n";
+	print "          <TD WIDTH=\"160\" NOWRAP HEIGHT=\"10\">\n";
+	print "            <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "              <SELECT NAME=\"class\">\n";
+	
+	if ($FileInfo[5] eq "ShadowKnight\n") {
+		print "                <OPTION VALUE=\"ShadowKnight\" SELECTED=\"true\">ShadowKnight</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"ShadowKnight\">ShadowKnight</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Bard\n") {
+		print "                <OPTION VALUE=\"Bard\" SELECTED=\"true\">Bard</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Bard\">Bard</OPTION>\n";
+	}
+
+	if ($FileInfo[5] eq "Ranger\n") {
+		print "                <OPTION VALUE=\"Ranger\" SELECTED=\"true\">Ranger</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Ranger\">Ranger</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Paladin\n") {
+		print "                <OPTION VALUE=\"Paladin\" SELECTED=\"true\">Paladin</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Paladin\">Paladin</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Warrior\n") {
+		print "                <OPTION VALUE=\"Warrior\" SELECTED=\"true\">Warrior</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Warrior\">Warrior</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Monk\n") {
+		print "                <OPTION VALUE=\"Monk\" SELECTED=\"true\">Monk</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Monk\">Monk</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Rogue\n") {
+		print "                <OPTION VALUE=\"Rogue\" SELECTED=\"true\">Rogue</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Rogue\">Rogue</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Cleric\n") {
+		print "                <OPTION VALUE=\"Cleric\" SELECTED=\"true\">Cleric</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Cleric\">Cleric</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Druid\n") {
+		print "                <OPTION VALUE=\"Druid\" SELECTED=\"true\">Druid</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Druid\">Druid</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Shaman\n") {
+		print "                <OPTION VALUE=\"Shaman\" SELECTED=\"true\">Shaman</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Shaman\">Shaman</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Wizard\n") {
+		print "                <OPTION VALUE=\"Wizard\" SELECTED=\"true\">Wizard</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Wizard\">Wizard</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Enchanter\n") {
+		print "                <OPTION VALUE=\"Enchanter\" SELECTED=\"true\">Enchanter</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Enchanter\">Enchanter</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Magician\n") {
+		print "                <OPTION VALUE=\"Magician\" SELECTED=\"true\">Magician</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Magician\">Magician</OPTION>\n";
+	}
+		
+	if ($FileInfo[5] eq "Necromancer\n") {
+		print "                <OPTION VALUE=\"Necromancer\" SELECTED=\"true\">Necromancer</OPTION>\n";
+	}else {
+		print "                <OPTION VALUE=\"Necromancer\">Necromancer</OPTION>\n";
+	}
+		
+	print "              </SELECT>\n";
+	print "            </FONT>\n";
+	print "          </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Stamina:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"stamina\" size=\"3\" VALUE=\"$FileInfo[16]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Level:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"2\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"level\" size=\"3\" VALUE=\"$FileInfo[4]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Dexterity:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"dexterity\" size=\"3\" VALUE=\"$FileInfo[17]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Roleplay:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"10\">\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "                <SELECT NAME=\"roleplay\" VALUE=\"$FileInfo[12]\">\n";
+
+	if ($FileInfo[12] eq "No\n") {
+		print "                  <OPTION VALUE=\"No\" SELECTED=\"true\">No</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"No\">No</OPTION>\n";
+	}
+
+	if ($FileInfo[12] eq "A lil bit\n") {
+		print "                  <OPTION VALUE=\"A lil bit\" SELECTED=\"true\">A lil bit</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"A lil bit\">A lil bit</OPTION>\n";
+	}
+
+	if ($FileInfo[12] eq "Most o' the time\n") {
+		print "                  <OPTION VALUE=\"Most o' the time\" SELECTED=\"true\">Most o' the time</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Most o' the time\">Most o' the time</OPTION>\n";
+	}
+
+	if ($FileInfo[12] eq "Aye!\n") {
+		print "                  <OPTION VALUE=\"Aye!\" SELECTED=\"true\">Aye!</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Aye!\">Aye!</OPTION>\n";
+	}
+
+	print "                </SELECT>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Agility:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"agility\" size=\"3\" VALUE=\"$FileInfo[18]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Time Zone:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"10\">\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "                <SELECT NAME=\"tz\" VALUE=\"$FileInfo[13]\">\n";
+	
+	if ($FileInfo[13] eq "CST\n") {
+		print "                  <OPTION VALUE=\"CST\" SELECTED=\"true\">CST</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"CST\">CST</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "EST\n") {
+		print "                  <OPTION VALUE=\"EST\" SELECTED=\"true\">EST</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"EST\">EST</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "MST\n") {
+		print "                  <OPTION VALUE=\"MST\" SELECTED=\"true\">MST</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"MST\">MST</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "PST\n") {
+		print "                  <OPTION VALUE=\"PST\" SELECTED=\"true\">PST</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"PST\">PST</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "Australia\n") {
+		print "                  <OPTION VALUE=\"Australia\" SELECTED=\"true\">Australia</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Australia\">Australia</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "Asia\n") {
+		print "                  <OPTION VALUE=\"Asia\" SELECTED=\"true\">Asia</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Asia\">Asia</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "Europe\n") {
+		print "                  <OPTION VALUE=\"Europe\" SELECTED=\"true\">Europe</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Europe\">Europe</OPTION>\n";
+	}
+
+	if ($FileInfo[13] eq "Other\n") {
+		print "                  <OPTION VALUE=\"Other\" SELECTED=\"true\">Other</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Other\">Other</OPTION>\n";
+	}
+
+	print "                </SELECT>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Wisdom:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"wisdom\" size=\"3\" VALUE=\"$FileInfo[19]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Race:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"10\">\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "                <SELECT NAME=\"race\">\n";
+
+	if ($FileInfo[6] eq "Human\n") {
+		print "                  <OPTION VALUE=\"Human\" SELECTED=\"true\">Human</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Human\">Human</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Barbarian\n") {
+		print "                  <OPTION VALUE=\"Barbarian\" SELECTED=\"true\">Barbarian</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Barbarian\">Barbarian</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Erudite\n") {
+		print "                  <OPTION VALUE=\"Erudite\" SELECTED=\"true\">Erudite</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Erudite\">Erudite</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Woodland Elf\n") {
+		print "                  <OPTION VALUE=\"Woodland Elf\" SELECTED=\"true\">Woodland Elf</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Woodland Elf\">Woodland Elf</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "High Elf\n") {
+		print "                  <OPTION VALUE=\"High Elf\" SELECTED=\"true\">High Elf</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"High Elf\">High Elf</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Dark Elf\n") {
+		print "                  <OPTION VALUE=\"Dark Elf\" SELECTED=\"true\">Dark Elf</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Dark Elf\">Dark Elf</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Half Elf\n") {
+		print "                  <OPTION VALUE=\"Half Elf\" SELECTED=\"true\">Half Elf</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Half Elf\">Half Elf</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Dwarf\n") {
+		print "                  <OPTION VALUE=\"Dwarf\" SELECTED=\"true\">Dwarf</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Dwarf\">Dwarf</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Troll\n") {
+		print "                  <OPTION VALUE=\"Troll\" SELECTED=\"true\">Troll</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Troll\">Troll</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Ogre\n") {
+		print "                  <OPTION VALUE=\"Ogre\" SELECTED=\"true\">Ogre</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Ogre\">Ogre</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Halfling\n") {
+		print "                  <OPTION VALUE=\"Halfling\" SELECTED=\"true\">Halfling</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Halfling\">Halfling</OPTION>\n";
+	}
+
+	if ($FileInfo[6] eq "Gnome\n") {
+		print "                  <OPTION VALUE=\"Gnome\" SELECTED=\"true\">Gnome</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Gnome\">Gnome</OPTION>\n";
+	}
+		
+	print "                </SELECT>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Intelligence:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"intelligence\" size=\"3\" VALUE=\"$FileInfo[20]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Sex:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"10\">\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "                <SELECT NAME=\"sex\">\n";
+	
+	if ($FileInfo[8] eq "F\n") {
+		print "                  <OPTION VALUE=\"F\" SELECTED=\"true\">F</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"F\">F</OPTION>\n";
+	}
+		
+	if ($FileInfo[8] eq "M\n") {
+		print "                  <OPTION VALUE=\"M\" SELECTED=\"true\">M</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"M\" SELECTED=\"true\">M</OPTION>\n";
+	}
+		
+	if ($FileInfo[8] eq "Not Given\n") {
+		print "                  <OPTION VALUE=\"Not Given\" selected>Not given</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Not Given\" selected>Not given</OPTION>\n";
+	}
+		
+	print "                </SELECT>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Charisma:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"2\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"charisma\" size=\"3\" VALUE=\"$FileInfo[21]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Deity:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"10\">\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "                <SELECT NAME=\"deity\">\n";
+	
+	if ($FileInfo[7] eq "Agnostic\n") {
+		print "                  <OPTION VALUE=\"Agnostic\" SELECTED=\"true\">Agnostic</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Agnostic\">Agnostic</OPTION>\n";
+	}
+	if ($FileInfo[7] eq "Brell Serilis\n") {
+		print "                  <OPTION VALUE=\"Brell Serilis\" SELECTED=\"true\">Brell Serilis</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Brell Serilis\">Brell Serilis</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Bertoxxulous\n") {
+		print "                  <OPTION VALUE=\"Bertoxxulous\" SELECTED=\"true\">Bertoxxulous</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Bertoxxulous\">Bertoxxulous</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Bristlebane\n") {
+		print "                  <OPTION VALUE=\"Bristlebane\" SELECTED=\"true\">Bristlebane</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Bristlebane\">Bristlebane</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Cazic-Thule\n") {
+		print "                  <OPTION VALUE=\"Cazic-Thule\" SELECTED=\"true\">Cazic-Thule</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Cazic-Thule\">Cazic-Thule</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Erollisi Marr\n") {
+		print "                  <OPTION VALUE=\"Erollisi Marr\" SELECTED=\"true\">Erollisi Marr</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Erollisi Marr\">Erollisi Marr</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Innoruuk\n") {
+		print "                  <OPTION VALUE=\"Innoruuk\" SELECTED=\"true\">Innoruuk</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Innoruuk\">Innoruuk</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Karana\n") {
+		print "                  <OPTION VALUE=\"Karana\" SELECTED=\"true\">Karana</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Karana\">Karana</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Mithaniel Marr\n") {
+		print "                  <OPTION VALUE=\"Mithaniel Marr\" SELECTED=\"true\">Mithaniel Marr</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Mithaniel Marr\">Mithaniel Marr</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Prexus\n") {
+		print "                  <OPTION VALUE=\"Prexus\" SELECTED=\"true\">Prexus</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Prexus\">Prexus</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Quellious\n") {
+		print "                  <OPTION VALUE=\"Quellious\" SELECTED=\"true\">Quellious</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Quellious\">Quellious</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Rallos Zek\n") {
+		print "                  <OPTION VALUE=\"Rallos Zek\" SELECTED=\"true\">Rallos Zek</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Rallos Zek\">Rallos Zek</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Rodcet Nife\n") {
+		print "                  <OPTION VALUE=\"Rodcet Nife\" SELECTED=\"true\">Rodcet Nife</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Rodcet Nife\">Rodcet Nife</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Solusek Ro\n") {
+		print "                  <OPTION VALUE=\"Solusek Ro\" SELECTED=\"true\">Solusek Ro</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Solusek Ro\">Solusek Ro</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "The Tribunal\n") {
+		print "                  <OPTION VALUE=\"The Tribunal\" SELECTED=\"true\">The Tribunal</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"The Tribunal\">The Tribunal</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Tunare\n") {
+		print "                  <OPTION VALUE=\"Tunare\" SELECTED=\"true\">Tunare</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Tunare\">Tunare</OPTION>\n";
+	}
+
+	if ($FileInfo[7] eq "Veeshan\n") {
+		print "                  <OPTION VALUE=\"Veeshan\" SELECTED=\"true\">Veeshan</OPTION>\n";
+	}else {
+		print "                  <OPTION VALUE=\"Veeshan\">Veeshan</OPTION>\n";
+	}
+
+	print "                </SELECT>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">HitPoints:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"hp\" size=\"3\" VALUE=\"$FileInfo[45]\"></FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">AC:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"2\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"ac\" size=\"3\" VALUE=\"$FileInfo[46]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Attack:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"atk\" size=\"3\" VALUE=\"$FileInfo[47]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD><TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD><TD width=\"160\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD><TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD><TD width=\"160\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">&nbsp;</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Email</FONT></B></TD>\n";
+	print "            <TD colspan=\"3\" NOWRAP HEIGHT=\"10\">\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">\n";
+	print "                <input type=\"text\" name=\"email\" size=\"40\" VALUE=\"$FileInfo[10]\">\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" valign=\"top\" NOWRAP HEIGHT=\"6\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Web Address</FONT></B></TD>\n";
+	print "            <TD valign=\"top\" colspan=\"3\" NOWRAP HEIGHT=\"6\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"web\" size=\"40\" VALUE=\"$FileInfo[11]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" valign=\"top\" NOWRAP>&nbsp;</TD><TD valign=\"top\" colspan=\"3\" NOWRAP>&nbsp;</TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\">&nbsp;</TD>\n";
+	print "          </TR>\n";
+	print "        </table>\n";
+	print "        <table width=\"600\" border=\"0\" cellspacing=\"2\" cellpadding=\"2\">\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\"><B>Equipment</B></FONT</TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Earring:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"ear\" size=\"25\" VALUE=\"$FileInfo[22]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Shoulders:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"shoulders\" size=\"25\" VALUE=\"$FileInfo[33]\"></FONT></TD></TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Earring2:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"ear2\" size=\"25\" VALUE=\"$FileInfo[26]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Chest:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"chest\" size=\"25\" VALUE=\"$FileInfo[36]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Neck:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"neck\" size=\"25\" VALUE=\"$FileInfo[23]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Back:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"back\" size=\"25\" VALUE=\"$FileInfo[34]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Face:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"face\" size=\"25\" VALUE=\"$FileInfo[24]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Waist:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"waist\" size=\"25\" VALUE=\"$FileInfo[35]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Head:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"head\" size=\"25\" VALUE=\"$FileInfo[25]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Legs:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"legs\" size=\"25\" VALUE=\"$FileInfo[37]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Finger:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"finger\" size=\"25\" VALUE=\"$FileInfo[27]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Feet:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"feet\" size=\"25\" VALUE=\"$FileInfo[38]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Finger2:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"finger2\" size=\"25\" VALUE=\"$FileInfo[32]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Weapon:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"weapon\" size=\"25\" VALUE=\"$FileInfo[39]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Wrist:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"wrist\" size=\"25\" VALUE=\"$FileInfo[28]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Weapon/Shield:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"weapon2\" size=\"25\" VALUE=\"$FileInfo[40]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Wrist2:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"wrist2\" size=\"25\" VALUE=\"$FileInfo[31]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Ranged:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"ranged\" size=\"25\" VALUE=\"$FileInfo[41]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Hands:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"hands\" size=\"25\" VALUE=\"$FileInfo[29]\"></FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Ammo:</FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"ammo\" size=\"25\" VALUE=\"$FileInfo[42]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Arms:</FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><input type=\"text\" name=\"arms\" size=\"25\" VALUE=\"$FileInfo[30]\"></FONT></TD>\n";
+	print "            <TD width=\"102\">&nbsp;</TD>\n";
+	print "            <TD width=\"197\">&nbsp</TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"82\">&nbsp;</TD>\n";
+	print "            <TD colspan=\"2\">&nbsp;</TD>\n";
+	print "            <TD width=\"102\">&nbsp;</TD>\n";
+	print "            <TD width=\"197\">&nbsp;</TD>\n";
+	print "          </TR>\n";
+	print "        </table>\n";
+	print "        <table width=\"600\" border=\"0\" cellspacing=\"2\" cellpadding=\"2\">\n";
+	print "          <TR>\n";
+	print "            <TD width=\"586\" colspan=\"5\" HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">History</FONT></B></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><INPUT TYPE=\"text\" name=\"history\" SIZE=\"80\" VALUE=\"$FileInfo[43]\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\"><font size=\"2\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"586\" colspan=\"5\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Journal</FONT></B></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"586\" colspan=\"5\" HEIGHT=\"2\" >\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><INPUT TYPE=\"text\" name=\"journal\" SIZE=\"80\" VALUE=\"$FileInfo[44]\"><BR>\n";
+	print "                Picture: <input type=\"text\" name=\"picture\" value=\"$FileInfo[14]\"><BR>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR align=\"center\">\n";
+	print "            <TD width=\"586\" colspan=\"5\" HEIGHT=\"24\"><p><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Password <INPUT TYPE=\"password\" NAME=\"pword\"></FONT><BR>\n";
+	$FileInfo[1] = substr($FileInfo[1], 0, length($FileInfo[1])-1);
+	print "              <input type=\"hidden\" name=\"filename\" value=\"$FileInfo[1]\"><BR>\n";
+	print "              <input type=\"submit\" name=\"submit\" value=\"Submit\">&nbsp;<input type=\"reset\" value=\"Clear\" name=\"reset\">\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "        </table><input type=\"hidden\" name=\"procedure\" value=\"write\">\n";
+	print "      </form>\n";
+	print "    <CENTER>\n";
+}
+
+sub HTML_ProfileView{
+	print "    <CENTER>\n";
+	print "      <FORM ACTION=\"$scriptfile\" METHOD=\"POST\">\n";
+	print "        <BR>\n";
+	print "        <TABLE WIDTH=\"600\" BORDER=\"0\" CELLSPACING=\"2\" CELLPADDING=\"2\">\n";
+	print "          <TR>\n";
+	print "            <TD COLSPAN=\"5\" HEIGHT=\"10\"><H1><FONT FACE=\"Arial, Helvetica, sans-serif\" COLOR=\"ffffff\"><B>$FileInfo[2]</B></FONT></H1>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <td width=\"203\" rowspan=\"16\" align=\"left\" valign=\"top\">\n";
+
+	# Greg Jones 2/12/2000
+	#
+	$greg = $FileInfo[14];
+	chop($greg);
+	if ($greg ne "") {
+		print "              <font size=\"2\"><img src=\"$FileInfo[14]\" width=\"200\" height=\"350\"></font>\n";
+		} else {
+		print "               <font size=\"3\">No Photo at this time.<br><img src=\"$blackimg\" width=\"200\" height=\"350\"></font>\n";
+		};
+
+	print "            </td>\n";
+	print "            <TD WIDTH=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" SIZE=\"2\" COLOR=\"ffffff\">Strength: </FONT></B></TD>\n";
+	print "            <TD WIDTH=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" SIZE=\"2\">$FileInfo[15]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Class: </FONT></B></TD>\n";
+	print "            <TD WIDTH=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[5]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Stamina: </FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[16]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Level: </FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[4]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Dexterity: </FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[17]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Roleplay: </FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[12]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Agility: </FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[18]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Time Zone: </FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[13]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Wisdom: </FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[19]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Race: </FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[6]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Intelligence: </FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[20]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Sex: </FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[8]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Charisma: </FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[21]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Deity: </FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[7]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">HitPoints:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[45]</FONT></TD>\n";
+	print "            <TD width=\"71\" NOWRAP HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">AC:</FONT></B></TD>\n";
+	print "            <TD width=\"160\" NOWRAP HEIGHT=\"2\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[46]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP HEIGHT=\"10\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Attack:</FONT></B></TD>\n";
+	print "            <TD width=\"60\" NOWRAP HEIGHT=\"10\"><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[47]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Email: </FONT></B></TD>\n";
+	print "            <TD colspan=\"3\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><A HREF=\"mailto:$FileInfo[10]\">$FileInfo[10]</A></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" valign=\"top\" NOWRAP><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Web Address: </FONT></B></TD>\n";
+	print "            <TD valign=\"top\" colspan=\"3\" NOWRAP><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\"><A HREF=\"$FileInfo[11]\">$FileInfo[11]</A></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"83\" valign=\"top\" NOWRAP>&nbsp;</TD><TD valign=\"top\" colspan=\"3\" NOWRAP>&nbsp;</TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\">&nbsp;</TD>\n";
+	print "          </TR>\n";
+	print "        </table>\n";
+	print "        <table width=\"600\" border=\"0\" cellspacing=\"2\" cellpadding=\"2\">\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\" ALIGN=\"center\"><H3><FONT FACE=\"Arial, Helvetica, sans-serif\" COLOR=\"ffffff\"><B>Equipment</B></FONT></H3></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Earring: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[22]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Shoulders: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[33]</FONT></TD></TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Earring2: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[26]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Chest: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[36]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Neck: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[23]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Back: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[34]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Face: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[24]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Waist: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[35]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Head: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[25]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Legs: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[37]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Finger: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[27]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Feet: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[38]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Finger2: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[32]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Weapon: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[39]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Wrist: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[28]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Weapon/Shield: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[40]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Wrist2: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[31]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Ranged: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[41]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Hands: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[29]</FONT></TD>\n";
+	print "            <TD width=\"102\" ><font COLOR=\"ffffff\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">Ammo: </FONT></B></FONT></TD>\n";
+	print "            <TD width=\"197\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[42]</FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR NOWRAP>\n";
+	print "            <TD width=\"100\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Arms: </FONT></B></TD>\n";
+	print "            <TD colspan=\"2\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[30]</FONT></TD>\n";
+	print "            <TD width=\"102\">&nbsp;</TD>\n";
+	print "            <TD width=\"197\">&nbsp</TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"82\">&nbsp;</TD>\n";
+	print "            <TD colspan=\"2\">&nbsp;</TD>\n";
+	print "            <TD width=\"102\">&nbsp;</TD>\n";
+	print "            <TD width=\"197\">&nbsp;</TD>\n";
+	print "          </TR>\n";
+	print "        </table>\n";
+	print "        <table width=\"600\" border=\"0\" cellspacing=\"2\" cellpadding=\"2\">\n";
+	print "          <TR>\n";
+	print "            <TD width=\"586\" colspan=\"5\" HEIGHT=\"2\"><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">History: </FONT></B></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\" ><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[43]</TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD colspan=\"5\"><font size=\"2\"></FONT></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"586\" colspan=\"5\" ><B><FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\" COLOR=\"ffffff\">Journal: </FONT></B></TD>\n";
+	print "          </TR>\n";
+	print "          <TR>\n";
+	print "            <TD width=\"586\" colspan=\"5\" HEIGHT=\"2\" >\n";
+	print "              <FONT FACE=\"Arial, Helvetica, sans-serif\" size=\"2\">$FileInfo[44]<BR>\n";
+	print "              </FONT>\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "          <TR align=\"center\">\n";
+	print "            <TD width=\"586\" colspan=\"5\" HEIGHT=\"24\"><p>\n";
+	$FileInfo[1] = substr($FileInfo[1], 0, length($FileInfo[1])-1);
+	print "              <input type=\"hidden\" name=\"filename\" value=\"$FileInfo[1]\"><BR>\n";
+	print "              <input type=\"submit\" name=\"submit\" value=\"Edit this Profile\">\n";
+	print "            </TD>\n";
+	print "          </TR>\n";
+	print "        </table><input type=\"hidden\" name=\"procedure\" value=\"edit\">\n";
+	print "      </form>\n";
+	print "    <CENTER>\n";
+}

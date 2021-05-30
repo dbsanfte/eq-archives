@@ -1,0 +1,2226 @@
+#!/usr/bin/perl
+
+print ("Content-type: text/html\n\n");
+eval {
+  ($0 =~ m,(.*)/[^/]+,)   && unshift (@INC, "$1"); # Get the script location: UNIX / or Windows /
+  ($0 =~ m,(.*)\\[^\\]+,) && unshift (@INC, "$1"); # Get the script location: Windows \
+ 
+#substitute all require files here for the file
+
+require "UltBB.setup";
+require "ubb_library.pl";
+require "Styles.file";
+require "Date.pl";
+};
+
+if ($@) {
+    print "Error including required files: $@\n";
+    print "Make sure these files exist, permissions are set properly, and paths are set correctly.";
+ exit;
+}
+
+if ($BBStatus eq "OFF") {
+&StandardHTML("Sorry, this bulletin board is temporarily unavailable, while we perform some routine maintenance.  Please try back again later.  Feel free to email us at <A HREF=\"mailto:$BBEmail\">$BBEmail</A>.");
+exit;
+}
+
+&ReadParse;
+
+#create random numbers for headers/footers
+$RandomNumber = &MakeRandomNumber;
+$RandomNumber2 = $RandomNumber + 100074;
+
+if ($Header ne "") {
+$Header =~ s/UBBrandomX/$RandomNumber/isg;
+$Header =~ s/UBBrandomY/$RandomNumber2/isg;
+}
+if ($Footer ne "") {
+$Footer =~ s/UBBrandomX/$RandomNumber/isg;
+$Footer =~ s/UBBrandomY/$RandomNumber2/isg;
+}
+
+#adjust bgcolor variables
+if ($BGColor ne ""){
+$BGColor = qq(bgcolor="$BGColor");
+}
+if ($AltColumnColor1 ne ""){
+$AltColumnColor1 = qq(bgcolor="$AltColumnColor1");
+}
+if ($AltColumnColor2 ne ""){
+$AltColumnColor2 = qq(bgcolor="$AltColumnColor2");
+}
+if ($CategoryStripColor ne ""){
+$CategoryStripColor = qq(bgcolor="$CategoryStripColor");
+}
+if ($TableColorStrip ne ""){
+$TableColorStrip = qq(bgcolor="$TableColorStrip");
+}
+if ($PageBackground ne ""){
+$PageBackground = qq(background="$NonCGIURL/$PageBackground");
+}
+
+if ($TableBorderColor ne ""){
+$TableWidth2 = "100%";
+$BorderTop = qq(<table border=0 cellpadding=0 cellspacing=0 width="$TableWidth"><TR><td bgcolor="$TableBorderColor">);
+$BorderBottom = qq(</td></tr></table> );
+}  else {
+$TableWidth2 = $TableWidth;
+$BorderTop = "";
+$BorderBottom = "";
+}
+
+@forums = &OpenForumsFile;
+
+$SearchUser = $in{'SearchUser'};
+$SearchUser = &decodeURL($SearchUser);
+$SearchUser = &UNHTMLIFY($SearchUser);
+$SearchUserCoded = $SearchUser;
+$SearchUserCoded = &HTMLIFY($SearchUserCoded);
+$SearchUserCoded =~ tr/ /+/;
+
+
+if ($in{'action'} eq "intro") {
+&Intro;
+}
+
+if ($in{'action'} eq "getdaily") {
+&GetDaily;
+}
+if ($in{'action'} eq "introprivate") {
+&IntroPrivate;
+}
+if ($in{'action'} eq "simplesearch") {
+if ($AllowSearch eq "FALSE") {
+&StandardHTML("Sorry, the search function is not activated at this time.");
+exit;
+}  else {
+if ($IndexMethod eq "ONEFILE") {
+&SimpleSearch;
+}  else {
+&SimpleSearch2;
+}
+
+}
+}
+if ($in{'action'} eq "simplesearchP") {
+if ($AllowSearch eq "FALSE") {
+&StandardHTML("Sorry, the search function is not activated at this time.");
+exit;
+}  else {
+&SimpleSearchP;
+}
+}
+
+if ($in{'action'} eq "privateid") {
+&PrivateID;
+}
+
+sub GetDaily {
+&GetDateTime;
+
+if ($AllowSearch eq "FALSE") {
+$SearchOption = "";
+}  else {
+$SearchOption = qq(<A HREF="$CGIURL/search.cgi?action=intro"><ACRONYM TITLE="Perform a search by keyword, date, or name.">refine search</ACRONYM></A> | );
+}
+
+if (-e "$NonCGIPath/dailyindex-$LastLoginJulianDATE.file") {
+$Daily = "exists";
+@daily2 = &OpenFile("$NonCGIPath/dailyindex-$LastLoginJulianDATE.file");
+@daily = sort(@daily2);
+}  else {
+$Daily = "";
+@daily = @blank;
+}
+
+#eliminate duplicates
+foreach $check(@daily) {
+chomp($check);
+(@testit) = split(/\|/, $check);
+$testit = ("$testit[0]" . "$testit[1]");
+$Duplicate = "";
+
+for $dupcheck(@good) {
+@testit2 = split(/\|/, $dupcheck);
+$testit2 = ("$testit2[0]" . "$testit2[1]");
+if ($testit eq "$testit2") {
+	$Duplicate = "true";
+}
+}
+
+if ($Duplicate ne "true") {
+push(@good, $check);
+}
+}
+
+$MatchTotal = @good;
+my $MaxDisplay = 40;  #maximum number to view per screen
+if ($in{'StartPoint'} eq "") {
+	$StartPoint = 1;
+	if ($MatchTotal <= $MaxDisplay) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	} else {
+	$Done = "";
+	$EndPoint = $MaxDisplay;
+	}
+	$EP = $EndPoint - 1;
+	@daily = @good[0..$EP];
+
+} else {
+
+$StartPoint = $in{'StartPoint'};
+$EndPoint = $StartPoint + $MaxDisplay;
+$EndPoint = $EndPoint - 1;
+	if ($MatchTotal <= $EndPoint) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	}  else {
+		$Done = "";
+	}
+
+}
+
+$SP = $StartPoint - 1;
+$EP = $EndPoint - 1;
+@daily = @good[$SP..$EP];
+
+if ($Done ne "true") {
+$NextStart = $EndPoint + 1;
+$NextWording = qq(<A HREF="$CGIURL/search.cgi?action=getdaily&StartPoint=$NextStart">[Next Topics]</A>);
+} else {
+$NextWording = "";
+}
+if ($MatchTotal == 0) {
+$StartPoint = 0;
+}
+
+print<<TOP;
+<HTML>
+<HEAD><TITLE>$BBName - Today's Active Topics</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+$Header
+<br>
+<CENTER>
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<A HREF="$CGIURL/search.cgi?action=intro"><IMG SRC="$NonCGIURL/searchhead.gif" ALT="Search Bulletin Board" BORDER=0></A></td>
+<TD align=right valign=bottom>
+<FONT SIZE="5" FACE="Courier New"><B><CENTER>Today's Active Topics:</CENTER></B></font><BR><FONT FACE="$FontFace" SIZE="1">Public Forums Only</FONT>
+</td></tr></table>
+
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<FONT FACE="$FontFace" SIZE="1">Displaying Topics $StartPoint - $EndPoint ($MatchTotal total) &nbsp;&nbsp;&nbsp;&nbsp; $NextWording</FONT></td><td align=right> 
+<FONT SIZE="1" FACE="$FontFace">$SearchOption <A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Back to Forums</A> </FONT>
+</td></tr></table>
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $TableColorStrip>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Topic</B></FONT>
+</TD>
+<TD NOWRAP>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Last Posted To</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Forum</B></FONT>
+</TD>
+</tr>
+TOP
+
+for $eachone(@daily) {
+@goodline = split(/\|/, $eachone);
+chomp($goodline[5]);
+
+@GetForumName = &GetForumRecord("$goodline[0]");
+$ForumName = "$GetForumName[1]";
+
+	$HyphenIt = "$goodline[3]";
+	($ThisMo, $ThisDay, $ThisYear) = split(/-/, $HyphenIt);
+	
+if ($DateFormat eq "US") {
+	$TheDate = "$HyphenIt";
+	$DateSize = "2";
+}
+elsif ($DateFormat eq "Euro") {
+	$TheDate = "$ThisDay-$ThisMo-$ThisYear";
+	$DateSize = "2";
+}
+elsif ($DateFormat eq "USX") {
+	$TheDate = &DateFormat("$HyphenIt", "USExpanded");
+
+	$DateSize = "1";
+} else {
+	$TheDate = &DateFormat("$HyphenIt", "EuroExpanded");
+		$DateSize = "1";
+}
+
+if (-e "$NonCGIPath/Forum$goodline[0]/HTML/$goodline[1].html") {
+print<<ROW;
+<TR>
+<TD $AltColumnColor1>
+<FONT SIZE="2" FACE="$FontFace"><A HREF="$NonCGIURL/Forum$goodline[0]/HTML/$goodline[1].html">$goodline[4]</A>
+</FONT>
+</TD>
+<TD $AltColumnColor2 NOWRAP>
+<FONT SIZE="$DateSize" FACE="$FontFace">$TheDate</FONT>
+</TD>
+<TD $AltColumnColor1>
+<FONT SIZE="2" FACE="$FontFace">$ForumName</FONT>
+</TD>
+</tr>
+ROW
+}
+}
+
+
+print<<BOTTOM;
+</table>
+$BorderBottom
+</CENTER>
+<P><FONT SIZE="$TextSize" FACE="$FontFace">
+<p align=right>$NextWording</p>
+<P>
+<CENTER>
+</FONT>
+
+<FONT COLOR="$CopyrightTextColor" size="1" FACE="$FontFace">$YourCopyrightNotice
+<P>
+Powered by: 
+Ultimate Bulletin Board<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998 -2000.
+<br><br>
+</center>$Footer</FONT>
+</body></html>
+BOTTOM
+}  #end GetDaily
+
+sub SimpleSearch {
+##NEW!
+if  (($in{'File'} ne "")  &&  ($in{'File'} !~ /^temp/)) {
+&StandardHTML("Could not locate search file.  Please try again.");
+exit;
+}
+
+#get current date in jul. format
+&GetDateTime;
+$CurrentJDay = $LastLoginJulianDATE;
+
+#delete old temporary search records
+&PruneTemps;
+
+#prepare search terms--
+&decodeURL($in{'SearchTerms'});
+chomp($in{'SearchTerms'});
+$SearchWords = $in{'SearchTerms'};
+$SearchTermsCoded = $SearchWords;
+$SearchTermsCoded =~ tr/ /+/;
+$SearchWords =~ s/\n//sg;
+$SearchWords =~ s/\r//sg;
+$SearchWords =~ s/\@/\\@/sg;
+
+if ($SearchWords =~ / /) {
+@SearchList = split(/ /, $SearchWords);
+}  else {
+@SearchList = $SearchWords;
+}
+
+
+$SearchNumber = @SearchList;
+
+if ($in{'Total'} eq "") {
+$Total = 0;
+} else {
+$Total = $in{'Total'};
+}
+
+
+#make sure search file is still valid
+unless (-e "$NonCGIPath/searchlogs/$in{'File'}") {
+	$in{'File'} = "";
+	$FileName = "";
+}
+
+$SkipSearch = "";
+if (($in{'Continue'} eq "False")  && ($in{'File'} ne "")) {
+
+if (-e "$NonCGIPath/searchlogs/$in{'File'}") {
+@good = &OpenFile("$NonCGIPath/searchlogs/$in{'File'}");
+$SkipSearch = "true";
+}  
+}  #end if temp file exists to draw on
+
+$ForumChoice = $in{'ForumChoice'};
+
+if ($SkipSearch ne "true") {
+@index = @blank;
+
+#get forum/archive file
+@foruminfo = &OpenFile("$VariablesPath/forums.cgi");
+$TotalForums = @foruminfo;
+
+
+@theindex = &OpenFile("$NonCGIPath/forumindex.cgi");
+
+
+#search one forum or all?
+if ($ForumChoice ne "ALL") {
+
+if ($ForumChoice !~ /A/) {
+
+@thisforum = &GetForumRecord($ForumChoice);
+	if ( ($thisforum[3] eq "On") && ($thisforum[6] ne "private") ) {
+		@thisindex = grep(/$ForumChoice\|/, @theindex);
+	}  else {
+			@thisindex = @blank;
+	}
+
+} else {
+#get archive index
+($Junk, $ArchNum) = split(/:/, $ForumChoice);
+@thisindex = &OpenFile("$NonCGIPath/Archives/archiveindex-$ArchNum.pl");
+}
+
+}  else {
+#if searching all forums/archives...
+
+	@thisindex = &OpenFile("$NonCGIPath/forumindex.cgi");
+	
+} # end if searching all forums
+
+@index = sort(@thisindex);
+
+#determine start point
+if ($in{'StartAt'} ne "") {
+	$StartAt = $in{'StartAt'};
+	$StartAt = $StartAt + 0;
+	@index = @index[$StartAt..$#index];
+}
+#now we have array to be searched...
+
+# Determine Current Good Array
+if ($in{'File'} =~ /temp\S+\.cgi/) {
+	open(HOLDER, "$NonCGIPath/searchlogs/$in{'File'}");
+	@good = <HOLDER>;
+	close(HOLDER);
+}  else {
+@good = @blank;
+}
+
+&DoTheSearch;  #places matches in @good
+
+#now we have all matches- write temp file
+if ($in{'File'} eq "") {
+&CreateTempSearchName;
+$FileName = "temp-$SearchFile.cgi";
+} else {
+$FileName = "$in{'File'}";
+}
+	open(HOLD, ">$NonCGIPath/searchlogs/$FileName");
+		foreach $one(@good) {
+			chomp($one);
+			print HOLD "$one\n";
+		}
+	close(HOLD);
+	chmod(0666, "$NonCGIPath/searchlogs/$FileName");
+
+}  #end skip search check
+
+
+$MatchTotal = @good;
+my $MaxDisplay = 40;  #maximum number to view per screen
+if ($in{'StartPoint'} eq "") {
+	$StartPoint = 1;
+	if ($MatchTotal <= $MaxDisplay) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	} else {
+	$Done = "";
+	$EndPoint = $MaxDisplay;
+	}
+	$EP = $EndPoint - 1;
+	@good = @good[0..$EP];
+
+} else {
+
+$StartPoint = $in{'StartPoint'};
+$EndPoint = $StartPoint + $MaxDisplay;
+$EndPoint = $EndPoint - 1;
+	if ($MatchTotal <= $EndPoint) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	}  else {
+		$Done = "";
+	}
+
+}
+
+$SP = $StartPoint - 1;
+$EP = $EndPoint - 1;
+@good = @good[$SP..$EP];
+
+if ($FileName eq "") {
+	$FileName = "$in{'File'}";
+}
+
+if ($Done ne "true") {
+$NextStart = $EndPoint + 1;
+$NextWording = qq(<A HREF="$CGIURL/search.cgi?action=simplesearch&StartPoint=$NextStart&SearchTerms=$SearchTermsCoded&SearchUser=$SearchUserCoded&ForumChoice=$in{'ForumChoice'}&SearchIn=$in{'SearchIn'}&SearchDate=$in{'SearchDate'}&ExactName=$in{'ExactName'}&BooleanAND=$in{'BooleanAND'}&File=$FileName&Continue=False">[Next Topics]</A>);
+} else {
+$NextWording = "";
+}
+if ($MatchTotal == 0) {
+$StartPoint = 0;
+}
+print<<TOP;
+<HTML>
+<HEAD><TITLE>$BBName - Search Results</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+$Header
+<br><CENTER>
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<IMG SRC="$NonCGIURL/searchhead.gif" ALT="Search Bulletin Board" BORDER=0></td>
+<TD align=right valign=bottom>
+<FONT SIZE="5" FACE="Courier New"><B><CENTER>Search Results:</CENTER></B></FONT>
+</td></tr></table>
+
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<FONT FACE="$FontFace" SIZE="1">Displaying Topics $StartPoint - $EndPoint ($MatchTotal total) &nbsp;&nbsp;&nbsp;&nbsp; $NextWording</FONT></td><td align=right> 
+<FONT SIZE="1" FACE="$FontFace"><A HREF="$CGIURL/search.cgi?action=intro">New Search</A> | <A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Back to Forums</A> </FONT>
+</td></tr></table>
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $TableColorStrip>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Topic</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Name</B></FONT>
+</TD>
+<TD NOWRAP>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Date</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Forum/Archive</B></FONT>
+</TD>
+</tr>
+TOP
+
+for $eachone(@good) {
+@goodline = split(/\|/, $eachone);
+
+if ($goodline[1] =~ /-/) {
+#it is an archive
+@thisarchive = &OpenFile("$NonCGIPath/Archives/archives.pl");
+foreach $uno(@thisarchive) {
+	if ($uno =~ /^$goodline[0]/) {
+		($ThisNum, $ForumName, $junk) = split(/\|\#\|/, $uno);
+	}
+}
+$TheURL = "$NonCGIURL/Archives/Archive-$goodline[0]/HTML/$goodline[1].html";
+}  else {
+#it is not an archive, but a forum
+@GetForumName = &GetForumRecord("$goodline[0]");
+$ForumName = "$GetForumName[1]";
+$TheURL = "$NonCGIURL/Forum$goodline[0]/HTML/$goodline[1].html";
+}
+	$HyphenIt = "$goodline[3]";
+	($ThisMo, $ThisDay, $ThisYear) = split(/-/, $HyphenIt);
+	
+	$CheckThisYear = length($ThisYear);
+if ($CheckThisYear < 4)  {
+	if ($CheckThisYear  == 2) {
+		$ThisYear = ("19" . "$ThisYear");
+		}  else {
+		$ThisYear = $ThisYear - 100;
+		$ThisYear = sprintf ("%2d", $ThisYear);
+		$ThisYear =~tr/ /0/;
+		$ThisYear = ("20" . "$ThisYear");
+		}
+	$HyphenIt = "$ThisMo-$ThisDay-$ThisYear";
+}
+	
+if ($DateFormat eq "US") {
+	$TheDate = "$HyphenIt";
+	$DateSize = "2";
+}
+elsif ($DateFormat eq "Euro") {
+	$TheDate = "$ThisDay-$ThisMo-$ThisYear";
+	$DateSize = "2";
+}
+elsif ($DateFormat eq "USX") {
+	$TheDate = &DateFormat("$HyphenIt", "USExpanded");
+
+	$DateSize = "1";
+} else {
+	$TheDate = &DateFormat("$HyphenIt", "EuroExpanded");
+		$DateSize = "1";
+}
+
+print<<ROW;
+<TR>
+<TD $AltColumnColor1>
+<FONT SIZE="2" FACE="$FontFace"><A HREF="$TheURL">$goodline[4]</A>
+</FONT>
+</TD>
+<TD $AltColumnColor2>
+<FONT SIZE="2" FACE="$FontFace">$goodline[2]</FONT>
+</TD>
+<TD $AltColumnColor1 NOWRAP>
+<FONT SIZE="$DateSize" FACE="$FontFace">$TheDate</FONT>
+</TD>
+<TD $AltColumnColor2>
+<FONT SIZE="2" FACE="$FontFace">$ForumName</FONT>
+</TD>
+</tr>
+ROW
+}
+
+
+print<<BOTTOM;
+</table>
+$BorderBottom
+</CENTER>
+<P><FONT SIZE="$TextSize" FACE="$FontFace">
+<p align=right>$NextWording</p>
+<P>
+<CENTER>
+</FONT>
+<P>
+
+<FONT COLOR="$CopyrightTextColor" size="1" FACE="$FontFace">$YourCopyrightNotice
+<P>
+Powered by: 
+Ultimate Bulletin Board<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998 -2000.
+<br><br>
+</center>$Footer</font>
+</body></html>
+BOTTOM
+}  # end SimpleSearch sr
+
+
+
+sub Intro {
+if ($DisplayRegistration eq "NO") {
+	$RegLinkHere = "";
+}  else {
+	$RegLinkHere = qq(| <A HREF="$CGIURL/Ultimate.cgi?action=agree"><ACRONYM TITLE="Registration is free!">register</ACRONYM></A> | <A HREF="$CGIURL/ubbmisc.cgi?action=editbio"><ACRONYM TITLE="Click here to edit your profile.">profile</ACRONYM></a>);
+}
+
+#check for default
+if ($in{'default'} ne "") {
+$DefaultSelect = $in{'default'};
+}
+
+print<<TOP;
+<HTML>
+<HEAD>
+	<TITLE>$BBName Search Page</TITLE>
+	$HeaderInsert
+</HEAD>
+
+<BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+$Header
+<FORM ACTION="$CGIURL/search.cgi" METHOD="POST">
+<center>
+<table border=0 width=$TableWidth>
+<TR>
+<td>
+<IMG SRC="$NonCGIURL/searchhead.gif" BORDER=0 ALT="Search Bulletin Board">
+</td>
+<TD valign=bottom>
+<CENTER><FONT FACE="$FontFace" SIZE="1"><A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Back to Forums</A> $RegLinkHere | <A HREF="$CGIURL/ubbmisc.cgi?action=setprefs"><ACRONYM TITLE="Set your preferences.">preferences</ACRONYM></a></FONT></CENTER>
+</td>
+</tr>
+</table>
+<BR>
+
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $AltColumnColor1>
+<TD align=right valign=top>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search Words:</B></FONT>
+</TD>
+<TD>
+<INPUT TYPE="TEXT" NAME="SearchTerms" SIZE=20 MAXLENGTH=25>
+<BR><FONT SIZE="1" FACE="$FontFace" COLOR="$LinkColor">
+<INPUT TYPE="RADIO" NAME="BooleanAND" VALUE="YES" CHECKED> Match all search terms above.<BR>
+<INPUT TYPE="RADIO" NAME="BooleanAND" VALUE="NO"> Match any of the search terms above.
+<P>
+Separate words with spaces, not commas.  </FONT>
+</td></tr>
+<TR $AltColumnColor2>
+<TD valign=top align=right>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search Forum/Archive:</B></FONT>
+</td>
+<td>
+<FONT SIZE="1" FACE="$FontFace">
+<SELECT NAME="ForumChoice">
+TOP
+
+if ($AllowTotalSearch eq "TRUE") {
+if ($IndexMethod eq "ONEFILE") {
+print qq|<OPTION VALUE="ALL">Search All Open Forums (not archives)|;
+} else {
+print qq|<OPTION VALUE="ALL">Search All Open Forums and Archives|;
+}
+} 
+
+for $forumfacts(@forums) {
+@foruminfo = split(/\|/, $forumfacts);
+$ForumName = "$foruminfo[1]";
+$ForumNumber = "$foruminfo[8]";
+$ForumStatus = $foruminfo[3];
+
+chomp($ForumName);
+chomp($ForumNumber);
+$forumline = ("$ForumName" . "::$ForumNumber");
+if (($ForumStatus eq "On") && ($foruminfo[6] ne "private")) {
+push (@theforumarray, $forumline);
+}
+}
+@forumarray = sort(@theforumarray);
+for $thisone(@forumarray) {
+($GetForumName, $GetForumNumber) = split(/::/, $thisone);
+if ($GetForumNumber eq "$DefaultSelect") {
+print qq(<OPTION VALUE="$GetForumNumber" SELECTED>$GetForumName);
+}  else {
+print qq(<OPTION VALUE="$GetForumNumber">$GetForumName);
+}
+}
+
+#check for archives
+if (-e "$NonCGIPath/Archives/archives.pl") {
+@archives = &OpenFile("$NonCGIPath/Archives/archives.pl");
+if ($archives[0] ne "") {
+	foreach $archie(@archives) {
+	($ArchNumber, $ArchName, $junk) = split(/\|\#\|/, $archie);
+	$ArchCheck = ("A:" . "$ArchNumber");
+	if ($ArchCheck eq "$DefaultSelect") {
+	print qq(<OPTION VALUE="A:$ArchNumber" SELECTED>Archive: $ArchName);
+	}  else {
+	print qq(<OPTION VALUE="A:$ArchNumber">Archive: $ArchName);
+	}
+	}
+}
+}
+
+print<<NEXT;
+</select>
+</font>
+</td></tr>
+<tr $AltColumnColor1>
+<td align=right>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search In:</B></FONT>
+</td>
+<td>
+<SELECT NAME="SearchIn">
+	<OPTION VALUE="ALL">Entire Message
+	<OPTION VALUE="SUBJECT">Subject Only
+</SELECT>
+</td></tr>
+<tr $AltColumnColor2>
+<td align=right>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search By Date:</B></FONT>
+</td>
+<td>
+<SELECT NAME="SearchDate">
+	<OPTION value="ALL">Any Date
+	<OPTION VALUE="1">Since Yesterday
+	<OPTION VALUE="5">Since 5 Days Ago
+	<OPTION VALUE="10">Since 10 Days Ago
+	<OPTION VALUE="30">Since 30 Days Ago
+</SELECT>
+</td></tr>
+<tr $AltColumnColor1>
+<td align=right valign=top>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search by User Name:</B></FONT>
+</td>
+<td valign=top><FONT FACE="$FontFace" color="$LinkColor" size="1">
+<INPUT TYPE="TEXT" NAME="SearchUser" SIZE=20 MAXLENGTH=25>
+<BR>
+<INPUT TYPE="Radio" NAME="ExactName" VALUE="yes">Search For Exact Name (case sensitive)<BR>
+<INPUT TYPE="Radio" NAME="ExactName" VALUE="no" CHECKED>Partial Name Match Acceptable</FONT>
+</td></tr>
+</table>
+$BorderBottom
+<BR>
+<FONT size="1" FACE="$FontFace">
+Note: if you need to search private forums, <A HREF="$CGIURL/search.cgi?action=introprivate">click here</A> instead.
+<P></font>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="simplesearch">
+
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Perform Search">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Reset Fields">
+</form>
+<P>
+<FONT COLOR="$CopyrightTextColor" size="1" FACE="$FontFace">$YourCopyrightNotice
+<P>
+Powered by: 
+Ultimate Bulletin Board<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.
+<br><br>
+</center>$Footer</FONT>
+</body></html>
+NEXT
+}  # end sub Intro
+
+sub IntroPrivate {
+print<<TheHTML;
+<HTML><HEAD>
+<TITLE>
+$BBName - Search Private Forums
+</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="$TextSize" FACE="$FontFace" color="$TextColor">
+$Header
+<P>
+<IMG SRC="$NonCGIURL/searchhead.gif" ALT="Search Bulletin Board" BORDER=0>
+<blockquote>
+In order to search through the forum private forums, you must first identify yourself so that we can verify which forums you have permission to read.  Only administrators and moderators may search through all private forums.  
+</blockquote>
+</font>
+<P>
+<CENTER>
+<FORM ACTION="$CGIURL/search.cgi" NAME="REPLIER" METHOD="POST">
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="privateid">
+<table border=0>
+<TR>
+<TD>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your User Name</B></FONT>
+</td>
+<td><INPUT TYPE="TEXT" NAME="UserName" SIZE=25 MAXLENGTH=25>
+</td>
+<TR>
+<td>
+<B><FONT SIZE="2" FACE="Verdana, Arial">Your Password</FONT></B>
+</td>
+<td>
+<INPUT TYPE="PASSWORD" NAME="Password" SIZE=13 MAXLENGTH=13>
+</td></tr>
+<tr><TD colspan=2>
+</td></tr>
+</table>
+
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Submit Identification Now">
+
+</FORM>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+	document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+TheHTML
+
+&PageBottomHTML;
+
+} #end intro private
+
+
+sub PrivateID {
+
+#check permissions for user
+$NameFound = "no";
+$ProfileNumber = &GetUserNumber($in{'UserName'});
+if ($ProfileNumber ne "") {
+	$NameFound = "yes";
+} else {
+	$NameFound = "no";
+}
+
+
+if ($NameFound eq "yes") {
+
+	@theprofile = &OpenProfile("$ProfileNumber.cgi");
+	if ($in{'Password'} eq "$theprofile[1]") {
+		$Permission = "$theprofile[4]";
+		($GenPerms, $SpecificPerms) = split(/\&/, $Permission);
+		$Status = $theprofile[8];
+		&CheckTheStatus;
+		&CheckPermissions;
+		@accessarray = split(",", $SpecificPerms);
+	}  else {
+		&StandardHTML("Sorry, but the password you entered was not correct.  Please try again. Use your Back button.");
+exit;
+	}
+
+} else {
+&StandardHTML("Sorry, but we couldn't find a record for the UserName you entered.  Please try again. Use your Back button.");
+exit;
+
+}
+
+$ArrayTotal = @accessarray;
+
+if (($AdminPermission ne "true") && ($ModStatus ne "true") && ($ArrayTotal == 0)) {
+&StandardHTML("Sorry, but you do not have permission to search any private forums. Use your Back button.");
+exit;
+}
+$UserNameCoded = &HTMLIFY($in{'UserName'});
+$PasswordCoded = &HTMLIFY($in{'Password'});
+
+if ($DisplayRegistration eq "NO") {
+$RegLinkHere = "";
+}  else {
+$RegLinkHere = qq(| <A HREF="$CGIURL/Ultimate.cgi?action=agree"><ACRONYM TITLE="Registration is free!">register</ACRONYM></A> | <A HREF="$CGIURL/ubbmisc.cgi?action=editbio"><ACRONYM TITLE="Click here to edit your profile.">profile</ACRONYM></a>);
+}
+print<<TOP;
+<HTML>
+<HEAD>
+	<TITLE>$BBName Search Page</TITLE>
+	$HeaderInsert
+</HEAD>
+
+<BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+$Header
+<FORM ACTION="$CGIURL/search.cgi" METHOD="POST">
+<center>
+<table border=0 width=$TableWidth>
+<TR>
+<td>
+<IMG SRC="$NonCGIURL/searchhead.gif" BORDER=0 ALT="Search Bulletin Board">
+</td>
+<TD valign=bottom>
+<CENTER><FONT FACE="$FontFace" SIZE="1"><A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Back to Forums</A> $RegLinkHere | <A HREF="$CGIURL/ubbmisc.cgi?action=setprefs"><ACRONYM TITLE="Set your preferences.">preferences</ACRONYM></a></FONT></CENTER>
+</td>
+</tr>
+</table>
+<BR>
+
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $AltColumnColor1>
+<TD align=right valign=top>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search Words:</B></FONT>
+</TD>
+<TD>
+<INPUT TYPE="TEXT" NAME="SearchTerms" SIZE=20 MAXLENGTH=25>
+<BR><FONT SIZE="1" FACE="$FontFace" COLOR="$LinkColor">
+<INPUT TYPE="RADIO" NAME="BooleanAND" VALUE="YES" CHECKED> Match all search terms above.<BR>
+<INPUT TYPE="RADIO" NAME="BooleanAND" VALUE="NO"> Match any of the search terms above.
+<P>
+Separate words with spaces, not commas.  </FONT>
+</td></tr>
+<TR $AltColumnColor2>
+<TD valign=top align=right>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search Forum:</B></FONT>
+</td>
+<td>
+<FONT SIZE="1" FACE="$FontFace">
+<SELECT NAME="ForumChoice">
+<OPTION VALUE="">Select a Private Forum:
+TOP
+
+for $forumfacts(@forums) {
+@foruminfo = split(/\|/, $forumfacts);
+$ForumName = "$foruminfo[1]";
+$ForumNumber = "$foruminfo[8]";
+$ForumStatus = $foruminfo[3];
+
+chomp($ForumName);
+chomp($ForumNumber);
+
+$forumline = ("$ForumName" . "::$ForumNumber");
+
+if ($foruminfo[6] eq "private") {
+unless (($AdminPermission eq "true") || ($ModStatus eq "true")) {
+$ThisAllowed = "";
+CHECKTHRU: foreach $iota(@accessarray) {
+	chomp($iota);
+	if ($iota eq "$ForumNumber") {
+		$ThisAllowed = "true";
+		last CHECKTHRU;
+	}
+}
+} #end unless...
+$Proceed = "";
+if (($AdminPermission eq "true") || ($ModStatus eq "true") || ($ThisAllowed eq "true")) {
+	$Proceed = "YES";
+}
+
+if (($ForumStatus eq "On") && ($Proceed eq "YES")) {
+push (@theforumarray, $forumline);
+}
+}
+}
+@forumarray = sort(@theforumarray);
+for (@forumarray) {
+($GetForumName, $GetForumNumber) = split(/::/, $_);
+print ("<OPTION VALUE=\"$GetForumNumber\">$GetForumName");
+}
+
+print<<NEXT;
+</select>
+</font>
+</td></tr>
+<tr $AltColumnColor1>
+<td align=right>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search In:</B></FONT>
+</td>
+<td>
+<SELECT NAME="SearchIn">
+	<OPTION VALUE="ALL">Entire Message
+	<OPTION VALUE="SUBJECT">Subject Only
+</SELECT>
+</td></tr>
+<tr $AltColumnColor2>
+<td align=right>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search By Date:</B></FONT>
+</td>
+<td>
+<SELECT NAME="SearchDate">
+	<OPTION value="ALL">Any Date
+	<OPTION VALUE="1">Since Yesterday
+	<OPTION VALUE="5">Since 5 Days Ago
+	<OPTION VALUE="10">Since 10 Days Ago
+	<OPTION VALUE="30">Since 30 Days Ago
+</SELECT>
+</td></tr>
+<tr $AltColumnColor1>
+<td align=right valign=top>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Search by User Name:</B></FONT>
+</td>
+<td valign=top><FONT FACE="$FontFace" color="$LinkColor" size="1">
+<INPUT TYPE="TEXT" NAME="SearchUser" SIZE=20 MAXLENGTH=25>
+<BR>
+<INPUT TYPE="Radio" NAME="ExactName" VALUE="yes">Search For Exact Name (case sensitive)<BR>
+<INPUT TYPE="Radio" NAME="ExactName" VALUE="no" CHECKED>Partial Name Match Acceptable</FONT>
+</td></tr>
+</table>
+$BorderBottom
+<p>
+<INPUT TYPE="HIDDEN" NAME="UserNameIn" VALUE="$UserNameCoded">
+<INPUT TYPE="HIDDEN" NAME="PasswordIn" VALUE="$PasswordCoded">
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="simplesearchP">
+
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Perform Search">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Reset Fields">
+
+</form>
+<P>
+<FONT COLOR="$CopyrightTextColor" size="1" FACE="$FontFace">$YourCopyrightNotice
+<P>
+Powered by: 
+Ultimate Bulletin Board<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.
+<br><br>
+</center>$Footer</font>
+</body></html>
+NEXT
+}  # end sub private id
+
+sub SimpleSearchP {
+if ($in{'ForumChoice'} eq "") {
+		&StandardHTML("You failed to select a forum.  Please go back and select one.");
+exit;
+}
+
+#codify un and pw
+$UserNameIn = &UNHTMLIFY($in{'UserNameIn'});
+$PasswordIn = &UNHTMLIFY($in{'PasswordIn'});
+$UserNameInCoded = $UserNameIn;
+$UserNameInCoded =~ tr/ /+/;
+$UserNameIncCoded = &HTMLIFY($UserNameInCoded);
+$PasswordInCoded = $PasswordIn;
+$PasswordInCoded =~ tr/ /+/;
+$PasswordIncCoded = &HTMLIFY($PasswordInCoded);
+
+#re-confirm identity
+$NameFound = "no";
+$ProfileNumber = &GetUserNumber($UserNameIn);
+if ($ProfileNumber ne "") {
+	$NameFound = "yes";
+} else {
+	$NameFound = "no";
+}
+
+if ($NameFound eq "yes") {
+
+	@theprofile = &OpenProfile("$ProfileNumber.cgi");
+	if ($PasswordIn eq "$theprofile[1]") {
+		$Permission = "$theprofile[4]";
+		($GenPerms, $SpecificPerms) = split(/\&/, $Permission);
+		$Status = $theprofile[8];
+		&CheckTheStatus;
+		&CheckPermissions;
+		@accessarray = split(",", $SpecificPerms);
+	}  else {
+		&StandardHTML("Sorry, but you seem to be trying to hack this bulletin board.  We are recording this action.  If you continue to do this, we will report you to the proper authorities.");
+exit;
+	}
+
+} else {
+&StandardHTML("Sorry, but you seem to be trying to hack this bulletin board.  We are recording this action.  If you continue to do this, we will report you to the proper authorities.");
+exit;
+}
+
+#make sure user has permission for THIS forum
+unless (($AdminPermission eq "true") || ($ModStatus eq "true")) {
+$ThisAllowed = "";
+CHECKTHRU: foreach $iota(@accessarray) {
+	chomp($iota);
+	if ($iota eq "$in{'ForumChoice'}") {
+		$ThisAllowed = "true";
+		last CHECKTHRU;
+	}
+}
+} #end unless...
+
+$Proceed = "";
+if (($AdminPermission eq "true") || ($ModStatus eq "true") || ($ThisAllowed eq "true")) {
+	
+#get current date in jul. format
+
+($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime (time);
+$mon++;
+$year = (1900 + $year);
+$CurrentJDay = &jday($mon, $mday, $year);
+&decodeURL($in{'SearchTerms'});
+chomp($in{'SearchTerms'});
+$SearchWords = $in{'SearchTerms'};
+$SearchTermsCoded = $SearchWords;
+$SearchTermsCoded =~ tr/ /+/;
+$SearchWords =~ s/\n//sg;
+$SearchWords =~ s/\r//sg;
+$SearchWords =~ s/\@/\\@/sg;
+
+if ($SearchWords =~ / /) {
+@SearchList = split(/ /, $SearchWords);
+}  else {
+@SearchList = $SearchWords;
+}
+
+$SearchNumber = @SearchList;
+$ForumChoice = $in{'ForumChoice'};
+
+			open (INDEX, "$MembersPath/pindex/privateforumindex$ForumChoice.cgi");
+				@index = <INDEX>;
+			close (INDEX);
+			
+#now we have the complete index... just need to search in it
+$Total = 0;
+
+SEARCHMATCHES: foreach $line(@index) {
+
+	$Bad = "no";
+	@indie = split(/\|/, $line);
+
+# Username Search Routine---
+
+	if ($SearchUser ne "") {
+	if ($in{'ExactName'} eq "no") {
+		unless ($indie[2] =~ m/SearchUser/i) {
+			$Bad = "yes";
+		}
+	}  else {
+	unless ($indie[2] eq "$SearchUser") {
+			$Bad = "yes";
+		}
+	}
+	}
+# Keyword Search Routine---
+$Good = "";
+
+		if (($SearchWords ne "") && ($Bad ne "yes")) {
+		foreach $word(@SearchList) {
+			if ($in{'BooleanAND'} eq "YES") {
+				if ($in{'SearchIn'} eq "SUBJECT") {
+					unless ($indie[4] =~ m/$word/i) {
+						$Bad = "yes";
+					}
+				} else {
+					unless (($indie[5] =~ m/$word/i) || ($indie[4] =~ m/$word/i)) {
+						$Bad = "yes";
+					}
+				}
+		
+			}  else {
+				if ($in{'SearchIn'} eq "SUBJECT") {
+					if ($indie[4] =~ m/$word/i) {
+						$Good = "yes";
+					}
+				}  else {
+					if (($indie[4] =~ m/$word/i) || ($indie[5] =~ m/$word/i)) {
+						$Good = "yes";
+					}
+				}
+			}
+		}
+	}
+if (($in{'BooleanAND'} eq "NO") && ($Good ne "yes")) {
+	$Bad = "yes";
+}
+
+#  Date Search
+if (($in{'SearchDate'} ne "ALL") && ($Bad ne "yes")) {
+$PostDate = $indie[3];
+chomp($PostDate);
+($month, $day, $Year) = split(/-/, $PostDate);
+
+$CheckThisYear = length($Year);
+	if ($CheckThisYear < 4)  {
+	if ($CheckThisYear  == 2) {
+		$Year = ("19" . "$Year");
+		}  else {
+		$Year = $Year - 100;
+		$Year = sprintf ("%2d", $Year);
+		$Year =~tr/ /0/;
+		$Year = ("20" . "$Year");
+		}
+}
+
+
+$PostJDay = &jday($month, $day, $Year);
+
+#current jday is $CurrentJDay
+if ($in{'SearchDate'} eq "0") {
+	$CutOff = ($CurrentJDay - 0);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+if ($in{'SearchDate'} eq "1") {
+	$CutOff = ($CurrentJDay - 1);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+if ($in{'SearchDate'} eq "5") {
+	$CutOff = ($CurrentJDay - 5);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+if ($in{'SearchDate'} eq "10") {
+	$CutOff = ($CurrentJDay - 10);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+if ($in{'SearchDate'} eq "30") {
+	$CutOff = ($CurrentJDay - 30);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+}
+
+if ($Bad ne "yes") {
+(@testit) = split(/\|/, $line);
+$testit = ("$testit[0]" . "$testit[1]");
+$Duplicate = "";
+for $dupcheck(@good) {
+(@testit2) = split(/\|/, $dupcheck);
+$testit2 = ("$testit2[0]" . "$testit2[1]");
+if ($testit eq "$testit2") {
+	$Duplicate = "true";
+}
+}
+if ($Duplicate ne "true") {
+$Total++;
+push(@good, $line);
+	if ($Total >= 200) {
+	last SEARCHMATCHES;
+	}
+}
+} #end if $Bad
+} #end foreach $line
+
+$MatchTotal = @good;
+my $MaxDisplay = 30;  #maximum number to view per screen
+if ($in{'StartPoint'} eq "") {
+	$StartPoint = 1;
+	if ($MatchTotal <= $MaxDisplay) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	} else {
+	$Done = "";
+	$EndPoint = $MaxDisplay;
+	}
+	$EP = $EndPoint - 1;
+	@good = @good[0..$EP];
+
+} else {
+
+$StartPoint = $in{'StartPoint'};
+$EndPoint = $StartPoint + $MaxDisplay;
+$EndPoint = $EndPoint - 1;
+	if ($MatchTotal <= $EndPoint) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	}  else {
+		$Done = "";
+	}
+
+}
+
+$SP = $StartPoint - 1;
+$EP = $EndPoint - 1;
+@good = @good[$SP..$EP];
+
+if ($Done ne "true") {
+$NextStart = $EndPoint + 1;
+$NextWording = "<A HREF=\"$CGIURL/search.cgi?action=simplesearchP&StartPoint=$NextStart&SearchTerms=$SearchTermsCoded&SearchUser=$SearchUserCoded&ForumChoice=$in{'ForumChoice'}&SearchIn=$in{'SearchIn'}&SearchDate=$in{'SearchDate'}&ExactName=$in{'ExactName'}&BooleanAND=$in{'BooleanAND'}&UserNameIn=$UserNameInCoded&PasswordIn=$PasswordInCoded\">[Next Matches]</A>";
+} else {
+$NextWording = "";
+}
+if ($MatchTotal == 0) {
+$StartPoint = 0;
+}
+print<<TOP;
+<HTML>
+<HEAD><TITLE>$BBName - Search Results</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+$Header
+<br><CENTER>
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<IMG SRC="$NonCGIURL/searchhead.gif" ALT="Search Bulletin Board" BORDER=0></td>
+<TD align=right valign=bottom>
+<FONT SIZE="5" FACE="Courier New"><B><CENTER>Search Results:</CENTER></B></FONT>
+</td></tr></table>
+
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<FONT FACE="$FontFace" SIZE="$TextSize">Displaying Matches $StartPoint - $EndPoint ($MatchTotal total) &nbsp;&nbsp;&nbsp;&nbsp; $NextWording</FONT></td><td align=right> 
+<FONT SIZE="1" FACE="$FontFace"><A HREF="$CGIURL/search.cgi?action=intro">New Open Search</A> | <A HREF="$CGIURL/search.cgi?action=introprivate">New Private Search</a> | <A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Back to Forums</A> </FONT>
+</td></tr></table>
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $TableColorStrip>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Topic</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Name</B></FONT>
+</TD>
+<TD NOWRAP>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Date</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Forum</B></FONT>
+</TD>
+</tr>
+TOP
+
+for $eachone(@good) {
+@goodline = split(/\|/, $eachone);
+chomp($goodline[5]);
+
+@GetForumName = &GetForumRecord("$goodline[0]");
+$ForumName = "$GetForumName[1]";
+$PrivateMax = $GetForumName[13];
+chomp($PrivateMax);
+if ($PrivateMax eq "yes") {
+	$TheURL = "$CGIURL/forumdisplay.cgi?action=displayprivate&number=$goodline[0]&topic=$goodline[1]";
+}  else {
+	$TheURL = "$NonCGIURL/Forum$goodline[0]/private-$GetForumName[7]/HTML/$goodline[1].html";
+}
+
+print<<ROW;
+<TR>
+<TD $AltColumnColor1>
+<FONT SIZE="2" FACE="$FontFace"><A HREF="$TheURL">$goodline[4]</A>
+</FONT>
+</TD>
+<TD $AltColumnColor2>
+<FONT SIZE="2" FACE="$FontFace">$goodline[2]</FONT>
+</TD>
+<TD $AltColumnColor1 NOWRAP>
+<FONT SIZE="2" FACE="$FontFace">$goodline[3]</FONT>
+</TD>
+<TD $AltColumnColor2>
+<FONT SIZE="2" FACE="$FontFace">$ForumName</FONT>
+</TD>
+</tr>
+ROW
+}
+
+
+print<<BOTTOM;
+</table>
+$BorderBottom
+</CENTER>
+<P><FONT SIZE="$TextSize" FACE="$FontFace">
+<p align=right>$NextWording</p>
+<CENTER>
+
+</FONT>
+<P>
+
+<FONT COLOR="$CopyrightTextColor" size="1" FACE="$FontFace">$YourCopyrightNotice
+<P>
+Powered by: 
+Ultimate Bulletin Board<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998 - 2000.
+<br><br>
+</center>$Footer</FONT>
+</body></html>
+BOTTOM
+
+}  else {
+&StandardHTML("Sorry, but you do not have permission to search through this forum.");
+exit;
+}
+
+}  # end SimpleSearchP sr
+
+sub DoTheSearch {
+$CountIt = 0;
+SEARCHMATCHES: foreach $line(@index) {
+$CountIt++;
+	$Bad = "no";
+	@indie = split(/\|/, $line);
+
+# Username Search Routine---
+
+if ($SearchUser ne "") {
+	if ($in{'ExactName'} eq "no") {
+		unless ($indie[2] =~ m/$SearchUser/i) {
+			$Bad = "yes";
+		}
+	}  else {
+	unless ($indie[2] eq "$SearchUser") {
+			$Bad = "yes";
+		}
+	}
+	}
+# Keyword Search Routine---
+$GoodOne = "";
+
+		if (($SearchWords ne "") && ($Bad ne "yes")) {
+		foreach $word(@SearchList) {
+			if ($in{'BooleanAND'} eq "YES") {
+				if ($in{'SearchIn'} eq "SUBJECT") {
+					unless ($indie[4] =~ m/$word/i) {
+						$Bad = "yes";
+					}
+				} else {
+					unless (($indie[5] =~ m/$word/i) || ($indie[4] =~ m/$word/i)) {
+						$Bad = "yes";
+					}
+				}
+		
+			}  else {
+				if ($in{'SearchIn'} eq "SUBJECT") {
+					if ($indie[4] =~ m/$word/i) {
+						$GoodOne = "yes";
+					}
+				}  else {
+					if (($indie[4] =~ m/$word/i) || ($indie[5] =~ m/$word/i)) {
+						$GoodOne = "yes";
+					}
+				}
+			}
+		}
+	}
+if (($in{'BooleanAND'} eq "NO") && ($GoodOne ne "yes")) {
+	$Bad = "yes";
+}
+
+#  Date Search
+if (($in{'SearchDate'} ne "ALL") && ($Bad ne "yes")) {
+$PostDate = $indie[3];
+chomp($PostDate);
+($month, $day, $theyear) = split(/-/, $PostDate);
+
+$CheckThisYear = length($theyear);
+
+if ($CheckThisYear < 4)  {
+	if ($CheckThisYear  == 2) {
+		$Year = ("19" . "$theyear");
+		}  else {
+		$Year = $theyear - 100;
+		$Year = sprintf ("%2d", $Year);
+		$Year =~tr/ /0/;
+		$Year = ("20" . "$Year");
+		}
+} else  {
+	$Year = $theyear;
+}
+$PostJDay = &jday($month, $day, $Year);
+
+#current jday is $CurrentJDay
+if ($in{'SearchDate'} eq "0") {
+	$CutOff = ($CurrentJDay - 0);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+if ($in{'SearchDate'} eq "1") {
+	$CutOff = ($CurrentJDay - 1);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+if ($in{'SearchDate'} eq "5") {
+	$CutOff = ($CurrentJDay - 5);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+if ($in{'SearchDate'} eq "10") {
+	$CutOff = ($CurrentJDay - 10);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+if ($in{'SearchDate'} eq "30") {
+	$CutOff = ($CurrentJDay - 30);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+}
+
+if ($Bad ne "yes") {
+(@testit) = split(/\|/, $line);
+$testit = ("$testit[0]" . "$testit[1]");
+$Duplicate = "";
+for $dupcheck(@good) {
+(@testit2) = split(/\|/, $dupcheck);
+$testit2 = ("$testit2[0]" . "$testit2[1]");
+if ($testit eq "$testit2") {
+	$Duplicate = "true";
+}  
+}
+
+if ($Duplicate ne "true") {
+$Total++;
+push(@good, $line);
+	if ($Total >= 200) {
+	$ProcessNext = "false";
+	$MaxSearch = "true";
+	}
+}
+} #end if $Bad
+
+if ($MaxSearch eq "true") {
+last SEARCHMATCHES;
+}
+
+
+if ($CountIt > 9999) {
+	if ($in{'StartAt'} ne "") {
+		$StartPoint = $in{'StartAt'} + $CountIt;
+		$StartPoint--;
+	}	else {
+		$StartPoint = $CountIt;
+	}
+    &ContinueSearch($StartPoint, $Total);
+	exit;
+}
+
+} #end foreach $line
+
+
+}
+
+
+sub ContinueSearch {
+my $ArrayNum = shift;
+my $Total = shift;
+
+#check for search directory
+unless (-e "$NonCGIPath/searchlogs") {
+mkdir ("$NonCGIPath/searchlogs", 0777);
+chmod(0777, "$NonCGIPath/searchlogs");
+}
+#create temp file to hold search results
+if ($in{'File'} eq "") {
+&CreateTempSearchName;
+$FileName = "temp-$SearchFile.cgi";
+} else {
+$FileName = "$in{'File'}";
+}
+	open(HOLD, ">$NonCGIPath/searchlogs/$FileName");
+		foreach $one(@good) {
+			chomp($one);
+			print HOLD "$one\n";
+		}
+	close(HOLD);
+	chmod(0666, "$NonCGIPath/searchlogs/$FileName");
+
+$Totalmatches = @good;
+
+&ForwardSearch("$CGIURL/search.cgi?action=simplesearch&SearchIn=$in{'SearchIn'}&ForumChoice=$in{'ForumChoice'}&SearchTerms=$SearchTermsCoded&BooleanAND=$in{'BooleanAND'}&SearchDate=$in{'SearchDate'}&SearchUser=$SearchUserCoded&ExactName=$in{'ExactName'}&File=$FileName&Total=$Total&StartAt=$ArrayNum", "Please wait... we are processing your search request...<P>Matches Thus Far: $Totalmatches<P>Note: We will not display more than 200 matches.<P>");
+exit;
+}
+
+sub CreateTempSearchName {
+
+@digit = ("A", "B", "F", "G", "H", "I", "n", "p", "q", "r", "s", "t", "u", "v", "w", "y", "z", "2", "3", "4", "5", "6", "7", "8", "9");
+srand(time);
+$num1 = rand(@digit);
+$num2 = rand(@digit); 
+$num3 = rand(@digit);
+$num4 = rand(@digit); 
+
+$Random4 = ("$digit[$num1]" . "$digit[$num2]" . "$digit[$num3]" . "$digit[$num4]");
+$SearchFile = ("$SearchJulian" . "-$Random4");
+
+}
+
+sub PruneTemps {
+opendir(PRUNE, "$NonCGIPath/searchlogs");
+@alltemps = readdir(PRUNE);
+closedir(PRUNE);
+
+@temps = grep(/\.cgi/, @alltemps);
+
+foreach $temp(@temps) {
+	($junk, $JDate, $JTime, $junk) = split(/-/, $temp);
+	$CompareDate = ($JDate + ($JTime * 0.000001));
+	$Diff = $LastLoginJulian - $CompareDate;
+	if ($Diff > 0.015) {
+		unlink("$NonCGIPath/searchlogs/$temp");
+	}
+}
+}
+
+
+sub ForwardSearch {
+my $ForwardURL = shift;
+my $ForwardText = shift;
+
+print<<ForwardHTML;
+<HTML><HEAD>
+<title>$BBName</title>
+<meta http-equiv="Refresh" content="2; URL=$ForwardURL">
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor  $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<br><br>
+<center>
+$BorderTop
+<table border=0 cellpadding=4 border=0 cellspacing=1 width=$TableWidth2>
+<TR $AltColumnColor1>
+<TD>
+<FONT SIZE="$TextSize" FACE="$FontFace">
+<B>$ForwardText  Please wait...
+<P>
+</font>
+<FONT SIZE="1" FACE="$FontFace">
+<A HREF="$ForwardURL">Click here if you do not want to wait any longer (or if your browser does not automatically forward you).</A>
+</B><br><br>
+</FONT>
+</td></tr>
+</table>
+$BorderBottom
+</center>
+$Footer
+</body></html>
+ForwardHTML
+} #end Forward sr
+
+
+sub SimpleSearch2 {
+if  (($in{'File'} ne "")  &&  ($in{'File'} !~ /^temp/)) {
+&StandardHTML("Could not locate search file.  Please try again.");
+exit;
+}
+
+#get current date in jul. format
+&GetDateTime;
+$CurrentJDay = $LastLoginJulianDATE;
+
+#delete old temporary search records
+&PruneTemps;
+
+#prepare search terms--
+&decodeURL($in{'SearchTerms'});
+chomp($in{'SearchTerms'});
+$SearchWords = $in{'SearchTerms'};
+$SearchTermsCoded = $SearchWords;
+$SearchTermsCoded =~ tr/ /+/;
+$SearchWords =~ s/\n//sg;
+$SearchWords =~ s/\r//sg;
+$SearchWords =~ s/\@/\\@/sg;
+
+if ($SearchWords =~ / /) {
+@SearchList = split(/ /, $SearchWords);
+}  else {
+@SearchList = $SearchWords;
+}
+
+$SearchNumber = @SearchList;
+
+if ($in{'Total'} eq "") {
+$Total = 0;
+} else {
+$Total = $in{'Total'};
+}
+
+#make sure search file is still valid
+unless (-e "$NonCGIPath/searchlogs/$in{'File'}") {
+	$in{'File'} = "";
+	$FileName = "";
+}
+
+$SkipSearch = "";
+if (($in{'Continue'} eq "False")  && ($in{'File'} ne "")) {
+
+if (-e "$NonCGIPath/searchlogs/$in{'File'}") {
+@good = &OpenFile("$NonCGIPath/searchlogs/$in{'File'}");
+$SkipSearch = "true";
+}  
+}  #end if temp file exists to draw on
+
+$ForumChoice = $in{'ForumChoice'};
+
+if ($SkipSearch ne "true") {
+@index = @blank;
+#get forum/archive file
+@foruminfo = &OpenFile("$VariablesPath/forums.cgi");
+$TotalForums = @foruminfo;
+@archives = &OpenFile("$NonCGIPath/Archives/archives.pl");
+$TotalArchives = @archives;
+$TotalTotal = $TotalForums + $TotalArchives;
+
+#search one forum or all?
+if ($ForumChoice ne "ALL") {
+
+if ($ForumChoice !~ /A/) {
+
+GETFORUM: foreach $one(@foruminfo) {
+@thisforum = split(/\|/, $one);
+$thisnum = $thisforum[8];
+
+if ($thisnum eq "$ForumChoice") {
+	if ( ($thisforum[3] eq "On") && ($thisforum[6] ne "private") ) {
+		@thisindex = &OpenFile("$NonCGIPath/forumindex$thisnum.cgi");
+	}  else {
+			@thisindex = @blank;
+	}
+	last GETFORUM;
+}
+}
+
+} else {
+#get archive index
+($Junk, $ArchNum) = split(/:/, $ForumChoice);
+@thisindex = &OpenFile("$NonCGIPath/Archives/archiveindex-$ArchNum.pl");
+}
+
+}  else {
+#if searching all forums/archives...
+
+#assemble forum/archive number list
+@searchthru = @blank;
+
+foreach $thisone(@foruminfo) {
+@eachone = split(/\|/, $thisone);
+push(@searchthru, $eachone[8]);
+}
+
+foreach $thisuno(@archives) {
+@eacharch = split(/\|\#\|/, $thisuno);
+$ArchNum = "A:$eacharch[0]";
+push(@searchthru, $ArchNum);
+}
+
+#determine starting point
+if ($in{'StartAt'} eq "") {
+$firstforum = $foruminfo[0];
+@thisforum = split(/\|/, $firstforum);
+$thisnum = $thisforum[8];
+
+	if ( ($thisforum[3] eq "On") && ($thisforum[6] ne "private") ) {
+		@thisindex = &OpenFile("$NonCGIPath/forumindex$thisnum.cgi");
+	}  else {
+		@thisindex = @blank;
+	}
+	
+	if ($TotalTotal > 1) {
+		$NextForum = "$searchthru[1]";
+		chomp($NextForum);
+		$ProcessNext = "true";
+	}  else {
+		$ProcessNext = "false";
+	}
+
+}  else {
+
+if ($in{'StartAt'} !~ /A/) {
+
+@thisforum = &GetForumRecord($in{'StartAt'});
+
+	if ( ($thisforum[3] eq "On") && ($thisforum[6] ne "private") ) {
+		@thisindex = &OpenFile("$NonCGIPath/forumindex$thisforum[8].cgi");
+	}  else {
+		@thisindex = @blank;
+	}
+
+}  else {
+#if retrieving an archive...
+($Junk, $ArchNum) = split(/:/, $in{'StartAt'});
+@thisindex = &OpenFile("$NonCGIPath/Archives/archiveindex-$ArchNum.pl");
+
+}
+
+#check for final array line
+$ArrayRow = 0;
+$TotalArray = $TotalTotal - 1;
+CHECKTHIS: foreach $checkfinish(@searchthru) {
+	chomp($checkfinish);
+	if ($checkfinish eq "$in{'StartAt'}") {
+		$ArrayLine = $ArrayRow;
+	if ($ArrayLine == $TotalArray) {
+	$ProcessNext = "false";
+	}  else {
+	$ProcessNext = "true";
+	$BumpUp = $ArrayRow + 1;
+	$NextForum = $searchthru[$BumpUp];
+	chomp($NextForum);
+	}
+	last CHECKTHIS;
+	}
+	$ArrayRow++;
+}
+
+} #end if/else StartAt
+
+} # end if searching all archives
+
+
+@index = sort(@thisindex);
+
+# Determine Current Good Array
+if ($in{'File'} =~ /temp\S+\.cgi/) {
+	open(HOLDER, "$NonCGIPath/searchlogs/$in{'File'}");
+	@good = <HOLDER>;
+	close(HOLDER);
+}  else {
+@good = @blank;
+}
+
+&DoTheSearch2;  #places matches in @good
+
+#now we have all matches- write temp file
+if ($in{'File'} eq "") {
+&CreateTempSearchName;
+$FileName = "temp-$SearchFile.cgi";
+} else {
+$FileName = "$in{'File'}";
+}
+	open(HOLD, ">$NonCGIPath/searchlogs/$FileName");
+		foreach $one(@good) {
+			chomp($one);
+			print HOLD "$one\n";
+		}
+	close(HOLD);
+	chmod(0666, "$NonCGIPath/searchlogs/$FileName");
+
+}  #end skip search check
+
+
+$MatchTotal = @good;
+my $MaxDisplay = 40;  #maximum number to view per screen
+if ($in{'StartPoint'} eq "") {
+	$StartPoint = 1;
+	if ($MatchTotal <= $MaxDisplay) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	} else {
+	$Done = "";
+	$EndPoint = $MaxDisplay;
+	}
+	$EP = $EndPoint - 1;
+	@good = @good[0..$EP];
+
+} else {
+
+$StartPoint = $in{'StartPoint'};
+$EndPoint = $StartPoint + $MaxDisplay;
+$EndPoint = $EndPoint - 1;
+	if ($MatchTotal <= $EndPoint) {
+		$EndPoint = $MatchTotal;
+		$Done = "true";
+	}  else {
+		$Done = "";
+	}
+
+}
+
+$SP = $StartPoint - 1;
+$EP = $EndPoint - 1;
+@good = @good[$SP..$EP];
+
+if ($FileName eq "") {
+	$FileName = "$in{'File'}";
+}
+
+if ($Done ne "true") {
+$NextStart = $EndPoint + 1;
+$NextWording = qq(<A HREF="$CGIURL/search.cgi?action=simplesearch&StartPoint=$NextStart&SearchTerms=$SearchTermsCoded&SearchUser=$SearchUserCoded&ForumChoice=$in{'ForumChoice'}&SearchIn=$in{'SearchIn'}&SearchDate=$in{'SearchDate'}&ExactName=$in{'ExactName'}&BooleanAND=$in{'BooleanAND'}&File=$FileName&Continue=False">[Next Topics]</A>);
+} else {
+$NextWording = "";
+}
+if ($MatchTotal == 0) {
+$StartPoint = 0;
+}
+print<<TOP;
+<HTML>
+<HEAD><TITLE>$BBName - Search Results</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+$Header
+<br><CENTER>
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<IMG SRC="$NonCGIURL/searchhead.gif" ALT="Search Bulletin Board" BORDER=0></td>
+<TD align=right valign=bottom>
+<FONT SIZE="5" FACE="Courier New"><B><CENTER>Search Results:</CENTER></B></FONT>
+</td></tr></table>
+
+<table border=0 width=$TableWidth>
+<TR><TD align=left>
+<FONT FACE="$FontFace" SIZE="1">Displaying Topics $StartPoint - $EndPoint ($MatchTotal total) &nbsp;&nbsp;&nbsp;&nbsp; $NextWording</FONT></td><td align=right> 
+<FONT SIZE="1" FACE="$FontFace"><A HREF="$CGIURL/search.cgi?action=intro">New Search</A> | <A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Back to Forums</A> </FONT>
+</td></tr></table>
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $TableColorStrip>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Topic</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Name</B></FONT>
+</TD>
+<TD NOWRAP>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Date</B></FONT>
+</TD>
+<TD>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor"><B>Forum/Archive</B></FONT>
+</TD>
+</tr>
+TOP
+
+for $eachone(@good) {
+@goodline = split(/\|/, $eachone);
+
+if ($goodline[1] =~ /-/) {
+#it is an archive
+@thisarchive = &OpenFile("$NonCGIPath/Archives/archives.pl");
+foreach $uno(@thisarchive) {
+	if ($uno =~ /^$goodline[0]/) {
+		($ThisNum, $ForumName, $junk) = split(/\|\#\|/, $uno);
+	}
+}
+$TheURL = "$NonCGIURL/Archives/Archive-$goodline[0]/HTML/$goodline[1].html";
+}  else {
+#it is not an archive, but a forum
+@GetForumName = &GetForumRecord("$goodline[0]");
+$ForumName = "$GetForumName[1]";
+$TheURL = "$NonCGIURL/Forum$goodline[0]/HTML/$goodline[1].html";
+}
+	$HyphenIt = "$goodline[3]";
+	($ThisMo, $ThisDay, $ThisYear) = split(/-/, $HyphenIt);
+	
+	$CheckThisYear = length($ThisYear);
+	
+			if ($CheckThisYear < 4)  {
+	if ($CheckThisYear  == 2) {
+		$ThisYear = ("19" . "$ThisYear");
+		}  else {
+		$ThisYear = $ThisYear - 100;
+		$ThisYear = sprintf ("%2d", $ThisYear);
+		$ThisYear =~tr/ /0/;
+		$ThisYear = ("20" . "$ThisYear");
+		}
+				$HyphenIt = "$ThisMo-$ThisDay-$ThisYear";
+}
+
+	
+if ($DateFormat eq "US") {
+	$TheDate = "$HyphenIt";
+	$DateSize = "2";
+}
+elsif ($DateFormat eq "Euro") {
+	$TheDate = "$ThisDay-$ThisMo-$ThisYear";
+	$DateSize = "2";
+}
+elsif ($DateFormat eq "USX") {
+	$TheDate = &DateFormat("$HyphenIt", "USExpanded");
+
+	$DateSize = "1";
+} else {
+	$TheDate = &DateFormat("$HyphenIt", "EuroExpanded");
+		$DateSize = "1";
+}
+
+print<<ROW;
+<TR>
+<TD $AltColumnColor1>
+<FONT SIZE="2" FACE="$FontFace"><A HREF="$TheURL">$goodline[4]</A>
+</FONT>
+</TD>
+<TD $AltColumnColor2>
+<FONT SIZE="2" FACE="$FontFace">$goodline[2]</FONT>
+</TD>
+<TD $AltColumnColor1 NOWRAP>
+<FONT SIZE="$DateSize" FACE="$FontFace">$TheDate</FONT>
+</TD>
+<TD $AltColumnColor2>
+<FONT SIZE="2" FACE="$FontFace">$ForumName</FONT>
+</TD>
+</tr>
+ROW
+}
+
+
+print<<BOTTOM;
+</table>
+$BorderBottom
+</CENTER>
+<P><FONT SIZE="$TextSize" FACE="$FontFace">
+<p align=right>$NextWording</p>
+<P>
+<CENTER>
+</FONT>
+<P>
+
+<FONT COLOR="$CopyrightTextColor" size="1" FACE="$FontFace">$YourCopyrightNotice
+<P>
+Powered by: 
+Ultimate Bulletin Board<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998 -2000.
+<br><br>
+</center>$Footer</font>
+</body></html>
+BOTTOM
+}  # end SimpleSearch sr
+
+
+sub DoTheSearch2 {
+SEARCHMATCHES: foreach $line(@index) {
+
+	$Bad = "no";
+	@indie = split(/\|/, $line);
+
+# Username Search Routine---
+
+if ($SearchUser ne "") {
+	if ($in{'ExactName'} eq "no") {
+		unless ($indie[2] =~ m/$SearchUser/i) {
+			$Bad = "yes";
+		}
+	}  else {
+	unless ($indie[2] eq "$SearchUser") {
+			$Bad = "yes";
+		}
+	}
+	}
+# Keyword Search Routine---
+$GoodOne = "";
+
+		if (($SearchWords ne "") && ($Bad ne "yes")) {
+		foreach $word(@SearchList) {
+			if ($in{'BooleanAND'} eq "YES") {
+				if ($in{'SearchIn'} eq "SUBJECT") {
+					unless ($indie[4] =~ m/$word/i) {
+						$Bad = "yes";
+					}
+				} else {
+					unless (($indie[5] =~ m/$word/i) || ($indie[4] =~ m/$word/i)) {
+						$Bad = "yes";
+					}
+				}
+		
+			}  else {
+				if ($in{'SearchIn'} eq "SUBJECT") {
+					if ($indie[4] =~ m/$word/i) {
+						$GoodOne = "yes";
+					}
+				}  else {
+					if (($indie[4] =~ m/$word/i) || ($indie[5] =~ m/$word/i)) {
+						$GoodOne = "yes";
+					}
+				}
+			}
+		}
+	}
+if (($in{'BooleanAND'} eq "NO") && ($GoodOne ne "yes")) {
+	$Bad = "yes";
+}
+
+#  Date Search
+if (($in{'SearchDate'} ne "ALL") && ($Bad ne "yes")) {
+$PostDate = $indie[3];
+chomp($PostDate);
+($month, $day, $theyear) = split(/-/, $PostDate);
+
+$CheckThisYear = length($theyear);
+
+		if ($CheckThisYear < 4)  {
+	if ($CheckThisYear  == 2) {
+		$Year = ("19" . "$theyear");
+		}  else {
+		$Year = $theyear - 100;
+		$Year = sprintf ("%2d", $Year);
+		$Year =~tr/ /0/;
+		$Year = ("20" . "$Year");
+		}
+} else  {
+	$Year = $theyear;
+}
+$PostJDay = &jday($month, $day, $Year);
+
+#current jday is $CurrentJDay
+if ($in{'SearchDate'} eq "0") {
+	$CutOff = ($CurrentJDay - 0);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+if ($in{'SearchDate'} eq "1") {
+	$CutOff = ($CurrentJDay - 1);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+if ($in{'SearchDate'} eq "5") {
+	$CutOff = ($CurrentJDay - 5);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+if ($in{'SearchDate'} eq "10") {
+	$CutOff = ($CurrentJDay - 10);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+if ($in{'SearchDate'} eq "30") {
+	$CutOff = ($CurrentJDay - 30);
+	unless ($PostJDay >= $CutOff) {
+		$Bad = "yes";
+	}
+}
+
+}
+
+if ($Bad ne "yes") {
+(@testit) = split(/\|/, $line);
+$testit = ("$testit[0]" . "$testit[1]");
+$Duplicate = "";
+for $dupcheck(@good) {
+(@testit2) = split(/\|/, $dupcheck);
+$testit2 = ("$testit2[0]" . "$testit2[1]");
+if ($testit eq "$testit2") {
+	$Duplicate = "true";
+}  
+}
+
+if ($Duplicate ne "true") {
+$Total++;
+push(@good, $line);
+	if ($Total >= 200) {
+	$ProcessNext = "false";
+	$MaxSearch = "true";
+	}
+}
+} #end if $Bad
+
+if ($MaxSearch eq "true") {
+last SEARCHMATCHES;
+}
+
+
+} #end foreach $line
+
+if ($ProcessNext eq "true") {
+    &ContinueSearch2($NextForum, $Total);
+	exit;
+}
+
+}
+
+
+sub ContinueSearch2 {
+my $NextForum = shift;
+my $Total = shift;
+
+#check for search directory
+unless (-e "$NonCGIPath/searchlogs") {
+mkdir ("$NonCGIPath/searchlogs", 0777);
+chmod(0777, "$NonCGIPath/searchlogs");
+}
+#create temp file to hold search results
+if ($in{'File'} eq "") {
+&CreateTempSearchName;
+$FileName = "temp-$SearchFile.cgi";
+} else {
+$FileName = "$in{'File'}";
+}
+	open(HOLD, ">$NonCGIPath/searchlogs/$FileName");
+		foreach $one(@good) {
+			chomp($one);
+			print HOLD "$one\n";
+		}
+	close(HOLD);
+	chmod(0666, "$NonCGIPath/searchlogs/$FileName");
+
+$Totalmatches = @good;
+
+if ($NextForum !~ /A/) {
+	@getname = &GetForumRecord($NextForum);
+	$ForumName = $getname[1];
+	$archiee = "";
+}  else {
+	foreach $archie(@archives) {
+		@archie = split(/\|\#\|/, $archie);
+	if ($NextForum eq "A:$archie[0]") {
+		$ForumName = "$archie[1]";
+		$archiee = "(archive)";
+	}
+	}
+}
+
+&ForwardSearch("$CGIURL/search.cgi?action=simplesearch&SearchIn=$in{'SearchIn'}&ForumChoice=$in{'ForumChoice'}&SearchTerms=$SearchTermsCoded&BooleanAND=$in{'BooleanAND'}&SearchDate=$in{'SearchDate'}&SearchUser=$SearchUserCoded&ExactName=$in{'ExactName'}&File=$FileName&Total=$Total&StartAt=$NextForum", "Please wait... we are processing your search request...<P>Matches Thus Far: $Totalmatches<P>About to search Forum/Archive: $ForumName $archiee<P>Note: We will not display more than 200 matches.<P>");
+exit;
+}

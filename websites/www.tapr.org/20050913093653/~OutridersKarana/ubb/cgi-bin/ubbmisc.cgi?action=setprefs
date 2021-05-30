@@ -1,0 +1,2045 @@
+#!/usr/bin/perl
+
+#
+###                         PRIMARY UBB SCRIPT                ##
+#
+# Ultimate Bulletin Board is copyright Infopop Corporation (formerly Madrona Park, Inc.), 1998.
+#
+#       ------------ ubbmisc.cgi -------------
+#
+#  This file contains miscellaneous functionality for the UBB.
+#
+#  Infopop Corporation (formerly Madrona Park, Inc.) offers no
+#  warranties on this script.  The owner/licensee of the script is
+#  solely responsible for any problems caused by installation of
+#  the script or use of the script, including messages that may be
+#  posted on the BB.
+#
+#  All copyright notices regarding the Ultimate Bulletin Board
+#  must remain intact on the scripts and in the HTML
+#  for the scripts.
+#
+# For more info on the Ultimate BB, 
+# see http://www.UltimateBB.com
+#
+###############################################################
+#
+#If you are running UBB on IIS,
+#you may need to add the following line
+#if so, just remove the "#" sign before the print line below
+#print "HTTP/1.0 200 OK\n";
+
+eval {
+
+  ($0 =~ m,(.*)/[^/]+,)   && unshift (@INC, "$1"); # Get the script location: UNIX / or Windows /
+  ($0 =~ m,(.*)\\[^\\]+,) && unshift (@INC, "$1"); # Get the script location: Windows \
+ 
+#substitute all require files here for the file
+
+require "UltBB.setup";
+require "cookie-lib.pl";
+require "Date.pl";
+require "mods.file";
+require "mail-lib.pl";
+require "Styles.file";
+require "ubb_library.pl";
+require "ubb_library2.pl";
+
+};
+
+if ($@) {
+	print ("Content-type: text/html\n\n");
+    print "Error including required files: $@\n";
+    print "Make sure these files exist, permissions are set properly, and paths are set correctly.";
+ exit;
+}
+
+use Socket;
+&ReadParse;
+
+foreach $row(@in) {
+	($Name, $Value) = split ("=", $row);
+	$Name = &decodeURL($Name);
+	$Value = &decodeURL($Value);
+	
+		if ($Name eq "forum") {
+			$Forum = $Value;
+			$Forum =~ s/\/\\//g;
+			$ForumCoded = &HTMLIFY($Forum);
+			$ForumCoded =~ tr/ /+/;
+			$Forum = &UNHTMLIFY($Forum);
+	}
+		if ($Name eq "TopicSubject") {
+			$TopicSubject = $Value;
+			$TopicSubject =~ s/<.+?>//g;
+				$TopicSubject = &UNHTMLIFY($TopicSubject);
+	}
+		if ($Name eq "UserName") {
+		$UserName = $Value;
+		$UserName = &UNHTMLIFY($UserName);
+		$UserNameFile = $UserName;
+		$UserNameFile =~ s/ /_/g; #remove spaces
+	}
+	if ($Name eq "BypassCookie") {
+		$BypassCookie = $Value;
+	}
+	if ($Name eq "category") {
+			$category = $Value;
+	}
+		if ($Name eq "PasswordConfirm") {
+			$PasswordConfirm = $Value;
+		}
+
+		if ($Name eq "number") {
+			$number = $Value;
+	}
+		if ($Name eq "DaysPrune") {
+			$DaysPrune = $Value;
+	}
+	if ($Name eq "topic") {
+			$topic = $Value;
+	}
+	if ($Name eq "Email") {
+			$Email = $Value;
+			$Email =~tr/A-Z/a-z/; 
+	}
+	if ($Name eq "URL") {
+			$URL = &CleanThis($Value);
+			$URL = &PipeCleaner($URL);
+	}
+	if ($Name eq "Permissions") {
+			$Permissions = $Value;
+	}
+	if ($Name eq "Occupation") {
+			$Occupation = &CleanThis($Value);
+			$Occupation = &PipeCleaner($Occupation);
+	}
+	if ($Name eq "Location") {
+			$Location = &CleanThis($Value);
+			$Location = &PipeCleaner($Location);
+	}
+	if ($Name eq "TotalPosts") {
+		$TotalPosts = $Value;
+	}
+	if ($Name eq "Status") {
+		$Status = $Value;
+	}
+	if ($Name eq "Interests") {
+			$Interests = &CleanThis($Value);
+			$Interests = &PipeCleaner($Value);
+	}
+		if ($Name eq "sendto") {
+			$sendto = $Value;
+	}
+}  # end FOREACH $row
+
+if ($VariablesPath eq "") {
+	$VariablesPath = $CGIPath;
+}
+
+#create random numbers for headers/footers
+$RandomNumber = &MakeRandomNumber;
+$RandomNumber2 = $RandomNumber + 100074;
+
+if ($Header ne "") {
+$Header =~ s/UBBrandomX/$RandomNumber/isg;
+$Header =~ s/UBBrandomY/$RandomNumber2/isg;
+}
+if ($Footer ne "") {
+$Footer =~ s/UBBrandomX/$RandomNumber/isg;
+$Footer =~ s/UBBrandomY/$RandomNumber2/isg;
+}
+#adjust bgcolor variables
+if ($BGColor ne ""){
+$BGColor = qq(bgcolor="$BGColor");
+}
+if ($AltColumnColor1 ne ""){
+$AltColumnColor1 = qq(bgcolor="$AltColumnColor1");
+}
+if ($AltColumnColor2 ne ""){
+$AltColumnColor2 = qq(bgcolor="$AltColumnColor2");
+}
+if ($CategoryStripColor ne ""){
+$CategoryStripColor = qq(bgcolor="$CategoryStripColor");
+}
+if ($TableColorStrip ne ""){
+$TableColorStrip = qq(bgcolor="$TableColorStrip");
+}
+if ($PageBackground ne ""){
+$PageBackground = qq(background="$NonCGIURL/$PageBackground");
+}
+
+if ($TableBorderColor ne ""){
+$TableWidth2 = "100%";
+$BorderTop = qq(<table border=0 cellpadding=0 cellspacing=0 width="$TableWidth"><TR><td bgcolor="$TableBorderColor">);
+$BorderBottom = qq(</td></tr></table> );
+}  else {
+$TableWidth2 = $TableWidth;
+$BorderTop = "";
+$BorderBottom = "";
+}
+
+if ($BBStatus eq "OFF") {
+print ("Content-type: text/html\n\n");
+&StandardHTML("Sorry, this bulletin board is temporarily unavailable, while we perform some routine maintenance.  Please try back again later.  Feel free to email us at <A HREF=\"mailto:$BBEmail\">$BBEmail</A>.");
+exit;
+}
+
+$ReplyMessage = $in{'ReplyMessage'};
+$Message = $in{'Message'};
+
+		$SubjectCoded = &HTMLIFY($TopicSubject);
+		$SubjectCoded =~ tr/ /+/;
+
+if ($in{'action'} eq "findthread") {
+ &FindThread;
+ } 
+
+print ("Content-type: text/html\n\n");
+
+if ($in{'action'} eq "clearcookies") {
+ &ClearCookies;
+ }  
+if ($in{'action'} eq "sockettest") {
+ &SocketTest;
+ }  
+
+if ($in{'action'} eq "getannounce") {
+ &GetAnnounce;
+ }
+  
+if ($in{'action'} eq "getbio") {
+ &GetBio;
+ } 
+ 
+if ($in{'action'} eq "sendthread") {
+ &SendThreadForm;
+ } 
+ 
+if ($in{'action'} eq "SubmitThreadEmail") {
+ &SubmitThreadEmail;
+ } 
+if ($in{'action'} eq "editbio") {
+ &EditBio;
+ } 
+if ($in{'action'} eq "setprefs") {
+ &SetPrefs;
+ } 
+if ($in{'action'} eq "PrefsSubmit") {
+ &PrefsSubmit;
+ } 
+if ($in{'action'} eq "getip") {
+ &GetIP;
+ } 
+if ($in{'action'} eq "checkbioid") {
+&CheckBioID;
+ } 
+if ($in{'action'} eq "modifybio") {
+   &ModifyBio;
+ }
+if ($in{'action'} eq "RegSubmit") {
+ &RegSubmit;
+ }
+ if ($in{'action'} eq "pwrequest") {
+ &PWRequest;
+ } 
+ 
+sub ClearCookies {
+print<<COOKIES;
+<HTML>
+<HEAD>
+$HeaderInsert
+<SCRIPT LANGUAGE="JAVASCRIPT">
+<!-- Hide
+if (document.cookie != "") {
+if (confirm("Are you sure you want to delete the cookies?")) {
+	thisCookie = document.cookie.split(";");
+	expireDate = new Date;
+	if (expireDate.getYear() < 1900) {
+expireDate.setYear(expireDate.getYear() + 1900 - 1);
+} else {
+expireDate.setYear(expireDate.getYear()-1);
+}
+
+	for (i=0; i<thisCookie.length; i++) {
+		cookieName = thisCookie[i].split("=")[0];
+		document.cookie = cookieName + "=;expires=" + expireDate.toGMTString();
+	}
+	
+}
+}
+// End hiding  -->
+</SCRIPT>
+</HEAD>
+<BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<FONT SIZE="$TextSize" FACE="$FontFace">
+<P><A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/$BBTitle"  BORDER=0></A>
+<P><blockquote>
+Thank you.  We have just deleted all cookies previously set from this forum.  Note that you should reset your preferences now.<P><A HREF="$CGIURL/ubbmisc.cgi?action=setprefs">Click here to return to Preferences</A>.<P><A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Click here to return to the forums.</a></blockquote></font>$Footer
+</BODY>
+</HTML>
+COOKIES
+
+}
+
+sub FindThread {
+$number = $in{'number'};
+@thisfor = &GetForumRecord($number);
+my $LWA = $thisfor[6];
+$DIRPW = $thisfor[7];
+my $PrivateMax = $thisfor[13];
+chomp($PrivateMax);
+
+if (-e "$ForumsPath/$in{'forum'}/forum$in{'number'}.threads") {
+
+open(THREADLIST, "$ForumsPath/$in{'forum'}/forum$in{'number'}.threads");
+my @thisthreadlist = <THREADLIST>;
+close(THREADLIST);
+
+if ($in{'go'} eq "older") {
+	@threadlist = reverse(@thisthreadlist);
+}  else {
+	@threadlist = @thisthreadlist;
+}
+
+my $Next = "false";
+
+FINDIT: foreach $uno(@threadlist) {
+	@topicarray = split(/\|\^\|/, $uno);
+	if ($Next eq "true") {
+		$RetrieveTopic = "$topicarray[1]";
+		last FINDIT;
+	}
+	if ($topicarray[1] eq "$in{'thisthread'}") {
+		$Next = "true"	
+	}
+}
+
+if ($RetrieveTopic ne "") {
+
+if (($LWA eq "private") && ($PrivateMax eq "yes")) {
+&get_cookie;  #retrieves all current cookies
+	$PasswordPrivate = "$cookie{PasswordPrivate}";
+	$UserNamePrivate = "$cookie{UserNamePrivate}";
+	$NumbersPrivate = "$cookie{ForumNumberPrivate}";
+	&VerifyID;
+	
+	if ($ProceedNow ne "true") {
+	print ("Content-type: text/html\n\n");
+		&StandardHTML("This is a private forum and you have not been properly authorized to view posts in this forum.");
+		exit;
+	}
+
+$GoTo = "$CGIURL/forumdisplay.cgi?action=displayprivate&number=$in{'number'}&topic=$RetrieveTopic";
+}  else {
+$GoTo = "$NonCGIURL/$in{'forum'}/HTML/$RetrieveTopic.html";
+}
+print "Location: $GoTo\n\n";
+exit;
+}  else {
+print ("Content-type: text/html\n\n");
+
+&StandardHTML("There are no topics $in{'go'} than this topic in this forum.  Use your back button to return.");
+exit;
+}
+
+} else {
+print ("Content-type: text/html\n\n");
+&StandardHTML("We cannot locate the next topic");
+exit;
+}
+}
+  
+sub GetBio {
+$ProfileNumber = &GetUserNumber($UserName);
+if ($ProfileNumber eq "") {
+&StandardHTML("Sorry, it appears that that user ($UserName) is no longer registered for our forums.  No profile information is available for that user.");
+exit;
+}
+@thisprofile = &OpenProfile("$ProfileNumber.cgi");
+
+$EmailView = $thisprofile[11];
+$Signature = $thisprofile[12];
+my $TheEmail = $thisprofile[2];
+
+
+if (($EmailBlock eq "ON") || ($EmailView eq "no")) {
+$EmailField = "Not available.";
+}  else {
+$EmailField = qq(<A HREF="mailto:$TheEmail">$TheEmail</A>);
+}
+&ViewBioHTML;
+}  ## END GET BIO sr
+
+sub CheckBioID {
+if (($in{'UserName'} eq "") || ($in{'Password'} eq "")) {
+&StandardHTML("You did not complete all required form fields!  Please go back and re-enter.");
+} else {
+
+$NameFound = "no";
+
+$ProfileNumber = &GetUserNumber($UserName);
+if ($ProfileNumber ne "") {
+	$NameFound = "yes";
+} else {
+	$NameFound = "no";
+}
+
+	if ($NameFound eq "yes") {
+		#Check Password Now
+		
+	@thisprofile = &OpenProfile("$ProfileNumber.cgi");
+	
+         if ($in{'Password'} eq "$thisprofile[1]") {
+		     $pwmatch = "true";
+			 $Password = $thisprofile[1];
+			 $Email = $thisprofile[2];
+			 $URL = $thisprofile[3];
+			 $Occupation = $thisprofile[5];
+			 $Location = $thisprofile[6];
+			 $Interests = $thisprofile[9];
+			 $Status = $thisprofile[8];
+			 $TotalPosts = $thisprofile[7];
+			 $Permissions = $thisprofile[4];
+			$DateRegistered = $thisprofile[10];
+	$EmailView = $thisprofile[11];
+	$Signature = $thisprofile[12];
+	$ICQnumber = $thisprofile[13];
+	$AllowMassMail = $thisprofile[14];
+	chomp($AllowMassMail);
+            &ProcessEdit;
+         }
+    } ## END IF MEMBER = Username.cgi condition
+
+if ($NameFound ne "yes") {
+   &StandardHTML("We have no one registered with that user name.  Use your back button to try again.");
+}
+if (($NameFound eq "yes") && ($pwmatch ne "true")) {
+   	&StandardHTML("Sorry, but the password you entered was not correct.  Please try again. Use your Back button.");
+}
+} # end check for missing fields
+}  ## END CheckBioID SR ###
+
+
+sub ModifyBio {
+if (($Email eq "") || ($in{'NewPassword'} eq "") || ($Email !~ /\S+\@\S+\.\S+/)) {
+&StandardHTML("You did not complete all required form fields (or you did include a properly formatted email address)!  Please go back and re-enter.");
+ }  else {
+ 
+## Confirm UserName and Password to prevent hacking
+$ProfileNumber = &GetUserNumber($UserName);
+@profileinfo = &OpenProfile("$ProfileNumber.cgi");  
+$CurrentEmail = "$profileinfo[2]";
+chomp($CurrentEmail);
+$Permissions = "$profileinfo[4]";
+chomp($Permissions);
+$TotalPosts = "$profileinfo[7]";
+$Status = "$profileinfo[8]";
+$DateRegistered = "$profileinfo[10]";
+
+if ($profileinfo[1] eq "$in{'Password'}") {
+
+## check for duplicate email addresses, if applicable
+&GetMemberListArray;
+$GetEmails;
+if ($EmailCheck eq "true") {
+
+### members, EmailList arrays...
+
+#Check For Duplicate Email
+my $duplicate = "";
+$RegEmail = lc($Email);
+$CurrEmail = lc($CurrentEmail);
+
+#only check if email is being changed
+if ($RegEmail ne "$CurrEmail") {
+$UpdateEmailFile = "true";
+
+&CheckBans;
+
+if (-e "$MembersPath/temp.file") {
+&StandardHTML("We are temporarily upgrading our Memberships.  This process only takes a minute or two.  Please try changing your profile again in a couple of minutes.  Thank you!");
+exit;
+}
+unless ($Permissions =~ /Write/) {
+&StandardHTML("Sorry, we cannot process your profile change requst for the following reason:<P>We do not allow email address changes for users that are not permitted to post notes."); 
+exit;
+}
+
+CHECKEMAIL: for $thisemail(@EmailList) {
+($theemail, $junk) = split(/\?\?/, $thisemail);
+$checkemail = lc($theemail);
+if ($RegEmail eq "$checkemail") {
+	$duplicate = "yes";
+	last CHECKEMAIL;
+} #end if regemail
+} # end foreach
+} #end regemail/curremail compare
+}  #END if Email check eq TRUE
+
+if ($duplicate eq "yes") { 
+	&StandardHTML("You cannot use the email address you tried to use.  Another registered user is already using it.");
+} else {
+
+# if email verify is on, then we can't let users change
+# email address without sending a new password generated
+# by system to them
+$Password = "$in{'NewPassword'}";
+$ModifyWarning = "";
+
+if (($CurrentEmail ne "$Email") && ($UseEmail eq "ON") && ($EmailVerify eq "ON")){
+#generate new password
+$NewPassword = &GeneratePassword;
+$sendto = "$Email";
+$from = "$BBEmail";
+$subject = "$BBName Registration - Your New Password";
+$message = "Hello!\n\r\nBecause you just modified your email address, we have sent you a new password to use for your registration on $BBName.  Your registration information is provided below, including your new password.  You will need this information in order to post any messages in our forums.\n\r\nYour UserName: $UserName\nYourPassword: $NewPassword\nYour Email Address of record is now: $Email";
+$Password = "$NewPassword";
+$ModifyWarning = "Note: Because you changed your email address, and because we require email verification, a new password has been issued to you.  This new password has been sent to: $Email.  You may change your password, but you may not change your password and email address at the same time.  Thank you!"; 
+if ($SMTPEmail eq "On") {
+&SendEmail;
+}  else {
+&send_mail("$BBEmail", "$sendto", "$subject", "$message");
+}
+}  
+
+@amend = @blank;
+if ($UpdateEmailFile eq "true") {
+open (EMAILFILE, "$MembersPath/emailfile.cgi"); 
+    my @emailsfile = <EMAILFILE>;
+close (EMAILFILE);
+
+$CurrEmail =~ s/([\.|\@])/\\$1/isg;
+
+foreach $checker(@emailsfile) {
+chomp($checker);
+
+if ($checker =~ m/^$CurrEmail\|\|/i) {
+	($junk, $thisnum) = split(/\|\|/, $checker);
+	$NewLine = "$RegEmail||$thisnum";
+	push(@amend, $NewLine);
+} else {
+	push(@amend, $checker);
+}
+}
+
+&Lock("lock.file");
+open(EMAILFILE, ">$MembersPath/emailfile.cgi");
+foreach $dos(@amend) {
+chomp($dos);
+print EMAILFILE "$dos\n";
+}
+close(EMAILFILE);
+&Unlock("lock.file");
+chmod (0666, "$MembersPath/emailfile.cgi");
+}
+
+$Signature = "$in{'Signature'}";
+$Signature =~ s/(<IMG SRC)(.*?)(>)//isg;
+$Signature =~ s/</&lt;/g;
+$Signature =~ s/>/&gt;/g;
+$Signature =~ s/\s+$//g;
+
+$Signature = &ConvertReturns("$Signature");
+
+$OverrideImages = "yes";
+$Signature = &UBBCode("$Signature");
+
+&Lock("lock.file");
+##print profile fields to file
+open (MEMBERSHIP, ">$MembersPath/$ProfileNumber.cgi") || die("Unable to open Members directory.");
+	print MEMBERSHIP ("$profileinfo[0]\n");
+	print MEMBERSHIP ("$Password\n");
+	print MEMBERSHIP ("$Email\n");
+	print MEMBERSHIP ("$URL\n");
+	print MEMBERSHIP ("$Permissions\n");
+	print MEMBERSHIP ("$Occupation\n");
+	print MEMBERSHIP ("$Location\n");
+	print MEMBERSHIP ("$TotalPosts\n");
+	print MEMBERSHIP ("$Status\n");
+	print MEMBERSHIP ("$Interests\n");
+	print MEMBERSHIP ("$DateRegistered\n");
+	print MEMBERSHIP ("$in{'EmailView'}\n");
+	print MEMBERSHIP ("$Signature\n");
+	print MEMBERSHIP ("$in{'ICQnum'}\n");
+	print MEMBERSHIP ("$in{'AllowMassMail'}\n");
+close (MEMBERSHIP);
+&Unlock("lock.file");
+#confirm processing to user, provide links to other places
+
+&BioModifyConfirmHTML;
+}
+}  else  {
+&StandardHTML("Sorry, but you seem to be trying to hack into someone else's profile.  You can not edit someone's profile without knowing their password.");
+}
+
+}
+}  ## END Modify Bio SR
+sub GetAnnounce {
+$ForumNumber = $in{'ForumNumber'};
+@thisforum = &GetForumRecord($ForumNumber);
+if ($thisforum[6] eq "private") {
+	$ExactPath = "Forum$ForumNumber/private-$thisforum[7]";
+}  else {
+	$ExactPath = "Forum$ForumNumber";
+}
+
+opendir (GETANNC, "$ForumsPath/$ExactPath/ANNC");
+	my @forummsgs = readdir(GETANNC);
+closedir (GETANNC);
+
+	my @announcements = grep(/annc/, @forummsgs);
+	#now we have all announcements in the forum
+	my $announce = "";
+	foreach $announce(@announcements) {
+		my ($start, $end, $trash) = split("-", $announce);
+		&DateCompare("$start", "$end");
+		if ($Live eq "true") {
+			$sortline = ("$StartJulian|$announce");
+			push(@livelist, $sortline);
+		}	
+	} #end foreach $announce
+	$listtotal = @livelist;
+	
+@sortlist = sort(@livelist);  #the sorted list of announcements
+@sortlist = reverse(@sortlist);
+#now we need to print the announcements
+
+$Moderator = ("Forum" . "$ForumNumber" . "Moderator");
+$Moderator = $$Moderator;
+@mods = split(/\|\|\^\|\|/, $Moderator);
+
+foreach $unomod(@mods) {
+chomp($unomod);
+$ModNumber = &GetUserNumber($unomod);
+if ($ModNumber ne "") {
+@theprofile = &OpenProfile("$ModNumber.cgi");
+$ModeratorEmail = "$theprofile[2]";
+if ($ModeratorLine ne "") {
+$ModeratorLine .= qq(, <A HREF="mailto:$ModeratorEmail">$unomod</A>);
+}  else {
+$ModeratorLine = qq(<A HREF="mailto:$ModeratorEmail">$unomod</A>);
+}
+} 
+
+}
+
+$Forum = $thisforum[1];
+$CustomTitle = $thisforum[9];
+chomp($CustomTitle);
+if ($CustomTitle eq "") {
+$CustomTitle = "$BBTitle";
+}
+
+$ForumCoded = &HTMLIFY($Forum);
+$ForumCoded =~ tr/ /+/;
+
+&AnnounceTopHTML;       
+
+$AltColor = "$AltColumnColor1";
+
+#print each announcement
+foreach $liveannounce(@sortlist) {
+($StartCheck, $anncfile) = split(/\|/, $liveannounce);
+
+open (ANNC, "$ForumsPath/$ExactPath/ANNC/$anncfile");
+	@anncinfo = <ANNC>;
+close (ANNC);
+#format end date
+($startdate, $enddate, $trash2) = split("-", $anncfile);
+my $StartMonth = substr($startdate, 0, 2);
+my $StartDay = substr($startdate, 2, 2);
+my $StartYear = substr($startdate, 4, 4);
+my $EndMonth = substr($enddate, 0, 2);
+my $EndDay = substr($enddate, 2, 2);
+my $EndYear = substr($enddate, 4, 4);
+
+$DateStart = "$StartMonth-$StartDay-$StartYear";
+$DateEnd = "$EndMonth-$EndDay-$EndYear";
+
+if ($DateFormat eq "US") {
+$FormatStart = $DateStart;
+$FormatEnd =  $DateEnd;
+}
+elsif ($DateFormat eq "Euro") {
+	$FormatStart = &DateFormat("$DateStart", "Euro");
+	$FormatEnd = &DateFormat("$DateEnd", "Euro");
+}
+elsif ($DateFormat eq "USX") {
+	$FormatStart = &DateFormat("$DateStart", "USExpanded");
+	$FormatEnd = &DateFormat("$DateEnd", "USExpanded");
+
+}  else {
+$FormatStart =  &DateFormat("$DateStart", "EuroExpanded");
+$FormatEnd = &DateFormat("$DateEnd", "EuroExpanded");
+}
+
+
+my $Author = $anncinfo[0];
+my $Subject = $anncinfo[1];
+my $Status = $anncinfo[2];
+my $ForumList = $anncinfo[3];
+my $Message	 = $anncinfo[4];
+chomp($Author);
+chomp($Subject);
+chomp($Status);
+chomp($ForumList);
+chomp($Message);
+
+$StartCheck = ($StartCheck + .99);
+if ($StartCheck >= $in{'Session'}) {
+$NewGIF = "<IMG SRC=\"$NonCGIURL/posticonnew.gif\"  BORDER=0 ALT=\"New Announcement!\">";
+}  else {
+$NewGIF = "<IMG SRC=\"$NonCGIURL/posticon.gif\"  BORDER=0 ALT=\"Old Announcement\">";
+}
+
+
+print<<LINE;
+<TR $AltColor>
+<TD valign=top><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">
+$Subject
+</font>
+</td>
+<TD valign=top>
+<FONT SIZE="1" FACE="$FontFace">
+$NewGIF posted by $Author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT SIZE="1" FACE="$FontFace" COLOR="$LinkColor">($FormatStart through $FormatEnd)</FONT><HR>
+<FONT SIZE="$TextSize" FACE="$FontFace">$Message</FONT>
+</FONT>
+<BR>
+</td>
+</tr>
+LINE
+
+if ($AltColor eq "$AltColumnColor1") {
+$AltColor = "$AltColumnColor2"
+} else {
+$AltColor = "$AltColumnColor1"
+}
+} #end foreach $liveannounce
+
+print <<ALMOSTBOTTOM;
+</table><br>
+
+<IMG SRC="$NonCGIURL/posticonnew.gif" BORDER=0 ALT="New Announcement">&nbsp;&nbsp;New Announcement (since you last visited)<BR>
+<IMG SRC="$NonCGIURL/posticon.gif" BORDER=0 ALT="New Announcement">&nbsp;&nbsp;Old Announcement <P><center>
+ALMOSTBOTTOM
+
+&PageBottomHTML;    #in ubb_library.pl
+} #end GetAnnounce sr
+
+
+## HTML CODE ####
+  
+sub EditBio {
+print<<EDITbioHTML;
+<HTML>
+<HEAD><TITLE>$BBName - Edit Profile</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground  text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/$BBTitle" BORDER=0></A>
+<FONT SIZE="3" FACE="$FontFace" COLOR="$LinkColor"><B>Modify Your Profile</B></FONT>
+<p>
+<FONT SIZE="$TextSize" FACE="$FontFace">
+It is your responsibility to keep your profile information up-to-date.  Do not ask the administrator or moderators to do this for you.
+<p>
+To modify your current profile information, please identify yourself below.
+
+<p>
+<FORM ACTION="$CGIURL/ubbmisc.cgi" METHOD="POST" NAME="EditProfile">
+<table border=0>
+<tr>
+<td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>UserName</B></FONT>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="UserName" SIZE=25 MAXLENGTH=25>
+</td></tr>
+<tr>
+<td>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">Password</FONT></B>
+</td>
+<td>
+<INPUT TYPE="PASSWORD" NAME="Password" SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="$FontFace"><A HREF="$CGIURL/Ultimate.cgi?action=lostpw">Forget your password?</A></font>
+</td></tr>
+</table>
+<center>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="checkbioid">
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Submit Identification">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Clear Fields">
+</center>
+
+</form>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.EditProfile.UserName.focus();
+	} else {
+	document.EditProfile.UserName.value = getCookie("UserName");
+document.EditProfile.Password.value = getCookie("Password");
+	}
+}  else {
+document.EditProfile.UserName.focus();
+}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+<P>
+If you have previously registered, but forgotten your password, <A HREF="$CGIURL/Ultimate.cgi?action=lostpw">click here</A>.
+<P>
+</FONT>$Footer
+</BODY></HTML>
+EDITbioHTML
+
+}  ##END EDIT BIO SR
+
+sub BioModifyConfirmHTML {
+&GetCookieInfo;
+if ($SetCookies eq "DirectorySpecific") {
+	$ExtraInfo = qq(domain=$TheDomain;path=/$ThePath;);
+}  else {
+	$ExtraInfo = "";
+}
+
+print<<HTML;
+<HTML>
+<HEAD><TITLE>
+Member Profile Modification Confirmation</title>
+$HeaderInsert
+<script language="JavaScript"> 
+<!-- HIDE
+
+expireDate2 = new Date;
+if (expireDate2.getYear() < 1900) {
+expireDate2.setYear(expireDate2.getYear() + 1900 + 1);
+} else {
+expireDate2.setYear(expireDate2.getYear()+1);
+}
+var nameStorage = getCookie("NameStorage");
+
+var CookieName = escape("$UserName");
+var CookiePW = escape("$in{'NewPassword'}");
+
+	if (nameStorage == "no") {
+	  	document.cookie = "UserName=" + CookieName + ";$ExtraInfo";
+		document.cookie = "Password=" + CookiePW + ";$ExtraInfo";
+	}
+	if (nameStorage == "yes") {
+	  	document.cookie = "UserName=" + CookieName + ";expires=" + expireDate2.toGMTString() + ";$ExtraInfo";
+document.cookie = "Password=" + CookiePW + ";expires=" + expireDate2.toGMTString() + ";$ExtraInfo";
+	}
+	if (nameStorage == null) {
+	  	document.cookie = "UserName=" + CookieName + ";$ExtraInfo";
+		document.cookie = "Password=" + CookiePW + ";$ExtraInfo";
+	}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+//-->
+</script>
+</head>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<BR><BR><p>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>
+Thank you, $UserName.  Your profile has been successfully updated.
+<P>
+$ModifyWarning
+<P>
+<table border=0>
+<TR>
+<TD valign=top>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Return to:</B></FONT></td>
+<td valign=top><FONT SIZE="$TextSize" FACE="$FontFace"><B>
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Forums Summary Page</A>
+<BR><A HREF="$CGIURL/ubbmisc.cgi?action=editbio">
+Edit Your Profile</a>
+<BR>
+<A HREF="$NonCGIURL/faq.html" target=_blank>Help/FAQ</A>
+
+</B></FONT>
+
+</td></tr></table>
+</B>
+</FONT>
+$Footer
+</body>
+</html>
+HTML
+}  ## END Bio Modify Confirmation sr
+
+sub SetPrefs {
+&get_cookie;  #retrieves all current cookies
+	$CurrentDaysPrune = "$cookie{DaysPrune}";
+	$CurrentNS = "$cookie{NameStorage}";
+
+if ($CurrentNS eq "yes") {
+	$NSOn = "CHECKED";
+	$NSOff  = "";
+}
+elsif ($CurrentNS eq "no") {
+	$NSOff = "CHECKED";
+	$NSOn = "";
+}  else {
+	$NSOn = "CHECKED";
+	$NSOff   = "";
+}
+	
+if ($CurrentDaysPrune eq "1") {
+	$DP1On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "2") {
+	$DP2On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "5") {
+	$DP5On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "10") {
+	$DP10On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "20") {
+	$DP20On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "30") {
+	$DP30On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "45") {
+	$DP45On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "60") {
+	$DP60On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "75") {
+	$DP75On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "100") {
+	$DP100On = "SELECTED";
+}
+elsif ($CurrentDaysPrune eq "365") {
+	$DP365On = "SELECTED";
+}  
+elsif ($CurrentDaysPrune eq "1000") {
+	$DP1000On = "SELECTED";
+}  else {
+    $DP1On = "SELECTED";
+}
+
+	
+if ($DisplayRegistration eq "NO") {
+	$StoreNameWording = qq(<INPUT TYPE="HIDDEN" NAME="NameStorage" VALUE="no">);
+	$NameOption = "";
+	$NSCookieSlot = "";
+}  else {
+	$StoreNameWording = qq%<tr $AltColumnColor1>
+<TD valign=top><FONT SIZE="$TextSize" FACE="$FontFace">Store Username & Password in browser memory for 1 year (otherwise you will have to type your username and password once per browser session)</FONT></TD>
+<TD valign=top><CENTER><FONT SIZE="$TextSize" FACE="$FontFace"><INPUT TYPE="RADIO" NAME="NameStorage" VALUE="yes" $NSOn>
+ yes <INPUT TYPE="RADIO" NAME="NameStorage" VALUE="no" $NSOff> no</font>
+</CENTER> </TD>
+</TR>%;
+$NameOption = qq%<LI>the option to store your username and password in memory for one year (you won't have to type your name/password at all during that year).  If you check no, your username and password will be saved after you type it once, but only for that browser session (no long-term memory)%;
+$NSCookieSlot = qq%if (NameStorage == "yes") {
+		document.PREFS.NameStorage[0].checked = true;
+		} else {
+		document.PREFS.NameStorage[1].checked = true;
+	}%;
+}
+print<<PrefsHTML;
+<HTML>
+<HEAD>
+	<TITLE>$BBName Preferences</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground  text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="$TextSize" FACE="$FontFace" color="$TextColor">
+$Header
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/$BBTitle" BORDER=0></A>
+<FONT SIZE="+1" FACE="$FontFace"><B>Forum Preferences</B></FONT>
+<P>
+We use cookies to store your preferences.  Sometimes cookies become corrupted or deleted in your browser.  If so, you may want to delete all cookies that have been set by this forum.  This will mean that all previously saved cookie info will be lost, but it will also mean that any possible cookie problem may be fixed.  <A HREF="$CGIURL/ubbmisc.cgi?action=clearcookies">Click here to delete all cookies set by this forum</A>!</font>
+<P><center>
+<FORM NAME="PREFS" METHOD=POST ACTION="$CGIURL/ubbmisc.cgi">
+$BorderTop
+<table border=0 cellpadding=4 cellspacing=1 width=$TableWidth2>
+<tr $BGColor>
+<TD colspan=2><FONT SIZE="$TextSize" FACE="$FontFace">
+You may customize this bulletin board to reflect your preferences.  Below are your preference options.
+<ul>
+$NameOption
+<LI>the standard number of days (history) for viewing topics
+<BR><BR>
+</ul>
+</FONT>
+</td></tr>
+<FORM NAME="PREFS" METHOD=POST ACTION="$CGIURL/ubbmisc.cgi">
+$StoreNameWording
+<TR $AltColumnColor2>
+	<TD valign=top><FONT SIZE="$TextSize" FACE="$FontFace">Default Topic View:</FONT></TD>
+	<TD valign=top><CENTER><SELECT NAME="DaysPrune">
+	<OPTION value="1" $DP1On>Show topics from last day
+	<OPTION value="2" $DP2On>Show topics from last 2 days
+	<OPTION value="5" $DP5On>Show topics from last 5 days
+	<OPTION value="10" $DP10On >Show topics from last 10 days
+	<OPTION value="20" $DP20On>Show topics from last 20 days
+	<OPTION value="30" $DP30On>Show topics from last 30 days
+	<OPTION value="45" $DP45On >Show topics from last 45 days
+	<OPTION value="60" $DP60On>Show topics from last 60 days
+	<OPTION value="75" $DP75On>Show topics from last 75 days
+	<OPTION value="100" $DP100On>Show topics from last 100 days
+	<OPTION value="365" $DP365On >Show topics from the last year
+	<OPTION value="1000" $DP1000On>Show all topics
+
+	</SELECT>
+</CENTER>
+	
+ </TD></tr>
+</TABLE>
+$BorderBottom
+</center>
+<BR><BR><CENTER>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="PrefsSubmit">
+
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Submit Preferences">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Reset">
+
+</CENTER></FORM>
+<BR><BR>
+<FONT SIZE="1" FACE="$FontFace"><B>Note: Your preferences are stored as cookies in your browser.  Thus, you must be using a cookies-enabled browser (Netscape and Microsoft Internet Explorer both support cookies).  If your browser does not support cookies or you have the cookies option turned off in your browser preferences, the settings you make above will not take affect.  Also, please note that the settings are set to last for one year.  After each year, you will have to reset your preferences.</B></FONT>
+<BR>
+$Footer
+</font>
+</BODY>
+</HTML>
+PrefsHTML
+}  ## END Set Prefs SR ##
+
+
+sub PrefsSubmit {
+&GetCookieInfo;
+if ($SetCookies eq "DirectorySpecific") {
+	$ExtraInfo = qq(domain=$TheDomain;path=/$ThePath;);
+}  else {
+	$ExtraInfo = "";
+}
+
+print<<CONFIRMHTML;
+<HTML><HEAD>
+<meta http-equiv="Refresh" content="4; URL=$CGIURL/Ultimate.cgi?action=intro&BypassCookie-true">
+$HeaderInsert
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+
+expireDate = new Date;
+if (expireDate.getYear() < 1900) {
+expireDate.setYear(expireDate.getYear() + 1900 + 1);
+} else {
+expireDate.setYear(expireDate.getYear()+1);
+}
+ 
+var DaysPrune2 = escape("$in{'DaysPrune'}");
+var NameStorage2 = escape("$in{'NameStorage'}");
+
+document.cookie = "DaysPrune=" + DaysPrune2 + ";expires=" + expireDate.toGMTString() + ";$ExtraInfo";
+document.cookie = "NameStorage=" + NameStorage2 + ";expires=" + expireDate.toGMTString() + ";$ExtraInfo";
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+
+</HEAD>
+ <BODY $BGColor  $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<br><br>
+<ul><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Your preferences have been set.  You are being automatically transported to the bulletin board introductory page.  Please wait three seconds.
+<P>
+<BR><BR>
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Click here if you do not want to wait any longer (or if your browser does not automatically forward you).</A>
+</B><br><br>
+</FONT>
+</ul>$Footer</body></html>
+CONFIRMHTML
+}
+
+sub ViewBioHTML {
+
+
+if ($thisprofile[3] eq "") {
+	$thisprofile[3] = "&nbsp;";
+}
+if ($thisprofile[5] eq "") {
+	$thisprofile[5] = "&nbsp;";
+}
+if ($thisprofile[6] eq "") {
+	$thisprofile[6] = "&nbsp;";
+}
+if ($thisprofile[7] eq "") {
+	$thisprofile[7] = "&nbsp;";
+}
+if ($thisprofile[9] eq "") {
+	$thisprofile[9] = "&nbsp;";
+}
+if ($thisprofile[10] eq "") {
+$DateRegistered = "Not available.";
+}  else {
+$DateRegistered = "$thisprofile[10]";
+
+#format date-----------------------------------
+
+if ($DateFormat eq "US") {
+	$DateRegistered = $DateRegistered;
+}
+elsif ($DateFormat eq "Euro") {
+	$DateRegistered = &DateFormat("$DateRegistered", "Euro");
+}
+elsif ($DateFormat eq "USX") {
+	$DateRegistered = &DateFormat("$DateRegistered", "USExpanded");
+} else {
+	$DateRegistered = &DateFormat("$DateRegistered", "EuroExpanded");
+}
+
+}  #end if/else thisprofile[10]
+
+
+if ($thisprofile[8] eq "Administrator") {
+	$ThisStatus = "$AdminTitle";
+}
+elsif ($thisprofile[8] eq "Moderator") {
+	$ThisStatus = "$ModeratorTitle";
+}
+elsif ($thisprofile[8] eq "Member") {
+	$ThisStatus = "$MemberTitle";
+}  else {
+	$ThisStatus = "$JrMemberTitle";
+}
+$ICQline = "$thisprofile[13]";
+if ($ICQline eq "") {
+	$ICQline = "&nbsp;";
+}
+
+$SearchName = "$thisprofile[0]";
+$SearchName = &HTMLIFY($SearchName);
+$SearchName =~ tr/ /+/;
+
+print <<BioHTML;
+<HTML>
+<HEAD>$HeaderInsert</HEAD>
+ <BODY $BGColor  $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<FONT SIZE="$TextSize" FACE="$FontFace">
+<P>
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/$BBTitle"  BORDER=0></A>
+<P>
+<B>
+Profile for $thisprofile[0]
+</B></FONT>
+<P>
+<FONT SIZE="1" FACE="$FontFace"><A HREF="$CGIURL/search.cgi?action=simplesearch&ForumChoice=ALL&ExactName=yes&SearchUser=$SearchName">Search: All posts by this registered user.</A></FONT>
+<P>
+
+<center>
+$BorderTop
+
+<table border=0 cellpadding=4 cellspacing=1 border=0 width=$TableWidth2>
+<tr $AltColumnColor1><td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Date Registered:</B></FONT></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$DateRegistered</FONT>
+</td></tr>
+<tr $AltColumnColor2><td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Status:</B></FONT></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$ThisStatus</FONT>
+</td></tr>
+<tr $AltColumnColor1><td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Total Posts:</B></FONT></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$thisprofile[7]</FONT>
+</td></tr>
+<tr $AltColumnColor2><td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Current Email:</B></FONT></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$EmailField</FONT>
+</td></tr>
+<TR $AltColumnColor1>
+<td><FONT SIZE="$TextSize" FACE="$FontFace"><B>Homepage:</B></font></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor"><A HREF="$thisprofile[3]" target=_top>$thisprofile[3]</A></font>
+</td></tr>
+<TR $AltColumnColor2>
+<td><FONT SIZE="$TextSize" FACE="$FontFace"><B>Occupation:</B></font></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$thisprofile[5]</font>
+</td></tr>
+<TR $AltColumnColor1>
+<td><FONT SIZE="$TextSize" FACE="$FontFace"><B>Location:</B></font></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$thisprofile[6]</font>
+</td></tr>
+<TR $AltColumnColor2>
+<td><FONT SIZE="$TextSize" FACE="$FontFace"><B>Interests:</B></font></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$thisprofile[9]</font>
+</td></tr>
+<TR $AltColumnColor1>
+<td><FONT SIZE="$TextSize" FACE="$FontFace"><B>ICQ Number:</B></font></td>
+<td><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$ICQline</font>
+</td></tr>
+</table>
+$BorderBottom
+<P>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$CopyrightTextColor">$YourCopyrightNotice
+<P>
+Powered by: Ultimate Bulletin Board<BR>
+&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.</FONT>
+</center>
+<P>
+$Footer
+</BODY></HTML>
+BioHTML
+}  ## END View BIO HTML sr
+
+sub ProcessEdit {
+
+if ($EmailView eq "no") {
+	$EVno = "CHECKED";
+} else {
+	$EVyes = "CHECKED";
+}
+
+
+if ($Status eq "Administrator") {
+	$Status = "$AdminTitle";
+}
+elsif ($Status eq "Moderator") {
+	$Status = "$ModeratorTitle";
+}
+elsif ($Status eq "Member") {
+	$Status = "$MemberTitle";
+}  else {
+	$Status = "$JrMemberTitle";
+}
+if (($UseEmail eq "ON") && ($EmailVerify eq "ON")) {
+$WarningHTML = "Warning: Because we require email verification, if you change your email address, a new password will be created for you and emailed to the new email address you list.  Thus, do not change your email address unless you can retrieve email from it to get your new password.";
+}  else {
+$WarningHTML = "";
+}
+	$Signature = &EditUBBConvert("$Signature");
+	$Signature =~ s/<p>/\n\r\n/isg;
+	$Signature =~ s/<br>/\n/isg;
+	if ($AllowSignature eq "YES") {
+		$SigStatus = "enabled";
+	}	else {
+		$SigStatus = "not enabled";
+	}
+	
+
+	if ($AllowMassMail eq "no") {
+		$AllowMailNo = "CHECKED";
+		$AMM = qq(<INPUT TYPE="HIDDEN" NAME="OldAMM" VALUE="no">);
+	}
+	elsif ($AllowMassMail eq "") {
+		$AllowMailYes = "CHECKED";
+		$AMM = qq(<INPUT TYPE="HIDDEN" NAME="OldAMM" VALUE="blank">);
+	} else {
+		$AllowMailYes = "CHECKED";
+		$AMM = qq(<INPUT TYPE="HIDDEN" NAME="OldAMM" VALUE="yes">);
+	}
+print<<EditHTML;
+<HTML>
+<HEAD>$HeaderInsert</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<FONT SIZE="3" FACE="$FontFace" COLOR="$TextColor">
+
+<BR>
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/$BBTitle" BORDER=0></A>
+<FONT SIZE="3" FACE="$FontFace" COLOR="$LinkColor"><B>Modify Your Profile</B></FONT>
+<p><FONT SIZE="$TextSize" FACE="$FontFace">
+Thank you! We have confirmed your identity, $UserName ($Status).
+<p>
+Feel free to modify any of the fields below.
+<p><b>
+<FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$WarningHTML</FONT></b>
+<P>
+</FONT>
+<center>
+<FORM ACTION="$CGIURL/ubbmisc.cgi" METHOD="POST">
+$AMM
+$BorderTop
+<table border=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<tr $AltColumnColor1>
+<td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Email Address</B></FONT>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="Email" VALUE="$Email" SIZE=30 MAXLENGTH=150>
+</td></tr>
+<tr $AltColumnColor2>
+<td>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Password</B></FONT>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="NewPassword" VALUE="$Password" SIZE=13 MAXLENGTH=13>
+</td></tr>
+<tr $AltColumnColor1>
+<td>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">Homepage</FONT></B>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="URL" VALUE="$URL" SIZE=30 MAXLENGTH=200>
+</td></tr>
+<tr $AltColumnColor2>
+<td>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">Occupation</FONT></B>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="Occupation" VALUE="$Occupation" SIZE=30 MAXLENGTH=100>
+</td></tr>
+<tr $AltColumnColor1>
+<td>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">City, State, Country</FONT></B>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="Location" VALUE="$Location" SIZE=30 MAXLENGTH=150>
+</td></tr>
+<tr $AltColumnColor2>
+<td>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">Interests</FONT></B>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="Interests" VALUE="$Interests" SIZE=50 MAXLENGTH=200>
+</td></tr>
+
+<tr $AltColumnColor1>
+<td>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">ICQ Number</FONT></B>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="ICQnum" VALUE="$ICQnumber" SIZE=7 MAXLENGTH=20>
+</td></tr>
+
+<tr $AltColumnColor2>
+<td valign=top>
+<B><FONT SIZE="$TextSize" FACE="$FontFace">Signature</FONT></B><BR><FONT SIZE="1" FACE="$FontFace">Note: The Signature feature is currently $SigStatus by this bulletin board's administrator.  You may use <A HREF="$NonCGIURL/ubbcode.html">UBB Code</A> in this field, but not HTML.   The UBB Code Image tag is not permitted, however.</font>
+</td>
+<td>
+<TEXTAREA NAME="Signature" ROWS=3 COLS=25>$Signature
+</TEXTAREA>
+</td></tr>
+
+ <TR $AltColumnColor1>
+	<TD><FONT SIZE="$TextSize" FACE="$FontFace"><B>Allow Bulletin Board Administrators and Moderators To Send You Email Notices?</B></FONT></TD>
+	<TD><CENTER><FONT SIZE="$TextSize" FACE="$FontFace"><INPUT TYPE="RADIO" NAME="AllowMassMail" VALUE="yes" $AllowMailYes> yes  &nbsp;&nbsp;&nbsp;<INPUT TYPE="RADIO" NAME="AllowMassMail" VALUE="no" $AllowMailNo> no</FONT></CENTER>
+ </TD></tr>
+ 
+<tr $AltColumnColor2>
+<TD valign=top><FONT SIZE="$TextSize" FACE="$FontFace"><B>Keep your email address viewable to other users when you post notes?</B></FONT></TD>
+<TD valign=top><CENTER><FONT SIZE="$TextSize" FACE="$FontFace"><INPUT TYPE="RADIO" NAME="EmailView" VALUE="yes" $EVyes>
+ yes <INPUT TYPE="RADIO" NAME="EmailView" VALUE="no" $EVno> no</font>
+</CENTER> </TD>
+</TR>
+</table>
+$BorderBottom
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="modifybio">
+<INPUT TYPE="HIDDEN" NAME="UserName" VALUE="$UserName">
+<INPUT TYPE="HIDDEN" NAME="Password" VALUE="$in{'Password'}">
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Submit Modifications">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Clear Fields"><center>
+</center>
+</form></font>
+$Footer
+</BODY></HTML>
+EditHTML
+}  ##END Process Edit SR
+
+
+sub AnnounceTopHTML {
+print<<TOP;
+<HTML>
+<HEAD><TITLE>$BBName Announcements</TITLE>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<FONT SIZE="$TextSize" FACE="$FontFace" color="$TextColor">
+<table border=0 width=$TableWidth>
+<tr>
+<td align=left valign=top>
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/$CustomTitle" BORDER=0></A>
+<BR>
+<FONT SIZE="$TextSize" FACE="$FontFace" color="$LinkColor"><B>$Forum</B>
+<br><FONT size= "1" COLOR="$VisitedLinkColor">(moderated by $ModeratorLine)
+</FONT></font>
+</td>
+<td valign=top nowrap><FONT SIZE="1" FACE="$FontFace">
+<IMG SRC="$NonCGIURL/open.gif"  BORDER=0>&nbsp;&nbsp;<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">$BBName</A>
+<br>
+<IMG SRC="$NonCGIURL/tline.gif" BORDER=0><IMG SRC="$NonCGIURL/open.gif"  BORDER=0>&nbsp;&nbsp;<A HREF="$CGIURL/forumdisplay.cgi?action=topics&forum=$ForumCoded&number=$ForumNumber">$Forum</a>
+<P><CENTER><BR>
+<A HREF="$CGIURL/ubbmisc.cgi?action=editbio&Browser=$Browser&DaysPrune=$DaysPrune&LastLogin=$in{'LastLogin'}"><ACRONYM TITLE="Click here to edit your profile.">profile</ACRONYM></A> | <A HREF="$CGIURL/Ultimate.cgi?action=agree"><ACRONYM TITLE="Registration is free!">register</ACRONYM></A> | <A HREF="$CGIURL/ubbmisc.cgi?action=setprefs"><ACRONYM TITLE="Set your preferences.">preferences</ACRONYM></A> | <A HREF="$NonCGIURL/faq.html" target=_blank><ACRONYM TITLE="Frequently Asked Questions">faq</ACRONYM></A> | <A HREF="$CGIURL/search.cgi?action=intro"><ACRONYM TITLE="Perform a search by keyword, date, or name.">search</ACRONYM></A>
+</center>
+</FONT>
+</td></tr></table>
+<P>
+<B>Current Announcements: $listtotal</B>
+<br>
+Note: Announcements are made by bulletin board administrators and moderators only.  You may not reply to these announcements.  
+<P>
+<table border=0 width=$TableWidth>
+<TR $TableColorStrip>
+<TD width=35%><FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor">
+Subject</font>
+</td>
+<td>
+<FONT SIZE="1" FACE="$FontFace" COLOR="$TableStripTextColor">Announcement</FONT>
+</td>
+</tr>
+TOP
+} #end AnnounceTopHTML sr
+
+sub RegSubmit {
+&HackChecker;
+
+if ($SuspendRegister eq "true") {
+&StandardHTML("Sorry, we are not accepting new registrations currently.");
+exit;
+}
+#get user's IP number:
+my $IPNumber = $ENV{'REMOTE_ADDR'};
+
+unless (-e "$MembersPath/emailfile.cgi") {
+&StandardHTML("We are upgrading our software at the moment and cannot process new registrations.  Please try registering again in a little while.  Thank you!");
+exit;
+}
+
+if (-e "$MembersPath/temp.file") {
+&StandardHTML("We are temporarily upgrading our Memberships.  This process only takes a minute or two.  Please try registering again in a couple of minutes.  Thank you!");
+exit;
+}
+if (-e "$CGIPath/temp.file") {
+&StandardHTML("We are temporarily upgrading our Memberships.  This process only takes a minute or two.  Please try registering again in a couple of minutes.  Thank you!");
+exit;
+}
+
+#Check Email Ban List--
+&CheckBans;
+
+## Check to make sure censored words are not used in username
+if ($Censor eq "ON") {
+@censored = split(/ /, $censorwords);
+$BadWord = "false";
+CHECKCENSORLIST: for (@censored) {
+		if (m/({)(.*)(})/) {
+			$_ = ("$2");
+		}
+		if ($UserName =~ /$_/i) {
+				$BadWord = "true";
+				$CensorWord = $_;
+				last CHECKCENSORLIST;
+		}
+} #end for checkcensorlist
+if ($BadWord eq "true") {
+	$RejectUserName = "true";
+	&StandardHTML("Sorry, you have attempted to register a name that includes a word (\"$CensorWord\") that has been censored on this bulletin board.");
+}
+} #end if censor is on
+
+if (($BannedEmail ne "true") && ($RejectUserName ne "true")){
+
+if (($UseEmail eq "ON") && ($EmailVerify eq "ON")) {
+
+	if ( ($UserName eq "") || ($Email !~ /\S+\@\S+\.\S+/) )   {
+		&StandardHTML("You did not properly complete all required form fields!  Remember that you must enter a valid email address.  Please go back and re-enter.");
+		} else {
+		&GoAhead;
+	}
+
+} else {
+
+	if ( ($UserName eq "") || ($Email !~ /\S+\@\S+\.\S+/) || 	($in{'Password'} eq "") || ($PasswordConfirm eq "") )  {
+		&StandardHTML("You did not properly complete all required form fields!  Remember that you must enter a valid (properly formatted) email address.  Please go back and re-enter.");
+	}  else {
+	
+		if ($in{'Password'} eq "$PasswordConfirm") {
+			&GoAhead; 
+			}  else {
+			&StandardHTML("Registration Failed!<P>You failed to type the same password twice on the registration form.  Please go back and try again.<P>Use your back button to try again.");
+		}
+	}
+}
+} # end if banned email ne true
+}  ## END RegSubmit SR ##
+
+
+sub GoAhead  {	
+
+#check for illegal (non alphanumeric characters)
+if (($UserName =~ m/^\s/) || ($UserName =~ m/\&nbsp/) || ($UserName =~ m/\s$/) || ($UserName =~ m/\s{2,}/) || ($UserName =~ m/\|\!/) || ($UserName =~ m/\|\|/) || ($UserName =~ m/\|$/) || ($UserName =~ m/^\|/) || ($UserName =~ m/\"/) || ($Email =~ m/\s/) || ($UserName =~ m/></) || ($UserName =~ m/memberslist/) || ($UserName =~ m/emailfile/) ||  ($UserName =~ m/;/)  || ($UserName !~ /^[a-zA-Z0-9\!\?\#\$\@\*\&\^\+\-\~\:\]\[\']/) || ($UserName !~ /[a-zA-Z0-9\!\?\#\$\@\*\&\^\+\-\~\:\]\[\']$/) ) {
+&StandardHTML("The User Name you attempted to register is illegal for one of the following reasons:<P><blockquote>1.  You may not begin or end a User Name with a space. <P>2. You may not have two or more consecutive spaces.<p>3.  You may not use a name with a pipestem followed by an exclamation point.<P>4.  You may not use a name with a two consecutive pipestems.5.  You may not use any quotation marks.<P>6.  Your email address must not contain any spaces.<P>7.  You may not use a name that contains a &lt; and a &gt; .<P>8.  You may not use a name that contains memberslist or emailfile.<P>9. You must start and end your username with an English letter or number or one of the following symbols: !, ?, #, $, @, *, &, ^, +, -, ~, :, ], [, '.<P>10.  You may not include a semicolon.
+</B></blockquote><p><CENTER>Use your back button to try again.</center>");
+exit;
+}  else {
+#check to make sure Username is unique
+#determine EmailList array, members array & LastNumber
+	$UserName =~ s/\s+/ /g;  
+	$Email =~ s/\s+//g;
+	
+	
+&GetMemberListArray;
+&GetEmails;
+
+# LastNumber = last number used in members file
+my $LastNum = $LastNumber;
+
+$AddOne = $LastNum + 1;
+$NextNumber = sprintf("%8d", $AddOne);
+$NextNumber =~ tr/ /0/;
+
+$duplicate = "no";
+
+$LCusername = lc($UserName);
+
+CHECKDUPES: for $checkthis(@members) {
+	$LCcheckthis = lc($checkthis);
+	if ($LCcheckthis eq "$LCusername") {
+		$duplicate = "yes";
+		&StandardHTML("Someone else has already registered that UserName.  Please try again.  Use your back button.");
+		last CHECKDUPES;
+	}
+}
+#CHECK to make sure email isn't a duplicate too
+
+$RegEmail = lc($Email);
+
+if (($duplicate ne "yes") && ($EmailCheck eq "true")) {
+# @EmailList contains all registered emails
+CHECKEMAIL: foreach $thisemail(@EmailList) {
+($theemail, $junk) = split(/\?\?/, $thisemail);
+$checkemail = lc($theemail);
+if ($RegEmail eq "$checkemail") {
+	$duplicate = "yes";
+	&StandardHTML("Someone else has already registered that email address.  Please try again.  Use your back button.");
+last CHECKEMAIL;
+}
+}
+}  #END if duplicate ne yes
+
+
+
+if ($duplicate ne "yes") {
+
+	if (($UseEmail eq "ON") && ($EmailVerify eq "ON")) {
+
+#generate password
+$Password = &GeneratePassword;
+}  else {
+$Password = "$in{'Password'}";
+}
+
+# Get Today's Date so we can log the date of registration
+
+&GetDateTime;
+
+#Prepare Signature - prevent HTML, strip returns, do UBB Code
+
+@censored = split(/ /, $censorwords);
+$Signature = &CensorCheck("$in{'Signature'}");
+$Signature =~ s/(<IMG SRC)(.*?)(>)//isg;
+
+$Signature =~ s/</&lt;/g;
+$Signature =~ s/>/&gt;/g;
+
+
+$SignatureHTML = &ConvertReturns("$Signature");
+$OverrideImages = "yes";
+$SignatureHTML = &UBBCode("$SignatureHTML");
+
+#Create Registration File
+&Lock ("lock.file");
+open (MEMBERSHIP, ">$MembersPath/$NextNumber.cgi") or die("Unable to open Members directory.");
+	print MEMBERSHIP ("$UserName\n");
+	print MEMBERSHIP ("$Password\n");
+	print MEMBERSHIP ("$RegEmail\n");
+	print MEMBERSHIP ("$URL\n");
+	print MEMBERSHIP ("Write\n");
+	print MEMBERSHIP ("$Occupation\n");
+	print MEMBERSHIP ("$Location\n");
+	print MEMBERSHIP ("0\n");
+	print MEMBERSHIP ("Junior Member\n");
+	print MEMBERSHIP ("$Interests\n");
+	print MEMBERSHIP ("$HyphenDate\n");
+	print MEMBERSHIP ("$in{'EmailView'}\n");
+	print MEMBERSHIP ("$SignatureHTML\n");
+	print MEMBERSHIP ("$in{'ICQnum'}\n");
+	print MEMBERSHIP ("$in{'AllowMassMail'}\n");
+close (MEMBERSHIP);
+&Unlock ("lock.file");
+chmod (0777, "$MembersPath/$NextNumber.cgi");
+
+## APPEND NEW REGISTRATION TO REG FILE
+&Lock ("lock.file");
+open (LIST, ">>$MembersPath/memberslist.cgi");
+	print LIST "$UserName|!!|$NextNumber\n";
+close (LIST);
+&Unlock ("lock.file");
+chmod (0666, "$MembersPath/memberslist.cgi");
+
+&Lock ("lock.file");
+open (LIST, ">>$MembersPath/emailfile.cgi");
+	print LIST "$RegEmail||$NextNumber\n";
+close (LIST);
+&Unlock ("lock.file");
+chmod (0666, "$MembersPath/emailfile.cgi");
+
+if (($UseEmail eq "ON") && ($EmailVerify eq "ON")) {
+$sendto = "$Email";
+$from = "$BBEmail";
+$subject = "$BBName Registration - Your Password";
+$message = "Hello!\n\r\nThank you for registering on $BBName ($CGIURL/Ultimate.cgi).  Your registration is provided below, including your new password.  You will need this information in order to post any messages in our forums at $CGIURL/Ultimate.cgi .\n\r\nYour UserName: $UserName\nYourPassword: $Password\nYour Email Address of record is: $RegEmail\n\r\nNote that you change this password online using the \"edit profile\" button on our bulletin board.  If you change your registered email address, however, a new random password will be emailed to you so that we can verify any new email address you use.\n\r\nAgain, thank you for registering.";
+if ($SMTPEmail eq "On") {
+&SendEmail;
+}  else {
+&send_mail("$BBEmail", "$sendto", "$subject", "$message");
+}
+
+$RegWording1 = "You have successfully registered your User Name for $BBName. ";
+$RegWording2 = "Your password has been emailed to you at $Email";
+&PrintRegistrationHTML;
+}  else {
+$RegWording1 = "You have successfully registered your User Name and Password for $BBName. ";
+$RegWording2 = "$in{'Password'}";
+
+&PrintRegistrationHTML;
+	} # end use email/verify on check
+} ### end if dupe ne yes
+
+} # end if/else /m
+}  # end GoAhead subroutine
+
+sub PrintRegistrationHTML {
+&GetCookieInfo;
+if ($SetCookies eq "DirectorySpecific") {
+	$ExtraInfo = qq(domain=$TheDomain;path=/$ThePath;);
+}  else {
+	$ExtraInfo = "";
+}
+
+print <<HTML;
+<HTML>
+<HEAD><TITLE>
+User Registration Confirmation</title>
+$HeaderInsert
+</head>
+ <BODY $BGColor $PageBackground  text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<FONT SIZE="$TextSize" FACE="$FontFace" color="$TextColor">
+<BR>
+<table border=0>
+<tr><td colspan=2>
+<FONT SIZE="$TextSize" FACE="$FontFace"><B>Congratulations!
+<P>
+$RegWording1  Feel free to post messages on any of our forums.  Your registration information is listed below.</B></FONT>
+</td></tr>
+<tr>
+<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>User Name</B></FONT></TD>
+<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$UserName</font>
+ </TD>
+</tr>
+
+<TR>
+	<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>Password</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$RegWording2</font>
+ </TD>
+</tr>
+<TR>
+	<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>Email</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$Email</font>
+ </TD>
+</TR>
+<TR>
+	<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>City, State, Country</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$Location</font>
+ </TD>
+</TR>
+<TR>
+	<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>Occupation</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$Occupation</font>
+ </TD>
+</tr>
+<TR>
+	<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>Interests</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$Interests</font>
+ </TD>
+</tr>
+<TR>
+	<TD $AltColumnColor1><FONT SIZE="$TextSize" FACE="$FontFace"><B>Homepage</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$URL</font>
+ </TD>
+</tr>
+
+<TR>
+	<TD $AltColumnColor1 valign=top><FONT SIZE="$TextSize" FACE="$FontFace"><B>Signature</B></FONT></TD>
+	<TD $AltColumnColor2><FONT SIZE="$TextSize" FACE="$FontFace" COLOR="$LinkColor">$SignatureHTML</font>
+ </TD>
+</tr>
+
+</TABLE>
+<p><FONT SIZE="$TextSize" FACE="$FontFace">
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true">Click here to enter the Bulletin Board now!</A><br><br>
+</FONT>
+<br><br><br><br>.
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--HIDE
+
+expireDate = new Date;
+if (expireDate.getYear() < 1900) {
+expireDate.setYear(expireDate.getYear() + 1900 + 1);
+} else {
+expireDate.setYear(expireDate.getYear()+1);
+}
+
+var DaysPrune = escape("$in{'DaysPrune'}");
+var NameStorage = escape("$in{'NameStorage'}");
+var CookieName = escape("$in{'UserName'}");
+var CookiePW =  escape("$in{'Password'}");
+var EmailVerify = escape("$EmailVerify");
+
+document.cookie = "DaysPrune=" + DaysPrune + ";expires=" + expireDate.toGMTString() + ";$ExtraInfo";
+document.cookie = "NameStorage=" + NameStorage + ";expires=" + expireDate.toGMTString() + ";$ExtraInfo";
+ 
+if (EmailVerify == "OFF") {
+if (NameStorage == "no") {
+	  	document.cookie = "UserName=" + CookieName + ";$ExtraInfo";
+		document.cookie = "Password=" + CookiePW + ";$ExtraInfo";
+	}
+if (NameStorage == "yes") {
+	  	document.cookie = "UserName=" + CookieName + ";expires=" + expireDate.toGMTString() + ";$ExtraInfo";
+document.cookie = "Password=" + CookiePW + ";expires=" + expireDate.toGMTString() + ";$ExtraInfo";
+	}
+}
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+
+</font>$Footer</body></html>
+HTML
+} ## END Print Registration sr
+
+sub PWRequest {
+# Find the right registration
+&GetMemberListArray;
+&GetEmails; # returns @EmailList array
+$Found = "";
+
+#lowercase the email input
+$sendto = lc($in{'sendto'});
+$CountIt = 0;
+foreach $emailline(@EmailList) {
+       ($theemail, $thenumber) = split(/\?\?/, $emailline);
+		$theemail = lc("$theemail");
+		
+	if ($theemail eq "$sendto") {
+	chomp($thenumber);
+		@thisprofile = &OpenProfile("$thenumber.cgi");
+		$YourName = "$thisprofile[0]";
+		$YourPassword = "$thisprofile[1]";
+		$CountIt = $CountIt + 1;
+		$Found = "yes";
+	}
+}
+
+if ($CountIt >= 2) {
+&StandardHTML("Sorry, we cannot process your request because more than one person is using that email address.");
+exit;
+}
+
+if ($Found eq "yes") {
+
+#Send the Email
+
+$from = "$BBEmail";
+$subject = "Your UserName and Password - $BBName";
+$message = ("Here is the registration information you requested for $BBName. \n\n Your UserName is: $YourName\n Your Password is: $YourPassword \n\n This bulletin board is located at $CGIURL/Ultimate.cgi \n\nThank you!");
+if ($SMTPEmail eq "On") {
+&SendEmail;
+}  else {
+&send_mail("$BBEmail", "$sendto", "$subject", "$message");
+}
+#Notify user that email has been sent
+&Forward("$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true", "Your username and password for this bulletin board have just been emailed to you!<P>You are now being automatically returned to the main forums page.");
+
+}  else {
+&StandardHTML("We have no one registered with the email address you listed.  Use your back button to try again.");
+}
+} #end PWRequest sr
+
+
+sub SocketTest {
+&StandardHTML("The Socket module is installed on your web server.  You may use the Socket option for performing UBB email functions.<P>Use your back button to return to the Variables page.");
+}
+
+sub SendThreadForm {
+
+$Subject = &UNHTMLIFY($in{'Subject'});
+
+print<<SendThread;
+<HTML>
+<HEAD>
+$HeaderInsert
+</HEAD>
+ <BODY $BGColor  $PageBackground text="$TextColor" link="$LinkColor" alink="$ActiveLinkColor" vlink="$VisitedLinkColor" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>$Header
+<FONT SIZE="2" FACE="$FontFace" COLOR="$TextColor">
+<BR>
+<center>
+<FORM ACTION="$CGIURL/ubbmisc.cgi" METHOD="POST">
+<table border=0 width="$TableWidth">
+<TR $BGColor><TD align=left>
+<A HREF="$CGIURL/Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="$NonCGIURL/ubbfriend.gif" BORDER=0 ALT="UBBFriend"></A></TD>
+<TD align=right valign=bottom>
+<FONT SIZE="3" FACE="$FontFace" COLOR="$LinkColor"><B>Send This Page To A Friend</B></FONT></td></tr>
+</table>
+<BR>
+$BorderTop
+<TABLE BORDER=0 cellspacing=1 cellpadding=4 width=$TableWidth2>
+<TR $AltColumnColor1>
+<TD><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Your Name:</B></font>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="FromName" Value="" SIZE=25 MAXLENGTH=100>
+</td>
+</tr>
+<TR $AltColumnColor2>
+<TD><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Your Email (so your friend can reply to you):</B></font>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="FromEmail" Value="" SIZE=25 MAXLENGTH=100>
+</td>
+</tr>
+<TR $AltColumnColor1>
+<TD><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Send To (Person's Name):</B></font>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="SendToName" SIZE=25 MAXLENGTH=75>
+</td>
+</tr>
+<TR $AltColumnColor2>
+<TD><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Send To (Email Address):</B></font>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="SendToEmail" SIZE=25 MAXLENGTH=100>
+</td>
+</tr>
+<TR $AltColumnColor1>
+<TD><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Subject:</B></font>
+</td>
+<td>
+<INPUT TYPE="TEXT" NAME="EmailSubject" Value="$Subject" SIZE=25 MAXLENGTH=100>
+</td>
+</tr>
+<TR $AltColumnColor2>
+<TD valign=top><FONT SIZE="$TextSize" FACE="$FontFace">
+<B>Message:</B></font>
+</td>
+<td>
+<TEXTAREA NAME="EmailMessage" ROWS=4 COLS=30>I thought you might be interested in reading this web page:  $in{'thread'}</TEXTAREA>
+</td>
+</tr>
+</table>
+$BorderBottom
+
+<P>
+
+<INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="Send Email Now!">
+
+<INPUT TYPE="HIDDEN" NAME="ForwardURL" VALUE="$in{'thread'}">
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="SubmitThreadEmail">
+</FORM>
+</font>
+SendThread
+
+&PageBottomHTML;
+} #end SendThreadForm
+
+sub SubmitThreadEmail {
+	##
+$CheckRefer = $ENV{HTTP_REFERER};
+
+
+unless ($CheckRefer =~ /^$CGIURL/i) {
+	my $HackerIPNumber = $ENV{'REMOTE_ADDR'};
+	&StandardHTML("We have noted your attempt to hack this forum.  Your IP number ($HackerIPNumber) has been logged.  Your ISP will be notified if you persist.");
+	exit;
+
+}
+
+##
+#validate required fields
+if (($in{'FromName'} eq "") || ($in{'EmailMessage'} eq "") || ($in{'SendToEmail'} !~ m/\S+\@\S+\.\S+/) || ($in{'EmailSubject'} eq "") || ($in{'FromEmail'} !~ m/\S+\@\S+\.\S+/) || ($in{'SendToName'} eq "") ) {
+&StandardHTML("You failed to complete all required fields, or you failed to provide a proper email address.  Please use your back button to try again.");
+}  else {
+
+$ReplyTo = "$in{'FromName'}<$in{'FromEmail'}>";
+
+
+$sendto = $in{'SendToEmail'};
+$subject = "$in{'EmailSubject'}";
+
+$message = "$in{'EmailMessage'}";
+
+if ($SMTPEmail eq "On") {
+&SendEmail;
+}  else {
+&send_mail("$ReplyTo", "$sendto", "$subject", "$message");
+}
+
+&Forward("$in{'ForwardURL'}", "We have sent your email to $in{'SendToEmail'}.  You are now being taken back to the page from which you sent the email.");
+} #end if/else form validation
+}  #end SubmitThreadEmail
+
+sub VerifyID {
+$NameFound = "no";
+$ProfileNumber = &GetUserNumber($UserNamePrivate);
+
+if ($NumbersPrivate ne "") {
+	if ($NumbersPrivate =~ /\:\:/) {
+	@CheckAccess = split(/\:\:/, $NumbersPrivate);
+	}  else {
+		@CheckAccess = $NumbersPrivate;
+	}
+	
+	CHECKER: foreach $checker(@CheckAccess) {
+		chomp($checker);
+		($checknum, $checkdir) = split(/\:/, $checker);
+		if ($checknum eq "$number") {
+			if ($checkdir eq "$DIRPW") {
+			$ProceedNow = "true";
+			last CHECKER;
+			}  else {
+				&StandardHTML("We cannot confirm your identity.");
+				exit;
+			} #if checkdir
+		}# if checknum
+	} #foreach
+}  #if np
+
+if ($ProceedNow ne "true") {
+
+	if ($ProfileNumber ne "") {
+		$NameFound = "yes";
+		} else {
+		$NameFound = "no";
+	}
+	
+		@thisprofile = &OpenProfile("$ProfileNumber.cgi");
+if ($PasswordPrivate eq "$thisprofile[1]") {
+		$Permission = "$thisprofile[4]";
+		$Status = $thisprofile[8];
+		($GenPerms, $SpecificPerms) = split(/\&/, $Permission);
+		
+			$Moderator = ("Forum" . "$number" . "Moderator");
+$Moderator = $$Moderator;
+#split up Mod var
+@mods = split(/\|\|\^\|\|/, $Moderator);
+
+$ModMatch = "";
+foreach $unomod(@mods) {
+if ($unomod eq "$UserNamePrivate") {
+	$ModMatch = "true";
+}
+}
+		if (($Status eq "Administrator") || ($ModMatch eq "true")) {
+	  		$ProceedNow = "true";
+	   }
+		if (($SpecificPerms ne "") && ($ProceedNow ne "true")){
+			chomp($specificPerms);
+			@accessarray = split(",", $SpecificPerms);
+			CHECKARRAY: foreach $uno(@accessarray) {
+				if ($uno eq "$number") {
+					$ProceedNow = "true";
+					last CHECKARRAY;
+				}
+			}
+		}
+	}
+}
+
+} #end VerifyID
+
+sub GetIP {
+#print authorization screen- must be admin or mod
+my $IPTitle = qq($BBName - Show Logged IP Number For This Post);
+my $IPRunner = qq(I P &nbsp;&nbsp;&nbsp;&nbsp; L O G &nbsp;&nbsp;&nbsp;&nbsp; D I S P L A Y);
+my $IPIntro = qq(To view the logged IP number for this post, identify yourself below.);
+$IPHidden = qq(<FORM ACTION="$CGIURL/postings.cgi" NAME="Authorize" METHOD="POST">
+<INPUT TYPE="HIDDEN" NAME="IPDisplay" VALUE="yes">
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="submitedit">
+<INPUT TYPE="HIDDEN" NAME="EditedMessage" VALUE="none">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="$TopicSubject">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="$Forum">
+<INPUT TYPE="HIDDEN" NAME="ReplyNum" VALUE="$in{'ReplyNum'}">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="$number">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="$topic">);
+
+&AuthorizeCheck($IPTitle, $IPIntro, $IPHidden, $IPRunner);
+
+}
+
+sub CheckBans {
+
+my @banlist = &OpenFile("$NonCGIPath/BanLists/EmailBan.cgi");
+
+if ($banlist[0] ne "") {
+my $banword = "";
+CheckBanList: for $banword(@banlist) {
+	chomp($banword);
+	$banword2 = quotemeta($banword);
+		if ($Email =~ m/$banword2/i) {
+			&StandardHTML("Sorry, you have attempted to register with an email address that has been banned.  We are not currently allowing the following email address to be registered:<P>$banword<P>Please feel free to email us at $BBEmail if you have any questions.");
+	$BannedEmail = "true";
+	exit;
+	last CheckBanList;
+		}
+	}
+} #if EmailBan list is not empty
+
+
+#Check IP Ban List--
+my @IPbanlist = &OpenFile("$NonCGIPath/BanLists/IPBan.cgi");
+
+if ($IPbanlist[0] ne "") {
+my $bannum = "";
+CheckIPBanList: for $bannum(@IPbanlist) {
+	chomp($bannum);
+	$bannum2 = quotemeta($bannum);
+		if ($IPNumber =~ m/$bannum2/i) {
+			&StandardHTML("Sorry, but we are currently preventing anyone registering from your IP Number.  Your IP Number is: $IPNumber.<P>Please feel free to email us at $BBEmail if you have any questions.");
+	$BannedEmail = "true";
+	exit;
+	last CheckIPBanList;
+		}
+	}
+} #if IPBan list is not empty
+
+}

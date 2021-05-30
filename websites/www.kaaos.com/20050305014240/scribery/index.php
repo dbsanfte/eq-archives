@@ -1,0 +1,471 @@
+<html>
+<head>
+<title>- = KAAOS: Killing As An Organized Sport = -</title>
+<style type="text/css">
+Body {
+	font-family : arial;
+	scrollbar-face-color:black;
+	scrollbar-highlight-color:#660000;
+	scrollbar-shadow-color: #660000;
+	scrollbar-3dlight-color: black;
+	scrollbar-arrow-color: #333333;
+	scrollbar-track-color: black;
+	scrollbar-darkshadow-color:black;
+	background: #000000;
+
+}
+a:link {
+	text-decoration: none;
+	color:#c2c2c2;
+}
+
+a:visited {
+	text-decoration: none;
+	color:#c2c2c2;
+}
+a:hover {
+	text-decoration: none;
+	color:#AA0000;
+}
+.nav {
+	font-size:8pt;
+	color:#c2c2c2;
+}
+.title {
+	font-size:9pt;
+	font-weight:bold;
+	color:#AA0000;
+	text-align:center;
+}
+.maintext {
+	font-size:10pt;
+}
+a.maintext:link, a.maintext:visited {
+	color:#FFFFFF;
+}
+textarea {
+	width:500;
+	height:290;
+}
+.button {
+	BORDER: #660000 1px solid; BACKGROUND-COLOR:#1e1e1e;color:#c2c2c2;height:18;font-size:7pt
+}
+.textinput {
+	BORDER: #660000 1px solid;BACKGROUND-COLOR:#1e1e1e;color:#c2c2c2;height:18;font-size:7pt
+}
+.textinput2 {
+	BORDER: #660000 1px solid;BACKGROUND-COLOR:#1e1e1e;color:#c2c2c2;height:200px;font-size:7pt
+}
+.newposts {
+	font-size:9pt;
+	color:#c2c2c2;
+	text-align:left;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+<body>
+<table width="100%" border="0" cellpadding="0"  cellspacing="0" background="../../../images/banner_bg.png"><tr>
+    <td align="center" valign="top"> <div align="left"><img src="../../../images/kaaosbanner.php" alt="" width="793" height="236"></div></td>
+  </tr>
+</table>
+  <table width="100%" cellpadding="1"  cellspacing="0" border="0">
+  <tr> 
+    <td width="130" align="center" valign="top" bordercolor="#660000" bgcolor="#000000"> 
+      <table width="100%" align="center" class="nav" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000">
+	<tr>
+		<td background="../../images/cellpic1.gif" align="center" class="title">Navigation</td>
+	</tr>
+	<tr>
+		  <td height="20" bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="http://www.kaaos.com" class="fade" name="home">Home</a></td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000" bordercolor="#000000" height="20" width="131"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="http://forums.kaaos.com/" class="fade" name="forums">Forums</a></td>
+	</tr>
+	<tr>
+		  <td height="20" bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="mailto:rann@kaaos.com" class="fade" name="webmaster">Contact Webmaster</a></td>
+	</tr>
+</table>
+<br>
+<table width="100%" class="nav" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000">
+<tr>
+	<td background="../../images/cellpic1.gif" align="center" class="title">Philosophy</td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../Philosophy/index.php?id=0" class="fade" name="bones"> 
+            The Bones</a></td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../Philosophy/index.php?id=1" class="fade" name="flesh"> 
+            The Flesh</a></td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../Philosophy/index.php?id=2" class="fade" name="lusts"> 
+            The Lusts</a></td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../Philosophy/index.php?id=3" class="fade" name="soul"> 
+            The Soul</a></td>
+</tr>
+</table>
+<br>
+<table width="100%" class="nav" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000">
+<tr>
+	<td background="../../images/cellpic1.gif" align="center" class="title">History</td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../History/index.php?id=0" class="fade" name="history1"> 
+            History I</a></td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../History/index.php?id=1" class="fade" name="history2"> 
+            History II</a></td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../History/index.php?id=2" class="fade" name="history3"> 
+            History III</a></td>
+</tr>
+<tr>
+	      <td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='#000000'"><a href="../History/index.php?id=3" class="fade" name="history4"> 
+            History IV</a></td>
+</tr>
+</table>
+      <br>
+      <table width="100%" align="center" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000" class="nav">
+        <tr> 
+          <td background="../../images/cellpic1.gif" align="center" class="title">Scribery</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000"  height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=0" class="fade" name="tr">Trophy 
+            Room</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=1" class="fade" name="cp">Classic 
+            Posts </a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=2" class="fade" name="96">1996 
+            Quads</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=3" class="fade" name="97">1997 
+            Quads </a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=4" class="fade" name="mp">Meat 
+            Puppets </a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=5" class="fade" name="akc">A 
+            KAAOS Christmas</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=6" class="fade" name="tdm">The 
+            Deathmatch</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=7" class="fade" name="atg">Are 
+            they gods?</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=8" class="fade" name="sact">SA 
+            Child theft</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=9" class="fade" name="ta">The 
+            Arrival </a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=10" class="fade" name="krp">Krypton</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=11" class="fade" name="cpi">Caning 
+            of ITB Wuss</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=12" class="fade" name="ittt">ITB 
+            Soap Opera</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=13" class="fade" name="ds">Demonchild 
+            saga</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=14" class="fade" name="fnp">Farewell 
+            to NWN</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=15" class="fade" name="rw">Random 
+            Worship </a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=16" class="fade" name="sb">Satan 
+            Beatdown </a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../scribery/index.php?id=17" class="fade" name="pf">Pirates 
+            Farewell </a></td>
+        </tr>
+      </table>
+      <br>
+      <table width="99%" align="center" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000" class="nav">
+        <tr> 
+          <td background="../../images/cellpic1.gif" align="center" class="title">Links</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="http://www.kaaosgaming.net/" class="fade" name="kgamingnet">Kaaos 
+            Gaming</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="http://www.gamerifts.com/" class="fade" name="Gamerifts">Gamerifts</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="http://www.Falseprophecies.com" class="fade" name="fp">False 
+            Prophecies</a></td>
+        </tr>
+      </table> </td>
+    <td  valign="top"> 
+
+<table width="100%" align="center" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000" class="nav">
+	<tr>
+		<td background="../../images/cellpic1.gif" align="center" class="title">Killing As An Organized Sport</td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000" bordercolor="#000000" class="maintext">
+<h1><div align="center">The Scribery</div></h1>
+<h3 align="center">The KAAOS Trophy Room</h3>
+
+ <p align="center"><font size="-1">KAAOS' success 
+                                  at PVP&nbsp;in Neverwinter needs no introduction.<br>
+                                  Neverwinter's turn-based PVP&nbsp;system has 
+                                  yet to be matched<br>
+                                  for sheer strategic depth and planning.&nbsp;<br>
+                                  <br>
+                                  From the moment KAAOS&nbsp;invaded Neverwinter 
+                                  Nights in November of 1994,<br>
+                                  the Gods were feared.&nbsp;&nbsp;Winning Quests, 
+                                  winning PVP&nbsp;events,<br>
+                                  ending lives in Deathmatches, gangbanging goodies 
+                                  and humiliating<br>
+                                  the pseudo-evil fools who dared challenge them, 
+                                  KAAOS stood<br>
+                                  alone in their dominance. &nbsp;<br>
+                                  <br>
+                                  Many tried, many died.&nbsp;&nbsp;KAAOS&nbsp;ruled. 
+                                  
+                                  </font></p>
+                                                                <center>
+                                  
+                                  <p>&nbsp;</p>
+                                </center>
+                                <center>
+                                  <p><font size=-1> <b>Champions of the 1996 NWN&nbsp;Guilds, 
+                                    <br>
+                                    </b>Quad PVP&nbsp;Championship<br>
+                                    <i>Azimer - Hedron - Sir Rellik - Slayve</i><b><i><br>
+                                    <br>
+                                    </i></b><br>
+                                    <b>Champions of the 1997 NWN&nbsp;Guilds, 
+                                    <br>
+                                    </b>Quad PVP&nbsp;Championships<br>
+                                    <i>Ego Prime - Kal Mirage - War Knight - Xylina</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>Singles Ladder Champions of KAAOS<br>
+                                    <br>
+                                    </b><i>Doc Krypto - Hedron - Lascivia - Mad 
+                                    Drunk<br>
+                                    Merculus - P1rate - Sir Rellik - Slayve</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>Doubles Ladder Champions of KAAOS<br>
+                                    <br>
+                                    </b><i>Sir Rellik - Slayve</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"> <br>
+                                    <b>WPC&nbsp;PVP&nbsp;Ladder Champions of KAAOS<br>
+                                    <br>
+                                    </b><i>Hedron - Kal Mirage - K1ng Kobra - 
+                                    Krynal<br>
+                                    L1vindeath - Mad Drunk - Sir Rellik - Slayve<br>
+                                    Tyo Ark - Xylina</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>Singles Ladder Tourney Champion<br>
+                                    (one time event)<br>
+                                    <br>
+                                    </b><i>Slayve</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>WPC&nbsp;Tourney Champion<br>
+                                    (one time event)<br>
+                                    <br>
+                                    </b><i>Slayve</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>WPC&nbsp;'Royal Rumble' Champion<br>
+                                    (one time event)<br>
+                                    </b> <br>
+                                    <i>Kal Mirage</i><b><i><br>
+                                    <br>
+                                    <br>
+                                    </i>1996 Mech Brawl PVP&nbsp;Champion<br>
+                                    <br>
+                                    </b><i>Sir Rellik</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>Azuth's Challenge I&nbsp;PVP&nbsp;Champions<br>
+                                    <br>
+                                    </b><i>Mad Drunk - Sir Rellik - Slayve</i><b><i><br>
+                                    <br>
+                                    <br>
+                                    </i>First Annual 'KORT&nbsp;Joust' Champion<br>
+                                    <br>
+                                    </b><i>Winner - Doc Krypto<br>
+                                    Runner-up - Merculus</i></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><br>
+                                    <b>Second Annual 'KORT Joust' Champion<br>
+                                    <br>
+                                    </b><i>Tyo Ark</i></font></p>
+                                </center>
+                                <center>
+                                  <p></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><b><i>Quests<br>
+                                    </i></b>Game knowledge, PVP&nbsp;skill and 
+                                    role-play skill.&nbsp;&nbsp;These were the 
+                                    ingredients<br>
+                                    of winning a Neverwinter Quest. &nbsp;Large 
+                                    prizes of magic items, 'pearls' and <br>
+                                    bragging rights went to the winners of staff 
+                                    and guild sponsored quests.<br>
+                                    Six such events took place in Version 2.0 
+                                    of Neverwinter.<br>
+                                    KAAOS' victory's are listed below. &nbsp;</font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><b><i>'Descent into Darkness' 
+                                    Quest</i></b></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><b><i>'Black Guard' Quest</i></b></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><b><i>'Night Mask' Quest</i></b></font></p>
+                                </center>
+                                <center>
+                                  <p><font size="-1"><b><i>'Aramos Manor' Quest</i></b> 
+                                    </font></p>
+                                </center>
+                                <p align="center"><font size="-1"><i>Four out 
+                                  of Six, eh?&nbsp;&nbsp;Could this be why the 
+                                  NWN&nbsp;staff stopped sponsoring Quests?<br>
+                                  Worship yer Gods...</i></font></p>
+                                <p align="center">&nbsp;</p>		</td>
+	</tr>
+	</table>
+	</td>
+    <td width="130" valign="top"> 
+      <table class="newposts" width="100%" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000"><tr><td background="../../../images/cellpic1.gif" class="title">Latest Posts</td></tr><tr> <td class="newposts" bgcolor="#000000" bordercolor="#000000"> &bull; <a href="http://forums.kaaos.com/viewtopic.php?t=4126&amp;sid=abcaa34aa6d4bb064cbcbfdc511dd4dc" >PSU - Comp Problem</a> </td>  </tr><tr> <td class="newposts" bgcolor="#000000" bordercolor="#000000"> &bull; <a href="http://forums.kaaos.com/viewtopic.php?t=4167&amp;sid=abcaa34aa6d4bb064cbcbfdc511dd4dc" >rawr</a> </td>  </tr><tr> <td class="newposts" bgcolor="#000000" bordercolor="#000000"> &bull; <a href="http://forums.kaaos.com/viewtopic.php?t=4149&amp;sid=abcaa34aa6d4bb064cbcbfdc511dd4dc" >After all these years, a place for me!</a> </td>  </tr><tr> <td class="newposts" bgcolor="#000000" bordercolor="#000000"> &bull; <a href="http://forums.kaaos.com/viewtopic.php?t=4158&amp;sid=abcaa34aa6d4bb064cbcbfdc511dd4dc" >Gizoogle and the results of boredom</a> </td>  </tr><tr> <td class="newposts" bgcolor="#000000" bordercolor="#000000"> &bull; <a href="http://forums.kaaos.com/viewtopic.php?t=4153&amp;sid=abcaa34aa6d4bb064cbcbfdc511dd4dc" >Fun...</a> </td>  </tr></table>      <br>
+      <table width="100%" align="center" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000" class="nav">
+        <tr> 
+          <td background="../../images/cellpic1.gif" align="center" class="title">KAAOS 
+            on Gaming</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../Gaming/index.php?id=0" class="fade" name="sixcircles">The 
+            Six Circles</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../Gaming/index.php?id=1" class="fade" name="pgame">The 
+            Perfect Game</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../Gaming/index.php?id=2" class="fade" name="gutopia">Gaming 
+            Utopia</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../Gaming/index.php?id=3" class="fade" name="gbalance">Gaming 
+            Balance</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../Gaming/index.php?id=4" class="fade" name="rtaz">Real 
+            Time Vs Turn Based by Azmodion</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20"  onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../Gaming/index.php?id=5" class="fade" name="rttyo">Real 
+            Time Vs Turn Based by Tyo</a></td>
+        </tr>
+      </table> <br>
+<table width="99%" align="center" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000" class="nav">
+	  <tr>
+		<td background="../../images/cellpic1.gif" align="center" class="title">PlanetSide Related</td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../psstats.php" class="fade" name="psstats">KAAOS PlanetSide stats</a></td>
+	</tr>
+</table>
+      <br>
+      <table align="center" width="100%" class="nav" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000">
+		  <tr> 
+          <td background="../../images/cellpic1.gif" align="center" class="title">Screenshots</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../eqshots/" class="fade" name="kgamingnet">Everquest</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../wowshots/" class="fade" name="Gamerifts">World 
+            Of Warcraft</a></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../psshots/" class="fade" name="fp">Planetside</a></td>
+        </tr>
+		        <tr> 
+          <td bgcolor="#000000" bordercolor="#000000" height="20" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="../nwnshots/" class="fade" name="fp">Neverwinter Nights</a></td>
+        </tr>
+		 <tr> 
+          <td background="../../images/cellpic1.gif" align="center" class="title">Random 
+            Shots </td>
+        </tr>
+        <tr> 
+          <td height="21" bordercolor="#000000" bgcolor="#000000" align="center">
+            <a href="../wowshots/Rann abombbuilding2.jpg" target="_blank"><img src="../wowshots/Rann abombbuilding2.jpg" border="0" height="75" width="100" alt=""></a>          </td>
+        </tr>
+      </table>
+      <br>
+<table align="center" width="100%" class="nav" cellpadding="1"  cellspacing="1" border="1" bordercolor="#660000" bgcolor="#000000">
+    <tr>
+		<td background="../../images/cellpic1.gif" align="center" class="title">Chat</td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000" bordercolor="#000000"><p>Server: <br>
+              irc.gamesurge.net</p>
+            </td>
+	</tr>
+	    <tr> 
+          <td bgcolor="#000000" bordercolor="#000000">Channel:<br>
+            #kaaos</td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000" bordercolor="#000000" onMouseover="this.style.background='#333333'" onMouseout="this.style.background='black'"><a href="http://www.mirc.com" class="fade" name="mirc"> Download mIrc</a></td>
+	</tr>
+	<tr>
+	<td bgcolor="#000000" bordercolor="#000000">Teamspeak: 199.72.133.164</td>
+	</tr>
+	
+</table>
+	  <br>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>
+</body>
+</html>
