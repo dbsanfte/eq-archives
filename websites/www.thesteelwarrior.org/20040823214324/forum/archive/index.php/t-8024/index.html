@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>The Steel Warrior - Status update on Pathing and collision problems</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,everquest,steel warrior,warrior,steelwarrior,thesteelwarrior,the steel warrior,warriors,call of heroes,worlds of warcraft,coh,wow" />
+	<meta name="description" content="The Steel Warrior - EverQuest Warrior Messageboards" />
+	<link rel="stylesheet" href="http://www.thesteelwarrior.org/forum/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">The Steel Warrior</a> &gt; <a href="f-1">The Steel Warrior - EverQuest</a> &gt; <a href="f-5">The Tavern</a> &gt; Status update on Pathing and collision problems</div>
+<hr />
+<p class="largefont">View Thread : <a href="http://www.thesteelwarrior.org/forum/showthread.php?t=8024">Status update on Pathing and collision problems</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Vikken</b></div><div class="posttext" id="p1">This here is the only reason I still have hope for EQ. Letting these guys have a chance to talk and explain the details of important problems/issues that the community concerned is waaaaayyyy better that the lip service we've recieved in the past.<br />
+<br />
+I could probably care less about knight/warrior balance, this is the stuff that makes the game unplayable.<br />
+<br />
+On EQLive forums http://eqforums.station.sony.com/eq/board/message?board.id=development&amp;message.id=1737&amp;no_redir=true<br />
+<br />
+Grumbuk-Dev <br />
+EQ Programmer <br />
+Posts: 113<br />
+Registered: 03-04-2004 <br />
+<br />
+Server: Test<br />
+<br />
+Viewed 1015 times<br />
+<br />
+ <br />
+ Hello again, <br />
+<br />
+I just wanted to review as many of the questions posed in this thread since my last update and provide what info I can.<br />
+<br />
+So here we go.<br />
+<br />
+-------------<br />
+<br />
+Axxius asked &quot;How about a compromise solution: re-enable warpring, but limit it severely in distance so that NPCs cannot warp directly onto the target player? Let them warp just a short limited distance to break free of the geometry they are stuck on. This will also help solve the cornering issue.&quot;<br />
+<br />
+The way the warps work when an NPC is stuck is that it will not typically warp to the final destination, it will warp to the next pathing node. If it's an outdoor zone, this can be quite a distance depending on the zone's pathing data, but in most indoor zones where this is an issue the warping distance should be pretty short. So in a sense this is already happening. Now keep in mind I am referring to the &quot;I'm trying to run to my destination but seem stuck&quot; kind of warp. Right now, that particular warp code is disabled on live servers but this will change with the next update. On live servers, the warps that are occurring are due to a different area of the code - namely the combat logic, where the NPC has determined that a potential exploit is occurring and it decides to warp onto the target after some period of time. This code rarely kicks in when the pathing warp code is enabled, since a pathing warp will occur before the combat warp and will reset the &quot;i can't get to my target&quot; variables.<br />
+<br />
+-------------<br />
+<br />
+Siins describes an issue: &quot;They instead path to the inner portion of the doorway to the room, and then instead of cleanly moving through the doorway, they attempt to go through the walls along the side of the doorway, in essence becoming stuck, and eventually, warping out of that area.&quot;<br />
+<br />
+Yes this is a known behavior. An unfortunate side effect of the way the volume-based pathing data is generated is that the pathing data is created with a fixed volume size that represents the NPCs that will be moving about. The pathing generator is a pretty complicated tool that I spent most of last spring working on, and unfortunately has a few shortcomings. This being one of them. I've been looking into ways to work around this problem, and there are a few workable options. One solution is a bit of a hack, which is to artificially reduce the collision radius of the NPC down to the constant size that is more compatible with the pathing data, but this would make it so NPCs could be pushed (visibly) into walls a bit. They wouldn't push through completely and fall through the world, they would just have a smaller collision sphere. I'd prefer to avoid this because I would like to see NPCs retain their current collision sphere which generally makes them appear more visibly correct. The other is to modify the pathing tools to support variable sized NPCs, but this is a pretty complicated solution (I hope to describe the architecture of our geometry-scanning volume based pathing system at some point but for now I'm going to just go with &quot;it's complicated&quot;). We're still discussing which solution we'd prefer to do.<br />
+<br />
+---------------<br />
+<br />
+MordenX writes, &quot;i dont know if anyone else has noticed, but when you open the lever/(spinning door) to go into AD's lair, you sink partially into the ground as you walk thought and some people have even gotten stuck&quot;<br />
+<br />
+I'll forward this one to QA so they can provide me with specific locations to stand, etc, to make this happen again.<br />
+<br />
+---------------<br />
+<br />
+Brotor_LoL- writes, &quot;I had a mob warp on me in solro tower last night.&quot; ... &quot;But, instead of running back to me, he just warped onto us.&quot;<br />
+<br />
+It's likely that this is due to the movement-warping being disabled on live servers right now is causing the combat warp to occur. See response to Axxius, above.<br />
+<br />
+<br />
+----------------<br />
+<br />
+Nezzarria writes, &quot; I am experiencing what i call in-game freezes.&quot;<br />
+<br />
+I have had occasional client freezes in the past couple weeks, but they seem to have stopped. I am not the person working on this problem, but I seem to remember Rowyl making a fix that affected it. But I can't confirm this right now. I'll try to find out if this had some progress.<br />
+<br />
+----------------<br />
+<br />
+Gunkk asked, &quot;Has the NPC runspeed discrepancy between client and server been looked at yet?&quot;<br />
+<br />
+This shouldn't even be an issue, but I'll put it on my list of things to review. It sounds like server lag to me. Unfortunately, the existing physics code is highly framerate dependant and any time the server has lag weird things start happening to position calculations. I'm hoping to get a chance to make this code more lag-tolerant at some point. For now though, all I can say is that I'll check out what you describe and see if it's something more straightforward to fix.<br />
+<br />
+----------------<br />
+<br />
+Perenti mentioned, &quot;Lag has improved in Hate as of last night.&quot;<br />
+<br />
+Well we haven't put our changes that affeect Plane of Hate live yet, so perhaps the other zones running on the same computer were more idle.<br />
+<br />
+I can say we (myself &amp; mostly Hobart) found some *substantial* problems with the server code that only became apparent when analyzing the combat code while killing NPCs in Plane of Hate. Basically, every healer NPC in the zone was being asked if they could see an NPC that needed healing, causing expensive line of sight checks to be performed from every healer NPC to each NPC that could be a potential heal target. This was a severe load of the server, and affected every zone in the game that had healers. Plane of Hate was particularily bad because of the very large number of healers in the zone, but this inefficient code was affecting all zones with healers. We have corrected this problem, and our performance profiling of the zone have confirmed the fix. Look forward to noticably less server lag in Hate after the next update, and noticably less lag in other healer-heavy zones as well.<br />
+<br />
+-----------------<br />
+<br />
+Arthuras_DoD writes, &quot;lag seems to be random. ever once in awhile lag in places like pok or other zones just gets lag spikes (for everyone). skyfire seems to be getting better though.. and that was always horribly laggy.&quot;<br />
+<br />
+Lag is hard to identify. Often times lag is the result of specific behaviors triggering specific peices of code that aren't optimal (see reply to Perenty, above, for an example - that's just one example). Skyfire in particular is a CPU pig because it has hundreds of roamers, each of them pushing the collision system. We've been analyzing this zone recently to try to understand what is causing the lag that is typical there. Yesterday we discovered a problem related to those spinning globes that turned out to be part of a more general problem.. basically when a 'switch' like these globes is active (and these generally are spinning), the &quot;cached floor height&quot; for npcs &amp; players has to be discarded because we use the same 'switch' code to provide elevators and similar features to the game. If we don't discard the cached floor height, then elevators when they move wouldn't lift players up. Anyways, this was part of the reason why skyfire was laggy, it was unable to use the cached floor heights and was constantly hammering the collision system even for stationary NPCs. This has been fixed, but there seems to be another CPU load issue in skyfire which is being profiles as I type this (which is why I have the time to make this reply post so detailed, incidentally...)<br />
+<br />
+He also writes, &quot;collision is much better. I got stuck in a sea anenomae in PoW though..&quot;<br />
+<br />
+Just a few days ago I received a couple of reproducible &quot;getting stuck&quot; bugs. I'll be looking at them when I can. The hardest part to fixing these at this point is finding a reproducible case, so I'm optimistic. I don't expect any fixes in this next patch though.<br />
+<br />
+------------------<br />
+<br />
+Bear069 writes, &quot;Lag for me last night and early this morning in PoK was very bad.&quot; .. &quot;This was on MT server.&quot;<br />
+<br />
+We haven't put any changes on live servers since the emergency patch which was a very minor (as in, simple to do &amp; safe) fix that shouldn't have affected lag at all. I expect PoK zone was lagged out as a side effect of other zones on the same box being overloaded or something like that.<br />
+<br />
+-------------------<br />
+<br />
+Axxius writes, &quot;a trash mob that was pulled to the raid just turned around and walked away (normal walking speed) while still having aggro on our tank (as shown in the HoTT window) and being attacked by others.&quot;<br />
+<br />
+I'm not aware of anything in the code that would cause this. I'm not saying it didn't happen, but I don't know why this would. If it was a low enough level mob I'd be suspicious that someone feared it.<br />
+<br />
+--------------------<br />
+<br />
+Terathel_TR writes, &quot;the one thing i notice is that the game is still not as smooth as it once was. example, running through EC tunnels and going away, before the toon would keep going even if running into a wall. now the toon gets stuck on flat walls it never used to in the past. <br />
+<br />
+also there are still many issues in kodtaz/qvic/ect with anything not level. as a caster, when im shrunk, there are times i can not &quot;duck&quot; on anything other then level serface. hope this helps. &quot;<br />
+<br />
+<br />
+Changes on test since the last update to live servers include improvements to what I call the &quot;deflection&quot; code. Hopefully when it goes live it will correct the problem you describe. Also changed was the ducking code; there were some problems in that code that have been taken care of related to being able to duck on slopes.<br />
+<br />
+---------------------<br />
+<br />
+eludril writes, &quot;<br />
+<br />
+lag in Hate<br />
+<br />
+lag in Sanctu Seru<br />
+<br />
+Big Agro thru floor Problem in Vex Thal, we made like 25+ runs in VT from Blob1 to AHR, this is a recurent problem, never solved, (last one was this week)&quot;<br />
+<br />
+<br />
+I've been working on lag in Hate (described above), lag in sseru (the fixes to hate help this zone some), but I never did get a chance to work on the Vex Thal problem. I'll try to get to that soon. Sorry for the delay on that. For now, don't use horses in there.<br />
+<br />
+sseru is a bit of a problem zone for us because the original pathing data was made incorrectly. There is about 20x the normal amount of pathing data in that zone, and it's hammering the system. It seems that we pretty much need to repath that zone in order for lag there to go down. But I haven't confirmed this yet.<br />
+<br />
+----------------------<br />
+<br />
+<br />
+Hope this answers some of your questions, I'm going to lock this thread for now so my answers don't get lost in responses and start another after I get more news. Cheers!<br />
+<br />
+-Grumbuk  <br />
+07-09-2004 08:42 AM</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Abynormal777</b></div><div class="posttext" id="p2">wow, another great post fro SoE.  It's good to see them divulging this kind of information...it makes me think they are serious about the game again.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Ayida</b></div><div class="posttext" id="p3">This guy is good.<br />
+<br />
+I have already written to two different departments at SOE, pointing out that he is competent and has good communication skills, and a good routine for relaying information, taking comments, and keeping it on track and up to date. <br />
+<br />
+If the other developers, GMs, technical support staff, and visible customer service reps would follow the pattern he uses, our experience of the game would be completely turned around (in a positive fashion).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Lathen</b></div><div class="posttext" id="p4">Wow -- that is great information.<br />
+<br />
+More importantly, it shows me somebody out there is listening to customer issues and attempting to address them.<br />
+<br />
+/write check for another $13 per month.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Groovdog</b></div><div class="posttext" id="p5">Wow -- that is great information.<br />
+<br />
+More importantly, it shows me somebody out there is listening to customer issues and attempting to address them.<br />
+<br />
+/write check for another $13 per month.<br />
+<br />
+And he has been doing it for a long time. Not sure if pre big meeting but for a long time now.<br />
+<br />
+Another thread for your reading pleasure<br />
+<br />
+http://forums.interealms.com/shaman/showthread.php?threadid=22450<br />
+<br />
+Now if SoE would just do this on everything this game would f***ing begin to rock again.<br />
+<br />
+GD</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.0, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>The Steel Warrior - walling mobs</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,everquest,steel warrior,warrior,steelwarrior,thesteelwarrior,the steel warrior,warriors,call of heroes,worlds of warcraft,coh,wow" />
+	<meta name="description" content="The Steel Warrior - EverQuest Warrior Messageboards" />
+	<link rel="stylesheet" href="http://www.thesteelwarrior.org/forum/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">The Steel Warrior</a> &gt; <a href="f-1.html">The Steel Warrior - EverQuest</a> &gt; <a href="f-2.html">The Arena</a> &gt; walling mobs</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.thesteelwarrior.org/forum/showthread.php?t=7421">walling mobs</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">unclebong</div><div class="date">06-03-2004, 03:08 PM</div></div><div class="posttext">I was in BoT last night with a ranger friend and he noticed a few changes with the patch.  He was happy cause he could now shoot through PC's, pets, and mezzed mobs.  I wondered about walling nerfing his archery so we tested it and lo &amp; behold he was plunking arrows into the giant and doing damage fine with it firmly in the wall.  I'd always thought that the mob touching the wall meant no arrow dmg.  Did that change last night or recently? (i just got back to the game from a two month break).<br />
+<br />
+thanks<br />
+<br />
+Zak</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fenring</div><div class="date">06-03-2004, 03:33 PM</div></div><div class="posttext">Been that way since DX9 was implemented, but subject to the same bugs as melee attacks, which are mostly fixed now with a few exceptions still out there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">unclebong</div><div class="date">06-03-2004, 04:06 PM</div></div><div class="posttext">so no mo ranger wall nerf!? is the same true of mage nukes?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NhuakofBrell</div><div class="date">06-03-2004, 07:51 PM</div></div><div class="posttext">Yes  all Line of sight  issues with  mage nukes  and ragers bow  and  anything else  that used the projectile system  were  fixed almost completely  with the implementaion of  DX9</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">yagru</div><div class="date">06-04-2004, 02:20 AM</div></div><div class="posttext">If you think that shooting through a mob is normal then yes you can consider it fixed.<br />
+<br />
+My ranger has no problem shooting mobs is walls or shooting through the masses of unshrunk melee on a cornered mob.  It makes a welcome change but i can't whine about shink anymore  ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sylviania</div><div class="date">06-04-2004, 05:28 AM</div></div><div class="posttext">yeah it is that way for a few now, LoS issues for arrows and bolt spells are usually gone ... now with new colision system, we just share problems with melees when mobs are walled ;)<br />
+to quote what a ranger friend said yesterday : &quot;It is good to see melees having the same problem we had before&quot; :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Urdegish</div><div class="date">06-04-2004, 09:32 AM</div></div><div class="posttext">quote:<br />
+--------------------------------------------------------------------------------<br />
+The walled/cornered NPC bug was the direct result of the client and server having two different values for the radius that is used for the collision sphere. This collision sphere is what is used as the basis for where an NPC and player can move. One of the things that changed with the DX9 engine was the introduction of data structures specifically designed to track collision states. The old engine didn't have this. These data structures will (and have) allowed us to make optimizations that the old engine simply couldn't support because it didn't have any concept of persistent collision data; everything was based on the scale of the model and that's it. Anyways, in these data structures the new engine had the collision size set at one point, then the model was scaled, and the bug is that the collision sphere was not also scaled on the server because the server doesn't actually load the model data so it has nothing to scale.. This caused NPCs to have a collision radius of 1.2 on the server for instance where cazic thule in potime on the client was using 4.7 or so. The server would think the NPC is properly cornered but the clients would all think it was on the opposite side of the wall causing a bunch of bugs you all know about by now. Once the collision sizes were synchronized these problems went away. This was also part of the problem with pathing for very small NPCs (the spiders in podisease for instance) because they were constantly getting stuck in the ground due to having a collision sphere on the server *larger* than what the client was using.<br />
+<br />
+On a related note, in the old engine NPCs were actually prevented from going through walls by something unrelated to collision checks of spheres and triangles. It was just doing a point check in legal space, which caused NPCs to be pushable exactly halfway in the wall which made the target point for archery subject to numerical precision errors. And the old collision code had numerous precision errors (one of the many things we just couldn't bring ourselve to port to DX9). In the new engine, it does a proper collision check of the sphere for the NPC against the zone geometry and being halfway in the wall shouldn't occur any more from a mathematical standpoint and this should permanently solve a lot of not-fun archery and other line of sight problems. Animation wise, NPCs will continue to have parts of their body penetrating whatever is nearby, but the collision sphere which is used for all visibility checks and whatnot is definitely kept outside the wall. <br />
+<br />
+Changing the system from something with many inaccuracies that worked only due to CPU intensive redundant safety checks (ie point check in legal space) to something mathematically accurate that doesn't need additional methods to validate behavior is one of the reasons why the new system is better than the old one. It has also made the behavior much more strict which is a large part of why there have been so many &quot;getting stuck&quot; bugs. The system depends on everything always being in a legal state. This isn't always possible however, and I've had to find and correct each possible condition that could put a player &quot;legally&quot; in the position of overlapping geometry. Such as when a door closes on a player; this now has special code to allow the door to be partially disregarded when this happens.. Anyways, it's all very complicated, much more complicated than I think anyone here expected it to become, but I do feel we are nearly done. The remaining bugs - while frustrating to the players for sure - are at least approachable with known solutions (unlike the hard to reproduce stuff we've been dealing with lately) and it's just a matter of getting to them as fast as possible. Once those are taken care of the system will be ready for some very interesting new features that only a properly engineered collision system can support. How exactly we plan to extend it is not something I want to get into yet, right now we need to stay focused on making what we have now work correctly. We're pretty close, I think.<br />
+<br />
+At any rate, we'll be patching the live servers as soon as we are confident these fixes are in fact fixes so for a few more days you can expect the behavior on live servers to remain the same. <br />
+--------------------------------------------------------------------------------</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

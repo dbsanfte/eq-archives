@@ -1,0 +1,193 @@
+
+
+<html><head><title>Spellfire</title>
+<style type="text/css">
+ <!--
+#text { font-size : 10-small; }
+#format { font-family : Verdana; font-size : 10-small; }
+#main { font-family : Verdana; font-size : 12-small; }
+#alliances { font-family : Verdana; font-size : 10-small; }
+#links { font-family : Verdana; font-size : 12-small; }
+A  {color : #CCCC33;}
+A:Visited  {color : #CCCCCC;}
+A:Active  {color : #CCCC33;}
+A:Hover  {color : #CCCC00;}
+
+BODY  { font-size : 12-small;
+	color : #CCCC66;
+	background-color : #000000;
+	}
+     -->
+     </style>
+
+</head>
+<body bgcolor=#000000>
+
+<center>
+<table width="18%" align="left">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td bgcolor="#990000"><font face="Verdana, Arial, Helvetica, sans-serif"><b><u>Areas 
+      of Interest</u></b>&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><p><img src="navbar.jpg" width="169" height="432" border="0" usemap="#Map">
+        <map name="Map">
+          <area shape="rect" coords="5,25,97,49" href="http://www.spellfireguild.net/Members.php" alt="Members">
+          <area shape="rect" coords="4,59,83,83" href="http://www.spellfireguild.net/charter.html" alt="Charter">
+          <area shape="rect" coords="3,94,138,119" href="http://www.spellfireguild.net/recruit.html" alt="Recruit Rules">
+          <area shape="rect" coords="4,130,162,154" href="http://pub135.ezboard.com/bspellfire" alt="Messageboards">
+          <area shape="rect" coords="4,163,158,190" href="http://pub79.ezboard.com/blasf" alt="Alliance Boards">
+          <area shape="rect" coords="3,198,84,225" href="http://www.berthall.com" alt="Berthall">
+          <area shape="rect" coords="4,232,144,256" href="http://www.castersrealm.com/" alt="Castersrealm">
+          <area shape="rect" coords="5,267,126,293" href="http://www.allakhazam.com/" alt="Allakhazams">
+          <area shape="rect" coords="5,302,115,361" href="http://wyndforge.com/artisans/" alt="">
+          <area shape="rect" coords="9,370,71,395" href="http://www.spellfireguild.net" alt="News &amp; Events">
+        </map>
+      </p></td>
+  </tr>
+  <tr> 
+    <td height="61"><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#990000" text="#CCCC66"><font face="Verdana, Arial, Helvetica, sans-serif"><b><u>Upcoming 
+      Raids</u></b>&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif"><a href="http://everquest.allakhazam.com/zones/Planes/Air.htm" title="Plane of Air"><b>PoA- 
+      none scheduled</b></a></font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif"><a href="http://everquest.allakhazam.com/zones/Planes/Fear.htm" title="Plane of Fear"><b>PoF- 
+      none scheduled</b></a></font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif"><a href="http://everquest.allakhazam.com/zones/Planes/Hate.htm" title="Plane of Hate"><b>PoH- 
+      none scheduled</b></a></font></td>
+  </tr>
+  <tr> 
+    <td height="64"><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+</table>
+<!--- menu ends here --->
+<br>
+
+<table width="31%" height="145" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor=#B05800 >
+  <tr>
+		
+    <td height="143"  align="center" bgcolor=#000000 ><font size="+2"><img src="members.jpg" width="328" height="76"></font></td>
+	</tr>
+</table>
+<br>
+
+<table align=center border=1 cellspacing=0 cellpadding=4 bordercolor = #B05800>
+<tr style='background-color: #990000; font-weight : bold;' >
+<td>
+  <a href='Members.php?Sort=Name'>Name</a>
+</td>
+<td>
+  <a href='Members.php?Sort=Level'>Level</a>
+</td>
+<td>
+  <a href='Members.php?Sort=Class'>Class</a>
+</td>
+<td>
+   <a href='Members.php?Sort=Rank'>Rank</a>
+</td>
+<td>Epic</td>
+
+
+</tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Gerzan </td>	<td> 60 </font></td>	<td> Bard </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Hasty </td>	<td> 60 </font></td>	<td> Bard </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Fierre </td>	<td> 52 </font></td>	<td> Beastlord </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Kilzu </td>	<td> 59 </font></td>	<td> Beastlord </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Alakazama </td>	<td> 52 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Arabella </td>	<td> 54 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Chastity </td>	<td> 59 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Cilina </td>	<td> 60 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Corizz </td>	<td> 60 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=293588 '> Figgy</a> </td>	<td> 62 </font></td>	<td> Cleric </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=424655 '> Krolts</a> </td>	<td> 62 </font></td>	<td> Cleric </td>	<td> Officer </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=585114 '> Leanora</a> </td>	<td> 65 </font></td>	<td> Cleric </td>	<td> Officer </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Medek </td>	<td> 60 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Raket </td>	<td> 62 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Rammona </td>	<td> 58 </font></td>	<td> Cleric </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=387838 '> Sireann</a> </td>	<td> 56 </font></td>	<td> Cleric </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Zenmore </td>	<td> 65 </font></td>	<td> Cleric </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Kazzarkt </td>	<td> 55 </font></td>	<td> Druid </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Kisfa </td>	<td> 55 </font></td>	<td> Druid </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Mysticconquest </td>	<td> 55 </font></td>	<td> Druid </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Nokkan </td>	<td> 55 </font></td>	<td> Druid </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Rolln </td>	<td> 59 </font></td>	<td> Druid </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=387627 '> Annaesthesia</a> </td>	<td> 62 </font></td>	<td> Enchanter </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Errielle </td>	<td> 54 </font></td>	<td> Enchanter </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Filamoon </td>	<td> 62 </font></td>	<td> Enchanter </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Misticbreeze </td>	<td> 54 </font></td>	<td> Enchanter </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Slinkiex </td>	<td> 60 </font></td>	<td> Enchanter </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Coloeb </td>	<td> 63 </font></td>	<td> Magician </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Goadan </td>	<td> 65 </font></td>	<td> Monk </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Sharvalian </td>	<td> 61 </font></td>	<td> Monk </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=585106 '> Truking</a> </td>	<td> 65 </font></td>	<td> Monk </td>	<td> Officer </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Vallet </td>	<td> 55 </font></td>	<td> Monk </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Aridal </td>	<td> 52 </font></td>	<td> Necromancer </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Obelchen </td>	<td> 61 </font></td>	<td> Necromancer </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Sbik </td>	<td> 60 </font></td>	<td> Necromancer </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Suttig </td>	<td> 57 </font></td>	<td> Necromancer </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Karmok </td>	<td> 58 </font></td>	<td> Paladin </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=15988 '> Kryssanah</a> </td>	<td> 62 </font></td>	<td> Paladin </td>	<td> Guild Leader </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Kewen </td>	<td> 60 </font></td>	<td> Ranger </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Tauzo </td>	<td> 61 </font></td>	<td> Ranger </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Temujinkan </td>	<td> 62 </font></td>	<td> Ranger </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Juxter </td>	<td> 62 </font></td>	<td> Rogue </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Raslin </td>	<td> 59 </font></td>	<td> Rogue </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Harmful </td>	<td> 55 </font></td>	<td> Shadow Knight </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Kaggak </td>	<td> 59 </font></td>	<td> Shadow Knight </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Leexx </td>	<td> 52 </font></td>	<td> Shadow Knight </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Darkiss </td>	<td> 52 </font></td>	<td> Shaman </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Galdaor </td>	<td> 62 </font></td>	<td> Shaman </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Grubsnatcha </td>	<td> 60 </font></td>	<td> Shaman </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Kenadale </td>	<td> 60 </font></td>	<td> Shaman </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=16246 '> Sardu</a> </td>	<td> 60 </font></td>	<td> Shaman </td>	<td> Officer </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Skarfase </td>	<td> 62 </font></td>	<td> Shaman </td>	<td> Member </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Altrian </td>	<td> 62 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Baldurek </td>	<td> 60 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Beatum </td>	<td> 57 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Clubbin </td>	<td> 65 </font></td>	<td> Warrior </td>	<td> Officer </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Connan </td>	<td> 56 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Crankie </td>	<td> 60 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Gittus </td>	<td> 59 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Guicho </td>	<td> 61 </font></td>	<td> Warrior </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> 
+<a href=' http://www.magelo.com/eq_view_profile.html?num=160723 '> Terrorus</a> </td>	<td> 65 </font></td>	<td> Warrior </td>	<td> Officer </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #646464;' >	<td> Wardien </td>	<td> 57 </font></td>	<td> Warrior </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Blinkie </td>	<td> 62 </font></td>	<td> Wizard </td>	<td> Officer </td>	<td>*</td>	</font></tr>
+	<tr  style='color: #CCCC66; background-color: #000000;' >	<td> Espernova </td>	<td> 60 </font></td>	<td> Wizard </td>	<td> Member </td>	<td>&nbsp;</td>	</font></tr>
+</table>
+<br>Total Members = 64
+
+</body></html>
+

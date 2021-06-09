@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><!-- #BeginTemplate "/Templates/lowsrc.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>EQLive - Articles</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<!-- Start Menu -->
+
+<p>
+<a href="/lowsrc/index.jsp">Home</a>
+<a href="/lowsrc/forums/index.jsp">Forums</a>
+<a href="/lowsrc/events/index.jsp">Official Events</a>
+<a href="/lowsrc/community/index.jsp">Community</a>
+<a href="/lowsrc/multimedia/index.jsp">Multimedia</a>
+<a href="/lowsrc/library/index.jsp">The Library</a>
+<a href="/lowsrc/support/index.jsp">Support</a>
+<a href="/lowsrc/contact_us.jsp">Contact Us</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Fwww.station.sony.com%2Fen%2Fservices%2Fhelp%2FeqGM.jsp">Contact Your GM</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2F66.129.87.69%2Fcandidate%2F">Employment</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Feverquest.station.sony.com">EverQuest.com</a>
+<a href="/community/articles.jsp">Full Design Version</a>
+</p>
+
+
+<p>
+Community Links:
+<a href="/lowsrc/community/dear_mennix.jsp">Dear Mennix</a>
+<a href="/lowsrc/community/dev_view.jsp">Developers' Corner</a>
+<a href="/lowsrc/community/fippy_facts.jsp">Fippy's Facts</a>
+<a href="/lowsrc/community/hammerfel.jsp">Hammerfel</a>
+<a href="/lowsrc/community/">Newsletter</a>
+<a href="/lowsrc/community/articles.jsp">Articles</a>
+<a href="/lowsrc/community/links.jsp">Links</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+<!-- End Menu -->
+<!-- #BeginEditable "Main" -->
+<h1>Articles</h1>
+
+<a href="articles_archive.jsp">View The Articles Archive</a>
+
+
+
+
+
+<h2>Customize Your EQ UI with Great Art</h2>
+<B>
+<P>Immersing yourself in EverQuest through UI art</P></B>
+<P><IMG src="http://eqlive.station.sony.com/images/Book1.jpg" align=right>During the summer of 2002, the EverQuest team released a new user interface. Players can now customize the interface by creating custom skins, resizing windows, managing multiple chat windows - essentially giving them the power to develop an entirely new look and feel for their window into the world of EverQuest. They can even create their own interface artwork and incorporate it. With more than 400,000 people playing EverQuest, the possibilities for creating unique interfaces are limitless. </P>
+<P>Soon after the release of the new UI, community members of the many EQ fan sites starting sharing their interface creations. One of those members started an interface-designing frenzy with his stunning artwork and expertise. His rich and detailed artwork for use in the EQ UI he provided for others to use without cost. His designs were so popular that the bandwidth charges almost caused the artist to remove his UI from the web. In order to preserve his creations, and to ensure the EQ community could continue to enjoy them, Sony Online Entertainment decided to host some of his art on their website.</P>
+<P>Tom King did not originally start out as an artist. His background is primarily as a software design engineer in game development and programming. He worked as the Senior Developer/Project Manager for the entire front-end project of the 1998 and 1999 versions of Microsoft Golf. He has an intuitive sense of coding and a remarkable ability not only to learn new design tools, but to create his own. This intuitiveness is evident in his passion: Art. </P>
+<P>Self-taught in traditional artistic principals and non-traditional artistic tools like 3D Studio Max, Tom honed his artistic craft and dreamed of creating art for computer games. </P>
+<P>As a long time EverQuest player, Tom couldn't pass up the opportunity to create his own art for the newly released UI. Spell icons, scrolls, spell books, and other images created by T.King soon hit the Web's EQ community. The EQ experience took on a whole new feel with stunning images that immersed players in the world of Norrath.</P>
+<P>
+<CENTER><IMG src="http://eqlive.station.sony.com/images/Sword1.jpg"></CENTER>
+<P></P>
+<P>When the makers of EverQuest learned of Tom's EQ UI art and the great demand others had for it, an offer to host his work was made - a rare and welcome offer indeed. Players unfamiliar with "skinning" would need a how-to as well, so they too could try the different styles.</P>
+<P></P><B>
+<P>How to download and use new art for the User Interface</P></B>
+<P>The following instructions detail how to download customized artwork (in this case, artwork created by Tom King and hosted on the <A href="/lowsrc/">EverQuestLive</A> site) and implement the new UI art to be used in game.</P>
+<P>Step 1: Create a new folder in the EverQuest directory to store the new art files by following these instructions:</P>
+<UL>
+<LI>Right-click on the <I>Start</I> button in Windows&reg;. 
+<LI>Choose <I>Explore</I> 
+<LI>Go to the directory where EverQuest is stored. This is usually <I>C:/program files/everquest</I> 
+<LI>Locate the "uifiles" subdirectory. 
+<LI>Double-click on "uifiles" subdirectory to open it. 
+<LI>Right-click on a blank spot in the "uifiles" subdirectory window and choose <I>New</I> and then <I>Folder</I> to create the new folder. 
+<LI>Rename the new folder to something easy to remember. For example, "Mennix."</LI></UL>
+<P>You now have a new folder in which to save the downloaded files. </P>
+<P><IMG src="http://eqlive.station.sony.com/images/Spells1.jpg" align=left>Now, visit the <A href="/lowsrc/multimedia/tking_index.jsp">Tom King UI Art section</A> of www.everquestlive.com and download the desired files into the new subdirectory you created (as detailed above). Once the files are downloaded, go to that subdirectory and double-click the .zip file to unzip it. extract the files to the new subdirectory as well. Once the files are extracted, they are ready to be implemented into your UI.<BR></P>
+<P>You will need to repeat the entire process if you want to have more than one skin theme available for your characters. For example, the above folder named "Mennix" will contain one set of files for one specified skin. This is Mennix's warrior skin. If Mennix wants to also have the ability to use a druid skin, another subdirectory will need to be created with a different folder name. For example, "Mennix1."</P>
+<P>Enter the game and type the command, <I>/loadskin &lt;directory name&gt;</I>; (Typing the command <EM>/loadskin</EM> without any parameters will launch a new window that allows you to choose which skin to load.) put the name of the directory you created and unzipped the UI files to. Using the above example for Mennix, he would type in game the command <I>/loadskin Mennix</I>, or if he wanted to use his druid skin, he would type <I>/loadskin Mennix1</I>.</P>
+<P>The <I>/loadskin</I> command needs to be used for each character that you want to play. There is no need to use the <EM>/loadskin</EM> command if you add files to your personal UI folders later. EverQuest will remember your settings.</P>
+<P>The EverQuest User Interface, developed with feedback from the community and enthusiastic support at <A href="http://www.eqinterface.com/">EQ Interface</A> and <A href="http://eq.stratics.com/eqskins/">EQ Skins</A>,&nbsp;revealed&nbsp;a new dimension&nbsp;of navigation and gameplay possibilities for players. With the great artwork of Tom King available for download on the EverQuestLive site, plus many others' work available on the Web, players have a wealth of customization options available to them, no matter their level of computer expertise.</P>
+<P>Be sure to also <A href="http://home.attbi.com/~tomjking/">check out Tom's site</A> for more great art.</P>
+<P>-Steve Fuller</P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- #EndEditable -->
+<!-- Start Copyright -->
+<p> 
+	<script language="JavaScript">
+var ToSwinhandle=null;
+function openToS(tosURL)
+{	
+	ToSwinhandle=window.open(tosURL, "tosWin", "width=500,height=400,titlebar=no,menubar=no,toolbar=no,status=no,scrollbars=yes,resizeable=no");
+	ToSwinhandle.focus();
+	return false;
+}
+</script>
+<a href="http://sonyonline.com/tos/tos.jsp#privacy" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp#privacy');" class="ToS">Sony Online Privacy Policy</a>
+<span class="ToS">|</span>
+<a href="http://sonyonline.com/tos/tos.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp');" class="ToS">Sony Online Terms Of Service</a>
+</p>
+
+<p>
+	EverQuest and You’re in Our World Now are registered trademarks and The Ruins of Kunark, 
+	The Scars of Velious, The Shadows of Luclin and The Planes of Power are trademarks of 
+	Sony Computer Entertainment America Inc. The Station, SOE and the SOE logo are trademarks 
+	of Sony Online Entertainment Inc. &copy;2002 Sony Computer Entertainment America Inc.; 
+	portions copyright 2002 Sony Online Entertainment Inc. 
+	All other trademarks are properties of their respective owners. All rights reserved. 
+</p>
+
+<!-- End Copyright -->
+</body>
+<!-- #EndTemplate --></html>

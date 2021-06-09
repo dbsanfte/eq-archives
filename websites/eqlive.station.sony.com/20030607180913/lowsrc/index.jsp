@@ -1,0 +1,213 @@
+ 
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><!-- #BeginTemplate "/Templates/lowsrc.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>EverQuestLive.com - Official EverQuest News</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<!-- Start Menu -->
+
+<p>
+<a href="/lowsrc/index.jsp">Home</a>
+<a href="/lowsrc/forums/index.jsp">Forums</a>
+<a href="/lowsrc/events/index.jsp">Official Events</a>
+<a href="/lowsrc/community/index.jsp">Community</a>
+<a href="/lowsrc/multimedia/index.jsp">Multimedia</a>
+<a href="/lowsrc/library/index.jsp">The Library</a>
+<a href="/lowsrc/support/index.jsp">Support</a>
+<a href="/lowsrc/contact_us.jsp">Contact Us</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Fwww.station.sony.com%2Fen%2Fservices%2Fhelp%2FeqGM.jsp">Contact Your GM</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2F66.129.87.69%2Fcandidate%2F">Employment</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Feverquest.station.sony.com">EverQuest.com</a>
+<a href="/index.jsp">Full Design Version</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- End Menu -->
+<!-- #BeginEditable "Main" --> 
+<h1>EQ Live</h1>
+<!-- Start Featured Items -->
+<h2>Featured Items</h2>
+ 
+	<h3> 
+		
+			<a href="http://eqlive.station.sony.com/updates/index.jsp"> 
+		
+		Shared Bank Slots! 
+		
+			</a> 
+		
+	</h3>
+	<p> Legends will get Droga and Nurga. All servers will get Veksar. Everyone gets shared bank slots. These and a whole lot more await you with our latest <A href="http://eqlive.station.sony.com/updates/upcoming_updates.jsp">Game Update</A>. And for our <A href="http://eqlive.station.sony.com/updates/future_plans.jsp">Future Plans</A>, zone revamps and more! </p>
+ 
+	<h3> 
+		
+			<a href="http://www.soeallaccess.com/"> 
+		
+		SOE All Access - More Games, One Subscription 
+		
+			</a> 
+		
+	</h3>
+	<p> SOE All Access is your ticket to all SOE published games through a single account. Now&nbsp;play your favorite games for one low price.&nbsp;Visit <A href="http://www.SOEAllAccess.com">www.SOEAllAccess.com</A>! </p>
+ 
+	<h3> 
+		
+			<a href="http://eqlive.station.sony.com/news_section/newsview.jsp?story=56432"> 
+		
+		Veksar! 
+		
+			</a> 
+		
+	</h3>
+	<p> One of the most persistent legends is about a city that lies buried under the Lake of Ill Omen. That city was called Veksar, and it is up to you to discover the tale of its fate. </p>
+ 
+<!-- End Featured Items -->
+
+<!-- Start Dev Corner -->
+<h2>Developers' Corner</h2>
+ 
+	<h3><a href="community/dev_view.jsp?id=56276" class="smalltitle">Chicago Fan Faire</a></h3>
+	<a href="http://www.everquest.com/fanfaire/">The Fan Faire Chicago</a> website and registration are now live.
+ 
+	<h3><a href="community/dev_view.jsp?id=56025" class="smalltitle">SOE All Access Pass is now available!</a></h3>
+	This new subscription option gives you access to EverQuest, PlanetSide, EverQuest Online Adventures, our Station Pass games (Tanarus, Infantry and Cosmic Rift), as well as EverQuest II when it becomes available.  You can pick up your <a href="http://www.soeallaccess.com/">All Access Pass</a> at our Station Store right now!
+
+ 
+	<h3><a href="community/dev_view.jsp?id=56177" class="smalltitle">Using the enhanced LFG tool</a></h3>
+	Just a reminder for those of you with the Legacy of Ykesha extension - using the new Looking For Group (LFG) tool can make finding a group much easier.
+
+ 
+	<h3><a href="community/dev_view.jsp?id=56156" class="smalltitle">Bankers with Quests</a></h3>
+	Raydog2 asks a question about quest that involve bankers.
+ 
+	<h3><a href="community/dev_view.jsp?id=55955" class="smalltitle">Bastion of Thunder</a></h3>
+	The changes mentioned in the Update Message about the Bastion of Thunder did not make it into the update this time around.  We'll get them in next time.
+ 
+<!-- End Dev Corner -->
+
+<!-- Start Headlines -->
+<h2>Headlines</h2>
+
+ 
+	<h3><a href="news_section/newsview.jsp?story=56447">Pre-order EQ For The Mac!</a></h3>
+	It's good news for Mac users because the world of EverQuest will soon be available. The projected release date is June 23rd, 2003. And better news:  <A href="https://store.station.sony.com/hardgood.jsp?SKU=EQMAC-HG-SW0603-EQMACI"><STRONG>they'll be able to pre-order today!</STRONG> </A>
+ 
+	<h3><a href="news_section/newsview.jsp?story=56432">Veksar Discovered!</a></h3>
+	As mentioned in our latest Upcoming Udate, all servers will have the chance to discover Veksar.
+ 
+	<h3><a href="news_section/newsview.jsp?story=56274">The EQ Fan Faire Goes To Chicago!</a></h3>
+	It's been announced that the Fall Fan Faire will be held at the Sheraton Chicago Hotel and Towers on September 26-28, 2003. For more information and for pre-registration, go to the newly launched <STRONG><A href="http://everquest.station.sony.com/fanfaire/">Chicago Fan Faire site</A></STRONG>!
+ 
+	<h3><a href="news_section/newsview.jsp?story=56172">EverQuest-2.com Interviews Bill Trost!</a></h3>
+	Folks from EverQuest-2.com, one of the premier EQII fansites, ran into lead designer Bill Trost at the E3 convention. For Bill's answers to their many questions, check out the full article
+ 
+	<h3><a href="news_section/newsview.jsp?story=55918">Introducing The SOE All Access Pass!</a></h3>
+	The new <i>All Access Pass</i> will be offered on May 19th, allowing subscribers to this new service to have access to all current Station premium games for one low fee of $21.99 per month! This will include <i>EverQuest</i>, <i>PlanetSide</i>, <i>EverQuest Online Adventures</i>, the <i>Station Pass</i> games, and <i>EverQuest II</i> (scheduled to launch this Fall). For additional information, see the official <STRONG><A href="http://www.soeallaccess.com/">press release</A></STRONG>.
+ 
+	<h3><a href="news_section/newsview.jsp?story=55863">Upcoming EQII Incentives Announced!</a></h3>
+	It has been announced that subscribers to both <i>EverQuest II</i> and <i>EverQuest</i> will have access to special incentives including a special <i>EverQuest II</i> in-game reward; and crossover quest zones, allowing characters in <i>EverQuest II</i> and <i>EverQuest</i> exclusive access to hidden treasures. Over the coming months, even more incentives will be disclosed.
+ 
+	<h3><a href="news_section/newsview.jsp?story=55052">Newest EQ Zippo Lighter Series On Sale!</a></h3>
+	Because our first official EverQuest Zippo lighter series has been a smashing success, the <STRONG><A href="https://store.station.sony.com/category_index.jsp?categoryid=9">Station.com Store</A></STRONG> is proud to present our latest series of EQ Zippo collectible lighters. These newest custom crafted lighters pay tribute to eleven EverQuest character classes from Bard to Warrior.
+ 
+
+<h4><a href="news_section/newsarchive.jsp">Community News Archives</a></h4>
+<!-- End Headlines -->
+
+<!-- Start Community -->
+<h2>Community</h2>
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=56438">Runes, a Karana Guild, Seeks New Members</a></h3>
+	Runes, a new french raiding guild on Karana is looking for experienced players level 57+.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=56439">Shattered Faith Guild on Antonius Bayle Recruiting</a></h3>
+	We are a Australian guild on the Antonius Bayle server and we are now recruiting members from all races, classes and levels.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=56440">Legion of Eternal Friends on Rodcet Nife Looking For New Friends!</a></h3>
+	Our guild is looking for new friends to come and play with us!
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=56441">Oriental Gladiators of Karana Looking for More.</a></h3>
+	A mainly asian time zone guild, we're looking for more 50+ people.
+ 
+
+<h4><a href="news_section/communitynewsarchive.jsp">Community Archives</a></h4>
+<!-- End Community -->
+
+<!-- Start Phat Lewt -->
+<h2>Phat Lewt</h2>
+ 
+	<h3><a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-SU-GC1001-EQGCRD">EverQuest: Game Card</a></h3>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-SU-GC1001-EQGCRD"> 
+		
+			<img src="/images/store_images/eq_gamecard1.gif" alt="" border="0"> 
+		
+	</a> <br>
+	Enjoying the world of Norrath just got easier! <br>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-SU-GC1001-EQGCRD">Buy It!</a> 
+ 
+	<h3><a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0303-CLRCZP">EQ Cleric Zippo!</a></h3>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0303-CLRCZP"> 
+		
+			<img src="/images/store_images/Lewt_ClericLighter1.gif" alt="" border="0"> 
+		
+	</a> <br>
+	The best name in lighters meets the best name in gaming! <br>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0303-CLRCZP">Buy It!</a> 
+ 
+	<h3><a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-BP1102-BAGTNK">The Bag of the Tinkerers</a></h3>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-BP1102-BAGTNK"> 
+		
+			<img src="/images/store_images/Lewt_backpack1.gif" alt="" border="0"> 
+		
+	</a> <br>
+	Carry your phat lewt in this! <br>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-BP1102-BAGTNK">Buy It!</a> 
+ 
+<!-- End Phat Lewt -->
+<!-- #EndEditable -->
+<!-- Start Copyright -->
+<p> 
+	<script language="JavaScript">
+var ToSwinhandle=null;
+function openToS(tosURL)
+{	
+	ToSwinhandle=window.open(tosURL, "tosWin", "width=500,height=400,titlebar=no,menubar=no,toolbar=no,status=no,scrollbars=yes,resizeable=no");
+	ToSwinhandle.focus();
+	return false;
+}
+</script>
+<a href="http://sonyonline.com/tos/privacy.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/privacy.jsp');"><img src="/common/images/esrb_privacy.jpg" alt="ESRB&#153; Privacy Certified - click to privacy statement" width="116" height="43" border="0"></a><br><br>
+<a href="http://sonyonline.com/tos/privacy.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/privacy.jsp');" class="ToS">Sony Online Privacy Policy</a>
+<span class="ToS">|</span>
+<a href="http://sonyonline.com/tos/tos.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp');" class="ToS">Sony Online Terms Of Service</a>
+</p>
+
+<p>
+	EverQuest and You’re in Our World Now are registered trademarks and The Ruins of Kunark, 
+	The Scars of Velious, The Shadows of Luclin and The Planes of Power are trademarks of 
+	Sony Computer Entertainment America Inc. The Station, SOE and the SOE logo are trademarks 
+	of Sony Online Entertainment Inc. &copy;2002 Sony Computer Entertainment America Inc.; 
+	portions copyright 2002 Sony Online Entertainment Inc. 
+	All other trademarks are properties of their respective owners. All rights reserved. 
+</p>
+
+<!-- End Copyright -->
+</body>
+<!-- #EndTemplate --></html>

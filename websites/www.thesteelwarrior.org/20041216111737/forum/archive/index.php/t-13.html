@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>The Steel Warrior - Ubermob Tanking - summary and discussion</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,everquest,steel warrior,warrior,steelwarrior,thesteelwarrior,the steel warrior,warriors,call of heroes,worlds of warcraft,coh,wow" />
+	<meta name="description" content="The Steel Warrior - EverQuest Warrior Messageboards" />
+	<link rel="stylesheet" href="http://www.thesteelwarrior.org/forum/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">The Steel Warrior</a> &gt; <a href="f-1.html">The Steel Warrior - EverQuest</a> &gt; <a href="f-16.html">The Library</a> &gt; Ubermob Tanking - summary and discussion</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.thesteelwarrior.org/forum/showthread.php?t=13">Ubermob Tanking - summary and discussion</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Raaj</div><div class="date">04-16-2003, 06:55 PM</div></div><div class="posttext">***** Originally Posted by Tugurok *****<br />
+<br />
+This post is an effort to condense what I thought were some important contributions to understanding how melee works in EQ. Note that some of this might seem analytically intensive. If this bothers you, please don't post calling people nerds for figuring stuff out. This is pretty long -- apologies for length. I just wanted to toss something out before the main thread disappears again, as it nearly did this spring. The original, this, or some better effort should be stickied.<br />
+<br />
+I have tried to draw out the important implications from the model and then compiled a list of specific data points. Where I can I have tried to let people speak for themselves about big ideas, but other times I simply summarize and present without citation. I'm sorry if I have overlooked someone's contribution, or missed crediting someone who should have been. Of course special thanks go to Joimster.<br />
+<br />
+Joimster offered the following model for Ubermob damage:<br />
+<br />
+Here are my findings:<br />
+Thanks for the data! <br />
+The damage a mob does on a standard hit is DB + x*DI, where DB stands for Damage Bonus, DI stands for Damage Interval, and x is an integer between 1 and 20 (inclusive).<br />
+<br />
+Some values that I've calculated, maybe we could start a repository of these values:<br />
+Mob: DB, DI<br />
+Cazic Thule: 200, 20<br />
+Doomshade: 110, 15.5<br />
+Gozzrem: 180, 15<br />
+Kromzek Captain: 60, 10<br />
+Lcea Katta: 160, 20<br />
+Lord Nagafen: 75, 7.5<br />
+Vessel Drozlin: 75, 12<br />
+Yelinak: 100, 25<br />
+<br />
+So, Cazic Thule can hit for 220, 240, 260, ..., 580, or 600.<br />
+It turns out that kick/bash damage is DB + some integer, so CT could kick for 201, 202, 203, ....<br />
+<br />
+The min hit is therefore DB + DI, and the max hit is DB + 20*DI.<br />
+<br />
+It becomes apparent that we can derive these numbers from a max and min:<br />
+DI = (max hit) - (min hit) / 19<br />
+DB = (min hit) - DI<br />
+<br />
+By the way, none of this applies to the hit that finishes off a rune.<br />
+<br />
+The way Defensive works is it divides DI by 2.<br />
+This puts the min hit at DB + DI/2, and the max hit at DB + 20*DI/2 = DB + 10*DI.<br />
+So CT could hit for 210, 220, 230, ..., 390, or 400 with Defensive up.<br />
+<br />
+Any questions?<br />
+<br />
+These findings somewhat apply to PC damage, actually. I looked at some of my logged data and I could see peaks (not completely empty between peaks) at certain damage values with high damage 2handers (I assume it also appears on 1handers; maybe I'll break out my wurmy for a little test). <br />
+<br />
+Effectively, the weapon's actual damage bonus is the same as my value for DB. The number that is analagous to the mob's max hit is the modal damage for the PC's weapon. Modal damage = DB + 2*(Weapon damage).<br />
+So DI is equal to<br />
+((DB + 2*(Weapon damage)) - DB)/20<br />
+= (Weapon damage)/10<br />
+And the min hit is still DB + DI.<br />
+<br />
+So, with my 30/37 lance, DB = 12 and DI = 30/10 = 3. So my min hit should be 12 + 3 = 15, which it is according to my parser.<br />
+<br />
+My min hit with my wurmy should therefore be DB + DI = 8 + 25/10 = 10.5. I'll check that to make sure...<br />
+<br />
+I was just reading the about monks hitting for a min of 2 with a SoS (17 damage) in the offhand. This is in complete agreement with my analysis: min hit = DB + (weapon damage)/10 = 0 + 17/10 = 1.7.<br />
+<br />
+Hopefully this has been interesting or helpful to someone.<br />
+<br />
+Sorry if something doesn't make sense; I'm not gonna proofread this at 5:30 AM.<br />
+<br />
+- Joim <br />
+<br />
+Edited by: Joimster at: 3/13/02 3:43:27 am<br />
+<br />
+<br />
+Restatement of model:<br />
+<br />
+The damage a mob does on a standard hit is DB + x*DI, where DB stands for Damage Bonus, DI stands for Damage Interval, and x is an integer between 1 and 20 (inclusive)<br />
+<br />
+Breakdowns:<br />
+<br />
+Damage = DB + (x*DI)<br />
+DI (Damage Interval) = (max hit) - (min hit) / 19<br />
+DB (Damage Base) = (min hit) - DI<br />
+x = integer between 1 and 20, inclusive<br />
+min hit = DB + DI<br />
+max hit = DB + 20*DI<br />
+Modal damage = DB + 2*(Weapon damage).<br />
+<br />
+The model is significant for various reasons:<br />
+1. It allows players to empirically evaluate ubermob encounters<br />
+2. It allows a means to evaluate the relative value of evasive vs. defensive disciplines<br />
+3. It suggests a means to evaluate the relative worth of weapon choice, such as that between 2-handers and 1-handers.<br />
+4. It suggests avenues for analyzing the mechanics of AC itself, including possibly the AC softcap <br />
+5. It suggests a means to consider mob ATK values.<br />
+<br />
+Some or all of these points are followed up in some of the following quotes. After them, I'll present a condensation of further mob DI/DB values. <br />
+<br />
+For example, Rani then drew out an important result of the finding, which is that it offers a way to evaluate the relative worth of tanking with defensive vs. evasive in specific encounters:<br />
+<br />
+Wow, an EQ mystery cracked open for all to see. Good job <br />
+<br />
+Your theory holds true for Sontalak at least.<br />
+<br />
+Maxhit = 425<br />
+Maxhit with def = 275<br />
+Minhit = 140<br />
+<br />
+This gives:<br />
+<br />
+Sontalak DI=15<br />
+Sontalak DB=125<br />
+<br />
+One obvious conclusion one can draw from this is that the higher the DI value, the more beneficial it will be to tank the mob with defensive. <br />
+<br />
+Edited by: rani at: 3/13/02 8:00:55 am<br />
+<br />
+Keple also noted this effect: &quot;so if defensive really divide by 2 the DI (which seems to work with my logs as well), mobs with very low DI and high DB would perhaps be better tanked with evasive...&quot;. Besrikarle noted the difficulty in aggro maintenance when the tank is hitting less often (with evasive) as opposed to less effectively (with defensive).<br />
+<br />
+Another inference to be drawn from the model is the effect of mitigation AC, again drawn out by Joimster:<br />
+<br />
+Mitigation AC should just determine the distribution of hits over the twenty different X values. The distribution would just be a probability for each X value, based on mitigation AC and the mob's attack rating in some way.<br />
+<br />
+For a tank with high mitigation AC, the probabilities would be skewed such that, generally, there is a higher probability of being hit for a lower X value than a higher X value.<br />
+<br />
+And it should also be noted that it is possible to mitigate hits into misses. Go tank a decaying skeleton and you'll see that this is true (you have high mitigation AC, it has a low attack rating).<br />
+<br />
+- Joim <br />
+<br />
+Edited by: Joimster at: 3/15/02 10:47:05 am<br />
+<br />
+The effect of level and AC on mob attack was discussed. Thresher offered the 3 following inferences:<br />
+<br />
+Fact: If we chart of AC versus damage we see a curve that always looks the same. Damage reduces slowly until some critical AC value is reached, then drops off sharply for a period of AC increases, then reduces even more slowly after some second AC point.<br />
+<br />
+Fact: There are nearly always clusters in hit graphs at minimum (N = 1) and maximum (N = 20) damage.<br />
+<br />
+Let's suppose that we can look at a hit as having a fixed component above (N = 20), below (N = 1) or in (1 &lt; N &lt; 20), plus a random component that smears some hits over a range that always includes (N = 1) and (N = 20).<br />
+<br />
+Let's also suppose for a minute that Verants' algorithm makes the clusters by rounding hits below (N = 1) to minimum and above (N = 20) to maximum.<br />
+<br />
+Let's lastly suppose that the random component of the hits isn't nearly as sensitive to AC change as the modal hit value.<br />
+<br />
+Then we can infer that if your AC is high enough that the non-random part of hits is mostly BELOW N = 1, you will get the largest spike at minimum damage. This represents a ceiling on mitigation AC, since the random component will always put SOME hits over (N = 1) and reducing hits further below (N = 1) doesn't help. If the random component continues to be reduced even when the modal hit is far under (N = 1), this becomes a soft cap.<br />
+<br />
+Secondly, we can infer that as the modal hit moves through the range (N = 1) to (N = 20), we see the 'sharp dropoff' effect that so many people have reported in the AC 700 to 1200 range.<br />
+<br />
+Thirdly, we can infer that if the modal hit is often over (N = 20) most times, you see the big spike at max damage. This represents a floor on AC, which has been observed but never really commented on. Since at (N = 20) the random component will ALSO be large, we find that the floor is softer than the ceiling.<br />
+<br />
+It's just a hypothesis. Have fun tearing it apart.<br />
+<br />
+Soru considered the distribution of probabilities of DI as a means to explain results found in charts of damage present by Axantur, which were not bell-curved shaped as might be thought:<br />
+<br />
+K1% chance of hitting for DB + DI (min hit)<br />
+<br />
+K2% chance of hitting for DB + random(20) x DI (normal hit)<br />
+<br />
+K3% chance of hitting for DB + 20 x DI (modal hit)<br />
+<br />
+K4% chance of hitting for DB + random(20) x DI + random(20) x DI x SF (bonus hit)<br />
+<br />
+Its the K4 region which is not present in MOB attacks. It forms a shallow bell curve on either side of the modal hit, implying it is formed from the sum of two random rolls. SF it the strength/level factor that accounts for high level ogres hitting harder than low level wood elves with the same weapon.<br />
+It overlaps with the K2 hits, which explains the sawtooth pattern on the left side of the modal hit.<br />
+<br />
+Open questions:<br />
+<br />
+what causes K1, K2, K3 and K4 to vary? Strength, level, buffs, AC, disciplines, debuffs, etc?<br />
+<br />
+what is the formula for SF?<br />
+<br />
+horrible thought: is the fact that mobs don't get bonus hits a bug?<br />
+<br />
+Soru <br />
+<br />
+Another important contribution came from Gjin LoL, in extending Joimster's model to consider mob ATK values:<br />
+<br />
+See if this makes sense to yall.<br />
+<br />
+First assume NPC's act in most ways like PC's except they aren't level restricted and have some AI behind them.<br />
+<br />
+Second assume that the equation given for damage: DB + x*DI, where DB stands for Damage Bonus, DI stands for Damage Interval, and x is an integer between 1 and 20 (inclusive), is the same for NPC's as it is for PC's.<br />
+<br />
+The mystery is X. Lets assume that X is a function of:<br />
+<br />
+- Class<br />
+- a mitigation factor (ac)<br />
+- attack value <br />
+<br />
+Lets assume class is some constant, the money question of course is, how do Mitigation AC and ATK relate? This is what has been asked since the dawn of time. <br />
+<br />
+Lets assume that Z = (1 - AC/Atk).<br />
+<br />
+AC = players Mitigation AC (best case right now is about 1200, which would be about 1750 displayed in inventory)<br />
+Atk = Mobs Attack (assume 2000 is max)<br />
+<br />
+Z indicates how well (or badly) a PC can tank.<br />
+<br />
+Example 1:<br />
+<br />
+Best Mitigation AC = 1200<br />
+Best Mob Atk = 2000<br />
+<br />
+Z = (1 - 0.6) = 0.4<br />
+<br />
+Take Z times the range, Z*20 = 8. Assume this value is your modal on the bell curve of X probability, you get the following modal hits using the equation provided by Steel Warriors:<br />
+<br />
+Cazic: 360 Damage per hit<br />
+Yelinak: 300 damage per hit<br />
+<br />
+This indicates the best case tanking of the mobs above (no defensive).<br />
+<br />
+If Mitigation falls off, lets say to 1000, the modal values become:<br />
+<br />
+Cazic: 400<br />
+Yelinak: 350<br />
+<br />
+Now take the monk class which probably has about 800 Mitigation AC with stellar gear, you have the following modals:<br />
+<br />
+Cazic: 440<br />
+Yelinak: 400<br />
+<br />
+This is of course assuming both CT and Yelinak have 2000 attack. Those numbers are per hit modal values. Whats really cool is that you can figure out exactly what CT / Yelinak etc, atk rating is:<br />
+<br />
+Atk = MitAC / ((1 - (ModalHit - DB)/20*DI))<br />
+<br />
+Where MitAC is your mitigation AC<br />
+Modal Hit is the modal damage done to you by the mob, from a log file<br />
+DB is already provided for CT, Yelinak, and mobs in the thread<br />
+DI is already provided for CT, Yelinak and the mobs in the thread<br />
+<br />
+Now whats really really interesting is you can use this exact same formula to determine what damage you do to mobs.<br />
+<br />
+Assume that Creator has 2000 mitigation AC and the best player character (while cursed) has 1200 ATK. Also assume that Z can never be less than 1, and you get:<br />
+<br />
+Z = 1, which means PC damage to Creator will be modal around the dmg bonus + DI which is 13 dmg (1hndr - main - 20 delay). Which means 50% (bell curve) of hits are 13 damage.<br />
+<br />
+This is verifiable with a log parse. But this seems true based on our fights with him.<br />
+<br />
+By the same token you can determine what the Creator's AC is by:<br />
+<br />
+Atk(1 - ((ModalHit - DB)/20*DI)) = AC<br />
+<br />
+Where Atk is your atk,<br />
+Modal hit is your modal hit<br />
+and AC is the Mobs Mitigation AC.<br />
+<br />
+Would be interesting to plug these into a few log parses and see what comes out.<br />
+<br />
+I'm not sure if this part has been followed up on, but perhaps that would be useful.<br />
+<br />
+Gjin followed that up with: <br />
+<br />
+I'll throw out my last supporting factor for my equation, and I think this might sway you guys.<br />
+<br />
+You remember when we had Broca's thread on ac, and in the discussion we mentioned a warrior tanking Yelinak. Anyway, he got between 3-4% AC effectiveness for 100 ac added.<br />
+<br />
+Also you remember many many posts that say that only after adding an incremental amount of AC (usually 100) that a difference was made in actual effectiveness?<br />
+<br />
+Allright here we go ....<br />
+<br />
+Example Cazic:<br />
+<br />
+Warrior 1 Goes from a 440 (800 mitAC) to a 400 (1000 mitAC) modal hit on Cazic. This is an increase of 200 AC: which is 4.5% tanking increase per 100AC added. Ref. Yelinak post.<br />
+<br />
+The big scary last point:<br />
+<br />
+To go from a modal 8 to a modal 7 in X probability, use the following formula for Cazic:<br />
+<br />
+Modal 8 was shown to be 1200 Mitigation AC in my above post. To be a better tank and get your Modal to Modal 7, you need:<br />
+<br />
+(1 - AC/2000)*20 = 7 <br />
+<br />
+Solving for AC yeilds ...... 1300.<br />
+<br />
+The step difference between Modals (8 to 7, 7 to 6) are in 100 AC increments.<br />
+<br />
+The following is an alphabetical list of mobs with DB and DI values collated from various posts (with thanks to the authors, who will not all be cited here, though special props to Fulorian Cavestomper):<br />
+<br />
+<br />
+Avenging Gazer (PoA)                  75    14.3  .19     Defensive<br />
+Azaracks (PoA)                        55       6  .11     Evasive<br />
+Cazic Thule                          200      20   .1     Evasive<br />
+Fierce Jungle/Tiger Raptor           100       6  .06     Evasive<br />
+Frenziend Jungle/Tiger Raptor        110       8  .07     Evasive<br />
+Gorgalask (PoA)                       50      11  .22     Defensive<br />
+Heart Harpie (PoA)                    75      15   .2     Defensive<br />
+Innoruuk                               1      20   20     Defensive<br />
+Nagafen                               75     7.5   .1     Evasive<br />
+Noble Dojorn (PoA)                    37      13  .35     Defensive<br />
+Overseer of Air (PoA)                 82      33   .4     Defensive<br />
+Priest of Discord                    254     5.1  .02     Evasive<br />
+Shimmering Meteors (PoA)             113    10.5  .09     Evasive<br />
+Sirran the Lunatic                   256      90  .35     Defensive<br />
+Spirited Harpy (PoA)                  60     9.5  .16     Defensive<br />
+Tae Ew Bloodcaller                    60       5  .08     Evasive<br />
+Tae Ew Defender                       70       8  .11     Evasive<br />
+Tae Ew Protector                      65       9  .14     Defensive<br />
+Thul Tae Ew Adept                    100      11  .11     Evasive<br />
+Thul Tae Ew Defender                  90       9   .1     Evasive<br />
+Thunder Spirits (PoA)                 50       5   .1     Evasive<br />
+Watchful Guard (PoA)                  50    12.5  .25     Defensive<br />
+<br />
+KUNARK<br />
+Ancient Guardian wurm                 90      12  .13     Evasive<br />
+elder shard wurm                      90       9   .1     Evasive<br />
+Faydedar                              76     7.5   .1     Evasive<br />
+Froglok Reet x                        45       5  .11     Evasive<br />
+Myconid                               45       5  .11     Evasive<br />
+Sebilite Juggernaut                   55     6.1  .11     Evasive<br />
+Talendor                             120      19  .16     Defensive<br />
+Trakanon                             120      25  .21     Defensive<br />
+Vessel Drozlin                        75      12  .16     Defensive<br />
+Vorash                                60       6   .1     Evasive<br />
+Xenovorash                            70     7.5  .11     Evasive<br />
+<br />
+VELIOUS<br />
+a temple guardian                     80      10  .13     Evasive<br />
+An Arcane Wyvern                     100      12  .12     Evasive<br />
+Avatar of War                        254      45  .18     Defensive<br />
+Dagarn the Destroyer                 254      25   .1     Evasive<br />
+Derakor the Vindicator               200      25  .13     Evasive<br />
+Dlammaz (Kael)                        80      21  .26     Defensive<br />
+Dozekar the Cursed                   200      30  .15     Defensive<br />
+elder racnar                         156       6  .04     Evasive<br />
+Flurry Drake                         200      25  .13     Evasive<br />
+Frost Giant Sentinels (Kael)          80      21  .26     Defensive<br />
+glimmering emerald drake              90      12  .13     Evasive<br />
+Gozzrem                              180      15  .08     Evasive<br />
+Kromzek Captain                       60      10  .17     Defensive<br />
+Lord Feshlak                         200      38  .19     Defensive<br />
+Lord Kreizenn                        169      39  .23     Defensive<br />
+Seneschal Aldikar (Thurg)             90      12  .13     Evasive<br />
+Sontalak                             125      15  .12     Evasive<br />
+Staff Sargeant Drioc (Kael)           45     4.5   .1     Evasive<br />
+Statue (Kael)                        248    47.3  .19     Defensive<br />
+Vehement Wyvern                       90      12  .13     Evasive<br />
+Velketor                             185      35  .19     Defensive<br />
+Yelinak                              100      25  .25     Defensive<br />
+Yetarr (Kael)                        110      16  .15     Defensive <br />
+<br />
+LUCLIN<br />
+A Burrower Parasite                  200      45  .23     Defensive<br />
+an imperial guard (Ssra)            150      13  .09     Evasive<br />
+Arch Lich Rhag'Zadune                254    20.5  .08     Evasive<br />
+Doomshade                            110    15.5  .14     Defensive<br />
+Emperor Ssraeshza                    250    32.7  .13     Evasive<br />
+fallen sargeant                       72       2  .03     Evasive<br />
+fallen soldier                        45       7  .16     Defensive<br />
+General Kizuhx (Sshra)               116      18  .16     Defensive<br />
+Glyph Covered Serpent                255    16.5  .06     Evasive<br />
+High priest of Ssraeshza             241    24.1   .1     Evasive<br />
+Lcea Katta                           160      20  .13     Evasive<br />
+Lord Inquisitor Seru                 207    28.2  .14     Defensive<br />
+Milas An`Rev                         150      15   .1     Evasive<br />
+Phin Esprinap                        254     5.1  .02     Evasive<br />
+Rumblecrush                          200      26  .13     Evasive<br />
+Servitor of Luclin                    145      11   .08     Evasive<br />
+Ssra Elite Temple guard              151      15   .1     Evasive<br />
+Ssra Temple gaurd                     99       9  .09     Evasive<br />
+Vyzh'dra the Cursed                  254    16.7  .07     Evasive<br />
+Vyzh'dra the Exiled                  255    18.5  .07     Evasive<br />
+Xerkizh the Creator                  254      21  .08     Evasive<br />
+<br />
+PLANES OF POWER<br />
+7th Hammer                           256    49.2  .19     Defensive<br />
+Abhorrent hatchling                   40      11  .28     Defensive<br />
+Aerin'Dar                            273      54   .2     Defensive<br />
+Agnarr                               428    48.9  .11     Evasive<br />
+arachnae crawler                      44      12  .27     Defensive<br />
+arachnae defiler                      35      15  .43     Defensive<br />
+arachnae terranis                     53      14  .26     Defensive<br />
+Bertoxxolous                         450    75.4  .17     Defensive<br />
+blood raven                           71       3  .04     Evasive<br />
+bubonian defiler                      43      17   .4     Defensive<br />
+bubonian relak                        65      16  .25     Defensive<br />
+Construct Nightmare                  128      53  .41     Defensive<br />
+crumbling gargoyle                    65      16  .25     Defensive<br />
+Diaku Overseer                       222     69  1.51     Defensive<br />
+disease infested bubonian             71      17  .24     Defensive<br />
+feeble rat                            36      11  .31     Defensive<br />
+festering pile of goo                 28       9  .32     Defensive<br />
+fierce nemesis                        24    12.2  .51     Defensive<br />
+ghastly bat                           60      14  .23     Defensive<br />
+gloom nightmare                       90      23  .26     Defensive<br />
+gnarled treant                        46      10  .22     Defensive<br />
+Grummus                              123      53  .43     Defensive<br />
+High Priest Ultor Szanvon            299      76  .25     Defensive<br />
+hobgoblin                             59      15  .25     Defensive<br />
+hobgoblin, scourge                    71      17  .24     Defensive<br />
+loathsome creeper                     85      19  .22     Defensive<br />
+Mithanial Marr                       348    87.4  .25     Defensive<br />
+obsolete model                        38    12.4  .33     Defensive<br />
+predatory creeper                     94      21  .22     Defensive<br />
+rotting pile of flesh                 28       9  .32     Defensive<br />
+Rydda'Dar                            429   122.4  .29     Defensive<br />
+scrounging clockwork                  33    11.7  .35     Defensive<br />
+Terris Thule                         171    40.3  .24     Defensive<br />
+Vexed banshee                         48      13  .27     Defensive<br />
+Vhakis the Shade                     128    52.8  .41     Defensive<br />
+Voracious hatchling                   48      13  .27     Defensive<br />
+Weathered gargoyle                    65      16  .25     Defensive</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CyrzB</div><div class="date">05-07-2003, 10:10 PM</div></div><div class="posttext">THO- This doesn't look right to me, but MIN 281, MAX 788, which gives a DI of 26.68, which looks odd to me... Shouldn't it either end with a .0 or .5?<br />
+<br />
+Bash for 256... I'll check my logs some and see if something is odd about this guy fitting the pattern<br />
+<br />
+--- Just checked it, 281, 307, 334, 361, 388.... That fits for a 26.68, and he hit for all those. /shrug.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cleave</div><div class="date">05-07-2003, 10:21 PM</div></div><div class="posttext">Dunno if anyone else uses this feature, but /note is pretty handy.  Type it in-game to pull up basically a blank notepad like file that you can type things in.  Open it up offline and you can type things in it for online reference.<br />
+<br />
+So what I did was take the DB, DI information from this thread and put it into a format that was easily viewable while playing EQ.<br />
+<br />
+In your everquest trilogy folder, there should be a file called &quot;notes&quot;.  Open it up and dump the following into it.  To open it while online, simply type /note (you might have to resize the window when first opening it).<br />
+<br />
+<br />
+Damage = DB + (x*DI)<br />
+DI (Damage Interval) = (max hit) - (min hit) / 19<br />
+DB (Damage Base) = (min hit) - DI<br />
+x = integer between 1 and 20, inclusive<br />
+min hit = DB + DI<br />
+max hit = DB + 20*DI<br />
+Modal damage = DB + 2*(Weapon damage).<br />
+-[D]- = Defensive more beneficial<br />
+-[E]- = Evasive more beneficial<br />
+<br />
+~~[MOB HIT CHARTS]~~<br />
+<br />
+<br />
+OLD WORLD<br />
+<br />
+~~~~~MOB~NAME~~~~~~~~~~~~~~~~~~~~DB~~~~~DI~~~~~INT<br />
+<br />
+Avenging Gazer (PoA)__________________75____14.3____.19-[D]-     <br />
+Azaracks (PoA)_______________________55______6_____.11-[E]-     <br />
+Cazic Thule__________________________200____20_____.1-[E]-     <br />
+Fierce Jungle/Tiger Raptor______________100_____6_____.06-[E]-   <br />
+Frenziend Jungle/Tiger Raptor___________110_____8_____.07-[E]-   <br />
+Gorgalask (PoA)______________________50_____11_____.22-[D]-     <br />
+Heart Harpie (PoA)____________________75_____15______.2-[D]-     <br />
+Innoruuk____________________________1______20____20-[D]-     <br />
+Nagafen____________________________75_____7.5______.1-[E]-     <br />
+Noble Dojorn (PoA)___________________37______13_____.35-[D]-     <br />
+Overseer of Air (PoA)__________________82______33______.4-[D]-    <br />
+Priest of Discord_____________________254_____5.1_____.02-[E]-   <br />
+Shimmering Meteors (PoA)_____________113_____10.5____.09-[E]-     <br />
+Sirran the Lunatic_____________________256_____90_____.35-[D]-    <br />
+Spirited Harpy (PoA)___________________60______9.5____.16-[D]-    <br />
+Tae Ew Bloodcaller____________________60______5_____.08-[E]-     <br />
+Tae Ew Defender_____________________70_______8_____.11-[E]-     <br />
+Tae Ew Protector_____________________65_______9_____.14-[D]-     <br />
+Thul Tae Ew Adept____________________100_____11_____.11-[E]-     <br />
+Thul Tae Ew Defender_________________90_______9______.1-[E]-     <br />
+Thunder Spirits (PoA)__________________50_______5______.1-[E]-     <br />
+Watchful Guard (PoA)__________________50_____12.5____.25-[D]-     <br />
+<br />
+KUNARK<br />
+<br />
+~~~~~MOB~NAME~~~~~~~~~~~~~~~~~~~~~DB~~~~~DI~~~~INT<br />
+<br />
+Ancient Guardian wurm_________________90_____12____.13-[E]-     <br />
+elder shard wurm______________________90_____9_____.1-[E]-     <br />
+Faydeda_____________________________76_____7.5____.1-[E]-     <br />
+Froglok Reet x________________________45______5_____.11-[E]-     <br />
+Myconid_____________________________45______5_____.11-[E]-     <br />
+Sebilite Juggernaut____________________55______6.1___.11-[E]-    <br />
+Talendor____________________________120_____19____.16-[D]-     <br />
+Trakanon____________________________120____25_____.21-[D]-     <br />
+Vessel Drozlin________________________75______12____.16-[D]-     <br />
+Vorash______________________________60______6_____.1-[E]-     <br />
+Xenovorash__________________________70_____7.5____.11-[E]-     <br />
+<br />
+VELIOUS<br />
+<br />
+~~~~~MOB~NAME~~~~~~~~~~~~~~~~~~~~~DB~~~~DI~~~~~INT<br />
+<br />
+a temple guardian______________________80____10____.13-[E]-     <br />
+An Arcane Wyvern_____________________100____12____.12-[E]-     <br />
+Avatar of War_________________________254____45____.18-[D]-     <br />
+Dagarn the Destroyer___________________254____25____.1-[E]-     <br />
+Derakor the Vindicator__________________200____25____.13-[E]-    <br />
+Derakor the Vindicator__________________200____25____.13-[E]-    <br />
+Dlammaz (Kael)_______________________80_____21____.26-[D]-     <br />
+Dozekar the Cursed____________________200____30____.15-[D]-     <br />
+elder racnar__________________________156_____6____.04-[E]-     <br />
+Flurry Drake__________________________200____25____.13-[E]-     <br />
+Frost Giant Sentinels (Kael)______________80_____21____.26-[D]-  <br />
+glimmering emerald drake_______________90_____12____.13-[E]-     <br />
+Gozzrem_____________________________180____15____.08-[E]-     <br />
+Kromzek Captain______________________60_____10____.17-[D]-     <br />
+Lord Feshlak_________________________200____38____.19-[D]-    <br />
+Lord Kreizenn________________________169_____39____.23-[D]-     <br />
+Seneschal Aldikar (Thurg)_______________90_____12____.13-[E]-    <br />
+Sontalak____________________________125_____15____.12-[E]-     <br />
+Staff Sargeant Drioc (Kael)_______________45_____4.5____.1-[E]-   <br />
+Statue (Kael)_________________________248____47.3___.19-[D]-     <br />
+Vehement Wyvern_____________________90______12____.13-[E]-     <br />
+Velketor_____________________________185_____35____.19-[D]-     <br />
+Yelinak______________________________100____25____.25-[D]-     <br />
+Yetarr (Kael)__________________________110____16____.15-[D]-     <br />
+<br />
+LUCLIN<br />
+<br />
+~~~~~MOB~NAME~~~~~~~~~~~~~~~~~~~~~~DB~~~~~DI~~~~~INT<br />
+<br />
+A Burrower Parasite_____________________200____45____.23-[D]-    <br />
+an imperial guard (Sshra)________________150____13____.09-[E]-   <br />
+Arch Lich Rhag'Zadune__________________254____20.5___.08-[E]-     <br />
+Doomshade__________________________110____15.5___.14-[D]-     <br />
+Emperor Ssraeshza____________________250____32.7___.13-[E]-     <br />
+fallen sargeant_________________________72_____2_____.03-[E]-    <br />
+fallen soldier___________________________45_____7_____.16-[D]-    <br />
+General Kizuhx (Sshra)__________________116_____18____.16-[D]-    <br />
+Glyph Covered Serpent__________________255____16.5___.06-[E]-    <br />
+High priest of Ssraeshza_________________241____24.1____.1-[E]-   <br />
+Lcea Katta____________________________160_____20____.13-[E]-     <br />
+Lord Inquisitor Seru_____________________207____28.2___.14-[D]-<br />
+Milas An`Rev__________________________150_____15_____.1-[E]-     <br />
+Phin Esprinap_________________________254_____5.1____.02-[E]-    <br />
+Rumblecrush__________________________200_____26____.13-[E]-     <br />
+Ssra Elite Temple guard_________________151_____15_____.1-[E]-    <br />
+Ssra Temple gaurd______________________99______9_____.09-[E]-     <br />
+Vyzh'dra the Cursed_____________________254____16.7____.07-[E]-    <br />
+Vyzh'dra the Exiled______________________255____18.5____.07-[E]-   <br />
+Xerkizh the Creator______________________254_____21____.08-[E]-   <br />
+<br />
+<br />
+PLANES of POWER<br />
+<br />
+~~~~~MOB~NAME~~~~~~~~~~~~~~~~~~~~~DB~~~~DI~~~~INT<br />
+<br />
+7th Hammer_________________________256____49.2__.19-[D]-<br />
+Abhorrent hatchling___________________40_____11____.28-[D]-<br />
+Aerin'Dar____________________________273____54____.2-[D]-<br />
+Agnarr______________________________428____48.9__.11-[E]-<br />
+arachnae crawler_____________________44_____12____.27-[D]-<br />
+arachnae defiler______________________35_____15____.43-[D]-<br />
+arachnae terranis_____________________53_____14____.26-[D]-<br />
+Bertoxxolous________________________450____75.4___.17-[D]-<br />
+blood raven__________________________71_____3_____.04-[E]-<br />
+bubonian defiler______________________43_____17_____.4-[D]-<br />
+bubonian relak_______________________65_____16_____.25-[D]-<br />
+Construct Nightmare__________________128____53_____.41-[D]-<br />
+crumbling gargoyle____________________65____ 16_____.25-[D]-<br />
+Diaku Overseer______________________222____ 69_____1.51-[D]-<br />
+disease infested bubonian_______________71____17_____.24-[D]-<br />
+feeble ra_____________________________36____ 11_____.31-[D]-<br />
+festering pile of goo____________________ 28_____ 9_____.32-[D]-<br />
+fierce nemesis________________________24___ 12.2____ .51-[D]-<br />
+ghastly bat___________________________ 60____ 14____ .23-[D]-<br />
+gloom nightmare_______________________90_____23____.26-[D]-<br />
+gnarled treant_________________________46 ____ 10 ____.22-[D]-<br />
+Grummus____________________________ 123____53___ .43-[D]-<br />
+High Priest Ultor Szanvon________________ 299____76___ .25-[D]-<br />
+hobgoblin_____________________________59____ 15____.25-[D]-<br />
+hobgoblin, scourge_____________________71_____17___ .24-[D]-<br />
+loathsome creeper_____________________ 85_____19___ .22-[D]-<br />
+Mithanial Marr________________________ 348___ 87.4____.25-[D]-<br />
+obsolete model_______________________ 38_____12.4___.33-[D]-<br />
+predatory creeper_____________________ 94_____ 21____ .22-[D]-<br />
+rotting pile of flesh_____________________28______ 9____.32-[D]-<br />
+Rydda'Dar__________________________ 429____ 122.4__ .29-[D]-<br />
+scrounging clockwork_________________ 33_____ 11.7___ .35-[D]-<br />
+Terris Thule_________________________171_____40.3___.24-[D]-<br />
+Vexed banshee______________________ 48______ 13___ .27-[D]-<br />
+Vhakis the Shade____________________128_____52.8___.41-[D]-<br />
+Voracious hatchling___________________48______13____.27-[D]-<br />
+Weathered gargoyle__________________ 65______16____.25-[D]-<br />
+<br />
+Hope that helps someone</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Grocolo</div><div class="date">05-19-2003, 03:37 AM</div></div><div class="posttext">Baraguj Szuul                    137.2      55.8   .40     Defensive</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

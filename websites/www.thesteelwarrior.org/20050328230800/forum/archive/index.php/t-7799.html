@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>The Steel Warrior - Best by slot</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,everquest,steel warrior,warrior,steelwarrior,thesteelwarrior,the steel warrior,warriors,call of heroes,worlds of warcraft,coh,wow,everquest,everquest 2,world of warcraft" />
+	<meta name="description" content="The Steel Warrior" />
+	<link rel="stylesheet" href="http://www.thesteelwarrior.org/forum/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">The Steel Warrior</a> &gt; <a href="f-1.html">The Steel Warrior - EverQuest</a> &gt; <a href="f-11.html">The Overlords Sanctuary</a> &gt; Best by slot</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.thesteelwarrior.org/forum/showthread.php?t=7799">Best by slot</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">06-27-2004, 11:55 AM</div></div><div class="posttext">So I was a bit bored at lunch on friday so I decided to code up a item automated item selector:<br />
+Best By Slot (http://www.tw-emarr.com/effect_tool/best_by_slot.php?eq_class_id=1&amp;eq_modifier_id=7) <br />
+<br />
+To 'score' the items:<br />
+<br />
+    93 sub item_modifier {<br />
+     94 »···my $field»··»···= shift;<br />
+     95 »···my $attr»···»···= shift;<br />
+     96<br />
+     97 »···if ( $field eq $attr ) {<br />
+     98 »···»···return 2;<br />
+     99 »···}<br />
+    100 »···return 1;<br />
+    101 }<br />
+    102<br />
+    103 sub item_callback_warrior {<br />
+    104 »···my %in »»···»···= @_;<br />
+    105 »···my $item»···»···= $in{-item};<br />
+    106 »···my $primary_val = $in{-primary_val};<br />
+    107 »···my $eq_slot_id»·= $in{-eq_slot_id};<br />
+    108<br />
+    109 »···my $score = 0;<br />
+    110<br />
+    111 »···# ac is 1 * 8<br />
+    112 »···$score += ($$item{ac} * 8) * item_modifier( 'ac', $primary_val );<br />
+    113<br />
+    114<br />
+    115 »···# hp is 1 * 1·<br />
+    116 »···$score += ($$item{hp} * 1 ) * item_modifier( 'hp', $primary_val );<br />
+    117<br />
+    118 »···$score += ($$item{avoidance} * 2.15) * item_modifier( 'avoidance', $primary_val );<br />
+    119 »···$score += ($$item{shielding} * 2.25) * item_modifier( 'shielding', $primary_val );<br />
+    120 »···$score += ($$item{spellshield} * 2.15) * item_modifier( 'spellshield', $primary_val );<br />
+    121<br />
+    122 »···if ( $eq_slot_id == 8192 ) {·<br />
+    123 »···»···#print &quot;Primary hand ( &quot; . $$item{name} . &quot; ) - $score - &quot; . $$item{type} . &quot;\n&quot;;<br />
+    124 »···»···if ( $$item{type} == 1 || $$item{type} == 4 ) {<br />
+    125 »···»···»···## 2handed modifier<br />
+    126 »···»···»···$score *= .5;<br />
+    127 »···»···»···#print &quot;2h modified ( &quot; . $$item{name} . &quot; ) - $score\n&quot;;<br />
+    128 »···»···}<br />
+    129 »···}<br />
+    130<br />
+    131 »···#print &quot;Final score - &quot; . $$item{name} . &quot; ( &quot; . $$item{id} . &quot; ) - $score\n&quot;;<br />
+    132<br />
+    133 »···if ( $score == 0 ) {<br />
+    134 »···»···#$score = $primary_val;<br />
+    135 »···}<br />
+    136<br />
+    137 »···return $score;<br />
+    138 }<br />
+<br />
+<br />
+Any suggestions? I think the aug selection might be a bit weak atm, since those items will score differently.. +shielding vs a +hp aug shouldn't always come out with the hp winning.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raaj</div><div class="date">06-27-2004, 12:04 PM</div></div><div class="posttext">Why does it pull up so many time/ele items rather than GoD?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">06-27-2004, 02:56 PM</div></div><div class="posttext">Using the eqemu database.. so it's not as current as lucy or magelo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Throag</div><div class="date">06-27-2004, 03:24 PM</div></div><div class="posttext">Best hp belt : Summoned girdle of Magik'ot &gt;&lt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">06-27-2004, 04:00 PM</div></div><div class="posttext">Best hp belt : Summoned girdle of Magik'ot &gt;&lt;<br />
+<br />
+Added a summoned exclusion..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mathas</div><div class="date">06-27-2004, 04:20 PM</div></div><div class="posttext">I think the aug selection might be a bit weak atm, since those items will score differently.. +shielding vs a +hp aug shouldn't always come out with the hp winning.<br />
+Yah.  Sort by ac, and every slot except waist that can get a 10ac aug comes up recommending a 20/20/20 augment instead... if a person's sorting by ac to pick the highest possible choice, they'd probably be more interested in ac augments, especially for tanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">06-28-2004, 11:16 AM</div></div><div class="posttext">I changed it to fill the non-visible slots first, this helps with aug selection. <br />
+<br />
+-- Is there a better item database than the eqemu guys? seems like their item collector hasn't picked anything up in 4 mos.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Daabu</div><div class="date">06-28-2004, 11:51 AM</div></div><div class="posttext">Not one that is available to the public that I know of.  You could possibly ask Magelo or Lucy, but good luck with that :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-07-2004, 12:01 PM</div></div><div class="posttext">If I had read the fricking faq, I would of noticed that the eq emu guys have discontinued the old database and have a new confirmed item db.<br />
+<br />
+So volia.. up to date as of a couple hours ago:<br />
+Tools (http://www.tw-emarr.com/effect_tool/)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lathen</div><div class="date">07-07-2004, 01:12 PM</div></div><div class="posttext">That is a very cool piece of code.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-07-2004, 02:37 PM</div></div><div class="posttext">For lunch today.. I give you haste acommidation.. <br />
+<br />
+It now hunts for a haste item before putting the other items on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mordi</div><div class="date">07-07-2004, 08:37 PM</div></div><div class="posttext">It picks up Vadd's as superior to Earthen bracer of fortitude? Same ac, 10hp difference and 2% shielding + 4% stun resistance on Quarm bracer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issu</div><div class="date">07-07-2004, 08:52 PM</div></div><div class="posttext">I suggest that you should value shielding % and avoidance more and the system probably has to list two kind of secondary slot for duel wield class since generally a &quot;war&quot; should waste his points on a high-end shield<br />
+The other funny thing is the system picks Flowing helm for war to be a haste item. Actually it will be much better if you choose quarm belt or even Txeuv haste cloak. I think give haste a pre-bonus to pick a overall haste item for equipment will be a better idea.<br />
+Any way, very valuable tools for every class. Thank your effort!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issu</div><div class="date">07-07-2004, 09:00 PM</div></div><div class="posttext">Might be intend but I just wonder if the tool is stickly on Melee (pure &amp; hybrid) only. Make several test on priest and caster class, the tool seems does not work to them :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">goobayouface</div><div class="date">07-07-2004, 09:35 PM</div></div><div class="posttext">shouldn't sacrifice any amount of stats for haste/faerune<br />
+can get both from tribute and suffer no ill effects as long as you keep them up npnp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cone</div><div class="date">07-07-2004, 10:49 PM</div></div><div class="posttext">Might be intend but I just wonder if the tool is stickly on Melee (pure &amp; hybrid) only. Make several test on priest and caster class, the tool seems does not work to them :)<br />
+<br />
+Yea the tool shows some low end gear for casters and priests.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hinterdir</div><div class="date">07-08-2004, 05:11 AM</div></div><div class="posttext">thanks SoE for removing the haste bracer dropping named from Tri Fates...........<br />
+<br />
+anyway nice tool!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-08-2004, 12:17 PM</div></div><div class="posttext">I was fiddling with the caster numbers last night..  thats why it picked gimp crap for them for a little bit. I think it's more in-line with what it should be doing now. <br />
+<br />
+I just upped the values of shielding, avoid, etc , re-extracting.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tooby</div><div class="date">07-08-2004, 12:34 PM</div></div><div class="posttext">fun program! I dont know how you built it but would it be possible to add a exclude No Drop (assuming you get bored at work again..) option for us who are still looking mainly at the bazaar for upgrades.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-08-2004, 01:38 PM</div></div><div class="posttext">Since i have 30 minutes between my full day of meetings.. fricking corperate empires..<br />
+<br />
+It's extracting the droppable variant atm.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yoda</div><div class="date">07-09-2004, 09:20 AM</div></div><div class="posttext">between your great update (maybe when you changed of database) some errors occur : in the `proc rate tool` some weapon are missing (at least for warrior) that were there in the past :<br />
+Tarantella<br />
+Acrylia Handled Broadsword<br />
+The Sword of Ssraeshza<br />
+<br />
+but there is a new one :) : Gleaming Obsidian Shard<br />
+<br />
+I hope you will keep this great work,<br />
+Yoda.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-09-2004, 11:34 AM</div></div><div class="posttext">between your great update (maybe when you changed of database) some errors occur : in the `proc rate tool` some weapon are missing (at least for warrior) that were there in the past :<br />
+Tarantella<br />
+Acrylia Handled Broadsword<br />
+The Sword of Ssraeshza<br />
+<br />
+but there is a new one :) : Gleaming Obsidian Shard<br />
+<br />
+I hope you will keep this great work,<br />
+Yoda.<br />
+<br />
+It's only as good at the database it is given, so we are trusting the eqemu guys to decode the same way lucy does ;).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gnomos</div><div class="date">07-14-2004, 12:21 PM</div></div><div class="posttext">Fun script, but it should probably select the best 1h weapon, not a 2h, as you then lose the use of the secondary slot.<br />
+<br />
+I recommend a value of 4 for weighting of AC.  100 AC gives about 4% average damage reduction.  On an 11k tank that's 440 hp.  So, 1 AC = 4.4 hp, for tradeoff on ability to take damage before dying.<br />
+<br />
+BUG: drilldown for arms isn't working, when I turn off the haste override, I don't ge any alternate data, like for Vadd's arms.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-14-2004, 03:51 PM</div></div><div class="posttext">Fun script, but it should probably select the best 1h weapon, not a 2h, as you then lose the use of the secondary slot.<br />
+<br />
+I recommend a value of 4 for weighting of AC.  100 AC gives about 4% average damage reduction.  On an 11k tank that's 440 hp.  So, 1 AC = 4.4 hp, for tradeoff on ability to take damage before dying.<br />
+<br />
+BUG: drilldown for arms isn't working, when I turn off the haste override, I don't ge any alternate data, like for Vadd's arms.<br />
+<br />
+- 2hs creeped back into the list, since i was re-working the configuration to be in a table so that the drilldowns and backend scripts are coming from the same source.<br />
+<br />
+- You gain a ac value of 4 by putting a focus of hp since it doubles the value.<br />
+    (hp*modifier)*focus<br />
+    (hp*2)*2 =&gt; net<br />
+<br />
+- Drilldown for haste is kinda goofy, i skipped calculating for the slot it picks as the haste item slot. <br />
+Changed this, and it's regenerating the data.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gnomos</div><div class="date">07-20-2004, 02:10 PM</div></div><div class="posttext">Hmm, ok, good point.<br />
+<br />
+OK, with full AA, etc, you get 17% more HP than the raw score on an item, and you get 55% more AC.<br />
+<br />
+Assuming 100 net AC has the same effect as 4% more new HP, then 100 net AC is roughly equal to 440 HP (I personally think HP is more useful, because of spell damage).  Call it 100 net AC = 400 net HP.<br />
+<br />
+To achieve 100 net AC you need 65 real AC on items.  To achieve 400 net HP, you need 342 real HP.  So, 65 AC ~= 342 HP, yeilds a factor of 5.26.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-20-2004, 06:43 PM</div></div><div class="posttext">Yea, i fiddled with the numbers today.. <br />
+<br />
+avoidance, spellshield, dothsielding were way too low.. 1*2 is pidly when ac/hp can generate 400+ <br />
+<br />
+I also put up the ver2 of this stuff i'm working on, it has a better nav tool for looking at the drilldowns and items.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issu</div><div class="date">07-21-2004, 04:08 AM</div></div><div class="posttext">another bug report: :)<br />
+Even you set the modifier of HP as 1, but the caculator still multiple two.<br />
+The slot you put the haste item will show out all the haste items that you can choose, probably a new feature?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issu</div><div class="date">07-21-2004, 05:13 AM</div></div><div class="posttext">another bug report: :)<br />
+Even you set the modifier of HP as 1, but the caculator still multiple two.<br />
+The slot you put the haste item will show out all the haste items that you can choose, probably a new feature?<br />
+nevermind, I just found out that's due to HP first selection.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yoda</div><div class="date">07-21-2004, 07:13 AM</div></div><div class="posttext">but still, it's strange to see rings on the backslot drilldown cause of the haste. and this become sad when it kicks out some shields that can be eqquiped in backslot.<br />
+<br />
+and why we can't find any shield on secondary, even when we focus on AC.<br />
+<br />
+<br />
+EDIT : not very important, but it would be cool to select an item in the drilldown to replace to one selected (normally the top listed) in order to make a mix of the different possibility.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Andrath</div><div class="date">07-21-2004, 11:12 AM</div></div><div class="posttext">Why are Vadd's arms not on the dropdown list at all?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-21-2004, 03:05 PM</div></div><div class="posttext">Why cant shields be found in secondary?<br />
+- experimenting with not allowing them in secondary, i'm shooting for a functional profile for us not a situational one. <br />
+<br />
+Why are we showing all the haste items on a haste override? <br />
+- I added a text blurb with a non-haste override view link for that view, just now. It makes it a bit clearer. The haste score is done before any slots are chosen, not incorperated into each slots determination cycle. <br />
+<br />
+Why isn't xyz item in the data? <br />
+- Ask the eq-emu database ;). If it hasn't been submitted then it won't show.<br />
+<br />
+Why isn't the hp estimate corrrect?<br />
+Implemented this from the random scriblings from the magelo forums. It also assumes full aa etc. <br />
+<br />
+<br />
+if ( $eq_class_id == 1 ) {<br />
+    /* warrior */<br />
+    $nd_mod  = 1.165;<br />
+    $lvl_mod = 30;<br />
+    $sta_max = 255;<br />
+    $sta_cur = 255;<br />
+    $pre_nd_hp = ( 65 * $lvl_mod ) + intval( ( $sta_max - intval( ( $sta_max - $sta_cur ) / 2 ) ) * 65 * $lvl_mod / 300 );<br />
+    $hp = 5 + intval( $nd_mod * ($pre_nd_hp + 500) );<br />
+    echo '&lt;!-- nekkid : ' . $hp . ' --&gt;';<br />
+    $totals['est_hp'] = $hp + intval( ($totals['est_hp'] * $nd_mod) );<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-22-2004, 11:42 AM</div></div><div class="posttext">- Added in a bonus for ratio for primary / secondary hand, also re-enabled shields for offhand. The ratio calc pushes the shields down in the list, but they are still there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gnomos</div><div class="date">07-25-2004, 11:46 AM</div></div><div class="posttext">Recurse, you still have a bug, in that it's multiplying the HP value by 2:<br />
+<br />
+<br />
+Attribute: Value: Modifier: Score: Running Total: <br />
+Hitpoints: 240  :    1    :  480 :     480</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Straythe</div><div class="date">07-25-2004, 02:56 PM</div></div><div class="posttext">Tried a best by slot (Droppable) and limited to AC, and only get one item total (Warrior search).<br />
+<br />
+Was it intended to exclude anything that had a stat other than AC?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issu</div><div class="date">07-26-2004, 12:01 AM</div></div><div class="posttext">Recurse, you still have a bug, in that it's multiplying the HP value by 2:<br />
+<br />
+<br />
+Attribute: Value: Modifier: Score: Running Total: <br />
+Hitpoints: 240  :    1    :  480 :     480<br />
+<br />
+This is caused by &quot;Focus on HP&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-26-2004, 02:42 AM</div></div><div class="posttext">Tried a best by slot (Droppable) and limited to AC, and only get one item total (Warrior search).<br />
+<br />
+Was it intended to exclude anything that had a stat other than AC?<br />
+<br />
+I was updating the nodrop stuff to the 2.0 framework, the droppable interface is broken atm.<br />
+<br />
+--- update ---<br />
+Couldn't sleep, should be working now. <br />
+<br />
+I'll get the 2.0 interface slapped on it at some point here.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yoda</div><div class="date">07-26-2004, 03:25 AM</div></div><div class="posttext">you still have some pb with your haste :)<br />
+the &quot;haster slot&quot; is great but you end up with two back items or two arms items ... so you may implement a way to remove a slot.<br />
+<br />
+Idee (just some proposition to help when everything else is working fine.) :<br />
+1. in the lower left case, it would be cool to have a complete item description (lucy frames?) and not just a sumary of what you care in your formula.<br />
+2. add the spellshield columm in the upper left table (remove mana for warrior if you need more place) just like in version 1.<br />
+3. add the possibility to replace an item in the drill down (by exemple click on #3 and you update the upper left frame with this item intead of the current).<br />
+4. remove the primary and secondary slots for the calculs because depending on classes/roles you will want different things (DPS, focus, aggro, ...). ex : if for warrior you ask AC you get the shield, it's OK, but when you ask for HP you get the demerix, which is an excellent DPS weapon but a poor aggro so it's not the best for secondary as a MT warrior. So just remove the search in prim/sec untill we have the possibility to change them in the drilldown list.<br />
+5. well this one won't be for the version under 4+ because it may be very spiky to get. but when you will find a way to work well with haste, you may think about to do the same with focus.<br />
+<br />
+Thanks for the work, don't think I 'm a lazzy whinner (well,, I least I think so when I read my post, sorry) but I just want to make your tool 'Da Best'.<br />
+<br />
+EDIT : one idee I got for working with haste : instead of looking for haste item first, what about looking for it at last. ie make a first built without haste, then look for improoving haste above some steps (maxing it is not necessary if there is a slower/haster around), and to achieve it, work with pairs of items. I mean, to find a better haste compare the score of the current haste slot plus the next haste slot with the next haste item plus the next item that will replace the current haste slot.<br />
+ex : curent haste is Cloak of Flame. if the next haste item is in back slot then no pb, if it's in shoulder then compare the score of (current shoulder+CoF) to (new haste item+new back item).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-26-2004, 12:13 PM</div></div><div class="posttext">you still have some pb with your haste :)<br />
+the &quot;haster slot&quot; is great but you end up with two back items or two arms items ... so you may implement a way to remove a slot.<br />
+<br />
+Idee (just some proposition to help when everything else is working fine.) :<br />
+1. in the lower left case, it would be cool to have a complete item description (lucy frames?) and not just a sumary of what you care in your formula.<br />
+2. add the spellshield columm in the upper left table (remove mana for warrior if you need more place) just like in version 1.<br />
+3. add the possibility to replace an item in the drill down (by exemple click on #3 and you update the upper left frame with this item intead of the current).<br />
+4. remove the primary and secondary slots for the calculs because depending on classes/roles you will want different things (DPS, focus, aggro, ...). ex : if for warrior you ask AC you get the shield, it's OK, but when you ask for HP you get the demerix, which is an excellent DPS weapon but a poor aggro so it's not the best for secondary as a MT warrior. So just remove the search in prim/sec untill we have the possibility to change them in the drilldown list.<br />
+5. well this one won't be for the version under 4+ because it may be very spiky to get. but when you will find a way to work well with haste, you may think about to do the same with focus.<br />
+<br />
+Thanks for the work, don't think I 'm a lazzy whinner (well,, I least I think so when I read my post, sorry) but I just want to make your tool 'Da Best'.<br />
+<br />
+EDIT : one idee I got for working with haste : instead of looking for haste item first, what about looking for it at last. ie make a first built without haste, then look for improoving haste above some steps (maxing it is not necessary if there is a slower/haster around), and to achieve it, work with pairs of items. I mean, to find a better haste compare the score of the current haste slot plus the next haste slot with the next haste item plus the next item that will replace the current haste slot.<br />
+ex : curent haste is Cloak of Flame. if the next haste item is in back slot then no pb, if it's in shoulder then compare the score of (current shoulder+CoF) to (new haste item+new back item).<br />
+<br />
+I re-implemented the haster stuff to allow people to choose, too many folks were pointing out that they use tribute haste. <br />
+<br />
+Having it do a post hunt causes the aug selection to get out of whack because it does:<br />
+<br />
+my %used items = ();<br />
+foreach my $slot ( @slots ) {<br />
+   -- pick a  item<br />
+    if ( item-&gt;is_lore ) { $used_items{id} = 1; }<br />
+   -- pick augs for that item<br />
+    if ( item_aug-&gt;is_lore ) { $used_items{aug_id} = 1; }<br />
+}<br />
+<br />
+I guess I could re-write it to do :<br />
+- pick items<br />
+- pick haster<br />
+- pick augs for entire set<br />
+<br />
+I actually like the idea of the haste slot being seperated from the main gear.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yoda</div><div class="date">07-26-2004, 12:22 PM</div></div><div class="posttext">I re-implemented the haster stuff to allow people to choose, too many folks were pointing out that they use tribute haste. <br />
+<br />
+Having it do a post hunt causes the aug selection to get out of whack because it does:<br />
+<br />
+my %used items = ();<br />
+foreach my $slot ( @slots ) {<br />
+   -- pick a  item<br />
+    if ( item-&gt;is_lore ) { $used_items{id} = 1; }<br />
+   -- pick augs for that item<br />
+    if ( item_aug-&gt;is_lore ) { $used_items{aug_id} = 1; }<br />
+}<br />
+<br />
+I guess I could re-write it to do :<br />
+- pick items<br />
+- pick haster<br />
+- pick augs for entire set<br />
+<br />
+I actually like the idea of the haste slot being seperated from the main gear.<br />
+<br />
+<br />
+cool I will  test it a bit. about the haster slot, i agree with you, even if it would be even cooler to have it as normal with an Halo/bigger_border/... around to hihlight were the haste is, but it would solve the tribute haste possibility.<br />
+I will think about it, and try to fix a clear idde about it.<br />
+<br />
+Thanks again recouse,<br />
+Yoda.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yoda</div><div class="date">07-27-2004, 07:29 AM</div></div><div class="posttext">cool a new fonction : compare best by slots with a magelo to help building a progression.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-27-2004, 10:25 AM</div></div><div class="posttext">cool a new fonction : compare best by slots with a magelo to help building a progression.<br />
+<br />
+Yep, I hope to finish this off today.. only drawback to it is I have to not real-time query magelo. They'll ip deny my block ;). Shrug.. so the user gets to be patient.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">07-27-2004, 10:38 AM</div></div><div class="posttext">Yep, I hope to finish this off today.. only drawback to it is I have to not real-time query magelo. They'll ip deny my block ;). Shrug.. so the user gets to be patient.<br />
+<br />
+Why not drop Jelan a line about integrating this into the base (or premium) magelo system?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yoda</div><div class="date">07-27-2004, 10:47 AM</div></div><div class="posttext">because he may loose it possibility to offer it gracefully to everyone. And don't make him follow SoE working habbit (releasing an unfinished code).<br />
+<br />
+Moreover the curent version is still buggy (recouse, you didn' solve the pb of having two items on the back slot. ie one cape in the back slot and one drape in the haster slot) and unfinished (no FT, Focus, domage, hate generation, procing aug, ... support).<br />
+<br />
+So we have to be patient, and help him the more we can to have a very powerfull tool.<br />
+<br />
+Have fun,<br />
+Yoda.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-27-2004, 12:29 PM</div></div><div class="posttext">because he may loose it possibility to offer it gracefully to everyone. And don't make him follow SoE working habbit (releasing an unfinished code).<br />
+<br />
+Moreover the curent version is still buggy (recouse, you didn' solve the pb of having two items on the back slot. ie one cape in the back slot and one drape in the haster slot) and unfinished (no FT, Focus, domage, hate generation, procing aug, ... support).<br />
+<br />
+So we have to be patient, and help him the more we can to have a very powerfull tool.<br />
+<br />
+Have fun,<br />
+Yoda.<br />
+<br />
+The 'haste' slot is a virtual slot allowing you the user to get a list of the highest rated haste items. Its not meant to do conflict resolution with the current slot choices. I will probably do something similar with FT since you can get 15 with 2-3 pieces of higher end gear (hell some tanks have ft15 unintentionally).<br />
+<br />
+When I see some casters using it, and giving up some solid feedback. I'll try to add stuff for them. <br />
+<br />
+Re: magelo intergration -<br />
+Would be really really nice.. but unfortunatly I doubt it would happen.  Jelan is super busy with maintaing the sniffer and working on magelo 2.0? afaik.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">07-27-2004, 01:43 PM</div></div><div class="posttext">So I finished up the compare slots profile thingy.. and here's a demo url.<br />
+<br />
+Currently it sucks the magelos down every couple of hours (for new people). The older ones are set with a ttl of 1 day by default.<br />
+<br />
+Example person:<br />
+Frodolin 'The GunieaPig' Wisecracker (http://www.tw-emarr.com/effect_tool/bbs_compare.php?eq_magelo_id=199355&amp;eq_modifier_id=1)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dubb</div><div class="date">08-11-2004, 03:43 PM</div></div><div class="posttext">This would be a pretty neat charm... /snicker<br />
+<br />
+http://lucy.allakhazam.com/item.html?id=32767</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">recurse</div><div class="date">08-11-2004, 04:59 PM</div></div><div class="posttext">This would be a pretty neat charm... /snicker<br />
+<br />
+http://lucy.allakhazam.com/item.html?id=32767<br />
+<br />
+Did you pull that out of my tool? or browsing lucy?</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

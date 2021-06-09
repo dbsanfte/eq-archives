@@ -1,0 +1,218 @@
+ 
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><!-- #BeginTemplate "/Templates/lowsrc.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>EverQuestLive.com - Official EverQuest News</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<!-- Start Menu -->
+
+<p>
+<a href="/lowsrc/index.jsp">Home</a>
+<a href="/lowsrc/forums/index.jsp">Forums</a>
+<a href="/lowsrc/events/index.jsp">Official Events</a>
+<a href="/lowsrc/community/index.jsp">Community</a>
+<a href="/lowsrc/multimedia/index.jsp">Multimedia</a>
+<a href="/lowsrc/library/index.jsp">The Library</a>
+<a href="/lowsrc/support/index.jsp">Support</a>
+<a href="/lowsrc/contact_us.jsp">Contact Us</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Fwww.station.sony.com%2Fen%2Fservices%2Fhelp%2FeqGM.jsp">Contact Your GM</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2F66.129.87.69%2Fcandidate%2F">Employment</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Feverquest.station.sony.com">EverQuest.com</a>
+<a href="/index.jsp">Full Design Version</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- End Menu -->
+<!-- #BeginEditable "Main" --> 
+<h1>EQ Live</h1>
+<!-- Start Featured Items -->
+<h2>Featured Items</h2>
+ 
+	<h3> 
+		
+			<a href="http://www.station.sony.com/ringtones/"> 
+		
+		EQ Sounds for Your Cell Phone 
+		
+			</a> 
+		
+	</h3>
+	<p> Now, you can carry the sounds of EverQuest with you! Thirteen unique EverQuest Ringtones for your cell phone are now available for a very low price.&nbsp; Get all&nbsp;of them&nbsp;and personalize your cell phone with the sounds of EQ. </p>
+ 
+	<h3> 
+		
+			<a href="http://eqmac.station.sony.com/registration/index.jsp"> 
+		
+		Beta Test EQ for the Macintosh 
+		
+			</a> 
+		
+	</h3>
+	<p> Registrations are <A href="http://eqmac.station.sony.com/registration/index.jsp">now being accepted</A> to participate in the <EM>EverQuest for the Macintosh</EM> beta test. The first phase of testing is scheduled to begin soon. </p>
+ 
+	<h3> 
+		
+			<a href="http://everquest.station.sony.com/fanfaire/"> 
+		
+		Fan Faire a Huge Success 
+		
+			</a> 
+		
+	</h3>
+	<p> Fan Faire Las Vegas was a huge success. Our coverage is being compiled at this time. We'll have lists of winners, pics, and more available later this week. </p>
+ 
+<!-- End Featured Items -->
+
+<!-- Start Dev Corner -->
+<h2>Developers' Corner</h2>
+ 
+	<h3><a href="community/dev_view.jsp?id=55088" class="smalltitle">Hate list change in the 4-8-03 patch.</a></h3>
+	Details about a change to NPC hate list that was not mentioned in the patch message.
+ 
+	<h3><a href="community/dev_view.jsp?id=55087" class="smalltitle">Regarding reports of Feign Death causing 100% memory wipe</a></h3>
+	We are hearing reports that Feign Death is causing NPCs to always and completely forget about the person using FD.  If this is indeed happening (and we're checking into it now), it was an unintentional change.
+
+ 
+	<h3><a href="community/dev_view.jsp?id=54808" class="smalltitle">A few items in the 3-13-03 patch message in error.</a></h3>
+	A couple of zone-specific items listed in the patch message did not actually get patched.  Click through for details.
+ 
+	<h3><a href="community/dev_view.jsp?id=54699" class="smalltitle">Stratics has their comments up about their visit to SOE.</a></h3>
+	Another perspective on the visit to our offices.  Go take a look <a href=http://eq.stratics.com/content/events/fansite/fansiteappreciation.shtml>here to see the report!</a>
+
+ 
+	<h3><a href="community/dev_view.jsp?id=54601" class="smalltitle">Fan Faire Pre-Registration closes on March 10th!</a></h3>
+	So if you plan to attend, you may want to jump in and pre-register and save a few bucks.  Click through for more information.
+ 
+<!-- End Dev Corner -->
+
+<!-- Start Headlines -->
+<h2>Headlines</h2>
+
+ 
+	<h3><a href="news_section/newsview.jsp?story=55101">Additional EverQuest Ringtones Now Available</a></h3>
+	Thirteen ringtones to choose from, including music from the Planes of Power.
+ 
+	<h3><a href="news_section/newsview.jsp?story=55052">Newest EQ Zippo Lighter Series On Sale!</a></h3>
+	Because our first official EverQuest Zippo lighter series has been a smashing success, the <STRONG><A href="https://store.station.sony.com/category_index.jsp?categoryid=14">Station.com Store</A></STRONG>is proud to present our latest series of EQ Zippo collectible lighters. These newest custom crafted lighters pay tribute to eleven EverQuest character classes from Bard to Warrior.
+ 
+	<h3><a href="news_section/newsview.jsp?story=55021">Las Vegas Fan Faire Pictures!</a></h3>
+	If you missed the Las Vegas Fan Faire, you missed the biggest Fan Faire gathering ever!  But don't despair, we've got the <a href="http://everquest.station.sony.com/fanfaire/scrapbook_vegas_photos.jsp">gallery of pictures</a> from the event for you to check out.  And those who did make it to the event, see if you can spot yourself in one of the pics!
+ 
+	<h3><a href="news_section/newsview.jsp?story=54581">New Tech Support Hours</a></h3>
+	Technical Support and Live Chat hours temporarily changed.
+ 
+	<h3><a href="news_section/newsview.jsp?story=54580">Beta Test EQ for the Macintosh</a></h3>
+	Registrations are now being accepted to participate in the EverQuest for the Macintosh beta test. The first phase of testing is scheduled to begin soon.
+ 
+
+<h4><a href="news_section/newsarchive.jsp">Community News Archives</a></h4>
+<!-- End Headlines -->
+
+<!-- Start Community -->
+<h2>Community</h2>
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55012">Torture Recruiting</a></h3>
+	Torture, a Vazaelle Guild, is accepting applications for membership.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55013">Holy Forces Recruiting. Tallon Zek Light Race Only</a></h3>
+	Light only guild on Tallon Zek looking for members.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55066">Antonicas Nameless is Recruiting!</a></h3>
+	Antonicas Nameless a light guild located on the Tallon Zek server and based out of Qeynos is currently recruiting.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55067">Nomads United Recruitment</a></h3>
+	Nomads United guild on Tholuxe Paells server is currently recruiting all levels and classes.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55068">High Guard of Xev Now Accepting New Members</a></h3>
+	Hight Guard of Xev looking for new members of 35th level and above.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55079">Legion of Eternal Friends on Rodcet Knife Recruiting!</a></h3>
+	All levels and classes!
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55080">Darkened Horizon is Now Recruiting</a></h3>
+	The great PK guild on Rallos Zek, Darkened Horizon is looking for some new members.
+ 
+	<h3><a href="news_section/communitynewsview.jsp?story=55097">Monthly Bastion Language Faires Return to FV!</a></h3>
+	Twilight Bastion is reviving the Monthly Language Faires on the Firiona Vie server.
+ 
+
+<h4><a href="news_section/communitynewsarchive.jsp">Community Archives</a></h4>
+<!-- End Community -->
+
+<!-- Start Phat Lewt -->
+<h2>Phat Lewt</h2>
+ 
+	<h3><a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SW1102-EQGOLD">EverQuest: Gold</a></h3>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SW1102-EQGOLD"> 
+		
+			<img src="/images/store_images/eq_gold.gif" alt="" border="0"> 
+		
+	</a> <br>
+	The ultimate in EQ gaming. Includes all four expansions. <br>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SW1102-EQGOLD">Buy It!</a> 
+ 
+	<h3><a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SG1002-EQATLS">EverQuest Atlas</a></h3>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SG1002-EQATLS"> 
+		
+			<img src="/images/store_images/phat_lewt_altascd1.gif" alt="" border="0"> 
+		
+	</a> <br>
+	Discover a rich and mysterious world <br>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-SG1002-EQATLS">Buy It!</a> 
+ 
+	<h3><a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0802-EQZPPO">EQ Necromancer Zippo!</a></h3>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0802-EQZPPO"> 
+		
+			<img src="/images/store_images/eq_necro_zippo.gif" alt="" border="0"> 
+		
+	</a> <br>
+	The best name in lighters meets the best name in gaming! <br>
+	<a href="https://store.station.sony.com/hardgood.jsp?SKU=EQ1RE-HG-ZP0802-EQZPPO">Buy It!</a> 
+ 
+<!-- End Phat Lewt -->
+<!-- #EndEditable -->
+<!-- Start Copyright -->
+<p> 
+	<script language="JavaScript">
+var ToSwinhandle=null;
+function openToS(tosURL)
+{	
+	ToSwinhandle=window.open(tosURL, "tosWin", "width=500,height=400,titlebar=no,menubar=no,toolbar=no,status=no,scrollbars=yes,resizeable=no");
+	ToSwinhandle.focus();
+	return false;
+}
+</script>
+<a href="http://sonyonline.com/tos/tos.jsp#privacy" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp#privacy');" class="ToS">Sony Online Privacy Policy</a>
+<span class="ToS">|</span>
+<a href="http://sonyonline.com/tos/tos.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp');" class="ToS">Sony Online Terms Of Service</a>
+</p>
+
+<p>
+	EverQuest and You’re in Our World Now are registered trademarks and The Ruins of Kunark, 
+	The Scars of Velious, The Shadows of Luclin and The Planes of Power are trademarks of 
+	Sony Computer Entertainment America Inc. The Station, SOE and the SOE logo are trademarks 
+	of Sony Online Entertainment Inc. &copy;2002 Sony Computer Entertainment America Inc.; 
+	portions copyright 2002 Sony Online Entertainment Inc. 
+	All other trademarks are properties of their respective owners. All rights reserved. 
+</p>
+
+<!-- End Copyright -->
+</body>
+<!-- #EndTemplate --></html>

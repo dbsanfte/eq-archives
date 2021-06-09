@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>The Steel Warrior - Melee Attack Pseudocode</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,everquest,steel warrior,warrior,steelwarrior,thesteelwarrior,the steel warrior,warriors,call of heroes,worlds of warcraft,coh,wow" />
+	<meta name="description" content="The Steel Warrior - EverQuest Warrior Messageboards" />
+	<link rel="stylesheet" href="http://www.thesteelwarrior.org/forum/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">The Steel Warrior</a> &gt; <a href="f-1.html">The Steel Warrior - EverQuest</a> &gt; <a href="f-2.html">The Arena</a> &gt; Melee Attack Pseudocode</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.thesteelwarrior.org/forum/showthread.php?t=7710">Melee Attack Pseudocode</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-21-2004, 07:56 PM</div></div><div class="posttext">This is a sort of attempt to outline what goes on when you press attack and your weapon starts to flail. Comments and remarks will be marked by \\. I am attempting to write this so that it can be followed for both a mob, and for a player. Not really sure what this is good for, aside from head scratching value. No, the goal is not to plug this into a compiler and let it rip. I suppose I just want to help establish a framework in which all the other melee understandings can be looked at.<br />
+<br />
+<br />
+Initialize Auto Attack cycle.<br />
+Delay Cycle Begin<br />
+\\This is the timestamped, official 'when' of combat<br />
+Target Determination<br />
+\\For mobs, this is the point at which they decide who they will attack. Top<br />
+\\of modified Aggro list determines. Special Case NPC Rampage Success: Top <br />
+\\of modified Rampage list. Special Case PC Rampage: Within AoE / Already<br />
+\\Rampaged.<br />
+Call Process Effect Subfunction.<br />
+Process Effect Sub Function.<br />
+  Weapon Proc Check. If yes, resolve cast, end subfunction  <br />
+  Weapon Augment Proc Check. If yes, resolve cast, end subfunction.<br />
+  Buff Proc Check. If yes, resolve cast. <br />
+  End subfunction.<br />
+Dual wield check - If no, end function.<br />
+\\Only appropriate to offhand weapon.<br />
+Call Subfunction Multiattack.<br />
+Subfunction Multiattack.<br />
+  Attacks=1.<br />
+  Check Double attack. If yes, attacks=attacks+1<br />
+  If attacks=2, check Triple attack. If yes, attacks=attacks+1.<br />
+  Check Punishing Blade / Speed of the Knight. If yes, attacks = Attacks +1.<br />
+  Check Flurry. If 1, attacks = attacks +1, if 2, attacks = attacks +2<br />
+while attacks &gt; 1 <br />
+  Target Valid Object Check- If no, end cycle, return error.<br />
+\\For PC, checks attackable NPC, relative PK flags. For NPC, checks valid NPC<br />
+\\target, checks valid PC target.<br />
+  Target Living Check - If no, end cycle, return error.  <br />
+  Target Range Check - no, end cycle, return error.<br />
+  call Subfunction Hit Resolution.<br />
+  attacks = attacks -1,<br />
+  loop while<br />
+Subfunction Hit Resolution.<br />
+  If defender NPC, assign aggro generation.<br />
+  Check Defender Dodge. If yes, call Subfunction Strikethrough <br />
+  Check Defender Parry. If yes, call Subfunction Strikethrough <br />
+  Check Defender Block. If yes, call Subfunction Strikethrough <br />
+  Check Defender Riposte. If yes, call Subfunction Strikethrough <br />
+  Check Defender Invulnerability. If yes, end Subfunction, return Invuln.<br />
+\\DA, DB, Magic weapons, bane presence.<br />
+  Subfunction Strikethrough<br />
+    Check Attacker Strikethrough<br />
+    If yes, end subfunction.<br />
+    If no, end subfunction hit resolution, return calling check.<br />
+\\Subfunction Strikethrough has 5 possible results: Strike through successful, <br />
+\\continue Hit Resolution. Strikethrough Unsuccessful, return Dodge, Parry, <br />
+\\Block, Riposte.<br />
+  Compare attacker accuracy, defender evasion. <br />
+  Generate random number.<br />
+  Locate hit/miss on Class to-hit table.<br />
+  If hit, call Subfunction Damage Resolution.<br />
+  If miss, End Subfunction.<br />
+Subfunction Damage Resolution.<br />
+  Compare attacker penetration, defender mitigation.<br />
+  Generate Random Number(1-20).<br />
+  If Mob, then damage = DB + RNG(DI)<br />
+  If PC, then reference PC damage tables (With subtables?)<br />
+  Final Damage = Damage - Damage Absorbance. (includes BoVie subcode).<br />
+  If Final Damage = 0, return 'magical skin absorbs attack'. <br />
+  If Damage Absorbance &lt; Damage, then resolve buff fade.<br />
+\\This is the rune/Vie check. End of rune/Vie is likely resolved here. <br />
+  Target HP = Target HP - Final Damage.<br />
+  Check &amp; Resolve True Innate Process(Mob only). <br />
+\\This includes Flurry, Rampage, normal mob procs.<br />
+  Resolve Target Death - If yes, broadcast end auto-attack, return death.<br />
+  End subfunction.<br />
+End Function.<br />
+<br />
+As an aside, let me note that semi-randomized to-hit tables have been an integral part of gaming combat simulation clear back to such games as Chainmail(Predecessor to D&amp;D). They have been used in Multi-User Dungeons since the late 1970s, and at its core, the technology behind -ALL- MMORPGs is evolved from the Multi-User Dungeon. (http://www.british-legends.com/index.html) Cycle for cycle, their represent the most effecient way to weight a semi-random number to a particular result curve. Over twenty-five years of programming later, we still haven't found a better way.<br />
+<br />
+I'm quite sure stuff is missing above, please feel free to point it out. <br />
+<br />
+...<br />
+<br />
+SoE needs to sell old server boxes to SETI.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Remf da Troll</div><div class="date">06-22-2004, 01:12 PM</div></div><div class="posttext">Hola-<br />
+<br />
+Worked on something like this a long time ago, as a logic table instead of pseudocode tho; bunch of effects have changed/been added since then, I'll have to dig it up and compare it to what you've coded.  A couple of partially-remembered observations:<br />
+-the order of dodge/block/parry/riposte checks can be determined by frequency analysis vs. base skill.<br />
+-you can proc on a miss, but cannot proc on an &quot;impossible&quot; hit; apparently could at one time, but since modified.  Some annecdotal evidence of procing on invalid targets (like corpses), but SoE has changed the &quot;types&quot; of invalid targets now (new type  invunerable NPCs, etc.)<br />
+-some trickyness determining hits, as to when avoidance is determined.  makes a difference for defensive responses (i.e. riposting misses, damage shield damage assignment).<br />
+-also some complexity determining when damage is assigned, tho I don't remember the details offhand.<br />
+-assigning damage from both regular and reverse damage shields is somewhere in there, after target and hit determination, but dunno if before or after defensive response.<br />
+-the player and mob &quot;combat&quot; code is almost certainly very similar, but different in small but significant ways (i.e. there is no &quot;invalid target&quot; for mobs, instead it forces a target change + possible movement; also need to include checks for cast vs. melee, summon, etc.).<br />
+<br />
+Would be very interesting to figure out the exact sequence of checks and assignments, could be quite useful to determine the relative worth of some avoidance modifiers.  Basically, the EQ &quot;random number&quot; generator is VERY streaky and at least one component of it has a short (one or few ticks) persistence.  That, plus the empirical observation that most checks are &quot;high = success, low = fail&quot; means that the ORDER that the checks are made in has a stronger impact on the outcome than you might otherwise expect...<br />
+<br />
+Good stuff.<br />
+<br />
+RdT.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">FurryCrew</div><div class="date">06-22-2004, 05:57 PM</div></div><div class="posttext">Just like to add in the Process Effect Sub Function. You might wanna add a line about bard  procs cause bards have a song Katta's somethingyamajig which adds a proc that lowers the targets dex and it shows up in the bard song box. Yes it stacks with spell proc (pestilenece shock, Call of the Sky, Soul Claw, Potions of Draconic Rage) and yes i have had 6 procs going before 2 on each weapons, Proc off Potion of draconic rage AND katta's</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-22-2004, 06:01 PM</div></div><div class="posttext">Um... I will read it carefully soon as I get back from the store but there has to be some psudo code differance between mobs and PCs on procs. We can (or could) proc on a miss. Mobs cant. So a mobs proc check has to happen after the To Hit (and I think PDR) checks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tombrage Shroudfury</div><div class="date">06-22-2004, 06:08 PM</div></div><div class="posttext">In EverQuest NPCs can proc on a riposte whereas PCs cannot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kavhok</div><div class="date">06-22-2004, 06:28 PM</div></div><div class="posttext">NPCs' innate proc checks occur on every swing.  So an NPC can technically proc 4 times on a quad attack.  Weapon procs (both player and NPC) only check once per round, as you have above.<br />
+<br />
+- Kavhok, SOE</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Payn</div><div class="date">06-22-2004, 06:31 PM</div></div><div class="posttext">Hence why General Reparm can one round any well geared tank lol :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-22-2004, 06:31 PM</div></div><div class="posttext">!!<br />
+<br />
+And since the code tag adds scoll bars so you can't see it all at once: <br />
+Initialize Auto Attack cycle.<br />
+Delay Cycle Begin<br />
+\\This is the timestamped, official 'when' of combat<br />
+Target Determination<br />
+\\For mobs, this is the point at which they decide who they will attack. Top<br />
+\\of modified Aggro list determines. Special Case NPC Rampage Success: Top <br />
+\\of modified Rampage list. Special Case PC Rampage: Within AoE / Already<br />
+\\Rampaged.<br />
+Call Process Effect Subfunction.<br />
+Process Effect Sub Function.<br />
+  Weapon Proc Check. If yes, resolve cast, end subfunction  <br />
+  Weapon Augment Proc Check. If yes, resolve cast, end subfunction.<br />
+  Buff Proc Check. If yes, resolve cast. <br />
+  End subfunction.<br />
+Dual wield check - If no, end function.<br />
+\\Only appropriate to offhand weapon.<br />
+Call Subfunction Multiattack.<br />
+Subfunction Multiattack.<br />
+  Attacks=1.<br />
+  Check Double attack. If yes, attacks=attacks+1<br />
+  If attacks=2, check Triple attack. If yes, attacks=attacks+1.<br />
+  Check Punishing Blade / Speed of the Knight. If yes, attacks = Attacks +1.<br />
+  Check Flurry. If 1, attacks = attacks +1, if 2, attacks = attacks +2<br />
+while attacks &gt; 1 <br />
+  Target Valid Object Check- If no, end cycle, return error.<br />
+\\For PC, checks attackable NPC, relative PK flags. For NPC, checks valid NPC<br />
+\\target, checks valid PC target.<br />
+  Target Living Check - If no, end cycle, return error.  <br />
+  Target Range Check - no, end cycle, return error.<br />
+  call Subfunction Hit Resolution.<br />
+  attacks = attacks -1,<br />
+  loop while<br />
+Subfunction Hit Resolution.<br />
+  If defender NPC, assign aggro generation.<br />
+  Check Defender Dodge. If yes, call Subfunction Strikethrough <br />
+  Check Defender Parry. If yes, call Subfunction Strikethrough <br />
+  Check Defender Block. If yes, call Subfunction Strikethrough <br />
+  Check Defender Riposte. If yes, call Subfunction Strikethrough <br />
+  Check Defender Invulnerability. If yes, end Subfunction, return Invuln.<br />
+\\DA, DB, Magic weapons, bane presence.<br />
+  Subfunction Strikethrough<br />
+    Check Attacker Strikethrough<br />
+    If yes, end subfunction.<br />
+    If no, end subfunction hit resolution, return calling check.<br />
+\\Subfunction Strikethrough has 5 possible results: Strike through successful, <br />
+\\continue Hit Resolution. Strikethrough Unsuccessful, return Dodge, Parry, <br />
+\\Block, Riposte.<br />
+  Compare attacker accuracy, defender evasion. <br />
+  Generate random number.<br />
+  Locate hit/miss on Class to-hit table.<br />
+  If hit, call Subfunction Damage Resolution.<br />
+  If miss, End Subfunction.<br />
+Subfunction Damage Resolution.<br />
+  Compare attacker penetration, defender mitigation.<br />
+  Generate Random Number(1-20).<br />
+  If Mob, then damage = DB + RNG(DI)<br />
+  If PC, then reference PC damage tables (With subtables?)<br />
+  Final Damage = Damage - Damage Absorbance. (includes BoVie subcode).<br />
+  If Final Damage = 0, return 'magical skin absorbs attack'. <br />
+  If Damage Absorbance &lt; Damage, then resolve buff fade.<br />
+\\This is the rune/Vie check. End of rune/Vie is likely resolved here. <br />
+  Target HP = Target HP - Final Damage.<br />
+  Check &amp; Resolve True Innate Process(Mob only). <br />
+\\This includes Flurry, Rampage, normal mob procs.<br />
+  Resolve Target Death - If yes, broadcast end auto-attack, return death.<br />
+  End subfunction.<br />
+End Function.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fitemore</div><div class="date">06-22-2004, 06:45 PM</div></div><div class="posttext">NPCs' innate proc checks occur on every swing.  So an NPC can technically proc 4 times on a quad attack.  Weapon procs (both player and NPC) only check once per round, as you have above.<br />
+<br />
+- Kavhok, SOE<br />
+<br />
+  Do mobs innate procs occur on misses? I'm pretty sure we determined that they don't... If this is indeed the case, then would a better phrasing be &quot;on every hit&quot;?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-22-2004, 07:18 PM</div></div><div class="posttext">I'd edit out my code tags, but I don't seem to be able to. Oh well. =p<br />
+<br />
+Big oops I noticed, the while loop should run while Attacks &gt; 0, not attacks &gt;1.<br />
+<br />
+On procs, the big difference between PC and NPC in this pseudocode comes from what I've termed the 'True Innate Proc'. This is the only process effect that exists in the 'Determine damage' subroutine. I suspect that the reason is the throttling of the PC proc against the streaky RNG, combined with coding effeciency. By isolating the PC proc from the 'to-hit' routine, they can control the proc per minute much more effectively, as well as spare the cycles to check the weapon every single swing. It might not seem as much, but considering that 40%+ of a high end character's attacks are likely multi-attacks, it's exponentially less ugly. By not isolating the NPC proc, Reparm is born. I suspect that there's an 'if Final Damage &gt; 0, then NPC proc check' that I forgot to slip in there as well. The relevant subfunction then becomes: <br />
+<br />
+Subfunction Damage Resolution.<br />
+Compare attacker penetration, defender mitigation.<br />
+Generate Random Number(1-20).<br />
+If Mob, then damage = DB + RNG(DI)<br />
+If PC, then reference PC damage tables<br />
+Final Damage = Damage - Damage Absorbance. <br />
+\\Damage Absorbance refers to Rune, Vie, etc. May, in the case of some NPC<br />
+\\debuffs, theoretically become a negative value.<br />
+If Final Damage = 0, return 'magical skin absorbs attack'. <br />
+If Damage Absorbance &lt; Damage, then resolve buff fade.<br />
+\\This is the rune/Vie check. End of rune/Vie is likely resolved here. <br />
+If Final Damage &gt; 0, then {<br />
+  Target HP = Target HP - Final Damage.<br />
+  Check &amp; Resolve True Innate Process(Mob only). }<br />
+\\This includes Flurry, Rampage, normal mob procs.<br />
+Resolve Target Death - If yes, server broadcast end auto-attack, return death.<br />
+End subfunction.<br />
+<br />
+I -think- most of Casai's concerns should be taken care of not by the explicit instructions of the code, but by the implications of instruction order. My dodge/parry/block/riposte order is a big, fat, assumption, justified only by order of skill reception. Resolution of the process subfunction will be a function of the spell engine - Putting it anywhere else is recoding the wheel. AI decisions such as 'chase, summon, target switch' are also not going to be handled here for the most part: the AI will be handed a return code stating Invulnerable, Out of Range, Dead, Attack Attempt Successful, etc, and it will act based on the return code. <br />
+<br />
+My strikethrough subroutine seems very, very, very sloppy to me. Can anyone point out a more elegant way of doing it?<br />
+<br />
+Edit (DOH!)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kavhok</div><div class="date">06-22-2004, 07:57 PM</div></div><div class="posttext">Yes, NPC innate procs only go off if the NPC does not miss and isn't blocked, dodged, etc.  So it would be more accurate to say it checks on every actual hit.<br />
+<br />
+- Kavhok, SOE</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Battleblade</div><div class="date">06-22-2004, 08:37 PM</div></div><div class="posttext">Cycle for cycle, their represent the most effecient way to weight a semi-random number to a particular result curve.<br />
+You've kinda lost me here on a number of fronts:<br />
+<br />
+Many of the original software random generators used in games twenty-five years ago were based on a Linear feedback shift register method outlined by Don Lancaster in CMoS Cookbook and a Byte magazine article. A variety of primitive methods have been known and employed to ensure short term compliance with expected results utilizing previous results. There are two major known weakness with these methods. First, post manipulation of the value returned by the LFSR pseudo-random generator using seemingly benign operations return less random results. Secondly, short term compliance with expected result is a local effect - no matter how many other players are generating random numbers, I don't expect to ever fail a trivial combine 5 times in a row.<br />
+<br />
+In the last few years, new linear RNG's like the Mersenne Twister exhibit more uniform distribution and a higher periodicy. I suppose that either a spectral test or weighted spectral test could &quot;ride herd&quot; on such an RNG and &quot;corrective measures&quot; taken - but I seriously doubt the EQ progamers have employed such sophistication.<br />
+<br />
+I hope they aren't uising the standard C function rand() for a variety of reason. I also am very doubtful that they are using either previous results nudging from the olden days or running spectral tests.<br />
+<br />
+So, I really don't know what your comment is saying and I fear I have a lack of knowledge you could clear up.<br />
+<br />
+BB</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-22-2004, 08:44 PM</div></div><div class="posttext">Hey BB, just curious, but how computational intesive are the new RNG's?<br />
+<br />
+Only because EQ seems to use SO many of them. I would imagine over a thosand a second on your typical raid.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-22-2004, 09:01 PM</div></div><div class="posttext">So, I really don't know what your comment is saying and I fear I have a lack of knowledge you could clear up.<br />
+<br />
+BB<br />
+<br />
+The nature of the random number generation is very much a moot point. It can come out of anything you want it to, so long as you're aware of the weight of the probabilities of results. What these tables do is very simple: it's nothing more than a preground set of results that you look up post random number generation. If they have a random number generator designed to create a number between 1 and a 100, inclusive, with equal probabilities to each, you have pre-calculated end results for each of those numbers: No calculation, formulae, just a lookup. Want to adjust the results? Churn out a new table. AD&amp;D, for example, used a very simple formula for determining to hit: It had 20 cells, and was referred to by the rest of us as 'THAC0'. You could make a table for every class by level, AC, and d20 result, and get your 'did I hit?' without doing the formula every time. EQ's tables are probably four or five dimensions and thousands of cells deep: But everything is already done. I think I misspoke myself in defending them, but I'm sure you can see the value of having 90% of the combat calculations already complete and sitting in memory waiting for access.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Battleblade</div><div class="date">06-23-2004, 01:26 AM</div></div><div class="posttext">To answer the question,<br />
+<br />
+I haven't looked in years. But Don Lancaster's is 8-10 lines of code and just shirfts and adds, so its fast as heck. MT and rand() are about the same speed and something like 20ish lines of code for rand(). There's a nasty way to avoid having to run the code everytime someone wants a random number. Since for a given individual of mob we're talking human speed, you can add the RNG to the keyboard Interrupt hander (as I recall, it's been awhile), let the Int generate a new random, and just have your override of rand() return the random value. Sure, you might return the same value 100's of time, but since we're talking 10ths of seconds or less, no human speed event will end up with the same number as far as any one user is concerned.<br />
+<br />
+BB</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Battleblade</div><div class="date">06-23-2004, 08:17 AM</div></div><div class="posttext">Bumpage because the pseudo code and refernence to THACO are useful.<br />
+<br />
+Sorry about my detrailment. Seemed you were making a claim for Verant/SoE's treatment of random numbers to &quot;fit&quot; them within expected results in the short term (the only thing the matters when gambling with 5 quarters in your pocket or trying to keep an Enchanter alive with the taunt button). That's something they very clearly haven't done despite the fact it was first achived in a crude form 25 years ago.<br />
+<br />
+BB</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-23-2004, 11:25 AM</div></div><div class="posttext">From my understanding, Verant's RNG is exactly what they want it to be. I vaguely remember a long, long ago quote from Smedly stating that the notorious percieved streakyness was intentional, and I seem to think they paid someone a ton of money for that streakyness. The basic idea was that these skills should not be truely random, but rather, when you're hot, you're hot, when you're not, well...<br />
+<br />
+Back to the pseudo code, on the subject of Damage shields. <br />
+We know that Invulnerability negates the presence of a damage shield. It's been too long since I looked at the presence of rune and it's effect on DSes, however, I believe we can assume negation. Dodge, Parry, Riposte, all negate DS. Therefore, I would insert the DS as follows:<br />
+<br />
+If Final Damage &gt; 0, then {<br />
+Target HP = Target HP - Final Damage.<br />
+Check &amp; Resolve True Innate Process(Mob only).<br />
+Resolve Damage Shield. }<br />
+<br />
+Can mobs proc on you if they die to your DS?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Daabu</div><div class="date">06-23-2004, 11:32 AM</div></div><div class="posttext">As far as I remember, rand() is a table look-up, because it utilizes seed-setting.<br />
+<br />
+You set a seed (typically based on the system clock at the time, but often a static integer for debugging), which correlates to a pre-set pseudo-random sequence of numbers from what I believe is (0-32768)/32768.  Each call to rand() goes through this list sequentially, and more often than not is modified to simulate a random integer between A and B by (B-A)*rand()+A.<br />
+<br />
+Long story short, rand() really employs a table lookup (linked list maybe?), and is generally the fastest possible random number generator on the market.  Considering the streakiness of the RNG, I'd venture to guess that every tick the seed is updated, and that the RNG utilizes something similar to the rand() feature due to the massive number of random numbers required in some zones (thousands per second easily, as previously noted)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Daabu</div><div class="date">06-23-2004, 11:35 AM</div></div><div class="posttext">Can mobs proc on you if they die to your DS?<br />
+If I recall, yes.  Since Procs are resolved before damage is (easily noticable through log-parsing, unless the chat sequence we see is actually a stack and not a queue), you will see something like this:<br />
+<br />
+You are procced on by a_mob<br />
+You hit a_mob for 35 points of damage (via damage shield)<br />
+a_mob has died.<br />
+A_mob hits YOU for 100 points of damage<br />
+<br />
+I'm sitting at work right now, though, so I'm not CERTAIN...A day in valor with a bard/druid should reflect this quite easily though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Flair</div><div class="date">06-23-2004, 12:27 PM</div></div><div class="posttext">Hey BB, just curious, but how computational intesive are the new RNG's? <br />
+<br />
+I would think negliable with todays equipment.  Most of the time you can load these functions right to memory so that there is no actual DB call.<br />
+<br />
+FYI to get terms correct what you are writing is a technical spec not code.  :)<br />
+<br />
+ Long story short, rand() really employs a table lookup (linked list maybe?),  <br />
+<br />
+In-line memory codetable of sorts?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bardeil</div><div class="date">06-23-2004, 12:59 PM</div></div><div class="posttext">Just to give you an idea... Running single threaded, on a Xeon 2.4 (probably much like SOE uses for eq), the glibc rand() function is stupidly fast. Like bb said the other generators are fast as well, but it wouldn't surprise me at all if they use a very basic rng.<br />
+<br />
+<br />
+#include &lt;stdlib.h&gt;<br />
+#include &lt;time.h&gt;<br />
+<br />
+#define NUM 100000000<br />
+int main() {<br />
+        int temp, i;<br />
+        time_t start, end;<br />
+        temp = 0;<br />
+        time(&amp;start);<br />
+        srand(start);<br />
+        for (i = 0; i &lt; NUM; i++ ) {<br />
+                temp += rand();<br />
+        }<br />
+        time(&amp;end);<br />
+        printf(&quot;%d psuedorandom numbers generated in %d seconds(%d)\n&quot;, NUM, end-start, temp);<br />
+<br />
+<br />
+<br />
+<br />
+[tmp]$ gcc -o randtest randtest.c<br />
+[tmp]$ ./randtest<br />
+100000000 psuedorandom numbers generated in 4 seconds(563608529)<br />
+<br />
+Yes, that 100 million random numbers (summed no less) in 4 seconds.<br />
+<br />
+<br />
+Flair: Do you actually think the EQ servers use a database? I would think it would be much more efficient to store EVERYTHING in memory, and then serialize stateful objects (PC data) to disk every now and then. There's way too much stuff going on ALL the time in EQ to handle loading that stuff to and from a database.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bardeil</div><div class="date">06-23-2004, 01:25 PM</div></div><div class="posttext">Flair: NM me.I realized you're probably referring to the db call as in to load the function from the libary, not to load player data from a database. Yes, I'm trying to avoid actually working.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-23-2004, 05:45 PM</div></div><div class="posttext">Do you check for stun? And yet again something that is handled differently for both PCs and NPCs.<br />
+<br />
+Shit is there a lot going on in one attack/swing.<br />
+<br />
+Need a Damage Shield/Reverse shield check too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-23-2004, 06:02 PM</div></div><div class="posttext">Post #17 for Damage shield check modification, I don't want to do a full re-write until I've got a 'final' version. <br />
+<br />
+Now.. How do we create an algorithm for handling stun? Can someone more experienced with it than me give a detailed explanation of what we see when we're stunned, and what we see when we stun another mob? I can't say I ever paid attention to the mechanics of being stunned. We've also got to add 'If stunning attack, then check for stun' to the 'final damage &gt; 0' condition.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-23-2004, 06:23 PM</div></div><div class="posttext">Well for PC stuns--there are 3 possible stunning attacks. Kick post 55, slam and bash. <br />
+<br />
+I do think that any mob attack can stun. So there would be a stun check (don't know if onyl first swing or any). Then you have a nested check for facing and then race (oger) or stun immunity AA.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Flair</div><div class="date">06-23-2004, 07:29 PM</div></div><div class="posttext">Flair: NM me.I realized you're probably referring to the db call as in to load the function from the libary, not to load player data from a database. Yes, I'm trying to avoid actually working. <br />
+<br />
+Yessir thats where I was goin  :-) <br />
+<br />
+I too am avoiding work atm heh</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mokor Leadheaad</div><div class="date">06-23-2004, 08:44 PM</div></div><div class="posttext">damage shield work through runes.<br />
+<br />
+still trying to figure out why you see two messages about being hit with one hit though with rune up.<br />
+<br />
+as long as your proc is ehough to kill the mob you can kill it without ever swinging your weapon.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Daabu</div><div class="date">06-23-2004, 09:53 PM</div></div><div class="posttext">Due to the &quot;streakiness&quot; and a bunch of tests done on (I believe it was) eqtraders, the streaks seem to be based in pre-set periods of time.  This leads me to believe that it definately *is* a random number generator that uses seeds, something as simple as c-lib's rand()<br />
+<br />
+For rune messages, I think it's simply a bug that there are 2 messages while wearing a rune.  I wouldn't worry about it on the tech. spec.<br />
+<br />
+for stuns:<br />
+<br />
+if (type()==kick or type()==bash or type()==slam) {<br />
+...if (target.passStunResist(attacker)==false) target.movementState=stunned;<br />
+}<br />
+boolean PC :: passStunResist(character attacker) {<br />
+...if (isFacing(attacker)) {<br />
+......if (race==ogre or stalwartEnduranceCheck==true) return true;<br />
+...}<br />
+...return false;<br />
+}<br />
+<br />
+This would occur before the rune/invuln check is made, but after the hit passes (ie, not miss/dodge/parry/riposte/block).<br />
+<br />
+Also, invuln check should come immediately following the stun check, because if I recall you can still be stunned if you are under DA.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-23-2004, 10:43 PM</div></div><div class="posttext">They changed that.. almost three years ago, DA blocks all forms of Stun now. Invuln occurs before the stun check.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cafard</div><div class="date">06-24-2004, 04:12 AM</div></div><div class="posttext">One day I logged in Butcherblock and killed a goblin.<br />
+This goblin was the first mob I attacked and I killed it with a proc the second I attacked.<br />
+My Hit windows was blank, no hits, no miss. Only a proc and that goblin killed.<br />
+<br />
+Strange isn't hit ?<br />
+<br />
+<br />
+Also, I believe you do proc on Ripostes, but proc triggers on your current target only. (to test it : make a train of green mobs, trigger furious disc and not auto-attack)<br />
+<br />
+<br />
+-- Cafard, 7th</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-24-2004, 08:24 AM</div></div><div class="posttext">Dabuu the only mistake I see with your code is that NPCs can stun on any attack--or so I seem to recall.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-24-2004, 08:30 AM</div></div><div class="posttext">Mob stun conditions seem to be the same as PC stun conditions: Go incite an orc pawn, and turn your back to him. He will never, ever stun you, because he can't kick, bash, or slam. More interesting would be the code that prevents you from meleeing while stunned - This is what I don't see how to do. <br />
+<br />
+It's quite possible that we cannot proc on a riposte, depending on the nature of the riposte code: For riposte to call the process, it would have to start at the -beginning- of the melee attack cycle, that is, it would have to excute the whole thing. Riposte likely just makes the double-riposte AA check, and then triggers the 'hit resolution' subroutine the appropriate number of times. This would match the observation that PCs can proc on ripostes, but NPCs cannot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sassinak</div><div class="date">06-24-2004, 01:44 PM</div></div><div class="posttext">Also, I believe you do proc on Ripostes, but proc triggers on your current target only. (to test it : make a train of green mobs, trigger furious disc and not auto-attack)That's not a valid test. I believe it has been established that ripostes from furious disc do not produce procs, period. (Much to the chagrin of Earthshaker owners.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Northerner</div><div class="date">06-24-2004, 05:05 PM</div></div><div class="posttext">For stuns, out-of-range and things of the sort there appears to a checkValidHit call or something to that effect.  You can easily see that DW/DA checks are in prior to oor, z-axis or stunned checks in game.  INVULNERABLE checks are after all other checks though, so there appears to be a call within damage determination as well.<br />
+<br />
+Overall, I'm not sure about the structure you are basing this on but hey, there's more than one way to skin a cat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tombrage Shroudfury</div><div class="date">06-24-2004, 05:11 PM</div></div><div class="posttext">The dev just posted on here saying weapon and buff procs are checked once per attack round. Since ripostes are not part of an attack round they cannot cause a proc for PCs.<br />
+<br />
+You can check it all you want, furious or not, you will never proc on a riposte.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gimmel</div><div class="date">06-24-2004, 05:46 PM</div></div><div class="posttext">It would be great if the information from Kahvok was added to the Weapon Proc thread in the library.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kavhok</div><div class="date">06-24-2004, 06:00 PM</div></div><div class="posttext">NPCs need to be level 5 or higher for the innate chance to stun with melee hits when behind you.  That's why orc pawns can't do it.<br />
+<br />
+- Kavhok, SOE</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">EmiliaEQ</div><div class="date">06-24-2004, 08:05 PM</div></div><div class="posttext">Sooooooooo much hate for the damn greeny that manages to stun you !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mokor Leadheaad</div><div class="date">06-25-2004, 02:37 PM</div></div><div class="posttext">lol<br />
+<br />
+or when they block, pary, dodge, and riposte your atacks<br />
+<br />
+i looked around to see if anyone saw then fled the zone.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Coprolith</div><div class="date">06-26-2004, 08:53 AM</div></div><div class="posttext">From my understanding, Verant's RNG is exactly what they want it to be. I vaguely remember a long, long ago quote from Smedly stating that the notorious percieved streakyness was intentional, and I seem to think they paid someone a ton of money for that streakyness. <br />
+<br />
+LOL, he should prolly get his money back then. I can't find anything abnormal about the streakiness of EQ's RNG. <br />
+<br />
+This can be tested in several ways.<br />
+For instance, in a log from a fight against the Katta banker i parsed 10682 hits out of 15336 swings, so the chance to hit per swing is 0.697<br />
+For true  random behavior, the chance to get a streak of n hits is<br />
+P(n) = p^n * (1-p)<br />
+(that is, n hits in a row followed by a miss)<br />
+If you take the logarithm of P(n), Log(P(n)) = Log(1-p) + Log(p) * n, and plot it against n you get a straight line with slope Log(p). I parsed out the number of streaks of length n from the log mentioned above, shown in this graph by the blue diamonds:<br />
+<br />
+http://members.chello.nl/~pg.deheij/rand1.jpg <br />
+<br />
+The solid blue line is the graphical presentation of the formula for true random behavior with p=0.697 (a best fit can be obtained with p=0.703, well within the statistical uncertainty of the hit ratio)<br />
+<br />
+The red squares give the distribution of streaks within a sample of 1505x /random 0 1. The solid red line is true random behavior for p=0.5<br />
+<br />
+The green triangles and line are for streaks within a sample of 200 casts of snare, 112 of which were resisted (p=0.56). A best fit gives p=0.575<br />
+<br />
+As far as the distribution of streaks is concerned, EQs RNG is virtually indistinguishable from true random behavior. The main problem with RNGs in general is repetition. The simplest (and fastest) RNGs can repeat its numbers with a cycle of a few 10k's to 100k's if the seed is badly chosen. This is a problem in Molecular Dynamics or Monte Carlo simulations where 100s of millions of calculations are performed. But for a game engine like in EQ, you'd never notice the repetition in practise.<br />
+<br />
+/hugs<br />
+<br />
+Da Coprolith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Battleblade</div><div class="date">06-26-2004, 11:21 AM</div></div><div class="posttext">Minor derail again - perhaps separating discussions of the RNG whould take place eslewhere, but there some good stuff here.<br />
+<br />
+The problem is &quot;bankruptcy&quot;. To put it in simple terms, imagine you have 5 quarters and a ticket home is $1.50. Even in a 90% return slot machine you may be doomed to failure.<br />
+<br />
+Long term randomness is great if you are going to flip a coin 100 million times. But when hiting a taunt button where three failures in a row means the Enchanter DIES it's really unacceptable. The same is true for doing combines with rare hard to obtain components. Players often do not have the number of attempts available to overcome streaks where expected results are not fulfilled in the short term.<br />
+<br />
+In the real world, skill tends to limit streaks. Ted Williams in the season when he batted .400+ did not have 10 at bats in a row hitless.<br />
+<br />
+BB</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Daabu</div><div class="date">06-26-2004, 12:02 PM</div></div><div class="posttext">BB, you weren't reading it properly.<br />
+<br />
+He parsed the number of streaks of hits, but he just as easily could have parsed the streaks of misses.<br />
+<br />
+He said that on average, you look at the streaks of hits in a truely random, non-biased RNG (which everyone says the EQ RNG is not -- long term effects it evens out, but its very streaky, meaning you would get much less &quot;short-term&quot; streaks and much more &quot;long-term&quot; streaks).  He plotted in a parse the number of streaks, and found it to be very close to a true-random environment.<br />
+<br />
+In other words, according to his math, the streakiness you encounter in EQ is the same streakiness you'd encounter flipping a coin, playing craps, or playing Plinko from The Price Is Right.  The EQ RNG, according to his calculations, models RL pretty damn well.<br />
+<br />
+Coprolith, is there any chance you could supply the logs you used, and possibly the tool you used to parse it (to save us the effort).  I trust your math, but would like to cross-reference it to further validate it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Battleblade</div><div class="date">06-26-2004, 12:50 PM</div></div><div class="posttext">Sorry again,<br />
+You didn't read me right. Read what I wrote above again. Even normal RNG streakiness is unacceptable if the downside of a non-fullfillment of short term expectations is too great (taunt, expensive combines). Remember, these are supposed to be skill driven, not coin flip driven. As skill goes up, it ought to make the noise created by prediticable streakiness in an RNG be of no significance what-so-ever, even in the short term.<br />
+<br />
+I won't bother posting about this anymore. It's a derail. But, I know I'm not only right in principle, I'm convinced given the many complaints over the years by players, I'm correct from the standpoint of &quot;good&quot; design as well.<br />
+<br />
+BB</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Daabu</div><div class="date">06-26-2004, 01:05 PM</div></div><div class="posttext">Statistically, if we presume a successful taunt is the same as a melee hit (I heard ~60%), then we can compare it to the chart above.<br />
+<br />
+If people are upset about the streakiness, what they're really upset about is the success rate.  If a taunt is a 60% success rate, then one would expect to fail 3 taunts in a row about 6.4% of the time (0.4^3).  If failing this many times in a row is unacceptable at that percentage rate, what is an acceptable chance to fail taunt three times?  Less than 1%?  then the fail rate would have to be at least 0.01^(1/3), or at least 78.5% chance to succeed.<br />
+<br />
+If, on the other hand, your argument is that failing X times in a row is unacceptable, even if it only happens 0.00000001% of the time, then what you're asking for is for the game to not imitate Real Life.  Even Michael Jordan misses 3 layups in a row</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gront</div><div class="date">06-26-2004, 01:30 PM</div></div><div class="posttext">Sorry again,<br />
+Even normal RNG streakiness is unacceptable if the downside of a non-fullfillment of short term expectations is too great (taunt, expensive combines). Remember, these are supposed to be skill driven, not coin flip driven. As skill goes up, it ought to make the noise created by prediticable streakiness in an RNG be of no significance what-so-ever, even in the short term.<br />
+<br />
+The problem is not with &quot;streakiness&quot;, or even with &quot;skill...ought to make the noise...of no significance...even in the short term.&quot;  The problem is three-fold:<br />
+<br />
+1) the number of truly random things in real life is very small,<br />
+2) the number of trials in EQ is astronomically greater than in real life, and<br />
+3) human statistical intuition is crap.<br />
+<br />
+Consider jewelry-making.  As any human jeweler can tell you, when you're making something that's at or above your current level of skill, you're likely to fail more often than not.  And when you're working with expensive materials, and you screw up, you're out a fair bit of money.  But--in the real world, when the jeweler screws up, it's not because he flipped a coin wrong.  It's because he made a mistake somewhere, a mistake that he can usually identify, learn from, and avoid in the future.  He doesn't have the feeling of being &quot;screwed over&quot;, because he can see that the failure precisely *wasn't* random.  In  EverQuest, *everything* is random.<br />
+<br />
+Consider hit percentages in baseball.  A few posts ago, Battleblade talked about Ted Williams' season where he hit .400, and stated that he did not have 10 sequential at-bats without a hit.  But now consider how many, many people are playing EQ at any given moment, and how many of those are taunting, and how many of those are noticing that they just failed taunt ten...times...in...a...row.  I suspect, if you looked at the relevant baseball statistics, you'd find a number of cases where truly competent players with hit percentages above, say, .300, did in fact have 10 consecutive at-bats without a hit.  But only if you looked at all players, in all years.<br />
+<br />
+Finally, let's look at humans' statistical intuition.  Let's look at flipping a coin.  If we're flipping a coin, and it's come up heads four times in a row, what's the odds of it coming up heads a *fifth* time?  I mean, five heads in a row, that oughta be rare, right?  A surprising number of people will say &quot;Well, it almost *has* to come up tails.&quot;  But the answer is actually &quot;Same odds as ever: 50% heads, 50% tails.&quot;  <br />
+<br />
+How about taunt failures?  If you gave someone an 80% Taunt skill, they would be *astonished* to have to taunt five times (*five times?!*) before Taunt worked.  But the odds of that  are .0016; or, in a typical day of EQ, with perhaps 300 fights over six hours of play, it can be expected to happen four or five times.  That's four or five of &quot;My God, I can't believe how bad Taunt is, the chanter died *again*&quot; per day, with an 80% Taunt skill.<br />
+<br />
+What people want is not a &quot;better&quot; RNG, but a worse one.  They want one that says not &quot;You have an 80% chance of succeeding&quot;, but &quot;You have a 99% chance of alternating reliably between success and failure according to your win percentage.&quot;  i.e. it's not that the RNG is &quot;streaky&quot;, it's that random chance appears &quot;streaky&quot; to human intuition.<br />
+<br />
+If you had a combine with a 1/3 chance of success, and you knew that out of 3 trials you would *almost always* get one success, and out of 33 trials you would *almost always* get 11 successes, you'd probably feel that the RNG was &quot;fair&quot;.  But random numbers only become predictable like that with *enormous* sample sizes.<br />
+<br />
+Mob's don't one-round people, chanters don't die to failed Taunt, casters don't crit ten times in a row, because the RNG is streaky.  These things happen because that's how random chance works--and it looks streaky because human beings don't grok statistics.<br />
+<br />
+I wonder how different the game experience would be with an RNG deliberately broken in the direction of avoiding streaks.  One that weighted the probability of the next &quot;win&quot; or &quot;lose&quot; on a given test by how much you had &quot;won&quot; or &quot;lost&quot; it recently.  One where, if you'd failed a particular combine four times in a row, you were *virtually certain* to succeed at it this time--but if you'd just gotten lucky, and succeeded four times in a row, there was hardly any point to doing it a fifth time, because you were *virtually certain* to fail.<br />
+<br />
+Not likely we'll ever know.  But it's an interesting question.<br />
+<br />
+Hope this helps,<br />
+<br />
+Gront/Graa, Black Syndicate, Ayonae Ro.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Coprolith</div><div class="date">06-26-2004, 02:05 PM</div></div><div class="posttext">Coprolith, is there any chance you could supply the logs you used, and possibly the tool you used to parse it (to save us the effort).  I trust your math, but would like to cross-reference it to further validate it :)<br />
+<br />
+Sure. I've put them up (temporarily) here (http://members.chello.nl/~pg.deheij/randtest.zip). The zipfile (232kb) contains the 3 basic log files, and I've included an Excel worksheet of the analysis i made of the snare resist log which should give you a pretty good idea how I did the analysis. I didn't include the sheets of the other 2 files because<br />
+a) the zip file would get too large and<br />
+b) My results aren't proof of anything until they have been reproduced independently of my own data and analysis method. I'm sure you guys here have tons of logs of your own that can be used as well.<br />
+<br />
+----<br />
+<br />
+On a different note: I've been doing some research on the way damage is calculated myself. I've posted what results I have so far on the beastlord.org (http://beastlords.org/forums/viewtopic.php?t=2375) boards. I know TSW has done a lot of work on damage distributions, and I'd appreciate your input and constructive criticism to keep me on the right track.<br />
+<br />
+/hugs<br />
+<br />
+Da Coprolith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sassinak</div><div class="date">06-26-2004, 05:42 PM</div></div><div class="posttext">Coprolith's post definitely belongs in the Library.<br />
+ <br />
+Edit - and I'd just like to say, great work on revealing the normal distribution in your other thread on eqbeastlord, Cop.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">deadman1204</div><div class="date">06-27-2004, 03:29 AM</div></div><div class="posttext">Actually Gront, 5 results of tails in a row can also have a probability of 0.03125, depending on how you look at it. If you isolate the last flip, its technically a 50/50 chance; but as part of a series the probability of getting 5 tails in a row is rather small. Its really friggen strange, but technically the probability of a flip changes depending on your outlook on the situation.<br />
+Though you are right that people can't detect randomness well, because our brains are designed for pattern recognition. Finding patterns helps us understand whats going on in the world around us, and thus we are disposed towards it. <br />
+<br />
+I agree with Battlestar that certain skill determinations REALLY shouldn't be the result of an equation with a randomly generated seed. Though for simplistics its understandable why verant went with that method.<br />
+<br />
+But back to the original post, I've a couple things.<br />
+The check for duel wield needs to occur before the check for weapon processes, because you can't proc a weapon that wasn't swung that attack cycle. <br />
+The double strike check also needs to occur before weapon processes, because when your target is out of range, unhittable,  or invulnerable you recieve a message for each potential attack depending on your skill checks; and since you cannot proc on these targets, this would be the most likely place for the skill determination.<br />
+<br />
+Before the duel wield and double strike checks, the check for a valid target occurs. Because when you target yourself and hit attack, you only get 1 message a round to stop targeting yourself each round, even when duel wielding. This would also end the attack cycle on unattackable targets like wayfarers and potranq/pok NPCs. If your target is yourself, the attack cycle ends, and the appropriate error message is given; but if the target is unattackable, you recieve no message since they never instituted one (though the code probably says to return error message anyways)<br />
+<br />
+As well, the subfunction multiattack needs to be altered.  PC and NPCs need to be handled separately.<br />
+ - For PCs you need to label each hand's attacks - attacks1 and attacks2 so they can be handled separately. This is needed for the DI calculation due to different damages on the weapons, and labeling the damage type (crush, slash, ect)<br />
+ - For NPCs  after triple attack you need a check for quadruple attack, since NPCs only hit with 1 hand (if they are holding 1 mace, all 4 hits are crushes)<br />
+For flurry, I don't know if a mob always gets 4 attacks on a flurry. If they do, then  if flurry =1, attacks = attacks1 +4. If they dont always get 4, then if flurry=1,  rerun subfunction multiattack and label results attacks2; attacks = attacks1 + attacks2.<br />
+<br />
+The check for invulnerability should be made before any of the defensive skills, and if true, return invuln message. (Invuln targets never use defensive skills)<br />
+Then there should be a defensive skill subfunction, where cycles = attacks. <br />
+For the defensive skill checks, I believe the order should be block, dodge, parry, riposte. That would explain why block fires off more than parry, because the skills are ordered alphabetically, and thus block gets checked first.<br />
+<br />
+In the subfunction damage resolution, some things need to be changed as well.  PC damage may read the same as npc (just use different tables) since we have a DB as well (different for each hand, and thus why you need attacks1 and 2 for PCs). After this there needs to be room for optional modifiers (x2 damage when target movement = 0 for rangers using archery and rogues unsing throwing, and other modifiers like disciplines).<br />
+After that is a check for NPC damage modifiers (like gates mobs strong or weak against piercing ect). The NPC damage modifier is a separate check, because when a ranger shoots a mob with his bow, the damage is always reduced/increased by the same percent, whether the mob is moving or not.<br />
+Then the final damage check occurs where damage absorbance is taken into account.<br />
+<br />
+Another couple things that might be added on to really complicate it (or could be short-cutted by referring to functions not mentioned here) is damage resolution/effects from procs, and potential resists to them.  Also I think the agro assignment needs to be adjusted for procs (partial damage, full damage, resist, or effect takes place, and then make room for continuing agro from dot effects)<br />
+<br />
+I'm not good at writing like  Arathena, so hope he can just take what I said into account.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vikken</div><div class="date">06-27-2004, 03:41 AM</div></div><div class="posttext">Actually Gront, 5 results of tails in a row can also have a probability of 0.03125, depending on how you look at it. If you isolate the last flip, its technically a 50/50 chance; but as part of a series the probability of getting 5 tails in a row is rather small. Its really friggen strange, but technically the probability of a flip changes depending on your outlook of the situation.<br />
+<br />
+<br />
+The fact that we can detect changes over time doesn't mean a program does unless it's programmed to. As far as fliping a coin goes, unless the machine/code is keeping track if how many times the coin has been flipped and the outcomes of each flip, it still registers as 50/50 each and every time.<br />
+<br />
+Probability machines have no &quot;local time&quot; but what we give them. In other words, there is no distinction of &quot;then&quot; and &quot;now&quot; unless specificly programmed to. Make it where the machine knows and can change/effect the outcome, the you no longer have a true random machine, but a weighted random.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pumilio</div><div class="date">06-27-2004, 04:35 AM</div></div><div class="posttext">copro's post in bl made my head hurt, glad he's doing the job he's doing with eq and rl whatevers.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arathena</div><div class="date">06-27-2004, 11:11 AM</div></div><div class="posttext">But back to the original post, I've a couple things.<br />
+The check for duel wield needs to occur before the check for weapon processes, because you can't proc a weapon that wasn't swung that attack cycle. <br />
+The double strike check also needs to occur before weapon processes, because when your target is out of range, unhittable,  or invulnerable you recieve a message for each potential attack depending on your skill checks; and since you cannot proc on these targets, this would be the most likely place for the skill determination.<br />
+<br />
+Before the duel wield and double strike checks, the check for a valid target occurs. Because when you target yourself and hit attack, you only get 1 message a round to stop targeting yourself each round, even when duel wielding. This would also end the attack cycle on unattackable targets like wayfarers and potranq/pok NPCs. If your target is yourself, the attack cycle ends, and the appropriate error message is given; but if the target is unattackable, you recieve no message since they never instituted one (though the code probably says to return error message anyways)<br />
+<br />
+As well, the subfunction multiattack needs to be altered.  PC and NPCs need to be handled separately.<br />
+ - For PCs you need to label each hand's attacks - attacks1 and attacks2 so they can be handled separately. This is needed for the DI calculation due to different damages on the weapons, and labeling the damage type (crush, slash, ect)<br />
+ - For NPCs  after triple attack you need a check for quadruple attack, since NPCs only hit with 1 hand (if they are holding 1 mace, all 4 hits are crushes)<br />
+For flurry, I don't know if a mob always gets 4 attacks on a flurry. If they do, then  if flurry =1, attacks = attacks1 +4. If they dont always get 4, then if flurry=1,  rerun subfunction multiattack and label results attacks2; attacks = attacks1 + attacks2.<br />
+<br />
+The check for invulnerability should be made before any of the defensive skills, and if true, return invuln message. (Invuln targets never use defensive skills)<br />
+Then there should be a defensive skill subfunction, where cycles = attacks. <br />
+For the defensive skill checks, I believe the order should be block, dodge, parry, riposte. That would explain why block fires off more than parry, because the skills are ordered alphabetically, and thus block gets checked first.<br />
+<br />
+In the subfunction damage resolution, some things need to be changed as well.  PC damage may read the same as npc (just use different tables) since we have a DB as well (different for each hand, and thus why you need attacks1 and 2 for PCs). After this there needs to be room for optional modifiers (x2 damage when target movement = 0 for rangers using archery and rogues unsing throwing, and other modifiers like disciplines).<br />
+After that is a check for NPC damage modifiers (like gates mobs strong or weak against piercing ect). The NPC damage modifier is a separate check, because when a ranger shoots a mob with his bow, the damage is always reduced/increased by the same percent, whether the mob is moving or not.<br />
+Then the final damage check occurs where damage absorbance is taken into account.<br />
+<br />
+Another couple things that might be added on to really complicate it (or could be short-cutted by referring to functions not mentioned here) is damage resolution/effects from procs, and potential resists to them.  Also I think the agro assignment needs to be adjusted for procs (partial damage, full damage, resist, or effect takes place, and then make room for continuing agro from dot effects)<br />
+<br />
+I'm not good at writing like  Arathena, so hope he can just take what I said into account.<br />
+<br />
+From the top: Procs are possible on null swings. Please check the weapon proc rate thread in the library for parsing confirmation. Igneous was able to confirm several hundred events of time snap proccing without an associated melee attack. Out of range, invulnerable, etc targets are likely checked during attack resolution: A similar set of functions will exist in the spell engine, which would be called every time a proc is successful. These functions will ride herd on the proc in the same manner that they would upon a cast spell.<br />
+<br />
+Self attack does need accounted for - I'll stab at it soon.<br />
+<br />
+Each hand invokes the melee function on its own delay cycle: The information Damage and Damage bonus are likely sent to the damage tables for resolution, with offhand sending a bonus of 0 or Sinister strikes. As the only functional difference between the two is the damage bonus, no additional compensation is needed. <br />
+<br />
+For mob multi-attack: Can anyone verify mobs quadding with single hands? Mob Flurry appears to be a forced, delayless invocation of the full code, a whole main hand round plus kick/bash. I can't ever remember being flurried for more than a total of 8 hits: 6 hits, 2 kick/bashes. This also seems to behave as a proc of some sort. <br />
+<br />
+By placing the defensive skills in the hit resolution subfunction, we force a check of the defensive skills for every attack, and merging a defensive skill subfunction check back into the function becomes unneeded. I'm not certain that the differential between block and parry can be explained by check order: Going from checking 98% to 100% of incoming attacks against block is nowhere near sufficient to explain the vast superiority of block. I believe the difference is very literally in the success formula. <br />
+<br />
+Ranged attacks are very odd, and appear to use another set of coding: That damage is reported as non-melee from them is enough to make me want to treat archery and throwing elsewhere.<br />
+<br />
+As mentioned before, procs are 99% likely to call the spell engine: Why re-write the wheel?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">deadman1204</div><div class="date">06-27-2004, 05:30 PM</div></div><div class="posttext">im sure a rogue checked againts mobs that were strong and weak against peircing, thier damage would be altered by the same percent using a discipline or not. Take thier max bs, use duelist (doubles bs damage) and there will be a proportionate change. <br />
+It would actually be simpiler this way then the make a totally different and uneeded system for achery when the same system can account for all attack types. I only used arcerhy because the system is most trasnparant with it, due to the movement damage modifier.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kailyn</div><div class="date">06-27-2004, 07:51 PM</div></div><div class="posttext">Back to the stats for a sec: <br />
+<br />
+The likelyhood of 10 failures in a row with a 40.0% (0.400) rate of success is 0.0060 or 0.6%. (That would be 0.6^10.) Considering that the sample (at bats)  is small (only 450 trials) its not lilkely that you would find 10 failures in a row.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Remf da Troll</div><div class="date">06-28-2004, 01:42 PM</div></div><div class="posttext">Hola again-<br />
+<br />
+Ranged attacks are very odd, and appear to use another set of coding: That damage is reported as non-melee from them is enough to make me want to treat archery and throwing elsewhere.<br />
+<br />
+There's an easy way to test this, and I believe you are right by the way from some for-fun testing I've done in the past.  Equip a BFG main hand and compare parse to a similar 1h dmg/dly weapon.  I think you'll find that the BFG bypasses many of the target's defensive checks (i.e. riposte, damage shield, etc.).  Could be pretty uber for tanking unslowable fast and hard hitting mobs if you think about it a bit, espeicially one with a particularly evil proc.  Add in a killer DS and you can actually dish out some good dps too... tho holding aggro would be a chore.<br />
+<br />
+As to RNG wierdness, with the assumption that the RNG is significantly influenced by the seed &amp; that &quot;high = good&quot;.  The problem with analyzing RNG results is that the time between the samples can affect the outcome of the tests; at some time interval successive tests aren't independent anymore, and I believe (from observations of strings of crits by numerous toons during melee, or success at resisting/not resisting AEs) that the interval is a server &quot;tick&quot;, and the effect is presumably zone wide.  In other words, samples over long intervals should show the expected distribution, but samples within a small interval, or multiple samples at (nearly) the same time can be extremely &quot;streaky&quot;.  <br />
+<br />
+Or I could be imagining things. :)<br />
+<br />
+RdT.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

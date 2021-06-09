@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Le site du Cercle d Acier</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=">
+<META NAME="ROBOTS" CONTENT="INDEX,FOLLOW">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="revisit-after" content="5 days">
+<META NAME="distribution" content="Global">
+<META NAME="AUTHOR" CONTENT="Cercle d'Acier">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) by Cercle d'Acier">
+<META NAME="KEYWORDS" CONTENT="solution, solutions, portail, portails, generateur, générateur, nouveau, Nouveau, Technologie, technologie, npds, NPDS, Npds, nuke, Nuke, PHP-Nuke, phpnuke, php-nuke, nouvelle, Nouvelle, nouvelles, histoire, Histoire, histoires, article, Article, articles, Linux, linux, Windows, windows, logiciel, Logiciel, téléchargement, téléchargements, Téléchargement, Téléchargements, gratuit, Gratuit, Communauté, communauté, Forum, forum, Forums, forums, Bulletin, bulletin, application, Application, dynamique, Dynamique, PHP, Php, php, sondage, Sondage, Commentaire, commentaire, Commentaires, commentaires, annonce, annonces, petite, Petite, petite annonce, petites annonces, rubrique, Rubrique, rubriques, sujet, Sujet, sujets, critique, Critique, critiques, liste, Liste, liste, diffusion, Diffusion, mailling, mail, faq, Faq, faqs, lien, Lien, liens, france, francais, français, France, Francais, Français, libre, Libre, Open, open, Open Source, OpenSource, Opensource, opensource, open source, GNU, gnu, GPL, gpl, License, license, Unix, UNIX, unix, MySQL, mysql, SQL, sql, Database, DataBase, database, Red Hat, RedHat, red hat, Web Site, web site, site, sites, web, Web">
+<META NAME="DESCRIPTION" CONTENT="Fierte Force & Honneur">
+<META NAME="rating" content="General">
+<META NAME="GENERATOR" CONTENT="NPDS 4.8">
+<LINK REL="StyleSheet" HREF="themes/AnjaraStep/style/style.css" TYPE="text/css">
+<style type="text/css">@import url("themes/AnjaraStep/style/style.css"); </style><SCRIPT type="text/javascript">
+<!--
+function showimage() {
+if (!document.images)
+return
+document.images.avatar.src=
+'images/forum/avatar/' + document.Register.user_avatar.options[document.Register.user_avatar.selectedIndex].value
+}
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+<!--
+function openwindow(){
+ window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+//-->
+</SCRIPT>
+<SCRIPT type="text/javascript">
+
+function init() {
+
+}
+</SCRIPT>
+</head>
+
+
+<body onload=init() topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" bgcolor="#C6CCCF" text="#000000" link="#000000" vlink="#000000" alink="#000000">
+
+
+<TABLE cellpadding=0 cellspacing=0 width="100%" border="0">
+<td width="1%"><img src="themes/AnjaraStep/gfx/pixel.gif" width="1" height="1" border="0" ></td>
+<td valign=top width=92% align="center">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center"><tr valign=top>
+<td><img src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 border=0 alt="">
+
+</td></tr><tr><td>
+	    <table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/t1.gif" height="23" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/t2.gif" height="23" width="100%" align=left valign="middle"height=23 class="ctblanco">&nbsp;&nbsp;<B>Cercle d'Acier , Fierte Force & Honneur</B>&nbsp;</td>
+    	<td width="24"><img src="themes/AnjaraStep/gfx/f3.gif" height="23" border=0></td>
+		</tr>
+    	</table>
+		
+		
+	<table bgcolor="#000000" border=0 cellpadding=1 cellspacing=0 bgcolor=ffffff width="100%">
+	<tr>
+	<td valign=top>
+		<table border=0 cellpadding=0 cellspacing=0 bgcolor="#263b45" width="100%">
+		<tr>
+		<td width=100% height=70><a href="index.php"><img src="themes/AnjaraStep/gfx/logo.gif" border=0 Alt=Bienvenue sur Cercle d'Acier"></a></td>
+		<td></td>
+		</tr>
+		</table>
+		<table border=0 cellpadding=0 cellspacing=0 bgcolor="#263b45" width="100%">
+		<tr>
+		<td height="1" width="100%" bgcolor="#000000"><img src="themes/AnjaraStep/gfx/pix.gif" height="1"></td>
+		</tr>
+		<tr><td nowrap class=ctblanco align=center>3 visiteur(s) et 0 membre(s) en ligne.</td>
+		<td bgcolor="#5C5C5C" width='100%' height='30' valign='middle' align='right'>	
+		
+			<table align=right>
+			<tr>
+			<td>			
+				<form action="search.php" method=post>
+				<TABLE cellpadding=0 cellspacing=0 border="0" align="left">
+				<td align=center class=ctblanco nowrap>
+				Recherche
+				<input type=text style='border: solid 1px #000000; background : Silver' name=query size="14">
+				</TD>
+				</tr>
+				</table>
+				</form>
+			</td>
+			<td>		
+				<form action="search.php" method=get>
+				<TABLE cellpadding=0 cellspacing=0 border="0" align="left">
+				<tr>
+				<td align=center valign=middle class=ctblanco nowrap>&nbsp;&nbsp;
+				Sujet <SELECT class='ctnegro' style='border: solid 1px #000000; background : #DDDDDD' NAME="topic"onChange='submit()'><OPTION VALUE="">Tous les Sujets</option>
+<option  value="55">Aventures</option>
+<option  value="53">Festivités</option>
+<option  value="35">Général</option>
+<option  value="52">Problèmes techniques</option>
+<option  value="54">sortileges</option>
+<option  value="51">Techniques de jeu</option>
+
+				</select>
+				</td>
+				</tr>
+				</table>
+				</form>
+			</td>
+			
+
+			</tr>
+			</table>
+		
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+		
+		
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/c1.gif" height="7" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/c2.gif" height="7" width="100%" align=left valign="middle"height=23 class="tblanco"></td>
+    	<td width="165"><img src="themes/AnjaraStep/gfx/c3.gif" height="7" border=0></td>
+		</tr>
+		</table>
+		
+		
+</td></tr><tr><td><table width=100% cellpadding=0 cellspacing=0 border=0 align=center><tr><td>
+        <table border=1 cellpadding=0 cellspacing=0 valign=middle>
+        <tr>
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='index.php'" onmouseover="this.style.cursor='hand';">
+        <a href="index.php"><img src="themes/AnjaraStep/gfx/bar/home.gif" border="0" Alt="Accueil "></a>
+        </td>
+
+
+
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='submit.php'" onmouseover="this.style.cursor='hand';">
+        <a href="submit.php"><img src="themes/AnjaraStep/gfx/bar/submit.gif" border="0" Alt="Soumettre un article "></a>
+        </td>
+
+
+
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='user.php'" onmouseover="this.style.cursor='hand';">
+        <a href="user.php"><img src="themes/AnjaraStep/gfx/bar/user.gif" border="0" Alt="Votre compte "></a>
+        </td>
+
+
+
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='forum.php'" onmouseover="this.style.cursor='hand';">
+        <a href="forum.php"><img src="themes/AnjaraStep/gfx/bar/forum.gif" border="0" Alt="Forums "></a>
+        </td>
+
+
+
+       
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='download.php'" onmouseover="this.style.cursor='hand';">
+        <a href="download.php"><img src="themes/AnjaraStep/gfx/bar/download.gif" border="0" Alt="Téléchargements "></a>
+        </td>
+
+
+
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='links.php'" onmouseover="this.style.cursor='hand';">
+        <a href="links.php"><img src="themes/AnjaraStep/gfx/bar/links.gif" border="0" Alt="Liens "></a>
+        </td>
+
+
+
+        <td width="40" height="40" align=center valign=middle background="themes/AnjaraStep/gfx/tile.gif" onclick="location.href='memberslist.php'" onmouseover="this.style.cursor='hand';">
+        <a href="memberslist.php"><img src="themes/AnjaraStep/gfx/bar/memberslist.gif" border="0" Alt="Annuaire "></a>
+        </td>
+
+
+        </tr>
+        </table>
+
+</td><td>
+<table border=0 cellpadding=0 cellspacing=2 width=100%><tr><td nowrap><b><font face=Arial size=2>
+
+    &nbsp;&nbsp;<font color="#363636"><a href="user.php">Créer</a> un compte Utilisateur</font>
+
+
+
+    </b></td>
+    <td nowrap align=right><font face=Arial size=2><b><script language=JavaScript>
+      <!--   // Array ofmonth Names
+      var monthNames = new Array( "Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre");
+      var dayNames = new Array( "Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
+      var now = new Date();
+      thisYear = now.getYear();
+      if(thisYear < 1900) {thisYear += 1900}; // corrections if Y2K display problem
+      document.write(dayNames[now.getDay()]+ " " +now.getDate() + " " + monthNames[now.getMonth()] + " " + thisYear);
+      // -->
+   </script></b></td></tr></table>
+
+</td>
+</tr>
+</table>
+<br>
+</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" valign=top>
+<tr valign=top>
+<td width=170>
+
+
+    	<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/t1.gif" height="23" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/t2.gif" height="23" width="100%" align=left valign="middle"height=23><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td width="164"><img src="themes/AnjaraStep/gfx/t3.gif" height="23" border=0></td>
+		</tr>
+		</table>		
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+		<td width="2"><img src="themes/AnjaraStep/gfx/e1.gif" height="19" width="2"></td>
+    	<td background="themes/AnjaraStep/gfx/e2.gif" height="19"><img src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1></td>
+		<td height="19" width="166" class="ctblanco" valign="middle" background="themes/AnjaraStep/gfx/e3.gif"><b>&nbsp;&nbsp;Menu</b></td>	
+		</tr> 
+		</table>		
+		<table border=0 cellpadding=1 cellspacing=0 bgcolor=000000 width=100%>
+		<tr valign=top>
+		<td align=right>
+			<table bgcolor=dddddd width="100%" border="0" cellpadding=0 cellspacing=0>
+			<tr>
+			<td width=10></td>
+			<td class=ctnegro><br><li><a href=index.php?op=index.php>Nouvelles</a><br />
+<li><a href=forum.php>Forums</a><br />
+<li><a href="http://www.cercledacier.net/tchat/chat/index.php3" target="_blank">Chat</a><br />
+<li><a href="calendar.php">Agenda</a><br />
+<li><a href="./galerie/index.htm" target="_blank">Screenshoots</a><br />
+<li><a href=links.php>Liens Web</a><br />
+<li><a href=download.php>Downloads</a><br />
+<li><a href=static.php?op=statik.txt&npds=1>Charte</a><br />
+<li><a href=roster.php>Liste des membres</a><br />
+<li><a href=static.php?op=server.txt&npds=1>Etat du serveur</a><br />
+<li><a href=faq.php>FAQ</a><br />
+<br />
+<li><a href=http://www.cercledacier.net/static.php?op=recrut.txt&npds=1>Le cercle recrute</a><br />
+<br />
+<li><a href=friend.php>Faire notre pub</a><br />
+<li><a href=memberslist.php>Annuaire</a><br />
+<li><a href=user.php>Votre compte</a><br />
+<li><a href=submit.php>Nouvel article</a><br />
+<br />
+<li><a href=admin.php>Administration</a><br />
+<br />
+<li><a href=stats.php>Stats</a><br />
+<li><a href=top.php>Top 10</a><p></p></td>
+			<td width=10></td>
+			</tr>
+			</table>		
+		</td>
+		</tr>
+		</table>
+
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/c1.gif" height="7" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/c2.gif" height="7" width="100%" align=left valign="middle"height=23 class="tblanco"></td>
+    	<td width="165"><img src="themes/AnjaraStep/gfx/c3.gif" height="7" border=0></td>
+		</tr>
+		</table>
+		
+		<table border=0 cellpadding=0 cellspacing=0 width="170">
+		<tr>
+		<td><img src="themes/AnjaraStep/gfx/pixel.gif" width=170 height=1></td>
+		</tr>
+    	</table>
+
+	<br>
+
+
+
+
+    	<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/t1.gif" height="23" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/t2.gif" height="23" width="100%" align=left valign="middle"height=23><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td width="164"><img src="themes/AnjaraStep/gfx/t3.gif" height="23" border=0></td>
+		</tr>
+		</table>		
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+		<td width="2"><img src="themes/AnjaraStep/gfx/e1.gif" height="19" width="2"></td>
+    	<td background="themes/AnjaraStep/gfx/e2.gif" height="19"><img src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1></td>
+		<td height="19" width="166" class="ctblanco" valign="middle" background="themes/AnjaraStep/gfx/e3.gif"><b>&nbsp;&nbsp;Forums Infos</b></td>	
+		</tr> 
+		</table>		
+		<table border=0 cellpadding=1 cellspacing=0 bgcolor=000000 width=100%>
+		<tr valign=top>
+		<td align=right>
+			<table bgcolor=dddddd width="100%" border="0" cellpadding=0 cellspacing=0>
+			<tr>
+			<td width=10></td>
+			<td class=ctnegro><br><table><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=2 alt="On y parle de tout et de rien" title="On y parle de tout et de rien">Général</a> (228)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=3 alt="Idéal pour les auteurs en herbes. Vous pouvez y mettre votre histoire, vos légendes et y conter vos aventures. " title="Idéal pour les auteurs en herbes. Vous pouvez y mettre votre histoire, vos légendes et y conter vos aventures. ">Roleplaying</a> (26)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=4 alt="Si vous voulez faire des tests faites les ici, comme ca on ne polluera pas les autres forums. " title="Si vous voulez faire des tests faites les ici, comme ca on ne polluera pas les autres forums. ">Test</a> (38)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=56 alt="Le suivi du dossier des futures jeunes recrues " title="Le suivi du dossier des futures jeunes recrues ">Candidatures</a> (18)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=6 alt="Toutes vos astuces, trucs et quêtes" title="Toutes vos astuces, trucs et quêtes">Astuces</a> (34)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=7 alt="Le forum général des membres" title="Le forum général des membres">Général</a> (251)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=35 alt="L'etat de nos rotations" title="L'etat de nos rotations">KGC</a> (3)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=9 alt="La banque du cercle" title="La banque du cercle">Banque</a> (18)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=34 alt="Pour mettre en place vos sorties" title="Pour mettre en place vos sorties">Evenements</a> (111)</font></td></tr><tr><td colspan=2>-: <font face="Verdana, Arial, Helvetica" size=1><a href=viewforum.php?forum=33 alt="Le forum des charlatants" title="Le forum des charlatants">Casters</a> (16)</font></td></tr></table><p></p></td>
+			<td width=10></td>
+			</tr>
+			</table>		
+		</td>
+		</tr>
+		</table>
+
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/c1.gif" height="7" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/c2.gif" height="7" width="100%" align=left valign="middle"height=23 class="tblanco"></td>
+    	<td width="165"><img src="themes/AnjaraStep/gfx/c3.gif" height="7" border=0></td>
+		</tr>
+		</table>
+		
+		<table border=0 cellpadding=0 cellspacing=0 width="170">
+		<tr>
+		<td><img src="themes/AnjaraStep/gfx/pixel.gif" width=170 height=1></td>
+		</tr>
+    	</table>
+
+	<br>
+
+
+
+
+    	<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/t1.gif" height="23" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/t2.gif" height="23" width="100%" align=left valign="middle"height=23><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td width="164"><img src="themes/AnjaraStep/gfx/t3.gif" height="23" border=0></td>
+		</tr>
+		</table>		
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+		<td width="2"><img src="themes/AnjaraStep/gfx/e1.gif" height="19" width="2"></td>
+    	<td background="themes/AnjaraStep/gfx/e2.gif" height="19"><img src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1></td>
+		<td height="19" width="166" class="ctblanco" valign="middle" background="themes/AnjaraStep/gfx/e3.gif"><b>&nbsp;&nbsp;Fichiers les plus téléchargés</b></td>	
+		</tr> 
+		</table>		
+		<table border=0 cellpadding=1 cellspacing=0 bgcolor=000000 width=100%>
+		<tr valign=top>
+		<td align=right>
+			<table bgcolor=dddddd width="100%" border="0" cellpadding=0 cellspacing=0>
+			<tr>
+			<td width=10></td>
+			<td class=ctnegro><br><font face="Verdana, Arial, Helvetica" size=1><li>1: <a href="download.php?op=geninfo&did=10" title="( 166 )" alt="( 166 )">The Compendium</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>2: <a href="download.php?op=geninfo&did=4" title="( 115 )" alt="( 115 )">Clavier Francais</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>3: <a href="download.php?op=geninfo&did=12" title="( 100 )" alt="( 100 )">Video de Nice</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>4: <a href="download.php?op=geninfo&did=1" title="( 96 )" alt="( 96 )">EQu</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>5: <a href="download.php?op=geninfo&did=9" title="( 87 )" alt="( 87 )">EQ Caster</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>6: <a href="download.php?op=geninfo&did=18" title="( 78 )" alt="( 78 )">Video d'Aix en Provence</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>7: <a href="download.php?op=geninfo&did=3" title="( 77 )" alt="( 77 )">Everamp</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>8: <a href="download.php?op=geninfo&did=8" title="( 72 )" alt="( 72 )">EQ Option</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>9: <a href="download.php?op=geninfo&did=17" title="( 58 )" alt="( 58 )">Guide de Plane of Hate</a></li></font><font face="Verdana, Arial, Helvetica" size=1><li>10: <a href="download.php?op=geninfo&did=2" title="( 48 )" alt="( 48 )">EQ Server Scan</a></li></font><p></p></td>
+			<td width=10></td>
+			</tr>
+			</table>		
+		</td>
+		</tr>
+		</table>
+
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/c1.gif" height="7" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/c2.gif" height="7" width="100%" align=left valign="middle"height=23 class="tblanco"></td>
+    	<td width="165"><img src="themes/AnjaraStep/gfx/c3.gif" height="7" border=0></td>
+		</tr>
+		</table>
+		
+		<table border=0 cellpadding=0 cellspacing=0 width="170">
+		<tr>
+		<td><img src="themes/AnjaraStep/gfx/pixel.gif" width=170 height=1></td>
+		</tr>
+    	</table>
+
+	<br>
+
+
+
+
+    	<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/t1.gif" height="23" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/t2.gif" height="23" width="100%" align=left valign="middle"height=23><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td width="164"><img src="themes/AnjaraStep/gfx/t3.gif" height="23" border=0></td>
+		</tr>
+		</table>		
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+		<td width="2"><img src="themes/AnjaraStep/gfx/e1.gif" height="19" width="2"></td>
+    	<td background="themes/AnjaraStep/gfx/e2.gif" height="19"><img src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1></td>
+		<td height="19" width="166" class="ctblanco" valign="middle" background="themes/AnjaraStep/gfx/e3.gif"><b>&nbsp;&nbsp;Activité du Site</b></td>	
+		</tr> 
+		</table>		
+		<table border=0 cellpadding=1 cellspacing=0 bgcolor=000000 width=100%>
+		<tr valign=top>
+		<td align=right>
+			<table bgcolor=dddddd width="100%" border="0" cellpadding=0 cellspacing=0>
+			<tr>
+			<td width=10></td>
+			<td class=ctnegro><br><font size=1><center>Pages vues depuis <br>2001 : <b>275683</b></center></font><hr width=80%>
+    <li><font size=1>Nb de membres : <b>132</b></font></li>
+    <li><font size=1>Nb d'articles : <b>121</b></font></li>
+    <li><font size=1>Nb de forums : <b>14</b></font></li>
+    <li><font size=1>Nb de sujets : <b>6</b></font></li>
+    <li><font size=1>Nb de critiques : <b>0</b></font></li>
+
+    <hr width=90%><center><font size=1><a href=top.php>Top 10</a><br><a href=stats.php>Statistiques</a></font></center></font><p></p></td>
+			<td width=10></td>
+			</tr>
+			</table>		
+		</td>
+		</tr>
+		</table>
+
+		<table border=0 cellpadding=0 cellspacing=0 width="100%">
+		<tr>
+    	<td background="themes/AnjaraStep/gfx/c1.gif" height="7" width="2"><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=2 height=1 alt="" border=0><IMG src="themes/AnjaraStep/gfx/pixel.gif" width=1 height=1 alt="" border=0></td>
+    	<td background="themes/AnjaraStep/gfx/c2.gif" height="7" width="100%" align=left valign="middle"height=23 class="tblanco"></td>
+    	<td width="165"><img src="themes/AnjaraStep/gfx/c3.gif" height="7" border=0></td>
+		</tr>
+		</table>
+		
+		<table border=0 cellpadding=0 cellspacing=0 width="170">
+		<tr>
+		<td><img src="themes/AnjaraStep/gfx/pixel.gif" width=170 height=1></td>
+		</tr>
+    	</table>
+
+	<br>
+
+
+
+</td>
+<td width=3%><img src="themes/AnjaraStep/gfx/pixel.gif" height=1 border=0></td>
+<td width="94%" valign=top>
+<br><br><br><br><center><table cellspacing="1" cellpadding="1" border="0" bgcolor="#497487">
+<tr class="smalltexte" bgcolor="#DDDDDD"><td colspan="8"><b>Mardi 02 Juillet 2002</b> : (<a href="calendar.php?c_jour=02&c_mois=07&c_annee=2002">Revenir &agrave; aujourd'hui</a>)</td></tr>
+<tr class="smalltexte" bgcolor="#C6CCCF"><td align="center" bgcolor="#C6CCCF"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2002">2002</a></td><td align="center"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2003">2003</a></td><td align="center"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2004">2004</a></td><td align="center"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2005">2005</a></td><td align="center"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2006">2006</a></td><td align="center"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2007">2007</a></td><td align="center"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2008">2008</a></td><td bgcolor="#C6CCCF" rowspan="9" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=1&c_annee=2002">Janvier</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=2&c_annee=2002">F&eacute;vrier</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=3&c_annee=2002">Mars</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=4&c_annee=2002">Avril</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=5&c_annee=2002">Mai</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=6&c_annee=2002">Juin</a></td></tr><tr bgcolor="#C6CCCF" class="smalltexte"><td width="70"><a href="calendar.php?c_jour=02&c_mois=7&c_annee=2002">Juillet</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=8&c_annee=2002">Ao&ucirc;t</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=9&c_annee=2002">Septembre</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=10&c_annee=2002">Octobre</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=11&c_annee=2002">Novembre</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td width="70"><a href="calendar.php?c_jour=02&c_mois=12&c_annee=2002">D&eacute;cembre</a></td></tr></table></td></tr>
+<tr class="smalltexte" bgcolor="#DDDDDD"><td align="center" width="65">Lundi</td><td align="center" width="65">Mardi</td><td align="center" width="65">Mercredi</td><td align="center" width="65">Jeudi</td><td align="center" width="65">Vendredi</td><td align="center" width="65">Samedi</td><td align="center" width="65">Dimanche</td></tr>
+<tr class="smalltexte" bgcolor="#C6CCCF"><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=1&c_mois=7&c_annee=2002">1</a></td><td align="center" bgcolor="#C6CCCF"><a href="calendar.php?c_jour=2&c_mois=7&c_annee=2002">2</a></td><td align="center"><a href="calendar.php?c_jour=3&c_mois=7&c_annee=2002">3</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=4&c_mois=7&c_annee=2002">4</a></td><td align="center"><a href="calendar.php?c_jour=5&c_mois=7&c_annee=2002">5</a></td><td align="center"><a href="calendar.php?c_jour=6&c_mois=7&c_annee=2002">6</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=7&c_mois=7&c_annee=2002">7</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td align="center"><a href="calendar.php?c_jour=8&c_mois=7&c_annee=2002">8</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=9&c_mois=7&c_annee=2002">9</a></td><td align="center"><a href="calendar.php?c_jour=10&c_mois=7&c_annee=2002">10</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=11&c_mois=7&c_annee=2002">11</a></td><td align="center"><a href="calendar.php?c_jour=12&c_mois=7&c_annee=2002">12</a></td><td align="center"><a href="calendar.php?c_jour=13&c_mois=7&c_annee=2002">13</a></td><td align="center"><a href="calendar.php?c_jour=14&c_mois=7&c_annee=2002">14</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td align="center"><a href="calendar.php?c_jour=15&c_mois=7&c_annee=2002">15</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=16&c_mois=7&c_annee=2002">16</a></td><td align="center"><a href="calendar.php?c_jour=17&c_mois=7&c_annee=2002">17</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=18&c_mois=7&c_annee=2002">18</a></td><td align="center"><a href="calendar.php?c_jour=19&c_mois=7&c_annee=2002">19</a></td><td align="center"><a href="calendar.php?c_jour=20&c_mois=7&c_annee=2002">20</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=21&c_mois=7&c_annee=2002">21</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td align="center"><a href="calendar.php?c_jour=22&c_mois=7&c_annee=2002">22</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=23&c_mois=7&c_annee=2002">23</a></td><td align="center"><a href="calendar.php?c_jour=24&c_mois=7&c_annee=2002">24</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=25&c_mois=7&c_annee=2002">25</a></td><td align="center"><a href="calendar.php?c_jour=26&c_mois=7&c_annee=2002">26</a></td><td align="center"><a href="calendar.php?c_jour=27&c_mois=7&c_annee=2002">27</a></td><td align="center"><a href="calendar.php?c_jour=28&c_mois=7&c_annee=2002">28</a></td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td align="center"><a href="calendar.php?c_jour=29&c_mois=7&c_annee=2002">29</a></td><td align="center" bgcolor="#DDDDDD"><a href="calendar.php?c_jour=30&c_mois=7&c_annee=2002">30</a></td><td align="center"><a href="calendar.php?c_jour=31&c_mois=7&c_annee=2002">31</a></td><td bgcolor="#DDDDDD">&nbsp;</td><td bgcolor="#DDDDDD">&nbsp;</td><td bgcolor="#DDDDDD">&nbsp;</td><td bgcolor="#DDDDDD">&nbsp;</td></tr><tr class="smalltexte" bgcolor="#C6CCCF"><td align="right" colspan="7" valign="bottom">Jour <a href="calendar.php?c_jour=1&c_mois=7&c_annee=2002">pr&eacute;c&eacute;dent</a> / <a href="calendar.php?c_jour=3&c_mois=7&c_annee=2002">suivant</a>&nbsp;<br><a href="calendar.php?c_jour=18&c_mois=6&c_annee=2002">-14 jours</a> / <a href="calendar.php?c_jour=16&c_mois=7&c_annee=2002">+14 jours</a>&nbsp;<br>Mois <a href="calendar.php?c_jour=02&c_mois=6&c_annee=2002">pr&eacute;c&eacute;dent</a> / <a href="calendar.php?c_jour=02&c_mois=8&c_annee=2002">suivant</a>&nbsp;</td></tr>
+</table><img src="invisible.gif" width="10" height="10"><table cellspacing="1" cellpadding="0" border="0" bgcolor="#497487"><tr><td bgcolor="#C6CCCF"><table cellspacing="0" cellpadding="2" border="0" bgcolor="#C6CCCF"><tr class="smalltexte" bgcolor="#DDDDDD"><form method="post" action="calendar.php">
+<input type="hidden" name="c_action" value="Modifier">
+<input type="hidden" name="c_jour" value="02">
+<input type="hidden" name="c_mois" value="7">
+<input type="hidden" name="c_annee" value="2002">
+<input type="hidden" name="c_id" value="90"><td><input type="text" name="c_value" value="Epic Monk, Lavastorm 20h30" size="82"> <input type="submit" name="c_action" value="Modifier"> <input type="submit" name="c_action" value="Effacer"></td></form></tr></table></td></tr></table><img src="invisible.gif" width="10" height="10"><table cellspacing="1" cellpadding="1" border="0" bgcolor="#497487">
+<tr class="smalltexte" bgcolor="#C6CCCF"><form method="post" action="calendar.php">
+<input type="hidden" name="c_action" value="Enregistrer">
+<input type="hidden" name="c_jour" value="02">
+<input type="hidden" name="c_mois" value="7">
+<input type="hidden" name="c_annee" value="2002"><td><input type="text" name="c_value" size="89"> <input type="submit" name="c_action" value="Enregistrer"></td></form></tr>
+</table></center><img src="invisible.gif" width="10" height="10"><table cellspacing="1" cellpadding="1" border="0" bgcolor="#497487" width="100%">
+<tr bgcolor="#DDDDDD" align="right" class="texte"><td><i><a href="http://www.france-jeunes.net" target="_blank">Calendrier v.1 is a France-jeunes Technology</a></i></td></tr>
+</table>
+
+</td></tr></table></td><td width=1%><img src=themes/AnjaraStep/gfx/pixel.gif width=1 height=1 border=0></td></tr></table>
+<br>
+
+    <center><font size=1>
+
+    Tous les Logos et Marques sont déposés, les commentaires sont sous la responsabilité de ceux qui les ont publiés, le reste lulvaran@cercledacier.net<br>
+
+    Ce site a été construit avec <a href=http://www.npds.org>NPDS</a>, un système de portail écrit en PHP. Ce logiciel est sous <a href=http://www.gnu.org>GNU/GPL license</a>.<br>
+
+    <br>
+
+    
+
+    </font></center>
+
+    
+    </body>
+
+    </html>

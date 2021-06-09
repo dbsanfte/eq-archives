@@ -1,0 +1,3966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>The Steel Warrior - ATK parsing and analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.0" />
+<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,everquest,steel warrior,warrior,steelwarrior,thesteelwarrior,the steel warrior,warriors,call of heroes,worlds of warcraft,coh,wow" />
+<meta name="description" content="The Steel Warrior - EverQuest Warrior Messageboards" />
+<script src="/__utm.js" type="text/javascript"></script>
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Tren_Z Full Width' (styleid: 6) */
+body
+{
+	background: #232D35 url(tren_z/misc/t_back.gif);
+	color: #CCCCCC;
+	font: 8pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	MARGIN-TOP: 0px;
+	MARGIN-BOTTOM: 0px;
+	MARGIN-LEFT: 0px;
+	MARGIN-RIGHT: 0px;	
+	
+	
+}
+a:link
+{
+	color: #CCCCCC;
+}
+a:visited
+{
+	color: #CCCCCC;
+}
+a:hover, a:active
+{
+	color: #F3F3F3;
+}
+.page
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+}
+td, th, p, li
+{
+	font: 8pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #131619;
+	color: #CCCCCC;
+}
+.tcat
+{
+	background: #192126 url(tren_z/misc/cat_back.gif) repeat-x top left;
+	color: #E3E3E3;
+	font: bold 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #E3E3E3;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #E3E3E3;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #E3E3E3;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #2F3E49 url(tren_z/misc/tren_z_front_table_back.gif) repeat-x top left;
+	color: #CCCCCC;
+	font: bold 10px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #CCCCCC;
+}
+.thead a:visited
+{
+	color: #CCCCCC;
+}
+.thead a:hover, .thead a:active
+{
+	color: #CCCCCC;
+}
+.tfoot
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+}
+.tfoot a:link
+{
+	color: #CCCCCC;
+}
+.tfoot a:visited
+{
+	color: #CCCCCC;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #CCCCCC;
+}
+.alt1, .alt1Active
+{
+	background-color: #27323B;
+	color: #CCCCCC;
+}
+.alt2, .alt2Active
+{
+	background-color: #242F37;
+	color: #CCCCCC;
+}
+.alt3
+{
+	background-color: #D5D8E5;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+	font: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	border: 1px solid #131619;
+}
+textarea, .bginput
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+	font: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	background-color: #232D35;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	border-top: 1px solid #181B16;
+	border-right: 3px solid #181B16;
+	border-left: 1px solid #181B16;
+	border-bottom: 3px solid #181B16;
+}
+select
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	color: #CCCCCC;
+	font: 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #FFFFFF;
+}
+.navbar
+{
+	color: #CCCCCC;
+	font: 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #CCFF00;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #192228;
+	color: #CCCCCC;
+}
+.fjdpth0
+{
+	background-color: #192228;
+	color: #CCCCCC;
+}
+.panel
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+	padding: 10px;
+	border: 2px solid #131619;
+}
+.panelsurround
+{
+	background-color: #232D35;
+	color: #CCCCCC;
+	border: 1px solid #131619;
+}
+legend
+{
+	color: #FFFFFF;
+	font: 10px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #192228;
+	color: #CCCCCC;
+	font: bold 10px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #CCCCCC;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #192228;
+	color: #CCCCCC;
+	border: 1px solid #131619;
+	text-align: left;
+}
+.vbmenu_option
+{
+	background-color: #34424C;
+	color: #F1F1F1;
+	font: 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+	border: 1px solid #131619;
+}
+.vbmenu_option a:link
+{
+	color: #F1F1F1;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #F1F1F1;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #768F9F;
+	color: #101A21;
+	font: 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+	border: 1px solid #131619;
+}
+.vbmenu_hilite a:link
+{
+	color: #101A21;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #101A21;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #101A21;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 11pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { 
+margin-bottom: 6px; 
+border: 2px solid #131619;
+}
+.fieldset, .fieldset td, .fieldset p, .fieldset li {font-size: 11px;}
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+
+Table.border {
+border-left: 2px #131619 solid;
+border-right: 2px #131619 solid;
+border-bottom: 2px #131619 solid;
+}
+
+.info {
+padding-left: 3px;
+padding-right: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+background-color: #192126;
+border-top: 1px solid #181B16;
+border-right: 2px solid #181B16;
+border-left: 1px solid #181B16;
+border-bottom: 2px solid #181B16;
+margin-bottom: 3px;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;";
+var IMGDIR_MISC = "http://www.thesteelwarrior.org/forum/images/tren_z/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="clientscript/vbulletin_global.js"></script>
+
+
+</head>
+<body onload="">
+<!-- begin tren_z header-->
+<div align="center">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="border">
+<tr>
+  <td align="left" valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr> 
+    <td width="469" height="137" align="left" valign="top"><a href="http://www.thesteelwarrior.org"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_top_ls.jpg" width="469" height="137" border="0" alt="" /></a></td>
+    <td width="100%" height="137" align="left" valign="top" style="background-image: url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_top_back.jpg)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_top_back.jpg" width="100%" height="137" alt="" /></td>
+    <td width="40" height="137" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_rs.jpg" width="40" height="137" alt="" /></td>
+  </tr>
+</table>	
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+	<td width="150" height="22" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_btm_forum_name.gif" width="150" height="22" alt="" /></td>
+	<td width="100%" height="22" align="left" valign="top" style="background-image: url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_bot_expand.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_bot_expand.gif" width="100%" height="22"  alt="" /></td>
+    <td width="77" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/index.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_home.gif" width="77" height="22" alt="" border="0" /></a></td>
+	<td width="70" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/usercp.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_cp.gif" width="70" height="22" alt="" border="0" /></a></td>
+	
+	<td width="70" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/register.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;action=signup"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_register.gif" width="70" height="22" alt="" border="0" /></a></td>
+	
+	<td width="70" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/arcade.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_arcade.gif" width="70" height="22" alt="" border="0" /></a></td>
+	<td width="71" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/calendar.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_calendar.gif" width="71" height="22" alt="" border="0" /></a></td>
+	<td width="70" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/memberlist.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_members.gif" width="70" height="22" alt="" border="0" /></a></td>
+	<td width="72" height="22" align="left" valign="top"><a href="http://www.thesteelwarrior.org/forum/faq.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_faq.gif" width="72" height="22" alt="" border="0" /></a></td>
+	<td width="74" height="22" align="left" valign="top"  id="navbar_search"><a href="http://www.thesteelwarrior.org/forum/search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_header_search.gif" width="74" height="22" alt="" border="0" /></a><script type="text/javascript"> vbmenu_register("navbar_search" ,1); </script></td>
+	</tr>	
+</table>
+<!-- end tren_z header-->
+<br>
+
+<!-- begin main inner table area-->
+<!-- content table -->
+<table bgcolor="#232D35" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+  <td>
+
+
+
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Are you sure you want to log out?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+<br />
+
+
+
+
+
+
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" align="center">&nbsp;
+	</td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End top category table setup -->
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="#" onclick="history.back(1)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/navbits_start.gif" alt="Go Back" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="index.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;">The Steel Warrior</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;f=1">The Steel Warrior - EverQuest</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;f=2">The Arena</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/forum/showthread.php?s=&amp;threadid=5058"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/navbits_finallink.gif" alt="Reload this Page" border="0" /></a> <strong>
+	ATK parsing and analysis
+
+</strong></td>
+			</tr>
+			</table>			
+		
+	</td>	
+	
+	
+		
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+			
+		<!-- login form -->
+		<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont">User Name</td>
+			<td><input type="text" class="button" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="1" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" colspan="2" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" /></td>
+			<td><input type="submit" class="button" value="Log in" tabindex="4" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="6d9634b0bcbbd9cd4a4b2288052e1dce" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />			
+		<input type="hidden" name="vb_login_md5password" />
+		</form>
+		<!-- / login form -->
+			
+		</td>
+		
+		
+	
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+   	
+	<br />
+	<!-- guest welcome message -->
+	   <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+
+	<tr>
+		<td class="tcat" colspan="6">Welcome to the The Steel Warrior.</td>
+	</tr>
+	<tr>
+		<td class="alt1" colspan="6">
+			If this is your first visit, be sure to check out the <a href="faq.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;"><strong>FAQ</strong></a> by clicking the link above.
+You may have to <a href="register.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;"><strong>register</strong></a> before you can post: click the register link above to proceed.
+To start viewing messages, select the forum that you want to visit from the selection below.
+		</td>
+	</tr></table>
+	<!-- / guest welcome message -->
+	
+
+
+<br />
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+	
+		<td class="smallfont"><a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;noquote=1&amp;p=71956"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply.gif" alt="Reply" border="0" /></a></td>
+		
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/multipage.gif" alt="Showing results 1 to 15 of 17 (2 pages)" /> -->Page 1 of 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 15 of 17"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058&amp;page=2&amp;pp=15" title="Show results 16 to 17 of 17">2</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058&amp;page=2&amp;pp=15" title="Next Page - Results 16 to 17 of 17">&gt;</a></td>
+	
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools">
+		<a href="#goto_threadtools">Thread Tools</a>
+		
+	</td>
+	
+	
+	
+</tr>
+</table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+<div id="posts"><!-- post #71956 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong>ATK parsing and analysis</strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post71956"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-04-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=71956&amp;postcount=1" target="new"><strong>1</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_71956">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=566"><div style="font-size:14pt; width:140px;"> Daemonwynd</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_71956", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=566"><img src="images/avatars/0/yinyang.gif" alt="Daemonwynd's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+
+
+<font color="#FF7800"><strong>Online</strong></font>:
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				<div class="info">Location: Calgary, Canada</div>
+				<div class="info">Guild: Sojourners</a></div>
+				<div class="info">Server: Brell Serilis</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=256610&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 852 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>ATK parsing and analysis</strong>
+			</div>
+			<hr size="1" style="color:#131619" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div><a href="http://www.eqbeastlord.com/forums/viewtopic.php?t=10317" target="_blank">http://www.eqbeastlord.com/forums/viewtopic.php?t=10317</a><br />
+<br />
+Interesting read.<br />
+<br />
+Text as follows:<br />
+<br />
+1. Intoduction <br />
+<br />
+Since SOE is trying to lure me back into playing EQ by giving me a free 14 day trial subscription I decided to use that time doing some parses i've always wanted to do on the effects of ATK rating on melee dps. Not the actual value of my dps, but rather its effect on the two main factors that make up melee dps, average damage per hit and the hit ratio. For the latter it has been known some time that strength and pure attack buffs have no effect on it, but i've seen several posts recently of people that didn't know/believe this. Plus, it never hurts to check this these things because you never know if SOE have changed the underlying mechanics since the last investigation. <br />
+The effect of ATK rating on the average damage per hit is more complex. A good description of it would considerably help with making theoretical dps predictions for weapon comparisons, understanding the effects of lower 1HB, 2HB and piercing skill caps, and buff/focus effects. <br />
+<br />
+The results presented here are by no means all-conclusive, for one they've been done against just one mob, a green con at that (the Katta banker), but sensible conclusions can still be drawn from them regarding more realistic, in-game situations. <br />
+<br />
+<br />
+2. Theoretical background <br />
+<br />
+It's long been thought that ATK is actually the sum of two separate numbers, one representing a 'to hit' rating and one representing a 'damage' rating. The 'to hit' rating is determined by the offensive skills only, buffs have no effect on it. Once the weapon skills are capped there is no way to vary this part of the ATK rating except thru skill modifiers. <br />
+There are two formulas i will refer to later on. The general formula for the melee dps of a weapon is <br />
+<br />
+melee dps = swings/sec * Hit ratio * average dmg/hit. (equation 1) <br />
+<br />
+The average damage/hit itself can be represented as <br />
+<br />
+average damage/hit = n(ATK) * base damage + damage bonus. (equation 2) <br />
+<br />
+Base damage and damage bonus are weapon- and level-dependent. With weapon skills at the cap, the ATK rating enters into dps only thru the multiplier n. The relation between n and ATK is the main focus of this investigation. <br />
+Swings/sec can be easily calculated. <br />
+<br />
+<br />
+3. Parse set-up and details <br />
+<br />
+All parses were done with my Lvl 65 beastlord (Magelo profile in sig), attacking from behind against the banker in Katta, a Lvl 1 unkillable NPC that doesnt fight back. Only weapon melee damage was parsed, no kicks or slams. The only relevant offensive AA skill is BF5, which only function in this case is to increase the sample rate by 15% anyway. <br />
+Weapons used are: <br />
+HtH: Waning Light Katar, 16/22 +13 <br />
+1HB: Club of the Ice Ocean, 14/27 +13 <br />
+2HB: Staff of Flowing Water, 42/34 +38 <br />
+All weapon skills are at the cap, i.e. 250 HtH and 225 1HB, 2HB. <br />
+<br />
+Variation of the ATK rating was obtained with various buffs and swapping out equipment. Unbuffed parses were performed overnight. Parses with buffs on require some user interaction, and in those cases i also used Celerity simply to speed up the sample rate. Sections of the log file where an ATK buff had faded were removed before parsing the file. <br />
+<br />
+<br />
+4. Results <br />
+<br />
+A total of 7 parses were performed. I dont seem to be able to get this into a readable table so i hope this format will do. If not, i've put an Excel workbook online, link here. The graphs further down will make things clearer as well <br />
+<br />
+test 1: buffs: none (partly done with Celerity) <br />
+str = 175 <br />
+MH = WLK, ATK = 1129 <br />
+hits = 10568 <br />
+misses = 4206 <br />
+swings = 14774 <br />
+hitratio = 71.53+/-0.74 % <br />
+average damage/hit = 48.71+/-0.47 <br />
+n = 2.232+/-0.022 <br />
+OH = CotIO, ATK = 1061 <br />
+hits = 6926 <br />
+misses = 3189 <br />
+swings = 10115 <br />
+hitratio = 68.47+/-0.92 % <br />
+average damage/hit = 29.31+/-0.35 <br />
+n = 2.093+/-0.025 <br />
+<br />
+test 2: buffs: SV, IoS, GoK, Celerity <br />
+str = 272 <br />
+MH = WLK, ATK = 1270 <br />
+hits = 6516 <br />
+misses = 2614 <br />
+swings = 9130 <br />
+hitratio = 71.37+/-0.95 % <br />
+average damage/hit = 56.88+/-0.70 <br />
+n = 2.743+/-0.034 <br />
+OH = CotIO, ATK = 1202 <br />
+hits = 4435 <br />
+misses = 1882 <br />
+swings = 6317 <br />
+hitratio = 70.21+/-1.15 % <br />
+average damage/hit = 36.67+/-0.55 <br />
+n = 2.620+/-0.039 <br />
+<br />
+<br />
+test 3: buffs: SV, IoS, GoK, Celerity, Ferocity <br />
+str = 272 <br />
+MH = WLK, ATK = 1471 <br />
+hits = 5599 <br />
+misses = 2257 <br />
+swings = 7856 <br />
+hitratio = 71.27+/-1.02 % <br />
+average damage/hit = 65.69+/-0.88 <br />
+n = 3.293+/-0.044 <br />
+OH = CotIO, ATK = 1404 <br />
+hits = 3733 <br />
+misses = 1696 <br />
+swings = 5429 <br />
+hitratio = 68.76+/-1.26 % <br />
+average damage/hit = 45.84+/-0.75 <br />
+n = 3.275+/-0.054 <br />
+<br />
+test 4: buffs: none <br />
+str = 175 <br />
+MH = CotIO, ATK = 1061 <br />
+hits = 10682 <br />
+misses = 4684 <br />
+swings = 15366 <br />
+hitratio = 69.52+/-0.74 % <br />
+average damage/hit = 42.14+/-0.41 <br />
+n = 2.081+/-0.020 <br />
+OH = WLK, ATK = 1129 <br />
+hits = 10994 <br />
+misses = 4504 <br />
+swings = 15498 <br />
+hitratio = 70.94+/-0.73 % <br />
+average damage/hit = 35.50+/-0.34 <br />
+n = 2.219+/-0.021 <br />
+<br />
+test 5: buffs: SV, IoS, GoK, Celerity, Ferocity <br />
+str = 272 <br />
+MH = CotIO, ATK = 1404 <br />
+hits = 5402 <br />
+misses = 2441 <br />
+swings = 7843 <br />
+hitratio = 68.88+/-1.04 % <br />
+average damage/hit = 58.62+/-0.80 <br />
+n = 3.259+/-0.044 <br />
+OH = WLK, ATK = 1471 <br />
+hits = 5505 <br />
+misses = 2283 <br />
+swings = 7788 <br />
+hitratio = 70.69+/-1.03 % <br />
+average damage/hit = 53.67+/-0.72 <br />
+n = 3.354+/-0.045 <br />
+<br />
+test 6: buffs: none <br />
+str = 172 <br />
+MH = SoFW, ATK = 1059 <br />
+hits = 9551 <br />
+misses = 4170 <br />
+swings = 13721 <br />
+hitratio = 69.67+/-0.79 % <br />
+average damage/hit = 123.79+/-1.27 <br />
+n = 2.043+/-0.021 <br />
+<br />
+test 7: buffs: SV, IoS, GoK, Celerity, Ferocity <br />
+str = 269 <br />
+MH = SoFW, ATK = 1401 <br />
+hits = 6395 <br />
+misses = 2821 <br />
+swings = 9261 <br />
+hitratio = 69.39+/-0.96 % <br />
+average damage/hit = 173.02+/-2.16 <br />
+n = 3.215+/-0.040 <br />
+<br />
+<br />
+6. Discussion <br />
+<br />
+6.1. Hitratio <br />
+The following graph shows all observed hit ratio as a function of the ATK rating.<br />
+<img src="http://members.chello.nl/~pg.deheij/graph1.jpg" border="0" alt="" /><br />
+<br />
+It should be clear that although the hitratio for HtH is higher then 1HB and 2HB because of the higher skill cap, ATK buffs do not effect the hit ratio at all. The weighted average for HtH is 71.18+/-0.38 % and for 1HB and 2HB it's 69.29+/-0.35 %. The ratio is 1.027. In some old parses i did way back when i was lvl 62, tanking lvl 50-52 mobs, the hit ratios were lower of course, 57.2% vs 55.6% resp., but the ratio is almost the same, 1.028 <br />
+<br />
+6.2. Dualwield ratio at Lvl 65 <br />
+I mention this here because Tastian's excellent parses showed recently that the dualwield rate at lvl 65 is 82.7+/-0.8 %, which is considerably higher then the dualwield rate calculated from the old formula (skill+level)/400 (77.5%). Test #4 of my parses was done without any interruptions and is therefore suitable for dw rate calculation. In my case, dual wield rate = (OH swings/MH swings) * (OH delay/MH delay) = (15498/15366)*(22/27) = 82.2+/-0.6 %. This confirms Tastian's finding. <br />
+<br />
+6.3. Swapping MH/OH <br />
+I performed test 4 &amp; 5 to make absolutely certain that having a weapon in the OH or MH makes no difference to either hit ratio or n (well, actually i did these 2 parses first, because with the CotIO in the MH and WLK in OH i'd get approx the same amount of swings). This, fortunately, turns out to be the case. One implication of this is that you never have to parse a weapon in both the MH and the OH; just substitute MH damage = OH damage + damage bonus and apply the dw rate and you're done. <br />
+<br />
+6.4. Effect of ATK on n. <br />
+In the next graph the values of n are plotted as a function of ATK.<br />
+<img src="http://members.chello.nl/~pg.deheij/graph2.jpg" border="0" alt="" /><br />
+ <br />
+In the range of ATK values used here, the relation between n and ATK can be considered linear. I doubt this apparent linearity extends ad infinitum, at some point you'll probably get diminishing returns when adding more ATK but i cannot access this range. The 1HB and 2HB data fall unto the same line, whereas the HtH data has the same slope but is shifted along the ATK-axis. if you'll recall that ATK is a composite number then it's easy to explain why. HtH ATK has a higher 'to hit' part then the other 2. The shift this causes is 33 ATK, and that number can't be a coincidence. 33 ATK = 25 (difference in weapon cap) * 1.33 (the attack modifier for melee classes). <br />
+Replotting the data against ATK-skill*1.33 yields a single straight line with a slope 0.00338+/-0.00006:<br />
+<img src="http://members.chello.nl/~pg.deheij/graph3.jpg" border="0" alt="" /><br />
+ <br />
+The linearity and the fact that 3 different type of weapons can be plotted on a single 'master'-curve (but its only a master curve for this particular mob, more on that later) has some interesting repercussions which i'll discuss in the next section. <br />
+<br />
+6.5.DPS <br />
+As i said in the introduction i didn't parse dps directly because its actual value is irrelevant to real everyday in-game conditions. The different tests can not be compared directly in terms of dps either because some were done with no haste, some with full haste and some where i was hasted only part of the time. There's no need to make a direct comparison, with parsed values for average damage/hit and hitratio the melee dps can be readily calculated for any haste using Equation 1. In fact, since i have a master curve, i can calculate what my dps would be with any given weapon(combo) and haste from the relation between n and ATK. AA skills such as BF and Ambidexterity are also easily incorporated since their effect is known. But it would be the dps against this particular mob, in this particular position. <br />
+Against higher level mobs the value of n will undoubtely be lower at the same ATK rating, either by a shift downward or a change in slope or both (the first will certainly happen, the latter, if it occurs at all, will be a small effect i suspect). But what won't change is the linearity of the relationship between n and ATK (or general shape if you extend the atk range). Higher level mobs will also give lower hit-ratios as will tanking instead of hitting from behind. But the ratio of hitratios between HtH and the other weapon skills doesnt seem much affected by this. <br />
+Because of this, a single parse of any weapon in a particular situation will give you all the information you need to calculate the melee dps of every other weapon available. Parse the hit-ratio and the average damage/hit, extract n and you're good to go. Changing from one weapon to another in which you have the same skill changes neither hitratio or n. Changing from e.g. HtH to 1HB you can recalculate the hitratio by dividing by 1.027 and adjust n by subtracting 33*0.00338=0.11. If ATK rating is changed in some other, e.g. by an Avatar proc then its still possible to adjust n; the change in n is equal to the change in ATK rating * 0.00338. With eqs 1 and 2 the melee dps for the new weapon can then be calculated <br />
+<br />
+For a general weapon comparison, or a standard weapons ranking, you need to be able to calculate quickly without doing any parsing at all. In order to do so, standard values for n and hit ratio need to be agreed upon, and proc dps will have to be incorporated in a smart way. It's possible to do so, but that's a another story entirely. <br />
+<br />
+The effect(ivess) of individual buffs such as Ferocity can also be calculated <br />
+<br />
+6.6. &quot;You need high ATK for 2HB to be effective&quot; <br />
+This is a statement i come across frequently on this board. I have wondered where it originated from for some time now, since theoretical considerations tell me that the opposite should generally be true: dualwielding profits more from high ATK then 2HB. I now have the ammunition to shoot down the original statement once and for all. <br />
+Since ATK doesnt affect the hitratio, the only increase you'll get in your dps when upping your ATK comes from the increase in average damage/hit. A fixed increase in ATK will give a fixed increase in n. The associated increase in avg. dam. will be lower however, because of the damage bonus. The higher the weapon's base damage is compared to the damage bonus, the more benefit you get out of the same amount of ATK <br />
+Dualwielding is therefore favored by high ATK because: <br />
+- the OH doesnt have a damage bonus at all, meaning it gets full benefits of the additional ATK <br />
+- 1H'ed weapons generally have higher base damage/base delay ratios. <br />
+<br />
+edit: as Eatbugs pointed out, there's a painful typo here. The last sentence should read: 1H'ed weapons generally have higher base damage/damage bonus ratios <br />
+<br />
+There is one effect that helps 2HB more then a dualwield combo, if the dw combo has a HtH weapon in it. The HtH's higher natural ATK means that a absolute ATK increase will be relatively lower then for a 2HB. For example; suppose you have 1000 ATK using 2HB. Adding 500 to that is an increase of 50%. The HtH ATK would be 1067, and adding 500 to that is a (500/1067) = 47% increase (note: you should really only consider the 'damage' portion of ATK, but the principle is the same). The effect is small, and at very high ATK ratings becomes negligible. <br />
+<br />
+From my own parses i can extract the following numbers. Calculating base dps using equation 1, with swings/sec set to 1/base delay for MH and dw_rate/base delay for OH, and using the parsed values of hitratio and average damage i find: <br />
+WLK/CotIO: 21.99 dps at 1129/1061 ATK and 30.94 dps at 1471/1404 ATK, an increase of 40.7% <br />
+CotIO/WLK: 20.32 dps at 1061/1129 ATK and 29.21 dps at 1404/1471 ATK, an increase of 43.8% <br />
+SoFW: 25.34 dps at 1059 ATK and 35.31 dps at 1401 ATK, an increase of 39.3%. <br />
+A smaller increase with the 2HB then with the dw combo's. And the base_damage/base_delay ratio of my weapons aren't even as great as some other 1H'ers out there. The difference here is almost entirely from the OH. Upping the ATK even further wont change the picture; even when the relation between n and ATK levels off completely, 2HB will never catch up. <br />
+<br />
+<br />
+7. Conclusions <br />
+- Hit ratio depends on offensive skills only, ATK buffs have no effect on it <br />
+- Confirmation that the dualwield rate at lvl 65 is higher then previously assumed <br />
+- In the ATK range between 1060 and 1470, the multiplier for the base damage, n, depends linearly on ATK. A master curve can be constructed to account for differences in weapon skills. <br />
+- A change in ATK gives a corresponding change in n equal to (0.00338+/-0.00006) times the change in ATK <br />
+- With these results its possible to calculate the melee dps of any weapon in a particular situation once you've got a parse of a single weapon in that situation <br />
+- There's no truth to the statement that you need high ATK for 2HB to be effective. Dualwielding will generally benefit more from high ATK then 2HB <br />
+<br />
+<br />
+8. Further considerations, recommendations and future plans <br />
+We won't ever get the full picture of ATK, average damage, hit ratio in relation to mob level, not unless SOE releases the source code to the public. But i hope this investigation helped a little in understanding some of the basic underlying mechanics. A next step could be getting some general idea how ATK against a green con compares to ATK against a blue con. For instance, is 1400 ATK against a green the same as, say, 1600 ATK against a blue or 1800 ATK against a red. You'll never get exact values, even among blue cons there will be differences (the change in damage distribution i've found actually suggests that he's not a typical green con either, but has a fairly high AC). But a general order of magnitude is already tremendously helpful. The hit ratios wont be same of course, but hit ratios can already be fairly well estimated against a variaty of cons. <br />
+Extending the ATK range further would help to reinforce some parts of this investigation, but it won't provide much new insights so this has lower priority for me. <br />
+I only have 5 days left on my free trial subscription and dont plan to return to EQ anytime soon, but i may not have to. Parsing dps in terms of average damage and n allows for comparison with other people's parses, because haste% doesn't matter, the weapon doesnt matter and neither do position or combat casting. It should even be possible to use data from other classes, as long as they are on the same basic damage table. So I'm trying to gather data from various board, but results so far are somewhat depressing. Most dps parses that are posted are missing one or more vital details; sometimes ATK rating isn't mentioned, often the dps only is given, or the average damage includes kicks, special attacks and critical (which add to the average in a non-linear way). So I'd like to ask everyone who posts dps parses to include as many details as possible (log them with a /say so you wont forget) and to parse in detail. Your dps is uninteresting (and i mean that in the friendliest possible way <img src="http://www.thesteelwarrior.org/forum/images/smilies/smile.gif" border="0" alt="" title="smile" class="inlineimg" /> ) but average damage is worth its weight in gold (a couple of electrons weight that is) <br />
+<br />
+/hug<br />
+_________________<br />
+Da Coprolith <br />
+65 Trollie Ferrull Lawd <br />
+Tholuxe Paells<br />
+<br />
+Last edited by Coprolith on Fri Dec 19, 2003 5:47 pm; edited 3 times in total</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#131619" />
+				<em>
+				Last edited by Daemonwynd : 01-05-2004 at <span class="time">03:21 AM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=71956"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 71956 popup menu -->
+<div class="vbmenu_popup" id="postmenu_71956_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Daemonwynd</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=566" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=566">Send a private message to Daemonwynd</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=566">Find More Posts by Daemonwynd</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=566">Add Daemonwynd to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 71956 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #71956 --><!-- post #71989 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong>Re:</strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post71989"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-05-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=71989&amp;postcount=2" target="new"><strong>2</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_71989">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=3496"><div style="font-size:14pt; width:140px;"> Partha</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_71989", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Who loves ya, baby?</div>
+			
+		<a href="arcade.php?do=play&gameid=22"><img src="images/arcade/cellout2.gif" alt="High Score: 21330" align="absmiddle" border=0></a> <span class="smallfont">Cell-Out Champion!</span><br>
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=3496"><img src="http://www.thesteelwarrior.org/forum/customavatars/avatar3496_1.gif" alt="Partha's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Sep 2003</div>
+				
+				<div class="info">Guild: <a href="http://pub10.ezboard.com/bdivineaura32912">Divine Aura</a></div>
+				<div class="info">Server: <a href="http://www.brellrants.net/brell/">Brell Serilis</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=96063&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 861 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re:</strong>
+			</div>
+			<hr size="1" style="color:#131619" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Sorry, Daemon, but that's the Yantis board and my computer will be possessed if I access it. <img src="http://www.thesteelwarrior.org/forum/images/smilies/frown.gif" border="0" alt="" title="frown" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=71989"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 71989 popup menu -->
+<div class="vbmenu_popup" id="postmenu_71989_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Partha</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=3496" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=3496">Send a private message to Partha</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=3496">Send email to Partha</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=3496">Find More Posts by Partha</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=3496">Add Partha to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 71989 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #71989 --><!-- post #71999 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post71999"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-05-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=71999&amp;postcount=3" target="new"><strong>3</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_71999">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=566"><div style="font-size:14pt; width:140px;"> Daemonwynd</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_71999", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=566"><img src="images/avatars/0/yinyang.gif" alt="Daemonwynd's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+
+
+<font color="#FF7800"><strong>Online</strong></font>:
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				<div class="info">Location: Calgary, Canada</div>
+				<div class="info">Guild: Sojourners</a></div>
+				<div class="info">Server: Brell Serilis</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=256610&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 852 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>posted the text in its entirety, just for you =P</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=71999"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 71999 popup menu -->
+<div class="vbmenu_popup" id="postmenu_71999_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Daemonwynd</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=566" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=566">Send a private message to Daemonwynd</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=566">Find More Posts by Daemonwynd</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=566">Add Daemonwynd to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 71999 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #71999 --><!-- post #72033 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72033"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-05-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72033&amp;postcount=4" target="new"><strong>4</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72033">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=5322"><div style="font-size:14pt; width:140px;"> Osewiesewose</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72033", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">knows that Warriors are superior</div>
+			
+		
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Jan 2004</div>
+				
+				
+				
+				
+				 
+				<div class="info">Posts: 2 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>There's an updated version of this post on the new beastlord board as well. Link here: <a href="http://beastlords.demonshouse.net/forums/viewtopic.php?t=211" target="_blank">http://beastlords.demonshouse.net/f...topic.php?t=211</a></div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72033"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72033 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72033_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Osewiesewose</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=5322" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=5322">Send a private message to Osewiesewose</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=5322">Send email to Osewiesewose</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=5322">Find More Posts by Osewiesewose</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=5322">Add Osewiesewose to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72033 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72033 --><!-- post #72053 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72053"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-05-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72053&amp;postcount=5" target="new"><strong>5</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72053">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=576"><div style="font-size:14pt; width:140px;"> Splaktar</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72053", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=576"><img src="http://www.thesteelwarrior.org/forum/customavatars/avatar576_0.gif" alt="Splaktar's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				<div class="info">Location: Boston, MA</div>
+				<div class="info">Guild: <a href="http://66.196.196.167/">The Mystical Order</a></div>
+				<div class="info">Server: Fennin Ro</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=73274&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 397 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div><b>- Hit ratio depends on offensive skills only, ATK buffs have no effect on it </b><br />
+<br />
+I thought this was obvious and common knowledge??!</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<a href="http://www.magelo.com/eq_view_profile.html?num=73274" target="_blank">Gurgel Da'Green, Troll Overlord</a><br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=671361" target="_blank">Splack Trollhealer, Dwarf Archon</a>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72053"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72053 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72053_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Splaktar</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=576" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=576">Send a private message to Splaktar</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=576">Find More Posts by Splaktar</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=576">Add Splaktar to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72053 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72053 --><!-- post #72055 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72055"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-05-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72055&amp;postcount=6" target="new"><strong>6</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72055">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=66"><div style="font-size:14pt; width:140px;"> Haass</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72055", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Would be banned, but Isk didn't have the stones</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=66"><img src="http://www.thesteelwarrior.org/forum/customavatars/avatar66_0.gif" alt="Haass's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				<div class="info">Location: Minnesota</div>
+				<div class="info">Guild: Indecisive Indifference</a></div>
+				<div class="info">Server: Cazic Thule</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=48986&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 3,103 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				I thought this was obvious and common knowledge??!
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+Beastlords are all twinks of something else.  They didn't get the memo.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font color="Red"><a href="http://http://www.magelo.com/eq_view_profile.html?num=48986" target="_blank">Marshall Haass Wolvesbane</a> <br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=71943" target="_blank">Elder Cagna Soulshaker</a> </font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72055"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72055 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72055_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Haass</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=66" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=66">Send a private message to Haass</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=66">Find More Posts by Haass</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=66">Add Haass to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72055 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72055 --><!-- post #72342 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72342"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72342&amp;postcount=7" target="new"><strong>7</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72342">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=4104"><div style="font-size:14pt; width:140px;"> Boff</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72342", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">knows that Warriors are superior</div>
+			
+		
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Nov 2003</div>
+				
+				<div class="info">Guild: Union of Power</a></div>
+				<div class="info">Server: Rodcet Nife</a></div>
+				
+				 
+				<div class="info">Posts: 11 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>wow.. no one really actually plays this game anymore huh?<br />
+<br />
+If we fight mob A with warrior X using weapon Q and haste T.. having ranger L using weapon O and rogue W using weapon S, and the cleric D keeps CH up using the cycle time of 9.8326745 seconds we will surely kill him, but since his drop rate V of item U is only 3.948% of his table, we won't find item U until... Feburary 3rd, 2006 at 4:31 PM (eastern) so let's come back later.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72342"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72342 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72342_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Boff</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=4104" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=4104">Send a private message to Boff</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=4104">Send email to Boff</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://allgemeines_sortiment.bonzgd.biz/">Visit Boff's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=4104">Find More Posts by Boff</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=4104">Add Boff to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72342 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72342 --><!-- post #72379 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72379"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72379&amp;postcount=8" target="new"><strong>8</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72379">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=630"><div style="font-size:14pt; width:140px;"> Callon</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72379", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=630"><img src="images/avatars/0/opus02.gif" alt="Callon's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				
+				
+				
+				
+				 
+				<div class="info">Posts: 290 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>nice parses... quick question on dual wield.  Am I reading it right that the offhand goes off over 80% of the time that the mainhand does at L65?  Does this apply to warriors? <br />
+<br />
+I thought that was a lot higher than I remember L60 dual wield being, but our skill cap hasn't changed.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72379"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72379 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72379_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Callon</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=630" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=630">Send a private message to Callon</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=630">Send email to Callon</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=630">Find More Posts by Callon</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=630">Add Callon to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72379 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72379 --><!-- post #72388 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72388"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72388&amp;postcount=9" target="new"><strong>9</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72388">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=102"><div style="font-size:14pt; width:140px;"> Besrikarle</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72388", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=102"><img src="http://www.thesteelwarrior.org/forum/customavatars/avatar102_0.gif" alt="Besrikarle's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				<div class="info">Location: Western NY</div>
+				<div class="info">Guild: Stratageme</a></div>
+				<div class="info">Server: Luclin</a></div>
+				
+				 
+				<div class="info">Posts: 420 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				I thought this was obvious and common knowledge??!
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+He says it is and is just giving even more proof to support it. Nothing wrong with that.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Hell, warriors should be the panzers of EQ equipped with loud speakers and a big nazi flag, shouting insults and profanity while rolling down the streets of Jerusalem.<br />
+<img src="http://eq-strat.com/images/guildleader.gif" border="0" alt="" />
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72388"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72388 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72388_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Besrikarle</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=102" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=102">Send a private message to Besrikarle</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=102">Find More Posts by Besrikarle</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=102">Add Besrikarle to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72388 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72388 --><!-- post #72394 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72394"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72394&amp;postcount=10" target="new"><strong>10</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72394">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=1816"><div style="font-size:14pt; width:140px;"> Flair</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72394", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Stronger than Dirt</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=1816"><img src="http://www.thesteelwarrior.org/forum/customavatars/avatar1816_1.gif" alt="Flair's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: May 2003</div>
+				<div class="info">Location: New York, NY</div>
+				
+				<div class="info">Server: Fennin Ro</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=491143&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 786 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>Nice piece of work....took you some time to compile and its not subjective.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Marshall Flair Shieldrender<br />
+65 Warrior<br />
+&quot;In this we may be fortunate...paper is a good insulator &quot;- Failsafe
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72394"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72394 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72394_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Flair</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=1816" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=1816">Send a private message to Flair</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=1816">Find More Posts by Flair</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=1816">Add Flair to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72394 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72394 --><!-- post #72421 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72421"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72421&amp;postcount=11" target="new"><strong>11</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72421">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=66"><div style="font-size:14pt; width:140px;"> Haass</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72421", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Would be banned, but Isk didn't have the stones</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=66"><img src="http://www.thesteelwarrior.org/forum/customavatars/avatar66_0.gif" alt="Haass's Avatar" border="0" /></a>
+				</div>
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				<div class="info">Location: Minnesota</div>
+				<div class="info">Guild: Indecisive Indifference</a></div>
+				<div class="info">Server: Cazic Thule</a></div>
+				<div class="info"><a href="http://www.magelo.com/eq_view_profile.html?num=48986&resize=true" target=_blank">Magelo Link</a></div>
+				 
+				<div class="info">Posts: 3,103 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				wow.. no one really actually plays this game anymore huh?
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+Plenty of people play the game.  But since the manual doesn't exactly describe what the fuck half of our numbers do, we have to find out ourselves.  There's nothing wrong with that at all, in fact, it's commendable.  <br />
+<br />
+But I'm sure all your rogues are still wearing AGI/DEX gear because the manual says so right?</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font color="Red"><a href="http://http://www.magelo.com/eq_view_profile.html?num=48986" target="_blank">Marshall Haass Wolvesbane</a> <br />
+<a href="http://www.magelo.com/eq_view_profile.html?num=71943" target="_blank">Elder Cagna Soulshaker</a> </font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72421"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72421 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72421_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Haass</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=66" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=66">Send a private message to Haass</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=66">Find More Posts by Haass</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=66">Add Haass to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72421 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72421 --><!-- post #72427 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72427"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72427&amp;postcount=12" target="new"><strong>12</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72427">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=2818"><div style="font-size:14pt; width:140px;"> Brodda Thep</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72427", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Jul 2003</div>
+				
+				
+				
+				
+				 
+				<div class="info">Posts: 168 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>HIs conclusions on attack being more effective for one handers is off though.  And he said that people were saying that for two hand to be ffective you needed lots of atk.  Again this is just that for Zha to be more effective than REBB you need lots of attack.  Which is also untrue.  If you get Zha you have more than enough attack to make it more effective than REBB.<br />
+<br />
+Everything in the post has been proven many many many months ago.  Nothing new.  /yawn</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72427"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72427 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72427_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Brodda Thep</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=2818" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=2818">Send a private message to Brodda Thep</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=2818">Send email to Brodda Thep</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=2818">Find More Posts by Brodda Thep</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=2818">Add Brodda Thep to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72427 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72427 --><!-- post #72468 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72468"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72468&amp;postcount=13" target="new"><strong>13</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72468">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=127"><div style="font-size:14pt; width:140px;"> Furor</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72468", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">is a Seasoned Veteran</div>
+			
+		
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Apr 2003</div>
+				
+				
+				
+				
+				 
+				<div class="info">Posts: 220 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<i>Originally posted by Brodda Thep </i><br />
+[B]HIs conclusions on attack being more effective for one handers is off though.  And he said that people were saying that for two hand to be ffective you needed lots of atk.  Again this is just that for Zha to be more effective than REBB you need lots of attack.  Which is also untrue.  If you get Zha you have more than enough attack to make it more effective than REBB.
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+Where are you disagreeing with him here? He's stating that ATK does not benefit 2handers more than it does 1handers (or h2h). This is been known for quite some time by the non-retard crowd and proven in a mess of parses (as you know). Where he states:<br />
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				- the OH doesnt have a damage bonus at all, meaning it gets full benefits of the additional ATK <br />
+- 1H'ed weapons generally have higher base damage/base delay ratios.
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+He is either miswording what he's trying to say or doesn't take into account that the DB actually affects max hit, thus if the OH had a DB, higher attack would definitely benefit DW (1H) more than 2H. Which is why we will probably not see a DB put on the offhand, ever, unless they make some really funky 2Handers.<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				Everything in the post has been proven many many many months ago.  Nothing new.  /yawn
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+Or in some cases, years ago.. *nod*</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				I'm gonna be Iron like a Lion in Zion...
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72468"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72468 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72468_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Furor</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=127" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=127">Send a private message to Furor</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=127">Send email to Furor</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="Http://www.fohguild.org">Visit Furor's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=127">Find More Posts by Furor</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=127">Add Furor to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72468 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72468 --><!-- post #72470 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+<div style="padding:0px 0px 6px 0px">
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72470"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72470&amp;postcount=14" target="new"><strong>14</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72470">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=5322"><div style="font-size:14pt; width:140px;"> Osewiesewose</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72470", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">knows that Warriors are superior</div>
+			
+		
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Jan 2004</div>
+				
+				
+				
+				
+				 
+				<div class="info">Posts: 2 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div>Well this was new to me:<br />
+<br />
+The parses clearly show that the benefits of strength have been upgraded in the past. The common knowledge is that strength raises the max hit but does little for dps. Now it seems that getting +X attack from strength has the exact same effect as getting +X attack from a pure attack buff or vengeance item. That means that as long as you dont have your strength capped you're better off getting +STR gear instead of the very expensive Vengeance gear. Not much of an issue for the ubers, but important for the little man</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72470"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72470 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72470_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Osewiesewose</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=5322" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=5322">Send a private message to Osewiesewose</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=5322">Send email to Osewiesewose</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=5322">Find More Posts by Osewiesewose</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=5322">Add Osewiesewose to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72470 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72470 --><!-- post #72589 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+
+
+<br />
+ <!-- top category table setup -->
+<table width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="88" height="26" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_ls.gif" width="88" height="26" alt=" " border="0" /></td>
+    <td width="100%" class="tcat" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/cat_back.gif)" valign="middle"><div class="smallfont" align="center"> <strong></strong></div></td>
+     <td width="88" height="26" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_top_table_rs.gif" width="88" height="26" alt=" " border="0" /></td>
+  </tr>
+</table>
+        <!-- End vbskinz.com top category table setup -->
+
+
+
+<table class="border" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post72589"><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				01-06-2004
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight:normal" align="right">
+		&nbsp;
+		#<a href="showpost.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=72589&amp;postcount=15" target="new"><strong>15</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid #181B16;"  width="160">
+		<div id="postmenu_72589">
+				
+				<a class="bigusername" href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;u=2859"><div style="font-size:14pt; width:140px;"> Velk</div></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_72589", true); </script>
+				
+			</div>
+			
+		    <div class="smallfont">Registered User</div>
+			
+		
+			
+			
+					<div class="smallfont">
+				&nbsp;<br />
+				<div class="info"><span class="smallfont">
+
+Offline:
+
+
+
+
+
+</span> </div>
+				<div class="info">Join Date: Jul 2003</div>
+				
+				
+				
+				
+				 
+				<div class="info">Posts: 53 
+				</div>
+				<div class="info">   </div>
+				</div>														
+		
+	</td>
+	<td class="alt1">
+	
+		
+		
+		<!-- message -->
+		<div><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				He is either miswording what he's trying to say or doesn't take into account that the DB actually affects max hit, thus if the OH had a DB, higher attack would definitely benefit DW (1H) more than 2H. Which is why we will probably not see a DB put on the offhand, ever, unless they make some really funky 2Handers.
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+Actually I think he means exactly what he says.<br />
+<br />
+For example, if you have a SoT it's 54 damage ( which is affected by atk ) and 36 DB ( which isn't ). If you have a shinai and a quarm hammer it's 23 + 26 = 49 damage and still only 13DB.<br />
+<br />
+Even taking into account the offhand not swinging every hit, you can see that the proportion of dps that does not come from damage bonus is going to be significantly larger for the 1handers.<br />
+<br />
+Adding a damage bonus to the offhand would actually decrease the percentage amount that ATK improves dps for 1handers although the actual increase would remain the same. ( E.g. you go from 80-90 instead of 70-80 )</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid #181B16;">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;p=72589"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply_small.gif" alt="Reply With Quote" align="middle" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 72589 popup menu -->
+<div class="vbmenu_popup" id="postmenu_72589_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Velk</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;userid=2859" target="_blank">View Public Profile</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newpm&amp;userid=2859">Send a private message to Velk</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=mailmember&amp;u=2859">Send email to Velk</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=finduser&amp;userid=2859">Find More Posts by Velk</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=addlist&amp;userlist=buddy&amp;u=2859">Add Velk to Your Buddy List</a></td></tr>
+
+
+
+	
+	</table>
+</div>
+<!-- / post 72589 popup menu -->
+
+
+
+
+
+
+
+
+  <!-- bottom table setup -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60" align="left" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_ls.gif" width="60" height="14" alt=" " border="0" /></td>
+        <td  width="100%" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_back.gif)"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/clear.gif" width="100%" height="14" alt=" " border="0" /></td>
+        <td width="60" align="right" valign="top"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_front_btm_table_rs.gif" width="60" height="14" alt=" " border="0" /></td>
+      </tr>
+    </table>
+   <!-- End bottom table setup -->
+
+
+
+
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #72589 --></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="top">
+	
+		<td class="smallfont"><a href="newreply.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=newreply&amp;noquote=1&amp;p=72589"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/reply.gif" alt="Reply" border="0" /></a></td>
+		
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/multipage.gif" alt="Showing results 1 to 15 of 17 (2 pages)" /> -->Page 1 of 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 15 of 17"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058&amp;page=2&amp;pp=15" title="Show results 16 to 17 of 17">2</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058&amp;page=2&amp;pp=15" title="Next Page - Results 16 to 17 of 17">&gt;</a></td>
+	
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+<br />
+
+<div class="smallfont" align="center">
+	<strong>&laquo;</strong>
+		<a href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058&amp;goto=nextoldest">Previous Thread</a>
+		|
+		<a href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058&amp;goto=nextnewest">Next Thread</a>
+	<strong>&raquo;</strong>
+</div>
+
+<br />
+
+
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	<td class="thead">Search this Thread<a name="goto_threadsearch"></a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1">
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+		<div><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/printer.gif" alt="Show Printable Version" vspace="1" /> <a href="printthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;t=5058" accesskey="p">Show Printable Version</a></div>
+		<div><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/sendtofriend.gif" alt="Email this Page" vspace="1" /> <a href="sendmessage.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=sendtofriend&amp;t=5058">Email this Page</a></div>
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="search.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="6d9634b0bcbbd9cd4a4b2288052e1dce" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="5058" />
+		<strong>Search this Thread</strong>:<br />
+		<input type="text" class="bginput" name="query" size="20" style="width:175px" /><!-- go button -->
+<input type="submit" class="button" value="Go"  /><br />
+		<a href="search.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;">Advanced Search</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="thead">Display Modes<a name="goto_displaymodes"></a></td>
+	<td class="thead">Rate This Thread<a name="goto_threadrating"></a></td>
+</tr>
+<tr valign="top">
+	<td class="alt2">
+	
+	<!-- thread display modes -->
+	
+	<div class="smallfont">
+		<div><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/mode_linear.gif" alt="Linear Mode" vspace="1" /> <strong>Linear Mode</strong></div>
+		<div><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/mode_hybrid.gif" alt="Hybrid Mode" vspace="1" /> <a href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;mode=hybrid&amp;t=5058">Switch to Hybrid Mode</a></div>
+		<div><img class="inlineimg" src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/mode_threaded.gif" alt="Threaded Mode" vspace="1" /> <a href="showthread.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;p=71956&amp;mode=threaded#post71956">Switch to Threaded Mode</a></div>
+	</div>
+	
+	<!-- / thread display modes -->
+	
+	</td>
+	<td class="alt2">
+	
+	<!-- rate this thread -->
+	<form action="threadrate.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="6d9634b0bcbbd9cd4a4b2288052e1dce" />
+		<input type="hidden" name="t" value="5058" />
+		<input type="hidden" name="pp" value="15" />
+		<input type="hidden" name="page" value="1" />
+		<strong>Rate This Thread</strong>:<br />
+		<select name="vote" onchange="this.form.submit()" style="width:175px">
+			<optgroup label="Choose a rating">
+				<option value="5" >5 : Excellent</option>
+				<option value="4" >4 : Good</option>
+				<option value="3" >3 : Average</option>
+				<option value="2" >2 : Bad</option>
+				<option value="1" >1 : Terrible</option>
+			</optgroup>
+		</select><!-- go button -->
+<input type="submit" class="button" value="Go"  />
+	</div>
+	</form>
+	<!-- / rate this thread -->
+	
+	</td>
+</tr>
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="http://www.thesteelwarrior.org/forum/images/tren_z/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr />
+		
+		<div><a href="misc.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=bbcode" target="_blank">vB code</a> is <strong>On</strong></div>
+		<div><a href="misc.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a href="misc.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="6d9634b0bcbbd9cd4a4b2288052e1dce" />
+	<input type="hidden" name="daysprune" value="" />
+	<strong>Forum Jump</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="-1" >Please select one</option>
+			<option value="cp" >User Control Panel</option>
+			<option value="pm" >Private Messages</option>
+			<option value="subs" >Subscriptions</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forums">
+		<option value="1" class="fjdpth0" > The Steel Warrior - EverQuest</option>
+<option value="2" class="fjsel" selected="selected">&nbsp; &nbsp;  The Arena</option>
+<option value="3" class="fjdpth1" >&nbsp; &nbsp;  The Battlefield</option>
+<option value="4" class="fjdpth1" >&nbsp; &nbsp;  The Bunker</option>
+<option value="5" class="fjdpth1" >&nbsp; &nbsp;  The Tavern</option>
+<option value="6" class="fjdpth1" >&nbsp; &nbsp;  The Keep</option>
+<option value="12" class="fjdpth1" >&nbsp; &nbsp;  The Outhouse</option>
+<option value="11" class="fjdpth1" >&nbsp; &nbsp;  The Overlords Sanctuary</option>
+<option value="15" class="fjdpth1" >&nbsp; &nbsp;  The War Room</option>
+<option value="16" class="fjdpth1" >&nbsp; &nbsp;  The Library</option>
+<option value="21" class="fjdpth0" > Other Games</option>
+<option value="29" class="fjdpth1" >&nbsp; &nbsp;  City of Heroes</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  EverQuest 2</option>
+<option value="22" class="fjdpth1" >&nbsp; &nbsp;  Worlds of Warcraft</option>
+<option value="20" class="fjdpth0" > SteelWarrior FrontPage</option>
+<option value="18" class="fjdpth1" >&nbsp; &nbsp;  Frontpage News</option>
+<option value="19" class="fjdpth1" >&nbsp; &nbsp;  Frontpage Poll</option>
+
+		</optgroup>
+	</select><!-- go button -->
+<input type="submit" class="button" value="Go"  />
+	</form>
+</div>
+			</td>
+		</tr>		
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+
+
+<br />
+
+<br />
+<br />
+<table cellpadding="6" cellspacing="0" border="0" width="100%" class="page" align="center">
+	<tr>
+	<td align="left">
+	<div class="smallfont" align="left">All times are GMT -5. The time now is <span class="time">08:50 PM</span>.</div></td>
+	<td align="right"><div class="smallfont"><strong>
+
+			<a href="forumdisplay.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;do=markread">Mark Forums Read</a> | 
+			<a href="showgroups.php?s=6d9634b0bcbbd9cd4a4b2288052e1dce&amp;">View Forum Leaders</a> 
+			
+						
+		</strong></div></td></tr>
+		</table>
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+
+
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+	
+<table cellpadding="6" cellspacing="0" border="0" width="100%" class="page" align="center">
+
+<tr><td colspan="2">
+<br />
+				</div><br />
+
+
+
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	Powered by: vBulletin Version 3.0.0<br />Copyright &copy;2000 - 2004, Jelsoft Enterprises Ltd.
+	<!-- Do not remove this copyright notice -->
+	</div>
+	
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	
+	</div>
+</div>
+
+
+
+
+</td></tr>
+<tr align="right">
+		<td class="tcat" colspan="2"><div class="smallfont">Page generated in 0.28205609 seconds (90.13% PHP - 9.87% MySQL) with 13 queries</div></td>
+</tr>
+
+<tr>
+	
+		<td>
+			<select name="styleid" id="ressel" onchange="switch_styleid(this)">
+				<optgroup label="Quick Style Chooser">
+					<option value="2" class="" >-- vBulletin 3</option>
+<option value="1" class="" >---- The Steel Warrior vBulletin 3 Style</option>
+<option value="5" class="" >---- Tren_Z Style</option>
+<option value="6" class="" selected="selected">------ Tren_Z Full Width</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	<td align="right">
+		<div class="smallfont">
+			<strong>
+				<a href="sendmessage.php">Contact Us</a> -
+				<a href="http://www.thesteelwarrior.org/">The Steel Warrior</a> -
+				
+				
+				<a href="archive/index.php">Archive</a> -
+				<!-- - <a href="">Privacy Statement</a> - -->
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Top</a>
+				</strong>
+		</div>
+		</td>
+</tr>
+
+</table>
+</form>
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+
+	// Initialize 'Active' Table Cells
+	//vBulletin_init();
+//-->
+</script>
+
+
+
+
+
+</td>
+  </tr>
+</table>
+<table bgcolor="#131619" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr>		
+    <td align="left" valign="top"><a href="javascript:scroll(0,0);"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_footer_top.gif" width="51" height="26" border="0" alt="" /></a></td>
+	<td align="left" valign="top" style="background-image:url(http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_footer_x.gif)" width="100%"><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_footer_x.gif" width="100%" height="26" alt="" /></td>
+	<td><img src="http://www.thesteelwarrior.org/forum/images/tren_z/misc/tren_z_footer_rs.gif" width="324" height="26" alt="" /></td>
+	</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- /content area table -->
+</div>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>

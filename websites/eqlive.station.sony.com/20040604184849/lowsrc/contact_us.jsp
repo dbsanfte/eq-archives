@@ -1,0 +1,107 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><!-- #BeginTemplate "/Templates/lowsrc.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>EQLive - Forums</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<!-- Start Menu -->
+
+<p>
+<a href="/lowsrc/index.jsp">Home</a>
+<a href="/lowsrc/forums/index.jsp">Forums</a>
+<a href="/lowsrc/events/index.jsp">Official Events</a>
+<a href="/lowsrc/community/index.jsp">Community</a>
+<a href="/lowsrc/multimedia/index.jsp">Multimedia</a>
+<a href="/lowsrc/library/index.jsp">The Library</a>
+<a href="/lowsrc/support/index.jsp">Support</a>
+<a href="/lowsrc/contact_us.jsp">Contact Us</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Fwww.station.sony.com%2Fen%2Fservices%2Fhelp%2FeqGM.jsp">Contact Your GM</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2F66.129.87.69%2Fcandidate%2F">Employment</a>
+<a href="/lowsrc/includes/redirect.jsp?url=http%3A%2F%2Feverquest.station.sony.com">EverQuest.com</a>
+<a href="/contact_us.jsp">Full Design Version</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- End Menu -->
+<!-- #BeginEditable "Main" -->
+<h1>Contact Us</h1>
+
+
+<CENTER>
+<CENTER>
+<DIV align=center><STRONG><BR>Contact Us</STRONG> </DIV>
+<P class=subHeader align=justify>Customer Service Related Contacts: </P>
+<P align=justify><A href="http://www.station.sony.com/en/services/help/eqGM.jsp">Contact Your GM</A><BR>This is the link to use if you can't reach your server GM in-game. Just fill in the appropriate information and your request will be sent straight to your GM. This new help feature will help shorten response time via email, and provide Customer Service the ability to better track case histories.</P>
+<P align=justify><A href="mailto:eqmail@soe.sony.com">eqmail@soe.sony.com</A> <BR>This is the big dog of the contact addresses. This is the place to send feedback, suggestions, complaints, compliments, and almost anything else. When email is received at this address, it is forwarded to the proper person or department. Also, when an email is sent to this address, an automated response is generated notifying the sender that the email has been received. It is the most common address, and one that game masters and guides often provide to the EverQuest player base when needed. </P>
+<P align=justify><A href="mailto:eqtech@soe.sony.com">eqtech@soe.sony.com</A> <BR>This is the main tech support email address. If you are having technical issues, use this address. When using this address, it is best to supply as much information about your system as possible. The more information Tech Support has, the better they will be able to help you. Another thing you can do is to send the dbg.text file that is found in the EverQuest directory along with your email. The dbg.txt file is a debug file that contains information that Tech Support may be able to use to help solve your technical problems. </P>
+<P align=justify><A href="mailto:accounts@soe.sony.com">accounts@soe.sony.com</A> <BR>This is the accounts/billing address. This is the place to send account and billing questions. </P>
+<P align=justify><A href="mailto:eqaccountstatus@soe.sony.com">eqaccountstatus@soe.sony.com</A> <BR>At times, player's accounts are suspended or banned due to violation of game or service rules. This email address allows those account holders to check on their account status or to find out when a suspension will end. Of course, SOE/Verant personnel will only discuss account issues with the registered account holder. </P>
+<P align=justify><A href="mailto:appadmin@soe.sony.com">appadmin@soe.sony.com</A> <BR>As the number of subscribers increases on a weekly basis, the need for volunteer guides increases also. If a player has submitted a guide application and has further questions, or had problems with the application, this address is the one to use. Please remember, like always, to provide as much information regarding the issue as possible in order to get the best help possible.</P>
+<P align=justify>&nbsp;</P>
+<P class=subHeader align=justify>Design/Testing Contacts: </P>
+<P align=justify><A href="mailto:eqfeedback@soe.sony.com">eqfeedback@soe.sony.com</A> <BR>Have suggestions for the game? Think something can be done better? Send an email to this address and provide your feedback about EverQuest. But be warned, chances are very slim that a response to an email will ever be made. This address was created mainly as a one-way street to learn what the players want in regards to EverQuest. </P>
+<P align=justify><A href="mailto:eqbugs@soe.sony.com">eqbugs@soe.sony.com</A> <BR>This email address is not commonly responded to either. It sole purpose is to notify the EverQuest staff about bugs in game. When using this address, it is very important that all information learned regarding a game bug be stated as clearly as possible. We all know that there will be bugs in a game of this magnitude, but with the help of players, we can work in reducing them. </P>
+<P align=justify><A href="mailto:eqtesting@soe.sony.com" target=_blank>eqtesting@soe.sony.com</A><BR>If you would like the Quality Assurance Department to test something, please send an email with your request. When emailing regarding bugs please be sure to include as much information as possible so that the testers can explore the possible problem thoroughly. Email sent to this address may or may not be responded to. You will only be contacted by someone in the Quality Assurance Department if we require more information about the problem you reported. Thank you for your time.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify><SPAN class=subHeader>EQ Web Site Contacts: </SPAN></P>
+<P align=justify><A href="mailto:eqwebmaster@soe.sony.com">eqwebmaster@soe.sony.com</A> <BR>The EQ Webmaster is provided for those who wish to submit news items for publication on the EverQuest site, including the Harpy's Head Tavern pages. The news items accepted here are general news/announcements, in-game events, guild events, etc. The EverQuest.com Editor reserves the right to determine what news items will be posted and where. Another function of this address is to notify the EQ Webmaster of possible problems with the site so that they can be checked out. </P>
+<P align=justify><A href="mailto:eqmoderator@soe.sony.com">eqmoderator@soe.sony.com</A> <BR>This address is used to alert the EverQuest message boards moderator of posts that need to be looked at regarding possible inappropriate content. There are two sets of official EQ related message boards. There are the main boards for general and game related discussions, and the Harpy's Head Tavern boards for in-character roleplaying. The <A href="/lowsrc/cgi-bin/eqmoderator@soe.sony.com">eqmoderator@soe.sony.com</A> address only deals with the out of character general discussion boards. Concerns about the Harpy's Head Tavern boards can be addressed to the EQ Webmaster. </P>
+<P align=justify><BR>Fan Faire Contacts</P>
+<P align=justify><A href="mailto:fanfaire@soe.sony.com">fanfaire@soe.sony.com</A><BR>This is the address to use if you have any Fan Faire related questions.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>More ways to contact us than you thought? One of the complaints we hear at times from some players who email us with a concern is how long it took us to respond. When this happens, and it is not really that often, it is usually because the email was originally sent to the wrong address and may have been buried in the recipients in-box until he or she found it and forwarded it to the right department or person. By using the list above, and sending emails to the correct addresses, the chances of a slow response are greatly reduced.</P></CENTER></CENTER>
+
+
+<!-- #EndEditable -->
+<!-- Start Copyright -->
+<p> 
+	<a href="http://sonyonline.com/tos/privacy.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/privacy.jsp');"><img src="/common/images/esrb_privacy.jpg" alt="ESRB&#153; Privacy Certified - click to privacy statement" width="116" height="43" border="0"></a><br><br>
+<script language="JavaScript">
+var ToSwinhandle=null;
+function openToS(tosURL)
+{	
+	ToSwinhandle=window.open(tosURL, "tosWin", "width=500,height=400,titlebar=no,menubar=no,toolbar=no,status=no,scrollbars=yes,resizeable=no");
+	ToSwinhandle.focus();
+	return false;
+}
+</script>
+
+<div align="center"><a href="http://www.station.sony.com/en/services/help/customer.jsp" class="ToS">Contact The Webmaster</a> 
+  |
+    <a href="http://sonyonline.com/corp/legal.jsp" class="ToS">Legal &amp; Copyright Notice</a> 
+  <br>
+    <a href="http://sonyonline.com/tos/privacy.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/privacy.jsp');" class="ToS">Sony Online Privacy Policy</a> 
+  |
+  <a href="http://sonyonline.com/tos/tos.jsp" target="_tosWin" onclick="return openToS('http://sonyonline.com/tos/tos.jsp');" class="ToS">Sony Online Terms Of Service</a>
+</div>
+
+</p>
+
+<p>
+	EverQuest and You’re in Our World Now are registered trademarks and The Ruins of Kunark, 
+	The Scars of Velious, The Shadows of Luclin and The Planes of Power are trademarks of 
+	Sony Computer Entertainment America Inc. The Station, SOE and the SOE logo are trademarks 
+	of Sony Online Entertainment Inc. &copy;2002 Sony Computer Entertainment America Inc.; 
+	portions copyright 2002 Sony Online Entertainment Inc. 
+	All other trademarks are properties of their respective owners. All rights reserved. 
+</p>
+
+<!-- End Copyright -->
+</body>
+<!-- #EndTemplate --></html>

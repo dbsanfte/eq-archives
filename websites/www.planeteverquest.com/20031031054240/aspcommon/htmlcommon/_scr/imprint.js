@@ -1,0 +1,734 @@
+
+
+<html>
+
+<head>
+<title>PlanetEQ - A Member of the GameSpy Network</title>
+<link rel="stylesheet" href="/inserts/style/main.css" type="text/css">
+</head>
+
+<body bgcolor="#D7BB84" topmargin="0" marginheight="0" leftmargin="0" marginwidth="0">
+<script type="text/javascript" src="http://ads.gamespyid.com/ad.aspx?S=PE&T=3&A1=HOME&G1=RPG&P1=PC&WS=1&P2=0&A2=0&A3=PRESTITIAL&alt=http%3A%2F%2Fadcontent%2Egamespy%2Ecom%2Fprestitial%2FdisabledAds%5Falt%5F1x1%2Ejs"></SCRIPT>
+<map name="imprint">
+<area alt="" coords="0,0,173,21" href="http://www.gamespy.com/network/">
+<area alt="" coords="206,0,255,22" href="http://www.gamespy.com/">
+<area alt="" coords="275,0,307,21" href="http://www.fileplanet.com/">
+<area alt="" coords="324,0,366,25" href="http://www.radiospy.com/">
+</map>
+<!-- Header Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="/images/sony/top/top_bg.jpg">
+<tr>
+<td>
+<!-- Netscape Fix -->
+<table background="/images/clear.gif" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td><script language="Javascript" type="text/javascript" src="/aspcommon/htmlcommon/_scr/imprint.js"></script><img src="/images/sony/top/logo.jpg" width=307 height=132 border="0"></td>
+<td width="100%"><img src="/images/clear.gif" width=42 height=1 border="0"></td>
+<td align="right"><img src="/images/sony/top/top_right.jpg" width=373 height=156 border="0"></td>
+</tr>
+</table>
+<!-- /Netscape Fix -->
+</td>
+</tr>
+</table>
+<!-- /Header Table -->
+
+<div id="injection" align="center"><script type="text/javascript" language="JavaScript">if (typeof windowshade != "undefined"){ start();}</script></div>
+
+<!-- Top Curves Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td width="137" bgcolor="#C5A25E"><img src="/images/main/curves/left_top.gif" width=137 height=13 alt="" border="0"></td>
+<td width="20" bgcolor="#7A5936"><img src="/images/main/curves/mid_top.gif" width=20 height=13 alt="" border="0"></td>
+<td width="12"><img src="/images/main/curves/main_left_top.gif" width=12 height=13 alt="" border="0"></td>
+<td width="100%" background="/images/main/curves/main_bg_top.gif"><img src="/images/clear.gif" width=555 height=1 border="0"></td>
+<td width="12"><img src="/images/main/curves/main_right_top.gif" width=12 height=13 alt="" border="0"></td>
+<td width="14" bgcolor="#7A5936"><img src="/images/clear.gif" width=14 height=1 border="0"></td>
+</tr>
+</table>
+<!-- /Top Curves Table -->
+
+
+<!-- Outer Body Table (Menu, Content Area) -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td width="137" bgcolor="#54412C"><img src="/images/clear.gif" width=137 height=1 border="0"><br>
+<!-- Side Menu Padding Table -->
+<table border="0" cellspacing="0" cellpadding="4">
+<tr valign="top">
+<td class="menubar"><b class="menuhead"><a href="/">Home</a></b><br>
+<br>
+
+<b class="menuhead"><a href="http://www.gamespy.com/subscribe/">Subscribe</a></b><br>
+<script type="text/javascript" language="javascript" src="http://ads.gamespyid.com/jscheck.aspx"></script>
+<script type="text/javascript" language="javascript">
+if ( adsAreDisabled ) 
+	document.write('&nbsp; <a class="menu" href="http://ads.gamespyid.com/ads.aspx?off=1">Enable Ads</a><br>');
+else
+	document.write('&nbsp; <a class="menu" href="http://ads.gamespyid.com/ads.aspx">Disable Ads</a><br>');
+</script>
+<script type="text/javascript" language="javascript">
+if ( isLoggedIn )
+	document.write('&nbsp; <a class="menu" href="https://www.gamespyid.com/upgrade.aspx">Upgrade Now!</a><br />');
+else
+	document.write('&nbsp; <a class="menu" href="http://www.gamespy.com/subscribe/">Subscribe Now!</a><br />');
+</script>
+<br>
+
+<b class="menuhead"><a href="/news/">News</a></b><br>
+&nbsp <a class="menu" href="/">Current</a> <a class="menu" name="fix">/</a> <a class="menu" href="mailto:news@planeteq.com">Submit</a><br>
+&nbsp <a class="menu" href="/news/">Archive</a> <a class="menu" name="fix">/</a> <a class="menu" href="/news/search.asp?advanced=1">Search</a><br>
+&nbsp <a class="menu" href="/images/photo/archive.asp">PotD</a> <a class="menu" name="fix">/</a> <a class="menu" href="mailto:pics@planeteq.com">Submit</a><br>
+<br>
+
+ 
+<p><b class="menuhead"><a href="/community/">Community</a></b><br>
+  &nbsp; <a class="menu" href="http://www.forumplanet.com/planeteverquest/">Forums</a><br>
+  &nbsp; <a class="menu" href="/community/links/">Links</a><br>
+  &nbsp; <a class="menu" href="/community/stories/">Stories</a><br>
+  &nbsp; <a class="menu" href="/site/staff/">The Staff</a><br>
+  &nbsp; <a class="menu" href="/site/contact/">Contact Us</a><br>
+  <br>
+  <b class="menuhead"><a href="/character/">Character</a></b><br>
+  &nbsp; <a class="menu" href="/character/classes/">Classes</a><br>
+  &nbsp; <a class="menu" href="/character/races/">Races</a><br>
+  &nbsp; <a class="menu" href="/character/skills/">Skills</a><br>
+  &nbsp; <a class="menu" href="/character/trades/">Trades</a><br>
+  <br>
+  <b class="menuhead"><a href="/reference/">Reference</a></b><br>
+  &nbsp; <a class="menu" href="/reference/commands/">Commands/Emotes</a><br>
+  &nbsp; <a class="menu" href="http://dynamic2.gamespy.com/%7Eplaneteverquest/deq/cgi-bin/dumpeq.cgi">Spells</a><br>
+  &nbsp; <a class="menu" href="/reference/maps/">Maps</a><br>
+  &nbsp; <a class="menu" href="/reference/factions/">Factions</a><br>
+  &nbsp; <a class="menu" href="/reference/alternate_advancement/index.shtml">Alt. 
+  Advancement</a><br>
+  &nbsp; <a class="menu" href="/reference/loot_distribution">Loot Distribution</a><br>
+  &nbsp; <a class="menu" href="/reference/glossary">Glossary</a><p>
+ 
+  <b class="menuhead"><a href="/features/">Features</a></b><br>
+  &nbsp; <a class="menu" href="/features/artgallery/index.shtml">Art Gallery</a><br>
+  &nbsp; <a class="menu" href="/features/interviews/index.shtml">Interviews</a><br>
+  &nbsp; <a class="menu" href="/features/ding/index.shtml">Ding!</a><br>
+  &nbsp; <a class="menu" href="/features/editorials/index.shtml">Editorials</a><br>
+  &nbsp; <a class="menu" href="/features/quiz/">EQ Quiz </a><br>
+  &nbsp; <a class="menu" href="/features/polls/">Poll Archive<br>
+  </a> &nbsp; <a class="menu" href="/features/roleplaydictionary/index.shtml">RP 
+  Dictionary</a><br>
+  &nbsp; <a class="menu" href="/features/contests/index.shtm">PoP Contest</a><br>
+  <br>
+  <b class="menuhead"><a href="/media/">Media</a></b><br>
+  <!--&nbsp <a class="menu" href="/media/screenshots/">Screenshots</a><br>-->
+  &nbsp; <a class="menu" href="/media/files/">Files</a><br>
+  &nbsp; <a class="menu" href="/media/files/eq_top50.shtml">Top 50 Files</a><br>
+  <br>
+  <b class="menuhead"><a href="/servers.shtml">Servers</a></b><br>
+  &nbsp; <a class="menu" href="/ayonaero/">Ayonae Ro</a><br>
+  &nbsp; <a class="menu" href="/cazicthule/">Cazic Thule</a><br>
+  <br>
+  <b class="menuhead"><a href="/site/hosted/">Hosting</a></b><br>
+  &nbsp; <a class="menu" href="/clerics/">Clerics of EQ</a><br>
+  &nbsp; <a class="menu" href="/eqwadb/">EQ Weapons/Armor</a><br>
+  &nbsp; <a class="menu" href="/shaman/">Shaman of Justice</a><br>
+  &nbsp; <a class="menu" href="/eqraces/">EQ Races</a><br>
+  &nbsp; <a class="menu" href="/site/hosting/">Get Hosted!</a><br>
+  &nbsp; <a class="menu" href="/site/hosting/hostingFAQ.shtml">Hosting FAQ</a><br>
+  <br>
+  <br>
+</p>
+
+
+<b class="menuhead">GameSpy Network</b><br>
+<span class="networklist"><b>GameSpy</b><br>
+&nbsp;&nbsp;<a href="http://www.gamespy.com/" class="navbar">GameSpy.com</a><br>
+&nbsp;&nbsp;<a href="http://www.gamespydaily.com/" class="navbar">GameSpyDaily</a><br>
+&nbsp;&nbsp;<a href="http://www.gamespyarcade.com/" class="navbar">GameSpy Arcade</a><br>
+&nbsp;&nbsp;<a href="http://www.gamespy3d.com/" class="navbar">GameSpy 3D</a><br>
+&nbsp;&nbsp;<a href="http://rogerwilco.gamespy.com/" class="navbar">Roger Wilco</a><br>
+&nbsp;&nbsp;<a href="http://gamespy.pricegrabber.com" class="navbar">GameSpy Store</a><br>
+
+<b>Services</b><br>
+&nbsp;&nbsp;<a href="http://www.cheatingplanet.com/" class="navbar">CheatingPlanet</a><br>
+&nbsp;&nbsp;<a href="http://www.fileplanet.com/" class="navbar">FilePlanet</a><br>
+&nbsp;&nbsp;<a href="http://www.forumplanet.com/" class="navbar">ForumPlanet</a><br>
+&nbsp;&nbsp;<a href="http://www.gamefinger.com/" class="navbar">GameFinger</a><br>
+
+<b><a href="http://www.3dactionplanet.com/" class="navbar">3DActionPlanet</a></b><br>
+
+<b><a href="http://www.rpgplanet.com" class="navbar">RPGPlanet</a></b><br>
+&nbsp;&nbsp;<a href="http://www.planetbaldursgate.com/" class="navbar">PlanetBaldursGate</a><br>
+&nbsp;&nbsp;<a href="http://www.planetdeusex.com/" class="navbar">PlanetDeusEx</a><br>
+&nbsp;&nbsp;<a href="http://www.planetdiablo.com/" class="navbar">PlanetDiablo</a><br>
+&nbsp;&nbsp;<a href="http://www.planetdungeonsiege.com/" class="navbar">PlanetDungeonSiege</a><br>
+&nbsp;&nbsp;<a href="http://www.planeteq.com/" class="navbar">PlanetEQ</a><br>
+&nbsp;&nbsp;<a href="http://www.planetneverwinter.com/" class="navbar">PlanetNeverwinter</a><br>
+
+<b><a href="http://www.sportplanet.com/" class="navbar">SportPlanet</a></b><br>
+
+<b><a href="http://www.strategyplanet.com/" class="navbar">StrategyPlanet</a></b><br>
+
+<b>Classic/Console</b><br>
+&nbsp;&nbsp;<a href="http://www.classicgaming.com/" class="navbar">ClassicGaming</a><br>
+&nbsp;&nbsp;<a href="http://www.planetdreamcast.com/" class="navbar">PlanetDreamcast</a><br>
+&nbsp;&nbsp;<a href="http://www.planetnintendo.com/" class="navbar">PlanetNintendo</a><br>
+&nbsp;&nbsp;<a href="http://www.planetps2.com/" class="navbar">PlanetPS2</a><br>
+&nbsp;&nbsp;<a href="http://www.planetxbox.com/" class="navbar">PlanetXbox</a><br>
+
+<b>Community</b><br>
+&nbsp;&nbsp;<a href="http://www.lanparty.com/" class="navbar">LANParty.com</a><br>
+
+
+</span>
+<br>
+
+
+
+</td>
+</tr>
+</table>
+<!-- /Side Menu Padding Table -->
+</td>
+<td width="20" bgcolor="#7A5936" background="/images/main/curves/mid_bg.gif"><img src="/images/clear.gif" width=20 height=1 border="0"></td>
+<td width="100%"><img src="/images/clear.gif" width=579 height=1 border="0"><br>
+
+<!-- Content/Featurebar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td rowspan="2" width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+<td rowspan="2" width="100%">
+
+
+
+<!-- Screenshot and Caption-->
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr valign="top">
+<td>
+<!-- Screenshot Table -->
+<table width="218" border="0" cellspacing="0" cellpadding="0" bgcolor="#7A5936">
+<tr>
+<td><img src="/images/main/pic/top_left.gif" width=8 height=8 alt="" border="0"></td>
+<td><img src="/images/clear.gif" width=1 height=1 border="0"></td>
+<td><img src="/images/main/pic/top_right.gif" width=10 height=8 alt="" border="0"></td>
+</tr>
+<tr>
+<td><img src="/images/clear.gif" width=1 height=1 border="0"></td>
+<td><a href="/images/photo/index.asp?id=439163"><img src="/images/photo/kuhagroups.jpg" width="200" height="150" border="0" alt="Click to see a larger image"></td>
+<td background="/images/main/pic/right_bg.gif"><img src="/images/clear.gif" width=1 height=1 border="0"></td>
+</tr>
+<tr>
+<td><img src="/images/main/pic/bottom_left.gif" width=8 height=10 alt="" border="0"></td>
+<td background="/images/main/pic/bottom_bg.gif"><img src="/images/clear.gif" width=1 height=1 border="0"></td>
+<td><img src="/images/main/pic/bottom_right.gif" width=10 height=10 alt="" border="0"></td>
+</tr>
+</table>
+<!-- /Screenshot Table -->
+</td>
+<td width="100%" align="left" valign="top"><span style="font-size:8pt;">Brad Kuha sends us another one of his portraits.<br><a href="/images/photo/archive.asp">archive</a> / <a href="mailto:pics@planeteq.com">submit</a>
+<br><br>
+<b>Headlines</b><br>
+<span class="date">- <a href="#PQN441924">EverQuest Companion Book</a></span><br><span class="date">- <a href="#PQN441922">Lords of EverQuest Art Contest</a></span><br><span class="date">- <a href="#PQN441587">Grrr... Curse these Bugs.</a></span><br><span class="date">- <a href="#PQN441476">EQ Customer Support Closed: Wildfires</a></span><br><span class="date">- <a href="#PQN441475">New Book:  Dungeons and Dreamers</a></span></span></td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+</tr>
+</table>
+<!-- /Screenshot and Caption -->
+
+
+
+
+
+<br>
+<!-- PlanetEverQuest News - Generated Thursday, October 30,  2003 --><!-- Start Day -->
+<!-- Date Header Bar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td rowspan="2" width="33"><img src="/images/main/icon.gif" width=33 height=28 alt="" border="0"></td>
+	<td bgcolor="#54412C" height="26" width="100%">  <b class="newsdayhead">   Thursday, October 30,  2003</b></td>
+</tr>
+<tr>	
+	<td bgcolor="#000000" height="2" width="100%"><img src="/images/clear.gif" width=1 height=2 border="0"></td>
+</tr>
+</table>
+<!-- /Date Header Bar -->
+<!-- News Item Row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN441924"></a>
+<br>
+<span class="headline">EverQuest Companion Book</span><br>
+<span class="byline">10/30/03, 12:12 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">Everything you ever wanted to know about the history and culture of playing EQ:<blockquote>EVERQUEST COMPANION<p>
+A Look Behind the Scenes of the Popular Online Game<p>
+
+EMERYVILLE, Calif., September 2003 - Boasting more than 450,000 subscribers only four years after the game's launch, EverQuest is truly a global phenomenon with players and fans from all over the world. Anyone who loves EverQuest or has ever wondered about the game's appeal, will find unique insights in EverQuest Companion: The Inside Lore of a Gameworld by Robert Marks, published by McGraw-Hill/Osborne.<p> 
+
+Robert Marks conducted extensive interviews with Sony Online Entertainment's executive team, game designers, and programmers. He takes his readers behind the scenes to meet these creative personalities, discover their influences, see how the game was made, and show what it takes to run and maintain one of the world's most massively multiplayer online games (MMORPG). Included are accounts from players, anecdotes from an EverQuest Fan Faire, and other amusing stories that can only take place in this spellbinding reality.<p>
+
+Readers will get acquainted with the head of Sony Interactive Studios, John Smedley, who built the team that created EverQuest. Marks accounts the growing pains EverQuest went through during beta testing, including one massive test involving 25,000 people, and delves into such topics as:<p>
+
+The origins of computer role playing games from the fantasy lore of Tolkien and others <BR>
+The improbable tale of how a simple Dungeons and Dragons campaign evolved into the most popular online fantasy roll playing game of all time <BR>
+The birth of MMORPG in December 1985 when CompuServe launched Islands of Kesmai <BR>
+The eye-popping concept art and detailed visualizations that are developed before programming begins <BR>
+The massive server farms that maintain the virtual world <BR>
+The stories behind the controversies, and much more.<BR><BR> "Whether most people recognize it or not, the computer game is on the cusp of a revolution," says Robert Marks. "New persistent games have been created, perhaps the most notable being EverQuest. It's more than a game - it's a culture in and of itself. What it is now, and how it became possible is worthy of exploration," he adds.<BR><BR> 
+About the Author:<BR><BR>
+
+Robert Marks is a writer and editor. He was first published professionally by Computer Gaming World, where he reviewed Myth II: Soulblighter. He followed this up with the best-selling e-book Diablo: Demonsbane, which inaugurated the Blizzard fiction line, and a computer games issues column titled Garwulf's Corner on Diabloii.net-one of the first of its kind. Never one to be limited in his projects, he also designs production swords for Last Legend (www.lastlegend.com), where he's assisted with the Last Legend Ranger sword and has started a sword line of his own based on Beowulf.</blockquote>
+
+
+</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN441922"></a>
+<br>
+<span class="headline">Lords of EverQuest Art Contest</span><br>
+<span class="byline">10/30/03, 12:10 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">Sony Online Announces Lords of EverQuest Fan Art Contest<p>
+
+Sony Online Entertainment, Inc (SOE) is hosting a fan art contest for Lords of EverQuest, the upcoming real-time strategy game set in the EverQuest universe. Artists and fans alike are invited to show off their artistic flare and enter the Lords of EverQuest Fan Art Contest! The winning entry will be used as the key art at www.LordsOfEverQuest.com  for one month. SOE will even make a desktop wallpaper out of it so others can download it and enjoy. The top five finalist will take home some choice prizes like:<p>
+
+Grand Prize<BR>
+www.LordsOfEverQuest.com Key Art for 1 month<BR>
+Geforce FX 5900 Ultra<BR>
+Cordless MX Duo (cordless keyboard and mouse)<BR>
+ClickSmart 820 (digital/web camera)<BR>
+Z-5300 (speakers)<BR><BR>
+
+1st Runner Up<BR>
+Geforce FX 5900 Ultra<BR>
+Cordless MX Duo (cordless keyboard and mouse)<BR>
+IO Pen (digital PC pen)<BR><BR>
+
+2nd Runner Up<BR>
+Geforce FX 5900 Ultra<BR>
+MX500 (corded mouse)<BR><BR>
+
+3rd Runner Up<BR>
+Z-640 (speakers)<BR><BR>
+
+To enter the contest, submit your entry, please read the Official Rules and follow the instructions on the <a href="http://lordsofeverquest.station.sony.com/fanartcontest/" target="_top">submit entry page</a>. The Lords of EverQuest Fan Art Contest is open to all Station.com Members and will run through November 15, 2003.
+</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --></table>
+<!-- End Day --><br><!-- Start Day -->
+<!-- Date Header Bar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td rowspan="2" width="33"><img src="/images/main/icon.gif" width=33 height=28 alt="" border="0"></td>
+	<td bgcolor="#54412C" height="26" width="100%">  <b class="newsdayhead">   Tuesday, October 28,  2003</b></td>
+</tr>
+<tr>	
+	<td bgcolor="#000000" height="2" width="100%"><img src="/images/clear.gif" width=1 height=2 border="0"></td>
+</tr>
+</table>
+<!-- /Date Header Bar -->
+<!-- News Item Row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN441587"></a>
+<br>
+<span class="headline">Grrr.. Curse these Bugs.</span><br>
+<span class="byline">10/28/03, 2:21 PST | <a href="mailto:muskie@planeteq.com">Muskie</a></span><br><br>
+<span class="newsitem">Sorry about not posting anything recently, guys, i've been having some real big problems with the game itself.. all the fonts are off-canter.. it's hard to explain. I hope I can get into the game again before the Halloween Event.. I don't wanna miss it!
+
+P.S. If any EQ Tech reps are reading this? Email me? Please? ^^;</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --></table>
+<!-- End Day --><br><!-- Start Day -->
+<!-- Date Header Bar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td rowspan="2" width="33"><img src="/images/main/icon.gif" width=33 height=28 alt="" border="0"></td>
+	<td bgcolor="#54412C" height="26" width="100%">  <b class="newsdayhead">   Monday, October 27,  2003</b></td>
+</tr>
+<tr>	
+	<td bgcolor="#000000" height="2" width="100%"><img src="/images/clear.gif" width=1 height=2 border="0"></td>
+</tr>
+</table>
+<!-- /Date Header Bar -->
+<!-- News Item Row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN441476"></a>
+<br>
+<span class="headline">EQ Customer Support Closed: Wildfires</span><br>
+<span class="byline">10/27/03, 7:07 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">EQLive has a news item reporting that customer support closed last night due to the raging wildfires in Southern California.  According to the news this Monday morning, the fires are still threatening the Southern California area.<p>
+
+Update Tuesday:  While we have limited auxiliary support, normal operations will most likely be interrupted through mid-week.</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN441475"></a>
+<br>
+<span class="headline">New Book: Dungeons and Dreamers</span><br>
+<span class="byline">10/27/03, 7:02 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">As an EverQuest player, you expereince the ultimate in a growing industry that has evolved from the humble roots of the paper role playing game called Dungeons and Dragons.  A new book is coming out, "Dungeons and Dreamers," which explores the early roots of computer gaming.  GameSpy has an <a href="http://gamespy.com/dreamers/" target="_top">on line exclusive</a> about the book, including interviews with gamers and others involved in the "ultimate 'revenge of the nerds' tale in which D&D players, Society for Creative Anachronism aficionados, science fiction fans, and young computer programmers come together to produce a multibillion-dollar industry that merges with the burgeoning telecommunications industry and the Internet boom on the 1990s to explode into a mass-market phenomenon."  The stories behind the games are as interesting as the game play itself!</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --></table>
+<!-- End Day --><br><!-- Start Day -->
+<!-- Date Header Bar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td rowspan="2" width="33"><img src="/images/main/icon.gif" width=33 height=28 alt="" border="0"></td>
+	<td bgcolor="#54412C" height="26" width="100%">  <b class="newsdayhead">   Friday, October 17,  2003</b></td>
+</tr>
+<tr>	
+	<td bgcolor="#000000" height="2" width="100%"><img src="/images/clear.gif" width=1 height=2 border="0"></td>
+</tr>
+</table>
+<!-- /Date Header Bar -->
+<!-- News Item Row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN440416"></a>
+<br>
+<span class="headline">Heard Around Norrath...</span><br>
+<span class="byline">10/17/03, 8:14 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">The big debate on the SOE message boards are the new changes upcoming, with most of the wrath falling on features that allow new players starting with 200 sense heading and a backpack.<p>
+
+Seems people are proud of the fact that they worked up their skills with no help, and to some, all the changes for newbies are "dumbing down the game." To add insult to injury, drawing a circle around a targetted object making it easier to see drew cries of, "it's turning it into a console PC game." Some feel that discrimination of a target, whether using the flashing tag, using assist, or any other method you may have come up with is a fundamental skill in good group dynamics.  Making it easier, then, is tantamount to encouraging poor play, at least for some.<p>
+
+Certainly in the past year it's become much easier and less of a hassle time-wise to start and level up a character than it was back 5 years ago, when everything was hard-earned and took a lot of time and effort to acquire skills (mostly time, if the truth be told).  Players spent lots of their play time hitting a hot key and swimming into a wall for an hour to get their skill sets up, or figured out some way to make them happen automatically.  Just a couple of years ago, you had to stare at your spell book for many levels when you medded up, missing everything that was going on around you.  Still, newbies with two hundred sense heading and a bag is striking long term players as just a little too much coddling.  Although starting with 200 sense heading is not the same as starting at level 50, or 20, the rumbling seems to be that this is where these kinds of changes are leading.  More to the point, some older players worry that the "coddled" newbies won't be able to play their classes if they don't have to work on leveling up.<p>
+
+The font change is getting some raised eyebrows as well.  Most people seem to think the old font was just fine (including yours truly).  Why change something no one really noticed? Or perhaps some people did quietly ask for a change, and they made it so. It occurs to me that a larger font, at least, gives more people accessability to the game, and not everyone has to play the game the same way.  Inviting more friends to the party who might or might not be power gamers does not seem like a bad thing, if there are plenty of opportunities for everyone to have fun.<p>
+
+Is there too much of a good thing? Constantly trying to make small improvements on an already pretty good game can lead a game designer team down the primrose path to tweaking just a little too much.  On the other hand, the live team really is trying to make the game more fun and placing the emphasis on the meaty parts, not tedious time sinks (which admit it, getting up sense heading really is/was.)  Is it fun to get lost due to an erratic compass? Well, maybe for some.  Is there a sense of accomplishment in doing it all yourself? For many, yes.  That's what makes all 450,000 players individuals.<p>
+
+Players are commenting that there are plenty of improvements to be made in class balance and other large game issues, so why make these small changes and "swing the door the wrong way" as one player opined?  Some mature players are worried that the game will become too childish, too easy, and it won't be a challenge any more.  I do beg to differ on that one -- at the higher levels, you need to work at achieving your goals, and having 200 sense heading given to you, or a backpack when you start out is not going to help you split a camp or know how to run a raid.  But some will disagree with my opinion, I am sure!  A few message board contributors have suggested making all improvements such as the ones mentioned optional.  Then those who want to accomplish it all through the sweat of their virtual brow can do just that, and those making an alternate character can get what to them is the boring stuff over with.  I think that sounds like a fine solution.<p>Check out the discussions for yourself:<p>
+
+<a href="http://boards.station.sony.com/ubb/everquest/Forum4/HTML/051110.html" target="_top">Thread one.</a><p>
+
+<a href="http://boards.station.sony.com/ubb/everquest/Forum4/HTML/051075.html" target="_top">Thread two.</a>
+
+</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN440411"></a>
+<br>
+<span class="headline">Future Plans</span><br>
+<span class="byline">10/17/03, 8:05 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">On a more global scale, here is what the live team is thinking about implementing:<blockquote>Future Plans for October\November, 2003
+Those of us behind the scenes here on the EverQuest team have plans for the future of the game.  Further Down the Line is where we will keep you informed about what those plans are.  Please understand that these are our long-term plans and may require a fair amount of research or development time.<p>
+ 
+
+Development on the following projects continues.  We appreciate your patience as we work out the details.<p>
+
+ 
+
+<b>Class Balance</b><p>
+
+ 
+
+We're still planning to take a look at improving the damage capabilities of melee classes, as they've fallen behind their magic-using counterparts at the very high end of the game.  Finding the proper solutions for this situation will take some time.  Some options being considered are:<p>
+
+ 
+
+Improve melee damage-increasing disciplines<p>
+
+Improve Planes of Power melee weapons<p>
+
+ 
+
+Additionally, we're looking at the concerns from players about their spells, and changing them where appropriate.  The goal here is to remove annoying issues with spells, not necessarily to increase caster power overall.<p>
+
+ 
+
+<b>Shields and blocking</b><p>
+
+ 
+
+We're planning on reviewing the possibility of giving an innate chance to block when using a shield.  We've been hoping to do this for a while, and it should be getting a realistic review in the near future.  We'd like to increase the value of shields, and make it a worthwhile choice for players who might normally dual-wield weapons or use a two-handed weapon.  We plan on balancing this against classes which use shields by default, and therefore wouldn't be making any trade-offs to equip a shield.</blockquote>
+
+I like that idea, I just bought a nice shield!
+
+</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN440410"></a>
+<br>
+<span class="headline">Upcoming Changes for November</span><br>
+<span class="byline">10/17/03, 8:02 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">More interesting things upcoming for next month.  The tell window thing could get kind of crazy of you get in tell hell though!:<blockquote>Upcoming for October\November 2003<p>
+Our update on October 9th went very well.<p>
+Here are some things we're working on for the November update: (Please note: my producer is making me tell you that in addition to this list, we'll still be bug fixing and maintaining the live game and that, while we hope to get each of these features in, nothing is certain. But this is what we're working on at the present time.)<p> 
+
+
+New LDoN raids will go Live - We be moving the two new raids that were introduced on Stormhammer to the Live servers. These raids will prove an interesting challenge for the best of guilds.<p>
+
+Another new LDoN raid - We will also be bringing one more new LDoN raid to Stormhammer with our next update. This raid will be created with Elemental capable characters in mind. <p>
+
+Font changes - Since EverQuest was launched, there has only been one font available. With the next update we plan to introduce the option for players to choose the font for their interface. <p>
+
+Targeting - Sometimes it can be difficult to tell which NPC you have targeted. With the next update we hope to add a targeting indicator of some sort (something like the ring that surrounds your target in EQOA). The exact form hasn't been decided, but the goal is to make seeing what you currently have targeted much easier. <p>
+
+Consider - Along the same lines as the proposed improvement to targeting, we want to add a way to distinguish the /con color of your target. We plan an indicator that will be easily distinguished once you have a target (probably someplace in the Target window), that should remove the need to use the /con command. <p>
+
+Other interface changes - We are also working on some other changes that will help you to organize your information. We plan to add a new text color option for damage shield reports that will allow you to pick what color those messages use. We also want to split the "My Pet Attacks" filter into two separate filters, one for hits and one for misses.<p> 
+
+/tell windows - It is very easy to lose /tells in the confusion of combat. We want to add an option that would work much like an instant messenger. Each time you get a "tell" from a new character, a new chat window would open. That window will only display "tells" from the particular character, and any message sent from the chat window would automatically be sent as a "tell" to that character. Obviously this would be an optional feature. <p>
+
+Help for new players - New characters will start with a bag. This will give them a little more storage space and the opportunity to learn how storage containers work earlier rather than later. We are also working on removing one of the more tedious "features" of the game, the need to practice Sense Heading. Most folks have that skill mapped to trigger along with one of their movement keys. Not an exciting skill to practice. So we plan to have all characters start with a 200 skill in Sense Heading. This will allow new players to navigate more easily, and will reduce a bit of tedium over the course of gameplay.</blockquote>
+</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --><tr>
+<td width="33"><img src="/images/clear.gif" width=33 height=1 border="0"></td>
+<td>
+<a name="PQN440408"></a>
+<br>
+<span class="headline">LDoN Potions</span><br>
+<span class="byline">10/17/03, 8:00 PST | <a href="mailto:kwill@planeteq.com">Kwill</a></span><br><br>
+<span class="newsitem">From EQLive:
+<blockquote>LDoN Potions
+Trade Skill Related Issues:: Alchemy:: Illusion gukta<p>
+
+Why is this alchemy combine no longer working? Froglok blood and wormwood?<br> 
+
+A Player<p>
+
+
+It's a bug. All LDoN potions are currently suffering from the same problem.,p> 
+
+The combines work in a foldable bag, just not a standard store-bought bag. So the combines can still be done. Once we update the Live servers, this will be fixed.<p> 
+
+Alan</blockquote>
+</span><br><br>
+</td>
+<td width="10"><img src="/images/clear.gif" width=10 height=1 border="0"></td>
+</tr>
+<!-- /News Item Row --></table>
+<!-- End Day --><!-- End PlanetEverQuest News -->
+
+<br>
+<div align="center" class="nsfix"><a href="/news/">Archive</a> | <a href="/news/search.asp?advanced=1">Search</a></div>
+
+</td>
+<td width="130" bgcolor="#54412C"><table width="130" border="0" cellspacing="0" cellpadding="0">
+  <tr valign="top"> 
+    <td><img src="/images/main/featurebar/top.gif" width=130 height=8 alt="" border="0"></td>
+  </tr>
+  <tr valign="top"> 
+	<td><div style="padding:4px;"><script type="text/javascript" src="http://ads.gamespyid.com/ad.aspx?S=PE&A1=HOME&G1=RPG&T=3&P2=0&A2=0&A3=SKYSCRAPER?unique"></script>
+
+</div></td>
+  </tr>
+  <tr valign="top">
+	<td align="center" bgcolor="#7A5936"><b class="featurebarhead">GameSpy Store</b></td>
+  </tr>
+  <tr valign="top"> 
+	<td align="center">
+<br>
+<link rel="stylesheet" href="/aspcommon/pricegrabber/styles/pg-peq.css" type="text/css">
+<div align="center">
+
+<!-- PRICEGRABBER -->
+<div class="pgTopFive" align="left">
+<img src="/_img/dot.gif" width="112" height="1"/><br/>
+<div align="center">
+<span class="pgTopFiveHead">Most Popular</span><br/>
+<span class="pgTopFiveType">PC</span>
+</div>
+<ol class="pgTopFiveList">
+
+	<li>
+	<a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=580323">WarCraft III (Full Product)</a><br/>
+	Lowest Price <a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=580323">$19.90</a>
+	</li>
+	<br/><br/>
+	
+	<li>
+	<a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=591204">Doom III</a><br/>
+	Lowest Price <a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=591204">$59.99</a>
+	</li>
+	<br/><br/>
+	
+	<li>
+	<a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=580465">Battlefield 1942</a><br/>
+	Lowest Price <a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=580465">$32.95</a>
+	</li>
+	<br/><br/>
+	
+	<li>
+	<a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=720870">Star Wars Jedi Knight 3 PC</a><br/>
+	Lowest Price <a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=720870">$49.99</a>
+	</li>
+	<br/><br/>
+	
+	<li>
+	<a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=591471">Raven Shield</a><br/>
+	Lowest Price <a href="http://gamespy.pricegrabber.com/search_getprod.php/masterid=591471">$29.24</a>
+	</li>
+	<br/><br/>
+	
+</ol>
+<div align="center">Powered By <a href="http://gamespy.pricegrabber.com/">PriceGrabber</a></div>
+</div>
+<!-- /PRICEGRABBER -->
+</div>
+<br>
+	</td>
+  </tr>
+  <tr valign="top">
+	<td align="center" bgcolor="#7A5936"><b class="featurebarhead">Resources</b></td>
+  </tr>
+  <tr valign="top">
+	<td align="center" class="featurebar"><div style="padding:4px;"><b><a href="http://www.forumplanet.com/planeteq/"><img src="/images/main/featurebar/feature_forums.gif" width=120 height=64 border=0></a></b><br>
+<br>
+
+<b><a href="/reference/items/"><img src="/images/main/featurebar/feature_items.gif" width=120 height=64 border=0></a></b><br>
+<br>
+
+<b><a href="/reference/maps/"><img src="/images/main/featurebar/feature_maps.gif" width=120 height=64 border=0></a></b><br>
+<br>
+
+</div>
+  </td>
+  </tr>
+  <tr valign="top">
+	<td align="center" bgcolor="#7A5936"><b class="featurebarhead">Poll</b></td>
+  </tr>
+  <tr valign="top">
+	<td class="featurebar"><div style="padding:4px;"><script language="Javascript">
+<!--
+function instapoll6206() {
+
+        url = "http://www.gamespy.com/instapoll/poll.asp?poll_id=6206&maxwidth=300";
+
+        count = 0;
+        while (document.form6206.question[count].checked != true) {
+               count++;
+        }
+
+        url += "&choice=" + document.form6206.question[count].value;
+
+        ipwindow = open("","prewindow","scrollbars=yes,toolbar=no,height=340,width=500");
+        ipwindow.location.href = url;
+}
+
+function view6206() {
+
+        url = "http://www.gamespy.com/instapoll/poll.asp?poll_id=6206&maxwidth=300&dontvote=true";
+
+        ipwindow = open("","prewindow","scrollbars=yes,toolbar=no,height=340,width=500");
+        ipwindow.location.href = url;
+}
+
+// -->
+</script>
+
+<form name="form6206">
+<font face="Verdana, Helvetica" size="-1">
+Where do you hunt most often?
+<br><input type=radio name="question" value="27428">Old World
+<br><input type=radio name="question" value="27429">Velious
+<br><input type=radio name="question" value="27430">Kunark
+<br><input type=radio name="question" value="27431">Luclin
+<br><input type=radio name="question" value="27432">Planes of Power
+<p><input type=button name="bVote" value="Vote" onclick="instapoll6206()"><input type=button name="bView" value="View Results" onclick="view6206()">
+</font></form></div></td>
+  </tr>
+</table>
+</td>
+</tr>
+<tr valign="top">
+<td><img src="/images/main/featurebar/bottom.gif" width=130 height=10 alt="" border="0"></td>
+</tr>
+</table>
+<!-- /Content/Featurebar -->
+<br>
+</td>
+<td width="14" bgcolor="#7A5936"><img src="/images/clear.gif" width=14 height=1 border="0"></td>
+</tr>
+</table>
+<!-- /Outer Body Table (Menu, Content Area) -->
+
+
+<!-- Bottom Nav Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td width="137" bgcolor="#54412C"><img src="/images/clear.gif" width=137 height=1 border="0"></td>
+<td width="20" bgcolor="#7A5936" background="/images/main/curves/mid_bg.gif"><img src="/images/clear.gif" width=20 height=1 border="0"></td>
+<td width="100%"><img src="/images/clear.gif" width=579 height=1 border="0"><br>
+<!-- Nav Bar -->
+<table width="90%" bgcolor="#54412C" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+ <td width="88"><img src="/images/main/bottomnav/left.gif" width=81 height=48 alt="" border="0"></td>
+    <td width="100%" align="center" class="nav"><a href="/"><b>Main Page</b></a> 
+      <font color="#FFC432">|</font> <a href="http://www.forumplanet.com/planeteq/"><b>Forums</b></a> 
+      <font color="#FFC432">|</font> <a href="/community/"><b>Community</b></a> 
+      <font color="#FFC432">|</font> <a href="/character/"><b>Character</b></a> 
+      <font color="#FFC432">|</font> <a href="/reference/"><b>Reference</b></a> 
+      <font color="#FFC432">|</font> <a href="/features/"><b>Features</b></a> 
+      <font color="#FFC432">|</font> <a href="/servers.shtml"><b>Servers</b></a></td>
+ <td width="7"><img src="/images/main/bottomnav/right.gif" width=7 height=48 alt="" border="0"></td>
+</tr>
+</table>
+<!-- Nav Bar -->
+</td>
+<td width="14" bgcolor="#7A5936"><img src="/images/clear.gif" width=14 height=1 border="0"></td>
+</tr>
+</table>
+<!--/ Bottom Nav Table -->
+
+
+<!-- Bottom Curves Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td width="137" bgcolor="#7A5936"><img src="/images/main/curves/left_bottom.gif" width=137 height=13 alt="" border="0"></td>
+<td width="20" bgcolor="#7A5936"><img src="/images/main/curves/mid_bottom.gif" width=20 height=13 alt="" border="0"></td>
+<td width="12"><img src="/images/main/curves/main_left_bottom.gif" width=12 height=13 alt="" border="0"></td>
+<td width="100%"><img src="/images/clear.gif" width=555 height=1 border="0"></td>
+<td width="12"><img src="/images/main/curves/main_right_bottom.gif" width=12 height=13 alt="" border="0"></td>
+<td width="14" bgcolor="#7A5936"><img src="/images/clear.gif" width=14 height=1 border="0"></td>
+</tr>
+<tr>
+<td colspan="6" align="right" bgcolor="#7A5936">
+<!-- Disclaimer -->
+<table border="0" cellspacing="0" cellpadding="3" align="right">
+<tr>
+<td align="right" class="disclaimer"><script>
+/* ---------Legal script  --------- */
+
+var legalsite, advertise, legal
+legalsite = "PlanetEQ";
+advertise = "/site/contact/index.shtml#ads";
+legal = "/legal.shtml";
+</script>
+&copy; 1996-2003 GameSpy Industries. <a href="http://www.gamespy.com/feedback/">Contact us</a> for more information on GameSpy Industries. <br />Be sure to read our <script>document.write("<a href='"+ legal +"'>legal stuff</a>")</script> and check out how you can <script>document.write("<a href='"+ advertise + "'>advertise with us</a>")</script> and target your products and services to gamers.</td>
+</tr>
+</table>
+<!-- Disclaimer -->
+</td>
+</tr>
+</table>
+<!-- /Bottom Curves Table -->
+
+</body>
+</html>
