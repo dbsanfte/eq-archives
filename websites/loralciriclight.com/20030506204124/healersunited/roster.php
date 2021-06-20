@@ -1,0 +1,2206 @@
+<!-- 
+*************************************************************
+Everquest Roster Script
+Written by Loral Ciriclight (loral@healersunited.com)
+Written on 9 April 2003
+
+This script is written to serve other guilds with a display 
+of their in-game guild roster.  
+
+see http://loralciriclight.com/healersunited/roster_form.html for more 
+details and usage.
+
+**************************************************************************
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Healers United Guild Roster</title>
+<style type="text/css">
+
+.rostertable {
+width: 60%;
+border: 0px solid #ccc;
+padding: 0px;
+margin-left: 20%;
+}
+
+.altrow1 {
+color: #000;
+background-color: #eee;
+}
+
+.headerrow {
+color: #000;
+background-color: #ccc;
+margin: 0px;
+padding: 0px;
+}
+
+.nameheading, .descriptionheading, .levelheading, .classheading, .rankheading, .onlineheading {
+margin: 0px;
+padding: 3px;
+border: 0px;
+text-align: left;
+}
+
+.descriptioncell {
+width: 25%;
+}
+
+.namecell, .levelcell, .classcell, .rankcell, .onlinecell {
+width: 15%;
+}
+
+.namecell, .descriptioncell, .levelcell, .classcell, .rankcell, .onlinecell {
+margin: 0px;
+padding: 3px;
+border-left: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+
+.onlinecell {
+border-right: 1px solid #ccc;
+}
+
+.logoimage {
+border: 0;
+margin-left: 20px;
+}
+
+h1, .ad {
+text-align: center;
+}
+</style>
+</head>
+<body>
+
+<p><a href="http://healersunited.com/"><img src="http://loralciriclight.com/images/hu_logo_200_97.jpg" class="logoimage" alt="Healers United logo" /></a></p>
+<h1>Healers United Guild Roster</h1>
+
+<table class="rostertable" border="0" cellpadding="0" cellspacing="0">
+<tr class="headerrow"><th class="nameheading"><a href="/healersunited/roster.php?sort=0&amp;rosterfile=&amp;title=Healers United Guild Roster">Name</a></th>
+<th class="descriptionheading">Description</th>
+<th class="levelheading"><a href="/healersunited/roster.php?sort=1&amp;rosterfile=&amp;title=Healers United Guild Roster">Level</a></th>
+<th class="classheading"><a href="/healersunited/roster.php?sort=2&amp;rosterfile=&amp;title=Healers United Guild Roster">Class</a></th>
+<th class="rankheading"><a href="/healersunited/roster.php?sort=3&amp;rosterfile=&amp;title=Healers United Guild Roster">Rank</a></th>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Aacorn</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">31</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Aaloe</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Aamili</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">36</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Aarkan</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Aarodara</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">9</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Abacab</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">22</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Adarer</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Aedain</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Aedor</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Aeriana</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Aianya</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">8</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Alrond</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">45</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Althalis</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Althee</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Anduien</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">47</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Aresthanas</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">39</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Ashene</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Auburn</td>
+<td class="descriptioncell">Elder&nbsp;</td>
+<td class="levelcell">50</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Audare</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Autumndawn</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Azkirte</td>
+<td class="descriptioncell">Azkirte's twink&nbsp;</td>
+<td class="levelcell">60</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Azzra</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">13</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Baddmoon</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">8</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Baldorean</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">41</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Baraka</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">9</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Barthon</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Belgaran</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">45</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Belloc</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">28</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Benaldar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">40</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Benaldir</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">17</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Bezel</td>
+<td class="descriptioncell">Ughlei's Mostly Parked Necro&nbsp;</td>
+<td class="levelcell">50</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Bindedig</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Blics</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">58</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Bloodmidget</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Blueseraph</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Booph</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">11</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Boramir</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Bottleo</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">48</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Bourne</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">12</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Brengrad</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Broichan</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">63</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Bromelda</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">63</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Brubel</td>
+<td class="descriptioncell">Elder: Hail me for free beer&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Brundarr</td>
+<td class="descriptioncell">Likes mangos&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Bubbler</td>
+<td class="descriptioncell">all foam no beer&nbsp;</td>
+<td class="levelcell">31</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Bufferuski</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">36</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Bufoo</td>
+<td class="descriptioncell">Brubel's source for fresh frog legs&nbsp;</td>
+<td class="levelcell">9</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Bursar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">20</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Caeena</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">49</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Canibol</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">31</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Caseus</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">44</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Catus</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Cendarie</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Chryskar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">28</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Chymie</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Clarion</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Clerek</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">18</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Coelin</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Cokko</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">41</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Creem</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">34</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Criket</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">62</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Curall</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Cuthbertus</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">31</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Cymil</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">59</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Cyper</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Dahlea</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">61</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Dalili</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Danheal</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">20</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Dannok</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">14</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Danum</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">18</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Darrok</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Deem</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Deeme</td>
+<td class="descriptioncell">Elder&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Denakkar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Densett</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">11</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Deowyn</td>
+<td class="descriptioncell">Heal inc! Opps! Rez inc!&nbsp;</td>
+<td class="levelcell">57</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Dira</td>
+<td class="descriptioncell">Zoyer's Mule with some guild spells&nbsp;</td>
+<td class="levelcell">5</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Dointime</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Dreadstone</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">46</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Druelf</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Dynnamis</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">39</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Elfauna</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">40</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Elflora</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Elikx</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">50</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Elnora</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">23</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Emaa</td>
+<td class="descriptioncell">Ketre's Alt&nbsp;</td>
+<td class="levelcell">12</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Eniel</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Ertemis</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Faffun</td>
+<td class="descriptioncell">Enemy of ughlei and only ecapee from ugh's belly&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Falsturn</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">43</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Farrunner</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Faudowen</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">34</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Fenora</td>
+<td class="descriptioncell">Cutest Barbarian Shaman in all of Norrath&nbsp;</td>
+<td class="levelcell">26</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Feonia</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Fetterholf</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Filuka</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Firio</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Flavio</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">46</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Fortia</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Fredde</td>
+<td class="descriptioncell">Bottelo's alt&nbsp;</td>
+<td class="levelcell">11</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Freefal</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">26</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Froakkin</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">8</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Galagos</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">41</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Garurumon</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Geallo</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">36</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Geeno</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">32</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Gengi</td>
+<td class="descriptioncell">alt of Monec&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Gibboes</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Gleek</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">48</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Gloorgasplorsh</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Greebie</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">49</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Greenglow</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">5</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Grengar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Greyfeather</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Grizelda</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">36</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Gruass</td>
+<td class="descriptioncell">High Elder Druid&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Gyukuk</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Haeven</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Hagop</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Haikuu</td>
+<td class="descriptioncell">Deowyn's Bard Alt&nbsp;</td>
+<td class="levelcell">37</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Hakuuna</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">17</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Honestal</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Horuis</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Hrothgar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Hsiang</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Hummynbyrd</td>
+<td class="descriptioncell">Ketre's alt.&nbsp;</td>
+<td class="levelcell">7</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Ibuaretru</td>
+<td class="descriptioncell">jolontru's alt&nbsp;</td>
+<td class="levelcell">19</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Icedog</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Iolian</td>
+<td class="descriptioncell">Elder - Alt of Zoyer&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Ixsta</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">39</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Jaarl</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Jaeloka</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Jamiel</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Jenine</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">39</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Jennifir</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Jingles</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Jolontru</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Joredor</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Jorlya</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">20</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Judg</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">21</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Juror</td>
+<td class="descriptioncell">TDH&nbsp;</td>
+<td class="levelcell">62</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Leader</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Kaladorm</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">45</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Kaleen</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Karlek</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">18</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Karpe</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Karramon</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">31</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Kasshaak</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Kateja</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">23</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Katori</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Keif</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Ketre</td>
+<td class="descriptioncell">Kilt inspector&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Keyo</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">48</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Khedri</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">44</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Kinidwen</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Klage</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Kurg</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Laeinie</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Leviathis</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Lickatounge</td>
+<td class="descriptioncell">lick a frog&nbsp;</td>
+<td class="levelcell">14</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lilantru</td>
+<td class="descriptioncell">jolontru's alt&nbsp;</td>
+<td class="levelcell">41</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Lilo</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lilyann</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Lindara</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lippin</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Llyan</td>
+<td class="descriptioncell">Spiderman no more&nbsp;</td>
+<td class="levelcell">60</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lolian</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Loral</td>
+<td class="descriptioncell">High Elder Cleric PELC&nbsp;</td>
+<td class="levelcell">65</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lorelia</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">26</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Luifia</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">7</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lukkann</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">47</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Lumaden</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">62</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lumlaili</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">39</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Luuva</td>
+<td class="descriptioncell">The Pocket Cleric&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lyenia</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Lynas</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">22</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Lyonele</td>
+<td class="descriptioncell">Juror's neglected kitty&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Madeline</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Marisa</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Meknic</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Mellore</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Meyan</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">34</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Mikato</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Millaian</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">37</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Mogur</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">38</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Monec</td>
+<td class="descriptioncell">Main of Gengi&nbsp;</td>
+<td class="levelcell">18</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Mooska</td>
+<td class="descriptioncell">Puppy Power&nbsp;</td>
+<td class="levelcell">57</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Morim</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">39</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Mystwolf</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">34</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Mythoz</td>
+<td class="descriptioncell">The mysterious bear&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Negolien</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Niluvian</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Noville</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">41</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Nyeema</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">50</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Nynaeev</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Odiim</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">44</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Palidane</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">50</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Palynian</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Panlor</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Pchavo</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Pelter</td>
+<td class="descriptioncell">Mule for Guild&nbsp;</td>
+<td class="levelcell">5</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Philomel</td>
+<td class="descriptioncell">The Lone Ranger&nbsp;</td>
+<td class="levelcell">49</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Podboy</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Pollyanna</td>
+<td class="descriptioncell">Drunken Wench err Paladin of Brell&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Pondhopper</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">18</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Pthor</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">21</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Pump</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">37</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Qandor</td>
+<td class="descriptioncell">Grumpy&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Qandow</td>
+<td class="descriptioncell">Grumpiest&nbsp;</td>
+<td class="levelcell">58</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Qanubis</td>
+<td class="descriptioncell">Grumpier&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Qazadoo</td>
+<td class="descriptioncell">Elder&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Quaz</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">36</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Rachelynn</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">33</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Raom</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">60</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Raomm</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">21</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Rator</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">22</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Ravenbloodd</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">30</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Rennis</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Rodsekr</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">19</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Roena</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">17</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Roseyone</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Roteye</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">45</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Runed</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">17</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sadgal</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Sadiani</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sadyenfor</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">22</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Sadyenfur</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">47</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sanerin</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Sanina</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">9</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sanine</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">37</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Sanora</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">50</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Seekor</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Semagxof</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sengyr</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Shortfang</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">28</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Shuri</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Sinil</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">37</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Siofra</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">46</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Skovloebber</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sliebvien</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">10</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Snyare</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sobar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Soil</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">29</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Solbew</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">5</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Soulsender</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sprinasong</td>
+<td class="descriptioncell">Eniel's Alt&nbsp;</td>
+<td class="levelcell">24</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Ssioned</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">44</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Sspirit</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">44</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Stage</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">8</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Strongheart</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">23</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Taey</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">58</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Taily</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">12</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Tainin</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">23</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Taitaondaly</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Tanerin</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">32</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Tanuvil</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Taranu</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">25</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Teagan</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Teeffo</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">6</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Teolan</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">56</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Thornby</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">22</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Thurimbar</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">18</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Tigora</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">17</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Tiimm</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">40</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Toughan</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">9</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Trebler</td>
+<td class="descriptioncell">My feet are sore&nbsp;</td>
+<td class="levelcell">64</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Tsukalda</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Tukeaux</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">22</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Tuvanik</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">41</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Twyla</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">13</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Tyconsale</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">12</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Tzebastian</td>
+<td class="descriptioncell">Uber pally&nbsp;</td>
+<td class="levelcell">65</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Ughlei</td>
+<td class="descriptioncell">Eater of halflings&nbsp;</td>
+<td class="levelcell">54</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Uungrok</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Uwanme</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Vadalia</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">52</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Vamcill</td>
+<td class="descriptioncell">Drunk Dwarf of Doom and Gloom&nbsp;</td>
+<td class="levelcell">58</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Vamica</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Varik</td>
+<td class="descriptioncell">Loral's evil twin&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Shadow Knight</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Vespari</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">12</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Waltone</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">19</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Warrick</td>
+<td class="descriptioncell">High Elder Shaman&nbsp;</td>
+<td class="levelcell">55</td>
+<td class="classcell">Shaman</td>
+<td class="rankcell">Officer</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Webfoot</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">27</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Webleg</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Weblos</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">23</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Weril</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">15</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Wolfpaws</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">19</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Womprat</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">53</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Woodwalker</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">20</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Wulph</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">9</td>
+<td class="classcell">Beastlord</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Wyckan</td>
+<td class="descriptioncell">Juror's merchant / mule&nbsp;</td>
+<td class="levelcell">21</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Wyrmling</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">14</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Xaphod</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">33</td>
+<td class="classcell">Bard</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Xondra</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Yambik</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Necromancer</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Yashima</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">16</td>
+<td class="classcell">Ranger</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Yenthil</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">17</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Yomoe</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">14</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Zefir</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">35</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Zepheny</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">62</td>
+<td class="classcell">Cleric</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Zoltz</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">51</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow1">
+<td class="namecell">Zore</td>
+<td class="descriptioncell">&nbsp;</td>
+<td class="levelcell">46</td>
+<td class="classcell">Paladin</td>
+<td class="rankcell">Member</td>
+</tr>
+<tr class="altrow2">
+<td class="namecell">Zoyer</td>
+<td class="descriptioncell">Alt of Iolian&nbsp;</td>
+<td class="levelcell">60</td>
+<td class="classcell">Druid</td>
+<td class="rankcell">Officer</td>
+</tr>
+</table>
+<p class="ad"><a href="roster_form.html">Use this script to generate your own guild's roster</a></p></body>
+</html>

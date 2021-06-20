@@ -1,0 +1,1487 @@
+
+
+<html>
+
+<head>
+<meta http-equiv="keywords" 
+content="eq, mage, magician, spells, damage, direct damage, dps, magic, conjuration, evocation, focus, mana, lucy, aa">
+<meta http-equiv="description" 
+content="Build a custom scenario based on level, AA, buffs and focus items and then calculate your magician's spell damage potential">
+<title>Ballio! - Mage Spell Analysis</title>
+<link rel="stylesheet" type="text/css" href="nenelar.css">
+<style type="text/css">
+
+/* Table styles. */
+
+table {
+  border-color: #000000;
+  border-spacing: 0px;
+  border-style: solid;
+  border-width: 2px;
+  cell-spacing: 0px;
+}
+
+td, th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 1px 0.5em;
+  white-space: nowrap;
+}
+
+td.numeric {
+  text-align: right;
+}
+
+th {
+  background-color: #c0c0c0;
+}
+
+th.mainHeader {
+  background-color: #808080;
+  color: #ffffff;
+  text-align: center;
+}
+
+th a {
+  color: #000080;
+  text-decoration: none;
+}
+
+th a:visited {
+  color: #FFFFFF;
+}
+
+th a:active, th a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+tr.alternateRow {
+  background-color: #e0e0e0;
+}
+
+td.sortedColumn {
+  background-color: #f0f0f0;
+}
+
+th.sortedColumn {
+  background-color: #b0b0b0;
+}
+
+tr.alternateRow td.sortedColumn {
+  background-color: #d0d0d0;
+}
+
+</style>
+<script type="text/javascript">//<![CDATA[
+
+//-----------------------------------------------------------------------------
+// sortTable(id, col, rev)
+//
+//  id  - ID of the TABLE, TBODY, THEAD or TFOOT element to be sorted.
+//  col - Index of the column to sort, 0 = first column, 1 = second column,
+//        etc.
+//  rev - If true, the column is sorted in reverse (descending) order
+//        initially.
+//
+// Note: the team name column (index 1) is used as a secondary sort column and
+// always sorted in ascending order.
+//-----------------------------------------------------------------------------
+
+function sortTable(id, col, rev) {
+
+  // Get the table or table section to sort.
+  var tblEl = document.getElementById(id);
+
+  // The first time this function is called for a given table, set up an
+  // array of reverse sort flags.
+  if (tblEl.reverseSort == null) {
+    tblEl.reverseSort = new Array();
+    // Also, assume the team name column is initially sorted.
+    tblEl.lastColumn = 1;
+  }
+
+  // If this column has not been sorted before, set the initial sort direction.
+  if (tblEl.reverseSort[col] == null)
+    tblEl.reverseSort[col] = rev;
+
+  // If this column was the last one sorted, reverse its sort direction.
+  if (col == tblEl.lastColumn)
+    tblEl.reverseSort[col] = !tblEl.reverseSort[col];
+
+  // Remember this column as the last one sorted.
+  tblEl.lastColumn = col;
+
+  // Set the table display style to "none" - necessary for Netscape 6 
+  // browsers.
+  var oldDsply = tblEl.style.display;
+  tblEl.style.display = "none";
+
+  // Sort the rows based on the content of the specified column using a
+  // selection sort.
+
+  var tmpEl;
+  var i, j;
+  var minVal, minIdx;
+  var testVal;
+  var cmp;
+
+  for (i = 0; i < tblEl.rows.length - 1; i++) {
+
+    // Assume the current row has the minimum value.
+    minIdx = i;
+    minVal = getTextValue(tblEl.rows[i].cells[col]);
+
+    // Search the rows that follow the current one for a smaller value.
+    for (j = i + 1; j < tblEl.rows.length; j++) {
+      testVal = getTextValue(tblEl.rows[j].cells[col]);
+      cmp = compareValues(minVal, testVal);
+      // Negate the comparison result if the reverse sort flag is set.
+      if (tblEl.reverseSort[col])
+        cmp = -cmp;
+      // Sort by the second column (team name) if those values are equal.
+      if (cmp == 0 && col != 1)
+        cmp = compareValues(getTextValue(tblEl.rows[minIdx].cells[1]),
+                            getTextValue(tblEl.rows[j].cells[1]));
+      // If this row has a smaller value than the current minimum, remember its
+      // position and update the current minimum value.
+      if (cmp > 0) {
+        minIdx = j;
+        minVal = testVal;
+      }
+    }
+
+    // By now, we have the row with the smallest value. Remove it from the
+    // table and insert it before the current row.
+    if (minIdx > i) {
+      tmpEl = tblEl.removeChild(tblEl.rows[minIdx]);
+      tblEl.insertBefore(tmpEl, tblEl.rows[i]);
+    }
+  }
+
+  // Make it look pretty.
+  makePretty(tblEl, col);
+
+  // Restore the table's display style.
+  tblEl.style.display = oldDsply;
+
+  return false;
+}
+
+//-----------------------------------------------------------------------------
+// Functions to get and compare values during a sort.
+//-----------------------------------------------------------------------------
+
+// This code is necessary for browsers that don't reflect the DOM constants
+// (like IE).
+if (document.ELEMENT_NODE == null) {
+  document.ELEMENT_NODE = 1;
+  document.TEXT_NODE = 3;
+}
+
+function getTextValue(el) {
+
+  var i;
+  var s;
+
+  // Find and concatenate the values of all text nodes contained within the
+  // element.
+  s = "";
+  for (i = 0; i < el.childNodes.length; i++)
+    if (el.childNodes[i].nodeType == document.TEXT_NODE)
+      s += el.childNodes[i].nodeValue;
+    else if (el.childNodes[i].nodeType == document.ELEMENT_NODE &&
+             el.childNodes[i].tagName == "BR")
+      s += " ";
+    else
+      // Use recursion to get text within sub-elements.
+      s += getTextValue(el.childNodes[i]);
+
+  return normalizeString(s);
+}
+
+function compareValues(v1, v2) {
+
+  var f1, f2;
+
+  // If the values are numeric, convert them to floats.
+
+  f1 = parseFloat(v1);
+  f2 = parseFloat(v2);
+  if (!isNaN(f1) && !isNaN(f2)) {
+    v1 = f1;
+    v2 = f2;
+  }
+
+  // Compare the two values.
+  if (v1 == v2)
+    return 0;
+  if (v1 > v2)
+    return 1
+  return -1;
+}
+
+// Regular expressions for normalizing white space.
+var whtSpEnds = new RegExp("^\\s*|\\s*$", "g");
+var whtSpMult = new RegExp("\\s\\s+", "g");
+
+function normalizeString(s) {
+
+  s = s.replace(whtSpMult, " ");  // Collapse any multiple whites space.
+  s = s.replace(whtSpEnds, "");   // Remove leading or trailing white space.
+
+  return s;
+}
+
+//-----------------------------------------------------------------------------
+// Functions to update the table appearance after a sort.
+//-----------------------------------------------------------------------------
+
+// Style class names.
+var rowClsNm = "alternateRow";
+var colClsNm = "sortedColumn";
+
+// Regular expressions for setting class names.
+var rowTest = new RegExp(rowClsNm, "gi");
+var colTest = new RegExp(colClsNm, "gi");
+
+function makePretty(tblEl, col) {
+
+  var i, j;
+  var rowEl, cellEl;
+
+  // Set style classes on each row to alternate their appearance.
+  for (i = 0; i < tblEl.rows.length; i++) {
+   rowEl = tblEl.rows[i];
+   rowEl.className = rowEl.className.replace(rowTest, "");
+    if (i % 2 != 0)
+      rowEl.className += " " + rowClsNm;
+    rowEl.className = normalizeString(rowEl.className);
+    // Set style classes on each column (other than the name column) to
+    // highlight the one that was sorted.
+    for (j = 2; j < tblEl.rows[i].cells.length; j++) {
+      cellEl = rowEl.cells[j];
+      cellEl.className = cellEl.className.replace(colTest, "");
+      if (j == col)
+        cellEl.className += " " + colClsNm;
+      cellEl.className = normalizeString(cellEl.className);
+    }
+  }
+
+  // Find the table header and highlight the column that was sorted.
+  var el = tblEl.parentNode.tHead;
+  rowEl = el.rows[el.rows.length - 1];
+  // Set style classes for each column as above.
+  for (i = 2; i < rowEl.cells.length; i++) {
+    cellEl = rowEl.cells[i];
+    cellEl.className = cellEl.className.replace(colTest, "");
+    // Highlight the header of the sorted column.
+    if (i == col)
+      cellEl.className += " " + colClsNm;
+      cellEl.className = normalizeString(cellEl.className);
+  }
+}
+
+//]]></script>
+</head>
+<body onload="return sortTable('offTblBdy', 15, false);">
+<div id="header">
+<h1>Ballio!</h1>
+</div>
+
+<div id="topnav">
+<h2>Life as an EverQuest&trade; Magician</h2>
+</div>
+<div id="leftnav">
+<p class="menutitle">The Guide</p>
+  <a href="/mageguide/mgcover.asp">Mage Guide</a><br>
+
+<p class="menutitle">Mage Spells</p>
+<a href="/mageguide/spells.asp"><b>Spell List</b></a><br>
+
+<p class="menutitle">Analysis</p>
+<a href="/mageguide/petcanni.asp">Pet Canni</a><br>
+<a href="/mageguide/pets.asp">Pet Data</a><br>
+<a href="/mageguide/spellanalysis.asp"><b>Spell Analysis</b></a><br>
+
+<p class="menutitle">Select Topics</p>
+  <a href="/mageguide/tpaaxp.asp">AAXP</a><br>
+  <a href="/mageguide/tpaggro.asp">Aggro Radii</a><br>
+  <a href="/mageguide/tpissues.asp">Class Issues</a><br>
+  <a href="/mageguide/tpfocus.asp">Focus Items</a><br>
+  <a href="/mageguide/tpldon.asp">LDoN</a><br>
+  <a href="/mageguide/tpresearch2.asp">Research Post-LoY</a><br>
+
+  <br><a href="/mageguide/topics.asp"><b>All Topics</b></a> </p>
+  
+<p class="menutitle">Best of Links</p>
+  <a href="http://matt.waggoner.com/orbofmastery.html" target="_blank">Epic Quest</a><br>
+  <a href="http://forum.magecompendium.com/tower/index.php" target="_blank">Forums</a><br>
+  <a href="http://lucy.fnord.net" target="_blank">Spell Data</a>
+  
+<p class="menutitle">Contact</p>
+  <a href="mailto:nenelar@hotmail.com">Email</a>
+
+<p><a href="/mageguide/whyballio.asp">Why Ballio</a></p>
+
+<p><b><a href="/mageguide/search.htm">Search</a> </b></p>
+  
+</div>
+
+<div class="content">
+
+
+<h4>Magician Spell Analysis</h4>
+
+
+<p>Analytic data for magician spells.&nbsp; It's just a game!</p>
+
+
+<p>Note: AE spells benefit from Fury AAs, but do not benefit from other focus 
+effects.&nbsp; This is not a bug.&nbsp; It's the way the effects work.</p>
+
+<script Language="JavaScript" Type="text/javascript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+
+  if (theForm.level.value == "")
+  {
+    alert("Please enter a value for the \"level\" field.");
+    theForm.level.focus();
+    return (false);
+  }
+
+  if (theForm.level.value.length < 1)
+  {
+    alert("Please enter at least 1 characters in the \"level\" field.");
+    theForm.level.focus();
+    return (false);
+  }
+
+  if (theForm.level.value.length > 2)
+  {
+    alert("Please enter at most 2 characters in the \"level\" field.");
+    theForm.level.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-";
+  var checkStr = theForm.level.value;
+  var allValid = true;
+  var validGroups = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"level\" field.");
+    theForm.level.focus();
+    return (false);
+  }
+
+  var chkVal = allNum;
+  var prsVal = parseInt(allNum);
+  if (chkVal != "" && !(prsVal >= "1" && prsVal <= "65"))
+  {
+    alert("Please enter a value greater than or equal to \"1\" and less than or equal to \"65\" in the \"level\" field.");
+    theForm.level.focus();
+    return (false);
+  }
+  return (true);
+}
+//--></script><form method="POST" action="spellanalysis.asp" onsubmit="return FrontPage_Form1_Validator(this)" name="FrontPage_Form1" language="JavaScript">
+	</p>
+	<table border="0" cellpadding="5" cellspacing="5" style="border-collapse: collapse; border-width: 0" bordercolor="#111111">
+		<tr>
+			<td class="highlight">Level</td>
+			<td>
+				<input type="text" name="level" size="3" value="65" maxlength="2">
+			</td>
+			<td>&nbsp;</td>
+			<td class="highlight">Rain Spell Waves</td>
+			<td>
+				<select name="rain">
+					<option  value="1">1 Wave</option>
+					<option  value="2">2 Waves</option>
+					<option selected value="3">3 Waves</option>
+					<option  value="4">4 Waves</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="highlight">Specialization</td>
+			<td>
+			<select size="1" name="spec">
+					<option  value="C">Conjuration</option>
+					<option  value="E">Evocation</option>
+					<option  value="O">Other</option>
+				</select>
+				</td>
+			<td>&nbsp;</td>
+			<td class="highlight">PBAE Targets</td>
+			<td><select name="pbae">
+					<option  value="1">1 Target</option>
+					<option  value="2">2 Targets</option>
+					<option selected value="3">3 Targets</option>
+					<option  value="4">4 Targets</option>
+					<option  value="5">5 Targets</option>
+					<option  value="6">6 Targets</option>
+					<option  value="7">7 Targets</option>
+					<option  value="8">8 Targets</option>
+					<option  value="9">9 Targets</option>
+					<option  value="10">10 Targets</option>
+				</select></td>
+		</tr>
+		<tr>
+			<td class="highlight">SCM AA</td>
+			<td>
+				<select size="1" name="scm">
+					<option  value="0">-None-</option>
+					<option  value="1">Spell Casting Mastery 1</option>
+					<option  value="2">Spell Casting Mastery 2</option>
+					<option  value="3">Spell Casting Mastery 3</option>
+				</select></td>
+			<td>&nbsp;</td>
+			<td class="highlight">
+				Fury AA</td>
+			<td>
+				<select size="1" name="Fury">
+					<option  value="0">-None-</option>
+					<option  value="1">Spell Casting Fury 1</option>
+					<option  value="2">Spell Casting Fury 2</option>
+					<option  value="3">Spell Casting Fury 3</option>
+					<option  value="4">Fury of Magic 1</option>
+					<option  value="5">Fury of Magic 2</option>
+					<option  value="6">Fury of Magic 3</option>
+				</select></td>
+		</tr>
+		<tr>
+			<td class="highlight">Mana Focus</td>
+			<td>
+				<select size="1" name="manareduction">
+					<option  value="0">-None-</option>
+					<option  value="A">10% - Mana Preservation</option>
+					<option  value="B">10% - Obsidian Requiem</option>
+					<option  value="C">12% - Focus of the Orb</option>
+					<option  value="D">15% - Alluring Preservation</option>
+					<option  value="E">15% - Conservation of Solusek</option>
+					<option  value="F">15% - Jolum (mage earring)</option>
+					<option  value="G">15% - Preservation of Xegony</option>
+					<option  value="H">18% - Preservation of the Akheva</option>
+					<option  value="I">20% - Conservation of Xegony</option>
+					<option  value="J">20% - Preservation of Solusek</option>
+					<option  value="K">20% - Wind of Mana</option>
+				</select>
+			</td>
+			<td>&nbsp;</td>
+			<td class="highlight">Spell Haste Focus</td>
+			<td>
+				<select size="1" name="castreduction">
+					<option  value="0">-None-</option>
+					<option  value="A">15% - Spell Haste</option>
+					<option  value="B">15% - Naki (mage ring)</option>
+					<option  value="C">15% - Conundrum of Speed</option>
+					<option  value="D">15% - Contemplative Alacrity</option>
+					<option  value="E">15% - Haste of Solusek</option>
+					<option  value="F">18% - Haste of Druzzil</option>
+					<option  value="G">18% - Speeding Thought</option>
+					<option  value="H">18% - Speed of Solusek</option>
+					<option  value="I">20% - Blaze of the Lightbringer</option>
+					<option  value="J">20% - Shade Stone Focus</option>
+					<option  value="K">23% - Quickening of Druzzil</option>
+				</select></td>
+		</tr>
+		<tr>
+			<td class="highlight">Best Fire Focus</td>
+			<td>
+				<select size="1" name="firefocus">
+					<option  value="0">-None-</option>
+					<option  value="A">20% - Gallenite (mage bracer)</option>
+					<option  value="B">20% - Improved Damage</option>
+					<option  value="C">23% - Secret of Power</option>
+					<option  value="D">23% - Anger of Ro</option>
+					<option  value="E">25% - Anger of Solusek</option>
+					<option  value="F">26% - Focus of Flame</option>
+					<option  value="G">30% - Fury of Ro</option>
+					<option  value="H">30% - Fury of Solusek</option>
+					<option  value="I">35% - Wrath of Ro</option>
+				</select>
+			</td>
+			<td>&nbsp;</td>
+			<td class="highlight">Best Magic Focus</td>
+			<td>
+				<select size="1" name="magicfocus">
+					<option  value="0">-None-</option>
+					<option  value="A">20% - Gallenite (mage bracer)</option>
+					<option  value="B">20% - Improved Damage</option>
+					<option  value="C">23% - Anger of Druzzil</option>
+					<option  value="D">23% - Secret of Power</option>
+					<option  value="E">25% - Anger of Solusek</option>
+					<option  value="F">26% - Insidious Dreams</option>
+					<option  value="G">30% - Fury of Druzzil</option>
+					<option  value="H">30% - Fury of Solusek</option>
+					<option  value="I">35% - Wrath of Druzzil</option>
+				</select></td>
+		</tr>
+		<tr>
+			<td class="highlight" >Additional Effects</td>
+			<td colspan="4">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-width: 0" bordercolor="#111111">
+                  <tr>
+                    <td><input  type="checkbox" name="BoR" value="Y"></td>
+                    <td>Blessing of Reverence </td>
+                    <td>&nbsp;</td>
+                    <td><input  type="checkbox" name="MagicAwareness" value="Y"></td>
+                    <td>Magic Awareness</td>
+                  </tr>
+                  <tr>
+                    <td><input  type="checkbox" name="MKGloves" value="Y"></td>
+                    <td>Elemental Gloves (Magi'Kot)</td>
+                    <td>&nbsp;</td>
+                    <td><input  type="checkbox" name="OrnateGloves" value="Y"></td>
+                    <td>Ornate Gloves (Prime)</td>
+                  </tr>
+                  <tr>
+                    <td><input  type="checkbox" name="HeatAwareness" value="Y"></td>
+                    <td>Heat Awareness </td>
+                    <td>&nbsp;</td>
+                    <td><input  type="checkbox" name="Rizlona" value="Y"></td>
+                    <td>Rizlona's Call of Flame</td>
+                  </tr>
+                  </table>
+			</td>
+		</tr>
+	</table>
+	<p><input type="submit" value="Calculate" name="B1"><input type="reset" value="Reset" name="B2"></p>
+</form>
+
+
+<h3 align="center">Analysis Conducted for a Level 65 Magician</h3>
+<p align="center">
+<a href="/mageguide/spellanalysis.asp?level=65">Bookmark or copy this link to save this scenario</a>
+</p>
+<div align="center">
+  <center>
+  click a column label to toggle a sort on that column
+  <table border="1" cellspacing="4" cellpadding="4" style="border-collapse: collapse" bordercolor="#111111">
+	<thead>
+    <tr>
+      <td colspan="2"></td>
+      <td>&nbsp;</td>
+      <th class="mainheader" colspan="6"><span title="Base Stats, no effects added">Base</span></th>
+      <td>&nbsp;</td>
+      <th class="mainheader" colspan="6"><span title="Focused Stats, all effects added">Focused</span></th>
+     </tr>
+     <tr>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  0, true);" title="Min Casting Level">Level</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  1, true);" title="Spell Name">Spell</a></th>
+      <td>&nbsp;</td>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  3, true);" title="Mana Cost">Mana</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  4, true);" title="Damage">Dmg</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  5, true);" title="Casting Time">Time</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  6, true);" title="Mana Damage Multiplier">MDM</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  7, true);" title="Damage per Second">DPS</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  8, true);" title="DPS Sustained">DPSS</a></th>
+      <td>&nbsp;</td>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy',  10, true);" title="Mana Cost">Mana</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy', 11, true);" title="Damage">Dmg</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy', 12, true);" title="Casting Time">Time</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy', 13, true);" title="Mana Damage Multiplier">MDM</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy', 14, true);" title="Damage per Second">DPS</a></th>
+      <th><a href="" onclick="this.blur(); return sortTable('offTblBdy', 15, true);" title="DPS Sustained">DPSS</a></th>
+    </tr>
+	</thead>
+    <tbody id="offTblBdy">
+
+    <tr  >
+      <td align="center">60&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=2118">Ancient Shock of Sun</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">285&nbsp;</td>
+      <td align="center">-1150&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-4.04&nbsp;</td>
+      <td align="center">-191.67&nbsp;</td>
+      <td align="center">-135.29&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">256&nbsp;</td>
+      <td align="center">-1150&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-4.49&nbsp;</td>
+      <td align="center">-191.67&nbsp;</td>
+      <td align="center">-135.29&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">49&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=116">Banish Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">225&nbsp;</td>
+      <td align="center">-585&nbsp;</td>
+      <td align="center">5.50&nbsp;</td>
+      <td align="center">-2.60&nbsp;</td>
+      <td align="center">-106.36&nbsp;</td>
+      <td align="center">-75.48&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">219&nbsp;</td>
+      <td align="center">-585&nbsp;</td>
+      <td align="center">5.50&nbsp;</td>
+      <td align="center">-2.67&nbsp;</td>
+      <td align="center">-106.36&nbsp;</td>
+      <td align="center">-75.48&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">63&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=3321">Black Steel</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">360&nbsp;</td>
+      <td align="center">-1400&nbsp;</td>
+      <td align="center">6.25&nbsp;</td>
+      <td align="center">-3.89&nbsp;</td>
+      <td align="center">-224.00&nbsp;</td>
+      <td align="center">-164.71&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">324&nbsp;</td>
+      <td align="center">-1400&nbsp;</td>
+      <td align="center">6.25&nbsp;</td>
+      <td align="center">-4.32&nbsp;</td>
+      <td align="center">-224.00&nbsp;</td>
+      <td align="center">-164.71&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">34&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=120">Blaze</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">155&nbsp;</td>
+      <td align="center">-295&nbsp;</td>
+      <td align="center">4.60&nbsp;</td>
+      <td align="center">-1.90&nbsp;</td>
+      <td align="center">-64.13&nbsp;</td>
+      <td align="center">-43.07&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">151&nbsp;</td>
+      <td align="center">-295&nbsp;</td>
+      <td align="center">4.60&nbsp;</td>
+      <td align="center">-1.95&nbsp;</td>
+      <td align="center">-64.13&nbsp;</td>
+      <td align="center">-43.07&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">20&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=68">Bolt of Flame</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">105&nbsp;</td>
+      <td align="center">-156&nbsp;</td>
+      <td align="center">3.25&nbsp;</td>
+      <td align="center">-1.49&nbsp;</td>
+      <td align="center">-48.00&nbsp;</td>
+      <td align="center">-28.36&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">102&nbsp;</td>
+      <td align="center">-156&nbsp;</td>
+      <td align="center">3.25&nbsp;</td>
+      <td align="center">-1.53&nbsp;</td>
+      <td align="center">-48.00&nbsp;</td>
+      <td align="center">-28.36&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">4&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=94">Burn</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">15&nbsp;</td>
+      <td align="center">-14&nbsp;</td>
+      <td align="center">1.75&nbsp;</td>
+      <td align="center">-0.93&nbsp;</td>
+      <td align="center">-8.00&nbsp;</td>
+      <td align="center">-3.50&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">14&nbsp;</td>
+      <td align="center">-14&nbsp;</td>
+      <td align="center">1.75&nbsp;</td>
+      <td align="center">-1.00&nbsp;</td>
+      <td align="center">-8.00&nbsp;</td>
+      <td align="center">-3.50&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">62&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=4110">Burning Sand</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">350&nbsp;</td>
+      <td align="center">-950&nbsp;</td>
+      <td align="center">4.00&nbsp;</td>
+      <td align="center">-2.71&nbsp;</td>
+      <td align="center">-237.50&nbsp;</td>
+      <td align="center">-152.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">341&nbsp;</td>
+      <td align="center">-950&nbsp;</td>
+      <td align="center">4.00&nbsp;</td>
+      <td align="center">-2.79&nbsp;</td>
+      <td align="center">-237.50&nbsp;</td>
+      <td align="center">-152.00&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">1&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=93">Burst of Flame</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">7&nbsp;</td>
+      <td align="center">-5&nbsp;</td>
+      <td align="center">1.50&nbsp;</td>
+      <td align="center">-0.71&nbsp;</td>
+      <td align="center">-3.33&nbsp;</td>
+      <td align="center">-1.25&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">6&nbsp;</td>
+      <td align="center">-5&nbsp;</td>
+      <td align="center">1.50&nbsp;</td>
+      <td align="center">-0.83&nbsp;</td>
+      <td align="center">-3.33&nbsp;</td>
+      <td align="center">-1.25&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">52&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1660">Char</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">260&nbsp;</td>
+      <td align="center">-702&nbsp;</td>
+      <td align="center">4.50&nbsp;</td>
+      <td align="center">-2.70&nbsp;</td>
+      <td align="center">-156.00&nbsp;</td>
+      <td align="center">-104.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">253&nbsp;</td>
+      <td align="center">-702&nbsp;</td>
+      <td align="center">4.50&nbsp;</td>
+      <td align="center">-2.77&nbsp;</td>
+      <td align="center">-156.00&nbsp;</td>
+      <td align="center">-104.00&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">34&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=69">Cinder Bolt</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">175&nbsp;</td>
+      <td align="center">-333&nbsp;</td>
+      <td align="center">5.00&nbsp;</td>
+      <td align="center">-1.90&nbsp;</td>
+      <td align="center">-66.60&nbsp;</td>
+      <td align="center">-45.93&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">170&nbsp;</td>
+      <td align="center">-333&nbsp;</td>
+      <td align="center">5.00&nbsp;</td>
+      <td align="center">-1.96&nbsp;</td>
+      <td align="center">-66.60&nbsp;</td>
+      <td align="center">-45.93&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">12&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=328">Column of Fire</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">65&nbsp;</td>
+      <td align="center">-51&nbsp;</td>
+      <td align="center">3.25&nbsp;</td>
+      <td align="center">-0.78&nbsp;</td>
+      <td align="center">-47.08&nbsp;</td>
+      <td align="center">-5.51&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">63&nbsp;</td>
+      <td align="center">-51&nbsp;</td>
+      <td align="center">3.25&nbsp;</td>
+      <td align="center">-0.81&nbsp;</td>
+      <td align="center">-47.08&nbsp;</td>
+      <td align="center">-16.54&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">64&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=3238">Destroy Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">300&nbsp;</td>
+      <td align="center">-1200&nbsp;</td>
+      <td align="center">5.00&nbsp;</td>
+      <td align="center">-4.00&nbsp;</td>
+      <td align="center">-240.00&nbsp;</td>
+      <td align="center">-165.52&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">292&nbsp;</td>
+      <td align="center">-1200&nbsp;</td>
+      <td align="center">5.00&nbsp;</td>
+      <td align="center">-4.11&nbsp;</td>
+      <td align="center">-240.00&nbsp;</td>
+      <td align="center">-165.52&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">29&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=115">Dismiss Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">90&nbsp;</td>
+      <td align="center">-162&nbsp;</td>
+      <td align="center">3.30&nbsp;</td>
+      <td align="center">-1.80&nbsp;</td>
+      <td align="center">-49.09&nbsp;</td>
+      <td align="center">-29.19&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">87&nbsp;</td>
+      <td align="center">-162&nbsp;</td>
+      <td align="center">3.30&nbsp;</td>
+      <td align="center">-1.86&nbsp;</td>
+      <td align="center">-49.09&nbsp;</td>
+      <td align="center">-29.19&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">56&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1529">Exile Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">250&nbsp;</td>
+      <td align="center">-725&nbsp;</td>
+      <td align="center">5.00&nbsp;</td>
+      <td align="center">-2.90&nbsp;</td>
+      <td align="center">-145.00&nbsp;</td>
+      <td align="center">-100.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">243&nbsp;</td>
+      <td align="center">-725&nbsp;</td>
+      <td align="center">5.00&nbsp;</td>
+      <td align="center">-2.98&nbsp;</td>
+      <td align="center">-145.00&nbsp;</td>
+      <td align="center">-100.00&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">39&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=664">Expel Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">130&nbsp;</td>
+      <td align="center">-273&nbsp;</td>
+      <td align="center">4.30&nbsp;</td>
+      <td align="center">-2.10&nbsp;</td>
+      <td align="center">-63.49&nbsp;</td>
+      <td align="center">-41.68&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">126&nbsp;</td>
+      <td align="center">-273&nbsp;</td>
+      <td align="center">4.30&nbsp;</td>
+      <td align="center">-2.17&nbsp;</td>
+      <td align="center">-63.49&nbsp;</td>
+      <td align="center">-41.68&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">20&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=663">Expulse Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">60&nbsp;</td>
+      <td align="center">-94&nbsp;</td>
+      <td align="center">2.75&nbsp;</td>
+      <td align="center">-1.57&nbsp;</td>
+      <td align="center">-34.18&nbsp;</td>
+      <td align="center">-18.80&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">58&nbsp;</td>
+      <td align="center">-94&nbsp;</td>
+      <td align="center">2.75&nbsp;</td>
+      <td align="center">-1.62&nbsp;</td>
+      <td align="center">-34.18&nbsp;</td>
+      <td align="center">-18.80&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">4&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=313">Fire Flux</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">23&nbsp;</td>
+      <td align="center">-12&nbsp;</td>
+      <td align="center">1.75&nbsp;</td>
+      <td align="center">-0.52&nbsp;</td>
+      <td align="center">-20.57&nbsp;</td>
+      <td align="center">-1.55&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">22&nbsp;</td>
+      <td align="center">-12&nbsp;</td>
+      <td align="center">1.75&nbsp;</td>
+      <td align="center">-0.55&nbsp;</td>
+      <td align="center">-20.57&nbsp;</td>
+      <td align="center">-4.65&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">61&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=3318">Firebolt of Tallon</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">500&nbsp;</td>
+      <td align="center">-2000&nbsp;</td>
+      <td align="center">7.00&nbsp;</td>
+      <td align="center">-4.00&nbsp;</td>
+      <td align="center">-285.71&nbsp;</td>
+      <td align="center">-216.22&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">487&nbsp;</td>
+      <td align="center">-2000&nbsp;</td>
+      <td align="center">7.00&nbsp;</td>
+      <td align="center">-4.11&nbsp;</td>
+      <td align="center">-285.71&nbsp;</td>
+      <td align="center">-216.22&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">39&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=122">Flame Arc</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">199&nbsp;</td>
+      <td align="center">-181&nbsp;</td>
+      <td align="center">5.30&nbsp;</td>
+      <td align="center">-0.91&nbsp;</td>
+      <td align="center">-102.45&nbsp;</td>
+      <td align="center">-14.72&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">194&nbsp;</td>
+      <td align="center">-181&nbsp;</td>
+      <td align="center">5.30&nbsp;</td>
+      <td align="center">-0.93&nbsp;</td>
+      <td align="center">-102.45&nbsp;</td>
+      <td align="center">-44.15&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">8&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=322">Flame Bolt</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">40&nbsp;</td>
+      <td align="center">-47&nbsp;</td>
+      <td align="center">2.50&nbsp;</td>
+      <td align="center">-1.18&nbsp;</td>
+      <td align="center">-18.80&nbsp;</td>
+      <td align="center">-9.89&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">39&nbsp;</td>
+      <td align="center">-47&nbsp;</td>
+      <td align="center">2.50&nbsp;</td>
+      <td align="center">-1.21&nbsp;</td>
+      <td align="center">-18.80&nbsp;</td>
+      <td align="center">-9.89&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">24&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=189">Flame Flux</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">123&nbsp;</td>
+      <td align="center">-96&nbsp;</td>
+      <td align="center">3.50&nbsp;</td>
+      <td align="center">-0.78&nbsp;</td>
+      <td align="center">-82.29&nbsp;</td>
+      <td align="center">-10.11&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">119&nbsp;</td>
+      <td align="center">-96&nbsp;</td>
+      <td align="center">3.50&nbsp;</td>
+      <td align="center">-0.81&nbsp;</td>
+      <td align="center">-82.29&nbsp;</td>
+      <td align="center">-30.32&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">49&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=70">Lava Bolt</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">300&nbsp;</td>
+      <td align="center">-810&nbsp;</td>
+      <td align="center">7.00&nbsp;</td>
+      <td align="center">-2.70&nbsp;</td>
+      <td align="center">-115.71&nbsp;</td>
+      <td align="center">-87.57&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">292&nbsp;</td>
+      <td align="center">-810&nbsp;</td>
+      <td align="center">7.00&nbsp;</td>
+      <td align="center">-2.77&nbsp;</td>
+      <td align="center">-115.71&nbsp;</td>
+      <td align="center">-87.57&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">60&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1394">Maelstrom of Electricity</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">475&nbsp;</td>
+      <td align="center">-675&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.42&nbsp;</td>
+      <td align="center">-337.50&nbsp;</td>
+      <td align="center">-37.50&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">463&nbsp;</td>
+      <td align="center">-675&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.46&nbsp;</td>
+      <td align="center">-337.50&nbsp;</td>
+      <td align="center">-112.50&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">64&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=3323">Maelstrom of Thunder</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">480&nbsp;</td>
+      <td align="center">-900&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.88&nbsp;</td>
+      <td align="center">-450.00&nbsp;</td>
+      <td align="center">-50.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">468&nbsp;</td>
+      <td align="center">-900&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.92&nbsp;</td>
+      <td align="center">-450.00&nbsp;</td>
+      <td align="center">-150.00&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">59&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1665">Manastorm</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">427&nbsp;</td>
+      <td align="center">-675&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.58&nbsp;</td>
+      <td align="center">-112.50&nbsp;</td>
+      <td align="center">-37.50&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">416&nbsp;</td>
+      <td align="center">-675&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.62&nbsp;</td>
+      <td align="center">-112.50&nbsp;</td>
+      <td align="center">-37.50&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">12&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=330">Rain of Blades</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">62&nbsp;</td>
+      <td align="center">-26&nbsp;</td>
+      <td align="center">2.75&nbsp;</td>
+      <td align="center">-0.42&nbsp;</td>
+      <td align="center">-28.36&nbsp;</td>
+      <td align="center">-1.76&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">60&nbsp;</td>
+      <td align="center">-26&nbsp;</td>
+      <td align="center">2.75&nbsp;</td>
+      <td align="center">-0.43&nbsp;</td>
+      <td align="center">-28.36&nbsp;</td>
+      <td align="center">-5.29&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">20&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=83">Rain of Fire</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">125&nbsp;</td>
+      <td align="center">-56&nbsp;</td>
+      <td align="center">3.50&nbsp;</td>
+      <td align="center">-0.45&nbsp;</td>
+      <td align="center">-48.00&nbsp;</td>
+      <td align="center">-3.61&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">121&nbsp;</td>
+      <td align="center">-56&nbsp;</td>
+      <td align="center">3.50&nbsp;</td>
+      <td align="center">-0.46&nbsp;</td>
+      <td align="center">-48.00&nbsp;</td>
+      <td align="center">-10.84&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">39&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=121">Rain of Lava</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">250&nbsp;</td>
+      <td align="center">-172&nbsp;</td>
+      <td align="center">5.50&nbsp;</td>
+      <td align="center">-0.69&nbsp;</td>
+      <td align="center">-93.82&nbsp;</td>
+      <td align="center">-9.83&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">243&nbsp;</td>
+      <td align="center">-172&nbsp;</td>
+      <td align="center">5.50&nbsp;</td>
+      <td align="center">-0.71&nbsp;</td>
+      <td align="center">-93.82&nbsp;</td>
+      <td align="center">-29.49&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">29&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=409">Rain of Spikes</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">162&nbsp;</td>
+      <td align="center">-91&nbsp;</td>
+      <td align="center">4.50&nbsp;</td>
+      <td align="center">-0.56&nbsp;</td>
+      <td align="center">-60.67&nbsp;</td>
+      <td align="center">-5.52&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">157&nbsp;</td>
+      <td align="center">-91&nbsp;</td>
+      <td align="center">4.50&nbsp;</td>
+      <td align="center">-0.58&nbsp;</td>
+      <td align="center">-60.67&nbsp;</td>
+      <td align="center">-16.55&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">49&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=410">Rain of Swords</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">375&nbsp;</td>
+      <td align="center">-324&nbsp;</td>
+      <td align="center">7.50&nbsp;</td>
+      <td align="center">-0.86&nbsp;</td>
+      <td align="center">-129.60&nbsp;</td>
+      <td align="center">-16.62&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">365&nbsp;</td>
+      <td align="center">-324&nbsp;</td>
+      <td align="center">7.50&nbsp;</td>
+      <td align="center">-0.89&nbsp;</td>
+      <td align="center">-129.60&nbsp;</td>
+      <td align="center">-49.85&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">54&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1661">Scars of Sigil</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">175&nbsp;</td>
+      <td align="center">-450&nbsp;</td>
+      <td align="center">2.00&nbsp;</td>
+      <td align="center">-2.57&nbsp;</td>
+      <td align="center">-225.00&nbsp;</td>
+      <td align="center">-105.88&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">170&nbsp;</td>
+      <td align="center">-450&nbsp;</td>
+      <td align="center">2.00&nbsp;</td>
+      <td align="center">-2.65&nbsp;</td>
+      <td align="center">-225.00&nbsp;</td>
+      <td align="center">-105.88&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">51&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1659">Scintillation</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">361&nbsp;</td>
+      <td align="center">-608&nbsp;</td>
+      <td align="center">3.00&nbsp;</td>
+      <td align="center">-1.68&nbsp;</td>
+      <td align="center">-608.00&nbsp;</td>
+      <td align="center">-64.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">351&nbsp;</td>
+      <td align="center">-608&nbsp;</td>
+      <td align="center">3.00&nbsp;</td>
+      <td align="center">-1.73&nbsp;</td>
+      <td align="center">-608.00&nbsp;</td>
+      <td align="center">-192.00&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">59&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1664">Seeking Flame of Seukor</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">320&nbsp;</td>
+      <td align="center">-1024&nbsp;</td>
+      <td align="center">7.00&nbsp;</td>
+      <td align="center">-3.20&nbsp;</td>
+      <td align="center">-146.29&nbsp;</td>
+      <td align="center">-110.70&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">312&nbsp;</td>
+      <td align="center">-1024&nbsp;</td>
+      <td align="center">7.00&nbsp;</td>
+      <td align="center">-3.28&nbsp;</td>
+      <td align="center">-146.29&nbsp;</td>
+      <td align="center">-110.70&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">8&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=324">Shock of Blades</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">30&nbsp;</td>
+      <td align="center">-35&nbsp;</td>
+      <td align="center">2.10&nbsp;</td>
+      <td align="center">-1.17&nbsp;</td>
+      <td align="center">-16.67&nbsp;</td>
+      <td align="center">-8.05&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">27&nbsp;</td>
+      <td align="center">-35&nbsp;</td>
+      <td align="center">2.10&nbsp;</td>
+      <td align="center">-1.30&nbsp;</td>
+      <td align="center">-16.67&nbsp;</td>
+      <td align="center">-8.05&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">60&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=2540">Shock of Fiery Blades</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">334&nbsp;</td>
+      <td align="center">-1005&nbsp;</td>
+      <td align="center">6.80&nbsp;</td>
+      <td align="center">-3.01&nbsp;</td>
+      <td align="center">-147.79&nbsp;</td>
+      <td align="center">-111.05&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">300&nbsp;</td>
+      <td align="center">-1005&nbsp;</td>
+      <td align="center">6.80&nbsp;</td>
+      <td align="center">-3.35&nbsp;</td>
+      <td align="center">-147.79&nbsp;</td>
+      <td align="center">-111.05&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">16&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=334">Shock of Flame</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">70&nbsp;</td>
+      <td align="center">-96&nbsp;</td>
+      <td align="center">2.75&nbsp;</td>
+      <td align="center">-1.37&nbsp;</td>
+      <td align="center">-34.91&nbsp;</td>
+      <td align="center">-19.20&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">68&nbsp;</td>
+      <td align="center">-96&nbsp;</td>
+      <td align="center">2.75&nbsp;</td>
+      <td align="center">-1.41&nbsp;</td>
+      <td align="center">-34.91&nbsp;</td>
+      <td align="center">-19.20&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">24&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=113">Shock of Spikes</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">110&nbsp;</td>
+      <td align="center">-176&nbsp;</td>
+      <td align="center">3.50&nbsp;</td>
+      <td align="center">-1.60&nbsp;</td>
+      <td align="center">-50.29&nbsp;</td>
+      <td align="center">-30.61&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">99&nbsp;</td>
+      <td align="center">-176&nbsp;</td>
+      <td align="center">3.50&nbsp;</td>
+      <td align="center">-1.78&nbsp;</td>
+      <td align="center">-50.29&nbsp;</td>
+      <td align="center">-30.61&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">57&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1663">Shock of Steel</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">275&nbsp;</td>
+      <td align="center">-825&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-3.00&nbsp;</td>
+      <td align="center">-137.50&nbsp;</td>
+      <td align="center">-100.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">247&nbsp;</td>
+      <td align="center">-825&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-3.34&nbsp;</td>
+      <td align="center">-137.50&nbsp;</td>
+      <td align="center">-100.00&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">44&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=114">Shock of Swords</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">250&nbsp;</td>
+      <td align="center">-600&nbsp;</td>
+      <td align="center">6.10&nbsp;</td>
+      <td align="center">-2.40&nbsp;</td>
+      <td align="center">-98.36&nbsp;</td>
+      <td align="center">-71.86&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">225&nbsp;</td>
+      <td align="center">-600&nbsp;</td>
+      <td align="center">6.10&nbsp;</td>
+      <td align="center">-2.67&nbsp;</td>
+      <td align="center">-98.36&nbsp;</td>
+      <td align="center">-71.86&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">55&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=1662">Sirocco</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">399&nbsp;</td>
+      <td align="center">-630&nbsp;</td>
+      <td align="center">5.50&nbsp;</td>
+      <td align="center">-1.58&nbsp;</td>
+      <td align="center">-343.64&nbsp;</td>
+      <td align="center">-36.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">389&nbsp;</td>
+      <td align="center">-630&nbsp;</td>
+      <td align="center">5.50&nbsp;</td>
+      <td align="center">-1.62&nbsp;</td>
+      <td align="center">-343.64&nbsp;</td>
+      <td align="center">-108.00&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">62&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=3319">Sun Storm</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">440&nbsp;</td>
+      <td align="center">-800&nbsp;</td>
+      <td align="center">4.00&nbsp;</td>
+      <td align="center">-1.82&nbsp;</td>
+      <td align="center">-600.00&nbsp;</td>
+      <td align="center">-50.00&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">429&nbsp;</td>
+      <td align="center">-800&nbsp;</td>
+      <td align="center">4.00&nbsp;</td>
+      <td align="center">-1.86&nbsp;</td>
+      <td align="center">-600.00&nbsp;</td>
+      <td align="center">-150.00&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">65&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=3325">Sun Vortex</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">395&nbsp;</td>
+      <td align="center">-1550&nbsp;</td>
+      <td align="center">6.35&nbsp;</td>
+      <td align="center">-3.92&nbsp;</td>
+      <td align="center">-244.09&nbsp;</td>
+      <td align="center">-180.23&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">355&nbsp;</td>
+      <td align="center">-1550&nbsp;</td>
+      <td align="center">6.35&nbsp;</td>
+      <td align="center">-4.37&nbsp;</td>
+      <td align="center">-244.09&nbsp;</td>
+      <td align="center">-180.23&nbsp;</td>
+    </tr>
+    
+    <tr  >
+      <td align="center">12&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=248">Ward Summoned</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">30&nbsp;</td>
+      <td align="center">-41&nbsp;</td>
+      <td align="center">2.10&nbsp;</td>
+      <td align="center">-1.37&nbsp;</td>
+      <td align="center">-19.52&nbsp;</td>
+      <td align="center">-9.43&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">29&nbsp;</td>
+      <td align="center">-41&nbsp;</td>
+      <td align="center">2.10&nbsp;</td>
+      <td align="center">-1.41&nbsp;</td>
+      <td align="center">-19.52&nbsp;</td>
+      <td align="center">-9.43&nbsp;</td>
+    </tr>
+    
+    <tr   class="AlternateRow" >
+      <td align="center">60&nbsp;</td>
+      <td><a href="/mageguide/spelldetail.asp?id=4078">Wind of the Desert</a>&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">780&nbsp;</td>
+      <td align="center">-1050&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.35&nbsp;</td>
+      <td align="center">-525.00&nbsp;</td>
+      <td align="center">-58.33&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">760&nbsp;</td>
+      <td align="center">-1050&nbsp;</td>
+      <td align="center">6.00&nbsp;</td>
+      <td align="center">-1.38&nbsp;</td>
+      <td align="center">-525.00&nbsp;</td>
+      <td align="center">-175.00&nbsp;</td>
+    </tr>
+    
+	</tbody>
+    </table>
+	</center>
+</div>
+<p align="center"><font size="1"><b>MDM </b>- Mana Damage Multiplier (damage / mana)<br>
+<b>DPS </b>- Damage per Second (damage / cast time)<br>
+<b>DPSS </b>- Damage per Second Sustained (damage / (cast + recast))</font></p>
+<h3 align="center">Summary of Effects</h3>
+<p>Mana:
+<ul>
+  
+  <li>Specialization in CONJURATION reduced mana cost by: 10%</li>
+  
+  <li>Specialization in EVOCATION reduced mana cost by: 2.5%</li>
+  
+</ul>
+</p>
+<p>Damage:
+<ul>
+  <li>FIRE-based spells had their damage increased by : 0%</li>
+  <li>MAGIC-based spells had their damage increased by : 0%</li>
+  
+  <li>Fury AAs increased spell damage by 0%</li>
+  
+</ul>
+</p>
+<p>Cast Time:
+<ul>
+  
+  <li>Worn items reduced casting time by : 0%</li>
+
+</ul>
+</p>
+<p align="center">Spell data as of 11/5/2003 11:11:00 AM</p></div>
+<div class="content">Spell data listed above was imported from
+  <a target="_blank" href="http://lucy.fnord.net">Lucy</a> and is used in terms 
+  with the <a target="_blank" href="http://lucy.fnord.net/downloads.html">
+  license agreement</a>.&nbsp;&nbsp; Direct links to Lucy are provided for 
+  convenience.&nbsp; Ballio! is not affiliated with Lucy in any way.&nbsp; 
+  Special thanks to Xalmat Lunaire of Brell for his damage spreadsheet -- it 
+  sped up the coding of this page significantly.</div>
+  <p align="center">2616</p>
+  </body>
+</html>

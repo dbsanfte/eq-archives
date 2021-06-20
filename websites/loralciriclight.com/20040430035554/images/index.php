@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="author" content="Mike Shea" />
+    <meta name="robots" content="ALL" />
+    <meta name="description" content="Everquest Screenshots of the character Loral Ciriclight on the Quellious Server and his adventures across Norrath." />
+    <meta name="keywords" content="Everquest Screenshots Quellious Healers United Loral Ciriclight Fan Fiction" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<link rel="validate" href="http://validator.w3.org/check/referer" title="validate this page" />
+    <style type="text/css" media="all">
+
+a:hover { 
+  background-color: #ff5;
+  color: #000;
+};
+
+body {
+background-color: #ffffee;
+color: #000;
+}
+
+h1, .thumbnails, .navigation {
+text-align: center;
+}
+
+.thumbnails {
+margin-top: 1em;
+}
+
+    </style>
+    <title>Loral's Everquest Screenshots</title>
+  </head>
+  <body>
+
+	<h1>Loral's Everquest Screenshots</h1>
+<div class="navigation">Previous &middot;  1 to 15 &middot;&nbsp;<a href="/images/index.php?step=15&amp;start=15&amp;thumbnails=big">16 to 30</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=30&amp;thumbnails=big">31 to 45</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=45&amp;thumbnails=big">46 to 60</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=60&amp;thumbnails=big">61 to 75</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=75&amp;thumbnails=big">76 to 90</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=90&amp;thumbnails=big">91 to 105</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=105&amp;thumbnails=big">106 to 120</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=120&amp;thumbnails=big">121 to 135</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=135&amp;thumbnails=big">136 to 150</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=150&amp;thumbnails=big">151 to 165</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=165&amp;thumbnails=big">166 to 180</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=180&amp;thumbnails=big">181 to 195</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=195&amp;thumbnails=big">196 to 210</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=210&amp;thumbnails=big">211 to 225</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=225&amp;thumbnails=big">226 to 240</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=240&amp;thumbnails=big">241 to 255</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=255&amp;thumbnails=big">256 to 270</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=270&amp;thumbnails=big">271 to 285</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=285&amp;thumbnails=big">286 to 300</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=300&amp;thumbnails=big">301 to 315</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=315&amp;thumbnails=big">316 to 330</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=330&amp;thumbnails=big">331 to 345</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=345&amp;thumbnails=big">346 to 360</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=360&amp;thumbnails=big">361 to 375</a>&nbsp;&middot;&nbsp;<a href="/images/index.php?step=15&amp;start=375&amp;thumbnails=big">376 to 390</a>&nbsp;&middot; <a href="/images/index.php?step=15&amp;start=15&amp;thumbnails=big">Next</a></div><div class="navigation">View Options: <a href="textlist.php">Text List</a> &middot; <a href="/images/index.php?step=15&amp;start=0&amp;thumbnails=small">Small
+Thumbnails</a></div>
+<div class="thumbnails"><a href="new_sky.jpg" title="new_sky.jpg"><img src="new_sky_t.jpg" height="225" width="300" alt="new_sky.jpg" /></a> &nbsp; 
+<a href="ruj_orc_priest_2.jpg" title="ruj_orc_priest_2.jpg"><img src="ruj_orc_priest_2_t.jpg" height="225" width="300" alt="ruj_orc_priest_2.jpg" /></a> &nbsp; 
+<a href="ruj_orc_priest.jpg" title="ruj_orc_priest.jpg"><img src="ruj_orc_priest_t.jpg" height="225" width="300" alt="ruj_orc_priest.jpg" /></a> &nbsp; 
+<a href="ruj_orc_lord.jpg" title="ruj_orc_lord.jpg"><img src="ruj_orc_lord_t.jpg" height="225" width="300" alt="ruj_orc_lord.jpg" /></a> &nbsp; 
+<a href="ruj_orc_lord_2.jpg" title="ruj_orc_lord_2.jpg"><img src="ruj_orc_lord_2_t.jpg" height="225" width="300" alt="ruj_orc_lord_2.jpg" /></a> &nbsp; 
+<a href="mir_fireborn_table.jpg" title="mir_fireborn_table.jpg"><img src="mir_fireborn_table_t.jpg" height="225" width="300" alt="mir_fireborn_table.jpg" /></a> &nbsp; 
+<a href="mir_fireborn.jpg" title="mir_fireborn.jpg"><img src="mir_fireborn_t.jpg" height="225" width="300" alt="mir_fireborn.jpg" /></a> &nbsp; 
+<a href="mir_fireborn_in_fire.jpg" title="mir_fireborn_in_fire.jpg"><img src="mir_fireborn_in_fire_t.jpg" height="225" width="300" alt="mir_fireborn_in_fire.jpg" /></a> &nbsp; 
+<a href="mir_fireborn_battle.jpg" title="mir_fireborn_battle.jpg"><img src="mir_fireborn_battle_t.jpg" height="225" width="300" alt="mir_fireborn_battle.jpg" /></a> &nbsp; 
+<a href="guk_eye_2.jpg" title="guk_eye_2.jpg"><img src="guk_eye_2_t.jpg" height="225" width="300" alt="guk_eye_2.jpg" /></a> &nbsp; 
+<a href="guk_lich_battle.jpg" title="guk_lich_battle.jpg"><img src="guk_lich_battle_t.jpg" height="225" width="300" alt="guk_lich_battle.jpg" /></a> &nbsp; 
+<a href="guk_undead_frog_3.jpg" title="guk_undead_frog_3.jpg"><img src="guk_undead_frog_3_t.jpg" height="225" width="300" alt="guk_undead_frog_3.jpg" /></a> &nbsp; 
+<a href="guk_undead_frog_2.jpg" title="guk_undead_frog_2.jpg"><img src="guk_undead_frog_2_t.jpg" height="225" width="300" alt="guk_undead_frog_2.jpg" /></a> &nbsp; 
+<a href="guk_undead_frog.jpg" title="guk_undead_frog.jpg"><img src="guk_undead_frog_t.jpg" height="225" width="300" alt="guk_undead_frog.jpg" /></a> &nbsp; 
+<a href="mistmoore_grave.jpg" title="mistmoore_grave.jpg"><img src="mistmoore_grave_t.jpg" height="225" width="300" alt="mistmoore_grave.jpg" /></a> &nbsp; 
+</div>
+</body>
+</html>

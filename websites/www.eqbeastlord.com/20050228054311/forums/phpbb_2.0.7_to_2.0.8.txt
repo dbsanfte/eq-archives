@@ -1,0 +1,551 @@
+############################################################## 
+## MOD Title: phpBB 2.0.7 to phpBB 2.0.8 Code Changes
+## MOD Author: Acyd Burn < N/A > (Meik Sievertsen) N/A 
+## MOD Description: These are the Changes from phpBB 2.0.7 to phpBB 2.0.8 summed up into a little Mod.
+##		    This might be very helpful if you want to update your Board and have installed a 
+##		    bunch of Mods. Then it's normally easier to apply the Code Changes than to install
+##		    all Mods again.
+## MOD Version: 1.0.0 
+## 
+## Installation Level: Intermediate
+## Installation Time: 30-60 Minutes 
+## Files To Edit: admin/admin_forumauth.php
+##		  admin/admin_forums.php
+##		  admin/admin_groups.php
+##		  admin/admin_ranks.php
+##		  admin/admin_smilies.php
+##		  admin/admin_styles.php
+##		  admin/admin_ug_auth.php
+##		  admin/admin_user_ban.php
+##		  admin/admin_users.php
+##		  admin/admin_words.php
+##		  admin/pagestart.php
+##		  includes/bbcode.php
+##		  includes/functions_search.php
+##		  includes/usercp_register.php
+##		  login.php
+##		  privmsg.php
+##		  search.php
+## Included Files: 
+############################################################## 
+## For Security Purposes, Please Check: http://www.phpbb.com/mods/ for the 
+## latest version of this MOD. Downloading this MOD from other sites could cause malicious code 
+## to enter into your phpBB Forum. As such, phpBB will not offer support for MOD's not offered 
+## in our MOD-Database, located at: http://www.phpbb.com/mods/ 
+############################################################## 
+## Author Notes: 
+## 
+##	When you find a 'AFTER, ADD'-Statement, the Code have to be added after the last line quoted in the 'FIND'-Statement.
+##	When you find a 'BEFORE, ADD'-Statement, the Code have to be added before the first line quoted in the 'FIND'-Statement.
+##	When you find a 'REPLACE WITH'-Statement, the Code quoted in the 'FIND'-Statement have to be replaced completely with the quoted Code in the 'REPLACE WITH'-Statement.
+##	When you find a 'DELETE'-Statement, the Code have to be deleted.
+##	
+##	After you have finished this tutorial, you have to upload the update_to_208.php file (found within every phpBB Package), execute it and then delete it from your webspace.
+##
+##	From phpBB 2.0.7 to 2.0.8 there were no database changes, except the version number increment.
+##	
+##	Ok, lets start:
+############################################################## 
+## MOD History: 
+## 
+##   2004-03-25 - Version 1.0.0 
+##      - first release 
+## 
+############################################################## 
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD 
+##############################################################
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_forumauth.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 105
+			$simple_ary = $simple_auth_ary[$HTTP_POST_VARS['simpleauth']];
+
+			for($i = 0; $i < count($simple_ary); $i++)
+			{
+				$sql .= ( ( $sql != '' ) ? ', ' : '' ) . $forum_auth_fields[$i] . ' = ' . $simple_ary[$i];
+			}
+
+			$sql = "UPDATE " . FORUMS_TABLE . " SET $sql WHERE forum_id = $forum_id";
+		}
+		else
+		{
+			for($i = 0; $i < count($forum_auth_fields); $i++)
+			{
+				$value = $HTTP_POST_VARS[$forum_auth_fields[$i]];
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+			$simple_ary = $simple_auth_ary[intval($HTTP_POST_VARS['simpleauth'])];
+
+			for($i = 0; $i < count($simple_ary); $i++)
+			{
+				$sql .= ( ( $sql != '' ) ? ', ' : '' ) . $forum_auth_fields[$i] . ' = ' . $simple_ary[$i];
+			}
+
+			if (is_array($simple_ary))
+			{
+				$sql = "UPDATE " . FORUMS_TABLE . " SET $sql WHERE forum_id = $forum_id";
+			}
+		}
+		else
+		{
+			for($i = 0; $i < count($forum_auth_fields); $i++)
+			{
+				$value = intval($HTTP_POST_VARS[$forum_auth_fields[$i]]);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_forums.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 60
+	$mode = ( isset($HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_groups.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 54
+	$mode = ( isset($HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_ranks.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 43
+	$mode = ($HTTP_GET_VARS['mode']) ? $HTTP_GET_VARS['mode'] : $HTTP_POST_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_smilies.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 62
+	$mode = ( isset($HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 319
+			$smiley_id = ( !empty($HTTP_POST_VARS['id']) ) ? $HTTP_POST_VARS['id'] : $HTTP_GET_VARS['id'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+			$smiley_id = intval($smiley_id);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 340
+			$smiley_id = ( !empty($HTTP_POST_VARS['id']) ) ? $HTTP_POST_VARS['id'] : $HTTP_GET_VARS['id'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+			$smiley_id = intval($smiley_id);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_styles.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 61
+	$mode = ( isset($HTTP_GET_VARS['mode']) ) ? $HTTP_GET_VARS['mode'] : $HTTP_POST_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 492
+				$style_id = $HTTP_GET_VARS['style_id'];
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+				$style_id = intval($HTTP_GET_VARS['style_id']);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 707
+				WHERE template_name = '$template_name'";
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+				WHERE template_name = '" . str_replace("\'", "''", $template_name) . "'";
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_ug_auth.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 60
+$user_id = intval($user_id);
+$group_id = intval($group_id);
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+$adv = intval($adv);
+$mode = htmlspecialchars($mode);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_user_ban.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 280
+				$where_sql .= ( ( $where_sql != '' ) ? ', ' : '' ) . $user_list[$i];
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+				$where_sql .= ( ( $where_sql != '' ) ? ', ' : '' ) . intval($user_list[$i]);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 293
+				$where_sql .= ( ( $where_sql != '' ) ? ', ' : '' ) . $ip_list[$i];
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+				$where_sql .= ( ( $where_sql != '' ) ? ', ' : '' ) . str_replace("\'", "''", $ip_list[$i]);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 306
+				$where_sql .= ( ( $where_sql != '' ) ? ', ' : '' ) . $email_list[$i];
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+				$where_sql .= ( ( $where_sql != '' ) ? ', ' : '' ) . str_replace("\'", "''", $email_list[$i]);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_users.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 52
+	$mode = ( isset( $HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 842
+				$category = $HTTP_POST_VARS['avatarcategory'];
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+				$category = htmlspecialchars($HTTP_POST_VARS['avatarcategory']);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/admin_words.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 44
+	$mode = ($HTTP_GET_VARS['mode']) ? $HTTP_GET_VARS['mode'] : $HTTP_POST_VARS['mode'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$mode = htmlspecialchars($mode);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 67
+		$word_id = ( isset($HTTP_GET_VARS['id']) ) ? $HTTP_GET_VARS['id'] : 0;
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+		$word_id = ( isset($HTTP_GET_VARS['id']) ) ? intval($HTTP_GET_VARS['id']) : 0;
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 117
+		$word_id = ( isset($HTTP_POST_VARS['id']) ) ? $HTTP_POST_VARS['id'] : 0;
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+		$word_id = ( isset($HTTP_POST_VARS['id']) ) ? intval($HTTP_POST_VARS['id']) : 0;
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 154
+		if( isset($HTTP_POST_VARS['id']) ||  isset($HTTP_GET_VARS['id']) )
+		{
+			$word_id = ( isset($HTTP_POST_VARS['id']) ) ? $HTTP_POST_VARS['id'] : $HTTP_GET_VARS['id'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+			$word_id = intval($word_id);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+admin/pagestart.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 59
+	redirect($url);
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+	redirect("index.$phpEx?sid=" . $userdata['session_id']);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+includes/bbcode.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 284
+	$text = preg_replace("#\[img\]((ht|f)tp://)([^\r\n\t<\"]*?)\[/img\]#sie", "'[img:$uid]\\1' . str_replace(' ', '%20', '\\3') . '[/img:$uid]'", $text);
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+	$text = preg_replace("#\[img\]((ht|f)tp://)([^ \?&=\"\n\r\t<]*?(\.(jpg|jpeg|gif|png)))\[/img\]#sie", "'[img:$uid]\\1' . str_replace(' ', '%20', '\\3') . '[/img:$uid]'", $text);
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+includes/functions_search.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 201
+						$value_sql .= ( ( $value_sql != '' ) ? ', ' : '' ) . '(\'' . $word[$i] . '\', 0)';
+						break;
+					case 'mssql':
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+					case 'mssql-odbc':
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 226
+						VALUES $value_sql"; 
+					break;
+				case 'mssql':
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+				case 'mssql-odbc':
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+includes/usercp_register.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 180
+	$user_avatar_local = ( isset($HTTP_POST_VARS['avatarselect']) && !empty($HTTP_POST_VARS['submitavatar']) && $board_config['allow_avatar_local'] ) ? $HTTP_POST_VARS['avatarselect'] : ( ( isset($HTTP_POST_VARS['avatarlocal'])  ) ? htmlspecialchars($HTTP_POST_VARS['avatarlocal']) : '' );
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+	$user_avatar_local = ( isset($HTTP_POST_VARS['avatarselect']) && !empty($HTTP_POST_VARS['submitavatar']) && $board_config['allow_avatar_local'] ) ? htmlspecialchars($HTTP_POST_VARS['avatarselect']) : ( ( isset($HTTP_POST_VARS['avatarlocal'])  ) ? htmlspecialchars($HTTP_POST_VARS['avatarlocal']) : '' );
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+login.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 86
+						$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : "index.$phpEx";
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+						$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : "index.$phpEx";
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 96
+					$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : '';
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+					$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : '';
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 111
+			$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : "";
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+			$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : "";
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 133
+		if (!empty($HTTP_POST_VARS['redirect']) || !empty($HTTP_GET_VARS['redirect']))
+		{
+			$url = (!empty($HTTP_POST_VARS['redirect'])) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : htmlspecialchars($HTTP_GET_VARS['redirect']);
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+			$url = str_replace('&amp;', '&', $url);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 143
+		$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : "index.$phpEx";
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# 
+		$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : "index.$phpEx";
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+privmsg.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 2079
+
+if ( $row = $db->sql_fetchrow($result) )
+{
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$i = 0;
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 2114
+
+		$row_color = ( !($i % 2) ) ? $theme['td_color1'] : $theme['td_color2'];
+		$row_class = ( !($i % 2) ) ? $theme['td_class1'] : $theme['td_class2'];
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+		$i++;
+
+
+# 
+#-----[ OPEN ]--------------------------------------------- 
+# 
+search.php
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 72
+$search_id = ( isset($HTTP_GET_VARS['search_id']) ) ? $HTTP_GET_VARS['search_id'] : '';
+
+$show_results = ( isset($HTTP_POST_VARS['show_results']) ) ? $HTTP_POST_VARS['show_results'] : 'posts';
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+$show_results = ($show_results == 'topics') ? 'topics' : 'posts';
+
+#
+#-----[ FIND ]---------------------------------------------
+# Line 148
+else if ( $search_keywords != '' || $search_author != '' || $search_id )
+{
+	$store_vars = array('search_results', 'total_match_count', 'split_search', 'sort_by', 'sort_dir', 'show_results', 'return_chars');
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+# 
+	$search_results = '';
+
+
+# 
+#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------ 
+# 
+
+# EoM

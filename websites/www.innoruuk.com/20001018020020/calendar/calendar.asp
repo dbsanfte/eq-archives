@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body link="#003333" vlink="#336666" alink="#336666">
+
+<center>
+<br><font face="arial" face="arial" size="4"><b>Innoruuk.Com Guild/Event Schedule</b><br><br>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="1">
+	<tr>
+		<td bgcolor="#336666" align="center" colspan="7">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td align="right"><b><A HREF="calendar.asp?date=9/17/2000" style="color: #FFFFFF">&lt;--</A></b></TD>
+					<td align="center"><font face="arial" color="#FFFFFF"><B><a href="./display_date.asp?day=0&month=10" class="hdr">October  2000</a></B></font></TD>
+					<td align="left"><b><A HREF="calendar.asp?date=11/17/2000" style="color: #FFFFFF">--&gt;</A></b></TD>
+					<td align="right" valign="top"><a href="../default.asp" target="_top"><img src="close.gif" border="0"></a></td>
+				</tr>
+			</TABLE>
+		</td>
+	</tr>
+	<tr bgcolor="#003333">
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Sun</font></B></TD>
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Mon</font></B></TD>
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Tue</font></B></TD>
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Wed</font></B></TD>
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Thu</font></B></TD>
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Fri</font></B></TD>
+		<td ALIGN="center" width="14%"><B><font face="arial" color="#FFFFFF">Sat</font></B></TD>
+	</tr>
+	<tr>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=1&month=10">1</a></b><br><font face=arial size=2><a href="display_event.asp?ID=666">PoF - The Ascension</a></font><br><font face=arial size=2><a href="display_event.asp?ID=688">PoH - Inner Circle</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=2&month=10">2</a></b><br><font face=arial size=2><a href="display_event.asp?ID=838">PoF - The Forsaken Children</a></font><br><font face=arial size=2><a href="display_event.asp?ID=911">PoH - Legions of Darkness</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=3&month=10">3</a></b><br><font face=arial size=2><a href="display_event.asp?ID=823">PoF - Lore Keepers</a></font><br><font face=arial size=2><a href="display_event.asp?ID=844">PoH - Avanguardia de Velorian</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=4&month=10">4</a></b><br><font face=arial size=2><a href="display_event.asp?ID=805">PoH - The Light Brigade</a></font><br><font face=arial size=2><a href="display_event.asp?ID=852">PoF - Justifiers</a></font><br><font face=arial size=2><a href="display_event.asp?ID=856">Freeport - Public Event</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=5&month=10">5</a></b><br><font face=arial size=2><a href="display_event.asp?ID=822">PoH - Blue moon</a></font><br><font face=arial size=2><a href="display_event.asp?ID=834">PoF - The Pantheon</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=6&month=10">6</a></b><br><font face=arial size=2><a href="display_event.asp?ID=680">PoF - Amici</a></font><br><font face=arial size=2><a href="display_event.asp?ID=681">PoH - Knights of Armageddon</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=7&month=10">7</a></b><br><font face=arial size=2><a href="display_event.asp?ID=581">PoF - Fear the Ungodly</a></font><br><font face=arial size=2><a href="display_event.asp?ID=657">PoH - Order of the Charred Heart</a></font></td>
+	</tr>
+	<tr>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=8&month=10">8</a></b><br><font face=arial size=2><a href="display_event.asp?ID=659">PoH - Ridgerunners</a></font><br><font face=arial size=2><a href="display_event.asp?ID=747">PoF - Twist of Fate</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=9&month=10">9</a></b><br><font face=arial size=2><a href="display_event.asp?ID=879">PoH - The Pantheon</a></font><br><font face=arial size=2><a href="display_event.asp?ID=917">PoF - Legions of Darkness</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=10&month=10">10</a></b><br><font face=arial size=2><a href="display_event.asp?ID=842">PoH - Lords of Edelo</a></font><br><font face=arial size=2><a href="display_event.asp?ID=873">PoF - Divine Wind</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=11&month=10">11</a></b><br><font face=arial size=2><a href="display_event.asp?ID=845">PoF - Silent Justice</a></font><br><font face=arial size=2><a href="display_event.asp?ID=862">PoH - Legions of Darkness</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=12&month=10">12</a></b><br><font face=arial size=2><a href="display_event.asp?ID=847">PoF - DragonGuard</a></font><br><font face=arial size=2><a href="display_event.asp?ID=854">PoH - Storm</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=13&month=10">13</a></b><br><font face=arial size=2><a href="display_event.asp?ID=694">PoH - Silent Justice</a></font><br><font face=arial size=2><a href="display_event.asp?ID=789">PoH - Dead of Winter</a></font><br><font face=arial size=2><a href="display_event.asp?ID=807">PoF - Knights of Armageddon</a></font><br><font face=arial size=2><a href="display_event.asp?ID=941">Lord Nagafen raid - Public Event</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=14&month=10">14</a></b><br><font face=arial size=2><a href="display_event.asp?ID=621">PoF - Ashen Vendetta</a></font><br><font face=arial size=2><a href="display_event.asp?ID=684">PoH - Explorers of Norrath</a></font></td>
+	</tr>
+	<tr>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=15&month=10">15</a></b><br><font face=arial size=2><a href="display_event.asp?ID=660">PoF - Ridgerunners</a></font><br><font face=arial size=2><a href="display_event.asp?ID=687">PoH - The Ascension</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=16&month=10">16</a></b><br><font face=arial size=2><a href="display_event.asp?ID=880">PoH - Justifiers</a></font><br><font face=arial size=2><a href="display_event.asp?ID=896">PoF - Dawn of the Phoenix</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=17&month=10">17</a></b><br><font face=arial size=2><a href="display_event.asp?ID=893">PoH - Ashen Vendetta</a></font><br><font face=arial size=2><a href="display_event.asp?ID=903">PoF - Legends</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=18&month=10">18</a></b><br><font face=arial size=2><a href="display_event.asp?ID=881">PoH - Divine Wind</a></font><br><font face=arial size=2><a href="display_event.asp?ID=895">PoF - Lords of Edelo</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=19&month=10">19</a></b><br><font face=arial size=2><a href="display_event.asp?ID=875">PoH - Fortress of Honor</a></font><br><font face=arial size=2><a href="display_event.asp?ID=898">PoF - Spirit of the Moon</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=20&month=10">20</a></b><br><font face=arial size=2><a href="display_event.asp?ID=746">PoH - Twist of Fate</a></font><br><font face=arial size=2><a href="display_event.asp?ID=794">PoF - Ethereal Vortex</a></font><br><font face=arial size=2><a href="display_event.asp?ID=866">PoF - Cult of The Red Dragon</a></font><br><font face=arial size=2><a href="display_event.asp?ID=949">PoH - The Seventh Sigil</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=21&month=10">21</a></b><br><font face=arial size=2><a href="display_event.asp?ID=685">PoF - Explorers of Norrath</a></font><br><font face=arial size=2><a href="display_event.asp?ID=796">PoH - Invictorum</a></font></td>
+	</tr>
+	<tr>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=22&month=10">22</a></b><br><font face=arial size=2><a href="display_event.asp?ID=714">PoF - The Final Covenant</a></font><br><font face=arial size=2><a href="display_event.asp?ID=741">PoH - Public Event</a></font><br><font face=arial size=2><a href="display_event.asp?ID=965">PoH - Legions of Darkness</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=23&month=10">23</a></b><br><font face=arial size=2><a href="display_event.asp?ID=886">PoH - The Wicked</a></font><br><font face=arial size=2><a href="display_event.asp?ID=939">PoF - The Pantheon</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=24&month=10">24</a></b><br><font face=arial size=2><a href="display_event.asp?ID=888">PoH - Avanguardia de Velorian</a></font><br><font face=arial size=2><a href="display_event.asp?ID=936">PoF - The Light Brigade</a></font><br><font face=arial size=2><a href="display_event.asp?ID=959">PoH - Lords of Edelo</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=25&month=10">25</a></b><br><font face=arial size=2><a href="display_event.asp?ID=890">PoH - Nore Edelo</a></font><br><font face=arial size=2><a href="display_event.asp?ID=926">PoF - Thunder</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=26&month=10">26</a></b><br><font face=arial size=2><a href="display_event.asp?ID=897">PoH - Dawn of the Phoenix</a></font><br><font face=arial size=2><a href="display_event.asp?ID=978">PoF - Justifiers</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=27&month=10">27</a></b><br><font face=arial size=2><a href="display_event.asp?ID=799">PoH - Shadow Stalkers of Norrath</a></font><br><font face=arial size=2><a href="display_event.asp?ID=830">PoF - Ethereal Vortex</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=28&month=10">28</a></b><br><font face=arial size=2><a href="display_event.asp?ID=702">PoF - Deus Vult</a></font><br><font face=arial size=2><a href="display_event.asp?ID=713">PoH - The Final Covenant</a></font></td>
+	</tr>
+	<tr>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=29&month=10">29</a></b><br><font face=arial size=2><a href="display_event.asp?ID=752">PoH - Patronas Veritas</a></font><br><font face=arial size=2><a href="display_event.asp?ID=753">PoF - Iceni</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=30&month=10">30</a></b><br><font face=arial size=2><a href="display_event.asp?ID=904">PoH - Company of Wandering Souls</a></font><br><font face=arial size=2><a href="display_event.asp?ID=952">PoF - The Pantheon</a></font></td>
+		<td align=left valign=top height=60><b><a href="display_date.asp?day=31&month=10">31</a></b><br><font face=arial size=2><a href="display_event.asp?ID=891">PoF - Nore Edelo</a></font><br><font face=arial size=2><a href="display_event.asp?ID=927">PoH - Thunder</a></font></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</TR>
+
+</table>
+
+
+<form action="calendar.asp" method="post">
+<input type="submit" name="AddEvent" value="Add Event">&nbsp;&nbsp;</form>
+
+</center>
+
+</body>
+</html>

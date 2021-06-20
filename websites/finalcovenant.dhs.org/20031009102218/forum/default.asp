@@ -1,0 +1,318 @@
+<html>
+
+<head>
+<title>The Final Covenant</title>
+<meta name="copyright" content="This Forum code is Copyright (C) 2000-02 Michael Anderson, Pierre Gorissen, Huw Reddick and Richard Kinser, Non-Forum Related code is Copyright (C) © 2000-2003 Final Covenant Guild">
+<script language="JavaScript" type="text/javascript">
+<!-- hide from JavaScript-challenged browsers
+function openWindow(url) {
+	popupWin = window.open(url,'new_page','width=400,height=400')
+}
+function openWindow2(url) {
+	popupWin = window.open(url,'new_page','width=400,height=450')
+}
+function openWindow3(url) {
+	popupWin = window.open(url,'new_page','width=400,height=450,scrollbars=yes')
+}
+function openWindow4(url) {
+	popupWin = window.open(url,'new_page','width=400,height=525')
+}
+function openWindow5(url) {
+	popupWin = window.open(url,'new_page','width=450,height=525,scrollbars=yes,toolbars=yes,menubar=yes,resizable=yes')
+}
+function openWindow6(url) {
+	popupWin = window.open(url,'new_page','width=500,height=450,scrollbars=yes')
+}
+function openWindowHelp(url) {
+	popupWin = window.open(url,'new_page','width=470,height=200,scrollbars=yes')
+}
+// done hiding -->
+</script>
+<style type="text/css">
+<!--
+a:link    {color:#F5DEB3;text-decoration:underline}
+a:visited {color:#DEB887;text-decoration:underline}
+a:hover   {color:#F5DEB3;text-decoration:underline}
+a:active  {color:#F5DEB3;text-decoration:underline}
+.spnMessageText a:link    {color:#F5DEB3;text-decoration:underline}
+.spnMessageText a:visited {color:skyblue;text-decoration:underline}
+.spnMessageText a:hover   {color:red;text-decoration:underline}
+.spnMessageText a:active  {color:red;text-decoration:underline}
+.spnSearchHighlight {background-color:yellow}
+input.radio {background:#440000;color:#000000}
+-->
+</style>
+</head>
+
+<body bgColor="black" text="#FFF8DC" link="#F5DEB3" aLink="#F5DEB3" vLink="#DEB887">
+<a name="top"></a><font face="Verdana, Arial, Helvetica">
+
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td valign="top" width="50%"><a href="default.asp" tabindex="-1"><img src="/fctitle3.jpg" border="0" alt="The Final Covenant" title="The Final Covenant" /></a></td>
+    <td align="center" valign="top" width="50%">
+      <table border="0" cellPadding="2" cellSpacing="0">
+        <tr>
+          <td align="center"><font face="Verdana, Arial, Helvetica" size="2"><b>The Final Covenant</b></font></td>
+        </tr>
+        <tr>
+          <td align="center"><font face="Verdana, Arial, Helvetica" size="1">
+          <a href="/" onMouseOver="(window.status='Homepage'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Homepage">Home</acronym></a>
+          |
+          <a href="pop_profile.asp?mode=Edit" onMouseOver="(window.status='Edit your personal profile...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Edit your personal profile...">Profile</acronym></a>
+          |
+          <a href="policy.asp" onMouseOver="(window.status='Register to post to our forum...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Register to post to our forum...">Register</acronym></a>
+          |
+          <a href="active.asp" onMouseOver="(window.status='See what topics have been active since your last visit...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="See what topics have been active since your last visit...">Active Topics</acronym></a>
+          |
+          <a href="members.asp" onMouseOver="(window.status='Current members of these forums...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Current members of these forums...">Members</acronym></a>
+          |
+          <a href="search.asp" onMouseOver="(window.status='Perform a search by keyword, date, and/or name...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Perform a search by keyword, date, and/or name...">Search</acronym></a>
+          |
+          <a href="faq.asp" onMouseOver="(window.status='Answers to Frequently Asked Questions...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><acronym title="Answers to Frequently Asked Questions...">FAQ</acronym></a></font></td>
+        </tr>
+        <form action="/forum/default.asp" method="post" id="form1" name="form1">
+        <input type="hidden" name="Method_Type" value="login">
+        <tr>
+          <td align="center">
+            <table>
+              <tr>
+                <td><font face="Verdana, Arial, Helvetica" size="1"><b>Username:</b></font><br />
+                <input type="text" name="Name" size="10" maxLength="25" value=""></td>
+                <td><font face="Verdana, Arial, Helvetica" size="1"><b>Password:</b></font><br />
+                <input type="password" name="Password" size="10" maxLength="25" value=""></td>
+                <td valign="bottom">
+                <input src="button_login.gif" type="image" border="0" value="Login" id="submit1" name="Login">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+                <input type="checkbox" name="SavePassWord" value="true" tabindex="-1" CHECKED><b> Save Password</b></font></td>
+              </tr>
+              <tr>
+                <td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+                <a href="password.asp" onMouseOver="(window.status='Choose a new password if you have forgotten your current one...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1">Forgot your Password?</a>
+                <br /><br /></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        </form>
+      </table>
+    </td>
+  </tr>
+</table>
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="95%">
+  <tr>
+    <td>
+    <script language="JavaScript" type="text/javascript">
+    <!--
+    function unsub_confirm(link){
+    	var where_to= confirm("Do you really want to Unsubscribe?");
+       if (where_to== true) {
+       	popupWin = window.open(link,'new_page','width=400,height=400')
+       }
+    }
+    //-->
+    </script>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td bgcolor="black">
+            <table border="0" width="100%" cellspacing="1" cellpadding="4">
+              <tr>
+                <td align="center" bgcolor="maroon" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">&nbsp;</font></b></td>
+                <td align="center" bgcolor="maroon" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Forum</font></b></td>
+                <td align="center" bgcolor="maroon" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Topics</font></b></td>
+                <td align="center" bgcolor="maroon" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Posts</font></b></td>
+                <td align="center" bgcolor="maroon" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Last&nbsp;Post</font></b></td>
+                <td align="center" bgcolor="maroon" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Moderator(s)</font></b></td>
+                <td align="center" bgcolor="maroon">&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="firebrick" colspan="6" valign="top"><a href="/forum/default.asp?Snitz00HideCat2=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=2" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="mintcream"><b>Discussion</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="firebrick" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=2"><img src="icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=2">The Dancing Ogre Tavern</a><br /><font size="1"> A tavern built for the enjoyment of RolePlay and EverQuest, Innoruuk server.  Be welcome, but please do behave.<br /></font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">21</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">142</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>10/08/2003</b><br /> 14:46:21<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=32" title="View Blayda's Profile" onMouseOver="(window.status='View Blayda\'s Profile'); return true" onMouseOut="(window.status=''); return true">Blayda</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=39" title="View dekkon_fuzzyfeet's Profile" onMouseOver="(window.status='View dekkon_fuzzyfeet\'s Profile'); return true" onMouseOut="(window.status=''); return true">dekkon_fuzzyfeet</a></nobr>, <nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;&nbsp;<a href="forum.asp?ARCHIVE=true&FORUM_ID=2"><img src="icon_folder_archived.gif" width="15" height="15" border="0" alt="View Archived posts" title="View Archived posts" hspace="0" /></a></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=13"><img src="icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=13">Buy and Sell</a><br /><font size="1"> Have something to Sell? Post it here!</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">3</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">9</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>10/08/2003</b><br /> 14:48:11<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=32" title="View Blayda's Profile" onMouseOver="(window.status='View Blayda\'s Profile'); return true" onMouseOut="(window.status=''); return true">Blayda</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=39" title="View dekkon_fuzzyfeet's Profile" onMouseOver="(window.status='View dekkon_fuzzyfeet\'s Profile'); return true" onMouseOut="(window.status=''); return true">dekkon_fuzzyfeet</a></nobr>, <nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;&nbsp;<a href="forum.asp?ARCHIVE=true&FORUM_ID=13"><img src="icon_folder_archived.gif" width="15" height="15" border="0" alt="View Archived posts" title="View Archived posts" hspace="0" /></a></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=12"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=12">Tales in the Tavern</a><br /><font size="1"> IN character Forum ONLY.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">35</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">117</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>06/17/2003</b><br /> 21:33:36<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=527" title="View Myrrialle's Profile" onMouseOver="(window.status='View Myrrialle\'s Profile'); return true" onMouseOut="(window.status=''); return true">Myrrialle</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=16"><img src="icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=16">Welcome to the FC</a><br /><font size="1"> Please note that we have changed our recruitment policy.  If you are interested in joining our family, please read it so that you will understand what it entails.  Please feel free to post under the Dancing Ogre Tavern and help us get to know you better.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">3</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">22</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>10/05/2003</b><br /> 12:13:23<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=578" title="View etuar's Profile" onMouseOver="(window.status='View etuar\'s Profile'); return true" onMouseOut="(window.status=''); return true">etuar</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=39" title="View dekkon_fuzzyfeet's Profile" onMouseOver="(window.status='View dekkon_fuzzyfeet\'s Profile'); return true" onMouseOut="(window.status=''); return true">dekkon_fuzzyfeet</a></nobr>, <nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;&nbsp;<a href="forum.asp?ARCHIVE=true&FORUM_ID=16"><img src="icon_folder_archived.gif" width="15" height="15" border="0" alt="View Archived posts" title="View Archived posts" hspace="0" /></a></td>
+              </tr>
+              <tr>
+                <td bgcolor="firebrick" colspan="6" valign="top"><a href="/forum/default.asp?Snitz00HideCat5=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=5" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="mintcream"><b>Calender Events</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="firebrick" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=10"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=10">General Raids</a><br /><font size="1"> Events planned for The Final Covenant.  Please include date and time in the subject and do not post until the event is ready for signups.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">0</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">0</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>06/10/2003</b><br /> 16:47:43<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=143" title="View Stirek's Profile" onMouseOver="(window.status='View Stirek\'s Profile'); return true" onMouseOut="(window.status=''); return true">Stirek</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=461" title="View Jillybean's Profile" onMouseOver="(window.status='View Jillybean\'s Profile'); return true" onMouseOut="(window.status=''); return true">Jillybean</a></nobr>, <nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=39"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=39">Dragon Raid!</a><br /><font size="1"> Forum for Dragon Raids with the Alliance. Discussion and final event planning for Dragon Raids.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">28</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">305</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>05/13/2003</b><br /> 09:28:42<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=553" title="View Tinyan's Profile" onMouseOver="(window.status='View Tinyan\'s Profile'); return true" onMouseOut="(window.status=''); return true">Tinyan</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=45"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=45">Pickup Groups</a><br /><font size="1"> Forum for friends, family, and members to schedule non-official events. Please include date, place, and level reqs in the title.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">12</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">47</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>07/18/2003</b><br /> 22:40:54<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=25" title="View aaldyil's Profile" onMouseOver="(window.status='View aaldyil\'s Profile'); return true" onMouseOut="(window.status=''); return true">aaldyil</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=46"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=46">Planar Raids</a><br /><font size="1"> Plane events planned for The Final Covenant.  Discussion and final event planning for Planar Raids.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">8</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">64</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>05/07/2003</b><br /> 18:12:48<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=264" title="View Rosewynde's Profile" onMouseOver="(window.status='View Rosewynde\'s Profile'); return true" onMouseOut="(window.status=''); return true">Rosewynde</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="firebrick" colspan="6" valign="top"><a href="/forum/default.asp?Snitz00HideCat7=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=7" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="mintcream"><b>Epic Quests</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="firebrick" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=42"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=42">Epic Quest Status</a><br /><font size="1"> Information about how our members are doing on their quests</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">103</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">352</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>09/15/2003</b><br /> 19:49:32<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=9" title="View Amuk's Profile" onMouseOver="(window.status='View Amuk\'s Profile'); return true" onMouseOut="(window.status=''); return true">Amuk</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=41"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=41">Epic Quest Reference</a><br /><font size="1"> Information about the all the epic quests organized alphabetically by topic</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">30</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">52</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>01/05/2003</b><br /> 05:46:22<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=522" title="View Galven's Profile" onMouseOver="(window.status='View Galven\'s Profile'); return true" onMouseOut="(window.status=''); return true">Galven</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="firebrick" colspan="6" valign="top"><a href="/forum/default.asp?Snitz00HideCat8=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category" title="Collapse This Category" /></a>&nbsp;<a href="default.asp?CAT_ID=8" title="View only the Forums in this Category"><font face="Verdana, Arial, Helvetica" size="2" color="mintcream"><b>Guides and Records</b></font></a>&nbsp;&nbsp;</td>
+                <td bgcolor="firebrick" align="center" valign="top" nowrap><b><font face="Verdana, Arial, Helvetica" size="2">&nbsp;</font></b></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=24"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=24">Zone Guide Submissions</a><br /><font size="1"> Use this forum to submit something to the zone guides section.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">6</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">21</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>06/27/2003</b><br /> 21:18:42<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=168" title="View Wyllo Weepinleaf's Profile" onMouseOver="(window.status='View Wyllo Weepinleaf\'s Profile'); return true" onMouseOut="(window.status=''); return true">Wyllo Weepinleaf</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=44"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=44">Hunting/Zone Guides Reference</a><br /><font size="1"> General zone information and hunting guides.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">32</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">68</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>07/22/2003</b><br /> 09:46:19<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" align="center" valign="top"><a href="forum.asp?FORUM_ID=7"><img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" hspace="0" /></a></td>
+                <td bgcolor="#111112" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2"><span class="spnMessageText"><a href="forum.asp?FORUM_ID=7">The Vault</a><br /><font size="1"> A record of Guild equipment available.</font></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">17</font></td>
+                <td bgcolor="#111112" align="center" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="2">64</font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><b>05/30/2003</b><br /> 16:52:35<br />by:&nbsp;<span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=284" title="View Anicore PeaceWolf's Profile" onMouseOver="(window.status='View Anicore PeaceWolf\'s Profile'); return true" onMouseOut="(window.status=''); return true">Anicore PeaceWolf</a></span></font></td>
+                <td bgcolor="#111112" align="left" valign="top"><font face="Verdana, Arial, Helvetica" color="#FFF8DC" size="1"><span class="spnMessageText"><nobr><a href="pop_profile.asp?mode=display&id=16" title="View Xaria Longsong's Profile" onMouseOver="(window.status='View Xaria Longsong\'s Profile'); return true" onMouseOut="(window.status=''); return true">Xaria Longsong</a></nobr></span></font></td>
+                <td bgcolor="#111112" align="center" valign="top" nowrap>&nbsp;</td>
+              </tr>
+              <tr>
+                <td bgcolor="firebrick" colspan="7"><font face="Verdana, Arial, Helvetica" size="2" color="mintcream"><b>Statistics</b></font></td>
+              </tr>
+              <tr>
+                <td rowspan="4" bgcolor="#111112">&nbsp;</td>
+                <td bgcolor="#111112" colspan="6"><font face="Verdana, Arial, Helvetica" size="1" color="#FFF8DC">498 of 573 <span class="spnMessageText"><a href="members.asp">Members</a></span> have  made 1263 posts in 13 forums, with the last post on <span class="spnMessageText"><a href="topic.asp?TOPIC_ID=8235">10/08/2003 14:48:11</a></span> by: <span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=32" title="View Blayda's Profile" onMouseOver="(window.status='View Blayda\'s Profile'); return true" onMouseOut="(window.status=''); return true">Blayda</a></span>.</font></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" colspan="6"><font face="Verdana, Arial, Helvetica" size="1" color="#FFF8DC">There are  currently 298 topics.</font></td>
+              </tr>
+              <tr>
+                <td bgcolor="#111112" colspan="6"><font face="Verdana, Arial, Helvetica" size="1" color="#FFF8DC">Please welcome our newest member: <span class="spnMessageText"><a href="pop_profile.asp?mode=display&id=579" title="View serene's Profile" onMouseOver="(window.status='View serene\'s Profile'); return true" onMouseOut="(window.status=''); return true">serene</a></span>.</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td><font face="Verdana, Arial, Helvetica" size="1">
+                <img src="icon_folder_new.gif" width="15" height="15" border="0" alt="New Posts" title="New Posts" align="absmiddle" /> Contains new posts since last visit.<br />
+                <img src="icon_folder.gif" width="15" height="15" border="0" alt="Old Posts" title="Old Posts" align="absmiddle" /> No new posts since the last visit.<br /></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="95%" align="center" border="0" bgcolor="#111112" cellpadding="0" cellspacing="1">
+  <tr>
+    <td>
+      <table border="0" width="100%" align="center" cellpadding="4" cellspacing="0">
+        <tr>
+          <td bgcolor="#111112" align="left" valign="top" nowrap><font face="Verdana, Arial, Helvetica" size="1" color="#FFF8DC">The Final Covenant</font></td>
+          <td bgcolor="#111112" align="right" valign="top" nowrap><font face="Verdana, Arial, Helvetica" size="1" color="#FFF8DC">&copy; © 2000-2003 Final Covenant Guild</font></td>
+          <td bgcolor="#111112" width="10" nowrap><a href="#top" onMouseOver="(window.status='Go To Top Of Page...'); return true" onMouseOut="(window.status=''); return true" tabindex="-1"><img src="icon_go_up.gif" width="15" height="15" border="0" alt="Go To Top Of Page" title="Go To Top Of Page" align="right" /></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="95%" align="center" cellpadding="4" cellspacing="0">
+  <tr valign="top">
+    <td align="right"><font face="Verdana, Arial, Helvetica" size="1"><a href="http://forum.snitz.com" target="_blank" tabindex="-1"><acronym title="Powered By: Snitz Forums 2000 Version 3.4.03"><img src="logo_powered_by.gif" border="0" alt="Powered By: Snitz Forums 2000 Version 3.4.03" title="Powered By: Snitz Forums 2000 Version 3.4.03" /></acronym></a></font></td>
+  </tr>
+</table>
+</font>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<?
+# get the title of the roster if none was given
+if (!$title) { $title="Healers United Guild Roster"; }
+?>
+<!-- 
+*************************************************************
+Everquest Roster Script
+Written by Loral Ciriclight (loral@healersunited.com)
+Written on 9 April 2003
+
+This script is written to serve other guilds with a display 
+of their in-game guild roster.  
+
+see http://loralciriclight.com/healersunited/roster_form.html for more 
+details and usage.
+
+**************************************************************************
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><? echo $title ?></title>
+<style type="text/css">
+
+.rostertable {
+width: 80%;
+border: 0px solid #ccc;
+padding: 0px;
+margin-left: 10%;
+}
+
+.altrow1 {
+color: #000;
+background-color: #eee;
+}
+
+.headerrow {
+color: #000;
+background-color: #ccc;
+margin: 0px;
+padding: 0px;
+}
+
+.nameheading, .descriptionheading, .levelheading, .classheading, .rankheading, .onlineheading {
+margin: 0px;
+padding: 3px;
+border: 0px;
+text-align: left;
+}
+
+.descriptioncell {
+width: 25%;
+}
+
+.namecell, .levelcell, .classcell, .rankcell, .onlinecell {
+width: 15%;
+}
+
+.namecell, .descriptioncell, .levelcell, .classcell, .rankcell, .onlinecell {
+margin: 0px;
+padding: 3px;
+border-left: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+
+.rankcell {
+border-right: 1px solid #ccc;
+}
+
+.logoimage {
+border: 0;
+margin-left: 20px;
+}
+
+h1, .ad {
+text-align: center;
+}
+</style>
+</head>
+<body>
+<? if ($title == "Healers United Guild Roster") {
+
+echo "
+<p><a href=\"http://healersunited.com/\"><img src=\"http://loralciriclight.com/images/hu_logo_200_97.jpg\" class=\"logoimage\" alt=\"Healers United logo\" /></a></p>
+
+";
+}
+?>
+<h1><? echo $title; ?></h1>
+
+<?
+echo "<table class=\"rostertable\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n";
+echo "<tr class=\"headerrow\"><th class=\"nameheading\"><a href=\"$PHP_SELF?sort=0&amp;rosterfile=$rosterfile&amp;title=$title\">Name</a></th>\n";
+echo "<th class=\"descriptionheading\">Description</th>\n";
+echo "<th class=\"levelheading\"><a href=\"$PHP_SELF?sort=1&amp;rosterfile=$rosterfile&amp;title=$title\">Level</a></th>\n";
+echo "<th class=\"classheading\"><a href=\"$PHP_SELF?sort=2&amp;rosterfile=$rosterfile&amp;title=$title\">Class</a></th>\n";
+echo "<th class=\"rankheading\"><a href=\"$PHP_SELF?sort=3&amp;rosterfile=$rosterfile&amp;title=$title\">Rank</a></th>\n";
+# echo "<th class=\"onlineheading\"><a href=\"$PHP_SELF?sort=4&amp;rosterfile=$rosterfile&amp;title=$title\">Last Online</a></th>\n";
+echo "</tr>\n";
+
+# if no rosterfile is defined in the URL, load the Healers United default
+if (!$rosterfile) { $rosterfile = "http://healersunited.com/Healers_United.txt"; }
+
+$row = 0;
+# Load the rosterfile.  Rosterfile may be a URL to an off-site 
+# roster filename such as http://healersunited.com/Healers_United.txt
+# make sure the file is a URL:
+
+if (!ereg("http://",$rosterfile)) {
+	echo "rosterfile does not have \"http://\" in it.  Exiting.";
+	exit(0);
+}
+
+$handle = fopen($rosterfile,"r");
+
+if (!$sort) {	$sort = 0; }
+
+# build a multidimention array
+while ($filestuff = fgetcsv ($handle, 1000, "\t")) {
+    $row++;
+    for ($c=0; $c < 7; $c++) {
+  		$data[$c][$row] = $filestuff[$c];		
+    }
+}
+
+#change M to X in membership to make ranking sort by leader, officer and member.
+while (list($key) = each($data[$sort])) { 
+if ($data[3][$key] == "M") { $data[3][$key] = "X"; }
+} 
+
+# choose different sorting methods for name, rank, level, etc
+if ($sort == "0" ||  $sort == "2" || $sort == "3") {
+	asort($data[$sort]);
+} elseif ($sort == "1" || $sort == "4") {
+	arsort($data[$sort]);
+} 
+
+while (list($key) = each($data[$sort])) { 
+
+#change every other row style to altrow1 or altrow2.  Define in a stylesheet.
+if ($rowstyle == "altrow1") { $rowstyle = "altrow2"; } else { $rowstyle = "altrow1"; }
+
+#display the full name of membership rank
+if ($data[3][$key] == "L") { $data[3][$key] = "Leader"; }
+if ($data[3][$key] == "X") { $data[3][$key] = "Member"; }
+if ($data[3][$key] == "O") { $data[3][$key] = "Officer"; }
+
+# display the row of data
+echo "<tr class=\"$rowstyle\">\n";
+echo "<td class=\"namecell\">".$data[0][$key]."</td>\n";
+echo "<td class=\"descriptioncell\">".$data[6][$key]."&nbsp;</td>\n";
+echo "<td class=\"levelcell\">".$data[1][$key]."</td>\n";
+echo "<td class=\"classcell\">".$data[2][$key]."</td>\n";
+echo "<td class=\"rankcell\">".$data[3][$key]."</td>\n";
+# echo "<td class=\"onlinecell\">".$data[4][$key]."&nbsp;</td>\n";
+echo "</tr>\n";
+} 
+echo "</table>\n";
+# $filedate = date("d M Y", filectime($rosterfile));
+# echo "<p class=\"modified_date\">Last Modified $filedate</p>\n";
+echo "<p class=\"ad\"><a href=\"roster_form.html\">Use this script to generate your own guild's roster</a></p>";
+echo "</body>\n</html>";
+fclose ($handle);
+exit (0);

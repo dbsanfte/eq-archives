@@ -1,0 +1,186 @@
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+		<META NAME="Generator" CONTENT="Microsoft Word 97">
+		<TITLE>This example will explain how to change the player info window (with your health and mana bar)</TITLE>
+		<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+	</HEAD>
+
+	<BODY>
+
+		<H1>Introduction</H1>
+		This example will explain how to change the player info window
+		(with your health and mana bar). Specifically, we do the following:
+
+		<P>
+
+		<UL>
+			<LI>Replace the character name with your current HP status </LI>
+			<LI>Add percentages after the health, mana and stamina bars.</LI>
+		</UL>
+
+		<P>
+		Note that I find both of these additions quite useful. When I'm
+		kiting or otherwise want to get a clue of how fast I'm going to run out
+		of mana, it's a lot easier to see that the spell I just cast cost 12
+		percent of my mana bar, for instance. It makes it easier to be more
+		precise and run a little closer to the edge. Also, if I'm kiting, I can
+		sit, wait for the mana percentage to bump up, then run again. It's easier
+		than watching for a small tick in the blue bar.
+
+		<P>
+		The steps to take are as follows:
+
+		<P>
+		<OL>
+			<LI>Create your own skin area if you haven't done so.</LI>
+			<LI>Edit EQUI_PlayerWindow. Add new sections for the new pieces.</LI>
+			<LI>Also in EQUI_PlayerWindow, add the new sections to the
+				PlayerWindow.</LI>
+			<LI>Also in EQUI_PlayerWindow.xml, change the size of the window.</LI>
+			<LI>Test it.</LI>
+		</OL>
+
+		<P>
+		When reviewing this guide, it may be useful to create a new browser window
+		and point it here: <A HREF="EQUI_PlayerWindow.xml">EQUI_PlayerWindow.xml</A>.
+		This is the updated EQUI_PlayerWindow.xml file.  The original is:
+		<A HREF="pw.xml">pw.xml</A>.
+
+		<P>
+		Before we go too far, I want to point out -- I didn't create the files I'm
+		using. I got them from someone who had advertised them on
+		<A HREF="http://www.eqskins.com/">www.eqskins.com</A>. I'm sorry,
+		I don't remember who. However, I found what he had done to be very useful.
+
+		<H1>Step One: Create Personalized Skin Directory</H1>
+		If you haven't do so previously, you want to create your own working area
+		for personalizing your skins. In your Everquest directory is a subdirectory
+		called uifiles. You need to make a copy of this entire directory tree and
+		call it something else. I called mine "Wolfy". Never edit the default
+		files -- edit your copies.
+
+		<P>
+		Something else I did -- I made my Everquest directory a shared directory,
+		and then I mounted it from another PC. This lets me make changes and test
+		them immediately.
+
+		<P>
+		Within EQ, you can say "loadskin wolfy 1" and it loads the skins in the
+		Wolfy subdirectory. Whenever you have changes to try, just load the skins
+		again.
+
+		<H1>Step Two: EQUI_PlayerWindow.xml - Define New Bits</H1>
+		Go ahead and edit EQUI_PlayerWindow.xml. What you'll find very quickly
+		is that the window defines several Gauges:
+
+		<UL>
+			<LI>Player_HP </LI>
+			<LI>Pet_HP </LI>
+			<LI>Player_Mana </LI>
+			<LI>Player_Fatigue</LI>
+		</UL>
+
+		<P>What we're going to do is add new items:
+
+		<UL>
+			<LI>Player_HPNote -- a label that just says Points: </LI>
+			<LI>Player_HPNumber -- this displays the current player's HPs </LI>
+			<LI>Player_HPDivider -- this is just a text field that appears after
+				the current HPs. </LI>
+			<LI>Player_HPMax -- your current max hitpoints </LI>
+			<LI>Player_HPPercentage -- the numeric percentage of your health bar </LI>
+			<LI>Player_HPPercHold -- this is just a label with a percent sign </LI>
+			<LI>Player_ManaPercentage -- numeric percentage for your mana </LI>
+			<LI>Player_ManaPercHold -- a label with a percent sign </LI>
+			<LI>Player_StamPercentage -- numeric percentage for your stamina </LI>
+			<LI>Player_StamPercHold -- a label with a percent sign</LI>
+		</UL>
+
+		<P>
+		Rather than include everything here, I recommend you just grab them from
+		the example EQUI_PlayerWindow.xml that is referenced near the top of
+		this page.
+
+
+		<H1>Step Two: Modify the PlayerWindow Section</H1>
+
+		Once you've defined all the new items above, you need to tell the player
+		window about them. That part's easy. Near the bottom of
+		EQUI_PlayerWindow.xml, you'll find the definition for PlayerWindow.
+		It starts like this:
+
+		<P>
+		<PRE>
+	&lt;Screen item = "PlayerWindow"&gt;
+		</PRE>
+
+		<P>Near the bottom are a few &lt;Pieces&gt; definitions with the
+		existing parts of the window. We just have to add a few more so that
+		it looks like this:
+
+		<P>
+		<PRE>
+	&lt;Pieces&gt;Player_HP&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_Mana&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_Fatigue&lt;/Pieces&gt;
+	&lt;Pieces&gt;Pet_HP&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_HPNumber&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_HPDivider&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_HPMax&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_HPNote&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_HPPercentage&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_HPPercHold&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_ManaPercentage&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_ManaPercHold&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_StamPercentage&lt;/Pieces&gt;
+	&lt;Pieces&gt;Player_StamPercHold&lt;/Pieces&gt;
+		</PRE>
+
+		<H1>Step Four: Change Size</H1>
+		Also inside the definition of PlayerWindow is the size and location of
+		the window.  It looks something like this:
+
+		<P>
+		<PRE>
+	&lt;Location&gt;
+		&lt;X&gt;516&lt;/X&gt;
+		&lt;Y&gt;0&lt;/Y&gt;
+	&lt;/Location&gt;
+	&lt;Size&gt;
+		&lt;CX&gt;124&lt;/CX&gt;
+		&lt;CY&gt;78&lt;/CY&gt;
+	&lt;/Size&gt;
+		</PRE>
+
+		<P>
+		You can change the Size to 154 by 85.
+
+		<H1>Step Five: Test it</H1>
+		Now to test it, you just have to do the loadskins command listed in Step One.
+
+		<H1>More Info</H1>
+		The question is, how do you know what fields to define.  Well, I did some
+		looking.  Let's first look at the hit points, then go to the percents.
+
+		<P>As you know, the HPs are usually defined on the inventory window --
+		which is defined in EQUI_Inventory.xml.  If you edit that file, you'll
+		see a section called IW_CurrentHP.  The EQType is set to 17.  As you'll
+		recall from our example section for the current HPs, that also has an
+		EQType of 17.  The EQType is the actual value that will be displayed.
+		EQType 17 is the current HPs.
+
+		<P>Unfortunately, Verrant hasn't decided to give us a complete list of
+		the EQTypes.  So for now, you'll have to find somewhere else in the UI
+		that the value is displayed.  Hopefully, someone will build a chart.
+	
+		<P>What about the percentages?  Well, there's nothing special.
+		VI has provided the percentages as more EQTypes.  For instance,
+		HP Percentage is EQType 19.  Mana Percentage is EQType 20.
+
+		<H1>EQType Chart</H1>
+		I don't have one.  If you do, please let me know.  Did VI give us
+		one somewhere?
+
+	</BODY>
+</HTML>

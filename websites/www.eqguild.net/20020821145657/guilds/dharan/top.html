@@ -1,0 +1,295 @@
+<!--begin code-->
+<!-- This page is hosted FREE at www.eqguild.net -->
+
+
+<!--end code-->
+<!--begin code-->
+ 
+  <html>
+   <head>
+     <title>DHaran Web -- top</title>
+       <STYLE type=text/css>
+       A:link {
+               COLOR: white ;
+               TEXT-DECORATION: none
+       }
+       A:visited {
+               COLOR: white ;
+               TEXT-DECORATION: none
+       }
+       A:active {
+               COLOR: #84B2BF ;
+               TEXT-DECORATION: none
+       }
+       A:hover {
+               COLOR: #E89890 ; 
+               TEXT-DECORATION: underline
+       }
+       </STYLE>
+ 
+ <SCRIPT LANGUAGE="JavaScript1.2">
+ <!--
+ /********************************************************
+  This JavaScript code uses techniques found at
+  The Dynamic Duo - http://www.dansteinman.com/dynduo/
+ 
+  Edited by Howard Chen
+  Get more JavaScripts at http://members.xoom.com/7432/
+  Bugs report to hchen007@geocities.com
+  This script is free as long as the credits above is kept
+  ********************************************************/
+ 
+ image_used = "Graphics/spear_flare.gif";   // Filename of the image
+ width_of_image = 144;
+ height_of_image = 220;
+ x_offset = -24;
+ y_offset = -19;
+ 
+ 
+ //===============DO NOT EDIT BELOW THIS LINE================
+ 
+   ns4 = (document.layers)? true:false
+   ie4 = (document.all)? true:false
+ 
+   function onerror() {
+     location.href="javascript:"
+     }
+   function DynLayer(id,nestref) {
+           if (ns4) {
+                   this.css = (nestref)? eval("document."+nestref+".document."+id) : document.layers[id]
+                   this.x = this.css.left
+                   this.y = this.css.top
+           }
+           else if (ie4) {
+                   this.css = document.all[id].style
+                   this.x = this.css.pixelLeft
+                   this.y = this.css.pixelTop
+           }
+           this.show = DynLayerShow
+           this.hide = DynLayerHide
+           this.addon = DynLayerAddon
+           this.addon(id,nestref)
+   }
+ 
+   function DynLayerMoveTo(x,y) {
+           if (x!=null) {
+                   this.x = x
+                   this.css.left = this.x
+           }
+           if (y!=null) {
+                   this.y = y
+                   this.css.top = this.y
+           }
+   }
+   function DynLayerMoveBy(x,y) {
+           this.moveTo(this.x+x,this.y+y)
+   }
+   function DynLayerShow() {
+           this.css.visibility = (ns4)? "show" : "visible"
+   }
+   function DynLayerHide() {
+           this.css.visibility = (ns4)? "hide" : "hidden"
+   }
+   function DynLayerAddon(id,nestref) {
+           this.id = id
+           this.nestref = nestref
+           this.w = (ns4)? this.css.clip.width : this.css.pixelWidth
+           this.h = (ns4)? this.css.clip.height : this.css.pixelHeight
+           this.doc = (ns4)? this.css.document : document
+           this.event = (ns4)? this.css : document.all[id]
+           this.obj = id + "DynLayer"
+           eval(this.obj + "=this")
+           this.moveTo = DynLayerMoveTo
+           this.moveBy = DynLayerMoveBy
+           this.slideTo = DynLayerSlideTo
+           this.slideBy = DynLayerSlideBy
+           this.slideStart = DynLayerSlideStart
+           this.slide = DynLayerSlide
+   }
+   function DynLayerSlideTo(endx,endy,inc,speed,fn) {
+           if (endx==null) endx = this.x
+           if (endy==null) endy = this.y
+           var distx = endx-this.x
+           var disty = endy-this.y
+           this.slideStart(endx,endy,distx,disty,inc,speed,fn)
+   }
+   function DynLayerSlideBy(distx,disty,inc,speed,fn) {
+           var endx = this.x + distx
+           var endy = this.y + disty
+           this.slideStart(endx,endy,distx,disty,inc,speed,fn)
+   }
+   function DynLayerSlideStart(endx,endy,distx,disty,inc,speed,fn) {
+           if (this.slideActive) return
+           var num = Math.sqrt(Math.pow(distx,2) + Math.pow(disty,2))/inc
+           var dx = distx/num
+           var dy = disty/num
+           if (!fn) fn = null
+           this.slideActive = true
+           this.slide(dx,dy,endx,endy,num,1,speed,fn)
+   }
+   function DynLayerSlide(dx,dy,endx,endy,num,i,speed,fn) {
+           if (!this.slideActive) return
+           if (i++ < num) {
+                   this.moveBy(dx,dy)
+                   setTimeout(this.obj+".slide("+dx+","+dy+","+endx+","+endy+","+num+","+i+","+speed+",\""+fn+"\")",speed)
+           }
+           else {
+                   this.slideActive = false
+                   this.moveTo(endx,endy)
+                   eval(fn)
+           }
+   }
+ 
+   function createLayer(id,nestref,left,top,width,height,content,bgColor,visibility,zIndex) {
+           if (ns4) {
+                   if (nestref) {
+                           var lyr = eval("document."+nestref+".document."+id+" = new Layer(width, document."+nestref+")")
+                   }
+                   else {
+                           var lyr = document.layers[id] = new Layer(width)
+                           eval("document."+id+" = lyr")
+                   }
+                   lyr.left = left
+                   lyr.top = top
+                   if (height!=null) lyr.clip.height = height
+                   if (bgColor!=null) lyr.bgColor = bgColor
+                   lyr.visibility = (visibility=='hidden')? 'hide' : 'show'
+                   if (zIndex!=null) lyr.zIndex = zIndex
+                   if (content) {
+                           lyr.document.open()
+                           lyr.document.write(content)
+                           lyr.document.close()
+                   }
+           }
+           else if (ie4) {
+                   var str = '\n<DIV id='+id+' style="position:absolute; left:'+left+'; top:'+top+'; width:'+width
+                   if (height!=null) {
+                           str += '; height:'+height
+                           str += '; clip:rect(0,'+width+','+height+',0)'
+                   }
+                   if (bgColor!=null) str += '; background-color:'+bgColor         
+                   if (zIndex!=null) str += '; z-index:'+zIndex
+                   if (visibility) str += '; visibility:'+visibility
+                   str += ';">'+((content)?content:'')+'</DIV>'
+                   if (nestref) {
+                           index = nestref.lastIndexOf(".")
+                           var nestlyr = (index != -1)? nestref.substr(index+1) : nestref
+                           document.all[nestlyr].insertAdjacentHTML("BeforeEnd",str);
+                   }
+                   else {
+                           document.body.insertAdjacentHTML("BeforeEnd",str)
+                   }
+           }
+   }
+ 
+ 
+   function init() {
+     if (ns4) {
+             var z = 0
+     }
+     else if (ie4) {
+             var z = -1
+     }
+     if (ns4 || ie4) {
+                 document.onmousemove = mouseMove
+             if (ns4) document.captureEvents(Event.MOUSEMOVE)
+                 createLayer("cursorDiv",null,-1*(width_of_image),-1*(height_of_image),width_of_image,height_of_image,"<IMG SRC=" + image_used + ">",null,null,z);
+             cursor = new DynLayer("cursorDiv");
+                 }
+     }
+ 
+   function mouseMove(e) {
+     var x = (ns4)? e.pageX : event.x
+     var y = (ns4)? e.pageY : event.y+document.body.scrollTop
+     cursor.moveTo(x+x_offset,y+y_offset);
+     }
+ 
+ //-->
+ </SCRIPT>
+ 
+ <script language="javascript">
+ <!--
+ 
+ /*Visit A1javascripts.com for more neat scripts*/
+ 
+ a1=new Image(50,50)
+ a1.src="Graphics/firegrace1.gif"
+ a2=new Image(50,50)
+ a2.src="Graphics/firegrace2.gif"
+ //-->
+ </script>
+ 
+ <script>
+ <!--
+ function filter(imagename,objectsrc){
+ if (!document.layers) {
+    if (document.images)
+    document.images[imagename].src=eval(objectsrc+".src")
+ }
+ }
+ //-->
+ </script>
+ 
+   </head>
+ 
+ 
+ 
+ 
+  
+   <body onLoad="init()" style="cursor:crosshair" bgcolor="#003020" background="Graphics/dharan_banner.jpg" width="100%" border="0" link="white" vlink="white" alink="#84B2BF">
+     <layer name="links" left=0 top=0 visibility=show z-index="10" >
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" height="180">
+       <tr>
+         <td align="left" valign="top">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <img src="Graphics/text.gif">
+         </td>
+         <td align="right" valign="top" height="30">
+           <font size=1><a href="http://www.eqguild.net" style="cursor:crosshair">EQG</a></font>
+         </td>
+       </tr>
+       <tr>
+          <td valign="bottom" colspan=1>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="Graphics/dharan_text.gif">
+          </td>
+          <td valign="bottom" rowspan=2 width=50>
+              <!-- -->
+              <a href="index2.html" style="cursor:crosshair"
+              onmouseover="filter('img1','a2'); window.status='Status Message';return true;"
+              onmouseout="filter('img1','a1'); window.status='';return true;" onclick="window.focus()">
+              <img src="Graphics/firegrace1.gif" name="img1" border=0 width=50 height=50></a>
+              <!-- -->
+          </td>
+       </tr>
+       <tr>
+         <td align="left" valign="bottom" height="10" colspan=1>
+           | <a href="main.html" target="main" style="cursor:crosshair">Home</a> 
+           | <a href="charter.html" target="main" style="cursor:crosshair">Charter</a>
+           | <a href="mem_bios.html" target="main" style="cursor:crosshair">Members</a>
+           | <a href=http://www.eqguild.net/cgi-bin/calendar/calendar.pl?calendar=dharanempire target="main" style="cursor:crosshair">Events Calendar</a> 
+           | <a href="gallery1.html" target="main" style="cursor:crosshair">Image Gallery</a>
+           | <a href=http://pub18.ezboard.com/bthedharanempire target="main" style="cursor:crosshair">Message Board</a> 
+           | <a href="allies.html" target="main" style="cursor:crosshair">Alliances</a>
+           | <a href="mailto:lovelylittlebit@yahoo.com" style="cursor:crosshair">Contact Us</a> 
+           | <a href="links.html" target="main" style="cursor:crosshair">Links</a>
+           |
+         </td>
+       </tr>
+     </table>
+     <br>
+     <br>
+     <a href="http://www.disney.com" style="cursor:crosshair">You found me</a>
+     </layer>
+ 
+   </body>
+ 
+ </html>
+ 
+ <!--end code-->
+
+<!--begin code-->
+<div align=center><font size=1><a href="http://www.eqguild.net">EQG</a></font></div>
+
+
+<!--end code-->

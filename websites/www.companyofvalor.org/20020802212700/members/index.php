@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Company of Valor - Members Only</title>
+	<link rel="stylesheet" type="text/css" href="../cov.css">
+	<STYLE TYPE="text/css">
+  <!-- TD { font-family: "Arial"; font-size: 10pt } 
+       TH { font-family: "Arial"; font-size: 10pt } 
+		 LI { font-family: "Arial"; font-size: 10pt } -->
+  </STYLE>
+</head>
+
+<body>
+<DIV ALIGN="center"><IMG SRC="../images/cov_fire2.jpg" WIDTH=616 HEIGHT=94 ALT="" BORDER="0"></DIV>
+
+<P ALIGN="center"><A HREF="http://www.companyofvalor.org">Home</A> | <A HREF="http://www.companyofvalor.org/charter.shtml">Charter</A> | <A HREF="http://www.companyofvalor.org/members.php">Membership</A> | <A HREF="http://pub106.ezboard.com/bcompanyofvalor">Message Board</A> | <A HREF="http://www.companyofvalor.org/library.shtml">Library</A> | <A HREF="http://www.companyofvalor.org/resources.shtml">Resources/Links</A><BR>
+<A HREF="http://www.companyofvalor.org/inventory.shtml">Guild Inventory and Treasury</A> | 
+<A HREF="http://www.companyofvalor.org/calendar/current.shtml"><B>Event Calendar</B></A><BR>
+<A HREF="http://www.companyofvalor.org/members/index.php">Members Only/Login</A> | <A HREF="http://www.companyofvalor.org/members/sendmail.php">Send Member Email</A>
+ | 
+<A HREF="http://www.companyofvalor.org/chat.shtml">Online Chat</A></P>
+<H1>Members Only Area - </H1>
+<P ALIGN="center"><A HREF="http://www.companyofvalor.org/members/index.php">Main Page</A> | 
+<A HREF="http://www.companyofvalor.org/members/upload_image.php">Image Uploader</A> |
+<A HREF="http://www.companyofvalor.org/members/filemgr.php">Image Viewer/Manager</A> | 
+<A HREF="http://www.companyofvalor.org/members/editmember.php">Edit Character</A><br>
+<A HREF="http://www.companyofvalor.org/members/change_passwd.php">Change Password</A> |
+<A HREF="http://www.companyofvalor.org/members/logout.php">Logout</A>
+</P><H2>CoV Member Login</H2>
+You are not logged in.<P>
+	<FORM ACTION="index.php" METHOD="post"><input type="hidden" name="PHPSESSID" value="19de096d32e0acec23f3ca61e9464e9b" />
+	<TABLE><TR><TD>Userid:</TD> 	<TD><INPUT TYPE="text" NAME="userid" VALUE=""> (First name of one of your characters)</TD></TR>
+	<TR><TD>Password:</TD> <TD><INPUT TYPE="password" NAME="password"> (Same password you use to access your membership information)</TD></TR>
+	<TR><TD COLSPAN="2" ALIGN="left"><INPUT TYPE="submit" VALUE="Log in"></TD></TR></TABLE>
+	</FORM>
+	
+</body>
+</html>

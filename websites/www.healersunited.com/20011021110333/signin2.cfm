@@ -1,0 +1,38 @@
+
+
+
+
+
+
+<body bgcolor="white" background="9.gif"><center>
+
+
+
+
+
+<table><tr><TD><img src="logo.gif"></td><td>
+
+<TABLE width=100%>
+	<TR><TD ALIGN="left"><FONT FACE="Arial" COLOR="000000"><B>Make sure your browser is accepting cookies. </b>
+
+	<br><a href="lostpasswordform.cfm">Lost</a> password or username?</font>
+	<FONT FACE="Arial" COLOR="red">
+	<br>
+
+	
+	
+	
+	
+	</font>
+	</td></tr>
+</table></td></tr></table>
+<FORM ACTION="signinentry.cfm" METHOD="POST">
+	<center>
+	<TABLE>
+		<TR><TD ALIGN="right"><FONT FACE="Arial" COLOR="000000">Character name:</TD><TD><INPUT TYPE="text" NAME="un" SIZE="30" MAXLENGTH="50" value=""></TD></TR>
+		<TR><TD ALIGN="right"><FONT FACE="Arial" COLOR="000000">password:</TD><TD><INPUT TYPE="password" NAME="p1" SIZE="15" MAXLENGTH="15">Level:  <input type="text" name="level" size=8 maxlength=2 value=0></TD></TR>
+	</TABLE>
+	<CENTER>
+	<INPUT TYPE="submit" VALUE="Submit"></CENTER>
+</FORM></center><BR><BR>
+<table width=60%><td><td>I've added the Level option to facilitate organazing raids. I've put the updateable feature in the sign-in page to make it easily accessible. This info will not be listed in the roster, but will be listed in the e-mailing list available only to members.</td><tr></table></center></body></html>

@@ -1,0 +1,376 @@
+<html>
+<head>
+<title>Innoruuk.Com - [ Community News & Resources ] -</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<base target="_top">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" link="#003333" vlink="#003333" alink="#003333">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="left">
+	<tr bgcolor="#000000">
+		<td colspan="2" valign="middle" height="100"><p align="center"><a href="/default.asp"><img src="images/header3.gif" border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+<td width="150" valign="top" height="100%" bgcolor="#003333">
+<table width="140" border="0" cellspacing="0" cellpadding="5" bgcolor="#003333">
+	<tr><td valign="top">
+		<font face="arial" size="-1" color="#909090"><b>Innoruuk News</b><br>
+		<font face="arial" size="-2" color="#DDDDDD">
+		<img src="images/pixel.gif" width="7" height="1"><a href="default.asp" class="menu">Current News</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="addnews.asp" class="menu">* Add News *</a><br>
+	</td></tr>
+	<tr><td valign="top">
+		<font face="arial" size="-1" color="#909090"><b>Innoruuk Guilds</b><br>
+		<font face="arial" size="-2" color="#DDDDDD">
+		<img src="images/pixel.gif" width="7" height="1"><a href="guilds.asp" class="menu">Guild Listing</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="summit.asp" class="menu">Summit Rules</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=calendar/calendar.asp" class="menu">Event Calendar</a><br>
+	</td></tr>
+	<tr><td valign="top">
+		<font face="arial" size="-1" color="#909090"><b>Innoruuk Players</b><br>
+		<font face="arial" size="-2" color="#DDDDDD">
+		<img src="images/pixel.gif" width="7" height="1"><a href="comingsoon.asp" class="menu">Player Listing</a><br>
+	</td></tr>
+	<tr><td valign="top">
+		<font face="arial" size="-1" color="#909090"><b>Innoruuk Forums</b><br>
+		<font face="arial" size="-2" color="#DDDDDD">
+		<!-- href="frames.asp?forward=http://www.sitepowerup.com/mb/view.asp?BoardID=105379" class="menu"--><!--Local-->
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk.Com+-+General&number=3" class="menu">Local - General</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk.Com+-+Guilds&number=9" class="menu">Local - Guilds</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=For+Sale/Trade&number=2" class="menu">Local - For Sale/Trade</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk.Com+-+RolePlaying&number=4" class="menu">Local - RolePlaying</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk.Com+-+Rants&number=5" class="menu">Local - Rants</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk.Com+-+Playground&number=10" class="menu">Local - Playground</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://64.224.202.48/innoruuk/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk.Com+-+Ask+the+Staff&number=7" class="menu">Local - Ask Innoruuk.Com</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://boards.station.sony.com/everquest/cgi-bin/forumdisplay.cgi?action=topics&forum=Innoruuk&number=20" class="menu">everquest.com</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://forums.playervault.com/board.asp?brd=5018" class="menu">eqvault.com</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://boards.stratics.com/cgi-bin/forums/postlist.pl?Cat=8&Board=eqsrvinnoruuk" class="menu">stratics.com</a><br>
+	</td></tr>
+	<tr><td valign="top">
+		<font face="arial" size="-1" color="#909090"><b>Innoruuk Lore</b><br>
+		<font face="arial" size="-2" color="#DDDDDD">
+		<img src="images/pixel.gif" width="7" height="1"><a href="screenshots.asp" class="menu">Screenshot Gallery</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="editorials.asp" class="menu">Editorials</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="interviews.asp" class="menu">Interviews</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="humor.asp" class="menu">Humor</a><br>
+	</td></tr>
+	<tr><td valign="top">
+		<font face="arial" size="-1" color="#909090"><b>Innoruuk Network</b><br>
+		<font face="arial" size="-2" color="#DDDDDD">
+		<img src="images/pixel.gif" width="7" height="1"><a href="http://www.innoruuk.com/boiscan.asp" class="menu">Boiscan</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="frames.asp?forward=http://www.innoruuk.com/chat.asp" class="menu">Innoruuk Chat!</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="links.asp" class="menu">Links</a><br>
+		<img src="images/pixel.gif" width="7" height="1"><a href="mailto:staff@innoruuk.com" class="menu">Contact Us</a><br>
+	</td></tr>
+	<tr><td valign="top" align="center">
+		<font face="arial" size="-2" color="#DDDDDD">Innoruuk Citizens:
+		<table bgcolor="#FFFFFF" border=1 align="center" width="75"><tr><td align="center"><font face="arial" size="-2" color="#303030">15940</td></tr></table>
+		<img src="images/pixel.gif" height="500" width="2">
+	</td></tr>
+</table>
+</td>
+
+<td width="100%" valign="top" align="left">
+
+		<table width="100%" border=0 cellspacing="0" cellpadding="5" align="center"><tr><td>
+<table width="95%" border=0 cellspacing="0" cellpadding="0" align="center"><tr><td align="left" width="50%"><p align="center">
+
+<a href="http://www.innoruuk.com/files/wyvern_lea002.jpg" target="_new"><img src="./files/thumb_wyvern.jpg" border="1"></a><br>
+<font face="arial" size="-2" color="#003333">[Screenshot of the Week]<br>[Leansi Fyre'Fly]</p></td><td align="right" width="50%"><p align="center">
+<a href="http://www.innoruuk.com/files/Dawne_and_Picus.jpg" target="_new"><img src="./files/thumb_D_and_P.jpg" border="1"></a><br>
+<font face="arial" size="-2" color="#003333">[Player Spotlight]<br>[Dawne & Picus]</p></td></table><br>
+
+
+<table width="100%" background="images/bg_gradient.jpg" border=0 cellspacing="0" cellpadding="0" align="center"><tr><td>
+<img src="images/pixel.gif" height="1" width="5"><font face="arial" color="white"><b>Saturday, November 18</b>
+</td></tr></table><br>
+
+		<a name="886"><font face="arial" size="2" color="#003333"><b>Xygoz Verily Slain</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=886&TopicSubject=Xygoz Verily Slain"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 4:31PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Well, after spending some time screwing around and figuring the stuff out, we buckled down on Friday and after quickly dispatching Silverwing (grats Ownd - scim of lifestealing, Icereaver - Dragonborne Hammer, Romtomus - Dragonclaw Main Gauche) we proceeded to clammer through the depths of VP where we met up with Mr. Bard Dragon, Xygoz. After figuring out how to nab him we spanked him silly (and trained ourselves with racnars, but that's ok cause we didn't die) and Saradeline got her long awaited Robe of Invocation, Faaggok the Fairy Ogre from the gay bars of Ogguk version 2.0 aquired a Malevolant Runeblade and Silvera and Areinnye picked up Fangs of Xygoz. With new loot VP == fun and worth going to now! Don't mind holing up here forever!<BR> <BR>Nany Aenyeminidart, Tactician and Virtuoso of Innoruuk<BR>Officer, Legions of Darkness<BR>(sad that I killed a bard, yet happy it dropped phat lewtz)</div><br>
+			
+		</blockquote>
+
+
+		<a name="885"><font face="arial" size="2" color="#003333"><b>Twelve Days of Velious - Exploration Continued! </b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=885&TopicSubject=Twelve Days of Velious - Exploration Continued! "><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 2:14PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030"><a href="http://everquest.station.sony.com/hht/veliouslore/2nd.shtml" class="news" target="_new">Exploration Continued!</a> - Day 2 continues the recounting of the discovery of Velious.<BR></div><br>
+			
+		</blockquote>
+
+
+		<a name="878"><font face="arial" size="2" color="#003333"><b>Thought of the Day</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=878&TopicSubject=Thought of the Day"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 2:13PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">How come I can't check out any of the books at the libraries?<BR><BR>And how come when people start shouting, casting spells and talking in there, no one says "ssshhhhh!" ?</div><br>
+			
+			Thanks <a href="mailto:Denross@innoruuk.com" class="news">Denross Tapferkeit</a>!<br>
+			
+		</blockquote>
+
+
+
+<table width="100%" background="images/bg_gradient.jpg" border=0 cellspacing="0" cellpadding="0" align="center"><tr><td>
+<img src="images/pixel.gif" height="1" width="5"><font face="arial" color="white"><b>Friday, November 17</b>
+</td></tr></table><br>
+
+		<a name="884"><font face="arial" size="2" color="#003333"><b>Velious FAQ</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=884&TopicSubject=Velious FAQ"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 3:38PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">It is now time to start writing the official EverQuest: The Scars of Velious FAQ. But, I need your help to do this. In order to create a FAQ that answers your questions, we need your input. The veliousfaq@station.sony.com email address is now open. If you believe you have a question that would benefit an official FAQ, please send it in. If your question in chosen for inclusion in the EverQuest: The Scars of Velious FAQ, you will be given credit. This credit will be granted by a "submitted by" byline, just like this example: (Disclaimer: The following example is used only to show how chosen submissions will receive credit and not the style of the question.)<BR><BR>I will close the veliousfaq@station.sony.com email address this Monday afternoon, November 20 at 4pm PST. Due to the number of submissions expected, I will not be responding to any email sent to this address. FAQ submissions sent to any other address will be discarded. <BR><BR>When submitting a FAQ question, please put "Velious FAQ" in the subject header and supply your character name and server in case your question is chosen for inclusion. <BR><BR>Thank you everyone! <BR><BR>Oh yeah. I am sure a couple people will be excited to post their FAQ question to this thread, but please, try to refrain from doing that. Took me a whole 2 minutes to establish the veliousfaq@station.sony.com, and I don't want to feel I wasted all of that time. =)<BR><BR>Steve Fuller<BR>Editor, EverQuest.com<BR></div><br>
+			
+		</blockquote>
+
+
+		<a name="883"><font face="arial" size="2" color="#003333"><b>Twelve Days of Velious - New Continent Discovered!</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=883&TopicSubject=Twelve Days of Velious - New Continent Discovered!"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:15PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030"><a href="http://everquest.station.sony.com/hht/veliouslore/1st.shtml" class="news" target="_new">New Continent Discovered!</a> - Amazing reports from the Gnome vessel Icebreaker recount the discovery of the legendary continent of Velious.</div><br>
+			
+		</blockquote>
+
+
+		<a name="882"><font face="arial" size="2" color="#003333"><b>Enchanted Armor and Rock Gem Man</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=882&TopicSubject=Enchanted Armor and Rock Gem Man"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:15PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">GameSpy added two new monsters from Verant for Scars of Velious.<BR><BR>The Rock Gem Man and Enchanted Armor.<BR><BR><a href="http://www.gamespy.com/screens/november00/eq2/" class="news" target="_new">Velious Screenshots</a><BR></div><br>
+			
+		</blockquote>
+
+
+		<a name="881"><font face="arial" size="2" color="#003333"><b>EQ Client Editor</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=881&TopicSubject=EQ Client Editor"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:10PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">My little EQ Client INI Editor program has been updated and is now sporting a new look.<BR><BR>The program now contains the defaults for Attack on Assist and Show Inspection Message, as well as a button to reset all your window positions back to default.<BR><BR><a href="http://members.home.com/luvmedotwo" class="news" target="_new">Editor</a><BR><BR>Enjoy,<BR>Charles Patterson<BR>Kanid of Povar</div><br>
+			
+		</blockquote>
+
+
+		<a name="877"><font face="arial" size="2" color="#003333"><b>Thought of the Day</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=877&TopicSubject=Thought of the Day"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:10PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Ever noticed that Goblins and Elves both have pointed ears? Hmmmmmm!</div><br>
+			
+			Thanks <a href="mailto:Denross@innoruuk.com" class="news">Denross Tapferkeit</a>!<br>
+			
+		</blockquote>
+
+
+
+<table width="100%" background="images/bg_gradient.jpg" border=0 cellspacing="0" cellpadding="0" align="center"><tr><td>
+<img src="images/pixel.gif" height="1" width="5"><font face="arial" color="white"><b>Thursday, November 16</b>
+</td></tr></table><br>
+
+		<a name="880"><font face="arial" size="2" color="#003333"><b>Down Again</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=880&TopicSubject=Down Again"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 8:34PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Server's Up. Server's Down. Server's Up. Server's Down. ETA 9:30 pm Eastern.<BR><BR>Come join us in <a href="http://www.innoruuk.com/frames.asp?forward=http://www.innoruuk.com/chat.asp" class="news" target="_new">Innoruuk Chat!</a></div><br>
+			
+		</blockquote>
+
+
+		<a name="879"><font face="arial" size="2" color="#003333"><b>Another Patch Message</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=879&TopicSubject=Another Patch Message"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 8:01PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">November 16th, 8:00am<BR>------------------------------<BR><BR>*Follow-up Patch*<BR><BR>Today's follow-up patch addresses the following issues from yesterday's patch:<BR><BR>- The spell Torpor received an unintentional reduction in effectiveness<BR>- Illumination in game was not as bright as it should have been.<BR>- Pet using classes unintentionally gained the ability to summon multiple pets.<BR>- Bard songs were reacting poorly with invisibility/hide/sneak.<BR>- Hitpoints were being reported incorrectly to clients.<BR>- Changing resolutions would cause some to crash.<BR><BR>In addition, the following changes were left out of yesterday's patch message:<BR><BR>- Fixed a bug that would cause some to not be able to cast after being feared.<BR>- Data for group members and targets will be updated more frequently.  This change should reduce complaints of warping and slow hitpoint and other updates.<BR>- Bards received increases in the skill cap for their instrument skills.<BR>- Changed the default combo for casting spells from CTRL-1:8 to ALT-1:8, as CTRL was interfering with players ability to strafe.<BR><BR>Thank you for your continued patience.<BR><BR>- The EverQuest Team</div><br>
+			
+		</blockquote>
+
+
+		<a name="874"><font face="arial" size="2" color="#003333"><b>Cazic falls again!!</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=874&TopicSubject=Cazic falls again!!"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 8:01PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">The Plane of Fear had grown dreadfully quiet.  The mighty participants of battle sat, preparing for what was soon to come.  They were tired, hungry, and missing home.  Blood stained their armor and robes.  Dracoliche, the mighty bone dragon, and 2 of Cazic Thule's emmisarries, Fright and Dread had already fallen to their hands.  The zone was clear of any small creatures.  All that was left standing were Cazic and Terror.<BR><BR>After all the blessings had been made, Gallafi of The Pantheon went to scout Cazic's position.  "He's north of the camp!" was his call back.  The weary travellers stood, ready for battle, as Gallafi came over the hill.<BR>"When I say go, run north and show him no mercy!"  There were many who had never seen such a battle, much less take place in one.  You could hear their faint prayers to their gods just before the signal was giving.<BR><BR>"NOW!" Gallafi shouted.<BR><BR>Forward everyone ran, suddenly charged with new energy, swords raised high above their heads and spells chanted louder than ever before.<BR>"EVEL!" Cazic Thule shouted, taking down his first, and only, victim of Death's Touch during the battle.  The warriors, shadow knights, rangers, and paladins started slashing away at the great diety, who seem un-phased.  The wizards, mages, and necromancers were almost screaming the incantations of their spells by now, doing massive damage coupled with the blades.  Terror came to aid his master, but was quickly Mesmerized and taken care of there after.  Then, he fell to his knees, cursing those who dare oppose him... but it mattered not.  As Cazic fell face first to the floor of his might plane, everyone paused for a split second in marvel, then shouted with joy!  For The Faceless, the master of fear, had fallen at their hands.<BR><BR>*ooc* Despite the fears of post-patch lag and bugs, the PoF raid last night was extremely successful.  Good job to everyone who attended the raid on PoF last night!  A VERY SPECIAL thanks to everyone in The Pantheon, wether you attended or not, for supporting all of us and helping us clear the plane and take out Cazic Thule.  And thank you to everyone who showed up making my first organization of a plane raid very, very successful and EXTREMELY fun!  I had a blast last night and am glad I got to do it with the likes of such great people.  Congratulations to Airros in his Shield of Rainbow Hues and to Darin and Shadowfast in their Barbarian Spiritualist's Hammers.  Also congrats to all of those who left the plane with some of their class specific armor, especially Lotore, who left with THREE pieces of Umbral!  Again, thanks to one and all who attended, the raid went very smooth for a non-guild organized raid.  Many friends were made last night in the five and a half hours it took to clear the plane and I will be organizing other raids to other planes in the future!  THANKS SO MUCH!<BR><BR>Skeeza N'Trok<BR>51st Heretic of doom</div><br>
+			
+			Thanks <a href="mailto:xboix@snowhill.com" class="news">Skeeza</a>!<br>
+			
+		</blockquote>
+
+
+		<a name="873"><font face="arial" size="2" color="#003333"><b>DirectX Uninstaller</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=873&TopicSubject=DirectX Uninstaller"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 3:13PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">A link to a utility to remove DirectX in case you need to re-install:<BR><BR><a href="http://download.cnet.com/downloads/0-10107-100-2023210.html?tag=st.dl.10001-103-1.lst-7-1.td-2023210" class="news" target="_new">DirectX Uninstaller</a></div><br>
+			
+		</blockquote>
+
+
+		<a name="867"><font face="arial" size="2" color="#003333"><b>Server is Down</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=867&TopicSubject=Server is Down"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:13PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Scheduled Maintenance on all servers on 11/16/2000 @ 8:00am PST Wed Nov 15 18:44:35 PST 2000<BR><BR>All servers will be taken down for Scheduled Maintenance. Expected downtime is approximatley 3 hours, Thank you! <BR><BR>- The EverQuest Team </div><br>
+			
+		</blockquote>
+
+
+		<a name="865"><font face="arial" size="2" color="#003333"><b>Some Funny Pictures while using my sucky comp :)</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=865&TopicSubject=Some Funny Pictures while using my sucky comp :)"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:10PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">This is what I see now. I cannot be mad however because there is no longer clipping plane lag and there was some music that had never played before for me. Anyway, I have written the addresses of the pictures below for your viewing pleasure :)<BR><BR><a href="http://blackmirage.tripod.com/screenshots/screwy1.gif" class="news" target="_new">Screenshot 1</a><BR><a href="http://blackmirage.tripod.com/screenshots/screwy2.gif" class="news" target="_new">Screenshot 2</a><BR><a href="http://blackmirage.tripod.com/screenshots/screwy3.gif" class="news" target="_new">Screenshot 3</a><BR><a href="http://blackmirage.tripod.com/screenshots/screwy4.gif" class="news" target="_new">Screenshot 4</a><BR><a href="http://blackmirage.tripod.com/screenshots/screwy5.gif" class="news" target="_new">Screenshot 5</a><BR><a href="http://blackmirage.tripod.com/screenshots/screwy6.gif" class="news" target="_new">Screenshot 6</a><BR><a href="http://blackmirage.tripod.com/screenshots/screwy7.gif" class="news" target="_new">Screenshot 7</a></div><br>
+			
+			Thanks <a href="mailto:tegeril@hotmail.com" class="news">Imagin Uhaveclarity</a>!<br>
+			
+		</blockquote>
+
+
+		<a name="866"><font face="arial" size="2" color="#003333"><b>Society of Inner Light - Considering Applications</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=866&TopicSubject=Society of Inner Light - Considering Applications"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:07PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Greetings Friends and Travelers!<BR><BR>The Society of Inner Light is a neutrally aligned guild formed with the purpose of giving our members a place where they feel like they are among family.  We have a well-defined structure of ranks and privileges and set policies by which the guild abides.<BR><BR>Currently, the Society of Inner Light is considering applications for membership by knowledgeable and mature players.  Our current needs are as follows:<BR><BR>Levels 30-44 : All Classes<BR>Levels 44-60 : Clerics, Necromancers, Wizards, and Bards (However, other classes will be considered)<BR><BR>The Society of Inner Light is a guild dedicated to its members.  Our goal is not to be an "uber-guild" but rather to have a steady, stable base of players who interact well with each other and will remain loyal to the guild as a whole.<BR><BR>For more information on the Society of Inner Light, it is highly recommended that you see our Charter and Policies & Procedures at www.societyofinnerlight.com.<BR><BR>If you would like to be considered for membership, please email me with your name, race, class, level, and the reasons why you believe your membership within the Society would be beneficial to both you as well as us.<BR><BR>Thanks for your time.<BR><BR>Arch Magistrate Trahern Thistlefoot<BR>Guildmaster, Society of Inner Light<BR>trahern_thistlefoot@hotmail.com<BR></div><br>
+			
+			Thanks <a href="mailto:trahern_thistlefoot@hotmail.com" class="news">Trahern Thistlefoot</a>!<br>
+			
+		</blockquote>
+
+
+		<a name="869"><font face="arial" size="2" color="#003333"><b>DirectX Clarification</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=869&TopicSubject=DirectX Clarification"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:07PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Taken from the <a href="http://boards.station.sony.com/everquest/Forum2/HTML/031197.html" class="news" target="_new">EverQuest.Com Gameplay Forum</a> :<BR><BR>It seems that there might have been some confusion about DirectX. Here's the story.<BR><BR>EverQuest is now set up to run with DirectX 7. However, Microsoft recently came up with DirectX 8. Versions of DirectX have been backwards compatible historically. But we have not had a chance to complete testing with DirectX 8. For this reason we highly recommend that you use DirectX 7 with EverQuest.<BR><BR>HOWEVER, because there are some changes between DirectX 7 and 8, some of your video or sound drivers may not run properly with DirectX 8 installed. These problems should be fixed when your sound or video card manufacturer updates their drivers for DirectX 8. <BR><BR>The same is true about earlier versions of DirectX. Because EverQuest is now utilizing the power of DirectX 7, you will most certainly need to install the newest drivers for your sound and video cards (and do so AFTER you install DirectX 7 or 7.0a – for EverQuest there is no different between 7 and 7.0a).<BR><BR>WE RECOMMEND DIRECTX 7 or 7.0a for use with EverQuest.<BR><BR>It seems that there is no easy way to uninstall DirectX 8. This is also beyond our control. But if we find something that will aid with this, we'll certainly let you know.<BR><BR>I'm sorry if there has been any confusion.<BR><BR>Alan</div><br>
+			
+		</blockquote>
+
+
+		<a name="868"><font face="arial" size="2" color="#003333"><b>Patch Message</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=868&TopicSubject=Patch Message"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:07PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">November 15th, 3:00am<BR>------------------------------<BR><BR>***Patch Day***<BR><BR>Today's patch includes the announced code-updates to use technology included with DirectX 7. You MUST have DirectX 7 or higher installed in order to play EverQuest. Please refer to http://everquest.station.sony.com/f_requirements.shtml prior to contacting technical support for procedures prior to contacting technical support.<BR><BR>Today's patch also includes the new "Sound Engine" that we've been speaking about for some time. The new sound engine supports additional EAX features and should address the concerns of SBLive users that have been posted in the past.<BR><BR>*Movelog for Povar and Tarew Marr*<BR><BR>The /movelog window will be opened for Povar and Tarew Marr on Saturday 11/18 and Sunday 11/19 from 6PM PST (GMT-8) to Midnight. All players wishing to have all of their characters moved (on a per-account basis) from those servers to the new split-server should execute "/movelog yes" during the windows.<BR><BR>The physical character move will take place next week on Tuesday or Wednesday. Please check the scheduled downtime page of www.everquest.com for a firm time when it is decided. Remember that corpses will not follow you to the new server, so anyone deciding to move will want to be sure that all corpses are looted prior to the time of the actual move. <BR><BR>As this patch features new /movelog logic to eliminate problems with people being left behind, players should not count on customer-service intervention after the physical move if they were unable to execute the command during the window. You will need to be present and execute the command in order to move.<BR><BR>*Spell Changes*<BR><BR>-- Pixie Strike: Made it less resistible by reducing the secondary resist.<BR>-- Song of Twilight: Increased duration. Made less resistible by removing the secondary resist. Allowed it to be cast at any time of day.<BR>-- Fixed the effect on the Necromancer Epic Quest Item. The effect was checking resist on each tick instead of running full course.<BR>-- Increased the duration of the effect on the Enchanter Epic Quest Item.<BR>-- Fixed the "Modulating Rod" so that it can be used by the appropriate races.<BR>-- Fixed the Lost Staff of the Scorned<BR>-- Maniacal Strength will now correctly overwrite the level 49 strength spell.<BR>-- The Death Pact and Divine Intervention spells will now stack appropriately with other spells that have similar effects.<BR><BR>-- Modified the "Jonathan's" line of songs to remove the "skin" effect in order to allow bards to use them more effectively in combat. In addition, we made them "Self Only" spells rather than "Single Target" spells in order to allow bards to remain in combat while singing them.<BR><BR>*General Fixes/Changes*<BR><BR>-- Fixed a bug that caused an NPC on "Sister's Isle" to attack people who were fighting pirates.<BR>-- Removed Paladins as an authorized class for piercing weapons in game since they do not have the piercing skill.<BR>-- The "Belt of the River" quest should now work correctly.<BR>-- Fixed all known problems with the class-specific epic quests.<BR>-- Implemented some new race-specific quests for Iksar.<BR>-- Positively modified most Epic Quest Items. Please check your items to see your changes. Note: Not all changes will be evident by looking at the item.<BR>-- Fixed the NPC bosses in the Plane of Sky that were not dropping the correct loot.<BR>-- Your bread tin will now be returned when baking bread.<BR>-- Fixed the Wellford Fargin keyword problem in Firiona Vie.<BR>-- Made the "Gravebinder" a magic weapon.<BR><BR>-- Repaired the Forager Bag. It was causing people to lose weight when placing items in the bag. It is supposed to have a weight reduction component, but was not supposed to cause weight loss.<BR><BR>-- Taunt: Increased effectiveness above level 50. Previously, creatures above level 50 could not be taunted by means of the taunt skill. Now, most creatures below the character's level can now be successfully taunted. As a note, the chance to taunt a creature above 50th level is smaller than that of a creature below 50th.<BR><BR><BR>*Client Enhancements*<BR><BR>-- You now have 10 pages of 10 hotboxes each when in full screen mode.<BR>-- You can now customize 10 pages of 12 socials each, increasing the total number of available socials by 108.<BR>-- Fixed a bug with the keyboard.txt file causing some keys to translate incorrectly.<BR>-- Fixed a bug that caused some window positions to save improperly at higher resolutions.<BR>-- All key mappings are now stored in the EQCLIENT.INI file.<BR><BR>-- Fixed all known problems with the clipping plane slider. Users should now see differences for the entire range of adjustment in zones that support an adjustable clipping plane.<BR><BR>-- Players on PvP servers will no longer show "[LD]" over their heads when linkdead. In addition, these same players will no longer show as "LinkDead" in the /who list.<BR><BR>-- Players can now set custom text colors while in game. /usercolor: Usage "/usercolor UserColorNumber R G B" where "UserColorNumber is the number of the color as indicated in the EQCLIENT.INI file, and R, G, and B are red, green and blue respectively. All changes will be automatically saved to your EQCLIENT.INI file.<BR><BR>-- OPT files in your EverQuest directory now have a number after the character name indicating the server number. As such, you will now be able to have characters of the same name on two separate servers with different custom options.<BR><BR>-- The eqlog.txt file now has a name that includes the server number and character name. For instance, if your character is named "Bobb", and you are on Server 1, your log text file name would be eqlog_01_Bobb.txt.<BR><BR>-- Added two new entries to the "Defaults" section of the EQCLIENT.INI file: AttackOnAssist=TRUE|FALSE - Sets whether or not your autoattack turns on automatically when assisting. Defaults to "TRUE". ShowInspectMessage=TRUE|FALSE - Sets whether or not you see the "Soandso is inspecting you" message. Defaults to "TRUE".<BR><BR>-- Custom key mappings have been greatly enhanced. You can now set two keys, a primary and an alternate, for each function in game. In addition, things that were previously not customizable can now be set to a key of your preference. Left-click on the key identifier to set the primary key, right-click to set the secondary.<BR><BR>-- Added the /note command. /note will append the following text to a file called "notes.txt" in your EverQuest directory. For instance, typing "/note This is a note" will put "This is a note" on the next line in the notes.txt file.<BR><BR><BR>- The EverQuest Team</div><br>
+			
+		</blockquote>
+
+
+		<a name="858"><font face="arial" size="2" color="#003333"><b>Thought of the Day</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=858&TopicSubject=Thought of the Day"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">12:07PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Why does Verant need a sexy blonde to pose for the box cover pic when there are no real Iksar to pose? If they can draw an Iksar from a picture, why not Firiona Vie?</div><br>
+			
+			Thanks <a href="mailto:gsimcic1@adelphia.net" class="news">Sellkie</a>!<br>
+			
+		</blockquote>
+
+
+
+<table width="100%" background="images/bg_gradient.jpg" border=0 cellspacing="0" cellpadding="0" align="center"><tr><td>
+<img src="images/pixel.gif" height="1" width="5"><font face="arial" color="white"><b>Tuesday, November 14</b>
+</td></tr></table><br>
+
+		<a name="863"><font face="arial" size="2" color="#003333"><b>Important Message</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=863&TopicSubject=Important Message"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA"> 5:13PM EST - Cymric<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">Preparation for tomorrow's patch:<BR><BR>Greetings Windows 98/95 users.<BR><BR>To play the game after the next patch you will need to update to DirectX7.0a if you have not done so already. Before you do this I would want you to make sure you know what video card and sound card driver versions you use. <BR><BR>Here is two ways to determine what sound and video game drivers and cards you have.<BR><BR>Click on start; go up to the run box. In the Run window, type DXDIAG than hit ok. This will launch the DirectX diagnostics tool. Click on the tab that says Display to see what video card you are using and what is the latest driver you are using. . Click on the tab that says Sound to see what sound card you are using and what is the latest driver for the sound card. If you are using a 3D-accelerator card it will show up as another Display number. You will have a Display 1 and a Display 2. Please copy the information down for both.<BR><BR>Please write this information down on a piece of paper with a pen or pencil. Remember to write down the number of the driver version you are using.<BR><BR>Another way is at your desktop right click on My Computer. Scroll down to properties, click on properties and go up to device manager. Please click on device manager. In the device manager, if you click on sound, video, and game controllers, you can determine what audio device you are using. If you click on display adapter you can see what video device you are using. If you click on either device and then click on the driver tab you can determine which version you are using. If you are using a 3D-accelerator card it will most likely show up in your sound, video, and game controllers section.<BR><BR>After you find out what video card or sound card you have, please visit our main web site and visit the support section and examine the sound and video FAQ’s. This will usually have locations for the latest drivers for your cards from the manufacturers’ web sites. You may want to write that information down as well.<BR><BR>Now for the update information:<BR><BR>For the full version download for DirectX 7.0a, go to this URL. 6.3MB download. <BR>http://download.microsoft.com/download/win98SE/Update/7.0a/W9X/EN-US/DX7Aeng.exe <BR>If you have DirectX 7.0 on your system already, there is a DirectX patch to upgrade to 7.0a. 234KB download. <BR>http://download.microsoft.com/download/win98SE/Patch/7.0a/W9X/EN-US/DI7AENG.exe <BR><BR>It is up to you what you will want to download. I would recommend the full version of DirectX7.0a. <BR><BR>----------------------------------------------------------------------------------<BR>At this time I do not recommend downloading Direct X 8.0. Please do not download and install it this brand new DirectX version. Many of the Video and Sound Card manufacturers have not made drivers that work with EverQuest and DirectX8.0. Please note there is a difference between compliant and compatible.<BR>----------------------------------------------------------------------------------<BR><BR>After you have updated to DirectX7.0a please try to play the game. If you have problems we recommend that you reinstall your video card drivers and sound card drivers. Since you have written them down, you will have a good idea of what version number you need. If you have visited our web site looked at the Video and Sound FAQ’s under support, you should now know what web site you need to visit to download the proper or latest Video Card Drivers. There is a chance that after the patch you might again need to update and/or change your driver versions.<BR><BR><BR>--------------------------------------------------------<BR>There is a slight chance you might want to reinstall or uninstall DirectX due to corruption issues. An uninstaller is available off the Www.downloads.com web site at<BR>http://download.cnet.com/downloads/0-10107-100-2023210.html?tag=st.dl.10001_103_1.lst.td_2023210 <BR><BR>Follow the directions carefully. Please do this as a last resort measure. It might help but it might hurt as well. PLEASE FOLLOW THE DIRECTIONS CAREFULLY. You are playing with your registry. You do not want to mess it up.<BR><BR>Good Luck<BR>David Starr<BR>Verant Technical and Customer Support</div><br>
+			
+		</blockquote>
+
+
+		<a name="861"><font face="arial" size="2" color="#003333"><b>Guild Listings have been updated</b></a><br>
+		<!--[ <a href="./default.asp?newscomment=1&comments=0&url=&news_id=861&TopicSubject=Guild Listings have been updated"><font face="arial" size="1" color="#AAAAAA">0 Comments</font></a> ] -->
+		<font face="arial" size="1" color="#AAAAAA">11:42AM EST - Kadafi Oakbane<br>
+		<blockquote>
+		<div align="justify"><font face="arial" size="-1" color="#303030">The listing has been partially updated.  Those guilds who did not have their Guild Leader's e-mail address listed were removed.  If your guild was removed and still does exist, please have your leader re-submit the information but an e-mail address is needed or it will not be accepted.<BR><BR>You may also e-mail me direct with the following information as well:<BR><BR>Guild Name:<BR>Guild Leader:<BR>Leader e-mail:<BR>Alignment: Optional<BR>Guild website: If you have one, please submit<BR>Password:<BR><BR>If you have any questions, please let me know.</div><br>
+			
+			Thanks <a href="mailto:Denross@innoruuk.com" class="news">Denross Tapferkeit</a>!<br>
+			
+		</blockquote>
+
+
+		<br><br>
+		
+		<p align="right"><a href="./default.asp?newscount=1">Older News...</a></p>
+		
+		</td>
+		<td valign="top" align="right">
+<form name="search" action="./default.asp" method="post">
+<table width="129" cellpadding="5" cellspacing="0" border="1" bordercolor="#003333"><tr bgcolor="#003333"><td align="left"><font face="arial" size="-1" color="white">
+<font face="arial" size="-2">Search News<br> 
+<input type="text" name="StrSearch" size="10" maxlength="50" style="background-color: #FFFFFF; color: 000000;border-color: 000000; font-family:Arial; font-size:10" ><input type="submit" value="Go" name="Submit">
+</td></tr></table></form>
+<!-- Start of Boiscan Server Stats - brought to you by Innoruuk.Com www.innoruuk.com -->
+<script src="http://www.innoruuk.com/boistat.asp?sid=14">
+</script>
+<!-- End of Innoruuk.Com Code -->
+<br>
+<table width="129" cellpadding="5" cellspacing="0" border="1" bordercolor="#003333"><tr bgcolor="#003333"><td align="center"><font face="arial" size="-1" color="white"><b>Latest News</b></td></tr>
+<tr bgcolor="white"><td><font face="arial" size="-3" color="#505050">
+
+	. <a href="#886" class="news"s>Xygoz Verily Slain</a><br>
+
+	. <a href="#885" class="news"s>Twelve Days of Velious - Exploration Continued! </a><br>
+
+	. <a href="#878" class="news"s>Thought of the Day</a><br>
+
+	. <a href="#884" class="news"s>Velious FAQ</a><br>
+
+	. <a href="#883" class="news"s>Twelve Days of Velious - New Continent Discovered!</a><br>
+
+	. <a href="#882" class="news"s>Enchanted Armor and Rock Gem Man</a><br>
+
+	. <a href="#881" class="news"s>EQ Client Editor</a><br>
+
+	. <a href="#877" class="news"s>Thought of the Day</a><br>
+
+	. <a href="#880" class="news"s>Down Again</a><br>
+
+	. <a href="#879" class="news"s>Another Patch Message</a><br>
+
+	. <a href="#874" class="news"s>Cazic falls again!!</a><br>
+
+	. <a href="#873" class="news"s>DirectX Uninstaller</a><br>
+
+	. <a href="#867" class="news"s>Server is Down</a><br>
+
+	. <a href="#865" class="news"s>Some Funny Pictures while using my sucky comp :)</a><br>
+
+	. <a href="#866" class="news"s>Society of Inner Light - Considering Applications</a><br>
+
+	. <a href="#869" class="news"s>DirectX Clarification</a><br>
+
+	. <a href="#868" class="news"s>Patch Message</a><br>
+
+	. <a href="#858" class="news"s>Thought of the Day</a><br>
+
+	. <a href="#863" class="news"s>Important Message</a><br>
+
+	. <a href="#861" class="news"s>Guild Listings have been updated</a><br>
+
+</td></tr>
+<tr bgcolor="#003333"><td align="center"><font color="white"><img src="./images/pixel.gif" height="10" width="10"></td></tr>
+</table><br>
+<!-- Start of EZPoll Code v1.0 - brought to you by MyComputer.com www.mycomputer.com -->
+<script language="Javascript">
+var zcode = " ";
+</script>
+<script src="http://ezpolls.mycomputer.com/ezpoll.html?u=cygnus_2112&p=1">
+</script>
+<script language="Javascript">
+document.write(zcode);
+</script>
+<!-- End of EZPoll Code -->
+		</td>
+</tr>
+</table>
+
+</td>
+</table>
+</body>
+</html>

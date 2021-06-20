@@ -1,0 +1,564 @@
+<!--begin code-->
+<!-- This page is hosted FREE at www.eqguild.net -->
+
+
+<!--end code-->
+<html>
+  <!-- START OF SCRIPT -->
+  <HEAD>
+  
+  <SCRIPT LANGUAGE="JavaScript">
+  
+  <!-- Web site :  http://www.compfund.com/javascript/  -->
+  
+  <!-- Begin
+  function getCookie(name){
+  var cname = name + "=";               
+  var dc = document.cookie;             
+  if (dc.length > 0) {              
+  begin = dc.indexOf(cname);       
+  if (begin != -1) {           
+  begin += cname.length;       
+  end = dc.indexOf(";", begin);
+  if (end == -1) end = dc.length;
+  return unescape(dc.substring(begin, end));
+     } 
+  }
+  return null;
+  }
+  function setCookie(name, value, expires) {
+  document.cookie = name + "=" + escape(value) + 
+  ((expires != null) ? "; expires=" + expires.toGMTString() : "")
+  + "; path=/";
+  }
+  function setName() {
+  var expdate = new Date ();
+  expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 365));
+  var prompt=i = document.Mail.name.value;
+  setCookie("name", i, expdate);
+  }
+  function getName() {
+  if(getCookie("name") != null) {
+  document.Mail.Name.value = getCookie("emailname");
+     }
+  }
+  function getInfo() {
+  var now= new Date();
+  document.Mail.Info.value = "Browser: " + navigator.userAgent;
+  document.Mail.Info.value += "Date:" + now;
+  }
+  function checkMultiple() {
+  if (getCookie("emailsent") == 'true') return true;
+  else return false;
+  }
+  function process() {
+  setCookie("emailsent", "true");
+  with (document.Mail) {
+  if (Subject.selectedIndex == 1) action = "mailto:aardappel@yourass.com?subject=IABA Commentaar";
+  else if (Subject.selectedIndex == 2) action = "mailto:aardappel@yourass.com?subject=IABA Vraagje";
+  else if (Subject.selectedIndex == 3) action = "mailto:aardappel@yourass.com?subject=IABA Suggestie";
+  else if (Subject.selectedIndex == 4) action = "mailto:aardappel@yourass.com?subject=IABA Gebroken link";
+  else action = "mailto:aardappel@yourass.com?subject=IABA Anders";
+     }
+  }
+  function formCheck() {
+  var passed = false;
+  with (document.Mail) {
+  if (Subject.selectedIndex == 0) { 
+  alert("Kies ff een onderwerp");
+  Subject.focus();
+  }
+  else if (Name.value == "") {
+  alert("Heb je geen naam ofzo?");
+  Name.focus();
+  }
+  else if (checkMultiple()) {
+  if (confirm("even op OK klikken hier")) {
+  process();
+  passed = true;
+     }
+  }
+  else {
+  process();
+  passed = true;
+     }
+  }
+  return passed;
+  }
+  // End -->
+  </SCRIPT>
+  
+  <style>
+  
+  #divMenu {font-family:comic sans ms,arial,helvetica; font-size:12pt; font-weight:bold}
+  #divMenu a{text-decoration:none;}
+  #divMenu a:hover{color:red;}
+  </style>
+  <script language="JavaScript1.2">
+  /********************************************************************************
+  Submitted with modifications by Jack Routledge (http://fastway.to/compute) to DynamicDrive.com
+  Copyright (C) 1999 Thomas Brattli @ www.bratta.com
+  This script is made by and copyrighted to Thomas Brattli 
+  This may be used freely as long as this msg is intact!
+  This script has been featured on http://www.dynamicdrive.com
+  ********************************************************************************
+  Browsercheck:*/
+  ie=document.all?1:0
+  n=document.layers?1:0
+  ns6=document.getElementById&&!document.all?1:0
+  
+  //These are the variables you have to set:
+  
+  //How much of the layer do you wan't to be visible when it's in the out state?
+  lshow=60
+  
+  //How many pixels should it move every step? 
+  var move=10;
+  
+  //At what speed (in milliseconds, lower value is more speed)
+  menuSpeed=40
+  
+  //Do you want it to move with the page if the user scroll the page?
+  var moveOnScroll=true
+  
+  /********************************************************************************
+  You should't have to change anything below this.
+  ********************************************************************************/
+  //Defining variables
+  
+  var ltop;
+  var tim=0;
+  
+  //Object constructor
+  function makeMenu(obj,nest){
+      nest=(!nest) ? '':'document.'+nest+'.'
+      if (n) this.css=eval(nest+'document.'+obj)
+      else if (ns6) this.css=document.getElementById(obj).style
+      else if (ie) this.css=eval(obj+'.style')						
+  	this.state=1
+  	this.go=0
+          if (n) this.width=this.css.document.width
+          else if (ns6) this.width=document.getElementById(obj).offsetWidth
+          else if (ie) this.width=eval(obj+'.offsetWidth')
+  	this.left=b_getleft
+      this.obj = obj + "Object"; 	eval(this.obj + "=this")	
+  }
+  //Get's the top position.
+  function b_getleft(){
+          if (n||ns6){ gleft=parseInt(this.css.left)}
+          else if (ie){ gleft=eval(this.css.pixelLeft)}
+  	return gleft;
+  }
+  /********************************************************************************
+  Deciding what way to move the menu (this is called onmouseover, onmouseout or onclick)
+  ********************************************************************************/
+  function moveMenu(){
+  	if(!oMenu.state){
+  		clearTimeout(tim)
+  		mIn()	
+  	}else{
+  		clearTimeout(tim)
+  		mOut()
+  	}
+  }
+  //Menu in
+  function mIn(){
+  	if(oMenu.left()>-oMenu.width+lshow){
+  		oMenu.go=1
+  		oMenu.css.left=oMenu.left()-move
+  		tim=setTimeout("mIn()",menuSpeed)
+  	}else{
+  		oMenu.go=0
+  		oMenu.state=1
+  	}	
+  }
+  //Menu out
+  function mOut(){
+  	if(oMenu.left()<0){
+  		oMenu.go=1
+  		oMenu.css.left=oMenu.left()+move
+  		tim=setTimeout("mOut()",menuSpeed)
+  	}else{
+  		oMenu.go=0
+  		oMenu.state=0
+  	}	
+  }
+  /********************************************************************************
+  Checking if the page is scrolled, if it is move the menu after
+  ********************************************************************************/
+  function checkScrolled(){
+  	if(!oMenu.go) oMenu.css.top=eval(scrolled)+parseInt(ltop)
+  	if(n||ns6) setTimeout('checkScrolled()',30)
+  }
+  /********************************************************************************
+  Inits the page, makes the menu object, moves it to the right place, 
+  show it
+  ********************************************************************************/
+  function menuInit(){
+  	oMenu=new makeMenu('divMenu')
+          if (n||ns6) scrolled="window.pageYOffset"
+          else if (ie) scrolled="document.body.scrollTop"
+  	oMenu.css.left=-oMenu.width+lshow
+          if (n||ns6) ltop=oMenu.css.top
+          else if (ie) ltop=oMenu.css.pixelTop
+  	oMenu.css.visibility='visible'
+  	if(moveOnScroll) ie?window.onscroll=checkScrolled:checkScrolled();
+  }
+  
+  
+  //Initing menu on pageload
+  window.onload=menuInit;
+  </script>
+  
+  <BODY bgcolor="#a5f3e1"><div id="dot0" style="position: absolute; visibility: hidden; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ <div id="dot1" style="position: absolute; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ <div id="dot2" style="position: absolute; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ <div id="dot3" style="position: absolute; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ <div id="dot4" style="position: absolute; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ <div id="dot5" style="position: absolute; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ <div id="dot6" style="position: absolute; height: 11; width: 11;">
+ 	<img src="bullet.gif" height=35 width=13>
+ </div>
+ 
+ <script LANGUAGE="JavaScript">
+ <!-- hide code
+ 
+ /*
+ Elastic Trail script (By Philip Winston @ pwinston@yahoo.com, URL: http://www.geocities.com/pwinston/)
+ Script featured on Dynamicdrive.com
+ For this and 100's more DHTML scripts, visit http://dynamicdrive.com
+ */
+ 
+ var nDots = 7;
+ 
+ var Xpos = 0;
+ var Ypos = 0;
+ 
+   // fixed time step, no relation to real time
+ var DELTAT = .01;
+   // size of one spring in pixels
+ var SEGLEN = 10;
+   // spring constant, stiffness of springs
+ var SPRINGK = 10;
+   // all the physics is bogus, just picked stuff to
+   // make it look okay
+ var MASS = 1;
+ // Positive XGRAVITY pulls right, negative pulls left
+ // Positive YGRAVITY pulls down, negative up
+ var XGRAVITY = 0;
+ var YGRAVITY = 50;
+ // RESISTANCE determines a slowing force proportional to velocity
+ var RESISTANCE = 10;
+   // stopping criterea to prevent endless jittering
+   // doesn't work when sitting on bottom since floor
+   // doesn't push back so acceleration always as big
+   // as gravity
+ var STOPVEL = 0.1;
+ var STOPACC = 0.1;
+ var DOTSIZE = 11;
+   // BOUNCE is percent of velocity retained when 
+   // bouncing off a wall
+ var BOUNCE = 0.75;
+ 
+ var isNetscape = navigator.appName=="Netscape";
+ 
+   // always on for now, could be played with to
+   // let dots fall to botton, get thrown, etc.
+ var followmouse = true;
+ 
+ var dots = new Array();
+ init();
+ 
+ function init()
+ {
+     var i = 0;
+     for (i = 0; i < nDots; i++) {
+         dots[i] = new dot(i);
+     }
+     
+     if (!isNetscape) {
+         // I only know how to read the locations of the 
+         // <LI> items in IE
+         //skip this for now
+         // setInitPositions(dots)
+     }
+     
+     // set their positions
+     for (i = 0; i < nDots; i++) {
+         dots[i].obj.left = dots[i].X;
+         dots[i].obj.top = dots[i].Y;
+     }
+     
+     
+     if (isNetscape) {
+         // start right away since they are positioned
+         // at 0, 0
+         startanimate();
+     } else {
+         // let dots sit there for a few seconds
+         // since they're hiding on the real bullets
+         setTimeout("startanimate()", 1000);
+     }
+ }
+ 
+ 
+ 
+ function dot(i) 
+ {
+     this.X = Xpos;
+     this.Y = Ypos;
+     this.dx = 0;
+     this.dy = 0;
+     if (isNetscape) {	
+         this.obj = eval("document.dot" + i);
+     } else {
+         this.obj = eval("dot" + i + ".style");
+     }
+ }
+ 
+ 
+ function startanimate() {	
+     setInterval("animate()", 20);
+ }
+ 
+ 
+ // This is to line up the bullets with actual LI tags on the page
+ // Had to add -DOTSIZE to X and 2*DOTSIZE to Y for IE 5, not sure why
+ // Still doesn't work great
+ function setInitPositions(dots)
+ {
+     // initialize dot positions to be on top 
+     // of the bullets in the <ul>
+     var startloc = document.all.tags("LI");
+     var i = 0;
+     for (i = 0; i < startloc.length && i < (nDots - 1); i++) {
+         dots[i+1].X = startloc[i].offsetLeft
+             startloc[i].offsetParent.offsetLeft - DOTSIZE;
+         dots[i+1].Y = startloc[i].offsetTop +
+             startloc[i].offsetParent.offsetTop + 2*DOTSIZE;
+     }
+     // put 0th dot above 1st (it is hidden)
+     dots[0].X = dots[1].X;
+     dots[0].Y = dots[1].Y - SEGLEN;
+ }
+ 
+ // just save mouse position for animate() to use
+ function MoveHandler(e)
+ {
+     Xpos = e.pageX;
+     Ypos = e.pageY;	  
+     return true;
+ }
+ 
+ // just save mouse position for animate() to use
+ function MoveHandlerIE() {
+     Xpos = window.event.x + document.body.scrollLeft;
+     Ypos = window.event.y + document.body.scrollTop;	  
+ }
+ 
+ if (isNetscape) {
+     document.captureEvents(Event.MOUSEMOVE);
+     document.onMouseMove = MoveHandler;
+ } else {
+     document.onmousemove = MoveHandlerIE;
+ }
+ 
+ 
+ function vec(X, Y)
+ {
+     this.X = X;
+     this.Y = Y;
+ }
+ 
+ // adds force in X and Y to spring for dot[i] on dot[j]
+ function springForce(i, j, spring)
+ {
+     var dx = (dots[i].X - dots[j].X);
+     var dy = (dots[i].Y - dots[j].Y);
+     var len = Math.sqrt(dx*dx + dy*dy);
+     if (len > SEGLEN) {
+         var springF = SPRINGK * (len - SEGLEN);
+         spring.X += (dx / len) * springF;
+         spring.Y += (dy / len) * springF;
+     }
+ }
+ 
+ 
+ function animate() {	
+     // dots[0] follows the mouse,
+     // though no dot is drawn there
+     var start = 0;
+     if (followmouse) {
+         dots[0].X = Xpos;
+         dots[0].Y = Ypos;	
+         start = 1;
+     }
+     
+     for (i = start ; i < nDots; i++ ) {
+         
+         var spring = new vec(0, 0);
+         if (i > 0) {
+             springForce(i-1, i, spring);
+         }
+         if (i < (nDots - 1)) {
+             springForce(i+1, i, spring);
+         }
+         
+         // air resisitance/friction
+         var resist = new vec(-dots[i].dx * RESISTANCE,
+             -dots[i].dy * RESISTANCE);
+         
+         // compute new accel, including gravity
+         var accel = new vec((spring.X + resist.X)/MASS + XGRAVITY,
+             (spring.Y + resist.Y)/ MASS + YGRAVITY);
+         
+         // compute new velocity
+         dots[i].dx += (DELTAT * accel.X);
+         dots[i].dy += (DELTAT * accel.Y);
+         
+         // stop dead so it doesn't jitter when nearly still
+         if (Math.abs(dots[i].dx) < STOPVEL &&
+             Math.abs(dots[i].dy) < STOPVEL &&
+             Math.abs(accel.X) < STOPACC &&
+             Math.abs(accel.Y) < STOPACC) {
+             dots[i].dx = 0;
+             dots[i].dy = 0;
+         }
+         
+         // move to new position
+         dots[i].X += dots[i].dx;
+         dots[i].Y += dots[i].dy;
+         
+         // get size of window
+         var height, width;
+         if (isNetscape) {
+             height = window.innerHeight + window.pageYOffset;
+             width = window.innerWidth + window.pageXOffset;
+         } else {	
+             height = document.body.clientHeight + document.body.scrollTop;
+             width = document.body.clientWidth + document.body.scrollLeft;
+         }
+         
+         // bounce off 3 walls (leave ceiling open)
+         if (dots[i].Y >=  height - DOTSIZE - 1) {
+             if (dots[i].dy > 0) {
+                 dots[i].dy = BOUNCE * -dots[i].dy;
+             }
+             dots[i].Y = height - DOTSIZE - 1;
+         }
+         if (dots[i].X >= width - DOTSIZE) {
+             if (dots[i].dx > 0) {
+                 dots[i].dx = BOUNCE * -dots[i].dx;
+             }
+             dots[i].X = width - DOTSIZE - 1;
+         }
+         if (dots[i].X < 0) {
+             if (dots[i].dx < 0) {
+                 dots[i].dx = BOUNCE * -dots[i].dx;
+             }
+             dots[i].X = 0;
+         }
+         
+         // move img to new position
+         dots[i].obj.left = dots[i].X;			
+         dots[i].obj.top =  dots[i].Y;		
+     }
+ }
+ 
+ // end code hiding -->
+ </script>
+ 
+   <FORM><br><br>
+   <input type="button" value="Doe het licht uit!" onClick="document.bgColor = 'black'" onClick="alert('Uit!')">
+ <input type="button" value="Aan!" onClick="document.bgColor = '#a5f3e1'" onClick="alert('Aan!')">
+   </FORM> 
+  
+  <CENTER>
+  <FONT FACE = "Times"  SIZE = 3>
+  Nou dit spreekt voor zich! Natuurlijk nodig JIJ me uit op en knalfuif!
+  <BR>
+  
+  
+  <FORM NAME = "Mail" ACTION = "mailto:aardappel@yourass.com?subject=IABA - Form" METHOD = "POST" ENCTYPE = "text/plain" onSubmit="return formCheck();">
+  <INPUT TYPE = "hidden" SIZE = 0 NAME = "Info">
+  <TABLE BORDER = 0 CELLPADDING = 10 CELLSPACING = 0>
+  <TR><TD>
+  Naam:  
+  <INPUT TYPE = "text" NAME = "Name" onChange = "setName()">
+  </TD><TD ALIGN = RIGHT >
+  Wat voor Feest?:  
+  <SELECT NAME = "Subject">
+  <OPTION SELECT>Wat voor Feest geef je?</OPTION>
+  <OPTION>1. Verjaardagsfeest</OPTION>
+  <OPTION>2. Zomaar-een-feest</OPTION>
+  <OPTION>3. House-Warming Party</OPTION>
+  <OPTION>4. Grolsch-Jaargetijdenfeest</OPTION>
+  <OPTION>5. Een ander soort feest</OPTION>
+  </SELECT>
+  </TD></TR>
+ <tr><td> <input type="checkbox" name = "cadeau">Ik wil een cadeau!</tr></td><tr><td><input type="checkbox" name = "jarig">Feliciteer me als je binnenkomt, want ik ben jarig!</td></tr><tr><td><input type="checkbox" name = "zwemspullen">Neem je zwemspullen mee!
+  
+  <TR>
+  <TD COLSPAN = 2>
+  Nog iets toe te voegen?
+ <BR><BR>
+  <TEXTAREA NAME = "Suggestions, Comments" COLS = 75 ROWS = 6>
+  </TEXTAREA>
+  </TD>
+  </TR>
+  </TABLE>
+  
+  <CENTER>
+  <TABLE>
+  <TR>
+  <TD align=center>
+  <INPUT TYPE = "submit" VALUE = "Sturen!">
+  </TD>
+  </TR>
+  </TABLE>
+  </FORM>
+  <SCRIPT LANGUAGE="JavaScript">
+  <!-- Begin
+  getInfo();
+  getName();
+  // End -->
+  </SCRIPT>
+  </FONT>
+  </CENTER>
+  <!-- END OF SCRIPT -->
+  
+  
+  <div id="divMenu" style="position:absolute; top:3; left:0; visibility:hidden; background-color:#F6CE94>
+  <nobr>
+  <a href="index.html">Menu<a> |
+  <a href="index.html">Home<a> |
+          <a href="wie.html">WIE?</a> |
+  <a href="tabs/tabs.html">Tabs</a> |
+  <a href="cds.html">CD's</a> |
+  <a href="gedichten.html">Gedichten</a> |
+  <a href="pws.html">PWS</a> |
+  <a href="downloads.html">Downloads</a> |
+  <a href="favorieten.html">Links</a> |
+  <a href="gastenboek.html">Gastenboek</a> |
+  	<a href="javascript://" onmouseover="moveMenu()" style="background-color:none;text-decoration:none"><font color="white">MENU</a>
+  </nobr>
+  </div>
+  </body>
+  </html>
+<!--begin code-->
+<div align=center><font size=1><a href="http://www.eqguild.net">EQG</a></font></div>
+
+
+<!--end code-->

@@ -1,0 +1,659 @@
+[size=18]phpBB 2.0.6 to phpBB 2.0.7 Code Changes[/size]
+
+
+
+These are the Changes from phpBB 2.0.6 to phpBB 2.0.7 summed up into a little Mod. This might be very helpful if you want to update your Board and have installed a bunch of Mods. Then it's normally easier to apply the Code Changes than to install all Mods again.
+
+When you find a 'AFTER, ADD'-Statement, the Code have to be added after the last line quoted in the 'FIND'-Statement.
+When you find a 'BEFORE, ADD'-Statement, the Code have to be added before the first line quoted in the 'FIND'-Statement.
+When you find a 'REPLACE WITH'-Statement, the Code quoted in the 'FIND'-Statement have to be replaced completely with the quoted Code in the 'REPLACE WITH'-Statement.
+When you find a 'DELETE'-Statement, the Code have to be deleted.
+
+After you have finished this tutorial, you have to upload the update_to_207.php file, execute it and then delete it from your webspace.
+
+Ok, lets start:
+
+
+[size=18][color=blue][list][*]groupcp.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 140[/color]
+[code]
+
+if ( isset($HTTP_POST_VARS['mode']) || isset($HTTP_GET_VARS['mode']) )
+{
+	$mode = ( isset($HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$mode = htmlspecialchars($mode);
+[/code]
+
+[*]
+[color=blue]FIND - Line 594[/color]
+[code]
+
+						$sql_in .= ( ( $sql_in != '' ) ? ', ' : '' ) . $members[$i];
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+						$sql_in .= ( ( $sql_in != '' ) ? ', ' : '' ) . intval($members[$i]);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]includes/auth.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 174[/color]
+[code]
+
+			}
+			while( $row = $db->sql_fetchrow($result) );
+		}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+		$db->sql_freeresult($result);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]includes/bbcode.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 108[/color]
+[code]
+
+	$bbcode_tpl['url4'] = str_replace('{DESCRIPTION}', '\\5', $bbcode_tpl['url4']);
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$bbcode_tpl['url4'] = str_replace('{DESCRIPTION}', '\\3', $bbcode_tpl['url4']);
+[/code]
+
+[*]
+[color=blue]FIND - Line 201[/color]
+[code]
+
+	$patterns[] = "#\[url\]([\w]+?://.*?[^ \"\n\r\t<]*?)\[/url\]#is";
+	$replacements[] = $bbcode_tpl['url1'];
+
+	// [url]www.phpbb.com[/url] code.. (no xxxx:// prefix).
+	$patterns[] = "#\[url\]((www|ftp)\.([\w\-]+\.)*?[\w\-]+\.[a-z]{2,4}(:?[0-9]*?/[^ \"\n\r\t<]*)?)\[/url\]#is";
+	$replacements[] = $bbcode_tpl['url2'];
+
+	// [url=xxxx://www.phpbb.com]phpBB[/url] code..
+	$patterns[] = "#\[url=([\w]+?://.*?[^ \"\n\r\t<]*?)\](.*?)\[/url\]#is";
+	$replacements[] = $bbcode_tpl['url3'];
+
+	// [url=www.phpbb.com]phpBB[/url] code.. (no xxxx:// prefix).
+	$patterns[] = "#\[url=((www|ftp)\.([\w\-]+\.)*?[\w\-]+\.[a-z]{2,4}(:?[0-9]*?/[^ \"\n\r\t<]*)?)\](.*?)\[/url\]#is";
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$patterns[] = "#\[url\]([\w]+?://[^ \"\n\r\t<]*?)\[/url\]#is";
+	$replacements[] = $bbcode_tpl['url1'];
+
+	// [url]www.phpbb.com[/url] code.. (no xxxx:// prefix).
+	$patterns[] = "#\[url\]((www|ftp)\.[^ \"\n\r\t<]*?)\[/url\]#is";
+	$replacements[] = $bbcode_tpl['url2'];
+
+	// [url=xxxx://www.phpbb.com]phpBB[/url] code..
+	$patterns[] = "#\[url=([\w]+?://[^ \"\n\r\t<]*?)\](.*?)\[/url\]#is";
+	$replacements[] = $bbcode_tpl['url3'];
+
+	// [url=www.phpbb.com]phpBB[/url] code.. (no xxxx:// prefix).
+	$patterns[] = "#\[url=((www|ftp)\.[^ \"\n\r\t<]*?)\](.*?)\[/url\]#is";
+[/code]
+
+[*]
+[color=blue]FIND - Line 624[/color]
+[code]
+
+	$ret = preg_replace("#(^|[\n ])([\w]+?://.*?[^ \"\n\r\t<]*)#is", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $ret);
+
+	// matches a "www|ftp.xxxx.yyyy[/zzzz]" kinda lazy URL thing
+	// Must contain at least 2 dots. xxxx contains either alphanum, or "-"
+	// zzzz is optional.. will contain everything up to the first space, newline, 
+	// comma, double quote or <.
+	$ret = preg_replace("#(^|[\n ])((www|ftp)\.[\w\-]+\.[\w\-.\~]+(?:/[^ \"\t\n\r<]*)?)#is", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $ret);
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$ret = preg_replace("#(^|[\n ])([\w]+?://[^ \"\n\r\t<]*)#is", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $ret);
+
+	// matches a "www|ftp.xxxx.yyyy[/zzzz]" kinda lazy URL thing
+	// Must contain at least 2 dots. xxxx contains either alphanum, or "-"
+	// zzzz is optional.. will contain everything up to the first space, newline, 
+	// comma, double quote or <.
+	$ret = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r<]*)#is", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $ret);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]includes/functions_search.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 243[/color]
+[code]
+
+			$sql = "INSERT IGNORE INTO " . SEARCH_MATCH_TABLE . " (post_id, word_id, title_match) 
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+			$sql = "INSERT INTO " . SEARCH_MATCH_TABLE . " (post_id, word_id, title_match) 
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]includes/topic_review.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 54[/color]
+[code]
+
+		{
+			message_die(GENERAL_MESSAGE, 'Topic_post_not_exist');
+		}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+		$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 211[/color]
+[code]
+
+	{
+		message_die(GENERAL_MESSAGE, 'Topic_post_not_exist', '', __LINE__, __FILE__, $sql);
+	}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]includes/usercp_register.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 748[/color]
+[code]
+
+	$avatar_category = ( !empty($HTTP_POST_VARS['avatarcategory']) ) ? $HTTP_POST_VARS['avatarcategory'] : '';
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$avatar_category = ( !empty($HTTP_POST_VARS['avatarcategory']) ) ? htmlspecialchars($HTTP_POST_VARS['avatarcategory']) : '';
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]index.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 122[/color]
+[code]
+
+}
+
+while( $category_rows[] = $db->sql_fetchrow($result) );
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 174[/color]
+[code]
+
+	{
+		$forum_data[] = $row;
+	}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 202[/color]
+[code]
+
+		{
+			$new_topic_data[$topic_data['forum_id']][$topic_data['topic_id']] = $topic_data['post_time'];
+		}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+		$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 228[/color]
+[code]
+
+	{
+		$forum_moderators[$row['forum_id']][] = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $row['user_id']) . '">' . $row['username'] . '</a>';
+	}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 248[/color]
+[code]
+
+	{
+		$forum_moderators[$row['forum_id']][] = '<a href="' . append_sid("groupcp.$phpEx?" . POST_GROUPS_URL . "=" . $row['group_id']) . '">' . $row['group_name'] . '</a>';
+	}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]login.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 86[/color]
+[code]
+
+						$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? $HTTP_POST_VARS['redirect'] : "index.$phpEx";
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+						$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : "index.$phpEx";
+[/code]
+
+[*]
+[color=blue]FIND - Line 96[/color]
+[code]
+
+					$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? $HTTP_POST_VARS['redirect'] : '';
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+					$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : '';
+[/code]
+
+[*]
+[color=blue]FIND - Line 111[/color]
+[code]
+
+			$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? $HTTP_POST_VARS['redirect'] : "";
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+			$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : "";
+[/code]
+
+[*]
+[color=blue]FIND - Line 132[/color]
+[code]
+
+			$url = (!empty($HTTP_POST_VARS['redirect'])) ? $HTTP_POST_VARS['redirect'] : $HTTP_GET_VARS['redirect'];
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+			$url = (!empty($HTTP_POST_VARS['redirect'])) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : htmlspecialchars($HTTP_GET_VARS['redirect']);
+[/code]
+
+[*]
+[color=blue]FIND - Line 142[/color]
+[code]
+
+		$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? $HTTP_POST_VARS['redirect'] : "index.$phpEx";
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+		$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? htmlspecialchars($HTTP_POST_VARS['redirect']) : "index.$phpEx";
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]memberlist.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 272[/color]
+[code]
+
+		$i++;
+	}
+	while ( $row = $db->sql_fetchrow($result) );
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 292[/color]
+[code]
+
+
+		$pagination = generate_pagination("memberlist.$phpEx?mode=$mode&order=$sort_order", $total_members, $board_config['topics_per_page'], $start). ' ';
+	}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]modcp.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 83[/color]
+[code]
+
+if ( isset($HTTP_POST_VARS['mode']) || isset($HTTP_GET_VARS['mode']) )
+{
+	$mode = ( isset($HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$mode = htmlspecialchars($mode);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]posting.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 38[/color]
+[code]
+
+		$$var = ( !empty($HTTP_POST_VARS[$param]) ) ? $HTTP_POST_VARS[$param] : $HTTP_GET_VARS[$param];
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+		$$var = ( !empty($HTTP_POST_VARS[$param]) ) ? htmlspecialchars($HTTP_POST_VARS[$param]) : htmlspecialchars($HTTP_GET_VARS[$param]);
+[/code]
+
+[*]
+[color=blue]FIND - Line 224[/color]
+[code]
+
+if ( $result = $db->sql_query($sql) )
+{
+	$post_info = $db->sql_fetchrow($result);
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 279[/color]
+[code]
+
+				}
+				while ( $row = $db->sql_fetchrow($result) );
+			}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+			$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 402[/color]
+[code]
+
+		}
+
+		$notify_user = ( $db->sql_fetchrow($result) ) ? TRUE : $userdata['user_notify'];
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+		$db->sql_freeresult($result);
+[/code]
+
+[*]
+[color=blue]FIND - Line 477[/color]
+[code]
+
+			if ( !($result = $db->sql_query($sql)) )
+			{
+				message_die(GENERAL_ERROR, 'Could not obtain user vote data for this topic', '', __LINE__, __FILE__, $sql);
+			}
+
+			if ( !($row = $db->sql_fetchrow($result)) )
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+			if ( !($result2 = $db->sql_query($sql)) )
+			{
+				message_die(GENERAL_ERROR, 'Could not obtain user vote data for this topic', '', __LINE__, __FILE__, $sql);
+			}
+
+			if ( !($row = $db->sql_fetchrow($result2)) )
+[/code]
+
+[*]
+[color=blue]FIND - Line 506[/color]
+[code]
+
+			{
+				$message = $lang['Already_voted'];
+			}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+			$db->sql_freeresult($result2);
+[/code]
+
+[*]
+[color=blue]FIND - Line 508[/color]
+[code]
+
+		else
+		{
+			$message = $lang['No_vote_option'];
+		}
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+		$db->sql_freeresult($result);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]privmsg.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 61[/color]
+[code]
+
+if ( isset($HTTP_POST_VARS['folder']) || isset($HTTP_GET_VARS['folder']) )
+{
+	$folder = ( isset($HTTP_POST_VARS['folder']) ) ? $HTTP_POST_VARS['folder'] : $HTTP_GET_VARS['folder'];
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$folder = htmlspecialchars($folder);
+[/code]
+
+[*]
+[color=blue]DELETE - Line 73[/color]
+[code]
+
+// session id check
+if (!empty($HTTP_POST_VARS['sid']) || !empty($HTTP_GET_VARS['sid']))
+{
+	$sid = (!empty($HTTP_POST_VARS['sid'])) ? $HTTP_POST_VARS['sid'] : $HTTP_GET_VARS['sid'];
+}
+else
+{
+	$sid = '';
+}
+
+[/code]
+
+[*]
+[color=blue]FIND - Line 96[/color]
+[code]
+
+if ( !empty($HTTP_POST_VARS['mode']) || !empty($HTTP_GET_VARS['mode']) )
+{
+	$mode = ( !empty($HTTP_POST_VARS['mode']) ) ? $HTTP_POST_VARS['mode'] : $HTTP_GET_VARS['mode'];
+[/code]
+
+[color=blue]AFTER, ADD[/color]
+[code]
+
+	$mode = htmlspecialchars($mode);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]search.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 685[/color]
+[code]
+
+		if ( intval($search_id) )
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+		$search_id = intval($search_id);
+		if ( $search_id )
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]templates/subSilver/index_body.tpl[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 94[/color]
+[code]
+
+	<td width="20" align="center"><img src="templates/subSilver/images/folder_new.gif" alt="{L_NEW_POSTS}"/></td>
+	<td><span class="gensmall">{L_NEW_POSTS}</span></td>
+	<td>  </td>
+	<td width="20" align="center"><img src="templates/subSilver/images/folder.gif" alt="{L_NO_NEW_POSTS}" /></td>
+	<td><span class="gensmall">{L_NO_NEW_POSTS}</span></td>
+	<td>  </td>
+	<td width="20" align="center"><img src="templates/subSilver/images/folder_lock.gif" alt="{L_FORUM_LOCKED}" /></td>
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	<td width="20" align="center"><img src="templates/subSilver/images/folder_new_big.gif" alt="{L_NEW_POSTS}"/></td>
+	<td><span class="gensmall">{L_NEW_POSTS}</span></td>
+	<td>  </td>
+	<td width="20" align="center"><img src="templates/subSilver/images/folder_big.gif" alt="{L_NO_NEW_POSTS}" /></td>
+	<td><span class="gensmall">{L_NO_NEW_POSTS}</span></td>
+	<td>  </td>
+	<td width="20" align="center"><img src="templates/subSilver/images/folder_locked_big.gif" alt="{L_FORUM_LOCKED}" /></td>
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]viewforum.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 243[/color]
+[code]
+
+	$topic_days = ( !empty($HTTP_POST_VARS['topicdays']) ) ? $HTTP_POST_VARS['topicdays'] : $HTTP_GET_VARS['topicdays'];
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$topic_days = ( !empty($HTTP_POST_VARS['topicdays']) ) ? intval($HTTP_POST_VARS['topicdays']) : intval($HTTP_GET_VARS['topicdays']);
+[/code]
+
+[/list]
+[size=18][color=blue][list][*]viewtopic.php[/color][/size][/list]
+[list=1]
+[*]
+[color=blue]FIND - Line 317[/color]
+[code]
+
+	$post_days = ( !empty($HTTP_POST_VARS['postdays']) ) ? $HTTP_POST_VARS['postdays'] : $HTTP_GET_VARS['postdays'];
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$post_days = ( !empty($HTTP_POST_VARS['postdays']) ) ? intval($HTTP_POST_VARS['postdays']) : intval($HTTP_GET_VARS['postdays']);
+[/code]
+
+[*]
+[color=blue]FIND - Line 360[/color]
+[code]
+
+	$post_order = (!empty($HTTP_POST_VARS['postorder'])) ? $HTTP_POST_VARS['postorder'] : $HTTP_GET_VARS['postorder'];
+[/code]
+
+[color=blue]REPLACE WITH[/color]
+[code]
+
+	$post_order = (!empty($HTTP_POST_VARS['postorder'])) ? htmlspecialchars($HTTP_POST_VARS['postorder']) : htmlspecialchars($HTTP_GET_VARS['postorder']);
+[/code]
+
+[/list]

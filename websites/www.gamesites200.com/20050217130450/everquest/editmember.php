@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EverQuest Top 200 - Member's Area</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/gs2002_stylesheet.css" type="text/css" />
+</head>
+
+<body>
+<table cellpadding="0" cellspacing="0" width="95%" style="border: 1px solid #999999;" align="center">
+<tr>
+	<td background="/images/header_tile.gif">
+		<a href="http://www.gamesites200.com"><img src="/images/logo.jpg" alt="GameSites200.com - Gaming Top Sites List" border="0" /></a>
+	</td>
+
+</tr>
+<tr>
+	<td class="bar1">
+		<b><a href="http://www.gamesites200.com/everquest/" class="topMenu">EverQuest Top 200</a></b> - <a href="http://www.gamesites200.com/contact.shtml" class="topMenu">Contact</a> | <a href="http://www.gamesites200.com/advertise.shtml" class="topMenu">Advertise</a>
+
+	</td>
+</tr>
+</table>
+
+<br />
+
+<table cellpadding="0" cellspacing="0" width="95%" border="0" align="center">
+<tr>
+	<td width="100%" valign="top">
+		<div class="bar2"><br /><h1>EverQuest Top 200</h1><br /><br />
+		<div class="bar3"> </div></div>
+
+
+
+
+<br />
+<br><br></center><a href="editmember.php?action=new">New Account</a>&nbsp;&nbsp;- Add your link<br><a href="editmember.php?action=login">Login</a>&nbsp;&nbsp;- Edit your info/check stats<br><a href="editmember.php?action=forgot">Forgot Password</a>&nbsp;&nbsp;- Get password for your account<br><a href="editmember.php?action=forgotHTML">Lost HTML</a>&nbsp;&nbsp;- Get HTML<br><br /><br /><br />
+		<div class="bar4">
+	                <b>EverQuest Top 200</b> -
+	                <a href="http://www.gamesites200.com/everquest/" class="topMenu">1-50</a> | <a href="http://www.gamesites200.com/everquest/index2.shtml" class="topMenu">51-100</a> | <a href="http://www.gamesites200.com/everquest/index3.shtml" class="topMenu">101-150</a> | <a href="http://www.gamesites200.com/everquest/index4.shtml" class="topMenu">151-200</a> | <a href="http://www.gamesites200.com/contact.shtml" class="topMenu">Contact</a> | <a href="http://www.gamesites200.com/advertise.shtml" class="topMenu">Advertise</a>
+
+		</div>
+	</td>
+</tr>
+</table>
+
+
+<div id="footer">
+
+	<br /><br /><a href="http://www.gamesites200.com">Game Sites 200</a> © 2000-2005. Design based on Invision Board default template.
+</div>
+
+
+</center>
+</body></html>

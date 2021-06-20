@@ -1,0 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE>EQ-beastlord - The Comprehensive Beastlord site for Everquest</TITLE>
+<META NAME="DESCRIPTION" CONTENT="Beastlord site for the game everquest.  Information you can use to make the best beastlord possible.">
+<META NAME="KEYWORDS" CONTENT="beastlord, everquest, eq, beast, lord, ever, quest, stats, messageboard, message, board, forums, quests, spells, free, brent, copeland, huntsville, alabama, tain, shari,">
+<meta http-equiv="refresh" content="0;URL=../forums3/">
+
+<body>
+<!-- <p>Sorry for the boards being down so long.  Host had a problem with the Database and they are in the process of recreating it by hand.  I'm hopeful that it should be up today.
+
+<p>More info if I get any. -->
+
+</BODY></HTML>
