@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>ShadowKnight.org - Feign Death</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+	<meta name="description" content="This is a discussion forum powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://www.shadowknight.org/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">ShadowKnight.org</a> &gt; <a href="f-32.html">EverQuest</a> &gt; <a href="f-12.html">Evil Beginnings</a> &gt; <a href="f-15.html">Combat & Tactics</a> &gt; Feign Death</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.shadowknight.org/forums/showthread.php?t=2728">Feign Death</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kumadenie</div><div class="date">06-18-2002, 04:50 PM</div></div><div class="posttext">I have been frustrated by the ineffectiveness of Feign Death, but have finally decided to try and really understand this spell.  I have a reasonable start but there are still many questions, holes and uncertainties.<br />
+<br />
+I am submitting the following pseudo code and would greatly appreciate any discussion, corrections, observations that support or contradict it, so that we can all get a better knowledge of how this thing works.<br />
+&lt;pre&gt;<br />
+Result feignDeath {<br />
+// is cast successful?<br />
+	if ShadowKnight or Necromancer {<br />
+		If outOfMana<br />
+			return Result(Standing,SeemAlive,message=&quot;Insufficent Mana&quot;);<br />
+		If fizzles(abjuration)<br />
+			return Result(Standing,SeemAlive,message=&quot;Fizzles&quot;);<br />
+		If stunned<br />
+			return Result(Standing,SeemAlive,message=&quot;Casting Interrupted&quot;);<br />
+		If interrupted(channeling,distance moved,damage taken?,dexterity?,?)<br />
+			return Result(Standing,SeemAlive,message=&quot;Casting Interrupted&quot;);<br />
+	}<br />
+// was feign successful?<br />
+	if Monk {<br />
+		if (feignFailed(feignDeathSkill))<br />
+			return Result(Fallen,SeemAlive,message=&quot;Fallen to the Ground&quot;);<br />
+	}<br />
+	if ShadowNight or Necromancer {<br />
+		if (feignFailed(abjuration?,charisma?))<br />
+			return Result(Fallen,SeemAlive,message=&quot;Fallen to the Ground&quot;);<br />
+	}<br />
+// Does this step exist?<br />
+	for each mob {<br />
+		if mob is agroed {<br />
+			if mob makesSave(Magic Resistance?,?)<br />
+				return Result(Fallen,SeemAlive,message=&quot;Dies&quot;);<br />
+		}<br />
+// Or maybe is it this instead<br />
+		if mob is within somedistance(?) {<br />
+			if mob makesSave(Magic Resistance?,?)<br />
+				return Result(Fallen,SeemAlive,message=&quot;Dies&quot;);<br />
+		}<br />
+	}<br />
+// Now for some bugs that Verant didnt feel like fixing:<br />
+	if mob started to cast before FD and spell lands then<br />
+		return Result(Fallen,SeemAlive,message=&quot;No Longer Feigned&quot;)<br />
+// And I had suspected, and has been more confirmed by the recent changes to pets that are still breaking mezzes:<br />
+	if mob started (or had decided) to swing before FD and swing lands after FD then<br />
+		return Result(Fallen,SeemAlive)<br />
+<br />
+// Oh and one last thing...<br />
+	if character gets hit by AOE spell<br />
+		return Result(Fallen,SeemAlive,message=&quot;No Longer Feigned&quot;)<br />
+<br />
+// Wow congradulations you have succesfully Feigned<br />
+	for each mob {<br />
+		if mob doesnt makeSave(mobs level, Magic resistence?,?)<br />
+			agro=0;<br />
+	}<br />
+<br />
+	return Result(Fallen,SeemDead,message=&quot;Dies&quot;);<br />
+}<br />
+<br />
+after the initial feign further tics:<br />
+tic {<br />
+	for each mob {<br />
+		agro = agro - deltaagro(feigned?,distance away?,amount damage done?,?)<br />
+	}<br />
+}<br />
+&lt;/pre&gt;<br />
+Any information relating to this is greatly appreciated</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Krazaak</div><div class="date">06-18-2002, 05:00 PM</div></div><div class="posttext">I'm fairly convinced that most of the oddities with feign are a result of lag, rather like the bug where people died after being completely healed, but before the healing was recorded by the server.<br />
+<br />
+For instance, I have never once feigned out of a melee situation and had a monster come after me once the fight was over.  Likewise, I have never been feigned and had something attack me as it walked by.<br />
+<br />
+If I was running away from a train and feigned successfully (i.e. no fallen message) without mobs catching up to me, they have never attacked me unless they break feign with a cast in progress.<br />
+<br />
+What I have found though, is that if I'm in a high lag situation, it becomes almost impossible to feign with multiple mobs on me.  If I turn my field of vision towards the ground to decrease my lag, I have far less problems.<br />
+<br />
+Personally, with the exception of a few bugs in the past, I think feign is intended to work 100% of the time, assuming that...<br />
+<br />
+You don't fall to the ground.<br />
+You don't get hit with a spell while feigned.<br />
+<br />
+I recall Verant stating that some things had a chance to see through feign, but I get the distinct feeling that was just bullshit intended to cover up the fact that they just didn't know why it failed some times that it shouldn't.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Catrekil</div><div class="date">06-19-2002, 07:25 AM</div></div><div class="posttext">I recall Verant stating that some things had a chance to see through feign, but I get the distinct feeling that was just bullshit intended to cover up the fact that they just didn't know why it failed some times that it shouldn't.<br />
+<br />
+The Avatar of War has no respect for FD... he does see through it. You can turn attack off, FD, con indiff to him and he will *still* kick your ass.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pheargore</div><div class="date">06-19-2002, 04:16 PM</div></div><div class="posttext">I have made the same observations as Krazaak<br />
+<br />
+Nice summary, Krazaak :)<br />
+<br />
+- Peace</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sakazadroz</div><div class="date">06-19-2002, 04:50 PM</div></div><div class="posttext">What about having a pet while FD?  I thought for a long time that was just a rumor, but a couple of times lately I've been smacked down while feigning with a pet up, and I'm starting to wonder again if the pet makes mobs more likely to see through your feign someohow.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sasasaz</div><div class="date">06-21-2002, 06:32 AM</div></div><div class="posttext">The last couple of times I have had to FD with a pet up, the pet got the aggro. Soon as the pet is killed the mobs just wandered off.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Frued</div><div class="date">06-21-2002, 03:56 PM</div></div><div class="posttext">I use a pet alot and have many many times had to FD while Jaboner tried his hardest to inflict as much damage till his death.<br />
+<br />
+ Mobs then just wander off eventually.<br />
+<br />
+ /salute Jaboner</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rikkar</div><div class="date">06-21-2002, 10:18 PM</div></div><div class="posttext">i swear, EVERYTHING in sky sees through FD, it NEVER works for me (if i'm tanking then FD at least)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Canelek - KOE</div><div class="date">06-22-2002, 11:07 PM</div></div><div class="posttext">*has fallen to the ground*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fubartic</div><div class="date">06-23-2002, 11:16 PM</div></div><div class="posttext">if my attack is on when i FD, it is always seen through.... other than that unless i fall to the ground it has never failed me.<br />
+<br />
+so turn off attack before you FD!</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.8, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

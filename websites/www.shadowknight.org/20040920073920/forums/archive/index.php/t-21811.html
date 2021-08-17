@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>ShadowKnight.org - OT: buffer underrun</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board" />
+	<meta name="description" content="This is a discussion forum powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://www.shadowknight.org/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">ShadowKnight.org</a> &gt; <a href="f-32.html">EverQuest</a> &gt; <a href="f-3.html">Main</a> &gt; <a href="f-8.html">The Arena</a> &gt; OT: buffer underrun</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://www.shadowknight.org/forums/showthread.php?t=21811">OT: buffer underrun</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Duke Malagen Shai'Kar</b></div><div class="posttext" id="p1">Has anyone ever got an error saying the eqgame.exe is causing a buffer underrun, and if so, were you able to get it fixed? Cannot get past the login screen due this error now.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Howlitoezis</b></div><div class="posttext" id="p2">try different  video card drivers, or update your motherboard drivers.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Duke Malagen Shai'Kar</b></div><div class="posttext" id="p3">Using the 56.72 nVidia drivers, and from what I can tell, my motherboard is using the most up-to-date bios (no new bios since last year).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Howlitoezis</b></div><div class="posttext" id="p4">Not Bios, Drivers.<br />
+What mobo do you have?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Xanathol</b></div><div class="posttext" id="p5">Go to here (http://www.microsoft.com/whdc/devtools/debugging/installx86.mspx) , download the debugging tools, and custom install them to C:\Debug. Then go start, run, type in regedit. Expand to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options ( assuming on XP - change Windows NT to just Windows for 9x, iirc ) create a new key named eqgame.exe, create a string value named 'Debugger' and set it to C:\Debug\cdb.exe. Now launch EQ, and be sure to do it in windowed mode. When you do, a cdb.exe window should spawn, and initally, the app will hang, as the debugger is waiting on input ( notice the prompt in the debugger window ). Just type 'g' then enter int he debugger to resume execution. The debugger may break many times, due to first chance exceptions, so you may have to do this a lot ( you could read the help on how to use the sxe command and just watch for C++ exceptions, but that depends on how comfortable you are with it ). Anyhow, once done, repro till the issue happens - the app should appear 'hung' right where the issue was going to reproduce ( but right before it reproduces ), and the debugger is at a prompt. Type in .dump /mfh C:\Debug\eq.dmp. Now post a link where I can get to it. Won't have symbols for EQ, but sometimes can dig useful info out without 'em. Worth a shot. To stop launching the debugger when eq starts, delete the eqgame.exe reg key. Personally, I'd say just do a full filescan for EQ, but that's too easy.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Duke Malagen Shai'Kar</b></div><div class="posttext" id="p6">Actually, I'm getting _overrun_ not underrun if that makes a difference. =)<br />
+<br />
+As for the motherboard, its a Soyo P4i - 845PE Lite. The drivers for that board have also not been updated since July of last year, which was after I bought the board (so I have used those already).<br />
+<br />
+Interesting idea, Xana, will try it out, but its 11mb, and I'm on 56k connection, so that will take awhile. =)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>Xanathol</b></div><div class="posttext" id="p7">Oh good, because that is pretty easy to catch, and not going to result in a C++ exception. Create a file with the following:<br />
+.log C:\Debug\log.txt<br />
+sxe -c &quot;kbn;g&quot; -c2 &quot;kbn;.dump /mfh C:\Debug\eq.dmp;q&quot; av<br />
+sxe -c &quot;kbn;g&quot; -c2 &quot;kbn;.dump /mfh C:\Debug\eq.dmp;q&quot; eh<br />
+sxe -c &quot;kbn;g&quot; -c2 &quot;kbn;.dump /mfh C:\Debug\eq.dmp;q&quot; sbo<br />
+sxe -c &quot;kbn;g&quot; -c2 &quot;kbn;.dump /mfh C:\Debug\eq.dmp;q&quot; sov<br />
+sxe -c &quot;kbn;g&quot; -c2 &quot;kbn;.dump /mfh C:\Debug\eq.dmp;q&quot; bpe<br />
+sxi asrt<br />
+sxi dm<br />
+sxi dz<br />
+sxi gp<br />
+sxi ii<br />
+sxi iov<br />
+sxi ip<br />
+sxi isc<br />
+sxi lsq<br />
+sxi aph<br />
+sxi 3c<br />
+sxi ch<br />
+sxi dbce<br />
+sxi vcpp<br />
+sxi wos<br />
+sxi wob<br />
+sxi sse<br />
+sxi *<br />
+g<br />
+Save it to C:\Debug\cmds.txt<br />
+Now change that regkey from C:\Debug\cdb.exe to C:\Debug\cdb.exe -c &quot;$&lt;cmds.txt&quot;<br />
+Now from a command prompt, cd to C:\Debug and enter: gflags -p /enable eqgame.exe /full<br />
+Now repro the issue, not worrying about the debugger - when the issue repros, it should automatically produce a DMP file, a log file, and kill the application. Again, would suggest a full scan first. :P<br />
+<br />
+EDIT: gah - it ate the $ command...omit spaces from this...its:<br />
+$ &lt; cmds.txt<br />
+Oh! and when done, doa  gflags.exe /disable eqgame.exe, else it'll eat your memory forever :P Note, if you're on 56k, I'll probably never be able to get the dump from you - expect it to be many MBs big. ;)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Kemora</b></div><div class="posttext" id="p8">It seems to do that if you put in a wrong password.<br />
+<br />
+Go go Sony!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Duke Malagen Shai'Kar</b></div><div class="posttext" id="p9">Kemora, I want you to have my babies. Lots of them. :rolleyes: <br />
+<br />
+Was using the wrong password the whole day. Lack of sleep does strange things.<br />
+<br />
+Thanks! =)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

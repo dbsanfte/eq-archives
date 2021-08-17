@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<!-- end no cache headers -->
+	<meta name="keywords" content="shadowknight,shadow,knight,everquest,EQ,forum,discussion,board">
+	<meta name="description" content="ShadowKnight.org -- ShadowKnight.org is the forum home for all issues relating to Shadowknights. Please visit http://www.shadowknight.org for the Shadowknight website.">
+	<title>ShadowKnight.org</title>
+	<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #404070;
+	SCROLLBAR-ARROW-COLOR: #FFFFFF;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #00AAAA;
+}
+A:hover {
+	COLOR: %;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #00AAAA;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: %;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #FFFFFF;
+}
+</style>
+
+
+</head>
+<body bgcolor="#000000" text="#FFFFFF" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#00FFFF" vlink="#00FFFF" alink="#00FFFF">
+<!-- logo and buttons -->
+<center>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+  <td valign="top" align="left" background="images/menu_background.gif"><a href="index.php?s=890a708ccb81394bc4111386b9f8a85e"><img src="images/sk_org.jpg" border="0" alt="ShadowKnight.org"></a></td>
+</tr>
+<tr>
+  <td valign="bottom" align="right" nowrap background="images/menu_background.gif">
+   <!-- toplinks -->
+   <a href="usercp.php?s=890a708ccb81394bc4111386b9f8a85e"><img src="images/top_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0"></a>
+   <a href="register.php?s=890a708ccb81394bc4111386b9f8a85e&action=signup"><img src="images/top_register.gif" alt="Registration is free!" border="0"></a>
+   <a href="calendar.php?s=890a708ccb81394bc4111386b9f8a85e"><img src="images/top_calendar.gif" alt="Calendar" border="0"></a>
+   <a href="memberlist.php?s=890a708ccb81394bc4111386b9f8a85e"><img src="images/top_members.gif" alt="Find other members" border="0"></a>
+   <a href="misc.php?s=890a708ccb81394bc4111386b9f8a85e&action=faq"><img src="images/top_faq.gif" alt="Frequently Asked Questions" border="0"></a>
+   <a href="search.php?s=890a708ccb81394bc4111386b9f8a85e"><img src="images/top_search.gif" alt="Search" border="0"></a>
+   <a href="index.php?s=890a708ccb81394bc4111386b9f8a85e"><img src="images/top_home.gif" alt="Home" border="0"></a>
+   <!-- <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=logout"><img src="images/top_logout.gif" alt="Logout" border="0"></a>  -->
+   &nbsp;
+   <!-- /toplinks -->
+  </td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table bgcolor="#000000" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+  <td>
+
+
+<!-- text -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr valign="top">
+	<td><a href="javascript:window.location=window.location" oncontextmenu="return false;"><img src="images/vb_bullet.gif" border="0" align="middle" alt="ShadowKnight.org : Powered by vBulletin version 2.2.9"></a>
+	<font face="verdana, arial, helvetica" size="2" ><b>ShadowKnight.org</b></font></td>
+	<td align="right"><font face="verdana,arial,helvetica" size="1" ><br><b><a href="search.php?s=890a708ccb81394bc4111386b9f8a85e&action=getdaily">View Today's Active Threads</a></b></font></td>
+</tr>
+</table>
+
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr>
+	<td colspan="2"><font face="verdana, arial, helvetica" size="2" ><b>Welcome to the ShadowKnight.org.</b></font><br>
+	<font face="verdana,arial,helvetica" size="1" >If this is your first visit, be sure to check out the <a href="misc.php?s=890a708ccb81394bc4111386b9f8a85e&action=faq"><b>FAQ</b></a>
+	by clicking the link above. You may have to <a href="register.php?s=890a708ccb81394bc4111386b9f8a85e"><b>register</b></a>
+	before you can post: click the register link above to proceed.
+	To start viewing messages, select the forum that you want to visit from the selection below.</font><hr></td>
+</tr>
+<tr valign="bottom">
+	<td><font face="verdana,arial,helvetica" size="1" >
+	Members: 7,898, Threads: 14,330, Posts: 171,306<br>
+	Welcome to our newest member, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=7899">Rarsiss</a>
+	</font></td>
+	<td align="right"><font face="verdana,arial,helvetica" size="1" >
+	The time now is 03:50 AM.<br>
+	You last visited: 06-15-2003 03:50 AM.
+	</font></td>
+</tr>
+</table>
+<!-- /text -->
+
+<br>
+
+<!-- main -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#000000"  width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0"  width="100%">
+<tr align="center">
+  <td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >&nbsp;</font></td>
+  <td bgcolor="#404070" width="80%" align="left"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Forum</b></font></td>
+  <td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Posts</b></font></td>
+  <td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Threads</b></font></td>
+  <td bgcolor="#404070" nowrap><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Last Post</b></font></td>
+  <td bgcolor="#404070" width="20%"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Moderator</b></font></td>
+</tr>
+<tr id="cat">
+	<td bgcolor="#404070" colspan="6"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=3"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Main</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"></font></td>
+</tr><tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=8"><font face="verdana, arial, helvetica" size="2" ><b>The Arena</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >General Discussion</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >92118</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >6091</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">03:20 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=8"><b>Bick is Bad</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=56">Arbaal</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=15">Brael</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=1">SoulVoid</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=964">Xaphan</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=22"><font face="verdana, arial, helvetica" size="2" ><b>Flame On</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Post your rants and unconstructive complaints here</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >13361</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >535</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">03:49 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=22"><b>Kebsis</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=22"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=964">Xaphan</a></font></td>
+</tr>
+<tr id="cat">
+	<td bgcolor="#404070" colspan="6"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=25"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Class Balance</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"></font></td>
+</tr><tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=21"><font face="verdana, arial, helvetica" size="2" ><b>Suggestions</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Post your thoughts on class balence here.</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >5923</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >346</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">01:16 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=21"><b>Makkon</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=21"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=56">Arbaal</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=26"><font face="verdana, arial, helvetica" size="2" ><b>Broken or Bugged</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Post information on anything you noticed that broken or bugged involving ShadowkKnights</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >1197</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >125</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">01:57 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=26"><b>logbash</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=26"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=56">Arbaal</a></font></td>
+</tr>
+<tr id="cat">
+	<td bgcolor="#404070" colspan="6"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=23"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Quests</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"></font></td>
+</tr><tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=9"><font face="verdana, arial, helvetica" size="2" ><b>Dirty Deeds</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >ShadowKnight Quest Discussion</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >4963</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >570</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">12:47 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=9"><b>Floppy</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=9"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=16"><font face="verdana, arial, helvetica" size="2" ><b>Innoruuk's Curse</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Discussion on the Shadow Knight Epic quest</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >5641</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >680</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">02:31 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=16"><b>Ziagwa</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=16"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=17"><font face="verdana, arial, helvetica" size="2" ><b>Greenmist: Unholy Khukri of Rile</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Discussion about the Greenmist: Unholy Khukri of Rile Quest</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >3110</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >473</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">01:49 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=17"><b>Jabbuk</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=17"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr id="cat">
+	<td bgcolor="#404070" colspan="6"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=12"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Evil Beginnings</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"></font></td>
+</tr><tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=13"><font face="verdana, arial, helvetica" size="2" ><b>Race Discussion</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >ShadowKnight race discussion</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >3658</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >221</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">01:13 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=13"><b>Jobrill</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=13"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=14"><font face="verdana, arial, helvetica" size="2" ><b>Hunting Grounds</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Hunting advice form the experts.</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >6373</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >886</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">12:19 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=14"><b>artyen</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=14"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=15"><font face="verdana, arial, helvetica" size="2" ><b>Combat & Tactics</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Tips from the pros.</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >5118</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >385</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">01:18 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=15"><b>Makkon</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=15"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=24"><font face="verdana, arial, helvetica" size="2" ><b>Spells & Skills</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Forum for Spell amd skill discussion, AAXP welcome</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >5978</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >536</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">03:32 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=24"><b>cybereyes</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=24"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#404070" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#303070" align="left"><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=10"><font face="verdana, arial, helvetica" size="2" ><b>The Armory</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" >Weapons and Equipment Discussion.</font></td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >23643</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >2898</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >06-15-2003 <font color="#00FF00">03:47 AM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=10"><b>Catharsis</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=10"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=187">Nocifer Deathblade</a></font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#303070" colspan="2" align="left">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td valign="top"><img src="images/offlock.gif" border="0" alt=""></td>
+		<td><img src="images/clear.gif" width="9" height="0" border="0" alt=""></td>
+		<td><a href="forumdisplay.php?s=890a708ccb81394bc4111386b9f8a85e&forumid=11"><font face="verdana, arial, helvetica" size="2" ><b>Archives</b></font></a>
+		<br><font face="verdana,arial,helvetica" size="1" >Archive of useful posts and guides.</font></td>
+	</tr></table>
+	</td>
+	<td bgcolor="#404070"><font face="verdana, arial, helvetica" size="2" >64</font></td>
+	<td bgcolor="#303070"><font face="verdana, arial, helvetica" size="2" >10</font></td>
+	<td bgcolor="#404070"><font face="verdana,arial,helvetica" size="1" >	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" >02-28-2003 <font color="#00FF00">10:23 PM</font><br>
+		by <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&find=lastposter&forumid=11"><b>Xaphan</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=890a708ccb81394bc4111386b9f8a85e&goto=lastpost&forumid=11"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#303070"><font face="verdana,arial,helvetica" size="1" >&nbsp;</font></td>
+</tr>
+
+<tr id="cat">
+	<td bgcolor="#404070" colspan="6"><a href="online.php?s=890a708ccb81394bc4111386b9f8a85e"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Currently Active Users</b></font></a><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>: 74</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#303070" colspan="6"><font face="verdana,arial,helvetica" size="1" >
+	<nobr>There are currently  38 members and 36 guests on the boards.</nobr> |
+	<nobr>Most users ever online was 600 on 09-27-2002 at 09:10 AM.</nobr><br>
+	<a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=6346">Bick is Bad</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=15"><b>Brael</b></a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=237">Catharsis</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=4416">cybereyes</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=2636">Drazzis</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=2154">Drynnious</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=894">Erasmus</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=6234">Fantim</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=164">Fuzze Bare</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=4453">Heap</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=7898">Herepet</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=754">Jackkal Darknite</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=5826">Jantizz</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=6106">Kakkax</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=233">Kebsis</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=1898">Kibba</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=3402">lagossi</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=305">Lexar Venomous</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=107">Lzert</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=6897">Makkon</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=280">Melil Eskay</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=341">Mistii</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=4376">Mungg</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=1079">Noxus</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=43">Peasley Grunglefunk</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=5526">Renaey</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=5">Rhumba_Kween</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=6585">Septik Tank</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=1357">Sharkon</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=1688">Sinafay</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=5717">StruzorGnome</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=5524">Tarek Ravnos</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=5406">Trucido</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=4730">Ukator</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=2647">Valmeront</a>, <a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=getinfo&userid=2181">Zeemus</a></font></td>
+</tr>
+
+<tr>
+	<td bgcolor="#303070" colspan="6"><font face="verdana,arial,helvetica" size="1" >
+	Today's Birthdays:  <a href="member.php?s=&action=getinfo&userid=470">Skexes</a> (31), <a href="member.php?s=&action=getinfo&userid=855">Glas</a> (28), <a href="member.php?s=&action=getinfo&userid=2411">Zakuzaku</a> (15), <a href="member.php?s=&action=getinfo&userid=2999">xiolla</a> (26), <a href="member.php?s=&action=getinfo&userid=5927">CEleader</a> (23), <a href="member.php?s=&action=getinfo&userid=3394">Cybercom</a> (23), <a href="member.php?s=&action=getinfo&userid=3232">Keudivenipo</a> (19), <a href="member.php?s=&action=getinfo&userid=3672">Synapticus</a> (23), <a href="member.php?s=&action=getinfo&userid=3982">haniblem</a> (16), <a href="member.php?s=&action=getinfo&userid=4675">Freakish Fearsyounot</a> (31), <a href="member.php?s=&action=getinfo&userid=4842">Romuluas</a> (25), <a href="member.php?s=&action=getinfo&userid=4957">zenith012</a> (38), <a href="member.php?s=&action=getinfo&userid=5536">Raeyvan</a> (28), <a href="member.php?s=&action=getinfo&userid=5994">Somanta</a> (30), <a href="member.php?s=&action=getinfo&userid=6121">brdar</a> (30), <a href="member.php?s=&action=getinfo&userid=6323">imfusio</a> (19), <a href="member.php?s=&action=getinfo&userid=6182">Thugruk</a> (14), <a href="member.php?s=&action=getinfo&userid=6804">Vash</a> (15), <a href="member.php?s=&action=getinfo&userid=7333">burdsjm</a> (25)</font></td>
+</tr>
+
+
+</table>
+</td></tr></table>
+<!-- /main -->
+
+<br>
+
+<!-- timezone/login-->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr valign="top">
+  <td><font face="verdana,arial,helvetica" size="1" >All times are GMT. The time now is 03:50 AM.</font></td>
+  <td align="right"><font face="verdana,arial,helvetica" size="1" ><a href="member.php?s=890a708ccb81394bc4111386b9f8a85e&action=markread">Mark All Forums Read</a> | <a href="showgroups.php?s=890a708ccb81394bc4111386b9f8a85e">Forum Leaders</a></font>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<form action="member.php" method="post">
+<tr>
+	<td nowrap><font face="verdana,arial,helvetica" size="1" ><b>Not cookied?</b><br>Login with username and password:</font></td>
+</tr><tr>
+	<td nowrap><input type="hidden" name="s" value="890a708ccb81394bc4111386b9f8a85e">
+	<input type="hidden" name="action" value="login">
+	<input type="text" class="bginput" name="username" size="7">
+	<input type="password" class="bginput" name="password" size="7">
+	<input type="submit" class="bginput" value="Login!"></td>
+</tr>
+</form>
+</table>
+</td>
+</tr>
+</table>
+<!-- /timezone/login -->
+
+<br>
+
+<!-- icons -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr>
+	<td align="center">
+	<img src="images/on.gif" border="0" alt="On" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" >New posts</font></b>
+	&nbsp;&nbsp;
+	<img src="images/off.gif" border="0" alt="Off" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" >No new posts</font></b>
+	&nbsp;&nbsp;
+	<img src="images/lock.gif" border="0" alt="Closed Forum" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" >A closed forum</font></b>
+	</td>
+</tr>
+</table>
+<!-- /icons -->
+
+  </td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+
+<p align="center">
+  <font face="verdana, arial, helvetica" size="2" ><b>&lt; <a href="mailto:soulvoid@shadowknight.org">Contact Us</a> - <a href="http://forums.shadowknight.org">ShadowKnight.org</a>
+  <!-- - <a href="">Privacy Statement</a> --> &gt;</b></font>
+</p>
+
+<p align="center"><font face="verdana,arial,helvetica" size="1" >
+<!-- Do not remove this copyright notice -->
+  Powered by: vBulletin Version 2.2.9<br>
+  Copyright &copy;2000 - 2002, Jelsoft Enterprises Limited.<br>
+<!-- Do not remove this copyright notice -->
+
+</font></p>
+</body>
+</html>
