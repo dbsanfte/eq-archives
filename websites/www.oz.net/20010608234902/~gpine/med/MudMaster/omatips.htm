@@ -1,0 +1,79 @@
+<table width=600 border=0 cellspacing=1>
+  <tr>
+    <td> <font face=verdana size=1>
+    <a href="index.html">Home</a><br><br>
+    Ongoing Thesis on using <a href="omaIF.htm">IF Statements</a><br><br>
+
+    <u><b>Custom LoopCount Var Name:</b></u><br>
+    Did you know you can name the "LoopCount" variable when making loops? Yup!
+    It's not documented, but here's how -- it's simple.<br>
+    /loop {start,end,SomeVarName}<br>
+    so /loop {1,10,Oma} would set the "LoopCount" variable as "Oma"<br>
+    /loop {1,3,Oma} {/showme $Oma} would output in showmes: 1, 2, 3
+    <br><br>
+
+    <u><b>Cheating @Var():</b></u><br>
+    I often cheat the @Var() proc to custom build and then extract variable info. Particularly in
+    quest scripts, but it's a fairly handy trick to use.<br>
+    Say you have a number of vars you want to store for similar information, in quests this is
+    common due to using player names for so many things (scores, etc). Say I want to keep score
+    vars for each player. Something like "NameScore" for each person.. When they tell me "score"
+    I want to access their variable that contains the score info, but "%0 telepaths you, 'score'."
+    only gives me the name ($0). Now I can abuse @Var().. and tack "$0" to "Score" and retrieve the
+    variable.<br><br>
+
+    Joe telepaths you, 'score'.<br>
+    /action {%0 telepaths you, 'score'.} {tell $0 @Var($0Score)}<br><br>
+
+    Simple no? It's a cheat, but it works nicely.<br><br>
+
+    <u><b>/gag + /action + /showme vs. /substitute</b></u><br>
+    Substitutes create a lot of strain, as you might notice if you have a number of them. If possible
+    try using /gag, /action, and a /showme (via the action) to "substitute" text.<br>
+    Depending on what you're doing, the gag and action combo is often faster than using
+    substitutes.<br><br>
+    You see a lot of flowing text, blinding your vision as some lengthy spammy spew streams across the sky.<br>
+    /gag {^You see a lot of %0 the sky.} {}<br>
+    /action {^You see a lot %0 the sky.} {/showme {Argh! The blinding spew!}}<br><br>
+
+    And something you can't do in a substitute is add color to that showme if you so desire.<br><br>
+
+    <u><b>Sorting Lists</b></u><br>
+    Lists are sorted alpha-numerically. This presents problems when you want lists to store
+    information according to purely numeric values.<br><br>
+
+    Say you want a list of trade post items, sorted by the cost of the item (making this up):<br>
+    /listadd {TradeItems}<br>
+    /itemadd {TradeItems} {1 a widget}<br>
+    /itemadd {TradeItems} {3 grain of rice}<br>
+    /itemadd {TradeItems} {7 box of jujubees}<br>
+    /itemadd {TradeItems} {10 glass of water}<br>
+    /itemadd {TradeItems} {27 a wooden coffin}<br><br>
+
+    Ok we've entered in the data, but hrm the list sorts like this!:<br>
+    001: 1 a widget<br>
+    002: 10 glass of water<br>
+    003: 27 a wooden coffin<br>
+    004: 3 grain of rice<br>
+    005: 7 box of jujubees<br><br>
+
+    Obviously nothing's sorted by value. So, we need to @PadLeft() the numbers, then tack on
+    the item name. If all numbers are justified equally, the list will sort!<br>
+    /itemadd {TradeItems} {@PadLeft(1, ,2) a widget}<br>
+    /itemadd {TradeItems} {@PadLeft(3, ,2) grain of rice}<br>
+    /itemadd {TradeItems} {@PadLeft(7, ,2) box of jujubees}<br>
+    /itemadd {TradeItems} {@PadLeft(10, ,1) glass of water}<br>
+    /itemadd {TradeItems} {@PadLeft(27, ,1) a wooden coffin}<br><br>
+
+    And we now have a nice sorted list:<br>
+    001: &nbsp;&nbsp;1 a widget<br>
+    002: &nbsp;&nbsp;3 grain of rice<br>
+    003: &nbsp;&nbsp;7 box of jujubees<br>
+    004: &nbsp;10 glass of water<br>
+    005: &nbsp;27 a wooden coffin<br>
+
+    <br><br>
+    <a href="index.html">Home</a>
+    </td>
+  </tr>
+</table>

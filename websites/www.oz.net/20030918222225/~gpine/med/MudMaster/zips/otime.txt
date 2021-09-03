@@ -1,0 +1,94 @@
+/showme {@Chr(10)@AnsiBold()@ForeYellow()OTime: @ForeRed()LOADING THIS SCRIPT will /killgroup a group called "DELETE". If you already USE a group with this name, and don't want to kill those commands, don't load this script until you've manually edited it and removed the stuff grouped as "DELETE" and @ForeWhite()remove the very last entry in this file which is: /killgroup DELETE @ForeRed()-- I use the group "DELETE" for vars that contain notes, otherwise nothing vital is in the group "DELETE"...@AnsiReset()@Chr(10)}
+
+/showme {@Chr(10)OTime: Currently OTime only does info for the current time. Giving perameters won't do anything other than call up unfinished alias(es). Just do "otime" to get current-time info.@Chr(10)}
+
+/showme {@Chr(10)OTime: Review the vars in default form (if you run "otime" that will change the default value of the vars -- which is fine, if you don't need to review them first -- check the script in wordpad for easy review)@Chr(10)}
+
+/showme {@Chr(10)OTime: type in "otime ?" or "otime help" for more info@Chr(10)}
+
+/alias {OTimeHELP} {/showme {@Chr(10)@AnsiBold()@ForeYellow()--[OTime Help]--@Chr(10)@ForeCyan()otime @ForeBlue()- Show info for your current system time (\@Time()).@Chr(10)@ForeCyan()otime # @ForeBlue()- Where "#" is a timestamp to check. OTime will give the "normal" info about the supplied timestamp, plus some additional info. (See note in @AnsiReset()@ForeGreen()green@AnsiBold()@ForeBlue() below)@Chr(10)@Chr(10)@ForeCyan()otimequiet @ForeBlue()-- Toggles the automatic showing of displays on|off.@Chr(10)@ForeCyan()OTimeNULLshow @ForeBlue()-- Force the display for normal timestamp processing.@Chr(10)@ForeCyan()OTimeONEshow @ForeBlue()-- Force the display shown for single user defined timestamp info. This will also display the OTimeNULLshow info.@Chr(10)@Chr(10)@AnsiReset()@ForeCyan()To compare two values (the difference of 2 timestamps), just subtract one from the other, and send the result via "otime #".@Chr(10)@ForeGreen()The info might be inaccurate if the timestamp used isn't a FULL (actual) timestamp. Particularly when comparing two time value differences the "normal" info (OTimeNULLshow) will most likely not be accurate. If the "Time Source" is user defined the "normal" day/month/year/time info will mostly be inaccurate. -- although the date/year seems to be accurate, think some of MM's procs use internal clock functions (\@TimeToMonth(), \@TimeToDayOfMonth, etc)}} {OTime}
+
+/alias {otimequiet} {/if {$OTimeSPEW==1} {/var OTimeSPEW 0;/showme {@AnsiBold()@ForeYellow()OTime: @ForeBlue()Quiet mode @ForeCyan()ON@ForeBlue(). Displays won't automatically appear.@AnsiReset()}} {/var OTimeSPEW 1;/showme {@AnsiBold()@ForeYellow()OTime: @ForeBlue()Quiet Mode @ForeCyan()OFF@ForeBlue(). Displays will appear automatically.@AnsiReset()}}} {OTime}
+
+
+/alias {otime %0} {/if {"@Lower($0)"=="help" || "@Lower($0)"=="?"} {OTimeHELP} {/if {@WordCount($0)==0} {OTimeNULL} {/if {@WordCount($0)>2} {/showme {@AnsiBold()@ForeYellow()OTime: @ForeRed()You've supplied too many perameters. "otime" - info for current \@Time() value. "otime <#>" - compare given number to current \@Time() value.@AnsiReset()}} {/if {@WordCount($0)==1} {/var OTtemp $0;OTimeONE} {/var OTtemp $0;OTimeTWO}}}}} {OTime}
+
+
+
+/alias {OTimeONE} {/if {@IsNumber($OTtemp)==0} {/showme {@AnsiBold()@ForeYellow()OTime: @ForeRed()"@AnsiReset()$OTtemp@AnsiBold()@ForeRed()" isn't a numeral! OTime aborted! Please supply only numeric values.@AnsiReset()}} {/var OTimeONEflag 1;/var OTime101 $OTtemp;/var OTime102 @Math($OTime101/31536000);/var temp @Math($OTime101%31536000);/var OTime103 @Math($temp/86400);/var temp @Math($temp%86400);/var OTime104 @Math($temp/3600);/if {@Len($OTime104)==1} {/var OTime104 {0$OTime104}};/var temp @Math($temp%3600);/var OTime105 @Math($temp/60);/if {@Len($OTime105)==1} {/var OTime105 {0$OTime105}};/var OTime106 @Math($temp%60);/if {@Len($OTime106)==1} {/var OTime106 {0$OTime106}};/if {$OTimeSPEW==1} {OTimeONEshow};OTimeNULL}} {OTime}
+
+/alias {OTimeONEshow} {/if {$OTimeSPEW==1} {/showme {@Chr(10)@AnsiBold()@ForeYellow()--[OTime]-- @ForeGreen()User Supplied Timestamp info:@Chr(10)@ForeBlue()TimeStamp: @ForeCyan()$OTime101@PadLeft( , ,@Math(14-@Len($OTime101)))@ForeBlue()[@AnsiReset()\$OTime101@AnsiBold()@ForeBlue()]@Chr(10)    Years: @ForeCyan()$OTime102@PadLeft( , ,@Math(14-@Len($OTime102)))@ForeBlue()[@AnsiReset()\$OTime102@AnsiBold()@ForeBlue()]@AnsiReset()@ForeRed()[assumes 365days/year]@AnsiBold()@ForeBlue()@Chr(10)     Days: @ForeCyan()$OTime103@PadLeft( , ,@Math(14-@Len($OTime103)))@ForeBlue()[@AnsiReset()\$OTime103@AnsiBold()@ForeBlue()]@Chr(10)    Hours: @ForeCyan()$OTime104@PadLeft( , ,@Math(14-@Len($OTime104)))@ForeBlue()[@AnsiReset()\$OTime104@AnsiBold()@ForeBlue()]@Chr(10)  Minutes: @ForeCyan()$OTime105@PadLeft( , ,@Math(14-@Len($OTime105)))@ForeBlue()[@AnsiReset()\$OTime105@AnsiBold()@ForeBlue()]@Chr(10)  Seconds: @ForeCyan()$OTime106@PadLeft( , ,@Math(14-@Len($OTime106)))@ForeBlue()[@AnsiReset()\$OTime106@AnsiBold()@ForeBlue()]@Chr(10)@AnsiReset()}}} {OTime}
+
+/var {OTimeONEflag} {Flag used by routines, you can ignore it} {OTime}
+/var {OTime101} {Timestamp from single user-supplied value} {OTime}
+/var {OTime102} {Total Years from single user-supplied value -- Based on 365day/year -- inaccurate for LeapYear considerations!} {OTime}
+/var {OTime103} {Total Days remaining after years} {OTime}
+/var {OTime104} {Total Hours remaining after yr/day} {OTime}
+/var {OTime105} {Total Minutes remaining after yr/day/hr} {OTime}
+/var {OTime106} {Total Seconds remaining after yr/day/hr/min} {OTime}
+
+
+/alias {OTimeNULL} {/if {$OTimeONEflag==1} {/var OTime001 $OTime101;/var OTimeSource {User Supplied Timestamp}} {/var OTime001 @Time();/var OTimeSource {Current System Time}};/var OTime002 @TimeToHour($OTime001);/if {@Len($OTime002)==1} {/var OTime002 {0$OTime002}};/if {$OTime002>12} {/var OTime003 {@Math($OTime002-12)}};/if {@Len($OTime003)==1} {/var OTime003 {0$OTime003}} {/var OTime003 $OTime002};/if {$OTime002<=12} {/var OTime004 AM} {/var OTime004 PM};/var OTime005 @TimeToMinute($OTime001);/if {@Len($OTime005)==1} {/var OTime005 {0$OTime005}};/var OTime006 @TimeToSecond($OTime001);/if {@Len($OTime006)==1} {/var OTime006 {0$OTime006}};/var OTime007 @TimeToYear($OTime001);/var OTime008 @Right($OTime007,2);OTimeNULLmonthspew;OTimeNULLdayspew;/var OTimeONEflag 0;/if {$OTimeSPEW==1} {OTimeNULLshow}} {OTime}
+
+
+/alias {OTimeNULLshow} {/showme {@AnsiBold()@ForeYellow()--[OTime]-- @ForeGreen()Timestamp Source: @AnsiReset()@ForeGreen()$OTimeSource@AnsiBold()@Chr(10)@ForeBlue()TimeStamp: @ForeCyan()$OTime001@PadLeft( , ,@Math(14-@Len($OTime001)))@ForeBlue()[@AnsiReset()\$OTime001@AnsiBold()@ForeBlue()]@Chr(10) 24hr Clk: @ForeCyan()$OTime002@ForeBlue():@ForeCyan()$OTime005@ForeBlue():@ForeCyan()$OTime006@PadLeft( , ,@Math(14-@Len($OTime002:$OTime005:$OTime006)))@ForeBlue()[@AnsiReset()\$OTime002@AnsiBold()@ForeBlue():@AnsiReset()\$OTime005@AnsiBold()@ForeBlue():@AnsiReset()\$OTime006@AnsiBold()@ForeBlue()]@Chr(10) 12hr Clk: @ForeCyan()$OTime003@ForeBlue():@ForeCyan()$OTime005@ForeBlue():@ForeCyan()$OTime006 $OTime004@PadLeft( , ,@Math(14-@Len($OTime003:$OTime005:$OTime006 $OTime004)))@ForeBlue()[@AnsiReset()\$OTime003@AnsiBold()@ForeBlue():@AnsiReset()\$OTime005@AnsiBold()@ForeBlue():@AnsiReset()\$OTime006 \$OTime004@AnsiBold()@ForeBlue()]@Chr(10)     Year: @ForeCyan()$OTime007@ForeBlue(), @ForeCyan()$OTime008@PadLeft( , ,@Math(14-@Len($OTime007  $OTime008)))@ForeBlue()[@AnsiReset()\$OTime007@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime008@AnsiBold()@ForeBlue()]@Chr(10)    Month: @ForeCyan()$OTime009@ForeBlue(), @ForeCyan()$OTime010@PadLeft( , ,@Math(14-@Len($OTime009  $OTime010)))@ForeBlue()[@AnsiReset()\$OTime009@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime010@AnsiBold()@ForeBlue()]@Chr(10)       @Chr(192)@Chr(175): @ForeCyan()$OTime011@ForeBlue(), @ForeCyan()$OTime012@PadLeft( , ,@Math(14-@Len($OTime011  $OTime012)))@ForeBlue()[@AnsiReset()\$OTime011@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime012@AnsiBold()@ForeBlue()]@Chr(10) monthDay: @ForeCyan()$OTime013@ForeBlue(), @ForeCyan()$OTime014@ForeBlue(), @ForeCyan()$OTime015@PadLeft( , ,@Math(14-@Len($OTime013  $OTime014  $OTime015)))@ForeBlue()[@AnsiReset()\$OTime013@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime014@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime015@AnsiBold()@ForeBlue()]@Chr(10)  weekDay: @ForeCyan()$OTime016@ForeBlue(), @ForeCyan()$OTime017@ForeBlue(), @ForeCyan()$OTime018@PadLeft( , ,@Math(14-@Len($OTime016  $OTime017  $OTime018)))@ForeBlue()[@AnsiReset()\$OTime016@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime017@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime018@AnsiBold()@ForeBlue()]@Chr(10)       @Chr(195)@Chr(175): @ForeCyan()$OTime019@PadLeft( , ,@Math(14-@Len($OTime019)))@ForeBlue()[@AnsiReset()\$OTime019@AnsiBold()@ForeBlue()]@Chr(10)       @Chr(192)@Chr(175): @ForeCyan()$OTime020@ForeBlue(), @ForeCyan()$OTime021@PadLeft( , ,@Math(14-@Len($OTime020  $OTime021)))@ForeBlue()[@AnsiReset()\$OTime020@AnsiBold()@ForeBlue(), @AnsiReset()\$OTime021@AnsiBold()@ForeBlue()]@Chr(10)@AnsiReset()}} {OTime}
+
+
+/alias {OTimeNULLdayspew} {/var OTime013 @TimeToDay($OTime001);/if {@Len($OTime013)==1} {/var OTime013 {0$OTime013}};/if {$OTime013>10 && $OTime013<20} {/var OTime014 th} {/if {@Right($OTime013,1)==1} {/var OTime014 st} {/if {@Right($OTime013,1)==2} {/var OTime014 nd} {/if {@Right($OTime013,1)==3} {/var OTime014 rd} {/var OTime014 th}}}};/var OTime015 {$OTime013$OTime014};/var OTime016 @Math(1+@TimeToDayOfWeek($OTime001));/if {$OTime016==1} {/var OTime017 st} {/if {$OTime016==2} {/var OTime017 nd} {/if {$OTime016==3} {/var OTime017 rd} {/var OTime017 th}}};/var OTime019 @Word(@GetItem(OTimeDays,$OTime016),2);/var OTime020 @Word(@GetItem(OTimeDays,$OTime016),3);/var OTime021 @Word(@GetItem(OTimeDays,$OTime016),4);/var OTime018 {$OTime016$OTime017}} {OTime}
+
+/alias {OTimeNULLmonthspew} {/var {OTime009} {@Math(1+@TimeToMonth($OTime001))};/if {@Len($OTime009)==1} {/var {OTime009} {0$OTime009}};/var {OTime010} {@Word(@GetItem(OTimeMonths,$OTime009),2)};/var {OTime011} {@Word(@GetItem(OTimeMonths,$OTime009),3)};/var {OTime012} {@Word(@GetItem(OTimeMonths,$OTime009),4)}} {OTime}
+
+/var {--NOTE--} {Below are vars (OTime001-OTime0xx) that display the "normal" time elements off a timestamp} {DELETE}
+/var {OTime001} {Current \@Time()} {OTime}
+/var {OTime002} {Current Military/24hr Hour (00-23)} {OTime}
+/var {OTime003} {Current Standard/12hr Hour (1-12)} {OTime}
+/var {OTime004} {AM or PM indicator, use \@Lower(\$OTime004) on it if you want it lower case} {OTime}
+/var {OTime005} {Current Minute} {OTime}
+/var {OTime006} {Current Second} {OTime}
+/var {OTime007} {Current Year} {OTime}
+/var {OTime008} {Current Year, 2 digit form} {OTime}
+/var {OTime009} {Current Month, digit} {OTime}
+/var {OTime010} {Current Month, long} {OTime}
+/var {OTime011} {Current Month, short, uppercase} {OTime}
+/var {OTime012} {Current Month, short, lowercase} {OTime}
+/var {OTime013} {Day of the month} {OTime}
+/var {OTime014} {"ith" of the day, st/nd/rd/th...} {OTime}
+/var {OTime015} {Day of month plus the "ith"} {OTime}
+/var {OTime016} {Day of week, numeric} {Otime}
+/var {OTime017} {Day of week, "ith" for numeric ..can build "on the [1st] day of the week" sort of spew} {OTime}
+/var {OTime018} {Day of week plus the "ith"} {OTime}
+/var {OTime019} {Day of week, long} {OTime}
+/var {OTime020} {Day of week, short, uppercase} {OTime}
+/var {OTime021} {Day of week, short, lowercase} {OTime}
+
+/var {OTtemp} {Var for temp stuff, you can ignore it} {OTime}
+/var {OTimeSource} {Flag used in displays showing source of the time stamp(s)} {OTime}
+/var {--NOTE--} {OTimeSPEW is a flag for "quiet" mode on/off. Type "otime ?" for info} {DELETE}
+/var {OTimeSPEW} {1} {OTime}
+/var {temp} {temp junk} {}
+
+/listadd {OTimeDays} {OTime}
+/itemadd {OTimeDays} {000 Sunday SUN Sun}
+/itemadd {OTimeDays} {001 Monday MON Mon}
+/itemadd {OTimeDays} {002 Tuesday TUE Tue}
+/itemadd {OTimeDays} {003 Wednesday WED Wed}
+/itemadd {OTimeDays} {004 Thursday THU Thu}
+/itemadd {OTimeDays} {005 Friday FRI Fri}
+/itemadd {OTimeDays} {006 Saturday SAT Sat}
+
+/listadd {OTimeMonths} {OTime}
+/itemadd {OTimeMonths} {001 January JAN Jan}
+/itemadd {OTimeMonths} {002 February FEB Feb}
+/itemadd {OTimeMonths} {003 March MAR Mar}
+/itemadd {OTimeMonths} {004 April APR Apr}
+/itemadd {OTimeMonths} {005 May MAY May}
+/itemadd {OTimeMonths} {006 June JUN Jun}
+/itemadd {OTimeMonths} {007 July JUL Jul}
+/itemadd {OTimeMonths} {008 August AUG Aug}
+/itemadd {OTimeMonths} {009 September SEP Sep}
+/itemadd {OTimeMonths} {010 October OCT Oct}
+/itemadd {OTimeMonths} {011 November NOV Nov}
+/itemadd {OTimeMonths} {012 December DEC Dec}
+
+
+/killgroup DELETE

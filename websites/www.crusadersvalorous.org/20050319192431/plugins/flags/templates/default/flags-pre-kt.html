@@ -1,0 +1,614 @@
+<!-- INCLUDE ../../../../templates/default/page_header.html -->
+
+<script>
+function getImgLocation()
+{
+  //var field = document.getElementById("graphic_location");
+  //var loc = field.innerHTML;
+  //var start = loc.indexOf('"');
+  //var stop = loc.indexOf('/');
+  //var loc_string = loc.substring(start+1, stop+1);
+  return "{EQDKP_ROOT_PATH}plugins/flags/templates/default/images/";
+}
+
+function drawBarGraph(value,min,max,link,graphwidth,color,draw_tick_bar)
+{
+    var htmlStr = "";
+
+      var imgStr = getImgLocation();
+		
+      var linkopen = '';
+      var linkclose ='';
+      if(link != null)
+      {
+        linkopen = '<a href="' + link +'\">';
+        linkclose ='</a>';
+      }
+      
+      var scalesize = max - min;
+      var adjustedvalue = value - min;
+      var imglink = linkopen + +linkclose;
+      
+      var barsize = graphwidth * adjustedvalue / scalesize; //minus 2 for outline
+      
+      if(barsize > graphwidth -2)
+        barsize -=2;
+      
+      var whiteareasize = graphwidth - barsize -3;
+      
+      var displaycolor = color;
+      //if color is null do gradient calculation between green and red
+      if(displaycolor == null)
+      {
+        var percent = 100 * (adjustedvalue / scalesize);
+        
+        if(percent <= 20)
+          displaycolor = "gap_red";
+        else if(percent <= 40)
+          displaycolor = "gap_orange";
+        else if(percent <= 60)
+          displaycolor = "gap_yellow";
+        else if(percent <= 80)
+          displaycolor = "gap_lightgreen";
+        else
+          displaycolor = "gap_green";
+        
+      }
+
+      //outter table open
+      htmlStr += '<table cellspacing="0" cellpadding="0" border="0" class="borderless">';
+      
+      //draw bar
+      htmlStr += '<tr><td><table cellspacing="0" cellpadding="0" border="0" class="borderless">';
+      htmlStr += '<tr><td><img src="'+imgStr+'black.gif" width="1" height="1"></td><td><img src="'+imgStr+'clear.gif" width="1" height="1"></td><td><img src="'+imgStr+'clear.gif" width="1" height="1"></td><td><img src="'+imgStr+'clear.gif" width="1" height="1"></td></tr>';
+      htmlStr += '<tr><td><img src="'+imgStr+'black.gif" width="1" height="1"></td><td><img src="'+imgStr+'black.gif" width='+ barsize +' height="1"></td><td><img src="'+imgStr+'black.gif" width="1" height="1"></td><td><img src="'+imgStr+'clear.gif"></td></tr>';
+      htmlStr += '<tr><td><img src="'+imgStr+'black.gif" width="1" height="9"></td><td>' + linkopen + '<img src="'+imgStr+''+displaycolor+'.gif" border=0 width='+ barsize +' height="9" alt='+ value +'>' + linkclose + '</td><td>' + linkopen + '<img src="'+imgStr+'black.gif" border=0 width="1" height="9" alt='+ value +'>' + linkclose + '</td><td>' + linkopen + '<img src="'+imgStr+'clear.gif" border=0 width='+ whiteareasize +' height=9 alt='+ value +'>' + linkclose + '</td></tr>';
+      htmlStr += '<tr><td><img src="'+imgStr+'black.gif" width="1" height="1"></td><td><img src="'+imgStr+'black.gif" width='+ barsize +' height="1"></td><td><img src="'+imgStr+'black.gif" width="1" height="1"></td><td><img src="'+imgStr+'clear.gif"></td></tr>';
+      htmlStr += '<tr><td><img src="'+imgStr+'black.gif" width="1" height="1"></td><td><img src="'+imgStr+'clear.gif"></td><td><img src="'+imgStr+'clear.gif"></td><td><img src="'+imgStr+'clear.gif"></td></tr>';
+      htmlStr += '</table></td></tr>';
+      
+      if(draw_tick_bar == 'true'){
+        htmlStr += '<tr><td>';
+        htmlStr += drawTickBar(min,max,graphwidth);
+        htmlStr += '</td></tr>';
+      }
+      //outter table open
+      htmlStr += '</table>';
+
+     return htmlStr;
+}
+
+function drawTickBar(min,max,graphwidth)
+{
+  var imgStr = getImgLocation();
+
+  var scalesize = 10;
+  var htmlStr = "";
+  //draw hashbar
+  htmlStr += '<table cellspacing="0" cellpadding="0" border="0" class="borderless"><tr><td><table cellspacing="0" cellpadding="0" border="0" class="borderless"><tr><td><img src="'+imgStr+'black.gif" width=' + graphwidth + ' height=1></td></tr></table></td></tr>';
+  htmlStr += '<tr><td><table cellspacing="0" cellpadding="0" border="0" class="borderless">';
+  htmlStr += '<tr>';
+  
+  //draw hashs
+  var ticksize = Math.round((graphwidth - scalesize+1) / (scalesize));
+  for(var i=0; i < scalesize-1; i++)
+  {
+  
+    htmlStr += '<td><img src="'+imgStr+'black.gif" width=1 height=1></td><td><img src="'+imgStr+'clear.gif" width=' + ticksize + ' height=1 ></td>';
+  
+  }
+  //this line does fudgefactor
+  htmlStr += '<td><img src="'+imgStr+'black.gif" width=1 height=1></td><td><img src="'+imgStr+'clear.gif" width='+(graphwidth - scalesize - 1 - ((scalesize-1) * ticksize)) +' height=1></td>';
+  htmlStr += '<td><img src="'+imgStr+'black.gif" width=1 height=1></td>';
+  htmlStr += '</tr></table></td></tr></table>';
+
+  return htmlStr;
+}
+
+function show_list_view()
+{
+	document.getElementById('list_view').style.display='block';
+	document.getElementById('path_view').style.display='none';
+}
+
+function show_path_view()
+{
+	document.getElementById('list_view').style.display='none';
+	document.getElementById('path_view').style.display='block';
+}
+</script>
+
+<div class="maintitle" align="center">{FLAGS_SUMMARY_TITLE}</div>
+<div class="copy" align="center"><a href="javascript:show_path_view();" class="copy">{FLAGS_SUMMARY_PATH_VIEW}</a> | <a href="javascript:show_list_view();" class="copy">{FLAGS_SUMMARY_LIST_VIEW}</a></div>
+ <br>
+<!--<SCRIPT SRC="bargraph.js"></SCRIPT>-->
+
+<div id="list_view">
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">Flag List</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<!-- BEGIN flags_row -->
+  <tr class="{flags_row.ROW_CLASS}" id="flag_{flags_row.ID}">
+  	<td><a href="{flags_row.U_VIEW_FLAG}">{flags_row.NAME}</a></td>
+    <td align="right" NOWRAP="nowrap">
+    <input type="hidden" id="flag_{flags_row.ID}_name" value="{flags_row.NAME}">
+  	<input type="hidden" id="flag_{flags_row.ID}_link" value="{flags_row.U_VIEW_FLAG}">
+  	<input type="hidden" id="flag_{flags_row.ID}_percent" value="{flags_row.PERCENT}">
+  	<input type="hidden" id="flag_{flags_row.ID}_number" value="{flags_row.TOTAL_NUMBER}">
+  	<input type="hidden" id="flag_{flags_row.ID}_miss" value="{flags_row.U_MISS_FLAG}">
+    	<table cellspacing="0" cellpadding="0" border="0" class="borderless" style="padding:2px;">
+				<tr>
+					<td>{flags_row.PERCENT}%</td>
+					<td><script>document.write(drawBarGraph({flags_row.PERCENT},0,100,null,200,null,'true'));</script></td>
+<!-- (value,min,max,link,graphwidth,color,draw_tick_bar) -->
+				</tr>
+    	</table>
+    	</td>
+    <td NOWRAP="nowrap"><span style="font-weight:bold; color:#008800;">{flags_row.TOTAL_NUMBER}</span>/{TOTAL_MEMBERS}</td>
+    <td align="center"><a href="{flags_row.U_MISS_FLAG}"><img src="{EQDKP_ROOT_PATH}images/view.gif" border="0"></a></td>
+  </tr>
+  <!-- END flags_row -->
+
+</table>
+</div>
+<script>
+
+function path_row(name,row_num)
+{
+  
+	var htmlStr = "";
+	htmlStr += '<tr class="row';
+	if(row_num%2 == 1)
+		htmlStr += '1';
+	else
+		htmlStr += '2';
+	htmlStr += '"><td><a href="';
+	htmlStr += document.getElementById(name +'_link').value;
+	htmlStr += '">';
+	htmlStr += document.getElementById(name +'_name').value;
+	htmlStr += '</a></td><td align="right" NOWRAP="nowrap"><table cellspacing="0" cellpadding="0" border="0" class="borderless"  style="padding:2px;">';
+	htmlStr += '<tr><td>';
+	htmlStr += document.getElementById(name +'_percent').value;
+	htmlStr += '%</td>';
+	htmlStr += '<td>';
+	htmlStr += drawBarGraph(document.getElementById(name +'_percent').value,0,100,null,200,null,'true');
+	htmlStr += '</td></tr>';
+	htmlStr += '</table>';
+	htmlStr += '<td NOWRAP="nowrap"><span style="font-weight:bold; color:#008800;">' + document.getElementById(name +'_number').value +'</span>/{TOTAL_MEMBERS}</td>';
+	htmlStr += '<td align="center"><a href="' + document.getElementById(name +'_miss').value +'"><img src="{EQDKP_ROOT_PATH}images/view.gif" border="0"></a></td>';
+	htmlStr += '</tr>';
+	return htmlStr;
+}
+</script>
+
+<div id="path_view" style="display:none;">
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_SARYRN}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_13'))
+	{
+		document.write(path_row('flag_13',row));
+		row++;
+	}
+	if(document.getElementById('flag_16'))
+	{
+		document.write(path_row('flag_16',row));
+		row++;
+	}
+	if(document.getElementById('flag_17'))
+	{
+		document.write(path_row('flag_17',row));
+		row++;
+	}
+	if(document.getElementById('flag_24'))
+	{
+		document.write(path_row('flag_24',row));
+		row++;
+	}
+	if(document.getElementById('flag_1'))
+	{
+		document.write(path_row('flag_1',row));
+		row++;
+	}
+	if(document.getElementById('flag_2'))
+	{
+		document.write(path_row('flag_2',row));
+		row++;
+	}
+	if(document.getElementById('flag_3'))
+	{
+		document.write(path_row('flag_3',row));
+		row++;
+	}
+	
+	
+	</script>
+
+</table>
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_MARR}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_22'))
+	{
+		document.write(path_row('flag_22',row));
+		row++;
+	}
+	if(document.getElementById('flag_25'))
+	{
+		document.write(path_row('flag_25',row));
+		row++;
+	}
+	if(document.getElementById('flag_18'))
+	{
+		document.write(path_row('flag_18',row));
+		row++;
+	}
+	if(document.getElementById('flag_19'))
+	{
+		document.write(path_row('flag_19',row));
+		row++;
+	}
+	if(document.getElementById('flag_20'))
+	{
+		document.write(path_row('flag_20',row));
+		row++;
+	}
+	if(document.getElementById('flag_14'))
+	{
+		document.write(path_row('flag_14',row));
+		row++;
+	}
+
+	</script>
+
+</table>
+
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_AGNARR}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_22'))
+	{
+		document.write(path_row('flag_22',row));
+		row++;
+	}
+	if(document.getElementById('flag_23'))
+	{
+		document.write(path_row('flag_23',row));
+		row++;
+	}
+	if(document.getElementById('flag_10'))
+	{
+		document.write(path_row('flag_10',row));
+		row++;
+	}
+	
+	</script>
+
+</table>
+
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_RALLOS}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_15'))
+	{
+		document.write(path_row('flag_15',row));
+		row++;
+	}
+	if(document.getElementById('flag_11'))
+	{
+		document.write(path_row('flag_11',row));
+		row++;
+	}
+	if(document.getElementById('flag_12'))
+	{
+		document.write(path_row('flag_12',row));
+		row++;
+	}
+	if(document.getElementById('flag_3'))
+	{
+		document.write(path_row('flag_3',row));
+		row++;
+	}
+	if(document.getElementById('flag_14'))
+	{
+		document.write(path_row('flag_14',row));
+		row++;
+	}
+	if(document.getElementById('flag_21'))
+	{
+		document.write(path_row('flag_21',row));
+		row++;
+	}
+
+	</script>
+
+</table>
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_SOL}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_3'))
+	{
+		document.write(path_row('flag_3',row));
+		row++;
+	}
+	if(document.getElementById('flag_14'))
+	{
+		document.write(path_row('flag_14',row));
+		row++;
+	}
+	if(document.getElementById('flag_11'))
+	{
+		document.write(path_row('flag_11',row));
+		row++;
+	}
+	if(document.getElementById('flag_12'))
+	{
+		document.write(path_row('flag_12',row));
+		row++;
+	}if(document.getElementById('flag_4'))
+	{
+		document.write(path_row('flag_4',row));
+		row++;
+	}
+	if(document.getElementById('flag_5'))
+	{
+		document.write(path_row('flag_5',row));
+		row++;
+	}
+	if(document.getElementById('flag_6'))
+	{
+		document.write(path_row('flag_6',row));
+		row++;
+	}
+	if(document.getElementById('flag_7'))
+	{
+		document.write(path_row('flag_7',row));
+		row++;
+	}
+	if(document.getElementById('flag_8'))
+	{
+		document.write(path_row('flag_8',row));
+		row++;
+	}
+	if(document.getElementById('flag_9'))
+	{
+		document.write(path_row('flag_9',row));
+		row++;
+	}
+
+	</script>
+
+</table>
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_FIRE}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	
+	
+	if(document.getElementById('flag_10'))
+	{
+		document.write(path_row('flag_10',row));
+		row++;
+	}
+	if(document.getElementById('flag_21'))
+	{
+		document.write(path_row('flag_21',row));
+		row++;
+	}
+	if(document.getElementById('flag_9'))
+	{
+		document.write(path_row('flag_9',row));
+		row++;
+	}
+	
+	</script>
+
+</table>
+
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_EARTH}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_10'))
+	{
+		document.write(path_row('flag_10',row));
+		row++;
+	}
+	if(document.getElementById('flag_21'))
+	{
+		document.write(path_row('flag_21',row));
+		row++;
+	}
+
+	
+	</script>
+
+</table>
+
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_AIR}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_10'))
+	{
+		document.write(path_row('flag_10',row));
+		row++;
+	}
+	if(document.getElementById('flag_21'))
+	{
+		document.write(path_row('flag_21',row));
+		row++;
+	}
+
+	
+	</script>
+
+</table>
+
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_WATER}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+	if(document.getElementById('flag_10'))
+	{
+		document.write(path_row('flag_10',row));
+		row++;
+	}
+	if(document.getElementById('flag_21'))
+	{
+		document.write(path_row('flag_21',row));
+		row++;
+	}
+
+	
+	</script>
+
+</table>
+
+<br>
+<table border="0" cellspacing="1" cellpadding="2" align="center" width="550">
+  <tr>
+    <th class="rowhead" align="center" colspan="4">{FLAGS_SUMMARY_PATH_TIME}</th>
+  </tr>
+  <tr class="rowhead">
+    <th align="center" width="90%">{FLAGS_NAME}</th>
+    <th align="center">{FLAGS_SUMMARY_GUILD_PERCENT}</th>
+    <th align="center">{FLAGS_SUMMARY_NUMBER}</th>
+    <th align="center">{FLAGS_SUMMARY_MISSING}</th>
+	</tr>
+	<script>
+	var row = 0;
+
+	if(document.getElementById('flag_26'))
+	{
+		document.write(path_row('flag_26',row));
+		row++;
+	}
+	if(document.getElementById('flag_27'))
+	{
+		document.write(path_row('flag_27',row));
+		row++;
+	}
+	if(document.getElementById('flag_28'))
+	{
+		document.write(path_row('flag_28',row));
+		row++;
+	}
+	if(document.getElementById('flag_29'))
+	{
+		document.write(path_row('flag_29',row));
+		row++;
+	}
+	if(document.getElementById('flag_30'))
+	{
+		document.write(path_row('flag_30',row));
+		row++;
+	}
+	
+	
+	
+	
+	
+	</script>
+
+</table>
+
+
+
+</div>
+<br />
+</form>
+
+<!-- INCLUDE ../../../../templates/default/page_tail.html -->

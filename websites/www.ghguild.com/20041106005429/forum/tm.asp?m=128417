@@ -1,0 +1,1073 @@
+
+
+
+<HEAD>
+</HEAD>
+
+
+
+<html>
+<head>
+<title> Computer Upgrade Options (Last Updated 10-04-04) </title>
+
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src ='js/trims.js'></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language='JavaScript' src = "js/confirmdeletion.js"></script>
+<script language='JavaScript' src ='js/showSelect.js'></script>
+<script language="JavaScript" src="js/pgdcodeinput.js"></script>
+<script language="JavaScript" src ='js/validator.js'></script>
+<script type="text/javascript">
+
+var alivecount = 1
+function alertImage(){
+	if(document.images){
+		if (document.images["keepalive"]){document.images["keepalive"].src = "http://ghguild.com/forum/keepalive.asp?a="+alivecount}
+		alivecount++ ;
+		//alert (document.images["keepalive"].src)
+	}
+}
+function validateForm(postform) {
+	if (validatorPro(postform)){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+setInterval("alertImage()",1000*60*29)
+
+// -->
+</script>
+<script language="JavaScript">
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("11/5/2004 4:54:23 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("11/5/2004 4:54:23 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "11/5/2004 4:54:23 PM"
+	
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.asp?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+strTitle [1] = "25&&0neophyte1"
+strTitle [2] = "100&&0greenhorn2"
+strTitle [3] = "400&&0competent3"
+strTitle [4] = "900&&0seasoned4"
+strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<style type="text/css">
+<!--
+.c2 {font: bold 11px Verdana}
+.head {font: bold 14px Verdana;color : #000000}
+.high {background-color : Yellow;font : bold 11px Arial, Helvetica, sans-serif;color : Black;border : 1px solid Black;}
+.info {font: 11px Verdana;}
+.msg {font: 13px Verdana;}
+.quote {border:1px Solid #505050; background-color:#ffffff; width:85%; margin:2px; padding:5px; color:#505050; font: 11px Verdana;}
+.subhead {font: bold 13px Verdana;color : #000000}
+.titlehead {font: bold 15px Verdana; line-height:180%;}
+.ultrasmall {font: 10px Verdana;color:#555555;}
+a {color:#454545;}
+a:hover {color: #e51d00;text-decoration:underline}
+a:visited {color: #0b0b0b;hover-color: #e51d00}
+body {color: #000000; font: 11px Verdana; background-color: #004580; /*margin: 0px 0px 0px 0px;*/
+scrollbar-face-color: #0075cc; 
+scrollbar-highlight-color: #4db2ff; 
+scrollbar-shadow-color: #4db2ff; 
+scrollbar-3dlight-color: #000000; 
+scrollbar-arrow-color: #4db2ff; 
+scrollbar-track-color: #004580; 
+scrollbar-darkshadow-color: #004580;}
+input {color : #000000;font: normal 11px Verdana;}
+pre {font: 11px "Courier New",monospace;}
+select {color : #000000;font: normal 11px Verdana;}
+td {font: 11px verdana}
+td.cat {background-color: #4db2ff}
+textarea {background-color: #f9f9f9;color : #000000;font: normal 11px Verdana;}
+th {background-color: #0075cc}
+
+
+-->
+</style>
+</head>
+<body >
+<noscript>Javascript is currently disabled!</noscript>
+	<center>
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="1" height="115"></td>   
+      <td width="20%" height="115" background="leftextend2.jpg"></td>
+      <td width="741" height="115">
+      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map">
+<MAP NAME="GH_Banner_Map">
+<AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.asp">
+<AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.asp?view=groupinfo">
+<AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.asp" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.php?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.asp" onClick="return logwin(this.href)">
+<AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.asp">
+<AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.asp">
+<AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.asp">
+<AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.asp">
+<AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.asp">
+<AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.asp">
+<AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.asp">
+<AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.asp">
+<AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.asp">
+<AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum">
+<AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com">
+</MAP></td>
+ <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>
+      
+    </tr>
+  </table>
+		<BR></center>
+	</table></center>
+
+<table border="0" bgcolor=#006699 align=center>
+	<tr>
+		<td width="40%"><center><font color=#CCCCCC><br>
+<a href="ghmotdedit.asp" target=_new><font color=white>EQ MOTD</font></a>:<br>
+
+For GH EQ Members only<br>
+</font></td>
+		<td  width="40%"><center><font color=white>EQ2 MOTD:</font><br><font color=cccccc><b>
+</b>For GH EQ2 Members only<br></b>
+
+</font></center>
+</td>
+	</tr>
+</table>
+
+
+
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+
+
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		theForm.body.focus();theForm.parent.value=parentid;theForm.subject.value=theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='98%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Computer Upgrade Options (Last Updated 10-04-04) </h2>&nbsp;
+		
+	</td>
+	<td class="c2" align="right">
+		Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+		
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+  
+	<td class="ultrasmall">
+		Users viewing this topic: none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.asp?m=128417" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+		
+	</td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=2'>Geek Life</a> &gt;&gt;  Computer Upgrade Options (Last Updated 10-04-04) </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="100" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="100" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.asp?go=prev&m=128417&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.asp?go=next&m=128417&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=128417' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9142,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9142<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='online'>online</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128417></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  Computer Upgrade Options (Last Upda...&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/4/2004 7:50:27 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   This is an FAQ to help people figure out what their upgrade options are.  Please post your comments and I'll try to work them into the first post (so don't be surprise if your post suddenly disappears; it just means I've integrated it into the FAQ).   <br>  <br> ------------- <br>  <br> <b>How much RAM is enough?</b> <br>  <br> Current Answer: 1 gigabyte.  <br>  <br> Two EQ2 beta players have already commented that Windows XP running EQ2 will cause paging on a 512mb system.  That means dramatic slow-downs at key points, like zoning.  Allegedly the game is playable with 512mb, and that's the minimum system requirement, but if you can expand to 1 gigabyte, we're told, it'll be a lot faster at those key points.  Note that this will not improve your *frame rate* (more on that below), but it should improve your overall computer speed with EQ2, including load times, zoning times, and possibly more. <br>  <br> <b>How do I increase my RAM?</b> <br>  <br> Older systems typically have either SDRAM or DDR RAM (sometimes called &quot;DDRAM&quot;).  DDR is the faster stuff, and if you have that you're in good shape.  If you have an older system with SDRAM, you can realize a *significant* performance boost by replacing your system with a newer one with DDR, even if it runs at the same clock rate.  Consider buying a new computer.   <br>  <br> Both types can be upgraded.  With SDRAM, go straight to the slot parameters discussion below.  For DDR, however, you have one additional consideration:  <br>  <br> - How fast is my DDR RAM?   <br>  <br> DDR is measured in two ways.  The more common way today is the &quot;PC&quot; number, such as &quot;PC2700&quot;, or &quot;PC4400&quot;.  The older way is megahertz, such as &quot;333mhz&quot; or &quot;400mhz&quot;.  The motherboard's RAM paramters are, unfortunately, measured in megahertz, which makes this really confusing, but the reason for the change is that you have some flexibility in terms of RAM speed versus motherboard speed, and you don't necessarily want to match the two.  But this is not really the place for that discussion -- the key here is to match the RAM you're buying with what's already in your system. <br>  <br> <i>If you don't know, you have to replace it.</i>  You don't want to guess, or you could run into some strange problems if they don't match (if it works at all).   <br>  <br>  <br> <b>The general parameters for figuring this out are:</b> <br> - How many slots does my motherboard have?   <br> - How many of those slots are empty? <br>  <br> <i>If all of your slots are full, you're stuck with one option: Replacement.  If you have open slots, AND you know what kind of RAM you currently have, AND you know its speed if it's DDR, then you can buy the same type and expand.  </i> <br>  <br>  <br> <b>Baseline pricing</b> (to figure out if you're paying the right amount) can be established by careful consultation with the Pricewatch web site.  Look for the &quot;memory-system&quot; hyperlink at the top of the third column.  <br>  <br> <a target="_blank" href="http://www.pricewatch.com/">http://www.pricewatch.com/</a> <br>  <br> Once you've established roughly what you SHOULD be paying, you can go to a store and buy it.  Pricewatch has stores listed, but I'd like to collect a list of stores that Grey Hawke members have used, if we can.  Here are some to start us off: <br>  <br> <b>Grey Hawke Approved Stores</b> <br> (Note: That's approved in the general sense that we've used them successfully.  No guarantees are implied!) <br> <a target="_blank" href="http://www.newegg.com/index.asp">NewEgg</a> <br> <a target="_blank" href="http://www.mwave.com/">Multiwave Direct</a> <br> (Please post your favorites below, and I'll add them to this list.) 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Chantela</b> -- <b>10/4/2004 2:51:55 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">10/4/2004 7:50:27 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			 <a href="javascript:void(powin('revision.asp?m=128417'))">Revisions: 5</a> | 
+			ID: 128417  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=128422' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9142,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9142<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='online'>online</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128422></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#128417'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/4/2004 8:01:48 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   <b>Processors</b> <br>  <br> There are two kinds of processors available for gamers:  Intel Pentiums, and AMD Athlons. <br>  <br> <b>Intel Pentiums</b> <br>  <br> Types: <br> Pentium 4 (usually Hyperthreaded now) <br> Pentium 4 Extreme (much larger cache, much more expensive) (feedback needed) <br> Centrino (mobile processor, avoid in a desktop computer) <br> Celeron (smaller cache, less expensive, may be suitable for EQ2) (feedback needed) <br>  <br> Notes: <br> Hyperthreading doesn't make the game run faster, it only helps if you're trying to multi-task while gaming.  But it's pretty much standard in the higher-end P4s now.   <br> The watchword on speed is to get the fastest processor you can afford. <br> With Intel, you want to shoot for an 800mhz motherboard and processor interface.  Older 533mhz systems are still around and should be avoided, although the difference in overall performance is not great. <br>  <br> <b>Can I upgade my system?</b> <br> The answer to this depends on the system you currently have.  If you have a system with a DDR RAM and a 533mhz or 800mhz bus speed, it's quite possible that the answer to your question is &quot;yes&quot; -- a faster processor may be available.  If not, you're probably out of luck.   <br>  <br> (I could use some input here in terms of helping people pick out the right processor in upgrading their system.  Post below and I'll integrate your information here.) <br>  <br>  <br> -------------- <br>  <br> <b>AMD Athlons</b> <br>  <br> There are two kinds of Athlon processors: 32-bit and 64-bit.  The 32-bit Athlons are marked &quot;XP&quot;, and the 64-bit Athlons are marked either &quot;Athlon 64&quot; or &quot;Athlon 64 FX&quot; (a premium brand; much more expensive).  Opterons should be avoided -- they're designed for modeling workstations and such.   <br>  <br> Durons should be avoided; AMD cancelled that line.  A new Sempron line is out I think, but I don't know much about it.  (Feedback needed.)  These are budget chips, like the Celeron, and may work for EQ2. <br>  <br> <b>Can I upgrade my system?</b> <br>  <br> If you have an Athlon XP system with DDR RAM, the answer is likely &quot;yes&quot;, some upgrade options remain open for you to get a faster XP processor.  If you have an older Athlon system, you'll probably need a new motherboard.   <br>  <br> If you have a 64-bit system, I wouldn't worry about upgrading at all.  If you're lagging in a game, you probably need to focus on getting a faster video card. <br>  <br> If you have an Athlon XP system rated at &quot;2800+&quot; or higher and need more speed, you also probably should focus more on the video card instead of the main system. <br>  <br>  <br> <b>CPU Pins</b> <br>  <br> One of the key areas for confusion today in the Athlon wold (and soon in the Intel world, if not already) is the number of pins used to connect the processor to the motherboard.  There are already several configurations to watch out for.   <br>  <br> In Athlon XP systems, this is simple -- it's just not an issue.  Don't worry about it.  (Can someone confirm that for me please? Thanks.) <br>  <br> In Athlon 64 systems, this is a real problem.  But like I said above, if you have a 64-bit system and want to upgrade you really should focus on the video card at this point.  But if you REALLY want to upgrade the processor, and you really don't want to buy a new motherboard, you need to figure out how many pins are connecting the processor and make sure you get a new processor with the same number.  If it doesn't say anywhere, it's probably the older 754 (?) pin type.  Newer 939-pin types are typically marked in a prominent way. 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Chantela</b> -- <b>10/4/2004 2:51:42 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">10/4/2004 8:01:48 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			 <a href="javascript:void(powin('revision.asp?m=128422'))">Revisions: 2</a> | 
+			ID: 128422  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=128427' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9142,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9142<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='online'>online</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128427></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#128422'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/4/2004 8:11:41 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   What else can we put in this FAQ? 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">10/4/2004 8:11:41 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 128427  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=691')" title="E-mail  nytedemon"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=691')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=691&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=691&mode=block&pg=tm&m=128874' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=691" class="subhead" target=_blank>nytedemon</a>
+		  
+		  <br>
+		  <script>titleAndStar(366,0,0,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><p class="ultrasmall">
+		  Posts:  366<br>
+		  Joined:  6/3/2004 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128874></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#128427'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/6/2004 11:39:28 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   The p4 extreme processor is not worth the little increase of speed in games unless you smoke $100 bills.For computer savy people you can also have a write up raiding 2 harddrives for increased performance. 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1035993">My Sexy Self</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">10/6/2004 11:39:28 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 128874  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=57')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=57&mode=block&pg=tm&m=128980' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=57" class="subhead" target=_blank>Jani</a>
+		  
+		  <br>
+		  <script>titleAndStar(1158,-87,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/6975414533D04296A223C43E93C60C3D.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1158<br>
+		  Joined:  11/1/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128980></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#128874'>nytedemon</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/6/2004 10:15:32 PM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   <u>Storagereview on RAID:</u> <br>  <br>  <br> n February of 2003, we took a brief time-out from our standard, single-drive testing to formally address what we normally refuse to touch with a 12-foot pole- a RAID0 array. Why? The StorageReview Discussion community, mirroring forums around the net, burgeoned with hundreds of posts from readers seeking advice on which RAID adapter to get and which hard drives to stripe for their power rigs. <br>  <br> Simple theory, however, indicated that striping would not significantly help the localized (as opposed to both random and sequential), low-depth usage that dominated even highly-multitasked, single-user scenarios. The best advice, as a result, was to avoid striping. Many readers, however refused to believe. <br>  <br> <a target="_blank" href="http://faq.storagereview.com/SingleDriveVsRaid0">The February test</a> combined a pair of 200-gig Maxtor DiamondMax 9 drives with a Promise PATA RAID controller and demonstrated that the gains in striping them were minimal especially when one considered  that a large portion of what gain there was due to the doubling of capacity and the resulting smaller distances that the actuator must travel to execute the same chain of disk accesses. <br>  <br> There were still objections, irrational as they were: <br>  <br>  <br> <i>“It’s only 7200 RPM! 10,000 RPM drives would have done better!” <br> “It’s only PATA! SATA would have done better!” <br> “It’s only eye-dee-eee! SCSI would have done better!” <br> “You tested only two drives! A larger array would have done better!”</i> <br>  <br>  <br> And so on. <br>  <br> Our recent <a target="_blank" href="http://www.storagereview.com/articles/200406/20040625TCQ_1.html">TCQ, RAID, SCSI, and SATA article</a> examined the performance of a myriad of controller/interface/drive-count/raid-level combinations that addressed the objections above (though admittedly as a side effect of testing TCQ’s effects on RAID arrays; we do not believe further empirical results were really necessary to back logic and theory). Many readers here at SR and across the net, unfortunately, seemed to have missed the article… though it is extremely relevant to those debating the relative merits or lack thereof of RAID arrays for non-server use. Consider this interesting example: <br>  <br> In the “SR Gaming DriveMark… a 4 drive Cheetah array.. lags a single Raptor running on the &quot;dumbest&quot; of SATA controllers by a margin of 9%.” <br>  <br> If you’re still confused about RAID, you owe it to yourself to check out the review. <br>  <br> Though the idea that RAID0 does not significantly assist desktop performance is not new to SR, AnandTech has recently corroborated the idea with <a target="_blank" href="http://www.anandtech.com/storage/showdoc.html?i=2101">results of their own.</a> Confirming that no significant gain is realized when striping a pair of Raptors off of an ICH5 controller, Anand writes: <br>  <br> <i>&quot;If you haven't gotten the hint by now, we'll spell it out for you: there is no place, and no need for a RAID-0 array on a desktop computer.&quot;</i> <br> Interestingly, the feedback associated with Anand’s article reads like a laundry list of the same irrational objections SR had to overcome. Anand is free, of course, to link to SR’s articles which, ironically, address virtually every objection raised by his RAID0 proponents . <br>  <br> It is our hope that these findings taken as a whole will stem an internet-wide trend where enthusiast-oriented websites blithely incorporate RAID0 into their &quot;high-end&quot; single-user boxes, ignorant to both theory and empirical results. 
+					<span class="info"></span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">10/6/2004 10:15:32 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 128980  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=691')" title="E-mail  nytedemon"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=691')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=691&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=691&mode=block&pg=tm&m=128991' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=691" class="subhead" target=_blank>nytedemon</a>
+		  
+		  <br>
+		  <script>titleAndStar(366,0,0,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><p class="ultrasmall">
+		  Posts:  366<br>
+		  Joined:  6/3/2004 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128991></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#128980'>Jani</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/7/2004 4:57:20 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Nice article someone needs to send that over to alienware <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1035993">My Sexy Self</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">10/7/2004 4:57:20 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 128991  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=33')" title="E-mail  Parm"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=33')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=33&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=33&mode=block&pg=tm&m=129067' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=33" class="subhead" target=_blank>Parm</a>
+		  
+		  <br>
+		  <script>titleAndStar(2264,-2,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/33/Jh16714.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  2264<br>
+		  Joined:  10/31/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=129067></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#128991'>nytedemon</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/7/2004 10:15:33 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   There are probably special-use cases where raid 0 would help.  I'm thinking rendering tens to hundreds of gigabytes of video in Adobe Premier or something like that.  Other than that I agree it's probably not going to help most people.  By most I mean 99.999%. 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><div align="center"><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=181972">Parm Vomgrossenhirn</a> - Coercer<i> <br> ** Will Mez for Food **</i></div> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">10/7/2004 10:15:33 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 129067  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=129072' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9142,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9142<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='online'>online</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=129072></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#129067'>Parm</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/7/2004 10:24:36 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   It's interesting -- I was under the impression that RAID 0 was a big boon to normal desktop computer operations.  I think I've even read people say things to that effect right here in this forum.  Go figure. <br>  <br> RAID 1 still has a use in the desktop world, of course.  Given how cheap drives have become, it's not a bad idea to double-up for safety's sake on computers that will hold important development or business data, even temporarily.  But for home users.... can't really see it.  (Wouldn't help you with a virus, for example, so you still gotta do periodic, dated backups to another drive.) 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">10/7/2004 10:24:36 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 129072  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=57')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=57&mode=block&pg=tm&m=129082' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=57" class="subhead" target=_blank>Jani</a>
+		  
+		  <br>
+		  <script>titleAndStar(1158,-87,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/6975414533D04296A223C43E93C60C3D.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1158<br>
+		  Joined:  11/1/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=129082></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: General Upgrade Options (Ongoin...&nbsp;(<span class="ultrasmall">in reply to <a href='#129072'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/7/2004 10:44:19 AM",0,0,0,128417,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Raid 0 is good if you move around lots of large files, which is something most of the people don't do often. I'm talking about video files, CD/DVD images etc. Those move with almost double speed with raid 0. <br>  <br> With typical desktop use you're using a lot of small files here and there, files that are fragmented all around the disk etc etc. In that kind of use seek time means everything. Want performance? Get a Raptor, or an SCSI-drive. <br>  <br> I'm not really convinced about the benefits of NCQ either on desktop use. It's being advertised based on a high I/O-count per second, but I'd like to see some real life tests first. <br> Server use is a whole different matter. <br>  <br> EDIT: Still, my next secondary drive will almost certainly be a 300-500 gigabyte Seagate with NCQ. 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Jani</b> -- <b>10/7/2004 8:46:48 PM </b> &gt;</span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">10/7/2004 10:44:19 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			 <a href="javascript:void(powin('revision.asp?m=129082'))">Revisions: 1</a> | 
+			ID: 129082  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+	   <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=2'>Geek Life</a> &gt;&gt;  Computer Upgrade Options (Last Updated 10-04-04) </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.asp'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.asp?forumid=58" >[Public]</option>
+<option value="tt.asp?forumid=1" >- - Public Forum</option>
+<option value="tt.asp?forumid=2" selected>- - Geek Life</option>
+<option value="tt.asp?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="98%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.asp" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="128417">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+
+<br>
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr><td>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Reply to Message<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Poll<br>			
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Submit Vote<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Post<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Rate Posts
+					</td></tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br>
+<center>
+	
+	<br>
+	<br>	</td>
+	  </tr>
+	</table>
+	</center>
+	
+	<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")){
+			self.location.href="pm.asp";
+		}
+	}
+	</script>
+	<center><img src="http://ghguild.com/poweredbywin2k3.gif"><br><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+	<td align="center" class="info">Forum Software powered by ASP Playground <b>Advanced Edition</b> 2.3<br>
+	  Copyright &copy; 2000 - 2003 <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a></td>
+  </tr>
+</table></center>
+	<br><font color="ffffff">0.098</font><br>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Illumination - An Everquest Guild - Home</title>
+<meta name="description" content="Illumination - An Everquest Guild on Bertoxxulous" />
+<meta name="keywords" content="Everquest, Bertoxxulous, Illumination" />
+<meta name="Generator" content="Mambo - Copyright 2000 - 2005 Miro International Pty Ltd.  All rights reserved." />
+<meta name="robots" content="index, follow" />
+		<link rel="alternate" type="application/rss+xml" title="Powered by Mambo 4.5.2" href="http://www.illuminationguild.com/Mambo/cache/rss20.xml" />
+			<link rel="shortcut icon" href="http://www.illuminationguild.com/Mambo/images/favicon.ico" />
+	<link href="http://www.illuminationguild.com/Mambo/templates/rhuk_planetfall/css/template_css.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="page_bg">
+<a name="up" id="up"></a>
+<div align="center" >
+	<table width="798" border="0" cellpadding="0" cellspacing="0" class="big_frame">
+	<tr>
+		<!--td colspan="2"-->
+                <td>
+		<img src="http://www.illuminationguild.com/Mambo/templates/rhuk_planetfall/images/top_bar.jpg" width="798" height="9" alt=""/>
+		</td>
+	</tr>
+	<tr>
+                <td colspan="1" class="header">
+		<img src="http://www.illuminationguild.com/Mambo/templates/rhuk_planetfall/images/spacer.png" width="646" height="9" alt=""/>
+		<!--br /-->
+		</td>
+                <!--td class="top_right_box" style="width: 151px; padding-left: 5px;" valign="top">
+			<table cellpadding="0" cellspacing="1" border="0" width="120" class="contentpaneopen">
+			<tr>
+				<td class="contentheading" width="145">
+				Search
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<form action='index.php' method='post'>
+				<div class="searchblock" id="searchblock">
+				Enter Keywords:
+				<input size="15" class="inputbox" type="text" name="searchword" style="width:128px;" value="search..."  onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" />
+				<input type="hidden" name="option" value="search" />
+					<div align="left">
+					<input type="submit" value="GO" class="button" style="width:35px;" />
+					</div>
+				</div>
+				</form>
+				</td>
+			</tr>
+			</table>
+		</td-->
+	</tr>
+	<tr>
+		<td class="silver_box" style="height:26px;"-->
+		<!--td colspan="1" class="silver_box" style="height:26px;"-->
+		<div id="silver_toolbar">
+			<div id="silver_date">
+			Wednesday, 03 May 2006			</div>
+			<div id="silver_menu">
+						<table cellpadding="0" cellspacing="0" class="moduletable">
+						<tr>
+				<td>
+				<ul id="mainlevel-nav"><li><a href="index.php" class="mainlevel-nav" >Home</a></li><li><a href="index.php?option=com_content&amp;task=section&amp;id=1&amp;Itemid=2" class="mainlevel-nav" >Archive</a></li><li><a href="index.php?option=com_weblinks&amp;Itemid=22" class="mainlevel-nav" >Links</a></li><li><a href="http://www.illuminationguild.com/eq" class="mainlevel-nav" >Forum</a></li><li><a href="index.php?option=com_content&amp;task=view&amp;id=12&amp;Itemid=27" class="mainlevel-nav" >Roster</a></li><li><a href="index.php?option=com_content&amp;task=view&amp;id=23&amp;Itemid=28" class="mainlevel-nav" >Charter</a></li></ul>				</td>
+			</tr>
+			</table>
+						</div>
+			<div style="clear: both;"></div>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="content_box">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr valign="top">
+				<td>
+				<!-- main content area -->
+				<div class="contentblock" id="contentblock" style="width:635">
+					<span class="pathway">Home </span>
+					<br />
+					<table class="blog" cellpadding="0" cellspacing="0"><tr><td valign="top"><div>			<table class="contentpaneopen">
+			<tr>
+								<td class="contentheading" width="100%">
+				<a href="index.php?option=com_content&amp;task=view&amp;id=55&amp;Itemid=2" class="contentpagetitle">
+				The History of Ainmer the Bixie				</a>
+								</td>
+							</tr>
+			</table>
+			
+		<table class="contentpaneopen">
+				<tr>
+			<td width="70%" align="left" valign="top" colspan="2">
+			<span class="small">
+			 Written by Tocatta			</span>
+			&nbsp;&nbsp;
+			</td>
+		</tr>
+					<tr>
+				<td valign="top" colspan="2" class="createdate">
+				Thursday, 13 April 2006				</td>
+			</tr>
+					<tr>
+			<td valign="top" colspan="2">
+			<div align="center"><strong><u>WARNING: AINMER ALERT <br />
+<br />
+<img src="http://www.illuminationguild.com/Mambo/images/stories/April13/warning.jpg"width="259" height="185" hspace="6" alt="Image" title="Image" border="0" /><br />
+</u></strong></div>
+<br />
+<div align="justify">It&rsquo;s common knowledge that one of the secrets
+behind Enlightenment&rsquo;s success is our use of Teamspeak as a raid tool.
+While it can be disruptive at times &ndash; for the majority of the time it&rsquo;s
+effectiveness is, by far, a major asset, especially when one considers
+the times we simply did not &ldquo;have the numbers&rdquo; to pull an encounter
+off, but did so regardless.</div>			</td>
+		</tr>
+						<tr>
+					<td align="left" colspan="2">
+					<a href="index.php?option=com_content&amp;task=view&amp;id=55&amp;Itemid=2" class="readon">
+					Read more...					</a>
+					</td>
+				</tr>
+						</table>
+		</div></td></tr><tr><td valign="top"><table width="100%"  cellpadding="0" cellspacing="0"><tr><td valign="top" width="50%">			<table class="contentpaneopen">
+			<tr>
+								<td class="contentheading" width="100%">
+				<a href="index.php?option=com_content&amp;task=view&amp;id=54&amp;Itemid=2" class="contentpagetitle">
+				Mission: Roley				</a>
+								</td>
+							</tr>
+			</table>
+			
+		<table class="contentpaneopen">
+				<tr>
+			<td width="70%" align="left" valign="top" colspan="2">
+			<span class="small">
+			 Written by Sindier			</span>
+			&nbsp;&nbsp;
+			</td>
+		</tr>
+					<tr>
+				<td valign="top" colspan="2" class="createdate">
+				Tuesday, 04 April 2006				</td>
+			</tr>
+					<tr>
+			<td valign="top" colspan="2">
+			&nbsp;&quot;In 2006, an Enlightenment kill-squad unit was sent to prison by a Militia court for a crime they didn't commit. These men and woman promptly escaped from a maximum-security Freeport prison to the Antonican underground. Today, still wanted by the Militia, they survive as soldiers of fortune. If you have a problem, if no one else can help, and if you can find them, maybe you can hire the A-Team.&quot;			</td>
+		</tr>
+						<tr>
+					<td align="left" colspan="2">
+					<a href="index.php?option=com_content&amp;task=view&amp;id=54&amp;Itemid=2" class="readon">
+					Read more...					</a>
+					</td>
+				</tr>
+						</table>
+		</td><td valign="top" width="50%">			<table class="contentpaneopen">
+			<tr>
+								<td class="contentheading" width="100%">
+				<a href="index.php?option=com_content&amp;task=view&amp;id=53&amp;Itemid=2" class="contentpagetitle">
+				Redfang = Deadfang				</a>
+								</td>
+							</tr>
+			</table>
+			
+		<table class="contentpaneopen">
+				<tr>
+			<td width="70%" align="left" valign="top" colspan="2">
+			<span class="small">
+			 Written by Tocatta			</span>
+			&nbsp;&nbsp;
+			</td>
+		</tr>
+					<tr>
+				<td valign="top" colspan="2" class="createdate">
+				Thursday, 30 March 2006				</td>
+			</tr>
+					<tr>
+			<td valign="top" colspan="2">
+			<em>(There will be definitely more to come in the next day or so as my
+creative juices get flowing - but I wanted to get this update at least
+started to get our monks off my back.&nbsp; So.. for you monk team -
+here you go!)<br />
+<br />
+</em>
+<div align="center"><img src="http://www.illuminationguild.com/Mambo/images/stories/April06/deathemote.jpg"width="449" height="29" hspace="6" alt="Image" title="Image" border="0" /><br />
+<br />
+<img src="http://www.illuminationguild.com/Mambo/images/stories/April06/target.jpg"width="414" height="52" hspace="6" alt="Image" title="Image" border="0" /><br />
+</div>			</td>
+		</tr>
+				</table>
+		</td></tr></table></td></tr><tr><td valign="top"><div class="blog_more">			<div>
+			<strong>
+			More...			</strong>
+			</div>
+			<ul>
+						<li>
+			<a class="blogsection" href="index.php?option=com_content&amp;task=view&amp;id=52&amp;Itemid=2">
+			We ain't scared of no ghosts!			</a>
+			</li>
+					</ul>
+		</div></td></tr><tr><td valign="top" align="center"><span class="pagenav">&lt;&lt; Start</span> <span class="pagenav">&lt; Prev</span> <span class="pagenav">1</span> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=4" class="pagenav"><strong>2</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=8" class="pagenav"><strong>3</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=12" class="pagenav"><strong>4</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=16" class="pagenav"><strong>5</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=20" class="pagenav"><strong>6</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=24" class="pagenav"><strong>7</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=28" class="pagenav"><strong>8</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=32" class="pagenav"><strong>9</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=36" class="pagenav"><strong>10</strong></a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=4 " class="pagenav" title="next page">Next &gt;</a> <a href="index.php?option=com_frontpage&amp;Itemid=1&amp;limit=4&amp;limitstart=36 " class="pagenav" title="end page">End &gt;&gt;</a><br /><br /></td></tr><tr><td valign="top" align="center">Results 1 - 4 of 38</td></tr></table>			<div class="back_button">
+			<a href='javascript:history.go(-1)'>
+			[ Back ]			</a>
+			</div>
+								<br />
+				</div>
+								</td>
+			</tr>
+			</table>
+		</td>
+				<!--td valign="top" class="right_box" width="151" style="width: 151px">
+		<div id="right_box">
+			<!-- far right menu -->
+			<div class="leftblock" id="leftblock" style="width:143px">
+						</div>
+			<div class="user1block" id="user1block" style="width:143px">
+						</div>
+		</div>
+		</td-->
+	</tr>
+	<tr>
+		<td colspan="2">
+		<img src="http://www.illuminationguild.com/Mambo/templates/rhuk_planetfall/images/top_bar.jpg" width="798" height="9" alt="" />
+		</td>
+	</tr>
+	</table>
+	<div align="center">Copyright 2000 - 2005 Miro International Pty Ltd.  All rights reserved.</div>
+<div align="center"><a href="http://www.mamboserver.com">Mambo</a> is Free Software released under the GNU/GPL License.</div>
+</div>
+</body>
+</html><!-- 1146704891 -->

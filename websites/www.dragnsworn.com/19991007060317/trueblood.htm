@@ -1,0 +1,630 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>TrueBlood</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body background="images/wotbkg05.jpg" text="#FFFF00" link="#00FF00" vlink="#FFFFFF" onload="dynAnimation()">
+
+<p align="center"><img src="images/logo.gif" alt="logo.gif (27,364 bytes)" border="0" WIDTH="437" HEIGHT="133"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center" dynamicanimation="flyRight" style="position: relative !important; left: 10000 !important"><img src="images/tb.gif" alt="tb.gif (18766 bytes)" WIDTH="316" HEIGHT="137"></p>
+<div align="center"><center>
+
+<table BORDER="0" CELLPADDING="0" bordercolor="#008080" bordercolorlight="#FFFF00" bordercolordark="#FF0000" width="328" height="1">
+  <tr align="left">
+    <td align="left" WIDTH="121" height="40"><font color="#808000" size="3"><strong>Battle Net
+    Name</strong></font></td>
+    <td align="left" height="40" valign="middle" width="77"><font color="#808000" size="3"><strong>E
+    Mail</strong></font></td>
+    <td align="left" WIDTH="96" height="40"><font color="#808000" size="3"><strong>ICQ</strong></font></td>
+    <td align="left" WIDTH="47" height="40"><font color="#008000"><strong>Rank</strong></font></td>
+    <td align="left" WIDTH="47" height="40"><font color="#808000" size="3"><strong>Sept</strong></font></td>
+    <td align="left" WIDTH="38" height="40"><font color="#808000" size="3"><strong>Wins</strong></font></td>
+    <td align="left" WIDTH="71" height="40"><font color="#808000" size="3"><strong>Losses</strong></font></td>
+    <td align="left" WIDTH="60" height="40"><font color="#808000" size="3"><strong>Last
+    updated</strong></font></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="39"><font color="#FFFF00" size="2"><strong><a href="profiles/pepper.htm">Pepper~Sedai~</a></strong></font></td>
+    <td COLSPAN="1" height="39" align="left" valign="middle" width="77"><p align="left"><a href="mailto:pepper@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="39"><font color="#FFFF00" size="2"><strong>12829614</strong></font></td>
+    <td WIDTH="47" height="39"><font color="#C0C0C0"><strong>Chief</strong></font></td>
+    <td WIDTH="47" height="39"><p align="center"><a href="septs.htm"><img src="images/septbut2.gif" alt="septbut2.gif (1365 bytes)" border="0" WIDTH="40" HEIGHT="30"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="38" height="39"><font color="#FFFF00" size="2">94</font></td>
+    <td WIDTH="71" height="39"><font color="#FFFF00" size="2">37</font></td>
+    <td WIDTH="60" height="39"><small>12/10//98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="24"></td>
+    <td COLSPAN="1" height="24" align="left" valign="middle" width="77"></td>
+    <td COLSPAN="1" WIDTH="96" height="24"></td>
+    <td WIDTH="47" height="24"></td>
+    <td WIDTH="47" height="24"></td>
+    <td COLSPAN="1" WIDTH="38" height="24"></td>
+    <td WIDTH="71" height="24"></td>
+    <td WIDTH="60" height="24"></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/aginor.htm">AcidStrm~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:acidstrm@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>19015619 </small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>11/26/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/aginor.htm">Aginor~Ashaman~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:aginor@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>22456854 </small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">33</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">13</font></td>
+    <td WIDTH="60" height="1"><small>12/10/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/alayne.htm"><font color="#FFFF00" size="2">Alayne~Ashaman~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:alayne@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>0</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>11/16/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/atraiyu.htm">Atraiyu~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:atraiyu@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>17254689</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>10/12/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/boot.htm"><font color="#FFFF00" size="2">Boot~Sedai~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:boot@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><font color="#FFFF00" size="2">20033799</font></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>01/08/99</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/ceaser.htm">Ceaser~Ashaman~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:ceaser@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Wise One</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">89</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">40</font></td>
+    <td WIDTH="60" height="1"><small>12/31/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/crispy.htm"><font color="#FFFF00" size="2">Crispy~Sedai~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:crispy@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><font color="#FFFF00" size="2">7169527</font></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>11/16/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/fiction.htm"><font color="#FFFF00" size="2">Fiction~Sedai~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:fiction@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>42567</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>01/08/99</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/hydra.htm"><font color="#FFFF00" size="2">Hydra~Sedai~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:hydra@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>27370785</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>01/08/99</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/joram.htm">Joram~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:joram@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>15302201</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">11</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">2</font></td>
+    <td WIDTH="60" height="1"><small>10/17/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="10"><a href="profiles/kirrock.htm"><font color="#FFFF00" size="2">Kirrock~Sedai~</font></a></td>
+    <td COLSPAN="1" height="10" align="left" valign="middle" width="77"><p align="left"><a href="mailto:kirrock@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="10"><small>12813104</small></td>
+    <td WIDTH="47" height="10"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="10"><a href="septs.htm"><img src="images/septbut2.gif" alt="septbut2.gif (1365 bytes)" border="0" WIDTH="40" HEIGHT="30"></a></td>
+    <td COLSPAN="1" WIDTH="38" height="10"><font color="#FFFF00" size="2">265</font></td>
+    <td WIDTH="71" height="10"><font color="#FFFF00" size="2">125</font></td>
+    <td WIDTH="60" height="10"><small>01/08/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/krevi.htm"><font color="#FFFF00" size="2">Krevi~Sedai~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:krevi@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>19319529</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">44</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">12</font></td>
+    <td WIDTH="60" height="1"><small>01/03/99</small></td>
+  </tr>
+  <tr ALIGN="left">
+    <td COLSPAN="1" WIDTH="121" height="10"><font color="#FFFF00" size="2"><a href="profiles/lachesis.htm">Lachesis~Sedai~</a></font></td>
+    <td COLSPAN="1" height="10" align="left" valign="middle" width="77"><p align="left"><a href="mailto:lachesis@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="10"><small>13789644</small></td>
+    <td WIDTH="47" height="10"><font color="#C0C0C0"><strong>Wise One</strong></font></td>
+    <td WIDTH="47" height="10"><a href="septs.htm"><img src="images/septbut2.gif" alt="septbut2.gif (1365 bytes)" border="0" WIDTH="40" HEIGHT="30"></a></td>
+    <td COLSPAN="1" WIDTH="38" height="10"><font color="#FFFF00" size="2">157</font></td>
+    <td WIDTH="71" height="10"><font color="#FFFF00" size="2">41</font></td>
+    <td WIDTH="60" height="10"><small>11/16/98</small></td>
+  </tr>
+  <tr>
+    <td width="142" height="15"><a href="profiles/lews.htm"><font color="#FFFF00" size="2">Lews~Wiseone~</font></a></td>
+    <td width="69" height="15"><a href="mailto:lews@dragnsworn.com"><img src="images/emailx.gif" alt="emailx.gif (11310 bytes)" border="0" width="50" height="25"></a></td>
+    <td width="74" height="15"><font color="#FFFF00" size="2">2870205</font></td>
+    <td width="42" height="15"><font color="#C0C0C0"><strong>Wise One</strong></font></td>
+    <td width="44" height="15"><a href="septs.htm"><img src="images/septbut2.gif" alt="septbut2.gif (1365 bytes)" border="0" WIDTH="40" HEIGHT="30"></a></td>
+    <td width="36" height="15"><font color="#FFFF00" size="2">43</font></td>
+    <td width="57" height="15"><font color="#FFFF00" size="2">10</font></td>
+    <td width="54" height="15"><font color="#FFFF00" size="2">11/26/98</font></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><a href="profiles/lithos.htm"><font color="#FFFF00" size="2">Lithos~Ashaman~</font></a></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:lithos@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>7541472</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>01/08/99</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/logain.htm">Logain~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:logain@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>9391673</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">8</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">1</font></td>
+    <td WIDTH="60" height="1"><small>10/17/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/loial.htm">Loial~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:loial@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>21276759</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">25</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">11</font></td>
+    <td WIDTH="60" height="1"><small>12/10/98</small></td>
+  </tr>
+  <tr ALIGN="left">
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/machshin.htm">MachShin~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:machshin@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>0</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">4</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>11/11/98</small></td>
+  </tr>
+  <tr ALIGN="left">
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/male.htm">Male~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:male@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>17030163</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"><p align="center"><a href="septs.htm"><img src="images/septbut2.gif" alt="septbut2.gif (1365 bytes)" border="0" WIDTH="40" HEIGHT="30"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">131</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">71</font></td>
+    <td WIDTH="60" height="1"><small>10/03/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/mo.htm">Mo~Ashaman~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:moo@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>0</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>11/11/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/odin.htm">Odin~Ashaman~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:odin@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><small>3846817</small></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">15</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">10</font></td>
+    <td WIDTH="60" height="1"><small>10/31/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="142" height="1"><a href="profiles/osiris.htm"><font color="#FFFF00" size="2">)Osiris(~Sedai~</font></a></td>
+    <td COLSPAN="1" WIDTH="86" align="left" height="1" valign="middle"><a href="mailto:osiris@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></td>
+    <td COLSPAN="1" WIDTH="129" height="1"><small>21569228</small></td>
+    <td WIDTH="112" height="1"><font color="#C0C0C0">Wise One</font></td>
+    <td WIDTH="53" height="1" align="center"></td>
+    <td COLSPAN="1" WIDTH="103" height="1"><font color="#FFFF00" size="2">65</font></td>
+    <td WIDTH="59" height="1"><font color="#FFFF00" size="2">17</font></td>
+    <td WIDTH="35" height="1"><small>12/31/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="20"><font color="#FFFF00" size="2"><a href="profiles/perrin.htm">Perrin~Sedai~</a></font></td>
+    <td COLSPAN="1" height="20" align="left" valign="middle" width="77"><p align="left"><a href="mailto:perrin@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="20"><small>5342440</small></td>
+    <td WIDTH="47" height="20"><font color="#C0C0C0">Warrior</font></td>
+    <td WIDTH="47" height="20"></td>
+    <td COLSPAN="1" WIDTH="38" height="20"><font color="#FFFF00" size="2">13</font></td>
+    <td WIDTH="71" height="20"><font color="#FFFF00" size="2">5</font></td>
+    <td WIDTH="60" height="20"><small>10/25/98</small></td>
+  </tr>
+  <tr ALIGN="left">
+    <td COLSPAN="1" WIDTH="121" height="1"><font color="#FFFF00" size="2"><a href="profiles/rahvin.htm">Rahvin~Sedai~</a></font></td>
+    <td COLSPAN="1" height="1" align="left" valign="middle" width="77"><p align="left"><a href="mailto:rahvin@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="47" height="1"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="1"></td>
+    <td COLSPAN="1" WIDTH="38" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="1"><small>09/13/98</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="10"><font color="#FFFF00" size="2"><a href="profiles/ralph1.htm">Ralph1~Sedai~</a></font></td>
+    <td COLSPAN="1" height="10" align="left" valign="middle" width="77"><p align="left"><a href="mailto:ralph1@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="10"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="47" height="10"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="10"></td>
+    <td COLSPAN="1" WIDTH="38" height="10"><font color="#FFFF00" size="2">1</font></td>
+    <td WIDTH="71" height="10"><font color="#FFFF00" size="2">1</font></td>
+    <td WIDTH="60" height="10"><small>10/11/98</small></td>
+  </tr>
+  <tr>
+    <td width="142" height="1"><font color="#FFFF00" size="2"><a href="profiles/rand.htm">Rand~Ashaman~</a></font></td>
+    <td width="69" height="1"><a href="mailto:rand@dragnsworn.com"><img src="images/emailx.gif" alt="emailx.gif (11310 bytes)" border="0" width="50" height="25"></a></td>
+    <td width="74" height="1"><font color="#FFFF00" size="2">0</font></td>
+    <td width="42" height="1"><font color="#C0C0C0">Warrior</font></td>
+    <td width="44" height="1"><a href="septs.htm"><img src="images/septbut2.gif" alt="septbut2.gif (1365 bytes)" border="0" WIDTH="40" HEIGHT="30"></a></td>
+    <td width="36" height="1"><font color="#FFFF00" size="2">106</font></td>
+    <td width="61" height="1"><font color="#FFFF00" size="2">52</font></td>
+    <td width="60" height="1"><font color="#FFFF00" size="2">09/26/98</font></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="10"><a href="profiles/redhen.htm"><font color="#FFFF00" size="2">RedHen~Sedai~</font></a></td>
+    <td COLSPAN="1" height="10" align="left" valign="middle" width="77"><p align="left"><a href="mailto:tduck@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="10"><small>0</small></td>
+    <td WIDTH="47" height="10"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="10"></td>
+    <td COLSPAN="1" WIDTH="38" height="10"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="10"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="10"><small>01/08/99</small></td>
+  </tr>
+  <tr>
+    <td COLSPAN="1" WIDTH="121" height="10"><font color="#FFFF00" size="2"><a href="profiles/torpex.htm">Torpex~Sedai~</a></font></td>
+    <td COLSPAN="1" height="10" align="left" valign="middle" width="77"><p align="left"><a href="mailto:torpex@dragnsworn.com"><img src="images/emailx.gif" width="50" height="25" alt="emailx.gif (11310 bytes)" border="0"></a></p>
+    </td>
+    <td COLSPAN="1" WIDTH="96" height="10"><small>5665535</small></td>
+    <td WIDTH="47" height="10"><font color="#C0C0C0">Initiate</font></td>
+    <td WIDTH="47" height="10"></td>
+    <td COLSPAN="1" WIDTH="38" height="10"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="71" height="10"><font color="#FFFF00" size="2">0</font></td>
+    <td WIDTH="60" height="10"><small>11/11/98</small></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">Last updated - <!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%m/%d/%y" startspan -->06/06/99<!--webbot bot="Timestamp" endspan i-checksum="14040" --></p>
+
+<p align="center"><!--webbot bot="ImageMap" rectangle="(296,19) (403,30) tourney/tourney.htm" rectangle="(189,20) (282,30) techsup.htm" rectangle="(493,6) (580,14) scum/scumstrat.htm" rectangle="(415,4) (480,15) members.htm" rectangle="(368,3) (401,13) links.htm" rectangle="(329,6) (357,15) newmem.htm" rectangle="(278,3) (317,15) indexsav.html" rectangle="(238,3) (264,15) files.htm" rectangle="(134,4) (225,16) events.htm" rectangle="(49,4) (121,16) dragonsron_message_boards.htm" rectangle="(2,3) (35,16) allies.htm" src="images/navbar.gif" alt="navbar.gif (3655 bytes)" border="0" startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="296, 19, 403, 30" HREF="tourney/tourney.htm"><AREA SHAPE="RECT" COORDS="189, 20, 282, 30" HREF="techsup.htm"><AREA SHAPE="RECT" COORDS="493, 6, 580, 14" HREF="scum/scumstrat.htm"><AREA SHAPE="RECT" COORDS="415, 4, 480, 15" HREF="members.htm"><AREA SHAPE="RECT" COORDS="368, 3, 401, 13" HREF="links.htm"><AREA SHAPE="RECT" COORDS="329, 6, 357, 15" HREF="newmem.htm"><AREA SHAPE="RECT" COORDS="278, 3, 317, 15" HREF="indexsav.html"><AREA SHAPE="RECT" COORDS="238, 3, 264, 15" HREF="files.htm"><AREA SHAPE="RECT" COORDS="134, 4, 225, 16" HREF="events.htm"><AREA SHAPE="RECT" COORDS="49, 4, 121, 16" HREF="dragonsron_message_boards.htm"><AREA SHAPE="RECT" COORDS="2, 3, 35, 16" HREF="allies.htm"></MAP><a href="_vti_bin/shtml.exe/trueblood.htm/map"><img ismap usemap="#FrontPageMap" border="0" height="31" alt="navbar.gif (3655 bytes)" src="images/navbar.gif" width="581"></a><!--webbot bot="ImageMap" endspan i-checksum="1118" --></p>
+
+<p align="center">&nbsp;</p>
+</body>
+</html>

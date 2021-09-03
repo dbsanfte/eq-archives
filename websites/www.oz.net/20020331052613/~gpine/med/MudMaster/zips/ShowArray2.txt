@@ -1,0 +1,26 @@
+/alias {showarray %0} {/if {@WordCount($0)<=1 || @WordCount($0)>3} {/showme {You supplied too many or too few perameters. "showarray Name Row Columns" (Columns are optional)}} {/if {@WordCount($0)==2} {/var saName @Word($0,1);/var saRow @Word($0,2);showarray2} {/if {@WordCount($0)==3} {/var saName @Word($0,1);/var saRow @Word($0,2);/var saCol @Word($0,3);showarray3} {/showme {Something's odd, this shouldn't print!}}}}} {ShowArray2}
+
+/alias {showarray2} {/if {@IsNumber($saRow)==0} {/showme {@AnsiBold()@ForeRed()You supplied a non-numeric value for Rows: "@ForeYellow()$saRow@ForeRed()" -- try again!}} {/if {$saRow<0} {/showme {@AnsiBold()@ForeWhite()ShowArray: @ForeGreen()$saName @AnsiReset()};/showme {@AnsiBold()@ForeBlue()[@ForeCyan()@Abs($saRow)@ForeBlue()]@AnsiReset() @GetArray($saName,@Abs($saRow),1)}} {/showme {@AnsiBold()@ForeWhite()ShowArray: @ForeGreen()$saName @AnsiReset()};/loop {1,$saRow} {/showme {@AnsiBold()@ForeBlue()[@ForeCyan()$LoopCount@ForeBlue()]@AnsiReset() @GetArray($saName,$LoopCount,1)}}}}} {ShowArray2}
+
+
+/alias {showarray3} {/if {@IsNumber($saRow)==0 || @IsNumber($saCol)==0} {/showme {@AnsiBold()@ForeRed()You supplied a non-numeric value for Row: "@ForeYellow()$saRow@ForeRed()" and/or Column: "@ForeYellow()$saCol@ForeRed()" -- try again!}} {/showme {@AnsiBold()@ForeWhite()ShowArray: @ForeGreen()$saName @AnsiReset()};/loop {1,$saRow,LoopOne} {/showme {@PadLeft(-,-,78)};/loop {1,$saCol,LoopTwo} {/showme {@AnsiBold()@ForeBlue()[@ForeCyan()$LoopOne@ForeBlue(),@ForeCyan()$LoopTwo@ForeBlue()]@AnsiReset() @GetArray($saName,$LoopOne,$LoopTwo)}}}}} {ShowArray2}
+
+/alias {sarange %0} {/showme {@AnsiBold()@ForeWhite()ShowArray: @ForeGreen()@Word($0,1)  @ForeBlue()Showing Row(s) @ForeCyan()@Word($0,2)@ForeBlue()-@ForeCyan()@Word($0,3) @ForeBlue()and Column(s) @ForeCyan()@Word($0,4)@ForeBlue()-@ForeCyan()@Word($0,5)@AnsiReset()};/loop {@Word($0,2),@Word($0,3),LoopOne} {/showme {@PadLeft(-,-,78)};/loop {@Word($0,4),@Word($0,5),LoopTwo} {/showme {@AnsiBold()@ForeBlue()[@ForeCyan()$LoopOne@ForeBlue(),@ForeCyan()$LoopTwo@ForeBlue()] @AnsiReset()@GetArray(@Word($0,1),$LoopOne,$LoopTwo)}}}} {ShowArray2}
+
+/var {saName} {null} {ShowArray}
+/var {saRow} {null} {ShowArray}
+/var {saCol} {null} {ShowArray}
+
+/array {saTEST} {3,3} {DELETE}
+/assign {saTEST} {1,1} {This is row 1, column 1}
+/assign {saTEST} {1,2} {This is row 1, column 2}
+/assign {saTEST} {1,3} {This is row 1, column 3}
+/assign {saTEST} {2,1} {This is row 2, column 1}
+/assign {saTEST} {2,2} {This is row 2, column 2}
+/assign {saTEST} {2,3} {This is row 2, column 3}
+/assign {saTEST} {3,1} {This is row 3, column 1}
+/assign {saTEST} {3,2} {This is row 3, column 2}
+/assign {saTEST} {3,3} {This is row 3, column 3}
+
+
+/showme {@Chr(10)@AnsiBold()@ForeWhite()ShowArray... I've made a few changes to the script (actually a from scratch work). It still has some flaws but a little better than the original "showarray" script i did up. There are a few methods to view info that's stored in an array.@Chr(10)@Chr(10)For Single dimension arrays (row only) do: @ForeYellow()showarray ArrayName Rows @ForeWhite()...this will spew out all rows that you've told it to do from 1-number you put in. If you want to view just 1 row's info, use a negative number: @ForeYellow()showarray ArrayName -n @ForeWhite()where "n" is the number of the row you wish to view. You can use the single dimension call on a 2 dimension array if you want to just see what's in Row x, column 1@Chr(10)@Chr(10)2 dimensional arrays (rows and columns) are called as follows: @ForeYellow()showarray ArrayName Rows Columns @ForeWhite(). Both single and 2 dimension calls can use values less than or equal to the array's settings. Say you have a 5 row, 5 column array, you can use any value for Rows or columns from 1-5 for either call. Exceeding the array's settings will result in a lot of errors from MM.@Chr(10)Because this call works from 1 up, I created another alias to supply a range to display.@Chr(10)@Chr(10)To view a specific range in a 2 dimensional array (this will fart out on a single dimension (row only) array) use the following: @ForeYellow()sarange ArrayName nRow xRow nCol xCol @ForeWhite() Where nRow/nCol is the Minimum row/col number to display, and xRow/Xcol are the maximum row/col to display. You can single out a specific cell "sarange MyArray 3 3 5 5" would display only Row 3/Col 5's info in "MyArray". Doing "sarange MyArray 4 8 2 3" would show row's 4-8 and columns 2 and 3 of those rows.@Chr(10)@Chr(10)I've included a dummy array "saTEST" that is a 3x3 2 dimensional array that you can try out. Just "/killgroup DELETE" to get rid of it.@Chr(10)scroll back to read this, this spew isn't saved (but is in the text file you just loaded up if you want to re-load to review).@Chr(10)@Chr(10)Enjoy, Oma}

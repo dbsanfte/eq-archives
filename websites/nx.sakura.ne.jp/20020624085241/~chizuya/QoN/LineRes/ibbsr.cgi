@@ -1,0 +1,552 @@
+<html><head>
+<STYLE TYPE="text/css">
+<!--
+A:link   { text-decoration:none; }
+A:visited{ text-decoration:none; }
+A:hover  { color:#E88C8E; text-decoration:underline; }
+BODY,TD,TH{ font-family:"ＭＳ Ｐゴシック"; font-size:10pt; }
+
+-->
+</STYLE>
+<!--I-BOARD/LR v2.1-->
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=x-sjis">
+<title>Raid参加者募集BBS</title></head>
+<body text=#202020 link=#8A98F4 vlink=#73CE91 bgcolor=#FFF0DF background="http://nx.sakura.ne.jp/~chizuya/lanys/temporary/images/main_bg.jpeg">
+<!--ヘッダ広告タグ挿入位置▽-->
+
+<!--△ここまで-->
+<center>
+<font color=#749FF1 face="Times New Roman" size=6>Raid参加者募集BBS</font>
+<hr width=90%>
+□<a href="http://nx.sakura.ne.jp/~chizuya/lanys/temporary/forum/wwwforum.cgi?id=1&az=newsview"> MENU</a>　
+□<a href="./ibbsr.cgi?mode=man"> MANUAL</a>　
+□<a href="./rsrch.cgi"> SEARCH</a>
+
+<hr width=80%><table><tr><td>
+<small>
+■ 削除キーを設定することによって、記事の編集,削除ができます。<br>
+■ 追記,変更が必要な場合は左下の編集,削除フォームにアクセスしてください。<br>
+■ Primaryにチェックが入っていない場合はClass名がカッコに囲まれて表示されます。
+</small>
+
+
+</td></tr></table><hr width=80%>
+<form action="./ibbsr.cgi" method="POST">
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=0>
+<table>
+<tr><td bgcolor=#582c2c><Font color=#FFFFFF>Name</Font></td>
+<td>/<input type=text name="name" value="" size=25></td>
+<td bgcolor=#582c2c><Font color=#FFFFFF>E-Mail</Font></td>
+<td>/<input type=text name="email" value="" size=25></td></tr>
+<tr><td bgcolor=#582c2c><Font color=#FFFFFF>Title</Font></td><td>/<input type=text name="d_may" size=25></td>
+<td bgcolor=#582c2c><Font color=#FFFFFF>削除キー</Font></td><td>/<input type=password name=delkey value="" size=8>
+<small>(半角8文字以内)</small>
+<tr><td colspan=4 bgcolor=#582c2c><Font color=#FFFFFF>Comment/ <small>(適当に改行を入れて下さい)</Font></small><br>
+<textarea name="comment" rows=6 cols=70 wrap=soft></textarea></td></tr>
+<tr><td bgcolor=#582c2c><Font color=#FFFFFF>URL</Font></td>
+<td colspan=3>/<input type=text name="url" value="http://" size=65></td></tr>
+<tr><td bgcolor=#582c2c><Font color=#FFFFFF>Color</Font></td><td colspan=3>/
+<input type=radio name=font value="#808080" checked><font color=#808080>■</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>■</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>■</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>■</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>■</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>■</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>■</font>
+</td></tr><tr><td></td><td></td><td colspan=2><input type=submit value="送信する">
+<input type=reset value="リセット"></td></tr></table></form><hr>
+<table width=80% bgcolor=#FFFFFF border=1 bordercolor=#582c2c><tr><td>
+<table width=100%><tr><th bgcolor=#582c2c colspan=2>
+<font color=#FFFFFF><small>842</small>/ PoFツア～！</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Necolove<br>
+・投稿日/ 2002/06/18(Tue) 19:04:51</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">え～Epicも残り後、PoFでItemを渡すだけとなりました。<br>なのでPoFをClearしてEpicを終わらせたいので、Helpをお願いします。<br><br>６/２０（木）21:30～集合場所PoF前（Feerrot）<br>基本的にOpenです、人数に制限はありません、Lvは４７以上でお願いします。<br>本当は週末にやりたかったけど土/日は帰りが<br>23:00くらいになるので平日にしました。</font></td></tr></table></ul><br>
+<ul><hr color=#582c2c size=1>
+<table cellpadding=4>
+<tr><td align=center nowrap><small>参加?</small></td><td>Class [LV]</td><td>Name</td><td>Player</td><td align=center>コメント</td><td nowrap>date</td><td align=right nowrap><small>記事No</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Monk [60]</td><td>Qon</td><td>Sneakfist</td><td><font color="#808080">参加です</font></td><td><small>2002/06/19(Wed) 18:57:38</small></td><td align=right><small>NO.850</small></td></tr>
+<tr><td align=center>○</td><td>Monk [50]</td><td>sankon</td><td><a href=mailto:sankon@hokushin.hal.ne.jp>sankon</a></td><td><font color="#808080">いきます。</font></td><td><small>2002/06/19(Wed) 17:28:49</small></td><td align=right><small>NO.849</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Bard [60]</td><td>Necolove</td><td>QoN</td><td><font color="#808080">もちろん参加～！</font></td><td><small>2002/06/19(Wed) 00:39:32</small></td><td align=right><small>NO.846</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Kura</td><td>QoN</td><td><font color="#808080">参加～</font></td><td><small>2002/06/19(Wed) 14:18:16</small></td><td align=right><small>NO.848</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Necolove</td><td>QoN</td><td><font color="#808080">ウ～ンBardで投稿してしまった,,,削除キー忘れたので放置で,,,,,</font></td><td><small>2002/06/19(Wed) 00:43:43</small></td><td align=right><small>NO.847</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Ranger [55]</td><td>Yulian</td><td>QoN</td><td><font color="#808080">ToVのみてなかった・・・。今日はいける・・はず！</font></td><td><small>2002/06/20(Thu) 10:00:29</small></td><td align=right><small>NO.852</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Shadow Knight [57]</td><td>QoN</td><td>Gyooza</td><td><font color="#6AB43F">参加</font></td><td><small>2002/06/18(Tue) 19:38:04</small></td><td align=right><small>NO.843</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Cleric [60]</td><td>TakaT</td><td>TakaT</td><td><font color="#808080">Double TakaT sanka~   見落とすとこだったのは内緒ｗ</font></td><td><small>2002/06/19(Wed) 19:15:35</small></td><td align=right><small>NO.851</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Druid [60]</td><td>Mikages</td><td>QoN</td><td><font color="#E199FD">う、週末かと思って確認したら終わってる(激汗</font></td><td><small>2002/06/22(Sat) 08:36:39</small></td><td align=right><small>NO.853</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Magician [60]</td><td>Sol</td><td>QoN</td><td><font color="#40A495">参戦</font></td><td><small>2002/06/18(Tue) 23:00:10</small></td><td align=right><small>NO.844</small></td></tr>
+<tr><td align=center>○</td><td>Magician [55]</td><td>Hilo</td><td>QoN</td><td><font color="#6AB43F">N/A</font></td><td><small>2002/06/19(Wed) 00:10:06</small></td><td align=right><small>NO.845</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td colspan=6 align=left>総参加人数 <font color=red>5</font></td></tr>
+<tr><td colspan=6 align=left>総参加char数 <font color=red>11</font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Melee <Font color=red>7</Font></font></td><td colspan=4 align=left>War:<Font color=red>0</Font>,Mnk:<Font color=red>2</Font>,Rog:<Font color=red>0</Font>,Brd:<Font color=red>1</Font>,Pal:<Font color=red>2</Font>,Rng:<Font color=red>1</Font>,Shd:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Healer <Font color=red>2</Font></font></td><td colspan=4 align=left>Clr:<Font color=red>1</Font>,Shm:<Font color=red>0</Font>,Dru:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Caster <Font color=red>2</Font></font></td><td colspan=4 align=left>Wiz:<Font color=red>0</Font>,Enc:<Font color=red>0</Font>,Nec:<Font color=red>0</Font>,Mag:<Font color=red>2</Font></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+</table>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.842 に参加表明をする△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=842>
+Name <input type=text name="name" value="" size=10>/
+FontColor<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>
+<br>
+E-Mail<input type=text name=email size=10 value="">/
+コメント<input type=text name="comment" size=33>
+/削除キー<input type=password name="delkey" size=4 value=""><br>
+CharName <input type=text name="charname" size=10 value="">
+/Level(半角数字) <input type=text name="lvl" size=2>
+/Class <select name=class>
+<option value="Bard">Bard
+<option value="Cleric">Cleric
+<option value="Druid">Druid
+<option value="Enchanter">Enchanter
+<option value="Magician">Magician
+<option value="Monk">Monk
+<option value="Necromancer">Necromancer
+<option value="Paladin">Paladin
+<option value="Ranger">Ranger
+<option value="Rogue">Rogue
+<option value="Shadow Knight">Shadow Knight
+<option value="Shaman">Shaman
+<option value="Warrior">Warrior
+<option value="Wizard">Wizard
+</select>
+
+/Primary<input type=checkbox name=prim value=1st checked><br>
+参加ステータス<small><input type=radio name=join value=○ checked>参加(○) <input type=radio name=join value=△>参加予定、ひょっとしたら無理かも…(△)</small>
+</td></tr>
+<tr><td align=center>
+<input type=submit value=" 参加 ">
+<input type=reset value="リセット">
+</td></tr>
+</table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#FFFFFF border=1 bordercolor=#582c2c><tr><td>
+<table width=100%><tr><th bgcolor=#582c2c colspan=2>
+<font color=#FFFFFF><small>820</small>/ 6月のToV ※訂正</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Mikages<br>
+・投稿日/ 2002/06/04(Tue) 00:32:33</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">※すみません、6/9は日本vsロシア があるの忘れてましたｗ；<br>　流石に土曜だけってのは寂しいので予定を1週間延ばします(^^;<br>　もう一度予定を確認して、だめそうなら修正のカキコもよろ；<br><br>6/15(土),16(日)　ToV Raid(HoT)<br><br>　最近の自分及び周りの状況を考えて、2日間の開催です(^^;<br><br>5/15(土) 21:00 ToV Entrance集合 26:00終了予定<br>5/16(日) 20:30～24:30<br><br>参加条件:HealerはLv54以上他はLv55以上、SvF,C100以上(120以上推奨)<br>　　　　 CoV FacがNonKoSであること(KoSな人は要相談)<br>　　　　 Expが減るのを気にしない方:)<br>　　　　 SCする事が十二分に考えられるため、Tankは必ずSSにBindすること。<br>　　　　 CasterはToV前でBind。</font></td></tr></table></ul><br>
+<ul><hr color=#582c2c size=1>
+<table cellpadding=4>
+<tr><td align=center nowrap><small>参加?</small></td><td>Class [LV]</td><td>Name</td><td>Player</td><td align=center>コメント</td><td nowrap>date</td><td align=right nowrap><small>記事No</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>×</td><td>Warrior [60]</td><td>Okame</td><td>Okame</td><td><font color="#F0AC0F">日曜もいけないかもしれません。</font></td><td><small>2002/06/04(Tue) 10:53:23</small></td><td align=right><small>NO.825</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Monk [59]</td><td>Snakefist</td><td>QoN</td><td><font color="#808080">土曜=不参加　日曜=遅刻ですすいません</font></td><td><small>2002/06/04(Tue) 12:13:22</small></td><td align=right><small>NO.826</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Rogue [60]</td><td>Juuza</td><td>QoN</td><td><font color="#808080">Nomal+RoKのCD-ROMはどこだ(;´Д`)</font></td><td><small>2002/06/16(Sun) 09:36:35</small></td><td align=right><small>NO.841</small></td></tr>
+<tr><td align=center>○</td><td>Rogue [60]</td><td>Juuza</td><td>QoN</td><td><font color="#808080">再インストールしなきゃ（謎</font></td><td><small>2002/06/08(Sat) 11:01:24</small></td><td align=right><small>NO.832</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Necolove</td><td>QoN</td><td><font color="#808080">土曜＝遅刻　日曜＝遅刻　で参加～。</font></td><td><small>2002/06/04(Tue) 01:32:50</small></td><td align=right><small>NO.822</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Kura</td><td>QoN</td><td><font color="#808080">1週間延びたのならフル参加で</font></td><td><small>2002/06/05(Wed) 14:31:22</small></td><td align=right><small>NO.830</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Hakaider</td><td>QoN</td><td><font color="#808080">N/A</font></td><td><small>2002/06/15(Sat) 12:08:48</small></td><td align=right><small>NO.840</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Ranger [58]</td><td>Ephemera</td><td>Freelance</td><td><font color="#40A495">仕事忙しくなるので不参加。そもそもEQいま休止中みたいなもんだけど。</font></td><td><small>2002/06/08(Sat) 12:27:00</small></td><td align=right><small>NO.833</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Shadow Knight [57]</td><td>QoN</td><td>Gyooza</td><td><font color="#6AB43F">参加　土曜は早落ちするかも</font></td><td><small>2002/06/04(Tue) 18:04:48</small></td><td align=right><small>NO.827</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Cleric [60]</td><td>TakaT</td><td>TakaT</td><td><font color="#808080">くぅ＞＜　　土曜日だけになりそうです</font></td><td><small>2002/06/12(Wed) 20:46:00</small></td><td align=right><small>NO.836</small></td></tr>
+<tr><td align=center>○</td><td>Cleric [59]</td><td>Tena</td><td>Tena</td><td><font color="#808080">full参加でｗ</font></td><td><small>2002/06/13(Thu) 16:09:29</small></td><td align=right><small>NO.837</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Druid [60]</td><td>Mikages</td><td>QoN</td><td><font color="#E199FD">GoGo~</font></td><td><small>2002/06/11(Tue) 16:04:31</small></td><td align=right><small>NO.835</small></td></tr>
+<tr><td align=center>○</td><td>Druid [60]</td><td>Eiha</td><td>SSS</td><td><font color="#808080">両日参加予定</font></td><td><small>2002/06/13(Thu) 21:20:15</small></td><td align=right><small>NO.838</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Wizard [56]</td><td>Utinuuyanya</td><td>QoN</td><td><font color="#808080">初参加</font></td><td><small>2002/06/09(Sun) 00:46:11</small></td><td align=right><small>NO.834</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Enchanter [60]</td><td>Nahaha</td><td>QoN</td><td><font color="#6AB43F">みんなにまた会いたいな</font></td><td><small>2002/06/07(Fri) 10:07:39</small></td><td align=right><small>NO.831</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Magician [60]</td><td>QoN</td><td>Solfeel</td><td><font color="#40A495">参戦</font></td><td><small>2002/06/04(Tue) 19:52:29</small></td><td align=right><small>NO.829</small></td></tr>
+<tr><td align=center>○</td><td>Magician [55]</td><td>Hilo</td><td>QoN</td><td><font color="#6AB43F">１５日：不参加　１６日：参加</font></td><td><small>2002/06/14(Fri) 22:36:06</small></td><td align=right><small>NO.839</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td colspan=6 align=left>総参加人数 <font color=red>7</font></td></tr>
+<tr><td colspan=6 align=left>総参加char数 <font color=red>16</font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Melee <Font color=red>8</Font></font></td><td colspan=4 align=left>War:<Font color=red>0</Font>,Mnk:<Font color=red>1</Font>,Rog:<Font color=red>2</Font>,Brd:<Font color=red>0</Font>,Pal:<Font color=red>3</Font>,Rng:<Font color=red>1</Font>,Shd:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Healer <Font color=red>4</Font></font></td><td colspan=4 align=left>Clr:<Font color=red>2</Font>,Shm:<Font color=red>0</Font>,Dru:<Font color=red>2</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Caster <Font color=red>4</Font></font></td><td colspan=4 align=left>Wiz:<Font color=red>1</Font>,Enc:<Font color=red>1</Font>,Nec:<Font color=red>0</Font>,Mag:<Font color=red>2</Font></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+</table>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.820 に参加表明をする△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=820>
+Name <input type=text name="name" value="" size=10>/
+FontColor<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>
+<br>
+E-Mail<input type=text name=email size=10 value="">/
+コメント<input type=text name="comment" size=33>
+/削除キー<input type=password name="delkey" size=4 value=""><br>
+CharName <input type=text name="charname" size=10 value="">
+/Level(半角数字) <input type=text name="lvl" size=2>
+/Class <select name=class>
+<option value="Bard">Bard
+<option value="Cleric">Cleric
+<option value="Druid">Druid
+<option value="Enchanter">Enchanter
+<option value="Magician">Magician
+<option value="Monk">Monk
+<option value="Necromancer">Necromancer
+<option value="Paladin">Paladin
+<option value="Ranger">Ranger
+<option value="Rogue">Rogue
+<option value="Shadow Knight">Shadow Knight
+<option value="Shaman">Shaman
+<option value="Warrior">Warrior
+<option value="Wizard">Wizard
+</select>
+
+/Primary<input type=checkbox name=prim value=1st checked><br>
+参加ステータス<small><input type=radio name=join value=○ checked>参加(○) <input type=radio name=join value=△>参加予定、ひょっとしたら無理かも…(△)</small>
+</td></tr>
+<tr><td align=center>
+<input type=submit value=" 参加 ">
+<input type=reset value="リセット">
+</td></tr>
+</table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#FFFFFF border=1 bordercolor=#582c2c><tr><td>
+<table width=100%><tr><th bgcolor=#582c2c colspan=2>
+<font color=#FFFFFF><small>817</small>/ Hole逝くよ～。</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Necolove<br>
+・投稿日/ 2002/06/04(Tue) 00:22:32</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">６/４（火）TheHole（PAL,EPIC)ツア～！<br><br>目的はPalEpicのKeeperOfTombをKillする事です。<br>もしKoTがいなかったり、早く終わって暇になったら他のNamedも見てみましょ。<br>参加条件は特に無いけど４０以下は辛いかな？<br>基本的にOpenですが２パほどで行けそうなので、まぁよろ～。<br>（集まらないと思うけど30人とかヤメテネ　笑<br><br><br></font></td></tr></table></ul><br>
+<ul><hr color=#582c2c size=1>
+<table cellpadding=4>
+<tr><td align=center nowrap><small>参加?</small></td><td>Class [LV]</td><td>Name</td><td>Player</td><td align=center>コメント</td><td nowrap>date</td><td align=right nowrap><small>記事No</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Monk [47]</td><td>sankon</td><td>QoN</td><td><font color="#808080">お邪魔じゃないなら参加させて下さい</font></td><td><small>2002/06/04(Tue) 02:14:57</small></td><td align=right><small>NO.824</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>QoN</td><td>Necolove</td><td><font color="#808080">ごめん時間書き忘れた～２１時です。　Nahahaさんは、もしCoHあればそれでPls</font></td><td><small>2002/06/04(Tue) 01:31:11</small></td><td align=right><small>NO.821</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Kura</td><td>QoN</td><td><font color="#808080">参加します。Rogでもいいけど</font></td><td><small>2002/06/04(Tue) 02:08:11</small></td><td align=right><small>NO.823</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Shadow Knight [57]</td><td>Gyooza</td><td>QoN</td><td><font color="#6AB43F">参加</font></td><td><small>2002/06/04(Tue) 18:06:35</small></td><td align=right><small>NO.828</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Druid [60]</td><td>Mikages</td><td>QoN</td><td><font color="#E199FD">時間書いてないけど、21:00からだよね？ 参加:D</font></td><td><small>2002/06/04(Tue) 00:26:29</small></td><td align=right><small>NO.818</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Enchanter [60]</td><td>Nahaha</td><td>QoN</td><td><font color="#6AB43F">ごめん火曜日は現在用事が入っていて23か24時以降でないとPOPできないと思う</font></td><td><small>2002/06/04(Tue) 00:32:04</small></td><td align=right><small>NO.819</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td colspan=6 align=left>総参加人数 <font color=red>2</font></td></tr>
+<tr><td colspan=6 align=left>総参加char数 <font color=red>6</font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Melee <Font color=red>4</Font></font></td><td colspan=4 align=left>War:<Font color=red>0</Font>,Mnk:<Font color=red>1</Font>,Rog:<Font color=red>0</Font>,Brd:<Font color=red>0</Font>,Pal:<Font color=red>2</Font>,Rng:<Font color=red>0</Font>,Shd:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Healer <Font color=red>1</Font></font></td><td colspan=4 align=left>Clr:<Font color=red>0</Font>,Shm:<Font color=red>0</Font>,Dru:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Caster <Font color=red>1</Font></font></td><td colspan=4 align=left>Wiz:<Font color=red>0</Font>,Enc:<Font color=red>1</Font>,Nec:<Font color=red>0</Font>,Mag:<Font color=red>0</Font></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+</table>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.817 に参加表明をする△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=817>
+Name <input type=text name="name" value="" size=10>/
+FontColor<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>
+<br>
+E-Mail<input type=text name=email size=10 value="">/
+コメント<input type=text name="comment" size=33>
+/削除キー<input type=password name="delkey" size=4 value=""><br>
+CharName <input type=text name="charname" size=10 value="">
+/Level(半角数字) <input type=text name="lvl" size=2>
+/Class <select name=class>
+<option value="Bard">Bard
+<option value="Cleric">Cleric
+<option value="Druid">Druid
+<option value="Enchanter">Enchanter
+<option value="Magician">Magician
+<option value="Monk">Monk
+<option value="Necromancer">Necromancer
+<option value="Paladin">Paladin
+<option value="Ranger">Ranger
+<option value="Rogue">Rogue
+<option value="Shadow Knight">Shadow Knight
+<option value="Shaman">Shaman
+<option value="Warrior">Warrior
+<option value="Wizard">Wizard
+</select>
+
+/Primary<input type=checkbox name=prim value=1st checked><br>
+参加ステータス<small><input type=radio name=join value=○ checked>参加(○) <input type=radio name=join value=△>参加予定、ひょっとしたら無理かも…(△)</small>
+</td></tr>
+<tr><td align=center>
+<input type=submit value=" 参加 ">
+<input type=reset value="リセット">
+</td></tr>
+</table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#FFFFFF border=1 bordercolor=#582c2c><tr><td>
+<table width=100%><tr><th bgcolor=#582c2c colspan=2>
+<font color=#FFFFFF><small>794</small>/ 5月のToV</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Mikages<br>
+・投稿日/ 2002/05/09(Thu) 00:09:14</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">5/10(金)～12(日)　ToV Raid(HoT)<br><br>5/10(金) 22:00ToV Eantrance集合～25:00<br>5/11(土) 20:30～戦力無くなるまで<br>5/12(日) 20:30～24:30<br><br>参加条件:HealerはLv54以上他はLv55以上、SvF,C100以上(120以上推奨)<br>　　　　 CoV FacがNonKoSであること(KoSな人は要相談)<br>　　　　 Expが減るのを気にしない方:)<br>　　　　 SCする事が十二分に考えられるため、Tankは必ずSSにBindすること。<br>　　　　 CasterはToV前でBind。<br><br>※個人的急用が入ったため、初日の時間変更です。<br>　急な変更申し訳ありませんが、ご了承願います。</font></td></tr></table></ul><br>
+<ul><hr color=#582c2c size=1>
+<table cellpadding=4>
+<tr><td align=center nowrap><small>参加?</small></td><td>Class [LV]</td><td>Name</td><td>Player</td><td align=center>コメント</td><td nowrap>date</td><td align=right nowrap><small>記事No</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Warrior [60]</td><td>Okame</td><td>Okame</td><td><font color="#F0AC0F">日曜くらい行ければ。家にいればPop</font></td><td><small>2002/05/10(Fri) 02:58:13</small></td><td align=right><small>NO.808</small></td></tr>
+<tr><td align=center>○</td><td>Warrior [55]</td><td>QoN</td><td>Natsumasa</td><td><font color="#8C98E8">FULL参加！（たぶんｗ　～あ、あとＳＳｋｙｅもってないので、だれかKyeとるの手伝ってくださいな、もちろんＫｉｌｌの方向で</font></td><td><small>2002/05/09(Thu) 16:41:19</small></td><td align=right><small>NO.802</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Monk [59]</td><td>QoN</td><td>Snakefist</td><td><font color="#808080"> 参加します</font></td><td><small>2002/05/10(Fri) 18:46:50</small></td><td align=right><small>NO.812</small></td></tr>
+<tr><td align=center>○</td><td>Monk [55]</td><td>Rogo</td><td>sss</td><td><font color="#808080">日曜日だけお願いします</font></td><td><small>2002/05/12(Sun) 18:55:52</small></td><td align=right><small>NO.816</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Rogue [60]</td><td>Juuza</td><td>QoN</td><td><font color="#808080">金、土はOKかな…多分（ｗ</font></td><td><small>2002/05/10(Fri) 18:29:13</small></td><td align=right><small>NO.811</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Hakaider</td><td>QoN</td><td><font color="#808080">参加。</font></td><td><small>2002/05/09(Thu) 21:41:02</small></td><td align=right><small>NO.806</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Necolove</td><td>QoN</td><td><font color="#808080">賛歌～（金OK　土、日遅刻で～。</font></td><td><small>2002/05/09(Thu) 20:22:56</small></td><td align=right><small>NO.805</small></td></tr>
+<tr><td align=center>×</td><td>Paladin [60]</td><td>Esan</td><td>QoN</td><td><font color="#808080">急用が出来たので、日曜日は不参加です＞＜</font></td><td><small>2002/05/10(Fri) 12:06:48</small></td><td align=right><small>NO.810</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Kura</td><td>QoN</td><td><font color="#808080">金曜日は遅刻ｏｒ不参加の可能性ありです</font></td><td><small>2002/05/09(Thu) 01:25:36</small></td><td align=right><small>NO.799</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Ranger [57]</td><td>Ephemera</td><td>Freelance</td><td><font color="#8C98E8">全日予定。ふと思ったんだけど、QoNのToVでChain Lootしたことない気がします･･･毎回参加してるのに(笑</font></td><td><small>2002/05/09(Thu) 12:42:29</small></td><td align=right><small>NO.801</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Shadow Knight [57]</td><td>Gyooza</td><td>QoN</td><td><font color="#6AB43F">参加</font></td><td><small>2002/05/09(Thu) 18:11:13</small></td><td align=right><small>NO.803</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Cleric [60]</td><td>TakaT</td><td>TakaT</td><td><font color="#808080">普通に　いけると思いますが　最近忙しいので急用はいったらごめんね</font></td><td><small>2002/05/09(Thu) 00:52:12</small></td><td align=right><small>NO.797</small></td></tr>
+<tr><td align=center>△</td><td>Cleric [58]</td><td>Tena</td><td>Tena</td><td><font color="#808080">KOS解除したし少しは動けるようにｗ金曜は、遅刻します</font></td><td><small>2002/05/09(Thu) 00:56:11</small></td><td align=right><small>NO.798</small></td></tr>
+<tr><td align=center>○</td><td>Cleric [57]</td><td>Gouken</td><td>SSS</td><td><font color="#8C98E8">日曜のみ参加希望</font></td><td><small>2002/05/11(Sat) 12:01:29</small></td><td align=right><small>NO.814</small></td></tr>
+<tr><td align=center>○</td><td>Cleric [56]</td><td>Doggy</td><td>QoN</td><td><font color="#808080">たぶん大丈夫</font></td><td><small>2002/05/09(Thu) 20:00:52</small></td><td align=right><small>NO.804</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Druid [60]</td><td>Mikages</td><td>QoN</td><td><font color="#E199FD">やヴぁい、金曜遅れそう、、、</font></td><td><small>2002/05/09(Thu) 23:46:42</small></td><td align=right><small>NO.807</small></td></tr>
+<tr><td align=center>○</td><td>Druid [60]</td><td>Eiha</td><td>SSS</td><td><font color="#808080">告知に気付くのが…。日曜日のみの参加希望です。</font></td><td><small>2002/05/11(Sat) 15:11:53</small></td><td align=right><small>NO.815</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Enchanter [60]</td><td>Nahaha</td><td>QoN</td><td><font color="#6AB43F">金曜日遅刻　日曜日微妙</font></td><td><small>2002/05/10(Fri) 08:21:36</small></td><td align=right><small>NO.809</small></td></tr>
+<tr><td align=center>○</td><td>Enchanter [57]</td><td>Ebioji</td><td>QoN</td><td><font color="#FD9F9D">金曜以外遅刻</font></td><td><small>2002/05/09(Thu) 00:47:20</small></td><td align=right><small>NO.796</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Magician [60]</td><td>QoN</td><td>Solfeel</td><td><font color="#40A495">参加です。</font></td><td><small>2002/05/09(Thu) 09:02:53</small></td><td align=right><small>NO.800</small></td></tr>
+<tr><td align=center>○</td><td>Magician [55]</td><td>Hilo</td><td>QoN</td><td><font color="#6AB43F">参加</font></td><td><small>2002/05/09(Thu) 00:42:39</small></td><td align=right><small>NO.795</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td colspan=6 align=left>総参加人数 <font color=red>10</font></td></tr>
+<tr><td colspan=6 align=left>総参加char数 <font color=red>20</font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Melee <Font color=red>10</Font></font></td><td colspan=4 align=left>War:<Font color=red>2</Font>,Mnk:<Font color=red>2</Font>,Rog:<Font color=red>1</Font>,Brd:<Font color=red>0</Font>,Pal:<Font color=red>3</Font>,Rng:<Font color=red>1</Font>,Shd:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Healer <Font color=red>6</Font></font></td><td colspan=4 align=left>Clr:<Font color=red>4</Font>,Shm:<Font color=red>0</Font>,Dru:<Font color=red>2</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Caster <Font color=red>4</Font></font></td><td colspan=4 align=left>Wiz:<Font color=red>0</Font>,Enc:<Font color=red>2</Font>,Nec:<Font color=red>0</Font>,Mag:<Font color=red>2</Font></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+</table>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.794 に参加表明をする△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=794>
+Name <input type=text name="name" value="" size=10>/
+FontColor<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>
+<br>
+E-Mail<input type=text name=email size=10 value="">/
+コメント<input type=text name="comment" size=33>
+/削除キー<input type=password name="delkey" size=4 value=""><br>
+CharName <input type=text name="charname" size=10 value="">
+/Level(半角数字) <input type=text name="lvl" size=2>
+/Class <select name=class>
+<option value="Bard">Bard
+<option value="Cleric">Cleric
+<option value="Druid">Druid
+<option value="Enchanter">Enchanter
+<option value="Magician">Magician
+<option value="Monk">Monk
+<option value="Necromancer">Necromancer
+<option value="Paladin">Paladin
+<option value="Ranger">Ranger
+<option value="Rogue">Rogue
+<option value="Shadow Knight">Shadow Knight
+<option value="Shaman">Shaman
+<option value="Warrior">Warrior
+<option value="Wizard">Wizard
+</select>
+
+/Primary<input type=checkbox name=prim value=1st checked><br>
+参加ステータス<small><input type=radio name=join value=○ checked>参加(○) <input type=radio name=join value=△>参加予定、ひょっとしたら無理かも…(△)</small>
+</td></tr>
+<tr><td align=center>
+<input type=submit value=" 参加 ">
+<input type=reset value="リセット">
+</td></tr>
+</table><hr width=80% size=5></form><br>
+<table width=80% bgcolor=#FFFFFF border=1 bordercolor=#582c2c><tr><td>
+<table width=100%><tr><th bgcolor=#582c2c colspan=2>
+<font color=#FFFFFF><small>770</small>/ ToV</font></th></tr>
+<tr><td width=40% nowrap>
+・投稿者/ Mikages<br>
+・投稿日/ 2002/04/10(Wed) 00:15:22</td>
+<td width=60%>
+<div align=right></div></td></tr></table>
+<ul><table><tr><td>
+<td width=37></td>
+<td><font color="#808080">4/12(金)～14(日)　ToV Raid(HoT)<br><br>4/12(金) 21:00ToV Eantrance集合～25:00<br>4/13(土) 20:30～戦力無くなるまで<br>4/14(日) 20:30～24:30<br><br>参加条件:HealerはLv54以上他はLv55以上、SvF,C100以上(120以上推奨)<br>　　　　 CoV FacがNonKoSであること(KoSな人は要相談)<br>　　　　 Expが減るのを気にしない方:)<br>　　　　 SCする事が十二分に考えられるため、Tankは必ずSSにBindすること。<br>　　　　 CasterはToV前でBind。<br></font></td></tr></table></ul><br>
+<ul><hr color=#582c2c size=1>
+<table cellpadding=4>
+<tr><td align=center nowrap><small>参加?</small></td><td>Class [LV]</td><td>Name</td><td>Player</td><td align=center>コメント</td><td nowrap>date</td><td align=right nowrap><small>記事No</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Warrior [60]</td><td>Okame</td><td>Okame</td><td><font color="#F0AC0F">参加できそうにありません。次のPopも未定。申し訳ない</font></td><td><small>2002/04/11(Thu) 00:50:44</small></td><td align=right><small>NO.781</small></td></tr>
+<tr><td align=center>△</td><td>Warrior [58]</td><td>Darkgem</td><td>Ted</td><td><font color="#8C98E8">参加希望。金曜日は遅刻かも。</font></td><td><small>2002/04/12(Fri) 09:59:42</small></td><td align=right><small>NO.788</small></td></tr>
+<tr><td align=center>△</td><td>Warrior [57]</td><td>SSS</td><td>Sakurakosan</td><td><font color="#8C98E8">金曜日は！絶対！にPOP出来ません。(つーか帰れません。)　×だけど土日は参加です。</font></td><td><small>2002/04/11(Thu) 00:28:48</small></td><td align=right><small>NO.780</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Monk [59]</td><td>QoN</td><td>Snakefist</td><td><font color="#808080">参加します</font></td><td><small>2002/04/11(Thu) 07:13:01</small></td><td align=right><small>NO.784</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Rogue [60]</td><td>Juuza</td><td>QoN</td><td><font color="#808080">今日（土）のみ参加で～…日も出来ない事は無いけど早落ち（23:00ぐらい）</font></td><td><small>2002/04/13(Sat) 17:08:18</small></td><td align=right><small>NO.793</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>△</td><td>Paladin [60]</td><td>Necolove</td><td>QoN</td><td><font color="#808080">週末の予定が、まだはっきりしないけど、参加希望。</font></td><td><small>2002/04/10(Wed) 21:34:41</small></td><td align=right><small>NO.779</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>QoN</td><td>Esan</td><td><font color="#808080">土曜日のみっぽい</font></td><td><small>2002/04/11(Thu) 01:34:33</small></td><td align=right><small>NO.782</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Hakaider</td><td>QoN</td><td><font color="#808080">参加。</font></td><td><small>2002/04/10(Wed) 16:58:44</small></td><td align=right><small>NO.776</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [60]</td><td>Kura</td><td>QoN</td><td><font color="#808080">参加します</font></td><td><small>2002/04/10(Wed) 18:53:19</small></td><td align=right><small>NO.778</small></td></tr>
+<tr><td align=center>○</td><td>Paladin [57]</td><td>Tomokun</td><td>QoN</td><td><font color="#808080">参加です。１２日金曜日は遅刻</font></td><td><small>2002/04/10(Wed) 12:10:12</small></td><td align=right><small>NO.773</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Ranger [57]</td><td>Ephemera</td><td>TED</td><td><font color="#40A495">ALL参加。しかしその中の１日は飲み会ぽいので遅刻します</font></td><td><small>2002/04/10(Wed) 18:47:02</small></td><td align=right><small>NO.777</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Shadow Knight [56]</td><td>Gyooza</td><td>QoN</td><td><font color="#6AB43F">参加</font></td><td><small>2002/04/10(Wed) 01:13:32</small></td><td align=right><small>NO.771</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Cleric [57]</td><td>Tena</td><td>Tena</td><td><font color="#808080">参加ですけど、金曜はち遅れるので遅れたら無視でｗ</font></td><td><small>2002/04/12(Fri) 09:11:23</small></td><td align=right><small>NO.787</small></td></tr>
+<tr><td align=center>○</td><td>Cleric [56]</td><td>Doggybag</td><td>QoN</td><td><font color="#808080">Qアイテムいつ交換しよう・・・</font></td><td><small>2002/04/10(Wed) 16:31:46</small></td><td align=right><small>NO.775</small></td></tr>
+<tr><td align=center>○</td><td>Cleric [56]</td><td>Gouken</td><td>SSS</td><td><font color="#8C98E8">三日連続は結構きつい今日この頃。俺ももうロートルか(笑)</font></td><td><small>2002/04/10(Wed) 14:36:31</small></td><td align=right><small>NO.774</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Druid [60]</td><td>Mikages</td><td>QoN</td><td><font color="#E199FD">umm 熱い予感ｗ；</font></td><td><small>2002/04/11(Thu) 02:07:47</small></td><td align=right><small>NO.783</small></td></tr>
+<tr><td align=center>○</td><td>Druid [59]</td><td>Eiha</td><td>SSS</td><td><font color="#808080">３日とも参加予定。</font></td><td><small>2002/04/11(Thu) 21:53:25</small></td><td align=right><small>NO.786</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Enchanter [60]</td><td>Nahaha</td><td>QoN</td><td><font color="#6AB43F">12日遅刻　13日参加　14日不参加</font></td><td><small>2002/04/12(Fri) 22:57:45</small></td><td align=right><small>NO.791</small></td></tr>
+<tr><td align=center>○</td><td>Enchanter [57]</td><td>Ebioji</td><td>QoN</td><td><font color="#FD9F9D">金曜飲み会に誘われたため、POPできる可能性5%以下に。一応向こうにEQのCD-ROM持ち込みますが（謎</font></td><td><small>2002/04/12(Fri) 17:02:48</small></td><td align=right><small>NO.789</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td align=center>○</td><td>Magician [60]</td><td>QoN</td><td>Solfeel</td><td><font color="#40A495">金曜日は遅刻します。</font></td><td><small>2002/04/11(Thu) 21:32:44</small></td><td align=right><small>NO.785</small></td></tr>
+<tr><td align=center>○</td><td>Magician [55]</td><td>Hilo</td><td>QoN</td><td><font color="#6AB43F">土曜日のみ参加。でも遅れるかも</font></td><td><small>2002/04/13(Sat) 11:03:24</small></td><td align=right><small>NO.792</small></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+<tr><td colspan=6 align=left>総参加人数 <font color=red>10</font></td></tr>
+<tr><td colspan=6 align=left>総参加char数 <font color=red>21</font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Melee <Font color=red>12</Font></font></td><td colspan=4 align=left>War:<Font color=red>3</Font>,Mnk:<Font color=red>1</Font>,Rog:<Font color=red>1</Font>,Brd:<Font color=red>0</Font>,Pal:<Font color=red>5</Font>,Rng:<Font color=red>1</Font>,Shd:<Font color=red>1</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Healer <Font color=red>5</Font></font></td><td colspan=4 align=left>Clr:<Font color=red>3</Font>,Shm:<Font color=red>0</Font>,Dru:<Font color=red>2</Font></td></tr>
+<tr><td colspan=2 align=center><font color=magenta>Caster <Font color=red>4</Font></font></td><td colspan=4 align=left>Wiz:<Font color=red>0</Font>,Enc:<Font color=red>2</Font>,Nec:<Font color=red>0</Font>,Mag:<Font color=red>2</Font></td></tr>
+<tr><td colspan=6 align=center>------------------</td></tr>
+</table>
+</ul><br></td></tr></table><form action=./ibbsr.cgi method=POST>
+△NO.770 に参加表明をする△<table><tr><td>
+<input type=hidden name=mode value=wri>
+<input type=hidden name=type value=770>
+Name <input type=text name="name" value="" size=10>/
+FontColor<small>
+<input type=radio name=font value="#808080" checked><font color=#808080>●</font>
+<input type=radio name=font value="#E199FD"><font color=#E199FD>●</font>
+<input type=radio name=font value="#8C98E8"><font color=#8C98E8>●</font>
+<input type=radio name=font value="#FD9F9D"><font color=#FD9F9D>●</font>
+<input type=radio name=font value="#F0AC0F"><font color=#F0AC0F>●</font>
+<input type=radio name=font value="#6AB43F"><font color=#6AB43F>●</font>
+<input type=radio name=font value="#40A495"><font color=#40A495>●</font>
+</small>
+<br>
+E-Mail<input type=text name=email size=10 value="">/
+コメント<input type=text name="comment" size=33>
+/削除キー<input type=password name="delkey" size=4 value=""><br>
+CharName <input type=text name="charname" size=10 value="">
+/Level(半角数字) <input type=text name="lvl" size=2>
+/Class <select name=class>
+<option value="Bard">Bard
+<option value="Cleric">Cleric
+<option value="Druid">Druid
+<option value="Enchanter">Enchanter
+<option value="Magician">Magician
+<option value="Monk">Monk
+<option value="Necromancer">Necromancer
+<option value="Paladin">Paladin
+<option value="Ranger">Ranger
+<option value="Rogue">Rogue
+<option value="Shadow Knight">Shadow Knight
+<option value="Shaman">Shaman
+<option value="Warrior">Warrior
+<option value="Wizard">Wizard
+</select>
+
+/Primary<input type=checkbox name=prim value=1st checked><br>
+参加ステータス<small><input type=radio name=join value=○ checked>参加(○) <input type=radio name=join value=△>参加予定、ひょっとしたら無理かも…(△)</small>
+</td></tr>
+<tr><td align=center>
+<input type=submit value=" 参加 ">
+<input type=reset value="リセット">
+</td></tr>
+</table><hr width=80% size=5></form><br>
+<table border=0><tr>
+<td><form method="post" action="./ibbsr.cgi">
+<input type=hidden name=page value="5">
+<input type=submit value="次の記事5件">
+</form></td>
+</tr></table>全ページ数 / [<b>0</b>] 
+[<A HREF="./ibbsr.cgi?page=5">1</A>]
+[<A HREF="./ibbsr.cgi?page=10">2</A>]
+[<A HREF="./ibbsr.cgi?page=15">3</A>]
+[<A HREF="./ibbsr.cgi?page=20">4</A>]
+[<A HREF="./ibbsr.cgi?page=25">5</A>]
+[<A HREF="./ibbsr.cgi?page=30">6</A>]
+[<A HREF="./ibbsr.cgi?page=35">7</A>]
+[<A HREF="./ibbsr.cgi?page=40">8</A>]
+[<A HREF="./ibbsr.cgi?page=45">9</A>]
+</table></center>
+<form action="./ibbsr.cgi" method=POST>
+<input type=hidden name=mode value=key>
+<table><tr><th bgcolor=#582c2c colspan=2><Font color=#FFFFFF>編集 削除フォーム</Font></th></tr><tr><td>
+記事NO<br><small>(半角数字)</small></td><td>/ <input type=text name=del size=4>
+<select name=mode>
+<option value=nam>編集
+<option value=key>削除
+</select>
+</td></tr><tr><td>
+削除キー</td><td>/ <input type=password name=delkey size=8>
+<input type=submit value=" 送信 ">
+</td></tr></table></form><hr width=90%>
+<div align=right><form action="./ibbsr.cgi" method=POST>
+<input type=hidden name=mode value=del>
+<input type=password name=pass size=6><input type=submit value="管理用"><br>
+</form></div>
+<!--著作権表示 削除不可-->
+<center><hr width=90%>- <a href="http://www.cj-c.com/" target="_blank">I-BOARD/LR</a> -<br>- Edit by <a href="http://www10.big.or.jp/~lucifel/" target="_blank">Lucifel</a> -
+<!--フッタ広告タグ挿入位置▽-->
+
+<!--△ここまで-->
+</center>
+</body></html>

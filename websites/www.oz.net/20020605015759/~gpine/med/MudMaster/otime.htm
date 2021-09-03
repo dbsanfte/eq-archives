@@ -1,0 +1,41 @@
+<html>
+<body>
+<font face="Courier">
+Why use OTime? To save scripting routines over and over when breaking timestamps into more practical/logical values. Timestamps (the @Time() proc) are quite handy. It makes many time related functions possible, but also makes displays nice because you can recall time/date specifics based on the timestamp. But timestamps are a huge numeral (elapsed seconds since 00:00:00am on Jan 1st, 1970GMT). Instead of constantly adding routines to pick apart timestamps, you can simply call up OTime and have it do the work, then just use the appropriate vars that OTime creates in your scripts.<br><br>
+
+Ex: Say you're logging "says" to a list as a channel logger...<br>
+/listadd {SayLog}<br>
+/action {%0 says, '%1'.} {/itemadd SayLog {@Time() $0 said, '$1'.}} {}<br><br>
+
+That method works, but you get this long ugly timestamp in the log:<br>
+001: 1019466503 Joe said, 'Hey guys!'.<br><br>
+
+You could make up some routines to figure out the timestammp so you get better time info like:<br>
+001: 18:20 Joe said, 'Hey guys!'.<br><br>
+
+But that's work, and gets annoying. Hence OTime! Simply insert a call to OTime, use OTime's vars that you like, and make some nice displays...<br><br>
+
+/action {%0 says, '%1'.} {otime @Time();...} {}<br><br>
+
+...First off, we call up otime for our current system time (@Time()). Figure out which OTime vars you want to use, and make a clever display...<br><br>
+
+/action {%0 says, '%1'.} {otime @Time();/itemadd {SayLog} {[$OTime003:$OTime005 $OTime004] $0 said, '$1'. [$OTime013$OTime012$OTime008]}} {}<br><br>
+
+And you get something like this in your list:<br>
+001: [02:08 AM] Joe said, 'Hey Guys!'. [22Apr02]<br><br>
+
+Now instead of making a bunch of routines to figure out the timestamp info when you go to display your logs, you can have OTime do it for ya.<br><br>
+
+Again, just insert the call to OTime ("otime", or "otime #") in your script, OTime will figure it all out and make the vars, then you just use those vars however you want.<br>
+/act|al|mac|etc.. {do this;do that;otime 12345;do this;use $OTimeXXX here;do some of this;use $OTimeXXX here;etc...}<br><br>
+
+(I should note, for channel loggers it's probably better to store the actual timestamp in the list, so it sorts accordingly -- when you go to view the stored info, then you can use otime to customize the display time/date info.)<br><br>
+
+Simple :)<br><br>
+
+
+
+Hit your "Back" button to return to wherever it was you were at!
+</font>
+</body>
+</html>

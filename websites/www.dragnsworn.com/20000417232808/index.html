@@ -1,0 +1,549 @@
+<html>
+
+<head>
+<title>DRAGON SWORN</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<style>
+<!--
+     A:link {text-decoration: none; color: #F0E68C}
+     A:visited {text-decoration: none; color: #F0E68C}
+     A:active {text-decoration: underline; color: #DEB536}
+     A:hover {text-decoration: underline; color: #DEB536}
+-->
+</style>
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body background="wotbkg05.jpg" onload="dynAnimation()" link="#000000" vlink="#000000"
+alink="#000000">
+
+<p align="center"><img src="ds.gif" width="536" height="125" alt="DragonSworn"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Castle" color="#FFFF00"><big><big>The Wheel of Time turns
+and Ages come and go.&nbsp; What was, what will be, and what is, may yet fall under the
+Shadow.</big></big></font></p>
+
+<p align="center" dynamicanimation="flyBottomRightWord"
+style="position: relative !important; left: 10000 !important"><big><font face="Castle"
+color="#800000"><big>Let the Dragon ride again on the winds of time.</big></font></big></p>
+
+<p align="right" dynamicanimation="flyBottomRight"
+style="position: relative !important; left: 10000 !important"><big><big><font
+face="Castle" color="#C0C0C0">- Robert Jordan</font></big></big></p>
+
+<p align="center"><font face="OCR A Extended" color="#00FF00">Welcome to the DragonSworn
+Guild Web Page.<small><small><br>
+</small></small></font><font face="OCR A Extended" color="#00FFFF"><strong><big>Scroll
+down for News</big></strong></font></p>
+
+<p align="center"><img src="top.jpg" width="540" height="114" alt="top.jpg (51081 bytes)"></p>
+
+<p align="center"><font face="OCR A Extended" color="#FFFFFF">The DragonSworn Guild is a
+Roleplaying Guild based on The Wheel of Time books by Robert Jordan.&nbsp; We now have our
+main home in Everquest, but were once a major power in StarCraft.</font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img src="dsLine.gif" width="370" height="30"
+alt="dsLine.gif (2812 bytes)"></p>
+
+<p align="center"><a href="http://www.dragnsworn.com/clansmen.htm"><img
+src="clan_button.jpg" width="125" height="57" alt="Clansmen"></a><a
+href="http://www.dragnsworn.com/ae.htm"><img src="ally_button.jpg" width="125" height="57"
+alt="Allies and Enemies"></a></p>
+
+<p align="center"><img src="join_button.jpg" width="125" height="57" alt="Join Info"><img
+src="link_button.jpg" width="125" height="57" alt="Links"><a
+href="http://pub6.ezboard.com/bdragonsworn"><img src="mbrd_button.jpg" width="125"
+height="57" alt="Message Board"></a></p>
+
+<p align="center"><img src="dsLine.gif" width="370" height="30"
+alt="dsLine.gif (2812 bytes)"></p>
+<div align="center"><center>
+
+<table border="1">
+  <tr>
+    <td width="100%"><p align="center"><big><big><font face="OCR A Extended" color="#000080"><big><big>N
+    E W S</big></big></font></big></big></td>
+  </tr>
+</table>
+</center></div>
+
+<p>\</p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" background="greenframe.gif"
+bgcolor="#000000">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" face="Courier New">Sunday, April 2, 2000</font></td>
+  </tr>
+</table>
+
+<p><font color="#C0C0C0" face="BlackForest"><big>Haven't Updated in a While</big></font><font
+color="#FFFFFF"><br>
+</font><a href="mailto:ajenkins@satx.rr.com"><small><font face="Arial">Dubarnik</font></small></a></p>
+
+<p><small><font face="Arial" color="#FFFFFF">Well i haven't updated in a while so i
+dicided i would.&nbsp; I'm still stuck at lvl 40, it appears Lews is leveling past me and
+is 43 darn, oh well.&nbsp; Btw there's only one advantage to being an officer you can
+/guildinvite so use the darn command!</font></small></p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" background="greenframe.gif"
+bgcolor="#000000">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" face="Courier New">Monday, March 19, 2000</font></td>
+  </tr>
+</table>
+
+<p><font color="#C0C0C0" face="BlackForest"><big>Where did everyone go?</big><br>
+</font><a href="mailto:ajenkins@satx.rr.com"><small><font face="Arial">Dubarnik</font></small></a></p>
+
+<p><font face="Arial" color="#FFFFFF"><small>Did everyone move to Luclin or something and
+not tell me =) last couple of days i've only seen like 3 ppl on but a bunch of you are on
+ICQ, oh well i think i'll go check the luclin server for ya'll.&nbsp; ICQ me at 6623149.</small></font></p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" background="greenframe.gif"
+bgcolor="#000000">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" face="Courier New">Monday, March 15, 2000</font></td>
+  </tr>
+</table>
+
+<p><font color="#C0C0C0"><font face="BlackForest"><big>I Need Suggestions for the Web Page</big></font><br>
+</font><a href="mailto:ajenkins@satx.rr.com"><small><font face="Arial">Dubarnik</font></small></a></p>
+
+<p><font face="Arial" color="#FFFFFF"><small>Send me some suggestions for the web page at <a
+href="mailto:ajenkins@satx.rr.com">ajenkins@satx.rr.com</a> please.&nbsp; I wanna know
+what to do to make this site better.</small></font></p>
+
+<p><font face="Arial" color="#FFFFFF"><small>Hmmm, well since Agla wrote <small>&quot;<small><small>ALL
+HAIL IMMORTAL</small></small>&quot;</small> on his <a href="http://fade.to/immortal">web
+page</a> (i hope you can read that) i guess 'ill put this....</small></font></p>
+
+<p align="center"><font face="Wingdings" size="7" color="#FF8000">R</font><font
+face="Castle" color="#800000"><big><big><big>ALL HAIL DRAGON SWORN!</big></big></big></font><font
+face="Wingdings" size="7" color="#FF8040">R</font><font face="Castle" size="3"
+color="#800000"> </font><font size="6" color="#FFFFFF" face="Wingdings"><br>
+</font></p>
+
+<p align="center"><font face="Arial" color="#FFFFFF"><small>I thought that was pretty cool
+</small></font><font size="6" color="#FFFFFF" face="Wingdings">J</font></p>
+
+<p align="center">&nbsp;</p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" background="greenframe.gif"
+bgcolor="#000000">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" face="Courier New">Monday, March 14, 2000</font></td>
+  </tr>
+</table>
+
+<p><font face="BlackForest" color="#C0C0C0"><big>Updating the Other Sections of the Web
+Page</big><br>
+</font><small><a href="mailto:ajenkins@satx.rr.com"><font face="Arial">Dubarnik</font></a></small></p>
+
+<p><font face="Arial" color="#FFFFFF"><small>Like i promised yesterday i'm going to update
+the other parts of the web page... btw i want you guys to start recruiting like mad, we
+can always kick them out later.&nbsp; I'm not giving up on DragonSworn we've been around
+too long.</small></font></p>
+
+<p><font face="Arial"><small><font color="#FFFFFF">Updated Sections:</font><br>
+<a href="http://www.dragnsworn.com/clansmen.htm">Clansmen</a><br>
+<a href="http://www.dragnsworn.com/ae.htm">Allies/Enemies</a></small></font></p>
+
+<p>&nbsp;</p>
+
+<p><font face="BlackForest" color="#C0C0C0"><big>Hosting Other Sites</big><br>
+</font><small><a href="mailto:ajenkins@satx.rr.com"><font face="Arial">Dubarnik</font></a></small></p>
+
+<p><small><font color="#FFFFFF" face="Arial">If any of you would like me to host your web
+page at a <a href="http://www.dragnsworn.com">www.dragnsworn.com</a> subdomain i would be
+happy to do it.&nbsp; Your site would be at a URL similar to <a
+href="http://www.dragnsworn.com/yoursite/">www.dragnsworn.com/yoursite/</a> which is
+probably better then xoom or geocities and has no stupid banners.&nbsp; Just ICQ me, my
+number is 6623149, tell me your EQ or SC name and that you want me to host your site at
+Dragnsworn, then send me your Site Info (All the Web Pages, and all the images you used in
+the web pages.) I'll review them then upload them to your desired subdomain.&nbsp; I am
+already hosting one of my friends in RL that lives in my neighborhood, his site is <a
+href="http://www.dragnsworn.com/All_Carz">www.dragnsworn.com/All_Carz</a> well that's it.</font></small></p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" background="greenframe.gif"
+bgcolor="#000000">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" face="Courier New">Monday, March 13, 2000</font></td>
+  </tr>
+</table>
+
+<p><font face="BlackForest" color="#C0C0C0"><big>Haven't Updated in a While...</big><br>
+</font><small><font face="Arial"><a href="mailto:ajenkins@satx.rr.com">Dubarnik</a></font></small></p>
+
+<p><small><font color="#FFFFFF" face="Arial">Well, its just my view on things, but i have
+this strange feeling that DS is dying.&nbsp; Now that i'm the Leader i'm not going to
+ditch the guild, but i think we should look into attempting to join other guilds such as
+Immortal, Arcane Order, Excalibur, or Inner Circle.&nbsp; If as a guild we decide to move
+then i'm all for that.</font></small></p>
+
+<p><small><font color="#FFFFFF" face="Arial">Many people left the guild and we are really
+small and can't do stuff as a guild barely, there are barely a handfull of us 40+.&nbsp;
+Only myself, Lews, Peeps, and Taim (who has recently returned).&nbsp; </font></small></p>
+
+<p align="left"><font color="#FFFFFF" face="Arial"><small>I'm not all sure of everyone who
+is in the guild, but i think this list covers it... <br>
+EQ /who style in order of level...<br>
+Scroll down for Starcraft Style (SC names)</small><br>
+<br>
+</font><font face="Arial" color="#FFFF80">Yellow = Officer</font><br>
+<font face="Arial" color="#FF0000">Red = Me... Leader =P<br>
+</font><font face="Arial" color="#FF8040">Orange = MIA (Missing in Action)</font><font
+face="Arial" color="#FFFFFF"><br>
+</font><font face="Arial" color="#0080FF">Blue = Who is this Person?<br>
+</font><font face="Arial" color="#FFFFFF">White = Normal Member</font></p>
+
+<p><font face="Arial" color="#FFFF80">[45 Druid] Sulbien (Wood Elf) &lt;DragonSworn&gt;</font><font
+face="Arial" color="#FFFFFF"><br>
+</font><font face="Arial" color="#FF0000">[40 Shaman] Dubarnik (Barbarian)
+&lt;DragonSworn&gt;</font><font face="Arial" color="#FFFFFF"><br>
+</font><font face="Arial" color="#FFFF80">[40 Wizard] Dellanil (High Elf)
+&lt;DragonSworn&gt;<br>
+[40 Ranger] Skanda (Wood Elf) &lt;DragonSworn&gt;<br>
+[40 Magician] Yanlain (High Elf) &lt;DragonSworn&gt;<br>
+[40 Enchanter] Elena (High Elf) &lt;DragonSworn&gt;<br>
+[39 Paladin] Dalafir (Human) &lt;DragonSworn&gt;</font><font face="Arial" color="#FFFFFF"><br>
+</font><font face="Arial" color="#FF8040">[38 Cleric] Dors (High Elf) &lt;DragonSworn&gt;</font><font
+face="Arial" color="#FFFFFF"><br>
+[36 Druid] Tambo (Halfling) &lt;DragonSworn&gt;<br>
+[35 Shaman] Ludamin (Barbarian) &lt;DragonSworn&gt;<br>
+</font><font face="Arial" color="#FFFF80">[32 Cleric] Amys (Dwarf) &lt;DragonSworn&gt;</font><font
+face="Arial" color="#FFFFFF"><br>
+</font><font face="Arial" color="#0080FF">[22 Wizard] Artimus (High Elf)
+&lt;DragonSworn&gt;</font><font face="Arial" color="#FFFFFF"><br>
+</font><font face="Arial" color="#0080FF">[15 Druid] Kevin (Wood Elf) &lt;DragonSworn&gt;</font></p>
+
+<p align="left"><small><font face="Arial" color="#FFFFFF">Woah, we got lots of officers...
+i think we need to get more members =)<br>
+Now SC Style...</font></small></p>
+
+<p align="left"><font face="Arial" color="#FFFFFF"><small><br>
+</small>Same Color coding + </font><font face="Arial" color="#FF80FF">Purple = What's your
+SC name?</font><br>
+<font face="Arial" color="#FFFFFF">Multiple Leaders in SC<br>
+<br>
+<br>
+</font><font face="Arial" color="#FF0000">Taim</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">Final</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">Chance</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FF0000">Peeps</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">Lews</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FF0000">Tacit</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">Male</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FF80FF">Dalafir</font><font face="Arial" color="#FFFFFF">,</font><font
+face="Arial" color="#FFFF80"> Ceasar</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">DaiShan</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">Ranger</font><font face="Arial" color="#FFFFFF">, </font><font
+face="Arial" color="#FFFF80">Kirrock</font></p>
+
+<p align="left"><small><font face="Arial" color="#FFFFFF">Hmmm, no normal members in SC =)</font></small></p>
+
+<p align="left"><small><font face="Arial" color="#FFFFFF">I'm going to copy this onto the
+Members Page, eh, Tommorow.</font></small></p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" background="greenframe.gif"
+bgcolor="#000000">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" face="Courier New">Wednesday, February 23, 2000</font></td>
+  </tr>
+</table>
+
+<p align="left"><font face="BlackForest" color="#C0C0C0"><big>First News =) </big></font><font
+face="Arial" color="#FFFFFF"><br>
+<small><a href="mailto:ajenkins@satx.rr.com">Dubarnik</a></small></font></p>
+
+<p align="left"><small><font face="Arial" color="#FFFFFF">We got a new improved Web Page
+now, I'll get the rest of the stuff working later but for now this is pretty good, tell me
+your thoughts, mail me at <a href="mailto:ajenkins@satx.rr.com">ajenkins@satx.rr.com</a> .
+&nbsp; I'm a bit rusty on my HTML skills and since i deleted all my old web pages it might
+take a while to refresh them, but i'm working on it.&nbsp; I'll get the links working
+too... gotta get pages for the links to go to.</font></small></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><small><font face="Arial" color="#FFFFFF"><small>e-mail the <a
+href="mailto:ajenkins@satx.rr.com">webmaster</a> with suggestion/comments</small></font></small></p>
+
+<p align="center"><small><small><font face="Arial"><font color="#FFFFFF"><a
+href="http://www.dragnsworn.com">www.dragnsworn.com</a> run by <a
+href="mailto:ajenkins@satx.rr.com">Dubarnik</a> © 2000</font><a
+href="http://www.dragnsworn.com"><img src="dslogo_anim2.gif" width="66" height="77"
+alt="DragonSworn" align="left"></a><a href="http://www.fsgs.com" target="_blank"><img
+border="0" src="hosted.gif" align="right" width="80" height="30"></a></font></small></small></p>
+
+<p align="center"><small><small><font color="#FFFFFF" face="Arial">This Page Hosted by<a
+href="http://www.fsgs.com"> FSGS</a></font></small></small></p>
+</body>
+</html>
+<BODY BACKGROUND="/cgi-bin/ivw/CP/www/clans/dragnsworn/index.htm"></BODY>

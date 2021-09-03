@@ -1,0 +1,91 @@
+<html>
+<body><font face=Verdana>
+<a href="../omatips.htm">Back to OmaTips</a>
+<br><br>
+
+<table width=600 border=0 cellspacing=0>
+  <tr>
+    <td><font face="Verdana" size=2>
+<b>Mud Master and Speed</b><br><br>
+
+A post on MM's board got me thinking to write this up. I'll address, as basically as I can, how MM works (mostly related to actions) and how to optimize scripts to save unnecessary burden on MM.<br><br>
+
+First a quick primer on how MM parses/operates when text comes in from the mud.<br>
+1. Text arrives, MM snatches it up (you've yet to see it)<br>
+2. The text is checked for action matches.<br>
+&nbsp;&nbsp;2a. If there's a match, the action is run until all commands in the action have been completed.<br>
+&nbsp;&nbsp;2b. Assuming /multipleactions is on (which it is by default with later versions of MM), MM then continues searching for more action matches and runs any other actions to completion.<br>
+3. Gags are checked.<br>
+4. Highlights are checked.<br>
+5. Subs are checked (I assume MM skips this if a gag was found for the string).<br>
+6. Text is; printed to the display screen, gagged, highlighted and/or substituted.<br><br>
+
+I'll kinda of jump ahead here for a sec...<br>
+<b>Substitutes are incredibly slow to process</b><br>
+MM is heavily burdened with finding exact string matches and replacing them, aka substitution. I strongly recommend just not using substitutes -- you can easily substitute text by using gags and actions with /showme's. Plus a gag+action "substitute" is a lot more configurable (colors, text, if's, etc). I have little doubt that a gag and action with showmes is faster than a sub. Subs are just plain slow to process.<br><br>
+
+As well, gags are a bit intensive for what little they're doing. Try to be sparing with gags. Personally I tend to use a good amount of gags, as I hate all the default spew the mud sends. (see below about enabling/disabling stuff). Gags definitely process faster than subs, but add more parsing before the next line of text coming from the mud is processed. Using wildcards with gags (or subs/highlights) will decrease the process speed as well. Use wildcards (%0-%9) sparingly if possible.<br><br>
+
+I find Highlights to be pretty lame since the ansi procs went into MM. They're just one more step of parsing that you really do not need to burden MM with.<br><br>
+
+<b>The fewer actions, the faster the parsing.</b><br>
+MM checks ALL actions against the incoming text string (with /multipleactions on). Less actions naturally means faster parsing for the specific string. If at all possible, combine commands for your multiple actions into 1 action. Although this can be a pain with huge actions.<br>
+Example:<br>
+/action {Joe says, '%0'.} {slap Joe}<br>
+/action {Fred says, '%0'.} {wave Fred}<br>
+...
+/action {%0 says, '%1'.} {/if {$0=="Joe"} {slap Joe} {/if {$0=="Fred"} {wave Fred}}} {}<br>
+Handy for small actions, but a pain with larger ones.<br><br>
+
+<b>Disable and Enable whenever possible</b><br>
+I try to make a habit out of "smart" actions, gags, subs. "Smart" meaning they turn themselves on and off, as needed.<br>
+For example, take the "where" list in my OmaSpy script. I only need this action running when I actually use the where command. This not only saves some MM parsing time, but saves storing info that might otherwise "match" the action  (like "who" might).<br>
+When one does "where", you get like "Players in the vicinity:".. to me that means "turn on the action!" After the where list you naturally get your prompt, and that means "turn off the action!"<br>
+/act {^Players in the vicinity:} {/enableaction {[%0] - %1}} {}<br>
+/act {<%0hp %1br>} {/disableaction {[%0] - %1}} {}<br>
+/act {[%0] - %1} {do a lot of stuff} {}<br><br>
+
+An even better method would be to enable it via an alias, then disable via alias (or action to automate it).<br>
+/al {wx} {where;/enableaction {[%0] - %1} {}<br>
+..thus I saved 1 action! 2 Actions if I disabled it via another alias.<br><br>
+
+Disablegroup/Enablegroup are great commands as well. You can quickly disable/enable a group of actions (or any other command in the group). I tend to use this quite often. Say I'm making a script "OmaSpew", I'll group the actions as "OmaSpewActions" so that I can quickly disable that group when I'm not using the script. Disabling anything other than actions, highlights, gags, and subs, really has zero affect on MM's parsing speed. So when disabling, concentrate on those 4 at the minimum.<br><br>
+
+<b>Short as Possible</b><br>
+The shorter the action, the faster it parses, and the sooner the next line of incoming text will get processed. Some commands/procs are slower to work than others, @WordColor() is notorious as a "slow" proc. @CharColor() is a lot faster. Think of it this way: if MM has to figure it out, it's taking longer. @WordColor() means MM has to figure out <u>what is a word</u>, then the color of that word. While @CharColor() all MM has to do is find the color of the given character. @TextColor() is fast too, MM simply has to find the color of the given string.<br>
+Of course "slower" commands/procs is kind of relevant, seeing we're talking milliseconds, but in a big script it <u>is</u> noticable.<br><br>
+
+When using ifs, put them in logical order (see my if tips). What is most likely to be true should be up front so the if is processed quickly.<br><br>
+
+Use caution trying to call aliases from actions, hoping to speed up an action. While this works fine, and has definite uses, calling an alias from an action also means that MM will process the <u>next</u> incoming string(s) and action(s) associated with them.<br>
+Example, say I have a huge action which is working off "where"<br>
+/action {[%0] - %1} {tons of commands here} {}<br>
+This action is huge, I want MM to continue on, faster faster! So I put all the commands into an alias and do:<br>
+/action {[%0] - %1} {MyAlias} {}<br>
+/alias {MyAlias} {tons of commands here} {}<br><br>
+
+Hrm looks ok, BUT MM's doing something like this...<br>
+[Joe     ] - In a Dusty Hallway<br>
+<i>Action match! Alias is called and starts processing<br>
+MM snags new incoming text:<br></i>
+Fred says, 'I'm a gonner r0Xr cuz I'm a d00dettez'.<br>
+<i>And umm.. you have this action laying around..</i><br>
+/action {%0 says, '%1'.}<br><br>
+
+Guess what, if the alias is still processing (which a long alias is probably still doing), and MM's gone on to process the next action (MM doesn't wait for aliases!), the system vars %0 and %1 have now changed! The alias processing Joe in a hallway is now processing Fred saying a bunch of drivel, and you just might end up doing something like:<br>
+You clansay, 'CPKWatcho'rama: New Threat: Fred .. In Room: I'm a gonner r0Xr cuz I'm a d00dettez'.<br>
+Probably not what you intended to do! While you've sped up MM's parsing, you've fubar'd your script. One fix is in the inital action, store the system variables into your own vars, and have the alias use the vars you created. I used this method quite often with quest scripts due to the tons of spam I'd get.<br>
+/action {[%0] - %1} {/var WhereWho {$0};/var WhereWhere {$1}} {}<br>
+/alias {MyAlias} {tons of commands, using the vars $WhereWho and $WhereWhere} {}<br><br>
+
+Now, unless I get another {[%0] - %1} match, I don't have to worry about new incoming text screwing up my alias's processing. As long as you don't expect another action match, this method works very well for speeding up MM's parsing, but can cause headaches if more matches on your initial action occur. That's when you can use multiple aliases and some increments on the var names to try to keep ahead of the game (not going into that though).<br><br>
+
+Anywho, 2:30am, I'm pooped, enough about speed for now!
+
+
+
+
+
+</table>
+</body>
+</html>

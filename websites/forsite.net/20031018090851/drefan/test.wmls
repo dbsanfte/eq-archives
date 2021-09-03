@@ -1,0 +1,94 @@
+/*
+ * WMLScript backend for calculator example.
+ */
+
+/*
+ * Add a digit to the number currently being entered, and update display.
+ */
+extern function digit (d)
+{
+    /* Read the current number as a string from the browser context. */
+    var number = WMLBrowser.getVar ("number");
+
+    /* Add digit to number. (Note that the variable 'number' actually
+     * contains a string at this point, so this concatenates strings.) */
+    number += d;
+
+    /* Set browser variables and refresh the display. */
+    WMLBrowser.setVar ("number", number);
+    set_display (Lang.parseFloat ("0" + number));
+}
+
+/*
+ * Add a decimal point to the number currently being entered.
+ */
+extern function point (  )
+{
+    /* Read the current number as a string from the browser context. */
+    var number = WMLBrowser.getVar ("number");
+
+    /* Ignore the key if there's already a decimal point. */
+    if (String.find (number, '.') >= 0)
+        return;
+
+    /* Add a decimal point to the number. */
+    number += '.';
+
+    /* Set browser variables and refresh the display. */
+    WMLBrowser.setVar ("number", number);
+    set_display (Lang.parseFloat ("0" + number));
+}
+
+/*
+ * Handle an operator key: perform the last operation and store this
+ * operator until the next number has been entered.
+ */
+extern function op (op)
+{
+    /* Fetch the register and convert to floating point. */
+    var register = Lang.parseFloat (WMLBrowser.getVar ("register"));
+
+    /* Fetch the number and convert to floating point. */
+    var number = Lang.parseFloat (WMLBrowser.getVar ("display"));
+
+    /* Fetch the last operator key. */
+    var lastop = WMLBrowser.getVar ("lastop");
+
+    /* Work out what operation needs to be performed and perform it. */
+    if (lastop == 'add')
+        register += number;
+    else if (lastop == 'sub')
+        register -= number;
+    else if (lastop == 'mul')
+        register *= number;
+    else if (lastop == 'div')
+        register /= number;
+    else
+        register = number;
+
+    /* Store the new operator for next time. */
+    WMLBrowser.setVar ("lastop", op);
+
+    /* Clear the number so we can enter a new one. */
+    WMLBrowser.setVar ("number", "");
+
+    /* Both the display and the register are the result of the operation. */
+    WMLBrowser.setVar ("register", String.toString (register));
+    set_display (register);
+}
+
+/*
+ * Set the display browser variable and refresh the display.
+ */
+function set_display (display)
+{
+    /* Handle an invalid calculation result. */
+    if (!isvalid display)
+        display = "(error)";
+
+    /* Set the browser variable. */
+    WMLBrowser.setVar ("display", display);
+
+    /* Refresh the display. */
+    WMLBrowser.refresh (  );
+}

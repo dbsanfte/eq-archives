@@ -1,0 +1,31 @@
+/mac {kp2} {south;/var LastDir south} {movement}
+/mac {kp3} {down;/var LastDir down} {movement}
+/mac {kp4} {west;/var LastDir west} {movement}
+/mac {kp6} {east;/var LastDir east} {movement}
+/mac {kp8} {north;/var LastDir north} {movement}
+/mac {kp9} {up;/var LastDir up} {movement}
+/mac {kp1} {rest} {movement}
+/mac {kp7} {stand} {movement}
+/mac {kp5} {scan} {movement}
+/mac {kpstar} {look around} {movement}
+/action {^It seems to be locked.} {unlock $DoorType $LastDir} {movement}
+/action {^The %0 seems to be closed.} {/var DoorType $0;open $DoorType $LastDir} {movement}
+
+/action {^You are hungry} {/if {@CharColor(1)==7} {get food backpack;eat food;put all.food backpack}} {food}
+/action {^You are thirsty} {/if {@CharColor(1)==7} {chug $DrinkContainer}} {food}
+/alias {setdrink %0} {/if {@IsEmpty($0)==1 || @WordCount($0)!=1} {/showme {"setdrink <drink type>" - This will setup the variable to automatically auto-drink when thirsty. <drink type> is like a jug or cup or skin, etc. eg: "setfood jug"}} {/var DrinkContainer @Word($0,2);/showme {Drink Container set to: $DrinkContainer}}} {food}
+
+/alias {medcon} {/sess med medievia.com 4000} {misc}
+
+/action {^You have to stand up before you can do that.} {stand} {misc}
+
+/action {sends your weapon flying} {/if {@CharColor(1)==7} {wield $MyWeapon}} {disarm}
+/alias {setweapon %0} {/if {@IsEmpty($0)==1} {/showme {"setweapon <type>" eg: setweapon dagger. This will setup the variable for automatically re-arming if you get disarmed} {/var $MyWeapon $0;/showme {Weapon set as: $0 (type "setweapon" for help)}}} {disarm}
+
+/alias {mmhelp} {/showme {@AnsiBold()@ForeGreen()This script is very basic, not ment to show off what's capable with Mud Master, it's to just help newbies to get going with some very basic routines and movement keys@Chr(10)@Chr(10)@ForeWhite()medcon @ForeBlue()- Connect to medievia.@Chr(10)@ForeWhite()setdrink @ForeBlue()- Type this for info on using it.@Chr(10)@ForeWhite()setweapon @ForeBlue()- Type this for info on using it.@Chr(10)@ForeWhite()showkeymap @ForeBlue()- type this to see the Number Pad movement keys}} {MMHELP}
+
+/event {SPAM} {2} {SPAM;/disableevent SPAM} {SPAM}
+
+/alias {SPAM} {/showme {@AnsiBold()@ForeYellow()@Chr(10)Welcome to Mud-Master, this is a very basic setup to help you get going on medievia.@Chr(10)@Chr(10)@ForeWhite()You can type in "mmhelp" for basic help. Some things you will want to do or know about are:@Chr(10)@AnsiReset()1. Mud Master is CaSe SeNsItIvE, all commands must be entered correctly according to the case. Example, doing \@ansibold() would never work, because it's actually \@AnsiBold()@Chr(10)@AnsiBold()2. Mud Master uses a "command character" The default is the / (forward slash key). example: /alias {sh} {say hi}. The command character lets MM know that what follows is a command, not text to send to the mud.@Chr(10)@AnsiReset()3. Mud Master's scripting language (commands) are very powerful and can be @ForeYellow()very@ForeWhite() confusing at first. Don't get frustrated, there are many other players happy to help out with learning MM.@Chr(10)@AnsiBold()4. While MM runs fastest in a Full Screen dos session, many people find running MM in a window'd dos session works fine, and looks a bit nicer (sharper). Alt-Enter will swap you from Full Screen to a Window (and vs.vs.) the /mode 50 (or /mode 25) command can allow you to fit a lot more info into the window, and changing the window's properties' font size when @ForeYellow()windowed@ForeWhite() can help to fit more text to your screen.@Chr(10)@AnsiReset()5. Get the latest Beta version of MM! www.mud-master.com}} {SPAM}
+
+/alias {showkeymap} {/showme {@Chr(10)@AnsiBold()@ForeYellow()          NumLock should be OFF@Chr(10)@Chr(10)                          @ForeRed()* [Look Around]@Chr(10)@Chr(10)               @ForeGreen()[8-North]  @AnsiReset()[5-Scan, thief only]@Chr(10)@Chr(10)     @AnsiBold()@ForeMagenta()[7-Stand]  7  @ForeGreen()8  @ForeCyan()9  [9-Up]@Chr(10)@Chr(10)      @ForeGreen()[4-West]  4  @AnsiReset()5  @AnsiBold()@ForeGreen()6  [6-East]@Chr(10)@Chr(10)      @ForeMagenta()[1-Rest]  1  @ForeGreen()2  @ForeCyan()3  [3-Down]@Chr(10)@Chr(10)               @ForeGreen()[2-South]@Chr(10)@Chr(10)@ForeBlue()Movement will also try to auto-open closed doors/gates and unlock them too.}} {showkeymap}

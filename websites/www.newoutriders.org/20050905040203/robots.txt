@@ -1,0 +1,83 @@
+<?
+header('Content-type: text/plain');
+?>
+User-agent: *
+Disallow: /click.php
+Disallow: /more_results.php
+<?
+function crapback()
+{
+
+}
+@ob_start('crapback');
+include("main_include.php");
+
+$ip_address = $_SERVER["REMOTE_ADDR"];
+$user_agent = addslashes(stripslashes($HTTP_USER_AGENT));
+$reverse_dns = @gethostbyaddr($ip_address);
+
+$sql = "INSERT INTO RobotUserAgent SET 
+user_agent = '$user_agent', 
+bot_counter = '1' 
+ON DUPLICATE KEY UPDATE bot_counter = bot_counter + 1";
+echo $sql;
+db_query($sql, 'RobotStats');
+$sql = "SELECT bot_id, bot FROM RobotUserAgent WHERE user_agent = '$user_agent'";
+echo $sql;
+
+$res = db_query($sql,'RobotStats');
+$bot = db_fetch_array($res);
+$sql = "INSERT INTO RobotIP SET bot_id = '$bot[bot_id]', ip = '$ip_address', reverse_dns = '$reverse_dns', ip_counter = '1'
+ON DUPLICATE KEY UPDATE ip_counter = ip_counter + 1";
+echo $sql;
+db_query($sql, 'RobotStats');
+
+$sql = "SELECT robot_ip FROM RobotIP WHERE ip = '$ip_address' and bot_id = '$bot[bot_id]'";
+echo $sql;
+
+$res = db_query($sql, 'RobotStats');
+$robot = db_fetch_array($res);
+$robot_day = date("Y-m-d", time());
+$sql = "INSERT IGNORE INTO RobotDomain SET domain = '$host[domain]', bot_id = '$bot[bot_id]', robot_ip = '$robot[robot_ip]', domain_day = '$robot_day'";
+echo $sql;
+
+db_query($sql, 'RobotStats');
+$sql = "INSERT INTO RobotHits SET bot_id = '$bot[bot_id]', bot_day = '$robot_day', bot_hit = '1'
+ON DUPLICATE KEY UPDATE bot_hit = bot_hit + 1";
+echo $sql;
+db_query($sql, 'RobotStats');
+$sql = "SELECT * FROM IP.UserAgentQuery WHERE user_agent_query = '$user_agent'";
+$res = db_query($sql, 'IP');
+$ipag = db_fetch_array($res);
+
+if (is_array($ipag))
+{
+        if ($ipag[bot_type] == 'G')
+        {
+                $spider = 'Y';
+        }
+        elseif ($ipag[bot_type] == 'Y')
+        {
+                $spider = 'N';
+        }
+	$sql = "INSERT INTO IPBan SET remote_addr = '$ip_address', spider = '$spider', which_se = '$bot[bot_id]' ON DUPLICATE KEY UPDATE which_se = '$bot[bot_id]'";
+	echo $sql;
+	db_query($sql, 'IP');
+	$sql = "SELECT * FROM RobotDisallow WHERE bot_id = '$bot[bot_id]'";
+	$res = db_query($sql, 'RobotStats');
+	$rd = db_fetch_array($res);
+	if (is_array($rd))
+	{
+		$rt = "User-agent: $HTTP_USER_AGENT\n";
+		$rt .= "Crawl-Delay: $rd[crawl]\n";
+		$rt .= "Disallow: $rt[disallow]\n";
+	}
+}
+
+@ob_end_clean();
+if ($rt)
+{
+	echo $rt;
+}
+
+?>

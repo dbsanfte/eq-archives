@@ -1,0 +1,26 @@
+/alias {whox %0} {/enablegroup who;/clearlist WHO;/var NameWordCnt 0;/empty whoxAFK;/empty whoxKiller;/empty whoxThief;/empty whoxAttacker;/empty whoxName;/empty whoxClass;/empty whoxLevel;/empty whoxType;who $0} {whox}
+
+/action {^%0.} {/if {"@Word($0,2)"!="player" || "@Word($0,2)"!="players"} {/if {@IsNumber(@Word($0,1))==1} {/var whoxLevel @Word($0,1);/var whoxClass @Word($0,2);/var NameWordCnt 3;/if {@StrStr($0,[AFK])!=-1} {/var whoxAFK {[AFK]};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(KILLER))!=-1} {/var whoxKiller {(K)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(THIEF))!=-1} {/var whoxThief {(T)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(ATTACKER))!=-1} {/var whoxAttacker {(A)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/var whoxName @Left(@Word($0,$NameWordCnt),12)} {/if {@IsEmpty($whoxType)==1 || "@StripAnsi($whoxType)"!="[IMM]"} {/var whoxLevel 50;/var whoxClass @Word($0,1);/var NameWordCnt 2;/if {@StrStr($0,[AFK])!=-1} {/var whoxAFK {[AFK]};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(KILLER))!=-1} {/var whoxKiller {(K)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(THIEF))!=-1} {/var whoxThief {(T)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(ATTACKER))!=-1} {/var whoxAttacker {(A)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/var whoxName @Left(@Word($0,$NameWordCnt),12)} {/if {"@StripAnsi($whoxType)"=="[IMM]"} {/var NameWordCnt 1;/while {@TextColor(@Word($0,$NameWordCnt))!=10} {/var whoxLevel 50+;/var whoxClass @Word($0,$NameWordCnt);/var NameWordCnt @Math(1+$NameWordCnt)};/if {@StrStr($0,[AFK])!=-1} {/var whoxAFK {[AFK]};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(KILLER))!=-1} {/var whoxKiller {(K)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(THIEF))!=-1} {/var whoxThief {(T)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/if {@StrStr($0,(ATTACKER))!=-1} {/var whoxAttacker {(A)};/var NameWordCnt {@Math(1+$NameWordCnt)}};/var whoxName @Left(@Word($0,$NameWordCnt),12)}}};/itemadd WHO {@PadLeft($whoxLevel, ,@Math(3-@Len($whoxLevel)))    @PadRight(@AnsiBold()@ForeBlue()$whoxClass, ,@Math(15-@Len($whoxClass))) @PadRight(@ForeGreen()$whoxName, ,@Math(15-@Len($whoxName))) @PadRight(@ForeWhite()$whoxAFK@ForeRed()$whoxAttacker@ForeYellow()$whoxKiller@ForeMagenta()$whoxThief, ,@Math(15-@Len($whoxAFK$whoxKiller$whoxThief$whoxAttacker))) @ForeBlue()$whoxType};/var NameWordCnt 0;/empty whoxAFK;/empty whoxKiller;/empty whoxThief;/empty whoxAttacker;/empty whoxName;/empty whoxClass;/empty whoxLevel} {/showme WASNTvalid}} {who}
+
+/action {-----------------------------------[ IMMORTALS ]------------------------------} {/var whoxType {@AnsiBold()@ForeCyan()[IMM]}} {who}
+/action {-------------------------------[ DEADLY CHARACTERS ]--------------------------} {/var whoxType {@AnsiBold()@ForeRed()[DEADLY]}} {who}
+
+/action {^%0 players.} {/if {@WordCount($0)==1} {/disablegroup who;whoxshow}} {who}
+/action {^%0 player.} {/if {@WordCount($0)==1} {/disablegroup who;whoxshow}} {who}
+
+/alias {whoxshow} {/if {@GetCount(WHO)<=0} {/showme {@AnsiBold()@ForeRed()The WHO list is Empty! -- aborted}} {/showme {@AnsiBold()@ForeCyan()Level  @ForeBlue()Class           @ForeGreen()Name            @ForeWhite()Flags          @ForeRed()Deadlies@AnsiReset()/@AnsiBold()@ForeCyan()IMMs@Chr(10)@AnsiReset()@PadRight(@AnsiBold()@ForeWhite()-,-,78)@AnsiReset()};/loop {@GetCount(WHO),1} {/showme {@AnsiBold()@ForeCyan()@GetItem(WHO,$LoopCount)}}}} {whoxSpewIt}
+
+/var {NameWordCnt} {0}
+/empty {whoxAFK}
+/empty {whoxKiller}
+/empty {whoxThief}
+/empty {whoxAttacker}
+/empty {whoxName}
+/empty {whoxClass}
+/empty {whoxLevel}
+/empty {whoxType}
+
+/listadd {WHO} {who}
+/gag {^%0.} {who}
+/gag {-------------------------------[ DEADLY CHARACTERS ]--------------------------} {who}
+/gag {-----------------------------------[ IMMORTALS ]------------------------------} {who}

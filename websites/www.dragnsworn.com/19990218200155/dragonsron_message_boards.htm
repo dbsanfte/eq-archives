@@ -1,0 +1,296 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DragonSworn Message Boards</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script><meta name="Microsoft Theme" content="none"></head>
+
+<body background="images/wotbkg05.jpg" text="#FFFF00" link="#FFFFFF" vlink="#00FF00" onload="dynAnimation()">
+
+<p align="center"><img src="images/logo.gif" alt="logo.gif (21110 bytes)" WIDTH="437" HEIGHT="133"></p>
+
+<p align="center" dynamicanimation="spiral" style="position: relative !important; left: 10000 !important"><a href="http://www.dragnsworn.com/dsweb/disc2_toc.htm"><img src="images/ae.gif" alt="ae.gif (3234 bytes)" border="0" WIDTH="200" HEIGHT="45"></a><br>
+<strong><small><small>(Clansmen Only)</small></small></strong></p>
+
+<p align="center" dynamicanimation="spiral" style="position: relative !important; left: 10000 !important"><a href="http://dragnsworn.com/dsweb/Djevik_KShar_toc.htm"><img src="images/tdg.gif" alt="tdg.gif (3994 bytes)" border="0" WIDTH="250" HEIGHT="58"></a><br>
+<small><strong>(The Dying Ground: War Forum)</strong></small></p>
+
+<p align="center" dynamicanimation="spiral" style="position: relative !important; left: 10000 !important"><a href="dmscrolls.htm"><img src="images/dm.gif" alt="dm.gif (6023 bytes)" border="0" WIDTH="434" HEIGHT="58"></a><br>
+<strong><small>(stories by our own clansmen - not a forum)</small></strong></p>
+
+<h3 align="center" dynamicanimation="zoomIn" style="position: relative !important; left: 10000 !important"><a href="tot_feb99_toc.htm"><img src="images/tot.gif" alt="tot.gif (4917 bytes)" border="0" WIDTH="358" HEIGHT="56"></a> <br>
+<small><small>(General Discussion)</small></small></h3>
+
+<h3 align="center" dynamicanimation="flyTopRight" style="position: relative !important; left: 10000 !important"><a href="wot_toc.htm"><img src="images/wot.gif" alt="wot.gif (4315 bytes)" border="0" WIDTH="318" HEIGHT="56"></a><br>
+<small><small>(hm, need we say more?)</small></small></h3>
+
+<p>&nbsp;</p>
+
+<p align="center"><!--webbot bot="ImageMap" rectangle="(296,19) (403,30) tourney/tourney.htm" rectangle="(189,20) (282,30) techsup.htm" rectangle="(493,6) (580,14) scum/scumstrat.htm" rectangle="(415,4) (480,15) members.htm" rectangle="(368,3) (401,13) links.htm" rectangle="(329,6) (357,15) newmem.htm" rectangle="(278,3) (317,15) index.html" rectangle="(238,3) (264,15) files.htm" rectangle="(134,4) (225,16) events.htm" rectangle="(49,4) (121,16) disc1_frm.htm" rectangle="(2,3) (35,16) allies.htm" src="images/navbar.gif" alt="navbar.gif (3655 bytes)" border="0" startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="296, 19, 403, 30" HREF="tourney/tourney.htm"><AREA SHAPE="RECT" COORDS="189, 20, 282, 30" HREF="techsup.htm"><AREA SHAPE="RECT" COORDS="493, 6, 580, 14" HREF="scum/scumstrat.htm"><AREA SHAPE="RECT" COORDS="415, 4, 480, 15" HREF="members.htm"><AREA SHAPE="RECT" COORDS="368, 3, 401, 13" HREF="links.htm"><AREA SHAPE="RECT" COORDS="329, 6, 357, 15" HREF="newmem.htm"><AREA SHAPE="RECT" COORDS="278, 3, 317, 15" HREF="index.html"><AREA SHAPE="RECT" COORDS="238, 3, 264, 15" HREF="files.htm"><AREA SHAPE="RECT" COORDS="134, 4, 225, 16" HREF="events.htm"><AREA SHAPE="RECT" COORDS="49, 4, 121, 16" HREF="disc1_frm.htm"><AREA SHAPE="RECT" COORDS="2, 3, 35, 16" HREF="allies.htm"></MAP><a href="_vti_bin/shtml.exe/dragonsron_message_boards.htm/map"><img ismap usemap="#FrontPageMap" border="0" height="31" alt="navbar.gif (3655 bytes)" src="images/navbar.gif" width="581"></a><!--webbot bot="ImageMap" endspan i-checksum="1182" --></p>
+
+<p align="center">&nbsp;</p>
+</body>
+</html>

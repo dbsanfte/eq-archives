@@ -1,0 +1,2417 @@
+
+
+
+<HEAD>
+</HEAD>
+
+
+
+<html>
+<head>
+<title> Sticky: Post your 3dMark scores here! </title>
+
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src ='js/trims.js'></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language='JavaScript' src = "js/confirmdeletion.js"></script>
+<script language='JavaScript' src ='js/showSelect.js'></script>
+<script language="JavaScript" src="js/pgdcodeinput.js"></script>
+<script language="JavaScript" src ='js/validator.js'></script>
+<script type="text/javascript">
+
+var alivecount = 1
+function alertImage(){
+	if(document.images){
+		if (document.images["keepalive"]){document.images["keepalive"].src = "http://ghguild.com/forum/keepalive.asp?a="+alivecount}
+		alivecount++ ;
+		//alert (document.images["keepalive"].src)
+	}
+}
+function validateForm(postform) {
+	if (validatorPro(postform)){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+setInterval("alertImage()",1000*60*29)
+
+// -->
+</script>
+<script language="JavaScript">
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("11/6/2004 3:46:52 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("11/6/2004 3:46:52 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "11/6/2004 3:46:52 PM"
+	
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.asp?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+strTitle [1] = "25&&0neophyte1"
+strTitle [2] = "100&&0greenhorn2"
+strTitle [3] = "400&&0competent3"
+strTitle [4] = "900&&0seasoned4"
+strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<style type="text/css">
+<!--
+.c2 {font: bold 11px Verdana}
+.head {font: bold 14px Verdana;color : #000000}
+.high {background-color : Yellow;font : bold 11px Arial, Helvetica, sans-serif;color : Black;border : 1px solid Black;}
+.info {font: 11px Verdana;}
+.msg {font: 13px Verdana;}
+.quote {border:1px Solid #505050; background-color:#ffffff; width:85%; margin:2px; padding:5px; color:#505050; font: 11px Verdana;}
+.subhead {font: bold 13px Verdana;color : #000000}
+.titlehead {font: bold 15px Verdana; line-height:180%;}
+.ultrasmall {font: 10px Verdana;color:#555555;}
+a {color:#454545;}
+a:hover {color: #e51d00;text-decoration:underline}
+a:visited {color: #0b0b0b;hover-color: #e51d00}
+body {color: #000000; font: 11px Verdana; background-color: #004580; /*margin: 0px 0px 0px 0px;*/
+scrollbar-face-color: #0075cc; 
+scrollbar-highlight-color: #4db2ff; 
+scrollbar-shadow-color: #4db2ff; 
+scrollbar-3dlight-color: #000000; 
+scrollbar-arrow-color: #4db2ff; 
+scrollbar-track-color: #004580; 
+scrollbar-darkshadow-color: #004580;}
+input {color : #000000;font: normal 11px Verdana;}
+pre {font: 11px "Courier New",monospace;}
+select {color : #000000;font: normal 11px Verdana;}
+td {font: 11px verdana}
+td.cat {background-color: #4db2ff}
+textarea {background-color: #f9f9f9;color : #000000;font: normal 11px Verdana;}
+th {background-color: #0075cc}
+
+
+-->
+</style>
+</head>
+<body >
+<noscript>Javascript is currently disabled!</noscript>
+	<center>
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="1" height="115"></td>   
+      <td width="20%" height="115" background="leftextend2.jpg"></td>
+      <td width="741" height="115">
+      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map">
+<MAP NAME="GH_Banner_Map">
+<AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.asp">
+<AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.asp?view=groupinfo">
+<AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.asp" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.php?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.asp" onClick="return logwin(this.href)">
+<AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.asp">
+<AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.asp">
+<AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.asp">
+<AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.asp">
+<AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.asp">
+<AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.asp">
+<AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.asp">
+<AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.asp">
+<AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.asp">
+<AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum">
+<AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com">
+</MAP></td>
+ <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>
+      
+    </tr>
+  </table>
+		<BR></center>
+	</table></center>
+
+<table border="0" bgcolor=#006699 align=center>
+	<tr>
+		<td width="40%"><center><font color=#CCCCCC><br>
+<a href="ghmotdedit.asp" target=_new><font color=white>EQ MOTD</font></a>:<br>
+
+For GH EQ Members only<br>
+</font></td>
+		<td  width="40%"><center><font color=white>EQ2 MOTD:</font><br><font color=cccccc><b>
+</b>For GH EQ2 Members only<br></b>
+
+</font></center>
+</td>
+	</tr>
+</table>
+
+
+
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+
+
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		theForm.body.focus();theForm.parent.value=parentid;theForm.subject.value=theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='98%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Sticky: Post your 3dMark scores here! </h2>&nbsp;
+		
+	</td>
+	<td class="c2" align="right">
+		Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+		
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+  
+	<td class="ultrasmall">
+		Users viewing this topic: none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.asp?m=543" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+		
+	</td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=2'>Geek Life</a> &gt;&gt;  Sticky: Post your 3dMark scores here! </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> <a href='tm.asp?m=543&mpage=2&key='><b>2</b></a> <a href='tm.asp?m=543&mpage=3&key='><b>3</b></a> &nbsp;&nbsp;<a href='tm.asp?m=543&mpage=2&key=' title='next'><b>next &gt;</b></a>&nbsp;&nbsp;<a href='tm.asp?m=543&mpage=3&key=' title='last'><b> &gt;&gt;</b></a></td></tr></table>
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="100" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="100" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.asp?go=prev&m=543&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.asp?go=next&m=543&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=543' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=543></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  Sticky: Post your 3dMark scores here! &nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/3/2002 3:52:20 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Recreating this topic from the old board.  I don' t think it' s worth keeping all the old posts, really.  Basically post your 3dMark scores here and we' ll critique them together and offer tips and comments on how to improve your performance. <br>  <br> Please include the following with each post: <br>  <br> -- CPU Speed <br> -- Video card type <br> -- Overclocking information (CPU and video!) <br> -- Driver version number <br> -- Operating system 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Chantela</b> -- <b>11/3/2002 6:52:43 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">11/3/2002 3:52:20 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 543  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=77')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=77&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=77&mode=block&pg=tm&m=1470' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=77" class="subhead" target=_blank>nedd</a>
+		  
+		  <br>
+		  <script>titleAndStar(3064,835,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/77/8BA3E1F3884C4218BD8E226481A68618.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3064<br>
+		  Joined:  11/1/2002 <br>From:  hihihoho gnom city!<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=1470></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/8/2002 2:29:54 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   score: 5248 <br>  <br> cpu speed: 800 mhz duron <br> video card: geforce 4, 4200 @ 64 megs ram <br> o/c info: nothing o/c' ed <br> driver version: 6.13.19.3082 (installed latest detonator) <br> os: win xp pro 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=271215">nedd</a> <br>  <br>  <img src="http://www.humpsteven.com/temp/vanilla.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">11/8/2002 2:29:54 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 1470  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=11')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=block&pg=tm&m=3459' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=11" class="subhead" target=_blank>sindaan</a>
+		  
+		  <br>
+		  <script>titleAndStar(3564,11,7,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3564<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3459></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/22/2002 7:30:37 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Athlon 2100XP -- CPU Speed  <br> GeForce Ti4600 128mb-- Video card type  <br> Vid OC' d by 30mhz/50mhz respectively-- Overclocking information (CPU and video!)  <br> 40.72 -- Driver version number  <br> WinXP -- Operating system  <br> 512MB PC2100 Ram -- System Memory <br>  <br> 11763 score <br>  <br>  <br> Link to MadOnion Project Specs: <a target="_blank" href="http://service.madonion.com/compare?2k1=5164768">http://service.madonion.com/compare?2k1=5164768</a> 
+					<span class="info"><br><br><br>&lt; Message edited by <b>sindaan</b> -- <b>12/2/2002 5:37:30 AM </b> &gt;</span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://loot.ghguild.com">Loot Tracking</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">11/22/2002 7:30:37 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 3459  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=120')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=120&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=120&mode=block&pg=tm&m=3859' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=120" class="subhead" target=_blank>Rainne</a>
+		  
+		  <br>
+		  <script>titleAndStar(2428,4,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/120/407D3A6C39304A17A8BC6CE4007FF4F0.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  2428<br>
+		  Joined:  11/4/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3859></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 3:52:16 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   P4 2.8 <br> Radeon 9700 Pro <br> 512 MB Ram <br>  <br> no o/c or tweaks <br> Windows XP pro <br>  <br> default settings of 3dMark2001 SE Pro score: <b>15314 </b>  <img src="http://ghguild.com/forum/image/s1.gif" align="middle" border="0" alt="">  <br>  <br>  <br> P4 1.7 <br> GeForce Ti4600 128 <br> 512MB RAM <br>  <br> no o/c or tweaks <br> driver: 6.13.10.4109 <br> Windows XP pro <br>  <br> default settings of 3dMark2001 SE Pro score: 9171  <br>  
+					<span class="info"><br><br><br>&lt; Message edited by <b>rainne</b> -- <b>2/26/2003 6:03:45 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br><b><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=80176">VTEC powered!</a></b> <br>  <br> <font size="1">Veteran of a thousand psychic wars.</font> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">11/26/2002 3:52:16 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 3859  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=3892' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3892></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 8:42:16 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Seems low to me (as does Sindaan' s).  That system should be around 10k, IMO.  Have you compared it with the Online Results Browser in 3dMark just to see what other systems are doing? <br>  <br> Check your BIOS settings and make sure you' re set for AGP 4x and 128 or 256 bit wide path (they call this various things in the BIOS but look around and you should see something like that).   <br>  <br> Upgrade to the 4071 driver.  It' s WHQL-certified so you shouldn' t have any problems with it.  May give a very slight improvement (or not). <br>  <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">11/26/2002 8:42:16 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 3892  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=120')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=120&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=120&mode=block&pg=tm&m=3907' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=120" class="subhead" target=_blank>Rainne</a>
+		  
+		  <br>
+		  <script>titleAndStar(2428,4,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/120/407D3A6C39304A17A8BC6CE4007FF4F0.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  2428<br>
+		  Joined:  11/4/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3907></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#3892'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 9:52:14 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   It' s a Dell  <img src="http://ghguild.com/forum/image/s3.gif" align="middle" border="0" alt="">  <br>  <br> Not much I can change, I like it this way and I' m willing to lose a little for it. <br>  <br> According to the specs the AGP connector data width (maximum) is 32 bits.  You' re saying 128 or 256 bits is what other motherboards can use?  This could be a limiting factor I may not be able to get around.  <img src="http://ghguild.com/forum/image/s7.gif" align="middle" border="0" alt="">  <br>  <br> I' ll update to 40.71, I noticed that today when I ran the tests. <br>  <br>  <br> Thanks. <br>  <br> Any GeForce tweaks people use other than increasing the mhz? I found that hangs my PC in EQ. <br>  <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><b><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=80176">VTEC powered!</a></b> <br>  <br> <font size="1">Veteran of a thousand psychic wars.</font> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">11/26/2002 9:52:14 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 3907  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=11')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=block&pg=tm&m=3919' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=11" class="subhead" target=_blank>sindaan</a>
+		  
+		  <br>
+		  <script>titleAndStar(3564,11,7,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3564<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3919></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#3907'>Rainne</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 10:40:45 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Do a Google search for Coolbits.   Should be something like coolbits.reg. <br>  <br> That will unlock the overclocking options for your GeForce. 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://loot.ghguild.com">Loot Tracking</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">11/26/2002 10:40:45 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 3919  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=3920' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3920></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 10:46:07 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Check the BIOS options and see if it' ll let you change that 32 to a higher number.  It' s worth a look.  Won' t hurt anything if you change it; worst case it doesn' t do anything. <br>  <br> The only caveat on overclocking on a Dell is that Dell tends to cut the margin on power supplies to the bare minimum (I can' t tell you how many Dell systems I sold with 230 watt power supplies in the 1990s -- Dell is still very much a business computing-oriented company).  Check your system specs and make sure you have enough power.  If you overclock, you may run out and start to see crashes that look like overheating (but aren' t).   <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">11/26/2002 10:46:07 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 3920  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=11')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=block&pg=tm&m=3981' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=11" class="subhead" target=_blank>sindaan</a>
+		  
+		  <br>
+		  <script>titleAndStar(3564,11,7,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3564<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3981></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#3920'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 5:38:08 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   I couldnt find what you were talking about but I discovered my FSB is only running at 100mhz. <br>  <br> When i set the jumper to 133 (which is the max) the system wont boot. <br>  <br> Any ideas? <br>  <br> Its a Gigabyte GA-7VAXP. <br>  <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://loot.ghguild.com">Loot Tracking</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">11/26/2002 5:38:08 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 3981  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=3985' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3985></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 7:29:30 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Are you sure you bought a 133mhz FSB processor and RAM? <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">11/26/2002 7:29:30 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 3985  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=11')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=block&pg=tm&m=3992' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=11" class="subhead" target=_blank>sindaan</a>
+		  
+		  <br>
+		  <script>titleAndStar(3564,11,7,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3564<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=3992></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#3985'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/26/2002 8:39:06 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   its an XP2100 and pc2100 ram <br>  <br> Am I missing something else here?  hehe <br>  <br> The processor is at least 266.  I thought the ram was 266 as well. <br>  <br> Here is a link to the processor I purchased: <br>  <br> <a target="_blank" href="http://www.googlegear.com/jsp/ProductDetail.jsp?ProductCode=80163-R">http://www.googlegear.com/jsp/ProductDetail.jsp?ProductCode=80163-R</a> <br>  <br> Says 266 FSB. <br>  <br> The memory stats are: <br>  <br> Module Size: 512MB  <br> Package: 184-pin DIMM  <br> Feature: DDR PC2100  <br> Configuration: 64Meg x 64  <br> DIMM Type: Unbuffered  <br> Error Checking: Non-parity  <br> Speed: 7.5ns  <br> Voltage: 2.5V  <br> SDRAM Timings:CL=2.5  <br>  <br>  <br> I dunno the bus speed.  Bought it from Crucial though. 
+					<span class="info"><br><br><br>&lt; Message edited by <b>sindaan</b> -- <b>11/26/2002 8:53:26 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://loot.ghguild.com">Loot Tracking</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">11/26/2002 8:39:06 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 3992  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=4051' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=4051></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("11/27/2002 7:13:58 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   It' s DDR (double data rate) so it' s like saying that it' s 266mhz RAM, but it' s really just 133mhz.  They do the same thing in the Intel world, it' s just the way things work these days.  Someone figured out a way to interact with the RAM on both the incoming and outgoing cycles of the synchronous bus. <br>  <br> So yeah, it should be working with the FSB set for 133mhz.  Make sure that' s really the FSB you' re tinkering with in the BIOS.   Then I' d say it' s time to take a look at the RAM timing.  This is different for each BIOS so I have no real way to suggest what it should be, but I' d start with CAS latency.   <br>  <br> Couple BIOS resources for you: <br> <a target="_blank" href="http://burks.bton.ac.uk/burks/pcinfo/hardware/bios_sg/bios_sg.htm">http://burks.bton.ac.uk/burks/pcinfo/hardware/bios_sg/bios_sg.htm</a> <br> <a target="_blank" href="http://www.itcp.net/~awsh/Speed_Demonz/New_BIOS_Guide/Index.htm">http://www.itcp.net/~awsh/Speed_Demonz/New_BIOS_Guide/Index.htm</a> <br> <a target="_blank" href="http://www.tomshardware.com/mainboard/97q1/970101/index.html">http://www.tomshardware.com/mainboard/97q1/970101/index.html</a> 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">11/27/2002 7:13:58 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 4051  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=11')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=block&pg=tm&m=4594' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=11" class="subhead" target=_blank>sindaan</a>
+		  
+		  <br>
+		  <script>titleAndStar(3564,11,7,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3564<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=4594></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#3459'>sindaan</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("12/2/2002 5:38:09 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Got the system bus set to 133 now.  Was default 100mhz out of the box. <br>  <br> 11763 score now! 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://loot.ghguild.com">Loot Tracking</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">12/2/2002 5:38:09 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 4594  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=4614' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=4614></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("12/2/2002 7:31:37 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Very nice!  <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">12/2/2002 7:31:37 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 4614  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=104')" title="E-mail  Coball"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=104')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=104&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=104&mode=block&pg=tm&m=4682' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=104" class="subhead" target=_blank>Coball</a>
+		  
+		  <br>
+		  <script>titleAndStar(329,1,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%202/132.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  329<br>
+		  Joined:  11/3/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=4682></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("12/2/2002 11:25:10 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Athlon XP1800 @ 1631 <br> Geforce 4 Ti4200 128mb running at 250/446 <br> 40.71 <br> Win XP <br> 512mb 2700 DDR <br>  <br> 10347! <br>  <br> I upgraded my GF3 TI200 - the GF4 cause it was cheap at Best Buy and that upped my score about 2000 points from 8300. <br>  <br> Im still having temperature issues, mostly with the case sides on. I am at 48c with sides off doing nothing but typing this. <br>  <br> Also still having trouble getting my processor much faster without it not booting up. Not exactly sure what to do with Voltages but I was told thats the key. I have considered unlocking the multiplier but not sure if I want to risk crapping my chip. Anyone done this on these newer Athlons? <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=461299"><b>Coball Aggrondie</b></a> <br> <b>Archon of Grey Hawke</b> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">12/2/2002 11:25:10 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 4682  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=11')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=11&mode=block&pg=tm&m=4689' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=11" class="subhead" target=_blank>sindaan</a>
+		  
+		  <br>
+		  <script>titleAndStar(3564,11,7,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3564<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=4689></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#4682'>Coball</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("12/2/2002 11:47:53 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Thats a really good score for that system. <br>  <br> Upping voltages and unlocking multipliers is probably not a reall good thing to do unless you are VERY adept at what you are doing. <br>  <br> But your system is only scoring about 1000 marks lower than mine.  Thats damn good imo.  I may need to relook at mine but I am happy with the performance so far. 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://loot.ghguild.com">Loot Tracking</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">12/2/2002 11:47:53 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 4689  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=4695' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=4695></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("12/2/2002 12:06:45 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Very nice score, Cob. <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">12/2/2002 12:06:45 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 4695  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=270')" title="E-mail  Mondo"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=270')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=270&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=270&mode=block&pg=tm&m=19085' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=270" class="subhead" target=_blank>Mondo</a>
+		  
+		  <br>
+		  <script>titleAndStar(7,0,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/270/Xv64636.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  7<br>
+		  Joined:  2/10/2003 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19085></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/11/2003 2:59:48 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Hey Chant, 3dMark2003 is out, you can download it here. <br>  <br> <a target="_blank" href="http://www.futuremark.com/download/?3dmark03.shtml">http://www.futuremark.com/download/?3dmark03.shtml</a> 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Mondo</b> -- <b>2/11/2003 3:00:59 PM </b> &gt;</span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">2/11/2003 2:59:48 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 19085  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=19111' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19111></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/11/2003 7:23:33 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Thanks! 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">2/11/2003 7:23:33 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 19111  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=155')" title="E-mail  Kebin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=155')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=155&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=155&mode=block&pg=tm&m=19123' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=155" class="subhead" target=_blank>Kebin</a>
+		  
+		  <br>
+		  <script>titleAndStar(52,0,0,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><p class="ultrasmall">
+		  Posts:  52<br>
+		  Joined:  11/12/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19123></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/11/2003 9:22:41 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Yea, all the mirrors are like flooded...will have to wait a while before trying again hehe 
+					<span class="info"></span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">2/11/2003 9:22:41 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 19123  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=208')" title="E-mail  Faringal"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=208')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=208&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=208&mode=block&pg=tm&m=19273' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=208" class="subhead" target=_blank>Faringal</a>
+		  
+		  <br>
+		  <script>titleAndStar(22,0,0,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><p class="ultrasmall">
+		  Posts:  22<br>
+		  Joined:  12/28/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19273></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/12/2003 12:38:33 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Main  2.2ghz p4  (compaq)  1gig ram <br> ati 5700 pro 128mb <br> no over clock <br> win xp <br>  <br> sec  2.0 ghz p4 (HP)        7** ram   i always forget the number <br> geforce4 64 mb <br> no over clock <br> win xp 
+					<span class="info"><br><br><br>&lt; Message edited by <b>faringal</b> -- <b>2/12/2003 12:41:39 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br>Faringal <br>  <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=585129">http://www.magelo.com/eq_view_profile.html?num=585129</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">2/12/2003 12:38:33 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 19273  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=101')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=101&mode=block&pg=tm&m=19275' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=101" class="subhead" target=_blank>Chantela</a>
+		  
+		  <br>
+		  <script>titleAndStar(9150,0,13,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/Ec87816.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  9150<br>
+		  Joined:  11/3/2002 <br>From:  Ft. Lauderdale, Florida, USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19275></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/12/2003 12:48:39 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   You forgot to post the score.   <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>&quot;I don't know how Nixon could have won.  I don't know anybody who voted for him!&quot; <br> -- NYC Writer Film Critic Paulline Kael, about the 1972 election, in which Nixon took 49 states. <br>  <img src="http://www.pima.gov/elections/ivotedsk.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">2/12/2003 12:48:39 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 19275  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=15')" title="E-mail  Iqueue"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=15')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=15&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=15&mode=block&pg=tm&m=19314' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=15" class="subhead" target=_blank>Iqueue</a>
+		  
+		  <br>
+		  <script>titleAndStar(158,0,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/15/Om34136.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  158<br>
+		  Joined:  10/29/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19314></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/12/2003 5:54:05 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   I' m still getting my system together; at this point I' m around 12,500 on 2001SE and 1450 on 03.  MSI Granite Bay, 3.06HT, 8Xti4200 (40.71), 1gb ddr (pc2700 running in dual 266MHx config).   <br>  <br> I think we need separate threads to tell us which nvidia drivers, ati drivers, etc. are the best to use; it' s somewhat difficult to determine which drivers, etc. will help me most from reading a random list of scores and specs.  I probably won' t start overclocking until I get a handle on baseline temps; the new 3Dmark seems to be pretty wicked, and even more graphics card specific (and dependant) than 2001SE--and it requires DX9 which doesn' t show up on Windows Update yet. <br> <i>edit:driver version update</i> 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Iqueue</b> -- <b>2/12/2003 5:55:30 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br>Iqueue Rhymester, Ret. 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">2/12/2003 5:54:05 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 19314  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=212')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=212&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=212&mode=block&pg=tm&m=19557' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=212" class="subhead" target=_blank>Khezebel</a>
+		  
+		  <br>
+		  <script>titleAndStar(1362,-17,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/212/295F8C57C67544F0A196E8078A7F8E37.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1362<br>
+		  Joined:  1/2/2003 <br>From:  Ole Miss!<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=19557></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/13/2003 3:55:50 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   AMD Athlon(TM) XP 2100+ running at 1.3 GHz  <br> NVIDIA GeForce3        Driver 4.1.0.9  <br> Total Physical Memory   1.00 GB <br> No overclocking <br> Windows XP Pro <br>  <br> No results because 3DMark03 tests hang my system at CPU test #2.  System sits there frozen for a minute, then totally powers down. <br>  <br> CPU is underclocked (1.3Ghz instead of 1.73Ghz) because running at 266 FSB gives errors and hangs when booting both XP and RH Linux 8... so I use 200mhz FSB. <br>  <br> Asked about this problem on various forums.. got plenty of answers and suggestions, but nothing worked to resolve the problem.  I think I need a new motherboard, even though this one was a new release when I bought it and it DOES support the CPU and RAM I am using... /shrug... <br>  <br> --Update: <br> Got a new motherboard.. fixed my CPU speed to 1.74Ghz as it should be. <br> Just got a score of 708 using 3DMark2003...  Sounds pretty crappy! 
+					<span class="info"><br><br><br>&lt; Message edited by <b>khezebel</b> -- <b>2/26/2003 8:38:43 PM </b> &gt;</span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=546246">Khezebel</a> <br>  <br> <i>You'll never silence the voice <br> Of the voiceless</i> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">2/13/2003 3:55:50 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 19557  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=50')" title="E-mail  Stormbeard"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=50')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=50&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=50&mode=block&pg=tm&m=21935' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=50" class="subhead" target=_blank>Stormbeard</a>
+		  
+		  <br>
+		  <script>titleAndStar(187,1,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/50/Yw69246.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  187<br>
+		  Joined:  10/31/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=21935></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#543'>Chantela</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("2/24/2003 1:48:50 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   The machines we' re using here in Berlin for this event have Athlon 2800+ with Radeon 9700 pros in them. <br>  <br> They' re scoring 15,100 on the old 3D Mark test (not 2003).  It' s quite impressive. <br>  <br> We had to swap a couple of the 9700s for GeForce 4 4200s (compatability issues with Homeworld2 early code) and they dropped to 11,000. 
+					<span class="info"></span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">2/24/2003 1:48:50 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 21935  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=6')" title="E-mail  Lodaka"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=6')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=6&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=6&mode=block&pg=tm&m=26398' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=6" class="subhead" target=_blank>Lodaka</a>
+		  
+		  <br>
+		  <script>titleAndStar(792,1,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/6/Ca81276.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  792<br>
+		  Joined:  10/27/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=26398></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#21935'>Stormbeard</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("3/14/2003 8:35:14 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   AMD xp2000 <br> 512 pc2700 ram <br> Gforce 4 ti4400  <br> driver version 41.09  <br> XP prof  <br> No overclocking  <br>  <br> 3dmark 2001 score 10481 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Lodaka</b> -- <b>3/14/2003 8:35:43 PM </b> &gt;</span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">3/14/2003 8:35:14 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 26398  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=16')" title="E-mail  HooVooLoo"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=16')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=16&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=16&mode=block&pg=tm&m=33021' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=16" class="subhead" target=_blank>HooVooLoo</a>
+		  
+		  <br>
+		  <script>titleAndStar(1937,-10,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/16/Jh161267072.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1937<br>
+		  Joined:  10/29/2002 <br>From:  Chad, Florida<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=33021></a>
+			  	
+				  <img src="micons/m3.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#26398'>Lodaka</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("4/16/2003 6:50:55 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   The time has come for ATI to DIE DIE DIE. <br>  <br> Let' s see how big of an improvement I get. <br>  <br> PIV 1.7GHz <br> 512 MB PC800 RDRAM <br> ATI Radeon 32DDR <br> DX 8.1 <br> (Nothing overclocked, all standard settings) <br>  <br> 1024x768x32bit, all other settings left at default <br>  <br> 3D Mark 2001 SE Build 330   -   3464 3D marks <br> 3D Mark 2003 - (Doh, need DX9 to run.  Alas) <br>  <br> ----------------------------- <br>  <br> Same specs, but with GeForce4 Ti4800, 128MB, 4x AGP (MB limitation).   <br>  <br>  <br> 1024x768x32bit, all other settings left at default <br>  <br> 3D Mark 2001 SE Build 330 - 8697 3D marks <br>  <br> Same test, first round of overclocking madness... <br>  <br> 8796 3D marks.   <br>  <br> Final results - 9794 3D Marks  (9971 with 16 bit textures, heh) <br>  <br> All-in-all, I am most pleased with the performance increase.  Games run hella better, which is what matters most.  :-) 
+					<span class="info"><br><br><br>&lt; Message edited by <b>HooVooLoo</b> -- <b>4/18/2003 10:37:55 AM </b> &gt;</span>
+					 <br><br>_____________________________<br><br> <img src="http://s94405020.onlinehome.us/images/hooorg.jpg" align="middle" border="0" alt="">  <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=197502">Me</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">4/16/2003 6:50:55 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 33021  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=6')" title="E-mail  Lodaka"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=6')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=6&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=6&mode=block&pg=tm&m=33257' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=6" class="subhead" target=_blank>Lodaka</a>
+		  
+		  <br>
+		  <script>titleAndStar(792,1,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/6/Ca81276.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  792<br>
+		  Joined:  10/27/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=33257></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#33021'>HooVooLoo</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("4/18/2003 10:55:15 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   What nvidia driver version ya usin Hoo? Download the latest from <a target="_blank" href="http://www.nvidia.com">www.nvidia.com</a> .. think its 43.45 
+					<span class="info"></span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">4/18/2003 10:55:15 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 33257  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=16')" title="E-mail  HooVooLoo"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=16')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=16&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=16&mode=block&pg=tm&m=33283' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=16" class="subhead" target=_blank>HooVooLoo</a>
+		  
+		  <br>
+		  <script>titleAndStar(1937,-10,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/16/Jh161267072.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1937<br>
+		  Joined:  10/29/2002 <br>From:  Chad, Florida<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=33283></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#33257'>Lodaka</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("4/18/2003 1:22:33 PM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Yeah, that' s what I have. 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br> <img src="http://s94405020.onlinehome.us/images/hooorg.jpg" align="middle" border="0" alt="">  <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=197502">Me</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">4/18/2003 1:22:33 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 33283  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=4')" title="E-mail  Kallador"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=4')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=4&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=4&mode=block&pg=tm&m=36420' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=4" class="subhead" target=_blank>Kallador</a>
+		  
+		  <br>
+		  <script>titleAndStar(2099,-2,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/4/Xv65425.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  2099<br>
+		  Joined:  10/25/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=36420></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Sticky: Post your 3dMark scores...&nbsp;(<span class="ultrasmall">in reply to <a href='#26398'>Lodaka</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("5/3/2003 9:24:57 AM",0,0,0,543,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   AMD XP 1800+  <br> 512 pc2100 ram  <br> Gforce 3 64MB DDR  <br> driver version 43.45 <br> XP prof  <br> No overclocking  <br>  <br> 3dmark 200[B]3[/B] score 997 (Blah) <br>  <br> Bullding a new system soon!  <br>  <br>  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=47258">Kallador Thunderheart</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">5/3/2003 9:24:57 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 36420  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+	   <font color='FFFFFF' class='subhead'>[1]</font> <a href='tm.asp?m=543&mpage=2&key='><font color='FFFFFF' class='subhead'>2</font></a> <a href='tm.asp?m=543&mpage=3&key='><font color='FFFFFF' class='subhead'>3</font></a> &nbsp;&nbsp;<a href='tm.asp?m=543&mpage=2&key=' title='next'><font color='FFFFFF' class='subhead'>next &gt;</font></a>&nbsp;&nbsp;<a href='tm.asp?m=543&mpage=3&key=' title='last'><font color='FFFFFF' class='subhead'> &gt;&gt;</font></a>
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=2'>Geek Life</a> &gt;&gt;  Sticky: Post your 3dMark scores here! </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> <a href='tm.asp?m=543&mpage=2&key='><b>2</b></a> <a href='tm.asp?m=543&mpage=3&key='><b>3</b></a> &nbsp;&nbsp;<a href='tm.asp?m=543&mpage=2&key=' title='next'><b>next &gt;</b></a>&nbsp;&nbsp;<a href='tm.asp?m=543&mpage=3&key=' title='last'><b> &gt;&gt;</b></a></td></tr></table>
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.asp'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.asp?forumid=58" >[Public]</option>
+<option value="tt.asp?forumid=1" >- - Public Forum</option>
+<option value="tt.asp?forumid=2" selected>- - Geek Life</option>
+<option value="tt.asp?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="98%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.asp" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="543">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+
+<br>
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr><td>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Reply to Message<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Poll<br>			
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Submit Vote<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Post<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Rate Posts
+					</td></tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br>
+<center>
+	
+	<br>
+	<br>	</td>
+	  </tr>
+	</table>
+	</center>
+	
+	<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")){
+			self.location.href="pm.asp";
+		}
+	}
+	</script>
+	<center><img src="http://ghguild.com/poweredbywin2k3.gif"><br><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+	<td align="center" class="info">Forum Software powered by ASP Playground <b>Advanced Edition</b> 2.3<br>
+	  Copyright &copy; 2000 - 2003 <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a></td>
+  </tr>
+</table></center>
+	<br><font color="ffffff">0.148</font><br>
+
+</body>
+</html>

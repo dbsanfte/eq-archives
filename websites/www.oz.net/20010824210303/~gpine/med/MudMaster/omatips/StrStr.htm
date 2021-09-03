@@ -1,0 +1,57 @@
+<html>
+<body><font face=Courier>
+<a href="../omatips.htm">Back to OmaTips</a>
+<br><br>
+
+<table width=600 border=0 cellspacing=0 style="font-size: 10pt">
+  <tr>
+    <td><font face="Courier New" size=3>
+<u><b>Searching for a string match, and Search Engines</b></u><br><br>
+
+Zigma sent me a basic search engine example, and that is what got me going for doing up this tip.<br><br>
+
+Searching for a string is easy when the @StrStr() proc is used...<br>
+
+&nbsp;&nbsp;Syntax: @StrStr(<i>TextToSearchIn,TextToSearchFor</i>)<br><br>
+
+@StrStr() is a way to compare two strings of text for a match. Think of the proc name
+as "if String = String".<br>
+
+@StrStr() can be a little confusing because of how it returns an error. @StrStr() returns a
+zero based index of where the first character in the string to search for was found. Otherwise
+it returns a value of "-1" if the string wasn't found. So the easiest way to check for a string
+is to just look if it <b>does not</b> equal "-1", that means it's a match!<br><br>
+
+That means: Say we're looking for the string "Cuddles" and you see:<br>
+&nbsp;&nbsp;A dog named Cuddles piddles on your leg.<br>
+and you check it with:<br>
+&nbsp;&nbsp;/action {%0 piddles on your leg.} {/if {@StrStr($0,Cuddles)!=-1)} {slap Cuddles}}<br><br>
+
+So, if "$0" contains "Cuddles" then @StrStr()'s value will be 0 or greater (0 based index). If the
+string "Cuddles" isn't in "$0" then @StrStr() will return -1.<br>
+So just remember, if it's <b>not</b> equal to -1, it's in the string.<br><br>
+
+<u><b>Search Engines</b></u><br><br>
+
+So, with @StrStr() it's possible to make some "search engines" for whatever you want. Commonly
+scripts are made to search a list or array for some string:<br>
+
+/loop {1,@GetCount(<i>SomeList</i>)} {/if {@StrStr(@GetItem(<i>SomeList</i>,$LoopCount),<i>TextToSearchFor</i>)!=-1} {Then this item contains the string that you searched for} {Else this item Doesn't contain the string that you searched for}}<br><br>
+
+<u><b>Tips</b></u><br><br>
+
+Use spaces to help narrow down the search. Say you make a search engine to look up strings in a 
+huge list of clansays. Supplying a space can help so you don't get text that matches in the middle 
+of a word.<br>
+For example, you want to search for "url" in a huge list of clansays. /if {@StrStr($0, url )!=-1} 
+..would only find the specific word " url ", so you wouldn't get a hit on a word like "Durle said, 
+..."<br><br>
+
+Like all of MM, it's case sensitive. abc!=ABC. So use @Lower() or @Upper() where appropriate.<br>
+/if {@StrStr(@Lower($0),url)!=-1}<br><br><br>
+
+<a href="../omatips.htm">Back to OmaTips</a>
+
+</table>
+</body>
+</html>

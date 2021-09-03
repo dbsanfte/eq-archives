@@ -1,0 +1,2225 @@
+<!-- START OF header.tmpl TEMPLATE -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/ubbthreads/stylesheets/greenday.css" type="text/css" />
+
+<title>Viewing list of forums</title>
+</head>
+<body>
+<!-- END OF header.tmpl TEMPLATE --><br /> 
+<table border="0" cellpadding="1" cellspacing="0" width="95%" class="tablesurround" align="center"> 
+<tr> 
+<td align="center"> 
+<table border="0" cellpadding="1" cellspacing="0" width="100%" class="tableborders" align="center"> 
+<tr> 
+<td align="center"> 
+<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+<tr> 
+<td width="25%" class="welcome"> 
+<b>RallosZek.Net</b>
+</td> 
+<td width="50%" align="right" class="welcome"> 
+<b></b> 
+</td>
+<td width="25%" class="welcome" align=right> 
+<b>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="datal@ralloszek.net">
+<input type="hidden" name="item_name" value="RallosZek.Net">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="tax" value="0">
+<input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</form>
+</b>
+</td> 
+</tr> 
+
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+<tr>
+<td align="center" class="menubar">
+<a href = "http://www.ralloszek.net/index.php?Cat=">Entrance</a>
+ |
+<a href="http://www.ralloszek.net/ubbthreads/ubbthreads.php?Cat=">Main Index</a>
+ | 
+<a href="http://www.ralloszek.net/ubbthreads/search.php?Cat=">Search</a>
+ | 
+<a href = "http://www.ralloszek.net/ubbthreads/guildlist.php?Cat=" >Guild List</a>
+ |
+<a href="http://www.ralloszek.net/ubbthreads/newuser.php?Cat=">New user</a>
+ | 
+<a href="http://www.ralloszek.net/ubbthreads/login.php?Cat=">Login</a>
+ | 
+<a href="http://www.ralloszek.net/ubbthreads/online.php?Cat=">Who's Online</a>
+ | 
+<a href="http://www.ralloszek.net/ubbthreads/faq_english.php?Cat=">FAQ</a>
+
+<br />
+<a href = "/chat" target="_New">RallosZek Chat</a>
+ |
+<a href = "/webmail" target="_New">Rallos Zek Web Mail</a>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+<br />
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="News and Announcements" title="News and Announcements" />
+Announcements
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=news">
+News and Announcements
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum for News and Announcements to be posted.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+75
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+154
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=news&amp;Number=33113&amp;Main=32988#Post33113"> Re: Sleeper is dead.</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Grimance)
+- 12/04/03 07:42 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzpolls">
+RZ.Net Polls
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+RallosZek.Net On-Line Polls (Strict Moderation)
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+15
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+66
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzpolls&amp;Number=33020&amp;Main=28351#Post33020"> Re: Are you Female or Male...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(UulosPinksock_RZ)
+- 11/23/03 09:16 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzreq">
+RZ.Net Requests
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Want to see something special put on RZ.Net?  Want to see a new app developed for the users?  Place your Idea's and Request here.  (Strictly Moderated)
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+5
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+14
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzreq&amp;Number=32997&amp;Main=13110#Post32997"> Re: chat</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Strawbarrie)
+- 11/19/03 10:28 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzbugs">
+RZ.Net Bug's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Please report all the bugs you find on the RallosZek.Net site here.  (Strictly Moderated)
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+4
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+8
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzbugs&amp;Number=17752&amp;Main=17752#Post17752"> Problems with images</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 08/06/02 05:55 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=pubcal">
+Public Calendar
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Public Calendar. (Strictly Moderated)
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+4
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+23
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=pubcal&amp;Number=32546&amp;Main=29657#Post32546"> Re: Thraxlls RL B-day!</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Artenmis)
+- 10/06/03 04:09 PM
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="Star Wars Galaxies PA" title="Star Wars Galaxies PA" />
+Star Wars Galaxies PA
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=notper">
+Nothing Personal
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Nothing Personal - Star Wars Galaxies PA Group - Public
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=881&amp;What=ubbthreads">Dansce_Klmis</a>, <a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=1466&amp;What=ubbthreads">Keeal</a>, <a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=877&amp;What=ubbthreads">Inen</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+178
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+907
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=notper&amp;Number=33169&amp;Main=33164#Post33169"> Re: LOL</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 12/13/03 10:22 AM
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="Forums for general discussion" title="Forums for general discussion" />
+EverQuest General Discussion
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=ooc">
+Out-Of-Character
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum to discuss all OOC topics.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+920
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+12510
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=ooc&amp;Number=33163&amp;Main=33133#Post33163"> Re: For those needing a qu...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 12/11/03 12:36 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=trades">
+Trade Skills - Quests
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Use this forum to offer help or links pertaining to all EQ trade skills. This may also help out on any quests that need to be completed.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+5
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+13
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/wink.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=trades&amp;Number=33034&amp;Main=33034#Post33034"> Translocate is my trade </a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Strawbarrie)
+- 11/25/03 12:14 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rpdiscuss">
+Roleplayers' Discussion
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Discussion forum for Roleplayers' to discuss events and any Roleplaying topics.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+23
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+308
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rpdiscuss&amp;Number=32559&amp;Main=32112#Post32559"> Re: Roleplaying Guilds?</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(malvolin)
+- 10/06/03 08:04 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rp">
+Roleplayers'
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Roleplay Forum.  Post stories and other in game activitie here.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+31
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+234
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rp&amp;Number=31214&amp;Main=31214#Post31214"> hi </a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Guvil)
+- 08/08/03 12:39 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=Links">
+Links
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Links to Web Sites EQ and Non-EQ related.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+8
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+17
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=Links&amp;Number=25554&amp;Main=25114#Post25554"> Re: Another EQ Comic</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Arravis)
+- 01/03/03 12:05 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rztest">
+RZ Test Forum
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+RallosZek.Net Test Forum.  Please feel free to test your signatures here and other stuff will be tested on this forum. MARKUP LANGAUGE ONLY
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+1
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rztest&amp;Number=33159&amp;Main=33159#Post33159"> Blah Blah Blah</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 12/10/03 12:27 PM
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="RZ Trading Corner" title="RZ Trading Corner" />
+RZ Trading Corner
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/nonewposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=tradingcorner">
+RZ Trading Corner
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Come post what you have for sell or what your wanting to buy.  (This board is RZ specific NO cross server trades)
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+0
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+0
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+- New forum
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="Hand of Dane Forums" title="Hand of Dane Forums" />
+Hand of Dane
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=hodpublic">
+Hand of Dane Public Forum
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Public forum for the EverQuest Guild Hand of Dane on the Rallos Zek Server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=902&amp;What=ubbthreads">Grimance</a>, <a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=198&amp;What=ubbthreads">Druuni</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+160
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+1008
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=hodpublic&amp;Number=33111&amp;Main=33005#Post33111"> Re: Hello my  OLD Dane bro...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Grimance)
+- 12/04/03 02:29 AM
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="Forums not related to EQ" title="Forums not related to EQ" />
+Non-EQ Related
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzflames">
+RZ.Net Flames - Moans - Complaints
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+This forums is unmoderated unless a thread has personal attacks that can harm someone's RL situation.  This is the place where you can flame each other or what not.  RallosZek.Net does not support or agree or in anyway affilate itself with post withen this forum.  Threads expire after 90 days.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+3
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+20
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzflames&amp;Number=33035&amp;Main=33035#Post33035"> Petition to Verant and Jad...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Strawbarrie)
+- 11/25/03 12:28 PM
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="Class Specific Forums" title="Class Specific Forums" />
+EverQuest Classes
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzbards">
+Bard's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Bard's of the Rallos Zek server. 
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+3
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+41
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzbards&amp;Number=33108&amp;Main=11948#Post33108"> Re: uulos</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Strawbarrie)
+- 12/03/03 02:17 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzbeastlords">
+Beastlord's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Beastlord's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+38
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzbeastlords&amp;Number=33153&amp;Main=18915#Post33153"> Re: Sonic Wolf Bane Quest</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Grimance)
+- 12/09/03 05:11 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzclerics">
+Cleric's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Cleric's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+4
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+37
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzclerics&amp;Number=33062&amp;Main=33062#Post33062"> Grrr... Another board</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:35 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzdruids">
+Druid's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Druid's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+4
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+43
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzdruids&amp;Number=33061&amp;Main=33061#Post33061"> Where you got?</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:34 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzenchanters">
+Enchanter's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Enchanter's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+28
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzenchanters&amp;Number=16597&amp;Main=11952#Post16597"> Re: was tough</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 07/05/02 07:19 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzmagicians">
+Magician's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Magician's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+3
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+9
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzmagicians&amp;Number=32736&amp;Main=32736#Post32736"> NT</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Thraxll)
+- 10/24/03 01:29 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzmonks">
+Monk's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Monk's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+12
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzmonks&amp;Number=22880&amp;Main=18741#Post22880"> Re: Monks don't have it ea...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Thraxll)
+- 10/21/02 07:01 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rznecromancers">
+Necromancer's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Necromancer's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+4
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+32
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rznecromancers&amp;Number=31216&amp;Main=27180#Post31216"> Re: Hello?</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Guvil)
+- 08/08/03 12:42 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzpaladins">
+Paladin's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Paladin's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+42
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzpaladins&amp;Number=23794&amp;Main=10606#Post23794"> Re: The Cherry is Gone.</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Grimance)
+- 11/05/02 02:44 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzrangers">
+Ranger's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Ranger's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+20
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzrangers&amp;Number=32567&amp;Main=10975#Post32567"> Re: WOOHOO!</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Artenmis)
+- 10/07/03 10:33 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzrogues">
+Rogue's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Rogue's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+21
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzrogues&amp;Number=32892&amp;Main=11289#Post32892"> Re: good rogue class</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(UulosPinksock_RZ)
+- 11/09/03 08:44 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzshadowknights">
+Shadow Knight's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Shadow Knight's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+12
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzshadowknights&amp;Number=31217&amp;Main=10368#Post31217"> Re: Good Class Specific We...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Guvil)
+- 08/08/03 12:43 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzshamans">
+Shaman's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Shaman's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+4
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+40
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzshamans&amp;Number=33070&amp;Main=14292#Post33070"> Re: whats the best race fo...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(UulosPinksock_RZ)
+- 11/27/03 10:53 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzwarriors">
+Warrior's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Warrior's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+3
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+55
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzwarriors&amp;Number=21341&amp;Main=9662#Post21341"> Re: my little experience w...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(DokanFoH)
+- 09/24/02 05:08 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzwizards">
+Wizard's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Wizard's of the Rallos Zek server. 
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+8
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+57
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzwizards&amp;Number=33057&amp;Main=33057#Post33057"> The Best Gear set up? Prim...</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Strawbarrie)
+- 11/26/03 10:57 AM
+</td>
+</tr><!-- CATEGORY LOOP START -->
+<tr>
+<td colspan="5" class="cleartable"><img src="/ubbthreads/images/blank.gif" width="1" height="1" alt="*" /></td>
+</tr>
+<tr>
+<td align="center" valign="top" class="tdheader">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td class="">
+ 
+</td></tr></table>
+</td>
+<td class="tdheader">
+<img style="vertical-align: text-top" src="/ubbthreads/images/about.gif" alt="Race Specific Forums" title="Race Specific Forums" />
+EverQuest Races
+</td>
+<td class="tdheader" align="center" width="9%">
+Threads
+</td>
+<td class="tdheader" align="center" width="9%">
+Posts
+</td>
+<td class="tdheader" align="center" width="40%">
+Last post
+</td>
+</tr>
+
+<!-- BEGIN FORUM CODE LOOP _ DO NOT ALTER COMMENTS --><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzbarbarians">
+Barbarian's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Barbarian's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+40
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzbarbarians&amp;Number=23063&amp;Main=21703#Post23063"> Re: Barb No Drop??</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Chesticus)
+- 10/23/02 01:50 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzdarkelfs">
+Teir'Dal's (Dark Elf's) 
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Teir'Dal's (Dark Elf's) of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+3
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+31
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzdarkelfs&amp;Number=33058&amp;Main=33058#Post33058"> Test</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:25 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzdwarfs">
+Dwarf's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Dwarf's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+14
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzdwarfs&amp;Number=19803&amp;Main=18802#Post19803"> Re: guard bundin quest????</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(dthegreat)
+- 09/04/02 05:07 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzerudites">
+Erudite's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Erudite's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+5
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzerudites&amp;Number=16600&amp;Main=11655#Post16600"> Re: hmmm</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 07/05/02 07:25 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=frog">
+Froglok's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Froglok's of the Rallos Zek server. 
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+4
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=frog&amp;Number=33025&amp;Main=25983#Post33025"> Re: Lvl of Troll Raiders</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(UulosPinksock_RZ)
+- 11/24/03 07:17 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzgnomes">
+Gnome's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Gnome's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+3
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+37
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzgnomes&amp;Number=33063&amp;Main=33063#Post33063"> No one noticed</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:36 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzhalfelfs">
+Half Elf's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Half Elf's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+10
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzhalfelfs&amp;Number=33064&amp;Main=33064#Post33064"> No Half Elf's Either</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:36 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzhalflings">
+Halfling's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Halfling's on the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+2
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzhalflings&amp;Number=16531&amp;Main=12700#Post16531"> Re: ~</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Druuni)
+- 07/04/02 08:00 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzhighelfs">
+Koada'Dal's (High Elf's)
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Koada'Dal's (High Elf's) of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+4
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzhighelfs&amp;Number=16641&amp;Main=12708#Post16641"> Re: hrmm</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 07/06/02 11:22 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzhumans">
+Human's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Human's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+18
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzhumans&amp;Number=33065&amp;Main=33065#Post33065"> No HumanS??</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:37 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rziksars">
+Iksar's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Iksar's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+26
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rziksars&amp;Number=16602&amp;Main=10869#Post16602"> Re: To the Male Iksar's</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 07/05/02 07:30 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzogres">
+Ogre's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Ogre's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+4
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzogres&amp;Number=16643&amp;Main=12709#Post16643"> Re: the best ogre</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 07/06/02 11:24 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rztrolls">
+Troll's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Troll's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+6
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rztrolls&amp;Number=16638&amp;Main=12711#Post16638"> Re: the funniest</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Illmizzo)
+- 07/06/02 11:18 AM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzvalshirs">
+Val Shir's
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Val Shir's of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+2
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+5
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzvalshirs&amp;Number=33066&amp;Main=33066#Post33066"> Cat people gone also </a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Datal)
+- 11/26/03 01:38 PM
+</td>
+</tr><tr>
+<td valign="top" class="darktable">
+<img src="/ubbthreads/images/newposts.gif" alt="" />
+</td>
+<td class="darktable">
+<font class="forumtitle">
+<a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=&amp;Board=rzwoodelf">
+Fier'Dal's (Wood Elf's)
+</a>
+</font>
+<br />
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+&nbsp;   
+</td>
+<td class="forumdescript">
+Forum dedicated to the Fier'Dal's (Wood Elf's) of the Rallos Zek server.
+</td>
+</tr>
+</table>
+<span class="modline">&nbsp;&nbsp; Moderator: &nbsp;<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=2&amp;What=ubbthreads">Datal</a>&nbsp;</span>
+</td>
+<td align="center" class="threadtotal" nowrap="nowrap">
+1
+
+</td>
+<td align="center" class="posttotal" nowrap="nowrap">
+22
+
+
+</td>
+<td class="posttime" nowrap="nowrap">
+<img src="/ubbthreads/images/icons/book.gif" style="vertical-align: text-top" alt="*" /> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=&amp;Board=rzwoodelf&amp;Number=19425&amp;Main=11653#Post19425"> Re: s e x a y</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Druuni)
+- 08/28/02 08:11 PM
+</td>
+</tr><!-- END CATEGORY LOOP -->
+<!-- END OF FORUM LOOP -->
+
+</table>
+</td>
+</tr>
+</table>
+
+
+<br />
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+<tr>
+<td colspan="3" class="tdheader">
+<b>Extra information</b>
+</td>
+</tr>
+<tr>
+<td width="45%" valign="top" class="lighttable">
+<span  class="small">
+Please <a href="http://www.ralloszek.net/ubbthreads/newuser.php">register</a> a user.
+<br />
+
+Show favorite forums.
+
+<br />
+187 Registered User(s).
+<br />
+Welcome to our newest member,
+<a href="http://www.ralloszek.net/ubbthreads/showprofile.php?User=1635&amp;What=ubbthreads&amp;Cat=">
+Offtunex
+</a>
+<br />
+There are 0 registered and 4 anonymous users online.
+<br />
+Current adjusted date is:
+ 12/14/03 12:46 AM
+</span>
+</td>
+<td width="30%" valign="top" class="lighttable">
+<span  class="small">
+<b>View recent messages</b>
+<br />
+ 
+ 
+ 
+<a href="http://www.ralloszek.net/ubbthreads/dosearch.php?Cat=&amp;Forum=All_Forums&amp;Words=&amp;Match=Entire+Phrase&amp;Old=1day&amp;Limit=25">
+Past 24 hours
+</a>
+<br />
+ 
+ 
+ 
+<a href="http://www.ralloszek.net/ubbthreads/dosearch.php?Cat=&amp;Forum=All_Forums&amp;Words=&amp;Match=Entire+Phrase&amp;Old=2days&amp;Limit=25">
+Past 48 hours
+</a>
+<br />
+ 
+ 
+ 
+<a href="http://www.ralloszek.net/ubbthreads/dosearch.php?Cat=&amp;Forum=All_Forums&amp;Words=&amp;Match=Entire+Phrase&amp;Old=1week&amp;Limit=25">
+Past 7 days
+</a>
+</span>
+</td>
+<td valign="top" class="lighttable">
+<b>Legend:</b>
+<table border="0" cellpadding="0" cellspacing="2">
+<tr>
+<td>
+<img src="/ubbthreads/images/newposts.gif" alt="*" />
+</td>
+<td class="small">
+&nbsp;New posts
+</td>
+</tr>
+<tr>
+<td>
+<img src="/ubbthreads/images/nonewposts.gif" alt="*" />
+</td>
+<td class="small">
+&nbsp;No new posts
+</td>
+</tr>
+<tr>
+<td align="center">
+<img class="newpostsincat" src="/ubbthreads/images/catexpand.gif" alt="This will let you know if there are new posts in a category that you have collapsed." />
+</td>
+<td class="small">
+&nbsp;New posts
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="/ubbthreads/images/catexpand.gif" alt="This will let you know if there are new posts in a category that you have collapsed." />
+</td>
+<td class="small">
+&nbsp;No new posts
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+
+<br />
+<br />
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+<tr>
+<td class="darktable">
+<table border="0" width="100%" cellpadding="2" cellspacing="0">
+<tr>
+<td align="left">
+<a href="mailto:rzforums@ralloszek.net">Contact Us</a>
+
+</td>
+<td align="center">
+<a href="http://www.swgcenter.com"><img src="http://www.swgcenter.com/gifs/pa_button.jpg" width=100 height=36 border=0 alt="Star Wars Galaxies Resource Center"></a>
+</td>
+<td align="right">
+<a href="http://www.ralloszek.net/">RallosZek.Net</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+
+<p align ="center" style="font-size: 9px;"><a href="http://www.infopop.com/landing/goto.php?a=ubb.threads"><img src="/ubbthreads/images/powered_by2.gif" border="0" alt="*" /></a><br />
+UBB.threads™ 6.2.1
+</p>
+
+<div align=center>
+<!-- Begin Official PayPal Seal -->
+<A HREF="https://www.paypal.com/verified/pal=datal%40ralloszek.net" target="_blank"><IMG SRC="http://images.paypal.com/images/verification_seal.gif" BORDER="0" ALT="Official PayPal Seal"></A>
+<!-- End Official PayPal Seal -->
+</div>
+</body>
+</html>
+    
+

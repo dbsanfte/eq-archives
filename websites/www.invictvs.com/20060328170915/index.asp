@@ -1,0 +1,1691 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+	<TITLE>INVICTVS</TITLE>
+	<style type="text/css" media="all">@import "CSS/invictvs.css";</style>
+</HEAD>
+
+
+<SCRIPT LANGUAGE="JavaScript" SRC="includes/javascript_functions.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+		// Nada!
+</SCRIPT>
+
+<BODY BACKGROUND="publishimages/bg_tile.gif" TEXT="#FFFFFF" LEFTMARGIN="0" TOPMARGIN="0">
+<div align="center">
+	<img src="/publishimages/banner.jpg" alt="Invictvs" border="0">
+</div>
+<table width="100%" align="center" border="1" bordercolor="#ffffff" cellspacing="0" cellpadding="0">
+<tr><td>
+	<table width="100%" align="center" border="0" cellspacing="0" cellpadding="2" background="/publishimages/bg_mainnav.gif">
+		<tr>
+			<td align="center" ><a href="/index.asp" name="Invictvs Home" title="Invictvs Home" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">HOME</a></td>
+			<td align="center"><a href="/guildroster.asp" name="Roster" title="Roster" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">ROSTER</a></td>
+			<td align="center"><a href="http://p213.ezboard.com/binvictvs" name="Invictvs Forums" title="Invictvs Forums" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">FORUMS</a></td>
+			<td align="center"><a href="/joining.asp" name="Joining Invictvs" title="Joining Invictvs" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">RECRUITMENT</a></td>
+			<td align="center"><a href="/guildcharter.asp" name="Invictvs Charter" title="Invictvs Charter" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">CHARTER</a></td>
+			<td align="center"><a href="/raidloot.asp" name="Invictvs Charter" title="Invictvs Charter" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">RAID & LOOT RULES</a></td>
+
+			<td align="center"><a href="/members/login_form.asp" name="Member Login" title="Member Login" style="text-decoration:none; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #fff; font-size: 10pt;">LOGIN</a></td>
+
+		</tr>
+	</table>
+</td></tr>
+</table>
+<table width="100%" cellspacing="3" border="0">
+	<tr>
+		<td width="200" id="content" valign="top" align="center">
+			<table width="100%">
+				<tr>
+					<td id="mainheader">Links</td>
+				</tr>
+				<tr><td height="4"></td></tr>				
+				<tr>
+					<td id="lootlist">
+						<table border="0" cellpadding="2" cellspacing="0" align="center" width="100%">
+							<tr>
+								<td align="center"><B><A HREF="http://eqlive.station.sony.com/" TARGET="_window">Everquest Live</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://everquest.allakhazam.com/" TARGET="_window">Allakhazam's</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://lucy.allakhazam.com/" TARGET="_window">Lucy</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://www.magelo.com/index.html" TARGET="_window">Magelo</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://www.eqtraders.com/" TARGET="_window">EQ Traders Corner</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://eq.crgaming.com/" TARGET="_window">Everquest Realm</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://www.eqatlas.com" TARGET="_window">EverQuest Atlas</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://www.berthall.com/forums/index.php" TARGET="_window">Berthall Forums</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://www.thesafehouse.org" TARGET="_window">Safehouse</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://eqwire.com/" TARGET="_window">EQWire</A></B></td>
+							</tr>
+							<tr>
+								<td align="center"><B><A HREF="http://eq-toolbox.com/" TARGET="_window">EQ-Toolbox</A></B></td>
+							</tr>
+							<tr>
+								<td align="center">&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td id="mainheader">Recent Loot Awards</td>
+				</tr>
+				<tr><td height="4"></td></tr>				
+				<tr>
+					<td id="lootlist">
+						<table border="0" cellpadding="2" cellspacing="0" align="center" width="100%">
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/27/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Addamiss</td>
+								<td>
+<a href="Javascript: viewItem('47265');">Darkiron Bow of Betrayal</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Bbik</td>
+								<td>
+<a href="Javascript: viewItem('47223');">Bracelet of the Corrupter</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Beville</td>
+								<td>
+<a href="Javascript: viewItem('47253');">Howling Blood-Stained Bulwark</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Buffeey</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Ebonight</td>
+								<td>
+<a href="Javascript: viewItem('47215');">Laced Gloves of Superiority</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Lukistke</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Narsiss</td>
+								<td>
+<a href="Javascript: viewItem('47236');">Stud of Focused Aptitude</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Pocatello</td>
+								<td>
+<a href="Javascript: viewItem('47236');">Stud of Focused Aptitude</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tepsyos</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tunilrezya</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/25/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Llyle</td>
+								<td>
+<a href="Javascript: viewItem('68226');">Muramite Chest Armor (Txevu)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Nehigh</td>
+								<td>
+<a href="Javascript: viewItem('69093');">Ruby of Steadfastness</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Rakiman</td>
+								<td>
+<a href="Javascript: viewItem('68833');">Jewel of Focus</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('69050');">Barrier of Serenity</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Riggins</td>
+								<td>
+<a href="Javascript: viewItem('69055');">Jade Effigy of Trushar</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Rylandir</td>
+								<td>
+<a href="Javascript: viewItem('68222');">Muramite Bracer Armor (Qvic)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('52113');">Misshapen Cragbeast Flesh</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tadahh</td>
+								<td>
+<a href="Javascript: viewItem('68836');">Glyph of Souls</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tenoman</td>
+								<td>
+<a href="Javascript: viewItem('52125');">Scales of the Cragbeast Queen</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Warlane</td>
+								<td>
+<a href="Javascript: viewItem('52111');">Phosphorescent Bile</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Xanumbik</td>
+								<td>
+<a href="Javascript: viewItem('68223');">Muramite Glove Armor (Qvic)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/23/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Aradiani</td>
+								<td>
+<a href="Javascript: viewItem('69984');">Eye of Yar`Lir</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Biixen</td>
+								<td>
+<a href="Javascript: viewItem('71646');">Reflective Platinum Leggings</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Carme</td>
+								<td>
+<a href="Javascript: viewItem('71662');">Yarusha, the Storm's Fury</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Casterof</td>
+								<td>
+<a href="Javascript: viewItem('71651');">Choker of One Hundred Diamonds</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Heelumup</td>
+								<td>
+<a href="Javascript: viewItem('71638');">Frosted Cuirass of Enlightenment</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Ilulaen</td>
+								<td>
+<a href="Javascript: viewItem('71663');">Windfury Katana</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Mackenzi</td>
+								<td>
+<a href="Javascript: viewItem('71653');">Clawhammer</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Mecan</td>
+								<td>
+<a href="Javascript: viewItem('71660');">Oculus of Yar`Lir</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Trakkn</td>
+								<td>
+<a href="Javascript: viewItem('71639');">Golden Dragonlinked Chestguard</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Zyzor</td>
+								<td>
+<a href="Javascript: viewItem('71644');">Aegis of the Amber Moon</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/22/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Adegan</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (RSS)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Aradiani</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (RSS)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Bbik</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Carme</td>
+								<td>
+<a href="Javascript: viewItem('47226');">Sapphire Choker of Adaptation</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Caudyr</td>
+								<td>
+<a href="Javascript: viewItem('47239');">Ring of Fluid Perception</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Karul</td>
+								<td>
+<a href="Javascript: viewItem('47237');">Bloodband of Malice</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Leave</td>
+								<td>
+<a href="Javascript: viewItem('47233');">Earring of Mental Incursion</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Lukistke</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Ootoc</td>
+								<td>
+<a href="Javascript: viewItem('47200');">Greaves of Seething Rage</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Rakiman</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Sinchord</td>
+								<td>
+<a href="Javascript: viewItem('70623');">Chailak's Fang</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('47226');">Sapphire Choker of Adaptation</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/20/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Bbik</td>
+								<td>
+<a href="Javascript: viewItem('71102');">Cracked Shield of Discipline</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Buffeey</td>
+								<td>
+<a href="Javascript: viewItem('71077');">Glyphed Bracer of Conflict</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/18/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Aenadin</td>
+								<td>
+<a href="Javascript: viewItem('26899');">Wand of the Vortex</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Aradiani</td>
+								<td>
+<a href="Javascript: viewItem('28668');">Wristguard of Keen Vision</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Astaroth</td>
+								<td>
+<a href="Javascript: viewItem('28662');">Girdle Of Restoration</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('21997');">Cloak of Wishes</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Casterof</td>
+								<td>
+<a href="Javascript: viewItem('28660');">Drape of the Unending</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Claile</td>
+								<td>
+<a href="Javascript: viewItem('16388');">Elemental Silk Pant Pattern (Time)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Dworkyn</td>
+								<td>
+<a href="Javascript: viewItem('21996');">Cloak of Ferocity</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Ghengiss</td>
+								<td>
+<a href="Javascript: viewItem('16373');">Elemental Greaves Mold (Time)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Klisk</td>
+								<td>
+<a href="Javascript: viewItem('21997');">Cloak of Wishes</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('25844');">Pulsing Emerald Hoop</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Lukistke</td>
+								<td>
+<a href="Javascript: viewItem('28668');">Wristguard of Keen Vision</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Solgador</td>
+								<td>
+<a href="Javascript: viewItem('5760');">Earring of Xaoth Kor</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tenven</td>
+								<td>
+<a href="Javascript: viewItem('26983');">Faceguard of Frenzy</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="lootheader" colspan="2"><strong><div align="center">3/16/2006</div></strong></td>
+							</tr>
+
+							<tr>
+								<td valign="top">Addamiss</td>
+								<td>
+<a href="Javascript: viewItem('47246');">Veil of Intense Evolution</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Aenadin</td>
+								<td>
+<a href="Javascript: viewItem('47265');">Darkiron Bow of Betrayal</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Buffeey</td>
+								<td>
+<a href="Javascript: viewItem('47220');">Bracer of the Debauched</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Gdzilla</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Rylandir</td>
+								<td>
+<a href="Javascript: viewItem('47239');">Ring of Fluid Perception</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tenven</td>
+								<td>
+<a href="Javascript: viewItem('47220');">Bracer of the Debauched</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Tepsyos</td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top"></td>
+								<td>
+<a href="Javascript: viewItem('59987');">Glowing Muramite Rune (MPG)</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td valign="top">Warlane</td>
+								<td>
+<a href="Javascript: viewItem('47216');">Boots of Shifting Time</a>
+								</td>
+							</tr>
+
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td valign="top" id="content"> <!-- CONTENT SECTION -->
+			<table width="100%" border="0" cellspacing="3">
+				<tr>
+					<td id="mainheader">Invictvs News</td>
+				</tr>
+				<tr>
+					<td height="4"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="newstitle">03/27/2006 -- Specialization Down (Guild First) - 5 out of 6 MPG Trials</td>
+								<td id="postedby" align="right">posted&nbsp;by&nbsp;sodonia&nbsp;on&nbsp;3/27/2006</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>Details later.<BR>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="newstitle">03/23/2006 -- 3 Dragons Down, 1 Up</td>
+								<td id="postedby" align="right">posted&nbsp;by&nbsp;sodonia&nbsp;on&nbsp;3/23/2006</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Really short recap: Rikky, Kess, Y'L down, Vish very much up but at 92%.</p>
+<p>News post in detail: Well, my favorite night of the week to see DKP spent finally arrived.  That's right, Dragon Farmage.  We started off with an odd twist this time.  First up was <strong>Rikkukin</strong> instead of being last for the night.  What a nice warmup for the rest of the night and he didn't disappoint.</p>
+<li>Choker of One Hundred Diamonds - <strong>Casterof</strong></li>
+<li>Clawhammer - <strong>Mackenzi</strong></li>
+<li>Reflective Platinum Leggings - <strong>Biixen</strong></li><br>
+<p>Second on deck was our old friend, <strong>Kessdona</strong>.</p>
+<li>Aegis of the Amber Moon - <strong>Zyzor</strong></li>
+<li>Frosted Cuirass of Enlightenment - <strong>Heelumup</strong></li>
+<li>Golden Dragonlinked Chestguard - <strong>Trakkn</strong></li><br>
+<p>Then onto our buddy, <strong>Yar'Lir</strong>.</p>
+<li>Oculus of Yar'lir - <strong>Mecan</strong></li>
+<li>Windfury Katana - <strong>Ilulaen</strong></li>
+<li>Yarusha, the Storm's Fury - <strong>Carme</strong></li>
+<li>Eye of Yar'lir - <strong>Aradiani</strong></li><br>
+<p>Last but not least, we attempted a dry run of <strong>Vishimtar</strong> just to give the event a spin.  Suffice to say we died well and learned a bit more about the requirements to hammer out a strat.  I don't expect to beat this until we're clearing most of Anguish on a night, but it is a worthy long term goal to keep in mind for us as a guild.</p><BR>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="newstitle">03/22/2006 -- MPG Trials</td>
+								<td id="postedby" align="right">posted&nbsp;by&nbsp;sodonia&nbsp;on&nbsp;3/22/2006</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Short version: Adaptation down, Hate down, Chailak down, Feratha not so hungry.</p>
+<p>Longer version: Well, it was back to one of our favorite farmage nights - <strong>Muramite Proving Ground Raid Trials</strong>.  We kicked things off with a blast with <strong>Trial of Adaptation</strong>.  Surprisingly we had a flashback of the last time we did this.  We got the little snot down to 12% and partially wiped.  We recovered and beat him down like no tomorrow after he regenned back to 39%ish.  Details fuzzing on me, but a nice second win on this trial.</p>
+<li>Ring of Fluid Perception (-73) - <strong>Caudyr</strong></li>
+<li>Sapphire Choker of Adaptation - <strong>Carme</strong> and <strong>Sinchord</strong></li>
+<li>Glowing Muramite Rune x2 - <strong>Bbik</strong> and <strong>Lukistke</strong></li><br>
+<p>So then we moved onto something we all love to do.  <strong>Trial of Hatred</strong> finally finally finally drops a set of plate legs.  I can only hope other runs can help fix the shortage of decent plate tank legs.</p>
+<li>Bloodband of Malice - <strong>Karul</strong></li>
+<li>Earring of Mental Incursion - <strong>Leave</strong></li>
+<li>Greaves of Seething Rage - <strong>Ootoc</strong></li>
+<li>Glowing Muramite Rune x2 - <strong>Bbik</strong> and <strong>Rakiman</strong></li><br>
+<p>After 2 really good runs, we decided to give some lesser targets a run due to numbers.  So we picked <strong>Riftseeker's Sanctum</strong> first to spot and sure enough both Dogs were up.  So we started with <strong>Chailak</strong> and beat the poor dog silly.  Then we cleared down for <Strong>Feratha</strong> and well... his friends came out to play too and ate most of the raid.  So after ressing, we decided we had enough for the night and TL'd to bind home for some nice rest before doing Dragons Dragons and more Dragons the next night.</p>
+<li>Chailak's Fang - <strong>Sinchord</strong></li>
+<li>Glowing Muramite Rune x2 - <strong>Adegan</strong> and <strong>Aradiani</strong></li>
+<BR>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="newstitle">03/20/2006 -- Epic Night</td>
+								<td id="postedby" align="right">posted&nbsp;by&nbsp;sodonia&nbsp;on&nbsp;3/20/2006</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><p><strong>Caudyr</strong> proved once again that Rogue epic designers hate EQ players.  We attempted his <strong>Everfrost</strong> instance but a combination of 36 player caps and not knowing some of the smaller details meant we will just have to give this one another go at a later time.  Congrats to <strong>Pocatello</strong> and <strong>Lillacoy</strong> on getting further on their Druid epics.  Again Loot Links to the left.</p><BR>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="newstitle">03/18/2006 -- Plane of Time (crashing)</td>
+								<td id="postedby" align="right">posted&nbsp;by&nbsp;sodonia&nbsp;on&nbsp;3/18/2006</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Not much to say here other than double xp weekend = crashing instances.  We got to P4, started to do the strat for TZ and boom.  Whole raid kicked to character select.  Not much more to say than that other than loot links to the left.  I just don't have the energy or willpower to post them again.</p>
+<BR>&nbsp;</td>
+				</tr>
+
+			</table>
+			<P><DIV ALIGN="center"><A HREF="news_archive.asp">More news...</A></DIV><BR>
+		</td>
+		<td width="200" id="content" valign="top" align="left">
+			<table width="100%">
+			<tr>
+				<td id="mainheader">Hit List</td>
+			</tr>
+			<tr>
+				<td height="4"></td>
+			</tr>
+			<tr>
+				<td id="hitlist">
+				<!-- BEGIN HITLIST -->
+					<table border="0" cellpadding="2" cellspacing="0" align="center" width="100%" id="hitlist">
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Vishimtar the Fallen</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Zun`Muram Tkarish Zyk</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Ixt Kial Ivesi</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Ancient Cragbeast Matriarch</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Ikaav Nysf Lleiv</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Ukun Bloodfeaster</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/unchecked.gif" border="0" alt=""></td>
+							<td align="left">Trial of Foresight</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/27/2006" title="3/27/2006"></td>
+							<td align="left">Trial of Specialization</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/16/2006" title="3/16/2006"></td>
+							<td align="left">Trial of Adaptation</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/11/2006" title="3/11/2006"></td>
+							<td align="left">Trial of Endurance</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/4/2006" title="3/4/2006"></td>
+							<td align="left">Ixt Quall Nalnn</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/23/2006" title="2/23/2006"></td>
+							<td align="left">Yar`Lir the Matriarch</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/23/2006" title="2/23/2006"></td>
+							<td align="left">King Gelaqua</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/11/2006" title="2/11/2006"></td>
+							<td align="left">High Priest Nkosi Bakari</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/8/2006" title="2/8/2006"></td>
+							<td align="left">Kessdona the Enlightened</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/2/2006" title="2/2/2006"></td>
+							<td align="left">Trial of Corruption</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/2/2006" title="2/2/2006"></td>
+							<td align="left">Trial of Hate</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/1/2006" title="2/1/2006"></td>
+							<td align="left">Ixt Hsek Syat</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/1/2006" title="2/1/2006"></td>
+							<td align="left">Aneuk Nyrt Ymosa</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/1/2006" title="2/1/2006"></td>
+							<td align="left">Aneuk Rilst Uskst</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/18/2006" title="1/18/2006"></td>
+							<td align="left">Queen Pyrilonis</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/4/2006" title="1/4/2006"></td>
+							<td align="left">Noqufiel</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/26/2005" title="12/26/2005"></td>
+							<td align="left">Rikkukin the Defender</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/8/2005" title="12/8/2005"></td>
+							<td align="left">Cynosure Kvanjji</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/10/2005" title="11/10/2005"></td>
+							<td align="left">Kelekdrix, Herald of Trushar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/3/2005" title="11/3/2005"></td>
+							<td align="left">Zun`Muram Volklana</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/3/2005" title="11/3/2005"></td>
+							<td align="left">Chailak</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/17/2005" title="10/17/2005"></td>
+							<td align="left">Vrex Barxt Qurat</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/13/2005" title="10/13/2005"></td>
+							<td align="left">Cragbeast Queen</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/5/2005" title="10/5/2005"></td>
+							<td align="left">Volkara</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/29/2005" title="9/29/2005"></td>
+							<td align="left">Battlemaster Rhorious</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/21/2005" title="9/21/2005"></td>
+							<td align="left">Tirranun the Ancient Protector</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/14/2005" title="9/14/2005"></td>
+							<td align="left">Feratha</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/14/2005" title="9/14/2005"></td>
+							<td align="left">Hulcror</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/5/2005" title="9/5/2005"></td>
+							<td align="left">Ikkinz 4: Altar of Destruction</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/16/2005" title="7/16/2005"></td>
+							<td align="left">Ikkinz 3: Trancendence</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/14/2005" title="7/14/2005"></td>
+							<td align="left">Quarm</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/7/2005" title="7/7/2005"></td>
+							<td align="left">Time Phase 5</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/23/2005" title="6/23/2005"></td>
+							<td align="left">Ikkinz 2: Glorification</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/22/2005" title="6/22/2005"></td>
+							<td align="left">Ikkinz 1: Rightousness</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/12/2005" title="6/12/2005"></td>
+							<td align="left">Time Phase 4</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/9/2005" title="6/9/2005"></td>
+							<td align="left">Tyrian</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/8/2005" title="6/8/2005"></td>
+							<td align="left">Ikaav Ixvet Pox</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/8/2005" title="6/8/2005"></td>
+							<td align="left">Pyrique Redwing</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/8/2005" title="6/8/2005"></td>
+							<td align="left">Velitorkin</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/5/2005" title="6/5/2005"></td>
+							<td align="left">Time Phase 3</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/5/2005" title="6/5/2005"></td>
+							<td align="left">Time Phase 2</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/5/2005" title="6/5/2005"></td>
+							<td align="left">Time Phase 1</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/1/2005" title="6/1/2005"></td>
+							<td align="left">Kyv Sharpshooters</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/1/2005" title="6/1/2005"></td>
+							<td align="left">Lirah the Bridgekeeper</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/1/2005" title="6/1/2005"></td>
+							<td align="left">Gazz the Gargantuan</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/30/2005" title="5/30/2005"></td>
+							<td align="left">Tarn Icewind</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/30/2005" title="5/30/2005"></td>
+							<td align="left">Hinian</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/30/2005" title="5/30/2005"></td>
+							<td align="left">Heyda Fadesong</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/21/2005" title="5/21/2005"></td>
+							<td align="left">Zun`Muram Votal</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/9/2005" title="5/9/2005"></td>
+							<td align="left">Xegony the Queen of Air</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/30/2005" title="4/30/2005"></td>
+							<td align="left">Bone Cracker</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/21/2005" title="4/21/2005"></td>
+							<td align="left">Avatar of Earth</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/6/2005" title="4/6/2005"></td>
+							<td align="left">Coirnav the Avatar of Water</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/5/2005" title="3/5/2005"></td>
+							<td align="left">Smith Rondo</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/17/2005" title="2/17/2005"></td>
+							<td align="left">Warlord Gintolaken</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/19/2005" title="1/19/2005"></td>
+							<td align="left">Rinturion Windblade</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/19/2005" title="1/19/2005"></td>
+							<td align="left">Avatar of Dust</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/19/2005" title="1/19/2005"></td>
+							<td align="left">Sigimord Windwalker</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/17/2005" title="1/17/2005"></td>
+							<td align="left">War Chieftan Awisano</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/17/2005" title="1/17/2005"></td>
+							<td align="left">War Chieftan Birak</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/17/2005" title="1/17/2005"></td>
+							<td align="left">War Chieftan Galronar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/17/2005" title="1/17/2005"></td>
+							<td align="left">A Mystical Arbitor of Earth</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/17/2005" title="1/17/2005"></td>
+							<td align="left">A Perfected Warder of Earth</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/15/2005" title="1/15/2005"></td>
+							<td align="left">Fennin Ro, The Tyrant of Fire</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/30/2004" title="12/30/2004"></td>
+							<td align="left">Krziik the Mighty</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/22/2004" title="12/22/2004"></td>
+							<td align="left">Quavonis Firetail</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/18/2004" title="12/18/2004"></td>
+							<td align="left">General Reparm</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/18/2004" title="12/18/2004"></td>
+							<td align="left">Arch Mage Yozanni</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/18/2004" title="12/18/2004"></td>
+							<td align="left">General Druav Flamesinger</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/13/2004" title="12/13/2004"></td>
+							<td align="left">Tantisala Jaggedtooth</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/13/2004" title="12/13/2004"></td>
+							<td align="left">Derugoak Bloodwalker</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/11/2004" title="12/11/2004"></td>
+							<td align="left">Pyronis</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/11/2004" title="12/11/2004"></td>
+							<td align="left">Blazzax the Omnifiend</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/11/2004" title="12/11/2004"></td>
+							<td align="left">Babnoxis the Spider Queen</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/11/2004" title="12/11/2004"></td>
+							<td align="left">Magmaton</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/11/2004" title="12/11/2004"></td>
+							<td align="left">Jaxoliz Dawneyes</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/11/2004" title="12/11/2004"></td>
+							<td align="left">Criare Sunmane</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/9/2004" title="12/9/2004"></td>
+							<td align="left">The Seventh Hammer</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/8/2004" title="12/8/2004"></td>
+							<td align="left">Grioihin the Wise</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/4/2004" title="12/4/2004"></td>
+							<td align="left">Peregrin Rockskull</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/4/2004" title="12/4/2004"></td>
+							<td align="left">A Monsterous Mudwalker</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/4/2004" title="12/4/2004"></td>
+							<td align="left">Ofossa the Enlightened</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/4/2004" title="12/4/2004"></td>
+							<td align="left">Hydrotha</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/27/2004" title="11/27/2004"></td>
+							<td align="left">Arch Mage Alchtonion</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/27/2004" title="11/27/2004"></td>
+							<td align="left">Avatar of Mist</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/27/2004" title="11/27/2004"></td>
+							<td align="left">Melernil Faal` Armanna</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/27/2004" title="11/27/2004"></td>
+							<td align="left">Avatar of Smoke</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/27/2004" title="11/27/2004"></td>
+							<td align="left">An Elemental Masterpiece</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/17/2004" title="11/17/2004"></td>
+							<td align="left">Solusek Ro</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/8/2004" title="11/8/2004"></td>
+							<td align="left">Queen Silandria</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/8/2004" title="11/8/2004"></td>
+							<td align="left">Gakamenial Fir`Disralsi</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/8/2004" title="11/8/2004"></td>
+							<td align="left">Avatar of Wind</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/8/2004" title="11/8/2004"></td>
+							<td align="left">Pherlondien Clawpike</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/8/2004" title="11/8/2004"></td>
+							<td align="left">Baltaldor the Cursed</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/18/2004" title="10/18/2004"></td>
+							<td align="left">The Protector of Dresolik</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/18/2004" title="10/18/2004"></td>
+							<td align="left">Rizlona</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/16/2004" title="10/16/2004"></td>
+							<td align="left">Arlyxir</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/16/2004" title="10/16/2004"></td>
+							<td align="left">Xuzl</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/16/2004" title="10/16/2004"></td>
+							<td align="left">Jiva</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/16/2004" title="10/16/2004"></td>
+							<td align="left">Rallos Zek the Warlord</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/21/2004" title="8/21/2004"></td>
+							<td align="left">Lord Mithaniel Marr</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/21/2004" title="8/21/2004"></td>
+							<td align="left">Vallon Zek</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/16/2004" title="8/16/2004"></td>
+							<td align="left">Agnarr the Storm Lord</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/7/2004" title="8/7/2004"></td>
+							<td align="left">Tallon Zek</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/31/2004" title="7/31/2004"></td>
+							<td align="left">Saryrn</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/31/2004" title="7/31/2004"></td>
+							<td align="left">The Keeper of Sorrows</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/26/2004" title="7/26/2004"></td>
+							<td align="left">Innoruuk</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/24/2004" title="7/24/2004"></td>
+							<td align="left">HoH Dragon Trial (Rydda`Dar)</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/21/2004" title="7/21/2004"></td>
+							<td align="left">Bertoxxulous</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/12/2004" title="7/12/2004"></td>
+							<td align="left">HoH Crazed Norrathians Trial</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/8/2004" title="7/8/2004"></td>
+							<td align="left">Lord Inquisitor Seru</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/7/2004" title="7/7/2004"></td>
+							<td align="left">Kaas Thox Xi Aten Ha Ra</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/3/2004" title="7/3/2004"></td>
+							<td align="left">HoH Villager Trial</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/30/2004" title="6/30/2004"></td>
+							<td align="left">Aten Ha Ra</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/30/2004" title="6/30/2004"></td>
+							<td align="left">Diabo Xi Va Temeriel</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/9/2004" title="6/9/2004"></td>
+							<td align="left">Va Xi Aten Ha Ra</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/9/2004" title="6/9/2004"></td>
+							<td align="left">Thall Xindraux Diabo</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/9/2004" title="6/9/2004"></td>
+							<td align="left">Thall Va Kelun</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/25/2004" title="5/25/2004"></td>
+							<td align="left">Kaas Thox Xi Ans Dyek</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/25/2004" title="5/25/2004"></td>
+							<td align="left">Diabo Xi Xin Thall</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/25/2004" title="5/25/2004"></td>
+							<td align="left">Diabo Xi Xin</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/25/2004" title="5/25/2004"></td>
+							<td align="left">Diabo Xi Va</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/22/2004" title="5/22/2004"></td>
+							<td align="left">Thall Va Xakra</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/12/2004" title="5/12/2004"></td>
+							<td align="left">Va Dyn Khar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/6/2004" title="5/6/2004"></td>
+							<td align="left">Aerin`Dar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/3/2004" title="5/3/2004"></td>
+							<td align="left">Manaetic Behemoth</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/28/2004" title="4/28/2004"></td>
+							<td align="left">Vyzh`dra the Cursed</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/21/2004" title="4/21/2004"></td>
+							<td align="left">Vyzh`dra the Exiled</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/21/2004" title="4/21/2004"></td>
+							<td align="left">A Glyphed Covered Serpent</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/14/2004" title="4/14/2004"></td>
+							<td align="left">Emperor Ssraeshza</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/14/2004" title="4/14/2004"></td>
+							<td align="left">Blood of Ssraeshza</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/13/2004" title="3/13/2004"></td>
+							<td align="left">Lady Nevederia</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/13/2004" title="3/13/2004"></td>
+							<td align="left">Jorlleag</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/13/2004" title="3/13/2004"></td>
+							<td align="left">Zlexak</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/13/2004" title="3/13/2004"></td>
+							<td align="left">Sevalak</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/13/2004" title="3/13/2004"></td>
+							<td align="left">Cekenar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/11/2004" title="3/11/2004"></td>
+							<td align="left">The Burrower Beast</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/8/2004" title="3/8/2004"></td>
+							<td align="left">Carprin Cycle</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/6/2004" title="3/6/2004"></td>
+							<td align="left">Terris Thule</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/4/2004" title="2/4/2004"></td>
+							<td align="left">Avatar of War</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="2/4/2004" title="2/4/2004"></td>
+							<td align="left">The Idol of Rallos Zek</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/31/2004" title="1/31/2004"></td>
+							<td align="left">Shei Vinitras</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/31/2004" title="1/31/2004"></td>
+							<td align="left">Guardian of the Seal</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/29/2004" title="1/29/2004"></td>
+							<td align="left">High Priest of Ssraeshza</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/22/2004" title="1/22/2004"></td>
+							<td align="left">Xerkizh the Creator</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="1/22/2004" title="1/22/2004"></td>
+							<td align="left">Arch Lich RhagZadune</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/26/2003" title="12/26/2003"></td>
+							<td align="left">Rhag Mozdeth</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/26/2003" title="12/26/2003"></td>
+							<td align="left">Rhag Zhezum</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/5/2003" title="12/5/2003"></td>
+							<td align="left">The Statue of Rallos Zek</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="12/4/2003" title="12/4/2003"></td>
+							<td align="left">Grummus</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/20/2003" title="11/20/2003"></td>
+							<td align="left">Maestro of Rancor</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="11/1/2003" title="11/1/2003"></td>
+							<td align="left">Lord Yelinak</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/13/2003" title="10/13/2003"></td>
+							<td align="left">Dagarn the Destroyer</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/13/2003" title="10/13/2003"></td>
+							<td align="left">Aaryonar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="10/9/2003" title="10/9/2003"></td>
+							<td align="left">King Tormax</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/20/2003" title="9/20/2003"></td>
+							<td align="left">Doomshade</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="9/14/2003" title="9/14/2003"></td>
+							<td align="left">The Itraer Vius</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/24/2003" title="8/24/2003"></td>
+							<td align="left">Dozekar the Cursed</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/24/2003" title="8/24/2003"></td>
+							<td align="left">Lord KoiDoken</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/17/2003" title="8/17/2003"></td>
+							<td align="left">Thought Horror Overfiend</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/17/2003" title="8/17/2003"></td>
+							<td align="left">Dain Frostreaver IV</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/7/2003" title="8/7/2003"></td>
+							<td align="left">Eashen of the Sky</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/6/2003" title="8/6/2003"></td>
+							<td align="left">Ikatiar the Venom</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/6/2003" title="8/6/2003"></td>
+							<td align="left">Klandicar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="8/3/2003" title="8/3/2003"></td>
+							<td align="left">Overlord Banord Paffa</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/20/2003" title="7/20/2003"></td>
+							<td align="left">Rumblecrush</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/11/2003" title="7/11/2003"></td>
+							<td align="left">Grieg Veneficus</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/10/2003" title="7/10/2003"></td>
+							<td align="left">Cazic Thule</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/2/2003" title="7/2/2003"></td>
+							<td align="left">Zlandicar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="7/1/2003" title="7/1/2003"></td>
+							<td align="left">Trakanon</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/2/2003" title="6/2/2003"></td>
+							<td align="left">Xanamech Nexmirthafen</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="6/1/2003" title="6/1/2003"></td>
+							<td align="left">Sontalak</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/4/2003" title="5/4/2003"></td>
+							<td align="left">Servitor of Luclin</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/3/2003" title="5/3/2003"></td>
+							<td align="left">Severilous</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/2/2003" title="5/2/2003"></td>
+							<td align="left">Wuoshi</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="5/1/2003" title="5/1/2003"></td>
+							<td align="left">Gorenaire</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/3/2003" title="4/3/2003"></td>
+							<td align="left">Lcea Katta</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/2/2003" title="4/2/2003"></td>
+							<td align="left">Telkorenar</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="4/1/2003" title="4/1/2003"></td>
+							<td align="left">Velketor the Sorcerer</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/2/2003" title="3/2/2003"></td>
+							<td align="left">The Va`Dyn</td>
+						</tr>
+
+						<tr>
+							<td align="center"><img src="publishImages/checked.gif" border="0" alt="3/1/2003" title="3/1/2003"></td>
+							<td align="left">Derakor the Vindicator</td>
+						</tr>
+
+						<tr>
+							<td align="center">&nbsp;</td>
+						</tr>
+					</table>
+				<!-- END HITLIST -->
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<table align="center" width="100%" id="footer">
+	<tr>
+		<td align="center">&copy;2004 AMP Enterprises, All Rights Reserved</td>
+	</tr>
+	<tr>
+		<td align="center"><A HREF="mailto:falloraan@yahoo.com"><FONT COLOR="#ffffff"><B>Email the Webmaster</B></FONT></A><BR>&nbsp;</td>
+	</tr>
+</table>
+</body>
+</html>

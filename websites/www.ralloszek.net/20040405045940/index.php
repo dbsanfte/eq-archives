@@ -1,0 +1,378 @@
+<!-- START OF header.tmpl TEMPLATE -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+
+
+<link rel="stylesheet" href="/ubbthreads/stylesheets/greenday.css" type="text/css" />
+
+<title>At the Entrance</title>
+</head>
+<body>
+<!-- END OF header.tmpl TEMPLATE --><br /> 
+<table border="0" cellpadding="1" cellspacing="0" width="95%" class="tablesurround" align="center"> 
+<tr> 
+<td align="center"> 
+<table border="0" cellpadding="1" cellspacing="0" width="100%" class="tableborders" align="center"> 
+<tr> 
+<td align="center"> 
+<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+<tr> 
+<td width="25%" class="welcome"> 
+<b>RallosZek.Net</b>
+</td> 
+<td width="50%" align="right" class="welcome"> 
+<b></b> 
+</td>
+<td width="25%" class="welcome" align=right> 
+<b>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="datal@ralloszek.net">
+<input type="hidden" name="item_name" value="RallosZek.Net">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="tax" value="0">
+<input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</form>
+</b>
+</td> 
+</tr> 
+
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+<tr>
+<td align="left" class="menubar" width="30%" valign="bottom">
+You are not logged in.
+[<a href="http://www.ralloszek.net/ubbthreads/login.php?Cat=0">Login</a>]
+</td>
+<td align="center" class="menubar" width="70%">
+<a href = "http://www.ralloszek.net/index.php?Cat=0">Entrance</a>
+ .
+<a href="http://www.ralloszek.net/ubbthreads/ubbthreads.php?Cat=0">Main Index</a>
+ · 
+<a href="http://www.ralloszek.net/ubbthreads/search.php?Cat=0">Search</a>
+ · 
+<a href="http://www.ralloszek.net/ubbthreads/newuser.php?Cat=0">New user</a>
+ · 
+<a href="http://www.ralloszek.net/ubbthreads/online.php?Cat=0">Who's Online</a>
+<br />
+<a href="http://www.ralloszek.net/ubbthreads/faq.php?Cat=0">FAQ</a>
+ ·
+<a href="http://www.ralloszek.net/ubbthreads/calendar.php?Cat=0">Calendar</a>
+
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+<br /><table border="0" width="95%" cellspacing="0" cellpadding="0" align="center"><tr><td width="22%" align="left" valign="top"><script language="javascript" type="text/javascript" src="http://www.ralloszek.net/ubbthreads/pals/java/javapal.php"></script>
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Menu</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td><strong>Entrance</strong></td></tr><tr><td><a href="index.php?Cat=0&amp;paction=polls">View Polls</a></td></tr><tr><td><a href="index.php?Cat=0&amp;paction=attachments">File Attachments</a></td></tr><tr><td><a href="index.php?Cat=0&amp;paction=profileindex">Profile Index</a></td></tr><tr><td><a href="index.php?Cat=0&amp;paction=recommend">Recommend Us!</a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Hot Topic</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td align="center">No posts have caught fire as of yet.</td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br /><form method="post" action="index.php"><input type="hidden" name="pollname" value="41" /><input type="hidden" name="Cat" value="0" /><input type="hidden" name="PollPal" value="1" />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Current Poll</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="left" valign="top" colspan="2" class="lighttable">Out of <a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=0&amp;Board=rzpolls">RZ.Net Polls</a> <br>&quot;<strong>Do you still play EQ?</strong>&quot;<table width="100%" border="0" cellspacing="0" cellpadding="0"></table><hr width="100%" size="1" /><table border="0" width="100%" align="left"><tr><td><tr><td colspan="2" class="darktable"><strong>Do you still play EQ?<br /></strong><span class="small"><i>You may choose only one</i></span><tr><td width="10%" class="darktable" align="right"><input type="radio" name="option-41" class="formboxesbutton" value="191" /></td><td width="90%" class="lighttable">Yes</td></tr><tr><td width="10%" class="darktable" align="right"><input type="radio" name="option-41" class="formboxesbutton" value="192" /></td><td width="90%" class="lighttable">No</td></tr><tr><td><br></td></tr></td></tr><tr><td class="lighttable" colspan="2" align="center"><hr width="100%" size="1" /><input type="submit" value="Submit vote" class="buttons" /><br><i><font class = "small">Votes accepted from (03/24/04 12:00 AM) to (No end specified)<br><a href="javascript:void(0);" onClick="javascript:window.open('http://www.ralloszek.net/ubbthreads/viewpoll.php?Poll=41','_blank','scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no,width=500,height=400,top=100,left=200');">View the results of this poll</a></font></i></td></tr></table></td></tr></table></form></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Top 10 Rated Posts</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td>No posts rated today...</td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Current Threads</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33465">Thraxll</a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Top 10 Posters</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=2&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Datal</a></td><td align="left" valign="top">10001701</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=881&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Lupher</a></td><td align="left" valign="top">2846</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=877&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Inen</a></td><td align="left" valign="top">1196</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=630&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">UulosPinksock_RZ</a></td><td align="left" valign="top">1070</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1466&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Keeal</a></td><td align="left" valign="top">953</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1295&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Guvil</a></td><td align="left" valign="top">924</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1226&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Chesticus</a></td><td align="left" valign="top">831</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=974&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Illmizzo</a></td><td align="left" valign="top">757</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=585&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Arravis</a></td><td align="left" valign="top">578</td></tr><tr><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=270&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Lovaelihn</a></td><td align="left" valign="top">576</td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader"><form name="LastSeenBox" method="post" action="index.php"><input type="hidden" name="Cat" value="0" /><input type="hidden" name="moreSeen" value="10" /></form>Last Seen</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=2&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Datal</a>: 3 hours, 6 minutes, 24 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=681&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Rube</a>: 3 hours, 53 minutes, 20 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=798&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Tuskadon</a>: 7 hours, 15 minutes, 52 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=198&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Druuni</a>: 14 hours, 20 minutes, 29 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1683&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Shadowspirit</a>: 14 hours, 20 minutes, 37 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=600&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Copper25</a>: 15 hours, 39 minutes, 12 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=881&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Lupher</a>: 23 hours, 1 minute, 50 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1199&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Kyoshourz</a>: 1 day, 10 hours, 27 minutes, 31 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=21&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Thraxll</a>: 2 days, 32 minutes, 31 seconds ago...</td></tr><tr><td align="left"><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1672&amp;returnpage=http://www.ralloszek.net/index.php?Cat=0">Tacosnachos</a>: 2 days, 2 hours, 35 minutes, 6 seconds ago...</td></tr><tr><td align="right">...<a href="javascript: document.LastSeenBox.submit()"><em><strong>next 10</strong></em></a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br /></td><td><table width="15"><tr><td></td></tr></table></td><td width="56%" align="left" valign="top">
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">New Member</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td align="left" valign="middle">Everyone welcome our newest member, <a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=1683&amp;What=index.php">Shadowspirit</a>!</td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />   
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader"><a name="ANC33448"></a><a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=0&amp;Board=news">News and Announcements</a></td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td align="left" valign="top" width="100%"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33448"><strong>Happy April Fools</strong></a><br />Posted on 04/01/04 09:04 AM<br />Posted by Datal<br /><br />Just happy April Fools everyone...<br /><br />Also if you have the index.php indexed... Goto  </td></tr><tr><td align="right"><br />15 views <strong>&middot;</strong> 0 replies <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33448">View</a> <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/newreply.php?Cat=0&amp;Board=news&amp;Number=33448&amp;what=index.php">Reply</a> <strong>&middot;</strong> <a target="_blank" href="http://www.ralloszek.net/ubbthreads/printthread.php?Cat=0&amp;Board=news&amp;main=33448&amp;type=post"><img alt="Print Post" src="/ubbthreads/images/print.gif" align="middle" border="0" width="18" height="16" /></a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader"><a name="ANC33426"></a><a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=0&amp;Board=news">News and Announcements</a></td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td align="left" valign="top" width="100%"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33426"><strong>Virus E-Mails</strong></a><br />Posted on 03/27/04 08:35 AM<br />Posted by Datal<br /><br />OK I just recieved notices that some user out there is sending e-mails out as though they are coming from RallosZek.Net something about your Account Status or something.  DO NOT open those attachments...</td></tr><tr><td align="right"><br />11 views <strong>&middot;</strong> 0 replies <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33426">View</a> <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/newreply.php?Cat=0&amp;Board=news&amp;Number=33426&amp;what=index.php">Reply</a> <strong>&middot;</strong> <a href="index.php?Cat=0&amp;pnewsNumber=33426&amp;anc=1#ANC33426">260 Bytes More</a> <strong>&middot;</strong> <a target="_blank" href="http://www.ralloszek.net/ubbthreads/printthread.php?Cat=0&amp;Board=news&amp;main=33426&amp;type=post"><img alt="Print Post" src="/ubbthreads/images/print.gif" align="middle" border="0" width="18" height="16" /></a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader"><a name="ANC33378"></a><a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=0&amp;Board=news">News and Announcements</a></td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td align="left" valign="top" width="100%"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33378"><strong>Forums Upgraded</strong></a><br />Posted on 03/19/04 01:07 PM<br />Posted by Datal<br /><br />I upgraded the forums today... Let me know what you all think... </td></tr><tr><td align="right"><br />41 views <strong>&middot;</strong> 2 replies <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33378">View</a> <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/newreply.php?Cat=0&amp;Board=news&amp;Number=33378&amp;what=index.php">Reply</a> <strong>&middot;</strong> <a target="_blank" href="http://www.ralloszek.net/ubbthreads/printthread.php?Cat=0&amp;Board=news&amp;main=33378&amp;type=post"><img alt="Print Post" src="/ubbthreads/images/print.gif" align="middle" border="0" width="18" height="16" /></a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader"><a name="ANC33364"></a><a href="http://www.ralloszek.net/ubbthreads/postlist.php?Cat=0&amp;Board=news">News and Announcements</a></td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td align="left" valign="top" width="100%"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33364"><strong>RZ.Net Looking for Help</strong></a><br />Rating: <img src="http://www.ralloszek.net/ubbthreads/pals/palimages/5star.gif" width="50" height="9" alt="Rated 1 times" /><br />Posted on 03/17/04 07:46 AM<br />Posted by Datal<br /><br />Hey Everyone... Yes I know you all have been wanting to see updated stuff.  Well I need help.  I need volunteers willing to like help keep the Guild List Updates.  I need help with coming up with idea...</td></tr><tr><td align="right"><br />38 views <strong>&middot;</strong> 0 replies <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33364">View</a> <strong>&middot;</strong> <a href="http://www.ralloszek.net/ubbthreads/newreply.php?Cat=0&amp;Board=news&amp;Number=33364&amp;what=index.php">Reply</a> <strong>&middot;</strong> <a href="index.php?Cat=0&amp;pnewsNumber=33364&amp;anc=1#ANC33364">344 Bytes More</a> <strong>&middot;</strong> <a target="_blank" href="http://www.ralloszek.net/ubbthreads/printthread.php?Cat=0&amp;Board=news&amp;main=33364&amp;type=post"><img alt="Print Post" src="/ubbthreads/images/print.gif" align="middle" border="0" width="18" height="16" /></a></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br /></td><td><table width="15"><tr><td></td></tr></table></td><td width="22%" align="left" valign="top">
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader"><a href="javascript: void(0)" onclick="window.open('http://www.ralloszek.net/ubbthreads/pals/shoutdisplaypal.php','shoutboxpal','width=200,height=400,top=100,left=150,screenX=1,screenY=1,scrollbars=yes,resizable=yes');">Shout Box</a></td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td align="left" valign="top" class="lighttable"><table width="100%" border="0" cellspacing="0" cellpadding="1" class="tableborders"><tr><td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top" class="lighttable"><iframe src="http://www.ralloszek.net/ubbthreads/pals/shoutdisplaypal.php" name="sbox" width="100%" height="350" frameborder="0" id="sbox">Your browser does not support inline frames! Click <a href="javascript: void(0)" onclick="window.open('http://www.ralloszek.net/ubbthreads/pals/shoutdisplaypal.php','shoutboxpal','width=200,height=400,top=100,left=150,screenX=1,screenY=1,scrollbars=yes');"><strong>HERE</strong></a> to view the Shout Box.</iframe></td></tr></table></td></tr></table></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />   
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+	<tr>
+	<td align="left" class="tdheader">
+	Quick Search
+	<span class="small">(<a href="javascript:void(0);" onClick="javascript:window.open('http://www.ralloszek.net/ubbthreads/searchtips.php','_blank','toolbar=no, menubar=no,location=no,directories=no,status=no,width=400,height=300,top=200,left=200');">Search Tips</a>)</span>
+	</td>
+	</tr>
+	<tr>
+	<td align="center" valign="top" class="lighttable">
+	<form name="searchPal" method="post" action="http://www.ralloszek.net/ubbthreads/dosearch.php">
+	<input type="hidden" name="Cat" value="0" />
+	<input type="hidden" name="Forum" value="All_Forums" />
+	<input type="hidden" name="bodyprev" value="1" />
+		<input type="hidden" name="where" value="bodysub" />
+	<input type="hidden" name="daterange" value="0" />
+	<input type="hidden" name="Limit" value="25" />
+	
+	<input type="text" name="Words" size="8" class="formboxes" />
+	<input type="button" value="GO" class="buttons" onclick="doSearch()" /></form></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Login</td></tr><tr><td align="left" valign="top" class="lighttable"><form name="siteLogin" method="post" action="http://www.ralloszek.net/ubbthreads/start_page.php"><table width="100%"><tr><td align="left" valign="top">Enter your username and password to login. If you do not have a username you can register one <a href="http://www.ralloszek.net/ubbthreads/newuser.php?Cat=0">HERE</a>.</td></tr><tr><td align="left" valign="top">username:<br /><input type="text" size="8" name="Loginname" class="formboxes" /></td></tr><tr><td align="left" valign="top">password:<br /><input type="password" size="8" name="Loginpass" class="formboxes" /></td></tr><tr><td><input type="submit" name="submit" value="SUBMIT" class="buttons" onclick="return checkLogin()" /><input type="hidden" name="firstlogin" value="1" /><input type="hidden" name="Cat" value="0" /><input type="hidden" name="buttlogin" value="Login" /><br /><input type="checkbox" name="buttforgot" value="Send Password" /> Send Password<br /><input type="checkbox" name="rememberme" value="1" /> Remember Me</td></tr></table></form></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Online</td></tr><tr><td align="left" valign="top" class="lighttable"> <strong>3</strong> guests have been online with in the last 5 minutes.</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Top 10 Threads</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33370">very Very Quiet...</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33371">Hi There!</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33347">Whaaassssuuuppp?!?!?</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33422">Paintings</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33436">Droids</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33457">What can we do...</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33437">Huh ?</a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33459">Guess I could ask my friends to come. They work at Last Chance. </a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33431">Freaking out nicely, getting ready for the wedding :). Working like mad on </a></td></tr><tr><td align="left" valign="top"><strong>&middot;</strong></td><td align="left" valign="top"><a href="http://www.ralloszek.net/ubbthreads/showflat.php?Cat=0&amp;Number=33432">Wedding??? WHAT?  No inventation?? </a></td></tr><tr><td align="right" colspan="2"><em>...by <strong><a href="javascript: document.ChangeView.submit()">views</a></strong></em><form name="ChangeView" method="post" action="index.php"><input type="hidden" name="Cat" value="0" /><input type="hidden" name="TopThreadSort" value="views" /></form></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Short Stats</td></tr><tr><td align="left" valign="top" class="lighttable"><table width="100%"><tr><td align="left" valign="top">New Members:<br /><strong>1</strong> Last 24 hours<br /><strong>2</strong> Last 7 days<br /><strong>13</strong> Last 31 days<br /><br />Boards:<br /><strong>2211</strong> Total topics<br /><strong>18846</strong> Total replies<br /><br />Totals:<br /><strong>222</strong> Members<br /><strong>21057</strong> Posts<br /><br />Max Online:<br /><strong>16</strong> Total<br /><span class="small">(03/23/04 10:25 AM)</span></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+<tr><td align="left" class="tdheader">Birthdays</td></tr><tr><td align="left" valign="top" class="lighttable">There are no birthdays today.<br /><br /><b>Other Birthdays This Month:</b><br /><a href="http://www.ralloszek.net/ubbthreads/showprofile.php?Cat=0&amp;User=2&amp;from=ubbthreads&amp;month=4&amp;day=4&amp;year=2004" title="On 4/7/1977">Datal</a>(27), </td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+<tr>
+<td align="center" colspan="7" class="tdheader">
+<b>April 2004</b>
+</td>
+</tr>
+<tr>
+<th class="darktable">Su</th>
+<th class="darktable">M</th>
+<th class="darktable">Tu</th>
+<th class="darktable">W</th>
+<th class="darktable">Th</th>
+<th class="darktable">F</th>
+<th class="darktable">Sa</th>
+</tr><tr><td class="cleartable">&nbsp;</td><td class="cleartable">&nbsp;</td><td class="cleartable">&nbsp;</td><td class="cleartable">&nbsp;</td><td class=lighttable><span alt="" title="">1<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">2<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">3<br />&nbsp;</span></td></tr><tr><td class=darktable><span alt="( Today )
+" title="( Today )
+"><font class=standouttext><b>4</b></font><br />&nbsp;</span></td><td class=lighttable><span alt="" title="">5<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">6<br />&nbsp;</span></td><td class=darktable><span alt=" ( Birthday: Datal  (27) ) 
+" title=" ( Birthday: Datal  (27) ) 
+"><a href="http://www.ralloszek.net/ubbthreads/showday.php?Cat=&amp;day=7&amp;month=4&amp;year=2004"><b>7</b></a><br />&nbsp;</span></td><td class=lighttable><span alt="" title="">8<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">9<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">10<br />&nbsp;</span></td></tr><tr><td class=lighttable><span alt="" title="">11<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">12<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">13<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">14<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">15<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">16<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">17<br />&nbsp;</span></td></tr><tr><td class=lighttable><span alt="" title="">18<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">19<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">20<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">21<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">22<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">23<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">24<br />&nbsp;</span></td></tr><tr><td class=lighttable><span alt="" title="">25<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">26<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">27<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">28<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">29<br />&nbsp;</span></td><td class=lighttable><span alt="" title="">30<br />&nbsp;</span></td><td class="cleartable">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<br /></td></tr></table><br />
+
+<table width="95%" align="center" cellpadding="1" cellspacing="1" class="tablesurround">
+<tr>
+<td>
+<table cellpadding="3" cellspacing="1" width="100%" class="tableborders">
+
+<tr>
+<td class="darktable">
+<table border="0" width="100%" cellpadding="2" cellspacing="0">
+<tr>
+<td align="left">
+<a href="mailto:rzforums@ralloszek.net">Contact Us</a>
+
+</td>
+<td align="center">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="datal@ralloszek.net">
+<input type="hidden" name="item_name" value="RallosZek.Net">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="tax" value="0">
+<input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</form>
+</td>
+<td align="right">
+<a href="http://www.ralloszek.net">RallosZek.Net</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+
+<p align ="center" style="font-size: 9px;"><a href="http://www.infopop.com/landing/goto.php?a=ubb.threads"><img src="/ubbthreads/images/powered_by2.gif" border="0" alt="*" /></a><br />
+UBB.threads™ 6.4.1<br /><br /><a href="http://www.chattersonline.com">&nbsp;.: IIP 5.4.5 by David Lozier &copy;2004 :.&nbsp;</a><br />Distributed by <a href="http://www.threadsdev.com" target="_blank">ThreadsDev.com</a>
+</p>
+
+
+</body>
+</html>
+    
+
+    
+
+    
+
+    
+
+    
+

@@ -1,0 +1,6 @@
+/showme {OComma will STRIP or ADD commas to a given string. Just call it with "OComma #", if the given number has commas they will be stripped. If the given number doesn't have commas then commas will be added. All output is in the var "OComma".@Chr(10)OComma 1234 ..would output "1,234".@Chr(10)OComma 1,234 ..would output "1234".@Chr(10)@Chr(10)Because MM Considers that "1,234" is NOT a number, I've avoided adding any checks to insure the supplied value is actually a number or not. So, because of that, it's possible to add/strip commas from alpha strings. OComma 7abcd2 = "7ab,cd2".}
+
+/var {OComma} {null} {OComma}
+/var {OCommaCount} {0} {OComma}
+
+/alias {OComma %0} {/if {@IsEmpty($0)==0} {/empty OComma;/var OCommaCount 1;/var temp @Math(@Len($0)-1);/if {@StrStr($0,@Chr(44))!=-1} {/loop {0,$temp} {/if {"@Mid($0,$LoopCount,1)"!=","} {/var OComma {$OComma@Mid($0,$LoopCount,1)}}}} {/loop {$temp,0} {/if {$OCommaCount==3 @Mid($0,@Math($LoopCount-1),1)!=""} {/var OComma {@Chr(44)@Mid($0,$LoopCount,1)$OComma};/var OCommaCount 1} {/var OComma {@Mid($0,$LoopCount,1)$OComma};/var OCommaCount {@Math($OCommaCount+1)}}}}} {/showme {@Chr(10)@AnsiBold()@ForeYellow()OComma @ForeWhite()-- @ForeCyan()No value was supplied to process. Usage is "OComma <some number>"}}} {OComma}

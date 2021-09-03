@@ -1,0 +1,324 @@
+########################################
+# UBB V6 Custom Title Mod              #
+# Version: 0.9b                        #
+# Author: Antony Barratt               #
+# email: antony@barcom.co.uk           #
+########################################
+
+UBB v6 Mod to insert mode custom user titles definable through the control panel along with the number of posts required for each title.
+This mod shows how to set up 5 levels of 'senior' member but you can easily adapt this to however many you require.
+
+Use the misc settings option to customise your UBB.
+
+****************************
+* In the CGI-BIN directory *
+****************************
+
+####################
+#### CP_LIB.CGI ####
+####################
+
+Find
+----
+$vars_misc{BBClosedMessage} = 'Sorry, this message board is temporarily closed while we do some routine maintenance.';
+
+Add AFTER
+---------
+$vars_misc{Senior5Minimum} = '181';
+$vars_misc{Senior4Minimum} = '151';
+$vars_misc{Senior3Minimum} = '121';
+$vars_misc{Senior2Minimum} = '91';
+$vars_misc{Senior1Minimum} = '61';
+
+Just underneath that
+
+Find
+----
+$vars_misc{ModeratorTitle} = 'Moderator';
+
+Add AFTER
+---------
+$vars_misc{Senior5Title} = 'Senior 5';
+$vars_misc{Senior4Title} = 'Senior 4';
+$vars_misc{Senior3Title} = 'Senior 3';
+$vars_misc{Senior2Title} = 'Senior 2';
+$vars_misc{Senior1Title} = 'Senior 1';
+
+
+Find
+----
+my @ValidateArray = ("BBStatus", "BBClosedMessage", "MemberMinimum", "AdminTitle", "ModeratorTitle", "MemberTitle", "JrMemberTitle", "Censor", "EditOption", "IP", "EnglishSubjectCheck", "edit_public_names", "FloodCheck", "use_cache", "FloodCheckSpan", "EditWording");
+
+Change to
+---------
+my @ValidateArray = ("BBStatus", "BBClosedMessage", "Senior5Minimum", "Senior4Minimum", "Senior3Minimum", "Senior2Minimum", "Senior1Minimum", "MemberMinimum", "AdminTitle", "ModeratorTitle", "Senior5Title", "Senior4Title", "Senior3Title", "Senior2Title", "Senior1Title", "MemberTitle", "JrMemberTitle", "Censor", "EditOption", "IP", "EnglishSubjectCheck", "edit_public_names", "FloodCheck", "use_cache", "FloodCheckSpan", "EditWording");
+
+Find
+----
+my $ModeratorTitle = &LimitReturns($in{ModeratorTitle});
+
+Add AFTER
+---------
+my $Senior5Title = &LimitReturns($in{Senior5Title});
+my $Senior4Title = &LimitReturns($in{Senior4Title});
+my $Senior3Title = &LimitReturns($in{Senior3Title});
+my $Senior2Title = &LimitReturns($in{Senior2Title});
+my $Senior1Title = &LimitReturns($in{Senior1Title});
+
+Find
+----
+$ModeratorTitle = &SmallClean($ModeratorTitle);
+
+Add AFTER
+---------
+$Senior5Title = &SmallClean($Senior5Title);
+$Senior4Title = &SmallClean($Senior4Title);
+$Senior3Title = &SmallClean($Senior3Title);
+$Senior2Title = &SmallClean($Senior2Title);
+$Senior1Title = &SmallClean($Senior1Title);
+
+Find
+----
+print FILE qq!ModeratorTitle => q~$ModeratorTitle~,\n!;
+
+Add AFTER
+---------
+print FILE qq!Senior5Title => q~$Senior5Title~,\n!;
+print FILE qq!Senior4Title => q~$Senior4Title~,\n!;
+print FILE qq!Senior3Title => q~$Senior3Title~,\n!;
+print FILE qq!Senior2Title => q~$Senior2Title~,\n!;
+print FILE qq!Senior1Title => q~$Senior1Title~,\n!;
+
+######################
+#### CP_USERS.CGI ####
+######################
+
+Find
+----
+chomp($mod_profile[7]);
+	if ($mod_profile[7] < $vars_misc{MemberMinimum}) {
+		$status = 'Junior Member';
+	}  else {
+		$status = 'Member';
+	}
+
+Replace with
+------------
+chomp($mod_profile[7]);
+	if ($mod_profile[7] < $vars_misc{MemberMinimum}) {
+		$status = 'Junior Member';
+	} elsif ($mod_profile[7] < $vars_misc{Senior1Minimum}) {
+		$status = 'Member';
+	} elsif ($mod_profile[7] < $vars_misc{Senior2Minimum}) {
+		$status = 'Senior 1';
+	} elsif ($mod_profile[7] < $vars_misc{Senior3Minimum}) {
+		$status = 'Senior 2';
+	} elsif ($mod_profile[7] < $vars_misc{Senior4Minimum}) {
+		$status = 'Senior 3';
+	} elsif ($mod_profile[7] < $vars_misc{Senior5Minimum}) {
+		$status = 'Senior 4';
+	} else {
+		$status = 'Senior 5';
+	}
+
+
+#######################
+#### CP_FORUMS.CGI ####
+#######################
+
+Find
+----
+if ($Status ne "Administrator") {
+	if ($TotalPosts < $vars_misc{MemberMinimum}) {
+		$Status = 'Junior Member';
+	}  else {
+		$Status = 'Member';
+	}
+
+Replace with
+------------
+if ($Status ne "Administrator") {
+	if ($TotalPosts < $vars_misc{MemberMinimum}) {
+		$Status = 'Junior Member';
+	} elsif ($TotalPosts < $vars_misc{Senior1Minimum}) {
+		$Status = 'Member';
+	} elsif ($TotalPosts < $vars_misc{Senior2Minimum}) {
+		$Status = 'Senior 1';
+	} elsif ($TotalPosts < $vars_misc{Senior3Minimum}) {
+		$Status = 'Senior 2';
+	} elsif ($TotalPosts < $vars_misc{Senior4Minimum}) {
+		$Status = 'Senior 3';
+	} elsif ($TotalPosts < $vars_misc{Senior5Minimum}) {
+		$Status = 'Senior 4';
+	} else {
+		$Status = 'Senior 5';
+	}
+
+
+#####################
+#### UBB_LIB.CGI ####
+#####################
+
+Find
+----
+elsif ($_[0] eq 'Moderator') {
+	$custom_title = "$vars_misc{ModeratorTitle}";
+}
+
+Add AFTER
+---------
+elsif ($_[0] eq 'Senior 5') {
+	$custom_title = "$vars_misc{Senior5Title}";
+}
+elsif ($_[0] eq 'Senior 4') {
+	$custom_title = "$vars_misc{Senior4Title}";
+}
+elsif ($_[0] eq 'Senior 3') {
+	$custom_title = "$vars_misc{Senior3Title}";
+}
+elsif ($_[0] eq 'Senior 2') {
+	$custom_title = "$vars_misc{Senior2Title}";
+}
+elsif ($_[0] eq 'Senior 1') {
+	$custom_title = "$vars_misc{Senior1Title}";
+}
+
+###########################
+#### UBB_NEW_REPLY.CGI ####
+###########################
+
+Find
+----
+# bump user up to Member if total posts reaches MemberMinimum
+if (($user_profile[7] >= $vars_misc{MemberMinimum})  && ($user_profile[8] eq 'Junior Member')) {
+$user_profile[8] = 'Member';
+}
+
+Replace With
+------------
+# bump user up to Member/Senior1..5 if total posts reaches Minimum for next rank
+# This will also bump people down if you reset the post counter
+if (($user_profile[8] ne 'Moderator') &&  ($user_profile[8] ne 'Administrator')) {
+
+	if ($user_profile[7] >= $vars_misc{MemberMinimum}) {
+		$user_profile[8] = 'Member';
+	}
+	if ($user_profile[7] >= $vars_misc{Senior1Minimum}) {
+		$user_profile[8] = 'Senior 1';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior2Minimum}) {
+		$user_profile[8] = 'Senior 2';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior3Minimum}) {
+		$user_profile[8] = 'Senior 3';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior4Minimum}) {
+		$user_profile[8] = 'Senior 4';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior5Minimum}) {
+		$user_profile[8] = 'Senior 5';
+	}
+} 
+
+###########################
+#### UBB_NEW_TOPIC.CGI ####
+###########################
+
+Find
+----
+# bump user up to Member if total posts reaches MemberMinimum
+if (($user_profile[7] >= $vars_misc{MemberMinimum})  && ($user_profile[8] eq 'Junior Member')) {
+$user_profile[8] = 'Member';
+}
+
+Replace With
+------------
+# bump user up to Member/Senior1..5 if total posts reaches Minimum for next rank
+# This will also bump people down if you reset the post counter
+if (($user_profile[8] ne 'Moderator') &&  ($user_profile[8] ne 'Administrator')) {
+
+	if ($user_profile[7] >= $vars_misc{MemberMinimum}) {
+		$user_profile[8] = 'Member';
+	}
+	if ($user_profile[7] >= $vars_misc{Senior1Minimum}) {
+		$user_profile[8] = 'Senior 1';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior2Minimum}) {
+		$user_profile[8] = 'Senior 2';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior3Minimum}) {
+		$user_profile[8] = 'Senior 3';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior4Minimum}) {
+		$user_profile[8] = 'Senior 4';
+	} 
+	if ($user_profile[7] >= $vars_misc{Senior5Minimum}) {
+		$user_profile[8] = 'Senior 5';
+	}
+} 
+
+
+******************************
+* In the TEMPLATES directory *
+******************************
+
+
+#########################
+#### CP_VARS_MISC.PL ####
+#########################
+
+
+Find
+----
+&DoTextArea ("Message Board 'Closed' Wording", "BBClosedMessage", "yes", "You can customize the exact wording for the message displayed when your board is closed.  Edit the wording in the box to the right.  HTML is permitted.", "$vars_misc{BBClosedMessage}", "5", "30");
+
+Add AFTER
+---------
+print<<CUSTOMMOD;
+<tr bgcolor="#FFFFFF"> 
+<td width="45%">
+<b><font size="-1" color="#000000" face="Arial, Helvetica, sans-serif">
+Number of posts required for customised status descriptions</b></font><BR><font size="1" face="Arial, Helvetica, sans-serif">There are five extra status options for users: <I>Senior 1</I> up to Senior 5.  Senior 1 is the first level for this modification while serious posters can eventually work their way up to <I>Senior 5</I>. Set the number of posts required for each level here.</font></TD>
+ <td valign="top"> 
+<FONT SIZE="1" FACE="Arial, Helvetica, sans-serif">
+
+Senior 5:<BR>
+<input type="text" name="Senior5Minimum" size="5" value="$vars_misc{Senior5Minimum}" maxlength="5">
+<P>
+Senior 4:<BR>
+<input type="text" name="Senior4Minimum" size="5" value="$vars_misc{Senior4Minimum}" maxlength="5">
+<P>
+Senior 3:<BR>
+<input type="text" name="Senior3Minimum" size="5" value="$vars_misc{Senior3Minimum}" maxlength="5">
+<P>
+Senior 2:<BR>
+<input type="text" name="Senior2Minimum" size="5" value="$vars_misc{Senior2Minimum}" maxlength="5">
+<P>
+Senior 1:<BR>
+<input type="text" name="Senior1Minimum" size="5" value="$vars_misc{Senior1Minimum}" maxlength="5">
+ </td>
+ </tr>
+CUSTOMMOD
+
+Find
+----
+Moderator:<BR>
+<INPUT TYPE="TEXT" NAME="ModeratorTitle" VALUE="$vars_misc{ModeratorTitle}" SIZE=25 MAXLENGTH=60>
+
+Add AFTER
+---------
+<P>
+Senior 5:<BR>
+<INPUT TYPE="TEXT" NAME="Senior5Title" VALUE="$vars_misc{Senior5Title}" SIZE=25 MAXLENGTH=60>
+<P>
+Senior 4:<BR>
+<INPUT TYPE="TEXT" NAME="Senior4Title" VALUE="$vars_misc{Senior4Title}" SIZE=25 MAXLENGTH=60>
+<P>
+Senior 3:<BR>
+<INPUT TYPE="TEXT" NAME="Senior3Title" VALUE="$vars_misc{Senior3Title}" SIZE=25 MAXLENGTH=60>
+<P>
+Senior 2:<BR>
+<INPUT TYPE="TEXT" NAME="Senior2Title" VALUE="$vars_misc{Senior2Title}" SIZE=25 MAXLENGTH=60>
+<P>
+Senior 1:<BR>
+<INPUT TYPE="TEXT" NAME="Senior1Title" VALUE="$vars_misc{Senior1Title}" SIZE=25 MAXLENGTH=60>

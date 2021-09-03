@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Explicit :: An EverQuest Guild</title>
+<meta name="KEYWORDS" content="" />
+<meta name="DESCRIPTION" content="An EverQuest Guild" />
+<meta name="ROBOTS" content="INDEX,FOLLOW" />
+<meta name="resource-type" content="document" />
+<meta http-equiv="expires" content="0" />
+<meta name="author" content="Explicit" />
+<meta name="copyright" content="Copyright (c) 2001 by Explicit" />
+<meta name="revisit-after" content="1 days" />
+<meta name="distribution" content="Global" />
+<meta name="generator" content="PostNuke 0.7.1 - http://postnuke.com" />
+<meta name="rating" content="General" />
+<link rel="StyleSheet" href="themes/Firedance/style/styleNN.css" type="text/css" />
+<style type="text/css">@import url("themes/Firedance/style/style.css"); </style>
+<script type="text/javascript" src="javascript/showimages.php"></script>
+
+<script type="text/javascript" src="javascript/openwindow.php?hlpfile="></script>
+
+</HEAD>
+<BODY>
+<TABLE WIDTH="780" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="left">
+<TR>
+<TD VALIGN="top">
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR>
+<TD ALIGN="left" VALIGN="middle">
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<TD CLASS="pn-title" VALIGN="top" ALIGN="center">
+<IMG SRC="/images/logo.jpg"><br>
+<font class="pn-logo-small">An EverQuest Guild</font></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR>
+<TD WIDTH="100%" BGCOLOR=""><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD BGCOLOR="#330000" ALIGN="center" VALIGN="middle">
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD ALIGN="right" VALIGN="middle" CLASS="pn-normal">
+<font class="pn-sub"><br></font></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR>
+<TD WIDTH="100%" BGCOLOR=""><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD bgcolor="#660000">
+<br>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="2" bgcolor="#660000">
+<tr>
+<TD WIDTH="100%" ALIGN="right" VALIGN="middle">
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR>
+<TD WIDTH="100%" BGCOLOR=""><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD WIDTH="150" BGCOLOR="#660000"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="150" HEIGHT="5" ALT="" BORDER="0"></TD>
+<TD WIDTH="5"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="5" HEIGHT="1" ALT="" BORDER="0"></TD>
+<TD WIDTH="100%"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD WIDTH="150" BGCOLOR="#660000" ALIGN="center" VALIGN="top">
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top">
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<td CLASS="pn-title">Main Menu</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normal"><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="index.php" title="Back to the home page.">Home</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="http://www.explicitguild.com/modules.php?op=modload&name=Explicit&file=roster" title="Explicit Member List">Guild Roster</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&amp;name=phpBB_14&amp;file=index" title="Explicit Message Board">Forum</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&name=Explicit&file=recruitment" title="Recruitment">Recruitment</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&amp;name=Web_Links&amp;file=index" title="Links to other sites.">Links</a><br /></TD>
+</TR>
+</TABLE><br>
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top">
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<td CLASS="pn-title">Login</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normal"><form action="user.php" method="post"><table border="0" width="100%" cellspacing="0" cellpadding="1"><tr><td><span class="pn-normal">&nbsp;Username</span></td></tr><tr><td><input type="text" name="uname" size="14" maxlength="25"></td></tr><tr><td><span class="pn-normal">&nbsp;Password</span></td></tr><tr><td><input type="password" name="pass" size="14" maxlength="20"></td></tr><tr><td><input type="checkbox" value="1" name="rememberme" /><span class="pn-normal">&nbsp;Remember me</span></td></tr><tr><td><br><input type="hidden" name="module" value="NS-User" /><input type="hidden" name="op" value="login" /><input type="hidden" name="url" value="/index.php" /><input type="submit" value="Login" /></td></tr><tr><td><br /><span class="pn-normal"><a href="user.php">Create Account</a></span></td></tr><tr><td></table></form></TD>
+</TR>
+</TABLE><br>
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top">
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<td CLASS="pn-title">Explicit Hit List</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normal"><table border="0" width="100%">
+<tr>
+<td>Cazic Thule</td><td>2</td>
+</tr>
+<tr>
+<td>Dain Frostreaver</td><td>4</td>
+</tr>
+<tr>
+<td>Exiled</td><td>1</td>
+</tr>
+<tr>
+<td>Glyphed</td><td>1</td>
+</tr>
+<tr>
+<td>The Itraer Vius </td><td>2</td>
+</tr>
+<tr>
+<td>King Tormax</td><td>1</td>
+</tr>
+<tr>
+<td>Klandicar</td><td>3</td>
+</tr>
+<tr>
+<td>Sontalak</td><td>1</td>
+</tr>
+<tr>
+<td>Statue of Rallos Zek</td><td>2</td>
+</tr>
+<tr>
+<td>Vindicator</td><td>4</td>
+</tr>
+<tr>
+<td>Yelinak</td><td>3</td>
+</tr>
+
+</table>
+</TD>
+</TR>
+</TABLE><br>
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top">
+<TABLE WIDTH="140" BORDER="0" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<td CLASS="pn-title">Forum Stats</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normal"><br><font class="pn-normal"><b>3 Recent Topics:</b></font><br><strong><big>&middot;</big></strong>&nbsp;
+	      <font class="pn-normal"><a href="modules.php?op=modload&amp;name=phpBB_14&amp;file=index&amp;action=viewtopic&amp;topic=153&amp;forum=1&amp;0" title="Heya Explicit">Heya Explicit</a></font><br>
+<strong><big>&middot;</big></strong>&nbsp;
+	      <font class="pn-normal"><a href="modules.php?op=modload&amp;name=phpBB_14&amp;file=index&amp;action=viewtopic&amp;topic=152&amp;forum=1&amp;1" title="Hello all">Hello all</a></font><br>
+<strong><big>&middot;</big></strong>&nbsp;
+	      <font class="pn-normal"><a href="modules.php?op=modload&amp;name=phpBB_14&amp;file=index&amp;action=viewtopic&amp;topic=151&amp;forum=1&amp;1" title="I like candy!">I like candy!</a></font><br>
+<br><font class="pn-normal"><b>3 Top Active Posters:</b></font><br><strong><big>&middot;</big></strong>&nbsp;
+	      <font class="pn-normal"><a href="user.php?op=userinfo&uname=soullance">soullance</a><br>(82 posts)</font><br>
+<strong><big>&middot;</big></strong>&nbsp;
+	      <font class="pn-normal"><a href="user.php?op=userinfo&uname=Mordix">Mordix</a><br>(59 posts)</font><br>
+<strong><big>&middot;</big></strong>&nbsp;
+	      <font class="pn-normal"><a href="user.php?op=userinfo&uname=charmir0x0rs">charmir0x0rs</a><br>(52 posts)</font><br>
+<br><font class="pn-normal"><b>Total:</b></font><br>
+      <strong><big>&middot;</big></strong>&nbsp;Categories: 2<br>
+      <strong><big>&middot;</big></strong>&nbsp;Forums: 5<br>
+      <strong><big>&middot;</big></strong>&nbsp;Topics: 125<br>
+      <strong><big>&middot;</big></strong>&nbsp;Posts: 497<br>
+      </TD>
+</TR>
+</TABLE><br>
+</TD>
+<TD WIDTH="5"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="5" HEIGHT="1" ALT="" BORDER="0"></TD>
+<TD ALIGN="center" VALIGN="top">
+<font class="pn-normal">
+<table border="0" width="100%">
+<tr><td>
+<table border="0" width="100%"><tr align="left" valign="middle"><td><center><br /><center><font class="pn-title">What This Website Is...</font></center><br /><br /></center>DISCLAIMER: This website is my outlet to post what we do, what we like, and sometimes even what we hate.  Any opinions you find below are that of Montague Chaos, and not necessarily of the entire guild - although often the guild agrees.  If you don't like what you see, I implore you to seek the [X] on the top of your browser.</td></tr></table></td></tr></table></font><TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3" WIDTH="100%" BGCOLOR="#330000">
+<TR>
+<TD WIDTH="100%"><font CLASS="pn-titleLarge"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=3&amp;mode=thread&amp;order=0&amp;thold=0">Quellious Rejoice!</a></font><br>
+<font CLASS="pn-sub">Posted by: Montague on Thursday, August 01, 2002 - 09:26 AM EST</font></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normalLarge">
+OK, Creator died for the first time to about 35 of us, give or take... thanks to a GM who knew what the fuck he was doing.  Let me explain...<br />
+<br />
+We entered Ssra, moved up to Creator... some time later here comes some gimpass halfling cleric, whos name I do not remember... but I do remember one thing:  &lt;Wraith&gt;, under his name.  Then, a GM magically appears!  Yep, thats right folks... without even TALKING to us, this random_guild_01 /petitions us and proceeds to run us over...  Now, let me make one thing clear;  We were not in the jail room, we were not at the zone line... we were actually IN THE FUCKIN CREATOR hall, not 10 feet from the mob we were about to kill.<br />
+<br />
+Soooo anyway, a guide appears, tells us to hold off our attack so he can go get a GM to resolve the issue... we're like WTF!  we are ready to go and you make us wait?  ok whatever.  After a few minutes this GM shows up in the zone, Mheii was his name, or maybe it was a her?  I dunno... who cares.  Mheii starts talking to our leader, and the leadership of Wraith... the guild (us) is pretty much in the dark, when all of a sudden - this is what we see:<br />
+<br />
+<img src="/sitepics/wraith1.jpg"><br />
+<img src="/sitepics/wraith2.jpg"><br />
+<br />
+We rejoice, as do the other guilds in the zone... who are all pretty tired of the shit Wraith keeps trying to pull.  We are then spammed for the next 10 minutes with random insults to the Guides and GMs... I suppose because they thought they were gone.  Alas, the law was not gone... and everybody knows not to call the cop thats writing you a ticket a dumb ass, well I thought everbody knew...<br />
+<br />
+<img src="/sitepics/wraith3.jpg"><br />
+<br />
+With a nice lag free zone now we are able to wax the creator in an ALMOST flawless kill.  Loot was OK I guess - He gave up a pair of shoes, bracer, and a staff... here they are:<br />
+<br />
+<img src="/sitepics/soft_scale_slippers.jpg"><br />
+<img src="/sitepics/adamantite_wristguard.jpg"><br />
+<img src="/sitepics/mournfollow.jpg"><br />
+<br />
+We've also been killing some lesser mobs, but I won't bore you with details of tormax, dain, itraer, etc.<br />
+<br />
+Until next time.
+<BR><BR>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD VALIGN="middle" ALIGN="right" WIDTH="100%">
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3" BGCOLOR="#330000">
+<TR>
+<TD WIDTH="20%" VALIGN="middle" CLASS="pn-sub">(48 Reads)</TD>
+<TD ALIGN="right" VALIGN="middle" WIDTH="80%" CLASS="pn-sub">comments?  <a class="pn-normal" href="print.php?sid=3"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3" WIDTH="100%" BGCOLOR="#330000">
+<TR>
+<TD WIDTH="100%"><font CLASS="pn-titleLarge"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=2&amp;mode=thread&amp;order=0&amp;thold=0">Toto, I don't think we're in Kansas anymore...</a></font><br>
+<font CLASS="pn-sub">Posted by: Montague on Thursday, July 11, 2002 - 12:35 PM EST</font></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normalLarge">
+Holy shit... We're just starting out so basically our only members are the old school VM guys and a few more awesome people we've picked up along the way;  But I've gotta tell ya... we have owned every single mob we're tried so far.<br />
+<br />
+On what we'll call &quot;Opening Day&quot;, the day we formed, we started off by opening up a can on Klandicar over in WW.  With help from a few of our friends in the Denizens we won with only 24 people, flawlessly.  And since no point system or anything is in effect yet, we /random'ed for the ST key, congrats Faie!<br />
+<br />
+Now, around this time I lost track of the days so, in no particular order, this is what died:<br />
+<br />
+- Ring of Slime in CT.  14 people there total, 10 guildies laying down the smack (this was tough, as we had almost got ran over by another guild while we were forming up - but we prevailed).<br />
+<br />
+- Vindi.  I wanna say we had 12 or 13 people, but I could be off by 1 or 2....  either way we killed him with [as far as I know] - the smallest numbers ever... and we did a great job at that.<br />
+<br />
+That about covers all the relavent info, we also did Vaniki and the Gimlik quest a few times... but I doubt anybody really cares about that ;p.<br />
+<br />
+<br />
+Also note:  I'm working hard to get the site fully functional so you might incur some problems in a few areas, just hold tight while I work out all the bugs.<br />
+<br />
+For now, peace.
+<BR><BR>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD VALIGN="middle" ALIGN="right" WIDTH="100%">
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3" BGCOLOR="#330000">
+<TR>
+<TD WIDTH="20%" VALIGN="middle" CLASS="pn-sub">(128 Reads)</TD>
+<TD ALIGN="right" VALIGN="middle" WIDTH="80%" CLASS="pn-sub">comments?  <a class="pn-normal" href="print.php?sid=2"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3" WIDTH="100%" BGCOLOR="#330000">
+<TR>
+<TD WIDTH="100%"><font CLASS="pn-titleLarge"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=1&amp;mode=thread&amp;order=0&amp;thold=0">It Has Begun...</a></font><br>
+<font CLASS="pn-sub">Posted by: Montague on Monday, July 08, 2002 - 12:23 AM EST</font></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD ALIGN="left" VALIGN="top" CLASS="pn-normalLarge">
+Welcome to our new home... Explicit.
+<BR><BR>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD VALIGN="middle" ALIGN="right" WIDTH="100%">
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="3" BGCOLOR="#330000">
+<TR>
+<TD WIDTH="20%" VALIGN="middle" CLASS="pn-sub">(228 Reads)</TD>
+<TD ALIGN="right" VALIGN="middle" WIDTH="80%" CLASS="pn-sub">comments?  <a class="pn-normal" href="print.php?sid=1"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR BGCOLOR="#000000">
+<TD><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+</TABLE>
+<BR>
+</TD>
+<TD WIDTH="5"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="5" HEIGHT="1" ALT="" BORDER="0"></TD>
+<TD ALIGN="center" VALIGN="top">
+</TD>
+</TR>
+</TABLE>
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD WIDTH="100%" BGCOLOR="#000000"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD BGCOLOR="#660000" ALIGN="center" VALIGN="middle">
+<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD VALIGN="middle" ALIGN="right">
+<font class="pn-sub"><br></font></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR>
+<TD WIDTH="100%" BGCOLOR="#000000"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+<TR>
+<TD BGCOLOR="#660000" ALIGN="center" VALIGN="middle">
+<font class="pn-sub">
+
+	<br>
+
+	</font>
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#000000"><IMG SRC="themes/Firedance/images/pix-t.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0"></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<body><font face=Courier>
+<a href="../omatips.htm">Back to OmaTips</a>
+<br><br>
+
+<table width=600 border=0 cellspacing=0 style="font-size: 10pt">
+  <tr>
+    <td><font face="Courier" size=1>
+<u><b>Using a Wildcard in an Alias</b></u><br><br>
+
+This question comes up from time to time, so I thought I'd spew forth some drivel about it.<br><br>
+
+First:<br>
+Yes, you can use a wildcard with an alias. The limitation is that you can only use <i>one</i> wildcard.<br>
+/alias {xyz %0} {say $0} {} - Valid usage.<br>
+/alias {xyz %0 %1} {say $0} {} - Invalid usage.<br><br>
+
+From above first example (the valid one that is), "xyz Hello there Joe" would send to the mud "say Hello there Joe". Simple.<br><br>
+
+But what if you want to select particular words in the wildcard? It's pretty simple really.<br>
+Say you want the alias to store 3 vars, one var for each word.<br><br>
+
+/alias {xyz %0} {/var {Spew1} {@Word($0,1)};/var {Spew2} {@Word($0,2)};/var {Spew3} {@Word($0,2)}} {}<br><br>
+
+You can check the wordcount, if you want to be sure the wildcard string contains the proper amount of words. We'll use 3 words again for the following example:<br><br>
+
+/alias {xyz %0} {/if {@WordCount($0)==3} {<i>it's 3 words, do stuff</i>} {<i>It isn't 3 words</i>}} {}<br><br>
+
+To save on processing time and cpu burden:<br>
+If you're going to access the wildcard's word(s) a few times, first store them as vars (in memory) so MM can immediately access the values without having to do a procedure over and over.<br><br>
+
+/alias {xyz %0} {/if {@WordCount($0)==3} {say @Word($0,1);tell Freddy @Word($0,2);/var Result @Math(@Word($0,3)+5);/if {@Word($0,2)=="Sally"} {/var Who @Word($0,2)}} {} - <i>lots of processing</i><br>
+vs.<br>
+/alias {xyz %0} {/if {@WordCount($0)==3} {/var Word1 @Word($0,1);/var Word2 @Word($0,2);/var Word3 @Word($0,3);say $Word1;tell Freddy $Word2;/var Result @Math($Word3+5);/if {$Word2=="Sally"} {/var Who $Word2}} {} - <i>minimal processing</i><br>
+
+</table>
+</body>
+</html>

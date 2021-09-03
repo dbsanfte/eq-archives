@@ -1,0 +1,62 @@
+<html>
+<body><font face=Courier>
+<a href="../omatips.htm">Back to OmaTips</a>
+<br><br>
+
+<table width=600 border=0 cellspacing=0 style="font-size: 10pt">
+  <tr>
+    <td><font face="Courier" size=1>
+<u><b>Sorting Lists</b></u><br>
+    Lists are sorted alpha-numerically. This presents problems when you want lists to store
+    information according to purely numeric values.<br><br>
+
+    Say you want a list of trade post items, sorted by the cost of the item (making this up):<br>
+    /listadd {TradeItems}<br>
+    /itemadd {TradeItems} {1 a widget}<br>
+    /itemadd {TradeItems} {3 grain of rice}<br>
+    /itemadd {TradeItems} {7 box of jujubees}<br>
+    /itemadd {TradeItems} {10 glass of water}<br>
+    /itemadd {TradeItems} {27 a wooden coffin}<br><br>
+
+    Ok we've entered in the data, but hrm the list sorts like this!:<br>
+    001: 1 a widget<br>
+    002: 10 glass of water<br>
+    003: 27 a wooden coffin<br>
+    004: 3 grain of rice<br>
+    005: 7 box of jujubees<br><br>
+
+    Obviously nothing's sorted by value. So, we need to @PadLeft() the numbers, then tack on
+    the item name. If all numbers are justified equally, the list will sort!<br>
+    /itemadd {TradeItems} {@PadLeft(1, ,2) a widget}<br>
+    /itemadd {TradeItems} {@PadLeft(3, ,2) grain of rice}<br>
+    /itemadd {TradeItems} {@PadLeft(7, ,2) box of jujubees}<br>
+    /itemadd {TradeItems} {@PadLeft(10, ,1) glass of water}<br>
+    /itemadd {TradeItems} {@PadLeft(27, ,1) a wooden coffin}<br><br>
+
+    And we now have a nice sorted list:<br>
+    001: &nbsp;&nbsp;1 a widget<br>
+    002: &nbsp;&nbsp;3 grain of rice<br>
+    003: &nbsp;&nbsp;7 box of jujubees<br>
+    004: &nbsp;10 glass of water<br>
+    005: &nbsp;27 a wooden coffin<br><br>
+
+    You can automate the @PadLeft() without having to manually enter the "pad with
+    xx characters". Trick is to make sure you're padding enough times so that any string
+    you are padding <u>will</u> get padded.<br>
+    That is, say you're padding the trade values. And you "know" the max value is like
+    "1000". That's 4 characters, eg: @Len(1000)=4. So it's safe to pad 4 or more characters.
+    Typically I go 1 over the max length that I (assume) I'll get. So let's use 5 as the pad
+    count value, assuming the max length of any value via this script will be 4.<br><br>
+    /action {whatever %0 value spew} {/itemadd {TradeItems} {@PadLeft($0, ,@Math(5-@Len($0)))}}<br>
+    That'll pad "$0" over with 5 spaces, but less the length of the variable "$0". So if
+    the value was say 56, the script would be doing:<br>
+    /itemadd {TradeValue} {@PadLeft(56, ,@Math(5-2))} ...which is really:<br>
+    /itemadd {TradeValue} {@PadLeft(56, ,3)} ..which is really:<br>
+    /itemadd {TradeValue} {&nbsp;&nbsp;&nbsp;56}<br><br>
+
+    When all the values go in, they are padded with 5, less the length. So they're all
+    justified equally. Hence you get a nice sorted list by value, instead of just
+    numerically.<br>
+</table>
+</body>
+</html>

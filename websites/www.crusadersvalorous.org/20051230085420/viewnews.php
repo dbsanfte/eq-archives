@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Crusaders Valorous RP</title>
+<style type="text/css">
+form { display: inline; }
+img { vertical-align: middle; border: 0px; }
+
+BODY { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #ffffff; margin-left: 1%; margin-right: 1%; margin-top: 1%; background-color: #000000; background-image;background-image: url(forums/style_images/Axe-387/main_bg.jpg); }
+TABLE { border-top: 1px; border-right: 1px; border-bottom: 1px; border-left: 1px; border-color: #FFFFFF; border-style: inset; }
+TABLE.borderless { border-style: none; }
+
+th { font-weight: bold; color: #CC9900; background-color: #212121; white-space: nowrap; }
+tr, td { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #ffffff; }
+
+a:link, a:visited, a:active { text-decoration: none; color: #ffffff; }
+a:hover { text-decoration: underline; color: #CC9900; }
+
+th a:link, th a:visited, th a:active { text-decoration: none; color: #CC9900; font-weight: bold; }
+th a:hover { text-decoration: underline; color: #CC9900; font-weight: bold; }
+
+th.smalltitle { font-weight: bold; color: #CC9900; background-color: #212121; white-space: nowrap; font-size: 12px; }
+th.smalltitle a:link, th.smalltitle a:visited, th.smalltitle a:active { text-decoration: none; color: #CC9900; font-weight: bold; font-size: 12px; }
+th.smalltitle a:hover { color: #CC9900; font-weight: bold; font-size: 12px; text-decoration: underline; }
+
+th.footer { color: #CC9900; text-align: right; background-color: #212121; white-space: nowrap; font-weight: normal; }
+th.footer a:link, th.footer a:visited, th.footer a:active { color: #CC9900; text-decoration: none;  font-weight: normal; }
+th.footer a:hover { color: #CC9900; text-decoration: underline; font-weight: normal; }
+
+.row1 { background-color: #212121; }
+.row2 { background-color: #000000; }
+
+.quote1 { background-color: #000000; font-size: 13px; line-height: 125%; }
+.quote2 { background-color: #212121; font-size: 13px; line-height: 125%; }
+
+.positive { color: #008800; }
+.negative { color: #F80000; }
+.neutral  { color: #ffffff; }
+
+.maintitle { font-size: 18px; font-weight: bold; color: #CC9900; }
+.subtitle  { font-size: 12px; color: #CC9900; }
+
+.menu { font-size: 12px; color: #CC9900; }
+.menu a:link, .menu a:active, .menu a:visited { text-decoration: none; font-size: 12px; color: #CC9900; }
+.menu a:hover { text-decoration: underline; font-size: 12px; color: #CC9900; }
+
+.small { font-size: 12px; }
+
+.copy { font-size: 12px; color: #CC9900; }
+.copy a:link, .copy a:active, .copy a:visited { font-size: 12px; color: #CC9900; }
+.copy a:hover { font-size: 12px; color: #CC9900; }
+
+.input { font-family: Trebuchet MS; font-size: 12px; color: #000000; background-color: #ffffff; 
+         border-top: 3px; border-right: 3px; border-bottom: 3px; border-left: 3px; border-color: #CC9900; border-style: inset; }
+
+input.helpline1 { background-color: #212121; border-style: none; }
+input.helpline2 { background-color: #000000; border-style: none; }
+
+input.mainoption { font-family: Trebuchet MS; font-size: 12px; font-weight: bold; color: #CC9900; background-color: #212121; border-top: 3px;
+                   border-right: 3px; border-bottom: 3px; border-left: 3px; border-color: #CC9900; border-style: inset; }
+input.liteoption { font-family: Trebuchet MS; font-size: 12px; font-weight: normal; color: #CC9900; background-color: #212121; border-top: 3px;
+                   border-right: 3px; border-bottom: 3px; border-left: 3px; border-color: #CC9900; border-style: inset; }
+
+
+</style>
+</head>
+
+<body>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+  <tr>
+    <td width="100%" nowrap="nowrap"><center><img src="./templates/default/images/logo.gif" alt="Logo" /></center><br /></td>
+  </tr>
+  <tr>
+  	<td>
+		<!-- Begin Code Amber Ticker code. -->
+		<P ALIGN=CENTER>
+		<SCRIPT LANGUAGE="JavaScript1.2" src="http://www.codeamber.org/js/codea.js">
+		</script>
+		</P>
+		<!-- end of Code Amber Ticker code (c)Copyright codeamber.org 2002, 2003-->
+	</td>
+  </tr>
+
+  
+
+  <tr>
+    <td width="100%">
+      <span class="menu">
+    	<br /><p><a href="/forums/index.php?startup=yes">Forums</a>&nbsp;|
+      <a href="./viewnews.php?s=9a7284366102cb626413c992d225f01c" class="copy" target="_top">News</a> | <a href="./listmembers.php?s=9a7284366102cb626413c992d225f01c" class="copy" target="_top">Standings</a> | <a href="./stats.php?s=9a7284366102cb626413c992d225f01c" class="copy" target="_top">Stats</a> | <a href="./plugins/statsim/" class="copy" target="_top">Improved Stats</a> | <a href="./login.php?s=9a7284366102cb626413c992d225f01c" class="copy" target="_top">Login</a></p>
+      </span></center>
+    </td>
+  </tr>
+</table>
+<br />
+
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  
+  <tr>
+    <th align="left">December 3, 2005</th>
+  </tr>
+  
+  <tr>
+    <td>
+      <b style="font-size:13px">GoD Finished!!</b> <span class="small">(submitted by Ansar at 10:15am CST)</span><br /><br />
+      Earlier this week we finally decided to give Tunat in Tacvi a try.  We had been delaying worrying about thim to concentrate on other more startegic targets, but this week everything seemed right to go ahead and add him to the farm list.  Personally, I really liked the encounter.  It's a pretty complex script with a lot of stuff going on.  It took a few attempts but we finally dealt with all the little issues and the final run had only one or two deaths (one of the final adds got revenge upon me after Tunat died...the bastard).  The loot was pretty good too, even considering some of the stuff we have access to in Anguish now.<br />
+<br />
+<img src="http://www.crusadersvalorous.org/image/TunatDead.JPG" alt="User-posted image" /><br />
+<br />
+Also of note is that we have managed to kill Jelvan and Arch Magus in Anguish, leaving only OMM left in that zone to fall to us.  Those are a couple of interesting fights to figure out.  We are still a bit away from feeling ready to try OMM, but it won't be too long.  Meanwhile I did get a nice closeup of him brooding while waiting for us.<br />
+<br />
+<img src="http://www.crusadersvalorous.org/image/OMM.JPG" alt="User-posted image" />
+    </td>
+  </tr>
+  
+  <tr>
+    <th align="left">November 3, 2005</th>
+  </tr>
+  
+  <tr>
+    <td>
+      <b style="font-size:13px">WTB Battlefield Photographer</b> <span class="small">(submitted by Ansar at 10:04am CST)</span><br /><br />
+      Well, I was hoping for some good screen shots of corpses for this update, but all those would have shown would have been feet / hoof things sticking out of a wall.  The best I could come up with was this glowing ball that marks CVs first Epic 2.0.<br />
+<br />
+<img src="http://www.crusadersvalorous.org/image/GlowingOrb.JPG" alt="User-posted image" /><br />
+<br />
+Congratulations Embraer on your new sword (as soon as he can trigger the final fight with it that is).<br />
+<br />
+I must say though, our progress in the zone has been amazing so far.  After gaining access, we followed Daesean's plan and backflagged each MPG trial a couple of times before heading to Anguish exactly on schedule on Nov. 1.  The backflagging must have worked well too since we have had 3 seals rot so far.<br />
+<br />
+Two of the three named fights have been quite fun so far too (Ture was a wuss).  I must say both Keldovan and Hanvar's AEs were a bit of a shock on the first attempts.  But, with a little adjusting Keldovan became easy and Hanvar became....well a win.  That had to be the single most intense fight I have ever been in.  At the end I was offering a bounty out of the guild bank for someone to finally finish him off, luckly everyone must have been paying too much attention to the fight to notice since no one tried to claim the bounty. =)
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="footer">&nbsp;</th>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+  <tr>
+    <td align="center" class="menu"><b>1</b> <a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=2" title="Page 2" class="copy">2</a> <a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=4" title="Page 3" class="copy">3</a> <a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=6" title="Page 4" class="copy">4</a> <a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=8" title="Page 5" class="copy">5</a> <a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=10" title="Page 6" class="copy">6</a> ... <a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=84" class="copy">43</a>&nbsp;&nbsp;<a href="viewnews.php?s=9a7284366102cb626413c992d225f01c&amp;start=2" title="Next Page" class="copy">&gt;</a></td>
+  </tr>
+</table>
+
+<br />
+<!-- 
+    If you use this software and find it to be useful, we ask that you
+    retain the copyright notice below.  While not required for free use,
+    it will help build interest in the EQdkp project.
+//-->
+<center><span class="copy">Powered by <a href="http://eqdkp.com/" target="_new" class="copy">EQdkp</a> 1.2.1<br />&copy; 2003 The EQdkp Project Team</span></center>
+<br />
+
+</body>
+</html>

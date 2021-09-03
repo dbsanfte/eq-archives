@@ -1,0 +1,499 @@
+<html>
+<head>
+<title>EQmaps.com News</title>
+<META NAME="DESCRIPTION" CONTENT="An EverQuest website dedicated to bringing you maps, item lists, landmarks, bestiary, and zone exits for every zone in the game! Every aspect of the site can be discussed so players can share their knowledge with everyone.">
+<META NAME="KEYWORDS" CONTENT="everquest, eq, rpg, game, mmorpg, online, database, verant, sony, map, maps, item, items, quest, quests, landmark, landmarks, bestiary, zone, loc, location, screenshot, screenshots, 3dfx, tnt, dungeons, towns, norrath">
+<META NAME="ABSTRACT" CONTENT="EverQuest maps, items, bestiary, and landmarks!">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="Content-Language" CONTENT="en">
+<link rel="stylesheet" type="text/css" href="styles/base.css">
+<script language="JavaScript" src="eqmaps.js"></script>
+</head>
+
+<body bgcolor="#000000" text="#F3CE57" link="#FFFFFF" vlink="#AAAAAA" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
+<table width="780" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="780" height="80" colspan="3" background="images/eqmapslogo2.jpg"><table width="780" height="80" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="240"><img src="images/logo.jpg"></td>
+<td width="468" align="center"><font size="1">EQ Maps: banner free since April 1st, 2001.</font></td>
+<td width="72">&nbsp;</td>
+</tr>
+</table></td>
+  </tr>
+  <tr>
+    <td width="780" height="5" colspan="3"><img src="images/dot.gif"></td>
+  </tr>
+  <tr>
+    <td width="3"><img src="images/dot.gif"></td>
+    <td width="152" valign="top"><table width="152" bgcolor="#122134" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+<td width="128" height="12" background="images/border-topmid.gif"><img src="images/dot.gif"></td>
+<td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+</tr>
+<tr>
+<td width="12" background="images/border-leftmid.gif"><img src="images/dot.gif"></td>
+<td width="128" valign="top" align="right"><form method="POST" action="search.php3" name="qsearch">
+<center>
+<input type="text" name="query" value="Quick Search" class="istyle" size="14" maxlength="45" onFocus="document.qsearch.query.value=''"><br>
+<select name="tid" class="istyle">
+<option value="1">Item
+<option value="2">NPC
+<option value="3">Landmark
+<option value="4">Zone
+<option value="5">Spell
+</select> <input class="istyle" type="submit" name="submit" value="GO">
+</center></form>
+<b>Free Content</b><br>
+<a href="index.php3">EQmaps News</a> ¤<br>
+<a href="maplist.php3">Map List By Zone</a> ¤<br>
+<a href="npclist.php3">Advanced NPC List</a> ¤<br>
+<a href="itemlist.php3">Advanced Item List</a> ¤<br>
+<a href="spell_list.php3">Advanced Spell List</a> ¤<br>
+<a href="search.php3">Search Database</a> ¤<br>
+<a href="locsheet.php3" target="_blank">Locations Sheet</a> ¤<br>
+<a href="staff.php3">EQmaps Staff</a> ¤<br>
+<a href="links.php3">Wicked Links</a> ¤<br><br>
+<form>
+<b>Flashlink Only</b><br>
+<select name="norrath" onChange="loadM(this)">
+<option>Continents
+<option>---------------------
+<option value="norrath">Norrath
+<option value="antonica">Antonica
+<option value="faydwer">Faydwer
+<option value="kunark">Kunark
+<option value="luclin">Luclin
+<option value="odus">Odus
+<option value="velious">Velious
+</select><br>
+<select name="towns" onChange="loadM(this)">
+<option>Towns
+<option>-----------------------
+<option value="akanon">Ak'Anon
+<option value="bazaar">Bazaar
+<option value="ecabilis">Cabilis, East
+<option value="wcabilis">Cabilis, West
+<option value="erudnext">Erudin Docks
+<option value="erudnint">Erudin Palace
+<option value="felwithea">Felwithe, North
+<option value="felwitheb">Felwithe, South
+<option value="firiona">Firiona Vie
+<option value="freporte">Freeport, East
+<option value="freportn">Freeport, North
+<option value="freportw">Freeport, West
+<option value="grobb">Grobb
+<option value="halas">Halas
+<option value="highkeep">High Keep
+<option value="icewell">Icewell Keep
+<option value="drakkal">Kael Drakkal
+<option value="kaladima">Kaladim, North
+<option value="kaladimb">Kaladim, South
+<option value="katta">Katta Castellum
+<option value="kelethin">Kelethin
+<option value="neriaka">Foreign Quarter
+<option value="neriakb">Neriak Commons
+<option value="neriakc">Neriak 3rd Gate
+<option value="nexus">Nexus
+<option value="ogguk">Oggok
+<option value="paineel">Paineel
+<option value="qeynos2">Qeynos, North
+<option value="qeynos1">Qeynos, South
+<option value="qcat">Qeynos Catacombs
+<option value="rivervale">Rivervale
+<option value="sseru">Sanctus Seru
+<option value="shadowhaven">Shadow Haven
+<option value="sharvahl">Shar Vahl
+<option value="skyshrine">Skyshrine
+<option value="soltemple">Temple of Solusek
+<option value="thurgadin">Thurgadin
+</select><br>
+<select name="world" onChange="loadM(this)">
+<option>World Zones
+<option>-------------------------
+<option value="arena">Arena
+<option value="burningwoods">Burning Woods
+<option value="butcher">Butcherblock Mtns
+<option value="cobaltscar">Cobalt Scar
+<option value="ecommons">Commonlands, East
+<option value="wcommons">Commonlands, West
+<option value="cauldron">Dagnor's Cauldron
+<option value="dawnshroud">Dawnshroud Peaks
+<option value="dreadlands">Dreadlands
+<option value="emjungle">Emerald Jungle
+<option value="erudsxing">Erud's Crossing
+<option value="everfrost">Everfrost Peaks
+<option value="gfaydark">Faydark, Greater
+<option value="lfaydark">Faydark, Lesser
+<option value="feerrott">Feerrott
+<option value="bonefield">Field of Bone
+<option value="frontier">Frontier Mtns
+<option value="tgd">Great Divide, The
+<option value="thegrey">Grey, The
+<option value="grimling">Grimling Forest
+<option value="highpass">Highpass Hold
+<option value="hollowshade">Hollowshade Moor
+<option value="iceclad">Iceclad Ocean
+<option value="innothule">Innothule Swamp
+<option value="jagged">Jaggedpine Forest
+<option value="eastkarana">Karana, East
+<option value="northkarana">Karana, North
+<option value="southkarana">Karana, South
+<option value="qey2hh1">Karana, West
+<option value="kerraridge">Kerra Ridge
+<option value="beholder">King Xorbb's Maze
+<option value="kithicor">Kithicor Forest
+<option value="lakeofillomen">Lake Of Ill Omen
+<option value="lakerathe">Lake Rathetear
+<option value="lavastorm">Lavastorm Mtns
+<option value="maiden">Maiden's Eye
+<option value="mseru">Marus Seru
+<option value="misty">Misty Thicket
+<option value="letalis">Mons Letalis
+<option value="nektulos">Nektulos Forest
+<option value="oasis">Oasis of Marr
+<option value="oot">Ocean of Tears
+<option value="overthere">Overthere, The
+<option value="qeytoqrg">Qeynos Hills
+<option value="rathemtn">Rathe Mtns
+<option value="nro">Ro, North
+<option value="sro">Ro, South
+<option value="scarlet">Scarlet Desert
+<option value="shadeweaver">Shadeweaver's
+<option value="skyfire">Skyfire Mtns
+<option value="steamfont">Steamfont Mtns
+<option value="bruntmtns">Stonebrunt Mtns
+<option value="surefall">Surefall Glade
+<option value="swampofnohope">Swamp Of No Hope
+<option value="tenebrous">Tenebrous Mtns
+<option value="timourous">Timorous Deep
+<option value="tox">Toxxullia Forest
+<option value="traksteeth">Trakanon's Teeth
+<option value="twilight">Twilight Sea
+<option value="umbral">Umbral Plains
+<option value="vpeak">Veeshan's Peak
+<option value="veksar">Veksar
+<option value="wakeland">Wakening Land
+<option value="warsliks">Warsliks Wood
+<option value="ewastes">Wastes, Eastern
+<option value="wwastes">Wastes, Western
+</select><br>
+<select name="dungeons" onChange="loadM(this)">
+<option>Dungeons
+<option>-------------------------
+<option value="acrylia">Acrylia Caverns
+<option value="akheva">Akheva Ruins
+<option value="befallen">Befallen
+<option value="blackburrow">Blackburrow
+<option value="cazicthule">Cazic-Thule
+<option value="cazicold">Cazic-Thule (old)
+<option value="chardok">Chardok
+<option value="mistcity">City of Mist
+<option value="crushbone">Crushbone
+<option value="crystalcav">Crystal Caverns
+<option value="dalnir">Dalnir, Crypt Of
+<option value="thedeep">Deep, The
+<option value="necropolis">Dragon Necropolis
+<option value="dlab">Drovrag Labryrinth
+<option value="echo">Echo Caverns
+<option value="fungusgrove">Fungus Grove
+<option value="greigsend">Grieg's End
+<option value="gukbottom">Guk, Lower
+<option value="guktop">Guk, Upper
+<option value="thehole">Hole, The
+<option value="howlingstones">Howling Stones
+<option value="paw">Infected Paw
+<option value="kaesora">Kaesora
+<option value="karnor">Karnor's Castle
+<option value="kedge">Kedge Keep
+<option value="kurntower">Kurn's Tower
+<option value="minesofnurga">Mines of Nurga
+<option value="mistmoore">Mistmoore, Castle
+<option value="soldunb">Nagafen's Lair
+<option value="najena">Najena
+<option value="netherbian">Netherbian Lair
+<option value="paludal">Paludal Caverns
+<option value="permafrost">Permafrost
+<option value="runnyeye">Runnyeye Citadel
+<option value="sebilis">Sebilis
+<option value="sirens">Siren's Grotto
+<option value="sleepers">Sleeper's Tomb
+<option value="soldunga">Solusek's Eye
+<option value="ssratemple">Ssraeahza Temple
+<option value="droga">Temple of Droga
+<option value="toveeshan">Temple of Veeshan
+<option value="tofs">Tower Of Shadow
+<option value="unrest">Unrest, Estate of
+<option value="vlab">Velketor Labyrinth
+<option value="vexthal">Vex Thal
+<option value="warrens">Warrens, The
+</select><br>
+<select name="pop" onChange="loadM(this)">
+<option>Planes of Power
+<option>-----------------------
+<option value="podisease">Plane of Disease
+<option value="poinnovation">Plane of Innovation
+<option value="pojustice">Plane of Justice
+<option value="poknowledge">Plane of Knowledge
+<option value="ponightmare">Plane of Nightmare
+<option value="postorms">Plane of Storms
+<option value="potime">Plane of Time
+<option value="potorment">Plane of Torment
+<option value="potranquility">Plane of Tranquility
+<option value="povalor">Plane of Valor
+<option value="powar">Plane of War
+<option>-----------------------
+<option value="bothunder">Bastion of Thunder
+<option value="pofire">Doomfire
+<option value="potactics">Drunder
+<option value="poearthb">Eryslai
+<option value="hohonora">Halls of Honor
+<option value="nightmareb">Lair of Terris Thule
+<option value="powater">Reef of Coirnav
+<option value="lxanvom">Ruins of Lxanvom
+<option value="solrotower">Solusek Ro's Tower
+<option value="hohonorb">Temple of Marr
+<option value="poeartha">Vegarlson
+</select><br>
+<select name="planes" onChange="loadM(this)">
+<option>Old Alter Planes
+<option>-----------------------
+<option value="airplane">Plane of Air
+<option value="fearplane">Plane of Fear
+<option value="pog">Plane of Growth
+<option value="hateplane">Plane of Hate
+<option value="pom">Plane of Mischief
+</select><br>
+<select name="special" onChange="loadM(this)">
+<option>Special
+<option>---------------------
+<option value="artifact">Artifacts
+<option value="gmevent">GM Events
+<option value="unknown">Origin Unknown
+</select></form>
+<center>
+<b>Submit Info</b><br>
+<a href="mailto:niteraven@eqmaps.com">Maps</a> ¤ <a href="mailto:darnavian@eqmaps.com">Items</a> ¤ <a href="mailto:aurelio@eqmaps.com">NPC's</a>
+</center>
+<br>
+</td>
+<td width="12" background="images/border-rightmid.gif"><img src="images/dot.gif"></td>
+</tr>
+<tr>
+<td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+<td width="128" height="12" background="images/border-botmid.gif"><img src="images/dot.gif"></td>
+<td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+</tr>
+</table>
+<br>
+<center><a href="http://www.flashlink.com/index.php?s=1"><img src="images/flashlink.gif" width="100" height="60" alt="Premium Flashlink Gaming Site" border="0"></a></center></td>
+    <td width="625" valign="top">
+      <table border="0" cellspacing="0" cellpadding="0" bgcolor="#122134">
+        <tr>
+          <td width="12" height="12"><img src="images/border-topleft.gif" width="12" height="12"></td>
+          <td width="601" height="12" background="images/border-topmid.gif"><img src="images/dot.gif"></td>
+          <td width="12" height="12"><img src="images/border-topright.gif" width="12" height="12"></td>
+        </tr>
+        <tr>
+          <td background="images/border-leftmid.gif"><img src="images/dot.gif"></td>
+          <td width="601" valign="top">
+            <form>
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="200" valign="top"><b>News Headlines</b>
+<br>
+[02/6] <a href="#370">Spells <-> Items</a>
+<br>
+[02/5] <a href="#369">Spells Updated</a>
+<br>
+[01/30] <a href="#368">Cazic-Thule Trade Stuff</a>
+<br>
+[01/6] <a href="#367">I'm Back!!</a>
+<br>
+[12/31] <a href="#366">Advanced Item List Update</a>
+<br>
+[12/30] <a href="#365">Lack of Internet</a>
+<br>
+[12/30] <a href="#364">New Year is Almost Here</a>
+<br>
+[12/12] <a href="#363">One More Day</a>
+<br>
+[11/30] <a href="#362">Weekend Stuffs</a>
+<br>
+[11/27] <a href="#361">Huge PoP Map Update</a>
+<br>
+[10/27] <a href="#360">PoP Spells Added</a>
+<br>
+</td>
+                <td width="220" valign="top"><b>Items Database</b> 11096 total
+<br>
+[02/6] <a href="zone.php3?tag=poknowledge&item=11335">Livestone Chain Tunic</a>
+<br>
+[02/6] <a href="zone.php3?tag=poknowledge&item=11334">Livestone Chain Leggings</a>
+<br>
+[02/6] <a href="zone.php3?tag=poknowledge&item=11333">Livestone Chain Bracer</a>
+<br>
+[02/6] <a href="zone.php3?tag=poknowledge&item=11332">Inferno Chain Tunic</a>
+<br>
+[02/6] <a href="zone.php3?tag=poknowledge&item=11331">Inferno Chain Bracer</a>
+<br>
+[02/5] <a href="zone.php3?tag=sharvahl&item=11330">Scorpion Stinger</a>
+<br>
+[02/5] <a href="zone.php3?tag=sharvahl&item=11329">A Frosted Claw</a>
+<br>
+[02/5] <a href="zone.php3?tag=bothunder&item=11328">Weatherbeaten Shoulderpads</a>
+<br>
+[02/5] <a href="zone.php3?tag=hohonorb&item=11327">Valiant Belt of Fallen Heroes</a>
+<br>
+[02/5] <a href="zone.php3?tag=bothunder&item=11326">Orb of Thunderous Spirits</a>
+<br>
+		[-more-] <a href="itemadditions.php3">Last 200 Additions</a>
+		</td>
+                <td width="180" valign="top"><b>NPC Updates</b><br>
+[02/9] <a href="zone.php3?tag=katta&npc=7985">a reanimated corpse</a>
+<br>
+[02/9] <a href="zone.php3?tag=katta&npc=7984">a muddy corpse</a>
+<br>
+[02/9] <a href="zone.php3?tag=katta&npc=10513">a glyph covered corpse</a>
+<br>
+[02/9] <a href="zone.php3?tag=katta&npc=7982">a ghastly apparition</a>
+<br>
+[02/9] <a href="zone.php3?tag=letalis&npc=6685">The Spire Lord</a>
+<br>
+[02/9] <a href="zone.php3?tag=letalis&npc=8146">An Intoxicating Spire Spirit</a>
+<br>
+[02/9] <a href="zone.php3?tag=letalis&npc=8038">An Inspired Spire Spirit</a>
+<br>
+[02/9] <a href="zone.php3?tag=letalis&npc=7613">An Enslaved Hivewatcher</a>
+<br>
+[02/9] <a href="zone.php3?tag=letalis&npc=8145">An Engraved Stonegrabber</a>
+<br>
+[02/9] <a href="zone.php3?tag=letalis&npc=8143">An Ebony Horror</a>
+<br>
+		[-more-] <a href="npcupdates.php3">Last 200 Updates</a>
+		</td>
+              </tr>
+              <tr><td colspan="3"><hr width="100%" size="1"></td></tr>
+              <tr><td colspan="3"><img src="images/dot.gif" width="5" height="5"></td></tr>
+              <tr><td colspan="3"><a class="headline" name="370">Spells <-> Items</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Thursday, February 6th at 06:33pm EST<br>
+<br>
+Since NiteRaven updated the spells database, I went ahead and updated all the items which were missing the new spell links.  They all should be working now. :)<br>
+<br>
+<br>
+<a class="headline" name="369">Spells Updated</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Wednesday, February 5th at 01:18pm EST<br>
+<br>
+The spell database has been updated to include all the latest spells. I also discovered a bug in my import script that was incorrectly making 61+ spells unusable by any class, therefore those spells weren't appearing on the class specific lists. This has been corrected!<br>
+<br>
+<br>
+<a class="headline" name="368">Cazic-Thule Trade Stuff</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Thursday, January 30th at 01:47pm EST<br>
+<br>
+I was able to add in many of the missing <a href="http://www.eqmaps.com/zone.php3?tag=cazicthule">Cazic-Thule</a> smithed and tailored items today.  All of these items require over 200 smithing or tailoring skill to create.  
+<br><br>
+I also wanted to point out that for the Plane of Tranquility each class has two sets of armor.  The Ornate set is recommended for level 60, and the Elemental set is required level 65. The molds required to create these sets of armor seem to drop off boss type mobs in the various planes of power.
+<br><br>
+On another note I just want to remind people that EQmaps is constantly being updated even if there aren't any new news postings.  You can see our newest <a href="http://www.eqmaps.com/itemadditions.php3">200 Items</a> and our latest <a href="http://www.eqmaps.com/npcupdates.php3">200 NPC</a> updates, either by clicking the links in this paragraph, or at the top of the page.<br>
+<br>
+<br>
+<a class="headline" name="367">I'm Back!!</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Monday, January 6th at 01:42pm EST<br>
+<br>
+Well I finally had my internet connection restored this morning and was able to get an update done.  About time eh.  It's been a long two weeks with no internet, and no EverQuest, but I had Christmas and the New Year parties to keep me occupied.  I did have a nice vacation, relaxed and did nothing but slack off.  It felt really weird not doing any eqmaps updates as it has become a part of my life for the past 3 years.
+<br><br>
+Anyways, I'm back - 'nuff said!! :)<br>
+<br>
+<br>
+<a class="headline" name="366">Advanced Item List Update</a><br>
+Submitted by: <a href="mailto:tsigo@eqmaps.com">Tsigo</a> on Tuesday, December 31st at 04:36pm EST<br>
+<br>
+I added a 'Focus' search field to the advanced item list.  You can use this to find an item with a certain Focus Effect.  As with the Effect search field, enter an asterisk (" * ") to find items with any Focus Effect.<br>
+<br>
+<br>
+<a class="headline" name="365">Lack of Internet</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Monday, December 30th at 09:16pm EST<br>
+<br>
+
+I hope everyone had a great Christmas, were able to see their families and friends, and had a great time.  I feel bad that I wasn't able to get any updates done this past week.  It was due to my internet connection dying last week.  I wasn't able to setup a temporary connection either.
+<br><br>
+I also just moved into my new place this last weekend and am really sore since we decided to move everything in one day.  The good news is that I finally got confirmation that I'll have my internet connection back and working for January 6th.  <br>
+<br>
+<br>
+<a class="headline" name="364">New Year is Almost Here</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Monday, December 30th at 01:38pm EST<br>
+<br>
+I hope everyone had a nice relaxing Christmas vacation with your family, friends, and loved ones. In just a few more days everyone will be returning to school and work, if you're lucky enough to have one in this economy.
+<br><br>
+I'll look back at 2002 with mixed feelings, it was a year of great personal gains and losses in my life. In March my wife and I were able to finally move into a nice house after 3 years of hard work and sacrifices. However, only 6 months later our love for each other wasn't meant to be and she moved out.
+<br><br>
+We met four years ago during my Christmas break from college, December 1998 in EverQuest Beta 3. Elvar and Madinah, both Wood Elf Rangers were young and innocent of only the 10th season. Our paths crossed one day while battling skeletons and Minotaur Slavers in the Steamfont Mountains. Her first memories are of me dying to a Minotaur, after she asked if I needed help and I refused. I was a stubborn hot head back then, too proud and confident to accept help. :) My first ever gift to her was a Minotaur Battle Axe, a very prized weapon indeed!
+<br><br>
+Only a few months later we were married in real life, sharing, exploring, and growing with our new lives together. During this time is when I created EQ Maps as purely a hobby, however as you all know it turned into something much bigger then that. EQ Maps ran into a few bumps along the way, but it's still here today thanks to all of your help and support.
+<br><br>
+I miss and will always love you Madinah. Please take care of yourself while traveling your new path, who knows what dangers lurk around the next corner, I am no longer there to protect you.
+<br><br>
+Now trying to find my own way, I look to 2003 with caution and uncertainty not knowing or sure where it all leads. I'm sure I'll stumble and fall along the way, but I'm lucky to have friends that will help me get up and brush off the dirt. I wish all of you the best of luck in your journey through life as we enter the new year. Mayhaps one day our paths will cross too.<br>
+<br>
+<br>
+<a class="headline" name="363">One More Day</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Thursday, December 12th at 11:46am EST<br>
+<br>
+Three exams done, and only one more left to write tomorrow morning.  I want to thank everyone who sent me emails wishing me the best of luck on my exams, it's very appreciated :)
+<br><br>
+The next couple of weeks I'm going to be catching up with all the new items and such that are piling up in my mailbox.  Expect some nice sized updates over this weekend and into next week.
+<br>
+<br>
+<br>
+<a class="headline" name="362">Weekend Stuffs</a><br>
+Submitted by: <a href="mailto:darnavian@eqmaps.com">Darnavian</a> on Saturday, November 30th at 01:56pm EST<br>
+<br>
+Sorry about the sporadic updates over the past month.  I'm currently in my last semester of school and things are really becoming hectic.  I have exams in two weeks, and projects due before that.  Once school is done, things will return to normal around here :)<br>
+<br>
+<br>
+<a class="headline" name="361">Huge PoP Map Update</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Wednesday, November 27th at 05:58pm EST<br>
+<br>
+Ouch, I really apologize for not getting this map update online sooner. The last month of my life has been a complete disaster, more then I can tell you. I hope everyone is enjoying the Planes of Power. If you are finding it difficult to navigate the new zones, I hope these will help:
+<br><br>
+<li><a href="zone.php3?tag=hohonora">Hall of Honor</a> (maps 1-2)
+<li><a href="zone.php3?tag=hollowshade">Hallowshade Moor</a> (map 1)
+<li><a href="zone.php3?tag=poinnovation">Plane of Innovation</a> (maps 1-2)
+<li><a href="zone.php3?tag=pojustice">Plane of Justice</a> (map 1)
+<li><a href="zone.php3?tag=poknowledge">Plane of Knowledge</a> (maps 1-5)
+<li><a href="zone.php3?tag=ponightmare">Plane of Nightmare</a> (map 1)
+<li><a href="zone.php3?tag=popower">Planes of Power</a> (zone connection map)
+<li><a href="zone.php3?tag=potranquility">Plane of Tranquility</a> (maps 1-5)
+<li><a href="zone.php3?tag=povalor">Plane of Valor</a> (maps 1-2)
+<li><a href="zone.php3?tag=solrotower">Tower of Solusek Ro</a> (map 1)
+<br><br>
+Many thanks to the great cartographers of Norrath. Please keep the maps coming and I'll attempt to get them online in a more timely fashion. Enjoy your Thanksgiving weekend! *gobble gobble*<br>
+<br>
+<br>
+<a class="headline" name="360">PoP Spells Added</a><br>
+Submitted by: <a href="mailto:niteraven@eqmaps.com">NiteRaven</a> on Sunday, October 27th at 01:38am EST<br>
+<br>
+The spell database has been updated with all the new spells that came out with the Planes of Power expansion. If my script was working correctly this is about 520 new spells.
+<br><br>
+I'll also be doing a PoP map update in the next day or so. If you have any maps you wish to be listed in that update please send them to me ASAP. Thanks!<br>
+<br>
+<br>
+</td></tr>
+            </table>
+            </form>
+          </td>
+          <td background="images/border-rightmid.gif"><img src="images/dot.gif"></td>
+        </tr>
+        <tr>
+          <td width="12"><img src="images/border-botleft.gif" width="12" height="12"></td>
+          <td height="12" width="601" align="center" background="images/border-botmid.gif"><img src="images/dot.gif"></td>
+          <td width="12"><img src="images/border-botright.gif" width="12" height="12"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+</body>
+</html>

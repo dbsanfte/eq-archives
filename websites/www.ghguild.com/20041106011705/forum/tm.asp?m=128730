@@ -1,0 +1,625 @@
+
+
+
+<HEAD>
+</HEAD>
+
+
+
+<html>
+<head>
+<title> Hijack Log: HELP! </title>
+
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src ='js/trims.js'></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language='JavaScript' src = "js/confirmdeletion.js"></script>
+<script language='JavaScript' src ='js/showSelect.js'></script>
+<script language="JavaScript" src="js/pgdcodeinput.js"></script>
+<script language="JavaScript" src ='js/validator.js'></script>
+<script type="text/javascript">
+
+var alivecount = 1
+function alertImage(){
+	if(document.images){
+		if (document.images["keepalive"]){document.images["keepalive"].src = "http://ghguild.com/forum/keepalive.asp?a="+alivecount}
+		alivecount++ ;
+		//alert (document.images["keepalive"].src)
+	}
+}
+function validateForm(postform) {
+	if (validatorPro(postform)){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+setInterval("alertImage()",1000*60*29)
+
+// -->
+</script>
+<script language="JavaScript">
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("11/5/2004 5:17:00 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("11/5/2004 5:17:00 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "11/5/2004 5:17:00 PM"
+	
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.asp?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+strTitle [1] = "25&&0neophyte1"
+strTitle [2] = "100&&0greenhorn2"
+strTitle [3] = "400&&0competent3"
+strTitle [4] = "900&&0seasoned4"
+strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<style type="text/css">
+<!--
+.c2 {font: bold 11px Verdana}
+.head {font: bold 14px Verdana;color : #000000}
+.high {background-color : Yellow;font : bold 11px Arial, Helvetica, sans-serif;color : Black;border : 1px solid Black;}
+.info {font: 11px Verdana;}
+.msg {font: 13px Verdana;}
+.quote {border:1px Solid #505050; background-color:#ffffff; width:85%; margin:2px; padding:5px; color:#505050; font: 11px Verdana;}
+.subhead {font: bold 13px Verdana;color : #000000}
+.titlehead {font: bold 15px Verdana; line-height:180%;}
+.ultrasmall {font: 10px Verdana;color:#555555;}
+a {color:#454545;}
+a:hover {color: #e51d00;text-decoration:underline}
+a:visited {color: #0b0b0b;hover-color: #e51d00}
+body {color: #000000; font: 11px Verdana; background-color: #004580; /*margin: 0px 0px 0px 0px;*/
+scrollbar-face-color: #0075cc; 
+scrollbar-highlight-color: #4db2ff; 
+scrollbar-shadow-color: #4db2ff; 
+scrollbar-3dlight-color: #000000; 
+scrollbar-arrow-color: #4db2ff; 
+scrollbar-track-color: #004580; 
+scrollbar-darkshadow-color: #004580;}
+input {color : #000000;font: normal 11px Verdana;}
+pre {font: 11px "Courier New",monospace;}
+select {color : #000000;font: normal 11px Verdana;}
+td {font: 11px verdana}
+td.cat {background-color: #4db2ff}
+textarea {background-color: #f9f9f9;color : #000000;font: normal 11px Verdana;}
+th {background-color: #0075cc}
+
+
+-->
+</style>
+</head>
+<body >
+<noscript>Javascript is currently disabled!</noscript>
+	<center>
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="1" height="115"></td>   
+      <td width="20%" height="115" background="leftextend2.jpg"></td>
+      <td width="741" height="115">
+      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map">
+<MAP NAME="GH_Banner_Map">
+<AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.asp">
+<AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.asp?view=groupinfo">
+<AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.asp" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.php?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.asp" onClick="return logwin(this.href)">
+<AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.asp">
+<AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.asp">
+<AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.asp">
+<AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.asp">
+<AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.asp">
+<AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.asp">
+<AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.asp">
+<AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.asp">
+<AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.asp">
+<AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum">
+<AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com">
+</MAP></td>
+ <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>
+      
+    </tr>
+  </table>
+		<BR></center>
+	</table></center>
+
+<table border="0" bgcolor=#006699 align=center>
+	<tr>
+		<td width="40%"><center><font color=#CCCCCC><br>
+<a href="ghmotdedit.asp" target=_new><font color=white>EQ MOTD</font></a>:<br>
+
+For GH EQ Members only<br>
+</font></td>
+		<td  width="40%"><center><font color=white>EQ2 MOTD:</font><br><font color=cccccc><b>
+</b>For GH EQ2 Members only<br></b>
+
+</font></center>
+</td>
+	</tr>
+</table>
+
+
+
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+
+
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		theForm.body.focus();theForm.parent.value=parentid;theForm.subject.value=theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='98%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Hijack Log: HELP! </h2>&nbsp;
+		
+	</td>
+	<td class="c2" align="right">
+		Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+		
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+  
+	<td class="ultrasmall">
+		Users viewing this topic: none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.asp?m=128730" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+		
+	</td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=2'>Geek Life</a> &gt;&gt;  Hijack Log: HELP! </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="100" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="100" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.asp?go=prev&m=128730&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.asp?go=next&m=128730&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=49')" title="E-mail  Ozmo"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=49')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=49&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=49&mode=block&pg=tm&m=128730' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=49" class="subhead" target=_blank>Ozmo</a>
+		  
+		  <br>
+		  <script>titleAndStar(297,2,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/49/Sq474185163.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  297<br>
+		  Joined:  10/31/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128730></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  Hijack Log: HELP! &nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/5/2004 5:34:08 PM",0,0,0,128730,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Please: <br>  <br> Logfile of HijackThis v1.97.7 <br> Scan saved at 7:28:23 PM, on 10/5/2004 <br> Platform: Windows XP SP1 (WinNT 5.01.2600) <br> MSIE: Internet Explorer v6.00 SP1 (6.00.2800.1106) <br> Running processes: <br> C:\WINDOWS\System32\smss.exe <br> C:\WINDOWS\system32\winlogon.exe <br> C:\WINDOWS\system32\services.exe <br> C:\WINDOWS\system32\lsass.exe <br> C:\WINDOWS\system32\svchost.exe <br> C:\WINDOWS\System32\svchost.exe <br> C:\Program Files\Common Files\Symantec Shared\ccSetMgr.exe <br> C:\Program Files\Common Files\Symantec Shared\SNDSrvc.exe <br> C:\Program Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe <br> C:\Program Files\Common Files\Symantec Shared\ccEvtMgr.exe <br> C:\WINDOWS\system32\spoolsv.exe <br> C:\WINDOWS\system32\cisvc.exe <br> C:\Program Files\Norton AntiVirus\navapsvc.exe <br> C:\WINDOWS\Explorer.EXE <br> C:\Program Files\Norton AntiVirus\IWP\NPFMntor.exe <br> C:\WINDOWS\System32\nvsvc32.exe <br> C:\WINDOWS\System32\svchost.exe <br> C:\Program Files\Common Files\Symantec Shared\CCPD-LC\symlcsvc.exe <br> C:\WINDOWS\System32\RUNDLL32.EXE <br> C:\WINDOWS\System32\pctspk.exe <br> C:\Program Files\Apoint\Apoint.exe <br> C:\Program Files\Dell\AccessDirect\dadapp.exe <br> C:\Program Files\Real\RealPlayer\RealPlay.exe <br> C:\Program Files\MUSICMATCH\MUSICMATCH Jukebox\mm_tray.exe <br> C:\Program Files\Roxio\Easy CD Creator 5\DirectCD\DirectCD.exe <br> C:\Program Files\Common Files\Dell\EUSW\Support.exe <br> C:\Program Files\DIGStream\digstream.exe <br> C:\Program Files\MUSICMATCH\MUSICMATCH Jukebox\mmtask.exe <br> C:\Program Files\Dell\AccessDirect\DadTray.exe <br> C:\WINDOWS\Win32ldr.exe <br> C:\WINDOWS\System32\fkemntn.exe <br> C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\realscannerm.exe <br> C:\Program Files\Dell\Support\Alert\bin\NotifyAlert.exe <br> C:\Program Files\Common Files\Symantec Shared\ccApp.exe <br> C:\WINDOWS\Driver Cache\waveplay.exe <br> C:\Program Files\Messenger\msmsgs.exe <br> C:\Program Files\America Online 7.0\aoltray.exe <br> C:\Program Files\Apoint\Apntex.exe <br> C:\Program Files\SoftKey\Calendar Creator 4.0\CCSCHED.EXE <br> C:\WINDOWS\System32\wbem\wmiapsrv.exe <br> C:\WINDOWS\System32\wuauclt.exe <br> C:\Documents and Settings\8200_2921\Goobs Documents\Cool PC Services\hjtlog.exe <br> c:\hijackthis\hijackthis.exe <br> C:\WINDOWS\system32\cidaemon.exe <br> C:\WINDOWS\system32\cidaemon.exe <br> R1 - HKCU\Software\Microsoft\Internet Explorer\Main,Default_Page_URL = <a target="_blank" href="http://www.dellnet.com">http://www.dellnet.com</a> <br> R1 - HKLM\Software\Microsoft\Internet Explorer\Main,Default_Page_URL = <a target="_blank" href="http://www.dellnet.com">http://www.dellnet.com</a> <br> R1 - HKCU\Software\Microsoft\Internet Connection Wizard,Shellnext = <a target="_blank" href="http://windowsupdate.microsoft.com/">http://windowsupdate.microsoft.com/</a> <br> R3 - Default URLSearchHook is missing <br> O2 - BHO: (no name) - {0000607D-D204-42C7-8E46-216055BF9918} - C:\WINDOWS\mxTarget.dll <br> O2 - BHO: (no name) - {02478D38-C3F9-4efb-9B51-7695ECA05670} - C:\Program Files\Yahoo!\Companion\Installs\cpn\ycomp5_5_5_0.dll <br> O2 - BHO: (no name) - {06849E9F-C8D7-4D59-B87D-784B7D6BE0B3} - C:\Program Files\Adobe\Acrobat 5.0\Reader\ActiveX\AcroIEHelper.ocx <br> O2 - BHO: (no name) - {3EC8E271-FAB9-418a-8A8E-65AEB4029E64} - C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\nibsp.dat (file missing) <br> O2 - BHO: (no name) - {53707962-6F74-2D53-2644-206D7942484F} - C:\Program Files\Spybot\SDHelper.dll <br> O2 - BHO: (no name) - {60112085-E1CE-4e0e-823A-EBB1AD98804C} - C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\nibsp.dat (file missing) <br> O2 - BHO: (no name) - {73529697-D46A-4F7D-8A93-01378FCAEDA4} - C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\vrdnur.dat <br> O2 - BHO: NAV Helper - {BDF3E430-B101-42AD-A544-FADC6B084872} - C:\Program Files\Norton AntiVirus\NavShExt.dll <br> O2 - BHO: (no name) - {F32F8ECD-6CF3-459D-82F2-9738392C85A8} - C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\nibsp.dat (file missing) <br> O2 - BHO: (no name) - {FD8609EC-7D7C-4778-AB8F-0053245550EF} - C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\yalpevaw.dat <br> O3 - Toolbar: &Radio - {8E718888-423F-11D2-876E-00A0C9082467} - C:\WINDOWS\System32\msdxm.ocx <br> O3 - Toolbar: Yahoo! Toolbar - {EF99BD32-C1FB-11D2-892F-0090271D4F88} - C:\Program Files\Yahoo!\Companion\Installs\cpn\ycomp5_5_5_0.dll <br> O3 - Toolbar: Norton AntiVirus - {42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6} - C:\Program Files\Norton AntiVirus\NavShExt.dll <br> O4 - HKLM\..\Run: [NvCplDaemon] RUNDLL32.EXE NvQTwk,NvCplDaemon initialize <br> O4 - HKLM\..\Run: [PCTVOICE] pctspk.exe <br> O4 - HKLM\..\Run: [Apoint] C:\Program Files\Apoint\Apoint.exe <br> O4 - HKLM\..\Run: [DadApp] C:\Program Files\Dell\AccessDirect\dadapp.exe <br> O4 - HKLM\..\Run: [RealTray] C:\Program Files\Real\RealPlayer\RealPlay.exe SYSTEMBOOTHIDEPLAYER <br> O4 - HKLM\..\Run: [MMTray] C:\Program Files\MUSICMATCH\MUSICMATCH Jukebox\mm_tray.exe <br> O4 - HKLM\..\Run: [AdaptecDirectCD] &quot;C:\Program Files\Roxio\Easy CD Creator 5\DirectCD\DirectCD.exe&quot; <br> O4 - HKLM\..\Run: [DwlClient] C:\Program Files\Common Files\Dell\EUSW\Support.exe <br> O4 - HKLM\..\Run: [PopUpInspector] C:\Program Files\GIANT Company Software inc\PopUp Inspector\PopUpInspector.exe <br> O4 - HKLM\..\Run: [DIGStream] C:\Program Files\DIGStream\digstream.exe <br> O4 - HKLM\..\Run: [mmtask] C:\Program Files\MUSICMATCH\MUSICMATCH Jukebox\mmtask.exe <br> O4 - HKLM\..\Run: [psbin] C:\WINDOWS\Cursors\psbin.exe <br> O4 - HKLM\..\Run: [Win32 Device Loader] C:\WINDOWS\Win32ldr.exe <br> O4 - HKLM\..\Run: [mlrrtnjkmok] C:\WINDOWS\System32\fkemntn.exe <br> O4 - HKLM\..\Run: [WebRebates0] &quot;C:\Program Files\Web_Rebates\WebRebates0.exe&quot; <br> O4 - HKLM\..\Run: [TV Media] C:\Program Files\TV Media\Tvm.exe <br> O4 - HKLM\..\Run: [*psbin] C:\WINDOWS\Cursors\psbin.exe <br> O4 - HKLM\..\Run: [SScanner] C:\DOCUME~1\8200_2~1\LOCALS~1\Temp\realscannerm.exe <br> O4 - HKLM\..\Run: [*playnet] C:\WINDOWS\system\playnet.exe <br> O4 - HKLM\..\Run: [*rundrv] C:\WINDOWS\Fonts\rundrv.exe <br> O4 - HKLM\..\Run: [ccApp] &quot;C:\Program Files\Common Files\Symantec Shared\ccApp.exe&quot; <br> O4 - HKLM\..\Run: [SSC_UserPrompt] C:\Program Files\Common Files\Symantec Shared\Security Center\UsrPrmpt.exe <br> O4 - HKLM\..\Run: [*waveplay] C:\WINDOWS\Driver Cache\waveplay.exe <br> O4 - HKCU\..\Run: [MSMSGS] &quot;C:\Program Files\Messenger\msmsgs.exe&quot; /background <br> O4 - HKLM\..\RunOnce: [*waveplay] C:\WINDOWS\Driver Cache\waveplay.exe rerun <br> O4 - HKCU\..\RunOnce: [*MS Setup] C:\WINDOWS\Config\aprun.exe ren <br> O4 - Startup: Calendar Creator Scheduler.lnk = C:\Program Files\SoftKey\Calendar Creator 4.0\CCSCHED.EXE <br> O4 - Startup: Shortcut to boot.lnk = C:\boot.bat <br> O4 - Global Startup: America Online 7.0 Tray Icon.lnk = C:\Program Files\America Online 7.0\aoltray.exe <br> O4 - Global Startup: Microsoft Office.lnk = C:\Program Files\Microsoft Office\Office10\OSA.EXE <br> O8 - Extra context menu item: E&xport to Microsoft Excel - res://C:\PROGRA~1\MICROS~2\Office10\EXCEL.EXE/3000 <br> O8 - Extra context menu item: Stop popups from this web page - C:\Program Files\GIANT Company Software inc\PopUp Inspector\denysite.htm <br> O9 - Extra button: Real.com (HKLM) <br> O12 - Plugin for .spop: C:\Program Files\Internet Explorer\Plugins\NPDocBox.dll <br> O16 - DPF: {0000000A-0000-0010-8000-00AA00389B71} - <a target="_blank" href="http://download.microsoft.com/download/d/4/4/d446e8a9-3a86-4b59-bb19-f5bd11b40367/wmavax.CAB">http://download.microsoft.com/download/d/4/4/d446e8a9-3a86-4b59-bb19-f5bd11b40367/wmavax.CAB</a> <br> O16 - DPF: {30528230-99F7-4BB4-88D8-FA1D4F56A2AB} (YInstStarter Class) - <a target="_blank" href="http://us.dl1.yimg.com/download.yahoo.com/dl/installs/yinst20040510.cab">http://us.dl1.yimg.com/download.yahoo.com/dl/installs/yinst20040510.cab</a> <br> O16 - DPF: {74D05D43-3236-11D4-BDCD-00C04F9A3B61} (HouseCall Control) - <a target="_blank" href="http://a840.g.akamai.net/7/840/537/2004061001/housecall.trendmicro.com/housecall/xscan53.cab">http://a840.g.akamai.net/7/840/537/2004061001/housecall.trendmicro.com/housecall/xscan53.cab</a> <br> O16 - DPF: {9F1C11AA-197B-4942-BA54-47A8489BB47F} - <a target="_blank" href="http://v4.windowsupdate.microsoft.com/CAB/x86/unicode/iuctl.CAB?37879.2877662037">http://v4.windowsupdate.microsoft.com/CAB/x86/unicode/iuctl.CAB?37879.2877662037</a> <br> O16 - DPF: {F02C6B3B-AB1A-48D3-914D-169954A11142} (WebForm Launch Control) - <a target="_blank" href="http://files.stf.com/ActiveX/WebformControl2.cab">http://files.stf.com/ActiveX/WebformControl2.cab</a> <br> O17 - HKLM\System\CCS\Services\VxD\MSTCP: Domain = mydomain.com <br> O17 - HKLM\System\CCS\Services\Tcpip\..\windows: NameServer = 69.57.146.14,69.57.147.175 <br> O17 - HKLM\System\CCS\Services\Tcpip\..\{350DB963-D797-46A1-BB65-8E5037C98085}: NameServer = 69.57.146.14,69.57.147.175 <br> O17 - HKLM\System\CCS\Services\Tcpip\..\{8441377F-4A5E-427B-8102-3BA95CE4A302}: NameServer = 69.57.146.14,69.57.147.175 <br> O17 - HKLM\System\CCS\Services\Tcpip\..\{D91A1213-A993-4D68-A823-D94585534945}: NameServer = 69.57.146.14,69.57.147.175 <br> O17 - HKLM\System\CS1\Services\VxD\MSTCP: Domain = mydomain.com <br> O17 - HKLM\System\CS1\Services\VxD\MSTCP: NameServer = 69.57.146.14,69.57.147.175 <br> O17 - HKLM\System\CS1\Services\Tcpip\..\windows: NameServer = 69.57.146.14,69.57.147.175 <br> O17 - HKLM\System\CCS\Services\VxD\MSTCP: NameServer = 69.57.146.14,69.57.147.175 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br> <img src="http://home.comcast.net/~dan.cooley/Ozmosig.gif" align="middle" border="0" alt="">  <br> <b>Ozmo Lux Lucis</b> <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=530691"><i>Holy Knight of the Temple of Life</i></a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">10/5/2004 5:34:08 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 128730  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=56')" title="E-mail  Relenore"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=56')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=56&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=56&mode=block&pg=tm&m=128734' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=56" class="subhead" target=_blank>Relenore</a>
+		  
+		  <br>
+		  <script>titleAndStar(1822,2,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/56/88D9CF7C77D348559652D4D268C1900E.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1822<br>
+		  Joined:  11/1/2002 <br>From:  the mothership<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=128734></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: Hijack Log: HELP! &nbsp;(<span class="ultrasmall">in reply to <a href='#128730'>Ozmo</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("10/5/2004 6:27:45 PM",0,0,0,128730,2)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Oz, first thing I would say to do is the normal with adcom and cwshredder. Next, we need to learn ya good.  Go to ANY programs runnin or anything brought up in hijack and plug it into google. Figure out what outhers have seen and dealt with. Doing this will make you better at your puter. <br>  <br> Ive done the same. ive fixed my puter and improved my knowledge on a computer.  <br>  <br> trust me <br>  <br>  <br> rel <br>  <br>  <br> ps and DONT delete too much) 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br>They say, &quot;You only live once.&quot; But when you live like me, once is enough. <br> ~Frank  <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=338578"><font color="#FF0000">DONT CLICK HERE!</font></a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">10/5/2004 6:27:45 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 128734  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+	   <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=2'>Geek Life</a> &gt;&gt;  Hijack Log: HELP! </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.asp'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.asp?forumid=58" >[Public]</option>
+<option value="tt.asp?forumid=1" >- - Public Forum</option>
+<option value="tt.asp?forumid=2" selected>- - Geek Life</option>
+<option value="tt.asp?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="98%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.asp" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="128730">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+
+<br>
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr><td>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Reply to Message<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Poll<br>			
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Submit Vote<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Post<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Rate Posts
+					</td></tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br>
+<center>
+	
+	<br>
+	<br>	</td>
+	  </tr>
+	</table>
+	</center>
+	
+	<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")){
+			self.location.href="pm.asp";
+		}
+	}
+	</script>
+	<center><img src="http://ghguild.com/poweredbywin2k3.gif"><br><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+	<td align="center" class="info">Forum Software powered by ASP Playground <b>Advanced Edition</b> 2.3<br>
+	  Copyright &copy; 2000 - 2003 <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a></td>
+  </tr>
+</table></center>
+	<br><font color="ffffff">0.113</font><br>
+
+</body>
+</html>

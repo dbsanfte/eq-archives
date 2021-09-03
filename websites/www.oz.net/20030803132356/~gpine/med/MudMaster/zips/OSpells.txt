@@ -1,0 +1,94 @@
+----You MUST EDIT THIS FILE and delete all these comments (starting with "----")
+----before you load it into MM.
+
+----This script is a pretty simple spell routine handling script. You can
+----Arrange a spell, or spells, in a list and via an alias/macro, etc
+----cast the spells. The script will attempt to re-cast any fumbled spell
+----but will only attempt to recast it once, and if the re-cast fumbles
+----you'll have to manually figure out what to cast. Ex: Say you cast 10 spells
+----and fumble armor and bless. It'll recast both armor and bless, but if
+----the re-cast of armor fumbles again, then that's it -- it fumbled.
+
+
+----The only thing you really have to do is create an alias/macro/whatever
+----and a list with a spell (or spells) in it. I'll comment on some of
+----the spell setups I have further below.
+
+----The script's actions (only 2) will enable/disable themselves. You'll want
+----to have messaging off "/message enablegroup" to toggle messages on/off.
+
+----This first section of commands you can pretty much ignore:
+
+/var {SpellTarget} {null} {OSpells}
+/var {SpellName} {null} {OSpells}
+/var {SpellCount} {0} {OSpells}
+
+/alias {CASTit} {/var SpellCount 1;/enablegroup SpellsActions;@CommandToList($SpellName,$ListItem $SpellTarget)} {OSpells}
+
+/action {^You chant out the arcane words and are drained of %2 mana.} {/if {$SpellCount!=0 && $SpelLCount<@GetCount($SpellName)} {/var SpellCount @Math($SpellCount+1)} {/var SpellCount 0;/disablegroup SpellsActions}} {OSpellsActions}
+
+/action {^You fumble over the correct inflection used to cast %1.} {c @GetItem($SpellName $SpellCount)} {OSpellsActions}
+
+
+----When creating a spell setup, there's a couple things to keep in mind.
+----You must supply a target (var SpellTarget) via the alias. THE ITEM IN
+----THE LIST MUST NOT HAVE A TARGET, the item is simply the "cast somespell"
+----spew. So, set a target in the alias, then set the SpellName (/var SpellName)
+----as the LIST's name. Then call the "CASTit" alias.
+
+----Below are some spells I have:
+
+----My "buff" alias is for me only, so I set the SpellTarget to "me".
+----The listname is "BUFFme" so I set the SpellName to that list.
+----Then I call the CASTit alias. Done.
+----In the list I add the spells I want to cast via this alias.
+
+/alias {buff} {/var SpellTarget me;/var SpellName BUFFme;CASTit} {OSpells}
+/listadd {BUFFme} {)Spells}
+/itemadd {BUFFme} {c armor}
+/itemadd {BUFFme} {c bless}
+/itemadd {BUFFme} {c shield}
+/itemadd {BUFFme} {c mass refresh}
+/itemadd {BUFFme} {c protection from evil}
+/itemadd {BUFFme} {c str}
+/itemadd {BUFFme} {c quickness}
+
+
+----My "see" alias is just like the "buff" alias, self only.
+
+/alias {see} {/var SpellTarget me;/var SpellName SEE;CASTit} {OSpells}
+/listadd {SEE} {OSpells}
+/itemadd {SEE} {c detect invis}
+/itemadd {SEE} {c sense life}
+/itemadd {SEE} {c detect evil}
+
+----You could alternatively use a macro -- course you can't supply a variable
+----target, but you can get a target elsewhere, or in this case it's going to be
+----"me" anyway:
+
+/macro {F1} {/var SpellTarget me;/var SpellName SEE;CASTit} {OSpells}
+
+----Pressing "F1" will now fire off my SEE routines.
+
+
+----My "de" alias uses a wildcard for targeting. But this spell will auto-target
+----to any mob you're already fighting. So for fast typing if I just do "de" it'll
+----null (empty) the SpellTarget Variable, and just "c dispel evil", which will
+----be auto-targeted by med on the mob I'm currently fighting.
+
+/alias {de %0} {/if {@IsEmpty($0)} {/empty SpellTarget} {/var SpellTarget $0};/var SpellName DispelEvil;CASTit} {OSpells}
+/listadd {DispelEvil} {OSpells}
+/itemadd {DispelEvil} {c dispel evil}
+
+
+----Faerie Fire, unlike dispel evil, always requires a target name. So if I forget a target
+----and just type "ff" I toss up a showme about supplying a target, and I don't even
+----cast the spell (why wait for med to tell me to add a target?).
+
+/alias {ff %0} {/if {@IsEmpty($0)} {/showme {@AnsiBold()@ForeRed()Faerie Fire @ForeYellow()requires a target.}} {/var SpellTarget $0;/var SpellName FaerieFire;CASTit}} {OSpells}
+/listadd {FaerieFire} {OSpells}
+/itemadd {FaerieFire} {c faerie fire}
+
+
+
+/disablegroup OSpellsActions

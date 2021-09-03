@@ -1,0 +1,15 @@
+<HTML><HEAD>
+<META NAME="description" content="">
+<META NAME="keywords" content="">
+<TITLE>GameWarp</TITLE>
+
+</HEAD>
+<FRAMESET ROWS="100%,*" BORDER="0" FRAMEBORDER="0">
+<FRAME SRC="http://www.eflux.com/everquest/comm/8-1e.asp" SCROLLING="AUTO" NAME="bannerframe" NORESIZE>
+</FRAMESET>
+<NOFRAMES>
+GameWarp
+<P>
+<DIV ALIGN="CENTER"><A HREF="http://www.eflux.com/everquest/comm/8-1e.asp">http://gamewarp.com/</A></DIV>
+</NOFRAMES>
+</HTML>

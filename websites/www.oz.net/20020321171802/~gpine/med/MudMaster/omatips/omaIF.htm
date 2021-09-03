@@ -1,0 +1,153 @@
+<font face="Courier">
+<table width=600 border=0 cellspacing=0 style="font-size: 10pt">
+  <tr>
+    <td>
+    <a href="../omatips.htm">Back to Tips Page</a><br><br>
+
+    <b>/if command</b>..now where to begin? :p<br><br>
+
+    As you probably already know, /if is used as a comparison to match expressions (or
+    see if an expression doesn't match. The utility of /if is just too strong to avoid
+    learning how to use them, even basically.<br><br>
+
+    MM's /if statement allows evaluating expressions as either equal-to (==), not-equal-to (!=),
+    greater than (&gt;), greater than or equal to (=&gt;), less than (&lt;), and less than or
+    equal to (&lt;=).<br><br>
+
+    <b>Syntax:</b><br>
+    /if {Something[operator]Something} {then do this} {else do this}<br>
+    &nbsp;&nbsp;&nbsp;where "[operator]" is either ==, !=, &gt;, &lt;, =&gt;, or &lt;=<br>
+    &nbsp;&nbsp;&nbsp;the {else do} is not required and can be left out.<br><br>
+
+    <b>Basic calls are:</b><br>
+    /if {Something==Something} {then do this} {else do this}<br>
+    /if {Something!=Something} {then do this} {else do this}<br>
+    /if {Something&gt;Something} {then do this} {else do this}<br>
+    /if {Something&lt;Something} {then do this} {else do this}<br>
+    /if {Something=&gt;Something} {then do this} {else do this}<br>
+    /if {Something&lt;=Something} {then do this} {else do this}<br><br>
+
+    <b>Basic Rules:</b><br>
+    &nbsp;<u>When To Quote?</u><br>
+    In the comparison you often need to use quotation marks on expressions.<br><br>
+
+    System variables ($0-$9, $AnyVar, $LoopCount, etc) don't use quotations.<br>
+    &nbsp;&nbsp;&nbsp;/if {$0==$1} {do this}<br>
+    &nbsp;&nbsp;&nbsp;/if {$0!=$MySillyVar} {do this}<br>
+    Procs require quotations.<br>
+    &nbsp;&nbsp;&nbsp;/if {$0=="@WordCount(SomeText)"} {do this}<br>
+    &nbsp;&nbsp;&nbsp;/if {"@Word($0,1)"!="@Word($3,2)"} {do this}<br>
+    ..exception is, if you KNOW the proc's value is a pure number, you can eliminate the
+    quotations.<br>
+    &nbsp;&nbsp;&nbsp;/if {$0&gt;=@Math($MyNumber+1)} {do this}<br>
+    ..and if the proc is a check, such as @StrStr() or @WordCount(), as these return numerals.<br>
+    &nbsp;&nbsp;&nbsp;/if {@StrStr($0,sometext)!=-1} {do this}<br>
+    Numerals don't use quotations.<br>
+    &nbsp;&nbsp;&nbsp;/if {$0=235} {do this}<br>
+    Alpha text require quotations.<br>
+    &nbsp;&nbsp;&nbsp;/if {$0="Wilber"} {do this}<br><br>
+
+    &nbsp;<u>And Or?</u><br>
+    And (&&) and Or (||) are very useful to making multiple comparisions in a single
+    statement. But you should avoid using more than one OR as they tend to mess up.<br>
+    &nbsp;&nbsp;&nbsp;/if {$0==1 || $0==2} {do this}<br>
+    &nbsp;&nbsp;&nbsp;/if {$0>1 && $0<=100 && $0!=50} {do this}<br>
+    Unfortunately MM's OR operator isn't reliable enough for more advance use, so stick
+    to the simple rule.. 1 OR in any statement. You can embedded more ifs as needed if you
+    need more checks to compare things. You can reliably use plenty of And operators though.<br><br>
+
+    <b>Creation</b><br>
+    &nbsp;<u>Think!</u><br>
+    Think through what you want done. Have a good idea of what it is you are trying to accomplish
+    before just diving it. I almost always picture the process in my mind before I write an
+    if. I try to follow a somewhat logical procession to. Especially with embedded ifs. What I think
+    will be true, but more on this later when I get to embedded Ifs.<br><br>
+
+    &nbsp;<u>Those darn bracers</u><br>
+    One of the biggest problem of Ifs, in particular long ifs with lots of commands, and other
+    routines (and more embedded ifs) are losing track of where bracers go.<br>
+    Personally I do all scripting in WordPad. And here's a few ways I construct Ifs. Say I want
+    a script to see if Fred says somethingi with "mudmaster" in it...<br><br>
+
+    &nbsp;<u>The Broken Code Method</u><br>
+    This gets confusing, but I use this sort of method often, very often, with huge scripts. Breaking
+    each section apart. This helps me not only build the script, but to see what I'm doing and where
+    I'm doing it.<br><br>
+
+    I turn the script on end..<br>
+    &nbsp;&nbsp;&nbsp;/action {trigger} {commands} becomes:<br>
+    &nbsp;&nbsp;&nbsp;/action {trigger}<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;..commands going in here..<br>
+    &nbsp;&nbsp;&nbsp;}<br><br>
+
+    &nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.}<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;/if {$0=="Fred" && @StrStr(@Lower($1),mudmaster)!=-1}<br>
+    &nbsp;&nbsp;&nbsp; {talk $0 Woo Mud Master!}<br>
+    &nbsp;&nbsp;&nbsp; {else do..}<br>
+    &nbsp;&nbsp;&nbsp;}<br><br>
+
+    I don't need the {else do} in this case, so I eliminate it!<br>
+    &nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.}<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;/if {$0=="Fred" && @StrStr(@Lower($1),mudmaster)!=-1}<br>
+    &nbsp;&nbsp;&nbsp; {talk $0 Woo Mud Master!}<br>
+    &nbsp;&nbsp;&nbsp;}<br><br>
+
+    Now I just backspace everything, starting from the END of the entire process -- carefully so I don't delete stuff.<br>
+    &nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.}<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;/if {$0=="Fred" && @StrStr(@Lower($1),mudmaster)!=-1}<br>
+    &nbsp;&nbsp;&nbsp; {talk $0 Woo Mud Master!}}<br><br>
+
+    ..backing up more...<br>
+    &nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.}<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;/if {$0=="Fred" && @StrStr(@Lower($1),mudmaster)!=-1} {talk $0 Woo Mud Master!}}<br><br>
+
+    ..backing up more..<br>
+    &nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.}<br>
+    &nbsp;&nbsp;&nbsp;{/if {$0=="Fred" && @StrStr(@Lower($1),mudmaster)!=-1} {talk $0 Woo Mud Master!}}<br><br>
+
+    ..backing up more, and done!<br>
+    &nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred" && @StrStr(@Lower($1),mudmaster)!=-1} {talk $0 Woo Mud Master!}}<br><br>
+
+    The big point with this method is to keep the actual "do" and "else do" areas somewhat seperate so you can keep tabs on those areas. If you can keep track of the bracers, you should be fine. Afterall, /if {This==This} {do} {else do} is only 6 bracers (more like 4) to keep track of. This is handy in general.. well if you can get used to it it is anyway.<br><br>
+
+    <b>Embedding Ifs</b><br>
+    &nbsp;<u>What <i>are</i> embedded ifs?</u><br>
+    Simply an If inside of another If, inside of an if, inside of...<br> Embedded if's add a lot of power to scripts, but also add a lot of headaches. They really get out of hand (bracers) quickly, and add tons of confusion to the script.<br>
+Try to keep it simple, and build slowly. If possible build a bit at a time and keep things small. And build logically. Have comparisons you think will be true up front, and the less likely things in the rear (so the action processes quickly).<br>
+Think out the process before hand, scribble notes, etc. Have a decent idea of how you want the process to go beforehand. A good mental picture of what you want, before you start, helps tons.<br>
+Basic rule: The embedded if IS the {else do} part. Stacking if's with seperators isn't embedding -- BUT this is a good method to use while learning to embed.<br>
+&nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred} {do};/if {$0=="Joe"} {do};/if {$0=="Sally"} {do}}<br>
+That's not embeded if's. But it's a good tool to turning it into one that is embedded:<br>
+&nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred"} {do} {/if {$0=="Joe"} {do} {/if {$0=="Sally"} {do}}}}<br><br>
+
+    So why use embedded Ifs when the above first example does what the second one does? Because in the embedded one, as soon as the comparison is true, it does the DO section, and is done. Say Fred said something. In the first action all /if's are processed, even though Fred's DO fired. It's still checking $0=="Joe" and $0=="Sally". In the embedded action as soon as $0=="Fred" is found, it does the DO, and is done. Faster process, faster scripts, faster mudding! This is actually apparant in huge scripts. You can see MM slow down due to either poor if statements, or the comparison that was true was down at the end (again Logical process, think it out and put what you believe will match up front). (ok ok so maybe you can't see MM slow down, but I can, I'm magic! Although, I've seen it slow down.. on some of my huge scripts.<br><br>
+
+&nbsp;Another trick I use for keeping tabs on bracers..<br>
+Using the above example.. I build it like such (in-line method):<br>
+&nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred"} {do} ..then add a bit more..<br>
+&nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred"} {do} {/if {$0=="Joe"} {do} ..add a bit more..<br>
+&nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred"} {do} {/if {$0=="Joe"} {do} {/if {$0=="Sally"} {do} {else do}<br><br>
+
+Now, that's how I build um, I've ended at the last "do".. but I'm missing bracers. Hrm now how many bracers do I need? Ahh.. Count Ifs.. there's 1, .. 2, 3! So I add 3 bracers.<br>
+&nbsp;&nbsp;&nbsp;/action {%0 says, '%1'.} {/if {$0=="Fred"} {do} {/if {$0=="Joe"} {do} {/if {$0=="Sally"} {do} {else do}}}}<br><br>
+
+Key to this is to keep tabs on the DO sections, as those will potentially be filled with more commands and more bracers adding to the confusing. Keep tabs on those, and live becomes easier. Get confused and lost in the script, try breaking it apart in the "broken code" method.<br><br>
+
+<b>General Tips</b><br><br>
+
+Work in WordPad (or NotePad, altough wordpad has search and replace functions which are handy). If I have a problem script, say a confusing action, I cut/paste just that one action that I'm working on to another session of wordpad. Editing it all by itself. Save it, load up just that action into MM, and see if it looks right in MM (via /groupact etc, or /editact, or /fedit act). If the rest of the script is good I load that up (or have previously) and test away. If it's messed up sometimes I use /fedit and the Ctrl+] key to find matching bracers. Or just delete it all from MM and re-edit in wordpad some more.<br><br>
+
+Leibniz has a nice trick he uses. Make sure you always make groups for your commands (I follow this practice for everything as well) /action {trigger} {commands} {GROUP}.. group everything you write. ..Load in the script you're editing, then do: "/writegroup somefile.txt" without supplying a group name (syntax is suppose to be "/writegroup {filename} {group}").. and anything grouped as {} will be saved to the file you've told it to write to. A quick look at that file will show bad scripts (or any good script, that's groupless). This works good, because writegroup has a bug in it that causes it to save anything that's not grouped up. Hopefully Aaron won't fix that :) heh. So you might see in your file you just did /writegroup to..<br>
+/action {Yadda Yadda %0 woohoo} {/if {blah=blah} {do} {/if {$stuff!=stuff} {do this}} {GROUP}} {}<br>
+..and you'd know that's a messed up action.<br><br>
+
+    </td>
+  </tr>
+</table>
+<br>
+<a href="../omatips.htm">Back to Tips Page</a>

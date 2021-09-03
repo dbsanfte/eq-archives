@@ -1,0 +1,1 @@
+No, you can't just load this url and think your counter will go up..

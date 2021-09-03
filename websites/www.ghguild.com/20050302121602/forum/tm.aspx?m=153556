@@ -1,0 +1,852 @@
+
+<html>
+<head>
+<title> XML doc. Buff window? </title>
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/trims.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/showSelect.js"></script>
+<script language="JavaScript" src = "js/pgdcodeinput.js"></script>
+<script language="JavaScript" src = "js/validator.js"></script>
+<script type="text/javascript">
+
+function keepalive(){
+	var keepAliveFrame = document.createElement("iframe")
+	keepAliveFrame.src = "/forum/keepalive.aspx"
+	keepAliveFrame.style.display="none"
+	document.body.appendChild(keepAliveFrame)
+}
+
+
+
+setTimeout("keepalive()",3540000); 
+
+var objFormValidator = new PGDFormValidator;
+
+function validateForm(postform) {
+	if (objFormValidator.execute()){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+// -->
+</script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("3/2/2005 4:16:02 AM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("3/2/2005 4:16:02 AM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "3/2/2005 4:16:02 AM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+ strTitle [1] = "25&&0neophyte1"
+ strTitle [2] = "100&&0greenhorn2"
+ strTitle [3] = "400&&0competent3"
+ strTitle [4] = "900&&0seasoned4"
+ strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<center><TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>    </tr>  </table>		<BR></center><b>EQ MOTD:</b> ASPX Version in Development<br>
+<b>EQ2 MOTD:</b> Server moved to new datacenter PM Croso if there are any issues now, or you notice faster/slower speeds.
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		theForm.body.focus();theForm.parent.value=parentid;theForm.subject.value=theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='98%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> XML doc. Buff window? </h2>&nbsp;
+		
+		<br>
+		<span class="ultrasmall">View related threads:
+		(<a href="/forum/searchpro.aspx?phrase=XML+doc.+Buff+window%3f&criteria=OR&forumid=2&topicreply=topic&message=both&timefilter=0&top=10" target="_blank">in this forum</a>
+		| <a href="/forum/searchpro.aspx?phrase=XML+doc.+Buff+window%3f&criteria=OR&forumid=ALL&topicreply=topic&message=both&timefilter=-365&timeframe=%3E&top=10" target="_blank">in all forums</a>)
+		</span>
+		<br><br>
+		
+	</td>
+	<td class="c2" align="right">Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+	
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this topic: 
+    none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.aspx?m=153556" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+    
+	</td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  XML doc. Buff window? </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="155" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="155" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0" width="100%">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.aspx?go=prev&m=153556&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.aspx?go=next&m=153556&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=153556></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               XML doc. Buff window?  - <span class="ultrasmall">2/17/2005 1:54:29 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/17/2005 1:54:29 PM",0,0,0,153556,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=946" class="subhead" target="_blank">sinami</a><br>
+        
+		  <script>titleAndStar(267,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/946/6505BFE3C82D4456A13348AF88EACB8A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  267<br>
+          
+          Joined:  11/28/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Can anyone fix one for me that I already have, I just cant seem to get the full buff slots in there. It has 15 currently but I need it to goto 20, can anyone do this? I will PM the file to you if you are able. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br> <img src="http://soulsofjustice.homestead.com/files/Sinami_Signature.jpg" align="middle" border="0" alt="">  <br>  <br> Sinami D`Struction <br> Grey Hawke <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1053603">Wanna see under my robe?</a> 
+         
+         <div align="right">
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=946')" title="E-mail  sinami"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=946')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=946&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=946&mode=block&pg=tm&m=153556' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=153556')">Post #: 1</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=153583></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: XML doc. Buff window?  - <span class="ultrasmall">2/17/2005 4:00:46 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/17/2005 4:00:46 PM",0,0,0,153556,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=536" class="subhead" target="_blank">Lianeb</a><br>
+        
+		  <script>titleAndStar(236,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/536/Zx726623517.gif" border=0 align="absmiddle"></div><br>
+          Posts:  236<br>
+          
+          Joined:  1/18/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          PM it to me i can give it a shot...or post it here 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br>Lianeb <br> 70 Vanquisher <br> Karana <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=521626">View My Profile</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#153556'>sinami</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=536')" title="E-mail  Lianeb"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=536')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=536&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=536&mode=block&pg=tm&m=153583' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=153583')">Post #: 2</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=153616></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: XML doc. Buff window?  - <span class="ultrasmall">2/17/2005 9:07:10 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/17/2005 9:07:10 PM",0,0,0,153556,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=967" class="subhead" target="_blank">Kellmourn</a><br>
+        
+		  <script>titleAndStar(54,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%201/9.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  54<br>
+          
+          Joined:  12/1/2004 <br>
+          From:  Canton, Ohio<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Actually the new buff window specs now call for 25 slots, though no idea what or how the DoN extra 5 are activated. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><div align="center"><font size='5'><b><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=681363"><font color='purple'>Kellmourn Gaelstorm</font></a></div></font></b> <br> <div align="center"><font size='2'><font color='green'>E Pluribus Unum</div></font></font> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#153556'>sinami</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=967')" title="E-mail  Kellmourn"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=967')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=967&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=967&mode=block&pg=tm&m=153616' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=153616')">Post #: 3</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=153627></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: XML doc. Buff window?  - <span class="ultrasmall">2/18/2005 1:59:52 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/18/2005 1:59:52 AM",0,0,0,153556,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=946" class="subhead" target="_blank">sinami</a><br>
+        
+		  <script>titleAndStar(267,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/946/6505BFE3C82D4456A13348AF88EACB8A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  267<br>
+          
+          Joined:  11/28/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          If possible a 20 and a 25 one would be great so I can change it to 25 later, but for now I just need a 20 slot one. <br>  <br>  <br> &lt;?xml version=&quot;1.0&quot; ?&gt;  <br> - &lt;XML ID=&quot;EQInterfaceDefinitionLanguage&quot;&gt; <br>   &lt;Schema xmlns=&quot;EverQuestData&quot; xmlns:dt=&quot;EverQuestDataTypes&quot; /&gt;  <br> - &lt;Button item=&quot;BW_Buff0_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff0&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;3&lt;/X&gt;  <br>   &lt;Y&gt;3&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt;    <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt;    <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;BlueIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>    <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff1_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff1&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt;    <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;48&lt;/X&gt;  <br>   &lt;Y&gt;3&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt;    <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br>   &lt;RadioGroup /&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>   		 <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff2_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff2&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt;    <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;93&lt;/X&gt;  <br>   &lt;Y&gt;3&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt;    <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br>   &lt;RadioGroup /&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>    <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff3_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff3&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt;    <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;3&lt;/X&gt;  <br>   &lt;Y&gt;49&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt;    <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br>   &lt;RadioGroup /&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;BlueIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>  Default and not used		 <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff4_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff4&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; Default  <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;48&lt;/X&gt;  <br>   &lt;Y&gt;49&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br>   &lt;TooltipReference /&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; Default  <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br> Default <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff5_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff5&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; Defautl  <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;93&lt;/X&gt;  <br>   &lt;Y&gt;49&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; Default  <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; Default  <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>   <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff6_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff6&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; Default  <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;3&lt;/X&gt;  <br>   &lt;Y&gt;95&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br>   &lt;TooltipReference /&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; Default  <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;BlueIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>   <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff7_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff7&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; Use defaults  <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;48&lt;/X&gt;  <br>   &lt;Y&gt;95&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; Use defaults  <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; Use Defaults  <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>  Use defaults <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff8_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff8&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt;Defaults <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;93&lt;/X&gt;  <br>   &lt;Y&gt;95&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; Use default  <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt;Use default <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;!--  <br>   <br> 			&lt;SoundPressed/&gt; <br> 			&lt;SoundUp/&gt; <br> 			&lt;SoundFlyby/&gt; <br> 		 <br>  <br>   --&gt;  <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff9_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff9&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt;Use Defaults  <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;3&lt;/X&gt;  <br>   &lt;Y&gt;141&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; Use Defaults  <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt;   <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;BlueIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff10_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff10&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt;  <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;48&lt;/X&gt;  <br>   &lt;Y&gt;141&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff11_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff11&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;93&lt;/X&gt;  <br>   &lt;Y&gt;141&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff12_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff12&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;3&lt;/X&gt;  <br>   &lt;Y&gt;187&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;BlueIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff13_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff13&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;48&lt;/X&gt;  <br>   &lt;Y&gt;187&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Button item=&quot;BW_Buff14_Button&quot;&gt; <br>   &lt;ScreenID&gt;Buff14&lt;/ScreenID&gt;  <br> - &lt;!-- &lt;Font&gt;3&lt;/Font&gt; <br>   --&gt;  <br>   &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;93&lt;/X&gt;  <br>   &lt;Y&gt;187&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;32&lt;/CX&gt;  <br>   &lt;CY&gt;20&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; <br>   --&gt;  <br>   &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;  <br> - &lt;!-- &lt;RadioGroup/&gt; <br>   --&gt;  <br> - &lt;ButtonDrawTemplate&gt; <br>   &lt;Normal&gt;RedIconBackground&lt;/Normal&gt;  <br>   &lt;NormalDecal&gt;BuffIcons&lt;/NormalDecal&gt;  <br>   &lt;/ButtonDrawTemplate&gt; <br> - &lt;DecalOffset&gt; <br>   &lt;X&gt;2&lt;/X&gt;  <br>   &lt;Y&gt;2&lt;/Y&gt;  <br>   &lt;/DecalOffset&gt; <br> - &lt;DecalSize&gt; <br>   &lt;CX&gt;16&lt;/CX&gt;  <br>   &lt;CY&gt;16&lt;/CY&gt;  <br>   &lt;/DecalSize&gt; <br>   &lt;/Button&gt; <br> - &lt;Label item=&quot;BW_Buff0_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff0_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;45&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;3&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff1_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff1_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;46&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;24&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff2_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff2_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;47&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;45&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff3_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff3_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;48&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;66&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff4_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff4_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;49&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;87&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff5_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff5_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;50&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;108&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff6_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff6_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;51&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;129&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff7_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff7_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;52&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;150&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff8_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff8_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;53&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;171&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff9_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff9_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;54&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;192&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff10_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff10_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;55&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;213&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff11_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff11_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;56&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;234&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff12_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff12_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;57&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;255&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff13_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff13_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;58&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;276&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff14_Label&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff14_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;EQType&gt;59&lt;/EQType&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;0&lt;/X&gt;  <br>   &lt;Y&gt;297&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;106&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;0&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;NoWrap&gt;true&lt;/NoWrap&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff0_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff0_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;1&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;3&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff1_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff1_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;2&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;24&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff2_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff2_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;3&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;45&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff3_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff3_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;4&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;66&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff4_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff4_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;5&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;87&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff5_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff5_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;6&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;108&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff6_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff6_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;7&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;129&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff7_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff7_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;8&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;150&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff8_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff8_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;9&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;171&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff9_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff9_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;10&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;192&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff10_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff10_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;11&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;213&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff11_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff11_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;12&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;234&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff12_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff12_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;13&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;255&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff13_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff13_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;14&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;276&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Label item=&quot;BW_Buff14_Num&quot;&gt; <br>   &lt;ScreenID&gt;BW_Buff14_Label&lt;/ScreenID&gt;  <br>   &lt;Font&gt;1&lt;/Font&gt;  <br>   &lt;Text&gt;15&lt;/Text&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;128&lt;/X&gt;  <br>   &lt;Y&gt;297&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;12&lt;/CX&gt;  <br>   &lt;CY&gt;12&lt;/CY&gt;  <br>   &lt;/Size&gt; <br> - &lt;TextColor&gt; <br>   &lt;R&gt;255&lt;/R&gt;  <br>   &lt;G&gt;255&lt;/G&gt;  <br>   &lt;B&gt;255&lt;/B&gt;  <br>   &lt;/TextColor&gt; <br>   &lt;AlignRight&gt;true&lt;/AlignRight&gt;  <br>   &lt;/Label&gt; <br> - &lt;Screen item=&quot;BuffWindow&quot;&gt; <br> - &lt;!-- &lt;ScreenID/&gt; <br>   --&gt;  <br>   &lt;RelativePosition&gt;false&lt;/RelativePosition&gt;  <br> - &lt;Location&gt; <br>   &lt;X&gt;881&lt;/X&gt;  <br>   &lt;Y&gt;117&lt;/Y&gt;  <br>   &lt;/Location&gt; <br> - &lt;Size&gt; <br>   &lt;CX&gt;143&lt;/CX&gt;  <br>   &lt;CY&gt;315&lt;/CY&gt;  <br>   &lt;/Size&gt; <br>   &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;  <br>   &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;  <br>   &lt;Style_Transparent&gt;true&lt;/Style_Transparent&gt;  <br> - &lt;!-- &lt;TooltipReference/&gt; <br>   --&gt;  <br>   &lt;DrawTemplate&gt;WDT_RoundedNoTitle&lt;/DrawTemplate&gt;  <br>   &lt;Style_Titlebar&gt;false&lt;/Style_Titlebar&gt;  <br>   &lt;Style_Closebox&gt;false&lt;/Style_Closebox&gt;  <br>   &lt;Style_Minimizebox&gt;false&lt;/Style_Minimizebox&gt;  <br>   &lt;Style_Border&gt;false&lt;/Style_Border&gt;  <br>   &lt;Style_Sizable&gt;false&lt;/Style_Sizable&gt;  <br>   &lt;Pieces&gt;BW_Buff0_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff1_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff2_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff3_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff4_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff5_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff6_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff7_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff8_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff9_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff10_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff11_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff12_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff13_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff14_Button&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff0_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff1_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff2_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff3_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff4_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff5_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff6_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff7_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff8_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff9_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff10_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff11_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff12_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff13_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff14_Label&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff0_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff1_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff2_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff3_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff4_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff5_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff6_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff7_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff8_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff9_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff10_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff11_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff12_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff13_Num&lt;/Pieces&gt;  <br>   &lt;Pieces&gt;BW_Buff14_Num&lt;/Pieces&gt;  <br>   &lt;/Screen&gt; <br>   &lt;/XML&gt; 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>sinami</b> -- <b>2/18/2005 2:01:13 AM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br> <img src="http://soulsofjustice.homestead.com/files/Sinami_Signature.jpg" align="middle" border="0" alt="">  <br>  <br> Sinami D`Struction <br> Grey Hawke <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1053603">Wanna see under my robe?</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#153616'>Kellmourn</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=946')" title="E-mail  sinami"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=946')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=946&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=946&mode=block&pg=tm&m=153627' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=153627'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=153627')">Post #: 4</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=154128></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: XML doc. Buff window?  - <span class="ultrasmall">2/21/2005 10:34:18 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/21/2005 10:34:18 AM",0,0,0,153556,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=92" class="subhead" target="_blank">Baladinn</a><br>
+        
+		  <script>titleAndStar(550,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%201/47.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  550<br>
+          
+          Joined:  11/2/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Try this sight <a target="_blank" href="http://www.eqinterface.com/">http://www.eqinterface.com/</a> 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Baladinn</b> -- <b>2/21/2005 10:36:08 AM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br>Baladinn Stormbringer <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=173647">Undress me with your eyes</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#153556'>sinami</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=92')" title="E-mail  Baladinn"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=92')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=92&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=92&mode=block&pg=tm&m=154128' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=154128'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=154128')">Post #: 5</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=154163></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: XML doc. Buff window?  - <span class="ultrasmall">2/21/2005 3:08:10 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/21/2005 3:08:10 PM",0,0,0,153556,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=946" class="subhead" target="_blank">sinami</a><br>
+        
+		  <script>titleAndStar(267,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/946/6505BFE3C82D4456A13348AF88EACB8A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  267<br>
+          
+          Joined:  11/28/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Lianeb fixed it up for me, That sight has none I liked =(  other then the one I have with 15slots, But I am gtg now ) 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br> <img src="http://soulsofjustice.homestead.com/files/Sinami_Signature.jpg" align="middle" border="0" alt="">  <br>  <br> Sinami D`Struction <br> Grey Hawke <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1053603">Wanna see under my robe?</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#154128'>Baladinn</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=946')" title="E-mail  sinami"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=946')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=946&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=946&mode=block&pg=tm&m=154163' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=154163')">Post #: 6</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+       <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  XML doc. Buff window? </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" >- - Public Forum</option>
+<option value="tt.aspx?forumid=2" selected>- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="98%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="153556">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+</center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.120</font><br>
+</body>
+</html>
