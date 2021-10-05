@@ -1,0 +1,685 @@
+<!--
+This contents designed by Uminchu
+Copyright (C) 2000.
+Allrights reserved.
+-->
+<HTML>
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="TEXT/CSS">
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis">
+		<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+		<META HTTP-EQUIV="Content-Style-Type"  CONTENT="text/css">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+		<STYLE TYPE="text/css">
+			<!--
+			A:link	{ text-decoration: none; color: #FFFFFF; }
+			A:visited	{ text-decoration: none; color: #FFFFFF; }
+			A:active { text-decoration: none; color: orange; }
+			A:hover	{ text-decoration: background; color: #FF5555 }
+
+			.item { background-color:#aa6633;color:#eeeeff;padding:4pt;float:1pt; }
+			.cpyright{ font-size:9pt; font-style:italic; color:#ff4040; }
+			.comment { color:#3399ff; }
+			pre      { color:#6699ff; }
+			
+
+			.MENUCAPTION
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+			}
+
+			.MENUCAPTION_2
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+				COLOR: #FFFFFF;
+			}
+			
+			.MENUITEM_LEFT
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: LEFT;
+			}
+
+			.MENUITEM
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+			}
+
+			.MENUITEM_RIGHT
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: RIGHT;
+			}
+
+			.MENUINDENT
+			{
+				MARGIN-LEFT: 10px;
+			}
+			
+			BODY
+			{
+				scrollbar-face-color: #9999FF;
+				scrollbar-shadow-color: #3333FF;
+				scrollbar-highlight-color: #3333FF;
+				scrollbar-3dlight-color: #444444;
+				scrollbar-darkshadow-color: #444444;
+				scrollbar-track-color: #000000;
+				scrollbar-arrow-color: #FFFFFF;
+				margin: 0px;
+			}
+			-->
+		</STYLE>
+		<TITLE>[Halas Soul]</TITLE>
+		
+		<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+		<!--
+			// Show the contents and music table, if user touch the area.
+			function showMenu(nm)
+			{
+					var style=document.all?document.all(nm).
+						style:(document.getElementById?document.
+						getElementById(nm).
+						style:(document.layers?document.
+						layers[nm]:null));
+	
+					if( style )
+						style.visibility='inherit';
+			}
+	
+			// Hide the contents and music table, if user didn't touch the area.
+			function hideMenu(nm)
+			{
+					var style=document.all?document.
+						all(nm).
+						style:(document.getElementById?document.
+						getElementById(nm).
+						style:(document.layers?document.
+						layers[nm]:null));
+						
+						if(style)
+							style.visibility='hidden';
+			}
+
+			function hideMenuAll()
+			{
+				hideMenu('MENU_GENERAL');
+				hideMenu('MENU_FORUM');
+				hideMenu('MENU_TRADESKILLS');
+				hideMenu('MENU_SHAWLQUEST');
+				hideMenu('MENU_WARRIOR');
+				hideMenu('MENU_ENCHANTER');
+				hideMenu('MENU_MUSIC');
+			}
+			
+			var music_name = new Array();
+			music_name[ 0 ] = "‰Ä‰e";
+			music_name[ 1 ] = "Largo";
+			music_name[ 2 ] = "Memory";
+			music_name[ 3 ] = "ŒŽ–é‚ÌƒsƒAƒm";
+			music_name[ 4 ] = "Piano Lesson";
+			music_name[ 5 ] = "ŒN‚Ì¶‚Ü‚ê‚½“ú";
+			music_name[ 6 ] = "Love";
+			music_name[ 7 ] = "Nostalgia";
+			music_name[ 8 ] = "The Crave";
+			// 
+			function writeMusicNameOnTime()
+			{
+				document.forms[0].elements[0].value=music_name[ parent.MUSIC.getMusicNumber() ];
+			}
+			
+			function writeMusicName( music_name )
+			{
+				parent.MENU.document.forms[0].elements[0].value=music_name;
+			}
+
+			function init(){
+				if(document.all){
+					document.body.onscroll=movelayer
+				}
+				movelayer()
+			}
+			
+			function movelayer()
+			{
+				if(document.all){
+					document.all.MENU_GENERAL.style.pixelTop=document.body.scrollTop
+					document.all.MENU_FORUM.style.pixelTop=document.body.scrollTop
+					document.all.MENU_TRADESKILLS.style.pixelTop=document.body.scrollTop
+					document.all.MENU_SHAWLQUEST.style.pixelTop=document.body.scrollTop
+					document.all.MENU_ENCHANTER.style.pixelTop=document.body.scrollTop
+					document.all.MENU_WARRIOR.style.pixelTop=document.body.scrollTop
+					document.all.MENU_MUSIC.style.pixelTop=document.body.scrollTop
+			}
+			
+}
+		-->
+		</SCRIPT>
+	</HEAD>
+	<BODY BGCOLOR="#000000" TEXT="#333333" LINK="#AA0000" VLINK="#AA0000" BACKGROUND="../img/bg.jpg">
+			<CENTER>
+				<BR><BR>
+				<TABLE CELLPADDING="3" CELLSPACING="0" BORDER="1" BGCOLOR="#FFFFFF">
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Elm, Silk</TD>
+						<TD CLASS="MENUITEM">75</TD>
+						<TD CLASS="MENUITEM">10</TD>
+						<TD CLASS="MENUITEM">39</TD>
+						<TD CLASS="MENUITEM_LEFT">0.256</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Short</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM">6</TD>
+						<TD CLASS="MENUITEM">40</TD>
+						<TD CLASS="MENUITEM_LEFT">0.15</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Ash, Silk</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">12</TD>
+						<TD CLASS="MENUITEM">41</TD>
+						<TD CLASS="MENUITEM_LEFT">0.293</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Shaped Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">19</TD>
+						<TD CLASS="MENUITEM">41</TD>
+						<TD CLASS="MENUITEM_LEFT">0.463</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Hickory, Silk</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM">8</TD>
+						<TD CLASS="MENUITEM">42</TD>
+						<TD CLASS="MENUITEM_LEFT">0.19</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Hunting</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM">5</TD>
+						<TD CLASS="MENUITEM">43</TD>
+						<TD CLASS="MENUITEM_LEFT">0.116</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Elm, Silk</TD>
+						<TD CLASS="MENUITEM">75</TD>
+						<TD CLASS="MENUITEM">11</TD>
+						<TD CLASS="MENUITEM">43</TD>
+						<TD CLASS="MENUITEM_LEFT">0.256</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Elm, Linen</TD>
+						<TD CLASS="MENUITEM">75</TD>
+						<TD CLASS="MENUITEM">11</TD>
+						<TD CLASS="MENUITEM">43</TD>
+						<TD CLASS="MENUITEM_LEFT">0.256</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Shaped Oak, Silk</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">16</TD>
+						<TD CLASS="MENUITEM">43</TD>
+						<TD CLASS="MENUITEM_LEFT">0.372</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Ash, Linen</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">13</TD>
+						<TD CLASS="MENUITEM">45</TD>
+						<TD CLASS="MENUITEM_LEFT">0.289</TD>
+					</TR>
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Shaped Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">20</TD>
+						<TD CLASS="MENUITEM">45</TD>
+						<TD CLASS="MENUITEM_LEFT">0.444</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Hickory, Linen</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM">9</TD>
+						<TD CLASS="MENUITEM">46</TD>
+						<TD CLASS="MENUITEM_LEFT">0.196</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Ash, Silk</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">13</TD>
+						<TD CLASS="MENUITEM">46</TD>
+						<TD CLASS="MENUITEM_LEFT">0.283</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Shaped Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">20</TD>
+						<TD CLASS="MENUITEM">46</TD>
+						<TD CLASS="MENUITEM_LEFT">0.435</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Carved Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">20</TD>
+						<TD CLASS="MENUITEM">46</TD>
+						<TD CLASS="MENUITEM_LEFT">0.435</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Elm, Linen</TD>
+						<TD CLASS="MENUITEM">75</TD>
+						<TD CLASS="MENUITEM">12</TD>
+						<TD CLASS="MENUITEM">47</TD>
+						<TD CLASS="MENUITEM_LEFT">0.255</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Elm, Hemp</TD>
+						<TD CLASS="MENUITEM">75</TD>
+						<TD CLASS="MENUITEM">12</TD>
+						<TD CLASS="MENUITEM">47</TD>
+						<TD CLASS="MENUITEM_LEFT">0.255</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Shaped Oak, Linen</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">17</TD>
+						<TD CLASS="MENUITEM">47</TD>
+						<TD CLASS="MENUITEM_LEFT">0.362</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Oak, Silk</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">17</TD>
+						<TD CLASS="MENUITEM">48</TD>
+						<TD CLASS="MENUITEM_LEFT">0.354</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Carved Oak, Silk</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">17</TD>
+						<TD CLASS="MENUITEM">48</TD>
+						<TD CLASS="MENUITEM_LEFT">0.354</TD>
+					</TR>
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Ash, Hemp</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">14</TD>
+						<TD CLASS="MENUITEM">49</TD>
+						<TD CLASS="MENUITEM_LEFT">0.286</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Shaped Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">49</TD>
+						<TD CLASS="MENUITEM_LEFT">0.429</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Hickory, Hemp</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM">10</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM_LEFT">0.2</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Ash, Silk</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">14</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM_LEFT">0.28</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Ash, Linen</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">14</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM_LEFT">0.28</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Shaped Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM_LEFT">0.42</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM_LEFT">0.42</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Carved Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">50</TD>
+						<TD CLASS="MENUITEM_LEFT">0.42</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Long</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">8</TD>
+						<TD CLASS="MENUITEM">51</TD>
+						<TD CLASS="MENUITEM_LEFT">0.157</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Elm, Hemp</TD>
+						<TD CLASS="MENUITEM">75</TD>
+						<TD CLASS="MENUITEM">13</TD>
+						<TD CLASS="MENUITEM">51</TD>
+						<TD CLASS="MENUITEM_LEFT">0.255</TD>
+					</TR>
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Shaped Oak, Hemp</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">18</TD>
+						<TD CLASS="MENUITEM">51</TD>
+						<TD CLASS="MENUITEM_LEFT">0.353</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">51</TD>
+						<TD CLASS="MENUITEM_LEFT">0.412</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Carved Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">51</TD>
+						<TD CLASS="MENUITEM_LEFT">0.412</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Oak, Linen</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">18</TD>
+						<TD CLASS="MENUITEM">52</TD>
+						<TD CLASS="MENUITEM_LEFT">0.346</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Oak, Silk</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">18</TD>
+						<TD CLASS="MENUITEM">52</TD>
+						<TD CLASS="MENUITEM_LEFT">0.346</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Carved Oak, Linen</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">18</TD>
+						<TD CLASS="MENUITEM">52</TD>
+						<TD CLASS="MENUITEM_LEFT">0.346</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Oak, Silk</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">18</TD>
+						<TD CLASS="MENUITEM">53</TD>
+						<TD CLASS="MENUITEM_LEFT">0.34</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Ash, Linen</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">15</TD>
+						<TD CLASS="MENUITEM">54</TD>
+						<TD CLASS="MENUITEM_LEFT">0.278</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Ash, Hemp</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">15</TD>
+						<TD CLASS="MENUITEM">54</TD>
+						<TD CLASS="MENUITEM_LEFT">0.278</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Shaped Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">54</TD>
+						<TD CLASS="MENUITEM_LEFT">0.407</TD>
+					</TR>
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">54</TD>
+						<TD CLASS="MENUITEM_LEFT">0.407</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Carved Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">54</TD>
+						<TD CLASS="MENUITEM_LEFT">0.407</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">55</TD>
+						<TD CLASS="MENUITEM_LEFT">0.4</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">55</TD>
+						<TD CLASS="MENUITEM_LEFT">0.4</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Carved Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">55</TD>
+						<TD CLASS="MENUITEM_LEFT">0.4</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Oak, Hemp</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">19</TD>
+						<TD CLASS="MENUITEM">56</TD>
+						<TD CLASS="MENUITEM_LEFT">0.339</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Oak, Linen</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">19</TD>
+						<TD CLASS="MENUITEM">56</TD>
+						<TD CLASS="MENUITEM_LEFT">0.339</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Carved Oak, Hemp</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">19</TD>
+						<TD CLASS="MENUITEM">56</TD>
+						<TD CLASS="MENUITEM_LEFT">0.339</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">22</TD>
+						<TD CLASS="MENUITEM">56</TD>
+						<TD CLASS="MENUITEM_LEFT">0.393</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Oak, Silk</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">19</TD>
+						<TD CLASS="MENUITEM">57</TD>
+						<TD CLASS="MENUITEM_LEFT">0.333</TD>
+					</TR>
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Oak, Linen</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">19</TD>
+						<TD CLASS="MENUITEM">57</TD>
+						<TD CLASS="MENUITEM_LEFT">0.333</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Ash, Hemp</TD>
+						<TD CLASS="MENUITEM">100</TD>
+						<TD CLASS="MENUITEM">16</TD>
+						<TD CLASS="MENUITEM">58</TD>
+						<TD CLASS="MENUITEM_LEFT">0.276</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Compound Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">23</TD>
+						<TD CLASS="MENUITEM">58</TD>
+						<TD CLASS="MENUITEM_LEFT">0.397</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Shaped Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">23</TD>
+						<TD CLASS="MENUITEM">59</TD>
+						<TD CLASS="MENUITEM_LEFT">0.39</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">23</TD>
+						<TD CLASS="MENUITEM">59</TD>
+						<TD CLASS="MENUITEM_LEFT">0.39</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Carved Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">23</TD>
+						<TD CLASS="MENUITEM">59</TD>
+						<TD CLASS="MENUITEM_LEFT">0.39</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Oak, Hemp</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">20</TD>
+						<TD CLASS="MENUITEM">60</TD>
+						<TD CLASS="MENUITEM_LEFT">0.333</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Darkwood, Silk</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">23</TD>
+						<TD CLASS="MENUITEM">60</TD>
+						<TD CLASS="MENUITEM_LEFT">0.383</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">23</TD>
+						<TD CLASS="MENUITEM">60</TD>
+						<TD CLASS="MENUITEM_LEFT">0.383</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Oak, Linen</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">20</TD>
+						<TD CLASS="MENUITEM">61</TD>
+						<TD CLASS="MENUITEM_LEFT">0.328</TD>
+					</TR>
+					<TR BGCOLOR="#333333" CLASS="MENUCAPTION_2">
+						<TD CLASS="MENUCAPTION">Name</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_range.html">Range</A></TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_dmg.html">Damage</A></TD>
+						<TD CLASS="MENUCAPTION">Delay</TD>
+						<TD CLASS="MENUCAPTION"><A HREF="bow_ratio.html">Ratio</A></TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Oak, Hemp</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">20</TD>
+						<TD CLASS="MENUITEM">61</TD>
+						<TD CLASS="MENUITEM_LEFT">0.328</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">1-Cam Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">24</TD>
+						<TD CLASS="MENUITEM">63</TD>
+						<TD CLASS="MENUITEM_LEFT">0.381</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Darkwood, Linen</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">24</TD>
+						<TD CLASS="MENUITEM">64</TD>
+						<TD CLASS="MENUITEM_LEFT">0.375</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Carved Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">24</TD>
+						<TD CLASS="MENUITEM">64</TD>
+						<TD CLASS="MENUITEM_LEFT">0.375</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Oak, Hemp</TD>
+						<TD CLASS="MENUITEM">125</TD>
+						<TD CLASS="MENUITEM">21</TD>
+						<TD CLASS="MENUITEM">65</TD>
+						<TD CLASS="MENUITEM_LEFT">0.323</TD>
+					</TR>
+					<TR>
+						<TD CLASS="MENUITEM_LEFT">Darkwood, Hemp</TD>
+						<TD CLASS="MENUITEM">150</TD>
+						<TD CLASS="MENUITEM">25</TD>
+						<TD CLASS="MENUITEM">68</TD>
+						<TD CLASS="MENUITEM_LEFT">0.368</TD>
+					</TR>
+				</TABLE>
+			</CENTER>
+	</BODY>
+</HTML>

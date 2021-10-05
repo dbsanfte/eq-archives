@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - Technical question</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-1.html">Announcements</a> &gt; <a href="f-11.html">DenMother's Corner</a> &gt; Technical question</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=11876">Technical question</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>gnormy</b></div><div class="posttext" id="p1">Given the nature of the system now in operation, is there any offsite backup being done on a regular basis of the software and data?<br />
+<br />
+When static pages were being used, this wasnt as much of a concern since they were being botted into search engine caches.  However, with source code and database... I've become a bit concerned with the physical safety.  Any reassurances available?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Niami DenMother</b></div><div class="posttext" id="p2">We have backups, and it sounds like our hosting provider has some, too.  We're actually working on getting a fresh one done now, once all the permissions are once again re-set.  (They moved us to a new server a couple days ago and we're still shaking out the kinks.)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Inyidd</b></div><div class="posttext" id="p3">In case you haven't, double check that they periodically verify backups.  Nothing worse that doing multiple backups and finding out that none of them are any good.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Ngreth Thergn</b></div><div class="posttext" id="p4">anyone know how to write cron jobs?  It looks like I may be able to write one for the server... but I have never done so in my life :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Inyidd</b></div><div class="posttext" id="p5">Oy.  Haven't written one from scratch in a while.  I'll give it a try and get back to you.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Inyidd</b></div><div class="posttext" id="p6">I found a decent info page on how to write crons.<br />
+<br />
+http://www.oc12host.com/support/programming_basic_crons.html<br />
+<br />
+To start up the editor, you just need to type:<br />
+<br />
+crontab -e<br />
+<br />
+(edit mode).  I don't  know what kind of experience you have with text editors in Linux/Unix, but it's probably vi.<br />
+<br />
+Hope that helps out.  Let me know if it doesn't.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>salomeasillverfrost</b></div><div class="posttext" id="p7">If it is a vi editor I can send you the command cheat sheet for use in that editor. let me know. Sal</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>llaffer</b></div><div class="posttext" id="p8">Only use crontab -e if you want your changes to immediatly take effect.  If you want to build your new cron lines but want to apply them in the future, you can use this small shell script:<br />
+<br />
+Assuming you have the new lines saved in /cron.new (change to wherever you have them stored):<br />
+<br />
+<br />
+crontab -l &gt; /tmp/cron.out<br />
+cat /cron.new &gt;&gt; /tmp/cron.out<br />
+crontab &lt; /tmp/cron.out<br />
+<br />
+<br />
+Each line of cron has 5 tokens that map to when to launch the script, followed by the full path of the script you want to execute along with any arguments and any redirected input or output you want:<br />
+<br />
+A B C D E /usr/local/bin/script_to_run.sh &gt; /tmp/cron.out 2&gt;&amp;1  <br />
+<br />
+A is the &quot;minute&quot; to run the script<br />
+B is the &quot;hour&quot; to run the script<br />
+C is the &quot;day&quot; to run the script<br />
+D is the &quot;month&quot; to run the script<br />
+E is the day of the week (0 = sunday, 6 = saturday) to run the script.<br />
+<br />
+So if you want something to run every Sunday morning at 3AM:<br />
+<br />
+0 3 * * 0 /...<br />
+<br />
+You can also use comma lists to add extra value per &quot;token&quot;.  If you want something run every half hour:<br />
+<br />
+0,30 * * * * /...  (no spaces in the 0,30 token)<br />
+<br />
+And just in case you don't know what 2&gt;&amp;1 is, 2&gt; is the stderr output of the script.  &amp;1 tells it to reuse what it knows as the stdout output of the script (so any and all output, error or standard would go into my /tmp/cron.out file).<br />
+<br />
+Hope this helps.  If you need anything else described a little better, let me know and I'll see what I can do.<br />
+<br />
+EDIT: was more specific with spacing in one of my examples.<br />
+<br />
+EDIT: I looked at the previous link, and it looks like depending on the system, Day of week can be 0-6 or 1-7 and it may or may not be forgiving with 0 or 00 values.  You'll have to check what your system allows.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Ngreth Thergn</b></div><div class="posttext" id="p9">Now I have to figure out how to make a script that runs the backup :)  Thanks.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

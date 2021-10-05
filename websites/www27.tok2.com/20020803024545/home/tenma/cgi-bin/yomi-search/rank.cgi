@@ -1,0 +1,765 @@
+<html>
+<head>
+<!-- あ -->
+<title>人気ランキング</title>
+<LINK rel="stylesheet" href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/html/style.css" type="text/css">
+<script language="javascript">
+<!--
+function ch_type(sel){
+// onchangeでウィンドウを開く方法を選択
+var form=document.form1;
+var open_type=sel.options[sel.selectedIndex].value;
+if(open_type==1){form.target="_blank";}
+else{form.target="";}
+}
+//-->
+</script>
+</head>
+<body><!-- TOK2_TOP -->
+<center>
+<TABLE border="0" cellspacing="5" cellpadding="0">
+<tr>
+<TD colspan="5" bgcolor="#0066FF">
+<TABLE width="100%" border="0" cellspacing="1" cellpadding="0">
+<FORM action="http://sr2.tok2.com/search.php3" METHOD=POST>
+<INPUT type="hidden" name="act" value="submain">
+<INPUT type="hidden" name="m" value="1">
+<INPUT type="hidden" name="MAXCNT" value="10">
+<input type="hidden" name="s" value="keyword">
+<TR>
+<TD nowrap><A href="http://tok2.com/" target="_blank"><IMG src="http://tok2.com/s/bar-01.gif" width="91" height="23" border="0"></A><IMG src="http://tok2.com/s/bar-02.gif" width="259" height="23"></TD>
+<TD align="right" bgcolor="#0066FF"><INPUT type="text" name="keyword"></TD>
+<TD align="right" bgcolor="#0066FF"><INPUT type="image" src="http://tok2.com/s/bar-03.gif" width="61" height="23" border="0"></TD>
+</TR></FORM>
+</TABLE>
+</TD></TR>
+
+<TR>
+<td valign=top>
+<script language="javascript">
+<!--
+var i = ( Math.floor(Math.random() * 3))%3;
+
+if( i==0 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-04.gif" border=0 height="60" width="120"></a></td><td><a href="http://tok2.com/ad/amazon/rd.php3" target="_blank"><img src="http://tok2.com/adv/amazon.gif" border=0 height="60" width="468"></a>' );
+}
+
+ if( i==1 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd2.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-05.gif" border=0 height="60" width="120"></a></td><td><IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870769693" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870769693"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870769693" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870769693" height="60" width="468" Border="0"></a></noscript></IFRAME>' );
+}
+ if( i == 2 ){
+
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd3.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-03.gif" border=0 height="60" width="120"></a></td><td><IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870769697" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870769697"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870769697" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870769697" height="60" width="468" Border="0"></a></noscript></IFRAME>' );
+}
+//-->
+</script>
+</td>
+<td valign="center">
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870770042" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870770042"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870770042" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870770042" height="45" width="135" Border="0"></a></noscript></IFRAME>
+</td></tr></table>
+</center>
+<br>
+<!-- TOK2_TOP_END -->
+<a name=top></a>
+
+
+<!-- メニューバー -->
+<div align=right><font id=small>
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/yomi.cgi?mode=new">新着サイト</a> - 
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/yomi.cgi?mode=renew">更新サイト</a> - 
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/rank.cgi">人気ランキング</a> - 
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/rank.cgi?mode=rev">アクセスランキング</a> - 
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/rank.cgi?mode=keyrank">キーワードランキング</a> - 
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/yomi.cgi?mode=m1">おすすめサイト</a> - 
+<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/yomi.cgi?mode=m2">相互リンクサイト</a> - 
+</font></div>
+<hr>
+
+
+<!-- ナビゲーションバー -->
+<a href="http://www.wainet.ne.jp/~ahiru/">ホーム</a> &gt; 
+ - <a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/rank.cgi?mode=rank_bf&kt=">前回の人気ランキング</a> - <a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/rank.cgi?mode=rank_rui&kt=">人気ランキング(累計)</a><table width=100%><tr><td id="title-bar">
+<b>人気ランキング</b>
+</td></tr></table>
+
+★人気ランキングをベスト100位まで紹介しています延岡に関する検索エンジンです。キーワード等の文字検索はもちろん、住所や電話番号(例99-9999)でも検索できる優れものです。数字はすべて半角で入力してください。
+<br>
+
+<A href="http://www.wainet.ne.jp/~ahiru">このランキングは”のべおかん”が管理・運営しています。</A>
+
+<br>
+<center>
+<TABLE border=0 cellspacing=0 cellpadding=0><TR align=right valign=middle><TD background=http://nori.japandesign.ne.jp/COUNTER/back/3.gif width=150 height=35 ><a href=http://www.japandesign.ne.jp/><img src=http://nori.japandesign.ne.jp/perl/COUNTER/counter.cgi?4444 border=0 ></a></TD></TR></TABLE>
+
+</center>
+
+
+<!-- ページ中段の検索フォーム -->
+<hr>
+<table width="100%" cellpadding=8 cellspacing=0 border=0>
+<tr id="mid-bar">
+<td colspan=2>
+	<form action="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/search.cgi" method=get  target="" name="form1">
+	<input type=hidden name=mode value=search>
+	<input type=hidden name=page value=1>
+	<input type=hidden name=sort value=time_new>	
+	
+	<input type=text name=word value="" size="20"> <input type=submit value=" 検 索 "> <input type=reset value="リセット">
+	&nbsp;
+
+	<select name=method>
+		<option value="and" selected>すべての語を含む
+		<option value="or">いずれかの語を含む
+	</select>
+	<select name=engine>
+<option value="pre" selected>のべおかんで
+<option value="yahoo">Yahoo!で
+<option value="google">Googleで
+<option value="infoseek">Infoseekで
+<option value="goo">gooで
+<option value="lycos">Lycosで
+<option value="inetguide">iNET Guideで
+<option value="excite">Exciteで
+<option value="joy">J.O.Y.で
+<option value="csj">CSJ What's Best!で
+<option value="FRESHEYE">フレッシュアイで
+<option value="InfoNavigator">InfoNavigatorで
+<option value="">-----------------
+<option value="chance">Chance It!（懸賞）で
+<option value="findx">Find'X（ＰＣ）で
+<option value="vector">Vector（ソフトウェア）で
+<option value="yomimono">よみものさーち（メルマガ）で
+<option value="hihing">HiHing（競馬）で
+<option value="ys-link">YS-Link（検索エンジン）で
+<option value="">-----------------
+<option value="yahoo_s">Yahoo!ショッピングで
+<option value="rakuten">楽天市場で
+<option value="hmv_a">HMV(アーティスト名検索)で
+<option value="hmv_t">HMV(タイトル名検索)で
+<option value="bk1">bk1で
+<option value="bk1_i">bk1(ISBN検索)で
+<option value="amazon_i">amazon.co.jp(ISBN検索)で
+<option value="">-----------------
+<option value="com">.com で
+<option value="cojp">.co.jp で
+	</select>
+	<select name=open_type onchange=ch_type(this)>
+		<option value="0"selected>次ページで
+		<option value="1">別窓で
+	</select>
+	 <font id=small>
+	 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/search.cgi">More</a>]
+	 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/search.cgi?window=_blank">New Window</a>]
+	 </font>
+	<input type=hidden name=hyouji value="30">
+</td>
+</tr>
+<tr><td></form>
+	 <font id=small>
+	 [<a href="#other">他のカテゴリ</a>] 
+	 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/html/sitemap.html">サイトマップ</a>]
+	 </font>
+</td><td align=right>	<font id=small>
+	[<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=help">ヘルプ</a>] 
+	 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter">修正・削除</a>] 
+
+</font></td></tr>
+</table>
+<!-- データがある場合 -->
+<hr>
+
+
+<!-- 侮ｦ方法選択フォーム -->
+<!-- マークコメント/登録数侮ｦ/目次侮ｦ(上) -->
+<img src="http://page.freett.com/tenma7/img/m1.gif" align=bottom>
+はおすすめサイト、 <img src="http://page.freett.com/tenma7/img/m2.gif" align=bottom>
+は相互リンクサイトです。 <font id=kanri><b>この色</b></font>の文は管理人のコメントです。<br>
+※リンク先が無くなっている等の問題がある場合にはタイトル横の [<b>管理者に通知</b>] リンクを押してください
+<br><br>
+<div align=left><i>最終更新：2002/08/03(Sat) 10:56</i></div>
+<br>
+　 1 - 20 ( 100 件中 )　 [ / <b>1</b> <a href="rank.cgi?page=2&mode=rank&kt=">2</a> <a href="rank.cgi?page=3&mode=rank&kt=">3</a> <a href="rank.cgi?page=4&mode=rank&kt=">4</a> <a href="rank.cgi?page=5&mode=rank&kt=">5</a> / <a href="rank.cgi?page=2&mode=rank&kt=">次ページ→</a> ]
+<ul>
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第1位</b></font> -&gt; <i>16pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~keieiai/snack-sae.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~keieiai/snack-sae.htm"><font size="+1"><b>さえ</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/m2.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/07/09(Tue) 22:40 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=56" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=56&pre=on&ref=&title=さえ">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_08">お店・お買い物:グルメ:飲み屋・お酒</a>] [<a href="yomi.cgi?mode=kt&kt=01_03_01">お店・お買い物:グルメ:飲食店・食堂</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>（場所）延岡市平原町２―１３０１<br>（TEL）33-8178</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>検索窓設置サイトです。</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第2位</b></font> -&gt; <i>14pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~jambo/" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~jambo/"><font size="+1"><b>洋食のヨネモト</b></font></a> 
+ <br><br><font size="-1">更新日：2002/07/16(Tue) 22:45 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=445" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=445&pre=on&ref=&title=洋食のヨネモト">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_03">お店・お買い物:グルメ:レストラン・各国料理</a>] [<a href="yomi.cgi?mode=kt&kt=01_03">お店・お買い物:グルメ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>いらっしゃいませ　当店は洋食専門のレストランです。<br>昭和46年12月に開店今年で30年になります。 <br><br>(住所)882-0043宮崎県延岡市祇園町2丁目4-16 <br>(TEL)0982-32-2785</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第2位</b></font> -&gt; <i>14pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~itx33" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~itx33"><font size="+1"><b>『　いこいの広場　』</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/renew.gif" align=bottom> 
+<img src="http://page.freett.com/tenma7/img/m2.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/08/02(Fri) 23:07 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=45" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=45&pre=on&ref=&title=『　いこいの広場　』">管理者に通知</a>]
+ </font>
+<br><img src="http://www.wainet.ne.jp/~itx33/img039.gif" width=88 height=31>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=02">個人</a>] [<a href="yomi.cgi?mode=kt&kt=14_12">趣味・スポーツ:写真</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>黒木純司投手の応援 大師まつり ウエブリング 少年野球県スポーツ少年団・ふるさと(伊形)夏祭り・七夕祭り・ナイツ・登録型リンク集 松恵山道場 ゴールデンゲームズin延岡 アポロ石油 日の出町</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第4位</b></font> -&gt; <i>12pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~keieiai/suiito-top.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~keieiai/suiito-top.htm"><font size="+1"><b>スイートバジル</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/m2.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/07/09(Tue) 22:42 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=253" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=253&pre=on&ref=&title=スイートバジル">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_03">お店・お買い物:グルメ:レストラン・各国料理</a>] [<a href="yomi.cgi?mode=kt&kt=01_03">お店・お買い物:グルメ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>当店のパンは、自家製のハーブパンを使っています。<br>スイートバジルをねりこんだパンです。<br>たんせいこめて毎日作っています。</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>(住所)延岡市旭町1丁目6-17(TEL)0982-21-5313<br>検索窓設置サイトです。<br></font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第5位</b></font> -&gt; <i>11pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www5e.biglobe.ne.jp/~nobekan/" target="_blank" style="text-decoration:none">■</a> <a href="http://www5e.biglobe.ne.jp/~nobekan/"><font size="+1"><b>延岡観光協会オフィシャルホームページ</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/new.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/07/24(Wed) 12:20 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=436" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=436&pre=on&ref=&title=延岡観光協会オフィシャルホームページ">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=12_04">エンターテイメント:地域情報</a>] [<a href="yomi.cgi?mode=kt&kt=11">トラベル・宿泊</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>延岡の歴史、観光スポット、イベント、グルメ、スポーツ、レジャー、カルチャー、珍しい生き物や宿泊情報、のべおか若鮎レディのことに至るまで細かく掲載した延岡ナビゲーター的ホームページ。</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>グルメ情報 検索窓設置サイトです。</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第6位</b></font> -&gt; <i>10pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://page.freett.com/mabara/" target="_blank" style="text-decoration:none">■</a> <a href="http://page.freett.com/mabara/"><font size="+1"><b>night spot in NOBEOKA</b></font></a> 
+ <br><br><font size="-1">更新日：2002/04/22(Mon) 12:49 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=16" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=16&pre=on&ref=&title=night spot in NOBEOKA">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_08">お店・お買い物:グルメ:飲み屋・お酒</a>] [<a href="yomi.cgi?mode=kt&kt=12_04">エンターテイメント:地域情報</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>延岡の夜の町のお店等の紹介をしているページです。延岡の方もそうでない方も一見の価値有りです。登録店の募集もしているので今のうちにエントリーしましょう。</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第6位</b></font> -&gt; <i>10pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~keieiai/dongeya-top.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~keieiai/dongeya-top.htm"><font size="+1"><b>どんげや</b></font></a> 
+ <br><br><font size="-1">更新日：2002/05/30(Thu) 23:54 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=61" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=61&pre=on&ref=&title=どんげや">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_08">お店・お買い物:グルメ:飲み屋・お酒</a>] [<a href="yomi.cgi?mode=kt&kt=01_03_01">お店・お買い物:グルメ:飲食店・食堂</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>（住所）延岡市本町1丁目3-3玉利ビル1階<br>（TEL)0982-26-1358<br>（営業時間）18:00～24:00</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第6位</b></font> -&gt; <i>10pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~keieiai/riyon.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~keieiai/riyon.htm"><font size="+1"><b>リヨン</b></font></a> 
+ <br><br><font size="-1">更新日：2002/07/09(Tue) 22:41 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=254" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=254&pre=on&ref=&title=リヨン">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_03">お店・お買い物:グルメ:レストラン・各国料理</a>] [<a href="yomi.cgi?mode=kt&kt=01_03">お店・お買い物:グルメ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>おもいやりのある楽しい食事をしていただたい！！　お客様と一緒に食卓を作ります。<br><br></td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>(住所)延岡市出北2丁目20番8-101<br>(TEL)0982-21-5608<br>検索窓設置サイトです。</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第9位</b></font> -&gt; <i>9pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://page.freett.com/mabara/sub1.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://page.freett.com/mabara/sub1.htm"><font size="+1"><b>ＡＲＴＥＭＩＳ（アルテミス）</b></font></a> 
+ <br><br><font size="-1">更新日：2002/07/05(Fri) 21:38 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=430" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=430&pre=on&ref=&title=ＡＲＴＥＭＩＳ（アルテミス）">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_08">お店・お買い物:グルメ:飲み屋・お酒</a>] [<a href="yomi.cgi?mode=kt&kt=01_03">お店・お買い物:グルメ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>延岡市新町寿ビル２Ｆ<br>(TEL)0982-26-6208</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第9位</b></font> -&gt; <i>9pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://niccyu.1oshi.net" target="_blank" style="text-decoration:none">■</a> <a href="http://niccyu.1oshi.net"><font size="+1"><b>株式会社 日中商事</b></font></a> 
+ <br><br><font size="-1">更新日：2002/05/15(Wed) 12:59 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=345" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=345&pre=on&ref=&title=株式会社 日中商事">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=06_10">暮らし:情報提供</a>] [<a href="yomi.cgi?mode=kt&kt=07_07">住まい:不動産</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>賃貸仲介・賃貸管理事業<br>土地・建物の不動産売買仲介事業<br>土地造成開発販売・その他</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>〒882-0045宮崎県延岡市瀬の口町2丁目2-15<br>(TEL)0982-21-3600(FAX)0982-21-2154</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第9位</b></font> -&gt; <i>9pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://page.freett.com/tenma7/" target="_blank" style="text-decoration:none">■</a> <a href="http://page.freett.com/tenma7/"><font size="+1"><b>ディプリ倶楽部</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/m1.gif" align=bottom> 
+<img src="http://page.freett.com/tenma7/img/m2.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/06/16(Sun) 16:16 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=3" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=3&pre=on&ref=&title=ディプリ倶楽部">管理者に通知</a>]
+ </font>
+<br><img src="http://page.freett.com/tenma7/baner001.gif" width=88 height=31>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_06">お店・お買い物:贈り物・みやげ</a>] [<a href="yomi.cgi?mode=kt&kt=02_03">個人:ショップ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>携帯に印刷！タイルに印刷！これからはディプリが主役です。住所：宮崎県延岡市出北４丁目３２００番地１</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>タイルはすばらしい素材です。結婚式・出産祝・退職祝・卒業祝・ありとあらゆる記念にピッタリです。写真、切り抜き、などあらゆる物を印刷できます。</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第9位</b></font> -&gt; <i>9pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.joyfull.co.jp/" target="_blank" style="text-decoration:none">■</a> <a href="http://www.joyfull.co.jp/"><font size="+1"><b>ジョイフル</b></font></a> 
+ <br><br><font size="-1">更新日：2002/05/01(Wed) 22:05 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=286" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=286&pre=on&ref=&title=ジョイフル">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_03">お店・お買い物:グルメ:レストラン・各国料理</a>] [<a href="yomi.cgi?mode=kt&kt=01_03">お店・お買い物:グルメ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>延岡店<br>(住所)宮崎県延岡市昭和町2-25(TEL)0982-34-1515<br>南延岡店<br>(住所)宮崎県延岡市旭ヶ丘2-3-8(TEL)0982-37-7693</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www1.ocn.ne.jp/~jazzfan4/" target="_blank" style="text-decoration:none">■</a> <a href="http://www1.ocn.ne.jp/~jazzfan4/"><font size="+1"><b>JAZZ FANTASY</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/new.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/07/24(Wed) 00:29 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=454" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=454&pre=on&ref=&title=JAZZ FANTASY">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_01">お店・お買い物:グルメ:飲食店・食堂</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>882-0826延岡市船倉町1-4-6松下ビル2Ｆ <br>(TEL)34-3442(店)<br>(TEL/FAX)0982-34-8454(事務所)</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.housing-p.co.jp/" target="_blank" style="text-decoration:none">■</a> <a href="http://www.housing-p.co.jp/"><font size="+1"><b>(株)ハウジング情報情報プラザ</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/renew.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/07/31(Wed) 12:38 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=175" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=175&pre=on&ref=&title=(株)ハウジング情報情報プラザ">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=07_07">住まい:不動産</a>] [<a href="yomi.cgi?mode=kt&kt=07">住まい</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>（住所）延岡市南町2丁目3-17(延岡郵便局通り）<br>（TEL）0982-21-1666（FAX）0982-21-8889 </td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.taiko-nobeoka.com" target="_blank" style="text-decoration:none">■</a> <a href="http://www.taiko-nobeoka.com"><font size="+1"><b>大興不動産延岡</b></font></a> 
+ <br><br><font size="-1">更新日：2002/05/09(Thu) 08:55 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=173" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=173&pre=on&ref=&title=大興不動産延岡">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=07_07">住まい:不動産</a>] [<a href="yomi.cgi?mode=kt&kt=07">住まい</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>(住所)882-0856 宮崎県延岡市出北2丁目14番号19号<br>(TEL)0982-21-4141又は0120-10-8850(フリーダイヤル)</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://page.freett.com/mabara/tako.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://page.freett.com/mabara/tako.htm"><font size="+1"><b>凧</b></font></a> 
+ <br><br><font size="-1">更新日：2002/04/24(Wed) 23:27 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=60" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=60&pre=on&ref=&title=凧">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_08">お店・お買い物:グルメ:飲み屋・お酒</a>] [<a href="yomi.cgi?mode=kt&kt=01_03_01">お店・お買い物:グルメ:飲食店・食堂</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>（住所）延岡市本町１丁目中村ビル２Ｆ（Ｐｈｏｎｅ）0982-34-8686（営業時間）ＰＭ　８：００～ＡＭ　１：００（定休日）日曜日</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.pawanavi.com/ccn/" target="_blank" style="text-decoration:none">■</a> <a href="http://www.pawanavi.com/ccn/"><font size="+1"><b>シネマセントラル延岡</b></font></a> 
+ <br><br><font size="-1">更新日：2002/06/30(Sun) 10:53 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=425" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=425&pre=on&ref=&title=シネマセントラル延岡">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=12_02">エンターテイメント:アミューズメント・エンターテイメント</a>] [<a href="yomi.cgi?mode=kt&kt=14">趣味・スポーツ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>株式会社　飯塚セントラル　シネマセントラル延岡<br>宮崎県延岡市北町1-1-13<br>(TEL)0982-21-8888(FAX)0982-21-7868</td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.wainet.ne.jp/~setsu" target="_blank" style="text-decoration:none">■</a> <a href="http://www.wainet.ne.jp/~setsu"><font size="+1"><b>うめの自己満足の部屋</b></font></a> 
+<img src="http://page.freett.com/tenma7/img/renew.gif" align=bottom> 
+<img src="http://page.freett.com/tenma7/img/m2.gif" align=bottom> 
+ <br><br><font size="-1">更新日：2002/07/25(Thu) 00:31 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=41" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=41&pre=on&ref=&title=うめの自己満足の部屋">管理者に通知</a>]
+ </font>
+<br><img src="http://www.wainet.ne.jp/~setsu/sozai/bn.gif" width=88 height=31>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=02_01">個人:趣味・特技</a>] [<a href="yomi.cgi?mode=kt&kt=02">個人</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>ＪＲＴのはなちゃん、トールペイント、手抜き料理、毎日書いてるお気楽日記など・・<br>タイトル通りの自己満足１００％のＨＰです。<br>トップページの「うめちゃんアイコン」がお待ちしています。(￣ー☆キラリーン</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>第43回　ＨＰにおじゃましま～す！(2002/04/11)<br>検索窓設置サイトです。</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第13位</b></font> -&gt; <i>8pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.pawanavi.com/pus/food/2002/03/yukitei/index.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://www.pawanavi.com/pus/food/2002/03/yukitei/index.htm"><font size="+1"><b>由貴亭</b></font></a> 
+ <br><br><font size="-1">更新日：2002/05/09(Thu) 12:55 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=309" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=309&pre=on&ref=&title=由貴亭">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_01">お店・お買い物:グルメ:飲食店・食堂</a>] [<a href="yomi.cgi?mode=kt&kt=01_03_08">お店・お買い物:グルメ:飲み屋・お酒</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>延岡のその日の旬を当店で！</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>宮崎県延岡市安賀多3－3－4(TEL)0982-22-9164<br>営業時間 ＰＭ5：00～ 定休日：月曜日</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+<!-- ログ侮ｦ -->
+<table border=3 cellpadding=7 id=log>
+<tr id=log-0>
+<td>
+<font size="+1"><b>第20位</b></font> -&gt; <i>7pt</i>
+</td>
+</tr>
+<tr id=log-1>
+	<td><a href="http://www.pawanavi.com/mikado/index.htm" target="_blank" style="text-decoration:none">■</a> <a href="http://www.pawanavi.com/mikado/index.htm"><font size="+1"><b>レストラン神門・MIKADO</b></font></a> 
+ <br><br><font size="-1">更新日：2002/05/10(Fri) 21:39 [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=enter&id=307" target="">修正・削除</a>]
+ [<a href="http://www16.tok2.com/home/tenma/cgi-bin/yomi-search/regist_ys.cgi?mode=no_link&id=307&pre=on&ref=&title=レストラン神門・MIKADO">管理者に通知</a>]
+ </font>
+</td>
+</tr>
+<tr id=log-2>
+<td>
+[<a href="yomi.cgi?mode=kt&kt=01_03_03">お店・お買い物:グルメ:レストラン・各国料理</a>] [<a href="yomi.cgi?mode=kt&kt=01_03">お店・お買い物:グルメ</a>] </td>
+</tr>
+<tr id=log-3>
+	<td>海の見えるレストランでウェディングはいかが！</td>
+</tr>
+<tr id=log-4>
+	<td><font id=kanri>宮崎県延岡市塩浜町4丁目(リサーチパーク向洋台)<br>(TEL)0982-33-1311<br>営業時間AM11：30～PM2：00 PM5：30～PM9：00<br>火曜定休 駐車場有り</font></td>
+</tr>
+</table><br>
+<!-- /ログ侮ｦ -->
+</ul>
+<!-- 目次侮ｦ(下) -->
+　 1 - 20 ( 100 件中 )　 [ / <b>1</b> <a href="rank.cgi?page=2&mode=rank&kt=">2</a> <a href="rank.cgi?page=3&mode=rank&kt=">3</a> <a href="rank.cgi?page=4&mode=rank&kt=">4</a> <a href="rank.cgi?page=5&mode=rank&kt=">5</a> / <a href="rank.cgi?page=2&mode=rank&kt=">次ページ→</a> ]
+<!--/データがある場合-->
+<hr>
+<a name=other></a>【その他のカテゴリ】<font id=small>[<a href="#top">↑ページTOPへ</a>]</font><center><table width="90%" cellpadding=3 id=mid>
+<tr><td>■<a href="yomi.cgi?mode=kt&kt=01">お店・お買い物</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=01_02">ディスカウント</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=02">個人</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=03">病院・医療</a></td>
+</tr><tr><td>■<a href="yomi.cgi?mode=kt&kt=04">健康・薬</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=05">介護・福祉</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=06">暮らし</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=07">住まい</a></td>
+</tr><tr><td>■<a href="yomi.cgi?mode=kt&kt=08">マネー・保険</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=09">乗り物・交通</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=10">官公署・組合・団体</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=11">トラベル・宿泊</a></td>
+</tr><tr><td>■<a href="yomi.cgi?mode=kt&kt=12">エンターテイメント</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=13">コンピューター</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=14">趣味・スポーツ</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=15">習い事・資格</a></td>
+</tr><tr><td>■<a href="yomi.cgi?mode=kt&kt=16">企業</a></td>
+<td>■<a href="yomi.cgi?mode=kt&kt=17">子供・育児・教育</a></td>
+</tr></table></center>
+<hr>
+<CENTER>
+<A href="http://www.wainet.ne.jp/~ahiru"><FONT size="+0">のべおかん（延岡情報局）</FONT></A></CENTER>
+
+<p><div align=center>- <a href="http://yomi.pekori.to" target="_blank">Yomi-Search Ver4.19</a> -</div></p>
+<!-- TOK2_UNDER-->
+<center>
+<TABLE border="0" cellspacing="5" cellpadding="0">
+
+</TD>
+</TR>
+
+<tr><td valign="top">
+<!--<tr><td valign="bottom">-->
+<script language="javascript">
+<!--
+var i = ( Math.floor(Math.random() * 10))%5;
+if( i == 4 ){
+	document.write( '<a href="http://rely.jp/" target="_blank"><img src="http://tok2.com/adv/rely-middle.gif" border="0" height="60" width="120"></a>' );
+}
+else if( i == 3 ){
+	document.write( '<a href="http://topserver.jp/" target="_blank"><img src="http://tok2.com/ban/middle.gif" border="0" height="60" width="120"></a>' );
+}
+else if( i == 2 ){
+	document.write( '<a href="http://hotspace.jp/" target="_blank"><img src="http://tok2.com/ban/pro.gif" border="0" height="60" width="120"></a>' );
+}
+else if( i == 1 ){
+	document.write( '<a href="http://happy-life.jp/" target="_blank"><img src="http://tok2.com/adv/hp-middle.gif" border="0" height="60" width="120"></a>' );
+}
+else if( i == 0 ){
+	document.write( '<a href="http://www.tv-game.com/" target="_blank"><img src="http://tok2.com/adv/gameman_0703.gif" border="0" height="60" width="120"></a>' );
+}
+//-->
+</script></td>
+<td valign=center>
+<IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870769736" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870769736"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870769736" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870769736" height="60" width="468" Border="0"></a></noscript></IFRAME>
+</td>
+<td valign=center>
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870770042" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870770042"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870770042" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870770042" height="45" width="135" Border="0"></a></noscript></IFRAME>
+</td>
+</tr>
+<TR><TD colspan="5" bgcolor="#0066FF">
+<TABLE width="100%" border="0" cellspacing="1" cellpadding="0">
+<FORM action="http://sr2.tok2.com/search.php3" METHOD=POST>
+<INPUT type="hidden" name="act" value="submain">
+<INPUT type="hidden" name="m" value="1">
+<INPUT type="hidden" name="MAXCNT" value="10">
+<input type="hidden" name="s" value="keyword">
+<TR>
+<TD nowrap><A href="http://tok2.com/" target="_blank"><IMG src="http://tok2.com/s/bar-01.gif" width="91" height="23" border="0"></A><IMG src="http://tok2.com/s/bar-02.gif" width="259" height="23"></TD>
+<TD align="right"><INPUT type="text" name="keyword"></TD>
+<TD align="right"><INPUT type="image" src="http://tok2.com/s/bar-03.gif" width="61" height="23"></TD>
+</TR></FORM>
+</TABLE>
+</table>
+</center>
+</body></html>

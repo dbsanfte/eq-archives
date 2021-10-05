@@ -1,0 +1,263 @@
+<HTML>
+<HEAD><TITLE>Unity BBS - powered by the Ultimate Bulletin Board</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+var noNewLogin = "false";
+var dc = document.cookie;
+var sessionLogin = escape("");
+var sessionLoginDT = escape("");
+
+if (document.cookie) {
+var DaysPrune = getCookie("DaysPrune");
+	if (DaysPrune == null) {
+		var DaysPrune = "10";
+	}
+} else {
+var DaysPrune = "10";
+}
+
+expireDate = new Date;
+if (expireDate.getYear() < 100) {
+expireDate.setYear(expireDate.getYear() + 1900 + 1);
+} else {
+expireDate.setYear(expireDate.getYear()+1);
+}
+
+if (noNewLogin != "true") {
+
+if (document.cookie != "") {
+	thisCookie = document.cookie.split(";");
+	expireDate2 = new Date;
+	expireDate2.setYear(expireDate2.getYear()-1);
+	
+	for (i=0; i<thisCookie.length; i++) {
+	
+		cookieName = thisCookie[i].split("=")[0];
+		if ((cookieName == "lastLogin") || (cookieName == "LastLoginDT") || (cookieName == "sessionLogin") || (cookieName == "sessionLoginDT")) {
+		document.cookie = cookieName + "=;expires=" + expireDate2.toGMTString() + ";";
+		}
+	}
+}
+
+
+var CookieLogin = escape("2452023.0333");
+var CookieLoginDT = escape("04-23-2001 03:33 AM");
+
+	  document.cookie = "lastLogin=" + CookieLogin + ";expires=" + expireDate.toGMTString() + ";";
+  document.cookie = "LastLoginDT=" + CookieLoginDT + ";expires=" + expireDate.toGMTString() + ";";
+	  document.cookie = "sessionLogin=" + sessionLogin + ";";
+document.cookie = "sessionLoginDT=" + sessionLoginDT + ";";
+}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+</head>
+ <BODY bgcolor="#333B62"   text="#ffffff" link="#750000" alink="#750000" vlink="#750000">
+<FONT FACE="Verdana, Arial" SIZE="2">
+
+<center>
+<table border=0 width=95%>
+<tr>
+<TD>
+<CENTER>
+<A HREF="Ultimate.cgi"><IMG SRC="http://www.unityguild.com/ubb/UnityLogo.jpg"  BORDER=0></A>
+</CENTER>
+</td>
+<td>
+<CENTER>
+<B><FONT SIZE="3" FACE="Verdana, Arial" COLOR="#a8a8a8">Unity BBS</FONT></B>
+<br><FONT SIZE="1" FACE="Verdana, Arial">
+<A HREF="http://www.unityguild.com/cgi-bin//ubbmisc.cgi?action=editbio&Browser=&DaysPrune=10&LastLogin="><ACRONYM TITLE="Click here to edit your profile.">profile</ACRONYM></A> | <A HREF="http://www.unityguild.com/cgi-bin//Ultimate.cgi?action=agree"><ACRONYM TITLE="Registration is free!">register</ACRONYM></A> | <A HREF="http://www.unityguild.com/cgi-bin//ubbmisc.cgi?action=setprefs"><ACRONYM TITLE="Set your preferences.">preferences</ACRONYM></A> | <A HREF="http://www.unityguild.com/ubb/faq.html" target=_blank><ACRONYM TITLE="Frequently Asked Questions">faq</ACRONYM></A> | <A HREF="http://www.unityguild.com/cgi-bin//search.cgi?action=intro"><ACRONYM TITLE="Perform a search by keyword, date, or name.">search</ACRONYM></A> 
+
+</FONT>
+</CENTER>
+</td></TR>
+</table>
+</center><FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://www.unityguild.com/cgi-bin//search.cgi?action=getdaily">Click Here To View Today's Active Topics (all public forums)</A></FONT>
+<BR>
+<center>
+<table cellpadding=0 border=0 width="95%">
+<TR>
+<td valign=bottom align=left>
+<FONT SIZE="1" FACE="Verdana, Arial"></font>
+</td>
+<td valign=bottom align=right><FONT SIZE="1" FACE="Verdana, Arial"></font></td></tr>
+</table>
+
+
+
+<table cellpadding=4 cellspacing=1 border=0 width="95%">
+<tr bgcolor="#D5E6E1">
+<TD>&nbsp;</TD>
+<td valign=bottom>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#000000"><B>Forum</B></FONT>
+</td>
+<td NOWRAP valign=bottom align=center>
+<b><FONT SIZE="1" FACE="Verdana, Arial" COLOR="#000000">Posts</FONT></B>
+</td>
+<td NOWRAP valign=bottom align=center>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#000000"><B>Last Post</B></FONT>
+</td>
+<td valign=bottom>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#000000"><B>Moderator</B></FONT>
+</td></tr>
+<TR bgcolor="#D5E6E1"><TD colspan=5>
+<FONT SIZE="2" FACE="Verdana, Arial" Color="#000000"><B> Guild</B></FONT>
+</td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=General&number=1&DaysPrune=10&LastLogin=">General</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+General Forum
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">15</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">04-22-2001 <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">11:39 PM</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Members&number=2&DaysPrune=10&LastLogin=">Members</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Members Forum
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">33</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">04-19-2001 <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">12:41 PM</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR bgcolor="#D5E6E1"><TD colspan=5>
+<FONT SIZE="2" FACE="Verdana, Arial" Color="#000000"><B> Massive Multiplayer Online Role Playing Games</B></FONT>
+</td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Anarchy-Online&number=3&DaysPrune=10&LastLogin=">Anarchy-Online</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Anarchy-Online Forum
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">0</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial"> <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">&nbsp;</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Horizons&number=4&DaysPrune=10&LastLogin=">Horizons</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Forum for Horizons MMORPG
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">0</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial"> <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">&nbsp;</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Shadowbane&number=5&DaysPrune=10&LastLogin=">Shadowbane</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Shadowbane forum.
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">1</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-08-2001 <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">07:05 PM</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Neocron&number=6&DaysPrune=10&LastLogin=">Neocron</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Neocron Forum
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">0</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial"> <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">&nbsp;</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR bgcolor="#D5E6E1"><TD colspan=5>
+<FONT SIZE="2" FACE="Verdana, Arial" Color="#000000"><B> Website</B></FONT>
+</td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Columns+and+Rants&number=8&DaysPrune=10&LastLogin=">Columns and Rants</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Respond to what you read on our columns!
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">1</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial">03-08-2001 <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">08:46 PM</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+<TR>
+<TD bgcolor="#333B62" valign=top>&nbsp;</td>
+<TD bgcolor="#a8a8a8" valign=top><FONT SIZE="2" FACE="Verdana, Arial"><B>
+<A HREF="http://www.unityguild.com/cgi-bin//forumdisplay.cgi?action=topics&forum=Ideas+and+Suggestions&number=7&DaysPrune=10&LastLogin=">Ideas and Suggestions</A></B></FONT><BR>
+<FONT SIZE="1" FACE="Verdana, Arial">
+Ideas and Suggestions for the Website.
+</FONT>
+</td>
+<td bgcolor="#272727" align=center valign=top NOWRAP>
+<FONT SIZE='2' FACE="Verdana, Arial">0</FONT>
+</td><td bgcolor="#a8a8a8" NOWRAP valign=top align=center>
+<FONT SIZE="2" FACE="Verdana, Arial"> <FONT COLOR="#0900B9" SIZE="2" FACE="Verdana, Arial">&nbsp;</FONT>
+</td><td bgcolor="#272727" valign=top>
+<FONT SIZE='2' FACE="Verdana, Arial">&nbsp;</FONT></td></tr>
+</table>
+
+<P>
+<table border=0 width=95%>
+<TR>
+<td valign=top align=left>
+<FONT SIZE="1" FACE="Verdana, Arial"></font>
+</td><TD valign=top align=left>
+<FONT SIZE="1" FACE="Verdana, Arial">All times are ET (US).</font></td></tr></table>
+</center>
+<P><FONT SIZE="1" FACE="Verdana, Arial">
+<P>&nbsp;</font><P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:webmaster@virtualave.net">Contact Us</A> | <A HREF="http://www.unityguild.com" target=_top>Unity Home Page</A>
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board, Version 5.39a<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-1999.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>

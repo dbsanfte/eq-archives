@@ -1,0 +1,563 @@
+<! OmenTree Dynamic Hierarchial Menu System (C) 1998 Colin Tucker/OmenSoft >
+<! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ >
+<! This script may be distributed freely, however the author would like    >
+<! potential users to send him a message stating the URL of your site, so  >
+<! a link can be added for your site to the OmenSoft home page. Thank you. >
+<! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ >
+<! e-mail: omensoft@poboxes.com          web: http://omensoft.home.ml.org/ >
+<HTML>
+<HEAD>
+<TITLE>Steves Web Page</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin Hiding
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// start() - GENERAL FUNCTION - called by the HTML document once loaded - starts OmenTree by
+//					  first loading the user data, and then drawing the tree.
+
+function start() {
+	loadData();
+	drawTree();
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// drawTree() - GENERAL FUNCTION - starts the recursive tree drawing process by first writing
+//					     the root node, and then all subordinate branches.
+
+function drawTree() {
+	outputFrame = top.treeFrame.window.document;	// If you really must, you can change the name of the treeFrame here to match your new name defined at the bottom.
+	outputFrame.open("text/html");
+	outputFrame.write("<! HTML Generated Dynamically by OmenTree - (C) 1998 Colin Tucker / OmenSoft >\n");
+	outputFrame.write("<! http://omensoft.home.ml.org/                   e-mail: semi@earthcorp.com >\n");
+	outputFrame.write("<HTML>\n<BODY BGCOLOR='" + backgroundColor + "' BACKGROUND='" + backgroundImage + "' LINK='" + linkColor + "' ALINK='" + aLinkColor + "' VLINK='" + vLinkColor + "'>\n");
+	outputFrame.write("<FONT FACE='" + omenTreeFont + "' SIZE=" + omenTreeFontSize + " COLOR='" + textColor + "'>\n");
+	outputFrame.write(prefixHTML + "\n<NOBR>\n");
+	if (treeData[1].target == "") {var targetFrame = defaultTargetFrame} else {var targetFrame = treeData[1].target}
+	if (treeData[1].icon == "") {var imageString = defaultImageURL + 'img-globe-' + structureStyle + '.gif'} else {imageString = defaultImageURL + treeData[1].icon}
+	outputFrame.write("<A HREF='" + treeData[1].url + "' TARGET='" + targetFrame + "' onMouseOver=\"window.status='" + treeData[1].url + "'; return true\"><IMG SRC='" + imageString + "' WIDTH=16 HEIGHT=16 ALIGN=TEXTTOP BORDER=0 ALT='" + treeData[1].url + "'></A>&nbsp;<B>" + treeData[1].name + "</B><BR>\n");
+	drawBranch("root","");
+	outputFrame.write("</NOBR>\n" + suffixHTML + "\n");
+	outputFrame.write("</FONT>\n</BODY>\n</HTML>");
+	outputFrame.close();
+	window.status="OmenTree v1.0 - (C) 1998 Colin Tucker/OmenSoft - http://omensoft.home.ml.org";
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// drawBranch() - GENERAL FUNCTION - used by the drawTree() function to recursively draw all
+//						 visable nodes in the tree structure.
+
+function drawBranch(startNode,structureString) {
+	var children = extractChildrenOf(startNode);
+	var currentIndex = 1;
+	while (currentIndex <= children.length) {
+		outputFrame.write(structureString);
+		if (children[currentIndex].type == 'link') {
+			if (children[currentIndex].icon == "") {
+				var imageString = defaultImageURL + defaultLinkIcon;
+			}
+			else {var imageString = defaultImageURL + children[currentIndex].icon}
+			if (children[currentIndex].target == "") {
+				var targetFrame = defaultTargetFrame;
+			}
+			else {var targetFrame = children[currentIndex].target}
+			if (currentIndex != children.length) {
+				outputFrame.write("<IMG SRC='" + defaultImageURL + "img-branch-cont-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALIGN=TEXTTOP>")
+			}
+			else {
+				outputFrame.write("<IMG SRC='" + defaultImageURL + "img-branch-end-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALIGN=TEXTTOP>")
+			}
+			outputFrame.write("<A HREF='" + children[currentIndex].url + "' TARGET='" + targetFrame + "' onMouseOver=\"window.status='" + children[currentIndex].url + "'; return true\"><IMG SRC='" + imageString + "' WIDTH=16 HEIGHT=16 ALIGN=TEXTTOP BORDER=0 ALT='" + children[currentIndex].url + "'></A>&nbsp;" + children[currentIndex].name + "<BR>\n")	
+		}
+		else {
+			var newStructure = structureString;
+			if (children[currentIndex].iconClosed == "") {var iconClosed = "img-folder-closed-" + structureStyle + ".gif"} else {var iconClosed = children[currentIndex].iconClosed}
+			if (children[currentIndex].iconOpen == "") {var iconOpen = "img-folder-open-" + structureStyle + ".gif"} else {var iconOpen = children[currentIndex].iconOpen}
+			if (currentIndex != children.length) {
+				if (children[currentIndex].open == 0) {
+					outputFrame.write("<A HREF=\"javascript:top.toggleFolder('" + children[currentIndex].id + "',1)\" onMouseOver=\"window.status='Click to open this folder'; return true\"><IMG SRC='" + defaultImageURL + "img-plus-cont-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALT='Click to open this folder' ALIGN=TEXTTOP BORDER=0>")
+					outputFrame.write("<IMG SRC='" + defaultImageURL + iconClosed + "' WIDTH=16 HEIGHT=16 ALT='Click to open this folder' ALIGN=TEXTTOP BORDER=0></A>&nbsp;" + children[currentIndex].name + "<BR>\n")
+				}
+				else {
+					outputFrame.write("<A HREF=\"javascript:top.toggleFolder('" + children[currentIndex].id + "',0)\" onMouseOver=\"window.status='Click to close this folder'; return true\"><IMG SRC='" + defaultImageURL + "img-minus-cont-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALT='Click to close this folder' ALIGN=TEXTTOP BORDER=0>");
+					outputFrame.write("<IMG SRC='" + defaultImageURL + iconOpen + "' WIDTH=16 HEIGHT=16 ALT='Click to close this folder' ALIGN=TEXTTOP BORDER=0></A>&nbsp;" + children[currentIndex].name + "<BR>\n");
+					newStructure = newStructure + "<IMG SRC='" + defaultImageURL + "img-vert-line-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALIGN=TEXTTOP>";
+					drawBranch(children[currentIndex].id,newStructure); 
+				}
+			}
+			else {
+				if (children[currentIndex].open == 0) {
+					outputFrame.write("<A HREF=\"javascript:top.toggleFolder('" + children[currentIndex].id + "',1)\" onMouseOver=\"window.status='Click to open this folder'; return true\"><IMG SRC='" + defaultImageURL + "img-plus-end-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALT='Click to open this folder' ALIGN=TEXTTOP BORDER=0>")
+					outputFrame.write("<IMG SRC='" + defaultImageURL + iconClosed + "' WIDTH=16 HEIGHT=16 ALT='Click to open this folder' ALIGN=TEXTTOP BORDER=0></A>&nbsp;" + children[currentIndex].name + "<BR>\n")
+				}
+				else {
+					outputFrame.write("<A HREF=\"javascript:top.toggleFolder('" + children[currentIndex].id + "',0)\" onMouseOver=\"window.status='Click to close this folder'; return true\"><IMG SRC='" + defaultImageURL + "img-minus-end-" + structureStyle + ".gif' WIDTH=19 HEIGHT=16 ALT='Click to close this folder' ALIGN=TEXTTOP BORDER=0>");
+					outputFrame.write("<IMG SRC='" + defaultImageURL + iconOpen + "' WIDTH=16 HEIGHT=16 ALT='Click to close this folder' ALIGN=TEXTTOP BORDER=0></A>&nbsp;" + children[currentIndex].name + "<BR>\n");
+					newStructure = newStructure + "<IMG SRC='" + defaultImageURL + "img-blank.gif' WIDTH=19 HEIGHT=16 ALIGN=TEXTTOP>";
+					drawBranch(children[currentIndex].id,newStructure); 
+				}
+			}
+		}
+		currentIndex++;
+	}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// toggleFolder() - GENERAL FUNCTION - opens/closes folder nodes.
+
+function toggleFolder(id,status) {
+	var nodeIndex = indexOfNode(id); 
+	treeData[nodeIndex].open = status; 
+	timeOutId = setTimeout("drawTree()",100)}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// indexOfNode() - GENERAL FUNCTION - finds the index in the treeData Collection of the node
+//						  with the given id.
+
+function indexOfNode(id) {
+	var currentIndex = 1;
+	while (currentIndex <= treeData.length) {
+		if ((treeData[currentIndex].type == 'root') || (treeData[currentIndex].type == 'folder')) {
+			if (treeData[currentIndex].id == id) {return currentIndex}} 
+		currentIndex++} 
+	return -1}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// extractChildrenOf() - GENERAL FUNCTION - extracts and returns a Collection containing all
+//							  of the node's immediate children nodes.
+
+function extractChildrenOf(node) {
+	var children = new Collection();
+	var currentIndex = 1; 
+	while (currentIndex <= treeData.length) {
+		if ((treeData[currentIndex].type == 'folder') || (treeData[currentIndex].type == 'link')) {
+			if (treeData[currentIndex].parent == node) {
+				children.add(treeData[currentIndex])}}
+		currentIndex++} 
+	return children}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Collection() - OBJECT - a dynamic storage structure similar to an Array.
+
+function Collection() {
+	this.length = 0; 
+	this.add = add; 
+	return this}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// add() - METHOD of Collection - adds an object to a Collection.
+
+function add(object) {
+	this.length++; 
+	this[this.length] = object}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// RootNode() - OBJECT - represents the top-most node of the hierarchial tree.
+
+function RootNode(id,name,url,target,icon) {
+	this.id = id;
+	this.name = name;
+	this.url = url;
+	this.target = target;
+	this.icon = icon;
+	this.type = 'root';
+	return this}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// FolderNode() - OBJECT - represents a node which branches to contain other nodes.
+
+function FolderNode(id,parent,name,iconClosed,iconOpen) {
+	this.id = id;
+	this.parent = parent;
+	this.name = name;
+	this.iconClosed = iconClosed;
+	this.iconOpen = iconOpen;
+	this.type = 'folder';
+	this.open = 0;
+	return this}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// LinkNode() - OBJECT - a node that represents a link using a URL.
+
+function LinkNode(parent,name,url,target,icon) {
+	this.parent = parent;
+	this.name = name;
+	this.url = url;
+	this.target = target;
+	this.icon = icon;
+	this.type = 'link';
+	return this}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// loadData() - GENERAL FUNCTION - user defined data and variables exist in this function.
+
+function loadData() {
+
+      // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      // Tree structure definitions:
+
+      // Syntax:
+
+      // ROOT NODE:
+      // treeData.add(new RootNode("<ID>","<NAME>","<URL>","<TARGET>","<ALT ICON>")); 
+      // NOTE: There must be only ONE root node, and it MUST be the FIRST node.
+      //       <TARGET> and <ALT ICON> can be left null - defaults will be used.
+
+      // FOLDER NODE:
+      // treeData.add(new FolderNode("<ID>","<PARENT ID>","<NAME>","<ALT ICON CLOSED>","<ALT ICON OPEN>"));
+      // NOTE: Folder nodes MUST have a valid parent node, and they SHOULD have children nodes.
+      //       <ALT ICON CLOSED> and <ALT ICON OPEN> can be left null - OmenTree will use the
+      //       default images.
+
+      // LINK NODE:
+      // treeData.add(new LinkNode("<PARENT ID>","<NAME>","<URL>","<TARGET>","<ALT ICON>"));
+      // NOTE: <TARGET> and <ALT ICON> may be left null - defaults specified in the user 
+      //       defined variables section will be used.
+
+      // Consult the OmenTree documentation for further assistance.
+
+	treeData = new Collection();
+	
+	treeData.add(new RootNode('root','Home','blank.html','',''));      // Root Node MUST be first!
+	treeData.add(new FolderNode('docs','root','Game Reviews','',''));
+treeData.add(new LinkNode('docs','Abes Exodus','html/abes_exodus.htm','',''));
+treeData.add(new LinkNode('docs','Age of Empires 2','html/age_of_empires2.htm','',''));
+treeData.add(new LinkNode('docs','Age of Empies GP','html/age_of_empiresgp.htm','',''));
+treeData.add(new LinkNode('docs','Age of Wonders','html/age_of_wonders.htm','',''));
+treeData.add(new LinkNode('docs','Aliens Vs Predator','html/aliensvpredator.htm','',''));
+treeData.add(new LinkNode('docs','Alpha Centaurii','html/alpha_centaurii.htm','',''));
+treeData.add(new LinkNode('docs','Apache Vs Havoc','html/apachevshavoc.htm','',''));
+treeData.add(new LinkNode('docs','Asteroids','html/asteroids.htm','',''));
+treeData.add(new LinkNode('docs','Baldurs Gate','html/baldurs_gate.htm','',''));
+treeData.add(new LinkNode('docs','Battle of Britain','html/battle_of_britain.htm','',''));
+treeData.add(new LinkNode('docs','Battles of Hannibal','html/battle_of_hannibul.htm','',''));
+treeData.add(new LinkNode('docs','Battlezone','html/battlezone.htm','',''));
+treeData.add(new LinkNode('docs','Baldurs Gate','html/baldurs_gate.htm','',''));
+treeData.add(new LinkNode('docs','Birth of the Federation','html/birth_of_federation.htm','',''));
+treeData.add(new LinkNode('docs','Blood 2','html/blood_2.htm','',''));
+treeData.add(new LinkNode('docs','Braveheart','html/braveheart.htm','',''));
+treeData.add(new LinkNode('docs','Buccaneers','html/buccaneers.htm','',''));
+treeData.add(new LinkNode('docs','Caesar 3','html/caesar_3.htm','',''));
+treeData.add(new LinkNode('docs','Castrol Superbikes','html/castrol_superbikes.htm','',''));
+treeData.add(new LinkNode('docs','Championship Manager','html/champ.htm','',''));
+treeData.add(new LinkNode('docs','Close Combat 3','html/close_combat_3.htm','',''));
+treeData.add(new LinkNode('docs','Close Combat 4','html/close_combat_4.htm','',''));
+treeData.add(new LinkNode('docs','Commandoes','html/commandos.htm','',''));
+treeData.add(new LinkNode('docs','Cricket World Cup','html/cricket_cup.htm','',''));
+treeData.add(new LinkNode('docs','Daggerfall','html/daggerfall.htm','',''));
+treeData.add(new LinkNode('docs','Diablo','html/diablo.htm','',''));
+treeData.add(new LinkNode('docs','Diablo 2','html/diablo_2.htm','',''));
+treeData.add(new LinkNode('docs','Drakkan','html/drakkan.htm','',''));
+treeData.add(new LinkNode('docs','Dungeon Keeper','html/dungeon_keeper.htm','',''));
+treeData.add(new LinkNode('docs','Dungeon Keeper 2','html/dungeon_keeper_2.htm','',''));
+treeData.add(new LinkNode('docs','Eastfront','html/eastfront.htm','',''));
+treeData.add(new LinkNode('docs','Euro Air War','html/European_air_war.htm','',''));
+treeData.add(new LinkNode('docs','Everquest','html/everquest.htm','',''));
+treeData.add(new LinkNode('docs','FA 18','html/fa18.htm','',''));
+treeData.add(new LinkNode('docs','Falcon 4','html/falcon_4.htm','',''));
+treeData.add(new LinkNode('docs','Fantasy General','html/fantasy_general.htm','',''));
+treeData.add(new LinkNode('docs','Fighter Squadron','html/fighter_squadron.htm','',''));
+treeData.add(new LinkNode('docs','Fleet Command','html/fleet_command.htm','',''));
+treeData.add(new LinkNode('docs','Freespace','html/freespace.htm','',''));
+treeData.add(new LinkNode('docs','Gangsters','html/gangsters.htm','',''));
+treeData.add(new LinkNode('docs','G-Police','html/gpolice.htm','',''));
+treeData.add(new LinkNode('docs','Halflife','html/halflife.htm','',''));
+treeData.add(new LinkNode('docs','Halflife OP For','html/halflifeopfor.htm','',''));
+treeData.add(new LinkNode('docs','Heart of Darkness','html/heart_darkness.htm','',''));
+treeData.add(new LinkNode('docs','Heretic 2','html/heretic_2.htm','',''));
+treeData.add(new LinkNode('docs','Hexen 2','html/hexen_2.htm','',''));
+treeData.add(new LinkNode('docs','Homeworld','html/homeworld.htm','',''));
+treeData.add(new LinkNode('docs','Imperialisim 2','html/imperialisim_2.htm','',''));
+treeData.add(new LinkNode('docs','Imperium Galactica 2','html/imperium_galactica_2.htm','',''));
+treeData.add(new LinkNode('docs','Janes F15','html/janesf15.htm','',''));
+treeData.add(new LinkNode('docs','KA 52','html/ka52.htm','',''));
+treeData.add(new LinkNode('docs','Kingpin','html/kingpin.htm','',''));
+treeData.add(new LinkNode('docs','Kings Quest 8','html/kingsquest8.htm','',''));
+treeData.add(new LinkNode('docs','Last Express','html/lastexpress.htm','',''));
+treeData.add(new LinkNode('docs','Links Extreme','html/linksextreme.htm','',''));
+treeData.add(new LinkNode('docs','Longbow 2','html/longbow_2.htm','',''));
+treeData.add(new LinkNode('docs','Luftwaffe Commander','html/luftwaffe.htm','',''));
+treeData.add(new LinkNode('docs','M1A2','html/m1a2.htm','',''));
+treeData.add(new LinkNode('docs','Mech 2:GBL','html/mech2_gbl.htm','',''));
+treeData.add(new LinkNode('docs','Mech 2:Mercs','html/mech2_mercenaries.htm','',''));
+treeData.add(new LinkNode('docs','Messiah','html/messiah.htm','',''));
+treeData.add(new LinkNode('docs','Might & Magic 8','html/might_magic_8.htm','',''));
+treeData.add(new LinkNode('docs','Monkey Isle','html/monkeyisle.htm','',''));
+treeData.add(new LinkNode('docs','Monster Truck Madness','html/monster_truck_madness.htm','',''));
+treeData.add(new LinkNode('docs','Moto X Madness','html/moto_x_madness.htm','',''));
+treeData.add(new LinkNode('docs','Need for Speed 4','html/needspeed_4.htm','',''));
+treeData.add(new LinkNode('docs','Nox','html/nox.htm','',''));
+treeData.add(new LinkNode('docs','Outwars','html/outwars.htm','',''));
+treeData.add(new LinkNode('docs','Panzer General 2','html/panzer_general_2.htm','',''));
+treeData.add(new LinkNode('docs','Phantom Menace','html/phantom_menace.htm','',''));
+treeData.add(new LinkNode('docs','Planescape Torment','html/planescape_torment.htm','',''));
+treeData.add(new LinkNode('docs','Quest for Glory 5','html/quest_glory_5.htm','',''));
+treeData.add(new LinkNode('docs','Railroad Tycoon 2','html/railroad_tycoon2.htm','',''));
+treeData.add(new LinkNode('docs','Red Alert','html/red_alert.htm','',''));
+treeData.add(new LinkNode('docs','Red Guard','html/red_guard.htm','',''));
+treeData.add(new LinkNode('docs','Red Line Racer','html/red_line_racer.htm','',''));
+treeData.add(new LinkNode('docs','Requiem','html/requiem.htm','',''));
+treeData.add(new LinkNode('docs','Riven','html/riven.htm','',''));
+treeData.add(new LinkNode('docs','Rollercoaster_tycoon','html/rollercoaster_tycoon.htm','',''));
+treeData.add(new LinkNode('docs','SimCity 3000','html/sc3000.htm','',''));
+treeData.add(new LinkNode('docs','Settlers 3','html/settlers_3.htm','',''));
+treeData.add(new LinkNode('docs','Shogo','html/shogo.htm','',''));
+treeData.add(new LinkNode('docs','SMs Gettysburg','html/sid_meirs_gettysburg.htm','',''));
+treeData.add(new LinkNode('docs','SMs Waterloo','html/sid_meirs_waterloo.htm','',''));
+treeData.add(new LinkNode('docs','Soldier of Fortune','html/soldier_of_fortune.htm','',''));
+treeData.add(new LinkNode('docs','Spec Ops','html/spec_ops.htm','',''));
+treeData.add(new LinkNode('docs','StarCraft','html/starcraft.htm','',''));
+treeData.add(new LinkNode('docs','StarCraft Broodwars','html/starcraftbrood.htm','',''));
+treeData.add(new LinkNode('docs','Stars!','html/stars.htm','',''));
+treeData.add(new LinkNode('docs','Starship Titanic','html/starshi_titanic.htm','',''));
+treeData.add(new LinkNode('docs','Steel Panthers','html/steel_panthers.htm','',''));
+treeData.add(new LinkNode('docs','Steel Panthers 2','html/steel_panthers2.htm','',''));
+treeData.add(new LinkNode('docs','Starwars:Rogue Squadron','html/sw_rogue_squadron.htm','',''));
+treeData.add(new LinkNode('docs','The Sims','html/the_sims.htm','',''));
+treeData.add(new LinkNode('docs','Theif','html/theif.htm','',''));
+treeData.add(new LinkNode('docs','Theif 2','html/theif2','',''));
+treeData.add(new LinkNode('docs','Theme Hospital','html/theme_hospital.htm','',''));
+treeData.add(new LinkNode('docs','Tiberian Sun','html/tiberian_sun.htm','',''));
+treeData.add(new LinkNode('docs','Tiger Woods Golf','html/tigerwoods.htm','',''));
+treeData.add(new LinkNode('docs','Operational Art of War','html/toaow2.htm','',''));
+treeData.add(new LinkNode('docs','Tomb Raider 3','html/tomb_raider_3.htm','',''));
+treeData.add(new LinkNode('docs','Top Gun','html/top_gun.htm','',''));
+treeData.add(new LinkNode('docs','Total Annihilation','html/total_annihilation.htm','',''));
+treeData.add(new LinkNode('docs','Tribes','html/tribes.htm','',''));
+treeData.add(new LinkNode('docs','Ultima Online','html/ultima_online.htm','',''));
+treeData.add(new LinkNode('docs','Unreal','html/unreal.htm','',''));
+treeData.add(new LinkNode('docs','Uprising','html/uprising.htm','',''));
+treeData.add(new LinkNode('docs','Uprising 2','html/Uprising 2.htm','',''));
+treeData.add(new LinkNode('docs','Warbirds','html/warbirds.htm','',''));
+treeData.add(new LinkNode('docs','Wargames','html/wargames.htm','',''));
+treeData.add(new LinkNode('docs','Warhammer 2','html/Warhammer2.htm','',''));
+treeData.add(new LinkNode('docs','Waterloo','html/waterloo.htm','',''));
+treeData.add(new LinkNode('docs','Wing Commander 5','html/wing_commander_5.htm','',''));
+treeData.add(new LinkNode('docs','X-BTF','html/xbtf.htm','',''));
+treeData.add(new LinkNode('docs','X-COM','html/xcom.htm','',''));
+treeData.add(new LinkNode('docs','Xwing Alliance','html/xwing_alliance.htm','',''));
+treeData.add(new LinkNode('docs','WestFront','html/westfront.htm','',''));
+
+//left in for use as a folder node should I need one	
+//treeData.add(new FolderNode('nodes','docs','Menu Nodes','',''));
+//treeData.add(new LinkNode('nodes','The Root Node','html/documentation.html#root','',''));
+//treeData.add(new LinkNode('nodes','Folder Nodes','html/documentation.html#folders','',''));
+//treeData.add(new LinkNode('nodes','Link Nodes','html/documentation.html#links','',''));	
+
+
+//about me folder node and links	
+treeData.add(new FolderNode('engines','root','About Me','',''));
+treeData.add(new LinkNode('engines','Curriculum Vitae','html/cv.htm','','img-page-link.gif'));
+treeData.add(new LinkNode('engines','Pics','html/Pictures.htm','','img-page-link.gif'));
+treeData.add(new LinkNode('engines','General','html/stuff.htm','','img-page-link.gif'));
+
+
+
+//NT Folder node and links 
+treeData.add(new FolderNode('favs','root','Links','img-folder-closed-fav.gif','img-folder-open-fav.gif'));
+treeData.add(new FolderNode('Software','favs','Windows','',''));
+treeData.add(new LinkNode('Software','Event ID','http://www.eventid.net/search.asp','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','NT Scripting','http://www.seanet.com/~shardy/ntscript.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Exam Cram 2k','http://www.examcram.com/studyresource/w2kresource/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Technet','http://www.microsoft.com/technet/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Win2000.Com','http://searchwin2000.techtarget.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Tek Tips','http://www.tek-tips.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','IT Library','http://www.windowsitlibrary.com/Topics/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','MCSE World','http://www.petri.co.il/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Win2kNews','http://www.w2knews.com/subscribe.cfm?id=MSX','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','NT Home','http://www.microsoft.com/ntserver/default.asp','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','NT Ware','http://ozbytes.ntware.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Win Mag','http://www.winmag.com/columns/explorer/2000/15.htm','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Registry Tips','http://is-it-true.org/nt/registry/index.shtml','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Programmers Heaven','http://www.programmersheaven.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','8Wire','http://www.8wire.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','NT FAQ','http://www.ntfaq.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Brain Bench','http://www.brainbench.com/xml/bb/homepage.xml','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Cram Sessions','http://studyguides.cramsession.com/cramsession/microsoft/default.aspl','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','MS Free Tests','http://www.testfree.com/exams.asp','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Software','Brain Dumps','http://216.15.180.6/mcse/','_new','img-page-globe-link.gif'));
+
+
+
+
+//Everquest Folder Links
+treeData.add(new FolderNode('Everquest','favs','Everquest','',''));
+treeData.add(new LinkNode('Everquest','EqNecro','http://necro.eqclasses.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Everquest','Allakhazams','http://everquest.allakhazam.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Eq Atlas','http://www.eqatlas.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Eq Clerics','http://eqcleric.gameglow.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Eq Traders','http://www.eqtraders.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Eq WaADB','http://www.planeteverquest.com/eqwadb/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Everquest','Eq Vault','http://eqvault.ign.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Everlore','http://everlore.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Casters Realm','http://eq.castersrealm.com/','_new','img-page-globe-link.gif'));		
+treeData.add(new LinkNode('Everquest','EQ Sony','http://everquest.station.sony.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Illyas Beasts','http://eqbeastiary.allakhazam.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','Eq MBs','http://boards.station.sony.com/ubb/everquest/cgi-bin/Ultimate.cgi','_new','img-page-globe-link.gif'));			
+		treeData.add(new FolderNode('News','favs','News','',''));
+treeData.add(new LinkNode('Everquest','EQ Caster','http://www.eqcaster.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','MapFiends','http://www.k-r-g.com/mapfiend/index.php?incl=listmaps.php&game=Everquest','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','The Safe House','http://pub35.ezboard.com/bthesafehouse','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Everquest','EQ Data','http://ethernalquest.org/db/perl/data.cgi#DATA','_new','img-page-globe-link.gif'));
+
+
+
+
+//Stuff Links
+treeData.add(new FolderNode('Stuff','favs','Stuff','',''));
+treeData.add(new LinkNode('Stuff','Gooses World','http://www.goosesworld.coolfreepage.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Banged Up','http://www.bangedup.com/banged.htm','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Bobblers','http://www.bobblers.com/pages/index.shtml','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Curly David','http://www.curlydavid.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','How Many?','http://www.howmanywouldittake.com/?lastpid=1613&sex=f','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Every Day Fun','http://www.everydayfun.com/index3.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Exploitation Now','http://www.exploitationnow.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Extreme Jokes','http://www.extremejokes.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Hot or Not?','http://www.hotornot.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Keenspot Comics','http://www.keenspot.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','I Love Bacon','http://www.ilovebacon.com/home/index.shtml','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Naked News','http://www.nakednews.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Sexy Losers','http://sexylosers.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Steak and Cheese','http://www.steakandcheese.com/index2.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Super Heroines','http://www.geocities.com/Area51/Shire/5966/silverheroines.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Lux Lucre','http://www.lairofluxlucre.com/index.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Stuff','MP3 Mirrors','http://deluxe.mirrorz.com/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Elfwood','http://elfwood.lysator.liu.se/zone47.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Laugh Lab','http://www.laughlab.co.uk/home.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Phat Max','http://www.phatmax.net/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','NudeAnon','http://www.nudeanon.com/parts/index.shtml','_new','img-page-globe-link.gif'));		
+treeData.add(new LinkNode('Stuff','Dumb Lists','http://www.dumblists.com/music.html','_new','img-page-globe-link.gif'));		
+treeData.add(new LinkNode('Stuff','Monty Python','http://www.montypython.net/grailsounds.php','_new','img-page-globe-link.gif'));		
+treeData.add(new LinkNode('Stuff','MP3 Parodies','http://www.freeballers.com/parody/','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Tech DIY Excuses','http://bofh.ntk.net/ExcuseBoard.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Tech Tales','http://www.techtales.com/tftechs.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','The Register','http://www.theregister.co.uk/content/30/index.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','BOFH','http://bofh.ntk.net/Bastard.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Spec Visions','http://www.speculativevision.com/','_new','img-page-globe-link.gif'));		
+treeData.add(new LinkNode('Stuff','Player Rights','http://www.legendmud.org/raph/gaming/playerrights.html','_new','img-page-globe-link.gif'));		
+treeData.add(new LinkNode('Stuff','SwearOtron','http://www.rathergood.com/swearotron.html','_new','img-page-globe-link.gif'));	
+treeData.add(new LinkNode('Stuff','Adequacy','http://adequacy.org/','_new','img-page-globe-link.gif'));				
+
+
+
+//Media Links Folder
+treeData.add(new FolderNode('Media','favs','Media','',''));
+treeData.add(new LinkNode('Media','MediaWhore','http://www.mediawhore.co.nz/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','CNN','http://www.cnn.com','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','NZoom','http://www.nzoom.co.nz/index.html?nc=7103.30197661282','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Bloomberg','http://www.bloomberg.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','NZ Herald','http://www.nzherald.co.nz/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Warner Bros','http://www2.warnerbros.com/web/wboriginals/index.jsp','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Hollywood.com','http://www.hollywood.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','CNet','http://news.cnet.com/news/0-1002.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Telegraph UK','http://www.portal.telegraph.co.uk/portal/main.jhtml;$sessionid$YKDY12QAACQ1JQFIQMGSFFOAVCBQWIV0?view=HOME&grid=P13&menuId=-1&menuItemId=-1&_requestid=159136','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Guardian UK','http://www.guardian.co.uk/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Village Voice NY','http://www.villagevoice.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','NY Times','http://www.nytimes.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','LA Times','http://www.latimes.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Otago Times','http://www.odt.co.nz/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','IH Tribune','http://www.iht.com/frontpage.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','This is London','http://www.thisislondon.co.uk/dynamic/index.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','The Times UK','http://www.thetimes.co.uk/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','NY Post','http://www.nypost.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','The Source SD','http://www.sddt.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','XtraMSN','http://xtramsn.co.nz/news/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Russia Today','http://www.europeaninternet.com/russia/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Reuters','http://www.reuters.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','MSNBC','http://www.msnbc.com/news/default.asp?cp1=1','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Fox News','http://foxnews.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','CBS','http://www.cbs.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','ABC','http://abc.go.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Media','Online Newspapers','http://library.uncg.edu/news/','_new','img-page-globe-link.gif'));
+
+
+
+//Graphics Folder Links
+treeData.add(new FolderNode('Graphics','favs','Graphics','',''));
+treeData.add(new LinkNode('Graphics','BizArt','http://www.bizart.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Clip Art','http://www.clipart.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','PS User','http://www.photoshopuser.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','PS Resource','http://showcase.netins.net/web/wolf359/adobepc.htm','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','PS Professional','http://www.tema.ru/p/h/o/t/o/s/h/o/p/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Adobe','http://www.adobe.com/products/photoshop/main.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Flash Lite','http://www.flashlite.net/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Graphics Soft','http://graphicssoft.about.com/msubmenu12.htm?once=true&','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Free Foto','http://www.freefoto.com/index.asp?404;http://www.freefoto.com/pictures/ukbeauty/wensdale/index.asp','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Pics Now','http://www.picturesnow.com/index.asp?404;http://www.picturesnow.com/html/index.asp','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Scream','http://www.screamdesign.com/entry.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Web Shots','http://www.webshots.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Shoopdogg','http://www.shoopdogg.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Free Resource','http://home.golden.net/%7Etmb/movie.htm','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','TimePics','http://www.thepicturecollection.com/default.sph/SaServletEngine.class/timepix/home.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Page Tutor','http://www.pagetutor.com/weblinks/index.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','IBand','http://www.iband.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Flaming Text','http://www.flamingtext.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','PS Paradise','http://www.desktoppublishing.com/photoshop.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Ultimate PS','http://www.ultimate-photoshop.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','PS Tricks','http://www.rtideas.com/ticks/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','PS Tips','http://www.mccannas.com/pshop/photosh0.htm','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Flash Gamer','http://www.flashgamer.com/tutorials/0001.htm','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Flash Central','http://www.flashcentral.com/tech/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Flash Planet','http://www.flashplanet.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('Graphics','Slack Jaw','http://home.interstat.net/%7Eslawcio/artsf2.html','_new','img-page-globe-link.gif'));
+
+//scripting folder links
+treeData.add(new FolderNode('scripts','favs','Scripting','',''));
+treeData.add(new LinkNode('scripts','Doc Javascript','http://webreference.com/js/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Javascript Planet','http://www.geocities.com/SiliconValley/7116/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','EchoEcho','http://www.echoecho.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Perl Archive','http://www.perlarchive.com/guide/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Script Search','http://www.scriptsearch.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','CGI Resource','http://cgi.resourceindex.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Xtropia','http://www.extropia.com/opensource.html','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Big Nose Bird','http://bignosebird.com/cgi.shtml','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Shaven Ferret','http://www.shavenferret.com/scripts/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','CGI Directory','http://www.cgidir.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Matts Script Archive','http://www.worldwidemart.com/scripts/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','Script Search','http://scriptsearch.internet.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','JS World','http://www.jsworld.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','JS Source','http://javascript.internet.com/','_new','img-page-globe-link.gif'));
+treeData.add(new LinkNode('scripts','NS Developer','http://developer.netscape.com/docs/examples/javascript.html','_new','img-page-globe-link.gif'))
+
+
+//Contact Folder Links
+treeData.add(new FolderNode('newsg','root','Contact','',''));
+treeData.add(new LinkNode('newsg','Contact Page','html/contact.htm','','img-page-globe-link.gif'));	
+treeData.add(new FolderNode('email','root','E-mail','',''));
+		treeData.add(new LinkNode('email','Stephen Harris','mailto:bleu@paradise.net.nz?subject=Well hello big boy!...','','img-email.gif'));
+
+      // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      // User defined variables:	
+
+       structureStyle = 1;                   // 0 for light background, 1 for dark background
+
+      backgroundColor = '#000000';           // sets the bgColor of the menu
+            textColor = '#FFFFFF';           // sets the color of the text used in the menu
+            linkColor = '#FFf999';           // sets the color of any text links (usually defined in additional HTML sources)
+           aLinkColor = '#FFF000';           // sets the active link color (when you click on the link)
+           vLinkColor = '#888088';           // sets the visited link color
+
+      backgroundImage = '';                  // give the complete path to a gif or jpeg to use as a background image
+
+      defaultTargetFrame = 'pageFrame';      // the name of the frame that links will load into by default 
+         defaultImageURL = 'images/';        // the URL or path where the OmenTree images are located
+
+       defaultLinkIcon = 'img-page-globe.gif';  // the default icon image used for links
+
+          omenTreeFont = 'MS Sans Serif,Arial,Helvetica';  // the font used for the menu
+      omenTreeFontSize = 1;                                // its size - don't make it too big!
+
+      // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      // Additional HTML sources:
+
+      prefixHTML = "";
+      suffixHTML = "<HR><center>Sign my <a href='http://www.alxbook.com/cgi-bin/guestbook.cgi?gb=Y78403' TARGET='pageFrame'>Guestbook.</A> <br>You are Visitor number<br><IMG SRC='http://counter.digits.com/wc/-d/4/sharrispage' ALIGN=middle WIDTH=60 HEIGHT=20 BORDER=0 HSPACE=4 VSPACE=2> <br>Counter Provided by <A HREF='http://www.digits.com/'TARGET='pageFrame'><IMG border=0 SRC='wc.gif' WIDTH=157 HEIGHT=43 BORDER=1 VSPACE=2 HSPACE=2></A></center>";
+}
+
+// End Hiding -->
+</SCRIPT>
+</HEAD>
+<FRAMESET COLS="190,*" border= "0" onLoad="start()">
+	<FRAME NAME="treeFrame" SRC="preload.html" MARGINWIDTH=2 MARGINHEIGHT=2 SCROLLING=Auto>
+	<FRAME NAME="pageFrame" SRC="blank.html" MARGINWIDTH=8 MARGINHEIGHT=4 SCROLLING=Auto>
+</FRAMESET><noframes></noframes>
+</HTML>

@@ -1,0 +1,221 @@
+<!-- Style Guide for Illumin Site -->
+<style type="text/css">
+	A:link  { color:yellow; }
+	A:visited { color:silver; }
+	A:hover  { color:orange; }
+
+	.BarHeading
+	{
+		font-family:verdana;
+		font-size:13;
+		color:#ECB611;
+		font-weight :bold;
+	}
+
+	.FieldLabel
+	{
+		font-family:verdana;
+		font-size:12;
+		color:white;
+		font-weight :bold;
+	}
+
+	.FieldValue
+	{
+		font-family:verdana;
+		font-size:11;
+		color:white;
+	}
+
+	.StatusText
+	{
+		font-family:verdana;
+		font-size:12;
+		color:white;
+		font-style : italic;
+	}
+
+	.InputText
+	{
+		border:1px solid #ECB611;
+		background-color: #000033;
+		font-family:verdana;
+		font-size:12px;
+		padding:2px;
+		color: white;
+	}
+	.InputSelect
+	{
+		border:1px solid #873702;
+		background-color: #FBFAF5;
+		font-family:verdana;
+		font-size:11px;
+		padding:2px;
+		color: black;
+	}
+</style>
+<script language=javascript>
+/****************************************************
+     Author: Eric King
+     Url: http://redrival.com/eak/index.shtml
+     This script is free to use as long as this info is left in
+     Featured on Dynamic Drive script library (http://www.dynamicdrive.com)
+****************************************************/
+var win=null;
+function NewWindow(mypage,myname,w,h,scroll,pos) {
+	if(pos=="random"){
+		LeftPosition=(screen.width)?Math.floor(Math.random()*(screen.width-w)):100;
+		TopPosition=(screen.height)?Math.floor(Math.random()*((screen.height-h)-75)):10;
+	}
+	
+	if(pos=="center"){
+		LeftPosition=(screen.width)?(screen.width-w)/2:100;
+		TopPosition=(screen.height)?(screen.height-h)/2:100;
+	}
+	else if((pos!="center" && pos!="random") || pos==null){
+		LeftPosition=0;TopPosition=20
+	}
+
+	settings='width='+w+',height='+h+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=no';
+	win=window.open(mypage,myname,settings);
+}
+</script>
+<html>
+<head>
+	<title>.: Illumin Cathari Member Login :.</title>
+	<!-- Link style guide for all pages-->
+<style type="text/css">
+
+</style>
+
+<!-- Script for title animation on all pages -->
+<script language="JavaScript1.2">
+/*
+Animated Document title- By Dynamicdrive.com
+For full source, TOS, and 100s DTHML scripts
+Visit http://dynamicdrive.com
+*/
+if (document.all||document.getElementById){
+var thetitle=document.title
+document.title=''
+}
+
+var data=".:.:.:.:.:";
+
+var done=1;
+function statusIn(text){
+	decrypt(text,2,1);
+}
+
+function statusOut(){
+self.status='';
+done=1;
+}
+
+function decrypt(text, max, delay){
+	if (done){
+		done = 0;
+		decrypt_helper(text, max, delay,  0, max);
+		}
+	
+}
+
+function decrypt_helper(text, runs_left, delay, charvar, max){
+	if (!done){
+	runs_left = runs_left - 1;
+	var status = text.substring(0,charvar);
+	for(var current_char = charvar; current_char < text.length; current_char++){
+		status += data.charAt(Math.round(Math.random()*data.length));
+		}
+	document.title = status;
+	var rerun = "decrypt_helper('" + text + "'," + runs_left + "," + delay + "," + charvar + "," + max + ");"
+	var new_char = charvar + 1;
+	var next_char = "decrypt_helper('" + text + "'," + max + "," + delay + "," + new_char + "," + max + ");"
+	if(runs_left > 0){
+		setTimeout(rerun, delay);
+		}
+	else{
+		if (charvar < text.length){
+			setTimeout(next_char, Math.round(delay*(charvar+3)/(charvar+1)));
+			}
+		else
+			{
+			done = 1;
+			}
+		}
+	}
+}
+
+//if IE 4+ or NS 6+
+if (document.all||document.getElementById)
+statusIn(thetitle)
+</script>
+</head>
+<body bgcolor="black" text="White" link="Yellow" vlink="Silver" alink="Red" leftmargin=0 topmargin=0>
+<!-- Header -->
+<!-- Header file for all pages -->
+<table width="100%" border=0 cellpadding=0 cellspacing=0>
+<tr><td valign=top bgcolor="Black" align=center><img src="header.jpg" width="648" height="72" alt="" border="0"></td>
+</tr>
+<tr><td valign=middle bgcolor="white" align=center>
+<IMG SRC="nav.gif" WIDTH=457 HEIGHT=22 BORDER=0 USEMAP="#Nav_Map">
+<MAP NAME="Nav_Map">
+<AREA SHAPE="rect" ALT="" COORDS="410,0,449,22" HREF="links.asp">
+<AREA SHAPE="rect" ALT="" COORDS="345,0,398,22" HREF="images.asp">
+<AREA SHAPE="rect" ALT="" COORDS="287,0,335,22" HREF="events.asp">
+<AREA SHAPE="rect" ALT="" COORDS="229,0,271,22" HREF="roster.asp">
+<AREA SHAPE="rect" ALT="" COORDS="161,0,212,22" HREF="charter.asp">
+<AREA SHAPE="rect" ALT="" COORDS="56,0,146,22" HREF="http://pub51.ezboard.com/btheillumincathari">
+<AREA SHAPE="rect" ALT="" COORDS="0,0,45,22" HREF="main.asp">
+</MAP>
+<div style="text-align: right; position: absolute; top: 76px; right: 1%">
+<font face="Arial" size="2" color="#000000"><b>
+
+<a href="login.asp" style="color: Black;">Login</a>
+</b>
+</font></div></td>
+</tr>
+</table>
+<!-- Main Body -->
+<table width="100%" border=0 cellpadding=0 cellspacing=0>
+<tr><td background="bg.jpg" bgcolor="#09012F">
+<br>
+<form action="cgi-bin/login.asp" method="post">
+<table align=center width=490>
+
+<tr>
+	<td background="bar.jpg" valign=top colSpan=2 height=25 width=490>
+	<font class=BarHeading><b>User Login</b></font></td>
+</tr>
+</table>
+<table align=center>
+<tr>
+	<td align=right noWrap><font class=FieldLabel>User Name:</font></td>
+	<td align=center><input type=text id=UserName name=UserName size=20 CLASS=InputText></td>
+</tr>
+<tr>
+	<td align=right noWrap><font class=FieldLabel>Password:</font></td>
+	<td align=center><input type=password id=Password name=Password size=20 CLASS=InputText></td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td align=center noWrap><input type=image name=Submit id=Submit src=login.jpg><br><br></td>
+</tr>
+<tr><td align=center noWrap colSpan=2 style="border-top:1 solid #ECB611;"><font size=-2 face=verdana>.: 
+[<a href="cgi-bin/forgot.asp" onclick="NewWindow(this.href,'Profile','320','150','yes','center');return false" onfocus="this.blur()">Doh! Forgot my password</a>] :: 
+[<a href="newuser.asp">I'm a new user</a>] :.
+</font></td></tr>
+</table>
+</form>
+<!-- End Body -->
+</td></tr>
+</table>
+
+<!-- Footer -->
+<!-- Footer file for all pages -->
+<table width="100%" border=0 cellpadding=0 cellspacing=0>
+<tr><td background="runes.jpg" height="30"><br></td>
+</tr>
+</table>
+</body>
+</html>

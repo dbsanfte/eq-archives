@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="./index.php?sid=012bcea6e0de149b082a579cf8419f08" title="The Scout's Sanctuary Forum Index" />
+<link rel="search" href="./search.php?sid=012bcea6e0de149b082a579cf8419f08" title="Search" />
+<link rel="help" href="./faq.php?sid=012bcea6e0de149b082a579cf8419f08" title="FAQ" />
+<link rel="author" href="./memberlist.php?sid=012bcea6e0de149b082a579cf8419f08" title="Memberlist" />
+
+<title>The Scout's Sanctuary :: An EverQuest 2 Scout portal for rogues, bards and predators</title>
+<link rel="stylesheet" href="templates/scouts/scouts.css" type="text/css">
+
+
+
+
+
+</head>
+<body>
+<!-- Header Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" >
+<tr><td align="center"><img src="images/tss.jpg" alt="" width="670" height="125" border="0"></td>
+	</tr>
+</table>
+
+<!-- sub header menu table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="forumline">
+<tr>
+<td class="catLeft">&nbsp;&nbsp;<font class="cattitle">Welcome Visitor</font></td>
+<td align="right" class="catRight"><a href="index.php" class="forumlink">Forum Index</a>&nbsp;&nbsp;<a href="profile.php?mode=editprofile&amp;sid=012bcea6e0de149b082a579cf8419f08" class="forumlink"><img src="templates/scouts/images/icon_mini_profile.gif" width="12" height="13" border="0" alt="Profile" hspace="3" />Profile</a>&nbsp;&nbsp; <a href="memberlist.php?sid=012bcea6e0de149b082a579cf8419f08" class="forumlink"><img src="templates/scouts/images/icon_mini_members.gif" width="12" height="13" border="0" alt="Memberlist" hspace="3" />Memberlist</a>&nbsp;&nbsp;<a href="login.php?sid=012bcea6e0de149b082a579cf8419f08" class="forumlink"><img src="templates/scouts/images/icon_mini_login.gif" width="12" height="13" border="0" alt="Log in" hspace="3" />Log in</a>&nbsp;&nbsp;
+					<a href="profile.php?mode=register&amp;sid=012bcea6e0de149b082a579cf8419f08" class="forumlink"><img src="templates/scouts/images/icon_mini_register.gif" width="12" height="13" border="0" alt="Register" hspace="3" />Register</a>
+&nbsp;&nbsp;<a href="search.php?sid=012bcea6e0de149b082a579cf8419f08" class="forumlink"><img src="templates/scouts/images/icon_mini_search.gif" width="12" height="13" border="0" alt="Search" hspace="3" />Search</a>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<!-- Main TAble -->
+<table width="100%" border="0" cellspacing="0" cellpadding="1" >
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr>
+		<td width="12%" rowspan="200" valign="top" background="templates/scouts/images/spacer.gif">
+			<!-- Menu Table -->
+			<table width="95%" border="0" cellspacing="0" cellpadding="2" align="center" class="PanelBorder">
+				<th class="thTop"><a href="index.php" class="mainmenu"><div align="center"><strong>Main Menu</strong></div></a></th>
+				<tr><td><a href="portal.php" class="menubar">News</a></td></tr>
+				<tr><td><a href="index.php" class="menubar">Forums</a></td></tr>
+				<tr><td><a href="profile.php?mode=editprofile&amp;sid=012bcea6e0de149b082a579cf8419f08" class="menubar">Profile</a></td></tr>
+				<tr><td><a href="faq.php?sid=012bcea6e0de149b082a579cf8419f08" class="menubar">FAQ</a></td><br>
+				<tr><td><a href="privmsg.php?folder=inbox&amp;sid=012bcea6e0de149b082a579cf8419f08" class="menubar">Log in to check your private messages</a></td></tr>
+		</td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="1" height="10" border="0"><br></td></tr>
+				<th class="thTop"><div align="center"><font class="mainmenu"><strong>Scout Tree</strong></font></div></th>
+				<tr><td><a href="#" class="menubar">Bard</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="10" height="1" border="0"><a href="dirge.php" class="menubar">Dirge</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="10" height="1" border="0"><a href="troubadour.php" class="menubar">Troubadour</a></td></tr>
+				<tr><td><a href="#" class="menubar">Predator</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="10" height="1" border="0"><a href="assassin.php" class="menubar">Assassin</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="10" height="1" border="0"><a href="ranger.php" class="menubar">Ranger</a></td></tr>
+				<tr><td><a href="#" class="menubar">Rogue</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="10" height="1" border="0"><a href="brigand.php" class="menubar">Brigand</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="10" height="1" border="0"><a href="swashbuckler.php" class="menubar">Swashbuckler</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="1" height="10" border="0"><br></td></tr>
+					<!--  <th class="thTop"><div align="center"><font class="mainmenu"><strong>Scouts</strong></font></div></th>
+				<tr><td><a href="scoutguide.php" class="menubar">Beginner's Guide</a></td></tr>
+				<tr><td><a href="heroicops.php" class="menubar">Heroic Opportunities</a></td></tr>
+				<!-- <tr><td><a href="mode.php?mode=arts" class="menubar">Items</a></td></tr>
+<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="1" height="10" border="0"><br></td></tr>
+				<th class="thTop"><div align="center"><font class="mainmenu"><strong>Artisans</strong></font></div></th>
+				<tr><td><a href="artisan.php" class="menubar">Artisans</a></td></tr>
+				<!-- <tr><td><a href="#" class="menubar">Recipe Search</a></td></tr>
+				<tr><td><img src="templates/scouts/images/spacer.gif" alt="" width="1" height="10" border="0"><br></td></tr>
+ 			<th class="thTop"><div align="center"><font class="mainmenu"><strong>EQ2 </strong></font></div></th>
+				<tr><td><a href="http://www.thescoutssanctuary.com/viewtopic.php?t=3017" class="menubar">Statalyzer Parser</a></td></tr>
+				<!-- <tr><td><a href="coppermine/index.php" class="menubar">Screenshots</a></td></tr>
+				<tr><td><a href="mode.php?mode=startcities" class="menubar">Starting Cities</a></td></tr>
+				<tr><td><a href="mode.php?mode=stats" class="menubar">Starting Stats</a></td></tr>
+				<!-- <tr><td><a href="mode.php?mode=zones" class="menubar">Zones</a></td></tr> -
+				<tr><td><a href="links.php" class="menubar">Links</a></td></tr>
+				<!--<tr><td><a href="mode.php?mode=parser" class="menubar">EQ2 Parser</a></td></tr>-->
+				</table>
+		</td>
+		<td width="10"><img src="../../images/spacer.gif" alt="" width="10" height="1" border="0"></td>
+		<td valign="top">
+<!-- Portal code start -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="left">
+  <tr>
+	<td width="49%" height="225" valign="top">
+			<table width="100%" border="0" cellspacing="1" cellpadding="2" class="forumline">
+			  <tr>
+				<td class="catHead" height="25"><span class="forumlink"><b></b></span></td>
+			  </tr>
+			  <tr>
+				<td height="200" align="left" valign="top" class="row1"><span class="gensmall" style="line-height:150%">Welcome to <b>The Scout&rsquo;s Sanctuary!!</b><br/> A community for the Everquest 2 scout including rogues, bards and predators.  <br>Please stop in and take the time to register and most of all contribute to the forums. Also feel free to spread the word about the site since word of mouth is a great way to let others know.  Have a great day and see you in the forums!<br />&nbsp;</span></td>
+			  </tr>
+			</table>
+		</td>
+		<td>&nbsp;</td>
+		<td width="49%" height="225" valign="top">
+		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+		   <tr>
+			<td class="catHead" height="25"><span class="forumlink"><b></b></span></td>
+		   </tr>
+		   <!-- here -->
+		   <tr>
+			<td height="200" align="left" class="row1"><span class="gensmall">
+			&raquo; <a href="viewtopic.php?p=39784&amp;sid=012bcea6e0de149b082a579cf8419f08#39784">Hunter Title</a><br />
+			by <a href="profile.php?mode=viewprofile&amp;u=4311&amp;sid=012bcea6e0de149b082a579cf8419f08">Wixavion</a> on Tue Oct 18, 2005 5:03 am<br /><br />
+			&raquo; <a href="viewtopic.php?p=39783&amp;sid=012bcea6e0de149b082a579cf8419f08#39783">help with DOF quest</a><br />
+			by <a href="profile.php?mode=viewprofile&amp;u=4311&amp;sid=012bcea6e0de149b082a579cf8419f08">Wixavion</a> on Tue Oct 18, 2005 4:57 am<br /><br />
+			&raquo; <a href="viewtopic.php?p=39782&amp;sid=012bcea6e0de149b082a579cf8419f08#39782">THINGS TO DO! (when game not available)</a><br />
+			by <a href="profile.php?mode=viewprofile&amp;u=4311&amp;sid=012bcea6e0de149b082a579cf8419f08">Wixavion</a> on Tue Oct 18, 2005 4:49 am<br /><br />
+			&raquo; <a href="viewtopic.php?p=39781&amp;sid=012bcea6e0de149b082a579cf8419f08#39781">Extracts</a><br />
+			by <a href="profile.php?mode=viewprofile&amp;u=4986&amp;sid=012bcea6e0de149b082a579cf8419f08">heketon</a> on Tue Oct 18, 2005 4:35 am<br /><br />
+			&raquo; <a href="viewtopic.php?p=39775&amp;sid=012bcea6e0de149b082a579cf8419f08#39775">Highest delay duel-weild weapons...</a><br />
+			by <a href="profile.php?mode=viewprofile&amp;u=4986&amp;sid=012bcea6e0de149b082a579cf8419f08">heketon</a> on Mon Oct 17, 2005 4:26 pm<br /><br />
+			</span></td>
+		   </tr>
+		  </table>
+		</td></TR>
+
+
+
+
+		<tr><td colspan="3">&nbsp;</td></tr>
+
+
+		<TR><td colspan="3">
+
+		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+		  <tr>
+			<td class="catHead" height="25"><span class="forumlink"><b>Announcement: 50% Tradeskill XP Bonus!</b></span></td>
+		  </tr>
+		  <tr>
+			<td class="row2" align="left" height="24"><span class="gensmall">Posted: <b>khalysta</b> @ Thu Oct 06, 2005 12:28 pm</span></td>
+		  </tr>
+		  <tr>
+			<td class="row1" align="left"><span class="gensmall" style="line-height:150%">*** Tradeskills ***<br />
+<br />
+- We have permanently increased tradeskill experience gain at all levels by 50%.<br />
+<br />
+<br />
+That little tidbit was in the patch notes this morning so enjoy the faster leveling with your crafters!<br /><br /><a href="portal.php?article=0&amp;sid=012bcea6e0de149b082a579cf8419f08"></a></span></td>
+		  </tr>
+		  <tr>
+			<td class="row3" align="left" height="24"><span class="gensmall">: 15 :: <a href="viewtopic.php?t=4946&amp;sid=012bcea6e0de149b082a579cf8419f08"></a> (<a href="posting.php?mode=reply&amp;t=4946&amp;sid=012bcea6e0de149b082a579cf8419f08"></a>)</span></td>
+		  </tr>
+		</table>
+
+		<br />
+
+		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+		  <tr>
+			<td class="catHead" height="25"><span class="forumlink"><b>Announcement: Live Update #14</b></span></td>
+		  </tr>
+		  <tr>
+			<td class="row2" align="left" height="24"><span class="gensmall">Posted: <b>khalysta</b> @ Wed Oct 05, 2005 5:36 pm</span></td>
+		  </tr>
+		  <tr>
+			<td class="row1" align="left"><span class="gensmall" style="line-height:150%">Not a huge patch but some nice things anyways like the gambling game, no run speed reduction for stealth and imbued items.<br />
+<br />
+<br />
+*** Headlines ***<br />
+- Try your luck at the Gigglegibber Goblin Gamblin' Game!<br />
+<br />
+- No more run-speed reduction with stealth and invisibility!<br />
+<br />
+- Tell at a glance if you don't have enough power to use a spell or art!<br />
+<br />
+- Imbued item recipes now available for level 50+ crafters!<br />
+<br />
+- Many user interface windows have a new look!<br /><br /><a href="portal.php?article=1&amp;sid=012bcea6e0de149b082a579cf8419f08"></a></span></td>
+		  </tr>
+		  <tr>
+			<td class="row3" align="left" height="24"><span class="gensmall">: 0 :: <a href="viewtopic.php?t=4944&amp;sid=012bcea6e0de149b082a579cf8419f08"></a> (<a href="posting.php?mode=reply&amp;t=4944&amp;sid=012bcea6e0de149b082a579cf8419f08"></a>)</span></td>
+		  </tr>
+		</table>
+
+		<br />
+
+		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+		  <tr>
+			<td class="catHead" height="25"><span class="forumlink"><b>Announcement: Desert of Flames and the Combat Revamp are here!</b></span></td>
+		  </tr>
+		  <tr>
+			<td class="row2" align="left" height="24"><span class="gensmall">Posted: <b>khalysta</b> @ Tue Sep 13, 2005 10:53 am</span></td>
+		  </tr>
+		  <tr>
+			<td class="row1" align="left"><span class="gensmall" style="line-height:150%">*** Headlines ***<br />
+<br />
+- The Desert of Flames expansion pack is here!<br />
+- The long-awaited combat changes are upon us!<br />
+- View your faction standing and character details with the improved Persona window!<br />
+- Guilds no longer rely on patrons, so all members can contribute!<br />
+- Is your wood elf ready to tie the knot, or are you just tired of your surname? Now you can change your last name!<br />
+- Aquatic creatures have been banished from the land!<br />
+- Group experience debt has been removed!<br />
+- Encounter locking restrictions have been relaxed.<br />
+- You can now resurrect players that are outside of your group!<br />
+- Roleplayers rejoice! You can now use a ` or ' in your last name!<br />
+- Sort your Knowledge book by name, level, or category!<br />
+- Challenge other players with the new dueling system!<br />
+- Share items with guildmates using the new guild vault!<br /><br /><a href="portal.php?article=2&amp;sid=012bcea6e0de149b082a579cf8419f08"></a></span></td>
+		  </tr>
+		  <tr>
+			<td class="row3" align="left" height="24"><span class="gensmall">: 2 :: <a href="viewtopic.php?t=4849&amp;sid=012bcea6e0de149b082a579cf8419f08"></a> (<a href="posting.php?mode=reply&amp;t=4849&amp;sid=012bcea6e0de149b082a579cf8419f08"></a>)</span></td>
+		  </tr>
+		</table>
+
+		<br />
+
+		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+		  <tr>
+			<td class="catHead" height="25"><span class="forumlink"><b>Announcement: DoF NDA lifted!</b></span></td>
+		  </tr>
+		  <tr>
+			<td class="row2" align="left" height="24"><span class="gensmall">Posted: <b>khalysta</b> @ Sun Aug 21, 2005 2:27 pm</span></td>
+		  </tr>
+		  <tr>
+			<td class="row1" align="left"><span class="gensmall" style="line-height:150%">Moorgard posted this saturday night about the NDA being lifted:<br />
+<br />
+</span><br /><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><br /><tr> <br />	  <td><span class="genmed"><b>Quote:</b></span></td><br />	</tr><br />	<tr><br />	  <td class="quote">Participants in the Desert of Flames beta have been released from its Non-Disclosure Agreement (NDA) as of today.<br />
+ <br />
+We wanted to announce this in public so there aren't any doubts as to whether some of the posts you'll be seeing from testers are okay to read or not. <br />
+ <br />
+The beta boards will continue to require beta tester access both to view and post in.  This isn't to keep information secret, but for two reasons: <br />
+ <br />
+1) People posted messages there on the assumption that it was a private forum.  We don't want to change that midstream.<br />
+2) To keep the same feeling of a smaller community of people all testing on the same server.<br />
+ <br />
+Feel free to discuss DoF details in all appropriate public boards and channels.<br />
+</td><br />	</tr><br /></table><br /><span class="postbody"><br /><br /><a href="portal.php?article=3&amp;sid=012bcea6e0de149b082a579cf8419f08"></a></span></td>
+		  </tr>
+		  <tr>
+			<td class="row3" align="left" height="24"><span class="gensmall">: 6 :: <a href="viewtopic.php?t=4803&amp;sid=012bcea6e0de149b082a579cf8419f08"></a> (<a href="posting.php?mode=reply&amp;t=4803&amp;sid=012bcea6e0de149b082a579cf8419f08"></a>)</span></td>
+		  </tr>
+		</table>
+
+		<br />
+
+		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+		  <tr>
+			<td class="catHead" height="25"><span class="forumlink"><b>Announcement: Live Update #12</b></span></td>
+		  </tr>
+		  <tr>
+			<td class="row2" align="left" height="24"><span class="gensmall">Posted: <b>khalysta</b> @ Wed Jul 20, 2005 11:36 am</span></td>
+		  </tr>
+		  <tr>
+			<td class="row1" align="left"><span class="gensmall" style="line-height:150%">*** Headlines ***<br />
+<br />
+ - Change your bind point to anywhere in your home city!<br />
+- Invite other players into groups, raids, and guilds when they aren't in the same zone!<br />
+- Quest journal how holds 75 active quests!<br />
+- Sort your quests by the current zone for each quest step!<br />
+- Explore the Shattered Lands with greater freedom and ease of travel!<br />
+- Earn experience for your guild by collecting status loot!<br />
+- Learning tradeskills is made even easier with new artisan quests!<br />
+- Gain coin and better loot from defeating creatures!<br />
+- Guilds no longer lose status when members leave!<br />
+- Add a new hotkey to toggle between your two most recent targets!<br />
+- Lots of user interface tweaks and improvements!<br />
+- The quest completion ding is back!<br />
+- Mysterious activities around the mines of Norrath introduce our latest live event!<br /><br /><a href="portal.php?article=4&amp;sid=012bcea6e0de149b082a579cf8419f08"></a></span></td>
+		  </tr>
+		  <tr>
+			<td class="row3" align="left" height="24"><span class="gensmall">: 0 :: <a href="viewtopic.php?t=4733&amp;sid=012bcea6e0de149b082a579cf8419f08"></a> (<a href="posting.php?mode=reply&amp;t=4733&amp;sid=012bcea6e0de149b082a579cf8419f08"></a>)</span></td>
+		  </tr>
+		</table>
+
+		<br />
+
+		</td></tr></table>
+	</td>
+
+
+<tr><td>
+
+<br/>
+								</td></tr></table>
+</td>
+	</tr>
+</table>
+
+<div align="center"><span class="copyright"><br /><br /><br />
+
+
+
+<!--Powered by phpBB line, with phpBB linked to www.phpbb.com. If you refuse
+   to include even this then support on our forums may be affected.
+
+   The phpBB Group : 2002
+// -->
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> &copy; 2001, 2005 phpBB Group<br /></span></div>
+
+
+
+<br />
+<br />
+
+
+</body>
+</html>
+

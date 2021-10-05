@@ -1,0 +1,644 @@
+
+
+
+
+
+
+<html>
+<head>
+<title>Stone - An EQ guild on Zebuxoruk</title>
+<link rel='stylesheet' href='style.css' type='text/css'>
+
+<script language="JAVASCRIPT">
+
+function profile(theURL){
+ remote=window.open('','profile', 'width=800,height=600,resizable=no,scrollbars=no');
+ if(remote!= null) {
+  if(remote.opener == null)
+   remote.opener = self;
+   remote.location.href=theURL;
+}
+}
+
+
+<!--
+var myMsg =  "/GUILDMOTD - ";
+    myMsg += "sQooby:     NEW GUILD BIND POINT!!!  Plane of Knowledge at Soulbinder Jera.  REQUIRED to have a means of gate on you at ALL TIMES if you are a melee class.  Clerics, Druids and Wizards are the only classes exempt.  PLEASE change your Bind Point NOW.  Location is Neg200, Neg50.  That is straight out from the Plane of Tranquility stone.                          ";
+var i = 0;
+function scrollMsg() {
+	frontPart = myMsg.substring(i,myMsg.length);
+	backPart = myMsg.substring(0,i);
+	document.thisform.thisbanner.value = frontPart + backPart;
+	if (i < myMsg.length)
+		{
+		i++;
+		}
+	else
+		{
+		i = 0;
+		}
+	setTimeout("scrollMsg()", 150);
+	}
+//-->
+
+</script>
+
+</head>
+
+
+
+
+<body onLoad='scrollMsg()'>
+<span class='body'>
+
+
+<table class="table1" border=0 cellpadding=0 cellspacing=0 >
+ <tr class="table1-row1">
+  <td class="table1-row1-cell1" colspan=2 ><img src='grafx/banner.jpg'></td>
+ </tr>
+
+
+
+ <form name="thisform">
+ <tr class="table1-row2">
+ <td class="table1-row2-cell1" colspan=2 align=center>
+
+
+<!-- BEGIN MARQUEE ---------------------------------------------------------------------------------->
+
+
+
+<table  width=99% background="grafx/rock.jpg" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="grafx/border-topleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-leftmid.gif" width="12"><img src="grafx/dot.gif"></td>
+<td><input class="scrollMSG" type="TEXT" name="thisbanner"></td>
+<td background="grafx/border-rightmid.gif" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-botleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+</table>
+
+
+
+<!-- END MARQUEE ------------------------------------------------------------------------------------>
+
+       
+  </td>
+ </tr>
+ </form>
+
+
+
+
+
+
+ <tr class="table1-row3">
+  <td class="table1-row3-cell1">
+
+
+
+
+
+<!-- BEGIN MENU ------------------------------------------------------------------------------------->
+
+
+<table style='margin-bottom: 5px;' width=95% background="grafx/rock.jpg" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="grafx/border-topleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-leftmid.gif" width="12"><img src="grafx/dot.gif"></td>
+<td><span style='font-size: 10px;'>
+ <a href="news.php">NEWS</a><br>
+ <a href="quests.php">QUESTS</a><br>
+ <a href="links.php">LINKS</a><br>
+ <a href="gallery/">SCREEN SHOTS</a><br>
+
+
+ <hr size=1 align=left color='#000000'>
+ <a href="http://www.eq-stone.com/forums/" target="Forums">FORUMS</a><br>
+ <a href="chat.php">CHAT</a><br>
+ <a href="http://www.eq-stone.com/forums/calendar.php" target="Calendar">CALENDAR</a><br>
+
+
+ <hr size=1 align=left color='#000000'>
+ <a href="roster.php">MEMBER ROSTER</a><br>
+ <a href="traders.php">TRADE SKILLERS</a><br>
+
+
+ <hr size=1 align=left color='#000000'>
+ <a href="joining.php">ABOUT JOINING<br>
+ <a href="memberreqs.php">MEMBERSHIP REQS</a><br>
+ <a href="membershiprules.php">MEMBERSHIP RULES</a><br>
+ <a href="initiateprogram.php">INITIATE PROGRAM<br>
+ <a href="lootpolicy.php">LOOT POLICY</a><br>
+ <a href="guildstructure.php">GUILD STRUCTURE</a><br>
+
+
+ <hr size=1 align=left color='#000000'>
+ <a href="admin.php">MEMBER CONTROLS</a><br>
+</span>
+</td>
+<td background="grafx/border-rightmid.gif" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-botleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+</table>
+
+
+
+<!-- END MENU --------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+<!-- BEGIN HEADCOUNT -------------------------------------------------------------------------------->
+
+
+
+<table style='margin-bottom: 5px;' width=95% background="grafx/rock.jpg" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="grafx/border-topleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-leftmid.gif" width="12"><img src="grafx/dot.gif"></td>
+<td><div class='headcount-header' style='font-size: 11px; text-align: center;'>HEADCOUNT</div>
+<hr size=1 color='#000000'>
+<span style='font-size: 10px'>
+<b><u>First Broods</u></b><br>
+ Klandicar <font color=white>10</font><br>
+ Lendiniara <font color=white>8</font><br>
+ Lord Yelinak <font color=white>1</font><br>
+ Sontalak <font color=white>2</font><br>
+ Zlandicar <font color=white>7</font><br> 
+<br><b><u>North ToV</u></b><br>
+ Aaryonar <font color=white>4</font><br>
+ Cekenar <font color=white>2</font><br>
+ Dagarn .. Dest. <font color=white>3</font><br>
+ Eashen of the Sky <font color=white>6</font><br>
+ Ikatiar the Venom <font color=white>5</font><br>
+ Jorlleag <font color=white>2</font><br>
+ Lady Mirenilla <font color=white>2</font><br>
+ Lady Nevederia <font color=white>2</font><br>
+ Lord Feshlak <font color=white>3</font><br>
+ Lord Koi`Doken <font color=white>2</font><br>
+ Lord Kreizenn <font color=white>2</font><br>
+ Lord Vyemm <font color=white>2</font><br>
+ Sevalak <font color=white>2</font><br>
+ Zlexak <font color=white>2</font><br>
+<br><b><u>Sleeper's Tomb</u></b><br>
+ Master .. Guard <font color=white>3</font><br>
+ The Final Arbiter <font color=white>2</font><br>
+ The Progenitor <font color=white>1</font><br>
+ Tjudawos <font color=white>1</font><br>
+ Vyskudra <font color=white>1</font><br>
+ Zeixshi'Kar <font color=white>1</font><br>
+<br><b><u>Other Velious</u></b><br>
+ Dain Frostreaver IV <font color=white>1</font><br>
+ Derakor (Vindi) <font color=white>22</font><br>
+ Dozekar <font color=white>1</font><br>
+ Gozzrem <font color=white>7</font><br>
+ Kelorek`Dar <font color=white>2</font><br>
+ Telkorenar <font color=white>7</font><br>
+ Velketor <font color=white>5</font><br>
+ Wuoshi <font color=white>5</font><br>
+<br><b><u>Luclin</u></b><br>
+ Doomshade <font color=white>9</font><br>
+ Lcea Katta <font color=white>1</font><br>
+ Rhag Zhezum <font color=white>1</font><br>
+ Rhag Mozdezh <font color=white>1</font><br>
+ Rumblecrush <font color=white>13</font><br>
+ Servitor of Luclin <font color=white>1</font><br>
+ The Itraer Vius <font color=white>2</font><br>
+<br><b><u>PoP</u></b><br>
+ Xanamech <font color=white>1</font><br>
+<br><b><u>Kunark</u></b><br>
+ Gorenaire <font color=white>3</font><br>
+ Ragefire <font color=white>11</font><br>
+ Severilous <font color=white>9</font><br>
+ Talendor <font color=white>2</font><br>
+ Trakanon <font color=white>7</font><br>
+ Trakanon (UDB) <font color=white>4</font><br>
+ Venril Sathir <font color=white>6</font><br>
+<br><b><u>Old World</u></b><br>
+ Dracoliche <font color=white>3</font><br>
+ Lady Vox <font color=white>2</font><br>
+ Innoruuk <font color=white>2</font><br>
+ Ring of Slime <font color=white>1</font><br>
+</span>
+</td>
+<td background="grafx/border-rightmid.gif" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-botleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+</table> 
+
+
+
+
+<!-- END HEADCOUNT ---------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-- BEGIN CREDITS ---------------------------------------------------------------------------------->
+
+
+
+<table style='margin-bottom: 5px;' width=95% background="grafx/rock.jpg" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="grafx/border-topleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-topright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-leftmid.gif" width="12"><img src="grafx/dot.gif"></td>
+<td style='text-align: center;'> 
+
+     <span style='font-size: 10px'>
+            Design and Coding <br>by <a href="http://www.teakken.com/" target="Teakken">Teakken</a><p>
+     </span>
+
+     <span class="IE-button">
+            <a href="http://www.microsoft.com/ie/" target="Microsoft"><img src="grafx/ie.gif" border=0 alt="Download Microsoft Internet Explorer"></a>
+     </span>
+
+     <br>
+
+     <span class="NS-button">
+            <a href="http://www.netscape.com/" target="Netscape"><img src="grafx/ns.gif" width=88 height=31 border=0 alt="Download Netscape"></a>
+     </span>
+
+</td>
+<td background="grafx/border-rightmid.gif" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+
+<tr>
+<td background="grafx/border-botleft.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botmid.gif" height="12"><img src="grafx/dot.gif"></td>
+<td background="grafx/border-botright.gif" height="12" width="12"><img src="grafx/dot.gif"></td>
+</tr>
+</table> 
+
+
+
+<!-- END CREDITS ------------------------------------------------------------------------------------>
+
+  </td>
+
+  <td class="table1-row3-cell2">
+
+<!-- BEGIN CONTENT AREA ----------------------------------------------------------------------------------->
+<!-- BEGIN CONTENT AREA ----------------------------------------------------------------------------------->
+
+
+    <table class='content' style='margin-bottom: 5px;' width=100% border='0' cellspacing='0' cellpadding='0'>
+     <tr>
+      <td background='grafx/border-topleft.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-topmid.gif' height='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-topright.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+     </tr>
+     <tr> 
+      <td background='grafx/border-leftmid.gif' width='12'><img src='grafx/dot.gif'></td>
+      <td>&nbsp; 
+       <table border=0 cellpadding=0 cellspacing=0><tr>
+         <td valign=top width=90><span class='newsdate'>1.7.2003 &nbsp;</span><br><span class='newsby'>Teakken</span></td> 
+         <td><span class='newstitle'>Lord Yelinak, Sleeper's Tomb, and North ToV!</span></td> 
+       </tr></table> 
+       <blockquote><dd>Stone faces The Final Arbiter in Sleeper's Tomb
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-001.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+
+
+<p>Stone stepped up a notch over the holidays killing the last remaining First Brood dragon, Yelinak, gaining 11 new keys to Sleeper's Tomb and getting our first couple Primal weapons. We also took a stroll into North Temple of Veeshan dispatching a few dragons.
+<p><br>
+
+<dd>Lord Yelinak of Skyshrine
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-002.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-003.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+
+
+
+<p><b><u>FIRST BROODS</u></b><br>
+
+<br><b>&#183; Klandicar</b> killed 3 times.<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5551' target='outside'>Klandicar's Talisman</a> (ST KEY!) (Leloup, Vaelaru, Clariel)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4801' target='outside'>Reinforced Dragonhide Breastplate</a> (guildbank)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4818' target='outside'>Worked Dragonhide Breastplate</a> (Vaniari)<br>
+&nbsp;&nbsp;&nbsp; - Worked Dragonhide Vambraces<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6337' target='outside'>Worked Dragonhide Gauntlets</a>
+
+<br><b>&#183; Lendiniara The Keeper</b> killed 3 times.<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5910' target='outside'>Lendiniara's Tallisman</a> (ST KEY!) (Budin, Zeppotase, Kithril)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5909' target='outside'>Truesight Helm</a> (Loon)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5862' target='outside'>Silver Girdle of Stability</a> (Baradinus)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5911' target='outside'>Breastplate of Superiority</a> (Slithias)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6448' target='outside'>Ring of Relkententinar</a> (Eolair)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6072' target='outside'>Velium Maul of Superiority</a> (Kithril)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6207' target='outside'>Gloves of Stability</a> (Hybren)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6439' target='outside'>Mask of Superiority</a> (Bududan)
+
+<br><b>&#183; Lord Yelinak</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4669' target='outside'>Yelinak's Talisman</a> (ST KEY!) (Eolair)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5732' target='outside'>Dragon's Eye Sage Ring</a> (Tilania)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4552' target='outside'>Mask of the Dragon Slayer</a> (Zolan)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4552' target='outside'>Mask of the Dragon Slayer</a> (Xoralundrax)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6099' target='outside'>Very Large Coin Purse</a> (Zeppotase)<br>
+&nbsp;&nbsp;&nbsp; - Yelinak's Head for <a href='http://everquest.allakhazam.com/db/item.html?item=4363' target='outside'>Gauntlets of Dragon Slaying</a> (Hybren)
+
+<br><b>&#183; Sontalak</b><br>
+&nbsp;&nbsp;&nbsp; - Sontalak's Talisman (ST KEY!) (Solbringer)
+
+<br><b>&#183; Zlandicar</b> killed 3 times.<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4803' target='outside'>Zlandicar's Talisman</a> (ST Key) (Ashuria, Orkk, Zorealius)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4640' target='outside'>Frakadar's Talisman</a> (Rothan, Loon)<br>
+&nbsp;&nbsp;&nbsp; - ? Talisman (Naeric)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4778' target='outside'>Zlandicar's Heart</a> (Zorealius, Jaxar, Charinda)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4774' target='outside'>Cracked Claw of Zlandicar</a> (Loon, Kudane)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=4931' target='outside'>Massive Dragonclaw Shard</a> (Dungair, Vooyo)
+
+
+<p>
+<dd>Lord Feshlak of North ToV
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-004.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-005.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+
+<p><b><u>NORTH ToV</u></b><br>
+
+<br><b>&#183; Eashen of the Sky</b><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5725' target='outside'>Mask of the Sky</a> (Gereint)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5726' target='outside'>Ring of the Sky</a> (Thead)
+
+<br><b>&#183; Ikatiar the Venom</b><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5868' target='outside'>Ikatiar's Stinger</a> (Barthokaj)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6895' target='outside'>Ancient Wyvern Hide Boots</a> (Puffymami)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5896' target='outside'>Cloak of Venom</a> (Vooyo)
+
+<br><b>&#183; Aaryonar</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6498' target='outside'>Amulet of the Dreadgazer</a> (Ashuria)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5844' target='outside'>Hand of the Master</a> (Kathwar)
+
+<br><b>&#183; Lord Feshlak</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5858' target='outside'>Sky watchers Monacle</a> (Tymothy)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5834' target='outside'>Beldrons Vambracers of Impeity</a> (Juagher)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5924' target='outside'>Boots of the dead Dream</a> (Budin)
+
+<br><b>&#183; Dagarn the Destroyer</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5833' target='outside'>Bow of the Destroyer</a> (Juicer)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6322' target='outside'>Ancient Wurm hide Greaves</a> (Zeppotase)
+
+
+
+<p><b><u>LUCLIN</u></b><br>
+
+<br><b>&#183; Rhag Zhezum</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8768' target='outside'>Righteousness</a> (Naeani)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8124' target='outside'>Focus Crystal</a> (Quezil)
+
+<br><b>&#183; Rhag Mozdezh</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8759' target='outside'>Burning Scepter of Elements</a> (Soco)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8099' target='outside'>Crystal of Interpretation</a> (Zeppotase)
+
+<br><b>&#183; The Va'Dyn</b> killed twice<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=7305' target='outside'>Shaderock Bracer</a> (rotted)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=7129' target='outside'>Shaderock Robe</a> (Soco)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8823' target='outside'>Toetwister</a> (Brendan)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=7358' target='outside'>Shaderock Amulet</a> (Rahz)
+
+<br><b>&#183; Rumblecrush</b> killed 3 times.<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=9863' target='outside'>Breastplate of Integrity</a> (Groborg, Hyten)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=10333' target='outside'>Earring of Quirkiness</a> (Adolinas)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=10186' target='outside'>Soft Satin Gloves</a> (Leloup)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8995' target='outside'>Ethereal Silk Sleeves</a> (Ozman)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8925' target='outside'>Calamity's End</a> (Tilania)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=10259' target='outside'>Necklace of Wishes</a> (Nindor)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=10154' target='outside'>Belt of Scintillation</a> (Charinda)
+
+<br><b>&#183; Doomshade</b> killed 3 times.<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=10243' target='outside'>Cursed Halo of Thought</a> (Leloup, Baradinus)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8959' target='outside'>Pebble Crusher</a> (Kinani)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8988' target='outside'>Wand of Cursed Souls</a> (Soco)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=10444' target='outside'>Crystal Enervated Armband</a> (Tilania)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=9861' target='outside'>Petrified Rod</a> (Frassie)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=9010' target='outside'>Stave of Wit</a> (Blastor)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8962' target='outside'>Bracelet of Might</a> (guildbank[Hybren])<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=9012' target='outside'>Rod of Virtue</a> (Naeric)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=8994' target='outside'>Darkblood Sword</a> (Etelos)
+
+
+<p>
+<dd>Xanamech (pic stolen from Allakhazam's.)<br>
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-006.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+
+<p><b><u>PLANES OF POWER</u></b><br>
+
+<br><b>&#183; Xanamech Nezmirthafen</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=16478' target='outside'>Innovators Ring</a> (Zeulon)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=16392' target='outside'>Pulsing Phase Emitter</a> (Clariel)
+
+
+
+<p><b><u>VARIOUS</u></b><br>
+
+<br><b>&#183; The Final Arbiter</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=16298' target='outside'>Ancient Prismatic Brawl Stick</a> (Zeppotase)
+
+<br><b>&#183; Jortreva the Crusader</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=17881' target='outside'>Aegis of the Shrine</a> (Dungair)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=17684' target='outside'>Scepter of the Shrine </a> (Leloup)
+
+<br><b>&#183; Grendish the Crusader</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=17243' target='outside'>Cryptmasters Dart</a> (Dungair)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=17682' target='outside'> Mark of the Master</a> (Rahz?)
+
+<br><b>&#183; Susarrak the Crusader</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=17680' target='outside'>Belt of the Primalist</a> (Sssive)
+
+<br><b>&#183; Charayan the Crusader</b> <span style='color: yellow;'>NEW!</span><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=17441' target='outside'>Warder's Cloak</a> (Eolair)
+
+<br><b>&#183; Telkorenar</b><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5602' target='outside'>True Mithril Breastplate</a> (Dasi)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5861' target='outside'>Circlet of Suffering</a> (Trobriand, Thead)
+
+<br><b>&#183; Gozzrem</b><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=5874' target='outside'>Eye of Rigtorgn</a> (Slithias)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6397' target='outside'>Rekeklo's War Sword</a> (Slithias)<br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6441' target='outside'>Shovel of the Harvest</a> (Kohen)
+
+<br><b>&#183; Derakor the Vindicator</b><br>
+&nbsp;&nbsp;&nbsp; - <a href='http://everquest.allakhazam.com/db/item.html?item=6040' target='outside'>Boots of the Vindicator</a> (Slithias)
+
+
+
+
+
+
+<p>
+<dd>Dispatching Sussarak the Crusader on the way to Lord Yelinak<br>
+<center>
+<DIV Style="filter:shadow(color=black, direction=135, Strength=10); width: 460; text-align: center;">
+<table border=5 cellpadding=0 cellspacing=1><tr><td>
+<img src='gallery/news/20030107-007.jpg'></td></tr></table>
+<p>
+</div>
+<p>
+</center>
+</blockquote>  
+      </td> 
+      <td background='grafx/border-rightmid.gif' width='12'><img src='grafx/dot.gif'></td>
+     </tr> 
+     <tr>
+      <td background='grafx/border-botleft.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-botmid.gif' height='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-botright.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+     </tr>
+    </table> 
+    <table class='content' style='margin-bottom: 5px;' width=100% border='0' cellspacing='0' cellpadding='0'>
+     <tr>
+      <td background='grafx/border-topleft.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-topmid.gif' height='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-topright.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+     </tr>
+     <tr> 
+      <td background='grafx/border-leftmid.gif' width='12'><img src='grafx/dot.gif'></td>
+      <td>&nbsp; 
+       <center><span class='newsdate'>NEWS ARCHIVES</span></center><p> 
+       <blockquote> 
+		<b><u>2002</u></b><br> 
+         <a href='news.php?lookup_month=newsdate_month=03&lookup_year=02 '>March</a>, 
+         <a href='news.php?lookup_month=newsdate_month=04&lookup_year=02 '>April</a>, 
+         <a href='news.php?lookup_month=newsdate_month=05&lookup_year=02 '>May</a>, 
+         <a href='news.php?lookup_month=newsdate_month=06&lookup_year=02 '>June</a>,
+         <a href='news.php?lookup_month=newsdate_month=07&lookup_year=02 '>July</a>, 
+         <a href='news.php?lookup_month=newsdate_month=08&lookup_year=02 '>August</a>,<br> 
+         <a href='news.php?lookup_month=newsdate_month=09&lookup_year=02 '>September</a>, 
+         <a href='news.php?lookup_month=newsdate_month=10&lookup_year=02 '>October</a>, 
+         <a href='news.php?lookup_month=newsdate_month=11&lookup_year=02 '>November</a>, 
+         <a href='news.php?lookup_month=newsdate_month=12&lookup_year=02 '>December</a> 
+       </blockquote>  
+      </td> 
+      <td background='grafx/border-rightmid.gif' width='12'><img src='grafx/dot.gif'></td>
+     </tr> 
+     <tr>
+      <td background='grafx/border-botleft.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-botmid.gif' height='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-botright.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+     </tr>
+    </table> 
+    <table class='content' style='margin-bottom: 5px;' width=100% border='0' cellspacing='0' cellpadding='0'>
+     <tr>
+      <td background='grafx/border-topleft.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-topmid.gif' height='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-topright.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+     </tr>
+     <tr> 
+      <td background='grafx/border-leftmid.gif' width='12'><img src='grafx/dot.gif'></td>
+      <td>&nbsp; 
+       <center><span class='newsdate'>EVERQUEST NEWS</span></center><p> 
+       <blockquote> 
+		<SCRIPT language='JavaScript' SRC='http://eqlive.station.sony.com/includes/js_news/eq_headlines.jsp'></SCRIPT> 
+       </blockquote>  
+      </td> 
+      <td background='grafx/border-rightmid.gif' width='12'><img src='grafx/dot.gif'></td>
+     </tr> 
+     <tr>
+      <td background='grafx/border-botleft.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-botmid.gif' height='12'><img src='grafx/dot.gif'></td>
+      <td background='grafx/border-botright.gif' height='12' width='12'><img src='grafx/dot.gif'></td>
+     </tr>
+    </table> 
+
+
+
+<!-- END CONTENT AREA ------------------------------------------------------------------------------------->
+<!-- END CONTENT AREA ------------------------------------------------------------------------------------->
+
+  </td>
+ </tr>
+
+
+ <tr class="table1-row4">
+  <td class="table1-row4-cell1">&nbsp;</td>
+  <td class="table1-row4-cell2">&nbsp;</td>
+ </tr>
+
+</table>
+
+
+</span>
+</body>
+</html>

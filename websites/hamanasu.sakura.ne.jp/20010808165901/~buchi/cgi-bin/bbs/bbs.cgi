@@ -1,0 +1,613 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<style type="text/css">
+<!--
+body,tr,td,th	{ font-size: 9pt; font-family: Verdana; }
+a:link		{ color:#ffdd88; text-decoration: none;}
+a:visited	{ color:#ffcc88; text-decoration: none;}
+a:active	{ color:#ffaa11; text-decoration: none;}
+a:hover		{ color:#ffff00; text-decoration: underline;}
+big		{ font-size: 16pt; }
+small	{ font-size: 8pt; }
+-->
+</style>
+<title>魔法屋の板</title></head>
+<body text=#ffffff link=#ffdd88 vlink=#ffcc88 alink=#ffaa11 bgcolor=#000000>
+<div align=center>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2>
+<tr bgcolor=#000099 align=center>
+<td width=70>[<a href="../../top.html">ホーム</a>]</td>
+<td width=70>[<a href="bbs.cgi">記事表示</a>]</td>
+<td width=70>[<a href="bbs.cgi?action=sview">記事検索</a>]</td>
+<td width=70>[<a href="bbs.cgi?action=newch">キャラ登録</a>]</td>
+<td width=70>[<a href="bbs.cgi?action=login">ログイン</a>]</td>
+<td width=70>[<a href="bbs.cgi?action=rankdisp">ランキング</a>]</td></tr></table>
+<br><br><table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2>
+<td bgcolor=#000099><big><b>魔法屋の板</b></big></td></tr></table><br></div>
+<br><div align=center><table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2 width=200>
+<tr><td width=50% bgcolor=#000099 align=center><a href="bbs.cgi?action=newview">新規投稿</a></td>
+<td width=50% bgcolor=#000099 align=center><a href="bbs.cgi?action=sortbyres">レス新着記事</a></tr></td></table></div><br>
+<div align=center>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2><tr><td colspan=3 align=center bgcolor=#000099>
+<b> 1 <a href="bbs.cgi?page=2">&gt;2</a> 
+<a href="bbs.cgi?page=3">&gt;3</a> 
+<a href="bbs.cgi?page=4">&gt;4</a> 
+<a href="bbs.cgi?page=5">&gt;5</a> 
+<a href="bbs.cgi?page=6">&gt;6</a> 
+<a href="bbs.cgi?page=7">&gt;7</a> 
+<a href="bbs.cgi?page=8">&gt;8</a> 
+<a href="bbs.cgi?page=9">&gt;9</a> 
+</b></td></tr>
+<td bgcolor=#000099 width=33%>&nbsp;</td>
+<td bgcolor=#000099 width=33% align=center>
+<b>[Page 1/20]</b></td>
+<td bgcolor=#000099 width=33% align=right>
+<a href="bbs.cgi?page=2"><b>Next≫</b></a></td>
+</tr></table><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[328] ENC39SPELLについて</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=328">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#000000>&nbsp;&nbsp;もく＠即死ENC 
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>突然のカキコすみません。<br>こちらのサイトはSPELL購入などの際、<br>いつも参考にさせていただいております。<br>ありがとうございます。<br><br>ひとつ質問があります。<br>私は今Lv37ENCなのですが、Lv39ENC　SPELLに<br>MANA DRAINのWandaring　Mindってありますよね。<br>Veliusで出るということですが、<br>どのMOBが出すのかもし御存知でしたら教えていただけないでしょうか？<br>それともAUCで買ったほうが早いのかな？<br>出来れば自分で取りにいきたいので、<br>情報をお持ちの方いらっしゃいましたら<br>どうか教えてください。ｍ（＿＿）ｍ<br><br></font><div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 8/ 7(Tue) 14:48</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=328&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=328&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 45 恐怖の大魔王
+ <font color=#ff8800>からだ: 8659</font> <font color=#9999ff>あたま: 33042</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>記憶が定かではないのですが、Skyshireの石像君が出してくれた気がします。<br></font>
+<div align=right><small>
+<br><font color=#559955><b>ステータスブースト！</b></font>
+<br><font color=#990000>△からだ 485pt 獲得! △あたま 578pt 獲得!</font>
+<br><font color=#000099> 8/ 7(Tue) 14:52</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=328&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=328&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[327] 新型P4</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=327">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;Kazkun 
+<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20250</font> <font color=#9999ff>あたま: 9716</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>ソケット478対応のP4がそろそろでるようですね。<br>2GHzの製品もあるとか。<br>対応マザーの方が先に出荷されるみたい。インテルの845チップセット・マザー。</font><div align=right><small>
+<br><font color=#990000>△からだ 39pt 獲得! △あたま 38pt 獲得!</font>
+<br><font color=#000099> 8/ 6(Mon) 10:24</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=327&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=327&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7912</font> <font color=#9999ff>あたま: 30620</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>そして、現行P4は220ドルくらいになるっぽいですね。<br><br>さらにP3は製造終了。<br><br>そろそろP4もお手ごろ価格でしょうか。<br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 19pt 獲得! ▼あたま -4pt 損失..</font>
+<br><font color=#000099> 8/ 6(Mon) 18:07</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=327&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=327&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[326] 強引にＥＱ話</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=326">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;bleem! 
+<small> <font color=#ffaaaa>(Lv: 13 魔戦士
+ <font color=#ff8800>からだ: 1930</font> <font color=#9999ff>あたま: 1414</font>)</font>&nbsp;[<a href="mailto:daiou@cwo.zaq.ne.jp">MAIL</a>-<a href="http://members.tripod.co.jp/daiou/index.htm" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>　今、凄く楽しいです。やっぱＫＣとか行くと楽しいですね。<br><br>この週末はＦｒｏｚｅｎＴｏｗｅｒです。明日は６Ｆの<br>予定です。５ＦのＲｉｎｇって全然出ませんでした。<br><br>Ｉｔｅｍ投稿出来なくなって寂しいです。</font><div align=right><small>
+<br><font color=#990000>▼からだ -1pt 損失.. △あたま 4pt 獲得!</font>
+<br><font color=#000099> 8/ 4(Sat) 00:29</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=326&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=326&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20122</font> <font color=#9999ff>あたま: 9645</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>もうすぐLv50とか？<br>頑張ってください。<br>Kazkunの方は、BoVのCoM合宿がもうすぐあるので、そっちに参加する予定です。<br>いまだ、Lv47(^^ゞ</font>
+<div align=right><small>
+<br><font color=#990000>▼からだ -1pt 損失.. △あたま 6pt 獲得!</font>
+<br><font color=#000099> 8/ 4(Sat) 09:01</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=326&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=326&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7874</font> <font color=#9999ff>あたま: 30620</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>ぼちぼち再燃ですが、個人的には今はFF10が旬です（ｗ<br>ToFSでPLしながらFFでまったりとしています。<br><br>ItemListなんですが、このサーバーがとても重くて使いモノにならなかったのと、一時期EQ萎えだったので削除しました（＾＾；<br>色々と投稿してもらってたのに申し訳無いですが・・・。<br><br>5FのRingは、でるときはぼろぼろでるんですけどねぇ。<br>今は、Spellのほうが出やすいんですかね？<br>Spectorは、使いもしないCLR、SHM、DRUの39のやつばかり出してくれて、Bagを圧迫してくれます（ｗ<br><br><br></font>
+<div align=right><small>
+<br><font color=#990000>▼からだ -1pt 損失.. △あたま 1pt 獲得!</font>
+<br><font color=#000099> 8/ 4(Sat) 17:14</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=326&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=326&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;bleem!<small> <font color=#ffaaaa>(Lv: 13 魔戦士
+ <font color=#ff8800>からだ: 1933</font> <font color=#9999ff>あたま: 1442</font>)</font>&nbsp;[<a href="mailto:daiou@cwo.zaq.ne.jp">MAIL</a>-<a href="http://members.tripod.co.jp/daiou/index.htm" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>ホント、Ｓｐｅｌｌは無茶苦茶でますね。<br><br>ＲｉｎｇのＣａｍｐは暇な時にでもやりましょうかね。<br><br>昨日、６Ｆ行きました。ダンジョンでのＭＮＫのソロポイント<br>として美味しいです。ＬＶ４９だとソロで余裕ですな。<br><br>６Ｆに上がったトコへ１匹Ｐｕｌｌして、ＩｎｓｔｉｌｌＤｏｕｂｔを<br>かませば、その地点でウロウロするだけ！殴り放題。<br>ＬＶ５２位まで美味しく頂けそうです。<br><br>ＦｒｏｚｅｎＴｏｗｅｒのＭａｐは、いわくつきでしたね。<br>お願いしても頂けないでしょうか？やはり・・・。悪用は<br>しません。自分で使うだけにしますが、如何でしょうか？</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 2pt 獲得! △あたま 24pt 獲得!</font>
+<br><font color=#000099> 8/ 5(Sun) 17:50</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=326&rno=3"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=326&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7883</font> <font color=#9999ff>あたま: 30637</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>いや、全然問題ないっす（ｗ<br><br><A HREF="http://hamanasu.sakura.ne.jp/~buchi/eq/equip/zone/map/ToFS.html" TARGET="_blank"><font color=#ff0000>http://hamanasu.sakura.ne.jp/~buchi/eq/equip/zone/map/ToFS.html</font></A><br><br>これになりますが、４階が不完全なんで参考程度に。<br>広めてもらってもいいですが、地形だけなんで使い物になるかな？</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 6pt 獲得! △あたま 4pt 獲得!</font>
+<br><font color=#000099> 8/ 5(Sun) 21:24</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=326&rno=4"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=326&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;bleem!<small> <font color=#ffaaaa>(Lv: 13 魔戦士
+ <font color=#ff8800>からだ: 1999</font> <font color=#9999ff>あたま: 1443</font>)</font>&nbsp;[<a href="mailto:daiou@cwo.zaq.ne.jp">MAIL</a>-<a href="http://members.tripod.co.jp/daiou/index.htm" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>Ｍａｐ早速にありがとうございます。見てみると不必要な程<br>単純な構造ですね。やってみるとそんな感じしないんですが。<br><br>Ｋａｚｋｕｎもちょっと復活してはりましたね。ボチボチ<br>いきましょう。ＬＶ５０まで後１・５ｂｂｌ程です。<br>ＭＮＫＲｏｂｅはやっぱ諦め気味です。<br><br>あのタイムボカンの爆発風な絵柄のＲｉｎｇは是非欲しいですねえ。<br><br><br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 49pt 獲得! △あたま 1pt 獲得!</font>
+<br><font color=#000099> 8/ 5(Sun) 23:42</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=326&rno=5"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=326&rno=5
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[325] 続AO</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=325">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;Kazkun 
+<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20073</font> <font color=#9999ff>あたま: 9553</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>結局、MAはつらいので、Enfoキャラを作りました。Totto-女の子です。(^^ゞ<br>うちのゲームチームでも、AOを遊ぶ人がぼちぼち増えてきて、夕べは、初めてのチーム戦を遊びました。<br>Doctorがいないという欠陥チームでしたが、まぁ、レベルが低いうちはなんとかなるかな？<br>チーム用にDoctorキャラを作ってあるのですが、まだレベルが低いし、Enfが結構強いので、どうしようか考えてます。<br>AOはまだしばらく遊べそう。(^^ゞ</font><div align=right><small>
+<br><font color=#990000>△からだ 23pt 獲得! △あたま 13pt 獲得!</font>
+<br><font color=#000099> 7/27(Fri) 21:20</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20060</font> <font color=#9999ff>あたま: 9553</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>TSN@Japanでは、AOでのPvPについて、議論紛糾しているようです。<br>まぁ、紛糾というか、好き嫌いの言い合いのように見受けられます。(^^;<br>とはいえ、AOでは、2大陣営間の戦いが将来的に予定されているので、いやでも巻き込まれることになるはずですねぇ。<br>それがいやな人は、EQにでも移行するしかないでしょう。<br>ストーリーが流れるようになったとき、どうなるかですね。</font>
+<div align=right><small>
+<br><font color=#990000>▼からだ -4pt 損失.. </font>
+<br><font color=#000099> 7/29(Sun) 01:54</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7846</font> <font color=#9999ff>あたま: 30431</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>あの議論、論点がちょっとずつずれていってますね（＾＾；<br>Forumのほうはまだ見てませんが。<br><br>まぁ、Gridでた地点で待ち伏せPKは、システムの弱点を突いたExploitと言えなくもないですなぁ。<br>読み込み0なら対抗できる場合があっても、アレだと死確実ですから。<br>設計Missともいうか。<br><br>DEでもあったんですけど、結局はこの問題を解決できるGameはいまだ無しといったところですか。<br><br>２５％地域に行く奴が悪いとか下調べしないやつが悪いとか色々書いてますが、Game内でGridの飛び先が２５％地域だと示しているのならともかく、Web上で調べてから行けってのは攻略本をGameと一緒に揃えてくださいって言ってるのと同じ（＾＾；<br><br>PvPとPKを別にしているのは、PKが手段を問わない場合が多いからです。<br>＃FlagPK、ZonePKなどなど<br><br>とはいえ、もうキャンセル済みなんで関係ないっす（爆<br>Kazkunさんも気をつけて（＾＾；</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 6pt 獲得! △あたま 70pt 獲得!</font>
+<br><font color=#000099> 7/29(Sun) 16:51</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20060</font> <font color=#9999ff>あたま: 9585</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000><font color=#0055cc>&gt;あの議論、論点がちょっとずつずれていってますね（＾＾；</font><br><font color=#0055cc>&gt;Forumのほうはまだ見てませんが。</font><br>あの手の議論には、全然ついていけないので放置。(^^ゞ<br><br><font color=#0055cc>&gt;とはいえ、もうキャンセル済みなんで関係ないっす（爆</font><br><font color=#0055cc>&gt;Kazkunさんも気をつけて（＾＾；</font><br>Thanx.m(__)m<br>ロボペットがかわいいので、まだしばらくはAOやってます。<br>AOのメインキャラも、エンフォーサーからエンジニアに移行しつつあります。<br>EQの新しい追加パートがでたら、猫人間をプレイするために、たぶんやるでしょう。(^^ゞ<br>DAoCは、、、だんだんわからなくなってきた。(^^ゞ<br>スターウォーズがでたら、とりあえずAOはやめると思います。それまでAOが持つかどうかは不明。</font>
+<div align=right><small>
+<br><font color=#990000> △あたま 17pt 獲得!</font>
+<br><font color=#000099> 7/29(Sun) 20:55</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=3"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7866</font> <font color=#9999ff>あたま: 30490</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>なんか、Tokenの貰える条件変わったっぽいですね。<br>Token1000個集めた人はウハウハですねぇ(^^;<br><br>あと、なんか2号機が立ち上がったとか。<br>新サーバーはToken集めきついですけど、結局はディメンジョン間移動が出来ることになると思うので(というか、それでストーリーが進むはず・・・)皆平等なStart地点じゃないことには変わり無かったり。<br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 13pt 獲得! △あたま 14pt 獲得!</font>
+<br><font color=#000099> 7/31(Tue) 11:37</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=4"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20126</font> <font color=#9999ff>あたま: 9585</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000><font color=#0055cc>&gt;なんか、Tokenの貰える条件変わったっぽいですね。</font><br>うん、ダンジョンの敵を7割ぐらい倒した後に、ミッションをクリアすると、ほぼ貰えます。<br><br><font color=#0055cc>&gt;Token1000個集めた人はウハウハですねぇ(^^;</font><br>そだねぇ。凄いねぇ。(&gt;_&lt;)<br><br><font color=#0055cc>&gt;あと、なんか2号機が立ち上がったとか。</font><br><font color=#0055cc>&gt;新サーバーはToken集めきついですけど、結局はディメンジョン間移動が出来ることになると思うので(というか、それでストーリーが進むはず・・・)皆平等なStart地点じゃないことには変わり無かったり。</font><br><br>IPリングも出ないらしいから、そうとう格差はありますが、サーバー自体は、人が超少ないので、軽くて快適です。 ＼(^o^)／<br>でも、Rubi-ka1の方に新しくできるClanに参加する予定なので、体験程度で終わりっぽい。(&gt;_&lt;)<br>まぁ、平等なスタートというのは、どだい無理な話で、また、バグ技がまだ残っている限り、それを知っている人が<br>どんどんレベルや装備を稼ぐんだろうし。(^^ゞ</font>
+<div align=right><small>
+<br><font color=#996633><b>筋肉がもりもりわいてきた</b></font>
+<br><font color=#990000>△からだ 20pt 獲得! </font>
+<br><font color=#000099> 7/31(Tue) 12:59</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=5"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=5
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7875</font> <font color=#9999ff>あたま: 30499</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>しかしまぁ<br>お金増殖もアレですけど、TokenBoardの導入が遅すぎたのもあって、今頃バランス調整しにくるところがAOらしいというか（笑<br><br>ベータ終了間近でバランスどころじゃなかったんでしょうけど。<br><br>明日はPlayOnlineのベータ申し込み日。<br>抽選らしいので、まったり申し込み。<br>今回の目標は、続けること、かな（爆</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 6pt 獲得! △あたま 2pt 獲得!</font>
+<br><font color=#000099> 7/31(Tue) 18:28</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=6"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=6
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 20126</font> <font color=#9999ff>あたま: 9634</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000><font color=#0055cc>&gt;明日はPlayOnlineのベータ申し込み日。</font><br><font color=#0055cc>&gt;抽選らしいので、まったり申し込み。</font><br><font color=#0055cc>&gt;今回の目標は、続けること、かな（爆</font><br>ベータ当選するといいですね。<br>当選すると、FF11のテスターになれるの？</font>
+<div align=right><small>
+<br><font color=#990000> △あたま 26pt 獲得!</font>
+<br><font color=#000099> 7/31(Tue) 18:53</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=7"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=7
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7875</font> <font color=#9999ff>あたま: 30616</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>PlayOnlineのテスターは自動的らしいです。<br>まぁ、しばし様子見ですね。<br></font>
+<div align=right><small>
+<br><font color=#990000> △あたま 28pt 獲得!</font>
+<br><font color=#000099> 8/ 2(Thu) 12:57</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=325&rno=8"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=325&rno=8
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[324] AO(&gt;_&lt;)</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=324">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#660033>&nbsp;&nbsp;Kazkun 
+<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 20835</font> <font color=#9999ff>あたま: 10253</font>)</font></td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>AOは、もう終わったかも。(&gt;_&lt;)<br>パッチに次ぐパッチでがんばっているようだが、全然改善される様子が見られないし。<br>もうしばらくは遊んでいると思いますが、DAoCに期待かなぁ。(^^ゞ<br><br>Buchiは、FF11なの？</font><div align=right><small>
+<br><font color=#990000>△からだ 1pt 獲得! △あたま 8pt 獲得!</font>
+<br><font color=#000099> 7/22(Sun) 16:20</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 21490</font> <font color=#9999ff>あたま: 10270</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>MAで遊んでいたのですが、どうも他の戦士系の職業と比べて弱さが目立つようで、<br>特に得意なはずのMA技が、ショボすぎるみたい。(&gt;_&lt;)<br>2HBを持たせていますが、これでどこまで行けるかなぁ。(&gt;_&lt;)</font>
+<div align=right><small>
+<br><font color=#990000> △あたま 2pt 獲得!</font>
+<br><font color=#990000><font color=#666644>血まみれナックル</font> を手に入れた。</font>
+<br><font color=#000099> 7/22(Sun) 22:10</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7827</font> <font color=#9999ff>あたま: 29899</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>MAは、中盤から既に辛いそうですね（＾＾；<br><br>Rangedでしのぐしかないんでしょうか。<br><br>AOはCancelボタンをぽちっと押してしまったために、2Accとも<br>has been cancelled<br>になってしまいました（ｗ<br><br>いきなり消えるインターフェイス萎え。</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 2pt 獲得! △あたま 18pt 獲得!</font>
+<br><font color=#000099> 7/23(Mon) 11:08</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 21693</font> <font color=#9999ff>あたま: 10197</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>MAを一時中断して、EnforcerのTottoちゃんを育て始めました。<br>やっぱ、AOって武器が全てっすね。(&gt;_&lt;)<br>っていうか、こちら側のMA技のダメージが少ないのに、敵のMA攻撃のダメージが痛すぎ。(&gt;_&lt;)<br>バランスがメッチャ悪いです。</font>
+<div align=right><small>
+<br><font color=#999900><b>脳みそが筋肉になった</b></font>
+<br><font color=#990000>△からだ 62pt 獲得! ▼あたま -39pt 損失..</font>
+<br><font color=#000099> 7/23(Mon) 11:56</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=3"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7837</font> <font color=#9999ff>あたま: 30138</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>まだまだバランス修正入りそうですねぇ<br><br>これからどうなることやら。<br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 3pt 獲得! △あたま 45pt 獲得!</font>
+<br><font color=#000099> 7/24(Tue) 15:42</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=4"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 38 暗黒剣士
+ <font color=#ff8800>からだ: 19998</font> <font color=#9999ff>あたま: 9529</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>ほんとにどうなるんでしょうねぇ。(&gt;_&lt;)<br>プレイヤーが楽になる方向に行かないような気がする。(&gt;_&lt;)<br>EQと同じだよねぇ。(&gt;_&lt;)(T_T)</font>
+<div align=right><small>
+<br><font color=#666666><b>モンスターにやられた</b></font>
+<br><font color=#990000>▼からだ -517pt 損失.. ▼あたま -357pt 損失..</font>
+<br><font color=#000099> 7/24(Tue) 17:39</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=5"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=5
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;あちょちょ</td></tr><tr><td align=center><img src="icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>うーん、EQってことで　是非</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/26(Thu) 15:14</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=324&rno=6"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=324&rno=6
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[323] FF11</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=323">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;Buchi 
+<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7823</font> <font color=#9999ff>あたま: 29820</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>来週のJumpでテスター募集だとか。<br><br>ついに、集英社とも結託です（爆<br><br>はてさて。<br></font><div align=right><small>
+<br><font color=#990000>△からだ 3pt 獲得! △あたま 2pt 獲得!</font>
+<br><font color=#990000><font color=#666644>血まみれナックル</font> を手に入れた。</font>
+<br><font color=#000099> 7/22(Sun) 14:16</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=323&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=323&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7824</font> <font color=#9999ff>あたま: 29824</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>ちなみに、PlayOnlineのベータですが<br>Ethernetでの接続にも対応しているとのことなので<br><br>ちょっくらそっちにも応募してみます。<br><br>当選したら、PS2つけっぱなしかも（＾＾；</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 1pt 獲得! △あたま 1pt 獲得!</font>
+<br><font color=#000099> 7/22(Sun) 14:19</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=323&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=323&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 20835</font> <font color=#9999ff>あたま: 10266</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000><font color=#0055cc>&gt;当選したら、PS2つけっぱなしかも（＾＾；</font><br>つけっぱなしにして大丈夫なの？&lt;PS2</font>
+<div align=right><small>
+<br><font color=#990000> △あたま 7pt 獲得!</font>
+<br><font color=#000099> 7/22(Sun) 16:22</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=323&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=323&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 43 恐怖の大魔王
+ <font color=#ff8800>からだ: 7832</font> <font color=#9999ff>あたま: 29950</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>いや、一日中じゃなく、居る間だけ（＾＾；<br><br><A HREF="http://www.playonline.com/home/index-j.html" TARGET="_blank"><font color=#ff0000>http://www.playonline.com/home/index-j.html</font></A><br>FFXで使っていたカウンタがまたもやくるくる回ってます。<br><br>Ethernetでの接続にも対応するとのことなので、とりあえず必須環境は揃ってることになります。<br><br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 3pt 獲得! △あたま 12pt 獲得!</font>
+<br><font color=#000099> 7/23(Mon) 11:10</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=323&rno=3"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=323&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;しりうす@war29</td></tr><tr><td align=center><img src="icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>はじめまして<br>PS2は結構つけっぱなしで動いていました。<br>FF10やりながらテレビに切り替えそのまま爆睡…<br>といったことをやってしまったんですが、暴走せず<br>に、戦闘画面のままでした（汗）<br><br>PlayOnlineはEthernet使えるんですか？？結構期待…</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 8/ 8(Wed) 05:06</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=323&rno=4"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=323&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[322] Kingdom Hearts</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=322">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;Buchi 
+<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7064</font> <font color=#9999ff>あたま: 29987</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>SQUAREはDISNYと結託してたのですか（＾＾；<br>ミスマッチです（苦笑<br><br>SQUAREキャラが鍵振りかざして出てきた奴がダンボじゃ(´Д`) <br></font><div align=right><small>
+<br><font color=#990000>△からだ 6pt 獲得! </font>
+<br><font color=#000099> 7/19(Thu) 07:27</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=322&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=322&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7066</font> <font color=#9999ff>あたま: 30012</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>ということで、FF10をご購入。<br>GAMEより先におまけを見ております。<br><br>FFMovieは、たしかに映像が実写と見分けつきませんね。<br>みてみようか、という気にはさせてくれます。<br><br>FF11は、これが実際の動作画像であれば、大体60～70%くらいは完成しているんじゃないですかね。<br>たしかにEQタイプみたいな感じでした。<br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 1pt 獲得! △あたま 6pt 獲得!</font>
+<br><font color=#000099> 7/19(Thu) 07:33</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=322&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=322&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 20829</font> <font color=#9999ff>あたま: 10202</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>FF10買ったのかぁ。おもしろい？<br>ゲームの世界観がまたFF8のようなものだと、即、止めになってしまうのは確か。(&gt;_&lt;)<br>でも、FFシリーズって、召還モンスターのVisualEffectが派手なだけで、すぐ飽きちゃうんだけど。(&gt;_&lt;)<br>どうしようかなぁ。やってみようかなぁ。</font>
+<div align=right><small>
+<br><font color=#990000>▼からだ -1pt 損失.. △あたま 26pt 獲得!</font>
+<br><font color=#000099> 7/19(Thu) 09:58</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=322&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=322&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7310</font> <font color=#9999ff>あたま: 29811</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>FFは見るもので、Playするものではありません（笑<br><br>見て面白いと思えればそれでよしかと。</font>
+<div align=right><small>
+<br><font color=#999900><b>脳みそが筋肉になった</b></font>
+<br><font color=#990000>△からだ 170pt 獲得! ▼あたま -48pt 損失..</font>
+<br><font color=#000099> 7/20(Fri) 16:22</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=322&rno=3"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=322&rno=3
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 20832</font> <font color=#9999ff>あたま: 10238</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>やっぱ、FFはゲームじゃなくてアニメなのね。(^^ゞ</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 1pt 獲得! △あたま 19pt 獲得!</font>
+<br><font color=#000099> 7/21(Sat) 15:32</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=322&rno=4"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=322&rno=4
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[321] ENC Epic</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=321">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#000000>&nbsp;&nbsp;EQ ENC 
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>ENC Epicのページなくなっちゃったですか？<br>貴重な情報源だったんですが．．．</font><div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/19(Thu) 02:26</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=321&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=321&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7056</font> <font color=#9999ff>あたま: 29987</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>必要でしたらすぐに復活できます。<br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 8pt 獲得! △あたま 1pt 獲得!</font>
+<br><font color=#000099> 7/19(Thu) 07:25</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=321&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=321&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;EQ ENC</td></tr><tr><td align=center><img src="icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>復活ありがとうございます。<br>参考にさせて頂きコンプリート目指します。</font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/20(Fri) 11:45</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=321&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=321&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[320] DAoC</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=320">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#336600>&nbsp;&nbsp;Buchi 
+<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7022</font> <font color=#9999ff>あたま: 29908</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>ついに全種族揃い踏みとのこと。<br>ElfとかいるRealmが登場です。<br><br>Betaも4になり、3までのキャラはWipe。<br>パッチは44MBってことです。<br><br>私はまだLoginできるんでしょうかね（＾＾；<br></font><div align=right><small>
+<br><font color=#990000>▼からだ -1pt 損失.. </font>
+<br><font color=#000099> 7/18(Wed) 11:01</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=320&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=320&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#660033>&nbsp;&nbsp;&nbsp;Kazkun<small> <font color=#ffaaaa>(Lv: 39 暗黒剣士
+ <font color=#ff8800>からだ: 20832</font> <font color=#9999ff>あたま: 10154</font>)</font></td></tr><tr><td align=center><img src="icon/druid.gif" border=0>
+</td><td width=90%><font color=#000000>ふむふむ。<br>順調に仕上がっているのかなぁ？</font>
+<div align=right><small>
+<br><font color=#990000>△からだ 37pt 獲得! △あたま 3pt 獲得!</font>
+<br><font color=#000099> 7/18(Wed) 16:55</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=320&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=320&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7044</font> <font color=#9999ff>あたま: 29983</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>どうでしょう（＾＾；<br><br>で、BetaをTeam単位で募集しているあたり、EQよりもさらにTeamPlay前提でのバランス取りになっているような気もします。<br>私の根性だと、LV5で挫折です（ｗ<br><br>今晩あたり、とりあえずElfでも作ってみるか・・・。<br></font>
+<div align=right><small>
+<br><font color=#990000>△からだ 15pt 獲得! △あたま 18pt 獲得!</font>
+<br><font color=#000099> 7/18(Wed) 18:17</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=320&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=320&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table cellpadding=1 cellspacing=2 bordercolor=#000099 bgcolor=#dcdcff border=2 width=80%>
+<tr><td bgcolor=#000099><font color=#ffaaaa><b>■[319] AO買ってみたんですが…</b>
+<div align=right><a href="bbs.cgi?action=resview&resno=319">
+<img src="icon/res.gif" border=0></a></div></td></tr>
+<tr><td bgcolor=#000000>&nbsp;&nbsp;へっぽこレンジャー 
+</td></tr><tr><td align=right><table border=0 cellpadding=1 cellspacing=1 width=95%><tr><td align=center>
+<img src="icon/blank.gif" width=32 height=32 border=0>
+</td><td width=90%><font color=#000000>　すんません、初めての書き込みなんですが、いきなり質問です。<br>ＡＯインストールして、ＣＤキーとアカウントをレジストしたま<br>ではＯＫだったんですが、肝心のソフトの方が、Dimension情報を<br>取ってきてくれませぬ。<br><br>　これってサーバが落ちてるんでしょうか、それとも何か設定ミス<br>なのか、単にネットが重いんでしょうか…。<br><br>　アカウントのほうを見に行くと、キャンセル？　だけは受け付け<br>てくれる画面がでてきまして。<br><br>　何かわかるようでしたら教えてくださいまし。<br></font><div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/13(Fri) 19:52</font><font color=#000000>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=319&rno=0"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=319&rno=0
+"><font color=#000099>削除</font></a>]</font></small>
+</div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#336600>&nbsp;&nbsp;&nbsp;Buchi<small> <font color=#ffaaaa>(Lv: 42 恐怖の大魔王
+ <font color=#ff8800>からだ: 7024</font> <font color=#9999ff>あたま: 29908</font>)</font>&nbsp;[<a href="mailto:buchi@himawari.sakura.ne.jp">MAIL</a>-<a href="http://www.himawari.sakura.ne.jp/~buchi/" target=_blank>URL</a>]
+</td></tr><tr><td align=center><img src="icon/sorceress.gif" border=0>
+</td><td width=90%><font color=#000000>どうもDimension情報が入っているファイルがインストールされない場合があるようです。<br>ここのLinkからTNSというAO系サイトに行けますので、その際の対処法が載っていたと思います。<br><br>一応<br><A HREF="http://hamanasu.sakura.ne.jp/~buchi/ao/shadow/Dimensions.txt" TARGET="_blank"><font color=#ff0000>http://hamanasu.sakura.ne.jp/~buchi/ao/shadow/Dimensions.txt</font></A><br>がそのファイルなんですが、これを<br>\Anarch Online\cd_image\data\launcher<br>に入れてみると状況が変わるかもしれません<br></font>
+<div align=right><small>
+<br><font color=#990000>▼からだ -1pt 損失.. △あたま 21pt 獲得!</font>
+<br><font color=#990000><font color=#666644>武者鎧</font> が壊れてしまった。</font>
+<br><font color=#000099> 7/14(Sat) 02:08</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=319&rno=1"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=319&rno=1
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+<div align=right><table border=0 width=90%><tr><td colspan=2 bgcolor=#000000>&nbsp;&nbsp;&nbsp;へっぽこレンジャー</td></tr><tr><td align=center><img src="icon/paladin.gif" border=0>
+</td><td width=90%><font color=#000000>　一番大きいパッチをあてて、Buchiさんに言われたファイルを<br>入れてみたら、ＯＫになりました。ありがとうございます。<br><br>　いきなり「こ、このク○ゲ～がああああ」となる所でしたｗ<br></font>
+<div align=right><small>
+<br><font color=#990000> </font>
+<br><font color=#000099> 7/14(Sat) 19:08</font><font color=#000000><small>
+ &nbsp;&nbsp;[<a href="bbs.cgi?action=edit&lno=319&rno=2"><font color=#000099>編集</font></a>]
+[<a href="bbs.cgi?action=delete&lno=319&rno=2
+"><font color=#000099>削除</font></a>]</font></small>
+</small></div></td></tr></table>
+</td></tr></table>
+<br><br>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2><tr><td colspan=3 align=center bgcolor=#000099>
+<b> 1 <a href="bbs.cgi?page=2">&gt;2</a> 
+<a href="bbs.cgi?page=3">&gt;3</a> 
+<a href="bbs.cgi?page=4">&gt;4</a> 
+<a href="bbs.cgi?page=5">&gt;5</a> 
+<a href="bbs.cgi?page=6">&gt;6</a> 
+<a href="bbs.cgi?page=7">&gt;7</a> 
+<a href="bbs.cgi?page=8">&gt;8</a> 
+<a href="bbs.cgi?page=9">&gt;9</a> 
+</b></td></tr>
+<td bgcolor=#000099 width=33%>&nbsp;</td>
+<td bgcolor=#000099 width=33% align=center>
+<b>[Page 1/20]</b></td>
+<td bgcolor=#000099 width=33% align=right>
+<a href="bbs.cgi?page=2"><b>Next≫</b></a></td>
+</tr></table><br>
+<br><br></div>
+<div align=right>
+<table border=2 bordercolor=#000099 bgcolor=#dcdcff cellpadding=2 cellspacing=2>
+<tr><td bgcolor=#000099 align=right><a href="http://www18.big.or.jp/~sugar/diablo" target=_new>
+GAMEBBS Created by Sug</a><br>Version 1.03</tr></td></table></div>
+</body></html>

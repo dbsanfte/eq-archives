@@ -1,0 +1,409 @@
+<HTML>
+<HEAD>
+	<TITLE>Calendar</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function viewday (yr,mm,dd) {
+	window.open('/cgi-brellserilis/calendar/calendar.pl?ACTION=VIEWDAY&Year=' +yr+ '&Month=' +mm+ '&Date=' +dd + '&config=calendar.cfg','VIEWDAY','scrollbars,resizable,height=400,width=450');
+	}
+</SCRIPT>
+<style>
+<!--
+ INPUT.button { background-color:#eeeeee;font:arial;font-weight:bold;color:#000080;font-size:xx-small; }
+-->
+</style>
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#D0B078" ALINK="#A87840" VLINK="#E8B050">
+
+<P>
+<CENTER>
+<a href="http://www.brellserilis.net"><img border=0 src="http://www.brellserilis.net/images/BrellKingLogo.jpg" width=595 height=149 alt="Brell Serilis.Net"></a>
+<br><br>
+<TABLE BORDER=1 CELLPADDING=3 CELLSPACING=0 BORDERCOLOR=#000000>
+<TR>
+	<TD ALIGN=CENTER BGCOLOR=#D0B078>
+		<TABLE BORDER=0 CELLPADDING=0 cellspacing=0 BGCOLOR=#666666>
+	<TR><TD COLSPAN=7 VALIGN=TOP ALIGN=CENTER><font size=1><a href="/cgi-brellserilis/calendar/calendar.pl?Month=10&Year=2000&config=calendar.cfg">October&nbsp;2000</a></font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>1</font></TD><TD VALIGN=TOP><font size=1>2</font></TD><TD VALIGN=TOP><font size=1>3</font></TD><TD VALIGN=TOP><font size=1>4</font></TD><TD VALIGN=TOP><font size=1>5</font></TD><TD VALIGN=TOP><font size=1>6</font></TD><TD VALIGN=TOP><font size=1>7</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>8</font></TD><TD VALIGN=TOP><font size=1>9</font></TD><TD VALIGN=TOP><font size=1>10</font></TD><TD VALIGN=TOP><font size=1>11</font></TD><TD VALIGN=TOP><font size=1>12</font></TD><TD VALIGN=TOP><font size=1>13</font></TD><TD VALIGN=TOP><font size=1>14</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>15</font></TD><TD VALIGN=TOP><font size=1>16</font></TD><TD VALIGN=TOP><font size=1>17</font></TD><TD VALIGN=TOP><font size=1>18</font></TD><TD VALIGN=TOP><font size=1>19</font></TD><TD VALIGN=TOP><font size=1>20</font></TD><TD VALIGN=TOP><font size=1>21</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>22</font></TD><TD VALIGN=TOP><font size=1>23</font></TD><TD VALIGN=TOP><font size=1>24</font></TD><TD VALIGN=TOP><font size=1>25</font></TD><TD VALIGN=TOP><font size=1>26</font></TD><TD VALIGN=TOP><font size=1>27</font></TD><TD VALIGN=TOP><font size=1>28</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>29</font></TD><TD VALIGN=TOP><font size=1>30</font></TD><TD VALIGN=TOP><font size=1>31</font></TD></TABLE>
+
+	</TD>
+	<TD COLSPAN=5 VALIGN=MIDDLE BGCOLOR=#D0B078 ALIGN=CENTER>
+	<font color=#333333 size=+2 face="verdana"><b>November 2000</b></font><br>
+
+	<form action='/cgi-brellserilis/calendar/calendar.pl' method=post><input type='hidden' name='config' value='calendar.cfg'><select name='Month' size=1><option value='1' >January</option><option value='2' >February</option><option value='3' >March</option><option value='4' >April</option><option value='5' >May</option><option value='6' >June</option><option value='7' >July</option><option value='8' >August</option><option value='9' >September</option><option value='10' >October</option><option value='11'  SELECTED >November</option><option value='12' >December</option></select><select name='Year' size=1><option value='1999' >1999
+<option value='2000'  SELECTED >2000
+<option value='2001' >2001
+<option value='2002' >2002
+</select><input type="submit" CLASS="button" value="Go"><br></form>
+	
+	<font size="-1" color="#333333"><i>Click on any date to view details for that day.</i></font>
+	</TD>
+	<TD ALIGN=CENTER BGCOLOR=#D0B078>
+		<TABLE BORDER=0 CELLPADDING=0 cellspacing=0 BGCOLOR=#666666>
+	<TR><TD COLSPAN=7 VALIGN=TOP ALIGN=CENTER><font size=1><a href="/cgi-brellserilis/calendar/calendar.pl?Month=12&Year=2000&config=calendar.cfg">December&nbsp;2000</a></font></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD VALIGN=TOP><font size=1>1</font></TD><TD VALIGN=TOP><font size=1>2</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>3</font></TD><TD VALIGN=TOP><font size=1>4</font></TD><TD VALIGN=TOP><font size=1>5</font></TD><TD VALIGN=TOP><font size=1>6</font></TD><TD VALIGN=TOP><font size=1>7</font></TD><TD VALIGN=TOP><font size=1>8</font></TD><TD VALIGN=TOP><font size=1>9</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>10</font></TD><TD VALIGN=TOP><font size=1>11</font></TD><TD VALIGN=TOP><font size=1>12</font></TD><TD VALIGN=TOP><font size=1>13</font></TD><TD VALIGN=TOP><font size=1>14</font></TD><TD VALIGN=TOP><font size=1>15</font></TD><TD VALIGN=TOP><font size=1>16</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>17</font></TD><TD VALIGN=TOP><font size=1>18</font></TD><TD VALIGN=TOP><font size=1>19</font></TD><TD VALIGN=TOP><font size=1>20</font></TD><TD VALIGN=TOP><font size=1>21</font></TD><TD VALIGN=TOP><font size=1>22</font></TD><TD VALIGN=TOP><font size=1>23</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>24</font></TD><TD VALIGN=TOP><font size=1>25</font></TD><TD VALIGN=TOP><font size=1>26</font></TD><TD VALIGN=TOP><font size=1>27</font></TD><TD VALIGN=TOP><font size=1>28</font></TD><TD VALIGN=TOP><font size=1>29</font></TD><TD VALIGN=TOP><font size=1>30</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>31</font></TD></TABLE>
+
+	</TD>
+</TR>
+<TR>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Sun</font></TH>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Mon</font></TH>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Tue</font></TH>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Wed</font></TH>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Thu</font></TH>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Fri</font></TH>
+	<TH WIDTH=14% BGCOLOR=#333333><font face="verdana" SIZE="-1">Sat</font></TH>
+</TR>
+
+<TR><TD COLSPAN=3 >&nbsp;</TD>
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,1);">1</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,2);">2</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,3);">3</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		Fear - Abyss<br>
+Hate - Silent Redemption<br>
+Sky - Clan Spiritslammer<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,4);">4</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		Fear - Coven of Lore<br>
+Hate - Combine Alliance<br>
+Sky - Clan Spiritslammer<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,5);">5</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		Fear - Warriors or Wrath<br>
+Hate - The Burning Shield<br>
+Sky - Skyre Draneth<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,6);">6</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		Fear - Foxxi<br>
+Hate - Abyss<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,7);">7</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		Fear - Europa Tribes<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,8);">8</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Kityania<br>
+HATE - Darkguard<br>
+NAGAFEN -- Guardians of the Relics<br>
+COM -- Grand Norrathian Vanguard<br>
+SEVERILIOUS -- Watchers<br>
+KEDGE -- Cardulus (IND)<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,9);">9</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Adventurers509<br>
+HATE - Skyre Draneth<br>
+CHARDOK  -- Smashn (IND)<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,10);">10</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Vigilant Eyes of Norrath<br>
+HATE - Grand Norrathian Vanguard<br>
+SKY - Watchers<br>
+FG -- Blood Inferno<br>
+CHARDOK -- Skyre Draneth<br>
+HOLE -- Steejans (IND)<br>
+VENRIL -- Will to Power<br>
+COM -- Clan Spiritslammer<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,11);">11</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Combine Alliance<br>
+HATE - Soul of Samurai<br>
+SKY - Watchers<br>
+FG -- Evoluxa<br>
+TRAK -- Silent Redemption<br>
+COM -- Europa Tribes<br>
+KEDGE -- Mystical Avengers<br>
+HOLE -- Skyre Draneth<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,12);">12</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Grand Norrathian Vanguard<br>
+HATE - Clan Spiritslammer<br>
+SKY - Watchers<br>
+VOX-- The Burning Shield<br>
+CHARDOK -- Kassim (IND)<br>
+COM -- Warriors of Wrath<br>
+FG -- Crimson Rebellion<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,13);">13</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Lost Adventurers <br>
+HATE - Europa Tribes<br>
+FG -- Darkguard<br>
+FG -- The Burning Shield<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,14);">14</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Legion of Heroes<br>
+HATE - Utope (IND)<br>
+FG -- EB/UF<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,15);">15</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FG -- Lost Adventurers<br>
+FEAR -- Thunder Legion<br>
+HATE -- Silent Redemption<br>
+VENRIL -- Skyre Draneth<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,16);">16</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		NAGAFEN -- Ymaeel (IND)<br>
+FEAR -- Merry Band<br>
+SKY -- Blood Inferno<br>
+TRAK -- Skyre Draneth<br>
+COM -- Watchers<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,17);">17</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR - Watchers<br>
+HATE - Harpers<br>
+SKY - Silent Redemption<br>
+FG -- Grand Norrathian Vanguard<br>
+KEDGE -- Legion of Heroes<br>
+VOX -- Warriors of Wrath<br>
+VENRIL -- Enshadowed<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#333333>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,18);">18</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		SKY - Silent Redemption<br>
+FEAR - The Burning Shield<br>
+HATE - A Higher Order<br>
+KEDGE -- Grand Norrathian Vanguard<br>
+FG -- Combine Alliance<br>
+CHARDOK -- Enshadowed<br>
+COM -- Quorum Angeles<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,19);">19</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		SKY - Silent Redemption<br>
+FEAR -- Flame of Honour<br>
+HATE -- Lost Adventurers<br>
+CHARDOK -- Watchers<br>
+COM -- Gerhalt (IND)<br>
+FG -- Blood Inferno<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,20);">20</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		HATE -- Ymaeel (IND)<br>
+FEAR -- Darkguard<br>
+COM -- The Burning Shield<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,21);">21</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Silent Redemption<br>
+HATE -- Shields of Light<br>
+COM -- Legion of Heroes<br>
+FG -- Warriors of Wrath<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,22);">22</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Raidyen<br>
+HATE -- Grand Norrathian Vanguard<br>
+FG -- Guardian Revelation<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,23);">23</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Warriors of Wrath<br>
+HATE -- Europa Tribes<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,24);">24</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Harpers<br>
+HATE -- Art of War<br>
+FG -- Vigiliant Eyes of Norrath<br>
+CHARDOK -- Legion of Heroes<br>
+KEDGE -- Shields of Light<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,25);">25</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Crimson Rebellion<br>
+HATE -- Abyss<br>
+SKY -- Legion of Heroes<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,26);">26</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Shields of Light<br>
+HATE -- The Burning Shield<br>
+SKY -- Legion of Heroes<br>
+KEDGE -- Quorum Angeles<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,27);">27</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Europa Tribes<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,28);">28</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FEAR -- Ailaas (IND?)<br>
+HATE -- Enshadowed<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,29);">29</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		HATE -- Darkguard<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#666666>
+	<FONT SIZE=+1><B><a href="javascript:viewday(2000,11,30);">30</a></B></FONT>
+	<FONT SIZE="-2" face="Verdana"><br>
+		FG -- Sentinels of Tunare<br>
+FEAR -- Quorum Angeles<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+<TD COLSPAN=2 ><P>&nbsp;</TD>
+<TR>
+	</TD>
+</TR>
+
+
+</TABLE>
+<BR>
+<font face="Verdana" size="+1" color="#FFFFFF">Direct all scheduling issues or submissions to Justise</font></td></tr>
+
+</CENTER>
+
+<BR><center><font size='-1'><i>Calendar Program &copy; Copyright 1999 <a href='http://www.mattkruse.com/'>Matt Kruse</a></i></font></center>
+</body>
+</HTML>
+

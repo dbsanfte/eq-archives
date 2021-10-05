@@ -1,0 +1,25 @@
+<html><head><title>Ydalir Member List</title></head><BODY BGCOLOR=#555522 TEXT=#ffffff><FONT SIZE=+2>Ydalir Member List</FONT><BR><BR>
+<A HREF="./entryform.cgi">新規登録</A>　<A HREF="./member.cgi?dsp_trade=off">初期表示</A>　<A HREF="./member.cgi?dsp_trade=on">詳細を表示</A>　<A HREF="http://rajunavi.cside1.jp/eq/ydalir/main.htm">戻る</A><BR><BR>
+
+<TABLE BORDER="0"><TR BGCOLOR=#ffffff><TD><A HREF="./member.cgi?sort=entryname&dsp_trade=off">Name</A></TD><TD><A HREF="./member.cgi?sort=level&dsp_trade=off">Lv</a></TD><TD><A HREF="./member.cgi?sort=race&dsp_trade=off">Race</a></TD><TD><A HREF="./member.cgi?sort=class&dsp_trade=off">Class</a></TD><TD>Comments</TD><TD><A HREF="./member.cgi?sort=update&dsp_trade=off">UpDate</a></TD></TR>
+<TR BGCOLOR=#007700><TD>Alianhrod</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>57</FONT></TD><TD>Human</TD><TD>PAL</TD><TD></TD><TD><A HREF="./entryform.cgi?entryname=alianhrod">01/10/27</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Morrigain</TD><TD ALIGN=RIGHT>20</TD><TD>Dark Elf</TD><TD>ENC</TD><TD></TD><TD><A HREF="./entryform.cgi?entryname=morrigain">01/12/10</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Daphne</TD><TD ALIGN=RIGHT><FONT COLOR=#ff0000>60</FONT></TD><TD>High Elf</TD><TD>CLR</TD><TD>そしてKingもNon-KoSに</TD><TD><A HREF="./entryform.cgi?entryname=daphne">01/11/11</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Daphy</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>53</FONT></TD><TD>Halfling</TD><TD>DRU</TD><TD>Forage(200)～</TD><TD><A HREF="./entryform.cgi?entryname=daphy">01/11/26</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Foie</TD><TD ALIGN=RIGHT>49</TD><TD>Halfling</TD><TD>WAR</TD><TD>こっちもCoVに</TD><TD><A HREF="./entryform.cgi?entryname=foie">01/12/03</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Flares</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>53</FONT></TD><TD>Dark Elf</TD><TD>SHD</TD><TD>そろそろLv抜かれそう…</TD><TD><A HREF="./entryform.cgi?entryname=flares">01/10/14</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Flarec</TD><TD ALIGN=RIGHT>39</TD><TD>Gnome</TD><TD>CLR</TD><TD>ついにExp Resゲット。SoLでGnomeピンチ！？</TD><TD><A HREF="./entryform.cgi?entryname=flarec">01/10/16</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Flarekozo</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>51</FONT></TD><TD>Gnome</TD><TD>ROG</TD><TD>パパはNezumikozo。</TD><TD><A HREF="./entryform.cgi?entryname=flarekozo">01/10/13</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Garuda</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>57</FONT></TD><TD>Wood Elf</TD><TD>DRU</TD><TD>ニセRNG目指してます。</TD><TD><A HREF="./entryform.cgi?entryname=garuda">01/10/24</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Gigli</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>56</FONT></TD><TD>Dark Elf</TD><TD>MAG</TD><TD>ドナドナ</TD><TD><A HREF="./entryform.cgi?entryname=gigli">01/10/23</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Peroperoperoper</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>53</FONT></TD><TD>Iksar</TD><TD>SHD</TD><TD>eeka? eenonka?</TD><TD><A HREF="./entryform.cgi?entryname=peroperoperoper">01/10/23</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Gildiiane</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>58</FONT></TD><TD>Wood Elf</TD><TD>DRU</TD><TD>やっとこ５８</TD><TD><A HREF="./entryform.cgi?entryname=gildiiane">01/10/08</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Kitutuki</TD><TD ALIGN=RIGHT><FONT COLOR=#ff0000>60</FONT></TD><TD>Wood Elf</TD><TD>ROG</TD><TD>EQ強制引退（Ｗ</TD><TD><A HREF="./entryform.cgi?entryname=kitutuki">01/11/30</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Karasu</TD><TD ALIGN=RIGHT>24</TD><TD>Dark Elf</TD><TD>NEC</TD><TD>EQ強制引退（Ｗ</TD><TD><A HREF="./entryform.cgi?entryname=karasu">01/11/30</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Rajuna</TD><TD ALIGN=RIGHT><FONT COLOR=#ff0000>60</FONT></TD><TD>Human</TD><TD>SHD</TD><TD>Fish Roll がお気に入り</TD><TD><A HREF="./entryform.cgi?entryname=rajuna">01/11/18</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Raju</TD><TD ALIGN=RIGHT>24</TD><TD>Human</TD><TD>DRU</TD><TD>Navi Navi 犬変身</TD><TD><A HREF="./entryform.cgi?entryname=raju">01/11/30</A></TD></TR>
+<TR BGCOLOR=#222211><TD>Ydaliress</TD><TD ALIGN=RIGHT>5</TD><TD>Wood Elf</TD><TD>RNG</TD><TD>Guild Banker</TD><TD><A HREF="./entryform.cgi?entryname=ydaliress">01/10/24</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Tamia</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>55</FONT></TD><TD>Human</TD><TD>CLR</TD><TD>Hell nuketemo hell-</TD><TD><A HREF="./entryform.cgi?entryname=tamia">01/12/03</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Tilant</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>57</FONT></TD><TD>Human</TD><TD>WIZ</TD><TD>LVあがってもスペル無いとただの人（謎）</TD><TD><A HREF="./entryform.cgi?entryname=tilant">01/10/13</A></TD></TR>
+<TR BGCOLOR=#007700><TD>Toiti</TD><TD ALIGN=RIGHT><FONT COLOR=#ffff00>55</FONT></TD><TD>Gnome</TD><TD>WIZ</TD><TD>むふ</TD><TD><A HREF="./entryform.cgi?entryname=toiti">01/10/08</A></TD></TR>
+</TABLE><HR>Now <FONT SIZE=+2>11</FONT> members.( only main character )<BR>Level average <FONT SIZE=+2>57.1 </FONT>( only main character )<BR><HR><SMALL><A HREF="http://www.ai.wakwak.com/~aihya/cgi-bin/script/fb.cgi?name=EG1.43">EQ Guild V1.43</A></SMALL></body></html>

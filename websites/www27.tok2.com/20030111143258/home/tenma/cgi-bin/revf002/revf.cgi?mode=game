@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=SHIFT_JIS">
+<meta name="content-language" content="ja">
+<title>Reversi Fight ～延岡大会～</title>
+<style type="text/css">
+<!--
+body {
+	color: #803300;
+	font-family: MS UI Gothic,sans-serif;
+	font-size: 9pt;
+}
+th,td {
+	color: #803300;
+	font-family: MS UI Gothic,sans-serif;
+	font-size: 9pt;
+}
+input,select,option {
+	font-size: 9pt;
+}
+big {
+	font-size: 12pt;
+}
+small {
+	font-size: 8pt;
+}
+.title {
+	font-family: helvetica,sans-serif;
+	font-size: 24pt;
+	color: #cc0099;
+}
+a { text-decoration: none; }
+a:hover { text-decoration: underline; color: #ff0000; }
+input { background-color: #ffffff; }
+
+-->
+</style>
+<script language="JavaScript">
+<!--
+none = new Image(); none.src = "./img/none.gif";
+jibun = new Image(); jibun.src = "./img/jibun.gif";
+compgif = new Array();
+compgif[0] = new Image(); compgif[0].src = "./img/teki1.gif";
+compgif[1] = new Image(); compgif[1].src = "./img/teki2.gif";
+compgif[2] = new Image(); compgif[2].src = "./img/teki3.gif";
+losegif = new Array();
+losegif[0] = new Image(); losegif[0].src = "./img/teki1l.gif";
+losegif[1] = new Image(); losegif[1].src = "./img/teki2l.gif";
+losegif[2] = new Image(); losegif[2].src = "./img/teki3l.gif";
+var you = 1;
+var comp = 2;
+kimg = new Array();
+kimg[0] = new Image(); kimg[0].src = none.src;
+kimg[1] = new Image(); kimg[1].src = jibun.src;
+kimg[2] = new Image(); kimg[2].src = compgif[0].src;
+imgtbl = new Array();
+ytakes = new Array();
+ctakes = new Array();
+for (i = 0; i < 8; i++) {
+  imgtbl[i] = new Array();
+  ytakes[i] = new Array();
+  ctakes[i] = new Array();
+}
+cdirtbl = new Array();
+
+var clickok;
+var nowplay;
+var younum;
+var compnum;
+score = new Array(0,0,0,0);
+var stage;
+var stime;
+var fflag = 1;
+var acrval;
+var drawxmin;
+var drawxmax;
+var drawymin;
+var drawymax;
+
+function init()
+{
+if (fflag == 1) {
+    dd = new Date();
+    stime = dd.getTime();
+    fflag = 0;
+  }
+  stage = 1;
+  score[0] = 0;
+  score[1] = 0;
+  score[2] = 0;
+  score[3] = 0;
+  init2();
+}
+
+function init2()
+{
+  document.youimg.src = jibun.src;
+  document.compimg.src = compgif[stage-1].src;
+  for (i = 0; i < 8; i++) {
+    for (j = 0; j < 8; j++) {
+      imgtbl[i][j] = 0;
+    }
+  }
+  imgtbl[3][3] = 2;
+  imgtbl[3][4] = 1;
+  imgtbl[4][3] = 1;
+  imgtbl[4][4] = 2;
+  drawxmin = 0; drawxmax = 8;
+  drawymin = 0; drawymax = 8;
+  kimg[comp].src = compgif[stage-1].src;
+  document.vschara.src = compgif[stage-1].src;
+  document.form1.stage.value = stage;
+  nowplay = Math.floor(Math.random() * 2) + 1;
+  if (nowplay == you) {
+    document.form1.cjun.value = "後手";
+    document.form1.yjun.value = "先手";
+  } else {
+    document.form1.cjun.value = "先手";
+    document.form1.yjun.value = "後手";
+  }
+  preproc();
+}
+
+function preproc()
+{
+  draw();
+  document.form1.younum.value = younum;
+  document.form1.compnum.value = compnum;
+  score[stage] = younum;
+  eval("document.form1.score"+stage).value = score[stage];
+  score[0] = score[1] + (score[2] * 2) + (score[3] * 3);
+  document.form1.score.value = score[0];
+
+  acrval = allcheck();
+  passflag = 0;
+  if (acrval == -1) {
+    endstage();
+    return;
+  } else if (nowplay == you && acrval == 1) {
+    passflag = 1;
+    nowplay = comp;
+  } else if (nowplay == comp && acrval == 2) {
+    passflag = 1;
+    nowplay = you;
+  }
+
+  if (nowplay == you) {
+    if (passflag) {
+      document.form1.guide.value = "相手がパスしました";
+    } else {
+      document.form1.guide.value = "あなたの番です";
+    }
+    clickok = 1;
+  } else {
+    if (passflag) {
+      document.form1.guide.value = "あなたはパスです";
+    } else {
+      document.form1.guide.value = "相手の番です";
+    }
+    clickok = 0;
+    if (stage == 1) {
+      setTimeout("compplay1()", 1200);
+    } else if (stage == 2) {
+      setTimeout("compplay2()", 1200);
+    } else if (stage == 3) {
+      setTimeout("compplay3()", 1200);
+    }
+  }
+}
+
+function draw()
+{
+  younum = 0; compnum = 0;
+  for (xi = 0; xi < 8; xi++) {
+    for (yi = 0; yi < 8; yi++) {
+      if (xi >= drawxmin && xi <= drawxmax && yi >= drawymin && yi <= drawymax) {
+        eval("document.X"+xi+"Y"+yi).src = kimg[imgtbl[xi][yi]].src;
+      }
+      if (imgtbl[xi][yi] == you) {
+        younum++;
+      } else if (imgtbl[xi][yi] == comp) {
+        compnum++;
+      }
+    }
+  }
+}
+
+function postproc()
+{
+  nowplay = (nowplay == you)? comp : you
+  setTimeout("preproc()", 500);
+}
+
+function endstage()
+{
+  if (younum > compnum) {
+    score[stage] = 64 - compnum;
+    eval("document.form1.score"+stage).value = score[stage];
+    score[0] = score[1] + (score[2] * 2) + (score[3] * 3);
+    document.form1.score.value = score[0];
+    eval("document.tekino"+stage).src = losegif[stage-1].src;
+    document.form1.guide.value = "あなたの勝ち！おめでとう！";
+    stage++;
+    if (stage <= 3) {
+      setTimeout("init2()", 2000);
+      return;
+    } else { // all clear
+      score[0] += 100;
+      document.form1.score.value = score[0];
+    }
+  }
+  document.form1.guide.value = "ゲームオーバー！ wait...";
+  writemes();
+}
+
+function compplay3()
+{
+  // BD2
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  if (ctakes[1][1] > maxtake) { tmpx = 1; tmpy = 1; maxtake = ctakes[1][1]; }
+  if (ctakes[1][6] > maxtake) { tmpx = 1; tmpy = 6; maxtake = ctakes[1][6]; }
+  if (ctakes[6][1] > maxtake) { tmpx = 6; tmpy = 1; maxtake = ctakes[6][1]; }
+  if (ctakes[6][6] > maxtake) { tmpx = 6; tmpy = 6; maxtake = ctakes[6][6]; }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  // BD1
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  if (ctakes[0][1] > maxtake) { tmpx = 0; tmpy = 1; maxtake = ctakes[0][1]; }
+  if (ctakes[0][6] > maxtake) { tmpx = 0; tmpy = 6; maxtake = ctakes[0][6]; }
+  if (ctakes[1][0] > maxtake) { tmpx = 1; tmpy = 0; maxtake = ctakes[1][0]; }
+  if (ctakes[1][7] > maxtake) { tmpx = 1; tmpy = 7; maxtake = ctakes[1][7]; }
+  if (ctakes[6][0] > maxtake) { tmpx = 6; tmpy = 0; maxtake = ctakes[6][0]; }
+  if (ctakes[6][7] > maxtake) { tmpx = 6; tmpy = 7; maxtake = ctakes[6][7]; }
+  if (ctakes[7][1] > maxtake) { tmpx = 7; tmpy = 1; maxtake = ctakes[7][1]; }
+  if (ctakes[7][6] > maxtake) { tmpx = 7; tmpy = 6; maxtake = ctakes[7][6]; }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  // NR
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  for (xi = 1; xi < 8 - 1; xi++) {
+    for (yi = 1; yi < 8 - 1; yi++) {
+      if (ctakes[xi][yi] > maxtake) {
+        tmpx = xi; tmpy = yi;
+        maxtake = ctakes[xi][yi];
+      }
+    }
+  }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  // BS4
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  if (ctakes[2][2] > maxtake) { tmpx = 2; tmpy = 2; maxtake = ctakes[2][2]; }
+  if (ctakes[2][5] > maxtake) { tmpx = 2; tmpy = 5; maxtake = ctakes[2][5]; }
+  if (ctakes[5][2] > maxtake) { tmpx = 5; tmpy = 2; maxtake = ctakes[5][2]; }
+  if (ctakes[5][5] > maxtake) { tmpx = 5; tmpy = 5; maxtake = ctakes[5][5]; }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  // BS3
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  if (ctakes[0][3] > maxtake) { tmpx = 0; tmpy = 3; maxtake = ctakes[0][3]; }
+  if (ctakes[0][4] > maxtake) { tmpx = 0; tmpy = 4; maxtake = ctakes[0][4]; }
+  if (ctakes[3][0] > maxtake) { tmpx = 3; tmpy = 0; maxtake = ctakes[3][0]; }
+  if (ctakes[3][7] > maxtake) { tmpx = 3; tmpy = 7; maxtake = ctakes[3][7]; }
+  if (ctakes[4][0] > maxtake) { tmpx = 4; tmpy = 0; maxtake = ctakes[4][0]; }
+  if (ctakes[4][7] > maxtake) { tmpx = 4; tmpy = 7; maxtake = ctakes[4][7]; }
+  if (ctakes[7][3] > maxtake) { tmpx = 7; tmpy = 3; maxtake = ctakes[7][3]; }
+  if (ctakes[7][4] > maxtake) { tmpx = 7; tmpy = 4; maxtake = ctakes[7][4]; }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  // BS2
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  if (ctakes[0][2] > maxtake) { tmpx = 0; tmpy = 2; maxtake = ctakes[0][2]; }
+  if (ctakes[0][5] > maxtake) { tmpx = 0; tmpy = 5; maxtake = ctakes[0][5]; }
+  if (ctakes[2][0] > maxtake) { tmpx = 2; tmpy = 0; maxtake = ctakes[2][0]; }
+  if (ctakes[2][7] > maxtake) { tmpx = 2; tmpy = 7; maxtake = ctakes[2][7]; }
+  if (ctakes[5][0] > maxtake) { tmpx = 5; tmpy = 0; maxtake = ctakes[5][0]; }
+  if (ctakes[5][7] > maxtake) { tmpx = 5; tmpy = 7; maxtake = ctakes[5][7]; }
+  if (ctakes[7][2] > maxtake) { tmpx = 7; tmpy = 2; maxtake = ctakes[7][2]; }
+  if (ctakes[7][5] > maxtake) { tmpx = 7; tmpy = 5; maxtake = ctakes[7][5]; }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  // BS1
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  if (ctakes[0][0] > maxtake) { tmpx = 0; tmpy = 0; maxtake = ctakes[0][0]; }
+  if (ctakes[0][7] > maxtake) { tmpx = 0; tmpy = 7; maxtake = ctakes[0][7]; }
+  if (ctakes[7][0] > maxtake) { tmpx = 7; tmpy = 0; maxtake = ctakes[7][0]; }
+  if (ctakes[7][7] > maxtake) { tmpx = 7; tmpy = 7; maxtake = ctakes[7][7]; }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+
+  if (imgtbl[cxi][cyi] == 0 && ctakes[cxi][cyi] > 0) {
+    oku(comp,cxi,cyi);
+  }
+}
+
+function compplay1()
+{
+  tmpx = -1; tmpy = -1;
+  rndnum = Math.floor(Math.random() * 2);
+  if (rndnum == 0) {
+    for (xi = 0; xi < 8; xi++) {
+      for (yi = 0; yi < 8; yi++) {
+        if (imgtbl[xi][yi] == 0 && ctakes[xi][yi] > 0) {
+          tmpx = xi; tmpy = yi;
+        }
+      }
+    }
+  } else {
+    for (xi = 7; xi >= 0; xi--) {
+      for (yi = 7; yi >= 0; yi--) {
+        if (imgtbl[xi][yi] == 0 && ctakes[xi][yi] > 0) {
+          tmpx = xi; tmpy = yi;
+        }
+      }
+    }
+  }
+  cxi = tmpx; cyi = tmpy;
+  if (ctakes[cxi][cyi] > 0) {
+    oku(comp,cxi,cyi);
+  }
+}
+
+function compplay2()
+{
+  maxtake = 0; tmpx = -1; tmpy = -1;
+  for (xi = 0; xi < 8; xi++) {
+    for (yi = 0; yi < 8; yi++) {
+      if (imgtbl[xi][yi] == 0 && ctakes[xi][yi] > maxtake) {
+        tmpx = xi; tmpy = yi;
+        maxtake = ctakes[xi][yi];
+      }
+    }
+  }
+  if (maxtake > 0) { cxi = tmpx; cyi = tmpy; }
+  if (ctakes[cxi][cyi] > 0) {
+    oku(comp,cxi,cyi);
+  }
+}
+
+function mact(mx,my)
+{
+  if (clickok == 0) { return; }
+  if (imgtbl[mx][my] != 0) { return; }
+  if (ytakes[mx][my] < 1) { return; }
+  clickok = 0;
+  oku(you,mx,my);
+}
+
+function oku(player,x,y)
+{
+  imgtbl[x][y] = player;
+  drawxmin = x;
+  drawxmax = x;
+  drawymin = y;
+  drawymax = y;
+  draw();
+  checker(player,x,y,1);
+  postproc();
+}
+
+function allcheck()
+{
+  for (i = 0; i < 8; i++) {
+    for (j = 0; j < 8; j++) {
+      ytakes[i][j] = 0;
+      ctakes[i][j] = 0;
+    }
+  }
+  yalltakes = 0;
+  calltakes = 0;
+  for (acx = 0; acx < 8; acx++) {
+    for (acy = 0; acy < 8; acy++) {
+      if (imgtbl[acx][acy] == 0) {
+        checker(you,acx,acy,0);
+        checker(comp,acx,acy,0);
+        yalltakes += ytakes[acx][acy];
+        calltakes += ctakes[acx][acy];
+      }
+    }
+  }
+  if (yalltakes == 0 && calltakes == 0) { return(-1); }
+  if (yalltakes == 0 && calltakes > 0) { return(1); }
+  if (calltakes == 0 && yalltakes > 0) { return(2); }
+  return(0);
+}
+
+function checker(player,cx,cy,click)
+{
+  if (click == 1 && imgtbl[cx][cy] != player) { return; }
+  if (click == 0 && imgtbl[cx][cy] > 0) { return; }
+
+  for (i = 0; i < 8; i++) {
+    cdirtbl[i] = 0;
+  }
+  if (cy > 0) { cdirtbl[1] = 1; }
+  if (cx > 0) { cdirtbl[3] = 1; }
+  if (cx < 8 - 1) { cdirtbl[4] = 1; }
+  if (cy < 8 - 1) { cdirtbl[6] = 1; }
+  if (cx > 0 && cy > 0) { cdirtbl[0] = 1; }
+  if (cx > 0 && cy < 8 - 1) { cdirtbl[5] = 1; }
+  if (cx < 8 -1 && cy > 0) { cdirtbl[2] = 1; }
+  if (cx < 8 -1 && cy < 8 -1) { cdirtbl[7] = 1; }
+  taketmp = 0;
+  for (i = 0; i < 8; i++) {
+    if (cdirtbl[i] == 1) {
+        taketmp += checksub(player,cx,cy,i,click);
+    }
+  }
+  if (player == you) {
+    ytakes[cx][cy] = taketmp;
+  } else {
+    ctakes[cx][cy] = taketmp;
+  }
+}
+
+/* check direction
+ * 0 1 2
+ * 3 c 4
+ * 5 6 7
+ */
+dx = new Array(-1, 0, 1,-1,1,-1,0,1);
+dy = new Array(-1,-1,-1, 0,0, 1,1,1);
+
+function checksub(player,cx,cy,direction,click)
+{
+  chkx = cx;
+  chky = cy;
+  tcount = 0;
+  revok = 0;
+  loopflag = 1;
+  while (loopflag) {
+    chkx += dx[direction];
+    chky += dy[direction];
+    if (chkx < 0 || chkx > 8 - 1) { loopflag = 0; break; }
+    if (chky < 0 || chky > 8 - 1) { loopflag = 0; break; }
+    if (imgtbl[chkx][chky] == 0) { loopflag = 0; break; }
+    if (imgtbl[chkx][chky] == player) { loopflag = 0; revok = 1; break; }
+    tcount++;
+  }
+  if (revok == 0) {
+    tcount = 0;
+  }
+  if (revok == 1 && tcount > 0 && click == 1) {
+    chkx = cx;
+    chky = cy;
+    loopflag = 1;
+    while (loopflag) {
+      chkx += dx[direction];
+      chky += dy[direction];
+      if (imgtbl[chkx][chky] == player) { loopflag = 0; break; }
+      imgtbl[chkx][chky] = player;
+      if (drawxmin > chkx) { drawxmin = chkx; }
+      if (drawxmax < chkx) { drawxmax = chkx; }
+      if (drawymin > chky) { drawymin = chky; }
+      if (drawymax < chky) { drawymax = chky; }
+    }
+  }
+  return(tcount);
+}
+
+function writemes()
+{
+  document.form2.sscore.value = score[0];
+  document.form2.stime.value = stime;
+  dd = new Date();
+  document.form2.etime.value = dd.getTime();
+  document.form2.submit();
+}
+
+// -->
+</script>
+</head>
+<body bgcolor="#fff5ee"  text="#803300" link="#cc6600" alink="#ff0000" vlink="#cc6600" onload="init()"><!-- TOK2_TOP -->
+<center>
+<TABLE border="0" cellspacing="5" cellpadding="0">
+<TR>
+<td valign=top>
+<script language="javascript">
+<!--
+var i = ( Math.floor(Math.random() * 6))%6;
+if( i==0 || i==1){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd5.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-09.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==2 || i==3 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-04.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==4 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd4.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-08.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==5 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd3.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-03.gif" border=0 height="60" width="120"></a>' );
+}
+
+//-->
+</script>
+</td><td valign=top>
+<script language="javascript">
+<!--
+var i = ( Math.floor(Math.random() * 2))%2;
+if( i==0 ){
+	document.write( '<IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870782994" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870782994"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870782994" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870782994" height="60" width="468" Border="0"></a></noscript></IFRAME>' );
+}
+if( i==1 ){
+	document.write( '<IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870769697" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870769697"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870769697" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870769697" height="60" width="468" Border="0"></a></noscript></IFRAME>' );
+}
+//-->
+</script>
+</td><td valign=top>
+<script language="javascript">
+<!--
+var i = ( Math.floor(Math.random() * 3))%3;
+if( i==0 ){
+	document.write( '<a href="http://www.web-lemonteen.com/" target="_blank"><img src="http://tok2.com/adv/lemon-01.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==1 ){
+	document.write( '<a href="http://sr.tok2.com/less/less.html" target="_blank"><img src="http://image.tok2.com/banner-04/less.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==2 ){
+	document.write( '<a href="http://pro.tok2.com/" target="_blank"><img src="http://image.tok2.com/banner-04/pro.gif" border="0" height="60" width="120"></a>' );
+}
+//-->
+</script></td></TR></TABLE>
+</center>
+<br>
+<!-- TOK2_TOP_END -->
+
+<div align="center">
+<p>
+<!--上-->
+</p>
+<p>
+<img src="./img/logo.gif" width="200" height="40">
+</p>
+<p>
+| <a href="http://www.wainet.ne.jp/~ahiru/">ホームへ戻る</a> | <a href="./revf.cgi?mode=rmes&vmonth=this">当月ランキング</a> | <a href="./revf.cgi?mode=rmes&vmonth=last">前月ランキング</a> | <a href="./revf.cgi?mode=rmes&vmonth=total">通算ランキング</a> | <a href="./revf.cgi">あそびかた</a> | <a href="./revf.cgi?mode=admin">管理用</a> |</p>
+<form name="form1">
+
+<table border="0" cellspacing="0" cellpadding="5" bgcolor="#d5c5b5">
+ <tr>
+   <td align="center">
+     <table>
+       <tr><td><input type="text" name="cjun" size="5"> <font color="#ffffff">相手</font></td><td><img name="compimg" src="./img/none.gif" width="30" height="30"></td><td><input type="text" name="compnum" size="4"></td></tr>
+     </table>
+   </td>
+   <td>
+     <input type="text" name="guide" size="30">
+  </td>
+ </tr>
+ <tr>
+   <td>
+
+<table border="3" cellspacing="0" cellpadding="0" bgcolor="#fff5ee">
+<tr>
+<td><a href="javascript:mact(0,0)"><img name="X0Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,0)"><img name="X1Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,0)"><img name="X2Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,0)"><img name="X3Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,0)"><img name="X4Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,0)"><img name="X5Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,0)"><img name="X6Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,0)"><img name="X7Y0" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,1)"><img name="X0Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,1)"><img name="X1Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,1)"><img name="X2Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,1)"><img name="X3Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,1)"><img name="X4Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,1)"><img name="X5Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,1)"><img name="X6Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,1)"><img name="X7Y1" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,2)"><img name="X0Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,2)"><img name="X1Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,2)"><img name="X2Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,2)"><img name="X3Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,2)"><img name="X4Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,2)"><img name="X5Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,2)"><img name="X6Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,2)"><img name="X7Y2" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,3)"><img name="X0Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,3)"><img name="X1Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,3)"><img name="X2Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,3)"><img name="X3Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,3)"><img name="X4Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,3)"><img name="X5Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,3)"><img name="X6Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,3)"><img name="X7Y3" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,4)"><img name="X0Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,4)"><img name="X1Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,4)"><img name="X2Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,4)"><img name="X3Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,4)"><img name="X4Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,4)"><img name="X5Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,4)"><img name="X6Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,4)"><img name="X7Y4" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,5)"><img name="X0Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,5)"><img name="X1Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,5)"><img name="X2Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,5)"><img name="X3Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,5)"><img name="X4Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,5)"><img name="X5Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,5)"><img name="X6Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,5)"><img name="X7Y5" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,6)"><img name="X0Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,6)"><img name="X1Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,6)"><img name="X2Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,6)"><img name="X3Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,6)"><img name="X4Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,6)"><img name="X5Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,6)"><img name="X6Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,6)"><img name="X7Y6" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="javascript:mact(0,7)"><img name="X0Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(1,7)"><img name="X1Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(2,7)"><img name="X2Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(3,7)"><img name="X3Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(4,7)"><img name="X4Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(5,7)"><img name="X5Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(6,7)"><img name="X6Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+<td><a href="javascript:mact(7,7)"><img name="X7Y7" src="./img/none.gif" width="30" height="30" border="0"></a></td>
+</tr>
+</table>
+
+    </td>
+    <td align="center">
+<table border="0">
+<tr><th><font color="#ffffff">STAGE</font></th><td><input type="text" name="stage" size="4"></td></tr>
+<tr><td colspan="2" align="center"><font color="#ffffff">VS</font> <img name="vschara" src="./img/teki1.gif" width="30" height="30"></td></tr>
+</table>
+<br>
+<table border="1" cellpadding="2" cellspacing="0">
+<tr><th colspan="2"><font color="#ffffff">SCORE</font></th><td align="right"><input type="text" name="score" size="6"></td></tr>
+<tr><td><font color="#ffffff">3</font></td><td><img name="tekino3" src="./img/teki3.gif" width="30" height="30"></td><td align="right"><font color="#ffffff">3pt x</font> <input type="text" name="score3" size="4" value="---"></td></tr>
+<tr><td><font color="#ffffff">2</font></td><td><img name="tekino2" src="./img/teki2.gif" width="30" height="30"></td><td align="right"><font color="#ffffff">2pt x</font> <input type="text" name="score2" size="4" value="---"></td></tr>
+<tr><td><font color="#ffffff">1</font></td><td><img name="tekino1" src="./img/teki1.gif" width="30" height="30"></td><td align="right"><font color="#ffffff">1pt x</font> <input type="text" name="score1" size="4" value="---"></td></tr>
+</table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <table>
+        <tr><td><input type="text" name="yjun" size="5"> <font color="#ffffff">あなた</font></td><td><img name="youimg" src="./img/none.gif" width="30" height="30"></td><td><input type="text" name="younum" size="4"></td></tr>
+      </table>
+    </td>
+    <td align="center">
+      <input type="button" value="リセット" onClick="init()">
+    </td>
+  </tr>
+</table>
+</form>
+
+  <form name="form2" action="./revf.cgi" method="post">
+    <input type="hidden" name="mode" value="wmes">
+    <input type="hidden" name="stime" value="0">
+    <input type="hidden" name="sscore" value="0">
+    <input type="hidden" name="etime" value="0">
+  </form>
+
+<br>
+<p>
+<!--下-->
+</p>
+<p>
+Graphics by: <a href="http://www.tamagochan.com/" target="_top">素材や ぽんぽん</a>
+</p>
+<p>
+<a href="http://homepage3.nifty.com/masas/sdir/" target="_top">Reversi Fight Ver.0.02</a>
+</p>
+</div>
+<!-- TOK2_UNDER-->
+<CENTER>
+<table border=0>
+<tr><td align=center>
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870770042" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870770042"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870770042" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870770042" height="45" width="135" Border="0"></a></noscript></IFRAME></td>
+<td>
+<IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870769736" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870769736"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870769736" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870769736" height="60" width="468" Border="0"></a></noscript></IFRAME>
+</td>
+<td align=center>
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=871069054" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=871069054"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=871069054" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=871069054" height="45" width="135" Border="0"></a></noscript></IFRAME>
+</td></tr></table>
+</CENTER>
+
+</BODY>
+</HTML>

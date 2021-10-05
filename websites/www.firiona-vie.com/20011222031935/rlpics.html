@@ -1,0 +1,901 @@
+<html>
+
+<head>
+  <title>Firiona Vie Community</title>
+<style type="text/css">
+
+A {text-decoration: none;}
+A:hover {color:  #ffffff; }
+A:hover {text-decoration: bold;}
+
+DIV.clTop {
+	POSITION: relative; WIDTH: 120px
+}
+DIV.clSub {
+	POSITION: absolute; WIDTH: 120px
+}
+#divCont {
+	HEIGHT: 400px; LEFT: 10px; POSITION: relative; TOP: 0px; WIDTH: 150px
+}
+A.clMain {
+	COLOR: #D1C3B5; FONT-FAMILY: Arial, Verdana, Helvetica, Helv; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.clSubb {
+	COLOR: #D1C3B5; FONT-FAMILY: Arial, Verdana, Helvetica, Helv; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+#divMain {
+	POSITION: absolute
+}
+
+</style>
+<!--BEGIN Pop-up Images Script------------------------------------------->
+<SCRIPT Language="JavaScript">
+<!--
+// Copyright 1999 - 2001 by Ray Stott, Pop-up Images Script ver 2.0
+// OK to use if this copyright is included
+// Script is available at http://www.crays.com/jsc
+
+var pic = null
+var popImg = null  // use this when referring to pop-up image
+var picTitle = null
+var imgCount = 0
+var imgWinName = "popImg"
+
+function openPopImg(picName, windowTitle, windowWidth, windowHeight){
+  closePopImg()
+  picTitle = windowTitle
+  imgWinName = "popImg" + imgCount++ //unique name for each pop-up window
+  popImg = window.open(picName, imgWinName,
+           "toolbar=no,scrollbars=no,resizable=no,width=" 
+           + (parseInt(windowWidth)+20)  + ",height=" 
+           + (parseInt(windowHeight)+15)) 
+  }
+function closePopImg(){    // close pop-up window if it is open 
+  if (navigator.appName != "Microsoft Internet Explorer" 
+      || parseInt(navigator.appVersion) >=4) //do not close if early IE
+    if(popImg != null) if(!popImg.closed) popImg.close() 
+  }
+function setStatus(msg){
+  status = msg
+  return true
+  }
+//-->
+</SCRIPT>
+
+<SCRIPT Language="JavaScript1.1">  
+<!--
+// for Netscape 3+ and IE 4+
+var priorPic = new Array()
+var noPic = 0
+var foundit = false
+
+function openPopImg(picName,  windowTitle, windowWidth, windowHeight){
+  var i = 0
+  if(pic == picName && winOpen()){
+    popImg.focus()
+    }
+  else{
+    foundit = false
+    for(i=0; i<=noPic; i++){
+      if (priorPic[i] == picName)
+        foundit = true 
+      }
+    pic = picName
+    closePopImg()
+    picTitle = windowTitle
+    imgWinName = "popImg" + imgCount++ //unique name for each pop-up window
+    if(!foundit){
+      priorPic[noPic++] = pic
+      }
+    popImg = openPopImgWin(imgWinName, windowWidth, windowHeight)
+    }
+  }
+function openPopImgWin(imgWinName, windowWidth, windowHeight){
+  var winFeatures = "toolbar=no,scrollbars=no,resizable=no,width=" 
+    + windowWidth + ",height=" + windowHeight
+  return window.open("pimg.htm", imgWinName, winFeatures)
+  }
+function winOpen(){
+  if(popImg != null){ 
+    if(popImg.closed != true) return true; else return false
+    }  
+  else
+    return false
+  }
+//-->
+</SCRIPT>
+
+<SCRIPT Language="JavaScript1.2"> 
+<!--
+// Use this function to control placement of pop-up window
+// in Netscape 4+ and Internet Explorer 4+
+function openPopImgWin(imgWinName, windowWidth, windowHeight){
+  var leftX = 650  // distance of window's left side from left of screen
+  var topY = 100   // distance of window's top side from top of screen
+  var winFeatures = "toolbar=no,scrollbars=no,resizable=no,width=" 
+    + windowWidth + ",height=" + windowHeight
+  if (leftX>0){
+    winFeatures += ",screenX=" + leftX + ",left=" + leftX	
+                + ",screenY=" + topY + ",top=" + topY
+    }
+  return window.open("pimg.htm", imgWinName, winFeatures)
+  }
+//-->
+</SCRIPT>
+<!--END Pop-up Images Script-------------------------------------------->
+
+</head>
+<SCRIPT language=JavaScript>
+/********************************************************************************
+Copyright (C) 1999 Thomas Brattli
+This script is made by and copyrighted to Thomas Brattli at www.bratta.com
+********************************************************************************/
+// Courtesy of SimplytheBest.net (http://simplythebest.net/info/dhtml_scripts.html)
+/************************************************************************************
+This script is a "foldout" menu script, all the "foldouts" will
+stay outfolded in older browsers. Works in ie4+ and ns4+.
+To change where the menu appears change the left and top values of the divCont
+in the stylesheets, it's currently placed relative so you can
+place this menu in tables or similar if you want. Change the 
+text colors and size in the A.clMain and A.clSubb classes.
+************************************************************************************/
+/************************************************************************************
+Change this to false if you want all the submenus to get unfold when you
+foldout a new one.
+************************************************************************************/
+var stayFolded=false
+/************************************************************************************
+Browsercheck
+************************************************************************************/
+var n = (document.layers) ? 1:0;
+var ie = (document.all) ? 1:0;
+var browser=((n || ie) && parseInt(navigator.appVersion)>=4)  
+/************************************************************************************
+Making cross-browser objects
+************************************************************************************/
+function makeMenu(obj,nest){
+	nest=(!nest) ? '':'document.'+nest+'.'										
+	this.css=(n) ? eval(nest+'document.'+obj):eval('document.all.'+obj+'.style')					
+   	this.ref=(n) ? eval(nest+'document.'+obj+'.document'):eval('document');		
+	this.height=n?this.ref.height:eval(obj+'.offsetHeight')
+	this.x=(n)? this.css.left:this.css.pixelLeft;this.y=(n)? this.css.top:this.css.pixelTop;							
+	this.hideIt=b_hideIt;	this.showIt=b_showIt; this.vis=b_vis; this.moveIt=b_moveIt											
+	return this
+}
+function b_showIt(){this.css.visibility="visible"}
+function b_hideIt(){this.css.visibility="hidden"}
+function b_vis(){if(this.css.visibility=="hidden" || this.css.visibility=="hide") return true;}
+function b_moveIt(x,y){this.x=x; this.y=y; this.css.left=this.x; this.css.top=this.y}
+/************************************************************************************
+Initiating the page. Just add to the arrays here to get more menuitems
+and add divs in the page
+************************************************************************************/
+function init(){
+	oTop=new Array()
+	oTop[0]=new makeMenu('divTop1','divCont')
+	oTop[1]=new makeMenu('divTop2','divCont')
+	oTop[2]=new makeMenu('divTop3','divCont')
+	oTop[3]=new makeMenu('divTop4','divCont')
+	oTop[4]=new makeMenu('divTop5','divCont')
+	oTop[5]=new makeMenu('divTop6','divCont')
+	oSub=new Array()
+	oSub[0]=new makeMenu('divSub1','divCont.document.divTop1')
+	oSub[1]=new makeMenu('divSub2','divCont.document.divTop2')
+	oSub[2]=new makeMenu('divSub3','divCont.document.divTop3')
+	oSub[3]=new makeMenu('divSub4','divCont.document.divTop4')
+	oSub[4]=new makeMenu('divSub5','divCont.document.divTop5')
+	oSub[5]=new makeMenu('divSub6','divCont.document.divTop6')
+	for(i=0;i<oSub.length;i++){ oSub[i].hideIt() }
+	for(i=1;i<oTop.length;i++){ oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height) }
+}
+/************************************************************************************
+This is the function that changes the sub menus to folded or unfolded state.
+************************************************************************************/
+function menu(num){
+	if(browser){
+		if(!stayFolded){
+			for(i=0;i<oSub.length;i++){
+				if(i!=num) oSub[i].hideIt()
+			}
+			for(i=1;i<oTop.length;i++){
+				oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)
+			}
+		}
+		oSub[num].vis()?oSub[num].showIt():oSub[num].hideIt()
+		for(i=1;i<oTop.length;i++){ 
+			if(!oSub[i-1].vis()) oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height+oSub[i-1].height) 
+			else oTop[i].moveIt(0,oTop[i-1].y+oTop[i-1].height)
+		}
+	}
+}
+//Initiating the menus onload, if it's a 4.x+ browser.
+if(browser) onload=init;
+</SCRIPT>
+
+
+<body bgcolor="#3a2220" link="#D1c3b5" vlink="#d1c3b5" onUnload="closePopImg()">>
+
+<script language=JavaScript>
+<!--
+
+//Disable right mouse click Script
+//By Maximus (maximus@nsimail.com)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="Function Disabled!";
+///////////////////////////////////
+function clickIE() {if (document.all) {alert(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {alert(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<!-- Main table 1-->
+<table width=100% border=5 bgcolor="#3A2220" bordercolor="#D1c3b5" cellspacing=5>
+  <tr>
+    <td width=18% valign=top align=center nowrap>
+	<!-- table 1a Navigation-->
+        <table border=0 width="95%" cellspacing=0 cellpadding=0 align=center bgcolor="#3A2220">
+          <tr>
+            <td bgcolor="#3a2220">
+			<!-- table 1b Navigation Box-->
+            <table border=0 width="100%" cellspacing=1 cellpadding=4>
+              <tr>
+			  
+			  
+			  
+			  <td><center>
+			  <img src="images/fv2.jpg" width="145" height="300" alt="" border="1" align="">
+			  </center>
+			<br>
+			  
+			  </td>
+			  </tr>
+			  <tr>
+ <td bgcolor="#3A2220">
+                
+            
+                <br>
+               
+							 
+<DIV id=divCont>
+<DIV class=clTop id=divTop1><A class=clMain 
+href="http://www.firiona-vie.com" 
+onclick="menu(0); return false"><b>[News]</b></A><BR>
+<DIV class=clSub id=divSub1><A class=clSubb 
+href="http://www.firiona-vie.com">-Firiona Vie News</A><BR>
+<A 
+class=clSubb href="http://pub94.ezboard.com/bfirionavie" target="_blank">-FV Message Board</A><br>
+<A 
+class=clSubb href="http://firiona-vie.com/">-Community Events</A><br>
+<A 
+class=clSubb href="http://firiona-vie.com/submission.html">-Submit Event</A><br>
+
+<A 
+class=clSubb href="http://firiona-vie.com/submission.html">-Submit News</A><BR></DIV></DIV>
+
+<DIV class=clTop id=divTop2><A class=clMain 
+href="http://firiona-vie.com/" 
+onclick="menu(1); return false"><b>[Guild Listings]</b></A><BR>
+<DIV class=clSub id=divSub2><A class=clSubb 
+href="http://firiona-vie.com/fvguilds.html">-List of all Guilds</A><BR><A 
+class=clSubb href="http://firiona-vie.com/">-Specific Aligned Guilds</A><BR><A 
+class=clSubb href="http://firiona-vie.com/submission.html">-Submit a Guild</A><BR>
+</DIV></DIV>
+
+
+<DIV class=clTop id=divTop3><A class=clMain 
+href="http://firiona-vie.com/" 
+onclick="menu(2); return false"><b>[Player Profiles]</b></A><BR>
+<DIV class=clSub id=divSub3><A class=clSubb 
+href="http://firiona-vie.com/">-Barbarian</A><BR><A 
+class=clSubb href="http://firiona-vie.com/">-Dark Elf</A><BR>
+<A class=clSubb href="http://firiona-vie.com/">-Dwarf</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Erudite</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Gnome</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Halfling</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Half Elf</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-High Elf</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Human</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Iksar</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Ogre</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Troll</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Wood Elf</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/submission.html">-Submit a Profile</A>
+
+
+
+<BR></DIV></DIV>
+
+
+<DIV class=clTop id=divTop4><A class=clMain 
+href="http://www.firiona-vie.com" 
+onclick="menu(3); return false"><b>[Featured Player]</b></A><BR>
+<DIV class=clSub id=divSub4><A class=clSubb 
+href="http://firiona-vie.com/">-November, 2001</A><BR></DIV></DIV>
+
+
+<DIV class=clTop id=divTop5>
+<A class=clMain href="http://firiona-vie.com" 
+onclick="menu(4); return false"><b>[Galleria]</b></A><br>
+<DIV class=clSub id=divSub5>
+<A class=clSubb href="http://firiona-vie.com/">-Screenshots
+ </A><br>
+<A 
+class=clSubb href="http://firiona-vie.com/">-Artwork</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/">-Writings</A>
+<BR><A 
+class=clSubb href="http://firiona-vie.com/rlpics.html">-Real Life Photos</A><br>
+<A 
+class=clSubb href="http://firiona-vie.com/submission.html">-Galleria Submissions</A><br>
+</DIV></DIV>
+
+<DIV class=clTop id=divTop6><A class=clMain 
+href="http://firiona-vie.com/" onclick="menu(5); return false"><b>[Everquest Links]</b></A>
+<BR>
+<DIV class=clSub id=divSub6>
+<A class=clSubb href="http://firiona-vie.com/">-Sub 
+1</A><br></DIV></DIV>
+
+
+
+
+ 
+  </div>
+
+                <br>
+                </font></td>
+              
+			  
+			  </tr>
+			  <tr>
+			  <td>
+			   <img src="images/space.gif" width="10" height="100" alt="" border="0" align="">
+			   </td>
+			   </tr>
+            </table>
+			<!-- table 1b Navigation Box end -->
+            </td>
+          </tr>
+        </table>
+		<!-- table 1a Navigation end -->
+
+</td>
+
+
+<td width=82% valign=top>
+<!-- Table 2a News Box-->
+<CENTER>
+<table border=0 width="95%" cellspacing=0 cellpadding=0 align=center>
+  <tr>
+    <td bgcolor="#3A2220" colspan="2"><br><br><center>
+<img src="images/littleban.jpg" width="500" height="35" alt="" border="0" align="">
+</center></td></tr><tr><td><br><br><br>
+	
+   <center> <table border=0 width="95%" cellspacing=1 cellpadding=4>
+
+
+
+	 
+        
+		
+      
+      <tr>
+        <td bgcolor>
+		
+		<table width="100%" border="0" cellspacing="0" cellpadding="10">
+<tr>
+<td colspan="3">
+<b><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+<br>
+<center>Real Life Photos</center>
+<hr width="80%">
+
+</td>
+</tr>
+<tr>
+<td width="33%" valign="top">
+<br>
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>A</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					
+<A HREF="JAVASCRIPT:openPopImg('images/ankles.jpg', 'Ankles', '177', '220')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Ankles</A></font><br>
+	 
+	 <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+<A HREF="JAVASCRIPT:openPopImg('images/Anzikon.jpg', 'Anzikon', '291', '252')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Anzikon</A></font><br>
+		<font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+		
+<A HREF="JAVASCRIPT:openPopImg('images/antoin.jpg', 'Antoin', '190', '236')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Antoin</A></font>
+<br>
+		<font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">			
+<A HREF="JAVASCRIPT:openPopImg('images/Anders.jpg', 'Anders', '361', '302')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Anders #1</A></font>
+<br>
+		<font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">			
+<A HREF="JAVASCRIPT:openPopImg('images/Anders1.jpg', 'Anders', '361', '244')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Anders #2</A></font>
+	<br>
+		<font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">			
+<A HREF="JAVASCRIPT:openPopImg('images/auno.jpg', 'Auno', '319', '212')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Auno</A></font>
+
+									
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>B</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>C</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>  
+<br>
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>D</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+<A HREF="JAVASCRIPT:openPopImg('images/dravek.jpg', 'Dravek', '280', '283')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Dravek</A></font>
+					
+
+</font></p>
+                  </td>
+                </tr>
+              </table>  
+<br>
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>E</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>  
+
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>F</b></font<br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>G</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>H</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+				&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>I</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  
+</td>
+
+<td width="33%" valign="top">
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>J</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					<A HREF="JAVASCRIPT:openPopImg('images/jantis.jpg', 'Jantis', '302', '337')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Jantis</A></font><br></font>
+ <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>K</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>L</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					<A HREF="JAVASCRIPT:openPopImg('images/jackie.jpg', 'Lessa', '320', '216')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+    Lessa</A></font><br></font><br>
+                  </td>
+                </tr>
+              </table>
+			  
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>M</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>N</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                  <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+				<A HREF="JAVASCRIPT:openPopImg('images/pigtailgal.jpg', 'Nullo', '154', '134')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Nullo</A></font>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>O</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>P</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>Q</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>R</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+</td>
+<td width="33%" valign="top">
+
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>S</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+<A HREF="JAVASCRIPT:openPopImg('images/shima.jpg', 'Shima', '157', '138')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Shima</A></font><br>
+	 <font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+	 <A HREF="JAVASCRIPT:openPopImg('images/kirks.jpg', 'Styng', '427', '282')" 
+     onMouseOver="return setStatus('Click to display picture.')"
+     onMouseOut="return setStatus('')">
+     Styng</A></font>
+	
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>T</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>U</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>V</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>W</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>X</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>Y</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  <br>  
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+                <tr valign="top"> 
+                  <td align="center"><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+				  <b>Z</b></font><br>
+				  <hr width="30%"></td>
+                </tr>
+                <tr valign="top" align="center"> 
+                  <td> 
+                    <p><font face="Verdana, Arial, Helvetica" size="-1" color="#d1c3b5">
+					&nbsp;</font></p>
+                  </td>
+                </tr>
+              </table>
+			  
+
+</td>
+</tr>
+</table>
+
+	<br>
+<b><font face="Verdana, Arial, Helvetica" size="+1" color="#d1c3b5">
+
+
+	</td>
+	  
+	  
+	  
+	  </tr>
+	  
+</table>
+<!-- Table 2b End -->
+</td>
+ 
+</tr>
+</table>
+<!-- Main Table 1 End -->
+</td>
+ 
+</tr>
+</table>
+
+<br><br>
+<center>
+<font face="Verdana, Arial, Helvetica" size="1" color="#D1c3b5">
+<b>©2001 design by</font>&nbsp;<a href="mailto:jaxyfv@hotmail.com">Chessie</a>
+</font></center>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Webserver testpage</TITLE>
+<META content="iso-8859-1" http-equiv="charset">
+<META name="author" content="Christian Hofmann, SuSE Linux AG">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#669900" ALINK="#669900" VLINK="#fb8000" text=black marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+<TABLE border="0" width="760" cellpadding="0" cellspacing="0">
+  <TR>
+  <TD rowspan="4" bgcolor="#669900" width="50">&nbsp;</TD>
+    <td valign=top height="70" width="29" bgcolor="#669900">&nbsp;</td>
+    <td valign="middle" height="70" width="152" align="center" bgcolor="#669900">&nbsp;</td>
+    <td valign=middle height="70" width="529" bgcolor="#669900">
+      <div align="center">
+      <font face="Courier New,Courier,mono" size="5" color="white"><B>+++ testinfo - webserver +++</b></font>
+      </div>
+    </td>
+  </tr>
+  <TR>
+    <td width="29"  height="100" valign="middle" bgcolor="#669900">&nbsp;</td>
+    <td width="152" height="100" align="center" valign="bottom"><IMG src="gif/penguin.gif" width=90 height=76 hspace=0 vspace=0 border=0 alt=" "></td>
+    <td width="529" height="100" valign="middle">
+      <div align="center">
+      <font face="Courier New,Courier,mono" size="3"><I>This is only a test page for the webserver!</I></font><br>
+      <font face="Courier New,Courier,mono" size="-1">SuSE is not responsible for the contents of this domain!</font>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td valign=top align=left colspan="4">
+      <table border="0" cellpadding="0" cellspacing="0" width="710" vspace="0" hspace="0">
+        <TR>
+          <TD bgcolor="#669900" width="29" height="20">&nbsp;</TD>
+          <TD width="152" height="20">&nbsp;</TD>
+          <TD width="558" height="20" colspan="2">&nbsp;</TD>
+        </tr>
+        <TR>
+          <TD height="50" align=left width="181" colspan="2"><IMG src="gif/sysinfo_en.png" width="181" height="50" border="0" alt="system information"></TD>
+          <TD width="529" colspan="2" rowspan="2" valign=top>
+               <FONT face="helvetica, arial, sans-serif">
+               <B>Operating system:</B> [ <!--#exec cmd="(cat /etc/SuSE-release 2>/dev/null || echo SuSE Linux) | head -1" --> ]<BR>
+               <B>Host:</B> [ <!--#exec cmd='echo "`hostname -f`, Kernel: `uname -r` (`uname -m`)"' --> ]
+               </FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD bgcolor="#669900" width="29" height="40">&nbsp;</TD>
+          <TD width="181" height="40">&nbsp;</TD>
+        </TR>
+
+        <TR>
+          <TD height="50" align=left width="181" colspan="2"><IMG src="gif/version_en.png" width="181" height="50" border="0" alt="webserver and modules"></TD>
+          <TD width="529" colspan="2" rowspan="2" valign=top>
+          <FONT face="helvetica,arial,sans-serif">
+          <B>Webserver version:</B><br>
+          [ <!--#echo var="SERVER_SOFTWARE" --> ]<br><br>
+
+          <B>Installed modules:</B><br>
+         <!--#exec cmd='
+                    if test -f /usr/lib/apache/libphp3.so ; then
+                       echo "       [ PHP3 module]<br>"
+                    elif test -f /usr/lib/apache/libphp4.so ; then
+                       echo "       [ PHP4 module ]<br>"
+                    else
+                       echo "       <I>[ PHP module is not installed ]</I><br>"
+                    fi
+                    if test -f /usr/lib/apache/libperl.so ; then
+                       echo "    [ Apache perl module (mod_perl) ]<br>"
+                    else
+                       echo "    <I>[ Apache perl module (mod_perl) is not installed ]</I><br>"
+                    fi
+                    if test -f /usr/lib/apache/libdav.so ; then
+                       echo "    [ Apache DAV module (mod_dav) ]<br>"
+                    else
+                       echo "    <I>[ Apache DAV module (mod_dav) is not installed ]</I><br>"
+                    fi
+                    if test -f /usr/lib/apache/mod_python.so ; then
+                       echo "    [ Apache Python module (mod_python) ]<br>"
+                    else
+                       echo "    <I>[ Apache Python module (mod_python) is not installed ]</I><br>"
+                    fi
+         ' -->
+          </FONT>
+          </TD>
+        </TR>
+        <TR>
+          <TD bgcolor="#669900" width="29" height="100">&nbsp;</TD>
+          <TD width="181" height="100">&nbsp;</TD>
+        </TR>
+        <TR>
+          <TD colspan="2" height="50" align=left width="181"><IMG src="gif/docu_en.png" width="181" height="50" border="0" alt="documentation"></TD>
+          <TD width="529" colspan="2" rowspan="2" valign=top>
+          <FONT face="helvetica,arial,sans-serif">
+<!--#exec cmd='
+
+eval `grep DOC_SERVER= /etc/sysconfig/apache` &>/dev/null
+
+if ! [ "$DOC_SERVER" = "yes" ] ; then
+	echo "<I>[ This host is not configured as server for the SuSE help system ]</I><br><br>"
+else
+
+	if test -d /usr/share/susehelp/ ; then
+		echo "<A HREF=\"/susehelp/index.html\">[ SuSE help system ]</A><br>"
+	else
+		echo "<I>[ The SuSE help system is not installed ]</I><br>"
+	fi
+
+	if test -d /usr/share/doc ; then
+		echo "<A HREF="/usr/share/doc/">[ /usr/share/doc/ directory ]</A><br>"
+	fi
+
+	if test -d /usr/share/doc/packages/phpdoc/manual ; then
+		 echo "<A HREF="/usr/share/doc/packages/phpdoc/manual/index.html">[ PHP manual ]</A><br>"
+	else
+		 echo "<I>[ The PHP manual is not installed ]</I><br>"
+	fi
+
+fi
+
+if test -d /srv/www/htdocs/manual/ ; then
+	echo "<A HREF=\"/manual/\">[ Apache Manual ]</A><br>"
+else
+	echo "<I>[ Apache manual is not installed ]</I><br>"
+fi
+
+
+' -->
+             <BR>
+             <A HREF="http://www.suse.de/">[ The SuSE website ]</A><BR>
+
+
+
+          </FONT>
+          </TD>
+
+        </TR>
+        <TR>
+          <TD bgcolor="#669900" width="29" height="90">&nbsp;</TD>
+          <TD width="181" height="90">&nbsp;</TD>
+      </Table>
+    </td>
+  </tr>
+  <tr>
+    <td width=29 bgcolor="#669900">&nbsp;</td>
+    <td valign=bottom align=right width="681" colspan="3"><A HREF="http://www.suse.de/en/"><IMG src="gif/powered_by_suse.gif" alt="powered by SuSE" width=100 height=40 hspace=5 vspace=5 border=0></A></td>
+  </tr>
+
+</TABLE>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+

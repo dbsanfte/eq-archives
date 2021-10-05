@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EQ Everquest 1H Slashing Weapons - D</title>
+<meta name="description" content="EQ Everquest Online" />
+<meta name="keywords" content="EQ Everquest Online" />
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="http://www.everquest-online.com/content/templates/1/website.css" type="text/css" />
+<script language="javascript" type="text/javascript" src="http://www.everquest-online.com/content/website.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- 
+google_hints = "eq plat everquest platinum aaxp ldon";
+game_name = "";
+ --></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="main">
+		<div class="content">
+<div align="center">
+<div id="google-banner"></div>
+<script language="JavaScript" type="text/javascript">
+<!--
+function google_ad_request_done(google_ads) {
+
+	// Proceed only if we have ads to display!
+	if (google_ads.length < 1 ) { return; }
+
+	// For text ads, display each ad in turn.
+	if (google_ads[0].type == 'text') {
+		var first_ad_unit = ''
+		for(var i = 0; i < google_ads.length; ++i) {
+			if (i == 0) {
+				first_ad_unit += '<div id="google-adsense-banner">';
+				first_ad_unit += '<table width="468" height="60" cellspacing="0" cellpadding="0" border="0"><tr>';
+			}
+			if (i <= 1) {
+				first_ad_unit += '<td nowrap="nowrap" style="padding: 0 10px;" align="left">' 
+				+ '<a href="' + google_ads[i].url + '" class="subject">' + google_ads[i].line1 + '</a><br />' 
+				+ '<a href="' +  google_ads[i].url + '" class="desc">' + google_ads[i].line2;
+				if (google_ads.length > 1) { first_ad_unit += '<br />'; } else { first_ad_unit += ' '; }
+				first_ad_unit += google_ads[i].line3 + '</a>';
+				if (google_ads.length == 1) { first_ad_unit += '<br /><a href="' +  google_ads[i].url + '" class="url">' + google_ads[i].visible_url + '</a>'; }
+				first_ad_unit += '</td>';
+			}
+			if (((i == 0) && (i+1) == google_ads.length) || i == 1) {
+				first_ad_unit += '</tr>';
+				
+				// Print "Ads By Google" -- include link to Google feedback page if available
+				first_ad_unit += '<tr><td width="100%" align="right" valign="bottom"';
+				if (google_ads.length > 1) { first_ad_unit += ' colspan="2"'; }
+				first_ad_unit += '>';
+				if (google_info.feedback_url) { first_ad_unit += '<a href="' + google_info.feedback_url + '" class="adsby">'; }
+				first_ad_unit += 'Ads By Google';
+				if (google_info.feedback_url) {	first_ad_unit += '</a>'; }
+				first_ad_unit += '</td></tr>';
+
+				first_ad_unit += '</table>';
+				first_ad_unit += '</div>';
+			}
+		}
+		document.getElementById("google-banner").innerHTML += first_ad_unit;
+	}
+
+}
+
+// Ad Vars
+google_ad_client = "pub-0211744482601532";
+google_ad_output = "js";
+google_feedback = "on";
+google_max_num_ads = 2;
+google_ad_type  = "text";
+-->
+</script>
+<script language="JavaScript" type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><div id="beacon_36" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://adserver.mpogonline.com/adlog.php?bannerid=36&amp;clientid=21&amp;zoneid=26&amp;source=&amp;block=0&amp;capping=0&amp;cb=8dc9193f31706aeb6cf8c323d77fc77a' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div></div>
+<div align="center"><h1>EQ Everquest 1H Slashing Weapons - D</h1></div><br /><div align="center"><form action="search.php" method="post"><b>Search 1H Slashing Weapons:</b>&nbsp;<input type="text" name="index" size="20" />&nbsp;<input type="submit" name="submit" value="Search" /> [ <a href="http://www.everquest-online.com/weapons/advanced-search.php" title="Advanced Search">Advanced Search</a> ]</form></div><ul><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_596.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/dagarns-tail-id31338.php" title="Dagarn's Tail" />Dagarn's Tail</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;AC:25&nbsp;DMG:12&nbsp;Delay:19&nbsp;STR:+10&nbsp;HP:+75&nbsp;FR:+20&nbsp;<br /><b>Effect:</b>&nbsp;Fire Bolt<br><b>Class:</b>&nbsp;WAR&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_590.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-blade-of-the-shaidin-id61209.php" title="Dark Blade of the Shai`Din" />Dark Blade of the Shai`Din</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;AC:15&nbsp;DMG:14&nbsp;Delay:20&nbsp;STR:+10&nbsp;DEX:+10&nbsp;WIS:+12&nbsp;HP:+75&nbsp;DR:+20&nbsp;<br /><b>Effect:</b>&nbsp;Siphon<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1177.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-bloodstained-sword-id45006.php" title="Dark Bloodstained Sword" />Dark Bloodstained Sword</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:9&nbsp;Delay:25&nbsp;STR:+5&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;RNG&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_575.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-courage-id28574.php" title="Dark Courage" />Dark Courage</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:6&nbsp;Delay:19&nbsp;STR:+10&nbsp;STA:+10&nbsp;DEX:+10&nbsp;AGI:+10&nbsp;CHA:+5&nbsp;WIS:+8&nbsp;INT:+8&nbsp;<br />HP:+50&nbsp;MANA:+40&nbsp;FR:+8&nbsp;CR:+8&nbsp;MR:+8&nbsp;PR:+8&nbsp;<br /><b>Effect:</b>&nbsp;N/A<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_590.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-steel-long-sword-id29407.php" title="Dark Steel Long Sword" />Dark Steel Long Sword</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:8&nbsp;Delay:28&nbsp;STR:+1&nbsp;HP:+5&nbsp;MANA:+5&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_604.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-steel-scimitar-id29410.php" title="Dark Steel Scimitar" />Dark Steel Scimitar</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:7&nbsp;Delay:24&nbsp;STR:+1&nbsp;HP:+5&nbsp;MANA:+5&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;DRU&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_580.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-steel-short-sword-id29409.php" title="Dark Steel Short Sword" />Dark Steel Short Sword</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:6&nbsp;Delay:23&nbsp;STR:+1&nbsp;HP:+5&nbsp;MANA:+5&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1400.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/dark-taint-id40020.php" title="Dark Taint" />Dark Taint</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:9&nbsp;Delay:26&nbsp;DEX:+6&nbsp;DR:+6&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1370.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/darkblade-of-the-warlord-id22999.php" title="Darkblade of the Warlord" />Darkblade of the Warlord</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;AC:45&nbsp;DMG:38&nbsp;Delay:35&nbsp;STR:+20&nbsp;STA:+25&nbsp;AGI:+15&nbsp;CHA:+15&nbsp;<br />HP:+225&nbsp;FR:+20&nbsp;CR:+20&nbsp;DR:+15&nbsp;<br /><b>Effect:</b>&nbsp;Anger<br><b>Class:</b>&nbsp;WAR&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1446.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/darkglint-blade-id68772.php" title="Darkglint Blade" />Darkglint Blade</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;AC:18&nbsp;DMG:29&nbsp;Delay:23&nbsp;STR:+15&nbsp;STA:+15&nbsp;AGI:+15&nbsp;WIS:+20&nbsp;<br />HP:+195&nbsp;MANA:+175&nbsp;FR:+20&nbsp;CR:+15&nbsp;DR:+15&nbsp;PR:+10&nbsp;<br /><b>Effect:</b>&nbsp;Mana Shield<br><b>Class:</b>&nbsp;RNG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1178.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/darkmetal-falchion-id31821.php" title="Darkmetal Falchion" />Darkmetal Falchion</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:27&nbsp;Delay:29&nbsp;WIS:+7&nbsp;INT:+7&nbsp;<br><b>Class:</b>&nbsp;PAL&nbsp;SHD&nbsp;<br><b>Race:</b>&nbsp;HUM&nbsp;ERU&nbsp;HIE&nbsp;DEF&nbsp;HEF&nbsp;DWF&nbsp;TRL&nbsp;OGR&nbsp;HLF&nbsp;GNM&nbsp;IKS&nbsp;FRG&nbsp;</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_576.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/darkmoon-blade-id27894.php" title="Darkmoon Blade" />Darkmoon Blade</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:10&nbsp;Delay:19&nbsp;CHA:+12&nbsp;HP:+65&nbsp;<br><b>Class:</b>&nbsp;BRD&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_577.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/dawncaller-blade-of-the-morning-id31346.php" title="Dawncaller, Blade of the Morning" />Dawncaller, Blade of the Morning</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;AC:10&nbsp;DMG:24&nbsp;Delay:22&nbsp;DEX:+7&nbsp;<br /><b>Effect:</b>&nbsp;Dawncall<br><b>Class:</b>&nbsp;PAL&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1339.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/decorin-ore-shard-id28298.php" title="Decorin Ore Shard" />Decorin Ore Shard</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:5&nbsp;Delay:20&nbsp;<br /><b>Effect:</b>&nbsp;N/A<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_604.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/deep-six-cutlass-id5377.php" title="Deep Six Cutlass" />Deep Six Cutlass</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:14&nbsp;Delay:36&nbsp;STR:+5&nbsp;<br /><b>Effect:</b>&nbsp;Enduring Breath<br><b>Class:</b>&nbsp;PAL&nbsp;<br><b>Race:</b>&nbsp;HUM&nbsp;ERU&nbsp;HIE&nbsp;HEF&nbsp;DWF&nbsp;HLF&nbsp;GNM&nbsp;FRG&nbsp;</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1367.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/defenders-lightblade-id22965.php" title="Defenders Lightblade" />Defenders Lightblade</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:22&nbsp;Delay:34&nbsp;DEX:+8&nbsp;HP:+45&nbsp;DR:+10&nbsp;PR:+10&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;RNG&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1186.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/defiance-id25080.php" title="Defiance" />Defiance</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;AC:10&nbsp;DMG:9&nbsp;Delay:19&nbsp;STR:+6&nbsp;DEX:+8&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1380.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/diaku-forged-scimitar-id32408.php" title="Diaku Forged Scimitar" />Diaku Forged Scimitar</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:10&nbsp;Delay:50&nbsp;</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1332.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/diaku-forged-sword-id32410.php" title="Diaku Forged Sword" />Diaku Forged Sword</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:5&nbsp;Delay:45&nbsp;</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1067.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/dirtchomps-leg-id3380.php" title="Dirtchomp's Leg" />Dirtchomp's Leg</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:4&nbsp;Delay:25&nbsp;STR:+3&nbsp;DR:-15&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1364.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/disemboweler-id22983.php" title="Disemboweler" />Disemboweler</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:12&nbsp;Delay:20&nbsp;AGI:+5&nbsp;CHA:+5&nbsp;WIS:+5&nbsp;INT:+5&nbsp;HP:+35&nbsp;MANA:+35&nbsp;MR:+10&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;RNG&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_1336.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/double-edged-stormblade-id22975.php" title="Double Edged Stormblade" />Double Edged Stormblade</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:17&nbsp;Delay:20&nbsp;STR:+15&nbsp;STA:+10&nbsp;AGI:+15&nbsp;WIS:+13&nbsp;INT:+13&nbsp;<br />HP:+125&nbsp;MANA:+75&nbsp;FR:+15&nbsp;CR:+10&nbsp;<br /><b>Effect:</b>&nbsp;Wrath of Wind<br><b>Class:</b>&nbsp;WAR&nbsp;RNG&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_573.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/drakkel-steel-axe-id25178.php" title="Drakkel Steel Axe" />Drakkel Steel Axe</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:7&nbsp;Delay:30&nbsp;<br /><b>Effect:</b>&nbsp;N/A<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;SHM&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_590.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/drakkel-steel-long-sword-id25174.php" title="Drakkel Steel Long Sword" />Drakkel Steel Long Sword</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:6&nbsp;Delay:27&nbsp;<br /><b>Effect:</b>&nbsp;N/A<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_569.small.gif); background-color: #CFEFCF; padding: 3px;"><a href="http://www.everquest-online.com/items/dwarven-axe-id5300.php" title="Dwarven Axe" />Dwarven Axe</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:6&nbsp;Delay:26&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li><li style="list-style: disc url(http://www.everquest-online.com/content/images/items/item_569.small.gif); background-color: none; padding: 3px;"><a href="http://www.everquest-online.com/items/dwarven-axe-id13313.php" title="Dwarven Axe" />Dwarven Axe</a><span style="color: #000000; font-weight: normal; text-transform: uppercase; font-size: 11px;"><br /><b>Stats:</b>&nbsp;1H Slashing&nbsp;DMG:6&nbsp;Delay:26&nbsp;<br><b>Class:</b>&nbsp;WAR&nbsp;PAL&nbsp;RNG&nbsp;SHD&nbsp;BRD&nbsp;ROG&nbsp;SHM&nbsp;<br><b>Race:</b>&nbsp;ALL</span></li></ul><div align="center"><b>These items and more may be purchased at <a href='http://adserver.mpogonline.com/adclick.php?bannerid=3&amp;zoneid=0&amp;source=&amp;dest=http%3A%2F%2Fwetrack.it%2Fyantis%2Faf.cgi%3Faid%3D919%26redirect%3Dhttp%253A%252F%252Fwww.mysupersales.com%252FMG%252F%253Fgid%253D33' target='_self' onMouseOver="self.status='http://www.mysupersales.com/MG/?gid=33'; return true;" onMouseOut="self.status='';return true;">MySuperSales</a><div id="beacon_3" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://adserver.mpogonline.com/adlog.php?bannerid=3&amp;clientid=2&amp;zoneid=0&amp;source=&amp;block=0&amp;capping=0&amp;cb=4568e071c77cd4f8edcb1b9f00d02341' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div></b><br /><br /><b>The cheapest Platinum is also on sale at <a href='http://adserver.mpogonline.com/adclick.php?bannerid=3&amp;zoneid=0&amp;source=&amp;dest=http%3A%2F%2Fwetrack.it%2Fyantis%2Faf.cgi%3Faid%3D919%26redirect%3Dhttp%253A%252F%252Fwww.mysupersales.com%252FMG%252F%253Fgid%253D33' target='_self' onMouseOver="self.status='http://www.mysupersales.com/MG/?gid=33'; return true;" onMouseOut="self.status='';return true;">MySuperSales</a><div id="beacon_3" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://adserver.mpogonline.com/adlog.php?bannerid=3&amp;clientid=2&amp;zoneid=0&amp;source=&amp;block=0&amp;capping=0&amp;cb=00b069a5d9fd5a385d3ef39e3b18c4b3' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div>. Buy now!</b></div><br />			<br />
+		</div>
+		<div id="footer">
+EverQuest, You're in Our World Now, The Ruins of Kunark and The Scars of Velious are registered trademarks and The Shadows of Luclin, The Planes of Power, and Online Adventures are trademarks of Sony Computer Entertainment America Inc. "PlayStation" and the "PS" Family logo are registered trademarks of Sony Computer Entertainment Inc. SOE, the SOE logo and Station.com are registered trademarks or trademarks of Sony Online Entertainment Inc. All Rights Reserved. All other trademarks are properties of their respective owners.
+		</div>
+	</div>
+
+	<div id="header">
+	  <div id="header1"><a href="http://www.everquest-online.com"><img src="http://www.everquest-online.com/content/templates/1/images/header.jpg" width="600" height="115" alt="EQ Everquest Online" border="0" /></a></div>
+	  <div id="slogan" style="left: 50px; color: #FFFFFF;">EQ Everquest Online - &nbsp;(<a style="color: #FFFFFF;" href="#" onClick="this.style.behavior='url(#default#homepage)'; this.setHomePage('http://www.everquest-online.com');">Make Homepage</a>
+<script>
+var url = "http://www.everquest-online.com";
+
+// caption to appear with bookmark
+var who = "1H Slashing Weapons - D - EQ Everquest Online"
+
+var ver = navigator.appName
+var num = parseInt(navigator.appVersion)
+if ((ver == "Microsoft Internet Explorer")&&(num >= 4)) {
+   document.write(' | <a style="color: #FFFFFF;" href="javascript:window.external.AddFavorite(url,who);">Add Bookmark</a>'); }</script>)
+</div>
+	  <div id="date">March 8, 2006</div>
+	</div>
+		<div id="navleft">
+		  <div class="navbox">
+			<div class="content linkunit"">
+				<div class="linkunit2">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-0211744482601532";
+				ad_link_width = 120;
+				if (screen.width >= 1152) { ad_link_width = 160; }
+				if (screen.width >= 1280) { ad_link_width = 180; }
+				if (screen.width >= 1600) { ad_link_width = 200; }
+				google_ad_width = ad_link_width;
+				google_ad_height = 90;
+				google_ad_format = ad_link_width + "x90_0ads_al_s";
+				google_ad_channel ="7481459080";
+				google_color_border = "629D68";
+				google_color_bg = "F7FFF7";
+				google_color_link = "008000";
+				google_color_url = "008000";
+				google_color_text = "FFFFFF";
+				//--></script>
+				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+				</div>
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Items</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/items/" title="All Items">All Items</a><br />::&nbsp;<a href="http://www.everquest-online.com/items/augmentations/" title="Augmentations">Augmentations</a><br />::&nbsp;<a href="http://www.everquest-online.com/items/charm/" title="Charms">Charms</a><br />::&nbsp;<a href="http://www.everquest-online.com/items/instruments/" title="Instruments">Instruments</a><br />::&nbsp;<a href="http://www.everquest-online.com/items/jewelry/" title="Jewelry">Jewelry</a><br />::&nbsp;<a href="http://www.everquest-online.com/items/ldon/" title="LDoN Items">LDoN Items</a><br />::&nbsp;<a href="http://www.everquest-online.com/items/potions/" title="Potions">Potions</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Spells</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/spells/" title="All Spells">All Spells</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/bard/" title="Bard">Bard</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/beastlord/" title="Beastlord">Beastlord</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/berserker/" title="Berserker">Berserker</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/cleric/" title="Cleric">Cleric</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/druid/" title="Druid">Druid</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/enchanter/" title="Enchanter">Enchanter</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/magician/" title="Magician">Magician</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/monk/" title="Monk">Monk</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/necromancer/" title="Necromancer">Necromancer</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/paladin/" title="Paladin">Paladin</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/ranger/" title="Ranger">Ranger</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/rogue/" title="Rogue">Rogue</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/shadowknight/" title="Shadow Knight">Shadow Knight</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/shaman/" title="Shaman">Shaman</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/wizard/" title="Wizard">Wizard</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/warrior/" title="Warrior">Warrior</a><br />::&nbsp;<a href="http://www.everquest-online.com/spells/npc/" title="NPC">NPC</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Armor</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/armor/" title="All Armor">All Armor</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/head/" title="Head">Head</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/face/" title="Face">Face</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/ear/" title="Ear">Ear</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/neck/" title="Neck">Neck</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/shoulders/" title="Shoulders">Shoulders</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/arms/" title="Arms">Arms</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/back/" title="Back">Back</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/wrist/" title="Wrist">Wrist</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/hands/" title="Hands">Hands</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/shields/" title="Shields">Shields</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/finger/" title="Finger">Finger</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/chest/" title="Chest">Chest</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/legs/" title="Legs">Legs</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/feet/" title="Feet">Feet</a><br />::&nbsp;<a href="http://www.everquest-online.com/armor/waist/" title="Waist">Waist</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Weapons</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/weapons/" title="All Weapons">All Weapons</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/ammo/" title="Ammunition">Ammunition</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/1h-slashing/" title="1H Slashing">1H Slashing</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/2h-slashing/" title="2H Slashing">2H Slashing</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/1h-blunt/" title="1H Blunt">1H Blunt</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/2h-blunt/" title="2H Blunt">2H Blunt</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/1h-piercing/" title="1H Piercing">1H Piercing</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/2h-piercing/" title="2H Piercing">2H Piercing</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/archery/" title="Archery">Archery</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/hand-to-hand/" title="Hand to Hand">Hand to Hand</a><br />::&nbsp;<a href="http://www.everquest-online.com/weapons/throwing/" title="Throwing">Throwing</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Network</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.anarchyonlineonline.com/" title="Anarchy Online">Anarchy Online</a><br />::&nbsp;<a href="http://www.cityofheroesonline.com/" title="City of Heroes">City of Heroes</a><br />::&nbsp;<a href="http://www.diablo2guide.com/" title="Diablo 2">Diablo 2</a><br />::&nbsp;<a href="http://www.dndo-online.com/" title="Dungeons & Dragons Online">Dungeons & Dragons Online</a><br />::&nbsp;<a href="http://www.everquest-online.com/" title="Everquest">Everquest</a><br />::&nbsp;<a href="http://www.eq2online.com/" title="Everquest 2">Everquest 2</a><br />::&nbsp;<a href="http://www.finalfantasyxionline.com/" title="Final Fantasy XI">Final Fantasy XI</a><br />::&nbsp;<a href="http://www.guildwarsonline.com/" title="Guild Wars">Guild Wars</a><br />::&nbsp;<a href="http://www.lineage2-online.com/" title="Lineage 2">Lineage 2</a><br />::&nbsp;<a href="http://www.matrix-online.com/" title="Matrix Online">Matrix Online</a><br />::&nbsp;<a href="http://www.starwarsgalaxiesonline.com/" title="Star Wars Galaxies">Star Wars Galaxies</a><br />::&nbsp;<a href="http://www.vanguardsohonline.com/" title="Vanguard: Saga of Heroes">Vanguard: Saga of Heroes</a><br />::&nbsp;<a href="http://www.worldofwconline.com/" title="World of Warcraft">World of Warcraft</a><br />
+			</div>
+		  </div>
+		 </div>
+		<div id="navright">
+		  <div class="navbox">
+			<div class="top">Screenshot</div>
+			<div class="content">
+			   <div align="center" class="randomscreen"><a href=http://www.everquest-online.com/content/images/gallery/screenshots/eqn118><img src="http://www.everquest-online.com/content/images/gallery/albums/screenshots/eqn118.thumb.jpg" width=160 height=120  alt="On the way down to Lower Guk a Froglok attacks" border="0" /></a><br />On the way down to Lower Guk a Froglok attacks<br />From: <a href=http://www.everquest-online.com/content/images/gallery/screenshots>Screenshots</a></div>
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Information</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com" title="Home">Home</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/everquest-addguide.php" title="Add Guide">Add Guide</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/everquest-platinum.php" title="Platinum">Platinum</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/images/gallery/screenshots/" title="Screenshots">Screenshots</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Classes</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/content/classes-bard.php" title="Bard">Bard</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-beastlord.php" title="Beastlord">Beastlord</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-berserker.php" title="Berserker">Berserker</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-cleric.php" title="Cleric">Cleric</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-druid.php" title="Druid">Druid</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-enchanter.php" title="Enchanter">Enchanter</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-magician.php" title="Magician">Magician</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-monk.php" title="Monk">Monk</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-necromancer.php" title="Necromancer">Necromancer</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-paladin.php" title="Paladin">Paladin</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-ranger.php" title="Ranger">Ranger</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-rogue.php" title="Rogue">Rogue</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-shadowknight.php" title="Shadow Knight">Shadow Knight</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-shaman.php" title="Shaman">Shaman</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-warrior.php" title="Warrior">Warrior</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/classes-wizard.php" title="Wizard">Wizard</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Races</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/content/races-barbarian.php" title="Barbarian">Barbarian</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-darkelf.php" title="Dark Elf">Dark Elf</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-dwarf.php" title="Dwarf">Dwarf</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-erudite.php" title="Erudite">Erudite</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-froglok.php" title="Froglok">Froglok</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-gnome.php" title="Gnome">Gnome</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-halfelf.php" title="Half Elf">Half Elf</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-halfling.php" title="Halfling">Halfling</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-highelf.php" title="High Elf">High Elf</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-human.php" title="Human">Human</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-iksar.php" title="Iksar">Iksar</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-ogre.php" title="Ogre">Ogre</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-troll.php" title="Troll">Troll</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-vahshir.php" title="Vah Shir">Vah Shir</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/races-woodelf.php" title="Wood Elf">Wood Elf</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Deities</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/content/deities-bertoxxulous.php" title="Bertoxxulous">Bertoxxulous</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-brellserilis.php" title="Brell Serilis">Brell Serilis</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-bristlebane.php" title="Bristlebane">Bristlebane</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-cazic-thule.php" title="Cazic-Thule">Cazic-Thule</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-erollisimarr.php" title="Erollisi Marr">Erollisi Marr</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-innoruuk.php" title="Innoruuk">Innoruuk</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-karana.php" title="Karana">Karana</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-mithanielmarr.php" title="Mithaniel Marr">Mithaniel Marr</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-prexus.php" title="Prexus">Prexus</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-quellious.php" title="Quellious">Quellious</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-ralloszek.php" title="Rallos Zek">Rallos Zek</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-rodcetnife.php" title="Rodcet Nife">Rodcet Nife</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-solusekro.php" title="Solusek Ro">Solusek Ro</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-thetribunal.php" title="The Tribunal">The Tribunal</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-tunare.php" title="Tunare">Tunare</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/deities-veeshan.php" title="Veeshan">Veeshan</a><br />
+			</div>
+		  </div>
+		  <div class="navbox">
+			<div class="top">Site</div>
+			<div class="content">
+			   ::&nbsp;<a href="http://www.everquest-online.com/content/site-contactus.php" title="Contact Us">Contact Us</a><br />::&nbsp;<a href="http://www.everquest-online.com/content/site-links.php" title="Links">Links</a><br />
+			</div>
+		  </div>
+		</div>
+</div>
+</body>
+</html>

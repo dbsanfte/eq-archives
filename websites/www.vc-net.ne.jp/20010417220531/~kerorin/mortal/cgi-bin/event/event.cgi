@@ -1,0 +1,320 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<STYLE type="text/css">
+<!--
+body,tr,td,th { font-size: 10pt }
+a:hover       { color: #008080 }
+span          { font-size: 18pt }
+big           { font-size: 12pt }
+small         { font-size: 9pt }
+-->
+</STYLE>
+<title>Mortal Illusion Event Forum</title></head>
+<body background="" bgcolor="#FFFFFF" text="#006633" link="#009933" vlink="#99CC66" alink="#008080">
+
+<center>
+<font color="#008000" size=6 face="ＭＳ Ｐゴシック"><B><span>Mortal Illusion Event Forum</span></B></font>
+<hr width='90%'>
+[<a href="http://www.vc-net.ne.jp/~kerorin/mortal/" target='_top'>もどる</a>]
+[<a href="#msg">新規投稿</a>]
+[<a href="./event.cgi?list=new">新規順表示</a>]
+[<a href="./event.cgi?mode=new_sort&page=0">新着記事</a>]
+[<a href="./event.cgi?mode=howto">使い方</a>]
+[<a href="./event.cgi?mode=find&page=0&list=">ワード検索</a>]
+[<a href="./index.cgi">過去ログ</a>]
+[<a href="./wf_admin.cgi">管理用</a>]
+<hr width='90%'>
+<table><tr><td nowrap><small>
+<LI>48時間以内の記事は <font color="#FF3300">new!</font> で表示されます。<br>
+<LI>ツリー先頭部の ★ をクリックすると関連記事を一括講読できます。<br>
+</small></td></tr></table></center>
+<blockquote>
+<DL>
+<DT><a href="./event.cgi?mode=allread&no=538&page=0">★</a> -  <a href="./event.cgi?no=538&reno=no&oya=538&mode=msgview&page=0">4/21 Chardok Overking/Queen(MI/NLW&amp;EL Event)</a> - <b>Loherangrin</b> <SMALL>01/04/17(Tue) 06:43 <font color=#800000>No.538</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=556&reno=538&oya=538&mode=msgview&page=0">参加、多分遅刻です。</a> - <b>Makosama/56/MAG</b> <SMALL>01/04/18(Wed) 02:08 <font color=#800000>No.556</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=555&reno=538&oya=538&mode=msgview&page=0">参加希望</a> - <b>Siranui/56Clr</b> <SMALL>01/04/18(Wed) 01:10 <font color=#800000>No.555</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=554&reno=538&oya=538&mode=msgview&page=0">参加希望</a> - <b>Hideｙ/54/WAR</b> <SMALL>01/04/17(Tue) 23:23 <font color=#800000>No.554</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=553&reno=538&oya=538&mode=msgview&page=0">■検討事項（IRC#EQMIで現在議論中）</a> - <b>Loherangrin</b> <SMALL>01/04/17(Tue) 23:19 <font color=#800000>No.553</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=552&reno=538&oya=538&mode=msgview&page=0">行けると思う</a> - <b>Falth@55CLR/Yakou@54ROG</b> <SMALL>01/04/17(Tue) 20:50 <font color=#800000>No.552</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=551&reno=538&oya=538&mode=msgview&page=0">さんかー</a> - <b>Faris/60/wiz</b> <SMALL>01/04/17(Tue) 19:57 <font color=#800000>No.551</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=550&reno=538&oya=538&mode=msgview&page=0">参加</a> - <b>Azary/55/SHD</b> <SMALL>01/04/17(Tue) 19:50 <font color=#800000>No.550</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=549&reno=538&oya=538&mode=msgview&page=0">参加～(t/o)</a> - <b>Iamapen/55MAG/MI</b> <SMALL>01/04/17(Tue) 18:57 <font color=#800000>No.549</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=548&reno=538&oya=538&mode=msgview&page=0">参加ですが、lootはRNGで</a> - <b>Mikaru@wiz</b> <SMALL>01/04/17(Tue) 18:50 <font color=#800000>No.548</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=547&reno=538&oya=538&mode=msgview&page=0">おそらくいける</a> - <b>dolman</b> <SMALL>01/04/17(Tue) 18:47 <font color=#800000>No.547</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=546&reno=538&oya=538&mode=msgview&page=0">無論参加(w</a> - <b>Arucard/58/WAR</b> <SMALL>01/04/17(Tue) 17:19 <font color=#800000>No.546</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=543&reno=538&oya=538&mode=msgview&page=0">need CoH</a> - <b>Hestia</b> <SMALL>01/04/17(Tue) 10:43 <font color=#800000>No.543</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=542&reno=538&oya=538&mode=msgview&page=0">参加</a> - <b>Replay/CLR/53</b> <SMALL>01/04/17(Tue) 09:54 <font color=#800000>No.542</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=540&reno=538&oya=538&mode=msgview&page=0">参加(t/o</a> - <b>lillia/shm56</b> <SMALL>01/04/17(Tue) 09:24 <font color=#800000>No.540</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=539&reno=538&oya=538&mode=msgview&page=0">さんかで</a> - <b>芹香５３Rng</b> <SMALL>01/04/17(Tue) 09:07 <font color=#800000>No.539</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=529&page=0">★</a> -  <a href="./event.cgi?no=529&reno=no&oya=529&mode=msgview&page=0">■Loot品（Drop可能）について</a> - <b>Loherangrin</b> <SMALL>01/04/16(Mon) 18:54 <font color=#800000>No.529</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=535&reno=529&oya=529&mode=msgview&page=0">■Loot品一覧</a> - <b>Loherangrin</b> <SMALL>01/04/17(Tue) 02:07 <font color=#800000>No.535</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=536&reno=535&oya=529&mode=msgview&page=0">Re: ■Loot品一覧</a> - <b>Pikarux@RNG</b> <SMALL>01/04/17(Tue) 02:47 <font color=#800000>No.536</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=537&reno=536&oya=529&mode=msgview&page=0">Re^2: ■Loot品一覧</a> - <b>Loherangrin</b> <SMALL>01/04/17(Tue) 06:10 <font color=#800000>No.537</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=545&reno=537&oya=529&mode=msgview&page=0">ALLUREについて</a> - <b>Nahaha/55/ENC/QoN</b> <SMALL>01/04/17(Tue) 12:36 <font color=#800000>No.545</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+</UL>
+</UL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=524&page=0">★</a> -  <a href="./event.cgi?no=524&reno=no&oya=524&mode=msgview&page=0">PoF終了後のRngオーダー</a> - <b>芹香５３Rng</b> <SMALL>01/04/16(Mon) 09:46 <font color=#800000>No.524</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=544&reno=524&oya=524&mode=msgview&page=0">mag</a> - <b>Iamapen/55MAG/MI</b> <SMALL>01/04/17(Tue) 11:48 <font color=#800000>No.544</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=534&reno=524&oya=524&mode=msgview&page=0">CLR order</a> - <b>Siranui/56Clr</b> <SMALL>01/04/16(Mon) 20:26 <font color=#800000>No.534</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=533&reno=524&oya=524&mode=msgview&page=0">SHMオーダー</a> - <b>kerorin/55SHM/MI</b> <SMALL>01/04/16(Mon) 20:05 <font color=#800000>No.533</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=532&reno=524&oya=524&mode=msgview&page=0">PAL.</a> - <b>Necolove@QoN/57Pal</b> <SMALL>01/04/16(Mon) 19:49 <font color=#800000>No.532</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=531&reno=524&oya=524&mode=msgview&page=0">SHDオーダー</a> - <b>Azary</b> <SMALL>01/04/16(Mon) 19:43 <font color=#800000>No.531</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=530&reno=524&oya=524&mode=msgview&page=0">DruOrder</a> - <b>Mikages@56DRU/QoN</b> <SMALL>01/04/16(Mon) 19:33 <font color=#800000>No.530</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=528&reno=524&oya=524&mode=msgview&page=0">■各クラスOrderListの報告お願いします</a> - <b>Loherangrin</b> <SMALL>01/04/16(Mon) 18:50 <font color=#800000>No.528</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=527&reno=524&oya=524&mode=msgview&page=0">WARオーダー</a> - <b>Arucard＠58WAR</b> <SMALL>01/04/16(Mon) 17:16 <font color=#800000>No.527</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=526&reno=524&oya=524&mode=msgview&page=0">Re: PoF終了後のNECオーダー</a> - <b>Jojox</b> <SMALL>01/04/16(Mon) 12:19 <font color=#800000>No.526</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./event.cgi?no=525&reno=524&oya=524&mode=msgview&page=0">PoF終了後のENCオーダー</a> - <b>Nahaha＠ENC</b> <SMALL>01/04/16(Mon) 10:54 <font color=#800000>No.525</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=516&page=0">★</a> -  <a href="./event.cgi?no=516&reno=no&oya=516&mode=msgview&page=0">15日朝８時現在GolemがPopしてます</a> - <b>芹香５３Rng</b> <SMALL>01/04/15(Sun) 07:55 <font color=#800000>No.516</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=523&reno=516&oya=516&mode=msgview&page=0">午後６時情報</a> - <b>Pikarux@RNG</b> <SMALL>01/04/15(Sun) 18:57 <font color=#800000>No.523</font>  </SMALL>
+<LI> <a href="./event.cgi?no=522&reno=516&oya=516&mode=msgview&page=0">■4/15Party編成・連絡事項</a> - <b>Loherangrin</b> <SMALL>01/04/15(Sun) 18:11 <font color=#800000>No.522</font>  </SMALL>
+<LI> <a href="./event.cgi?no=521&reno=516&oya=516&mode=msgview&page=0">１７時３０分現在IsenがRaidちゅう</a> - <b>芹香５３Rng</b> <SMALL>01/04/15(Sun) 17:41 <font color=#800000>No.521</font>  </SMALL>
+<LI> <a href="./event.cgi?no=517&reno=516&oya=516&mode=msgview&page=0">他の２匹</a> - <b>Buchi/58MNK</b> <SMALL>01/04/15(Sun) 12:48 <font color=#800000>No.517</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=518&reno=517&oya=516&mode=msgview&page=0">残念</a> - <b>Faris/60/wiz</b> <SMALL>01/04/15(Sun) 13:46 <font color=#800000>No.518</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=519&reno=518&oya=516&mode=msgview&page=0">恐ろしい・・。</a> - <b>Feiyen@52NEC</b> <SMALL>01/04/15(Sun) 14:59 <font color=#800000>No.519</font>  </SMALL>
+</UL>
+</UL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=520&page=0">★</a> -  <a href="./event.cgi?no=520&reno=no&oya=520&mode=msgview&page=0">4/15 PoF 不参加</a> - <b>Urara</b> <SMALL>01/04/15(Sun) 15:12 <font color=#800000>No.520</font>  </SMALL>
+<DT><a href="./event.cgi?mode=allread&no=508&page=0">★</a> -  <a href="./event.cgi?no=508&reno=no&oya=508&mode=msgview&page=0">■4/14 PoF Party編成</a> - <b>Loherangrin</b> <SMALL>01/04/14(Sat) 15:52 <font color=#800000>No.508</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=515&reno=508&oya=508&mode=msgview&page=0">Re: すいません。遅れます</a> - <b>Feiyen@52NEC</b> <SMALL>01/04/14(Sat) 21:38 <font color=#800000>No.515</font>  </SMALL>
+<LI> <a href="./event.cgi?no=514&reno=508&oya=508&mode=msgview&page=0">20:30 IRC #NLW 集合　あげ</a> - <b>Pomtaka/54/clr</b> <SMALL>01/04/14(Sat) 20:17 <font color=#800000>No.514</font>  </SMALL>
+<LI> <a href="./event.cgi?no=512&reno=508&oya=508&mode=msgview&page=0">抜けてますｗ</a> - <b>Urara</b> <SMALL>01/04/14(Sat) 19:58 <font color=#800000>No.512</font>  </SMALL>
+<LI> <a href="./event.cgi?no=510&reno=508&oya=508&mode=msgview&page=0">すいません、30～60分くらい遅れます</a> - <b>Jojox</b> <SMALL>01/04/14(Sat) 17:42 <font color=#800000>No.510</font>  </SMALL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=401&page=0">★</a> -  <a href="./event.cgi?no=401&reno=no&oya=401&mode=msgview&page=0">PoF Raid（4/12～4/15）参加希望者ツリー</a> - <b>Tatsushi/PAL58</b> <SMALL>01/04/10(Tue) 06:15 <font color=#800000>No.401</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=486&reno=401&oya=401&mode=msgview&page=0">すみませんでした</a> - <b>Citrus@49ENC</b> <SMALL>01/04/13(Fri) 14:28 <font color=#800000>No.486</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=489&reno=486&oya=401&mode=msgview&page=0">21：00 Feerrott集合です</a> - <b>Loherangrin</b> <SMALL>01/04/13(Fri) 16:37 <font color=#800000>No.489</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=490&reno=489&oya=401&mode=msgview&page=0">Re: 21：00 Feerrott集合です</a> - <b>Citrus@49ENC</b> <SMALL>01/04/13(Fri) 16:59 <font color=#800000>No.490</font>  </SMALL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=485&reno=401&oya=401&mode=msgview&page=0">13日遅刻です。</a> - <b>Hidey</b> <SMALL>01/04/13(Fri) 11:18 <font color=#800000>No.485</font>  </SMALL>
+<LI> <a href="./event.cgi?no=478&reno=401&oya=401&mode=msgview&page=0">報告と訂正</a> - <b>Takarnn@53Pal</b> <SMALL>01/04/13(Fri) 02:05 <font color=#800000>No.478</font>  </SMALL>
+<LI> <a href="./event.cgi?no=468&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Jojox/56NEC</b> <SMALL>01/04/12(Thu) 21:43 <font color=#800000>No.468</font>  </SMALL>
+<LI> <a href="./event.cgi?no=467&reno=401&oya=401&mode=msgview&page=0">4/13のPOP時間</a> - <b>Doggybag@50CLR/QoN</b> <SMALL>01/04/12(Thu) 21:40 <font color=#800000>No.467</font>  </SMALL>
+<LI> <a href="./event.cgi?no=463&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Sirvine@War52</b> <SMALL>01/04/12(Thu) 20:07 <font color=#800000>No.463</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=502&reno=463&oya=401&mode=msgview&page=0">不参加になるかもしれません</a> - <b>Sirvine@War52</b> <SMALL>01/04/13(Fri) 20:56 <font color=#800000>No.502</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=506&reno=502&oya=401&mode=msgview&page=0">14日は不参加</a> - <b>Sirvine@War52</b> <SMALL>01/04/14(Sat) 12:51 <font color=#800000>No.506</font>  </SMALL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=455&reno=401&oya=401&mode=msgview&page=0">■PoF参加者一覧</a> - <b>Loherangrin</b> <SMALL>01/04/12(Thu) 19:17 <font color=#800000>No.455</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=456&reno=455&oya=401&mode=msgview&page=0">■再度警告クラスリーダーへ</a> - <b>Loherangrin</b> <SMALL>01/04/12(Thu) 19:19 <font color=#800000>No.456</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=495&reno=456&oya=401&mode=msgview&page=0">CLR</a> - <b>Siranui/56Clr</b> <SMALL>01/04/13(Fri) 18:56 <font color=#800000>No.495</font>  </SMALL>
+<LI> <a href="./event.cgi?no=476&reno=456&oya=401&mode=msgview&page=0">RNGオーダー　RNGの方確認よろ</a> - <b>芹香５３Rng</b> <SMALL>01/04/13(Fri) 00:27 <font color=#800000>No.476</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=491&reno=476&oya=401&mode=msgview&page=0">新入りっす</a> - <b>Sinatiku@RNG</b> <SMALL>01/04/13(Fri) 17:18 <font color=#800000>No.491</font>  </SMALL>
+<LI> <a href="./event.cgi?no=480&reno=476&oya=401&mode=msgview&page=0">自分は合ってます</a> - <b>Pikarux@RNG</b> <SMALL>01/04/13(Fri) 03:09 <font color=#800000>No.480</font>  </SMALL>
+<LI> <a href="./event.cgi?no=477&reno=476&oya=401&mode=msgview&page=0">もし前回の参加が有効であるなら</a> - <b>KBee@RNG/Ted</b> <SMALL>01/04/13(Fri) 00:54 <font color=#800000>No.477</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=479&reno=477&oya=401&mode=msgview&page=0">う～んと、、、</a> - <b>Nyaga</b> <SMALL>01/04/13(Fri) 02:26 <font color=#800000>No.479</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=482&reno=479&oya=401&mode=msgview&page=0">思い出したので修正</a> - <b>芹香５３Rng</b> <SMALL>01/04/13(Fri) 09:02 <font color=#800000>No.482</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=499&reno=482&oya=401&mode=msgview&page=0">思い出してもらえてよかった～(^.^)</a> - <b>Ain</b> <SMALL>01/04/13(Fri) 20:07 <font color=#800000>No.499</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=503&reno=499&oya=401&mode=msgview&page=0">Re: 思い出してもらえてよかった～(^.^)</a> - <b>Nyaga</b> <SMALL>01/04/13(Fri) 21:17 <font color=#800000>No.503</font>  </SMALL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=475&reno=456&oya=401&mode=msgview&page=0">WAR</a> - <b>Arucard/58/WAR</b> <SMALL>01/04/12(Thu) 23:55 <font color=#800000>No.475</font>  </SMALL>
+<LI> <a href="./event.cgi?no=473&reno=456&oya=401&mode=msgview&page=0">DruOrder</a> - <b>Mikages@56DRU/QoN</b> <SMALL>01/04/12(Thu) 23:37 <font color=#800000>No.473</font>  </SMALL>
+<LI> <a href="./event.cgi?no=472&reno=456&oya=401&mode=msgview&page=0">MNK</a> - <b>Veleno</b> <SMALL>01/04/12(Thu) 23:28 <font color=#800000>No.472</font>  </SMALL>
+<LI> <a href="./event.cgi?no=471&reno=456&oya=401&mode=msgview&page=0">Bard</a> - <b>Lienea</b> <SMALL>01/04/12(Thu) 22:16 <font color=#800000>No.471</font>  </SMALL>
+<LI> <a href="./event.cgi?no=466&reno=456&oya=401&mode=msgview&page=0">Re: PAL。</a> - <b>Necolove@QoN/57Pal</b> <SMALL>01/04/12(Thu) 21:39 <font color=#800000>No.466</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=483&reno=466&oya=401&mode=msgview&page=0">Re^2: PAL。</a> - <b>Tatsushi/PAL58</b> <SMALL>01/04/13(Fri) 10:24 <font color=#800000>No.483</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=513&reno=483&oya=401&mode=msgview&page=0">Re^3: PAL。</a> - <b>Necolove@QoN/57Pal</b> <SMALL>01/04/14(Sat) 20:10 <font color=#800000>No.513</font>  </SMALL>
+</UL>
+<LI> <a href="./event.cgi?no=474&reno=466&oya=401&mode=msgview&page=0">add よろ、ｗ</a> - <b>Syaka54PAL</b> <SMALL>01/04/12(Thu) 23:47 <font color=#800000>No.474</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=488&reno=474&oya=401&mode=msgview&page=0">まだです（ｗ</a> - <b>Loherangrin</b> <SMALL>01/04/13(Fri) 16:32 <font color=#800000>No.488</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=494&reno=488&oya=401&mode=msgview&page=0">gua.w</a> - <b>Syaka54PAL</b> <SMALL>01/04/13(Fri) 18:34 <font color=#800000>No.494</font>  </SMALL>
+</UL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=465&reno=456&oya=401&mode=msgview&page=0">ENC</a> - <b>Nahaha＠JC</b> <SMALL>01/04/12(Thu) 20:14 <font color=#800000>No.465</font>  </SMALL>
+<LI> <a href="./event.cgi?no=460&reno=456&oya=401&mode=msgview&page=0">rogue</a> - <b>yakou</b> <SMALL>01/04/12(Thu) 19:42 <font color=#800000>No.460</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=469&reno=460&oya=401&mode=msgview&page=0">Re: rogue</a> - <b>Jojox</b> <SMALL>01/04/12(Thu) 21:45 <font color=#800000>No.469</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=470&reno=469&oya=401&mode=msgview&page=0">あ、関係無いんだw</a> - <b>夜香</b> <SMALL>01/04/12(Thu) 22:05 <font color=#800000>No.470</font>  </SMALL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=459&reno=456&oya=401&mode=msgview&page=0">mag</a> - <b>Iamapen/55MAG/MI</b> <SMALL>01/04/12(Thu) 19:37 <font color=#800000>No.459</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=462&reno=459&oya=401&mode=msgview&page=0">追記</a> - <b>Iamapen/55MAG/MI</b> <SMALL>01/04/12(Thu) 19:55 <font color=#800000>No.462</font>  </SMALL>
+</UL>
+<LI> <a href="./event.cgi?no=458&reno=456&oya=401&mode=msgview&page=0">SHDオーダー</a> - <b>Azary</b> <SMALL>01/04/12(Thu) 19:31 <font color=#800000>No.458</font>  </SMALL>
+<LI> <a href="./event.cgi?no=457&reno=456&oya=401&mode=msgview&page=0">SHMオーダー</a> - <b>kerorin/SHM/54/MI</b> <SMALL>01/04/12(Thu) 19:24 <font color=#800000>No.457</font>  </SMALL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=453&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Arucard/58/WAR</b> <SMALL>01/04/12(Thu) 18:46 <font color=#800000>No.453</font>  </SMALL>
+<LI> <a href="./event.cgi?no=451&reno=401&oya=401&mode=msgview&page=0">QoN参加者</a> - <b>Nahaha＠QoN取りまとめ役</b> <SMALL>01/04/12(Thu) 11:17 <font color=#800000>No.451</font>  </SMALL>
+<LI> <a href="./event.cgi?no=450&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Replay/CLR/53</b> <SMALL>01/04/12(Thu) 08:57 <font color=#800000>No.450</font>  </SMALL>
+<LI> <a href="./event.cgi?no=449&reno=401&oya=401&mode=msgview&page=0">参加希望</a> - <b>Siranui/56Clr</b> <SMALL>01/04/12(Thu) 03:59 <font color=#800000>No.449</font>  </SMALL>
+<LI> <a href="./event.cgi?no=448&reno=401&oya=401&mode=msgview&page=0">TED参加希望者</a> - <b>Rophec@TEDイベント実行委員</b> <SMALL>01/04/11(Wed) 22:42 <font color=#800000>No.448</font>  </SMALL>
+<LI> <a href="./event.cgi?no=447&reno=401&oya=401&mode=msgview&page=0">全日参加で(T/O</a> - <b>Lienea@Brd56</b> <SMALL>01/04/11(Wed) 22:02 <font color=#800000>No.447</font>  </SMALL>
+<LI> <a href="./event.cgi?no=446&reno=401&oya=401&mode=msgview&page=0">参加します！</a> - <b>Citrus@49ENC</b> <SMALL>01/04/11(Wed) 21:53 <font color=#800000>No.446</font>  </SMALL>
+<LI> <a href="./event.cgi?no=444&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Pomtaka/54/clr</b> <SMALL>01/04/11(Wed) 19:57 <font color=#800000>No.444</font>  </SMALL>
+<LI> <a href="./event.cgi?no=443&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Azary</b> <SMALL>01/04/11(Wed) 19:22 <font color=#800000>No.443</font>  </SMALL>
+<LI> <a href="./event.cgi?no=441&reno=401&oya=401&mode=msgview&page=0">参加します</a> - <b>Kuniko@49clr</b> <SMALL>01/04/11(Wed) 18:19 <font color=#800000>No.441</font>  </SMALL>
+<LI> <a href="./event.cgi?no=440&reno=401&oya=401&mode=msgview&page=0">参加希望</a> - <b>uiui</b> <SMALL>01/04/11(Wed) 17:18 <font color=#800000>No.440</font>  </SMALL>
+<LI> <a href="./event.cgi?no=439&reno=401&oya=401&mode=msgview&page=0">参加（予定）</a> - <b>Urara@55ENC</b> <SMALL>01/04/11(Wed) 14:07 <font color=#800000>No.439</font>  </SMALL>
+<LI> <a href="./event.cgi?no=435&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Gagensai/56war</b> <SMALL>01/04/11(Wed) 09:44 <font color=#800000>No.435</font>  </SMALL>
+<LI> <a href="./event.cgi?no=433&reno=401&oya=401&mode=msgview&page=0">参加希望</a> - <b>Faris</b> <SMALL>01/04/11(Wed) 08:42 <font color=#800000>No.433</font>  </SMALL>
+<LI> <a href="./event.cgi?no=432&reno=401&oya=401&mode=msgview&page=0">参加希望</a> - <b>Hideｙ</b> <SMALL>01/04/11(Wed) 06:00 <font color=#800000>No.432</font>  </SMALL>
+<LI> <a href="./event.cgi?no=430&reno=401&oya=401&mode=msgview&page=0">参加で</a> - <b>Pikarux@RNG</b> <SMALL>01/04/11(Wed) 02:53 <font color=#800000>No.430</font>  </SMALL>
+<LI> <a href="./event.cgi?no=428&reno=401&oya=401&mode=msgview&page=0">参加（こっちでいいのかな）</a> - <b>芹香５３Rng</b> <SMALL>01/04/11(Wed) 01:20 <font color=#800000>No.428</font>  </SMALL>
+<LI> <a href="./event.cgi?no=427&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Veleno</b> <SMALL>01/04/11(Wed) 00:30 <font color=#800000>No.427</font>  </SMALL>
+<LI> <a href="./event.cgi?no=426&reno=401&oya=401&mode=msgview&page=0">参加します</a> - <b>kerorin/55SHM/MI</b> <SMALL>01/04/11(Wed) 00:09 <font color=#800000>No.426</font>  </SMALL>
+<LI> <a href="./event.cgi?no=424&reno=401&oya=401&mode=msgview&page=0">参加</a> - <b>Nyaga/55RNG/MI</b> <SMALL>01/04/10(Tue) 23:56 <font color=#800000>No.424</font>  </SMALL>
+<LI> <a href="./event.cgi?no=417&reno=401&oya=401&mode=msgview&page=0">参加します（＾＾</a> - <b>Brunnhilde@BRD51</b> <SMALL>01/04/10(Tue) 20:01 <font color=#800000>No.417</font>  </SMALL>
+<LI> <a href="./event.cgi?no=415&reno=401&oya=401&mode=msgview&page=0">行くにゃ</a> - <b>Adonai</b> <SMALL>01/04/10(Tue) 19:31 <font color=#800000>No.415</font>  </SMALL>
+<LI> <a href="./event.cgi?no=412&reno=401&oya=401&mode=msgview&page=0">いく</a> - <b>dolman</b> <SMALL>01/04/10(Tue) 16:49 <font color=#800000>No.412</font>  </SMALL>
+<LI> <a href="./event.cgi?no=411&reno=401&oya=401&mode=msgview&page=0">参加～</a> - <b>iamapen</b> <SMALL>01/04/10(Tue) 15:18 <font color=#800000>No.411</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=481&reno=411&oya=401&mode=msgview&page=0">うう、寝過ごした＾＾；；</a> - <b>dolman</b> <SMALL>01/04/13(Fri) 04:08 <font color=#800000>No.481</font>  </SMALL>
+</UL>
+<LI> <a href="./event.cgi?no=408&reno=401&oya=401&mode=msgview&page=0">参加♪</a> - <b>lillia/shm56</b> <SMALL>01/04/10(Tue) 12:48 <font color=#800000>No.408</font>  </SMALL>
+<LI> <a href="./event.cgi?no=404&reno=401&oya=401&mode=msgview&page=0">■変更点など</a> - <b>Loherangrin</b> <SMALL>01/04/10(Tue) 08:52 <font color=#800000>No.404</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=405&reno=404&oya=401&mode=msgview&page=0">Re: ■変更点など</a> - <b>Nahaha/55/ENC/QoN</b> <SMALL>01/04/10(Tue) 09:15 <font color=#800000>No.405</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=418&reno=405&oya=401&mode=msgview&page=0">Re^2: ■変更点など</a> - <b>Loherangrin</b> <SMALL>01/04/10(Tue) 21:18 <font color=#800000>No.418</font>  </SMALL>
+<LI> <a href="./event.cgi?no=410&reno=405&oya=401&mode=msgview&page=0">RNGの場合（参考）</a> - <b>Pikarux@RNG</b> <SMALL>01/04/10(Tue) 15:01 <font color=#800000>No.410</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=422&reno=410&oya=401&mode=msgview&page=0">コンプリート者は</a> - <b>Nyaga</b> <SMALL>01/04/10(Tue) 23:50 <font color=#800000>No.422</font>  </SMALL>
+<LI> <a href="./event.cgi?no=414&reno=410&oya=401&mode=msgview&page=0">まだコンプしてないけど(笑</a> - <b>KBee@RNG/Ted</b> <SMALL>01/04/10(Tue) 19:05 <font color=#800000>No.414</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=431&reno=414&oya=401&mode=msgview&page=0">Re: まだコンプしてないけど(笑</a> - <b>Pikarux@RNG</b> <SMALL>01/04/11(Wed) 03:06 <font color=#800000>No.431</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=442&reno=431&oya=401&mode=msgview&page=0">Re^2: まだコンプしてないけど(笑</a> - <b>KBee@RNG/Ted</b> <SMALL>01/04/11(Wed) 18:50 <font color=#800000>No.442</font>  </SMALL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=413&reno=410&oya=401&mode=msgview&page=0">Re: RNGの場合（参考）</a> - <b>lillia/shm56</b> <SMALL>01/04/10(Tue) 17:23 <font color=#800000>No.413</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=423&reno=413&oya=401&mode=msgview&page=0">う～ん（ｗ</a> - <b>Nyaga</b> <SMALL>01/04/10(Tue) 23:52 <font color=#800000>No.423</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=434&reno=423&oya=401&mode=msgview&page=0">たしか・・</a> - <b>lillia/shm56</b> <SMALL>01/04/11(Wed) 09:16 <font color=#800000>No.434</font>  </SMALL>
+</UL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=406&reno=405&oya=401&mode=msgview&page=0">Re^2: ■変更点など</a> - <b>Jojox</b> <SMALL>01/04/10(Tue) 11:04 <font color=#800000>No.406</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=409&reno=406&oya=401&mode=msgview&page=0">真意が伝わってないみたいです</a> - <b>Nahaha/55/ENC/QoN</b> <SMALL>01/04/10(Tue) 14:40 <font color=#800000>No.409</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=416&reno=409&oya=401&mode=msgview&page=0">すいません、その通りでした</a> - <b>Jojox</b> <SMALL>01/04/10(Tue) 19:51 <font color=#800000>No.416</font>  </SMALL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <a href="./event.cgi?no=402&reno=401&oya=401&mode=msgview&page=0">全日不参加</a> - <b>Tatsushi/PAL58</b> <SMALL>01/04/10(Tue) 06:17 <font color=#800000>No.402</font>  </SMALL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=509&page=0">★</a> -  <a href="./event.cgi?no=509&reno=no&oya=509&mode=msgview&page=0">皆様のおかげでEPICゲットできました</a> - <b>Nahaha＠ENC</b> <SMALL>01/04/14(Sat) 17:39 <font color=#800000>No.509</font>  </SMALL>
+<UL>
+<LI> <a href="./event.cgi?no=511&reno=509&oya=509&mode=msgview&page=0">おめでと～</a> - <b>lillia</b> <SMALL>01/04/14(Sat) 18:53 <font color=#800000>No.511</font>  </SMALL>
+</UL>
+<DT><a href="./event.cgi?mode=allread&no=507&page=0">★</a> -  <a href="./event.cgi?no=507&reno=no&oya=507&mode=msgview&page=0">PoF　１４日１４時現在６割程度のポップ状況</a> - <b>芹香５３Rng</b> <SMALL>01/04/14(Sat) 14:41 <font color=#800000>No.507</font>  </SMALL>
+<DT><a href="./event.cgi?mode=allread&no=505&page=0">★</a> -  <a href="./event.cgi?no=505&reno=no&oya=505&mode=msgview&page=0">2tumo get</a> - <b>uiui</b> <SMALL>01/04/14(Sat) 12:28 <font color=#800000>No.505</font>  </SMALL>
+</DL>
+[<b>1</b>]
+[<a href="./event.cgi?page=10">2</a>]
+[<a href="./event.cgi?page=20">3</a>]
+[<a href="./event.cgi?page=30">4</a>]
+[ページ移動]
+</blockquote>
+<hr width='95%'><center><a name="msg"></a>
+<b><big>メッセージをどうぞ・・</big></b></a><P>
+</center>
+<form action="./event.cgi" method="POST">
+<input type=hidden name=page value="0">
+<input type=hidden name=no value="new">
+<input type=hidden name=mode value="form">
+<blockquote>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+  <td nowrap><b>おなまえ</b></td>
+  <td>
+    <input type=text name=name size="20" value="">
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>Ｅメール</b></td>
+  <td>
+    <input type=text name=email size="20" value="">
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>題 　 名</b></td>
+  <td>
+    <input type=text name=sub size="27" value=""> 
+    <INPUT TYPE=submit VALUE="投稿する"><INPUT TYPE=reset VALUE="リセット">
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <b>メッセージ</b>　　　
+    <input type=radio name=wrap value="soft" checked>手動改行
+    <input type=radio name=wrap value="hard">強制改行
+    <input type=radio name=wrap value="pre">図表モード<BR>
+    <textarea name=message rows=10 cols="62" wrap="soft"></textarea>
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>ＵＲＬ</b></td>
+  <td>
+    <input type=text name="url" size="52" value="http://">
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>削除キー</b></td>
+  <td>
+    <input type=password name=pwd size=8 value="" maxlength=8>
+    <small>(記事削除時に使用。英数字で8文字以内)</small>
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>プレビュー</b></td>
+  <td><input type=checkbox name=pview value="on" ></td>
+</tr>
+</table>
+</form></blockquote>
+<hr width='95%'>
+<center><form acion="./event.cgi" method="POST">
+<input type=hidden name=page value="0">
+<font color="#008000" size=2>
+以下のフォームから自分の投稿した記事を削除できます</font><br>
+■記事No<input type=text name=usr_no size=4>
+■削除キー<input type=password name=usr_key size=6>
+<input type=submit value="記事削除">
+<input type=hidden name=mode value="usr_del">
+</form><hr width='95%'></center>
+<br><br><center><small><!-- Web Forum v2.84 -->
+- <a href="http://www.kent-web.com/" target="_top">Web Forum</a> -
+</small></center>
+</body></html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=SHIFT_JIS">
+<meta name="content-language" content="ja">
+<title>WebSameGame</title>
+<style type="text/css">
+<!--
+body {
+	color: #000099;
+	font-family: MS UI Gothic,sans-serif;
+	font-size: 9pt;
+}
+th,td {
+	color: #000099;
+	font-family: MS UI Gothic,sans-serif;
+	font-size: 9pt;
+}
+input,select,option {
+	font-size: 9pt;
+}
+big {
+	font-size: 12pt;
+}
+small {
+	font-size: 8pt;
+}
+.title {
+	font-family: helvetica,sans-serif;
+	font-size: 20pt;
+	color: #9966cc;
+}
+a { text-decoration: none; }
+a:hover { text-decoration: underline; color: #ff0000; }
+input { background-color: #ffffff; }
+
+-->
+</style>
+<script language="JavaScript">
+<!--
+var tw = 20;
+var th = 10;
+var dfimg = "./img/none.gif";
+kimg = new Array("./img/k1a.gif","./img/k2a.gif","./img/k3a.gif","./img/k4a.gif","./img/k5a.gif");
+kovimg = new Array("./img/k1b.gif","./img/k2b.gif","./img/k3b.gif","./img/k4b.gif","./img/k5b.gif");
+dfimgcash = new Image(); dfimgcash.src = dfimg;
+imgcash = new Array();
+for (i = 0; i < kimg.length; i++) {
+	imgcash[i] = new Image(); imgcash[i].src = kimg[i];
+}
+ovimgcash = new Array();
+for (i = 0; i < kovimg.length; i++) {
+	ovimgcash[i] = new Image(); ovimgcash[i].src = kovimg[i];
+}
+imgtbl = new Array();
+imgtblp = new Array();
+imgtblbk = new Array();
+ckftbl = new Array();
+objcash = new Array();
+imgcnt = new Array();
+imgcntp = new Array();
+for (i = 0; i < tw; i++) {
+	imgtbl[i] = new Array();
+	imgtblp[i] = new Array();
+	imgtblbk[i] = new Array();
+	ckftbl[i] = new Array();
+	objcash[i] = new Array();
+}
+var matchcnt;
+var restcnt;
+var restcntp;
+var srestcnt;
+var srestcntp;
+var score;
+var scorep;
+var sscore;
+var sscorep;
+var tsumemin;
+var tsumemax;
+var drawmin;
+var drawmax;
+var gameover;
+var stageclear;
+var firstclick = 1;
+var stime;
+var etime;
+var stage = 0;
+var sstage = 0;
+var kimgonst = 4;
+
+function init()
+{
+	document.navif.message.value = "ちょっとまってね！";
+
+	// New Game
+	if (restcnt != 0) {
+		score = 0;
+		sscore = 0;
+		stage = 0;
+		sstage = 0;
+		kimgonst = 4;
+	}
+
+	// Rest Count Clear
+	restcnt = th * tw;
+	srestcnt = restcnt;
+	for (i = 0; i < kimg.length; i++) {
+		imgcnt[i] = 0;
+		imgcntp[i] = 0;
+	}
+
+	stage++;
+	sstage = stage;
+	if (kimgonst < kimg.length) { kimgonst++; }
+
+	// Locate Image
+	for (ix = 0; ix < tw; ix++) {
+		for (iy = 0; iy < th; iy++) {
+			objcash[ix][iy] = eval("document.X" + ix + "Y" + iy);
+			imgtbl[ix][iy] = Math.floor(Math.random() * kimgonst);
+			imgcnt[imgtbl[ix][iy]] += 1;
+			imgtblp[ix][iy] = -1;
+			imgtblbk[ix][iy] = -1;
+		}
+	}
+	drawmin = 0;
+	drawmax = tw - 1;
+	draw();
+	gameover = 0;
+	stageclear = 0;
+	document.navif.message.value = "さぁ、がんばっていこう！";
+	return;
+}
+
+function writemes()
+{
+	dd = new Date();
+    etime = dd.getTime();
+	document.form1.stime.value = stime;
+	document.form1.etime.value = etime;
+	document.form1.sscore.value = sscore;
+    document.form1.sstage.value = sstage;
+	document.form1.submit();
+
+	return;
+}
+
+function draw()
+{
+	if ((restcnt == tw * th) && (zan(0) == 0)) { init(); return; }
+
+	for (dx = drawmin; dx < drawmax + 1; dx++) {
+		for (dy = 0; dy < th; dy++) {
+			if (imgtbl[dx][dy] < 0) {
+				objcash[dx][dy].src = dfimgcash.src;
+			} else {
+				objcash[dx][dy].src = imgcash[imgtbl[dx][dy]].src;
+			}
+		}
+	}
+	document.navif.stage.value = stage;
+	document.navif.score.value = score;
+	document.navif.rest.value = restcnt;
+
+	for (ki = 0; ki < kimgonst; ki++) {
+		eval("document.navif.i" + ki + "cnt").value = imgcnt[ki];
+	}
+	for (ki = kimgonst; ki < kimg.length; ki++) {
+		eval("document.navif.i" + ki + "cnt").value = "---";
+	}
+	return;
+}
+
+function tsume()
+{
+	drawmin = tsumemin;
+	drawmax = tsumemax;
+	for (tx = tsumemax; tx >= tsumemin; tx--) {
+		cppos = th - 1;
+		for (ty = th - 1; ty >= 0; ty--) {
+			if (imgtbl[tx][ty] >= 0) {
+				imgtbl[tx][cppos] = imgtbl[tx][ty];
+				cppos--;
+			}
+		}
+		for (ty = cppos; ty >= 0; ty--) {
+			imgtbl[tx][ty] = -1;
+		}
+		if (imgtbl[tx][th-1] == -1) {
+			for (txi = tx; txi < tw - 1; txi++) {
+				for (ty = 0; ty < th; ty++) {
+					imgtbl[txi][ty] = imgtbl[txi+1][ty];
+				}
+			}
+			for (ty = 0; ty < th; ty++) {
+				imgtbl[tw-1][ty] = -1;
+			}
+			drawmax = tw - 1;
+		}
+	}
+	return;
+}
+
+function zan(mode)
+{
+	for (zx = 0; zx < tw-1; zx++) {
+		for (zy = th-1; zy > 0; zy--) {
+			if (imgtbl[zx][zy] < 0) { break; }
+			if (zx < tw-1) {
+				if (imgtbl[zx][zy] == imgtbl[zx+1][zy]) {
+					if (mode == 1) {
+						 hintx = zx;
+						 hinty = zy;
+					}
+					 return(1);
+				}
+			}
+			if (zy > 0) {
+				if (imgtbl[zx][zy] == imgtbl[zx][zy-1]) {
+					if (mode == 1) {
+						 hintx = zx;
+						 hinty = zy;
+					}
+					 return(1);
+				}
+			}
+		}
+	}
+	if (mode == 1) {
+		 hintx = -1;
+		 hinty = -1;
+	}
+	return(0);
+}
+
+var hintx;
+var hinty;
+var hinton = 0;
+function hint()
+{
+	if (gameover == 1) { return; }
+	if (hinton == 0) {
+		zan(1);
+		if (hintx > -1) {
+			mouseact(hintx,hinty,2);
+			document.navif.message.value = "まだあるよー！";
+		}
+		hinton = 1;
+	} else {
+		mouseact(hintx,hinty,3);
+		document.navif.message.value = "がんばれ！がんばれ！";
+		hinton = 0;
+	}
+	return;
+}
+
+function undo()
+{
+	if (gameover == 1) { return; }
+	if (restcnt == tw * th) { return; }
+	for (i = 0; i < tw; i++) {
+		for (j = 0; j < th; j++) {
+			imgtbl[i][j] = imgtblbk[i][j];
+		}
+	}
+	for (i = 0; i < kimgonst; i++) {
+		imgcnt[i] = imgcntp[i];
+	}
+	restcnt = restcntp;
+	srestcnt = srestcntp;
+	score = scorep;
+	sscore = sscorep;
+	draw();
+	return;
+}
+
+function mouseact(clkx, clky, act)
+{
+	if (gameover == 1) { return; }
+	if (stageclear == 1) { return; }
+	// check //
+	if (imgtbl[clkx][clky] == -1) {
+		document.navif.message.value = "がんばれ！がんばれ！";
+		return;
+	}
+	procflag = 0;
+	if (clky > 0) { if (imgtbl[clkx][clky] == imgtbl[clkx][clky-1]) { procflag = 1; } }
+	if (clky < th - 1) { if (imgtbl[clkx][clky] == imgtbl[clkx][clky+1]) { procflag = 1; } }
+	if (clkx > 0) { if (imgtbl[clkx][clky] == imgtbl[clkx-1][clky]) { procflag = 1; } }
+	if (clkx < tw - 1) { if (imgtbl[clkx][clky] == imgtbl[clkx+1][clky]) { procflag = 1; } }
+	if (procflag == 0) {
+		document.navif.message.value = "１コじゃ取れないよ";
+		return;
+	}
+
+	if (firstclick == 1 && act == 1) {
+		dd = new Date();
+		stime = dd.getTime();
+		firstclick = 0;
+	}
+
+	// backup //
+	for (i = 0; i < tw; i++) {
+		for (j = 0; j < th; j++) {
+			imgtblp[i][j] = imgtbl[i][j];
+			ckftbl[i][j] = 1;
+		}
+	}
+	if (act == 1) {
+		for (i = 0; i < tw; i++) {
+			for (j = 0; j < th; j++) {
+				imgtblbk[i][j] = imgtbl[i][j];
+			}
+		}
+		for (i = 0; i < kimgonst; i++) {
+			imgcntp[i] = imgcnt[i];
+		}
+		scorep = score;
+		sscorep = scorep;
+		restcntp = restcnt;
+		srestcntp = srestcnt;
+		// process //
+		tsumemin = tw - 1;
+		tsumemax = 0;
+	}
+	matchcnt = 0;
+	match(clkx,clky,act);
+	checker(clkx, clky, 1, 1, 1, 1, imgtblp[clkx][clky],act);
+	if (act == 1) {
+			tsume();
+			score += eval("Math.pow(matchcnt-2,2)");
+			sscore = score;
+			restcnt -= matchcnt;
+			srestcnt = restcnt;
+			imgcnt[imgtblp[clkx][clky]] -= matchcnt;
+			draw();
+			if (zan(0) == 0) {
+				if (restcnt == 0) {
+					stageclear = 1;
+					score += eval("1000");
+					sscore = score;
+					document.navif.message.value = "全クリア！次のステージもがんばれ！";
+					setTimeout("init()", 1500);
+				} else {
+					gameover = 1;
+					document.navif.message.value = "ゲームオーバー！ ちょっと待ってね";
+					setTimeout("writemes()", 500);
+				}
+			}
+	}
+	if (act == 2) {
+		document.navif.message.value = "そこなら " + matchcnt + " コだから " + eval("Math.pow(matchcnt-2,2)") + " 点だよ";
+	}
+	if (act == 3) {
+		document.navif.message.value = "がんばれ！がんばれ！";
+	}
+	return;
+}
+
+function checker(cx,cy,o,u,l,r,cnum,act)
+{
+	if ((o == 1 && cy > 0) && (ckftbl[cx][cy-1] == 1) && (imgtblp[cx][cy] == imgtblp[cx][cy-1])) {
+		match(cx,cy-1,act);
+		checker(cx,cy-1,1,0,1,1,cnum,act);
+	}
+	if ((u == 1 && cy < th - 1) && (ckftbl[cx][cy+1] == 1) && (imgtblp[cx][cy] == imgtblp[cx][cy+1])) {
+		match(cx,cy+1,act);
+		checker(cx,cy+1,0,1,1,1,cnum,act);
+	}
+	if ((l == 1 && cx > 0) && (ckftbl[cx-1][cy] == 1) && (imgtblp[cx][cy] == imgtblp[cx-1][cy])) {
+		match(cx-1,cy,act);
+		checker(cx-1,cy,1,1,1,0,cnum,act);
+	}
+	if ((r == 1 && cx < tw - 1) && (ckftbl[cx+1][cy] == 1) && (imgtblp[cx][cy] == imgtblp[cx+1][cy])) {
+		match(cx+1,cy,act);
+		checker(cx+1,cy,1,1,0,1,cnum,act);
+	}
+	return;
+}
+function match(mx, my, act)
+{
+	ckftbl[mx][my] = 0;
+	matchcnt++;
+	if (act == 1) {
+		imgtbl[mx][my] = -1;
+		if (mx < tsumemin) { tsumemin = mx; }
+		if (mx > tsumemax) { tsumemax = mx; }
+	} else if (act == 2) {
+		objcash[mx][my].src = ovimgcash[imgtbl[mx][my]].src;
+	} else if (act == 3) {
+		objcash[mx][my].src = imgcash[imgtbl[mx][my]].src;
+	}
+	return;
+}
+
+// -->
+</script>
+</head>
+<body bgcolor="#f9fcff"  text="#000099" link="#0000cc" alink="#ff0000" vlink="#0000cc" onload="init()">
+<!--[if gte IE 5]>
+	<SCRIPT language="Javascript" src="/ban/IEMenu.js" type="text/javascript">
+	</SCRIPT>
+<![endif]-->
+<!-- TOK2_TOP -->
+<SCRIPT language=javascript>
+<!--
+	var judge ="http://oz.valueclick.ne.jp/cycle?host=hs0076240&t=pop&size=medium";
+	document.write('<SCRIPT language="JavaScript" SRC="'+judge+'"></script>');
+	if ( document.all.tok2menu && document.all.accessImage ) { 
+		document.write("<br>");
+	}
+//-->
+</script>
+<center>
+<TABLE border="0" cellspacing="5" cellpadding="0">
+<TR>
+<td valign=top>
+<script language="javascript">
+<!--
+var i = ( Math.floor(Math.random() * 6))%6;
+if( i==0 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd5.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-09.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==1 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-04.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==2 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd4.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-08.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==3 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd3.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-03.gif" border=0 height="60" width="120"></a>' );
+}
+if( i==4 || i==5 ){
+	document.write( '<a href="http://tok2.com/ad/bellfine/rd7.php3" target="_blank"><img src="http://tok2.com/adv/bellfine-13.gif" border=0 height="60" width="120"></a>' );
+}
+document.write( "</td><td valign=top>" );
+var i = ( Math.floor(Math.random() * 3))%3;
+if( i==0 ){
+	document.write( '<IFRAME frameBorder="0" allowTransparency="true" height="60" width="468" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870782994" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870782994"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870782994" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870782994" height="60" width="468" Border="0"></a></noscript></IFRAME>' );
+}
+else{
+	var k = ( Math.floor(Math.random() * 10000))%10000;
+	document.write( '<A HREF="http://oz.valueclick.ne.jp/redirect?host=hs0073951&size=468x60&b=' + k + '&v=0" TARGET="_top"><IMG BORDER="0" WIDTH="468" HEIGHT="60" ALT="Click here to visit our sponsor" SRC="http://oz.valueclick.ne.jp/cycle?host=hs0073951&size=468x60&b=' + k + '&noscript=1"></A>' );
+}
+//-->
+</script>
+</td><td align="center">
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=871069054" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=871069054"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=871069054" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=871069054" height="45" width="135" Border="0"></a></noscript></IFRAME>
+</td></tr></table>
+</center>
+<br>
+<!-- TOK2_TOP_END -->
+<div align="center">
+<p>
+<!--上-->
+</p>
+<p>
+<img src="./img/logo.gif" width="200" height="40">
+</p>
+<p>
+| <a href="http://www.wainet.ne.jp/~ahiru/index-game.html">ホームへ戻る</a> | <a href="./wsame.cgi?mode=rmes&vmonth=this">当月ランキング</a> | <a href="./wsame.cgi?mode=rmes&vmonth=last">前月ランキング</a> | <a href="./wsame.cgi?mode=rmes&vmonth=total">通算ランキング</a> | <a href="./wsame.cgi">あそびかた</a> | <a href="./wsame.cgi?mode=admin">管理用</a> |</p>
+<form name="navif">
+<table border="0" cellspacing="0" cellpadding="5" bgcolor="#9caccc"><tr><td>
+<table border="0" cellspacing="0" cellpadding="3">
+<tr><td colspan="2" align="center">
+ <table><tr>
+  <td nowrap>
+      <input type="text" name="message" size="24">
+  </td>
+  <td width="20"><br></td>
+  <td nowrap>
+      <font color="#ffffff"><b>スコア</b></font> <input type="text" name="score" size="4">
+  </td>
+</tr></table>
+</td></tr>
+<tr>
+<td align="center">
+<table border="0" cellspacing="0" cellpadding="0" bgcolor="#f0f5f5">
+<tr><td><a href="JavaScript:mouseact(0,0,1)" onmouseover="mouseact(0,0,2)" onmouseout="mouseact(0,0,3)"><img name="X0Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,0,1)" onmouseover="mouseact(1,0,2)" onmouseout="mouseact(1,0,3)"><img name="X1Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,0,1)" onmouseover="mouseact(2,0,2)" onmouseout="mouseact(2,0,3)"><img name="X2Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,0,1)" onmouseover="mouseact(3,0,2)" onmouseout="mouseact(3,0,3)"><img name="X3Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,0,1)" onmouseover="mouseact(4,0,2)" onmouseout="mouseact(4,0,3)"><img name="X4Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,0,1)" onmouseover="mouseact(5,0,2)" onmouseout="mouseact(5,0,3)"><img name="X5Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,0,1)" onmouseover="mouseact(6,0,2)" onmouseout="mouseact(6,0,3)"><img name="X6Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,0,1)" onmouseover="mouseact(7,0,2)" onmouseout="mouseact(7,0,3)"><img name="X7Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,0,1)" onmouseover="mouseact(8,0,2)" onmouseout="mouseact(8,0,3)"><img name="X8Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,0,1)" onmouseover="mouseact(9,0,2)" onmouseout="mouseact(9,0,3)"><img name="X9Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,0,1)" onmouseover="mouseact(10,0,2)" onmouseout="mouseact(10,0,3)"><img name="X10Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,0,1)" onmouseover="mouseact(11,0,2)" onmouseout="mouseact(11,0,3)"><img name="X11Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,0,1)" onmouseover="mouseact(12,0,2)" onmouseout="mouseact(12,0,3)"><img name="X12Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,0,1)" onmouseover="mouseact(13,0,2)" onmouseout="mouseact(13,0,3)"><img name="X13Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,0,1)" onmouseover="mouseact(14,0,2)" onmouseout="mouseact(14,0,3)"><img name="X14Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,0,1)" onmouseover="mouseact(15,0,2)" onmouseout="mouseact(15,0,3)"><img name="X15Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,0,1)" onmouseover="mouseact(16,0,2)" onmouseout="mouseact(16,0,3)"><img name="X16Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,0,1)" onmouseover="mouseact(17,0,2)" onmouseout="mouseact(17,0,3)"><img name="X17Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,0,1)" onmouseover="mouseact(18,0,2)" onmouseout="mouseact(18,0,3)"><img name="X18Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,0,1)" onmouseover="mouseact(19,0,2)" onmouseout="mouseact(19,0,3)"><img name="X19Y0" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,1,1)" onmouseover="mouseact(0,1,2)" onmouseout="mouseact(0,1,3)"><img name="X0Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,1,1)" onmouseover="mouseact(1,1,2)" onmouseout="mouseact(1,1,3)"><img name="X1Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,1,1)" onmouseover="mouseact(2,1,2)" onmouseout="mouseact(2,1,3)"><img name="X2Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,1,1)" onmouseover="mouseact(3,1,2)" onmouseout="mouseact(3,1,3)"><img name="X3Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,1,1)" onmouseover="mouseact(4,1,2)" onmouseout="mouseact(4,1,3)"><img name="X4Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,1,1)" onmouseover="mouseact(5,1,2)" onmouseout="mouseact(5,1,3)"><img name="X5Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,1,1)" onmouseover="mouseact(6,1,2)" onmouseout="mouseact(6,1,3)"><img name="X6Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,1,1)" onmouseover="mouseact(7,1,2)" onmouseout="mouseact(7,1,3)"><img name="X7Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,1,1)" onmouseover="mouseact(8,1,2)" onmouseout="mouseact(8,1,3)"><img name="X8Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,1,1)" onmouseover="mouseact(9,1,2)" onmouseout="mouseact(9,1,3)"><img name="X9Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,1,1)" onmouseover="mouseact(10,1,2)" onmouseout="mouseact(10,1,3)"><img name="X10Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,1,1)" onmouseover="mouseact(11,1,2)" onmouseout="mouseact(11,1,3)"><img name="X11Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,1,1)" onmouseover="mouseact(12,1,2)" onmouseout="mouseact(12,1,3)"><img name="X12Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,1,1)" onmouseover="mouseact(13,1,2)" onmouseout="mouseact(13,1,3)"><img name="X13Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,1,1)" onmouseover="mouseact(14,1,2)" onmouseout="mouseact(14,1,3)"><img name="X14Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,1,1)" onmouseover="mouseact(15,1,2)" onmouseout="mouseact(15,1,3)"><img name="X15Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,1,1)" onmouseover="mouseact(16,1,2)" onmouseout="mouseact(16,1,3)"><img name="X16Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,1,1)" onmouseover="mouseact(17,1,2)" onmouseout="mouseact(17,1,3)"><img name="X17Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,1,1)" onmouseover="mouseact(18,1,2)" onmouseout="mouseact(18,1,3)"><img name="X18Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,1,1)" onmouseover="mouseact(19,1,2)" onmouseout="mouseact(19,1,3)"><img name="X19Y1" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,2,1)" onmouseover="mouseact(0,2,2)" onmouseout="mouseact(0,2,3)"><img name="X0Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,2,1)" onmouseover="mouseact(1,2,2)" onmouseout="mouseact(1,2,3)"><img name="X1Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,2,1)" onmouseover="mouseact(2,2,2)" onmouseout="mouseact(2,2,3)"><img name="X2Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,2,1)" onmouseover="mouseact(3,2,2)" onmouseout="mouseact(3,2,3)"><img name="X3Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,2,1)" onmouseover="mouseact(4,2,2)" onmouseout="mouseact(4,2,3)"><img name="X4Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,2,1)" onmouseover="mouseact(5,2,2)" onmouseout="mouseact(5,2,3)"><img name="X5Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,2,1)" onmouseover="mouseact(6,2,2)" onmouseout="mouseact(6,2,3)"><img name="X6Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,2,1)" onmouseover="mouseact(7,2,2)" onmouseout="mouseact(7,2,3)"><img name="X7Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,2,1)" onmouseover="mouseact(8,2,2)" onmouseout="mouseact(8,2,3)"><img name="X8Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,2,1)" onmouseover="mouseact(9,2,2)" onmouseout="mouseact(9,2,3)"><img name="X9Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,2,1)" onmouseover="mouseact(10,2,2)" onmouseout="mouseact(10,2,3)"><img name="X10Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,2,1)" onmouseover="mouseact(11,2,2)" onmouseout="mouseact(11,2,3)"><img name="X11Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,2,1)" onmouseover="mouseact(12,2,2)" onmouseout="mouseact(12,2,3)"><img name="X12Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,2,1)" onmouseover="mouseact(13,2,2)" onmouseout="mouseact(13,2,3)"><img name="X13Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,2,1)" onmouseover="mouseact(14,2,2)" onmouseout="mouseact(14,2,3)"><img name="X14Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,2,1)" onmouseover="mouseact(15,2,2)" onmouseout="mouseact(15,2,3)"><img name="X15Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,2,1)" onmouseover="mouseact(16,2,2)" onmouseout="mouseact(16,2,3)"><img name="X16Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,2,1)" onmouseover="mouseact(17,2,2)" onmouseout="mouseact(17,2,3)"><img name="X17Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,2,1)" onmouseover="mouseact(18,2,2)" onmouseout="mouseact(18,2,3)"><img name="X18Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,2,1)" onmouseover="mouseact(19,2,2)" onmouseout="mouseact(19,2,3)"><img name="X19Y2" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,3,1)" onmouseover="mouseact(0,3,2)" onmouseout="mouseact(0,3,3)"><img name="X0Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,3,1)" onmouseover="mouseact(1,3,2)" onmouseout="mouseact(1,3,3)"><img name="X1Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,3,1)" onmouseover="mouseact(2,3,2)" onmouseout="mouseact(2,3,3)"><img name="X2Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,3,1)" onmouseover="mouseact(3,3,2)" onmouseout="mouseact(3,3,3)"><img name="X3Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,3,1)" onmouseover="mouseact(4,3,2)" onmouseout="mouseact(4,3,3)"><img name="X4Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,3,1)" onmouseover="mouseact(5,3,2)" onmouseout="mouseact(5,3,3)"><img name="X5Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,3,1)" onmouseover="mouseact(6,3,2)" onmouseout="mouseact(6,3,3)"><img name="X6Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,3,1)" onmouseover="mouseact(7,3,2)" onmouseout="mouseact(7,3,3)"><img name="X7Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,3,1)" onmouseover="mouseact(8,3,2)" onmouseout="mouseact(8,3,3)"><img name="X8Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,3,1)" onmouseover="mouseact(9,3,2)" onmouseout="mouseact(9,3,3)"><img name="X9Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,3,1)" onmouseover="mouseact(10,3,2)" onmouseout="mouseact(10,3,3)"><img name="X10Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,3,1)" onmouseover="mouseact(11,3,2)" onmouseout="mouseact(11,3,3)"><img name="X11Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,3,1)" onmouseover="mouseact(12,3,2)" onmouseout="mouseact(12,3,3)"><img name="X12Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,3,1)" onmouseover="mouseact(13,3,2)" onmouseout="mouseact(13,3,3)"><img name="X13Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,3,1)" onmouseover="mouseact(14,3,2)" onmouseout="mouseact(14,3,3)"><img name="X14Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,3,1)" onmouseover="mouseact(15,3,2)" onmouseout="mouseact(15,3,3)"><img name="X15Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,3,1)" onmouseover="mouseact(16,3,2)" onmouseout="mouseact(16,3,3)"><img name="X16Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,3,1)" onmouseover="mouseact(17,3,2)" onmouseout="mouseact(17,3,3)"><img name="X17Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,3,1)" onmouseover="mouseact(18,3,2)" onmouseout="mouseact(18,3,3)"><img name="X18Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,3,1)" onmouseover="mouseact(19,3,2)" onmouseout="mouseact(19,3,3)"><img name="X19Y3" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,4,1)" onmouseover="mouseact(0,4,2)" onmouseout="mouseact(0,4,3)"><img name="X0Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,4,1)" onmouseover="mouseact(1,4,2)" onmouseout="mouseact(1,4,3)"><img name="X1Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,4,1)" onmouseover="mouseact(2,4,2)" onmouseout="mouseact(2,4,3)"><img name="X2Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,4,1)" onmouseover="mouseact(3,4,2)" onmouseout="mouseact(3,4,3)"><img name="X3Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,4,1)" onmouseover="mouseact(4,4,2)" onmouseout="mouseact(4,4,3)"><img name="X4Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,4,1)" onmouseover="mouseact(5,4,2)" onmouseout="mouseact(5,4,3)"><img name="X5Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,4,1)" onmouseover="mouseact(6,4,2)" onmouseout="mouseact(6,4,3)"><img name="X6Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,4,1)" onmouseover="mouseact(7,4,2)" onmouseout="mouseact(7,4,3)"><img name="X7Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,4,1)" onmouseover="mouseact(8,4,2)" onmouseout="mouseact(8,4,3)"><img name="X8Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,4,1)" onmouseover="mouseact(9,4,2)" onmouseout="mouseact(9,4,3)"><img name="X9Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,4,1)" onmouseover="mouseact(10,4,2)" onmouseout="mouseact(10,4,3)"><img name="X10Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,4,1)" onmouseover="mouseact(11,4,2)" onmouseout="mouseact(11,4,3)"><img name="X11Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,4,1)" onmouseover="mouseact(12,4,2)" onmouseout="mouseact(12,4,3)"><img name="X12Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,4,1)" onmouseover="mouseact(13,4,2)" onmouseout="mouseact(13,4,3)"><img name="X13Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,4,1)" onmouseover="mouseact(14,4,2)" onmouseout="mouseact(14,4,3)"><img name="X14Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,4,1)" onmouseover="mouseact(15,4,2)" onmouseout="mouseact(15,4,3)"><img name="X15Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,4,1)" onmouseover="mouseact(16,4,2)" onmouseout="mouseact(16,4,3)"><img name="X16Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,4,1)" onmouseover="mouseact(17,4,2)" onmouseout="mouseact(17,4,3)"><img name="X17Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,4,1)" onmouseover="mouseact(18,4,2)" onmouseout="mouseact(18,4,3)"><img name="X18Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,4,1)" onmouseover="mouseact(19,4,2)" onmouseout="mouseact(19,4,3)"><img name="X19Y4" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,5,1)" onmouseover="mouseact(0,5,2)" onmouseout="mouseact(0,5,3)"><img name="X0Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,5,1)" onmouseover="mouseact(1,5,2)" onmouseout="mouseact(1,5,3)"><img name="X1Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,5,1)" onmouseover="mouseact(2,5,2)" onmouseout="mouseact(2,5,3)"><img name="X2Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,5,1)" onmouseover="mouseact(3,5,2)" onmouseout="mouseact(3,5,3)"><img name="X3Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,5,1)" onmouseover="mouseact(4,5,2)" onmouseout="mouseact(4,5,3)"><img name="X4Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,5,1)" onmouseover="mouseact(5,5,2)" onmouseout="mouseact(5,5,3)"><img name="X5Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,5,1)" onmouseover="mouseact(6,5,2)" onmouseout="mouseact(6,5,3)"><img name="X6Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,5,1)" onmouseover="mouseact(7,5,2)" onmouseout="mouseact(7,5,3)"><img name="X7Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,5,1)" onmouseover="mouseact(8,5,2)" onmouseout="mouseact(8,5,3)"><img name="X8Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,5,1)" onmouseover="mouseact(9,5,2)" onmouseout="mouseact(9,5,3)"><img name="X9Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,5,1)" onmouseover="mouseact(10,5,2)" onmouseout="mouseact(10,5,3)"><img name="X10Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,5,1)" onmouseover="mouseact(11,5,2)" onmouseout="mouseact(11,5,3)"><img name="X11Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,5,1)" onmouseover="mouseact(12,5,2)" onmouseout="mouseact(12,5,3)"><img name="X12Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,5,1)" onmouseover="mouseact(13,5,2)" onmouseout="mouseact(13,5,3)"><img name="X13Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,5,1)" onmouseover="mouseact(14,5,2)" onmouseout="mouseact(14,5,3)"><img name="X14Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,5,1)" onmouseover="mouseact(15,5,2)" onmouseout="mouseact(15,5,3)"><img name="X15Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,5,1)" onmouseover="mouseact(16,5,2)" onmouseout="mouseact(16,5,3)"><img name="X16Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,5,1)" onmouseover="mouseact(17,5,2)" onmouseout="mouseact(17,5,3)"><img name="X17Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,5,1)" onmouseover="mouseact(18,5,2)" onmouseout="mouseact(18,5,3)"><img name="X18Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,5,1)" onmouseover="mouseact(19,5,2)" onmouseout="mouseact(19,5,3)"><img name="X19Y5" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,6,1)" onmouseover="mouseact(0,6,2)" onmouseout="mouseact(0,6,3)"><img name="X0Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,6,1)" onmouseover="mouseact(1,6,2)" onmouseout="mouseact(1,6,3)"><img name="X1Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,6,1)" onmouseover="mouseact(2,6,2)" onmouseout="mouseact(2,6,3)"><img name="X2Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,6,1)" onmouseover="mouseact(3,6,2)" onmouseout="mouseact(3,6,3)"><img name="X3Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,6,1)" onmouseover="mouseact(4,6,2)" onmouseout="mouseact(4,6,3)"><img name="X4Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,6,1)" onmouseover="mouseact(5,6,2)" onmouseout="mouseact(5,6,3)"><img name="X5Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,6,1)" onmouseover="mouseact(6,6,2)" onmouseout="mouseact(6,6,3)"><img name="X6Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,6,1)" onmouseover="mouseact(7,6,2)" onmouseout="mouseact(7,6,3)"><img name="X7Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,6,1)" onmouseover="mouseact(8,6,2)" onmouseout="mouseact(8,6,3)"><img name="X8Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,6,1)" onmouseover="mouseact(9,6,2)" onmouseout="mouseact(9,6,3)"><img name="X9Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,6,1)" onmouseover="mouseact(10,6,2)" onmouseout="mouseact(10,6,3)"><img name="X10Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,6,1)" onmouseover="mouseact(11,6,2)" onmouseout="mouseact(11,6,3)"><img name="X11Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,6,1)" onmouseover="mouseact(12,6,2)" onmouseout="mouseact(12,6,3)"><img name="X12Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,6,1)" onmouseover="mouseact(13,6,2)" onmouseout="mouseact(13,6,3)"><img name="X13Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,6,1)" onmouseover="mouseact(14,6,2)" onmouseout="mouseact(14,6,3)"><img name="X14Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,6,1)" onmouseover="mouseact(15,6,2)" onmouseout="mouseact(15,6,3)"><img name="X15Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,6,1)" onmouseover="mouseact(16,6,2)" onmouseout="mouseact(16,6,3)"><img name="X16Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,6,1)" onmouseover="mouseact(17,6,2)" onmouseout="mouseact(17,6,3)"><img name="X17Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,6,1)" onmouseover="mouseact(18,6,2)" onmouseout="mouseact(18,6,3)"><img name="X18Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,6,1)" onmouseover="mouseact(19,6,2)" onmouseout="mouseact(19,6,3)"><img name="X19Y6" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,7,1)" onmouseover="mouseact(0,7,2)" onmouseout="mouseact(0,7,3)"><img name="X0Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,7,1)" onmouseover="mouseact(1,7,2)" onmouseout="mouseact(1,7,3)"><img name="X1Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,7,1)" onmouseover="mouseact(2,7,2)" onmouseout="mouseact(2,7,3)"><img name="X2Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,7,1)" onmouseover="mouseact(3,7,2)" onmouseout="mouseact(3,7,3)"><img name="X3Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,7,1)" onmouseover="mouseact(4,7,2)" onmouseout="mouseact(4,7,3)"><img name="X4Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,7,1)" onmouseover="mouseact(5,7,2)" onmouseout="mouseact(5,7,3)"><img name="X5Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,7,1)" onmouseover="mouseact(6,7,2)" onmouseout="mouseact(6,7,3)"><img name="X6Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,7,1)" onmouseover="mouseact(7,7,2)" onmouseout="mouseact(7,7,3)"><img name="X7Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,7,1)" onmouseover="mouseact(8,7,2)" onmouseout="mouseact(8,7,3)"><img name="X8Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,7,1)" onmouseover="mouseact(9,7,2)" onmouseout="mouseact(9,7,3)"><img name="X9Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,7,1)" onmouseover="mouseact(10,7,2)" onmouseout="mouseact(10,7,3)"><img name="X10Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,7,1)" onmouseover="mouseact(11,7,2)" onmouseout="mouseact(11,7,3)"><img name="X11Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,7,1)" onmouseover="mouseact(12,7,2)" onmouseout="mouseact(12,7,3)"><img name="X12Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,7,1)" onmouseover="mouseact(13,7,2)" onmouseout="mouseact(13,7,3)"><img name="X13Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,7,1)" onmouseover="mouseact(14,7,2)" onmouseout="mouseact(14,7,3)"><img name="X14Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,7,1)" onmouseover="mouseact(15,7,2)" onmouseout="mouseact(15,7,3)"><img name="X15Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,7,1)" onmouseover="mouseact(16,7,2)" onmouseout="mouseact(16,7,3)"><img name="X16Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,7,1)" onmouseover="mouseact(17,7,2)" onmouseout="mouseact(17,7,3)"><img name="X17Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,7,1)" onmouseover="mouseact(18,7,2)" onmouseout="mouseact(18,7,3)"><img name="X18Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,7,1)" onmouseover="mouseact(19,7,2)" onmouseout="mouseact(19,7,3)"><img name="X19Y7" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,8,1)" onmouseover="mouseact(0,8,2)" onmouseout="mouseact(0,8,3)"><img name="X0Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,8,1)" onmouseover="mouseact(1,8,2)" onmouseout="mouseact(1,8,3)"><img name="X1Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,8,1)" onmouseover="mouseact(2,8,2)" onmouseout="mouseact(2,8,3)"><img name="X2Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,8,1)" onmouseover="mouseact(3,8,2)" onmouseout="mouseact(3,8,3)"><img name="X3Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,8,1)" onmouseover="mouseact(4,8,2)" onmouseout="mouseact(4,8,3)"><img name="X4Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,8,1)" onmouseover="mouseact(5,8,2)" onmouseout="mouseact(5,8,3)"><img name="X5Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,8,1)" onmouseover="mouseact(6,8,2)" onmouseout="mouseact(6,8,3)"><img name="X6Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,8,1)" onmouseover="mouseact(7,8,2)" onmouseout="mouseact(7,8,3)"><img name="X7Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,8,1)" onmouseover="mouseact(8,8,2)" onmouseout="mouseact(8,8,3)"><img name="X8Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,8,1)" onmouseover="mouseact(9,8,2)" onmouseout="mouseact(9,8,3)"><img name="X9Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,8,1)" onmouseover="mouseact(10,8,2)" onmouseout="mouseact(10,8,3)"><img name="X10Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,8,1)" onmouseover="mouseact(11,8,2)" onmouseout="mouseact(11,8,3)"><img name="X11Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,8,1)" onmouseover="mouseact(12,8,2)" onmouseout="mouseact(12,8,3)"><img name="X12Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,8,1)" onmouseover="mouseact(13,8,2)" onmouseout="mouseact(13,8,3)"><img name="X13Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,8,1)" onmouseover="mouseact(14,8,2)" onmouseout="mouseact(14,8,3)"><img name="X14Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,8,1)" onmouseover="mouseact(15,8,2)" onmouseout="mouseact(15,8,3)"><img name="X15Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,8,1)" onmouseover="mouseact(16,8,2)" onmouseout="mouseact(16,8,3)"><img name="X16Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,8,1)" onmouseover="mouseact(17,8,2)" onmouseout="mouseact(17,8,3)"><img name="X17Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,8,1)" onmouseover="mouseact(18,8,2)" onmouseout="mouseact(18,8,3)"><img name="X18Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,8,1)" onmouseover="mouseact(19,8,2)" onmouseout="mouseact(19,8,3)"><img name="X19Y8" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+<tr><td><a href="JavaScript:mouseact(0,9,1)" onmouseover="mouseact(0,9,2)" onmouseout="mouseact(0,9,3)"><img name="X0Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(1,9,1)" onmouseover="mouseact(1,9,2)" onmouseout="mouseact(1,9,3)"><img name="X1Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(2,9,1)" onmouseover="mouseact(2,9,2)" onmouseout="mouseact(2,9,3)"><img name="X2Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(3,9,1)" onmouseover="mouseact(3,9,2)" onmouseout="mouseact(3,9,3)"><img name="X3Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(4,9,1)" onmouseover="mouseact(4,9,2)" onmouseout="mouseact(4,9,3)"><img name="X4Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(5,9,1)" onmouseover="mouseact(5,9,2)" onmouseout="mouseact(5,9,3)"><img name="X5Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(6,9,1)" onmouseover="mouseact(6,9,2)" onmouseout="mouseact(6,9,3)"><img name="X6Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(7,9,1)" onmouseover="mouseact(7,9,2)" onmouseout="mouseact(7,9,3)"><img name="X7Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(8,9,1)" onmouseover="mouseact(8,9,2)" onmouseout="mouseact(8,9,3)"><img name="X8Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(9,9,1)" onmouseover="mouseact(9,9,2)" onmouseout="mouseact(9,9,3)"><img name="X9Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(10,9,1)" onmouseover="mouseact(10,9,2)" onmouseout="mouseact(10,9,3)"><img name="X10Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(11,9,1)" onmouseover="mouseact(11,9,2)" onmouseout="mouseact(11,9,3)"><img name="X11Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(12,9,1)" onmouseover="mouseact(12,9,2)" onmouseout="mouseact(12,9,3)"><img name="X12Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(13,9,1)" onmouseover="mouseact(13,9,2)" onmouseout="mouseact(13,9,3)"><img name="X13Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(14,9,1)" onmouseover="mouseact(14,9,2)" onmouseout="mouseact(14,9,3)"><img name="X14Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(15,9,1)" onmouseover="mouseact(15,9,2)" onmouseout="mouseact(15,9,3)"><img name="X15Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(16,9,1)" onmouseover="mouseact(16,9,2)" onmouseout="mouseact(16,9,3)"><img name="X16Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(17,9,1)" onmouseover="mouseact(17,9,2)" onmouseout="mouseact(17,9,3)"><img name="X17Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(18,9,1)" onmouseover="mouseact(18,9,2)" onmouseout="mouseact(18,9,3)"><img name="X18Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+<td><a href="JavaScript:mouseact(19,9,1)" onmouseover="mouseact(19,9,2)" onmouseout="mouseact(19,9,3)"><img name="X19Y9" src="./img/none.gif" width="24" height="24" border="0"></a></td>
+</tr>
+</table>
+</td>
+<td align="center" valign="top">
+<font color="#ffffff"><b>ステージ</b></font><br>
+<input type="text" name="stage" size="2"><br>
+<br>
+<font color="#ffffff"><b>残コマ数</b></font><br>
+<input type="text" name="rest" size="2"><br>
+<br>
+<input type="button" value="リセット" onClick="init()"><br>
+<br>
+<input type="button" value="もどす" onClick="undo()"><br>
+<br>
+<input type="button" value="ヒント" onClick="hint()"><br>
+</td></tr>
+<tr><td align="center" colspan="2">
+<table border="0" cellpadding="0"><tr>
+<td><img src="./img/k1a.gif" width="24" height="24"></td>
+<td><input type="text" name="i0cnt" size="2"></td>
+<td><img src="./img/k2a.gif" width="24" height="24"></td>
+<td><input type="text" name="i1cnt" size="2"></td>
+<td><img src="./img/k3a.gif" width="24" height="24"></td>
+<td><input type="text" name="i2cnt" size="2"></td>
+<td><img src="./img/k4a.gif" width="24" height="24"></td>
+<td><input type="text" name="i3cnt" size="2"></td>
+<td><img src="./img/k5a.gif" width="24" height="24"></td>
+<td><input type="text" name="i4cnt" size="2"></td>
+</tr></table>
+</td>
+</tr></table></td></tr></table></form>
+<form name="form1" action="./wsame.cgi" method="post">
+<input type="hidden" name="mode" value="wmes">
+<input type="hidden" name="sscore">
+<input type="hidden" name="sstage">
+<input type="hidden" name="stime">
+<input type="hidden" name="etime">
+</form>
+
+<br>
+<p>
+<!--下-->
+</p>
+<p>
+Graphics by: <a href="http://www.tamagochan.com/" target="_top">素材や ぽんぽん</a>
+</p>
+<p>
+<a href="http://homepage3.nifty.com/masas/sdir/" target="_top">WebSameGame Ver.0.02</a>
+</p>
+</div>
+<!-- TOK2_UNDER-->
+<CENTER>
+<table border=0>
+<tr><td align=center valign=center>
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=870770042" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=870770042"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=870770042" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=870770042" height="45" width="135" Border="0"></a></noscript></IFRAME></td>
+<td>
+
+<script language="javascript">
+<!--
+	var k = ( Math.floor(Math.random() * 10000))%10000;
+	document.write( '<A HREF="http://oz.valueclick.ne.jp/redirect?host=hs0073951&size=468x60&b=' + k + '&v=0" TARGET="_top"><IMG BORDER="0" WIDTH="468" HEIGHT="60" ALT="Click here to visit our sponsor" SRC="http://oz.valueclick.ne.jp/cycle?host=hs0073951&size=468x60&b=' + k + '&noscript=1"></A>' );
+//-->
+</script>
+
+</td>
+<td align=center>
+<IFRAME frameBorder="0" allowTransparency="true" height="45" width="135" marginHeight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=30266&pid=871069054" MarginWidth="0"><script Language="javascript" Src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=30266&pid=871069054"></script><noscript><a Href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=30266&pid=871069054" target="_blank" ><img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=30266&pid=871069054" height="45" width="135" Border="0"></a></noscript></IFRAME>
+</td></tr></table>
+</CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,700 @@
+<HTML>
+<HEAD>
+<TITLE>WebCalendar</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// The following code is used to support the small popups that
+// give the full description of an event when the user move the
+// mouse over it.
+
+// Developer's note:
+// I (Benoit Maisonny <benoit@synclude.com>) tested this code with Mozilla 0.8.1 (on Linux),
+// with IE5.5 SP1 (on WinNT4) and with Netscape Communicator 4.74 (on Linux).
+// Netscape 6.0 and 6.01 seem to have a bug related to the visibility attribute.
+// I suppose it will be corrected as soon as they release a new version, based on
+// a more recent Mozilla source code.
+// I'm not able to test this javascript code with IE4. It'd be glad to know if it works.
+
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+W3C = (document.getElementById) ? 1 : 0;	
+// W3C stands for the W3C standard, implemented in Mozilla (and Netscape 6) and IE5
+
+// Function show(evt, name)
+//	evt is a pointer to the Event object passed when the event occurs
+//	name is the ID attribute of the element to show
+function show ( evt, name ) {
+  if (IE4) {
+    evt = window.event;  //is it necessary?
+  }
+
+  var currentX,		//mouse position on X axis
+      currentY,		//mouse position on X axis
+      x,		//layer target position on X axis
+      y,		//layer target position on Y axis
+      docWidth,		//width of current frame
+      docHeight,	//height of current frame
+      layerWidth,	//width of popup layer
+      layerHeight,	//height of popup layer
+      ele;		//points to the popup element
+
+  // First let's initialize our variables
+  if ( W3C ) {
+    ele = document.getElementById(name);
+    currentX = evt.clientX,
+    currentY = evt.clientY;
+    docWidth = document.width;
+    docHeight = document.height;
+    layerWidth = ele.style.width;
+    layerHeight = ele.style.height;
+
+  } else if ( NS4 ) {
+    ele = document.layers[name];
+    currentX = evt.pageX,
+    currentY = evt.pageY;
+    docWidth = document.width;
+    docHeight = document.height;
+    layerWidth = ele.clip.width;
+    layerHeight = ele.clip.height;
+
+  } else {	// meant for IE4
+    ele = document.all[name];
+    currentX = evt.clientX,
+    currentY = evt.clientY;
+    docHeight = document.body.offsetHeight;
+    docWidth = document.body.offsetWidth;
+    //var layerWidth = document.all[name].offsetWidth;
+    // for some reason, this doesn't seem to work... so set it to 200
+    layerWidth = 200;
+    layerHeight = ele.offsetHeight;
+  }
+
+  // Then we calculate the popup element's new position
+  if ( ( currentX + layerWidth ) > docWidth ) {
+    x = ( currentX - layerWidth );
+  }
+  else {
+    x = currentX;
+  }
+  if ( ( currentY + layerHeight ) >= docHeight ) {
+     y = ( currentY - layerHeight - 20 );
+  }
+  else {
+    y = currentY + 20;
+  }
+  if ( IE4 ) {
+    x += document.body.scrollLeft;
+    y += document.body.scrollTop;
+  } else if ( NS4)  {
+  } else {
+    x += window.pageXOffset;
+    y += window.pageYOffset;
+  }
+// (for debugging purpose) alert("docWidth " + docWidth + ", docHeight " + docHeight + "\nlayerWidth " + layerWidth + ", layerHeight " + layerHeight + "\ncurrentX " + currentX + ", currentY " + currentY + "\nx " + x + ", y " + y);
+
+  // Finally, we set its position and visibility
+  if ( NS4 ) {
+    //ele.xpos = parseInt ( x );
+    ele.left = parseInt ( x );
+    //ele.ypos = parseInt ( y );
+    ele.top = parseInt ( y );
+    ele.visibility = "show";
+  } else {  // IE4 & W3C
+    ele.style.left = parseInt ( x );
+    ele.style.top = parseInt ( y );
+    ele.style.visibility = "visible";
+  }
+}
+
+function hide ( name ) {
+  if (W3C) {
+    document.getElementById(name).style.visibility = "hidden";
+  } else if (NS4) {
+    document.layers[name].visibility = "hide";
+  } else {
+    document.all[name].style.visibility = "hidden";
+  }
+}
+
+function unhide ( name ) {
+  if (W3C) {
+    document.getElementById(name).style.visibility = "visible";
+  } else if (NS4) {
+    document.layers[name].visibility = "show";
+  } else {
+    document.all[name].style.visibility = "visible";
+  }
+}
+
+//-->
+
+</SCRIPT>
+
+<meta http-equiv="Content-type"  content="text/html;charset=iso-8859-1">
+<!-- Note: Although we may set the font size in here, we also make heavy
+     use of the HTML font tag since many browsers do not properly support 
+     style sheet font settings.
+-->
+<STYLE type="text/css">
+<!--
+.tablecell {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 80px;
+  height: 80px;
+}
+.tablecelldemo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+}
+.tablecellweekend {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 80px;
+  height: 80px;
+  background-color: #F0F0C0 ;
+}
+.tablecellweekenddemo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #F0F0C0 ;
+}
+.tableheader {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000 ;
+  background-color: #FFFFFF ;
+}
+.tableheadertoday {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000 ;
+  background-color: #F0F090 ;
+}
+.dayofmonth {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+  background-color: #E7E7E7;
+}
+.weeknumber {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #B04040;
+  text-decoration: none;
+}
+.monthlink {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #B04040;
+  text-decoration: none;
+}
+.dayofmonthyearview {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+.dayofmonthweekview {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+}
+.dailymatrix {
+  cursor:pointer;cursor:hand;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+.entry {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #006000;
+  text-decoration: none;
+}
+.unapprovedentry {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #800000;
+  text-decoration: none;
+}
+.navlinks {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #0060C0 ;
+  text-decoration: none;
+}
+A {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0060C0 ;
+  text-decoration: none;
+}
+.aboutinfo {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  text-decoration: none;
+}
+.popup {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000 ;
+  text-decoration: none;
+}
+.layerentry {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006060;
+  text-decoration: none;
+}
+.tooltip {
+  cursor: help;
+  text-decoration: none;
+}
+.defaulttext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #0060C0 ;
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+.pagetitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+td {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+a:hover {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0000FF;
+}
+.dailymatrix {
+  cursor:pointer;cursor:hand;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" CLASS="defaulttext" >
+<CENTER><img src="http://www.eqcentral.net/images/EC.gif">
+</a> <bgcolor="#FFFFFF">
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+<TD ALIGN="left"><A HREF="week.php?date=20050327"><IMG SRC="leftarrow.gif" WIDTH="36" HEIGHT="32" BORDER="0"></A></TD>
+<TD ALIGN="middle"><FONT SIZE="+2" COLOR="#0060C0"><B CLASS="pagetitle">
+April 3, 2005&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;April 9, 2005</B></FONT>
+<BR>
+<FONT SIZE="-2" COLOR="#0060C0">(Week 14)</FONT><FONT SIZE="+1" COLOR="#0060C0">
+<BR>Public Access
+</FONT>
+</TD>
+<TD ALIGN="right"><A HREF="week.php?date=20050410"><IMG SRC="rightarrow.gif" WIDTH="36" HEIGHT="32" BORDER="0"></A></TD>
+</TR>
+</TABLE>
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="0" CELLPADDING="0">
+<TR><TD BGCOLOR="#FFFFFF">
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="2">
+
+<TR>
+<TH WIDTH="12%" CLASS="tableheader" BGCOLOR="#FFFFFF">&nbsp;</TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050403"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050403" CLASS="tableheader">Sun<BR>April 3</A></TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050404"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050404" CLASS="tableheader">Mon<BR>April 4</A></TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050405"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050405" CLASS="tableheader">Tue<BR>April 5</A></TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050406"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050406" CLASS="tableheader">Wed<BR>April 6</A></TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050407"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050407" CLASS="tableheader">Thu<BR>April 7</A></TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050408"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050408" CLASS="tableheader">Fri<BR>April 8</A></TH>
+<TH WIDTH="13%" CLASS="tableheader" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050409"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A HREF="day.php?date=20050409" CLASS="tableheader">Sat<BR>April 9</A></TH>
+</TR>
+
+<TR><TD CLASS="tableheader" WIDTH="12%" BGCOLOR="#FFFFFF">&nbsp;</TD><TD WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A CLASS="entry" HREF="view_entry.php?id=74&date=20050403" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-74-0'); return true;" onMouseOut="hide('eventinfo-day-74-0'); return true;">Belle Trail Ride</A><BR></FONT></TD>
+<TD WIDTH="12%" BGCOLOR="#F0F0F0">&nbsp;</TD><TD WIDTH="12%" BGCOLOR="#F0F0F0">&nbsp;</TD><TD WIDTH="12%" BGCOLOR="#F0F0F0">&nbsp;</TD><TD WIDTH="12%" BGCOLOR="#F0F0F0">&nbsp;</TD><TD WIDTH="12%" BGCOLOR="#F0F0F0">&nbsp;</TD><TD WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A CLASS="entry" HREF="view_entry.php?id=24&date=20050409" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-24-3'); return true;" onMouseOut="hide('eventinfo-day-24-3'); return true;">Spring Spectacular Performance Horse &amp; 2YO Futurity Prospect Sale</A><BR></FONT></TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">12:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">1:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=1"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">2:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">3:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=3"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">4:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=4"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">5:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=5"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">6:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=6"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">7:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=7"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">8:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=8"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">9:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=9"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">10:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=10"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">11:00am</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A HREF="edit_entry.php?date=20050409&hour=11"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A CLASS="entry" HREF="view_entry.php?id=43&date=20050409" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-43-4'); return true;" onMouseOut="hide('eventinfo-day-43-4'); return true;">11:00am&gt; State 4-H Horse Judging Competition &amp; Clinic</A><BR></FONT></TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">12:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=12"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">1:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=13"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">2:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A HREF="edit_entry.php?date=20050409&hour=14"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A CLASS="entry" HREF="view_entry.php?id=92&date=20050409" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-92-5'); return true;" onMouseOut="hide('eventinfo-day-92-5'); return true;">2:00pm&gt; 12pm Eldon barrel race jackpot</A><BR></FONT></TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">3:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=15"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">4:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A HREF="edit_entry.php?date=20050409&hour=16"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A CLASS="entry" HREF="view_entry.php?id=34&date=20050409" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-34-6'); return true;" onMouseOut="hide('eventinfo-day-34-6'); return true;">4:00pm&gt; ALL SPEED SHOW</A><BR></FONT></TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">5:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=17"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">6:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=18"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">7:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=19"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">8:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A HREF="edit_entry.php?date=20050406&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A CLASS="entry" HREF="view_entry.php?id=97&date=20050406" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-97-2'); return true;" onMouseOut="hide('eventinfo-day-97-2'); return true;">8:00pm&gt; Cross Roads Horse Show</A><BR></FONT></TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=20"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">9:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A HREF="edit_entry.php?date=20050403&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A CLASS="entry" HREF="view_entry.php?id=87&date=20050403" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-87-1'); return true;" onMouseOut="hide('eventinfo-day-87-1'); return true;"><B>9:00pm&gt; Sho-me horse show</B></A><BR></FONT></TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F090"><FONT SIZE="-1"><A HREF="edit_entry.php?date=20050409&hour=21"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A><A CLASS="entry" HREF="view_entry.php?id=87&date=20050409" onMouseOver="window.status='View this entry'; show(event, 'eventinfo-day-87-7'); return true;" onMouseOut="hide('eventinfo-day-87-7'); return true;"><B>9:00pm&gt; Sho-me horse show</B></A><BR></FONT></TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">10:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=22"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+<TR><TH CLASS="tableheader" VALIGN="top" WIDTH="13%" BGCOLOR="#FFFFFF" HEIGHT="40"><FONT COLOR="#000000">11:00pm</FONT></TH>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050403&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050404&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050405&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050406&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050407&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0F0"><A HREF="edit_entry.php?date=20050408&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+<TD VALIGN="top" WIDTH="12%" BGCOLOR="#F0F0C0"><A HREF="edit_entry.php?date=20050409&hour=23"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD>
+</TR>
+
+</TABLE>
+</TD></TR></TABLE>
+
+<P>
+
+<DIV ID="eventinfo-day-74-0" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Description:</B>
+Belle Saddle Club Trail Ride, 
+Belle Mo
+
+573-859-3273</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-87-1" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Time:</B> 9:00pm<BR><B>Description:</B>
+Sho-me horse show assoc. Stock horse show, We have stock on Saturday nights and Gaited on Friday nights.Visit our web site at www.shomehorseshowassoc.homestead.com</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-97-2" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Time:</B> 8:00pm<BR><B>Description:</B>
+Located at the Hartville Saddle Club arena in Hartville, MO. Contact: Larry Ferguson 924-4972 or visit www.hartvillesaddleclub.com
+</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-24-3" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Description:</B>
+Carthage, MO 10:00 AM</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-43-4" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Time:</B> 11:00am<BR><B>Description:</B>
+Trowbridge Livestock Center</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-92-5" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Time:</B> 2:00pm<BR><B>Description:</B>
+Eldon Rough Riders Saddle CLub
+Eldon, MO
+</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-34-6" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Time:</B> 4:00pm<BR><B>Description:</B>
+MGRA/MMGA ALL SPEED SHOW
+WELLSVILLE, MO 573-684-3150</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+<DIV ID="eventinfo-day-87-7" STYLE="position: absolute; z-index: 20; visibility: hidden; top: 0px; left: 0px;">
+<TABLE BORDER="0" WIDTH="30%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#000000">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="1"><TR><TD BGCOLOR="#FFFFFF" CLASS="popup">
+<FONT COLOR="#000000"><B>Time:</B> 9:00pm<BR><B>Description:</B>
+Sho-me horse show assoc. Stock horse show, We have stock on Saturday nights and Gaited on Friday nights.Visit our web site at www.shomehorseshowassoc.homestead.com</FONT></TD></TR></TABLE>
+</TD></TR></TABLE>
+</DIV>
+
+
+<P>
+<A CLASS="navlinks" HREF="week.php?year=2005&month=04&day=03&friendly=1" TARGET="cal_printer_friendly"
+onMouseOver="window.status = 'Generate printer-friendly version'">[Printer Friendly]</A>
+
+
+<BR CLEAR="all">
+<HR CLEAR="all">
+<FONT SIZE="-1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<FORM ACTION="month.php" METHOD="GET" NAME="SelectMonth">
+<TR><TD ALIGN="left" VALIGN="top" WIDTH="33%"><FONT SIZE="-1">
+<B>Month:</B>
+<SELECT NAME="date" ONCHANGE="document.SelectMonth.submit()">
+<OPTION VALUE="20040501">May 2004<OPTION VALUE="20040601">Jun 2004<OPTION VALUE="20040701">Jul 2004<OPTION VALUE="20040801">Aug 2004<OPTION VALUE="20040901">Sep 2004<OPTION VALUE="20041001">Oct 2004<OPTION VALUE="20041101">Nov 2004<OPTION VALUE="20041201">Dec 2004<OPTION VALUE="20050101">Jan 2005<OPTION VALUE="20050201">Feb 2005<OPTION VALUE="20050301">Mar 2005<OPTION VALUE="20050401" SELECTED>Apr 2005<OPTION VALUE="20050501">May 2005<OPTION VALUE="20050601">Jun 2005<OPTION VALUE="20050701">Jul 2005<OPTION VALUE="20050801">Aug 2005<OPTION VALUE="20050901">Sep 2005<OPTION VALUE="20051001">Oct 2005<OPTION VALUE="20051101">Nov 2005<OPTION VALUE="20051201">Dec 2005<OPTION VALUE="20060101">Jan 2006<OPTION VALUE="20060201">Feb 2006<OPTION VALUE="20060301">Mar 2006<OPTION VALUE="20060401">Apr 2006<OPTION VALUE="20060501">May 2006</SELECT>
+<INPUT TYPE="submit" VALUE="Go">
+</FONT></TD>
+</FORM>
+<FORM ACTION="week.php" METHOD="GET" NAME="SelectWeek">
+<TD ALIGN="center" VALIGN="top" WIDTH="33%"><FONT SIZE="-1">
+<B>Week:</B>
+<SELECT NAME="date" ONCHANGE="document.SelectWeek.submit()">
+<OPTION VALUE="20050213">Feb 13 - Feb 19
+<OPTION VALUE="20050220">Feb 20 - Feb 26
+<OPTION VALUE="20050227">Feb 27 - Mar 5
+<OPTION VALUE="20050306">Mar 6 - Mar 12
+<OPTION VALUE="20050313">Mar 13 - Mar 19
+<OPTION VALUE="20050320">Mar 20 - Mar 26
+<OPTION VALUE="20050327">Mar 27 - Apr 2
+<OPTION VALUE="20050403" SELECTED>Apr 3 - Apr 9
+<OPTION VALUE="20050410">Apr 10 - Apr 16
+<OPTION VALUE="20050417">Apr 17 - Apr 23
+<OPTION VALUE="20050424">Apr 24 - Apr 30
+<OPTION VALUE="20050501">May 1 - May 7
+<OPTION VALUE="20050508">May 8 - May 14
+<OPTION VALUE="20050515">May 15 - May 21
+<OPTION VALUE="20050522">May 22 - May 28
+</SELECT>
+<INPUT TYPE="submit" VALUE="Go">
+</FONT></TD>
+</FORM>
+<FORM ACTION="year.php" METHOD="GET" NAME="SelectYear">
+<TD ALIGN="right" VALIGN="top" WIDTH="33%"><FONT SIZE="-1">
+<B>Year:</B>
+<SELECT NAME="year" ONCHANGE="document.SelectYear.submit()">
+<OPTION VALUE="2001">2001
+<OPTION VALUE="2002">2002
+<OPTION VALUE="2003">2003
+<OPTION VALUE="2004">2004
+<OPTION VALUE="2005" SELECTED>2005
+<OPTION VALUE="2006">2006
+<OPTION VALUE="2007">2007
+<OPTION VALUE="2008">2008
+</SELECT>
+<INPUT TYPE="submit" VALUE="Go">
+</FONT></TD>
+</FORM>
+</TR>
+</TABLE>
+<BR>
+<B>Go to:</B> 
+<A CLASS="navlinks" HREF="month.php"><B>My Calendar</B></A> | <A CLASS="navlinks" HREF="login.php">Login/Logout</A> | <A CLASS="navlinks" HREF="search.php">Search</A> | <A CLASS="navlinks" HREF="export.php">Export</A> | <A CLASS="navlinks" HREF="import.php">Import</A> | <A CLASS="navlinks" HREF="edit_entry.php?year=2005&month=04&day=03">Add New Entry</A> | <A CLASS="navlinks" HREF="#" ONCLICK="window.open ( 'help_index.php', 'cal_help', 'dependent,menubar,scrollbars,height=400,width=400,innerHeight=420,outerWidth=420' );" ONMOUSEOVER="window.status='Help'">Help</A><BR>
+
+<b>Reports:</b>
+<a href="report.php?report_id=4" class="navlinks">Unnamed Report</a><br>
+
+</FONT>
+
+</BODY>
+</HTML>

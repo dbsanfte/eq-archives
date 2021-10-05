@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - need html help</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-3.html">Primal Screams and Random Chatter</a> &gt; <a href="f-27.html">OOC Chat</a> &gt; need html help</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=14530">need html help</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Verdandi</b></div><div class="posttext" id="p1">How does one make html lists expandable?  I handwrite my html because I'm a stickler that way and haven't been able to work this out for myself.  An example of what I mean: Halas Heaters (http://www.eqtraders.com/items/show_item.php?item=4957&amp;menustr=035000000000).  Down under the Full Recipe List you can click on the + next to Vodka to expand the list under it to be viewable.  <br />
+<br />
+I tried doing it with Frontpage and studying what it did but that's getting into java and stuff and I don't want to mess with that.  In the example above EQTC appears to be using style sheets, which is more my speed.  I've done a very tiny bit of dabbling with style sheets (copying code that did what I wanted and plugging it into my page - this actually worked) and have learned more in poring through the books at hand right now.  But none of them address expanding lists; I think our books might be too old.  <br />
+<br />
+So I understand the most elementary fundamentals and just want to know what bits of code to put where in order to make my lists expandable.  Anyone able to help?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Sanna</b></div><div class="posttext" id="p2">Gogo HTML-by-Hand! Precious few of us left. ^_^<br />
+<br />
+As for code... straight HTML won't do it, too static. My regurgitable css is limited, but I generally understand what I read, and... I'm not thinking you can achieve the exact mirror-like same effect without JS. <br />
+<br />
+not to be completely pessimistic... There is probably another displayable way of having a click-open-click-shut menu, it just might not look /exactly/ like the one you've got right now. Are you just wanting to lift the JS straight out of the system? (JS scares me too ^_^) Or end up with a system that achieves the same effect, even if it looks/acts a little different? <br />
+<br />
+I've got half a dozen tabs open, but they're still not quite giving me a nice answer, either way. I think it /can/ be done without JS... it just might not be close to what you have now...<br />
+<br />
+-- Sanna</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Dunthor Warsmith</b></div><div class="posttext" id="p3">Looking over the source html from the EQTraders pages, and the associated style sheets and javascript, EQTC seems to do it entirely with Javascript.  It makes sense, since html is basically static content, and most of css is to more efficiently &amp; compatibly mark up that static content, whereas Javascript's purpose is, in part, to provide client-side dynamic content.<br />
+<br />
+If you're looking to do a client-side dynamic content like that, such as rerendering parts of the page when you click something, I'm pretty sure you're going to have to use *some* type of scripting or embedded program.  You could, of course, reload the whole page on every expansion/contraction, but that seems like it would be a hastle to program, difficult to maintain, frustrating for the user, and extra load on the webserver.<br />
+<br />
+<br />
+As far as the EQTC version, poking around with the page source, it is pretty easy to get it working.  Need to include this line anywhere in the body,&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.eqtraders.com/library/aqtree.js&quot;&gt;&lt;/script&gt; (creating a local copy of the file and linking to that really should be done, for development, private, and production uses - but this tells you were to download it from to make that copy ;) ).<br />
+<br />
+After that, its basically just nesting unordered lists.  The outermost list must be declared with &lt;ul class=&quot;aqtree&quot;&gt;, and any lists you want pre-(and permanantely-)expanded should have their parent list item be declared with &lt;li class=&quot;expand&quot;&gt; (for example, this is done so that when you click on vodka, the header &quot;To make vodka, do stuff&quot; is revealed and its child list of the 4 ingredients is auto-expanded.<br />
+<br />
+The icons for the + and - signs have their (relative) locations coded into the aqtree.js.  You can either supply them at those locations, or you can edit the Javascript file for locations that work for you.<br />
+<br />
+Attached is a html page that is simply the recipe tree for the Halas heater you linked to (zipped to make the upload happy).  I've removed the rest of the page, and redone the indentation to try and make the relevant structure clearer.<br />
+<br />
+And agreed, html-by-hand is the way to go :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Verdandi</b></div><div class="posttext" id="p4">Wow, you guys are awesome!!  I won't get to dink with this again till tomorrow (trainer at the gym changed my routine today and now I'm :faint: ) but I will definitely explore more tomorrow.  Thanks to you both, for the time to investigate and the suggestions.  Can't wait to dig my paws into that zip file tomorrow!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Dunthor Warsmith</b></div><div class="posttext" id="p5">This is probably actually more useful than the zip, as its basically self-commentary - although I'm a bit tired as a write it ;)  If when you try to mess around with these lists, you find anything unclear, I can try and explain it (when I'm more awake ;) ).<br />
+<br />
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.eqtraders.com/library/aqtree.js&quot;&gt;&lt;/script&gt;<br />
+&lt;ul class=&quot;aqtree&quot;&gt;<br />
+	&lt;li&gt;A) First list item&lt;/li&gt;<br />
+	&lt;li&gt;B) Expandable list item<br />
+		&lt;ul&gt;<br />
+			&lt;li&gt;B1) B's child list&lt;/li&gt;<br />
+			&lt;li&gt;B2) Has three&lt;/li&gt;<br />
+			&lt;li&gt;B3) Elements&lt;/li&gt;<br />
+		&lt;/ul&gt;<br />
+	&lt;/li&gt;<br />
+	&lt;li&gt;C) Another plain item&lt;/li&gt;<br />
+	&lt;li class=&quot;expand&quot;&gt;D) auto-expanded child list<br />
+		&lt;ul&gt;<br />
+			&lt;li&gt;D1) D's children&lt;/li&gt;<br />
+			&lt;li&gt;D2) Are always out&lt;/li&gt;<br />
+		&lt;/ul&gt;<br />
+	&lt;/li&gt;<br />
+	&lt;li&gt;E has a child<br />
+		&lt;ul&gt;<br />
+			&lt;li&gt;E1) I'm a regular child of E&lt;/li&gt;<br />
+			&lt;li class=expand&gt;<br />
+				E2) I am E's child, with an auto-expanding list<br />
+				&lt;ul&gt;<br />
+					&lt;li&gt;E2a) This line is displayed by openning E, but it is actually E's grandchild&lt;/li&gt;<br />
+					&lt;li&gt;E2b) Family tree's have wonderful complications ;)&lt;/li&gt;<br />
+				&lt;/ul&gt;<br />
+			&lt;/li&gt;<br />
+		&lt;/ul&gt;<br />
+	&lt;/li&gt;<br />
+	&lt;li&gt;F) And one last item for the base list.&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;<br />
+<br />
+(feels silly zipping up these tiny text documents... wonder which is ultimately easier on the messageboard server)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Ngreth Thergn</b></div><div class="posttext" id="p6">first... we can thank Shariin for the modified code.  THe original aqtree code can be found on the net with a search.<br />
+<br />
+then I have background PHP script decide WHEN the expand should be there or not (basically first time there is a &quot;new&quot; recipe... put in an expand... )<br />
+<br />
+the &quot;expand&quot; basically tells it whether that list item has the potential to expand...  (so it gets the +/-) it does not say if it is expanded or not (which is why every time you come back to the page it is collapsed)<br />
+<br />
+my php code (sorry db calls removed, even though they are handled by a wraper class)<br />
+<br />
+		static $loop_list = array();<br />
+		global $MAINDB;<br />
+		$recdb = new mysql($MAINDB,'r'); <br />
+		$loop_list[$recipe_id]=true;<br />
+		if ($recipe_result = $recdb-&gt;query(&lt;db call&gt;)) { <br />
+			$recipe_row = mysql_fetch_array($recipe_result, MYSQL_ASSOC); <br />
+		} else { <br />
+			return &quot;Invalid Recipe ID&lt;br&gt;\n&quot;.$pass_string; <br />
+		} <br />
+		if ($recipe_row['restriction']) {<br />
+			$in_restricted = &quot;&lt;a class=\&quot;teal\&quot; href=\&quot;$HTTP_ROOT/items/show_item.php?item=&quot;.$recipe_row['item_id'].&quot;\&quot;&gt;(Restricted)&lt;/a&gt; &quot;;<br />
+		} else {<br />
+			$in_restricted = &quot;&quot;;<br />
+		}<br />
+		///////////////////////////////////////////<br />
+		//find Containers<br />
+		//<br />
+		//<br />
+		$container_results = $recdb-&gt;query(&lt;dbcall-here&gt;);<br />
+		if ($container_results) {<br />
+			$cur_container = mysql_fetch_array($container_results, MYSQL_ASSOC);<br />
+			$next_container = mysql_fetch_array($container_results, MYSQL_ASSOC);<br />
+			$containers = &quot;&lt;a href=\&quot;$HTTP_ROOT/items/show_item.php?item=&quot;.$cur_container['item_id'].&quot;\&quot;&gt;&quot;.stripslashes($cur_container['item_name']).&quot;&lt;/a&gt;&quot;;<br />
+			if ($next_container) {<br />
+				$cur_container = $next_container;<br />
+				while ($next_container = mysql_fetch_array($container_results, MYSQL_ASSOC)) {<br />
+					$containers .= &quot;, &quot; . &quot;&lt;a href=\&quot;$HTTP_ROOT/items/show_item.php?item=&quot;.$cur_container['item_id'].&quot;\&quot;&gt;&quot;.stripslashes($cur_container['item_name']).&quot;&lt;/a&gt;&quot;;<br />
+					$cur_container = $next_container;<br />
+				}<br />
+				$containers .= &quot;, or &quot; . &quot;&lt;a href=\&quot;$HTTP_ROOT/items/show_item.php?item=&quot;.$cur_container['item_id'].&quot;\&quot;&gt;&quot;.stripslashes($cur_container['item_name']).&quot;&lt;/a&gt;&quot;;<br />
+			}<br />
+		} else { <br />
+			$containers=&quot;&lt;font color=\&quot;#FF0000\&quot;&gt;&lt;b&gt;****INVALID CONTAINERS****&lt;/b&gt;&lt;/font&gt;&quot;; <br />
+		} <br />
+		$pass_string .= $insert.&quot;To make &quot;.stripslashes($recipe_row['item_name']).&quot; (&quot;.$recipe_row['tradeskill'].&quot;: Yield &quot;.$recipe_row['yield'].&quot;, trivial &quot;.$recipe_row['triv_display'].&quot;), &quot;.$in_restricted.&quot;Combine the following in a &quot;.$containers.&quot;\n&quot;; <br />
+		///////////////////////////////////////////<br />
+		//find components and loop (recursive)<br />
+		//<br />
+		//<br />
+		$pass_string .= &quot;&lt;ul&gt;\n&quot;;<br />
+		$component_result = $recdb-&gt;query(&lt;dbcall-here&gt;); <br />
+		if (!$component_result) return &quot;No such recipe_id mapped&quot;; <br />
+		while ($component_row = mysql_fetch_array($component_result, MYSQL_ASSOC)){ <br />
+			if ($component_row['amount']&gt;1) { <br />
+				$amount = &quot;(&quot;.$component_row['amount'].&quot;)&quot;; <br />
+			} else { <br />
+				$amount = &quot;&quot;; <br />
+			} <br />
+			$pass_string .= &quot;&lt;li&gt;&lt;b&gt;&lt;a href=\&quot;$HTTP_ROOT/items/show_item.php?item=&quot;.$component_row['item_id'].&quot;\&quot;&gt;&quot;.stripslashes($component_row['item_name']).&quot;&lt;/a&gt;&lt;/b&gt;&quot;.$amount.&quot; &quot;; <br />
+			if ($recipe_result = $recdb-&gt;query('recipes','recipe_id,nr',&quot;WHERE item_id = &quot;.$component_row['item_id'].&quot; ORDER BY yield&quot;,$dbg)) { <br />
+				$recipe_row = mysql_fetch_array($recipe_result, MYSQL_ASSOC);<br />
+				if (!$loop_list[$recipe_row['recipe_id']]) {<br />
+					$pass_string .= &quot;&lt;ul&gt;&lt;li class=\&quot;expand\&quot;&gt;\n&quot;;<br />
+					$pass_string = $this-&gt;recursive_recipe($recipe_row['recipe_id'], $pass_string, $dbg, &quot;&quot;); <br />
+<br />
+					$loop_list[$recipe_row['recipe_id']]=true;<br />
+					while ($recipe_row = mysql_fetch_array($recipe_result, MYSQL_ASSOC)) {<br />
+						if (!$loop_list[$recipe_row['recipe_id']]) {<br />
+							$pass_string = $this-&gt;recursive_recipe($recipe_row['recipe_id'], $pass_string, $dbg, &quot;\n&lt;/li&gt;&lt;li class=\&quot;expand\&quot;&gt;Alternatively: &quot;); <br />
+							$loop_list[$recipe_row['recipe_id']]=true;<br />
+						}<br />
+					}<br />
+					$pass_string .= &quot;&lt;/li&gt;&lt;/ul&gt;&quot;;<br />
+				}<br />
+			} <br />
+		$pass_string .= &quot;\n&lt;/li&gt;\n&quot;; <br />
+		} <br />
+	$recdb-&gt;close; <br />
+	return $pass_string . &quot;&lt;/ul&gt;\n&quot;; <br />
+	}</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>Verdandi</b></div><div class="posttext" id="p7">Hmmm.  After thinking on it more I am thinking what I really want most is for the tree to be expanded by default but to be, er, unexpandable.  <br />
+<br />
+So first I get that aqtree file and stick it somewhere and link to it with the code Dunthor provided.  Then I would need a modified version of that php code from Ngreth to control the expandability?  I find that snippet scary, although I know most of that is due to it drawing on the database.  But I have no idea what to keep out of that.  <br />
+<br />
+My use for this is in a guide I am writing to the PoP Planar Progression.  It is intended to cover pretty much everything except tactics for the raids.  AAs, the PoP charm, layout of the zones, flags, the various forms of access, writeups for the stuff that doesn't require raids, every snippet of npc text I can get my paws on, etc.  At the top of this guide I have an index to what it contains.  That list is getting pretty lengthy, considering it has every zone listed with links to the general information for that zone and then a separate list of every major task involved.  I want that index to be expanded by default but to be unexpandable for printing purposes or just to shorten the whole thing a bit.  It is by no means critical, however, which means that if this is going to be a whole mess of work then it may not be worth it.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Dunthor Warsmith</b></div><div class="posttext" id="p8">Well, I fooled around with aqtree.js a bit and I *think* I've managed to create another class of list item, which defaults to open but is closable.<br />
+<br />
+I know *zero* Javascript, but it seems to be functional, and the changes are relatively minor (basically creating a 3rd case in two places).<br />
+<br />
+So, if you want an item's child list to be expanded by default, declare the list item containing it with &lt;li class=&quot;open&quot;&gt;, ie the same as for a permanently-expanded list, but using &quot;open&quot; instead of &quot;expand&quot;.<br />
+<br />
+Attached are the modified aqtree file and a modified exTree.html file, where the first item is an open list.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Sanna</b></div><div class="posttext" id="p9">wow, that's, um, a really tall order there ^_^ but it sounds like it will be cool in the end. <br />
+<br />
+As far as the 'default to expanded, but shrink for printing'... is this to specifically restrict people from printing it out and being malicious with EQTC's data/wording? Or just to keep people from spending 36 pages to print dwarven cultural? ^_^<br />
+<br />
+Are you also trying to allow just a web-viewer to shrink the parts they don't want to see (like npc text they aren't particularly interested in)? Or they just get what they get? <br />
+<br />
+<br />
+If:<br />
+you just want the data etc to be shown in a really really ordered format, and the 'no-print' thing is just to keep people from spending too much paper, I would say don't stress about it and just start applying CSS-formatting like crazy ^_^. <br />
+<br />
+Else:<br />
+you want to prevent malicious printed use.... in which case I don't know what to do. &gt;_&lt; I have not seen a piece of code that will keep a printer from printing visible information. I'm not a be-all-end-all code dictionary (tho that would be fun ^_^), but I don't think you can out and out prevent printing. <br />
+<br />
+<br />
+<br />
+I keep thinking I'm missing something in this question &gt;_&lt;. <br />
+<br />
+-- Sanna<br />
+gomen....</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>Verdandi</b></div><div class="posttext" id="p10">Originally posted by Sanna <br />
+As far as the 'default to expanded, but shrink for printing'... is this to specifically restrict people from printing it out and being malicious with EQTC's data/wording? Or just to keep people from spending 36 pages to print dwarven cultural? ^_^ <br />
+The guide I'm writing isn't tradeskill related in any way and won't be on EQTC.  And the shrinkage option is just for the convenience of the users. :)<br />
+<br />
+That's fantastic Dunthor, I'll let ya know as soon as I get to try it. :)  Thank you!!</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

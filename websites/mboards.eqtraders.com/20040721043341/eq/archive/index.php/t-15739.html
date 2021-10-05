@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - Another php question.</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-1.html">Announcements</a> &gt; <a href="f-11.html">DenMother's Corner</a> &gt; Another php question.</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=15739">Another php question.</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Ngreth Thergn</b></div><div class="posttext" id="p1">I need to make a php script that can write to a file on the server.<br />
+<br />
+this file would need to be formulated like so:<br />
+<br />
+&lt;?php<br />
+<br />
+$mso=&quot;010000000000|1|Home|pic|articles/news_page.php?menustr=010000000000|<br />
+020000000000|1|About|pic|articles/article_page.php?article=g1&amp;menustr=020000000000|<br />
+030000000000|1|FAQ|pic|articles/article_page.php?article=g7&amp;menustr=030000000000|<br />
+035000000000|1|Search|pic|search/search.php?menustr=035000000000|<br />
+.<br />
+.<br />
+.<br />
+150000000000|1|Submit|pic|articles/article_page.php?article=g94&amp;menustr=100000000000|<br />
+160000000000|1|Links|pic|articles/article_page.php?article=g93&amp;menustr=160000000000|&quot;;<br />
+?&gt;<br />
+<br />
+<br />
+Does anyone have a hint on how to do so?  (the &quot;endlines&quot; are important)<br />
+<br />
+Basically I need the PHP script to write another PHP file that will be included elsewhere.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Dunthor Warsmith</b></div><div class="posttext" id="p2">I don't know on the writing/including, but the endlines should be easy enough.  By this page (http://www.php.net/types.string), you should be able to use the standard escape character \n for a newline (or if the system doesn't like you, \n\r for linefeed and carriage return combo) when you're writing out.  So a string &quot;My\nmany\nlines&quot; would come out looking like<br />
+&quot;My<br />
+many<br />
+lines&quot;</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>bugfinder</b></div><div class="posttext" id="p3">The proably best way to do it would be to have $mso=file(somefile); to read it in, and then do depending how you stored it<br />
+<br />
+If you have it in an array (I hope you do)<br />
+<br />
+$fp=fopen(&quot;somefile&quot;,&quot;w+&quot;);<br />
+fputs($fp,implode(&quot;|&quot;,$somearrayofdata).&quot;|\n&quot;));<br />
+fclose($fp);<br />
+<br />
+Or if not in an array, <br />
+<br />
+$fp=fopen(&quot;somefile&quot;,&quot;w+&quot;);<br />
+fputs($fp,$myvar1.&quot;|&quot;.$myvar2.&quot;|&quot;.$myvar3.&quot;|\n&quot;);<br />
+fclose($fp);<br />
+<br />
+(With as many $myvars as you have swapping them for your variables of course)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Zaephod</b></div><div class="posttext" id="p4">If you can build the array that you want to write to another file then you can use the serialize function to store it in a writeable format in another file that can be read (or stored in the DB if you Base64Encode it to make it SQL Safe).<br />
+<br />
+Basicly i would suggest you create your array of data, run the serialize and base64 encode functions on it and then write it whereever you want to.  When you want to use it again, simply read it into a variable, base64decode and unserialize it.<br />
+<br />
+You'll take a bit of a speed hit but one that's actually not as bad as your would think. And it's probably actually not as bad as writing your own script to do the serialization yourself ;) (which is basicly what you're looking for).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Ngreth Thergn</b></div><div class="posttext" id="p5">This is for the left hand menu... since it shows on every page, speed is of the essense.<br />
+<br />
+So I absoultely require it to avoid calling the DB to draw it.<br />
+<br />
+I am thinking of useing the db to store it, then if someone makes a change... re-write the file that is used for the left hand menu, keeping it fast.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>bugfinder</b></div><div class="posttext" id="p6">Then the best way to achieve it is to have a template, with say {mso} where that $mso variable is so $mso={mso};<br />
+<br />
+And then when the db changes, use that template to read in the changes in from the database or file as I suggested earlier, so you write it but you have a template and a data file to form them, but you only do the process when its actually changed.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>Ngreth Thergn</b></div><div class="posttext" id="p7">Ok.  I will repeat that I taught myself php :)<br />
+<br />
+I have no idea what you just said :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>bugfinder</b></div><div class="posttext" id="p8">Thats ok, I taught myself too. its kinda hard to explain without real files and stuff to show you (especially with such a small typing window) but.. <br />
+<br />
+filea.txt = template<br />
+fileb.txt = data<br />
+<br />
+write the changes to fileb as I suggested earlier to get your format. so fileb contains<br />
+<br />
+010000000000|1|Home|pic|articles/news_page.php?menustr=010000000000|<br />
+020000000000|1|About|pic|articles/article_page.php?article=g1&amp;menustr=020000000000|<br />
+030000000000|1|FAQ|pic|articles/article_page.php?article=g7&amp;menustr=030000000000|<br />
+035000000000|1|Search|pic|search/search.php?menustr=035000000000|<br />
+.<br />
+.<br />
+.<br />
+150000000000|1|Submit|pic|articles/article_page.php?article=g94&amp;menustr=100000000000|<br />
+160000000000|1|Links|pic|articles/article_page.php?article=g93&amp;menustr=160000000000|<br />
+<br />
+filea contains<br />
+<br />
+&lt;? $mso=&quot;{mso}&quot;; ?&gt;<br />
+<br />
+filec.php (a new file) contains<br />
+<br />
+&lt;?<br />
+$template=file_get_contents(&quot;fileb.txt&quot;);<br />
+$data=file_get_contents(&quot;filea.txt&quot;);<br />
+<br />
+$fp=fopen(&quot;filed.php&quot;,&quot;w+&quot;);<br />
+$template=str_replace(&quot;{mso}&quot;,$data,$template);<br />
+fputs($fp,$template);<br />
+fclose($fp);<br />
+?&gt;<br />
+<br />
+this writes filed.php - which is your menu, and contains<br />
+<br />
+&lt;? $mso=&quot;010000000000|1|Home|pic|articles/news_page.php?menustr=010000000000|<br />
+020000000000|1|About|pic|articles/article_page.php?article=g1&amp;menustr=0200000000<br />
+00|<br />
+030000000000|1|FAQ|pic|articles/article_page.php?article=g7&amp;menustr=030000000000<br />
+|<br />
+035000000000|1|Search|pic|search/search.php?menustr=035000000000|<br />
+150000000000|1|Submit|pic|articles/article_page.php?article=g94&amp;menustr=10000000<br />
+0000|<br />
+160000000000|1|Links|pic|articles/article_page.php?article=g93&amp;menustr=160000000<br />
+000|&quot;; ?&gt;<br />
+<br />
+PS - if you wanna send me a message so we can sort it out off list, Im more than happy, one thing you might like to consider is even though you arent in the uk, theres a PHP list who are always happy to help people..  We have non UK people there too :)<br />
+<br />
+New Mail ....:- mailto:PHP_UK@elliott.uk.com<br />
+Subscribe ...:- mailto:PHP_UK.sub@elliott.uk.com<br />
+Unsubscribe .:- mailto:PHP_UK.Unsub@elliott.uk.com<br />
+Archive .....:- http://www.mail-archive.com/php_uk@elliott.uk.com</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Ngreth Thergn</b></div><div class="posttext" id="p9">Thanks... That works :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>bugfinder</b></div><div class="posttext" id="p10">Glad to help. Im a kind PHP addict so.. Always happy to help.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>Raskii</b></div><div class="posttext" id="p11">Sorry to post to this so late, but I would suggest taking a look at http://www.massassi.com/bTemplate/ for options on making your site a little easier to update. Basically it's a stripped down (but still amazingly functional) templating system called bTamplate. We use it here at work almost exclusively(sp?) because of it's insane speed.<br />
+<br />
+Also, if you're REALLY interested in a speedy, functional templating system, take a look at the article (http://www.massassi.com/php/articles/template_engines/) he references in his last update.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

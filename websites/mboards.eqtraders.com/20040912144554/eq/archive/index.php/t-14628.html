@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - MySQL Help</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-3.html">Primal Screams and Random Chatter</a> &gt; <a href="f-27.html">OOC Chat</a> &gt; MySQL Help</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=14628">MySQL Help</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Ngreth Thergn</b></div><div class="posttext" id="p1">Is there an &quot;in enum&quot; command for slect?<br />
+<br />
+I have an enum &quot;food_type&quot;<br />
+<br />
+currently probably because of poor coding...  items that do NOT have a food atribute are NOT set to null... so I cannot use the IS NOT NULL command, instead I need to actually check if it is in the enum.<br />
+<br />
+Any such command?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Tanliel</b></div><div class="posttext" id="p2">I'm no MySQL guru, I just know where the documentation is...<br />
+<br />
+MySQL Select Syntax:<br />
+http://www.mysql.com/doc/en/SELECT.html<br />
+<br />
+And   ENUM Type:<br />
+http://www.mysql.com/doc/en/ENUM.html</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Ngreth Thergn</b></div><div class="posttext" id="p3">yup, been there.  did not see any help :/</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>KyrosKrane</b></div><div class="posttext" id="p4">First off, let me say up front I've never worked with enums.<br />
+<br />
+Is there a way to get a list of all possible values for an enum?  For a table, you can use:<br />
+<br />
+SELECT * FROM BigTable;<br />
+<br />
+Is there an equivalent command that will just list the enum values?<br />
+<br />
+If there is, you should be able to do something like this:<br />
+<br />
+SELECT * FROM BigTable WHERE FieldOne IN (SELECT * FROM MyEnum);<br />
+<br />
+or<br />
+<br />
+SELECT * FROM BigTable WHERE FieldOne IN ([whatever command gives you the list of enum values]);<br />
+<br />
+As a temporary work-around, you can do something like:<br />
+<br />
+SELECT * FROM BigTable WHERE FieldOne IN ('Value1', 'Value2', 'Value3');<br />
+<br />
+This only works if you have a very few values; more than five or so and it becomes inconvenient, not to mention defeating the purpose of the enum.<br />
+<br />
+Edit: What data type is the FoodType column?  If there's a distinctive value for the non-food items (e.g., zero), then maybe you can filter to exclude that.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Ngreth Thergn</b></div><div class="posttext" id="p5">The Data type is enum :)<br />
+<br />
+I have tried the reverse filter and it did not work.  It is either Null or &quot;blank&quot; (mostly blank... it should be NULL but for some reason is blank)  I am not able to test for the blank condition for some reason.  I tried food_type != 0 (as the documentation says) , I tried food type != &quot;&quot;.  Is maybe my NOT wrong?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>KyrosKrane</b></div><div class="posttext" id="p6">Sorry, I'm just flailing around in the dark here.<br />
+<br />
+Hum ... I remember an old trick from my DOS batch file programming days.  (Ack!  He's showing his age! :))  I also use this trick sometimes to force a type change for data types, even in more recent languages.  Try to concatenate random text with the values.  <br />
+<br />
+So it would be something like:<br />
+<br />
+CONCAT(food_type, &quot;banana&quot;) != &quot;banana&quot;<br />
+<br />
+If food_type is an empty string, the expression resolves to &quot;banana&quot; != &quot;banana&quot;, which resolves to false.  If food_type is a text value, the entire expression resolves to true.  If food_type is null, the expression resolves to null.<br />
+<br />
+Also, depending on your server syntax, it might be &lt;&gt; instead of !=.  At least, MS SQL uses &lt;&gt;.<br />
+<br />
+Finally, one interesting tip I found (this is apparently MySQL specific) is the IFNULL function.  Maybe you can use this to get around the problem of some values being NULL while others are not.<br />
+<br />
+The syntax is:<br />
+<br />
+IFNULL(value, result)<br />
+<br />
+If &quot;value&quot; is null, the expression returns &quot;result&quot;.  If &quot;value&quot; is not null, it returns &quot;value&quot;.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>Malathos</b></div><div class="posttext" id="p7">I think your NOT is wrong :)<br />
+<br />
+According to the doc - the enum can be null if specified, which is different from being set to a null string. <br />
+So you should be able to pull all the non-null, zero value rows by searching for either numerical value = 0 or = &quot;&quot;. <br />
+If that works ok, then you should also be able to do a blanket update and set them all to null ...<br />
+update x set enum = null where enum = &quot;&quot;<br />
+<br />
+(this is only a vague syntax - i'm an Oracle DBA, not a MySQL guru ;)  )</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Ngreth Thergn</b></div><div class="posttext" id="p8">right.  But I need the reverse.  I need NOT.  Basically I need to knwo when it is any item in the set... or when it is NOT null or NOT blank.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Velvett</b></div><div class="posttext" id="p9">You can compare ENUM members either by name or number:<br />
+<br />
+Given the possible values of the ENUM field food_type as  'snack','meal','banquet' the following is true<br />
+<br />
+SELECT food_type<br />
+FROM  food_table<br />
+WHERE food_type='snack'<br />
+<br />
+will return the same record set as<br />
+<br />
+SELECT food_type<br />
+FROM  food_table<br />
+WHERE food_type=1<br />
+<br />
+It is possible to declare the empty string as a legal enumeration member.  It will be assigned a non-zero numeric value, just as any other member listed in the declaration would be.  However, using an empty string may cause some confustion because that string is also used for the error member that has a numeric value of 0.  <br />
+<br />
+<br />
+I played around a bit with the ENUM field... paying attention to defaults.  If I allowed the field to accept NULL s.. then NULL was set as the default value... else ... the first value in the enumeration member list was declared as the default.  If you have values of both NULL and EMPTY STRING  ... then we'd best hope that the field accepts NULL (duh Velvett) and that EMPTY STRING is one of the members of the enumeration list.  If this is not true, then I think an adjustment to the table is in order.  <br />
+<br />
+Sticking with my example list above.. If I try to insert a value of 'enduring meal', that will cause the Error value to be inserted (enduring meal is not a memeber of the enumeration list).<br />
+<br />
+Hmmm.. bouncing around here some what... sorry :)<br />
+<br />
+Would this work<br />
+<br />
+SELECT food_type<br />
+FROM food_table<br />
+WHERE food_type &gt; 0 <br />
+<br />
+I'd expect that to return all records from the food_table that were correctly marked as being &quot;food&quot;.  If you need the records from that table that are NOT properly marked as food, then change your WHERE statement to<br />
+<br />
+WHERE food_type &lt; 1<br />
+<br />
+Ngreth  - for me to be of much futher assistance, I'd need to know the properties of that field... specifically.. what is the enumeration member list?<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+KyrosKrane  -- Sub-selects as you've suggested are not available to MySQL as of yet.  (Vague mention that maybe they will be available in release 5.0)<br />
+<br />
+<br />
+My hope is that I've been more helpful than confusing :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>KyrosKrane</b></div><div class="posttext" id="p10">Originally posted by Velvett <br />
+KyrosKrane  -- Sub-selects as you've suggested are not available to MySQL as of yet.  (Vague mention that maybe they will be available in release 5.0) <br />
+<br />
+You mean this wouldn't work in MySQL?<br />
+<br />
+SELECT * FROM BigTable WHERE FieldOne IN (SELECT SomeField FROM OtherTable);<br />
+<br />
+Bother.  I've done most of my SQL programming in MS SQL, so I don't know much about MySQL.  OK, Ngreth, just ignore me then. :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>Velvett</b></div><div class="posttext" id="p11">Ayup.. that wont work :(</div></div><hr />
+
+
+<div class="post"><div class="username" id="u12"><b>Ngreth Thergn</b></div><div class="posttext" id="p12">ok the food_type &gt; 0 finally worked :)<br />
+<br />
+Thanks!!  you can see the results in the advanced search :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u13"><b>Ngreth Thergn</b></div><div class="posttext" id="p13">Oh, BTW...  MySQL V 4.1 +<br />
+<br />
+http://www.mysql.com/doc/en/Subqueries.html</div></div><hr />
+
+
+<div class="post"><div class="username" id="u14"><b>KyrosKrane</b></div><div class="posttext" id="p14">Ah, so sweet!  Thankee, Ngreth! =)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - How to calculate the tradeskill difficulty</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-2.html">Tradeskills -</a> &gt; <a href="f-7.html">General Trade Skill Discussion</a> &gt; How to calculate the tradeskill difficulty</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=16010">How to calculate the tradeskill difficulty</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Nitpaac</b></div><div class="posttext" id="p1">Hello Tradeskillers,<br />
+here's my idea how to calculate that tradeskill difficulty value Y.<br />
+<br />
+*Edit* Looking at the following posts, the formula here isn't useful to determine Y. <br />
+See the replies for further details.<br />
+<br />
+Although I hope there's no mistake in it, please correct me if you see any flaws.<br />
+<br />
+We get a skillup if we get pass the first and the second check.<br />
+So, the chance of a skillup is the chance for passing check #1 multiplied with the chance for passing check #2.<br />
+The total number of combines needed to skillup is the reciprocal value of that.<br />
+<br />
+That put into a formula:<br />
+#att = 1 / (%1st * %2nd)<br />
+<br />
+With<br />
+#att = Number of attempts needed for the skillup<br />
+%1st = Chance for getting past check number 1<br />
+%2nd = Chance for getting past check number 2<br />
+<br />
+To calculate %2nd, all we need is to divide min(190, skill) by 200:<br />
+%2nd = 1- (min(190, skill) / 200)<br />
+<br />
+The chance of getting past check 1 is N divided by 1000:<br />
+%1st = N / 1000<br />
+Putting in the basic formula N=(S*10)/(Y*F) we get:<br />
+%1st = ((S*10)/(Y*F)) / 1000<br />
+%1st = S / (100*Y*F)<br />
+<br />
+This put into our first formula, we get:<br />
+#att = 1 / ( (S / (100*Y*F)) * (1-(min(190, skill) / 200)) )<br />
+<br />
+Transformed for Y, that will be:<br />
+Y = [ #att * S * ( 200 - min(skill, 190)) ] / [ F * 20.000 ]<br />
+<br />
+So, to calculate the tradeskill difficulty Y, we have to know<br />
+- the current skill<br />
+- the main stat S<br />
+- the number of combines needed and<br />
+- if you succeeded on skillup or failed.<br />
+<br />
+The trivial of the attempted item is not needed,<br />
+it went indirectly into the formula by the number of attempts needed, #att,<br />
+and by the success or failure on skillup.<br />
+<br />
+Just to complete the formula, here's the definition of F and S again:<br />
+F eqals 1 if the combine succeeded, on a failure it's F = 2.<br />
+For Smithing, Fletching and Posion Making it's S = max(int,wis,alt),<br />
+for all other tradeskills it's S = max(int,wis)-15.<br />
+<br />
+Phew!<br />
+<br />
+Now let the happy collection of data begin!<br />
+With the RNG beeing a very active element when it comes to skillups,<br />
+I fear we'll have to do many runs of analysed skillups to receive reliable data.<br />
+<br />
+*Edit*: Corrected a mistake in the formula for %2nd. Thanks, Kaysha.<br />
+Changed the looks of the formula to the one Kaysha came up with.<br />
+<br />
+Cheers,<br />
+Nitpaac</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Nitpaac</b></div><div class="posttext" id="p2">To provide some data, I've analysed some skillups in tinkering.<br />
+Tinkering starts at an innate skill of 50, and I've used data up to skill 215.<br />
+<br />
+My gnome has an int of 255, so I had S=240 to calculate with.<br />
+<br />
+The average of these 165 skillups yielded a value for Y = 2.33.<br />
+<br />
+Thanks to the RNG, Y ranged from 0.12 up to 11.<br />
+<br />
+I think this isn't enough data to come to an conclusion for the tinkering difficulty.<br />
+And although it sure feels like difficulty 4, it seems that is's easier.<br />
+<br />
+At skill 203, I needed 80 attempts for the next skillup.<br />
+Meaning Y = 9.6. And yes, that definately feeled like difficulty 10 to me.<br />
+<br />
+Cheers,<br />
+Nitpaac</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p3">While I think your calculations are correct regarding the results in your 2nd post, there is a flaw in the deduction you made regarding the second chance. You write:<br />
+<br />
+To calculate %2nd, all we need is to divide min(190, skill) by 200:<br />
+%2nd = min(190, skill) / 200<br />
+<br />
+which is based on<br />
+<br />
+Second chance: if ran(200) &gt;= min (190, skill), then skillup<br />
+<br />
+This doesn't translate like you stated though; it translates as<br />
+<br />
+%2nd = [ 200 - min(190, skill) ] / 200<br />
+<br />
+Your formula for Y then looks as follows:<br />
+<br />
+Y = [ #att * S * ( 200 - min(skill, 190)) ] / [ F * 20.000 ]<br />
+<br />
+Edit: I did a short Pottery skillup session yesterday, making 120 attempts. Since my skill was at 215 when I started, the value for min(skill, 190) was always 190, so that portion remained the same for my entire session. I gained 9 skillups, all on successes, resulting in an average of 13.33 attempts per skillup. With a WIS at 320, this then yields a value of Y = 2.133 for that session, which would indicate that Pottery has a value of Y = 2.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>KyrosKrane</b></div><div class="posttext" id="p4">One of the things I've been meaning to do is write my own skillup calculator, or improve an Excel sheet I had designed earlier.  Since we know the skillup formula and the success forumla, we should be able to get a predicted value for F that is between 1 and 2 -- if you will succeed 50% of the time, say, at a given skill level, then you can use 1.5 for F to get more meaningful results.<br />
+<br />
+Maybe that will help you out?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Nitpaac</b></div><div class="posttext" id="p5">... which would indicate that Pottery has a value of Y = 2.<br />
+<br />
+And I thought that Pottery was made more difficult? So it can't possibly one of the easier tradeskills?<br />
+<br />
+Sigh, looks like we really need a big, big number of data.<br />
+<br />
+Since we know the skillup formula and the success formula, we should be able to get a predicted value for F that is between 1 and 2<br />
+That's right, and I think that's how the online skillup calculators are done.<br />
+<br />
+But for getting my Tinkering Y-value, I already knew if I had a failure or a skillup. Could &quot;parse&quot; this from the logfile (manually, for sure).<br />
+<br />
+Cheers,<br />
+Nitpaac</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p6">I just realised I made a slight error in my Pottery details. To calculate it, I used a value of 320 WIS, but since Pottery does not use a stat besides WIS/INT, I should have used a value of 305 instead. This reduces the value of Y to 2.033.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>Suani</b></div><div class="posttext" id="p7">The formula should be<br />
+%1st = min(1,S/(100*Y*F))<br />
+<br />
+Notice that we hit the limit of 100% on success when S&gt;200 and Y=2 or when S&gt;300 and Y=3.<br />
+<br />
+That's why most people can't calculate Y with the formula<br />
+Y = [ #att * S * ( 200 - min(skill, 190)) ] / [ F * 20.000 ]<br />
+<br />
+Most people attempt tradeskills when their S is above 200. In that case, we need the trivial, the number of successes and the number of failures for each individual skillup in order to estimate Y.<br />
+<br />
+There is hope for a simpler way however.<br />
+<br />
+<br />
+First, we don't really need F to calculate %1st if we know the percentage of success. If W is the percentage of success,<br />
+%1st = W*min(1,S/(100*Y)) + (1-W)*min(1,S/(200*Y))<br />
+<br />
+For somebody with S&lt;=200, this simplifies to<br />
+%1st = (1+W)*S/(200*Y)<br />
+<br />
+If somebody with S&lt;=200 starts from skill 0 and attempts only trivials far above current skill so that success is 5%, then <br />
+#attempts = Y * #skillups * 1600000 / [ 21 * S * (401-skillups) ]<br />
+<br />
+This should be a relatively easy test to find the correct Y. I think it likely that only one test per skill is required if the number of skillups used is large enough. <br />
+<br />
+The only thing we need now is to find cheap trivials for each skill that give success 5%.<br />
+<br />
+The (unconfirmed) success formula is<br />
+W = MAX(MIN((skill*(1+mod%))-trivial*0.75+51.5,95),5)/100<br />
+<br />
+So the minimum trivial MT that gives 5% success for an unmodified skill is <br />
+MT = 1.33 * ( skill+46.5)<br />
+or if we prefer to find the maximum skill MS for a given trivial<br />
+MS= (0.75 * trivial) - 46.5<br />
+<br />
+As an example, we already know that Y=4 for smithing but we could have tested it this way. We create a halfling druid with wisdom=115. Because smithing has an alternate, S is also 115. We decide to skill up on embroidering needles; they trivial at 122. We calculate that MS=45 so we expect that skilling up from 0 to 45 will take 167 attempts if Y=2, 251 if Y=3, or 335 if Y=4.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p8">That's a good point that I totally overlooked, which also completely invalidates the value of Y that I reported above earlier.<br />
+<br />
+Since my WIS was at 320 for my skillup session, it would only have mattered if Pottery has an Y-value of 4. Since I found mine to be closer to 2 (albeit that this one is not validated), however, I am tempted to say that Y for Pottery is not 4.<br />
+<br />
+I know it's not entirely accurate as I did not write down the number of successes and failures, but I do know I did not get a skillup on a failure and I failed only about 4 times; all the rest were successes. I went from 215 to 222 in 56 combines making Green Ceramic Bands (so 7 skillups in 56) and then from 222 to 224 in 64 combines making White Ceramic Bands (so 2 skillups in 64). As is clearly evident when regarding the chance to skillup on the second calculation (as min(skill, 190) is 190 for all combines above 190 skill, which was the case here, there's a 5% skillup chance), I had a great deal of luck on the first 56 combines (skillup rate ~12.5%), while it left me in the cold on the next 64 (skillup rate ~ 3.125%). This clearly indicates that sample size is crucial to even out the irregularities in the distribution of the RNG.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Nitpaac</b></div><div class="posttext" id="p9">Ooookay.<br />
+Now that's beyond me in some parts :(<br />
+<br />
+The formula should be<br />
+%1st = min(1,S/(100*Y*F))<br />
+Ack! You're so right.<br />
+<br />
+Most people attempt tradeskills when their S is above 200. In that case, we need the trivial, the number of successes and the number of failures for each individual skillup in order to estimate Y.<br />
+???. Why isn't it enough to cap %1st to one as stated above?<br />
+And why would we need the number of successes and failures for each skillup?<br />
+How could we use that information? And why the trivial?<br />
+I'd like to understand this, but at the moment it's too high for me, maybe you can go a bit more into detail?<br />
+I have all the above data in my logfiles, so I could try to use it for a more accurate Y-calcultion if I'll understand this.<br />
+<br />
+If somebody with S&lt;=200 starts from skill 0 and attempts only trivials far above current skill so that success is 5%, then <br />
+#attempts = Y * #skillups * 1600000 / [ 21 * S * (401-skillups) ]<br />
+Again, I can't follow. Maybe you can explain how you've got that?<br />
+<br />
+Apart from my confusion, I think it's a good idea to think your way:<br />
+Not: How can we use our already made skillup data to determine Y;<br />
+But: Which skillup layout should we choose to produce data for getting Y most accurately.<br />
+<br />
+Hm, I could be mistaken, but I have the feeling that some developers at some gaming companies are grinning broadly as they read these lines.<br />
+<br />
+Anyway, once we've found some good tradeskill / item trivial / char stats combinations, I am more than willing to do some test runs. How difficult can a few hundred of low-trivial combines be, anyway?<br />
+<br />
+Cheers,<br />
+Nitpaac</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p10">The reason lies embedded in this:<br />
+<br />
+%1st = min(1,S/(100*Y*F))<br />
+<br />
+If we take Y = 2 and F = 1 (we assume the trivial of the item attempted is close enough to almost always get successes, failures are only sporadic), then the second part simply becomes<br />
+<br />
+%1st = min(1,S/200)<br />
+<br />
+As a result, you can see that for any Tradeskill for which Y = 2, you always pass this test as long as your S is at 200+ (for 3-skill Trades) or 215+ (for 2-skill Trades). Y gets cancelled out of the equation as a result, which means you cannot determine it anymore; your skillup rate is then purely determined by the 2nd formula - which is independent of Y, F and S; and if your skill is above 190, even independent from your skill too. All you are doing then is eventually proving you have a 5% skillup rate on the combines.<br />
+<br />
+If we use Y = 3 in the above, it simplifies to<br />
+<br />
+%1st = min(1,S/300)<br />
+<br />
+So the same as was said for Y = 2 above, applies here as well, but then for your S at 300+ (for 3-skill Trades) or at 315+ (for 2-skill Trades).<br />
+<br />
+Most people who perform skillups these days will do so at max skill. In most cases, this is 255 or higher. As such, using those skillup sessions you can only prove in the long run if a skill has Y = 3 or Y = 4, you cannot prove Y = 2 for any Tradeskills with stats that high.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>Suani</b></div><div class="posttext" id="p11">Since my WIS was at 320 for my skillup session, it would only have mattered if Pottery has an Y-value of 4. Since I found mine to be closer to 2 (albeit that this one is not validated), however, I am tempted to say that Y for Pottery is not 4..<br />
+<br />
+I created a spreadsheet that predicts the expected number of attempts for a skillup range given a list of trivials. I plugged in your skillup range of 215 to 224 and the trivials for unfired white ceramic band (231) and for unfired green ceramic band (222).<br />
+<br />
+If Y=2, the expected value is 182 (40 for the white + 142 for the green).<br />
+If Y=3, it's is 185 (41+144).<br />
+If Y=4, it's 242 (54+188).<br />
+<br />
+S is so high that Y matters only in the case of failure if Y=2 or Y=3. Because there are so few expected failures here, it's impossible to distinguish between Y=2 and Y=3.<br />
+<br />
+As you remark later on, sample size is crucial. A sample of 9 skillups is too small in my opinion. Also, your run of 7 skillups in 56 attempts seems exceptional to me. High variablity argues for a large sample so I chose 45 skillups in my example.<br />
+<br />
+Lastly the combination of high S and high success results in a small spread even between Y=4 and the other two Ys.<br />
+<br />
+<br />
+I plan to create a character to skillup from 0 to 45 on medium bowls (trivial 122 and cheap) later on. I will report here on the results. I may try other skills too, budget allowing.<br />
+<br />
+I can't use the same strategy to estimate Y for alchemy, poison making, tinkering and spell research because they're level-capped. However I heard that you can grow a character to a high level instantly on Test. This would best be done by someone who already has a character on test and has the plat to buy the ingredients.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u12"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p12">That's also why I said a large sample size is needed; my findings are from a sample too small to effectively reduce the statistical &quot;noise&quot;.<br />
+<br />
+I should have a few alts without Tradeskills. I could perform several runs on pretty much all skills, money is not much of an issue for me. I can't delete them, however, and have no room for new alts, so I can't make more than just a few runs.<br />
+<br />
+Edit: You make one step that I cannot follow in your post.<br />
+<br />
+I can follow you when you say that for S &lt;= 200, you get<br />
+<br />
+%1st = (1+W)*S/(200*Y)<br />
+%2nd = 1 - skill/200<br />
+<br />
+I can combine this using<br />
+<br />
+#att/skillup = 1/(%1st * %2nd)<br />
+<br />
+yielding<br />
+<br />
+#att/skillup = Y * 800,000 / (21 * S * (200 - skill))<br />
+<br />
+Right now I don't see how you transform this to the one you show. Maybe I can figure it when I think some longer on it, but I'm sure you can also provide some insight :).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u13"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p13">I've spent some more time thinking about it, and realised that the only way to calculate this, is by performing an integral calculus. The formula<br />
+<br />
+#att/skillup = Y * 800,000 / (21 * S * (200 - skill))<br />
+<br />
+changes based on your skill, which is essentially your base skill plus the amount of skillups you achieve over the skillup run. You can do the following:<br />
+<br />
+X = 200 - skill<br />
+DX = - Dskill<br />
+<br />
+Your integral then looks like<br />
+<br />
+#att = - [ (Y * 800,000) / (21 * S) ] * { ( 1 / x ) DX }<br />
+<br />
+where the part between { and } is the integral. You can find the lower and upper limits by regarding your skill. Starting at 0 means your lower bound is 200 and if you go up to skill 45 (as you suggested), your upper bound is 155.<br />
+<br />
+The integral is not easily solved, I had to duck into my Calculus books (and blow off 9 years of dust ;) ) to find the solution, which is simply a logarithm. Had the bounds been from 0 to n, the solution for X would have simply been Log(n). It is not, however, but we can easily find it anyway by simply computing the area from 0 to 155 and from 0 to 200, substracting one from the other, to be left with the part from 155 to 200 for X.<br />
+<br />
+Log(155) = 2.19<br />
+Log(200) = 2.30<br />
+<br />
+The difference between them is -0.11 (the minus appears if we properly consider the upper bound and lower bound), which we can fill in instead of the integral outlined above. This yields roughly<br />
+<br />
+#att = 4190.48 * Y / S<br />
+<br />
+for the skill range from 0 to 45. Using 115 for S and Y = 2 yields about ~73 attempts needed, Y = 3 yields about ~109 attempts needed and Y = 4 yields about ~146 attempts needed.<br />
+<br />
+Note that the value of 4190.48 depends on your target skill. If you skill up to something else than 45, this value will change as well. The same applies if you try to calculate it from a skill higher than zero.<br />
+<br />
+Edit: Seeing as our predictions differ quite a lot between the two of us, one of us, or maybe both, has made a mistake somewhere.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u14"><b>Jarak_akn</b></div><div class="posttext" id="p14">I used a simpler number crunching method, by calculating the average number of attempts expected for skill up over a range, and comparing the actual results with the expected results for Y = 2 3 and 4.<br />
+<br />
+Here is what I found for fletching using all my skill up data from 0 to 200.<br />
+Have a look and see if it works with any of your formulars.<br />
+<br />
+Here are my detailed results fletching from 0 to 200.<br />
+They seem to indicate that Fletching is difficulty 3<br />
+Note however that this is only one limited sample.<br />
+<br />
+Skill Atmp Suc Fail SUOn Item<br />
+1 2 1 1 Fail New1<br />
+2 2 2 0 Suc New1<br />
+3 3 3 0 Suc New1<br />
+4 1 1 0 Suc New1<br />
+5 2 1 1 Fail New1<br />
+6 2 1 1 Fail New1<br />
+7 1 0 1 Fail New1<br />
+8 2 1 1 Fail New1<br />
+9 1 1 0 Fail New1<br />
+10 1 1 0 Suc New1<br />
+11 6 3 3 Suc New1<br />
+12 3 1 2 Fail New1<br />
+13 2 1 1 Fail New1<br />
+14 2 1 1 Fail New1<br />
+15 1 1 0 Fail New1<br />
+16 2 1 1 Suc New1<br />
+17 3 2 1 Suc New1<br />
+18 2 1 1 Fail New1<br />
+19 2 1 1 Fail New1<br />
+20 3 2 1 Fail New1<br />
+21 3 1 2 Suc New1<br />
+22 1 1 0 Suc New1<br />
+23 2 1 1 Fail New1<br />
+24 1 0 1 Fail New1<br />
+25 5 1 4 Fail New1<br />
+26 1 1 0 Fail New1<br />
+27 2 0 2 Fail New1<br />
+28 7 4 3 Fail New1<br />
+29 1 0 1 Fail New1<br />
+30 3 3 0 Fail New1<br />
+31 1 1 0 Suc New1<br />
+32 2 1 1 Suc New2<br />
+33 1 1 0 Suc New2<br />
+34 3 1 2 Suc New2<br />
+35 3 2 1 Suc New2<br />
+36 1 1 0 Suc New2<br />
+37 6 4 2 Suc New2<br />
+38 4 2 2 Fail New2<br />
+39 1 0 1 Fail New3<br />
+40 6 3 3 Fail New3<br />
+41 4 2 2 Suc New3<br />
+42 2 0 2 Fail New3<br />
+43 4 3 1 Fail New3<br />
+44 3 3 0 Suc New3<br />
+45 2 1 1 Suc New3<br />
+46 1 0 1 Fail New3<br />
+47 2 1 1 Fail New4<br />
+48 2 2 0 Suc New4<br />
+49 1 0 1 Fail New4<br />
+50 1 0 1 Fail New4<br />
+51 3 1 2 Fail New4<br />
+52 2 0 2 Fail New4<br />
+53 1 1 0 Fail New4<br />
+54 5 4 1 Suc New4<br />
+55 4 2 2 Fail C1BP<br />
+56 3 2 1 Fail C1BP<br />
+57 4 2 2 Suc C1BP<br />
+58 1 0 1 Fail C1BP<br />
+59 8 7 1 Fail C1BP<br />
+60 2 2 0 Suc C1BP<br />
+61 2 2 0 Suc C1BP<br />
+62 6 1 5 Suc C1BP<br />
+63 1 1 0 Suc C1BP<br />
+64 13 7 6 Suc C1BP<br />
+65 2 1 1 Suc C1BP<br />
+66 1 1 0 Suc C1BP<br />
+67 3 2 1 Suc C1BP<br />
+68 6 4 2 Suc C1BP<br />
+69 1 1 0 Suc C3WP<br />
+70 4 2 2 Suc C3WP<br />
+71 2 2 0 Suc C3WP<br />
+72 1 1 0 Suc C3WP<br />
+73 2 1 1 Suc C3WP<br />
+74 2 1 1 Suc C3WP<br />
+75 2 1 1 Suc C3WP<br />
+76 2 1 1 Suc C3WP<br />
+77 1 1 0 Suc C3WP<br />
+78 4 3 1 Suc C3WP<br />
+79 1 1 0 Suc C3WP<br />
+80 2 2 0 Suc C3WP<br />
+81 1 1 0 Suc C3WP<br />
+82 1 0 1 Fail C3WP<br />
+83 3 3 0 Fail C4WP<br />
+84 1 0 1 Fail C4WP<br />
+85 8 7 1 Fail C4WP<br />
+86 1 1 0 Suc C4WP<br />
+87 1 0 1 Fail C4WP<br />
+88 2 1 1 Fail C4WP<br />
+89 2 2 0 Suc C4WP<br />
+90 1 1 0 Suc C4WP<br />
+91 7 4 3 Fail C4WP<br />
+92 1 1 0 Fail C4WP<br />
+93 3 1 2 Suc C4WP<br />
+94 2 1 1 Fail C4WP<br />
+95 1 1 0 Fail C4WP<br />
+96 3 2 1 Fail C4WP<br />
+97 3 3 0 Fail C4WP<br />
+98 4 2 2 Suc C4WP<br />
+99 4 4 0 Suc C4WP<br />
+100 1 1 0 Suc C4WP<br />
+101 8 5 3 Suc C4WP<br />
+102 2 2 0 Suc C4WP<br />
+103 3 2 1 Fail C4CP<br />
+104 3 2 1 Fail C4CP<br />
+105 4 2 2 Fail C4CP<br />
+106 6 3 3 Fail C4CP<br />
+107 3 3 0 Suc C4CP<br />
+108 3 3 0 Suc C4CP<br />
+109 11 7 4 Fail C4CP<br />
+110 7 3 4 Fail C4CP<br />
+111 4 3 1 Suc C4CP<br />
+112 2 2 0 Suc C4CP<br />
+113 1 0 1 Fail C4CP<br />
+114 1 0 1 Suc C4CP<br />
+115 2 1 1 Fail C4CP<br />
+116 9 5 4 Suc C4CP<br />
+117 4 3 1 Suc C4CP<br />
+118 4 2 2 Suc C4CP<br />
+119 3 3 0 Suc C4CP<br />
+120 5 4 1 Suc C4CP<br />
+121 2 1 1 Suc C4CP<br />
+122 4 3 1 Suc C4CP<br />
+123 1 1 0 Suc C4CP<br />
+124 1 1 0 Suc C4CP<br />
+125 7 7 0 Suc C4CP<br />
+126 1 0 1 Fail C4CP<br />
+127 9 6 3 Fail C4CP<br />
+128 2 2 0 Suc C4CP<br />
+129 8 5 3 Suc C4CP<br />
+130 4 4 0 Suc C4CP<br />
+131 13 12 1 Suc C4CP<br />
+132 1 1 0 Suc C4CP<br />
+133 9 6 3 Suc C4CP<br />
+134 4 3 1 Suc C4CP<br />
+135 6 3 3 Suc C4CP<br />
+136 16 11 5 Suc C5WP<br />
+137 2 1 1 Fail C5WP<br />
+138 3 2 1 Fail C5WP<br />
+139 5 5 0 Suc C5WP<br />
+140 3 1 2 Suc C5WP<br />
+141 4 4 0 Suc C5WP<br />
+142 7 4 3 Suc C5WP<br />
+143 3 2 1 Suc C5WP<br />
+144 12 11 1 Suc C5WP<br />
+145 13 8 5 Suc C5WP<br />
+146 5 4 1 Suc C5WP<br />
+147 1 1 0 Suc C5WP<br />
+148 4 2 2 Suc C5WP<br />
+149 18 17 1 Suc C5WP<br />
+150 5 5 0 Suc C5WP<br />
+151 5 3 2 Suc C5WP<br />
+152 10 7 3 Suc C5WP<br />
+153 1 1 0 Suc C5WP<br />
+154 6 5 1 Suc C5WP<br />
+155 9 5 4 Suc C5WP<br />
+156 4 2 2 Suc C5WP<br />
+157 3 3 0 Suc C5WP<br />
+158 5 4 1 Suc C5WP<br />
+159 9 7 2 Suc C5WP<br />
+160 15 12 3 Fail C5WP<br />
+161 10 10 0 Fail C5WP<br />
+162 2 1 1 Suc C5WP<br />
+163 7 6 1 Suc C1WST<br />
+164 3 3 0 Suc C1WST<br />
+165 14 12 2 Suc C1WST<br />
+166 4 4 0 Suc C1WST<br />
+167 1 1 0 Suc C1WST<br />
+168 8 7 1 Suc C1WST<br />
+169 2 1 1 Fail C1WST<br />
+170 6 6 0 Fail C1WST<br />
+171 2 2 0 Suc C1WST<br />
+172 10 10 0 Suc C1WST<br />
+173 7 7 0 Suc C1WST<br />
+174 1 1 0 Suc C1WST<br />
+175 4 4 0 Suc C1WST<br />
+176 1 1 0 Suc C1WST<br />
+177 15 13 2 Suc C1WST<br />
+178 3 2 1 Suc C1WST<br />
+179 5 5 0 Suc C1WST<br />
+180 1 1 0 Suc C1WST<br />
+181 13 11 2 Suc C1WST<br />
+182 10 9 1 Suc C1WST<br />
+183 10 7 3 Suc C6WP<br />
+184 8 8 0 Suc C6WP<br />
+185 49 44 5 Fail C6WP<br />
+186 39 35 4 Fail C6WP<br />
+187 5 3 2 Fail C6WP<br />
+188 32 27 5 Fail C6WP<br />
+189 32 28 4 Suc C6WP<br />
+190 3 3 0 Suc C6WP<br />
+191 22 22 0 Suc C6WP<br />
+192 1 1 0 Suc C6WP<br />
+193 5 5 0 Suc C6WP<br />
+194 13 13 0 Suc C6WP<br />
+195 7 7 0 Suc C6WP<br />
+196 10 9 1 Suc C6WP<br />
+197 39 35 4 Fail C6WP<br />
+198 127 118 9 Fail C6WP<br />
+199 1 1 0 Suc C6WP<br />
+200 3 3 0 Suc C6WP<br />
+<br />
+I had 255 Int throughout.<br />
+I did the following combines :<br />
+<br />
+GoD Newbie quests from 0 - 54<br />
+Class 1 Bone Point to 68<br />
+Class 3 Wood Point to 82<br />
+Class 4 Wood Point to 102<br />
+Class 4 Ceramic Point to 135<br />
+Class 5 Wood Point to 162<br />
+Class 1 Wood Silver Tip to 182<br />
+Class 6 Wood Point to 200 (Triv 202)<br />
+<br />
+<br />
+The following table shows the number of attempts required per skill up and the number predicted for each difficulty level. As you can see y=3 matches best. Each is the average for that item as individual skill ups are some times very aborant (thanks RNG :-)<br />
+<br />
+From To Name Actl Y = 2 Y = 3 Y = 4<br />
+0 31 New1 2.26 1.35 1.81 2.41<br />
+31 38 New2 2.86 1.42 1.86 2.48<br />
+38 46 New3 2.88 2.04 3.00 2.60<br />
+46 54 New4 2.13 1.57 2.06 2.74<br />
+54 68 C1BP 4.00 1.70 2.23 2.97<br />
+68 82 C3WP 1.86 1.86 2.42 3.23<br />
+82 102 C4WP 2.90 2.13 2.77 3.70<br />
+102 135 C4CP 4.45 2.82 3.66 4.88<br />
+135 162 C5WP 6.67 4.30 5.50 7.34<br />
+162 182 1WST 5.85 7.71 9.77 13.03<br />
+182 200 C6WP 22.56 18.08 22.82 30.43<br />
+<br />
+0 200 Avrg 5.60 4.31 5.53 7.32<br />
+<br />
+Overall the difference between Y=3 and my actual results is about 1.25% or not very much. I'm not 100% sure if this is a significant result as I have forgotten most of my stats (Its a long time since Uni) but I would be fairly confident using Y=3 for fletching atm. I guess that there is a possibility that y=2 and I was unlucky, but I really doubt that y=4.<br />
+<br />
+HTH<br />
+<br />
+Let me know if anyone wants to see any more numbers :-)<br />
+<br />
+Jarak the fletching enchanter.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u15"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p15">I logged onto my Human Rogue Alt, level 16, who started off with 0 Blacksmithing. After having prepped the necessary components with my Cleric, I had enough for 160 combines.<br />
+<br />
+My Rogue had the following stats: 129 STR, 88 STA, 102 AGI, 99 DEX, 75 WIS, 78 INT, 75 CHA. He had no Geerlock or other +% item equipped. Below is the result of making 160 Embroidering Needle attempts:<br />
+<br />
+[Wed Apr 28 19:00:43 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:00:49 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:00:55 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:01:01 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:01:08 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:01:21 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:01:29 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:01:35 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:01:35 2004] You have become better at Blacksmithing! (1)<br />
+[Wed Apr 28 19:02:10 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:10 2004] You have become better at Blacksmithing! (2)<br />
+[Wed Apr 28 19:02:16 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:16 2004] You have become better at Blacksmithing! (3)<br />
+<br />
+[Wed Apr 28 19:02:22 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:29 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:35 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:40 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:40 2004] You have become better at Blacksmithing! (4)<br />
+[Wed Apr 28 19:02:46 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:53 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:02:53 2004] You have become better at Blacksmithing! (5)<br />
+[Wed Apr 28 19:03:08 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:03:08 2004] You have become better at Blacksmithing! (6)<br />
+[Wed Apr 28 19:03:14 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:03:19 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:03:19 2004] You have become better at Blacksmithing! (7)<br />
+[Wed Apr 28 19:03:26 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:03:26 2004] You have become better at Blacksmithing! (8)<br />
+<br />
+[Wed Apr 28 19:03:32 2004] You have become better at Blacksmithing! (9)<br />
+[Wed Apr 28 19:03:32 2004] You have fashioned the items together to create something new!<br />
+[Wed Apr 28 19:03:32 2004] You have learned the recipe Embroidering Needle!<br />
+[Wed Apr 28 19:03:52 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:03:55 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:03:57 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:00 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:03 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:05 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:08 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:10 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:10 2004] You have become better at Blacksmithing! (10)<br />
+[Wed Apr 28 19:04:13 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:13 2004] You have become better at Blacksmithing! (11)<br />
+<br />
+[Wed Apr 28 19:04:16 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:04:19 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:05:43 2004] You have become better at Blacksmithing! (12)<br />
+[Wed Apr 28 19:05:43 2004] You have fashioned the items together to create something new!<br />
+[Wed Apr 28 19:05:52 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:05:52 2004] You have become better at Blacksmithing! (13)<br />
+[Wed Apr 28 19:05:55 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:05:57 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:03 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:03 2004] You have become better at Blacksmithing! (14)<br />
+[Wed Apr 28 19:06:06 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:08 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:11 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:06:13 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:16 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:19 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:19 2004] You have become better at Blacksmithing! (15)<br />
+[Wed Apr 28 19:06:21 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:21 2004] You have become better at Blacksmithing! (16)<br />
+[Wed Apr 28 19:06:24 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:26 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:26 2004] You have become better at Blacksmithing! (17)<br />
+[Wed Apr 28 19:06:29 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:29 2004] You have become better at Blacksmithing! (18)<br />
+[Wed Apr 28 19:06:31 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:31 2004] You have become better at Blacksmithing! (19)<br />
+[Wed Apr 28 19:06:34 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:34 2004] You have become better at Blacksmithing! (20)<br />
+[Wed Apr 28 19:06:37 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:06:39 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:41 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:44 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:44 2004] You have become better at Blacksmithing! (21)<br />
+[Wed Apr 28 19:06:46 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:49 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:51 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:53 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:56 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:06:59 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:07:01 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:07:04 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:07:07 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:07:07 2004] You have become better at Blacksmithing! (22)<br />
+[Wed Apr 28 19:07:09 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:07:11 2004] You have become better at Blacksmithing! (23)<br />
+[Wed Apr 28 19:07:11 2004] You have fashioned the items together to create something new!<br />
+[Wed Apr 28 19:07:16 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:02 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:02 2004] You have become better at Blacksmithing! (24)<br />
+[Wed Apr 28 19:09:05 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:07 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:10 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:12 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:12 2004] You have become better at Blacksmithing! (25)<br />
+<br />
+[Wed Apr 28 19:09:15 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:17 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:17 2004] You have become better at Blacksmithing! (26)<br />
+[Wed Apr 28 19:09:20 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:22 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:25 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:27 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:29 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:32 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:32 2004] You have become better at Blacksmithing! (27)<br />
+[Wed Apr 28 19:09:34 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:37 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:09:39 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:39 2004] You have become better at Blacksmithing! (28)<br />
+[Wed Apr 28 19:09:42 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:44 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:47 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:49 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:52 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:55 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:09:57 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:00 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:02 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:10:05 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:05 2004] You have become better at Blacksmithing! (29)<br />
+[Wed Apr 28 19:10:07 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:09 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:12 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:12 2004] You have become better at Blacksmithing! (30)<br />
+[Wed Apr 28 19:10:15 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:15 2004] You have become better at Blacksmithing! (31)<br />
+[Wed Apr 28 19:10:17 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:17 2004] You have become better at Blacksmithing! (32)<br />
+[Wed Apr 28 19:10:20 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:20 2004] You have become better at Blacksmithing! (33)<br />
+[Wed Apr 28 19:10:22 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:22 2004] You have become better at Blacksmithing! (34)<br />
+[Wed Apr 28 19:10:25 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:27 2004] You have become better at Blacksmithing! (35)<br />
+[Wed Apr 28 19:10:27 2004] You have fashioned the items together to create something new!<br />
+<br />
+[Wed Apr 28 19:10:31 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:31 2004] You have become better at Blacksmithing! (36)<br />
+[Wed Apr 28 19:10:34 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:37 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:40 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:40 2004] You have become better at Blacksmithing! (37)<br />
+[Wed Apr 28 19:10:42 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:10:42 2004] You have become better at Blacksmithing! (38)<br />
+[Wed Apr 28 19:10:45 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:26 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:29 2004] You have become better at Blacksmithing! (39)<br />
+[Wed Apr 28 19:13:29 2004] You have fashioned the items together to create something new!<br />
+[Wed Apr 28 19:13:36 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:38 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:13:41 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:41 2004] You have become better at Blacksmithing! (40)<br />
+[Wed Apr 28 19:13:43 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:43 2004] You have become better at Blacksmithing! (41)<br />
+[Wed Apr 28 19:13:46 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:49 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:51 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:54 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:56 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:13:59 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:01 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:04 2004] You lacked the skills to fashion the items together.<br />
+<br />
+[Wed Apr 28 19:14:06 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:06 2004] You have become better at Blacksmithing! (42)<br />
+[Wed Apr 28 19:14:09 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:11 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:13 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:16 2004] You have fashioned the items together to create something new!<br />
+[Wed Apr 28 19:14:21 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:21 2004] You have become better at Blacksmithing! (43)<br />
+[Wed Apr 28 19:14:24 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:26 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:28 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:31 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:31 2004] You have become better at Blacksmithing! (44)<br />
+<br />
+[Wed Apr 28 19:14:34 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:36 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:38 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:41 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:44 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:46 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:46 2004] You have become better at Blacksmithing! (45)<br />
+[Wed Apr 28 19:14:49 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:51 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:54 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:54 2004] You have become better at Blacksmithing! (46)<br />
+[Wed Apr 28 19:14:56 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:14:56 2004] You have become better at Blacksmithing! (47)<br />
+<br />
+[Wed Apr 28 19:14:58 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:01 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:01 2004] You have become better at Blacksmithing! (48)<br />
+[Wed Apr 28 19:15:04 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:04 2004] You have become better at Blacksmithing! (49)<br />
+[Wed Apr 28 19:15:06 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:06 2004] You have become better at Blacksmithing! (50)<br />
+[Wed Apr 28 19:15:09 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:11 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:13 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:16 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:16 2004] You have become better at Blacksmithing! (51)<br />
+[Wed Apr 28 19:15:18 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:21 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:21 2004] You have become better at Blacksmithing! (52)<br />
+<br />
+[Wed Apr 28 19:15:24 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:26 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:15:29 2004] You have fashioned the items together to create something new!<br />
+[Wed Apr 28 19:16:45 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:16:45 2004] You have become better at Blacksmithing! (53)<br />
+[Wed Apr 28 19:16:47 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:16:50 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:16:50 2004] You have become better at Blacksmithing! (54)<br />
+[Wed Apr 28 19:16:53 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:16:53 2004] You have become better at Blacksmithing! (55)<br />
+[Wed Apr 28 19:16:55 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:16:58 2004] You lacked the skills to fashion the items together.<br />
+[Wed Apr 28 19:17:01 2004] You lacked the skills to fashion the items together.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u16"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p16">If I use my integral analysis up to gaining 45 skill (136 attempts), I come to a Y-value for Blacksmithing of about 4.19. Using the full batch of 160 yields a Y-value of 3.91. This seems to be consistent with the reported value of Y = 4 for Blacksmithing.<br />
+<br />
+Using the formula posted by Suani, I get a Y-value of 1.70, unless I made a computation error somewhere ;) .</div></div><hr />
+
+
+<div class="post"><div class="username" id="u17"><b>Suani</b></div><div class="posttext" id="p17">???. Why isn't it enough to cap %1st to one as stated above?<br />
+And why would we need the number of successes and failures for each skillup?<br />
+How could we use that information? And why the trivial?<br />
+<br />
+Sorry, I was not clear. You don't need to report the successes and failures. Rather, we need to calculate the expected successes and failures for each skillup in order to come up with an expected number of attempts. On the reporting side, you need to provide the skill subrange and the number of attempts for each different combination of trivial, S and mod% that you used.<br />
+<br />
+You gave the formula for the number of attempts for a single skillup as<br />
+#attempts = 1 / (%1st * %2nd)<br />
+where %1st is now<br />
+%1st = W*min(1,S/(100*Y)) + (1-W)*min(1,S/(200*Y))<br />
+%2nd is still<br />
+%2nd = 1- (min(190, skill) / 200)<br />
+and the success percentage W is <br />
+W = MAX(MIN((skill*(1+mod%))-trivial*0.75+51.5,95),5)/100<br />
+<br />
+Notice that, in the general case, W (and %1st) changes whenever skill, trivial or mod% changes; %1st also changes when S changes; and %2nd changes when skill changes. So in the end, we need to calculate the number of attempts for each skillup separately.<br />
+<br />
+We use the information to find the closest match among the expected number of attempts for different Ys with the actual number of attempts.<br />
+<br />
+<br />
+<br />
+Maybe you can explain how you've got that?<br />
+<br />
+#attempts = Y * #skillups * 1600000 / [ 21 * S * (401-skillups) ]<br />
+<br />
+This is a simplified form of the general formula when certain conditions apply.<br />
+<br />
+If S&lt;=200, then %1st simplifies like this <br />
+%1st = W*min(1,S/(100*Y)) + (1-W)*min(1,S/(200*Y))<br />
+%1st = W*S/(100*Y) + (1-W)*S/(200*Y)<br />
+%1st = W*S/(100*Y) + S/(200*Y) - W*S/(200*Y)<br />
+%1st = 2*W*S/(200*Y) + S/(200*Y) - W*S/(200*Y)<br />
+%1st = S/(200*Y) * (2*W + 1 - W)<br />
+%1st = S/(200*Y) * ((2*W -W) + 1)<br />
+%1st = (1+W)*S/(200*Y)<br />
+<br />
+If the trivial is far enough above the current skill so that we hit the minimum success rate of 5% (which can also be expressed as 1/20) then<br />
+%1st = (1+W)*S/(200*Y)<br />
+%1st = (1+1/20)*S/(200*Y)<br />
+%1st = (20/20+1/20)*S/(200*Y)<br />
+%1st = (21/20)*S/(200*Y)<br />
+%1st = 21*S/(20*200*Y)<br />
+%1st = 21*S/(4000*Y)<br />
+Notice that %1st is constant if S and Y do not change.<br />
+<br />
+If we don't go over skill 190 then<br />
+%2nd = 1- (min(190, skill) / 200)<br />
+%2nd = 1- skill/200<br />
+%2nd = (200- skill)/200<br />
+<br />
+Let's modify the notation a little because we're now going to discuss skill ranges. We're going to use indexes. For example, let's call %2nd{i} the %2nd at skill{i} within a range.<br />
+%2nd{i} = (200 - skill{i})/200<br />
+<br />
+The average skillup percentage P for a range is<br />
+P = sum(%1st{i} * %2nd{i})/ #skillups<br />
+Because %1st is a constant, we can take it out of the sum() part<br />
+P = %1st{i} * sum(%2nd{i})/ #skillups<br />
+P = 21*S/(4000*Y) * sum((200 - skill{i})/200)/ #skillups<br />
+P = 21*S * sum((200 - skill{i})/200) / (#skillups * 4000*Y)<br />
+We take the 200 divisor out of the sum() part<br />
+P = 21*S * sum(200 - skill{i}) / (#skillups * 4000*Y * 200)<br />
+We split the sum into two parts, one of which is a constant<br />
+sum(200 - skill{i}) = 200 * #skillups - sum(skill{i})<br />
+so that<br />
+P = 21*S * (200 * #skillups - sum(skill{i})) / (#skillups * 4000*Y * 200)<br />
+<br />
+<br />
+<br />
+If we start skilling up at skill=0 then skill{i} ranges from 0 to (#skillups-1) and<br />
+sum(skill{i}) = #skillups*(#skillups-1)/2<br />
+<br />
+As an aside, Pascal rediscovered this formula for himself when he was a child. It is easily demonstrated when the number is even. For example, if the number of skillups is 10, then <br />
+sum(skill[i]= 0+1+2+3+4+5+6+7+8+9<br />
+Rearranging gives <br />
+sum(skill[i])= 0+9 + 1+8 + 2+7 + 3+6 + 4+5<br />
+sum(skill[i])= 9 + 9 + 9 + 9 + 9<br />
+sum(skill[i])= 9 * (1 + 1 + 1 + 1 + 1)<br />
+sum(skill[i])= 9 * 5<br />
+sum(skill[i])= 45<br />
+<br />
+<br />
+Back to work. P is now<br />
+P = 21*S * (200 * #skillups - #skillups*(#skillups-1)/2) / (#skillups * 4000*Y * 200)<br />
+We can simpify by cancelling out #skillups<br />
+P = 21*S * (200  - (#skillups-1)/2) / (4000*Y * 200)<br />
+<br />
+200 - (#skillups-1)/2 = (200 - #skillups/2 + 1/2) * 2/2<br />
+200 - (#skillups-1)/2 = (400 - #skillups + 1) / 2<br />
+200 - (#skillups-1)/2 = (401 - #skillups) / 2<br />
+<br />
+Replacing in P gives<br />
+P = 21*S * ((401 - #skillups) / 2) / (4000*Y * 200)<br />
+P = 21*S * (401 - #skillups) / (4000*Y * 200 * 2)<br />
+P = 21*S * (401 - #skillups) / (1600000 * Y)<br />
+<br />
+since the average number of attempts is 1/P, the total number of attempts is <br />
+sum(#attempts[i]) = #skillups / P<br />
+sum(#attempts[i]) = #skillups / (21*S * (401 - #skillups) / (1600000 * Y))<br />
+sum(#attempts[i]) = #skillups * 1600000 * Y / (21*S * (401 - #skillups))<br />
+<br />
+And we're done at last! You owe me a beer!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u18"><b>Suani</b></div><div class="posttext" id="p18">If I use my integral analysis up to gaining 45 skill (136 attempts), I come to a Y-value for Blacksmithing of about 4.19. Using the full batch of 160 yields a Y-value of 3.91. This seems to be consistent with the reported value of Y = 4 for Blacksmithing.<br />
+<br />
+Using the formula posted by Suani, I get a Y-value of 1.70, unless I made a computation error somewhere ;) .<br />
+<br />
+Doh! Given those results I think it likely that my formula is wrong. I'm trying to find the mistake I made.<br />
+<br />
+I'm glad that the overal strategy seems useful with your formula.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u19"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p19">I think your error is in this one:<br />
+<br />
+sum(200 - skill{i}) = 200 * #skillups - sum(skill{i})<br />
+<br />
+You can quickly see this if you just fill in a low value for i, and sum from 0 to i. If you take i as 3 for instance (meaning you got 2 skillups), the left hand side becomes 200 + 199 + 198 = 597. The right hand side becomes 200 * 2 - 3 = 397. This equation is where your error is.<br />
+<br />
+Edit: The equation should probably read<br />
+sum(200 - skill{i}) = 200 * (#skillups + 1) - sum(skill{i})<br />
+But I have not made an indepth analysis of that one ;) .<br />
+<br />
+Edit 2: After having gone through your method, I've seen it is in essence an integral equation; you've just gone about it in a different way. I am fairly confident that with the above correction, you will find (almost) the same results as I found.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u20"><b>Nitpaac</b></div><div class="posttext" id="p20">Numbers, equitations, sums and integrals are rotating in my mind.<br />
+Will have a look at this later when it's not 1:30 am local time.<br />
+<br />
+A beer?<br />
+Hmm, should that go to you, Suani (extensive explanation of your formula, thanks!)<br />
+Or to Kaysha (doing integrals and correcting you)?<br />
+Will do a virtual round once we got one or two &quot;how to determine Y&quot; formulas nailed down!<br />
+<br />
+Laters,<br />
+     Nitpaac<br />
+<br />
+P.S: Suani, any possibility to reach you? PM? Email? ;tell (which server?)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u21"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p21">I think where your treatise goes off is on the definition of #skillups. You need to be very careful whether you mean the #skillups up to the previous skill, or the #skillups up to and including the next skillup.<br />
+<br />
+Intuitively, I assumed to former, so skilling up to 45 for instance meant #skillups was 45 to determine your chance at getting to 46. But from the way I see it now, you determine the chance to reach 46 by saying you need 46 skillups for that.<br />
+<br />
+Going to work through your treatise to see how this changes my findings.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u22"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p22">Ok, I've finally decided to plot the expected number of attempts needed per skill up, for all three Y values (2, 3 and 4), for the skill range from 0 to 45. I've used an S of 129 (as my Rogue has 129 STR). <br />
+<br />
+#att/skillup = Y * 800,000 / (21 * S * (200 - skill))<br />
+<br />
+Based on that, I found a few things:<br />
+<br />
+- Assuming Y = 2, the predicted number of attempts to skillup to 45 skill is 153. This is beyond the 136 I found ingame, but if we take the difference as statistical noise, it's acceptable.<br />
+- The difference in the assumption regarding #skillups that I mentioned above has minimal influence on the end result. In fact, if I take the ratio of the predicted value of 153 and the one I found at 136 and multiply this by the Y value of 2, I get 1.77, which is what your formula would give me.<br />
+<br />
+This leads me to believe the following: Blacksmithing has Y = 2.<br />
+<br />
+I admit that my calculus is rusty. I'll need to re-examine my own suggestion and see why it mismatches.<br />
+<br />
+Edit2: I think I have found where it is off in my integral. As you may know, there are 2 commonly used logarithms; the 10-log and the e-log (also known as the natural logarithm). I used the 10-log in my calculations, but if I use the e-log instead, my computed Y-value drop from 4.19 to 1.80, which is very close to what your formula gives as well. I will need to see if the solution to the integral of 1/X indeed uses the e-log, I don't have my Calculus books at hand here.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u23"><b>Willain</b></div><div class="posttext" id="p23">I will need to see if the solution to the integral of 1/X indeed uses the e-log, I don't have my Calculus books at hand here.<br />
+<br />
+The  solution of the integral of 1/X is the natural log (e-log).<br />
+/<br />
+| (1/x) dx = ln (x)<br />
+/</div></div><hr />
+
+
+<div class="post"><div class="username" id="u24"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p24">Thanks. I also just found the portion in my Calculus book where they consider logarithms - and they indeed denote the natural logarithm simply by log x.<br />
+<br />
+So I guess we can say - albeit from a relatively small sample - that Blacksmithing has Y = 2. And, it proves that both methods of deducting the generic formula for Y amount to the same thing, provided certain conditions are met.<br />
+<br />
+Recapping what I found in a more suitable form for an accurate way to determine the value of Y for various Tradeskills, we use the following restrictions:<br />
+<br />
+1) ST &lt;= 200 for Y = 2 - where ST is the relevant STatistic (WIS, INT or other, where we keep in mind to substract 15 points for a Tradeskill that only uses WIS and INT) - on a success. If the skill is higher than 200, the chance to pass the first test becomes 1 and remains capped. If Y = 3 there is the implication that ST &lt;= 300, on a success, for the same purpose. If these conditions are not met, the determination of Y becomes impossible. There is no bound to ST for skilling up on a failure.<br />
+<br />
+2) Successrate is at the bottom of 5%, denoted by W. This enables us to put W equal to 1/20. If we have a higher successrate, based on our skill, the value of W changes accordingly.<br />
+<br />
+3) Skill is below 190, so that the second skillup chance fluctuates according to skill, instead of being static at 1/20.<br />
+<br />
+The formula I found then looks as follows (slightly rewritten the logarithmic component), where SK1 denotes the &quot;starting&quot; skill level and SK2 the &quot;target&quot; skill level, with the note that SK1 &lt;= SK2 and SK2 &lt;= 190:<br />
+<br />
+Y =  [#att * 21 * ST ] /  [ 800,000 * ln { ( 200 - SK1) / (200-SK2) } ]</div></div><hr />
+
+
+<div class="post"><div class="username" id="u25"><b>Suani</b></div><div class="posttext" id="p25">I think your error is in this one:<br />
+<br />
+sum(200 - skill{i}) = 200 * #skillups - sum(skill{i})<br />
+<br />
+You can quickly see this if you just fill in a low value for i, and sum from 0 to i. If you take i as 3 for instance (meaning you got 2 skillups), the left hand side becomes 200 + 199 + 198 = 597. The right hand side becomes 200 * 2 - 3 = 397. This equation is where your error is.<br />
+<br />
+<br />
+I don't see the problem with my code there. I think you're confusing i and skill{i}. The index i cannot be 0. It ranges from 1 to #skillups; skill{i} ranges from 0 to (#skillups-1); #skillups= ending skill - starting skill. Since the starting skill is 0 in our case, #skillups= ending skill. We don't attempt a skillup on the ending skill.<br />
+<br />
+In your example, if the maximum i is 3 that means there are 3 skillups, skill{1}=0, skill{2}=1, skill{3}=2, starting skill=0, ending skill=3 and #skillups=3. I see three terms on both sides of the equation.  If you ment that there should be 2 skillups, then the ending skill is 2 and there should be two terms on both sides of the equation.<br />
+<br />
+The results of the simplified equation I showed match closely the results of the general equation in my Excel solver.<br />
+<br />
+I now think that the problem is the relationship between P{i}, the chance of success at one skill level and the number of attempts given that probability. <br />
+<br />
+P{i} gives the chance of success for the next attempt. So the chance of a skillup on the first attempt is P{i}; on the second attempt is P{i}*(1-P{i}); on the third, it's P{i}*(1-P{i})*(1-P{i}); on the jth attempt, it's P{i} * (1-P{i})^(j-1). <br />
+<br />
+The average number of attempts eventually converges to 1/P{i}, but the distribution has a large positive skew. So the average number of attempts is possibly not the right statistic to use for the expected number of attempts.<br />
+<br />
+I'm still working on it. I might do a brute force lookup table of #attempts for each P{i}. You have better mathematical tools than I have so I hope you find a more elegant solution.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u26"><b>Suani</b></div><div class="posttext" id="p26">P.S: Suani, any possibility to reach you? PM? Email? ;tell (which server?)<br />
+<br />
+I edited my profile to allow receiving messages.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u27"><b>Greymantle</b></div><div class="posttext" id="p27">Umm don't mean to rain on all the enthusiasm but has anyone just asked a dev what the levels are?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u28"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p28">Yes, and they say they like seeing us puzzle over them ;)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u29"><b>Kilauea Bacchus</b></div><div class="posttext" id="p29">I hope they get as much of a headache as I did after reading through this thread. I hate math  :faint:</div></div><hr />
+
+
+<div class="post"><div class="username" id="u30"><b>mysharona</b></div><div class="posttext" id="p30">Theres no real reason to try to calculate the difficulty of a trade until your skill is above 190.  The formula for skillups can be used above 190 because it stays the same you just need the data from skilling up.  and compare it to the skillup % for difficulty 2, 3, 4.<br />
+<br />
+You have 2 formulas, one for failure skillups, another for success skillups<br />
+For fletching with Dex = 305<br />
+N=(S*10)/(Y*F)<br />
+<br />
+Check 1 difficulty 3<br />
+success check 1 =&gt; (305*10)/(3*1) = 1016.  Check 1 is 100% <br />
+failure check 1 =&gt; (305*10)/(3*2)  = 508.   Check 1 is 50.8%<br />
+<br />
+Check 1 difficulty 4<br />
+success check 1 =&gt; (305*10)/(4*1) = 762.5.  Check 1 is 76.25% <br />
+failure check 1 =&gt; (305*10)/(4*2)  = 381.   Check 1 is 38.12%<br />
+<br />
+Check 2 for skill above 190 is always 5%<br />
+1 - (190/200) = .05 or 5%<br />
+<br />
+Sooo. <br />
+Difficulty 3<br />
+1.00*.05 = .05 or 5% skillups on successes.<br />
+.508*.05 = .0254 or 2.54% skillups on failures.<br />
+<br />
+Difficulty 4<br />
+.7625*.05 = .038 or 3.8% skillups on successes.<br />
+.3812*.05 = .019 or 1.9% skillups on failures.<br />
+---------------------------------------------------<br />
+<br />
+Now lets look at my data for fletching.<br />
+Dex was 305 the entire time.<br />
+<br />
+If the Difficulty factor was 3, I would skillup at <br />
+5% on successes.<br />
+2.54% on failures<br />
+<br />
+If the Difficulty factor was 4, I would skillup at <br />
+3.8% on successes<br />
+1.9% on failures<br />
+<br />
+no real reason to do calculations under skill 190, since the formula stays the same from 190 - 250<br />
+<br />
+Heres my data <br />
+(note no data for skillup 211, 212, 236)<br />
+<br />
+SK = Skillup <br />
+F = failures in this skillup<br />
+C = total attempted combines for this skillup<br />
+S = Successes in this skillup<br />
+<br />
+* means achieved the skillup on a failed combine<br />
+(_ used underscores for formating)<br />
+<br />
+<br />
+_SK F _C _S<br />
+203 1 15 14<br />
+204 0 19 19 <br />
+205 5 67 62<br />
+206 2 31 29 *<br />
+207 0 15 15<br />
+208 5 94 89<br />
+209 0 4  4<br />
+210 7 85 78<br />
+<br />
+<br />
+213 2 23 21<br />
+214 2 33 31<br />
+215 1 8  7<br />
+216 5 35 30<br />
+217 0 8  8<br />
+218 0 6  6<br />
+219 2 35 33<br />
+220 2 36 34<br />
+221 8 106 98<br />
+222 0 2  2<br />
+223 1 25 24<br />
+224 0 29 29<br />
+225 1 15 14<br />
+226 0 3  3<br />
+227 5 47 42<br />
+228 2 21 19<br />
+229 0 12 12<br />
+230 0 9  9<br />
+231 2 14 12<br />
+232 3 52 49<br />
+233 0 4  4<br />
+234 0 2  2<br />
+235 1 22 21<br />
+<br />
+237 53 86  33<br />
+238 21 28  7 *<br />
+239 _4 10  6 *<br />
+240 31 49  18<br />
+241 36 73  37<br />
+242 67 106 39 *<br />
+243 _0 1   1<br />
+244 13 21  8<br />
+245 _1 3   2  *<br />
+246 32 55  23 *<br />
+247 26 42  16<br />
+248 _2 11  9<br />
+249 _3 9   6<br />
+250 _5 6   1 *<br />
+----------------<br />
+<br />
+So <br />
+Total tried combines 1377<br />
+Successes 1026<br />
+Failures 351<br />
+Skillup on success = 38<br />
+Skillup on failure = 7<br />
+<br />
+Success Skillup%  38/1026=.0370  or 3.7%<br />
+Failure Skillup%   7/351=.0199   or 1.99%<br />
+<br />
+these percentage rates look just like a difficulty factor 4</div></div><hr />
+
+
+<div class="post"><div class="username" id="u31"><b>Suani</b></div><div class="posttext" id="p31">The skillup formula, when S&lt;=200 and skill&lt;=190, is<br />
+P= S*(200-skill) / (Y*F*100*200) where S is the adjusted best relevant stat; the difficulty Y is 2, 3 or 4; F is 1 on a sucessful skillup or 2 on a failed skillup; and skill is your skill when you make the attempt. Y was left for us to find out.<br />
+<br />
+In looking for ways to estimate it, I came across the negative binomial distribution (http://mathworld.wolfram.com/NegativeBinomialDistribution.html). It give the probablilty P of r successes and x failures when the probability of success is p for one attempt. (I use the Excel docs' definition of r).<br />
+<br />
+Using Excel notation, the general formula is P= negbinomdist(failures, successes, p) and the formula for one success is <br />
+P= p * (1-p)^x.<br />
+<br />
+Our situation is more complex because p is different when skilling up on successful combines c from skilling up on failed combines f. So we can't write P= p * (1-p)^(c+f-1). It's still worth it to find a way to simplify failures to a single number to take advantage of what is known about the negative binomial distribution.<br />
+<br />
+We know that the chance of skilling on a sucessful combine is twice that of skilling up on a failure, so let's say that the number of attempts for a single skillup is c/2+f+0.5. (The analysis works better with the +0.5; don't ask me why.)<br />
+<br />
+If we set things up so that p=1/Y, we can calculate the following table for the percentage of occurance of attempts when Y is 2, 3 or 4. (The number of attempts can go to infinity, but I accumulated all the attempts greater or equal to 10 into one line). We can test for the closest match between the distribution of our skillup attempts and these theoretical distributions. I used the Chi2 test. I also noticed from these distributions that the median plus 1 is an estimate of Y.<br />
+<br />
+Trials	Y=2	Y=3	Y=4<br />
+1	50%	33%	25%<br />
+2	25%	22%	19%<br />
+3	13%	15%	14%<br />
+4	6%	10%	11%<br />
+5	3%	7%	8%<br />
+6	2%	4%	6%<br />
+7	1%	3%	4%<br />
+8	0%	2%	3%<br />
+9	0%	1%	3%<br />
+10	0%	3%	8%<br />
+<br />
+We can also simplify the formulas for the negative binomial statistics.<br />
+<br />
+The average number of failures r*(1-p)/p simplifies to Y-1. In other words, Y is equal to the number of attempts when p=1/Y. <br />
+Every skillup gives an estimate of Y which we can then average.<br />
+<br />
+The variance r*(1-p)/p^2 simplifies to Y*(Y-1). I used the F ratio to test the difference between results and theory. (The F here is different from the F in the skillup formula; it's just the name of that statistic in the litterature.)<br />
+<br />
+We now need to adjust the skillup data so that p=1/Y. From the skillup formula, we see that p=1/Y when S=100, F=1 and skill=0. So we adjust each individual skillup data to get<br />
+Yi = ((c/2+f)   +0.5) * (S/100) * ((200-skill)/200) when the skillup came on a combine; and<br />
+Yi = ((c/2+f)/2 +0.5) * (S/100) * ((200-skill)/200) when the skillup came on a failed combine.<br />
+<br />
+We have to round those fractional frequencies and we have to set the minmum frequency to 1.<br />
+<br />
+We're working with so few data points that hell runs can distort the results. The best solution is more data, but I did a version of the mean and of the analysis of variance with the Yi capped at 10. I think this is a better compromise than excluding the hell runs altogether.<br />
+<br />
+I got the following results so far:<br />
+Baking 3<br />
+Brewing 3<br />
+Fletching 4<br />
+Jewelcraft 4  &lt;- new estimate<br />
+Pottery 4<br />
+Smithing 2<br />
+Tailoring 2<br />
+<br />
+Data for the level-capped skills is not as easy to get. With the technique I used to gather data (explained here), I can get only 4 skillups per character.<br />
+<br />
+I attached the spreadsheet I used to this message. To switch tradeskills, just select the one you want from the drop-down list on the &quot;Analysis&quot; sheet. Trivial levels are included although this analysis does not need them.<br />
+<br />
+Edit: <br />
+I added data from a monk on Live and from four magicians with S=150 to the data section of the spreadsheet. <br />
+<br />
+I also changed the estimate for jewelcraft to 4.<br />
+<br />
+I analyse the new data in a following thread</div></div><hr />
+
+
+<div class="post"><div class="username" id="u32"><b>Suani</b></div><div class="posttext" id="p32">I gathered new data from four magicians on Test who did the first phase of the abysmal freebie tradeskill quest.<br />
+<br />
+I made sure that their S was always 150 by adjusting their /testbuffme equipment so that intelligence was 165 for all tradeskills except smithing and fletching; for the latter, I adjusted intelligence to 150.<br />
+<br />
+I chose S=150 because the skillups take too many attempts with stupid pcs. It still took 2 hours from character creation to questing the adventure stone to skilling up to 31 in all tradeskills even when I streamlined the process as best I could.<br />
+<br />
+Because those four characters had the same max stat and were skilling the same range, I can compare the results of all tradeskills directly; I can also merge the data of all four. I only adjusted the data so that the skill was equivalent for each skillup. (number of attempts * (200-skill)/200). I then calculated the percentage of skillups that came when F=1 (sucessful combines) and the percentage of skillups that  came when F=2 (failed combines).<br />
+<br />
+I wanted to know if the results I got were unusual so I simulated data for a million 4-player-character groups with the same characteristics as my magicians. I used the following SAS code<br />
+<br />
+* SAS program Attempts;<br />
+* created 2004.05.18;<br />
+*****************************************************************;<br />
+*;<br />
+* Let SAS know where to look for files;<br />
+*libname findy 'c:\tradeskills';<br />
+*options fmtsearch= (findy);<br />
+<br />
+data generator;<br />
+trivial= 31; /* 1st freebie abysmal sea tradeskill quest trivial */<br />
+S= 150;<br />
+*do S= 100, 150; /* maximum adjusted stat */<br />
+  do Y= 2 to 4; /* difficulty */<br />
+    do i= 1 to 1000000; /* a million groups of people */<br />
+      made= 0; /* number of successful combines */<br />
+      failed= 0; /* number of failed combines */<br />
+      som= 0; /* number of skillups on a successful combine */<br />
+      sof= 0; /* number of skillups on a failed combine */<br />
+      do j= 1 to 4; /* groups of 4 people */<br />
+        do skill= 0 to 30; /* skillup from 0 to 31 */<br />
+          done= 0;<br />
+          success= (skill-trivial+66)/100; /* when trivial&lt;=66 */<br />
+          adjust= (200-skill)/200;<br />
+          do until (done eq 1);<br />
+            F= 1+ (ranuni(0) &lt; success);<br />
+            if f eq 1 then made+adjust;<br />
+            else failed+adjust;<br />
+            if ranuni(0) lt s/(y*f)/100 then do;<br />
+              if ranuni(0) ge skill/200 then do;<br />
+                if f eq 1 then som+1;<br />
+                else sof+1;<br />
+                done=1;<br />
+              end;<br />
+            end;<br />
+          end;<br />
+        end;<br />
+      end;<br />
+      pctsom= round(100*som/made,1); /* % success on combines */<br />
+      pctsof= round(100*sof/failed,1); /* % success on failed */<br />
+      output;<br />
+    end;<br />
+  end;<br />
+*end;<br />
+run;<br />
+<br />
+ods html body= &quot;c:\tradeskills\attempts BODY.html&quot;<br />
+      contents= &quot;c:\tradeskills\attempts TOC.html&quot;<br />
+      frame= &quot;c:\tradeskills\attempts FRAME.html&quot;;<br />
+<br />
+proc means data=generator mean p1 p5 p10 Q1 median Q3 p90 p95 p99 std skew;<br />
+   class y ;<br />
+   var pctsom pctsof;<br />
+run;<br />
+<br />
+proc freq data=generator;<br />
+  tables (pctsom pctsof) * y /nopercent nocol norow;<br />
+run;<br />
+<br />
+ods html close;<br />
+<br />
+<br />
+<br />
+I got these results<br />
+http://photos.yafro.com/pics2/i/20040518/e/3/0/8/7/e308767a4d476a9ca926188d9ec4e3250_full.jpg<br />
+<br />
+The results are clear when F=1, but there is so much overlap between difficulty levels when F=2 that it's difficult to come to a conclusion. Still, I think the results from successful combines are enough to confirm the first estimates, except for jewelcraft which now looks like a 4. <br />
+<br />
+Some estimates would benefit from more data, but I'm all tradeskilled out at the moment  :faint: . In particular, the results for smithing when F=2 are unusual. Pottery results (from the full dataset in the spreadsheet linked to my previous message) are a little vague also. Finally, we were specifically told that tailoring is 3. My results don't support this at all. I leave all those worries to others while I return to the game  :) .</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

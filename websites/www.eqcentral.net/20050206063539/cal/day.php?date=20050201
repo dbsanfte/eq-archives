@@ -1,0 +1,522 @@
+<HTML>
+<HEAD>
+<TITLE>WebCalendar</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// The following code is used to support the small popups that
+// give the full description of an event when the user move the
+// mouse over it.
+
+// Developer's note:
+// I (Benoit Maisonny <benoit@synclude.com>) tested this code with Mozilla 0.8.1 (on Linux),
+// with IE5.5 SP1 (on WinNT4) and with Netscape Communicator 4.74 (on Linux).
+// Netscape 6.0 and 6.01 seem to have a bug related to the visibility attribute.
+// I suppose it will be corrected as soon as they release a new version, based on
+// a more recent Mozilla source code.
+// I'm not able to test this javascript code with IE4. It'd be glad to know if it works.
+
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+W3C = (document.getElementById) ? 1 : 0;	
+// W3C stands for the W3C standard, implemented in Mozilla (and Netscape 6) and IE5
+
+// Function show(evt, name)
+//	evt is a pointer to the Event object passed when the event occurs
+//	name is the ID attribute of the element to show
+function show ( evt, name ) {
+  if (IE4) {
+    evt = window.event;  //is it necessary?
+  }
+
+  var currentX,		//mouse position on X axis
+      currentY,		//mouse position on X axis
+      x,		//layer target position on X axis
+      y,		//layer target position on Y axis
+      docWidth,		//width of current frame
+      docHeight,	//height of current frame
+      layerWidth,	//width of popup layer
+      layerHeight,	//height of popup layer
+      ele;		//points to the popup element
+
+  // First let's initialize our variables
+  if ( W3C ) {
+    ele = document.getElementById(name);
+    currentX = evt.clientX,
+    currentY = evt.clientY;
+    docWidth = document.width;
+    docHeight = document.height;
+    layerWidth = ele.style.width;
+    layerHeight = ele.style.height;
+
+  } else if ( NS4 ) {
+    ele = document.layers[name];
+    currentX = evt.pageX,
+    currentY = evt.pageY;
+    docWidth = document.width;
+    docHeight = document.height;
+    layerWidth = ele.clip.width;
+    layerHeight = ele.clip.height;
+
+  } else {	// meant for IE4
+    ele = document.all[name];
+    currentX = evt.clientX,
+    currentY = evt.clientY;
+    docHeight = document.body.offsetHeight;
+    docWidth = document.body.offsetWidth;
+    //var layerWidth = document.all[name].offsetWidth;
+    // for some reason, this doesn't seem to work... so set it to 200
+    layerWidth = 200;
+    layerHeight = ele.offsetHeight;
+  }
+
+  // Then we calculate the popup element's new position
+  if ( ( currentX + layerWidth ) > docWidth ) {
+    x = ( currentX - layerWidth );
+  }
+  else {
+    x = currentX;
+  }
+  if ( ( currentY + layerHeight ) >= docHeight ) {
+     y = ( currentY - layerHeight - 20 );
+  }
+  else {
+    y = currentY + 20;
+  }
+  if ( IE4 ) {
+    x += document.body.scrollLeft;
+    y += document.body.scrollTop;
+  } else if ( NS4)  {
+  } else {
+    x += window.pageXOffset;
+    y += window.pageYOffset;
+  }
+// (for debugging purpose) alert("docWidth " + docWidth + ", docHeight " + docHeight + "\nlayerWidth " + layerWidth + ", layerHeight " + layerHeight + "\ncurrentX " + currentX + ", currentY " + currentY + "\nx " + x + ", y " + y);
+
+  // Finally, we set its position and visibility
+  if ( NS4 ) {
+    //ele.xpos = parseInt ( x );
+    ele.left = parseInt ( x );
+    //ele.ypos = parseInt ( y );
+    ele.top = parseInt ( y );
+    ele.visibility = "show";
+  } else {  // IE4 & W3C
+    ele.style.left = parseInt ( x );
+    ele.style.top = parseInt ( y );
+    ele.style.visibility = "visible";
+  }
+}
+
+function hide ( name ) {
+  if (W3C) {
+    document.getElementById(name).style.visibility = "hidden";
+  } else if (NS4) {
+    document.layers[name].visibility = "hide";
+  } else {
+    document.all[name].style.visibility = "hidden";
+  }
+}
+
+function unhide ( name ) {
+  if (W3C) {
+    document.getElementById(name).style.visibility = "visible";
+  } else if (NS4) {
+    document.layers[name].visibility = "show";
+  } else {
+    document.all[name].style.visibility = "visible";
+  }
+}
+
+//-->
+
+</SCRIPT>
+
+<meta http-equiv="Content-type"  content="text/html;charset=iso-8859-1">
+<!-- Note: Although we may set the font size in here, we also make heavy
+     use of the HTML font tag since many browsers do not properly support 
+     style sheet font settings.
+-->
+<STYLE type="text/css">
+<!--
+.tablecell {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 80px;
+  height: 80px;
+}
+.tablecelldemo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+}
+.tablecellweekend {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 80px;
+  height: 80px;
+  background-color: #F0F0C0 ;
+}
+.tablecellweekenddemo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #F0F0C0 ;
+}
+.tableheader {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000 ;
+  background-color: #FFFFFF ;
+}
+.tableheadertoday {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000 ;
+  background-color: #0060F0 ;
+}
+.dayofmonth {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+  background-color: #E7E7E7;
+}
+.weeknumber {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #B04040;
+  text-decoration: none;
+}
+.monthlink {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #B04040;
+  text-decoration: none;
+}
+.dayofmonthyearview {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+.dayofmonthweekview {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+}
+.dailymatrix {
+  cursor:pointer;cursor:hand;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+.entry {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #006000;
+  text-decoration: none;
+}
+.unapprovedentry {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #800000;
+  text-decoration: none;
+}
+.navlinks {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #0060C0 ;
+  text-decoration: none;
+}
+A {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0060C0 ;
+  text-decoration: none;
+}
+.aboutinfo {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  text-decoration: none;
+}
+.popup {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000 ;
+  text-decoration: none;
+}
+.layerentry {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006060;
+  text-decoration: none;
+}
+.tooltip {
+  cursor: help;
+  text-decoration: none;
+}
+.defaulttext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #0060C0 ;
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+.pagetitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+td {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+a:hover {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0000FF;
+}
+.dailymatrix {
+  cursor:pointer;cursor:hand;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" CLASS="defaulttext" >
+<CENTER><img src="http://www.eqcentral.net/images/EC.gif">
+</a> <bgcolor="#FFFFFF">
+
+<TABLE BORDER="0" WIDTH="100%">
+<TR><TD VALIGN="top" WIDTH="70%"><TR><TD>
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+<TD VALIGN="left"><A HREF="day.php?date=20050131"><img align="left" src="leftarrow.gif" width="36" height="32" border="0" alt="Previous"></A></TD>
+<TD ALIGN="middle"><FONT SIZE="+2" COLOR="#0060C0"><B>
+Tuesday, February 1, 2005</B></FONT>
+<FONT SIZE="+1" COLOR="#0060C0">
+<BR>Public Access</FONT>
+</TD>
+<TD VALIGN="right"><A HREF="day.php?date=20050202"><img align="right" src="rightarrow.gif" width="36" height="32" border="0" alt="Next"></A></TD>
+</TR>
+</TABLE>
+
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="0" CELLPADDING="0">
+<TR><TD BGCOLOR="#FFFFFF">
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="2">
+
+
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">12:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">1:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=1&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">2:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=2&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">3:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=3&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">4:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=4&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">5:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=5&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">6:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=6&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">7:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=7&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">8:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=8&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">9:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=9&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">10:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=10&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">11:00am</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=11&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">12:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=12&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">1:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=13&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">2:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=14&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">3:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=15&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">4:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=16&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">5:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=17&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">6:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=18&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">7:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=19&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">8:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=20&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">9:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=21&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">10:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=22&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+<TR><TH VALIGN="top" HEIGHT="40" WIDTH="14%" BGCOLOR="#FFFFFF" CLASS="tableheader"><FONT COLOR="#000000">11:00pm</FONT></TH>
+<TD HEIGHT="40" BGCOLOR="#FFFFFF"><A HREF="edit_entry.php?date=20050201&hour=23&defusers=__public__&user=__public__"><IMG SRC="new.gif" WIDTH="10" HEIGHT="10" ALT="New Entry" BORDER="0" ALIGN="right"></A>&nbsp;</TD></TR>
+
+</TABLE>
+</TD></TR></TABLE>
+
+</TD>
+<TD VALIGN="top">
+<DIV ALIGN="right">
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR><TD BGCOLOR="#FFFFFF">
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="2">
+<TR><TH COLSPAN="7" BGCOLOR="#FFFFFF"><FONT SIZE="+4" COLOR="#000000">01</FONT></TH></TR>
+<TR>
+<TD ALIGN="left" BGCOLOR="#FFFFFF"><A HREF="day.php?date=20050101" CLASS="monthlink"><img src="leftarrowsmall.gif" width="18" height="18" border="0" ALT="Previous"></A></TD>
+<TH COLSPAN="5" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">February 2005</FONT></TH>
+<TD ALIGN="right" BGCOLOR="#FFFFFF"><A HREF="day.php?date=20050301" CLASS="monthlink"><img src="rightarrowsmall.gif" width="18" height="18" border="0" alt="Next"></A></TD>
+</TR>
+<TR><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Sun</TD><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Mon</TD><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Tue</TD><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Wed</TD><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Thu</TD><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Fri</TD><TD BGCOLOR="#FFFFFF"><FONT SIZE="-3">Sat</TD></TR>
+<TR ALIGN="center">
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+<TD BGCOLOR="#0060F0"><FONT SIZE="-2"><A HREF="day.php?date=20050201" CLASS="monthlink">01</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050202" CLASS="monthlink">02</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050203" CLASS="monthlink">03</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050204" CLASS="monthlink">04</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050205" CLASS="monthlink">05</A></FONT></TD>
+</TR>
+<TR ALIGN="center">
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050206" CLASS="monthlink">06</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050207" CLASS="monthlink">07</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050208" CLASS="monthlink">08</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050209" CLASS="monthlink">09</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050210" CLASS="monthlink">10</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050211" CLASS="monthlink">11</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050212" CLASS="monthlink">12</A></FONT></TD>
+</TR>
+<TR ALIGN="center">
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050213" CLASS="monthlink">13</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050214" CLASS="monthlink">14</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050215" CLASS="monthlink">15</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050216" CLASS="monthlink">16</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050217" CLASS="monthlink">17</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050218" CLASS="monthlink">18</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050219" CLASS="monthlink">19</A></FONT></TD>
+</TR>
+<TR ALIGN="center">
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050220" CLASS="monthlink">20</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050221" CLASS="monthlink">21</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050222" CLASS="monthlink">22</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050223" CLASS="monthlink">23</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050224" CLASS="monthlink">24</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050225" CLASS="monthlink">25</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050226" CLASS="monthlink">26</A></FONT></TD>
+</TR>
+<TR ALIGN="center">
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050227" CLASS="monthlink">27</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF"><FONT SIZE="-2"><A HREF="day.php?date=20050228" CLASS="monthlink">28</A></FONT></TD>
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+<TD BGCOLOR="#FFFFFF">&nbsp;</TD>
+</TR>
+</TABLE>
+</TD></TR></TABLE>
+</DIV>
+</TD></TR></TABLE>
+
+<P>
+
+
+
+<P>
+<A HREF="day.php?year=2005&month=02&day=01&friendly=1" TARGET="cal_printer_friendly"
+onMouseOver="window.status = 'Generate printer-friendly version'">[Printer Friendly]</A>
+
+
+<BR CLEAR="all">
+<HR CLEAR="all">
+<FONT SIZE="-1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<FORM ACTION="month.php" METHOD="GET" NAME="SelectMonth">
+<TR><TD ALIGN="left" VALIGN="top" WIDTH="33%"><FONT SIZE="-1">
+<B>Month:</B>
+<SELECT NAME="date" ONCHANGE="document.SelectMonth.submit()">
+<OPTION VALUE="20040301">Mar 2004<OPTION VALUE="20040401">Apr 2004<OPTION VALUE="20040501">May 2004<OPTION VALUE="20040601">Jun 2004<OPTION VALUE="20040701">Jul 2004<OPTION VALUE="20040801">Aug 2004<OPTION VALUE="20040901">Sep 2004<OPTION VALUE="20041001">Oct 2004<OPTION VALUE="20041101">Nov 2004<OPTION VALUE="20041201">Dec 2004<OPTION VALUE="20050101">Jan 2005<OPTION VALUE="20050201" SELECTED>Feb 2005<OPTION VALUE="20050301">Mar 2005<OPTION VALUE="20050401">Apr 2005<OPTION VALUE="20050501">May 2005<OPTION VALUE="20050601">Jun 2005<OPTION VALUE="20050701">Jul 2005<OPTION VALUE="20050801">Aug 2005<OPTION VALUE="20050901">Sep 2005<OPTION VALUE="20051001">Oct 2005<OPTION VALUE="20051101">Nov 2005<OPTION VALUE="20051201">Dec 2005<OPTION VALUE="20060101">Jan 2006<OPTION VALUE="20060201">Feb 2006<OPTION VALUE="20060301">Mar 2006</SELECT>
+<INPUT TYPE="submit" VALUE="Go">
+</FONT></TD>
+</FORM>
+<FORM ACTION="week.php" METHOD="GET" NAME="SelectWeek">
+<TD ALIGN="center" VALIGN="top" WIDTH="33%"><FONT SIZE="-1">
+<B>Week:</B>
+<SELECT NAME="date" ONCHANGE="document.SelectWeek.submit()">
+<OPTION VALUE="20041212">Dec 12 - Dec 18
+<OPTION VALUE="20041219">Dec 19 - Dec 25
+<OPTION VALUE="20041226">Dec 26 - Jan 1
+<OPTION VALUE="20050102">Jan 2 - Jan 8
+<OPTION VALUE="20050109">Jan 9 - Jan 15
+<OPTION VALUE="20050116">Jan 16 - Jan 22
+<OPTION VALUE="20050123">Jan 23 - Jan 29
+<OPTION VALUE="20050130" SELECTED>Jan 30 - Feb 5
+<OPTION VALUE="20050206">Feb 6 - Feb 12
+<OPTION VALUE="20050213">Feb 13 - Feb 19
+<OPTION VALUE="20050220">Feb 20 - Feb 26
+<OPTION VALUE="20050227">Feb 27 - Mar 5
+<OPTION VALUE="20050306">Mar 6 - Mar 12
+<OPTION VALUE="20050313">Mar 13 - Mar 19
+<OPTION VALUE="20050320">Mar 20 - Mar 26
+</SELECT>
+<INPUT TYPE="submit" VALUE="Go">
+</FONT></TD>
+</FORM>
+<FORM ACTION="year.php" METHOD="GET" NAME="SelectYear">
+<TD ALIGN="right" VALIGN="top" WIDTH="33%"><FONT SIZE="-1">
+<B>Year:</B>
+<SELECT NAME="year" ONCHANGE="document.SelectYear.submit()">
+<OPTION VALUE="2001">2001
+<OPTION VALUE="2002">2002
+<OPTION VALUE="2003">2003
+<OPTION VALUE="2004">2004
+<OPTION VALUE="2005" SELECTED>2005
+<OPTION VALUE="2006">2006
+<OPTION VALUE="2007">2007
+<OPTION VALUE="2008">2008
+</SELECT>
+<INPUT TYPE="submit" VALUE="Go">
+</FONT></TD>
+</FORM>
+</TR>
+</TABLE>
+<BR>
+<B>Go to:</B> 
+<A CLASS="navlinks" HREF="month.php"><B>My Calendar</B></A> | <A CLASS="navlinks" HREF="login.php">Login/Logout</A> | <A CLASS="navlinks" HREF="search.php">Search</A> | <A CLASS="navlinks" HREF="export.php">Export</A> | <A CLASS="navlinks" HREF="import.php">Import</A> | <A CLASS="navlinks" HREF="edit_entry.php?year=2005&month=02&day=01">Add New Entry</A> | <A CLASS="navlinks" HREF="#" ONCLICK="window.open ( 'help_index.php', 'cal_help', 'dependent,menubar,scrollbars,height=400,width=400,innerHeight=420,outerWidth=420' );" ONMOUSEOVER="window.status='Help'">Help</A><BR>
+
+<b>Reports:</b>
+<a href="report.php?report_id=4" class="navlinks">Unnamed Report</a><br>
+
+</FONT>
+
+
+</BODY>
+</HTML>

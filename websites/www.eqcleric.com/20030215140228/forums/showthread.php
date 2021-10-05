@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>EverQuest Clerics</title>
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #4D4D73;
+	SCROLLBAR-ARROW-COLOR: #FCC504;
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 10px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+select 
+{
+		background-color : #cfcfcf;
+		font-size: 10;
+		color: #000000;
+		font-family: verdana, arial,tahoma;
+		text-align: center;
+		
+}
+.checkbox 
+{		
+		border-style: ridge;
+   		border-width: 0;
+		background-color : #DADADA;
+		font-size: 10;
+		font-family: verdana, arial,tahoma;
+}
+A:link, A:visited, A:active {
+	COLOR: #FEDE01;
+}
+A:hover {
+	COLOR: #fcc504;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #FCC504;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #FCC504;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #FEDE01;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #fcc504;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #FFFFEE;
+}
+</style>
+
+
+
+</head>
+<body background="/forums/images/background.jpg" bgcolor="#666696" text="#000000" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+<table width="90%" align="center" cellpadding="3" cellspacing="0" bgcolor="#262C4C" border="0">
+<tr>
+	<td>
+	<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#3A4373" border="0">
+<tr>
+	<td>
+
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<!-- Logo -->
+	<td vAlign="TOP" align="left"><img src="http://www.eqcleric.com/forums/images/eqclericlogo.gif"></td>
+	<!-- Logo -->
+		
+	<!-- Nav Bar -->
+	<td vAlign="TOP" align="right"><img src="http://www.eqcleric.com/forums/images/navbar_corner.gif"><img src="http://www.eqcleric.com/forums/images/btn_sections.gif"><img src="http://www.eqcleric.com/forums/images/btn_spells.gif"><img src="http://www.eqcleric.com/forums/images/btn_quests.gif"><a href="http://www.eqcleric.com/forums/index.php?s=3fc023a7a198a0816cfb622b3bcba395" alt="Forums"><img src="http://www.eqcleric.com/forums/images/btn_forums.gif" border=0></a><a href="/index.php?s=3fc023a7a198a0816cfb622b3bcba395&PHPSESSID=93f5f80ddff8fcda33d8fc88ed6fb18e"><img src="http://www.eqcleric.com/forums/images/btn_home.gif" alt="Home" border="0"></a><br><img src="http://www.eqcleric.com/forums/images/navbar_corner2.gif"><a href="http://www.eqcleric.com/forums/usercp.php?s=3fc023a7a198a0816cfb622b3bcba395"><img src="http://www.eqcleric.com/forums/images/btn_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0"></a><a href="http://www.eqcleric.com/forums/memberlist.php?s=3fc023a7a198a0816cfb622b3bcba395"><img src="http://www.eqcleric.com/forums/images/btn_members.gif" alt="Find other members" border="0"></a><a href="http://www.eqcleric.com/forums/search.php?s=3fc023a7a198a0816cfb622b3bcba395"><img src="http://www.eqcleric.com/forums/images/btn_search.gif" alt="Search" border="0"></a><a href="http://www.eqcleric.com/forums/misc.php?s=3fc023a7a198a0816cfb622b3bcba395&action=faq"><img src="http://www.eqcleric.com/forums/images/btn_faq.gif" alt="Frequently Asked Questions" border="0"></a><a href="http://www.eqcleric.com/forums/calendar.php?s=3fc023a7a198a0816cfb622b3bcba395"><img src="http://www.eqcleric.com/forums/images/btn_calendar.gif" alt="Calendar" border="0"></a><br><img src="http://www.eqcleric.com/forums/images/navbar_corner2.gif"><a href="http://www.eqcleric.com/forums/register.php?s=3fc023a7a198a0816cfb622b3bcba395&action=signup"><img src="http://www.eqcleric.com/forums/images/btn_register.gif" alt="Registration is free!" border="0"></a><a href="http://www.eqcleric.com/forums/member.php?s=3fc023a7a198a0816cfb622b3bcba395&action=logout"><img src="http://www.eqcleric.com/forums/images/btn_logout.gif" alt="Logout" border="0"></a><br>
+</td>
+	<!-- Nav Bar -->
+</tr>
+</table>
+	<br>
+<!-- Main Site Table -->
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+<tr>
+	
+	<td vAlign="TOP">
+
+<!-- content table -->
+<table bgcolor="#3A4373" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td>
+
+&nbsp;</td></tr></table>
+
+<table width="100%" height="50%" cellpadding="0" cellspacing="0" border="0" bgcolor="#3A4373" align="center">
+<tr>
+	<td>
+
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#262C4C"  width="70%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0"  width="100%">
+<tr>
+	<td bgcolor="#262C4C" width="100%"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF" color="#FFFFEE"><img src="http://www.eqcleric.com/forums/images/vb_bullet.gif" align="absmiddle" alt="vBulletin" border="0">
+	<b>vBulletin Message</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#666699" width="100%"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">No thread specified. If you followed a valid link, please notify the <a href="mailto:jarvis@eqcleric.com">webmaster</a></font></td>
+</tr>
+</table>
+</td></tr></table>
+
+<p align="center"><table cellpadding="0" cellspacing="0" border="0">
+<form action="forumdisplay.php" method="get"><input type="hidden" name="PHPSESSID" value="93f5f80ddff8fcda33d8fc88ed6fb18e" /><tr><td>
+	<font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+	<input type="hidden" name="s" value="3fc023a7a198a0816cfb622b3bcba395">
+	<input type="hidden" name="daysprune" value="">
+	<b>Forum Jump:</b><br>
+	<select name="forumid"
+	onchange="window.location=('forumdisplay.php?s=3fc023a7a198a0816cfb622b3bcba395&daysprune=&forumid='+this.options[this.selectedIndex].value)">
+		<option value="-1" selected>Please select one:</option>
+		<option value="-1">--------------------</option>
+		<option value="pm" >Private Messages</option>
+		<option value="cp" >User Control Panel</option>
+		<option value="wol" >Who's Online</option>
+		<option value="search" >Search Forums</option>
+		<option value="home" >Forums Home</option>
+		<option value="-1">--------------------</option>
+		<option value="1" > General Forums</option><option value="2" >-- General Discussions</option><option value="5" >-- Spells</option><option value="6" >-- Quests and Items</option><option value="7" >-- Rants and Raves</option><option value="8" > Front Page</option><option value="3" >-- Frontpage News</option><option value="4" >-- Frontpage Polls</option>
+	</select><!-- go button -->
+<input type="image" src="images/go.gif?PHPSESSID=93f5f80ddff8fcda33d8fc88ed6fb18e" border="0" 
+align="absbottom">
+	</font>
+</td></tr></form>
+</table></p>
+
+	</td>
+</tr>
+</table>
+
+
+<table bgcolor="#3A4373" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+  <td>
+
+  </td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+
+<p align="center">
+  <font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>&lt; <a href="mailto:contact@eqcleric.com">Contact Us</a> - <a href="http://www.eqcleric.com/">EverQuest Clerics</a>
+  <!-- - <a href="?PHPSESSID=93f5f80ddff8fcda33d8fc88ed6fb18e">Privacy Statement</a> --> &gt;</b></font>
+</p>
+
+<p align="center"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+<!-- Do not remove this copyright notice -->
+  Powered by: vBulletin Version 2.2.9<br>
+  Copyright &copy;2000 - 2002, Jelsoft Enterprises Limited.<br>
+<!-- Do not remove this copyright notice -->
+
+</font>
+<p align="center"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+Page generated

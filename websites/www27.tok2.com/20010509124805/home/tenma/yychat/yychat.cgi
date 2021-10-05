@@ -1,0 +1,45 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<title>NOBEOKAN-Chat</title></head>
+<frameset rows="135,*">
+<frame name="form" src="./yychat.cgi?mode=form&re_time=40" target=_self>
+<frame name="log" src="./yychat.cgi?re_time=40">
+<noframes>
+<body bgcolor="#E1F0F0" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000"><!-- TOK2_TOP -->
+<center>
+<TABLE width="468" border="0" cellspacing="0" cellpadding="0">
+<TR> 
+<TD width="59"><A href="http://tok2.com/" target="_blank"><IMG src="http://tok2.com/ban/banner-icon-tok2.gif" width="59" height="20" border="0"></A></TD>
+<TD width="117">
+<A href="http://new.tok2.com/" target="_blank"><IMG src="http://tok2.com/ban/banner-icon-new.gif" width="117" height="20" border="0"></A></TD>
+<TD width="133"><A href="http://sr2.tok2.com/present/present.php3" target="_blank"><IMG src="http://tok2.com/ban/banner-icon-present.gif" width="90" height="20" border="0"></A></TD>
+<TD width="86"><a href="http://sr.tok2.com/fc/login.html" target="_blank"><img src="http://tok2.com/ban/banner-icon-ad.gif" width="90" height="20" border="0"></a></TD>
+<TD width="73"><a href="http://tok2.com/friendly.html" target="_blank"><img src="http://tok2.com/ban/banner-icon-friendly.gif" width="112" height="20" border=0></a></TD>
+</TR>
+</table>
+<!--@dclick!-->
+<a href="http://at.dcrew.com/adclick.exe/SITE=11332/AREA=1133201"
+target="_top">
+<img border="0" width="468" height="60"
+src="http://at.dcrew.com/adserver.exe/SITE=11332/AREA=1133201"
+ALT="Let\'s @d click!"></a>
+<!--/@dclick!-->
+</center>
+<!-- TOK2_TOP_END -->
+
+フレーム非対応のブラウザの方はご利用できません
+<!-- TOK2_UNDER-->
+<center>
+<table border=0><tr><td valign=top align=center>
+<CENTER>
+<A HREF="http://s.click21.to/Redirect.asp?W=643">
+<IMG SRC="http://s.click21.to/Banner.asp?W=643" ALT="Click Here" BORDER="0" WIDTH = "468" HEIGHT = "60"></A>
+</CENTER>
+</td>
+<td valign=top>
+<A HREF="http://ck.valuecommerce.ne.jp/cgi-bin/ck.pl?sid=s0027266&pid=p0012482" TARGET="_blank"><IMG SRC="http://ad.valuecommerce.ne.jp/cgi-bin/pv.pl?sid=s0027266&pid=p0012482" WIDTH=120 HEIGHT=60 BORDER=0></A></td></tr></table>
+</center>
+</body></noframes>
+</frameset>
+</html>

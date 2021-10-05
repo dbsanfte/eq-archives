@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - EQ: CPU, Memory usage... why so much?</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-3.html">Primal Screams and Random Chatter</a> &gt; <a href="f-27.html">OOC Chat</a> &gt; EQ: CPU, Memory usage... why so much?</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=12803">EQ: CPU, Memory usage... why so much?</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Sanna</b></div><div class="posttext" id="p1">Ok, of course my Computer Engineering BF would think of this, and of course the Creative Writing major me has no answer. <br />
+<br />
+<br />
+When running EQ on a WinXP platform, you can CtrlAltDel and look at what your computer is running. The second tab tells CPU usage and Memory usage. EQ takes 99pct of the CPU usage, even when doing nothing more 'stressful' than sitting in the bazaar in trader-mode. What does it do? Why does it take so much stuff? <br />
+<br />
+<br />
+Plus, he has lots of other questions about coding and why it's so laggy and something related to 'why don't they use hardware acceleration' and other terms that I don't understand ^_^. Anyone have any answers I can give him? I'm not computer illiterate, especially by today's standards, but I do know there is a lot I don't know ^_^. <br />
+<br />
+Thanks muchly. <br />
+<br />
+-- Sanna</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Lilosh</b></div><div class="posttext" id="p2">EQ is a resource hog.<br />
+<br />
+It expands to fill whatever resources are available on the system, as a result of the way the devs coded the windowed mode.<br />
+<br />
+<br />
+<br />
+Now, from what I've been told, EQW doesn't do that.   But I can't confirm that, since I haven't tried it.<br />
+<br />
+<br />
+-Lilosh</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>KyrosKrane</b></div><div class="posttext" id="p3">At the simplest level, EQ is badly coded for the modern era.  It was designed many years ago, using assumptions that differ drastically from modern standards.<br />
+<br />
+When EQ first came out, up until a few months ago, it was the only application you were ALLOWED to run.  If you ever tried to run anything else, it would immediately exit.  The reasons (and the logic behind this choice, if any) are debatable, but the core issue is that the EQ client expects to be the only application that needs system resources.<br />
+<br />
+Under Windows 95 and 98 (the main platforms for which EQ was designed), a program effectively has total control of the system until it says otherwise.  Think of it this way.  Windows has a list of running programs in its memory.  It goes down the list, telling each program, &quot;OK, you have access to system resources now.  Let me know when you're done.&quot;  (This is called gaining priority.)  The program goes off, does its merry thing, then eventually tells Windows, &quot;OK, I'm done now.  You can let other programs have a turn.&quot;  (This is called passing priority.)  Windows then goes to the next program in the list and gives it priority, and so on.<br />
+<br />
+This system is called cooperative multi-tasking.  You rely on each program to voluntarily give up control when it no longer needs system resources, or at least every once in a while. If the programs are well designed, each of these turns lasts for a few milliseconds at most, so it seems like all the programs are running at the same time.  If a program is badly written, however, it can totally lock up the system by never passing priority.<br />
+<br />
+EQ, however, didn't like to share.  When it gets that priority, it never passes it back to Windows to let other programs run.  It used to be that when it lost priority, it would self-exit.<br />
+<br />
+Enter the modern era of computing, with Windows 2000 and XP.  These operating systems are far more stable, among other reasons, because they ditched cooperative multi-tasking.  Instead, they rely on what's called preemptive multi-tasking.   Basically, Windows tells each program, &quot;You have up to X milliseconds to do your stuff, no more.  Let me know if you finish before that.&quot;  At the end of those X milliseconds, Windows forcefully grabs priority away from the program and gives it to the next one in line.  This ensures that all programs get a fair share of the system resources.  It also prevents one badly-written application from freezing your system.<br />
+<br />
+OK, so.  That's a primer on how operating systems work. :) Let's take a look at what EQ does.  Given that I'm not a developer working on EQ, this is a simplified version of how I would write the program. :)<br />
+<br />
+1) Check for system messages from Windows or other applications.  (This is stuff like &quot;The user clicked the mouse.&quot;)<br />
+<br />
+2) Check for messages from the server for things EQ needs to deal with.<br />
+<br />
+3) Process any new events and display any new changes on the screen.<br />
+<br />
+4) Go to Step 1.<br />
+<br />
+Grossly oversimplified, but it gets the point across.  EQ does what's called a &quot;tight loop;&quot; it never yields priority to the operating system to do other stuff.  Various hacker-type people who know a lot more about decompiling programs than I do have figured out how the EQ code was written, and identified a very specific problem that causes this 100% CPU utilization.  They have posted on a number of message boards about how Sony can literally fix this problem with one line of code.  The changes to the above system would be:<br />
+<br />
+4) Let Windows do other stuff.<br />
+<br />
+5) Go to Step 1.<br />
+<br />
+They even made a little program (that doesn't work after the most recent patches, unfortunately) that simply inserts this line into EQ's code when it's loaded into memory.  If you use that program, you'll see EQ's CPU utilization drop from 99% to maybe 40% or 50%.<br />
+<br />
+And if you're wondering, yes, the problem really can be solved by adding a single line of code to EQ, without affecting anything else in the game or the client.  Heck, those hacker-types I mentioned earlier even sent a message to Sony with the exact line of code needed and the specific spot in the source code that it should be inserted!<br />
+<br />
+We can only hope that Sony doesn't disregard the message because of the messenger. :(</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Sanna</b></div><div class="posttext" id="p4">wow. /agree kryos. A combination of 'don't shoot the messenger' combined with 'break the too-rigid rules to make the system better'. /crosses fingers. <br />
+<br />
+/realizes it's futile. <br />
+<br />
+/keeps fingers crossed. <br />
+<br />
+Thanks. I've sent this link to him, maybe it'll help. <br />
+<br />
+<br />
+-- Sanna <br />
+I still say we petition for %C for con-color. That way I can hotkey this: <br />
+/g I spy --[ %T ]-- and %S is %C to me!<br />
+<br />
+<br />
+<br />
+edit. <br />
+well, go me, I sent this link to him and it turns out 'he knows all this already', and what he was really asking me was 'why soe doesn't fix it already.' which of course no one knows, because soe never tells things like that. so, i go to put out a fire of my own making. /sigh. thanks for the answers tho. ^_^</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Ngreth Thergn</b></div><div class="posttext" id="p5">Also.<br />
+<br />
+As for Hardware Accelleration.<br />
+<br />
+EQ came out before video cards were really up to handling hardware accelleration.  Or at least a significant part.<br />
+<br />
+Heck Nvidia and ATI cards were brand new at the time.  Voodo cards were the rage...<br />
+<br />
+And why not now?  Because SOE has promised that they would keep the game runable on these older machines, with older video cards.  Therefore they cannot add hardware acceleration in any significant amount.<br />
+<br />
+Of course this may change in the graphics upgrade I keep hearing a bit about here and there... (there was a badly done blurb about it in a video game magazine where they showed a before and after pic... the after pic was suposed to be of Kelithin and looked like it would be kelithin, the before was SUPPOSED to also be Kelithin, but was the Aviak Tree city in South Ro :) ) but that is yet to be determined.<br />
+<br />
+One thing to remeber is that EQ is OLD!! :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Dunthor Warsmith</b></div><div class="posttext" id="p6">Despite the fact that the EQ graphics engine has been rehauled (to different degrees) numerous times, it still feels like their are artifacts from the original graphics engine - the Quake (1) graphics engine.<br />
+<br />
+Maybe someone should throw glquake.exe their way :p</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>KyrosKrane</b></div><div class="posttext" id="p7">Earlier this month, or perhaps late last month (I forget), Absor confirmed that they're developing a new graphics engine code-named Tunare.  If you'll remember, the new graphics engine that was released with Luclin was code-named Umbra.<br />
+<br />
+The screen shots Ngreth refers to were a total flop.  They were supposed to be before and after pictures of Kelethin, using the old and new engines, respectively.  However, the &quot;old&quot; Kelethin was in fact a screen shot of the Aviak towers in South Karana -- you could even see an aviak strutting past.  The &quot;new&quot; Kelethin looked to be an incomplete model; there was nothing where the sky or treetops should have been, which made it look like Kelethin was build on upside-down trees.  Having said that, it was immediately clear from the screenshot that the graphics quality was a huge step up from current EQ graphics.<br />
+<br />
+There have been conflicting reports about when the Tunare engine will be released, if at all.  At the last Fan Faire (when they first mentioned it), the developers weren't even sure if they would release it at all, but they said then that if they did, it would be as part of a new expansion before year's end.  Obviously, no new expansions have come out yet.  In addition, later statements would suggest that they plan to release the new engine to everyone, not as part of an expansion.<br />
+<br />
+Claims about what the engine can do also vary wildly.  The developers have claimed that it will allow you to run EQ on the same PC you had when EQ first came out, and still get better performance than you would if you ran today's EQ on today's top-of-the-line PC.  Other, equally astonishing, claims have made the rumor circuit, though I have no clue which should be given credence.<br />
+<br />
+My personal guess is that they're just going to rewrite the entire client.  The bulk of the EQ files on your computer are simply graphics files that describe zones, people, and objects; the code that handles the game mechanics is far smaller.  I wouldn't be surprised if they just extract the game mechanics code, write a brand-new client from the ground up, and add the mechanics code back to that.<br />
+<br />
+In short, I would certainly hope we see this soon.  If even half the promises made and rumors spread regarding this new engine are true, it should make for a great upgrade to EQ.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>Minta Rose</b></div><div class="posttext" id="p8">Thank you, Kyros, for the idiotproofed explanations!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Itek</b></div><div class="posttext" id="p9">*sigh*<br />
+<br />
+Hardware acceleration can be turned ON. (eqclient.ini UseTnL=True) In fact for the 3d targeting ring to be visible it has to be ON. (I had it off, no ring, turned it on, ring.)<br />
+<br />
+No, it doesn't use ALL the available acceleration. (generally because it's trying to stay backwards compatable, as well as trying to keep pace with hardware would be a daunting task... remember SOE thinks coding is hard)<br />
+<br />
+The game INTENTIONALLY tries to hog resources. For a reason. Well... two.<br />
+<br />
+First because the game doesn't have a way to anticipate.<br />
+<br />
+Second because they'd like to keep the game from being hacked.<br />
+<br />
+explainations<br />
+<br />
+One, how do you know that since you are using 40 percent of the CPU to run the game THIS second that in the NEXT second 40 people won't suddenly appear with nifty armors, particle weapons, singing 6 bard songs and all clicking their JBoots as they run by? You don't. So as a pre-emptive strike against sudden lag (sudden massive lag = crash) the client attempts to make sure it will have as much resources at it's fingertips as possible.<br />
+<br />
+This is generally -a-good-thing-(tm)<br />
+<br />
+Two, if the computer has other resource hogging programs (compilers / de-compilers / hex editors / zone viewers / network sniffers / etc etc) running .... that might be a problem.<br />
+<br />
+Be honest. Does it matter to you if 1 percent of the CPU time is &quot;Idle&quot; or 40 percent while you are running EQ? No. All computers wait at the same speed. Unless you are running something in the background that &quot;can't wait&quot; for you to alt+tab to it (there-by giving it de facto priority) the resource hogging isn't a problem. It only matters if you want something &quot;running in the background&quot; to continue working at full speed.<br />
+<br />
+Realisticly there's not a legitimate reason to have multi-threaded applications running while playing EQ. Window out to check a quest, read EQTraders, check an email... sure. But if you're compiling a program why did you log into EQ while you waited?<br />
+<br />
+Legitimate User: I need to upgrade my computer.<br />
+Itek: Huh? Why?<br />
+LUser: My old P3-833 isn't fast enough.<br />
+Itek: What are you talking about? Don't you mainly do word processing and work in the database?<br />
+LUser: Yep. But it's slow.<br />
+Itek: Your P3-833 is slow word processing?<br />
+LUser: No, the database is slow sometimes.<br />
+Itek: Oh, but your computer only ACCESSES the database. The database is slow, at peak times, because of the number of people in it, and the other network traffic. If you want faster database response we need a faster database server and a larger network, or a divided network.<br />
+LUser: Here's my bosses permission for a P4 1.9Ghz machine. When can I have it.<br />
+**Itek wanders away to gibber quietly about Legitimate Users**<br />
+<br />
+ALL computers WAIT at the SAME speed. :rant:<br />
+<br />
+It doesn't matter if EQ takes 40 percent, 45 percent, 90 percent or 99 percent of system resources. If you aren't doing something with the unused resources... what does it matter? If you ARE planning to do something with the unused resources... why are you logged into EQ?? :confused:</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>Aandaie</b></div><div class="posttext" id="p10">Actually, what you mistake for being bad is <br />
+<br />
+GOOD.<br />
+<br />
+Its GOOD that a game like EQ uses all of the CPU and memory, when it can (outside of there being a memory leak.. or something.) <br />
+<br />
+That means that it was programmed to run as well as it can based upon how good your system is. This is MUCH better than if you had a 3 ghz 800 FSB P4, with 1 gig of DDRAM and a GEforce FX 900 256 meg with EQ only using 200 meg of ram and 50 percent of the cpu.<br />
+<br />
+As Itek says, you are not doing other stuff anyway.<br />
+You are not going to be rendering something complex while also playing EQ.<br />
+<br />
+I much prefer EQ making use of EVERYTHING, to run as well as possible, than when I play FFXI and it only uses a max of 332 meg of my 768 meg of ram, while not running that great. I'd rather have it be made more to scale and use all of my ram that it could.  For example, Anarchy Online runs better in some ways and uses as much as 699 meg of my 768 meg of ram (talking about system wide, at worst when AO was running, not what AO it self might be using.) I had luclin models off in EQ, so the only time while I approached that in EQ was when having two characters in a duo on the same computer with EQwindows.<br />
+<br />
+Umbra was the code name for Luclin? Did not know that. Umbra was actually the graphics trick they used in the rendering, its called Umbra. Umbra is the technique of having anything that the user/character is not currently seeing (Such as a building obscured by the building in front of you), not be rendered. This makes your computer do much less work and improves performance a lot.<br />
+<br />
+The problem in EQ was that newer zones, like Shar Vahl and Shadow haven, were made specifically FOR umbra and worked with it quite well so that if you had clipping down and such you'd be rendering far less of the area and have a higher FPS. Meanwhile. a zone like freeport still does not use Umbra at all. This is odd (you can tell since you see just as far with clipping adjusted, for one thing)<br />
+<br />
+Before  I left EQ, they finally had clipping and umbra working well in combination in the Plane of Knowledge. I noticed the difference right away the day they patched it, since my peformance there trippled and I could not see as far (I usually have clipping set for around 5 or 10 percent.)<br />
+<br />
+Something else bad I notice in FFXI, is that the clipping doesn't do much. I go into cities and turn it way down but its only affecting geometry REALLY far away or the scenery way in the background which you actually can't get to (dummy &quot;edge of zone&quot; scenery.)  So I still don't do that well in the complex cities. If they had clipping do more than that, I'd be playing super well. <br />
+I believe this is because its a hardly altered PS2 port and on every PS2 it would play the same, so it wasn't made to scale as well.<br />
+<br />
+If the Tunare engine, as krys mentions, TRUELY is made for today than EQ should run a TON better. As with Anarchy online, the more you can adjust the better. With AO clipping works well with umbra like tech in EVERY zone, as well as the game allowing you to even turn off other players being rendered near you (great in crowded cities.)<br />
+<br />
+Luclin really bloated the heck out of EQ, while not really upgrading how the old world worked with the newer stuff like umbra/clipping at all.<br />
+<br />
+As far as EQW, it is MORE of an expanding resource hog. Once again, THIS IS PREFERRED. With two EQW's running, in a character duo on the same computer, I'd use up to 690 meg of system ram while only using AT MOST 40 meg of the swapfile. THIS IS GOOD. Meanwhile, with two regular SOE EQs in a duo, I'd only use around 350 meg of system ram and a WHOPPING 450 meg of the virtual swap. Real system ram is ALWAYS better than swap. So EQW is actually better at making use of what you have. A program like Cacheman  (www.outertech.com), which is still free for personal use, is good for seeing how much ram/swap you used at worst after your gaming session (as well as generally tweaking some things better for gaming.)<br />
+<br />
+The reason why EQ is so laggy in the bazaar is that its sticking a billion models on the screen and clipping/umbra seem to do little for player models. What is needed, more than anything else, in that zone in particular is a CHARACTER DISPLAY slider like they have in AO. If you had a character display slider that went from a few feet in front of your character, to way out there, it would not make a difference if there were 5 vendors in the bazaar or 500 since you'd only be showing the 10 or so near you (if that was all you wanted to see.)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>Dunthor Warsmith</b></div><div class="posttext" id="p11">Originally posted by Itek <br />
+It doesn't matter if EQ takes 40 percent, 45 percent, 90 percent or 99 percent of system resources. If you aren't doing something with the unused resources... what does it matter? If you ARE planning to do something with the unused resources... why are you logged into EQ?? :confused: <br />
+<br />
+The Bazaar is what changed that.  For people with one computer, one comp capable of running EQ, or just not willing to go through the hassle of syncing bazaar price lists, running EQ minimized in /trader while doing other work is very tempting.  That's when most of my complaint with EQ being a resource hog comes from - it severly limits what you can do with EQ sitting in the background, when it doesn't seem like it needs to limit it to such a degree.<br />
+<br />
+There's also the annoyance of the vastly increased load times to &quot;just quickly check that website&quot; while EQ is running, but I've given up on that and just use a second comp to browse the web while in EQ - but I imagine that's not an option for plenty of people.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u12"><b>KyrosKrane</b></div><div class="posttext" id="p12">Dunthor hit the nail on the head.<br />
+<br />
+The moment you concede that there is ANY reason to run another program in the background, EQ no longer has a legitimate claim on all the system resources it can grab.<br />
+<br />
+Maybe I want to look up a quest or tradeskill combine without waiting a full minute just for my browser to come up from minimized mode.  Maybe I want to check for email without waiting thirty seconds between pressing the &quot;Send/Receive&quot; button and actually having the client start looking for my mail.<br />
+<br />
+Maybe I want to run two instances of EQ on my computer -- whether it's for a bazaar mule or to two-box a cleric for my raid.<br />
+<br />
+Maybe I want to run a macro or hacking program and cheat at EQ.<br />
+<br />
+The point is, EQ can't differentiate between these actions.  (Yes, there are legitimate concerns about using a hacking program, but until EQ can identify such programs, it has to assume that any program the user wants to run is permitted.)  The moment I Alt-Tab out, I'm telling EQ that I want to go do &quot;something else.&quot;  At that point, a well-written program should yield any system resources it doesn't actually need so the user can get his or her work done.<br />
+<br />
+As to how much resources EQ needs ... I'll be the first to admit that EQ can have spikes in how much CPU time or memory it needs, but there are a few things to note.<br />
+<br />
+First, EQ doesn't need 99% CPU access all the time.  Going back to my previous (simplified) explanation, a program can yield priority back to the operating system as soon as it's done.  It doesn't have to wait until the end of the X milliseconds it's been assigned.  So, if a program was assigned, say, five milliseconds, and it gets its processing done in two, it can yield priority at once.  It doesn't have to sit there and twiddle its thumbs for the remaining three.  This is what EQ does -- it never yields priority until Windows grabs it away by force.  Other programs will yield priority whenever they're done with their bit of processing, or in any case after a certain interval of time has passed.  The proof of this is the little hacking program I mentioned earlier.  When it's run, you notice no change at all in how EQ actually plays, but if you monitor CPU usage, it drops WAY down.<br />
+<br />
+Second, just because a program yields priority doesn't mean it can't get that priority back when needed.  When the situation demands, EQ can use up all available CPU time.  If 50 people all casting spells suddenly appear in front of you, EQ can choose to not yield priority back to the operating system until Windows grabs it back.  When those 50 people zone out, though, there's no call for EQ to keep those resources it grabbed to display the 50 people.  At this point, EQ should yield back the CPU time.  If they zone back in again, EQ can again go back to high-processing mode.<br />
+<br />
+Third, I've focused almost exclusively on CPU time in my discussions.  Memory is a whole other ball game.  In general, the choice of whether to use actual system memory or paged memory on the hard disk isn't up to the individual program; it's up to Windows itself.  As far as programs are concerned, they just see a massive memory pool of, say, 2GB.  Whether that memory consists of 256MB actual RAM and 1792MB on the hard disk or 1GB each of RAM and HDD space is irrelevant (and largely invisible) to the individual programs -- that's the whole point of virtual memory.  <br />
+<br />
+There are programs that can optimize how Windows uses memory (or at least, they claim to do that -- results have been mixed at best), but to my knowledge, neither EQ nor EQWindows implements that.  How much actual memory and how much paged memory each uses is a coincidence.  (I could be wrong on that last point, but I've seen no evidence that EQW does anything at all other than intercept the commands to draw on the screen and put them into a window.)<br />
+<br />
+In short, there were once valid reasons for EQ to be a resource hog (though again, I don't agree with those reasons).  Those reasons largely don't apply any more.  It would make sense for EQ to be updated to modern standards, and again, I'm reasonably sure that's what they'll be doing over the next few months.<br />
+<br />
+Oh, and Minta, you're more than welcome! :) Your posts always make me smile, so it's nice to be able to repay that in some small way. :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u13"><b>dahna</b></div><div class="posttext" id="p13">Oh well, if I knew what was the Umbra option one year ago...<br />
+<br />
+As a weak computer owner, I tried to optimize to the maximum the eq content over the years (low graphics, filters, no sound), and I automatically switched many options off in the eqini even if I didn't know their use.<br />
+But as SOE is giving us the opportunity to customize eq more and more (hotbutton ini files, ui, character ini, clustering main files to .xmi, .eff, .txt), they don't give us a lot of informations about them (last to date is the TargetIndicator.ini and the AttackIndicator.tga) and they leave us to the old try&amp;error. It would be nice to at least update the doc file.<br />
+<br />
+Also for the memory use, I noticed that reloading UI (same ui or another) consume more ressources that are not set free by eq unless you exit it : so loading ui 5 or 6 times for me (have 512Mo and logging to eq use ~300)  result in a window memory warning message (=return to desktop from full window mode).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u14"><b>Sanna</b></div><div class="posttext" id="p14">hm, lots of info, late-ish at night. technically, i should know better than to respond now ^_^ if i think i should sleep. <br />
+<br />
+<br />
+Yes, and especialy in trader, EQ should be able to run with other programs. I should be able to watch .avi's and listen to music.  Yeah, i understand the thing about 'well, maybe lag will happen soon and EQ needs to be prepared,' but... I'm in trader, staring at the ground. is there really not a better way to do it?<br />
+<br />
+I don't know, even if i got a 100pct correct in all aspects answer to that, 99pct chance I won't understand it, heh. Anywho, thanks for the answers. <br />
+<br />
+<br />
+<br />
+<br />
+Edit. <br />
+THAT was the other thing i forgot.<br />
+I was trying to edit around the playerwindow xml file in a skin, and i had a hotkey for /loadskin whateverfile 1. I would make little changes and reload the skin (I'm still SUCH a noob at ui editing and yes I've tried to get help at eqgui.com). Eventually, EQ just SHUT DOWN. Boom. Desktop. No message, no nothing. It just decided it was not going to run anymore. I was greatly amused ^_^!!!!!!<br />
+<br />
+-- Sanna<br />
+and Merry Christmas. ^_^<br />
+PS: :bookworm: :bookworm: :bookworm: :bookworm: :bookworm: :bookworm: :bookworm: :bookworm:</div></div><hr />
+
+
+<div class="post"><div class="username" id="u15"><b>Malathos</b></div><div class="posttext" id="p15">ALL computers WAIT at the SAME speed. <br />
+<br />
+I just finished a contract where someone on the team complained that their PC was way too slow - and that some piece of software called &quot;System Idle&quot; was using up 99% of their machines CPU time - oh, and this person was a software developer :boggled:</div></div><hr />
+
+
+<div class="post"><div class="username" id="u16"><b>Lothay</b></div><div class="posttext" id="p16">Sanna - <br />
+<br />
+The code that handles the loading of the UI skin doesn't always release memory that it used to display and interpret the interface.  If you reload often enough, it eventually causes the application to crash.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

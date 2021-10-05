@@ -1,0 +1,578 @@
+<!--
+This contents designed by Uminchu
+Copyright (C) 2000.
+Allrights reserved.
+-->
+<HTML>
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="TEXT/CSS">
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis">
+		<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+		<META HTTP-EQUIV="Content-Style-Type"  CONTENT="text/css">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+		<STYLE TYPE="text/css">
+			<!--
+			A:link	{ text-decoration: none; color: #FFFFFF; }
+			A:visited	{ text-decoration: none; color: #FFFFFF; }
+			A:active { text-decoration: none; color: orange; }
+			A:hover	{ text-decoration: background; color: #FF5555 }
+
+			.item { background-color:#aa6633;color:#eeeeff;padding:4pt;float:1pt; }
+			.cpyright{ font-size:9pt; font-style:italic; color:#ff4040; }
+			.comment { color:#3399ff; }
+			pre      { color:#6699ff; }
+			
+
+			.MENUCAPTION
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+			}
+
+			.MENUCAPTION_2
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+				COLOR: #FFFFFF;
+			}
+			
+			.MENUITEM_LEFT
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: LEFT;
+			}
+
+			.MENUITEM
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: CENTER;
+			}
+
+			.MENUITEM_RIGHT
+			{
+				FONT-SIZE: 9pt;
+				FONT-WEIGHT: BOLD;
+				TEXT-ALIGN: RIGHT;
+			}
+
+			.MENUINDENT
+			{
+				MARGIN-LEFT: 10px;
+			}
+			
+			BODY
+			{
+				scrollbar-face-color: #9999FF;
+				scrollbar-shadow-color: #3333FF;
+				scrollbar-highlight-color: #3333FF;
+				scrollbar-3dlight-color: #444444;
+				scrollbar-darkshadow-color: #444444;
+				scrollbar-track-color: #000000;
+				scrollbar-arrow-color: #FFFFFF;
+				margin: 0px;
+			}
+			-->
+		</STYLE>
+		<TITLE>[Halas Soul]</TITLE>
+		
+		<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+		<!--
+			// Show the contents and music table, if user touch the area.
+			function showMenu(nm)
+			{
+					var style=document.all?document.all(nm).
+						style:(document.getElementById?document.
+						getElementById(nm).
+						style:(document.layers?document.
+						layers[nm]:null));
+	
+					if( style )
+						style.visibility='inherit';
+			}
+	
+			// Hide the contents and music table, if user didn't touch the area.
+			function hideMenu(nm)
+			{
+					var style=document.all?document.
+						all(nm).
+						style:(document.getElementById?document.
+						getElementById(nm).
+						style:(document.layers?document.
+						layers[nm]:null));
+						
+						if(style)
+							style.visibility='hidden';
+			}
+
+			function hideMenuAll()
+			{
+				hideMenu('MENU_GENERAL');
+				hideMenu('MENU_FORUM');
+				hideMenu('MENU_TRADESKILLS');
+				hideMenu('MENU_SHAWLQUEST');
+				hideMenu('MENU_WARRIOR');
+				hideMenu('MENU_ENCHANTER');
+				hideMenu('MENU_MUSIC');
+			}
+			
+			var music_name = new Array();
+			music_name[ 0 ] = "夏影";
+			music_name[ 1 ] = "Largo";
+			music_name[ 2 ] = "Memory";
+			music_name[ 3 ] = "月夜のピアノ";
+			music_name[ 4 ] = "Piano Lesson";
+			music_name[ 5 ] = "君の生まれた日";
+			music_name[ 6 ] = "Love";
+			music_name[ 7 ] = "Nostalgia";
+			music_name[ 8 ] = "The Crave";
+			// 
+			function writeMusicNameOnTime()
+			{
+				document.forms[0].elements[0].value=music_name[ parent.MUSIC.getMusicNumber() ];
+			}
+			
+			function writeMusicName( music_name )
+			{
+				parent.MENU.document.forms[0].elements[0].value=music_name;
+			}
+
+			function init(){
+				if(document.all){
+					document.body.onscroll=movelayer
+				}
+				movelayer()
+			}
+			
+			function movelayer()
+			{
+				if(document.all){
+					document.all.MENU_GENERAL.style.pixelTop=document.body.scrollTop
+					document.all.MENU_FORUM.style.pixelTop=document.body.scrollTop
+					document.all.MENU_TRADESKILLS.style.pixelTop=document.body.scrollTop
+					document.all.MENU_SHAWLQUEST.style.pixelTop=document.body.scrollTop
+					document.all.MENU_ENCHANTER.style.pixelTop=document.body.scrollTop
+					document.all.MENU_WARRIOR.style.pixelTop=document.body.scrollTop
+					document.all.MENU_MUSIC.style.pixelTop=document.body.scrollTop
+			}
+			
+}
+		-->
+		</SCRIPT>
+	</HEAD>
+	<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#AA0000" VLINK="#AA0000" BACKGROUND="../img/bg.jpg" onload=init() onresize=movelayer()>
+		<!-- Menu Layers [ General Menu ] -->
+		<DIV
+			ID=MENU_GENERAL
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=5px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../aboutme.html" onClick="hideMenu('MENU_GENERAL');">
+						<FONT SIZE="-1">About me...</FONT>
+					</A><BR>
+					<A HREF="../dialy/current.html" onClick="hideMenu('MENU_GENERAL');">
+						<FONT SIZE="-1">Dialy</FONT>
+					</A><BR>
+					<A HREF="../eqml.html" onClick="hideMenu('MENU_GENERAL');">
+						<FONT SIZE="-1">EQML</FONT>
+					</A><BR>
+					<A HREF="../command.html" onClick="hideMenu('MENU_GENERAL');">
+						<FONT SIZE="-1">Command</FONT>
+					</A><BR>
+					<A HREF="../main.html" onClick="hideMenu('MENU_GENERAL');">
+						<FONT SIZE="-1">Top</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+			<!-- Menu Layers [ Forum Menu ] -->
+		<DIV
+			ID=MENU_FORUM
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=90px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../treebbs/discuss.cgi" onClick="hideMenu('MENU_FORUM');">
+						<FONT SIZE="-1">Tree掲示板</FONT>
+					</A><BR>
+					<A HREF="../RollBBS/rollbbs.cgi" onClick="hideMenu('MENU_FORUM');">
+						<FONT SIZE="-1">Roll掲示板</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+			<!-- Menu Layers [ Tradeskills Menu ] -->
+		<DIV
+			ID=MENU_TRADESKILLS
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=160px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../tradeskills/specialization.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">Specialization</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/brewing.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">Brewing</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/smithing.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">Smithing</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/fletching.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">Fletching</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/pottery.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">Pottery</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/jewelcraft_main.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">+Jewelcraft</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/jewelcraft_basic.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　JCの基本</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/jewelcraft_tips.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　Tips</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/jewelcraft_products.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　製品一覧</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/jewelcraft_trivial.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　Trivial表</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/jewelcraft_process.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　+成長記録</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/process_silver.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　　Silverの記録</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/process_electrum.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　　Electrumの記録</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/process_gold.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　　Goldの記録</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/process_platinum.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　　Platinumの記録</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/process_madelist.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">　　作成物一覧表</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/tailoring.html" onClick="hideMenu('MENU_TRADESKILLS');">
+						<FONT SIZE="-1">+Tailoring</FONT>
+					</A><BR>
+					<A HREF="../tradeskills/recipes_tailoring.html" onClick="hideMenu('MENU_FORUM');">
+						<FONT SIZE="-1">　レシピ</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+			<!-- Menu Layers [ Shawl Quest Menu ] -->
+		<DIV
+			ID=MENU_SHAWLQUEST
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=270px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../enchanter/quest/burlapcoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">1st Shawl</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/clothcoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">2nd Shawl</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/wovencoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">3rd Shawl</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/fur-linedcoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">4th Shawl</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/silkcoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">5th Shawl</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/embroideredcoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">6th Shawl</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/runedcoldainprayershawl.html" onClick="hideMenu('MENU_SHAWLQUEST');">
+						<FONT SIZE="-1">7th Shawl</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+			<!-- Menu Layers [ Warrior Menu ] -->
+		<DIV
+			ID=MENU_WARRIOR
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=385px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../warrior_1.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 1</FONT>
+					</A><BR>
+					<A HREF="../warrior_2.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 2</FONT>
+					</A><BR>
+					<A HREF="../warrior_3.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 3</FONT>
+					</A><BR>
+					<A HREF="../warrior_4.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 4</FONT>
+					</A><BR>
+					<A HREF="../warrior_5.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 5</FONT>
+					</A><BR>
+					<A HREF="../warrior_6.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 6</FONT>
+					</A><BR>
+					<A HREF="../warrior_7.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 7</FONT>
+					</A><BR>
+					<A HREF="../warrior_8.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 8</FONT>
+					</A><BR>
+					<A HREF="../warrior_9.html" onClick="hideMenu('MENU_WARRIOR');">
+						<FONT SIZE="-1">重戦掲示 9</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+		<!-- Menu Layers [ Enchanter Menu ] -->
+		<DIV
+			ID=MENU_ENCHANTER
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=470px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../enchanter/guide.html" onClick="hideMenu('MENU_ENCHANTER');">
+						<FONT SIZE="-1">Enchanterとは...</FONT>
+					</A><BR>
+					<A HREF="../enchanter/quest/index.html" onClick="hideMenu('MENU_ENCHANTER');">
+						<FONT SIZE="-1">Quests</FONT>
+					</A><BR>
+					<A HREF="../enchanter/mana.html" onClick="hideMenu('MENU_ENCHANTER');">
+						<FONT SIZE="-1">Mana早見表</FONT>
+					</A><BR>
+					<A HREF="../enchanter/process.html" onClick="hideMenu('MENU_ENCHANTER');">
+						<FONT SIZE="-1">成長過程例</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+			<!-- Menu Layers [ Music Menu ] -->
+		<DIV
+			ID=MENU_MUSIC
+			STYLE="
+				POSITION:ABSOLUTE;
+				VISIBILITY:HIDDEN;
+				BORDER-WIDTH:1;
+				BORDER-STYLE:SOLID;
+				BORDER-COLOR:#AAAAAA;
+				WIDTH:140;
+				PADDING:5;
+				BACKGROUND-COLOR:#6655EE;
+				LAYER-BACKGROUND-COLOR:#9B0025;
+		 		LEFT=640px;
+			"
+		>
+			<B>
+				<FONT COLOR="#000000">
+					<A HREF="../music/music_none.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('BGM STOP');">
+										<FONT SIZE="-1">BGM STOP</FONT>
+					</A><BR>
+					<A HREF="../music/natsukage.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('夏影');">
+										<FONT SIZE="-1">夏影</FONT>
+					</A><BR>
+					<A HREF="../music/largo.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('Largo');">
+										<FONT SIZE="-1">Largo</FONT>
+					</A><BR>
+					<A HREF="../music/tukiyo.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('月夜のピアノ');">
+										<FONT SIZE="-1">月夜のピアノ</FONT>
+					</A><BR>
+					<A HREF="../music/memory.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('Memory');">
+										<FONT SIZE="-1">Memory</FONT>
+					</A><BR>
+					<A HREF="../music/pianol.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('Piano Lesson');">
+										<FONT SIZE="-1">Piano Lesson</FONT>
+					</A><BR>
+					<A HREF="../music/noel.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('君の生まれた日');">
+										<FONT SIZE="-1">君の生まれた日</FONT>
+					</A><BR>
+					<A HREF="../music/love.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('Love');">
+										<FONT SIZE="-1">Love</FONT>
+					</A><BR>
+					<A HREF="../music/nostalgia.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('Nostalgia');">
+										<FONT SIZE="-1">Nostalgia</FONT>
+					</A><BR>
+					<A HREF="../music/crave.html" TARGET="MUSIC" onClick="hideMenu('MENU_MUSIC'); writeMusicName('Crave');">
+										<FONT SIZE="-1">Crave</FONT>
+					</A><BR>
+				</FONT>
+			</B>
+		</DIV>
+		<DIV onMouseOver="hideMenuAll();">
+			<CENTER>
+				<BR><BR>
+				<TABLE WIDTH="90%" CELLPADDING="3" CELLSPACING="0" BORDER="1">
+					<TR><TD ALIGN="CENTER" BGCOLOR="#333333"><FONT COLOR="#FFFFFF" SIZE="-1" ><B>
+						How to Jewelcraft
+					</FONT></B></TD></TR>
+					<TR><TD BGCOLOR="#FFFFFF"><FONT COLOR="#333333" SIZE="-1" ><B>
+						<BR>
+						Enchanterならばやってみたい、やらねば！と思うスキルNo 1の宝石加工。
+						<P>
+						良く聞く言葉に「山程金掛かる」というのが有る。う～ん、確かにそうかも。
+						<P>
+						でも、実際幾ら掛かるのよ？と聞くと、人に拠ってマチマチで、一体本当はどれぐらい掛かるものか分からなかった。
+						<P>
+						そこで、自ら体験してみようという事で挑戦したみた。
+						<P>
+						結果、何と0～250まで上げるのに掛かった出費（損失）は 2366pp 4gp 3sp 1cp だった。
+						<P>
+						うお～何て安上がり！　実は、JCってあんま苦しく無いのかも。
+						<P>
+						ハッキリ言って、時間もお金も苦痛も裁縫を0～158にする方がよっぽどキツイっす。
+						<P>
+						上に有るメニューの解説
+						<P>
+						<TABLE>
+							<TR>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>[ Basic ]</FONT></B></TD>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>：　Jewelcraftの基本</FONT></B></TD>
+							</TR>
+							<TR>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>[ Tips ]</FONT></B></TD>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>：　Jewelcraftをする上でのTips</FONT></B></TD>
+							</TR>
+							<TR>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>[ Products ]</FONT></B></TD>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>：　製品一覧</FONT></B></TD>
+							</TR>
+							<TR>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>[ Trivial ]</FONT></B></TD>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>：　各製品のTrivial値</FONT></B></TD>
+							</TR>
+							<TR>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>[ Process ]</FONT></B></TD>
+								<TD><FONT COLOR="#000000" SIZE="-1" ><B>：　Otokonokoの成長過程</FONT></B></TD>
+							</TR>
+						</TABLE>
+						<P>
+						<HR>
+						<BR>
+						で、私が使っているJC用Logカッタ～君を紹介しよう。
+						<P>
+						名付けて JC Logcut!! （そのまんまｗ）
+						<P>
+						てか、紹介する程の物じゃ無いんで、別に良いんですけどね・・・。
+						<P>
+						え～とFreeBSDでの動作を確認しています。コマンドラインに投げるだけ。
+						<P>
+						但し要コンパイルなんで、（っていうか普通Unix系ならコンパイラ付いてるよなｗ）自前でコンパイルよろ。
+						<P>
+						Windows版は無いんですか？
+						<P>
+						無いんです！
+						<P>
+						作っても良いけど、どうせ俺しか使わないしガワ付けるの面倒だしね（^-^;;
+						<P>
+						て、分けでソースコードは<A HREF="jc_logcut.c">ここに有る</A>よ。
+						<P>
+						え、せめて圧縮しろ？良いじゃんサイズ小さいし、適当カットアンドペーストでよろ（投げやりｗ）
+						<P>
+						つ～か、70行しかナイヨ！
+						<P>
+						で、Log Cutして分かったTIPSを一つ。
+						<P>
+						メッセージ中に成功と失敗の2種類のメッセージが有るけど、
+						<P>
+						You lacked the skills to fashion the items together.
+						<P>
+						と
+						<P>
+						You have fashioned the items together to create something new!
+						<P>
+						ね。で、スキルアップメッセージが有るよね。
+						<P>
+						You have become better at Blacksmithing! (24)
+						<P>
+						みたいなの。成功/失敗に関わらずスキルは上がるんだけど、これ、失敗の場合は失敗メッセージの後に出て、成功の場合は成功メッセージの前に出るんですね。
+						<P>
+						いや～為になるなあTIPS。
+						<P>
+						て、分けでサイナラ、サイナラ、サイナラ。
+					</B></FONT></TD></TR>
+				</TABLE>
+			</CENTER>
+			<IMG SRC="../hgc.cgi?jewelcraft_main">
+		</DIV>
+	</BODY>
+</HTML>
+		

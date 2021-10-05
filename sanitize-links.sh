@@ -14,3 +14,4 @@ then
 fi
 
 cat "$sourceFile" | grep -i "href=" | tr '[:upper:]' '[:lower:]' | grep -v "ezboard.com" | sed "s|http://web.archive.org/web/[0-9]*/||g" | grep -oP 'href="(http://.*?)"' | sed 's/href="//g' | sed 's/"//g' >> "$destFile"
+sort "$destFile" | uniq -u > "$destFile-unique.txt"

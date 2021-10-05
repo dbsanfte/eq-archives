@@ -1,0 +1,1564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+ <meta http-equiv="content-script-type" content="text/javascript">
+ <meta http-equiv="content-style-type" content="text/css">
+ <link rel="stylesheet" type="text/css" href="./data/c-board.css">
+ <title>Izayoi BBS</title>
+</head>
+
+<body bgcolor="#ffffff"
+      text="#001155"
+      link="#0000cc"
+      vlink="#0000cc"
+	  alink="red"
+	  background="">
+
+<h2>Izayoi BBS</h2>
+
+<table border="0" cellspacing="0" cellpadding="0"
+	   width="650">
+ <tr>
+  <td align="left" width="50%" nowrap>
+   <table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	 <td
+	 ><img src="./image/mnu_table_left.gif"
+		   width="14" height="28" alt=""
+	></td>
+	 <td background="./image/mnu_table_back.gif" nowrap
+	 ><font size="3" color="#999999" class="Menu">&nbsp;&nbsp;</font><a href="c-board.cgi?cmd=psn;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">新規投稿</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><font size="3" color="#666666" class="Menu">ツリー表示</font><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="c-board.cgi?cmd=tpc;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">トピック表示</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="c-board.cgi?cmd=srn;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">検索</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="c-board.cgi?cmd=csn;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">設定</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="http://www5.cds.ne.jp/~echi/eq/event/event.cgi" target="_self"><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">ホーム</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="http://www5.cds.ne.jp/~echi/eq/guild/member/memvew.cgi" target="_self"><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">メンバー</font></a><font size="3" color="#999999" class="Menu">&nbsp;&nbsp;</font></td>
+	 <td
+	 ><img src="./image/mnu_table_right.gif"
+		   width="14" height="28" alt=""
+	></td>
+	</tr>
+   </table>
+  </td>
+  <td align="center" nowrap>
+   <font size="3" class="Menu">
+	1 / 15 ﾍﾟｰｼﾞ
+   </font>
+  </td>
+  <td nowrap align="right">
+   <a href="c-board.cgi?cmd=tre;page=2;id=" title="2ﾍﾟｰｼﾞ"><font size="3" color="#000080" style="font-size: 10pt"><b>前へ→</b></font></a>
+  </td>
+ </tr>
+</table>
+
+<hr size="1" width="650" align="left">
+
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=725;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=725;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【725】リンク依頼
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Ding
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 02/1/21(月) 23:45
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=724;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=724;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【724】お疲れ様です
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Helissio
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 02/1/17(木) 9:05
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=715;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【715】あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Sandy
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 02/1/4(金) 16:07
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;no=716;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=716;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【716】おめでとうございます
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Murasame
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/4(金) 16:15
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;no=717;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=717;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【717】あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Kura
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/4(金) 19:00
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;no=718;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=718;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【718】Re:あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Tengu
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/4(金) 21:18
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;no=719;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=719;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【719】Re:あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Takoma
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/5(土) 21:28
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><a href="c-board.cgi?cmd=ntr;tree=715;no=721;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=721;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【721】Re:あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Sandy
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/8(火) 9:24
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><img src="./image/_.gif" width="30" height="1" alt="　" border="0"><a href="c-board.cgi?cmd=ntr;tree=715;no=723;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=723;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【723】Re:あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Takoma
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/11(金) 0:30
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;no=720;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=720;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【720】あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Peke
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/6(日) 14:46
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=715;no=722;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=722;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【722】Re:あけましておめでとう
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Yoko
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 02/1/9(水) 21:31
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=703;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【703】久々に
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Murasame
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/12/9(日) 20:28
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;no=704;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=704;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【704】おひさ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Kura
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/9(日) 23:14
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;no=705;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=705;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【705】最近はみんなPopしませんね…
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Tengu
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/10(月) 1:08
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><a href="c-board.cgi?cmd=ntr;tree=703;no=706;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=706;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【706】Re:最近はみんなPopしませんね…
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Gouken/SSS
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/10(月) 16:29
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><img src="./image/_.gif" width="30" height="1" alt="　" border="0"><a href="c-board.cgi?cmd=ntr;tree=703;no=707;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=707;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【707】Re:最近はみんなPopしませんね…
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Tengu
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/10(月) 16:38
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><img src="./image/_.gif" width="30" height="1" alt="　" border="0"><a href="c-board.cgi?cmd=ntr;tree=703;no=709;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=709;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【709】おひさ～
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Tosyan
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/11(火) 20:30
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><img src="./image/_.gif" width="60" height="1" alt="　" border="0"><a href="c-board.cgi?cmd=ntr;tree=703;no=710;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=710;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【710】なんとー
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Murasame
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/12(水) 0:20
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/I_icon.gif" width="30" height="20" alt="┃" border="0"><img src="./image/_.gif" width="60" height="1" alt="　" border="0"><a href="c-board.cgi?cmd=ntr;tree=703;no=712;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=712;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【712】Re:おひさ～
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 [名前なし]
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/12(水) 1:02
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;no=708;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=708;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【708】おー
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Murasame
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/11(火) 0:08
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;no=711;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=711;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【711】Re:久々に
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 [名前なし]
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/12(水) 0:58
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;no=713;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/T_icon.gif" width="30" height="20" alt="┣" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=713;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【713】久しぶり～
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 MAT
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/13(木) 1:21
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=703;no=714;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=714;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【714】Re:久しぶり～
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Peke
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/12/13(木) 12:46
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=700;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=700;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【700】11/1ってなにかあったの？
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Oyon
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/11/2(金) 2:04
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=700;no=701;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=701;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【701】Re:11/1ってなにかあったの？
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Kaban
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/11/4(日) 5:02
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><img src="./image/_.gif" width="30" height="1" alt="　" border="0"><a href="c-board.cgi?cmd=ntr;tree=700;no=702;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=702;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【702】Re:11/1ってなにかあったの？
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Oyon
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/11/5(月) 0:48
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=699;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=699;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【699】URL変更のお知らせ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Ikesarah/Samurais
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/10/19(金) 6:36
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=697;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=697;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【697】滅びへ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Murasame
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/10/11(木) 0:31
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=697;no=698;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=698;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【698】Re:滅びへ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 猫好きNec
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/10/11(木) 0:39
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=694;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=694;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【694】ごあいさつ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Ｊｙｕｇｅｍ
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/10/7(日) 1:31
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=694;no=696;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=696;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【696】Re:ごあいさつ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 猫好きNec
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/10/10(水) 0:47
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=695;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=695;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【695】さばおちさばおちら○たのひ
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Pekezero@56WIZ
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/10/9(火) 12:27
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<img src="./image/_.gif" width="1"
+	 height="25" alt=""><br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=692;id=" title="記事が属するツリーの記事を全て表示します"><img src="./image/tre_all.gif" width="13" height="12" border="0"></a></td>
+  <td bgcolor="#ffeeff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=692;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeParentSubject">
+	  【692】ありがとうございました
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeParentName">
+	 Gouken/SSS
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeParentDate">
+	 01/9/28(金) 2:22
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td
+  ><img src="./image/_.gif" width="10" height="1" alt=""
+ ></td>
+  <td><a href="c-board.cgi?cmd=ntr;tree=692;no=693;id=" title="この記事にぶら下がってる記事を全て表示します"><img src="./image/L_icon.gif" width="30" height="20" alt="┗" border="0"></a></td>
+  <td bgcolor="#ffffff" nowrap>
+   <a href="c-board.cgi?cmd=one;no=693;id="
+	  onmouseover="this.children[0].children[0].style.color='#ff22aa'"
+	  onmouseout="this.children[0].children[0].style.color='#001155'">
+	<b>
+	 <font size="3"
+		   color="#001155"
+		   class="TreeChildSubject">
+	  【693】ome~
+	 </font>
+	</b>
+	<font size="3"
+		  color="#ff22aa"
+		  class="TreeChildName">
+	 Yoko
+	</font>
+	<font size="3"
+		  color="#ff99ee"
+		  class="TreeChildDate">
+	 01/9/28(金) 19:48
+	</font>
+   </a>
+  </td>
+  <td
+  >
+   <font size=""	
+		 color=""
+		 class="TreeReply" title="レスの数">
+	
+   </font>
+   </td>
+ </tr>
+</table>
+
+<hr size="1" width="650" align="left">
+
+<table border="0" cellspacing="0" cellpadding="0"
+	   width="650">
+ <tr>
+  <td align="left" width="50%" nowrap>
+   <table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	 <td
+	 ><img src="./image/mnu_table_left.gif"
+		   width="14" height="28" alt=""
+	></td>
+	 <td background="./image/mnu_table_back.gif" nowrap
+	 ><font size="3" color="#999999" class="Menu">&nbsp;&nbsp;</font><a href="c-board.cgi?cmd=psn;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">新規投稿</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><font size="3" color="#666666" class="Menu">ツリー表示</font><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="c-board.cgi?cmd=tpc;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">トピック表示</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="c-board.cgi?cmd=srn;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">検索</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="c-board.cgi?cmd=csn;id="><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">設定</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="http://www5.cds.ne.jp/~echi/eq/event/event.cgi" target="_self"><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">ホーム</font></a><font size="3" color="#999999" class="Menu">&nbsp;┃ </font><a href="http://www5.cds.ne.jp/~echi/eq/guild/member/memvew.cgi" target="_self"><font size="3" color="#001155" class="Menu" onmouseover="this.style.color='#ff22aa'" onmouseout="this.style.color='#001155'">メンバー</font></a><font size="3" color="#999999" class="Menu">&nbsp;&nbsp;</font></font>
+	 </td>
+	 <td
+	 ><img src="./image/mnu_table_right.gif"
+		   width="14" height="28" alt=""
+	></td>
+	</tr>
+   </table>
+  </td>
+  <td align="center" nowrap>
+   <font size="3" class="Menu">
+	1 / 15 ﾍﾟｰｼﾞ
+   </font>
+  </td>
+  <td nowrap align="right">
+   <a href="c-board.cgi?cmd=tre;page=2;id=" title="2ﾍﾟｰｼﾞ"><font size="3" color="#000080" style="font-size: 10pt"><b>前へ→</b></font></a>
+  </td>
+ </tr>
+ <tr>
+  <td colspan="3"><form action="c-board.cgi" method="get"></td>
+ </tr>
+ <tr>
+  <td align="right" valign="top" nowrap>
+   <table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	 <td nowrap>
+	  <font size="3" class="Menu">
+	   ページ：
+	  </font>
+	  <input type="text" name="page" size="4" style="border: 2 solid #cccccc"
+			 class="MenuInput"
+			 title="表示したいページ番号を入力してください">
+	 </td>
+	 <td nowrap>
+	  <font size="3" class="Menu">
+	   &nbsp;┃&nbsp;
+	  </font>
+	 </td>
+	 <td nowrap>
+	  <font size="3" class="Menu">
+	   記事番号：
+	  </font>
+	  <input type="text" name="no" size="6" style="border: 2 solid #cccccc"
+			 class="MenuInput" title="表示したい記事番号を入力してください">
+	 </td>
+	 <td nowrap>
+	  <font size="3" class="Menu">
+	   　
+	  </font>
+	  <input type="submit" value="G O"
+			 style="background: #eeeeee; border: 2 solid #cccccc"
+			 class="MenuSend" title="指定されたページ・番号にジャンプします">
+	  <input type="hidden" name="mode" value="tre"
+	 ><input type="hidden" name="id" value=""
+	 ><input type="hidden" name="cmd" value="jmp">
+	 </td>
+	</tr>
+   </table>
+  </td>
+  <td nowrap align="right" colspan="2">
+   <font size="3"
+		 color="#001155" class="Count">
+	
+   </font>
+  </td>
+ </tr>
+ <tr>
+  <td colspan="3" align="right">
+   <a href="http://www.nk.rim.or.jp/~t_kimata/cgi/" target="_top"
+	  title="【この掲示板と同じものが欲しい人はクリック！】">
+	<font size="3" style="font-size: 10pt">
+	 <b>C-BOARD</b> v3.22 is Free.
+	</font>
+   </a>
+   <br>
+   <!--
+   <a href="http://www.gld.mmtr.or.jp/~naofumi/incm/">
+	<img src="./image/incm_icon.gif" width="93" height="18"
+		 border="0" alt="INCM Ready!">
+   </a>
+   -->
+   </form>
+  </td>
+ </tr>
+</table>
+
+
+
+	<script type="text/javascript">
+	 <!--
+	 function Error(msg, url, line) {
+		 return true;
+	 }
+	 window.onerror = Error;
+	 var Referer = escape(document.referrer);
+	 document.write('<img src="c-board.cgi?cmd=csw');
+	 document.write('&screen=', screen.width, '_', screen.height);
+	 document.write('&color=', screen.colorDepth);
+	 document.write('&referer=', Referer);
+	 document.write('&id=');
+	 document.write('" width="1" height="1" alt="">');
+	 // -->
+	</script>
+	<noscript>
+	 <img src="c-board.cgi?cmd=csw;id=" width="1"
+		  height="1" alt="">
+	</noscript>
+
+
+</body>
+ 
+</html>
+

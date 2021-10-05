@@ -1,0 +1,224 @@
+<HTML><HEAD><TITLE>Phoenix Dragoons main message board</TITLE>
+</HEAD><BODY BGCOLOR="#E9DECF" TEXT="#000000" leftmargin="20"><font face="Verdana,Helvetica" size=2 color="#004477">
+<h2 align=center>Phoenix Dragoons Discussion Board</h2>
+<link rel="stylesheet" href="http://www.phoenixdragoons.com/messageboardCommon.css">
+<script language="javascript" src="http://www.phoenixdragoons.com/common.js"></script><P><CENTER>| <A HREF="#PostMessage">Post New Message</A> | <A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?search" TARGET=_self>Search</A> | <A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?reconfigure" TARGET=_self>Set Preferences</A> | <A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?posterstats" TARGET=_self>Top 10</A> |</CENTER></P>
+<hr><P ALIGN=CENTER><STRONG>Welcome!
+</STRONG></P>
+<P ALIGN=CENTER>Messages Posted or Modified Within the Last Week
+<P ALIGN=CENTER><EM>66 of 474 Messages Displayed<BR>(Reversed Threaded Listing)</EM></P>
+<P><UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=503" TARGET=_self>guild meeting</A></STRONG><BR>kalthin -- Friday, 26 November 1999, at 1:06 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=505" TARGET=_self>Sorry for not showing up</A></STRONG><BR>Shenjairo -- Saturday, 27 November 1999, at 4:15 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=501" TARGET=_self>Temple of the Phoenix</A></STRONG><BR>Annabelle Prettily -- Thursday, 25 November 1999, at 6:31 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=502" TARGET=_self>Re: Temple of the Phoenix</A></STRONG><BR>Siuan Saidar -- Thursday, 25 November 1999, at 10:40 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=504" TARGET=_self>Very funny, Siuan</A></STRONG><BR>Annabelle Prettily -- Friday, 26 November 1999, at 7:53 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=500" TARGET=_self>Shamen Potions</A></STRONG><BR>Bailey -- Thursday, 25 November 1999, at 3:14 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=496" TARGET=_self>Hmm, spoke too soon...</A></STRONG><BR>Warwiz Omega -- Thursday, 25 November 1999, at 6:21 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=499" TARGET=_self>Re: Hmm, spoke too soon...</A></STRONG><BR>Siuan Saidar -- Thursday, 25 November 1999, at 10:31 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=495" TARGET=_self>Finally Decided: Warwiz is on eBay</A></STRONG><BR>Warwiz -- Thursday, 25 November 1999, at 5:05 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=493" TARGET=_self>football pools</A></STRONG><BR>juzamm -- Wednesday, 24 November 1999, at 7:30 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=491" TARGET=_self>Guild Fair and other stuff</A></STRONG><BR>Preceptor Vanion Brightblade -- Wednesday, 24 November 1999, at 5:17 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=489" TARGET=_self>What is the greatest thing I can get</A></STRONG><BR>Annabelle Prettily -- Wednesday, 24 November 1999, at 4:04 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=490" TARGET=_self>Re: What is the greatest thing I can get</A></STRONG><BR>Preceptor Vanion Brightblade -- Wednesday, 24 November 1999, at 5:02 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=494" TARGET=_self>Something I didn't realise</A></STRONG><BR>Annabelle Prettily -- Wednesday, 24 November 1999, at 10:19 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=506" TARGET=_self>Re: Something I didn't realise</A></STRONG><BR>Sevastian D'Stupidhead or just Sev for short -- Sunday, 28 November 1999, at 2:19 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=480" TARGET=_self>Hmm</A></STRONG><BR>Anarath -- Tuesday, 23 November 1999, at 10:48 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=479" TARGET=_self>Indoctrination Ceremony and a Hearty Welcome</A></STRONG><BR>Serax Desuarte -- Tuesday, 23 November 1999, at 5:56 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=484" TARGET=_self>Re: Indoctrination Ceremony and a Hearty Welcome</A></STRONG><BR>kalthin -- Wednesday, 24 November 1999, at 9:20 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=497" TARGET=_self>Re: Indoctrination Ceremony and a Hearty Welcome</A></STRONG><BR>Serax Desuarte -- Thursday, 25 November 1999, at 8:15 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=498" TARGET=_self>Re: Indoctrination Ceremony and a Hearty Welcome</A></STRONG><BR>kalthin -- Thursday, 25 November 1999, at 9:40 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=478" TARGET=_self>Reccomendations</A></STRONG><BR>Shaikh -- Tuesday, 23 November 1999, at 4:41 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=507" TARGET=_self>Re: Reccomendations</A></STRONG><BR>Sevastian -- Sunday, 28 November 1999, at 2:21 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=492" TARGET=_self>Re: Reccomendations</A></STRONG><BR>Shaikh -- Wednesday, 24 November 1999, at 6:04 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=486" TARGET=_self>Re: Reccomendations</A></STRONG><BR>Ahirma -- Wednesday, 24 November 1999, at 1:15 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=483" TARGET=_self>Re: Reccomendations</A></STRONG><BR>Shenjairo -- Tuesday, 23 November 1999, at 11:22 p.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=471" TARGET=_self>GUM</A></STRONG><BR>Hman -- Tuesday, 23 November 1999, at 9:25 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=470" TARGET=_self>GUM</A></STRONG><BR>YOURMOM -- Tuesday, 23 November 1999, at 9:08 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=468" TARGET=_self>HMAN! WARRIOR!</A></STRONG><BR>Hman -- Tuesday, 23 November 1999, at 8:57 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=464" TARGET=_self>GhoulBane</A></STRONG><BR>Anaine Coreliander -- Tuesday, 23 November 1999, at 8:06 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=472" TARGET=_self>Re: GhoulBane</A></STRONG><BR>Xterra -- Tuesday, 23 November 1999, at 9:28 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=508" TARGET=_self>Re: GhoulBane</A></STRONG><BR>Sevastian -- Sunday, 28 November 1999, at 2:25 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=474" TARGET=_self>Re: GhoulBane</A></STRONG><BR>Nebu -- Tuesday, 23 November 1999, at 12:17 p.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=466" TARGET=_self>Re: GhoulBane</A></STRONG><BR>Nebu -- Tuesday, 23 November 1999, at 8:10 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=473" TARGET=_self>Re: GhoulBane</A></STRONG><BR>kalthin -- Tuesday, 23 November 1999, at 11:23 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=475" TARGET=_self>Re: GhoulBane</A></STRONG><BR>Nebu -- Tuesday, 23 November 1999, at 12:21 p.m.
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=460" TARGET=_self>Much Appologies!!</A></STRONG><BR>Anaine Coreliander -- Tuesday, 23 November 1999, at 7:33 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=465" TARGET=_self>Re: Much Appologies!!</A></STRONG><BR>Nebu -- Tuesday, 23 November 1999, at 8:06 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=459" TARGET=_self>Can i join?</A></STRONG><BR>Hman -- Tuesday, 23 November 1999, at 4:55 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=455" TARGET=_self>Charred Guardian Shield</A></STRONG><BR>Anaine Coreliander -- Monday, 22 November 1999, at 12:16 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=457" TARGET=_self>Re: Charred Guardian Shield</A></STRONG><BR>Cinnagar Soulforge -- Monday, 22 November 1999, at 8:05 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=458" TARGET=_self>Re: Charred Guardian Shield</A></STRONG><BR>kalthin -- Monday, 22 November 1999, at 9:29 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=487" TARGET=_self>Re: Charred Guardian Shield</A></STRONG><BR>Ahirma -- Wednesday, 24 November 1999, at 1:26 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=461" TARGET=_self>Re: Charred Guardian Shield</A></STRONG><BR>Anaine Coreliander -- Tuesday, 23 November 1999, at 7:45 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=423" TARGET=_self>eBay auctions</A></STRONG><BR>Shenjairo -- Saturday, 20 November 1999, at 10:10 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=488" TARGET=_self>Re: eBay auctions</A></STRONG><BR>Ahirma -- Wednesday, 24 November 1999, at 1:46 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=481" TARGET=_self>Re: eBay auctions</A></STRONG><BR>Preceptor Vanion Brightblade -- Tuesday, 23 November 1999, at 11:04 p.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=450" TARGET=_self>Re: eBay auctions</A></STRONG><BR>Serax Desuarte -- Sunday, 21 November 1999, at 9:38 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=414" TARGET=_self>Re: quitting guild please read</A></STRONG><BR>Nebu -- Friday, 19 November 1999, at 8:03 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=456" TARGET=_self>Re: quitting guild please read</A></STRONG><BR>Sevastian -- Monday, 22 November 1999, at 6:52 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=467" TARGET=_self>Re: quitting guild please read</A></STRONG><BR>Nebu -- Tuesday, 23 November 1999, at 8:12 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=408" TARGET=_self>Applicant #4: Halkhan L36 Monk</A></STRONG><BR>Siuan Saidar -- Thursday, 18 November 1999, at 4:43 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=476" TARGET=_self>Re: Applicant #4: Halkhan L36 Monk</A></STRONG><BR>Halkhan Spiritfist -- Tuesday, 23 November 1999, at 4:25 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=485" TARGET=_self>Re: Applicant #4: Halkhan L36 Monk</A></STRONG><BR>kalthin -- Wednesday, 24 November 1999, at 9:22 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=428" TARGET=_self>Re: Applicant #4: Halkhan L36 Monk</A></STRONG><BR>Shenjairo -- Saturday, 20 November 1999, at 11:00 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=449" TARGET=_self>Re: Applicant #4: Halkhan L36 Monk</A></STRONG><BR>Shenjairo -- Sunday, 21 November 1999, at 7:42 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=406" TARGET=_self>Applicant #2: Bailey L40 Warrior</A></STRONG><BR>Siuan Saidar -- Thursday, 18 November 1999, at 4:42 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=453" TARGET=_self>Re: Applicant #2: Bailey L40 Warrior</A></STRONG><BR>Bailey -- Monday, 22 November 1999, at 11:09 a.m.
+<UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=419" TARGET=_self>Re: Applicant #2: Bailey L40 Warrior</A></STRONG><BR>Serax Desuarte -- Friday, 19 November 1999, at 5:23 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=452" TARGET=_self>Re: Applicant #2: Bailey L40 Warrior</A></STRONG><BR>Bailey -- Monday, 22 November 1999, at 11:06 a.m.
+<UL>
+</UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=405" TARGET=_self>Applicant #1: Cinnagar L38 Cleric</A></STRONG><BR>Siuan Saidar -- Thursday, 18 November 1999, at 4:41 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=454" TARGET=_self>Re: Applicant #1: Cinnagar L38 Cleric</A></STRONG><BR>Cinnagar Soulforge -- Monday, 22 November 1999, at 11:17 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=393" TARGET=_self>Quiting</A></STRONG><BR>Banelor -- Wednesday, 17 November 1999, at 7:43 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=462" TARGET=_self>Re: Quiting</A></STRONG><BR>Anaine Coreliander -- Tuesday, 23 November 1999, at 7:48 a.m.
+<UL>
+</UL>
+</UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=389" TARGET=_self>Musing's and ramblings</A></STRONG><BR>Ahirma -- Tuesday, 16 November 1999, at 3:41 p.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=463" TARGET=_self>Re: Musing's and ramblings</A></STRONG><BR>Anaine Coreliander -- Tuesday, 23 November 1999, at 7:55 a.m.
+<UL>
+<LI><STRONG><A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?read=482" TARGET=_self>Re: Musing's and ramblings</A></STRONG><BR>Shenjairo -- Tuesday, 23 November 1999, at 11:07 p.m.
+<UL>
+</UL>
+</UL>
+</UL>
+</UL></P>
+<hr><H2 ALIGN=CENTER><A NAME="PostMessage">Post a New Message</A></H2>
+<P><FORM METHOD=POST ACTION="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?post" TARGET=_self>
+<P><CENTER><TABLE><TR>
+<TD ALIGN=RIGHT><STRONG>Your Name:</STRONG></TD><TD><INPUT TYPE=TEXT NAME="name" SIZE=40 MAXLENGTH=50></TD></TR><TR>
+<TD ALIGN=RIGHT><STRONG>E-Mail Address:</STRONG></TD><TD><INPUT TYPE=TEXT NAME="email" SIZE=40 MAXLENGTH=50></TD></TR><TR>
+<TD ALIGN=RIGHT><STRONG>Subject:</STRONG></TD><TD><INPUT TYPE=TEXT NAME="subject" SIZE=40 MAXLENGTH=50></TD></TR><TR>
+<TD COLSPAN=2 ALIGN=CENTER><P><STRONG>Message:</STRONG>
+<BR><TEXTAREA COLS=80 ROWS=15 NAME="body" WRAP=VIRTUAL></TEXTAREA></TD></TR><TR>
+<TH COLSPAN=2><P><INPUT TYPE=SUBMIT NAME="Preview" VALUE="Preview Message"> <INPUT TYPE=SUBMIT NAME="Post" VALUE="Post Message"></TH></TR></TABLE></CENTER></P></FORM>
+<P><CENTER>| <A HREF="#PostMessage">Post New Message</A> | <A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?search" TARGET=_self>Search</A> | <A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?reconfigure" TARGET=_self>Set Preferences</A> | <A HREF="http://www.phoenixdragoons.com/cgi-bin/messageboard.pl?posterstats" TARGET=_self>Top 10</A> |</CENTER></P>
+<P ALIGN=CENTER><SMALL><EM>Phoenix Dragoons main message board is maintained by Siuan Saidar (<A HREF="mailto:siuan@phoenixdragoons.com">siuan@phoenixdragoons.com</A>)</EM></SMALL></P>
+<script language="javascript" src="http://www.phoenixdragoons.com/messageboardFooter.js"></script>
+<script language="javascript">wsID=291; ctr=2587;</script><script language="javascript" src="http://www.phoenixdragoons.com/commonCounter.js"></script>
+</BODY></HTML>
+

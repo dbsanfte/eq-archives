@@ -1,0 +1,743 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en">
+<head>
+<title>EverQuest Clerics</title>
+
+<!-- nocache headers -->
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="no-cache" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="cache-control" content="no-cache" />
+<!-- end nocache headers -->
+<link rel="shortcut icon" href="/images/eqcleric.ico">
+<meta name="keywords" content="everquest,cleric,healers,eq,eqcleric,clerics,wisdom,mana,rpg,mmorpg,mmo,epic,quests,guides,articles,forums,spells,magic,spellbook,roleplaying">
+<meta name="description" content="EverQuest Clerics is a community fan site for the game of EverQuest. Guides, Quests, Spells, Forums are all available at http://www.eqcleric.com/ .">
+<title>Welcome to EverQuest Clerics - powered by Dwarfs!</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="msthemecompatible" content="yes" />
+<meta name="robots" content="index,follow" />
+<!-- <link href="http://www.eqcleric.com/forums/style1.css" rel="stylesheet" type="text/css" /> -->
+<style type="text/css">
+<!--
+
+body {
+  background-color: #666696;
+  color: #000000;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+body a:link, body a:visited {
+  color: #FEDE01;
+}
+body a:hover, body a:active {
+  color: #fcc504;
+}
+select {
+  background-color: #CFCFCF;
+  color: #000000;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+.archivebody {
+   font-weight: normal;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 12px;
+   color: #FFFFFF;
+ }
+.archiveheader {
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 13px;
+   color: #FFFFFF;
+ }
+.articleheadline {
+   font-weight: bold;
+   font-family: Helvetica, Arial, Verdana, sans-serif;
+   font-size: 15px;
+   color: #FFFFFF;
+ }
+.bgheader {
+  background-image: url('http://www.eqcleric.com/forums/images/menu_background.gif');
+  text-align: left;
+  vertical-align: top;
+}
+.bginput {
+  background-color: #CFCFCF;
+  color: #000000;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+.clcategory {
+  background-color: #262C4C;
+  color: #FCC504;
+  font-weight: bold;
+}
+.clcategoryleft {
+  background-color: #4D4D73;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #FFFFEE;
+  font-weight: bold;
+}
+.clcategory a:link, .clcategory a:visited {
+  color: #FFFFEE;
+  
+  text-decoration: none;
+}
+.clcategory a:hover, .clcategory a:active {
+  color: #FCC504;
+  text-decoration: underline;
+}
+.clfirst {
+  background-color: #666699;
+}
+.clhead {
+  background-color: #262C4C;
+  color: #FFFFEE;
+  font-weight: bold;
+}
+.clheadtext {
+  color: #FFFFEE;
+}
+.clsecond {
+  background-color: #262C4C;
+}
+.clpostedby {
+  background-color: #4D4D73;
+}
+.clpollq {
+  background-color: #4D4D73;
+}
+.clsecondright {
+  background-color: #262C4C;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  text-align: right;
+}
+.clweblinks {
+  background-color: #666699;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+.cltime {
+  color: #FEDE01;
+}
+.flarge {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.flargerwhite {
+  font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.fwhite {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+.fnormal {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+.fsmaller {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+.fsmall {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  font-size: 10px;
+}
+.fspellsection {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  color: #FCC504;
+  font-size: 13px;
+  font-weight: bold;
+}
+.imgborder {
+  border-width: 0px;
+}
+.imgborderbottom {
+  border-width: 0px;
+  vertical-align: bottom;
+}
+.imgbordermiddle {
+  border-width: 0px;
+  vertical-align: middle;
+}
+.imgspacer {
+	border: 1px solid #262C4C;
+	float: right;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-top: 2px;
+}
+.lkfooter {
+  text-decoration: none;
+}
+.pollquestion {
+  color: #FFFFFF;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+.pollresult {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #FEDE01;
+  font-weight: bold;
+  padding-bottom: 6px;
+
+}
+
+.tbarchive {
+  background-color: #F4F4F4;
+  border: 1px solid #262C4C;
+  border-collapse: collapse;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: left;
+  width: 100%;
+}
+.tbarticle {
+  border-collapse: collapse;
+  border-width: 0px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  font-size: 13px;
+  width: 100%;
+}
+.tbborder {
+  border: 1px solid #262C4C;
+  border-collapse: collapse;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: left;
+  width: 100%;
+}
+.tbcontentsmall {
+  border: 1px solid #262C4C;
+  border-collapse: collapse;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 100%;
+}
+.tberror {
+  border-collapse: collapse;
+  border-width: 0px;
+  height: 50%;
+  width: 70%;
+}
+.tbmain {
+  border-collapse: collapse;
+  border-width: 0px;
+  width: 100%;
+}
+.tbmaincolor {
+  background-color: #3A4373;
+  border-collapse: collapse;
+  border-width: 0px;
+  width: 100%;
+}
+.tbnormal {
+  border-collapse: collapse;
+  border-width: 0px;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: left;
+  width: 100%;
+}
+.tbsimple {
+  border-collapse: collapse;
+  border-width: 0px;
+}
+.tdarchive {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-bottom: 4px;
+  width: 100%;
+}
+.tdspells {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+ }
+.tdspellswhite {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #FFFFFF;
+ }
+.tdarticle {
+  text-align: right;
+  width: 60px;
+}
+.tdavatar {
+  padding-top: 2px;
+  width: 72px;
+  vertical-align: top;
+}
+.tdpanel {
+  width: 225px;
+  vertical-align: top;
+}
+.tdpollbar {
+  background-image: url('http://www.eqcleric.com/forums/images/polls/bar-bk.gif');
+  width: 150px;
+}
+.tdspace {
+  width: 7px;
+}
+.txtbold {
+   font-weight: bold;
+   color: #FFFFFF;
+ }
+.txtbolditalic {
+  font-style: italic;
+  font-weight: bold;
+}
+.txtitalic {
+  font-style: italic;
+}
+.txtcategory {
+  color: #FCC504;
+  font-weight: bold;
+}
+.txtdonate {
+  color: #FCC504;
+  font-family: Verdana, Geneva, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+.txtcenter {
+  text-align: center;
+}
+.txtform {
+  margin: 0px;
+}
+.txtrightbottom {
+  text-align: right;
+  vertical-align: bottom;
+}
+.txttop {
+  vertical-align: top;
+}
+.txtspellname {
+  font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
+  font-size: 16px;
+  color: #FCC504;
+  font-weight: bold;
+}
+
+-->
+</style>
+
+</head>
+<body background="/forums/images/background2.jpg" bgcolor="#666696" text="#000000" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+<table width="90%" align="center" cellpadding="3" cellspacing="0" bgcolor="#262C4C" border="0">
+<tr>
+	<td>
+	<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#3A4373" border="0">
+<tr>
+	<td>
+
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<!-- Logo -->
+	<td vAlign="TOP" align="left" rowspan="3"><a href="/index.php?s=1a57c2281ea47cb69e9165e4715d5738" Title="EverQuest Clerics - Click to return to main page"><img src="http://www.eqcleric.com/forums/images/eqclericlogo.gif" border="0" width="311" height="124"></a></td>
+	<!-- Logo -->
+		
+	<!-- Nav Bar -->
+	<td vAlign="TOP" align="right"><img src="http://www.eqcleric.com/forums/images/navbar_corner.gif"><img src="http://www.eqcleric.com/forums/images/btn_sections.gif"><a href="/spells.php?s=1a57c2281ea47cb69e9165e4715d5738" Title="EverQuest Clerics Spell System"><img src="http://www.eqcleric.com/forums/images/btn_spells.gif" border="0"></a><img src="http://www.eqcleric.com/forums/images/btn_quests.gif"><a href="http://www.eqcleric.com/forums/index.php?s=1a57c2281ea47cb69e9165e4715d5738" alt="Forums"><img src="http://www.eqcleric.com/forums/images/btn_forums.gif" border=0></a><a href="/index.php?s=1a57c2281ea47cb69e9165e4715d5738"><img src="http://www.eqcleric.com/forums/images/btn_home.gif" alt="Home" border="0"></a><br><img src="http://www.eqcleric.com/forums/images/navbar_corner2.gif"><a href="http://www.eqcleric.com/forums/usercp.php?s=1a57c2281ea47cb69e9165e4715d5738"><img src="http://www.eqcleric.com/forums/images/btn_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0"></a><a href="http://www.eqcleric.com/forums/memberlist.php?s=1a57c2281ea47cb69e9165e4715d5738"><img src="http://www.eqcleric.com/forums/images/btn_members.gif" alt="Find other members" border="0"></a><a href="http://www.eqcleric.com/forums/search.php?s=1a57c2281ea47cb69e9165e4715d5738"><img src="http://www.eqcleric.com/forums/images/btn_search.gif" alt="Search" border="0"></a><a href="http://www.eqcleric.com/forums/misc.php?s=1a57c2281ea47cb69e9165e4715d5738&action=faq"><img src="http://www.eqcleric.com/forums/images/btn_faq.gif" alt="Frequently Asked Questions" border="0"></a><a href="http://www.eqcleric.com/forums/calendar.php?s=1a57c2281ea47cb69e9165e4715d5738"><img src="http://www.eqcleric.com/forums/images/btn_calendar.gif"  alt="Calendar" border="0"></a><br><img src="http://www.eqcleric.com/forums/images/navbar_corner2.gif"><a href="http://www.eqcleric.com/forums/register.php?s=1a57c2281ea47cb69e9165e4715d5738&action=signup"><img src="http://www.eqcleric.com/forums/images/btn_register.gif" alt="Registration is free!" border="0"></a><a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&action=logout"><img src="http://www.eqcleric.com/forums/images/btn_logout.gif" alt="Logout" border="0"></a><br></td>
+	<!-- Nav Bar -->
+</tr>
+<tr><td align="center" vAlign="TOP" class="txtdonate"><a href="/show.php?pg=Donation"><img src="/images/mini_donate.gif" width="100" height="40" border="0" align="center" Alt="Help keep EverQuest Clerics online..."></a></td></tr>
+<tr><td align="center" vAlign="TOP"><h4>&nbsp;</h3></td></tr>
+</table>
+	<br>
+<!-- Main Site Table -->
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+<tr>
+	
+	<td vAlign="TOP">
+
+<!-- content table -->
+<table bgcolor="#3A4373" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td>
+
+<table cellpadding="4" cellspacing="0"  class="tbnormal" summary="normal">
+<tr>
+<td class="tdpanel" valign="TOP">
+<table cellpadding="4" cellspacing="0"  class="tbcontentsmall" summary="small content">
+<tr class="clcategory">
+<td class="fnormal">Hello, <span class="clheadtext">visitor</span>.</td>
+</tr>
+<tr class="clfirst">
+<td class="fsmall">Your last visit to our web site was on<br />
+<span class="cltime">11-26-2003 07:41 PM</span>.<br><br>
+You have to <a href="http://www.eqcleric.com/forums/register.php?s=1a57c2281ea47cb69e9165e4715d5738">register</a> before you can post to our site.<br />
+<br />
+<form action="http://www.eqcleric.com/forums/member.php" class="txtform" method="post"><input
+type="hidden" name="s" value="1a57c2281ea47cb69e9165e4715d5738" /><input
+type="hidden" name="action" value="login" /><b>Members Log In Below:</b><br />
+<img src="forums/images/clear.gif" alt="" height="4" class="imgborder" width="1" /><br />
+<input class="bginput" name="username" size="16" type="text" /> <input class="bginput" name="password" size="12" type="password" /> <input src="forums/images/go.gif" type="image" class="imgborderbottom" /></form></td>
+</tr>
+
+<tr class="clcategoryleft">
+<td>Web Site Statistics</td>
+</tr>
+<tr class="clfirst">
+<td class="fsmall">The time now is <span class="cltime">07:41 PM</span>.<br />
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" />Active members: 2,859<br />
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" />Our newest member: <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3892">Pheonia</a><br />
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" />Forum threads: 2,173<br />
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" />Forum posts: 21,839</td>
+</tr>
+<tr class="clcategoryleft">
+<td>Users On Now</td>
+</tr>
+<tr class="clfirst">
+<td class="fsmall">There are <span class="txtbold">25</span> online users browsing:<br />
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" />7 members and 18 visitors<br />
+</td>
+</tr>
+<tr class="clcategoryleft">
+<td>Web Site Search</td>
+</tr>
+<tr class="clfirst">
+<td class="fsmall"><form action="http://www.eqcleric.com/forums/search.php" class="txtform" method="post" name="search"><input
+type="hidden" name="s" value="1a57c2281ea47cb69e9165e4715d5738" /><input
+type="hidden" name="forumchoice" value="-1" /><input
+type="hidden" name="searchin" value="subject" /><input
+type="hidden" name="searchdate" value="-1" /><input
+type="hidden" name="action" value="simplesearch" /><input
+type="hidden" name="booleanand" value="yes" /><input
+class="bginput" name="query" size="32" type="text" />
+<input src="forums/images/go.gif" type="image" class="imgborderbottom" />
+[<a href="http://www.eqcleric.com/forums/search.php?s=1a57c2281ea47cb69e9165e4715d5738">Advanced Search</a>]</form></td>
+</tr>
+
+<tr class="clcategoryleft">
+<td>Web Site Quick Links</td>
+</tr>
+<tr class="clweblinks">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/">EverQuest Clerics Main Page</a><br />
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/">EverQuest Clerics Forum<br>
+<img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="/archive">EverQuest Clerics Archive
+</a></td>
+</tr>
+</table>
+<br />
+
+<form action="http://www.eqcleric.com/forums/poll.php" class="txtform" method="post">
+<input type="hidden" name="s" value="1a57c2281ea47cb69e9165e4715d5738" />
+<input type="hidden" name="action" value="pollvote" />
+<input type="hidden" name="pollid" value="70" />
+<table cellpadding="4" cellspacing="0"  class="tbcontentsmall" summary="small content">
+<tr class="clcategory">
+<td class="fnormal">Site Poll</td>
+</tr>
+<tr class="clsecond">
+<td bgcolor="#4D4D73" class="txtbold">What do you think of Lost Dungeons of Norrath?</td>
+</tr>
+<tr class="clfirst">
+<td class="fsmall"><input name="optionnumber" type="radio" value="1" />Love it!<br />
+<input name="optionnumber" type="radio" value="2" />Waste of my money!<br />
+<input name="optionnumber" type="radio" value="3" />It's okay, was expecting more.<br />
+<input name="optionnumber" type="radio" value="4" />It's a fad, hardly anyone will goto the dungeons next month.<br />
+<br />
+<input class="bginput" name="button" type="submit" value="Vote" /></td>
+</tr>
+<tr class="clsecond">
+<td align="center"><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5491">Discuss This Poll</a> &nbsp; <img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/poll.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=showresults&amp;pollid=70">View Results</a></td>
+</tr>
+</table>
+</form>
+<br />
+<table cellpadding="4" cellspacing="1"  class="tbcontentsmall" summary="small content">
+<tr class="clcategory">
+<td><a href="http://www.eqcleric.com/forums/index.php?s=1a57c2281ea47cb69e9165e4715d5738">Latest Forum Discussions</a></td>
+</tr>
+<tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6062"><span class="txtbold">Hello everyone</span></a><br />
+Today <span class="cltime">07:38 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3892">Pheonia</a><br />
+Views: 4 &nbsp; Replies: 1</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5145"><span class="txtbold">Our Class "Endgame" Breastpl...</span></a><br />
+Today <span class="cltime">07:06 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=1165">Dyschord</a><br />
+Views: 898 &nbsp; Replies: 35</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6013"><span class="txtbold">Need advice on equipment ple...</span></a><br />
+Today <span class="cltime">06:57 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3838">Tumpy</a><br />
+Views: 137 &nbsp; Replies: 6</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6053"><span class="txtbold">well, was in my first Heal C...</span></a><br />
+Today <span class="cltime">06:55 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3233">Keryssa</a><br />
+Views: 157 &nbsp; Replies: 9</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6061"><span class="txtbold">Peridot Jewelry</span></a><br />
+Today <span class="cltime">06:20 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3606">Driselle</a><br />
+Views: 16 &nbsp; Replies: 0</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6054"><span class="txtbold">BAH, to wait for zordak</span></a><br />
+Today <span class="cltime">05:58 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3148">Tegar</a><br />
+Views: 76 &nbsp; Replies: 7</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6060"><span class="txtbold">SOE's Customer Support close...</span></a><br />
+Today <span class="cltime">05:52 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=1733">Agmyleez</a><br />
+Views: 13 &nbsp; Replies: 0</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6059"><span class="txtbold">Original Everquest for FREE</span></a><br />
+Today <span class="cltime">05:47 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=1733">Agmyleez</a><br />
+Views: 27 &nbsp; Replies: 0</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6036"><span class="txtbold">What was said at the melee c...</span></a><br />
+Today <span class="cltime">05:36 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=1733">Agmyleez</a><br />
+Views: 98 &nbsp; Replies: 2</td>
+</tr><tr class="clfirst">
+<td><img src="forums/images/arrow.gif" alt="" class="imgborder" height="7" width="7" /><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=6035"><span class="txtbold">Advise for a newb cleric ple...</span></a><br />
+Today <span class="cltime">05:10 PM</span> <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=3446">Yoshy</a><br />
+Views: 98 &nbsp; Replies: 8</td>
+</tr>
+
+
+</table>
+
+</td>
+<td class="tdspace">&nbsp;</td>
+<td class="txttop"><table cellpadding="4" cellspacing="0"  class="tbborder" summary="border">
+<tr class="clcategory">
+<td>
+<table cellpadding="2" cellspacing="0" class="tbarticle" summary="article">
+<tr>
+<td class="articleheadline"> <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5833">Good, Bad &amp; Ugly</a></td>
+<td class="tdarticle"><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5833"><img src="forums/images/article.gif" alt="Read article" class="imgbordermiddle" height="15" width="55" /></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clpostedby">
+<td class="fsmall">Posted by <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=1">Jarvis</a> 10-27-2003 at <span class="cltime">04:13 AM</span> - no comments</td>
+</tr>
+<tr class="clfirst">
+<td>
+<table cellpadding="0" cellspacing="0" class="tbarticle" summary="article">
+<tr class="txttop">
+
+<td><b>Good</b><br />
+- Albinator has gracefully worked with us agreeing to supply us with a free version of their image gallery community software for a translation of their system to Norwegian by yours truly.<br />
+<br />
+- October is looking to be a RECORD month for visitors at eqcleric.com. Yay!<br />
+<br />
+<b>Bad</b><br />
+- More and more people choose to register with a broken/fabricated e-mail address. This will not work and results in account being removed within 10 days. (Automated)<br />
+<br />
+- We cannot release frontend system until the spell system has been re-written to interface with it. It's currently reliant on our existing frontend.<br />
+<br />
+<b>Ugly</b><br />
+- Someone has been attacking eqcleric.com using DOS, which is short for <a href="http://www.cert.org/tech_tips/denial_of_service.html" target="_blank">Denial of Service</a>. We were about to lose our hosting and this great site was close to extinction. Thankfully <a href="http://www.totalchoicehosting.com" target="_blank">our host</a> took us in and spent a lot of time helping us get the situation under control. In the process several IP's had to be banned, some of which belong to legit users. No way around that. If you find you can't access the site from certain computers etc, contact us to have the IP unlocked. This will be done on a case-by-case basis <b>ONLY</b>.<br />
+<br />
+I'd like to extend a warm thank you to our host, <a href="http://www.totalchoicehosting.com" target="_blank">TotalChoice Hosting</a>, for their extensive effort and willingness to keep us around and help us solve the issue. I'm sorry for any issue this has caused for the respective users.<br />
+<br />
+Due to all this in conjunction with RL events I will not be around for the next couple of weeks except to keep talking to our host when needed. Any and all inqueries can be, and should be directed at Dyschord exclusively.<br />
+<br />
+If you have used an illegal email address to register and cannot enter your account to change it, due to no activation, don't go crying to any staff member on this site. You'll have to wait the 10 days for the account to be removed, then you can re-register.<br />
+<br />
+-Jarv</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clsecondright">
+<td class="fsmall">Read 41 times - make a <a href="http://www.eqcleric.com/forums/newreply.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=newreply&amp;threadid=5833">comment</a> &nbsp; <a href="http://www.eqcleric.com/forums/printarticle.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5833" target="_blank"><img src="forums/images/articleprint.gif" alt="Printer Friendly version" width="16" height="16" class="imgbordermiddle" /></a> <a href="http://www.eqcleric.com/forums/sendtofriend.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5833" target="_blank"><img src="forums/images/articleemail.gif" alt="Email this Article to a friend" width="16" height="16" class="imgbordermiddle" /></a></td>
+</tr>
+</table>
+<br /><table cellpadding="4" cellspacing="0"  class="tbborder" summary="border">
+<tr class="clcategory">
+<td>
+<table cellpadding="2" cellspacing="0" class="tbarticle" summary="article">
+<tr>
+<td class="articleheadline"> <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5762">Winners are in!</a></td>
+<td class="tdarticle"><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5762"><img src="forums/images/article.gif" alt="Read article" class="imgbordermiddle" height="15" width="55" /></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clpostedby">
+<td class="fsmall">Posted by <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=959">Numo</a> 10-17-2003 at <span class="cltime">05:40 PM</span> - 5 comments</td>
+</tr>
+<tr class="clfirst">
+<td>
+<table cellpadding="0" cellspacing="0" class="tbarticle" summary="article">
+<tr class="txttop">
+
+<td>Congratulations to everyone that participated and put up with me on this =) <br />
+<br />
+All the stories were great but your fates were determined by your peers and these 5 win the prize. Sorry to see one of my picks didn't make it, but thank you too all that participated!<br />
+<br />
+<a href="http://www.eqcleric.com/forums/member.php?s=&action=getinfo&userid=26" target="_blank">Auroralee</a> - 22<br />
+<a href="http://www.eqcleric.com/forums/member.php?s=&action=getinfo&userid=2175" target="_blank">Gnarm</a> - 14<br />
+<a href="http://www.eqcleric.com/forums/member.php?s=&action=getinfo&userid=2767" target="_blank">Grimmond</a> - 12<br />
+<a href="http://www.eqcleric.com/forums/member.php?s=&action=getinfo&userid=2602" target="_blank">Arlessa</a> - 11<br />
+<a href="http://www.eqcleric.com/forums/member.php?s=&action=getinfo&userid=2162" target="_blank">Norvik</a> - 7<br />
+<br />
+<a href="http://www.eqcleric.com/forums/showthread.php?s=&threadid=5228" target="_blank">Original Contest Rules</a><br />
+<a href="http://www.eqcleric.com/forums/forumdisplay.php?s=&forumid=31" target="_blank">Read the stories!</a><br />
+<a href="http://www.eqcleric.com/forums/showthread.php?s=&postid=18152" target="_blank">Vote for your favorites!</a><br />
+<br />
+--Numo</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clsecondright">
+<td class="fsmall">Read 72 times - last <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;goto=lastpost&amp;threadid=5762" title="Read last comment">comment</a> by Keyera &nbsp; <a href="http://www.eqcleric.com/forums/printarticle.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5762" target="_blank"><img src="forums/images/articleprint.gif" alt="Printer Friendly version" width="16" height="16" class="imgbordermiddle" /></a> <a href="http://www.eqcleric.com/forums/sendtofriend.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5762" target="_blank"><img src="forums/images/articleemail.gif" alt="Email this Article to a friend" width="16" height="16" class="imgbordermiddle" /></a></td>
+</tr>
+</table>
+<br /><table cellpadding="4" cellspacing="0"  class="tbborder" summary="border">
+<tr class="clcategory">
+<td>
+<table cellpadding="2" cellspacing="0" class="tbarticle" summary="article">
+<tr>
+<td class="articleheadline"> <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5647">Writing Contest</a></td>
+<td class="tdarticle"><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5647"><img src="forums/images/article.gif" alt="Read article" class="imgbordermiddle" height="15" width="55" /></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clpostedby">
+<td class="fsmall">Posted by <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=959">Numo</a> 10-01-2003 at <span class="cltime">06:04 PM</span> - 1 comment</td>
+</tr>
+<tr class="clfirst">
+<td>
+<table cellpadding="0" cellspacing="0" class="tbarticle" summary="article">
+<tr class="txttop">
+
+<td>After such a good turnout in entries the wonderful writers get insulted by people not voting. Come on people! Show some support of these people that took the time to write these stories! A lot of people have already read the stories but only 22 votes were cast?!?! And since you can vote for more than 1 story that means less than 22 people voted! I'm sorry but that is very disenhartening for me and for the writers that took their time to write these stories.<br />
+<br />
+This was supposed to get everyone involved... People that have talent to write and those that don't. But a lot of you can't even click a few boxes to show your support. You know who you are, shame on you!<br />
+<br />
+Now go <a href="http://www.eqcleric.com/forums/showthread.php?s=&postid=18152" target="_blank">VOTE</a> before I get really upset about this!<br />
+<br />
+--Numo</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clsecondright">
+<td class="fsmall">Read 45 times - last <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;goto=lastpost&amp;threadid=5647" title="Read last comment">comment</a> by Restandre &nbsp; <a href="http://www.eqcleric.com/forums/printarticle.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5647" target="_blank"><img src="forums/images/articleprint.gif" alt="Printer Friendly version" width="16" height="16" class="imgbordermiddle" /></a> <a href="http://www.eqcleric.com/forums/sendtofriend.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5647" target="_blank"><img src="forums/images/articleemail.gif" alt="Email this Article to a friend" width="16" height="16" class="imgbordermiddle" /></a></td>
+</tr>
+</table>
+<br /><table cellpadding="4" cellspacing="0"  class="tbborder" summary="border">
+<tr class="clcategory">
+<td>
+<table cellpadding="2" cellspacing="0" class="tbarticle" summary="article">
+<tr>
+<td class="articleheadline"> <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5542">Vote on winners for the Writing Contest</a></td>
+<td class="tdarticle"><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5542"><img src="forums/images/article.gif" alt="Read article" class="imgbordermiddle" height="15" width="55" /></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clpostedby">
+<td class="fsmall">Posted by <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=959">Numo</a> 09-16-2003 at <span class="cltime">06:21 PM</span> - no comments</td>
+</tr>
+<tr class="clfirst">
+<td>
+<table cellpadding="0" cellspacing="0" class="tbarticle" summary="article">
+<tr class="txttop">
+
+<td><img src="http://www.eqcleric.com/images/featherpen.gif" border="0" width="44" height="42" align="right">Yes, you are allowed to vote on more than one story. Since we're looking for 5 winner please only choose a max of 5. <br />
+<br />
+In 2 weeks this poll will automatically close. At such time if there are any ties we will rerun the poll with the potential winners only for another week.<br />
+<br />
+I have copied the threads for the stories and pruned any comments so you may read them without interruption =)<br />
+<br />
+You must be a registered user to vote! No fluffing allowed!<br />
+<br />
+<a href="http://www.eqcleric.com/forums/forumdisplay.php?s=&forumid=31" target="_blank">Entires in the contest</a><br />
+<br />
+<a href="http://www.eqcleric.com/forums/showthread.php?s=&threadid=5540" target="_blank">Vote here!</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clsecondright">
+<td class="fsmall">Read 34 times - make a <a href="http://www.eqcleric.com/forums/newreply.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=newreply&amp;threadid=5542">comment</a> &nbsp; <a href="http://www.eqcleric.com/forums/printarticle.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5542" target="_blank"><img src="forums/images/articleprint.gif" alt="Printer Friendly version" width="16" height="16" class="imgbordermiddle" /></a> <a href="http://www.eqcleric.com/forums/sendtofriend.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5542" target="_blank"><img src="forums/images/articleemail.gif" alt="Email this Article to a friend" width="16" height="16" class="imgbordermiddle" /></a></td>
+</tr>
+</table>
+<br /><table cellpadding="4" cellspacing="0"  class="tbborder" summary="border">
+<tr class="clcategory">
+<td>
+<table cellpadding="2" cellspacing="0" class="tbarticle" summary="article">
+<tr>
+<td class="articleheadline"> <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5535">Writing contest is closed... What's next?</a></td>
+<td class="tdarticle"><a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5535"><img src="forums/images/article.gif" alt="Read article" class="imgbordermiddle" height="15" width="55" /></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clpostedby">
+<td class="fsmall">Posted by <a href="http://www.eqcleric.com/forums/member.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;action=getinfo&amp;userid=959">Numo</a> 09-16-2003 at <span class="cltime">08:15 AM</span> - 1 comment</td>
+</tr>
+<tr class="clfirst">
+<td>
+<table cellpadding="0" cellspacing="0" class="tbarticle" summary="article">
+<tr class="txttop">
+
+<td><img src="http://www.eqcleric.com/images/featherpen.gif" border="0" width="44" height="42" align="right">Hope everyone has enjoyed the writing contest because there's more to come!<br />
+<br />
+Almost 2 months ago I had the idea for a writing contest. A few days thinking about it then asking some of the members what they thought and eventually posting it. We had a lot better turnout than I expected and some very good stories to boot! At that time I felt I was walking on egg shells when I started that because I really hadn't talked to Master Jarvis about it nor was I part of his inner Claviger circle. Well after discussions with Dyschord and Jarvis they've convinced me to help out. Damn that dwarf can be convincing. He guarantees this won't get me laid too! How could I refuse?!<br />
+<br />
+One of the things I want to do is start up more member events/contests. So I'm turning to all of you out there to help me come up with ideas. After all you are the ones that will be participating! So far we're working on details for a comic contest. Don't worry we've already said Jarvis can't participate =)<br />
+<br />
+So let's here your ideas! Maybe you'll get a little something if we use your idea!<br />
+<br />
+If you're shy and don't want to post your idea here feel free to send me a <a href="http://www.eqcleric.com/forums/private.php?s=&action=newmessage&userid=959" target="_blank">private message</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="clsecondright">
+<td class="fsmall">Read 48 times - last <a href="http://www.eqcleric.com/forums/showthread.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;goto=lastpost&amp;threadid=5535" title="Read last comment">comment</a> by Restandre &nbsp; <a href="http://www.eqcleric.com/forums/printarticle.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5535" target="_blank"><img src="forums/images/articleprint.gif" alt="Printer Friendly version" width="16" height="16" class="imgbordermiddle" /></a> <a href="http://www.eqcleric.com/forums/sendtofriend.php?s=1a57c2281ea47cb69e9165e4715d5738&amp;threadid=5535" target="_blank"><img src="forums/images/articleemail.gif" alt="Email this Article to a friend" width="16" height="16" class="imgbordermiddle" /></a></td>
+</tr>
+</table>
+<br /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+
+<p align="center"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+<!-- Do not remove this copyright notice or edit the links -->
+<a href="http://www.teckwizards.com" target="_blank" style="text-decoration: none">vbHome (lite) v4.2</a> and <a href="http://www.vbulletin.com" target="_blank" style="text-decoration: none">vBulletin v2.3.0</a><br>
+Copyright &copy;2000 - 2002, Jelsoft Enterprises Limited<br>
+<!-- Do not remove this copyright notice or edit the links -->
+Original content &copy;eqcleric.com. All rights reserved.<br><img src="/images/poweredby.gif" width="186" height="35" Alt="EverQuest Clerics - Powered by Dwarves!" Border="0"></font></p>
+<p align="center"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+Page generated in 0.12106705 seconds (63.44% PHP - 36.56% MySQL) with 18 queries.
+
+</font>
+</td>
+</tr>
+</table>
+<!-- Main Site Table -->
+
+
+	
+	</td>
+</tr>
+</table>
+
+	
+	</td>
+</tr>
+</table>
+</body>
+</html>

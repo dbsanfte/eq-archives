@@ -1,0 +1,48 @@
+<html><head><title>延岡川柳</title>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=x-sjis">
+<STYLE TYPE="text/css">
+<!--
+.f16 { font-size: 16pt; font-family: HGP行書体,HGS行書体,HG行書体,'ＭＳ 明朝','明朝'; }
+.f24 { font-size: 24pt; font-family: HGP行書体,HGS行書体,HG行書体,'ＭＳ 明朝','明朝'; }
+.f36 { font-size: 36pt; font-family: HGP行書体,HGS行書体,HG行書体,'ＭＳ 明朝','明朝'; }
+.f48 { font-size: 48pt; font-family: HGP行書体,HGS行書体,HG行書体,'ＭＳ 明朝','明朝'; }
+.f80 { font-size: 80pt; font-family: HGP行書体,HGS行書体,HG行書体,'ＭＳ 明朝','明朝'; }
+
+a {color:#0000ff; text-decoration:none;}
+A:hover {color:#ff0000; text-decoration:underline;}
+-->
+</STYLE>
+</head>
+<body background="http://www16.tok2.com/home/tenma/cgi-bin/senryu/kabe.gif" bgcolor="#ffffe0" text="#000000">
+<center><b><font color="#ff0000" class="f80"><b>延岡川柳</b></font><hr><font class="f24"><a href="http://www.wainet.ne.jp/~ahiru/">ほーむ</a></font></b><p>
+
+<table border=10 cellspacing=0 cellpadding=10 width=600 bgcolor="#fffff0" bordercolor="#00b000"><tr><th>
+<table width=560 border=0 cellspacing=0 cellpadding=2>
+<tr bgcolor="#00b000"><th><font class="f24" color="#fffff0">～作品一覧～</font></th></tr>
+<tr><th><hr size=1><font class="f16"><font color="#d0d0d0">▲</font>｜<a href="senryu.cgi?op=f">投稿する</a>｜<a href="senryu.cgi?dp=10">▼</a></font></th></tr>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=53">テーマ‥「愛宕山」</a>&nbsp;<font color="#ff0000"><b>NEW</b></font><br><div align=right><font class="f16">[53]&nbsp;六月五日(土)&nbsp;<a href="mailto:tenma@ma.wainet.ne.jp">廣瀬</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=52">テーマ‥「延岡」</a>&nbsp;<br><div align=right><font class="f16">[52]&nbsp;五月二十二日(土)&nbsp;<a href="mailto:s-m.mebiuser@leo-net.jp">メタル</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=51">テーマ‥「遠足」</a>&nbsp;<br><div align=right><font class="f16">[51]&nbsp;五月二十二日(土)&nbsp;<a href="mailto:tenma@ma.wainet.ne.jp">廣瀬</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=50">テーマ‥「・・・」</a>&nbsp;<br><div align=right><font class="f16">[50]&nbsp;五月二十一日(金)&nbsp;<a href="mailto:s-m.mebiuser@leo-net.jp">メタル</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=49">テーマ‥「五ヶ瀬川」</a>&nbsp;<br><div align=right><font class="f16">[49]&nbsp;五月二十一日(金)&nbsp;<a href="mailto:s-m.mebiuser@leo-net.jp">メタル</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=48">テーマ‥「アクセス」</a>&nbsp;<br><div align=right><font class="f16">[48]&nbsp;五月十四日(金)&nbsp;<a href="mailto:tenma@ma.wainet.ne.jp">廣瀬</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=47">テーマ‥「料理！！」</a>&nbsp;<br><div align=right><font class="f16">[47]&nbsp;五月七日(金)&nbsp;<a href="mailto:t_shirahama225@yahoo.com.jp">白濱貴久</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=46">テーマ‥「また釣りに行っちゃった～」</a>&nbsp;<br><div align=right><font class="f16">[46]&nbsp;五月三日(月)&nbsp;<a href="mailto:tenma@ma.wainet.ne.jp">廣瀬</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=45">テーマ‥「つり」</a>&nbsp;<br><div align=right><font class="f16">[45]&nbsp;四月三十日(金)&nbsp;<a href="mailto:honma@ma.wainet.ne.jp">ほんまやで</a>&nbsp;</font></div></font></td></tr>
+</td>
+<tr><td><hr size=1><font class="f24"><a href="senryu.cgi?dn=44">テーマ‥「並んでばっか・・・」</a>&nbsp;<br><div align=right><font class="f16">[44]&nbsp;四月二十八日(水)&nbsp;延岡うぉーかー&nbsp;</font></div></font></td></tr>
+</td>
+<tr><th><hr size=1><font class="f16"><font color="#d0d0d0">▲</font>｜<a href="senryu.cgi?op=f">投稿する</a>｜<a href="senryu.cgi?dp=10">▼</a></font></th></tr>
+</table></th></tr></table><p>
+<hr>
+<center><font class="f24">川柳&nbsp;～二〇〇一年九月版～<br>すくりぷと制作&nbsp;<a href="http://www.ac.wakwak.com/~wing/" target="_blank">ういんぐげーと</a></center>
+</body></html>
+

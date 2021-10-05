@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<!-- end no cache headers -->
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft">
+	<meta name="description" content="EverQuest Clerics is a discussion forum powered by vBulletin. To visit the forum, go to http://www.eqcleric.com/forums/ . To find out about vBulletin, go to http://www.vbulletin.com/ .">
+	<title>EverQuest Clerics - powered by vBulletin</title>
+	<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #4D4D73;
+	SCROLLBAR-ARROW-COLOR: #FCC504;
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 10px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+select 
+{
+		background-color : #cfcfcf;
+		font-size: 10;
+		color: #000000;
+		font-family: verdana, arial,tahoma;
+		text-align: center;
+		
+}
+.checkbox 
+{		
+		border-style: ridge;
+   		border-width: 0;
+		background-color : #DADADA;
+		font-size: 10;
+		font-family: verdana, arial,tahoma;
+}
+A:link, A:visited, A:active {
+	COLOR: #FEDE01;
+}
+A:hover {
+	COLOR: #fcc504;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #FCC504;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #FCC504;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #FEDE01;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #fcc504;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #FFFFEE;
+}
+</style>
+
+
+</head>
+<body background="/forums/images/background.jpg" bgcolor="#666696" text="#000000" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+<table width="90%" align="center" cellpadding="3" cellspacing="0" bgcolor="#262C4C" border="0">
+<tr>
+	<td>
+	<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#3A4373" border="0">
+<tr>
+	<td>
+
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<!-- Logo -->
+	<td vAlign="TOP" align="left"><img src="http://www.eqcleric.com/forums/images/eqclericlogo.gif"></td>
+	<!-- Logo -->
+		
+	<!-- Nav Bar -->
+	<td vAlign="TOP" align="right"><img src="http://www.eqcleric.com/forums/images/navbar_corner.gif"><img src="http://www.eqcleric.com/forums/images/btn_sections.gif"><img src="http://www.eqcleric.com/forums/images/btn_spells.gif"><img src="http://www.eqcleric.com/forums/images/btn_quests.gif"><a href="http://www.eqcleric.com/forums/index.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f" alt="Forums"><img src="http://www.eqcleric.com/forums/images/btn_forums.gif" border=0></a><a href="/index.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="http://www.eqcleric.com/forums/images/btn_home.gif" alt="Home" border="0"></a><br><img src="http://www.eqcleric.com/forums/images/navbar_corner2.gif"><a href="http://www.eqcleric.com/forums/usercp.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f"><img src="http://www.eqcleric.com/forums/images/btn_profile.gif" alt="Here you can view your subscribed threads, work with private messages and edit your profile and preferences" border="0"></a><a href="http://www.eqcleric.com/forums/memberlist.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f"><img src="http://www.eqcleric.com/forums/images/btn_members.gif" alt="Find other members" border="0"></a><a href="http://www.eqcleric.com/forums/search.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f"><img src="http://www.eqcleric.com/forums/images/btn_search.gif" alt="Search" border="0"></a><a href="http://www.eqcleric.com/forums/misc.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=faq"><img src="http://www.eqcleric.com/forums/images/btn_faq.gif" alt="Frequently Asked Questions" border="0"></a><a href="http://www.eqcleric.com/forums/calendar.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f"><img src="http://www.eqcleric.com/forums/images/btn_calendar.gif" alt="Calendar" border="0"></a><br><img src="http://www.eqcleric.com/forums/images/navbar_corner2.gif"><a href="http://www.eqcleric.com/forums/register.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=signup"><img src="http://www.eqcleric.com/forums/images/btn_register.gif" alt="Registration is free!" border="0"></a><a href="http://www.eqcleric.com/forums/member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=logout"><img src="http://www.eqcleric.com/forums/images/btn_logout.gif" alt="Logout" border="0"></a><br>
+</td>
+	<!-- Nav Bar -->
+</tr>
+</table>
+	<br>
+<!-- Main Site Table -->
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+<tr>
+	
+	<td vAlign="TOP">
+
+<!-- content table -->
+<table bgcolor="#3A4373" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td>
+
+<!-- text -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr valign="top">
+	<td><img src="images/bullet.gif" border="0" align="middle" alt="EverQuest Clerics : Powered by vBulletin version 2.2.9">
+	<font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>EverQuest Clerics</b></font></td>
+	<td align="right"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF"><br><b><a href="search.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getdaily&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8">View Today's Active Threads</a></b></font></td>
+</tr>
+</table>
+
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr>
+	<td colspan="2"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>Welcome to the EverQuest Clerics.</b></font><br>
+	<font face="verdana,arial,helvetica" size="1" color="#FFFFFF">If this is your first visit, be sure to check out the <a href="misc.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=faq&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>FAQ</b></a>
+	by clicking the link above. You may have to <a href="register.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>register</b></a>
+	before you can post: click the register link above to proceed.
+	To start viewing messages, select the forum that you want to visit from the selection below.</font><hr></td>
+</tr>
+<tr valign="bottom">
+	<td><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+	Members: 745, Threads: 367, Posts: 2,727<br>
+	Welcome to our newest member, <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&userid=748&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8">Medikk</a>
+	</font></td>
+	<td align="right"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+	The time now is 06:43 PM.<br>
+	You last visited: 02-18-2003 06:43 PM.
+	</font></td>
+</tr>
+</table>
+<!-- /text -->
+
+<br>
+
+<!-- main -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#262C4C"  width="100%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0"  width="100%">
+<tr align="center">
+  <td bgcolor="#262C4C"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+  <td bgcolor="#262C4C" width="80%" align="left"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FFFFEE"><b>Forum</b></font></td>
+  <td bgcolor="#262C4C"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FFFFEE"><b>Posts</b></font></td>
+  <td bgcolor="#262C4C"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FFFFEE"><b>Threads</b></font></td>
+  <td bgcolor="#262C4C" nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FFFFEE"><b>Last Post</b></font></td>
+  <td bgcolor="#262C4C" width="20%"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FFFFEE"><b>Moderator</b></font></td>
+</tr>
+<tr id="cat">
+	<td bgcolor="#4D4D73" colspan="6"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=1&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF" color="#FCC504"><b>General Forums</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FCC504"></font></td>
+</tr><tr align="center">
+	<td bgcolor="#666699" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#666699" align="left"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=2&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>General Discussions</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">General Purpose</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">1518</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">198</font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">02-18-2003 <font color="#FFFFFF">02:12 PM</font><br>
+		by <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&find=lastposter&forumid=2&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>Bukkiah</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&goto=lastpost&forumid=2&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#666699" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#666699" align="left"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=5&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>Spells</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">Open discussion on the cleric spells</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">253</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">33</font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">02-18-2003 <font color="#FFFFFF">11:24 AM</font><br>
+		by <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&find=lastposter&forumid=5&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>Amantara</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&goto=lastpost&forumid=5&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#666699" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#666699" align="left"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=6&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>Quests and Items</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">Discussions about cleric related quests and items.</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">537</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">78</font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">02-18-2003 <font color="#FFFFFF">08:02 AM</font><br>
+		by <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&find=lastposter&forumid=6&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>eilelan</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&goto=lastpost&forumid=6&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#666699" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#666699" align="left"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=7&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>Rants and Raves</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">Need to get something off your chest? Let it fly here...</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">245</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">25</font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">02-18-2003 <font color="#FFFFFF">08:06 AM</font><br>
+		by <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&find=lastposter&forumid=7&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>eilelan</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&goto=lastpost&forumid=7&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+</tr>
+<tr id="cat">
+	<td bgcolor="#4D4D73" colspan="6"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=8&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF" color="#FCC504"><b>Front Page</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF" color="#FCC504"></font></td>
+</tr><tr align="center">
+	<td bgcolor="#666699" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#666699" align="left"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=3&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>Frontpage News</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF"></font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">106</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">23</font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">02-12-2003 <font color="#FFFFFF">02:24 AM</font><br>
+		by <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&find=lastposter&forumid=3&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>Cerrick</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&goto=lastpost&forumid=3&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+</tr>
+<tr align="center">
+	<td bgcolor="#666699" valign="top"><img src="images/off.gif" border="0" alt=""></td>
+	<td bgcolor="#666699" align="left"><a href="forumdisplay.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&forumid=4&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF"><b>Frontpage Polls</b></font></a>
+	<br><font face="verdana,arial,helvetica" size="1" color="#FFFFFF"></font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">40</font></td>
+	<td bgcolor="#666699"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF">1</font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">	<table cellpadding="0" cellspacing="0" border="0" width="100%" id="ltlink"><tr align="right">
+		<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">02-18-2003 <font color="#FFFFFF">05:47 PM</font><br>
+		by <a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&find=lastposter&forumid=4&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><b>LADYGUINEAPIG</b></a></font></td>
+		<td nowrap>&nbsp;<a href="showthread.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&goto=lastpost&forumid=4&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><img src="images/lastpost.gif" border="0" alt="Go to last post"></a></td>
+	</tr></table></font></td>
+	<td bgcolor="#666699"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">&nbsp;</font></td>
+</tr>
+
+<tr id="cat">
+	<td bgcolor="#4D4D73" colspan="6"><a href="online.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8"><font face="verdana, arial, helvetica" size="2" color="#FFFFFF" color="#FCC504"><b>Currently Active Users</b></font></a><font face="verdana, arial, helvetica" size="2" color="#FFFFFF" color="#FCC504"><b>: 4</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#666699" colspan="6"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+	<nobr>There are currently  1 members and 3 guests on the boards.</nobr> |
+	<nobr>Most users ever online was 69 on 09-04-2002 at 09:42 PM.</nobr><br>
+	<a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=getinfo&userid=733&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8">Kindamerry</a></font></td>
+</tr>
+
+<tr>
+	<td bgcolor="#666699" colspan="6"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">
+	Today's Birthdays:  <a href="member.php?s=&action=getinfo&userid=400&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8">Arianrhood</a> (34)</font></td>
+</tr>
+
+
+</table>
+</td></tr></table>
+<!-- /main -->
+
+<br>
+
+<!-- timezone/login-->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr valign="top">
+  <td><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">All times are GMT. The time now is 06:43 PM.</font></td>
+  <td align="right"><font face="verdana,arial,helvetica" size="1" color="#FFFFFF"><a href="member.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&action=markread&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8">Mark All Forums Read</a> | <a href="showgroups.php?s=e4be4bd3a7b9af6ce723b3df25c9ec7f&PHPSESSID=eedda3a46e39b1c347ac2000a8744ec8">Forum Leaders</a></font>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<form action="member.php" method="post"><input type="hidden" name="PHPSESSID" value="eedda3a46e39b1c347ac2000a8744ec8" />
+<tr>
+	<td nowrap><font face="verdana,arial,helvetica" size="1" color="#FFFFFF"><b>Not cookied?</b><br>Login with username and password:</font></td>
+</tr><tr>
+	<td nowrap><input type="hidden" name="s" value="e4be4bd3a7b9af6ce723b3df25c9ec7f">
+	<input type="hidden" name="action" value="login">
+	<input type="text" class="bginput" name="username" size="7">
+	<input type="password" class="bginput" name="password" size="7">
+	<input type="submit" class="bginput" value="Login!"></td>
+</tr>
+</form>
+</table>
+</td>
+</tr>
+</table>
+<!-- /timezone/login -->
+
+<br>
+
+<!-- icons -->
+<table cellpadding="2" cellspacing="0" border="0" width="100%"  align="center">
+<tr>
+	<td align="center">
+	<img src="images/on.gif" border="0" alt="On" align="absmiddle">
+	<b><font face="verdana,arial,helvetica" size="1" color="#FFFFFF">Ne

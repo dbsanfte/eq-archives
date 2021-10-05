@@ -1,0 +1,992 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQTC Forums - skillup formula</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft,bulletin board,eq,everquest,trade,skill,tradeskills,eqtraders" />
+	<meta name="description" content="This is a discussion forum about everquest tradeskills powered by vBulletin. To find out about vBulletin, go to http://www.vbulletin.com/ ." />
+	<link rel="stylesheet" href="http://mboards.eqtraders.com/eq/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQTC Forums</a> &gt; <a href="f-2.html">Tradeskills -</a> &gt; <a href="f-7.html">General Trade Skill Discussion</a> &gt; skillup formula</div>
+<hr />
+<p class="largefont" style="text-align: left">View Full Version : <a href="http://mboards.eqtraders.com/eq/showthread.php?t=15638">skillup formula</a></p>
+<hr />
+
+<div class="post"><div class="username" id="u1"><b>Sylphan</b></div><div class="posttext" id="p1">Here's how we're told skillups are calculated.<br />
+<br />
+Each tradeskill has a difficulty Y: 2, 3, or 4.<br />
+Tailoring is 3<br />
+Smithing is probably 4<br />
+Pottery used to be 2, now it's probably 4<br />
+Jewelcraft is probably 2<br />
+Fletching<br />
+Baking<br />
+Brewing is probably 2<br />
+Tinkering<br />
+Alchemy<br />
+Poisonmaking<br />
+<br />
+For tradeskills with an alternate stat set S = max(int,wis,alt)<br />
+For tradeskills with no alternate stat set S = max(int,wis)-15<br />
+<br />
+If the combine failed set F=2<br />
+If the combine succeeded set F=1<br />
+<br />
+Set N=(S*10)/(Y*F)<br />
+<br />
+If ran(1000) &lt; N then proceed to the second check<br />
+<br />
+Second check: If ran(200) &gt;= min(190, skill) then skillup!<br />
+<br />
+===========================<br />
+<br />
+At skill 0 the second check is basically 100 percent, so the chance of skillup is just the first formula.<br />
+<br />
+Suppose you were doing brewing (no alternate) at skill 0... your percent chance of skillup with various INT values:<br />
+<br />
+int	success	failure<br />
+200	92.5	41.2<br />
+250	100	58.7<br />
+255	100	60<br />
+280	100	66.2<br />
+305	100	72.5<br />
+355	100	85<br />
+<br />
+Now suppose you're doing smithing (alternate is Strength) at skill 0... percent chance of skillup becomes:<br />
+<br />
+int	success	failure<br />
+200	50.0	25<br />
+250	62.5	31.2<br />
+255	63.7	31.8<br />
+280	70.0	35<br />
+305	76.2	38.1<br />
+355	88.8	44.4<br />
+<br />
+<br />
+The same charts at skill 100 would show 50 percent of the listed numbers, due to the second check.<br />
+The same charts at skill 190 would show 5 percent of the listed numbers, due to the second check.<br />
+<br />
+I think there's one detail missing from the formula: we haven't yet explained why chance of skillup is better with 200+ skill than it is in the 190s.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u2"><b>Verdandi</b></div><div class="posttext" id="p2">Is this all information that was provided by the devs in the tradeskill forums at the Vegas FF?  For the record....</div></div><hr />
+
+
+<div class="post"><div class="username" id="u3"><b>Nizanko</b></div><div class="posttext" id="p3">The explanation is right in there regarding the easier skillups post-210.  It's related to the &quot;bend&quot; that occurs in the second check from the min(190,skill)  term.<br />
+<br />
+An upward trend appears anytime you are working on something far above your trivial level.  This is caused by your increased chances of success at higher skill.<br />
+<br />
+Since success has a significant impact on skilling up, being at the point where you just about always get the maximum success rate is where you want to be.  It's a lot easier to get that the higher your skill is.<br />
+<br />
+I plugged these numbers into a spreadsheet, and found that the knee in the graph occurs just above 190 skill (which is where the second check stops getting worse).  From then on, the skillup rate at best increases very very slowly, depending on how much above your trivial level the item is as well as your stat.  <br />
+<br />
+For something like JC, where the items you make are always just a few points over your current skill, the chances never increase - they just bottom out.  But that's okay, because they bottom out at the best chance for skillups you can achieve.<br />
+<br />
+For something where you may be working quite a bit above your skill, your chances of skilling up actually go below that threshold and then increase once you pass 190.  For example, if you do something that trivs at 252 for a really long time, then your chances will bottom out at about skill 190 and then increase until 233, when the success chance reaches 95% again.  In the JC case, if you worked on something way harder than your current skill, your chances would increase past 190, but that's only because your chance to skill up was already way below the best possible.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u4"><b>Sylphan</b></div><div class="posttext" id="p4">It's from the programmer guy on the tradeskills panel at 2004 Vegas FF.  He related it to us from memory, but said he'd spent hours poring over this particular bit of code to be absolutely sure he understood it... and he certainly seemed to.<br />
+<br />
+The actual code apparently used floor() rather than min(), or even calculated it manually (gotta love spaghetti code)... and there were apparently some case structures not just if-then-else.  Also the second check probably uses &quot;&lt;&quot; rather than &quot;&gt;=&quot;.  But only old programmers like me would care about such subtleties; what I've described is technically accurate.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u5"><b>Hibashira</b></div><div class="posttext" id="p5">Let me try a summary.  Assumming the above are accurate (I guess there is no reason to suspect otherwise since it came from the Dev):<br />
+<br />
+- Max your stat (maximize N, easier to pass check 1)<br />
+- Its never an overkill to have max stat since the chances of passing check 1 on failed combine is always below 100%.<br />
+- For smithing, the max effective stat is 355.  340 for all other skills.  (Whether Dex is an alt stat for fletching is still uncertain, I presume...)<br />
+- Skill up is more likely on successful combine (due to higher N, thus passing check 1).  But success/failure does not affect check 2, which can be viewed as the &quot;capped&quot; skill up rate.<br />
+- The lower your skill, the more likely you are to skill up ... up to a point.<br />
+- As you go pass 190, your current skill is no longer relevant in terms of skill ups.  Chances of passing check 2 is 5%.  i.e. 1 in 20 ... if you can get pass check 1.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u6"><b>Renjah</b></div><div class="posttext" id="p6">Head hurting...... must contol... pain.....<br />
+<br />
+<br />
+BLAM!<br />
+<br />
+K made my head explode ;) It seems they had a good working equasion then somewhere down the line people &quot;fixed&quot; it without cleaning up the code. I bet this is somewhat standard ;) As a programmer I know this is extremely common practice (heck I do it myself!). I'm glad they did finally explain it. As soon as our great minds pick it apart we can answer so many questions.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u7"><b>kiztent</b></div><div class="posttext" id="p7">edit: covered by skillup calculators</div></div><hr />
+
+
+<div class="post"><div class="username" id="u8"><b>papyscott</b></div><div class="posttext" id="p8">Double, triple, no quadruple STICKY!<br />
+<br />
+OMG this information rocks...<br />
+<br />
+<br />
+Papy</div></div><hr />
+
+
+<div class="post"><div class="username" id="u9"><b>Furyrpied</b></div><div class="posttext" id="p9">Now if you could break it down so that not only Gnomes can understand it.... :)<br />
+<br />
+Okay, max out your (wis/int/str depending) for better skill up chance<br />
+averages start to factor in at 190?<br />
+I'm soooo lost</div></div><hr />
+
+
+<div class="post"><div class="username" id="u10"><b>scarbrowed</b></div><div class="posttext" id="p10">Heh, it's pretty darn complicated. The answer is...... it depends. In another thread I walked through the whole calculation for a baker with WIS of 200, but only 190 with geerlok, with a current skill of 191, making HMP's. In that case, use the geerlok.<br />
+<br />
+On the other hand, if you are tailoring at 191, with a WIS of 255 (245 with geerlok) and making arctic wyvern masks, the extra WIS helps more. 4% more likely to skillup in fact.<br />
+<br />
+I have an Excel spreadsheet that does the calculation, in case you want to try it yourself.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u11"><b>elty</b></div><div class="posttext" id="p11">I rememebr in a long long long time ago, a patch that said something like<br />
+&quot;tradeskill at above 200 will now have a double chance of skill up&quot; or something to that effect. Anyone remember that or I am wrong?<br />
+<br />
+also, they mention in a patch to make brewing, baking, tailoring, smithing easier. So how can tailoring and smithing be like 4? there is no improvement at all</div></div><hr />
+
+
+<div class="post"><div class="username" id="u12"><b>Yakk</b></div><div class="posttext" id="p12">End game math (skill over 190).<br />
+<br />
+Lets say you have 355 int/wis, and you are working on a &quot;best of 3&quot; skill, and your skill is over 190.<br />
+<br />
+Skillup chance on success/failure:[2]<br />
+Hard(4) skill: 4.4% / 2.2%<br />
+Medium(3) skill: 5% / 3.0% <br />
+Easy(2) skill: 5% / 4.4%<br />
+<br />
+On a &quot;best of int/wis&quot; skilll:<br />
+Hard(4) skill: 4.3% / 2.1%<br />
+Medium(3) skill: 5% / 2.8%<br />
+Easy(2) skill: 5% / 4.3%<br />
+<br />
+With a 305 stat cap, &quot;best of 3&quot; skill:<br />
+Hard(4) skill: 3.8% / 1.9%<br />
+Medium(3) skill: 5% / 2.5%<br />
+Easy(2) skill: 5% / 3.8%<br />
+<br />
+With a 305 stat cap, &quot;best of 2&quot; skill:<br />
+Hard(4) skill: 3.6% / 1.8%<br />
+Medium(3) skill: 4.8% / 2.4%<br />
+Easy(2) skill: 5% / 3.6%<br />
+<br />
+In effect:<br />
+More int/wis/secondary stat will help you get skillups, to some degree, no matter what.<br />
+<br />
+However, if you always succeed on your combines, and the skill is 'easy', there is a point where more stats don't matter.<br />
+<br />
+Max useful stat if you always succeed on your combines:[1]<br />
+Easy skill, &quot;best of 3&quot;: 201<br />
+Easy skill, &quot;best of 2&quot;: 216<br />
+Mediium skill, &quot;best of 3&quot;: 301<br />
+Medium skill, &quot;best of 2&quot;: 316<br />
+Hard skill: no cap<br />
+<br />
+On failures, extra stat points will always help your skillup chance.  Some skills get lots of failures when skilling up, some get lots of successes.<br />
+<br />
+So, there is no real need to have your int/wis over 215 if you are doing barely-not-trivial recipies in brewing or JCing with a geerlock, apparently.<br />
+<br />
+Footnote(s):<br />
+[1]  I solved for S in 1000&gt;(S*10)/(Y).  You might need 1 less point.<br />
+[2]  There are two &quot;tests&quot; that have to pass in order for a skillup to happen.<br />
+<br />
+The first is the &quot;int/wis/other&quot; check.  The second is the &quot;low skill&quot; check.<br />
+<br />
+Because I'm dealing only with 190+ skills, the second check succeeds 5% of the time.<br />
+<br />
+So, we get the int/wis chance * 5% as our success rate.<br />
+<br />
+Int/wis/etc chance is<br />
+(S*10)/(Y*F) / 10 %<br />
+with the note  you can't have a higher than 100% chance of passing it.<br />
+<br />
+For success:<br />
+S/Y %<br />
+For failure:<br />
+S/(2*Y) %<br />
+<br />
+Multiply by 5% and we get:<br />
+Success:<br />
+S/(20*Y) %<br />
+For failure:<br />
+S/(40*Y) %<br />
+with a max skillup rate of 100% * 5%, or 5%.<br />
+<br />
+Edit: Noir, looks like you where right btw.  =)  Skillups on those PotC recipies is crap!</div></div><hr />
+
+
+<div class="post"><div class="username" id="u13"><b>Tarelna Prexus</b></div><div class="posttext" id="p13">People have always talked of hell levels for tradeskills from about 180 to 220 but with this published formula, its looks like its diminishing returns till it bottoms out at 190 and never gets any better.<br />
+<br />
+So  if I get this right, all skill ups from 190 skill onwards are 'hell levels'. The only variable that will effect that is success rate and its obviously more advantageous to go for near trivial combines and combines with a naturally high success rate.<br />
+<br />
+From 190 onwards with maxed stats, depending on  which tradeskill you will average from 5% (max) to 1.6% (min) skill ups per combine.<br />
+<br />
+Or am I missing something ?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u14"><b>Lushissx</b></div><div class="posttext" id="p14">OK, I kow casters can get stats to 355, but how can you get strength past 305.  I have the planar power and none of my other aa's appear to allow me to exceed the 305 cap?  Are you just saying your strength would be 355 if there was not a cap at 305?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u15"><b>kiztent</b></div><div class="posttext" id="p15">Originally posted by Lushissx <br />
+OK, I kow casters can get stats to 355, but how can you get strength past 305.  I have the planar power and none of my other aa's appear to allow me to exceed the 305 cap?  Are you just saying your strength would be 355 if there was not a cap at 305?  <br />
+<br />
+Only casters can get stats over 305, and only by taking innate enlightenment AAs.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u16"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p16">Using the formula as detailed above, we can reverse-engineer it to find out two issues regarding Tradeskills. This requires a fair sample size of tradeskill runs, but combined it should yield fairly reliable information on the following:<br />
+<br />
+- Which Tradeskill has what difficulty modifier<br />
+- Which Tradeskill has a tertiary stat (outside WIS / INT)<br />
+<br />
+Of course, this also requires info on whether a skillup was achieved on a failure or a success.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u17"><b>scarbrowed</b></div><div class="posttext" id="p17">Originally posted by Tarelna Prexus <br />
+People have always talked of hell levels for tradeskills from about 180 to 220 but with this published formula, its looks like its diminishing returns till it bottoms out at 190 and never gets any better.<br />
+ <br />
+<br />
+It does get better in many tradeskills because the chance of success gets higher. For example, tailoring, you're only choices after 190 trivial at 242 or 335. If you are making acrylia reinforced at a trivial of 242 with current skill of 190, you should expect about 30 combines per skillup. Due to increased successes, you should expect 25 combines per skillup at skill 220 on the same recipe.<br />
+<br />
+Baking never had a hell level for me, because at 190, you could make several recipes that trivial at 202, which  makes skillups more likely. Staying close to trivial is also why I've not heard much about hell levels in Jewelry Craft.<br />
+<br />
+Finally, don't forget that sometimes the RNG just decides you are going to have a hell level.  This is completely random and can happen at any level.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u18"><b>kiztent</b></div><div class="posttext" id="p18">edit: covered by skillup calculators</div></div><hr />
+
+
+<div class="post"><div class="username" id="u19"><b>Lord Grimrose</b></div><div class="posttext" id="p19">This formula shows that in the endgame of tradeskilling you can expect about a 5% change of skill up per combine which works out to about 1 in 20 :) of course the RNG does still have a mean streak.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u20"><b>Vivamort-Rodcet Nife</b></div><div class="posttext" id="p20">Which would put the amount of attempts needed to get from 190 to 250 skill, assuming using near max stats and staying near the trivial range, to be about 1200 combines.  Everyone say &quot;thank you new trader interface&quot;. A 5% chance of increase was indeed what I calculated for<br />
+<br />
+Vivamort</div></div><hr />
+
+
+<div class="post"><div class="username" id="u21"><b>andyhre</b></div><div class="posttext" id="p21">Okay just to make sure I understand.<br />
+<br />
+I have max wis these days of 260, being capped at 61st level.<br />
+<br />
+I am working on my last two tailoring points before the 200 cap, 198-&gt;199 and 199-&gt;200.<br />
+<br />
+I am doing a variety of things including Solstice Robes.<br />
+<br />
+<br />
+Y=3<br />
+F=2 when I fail, which is usually (by design).<br />
+<br />
+N=260-15=245<br />
+<br />
+So (N*10)/(Y*F) = 2450/6 = ~409<br />
+<br />
+So when compared to a rand(1000), I have about a 41% chance of passing the test, after which I then would compare a rand(200) with 190 (since my skill exceeds 190), giving me a 5% chance.<br />
+<br />
+So on every failure of a Solstice Robe, at 198 skill and 260 wisdom, I have just about a 2% chance (41% of 5%) of a skill up -- so I can expect to do, on average, 50 failures per skill up.<br />
+<br />
+On the few that I succeed, the formula is then changed b/c F=1:<br />
+<br />
+<br />
+So (N*10)/(Y*F) = 2450/3 = ~817, and as a result, my chance just about doubles to 4%  (actually it's 81.7% of 5%).<br />
+<br />
+<br />
+And, since I succeed at about a 5% rate, given the disparity between my skill and the trivial, my overall skill-up rate will be darn close to 2%.<br />
+<br />
+Correct?<br />
+<br />
+<br />
+if so this would explain why it seems to make no difference at this point, my samples of 60-100 tries at a time are now big enough to make any skill up (on success or failure) anything more than noise in a stream of non-skillups.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u22"><b>andyhre</b></div><div class="posttext" id="p22">Another question.<br />
+<br />
+Nowhere in this formula is there room, I think for the oft-observed fact that skill ups come more frequently on Bows than Arrows in fletching.<br />
+<br />
+Is this a correct observation?<br />
+Can someone help find how that can be true if this is how skill ups are determined? <br />
+<br />
+Is there room for the number to vary by the kind of combine within a skill (i.e. be a &quot;2&quot; for bows and a &quot;4&quot; for arrows)?<br />
+<br />
+<br />
+EDIT: I think I just answered my own question: the arrows are 335 trivial and the bows are 255. Doh!<br />
+<br />
+third edit: deleting my second edit.  d'oh</div></div><hr />
+
+
+<div class="post"><div class="username" id="u23"><b>Yakk</b></div><div class="posttext" id="p23">Correct?<br />
+<br />
+Yes.  =)<br />
+<br />
+if so this would explain why it seems to make no difference at this point, my samples of 60-100 tries at a time are now big enough to make any skill up (on success or failure) anything more than noise in a stream of non-skillups.<br />
+<br />
+Yes.<br />
+<br />
+As an aside, lets say you are an int caster, and get to L 65 with max int/wis AAs.<br />
+<br />
+Your skillup chance would go up by 39%.  Ie, from 1 skillup in ~ 50 to 1 skillup in ~ 36.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u24"><b>Curufea</b></div><div class="posttext" id="p24">The Y given here are just guess ? Or are they true facts ?<br />
+<br />
+Otherwise here is a simple test to determine them : <br />
+<br />
+For smithing/fletching (ie : with a secondary stats)<br />
+Make a lvl 1 mule with 100 as the max of int/wis/str/dex.<br />
+<br />
+For other skills (ie : without secondary stats)<br />
+Make a lvl 1 mule with 115 as max of int/wis<br />
+<br />
+Proceed to the test :<br />
+<br />
+Make it combine an item until the mule skill up to 1.<br />
+Note the following : <br />
+number of success with skill up<br />
+number of success without skill up<br />
+<br />
+Delete mule, remake a mule and do the same thing.<br />
+<br />
+The %age of skill up on a success over all your mules is expected to be 1/Y.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u25"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p25">Curufea, this is something I also suggested a few posts up (I guess it was missed, though). In addition to determining Y, we should be able to determine if the skill in question uses 2 or 3 stats, for certain. There are still debates on some skills if they use an alternate stat or not.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u26"><b>Bregalad</b></div><div class="posttext" id="p26">Does it say anywhere weather 2nd check uses geerlok-adjusted skill, or raw skill?<br />
+Past 190 raw skill, geerlok has no bearing on 2nd check, but before that...<br />
+<br />
+If 2nd check uses effective skill, it would mean that before 190, geerloks hurt skillup rates, peaking out at 180, where they cut 2nd check chance in half.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u27"><b>GraemeFaelban</b></div><div class="posttext" id="p27">Originally posted by scarbrowed <br />
+It does get better in many tradeskills because the chance of success gets higher. For example, tailoring, you're only choices after 190 trivial at 242 or 335. If you are making acrylia reinforced at a trivial of 242 with current skill of 190, you should expect about 30 combines per skillup. Due to increased successes, you should expect 25 combines per skillup at skill 220 on the same recipe.<br />
+ <br />
+<br />
+Well, for those that only have a geerlock, they can do the Ethereal swatches from 210 to 212.  For those that are lucky enough to get Shei's Shears, they can do 200 to 212 on the swatches.  (I think the shears are +10% anyway, don't have them yet).  Sure, 2 points is not huge, but, it's a few less combines on average.  For 12 points it becomes quite worthwhile to do.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u28"><b>KyrosKrane</b></div><div class="posttext" id="p28">Originally posted by Kaysha Soulsinger <br />
+There are still debates on some skills if they use an alternate stat or not.  <br />
+<br />
+Tanker told us that only smithing and fletching have alternate stats -- STR and DEX, respectively.  No others do.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u29"><b>Calliopeia</b></div><div class="posttext" id="p29">Tanker told us that only smithing and fletching have alternate stats -- STR and DEX, respectively. No others do.Just to confirm, that means that DEX does not affect tailoring as we previously thought?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u30"><b>KyrosKrane</b></div><div class="posttext" id="p30">To my knowledge, it was never confirmed, even from when they first added alternate stats.  DEX for tailoring was only ever mentioned as a possibility.<br />
+<br />
+To directly answer the question, no.  To the best of my knowledge, tailoring does not have an alternate stat.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u31"><b>KyrosKrane</b></div><div class="posttext" id="p31">I sent a message to the devs to confirm something that's been nagging at me and I just got a reply back.<br />
+<br />
+The skillup formula checks your raw skill; it doesn't take into account any geerloks or other skill modifying items.  This is actually a benefit to the player.<br />
+<br />
+Thanks to Absor and Tanker for confirming this.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u32"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p32">To my knowledge, it was never confirmed, even from when they first added alternate stats.  DEX for tailoring was only ever mentioned as a possibility.<br />
+<br />
+To directly answer the question, no.  To the best of my knowledge, tailoring does not have an alternate stat.<br />
+<br />
+Still, with the current information on the skillup rate, we can determine this for certain  ;) .</div></div><hr />
+
+
+<div class="post"><div class="username" id="u33"><b>KyrosKrane</b></div><div class="posttext" id="p33">Tanker told us that only smithing and fletching have alternate stats -- STR and DEX, respectively.  No others do.<br />
+<br />
+I should probably qualify this statement, in retrospect.  Of the seven general tradeskills, only those two have alternate stats.  Tanker also mentioned poison-making using dex, though it slipped my mind earlier.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u34"><b>Thicket Tundrabog</b></div><div class="posttext" id="p34">Finally the old chestnut of dexterity affecting tailoring is put to rest. I remember getting dexterity gear, doing some statistics, and convincing myself that dexterity was irrelevant. Most tradeskillers came to the same conclusion, but there were a few diehards that stubbornly maintained that they had higher tailoring skillups with high dexterity.<br />
+<br />
+Thicket</div></div><hr />
+
+
+<div class="post"><div class="username" id="u35"><b>AbsorEQ</b></div><div class="posttext" id="p35">Tanker told us that only smithing and fletching have alternate stats -- STR and DEX, respectively.  No others do.<br />
+<br />
+Well... he also said Poison Making for sure, and I think one other.<br />
+<br />
+A</div></div><hr />
+
+
+<div class="post"><div class="username" id="u36"><b>Tanker</b></div><div class="posttext" id="p36">No, I didn't Absor.  Why would you post that when you can just walk down the hall and ask me??  wierdo. :)<br />
+[Edit] Ok, I said the first part, but not the &quot;other one&quot; part.<br />
+<br />
+Here's the list guys:<br />
+Smithing - STR<br />
+Fletching - DEX<br />
+PoisonMaking - DEX<br />
+END OF LIST  &lt;&lt;-- note, there are NO more tradeskills that have alternate attributes.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u37"><b>Tinile</b></div><div class="posttext" id="p37">Thank you for the definitive answer Tanker.  :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u38"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p38">:cheers: <br />
+<br />
+Thanks, Tanker :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u39"><b>AbsorEQ</b></div><div class="posttext" id="p39">No, I didn't Absor.  Why would you post that when you can just walk down the hall and ask me??  wierdo. :)<br />
+[Edit] Ok, I said the first part, but not the &quot;other one&quot; part.<br />
+<br />
+Here's the list guys:<br />
+Smithing - STR<br />
+Fletching - DEX<br />
+PoisonMaking - DEX<br />
+END OF LIST  &lt;&lt;-- note, there are NO more tradeskills that have alternate attributes.<br />
+<br />
+Because I'd have to walk down the hall and ask you.<br />
+<br />
+I got the answer easily enough this way and never had to leave my office.<br />
+<br />
+A</div></div><hr />
+
+
+<div class="post"><div class="username" id="u40"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p40">http://members.aol.com/EQwyrllwynd/Emoticons/rofl1.gif</div></div><hr />
+
+
+<div class="post"><div class="username" id="u41"><b>Frerin the Smith</b></div><div class="posttext" id="p41">Absor,<br />
+<br />
+Please remember that any questions to the SOE team should go through appropriate channels and not be directed through the board. :p</div></div><hr />
+
+
+<div class="post"><div class="username" id="u42"><b>KyrosKrane</b></div><div class="posttext" id="p42">I like the way Absor thinks! =)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u43"><b>KyrosKrane</b></div><div class="posttext" id="p43">The Y given here are just guess ? Or are they true facts ?<br />
+<br />
+Tanker told us that for tailoring, Y = 3.  All other values are just guesses for now.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u44"><b>Lushissx</b></div><div class="posttext" id="p44">Thanks Tankor!  Didn't we used to think dex affected JC?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u45"><b>Fufinski</b></div><div class="posttext" id="p45">Moved this from the FF thread as I noticed this one.  I think this should be the right place for it  :D   SOme of the stuff has already been covered but I will post it all anyhow.<br />
+<br />
+<br />
+Ok I did some calculations looking at best case scenario for max stats and looking at trying to raise skills above 190. I came up with the following breakdown. Note the difference between priest and caster classes verses the rest due to Innate Enlightenment. <br />
+<br />
+Assumptions were that none casters used Dex and Str for Smithing and Fletching so had a PS of 305 while they used Wis or Int for the rest and had a PS of 290. Casters and Priests on the other hand were assumed to have Innate Enlightnement AA which meant they used Wis or Int for all Tradeskills with a PS of 340. I realise not all casters have this AA but was looking at best case scenario hence maxed stats for all.<br />
+<br />
+<br />
+For a none priests caster with max stats (max Str/Dex 305) Smithing or Fletching<br />
+<br />
+if DF 2 success = 5% <br />
+fail = 3.8% <br />
+if DF 3 success = 5% <br />
+fail = 2.5% <br />
+if DF 4 success = 3.8% <br />
+fail = 1.9% <br />
+<br />
+<br />
+<br />
+For a none priests or caster with max stats (max Int/Wis 290) Baking/Brewing/JC/Pottery/Tailoring<br />
+<br />
+<br />
+if DF 2 success = 5% <br />
+fail = 3.6% <br />
+if DF 3 success = 4.8% <br />
+fail = 2.4% <br />
+if DF 4 success = 3.6% <br />
+fail = 1.8% <br />
+<br />
+<br />
+<br />
+For priests or casters (max Int/Wis 340) All tradeskills<br />
+<br />
+if DF 2 success = 5% <br />
+fail = 4.3% <br />
+if DF 3 success = 5% <br />
+fail = 2.8% <br />
+if DF 4 success = 4.3% <br />
+fail = 2.1% <br />
+<br />
+<br />
+<br />
+An important thing to note is this means that casters and priests have between 4 - 19% more chance of a skillup on some combines then the rest have. I assume this is not intentional but a product of the AA which has not been taken into account.<br />
+<br />
+The only Tradeskill we know the DF for is tailoring so we can look at this in more detail to see where I get my figures from.<br />
+<br />
+<br />
+None caster<br />
+<br />
+PS (Wis/Int) 305 - 15 = 290<br />
+DF = 3<br />
+<br />
+We get on a success (290 x 10)/(3 x 1 ) = 966.67 so we pass C1 96.7% of the time on a success.<br />
+We get on a fail (290 x 10)/3 x 2) = 483.33 so we pass C1 48.3% of the time on a fail.<br />
+<br />
+Due to looking at skill of 190 + we get a 5% success at C2 which equates to 4.8% chance of a skill up on a success and 2.4% chance of a skillup on a fail.<br />
+<br />
+Casters and Priests<br />
+<br />
+PS (Wis/Int) 355 - 15 = 340<br />
+DF = 3<br />
+<br />
+We get on a success (340x 10)/(3 x 1 ) = 1133.33 so we pass C1 100% of the time on a success.<br />
+We get on a fail (340 x 10)/3 x 2) = 566.66so we pass C1 56.7% of the time on a fail.<br />
+<br />
+Due to looking at skill of 190 + we get a 5% success at C2 which equates to 5% chance of a skill up on a success and 2.8% chance of a skillup on a fail.<br />
+<br />
+<br />
+These may look small, but when we compare them to each other it means a caster gets a skill up on a success 4% more then a none caster and 17% more on a fail. As you can imagine when this is translated into time and money it adds up to a significantly larger investment by the none caster then the caster in skilling up their tradeskills.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u46"><b>Baradur</b></div><div class="posttext" id="p46">I also remember their being a patch message/message board post about the skillup rate being doubled for post-200 skills.  If that is true, then it is not taken into account in this formula (the dev may have left it out, or it may be buried elsewhere in the spaghetti code, or it may just not exist).  When I have more spare time, I'll dig around and see if I can find it.<br />
+<br />
+-Baradur<br />
+<br />
+EDIT:  Finally, here it is.  From the March 6, 2001 patch message (roughly 6 months after the tradeskill cap was raised to 250):<br />
+&quot;- Doubled the chance to gain skill points in skills that are above 200.&quot;<br />
+<br />
+Since this was specifically mentioned as a *doubling* of a skillup chance, and only post-200, it has to be something more than the 190-cutoff.  Which would also explain the &quot;hell levels&quot; in the high 180s and 190s that are so often talked about.  From 190-200 your skillup chace would bottom out (at 5% or less depending on stats and skill difficulty), and then after 200 it would go back up to 10% (where it was at 180).<br />
+<br />
+Incidentally, it should be quite possible to differentiate between easy, medium, and hard tradeskills by skilling up to 100 on a mule with 215 int/wis (or 200 for a skill with an alternate stat) (200 gives the largest percentage gaps for skillups between each different difficulty level).  Yes, testing the alternate stat property should be possible, too, but it would be much harder and take many more samples.  With the difficulty test, you only need enough data to differentiate between 100% (50%), 67% (33%), and 50% (25%) skillup rates (parenthetical values are on fails), whereas, for a hard skill, the -15 int/wis would only cut your skillup chance by 4%, and that's going to take a *lot* more tests to see with any real certainty.<br />
+<br />
+Skilling to 100 on a single mule with 215 int/wis (or 200 int/wis/dex/str, as appropriate) and recording the number of succeses and number of fails at each level to get a skillup should be enough data to peg the skill's difficulty with reasonable certainty, after some analysis of the data.  I'll try to do such tests myself sometime soon, but my raid schedule is pretty hectic these days, so it may take a while.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u47"><b>Ngreth Thergn</b></div><div class="posttext" id="p47">well... it is SORTA handled...  sorta...  the after 190 flatening of the curve would have made it much easier post 200 than if that flatening was not there...  but yeah, it may be missing in the &quot;formula&quot;</div></div><hr />
+
+
+<div class="post"><div class="username" id="u48"><b>Jarak_akn</b></div><div class="posttext" id="p48">:-/<br />
+<br />
+If the flattening was not there then you could never skill up above 200 unless I am missing something.<br />
+<br />
+;-)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u49"><b>Jaasper</b></div><div class="posttext" id="p49">Here's how we're told skillups are calculated.<br />
+<br />
+Each tradeskill has a difficulty Y: 2, 3, or 4.<br />
+Tailoring is 3<br />
+Smithing is probably 4<br />
+Pottery used to be 2, now it's probably 4<br />
+Jewelcraft is probably 2<br />
+Fletching<br />
+Baking<br />
+Brewing is probably 2<br />
+Tinkering<br />
+Alchemy<br />
+Poisonmaking<br />
+<br />
+<br />
+Anyone fleshed this list out yet. Which are 2,3 and 4?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u50"><b>Ariaya</b></div><div class="posttext" id="p50">I think we figured out that baking was *probably* a 3 ... The post is here somewhere ....<br />
+<br />
+Ah .. on this thread -&gt; http://mboards.eqtraders.com/eq/showthread.php?t=15668</div></div><hr />
+
+
+<div class="post"><div class="username" id="u51"><b>Kraggie</b></div><div class="posttext" id="p51">Take this for what you will.  Seems conclusive to me though.<br />
+<br />
+Smithing 197:  Started with 280 INT (81 STR), trivial of recipe 222.  According to formulae posted and assuming Smithing has a Y=4 it should have taken me ~89 combines to get the last 3 skillups:<br />
+197-198:  30<br />
+198-199:  30<br />
+199-200:  29<br />
+<br />
+It actually took me 1, 23, and 19 combines to get the 3 remaining skill-ups.  If I redo the formula with a Smithing Y=3, those numbers (throwing out the 1) are more in-line.  So my guess?  ***SMITHING Y=3***  Granted 3 skill-ups isn't a whole lot of testing, but that's all I had to work with.<br />
+<br />
+Also did Tinkering.  Started 182.  Finished 188.  Took 10, 6, 1, 12, 6, 5.  That puts ***Tinkering at Y=2***.  Same stats as above, only no Tertiary stat benefit for Tinkering.<br />
+<br />
+I'm leaving Tinkering at Y=2 in my spreadsheet, and will have some more data as soon as I get money and drops to try some more combines.  It'll be a cold day in 'ell before I use Tanaan to up Smithing, so no more tests on it from me.<br />
+<br />
+What are you folks finding?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u52"><b>Nitpaac</b></div><div class="posttext" id="p52">Hello Kraggie,<br />
+sorry, I do not want to say you are wrong, but well, at least I can say that your sample size is WAY too small.<br />
+<br />
+43 combines in smithing for a post 190-skill? From my skilling I'd predicted one skillup if you are lucky.<br />
+<br />
+40 combines for tinkering? Okay, granted that I am past the 200 now, but heck, runs of 40 combines without a single skillup are not unlikely. I really wonder how you managed to get 6.<br />
+<br />
+Since the RNG does a lot of work here, my first guess would be that several runs of 100 or 150 skillups are needed to get a reliable value for the tradeskill difficulty.<br />
+Knowing if you got your skillup from a success or a failure would help to narrow that difficulty down, too.<br />
+<br />
+But hey, I wish I had your skillup rates :)<br />
+<br />
+Cheers,<br />
+   Nitpaac</div></div><hr />
+
+
+<div class="post"><div class="username" id="u53"><b>Ngreth Thergn</b></div><div class="posttext" id="p53">I was hoping Tanker would get us the list :)  But he may be required to keep this as a &quot;secret&quot;</div></div><hr />
+
+
+<div class="post"><div class="username" id="u54"><b>Tanker</b></div><div class="posttext" id="p54">Not so much &quot;required&quot; to keep it a secret, but a couple of things.<br />
+<br />
+1. Obviously these numbers can change (as they have already).  Any numbers I'd give out, I'd want to make sure people understood they were only &quot;at the time of posting&quot;.  If you guys figure them out, and they then change, then it's just &quot;oh, they didn't get it right&quot;.  Of course, this applies to the formulae I have  given out as well, but don't get antsy that I'll change it soon.  I don't forsee that happening right now.<br />
+<br />
+2. Watching you all figure this out (and I think you will, given enough effort) is fun.  I only hope figuring it out is just as much fun.  Please, if you don't find it so, let the ones who do continue the effort.   ;) <br />
+<br />
+3. Really, Absor is the man when it comes to tradeskills.  I did the UI, and I've stuck around mainly because I met a few of you at FF, there's some fairly creative conversations, and *cough*sometimes*cough* you all find code issues faster than we do.  ;)  But it really is Absor's ballgame, so I'll let him make any announcements about Y values, if he decides to.  Maybe he should have a contest where the winner picks a TS, and he gives out the Y value for that one?  Whatever, you'll have to ask him.<br />
+<br />
+*sidles back to the programmer cave from which he spawned*<br />
+<br />
+Tanker</div></div><hr />
+
+
+<div class="post"><div class="username" id="u55"><b>Lickity</b></div><div class="posttext" id="p55">WTB Absor, TL him here for us Tanker so we can take a swings at.... I mean pick his brain =)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u56"><b>Kraggie</b></div><div class="posttext" id="p56">at least I can say that your sample size is WAY too small.<br />
+Knowing if you got your skillup from a success or a failure would help to narrow that difficulty down, too.<br />
+<br />
+<br />
+Yeah I feel the same way Nitpaac.  I knew before I posted that my sample size was too small.  I just don't have the time to create an alt and start from scratch.  Besides, pre 50 or 100 skillups come like mad, so it doesn't do much for testing.  But it's at least data to look at.  I made a pretty extensive spreadsheet showing my % to succeed/fail and subsequent chances to gain skillup based on those numbes.  I was just saying that with my low sample the numbers fit those Y values.  More testing will either prove or disprove what I've found, but I wanted to contribute.<br />
+<br />
+Unfortunately I didn't record whether I got the skillup on success or failure, just the numbers of successes/failures for each given skillup.  I'd wager money that I only got one skillup on failure though.<br />
+The 3 skillups for Smithing: 198, 1 combine, 1 success<br />
+199, 23 combines 20 success<br />
+200, 19 combines, 17 success<br />
+<br />
+6 skillups for Tinkering:  183, 10 combines, 6 success<br />
+184, 6 combines, 5 success<br />
+185, 1 combine, 0 success (skillup on failure?!  /faint)<br />
+186, 12 combines, 10 success<br />
+187, 6 combines, 5 success<br />
+188, 5 combines, 5 success<br />
+<br />
+Hey Tanker, keep coming around  :D  I was just commenting to some other players about the attention the tradeskill community got from the Dev team.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u57"><b>Ngreth Thergn</b></div><div class="posttext" id="p57">NP Tanker :)   Just poking at you :)<br />
+ <br />
+Thanks for hanging around :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u58"><b>Yakk</b></div><div class="posttext" id="p58">Since this was specifically mentioned as a *doubling* of a skillup chance, and only post-200, it has to be something more than the 190-cutoff. Which would also explain the &quot;hell levels&quot; in the high 180s and 190s that are so often talked about. From 190-200 your skillup chace would bottom out (at 5% or less depending on stats and skill difficulty), and then after 200 it would go back up to 10% (where it was at 180).<br />
+<br />
+Set the &quot;magic cut off&quot; to 195 instead of 190.  The end effect would be &quot;skillup chances past 200 would double&quot;, plus some other minor effects. . .  Namely, skillup chances from 190 to 200 would also go up.<br />
+<br />
+When they make a comment in patch notes, don't assume it precicely describes what is going on.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u59"><b>Jarak_akn</b></div><div class="posttext" id="p59">I have just checked my results for fletching from zero to 200 with int 255.<br />
+<br />
+If Y = 2 I would expect an average of 4.3 attepts per skill up<br />
+If Y = 3 I would expect an average of 5.5 attepts per skill up<br />
+If Y = 4 I would expect an average of 7.3 attepts per skill up<br />
+<br />
+Actual result = 5.6 over 1120 combines.<br />
+<br />
+The deveation from Y=3 is minimal.<br />
+<br />
+This is obviously only one set of results, but the result is almost spot on.<br />
+I seriously doubt that Fletching's Y = 4 it could be 2 and I was unlucky, but I suspect Y = 3<br />
+<br />
+HTH<br />
+<br />
+I can post more data (and probably will in the fletching forum)<br />
+<br />
+Jarak.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u60"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p60">Just a word of warning that with an INT of 255, you cannot prove that the difficulty Y equals 2. That's because if Y = 2, you will always pass the first test with an INT above 200, effectively meaning that the only part of influence is your actual skill for the second test. If Y is indeed 3 or 4, then you should be able to find it - which you seem to do (so the warning would in this case be a hollow one).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u61"><b>Mark</b></div><div class="posttext" id="p61">&gt;I think there's one detail missing from the formula: <br />
+&gt;we haven't yet explained why chance of skillup is <br />
+&gt;better with 200+ skill than it is in the 190s.<br />
+<br />
+The ran(200) &gt;= min(190, skill) could very well be<br />
+ ran(P) &gt;= min(190, skill)<br />
+<br />
+Where P is based on the maximum Possible score in the skill.  That is, until I hit 201 in a trade skill the maximum possible is 200, after 201 the maximum becomes 250 because I have chosen it to be grand master.<br />
+<br />
+I would guess the 190 also changes simply because, as a rule, good programmers hate magic numbers.  If there are hard coded numbers there instead of variables then changing the system takes a lot of hunting through source code for those hard coded magic numbers.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u62"><b>Suani</b></div><div class="posttext" id="p62">I estimated the following values for the difficulty Y in the skillup formula:<br />
+<br />
+Baking 3<br />
+Brewing 3<br />
+Fletching 4<br />
+Jewelcraft 4<br />
+Pottery 4<br />
+Smithing 2<br />
+Tailoring 2<br />
+<br />
+I presented the data I gathered here and I showed the analysis here.<br />
+<br />
+Edit: Changed the estimate for jewelcraft to 4. See this post for details.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u63"><b>gpofcore</b></div><div class="posttext" id="p63">Yay for Suani..... and yay for smithing being a y=2. <br />
+<br />
+This means I don't really need my str-wis-int over 200 in that I won't see much improvement if I am doing combines that triv near my skill lvl.<br />
+<br />
+If I've got this right higher str-wis-int will help on failures though.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u64"><b>nimchip</b></div><div class="posttext" id="p64">... brain... hurts... can't understand...<br />
+can someone send me a PM with a layman term explanation maybe?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u65"><b>Yakk</b></div><div class="posttext" id="p65">... brain... hurts... can't understand...<br />
+can someone send me a PM with a layman term explanation maybe?<br />
+<br />
+1&gt; More stat (int/wis/etc) means faster skillups.<br />
+<br />
+2&gt; Skillups above 190 skill are all equal in difficulty, other than recipies.<br />
+<br />
+3&gt; Skillups on failures are rarer than on success.  Successes cause skillup up to twice as often.<br />
+<br />
+4&gt; Some skills go up faster than others.  There are 3 difficulty levels, &quot;easy&quot; &quot;medium&quot; and &quot;hard&quot;.<br />
+<br />
+5&gt; The easier the skill and the higher your stat (int/wis), the less it matters if you succeed or fail on a skillup attempt.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u66"><b>SotakoYatako</b></div><div class="posttext" id="p66">**Falls flat on his face after teleporting in****<br />
+**Gets up, dusts self off.**<br />
+Dang it been way tooooooo long sence I zone have forgoten how to do that.<br />
+<br />
+Ok I've been out of game for about 6 months now, computer bit the dust and don't got the cash to buy one, at school right now so got the net atm.<br />
+<br />
+Just based upon the need for stats, err data to help figure this forulma out. It could be easyest to make a Orge due to there high starting Str and readly avbility of high str items we can get enough data on smithing in the 0 to 150 ish range that we can probly figure out the DF of it and then once we got the exsact data for that, we can go from there, but man I thought i was good at math but this is makeing my head hurt lol.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u67"><b>nimchip</b></div><div class="posttext" id="p67">1&gt; More stat (int/wis/etc) means faster skillups.<br />
+<br />
+2&gt; Skillups above 190 skill are all equal in difficulty, other than recipies.<br />
+<br />
+3&gt; Skillups on failures are rarer than on success.  Successes cause skillup up to twice as often.<br />
+<br />
+4&gt; Some skills go up faster than others.  There are 3 difficulty levels, &quot;easy&quot; &quot;medium&quot; and &quot;hard&quot;.<br />
+<br />
+5&gt; The easier the skill and the higher your stat (int/wis), the less it matters if you succeed or fail on a skillup attempt.<br />
+<br />
+AH thank you for clearing this up, i now understand the formula. Thanks a lot :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u68"><b>Mientree</b></div><div class="posttext" id="p68">If I recall, which might hurt the level 1 mule going to a skill of 1, is that on a successful combine with a skill less than 15 - you are guaranteed a skill up.  So you could only use the failures to help determine it.  Unless you went to a skill of 16 or more - you really can't use the successes to help determine the difficulty factors.<br />
+<br />
+ :boggled:  :confused:  :eek:  :rolleyes: <br />
+<br />
+Brain lapse - realized this post references one from almost a month ago... it as referring to one on the bottom of page 1... (didn't realize at the time I was going to be posting on page 3) oooppss... <br />
+<br />
+But I didn't see anyone make reference to this fact (that was given at fan faire) up to this message... Keep up the work - so I don't have to.  :)</div></div><hr />
+
+
+<div class="post"><div class="username" id="u69"><b>LadyAnnaAnna</b></div><div class="posttext" id="p69">Hmm, I guess all I really want to know is what the odds are for spilling your beer while taking in your fishing line  :D <br />
+<br />
+LadyAnnaAnna</div></div><hr />
+
+
+<div class="post"><div class="username" id="u70"><b>The Icy One</b></div><div class="posttext" id="p70">So, for the non-technically inclined folks that have developed carpal tunnel from tradeskilling for the last 4 years, in plain, non-frosted, simple text the formula is... :faint: <br />
+<br />
+Let X= Huh?<br />
+Let Y= Suuuuurrrreeee.<br />
+Let Z= /nod and pretend you understand.<br />
+<br />
+Give me a hand here.<br />
+Blacksmithing on my High Elf Mage max what stat?<br />
+I can expect to exhaust the 1000 shrieking/wailing substances I farmed for a month and have to go back for more when?<br />
+Does character level have anything at all to do with it like it Alchemy?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u71"><b>Tineras</b></div><div class="posttext" id="p71">Everyone seems to be assuming that the skillup difficulty (V) is tradeskill based and not recipe based...<br />
+<br />
+I'm almost positive that, at least a while ago, poison vials (regular/lined/sealed) had a HUGELY faster skillup rate than casserole dishes for pottery...<br />
+<br />
+My potter wasted lots of time and money doing stacks of casserole dishes on at least 2 different days when he ran out of skins to do poison vails..   Vials were skilling up several times per stack where casserole dishes was in the 1 in 30 or higher range (i.e. around 4 times faster for vials).<br />
+<br />
+If the skillup difficulty is recipe based, what does that do to everyones calculetions?</div></div><hr />
+
+
+<div class="post"><div class="username" id="u72"><b>Kieroth_whiteleaf</b></div><div class="posttext" id="p72">I would venture to assume (not even coming close to claiming knowledge) that the recipes are strictly skill based, not recipe based. Putting an extra variable into each recipe would add hundreds of additional bits of data and would cause more processing on the server side.<br />
+<br />
+Not saying it can't be true, but it would cause a lot of excess code, and the original programmers seemed a bit to lazy to code something like that.<br />
+<br />
+Also, from everthing I've read (like clarifications) it seems like it's very clear that it's tradeskill based rather than specific item based.<br />
+<br />
+I suppose modifiers are possible, but it's hard to say. Again with the harder coding.<br />
+<br />
+SFG</div></div><hr />
+
+
+<div class="post"><div class="username" id="u73"><b>Lickity</b></div><div class="posttext" id="p73">Coding this would not be terribly difficult if they coded &quot;hot recipes&quot; i.e all smithing recipes have a difficuly of 2, except 1-5 recipes, which would have a switch in the code to use the new V= value.  I can say that I agree this seemed to have been a factor at one time in Tailoring as well, when quivers yielded me a VERY high skillup rate.  However, with the strength of the RNG, all of our assumptions and intuition goes out the door without a dev to confirm/deny it.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u74"><b>Aauminki</b></div><div class="posttext" id="p74">I'm not so sure that the STAT used in the first check necessarily caps at 305/355 respectively. Lately (as described in another thread) I did 270 tailoring combines from 200'ish to 230 using 335 trivial Velious combines, that's 27 skillups not counting the ethereal stuff. I'm a wizard, and have 590 INT unbuffed but fully geared. I didn't keep track, but never once were my bags full of masks - I'd say I failed a good 80-90% of the combines.<br />
+<br />
+Conservatively, at 80% failure rate the chance of a skillup post 190 would be:<br />
+<br />
+@355 INT<br />
+((355-15)*10)/(3*(1*20%+2*80%)) = 3400/5.4 ~ 630/1000 chance of passing check one, and 5% of those would be skill-ups, or ~3.2% (31 combines per skillup).<br />
+<br />
+@590 INT<br />
+((590-15)*10)/(3*(1*20%+2*80%)) = 5750/5.4 = auto-pass check one, lowering the combines per skillup to 20 average (5% skill-ups on 2nd check).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u75"><b>Kaysha Soulsinger</b></div><div class="posttext" id="p75">I am having a similar experience, but then with Ceremonial Solstice Robes. I've been making them from 184 onwards and my successrate is (luckily!  :p ) at a horrible low; only once did I see a skillup on a success. I am currently at 204 skill, so that's 20 skillups on those Robes; yet, I only needed like 200-250 combines to get them (keeping in mind that I crossed through the &quot;hell&quot; levels with this rate). My Wisdom is capped at 320 for now, but ignoring that cap, my Wisdom would be at 369 (including KEI) or so.<br />
+<br />
+So something is odd; I had a 7-10% skillup rate on failures, where I had expected 2-3% at best, over 20 skillups.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u76"><b>tomojo</b></div><div class="posttext" id="p76">Everyone seems to be assuming that the skillup difficulty (V) is tradeskill based and not recipe based...<br />
+<br />
+I'm almost positive that, at least a while ago, poison vials (regular/lined/sealed) had a HUGELY faster skillup rate than casserole dishes for pottery...<br />
+<br />
+My potter wasted lots of time and money doing stacks of casserole dishes on at least 2 different days when he ran out of skins to do poison vails..   Vials were skilling up several times per stack where casserole dishes was in the 1 in 30 or higher range (i.e. around 4 times faster for vials).<br />
+<br />
+If the skillup difficulty is recipe based, what does that do to everyones calculetions?<br />
+<br />
+Nothing....<br />
+<br />
+You are seeing the results of FAILED attempts.<br />
+Poison vials are skill 148, lined are 168 and sealed are 188.<br />
+Casserole dishes are skill 199.<br />
+<br />
+Since your skill appears to be less than 148 (you said were doing 'poison vials'), you will use the success formula most of the time on poison vials since you will succede in the creation of the item most of the time.<br />
+<br />
+When you attempt the casserole dish, you will almost always fail to create the item, which means your skillup results will follow the failed formula being discussed fairly closely.<br />
+<br />
+Thus, you should be seeing approximately 2 times the skillups/stack doing the poison vials as compared to doing the casserole dishes. If you actually saw 4 times (which I doubt), that is probably just an anomaly in the RNG. <br />
+<br />
+There is a completely separate formula that determines the chance of success/failure on creation of an object. That is what you are thinking affects the skillups, and while it does, it doesn't affect the formulas being discussed here.<br />
+<br />
+This is exactly why you should only do the items that are closest to your current skill level whenever possible.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u77"><b>Sindailia</b></div><div class="posttext" id="p77">I just finished skilling up my fletching from 0 to 162 for my 7th shawl.  I was constantly checking my skillup rate against the calculator and never got as many skillups on fletching as you would if it was a 4.  So I think its a 5 :)  but since thats not possible, Ill guess its a 4 and I had a run of bad luck.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u78"><b>Tineras</b></div><div class="posttext" id="p78">Nothing....<br />
+You are seeing the results of FAILED attempts.<br />
+Poison vials are skill 148, lined are 168 and sealed are 188.<br />
+Casserole dishes are skill 199.<br />
+<br />
+<br />
+I used the term poison vials generically...<br />
+It's been a long time but it was probably sealed poison vials I was working on with a skill somwhere in the 170s or even as high as 180s.<br />
+<br />
+But I do believe there were a lot more failures for the dishes (another thing that seems odd for something that was only roughly 11 points higher trivial).</div></div><hr />
+
+
+<div class="post"><div class="username" id="u79"><b>Soriano</b></div><div class="posttext" id="p79">MY theory of the value of Y...<br />
+<br />
+Y is not determined by which skill...<br />
+<br />
+Y is determined by your skill...<br />
+<br />
+Y = 2 if skill (0-100)<br />
+Y = 3 if skill (101-150)<br />
+Y = 4 if skill (151-200)<br />
+Y = 2 if skill (201-250)<br />
+<br />
+it would explain why you skill up much faster at lower levels of skill and the natural slowing as skill rises...<br />
+<br />
+the actual value of Y in relation to the formula has a pretty minimal effect...it also only effect the first succession in the formula...leaving us with essentially a 5% chance of gaining a skillup after passing test one post 190 skill which seems to be the trend of all 7 tradeskills...<br />
+<br />
+the range values mybe slightly off but are my best guesses...<br />
+<br />
+it also addresses how they were able to in a patch double skill up rate post 200 skill...<br />
+<br />
+it was the way I understood the original formula to work...<br />
+<br />
+This is an unconfirmed theory...but only way I see how they could double the skill up rate post 200 skill...I use the term double loosely as I assume they did in the patch message...<br />
+<br />
+The theory listed in a post above made me think a bit but changing 190 to 195 would have a reverse effect...<br />
+<br />
+if in the patch message on double the chance post 200 skill, they truely meant double then the example below would be as close to actually doubling the chance for skill up... <br />
+<br />
+but it could in theory work like this supposing the first check succeeded...<br />
+<br />
+if skill &gt; 200 then<br />
+    x = 180<br />
+else<br />
+    x = 190<br />
+end<br />
+<br />
+if random(200)&gt;= min(x,skill) then<br />
+   skill up!!!<br />
+else<br />
+   no skill up<br />
+end<br />
+<br />
+this would take a 5% chance for skill up and double it to a 10% chance...<br />
+<br />
+but at a random(200)&gt;180 in the formula skill ups would probably come much faster than my experience has been...so I do not think this theory works, thus fueling my theory on the value of Y...<br />
+<br />
+taking the Y value from 4 - 2 essentially doubles the chance for success on the first test...<br />
+<br />
+post 200 I did not experience skill ups per 10 combines and if changing the min value of the second calculation is how they double the chance for skill ups I am the unluckiest person on earth...<br />
+<br />
+being a grandmaster in every skill I did not notice any one skill to be any easier than the other to raise other than the issues: number of subcombines, gathering components, and number of non-trivial receipes available by skill...</div></div><hr />
+
+
+<div class="post"><div class="username" id="u80"><b>Ngreth Thergn</b></div><div class="posttext" id="p80">Except that is not what the dev that actually looked at the code said.<br />
+<br />
+and the diferences are small for the numbers we are working with...  OTHER skills use the same skillup order and have different difficulty numbers.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u81"><b>Soriano</b></div><div class="posttext" id="p81">All we have is what someone who talked to a dev says the developer recalled...by admission the developer only studied the code and was not the original programmer...also I do not recall him ever stating what caused the value of Y to vary but just that the value of Y was either 2,3,4 and not always the same....<br />
+<br />
+There was a thread about a year back where someone said the value of Y changed based on what type of skill, not meaning tailoring vs brewing but tradeskill vs melee vs spell casting discipline...it was an interesting read...I had the thread bookmarked but the site has either removed the thread or the site is gone as my link no longer works or I would post it...<br />
+<br />
+My theory could very well be wrong...but until I see the actual code or some one gives me a explainable way to double your chances post 200 for skill ups. The original post in this thread list a formula that does not really show how a alteration to the code could double your chances for skill up post 200 skill...other than the example I provided which my experience just does not support that theory...and my experience does not support that Smithing is harder to raise skill in than brewing...other than brewing you can vendor buy all your ingredients and smithing you can not...and smithing takes subcombines and brewing does not...but both averaged about the same number of combines per skill up...post 200.<br />
+<br />
+<br />
+Also I have not heard a developer confirm that the formula posted is 100%...<br />
+<br />
+But I did hear Tanker say he loves to watch us try and figure it out...lol</div></div><hr />
+
+
+<div class="post"><div class="username" id="u82"><b>Philio</b></div><div class="posttext" id="p82">Hello all,<br />
+<br />
+I was wondering if anyone can check to see if any new 200+ trivial recipes were entered around the time that the &quot;doubling skill-up rate past 200&quot; was given.  This would allow for faster skillups since you would be operating near trivial more often than before, without the formulas having to be adjusted, correct?<br />
+<br />
+Thanx,<br />
+<br />
+Philio</div></div><hr />
+
+
+<div class="post"><div class="username" id="u83"><b>Ngreth Thergn</b></div><div class="posttext" id="p83">nah, there were some 350 trivial recipies (we did not know it at the time, but there were) before they implemented that.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u84"><b>samhainOR</b></div><div class="posttext" id="p84">so i am thinking that somewhere there is stored information regarding the number of times you have attempted a recipie. GoD conversions getting better the more often you do them is my basis of this assumption. <br />
+<br />
+in the same vein, (i may be wayyy off here) i have noticed when doing tinkered elemetal cams that the sucess rate seems to be going up ( starting from 212 when i started cams to 23something now). I was led to belive that all recipies &gt; 190 are equal or am i misreadig this?<br />
+<br />
+--vatra noxpyr</div></div><hr />
+
+
+<div class="post"><div class="username" id="u85"><b>Sylphan</b></div><div class="posttext" id="p85">Soriano, many of us suspect that the second check used to use 195, and it was changed to 190.  The devs would claim that change 'doubled the skillup rate past 200'.<br />
+<br />
+Philio, there were a few recipes that had their trivials raised at that time.  They had been trivial around 210 (roughly), and were raised to 250 to 300ish.  That helped a little by giving more options.  But nobody noticed any new recipes.<br />
+<br />
+samhainOR, all recipes have roughly the same chance of skillup (on a success) when your skill is 190 or higher.  They also have roughly the same chance of skillup (on a failure) when your skill is 190 or higher.  But some recipes (the 350 trivial ones) will fail more often, and thus will not be as good for skilling up.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u86"><b>Ngreth Thergn</b></div><div class="posttext" id="p86">so i am thinking that somewhere there is stored information regarding the number of times you have attempted a recipie. GoD conversions getting better the more often you do them is my basis of this assumption. <br />
+<br />
+<br />
+The GoD refines are a special case.  There is an extra character flag added for that.  There is not a record of any other combine you make in the game, just those GoD combines.</div></div><hr />
+
+
+<div class="post"><div class="username" id="u87"><b>Soriano</b></div><div class="posttext" id="p87">Soriano, many of us suspect that the second check used to use 195, and it was changed to 190.  The devs would claim that change 'doubled the skillup rate past 200'.<br />
+<br />
+Well that does add a new piece to this and would fit better with all the other information compiled...<br />
+<br />
+This would lead me to believe the thread I read some year ago, that the value of Y is set by type of skill...<br />
+<br />
+Tradeskills (all 7 of them) Y = 3 since we were told tailoring is 3 and I think all tradeskills have the same value to Y<br />
+<br />
+Spells (Evocation, Conjuration, ect) Y = 2<br />
+<br />
+Melee skills (2 hand slash, 1 hand slash, ect) Y = 4<br />
+<br />
+As for language skill ups I would suspect 2.<br />
+unsure about offense defense ect and so was the person that posted back then but since they are use so frequently I would suspect 4 as well for them...<br />
+<br />
+but I would imagine the same formula is used for each skill outside of trades to determine skill ups...<br />
+<br />
+but nothing in my experience leads me to believe that Brewing has any different value for Y than smithing or tailoring...<br />
+<br />
+is brewing easier to raise skill in, yes from the simple fact is you can vendor buy all your ingredients and there are ZERO trivial subcombines involved...<br />
+<br />
+I had a bad run of about 120 combines of hero minotaurs brew at 237 skill...had a similar issue with a 242 tailoring combine at a skill of 231, 180 combines to get ONE skill improve...but on a whole across the 7 tradeskills I generally got 1 or 2 skillups per 20 combines...(and usually only the one)<br />
+<br />
+Also will add I generally had atleast one long no skill up streak in each skill but none other than two mention did I go over 60 combines without a single skill up...</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.1, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

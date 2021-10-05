@@ -1,0 +1,423 @@
+<HTML>
+<HEAD>
+<TITLE>WebCalendar</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// The following code is used to support the small popups that
+// give the full description of an event when the user move the
+// mouse over it.
+
+// Developer's note:
+// I (Benoit Maisonny <benoit@synclude.com>) tested this code with Mozilla 0.8.1 (on Linux),
+// with IE5.5 SP1 (on WinNT4) and with Netscape Communicator 4.74 (on Linux).
+// Netscape 6.0 and 6.01 seem to have a bug related to the visibility attribute.
+// I suppose it will be corrected as soon as they release a new version, based on
+// a more recent Mozilla source code.
+// I'm not able to test this javascript code with IE4. It'd be glad to know if it works.
+
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+W3C = (document.getElementById) ? 1 : 0;	
+// W3C stands for the W3C standard, implemented in Mozilla (and Netscape 6) and IE5
+
+// Function show(evt, name)
+//	evt is a pointer to the Event object passed when the event occurs
+//	name is the ID attribute of the element to show
+function show ( evt, name ) {
+  if (IE4) {
+    evt = window.event;  //is it necessary?
+  }
+
+  var currentX,		//mouse position on X axis
+      currentY,		//mouse position on X axis
+      x,		//layer target position on X axis
+      y,		//layer target position on Y axis
+      docWidth,		//width of current frame
+      docHeight,	//height of current frame
+      layerWidth,	//width of popup layer
+      layerHeight,	//height of popup layer
+      ele;		//points to the popup element
+
+  // First let's initialize our variables
+  if ( W3C ) {
+    ele = document.getElementById(name);
+    currentX = evt.clientX,
+    currentY = evt.clientY;
+    docWidth = document.width;
+    docHeight = document.height;
+    layerWidth = ele.style.width;
+    layerHeight = ele.style.height;
+
+  } else if ( NS4 ) {
+    ele = document.layers[name];
+    currentX = evt.pageX,
+    currentY = evt.pageY;
+    docWidth = document.width;
+    docHeight = document.height;
+    layerWidth = ele.clip.width;
+    layerHeight = ele.clip.height;
+
+  } else {	// meant for IE4
+    ele = document.all[name];
+    currentX = evt.clientX,
+    currentY = evt.clientY;
+    docHeight = document.body.offsetHeight;
+    docWidth = document.body.offsetWidth;
+    //var layerWidth = document.all[name].offsetWidth;
+    // for some reason, this doesn't seem to work... so set it to 200
+    layerWidth = 200;
+    layerHeight = ele.offsetHeight;
+  }
+
+  // Then we calculate the popup element's new position
+  if ( ( currentX + layerWidth ) > docWidth ) {
+    x = ( currentX - layerWidth );
+  }
+  else {
+    x = currentX;
+  }
+  if ( ( currentY + layerHeight ) >= docHeight ) {
+     y = ( currentY - layerHeight - 20 );
+  }
+  else {
+    y = currentY + 20;
+  }
+  if ( IE4 ) {
+    x += document.body.scrollLeft;
+    y += document.body.scrollTop;
+  } else if ( NS4)  {
+  } else {
+    x += window.pageXOffset;
+    y += window.pageYOffset;
+  }
+// (for debugging purpose) alert("docWidth " + docWidth + ", docHeight " + docHeight + "\nlayerWidth " + layerWidth + ", layerHeight " + layerHeight + "\ncurrentX " + currentX + ", currentY " + currentY + "\nx " + x + ", y " + y);
+
+  // Finally, we set its position and visibility
+  if ( NS4 ) {
+    //ele.xpos = parseInt ( x );
+    ele.left = parseInt ( x );
+    //ele.ypos = parseInt ( y );
+    ele.top = parseInt ( y );
+    ele.visibility = "show";
+  } else {  // IE4 & W3C
+    ele.style.left = parseInt ( x );
+    ele.style.top = parseInt ( y );
+    ele.style.visibility = "visible";
+  }
+}
+
+function hide ( name ) {
+  if (W3C) {
+    document.getElementById(name).style.visibility = "hidden";
+  } else if (NS4) {
+    document.layers[name].visibility = "hide";
+  } else {
+    document.all[name].style.visibility = "hidden";
+  }
+}
+
+function unhide ( name ) {
+  if (W3C) {
+    document.getElementById(name).style.visibility = "visible";
+  } else if (NS4) {
+    document.layers[name].visibility = "show";
+  } else {
+    document.all[name].style.visibility = "visible";
+  }
+}
+
+//-->
+
+</SCRIPT>
+
+<meta http-equiv="Content-type"  content="text/html;charset=iso-8859-1">
+<!-- Note: Although we may set the font size in here, we also make heavy
+     use of the HTML font tag since many browsers do not properly support 
+     style sheet font settings.
+-->
+<STYLE type="text/css">
+<!--
+.tablecell {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 80px;
+  height: 80px;
+}
+.tablecelldemo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+}
+.tablecellweekend {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 80px;
+  height: 80px;
+  background-color: #F0F0C0 ;
+}
+.tablecellweekenddemo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #F0F0C0 ;
+}
+.tableheader {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000 ;
+  background-color: #FFFFFF ;
+}
+.tableheadertoday {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000 ;
+  background-color: #F0F090 ;
+}
+.dayofmonth {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+  background-color: #E7E7E7;
+}
+.weeknumber {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #B04040;
+  text-decoration: none;
+}
+.monthlink {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #B04040;
+  text-decoration: none;
+}
+.dayofmonthyearview {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+.dayofmonthweekview {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+}
+.dailymatrix {
+  cursor:pointer;cursor:hand;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+.entry {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #006000;
+  text-decoration: none;
+}
+.unapprovedentry {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #800000;
+  text-decoration: none;
+}
+.navlinks {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #0060C0 ;
+  text-decoration: none;
+}
+A {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0060C0 ;
+  text-decoration: none;
+}
+.aboutinfo {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  text-decoration: none;
+}
+.popup {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000 ;
+  text-decoration: none;
+}
+.layerentry {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006060;
+  text-decoration: none;
+}
+.tooltip {
+  cursor: help;
+  text-decoration: none;
+}
+.defaulttext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #0060C0 ;
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+.pagetitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+td {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+a:hover {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0000FF;
+}
+.dailymatrix {
+  cursor:pointer;cursor:hand;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" CLASS="defaulttext" >
+<CENTER><img src="http://www.eqcentral.net/images/EC.gif">
+</a> <bgcolor="#FFFFFF">
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+
+<TD ALIGN="middle">
+<FONT SIZE="+2" COLOR="#0060C0">
+<B>
+April 2005</B></FONT>
+<FONT COLOR="#0060C0" SIZE="+1">
+<BR>
+Public Access</FONT></TD>
+</TR>
+</TABLE>
+
+<TABLE BORDER="1" WIDTH="100%" CELLSPACING="0" CELLPADDING="0">
+
+<TR>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Sun</FONT></TH>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Mon</FONT></TH>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Tue</FONT></TH>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Wed</FONT></TH>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Thu</FONT></TH>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Fri</FONT></TH>
+<TH WIDTH="14%" CLASS="tableheader" BGCOLOR="#FFFFFF"><FONT COLOR="#000000">Sat</FONT></TH>
+</TR>
+
+<TR>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0">&nbsp;</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0">&nbsp;</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0">&nbsp;</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0">&nbsp;</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0">&nbsp;</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050401">01</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050402">02</A></FONT><BR>
+<FONT SIZE="-1">Lolli Brothers Horse Sale</A></FONT><BR><FONT SIZE="-1">4am&gt;ALL SPEED SHOW</A></FONT><BR></TD>
+</TR>
+<TR>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050403">03</A></FONT><A HREF="week.php?date=20050403" CLASS="weeknumber"><FONT SIZE="-2" CLASS="weeknumber">(Week 14)</FONT></A><BR>
+<FONT SIZE="-1">Belle Trail Ride</A></FONT><BR><FONT SIZE="-1"><B>9pm&gt;Sho-me horse show</A></B></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050404">04</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050405">05</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050406">06</A></FONT><BR>
+<FONT SIZE="-1">8pm&gt;Cross Roads Horse Show</A></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050407">07</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050408">08</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050409">09</A></FONT><BR>
+<FONT SIZE="-1">Spring Spectacular Performance Horse &amp; 2YO Futurity Prospect Sale</A></FONT><BR><FONT SIZE="-1">11am&gt;State 4-H Horse Judging Competition &amp; Clinic</A></FONT><BR><FONT SIZE="-1">2pm&gt;12pm Eldon barrel race jackpot</A></FONT><BR><FONT SIZE="-1">4pm&gt;ALL SPEED SHOW</A></FONT><BR><FONT SIZE="-1"><B>9pm&gt;Sho-me horse show</A></B></FONT><BR></TD>
+</TR>
+<TR>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050410">10</A></FONT><A HREF="week.php?date=20050410" CLASS="weeknumber"><FONT SIZE="-2" CLASS="weeknumber">(Week 15)</FONT></A><BR>
+<FONT SIZE="-1"><B>Equestrian Central Reservation Deadline</A></B></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050411">11</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050412">12</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050413">13</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050414">14</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050415">15</A></FONT><BR>
+<FONT SIZE="-1">Equestrian Central Final Issue deadline.</A></FONT><BR><FONT SIZE="-1"><B>9pm&gt;Sho-me horse show</A></B></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050416">16</A></FONT><BR>
+<FONT SIZE="-1">1pm&gt;Horse Show(Points)</A></FONT><BR><FONT SIZE="-1">4pm&gt;ALL SPEED SHOW</A></FONT><BR></TD>
+</TR>
+<TR>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050417">17</A></FONT><A HREF="week.php?date=20050417" CLASS="weeknumber"><FONT SIZE="-2" CLASS="weeknumber">(Week 16)</FONT></A><BR>
+<FONT SIZE="-1">4pm&gt;Hartville Saddle Club Fun Show</A></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050418">18</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050419">19</A></FONT><BR>
+<FONT SIZE="-1">4pm&gt;Horses &amp; Mud</A></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050420">20</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050421">21</A></FONT><BR>
+<FONT SIZE="-1"><B>9pm&gt;Sho-me horse show</A></B></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050422">22</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050423">23</A></FONT><BR>
+<FONT SIZE="-1">State 4-H Horsebowl Competition</A></FONT><BR><FONT SIZE="-1">Show Me Mininature Donkey Schooling &amp; Fun Show</A></FONT><BR><FONT SIZE="-1">11:30am&gt;MRHA Horse Show</A></FONT><BR><FONT SIZE="-1">11:30am&gt;MRHA Horse Show</A></FONT><BR></TD>
+</TR>
+<TR>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F0C0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050424">24</A></FONT><A HREF="week.php?date=20050424" CLASS="weeknumber"><FONT SIZE="-2" CLASS="weeknumber">(Week 17)</FONT></A><BR>
+<FONT SIZE="-1">State 4-H Hippology Competition</A></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050425">25</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050426">26</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050427">27</A></FONT><BR>
+<FONT SIZE="-1"><B>9pm&gt;Sho-me horse show</A></B></FONT><BR></TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050428">28</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecell" BGCOLOR="#F0F0F0"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050429">29</A></FONT><BR>
+</TD>
+<TD VALIGN="top" HEIGHT=75 ID="tablecellweekend" BGCOLOR="#F0F090"><FONT SIZE="-1"><A CLASS="dayofmonth" HREF="day.php?date=20050430">30</A></FONT><BR>
+<FONT SIZE="-1">Greater Ozarks Competition Trail Ride</A></FONT><BR></TD>
+</TR>
+
+</TABLE>
+
+
+<P>
+
+
+
+</BODY>
+</HTML>

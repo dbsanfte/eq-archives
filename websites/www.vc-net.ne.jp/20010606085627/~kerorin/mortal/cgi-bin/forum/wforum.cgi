@@ -1,0 +1,198 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<STYLE type="text/css">
+<!--
+body,tr,td,th { font-size: 10pt }
+a:hover       { color: #DD0000 }
+span          { font-size: 18pt }
+big           { font-size: 12pt }
+small         { font-size: 9pt }
+-->
+</STYLE>
+<title>Mortal Illusion General Forum</title></head>
+<body background="" bgcolor="#FFFFFF" text="#004080" link="#0000E3" vlink="#008080" alink="#DD0000">
+
+<center>
+<font color="#000080" size=6 face="ＭＳ Ｐゴシック"><B><span>Mortal Illusion General Forum</span></B></font>
+<hr width='90%'>
+[<a href="http://www.vc-net.ne.jp/~kerorin/mortal/" target='_top'>もどる</a>]
+[<a href="#msg">新規投稿</a>]
+[<a href="./wforum.cgi?list=new">新規順表示</a>]
+[<a href="./wforum.cgi?mode=new_sort&page=0">新着記事</a>]
+[<a href="./wforum.cgi?mode=howto">使い方</a>]
+[<a href="./wforum.cgi?mode=find&page=0&list=">ワード検索</a>]
+[<a href="./index.cgi">過去ログ</a>]
+[<a href="./wf_admin.cgi">管理用</a>]
+<hr width='90%'>
+<table><tr><td nowrap><small>
+<LI>48時間以内の記事は <font color="#FF3300">new!</font> で表示されます。<br>
+<LI>ツリー先頭部の ★ をクリックすると関連記事を一括講読できます。<br>
+</small></td></tr></table></center>
+<blockquote>
+<DL>
+<DT><a href="./wforum.cgi?mode=allread&no=472&page=0">★</a> -  <a href="./wforum.cgi?no=472&reno=no&oya=472&mode=msgview&page=0">おひさです＆初めまして</a> - <b>Minako</b> <SMALL>01/06/03(Sun) 01:19 <font color=#800000>No.472</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=497&reno=472&oya=472&mode=msgview&page=0">初めまして</a> - <b>王族内乱Satsujin Jiken</b> <SMALL>01/06/06(Wed) 11:26 <font color=#800000>No.497</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./wforum.cgi?no=489&reno=472&oya=472&mode=msgview&page=0">おか～＼（＠＾〇＾＠）／</a> - <b>もふぁ♪</b> <SMALL>01/06/05(Tue) 15:33 <font color=#800000>No.489</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=493&reno=489&oya=472&mode=msgview&page=0">Report</a> - <b>Jojox</b> <SMALL>01/06/05(Tue) 18:35 <font color=#800000>No.493</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=496&reno=493&oya=472&mode=msgview&page=0">気にしないでね</a> - <b>Minako</b> <SMALL>01/06/05(Tue) 21:56 <font color=#800000>No.496</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+</UL>
+<LI> <a href="./wforum.cgi?no=487&reno=472&oya=472&mode=msgview&page=0">初めまして</a> - <b>Tatsushi</b> <SMALL>01/06/05(Tue) 08:37 <font color=#800000>No.487</font>  <font color=#FF3300>new!</font></SMALL>
+<LI> <a href="./wforum.cgi?no=484&reno=472&oya=472&mode=msgview&page=0">お帰りなさいー</a> - <b>Tamushige</b> <SMALL>01/06/04(Mon) 15:24 <font color=#800000>No.484</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=483&reno=472&oya=472&mode=msgview&page=0">よろしくです。</a> - <b>lillia</b> <SMALL>01/06/04(Mon) 09:41 <font color=#800000>No.483</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=482&reno=472&oya=472&mode=msgview&page=0">はろ～</a> - <b>Sector</b> <SMALL>01/06/03(Sun) 18:26 <font color=#800000>No.482</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=486&reno=482&oya=472&mode=msgview&page=0">ADSL 1.1Mbps</a> - <b>Minako</b> <SMALL>01/06/05(Tue) 01:05 <font color=#800000>No.486</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+<LI> <a href="./wforum.cgi?no=481&reno=472&oya=472&mode=msgview&page=0">やふー</a> - <b>dolman</b> <SMALL>01/06/03(Sun) 16:34 <font color=#800000>No.481</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=479&reno=472&oya=472&mode=msgview&page=0">おかえりい～！</a> - <b>Feeling５９CLR</b> <SMALL>01/06/03(Sun) 12:23 <font color=#800000>No.479</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=478&reno=472&oya=472&mode=msgview&page=0">おかえり～</a> - <b>Azary</b> <SMALL>01/06/03(Sun) 10:30 <font color=#800000>No.478</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=477&reno=472&oya=472&mode=msgview&page=0">Ｍｉｎａｋｏさんだあああ　お帰りいいい　：）</a> - <b>Arucard</b> <SMALL>01/06/03(Sun) 10:01 <font color=#800000>No.477</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=476&reno=472&oya=472&mode=msgview&page=0">お帰りなさい：）</a> - <b>Lienea@57.21</b> <SMALL>01/06/03(Sun) 08:28 <font color=#800000>No.476</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=473&reno=472&oya=472&mode=msgview&page=0">おかえりなさああああい</a> - <b>Falth/Yakou</b> <SMALL>01/06/03(Sun) 01:46 <font color=#800000>No.473</font>  </SMALL>
+</UL>
+<DT><a href="./wforum.cgi?mode=allread&no=488&page=0">★</a> -  <a href="./wforum.cgi?no=488&reno=no&oya=488&mode=msgview&page=0">今まで内緒にしていましたが・・・・</a> - <b>Sector</b> <SMALL>01/06/05(Tue) 11:16 <font color=#800000>No.488</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=494&reno=488&oya=488&mode=msgview&page=0">Abscond入手しました</a> - <b>Pikarux/Mikaru</b> <SMALL>01/06/05(Tue) 18:45 <font color=#800000>No.494</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=495&reno=494&oya=488&mode=msgview&page=0">Re: Abscond入手しました</a> - <b>Sector</b> <SMALL>01/06/05(Tue) 19:25 <font color=#800000>No.495</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+<LI> <a href="./wforum.cgi?no=492&reno=488&oya=488&mode=msgview&page=0">Re: 今まで内緒にしていましたが・・・・</a> - <b>Tamushige</b> <SMALL>01/06/05(Tue) 18:19 <font color=#800000>No.492</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+<DT><a href="./wforum.cgi?mode=allread&no=490&page=0">★</a> -  <a href="./wforum.cgi?no=490&reno=no&oya=490&mode=msgview&page=0">DruBPありがとうです</a> - <b>もふぁ♪</b> <SMALL>01/06/05(Tue) 15:35 <font color=#800000>No.490</font>  <font color=#FF3300>new!</font></SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=491&reno=490&oya=490&mode=msgview&page=0">にょろ～</a> - <b>lillia</b> <SMALL>01/06/05(Tue) 16:56 <font color=#800000>No.491</font>  <font color=#FF3300>new!</font></SMALL>
+</UL>
+<DT><a href="./wforum.cgi?mode=allread&no=485&page=0">★</a> -  <a href="./wforum.cgi?no=485&reno=no&oya=485&mode=msgview&page=0">お詫び</a> - <b>kerorin</b> <SMALL>01/06/04(Mon) 23:43 <font color=#800000>No.485</font>  <font color=#FF3300>new!</font></SMALL>
+<DT><a href="./wforum.cgi?mode=allread&no=474&page=0">★</a> -  <a href="./wforum.cgi?no=474&reno=no&oya=474&mode=msgview&page=0">PoF取り残されな人はレスよろ</a> - <b>Pikarux/Mikaru</b> <SMALL>01/06/03(Sun) 03:23 <font color=#800000>No.474</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=480&reno=474&oya=474&mode=msgview&page=0">上げ　T/O</a> - <b>Pikarux/Mikaru</b> <SMALL>01/06/03(Sun) 12:25 <font color=#800000>No.480</font>  </SMALL>
+</UL>
+<DT><a href="./wforum.cgi?mode=allread&no=451&page=0">★</a> -  <a href="./wforum.cgi?no=451&reno=no&oya=451&mode=msgview&page=0">RageFireについてご意見Plz</a> - <b>Replay</b> <SMALL>01/05/31(Thu) 17:37 <font color=#800000>No.451</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=457&reno=451&oya=451&mode=msgview&page=0">Re: RageFireについてご意見Plz</a> - <b>Jojox</b> <SMALL>01/06/01(Fri) 14:16 <font color=#800000>No.457</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=468&reno=457&oya=451&mode=msgview&page=0">私が聞いた話では・・</a> - <b>Replay</b> <SMALL>01/06/02(Sat) 03:16 <font color=#800000>No.468</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=471&reno=468&oya=451&mode=msgview&page=0">それで合ってると思いますけど</a> - <b>Jojox</b> <SMALL>01/06/02(Sat) 17:26 <font color=#800000>No.471</font>  </SMALL>
+</UL>
+<LI> <a href="./wforum.cgi?no=461&reno=457&oya=451&mode=msgview&page=0">私の場合</a> - <b>Feeling５９CLR</b> <SMALL>01/06/01(Fri) 19:48 <font color=#800000>No.461</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=462&reno=461&oya=451&mode=msgview&page=0">Re: 私の場合</a> - <b>Jojox</b> <SMALL>01/06/01(Fri) 22:20 <font color=#800000>No.462</font>  </SMALL>
+</UL>
+</UL>
+<LI> <a href="./wforum.cgi?no=455&reno=451&oya=451&mode=msgview&page=0">Re: RageFireについてご意見Plz</a> - <b>Hestia </b> <SMALL>01/06/01(Fri) 13:39 <font color=#800000>No.455</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=466&reno=455&oya=451&mode=msgview&page=0">ん～たしかに（＾＾</a> - <b>Replay</b> <SMALL>01/06/02(Sat) 02:49 <font color=#800000>No.466</font>  </SMALL>
+</UL>
+<LI> <a href="./wforum.cgi?no=453&reno=451&oya=451&mode=msgview&page=0">Re: RageFireについてご意見Plz</a> - <b>Feeling５９CLR</b> <SMALL>01/06/01(Fri) 11:03 <font color=#800000>No.453</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=475&reno=453&oya=451&mode=msgview&page=0">Re^2: RageFireについてご意見Plz</a> - <b>KBee</b> <SMALL>01/06/03(Sun) 04:10 <font color=#800000>No.475</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=467&reno=453&oya=451&mode=msgview&page=0">なるほど。</a> - <b>Replay</b> <SMALL>01/06/02(Sat) 02:55 <font color=#800000>No.467</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=469&reno=467&oya=451&mode=msgview&page=0">RNG出します</a> - <b>Pikarux/Mikaru</b> <SMALL>01/06/02(Sat) 03:24 <font color=#800000>No.469</font>  </SMALL>
+</UL>
+</UL>
+</UL>
+<DT><a href="./wforum.cgi?mode=allread&no=470&page=0">★</a> -  <a href="./wforum.cgi?no=470&reno=no&oya=470&mode=msgview&page=0">New Quest</a> - <b>Nyaga</b> <SMALL>01/06/02(Sat) 09:23 <font color=#800000>No.470</font>  </SMALL>
+<DT><a href="./wforum.cgi?mode=allread&no=463&page=0">★</a> -  <a href="./wforum.cgi?no=463&reno=no&oya=463&mode=msgview&page=0">お世話になりました。m(__)m</a> - <b>Citrus@51ENC</b> <SMALL>01/06/01(Fri) 23:21 <font color=#800000>No.463</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=465&reno=463&oya=463&mode=msgview&page=0">あら～残念。</a> - <b>Replay</b> <SMALL>01/06/02(Sat) 02:44 <font color=#800000>No.465</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=464&reno=463&oya=463&mode=msgview&page=0">また遊びましょう（＾＾）</a> - <b>Nyaga</b> <SMALL>01/06/02(Sat) 02:05 <font color=#800000>No.464</font>  </SMALL>
+</UL>
+<DT><a href="./wforum.cgi?mode=allread&no=460&page=0">★</a> -  <a href="./wforum.cgi?no=460&reno=no&oya=460&mode=msgview&page=0">sumane  </a> - <b>UIUI </b> <SMALL>01/06/01(Fri) 18:27 <font color=#800000>No.460</font>  </SMALL>
+<DT><a href="./wforum.cgi?mode=allread&no=431&page=0">★</a> -  <a href="./wforum.cgi?no=431&reno=no&oya=431&mode=msgview&page=0">Haijinsが今週ＰｏＦの</a> - <b>Sector</b> <SMALL>01/05/29(Tue) 07:59 <font color=#800000>No.431</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=444&reno=431&oya=431&mode=msgview&page=0">【金曜PoF予定】</a> - <b>lillia</b> <SMALL>01/05/30(Wed) 01:53 <font color=#800000>No.444</font>  </SMALL>
+<UL>
+<LI> <a href="./wforum.cgi?no=459&reno=444&oya=431&mode=msgview&page=0">訂正です・・・・・・</a> - <b>Sector</b> <SMALL>01/06/01(Fri) 17:59 <font color=#800000>No.459</font>  </SMALL>
+<LI> <a href="./wforum.cgi?no=445&reno=444&oya=431&mode=msgview&page=0">本命は土曜日か？</a> - <b>Sector</b> <SMALL>01/05/30(Wed) 08:15 <font color=#800000>No.445</font>  </SMALL>
+</UL>
+</UL>
+</DL>
+[<b>1</b>]
+[<a href="./wforum.cgi?page=10">2</a>]
+[<a href="./wforum.cgi?page=20">3</a>]
+[<a href="./wforum.cgi?page=30">4</a>]
+[<a href="./wforum.cgi?page=40">5</a>]
+[<a href="./wforum.cgi?page=50">6</a>]
+[<a href="./wforum.cgi?page=60">7</a>]
+[<a href="./wforum.cgi?page=70">8</a>]
+[<a href="./wforum.cgi?page=80">9</a>]
+[<a href="./wforum.cgi?page=90">10</a>]
+[ページ移動]
+</blockquote>
+<hr width='95%'><center><a name="msg"></a>
+<b><big>メッセージをどうぞ・・</big></b></a><P>
+</center>
+<form action="./wforum.cgi" method="POST">
+<input type=hidden name=page value="0">
+<input type=hidden name=no value="new">
+<input type=hidden name=mode value="form">
+<blockquote>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+  <td nowrap><b>おなまえ</b></td>
+  <td>
+    <input type=text name=name size="20" value="">
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>Ｅメール</b></td>
+  <td>
+    <input type=text name=email size="20" value="">
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>題 　 名</b></td>
+  <td>
+    <input type=text name=sub size="27" value=""> 
+    <INPUT TYPE=submit VALUE="投稿する"><INPUT TYPE=reset VALUE="リセット">
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <b>メッセージ</b>　　　
+    <input type=radio name=wrap value="soft" checked>手動改行
+    <input type=radio name=wrap value="hard">強制改行
+    <input type=radio name=wrap value="pre">図表モード<BR>
+    <textarea name=message rows=10 cols="62" wrap="soft"></textarea>
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>ＵＲＬ</b></td>
+  <td>
+    <input type=text name="url" size="52" value="http://">
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>削除キー</b></td>
+  <td>
+    <input type=password name=pwd size=8 value="" maxlength=8>
+    <small>(記事削除時に使用。英数字で8文字以内)</small>
+  </td>
+</tr>
+<tr>
+  <td nowrap><b>プレビュー</b></td>
+  <td><input type=checkbox name=pview value="on" ></td>
+</tr>
+</table>
+</form></blockquote>
+<hr width='95%'>
+<center><form acion="./wforum.cgi" method="POST">
+<input type=hidden name=page value="0">
+<font color="#000080" size=2>
+以下のフォームから自分の投稿した記事を削除できます</font><br>
+■記事No<input type=text name=usr_no size=4>
+■削除キー<input type=password name=usr_key size=6>
+<input type=submit value="記事削除">
+<input type=hidden name=mode value="usr_del">
+</form><hr width='95%'></center>
+<br><br><center><small><!-- Web Forum v2.84 -->
+- <a href="http://www.kent-web.com/" target="_top">Web Forum</a> -
+</small></center>
+</body></html>

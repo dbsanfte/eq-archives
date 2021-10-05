@@ -1,0 +1,192 @@
+<HTML><HEAD><TITLE>Larian Studios Bulletin Board - Reply to Topic</TITLE>
+
+</HEAD>
+ <BODY bgcolor="#000000" background="http://www.larian.com/ubb/forumtextureD.jpg" background="http://www.larian.com/ubb/forumtextureD.jpg" text="#F0DCA0" link="#F0DCA0" alink="#F0DCA0" vlink="#F0DCA0" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<center>
+<table border=0 cellspacing=0 cellpadding=0 width=100%
+background="http://www.larian.com/toc/bg_darkblue.gif"><tr>
+<td width=100%><img border=0
+src="http://www.larian.com/toc/logo_larian_darkblue.gif"></td>
+<td><a href="http://www.larian.com/index.html"><img border=0
+src="http://www.larian.com/toc/e_nederlands_darkblue.jpg"></a></td>
+<td><a href="http://www.larian.com/Site/english/company.html"><img border=0
+src="http://www.larian.com/toc/e_darkblue_bar_news.jpg"></a></td>
+<td><a href="http://www.larian.com/Site/english/contact.html"><img border=0
+src="http://www.larian.com/toc/e_darkblue_bar_games.jpg"></a></td>
+<td><a href="http://www.larian.com/Site/english/links.html"><img border=0
+src="http://www.larian.com/toc/e_darkblue_bar_company.jpg"></a></td>
+<td><a href="http://www.larian.com/forum.html"><img border=0
+src="http://www.larian.com/toc/e_darkblue_bar_forum.jpg"></a></td>
+<td><a href="http://www.larian.com/Site/english/divinity/divinity.html"><img
+border=0
+src="http://www.larian.com/toc/e_darkblue_bar_team.jpg"></a></td>
+<td><a href="http://www.larian.com/Site/english/ledwars/ledwars.html"><img
+border=0
+src="http://www.larian.com/toc/e_darkblue_bar_contact.jpg"></a></TD>
+</tr></table>
+</center>
+</font>
+<table border=0 width=95%>
+<TR><TD>
+<A HREF="Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://www.larian.com/ubb/sign_development.gif"  BORDER=0></A></td>
+<td align=center>
+
+<table border=0>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Forum:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Development Discussion</FONT></td></tr>
+<TR><TD><FONT Face="Verdana, Arial" size="2"><B>Topic:</B></font></td><TD><FONT Face="Verdana, Arial" size="2">Test message</FONT></td></tr></table>
+
+</td></tr></table>
+<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="http://www.larian.com/cgi-bin/Ultimate.cgi?action=agree">Want to register?</a></FONT>
+
+<FORM ACTION="postings.cgi" NAME="REPLIER" METHOD="POST">
+<center>
+
+<table border=0 cellpadding=4 cellspacing=0 width=95%>
+<tr >
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#F0DCA0">
+Who Can Post?
+</font>
+</td>
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#F0DCA0">
+Any registered users may post a reply.
+</font>
+</td></tr>
+
+<tr >
+<td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#F0DCA0">
+About Registration
+</font></td><td valign=top><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#F0DCA0">
+You must be registered in order to post a topic or reply in this forum.</font></td></tr>
+<tr background="http://www.larian.com/ubb/forumtextureL.jpg"><td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your UserName:</B></FONT></td>
+<td valign=top>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td>
+</tr>
+
+
+<tr background="http://www.larian.com/ubb/forumtextureL.jpg">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Password:</B></FONT></td>
+<td valign=top><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="Ultimate.cgi?action=lostpw">Forget your password?</A></font></td></tr>
+
+<tr background="http://www.larian.com/ubb/forumtextureL.jpg">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Message Icon:</B></FONT></td>
+<td><INPUT type="radio" name="MsgIcon" value="13" CHECKED>&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon13.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="5"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon5.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="1"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon1.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="14"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon14.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="10"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon10.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="6"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon6.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="2"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon2.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR><INPUT type="radio" name="MsgIcon" value="9"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon9.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="11"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon11.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="4"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon4.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="8"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon8.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="12"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon12.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="7"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon7.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="radio" name="MsgIcon" value="3"  >&nbsp;&nbsp;<IMG SRC="http://www.larian.com/ubb/icons/icon3.gif" HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER>&nbsp;&nbsp;&nbsp;&nbsp;<BR></td></tr>
+<TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial"><B>Your Reply:</B></FONT>
+<p><BR>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#F0DCA0">
+*HTML is OFF<BR>
+<A HREF="http://www.larian.com/ubb/ubbcode.html" target=_blank>*UBB Code is ON</A><BR>
+<p><A HREF="http://www.larian.com/ubb/smilies.html" target=_blank>Smilies Legend</A></font>
+</td>
+<td>
+<TEXTAREA NAME="ReplyMessage" ROWS=20 COLS=75 WRAP="VIRTUAL">[QUOTE]Originally posted by rat:
+[I]One Two Bonjour Micro[/I][/QUOTE]
+
+</TEXTAREA>
+</td></tr>
+<TR background="http://www.larian.com/ubb/forumtextureL.jpg">
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial">
+<B>Options</B>
+</FONT></td>
+<td valign=top><FONT SIZE="1" FACE="Verdana, Arial">
+<BR><INPUT TYPE="CHECKBOX" NAME="DisableSmilies" VALUE="yes"> <B>Disable Smilies in This Post. <BR><INPUT TYPE="CHECKBOX" NAME="Signature" VALUE="yes"> <B>Show Signature:</B> include your profile  signature.  Only registered users may have signatures.
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="postreply">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Test message">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="Development Discussion">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="1">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="000001.cgi">
+<CENTER>
+ <FONT SIZE="2" FACE="Verdana, Arial" COLOR="#F0DCA0">
+<P>
+If you have previously registered, but forgotten your password, <A HREF="Ultimate.cgi?action=lostpw">click here</A>.
+</font>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Reply">
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<P>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#FF0000">*If HTML and/or <A HREF="http://www.larian.com/ubb/ubbcode.html" target=_blank>UBB Code</A> are enabled, this means you can use HTML and/or UBB Code in your message.</FONT>
+<br>
+<P><FONT SIZE="2" FACE="Verdana, Arial">
+<IFRAME FRAMEBORDER=1 ALIGN=CENTER width=100% HEIGHT=200 SCROLLING=YES SRC="http://www.larian.com/ubb/Forum1/HTML/000001.html">
+<TABLE BORDER=0 cellpadding=4 border=0 cellspacing=0 WIDTH="95%"><TR ><TD COLSPAN=2><CENTER><FONT SIZE="2" COLOR="#F0DCA0" FACE="Verdana, Arial">T O P I C  &nbsp;&nbsp;&nbsp; R E V I E W</font></CENTER></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">rat</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">One Two Bonjour Micro
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">marian</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Reply test
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">rat</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Reply 2
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">marian</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">It work, amazing!
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Marian</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Tested!
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Marian</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">It still works!<br>so..<p>*<br>*<br>Testphase completed!<br>*<br>*<br>*<br>Forum launched!
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Arhu</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Test, test...<br>Name functioning.<br>Testing ok.<br>Acknowledged. Forum working.<p>Incredible! :)<br><i>Meow...</i><br>Arhu
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Arhu</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">By the way, who might this wondrous <i>rat</i> be? I have to admit that I broke my fast already. For now.<br>But... want to play "Catch the Rat" instead, rat? *innocent smile*<p><i>Meow...</i><br>Arhu
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Marian</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">You never had an eye on the teampage, right? "rat" is our most Quake-addicted programmer, if you want to play "Catch the rat", check his quake-clan-page http://fragland.net/grg/ (btw i made the logo) and prepare to receive a lot of "short controlled bursts"! ;)
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Arhu</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Quake is it then. So be it.<br>Run, rat! I'm very quick and I'll catch you anyway. With well aimed Fireballs (I'm a spell weaver, you know. Call it rockets if you prefer).<p><i>Meow...</i><br>Arhu<p>PS: I <i>read</i> the teampage. I even have a local copy of the entire homepage. But my memory is rather... what did I want to say? Ah, yes. Short. ;)<br>PPS: Nice... elven Daemon? :)
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">rat</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Hm, I always wondered what "Close Thread" was good for anyway.  Now I know :)  Seriously, I'm supposed to keep this forum running so any broken links, missing gfx or other funny stuff should be sent to  <A HREF="mailto:rat@larian.com">rat@larian.com</A> .
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Arhu</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Broken links? Well no broken links (yet) but... will all these posts still exist after upgrading to the registered version of the UBB?<br>If so, isn't it possible to include old LMK-Topics as well? Lots of humans want this "Greyface"-Topic back.<p><i>Meow...</i><br>Arhu
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">rat</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">What's written now should survive an upgrade to a new version of UBB, but the older threads that were on LMKWorld can most likely not be recovered, no.  Although the board looks very similar to the one on LMKWorld, and the topics and people are more or less the same, it <i>is</i> a completely different server, and transferring the messagedatabase from the old machine to this new one is not possible... sorry :(
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Arhu</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Too bad. But I have one word to say:<br>Edit, edit, edit, edit, edit, edit, edit, edit, edit....<p><i>Miauh...</i><br>Arhu<p>PS: Maybe <i>that</i> should be the question for the next voting:<br>"When do you want to be able to edit your message in UBB?"<br>1. tomorrow<br>2. today<br>3. NOW!
+</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Ragon der Magier</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">To Rat:<P>Would be if those suckers running lmkworld hadn´t restrained the access to the HTML-Files (which contain the postings) through the cgi to 365days max. Another hurlde is the preset for only revealing the posts from the last 100days since last login.<BR>What i mean is that otherwise you could take a tool like WinHTTrack or Teleport to grab ´em for offline-reading. The rest would of course be quite an amount of work to manually incorporate those files into this forum.<P>Ragon</FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">rat</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Hm, yep, but that approach would only give me the 'rendered' forum, ie, just the pages that come out of it, not the database behind it.. So it would look like a copy from the LMK forum, but it would be completely dead, nothing would work.  And I'm not sure if that kind of copying would be legal, too  <IMG SRC="http://www.larian.com/ubb/wink.gif"></FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Ragon der Magier</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Hmm, well, the legal issue.<P>I guess that depends on your real connection to the lmk-board.<BR>You stated once that it isn´t you that runs this forum.<BR>But on the other hand the former moderator there (i think attic Koschim Jandrim or so) said that all our ideas for lmk and dsa4 were stored in another database, one that i think you had surely (yeah, i learned how write this word correctly. Didn´t expect, what?  <IMG SRC="http://www.larian.com/ubb/wink.gif">) access too. So considering that, i would see you as at least part owners of what was stored in lmk-forum. Besides that, the real idea-creators of all those things there were us.<BR>So don´t worry, i hereby grant you permission to get your hands on all my posts ever placed there and i´m sure all the others would follow my example, too!  <IMG SRC="http://www.larian.com/ubb/wink.gif"><P>With 'rendered' you mean that you don´t like the idea of incorporating all the grabbed files manually into your UBB-Database on the larian board, right.<P>If you only wanted to express that all those html would lie down there on your hd dumb not knowing of each other (i.e. having dead links) you´re wrong.<BR>Both tools i mentioned, make real mirrors of the chosen sites, linking the whole monster locally if you wish. That means you can browse it like you´d be online.<P>Or maybe misgot you. <IMG SRC="http://www.larian.com/ubb/frown.gif">I´m unfortunately not that much into cgi, you must know. <IMG SRC="http://www.larian.com/ubb/redface.gif"><P>Bye, Ragon<P></FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtexture.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">rat</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Yeah, the links would work, but with "dead" I mean that Reply, View profile, etc are all screwed up...<BR>And as for the actual content copy, and whether that's legal or not.. I'd say we have enough legacy issues pending right now to avoid introducing new ones  <IMG SRC="http://www.larian.com/ubb/wink.gif"></FONT></TD></TR><TR background="http://www.larian.com/ubb/forumtextureL.jpg"><TD valign=top><FONT SIZE="2" FACE="Verdana, Arial">Ragon der Magier</FONT></TD><TD><FONT SIZE="2" FACE="Verdana, Arial">Ah, well, you´re probably kinda right. i got especially the lat " <IMG SRC="http://www.larian.com/ubb/wink.gif">".<P>"Uh!! Struck by that deadly blow, he falls into the wet grass stimulating his last thoughts to be with the mighty waters he grew up at and the taste of salt and the cold touch of the strong coastal winds once accompanying his childhood accumulate into one final rush of feelings streaming through his weakening body and then taking away his light of life with it as the breath slowly leaves his lungs, gently slipping from is mouth into the endlessness of the wide hills..."</FONT></TD></TR></TABLE>
+</IFRAME>
+</FONT>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.ReplyMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+<P><center>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<!-- <A HREF="mailto:lynn@larian.com">Contact Us</A> | <A HREF="http://www.larian.com" target=_top>Larian Studios</A> -->
+<A HREF="mailto:lynn@larian.com"><IMG BORDER=0 SRC="/ubb/contactus.jpg"></A>  <A HREF="http://www.larian.com" target=_top><IMG BORDER=0 SRC="/ubb/homepagebutton.jpg"></A>
+</B></FONT>
+<P>
+<FONT COLOR="#DEDFDF" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board (UltimateBB), Version 5.43<BR>&copy; Infopop Corporation (formerly Madrona Park, Inc.), 1998-2000.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>

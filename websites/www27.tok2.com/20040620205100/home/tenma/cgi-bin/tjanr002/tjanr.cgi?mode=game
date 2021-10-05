@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=SHIFT_JIS">
+<meta name="content-language" content="ja">
+<title>たたじゃんＲ ～延岡大会～</title>
+<style type="text/css">
+<!--
+body {
+	color: #000099;
+	font-family: MS UI Gothic,sans-serif;
+	font-size: 9pt;
+}
+th,td {
+	color: #000099;
+	font-family: MS UI Gothic,sans-serif;
+	font-size: 9pt;
+}
+input,select,option {
+	font-size: 9pt;
+}
+big {
+	font-size: 12pt;
+}
+small {
+	font-size: 8pt;
+}
+.title {
+	font-family: helvetica,sans-serif;
+	font-size: 24pt;
+	color: #cc0099;
+}
+a { text-decoration: none; }
+a:hover { text-decoration: underline; color: #ff0000; }
+input { background-color: #ffffff; }
+
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+<!--
+// preload images
+waitimg = new Image();		waitimg.src = "./img/wait.gif";	// 文字画像(画像読込中)
+jibun_img = new Array();
+aite_img = new Array();
+jibun_img[0] = new Image();	jibun_img[0].src = "./img/jgoo.gif";	// 自分側グー
+jibun_img[1] = new Image();	jibun_img[1].src = "./img/jchoki.gif";	// 自分側チョキ
+jibun_img[2] = new Image();	jibun_img[2].src = "./img/jpar.gif";	// 自分側パー
+aite_img[0] = new Image();	aite_img[0].src = "./img/agoo.gif";	// 相手側グー
+aite_img[1] = new Image();	aite_img[1].src = "./img/achoki.gif";	// 相手側チョキ
+aite_img[2] = new Image();	aite_img[2].src = "./img/apar.gif";	// 相手側パー
+nojibunimg = new Image();	nojibunimg.src = "./img/secret.gif";	// 手画像(自分側の出す前)
+noaiteimg = new Image();	noaiteimg.src = "./img/secret.gif";	// 手画像(相手側の出す前)
+noactimg = new Image();		noactimg.src = "./img/ready.gif";	// アクション画像(じゃんけん出す前)
+act1img = new Image();		act1img.src = "./img/act1.gif";	// アクション画像(たたく)
+act2img = new Image();		act2img.src = "./img/act2.gif";	// アクション画像(かわされる)
+act3img = new Image();		act3img.src = "./img/act3.gif";	// アクション画像(間違えて防御)
+act4img = new Image();		act4img.src = "./img/act4.gif";	// アクション画像(たたかれる)
+act5img = new Image();		act5img.src = "./img/act5.gif";	// アクション画像(間違えて攻撃)
+act6img = new Image();		act6img.src = "./img/act6.gif";	// アクション画像(防いでセーフ)
+hajimeimg = new Image();	hajimeimg.src = "./img/hajime.gif";	// 文字画像(はじめボタンを)
+kake1img = new Image();		kake1img.src = "./img/kake1.gif";	// 文字画像(たたいて)
+kake2img = new Image();		kake2img.src = "./img/kake2.gif";	// 文字画像(かぶって)
+kake3img = new Image();		kake3img.src = "./img/kake3.gif";	// 文字画像(じゃんけん)
+aikoimg = new Image();		aikoimg.src = "./img/aiko.gif";	// 文字画像(あいこ)
+ponimg = new Image();		ponimg.src = "./img/pon.gif";		// 文字画像(ぽん)
+safeimg = new Image();		safeimg.src = "./img/safe.gif";	// 文字画像(セーフ)
+naniimg = new Image();		naniimg.src = "./img/nani.gif";	// 文字画像(何やってますの)
+kachiimg = new Image();		kachiimg.src = "./img/kachi.gif";	// 文字画像(あなたの勝ち)
+makeimg = new Image();		makeimg.src = "./img/make.gif";	// 文字画像(あなたの負け)
+goverimg = new Image();		goverimg.src = "./img/gover.gif";	// 文字画像(ゲームオーバー！お待ちください)
+var MESKAN = 700;	// msec
+var ACTKAN = 1000;	// msec
+var firstclick = 1;
+var timerID1 = 0;
+var timerID2 = 0;
+var timerID3 = 0;
+var timerID4 = 0;
+var timerID5 = 0;
+var timerID6 = 0;
+var janflag = 0;
+var actflag = 0;
+var actsumi = 0;
+var jankachi = 0;
+var kcont = 0;
+var mcont = 0;
+var rensyo = 0;
+var score = 0;
+var stime = 0;
+jan_ji_a = new Array();		// 判定用(あいこ:0、勝ち:1、負け:2)
+jan_ji_a[0] = new Array(0, 1, 2);	// 自側がグーの判定(相手グー:0 チョキ:1 パー:2)
+jan_ji_a[1] = new Array(2, 0, 1);	// 自側がチョキの判定(相手グー:2 チョキ:0 パー:1)
+jan_ji_a[2] = new Array(1, 2, 0);	// 自側がパーの判定(相手グー:1 チョキ:2 パー:0)
+var playonf = 0;
+
+function init()
+{
+	janflag = 0;
+	actflag = 0;
+	actsumi = 0;
+	jankachi = 0;
+	clearTimeout(timerID1);
+	clearTimeout(timerID2);
+	clearTimeout(timerID3);
+	clearTimeout(timerID4);
+	clearTimeout(timerID5);
+	clearTimeout(timerID6);
+	document.actimg.src = noactimg.src;
+	document.jibunimg.src = nojibunimg.src;
+	document.aiteimg.src = noaiteimg.src;
+	if (playonf == 0) {
+		showmessimg(hajimeimg.src);
+	}
+}
+
+function seno(callf)
+{
+	if ((callf == 0) && (playonf == 1)) {
+		return;
+	}
+	if (firstclick == 1) {
+		dd = new Date();
+		stime = dd.getTime();
+		firstclick = 0;
+	}
+	playonf = 1;
+	document.form1.score.value = score;
+	document.form1.mtime.value = mcont;
+	init();
+	timerID2 = setTimeout('kake1()', MESKAN );
+}
+function kake1()
+{
+	clearTimeout(timerID2);
+	showmessimg(kake1img.src);
+	timerID3 = setTimeout('kake2()', MESKAN);
+}
+function kake2()
+{
+	clearTimeout(timerID3);
+	showmessimg(kake2img.src);
+	timerID4 = setTimeout('kake3()', MESKAN);
+}
+function kake3()
+{
+	clearTimeout(timerID4);
+	showmessimg(kake3img.src);
+	timerID5 = setTimeout('pon()', MESKAN);
+}
+function aiko()
+{
+	init();
+	showmessimg(aikoimg.src);
+	timerID5 = setTimeout('pon()', MESKAN);
+}
+function pon()
+{
+	clearTimeout(timerID5);
+	// じゃんけんボタン受付開始
+	janflag = 1;
+	showmessimg(ponimg.src);
+}
+
+function judge_janken(jibun_te)
+{
+	if (janflag) {
+		// じゃんけんボタン受付終了
+		janflag = 0;
+		// 自側
+		document.jibunimg.src = jibun_img[jibun_te].src;
+		// 相手側
+		aite_te = Math.floor(Math.random() * 3);
+		document.aiteimg.src = aite_img[aite_te].src;
+		jankachi = 0;
+		if (jan_ji_a[jibun_te][aite_te] == 0) {
+			timerID1 = setTimeout('aiko()', 1000);
+		} else {
+			// アクションボタン受付開始
+			actflag = 1;
+			if (jan_ji_a[jibun_te][aite_te] == 1) {
+				jankachi = 1;
+			}
+			timerID2 = setTimeout('act_rate()', 2000);
+		}
+	}
+}
+
+function judge_action(acttype)
+{
+	if (actflag) {
+		clearTimeout(timerID2);
+		actflag = 0;
+		actsumi = 1;
+		if (jankachi == 1) {
+			score += 5;
+			document.form1.score.value = score;
+			if (acttype == 0) {	// 棒
+				if (Math.floor(Math.random() * 2)) {	// 防がれてセーフ
+					showactimg(act2img.src);
+					showmessimg(safeimg.src);
+					timerID6 = setTimeout('seno(1)', MESKAN * 2);
+				} else {	// たたいて勝ち
+					showactimg(act1img.src);
+					judge_last(1);
+				}
+			} else {	// メット
+				// 間違えて防御してやり直し
+				showactimg(act3img.src);
+				showmessimg(naniimg.src);
+				timerID6 = setTimeout('seno(1)', MESKAN * 2);
+			}
+		} else {
+			if (acttype == 0) {	// 棒
+				// 間違えて棒を持ってたたかれて負け
+				showactimg(act5img.src);
+				judge_last(0);
+			} else {	// メット
+				if (Math.floor(Math.random() * 2)) {	// たたかれて負け
+					showactimg(act4img.src);
+					judge_last(0);
+				} else {	// 防いでセーフ
+					showactimg(act6img.src);
+					showmessimg(safeimg.src);
+					score += 3;
+					document.form1.score.value = score;
+					timerID6 = setTimeout('seno(1)', MESKAN * 2);
+				}
+			}
+		}
+	}
+}
+
+function act_rate()
+{
+	actflag = 0;
+	clearTimeout(timerID2);
+	if (!actsumi) {
+		if (jankachi == 1) {	// 防御されてセーフ
+			showactimg(act2img.src);
+			showmessimg(safeimg.src);
+			timerID6 = setTimeout('seno(1)', MESKAN * 2);
+		} else {		// たたかれて負け
+			showactimg(act4img.src);
+			judge_last(0);
+		}
+	}
+}
+function judge_last(kachi)
+{
+	if (kachi) {
+		rensyo++;
+		score += 10;
+		score += Math.pow((rensyo - 1), 2) * 10;
+		kcont++;
+		document.form1.score.value = score;
+	} else {
+		rensyo = 0;
+		mcont++;
+		document.form1.mtime.value = mcont;
+	}
+	if (mcont == 3) {
+		showmessimg(goverimg.src);
+		timerID1 = setTimeout('writemes()', MESKAN * 3);
+	} else {
+		if (kachi) {
+			showmessimg(kachiimg.src);
+		} else {
+			showmessimg(makeimg.src);
+		}
+		timerID1 = setTimeout('seno(1)', MESKAN * 3);
+	}
+}
+function showmessimg(imagename)
+{
+	document.form1.messimg.src = imagename;
+}
+function showmess(guidemessage)
+{
+	document.form1.guidemes.value = guidemessage;
+}
+function showactimg(imagename)
+{
+	document.form1.actimg.src = imagename;
+}
+function writemes()
+{
+	clearTimeout(timerID1);
+	document.form2.sscore.value = score;
+	document.form2.stime.value = stime;
+	dd = new Date();
+	document.form2.etime.value = dd.getTime();
+	document.form2.submit();
+}
+// -->
+</script>
+</head>
+<body bgcolor="#e5ecfc"  text="#000099" link="#0000cc" alink="#ff0000" vlink="#0000cc" onload="init()">
+<div align="center">
+<p>
+<!--上-->
+</p>
+<p>
+<img src="./img/logo.gif" width="200" height="40">
+</p>
+<p>
+| <a href="http://www.wainet.ne.jp/~ahiru/index-game.html">ホームへ戻る</a> | <a href="./tjanr.cgi?mode=rmes&vmonth=this">当月ランキング</a> | <a href="./tjanr.cgi?mode=rmes&vmonth=last">前月ランキング</a> | <a href="./tjanr.cgi?mode=rmes&vmonth=total">通算ランキング</a> | <a href="./tjanr.cgi">あそびかた</a> | <a href="./tjanr.cgi?mode=admin">管理用</a> |</p>
+<div align="center">
+  <form name="form2" action="./tjanr.cgi" method="post">
+    <input type="hidden" name="mode" value="wmes">
+    <input type="hidden" name="stime" value="0">
+    <input type="hidden" name="sscore" value="0">
+    <input type="hidden" name="etime" value="0">
+  </form>
+
+  <form name="form1">
+  <table summary="game table" border="1" bgcolor="#0099dd">
+    <tr>
+      <td colspan="2" align="center">
+        <table width="95%">
+          <tr>
+            <td nowrap><font color="#ffffff"><b>スコア</b></font> <input type="text" name="score" size="6" value="0"></td>
+            <td nowrap><font color="#ffffff"><b>ミス</b></font> <input type="text" name="mtime" size="1" value="0"></td>
+            <td align="right"><input type="button" value="はじめ" onClick="seno(0)"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr bgcolor="#ffffff">
+      <td rowspan="2">
+        <img name="actimg" src="./img/ready.gif" width="160" height="160" alt="action">
+      </td>
+      <td>
+        <img name="aiteimg" src="./img/secret.gif" width="80" height="80" alt="aite">
+      </td>
+    </tr>
+    <tr bgcolor="#ffffff">
+      <td>
+         <img name="jibunimg" src="./img/secret.gif" width="80" height="80" alt="jibun">
+      </td>
+    </tr>
+    <tr bgcolor="#ffffff">
+      <th colspan="2">
+        <img name="messimg" src="./img/wait.gif" width="240" height="24" alt="status">
+      </th>
+    </tr>
+    <tr>
+      <th nowrap colspan="2">
+        <font color="#ffffff">じゃんけん &gt;&gt;</font>
+        <input type="button" value="グー" onClick="judge_janken(0)">
+        <input type="button" value="チョキ" onClick="judge_janken(1)">
+        <input type="button" value="パー" onClick="judge_janken(2)">
+      </th>
+    </tr>
+    <tr>
+      <th nowrap colspan="2">
+        <font color="#ffffff">アクション &gt;&gt;</font>
+        <input type="button" value="たたく" onClick="judge_action(0)">
+        <input type="button" value="かぶる" onClick="judge_action(1)">
+      </th>
+    </tr>
+  </table>
+
+  <form name="form2" action="./tjanr.cgi" method="post">
+    <input type="hidden" name="mode" value="wmes">
+    <input type="hidden" name="stime" value="0">
+    <input type="hidden" name="sscore" value="0">
+    <input type="hidden" name="etime" value="0">
+  </form>
+
+</div>
+<br>
+<p>
+<!--下-->
+</p>
+<p>
+
+</p>
+<p>
+<a href="http://homepage3.nifty.com/masas/sdir/" target="_top">たたじゃんR Ver.0.02</a>
+</p>
+</div>
+</BODY>
+</HTML>

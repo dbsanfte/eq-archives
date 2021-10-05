@@ -1,0 +1,11 @@
+// -------------------------------------
+// Reality Designs Inc (RDI) HTML footer
+//
+if (bMSIE)
+{
+	document.write('<p><table width="100%" align="center" border=0 cellpadding=0 cellspacing=0><tr><td colspan="7" bgcolor="#000000"><img src="/q.gif"></td></tr><tr><td colspan="7"><img src="/q.gif" height="4"></td></tr><tr><td><img src="/q.gif" width="2"></td><td id="tdDate" valign="top" style="font-family: Verdana; font-size: 10pt; color: black; font-weight: bold" nowrap></td><td><img src="/q.gif" width="32"></td><td valign="top"><center><font face="Verdana" size=1 color="black">Copyright &copy; 2000 Phoenix Dragoons. <nobr>All rights reserved.</nobr><br>This page was created by Siuan Saidar<br>(<a class=email href="mailto:siuan@phoenixdragoons.com">siuan@phoenixdragoons.com</a>)</font></td><td><img src="/q.gif" width="32"></td><td id="tdTime" align="right" valign="top" style="font-family: Verdana; font-size: 10pt; color: black; font-weight: bold" nowrap></td><td><img src="/q.gif" width="2"></td></tr><tr><td colspan="7"><img src="/q.gif" height="2"></td></tr></table>');
+}
+else if (bNetscape)
+{
+	document.write('<p><table align="center" border=0 cellpadding=0 cellspacing=0><tr><td colspan="7" bgcolor="#000000"><img src="/q.gif"></td></tr><tr><td colspan="7"><img src="/q.gif" height="4"></td></tr><tr><td><img src="/q.gif" width="2"></td><td width="320" valign="top"><form name="date"><font face="Verdana" size="3" color="black"><input name="stamp" type="text" size="' + ((nBrowserVersion >= 4) ? "12" : "16") + '"></font></form></td><td><img src="/q.gif" width=8></td><td valign="top"><p align="center"><font face="Verdana" size=1 color="black">Copyright &copy; 2000 Phoenix Dragoons. All rights reserved.<br>This page was created by Siuan Saidar<br>(<a class=email href="mailto:siuan@phoenixdragoons.com">siuan@phoenixdragoons.com</a>)</font></td><td><img src="/q.gif" width=8></td><td width="320" align="right" valign="top"><form name="time"><font face="Verdana" size="3"><input name="stamp" type="text" size="' + ((nBrowserVersion >= 4) ? "12" : "16") + '"></font></form></td><td><img src="/q.gif" width="2"></td></tr></table>');
+}

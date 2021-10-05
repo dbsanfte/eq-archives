@@ -1,0 +1,145 @@
+<?php
+// +--------------------------------------------------------------
+// | vbHome (lite) for vBulletin (Script by TECK)
+// | + Archive
+// +--------------------------------------------------------------
+error_reporting( E_ALL & ~E_NOTICE );
+
+$templatesused = 'home_archive,home_archiveforumbit,home_archivecategorytitle,home_archiveforumtitle,home_archivehomeinfo';
+require_once( './global.php' );
+
+if ( !$permissions['canview'] )
+{
+  archive_nopermission();
+}
+
+// +--------------------------------------------------------------
+// | Forums
+// +--------------------------------------------------------------
+function showforums( $forumid=-1 , $spacer='' , $permission='' )
+{
+  global $DB_site,$bbuserinfo,$session,$enableaccess,$iforumcache,$ipermcache,$iaccesscache,$usergroupdef,$noperms;
+
+  if ( !is_array( $permission ) )
+  {
+    $permission = getpermissions( 0 , -1 , $bbuserinfo['usergroupid'] );
+    $usergroupdef = $permission;
+  }
+
+  if ( !isset( $iforumcache ) )
+  {
+    $iforums = $DB_site->query("
+      SELECT forumid,parentid,displayorder,threadcount,replycount,title,description
+      FROM forum
+      WHERE displayorder<>0 AND active=1
+      ORDER BY parentid,displayorder,forumid
+    ");
+    while ( $iforum = $DB_site->fetch_array( $iforums ) )
+    {
+      $iforumcache["$iforum[parentid]"]["$iforum[displayorder]"]["$iforum[forumid]"] = $iforum;
+    }
+    $DB_site->free_result( $iforums );
+    unset( $iforum );
+
+    $iforumperms = $DB_site->query("
+      SELECT forumid,canview
+      FROM forumpermission
+      WHERE usergroupid=$bbuserinfo[usergroupid]
+    ");
+    while ( $iforumperm = $DB_site->fetch_array( $iforumperms ) )
+    {
+      $ipermcache["$iforumperm[forumid]"] = $iforumperm;
+    }
+    $DB_site->free_result( $iforumperms );
+    unset( $iforumperm );
+
+    $noperms['canview'] = 0;
+
+    if ( $bbuserinfo['userid'] != 0 and $enableaccess == 1 )
+    {
+      $iaccessperms = $DB_site->query("
+        SELECT forumid,accessmask
+        FROM access
+        WHERE userid=$bbuserinfo[userid]
+      ");
+      while ( $iaccessperm = $DB_site->fetch_array( $iaccessperms ) )
+      {
+        $iaccesscache["$iaccessperm[forumid]"] = $iaccessperm;
+      }
+      unset( $iaccessperm );
+      $DB_site->free_result( $iaccessperms );
+    }
+    else
+    {
+      $iaccesscache = '';
+    }
+  }
+  if ( !is_array( $iforumcache["$forumid"] ) )
+  {
+    return;
+  }
+
+  while ( list( $key1 , $val1 ) = each( $iforumcache["$forumid"] ) )
+  {
+    while ( list( $key2 , $forum ) = each( $val1 ) )
+    {
+      if ( is_array( $iaccesscache["$forum[forumid]"] ) )
+      {
+        if ( $iaccesscache["$forum[forumid]"]['accessmask'] == 1 )
+        {
+          $forumperms = $usergroupdef;
+        }
+        else
+        {
+          $forumperms = $noperms;
+        }
+      }
+      elseif ( is_array( $ipermcache["$forum[forumid]"] ) )
+      {
+        $forumperms = $ipermcache["$forum[forumid]"];
+      }
+      else
+      {
+        $forumperms = $permission;
+      }
+      if ( $forumperms['canview'] )
+      {
+        $forum['title'] = xhtml_clean( $forum['title'] );
+        if ( empty( $forum['description'] ) )
+        {
+          $forum['description'] = 'No description available.';
+        }
+        eval( '$forumtitle = "' . gettemplate( 'home_archivecategorytitle' ) . '";' );
+        if ( $forum['parentid'] != -1 )
+        {
+          eval( '$forumtitle = "' . gettemplate( 'home_archiveforumtitle' ) . '";' );
+        }
+        eval( '$forumbits .= "' . gettemplate( 'home_archiveforumbit' ) . '";' );
+        $forumbits .= showforums( $forum['forumid'] , $spacer . '&nbsp; &nbsp; ' , $forumperms );
+      }
+    }
+  }
+
+  return $forumbits;
+}
+
+$username = 'visitor';
+if ( $bbuserinfo['userid'] != 0 )
+{
+  $username = $bbuserinfo['username'];
+}
+
+$archiveurl = substr( $homeurl , 0 , -1 );
+$headertitle = 'Home';
+
+$navbar = $hometitle . ' Archive';
+$pagenav = '&nbsp;';
+eval( '$pagetitle = "' . gettemplate( 'home_archivehomeinfo' ) . '";' );
+
+$showforumbits = showforums();
+$showthreadbits = '';
+$showpostbits = '';
+
+eval( 'dooutput( "' . gettemplate( 'home_archive' ) . '" );' );
+
+?>

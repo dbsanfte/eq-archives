@@ -1,0 +1,718 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Crimson Sky Empire Forums</title>
+	<style type="text/css">
+		
+	
+	.ftbody {background-color:ffffff;}
+	
+	.ftstatusfunctioncell {background-color: #eeeeee;}
+	
+	.ftalternatingbaron {background-color: #eeeeee;}
+	
+	.ftalternatingbaroff {background-color: #dddddd;}
+	
+	.ftmenusurroundtd { background-color: #cccccc;}
+	
+	td.ftraisedblank {border-top: solid #FFFFFF 1px;border-left: solid #FFFFFF 1px;border-right: solid #584300 1px;border-bottom: solid #584300 1px;}
+	
+	.fttodaypagecells {background-color:ffffff;border-left : thin solid #bbbbbb;border-right : thin solid #bbbbbb;border-bottom : thin solid #bbbbbb;}
+	
+	.ftheaderbartextlarge {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: white;}
+	
+	.ftformbutton {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	.ftforminput {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;background:#FFFFFF;color: black;}
+	
+	.ftforminputsmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;background: FFFFFF;color: black;}
+	
+	a.ftheaderbarlink {font-family: Tahoma,Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;text-decoration: none;color: white;}
+	
+	.ftbackgroundtext {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	.ftstatusbartext {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	a.ftbackgroundlink {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black; text-decoration: none;}
+	
+	a.ftbackgroundlinkunder {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black; text-decoration: underline;}
+	
+	a.ftbackgroundlinkunder:hover {color: navy;text-decoration: underline;}
+	
+	.ftalternatingbartextlarge {font-family: Arial, Helvetica;font-size: 12px;font-weight: normal;color: black;}
+	
+	.ftalternatingbartextsmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	a.ftalternatingbarlinksmall {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: blue;}
+	
+	a.ftalternatingbarlinksmall:hover {color: navy;}
+	
+	a.ftalternatingbarlinklarge:hover {color: navy;}
+	
+	.ftheaderbar {background-color: #000000;}
+	
+	.ftmessageheaderbar {background-color: #eeeeee;border : thin solid #A1A1A7;}
+	
+	.ftstatuscell {background-color: #eeeeee;}
+	
+	.ftmenutd { background-color: #eeeeee; } 
+	
+	td.ftraised {border-top: solid #FFFFFF 1px;border-left: solid #FFFFFF 1px;border-right: solid #584300 1px;border-bottom: solid #584300 1px; background-color: #D6D3CE;}
+	
+	.ftmessageheaderbartext {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	.ftheaderbartextsmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: white;}
+	
+	.ftformtext {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;background: FFFFFF;color: black;}
+	
+	a.ftheaderbarlink:hover {text-decoration: underline;}
+	
+	a.ftbackgroundlink:hover {color: navy;text-decoration: underline;color: black;}
+	
+	a.ftalternatingbarlinklarge {font-family: Tahoma,Verdana,Arial, Helvetica;font-size: 12px;font-weight: bold; color: navy;}
+	
+	.ftalternatingbarselect {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black; }
+	
+	a.ftmenulinks {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;text-decoration:none;color: black;}
+	
+	a.ftmenulinks:hover {text-decoration:none;}
+	
+	.ftsmallcontent {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	.ftlargecontent {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: black;}
+	
+	.ftlargecontentuploadbox {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: black;}
+	
+	a.ftlinksmallnounder {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;text-decoration:none;color: black;}
+	
+	a.ftlinksmallnounder:hover {text-decoration:underline;}
+	
+	a.ftlink {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;text-decoration:underline;color: navy;}
+	
+	a.ftlink:hover {text-decoration:underline;color:navy;}
+	
+	a.ftlinksmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;text-decoration:underline;color: navy;}
+	
+	a.ftlinksmall:hover {text-decoration:underline;color:navy;}
+	
+	a.ftstatusbarlink {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: bold;text-decoration:none;color: black;}
+	
+	a.ftstatusbarlink:hover {text-decoration:none;}
+	
+	.ftalphabet {font-family: Arial, Helvetica;font-size: 10px;color: black;border-width : 1; border-color : CCCCCC;border-style : ridge;}
+	
+	.ftcolumntext {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: black;}
+	
+	a.ftmenulink {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;text-decoration:none;color: black;}
+	
+	a.ftmenulink:hover {text-decoration:none;}
+	
+	a.fteditorlink {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: bold;text-decoration:none;color: Navy;}
+	
+	a.fteditorlink:hover {text-decoration:none;}
+	
+	.fteditortext {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: bold;text-decoration:none;color: Navy;}
+	
+	.fthighlighttext {color: navy;}
+	
+	.fthighlightbartext {color: yellow;}
+	
+	.ftmessageheaderhighlighttext {color: navy;}
+	
+	.ftmessageheaderlinksmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: #000000;}
+	
+	.ftraisedtextsmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: #000000;}
+	
+	.ftmenurollover {background-color:#cccccc}
+	
+	.fttodayraisedfont {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: #000000;}
+	
+	.fttodaymenufont {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: #000000;}
+	
+	.ftraisedtextlarge {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: #000000;}
+	
+	.ftfixedwidthfont {font-family:courier,ms sans serif,arial;font-size:10px}
+	
+	.ftodayhighlightfont {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: Navy;}
+	
+	.fttodayfont {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: #000000;}
+	
+	.fttodayraisedfontsmall {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: #000000;}
+	
+	a.ftalternatingbarlinksmall:visited {font-family: Verdana,Arial, Helvetica;font-size: 12px;font-weight: normal;color: navy}
+	
+	a.ftalternatingbarlinksmallest {font-family: Verdana,Arial, Helvetica;font-size: 10px;font-weight: normal;color: navy;}
+	
+		
+	</style>
+</head>
+
+<script language="javascript">
+function ftgetpermission(permissiontext){
+	return window.confirm(permissiontext)
+}
+function winopen(url,winname,x,y){
+	var options = "toolbar=no,scrollbars=yes,resizable=yes,width=" + x + ",height=" + y;
+	msgWindow=window.open(url,winname,options);
+}
+function pmwinopen(url,winname,x,y){
+	var options = "toolbar=no,scrollbars=no,resizable=yes,width=" + x + ",height=" + y;
+	msgWindow=window.open(url,winname,options);
+}
+// used in messagepost.cfm to check length of text fields for various db types and to control duplicate posting
+function checkpost() {
+if(document.messagepostform.FTVAR_POSTCHECKFRM.value != 'sent')
+	{
+			
+			var msglen = document.messagepostform.FTVAR_MESSAGETEXTFRM.value
+			if (msglen.length > 64000 ) {
+				alert('The message cannot exceed 64000 characters');
+				return false;
+			}
+		document.messagepostform.FTVAR_POSTCHECKFRM.value = 'sent'
+		return true;
+	}
+else
+	{
+		alert('This message was already submitted, duplicate posting is not allowed');
+		return false;
+	}
+}
+function changestyleover(element){
+	
+		var el = document.getElementById(element);
+	 	el.className='ftmenurollover';
+		el.style.cursor='hand';
+	
+}
+function changestyleout(element){
+	
+		var el = document.getElementById(element);
+		el.className='ftmenutd';
+	
+}
+
+function popmod()
+{
+	if((document.getElementById('toolslayer').style.visibility) == "hidden")
+	{
+		document.getElementById('toolslayer').style.visibility="visible";
+	}
+	else
+	{
+		document.getElementById('toolslayer').style.visibility="hidden";
+	}
+}
+function modtoolbox(strlocation, selectobj)
+{
+	if(ftgetpermission('Are you sure you want to perform this operation?'))
+	{
+		if(strlocation.indexOf("banning.cfm") != -1)
+		{
+			winopen('banning.cfm','ftbanning','400','295');
+		}
+		else
+		{
+			location.href=strlocation;
+		}
+		selectobj.selectedIndex =1;
+	}
+}
+function copycode(clipdata){
+	window.clipboardData.setData("Text", clipdata);
+}
+function getapprovepermission(cid,tid,mid)
+{
+	if(window.confirm('Are you sure that you want to approve this message?'))
+	{
+		location.href='messageview.cfm?catid='+cid+'&threadid='+tid+'&messid='+mid+'&ApproveMess=y';
+	}
+}
+function verify()
+{
+	if (document.profileform.FTVAR_PASSWORDFRM.value != document.profileform.FTVAR_VERIFICATIONFRM.value)
+{
+   	alert('Sorry your passwords do not match, please make sure both passwords match for verification \n');
+	return false;
+}
+
+	return true;
+}
+function verifyemail()
+{
+	if (document.profileform.FTVAR_EMAILADDRESSFRM.value != document.profileform.FTVAR_EMAILADDRESSVERFRM.value)
+{
+   	alert('Sorry your e-mail addresses do not match, please make sure both e-mail addresses match for verification \n');
+	return false;
+}
+
+	return true;
+}
+function verifyboth()
+{
+	if (document.profileform.FTVAR_PASSWORDFRM.value != document.profileform.FTVAR_VERIFICATIONFRM.value)
+{
+   	alert('Sorry your passwords do not match, please make sure both passwords match for verification \n');
+	return false;
+}
+
+	if (document.profileform.FTVAR_EMAILADDRESSFRM.value != document.profileform.FTVAR_EMAILADDRESSVERFRM.value)
+{
+   	alert('Sorry your e-mail addresses do not match, please make sure both e-mail addresses match for verification \n');
+	return false;
+}
+
+	return true;
+}
+function viewauthoricon(url,vara,x,y) {
+	var options = "toolbar=no,scrollbars=no,resizable=yes,width=" + x + ",height=" + y;
+	msgWindow=window.open(url + vara,"authoricons",options);}
+	
+function selectall(selfield,holder,selbutton,el){
+if (holder.value == 'true'){
+	var elval = false;
+	holder.value = 'false'
+	selbutton.value = 'Select All'
+	} 
+	else{
+	var elval = true;
+	holder.value = 'true'
+	selbutton.value = 'Clear All'
+	}
+	for (var i=0;i<el.elements.length;i++){
+    var e = el.elements[i];
+
+    if (e.name == selfield) {e.checked = elval;}
+	}
+}
+</script>
+
+<body class="ftbody" link="navy" > 
+
+	
+
+
+<center>
+
+<table border="0" cellpadding="0" cellspacing="0" width="97%"><tr><td>
+	
+		<a href="http://www.crimsonsky.com"><img src="http://www.crimsonsky.com/forum/i/logo.gif" border="0"></a><br>
+	
+</td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="97%">
+	<tr>
+		<td align="left" valign="top">
+			
+<table border="0" cellpadding="0" cellspacing="0">
+
+</table>
+
+
+			<img src="i/dominant/block.gif" height="2" width="1"><br>
+		</td>
+		<td align="right" valign="bottom">
+		
+<table border="0" cellpadding="2" cellspacing="2">
+	<tr>
+		<td class="ftmenusurroundtd"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="ftmenutd" id="menuopt1" onmouseover="changestyleover('menuopt1');" onmouseout="changestyleout('menuopt1');" nowrap>
+		
+			<a href="join.cfm" class="ftmenulink" title="Join Crimson Sky Empire forums">join</a></td>
+		
+		</tr></table></td>
+		
+			<td class="ftmenusurroundtd"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="ftmenutd" id="menuopt6" onmouseover="changestyleover('menuopt6');" onmouseout="changestyleout('menuopt6');"><a href="search.cfm" class="ftmenulink" title="Search Crimson Sky Empire forums">search</a></td></tr></table></td>
+		
+			<td class="ftmenusurroundtd"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="ftmenutd" id="menuopt8" onmouseover="changestyleover('menuopt8');" onmouseout="changestyleout('menuopt8');"><a href="today.cfm" class="ftmenulink" title="View the Crimson Sky Empire today page">today</a></td></tr></table></td>
+				
+		<td class="ftmenusurroundtd"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="ftmenutd" id="menuopt9" onmouseover="changestyleover('menuopt9');" onmouseout="changestyleout('menuopt9');"><a href="javascript:winopen('help/index.cfm','help',720,540);" class="ftmenulink" title="Get help with the forums">help</a></td></tr></table></td>
+		
+			<td class="ftmenusurroundtd"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="ftmenutd" id="menuopt12" onmouseover="changestyleover('menuopt12');" onmouseout="changestyleout('menuopt12');"><a href="index.cfm" class="ftmenulink" title="Refresh Crimson Sky Empire forums">refresh</a></td></tr></table></td>
+			
+			<td class="ftmenusurroundtd"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="ftmenutd" id="menuopt13" onmouseover="changestyleover('menuopt13');" onmouseout="changestyleout('menuopt13');">
+			
+				<a href="login.cfm" class="ftmenulink" title="Login to Crimson Sky Empire forums">login</a></td>
+			
+			</td></tr></table>
+			
+	</tr>
+</table>
+
+
+		<img src="i/dominant/block.gif" height="2" width="1"><br> 
+		</td>
+	</tr>
+</table>
+
+
+
+
+<table border="0" cellpadding="3" cellspacing="1" width="97%">
+	<tr>
+		<td class="ftheaderbar" width="100%" colspan="2">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td align="left"><font class="ftheaderbartextlarge"><b>Category Listing</td>
+					<td align="right">
+						
+						<font class="ftheaderbartextsmall">
+						<a href="whoson.cfm?zb=5128411" class="ftheaderbarlink">WHO'S ON:</a> 
+						
+	
+
+
+
+						<b>9:48 AM</b>
+						
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="ftmessageheaderbar" colspan="2">
+			
+				
+			
+			<table border="0" width="100%" cellpadding="4" cellspacing="0">
+				<tr>
+					<td>
+						<font class="ftmessageheaderbartext">
+						
+							
+						There are currently <b>0</b> <a href="whoson.cfm" class="ftmessageheaderlinksmall">users</a> logged in.<br>
+							<img src="i/dominant/block.gif" height="5" width="1"><br>
+							<b>203</b> users are registered to the <b>Crimson Sky Empire</b> forum.<br>
+						
+						<img src="i/dominant/block.gif" height="5" width="1"><br> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+			
+		
+		
+	
+		
+		
+			
+		
+		
+		
+			
+				
+				
+					
+				
+				<tr>
+					<td class="ftstatuscell" valign="top" width="1%">
+						<center>
+						 
+						 
+							<a href="categories.cfm?catid=3"><img src="i/icons/active_status_icon_on.gif" alt="New Messages" width="43" hspace="6" height="28" border="0"></a><br>
+						
+					</td>
+					<td class="ftalternatingbaron" width="99%" valign="top">
+						<table border="0" width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td align="left" valign="top"><b><a href="categories.cfm?catid=3" class="ftalternatingbarlinklarge">Tavern</a></b><br><font class="ftalternatingbartextsmall">Fine drinks, food, and discussions. Well one out of three ain't bad...<br></td>
+								<td align="right">
+									<table border="0" cellpadding="0" cellspacing="2">
+										<tr>
+										<form>
+											<td>
+												
+											</td></form>
+											<td>&nbsp;</td>
+											<td>
+												
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td align="right" colspan="2">
+									<br>													
+									
+										<table border="0" width="610" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="18"><img src="i/dominant/thread-footer-start.gif" border="0" width="18" height="16"><br></td>
+												<td width="20" background="i/dominant/thread-footer-table-background.gif"><img src="i/dominant/thread_background_spacer.gif" border="0" width="1" height="1"></td>
+												<td width="100" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Topics:</b> 5</font></td>
+												<td width="472" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Last Post:</b>
+													
+														
+														
+	
+
+
+
+														Fri June 28, 2002 9:54 PM by <b>Skipp</b>
+													</font></td>
+											</tr>
+										</table>
+									
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+			
+		
+	
+			
+		
+		
+	
+		
+		
+			
+		
+		
+		
+			
+				
+				
+					
+				
+				<tr>
+					<td class="ftstatuscell" valign="top" width="1%">
+						<center>
+						 
+						 
+							<a href="categories.cfm?catid=2"><img src="i/icons/active_status_icon_on.gif" alt="New Messages" width="43" hspace="6" height="28" border="0"></a><br>
+						
+					</td>
+					<td class="ftalternatingbaroff" width="99%" valign="top">
+						<table border="0" width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td align="left" valign="top"><b><a href="categories.cfm?catid=2" class="ftalternatingbarlinklarge">Shadowbane</a></b><br><font class="ftalternatingbartextsmall">CSE/SB Public Forum<br><i>To Be Released 9/3/02</i>. [<a href="http://www.shadowbane.com" target="_blank" title="Click here for the official website!">more</a>] <br></td>
+								<td align="right">
+									<table border="0" cellpadding="0" cellspacing="2">
+										<tr>
+										<form>
+											<td>
+												
+											</td></form>
+											<td>&nbsp;</td>
+											<td>
+												
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td align="right" colspan="2">
+									<br>													
+									
+										<table border="0" width="610" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="18"><img src="i/dominant/thread-footer-start.gif" border="0" width="18" height="16"><br></td>
+												<td width="20" background="i/dominant/thread-footer-table-background.gif"><img src="i/dominant/thread_background_spacer.gif" border="0" width="1" height="1"></td>
+												<td width="100" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Topics:</b> 4</font></td>
+												<td width="472" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Last Post:</b>
+													
+														
+														
+	
+
+
+
+														Sat June 29, 2002 12:44 PM by <b>Skipp</b>
+													</font></td>
+											</tr>
+										</table>
+									
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+			
+		
+	
+			
+		
+		
+	
+		
+		
+			
+		
+		
+		
+			
+				
+				
+					
+				
+				<tr>
+					<td class="ftstatuscell" valign="top" width="1%">
+						<center>
+						 
+						 
+							<a href="categories.cfm?catid=4"><img src="i/icons/active_status_icon_on.gif" alt="New Messages" width="43" hspace="6" height="28" border="0"></a><br>
+						
+					</td>
+					<td class="ftalternatingbaron" width="99%" valign="top">
+						<table border="0" width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td align="left" valign="top"><b><a href="categories.cfm?catid=4" class="ftalternatingbarlinklarge">Neverwinter Nights</a></b><br><font class="ftalternatingbartextsmall">CSE/NWN Public Forum. [<a href="http://www.neverwinternights.com" target="_blank" title="Click here for the official website!">more</a>] <br></td>
+								<td align="right">
+									<table border="0" cellpadding="0" cellspacing="2">
+										<tr>
+										<form>
+											<td>
+												
+											</td></form>
+											<td>&nbsp;</td>
+											<td>
+												
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td align="right" colspan="2">
+									<br>													
+									
+										<table border="0" width="610" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="18"><img src="i/dominant/thread-footer-start.gif" border="0" width="18" height="16"><br></td>
+												<td width="20" background="i/dominant/thread-footer-table-background.gif"><img src="i/dominant/thread_background_spacer.gif" border="0" width="1" height="1"></td>
+												<td width="100" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Topics:</b> 16</font></td>
+												<td width="472" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Last Post:</b>
+													
+														
+														
+	
+
+
+
+														Sat June 29, 2002 1:11 AM by <b>Tzeen</b>
+													</font></td>
+											</tr>
+										</table>
+									
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+			
+		
+	
+			
+		
+		
+	
+		
+		
+			
+		
+		
+		
+			
+				
+				
+					
+				
+				<tr>
+					<td class="ftstatuscell" valign="top" width="1%">
+						<center>
+						 
+						 
+							<a href="categories.cfm?catid=5"><img src="i/icons/active_status_icon_off.gif" alt="No New Messages" width="43" hspace="6" height="28" border="0"></a><br>
+						
+					</td>
+					<td class="ftalternatingbaroff" width="99%" valign="top">
+						<table border="0" width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td align="left" valign="top"><b><a href="categories.cfm?catid=5" class="ftalternatingbarlinklarge">Beta News</a></b><br><font class="ftalternatingbartextsmall">Upcoming MMOG News and Information. [<a href="http://www.eve-online.com/" target="_blank" title="Click here for the official website!">Eve-Online</a>] [<a href="http://www.neocron.com" target="_blank" title="Click here for the official website!">Neocron</a>] [<a href="http://starwarsgalaxies.station.sony.com/" target="_blank" title="Click here for the official website!">Star Wars Online</a>] <br></td>
+								<td align="right">
+									<table border="0" cellpadding="0" cellspacing="2">
+										<tr>
+										<form>
+											<td>
+												
+											</td></form>
+											<td>&nbsp;</td>
+											<td>
+												
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td align="right" colspan="2">
+									<br>													
+									
+										<table border="0" width="610" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="18"><img src="i/dominant/thread-footer-start.gif" border="0" width="18" height="16"><br></td>
+												<td width="20" background="i/dominant/thread-footer-table-background.gif"><img src="i/dominant/thread_background_spacer.gif" border="0" width="1" height="1"></td>
+												<td width="100" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Topics:</b> 0</font></td>
+												<td width="472" background="i/dominant/thread-footer-table-background.gif" nowrap><font class="ftstatusbartext"><b>Last Post:</b>
+													
+														Forum is empty
+													</font></td>
+											</tr>
+										</table>
+									
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+			
+		
+	
+
+	<tr>
+		<td class="ftheaderbar" align="right" width="100%" colspan="2" height="21">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="50%" nowrap>
+						
+					</td>
+					<td align="right" width="50%" nowrap>
+						<font class="ftheaderbartextsmall"><b>
+						Current User
+						<font class="fthighlightbartext">
+						
+							N/A
+						
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+
+<p> 
+	
+
+<p><center><font class="ftbackgroundtext" style=""><a href="http://www.crimsonsky.com/" target="_blank" class="ftbackgroundlinkunder"><font class="ftbackgroundtext" style="">Crimson Sky Empire</font></a> -	Copyright © 1998-2002 <font class="ftbackgroundtext" style="">Scott Shepherd</font>. All rights reserved.</font></center>
+
+	
+
+
+</body>
+</html>
+
+<font class="ftlargecontent">
