@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Tutorial: Your own window themes (It's here, but it's incomplete)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-47.html">Tutorials &amp; Info.</a> &gt; <a href="f-48.html">XML Tutorials &amp; Info.</a> &gt; Tutorial: Your own window themes (It's here, but it's incomplete)</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=533">Tutorial: Your own window themes (It's here, but it's incomplete)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">08-02-2002, 10:01 AM</div></div><div class="posttext">Welcome back. Now you want to make your own window graphics. This includes the borders, background, vertical and horizontal scroll bars only.<br />
+<br />
+Tools I need:<br />
+* Text editor - notepad, text editor of the gods. If notepad doesn't work, use edit in the command console. Or just use whatever word processor you have available that can support text files.<br />
+*AboutSIDL.doc (http://www.eqgui.com/attachment.php?s=&amp;postid=2228) - Please for the love of God download this file and stop banging your head trying to figure out what all the tags mean!<br />
+<br />
+Now that we have our own custom graphics added into the EQUI_Animations.xml file, let's figure out how we can use this new pretty picture to make our pretty ui.<br />
+<br />
+I'm going to divide the EQUI graphic usage into 2 categories: Window art, and Everything-else art.<br />
+<br />
+Dealing with Window art<br />
+So you want to make a new window? Is the gray-black marble not really doing it for you anymore? Here's how you do it.<br />
+<br />
+1) Open file: EQUI_Templates.xml<br />
+<br />
+You say: &quot;OH MY GOD! SO MUCH CODE!&quot;<br />
+<br />
+breathe in... breathe out. If this intimidates you, then let's go back one step:<br />
+<br />
+optional step before step 1) View EQUI_Templates.xml<br />
+<br />
+Okay, I'm not sure if you can do this, but in MSIE 6.0 (the version that comes with XP), you can drag the *.xml file into your IE window, and you get to see the xml file color coded with little pluses and minuses next to some tags. Click the minus tag next to any WindowDrawTemplate, SliderDrawTemplate, ButtonDrawTemplate, and FrameTemplate item<br />
+that you see, and go from top to bottom. Now the scary code got tucked away into about fourteen distinguishable parts. These items are the default configurations for the default windows and window parts in the default UI. If you can't view the EQUI_Templates.xml in the IE browser, the big blocks of code are located at the following line numbers in the default UI:<br />
+<br />
+WindowDrawTemplate items - These are the templates for the different window styles. These sections are probably what you're most interested in.<br />
+<br />
+4 - 118: WDT_Def - a default window configuration.<br />
+119 - 233: WDT_Def2 - a default window configuration #2.<br />
+234 - 348: WDT_Inner<br />
+349 - 463: WDT_Rounded<br />
+465 - 579: WDT_RoundedNoTitle<br />
+<br />
+SliderDrawTemplate items - This template dictates how the little scroll bars on the right and bottom of the window show up. If you don't know what I'm talking about, think of the loot window when you loot your corpse, usually you have to move the bar on the right of the window down so you can get the rest of your items, that's the bar this Template describes<br />
+<br />
+581 - 592: SDT_DefSlider - default art for a slider<br />
+<br />
+ButtonDrawTemplate items - not sure where this is used, it looks like it uses the vertical scroll bar(down) picture art to define itself. I think it's just the defaults for when you use any button, like the buffs in the buff window or your hot box.<br />
+<br />
+594 - 600: BDT_Combo<br />
+<br />
+FrameTemplate items - I really don't know what this is for. :P sorry.<br />
+<br />
+602 - 610: Header_Listbox<br />
+613 - 619: Header_PlatCoin<br />
+620 - 626: Header_GoldCoin<br />
+627 - 633: Header_SilvCoin<br />
+634 - 640: Header_CoppCoin<br />
+644 - 658: FT_DefTabBorder<br />
+659 - 676: FT_DefPageBorder<br />
+<br />
+phew. Okay, so like I said, 14 different items.<br />
+<br />
+2) Edit stuff.<br />
+<br />
+Let's pretend you want to make a new left border frame for your window. What you do is copy an entire section that defines a window (let's pick lines 4 to 118), duplicate it, and rename the item to something different, like &quot;My_new_pretty_window&quot;. Now scroll down until you see the &lt;Border&gt; tag. Under the Border tag you see a bunch of lines, find the one that says &lt;Left&gt;. Let's pretend we want to use &quot;MyPrettyRedCircle&quot; from our last tutorial. What we do is replace &quot;A_BorderFrameLeft&quot; with &quot;MyPrettyRedCircle&quot;, and now you have a new left border!<br />
+<br />
+If you want to find out more about what you can edit in a Template, read the AboutSIDL.doc file that Dolby has made available via sticky thread in General Help section.<br />
+<br />
+With windows, you need to specify a set of art for a window template, you can't specify individual parts of the window each time you use it. Like if you want to change just the left frame, you need to make an entire WindowTemplate item with the default values filled in, and then change the Left value to the name of your art asset as you declared it in EQUI_Animations.xml.<br />
+<br />
+*SPECIAL CASE!!!: If you're messing around with the background, find the &lt;Background&gt; tag and put in the image file name for your background, apparently this isn't specified through EQUI_Animations.xml.<br />
+<br />
+Now you want to use your window/slider/button/whatever art in your UI. You join everyone else in the next section...<br />
+<br />
+Everything-else art will be covered later. :P<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DONTcallMEdr00d</div><div class="date">10-08-2003, 04:29 PM</div></div><div class="posttext">vBulletin Message<br />
+Invalid thread specified. <br />
+<br />
+ugh, do you have a mirror to the doc?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">10-08-2003, 04:32 PM</div></div><div class="posttext">Should be in your Everquest Directory  (EverQuest\uifiles\default\AboutSIDL.doc).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DONTcallMEdr00d</div><div class="date">10-08-2003, 09:08 PM</div></div><div class="posttext">*feels UBERdumb*</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - UIErrors.txt getting huge</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-13.html">General Discussion</a> &gt; <a href="f-16.html">Help ! ? ! ?</a> &gt; UIErrors.txt getting huge</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=6173">UIErrors.txt getting huge</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Thornwalker</div><div class="date">01-31-2003, 07:45 AM</div></div><div class="posttext">My UIErrors.txt runs throught the normal can't find such-and-such getting it from default, then it continues to write the following line, approx. 10 times a second, and doesn't stop as long as I'm on EQ.  Anyone have any ideas?<br />
+<br />
+<br />
+[Fri Jan 31 07:40:16 2003] Warning: file UIFiles\thorn\ not found in directory UIFiles\thorn\.  Attempting to use file from Default skin.<br />
+<br />
+<br />
+As far as I can see it's a blank line!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cairenn</div><div class="date">01-31-2003, 07:51 AM</div></div><div class="posttext">*Try* renaming your custom folder so that when next you log in, it'll go to default skin.  Then, try using the typed in command line /loadskin NewCustomFolderName.  Yeah, it means you'll have to drag everything back in place, but ....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thornwalker</div><div class="date">01-31-2003, 07:53 AM</div></div><div class="posttext">Thanks going to try that now, between the time I posted and now my error log went to 5 megs of those blank line, so something needs to be done :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Chronwaas</div><div class="date">01-31-2003, 07:56 AM</div></div><div class="posttext">This is usually because of a graphics problem.  To check and see if this is the case take a look in your Everquest folder for the Texture.txt file.  If this is also growing pretty quick then the problem is that somewhere in your xml files of your skin there is a call to a XXXX.tga file that is not in your skin or the default directory.  What ends up happening is that your xml file goes looking in the skin directory for the file and when it is not there is looks in the default folder.  But when it is not there either it just goes in to an endless loop of looking back and forth between the two folders.<br />
+<br />
+Check the Texture .txt file for it's size.  In general it should be somewhere around 1-2K in size.  If it is megs in size then this is your problem.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Chronwaas</div><div class="date">01-31-2003, 08:02 AM</div></div><div class="posttext">Opps,  almost forgot.  To fix this about the only thing you can do is look through all of your xml files for entries calling xxxx.tga.  Where xxxx is the name of the TGA file.  As you find all of these entries verify that the TGA file is either in your skin or in your default directory.  If not then that is your problem.<br />
+<br />
+Hopefully this fixes the problem.  Unfortunately there is one other way that the problem could exist and with luck this is not the problem.  The other way is that in your animation sections in your xml files(not just the Animation file though because a lot of custom skin xml files have the animation code right in the new xml files) the &lt;Location&gt; statment within the Animations section may be looking in a section of the tga file that does not exist.  This is not what the problem is most of the time but if the first solution does not work then you may need to check the &lt;Location&gt;values for all of your animations to make sure they are inside the size limits of all of your tga files.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thornwalker</div><div class="date">01-31-2003, 08:02 AM</div></div><div class="posttext">No luck, gonna strip down the entire UI and start from scratch. See if that makes a difference.   /sigh</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thornwalker</div><div class="date">01-31-2003, 08:03 AM</div></div><div class="posttext">Thanks Chronwaas, I'll check that first.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">01-31-2003, 08:33 AM</div></div><div class="posttext">Most likely you are missing a &lt;TextureInfo&gt; block altogther for one of the graphic files your UI is trying to use... Finding it is a pain in the butt..<br />
+<br />
+If you zip up your UI folder and email it to me I will be glad to fix it for you!<br />
+<br />
+*edited*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thornwalker</div><div class="date">01-31-2003, 09:22 AM</div></div><div class="posttext">Well, I stripped everything out of the animations file and the problem went away.  Thanks folks.  Now I just need to figure out what I broke in my cast spell window, because now half the spells don't have a graphic when memmed :rolleyes: <br />
+for example, the spirit of wolf icon just gives me a blank spell gem, but the strength of nature icon is fine.  And it's the same in every gem.  Whee!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">01-31-2003, 09:48 AM</div></div><div class="posttext">Make sure both of these are in your animations file:<br />
+<br />
+	&lt;TextureInfo item = &quot;gemicons01.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;<br />
+	&lt;TextureInfo item = &quot;gemicons02.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">01-31-2003, 10:16 AM</div></div><div class="posttext">Ok I just tested these things out..<br />
+<br />
+I made a folder named test and copied 2 files from the default folder: Window_Pieces04.tga and EQUI_Animations.xml.. loaded up eq and loded the test folder: Ofcourse it loaded with no warnings this was the control..<br />
+<br />
+I then opened up the Animations file and changed all the window locations for the 3 compass pieces to locations outside of the texture:<br />
+ &lt;X&gt;392&lt;/X&gt;<br />
+ &lt;Y&gt;392&lt;/Y&gt;<br />
+<br />
+Loaded the folder and this resulted in No Warnings.. But you do not get any compass art just a blank compass window:<br />
+<br />
+<br />
+I then opened up the Animations file and changed all the &quot;window_pieces04.tga&quot; to &quot;window_pieces04a.tga&quot; (the name of a file in neither folders: Default or Test)<br />
+This resulted in:<br />
+<br />
+[Fri Jan 31 08:53:05 2003] Warning: file UIFiles\test\window_pieces04a.tga not found in directory UIFiles\test\.  Attempting to use file from Default skin.<br />
+<br />
+Getting repeated over and over again!<br />
+And you do not get any compass art just a blank compass window<br />
+<br />
+<br />
+<br />
+I then opened up the Animations file and removed the &lt;TexureInfo&gt; block for &quot;window_pieces04a&quot;<br />
+This resulted in:<br />
+<br />
+[Fri Jan 31 09:06:16 2003] Warning: file UIFiles\test\ not found in directory UIFiles\test\.  Attempting to use file from Default skin.<br />
+<br />
+And you do not get any compass art just a blank window<br />
+Getting repeated over and over again!<br />
+<br />
+<br />
+If you get this warning repeating:<br />
+[Fri Jan 31 09:06:16 2003] Warning: file UIFiles\FolderName\ not found in directory UIFiles\FolderName\.  Attempting to use file from Default skin.<br />
+<br />
+My explanation from my limited knowledge of 3d programming and the everquest client:<br />
+<br />
+It's not loading info from a file into a Texture.. The UI doesn't even know that the texture is susposed to be there.. Thats why the filename is blank.. <br />
+<br />
+When the 3d Hardware draws the polygons (The triangles that make up everything in 3d) It doesn't know what to texture them with!  So it just draws blank triangles.. <br />
+<br />
+So, you are 99.9% likely to be missing a &lt;TextureInfo&gt; block for a file that is trying to be used by your UI.. <br />
+<br />
+<br />
+<br />
+If you get this warning repeating:<br />
+[Fri Jan 31 08:53:05 2003] Warning: file UIFiles\test\FileName.tga not found in directory UIFiles\test\. Attempting to use file from Default skin<br />
+Every time it draws the item using the file it gives this warning..<br />
+Cause: It can't find the file in question to load into a texture<br />
+<br />
+Sorry bout the long post but it does explain a few things :)<br />
+<br />
+<br />
+Edit: Cleaned it up and Added explanation for second warning :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thornwalker</div><div class="date">01-31-2003, 10:17 AM</div></div><div class="posttext">Yep, I found it.  as I was recreating the animation file I accidently put in the wrong spell gem file.  So all fixed again.  Thanks so much for the help.  Now that everything's working properly I'm going to post it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">01-31-2003, 10:19 AM</div></div><div class="posttext">COOL :)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" TYPE="text/css" HREF="/novae.css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>Novae Forums - Login</TITLE>
+</HEAD>
+
+<A NAME="top"></A><BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#D7C163" VLINK="#D7C163">
+<script SRC="/inc/ssm.js" language="JavaScript1.2"></SCRIPT>
+<CENTER>
+ <TABLE>
+  <TR>
+   <TD><A TARGET="_parent" HREF="/"><IMG SRC="/forum/images/novaelogoup.jpg" BORDER="0" ALT=""></A></TD>
+  </TR>
+ </TABLE>
+</CENTER><CENTER><FONT FACE="arial" SIZE="1">
+<b>Non connecté. <a href="/forum/login.php" target="_parent">Connexion</a></b>
+</FONT></CENTER>
+
+<CENTER><FONT FACE="arial" SIZE="1">
+<A HREF="/forum/" TARGET="_parent">Forums</A>
+&nbsp;|&nbsp;<A HREF="/bkk/" TARGET="_parent">BKK</A>
+&nbsp;|&nbsp;<A HREF="/chat/" TARGET="_parent">Chat</A>
+&nbsp;|&nbsp;<A HREF="/news/" TARGET="_parent">News</A>
+&nbsp;|&nbsp;<A HREF="/galerie/" TARGET="_parent">Galerie</A>
+&nbsp;|&nbsp;<A HREF="/members/" TARGET="_parent">Membres</A>
+&nbsp;|&nbsp;<A HREF="/planning/" TARGET="_parent">Planning</A>
+&nbsp;|&nbsp;<A HREF="/links/" TARGET="_parent">Liens</A>
+&nbsp;|&nbsp;<A HREF="/games/" TARGET="_parent">Jeux</A>
+</FONT></CENTER>
+
+<script language="JavaScript1.2">
+<!--
+YOffset=100; // no quotes!!
+staticYOffset=20; // no quotes!!
+XOffset=0; // no quotes!!
+slideSpeed=20; // no quotes!!
+waitTime=300; // no quotes!! this sets the time the menu stays out for after the mouse goes off it.
+menuBGColor="303030";
+menuIsStatic="yes";
+menuWidth=120; // Must be a multiple of 10! no quotes!!
+menuCols=1;
+hdrFontFamily="Verdana, Arial, Helvetica";
+hdrFontSize="2";
+hdrFontColor="D7C163";
+hdrBGColor="CF6030";
+hdrAlign="left";
+hdrVAlign="center";
+hdrHeight="40";
+linkFontFamily="Verdana, Arial, Helvetica";
+linkFontSize="2";
+linkBGColor="000000";
+linkOverBGColor="000000";
+linkTarget="_top";
+linkAlign="center";
+barBGColor="000000";
+barFontFamily="Verdana, Arial, Helvetica";
+barFontSize="2";
+barFontColor="2F6FC0";
+barVAlign="center";
+barWidth=20; // no quotes!!
+barText='<img src="/images/right-arrow.gif" height=10 width=10 border=0><br><br><br><img src="/images/right-arrow.gif" height=10 width=10 border=0>' // <IMG> tag supported, Ex: '<img src="some.gif" border=0>'
+
+// ssmItems[...]=[name, link, target, colspan, endrow?] - leave 'link' and 'target' blank to make a header
+
+addHdr('Novae Menu')
+        addItem('Forum','/forum/', "");
+	addItem('BKK','/bkk/', "");
+        addItem('Chat','/chat/', "");
+        addItem('News','/news/', "");
+        addItem('Galerie','/galerie/', "");
+        addItem('Membres','/members/', "");
+        addItem('Planning','/planning/', "");
+        addItem('Liens','/links/', "");
+        addItem('Jeux','/games/', "");
+        addItem('Strategie','http://strat.novae.dhs.org', "");
+//        addItem('Novae','/novae/', "");
+
+addHdr('Site/Forum')
+	addItem('Connexion','/forum/login.php',"");
+
+buildMenu();
+
+//-->
+</SCRIPT>
+
+<table width="95%" border="0" cellspacing="2" cellpadding="2" align="center">	<tr>
+          <td align="center">
+           <font face="arial" size="1" color="#FFFFFF">
+            <a href="/forum/bb_register.php?mode=agreement">S'Enregistrer</a> | 
+            <a href="/forum/bb_profile.php?mode=edit">Editer Profil</a> | 
+            <a href="/forum/prefs.php">Editez Vos Préférences</a> | 
+            <a href="/forum/search.php">Rechercher</a> | 
+            <a href="/forum/faq.php">FAQ</a> |
+            <a href="cstats.php">Statistiques</a> |
+            <a href="/forum/bb_memberlist.php">
+            Liste des Usagers            </a> | <a href="/forum/viewpmsg.php">
+            Messages Privés            </a> | <a href="latestus.php">Derniers Posts</a> |
+            <a href="/forum/login.php" target="_parent">Connexion</a></font></td>
+        </tr>
+        <tr>  <td align=center>
+            <font face="arial" size="1" color="#FFFFFF"><B>
+</b></font>
+
+        </td></tr>
+      </table>
+
+<table width="95%" border="0" cellspacing="2" cellpadding="2" align="center"><tr><td align="right" valign="top"></TD></TR></table><br>
+<TABLE cellpadding="0" border="0" width="95%" align="center">
+<TR>
+<TD colspan="2" align="left">
+<FONT FACE="arial" SIZE="2" COLOR="#FFFFFF" align="center">
+<B>&#187; Not Registered?</B> <A HREF="./bb_register.php?mode=agreement">To register, click here.</A>
+<BR>
+<B>» Lost Password?</B> <a href="sendpassword.php">J'ai perdu mon mot de passe!</a>
+</FONT></B>
+</TD>
+</TR>
+</table>
+</FONT>
+<FORM ACTION="/forum/login.php" METHOD="POST">
+<TABLE BORDER="0" CELLPADDING="4" CELLSPACING="1" WIDTH="95%" ALIGN="center">
+<TR BGCOLOR="#000000" >
+<TD COLSPAN="2" align="left">
+<FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">
+<b>Veuillez entrer votre nom d'utilisateur et votre mot de passe.</b>
+</FONT>
+<br>
+</TD>
+</TR><TR BGCOLOR="#1e1e1e">
+<TD>
+<FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">
+<b>Nom d'Utilisateur: &nbsp;</b></font>
+</FONT>
+</TD>
+<TD>
+<INPUT TYPE="TEXT" NAME="user" SIZE="25" MAXLENGTH="40" VALUE="">
+</TD>
+</TR><TR BGCOLOR="#1e1e1e">
+<TD>
+<FONT FACE="arial" SIZE="2" COLOR="#FFFFFF">
+<b>Mot de Passe: </b>
+</FONT>
+</TD><TD>
+<INPUT TYPE="PASSWORD" NAME="passwd" SIZE="25" MAXLENGTH="25"><font size="2">
+Remember?: </font><INPUT TYPE="checkbox" NAME="rememberme" VALUE="1">
+</TD>
+</TR>
+</TABLE>
+<br>
+<center>
+<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Poster">
+</center>
+</FORM>
+
+<TABLE BORDER=0 WIDTH="95%" CELLPADDING=0 CELLSPACING=1 ALIGN=CENTER>
+<TR bgcolor="#050505">
+<TD><TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH="100%">
+<tr class="title" bgcolor="#1e1e1e">
+<td colspan="2">
+<div align="center">
+<FONT FACE="arial" SIZE="2" COLOR="#FFFFFF"><b>Infos</b></FONT></div>
+</td>
+</tr>
+<TR> 
+<TD height="20" width="50%" BGCOLOR="#1e1e1e" VALIGN=middle ALIGN=center>
+
+
+&nbsp;&nbsp;&nbsp;<font face='arial' size='-2'>Page créée en 0.021985 secondes.</font>
+</TD>
+<TD height="20" width="50%" BGCOLOR="#1e1e1e" VALIGN=middle>
+<center>
+<font face='arial' size='-2' color='#FFFFFF'>Copyright &copy; 2000 - 2001 <a href="http://www.phpbb.com/credits.php" target="_blank">The phpBB Group</a><br></font></center>
+</TD>
+</TR>
+</TABLE>
+</TD>   
+</TR>   
+</TABLE>
+
+
+</table></center>

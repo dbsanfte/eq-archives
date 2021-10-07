@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Discovered fix to /bazaar crash to desktop</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-13.html">General Discussion</a> &gt; <a href="f-16.html">Help ! ? ! ?</a> &gt; Discovered fix to /bazaar crash to desktop</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=772">Discovered fix to /bazaar crash to desktop</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">SauriaSoulfarer</div><div class="date">08-07-2002, 08:42 PM</div></div><div class="posttext">This may be old news, so if it is, forgive me...<br />
+<br />
+I tried to use a target window mod and when I installed it, using the /bazaar command crashed to desktop. I isolated that this was the mod causing this, and surfing here, saw the consensus was that this would happen with any mod that had a changed EQUI_Animations.xml, as it had been patched since and the modified version would not reflect recent changes, and this had precipitated the /bazaar crash bug.<br />
+<br />
+I know not the first thing about xml, but I am a good proofreader.  I went through this mod's Animation file side by side with the fresh copy in the Default folder.  Aside from code added to facilitate the mod, what was missing from the modified Animation file was the very last section that must be new!<br />
+<br />
+It is called A_DividerVertical, and the chunk of code associated with it has been tacked on to the end of the previous version of Animations, which ended with A_WhitePixel.<br />
+<br />
+The wonderful thing is, a mere cut and paste of the new section to the modifed EQUI_Animations.xml, and I am crash free!  I can guess why too...if you look at the /bazaar window there are little vertical lines separating column headers, and that caused the crash.<br />
+<br />
+So start doing simple home surgery, and you won't have to /loadskin default to shop anymore.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mabiza</div><div class="date">08-09-2002, 09:55 PM</div></div><div class="posttext">I'll admit I am fairly clueless when it comes to this stuff... can you repeat that in terms a 6 year old can understand? :confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SauriaSoulfarer</div><div class="date">08-10-2002, 08:36 AM</div></div><div class="posttext">I don't know much about xml either...but a tiny bit about programming code.<br />
+<br />
+These .xml files contain instructions that EQ uses to make the windows in the interface.  EQUI_Animations.xml is a very important one, it contains the chunks of code that make the basic structures of windows (borders, buttons, sliders, slots and such.)<br />
+<br />
+Customized Mods that use new window shapes (like in the case that led me to this, an oversized Target window) add things to EQUI_Animations.xml to make that possible, as well as adding new art for the changed windows, usually a .tga file.  To make use of the Mods, we as players put the changed files in a folder separate from the default folder, and then use /loadskin to point EQ to using the Modified files instead of the default.<br />
+<br />
+Problems arise when Verant makes changes to the origional .xml files.  In this case, the EQUI_Animations.xml file had code added to it that allowed the Bazaar window to be drawn differently.<br />
+<br />
+Since the EQ patcher updated the file in the default folder only, and players like me were telling EQ to use the file in our custom folder, the Modified (but unpatched) EQUI_Animations.xml file did not have the new code to draw the Bazaar window the new way, so using the /bazaar command to open the window crashed the program.<br />
+<br />
+Programmers who have made Mods are changing the files to account for the new code, but there will be a delay in getting these files to the EQInterface site and for them to be posted.<br />
+<br />
+I think that's about as clear as mud...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Casanunda</div><div class="date">08-10-2002, 09:16 AM</div></div><div class="posttext">I can profess that this works; i used this fix a week or so ago to correct the bazaar window crashing from a modded spell gem bar. The mod had been made before the patch had added that &quot;a_divider_vertical&quot; bit of code, and it seems like verant tacks on most of their changes at the *end* of the file, which makes it quite easy for us to fix the changes. All i had to do was copy this grouping of code into the mod's eqanimation.xml at the end of the file, but before the [/xml] tag, and it worked like a dream. Thankfully the way verant is doing things, it's fairly easy to monkey around with the code even for the novice.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mabiza</div><div class="date">08-10-2002, 04:45 PM</div></div><div class="posttext">ok ok I see what part of the code we are talking about now... do i need a XML Editor to change the mod code?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Casanunda</div><div class="date">08-10-2002, 07:29 PM</div></div><div class="posttext">nO, MICROSOFT WORD WILL, DO, EVEN NOTEPAD, JUST SEAR...damned keyboard...search for &quot;all files&quot; in the &quot;open&quot; screen in the program and open the xml with it. should work =D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SauriaSoulfarer</div><div class="date">08-11-2002, 09:01 AM</div></div><div class="posttext">Can also right click on the file and choose &quot;Open with...&quot; Notepad.  If it gives you the option to check off &quot;always open this file type with this program&quot; or something like that you probably should not, in case you ever have an XML editor or something.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

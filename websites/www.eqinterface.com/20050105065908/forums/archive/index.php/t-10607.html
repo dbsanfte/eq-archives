@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Petwindow Woes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Petwindow Woes</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=10607">Petwindow Woes</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">10-09-2003, 01:35 PM</div></div><div class="posttext">The new pet window sucks in the modifiable department..  <br />
+I'm thinking it's now hardcoded to be 142 pixels tall when &lt;sizeable&gt; is true..<br />
+<br />
+I was trying to patch my pet window to act like the default.. (Pull on the side and it shows buffs)..  But the minute you make the window sizeable it ignores your Size-&gt;CY value and uses the default CY (142).. :( <br />
+<br />
+Dunno what I'm gonna do with it now..<br />
+<br />
+Anyone had any luck making a pet window like the default that is taller or shorter?<br />
+<br />
+<br />
+<br />
+*EDIT*  Nevermind..  Has something to do with the .ini file is used..  I opened my UI_Blah_Blah.ini and deleted the Width and Height lines for the petwindow and that fixed it..  then did:<br />
+/load UIFolder 1<br />
+and it fixed it..<br />
+<br />
+I assume loading without using the ini would of fixed it too :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Inokis</div><div class="date">10-10-2003, 10:06 AM</div></div><div class="posttext">Additionally, to those editing the pet window, make your life a bit easier:<br />
+<br />
+Set<br />
+&lt;AutoStretch&gt;false&lt;/AutoStretch&gt;<br />
+<br />
+Add this just above autostretch, under relative position<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;00&lt;/X&gt;<br />
+			&lt;Y&gt;00&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;00&lt;/CX&gt;<br />
+			&lt;CY&gt;00&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+<br />
+The numbers are just there as placeholders, make them whatever u need them to be.<br />
+<br />
+I've also found the behavior of the buffs is a vertical alignment.   Although you can't control the exact placement of the buffs, you can control their behavior.  For instance if you want a strait vertical thin buff line, set the width of the buff window to 24 and the length 730 or so (assuming default buff icon size) and elongate the pet window to accomodate such a long buff window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fozzik</div><div class="date">10-10-2003, 11:03 AM</div></div><div class="posttext">Thanks for figuring that out, Talyns... it was getting on my nerves and I've only been messing with it for one day.<br />
+For my own use I'm going to be trying to figure out a way for it to be only a buff window... no buttons or gauge or anything... I tried it last night simply by covering the buttons with the buff box... but that doesn't work exactly right because even with the anchors set to 0 there is still a 3 or 4 pixel border around the buff box and you can see the buttons. =(<br />
+I'm just assuming that the buttons and gauge have to be there in order for the game to be happy... so I'm wondering if I can locate them above the window (out of view)... more fiddling is required tonight. <br />
+I guess another possibility would be a tabbed pet window with the buttons and gauge on one tab and the buffs on another... not sure if that will work though.<br />
+<br />
+It is nice that you can resize the buff icons... I found them to be a bit too small. I think it's weird that the icons auto-stack to the front though... I'm not used to buffs changing positions in the window when one wears off. Seems like SoE always has to toss in some weirdness... just so all us modders get our .xml adventure points. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">onetwo1212</div><div class="date">10-10-2003, 11:56 AM</div></div><div class="posttext">I think I have what you want.  I am unable to test it right now since I am at work, but it should work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fozzik</div><div class="date">10-10-2003, 01:20 PM</div></div><div class="posttext">Does stuff like that work? I would think that leaving out all values would cause the buttons to revert to some kind of default. If that does work, thanks... I'll be using that quite often. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">10-10-2003, 01:24 PM</div></div><div class="posttext">It's ok to leave out tags.. It will just use default values..<br />
+<br />
+In the case of size and location it defaults to 0,0 :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">valthalion</div><div class="date">11-13-2003, 06:28 PM</div></div><div class="posttext">I am new to XML and obviously to changing the UI.<br />
+<br />
+I had a simple (so I thought) that was similar to the change wanted by Talyns.  I wanted the buff portion to be below the buttons.  So i would need to increase the height and decrease the width.<br />
+<br />
+I changed the size of PetInfoWindow to <br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;132&lt;/CX&gt;<br />
+			&lt;CY&gt;200&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+and changed PIW_BuffWindow to this<br />
+	&lt;LeftAnchorOffset&gt;4&lt;/LeftAnchorOffset&gt;<br />
+	&lt;TopAnchorOffset&gt;120&lt;/TopAnchorOffset&gt;<br />
+	&lt;RightAnchorOffset&gt;4&lt;/RightAnchorOffset&gt; 	&lt;BottomAnchorOffset&gt;4&lt;/BottomAnchorOffset&gt;<br />
+<br />
+I then loaded the UI via the options button.  The buff window moved (as it was now unseen), but the height did not change.  <br />
+<br />
+Since this was a H resize window (more on that later) I wondered where the height could be getting overridden, so I checked the UI_charname_server.ini file and changed the Height1280x1024=200<br />
+to the desired height.<br />
+<br />
+I then exited and re-entered EQ and presto it worked.  <br />
+<br />
+I have not worked on the buff stacking order so that may still be in error.<br />
+<br />
+Part two....the window is still H resizable, but not V resizeable.  I would like to swap this, but can not figure out how the resize infomration is tied to a specific window.<br />
+<br />
+Any help here would be greatly appreciated.<br />
+<br />
+thanks, Val</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

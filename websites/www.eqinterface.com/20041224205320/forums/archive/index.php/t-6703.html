@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - &quot;Wrapping&quot; Icons</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-31.html">Graphics modification help.</a> &gt; &quot;Wrapping&quot; Icons</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=6703">&quot;Wrapping&quot; Icons</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Chakarum</div><div class="date">02-16-2003, 01:52 AM</div></div><div class="posttext">I am working on modifying an existing mod, and it contained a set of icons using a custom tga file.  However, the program I have will not retain transparencies in tga format, so I converted the file to a png format, and added a few new icons.  However, now when it loads (and everything looks great otherwise), the icons seem to be &quot;wrapping.&quot;<br />
+<br />
+What it appears is that the icon is offset so that the left edge is in the center of the icon's space, and the center divides and begins again at the left edge.<br />
+<br />
+Has anyone else experienced this, and if so is there some way to correct it?  There is no problem when I load it into SidlWidl, only when loading into EQ.  No errors, or changes in &quot;warning&quot; messages since the change either.<br />
+<br />
+Thanks in advance!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Chakarum</div><div class="date">02-16-2003, 06:22 PM</div></div><div class="posttext">Ok, I might have lied...<br />
+<br />
+I played around with it a bit, and when I check the UIErrors, there are two lines I may have missed earlier.<br />
+<br />
+[Sun Feb 16 14:50:58 2003] Error: Could not find child StandButton in window PetInfoWindow<br />
+<br />
+[Sun Feb 16 14:50:58 2003] Error: Could not find child TauntButton in window PetInfoWindow<br />
+<br />
+I have not defined StandButton, since the SitButton is a toggle for this, but TauntButton IS defined as:<br />
+<br />
+  &lt;Button item=&quot;PIW_TauntButton&quot;&gt;<br />
+    &lt;ScreenID&gt;TauntButton&lt;/ScreenID&gt;<br />
+    &lt;!--&lt;Font&gt;3&lt;/Font&gt;--&gt;<br />
+    &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;108&lt;/X&gt;<br />
+      &lt;Y&gt;26&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;18&lt;/CX&gt;<br />
+      &lt;CY&gt;18&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+    &lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+    &lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+    &lt;TooltipReference&gt;Pet Taunt&lt;/TooltipReference&gt;<br />
+    &lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;<br />
+    &lt;!--&lt;RadioGroup/&gt;--&gt;<br />
+    &lt;TextColor&gt;<br />
+      &lt;R&gt;255&lt;/R&gt;<br />
+      &lt;G&gt;100&lt;/G&gt;<br />
+      &lt;B&gt;100&lt;/B&gt;<br />
+    &lt;/TextColor&gt;<br />
+    &lt;ButtonDrawTemplate&gt;<br />
+      &lt;Normal&gt;PetWin.TauntR&lt;/Normal&gt;<br />
+      &lt;Pressed&gt;PetWin.TauntP&lt;/Pressed&gt;<br />
+      &lt;Disabled&gt;PetWin.TauntD&lt;/Disabled&gt;<br />
+      &lt;Flyby&gt;PetWin.TauntF&lt;/Flyby&gt;<br />
+    &lt;/ButtonDrawTemplate&gt;<br />
+    &lt;Font&gt;1&lt;/Font&gt;<br />
+    &lt;DecalOffset&gt;<br />
+      &lt;X&gt;1&lt;/X&gt;<br />
+      &lt;Y&gt;3&lt;/Y&gt;<br />
+    &lt;/DecalOffset&gt;<br />
+    &lt;DecalSize&gt;<br />
+      &lt;CX&gt;18&lt;/CX&gt;<br />
+      &lt;CY&gt;18&lt;/CY&gt;<br />
+    &lt;/DecalSize&gt;<br />
+  &lt;/Button&gt;<br />
+<br />
+I don't know if this has anything to do with it, but there it is.<br />
+<br />
+Basically, this is a modified version of Shadefox's graphical pet window, plus a taunt icon and the character class icon (for a Beastlord).  I've played with the Offsets, to no avail, and tried moving the icon themselves over 9 pixels in the png file, which just made them show half of one icon and half of another.<br />
+<br />
+Please give me a hand!  If you need the files, I zipped them below (I removed the class animation to try to get the icons working).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Chakarum</div><div class="date">02-17-2003, 08:46 AM</div></div><div class="posttext">Ok, nevermind.  I read the solution several times on this site and didn't even catch it.  I had the image file size wrong, so I corrected to 256x256 and it works beautifully.  Only thing now is that the &quot;sit&quot; button highlights even when &quot;disabled&quot; and I'm not sure how to fully disable it.<br />
+<br />
+Other that that, all is good.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">grottel</div><div class="date">02-18-2003, 02:17 PM</div></div><div class="posttext">not sure, but a button has 4 &quot;states&quot; that it can be<br />
+<br />
+Pressed with Mouse Over it<br />
+Pressed with Mouse elsewhere<br />
+NotPressed with Mouse Over it<br />
+NotPressed with Mouse elsewhere<br />
+<br />
+sounds like one of these states might have coding that it should have.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

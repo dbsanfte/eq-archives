@@ -1,0 +1,1120 @@
+
+
+<html>
+<head>
+<title>Public Forum</title>
+
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/treeRow.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("1/1/2006 4:56:52 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("1/1/2006 4:56:52 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "1/1/2006 4:56:52 PM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var ttWaitState = "&nbsp;&nbsp;Loading....Please wait"
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<!-- CSS Stylesheet -->
+<style type="text/css" id="gh_css">
+<!--
+/* GH header CSS  */
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+/* ***** don't change the following ***** */
+
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+body { margin: 0; padding: 0; }
+img { border: 0; }
+#header {
+position: relative;
+display: block;
+width: 100%;
+height: 30px;
+margin: 0;
+padding: 0;
+background: url(image/livebarbg.jpg) repeat-x;
+}
+#header #header-nav {
+position: absolute;
+top: 0;
+right: 0;
+}
+#header #header-nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#header #header-nav ul li {
+display: inline;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+
+<div id="header">
+<div id="live">
+<a href="http://ghguild.com"><img src="http://ghguild.com/forum/image/livebarghlive.jpg"></a>
+</div>
+<div id="header-nav">
+<ul>
+<li><a href="http://eq.ghguild.com/">Everquest</a></li><li>Everquest2</li><li>World of Warcraft</li>
+</ul>
+</div>
+</div>
+
+
+
+<center><TABLE width='97%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width=80% background="http://ghguild.com/forum/rightextend2.jpg" height="115"></td>   </tr>  </table>
+<table width='97%' border='0' cellspacing='0' cellpadding='1'>
+ <tr>
+	<td>
+	<h1 class="forumtitle">Public Forum</h1>&nbsp;
+	</td>	
+	<td class="c2" align="right">
+    Logged in as: Guest
+	</td>	
+ </tr>
+</table>
+<table width='97%' border='0' cellspacing='0' cellpadding='0'>
+  <tr>
+	<td>
+<table width="97%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this forum:  
+     <a href="showProfile.aspx?memid=155" title="1/1/2006 3:57:47 PM">Kebin</a>
+	</td>
+  
+  </tr>
+</table>
+
+	</td> 
+  </tr>
+</table>	
+
+
+<table width='97%' border='0' cellspacing='0' cellpadding='0'>
+  <tr> 
+	<td class="c2" align="right">&nbsp;
+
+	<a href="markforumread.aspx?forumid=1">
+		<img src="image/readtrack.gif" border="0" align="absmiddle">Mark this forum read</a>
+
+	</td>
+  </tr>
+</table>
+<br>
+<table width='97%' border='0' cellspacing='0' cellpadding='0'>
+  <tr>
+	<form method="get" name="sort">
+	<td nowrap align="right" class="ultrasmall">
+<script language="JavaScript">
+	<!--
+	function jumpTime(s) {
+		document.cookie = "ghforumtimefilter="+s.options[s.selectedIndex].value+ "; path=/"		
+		self.location.href="tt.aspx?forumid=1&tmode=1&smode=1&p=1";
+		
+	}
+	//-->
+	</script>	
+Display topics from last: 
+<select name='timefilter' onchange='jumpTime(this)'>
+<option value='0' >All Topics</option>
+<option value='-1' >1 Day</option>
+<option value='-7' >7 Days</option>
+<option value='-14' >14 Days</option>
+<option value='-30' >30 Days</option>
+<option value='-90' >90 Days</option>
+<option value='-180' selected>180 Days</option>
+<option value='-365' >365 Days</option>
+</select>
+&nbsp;
+Filter:
+
+		<select name="smode" onchange="self.location.href='tt.aspx?forumid=1&tmode=1&smode='+document.sort.smode.options[document.sort.smode.selectedIndex].value+'';">
+			<option value=1 selected>Show all messages</option>
+			<option value=2 >Show Polls only</option>
+			<option value=3 >Show FAQs only</option>
+			<option value=4 >Show threads I contributed to</option>	
+		</select>
+	</td>
+	</form>
+  </tr>
+</table>	
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr> <td class='ultrasmall'><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; Public Forum</b>  </td><td align='right' nowrap class='ultrasmall'>Page:  <a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1' title='first'><b>&lt;&lt; </b></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1' title='prev'><b>&lt; prev</b></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1'><b>1</b></a>  <b>[2]</b> <a href='tt.aspx?forumid=1&p=3&tmode=1&smode=1'><b>3</b></a> &nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=3&tmode=1&smode=1' title='next'><b>next &gt;</b></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=-1&tmode=1&smode=1' title='last'><b> &gt;&gt;</b></a></td></tr></table>
+<table width='97%' border='0' cellspacing='0' cellpadding='0'>
+<tr>
+<td bgcolor="004580">
+<!--Start building table-->
+<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+<tr bgcolor="006699">
+	<th width="50" align="center" colspan=2 nowrap>&nbsp;</th>
+	<th width=* align="center" nowrap><a href='tt.aspx?forumid=1&p=2&tmode=9&smode=1'><font color='FFFFFF' class='subhead'>Topic</font></a></th>
+	<th width="5%" align="center" nowrap><a href='tt.aspx?forumid=1&p=2&tmode=3&smode=1'><font color='FFFFFF' class='subhead'>Replies</font></a></th>
+	<th width="10%" align="center" nowrap><a href='tt.aspx?forumid=1&p=2&tmode=11&smode=1'><font color='FFFFFF' class='subhead'>Thread Starter</font></a></th>
+	<th width="5%" align="center" nowrap><a href='tt.aspx?forumid=1&p=2&tmode=5&smode=1'><font color='FFFFFF' class='subhead'>Hits</font></a></th>
+
+	<th width="10%" align="center" nowrap><a href='tt.aspx?forumid=1&p=2&tmode=2&smode=1'><font color='FFFFFF' class='subhead'><u>Last Post</u></font></a><img src='image/desc.gif' align='absmiddle'></th>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("11/11/2005 5:26:18 PM",0,646,49,193486,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/11/2005 5:26:18 PM",193486,1,false)</script>
+   <img src='image/paperclip.gif' border=0 title='w/ attachment(s)'/>
+   <a href="tm.aspx?m=193486" title="Been a long time since I&#39;ve been here. Miss you guys and just visiting the forums again brings back lots of great memories. Im pretty sure Coball is l..."> Dropping in to say hi. </a></span>&nbsp;
+   <br> <span class=ultrasmall>[Page:  <a href="tm.aspx?m=193486&mpage=2">2</a> ]</span>
+</td>
+<td align="center" >49</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=104">Coball</a>
+</td>
+<td align="center" >646</td>
+
+<td align="right" nowrap  class=info>
+11/11/2005 5:26:18 PM<br><a href="showProfile.aspx?memid=176" class=c2>Fredrinn</a> <a href="fb.aspx?m=193486&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("11/11/2005 3:26:56 PM",0,124,3,193904,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/11/2005 3:26:56 PM",193904,1,false)</script>
+   
+   <a href="tm.aspx?m=193904" title="hey gh,       just checking to see how things are going.  i&#39;m taking a kallador on my nedd.  time to unleash assault on oggok.       atomic bomb has b..."> posting from my toilet </a></span>&nbsp;
+   
+</td>
+<td align="center" >3</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=77">nedd</a>
+</td>
+<td align="center" >124</td>
+
+<td align="right" nowrap  class=info>
+11/11/2005 3:26:56 PM<br><a href="showProfile.aspx?memid=393" class=c2>Aeonflux</a> <a href="fb.aspx?m=193904&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("11/11/2005 12:02:20 PM",0,213,7,194481,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/11/2005 12:02:20 PM",194481,1,false)</script>
+   
+   <a href="tm.aspx?m=194481" title="Congrats on Specialization and Kess.  Keep up the good work...."> Congrats </a></span>&nbsp;
+   
+</td>
+<td align="center" >7</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=111">Heman</a>
+</td>
+<td align="center" >213</td>
+
+<td align="right" nowrap  class=info>
+11/11/2005 12:02:20 PM<br><a href="showProfile.aspx?memid=571" class=c2>Robson</a> <a href="fb.aspx?m=194481&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("11/8/2005 7:56:21 AM",0,198,3,177687,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/8/2005 7:56:21 AM",177687,1,false)</script>
+   
+   <a href="tm.aspx?m=177687" title="just wanted to let those know that were my friends that i&#39;m on povar now and enjoying it there being with all my old friends from RE and soulbond.   t..."> just saying hello. </a></span>&nbsp;
+   
+</td>
+<td align="center" >3</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=820">Tymeless</a>
+</td>
+<td align="center" >198</td>
+
+<td align="right" nowrap  class=info>
+11/8/2005 7:56:21 AM<br><a href="showProfile.aspx?memid=820" class=c2>Tymeless</a> <a href="fb.aspx?m=177687&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("11/7/2005 10:28:15 PM",0,42,1,193897,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/7/2005 10:28:15 PM",193897,1,false)</script>
+   
+   <a href="tm.aspx?m=193897" title="just stopping in to say Hello to anyone and everyone who might still be here from when i was here, i hope everything is going well for the guild and i..."> Saying hello </a></span>&nbsp;
+   
+</td>
+<td align="center" >1</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=531">Belthazore</a>
+</td>
+<td align="center" >42</td>
+
+<td align="right" nowrap  class=info>
+11/7/2005 10:28:15 PM<br><a href="showProfile.aspx?memid=101" class=c2>Chantela</a> <a href="fb.aspx?m=193897&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("11/4/2005 11:15:11 AM",0,180,5,191958,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/4/2005 11:15:11 AM",191958,1,false)</script>
+   
+   <a href="tm.aspx?m=191958" title="IF you are on The Rathe / Karana, and a Dark Elf Grandmaster Smith, please PM me or contact me in Game...."> Lurkers LOOK HERE Dark Elf Smith needed </a></span>&nbsp;
+   
+</td>
+<td align="center" >5</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1086">Astona</a>
+</td>
+<td align="center" >180</td>
+
+<td align="right" nowrap  class=info>
+11/4/2005 11:15:11 AM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=191958&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("11/1/2005 4:09:42 PM",0,494,26,185447,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("11/1/2005 4:09:42 PM",185447,1,false)</script>
+   <img src='image/paperclip.gif' border=0 title='w/ attachment(s)'/>
+   <a href="tm.aspx?m=185447" title="/waves from Povar       Hiya Grey Hawke.   I hope this finds everyone fine and dandy...I hope everyone that is the gulf area is ok and that everyone i..."> Hello From Povar </a></span>&nbsp;
+   
+</td>
+<td align="center" >26</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1042">smallberries</a>
+</td>
+<td align="center" >494</td>
+
+<td align="right" nowrap  class=info>
+11/1/2005 4:09:42 PM<br><a href="showProfile.aspx?memid=1272" class=c2>Puppicitah</a> <a href="fb.aspx?m=185447&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("10/31/2005 12:15:19 PM",0,129,5,188828,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/31/2005 12:15:19 PM",188828,1,false)</script>
+   
+   <a href="tm.aspx?m=188828" title="Hey Grey Hawke just came by to say Hi.  Rita knocked me off the air ( No power and water for 8days) but i&#39;m back and thought i&#39;d say Hello. I hope all..."> Just Saying Hi </a></span>&nbsp;
+   
+</td>
+<td align="center" >5</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=451">Sllik</a>
+</td>
+<td align="center" >129</td>
+
+<td align="right" nowrap  class=info>
+10/31/2005 12:15:19 PM<br><a href="showProfile.aspx?memid=1108" class=c2>Phuzzy</a> <a href="fb.aspx?m=188828&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("10/23/2005 1:59:41 AM",0,295,17,189973,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/23/2005 1:59:41 AM",189973,1,false)</script>
+   
+   <a href="tm.aspx?m=189973" title="Hi everyone, Arkticwynd from AW here.  I think I registered here a long time ago but forgot if I registered as my ranger or another toon.  So I re-reg..."> Well met again :) </a></span>&nbsp;
+   
+</td>
+<td align="center" >17</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1266">Arkticwynd</a>
+</td>
+<td align="center" >295</td>
+
+<td align="right" nowrap  class=info>
+10/23/2005 1:59:41 AM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=189973&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("10/14/2005 1:11:07 PM",0,83,3,189313,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/14/2005 1:11:07 PM",189313,1,false)</script>
+   
+   <a href="tm.aspx?m=189313" title="Just wanted to inform everyone that I will be absent from EQ from the 14th to the 18th (this coming friday up until the following tuesday).  This kind..."> Bit of an absence </a></span>&nbsp;
+   
+</td>
+<td align="center" >3</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1260">Beornj</a>
+</td>
+<td align="center" >83</td>
+
+<td align="right" nowrap  class=info>
+10/14/2005 1:11:07 PM<br><a href="showProfile.aspx?memid=96" class=c2>Kaloog</a> <a href="fb.aspx?m=189313&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("10/14/2005 1:30:36 AM",0,155,2,187481,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/14/2005 1:30:36 AM",187481,1,false)</script>
+   <img src='image/paperclip.gif' border=0 title='w/ attachment(s)'/>
+   <a href="tm.aspx?m=187481" title="It&#39;s easy to loose your head in E.Q.      http://ghguild.com/forum/962/FCB01ED5F9A84555A1AD03E14FEF6986.jpg..."> lost head </a></span>&nbsp;
+   
+</td>
+<td align="center" >2</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=962">Kollop</a>
+</td>
+<td align="center" >155</td>
+
+<td align="right" nowrap  class=info>
+10/14/2005 1:30:36 AM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=187481&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("10/12/2005 8:30:11 PM",0,94,2,189298,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/12/2005 8:30:11 PM",189298,1,false)</script>
+   
+   <a href="tm.aspx?m=189298" title="hi guys,   just curious on how eq1 is standing, isnt it dead yet?  Was in gh in eq2, unfortunately it didn&#39;t go as well as gh in eq1, due to that ever..."> eq1 ? </a></span>&nbsp;
+   
+</td>
+<td align="center" >2</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1106">Haunted</a>
+</td>
+<td align="center" >94</td>
+
+<td align="right" nowrap  class=info>
+10/12/2005 8:30:11 PM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=189298&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("10/8/2005 1:00:17 AM",0,85,2,188602,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/8/2005 1:00:17 AM",188602,1,false)</script>
+   
+   <a href="tm.aspx?m=188602" title="http://www.aimfrendio.com/temp/eqshinai.jpg           GNOME CULT!           http://ghguild.com/forum/upfiles/smiley/beer.gifhttp://ghguild.com/forum/u..."> HAPPY HAPPY BIRTHDAY CALISSONTEHGNOME!!!11!1one!1!1!1!! </a></span>&nbsp;
+   
+</td>
+<td align="center" >2</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=77">nedd</a>
+</td>
+<td align="center" >85</td>
+
+<td align="right" nowrap  class=info>
+10/8/2005 1:00:17 AM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=188602&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("10/7/2005 2:46:51 AM",0,124,3,188413,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/7/2005 2:46:51 AM",188413,1,false)</script>
+   
+   <a href="tm.aspx?m=188413" title="..?..."> Why </a></span>&nbsp;
+   
+</td>
+<td align="center" >3</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=202">Xxendark</a>
+</td>
+<td align="center" >124</td>
+
+<td align="right" nowrap  class=info>
+10/7/2005 2:46:51 AM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=188413&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("10/3/2005 11:12:32 PM",0,1240,28,64328,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/3/2005 11:12:32 PM",64328,1,false)</script>
+   
+   <a href="tm.aspx?m=64328" title="Nedd &amp;gt; YOU    [link=http://ne.ghguild.com]ne.ghguild.com[/link]..."> Nedd Eternal </a></span>&nbsp;
+   
+</td>
+<td align="center" >28</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=389">zakanrn</a>
+</td>
+<td align="center" >1240</td>
+
+<td align="right" nowrap  class=info>
+10/3/2005 11:12:32 PM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=64328&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("10/1/2005 10:09:11 AM",0,149,4,184456,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/1/2005 10:09:11 AM",184456,1,false)</script>
+   <img src='image/paperclip.gif' border=0 title='w/ attachment(s)'/>
+   <a href="tm.aspx?m=184456" title="this aint no shit moms comp (only her and my exgirlfriend use( dont ask why an ex and at my place)(but fill me in if u find out why)and they wanna kno..."> why i dont keep my comp at home </a></span>&nbsp;
+   
+</td>
+<td align="center" >4</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=130">Myette</a>
+</td>
+<td align="center" >149</td>
+
+<td align="right" nowrap  class=info>
+10/1/2005 10:09:11 AM<br><a href="showProfile.aspx?memid=56" class=c2>Relenore</a> <a href="fb.aspx?m=184456&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("10/1/2005 4:14:31 AM",0,253,12,184432,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("10/1/2005 4:14:31 AM",184432,1,false)</script>
+   
+   <a href="tm.aspx?m=184432" title="Hello to all that know me and those who dont as well.       Hiletroy E&#39;vyl     70 Cleric..."> Hello </a></span>&nbsp;
+   
+</td>
+<td align="center" >12</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1249">hiletroy</a>
+</td>
+<td align="center" >253</td>
+
+<td align="right" nowrap  class=info>
+10/1/2005 4:14:31 AM<br><a href="showProfile.aspx?memid=490" class=c2>Klerisa</a> <a href="fb.aspx?m=184432&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("9/17/2005 7:53:08 AM",0,230,8,184869,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/17/2005 7:53:08 AM",184869,1,false)</script>
+   
+   <a href="tm.aspx?m=184869" title="You need to shoot me an email, or make a post, or something to let me know you got there ok.  I have already contacted the Red Cross &amp;amp; the Distric..."> Brendelin </a></span>&nbsp;
+   
+</td>
+<td align="center" >8</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=490">Klerisa</a>
+</td>
+<td align="center" >230</td>
+
+<td align="right" nowrap  class=info>
+9/17/2005 7:53:08 AM<br><a href="showProfile.aspx?memid=946" class=c2>sinami</a> <a href="fb.aspx?m=184869&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("9/16/2005 4:20:40 AM",0,355,11,183068,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/16/2005 4:20:40 AM",183068,1,false)</script>
+   
+   <a href="tm.aspx?m=183068" title="Hello =)       New monkey reporting for duty...."> *wave* </a></span>&nbsp;
+   
+</td>
+<td align="center" >11</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1245">Velamon</a>
+</td>
+<td align="center" >355</td>
+
+<td align="right" nowrap  class=info>
+9/16/2005 4:20:40 AM<br><a href="showProfile.aspx?memid=892" class=c2>Cellan</a> <a href="fb.aspx?m=183068&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("9/14/2005 3:36:26 AM",0,162,5,182722,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/14/2005 3:36:26 AM",182722,1,false)</script>
+   
+   <a href="tm.aspx?m=182722" title="I hope you had a great birthday!         /hugs..."> Vladapoo!!! </a></span>&nbsp;
+   
+</td>
+<td align="center" >5</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1157">Kerasa</a>
+</td>
+<td align="center" >162</td>
+
+<td align="right" nowrap  class=info>
+9/14/2005 3:36:26 AM<br><a href="showProfile.aspx?memid=1157" class=c2>Kerasa</a> <a href="fb.aspx?m=182722&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("9/13/2005 5:49:04 PM",0,387,12,176393,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/13/2005 5:49:04 PM",176393,1,false)</script>
+   
+   <a href="tm.aspx?m=176393" title="*Hugs all my friends till you all make squeeky toy noises*..."> *Hugs* </a></span>&nbsp;
+   
+</td>
+<td align="center" >12</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1219">Shamarra</a>
+</td>
+<td align="center" >387</td>
+
+<td align="right" nowrap  class=info>
+9/13/2005 5:49:04 PM<br><a href="showProfile.aspx?memid=285" class=c2>Bolero</a> <a href="fb.aspx?m=176393&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("9/13/2005 2:43:12 PM",0,133,7,184613,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/13/2005 2:43:12 PM",184613,1,false)</script>
+   
+   <a href="tm.aspx?m=184613" title="Just a  message to say hi to all my friends  in GH !  i miss you all lots take care and i see you in game!  if you need a cleric send me RESAM a tell..."> hey hey ! </a></span>&nbsp;
+   
+</td>
+<td align="center" >7</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1010">Resam</a>
+</td>
+<td align="center" >133</td>
+
+<td align="right" nowrap  class=info>
+9/13/2005 2:43:12 PM<br><a href="showProfile.aspx?memid=77" class=c2>nedd</a> <a href="fb.aspx?m=184613&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("9/11/2005 9:53:43 AM",0,141,2,184149,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/11/2005 9:53:43 AM",184149,1,false)</script>
+   
+   <a href="tm.aspx?m=184149" title="Character Name: Spinetwist   Class: Warrior   Level: 69   Alternate Advancement Points: 25   Notable AA abilities:          Magelo Profile Link:    ht..."> Spinetwist App </a></span>&nbsp;
+   
+</td>
+<td align="center" >2</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1248">Spinetwist</a>
+</td>
+<td align="center" >141</td>
+
+<td align="right" nowrap  class=info>
+9/11/2005 9:53:43 AM<br><a href="showProfile.aspx?memid=393" class=c2>Aeonflux</a> <a href="fb.aspx?m=184149&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("9/9/2005 11:58:48 AM",0,152,3,183730,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/9/2005 11:58:48 AM",183730,1,false)</script>
+   
+   <a href="tm.aspx?m=183730" title="The family is alive and well, some damage here and there, I lost my pick up to surge waters and my brothers house got 3.5 foot of water at 25ft + elev..."> Along came Katrina...... </a></span>&nbsp;
+   
+</td>
+<td align="center" >3</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=841">Canpick</a>
+</td>
+<td align="center" >152</td>
+
+<td align="right" nowrap  class=info>
+9/9/2005 11:58:48 AM<br><a href="showProfile.aspx?memid=946" class=c2>sinami</a> <a href="fb.aspx?m=183730&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("9/4/2005 11:02:59 AM",0,183,4,182727,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("9/4/2005 11:02:59 AM",182727,1,false)</script>
+   
+   <a href="tm.aspx?m=182727" title="Grats on Tacvi kills! Killer stuff =)      here&#39;s a funny: http://www.ebaumsworld.com/flash/toomanyguys-groupx.html      A bit racey, dun click if yer..."> /cheer Tacvi stuff! </a></span>&nbsp;
+   
+</td>
+<td align="center" >4</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1244">Wasabi</a>
+</td>
+<td align="center" >183</td>
+
+<td align="right" nowrap  class=info>
+9/4/2005 11:02:59 AM<br><a href="showProfile.aspx?memid=1160" class=c2>Aaiwen</a> <a href="fb.aspx?m=182727&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("8/30/2005 4:58:37 PM",0,236,11,181865,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m16.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("8/30/2005 4:58:37 PM",181865,1,false)</script>
+   
+   <a href="tm.aspx?m=181865" title="Just wanted to drop in and say hello to anyone who might still be wandering the Karana/Rathe plain (well, aside from Drizuin, I try to pretend I don&#39;t..."> *waves* to her Karana/Rathe friends (and those who used to be HoH) </a></span>&nbsp;
+   
+</td>
+<td align="center" >11</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1242">happy.bunni</a>
+</td>
+<td align="center" >236</td>
+
+<td align="right" nowrap  class=info>
+8/30/2005 4:58:37 PM<br><a href="showProfile.aspx?memid=1242" class=c2>happy.bunni</a> <a href="fb.aspx?m=181865&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("8/29/2005 1:11:16 PM",0,153,2,181885,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("8/29/2005 1:11:16 PM",181885,1,false)</script>
+   
+   <a href="tm.aspx?m=181885" title="Over the last couple months it has become aparent that there are people in the game/online that are hacking into, what appear to be forums of the EQ g..."> Information that might be useful.... </a></span>&nbsp;
+   
+</td>
+<td align="center" >2</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1072">Deaklan</a>
+</td>
+<td align="center" >153</td>
+
+<td align="right" nowrap  class=info>
+8/29/2005 1:11:16 PM<br><a href="showProfile.aspx?memid=40" class=c2>Kilrav</a> <a href="fb.aspx?m=181885&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("8/26/2005 11:44:36 AM",0,210,7,181513,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("8/26/2005 11:44:36 AM",181513,1,false)</script>
+   
+   <a href="tm.aspx?m=181513" title="Re-instated Vervain on EQ1, have been playing EQ2 (dark elf Cleric) but thought I would see how the old game was going and see who all was about and w..."> Where/What is everyone playing these days? </a></span>&nbsp;
+   
+</td>
+<td align="center" >7</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1051">Vervain</a>
+</td>
+<td align="center" >210</td>
+
+<td align="right" nowrap  class=info>
+8/26/2005 11:44:36 AM<br><a href="showProfile.aspx?memid=11" class=c2>sindaan</a> <a href="fb.aspx?m=181513&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="dedede" >
+<td align="center"  width="25">
+<script>showPicture("8/22/2005 3:31:15 AM",0,261,2,181140,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m1.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("8/22/2005 3:31:15 AM",181140,1,false)</script>
+   
+   <a href="tm.aspx?m=181140" title="Hey GH,       Im taking a chance posting this that you guys even remember me, but so be it.  I just wanted to say that the time I spent in GH was grea..."> : ( </a></span>&nbsp;
+   
+</td>
+<td align="center" >2</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=601">Eamonn</a>
+</td>
+<td align="center" >261</td>
+
+<td align="right" nowrap  class=info>
+8/22/2005 3:31:15 AM<br><a href="showProfile.aspx?memid=577" class=c2>Mornindew</a> <a href="fb.aspx?m=181140&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr  bgcolor="e6e6e6" >
+<td align="center"  width="25">
+<script>showPicture("8/21/2005 10:51:08 PM",0,141,1,181304,1)</script>
+</td>
+<td align="center"  width="25">
+<img src="mIcons/m6.gif" border=0>
+</td>
+<td  class="c2">
+  <script>showArrow("8/21/2005 10:51:08 PM",181304,1,false)</script>
+   
+   <a href="tm.aspx?m=181304" title="Name: rlecon siverclaw   Class/race: beastlord vai shir   Level: 70   AA: 140   Magelo: --NA--   Play Time: 52 day 17 hours   Expansions: all   Flags..."> rlecon app </a></span>&nbsp;
+   
+</td>
+<td align="center" >1</td>
+<td align="center"  class="c2">
+<a href="showProfile.aspx?memid=1223">rlecon</a>
+</td>
+<td align="center" >141</td>
+
+<td align="right" nowrap  class=info>
+8/21/2005 10:51:08 PM<br><a href="showProfile.aspx?memid=876" class=c2>Nillaien</a> <a href="fb.aspx?m=181304&go=last"><img src="image/latestmsg.gif" title="Go to latest post!" border=0 align="absmiddle"></a> 
+</td>
+</tr>
+
+<tr> 
+  <th align='center' colspan="7" class="subhead" bgcolor="006699"> 
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1' title='first'><font color='FFFFFF' class='subhead'>&lt;&lt; </font></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1' title='prev'><font color='FFFFFF' class='subhead'>&lt; prev</font></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1'><font color='FFFFFF' class='subhead'>1</font></a>  <font color='FFFFFF' class='subhead'>[2]</font> <a href='tt.aspx?forumid=1&p=3&tmode=1&smode=1'><font color='FFFFFF' class='subhead'>3</font></a> &nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=3&tmode=1&smode=1' title='next'><font color='FFFFFF' class='subhead'>next &gt;</font></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=-1&tmode=1&smode=1' title='last'><font color='FFFFFF' class='subhead'> &gt;&gt;</font></a> &nbsp;
+  </th>
+</tr>
+</table>
+
+<!--Stop building table-->
+
+</td>
+</tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr> <td class='ultrasmall'><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; Public Forum</b>  </td><td align='right' nowrap class='ultrasmall'>Page:  <a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1' title='first'><b>&lt;&lt; </b></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1' title='prev'><b>&lt; prev</b></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=1&tmode=1&smode=1'><b>1</b></a>  <b>[2]</b> <a href='tt.aspx?forumid=1&p=3&tmode=1&smode=1'><b>3</b></a> &nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=3&tmode=1&smode=1' title='next'><b>next &gt;</b></a>&nbsp;&nbsp;<a href='tt.aspx?forumid=1&p=-1&tmode=1&smode=1' title='last'><b> &gt;&gt;</b></a></td></tr></table>
+
+<table width="97%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" selected>- - Public Forum</option>
+<option value="tt.aspx?forumid=2" >- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="97%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	</td>
+	</tr>
+	<input type="hidden" name="forumid" value="1">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="message" value="both">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="timefilter" value="-180">
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="97%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+<font size="-4" color="#b1b1b1">This Content for Google Adsense: Lots of Gaming and Computer hardware. Buy Computer Hardware here. Newegg is the best for hardware. Fast Video Cards. World of Warcraft. Get a fast computer like alienware for the win. Win Teh game. Arcade games are fun. Spyware and Viruses are not. Porn is cool but google isn't down with the porn. Everquest. Everquest 2. We do it all. PC Gaming X-box Playstation 2 Xbox 360 Console Games Get HDTV Television With Satellite TV or Cable with Cablecard for the best TV experience.  There's also great deals on fast food and coupon sites. Get Dell coupons from fatwallet or bensbargins. Microsoft Server products for the win. Web hosting we provide for FREE! Gamers like to eat snacks like cheetos or candy and soda. Time to get on the fattymcfatfat machine. Treadmill and no gym for home. Weight Watchers and lose weight fast with diet pills that may kill you but hey that's the fun. Atkins doesn't work. There's no women on the internet unless they post pics of their breasts with a penny. Digital Cameras like the Rebel XT or 20D from Canon are much better than cameras from Nikon like D50 and D70. Sigma is great if you get a sharp one. Play the Sigma Lottery if you wish.</font></center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.063</font><br>
+</body>
+</html>
+

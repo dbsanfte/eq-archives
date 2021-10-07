@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Target Window</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Target Window</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=2104">Target Window</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">kronas</div><div class="date">09-14-2002, 08:36 PM</div></div><div class="posttext">I have been trying to modify the target window to make it longer.  Making it longer is easy, but i am having a difficult time making the gage bar streatch the whole lenght and be filled in.  Any suggestions?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">09-15-2002, 02:41 AM</div></div><div class="posttext">I've never done it myself, but it will require a custom graphic.<br />
+<br />
+There's mods out that about double the size of the Target HP Bar. Take a look on the URL=http://www.eqinterface.com/]EQ Interface site[/URL] for it. I *think* it's there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dayradon</div><div class="date">10-17-2002, 10:59 AM</div></div><div class="posttext">Just thought since someone else was mod'n a target window, i'd ask them.  Do you know if you can put an animation in the target window?  I got my animation to work in sidlwidl and EQ but i can't seem to get it to work in the target window?  not possible? or just my coding?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">faBBe</div><div class="date">10-18-2002, 09:26 PM</div></div><div class="posttext">kronas, you are probably chaning the size in the gauge definition in EQUI_TargetWindow.xml<br />
+<br />
+That doesnt work.<br />
+<br />
+You have to make your graphics the right size or at least set all the UI2D bits used by the Gauge _TEMPLATE_ to the size you need them.<br />
+<br />
+The size that is given in the Gauge Definition (notice 'definition', not 'template'), is basically just a invisible 'cropping' rectangle, outside of which nothing is drawn.<br />
+<br />
+I have myself had the same problem and I now have BIG gauges like the one on the patcher :)<br />
+<br />
+I have defined UI2D's for the gaugefill, gauge background etc.. all the same dimensions, and replaced the endcaps as wlel, then used those instead of the default ones, so I get the size I want.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">faBBe</div><div class="date">10-18-2002, 09:32 PM</div></div><div class="posttext">Dayradon, my target window is bascially all a graphic in the center of which i print the gauge &amp; name.<br />
+<br />
+THis graphic is a StaticANimation :<br />
+<br />
+	&lt;StaticAnimation item = &quot;Target_BG&quot;&gt;<br />
+		&lt;ScreenID&gt;TargetBG&lt;/ScreenID&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;211&lt;/CX&gt;<br />
+			&lt;CY&gt;52&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Animation&gt;faB_bg_target&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;<br />
+<br />
+faB_bg_target is a UI2D<br />
+<br />
+	&lt;Ui2DAnimation item = &quot;faB_bg_target&quot;&gt;<br />
+		&lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;fab_pieces01.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;100&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;211&lt;/CX&gt;<br />
+				&lt;CY&gt;52&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+			&lt;Duration&gt;1000&lt;/Duration&gt;<br />
+		&lt;/Frames&gt;<br />
+	&lt;/Ui2DAnimation&gt;<br />
+<br />
+<br />
+Now in there you can add more frames such as the class animations, so I assume it should work.<br />
+<br />
+Try to add just a frame with short dureation and let us know if it works.. i,.e.<br />
+<br />
+&lt;Ui2DAnimation item = &quot;faB_bg_target&quot;&gt;<br />
+		&lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;fab_pieces01.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;100&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;211&lt;/CX&gt;<br />
+				&lt;CY&gt;52&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+			&lt;Duration&gt;10&lt;/Duration&gt;<br />
+		&lt;/Frames&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;fab_pieces01.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;100&lt;/X&gt;<br />
+				&lt;Y&gt;100&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;211&lt;/CX&gt;<br />
+				&lt;CY&gt;52&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+			&lt;Duration&gt;1000&lt;/Duration&gt;<br />
+		&lt;/Frames&gt;<br />
+	&lt;/Ui2DAnimation&gt;<br />
+<br />
+so i have 2 images one at (0,100) size (211,52)<br />
+the second at (100,100) same dimensions<br />
+<br />
+and it shoud animate then..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dayradon</div><div class="date">10-19-2002, 12:26 AM</div></div><div class="posttext">Ok, my first attempt got it to work but it seemed to be ontop of the gauge. <br />
+<br />
+ couldn't figure it out.  so i wrote a new template with a pic as background and then made a static animation of the pic for just the area i want animated <br />
+( totaly new pic and even better:)  .<br />
+<br />
+  Now how do i explain this,  The part i want animated does not take up the whole screen, ( this is how i avoided the gauge over right issue).  but my template background picture seems shifted down by about 8-16 pixels, ONLY under where the animation is.<br />
+<br />
+<br />
+So if the bottom of my pic is like this, <br />
+<br />
+        <br />
+_________________<br />
+<br />
+<br />
+when i have an animation in it, it shifts like this: ( *= animation)<br />
+<br />
+<br />
+        *****<br />
+____          ________<br />
+        _____<br />
+<br />
+<br />
+The all the colums seem to shift down<br />
+<br />
+<br />
+BTW the reason i didn't get it to work the first time was that my <br />
+<br />
+&lt;animation&gt; *****&lt;/animation&gt;  tag was the same as my screen id, and the thing above that, piece= thingy<br />
+<br />
+anyway, i'm gettting closer but it's 2 steps forward 1 step back.  thanx for the response though :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dayradon</div><div class="date">10-19-2002, 12:31 AM</div></div><div class="posttext">Ok so this posting machine doesn't like a space inbetween undelines.<br />
+<br />
+<br />
+this is how it looks with an animation in it<br />
+<br />
+<br />
+      ****<br />
+___........___<br />
+......____<br />
+<br />
+<br />
+<br />
+ok just pretend the periods don't exist<br />
+<br />
+it's the lines that  represent the bottom of the pic<br />
+<br />
+<br />
+thanx again</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

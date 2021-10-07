@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Need some help with XML</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; Need some help with XML</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=918">Need some help with XML</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Zofos</div><div class="date">08-12-2002, 04:22 PM</div></div><div class="posttext">Hey all,<br />
+<br />
+     I went ahead and registered with forums today - got a few question on XML - one in particular though.  Where does the XML document draw the graphic files from?<br />
+<br />
+     If one of you could help me with that id greatly appreciate it.  Also I AM an experienced graphic artist - i use Photoshop and a few other programs quite often - so im looking to pick up on this XML ( for the most part it makes HTML look cryptic ) so i could design some interfaces.<br />
+<br />
+    Please visit my website and take a look @ my graphics: www.bloodangel.iwarp.com<br />
+<br />
+Thanks all,<br />
+Zofos<br />
+<br />
+*please see sig rules (http://www.eqgui.com/showthread.php?s=&amp;threadid=593) - guice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Faille</div><div class="date">08-12-2002, 04:38 PM</div></div><div class="posttext">Check out the EQUI_Animations.xml file in your uifiles/default folder, as well as the various .tga files in that same directory.  The EQUI_Animation.xml defines names, dimensions, locations, etc for most(if not all) of the graphics you see displayed on your interface in game, in the form of UI2DAnimation elements.  New UI2D elements can be placed in this file and also in other files, if you need to create them just for a specific mod.<br />
+<br />
+The .tga files can be modified to your liking to display the graphics you want.  Check out the Industrial or Quartz uis in the completed UIs thread, I have a feeling that due to their complexity, their XML files will have a lot of the info you are looking for.  Download them and look at the source to get an idea of what you want to do and can do :)<br />
+<br />
+Good luck!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zofos</div><div class="date">08-12-2002, 05:02 PM</div></div><div class="posttext">ok i think i got that - now i have opened up the .tga files - i have photoshop so they default to opening in photoshop - and its just a bunch of images - goes EQ pull each graphics from a part of a grid or location inside the .TGA file?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Faille</div><div class="date">08-12-2002, 07:33 PM</div></div><div class="posttext">Yeah.. look at the EQUI_Animations.xml and look at the corresponding .tga and things should become clearer.  Let me see if I can explain it to you without making it more confusing :)<br />
+<br />
+EQ's XML uses an object called &quot;Ui2DAnimation&quot; to define what the various graphics look like for the interface.  It can specify a full file to be used, or that only part of an image be used, which is why many of the tga files have many different items on them.<br />
+<br />
+The example that I am going to use is the &quot;A_GaugeBackground&quot; Ui2DAnimation from the EQUI_Animations.xml file.  You can get to it by going to line 3164 or just searching for &quot;A_GaugeBackground&quot; in that file.  The code for it looks like this:<br />
+<br />
+&lt;Ui2DAnimation item = &quot;A_GaugeBackground&quot;&gt;<br />
+     &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+     &lt;Frames&gt;<br />
+          &lt;Texture&gt;window_pieces01.tga&lt;/Texture&gt;<br />
+          &lt;Location&gt;<br />
+               &lt;X&gt;110&lt;/X&gt;<br />
+               &lt;Y&gt;10&lt;/Y&gt;<br />
+          &lt;/Location&gt;<br />
+          &lt;Size&gt;<br />
+               &lt;CX&gt;100&lt;/CX&gt;<br />
+               &lt;CY&gt;8&lt;/CY&gt;<br />
+          &lt;/Size&gt;<br />
+          &lt;Hotspot&gt;<br />
+               &lt;X&gt;0&lt;/X&gt;<br />
+               &lt;Y&gt;0&lt;/Y&gt;<br />
+          &lt;/Hotspot&gt;<br />
+          &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+     &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+ <br />
+<br />
+I'll be honest and say that I'm not sure how to define moving animations specifically, but I can explain the parts that deal with getting the actual image.  The &lt;texture&gt;&lt;/texture&gt; tag is where you tell the xml which file to look at for the picture.  In this case it's windows_01.tga .. if you look at it in Photoshop you can see that it has a lot of the different scroll bars, cursors, etc.  If you wanted to get the Gauge Background from a different file you would change this texture tag value, or you can directly modify the TGA<br />
+<br />
+The &lt;location&gt;&lt;/location&gt; tag specifies the top and left coordinates for where this particular image starts.  X is left and Y is top.  Here, X=110 and Y=10.  If you move your cursor around the .tga in photoshop to the coordinate X=110 and Y=10, you should be at the top left of the gauge background image (the empty gauge without any XP in it).  You can see what pixel you're at by clicking the Info Tab in the Navigator/Info window.<br />
+<br />
+The &lt;size&gt;&lt;/size&gt; tag defines the width and height of the image.  CX is width and CY is height.  Here CX=100 and CY=8.  If you start at the point 110,10 and drag your mouse to the right 100 pixels and down 8, you should have the background gauge highlighted.  This is how EQ knows which part of the image to use.  Maybe someone else can explain the other items :)<br />
+<br />
+This image is named &quot;A_GaugeBackground&quot; (Ui2DAnimation item=&quot;A_GaugeBackground&quot;) and can now be used anywhere that a Ui2DAnimation is needed.<br />
+<br />
+If you take a look at any of the &lt;Gauge&gt;&lt;/Gauge&gt; tags in the EQUI_PlayerWindow.xml file, you'll come to a section that says GaugeDrawTemplate.  Each of the tags in that section refer to a Ui2DAnimation.    You'll notice that the Background tag has the value A_GaugeBackground, which was defined above.<br />
+<br />
+If you're looking through the files and can't find a certain definition, take a look at the EQUI_Animations.xml because you will probably find it there, although you can define Ui2DAnimations in just about every file I believe.<br />
+<br />
+It was very helpful to me starting out to start at the beginning of a file, look at the first tag, find it in the AboutSIDL.doc, look at the attributes and what type it could take, and then move down and go from there.  Anything in the SIDL that says type Ui2DAnimation can use one of those defined pictures in the EQUI_Animations.xml file.<br />
+<br />
+If this is confusing let me know how and I'll try to clarify :)  Good luck</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zofos</div><div class="date">08-13-2002, 11:09 AM</div></div><div class="posttext">OHHH<br />
+<br />
+    Wow ok i do get it - thank alot :) <br />
+<br />
+    Now i have finally come across somehing i can use the rulers for!<br />
+<br />
+Thanks,<br />
+Zofos</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

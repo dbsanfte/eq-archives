@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - The Ring</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-31.html">Graphics modification help.</a> &gt; The Ring</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=11043">The Ring</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">kenney</div><div class="date">11-06-2003, 11:16 AM</div></div><div class="posttext">is there a way to make the target ring a round dot? andis there a way to make this smaller like just under the feet?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vitaee</div><div class="date">11-06-2003, 01:50 PM</div></div><div class="posttext">I have a similar question.  Instead of pulsing back and forth from a small circle to a big circle, can I get the indicator ring to stay as a small circle??  Alternatively, can I get it to pulse back and forth between a small and medium sized circle??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lilcure</div><div class="date">11-06-2003, 01:57 PM</div></div><div class="posttext">Was playing around with this a bit on my lunch break, I was able to make one solid circle.  That was pretty easy I just made the entire .tga file one shade of grey.  Going to try to think through a way to make it go from small to large.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Empere</div><div class="date">11-06-2003, 04:28 PM</div></div><div class="posttext">I did a *bunch* of hacking on this last night. Thus far I am unable to reverse the scrolling but I'm still playing around. Took me a bit to figure out you ahve to restart EQ to make the changes take effect.<br />
+<br />
+TargetIndicator.tga is read from left (0,0) to right (256,0).<br />
+TargetIndicator.ini and .tga are loaded ONLY upon reload of the CLIENT. You must cam and quit (or /camp desktop) to make changes and see their effects. I snipped the header and a sample section out of TargetIndicator.ini:<br />
+<br />
+<br />
+[TargetIndicator]<br />
+FadeStart=10 ; haven't messed with these yet<br />
+FadeEnd=20 ; &quot;&quot;<br />
+OpaqueStart=1 ; &quot;&quot;<br />
+OpaqueEnd=1.5 ; &quot;&quot;<br />
+InitialLength=1 ; doesn't seem to do much<br />
+GrowSpeed=1 ; didn't play with it<br />
+FloorOffset=0.5 ; does nothing that I could see<br />
+Additive=1 ; haven't fiddled with it<br />
+PointCount=12  ; sets the number of points on the periphery of the ring<br />
+<br />
+[Trivial] ; this is the init section for &quot;green&quot; mobs&quot;<br />
+Texture=TargetIndicator<br />
+TwistFactor=1.0 ; &quot;Twist&quot; is a factor of Radial warping, approaching the target.<br />
+TwistSpeed=0.0 ; amplitude of radial warping. Try very low values.<br />
+FrameCount=0<br />
+Duration=0<br />
+TextureScale=.1 ; use values (&lt; 1). larger values scale down the texture (texture appears smaller and more frequent)<br />
+TextureSpeed=0.001 ; scroll speed approaching the target (again, left to right across the tex)<br />
+ScaleMin=0.5 ; These didn't do much<br />
+ScaleMax=1.5 ; &quot;&quot;<br />
+ScaleSpeed=1.0 ; &quot;&quot;<br />
+Alpha=240 ; self explanatory from here...<br />
+Red=0<br />
+Green=255<br />
+Blue=0<br />
+ <br />
+<br />
+Hopefully someone can make the other details make sense.<br />
+<br />
+Cheers!!<br />
+~E</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vitaee</div><div class="date">11-06-2003, 06:10 PM</div></div><div class="posttext">Two things I can add to Empere's explanation:<br />
+<br />
+GrowSpeed=1 ; didn't play with it <br />
+<br />
+This seems to control the &quot;intensity&quot; of the ring.  With a value of 1, the ring was very bright.  With a value of 0, the ring was very faint and barely visible.<br />
+<br />
+TwistFactor=1.0 ; &quot;Twist&quot; is a factor of Radial warping, approaching the target <br />
+<br />
+When set to a value of 0, the ring is &quot;stable&quot;.  That is, rather than pulsing and/or growing/shrinking, you get a solid &quot;donut&quot;.<br />
+<br />
+Keep it up, we'll figure this silly thing out yet.<br />
+<br />
+[Edited to correct a typo]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Etasi</div><div class="date">11-08-2003, 03:06 AM</div></div><div class="posttext">Additive changes the opacity of the ring. Additive = 0 makes the ring completely opaque in the center (if you stop the ring from pulsing, you'll notice that the ring has two parts: a fade on the inside and outside edge, and an &quot;opaque&quot; center).<br />
+<br />
+Played around with FadeStart/End, OpaqueStart/End, and InitialLength, and really couldn't see any effect from any of them.<br />
+<br />
+It also seems as though GrowSpeed only accepts values of 0 or 1. Setting it in between defaults it to the intensity you get with it set to 1, from what I can tell.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Trebax</div><div class="date">11-11-2003, 04:23 PM</div></div><div class="posttext">Texturespeed controls the speed of the &quot;loop&quot; or &quot;pulse&quot; of the animation.  0.001 is normal speed.  0.01 is quite fast (and actually too fast in my opinion, kinda annoying).  You can probably get some wild strobe effects as this number approaches 1, but I've never tried.<br />
+<br />
+Also, I wonder what would happen if you made that number negative...wonder if that would change the direction of the animation or pulsing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issey</div><div class="date">11-11-2003, 05:29 PM</div></div><div class="posttext">Is the method of changing the circle to static (non-pulsating) easy to explain? If so, please lead this computer novice thru the hoops, grin. Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Panamah</div><div class="date">11-13-2003, 12:02 PM</div></div><div class="posttext">TargetIndicator.ini and .tga are loaded ONLY upon reload of the CLIENT. You must cam and quit (or /camp desktop) to make changes and see their effects. <br />
+<br />
+Actually, I found using /indic on /indic off works just fine without camping!  /cheer</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kenney</div><div class="date">11-13-2003, 02:56 PM</div></div><div class="posttext">hmm have to try that..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tephrox</div><div class="date">11-13-2003, 07:23 PM</div></div><div class="posttext">Originally posted by issey <br />
+Is the method of changing the circle to static (non-pulsating) easy to explain? If so, please lead this computer novice thru the hoops, grin. Thanks <br />
+<br />
+Yep, you can do it easily by setting TextureSpeed=0.001 to 0.000 for each color =) That'll get it to stop scrolling. You can download an existing target ring for refence if you'd like. I'm pretty sure the Static Target ring one doesn't scroll, and the Techa ones I made don't scroll either (but they have other stuff changed which might be confusing, since I hardly know what I'm doing =P)<br />
+<br />
+Setting the TextureSpeed to a negative number does work, so -0.001 (negative default) would be a good number to try.<br />
+<br />
+The Texture=something.tga is a very nice line. It allows for multiple textures to be used for a targeting ring, one per color. So you could have red cons have a bunch of hearts spreading out around them, while having blue cons have a bunch of popcicles or something.<br />
+<br />
+The TextureScale=0.1 tells it how much of the .tga to show in one ring size. It works like TextureScale=X, so it'll show X(256) pixels from the left at one time, and scroll from there at the speed given. This means that if you set it to 0.1, which is the default, it'll show 0.1(256), or 25.6 pixels from the left. This works well if you're making a static texture, or a higher detail texture, since it can squeeze more pixels into the ring at once. So rather than stretching the graphic out and showing 26 pixels at a time, you could have it show 128 pixels at once instead, which is much more detailed. The only risk is that there's the possibility that it will squish it down to fit the ring, but I don't know if it does that.<br />
+<br />
+You can also set TextureScale to a negative number, and it'll start the image from the right side and scroll right to left instead. that's kinda pointless though =P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tephrox</div><div class="date">11-13-2003, 07:33 PM</div></div><div class="posttext">More findings!<br />
+<br />
+Alpha channels don't work with the target ring. If they do, I don't know how, because I put an alpha channel onto mine and it didn't work =P The only alpha is that black = transparent and white = solid, it seems. With additive=1, that is. Additive=0 makes everything opaque, and seems to be the only way to get black to show up =P<br />
+<br />
+Oh, hey, this thread already has all this stuff =P<br />
+http://www.eqgui.com/showthread.php?s=&amp;postid=58631</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issey</div><div class="date">11-13-2003, 08:11 PM</div></div><div class="posttext">Bless you tephrox! The link above didn't work for me, no clue why. Just did the change you mentioned - rather painless too, grin, and it worked. A solid ring of color! Now my eyes won't twitch, lol. <br />
+Thanks, off to play with the other settings. You might want to copy your notes into a post under the tutorials. (hint hint)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">issey</div><div class="date">11-13-2003, 08:42 PM</div></div><div class="posttext">Oops, lol, spoke way to soon. Now I have no ring no matter what ui I use, or camping to desktop, etc. Managed to get my ring back by removing all the files and letting eq send me new ones. I'm gonna stop for the night and play with it more tomorrow. Nothing showed up in my uierrors file, btw.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tephrox</div><div class="date">11-13-2003, 10:22 PM</div></div><div class="posttext">Dunno, the link works for me, hehe. It's here:<br />
+EQGUI Forums &gt; Developer Discussion &gt; Tutorials &amp; Info. &gt; Graphics Tutorials &amp; Info. &gt; 3D Target Indicator Information<br />
+<br />
+And the post I linked to already has way more information than anything I have to post =P It was posted by Roger Sewell, a tech support guy =P So, that covers just about everything having to do with the targeting ring. Although I still can't get it to not fade, and a few other things. Oh well =P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Inokis</div><div class="date">12-18-2003, 11:39 AM</div></div><div class="posttext">Originally posted by tephrox <br />
+More findings!<br />
+<br />
+Alpha channels don't work with the target ring. If they do, I don't know how, because I put an alpha channel onto mine and it didn't work =P The only alpha is that black = transparent and white = solid, it seems. With additive=1, that is. Additive=0 makes everything opaque, and seems to be the only way to get black to show up =P<br />
+<br />
+Oh, hey, this thread already has all this stuff =P<br />
+http://www.eqgui.com/showthread.php?s=&amp;postid=58631  <br />
+<br />
+Alpha channels work if you make it completely transparent alpha threshold=255 inside Gimp.  The other way to do it is to do an opaque erase at 50%.  Will do the same thing.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

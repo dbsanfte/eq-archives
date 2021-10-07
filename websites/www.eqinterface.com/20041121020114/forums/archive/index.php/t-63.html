@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Question</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; Question</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=63">Question</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-27-2002, 05:24 AM</div></div><div class="posttext">Ok, so I have been working on some rather interesting mods for the UI. Currently, I am attempting to reduce the number of windows that we have floating around on screen, and consolidate them into 3 or 4 smaller, well organized windows.<br />
+<br />
+Here is an example of what I do/did with the EQUI_CastingWindow.xml. I opened that file, and took a whole section of the code out, and placed it in the hotkey box (after widening the hotkey box, and making some other mods to it.) When this is done, I disable the EQUI_CastingWindow.xml file from ever being loaded in the UI by placing &lt;!-- --&gt; around that particular file name in the EQUI.xml file. <br />
+<br />
+So far this has worked great for the Target Window, the casting window, the air supply window, and some other one that I cant recall right now. However, this does not seem to be working for, among many others, the player window. <br />
+<br />
+When I make my code adjustments to these files, I get an error in the xml. It is something along the lines of &quot;Unable to load child pet_hp in EQUI_PlayerWindow.xml&quot;.  I get that error if I dont disable it from loading in the EQUI.xml. If I disable it, I crash directly to desktop without even an entry in the UI errors.<br />
+<br />
+My question is, what, if anything, can I do to correct this issue. I havent been able to figure it out, but Im guessing that somewhere, these windows are deemed as being &quot;Required&quot; for proper loading of the UI. I need to remove them from that list of required files, if I can.<br />
+<br />
+I have found a way to hax0r around this, so that I can put the items where I want them, but its not 100 percent correct, and it does not disable those other windows from loading, which is my ultimate goal. <br />
+<br />
+Any information would be great!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-27-2002, 05:29 AM</div></div><div class="posttext">Oh, yeah, I guess I should mention, that I do not simply want to duplicate the effect of the window Im trying to remove, I want to completely remove it from the loading process, so that its never even loaded at all. <br />
+<br />
+<br />
+So like, instead of loading EQUI_PlayerWindow and EQUIHotButtonWindow, I just load EQUI_HotButtonWindow with all of the elements from EQUI_PlayerWindow.<br />
+<br />
+<br />
+Sorry if I confused anyone</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kellk</div><div class="date">07-27-2002, 10:29 AM</div></div><div class="posttext">I think I understand what you want.  You need to keep all of the window XML files, but you can make it &quot;disappear&quot;.  Basically find the definition in the file of the window and make it's location 0,0 and it's size 0,0.  <br />
+For example, let's say you wanted to move your casting bar to your player info bar, but you don't want the cast bar to pop up anymore.  You can't delete the EQUI_CastingWindow.xml file, but you can edit it to make it disappear:<br />
+<br />
+In the &quot;Screen item&quot; section -<br />
+&lt;Location&gt;<br />
+             &lt;X&gt;0&lt;/X&gt;<br />
+             &lt;Y&gt;0&lt;/Y&gt;<br />
+&lt;/Location&gt;<br />
+&lt;Size&gt;<br />
+             &lt;CX&gt;0&lt;/CX&gt;<br />
+             &lt;CY&gt;0&lt;/CY&gt;<br />
+&lt;/Size&gt;<br />
+<br />
+<br />
+Hopefully that helps.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-27-2002, 01:42 PM</div></div><div class="posttext">Yeah, I can do that, but it doesnt accomplish exactly what I want. Instead of hiding the windows, I dont want them to load at all, except this cant be done due to the child error Im getting. <br />
+<br />
+This may be a question for experienced XML programmers, Im not sure. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Martinusiv</div><div class="date">07-27-2002, 01:50 PM</div></div><div class="posttext">Can't be done, EQ asks for it so it has to be there :-(<br />
+<br />
+Isn't in the XML, its in the program itself</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-27-2002, 01:57 PM</div></div><div class="posttext">I find it exceedingly strange that they would make the ui to be customizable, then hard code something as silly as that, to cause customization to come to a crawl. <br />
+<br />
+Im sure it has to be somewhere, I just dont know xml well enough to know what Im looking for.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-27-2002, 02:44 PM</div></div><div class="posttext">Hmm... it's not that silly. You have a client that has two parts to it, the game with all the spels casting and other NPCs and PCs swinging their swords and casting their bolts and buffs, and you have the client, which is the interface to the human playing the game. The client is customizable, but at some point the game which you CANNOT change has to reference things like the player window that the game expects to be there, whether or not you want it to load. It's the reason you can't delete any windows or make new ones, because the customization only goes so far, like changing skins on winamp, you can't add a single button that makes the program do something totally new like spawn another window... the SUITE is more complex but essentially acts the same way. It's customizable up to a point, and then that's it. At least for now.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-27-2002, 03:09 PM</div></div><div class="posttext">Closer to reality, you have the game code, that has all this information that goes to the client. The client takes that information and displays it in a manner that you tell it to. The hard-code of the game does not determine the &quot;child&quot; parameters in the xml. It is the xml programming itself that determines that. <br />
+<br />
+What this means, to the average folk, is that there *should* be some way to take the information, in entirety, out of one window, choose not to load that window, and add it into another window elsewhere. You are not loosing any information, you are simply moving  where something is loaded. <br />
+<br />
+Case and point on this front, is the fact that I can disable the target window, the breath window, and the cast time window completely from ever loading in the UI. So, yes, it does work.<br />
+<br />
+The problem comes in when you have a &quot;child&quot; in that window. There is something, somewhere in the xml programming (perhaps a file that we cant see, maybe cant even edit : Im guessing that this would be located in the more embedded SUITE code) that sets this child, in this window. As a programmer, we should be able to locate that file, and change the &quot;path&quot;, so to speak, of that &quot;child&quot; and point it to the new window in which we would like it to be displayed. <br />
+<br />
+To further display my point, I have included a graphic of what I have done, and been able to do thus far. It is not done, nor fully functional, but I am working on that. <br />
+<br />
+http://members.cox.net/baelpesh/untitled<br />
+<br />
+This is a graphic of several windows being combined. Aside from a completely blank window in the UI, where all this information used to reside, what you are saying is that I can not have done this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NijK</div><div class="date">07-27-2002, 10:44 PM</div></div><div class="posttext">Is there any way you or someone else that understands this better than I, could explain a little further on finding the file or line of code or multiple lines of code or whatever is in the &quot;suite&quot; that we are assuming is not allowing a window which a child inhabits to be completely removed?<br />
+<br />
+I have a picture in my head of everyone on these forums writing XML stuff in Notepad and UltraEdit etc, and in their codes they're putting the EQTypes for gauges and labels (and what else btw?) as to their liking, moving them around windows etc such as Exp bar from Inventory to Player Window. But what's this &quot;SUITE code&quot; we need to search through and find the part screwing us over the childs locked to windows?<br />
+<br />
+Sorry if this is extreme newbdom and/or makes no sense at all, I'm just still trying to grasp this (never heard of XML before yesterday, making sucky DTDs from tutorials and not knowing why now heh)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-28-2002, 12:13 AM</div></div><div class="posttext">Akephalos,<br />
+<br />
+I have no idea who you are referring to as &quot;you&quot;, but if you're talking to me I didn't mean that you can't take gauges and labels and buttons from other windows and put them there. Lots of ppl have already done that, and I think it's very cool, and I think your window is nicely done as well. :)<br />
+<br />
+However, I have trouble understanding some things, like how did you &quot;disable&quot; the target window, cast time window, and breath window? Are you talking about disabling them from within the XML file, or do you just toggle them off  in game? What do they look like if you just toggle them off in game? Is it completely blank? I've heard people get errors because they don't have certain gauges in certain windows, like the pethp gauge when removed from the PlayerWindow screen item will cause errors, and when the PlayerWindow declaration is removed totally the client crasyes...<br />
+<br />
+Perhaps you can remove some of those windows because they're not active all the time? Althought I suppose that wouldn't make sense, and it would make more sense for the program itself to just unhide and hide them, like the Casting and Breath window.<br />
+<br />
+I don't know XML that well, I only started learning really when I took my first glance at the EQUI code which was like 3 weeks ago, and I'm still flipping through the XML files for the interface to see if I can learn anything new. But ya I still stand by my belief and will continue to do so until proven otherwise that certain things need to remain named as they are or at least if the name is changed then the reference to them in the XML file needs to be changed accordingly... Like for example, if you check ALL the XML files for the word &quot;PlayerWindow&quot; in that case, without the quotes of course, that you will only find 1 file with that word, which is the EQUI_PlayerWindow.xml file, where it is defined. This leads me to believe that as far as the XML files this is the top of the line for this particular instance of the Screen structure. The &quot;thing&quot; that references this lies within the actual game itself, in the realm of C code that says &quot;okay, I need to load a player window, so I will look in the XML files and load the PlayerWindow Screen item&quot; (note that I didn't specifically say EQUI_PlayerWindow.xml... I think the client looks first in EQUI.xml then loads all the files listed there, then collects all the bits and pieces of declared information like all the instances of Screen items, and maybe Gauges and Labels... not sure on what's collected)<br />
+<br />
+phew! Well anyway, I'm pretty sure that wasn't laymen-friendly, but it's the most precise way I could think of to put it down. I would appreciate a counterpoint and a specific example, I will look at it and try to see where my logic is flawed.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 12:29 AM</div></div><div class="posttext">Yes there is limitations and there needs to be.  As one pointed out the customisation stops at a certain point if it didn't we'd all be able to just go and make our own clients up.<br />
+<br />
+The client does expect certain things to exist.  Yes I'd like to get rid of a few buttons that I personally would not use, but Verant has decided that these things need to exist and so they do.  I liken to the comparison to winamp, yes you can change how it looks but there are limits you need to abide by.<br />
+<br />
+Would I like more customisation?  Yes, I think there are parts where verant could be a bit more leniant (especially when it comes to buttons).  If they would just come out with an EQType for buttons we would then be able to do what we like with them.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NijK</div><div class="date">07-28-2002, 12:30 AM</div></div><div class="posttext">But I thought you could remove some of the lines in the EQUI.xml without messing stuff up, like for certain windows without a child in its default elements etc *completely lost now* I'm going to learn this crap if it kills me!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 12:38 AM</div></div><div class="posttext">Nope.  The UI requires that all the files exist, even if it doesn't need them just as a cautionary thing that it might need them.<br />
+<br />
+If you go to the bank and you managed to somehow remove your inventory file from the UI, the game will crash becuase the client is expecting it to be there.  You cannot rewrite the client to tell it to open up the pet window instead.<br />
+<br />
+It is all becuase the client has inherit behavior in it for certain windows and without being able to change that behavior (which we can't) we are required to have all those windows exist.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 01:49 AM</div></div><div class="posttext">Ok, first off, this is great, being new to XML myself, Im trying to learn whats going on here, and find out precisely how to make my mods work as intended. If I sound condescending to anyone, its not intentional, its just the way I word things, so dont get too defensive and stuff. :)<br />
+<br />
+First off, Geddine, I think you misunderstood. Im not trying to tell the UI to open the window for a pet when I am banking. Yes, that is hard coded.  I am not trying to alter the code in such a manner that it does freaky stuff, like when I inspect my pet a bank window opens up. Im not trying to pop up a spell gem window when I right click my jboots, and Im not quite sure how my post could have been misconstrued as such.<br />
+<br />
+Geddine, you are also incorrect in your assumption that the UI requires all files to exist, and to be loaded, or else you would get an error.<br />
+<br />
+PsychoGears, You follow this too, because I dont think you understood properly what I was trying to do either, and Ill do my best to rectify that. <br />
+<br />
+Open your EQUI.XML file, in here is a composite list of all the XML files that the UI will load when you load the game. Currently I have three of these file inclusions effectively deleted from this file, and the UI loads and works wonderfully.  EDIT: These files listed in the EQUI.XML are what are called &quot;Parent Files&quot;. This information will be more relavent a bit farther down in the post.  <br />
+<br />
+Dont believe me, copy the default folder, rename it to something else, find the EQUI.XML file, crack that baby open and delete the following lines in their entirety :<br />
+        &lt;Include&gt;EQUI_CastingWindow.xml&lt;/Include&gt;<br />
+        &lt;Include&gt;EQUI_TargetWindow.xml&lt;/Include&gt;<br />
+        &lt;Include&gt;EQUI_BreathWindow.xml&lt;/Include&gt;<br />
+Save it, and then load the skin. You will notice that it did not crash, it did not error out, and loaded perfectly fine. Try to cast. Go drown yourself, or try and target something, you will find that none of those windows exist, because they were NEVER LOADED by the UI. <br />
+<br />
+Ok, so now you see that you can indeed cause windows to not be loaded by the UI, lets see if we can put this to use somehow. We now have three windows that are not being loaded, but we still would like the information displayed in them in some other window, yet, keeping this window effectively deactivated. So, we open up the three deactivated files and take a look. We then take the pertinent code from these files, copy it, and paste it into the file where we would like it displayed (Hotkey Window perhaps), carefully making sure all the syntax is correct, and save it. Reload the UI. This information is now displayed in the Hotkey Window, and the originating Parent Window remains deactivated. <br />
+<br />
+Allrighty, now on to the tricky stuff. Not all of the windows are as simple as the breath, target, and casting window. Some of these windows, such as the EQUI_PlayerWindow.xml have what is deemed a &quot;Child&quot; element. This child element is typically defined within the parent. The following is a crude representation of how this hierarchy works.<br />
+<br />
+&lt;Parent&gt;<br />
+        &lt;Child1&gt;<br />
+        &lt;/Child1&gt;<br />
+        &lt;Child2&gt;<br />
+        &lt;/Child2&gt;<br />
+&lt;/Parent&gt;<br />
+<br />
+Now, The parent opens, executes each and every element within it, then closes the parent. Sometimes these children reference other files, or, other files have exceptionary code within their xml, that cause the child to not be able to be moved, unless we update the exceptionary code or other file references to point to where this child has moved to.  The following is a crude representation of that. <br />
+<br />
+&lt;Parent&gt;<br />
+        &lt;Child1&gt;<br />
+        &lt;/Child1&gt;<br />
+        &lt;Child2&gt;<br />
+                  &lt;LoadPetInfoFrom_PetInfoWindow.xml&gt;<br />
+                   &lt;/Load&gt;<br />
+        &lt;/Child2&gt;<br />
+&lt;/Parent&gt;<br />
+<br />
+<br />
+In this instance, it is looking elsewhere for more information, and within this external source, if it has a &lt;ReturnInformationTo_PetWindow&gt;, and we moved all of the code from PetWindow to PlayerWindow, we would get an error, because the code is returning data to an invalid, and unused file or location.<br />
+<br />
+Granted, this is a very watered down, and crude representation of how the code is, but, you should understand how it works. Currently, it is the &quot;Child Element&quot; so to speak that is causing me grief. It gives me the XML ERROR &quot;Unable to load child pet_hp in EQUI_PlayerWindow.xml&quot;. <br />
+<br />
+What this means to me, is that there is an xml file somewhere, that is making reference in some fashion, to the &quot;Pet_HP&quot; child element, and cannot find it, because I have moved it. <br />
+<br />
+What I need to do is find which file is making that reference, and point it to the new residence of that child, and all will be well and good in the world of my UI mods.<br />
+<br />
+And, the reason I do not believe it to be an issue that is hard coded, is 1. Theres no reason for this simple of a function to be hard coded, 2. XML is a parent/child language, and to get an error like what I got would not come from the external hard coding, and 3. Im getting an XML Error, not an illegal operation. If the hard code was looking for this file, the eq.exe file would crash, not the xml file.<br />
+<br />
+Make sense now? :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">07-28-2002, 02:01 AM</div></div><div class="posttext">Just a quick clarification here.<br />
+<br />
+This has nothing to do with windows. Understand that, and many things can be done beyond the scope of a single file.<br />
+<br />
+The &quot;breath window&quot; is not required. What is required is the Breath Element Gauge.<br />
+<br />
+Same with the others.<br />
+<br />
+You can certainly defined elements in one file and use them in another. As long as you don't have elements across files with the same ID name, it will work, I've done this. ;)<br />
+<br />
+Well, With gauges and stuff. Buttons are still flacky from what I can see.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 02:07 AM</div></div><div class="posttext">No, the breath element guage is not required either. If it were, then you would not be able to completely cease that window from ever being loaded, period, or else the UI would say, hey, missing required file Breathe_Guage.<br />
+<br />
+<br />
+To take a default UI folder, and then delete the line of code that causes it to be loaded into the UI (&lt;Include&gt;EQUI_BreathWindow.xml&lt;/Include&gt;), and save that file, and load the skin should cause a crash, based on what you are saying, because that file is required.<br />
+<br />
+However, it does not crash, and the breath window is never loaded, because it is not required. <br />
+<br />
+This has already been establised, the problem is not with the fact that these files are required or not, it has to do with references to child elements, and the need to change those references to point to the correct place to find them.<br />
+<br />
+<br />
+<br />
+EDIT : Correction, by deleting this &lt;Include&gt; line in the EQUI.xml file in a DEFAULT FOLDER, one with NO MODS, you are removing the guage also. THAT is what trashes the theory of things being required.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NijK</div><div class="date">07-28-2002, 02:19 AM</div></div><div class="posttext">Akeph I really appreciate you explaining it the way you did, that's exactly how my brain would have reiterrated it. Before I got back to this post, I had finally successfully edited part of a UI. Now deleting the Target window so the target gauge/label will work in another window is my next step of toying with this stuff. While I'm thinking about it though, does everyone agree that we can't make buttons in a UI window for keyboard commands such as &quot;/book 8&quot; etc, because those aren't EQTypes? I'm almost 100% sure of this, would just like for someone to confirm. Thanks again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 02:31 AM</div></div><div class="posttext">Yes, that is true. The UI is simply that. An interface between the user, and the commands that are available in the exe. Unless that command or feature you want is in the exe, the UI cannot interface with it. Likewise, the interface cannot create any commands or features in the exe.<br />
+<br />
+Basically, just use a social :)<br />
+<br />
+Does that help? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 04:48 AM</div></div><div class="posttext">Akeph I still not sure what it is your trying to acomplish though.<br />
+<br />
+I like your clarification and your right you most prob could remove those windows becuase they contain elements which can be displayed in any window (they contain pure EQType items).  Have you tried with a window with a button in it?<br />
+<br />
+When you do a /loadskin the client goes through the files and as its loading is doing errorchecking, now I don't why but for some reason the client requires certain things to exist not only that but they have to exist in a certain window.  I'm just thinking this is becuase of the way Verant has the client talk to the UI.  If you have noticed the only things that are moveable between windows are plain text labels and items with an EQType.  I'm guessing that when the client outputs to an EQType it is just telling the UI this Type has this value and the UI does all the rest.  All I can say is hopefully Verant will make all the buttons with EQTypes or else we are stuck with them in the windows they are.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dregor</div><div class="date">07-28-2002, 07:09 AM</div></div><div class="posttext">if you are having trouble with the pathname to the child... maybe you should just put the child back where it was to begin with. then just change _your_ referance to the child instead of trying to change the hardcoded referance.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Milambus</div><div class="date">07-28-2002, 09:33 AM</div></div><div class="posttext">The problem is you are making assumptions about the UI without any proof.  You believe all the code is in the XML documents, but then when you fail to find something you are refusing to see that it must therefore be in the EXE.<br />
+<br />
+If you notice everything that you can not remove is something that the client has specific code that interacts with it.  The pet health bars have a toggle to display them (right-click the player window, there is a toggle to turn off &quot;Pet HP&quot;).<br />
+<br />
+So there is specific code within the EXE that makes reference to this Child nodes of the window.  <br />
+<br />
+Basically there is this piece of code in the EXE that needs to hook to an object, and you are trying to take that object away.  This is causing your errors.<br />
+<br />
+Would it be nice if the had coded it some you could move everything?  Yes.  But unfortunity it seems they took short cuts on some of the programming, such that you can move buttons to new windows, and you can't remove buttons from a window.<br />
+<br />
+If you can prove me wrong?  Great.  But so far you are just stating that you think is SHOULD be that way, when all evidence points to the contrary.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-28-2002, 11:12 AM</div></div><div class="posttext">Ak, thanks for the clarification, and I think Guice is on to something. I'm gonna look into seeing what exactly we can remove and what we can only &quot;hide&quot;<br />
+<br />
+-TJ<br />
+<br />
+PS: I think we can hide gauges and labels... not sure, but my gut tells me that Gauges are kinda like Labels in the sense that they're output-only types of ScreenPieces, and since you don't click on them or modify the contents of gauges or labels in any way, you don't have to show them. But the Player Window you can provide &quot;input&quot; because when you click on your HP gauge you target yourself... so I'm guessing if you either remove the HP gauge, or the player window in its entirety, you'll mess up and your UI won't load or will crash the game.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 02:37 PM</div></div><div class="posttext">Its not assumptions that Im making, its the understanding of the XML language that leads me to these conclusions. The problem is, I dont understand it completely.<br />
+<br />
+Whats more, everyone claims that this stuff is hard coded, which is fine, believe that, but, when you remove something, and get an error, its an XML error. If the client EXE was &quot;Hooked&quot; as you say, to the XML, the client would cause an invalid page fault, (You know, the windows error) not an XML error, and that is the biggest thing right there, telling me that the XML is referencing child elements within itself, and causing its own errors.<br />
+<br />
+It simply means that it needs to be tracked down, and loacated. You say, prove to you that the issue is not hard coded. The simple points above are fact. I say to you, if you have proof that its hard coded, show it to me. I want to see fact, not just &quot;It doesnt work, so it has to be hard coded. We dont see it, so it has to be hard coded. I dont want to learn any more about this, so it has to be hard coded.&quot; That is not fact, more so speculation on the part of whomever is passing that idea around. <br />
+<br />
+The simple fact is that the UI is an interface between the various functions and commands, and features of the game, and the player. These hooks you refer to are nothing more then the information that the UI interprets. The toggle pet health button is simply a switch. To either turn it on, or turn it off, easily able to be done with the XML, much more difficultly done in the hard code. <br />
+<br />
+Your ramblings did give me something to look for, and that is the health switches, I will check and see if I can find any within the xml, and adjust or turn them off completely, and see if that works. <br />
+<br />
+Dregor, that would make this entire conversation worthless. The point of this is to gather enough information to make the mods that I would like to see in the game. Once this breakthrough is made, the sky is the limit with the UI. Its just too new for anyone to really know that much about its hierarchy, and method of functionality yet. <br />
+<br />
+Psychogears, you can move the HP bar just fine. I have, and it works fine in the hotkey window without a problem. The only item in the PlayerWindow that cannot be moved is the Pet_HP, because it is referenced by something in the xml somewhere, and you will get an xml error when you do so.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 02:44 PM</div></div><div class="posttext">Geddine, you are right, certain things are required. Those certain things are child elements, and they are required because something in the xml is referencing them somewhere, or is telling something where they are. <br />
+<br />
+I completely concur with the fact that, with the knowledge we have currently, certain things cannot be done. This topic is to discuss, and further our knowledge so that those things can be done.<br />
+<br />
+Such as taking all the information from the PlayerWindow, and putting it in the HotKeyWindow without any stupid XML errors =D<br />
+<br />
+I will find out, eventually, how to move these things, and make it all work, OR, I will find out precisely why it cannot be done, not just wild speculation on the part of &quot;It just cant be done&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-28-2002, 03:27 PM</div></div><div class="posttext">I can't wait until VI releases a better aboutSIDL.doc... it's all guesswork as far as I can tell, and XML understanding or not there are a couple of things at least I don't really know for certain that I'm sure lie within the game engine-to-client realm. Ak, can you tell me why that when you remove some things it crashes or gives errors, and other things it acts fine? When you remove something, I'm talking about commenting that part of code out, not setting it's size to 0 x 0.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 08:54 PM</div></div><div class="posttext">I will try and explain that as best I can. I thought I had somewhat touched on that earlier, but I guess not.<br />
+<br />
+When you comment something out in the code (EQUI.xml), you are removing that particular parent file from being loaded when the UI loads up. We both understand that.<br />
+<br />
+Further, we both understand that some parent files(EQUI_TargetWindow for instance) are easily commented out, and never loaded in the UI. We also understand that there are some parent files (EQUI_PlayerWindow for instance) that are not easily able to be commented out. <br />
+<br />
+This is the knowledge that we currently posess, but at the present juncture, we do not know precisely why this is the case, aside from some vauge references and heresay. What I am about to say will, hopefully, demonstrate some factual basis to further display my point.<br />
+<br />
+Here is the basic way the UI works, from my understanding of both XML, and other programming. When you load EQ, the game goes through all its other normal processes, untill it gets to loading the eqclient.ini. Once it reaches this file, it looks for &quot;NewUI=TRUE&quot;. If it does not find this in the eqclient.ini, it will load the old, limitedly customizable UI (Hard Coded UI at that).<br />
+<br />
+If, however, it finds that line in the eqclient.ini, it returns that information to the exe, and the exe, from that point, reads EQUI.xml for its loading process. <br />
+<br />
+This should be understood as being fact, not supposition or speculation. Now, from this point, everything within the UI will be loaded by whatever that single file (EQUI.xml) tells it to load. I liken the EQUI.xml file to be the .ini (initialization) file of the new UI.  EDIT - Each file listed in the EQUI.xml file is a parent file. A parent file is defined as being the base file from which child elements are loaded. A child element is basically anything loaded within the parent. This would be something such as a guage, or a button, or a hotkey, things of that nature. Each one of these items is a child. If your hotkey box has 10 hotkeys, there are likewise (at least) 10 child elements defined within that parent window.  In reality, there are more like 30 child elements for 10 hotkeys. <br />
+<br />
+Now, when you comment out files from this, some are commented out without a problem. Others are not. What is the reasoning behind this? What causes this? Is this something that we can change to make this work?  I will touch on these questions in the following text.<br />
+<br />
+What is the reasoning behind some files being able to be removed easily, and others not currently being able to be removed at all (so some think.) If you look, you will notice that all of the windows that are able to be commented out without any addition to the code (or subsequent removal of the code) are all files that do not currently have a child element defined within the parent file. Typically these are the one function windows (Target window, breath window, casting window to name a couple). They do not have any  linked  child elements within them. This is the reason they can be removed easily. <br />
+<br />
+What about the ones that cannot be removed so easily. These files have child elements that are interlinked with some other area of the UI? This is a little more tricky. If we were to comment out, say for instance, the EQUI_PlayerWindow.xml parent file from being loaded, you will notice the UI promptly crashes out, but why? Well, this is an example of one window that has an interlinked child element. In this case, I have narrowed it down to the Pet_HP child element. Because this Parent File has a child element that is linked to another (hereafter referenced as a secondary child element) file within the UI, it must remain intact, and in working order (or at the least, that child element must remain intact) or else the UI will crash. Let me explain a little further.<br />
+<br />
+In our example in the above paragraph, where we commented out the the EQUI_PlayerWindow from loading, it caused the UI to crash. This is because it has a child element within it, that links to a secondary child element. With this file commented out, the link is now severed, and thus, the UI is not able to load properly. <br />
+<br />
+Is this something that we can change? In short, I dont know the answer to any degree of certainty, but it is my honest and sincere belief based upon the facts I have available to me that it is something that is able to be changed, but I currently do not know enough about interconnectedness of the UI, nor xml to be able to locate, and test how. Everything that I see in the code here, and everything that I know about XML points me back to these facts, and these processes. <br />
+<br />
+The way in which code is built, rebuilt, and improved upon is based upon logic. Code is a language. A language of logical thinking, and process concepts. As a coder, you find the shortest, cleanest way to do something, with the least amount of resources used, and with the least amount of lines of code possible (typically). <br />
+<br />
+There are two phases in code. The first is the build process. This is the process in which you write the code to accomplish what you want. The second is the refinement process, which takes everything you learned along the way, and revamps the entire code layout, and makes it faster, better, smaller.<br />
+<br />
+It is illogical, in a code minded setting, to cause something to be hard coded, when it is extremely simple to implement in the XML state. There is no need to use cross code-platform processes to accomplish something that can be done on only one side. (All jay-walking laws and hazard considerations aside for the moment) Would it be logical to run down the street 2 miles to the crosswalk, to cross the street and then run back 2 miles to go to the store that is across the streed from your front door?<br />
+<br />
+No, that is illogical, and a waste of resources and time, and is precisely the reason why I do not believe any of this &quot;Its all hard coded&quot; crap that is flying around right now. I think that our lack of understanding and knowledge about the system that is the issue, not that its hard coded.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-29-2002, 12:14 AM</div></div><div class="posttext">Ak, try this.<br />
+<br />
+Go to Line 51, you will see:<br />
+<br />
+51:	&lt;ScreenID&gt;PetHP&lt;/ScreenID&gt;<br />
+<br />
+Now do this:<br />
+<br />
+51:	&lt;ScreenID&gt;PetHPx&lt;/ScreenID&gt;<br />
+<br />
+You're right in the sense that this child element is &quot;linked&quot;... but it's not linked in the XML files, it's in the .exe itself. I did a search for the string &quot;PetHP&quot;, and it came up with<br />
+<br />
+eqgame.exe<br />
+testeqgame.exe<br />
+UIErrors.txt<br />
+EQUI_PetInfoWindow.xml<br />
+EQUI_PlayerWindow.xml<br />
+<br />
+You see 2 *.xml files there, but the string &quot;PetHP&quot; in the EQUI_PetInfoWindow.xml file is actually part of three strings:<br />
+<br />
+236:	&lt;Gauge item = &quot;PIW_PetHPGauge&quot;&gt;<br />
+237:		&lt;ScreenID&gt;PetHPGauge&lt;/ScreenID&gt;<br />
+<br />
+and<br />
+<br />
+313:		&lt;Pieces&gt;PIW_PetHPGauge&lt;/Pieces&gt;<br />
+<br />
+So that really leaves &quot;PetHP&quot; in EQUI_PlayerWindow.xml, and that specific string is used to reference the gauge by ScreenID, and not directly. By making the change in line 51 as described above, you aren't even removing the gauge from loading. It's still defined, and it's still listed in the Screen item &quot;PlayerWindow&quot;.<br />
+<br />
+Okay, so since &quot;PetHP&quot; is really just listed once in all of the .xml files in that directory, and there are no other hidden text files in that directory or even in the uifiles directory tree that have that string &quot;PetHP&quot;, I am pretty sure that &quot;PetHP&quot; isn't referred to via a file used specifically by the new UI.<br />
+<br />
+So checking the files above, you can exclude UIErrors.txt, because &quot;PetHP&quot; was generated as part of  an error return string that gets written to UIErrors.txt when something in your interface either crashes the game or prevents the UI from otherwise loading. This leaves the two .exe files, eqgame.exe, and testeqgame.exe, both of which are the actual game clients.<br />
+<br />
+Now, like I've been saying before and I will say it again and again, there are some things which you cannot change... wait, let me reiterate, you *CAN* *NOT* *CHANGE*. You can't change this, no matter how much you believe that the answer lies in the XML files. It doesn't. This is not a web application we're messing around with, this is a game that has two parts, the game itself that propagates the actions that are intended by the player, and the interface which relays the player's intention to the game.<br />
+<br />
+Think of it this way, You have a person who speaks English, and a person who speaks Spanish. The spanish person says &quot;hola&quot;, now the English person can say &quot;Hello&quot;, &quot;Hi&quot;, &quot;Hello means Hi&quot;, &quot;Greetings&quot;, &quot;Hello means Hi, and means Greetings as well&quot;... you can rename the english word over and over, call it &quot;Smith&quot;, &quot;Barney&quot;, and *define* these words as meaning &quot;Hello&quot;, you can reiterate yourself as many times as you wish, but *EVENTUALLY* you have to use the word &quot;hola&quot; to make the spanish person understand that you are doing the action of greeting the person....<br />
+<br />
+I have no idea how else I can demonstrate this. So there it is. If you can't understand that we CANNOT simply name everything whatever we want and expect the eqgame.exe and testeqgame.exe to understand our changes... then I have no idea what else to tell you except wait for VI to say what I've already said here. It's called a standard, and in this case the standard has not been communicated clearly as of yet to the community of EQUI modders by VI.<br />
+<br />
+Sorry to tear you down, but this is what needs to be done because you insist that the answer lies solely within the XML files.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-29-2002, 01:44 AM</div></div><div class="posttext">Tear me down? Hardly my friend, hardly.<br />
+<br />
+What you have demonstrated is that you did not read this, nor any previous posts. You have missed several key points in the discussion, and have missed them a couple times, since I have laid them out for you clearly in a couple different areas. Closed mindedness is never a good thing.<br />
+<br />
+But I digress, this wasnt supposed to turn to a flame war, this is an information gathering thread. You seem to think you have enough information to determine that it cannot be done, I seem to think that I have enough to determine that it is a possibility. <br />
+<br />
+We will leave it at that. I will still experement, and see what I can come up with.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-29-2002, 02:07 AM</div></div><div class="posttext">*shrug* okay. You didn't read my post then if you still think you can do it. It's the reason why we can't make new windows, it's the reason why we can't delete certain ones, it's because there is a hard coded portion of the UI that we can't change and thus some of the things in the XML files if altered will cause errors for loading the UI or simply just quit the client.<br />
+<br />
+Trust me, &quot;friend&quot;, I read your posts, I tried what you suggested, I analyzed why it works the way it does. These are the results, and I'm not making it up. I have no idea why you refuse to believe that there is a hard coded portion of the game when it clearly exists... otherwise if the WHOLE client is done in XML then we should be able to do amazing things like add more spell gems to our memorization bar, or have more hotbutton slots or spells per page... it just doesn't work like that. There has to be a limit to the customization or else we would be able to create UIs that give us extremely unfair advantages. I know removing the pet gauge from the player window hardly seems like an advantage, but if you can alter that one thing, then the game itself would have to compensate by adding in extra programming in the game that deals with &quot;Okay, the guy who made this particular UI didn't include a declaration for a pet gauge here, we need to do something else to deliver this information&quot;... no. I don't even want to get into that.<br />
+<br />
+I know how XML works, and I know that the way it's been used in recent applications that there are certain things that are immutable such as this particular &quot;PetHP&quot; &lt;ScreenID&gt; reference being where it is. Take a look for yourself you'll see what I'm talking about. Where else in the XML is this referred to? No where? So it looks like it's totally useless because it looks like it's declared and never used, but it is.<br />
+<br />
+But whatever man. Your projects will remain broken if you keep looking for the magical file that you can edit to make your mods work. Just accept that you cannot change this and adjust your modifications accordingly.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-29-2002, 02:13 AM</div></div><div class="posttext">...if you have proof that its hard coded, show it to me.<br />
+<br />
+Okay. Here it is. Open up eqgame.exe in a hex editor and find line 0x001dd040. Here's what you see:<br />
+<br />
+&quot;: ..PetHP...Play&quot;<br />
+<br />
+It's in the .exe, Ak. If that's not &quot;hard coded&quot;, I don't know what is.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-29-2002, 02:21 AM</div></div><div class="posttext">Now that I'm looking through the hex code of the eqgame I'm seeing alot of familiar strings..., like PlayerWindow, which is a reference to the Screen item &quot;PlayerWindow&quot; defined in EQUI_PlayerWindow.xml... I really honestly think that this is 100% proof that there are things hard coded in the .exe that are required to be present somewhere in the library of .xml files for that particular interface.<br />
+<br />
+Ak, maybe your understanding of XML is 100%, but there is a relationship between the XML docs and the .exe that we can't really be too sure about... to say otherwise would mean to deny that the UI has anything to do with the game itself. We're not just making pretty pictures here, we're making something that has to communicate with a block of code that is client-side EQ. I fail to understand why this is confusing, especially after I presented my own evidence, concrete and real, that counters what you are implying. Perhaps I might be &quot;narrow minded&quot;, but I think that's just as bad as giving false hope to other aspiring modders. There are limits. Accept them or make your own game that other folks can customize the way you want them to.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-29-2002, 03:26 AM</div></div><div class="posttext">Id like to state that I never said that the UI had nothing to do with the exe. Of course it has to interact, but the pure definition of a UI is what you seem to be missing. <br />
+<br />
+Spell gems are hard coded. The game allows only 8 of them in the hard code. The UI cant create more of them, of course not. The same thing with hotkeys. The game allows 10 per page. The hard coded exe sends that information to the UI. The UI takes that information and displays it. Yes, all of that is hard coded. What I do not believe to be hard coded are the windows. I dont forsee the hard code of the client saying <br />
+<br />
+&quot;You must have this one file in this exact spotin this exact window in the UI, or you cannot run EQ.&quot; That would use uneccessary processes from the computer, send unnecessary data between the server and the computer, and who knows what else. <br />
+<br />
+I took a look at the section that you found that string. It appears as though that whole section of the code is listing the things that the UI picks up and displays. It also listed the TargetWindow, the BreathWindow, as well as just about every other thing that we have currently in the UI. I dont see one section of the code in that whole area that says anything about a requirement of inclusion, or any check and balance system of any sort requirement code either. I do however thank you for pointing that section out, I will see if I can decipher the code there a bit more, and see if there is anything exclusive between it and the UI.<br />
+<br />
+There are just too may things in the unknown that neither you, nor I, can prove with any certainty. You know it, I know it. This thread was for people who understand xml (more then I) and have a similar belief that more can be done with the UI then the general people seem to think. For all we know, it could be a texture in the PetHP child element that is not loading properly, causing the issue, however, from the section of code you showed me, it doesnt show me much, aside from every file, and button we have in the UI, as well as references of where to save the default and preference information, where to store the UI errors, and a couple other things. It just doesnt say anything specific about the PetHP/PlayerWindow relationship/requirement.<br />
+<br />
+Of course, that goes back to the, there are too many unknowns to really prove either side. The biggest thing you have is the fact that it doesnt work no matter what you try currently, and the biggest thing I have going for me is the fact that I know how xml works pretty well, and my UI is almost fully functional, with the exception of my empty windows where the PlayerWindow, and Spell Gems used to reside.<br />
+<br />
+/shrug Its been a good conversation, we will just simply have to wait and see what happens as more information becomes available. Im not opposed to the possibility its not possible, I just dont have enough information to determine that its not possible right now. Once I get that, then hey, Ill jump right on the bandwagon with you =D<br />
+<br />
+Untill then, Ill keep looking around, seeing what I can see and how many times I can crash =D<br />
+<br />
+<br />
+EDIT: Edetad fer gramtikal eror.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-29-2002, 03:48 AM</div></div><div class="posttext">I just found a couple things in the code that I did see. This seems as though it has nothing to do with an eqtype or a screen id. This seems to have something to do with input modes.<br />
+<br />
+Everything that I have tried to move permanently out of a window, then disable the window, and cant because of an xml error has some sort of an input function to it. The PetInfoWindow, the PlayerWindow (pethp is an input because it has the toggle to turn it on and off.) Though, weather its on or off is housed in an ini file somewhere.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-29-2002, 03:54 AM</div></div><div class="posttext">It might make sense, if the hard code is looking for its input from a specific window, and if you moved those child elements, the exe would not be looking in the right spot for its information. <br />
+<br />
+However, this still does not make sense, because the only error you get from moving stuff from the PlayerWindow is the PetHP, and the only input that has is weather or not to display the PetHP bar, and that information is stored in a UI_charactername.ini file, not seemingly even really processed by the exe, just not loaded by the UI.   <br />
+<br />
+The other thing that doesnt make sense, is if this were the case, it would not be the XML that is crashing, it would in fact be the eqgame.exe file crashing, because it is the eqgame.exe that would be looking for that information, not the XML. The XML just sends the information back.<br />
+<br />
+Hmm, more discrepancies to add to the pile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tefrod</div><div class="date">07-29-2002, 04:49 AM</div></div><div class="posttext">Akeph, I read thru your long post about parent / child and I still agree with Psychogear that the Pet_HP is a hard coded reference in the game EXE.<br />
+Can you show us exactly why he doesn't make sense?<br />
+<br />
+<br />
+I just checked something ingame. I went to my EQUIPlayerWindow.xml file and removed everything in Pet_HP except for the preamble:<br />
+<br />
+	&lt;Gauge item = &quot;Pet_HP&quot;&gt;<br />
+		&lt;ScreenID&gt;PetHP&lt;/ScreenID&gt;<br />
+		<br />
+	&lt;/Gauge&gt;<br />
+<br />
+Then I started EQ and checked that my pet's green HP line under my own HP gauge has disappeared. Yet when I remove the 3 lines above from the xml file, the game crashes as we all know.<br />
+<br />
+I then searched the entire Everquest directory for the string Pet_HP and found it in the executables.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bolelen</div><div class="date">07-29-2002, 11:39 AM</div></div><div class="posttext">First of all, Ak seems to be assuming that Verant did things the most logical way. I hate to break it to you, but it is rare that anything is ever done the MOST logical way. They probably had reasons for doing some things in code that would have been quite a bit easier to do in XML.<br />
+<br />
+Secondly, it doesn't necessarily need to be &quot;hard coded&quot; in the exe for it to still be &quot;hard coded&quot;. In the rest of the world, most any XML also has a DTD. The DTD defines the structure of the XML. We aren't privy to the content of the DTD for the UI, however it is very much possible that there are mandatory elements that, if missing, could cause an XML error.<br />
+<br />
+Now, the XML is being processed in code somewhere, be it in the client or some other DLL. It is very much possible that if the data that comes out of the processing of the XML does not contain certain elements that the exe will report back that there is an XML error, even if the XML parsed fine.<br />
+<br />
+Since we will likely never see the internal code from Verant, until they tell us anything as fact, we cannot make any determination other than, &quot;if I try this, it doesn't work; if I try that, it does.&quot;<br />
+<br />
+So, we're down to who believes what assumptions.<br />
+<br />
+I think what would be more helpful to this discussion is listing what has been tried and what the results were.<br />
+<br />
+Bolelen - 51 Monk, Terris Thule</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-29-2002, 12:55 PM</div></div><div class="posttext">Originally posted by Akephalos <br />
+I just found a couple things in the code that I did see. This seems as though it has nothing to do with an eqtype or a screen id. This seems to have something to do with input modes.<br />
+<br />
+Everything that I have tried to move permanently out of a window, then disable the window, and cant because of an xml error has some sort of an input function to it. The PetInfoWindow, the PlayerWindow (pethp is an input because it has the toggle to turn it on and off.) Though, weather its on or off is housed in an ini file somewhere. <br />
+<br />
+OMG Did I not just say this? (edit: Yup, post #22 of this thread) I could have sworn I said this already, you can't move some stuff because when you click on certain things the EQ game gives you a response, and If you remove that the client effectively loses that expected input...<br />
+<br />
+-TJ<br />
+<br />
+PS: Also, the reason you don't see the eqgame.exe straight up giving a protection fault when it doesn't find what it expects to find where it's suppoed to be is because there's probably some type of error recovery, and that's not too hard to program. I'm not for sure for certain that the guys at VI coded any error-recovery, but it would make sense given that there hasn't been an actual GPF that has been reported as happening when there are mistakes in the XML file.<br />
+<br />
+Also, what's the DTD?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">arantius</div><div class="date">07-29-2002, 01:06 PM</div></div><div class="posttext">Ak and Psycho.. you both need to calm down. You have both made some good points, and correct ones.<br />
+<br />
+Ak though, you are, to put it lightly, wrong.  There are some parts of the UI that are &quot;special&quot;.  The pet guage in the player window is one of them.<br />
+<br />
+Why?  Because the pet guage can appear and disappear when you summon a pet or do not have a pet.  Does the XML know when you have a pet and when you do not have a pet?  No.  The XML says &quot;put the guage here&quot;.  The client then puts that gauge there but only at the appropriate time.<br />
+<br />
+The way it does that is it knows, when there is no pet do not draw the gauge in the player window called PetHP.  When I get a pet, draw the gauge in the player window called PetHP.<br />
+<br />
+I can't believe I replied to this.<br />
+<br />
+EDIT: P.S. The first thing you have to learn about coding in a computer is this.  Error messages only mean one thing.  There was an error.  SOMEtimes, the contents of the error message can tell you what that error is.  Sometimes it takes a lot of sleuthwork to figure out what that error really is.  In this case, it is an XML error simply because the engine parsing the XML code and looking for the PetHP gauge finds it, and it generates the error.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dregor</div><div class="date">08-08-2002, 09:12 AM</div></div><div class="posttext">normally i would agree with alot of what ak has to say.. but ak is missing a couple of points<br />
+<br />
+1) you assume that the programmers at EQ actually know what theyre doing (this has been proved false many times)<br />
+<br />
+2) you seem to assume that the EQ client was made specifically for an XML GUI... sadly this is not the case.. it was half-assed after the fact to make it compatible with XML.<br />
+<br />
+3) you assume that (assuming the programmers know what theyre doing) they are going to make everything moveable/adjustable... now maybe the easiest way to do something is with XML.. but that doesnt mean that its the most secure way to do something. and for a game like EQ security is king.<br />
+<br />
+for a normal program made to work with XML i would agree heartily with you ak... but not in this case. in the case of EQ i must agree with psycho. <br />
+<br />
+and as for my first post... you dont even seem to realize what i was saying... as a programmer you should know that there is more than one way to do a certain task. i havent looked at it, but i was suggesting that there may be a way to fool it into thinking that the object it was looking for was in the right place.... but anyways, im not going to get into that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pini Uldar</div><div class="date">08-08-2002, 11:45 AM</div></div><div class="posttext">Holy wow. Long thread that I'd never read before. I just skimmed this lol.<br />
+<br />
+The reason why some things are hard-coded is because there is programmed behavior involving that element. It's poorly documented what these elements are too.<br />
+<br />
+For example, that Pet HP thing. There's hardcoded behavior with that because it's invisible until a pet is there, then it's visible. That's not defined in the XML. It's just not. Fact. Instead, it's in the game code that as a part of summoning a pet, make the PetHP element of PlayerWindow become visible. <br />
+<br />
+The same is more than likely going to be true of every element that you get errors for when you try to move it. The game needs it where it is in order to function and the way the game tells you it can't function is by saying &quot;Hey, dude, this thing I need ain't here. I'm loading default.&quot;<br />
+<br />
+Yes, what is has hard-coded functionality is very poorly documented. But *shrug* oh well. It's not stopping you from doing things. When you see an error, document it and move on. <br />
+<br />
+Of course all that is my current belief. I have no actual idea what's up in the code. I just dink with it and try to figure out how things work.<br />
+<br />
+- Pini</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Faille</div><div class="date">08-12-2002, 05:17 PM</div></div><div class="posttext">The DTD that defines how a specific EQUI xml file has to look like is what's causing your error.  The PetHP gauge is probably REQUIRED whereas the Breath Bar for instance is optional.  This is most likely what's causing your XML error. <br />
+<br />
+There are certain things you cannot change about the interface currently, even though *technically* you should be able to.  Techincally you can change the help files to ones of your liking, but these are repatched when you run EQ.  There is a workaround, but aside from doing something after the game patches, it is just not possible.<br />
+<br />
+If Verant let us change whatever we wanted about the DTD file then the whole program would break, because the parser wouldn't know what to do with the new things it wasn't expecting.  On a certain level, things have to be hardcoded.  There has to be specifications that dictate how a file looks and what it contains and what is optional and what is not.  That's just how it is.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kiriani</div><div class="date">08-14-2002, 06:06 PM</div></div><div class="posttext">I think it makes perfect sense that VI would make certain windows required by the client, especially since this functionality of xml is being added to a specific piece of software that was not originally designed to use XML.<br />
+<br />
+It also makes sense for the sake of retainig some control over what content/functionality can be added.<br />
+<br />
+It further makes sense when you remember that this is all still considered BETA and not a final release.  I imagine they are going to continue to add/remove functionality/flexibility until they decide it is totally perfect and ready for FINAL status.<br />
+<br />
+They didn't do avery good job telling us what can and can't be done because, I think, or rather it's likely, that the programmer at VI aren't really sure about the whole thing as of yet.<br />
+<br />
+Those of us modding are going to be the ones to find out the hard way and accept some simple truths that there will be things we can and cannot change.  We also have to accept that we are goign to have to redo most of our mods several times as VI continues to update the UI.<br />
+<br />
+Until VI releases a full document explainig each and every parameter that can be used and where, each and every function that can be coded in and where, and basicly everything you could possibly need or want to know about how the xml is used for the UI and what is required of the xml by the client EXE, nobody will have all the answers, regardless of whether you are a professional that can code xml in his/her sleep or if you are just a gamer like the rest of us who is trying to figure out what we can do with our new set of toys.<br />
+<br />
+Face it:  Like anything else EQ, there are limits to what we can and can't do, and VI often likes to provide as little information as possible.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ForinIronshield</div><div class="date">08-14-2002, 07:06 PM</div></div><div class="posttext">To add a bit to the fray here, one thing I've noticed is that not all elements (&quot;nodes&quot;) defined in a given XML entity are used by the UIengine.  Further, not all parameters of various elements of the UI_&lt;name&gt;_&lt;server&gt;.ini file are applicable to all windows.<br />
+<br />
+Example:<br />
+<br />
+I was playing with eliminating the casting window and moving the casting bar.<br />
+<br />
+My first attempt was to look at the .ini file, where I'd noticed a &quot;Show=0&quot; entry on certain windows that I had disabled from within the game.  I added that entry to the [CastingWindow] section.  Loaded affected character and guess what?  No dice.  I cast a spell and the casting window popped up with a casting bar in it.<br />
+<br />
+I then modified the XML - I set the &lt;StyleTransparant&gt; value to true for the casting gauge and the CastingWindow ScreenItem.  Tried that, again, no dice.  I got a window and a casting meter.<br />
+<br />
+I then went in and set the &lt;ShowBorder&gt; value to false.   That worked somewhat, this time I had a window with no border, but a casting gauge still appeared in the screen.<br />
+<br />
+As noted above, setting the size to 0,0 effectively eliminated the window.<br />
+<br />
+Based on this and some other things, here's what I think is going on.  The UIengine is using the XML to define values for various screen elements.  To the extent that the engine's behavior for the default configuration doesn't change those settings, our modifications will hold.  The UIEngine adjusts colors and &lt;Show&gt; properties for the elements as the game runs.  Hence my default values for not showing the CastingWindow not working.  The default for that window is &quot;don't show&quot; - except when your casting a spell.  The UIengine overwrote my values to perform as it was intended to do - to show the window when the casting was occuring.  <br />
+<br />
+Further, as is noted, the color of some &lt;EQType&gt; labels change based on game events - noteably the Player HP and MaxHP, AC, stats and saves - which turn red if you are debuffed, white normally and green if you are buffed.  These cannot be controlled by the XML since the values loaded are changed dynamically by the engine while the UI is running.<br />
+<br />
+I think one factor that may control the necessity of a given &lt;Pieces&gt;&lt;/Pieces&gt; callout is whether that element is dynamically toggled by the game (like the appearance of the PetHP gauge) or if the element is used for UserEntry (like clicking on the PlayerHP gauge).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Muse</div><div class="date">08-15-2002, 12:52 AM</div></div><div class="posttext">I think the part that is being overlooked in your comments Ak is that all XML, in order to be used, must be validated.  Somewhere (it looks like psychogears found where this is in the .exe) it has a file that will check the .xml files that are on our computer to make sure they are valid.  Some, it doesn't care about (the ones you deleted).  Some, it does.  Within those, the Schema or DTD states how often and in what order the Elements must appear.  They can do this in a few ways, but the aboutSIDL.doc mentions one way, the minOccurs and maxOccurs attributes.<br />
+<br />
+It's likely that within the DTD/Schema (that we don't have access to) that is used to verify the PlayerWindow.xml file, there is a PetHP minOccurs=1 maxOccurs=* bit.  This also explains why you get an XML error, because this validation is an XML process and not a .exe process.  The PlayerWindow.xml file, however, is mandated by the .exe because they didn't anticipate us doing away with such a key window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ForinIronshield</div><div class="date">08-15-2002, 11:12 AM</div></div><div class="posttext">Actually, isn't SIDL.xml the schema?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lady Silver</div><div class="date">08-15-2002, 11:50 AM</div></div><div class="posttext">Don't remember now if this has been mentioned.... but it is possible... what if, the gods forbid, the programmers made a MISTAKE and it's a BUG!!!  Maybe it will be fixed.  Or maybe they just like being difficult and they're gonna leave it.  Time will tell.  No point arguing about it, really.  If you find a fix - great; if it's patched to be movable - great; if not - learn the great functionality of negative integers and 0.  :)<br />
+<br />
+~Lady Silver</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Faille</div><div class="date">08-15-2002, 05:17 PM</div></div><div class="posttext">ForinIronshield, you can comment out the casting window (the purple bar) and the breath window (the teal bar) just fine in the EQUI.xml file.  This was part of the very first mod I made, moving those two bars into the Player Window.  You still have to have those in your folder, but I think if they're not present in EQUI.xml they aren't loaded.  No need to set the size to zero for those two windows at least.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ForinIronshield</div><div class="date">08-15-2002, 05:48 PM</div></div><div class="posttext">Thanks for the info ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Muse</div><div class="date">08-15-2002, 10:02 PM</div></div><div class="posttext">SIDL.xml isn't the schema, it just names the various Elements that will later be used in the other xml files.  In a sense, though, it's sort of a pseudo-schema, since it does define the elements and what they can hold, but it doesn't have the various restrictions or the proper coding for a schema.  Based on the files, the schema would be named EverquestData.xsd, although the current schema specification doesn't mandate that be accurate, so we really don't know.<br />
+<br />
+Anyway, buy a &quot;Free the Schema&quot; bumper sticker, maybe we can win them over. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">05-02-2003, 01:09 AM</div></div><div class="posttext">Wow, I'm a jerk.<br />
+<br />
+I think it's like 8 or 9 months after I last looked at this thread, but I just want to apologize to Ak here. I guess I was still learning how to get my ideas across without being frustrated, and I still am.<br />
+<br />
+Sorry, man.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fostage</div><div class="date">03-03-2004, 05:44 PM</div></div><div class="posttext">don't know if this has been mentioned yet but.... just put all your wanted gauges, etc. IN the Playerwindow xml and be done with it...*)  you can label it what ever you want and lot easier than trying to &quot;reprogram the wheel&quot;  i have personally done this on my mods and works great...  BTW animations in windows look really cool 8)...  and if your goal was to limit resources used by the ui-  the amount of gain is minimal at best</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

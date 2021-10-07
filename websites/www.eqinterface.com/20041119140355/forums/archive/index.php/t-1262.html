@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Annoyed with Containers, can anyone help?</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; Annoyed with Containers, can anyone help?</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=1262">Annoyed with Containers, can anyone help?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">xlorepdarkhelm</div><div class="date">08-20-2002, 06:11 AM</div></div><div class="posttext">Ok, here's a screenshot of my problem:<br />
+<br />
+http://216.98.142.66/~oguler/ContainerErrors.jpg<br />
+<br />
+As you can see, I am working on making the containers match the techno donuts UI model.  however, there are gaps, about 3-4 pixels wide, between the container &amp; the combine &amp; done buttons.  the containers work as is, but it's not asthetically pleasing for me.  I have tried moving the buttons in the XML to no avail.  I am in seek of some way to move their offsets, so that they can line up better.  Any suggestions?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wolfhugger</div><div class="date">08-20-2002, 01:54 PM</div></div><div class="posttext">I like it. When you get the gap issue resolved I'm downloading it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">UniDyne</div><div class="date">08-20-2002, 02:12 PM</div></div><div class="posttext">Could you put a link to the code or something here? It would help to determine what's wrong.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xlorepdarkhelm</div><div class="date">08-20-2002, 06:32 PM</div></div><div class="posttext">The problem I have found with it is that positioning the container and done buttons doesn't accomplish anything, as the game itself places them somewhere.  I'm looking for something along the lines of a y offset option for buttons, to &quot;force&quot; the issue, if possible.<br />
+<br />
+here is the xml file:<br />
+<br />
+http://216.98.142.66/~oguler/EQUI_Container.xml<br />
+<br />
+the image sizes are all verified correct in it, and the positions, if you look at the ones for the done &amp; combine buttons are placed immediately after the part above them.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arabess</div><div class="date">08-20-2002, 07:00 PM</div></div><div class="posttext">What if you got rid of the grey boarders on the buttons, so the fit snuggly within, the window. Then you can extend the part of the window under the bags to align with the bottom end?<br />
+<br />
+Or it could be an Alpha Channel problem<br />
+<br />
+Im no XML expert so looking at the file didnt help much, but I could only come up with these suggestions</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sylphan</div><div class="date">08-20-2002, 07:56 PM</div></div><div class="posttext">I posted some containers that fix this in an odd way, you might check out how I did my stay-put containers.<br />
+<br />
+The container window puts the combine and done buttons where it wants them.  It centers them in the original window-width and makes them just a few pixels below the last container slot.  That's easily fixed by switching to AutoStretch.  Go into the button code and remove the location and size sections.  Add a line to make AutoStretch true and add lines for LeftAnchorOffset, TopAnchorOffset, etc.  I recommend that you anchor them to the bottom of of the window, not the top, since each container is a different height.<br />
+<br />
+The container window also automatically resizes itself.  That's a little trickier, and explains why you get the gaps.  For width, it makes the window just barely wide enough to hold all the content, and then adds 14.  Autostretch items attached to the right side don't count, so you can actually have your buttons and some of your inventory slots flush with the right side of the window if you make them autostretch.<br />
+<br />
+For height, it depends on a few factors.  As near as I can tell it makes the window just barely tall enought to hold all the content then adds 32, then adds 4 plus the height of the done button.  Then if there's a combine button it adds another 4 plus the height of the combine button.  The maximum height, then, is (contents + both button heights + 40).  The border and titlebar shift the window contents down a bit so you don't normally see 36 pixels of blank space at the bottom, but it's computed that way even if StyleTitleBar and StyleBorder are set to false.  When the buttons are autostretch they count as zero height.<br />
+<br />
+Autostretch buttons are re-drawn after the window is widened and heightened, so they can be made to fill those 4-pixel gaps you see.<br />
+<br />
+For a simpler solution, you could make a new window type for the containers that has a custom background image.  That background image could just happen to look like a dark grey background with two silver bars.  That would fill the gaps in a purely cosmetic way.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xlorepdarkhelm</div><div class="date">08-20-2002, 10:04 PM</div></div><div class="posttext">Originally posted by Sylphan <br />
+I posted some containers that fix this in an odd way, you might check out how I did my stay-put containers.<br />
+<br />
+<br />
+where is the link?<br />
+<br />
+<br />
+The container window puts the combine and done buttons where it wants them.  It centers them in the original window-width and makes them just a few pixels below the last container slot.  That's easily fixed by switching to AutoStretch.  Go into the button code and remove the location and size sections.  Add a line to make AutoStretch true and add lines for LeftAnchorOffset, TopAnchorOffset, etc.  I recommend that you anchor them to the bottom of of the window, not the top, since each container is a different height.<br />
+<br />
+<br />
+I've tried that, but it makes the button go poof.  guess I gotta play around with it a bit more.<br />
+<br />
+<br />
+The container window also automatically resizes itself.  That's a little trickier, and explains why you get the gaps.  For width, it makes the window just barely wide enough to hold all the content, and then adds 14.  Autostretch items attached to the right side don't count, so you can actually have your buttons and some of your inventory slots flush with the right side of the window if you make them autostretch.<br />
+<br />
+<br />
+that's been my problem, I got everything except the bottom buttons aligned the way I want.  Due to the odd design of the techno donuts layout, I had to pretty much make the buttons be the full width of the window, so that the UI would place it and adjust it correctly.<br />
+<br />
+<br />
+For height, it depends on a few factors.  As near as I can tell it makes the window just barely tall enought to hold all the content then adds 32, then adds 4 plus the height of the done button.  Then if there's a combine button it adds another 4 plus the height of the combine button.  The maximum height, then, is (contents + both button heights + 40).  The border and titlebar shift the window contents down a bit so you don't normally see 36 pixels of blank space at the bottom, but it's computed that way even if StyleTitleBar and StyleBorder are set to false.  When the buttons are autostretch they count as zero height.<br />
+<br />
+Autostretch buttons are re-drawn after the window is widened and heightened, so they can be made to fill those 4-pixel gaps you see.<br />
+<br />
+<br />
+hmm..... I'll have to look into that some more.  I wasnt getting success with the autostretch command.<br />
+<br />
+<br />
+For a simpler solution, you could make a new window type for the containers that has a custom background image.  That background image could just happen to look like a dark grey background with two silver bars.  That would fill the gaps in a purely cosmetic way. <br />
+<br />
+except that with the curved tops and bottoms for the window, it would throw it all off.  /sigh, I guess it's time to learn about the autostretch more.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xlorepdarkhelm</div><div class="date">08-21-2002, 04:26 AM</div></div><div class="posttext">Worked like a charm.  now if there was only a better way to position the items in their places other than the &lt;ItemOffsetX&gt; and &lt;ItemOffsetY&gt;... my slots for the items are 50x50, but if I leave them without using the offset commands, then the item graphics are also stretched to 50x50, from the original 40x40, and has some rather unpleasent effects.  the method to fix this in the UI is with the Offset commands I listed above, however it now makes the items look like they are sitting in the lower right corner of the circle.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zephaus</div><div class="date">11-13-2002, 12:18 PM</div></div><div class="posttext">Let's say all I wanted to do was move the Combine button in between the container icon and the top slots.  Any idea what the coding for that would look like?<br />
+<br />
+THanks,<br />
+<br />
+Zep</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

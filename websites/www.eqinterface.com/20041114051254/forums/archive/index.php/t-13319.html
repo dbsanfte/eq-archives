@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Container Modding</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-47.html">Tutorials &amp; Info.</a> &gt; <a href="f-48.html">XML Tutorials &amp; Info.</a> &gt; Container Modding</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=13319">Container Modding</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Laroden</div><div class="date">03-30-2004, 06:21 PM</div></div><div class="posttext">I am currently learning XML myself, and recently modded the default containers to have the primary and secondary slot ontop of the other 8 slots for quick weapon switching.  This tutorial will show you how to do the same, along with explaining a little of what each line of code is doing.<br />
+<br />
+Okay, so the first part is getting rid of the the centered area above the container slots that shows the bag icon.  This is done by finding and removing the following code:<br />
+<br />
+	&lt;Button item = &quot;Container_Icon&quot;&gt;<br />
+		&lt;ScreenID&gt;Container_Icon&lt;/ScreenID&gt;<br />
+		&lt;!--&lt;Font&gt;3&lt;/Font&gt;--&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;26&lt;/X&gt;<br />
+			&lt;Y&gt;38&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;40&lt;/CX&gt;<br />
+			&lt;CY&gt;40&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+		&lt;Style_Checkbox&gt;false&lt;/Style_Checkbox&gt;<br />
+		&lt;!--&lt;RadioGroup/&gt;--&gt;<br />
+		&lt;Text/&gt;<br />
+		&lt;TextColor&gt;<br />
+				&lt;R&gt;255&lt;/R&gt;<br />
+				&lt;G&gt;255&lt;/G&gt;<br />
+				&lt;B&gt;255&lt;/B&gt;<br />
+		&lt;/TextColor&gt;<br />
+		&lt;ButtonDrawTemplate&gt;<br />
+			&lt;Normal&gt;A_RecessedBox&lt;/Normal&gt;<br />
+			&lt;NormalDecal&gt;A_DragItem&lt;/NormalDecal&gt;<br />
+		&lt;/ButtonDrawTemplate&gt;<br />
+		&lt;DecalOffset&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/DecalOffset&gt;<br />
+		&lt;DecalSize&gt;<br />
+			&lt;CX&gt;40&lt;/CX&gt;<br />
+			&lt;CY&gt;40&lt;/CY&gt;<br />
+		&lt;/DecalSize&gt;<br />
+	&lt;/Button&gt;<br />
+<br />
+<br />
+That removes the container icon, and creates a place for us to put the two inventory slots.<br />
+<br />
+First, we're going to want to put in the primary slot, to do this place the following code in place of the code we just removed.<br />
+<br />
+<br />
+	&lt;InvSlot item = &quot;PrimaryContainer&quot;&gt;<br />
+		&lt;ScreenID&gt;PrimaryContainer&lt;/ScreenID&gt;<br />
+		&lt;!--&lt;Font&gt;3&lt;/Font&gt;--&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;6&lt;/X&gt;<br />
+			&lt;Y&gt;38&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;40&lt;/CX&gt;<br />
+			&lt;CY&gt;40&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Background&gt;A_InvPrimary&lt;/Background&gt;<br />
+		&lt;EQType&gt;13&lt;/EQType&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+	&lt;/InvSlot&gt;<br />
+<br />
+<br />
+The &lt;InvSlot item = &quot;PrimaryContainer&quot;&gt; creates the inventory slot we're going to use.  Everything between that tag and  and the &lt;/InvSlot&gt; will define the properties of this particular slot.  First of all, the &lt;ScreenID&gt; Can't clash with any other screenIDs in the UI, so you have to make sure to name it something unique, such as PrimaryContainer (indicating that its the primary slot inventory slot that's held in the containers).  The next important part is the &lt;Location&gt; and whats between them.  It uses simple x and y coordinates (x is horizontal, y is verticle) to place the box.  In this case &lt;X&gt;6&lt;/X&gt; &lt;Y&gt;38&lt;/Y&gt; places the box directly above the first inventory slot, with a spacing of 4 points.<br />
+<br />
+Next important tags are the &lt;Size&gt; &lt;Background&gt; and &lt;EQType&gt; tags.  The &lt;Size&gt; is pretty self explainitory.  It defines the size of the box for your items.  In this case, we're keeping them the same size as the rest of the boxes in the container, 40,40 (CX,CY).  The &lt;Background&gt; tag is also self explainitory, as it defines which background image is going to be used in the icon.  In this case, we're using the default UIs graphic for the primary slot, though you can make your own if you wish.  And lastly is the &lt;EQType&gt; which tells everquest which inventory slot it actually is.  In this case &lt;EQType&gt;13&lt;/EQType&gt; refers to the primary slot.<br />
+<br />
+The rest of the information in the tag really doesn't pertain to what we're doing for this mod, so I won't bother explaining it. <br />
+<br />
+So now, we need to add in the secondary slot, which is done with the following code: (I trust that you won't need this code explained.)<br />
+<br />
+	&lt;InvSlot item = &quot;SecondaryContainer&quot;&gt;<br />
+		&lt;ScreenID&gt;SecondaryContainer&lt;/ScreenID&gt;<br />
+		&lt;!--&lt;Font&gt;3&lt;/Font&gt;--&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;46&lt;/X&gt;<br />
+			&lt;Y&gt;38&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;40&lt;/CX&gt;<br />
+			&lt;CY&gt;40&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Background&gt;A_InvSecondary&lt;/Background&gt;<br />
+		&lt;EQType&gt;14&lt;/EQType&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+	&lt;/InvSlot&gt;<br />
+<br />
+<br />
+Now, before we can finish, we need to scroll down to the bottom of the document where we find the &lt;Pieces&gt; tags.  These tags define which pieces (or &lt;InvSlot&gt;s are going to be used on this particular screen.)<br />
+<br />
+So, below the &lt;Pieces&gt;Container_Label&lt;/Pieces&gt; but above the &lt;Pieces&gt;ContainerSlot1&lt;/Pieces&gt;, we want to put in:<br />
+<br />
+<br />
+		&lt;Pieces&gt;PrimaryContainer&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;SecondaryContainer&lt;/Pieces&gt;<br />
+<br />
+<br />
+And that's it, we're done.  If you save this to your own UI folder (maybe uifiles/containermod) and load it up, when you open your containers you'll have the primary and secondary slots at your disposal.<br />
+<br />
+I hope this tutorial was helpful to you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Laroden</div><div class="date">03-30-2004, 06:22 PM</div></div><div class="posttext">Reserved for future tutorial links and update information.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

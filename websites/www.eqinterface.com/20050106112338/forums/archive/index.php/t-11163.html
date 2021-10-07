@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Modifying Target Window to show /con colour</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Modifying Target Window to show /con colour</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=11163">Modifying Target Window to show /con colour</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Adarii</div><div class="date">11-11-2003, 07:15 AM</div></div><div class="posttext">Hi All<br />
+<br />
+I'm having a problem where I'm about to rip my hair out. I've read through all the tutorials and it has helped me tremendously on part of my problem but I'm really stuck now.<br />
+<br />
+This is what I'm talking about.<br />
+<br />
+http://oz-bits.com/dl/targetwindow.gif<br />
+<br />
+As you can see the graphic does not fit the target window and I cannot work out why.<br />
+<br />
+My target window is 150 x 35 px, my graphic is 150 x35 (on a 256 x 128 canvas) all references that I can see in the XML are correct but I must be missing something somewhere and I can't find it!!<br />
+<br />
+I belive this is the relevent XML code, can also download my graphics file + full xml file here: Click ME! (http://oz-bits.com/dl/help.zip)<br />
+<br />
+&lt;TextureInfo item = &quot;TargetBox.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;128&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;<br />
+<br />
+	&lt;Ui2DAnimation item = &quot;A_TargetBox&quot;&gt;<br />
+	&lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+	&lt;Frames&gt;<br />
+	&lt;Texture&gt;TargetBox.tga&lt;/Texture&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;3&lt;/X&gt;<br />
+			&lt;Y&gt;3&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;150&lt;/CX&gt;<br />
+			&lt;CY&gt;35&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/Frames&gt;<br />
+	&lt;/Ui2DAnimation&gt;<br />
+<br />
+	&lt;StaticAnimation item = &quot;A_TargetBoxStaticAnim&quot;&gt;<br />
+	&lt;ScreenID&gt;A_TargetBoxStaticAnim&lt;/ScreenID&gt;<br />
+	&lt;Animation&gt;A_TargetBox&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;<br />
+<br />
+<br />
+	&lt;Screen item = &quot;TargetWindow&quot;&gt;<br />
+		&lt;ScreenID/&gt;<br />
+		&lt;RelativePosition&gt;false&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;197&lt;/X&gt;<br />
+			&lt;Y&gt;240&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;150&lt;/CX&gt;<br />
+			&lt;CY&gt;35&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+<br />
+I really hope someone can help me its driving me nuts!<br />
+<br />
+Thanks in advance<br />
+<br />
+-- Adarii</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tobin Itharel</div><div class="date">11-11-2003, 08:17 AM</div></div><div class="posttext">It's hard code in the software from what I can tell. I posted about this problem already in another thread. My window is much worst at 215x38. Even making a custom .TGA file with a background the correct size dose not fix the problem.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nekoken</div><div class="date">11-11-2003, 07:28 PM</div></div><div class="posttext">I've run into the same issue.  My window is 157x35.  I made a new TargetBox.tga that is the same size.  For some reason said texture gets shrunk to 60% or so inside of the window.  To get it the right size I have to specify in the TextureInfo that it is 265x57.  The size in Ui2DAnimation is unused.  The XY offset in Ui2DAnimation seems to be inverted such that a positive X value moves it to the left and a positive Y value moves it up.<br />
+<br />
+It doesn't really make any sense to me and took me a couple of hours of experimenting and trial and error to determine this.<br />
+<br />
+Backing up that the texture is not mapped directly and instead has an offset, a D3DRS_WRAP0 call is being made whenever it the TargetBox is being drawn.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mortis42</div><div class="date">11-11-2003, 07:54 PM</div></div><div class="posttext">Adarii, <br />
+Try to resize the  &lt;Ui2DAnimation item = &quot;A_TargetBox&quot;&gt; to size excluding the borders.<br />
+If your target window uses 4px borders(the default size, btw), then you would need to make the A_TargetBox 142x27.<br />
+I put the change to your code in the following quote box: <br />
+<br />
+<br />
+&lt;Ui2DAnimation item = &quot;A_TargetBox&quot;&gt;<br />
+     &lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+     &lt;Frames&gt;<br />
+          &lt;Texture&gt;TargetBox.tga&lt;/Texture&gt;<br />
+          &lt;Location&gt;<br />
+               &lt;X&gt;3&lt;/X&gt;<br />
+               &lt;Y&gt;3&lt;/Y&gt;<br />
+          &lt;/Location&gt;<br />
+          &lt;Size&gt;<br />
+               &lt;CX&gt;147&lt;/CX&gt;<br />
+               &lt;CY&gt;27&lt;/CY&gt;<br />
+          &lt;/Size&gt;<br />
+     &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+<br />
+Let us know if this solves it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Adarii</div><div class="date">11-12-2003, 12:29 AM</div></div><div class="posttext">Ok!<br />
+<br />
+Thanks for your help guys, half of my problem was I am an idiot! Somehow my graphic got resized to some wierd smaller size which was causing it not to fit.. obviously.<br />
+<br />
+Anyway, I had to actually make my image 142 x 27 as the previous poster mentioned, thanks for responding you helped me understand at least why that's the size it needs to be.<br />
+<br />
+http://oz-bits.com/dl/targetwindow2.gif<br />
+<br />
+If you want to see the code / image file you can grab it HERE (http://oz-bits.com/dl/fixed.zip)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Elindel</div><div class="date">11-12-2003, 02:39 PM</div></div><div class="posttext">What I did when modifying mine was I pasted my target window from a SS into the new tga I was working in, then drew on the layer above it so I knew it would be exactly the right size.  When I was done I just deleted the layer with the target window in it.<br />
+<br />
+Might help some people.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

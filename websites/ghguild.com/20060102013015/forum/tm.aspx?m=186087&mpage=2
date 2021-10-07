@@ -1,0 +1,1701 @@
+
+<html>
+<head>
+<title> RE: digital cable?  satellite?  which should I get? </title>
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/trims.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/showSelect.js"></script>
+<script language="JavaScript" src = "js/pgdcodeinput.js"></script>
+<script language="JavaScript" src = "js/validator.js"></script>
+<script type="text/javascript">
+
+function keepalive(){
+	var keepAliveFrame = document.createElement("iframe")
+	keepAliveFrame.src = "/forum/keepalive.aspx"
+	keepAliveFrame.style.display="none"
+	document.body.appendChild(keepAliveFrame)
+}
+
+
+
+setTimeout("keepalive()",3540000); 
+
+var objFormValidator = new PGDFormValidator;
+
+function validateForm(postform) {
+	if (objFormValidator.execute()){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+// -->
+</script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("1/1/2006 5:30:43 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("1/1/2006 5:30:43 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "1/1/2006 5:30:43 PM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+ strTitle [1] = "25&&0neophyte1"
+ strTitle [2] = "100&&0greenhorn2"
+ strTitle [3] = "400&&0competent3"
+ strTitle [4] = "900&&0seasoned4"
+ strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<!-- CSS Stylesheet -->
+<style type="text/css" id="gh_css">
+<!--
+/* GH header CSS  */
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+/* ***** don't change the following ***** */
+
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+body { margin: 0; padding: 0; }
+img { border: 0; }
+#header {
+position: relative;
+display: block;
+width: 100%;
+height: 30px;
+margin: 0;
+padding: 0;
+background: url(image/livebarbg.jpg) repeat-x;
+}
+#header #header-nav {
+position: absolute;
+top: 0;
+right: 0;
+}
+#header #header-nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#header #header-nav ul li {
+display: inline;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+
+<div id="header">
+<div id="live">
+<a href="http://ghguild.com"><img src="http://ghguild.com/forum/image/livebarghlive.jpg"></a>
+</div>
+<div id="header-nav">
+<ul>
+<li><a href="http://eq.ghguild.com/">Everquest</a></li><li>Everquest2</li><li>World of Warcraft</li>
+</ul>
+</div>
+</div>
+
+
+
+<center><TABLE width='97%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width=80% background="http://ghguild.com/forum/rightextend2.jpg" height="115"></td>   </tr>  </table>
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		if (theForm.body) theForm.body.focus(); else if (document.all && document.all.body1) document.all.body1.focus();
+		
+		theForm.parent.value = parentid;
+		theForm.subject.value = theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='97%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> RE: digital cable?  satellite?  which should I get? </h2>&nbsp;
+		
+		<br>
+		<span class="ultrasmall">View related threads:
+		(<a href="/forum/searchpro.aspx?phrase=RE%3a+digital+cable%3f++satellite%3f++which+should+I+get%3f&criteria=OR&forumid=2&topicreply=topic&message=both&timefilter=0&top=10" target="_blank">in this forum</a>
+		| <a href="/forum/searchpro.aspx?phrase=RE%3a+digital+cable%3f++satellite%3f++which+should+I+get%3f&criteria=OR&forumid=ALL&topicreply=topic&message=both&timefilter=-365&timeframe=%3E&top=10" target="_blank">in all forums</a>)
+		</span>
+		<br><br>
+		
+	</td>
+	<td class="c2" align="right">Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+	
+<table width="97%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this topic: 
+    none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.aspx?m=186087" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+    
+	</td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  RE: digital cable?  satellite?  which should I get? </b>  </td><td align="right" nowrap class='ultrasmall'>Page:  <a href='tm.aspx?m=186087&mpage=1' title='first'><b>&lt;&lt; </b></a>&nbsp;&nbsp;<a href='tm.aspx?m=186087&mpage=1' title='prev'><b>&lt; prev</b></a>&nbsp;&nbsp;<a href='tm.aspx?m=186087&mpage=1'><b>1</b></a>  <b>[2]</b> </td></tr></table><script language="JavaScript" type="text/javascript">
+function submitForm(){ try {updateRTE('body1'); return true;} catch(e){}; }</script>
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="155" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="155" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0" width="100%">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.aspx?go=prev&m=186087&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.aspx?go=next&m=186087&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=186750></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">9/27/2005 6:00:07 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("9/27/2005 6:00:07 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I think the main reason people just won't bite right now is because the technology still requires a fair amount of research, as this very thread points out.&nbsp; HDTV will not become mainstream until people can buy a TV, take it home, plug it in and be up and running.&nbsp; Granted it's not much more difficult than that, but the technology really needs to become idiot proof before it will really catch on. <br>  <br> By the way, the scale factors I usually hear for the recommended distance from the screen is somewhere between 1.5x and 2.0x the width of the screen. <br>  <br> Wandatin 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='fb.aspx?m=186719'>Orocai</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=186750' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=186750')">Post #: 31</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=186758></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">9/27/2005 7:14:54 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("9/27/2005 7:14:54 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Yah usually something like that.&nbsp; I have a calculator around here somewhere that I downloaded from the Infocus web site that works pretty well.&nbsp;  <br>  <br> In the case of a DLP projector, there's also an&nbsp;easy determining factor called the &quot;screen door effect&quot;.&nbsp; if you can see the thin little lines separating the picture elements, you're too close.&nbsp;  <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#186750'>Wandatin</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=186758' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=186758')">Post #: 32</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188347></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/6/2005 3:57:04 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/6/2005 3:57:04 PM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=346" class="subhead" target="_blank">Torc</a><br>
+        
+		  <script>titleAndStar(340,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/346/30ED0CF1CB3A44C0A6F6269D68283504.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  340<br>
+          
+          Joined:  6/18/2003 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Directv is my choice <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='fb.aspx?m=186719'>Orocai</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=346')" title="E-mail  Torc"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=346'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=346&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=346&mode=block&pg=tm&m=188347' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188347')">Post #: 33</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188444></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/7/2005 6:35:57 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/7/2005 6:35:57 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=3" class="subhead" target="_blank">Sumadan</a><br>
+        
+		  <script>titleAndStar(2659,4,false,true,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  2659<br>
+          
+          Joined:  10/25/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Iquan and I are expanding our company to include custom home theater installs and distributed audio/video, home automation type stuff.&nbsp; In looking at the market research the sales of items like Plasma's last year grew by more than 75% in some area's.&nbsp;&nbsp;HD is a very big new thing and the catch phrases are making a great number of new people interested in buying that type of technology.&nbsp; The REALLY cool new area's are convergance of computers and home entertainment.&nbsp; We went to&nbsp;the CEDIA (custom entertainment design and installation association)&nbsp;convention before we made our final decision to do the expansion and I gotta say the toys are&nbsp;very very very cool :)&nbsp; On a very positive note and not related to the thread at all - we got our Klipsch dealership this week, WOOT.&nbsp; 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188347'>Torc</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=3')" title="E-mail  Sumadan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=3'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=3&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=3&mode=block&pg=tm&m=188444' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188444')">Post #: 34</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188450></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/7/2005 7:12:40 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/7/2005 7:12:40 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          /jealous <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188444'>Sumadan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=188450' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188450')">Post #: 35</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188612></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 4:24:23 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 4:24:23 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=47" class="subhead" target="_blank">Metfan</a><br>
+        
+		  <script>titleAndStar(743,-4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/47/Vt57397.gif" border=0 align="absmiddle"></div><br>
+          Posts:  743<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Thats what im running in my Home Theather, Klipsch Referrence line speakers to a Denon 4802 Receiver and a HSU VTF-3 Subwoofer. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.dvdprofiler.com/mycollection.asp?alias=Metallica%20Fan" target="_blank">My DVD Collection</a> <br> AKA <br> Hemi - GH monk in EQ2 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188450'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=47'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=47&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=47&mode=block&pg=tm&m=188612' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188612')">Post #: 36</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188636></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 7:54:06 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 7:54:06 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Nice.&nbsp; I have Klipsch speakers as well.&nbsp; Love those horns! <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188612'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=188636' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188636')">Post #: 37</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188653></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 9:16:10 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 9:16:10 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I'm about ready to order an I-O Data AVeL LinkPlayer2. <br>  <br> <a href="http://www.iodata.com/usa/products/products.php?cat=HNP&amp;sc=AVEL&amp;pId=AVLP2%2FDVDLA" target="_blank">http://www.iodata.com/usa/products/products.php?cat=HNP&amp;sc=AVEL&amp;pId=AVLP2%2FDVDLA</a> <br>  <br> It's a DVD player that has network connectivity.&nbsp; It uses a D4-to-component connection for those of us with HDTV's that do not have DVI or HDMI/HDMC connections.&nbsp; It will upconvert current DVD's over the D4 connection. <br>  <br> The best thing of all about this player though is that it will play WMV-HD, DiVX-HD, MPEG2-TS High Definition files now.&nbsp; While this player will not play the future blue laser high definition content or encrypted WMV9 content like some of the IMAX DVD's you can buy, it can play tons of true high definition content today. <br>  <br> There is also another newer model coming out next month that will have a DVI/HDMI connection so for those of you that have TV's that support that connection you will have access to even further content that requires encryption.&nbsp; This new player is also made by I-O Data but is being rebadged as the JVC ProHD. <br>  <br> <a href="http://www.iodata.com/usa/products/products.php?cat=HNP&amp;sc=AVELK&amp;ts=2&amp;tsc=&amp;sc=AVELK&amp;pId=SRDVD-100U" target="_blank">http://www.iodata.com/usa/products/products.php?cat=HNP&amp;sc=AVELK&amp;ts=2&amp;tsc=&amp;sc=AVELK&amp;pId=SRDVD-100U</a> <br>  <br> <a href="http://pro.jvc.com/prof/attributes/features.jsp?model_id=MDL101546" target="_blank">http://pro.jvc.com/prof/attributes/features.jsp?model_id=MDL101546</a> <br>  <br> Wandatin 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188636'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=188653' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188653')">Post #: 38</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188664></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 10:30:35 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 10:30:35 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Are you sure about that?&nbsp; It says it's not an upscaling DVD player.... <br>  <br> <blockquote class="quote"><i>quote:</i><br><br><font color="#ff0000">*AVLP2/DVDLA doesn't have an upscaling function. The standard DVD (480p SD) is out by 480p.</font> <br> </blockquote> <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188653'>Wandatin</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=188664' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188664')">Post #: 39</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188665></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 10:37:21 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 10:37:21 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I did a quick search at the AV Science forum and found what appears to be confirmation that it does upconvert.&nbsp; There are a lot of LP2 owners over there and I found multiple threads, so you may want to check out that board if you haven't already.&nbsp;  <br>  <br> <a href="http://www.avsforum.com/avs-vb/showthread.php?p=5920206&amp;highlight=IO+Data+AVeL+LinkPlayer2#post5920206" target="_blank">http://www.avsforum.com/avs-vb/showthread.php?p=5920206&amp;highlight=IO+Data+AVeL+LinkPlayer2#post5920206</a> <br>  <br> I love the network hub approach for the unit.&nbsp; It seems like a great idea to combine an upconverting DVD player and a computer media player into one unit.&nbsp; It very neatly gets you around all the issues that surround the whole &quot;should I build a media center PC&quot; concept, which is something that I've been very loathe to dive into.&nbsp;  <br>  <br> I'm really interested in hearing how this works out for you.&nbsp; <img src="http://ghguild.com/forum/image/s2.gif"> 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188664'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=188665' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188665')">Post #: 40</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188666></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 10:38:29 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 10:38:29 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          In fact they have a whole FAQ thread for the LinkPlayer 2: <br>  <br> <a href="http://www.avsforum.com/avs-vb/showthread.php?t=484807&amp;highlight=IO+Data+AVeL+LinkPlayer2" target="_blank">http://www.avsforum.com/avs-vb/showthread.php?t=484807&amp;highlight=IO+Data+AVeL+LinkPlayer2</a> <br>  <br> Wow, it's huge and has TONS of information in it.&nbsp; 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188665'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=188666' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188666')">Post #: 41</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188673></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 11:32:19 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 11:32:19 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Yeah, I've been reading the AVS threads about it for the past couple of days.&nbsp; Here is another thread about the player that is 116 pages long! <br>  <br> <a href="http://www.avsforum.com/avs-vb/showthread.php?t=459759" target="_blank">http://www.avsforum.com/avs-vb/showthread.php?t=459759</a> <br>  <br> I wasn't sure about the upconversion either because as you pointed out I-O's website says it does not.&nbsp; However, everything I've been able to gather from the AVS Forum indicates that it infact does.&nbsp; People basically say that I-O official says no, with a wink and a nudge, because they would draw too much heat if they outright said that it does support upconversion over component. <br>  <br> Like you, I've been somewhat interested in building a media center PC but honestly just don't want to deal with the vast number of headaches and time investment involved.&nbsp; The LinkPlayer2 seems like a nice compromise to me.&nbsp; I'm also very excited about the fact that it supports WMV-HD (WMV9), Divx-HD, and MPEG-2.ts.&nbsp; There is tons of content in those formats that can be downloaded off the internet.&nbsp; You mentioned some NASA ones awhile back for example.&nbsp; Here is a good resource for those files. <br>  <br> <a href="http://www.highdefforum.com/forumdisplay.php?f=15" target="_blank">http://www.highdefforum.com/forumdisplay.php?f=15</a> <br>  <br> Granted, alot of the content is short pieces.&nbsp; Movie trailers and so-forth.&nbsp; But the really cool thing about it is that you can watch it in the full glory of your HDTV rather than just on your computer monitor. <br>  <br> I'm undecided yet whether or not I will actually use the network connectivity aspect of it.&nbsp; My computer is in my bedroom and my HDTV is obviously in the living room.&nbsp; I don't really know if I want to string CAT-5 cable across my apartment.&nbsp; I've read that the LinkPlayer2 and other similar units do not function as well if you build them into a wireless network.&nbsp; The bandwidth required to stream HD content wirelessly can lead to performance and quality issues. <br>  <br> However, the LinkPlayer2 also makes full use of externally connected hard drives.&nbsp; I will most likely end up going that route.&nbsp; I will just get the content I want from the internet and copy it onto an external drive which I will then move and attach to the LP2.&nbsp; Slightly more work but without the worry of stringing wire across the place. <br>  <br> Wandatin 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188666'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=188673' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188673')">Post #: 42</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188679></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/8/2005 12:20:22 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 12:20:22 PM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Interesting stuff.&nbsp; Definitely let us know how it goes.&nbsp;  <br>  <br> 1080i is only 22 megabits per second.&nbsp; A lot from a broadcast and real-time data storage perspective, but not a lot for passing data around a LAN.&nbsp; Most wireless adapters and APs should be able to handle that, even with&nbsp;WPA turned on, shouldn't they? <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188673'>Wandatin</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=188679' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188679')">Post #: 43</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=189334></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/13/2005 4:26:10 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/13/2005 4:26:10 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I got my Avel LinkPlayer2 yesterday.&nbsp; My initial impression is that it looks promissing. <br>  <br> My first observation is that it most definitely upconverts to 1080i over component.&nbsp; As expected though, there really isn't much difference between that and the standard 480p output of my previous DVD player.&nbsp; It is slightly better on LotR as well as some of my Superbit titles but I don't think the&nbsp;improvement is enough to justify the cost if that were the only thing you were looking for. <br>  <br> Now for HD content.&nbsp; I must say, it is simply amazing.&nbsp; That does display in true high definition.&nbsp; I downloaded some of the IMAX trailers from Microsoft that are in WMV-HD format.&nbsp; My InHD Comcast channel also shows the full IMAX shows in 1080i of which I've got a few saved on my DVR.&nbsp; This allowed me to make a direct comparison between the 2 sources.&nbsp; The quality is identical.&nbsp; I do think this ability of the player makes the price worthwhile. <br>  <br> I do have a couple of problems so far though.&nbsp; At the moment I do not get any sound when playing WMV-HD files.&nbsp; I believe that I need to do a firmware update on the player but at the moment I don't have a CAT5 cable long enough to reach my router.&nbsp; I will pick one up today and do the update. <br>  <br> The built in DVD player pretty much sucks.&nbsp; The door opens <i>really</i> slowly and you can hear some noise as a DVD is playing.&nbsp; The AVSForums give instructions on how to swap out the DVD tray for a particular model made by Lite-On.&nbsp; I had already anticipated this and picked one up a couple of days ago from Circuit City for $25.&nbsp; I'm not sure when I will get around to actually doing the swap but from all accounts it is very simple to do. <br>  <br> DRM'd content does not play.&nbsp; I tried this for example with my Terminator 2: Extreme Edition that comes with a 2nd disc in WMV-HD format.&nbsp; A couple of movie trailers I tried also did not work because of this. <br>  <br> Overall I am pretty happy with the player.&nbsp; The HD stuff is really cool and the ability to upconvert standard DVD's is a nice bonus.&nbsp; Overall I think it was worth the $250.&nbsp; There are only 3 or 4 DVD players available that will upconvert over component and the cheapest is $150.&nbsp; So for not much more you get the HD ability as well. <br>  <br> I have not yet tried any DivxHD or TS2 content.&nbsp; I will probably play around with it some more over the weekend. <br>  <br> I have a feeling this player may end up having alot of potential as well.&nbsp; If the HD-DVD/BluRay battle turns out ugly and leaves early adopters of HDTV sitting on the curb, there could end up being alot of backlash and people going to WMV9 instead. <br>  <br> Wandatin 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188679'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=189334' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=189334')">Post #: 44</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=189374></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/13/2005 8:06:48 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/13/2005 8:06:48 AM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Cool.&nbsp; Thanks for the review. &nbsp;<img src="http://ghguild.com/forum/image/s2.gif"> 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#189334'>Wandatin</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=189374' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=189374')">Post #: 45</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=189516></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: digital cable?  satellite?  which should I get?  - <span class="ultrasmall">10/13/2005 9:33:49 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/13/2005 9:33:49 PM",0,0,0,186087,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I haven't gotten everything sorted out yet but after doing the dozen or so firmware updates I've managed to get sound out of some of the files.&nbsp; I'll have to look further into why some of them don't have audio.&nbsp; I have gotten the NASA files I downloaded to work completely so far. <br>  <br> I have to say, I really don't think there is anything that shows off the true power of HDTV like a shuttle launch or views of the earth from space.&nbsp; It almost literally brings a tear to the eye. <br>  <br> Wandatin <br>  <br> P.S.&nbsp; I've got my eye on the new Mitsubishi WD-62628 1080p 62&quot; rear projection DLP.&nbsp; I plan on buying a new HDTV&nbsp;in the 60&quot;-65&quot; range&nbsp;when they have the deals with the run up to the holidays.&nbsp; The new Mitsubishi really interests me&nbsp;but I'm going to continue researching until the deals are put forward. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#189374'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=189516' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=189516')">Post #: 46</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+      <a href='tm.aspx?m=186087&mpage=1&key=' title='first'><font color='FFFFFF' class='subhead'>&lt;&lt; </font></a>&nbsp;&nbsp;<a href='tm.aspx?m=186087&mpage=1&key=' title='prev'><font color='FFFFFF' class='subhead'>&lt; prev</font></a>&nbsp;&nbsp;<a href='tm.aspx?m=186087&mpage=1&key='><font color='FFFFFF' class='subhead'>1</font></a>  <font color='FFFFFF' class='subhead'>[2]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  RE: digital cable?  satellite?  which should I get? </b>  </td><td align="right" nowrap class='ultrasmall'>Page:  <a href='tm.aspx?m=186087&mpage=1' title='first'><b>&lt;&lt; </b></a>&nbsp;&nbsp;<a href='tm.aspx?m=186087&mpage=1' title='prev'><b>&lt; prev</b></a>&nbsp;&nbsp;<a href='tm.aspx?m=186087&mpage=1'><b>1</b></a>  <b>[2]</b> </td></tr></table>
+
+<table width="97%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" >- - Public Forum</option>
+<option value="tt.aspx?forumid=2" selected>- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="97%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="186087">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="97%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+<font size="-4" color="#b1b1b1">This Content for Google Adsense: Lots of Gaming and Computer hardware. Buy Computer Hardware here. Newegg is the best for hardware. Fast Video Cards. World of Warcraft. Get a fast computer like alienware for the win. Win Teh game. Arcade games are fun. Spyware and Viruses are not. Porn is cool but google isn't down with the porn. Everquest. Everquest 2. We do it all. PC Gaming X-box Playstation 2 Xbox 360 Console Games Get HDTV Television With Satellite TV or Cable with Cablecard for the best TV experience.  There's also great deals on fast food and coupon sites. Get Dell coupons from fatwallet or bensbargins. Microsoft Server products for the win. Web hosting we provide for FREE! Gamers like to eat snacks like cheetos or candy and soda. Time to get on the fattymcfatfat machine. Treadmill and no gym for home. Weight Watchers and lose weight fast with diet pills that may kill you but hey that's the fun. Atkins doesn't work. There's no women on the internet unless they post pics of their breasts with a penny. Digital Cameras like the Rebel XT or 20D from Canon are much better than cameras from Nikon like D50 and D70. Sigma is great if you get a sharp one. Play the Sigma Lottery if you wish.</font></center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.078</font><br>
+</body>
+</html>

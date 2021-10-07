@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>Death Misdealt Forums</title>
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #121D2B;
+	SCROLLBAR-ARROW-COLOR: #CFCFCF;
+}
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+}
+A:hover {
+	COLOR: #EEEEEE;
+	TEXT-DECORATION: underline;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #CFCFCF;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #CFCFCF;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #EEEEEE;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #CFCFCF;
+}
+.bordert {
+	BORDER: 1px solid #000000;
+}
+</style>
+
+
+
+</head>
+<body bgcolor="#0F243A" text="#FFFFFF" id="all" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000020" vlink="#000020" alink="#000020">
+<!-- logo and buttons -->
+<center>
+<table bgcolor="#152D47" class="bordert" border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr><td>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+  <td valign="top" align="left" background="images/infamous/menu_background.gif"></td>
+  <td valign="bottom" align="center" nowrap background="images/infamous/menu_background.gif">
+   <table align="center" cellspacing="0" cellpadding="0" border="0" background="images/infamous/headbg.gif">
+<tr>
+   <td align="center" valign="bottom" background="images/infamous/headbg.gif" width="100%"><a href="usercp.php?s=bdf8723781bd53f59189fdf31d0fcdba"><img src="images/infamous/usercp.gif" border="0"></a><a href="register.php?s=bdf8723781bd53f59189fdf31d0fcdba&action=signup"><img src="images/infamous/register.gif" border="0"></a><a href="memberlist.php?s=bdf8723781bd53f59189fdf31d0fcdba"><img src="images/infamous/members.gif" border="0"></a><a href="misc.php?s=bdf8723781bd53f59189fdf31d0fcdba&action=faq"><img src="images/infamous/faq.gif" border="0"></a><a href="search.php?s=bdf8723781bd53f59189fdf31d0fcdba"><img src="images/infamous/search.gif" border="0"></a><a href="index.php"><img src="images/infamous/home.gif" border="0"><a href="member.php?s=bdf8723781bd53f59189fdf31d0fcdba&action=logout"><img src="images/infamous/logout.gif" border="0"></td>
+   <td width="200"><img src="images/infamous/headbg.gif" border="0"></td>
+</tr>
+</table>
+  </td>
+</tr>
+</table>
+<!-- /logo and buttons -->
+
+<!-- content table -->
+<table bgcolor="#152D47" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+  <td>
+
+&nbsp;</td></tr></table>
+
+<table width="100%" height="50%" cellpadding="0" cellspacing="0" border="0" bgcolor="#152D47" align="center">
+<tr>
+	<td>
+
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#162232"  width="70%" align="center"><tr><td>
+<table cellpadding="4" cellspacing="1" border="0"  width="100%">
+<tr>
+	<td bgcolor="#162232" width="100%"><font face="verdana" size="1" color="#CFCFCF"><img src="http://deathmisdealt.com/forums/images/infamous/vb_bullet.gif" align="absmiddle" alt="vBulletin" border="0">
+	<b>vBulletin Message</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#233245" width="100%"><font face="verdana" size="1">You are not logged in or you do not have permission to access this page. This could be due to one of several reasons:
+
+<ol>
+<li>You are not logged in. Fill in the form at the bottom of this page and try again.</li>
+<li>You do not have permission to access the page that you were trying to. Are you trying to edit someone else's post or trying to access administrative features? Check that you are allowed to perform this action in the Forum Rules.</li>
+<li>If you are trying to post, the administrator may have disabled your account, or it may be awaiting activation.</li>
+</ol>
+
+<br>
+
+<table border="0" bgcolor="#162232" cellpadding="4" cellspacing="1" align="center">
+<form action="member.php" method="post"><input type="hidden" name="s" value="bdf8723781bd53f59189fdf31d0fcdba">
+<tr valign="top">
+	<td bgcolor="#27364A"><font face="verdana" size="1"><b>Your User Name:</b></font></td>
+	<td bgcolor="#27364A"><font face="verdana" size="1"><input type="text" class="bginput" name="username" value="Unregistered" size="25">
+		&nbsp;&nbsp;</font>
+		<font face="verdana" size="1"><a href="register.php?action=signup">Want to register?</a>
+	</font></td>
+</tr>
+<tr valign="top">
+	<td bgcolor="#233245"><font face="verdana" size="1"><b>Your Password:</b></font></td>
+	<td bgcolor="#233245"><font face="verdana" size="1"><input type="password" class="bginput" name="password" value="" size="25">
+		&nbsp;&nbsp;</font>
+		<font face="verdana" size="1"><a href="member.php?action=lostpw">Forgotten your password?</a>
+	</font></td>
+</tr>
+
+</table>
+
+<br>
+
+<center><font face="verdana" size="1">
+<input type="hidden" name="action" value="login">
+<input type="hidden" name="url" value="/forums/index.php">
+<input type="submit" class="bginput" value="Login!"></form>
+</font></center>
+
+<p><font face="verdana" size="1">The administrator may have required you to
+<a href="register.php?s=bdf8723781bd53f59189fdf31d0fcdba&action=signup">register</a> before you can view this page.
+</font></p></font></td>
+</tr>
+</table>
+</td></tr></table>
+
+<p align="center"><table cellpadding="0" cellspacing="0" border="0">
+<form action="forumdisplay.php" method="get"><tr><td>
+	<font face="verdana" size="1">
+	<input type="hidden" name="s" value="bdf8723781bd53f59189fdf31d0fcdba">
+	<input type="hidden" name="daysprune" value="">
+	<b>Forum Jump:</b><br>
+	<select name="forumid"
+	onchange="window.location=('forumdisplay.php?s=bdf8723781bd53f59189fdf31d0fcdba&daysprune=&forumid='+this.options[this.selectedIndex].value)">
+		<option value="-1" selected>Please select one:</option>
+		<option value="-1">--------------------</option>
+		<option value="pm" >Private Messages</option>
+		<option value="cp" >User Control Panel</option>
+		<option value="wol" >Who's Online</option>
+		<option value="search" >Search Forums</option>
+		<option value="home" >Forums Home</option>
+		<option value="-1">--------------------</option>
+		
+	</select><!-- go button -->
+<input type="image" src="images/infamous/go.gif" border="0" 
+align="absbottom">
+	</font>
+</td></tr></form>
+</table></p>
+
+	</td>
+</tr>
+</table>
+
+
+<table bgcolor="#152D47" width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+  <td>
+
+  </td>
+</tr>
+</table>
+<!-- /content area table -->
+</center>
+
+<p align="center">
+  <font face="verdana" size="1"><b>&lt; <a href="mailto:info@deathmisdealt.com">Contact Us</a> - <a href="http://deathmisdealt.com/">Death Misdealt Forums</a> - <a href="/vb/admin/">Administration</a>
+   <!-- - <a href="">Privacy Statement</a> --> &gt;</b></font>
+</p>
+
+<p align="center"><font face="verdana" size="1">
+<!-- Do not remove this copyright notice -->
+  Powered by: vBulletin Version 2.2.9<br>
+  Copyright &copy;2000 - 2002, Jelsoft Enterprises Limited.<br>
+<!-- Do not remove this copyright notice -->
+
+</font></p><br>
+
+<table align="center" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td width="200"><img src="images/infamous/leftb.gif" border="0"></td>
+
+<td align="center" background="images/infamous/catbgb.gif" width="1000"></td>
+
+<td width="200"><img src="images/infamous/rightb.gif" border="0"></td>
+</tr>
+</table>
+</td></tr>
+</table>
+
+</body>
+</html>

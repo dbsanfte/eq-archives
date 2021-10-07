@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - animated invintory class icon</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-31.html">Graphics modification help.</a> &gt; animated invintory class icon</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=2809">animated invintory class icon</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">abbaar</div><div class="date">10-09-2002, 06:07 PM</div></div><div class="posttext">How many frames can it be?¿<br />
+<br />
+<br />
+do you need to modify any xml or just create the tga files with the correct size and file name drop them in the dir and go?¿</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Earthscum</div><div class="date">10-09-2002, 07:52 PM</div></div><div class="posttext">ok, here's how it's done:<br />
+<br />
+You create your animation (however many frames you want) and paste them all together in one TGA file (remember the Alpha channel!)<br />
+<br />
+Now, to make the animation, you define the texture:<br />
+<br />
+	&lt;TextureInfo item = &quot;Skelly_Animation.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;512&lt;/CX&gt;<br />
+			&lt;CY&gt;1024&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;<br />
+<br />
+Then you define your frames:<br />
+<br />
+	&lt;Ui2DAnimation item = &quot;Skelly&quot;&gt;<br />
+		&lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;Skelly_Animation.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;4&lt;/X&gt;<br />
+				&lt;Y&gt;10&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;120&lt;/CX&gt;<br />
+				&lt;CY&gt;200&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+			&lt;Duration&gt;150&lt;/Duration&gt;<br />
+		&lt;/Frames&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;Skelly_Animation.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;132&lt;/X&gt;<br />
+				&lt;Y&gt;10&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;120&lt;/CX&gt;<br />
+				&lt;CY&gt;200&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+			&lt;Duration&gt;150&lt;/Duration&gt;<br />
+		&lt;/Frames&gt;<br />
+	&lt;/Ui2DAnimation&gt;<br />
+<br />
+  All the frames need to be within the same &lt;Ui2DAnimation&gt; tags. <br />
+The &lt;Duration&gt;1000&lt;/Duration&gt; is 1 second, 250 is 1/4 a second, etc etc.<br />
+If you forget the &lt;Cycle&gt;true&lt;/Cycle&gt; before listing your frames, it won't work. This is how you can use as many frames as you want.<br />
+<br />
+Next, you place the image:<br />
+<br />
+	&lt;StaticAnimation item= &quot;Skelly&quot;&gt;<br />
+		&lt;ScreenID&gt;Skelly&lt;/ScreenID&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;160&lt;/X&gt;<br />
+			&lt;Y&gt;40&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;120&lt;/CX&gt;<br />
+			&lt;CY&gt;200&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Animation&gt;Skelly&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;<br />
+<br />
+and don't forget to add:<br />
+<br />
+		&lt;Pieces&gt;Skelly&lt;/Pieces&gt;<br />
+ at the end.<br />
+<br />
+Pretty simple and straight forward  :-) Good luck!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Iluvatar</div><div class="date">10-10-2002, 01:04 AM</div></div><div class="posttext">You might get some trouble using the above declaration.<br />
+Basically (and even in detail) that &quot;how-to-do&quot; is nicely done, BUT you must not define the same name twice.<br />
+In the above example the UI2DAnimation item is called &quot;Skelly&quot; and the StaticAnimation item is called &quot;Skelly&quot; too.<br />
+Now, I'm not sure if the items in the &lt;pieces&gt; tags are called by their item name or their screen ID but I'd go safe and define different names every time...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Earthscum</div><div class="date">10-10-2002, 02:12 AM</div></div><div class="posttext">Actually, that is part of the code I actually wrote for my inventory window. I set my autoequip area transparency to true and overlayed it with the animation... no problems at all! Except that I used screenshots of a pet and tried to duplicate the swaggering effect and he looks more likle Stevie Wonder's corpse the way he moves, but oh well... I'll get around to fixing it some day, lol!<br />
+<br />
+It probably would be a better idea to do the item name (also &lt;pieces&gt;) as different name, ie. &quot;A_Skelly&quot;. But, as I said before, I don't have any errors from it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">faBBe</div><div class="date">10-25-2002, 12:30 AM</div></div><div class="posttext">You are probably going to be fine as long as you dont have names colliding in the same 'family'<br />
+<br />
+i.e. you can't have 2 UI2DAnimation's named 'skelly', but you can have a StaticAnimation and a UI2DANimation named 'skelly', each of those are of different types.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

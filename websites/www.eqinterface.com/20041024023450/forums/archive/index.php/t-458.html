@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Tutorial: How to make your own custom graphics</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-47.html">Tutorials &amp; Info.</a> &gt; <a href="f-49.html">Graphics Tutorials &amp; Info.</a> &gt; Tutorial: How to make your own custom graphics</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=458">Tutorial: How to make your own custom graphics</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-31-2002, 10:17 PM</div></div><div class="posttext">How to make my own graphics for EQUI<br />
+<br />
+Tools I need:<br />
+* text editor -OR- some application that you edit XML files with. I've heard XMLspy is a good program to use, but I can't afford it so I use notepad.<br />
+* graphics editor - You need a graphics editor that supports transparency and that can save to TARGA format.<br />
+<br />
+1) Start a new picture.<br />
+<br />
+ Make a new file whose dimensions are a power of 2. Valid image dimensions are:<br />
+<br />
+  128 x 128<br />
+    256 x 128<br />
+    256 x 256<br />
+    128 x 256<br />
+    512 x 1024<br />
+    2048 x 128<br />
+    2 x 2<br />
+<br />
+  Invalid image dimensions are:<br />
+<br />
+  100 x 200<br />
+    500 x 1024<br />
+    128 x 129<br />
+    1 x 1<br />
+<br />
+<br />
+(EDIT: I used to have it say &quot;multiple of 128&quot;, but I just realized that it was a power of 2. Thanks to Geddine for the correction.)<br />
+<br />
+When making the new image, make sure you start with a blank canvas, and not white or black or some other color. You want your canvas to start transparent, so that your pretty circle will show up in EQ as a circle and not an ugly circle with a square background.<br />
+<br />
+2) Draw.<br />
+<br />
+*Note: you can have more than one picture per image_file.tga. I have two, see?<br />
+<br />
+http://www.eqgui.com/misc/tutorial.gif<br />
+<br />
+Take note of their upper-left coordinates for LOCATION, and the width and length for SIZE. I have those pointed out in my pretty image file.<br />
+<br />
+When you save your file, you can save it as a 32-bit *.tga file and it will still work, EQ will just take away the colors if the user is playing at a lower color depth. Also, don't compress (don't save as *.rle)<br />
+<br />
+3) Time to play with code.<br />
+<br />
+If you didn't already, copy the files you wish to modify from the default folder into a directory in $everquest$\uifiles\, and save it under a name you will remember, like &quot;myprettyui&quot;<br />
+<br />
+Go to your directory which you named &quot;myprettyui&quot; or whatever you called it, and open the file EQUI_Animations.xml. You see alot of scary code. Look closer, it's in 2 sections. The first section is where you tell EQUI that you made a pretty new picture and you want to use it in EverQuest. Find the following part of code:<br />
+<br />
+<br />
+01  &lt;?xml version = &quot;1.0&quot;?&gt;<br />
+02  &lt;XML ID = &quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+03    &lt;Schema xmlns = &quot;EverQuestData&quot; xmlns:dt = &quot;EverQuestDataTypes&quot;/&gt;<br />
+04      &lt;TextureInfo item = &quot;CS_Buttons.bmp&quot;&gt;<br />
+05        &lt;Size&gt;<br />
+06          &lt;CX&gt;256&lt;/CX&gt;<br />
+07          &lt;CY&gt;256&lt;/CY&gt;<br />
+08        &lt;/Size&gt;<br />
+09      &lt;/TextureInfo&gt;<br />
+10      .<br />
+11      .<br />
+12      .<br />
+<br />
+<br />
+Somewhere between these TextureInfo declarations start a new TextureInfo item. Your file might look like this:<br />
+<br />
+01  &lt;?xml version = &quot;1.0&quot;?&gt;<br />
+02  &lt;XML ID = &quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+03    &lt;Schema xmlns = &quot;EverQuestData&quot; xmlns:dt = &quot;EverQuestDataTypes&quot;/&gt;<br />
+04      &lt;TextureInfo item = &quot;CS_Buttons.bmp&quot;&gt;<br />
+05        &lt;Size&gt;<br />
+06          &lt;CX&gt;256&lt;/CX&gt;<br />
+07          &lt;CY&gt;256&lt;/CY&gt;<br />
+08        &lt;/Size&gt;<br />
+09      &lt;/TextureInfo&gt;<br />
+10      &lt;TextureInfo item = &quot;sample.tga&quot;&gt;<br />
+11        &lt;Size&gt;<br />
+12          &lt;CX&gt;512&lt;/CX&gt;<br />
+13          &lt;CY&gt;128&lt;/CY&gt;<br />
+14        &lt;/Size&gt;<br />
+15      &lt;/TextureInfo&gt;<br />
+16      .<br />
+17      .<br />
+18      .<br />
+<br />
+<br />
+What this does is it tells EQUI &quot;Hey! I have a pretty picture file I want to use and it's called 'sample.tga', please load it when you load my pretty ui in EQ ok? tks!&quot;<br />
+<br />
+Okay, that's part 1 of coding. Time for part 2<br />
+<br />
+5) Play with code part 2<br />
+<br />
+Scroll down the file to where you start to see alot of Ui2DAnimation tags. Same with TextureInfo, make a new tag in between Ui2DAnimation declarations. (Personally, I like to just copy the one nearby then fill in my own parameters)<br />
+<br />
+So now you have your Ui2DAnimation declaration set up, let's fill in the values. You should have something that looks like this:<br />
+<br />
+<br />
+&lt;Ui2DAnimation item = &quot;A_VSBDownNormal&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;window_pieces01.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;10&lt;/X&gt;<br />
+      &lt;Y&gt;112&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;12&lt;/CX&gt;<br />
+      &lt;CY&gt;22&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+<br />
+You need to change the first line from where it says &quot;A_VSBDownNormal&quot; or whatever you copied to the interface piece you want to declare, like &quot;MyPrettyRedCircle&quot;. Now you have:<br />
+<br />
+&lt;Ui2DAnimation item = &quot;MyPrettyRedCircle&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;window_pieces01.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;10&lt;/X&gt;<br />
+      &lt;Y&gt;112&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;12&lt;/CX&gt;<br />
+      &lt;CY&gt;22&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+Skip the next 2 lines. Where it says &lt;Texture&gt;window_pieces01.tga&lt;/Texture&gt;, replace where it says &quot;window_pieces01.tga&quot; to &quot;sample.tga&quot; or whatever you named your file. Now you have:<br />
+<br />
+&lt;Ui2DAnimation item = &quot;MyPrettyRedCircle&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;sample.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;10&lt;/X&gt;<br />
+      &lt;Y&gt;112&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;12&lt;/CX&gt;<br />
+      &lt;CY&gt;22&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+Since we're declaring our pretty red circle here, we're gonna change the Location coordinates X and Y to the X and Y values in the picture, *NOT* where you want it to be on screen in the game. Let's change this to our location for our pretty red circle now, which is X = 50 and Y = 20. Now you have:<br />
+<br />
+&lt;Ui2DAnimation item = &quot;MyPrettyRedCircle&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;sample.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;50&lt;/X&gt;<br />
+      &lt;Y&gt;20&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;12&lt;/CX&gt;<br />
+      &lt;CY&gt;22&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+Next we fix the Size. Our pretty red circle is 70px high and 80px high. Set CX = 70 and CY = 80. Now we have:<br />
+<br />
+&lt;Ui2DAnimation item = &quot;MyPrettyRedCircle&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;sample.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;50&lt;/X&gt;<br />
+      &lt;Y&gt;20&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;70&lt;/CX&gt;<br />
+      &lt;CY&gt;80&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+For most graphics, this is where you stop. Leave the rest as it is, and you can use this picture in your windows, gauges, buttons, spell icons, etc., everything except the mouse cursor. If you're making a mouse cursor, you set the hotspot X and Y to whatever pixel it is inside the image that you want to set the point of the pointer to. I won't get into that, but you can experiment on your own.<br />
+<br />
+Now your graphic is accessible by saying &quot;MyPrettyRedCircle&quot;. But we have another pretty blue rectangle to put into the game, so we do this again:<br />
+<br />
+&lt;Ui2DAnimation item = &quot;MyPrettyBlueRectangle&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;sample.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;250&lt;/X&gt;<br />
+      &lt;Y&gt;20&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;70&lt;/CX&gt;<br />
+      &lt;CY&gt;40&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+(Here is the text of what you added might look like: click here to see (http://www.eqgui.com/misc/tuttext.txt)<br />
+<br />
+Now you have 2 Ui2DAnimation items that you added in, and 1 TextureInfo item which the Ui2DAnimation items draw their image from. Hooray for you! How do you use it?<br />
+<br />
+Wherevever you put in information for a graphic picture, you can use the item name, in our example MyPrettyRedCircle or MyPrettyBlueRectangle would be what you put in the field. Wherever you see A_..., you can replace that with your new graphic alias name. Just remember to set the height and width of your in-game picture to be what you want it to be, and it doesn't have to be the same as your image size. You can make a 12 x 12 image, and use that in a 500 x 500 picture in-game.<br />
+<br />
+The one thing to realize is that what you declare as graphics and what shows up in the game are almost completely different. That's another tutorial for another time... like tomorrow.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Demorgoth</div><div class="date">08-01-2002, 02:33 AM</div></div><div class="posttext">OK, I've got my custom .tga image, 768x256, transparency on alpha channel is fine. The problem I've got is that the image isn't showing correctly. <br />
+<br />
+I tell EQUI_Animations the the image is, say, 300x100 pixels, and what it seems to do is take a 400x100 piece and squash it into 300x100. I can't for the life of me see whay it's do that.<br />
+<br />
+Anyone else had anything simlar to this, or is it my fault somewhere? I'll be starting from scratch with clean code tday, just to re-try.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">08-01-2002, 02:44 AM</div></div><div class="posttext">That's strange, I've never had that happen. Can you post up the section of EQUI_Animations.xml that you edited, as well as the part in the .xml file where you view that image in-game? Maybe we can find what went wrong.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">08-01-2002, 03:00 AM</div></div><div class="posttext">The reason for the stretch is that 768 is not really a valid size for a file.  File size dimensions need to be a power of 2  eg. 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 5096 etc<br />
+<br />
+What is happening is EQ is stretching your image to a size it can use - namely 1024 wide.  Now your image is 400 pixels wide.  eg. 768/3*4 = 1024  so 300/3*4 = 400.<br />
+<br />
+<br />
+Hope this solves your problem.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nennayan</div><div class="date">08-01-2002, 06:42 AM</div></div><div class="posttext">Thanks a lot for posting this Psychogears!<br />
+<br />
+I've been slowly getting the hang of this, but now you've answered most, if not all of my questions. I think I'll be posting my new mod a lot sooner now, thanks to you!<br />
+<br />
+[EDIT: Forgot to mention that file sizes below 128x128 will also work if they are a power of 2. Just look at Scrollbar_Gutter.tga]<br />
+<br />
+And now for some gratuitous use of the dancing banana:<br />
+<br />
+<br />
+:nana: :nana: :nana: :nana: :nana: :nana: :nana: :nana: :nana: :nana:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">arantius</div><div class="date">08-01-2002, 07:35 AM</div></div><div class="posttext">A bit wordy for me, but hey someone might need that info.  Still had the few key bits I needed.  (Why would they ever restrict size like that... oh well.  And hehe I missed the first definition in animations.)<br />
+<br />
+Wouldn't have needed this if they didn't screw up the caching, but now, I have the blue line in the MIDDLE of my xp bar again! Cheer!<br />
+<br />
+Thanks for layin it all out there ! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jeremyf</div><div class="date">08-01-2002, 08:43 AM</div></div><div class="posttext">Great tutorial.  Thanks a lot<br />
+<br />
+Jez</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Demorgoth</div><div class="date">08-01-2002, 08:45 AM</div></div><div class="posttext">Thanks Gedd, that makes perfect sense. I didn't even know if numbers other than 256x256 would work, so took a flyer at a multiple of 256. Will try this when I get home, but am 99% sure it'll work. <br />
+<br />
+Thanks :D <br />
+<br />
+That's what I get for messing around in unknown territory hehe. Still, seem to be doing great guns for no programming background at all, not even html.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">08-01-2002, 01:46 PM</div></div><div class="posttext">Originally posted by arantius <br />
+(Why would they ever restrict size like that... oh well.  And hehe I missed the first definition in animations.)<br />
+<br />
+<br />
+Well... I'm going to take a stab at this, not sure if I'm right... <br />
+<br />
+Data in your computer is represented by bits, which are 0 and 1. numbers to 2 are 0 and 1, and can be represented by 1 bit. numbers to 4 are 0, 1, 2, 3, and are represented by 2 bits: 00, 01, 10, 11. Numbers to 8 are 0, 1, 2, 3, 4, 5, 6, 7, and are represented by 3 bits: 000, 001, 010, 011, 100, 101, 110, 111, and so on and so forth.<br />
+<br />
+If an image size other than a power of 2 is used, then it looks like the EQUI engine will just automagically scale your image to the next power of 2... in the case above, 768 gets scaled to 1024. Why they chose to do this I don't really know, but this way you can use all of the bits required to reference points in the picture. It takes 9 bits to store numbers to 512, from 0 to 511, and to reference numbers 512 and above you *need* 10 bits. 512 in binary is 1000000000, whereas 511 is 0111111111, or 111111111. The number 768 in binary is 1100000000.<br />
+<br />
+I suppose EQ wants pictures with sizes in multiples of 2, probably having something to do with the way it stores and references those image files in memory. If it doesn't have an image size that it likes, it will just scale it so it's compatible with whatever method they use to store the image files in mem. To reference points in the pic, it's 0 to (power of 2), and this way it uses all of the space allocated, I guess.<br />
+<br />
+Sorry if that was convoluted, I have a very dim picture of the way the images are stored and referenced in memory. :D<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">buzweaver</div><div class="date">08-01-2002, 02:42 PM</div></div><div class="posttext">Nicely done Psycho, I'm looking forward to the next lesson.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Demorgoth</div><div class="date">08-01-2002, 03:52 PM</div></div><div class="posttext">Yuppers, as suspected, Gedd nailed the problem for me. Increased the tga to 1024 x 256, and it worked like a charm. Windows are being beta-tested by my guild, but I'll post them in a week or so</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Statix</div><div class="date">08-01-2002, 05:08 PM</div></div><div class="posttext">awesome someone made this tutorial before me haha yay! =), yea it sucked before i figured out the powers of 2 crap when i was  making quartz because i had the UI already drawn out but eq was streching it all over.<br />
+<br />
+<br />
+Photoshop has this bug with saving alpha channels by the way, seems if you make an image and alpha chan at the same time and hit save it won't save the alpha.<br />
+<br />
+You have to make the image , save, then close it.<br />
+<br />
+Then you have to open the image again make the alpha channel, save, close.<br />
+<br />
+Then check to make sure it saved /ghetto photoshop :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Veirna</div><div class="date">08-01-2002, 05:55 PM</div></div><div class="posttext">ehhh whats the alpha channel for ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">08-01-2002, 06:18 PM</div></div><div class="posttext">no idea. :( But I'd like to know too, maybe I can use it.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Veirna</div><div class="date">08-01-2002, 06:31 PM</div></div><div class="posttext">ok got something i need elaborated on ...<br />
+<br />
+EQUI_Templates.xml -- point of this file ?<br />
+<br />
+i see &lt;DrawTemplate&gt; in a lot of the window.xml files.. and im guessing this is where we define the &quot;background image&quot; to use.. right ?<br />
+<br />
+i mean you explained how to set your own images to be made, but didnt exactly explain how to incorporate them into the interface ..<br />
+<br />
+am i on the right track ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sodorfo</div><div class="date">08-01-2002, 06:35 PM</div></div><div class="posttext">lol only thing i can figure out is the alpha channel is similar to a transparency map for the combined color channels... the lighter the pixel the more solid it is.. the darker, the more transparent... <br />
+<br />
+tried making a drawing on the background layer then switched to channels and added the alpha channel and did a gradient fill... switched back to the background layer and the image fades out gradually... pretty cool effect..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">external</div><div class="date">08-01-2002, 09:15 PM</div></div><div class="posttext">Ok a quick fix for the .tga problems some may be having with ps7.<br />
+This came from the Adobe user forums.<br />
+<br />
+<br />
+&quot;PS 7 no longer has alpha channel support with Targa files. It has been replaced by a transparency channel, which is the correct method according to the targa file specification. However, 3rd party software will recognize the transparency channel as a 'virtual' alpha channel. <br />
+<br />
+If your workflow requires you to have the alpha channel, you can replace Photoshop 7's Targa file format plug in with PS 6's Targa file format plug in, until a fix is released. <br />
+<br />
+The file is Targa.8BI and is located in the Photoshop folder&gt;Plug-Ins&gt;File Formats. <br />
+<br />
+It is rumoured that this behaviour will be changed to that of Version 6 in the next patch to Photoshop.&quot;<br />
+<br />
+only bad thing about this is not many people have access to ps6 in order to fix this, if they had only just bought ps7.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nennayan</div><div class="date">08-01-2002, 11:30 PM</div></div><div class="posttext">Originally posted by psychogears <br />
+no idea. :( But I'd like to know too, maybe I can use it.<br />
+<br />
+-TJ <br />
+<br />
+Based on the screenshots that you've posted, it looks like whatever program you use is automatically making an alpha channel.<br />
+<br />
+In Photoshop, I've been doing a lot of alterations to my alpha channels the hard way, just drawing in black and white. It's tedious but the end result looks better than what you get by just auto selecting the parts you want to be transparent then saving the selection as an alpha channel.<br />
+<br />
+For instance, If you change the alpha channel in wnd_bg_light_rock.tga to fully transparent, you can have transparent windows just like in the old interface. One thing I tried was just having a symbol with everything else transparent, but found it hard to read the chat window.<br />
+<br />
+I think it was a good idea for them to use alpha transparency, even if it was a pain to learn.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheRealDuuece</div><div class="date">08-02-2002, 09:55 PM</div></div><div class="posttext">I wanna play around and create my own UI but I currently do not have anyting that does tga format. Any suggestions where I can find a cheap/free graphic program?<br />
+<br />
+Also, I am pretty ignorant on any compter stuff in the last ten years so excuse me if I ask dumb quests. I would rather learn to fish then have someone fish for me and I appreciate any help I can get.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nennayan</div><div class="date">08-02-2002, 10:40 PM</div></div><div class="posttext">If you go to hotfiles.com and do a search for TGA, you'll find a couple cheap/free graphic programs. I dunno how good they are though.<br />
+<br />
+EDIT: Just wanted to add that you need a program which supports TGA alpha transparency, in other words an extra channel, similar to the RGB channels, which sets an opacity level for each pixel. TGA files without an alpha channel don't load in EQ properly. Thay appear totally transparent, in other words you can't see them.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xallaron</div><div class="date">08-03-2002, 04:36 PM</div></div><div class="posttext">Here's what I used to take what was taught that started this post and put it where ever I wanted it basically.<br />
+<br />
+	&lt;StaticAnimation item= &quot;UnityLogo&quot;&gt;<br />
+		&lt;ScreenID&gt;UnityLogo&lt;/ScreenID&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;7&lt;/X&gt;<br />
+			&lt;Y&gt;50&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;128&lt;/CX&gt;<br />
+			&lt;CY&gt;32&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Animation&gt;UnityLogo&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;<br />
+<br />
+<br />
+And of course don't forget to add this line along with all the other pieces which are at the bottom of the window file.<br />
+<br />
+		&lt;Pieces&gt;UnityLogo&lt;/Pieces&gt;<br />
+<br />
+<br />
+You must of course use your own location, size and item name...not UnityLogo :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bowler</div><div class="date">08-03-2002, 06:40 PM</div></div><div class="posttext">I tried replacing the shaman animation with a static picture put when I was done it had totally eliminated the animation and the spot where it used to be now just shows the background....oops any suggestions</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Avallach</div><div class="date">08-04-2002, 12:01 AM</div></div><div class="posttext">I have been playing with trying to create a different look for the titlebars.  Currently as you can see in my mod (under the &quot;released&quot; thread), I have been somewhat successful.  <br />
+<br />
+It seems however that you are married to the mask for the titlebar.  I have tried alot of different ideas, from creating my own titlebar template to altering the existing template to look at differnet graphics files.  My best success has the graphic I want but it is masked to the original rounded title bar style.  i.e. it is cropped to the dimensions of the rounded title bar.<br />
+<br />
+Anyone have any advise?<br />
+<br />
+Avallach</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xallaron</div><div class="date">08-04-2002, 02:17 AM</div></div><div class="posttext">You can't just replace that class animation with just anything, but if you did what this post in original about plus what I posted above to put a static pic anywhere you want you could put it over the animation and move the animation off the screen. There are several ways you can do it.<br />
+<br />
+Another way is to just make another animation to replace it like I did. Each class has 1 to 3 graphic files that would need to be replaced if you wanted to do this....for instance a monk has:<br />
+<br />
+monk01.tga<br />
+monk02.tga<br />
+<br />
+Both would have to be replaced in order for it to work or else you'd have to know how to make it so one didn't show up. Which is a bit involved<br />
+<br />
+Here's some links to what I did:<br />
+<br />
+My graphic is simply a guild logo and this is what both my monk files look like since all my logo does is twinkle it's easy to adapt for just 1 file or if 3 are needed.<br />
+<br />
+The Graphic I replaced my Class Animations with (http://home.mchsi.com/~hummel16/monk01.tga) <br />
+<br />
+It looks sort of like this gif animation but better since gifs only have 256 colors in it:<br />
+<br />
+Guild Logo to replace my class animation (http://home.mchsi.com/~hummel16/UnityChromeAni.gif) <br />
+<br />
+Here it is in my UI (http://home.mchsi.com/~hummel16/UI_Screen.jpg) <br />
+<br />
+Hope this helps!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bowler</div><div class="date">08-04-2002, 02:42 AM</div></div><div class="posttext">I tried replacing the animation file with a TGA that had a different static picture... it seems to ignore it and go with the default.  My static pic is 128 x 64 on a 256x256 transparency (sp).  The shaman class has only one file and I replaced it with this but it still defaults the shaman animation.  Do I have to do all of the first part of this post or am I correct in assuming I can do it in one step.  Also should I tile the image to match the number of frames in the original animation?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xallaron</div><div class="date">08-04-2002, 04:53 AM</div></div><div class="posttext">Tile would work.....each one of those graphics have several frames in them....so if you are just making one frame and there were 8 then you have a problem cause the program is telling it to look for all 8 frames.<br />
+<br />
+I took a look at the shammy tga file and it like the rest are 256 X256.....each frame is 64 wide, by 128 tall and there are 7 frames for the shaman. You can do 8 so you use up all the space on the 256 X 256 graphic if you want.....if it's only looking for 7 frames then it won't play the 8th. It will look static if you use the same graphic for each frame since there will be no changes.<br />
+<br />
+The easiest way for you to change that class animation is the way you are doing it but do it like the original graphic is and it will work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bowler</div><div class="date">08-04-2002, 11:01 AM</div></div><div class="posttext">Made 7 identical frames all 64x128 ... entered game did /loadskin.. then camped to desktop and came back.  When I got back the spot where my character animation should be just showed the granite background with no box outline or anything.  The class animation was just gone.  I wonder if my graphic editor cant do TGA correctly for this.. Im using Adobe Photoshop Elements?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xallaron</div><div class="date">08-04-2002, 12:34 PM</div></div><div class="posttext">How are you saving it.....32, or 24 or 16 bit. I believe when I saved mine I had to do it in 24 bit. Seems some stuff you can save in 32 bit and some you can't. Only thing I can think of is in 32bit the file size is too big. And if I remember right then when I saved in 32bit the picture wouldn't show either and this would happen in 16bit too.<br />
+<br />
+I'd try saving each way and I bet that fixes your problem :)<br />
+<br />
+Doh I posted this as new thread instead of reply...hehe</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bowler</div><div class="date">08-04-2002, 12:48 PM</div></div><div class="posttext">POW ....it worked .... saved it at 24bit and did just fine... thanks for your help<br />
+<br />
+/salute</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aesculap</div><div class="date">08-26-2002, 02:21 AM</div></div><div class="posttext">Originally posted by Veirna <br />
+ehhh whats the alpha channel for ? <br />
+Transparency methinks....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NightWolf</div><div class="date">08-26-2002, 02:12 PM</div></div><div class="posttext">Ok, let me explain the issue with the power of two.  Psycho was right about it being because of the bit translation but it serves a very good purpose.<br />
+<br />
+It is a basic game developement concept.  data that is stored in this sort of constriction can be a whole heck of a lot faster when running through the memory and CPU because of the way they read and write data.  If they allowed any size, the caching would be horrible, and the lovely lag fairy would kill us all.  <br />
+<br />
+Game programmers even take it as far as to write their lines of code so it fits this type of constraint (down to the number of characters).  Even if the few lines of code that they write take up a little more space, it will run a whole lot faster when processed by the CPU.<br />
+<br />
+So, it's not just that they want to inconvenience everyone, it's just that they would like their game to run well (and isn't that something that we all want? )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kiriani</div><div class="date">09-05-2002, 08:03 PM</div></div><div class="posttext">Call me stupid, call me in-experienced, call me what you will, but I am still having trouble figureing out exactly how to make graphics from scratch for EQ.<br />
+<br />
+I can, with some frustration as I am more skilled with pen and ink than with a mouse, create the graphics I want to use.  What I can't seem to do is set the transparency...or alpha channel as it seems to be referred to here.<br />
+<br />
+I am referring to all the black surrounding everything.  When I do the graphics, they end up being encased in a black border or such.<br />
+<br />
+The programs I have are MGI PhotoSuite III(sucks, the graphics are transparent and the black shows up in that one), PhotoShop 5, and PaintShopPro 7.<br />
+<br />
+How do I set the alphachannel in these with the Targa format? exactly?  I can't even see where I can do that in photoshop, but I might be missing something.<br />
+<br />
+This is the biggest thing holding back my re-skinning of the UI.  the xml part I have down for the most part, it's the graphics that are frustrating me.<br />
+<br />
+Thanks for the help in advance :)<br />
+<br />
+Kiriani</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cormanth</div><div class="date">09-10-2002, 10:31 AM</div></div><div class="posttext">If you have PaintShopPro 7, this is the easiest method I've found for making transparent images (using the Alpha Channel).<br />
+<br />
+http://www.eqgui.com/showthread.php?postid=8813#post8813<br />
+<br />
+-Cormanth</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kiriani</div><div class="date">09-10-2002, 12:07 PM</div></div><div class="posttext">Thanks much!  Haven't been reading here much due to constant server busy messages....can't wait till it's fixed :)  this is my fave message board these days :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Carthington</div><div class="date">09-10-2002, 02:08 PM</div></div><div class="posttext">I was starting to make a metal skin (all tga files) for the ui and I couldn't figure out why my background wouldn't work...so I was reading through this thread and what I did was I not only changed from 32 bit to 24 bit but I also REMOVED the alpha channel and bang my background works like a charm...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silence</div><div class="date">09-16-2002, 06:03 PM</div></div><div class="posttext">Okay, here's the deal on alpha transparancy. The cool thing about this is the fact that you can have partial transparency, as already noted. So, in addition to being able to define your graphic object piece (i.e. a 128x128 pix image inside your targa file), you can also set the transparency of the piece.<br />
+<br />
+For example, in Photoshop 5.0, here's a picure of the channels tab.<br />
+http://www.blueskynet.as/alo/everquest/alpha_ps5.jpg<br />
+<br />
+In addition to the RGB channels, the alpha channel sets the transparency for the image file, which in this case is the window_pieces02.tga file.<br />
+<br />
+Note the transparency for the spell bar window.<br />
+http://www.blueskynet.as/alo/everquest/alpha_window2.jpg<br />
+<br />
+If you edit the alpha channel and just put black where the spell icon background should be, then an empty spell bar would be completely transparent.<br />
+<br />
+Oh, and as a side note, the graphic for the spell icon that is in the foreground, the oval with a square cutout, is sort of special. In the interface, there is a color layer that is applied to it to give the spell icons their respective colors. So, for a red spell, spots that are white in the image will show up red and black spots will show up. The more white the pixel, the more red that shows up.Try it with a gradient sometime to see.<br />
+<br />
+Hope I made some sense.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bled Lifeblood</div><div class="date">10-15-2002, 09:44 AM</div></div><div class="posttext">Ok, I think I've got the hang of adding graphics using the animations.xml.  One thing I'm wondering is, it seems kind of a pain to play with that file as it constantly gets written over when adding new mods or pieces.  I've seen people do graphics without editing the animations file, do you just declare you texture and UI2d's in the file your working on in that case?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cormanth</div><div class="date">10-15-2002, 09:53 AM</div></div><div class="posttext">Indeed</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Odaku</div><div class="date">10-16-2002, 08:21 AM</div></div><div class="posttext">I am basically king tweak with others work...now I want to start my own....Unfortunately everytime I attempt this method My UI crashes to old default.  I'm gonna give it a try later tonight but if you could post the most frequent crash problems encountered I'd appreciate.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kirbol</div><div class="date">11-01-2002, 12:10 PM</div></div><div class="posttext">Alpha channels in photoshop are actually usable for a lot of things, probably the most common combined layer transparency.<br />
+<br />
+Basiclly, alpha channels are a masking technique.  Imagine an alpha channel as a cutout you are using to airbrush/spray paint through.  If you wanted a partial cutout you could use mesh or a patterned cutout etc etc.<br />
+<br />
+One technique that is really nice about alpha channels is the ability to make tranparent from one layer to another.  say you have 10 layers in an image and you wanted to cut through a shape from the top layer to the 6th layer down in one section, you could do that with an alpha channel rather than trying to clear the space on every layer from the top down.  I'm no pro so I wont go and try to teach the technique, but I think those of you who understand what Im saying can figure it out.<br />
+<br />
+The immediate application would be for 3d visual class animations... cut through the shadow knights helm to a blood red layer and shade it right and you can make it look pretty damn cool without going to some crazy headaches of clearing space.<br />
+<br />
+Kirbol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weawen</div><div class="date">11-22-2002, 07:14 PM</div></div><div class="posttext">wow that stuff is really good information..... I know I will be reading this thread like a million times b4 I get it right, but I understand whats going down.  one thing, I did not know is that alpha channel.  Wow that is really sweet.  I was using that channel to great the nifty rock look from the clouds,diffrent clouds, lighting effects combo, and when I loaded it up in EQ it as all transparnt, well all the black was and it kicked ass, I guess most of the really nifty things come from mistakes :nana:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">scott309</div><div class="date">12-08-2002, 02:26 PM</div></div><div class="posttext">Ok, two things. <br />
+<br />
+1. Can anyone tell me if it is possible to use the spell icons in place of the spell gem icons? I like the tking icons, but they are too small for a friend of mine to see. What I'm looking for is a way to make the icons in the cast window the same size as the icons in the spell book. I'm guessing it's not as easy as cut and paste the bigger icons (in the proper order of course) and rename the tga file. I know the bigger icons won't fit in the gem holders and this is fine with me. All I want is the spell icon and the spell name with a transparent background anyway. <br />
+<br />
+2. Can anyone point me in the direction of good (easy to use) graphics editor so I can play around with making my own?<br />
+<br />
+If anyone knows of a larger set of gem icons let me know. I've found a bigger set, but the icons are very grainy as tho someone just enlarged the smaller gem icons. If someone is willing to give this a try for me, what I'm looking for is the larger icons on the left and the spell name on the right with no border, no window name and a transparent background.<br />
+<br />
+Thanks<br />
+Scott</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aeluin</div><div class="date">12-08-2002, 08:12 PM</div></div><div class="posttext">I would love to do the same thing (change spell gems to spell icons) if it's possible but I haven't figured out how to do it.<br />
+<br />
+As far as good, easy-to-use graphics editor, I don't know of any widely available...Photoshop is by far the best, but also hideously expensive and not particularly user-friendly, Paintshop Pro is slightly less powerful, significantly cheaper, and about equally unfriendly, and the GIMP is as powerful as Photoshop, freeware, and as hopelessly difficult to use as you would expect from a program originally developed for UNIX.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gurrani</div><div class="date">12-13-2002, 06:40 AM</div></div><div class="posttext">Help! I am trying to make my own UI since I have not found one that I really like for my cleric characters. The problem I am having is that I am not sure how to create a file for the dimensions. Could you u plz help me with this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Billgobaginss</div><div class="date">12-14-2002, 06:28 AM</div></div><div class="posttext">Just wondering what program i should buy to create and edit  my own custome graphics that isnt 300 bucks lol, srry cant afford that much to play with a EQ GUI, perhaps i may even have somethign on my computer already that cna do this, thatd be even better  : ) . <br />
+<br />
+<br />
+K well if any of that made sense great if not srry its late and im falling asleep at keyboard here NIGHT ALL !!! thanks for any replies or /bonks for askign such stupid questions Lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kaenil Darkwolf</div><div class="date">12-21-2002, 01:03 AM</div></div><div class="posttext">Billgobaginss,<br />
+<br />
+I'm in the situation you are. I don't want to spend that kind of money on something like this. I found this program called Pixia(Strange name :/). It works well for me, and it's completely free.<br />
+<br />
+Click here for a link to the Pixia homepage (http://www.ab.wakwak.com/~knight/index.html) <br />
+<br />
+It may be a bit difficult to use at first but once you learn the basics it's pretty easy. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Scubby</div><div class="date">07-10-2003, 09:16 AM</div></div><div class="posttext">If you didn't already, copy the &quot;default&quot; directory in $everquest$\uifiles\, and save it under a name you will remember, like &quot;myprettyui&quot; <br />
+<br />
+Nice post!<br />
+<br />
+Just one comment. You no longer need to copy the ENTIRE default directory to your &quot;myprettyui&quot; directory. You ONLY need the file that you are changing. Several patches ago they fixed this problem and now the UI will first read from your &quot;loadskin&quot; directory and then from the default directory for any pieces not defined in your &quot;loadskin&quot; dir.<br />
+<br />
+This makes it very nice and a LOT less cluttered. You can place only the files you are changing in the &quot;myprettyui&quot; directory. This also makes it MUCH easier to deal with UI patch changes, as you no longer need to recopy items from the default to your myprettyui dir after the patch, they will have already been updated in the default dir.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SolsticemoonBB</div><div class="date">01-03-2004, 06:47 PM</div></div><div class="posttext">Thanks very much. The tutorial had exactly the information I needed. <br />
+http://home.comcast.net/~mjbogacki/Emoticons/worship.gif <br />
+-sols :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koushirou</div><div class="date">01-30-2004, 07:49 PM</div></div><div class="posttext">If I'm using Photoshop 5.0, how do I find out the coordinates and lengths and such for the graphic?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wingbane</div><div class="date">04-04-2004, 11:35 PM</div></div><div class="posttext">To find the size of an image in any photoshop, i think since 1.0 or 2.0, its under the image menu, under size. You might also be able to click on File menu, info i think, but 7.0 only has a menu for you to enter information. It no longer shows anything about the image. I beleive in 5.0 it will have a menu pop up at that point, as if you wanted to change the size, and you'll need to switch it to pixels, instead of inches, the same way 7.0 and 6.0 both default unless you change them.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sylphan</div><div class="date">07-08-2004, 09:45 PM</div></div><div class="posttext">Pixia doesn't seem to do Targa files, so that didn't help me much.  I have Gimp installed but find it very difficult to use.<br />
+<br />
+But I found an editor today called Project Dogwaffle, apparently through a reference from this message board.  Version 1.2 is the free version, and it has a bunch of alpha-channel features (and even an alpha-channel toolbar) that make editing transparency rather easy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">scaevola</div><div class="date">09-15-2004, 03:54 PM</div></div><div class="posttext">How do you find the pixel locs for graphics in photoshop?  Nothing I have found has been able to discern them so i can add them to the coding part... which I'm still unclear about..<br />
+<br />
+Using photoshop 6 or 7?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Enchasze</div><div class="date">09-20-2004, 09:53 AM</div></div><div class="posttext">TheRealDuuece, and others asking:<br />
+<br />
+I started playing with graphics and making sigs, now moving to graphics and playing with UI's (none yet ) but a fairly inexpensive program I use is from Serif, PhotoPlus............they used to have a free trial D/L to see how you like it......<br />
+<br />
+Set preferences to background = transparent, and work from there.<br />
+<br />
+Serif (http://www.serif.com/photoplus/photoplus9/) <br />
+<br />
+Hope this is helpful,</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Player Window mod is sloshy under Vert 2.6e</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-13.html">General Discussion</a> &gt; <a href="f-16.html">Help ! ? ! ?</a> &gt; Player Window mod is sloshy under Vert 2.6e</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=10341">Player Window mod is sloshy under Vert 2.6e</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">xeti</div><div class="date">09-20-2003, 02:24 AM</div></div><div class="posttext">I wish I could understand XML code, but it still escapes me.<br />
+<br />
+I'm wondering if I could get one of you 'experts' with Vert to figure out why, when this XML file is placed into my uifile folder, the entire interface goes 'sloshy'.  <br />
+<br />
+I've included the original download (back from Sept 01) that worked just fine all the way up to Vert 2.5, but on the 2.6 version something went awry.  (symptom: the window looks similar, but not identical to this... there is a graphic element with Fkey labels to the left that is no longer present on 2.6)<br />
+<br />
+I've included in the zip file (attached) a picture of what this mod displayed on 2.5, and what it looks like on 2.6, along with the offending XML code.  (For us pet classes it created a separate WIDE bar for your pets health.)<br />
+<br />
+I did my best to search for an update to this window, but I couldn't seem to find one.<br />
+<br />
+Thanks for having a look,<br />
+X.<br />
+<br />
+(Sorry, I think I put this post in the wrong forum... please move it to where it is appropriate!! :()</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">09-20-2003, 02:40 AM</div></div><div class="posttext">Could you post your uierrors.txt when you have this player window loaded?<br />
+<br />
+Do you mean sloshy as in slow?  Possible there is a missing graphics file resulting in your uierror.txt getting filled with millions of errors. So check the file size of your uierrors.txt before you post it here. Make sure its under 1mb.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xeti</div><div class="date">09-20-2003, 11:45 PM</div></div><div class="posttext">I did check UIErrors...  er... at least I thought I had.<br />
+<br />
+When I first looked, it wasn't filling up... but it was on second look.  :rolleyes: <br />
+<br />
+I've enclosed the UIErrors, trimmed to where the point it starts repeating the same line over and over.  Looks like a file is missing, but its not telling me which file?? :)<br />
+<br />
+By sloshy, I guess I mean laggy.... Stop moving forward and your character looks like it takes another three steps forward.... moving your mouse and trying to target something requires you to move your mouse slowly, otherwise you overshoot your target.<br />
+<br />
+X.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xerphanis</div><div class="date">09-30-2003, 11:32 PM</div></div><div class="posttext">I'm also having this problem.<br />
+<br />
+Specifically, it occurs when I downloaded the playerwindow with an extra bar for pet HP. When adding the playerwindow.xml file into the UI folder, the UI instantly becomes laggy, and the graphics element as described by the original poster is missing.<br />
+<br />
+Any word on a possible fix?<br />
+<br />
+<br />
+Thanks,<br />
+<br />
+Xerphanix<br />
+Arch Convoker of Brell Serilis</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">garrik</div><div class="date">10-01-2003, 06:17 AM</div></div><div class="posttext">[Sat Sep 20 22:35:25 2003] Warning: file UIFiles\vert\ not found in directory UIFiles\vert\.  Attempting to use file from Default skin. <br />
+<br />
+Here is your problem, its seraching for a file called &quot; &quot; - Which naturally doesnt exist and it creates a loop - There must be an error in the code for the playerwindow.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Elindel</div><div class="date">10-01-2003, 02:42 PM</div></div><div class="posttext">Just a cursory glance at the file leads me to think this may be your problem.  It's an animation item with a location and size specified, but no file in which to look.  <br />
+<br />
+	&lt;StaticAnimation item = &quot;PW_V_bar&quot;&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;1&lt;/X&gt;<br />
+			&lt;Y&gt;1&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;14&lt;/CX&gt;<br />
+			&lt;CY&gt;90&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Animation&gt;PW_V_bar_image&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;<br />
+<br />
+	&lt;StaticAnimation item = &quot;PW_V_barblack&quot;&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;16&lt;/CX&gt;<br />
+			&lt;CY&gt;90&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Animation&gt;Blackbox&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lanolar</div><div class="date">10-02-2003, 07:58 PM</div></div><div class="posttext">I am getting the same UIError log message but I dont have the same problem with my health bars as this user is so I dont know where to even begin to look /sigh<br />
+<br />
+<br />
+[Thu Oct 02 18:17:30 2003] Warning: file UIFiles\vert26ocean\ not found in directory UIFiles\vert26ocean\.  Attempting to use file from Default skin.<br />
+[Thu Oct 02 18:17:30 2003] Warning: file UIFiles\vert26ocean\ not found in directory UIFiles\vert26ocean\.  Attempting to use file from Default skin.<br />
+[Thu Oct 02 18:17:30 2003] Warning: file UIFiles\vert26ocean\ not found in directory UIFiles\vert26ocean\.  Attempting to use file from Default skin.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xerphanis</div><div class="date">10-08-2003, 12:37 PM</div></div><div class="posttext">Quick bump.<br />
+<br />
+It seems that the missing file is the case? Can anyone XML savvy help us with a fix for this somehow?<br />
+<br />
+<br />
+Thanks<br />
+<br />
+Xerphanis<br />
+Arch Convoker of Brell Serilis</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kudane</div><div class="date">10-08-2003, 02:06 PM</div></div><div class="posttext">if your adding a fill that requires you to over-write the EQUI_Animations.xml file, your going to have SERIOUS issues.. <br />
+<br />
+Vert uses a HEAVILY modified Animations file, and just over-writing that will cause serious problems.<br />
+<br />
+Second, why not email the author of the playerwindow your trying to add and ask them to give you just what you need to change in the Animations file to make it work.. then the data they send you could be looked at to see where any errors lie.<br />
+<br />
+Lastly,<br />
+<br />
+Sokol has a long target bar, if you ask real nice he might make a pet bar to match.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Talyns</div><div class="date">10-08-2003, 03:03 PM</div></div><div class="posttext">The problem is:  <br />
+<br />
+In vert 2.6 Window_pieces06.tga and window_pieces07.tga were renamed to solwindow_pieces06.tga and solwindow_pieces07.. <br />
+<br />
+That player window has Ui2DAnimation items with Window_Pieces06.tga and 07 as the textures..<br />
+<br />
+EQ's looking for a  TextureInfo item in the EQUI_Animations.xml that matches Window_Pieces06 and 07..  That texture info item is not there so it creates that vague warning..<br />
+<br />
+I changed all the Window_Pieces to solwindow_pieces in the attached file.. I haven't been able to test it.. But it should clear up the issue..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xerphanis</div><div class="date">10-08-2003, 11:36 PM</div></div><div class="posttext">Talyns!<br />
+<br />
+That worked perfectly. Tested and verified!<br />
+<br />
+<br />
+Thanks alot for the fix! It was driving me crazy.<br />
+<br />
+<br />
+Xerphanis<br />
+Arch Convoker of Brell Serilis</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

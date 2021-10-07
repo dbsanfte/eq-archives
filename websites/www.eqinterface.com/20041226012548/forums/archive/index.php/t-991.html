@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - EQUI_Animations and other non-window files</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-13.html">General Discussion</a> &gt; <a href="f-22.html">Request</a> &gt; EQUI_Animations and other non-window files</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=991">EQUI_Animations and other non-window files</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Wolfran</div><div class="date">08-14-2002, 04:46 PM</div></div><div class="posttext">Please, modders:<br />
+<br />
+Stop including modified EQUI_Animations.xml files in your mods.  If you are adding graphics information to a specific window, define the graphics at the top of that window's file.  If you are changing definitions that are already in the EQUI_Animations.xml file, also put those in your modded window's file.<br />
+<br />
+The Animations.xml file is loaded up before any window definition files.  If there is duplicated but different info within the individual window files loaded later, it will overwrite info found in the Animation.xml file.<br />
+<br />
+<br />
+Not making changes to the EQUI_Animations.xml file will do a few things:<br />
+<br />
+1.) Allow your mod to coexist with any other mod without the user having to make extensive changes to the code.<br />
+2.) Allow your mod to survive most changes made by Verant during this Beta test process.<br />
+3.) Make your download files smaller.<br />
+<br />
+<br />
+Thanks :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wolfran</div><div class="date">08-15-2002, 03:16 AM</div></div><div class="posttext">yeah...I was right the first time...mostly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tellgar</div><div class="date">08-15-2002, 03:44 AM</div></div><div class="posttext">Indeed, though it was a nice thought.<br />
+I imagine eventually it will all get smoothed out and hopefully we'll have an end product that is more modular.<br />
+<br />
+Of course, this is EverPatch we are talking about, but we can hope!  ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wolfran</div><div class="date">08-15-2002, 05:06 AM</div></div><div class="posttext">Disregard my disregard.<br />
+<br />
+I'm fooling around with things and assumed Verant messed something up since stuff didn't work...nice ego I have :p.  In any case, I have Geddine's spell bar, Asmyr's buff box, and several other changes working with absolutely no changes to the EQUI_Animations.xml file.  Yummy.<br />
+<br />
+What I had done to break everything:  Deleted the &lt;texture&gt; definitions in each window file.  The Ui2dAnimations were loading, but the files they referred to were never loaded...<br />
+<br />
+<br />
+1 problem with my initial post:  You can't redefine textures or Ui2DAnimations in your specific window file that are already defined in the animations file.  /loadskin fails with an error &quot;duplicate items.&quot;  This fact lead to a problem with Asmyr's buff box...<br />
+<br />
+I thought everything was fixed.  After getting the &quot;duplicate item&quot; error due to my attempt to redefine &lt;Ui2dAnimation item=&quot;(Blue/Red)IconBackground&quot;&gt;, I renamed them to (Blue/Red)LabelBackground.  The mod loaded up without error, but the buffbox was displaying the wrong images.  Instead of the (Blue/Red)LabelBackgrounds I defined in the EQUI_BuffWindow.xml file from the buffbttn.bmp texture file that Asmyr includes, it was loading up the default definitions ((Blue/Red)IconBackground) from the EQUI_Animations.xml file.  I double checked that I had changed the buff buttons themselves to reflect the &quot;Icon&quot; to &quot;Label&quot; name change, and I had. Conclusion: Buff buttons are hard coded to pull the image defined in (Blue/Red)IconBackground for the buff buttons, no matter how those buttons are defined in the BuffWindow.xml file.<br />
+<br />
+If you understood that, or care, I've sent a request to the developers to remove that particular hard-coding, as its really not necessary.<br />
+<br />
+<br />
+In any case, my original post still stands for the most part.  Most new texture and animation definitions can and should be placed in the window files they are used it, rather than in the animations.xml file.  I also hope Verant provides a little more modularity before freezing their code at the end of the beta test.  Would be a lot more convenient for modders and end-users alike.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">arantius</div><div class="date">08-15-2002, 12:46 PM</div></div><div class="posttext">I agree with the original poster in theory.<br />
+<br />
+It would be much nicer for me if my mod did not change the animations.xml .  Unfortunately I have to change the animations.xml to accomplish a few of the things that I am doing.<br />
+<br />
+One, Geddine's buff box.  Re-defined the red/blue buff background.  Two, gauges.  Re-defined the graphics to new ones I drew to look like the old style blue-bar-down-the-middle.<br />
+<br />
+I have other graphics that I added straight into the appropriate window .xml, but this only works for new graphics.  Dunna work for re-defining existing ones, so we're stuck in a rut.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stregar</div><div class="date">08-15-2002, 03:26 PM</div></div><div class="posttext">Do like Thomus did.<br />
+<br />
+If you edit the Animations file, post the CODE ( in a quote ) for the addition you made, and instruct the user to just paste it the file right above   &lt;/XML&gt;  in the animations XML file.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saoshen</div><div class="date">08-15-2002, 03:42 PM</div></div><div class="posttext">You can include new animation info within your modded windows xml. It just can not be named the same as any other animations within the animation xml or any other modded windows..<br />
+<br />
+Just make your animations names unique, and you should not have a problem...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stregar</div><div class="date">08-15-2002, 03:51 PM</div></div><div class="posttext">^^ or that =)<br />
+<br />
+<br />
+Attached is an example of what Thomus did.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafoo</div><div class="date">08-15-2002, 04:07 PM</div></div><div class="posttext">Something that is yet to be tried and testing is putting your animation definations in a seprate xml file then haveing it included in teh EQUI.xml file, this may be a possibile solution as it would allow mod writers to keep there mods independant and not but horribly wrecked when VT decide to change something in animations ... will give this a try later ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stregar</div><div class="date">08-15-2002, 04:09 PM</div></div><div class="posttext">You talking about creating completely new XML files to store the custom data, then just be included into the EQUI.XML file?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafoo</div><div class="date">08-15-2002, 08:01 PM</div></div><div class="posttext">if it does work it will greatly increase the cross patch compatability and the easy ability to mix and match mods</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

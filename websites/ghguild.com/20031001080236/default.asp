@@ -1,0 +1,264 @@
+
+<html><title>Grey Hawke</title>
+<link rel="stylesheet" href="forum/forumcss.asp">
+<body bgcolor="#004580" text="#000000" link="#333333" vlink="#333333" alink="#990000">
+<table width="90%" border="1" align="center" bordercolor="004580" bgcolor="dedede">
+  <tr> 
+    <td><p>&nbsp;</p>
+      <p align="center"><a href="http://ghguild.com/forum"><img src="Images/GH_Banner.jpg" width="650" height="92" align="middle"></a><br>
+        <font size="-2" face="Verdana, Arial, Helvetica, sans-serif">an everquest 
+        guild on the Karana server</font></p>
+      <p align="center"><a href="http://ghguild.com/forum"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Grey 
+        Hawke Forums</font></a> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif">&#8250; 
+        <a href="cconduct.asp">Code of Conduct</a> &#8250; <a href="links.asp">Links</a> 
+        &#8250; <font color="#999999">Member Table</font> &#8250; <a href="http://ghguild.com/loc">Software</a> 
+        &#8250; <a href="contact.asp">Contact Us</a></font></p>
+      <hr align="center" width="75%" size="1" noshade>
+      <p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Current 
+       
+ Grey Hawke News</strong></font></p>
+      <div align="center"> 
+        <table width="95%" border="1" align="center" bordercolor="#004580">
+          
+          <tr> 
+            <td bgcolor="#0075cc"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>MSP hot under the collar                                                                                                                                                                                                                                       </strong><br>
+              <font size="-2">Posted by:Mr. Smartypants               </font> </font><font size="-2" face="Verdana, Arial, Helvetica, sans-serif">on:9/26/2003 at:8:05:35 PM <nbsp><nbsp> PST</font></td>
+          </tr>
+          <tr> 
+            <td bgcolor="#e6e6e6"><p><font face="Verdana" size="2">So you want to STEAL a god.<br> 
+<br> 
+Paper Tiger vs. Barney (again...) <br> 
+<br> 
+In this corner, <a href="http://ne.ghguild.com/">Barney!</a> He’s cute and cuddly and has a huge cock. He isn’t the fastest dinosaur in the world, sure, but at least he is reliable. Barney is big purple guy who admittedly takes the ethical high road rather than kick someone in the nuts or cheat someone out of a well deserved reward. Sure, sometimes pride has to be swallowed when you choose this path, but swallowing pride sure beats having to get by in the world being a completely unethical sociopath. <br> 
+<br> 
+Sure, Barney can be an asshole sometimes, we all have our bad days. But at least Barney doesn’t ask people to do things like exclude other guilds from cross flagging. Or telling people “You gave up the right to talk to me when you damaged my fragile ego and didn’t kiss my ass, because I am not smart enough to hold a conversation when I know I’m completely in the wrong. I will just gloat about getting away with my petty tactics, and pretend I am very clever.” <br> 
+<br> 
+Anyway, I digress…<br> 
+<br> 
+In the other corner, Paper Tiger! Paper Tiger is an absolute wacko. This silly broad has so few social skills that most people I know wonder if she has to pay people to be her friend. Loyal only to herself and any other social misfit that will feed her fragile ego (never ever talk directly to her or you will see what I mean… she will absolutely fucking freak out if you ask her something so much as ‘how are you doing?’ unless you talk to her in an ingratiatingly sweet manner, and even then you are on thin ice with this silly bitch). <br> 
+<br> 
+Paper Tiger does whatever it takes to win, even if that means lying, cheating, and stealing. She is the type of person that instigates trouble and publicly approves of her acquaintances doing things like…ohhhh….sitting a druid at the back of a raid. Or waking the Sleeper. Or lying to a GM <br><img src="http://ghguild.com/forum/upfiles/331/Zx69794.jpg"><br> to hop past a guild AT Xegony and taking over 3 hours to even get into the area because a complete lack of competence prevents doing anything in a timely manner. You know, that kind of thing. <br> 
+<br> 
+So who will win this battle of wits? Obviously not the halfwit Paper Tiger! Why, her guild goes through more name changes than a boy band goes through condoms and preteen girls! Talk about your ego and stability issues! It stuns me how someone can be a sociopath in an environment that is based on a social structure. Absolutely boggles my mind.<br> 
+<br> 
+Barney, on the other hand, has been around a long time…he’s a dinosaur after all. Slow, sure, but methodically and ethically wins in the end. HUGS TO YOU ALL! I LIKE YOU! YOU LIKE ME! WE ARE FUCKING FAMILY! Hey, losing out on a kill sure beats BEING a loser your whole life. <br> 
+<br> 
+Winner: Barney</font>   </td>
+          </tr>
+          <tr> 
+            <td bgcolor="#999999">&nbsp;</td>
+          </tr>
+          
+          <tr> 
+            <td bgcolor="#0075cc"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Are you excited yet?                                                                                                                                                                                                                                           </strong><br>
+              <font size="-2">Posted by:Mister Smarty Pants & Croso   </font> </font><font size="-2" face="Verdana, Arial, Helvetica, sans-serif">on:8/12/2003 at:6:43:19 PM <nbsp><nbsp> PST</font></td>
+          </tr>
+          <tr> 
+            <td bgcolor="#e6e6e6">
+<p><font face="Verdana" size="2">So you want to kill a god. </font></p>
+<p><font face="Verdana" size="2"><br>
+<img border="0" src="images\Fennin.jpg" width="991" height="321"><br>
+&nbsp;</font></p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="780" id="AutoNumber1">
+  <tr>
+    <td><font size="2">Well another big target has fallen to Grey Hawke (our 
+    motto: “Be the turtle, not the hare.”). A fantastic
+    <a href="http://dictionary.reference.com/search?q=flawless" target="_blank">FLAWLESS</a> 
+    victory killing Fennin Ro, The Tyrant of Fire on our second try. I would 
+    like to point out a few people that really made this (and other raids) work 
+    so well. <br>
+    <br>
+    First, Mookus Dinglehopper. Also known as “He Who Rarely Reads” by the 
+    officers in Grey Hawke. For as much of a pain as this guy can be, he is a 
+    fucking pit bull at leading raids. He sinks his teeth in, and simply will 
+    not let go. <br>
+    <br>
+    Next, our tanks. Keithh Strongsmell, Baladinn Bigass, Remf Da Trollop, 
+    Kurghann Freakhead, and Twinpeaks Bigtits, Croso Wondernuts, Siid Everdead, 
+    Nlocnil Lincoln, and Mongo Boogerknuckle. These guys are amazing at what 
+    they do. I have no idea what they do, really, but they are amazing at it. 
+    Good job. <br>
+    <br>
+    Slowers! You know who you are! I find it really…. dumb… that you would do 
+    the <a href="http://www.encuentro2000.org/crazy.jpg" target="_blank">crazy</a> shit you do 
+    to slow and malo a mob, but as the old saying goes “better you than me”. 
+    Excellent. <br>
+    <br>
+    Clerics. When you aren’t AFK healing
+    <a href="http://www.thisislancashire.co.uk/lancashire/pc_wallpaper/animal/puppies.jpg" target="_blank">
+    puppies</a> or whatever it is that you do, you guys (and gals) kick ass. 
+    Fennin Ro healing was nearly flawless. I say “nearly flawless” because if I 
+    said “flawless” I would get about 30 emails explaining why it wasn’t 
+    flawless, and there is just nothing worse than listening to healers ramble 
+    on about the differences in “<a href="http://lucy.fnord.net/spell.html?id=13" target="_blank">Complete 
+    Heal</a>” vs “Sorta Complete but not Totally Heal” or whatever. I usually 
+    delete cleric emails as fast as Viagra or “Grow your Penis 9 inches” emails. 
+    I already HAVE a 9 inch penis, and I don’t really care about the fancy 
+    graphs showing me the differences in heals when you have the Golden Dildo of 
+    Antioch equipped. <br>
+    <br>
+    Monks. Way to pull. Way to die. Freaks. <br>
+    <br>
+    Anyway, after all that was accomplished, you would say to yourself “Mr. 
+    Smartypants, why would you have anything to bitch about? Things went so 
+    smoothly!” And as usual you would be completely
+    <a href="http://www.signslanguage.com/wrong.jpg" target="_blank">wrong</a>. So what could be 
+    so wrong about such a wonderful victory? Well... &nbsp;</font><p><font size="2">
+    As much as we have tried to get along with and help this group of
+    <a href="http://www.dltk-kids.com/animals/image/s/tigers.jpg" target="_blank">paper tigers</a>, 
+    they still find it necessary to send little spies like an
+    <a href="http://www.playerauctions.com/listings/index.cfm?category=1008760196" target="_blank">
+    Ebay</a>ed druid and a recently returned rogue (welcome back! how was it 
+    being <a href="http://pics.drugstore.com/prodimg/74362/200.jpg" target="_blank">banned</a>?) 
+    to watch our tactics. This is sad. I mean, sitting a druid right IN our camp 
+    where a train could be caused isn't exactly a brilliant idea. Neither is 
+    gathering your entire guild less than 1/3 a zone away and doing
+    <a href="http://ghguild.com/forum/upfiles/smiley/jerkit.gif" target="_blank">NOTHING</a> for 
+    the three hours an event may take in anticipation of a failure. Whoever came 
+    up with that idea needs to have her estrogen levels checked. Seriously. 
+    That's what we call <a href="http://www.suck.com/daily/97/02/05/l.gif" target="_blank">
+    INSECURITY</a>. <br>
+    <br>
+    GH does not now, and never will condone such actions against another guild. 
+    GH does not condone
+    <a href="http://www.pitt.edu/~nal7/randomness/cockblocking.html" target="_blank">
+    cockblocking</a>, griefing, script blowing, or BS tactics of /petitioning 
+    for a forced /random on a spawn. It would be grounds for a guild removal, 
+    not applauded. We take our relationships with other guilds very seriously. 
+    We want to work with other guilds, and usually will backflag people unless 
+    there are extenuating circumstances. If we can only use 20 of 72 flags, why 
+    would we care if someone from another guild gets them? That is, unless you 
+    are a complete fool who would purposely blow the chances of that happening 
+    with things like...ohhhh.... sending people to spy on a raid... you know, 
+    that old bit. <br>
+    <br>
+    I guess a better idea would be to politely talk to a GH representative and 
+    work something out rather than act like a bunch of overbearing
+    <a href="http://homepage.usask.ca/~tep948/e-tards/geek41.jpg" target="_blank">tards</a>. 
+    NOTE: If your estrogen is peaking and you can't control your anger then 
+    perhaps you need to find a better guild representative. It does nothing to 
+    further a relationship with our guild and creates general feeling of mutual 
+    mistrust, rather than let both of our guilds benefit. But I guess if that's 
+    the type of person you want to be known as, and could care less how it 
+    affects your guildmates, what can be done? &nbsp;</font></p>
+    <p>&nbsp;</td>
+  </tr>
+</table>
+<p><font face="Verdana" size="2">Croso's note: Thanks MSP, I didn't have to 
+proofread (just linkify) your copy. Always makes me cry.</font></p>
+<p><font face="Verdana" size="2">On to the pics:</font></p>
+<p><font face="Verdana" size="2">2x:<br>
+<img border="0" src="images\earring.jpg" width="659" height="277"></font></p>
+<p><font face="Verdana" size="2">The jubilee:</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\frokillchan.gif" width="448" height="328">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="images\Marley.gif" width="323" height="15"></font></p>
+<p><font face="Verdana" size="2">The uber secondary/range item:</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\Shield.jpg" width="300" height="357">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="images\siid.gif" width="326" height="15"></font></p>
+<p>&nbsp;</p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\gang.jpg" width="938" height="411"></font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\froshot2.jpg" width="922" height="691"></font></p>
+<p>&nbsp;</p>
+<p><font face="Verdana" size="2">And, to roll this all into one huge update, 
+Pictures that should have been posted already.</font></p>
+<p><font face="Verdana" size="2">A very clean fight again on the RZTW script</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\train.jpg" width="673" height="332"></font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\Rallos.jpg" width="657" height="466"></font></p>
+<p><font face="Verdana" size="2">Uber props for Remf:</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\Remf.jpg" width="420" height="185"></font></p>
+<p><font face="Verdana" size="2">The epitome of flamers downed again, except for 
+maybe Fennin Ro :)</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\SolRo.jpg" width="487" height="370"></font></p>
+<p><font face="Verdana" size="2">AHR:</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\ahrshot.jpg" width="640" height="480"></font></p>
+<p>&nbsp;</p>
+<p><font face="Verdana" size="2">And the final miscellaneous commentary:</font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\Aramus.gif" width="257" height="14"></font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\Hammeron.gif" width="373" height="28"></font></p>
+<p><font face="Verdana" size="2">
+<img border="0" src="images\Fenri.gif" width="360" height="14"></font></p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="780" id="AutoNumber2">
+  <tr>
+    <td><font face="Verdana" size="2">In other news, GH killed Behemoth for the 
+    first time. Believe it was the third attempt, early in PoP we attempted him 
+    and got pwned. Thanks again to all the guilds who helped most of our members 
+    get the Behemoth flag.&nbsp; Anyways, a rather shocking kill in about 15 
+    seconds from engage. I don't think anyone bothered to take screenshots, 
+    because that would be like taking screenshots of a trash mob you just 
+    cleared.</font></td>
+  </tr>
+</table>
+</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#999999">&nbsp;</td>
+          </tr>
+          
+          <tr> 
+            <td bgcolor="#0075cc"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Good things come to those who wait.                                                                                                                                                                                                                            </strong><br>
+              <font size="-2">Posted by:Croso                         </font> </font><font size="-2" face="Verdana, Arial, Helvetica, sans-serif">on:8/11/2003 at:11:48:32 PM <nbsp><nbsp> PST</font></td>
+          </tr>
+          <tr> 
+            <td bgcolor="#e6e6e6"><br>
+<center>Tuesday Evening, PST.<br><br></td>
+          </tr>
+          <tr> 
+            <td bgcolor="#999999">&nbsp;</td>
+          </tr>
+          
+          <tr> 
+            <td nowrap bgcolor="#0075cc"> 
+              <div align="center"><font size="-2" face="Verdana, Arial, Helvetica, sans-serif">displaying 
+                news articles <nbsp>1</font><font size="-2" face="Verdana, Arial, Helvetica, sans-serif"><nbsp>through<nbsp>3. there are a total of <nbsp>27 <nbsp>articles available.</font><br>
+                <font size="-2" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;<a href="/default.asp?offset=0">First</a>&nbsp;&nbsp;<a href="/default.asp?offset=0">Previous</a>&nbsp;&nbsp;<a href="/default.asp?offset=3">Next</a>&nbsp;&nbsp;<a href="/default.asp?offset=-1">Last</a></font> 
+              </div></td>
+          </tr>
+        </table>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; </p>
+      </div>
+      <p align="center"><font size="-3" face="Verdana, Arial, Helvetica, sans-serif"><font color="#333333"><br>
+        </font></font></p>
+      
+    </td>
+  </tr>
+  <tr>
+    <td><p align="center"><font size="-3" face="Verdana, Arial, Helvetica, sans-serif"><font color="#333333"><br>
+        <br>
+        &brvbar;</font></font></p>
+      <p align="center"><a href="managenews.asp"><font color="#990000" size="-1" face="Verdana, Arial, Helvetica, sans-serif">news 
+        management</font></a><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+        (authorization required)</font></p>
+      <p align="center"><font size="-3" face="Verdana, Arial, Helvetica, sans-serif">
+        
+        <br>
+        <font color="#333333">&brvbar;<br>
+        <br>
+        Hosting by: Xponentia<br>
+        Bandwidth Provided by Sonic.net</font></font><br><br><img src="http://ghguild.com/poweredbywin2k3.gif"></p>
+      </td>
+  </tr>
+</table>
+<br><br><br>
+<center>
+<!-- BEGIN FASTCOUNTER CODE -->
+<a href="http://member.bcentral.com/cgi-bin/fc/fastcounter-login?3259725" target="_top">
+<img border="0" src="http://fastcounter.bcentral.com/fastcounter?3259725+6519457"></a>
+<!-- END FASTCOUNTER CODE -->
+<br>
+<!-- BEGIN FASTCOUNTER LINK -->
+<font face="arial" size="1">
+<a href="http://fastcounter.bcentral.com/fc-join" target="_top">FastCounter by bCentral</a></font><br>
+<!-- END FASTCOUNTER LINK --></center>

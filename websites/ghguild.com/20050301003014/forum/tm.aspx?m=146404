@@ -1,0 +1,2352 @@
+
+<html>
+<head>
+<title> Help the n00B, Please review this system </title>
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/trims.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/showSelect.js"></script>
+<script language="JavaScript" src = "js/pgdcodeinput.js"></script>
+<script language="JavaScript" src = "js/validator.js"></script>
+<script type="text/javascript">
+
+function keepalive(){
+	var keepAliveFrame = document.createElement("iframe")
+	keepAliveFrame.src = "/forum/keepalive.aspx"
+	keepAliveFrame.style.display="none"
+	document.body.appendChild(keepAliveFrame)
+}
+
+
+
+setTimeout("keepalive()",3540000); 
+
+var objFormValidator = new PGDFormValidator;
+
+function validateForm(postform) {
+	if (objFormValidator.execute()){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+// -->
+</script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("2/28/2005 4:30:03 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("2/28/2005 4:30:03 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "2/28/2005 4:30:03 PM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+ strTitle [1] = "25&&0neophyte1"
+ strTitle [2] = "100&&0greenhorn2"
+ strTitle [3] = "400&&0competent3"
+ strTitle [4] = "900&&0seasoned4"
+ strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<center><TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>    </tr>  </table>		<BR></center><b>EQ MOTD:</b> ASPX Version in Development<br>
+<b>EQ2 MOTD:</b> Server moved to new datacenter PM Croso if there are any issues now, or you notice faster/slower speeds.
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		theForm.body.focus();theForm.parent.value=parentid;theForm.subject.value=theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='98%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Help the n00B, Please review this system </h2>&nbsp;
+		
+		<br>
+		<span class="ultrasmall">View related threads:
+		(<a href="/forum/searchpro.aspx?phrase=Help+the+n00B%2c+Please+review+this+system&criteria=OR&forumid=2&topicreply=topic&message=both&timefilter=0&top=10" target="_blank">in this forum</a>
+		| <a href="/forum/searchpro.aspx?phrase=Help+the+n00B%2c+Please+review+this+system&criteria=OR&forumid=ALL&topicreply=topic&message=both&timefilter=-365&timeframe=%3E&top=10" target="_blank">in all forums</a>)
+		</span>
+		<br><br>
+		
+	</td>
+	<td class="c2" align="right">Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+	
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this topic: 
+    none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.aspx?m=146404" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+    
+	</td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Help the n00B, Please review this system </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="155" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="155" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0" width="100%">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.aspx?go=prev&m=146404&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.aspx?go=next&m=146404&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146404></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 6:50:49 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 6:50:49 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          About to pull the trigger and build my new system.  Please take a look to see if there is anything I might be missing or compatibility issues.  This has to last me a while and be upgradeable over the foreseeable future.  Open to suggestions too. <br>  <br> Asus A8N-SLI Deluxe <br> AMD Athlon 64 (939) FX55 2.6GHz <br> Western Digital SATA Raptor 74GB <br> XFX GeForce 6800 Ultra 256MB PCI-E (2) <br> Lite On 52/32/52 CD-RW (black) <br> Lite On 16X Dual Layer DVD+RW/-RW Black <br> Windows XP Pro SP2 <br> PQI TURBO Series Dual Channel Platinum Kit 1GB (512MB x 2) DDR PC-3200 <br> Western Digital SecureConnect Serial ATA cable <br> 80mm Stealth Pro 2 Case Fan <br> Arctic Silver V Thermal Compound <br> Koolance PC3-420BK (black) <br> Koolance CPU-300-H06 CPU Water Block <br> Koolance GPU-180-L06 Chipset Water Block <br> Koolance VID-NV1-L06 6800 GT/Ultra Video Water Block (2) <br> Antec Neopower 480W ATX2.0 PCI-E <br>  <br> Thanks in advance. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=146404' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146404')">Post #: 1</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146413></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 7:30:38 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 7:30:38 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=997" class="subhead" target="_blank">Mily</a><br>
+        
+		  <script>titleAndStar(76,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%208/nw-elf4.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  76<br>
+          
+          Joined:  12/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Wheres your vid card on that list bro? Or are you going to be using the onboard in the mobo? Same as sound card... 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=834010">Mily Aviendha</a> <br> <font color='green'>70th Season Ranjah</font> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146404'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=997')" title="E-mail  Mily"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=997')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=997&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=997&mode=block&pg=tm&m=146413' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146413')">Post #: 2</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146416></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 7:52:35 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 7:52:35 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Going to use the 6800 ultras for vid cards.  No sound card, I dont use sound (does EQ even have sound, hehe?). 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146413'>Mily</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=146416' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146416')">Post #: 3</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146417></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 8:03:02 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 8:03:02 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=11" class="subhead" target="_blank">sindaan</a><br>
+        
+		  <script>titleAndStar(3841,11,true,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><br>
+          Posts:  3841<br>
+          
+          Joined:  10/29/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          You taking a 2nd mortgage to buy this thing......jeeze...hehe <br>  <br> Since you are putting that much money into it I might get a bigger drive than 74g <br>  <br> Otherwise it looks like a good setup 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=65075">Sindaan Sarcophagus</a> <br> <a target="_blank" href="http://www.sindaan.com/default.aspx">Loot Tracking</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146416'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=11')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=11&mode=block&pg=tm&m=146417' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146417')">Post #: 4</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146424></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 8:21:53 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 8:21:53 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=621" class="subhead" target="_blank">Healnus</a><br>
+        
+		  <script>titleAndStar(405,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%207/hi.gif" border=0 align="absmiddle"></div><br>
+          Posts:  405<br>
+          
+          Joined:  4/6/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          do they make the SATA raptors in bigger then 74 gig? 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=446928"> Stuff that I found laying arround </a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146417'>sindaan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=621')" title="E-mail  Healnus"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=621')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=621&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=621&mode=block&pg=tm&m=146424' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146424')">Post #: 5</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146430></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 8:42:12 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 8:42:12 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=946" class="subhead" target="_blank">sinami</a><br>
+        
+		  <script>titleAndStar(254,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/946/6505BFE3C82D4456A13348AF88EACB8A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  254<br>
+          
+          Joined:  11/28/2004 <br>
+          
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          HOLY CRAP  I configured one very similar with this and it was under 1200.00 but I didnt have the 2 6800s on my configuration, but I cant get mine yet I was just pricing!  Oh if your going this far why not jump to 2 gigs of ram. May as well set it so no more upgrades for quite some time =P but WOW what a system! 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br> <img src="http://soulsofjustice.homestead.com/files/Sinami_Signature.jpg" align="middle" border="0" alt="">  <br>  <br> Sinami D`Struction <br> Grey Hawke <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1053603">Wanna see under my robe?</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146424'>Healnus</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=946')" title="E-mail  sinami"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=946')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=946&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=946&mode=block&pg=tm&m=146430' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146430')">Post #: 6</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146453></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 10:28:13 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 10:28:13 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          74 is the biggest they make the Raptors atm.  Going to add a second one and another gig of Ram as my upgrades in the future.   <br>  <br> Don't have to take a second mortgage but will have to up the computer insurance on my policy 8O). 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146430'>sinami</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=146453' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146453')">Post #: 7</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146480></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 12:03:22 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 12:03:22 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=915" class="subhead" target="_blank">Shortay</a><br>
+        
+		  <script>titleAndStar(27,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  27<br>
+          
+          Joined:  11/24/2004 <br>
+          
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Dadave, <br>  <br> Have you compared the NEC ND-3500A 16X Dual Layer DVD±RW Drive ($70) to the Lite-On? <br> Also, have you compared the PQI RAM to the OCZ. For example: OCZ DDR 400 PC3200 ECC Registered 184 Pin 2-2-3-6 (512x2). Cost about $550. <br> I highly recommend the Enermax 550W power supply (Model EG651P-VE-FMA). Cost about $130. <br>  <br> Now, here is a question for you, why are you going to use two graphics cards? Are you running two instances of the game on one computer? Have you considered a Matrox Parhelia 265 MB card, you can get three outputs (2 digital and one analog from a single, albeit expenive at $400, card). Performance will probably be less but so will your cost. <br>  <br> I've never tinkered with liquid cooling, but I'd be interested to get your feedback when youre done. <br>  <br> Regards, <br> Shortay <br>  <br> PS <br> With this computer, you won't be a n00b no more ! 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146453'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=915')" title="E-mail  Shortay"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=915')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=915&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=915&mode=block&pg=tm&m=146480' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146480')">Post #: 8</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146489></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 12:56:00 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 12:56:00 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1330,-83,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  1330<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br> Lite On 52/32/52 CD-RW (black) <br> Lite On 16X Dual Layer DVD+RW/-RW Black </blockquote> <br> Why two drives? If someone told you you should use CD-drive to avoid putting too much stress on the DVDRW, they're bullshitting you  <img src="http://ghguild.com/forum/image/s4.gif" align="middle" border="0" alt="">  <br> Otherwise looks good. Don't forget the water pump, tank, radiator and all that other stuff. And use only distilled water with a special coolant liquid. <br> Stay away from registered memory chips. <br> I recommend a water cooled power supply  <img src="http://ghguild.com/forum/image/s4.gif" align="middle" border="0" alt="">  Dunno how's their availability in US though. I ordered mine from germany and I love it. <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>Now, here is a question for you, why are you going to use two graphics cards?</blockquote> <br> That's called SLI. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146480'>Shortay</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=146489' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146489')">Post #: 9</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146498></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 1:31:08 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 1:31:08 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>Have you compared the NEC ND-3500A 16X Dual Layer DVD±RW Drive ($70) to the Lite-On? </blockquote>  <br> Thanks for the info on the NEC.  I'll take a look.  I just sorta picked one. <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>Also, have you compared the PQI RAM to the OCZ. For example: OCZ DDR 400 PC3200 ECC Registered 184 Pin 2-2-3-6 (512x2). Cost about $550. </blockquote>  <br> The PQI I selected is 2-2-2-5 and got some very good reviews for stability during OC'ing (not sure if I will or not but with this I could if I wanted too, going to run it at stock first) <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>I highly recommend the Enermax 550W power supply (Model EG651P-VE-FMA). Cost about $130. </blockquote>  <br> Again, thanks for the input. <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>I've never tinkered with liquid cooling, but I'd be interested to get your feedback when youre done.</blockquote> <br> I'll let you know after I am done, migth even post a pic if I can find someone to host it for me. <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>Why two drives? If someone told you you should use CD-drive to avoid putting too much stress on the DVDRW, they're bullshitting you </blockquote>  <br> Thanks for clearing that up, glad I asked here. <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>Don't forget the water pump, tank, radiator and all that other stuff. And use only distilled water with a special coolant liquid. </blockquote>  <br> I think that all comes with the Koolance case but I'll double check. <br>  <br> Thanks all, still open to input if anyone has more. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146489'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=146498' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146498')">Post #: 10</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146502></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/7/2005 1:49:44 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/7/2005 1:49:44 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1330,-83,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  1330<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Since we're talking about watercooling too, I made these at work  <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  <br> Will install them on the next upgrade. Too lazy to rip the current one apart... <br>  <br>  <img src="http://personal.inet.fi/private/process/jt800.jpg" align="middle" border="0" alt="">  
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146498'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=146502' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146502')">Post #: 11</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146748></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/9/2005 8:42:23 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/9/2005 8:42:23 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=443" class="subhead" target="_blank">Brendelin</a><br>
+        
+		  <script>titleAndStar(942,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/443/CA1B06B14FFA4BE5A8FA73C2EE5C3C3A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  942<br>
+          
+          Joined:  10/9/2003 <br>
+          From:  Slidell, LA<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>quote: <br>  <br> Don't forget the water pump, tank, radiator and all that other stuff. And use only distilled water with a special coolant liquid.  <br> I think that all comes with the Koolance case but I'll double check.  <br>  <br> Thanks all, still open to input if anyone has more</blockquote> <br>  <br> With the Koolance the tank fan set/radiator comes with it. The processor adapters and tubing does not come with the case. Nor does the vid card cooler. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=668934"> <img src="http://home.earthlink.net/~gann0n/pics/violentken.gif" align="middle" border="0" alt=""> </a> <br>  <img src="http://ghguild.com/forum/upfiles/443/079D883914704E24B440154FF1499B41.jpg" align="middle" border="0" alt="">  <br>  <br> Brendelin Dark`Blood 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146502'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=443')" title="E-mail  Brendelin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=443')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=443&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=443&mode=block&pg=tm&m=146748' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146748')">Post #: 12</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146753></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/9/2005 10:08:17 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/9/2005 10:08:17 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=393" class="subhead" target="_blank">Aeonflux</a><br>
+        
+		  <script>titleAndStar(927,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/393/572EB3F680AB4CBFAFED4F8915D02AD9.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  927<br>
+          
+          Joined:  8/2/2003 <br>
+          From:  PA<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>ORIGINAL:  Jani <br>  <br> Since we're talking about watercooling too, I made these at work  <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  <br> Will install them on the next upgrade. Too lazy to rip the current one apart... <br>  <br>  <img src="http://personal.inet.fi/private/process/jt800.jpg" align="middle" border="0" alt="">  <br> </blockquote> <br>  <br> And what exactly do those do?  <img src="http://ghguild.com/forum/upfiles/smiley/dunno.gif" align="middle" border="0" alt="">  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=473359">What's under my robe?</a> <br>  <img src="http://ghguild.com/forum/upfiles/393/asppg_Ca817219526.jpg" align="middle" border="0" alt="">  <br>  <br> <font size='1'>The biggest risk in life is to risk nothing at all.</font> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146502'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=393')" title="E-mail  Aeonflux"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=393')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=393&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=393&mode=block&pg=tm&m=146753' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146753')">Post #: 13</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146762></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/10/2005 1:30:52 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/10/2005 1:30:52 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1330,-83,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  1330<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          They divide water to different blocks (cpu, gpu, nb, psu, hd...) 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146753'>Aeonflux</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=146762' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146762')">Post #: 14</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=146876></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/10/2005 1:04:34 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/10/2005 1:04:34 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=393" class="subhead" target="_blank">Aeonflux</a><br>
+        
+		  <script>titleAndStar(927,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/393/572EB3F680AB4CBFAFED4F8915D02AD9.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  927<br>
+          
+          Joined:  8/2/2003 <br>
+          From:  PA<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Cool.  Someday I'll build something like that  <img src="http://ghguild.com/forum/upfiles/smiley/happysad.gif" align="middle" border="0" alt="">  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=473359">What's under my robe?</a> <br>  <img src="http://ghguild.com/forum/upfiles/393/asppg_Ca817219526.jpg" align="middle" border="0" alt="">  <br>  <br> <font size='1'>The biggest risk in life is to risk nothing at all.</font> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146762'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=393')" title="E-mail  Aeonflux"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=393')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=393&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=393&mode=block&pg=tm&m=146876' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=146876')">Post #: 15</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=147994></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">1/17/2005 5:16:15 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("1/17/2005 5:16:15 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=659" class="subhead" target="_blank">Dangger</a><br>
+        
+		  <script>titleAndStar(248,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%208/Phoneboy.gif" border=0 align="absmiddle"></div><br>
+          Posts:  248<br>
+          
+          Joined:  5/10/2004 <br>
+          
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Those cooling on/off devices look cool =) When you put those in your new upgrade post pictures, I want to learn how it works so maybe I can fabricate something like that so my system runs cooler =) <br>  <br> werd 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br> <img src="http://img.photobucket.com/albums/v622/dangger/danggerduck2.jpg" align="middle" border="0" alt="">  <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=914210">http://www.magelo.com/eq_view_profile.html?num=914210</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#146876'>Aeonflux</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=659')" title="E-mail  Dangger"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=659')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=659&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=659&mode=block&pg=tm&m=147994' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=147994')">Post #: 16</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=150766></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/1/2005 7:16:48 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/1/2005 7:16:48 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          System is up and running, did you know spells had these cool effects that go off when you cast them? <br>  <br> Only problem I am having is the dual monitor set up.  Can't seem to extend my desktop onto the second monitor, prolly cuz of the SLI.  Any suggestions? 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#147994'>Dangger</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=150766' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=150766')">Post #: 17</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=150783></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/1/2005 7:54:02 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/1/2005 7:54:02 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=34" class="subhead" target="_blank">Hammeron</a><br>
+        
+		  <script>titleAndStar(4198,-34,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/Wu60702.gif" border=0 align="absmiddle"></div><br>
+          Posts:  4198<br>
+          
+          Joined:  10/31/2002 <br>
+          From:  USA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>these cool effects</blockquote> <br>  <br> I believe rather than cool, the word you were looking for here was annoying 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size='1'>How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#150766'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=34')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=34&mode=block&pg=tm&m=150783' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=150783')">Post #: 18</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=150796></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/1/2005 8:35:18 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/1/2005 8:35:18 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Having never actually seen these effects before they qualify as cool atm ).  By next week they will probably be turned off.  <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#150783'>Hammeron</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=150796' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=150796')">Post #: 19</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=150952></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/2/2005 5:50:54 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/2/2005 5:50:54 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          OK SLI won't support dual monitors, single only.  Non-sli mode, 4 monitors.  In case anyone was wondering. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#150796'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=150952' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=150952')">Post #: 20</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=151510></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/5/2005 11:02:56 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/5/2005 11:02:56 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=33" class="subhead" target="_blank">Parm</a><br>
+        
+		  <script>titleAndStar(2561,-2,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/33/Jh16714.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  2561<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I personally think you're spending too much money.  Unless you just won the lottery, spending the extra cheddar on an Athlon64 FX55 over something really, really powerful but just not quite as powerful as the FX55, like the Athlon64 3500 90nm, is dumb.  The FX55 is $880 and the 3500 is $275.  Dude, we're talking $600 dollars.  I could actually make an entire, reasonable though not top-of-the-line new computer for the difference in price between those two chips. <br>  <br> Why do you believe you need water cooling all over everything, including your two graphics cards?  Do you plan on overclocking the system?  If so, why bother?  Is Athlon64 FX55 speed not fast enough for your needs? <br>  <br> You're throwing money around on this system like it's going out of style, and I think you could make better use of that money. <br>  <br> Go with Athlon64 3500 instead.  That's $600 savings. <br> Go with two  Geforce 6800 GTs (256 mb each) instead of 6800 Ultras.  That'll save you probably $150 each for $300 more savings.  Two 6800 GTs in SLI mode will probably get you 70% faster speed than a single 6800 Ultra, which is already just blazingly hot. <br> Drop all the watercooling shit.  I don't know how much that'll save you, let's say $150 in all for the sake of argument. <br> Drop the second cd drive.  Unless you want to be able to watch DVDs and burn CDs at the same time or something.  Saves what, $100? <br>  <br> Dude, right there we're talking a savings of $1150. <br>  <br> Don't buy 512 mb dimms.  Go with 1GB dimms, and buy two of them.  That'll cost a little, but hell we're saving $1150, you can afford it. <br>  <br> Apply the remaining $800 or $900 towards an ass-kicking LCD monitor, like a 23&quot; widescreen or bigger.  Or buy another 74 GB Raptor and go Raid 0 for some peace of mind.  Or hell, for $1150 buy four Raptors and set up a RAID 10.  Or buy three 40 GB iPods and give one to me, one to your girlfriend, and keep one for yourself just for the hell of it. <br>  <br> I think you can get 90-95% of the performance you want at 50% of the cost, and unless Bill Gates is yo Daddy I can't see spending that kinda cheddar. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=181972">my stuff</a> <br>  <br> <i>Funny how creationists are so worried about being descended from monkeys when what <br> they should really be upset about is sharing a gene pool with Howard Stern - Yaldin 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#150952'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=33')" title="E-mail  Parm"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=33')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=33&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=33&mode=block&pg=tm&m=151510' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=151510')">Post #: 21</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=151511></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/5/2005 11:04:05 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/5/2005 11:04:05 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=33" class="subhead" target="_blank">Parm</a><br>
+        
+		  <script>titleAndStar(2561,-2,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/33/Jh16714.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  2561<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Oh crap.  I now read the rest of the thread and you all ready bought all this stuff.  My bad.  Oh well, I hope you enjoy it.   <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=181972">my stuff</a> <br>  <br> <i>Funny how creationists are so worried about being descended from monkeys when what <br> they should really be upset about is sharing a gene pool with Howard Stern - Yaldin 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#151510'>Parm</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=33')" title="E-mail  Parm"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=33')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=33&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=33&mode=block&pg=tm&m=151511' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=151511')">Post #: 22</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=151533></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/5/2005 12:37:44 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/5/2005 12:37:44 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=946" class="subhead" target="_blank">sinami</a><br>
+        
+		  <script>titleAndStar(254,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/946/6505BFE3C82D4456A13348AF88EACB8A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  254<br>
+          
+          Joined:  11/28/2004 <br>
+          
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Dadave &gt; Bill Gates 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br> <img src="http://soulsofjustice.homestead.com/files/Sinami_Signature.jpg" align="middle" border="0" alt="">  <br>  <br> Sinami D`Struction <br> Grey Hawke <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1053603">Wanna see under my robe?</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#151511'>Parm</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=946')" title="E-mail  sinami"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=946')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=946&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=946&mode=block&pg=tm&m=151533' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=151533')">Post #: 23</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=151553></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/5/2005 3:43:56 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/5/2005 3:43:56 PM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=694" class="subhead" target="_blank">DaDave</a><br>
+        
+		  <script>titleAndStar(81,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  81<br>
+          
+          Joined:  6/6/2004 <br>
+          From:  Texas<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          No, not &gt; Bill Gates but worked my backside off last year and got a really good bonus and was way overdue for a new computer hehe. <br>  <br> I like my new system, a bit over the top I agree, but then again this will last me a while too.  I haven't overclocked the system but I could if I wanted too ( a few of my friends do).  I went with the 512 memory becuse I could get it in matched pairs of 2-2-2-5, something I couldn't find for 1GM modules.  Didn't need a monitor, have a 20&quot; LCD widescreen I'm pretty happy with.  Thanks for the input tho, I've had a couple second thougths about this set up but then it was up and running and I'm happy with it. <br>  <br> ps - no girlfriend here to give iPod to LOL, ya gunna get me in trouble with the wife 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#151533'>sinami</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=694')" title="E-mail  DaDave"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=694')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=694&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=694&mode=block&pg=tm&m=151553' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=151553')">Post #: 24</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=151582></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Help the n00B, Please review this system  - <span class="ultrasmall">2/6/2005 6:56:28 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("2/6/2005 6:56:28 AM",0,0,0,146404,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=33" class="subhead" target="_blank">Parm</a><br>
+        
+		  <script>titleAndStar(2561,-2,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/33/Jh16714.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  2561<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Doh!  Well tell the wife I meant wife not girlfriend.  Hehe.  Well you have one ass-kicking system.  There's no room for second thoughts in computer gear, because it's such an awful investment for the most part.  Don't look back now, just enjoy it.   <img src="http://ghguild.com/forum/image/s2.gif" align="middle" border="0" alt="">  <br>  <br> My personal philosophy on building computers like this is look for the sweet spot.  There will always be cpus that are the last ones that cost very little, just before the price for the next higher speed shoots up.  You can usually get 90+% of the maximum possible performance for a hell of a lot less than 90% of the cost.  The difference between the Athlon64 3500 and the Athlon64 FX55 illustrates my point.  $600 more for just a little more speed. <br>  <br> I used to overclock some of my systems, but it was just an experimental phase I was in.  I don't do it now.  I don't really see the need, and it's hard enough keeping a PC running well for a couple of years without adding the complexity of overclocking. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Parm</b> -- <b>2/6/2005 6:59:19 AM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=181972">my stuff</a> <br>  <br> <i>Funny how creationists are so worried about being descended from monkeys when what <br> they should really be upset about is sharing a gene pool with Howard Stern - Yaldin 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#151553'>DaDave</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=33')" title="E-mail  Parm"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='#' onclick="return powin('pmsend.aspx?toMemId=33')"><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=33&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=33&mode=block&pg=tm&m=151582' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=151582'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=151582')">Post #: 25</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+       <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Help the n00B, Please review this system </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" >- - Public Forum</option>
+<option value="tt.aspx?forumid=2" selected>- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="98%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="146404">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+</center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.130</font><br>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - No 3D Target Ring with Custom UI???</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-24.html">Site news/help Forums</a> &gt; <a href="f-25.html">Eqinterface/Eqgui News</a> &gt; No 3D Target Ring with Custom UI???</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=11008">No 3D Target Ring with Custom UI???</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kudane</div><div class="date">11-05-2003, 07:17 PM</div></div><div class="posttext">&lt;img src=&quot;http://www.eqinterface.com/images/sections/eqpatch.gif&quot; align=&quot;right&quot;&gt;Aario was kind enough to email the following solution for the problem of no 3D target ring while using Custom UIs<br />
+<br />
+<br />
+<br />
+<br />
+Make sure 3D Target Ring is ON in the option menu inside the game.<br />
+<br />
+Copy TargetIndicator.ini and TargetIndicator.tga to your custom UI directory(s).<br />
+<br />
+EQ is looking for those files one time only, and that is when it loads your first character.  The files must be copied outside of EQ (be camped out to desktop).  Using a /loadskin will not bring the rings into action if the files are copied over while in game.<br />
+<br />
+All test seem to point that this is a good fix for the problem. This is most likely a glitch with the UI since all other files are pulled from the default folder. I would expect SOE to fix this soon.<br />
+<br />
+Thank Aario!<br />
+<br />
+- Kudane</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cairenn</div><div class="date">11-05-2003, 09:14 PM</div></div><div class="posttext">Okay, straight from SOE's Tech Help forum, this (http://boards.station.sony.com/ubb/everquest/Forum3/HTML/048018.html) thread posted by Roger Sewell:<br />
+<br />
+Question: Why doesn't the Target Indicator Work?<br />
+<br />
+Answer: TargetIndicator.ini and TargetIndicator.tga were downloaded via the patcher and they are in the EverQuest\uifiles\default folder. If you are running any kind of Custom UI Skin, neither one of those 2 files will get loaded, and you won't see the 3D Target Indicator in game. TargetIndicator.tga is not referenced in EQUI_Animation.xml, which means it is not &quot;really&quot; part of the UI, but part of the game itself (Yes this may be somewhat confusing for someone that doesn't modify UI's regularly). This is typically only a problem because at some point, you've run a Custom UI and one of the 2 files listed below, is reflecting that and causing a problem. <br />
+<br />
+Here's what's happening: <br />
+<br />
+There is a line in your EQClient.ini file that reads:<br />
+<br />
+<br />
+quote: <br />
+--------------------------------------------------------------------------------<br />
+<br />
+UISkin=default (It reads &quot;default&quot; if you aren't running a Custom Skin)<br />
+<br />
+--------------------------------------------------------------------------------<br />
+<br />
+<br />
+Whatever this reads, is what is loaded before the &quot;Character Selection&quot; screen when the blue bar is loading EverQuest with the picture of Firiona Vie. <br />
+There are some lines in your UI_&lt;CharacterName&gt;_&lt;ServerName&gt;.ini that read:<br />
+<br />
+<br />
+quote: <br />
+--------------------------------------------------------------------------------<br />
+<br />
+(Main)<br />
+UISkin=default (It reads &quot;default&quot; if you aren't running a Custom Skin)<br />
+GlobalFadeDelay=500<br />
+ContextMenus=1 (1 = TRUE)<br />
+UseTellWindows=1 (1 = TRUE)<br />
+<br />
+--------------------------------------------------------------------------------<br />
+<br />
+<br />
+Whatever this reads, is what is loaded after the Character Selection Screen, but before you enter the game. Your values (as quoted above) may be different depending on what you have setup in the game. So, basically it works like this. <br />
+When you get to the Character Selection Screen, it is reading the UISkin=default from the EQClient.ini file. When you log into the game, you are reading the UISkin=default from the UI_&lt;CharacterName&gt;_&lt;ServerName&gt;.ini file. <br />
+<br />
+So unless these are set correctly, the 3D Indicator Window will not work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">danny91643</div><div class="date">11-05-2003, 10:19 PM</div></div><div class="posttext">Thanks to Aario I have the target Indicator working in my AYA UI.<br />
+For those that use aya650r3 just a bit of info. I copied the Default Options window into the AYA UI and that made it compatable XML.<br />
+It maintained the same general apperance and gives me the &quot;Font&quot; change and &quot;Tell&quot; options. It will work until the Author has a chance to up date the UI.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">AnteBaka</div><div class="date">11-06-2003, 01:44 PM</div></div><div class="posttext">make sure to have <br />
+<br />
+UseTNl = TRUE<br />
+<br />
+in your eqclient.ini as well, or you don't see anything.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Breathe</div><div class="date">11-06-2003, 03:55 PM</div></div><div class="posttext">Originally posted by AnteBaka <br />
+make sure to have <br />
+<br />
+UseTNl = TRUE<br />
+<br />
+in your eqclient.ini as well, or you don't see anything.  <br />
+Aha!  I didn't have that.  I copied and pasted that into Notepad, will give it a try.  To confirm, that's TN1 as in Thomas Newton (One), and not TNI as in Thomas Newton Indigo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">andrX</div><div class="date">11-06-2003, 08:52 PM</div></div><div class="posttext">Originally posted by AnteBaka <br />
+make sure to have <br />
+<br />
+UseTNl = TRUE<br />
+<br />
+in your eqclient.ini as well, or you don't see anything.  <br />
+<br />
+I have no line even remotely similar to this in my eqclient.ini.. Any clues as to where in the file it is supposed to be?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aluin</div><div class="date">11-07-2003, 09:43 AM</div></div><div class="posttext">just add the line in there.<br />
+<br />
+TNL as in thomas newton lunchbox</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">myanta</div><div class="date">11-07-2003, 12:02 PM</div></div><div class="posttext">I'm still very confused. What file do I replace with what file, or what do I change in which ini file?<br />
+Thanks for the help.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jentraal</div><div class="date">11-07-2003, 01:48 PM</div></div><div class="posttext">I've tried all these things with no luck.<br />
+I'm using a NVidia GeForce4 MX 440 video card.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">11-07-2003, 01:53 PM</div></div><div class="posttext">You may wish to read this post (http://www.eqgui.com/showthread.php?s=&amp;threadid=11073) by Roger Sewell of SOE.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jentraal</div><div class="date">11-07-2003, 05:31 PM</div></div><div class="posttext">already read that.  no workie. :mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">11-07-2003, 05:40 PM</div></div><div class="posttext">Originally posted by Jentraal <br />
+already read that.  no workie. :mad: <br />
+<br />
+Should explain why it doesnt work and why it may never work for you. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Breathe</div><div class="date">11-08-2003, 03:58 PM</div></div><div class="posttext">The earlier post in this thread point you in the right direction, but are innacurate.<br />
+<br />
+ - The line belongs in the &quot;defaults&quot; section of your eqclient.ini file.  It is *not* there by default for many people.<br />
+<br />
+ - The line above will not work if copy and pasted.  The correct line is UseTNL=TRUE, not UseTN1=TRUE.  (Tommy Newton Lemon)<br />
+<br />
+ - The &quot;true&quot; toggle did not work for me; I had to use the numeric toggle set to 1 (one).<br />
+<br />
+So, the line that actually worked for me was:<br />
+<br />
+UseTNL=1<br />
+<br />
+Copied and pasted right into the DEFAULTS section of eqclient.ini. I rebooted EQ and it's worked like a charm since, even with all spells and effects off and whatnot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kudane</div><div class="date">11-08-2003, 09:01 PM</div></div><div class="posttext">Originally posted by AnteBaka <br />
+make sure to have <br />
+<br />
+UseTNl = TRUE<br />
+<br />
+in your eqclient.ini as well, or you don't see anything.  <br />
+<br />
+See Roger's comment about using this command..  only those with the ATI 9600 series should add this, at this time..<br />
+<br />
+and TnL as in Texture n Lighting<br />
+<br />
+goodluck!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zadias</div><div class="date">11-15-2003, 08:40 AM</div></div><div class="posttext">I had a prob with the target ring not working on both my desktop and laptop.  Cards i have are GF 4 TI 4600 and a GF 4 420 Go. Before the patch i was using a custom UI. When i swicthed to default mode I couldn't get the rings either. <br />
+<br />
+Just deleting the custom UI folders didn't fix it , then i tried the unifiles folder... no cure. Then I tried this ..... works great now.<br />
+<br />
+ I deleted my Unifiles folder and all files UI_(Char Name) and all files with (Char Name)_eci. Run the patcher using the complete file check. I logged in and had the rings working ,  so then I downloaded the custom UI and a Custom target ring again. Made a folder in the unifiles one to unzip both the UI and target ring into. Problem was cured. Surprised my laptop even displayed the rings nicely.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

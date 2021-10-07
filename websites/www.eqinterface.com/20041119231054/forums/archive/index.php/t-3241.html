@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Background images not being displayed</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Background images not being displayed</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=3241">Background images not being displayed</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">lorano</div><div class="date">10-22-2002, 01:38 PM</div></div><div class="posttext">Ok, I've been beating my head on a wall trying to figure out why in gods name my graphics aren't being shown, so here's the XML from the file. BEar in mind I started from scratch no gauges or anything just trying to get my background to show (one hurdle at a time) Any help is appreciatted :)<br />
+<br />
+XML:<br />
+<br />
+	&lt;TextureInfo item = &quot;playerwindow.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;<br />
+<br />
+	&lt;Ui2DAnimation item = &quot;p_window&quot;&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;playerwindow.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;256&lt;/CX&gt;<br />
+				&lt;CY&gt;256&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+		&lt;/Frames&gt;<br />
+	&lt;/Ui2DAnimation&gt;<br />
+&lt;Screen item = &quot;PlayerWindow&quot;&gt;<br />
+		&lt;!--&lt;ScreenID/&gt;--&gt;<br />
+		&lt;RelativePosition&gt;false&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Text&gt;Player&lt;/Text&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;true&lt;/Style_Transparent&gt;<br />
+		&lt;TooltipReference&gt;Player Window&lt;/TooltipReference&gt;<br />
+		&lt;DrawTemplate&gt;WDT_RoundedNoTitle&lt;/DrawTemplate&gt;<br />
+		&lt;Style_Titlebar&gt;false&lt;/Style_Titlebar&gt;<br />
+		&lt;Style_Closebox&gt;false&lt;/Style_Closebox&gt;<br />
+		&lt;Style_Minimizebox&gt;false&lt;/Style_Minimizebox&gt;<br />
+		&lt;Style_Border&gt;true&lt;/Style_Border&gt;<br />
+		&lt;Style_Sizable&gt;false&lt;/Style_Sizable&gt;<br />
+		&lt;Pieces&gt;p_window&lt;/Pieces&gt;<br />
+	&lt;/Screen&gt;<br />
+<br />
+Sage Lorano Ld<br />
+61st Warlock</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Etasi</div><div class="date">10-23-2002, 02:31 AM</div></div><div class="posttext">The reason your image isn't showing is because you haven't actually specified it as part of your window yet.  You have to add in a Static Animation item as well, like so:<br />
+<br />
+&lt;StaticAnimation item=&quot;PW_Background&quot;&gt;<br />
+   &lt;ScreenID&gt;Inv_Background&lt;/ScreenID&gt;<br />
+    &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;256&lt;/CX&gt;<br />
+      &lt;CY&gt;256&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+   &lt;Animation&gt;p_window&lt;/Animation&gt;<br />
+ &lt;/StaticAnimation&gt;<br />
+<br />
+You can call the Static Animation item whatever you want, just make sure that it's the same name as you use in the &lt;Pieces&gt; part in the Screen item section. So in my example above, I'd put &lt;Pieces&gt;PW_Background&lt;/Pieces&gt; in the Screen item section.<br />
+<br />
+The &lt;Animation&gt; part is where you put the name of the Ui2D Animation that refers to the image you want to use. Make sure that the size is the same in both the Static Animation and the Ui2D Animation or your image will get stretched/distorted.<br />
+<br />
+Hope this makes sense. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lorano</div><div class="date">10-23-2002, 11:47 AM</div></div><div class="posttext">Thank you for your suggestion :) However, even with that added, I can't see the image, still shows up as a giant white box (whoich is not what the picture is). Again I've included the XML<br />
+<br />
+<br />
+&lt;TextureInfo item = &quot;playerwindow.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;<br />
+<br />
+	&lt;Ui2DAnimation item = &quot;p_window&quot;&gt;<br />
+		&lt;Frames&gt;<br />
+			&lt;Texture&gt;playerwindow.tga&lt;/Texture&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;256&lt;/CX&gt;<br />
+				&lt;CY&gt;256&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+			&lt;Hotspot&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Hotspot&gt;<br />
+		&lt;/Frames&gt;<br />
+	&lt;/Ui2DAnimation&gt;<br />
+	&lt;StaticAnimation item=&quot;PW_Background&quot;&gt;<br />
+		&lt;ScreenID&gt;Inv_Background&lt;/ScreenID&gt;<br />
+			&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+			&lt;Location&gt;<br />
+				&lt;X&gt;0&lt;/X&gt;<br />
+				&lt;Y&gt;0&lt;/Y&gt;<br />
+			&lt;/Location&gt;<br />
+			&lt;Size&gt;<br />
+				&lt;CX&gt;256&lt;/CX&gt;<br />
+				&lt;CY&gt;256&lt;/CY&gt;<br />
+			&lt;/Size&gt;<br />
+		&lt;Animation&gt;p_window&lt;/Animation&gt;<br />
+	&lt;/StaticAnimation&gt;<br />
+<br />
+&lt;Screen item = &quot;PlayerWindow&quot;&gt;<br />
+		&lt;!--&lt;ScreenID/&gt;--&gt;<br />
+		&lt;RelativePosition&gt;false&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Text&gt;Player&lt;/Text&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;true&lt;/Style_Transparent&gt;<br />
+		&lt;TooltipReference&gt;Player Window&lt;/TooltipReference&gt;<br />
+		&lt;DrawTemplate&gt;WDT_RoundedNoTitle&lt;/DrawTemplate&gt;<br />
+		&lt;Style_Titlebar&gt;false&lt;/Style_Titlebar&gt;<br />
+		&lt;Style_Closebox&gt;false&lt;/Style_Closebox&gt;<br />
+		&lt;Style_Minimizebox&gt;false&lt;/Style_Minimizebox&gt;<br />
+		&lt;Style_Border&gt;true&lt;/Style_Border&gt;<br />
+		&lt;Style_Sizable&gt;false&lt;/Style_Sizable&gt;<br />
+		&lt;Pieces&gt;PW_Background&lt;/Pieces&gt;<br />
+	&lt;/Screen&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aviendha101</div><div class="date">10-23-2002, 11:50 AM</div></div><div class="posttext">Sounds like an issue with the transparency option of your image file.  I recommend reading through the various posts regarding this in the Help - Graphics forum.  I was having a similar problem the other day and the fix was to get the transparency setup properly.  (For example, simply going into Paint Shop Pro 7 and making a new image with a transparent background and then saving it as a TGA file will NOT enable a transparent background within EQ)<br />
+<br />
+Hope this helps...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lorano</div><div class="date">10-23-2002, 12:54 PM</div></div><div class="posttext">You are both GENIUS'S graphic is now working :) <br />
+<br />
+Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! Thank you!! <br />
+<br />
+<br />
+Sage Lorano Ld<br />
+The not quite so frustrated 61 warlock</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">10-24-2002, 02:29 AM</div></div><div class="posttext">wrong forum... moveing post.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

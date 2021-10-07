@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Completely new to XML Modifications and want to learn</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Completely new to XML Modifications and want to learn</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=4324">Completely new to XML Modifications and want to learn</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Votis</div><div class="date">11-25-2002, 12:02 AM</div></div><div class="posttext">I'm a completely new to XML modifications.<br />
+<br />
+Any suggestions on what I can read / use to learn how to modify the EQ GUI?<br />
+<br />
+Basically looking for any information on what the heck is in the XML files so I can learn how to modify the thing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ewolf</div><div class="date">12-02-2002, 09:53 PM</div></div><div class="posttext">Here's a basic rundown of what's in the various XML and graphics files. I was trying to figure this out myself and didn't find any good info so I went through them until I understood them (a little.)<br />
+<br />
+<br />
+AboutSIDL.doc - documentation that very briefly explains SIDL<br />
+- ElementTypes are basically different objects the everquest UI knows how to manipulate.<br />
+- Each window is basically a collection of objects called ScreenItems that are made up of various ElementTypes<br />
+<br />
+EQUI.XML - defines which other XML files to load and in what order.<br />
+<br />
+SIDL.XML - defines the various elementTypes that the EQ interface understands (eg what pieces make up a button, window, mouse cursors, etc.) Unfortunately exactly how these things *behave* isn't defined anywhere. It's just something you need to experiment with until you understand how the SUITE works (and how it's buggy.)<br />
+<br />
+EQUI_Aminations.XML - this file basically deals with loading all the graphics files and cutting them up into little pieces to be used later.<br />
+- loads graphics from the tga, bmp and jpg files in your skin directory into TextureInfo items<br />
+- Creates graphic pieces (2DAnimations) such as your mouse cursor, class animation, window frames, buttons, etc by specifying the pixel locations X, Y, DeltaX, DeltaY within the TextureInfo items and piecing them together<br />
+- Labels all the little graphic bits so that they can be used in later files when defining ElementType templates.<br />
+<br />
+EQUI_Templates.XML - this one creates basic elementType templates out of the graphics pieces loaded by EQUI_Animations.XML which are then refered to in individual window XML files.<br />
+- Graphics and other settings for standard windows, buttons, sliders, gauges, etc. are all defined in here.<br />
+- Graphics for these items are taken from the pieces loaded in EQUI_Animations.XML<br />
+<br />
+EQUI_a window name.XML - these files basically define each individual window within the UI. The file contains the various parts that make up the window. They are usually made up of different ElementTypes usually cloned from a template defined in the EQUI_Templates.XML file and then tweaked by modifying various parameters such as color, size, position in ways specific to this window.<br />
+<br />
+<br />
+When modding the UI, people generally do something a little different. To make your mod compatible with the default UI, there are a few things that are important:<br />
+- If you don't have a file in your skin directory that EQ needs, it will take it from the default skin. To make your skin compatible, only modify the files you need to and don't have a copy of any other files in your skin directory. That way, if Sony changes something in the defaults, it won't affect you unless they changed the XML file you modified.<br />
+- Even though the EQUI XML files load graphics from EQUI_Animations.XML, you don't have to. To make your mod as modular (bad pun) as possible, make a custom graphics file, and custom template and load it in your window XML rather than modifying EQUI_Animations.XML<br />
+- If you are modifying lots of windows, then you might be better off modifying the EQUI_Animations.XML and EQUI_Templates.XML files to load custom graphics but doing so will be more maintenance (whenever Sony changes anything) and will make your skin a lot less compatible with other people's mods.<br />
+- If you want to change the way the default UI looks (colors) but want everything to basically be the same (structurally), you can probably just modify the graphics files. Look through the EQUI_Animations.XML file to find the exact pixel coordinates you'll need to modify. For example, there are some really nice drop-in spell gem (gemicons01 and gemicons02), spell icon (spells01 - spells05), and compass (window_pieces04) replacements.<br />
+<br />
+Hope this helps give you a starting point for looking into the XML files and graphics.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sedao</div><div class="date">12-13-2002, 01:15 PM</div></div><div class="posttext">Very nice just what I was looking for. I was wondering why I couldn't view the xml docs at work. No eq on the computer. Your<br />
+explanations will help me play around enough so that I can learn what I am doing.<br />
+<br />
+Thanks<br />
+<br />
+Sedao ;)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Resizing Spell Gems</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Resizing Spell Gems</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=51">Resizing Spell Gems</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Karsan</div><div class="date">07-27-2002, 02:39 AM</div></div><div class="posttext">Resizing the spellgems is giving me some trouble.  When I try to resize the spellgem, the border around the gem seems to &quot;break away&quot; from the gem and the spell-icon graphic starts to drift away.  Both are still connected though.  Any ideas?<br />
+<br />
+The first gem was originally set at:<br />
+<br />
+1,3 .. 31,23<br />
+<br />
+and I'm trying to resize it to:<br />
+1,3 .. 39,31<br />
+<br />
+With the other gems matching likewise at:<br />
+<br />
+n,3 .. 39,31<br />
+<br />
+Which would put them all in a horizontal line.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Amaprotu</div><div class="date">07-27-2002, 02:47 AM</div></div><div class="posttext">These are the tags you are looking for:  They are there in each spell gem slot description:<br />
+&lt;SpellIconOffsetX&gt;0&lt;/SpellIconOffsetX&gt;<br />
+&lt;SpellIconOffsetY&gt;0&lt;/SpellIconOffsetY&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Karsan</div><div class="date">07-27-2002, 03:28 AM</div></div><div class="posttext">What would the upper level tag for those items be?  Where would they go inside the spell gem description?<br />
+<br />
+I see:<br />
+<br />
+&lt;SpellGem item =<br />
+<br />
+with lots of stuff under it, and<br />
+<br />
+&lt;SpellGemDrawTemplate&gt;<br />
+<br />
+with stuff under it as well.  Would those go in the Draw Template?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-27-2002, 02:52 PM</div></div><div class="posttext">Check the AboutSIDL.doc file, it has the description for every tag and tag value default in it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Caen</div><div class="date">07-28-2002, 09:56 PM</div></div><div class="posttext">I too am trying to shrink the spellgems.<br />
+<br />
+Shrunk the window itself.<br />
+Shrunk each gem &quot;container&quot; (the circle that goes around the squarish icon and is a different color depending on the type of spell)<br />
+Even shrunk the container when mouse dragging and placing on hotkeys....<br />
+<br />
+BUT:<br />
+I can't shrink the spell icons!  There seems to be no &lt;size&gt; tags as they pertain to the icons themselves.<br />
+<br />
+So...  I shrank the icon grids in gemicons01.tga and gemicons02.tga.  (made them 192x192 instead of 256x256, I'm shrinking everything by 25%)<br />
+<br />
+Then, changed the parameters about these files in EQUI_Animations.xml<br />
+<br />
+The size then looks good, but guess what, I'm getting crap for the icons themselves, it's not picking them up correctly from the icon grids, most of the time I'm getting corners of 4 different icons in the image...<br />
+<br />
+You know... somehow they're also trimming the corners off of the icons in the default interface... I wonder if they're using the background image as a mask...<br />
+<br />
+Anybody else played with this?<br />
+<br />
+Thanks,<br />
+Caen - Drinal server</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Caen</div><div class="date">07-29-2002, 04:57 AM</div></div><div class="posttext">Woot!  I got it!<br />
+<br />
+Somehow I stripped out the alpha channel in the .tga files, fixed that and I was home free.<br />
+<br />
+Will post a link here when I get the .zip posted somewhere, hopefully eqinterface.com...<br />
+<br />
+Caen<br />
+<br />
+edit: actually it looks like even though I shrank the file to 192x192, in the &lt;Texture&gt; tag of EQUI_Animations.xml, I needed to leave the specified size of 256x256.  Go figure.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Joril</div><div class="date">07-30-2002, 04:22 AM</div></div><div class="posttext">im doing the exact opposite, i want large spell gems.  i have managed to get them the size i want, but like you, i cant get the pictures the correct size.<br />
+<br />
+i tried resizing the gemicons file. the first time i again had a similiar experience to yours, got corners and such.  i did manage to resize one correctly ( i see the entire correct icon with in the spell gem), but this is the wierd part.  i only changed the size of one of the gemicon files, so i would have a control to see the image sizes, except all of the icons show up the same size.  both the one i enlarged and the one i didnt.  and yes i have some from each loaded as spells as a check.<br />
+<br />
+any ideas?  i left the animations file at 256 and have the offsets correct, the icons are centered properly.  i just a small black border between the icon and spell gem.... no more then 1 or 2 pixels in size. <br />
+<br />
+i increased the gemicons01 file to 402 from 256.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Caen</div><div class="date">07-30-2002, 03:04 PM</div></div><div class="posttext">Was the icon that worked correctly in the extreme upper left corner?<br />
+<br />
+In any case... what i think is happening is this:<br />
+<br />
+You HAVE to specify 256x256 for the textureinfo size in EQUI_Animations.xml (I believe this is a bug)<br />
+<br />
+Then below that, in the Ui2DAnimation tag, your size can be SMALLER.  If it's larger, I think the textureinfo size (above) invalidates anything larger than 256.<br />
+<br />
+So... you *might* be able to get around this by putting as many LARGER icons in as many 256x256 files as it takes.  Then just appending the extra files as &lt;Frames&gt; in the Ui2DAnimation for A_SpellGems. Now the hard part is figuring out what order to place the icons in all those files.<br />
+<br />
+edit: I attached my mods for 25% smaller gems.<br />
+<br />
+edit: I deleted the attachment, I'll post a new one in a new thread.  (equi_animations.xml needed to be updated)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Joril</div><div class="date">07-30-2002, 10:54 PM</div></div><div class="posttext">thanks, ill play with it somemore.  but looks like ill just have to live with the small border.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Caen</div><div class="date">08-01-2002, 04:11 AM</div></div><div class="posttext">nice, i just glanced at psychogears post in the general forum and he points out that the file needs to be a multiple of 128x128 in size, so there ya go, make a files of size 512x512 or something. :)<br />
+<br />
+actually, reading more of the posts there, Geddine points out that each size (x or y) needs to be factor of 2 (2 4 8 16 32 64 128 256 512 1024 2048 4096, etc.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Glayde</div><div class="date">09-13-2002, 12:18 AM</div></div><div class="posttext">Moo.<br />
+<br />
+Anyone have any luck with this?<br />
+<br />
+I actually got it to work with gemicons01 and gemicons02 but when you increase them they look choppy because the resolution won't hold up, however, one thing i would love to do is simply replace the gemicons with the bufficons which are 40x40 and much more detailed then simply blowing up a 24x24.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

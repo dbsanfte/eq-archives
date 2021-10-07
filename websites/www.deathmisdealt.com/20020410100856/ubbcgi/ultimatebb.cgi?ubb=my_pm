@@ -1,0 +1,225 @@
+
+<html >
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script language="JavaScript1.1">
+<!--
+
+var session_cookie = getCookie('session2452340.0018');
+if (session_cookie == null) {
+	var session_dt = "0";
+	var session_j = "0";
+}  else {
+	var session_array = session_cookie.split("&");
+	var session_dt = session_array[0];
+	var session_j = session_array[1];
+}
+
+function getCookie(name) {
+     var cname = name + "=";
+        var dc = document.cookie;
+
+        if (dc.length > 0) {
+
+             begin = dc.indexOf(cname);
+
+        	 if (begin != -1) {
+                begin += cname.length;
+        		end = dc.indexOf(";", begin);
+
+                    if (end == -1) end = dc.length;
+
+                    return (dc.substring(begin, end));
+             }
+        }
+        return null;
+    }
+
+//-->
+</script>
+
+<TITLE>DM Community</TITLE>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+
+	
+
+	<style type="text/css">
+<!--
+	a:visited {text-decoration: none;}
+	a:link {text-decoration: none;}
+	a:hover {text-decoration: underline;}
+	a:active {text-decoration: none;}
+-->
+</style>
+
+</HEAD>
+
+<BODY  BGCOLOR="#ffffff" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" text="#000000" link="#000080" vlink="#000080" alink = "#000080" marginwidth="0" marginheight="0"  >
+
+
+
+
+<center>
+
+<TABLE border="0" width="95%">
+<TR><TD align="left" valign="top" >
+<A HREF="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi"><IMG src="http://www.deathmisdealt.com/ubb/bbtitle.gif" border="0"></A>
+</TD>
+<TD align="center">
+<B>
+<FONT size="3" face="Verdana, Helvetica, sans-serif" color="#000080">DM Community</FONT></B>
+<br>
+<FONT size="1" face="Verdana, Helvetica, sans-serif">
+
+<a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=my_profile"><acronym title="View your profile.">my profile</acronym></a> | <a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=my_pm"><acronym title="View your private messages.">PM</acronym></a> | <a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=agree"><acronym title="Registration is free!">register</acronym></a> | <a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=search"><acronym title="Search">search</acronym></a> | <a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=faq"><acronym title="Frequently Asked Questions">faq</acronym></a> | <a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi"><acronym title="Forum Home">forum home</acronym></a>
+
+</FONT>
+</TD></TR></TABLE>
+
+
+<br />
+
+<center>
+<table border="0" cellpadding="1" cellspacing="1" width="95%">
+<tr bgcolor="#ffffff"><td>
+<table border="0" width="100%" cellpadding="3" cellspacing="0">
+
+
+<TR bgcolor="#E6E8fA">
+<TD valign="bottom" align="left">
+<FONT size="1" face="Verdana, Helvetica, sans-serif">
+<B>&#187;
+
+<script language="JavaScript">
+<!--
+var user_cookie = getCookie('ubber2452340.0018');
+if(''==user_cookie ||  null==user_cookie) {
+document.writeln('You are not logged in.');
+} else {
+
+var user_array=user_cookie.split("&");
+user_array[2] = unescape(user_array[2]);
+document.writeln('Hello, ', user_array[2]);
+document.writeln('[ <a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=logoff">'
+,'<acronym title="Click here to log out.">'
+,'log out</acronym></a> ]');
+
+}
+//-->
+</script>
+
+</B>
+</font>
+</TD>
+<TD valign="bottom" align="right">
+<FONT size="1" face="Verdana, Helvetica, sans-serif"><B>
+<a href="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi">DM Community</a> &raquo; Login
+</B></font>
+</TD>
+</TR>
+
+
+</table></td></tr></table>
+</center>
+
+
+
+<BR>
+<TABLE cellpadding="0" border="0" width="95%">
+<TR>
+<TD colspan="2" align="left">
+<FONT size="2" face="Verdana, Helvetica, sans-serif">
+<B>&#187; Not Registered?</B> <A HREF="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=agree">To register, click here.</A>
+<BR>
+<B>&#187; Lost Password?</B> <A HREF="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi?ubb=lost_password">For assistance finding your registered login and/or password, click here.</A>
+</FONT>
+</TD>
+</TR>
+</table>
+</center>
+
+<FORM ACTION="http://www.deathmisdealt.com/ubbcgi/ultimatebb.cgi" METHOD="POST">
+<INPUT TYPE="HIDDEN" NAME="ubb" VALUE="do_login">
+<INPUT TYPE="HIDDEN" NAME="refer" VALUE="">
+
+
+<center>
+<table border="0" cellpadding="1" cellspacing="1" width="95%">
+<tr bgcolor="#ffffff"><td>
+<table border="0" width="100%" cellpadding="3" cellspacing="0">
+
+
+<TR bgcolor="#000080">
+<TD colspan="2">
+<FONT COLOR="#FFFFFF" SIZE="2" FACE="Verdana, Helvetica, sans-serif"><B>
+Login To: DM Community
+</B></FONT>
+</TD>
+</TR>
+
+
+<TR bgcolor="#E6E8fA">
+<TD>
+<FONT size="2" face="Verdana, Helvetica, sans-serif">
+Login Name:
+</FONT>
+</TD>
+<TD>
+<INPUT TYPE="TEXT" NAME="username" SIZE="30" MAXLENGTH="40">
+</TD>
+</TR>
+
+<TR bgcolor="#E6E8fA">
+<TD>
+<FONT size="2" face="Verdana, Helvetica, sans-serif">
+Password:
+</FONT>
+</TD>
+<TD>
+<INPUT TYPE="PASSWORD" NAME="password" SIZE="25" MAXLENGTH="30">
+</TD>
+</TR>
+
+<TR bgcolor="#E6E8fA">
+<TD>
+<FONT size="2" face="Verdana, Helvetica, sans-serif">
+Hide from Who's Online?
+</FONT>
+</TD>
+<TD>
+<FONT size="2" face="Verdana, Helvetica, sans-serif"><INPUT TYPE="radio" NAME="whos_online_invisible" value="yes"> yes &nbsp;&nbsp; <INPUT TYPE="radio" NAME="whos_online_invisible" value="no" CHECKED> no</FONT>
+</TD>
+</TR>
+
+
+</table></td></tr></table>
+</center>
+
+<br />
+
+<center>
+
+<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Login">
+</FORM>
+
+</center>
+
+<P>
+
+<P><center>
+<FONT SIZE="2" FACE="Verdana, Helvetica, sans-serif">
+<A HREF="mailto:info@deathmisdealt.com">Contact Us</A> | <A HREF="http://www.deathmisdealt.com">Death Misdealt Homepage</A> | <A HREF="">Privacy Statement</A></FONT>
+<p>
+<FONT COLOR="#5d7790" size="1" FACE="Verdana, Helvetica, sans-serif">
+<P>
+<a href="http://www.infopop.com"><img src="http://www.deathmisdealt.com/ubb/powered_by2.gif" width="144" height="16" border="0" alt="Infopop Corporation"></a><br />Ultimate Bulletin Board<font style='font-size: 8px' size='1'><sup><b>TM</b></sup></font> 6.1.0.3<!-- LocalRelease -->
+</FONT>
+</center>
+
+
+
+</BODY>
+</HTML>

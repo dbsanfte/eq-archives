@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - item names</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; item names</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=5">item names</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Tenril</div><div class="date">07-26-2002, 03:37 PM</div></div><div class="posttext">Do these do anything other then uniquely identify a tag in the XML? For example with spell icons, do they have to have a specific item value for each position, or is it basically done as they load in?<br />
+<br />
+  &lt;SpellGem item=&quot;CSPW_Spell0&quot;&gt;<br />
+&lt;!-- Sub tags to set options for spell gem--&gt;<br />
+ &lt;/SpellGem&gt;<br />
+<br />
+Could this be:<br />
+  &lt;SpellGem item=&quot;Some_random_name&quot;&gt;<br />
+&lt;!-- Sub tags to set options for spell gem--&gt;<br />
+ &lt;/SpellGem&gt;<br />
+<br />
+And still show up at the first spot in the spell gem list?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Martinusiv</div><div class="date">07-26-2002, 04:29 PM</div></div><div class="posttext">Name them anyway you want just check your &quot;EQUI_CastSpellWnd.xml&quot; file.<br />
+<br />
+&lt;SpellGem item = &quot;CSPW_Spell0&quot;&gt;<br />
+		&lt;ScreenID&gt;CSPW_Spell0&lt;/ScreenID&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;1&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;40&lt;/CX&gt;<br />
+			&lt;CY&gt;32&lt;/CY&gt;<br />
+		&lt;/Size&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-26-2002, 10:39 PM</div></div><div class="posttext">I think that certain things like Screen item names can't be renamed. I read this post thread earlier and I was looking through the files and I can't find any references to &quot;PlayerWindow&quot; for example. Even if you look at the windows that can be summoned by the window selector (such as pet window, spellbook, options, etc), in the EQUI_SelectorWnd.xml there is no reference to the &quot;PlayerWindow&quot; screen item, or the &quot;PetInfoWindow&quot; screen item. There are lots of XML files there, but they all seem to be for each individual window, and none of them appear to be in any sort of heiarchy.<br />
+<br />
+I think that, seeing how nothing is referenced and the windows and certain screenpiece items like spell gems and such have arbitrary names that are not referenced anywhere else except in their definition, that you *CANNOT* change these, nor can you add to them. I tried making a secondary playerwindow, so instead of having one box with all the info, I attempted to have two windows that I can put in different locations on the screen. I attempted declaring another Screen item in the EQUI_PlayerWindow.xml file called &quot;PlayerWindow2&quot; and I just copied what I had in &quot;PlayerWindow&quot; already. I was hoping that maybe if I toggled the player window in game it would summon and un-summon both of the windows somehow... but it didn't. It only shows &quot;PlayerWindow&quot;, and &quot;PlayerWindow2&quot; is just left there in the code, never used in the client. If anyone has actually managed to make an entirely new window instead of modify an existing one, please please please tell me what to declare and where, or at least what file to check, because I've been looking the entire afternoon and I have found absolutely nothing...<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Faeriemage</div><div class="date">07-27-2002, 12:00 AM</div></div><div class="posttext">&lt;ScreenID&gt;&lt;/ScreenID&gt;<br />
+Is the EQ centric way of determining what something is. It is interchangeable with an <br />
+&lt;EQ_Type&gt;&lt;/EQ_Type&gt; <br />
+in a label code. <br />
+<br />
+As to whether or not you can make a new window entirely I am testing a theory now and will re-post when I get the answer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Martinusiv</div><div class="date">07-27-2002, 06:38 AM</div></div><div class="posttext">Trying also, but i get a bad feeling (the feeling i had when i was trying to put all the gauges in 1 window) that psycho is right :-(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alshain</div><div class="date">07-27-2002, 01:24 PM</div></div><div class="posttext">The item= attribute for screen elements isn't really important.  It just has to be unique in each window.<br />
+<br />
+I think certain elements such as windows and buttons are referenced by the UI program using the ScreenID.  You don't want to mess with those names as it will break the program - i.e. the program won't load.  Other elements such as gauges and labels have a ScreenID but the program doesn't make direct reference via ScreenID so it doesn't matter what these elements are named.  For gauges and labels the EQType links the element into the program.<br />
+<br />
+There was a mention in another thread of the pet_hp in the player window being required.  I think the programmer who coded this into the UI had to use the ScreenID (thus causing it to be required) as there is no EQType for pet hp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jeremyf</div><div class="date">07-30-2002, 07:50 AM</div></div><div class="posttext">Just to ensure I have not talking a load of rubbish I'll start at the beginning.<br />
+<br />
+In the ui directory are 2 files called SIDL.xml and EQUI.xml.  The first is the EQ schema for the interface and defines types and defaults for all the items you will use.  This file MUST NOT be changed.  The second declares all the additional files used in the interface where each file represents one of the ui windows.  This it may be possible to change the names as long as the corresponding file matches, however, it is likely that the engine that uses these files is looking for a specific name.  I suspect it is a case of don't touch this file either.  The remaining files are yours to do with as you please.<br />
+<br />
+Now to items.  in each window file the common pattern seems to be to declare all the items in the window then declare the window.  You will notice in the window item declaration that each item is linked into the window using &lt;Pieces&gt; &lt;/Pieces&gt;.  i think that as long as this name matches a declared item it doesnt matter what name you use.<br />
+<br />
+Jeremy<br />
+<br />
+Originally posted by Tenril <br />
+Do these do anything other then uniquely identify a tag in the XML? For example with spell icons, do they have to have a specific item value for each position, or is it basically done as they load in?<br />
+<br />
+  &lt;SpellGem item=&quot;CSPW_Spell0&quot;&gt;<br />
+&lt;!-- Sub tags to set options for spell gem--&gt;<br />
+ &lt;/SpellGem&gt;<br />
+<br />
+Could this be:<br />
+  &lt;SpellGem item=&quot;Some_random_name&quot;&gt;<br />
+&lt;!-- Sub tags to set options for spell gem--&gt;<br />
+ &lt;/SpellGem&gt;<br />
+<br />
+And still show up at the first spot in the spell gem list?</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

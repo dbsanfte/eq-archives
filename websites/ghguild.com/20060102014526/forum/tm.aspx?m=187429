@@ -1,0 +1,2179 @@
+
+<html>
+<head>
+<title> Is there a 19&quot; or greater LCD..... </title>
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/trims.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/showSelect.js"></script>
+<script language="JavaScript" src = "js/pgdcodeinput.js"></script>
+<script language="JavaScript" src = "js/validator.js"></script>
+<script type="text/javascript">
+
+function keepalive(){
+	var keepAliveFrame = document.createElement("iframe")
+	keepAliveFrame.src = "/forum/keepalive.aspx"
+	keepAliveFrame.style.display="none"
+	document.body.appendChild(keepAliveFrame)
+}
+
+
+
+setTimeout("keepalive()",3540000); 
+
+var objFormValidator = new PGDFormValidator;
+
+function validateForm(postform) {
+	if (objFormValidator.execute()){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+// -->
+</script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("1/1/2006 5:45:54 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("1/1/2006 5:45:54 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "1/1/2006 5:45:54 PM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+ strTitle [1] = "25&&0neophyte1"
+ strTitle [2] = "100&&0greenhorn2"
+ strTitle [3] = "400&&0competent3"
+ strTitle [4] = "900&&0seasoned4"
+ strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<!-- CSS Stylesheet -->
+<style type="text/css" id="gh_css">
+<!--
+/* GH header CSS  */
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+/* ***** don't change the following ***** */
+
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+body { margin: 0; padding: 0; }
+img { border: 0; }
+#header {
+position: relative;
+display: block;
+width: 100%;
+height: 30px;
+margin: 0;
+padding: 0;
+background: url(image/livebarbg.jpg) repeat-x;
+}
+#header #header-nav {
+position: absolute;
+top: 0;
+right: 0;
+}
+#header #header-nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#header #header-nav ul li {
+display: inline;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+
+<div id="header">
+<div id="live">
+<a href="http://ghguild.com"><img src="http://ghguild.com/forum/image/livebarghlive.jpg"></a>
+</div>
+<div id="header-nav">
+<ul>
+<li><a href="http://eq.ghguild.com/">Everquest</a></li><li>Everquest2</li><li>World of Warcraft</li>
+</ul>
+</div>
+</div>
+
+
+
+<center><TABLE width='97%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width=80% background="http://ghguild.com/forum/rightextend2.jpg" height="115"></td>   </tr>  </table>
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		if (theForm.body) theForm.body.focus(); else if (document.all && document.all.body1) document.all.body1.focus();
+		
+		theForm.parent.value = parentid;
+		theForm.subject.value = theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='97%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Is there a 19&quot; or greater LCD..... </h2>&nbsp;
+		
+		<br>
+		<span class="ultrasmall">View related threads:
+		(<a href="/forum/searchpro.aspx?phrase=Is+there+a+19%26quot%3b+or+greater+LCD.....&criteria=OR&forumid=2&topicreply=topic&message=both&timefilter=0&top=10" target="_blank">in this forum</a>
+		| <a href="/forum/searchpro.aspx?phrase=Is+there+a+19%26quot%3b+or+greater+LCD.....&criteria=OR&forumid=ALL&topicreply=topic&message=both&timefilter=-365&timeframe=%3E&top=10" target="_blank">in all forums</a>)
+		</span>
+		<br><br>
+		
+	</td>
+	<td class="c2" align="right">Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+	
+<table width="97%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this topic: 
+    none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.aspx?m=187429" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+    
+	</td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Is there a 19&quot; or greater LCD..... </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table><script language="JavaScript" type="text/javascript">
+function submitForm(){ try {updateRTE('body1'); return true;} catch(e){}; }</script>
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="155" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="155" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0" width="100%">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.aspx?go=prev&m=187429&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.aspx?go=next&m=187429&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187429></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 3:54:03 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 3:54:03 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=47" class="subhead" target="_blank">Metfan</a><br>
+        
+		  <script>titleAndStar(743,-4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/47/Vt57397.gif" border=0 align="absmiddle"></div><br>
+          Posts:  743<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          That is good for gaming mainly for FPS. I dont know if the technology has caught up to CRT quality yet. I want to retire my 21&quot; viewsonic Dinosaur but not loose any quality. I been holding off getting a LCD till it catches up to CRT.  <br>  <br> I know the 17&quot; ones have pretty much caught up, but I want a 19&quot; or greater, being that im used to a 21&quot; now. I cant go smaller. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Metfan</b> -- <b>10/1/2005 3:55:28 AM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.dvdprofiler.com/mycollection.asp?alias=Metallica%20Fan" target="_blank">My DVD Collection</a> <br> AKA <br> Hemi - GH monk in EQ2 
+         
+         <div align="right">
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=47'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=47&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=47&mode=block&pg=tm&m=187429' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=187429'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187429')">Post #: 1</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187434></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 4:36:03 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 4:36:03 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I've had a Dell 2405FPW for 7 months now and it's great. <br>  <br> Of course there are people who say LCD is totally useless with games and movies. <br>  <br> You might want to check this out too: <a href="http://www.digitimes.com/displays/a20050921PR208.html" target="_blank">http://www.digitimes.com/displays/a20050921PR208.html</a> 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187429'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=187434' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187434')">Post #: 2</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187442></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 5:31:18 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 5:31:18 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=77" class="subhead" target="_blank">nedd</a><br>
+        
+		  <script>titleAndStar(5653,-116,false,false,"winner first on the new server award +500 to posts","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/77/64693CDB83604AEA89F17525B9152151.gif" border=0 align="absmiddle"></div><br>
+          Posts:  5653<br>
+          
+          Joined:  11/1/2002 <br>
+          From:  hihihoho gnom city!  Hero: meatwad<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          i've played counter strike, quake 3 rocket arena, enemy territory, ut2k4, splinter cell chaos theory fine with my dell 18 inch and i got that a few years ago.&nbsp; i'm not the greatest but it's not like i sucked ass either 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br>I've watched Bareback Mount'Em 3 times. Gay Cowboys (Croso and Mezzini) &gt; * <br> <img src="http://towleroad.typepad.com/photos/uncategorized/bb1.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187434'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=77'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=77&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=77&mode=block&pg=tm&m=187442' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187442')">Post #: 3</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187446></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 7:00:19 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 7:00:19 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I have a pair of Sceptre X9G-Naga IIs on my desk.&nbsp; They run about 200 bucks and provide 12ms response times and 1280x1024 resolution.&nbsp; Some people say 12ms is still too high, but I haven't had any problems playing games on 'em.&nbsp; They also make an 8ms model but it's another hundred bucks.&nbsp;  <br>  <br> Here's a link to NewEgg's Sceptre store:  <br>  <br> <a href="http://www.newegg.com/Product/ProductList.asp?Submit=Browse&amp;Manufactory=1289" target="_blank">http://www.newegg.com/Product/ProductList.asp?Submit=Browse&amp;Manufactory=1289</a> <br>  <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187442'>nedd</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=187446' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187446')">Post #: 4</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187448></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 7:11:30 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 7:11:30 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I've read alot of good things about the Viewsonic VP191B. <br>  <br> Wandatin 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187442'>nedd</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=187448' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187448')">Post #: 5</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187490></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 3:55:35 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 3:55:35 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=47" class="subhead" target="_blank">Metfan</a><br>
+        
+		  <script>titleAndStar(743,-4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/47/Vt57397.gif" border=0 align="absmiddle"></div><br>
+          Posts:  743<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          What do you think of this one?? <br>  <br> <a href="http://www.newegg.com/Product/Product.asp?Item=N82E16824001185" target="_blank">http://www.newegg.com/Product/Product.asp?Item=N82E16824001185</a> 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.dvdprofiler.com/mycollection.asp?alias=Metallica%20Fan" target="_blank">My DVD Collection</a> <br> AKA <br> Hemi - GH monk in EQ2 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187429'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=47'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=47&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=47&mode=block&pg=tm&m=187490' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187490')">Post #: 6</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187492></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 4:18:39 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 4:18:39 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=863" class="subhead" target="_blank">Orocai</a><br>
+        
+		  <script>titleAndStar(709,0,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  709<br>
+          
+          Joined:  11/12/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          16 ms is about 60 Hz.&nbsp; 12 ms is about 85 Hz.&nbsp; 8 ms is about 125 Hz.&nbsp; With CRTs, the only reason you usually hear about the vertical refresh rate is for eliminating flicker.&nbsp; But CRT pixels can't update any faster than the electron beam comes by.&nbsp; CRTs have a analogy to a response time. <br>  <br> Complaints about smearing and blurring in games lingers from an older generation of LCD panels, when the response times and persistence were much higher. <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187429'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=863')" title="E-mail  Orocai"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=863'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=863&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=863&mode=block&pg=tm&m=187492' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187492')">Post #: 7</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187494></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 5:08:24 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 5:08:24 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I think the NewEgg site is down at the moment so I can't check your link Met.&nbsp; But if you paste in the name I entered above you should be able to find it.&nbsp;  <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187492'>Orocai</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=187494' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187494')">Post #: 8</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187496></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 5:16:53 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 5:16:53 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=47" class="subhead" target="_blank">Metfan</a><br>
+        
+		  <script>titleAndStar(743,-4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/47/Vt57397.gif" border=0 align="absmiddle"></div><br>
+          Posts:  743<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Think I found a better deal on a newer model with 4ms. <br>  <br> Guess you can't link from the circuit city web site. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.dvdprofiler.com/mycollection.asp?alias=Metallica%20Fan" target="_blank">My DVD Collection</a> <br> AKA <br> Hemi - GH monk in EQ2 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187494'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=47'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=47&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=47&mode=block&pg=tm&m=187496' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187496')">Post #: 9</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187505></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 6:50:07 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 6:50:07 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=1" class="subhead" target="_blank">Croso</a><br>
+        
+		  <script>titleAndStar(1700,10000,true,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/1/drawgirl.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1700<br>
+          
+          Joined:  10/18/2002 <br>
+          From:  Santa Rosa, CA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          One warning is not to buy an LCD at newegg... They have a crap dead pixel return policy. <br>  <br> I have a couple 2405fpw's as well and they are great but pretty $$... <br>  <br> I'd reccomend anything 12ms and lower, preferably 8ms or lower. Of course it has to have DVI. <br>  <br> One problem with 19&quot; is that they are mostly the same res as 17&quot; so it's just bigger, no more resolution. <br>  <br> My pick would be a Dell 2001FP or Samsung 20&quot; LCD of the current generation. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><b><a href="http://www.magelo.com/eq_view_profile.html?num=396606" target="_blank">Croso, OGRE!!! Warlord of Karana</a></b><font size="1"><i> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=396589" target="_blank">Qasa</a> - 53 Cleric</i> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187496'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=1')" title="E-mail  Croso"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=1'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=1&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=1&mode=block&pg=tm&m=187505' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187505')">Post #: 10</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187507></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 7:49:29 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 7:49:29 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Yeah I'd forgotten about the dead pixel policy.&nbsp; If it has fewer than 8 dead pixels, you can't return it.&nbsp; Definitely something to keep in mind, although I've not had any problems with the ones I bought there.&nbsp;  <br>  <br> I think if you dig deep in this forum you might find where someone listed a couple of sites with zero pixel return policies.&nbsp; I can't remember for sure if we ever answered that question or not. <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187505'>Croso</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=187507' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187507')">Post #: 11</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187513></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 10:39:34 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 10:39:34 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=47" class="subhead" target="_blank">Metfan</a><br>
+        
+		  <script>titleAndStar(743,-4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/47/Vt57397.gif" border=0 align="absmiddle"></div><br>
+          Posts:  743<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I went to look at monitors at Fry's and the 19&quot; ones do seem small to me now.&nbsp; Dam think I want a 20.9&quot; or greater. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.dvdprofiler.com/mycollection.asp?alias=Metallica%20Fan" target="_blank">My DVD Collection</a> <br> AKA <br> Hemi - GH monk in EQ2 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187507'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=47'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=47&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=47&mode=block&pg=tm&m=187513' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187513')">Post #: 12</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187521></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/1/2005 11:43:27 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/1/2005 11:43:27 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>ORIGINAL:  Croso <br>  <br> I have a couple 2405fpw's as well and they are great but pretty $$... <br> </blockquote> <br> Expensive? I'd consider them dirt cheap. Aren't they going for around $700 there with proper coupons? <br>  <br> What comes to blurring.. I used a ~85ms 18.1&quot; panel for over 4 years and it was just fine for FPS games <img src="http://ghguild.com/forum/image/s2.gif"> 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187505'>Croso</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=187521' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187521')">Post #: 13</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187533></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/2/2005 7:27:18 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/2/2005 7:27:18 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=3" class="subhead" target="_blank">Sumadan</a><br>
+        
+		  <script>titleAndStar(2659,4,false,true,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  2659<br>
+          
+          Joined:  10/25/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I've had really good luck with these two monitors. <br>  <br> <a href="http://www.benq.com/products/product.cfm?product=608" target="_blank">http://www.benq.com/products/product.cfm?product=608</a> <br>  <br> and <br>  <br> <a href="http://www.benq.com/products/product.cfm?product=435" target="_blank">http://www.benq.com/products/product.cfm?product=435</a>  <br>  <br> The second is the monitor I use at home for gaming and have never had any ghosting or other issues. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Sumadan</b> -- <b>10/2/2005 7:30:46 AM </b> &gt;					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187521'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=3')" title="E-mail  Sumadan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=3'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=3&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=3&mode=block&pg=tm&m=187533' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=187533'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187533')">Post #: 14</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187536></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/2/2005 9:48:24 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/2/2005 9:48:24 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=837" class="subhead" target="_blank">Wandatin</a><br>
+        
+		  <script>titleAndStar(812,1,false,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><br>
+          Posts:  812<br>
+          
+          Joined:  11/8/2004 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          You need to be careful of panels that claim to be 8 ms or 12 ms.&nbsp; This was a new measuring method they came up with a little over a year ago.&nbsp; It measures grey-to-grey transitions.&nbsp; The latency rating is in no way transferrable to the old method of using black-to-white transitions.&nbsp; And if you take a look at some reviews that measure true latency you will see that alot of these panels that claim 8 to 12 ms are actually as high as 30 ms average timing. <br>  <br> That is one reason I recommended the Viewsonic VP191b.&nbsp; The test result graphs I've seen of this LCD show a true average latency of just under 15 ms. <br>  <br> Wandatin 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187533'>Sumadan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=837')" title="E-mail  Wandatin"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=837'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=837&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=837&mode=block&pg=tm&m=187536' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187536')">Post #: 15</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187537></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/2/2005 9:55:08 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/2/2005 9:55:08 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          True about the latencies. There's no standard for them so manufacturers show the value that suits them best. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187536'>Wandatin</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=187537' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187537')">Post #: 16</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187547></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/2/2005 1:40:17 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/2/2005 1:40:17 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=64" class="subhead" target="_blank">Olio</a><br>
+        
+		  <script>titleAndStar(864,-8,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%205/484.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  864<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Another thing you may want to be aware of... 8ms lcds usually use a TN panel which is a 6-bit panel instead of an 8-bit panel (such as Super IPS (SIPS)). It(TN panel) allows for more responsiveness(less motion blur/ghosting) but you lose out on accurate color. 6-bit panels usually advertise 16.2M colors that they can display but they have to use dithering techniques to achieve that. While 8-bit panels display 16.7M with no dithering techniques that i know about.&nbsp; 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Olio</b> -- <b>10/2/2005 2:02:18 PM </b> &gt;					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187537'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=64')" title="E-mail  Olio"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=64'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=64&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=64&mode=block&pg=tm&m=187547' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=187547'))">Revisions: 4</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187547')">Post #: 17</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187692></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/3/2005 3:55:07 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/3/2005 3:55:07 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=967" class="subhead" target="_blank">Kellmourn</a><br>
+        
+		  <script>titleAndStar(341,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%201/9.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  341<br>
+          
+          Joined:  12/1/2004 <br>
+          From:  Canton, Ohio<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Dell's 2001FP 20.1&quot; Flat Panel is on sale for $524.30.&nbsp; Regularly sells for $749, so looks like a good deal.&nbsp; This monitor got a Kick Ass award from Maximum PC. <br>  <br> <a href="http://accessories.us.dell.com/sna/ProductDetail.aspx?TabPage=producthighlights&amp;sku=320-1578&amp;category_id=4009&amp;c=us&amp;l=en&amp;cs=19" target="_blank">http://accessories.us.dell.com/sna/ProductDetail.aspx?TabPage=producthighlights&amp;sku=320-1578&amp;category_id=4009&amp;c=us&amp;l=en&amp;cs=19</a>  <br>  <br> Edit:&nbsp; Sale ends Oct 5.&nbsp; Just bought one for myself. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Kellmourn</b> -- <b>10/3/2005 9:57:01 PM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><div align="center"><font size="5"><b><a href="http://www.magelo.com/eq_view_profile.html?num=681363" target="_blank"><font color="purple">Kellmourn Gaelstorm</font></a></div></font></b> <br> <div align="center"><font size="2"><font color="green">E Pluribus Unum</div></font></font> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187547'>Olio</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=967')" title="E-mail  Kellmourn"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=967'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=967&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=967&mode=block&pg=tm&m=187692' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=187692'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187692')">Post #: 18</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=187773></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/4/2005 7:15:49 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2005 7:15:49 AM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Eizo released interesting new panels. <br>  <br> 21&quot;&nbsp; <a href="http://www.eizo.com/products/lcd/S2110W/index.asp" target="_blank">http://www.eizo.com/products/lcd/S2110W/index.asp</a> <br> 24&quot;&nbsp; <a href="http://www.eizo.com/products/lcd/S2410W/index.asp" target="_blank">http://www.eizo.com/products/lcd/S2410W/index.asp</a> 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187692'>Kellmourn</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=187773' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=187773')">Post #: 19</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188109></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/5/2005 3:37:35 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/5/2005 3:37:35 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=47" class="subhead" target="_blank">Metfan</a><br>
+        
+		  <script>titleAndStar(743,-4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/47/Vt57397.gif" border=0 align="absmiddle"></div><br>
+          Posts:  743<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Where can you buy those monitors??? Never heard of that brand. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.dvdprofiler.com/mycollection.asp?alias=Metallica%20Fan" target="_blank">My DVD Collection</a> <br> AKA <br> Hemi - GH monk in EQ2 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#187429'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=47'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=47&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=47&mode=block&pg=tm&m=188109' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188109')">Post #: 20</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188695></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/8/2005 3:44:04 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2005 3:44:04 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=49" class="subhead" target="_blank">Ozmo</a><br>
+        
+		  <script>titleAndStar(469,4,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/49/BD85E41A573142D39164262435647FAA.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  469<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I like my <a href="http://accessories.us.dell.com/sna/productlisting.aspx?c=us&amp;cat=snp&amp;category_id=6198&amp;cs=04&amp;l=en&amp;mnf=694&amp;Page=productlisting.aspx" target="_blank">Dell UltraSharp 2005PFW 2.1-inch Wide Aspect Flat Panel LCD</a> <br>  <br> It's listing for $699 now but I think I got mine for around $575. <br>  <br> The wide aspect aspect is the aspect I like best. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.ninjai.com/" target="_blank"><img src="http://home.comcast.net/~dan.cooley/bird_branch.jpg"></a> <br> <b>Ozmo</b> <br> <a href="http://eq2players.station.sony.com/en/pplayer.vm?characterId=137191102" target="_blank"><i>What you see, is not always what you get</i></a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188109'>Metfan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=49')" title="E-mail  Ozmo"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=49'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=49&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=49&mode=block&pg=tm&m=188695' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188695')">Post #: 21</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=188779></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Is there a 19&quot; or greater LCD.....  - <span class="ultrasmall">10/9/2005 5:36:15 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/9/2005 5:36:15 PM",0,0,0,187429,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=64" class="subhead" target="_blank">Olio</a><br>
+        
+		  <script>titleAndStar(864,-8,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%205/484.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  864<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <a href="http://www.slickdeals.net/" target="_blank">http://www.slickdeals.net/</a> --&gt; or <a href="http://www.anandtech.com%27s" target="_blank">www.anandtech.com's</a> &quot;HOT DEALS&quot; forum = places to find coupons for Dell displays/hardware.  <br>   <br>  The Dell 2005fpw could be had for 394/398 before shipping/handling/tax(if in Cal) for the first 1500 users to use the coupon just last thurs/fri. (actually were 2 stackable coupons: a 35% off coupon and a $60 off $500&gt;). The 35% coupon is used up now I believe. <br>   <br>  If you're interested in the Dell monitors wait and keep an eye out for sweet coupons (not 12/20%, but 35/40% off) along with that $60 off $500 coupon that's always around. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Olio</b> -- <b>10/9/2005 5:38:07 PM </b> &gt;					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#188695'>Ozmo</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=64')" title="E-mail  Olio"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=64'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=64&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=64&mode=block&pg=tm&m=188779' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=188779'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=188779')">Post #: 22</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+       <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Is there a 19&quot; or greater LCD..... </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="97%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" >- - Public Forum</option>
+<option value="tt.aspx?forumid=2" selected>- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="97%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="187429">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="97%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+<font size="-4" color="#b1b1b1">This Content for Google Adsense: Lots of Gaming and Computer hardware. Buy Computer Hardware here. Newegg is the best for hardware. Fast Video Cards. World of Warcraft. Get a fast computer like alienware for the win. Win Teh game. Arcade games are fun. Spyware and Viruses are not. Porn is cool but google isn't down with the porn. Everquest. Everquest 2. We do it all. PC Gaming X-box Playstation 2 Xbox 360 Console Games Get HDTV Television With Satellite TV or Cable with Cablecard for the best TV experience.  There's also great deals on fast food and coupon sites. Get Dell coupons from fatwallet or bensbargins. Microsoft Server products for the win. Web hosting we provide for FREE! Gamers like to eat snacks like cheetos or candy and soda. Time to get on the fattymcfatfat machine. Treadmill and no gym for home. Weight Watchers and lose weight fast with diet pills that may kill you but hey that's the fun. Atkins doesn't work. There's no women on the internet unless they post pics of their breasts with a penny. Digital Cameras like the Rebel XT or 20D from Canon are much better than cameras from Nikon like D50 and D70. Sigma is great if you get a sharp one. Play the Sigma Lottery if you wish.</font></center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.094</font><br>
+</body>
+</html>

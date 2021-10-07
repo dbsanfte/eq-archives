@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Moving the auto-attack indicator?</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Moving the auto-attack indicator?</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=600">Moving the auto-attack indicator?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Thulseh</div><div class="date">08-03-2002, 06:18 PM</div></div><div class="posttext">Is there a way to move the auto attack indicator (flashing red border) away from the player window and put it on the target window? I can't seem to find the indicator for it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">08-03-2002, 06:22 PM</div></div><div class="posttext">Hard coded mate. Sorry..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uahaa</div><div class="date">08-05-2002, 05:43 AM</div></div><div class="posttext">Could'nt you move the info in PlayerWnd to the TargetWnd and the otherway around to move the blinking target? :confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">08-05-2002, 05:57 AM</div></div><div class="posttext">That you can do.<br />
+<br />
+Flip the Player Info and Target window information. Just the elements. It will confuse EQ a bit ( Cntl-P = Target and Cntl-T = Player ), but that's about it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uahaa</div><div class="date">08-06-2002, 06:15 AM</div></div><div class="posttext">I tried to downright swap name on the files.... but didnt help.<br />
+Some element in the playerwindow must trigger the blinkonattack event... or?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nennayan</div><div class="date">08-06-2002, 06:21 AM</div></div><div class="posttext">You can't just swap the filenames, nor can you simply swap the contents of the files. You'll have to add the information from each window so that they both have all the same stuff, then alter the parts you don't want so they don't display.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">08-06-2002, 07:36 AM</div></div><div class="posttext">I believe you can get away with just swapping out the Screen Element &lt;Pieces&gt;.<br />
+<br />
+Don't quote me 100% on that. I've never done that before, but there isn't any &quot;defining&quot; elements in both of them windows.<br />
+<br />
+As far as EQ cares, you can completely remove all the Piece elements from both windows and be fine ( unlike some other windows ).<br />
+<br />
+Oh, and make sure you get the Size and Location information from the two Screen elements switched, too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uahaa</div><div class="date">08-06-2002, 09:14 AM</div></div><div class="posttext">ahh... stupid me, now i understand how you ment.<br />
+gonna try and see how it works out.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uahaa</div><div class="date">08-08-2002, 08:38 AM</div></div><div class="posttext">This still eludes me a great deal.<br />
+I tried today to swap the names of the windows....<br />
+<br />
+	&lt;Screen item = &quot;PlayerWindow&quot;&gt;<br />
+<br />
+to...<br />
+<br />
+	&lt;Screen item = &quot;TargetWindow&quot;&gt;<br />
+<br />
+...and viceverca. <br />
+<br />
+So far so good, so i reload the skin knowing of course that i will<br />
+get an error of some kind. So this is what comes up...<br />
+<br />
+UIErrorLog created at Thu Aug 08 14:11:06 2002<br />
+[Thu Aug 08 14:11:08 2002] Error: Could not find child PetHP in window PlayerWindow<br />
+<br />
+Ok, fair enough i think... and edit the both files swaping out some<br />
+of the defintions in the windows... now calling target for HP_Player <br />
+and just a simple _ for HP_Pet. Then i label the Target_HP to <br />
+where HP_Player used to be and define a new label for the <br />
+Pet_HP.<br />
+<br />
+Still i get above message...<br />
+<br />
+One thing i thought about...<br />
+<br />
+To hide the Pet_HP _ i used CY&amp;CX of 1. This should meen it dont<br />
+display the label item.... but do it also meens that it wont<br />
+regognize it as an label and therfor it is still complaining about<br />
+the Pet_HP. ??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">08-08-2002, 08:49 AM</div></div><div class="posttext">Okay, I just did this mod today. You can see the beta pic in the beta forum.<br />
+<br />
+Pet_HP is tied to the PlayerWindow. It *must* exist in the &lt;Pieces&gt; in the Player Window.<br />
+<br />
+What *must* exist is just this: &lt;ScreenID&gt;Pet_HP&lt;/ScreenID&gt;<br />
+<br />
+Copy the Pet HP gauge and move it to you other window. Change the original to size 0,0.<br />
+Item= can be anything you want, but it must contain &lt;ScreenID&gt;Pet_HP&lt;/ScreenID&gt; inthere some place.<br />
+<br />
+Add it to the pieces and work on the rest until your heart's content.<br />
+<br />
+<br />
+FYI - &lt;ScreenID&gt; is VI's original form of EQType. Apperently it was converted to EQType, makes since, but VI didn't remove all the ScreenID requirements from the game, suckage.<br />
+<br />
+So, your custom additions can have any ScreenID, or none, but any current one it's preffered you leave them intact.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uahaa</div><div class="date">08-08-2002, 08:56 AM</div></div><div class="posttext">Pet_HP the only thing that i have to move?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">08-09-2002, 02:50 AM</div></div><div class="posttext">No, Pet_HP is the only one you can't move out of the PlayerWindow.<br />
+<br />
+Rest is fine. Just create a new Pet_HP Gauge, name? PetHP? :p in the &quot;new PlayerWindow&quot; for your pet's HP. One bug is that it will never vanish ( /bonk VI ) and set Pet_HP, in your original Player Window, to size 0x0.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saoshen</div><div class="date">08-09-2002, 11:47 AM</div></div><div class="posttext">I've successfully moved Geddines larget target bar to the player window, hidden the default player window info. I use Zeremus's group window which includes stats and normal player window info.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uahaa</div><div class="date">08-10-2002, 04:25 AM</div></div><div class="posttext">Ok, well.... i get it to wrok now... :)<br />
+Thanks for your help.... blinking target insteed of personal owns.<br />
+<br />
+--<br />
+Uahaa &lt;Remedy&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">08-10-2002, 10:01 PM</div></div><div class="posttext">I was annoyed when the original new UI came out and they forgot the red flashing line.  After putting some feedback in, it was added next patch made me happy.  But it is still hard to see be only 1 pixel wide and playing in 1600x1200.  Wish they did have more modifying ability to it.  I never thought to move it to another window, thanks for the idea.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oakwood</div><div class="date">08-13-2002, 02:21 PM</div></div><div class="posttext">Ok, I am still confused.  <br />
+<br />
+I am using the Geddine target, and a modified version of Wylem's Melee Compact player info (ac &amp; atk replaced with xp %)<br />
+<br />
+I want the autoattack indicator on the target window.<br />
+<br />
+What i understand so far:<br />
+  switch the file names of player and target window<br />
+  add something about pet_hp to the new target window (now named PlayerWindow)<br />
+<br />
+What I am not understanding:<br />
+  what exactly about the pet_hp do i need to add to the new target window (now named PlayerWindow)<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Morturi</div><div class="date">10-07-2002, 05:44 PM</div></div><div class="posttext">Pet_HP is tied to the PlayerWindow. It *must* exist in the &lt;Pieces&gt; in the Player Window. <br />
+<br />
+I totaly removed all the pet hp information out of my player window, and it works great, but would that be why i get an error in eq when zoning only?<br />
+<br />
+ill try it now and answer my own question.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stryhf</div><div class="date">11-06-2002, 12:57 AM</div></div><div class="posttext">I swapped the contents of Player Window with target window.<br />
+<br />
+One thing I did to make it more visible is I &quot;stretched&quot; the Target_HP gauge within Player window, and center it on my screen above my chat windows.  Makes it a little easier to see when it's blinking, the location is more centralized.  It also prevents the smooshed look on long Mob names.<br />
+<br />
+You don't need Pet_HP gauge to get the modified skin to work... it'll just complain every time you log in and zone that your files are not correct (but at least it won't crash).  I have actually found it useful to have Pet HP gauge as a thin line under my target's HP bar.<br />
+<br />
+Also if you end up combining the contents of the Player data with the Group Data in the Group window (does that sound confusing yet?), you can free up the Target Window for something else, like Arista's Timers.<br />
+<br />
+That way you can think Alt-P for Party (including yourself) and Alt-T for Timer's window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">marcin</div><div class="date">11-08-2002, 01:35 PM</div></div><div class="posttext">I totaly removed all the pet hp information out of my player window<br />
+<br />
+Any time you totally remove anything that is checked for from a window you will get that red message that tells you that your UI isn't compatable even though it will still load it up.  This is very sloppy coding, I see too many people doing this.<br />
+<br />
+If you wish to remove an element just size and location it to 0,0, as VI still checks for many of the pieces in order to load certain windows even though they don't have to be displayed.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

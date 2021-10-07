@@ -1,0 +1,613 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<!-- end no cache headers -->
+	<title>EQInterface - Your Everquest modification source</title>
+	<META name="Keywords" content="Everquest, EQ, Everquest2, EQ2, Skins, XML, Interfaces, mods, modifications, MMPORG, games, RPG, downloads, soe">
+<META name="Description" content="Your EQ interface modification source">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<style type="text/css">
+BODY {
+	SCROLLBAR-BASE-COLOR: #0577A6;
+	SCROLLBAR-ARROW-COLOR: #FFFFFF;
+}
+
+SELECT {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+TEXTAREA, .bginput {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #CFCFCF
+}
+A:link, A:visited, A:active {
+	COLOR: #000020;
+}
+A:hover {
+	COLOR: #FF4400;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+}
+#cat A:hover {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+	COLOR: #000020;
+	TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+	COLOR: #FF4400;
+	TEXT-DECORATION: underline;
+}
+.thtcolor {
+	COLOR: #E0E0E0;
+}
+.pagenumstatic {
+	color: #000000;
+	background-color: #F4F4F4;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 1em;
+	text-decoration: none;
+}
+.pagenum A:link, .pagenum A:visited, .pagenum A:active {
+	color: #FFFFFF;
+	background-color: #0577A6;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 1em;
+	text-decoration: none;
+}
+.pagenum A:hover {
+	color: #000000;
+	background-color: #F4F4F4;
+	text-decoration: none;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 1em;
+	text-decoration: none;
+}
+.cat A:link, .cat A:visited, .cat A:active {
+	color: #000020;
+                text-decoration: none;
+}
+.cat A:hover {
+	color: #FF4400;
+	text-decoration: underline;
+}
+.searchtop {
+border-top: #000000 1px solid;
+border-bottom: #000000 1px solid;
+border-left: #000000 1px solid;
+border-right: #1A5673 1px solid;
+font:  bold 8pt Verdana, Arial, Helvetica, Sans-Serif;
+color: #FFFFFF;
+background-color: #1A5673;
+height: 19px;
+</style>
+
+<script type="text/javascript">
+<!--
+function openwindow(){
+	window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=640,height=400");
+}
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" id="all" leftmargin="0" rightmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#000000" vlink="#000000" alink="#000000">
+ <table cellpadding="0" cellspacing="0" border="0"  width="100%">
+	<tr><td bgcolor="#0E0D1E" background="/skins/interfaceblue/layout/topbar-bg.gif" height="11" align="left" valign="top"><img src="/skins/interfaceblue/layout/clear.gif" width="1" height="11"></td>
+</tr></table>
+<table cellpadding="0" cellspacing="0" border="0"  width="100%">
+	<tr><td bgcolor="#FFFFFF" background="/skins/interfaceblue/layout/headerleft-bg.jpg" align="left" valign="top"><img src="/skins/interfaceblue/layout/eqinterface-logo.jpg" width="310" height="95"></td>
+	<td bgcolor="#FFFFFF" background="/skins/interfaceblue/layout/headerleft-bg.jpg" align="center" valign="center" width="100%" valign="top"><script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://advertise.eqinterface.com/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:8");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referer)
+      document.write ("&amp;referer=" + escape(document.referer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://advertise.eqinterface.com/adclick.php?n=aa52d8e4' target='_blank'><img src='http://advertise.eqinterface.com/adview.php?what=zone:8&amp;n=aa52d8e4' border='0' alt=''></a></noscript>
+</td>
+	</tr></table>
+	 <table cellpadding="0" cellspacing="0" border="0"  width="100%">
+ <tr><td background="/skins/interfaceblue/layout/header-menu-bg1.gif" ><img src="/skins/interfaceblue/layout/header-menu-bg1.gif" width="1" height="22"></td>
+ <td width="11"><img src="/skins/interfaceblue/layout/header-menu-ramp.gif" width="11" height="22"></td>
+ <td background="/skins/interfaceblue/layout/header-menu-bg2.gif" align="center" width="350"><font face="verdana,arial,helvetica" size="1"  color="#ffffff">
+		<a href="http://www.eqgui.com/register.php?s=&action=signup"><font face="verdana,arial,helvetica" size="1"  color="#ffffff">Register</font></a> | 
+		<a href="http://www.eqgui.com/usercp.php?s="><font face="verdana,arial,helvetica" size="1"  color="#ffffff">User CP</font></a> |
+		<a href="http://www.eqgui.com/memberlist.php?s="><font face="verdana,arial,helvetica" size="1"  color="#ffffff">Members</font></a> | 
+		<a href="http://www.eqinterface.com/modules.php?op=modload&name=FAQ&file=index&s="><font face="verdana,arial,helvetica" size="1"  color="#ffffff">F.A.Q</font></a> | 
+		<a href="http://www.eqgui.com/search.php?s="><font face="verdana,arial,helvetica" size="1"  color="#ffffff">Search</font></a>
+		</font>
+</td></tr></table>
+<br />
+<table cellpadding="0" cellspacing="0" border="0"  width="100%"><tr><td valign=top width="100%">
+<table cellpadding="0" cellspacing="0" border="0"  width="100%">
+	<tr><td bgcolor="#EEEFF0" width="100%" align="left" valign="top">
+	<table cellpadding="0" cellspacing="0" border="0"  width="100%">
+		<tr><td bgcolor="#EEEFF0" background="/skins/interfaceblue/layout/bodyleft-bg.gif" width="250" align="left" valign="middle">
+			<table cellpadding="2" cellspacing="0" border="0"><tr><td>
+			<table cellpadding="0" cellspacing="0" border="0"><tr><td><img src="/skins/interfaceblue/layout/clear.gif" width="14" height="1"></td><form action="http://www.eqgui.com/search.php" method="post"><td align="right" valign="middle">
+				<input type="hidden" name="s" value=""><input type="text" name="query" class="searchtop" onFocus="this.value='';" onBlur="if (this.value=='') {this.value='Search for...';}" value="Search for..." size="25"></td><input type="hidden" name="searchuser" value=""><input type="hidden" name="forumchoice" value="-1"><input type="hidden" name="searchdate" value="-1"><input type="hidden" name="sortby" value="lastpost"><input type="hidden" name="sortorder" value="descending"><input type="hidden" name="beforeafter" value="after"><input type="hidden" name="action" value="simplesearch"><input type="hidden" name="titleonly" value=""><input type="hidden" name="showposts" value=""><input type="hidden" name="exactname" value="yes"><td valign="left"><input type="image" src="/skins/interfaceblue/layout/search-button.gif" border="0" alt="Submit" accesskey="s"></td></form>
+			</tr></table>
+			</td></tr></table>
+	</td>
+		<td bgcolor="#EEEFF0" width="32" align="left" valign="top"><img src="/skins/interfaceblue/layout/bodycenter-ramp.gif" width="32" height="27"></td>
+		<td bgcolor="#EEEFF0" background="/skins/interfaceblue/layout/bodyright-bg.gif" align="right" valign="top">
+		<a href="/index.php?s="><img src="/skins/interfaceblue/layout/home.gif" width="95" height="39" border="0"></a><a href="http://www.eqgui.com/index.php?s="><img src="/skins/interfaceblue/layout/forums.gif" width="87" height="39" border="0"></a><a href="/sdownload/index.php?s="><img src="/skins/interfaceblue/layout/downloads.gif" width="99" height="39" border="0"></a>
+		<img src="/skins/interfaceblue/layout/bodyright-ramp1.gif" width="18" height="39">
+		</td>
+	</tr></table>
+
+</td></tr>
+<tr><td bgcolor="#EEEFF0" width="100%" align="left" valign="top">
+<table cellpadding="0" cellspacing="0" border="0"  width="100%">
+<tr><td bgcolor="#EEEFF0" width="32" align="left" valign="top"><img src="/skins/interfaceblue/layout/clear.gif" width="14" height="1"></td>
+<td bgcolor="#EEEFF0" width="100%" align="left" valign="top">
+
+<!-- Template for Unique Menus -->
+
+<!-- content table -->
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+<tr><td align='center' width = '150' valign='top'><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5" >
+<table width="155" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Our Sponsor</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><center><a href='http://advertise.eqinterface.com/adclick.php?n=a3d97e09' target='_blank'><img src='http://advertise.eqinterface.com/adview.php?what=zone:7&amp;n=a3d97e09' border='0' alt=''></a></center></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5" >
+<table width="155" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Menu</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><SCRIPT language=javascript src='/list14-2.js'>
+   </SCRIPT>
+<font size=1 face='verdana,arial,helvetica'>
+<b>&#183;&nbsp;</b><a href='/index.php?s='>Home</a><br>
+<b>&#183;&nbsp;</b><a href='http://www.eqgui.com/index.php?s='>Forums</a><br>
+<b>&#183;&nbsp;</b><a href='/modules.php?s=&op=modload&name=FAQ&file=index&s=' title='Frequently Ask Questions'><b>FAQ</b></a><br>
+<br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s='><b>Downloads</b></a> <A id='xdownloads' href=javascript:Toggle('downloads'); title='Click me to expand the list!'>[+]</A><br>
+<DIV id='downloads' style='DISPLAY: none; MARGIN-LEFT: 2em'>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=43'title='Featured artists that do an exceptional job and also keep their interface(s) up to date'><font color='#E80000'><b>Featured!</b></font></a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=22&sortby=date&sortorder=DESC' title='Orignal complete interface sets uploaded by various authors'><font color='#3366CC'>Complete Sets</font></a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=72&sortby=date&sortorder=DESC'>3D Target Ring</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=38&sortby=date&sortorder=DESC'>AA window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=51&sortby=date&sortorder=DESC'>Bank window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=35&sortby=date&sortorder=DESC'>Bazaar window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=21&sortby=date&sortorder=DESC'>Buffs & Effects</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=26&sortby=date&sortorder=DESC'>Compass</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=34&sortby=date&sortorder=DESC'>Containers</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=23&sortby=date&sortorder=DESC'>Group window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=53&sortby=date&sortorder=DESC'>Guild window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=36&sortby=date&sortorder=DESC'>Friends window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=18&sortby=date&sortorder=DESC'>Hot Keys</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=16&sortby=date&sortorder=DESC'>Inventory</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=30&sortby=date&sortorder=DESC'>Miscellaneous</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=50&sortby=date&sortorder=DESC'>Mouse pointers</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=54&sortby=date&sortorder=DESC'>Map window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=32&sortby=date&sortorder=DESC'>Mp3 player</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=33&sortby=date&sortorder=DESC'>Pet window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=20&sortby=date&sortorder=DESC'>Player Info</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=25&sortby=date&sortorder=DESC'>Spell Books</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=58&sortby=date&sortorder=DESC'>Spell Bar</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=19&sortby=date&sortorder=DESC'>Spell Gems</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=52&sortby=date&sortorder=DESC'>Story content</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=70&sortby=date&sortorder=DESC'>Story window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=24&sortby=date&sortorder=DESC'>Target window</a><br>
+<b>&#183;&nbsp;</b><a href='/sdownload/index.php?s=&op=showfiles&catid=37&sortby=date&sortorder=DESC'>Tracking window</a><br>
+</DIV><br>
+<b>&#183;&nbsp;</b><a href='/eq2.php?s='>EQ2 Gallery</a><br>
+<b>&#183;&nbsp;</b><a href='/links.php?s='>Other Links</a><br>
+<br>
+<b>&#183;&nbsp;</b><a href='http://www.eqgui.com/forumdisplay.php?s=&forumid=25' title='News archive for eqinterface'>EQInterface Archive</a><br>
+<b>&#183;&nbsp;</b><a href='http://www.eqgui.com/forumdisplay.php?s=&forumid=35' title='News and Updates Archive from Kelric'>News&Updates Archive</a><br></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5" >
+<table width="155" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Login</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><form action="/forums/member.php" method="post">
+<input type="hidden" name="action" value="login"><input type="hidden" name="s" value="">
+<input type="hidden" name="url" value="/index.php">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center">
+<font face="verdana,arial,helvetica" size="1"  color="#FF0000">
+Don't have an account? <a href="http://www.eqgui.com/register.php?action=signup"><font face="verdana,arial,helvetica" size="1"  color="#CC0000">Register</font></a> one for <b>free</b>!</font><br>
+<br>
+<font face="verdana,arial,helvetica" size="1" >Username</font><br><INPUT TYPE="TEXT" class="bginput" NAME="username" SIZE=12><br>
+<br><font face="verdana,arial,helvetica" size="1" >Password</font><br><INPUT TYPE="PASSWORD" class="bginput" NAME="password" SIZE=12><br>
+<center>
+<input type="submit" value="Login!"></center>
+</p>
+</td></tr>
+<tr><td align="center" nowrap>
+<font face="verdana,arial,helvetica" size="1" ><a href="http://www.eqgui.com/member.php">Lost Password</a></font>
+</td></tr>
+</table>
+</form></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5" >
+<table width="155" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Search Files</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><table border="0"><tr><td><font face="verdana,arial,helvetica" size="1" >
+	<form method="post" action="/searchfiles.php" style="margin-bottom:-2;"> 
+<input type="hidden" name="submit" value="search"> 
+	<input type="hidden" name="searchby" value="everything">
+	<input type="hidden" name="sortby" value="date">
+	<input type="hidden" name="orderby" value="DESC">
+	<input type="hidden" name="s" value="">
+	<input class="bginput" onFocus="this.value='';" type="text" name="keyword" value="For..." size="10" maxlength="150" >
+	<input type="image" src="/skins/interfaceblue/go.gif" width="30" height="15" name="submit" border="0" align="absbottom">
+    </form><b><a href="/searchfiles.php?s=">Advanced Search</a></b>
+    </font></td></tr></table></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5" >
+<table width="155" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Gu Comic</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><center><a href="/gucomic.php" border="0"><img src="/images/misc/gu_eqinterface-sm.jpg" width="145" height="225"  border="0"></a></center></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5" >
+<table width="155" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Disclaimer</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" >Author Credit is given on a simple basis.  We credit the person  who sends the mod in, and says "I wrote this" if you see your work here, and its credited to someone else contact us first.. and we can research it..  but remember more than one person can make the same mod.<br>
+<br>
+<center><a href="mailto:kudane@eqinterface.com">Contact Admin</a></center></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table></td><td valign="top" align="center" width="100%"><!-- centerblocks -->
+<table border="0" cellspacing="0" cellpadding="1" width="100%">
+<tr><td bgcolor="#D2D4D5">
+<table bgcolor="#FBFBFB" width="100%" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6">
+<font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Latest EQGUI Discussions</b></font></td></tr>
+<tr><td bgcolor="#FBFBFB">
+<table width = "100%" border=0 cellpadding='0' cellspacing='0' bgcolor="#1A5673"><tr>
+<td align="left"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Topic</b></font></td>
+<td align="left"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Started</b></font></td>
+<td align="left"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><b>Last Post</b></font></td>
+</tr>
+  <td colspan="4">
+<tr title="Last posted on: 12-13-2003 @ 07:16 AM"><td bgcolor='#F4F4F4' align="left" valign="middle">
+<img src="/skins/interfaceblue/smicon3.gif" valign="middle" width="14" height="14">
+<font face="verdana,arial,helvetica" size="1" ><b>
+<a href="http://www.eqgui.com/showthread.php?goto=newpost&threadid=11552">  3D target ring weirdness</a> </b></font></td>
+<td bgcolor='#F4F4F4' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Darkmatil">Darkmatil</a></font>
+</td>
+<td bgcolor='#F4F4F4' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Darkmatil">Darkmatil</a></font> </td>
+</tr><tr title="Last posted on: 12-13-2003 @ 06:14 AM"><td bgcolor='#FBFBFB' align="left" valign="middle">
+<img src="/skins/interfaceblue/smicon3.gif" valign="middle" width="14" height="14">
+<font face="verdana,arial,helvetica" size="1" ><b>
+<a href="http://www.eqgui.com/showthread.php?goto=newpost&threadid=3671">  Xymarra's UI Version 3.0</a> </b></font></td>
+<td bgcolor='#FBFBFB' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Xymarra">Xymarra</a></font>
+</td>
+<td bgcolor='#FBFBFB' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Duvase">Duvase</a></font> </td>
+</tr><tr title="Last posted on: 12-13-2003 @ 06:10 AM"><td bgcolor='#F4F4F4' align="left" valign="middle">
+<img src="/skins/interfaceblue/smicon3.gif" valign="middle" width="14" height="14">
+<font face="verdana,arial,helvetica" size="1" ><b>
+<a href="http://www.eqgui.com/showthread.php?goto=newpost&threadid=11574">  WOOO HOOO One Week and Counting!</a> </b></font></td>
+<td bgcolor='#F4F4F4' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Kudane">Kudane</a></font>
+</td>
+<td bgcolor='#F4F4F4' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=guice">guice</a></font> </td>
+</tr><tr title="Last posted on: 12-13-2003 @ 05:37 AM"><td bgcolor='#FBFBFB' align="left" valign="middle">
+<img src="/skins/interfaceblue/smicon3.gif" valign="middle" width="14" height="14">
+<font face="verdana,arial,helvetica" size="1" ><b>
+<a href="http://www.eqgui.com/showthread.php?goto=newpost&threadid=9433">  Centhena's T. King\Drakah Celtic UI</a> </b></font></td>
+<td bgcolor='#FBFBFB' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Centhena">Centhena</a></font>
+</td>
+<td bgcolor='#FBFBFB' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=FalconGunner">FalconGunner</a></font> </td>
+</tr><tr title="Last posted on: 12-13-2003 @ 05:34 AM"><td bgcolor='#F4F4F4' align="left" valign="middle">
+<img src="/skins/interfaceblue/smicon3.gif" valign="middle" width="14" height="14">
+<font face="verdana,arial,helvetica" size="1" ><b>
+<a href="http://www.eqgui.com/showthread.php?goto=newpost&threadid=11073">  3D Target Ring - Some Answers</a> </b></font></td>
+<td bgcolor='#F4F4F4' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Roger Sewell">Roger Sewell</a></font>
+</td>
+<td bgcolor='#F4F4F4' align="left"> <font face="verdana,arial,helvetica" size="1" > <a href="http://www.eqgui.com/member.php?action=getinfo&username=Fyste">Fyste</a></font> </td>
+</tr>
+</table>
+</td></tr></table>
+</td></tr></table>
+<table border="0" cellspacing="2" cellpadding="0" width="100%">
+<tr><td></td></tr></table><font face="verdana,arial,helvetica" size="1" ><table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='#D2D4D5' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='#0577A6' width='100%'><img src='/skins/interfaceblue/icons/icon1.gif' width="15" height="15"><font size ='2' color = '#FFFFFF'><b> Absor Smash no longer... Brenlo Bop!</b></font>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='#FBFBFB' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='#FBFBFB'>
+	<tr><td bgcolor='#FBFBFB' valign='top' align='center' bordercolor='#FBFBFB'>
+	<a href='http://www.eqgui.com/member.php?action=mailform&userid=9' border='0'><img src="/forums/avatar.php?userid=9" border='0' width='80' height='80'><br><font face="verdana,arial,helvetica" size="1" ><b>Kudane</b></a><br /><br />06:24 PM<br>12-11-2003</font></td>
+	<td bgcolor='#FBFBFB' valign='top' width='100%' bordercolor='#FBFBFB'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='3'><tr><td><font face="verdana, arial, helvetica" size="2" >Everyone here at EQInterface wishes Alan (Absor) VanCouvering the very best of luck as he moves into game developement.. And a Very Hearty Welcome to Alan (Brenlo) Crosby who is taking over for Absor..<br />
+<br />
+CONGRATS ALAN(s)!!!<br />
+<br />
+Read the whole story on the EQLive Site <a href="http://eqlive.station.sony.com/community/dev_view.jsp?id=59839" target="_blank">HERE</a> or if you want to gossip/discuss/etc about this here.. Cairenn started a post <a href="http://www.eqgui.com/showthread.php?s=&threadid=11566" target="_blank">Here</a> at EQInterface.com<br />
+<br />
+We expect great things from both Alans...<br />
+<br />
+<b>- Kudane</b></font></td></tr></table>
+	</td><!-- --></tr>
+    </table><font face="verdana,arial,helvetica" size="1" > <a href='http://www.eqgui.com/showthread.php?threadid=11573'><b>Read More</b></a><b>  </b></font> 
+	<a href='http://www.eqgui.com/printthread.php?threadid=11573'><img src='/skins/interfaceblue/print.gif' border='0' width="15" height="11"></a> <a href='http://www.eqgui.com/sendtofriend.php?threadid=11573'><img src='/skins/interfaceblue/friend.gif' border='0' width="15" height="11"></a> </th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+<table border="0" cellspacing="2" cellpadding="0" width="100%">
+<tr><td></td></tr></table><table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='#D2D4D5' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='#0577A6' width='100%'><img src='/skins/interfaceblue/icons/icon1.gif' width="15" height="15"><font size ='2' color = '#FFFFFF'><b> Absor address concerns about plat duping</b></font>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='#FBFBFB' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='#FBFBFB'>
+	<tr><td bgcolor='#FBFBFB' valign='top' align='center' bordercolor='#FBFBFB'>
+	<a href='http://www.eqgui.com/member.php?action=mailform&userid=9' border='0'><img src="/forums/avatar.php?userid=9" border='0' width='80' height='80'><br><font face="verdana,arial,helvetica" size="1" ><b>Kudane</b></a><br /><br />08:46 PM<br>12-08-2003</font></td>
+	<td bgcolor='#FBFBFB' valign='top' width='100%' bordercolor='#FBFBFB'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='3'><tr><td><font face="verdana, arial, helvetica" size="2" ><img src="http://www.eqinterface.com/images/sections/plat.gif" align="right">Alan VanCouvering has posted on the Dev forum about recent concerns about plat duping cheat.<br />
+<br />
+to quote one part I think is also important to the LOE pop-up issues.<br />
+<br />
+<table border="0" align="center" width="90%" cellpadding="3" cellspacing="1"><tr><td><font face="verdana,arial,helvetica" size="1" ><b>quote:</b></font></td></tr><tr><td style="BORDER: #D2D4D5 1px solid; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #E8E8E8;"><br />
+Over the last few days there has been a growing community concern about possible cheating, exploiting and platinum duplication. Rumors and speculation have begun to run rampant, <b>and I've received a lot of concerned email on the topic.</b><br />
+<br />
+First of all, I want to thank you for your concern. The fact that you worry about this stuff as much as we do makes me feel good about the community that I work for.<b> I want to especially thank those that have sent in detailed information about what they thought might be dupe or exploit situations. That information has been very helpful.</b></td></tr></table><br />
+<br />
+You can read the entire article posted <a href="http://www.eqgui.com/showthread.php?s=&threadid=11538" target="_blank">Here</a> in our chit-chat section<br />
+<br />
+I hope that you can stop by and read the entire article, it should alleivate concerns about massive cheating in EQ.<br />
+<br />
+have a great day!<br />
+<br />
+<b>- Kudane</b></font></td></tr></table>
+	</td><!-- --></tr>
+    </table><font face="verdana,arial,helvetica" size="1" > <a href='http://www.eqgui.com/showthread.php?threadid=11539'><b>Read More</b></a><b> <font size ='1'> (2 Comments)</font> </b></font> 
+	<a href='http://www.eqgui.com/printthread.php?threadid=11539'><img src='/skins/interfaceblue/print.gif' border='0' width="15" height="11"></a> <a href='http://www.eqgui.com/sendtofriend.php?threadid=11539'><img src='/skins/interfaceblue/friend.gif' border='0' width="15" height="11"></a> </th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+<table border="0" cellspacing="2" cellpadding="0" width="100%">
+<tr><td></td></tr></table><table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='#D2D4D5' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='#0577A6' width='100%'><img src='/skins/interfaceblue/icons/icon1.gif' width="15" height="15"><font size ='2' color = '#FFFFFF'><b> Melee Changes Live on Test</b></font>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='#FBFBFB' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='#FBFBFB'>
+	<tr><td bgcolor='#FBFBFB' valign='top' align='center' bordercolor='#FBFBFB'>
+	<a href='http://www.eqgui.com/member.php?action=mailform&userid=9' border='0'><img src="/forums/avatar.php?userid=9" border='0' width='80' height='80'><br><font face="verdana,arial,helvetica" size="1" ><b>Kudane</b></a><br /><br />05:30 PM<br>12-04-2003</font></td>
+	<td bgcolor='#FBFBFB' valign='top' width='100%' bordercolor='#FBFBFB'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='3'><tr><td><font face="verdana, arial, helvetica" size="2" ><img src="http://www.eqinterface.com/images/sections/melee.gif" align="right">Yes last night there were about 100 or so Warriors, Rogues and Monks in West Commons where the new vendors have been placed to help test out the new Melee Skills (a spawned mob called "no loot for you" was our test target).  Here are some tips that will help if you want to try out the new melee.<br />
+<br />
+• Remember this is the test server, things are not set in stone yet<br />
+<br />
+• The books cost 2 or 3 copper each, kill some "yard trash" on your way there<br />
+<br />
+• Give the book back to the guy you buy it from to learn the skill<br />
+<br />
+• ALT-C opens the new window, then right click on one of the 8 hot-keys to memorize the ability you learned<br />
+<br />
+• As of 12/3 only the "openings" part of the change has been added, effects are not all done yet.<br />
+<br />
+• /Feedback is your friend, keep your feeback to the facts, and useful.. "this sucks" or "this rules" is nice, but not helpful. Try and be as specific as you can.<br />
+<br />
+If you have the time or desire, please feel free to help give feedback, with out help we can shape the new melee abilities into a very nice workable addition. Feel free to discuss (politely) your findings in this post <a href="http://www.eqgui.com/showthread.php?s=&threadid=11478" target="_blank">Here</a><br />
+<br />
+<br />
+You can see what UI changes went on to test in Cairenn's post <a href="http://www.eqgui.com/showthread.php?s=&threadid=11476" target="_blank">Here</a><br />
+<br />
+<br />
+<b>- Kudane</b></font></td></tr></table>
+	</td><!-- --></tr>
+    </table><font face="verdana,arial,helvetica" size="1" > <a href='http://www.eqgui.com/showthread.php?threadid=11479'><b>Read More</b></a><b>  </b></font> 
+	<a href='http://www.eqgui.com/printthread.php?threadid=11479'><img src='/skins/interfaceblue/print.gif' border='0' width="15" height="11"></a> <a href='http://www.eqgui.com/sendtofriend.php?threadid=11479'><img src='/skins/interfaceblue/friend.gif' border='0' width="15" height="11"></a> </th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+<table border="0" cellspacing="2" cellpadding="0" width="100%">
+<tr><td></td></tr></table><table border='0' cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+	<td bgcolor='#D2D4D5' width='100%' >
+	<table width='100%' border='0' cellspacing='1' cellpadding='3'>
+	<tr>
+	<td bgcolor='#0577A6' width='100%'><img src='/skins/interfaceblue/icons/icon1.gif' width="15" height="15"><font size ='2' color = '#FFFFFF'><b> Melee Change Chat tonight</b></font>
+	</td>	</tr>
+	<tr>
+	<th bgcolor='#FBFBFB' width='100%' align='right'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' bordercolor='#FBFBFB'>
+	<tr><td bgcolor='#FBFBFB' valign='top' align='center' bordercolor='#FBFBFB'>
+	<a href='http://www.eqgui.com/member.php?action=mailform&userid=9' border='0'><img src="/forums/avatar.php?userid=9" border='0' width='80' height='80'><br><font face="verdana,arial,helvetica" size="1" ><b>Kudane</b></a><br /><br />03:38 AM<br>11-25-2003</font></td>
+	<td bgcolor='#FBFBFB' valign='top' width='100%' bordercolor='#FBFBFB'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='3'><tr><td><font face="verdana, arial, helvetica" size="2" ><img src="http://www.eqinterface.com/images/sections/livechat.jpg" align="right">Alan VanCouvering hosted a live chat this evening on EQLive.<br />
+<br />
+Here are the highlights I got from taking notes, while trying to save out the entire chat session. <br />
+<br />
+<ul><li> Stamina Bar is going away.  This will become <b>Endurance</b><br />
+<li> "Zing" type spells such as Acumen and spells that effected Stamina will not work to improve Endurance recovery<br />
+<li> At this time there will be <b>no</b> Endurance recovery spells in the game. <br />
+<li> Changes will be on Test soon, and added to Live Server on Dec 16th Patch<br />
+<li> Changes in disciplines will effect all classes, new Melee Skills will be provided via Tomes for Rogue, Warrior, and Monks<br />
+<li> Tomes will be vendor sold under 60, and partchment style for 61 and up.</ul><br />
+<br />
+The whole chat session can be read and commented on <a href="http://www.eqgui.com/showthread.php?s=&threadid=11364" target="_blank"><b>Here</b></a><br />
+<br />
+/bow<br />
+<br />
+<b>- Kudane</b></font></td></tr></table>
+	</td><!-- --></tr>
+    </table><font face="verdana,arial,helvetica" size="1" > <a href='http://www.eqgui.com/showthread.php?threadid=11362'><b>Read More</b></a><b> <font size ='1'> (4 Comments)</font> </b></font> 
+	<a href='http://www.eqgui.com/printthread.php?threadid=11362'><img src='/skins/interfaceblue/print.gif' border='0' width="15" height="11"></a> <a href='http://www.eqgui.com/sendtofriend.php?threadid=11362'><img src='/skins/interfaceblue/friend.gif' border='0' width="15" height="11"></a> </th>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+<table border="0" cellspacing="2" cellpadding="0" width="100%">
+<tr><td></td></tr></table></font><br></td><td align="center" width = "155" valign="top"><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5">
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>Spot Light</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><center><!-- Drakah --><table cellpadding="0" cellspacing="1" border="0"><tr><td valign=top><a href="http://www.eqinterface.com/sdownload/index.php?catid=46"><img src="/images/spotlight/drakahswg.jpg" width="140" height="115" border="0"></a></td></tr><tr><td align="center" valign=top bgcolor="#1A5673" ><a href="http://www.eqinterface.com/sdownload/index.php?catid=46"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF"><b>Drakah (S.W.G)</b></font></a></td></tr><tr><td align="center" valign=top ><font face="verdana, arial, helvetica" size="1"  color="#000000">By: <a href="http://www.eqgui.com/member.php?s=&action=getinfo&userid=166"><font face="verdana, arial, helvetica" size="1"  color="#000000">Drakah</font></a></font></td></tr></table><br><font face="verdana,arial,helvetica" size="1" ><a href='mailto:spotlight@eqinterface.com'>Nominate an Author</a><br><i>(Must include reason why.)</font></center></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table><table border="0" cellspacing="0" cellpadding="1" width="155">
+<tr><td bgcolor="#D2D4D5">
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+<tr><td valign="top" bgcolor="#0577A6"><font face="verdana, arial, helvetica" size="2"  color="#FFFFFF">&nbsp;<b>New Downloads</b></font></td>
+</tr>
+<tr>
+	<td bgcolor="#FBFBFB"><font face="verdana,arial,helvetica" size="1" ><table width="100%" border="0" cellspacing="0"><tr><td bgcolor="#F4F4F4" title=""><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2481">Bluefantasy_Caster_L</a><br>&nbsp;&nbsp;<i>Mix & Match</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-13-2003<br>&nbsp;&nbsp;By: Wink<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title=""><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2480">Bluefantasy_Melee_LD</a><br>&nbsp;&nbsp;<i>Mix & Match</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-13-2003<br>&nbsp;&nbsp;By: Wink<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="Clean Simple UI Based off Vert 1.0"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2714">AdariiUI</a><br>&nbsp;&nbsp;<i>Mix & Match</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-13-2003<br>&nbsp;&nbsp;By: Adarii<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="Runic targeting ring with consider colors."><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2858">Runic Targeting Ring</a><br>&nbsp;&nbsp;<i><!-- 4 -->3D Targeting Ring</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-12-2003<br>&nbsp;&nbsp;By: Lilcure<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="ripples extend out"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2857">Thin Ripples</a><br>&nbsp;&nbsp;<i><!-- 4 -->3D Targeting Ring</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-12-2003<br>&nbsp;&nbsp;By: gizm0steve<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="A mix and match of some useful windows to SK"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2855">EvOl_SKv4</a><br>&nbsp;&nbsp;<i>Mix & Match</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-11-2003<br>&nbsp;&nbsp;By: Mazeneal<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title=""><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2625">DarkTweak-Complete</a><br>&nbsp;&nbsp;<i>Mix & Match</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-11-2003<br>&nbsp;&nbsp;By: Inokis<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="minimalist m&m UI. should work nicely for melee, casters and hybrids. not so many graphics :p"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2846">kunisUI</a><br>&nbsp;&nbsp;<i>Mix & Match</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-10-2003<br>&nbsp;&nbsp;By: Kunis Marfury<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="Player & Target windows mod with vertical gauges!"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2853">MyrinaUI</a><br>&nbsp;&nbsp;<i>Player Info</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-10-2003<br>&nbsp;&nbsp;By: Myrina<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="Functional and not space intensive."><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2852">Mixed Utility</a><br>&nbsp;&nbsp;<i>Functional</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-10-2003<br>&nbsp;&nbsp;By: Shoolie<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="Condensed melee bags, "stay put", set up for trade skills"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2851">EL_Bags1 +Weapons</a><br>&nbsp;&nbsp;<i>Containers</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-09-2003<br>&nbsp;&nbsp;By: EricLongsten<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="Condensed bags, "stay put", set up for trade skills"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2850">EL_Bags1</a><br>&nbsp;&nbsp;<i>Containers</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-09-2003<br>&nbsp;&nbsp;By: EricLongsten<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title=""Keep It Simple Stupid"  Major changes to group, inventory, hotkeys, bags, and buffs windows.  Condensed and cleaned up several others."><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2849">EL_KISS_1.0A</a><br>&nbsp;&nbsp;<i>Functional</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-09-2003<br>&nbsp;&nbsp;By: EricLongsten<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="Xym UI - Base Files - Version 3.5"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=1232">Xym UI - Version 3.5</a><br>&nbsp;&nbsp;<i>XYM UI</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: Xymarra<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="Multi layered with lots of detail target indicator."><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2817">Majestic Ring of Ill</a><br>&nbsp;&nbsp;<i><!-- 4 -->3D Targeting Ring</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: Raxthorne<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="Same as original, no border or titlebar though. Very efficient. Good for those that want the old school UI."><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=1184">Slim n' Efficient</a><br>&nbsp;&nbsp;<i>Hot Keys</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: Kilamon<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="Created for those who Love to Raid, and those who Love to Lunix
+New Container added to UI"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2843">Lunix_Pro_TypeB</a><br>&nbsp;&nbsp;<i>Functional</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: Taleisin<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="New Container added to UI"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2514">Lunix Pro 11-17-2k3</a><br>&nbsp;&nbsp;<i>Functional</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: Taleisin<br></font></font></td></tr><tr><td bgcolor="#F4F4F4" title="New Container added to UI"><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2497">Lunix_TestEdition</a><br>&nbsp;&nbsp;<i>Functional</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: Taleisin<br></font></font></td></tr><tr><td bgcolor="#FBFBFB" title="This is a conversion of the Lucy spell database created/provided by http://db.allakhazam.com."><font face="verdana,arial,helvetica" size="1" ><b>&#183;&nbsp;</b><a href="/sdownload/fileinfo.php?s=&id=2171">Foofy's Spell Lists</a><br>&nbsp;&nbsp;<i>Story content</i><br>&nbsp;&nbsp;<font color="5C5C5C">Date: 12-07-2003<br>&nbsp;&nbsp;By: FennyX<br></font></font></td></tr></table></font>
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0" width="155">
+<tr><td></td></tr></table></td></tr></table>
+<center><a href='http://advertise.eqinterface.com/adclick.php?n=a4cd82c1' target='new'><img src='http://advertise.eqinterface.com/adview.php?what=zone:6&amp;n=a4cd82c1' border='0' alt=''></a></center>
+<br>
+<center><font face="verdana,arial,helvetica" size="1" >
+<a href="http://www.eqgui.com/privacy.php">Privacy Statement</a><br>
+   Powered by: <a href="http://phpportals.com/">vbPortal©</a> , <a href="http://www.shackrats-hideout.com">Secure Downloads</a><br>
+Everquest is a registered Trademark of Sony Online Entertainment<br>
+Eqinterface.com & Eqgui.com are not responsible for the content of their sponsors.<br>
+All Mods are offered AS IS. We offer them here as a service. Contact the author for tech support on them.<br>
+EQinterface.com Copyright ©2002<br>
+	<br>
+	Page generated in 0.36522102 seconds (97.88% PHP - 2.12% MySQL) with 24 queries.</center><br>
+
+</font>
+</td></tr></table></td></tr></table>
+<td bgcolor="#EEEFF0" width="32" align="left" valign="top"><img src="/skins/interfaceblue/layout/bodyright-ramp2.gif" width="14" height="53"></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0"  width="100%">
+<tr><td bgcolor="#0E0D1E" width="85" align="left"><a href="javascript:scroll(0,0);"><img src="/skins/interfaceblue/layout/footer-top.gif" width="85" height="19" border="0"></a></td>
+<td width="100%" bgcolor="#EEEFF0" align="Center"><font face="verdana,arial,helvetica" size="1" >Custom php and graphics by: <a href="http://www.eqgui.com/member.php?s=&action=getinfo&userid=1">Dolby</a></font></td>
+<td bgcolor="#0E0D1E" width="85" align="right"><a href="javascript:scroll(0,0);"><img src="/skins/interfaceblue/layout/footer-top2.gif" width="85" height="19" border="0"></a></td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0"  width="100%">
+<tr><td bgcolor="#0E0D1E" background="/skins/interfaceblue/layout/footer-bg.gif" align="center" valign="middle">
+<font face="verdana,arial,helvetica" size="1"  color="#FFFFFF"><br>
+		<a href="http://www.eqinterface.com/index.php?s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">Home</font></a> | 
+		<a href="http://www.eqinterface.com/sdownload/index.php?s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">Downloads</font></a> | 
+		<a href="http://www.eqgui.com/index.php?s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">Forums</font></a> | 
+		<a href="http://www.eqgui.com/register.php?s=&action=signup"><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">Register</font></a> | 
+		<a href="http://www.eqgui.com/usercp.php?s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">User CP</font></a> |
+		<a href="http://www.eqgui.com/memberlist.php?s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">Members</font></a> | 
+		<a href="http://www.eqinterface.com/modules.php?op=modload&name=FAQ&file=index&s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">F.A.Q</font></a> | 
+		<a href="search.php?s="><font face="verdana,arial,helvetica" size="1"  color="#FFFFFF">Search</font></a>
+<br><br></font></td></tr></table>
+</body>
+
+</html>

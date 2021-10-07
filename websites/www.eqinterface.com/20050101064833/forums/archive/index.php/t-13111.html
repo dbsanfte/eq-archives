@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Help with Vert PlayerWindow Fix</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-13.html">General Discussion</a> &gt; <a href="f-16.html">Help ! ? ! ?</a> &gt; Help with Vert PlayerWindow Fix</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=13111">Help with Vert PlayerWindow Fix</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kiresretaw</div><div class="date">03-15-2004, 04:37 PM</div></div><div class="posttext">I am trying to fix the <br />
+<br />
+Error: child A_AttackIndicator Anim problem,<br />
+<br />
+I am following the general directions  posted by Cairenn,<br />
+<br />
+IF you have a custom EQUI_PlayerWindow.xml file, open using a text editor (Word, WordPerfect, NotePad, etc.) and using the Search or Find function:<br />
+<br />
+Find:<br />
+<br />
+&lt;?xml version = &quot;1.0&quot;?&gt;<br />
+&lt;XML ID = &quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+&lt;Schema xmlns = &quot;EverQuestData&quot; xmlns:dt = &quot;EverQuestDataTypes&quot;/&gt;<br />
+<br />
+Immediately after that last line, ADD:<br />
+<br />
+&lt;TextureInfo item = &quot;AttackIndicator.tga&quot;&gt;<br />
+&lt;Size&gt;<br />
+&lt;CX&gt;128&lt;/CX&gt;<br />
+&lt;CY&gt;32&lt;/CY&gt;<br />
+&lt;/Size&gt;<br />
+&lt;/TextureInfo&gt;<br />
+<br />
+&lt;Ui2DAnimation item = &quot;A_AttackIndicator&quot;&gt;<br />
+&lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+&lt;Frames&gt;<br />
+&lt;Texture&gt;TargetBox.tga&lt;/Texture&gt;<br />
+&lt;Location&gt;<br />
+&lt;X&gt;6&lt;/X&gt;<br />
+&lt;Y&gt;2&lt;/Y&gt;<br />
+&lt;/Location&gt;<br />
+&lt;Size&gt;<br />
+&lt;CX&gt;116&lt;/CX&gt;<br />
+&lt;CY&gt;28&lt;/CY&gt;<br />
+&lt;/Size&gt;<br />
+&lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+&lt;StaticAnimation item = &quot;A_AttackIndicatorAnim&quot;&gt;<br />
+&lt;ScreenID&gt;A_AttackIndicatorAnim&lt;/ScreenID&gt;<br />
+&lt;Animation&gt;A_AttackIndicator&lt;/Animation&gt;<br />
+&lt;/StaticAnimation&gt;<br />
+<br />
+Find and DELETE:<br />
+<br />
+&lt;TooltipReference&gt;The Breath Meter&lt;/TooltipReference&gt;<br />
+<br />
+Find:<br />
+<br />
+&lt;Pieces&gt;Player_HPPercLabel&lt;/Pieces&gt;<br />
+<br />
+Immediately after that line, ADD:<br />
+<br />
+&lt;Pieces&gt;A_AttackIndicatorAnim&lt;/Pieces&gt;<br />
+<br />
+Note, the line:<br />
+<br />
+&lt;Texture&gt;TargetBox.tga&lt;/Texture&gt;<br />
+<br />
+should probably be:<br />
+<br />
+&lt;Texture&gt;AttackIndicator.tga&lt;/Texture&gt;<br />
+<br />
+<br />
+<br />
+I was able to change the first two things but am having trouble with,<br />
+<br />
+Find:<br />
+<br />
+&lt;Pieces&gt;Player_HPPercLabel&lt;/Pieces&gt;<br />
+<br />
+Immediately after that line, ADD:<br />
+<br />
+&lt;Pieces&gt;A_AttackIndicatorAnim&lt;/Pieces&gt;<br />
+<br />
+<br />
+The closest line I found is,<br />
+<br />
+&lt;Pieces&gt;HP_Percent&lt;/Pieces&gt;<br />
+<br />
+is this the correct one?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">03-15-2004, 05:56 PM</div></div><div class="posttext">Yes, it should work if you put it after that line.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kiresretaw</div><div class="date">03-15-2004, 06:53 PM</div></div><div class="posttext">Well I put in the the fix above and the UI loaded the default, here is n the new error log.<br />
+<br />
+UIErrorLog created at Mon Mar 15 18:36:18 2004<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file SIDL.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_CharacterCreate.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_ConfirmationDialog.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_FacePick.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_ItemDisplay.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_BreathWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_NoteWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_OptionsWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_AAWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:18 2004] Warning: file EQUI_CursorAttachment.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_FriendsWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_BankWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_QuantityWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_LootWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_SkillsWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_SkillsSelectWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_TradeWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_MerchantWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_GiveWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_InspectWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_SocialEditWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_HelpWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_FeedbackWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_BugReportWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_BazaarSearchWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_ColorPickerWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_VideoModesWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_GemsGameWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_PlayerNotesWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_LoadskinWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_AlarmWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_RaidWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_RaidOptionsWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_FileSelectionWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_BigBankWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_JournalNPCWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_JournalCatWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_StoryWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_BodyTintWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_GroupSearchWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_MapViewWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_MapToolbarWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_EditLabelWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_GuildManagementWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:19 2004] Warning: file EQUI_TipWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_SystemInfoWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_AdventureRequestWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_AdventureMerchantWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_AdventureStatsWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_AdventureLeaderboardWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_FindLocationWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_CombatSkillsSelectWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_TradeskillWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_DynamicZoneWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_TextMessageWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_TributeBenefitWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_TributeMasterWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_LeadershipWnd.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] Warning: file EQUI_TargetOfTargetWindow.xml not found in directory UIFiles\VertB2\.  Attempting to use file from Default skin.<br />
+[Mon Mar 15 18:36:20 2004] [Line:96 Source:UIFiles\VertB2\EQUI_PlayerWindow.xml] Schema error - Duplicate item A_AttackIndicator<br />
+[Mon Mar 15 18:36:20 2004] Error reading XML.<br />
+[Mon Mar 15 18:36:20 2004] Error loading skin: loading default skin instead.<br />
+<br />
+<br />
+Dunno, guess I will stick to the unfixed version lol.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

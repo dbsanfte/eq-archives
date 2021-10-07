@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - include background  ? ?</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-31.html">Graphics modification help.</a> &gt; include background  ? ?</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=3694">include background  ? ?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">narwael</div><div class="date">11-02-2002, 07:08 AM</div></div><div class="posttext">Hi guys, I know we can change the background for each window .<br />
+<br />
+But i need help to do it :p    I have all .tga i need but don t really sure how include them</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cormanth</div><div class="date">11-02-2002, 10:23 AM</div></div><div class="posttext">Simple... Find out which &lt; DrawTemplate&gt; that particular window is using. Here's an example from my Inventory window:<br />
+<br />
+&lt;DrawTemplate&gt;WDT_CanopyNoTitle&lt;/DrawTemplate&gt;<br />
+<br />
+Notice the part in Blue. That is the name of the template that particular window usesto draw the actual window. Now, the background graphic info is in that Template, so we have to find that template in our UI. <br />
+<br />
+If you are working with the default UI, you will find your templates in the file EQUI_Templates.xml. Open that file and do a search for the name of the template you want. In my case I would search for 'WDT_CanopyNoTitle'. <br />
+<br />
+Once the search finds it, you will have something that looks like this...<br />
+<br />
+<br />
+&lt;WindowDrawTemplate item = &quot;WDT_CanopyNoTitle&quot;&gt;<br />
+&lt;Background&gt;foliage_bg.tga&lt;/Background&gt;<br />
+&lt;VSBTemplate&gt;<br />
+&lt;UpButton&gt;<br />
+&lt;Normal&gt;A_VSBUpNormal&lt;/Normal&gt;<br />
+&lt;Pressed&gt;A_VSBUpPressed&lt;/Pressed&gt;<br />
+&lt;Flyby&gt;A_VSBUpFlyby&lt;/Flyby&gt;<br />
+<br />
+<br />
+Notice the line that begins with &lt;Background&gt;. This is where the background image is specified. In my case, I use the file 'foliage_bg.tga'. Change the filename to the name of your image file.<br />
+<br />
+This will change the Template so that it will load the new image as it's background. However, there is one more step you must take before your image will appear in the window. You need to tell the schema (the program that interprets the XML code) to load your image into memory before the window can use it.<br />
+<br />
+To do this, you have to include a segment similiar to this.<br />
+<br />
+&lt;TextureInfo item = &quot;foliage_bg.tga&quot;&gt;<br />
+&lt;Size&gt;<br />
+&lt;CX&gt;256&lt;/CX&gt; <br />
+&lt;CY&gt;256&lt;/CY&gt;<br />
+&lt;/Size&gt;<br />
+&lt;/TextureInfo&gt;<br />
+<br />
+Notice the first line which includes 'foliage_bg.tga'. This is where you would insert the name of your image file. Also, the &lt;Size&gt; needs to be defined. This s the actual size of your image file. &lt;CX&gt; is the width of the file, and &lt;CY&gt; is the height. Keep in mind that these dimensions are not the size of the image within the file, but the size of the file itself.<br />
+<br />
+So if you have an image file whose size is 256 x 256, but the image you made in the file is only 200 x 200 pixels, you need to specify a size of 256 x 256 because that is that actual size of the file.<br />
+<br />
+Make sense? I hope so.<br />
+<br />
+And in case you're wondering, you can add that &lt;TextureInfo&gt; segment to whichever file you are going to use this background in. It does not have to be the template file.<br />
+<br />
+With that done, save all your changes, load EQ, and check out your new background.<br />
+<br />
+Now, as a note of advice... If you're going to be changing templates and such that are being used by other windows in your UI, you might want to create your own templates as I have done. This way, if you just want to change the background of 1 window and not all the others, you can just change that custom template. <br />
+<br />
+Here's what I did.<br />
+<br />
+I copied the template I wanted to change 'WDT_RoundedNoTitle' from the EQUI_Templates.xml file, and pasted it into one of my custom UI files (whichever window you want to effect is a good place to paste this to). Then I gave it a new name. I changed 'WDT_RoundedNoTitle' to 'WDT_CanopyNoTitle'. This is an important step because you can't have 2 templates with the same name.<br />
+<br />
+Now change the background image as described above, and add your &lt;TextureInfo&gt; for the image.<br />
+<br />
+Then, go back to the window you are working on, and move to the bottom of the file where the &lt;Screen&gt; element is defined. Look for the line which begins with &lt;DrawTemplate&gt;. There you will see the name of the window template that window is using. Just change this name to the name of your new template you created above.<br />
+<br />
+Now when you load EQ, only this window will be effected by the background change. Also, this prevents future changes made by Sony from effecting your backgrounds. If you just edit the existing templates in the EQUI_Templates.xml file, whenever sony makes an update to the UI system your changes might disappear or worse, cause errors. If you make your own templates and animations, and put them in your UI files, you can avoid this problem in the future.<br />
+<br />
+-Cormanth</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">narwael</div><div class="date">11-05-2002, 10:36 PM</div></div><div class="posttext">Wooooooottttttt<br />
+<br />
+Exactly the Right Thing !<br />
+<br />
+Cormanth U are a Roxxor :nana:</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

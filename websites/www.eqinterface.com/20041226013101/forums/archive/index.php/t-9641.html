@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Saving Texture Space - Loading Common Window Elements in A Higher Context?</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-31.html">Graphics modification help.</a> &gt; Saving Texture Space - Loading Common Window Elements in A Higher Context?</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=9641">Saving Texture Space - Loading Common Window Elements in A Higher Context?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">darkgrue</div><div class="date">08-08-2003, 06:51 PM</div></div><div class="posttext">Well, I started playing around with SIDL, and created my own UI mods for the player, target, and group elements, based upon grpwindow-squares(loy fixed).zip (http://www.eqinterface.com/sdownload/fileinfo.php?s=&amp;id=1432) by dedara. Basically, I fixed the code to remove errors in it, then extended the style to the player and target windows to make a matched set.<br />
+<br />
+http://members.cox.net/darkgrue/Webboard/tessilUI/detail.jpg<br />
+<br />
+As you can see, I'm also using t.king's spell icons to spice up the rather plain look of the otherwise default UI.<br />
+<br />
+As I was finishing up, I considered that I am essentially loading three 256x256 32bpp TGA files to construct the gauge elements and backgrounds. In fact, the gauges are identical across all three windows, only the background frames are unique - and there's still a lot of real estate left in those TGA files. Being able to load them in a parent context and have the children windows load the common elements and their own background image from a single TGA file should reduce overhead, I'm just not sure that the schema allows inheritance like that. There doesn't seem to be a good discussion of declarations and what contexts they operate in that I understand yet... The documentation that Sony provided for the SIDL syntax seems... incomplete... at best.<br />
+<br />
+Do I want to declare TextureInfo, StaticAnimation, and Ui2DAnimation in a higher context, say in a EQUI.xml file inside my custom UI directory, then include the default EQUI? Something like:<br />
+<br />
+&lt;?xml version = &quot;1.0&quot;?&gt;<br />
+&lt;XML ID = &quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+        &lt;Composite&gt;<br />
+        &lt;Include&gt;../default/EQUI.xml&lt;/Include&gt;<br />
+        &lt;Include&gt;EQUI_MyUIMod.xml&lt;/Include&gt;<br />
+    &lt;/Composite&gt;<br />
+    &lt;Schema xmlns = &quot;EverQuestData&quot; xmlns:dt = &quot;EverQuestDataTypes&quot; /&gt;<br />
+<br />
+    &lt;TextureInfo item=&quot;MyUIMod_textures.tga&quot;&gt;<br />
+        &lt;Size&gt;<br />
+            &lt;CX&gt;256&lt;/CX&gt;<br />
+            &lt;CY&gt;256&lt;/CY&gt;<br />
+        &lt;/Size&gt;<br />
+    &lt;/TextureInfo&gt;<br />
+    &lt;Ui2DAnimation item=&quot;TargetBackground&quot;&gt;<br />
+        &lt;Frames&gt;<br />
+<br />
+        ...<br />
+<br />
+&lt;/XML&gt;<br />
+<br />
+Will this work? If it would, is it worth the effort? I'm guessing that I'd probably be reducing the (already pretty modest) texture overhead of the mod by about 66% by ditching 2 of the 3 files (and not redeclaring the gauge elements for each window as separate entities. Is it worth the effort to restructure it?<br />
+<br />
+On a similar track, what sort of settings should I be using in Photoshop when saving the TGA files out? I have an option of generating 16, 24, or 32 bpp files, and the additional option of using RLE compression. I've been using 32 bpp files, no compression up to this point, which work, but is it more efficient/advisable, or possible, to use other settings?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kuvasie</div><div class="date">08-08-2003, 11:47 PM</div></div><div class="posttext">Yes, it does work.  You only need to define/declare tga files, gauges or any element once in the entire UI.  EQ will look through your custom ui folder to find what it needs, then it will look through the default if it has to.  <br />
+<br />
+I am not sure how much overhead this saves.  I have wondered the same thing myself.<br />
+<br />
+Kuv</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">darkgrue</div><div class="date">08-09-2003, 05:42 PM</div></div><div class="posttext">Thanks Kuvasie, it does indeed work. =)<br />
+<br />
+Spent a few hours this afternoon restructuring it. Once I'm happy with it (and I've finished documenting it), I'll upload it.<br />
+<br />
+No clue as to how to figure out if there is any objective improvement. I considered looking at the memory usage reported by the Task Manager, but since the zone contents are always changing, chances are that number's not going to be accurate. Oh well, it's cleaner code at any rate.<br />
+<br />
+Anyone able to offer any guidance re: what options to save TGA files under in Photoshop?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dolby</div><div class="date">08-09-2003, 06:14 PM</div></div><div class="posttext">There is a program called fraps (http://www.fraps.com/) that will display the FPS of any DirectX game. I've used it on Everquest awhile ago.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kuvasie</div><div class="date">08-09-2003, 06:45 PM</div></div><div class="posttext">You are welcome Darkgrue and thanks Dolby.  I  have wondered about fraps.  I think I will try it when I get home :)<br />
+<br />
+Kuv</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">darkgrue</div><div class="date">08-10-2003, 05:53 PM</div></div><div class="posttext">Fraps is a good way to check the effects of overall video settings. But, it only shows FPS benchmarks (although it also does scrren caps and AVIs, too which is pretty nice).<br />
+<br />
+I doubt that it will show the difference in texture memory use (if indeed there is any) here though. Just facing into the middle of the Bazaar will have a significant impact over FPS than the memory savings gained by avoiding loading 2 more 256K-ish TGAs would represent - unless you were already tight on texture memory and the cache started thrashing...<br />
+<br />
+I suppose if one made some huge test TGAs and started playing with how they were loaded and animations instatiated you could nail it down, but truth be told I'm not feeling that ambitious. =P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sylphan</div><div class="date">08-24-2003, 09:19 AM</div></div><div class="posttext">Consider the consequences of combining them though.  If the textures are all defined in EQUI_Animations then people can't install your mod along with other mods (especially custom cursors) that must modify EQUI_Animations.  Or your mod will need to be updated whenever EQUI_Animations is updated.<br />
+<br />
+If you put the textures all in the group window but use them in the player window as well, people won't be able to mix and match.  Using your player window without also using your group window won't be possible.<br />
+<br />
+There are other ways to save texture memory too.  For instance, I figure I saved half a megabyte by editing EQUI_Animations to remove the class animations (which are usually shown in the inventory window).  The objective improvement, even on a very old machine that can barely run EQ, was almost nil.<br />
+<br />
+And now... I don't like the overlay of numbers onto my hotbuttons.  So I won't need to load window_pieces06 or window_pieces07 at all.  This is remarkably easy to do... the UI should run fine if I just plain ignore the changes to EQUI_HotButtonWnd and EQUI_Animations in the next patch.  Since I already added a shared platinum slot to my bank windows weeks ago, and never modified the journal or options windows, I won't even need to upload a new version of my UI after the patch.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">darkgrue</div><div class="date">08-28-2003, 12:46 AM</div></div><div class="posttext">Consider the consequences of combining them though.  If the textures are all defined in EQUI_Animations then people can't install your mod along with other mods (especially custom cursors) that must modify EQUI_Animations.  Or your mod will need to be updated whenever EQUI_Animations is updated.<br />
+<br />
+What makes you think I'm loading them in EQUI_Animations? There's nothing that requires that all animations be defined there, as far as I can tell. That would be contrary to the entire point of restructuring the mod, as you rightly say. The idea is to modify (actually you replace the Default UI files) as few of the default files as possible, as that's what generates the biggest problems when a patch breaks your UI - rolling the changes from the Default UI into the mod.<br />
+<br />
+Instead, what I am doing is defining a new EQUI.xml file in my mod's directory:<br />
+<br />
+&lt;?xml version = &quot;1.0&quot;?&gt;<br />
+&lt;XML ID=&quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+	&lt;Composite&gt;<br />
+		&lt;Include&gt;../default/EQUI.xml&lt;/Include&gt;<br />
+		&lt;Include&gt;EQUI_tessilUI.xml&lt;/Include&gt;<br />
+	&lt;/Composite&gt;<br />
+	&lt;Schema xmlns=&quot;EverQuestData&quot; xmlns:dt=&quot;EverQuestDataTypes&quot;/&gt;<br />
+&lt;/XML&gt;<br />
+<br />
+The EQUI_tessilUI.xml file contains the new animation definitions which are global to the mod (i.e. those that are common to the player, target, and group windows).<br />
+<br />
+If you put the textures all in the group window but use them in the player window as well, people won't be able to mix and match.  Using your player window without also using your group window won't be possible.<br />
+<br />
+That's true. But that's not what I'm doing. And if the SIDL interface actually honored inheritance properly, you wouldn't really be able to do that anyway, since in your example the player window shouldn't be a child of the group window, and wouldn't have access to local definitions in the group window. But, from what I can understand, a lot of stuff ends up global, so so much for scope. =P<br />
+<br />
+You can see what I did in the snippet below:<br />
+<br />
+&lt;?xml version = &quot;1.0&quot;?&gt;<br />
+&lt;XML ID=&quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+	&lt;Schema xmlns=&quot;EverQuestData&quot; xmlns:dt=&quot;EverQuestDataTypes&quot;/&gt;<br />
+	<br />
+	&lt;TextureInfo item=&quot;custom_window_pieces01.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;256&lt;/CX&gt;<br />
+			&lt;CY&gt;256&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+	&lt;/TextureInfo&gt;<br />
+<br />
+...remainder snipped<br />
+<br />
+I placed all the common interface elements that I added or changed into a file called custom_window_pieces01.tga, which should be a &quot;unique&quot; name. It's doubtful that any future UI patch by Sony will collide with it (although an enterprising UI modder may have chosen the same name for a component of their own mod). However, even that being the case, changing the name of the file, and the references within the XML files is a moment's work with a good programmer's editor able to search and replace across multiple files (I like jEdit (www.jedit.org) - it's able to do exactly that, and with the appropriate plugins, it understands XML syntax just fine).<br />
+<br />
+Below the portion I snipped are the Ui2DAnimation elements that are common to the three windows. Elements that are unique to each window are defined in the window's respective XML file, but they still reference the same custom_window_pieces01.tga. It's a 256x256 TGA, and there was plenty of room. Even if someone wanted only one or two of the windows I modded (all you'd have to do to &quot;un-mod&quot; a window would be to delete that window's XML file from the mod's directory). Removing a window from the mod won't damage the functionality of the other windows.<br />
+<br />
+There are other ways to save texture memory too.  For instance, I figure I saved half a megabyte by editing EQUI_Animations to remove the class animations (which are usually shown in the inventory window).  The objective improvement, even on a very old machine that can barely run EQ, was almost nil.<br />
+<br />
+Yeah, that's what it comes down to. As elegant as the path I took was (at least, I think it's elegant), it seems that the net impact to the game's performance is swamped by other considerations over which we, as UI tweaker/designers, don't have control over (such as a pathetic rendering engine).<br />
+<br />
+At any rate, source code is worth 1,000 words. Or at least 29K Bytes... ;=)<br />
+<br />
+I've submitted this mod to EQ Interface: tessilUI (http://www.eqinterface.com/sdownload/fileinfo.php?s=&amp;id=2357); anyone who's interested in the details only needs to refer to the XML files. I can't claim what I've done is innovative, I just really pieced together other people's work and ideas into something that suits what I was looking for.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

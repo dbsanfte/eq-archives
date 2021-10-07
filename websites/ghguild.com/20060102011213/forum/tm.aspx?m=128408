@@ -1,0 +1,2812 @@
+
+<html>
+<head>
+<title> Current Video Card Options (Last Updated 3-01-05) </title>
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/trims.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/showSelect.js"></script>
+<script language="JavaScript" src = "js/pgdcodeinput.js"></script>
+<script language="JavaScript" src = "js/validator.js"></script>
+<script type="text/javascript">
+
+function keepalive(){
+	var keepAliveFrame = document.createElement("iframe")
+	keepAliveFrame.src = "/forum/keepalive.aspx"
+	keepAliveFrame.style.display="none"
+	document.body.appendChild(keepAliveFrame)
+}
+
+
+
+setTimeout("keepalive()",3540000); 
+
+var objFormValidator = new PGDFormValidator;
+
+function validateForm(postform) {
+	if (objFormValidator.execute()){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+// -->
+</script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("1/1/2006 5:12:41 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("1/1/2006 5:12:41 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "1/1/2006 5:12:41 PM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+ strTitle [1] = "25&&0neophyte1"
+ strTitle [2] = "100&&0greenhorn2"
+ strTitle [3] = "400&&0competent3"
+ strTitle [4] = "900&&0seasoned4"
+ strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<!-- CSS Stylesheet -->
+<style type="text/css" id="gh_css">
+<!--
+/* GH header CSS  */
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+/* ***** don't change the following ***** */
+
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+body { margin: 0; padding: 0; }
+img { border: 0; }
+#header {
+position: relative;
+display: block;
+width: 100%;
+height: 30px;
+margin: 0;
+padding: 0;
+background: url(image/livebarbg.jpg) repeat-x;
+}
+#header #header-nav {
+position: absolute;
+top: 0;
+right: 0;
+}
+#header #header-nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#header #header-nav ul li {
+display: inline;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+
+<div id="header">
+<div id="live">
+<a href="http://ghguild.com"><img src="http://ghguild.com/forum/image/livebarghlive.jpg"></a>
+</div>
+<div id="header-nav">
+<ul>
+<li><a href="http://eq.ghguild.com/">Everquest</a></li><li>Everquest2</li><li>World of Warcraft</li>
+</ul>
+</div>
+</div>
+
+
+
+<center><TABLE width='97%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width=80% background="http://ghguild.com/forum/rightextend2.jpg" height="115"></td>   </tr>  </table>
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		if (theForm.body) theForm.body.focus(); else if (document.all && document.all.body1) document.all.body1.focus();
+		
+		theForm.parent.value = parentid;
+		theForm.subject.value = theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='97%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Current Video Card Options (Last Updated 3-01-05) </h2>&nbsp;
+		
+		<br>
+		<span class="ultrasmall">View related threads:
+		(<a href="/forum/searchpro.aspx?phrase=Current+Video+Card+Options+(Last+Updated+3-01-05)&criteria=OR&forumid=2&topicreply=topic&message=both&timefilter=0&top=10" target="_blank">in this forum</a>
+		| <a href="/forum/searchpro.aspx?phrase=Current+Video+Card+Options+(Last+Updated+3-01-05)&criteria=OR&forumid=ALL&topicreply=topic&message=both&timefilter=-365&timeframe=%3E&top=10" target="_blank">in all forums</a>)
+		</span>
+		<br><br>
+		
+	</td>
+	<td class="c2" align="right">Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+	
+<table width="97%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this topic: 
+    none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.aspx?m=128408" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+    
+	</td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Current Video Card Options (Last Updated 3-01-05) </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> <a href='tm.aspx?m=128408&mpage=2'><b>2</b></a> &nbsp;&nbsp;<a href='tm.aspx?m=128408&mpage=2' title='next'><b>next &gt;</b></a>&nbsp;&nbsp;<a href='tm.aspx?m=128408&mpage=2' title='last'><b> &gt;&gt;</b></a></td></tr></table><script language="JavaScript" type="text/javascript">
+function submitForm(){ try {updateRTE('body1'); return true;} catch(e){}; }</script>
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="155" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="155" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0" width="100%">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.aspx?go=prev&m=128408&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.aspx?go=next&m=128408&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128408></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               Current Video Card Options (Last Updated 3-01-05)  - <span class="ultrasmall">10/4/2004 7:34:59 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 7:34:59 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I'll sticky this as an FAQ and we'll see if we can keep it updated and current.  This will likely be a hot topic this fall as games like EQ2 come out, so I imagine this will come up a lot. <br>  <br> Please post your feedback in this thread, and I'll try to merge it into the first post as an ongoing FAQ kind of thing. <br>  <br> Contents:  <br> Budget Cards (&lt;$100) <br> Mid-Range Cards ($140-160) <br> Higher-End Cards ($250-425) <br> Cutting-Edge Cards ($400+) <br> Video Card Memory Tips <br> Useful Hyperlinks for Buying and for Learning More <br> Changelog <br>  <br> --------- <br>  <br> These numbers are really confusing, so note them carefully. <br>  <br> <b>Budget Cards, &lt;$100</b> <br> For AGP systems, an overclocked 5700 (5700LE OC) may be the best way to go.  I've seen these boards, which are slightly overclocked by the manufacturer (nothing to worry about for the end user) selling for under a hundred bucks for the 128mb version.  In general I like to avoid previous-generation cards, but there are no really great options in the under-$100 category in the current generation cards for the AGP slot right now.   <br>  <br> If you have a PCI-Express system and need a budget solution, the best budget choice right now might be the ATI Radeon X300. It runs about $85 for the 128mb model, which is fine (I wouldn't spring the extra 40 for a 256).  Also watch for the upcoming nVidia Geforce 6200.   <br>  <br> <i>Note 1: Iqueue and Sumadan are currently putting budget Geforce FX 5750 cards in PCI-Express systems.  See discussion below.</i> <br>  <br>  <br> <b>Mid-Range Cards, $140-160</b> <br>  <br> For AGP slots, nVidia is now shipping an AGP version of the 6600 GT!  This should provide a good 6th-generation option for gamers.  According to Firing Squad it outperforms the 9800 Pro in most tests, and should come in at under $200.  A good alternative is probably the ATI Radeon 9800 Pro, but that's a 5th generation card and may not look as good in EQ2 (for example).   <br>  <br> For PCI-Express, our current recommendation is the ATI X600 XT.  (*Not the X800!*)  Note that the X700 is now available for about $200, and offers a bit more performance.  <br>  <br> Both ATI and nVidia are currently working this market range hard. The 6600 has a &quot;GT&quot; that just shipped last week, and if you look around really hard you may be able to find one in a store. Costs about the same, but should be a little nicer. The X700s from ATI haven't shipped yet, I don't think. <br>  <br> Avoid the previous generation cards, like the Geforce FX cards (numbered 5700-5950) or even the Radeon 9700/9800 cards. There are a few &quot;sweet spots&quot;, but the numbering is so confusing and so-often misrepresented on the Internet that it's just not worth the effort. And even a cheapo X300 may display DX9 effects that the older cards won't.   <br>  <br> <i>Note 1: Aramus just purchased (10/4/04) an nVidia Geforce FX 5700oc 256mb, and reports that it works well with EQ2, at a cost of around $150.</i> <br>  <br> <i>Note 2: Hammeron notes that his FX 5600 cannot run EQ2. </i> <br>  <br> <i>Note 3: Jani notes that some older high-end cards can be upgraded by changing the BIOS.  <a href="http://forums.anandtech.com/messageview.cfm?catid=31&threadid=1371898" target="_blank">This thread</a> describes how to modify an X800 Pro to become an X800 XT, for example.  Thanks to Khezebel and Jani for these leads.</i> <br>  <br>  <br> <b>Higher-end Cards, $250-425</b> <br> If you can afford it, the hot spot is in the $325-375 range, like a 6800 GT or a X800 Pro. Overclockable, and very much where the &quot;action&quot; is right now. They make cards that cost a hundred bucks MORE than that, but with only a smidgeon more speed (like 5%). I'm waiting to see what EQ2 does on my existing system, but if it's as bad as Doom 3, I'll probably look for a good deal an a 6800 GT. <br>  <br> AGP Recommendation: nVidia Geforce 6800 GT or ATI Radeon X800 Pro.   <br> PCI-Express Recommendation:  nVidia Geforce 6800 GT.  <br>  <br>  <br> <b>Cutting-Edge Cards, $400+</b> <br> This is where the greatest cost lies, with cards going as high as 700 bucks.  This area is about to be seriously shaken-up by the onset of SLI cards, which combine multiple cards working together to speed output to a single monitor.  A pair of $300 SLI boards should blow away a single $700 board, but we're not quite there yet.  The only cards that will support this approach initially will be the Geforce 6600 GT, 6800 GT, and 6800 Ultra.  In the meantime we recommend in this category the following boards. <br>  <br> AGP Recommendation:  nVidia Geforce 6800 Ultra or (as of March 2005) ATI X800/X850.  <br> PCI-Express Recommendation:  ATI Radeon X800 XT. <br>  <br> ATI cards are said to work a little better with EQ2, but your mileage may vary.   <br>  <br> <i>Note 1: From Jani, some information about SLI in the AMD world can be found <a href="http://www.nvidia.com/page/sli.html" target="_blank">here</a>.  The nVidia motherboards that support this technology are due out in October 2004.</i> <br>  <br> ------------ <br>  <br> <b>Video Card Memory</b> <br>  <br> In general you need a 128mb card to run EQ2 (it needs 64mb of texture memory which means you need a 128mb card).  <br>  <br> (Can someone verify the technical accuracy of that the parenthetical statement above for me, please?  I've heard that's no longer how they make them, with that 50-50 memory split like that, but I can't seem to find a definitive answer.) <br>  <br> 256mb cards will generally run a game a little smoother, but not necessarily faster.  It may show more features of the game, i.e. special effects. <br>  <br> 64mb cards should be avoided and upgraded. <br>  <br> ------------ <br>  <br> <b>Useful Hyperlinks for Buying and for Learning More</b> <br>  <br> <a href="http://www.newegg.com" target="_blank">NewEgg</a> (decent store, several members have reported good experiences with them) <br> <a href="http://www.extremetech.com" target="_blank">ExtremeTech</a> (lots of hardware reviews, part of ZD publishing, good credibility) <br> <a href="http://www.firingsquad.com/" target="_blank">Thresh's Firing Squad</a> (excellent gamer-oriented hardware reviews; LARGE database of reviews of existing products) <br>  <br> ------------ <br>  <br> Changelog: <br> 10-06-04 -- Added hyperlinks section. <br> 10-12-04 -- Added a note in the budget section (PCI-E) about the upcoming Geforce 6200. <br> 10-22-04 -- Changed the mid-range recommendation to 9800 Pro, since it looks like the 6600 won't be coming out for AGP.  Also added the 6800 GT to the higher-end recommendation alongside the X800 Pro. <br> 10-23-04 -- Move the X800 Pro from PCI-E to AGP (it's an AGP card). <br> 10-23-04 -- Added a note about the X700 being available (in the medium category). <br> 11-17-04 -- Changed recommendation in mid-range to 6600 GT AGP. <br> 03-01-05 -- Added a bit about X800/X850 cards now coming out for AGP. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Chantela</b> -- <b>3/1/2005 10:22:14 AM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128408' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=128408'))">Revisions: 31</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128408')">Post #: 1</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128410></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 7:38:43 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 7:38:43 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=34" class="subhead" target="_blank">Hammeron</a><br>
+        
+		  <script>titleAndStar(4578,-34,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/B8D9DE5002AF411AB50D387B4F31D2DE.gif" border=0 align="absmiddle"></div><br>
+          Posts:  4578<br>
+          
+          Joined:  10/31/2002 <br>
+          From:  USA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          my fx 5600 doesn't seem to be able to even run EQ2... 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size="1">How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128408'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=34'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=34&mode=block&pg=tm&m=128410' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128410')">Post #: 2</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128412></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 7:40:39 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 7:40:39 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=71" class="subhead" target="_blank">Aramus</a><br>
+        
+		  <script>titleAndStar(7293,2,false,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%202/144.JPG" border=0 align="absmiddle"></div><br>
+          Posts:  7293<br>
+          
+          Joined:  11/1/2002 <br>
+          From:  The Great White North<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I bought a FX5700ec - 256meg and it works great. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.magelo.com/eq_view_profile.html?num=91734" target="_blank"><div align="center"><font color="blue">Brackus</a><font color="black"> / <a href="http://www.magelo.com/eq_view_profile.html?num=84239" target="_blank"><b><font color="red">Aramus</b></a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128410'>Hammeron</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=71')" title="E-mail  Aramus"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=71'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=71&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=71&mode=block&pg=tm&m=128412' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128412')">Post #: 3</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128415></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 7:45:47 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 7:45:47 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=568" class="subhead" target="_blank">twyll</a><br>
+        
+		  <script>titleAndStar(998,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/568/Us53361.gif" border=0 align="absmiddle"></div><br>
+          Posts:  998<br>
+          
+          Joined:  2/8/2004 <br>
+          From:  LI NY<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I GOT NVIDIA GFORCE 6800 GT *FLEX*!!!!! now if i can get chant and jani to help me screw around with over clocking the pc..... 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><img src="http://dammitja.net/lj/kikidance.gif"> &lt;--- Dats a Ferret!! <br> Twyll 70 Rogue  <br> Tyriss 14 Druid EQ2 <br> Tyriss 60 Hunter WOW <br> <a href="http://www.magelo.com/eq_view_profile.html?num=905976" target="_blank">Would ya like to pet my Poopie??</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128412'>Aramus</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=568')" title="E-mail  twyll"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=568'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=568&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=568&mode=block&pg=tm&m=128415' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128415')">Post #: 4</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128416></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 7:46:33 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 7:46:33 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=102" class="subhead" target="_blank">Grapaully</a><br>
+        
+		  <script>titleAndStar(3570,0,false,true,"Doggystyle","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/102/5078C0F0F631409499FFCD778603D0F4.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  3570<br>
+          
+          
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          ATI Raedon 9800 Pro - 256 Meg and it has been the best video card I have ever owned IMO. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128412'>Aramus</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=102')" title="E-mail  Grapaully"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=102'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=102&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=102&mode=block&pg=tm&m=128416' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128416')">Post #: 5</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128429></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 8:20:27 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 8:20:27 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>ORIGINAL:  twyll <br>  <br> I GOT NVIDIA GFORCE 6800 GT *FLEX*!!!!! now if i can get chant and jani to help me screw around with over clocking the pc..... <br> </blockquote> <br>  <br> With a BIOS upgrade you can turn that into 6800 Ultra <img src="http://ghguild.com/forum/image/s1.gif"> 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128415'>twyll</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=128429' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128429')">Post #: 6</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128430></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 8:21:19 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 8:21:19 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>ORIGINAL:  Grapaully <br>  <br> ATI Raedon 9800 Pro - 256 Meg and it has been the best video card I have ever owned IMO. <br> </blockquote> <br>  <br> And that can most probably be turned into a 9800 XT with a BIOS upgrade... 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128416'>Grapaully</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=128430' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128430')">Post #: 7</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128432></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 8:23:59 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 8:23:59 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Jani, can you post a hyperlink to some info on how to do that 6800 GT to 6800 Ultra upgrade, or the 9800 Pro to XT?  I'll add it to the FAQ.  The 6800 GT is my buy list as well, so I'm particularly interested in it.  (grin) <br>  <br> Added Aramus's info about the 5700OC. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128430'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128432' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128432')">Post #: 8</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128433></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 8:28:34 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 8:28:34 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>ORIGINAL:  Chantela <br>  <br> Jani, can you post a hyperlink to some info on how to do that 6800 GT to 6800 Ultra upgrade, or the 9800 Pro to XT?  I'll add it to the FAQ.  The 6800 GT is my buy list as well, so I'm particularly interested in it.  (grin) <br> </blockquote> <br>  <br> I'd need the exact make of the card, as the upgrades are done differently in some cases. <br> I was considering buying a 6800GT too, but I'll try to wait for a Nforce4 PCIe-board with a SLI-capability.. A month or two more and they should be available. <br>  <br> EDIT: actually... I'd rather not encourage people to mess with their 6800GT bioses, since there's a big change of messing it up. You can just overclock a GT to ultra speed, and if it's stable, be happy with it <img src="http://ghguild.com/forum/image/s1.gif"> <br> X800Pro -&gt; XT modifications seem much more reliable, and the success rate is about 100%. <br>  <br> EDIT2: Success rates of X800Pro -&gt; XT mods from some Finnish users: <br> Sapphire X800 Pro VIVO: 21/21 = 100%  <br> Sapphire TOXIC X800 Pro VIVO 1/1 = 100% <br> Connect3D X800 Pro VIVO: 33/33 = 100% <br> Club 3D X800 Pro VIVO: 10/10 = 100% <br> HIS X800 Pro IceQ II VIVO: 4/4 = 100% <br> Elsa FALCOX X800 Pro VIVO 2/2 = 100% <br> GeCube Radeon X800 Pro VIVO 2/2 = 100% <br> MSI X800 Pro VIVO 1/1 = 100%  <br>  <br> Asus X800 Pro 0/1 = 0% [GB9995.1] (this is the poor version with 128M memory) 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Jani</b> -- <b>10/4/2004 7:15:19 PM </b> &gt;					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128432'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=128433' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=128433'))">Revisions: 2</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128433')">Post #: 9</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128439></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 8:59:26 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 8:59:26 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Ok no biggie, thanks. <br>  <br> What is SLI capability? 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128433'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128439' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128439')">Post #: 10</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128442></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 9:03:18 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 9:03:18 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=212" class="subhead" target="_blank">Khezebel</a><br>
+        
+		  <script>titleAndStar(1740,-17,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/212/D559DDE12EBF40BDAF543FDE39441450.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  1740<br>
+          
+          Joined:  1/2/2003 <br>
+          From:  Ole Miss!<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br> X800Pro -&gt; XT modifications seem much more reliable, and the success rate is about 100%.</blockquote> <br>  <br> Elaborate on the procedure, please. <br>  <br>  <br> Or perhaps we should start another thread for overclocking?  (but not suggested for average users <img src="http://ghguild.com/forum/image/s3.gif">) 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br>EQ: <a href="http://www.magelo.com/eq_view_profile.html?num=546246" target="_blank">Khezebel</a>  <br>  <br> Stranger now, are his eyes, to this mystery <br> He hears the silence so loud <br> Crack of dawn, all is gone except the will to be 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128439'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=212'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=212&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=212&mode=block&pg=tm&m=128442' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128442')">Post #: 11</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128447></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 9:08:05 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 9:08:05 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=212" class="subhead" target="_blank">Khezebel</a><br>
+        
+		  <script>titleAndStar(1740,-17,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/212/D559DDE12EBF40BDAF543FDE39441450.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  1740<br>
+          
+          Joined:  1/2/2003 <br>
+          From:  Ole Miss!<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Oh look what I found <br>  <br> <a href="http://forums.anandtech.com/messageview.cfm?catid=31&threadid=1371898" target="_blank">http://forums.anandtech.com/messageview.cfm?catid=31&threadid=1371898</a> 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br>EQ: <a href="http://www.magelo.com/eq_view_profile.html?num=546246" target="_blank">Khezebel</a>  <br>  <br> Stranger now, are his eyes, to this mystery <br> He hears the silence so loud <br> Crack of dawn, all is gone except the will to be 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128442'>Khezebel</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=212'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=212&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=212&mode=block&pg=tm&m=128447' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128447')">Post #: 12</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128448></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 9:10:11 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 9:10:11 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          SLI means you can use two video cards for a lot of extra power. Put in two 6800 Ultras and you'd have an incredibly fast gaming rig. Such system is a current record holder of 3Dmark05, by a big margin.. <br>  <br> <a href="http://www.nvidia.com/page/sli.html" target="_blank">http://www.nvidia.com/page/sli.html</a> <br>  <br> My next upgrade is probably an Athlon64, on an Nforce4 SLI-motherboard, and one video card, probably 6800GT. And later next year, I'd buy another 6800GT to accompany the first one <img src="http://ghguild.com/forum/image/s4.gif"> 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128439'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=128448' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128448')">Post #: 13</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128465></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 10:07:48 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 10:07:48 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Oh right, like the old Voodoo cards.  That's interesting, I didn't realize that old trick was making a comeback. <br>  <br> I've added some more info to the FAQ at the top. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Chantela</b> -- <b>10/4/2004 1:14:42 PM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128448'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128465' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=128465'))">Revisions: 2</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128465')">Post #: 14</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128468></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 10:18:10 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 10:18:10 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          So SLI will only work with the upcoming nVidia motherboards?  Or will it work with other Athlon and/or Intel boards? 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128465'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128468' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128468')">Post #: 15</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128476></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 10:48:45 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 10:48:45 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Some additional info: <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>NVIDIA WILL introduce its flagship chipset on October 19th. It's interesting to note that this company as well as ATI likes to launch on Tuesdays. I guess they want to give people a break from the weekend before they deafen us with their announcements. Thank you, guys, for giving us time to relax.  <br>  <br> Nvidia will introduce two of its three chipsets - its mid range Nforce 4 Ultra and Nforce 4, while it will leave the Nforce 4 SLI launch for a later date.  <br>  <br> There are two different reasons that we are hearing for this. One is that Nvidia has some software problems with its SLI driver while Nvidia's argument is that it actually doesn't want to put other single PCIe slot chipsets in the shadow of the flagship SLI performance king.  <br>  <br> These chipsets will support all sockets for Athlon and Opteron CPUs including 754, 939 and 940; will support DDR 400 memory; one to two PCIe graphic ports; S-ATA and S-ATA RAID; Sound Storm 7.1 and Nvidia LAN.  <br>  <br> Nvidia will introduce the SLI chipset when it decides it's the right time to do it, but it won't take long. The 65 driver series will support SLI setups and should be ready soon. You can already get OEM and beta versions of this driver, even with WHQL certification.  <br>  <br> K8T890 might get nasty competition in this chipset arena, and ATI RX480 will follow shortly - at least in the same quarter.</blockquote> <br>  <br>  <br> Oh btw... Looks like I was wrong when I said the Nvidia SLI setup is holding the 3dmark05 record.. <br> <a href="http://www.theinquirer.net/?article=18801" target="_blank">http://www.theinquirer.net/?article=18801</a> <br>  <br> But I guess I'd still take the SLI option over a cascade compressor system :) <br>  <br> Also, Nvidia might be introducing their own RAID, which is similar to Matrix-RAID. 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128468'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=128476' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128476')">Post #: 16</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128478></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 10:52:27 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 10:52:27 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=15" class="subhead" target="_blank">Iqueue</a><br>
+        
+		  <script>titleAndStar(235,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/15/Om34136.gif" border=0 align="absmiddle"></div><br>
+          Posts:  235<br>
+          
+          Joined:  10/29/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          The machines we are building now are SLI-read, and we'll be putting in two 6800GT's when they are available.  They are built on the Intel Tumwater chipset using Xeon processors with 800MHz FSB's and DDR2.  In the attached photo you can see one video card, the black slot you see is another PCI-E slot for a second graphics adapter. <br>  <br> <br><span class='ultrasmall'><b>Thumbnail Image</b></span><br><a href="http://ghguild.com/forum/upfiles.aspx/15/4AC64C6A557A4C67963A128902152696.jpg" target="_blank"><img src="http://ghguild.com/forum/thumb.aspx/125_15/4AC64C6A557A4C67963A128902152696.jpg"></a> 
+          <br><br><img src='image/paperclip.gif' border='0' align='absmiddle'><a href="#" onclick="return uplwin('attachment.aspx?m=128478')">Attachment (1)</a>
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://eq2players.station.sony.com/en/pplayer.vm?characterId=109275102" target="_blank">Iquan</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128468'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=15')" title="E-mail  Iqueue"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=15'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=15&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=15&mode=block&pg=tm&m=128478' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128478')">Post #: 17</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128479></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 10:55:22 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 10:55:22 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          So you can buy an AGP 6800 GT right now, but you can't buy a PCI-E/SLI-capable model yet.  Is that right? 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128478'>Iqueue</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128479' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128479')">Post #: 18</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128487></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 11:03:13 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 11:03:13 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I've re-written the &quot;budget&quot; section of the FAQ above to reflect the fact that my recommendation of the X300 was only helpful to PCI-Express motherboard owners, which really isn't very helpful at all for budget buyers, since they're all going to have AGP slots.  <img src="http://ghguild.com/forum/image/s5.gif"> <br>  <br> My new recommendation is the budget (128mb) version of Aramus's card, the overclocked 5700, which I've seen for as low as 88 bucks on Pricewatch.  The 6600 GT (AGP) and X700 from ATI will likely fill the gap here this fall when they become available, but I'm still working on this category. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128479'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128487' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128487')">Post #: 19</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128495></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 11:27:45 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 11:27:45 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=15" class="subhead" target="_blank">Iqueue</a><br>
+        
+		  <script>titleAndStar(235,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/15/Om34136.gif" border=0 align="absmiddle"></div><br>
+          Posts:  235<br>
+          
+          Joined:  10/29/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>So you can buy an AGP 6800 GT right now, but you can't buy a PCI-E/SLI-capable model yet. Is that right?</blockquote> <br>  <br> Correct, we are currently using cheapo PCI-E 5750's to get by 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://eq2players.station.sony.com/en/pplayer.vm?characterId=109275102" target="_blank">Iquan</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128487'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=15')" title="E-mail  Iqueue"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=15'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=15&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=15&mode=block&pg=tm&m=128495' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128495')">Post #: 20</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128498></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 11:47:53 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 11:47:53 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Ok I'm pretty happy with the FAQ in its current form.  I've created four recommendation areas, and each one is split into AGP and PCI-Express recommendations.  These recommendations are based on my reading combined with your input.  I haven't tested *any* of these cards.  So please keep the input coming.  The purpose of this is to narrow and focus the options for purchasers this fall.  As such I'll try and stay on top of this thread and keep it updated. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128495'>Iqueue</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=128498' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128498')">Post #: 21</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128540></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 1:56:23 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 1:56:23 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=212" class="subhead" target="_blank">Khezebel</a><br>
+        
+		  <script>titleAndStar(1740,-17,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/212/D559DDE12EBF40BDAF543FDE39441450.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  1740<br>
+          
+          Joined:  1/2/2003 <br>
+          From:  Ole Miss!<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          All the X800 Pro to X800 XT conversions have to be the VIVO version with 1.6ns RAM... so that's gonna hinder some folks.  Including myself <img src="http://ghguild.com/forum/image/s7.gif"> 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Khezebel</b> -- <b>10/4/2004 3:57:00 PM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br>EQ: <a href="http://www.magelo.com/eq_view_profile.html?num=546246" target="_blank">Khezebel</a>  <br>  <br> Stranger now, are his eyes, to this mystery <br> He hears the silence so loud <br> Crack of dawn, all is gone except the will to be 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128498'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=212'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=212&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=212&mode=block&pg=tm&m=128540' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=128540'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128540')">Post #: 22</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128553></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 2:26:13 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 2:26:13 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=34" class="subhead" target="_blank">Hammeron</a><br>
+        
+		  <script>titleAndStar(4578,-34,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/B8D9DE5002AF411AB50D387B4F31D2DE.gif" border=0 align="absmiddle"></div><br>
+          Posts:  4578<br>
+          
+          Joined:  10/31/2002 <br>
+          From:  USA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I'm not really sure why my card can't run EQ2... it should be good enough, barely 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size="1">How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128540'>Khezebel</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=34'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=34&mode=block&pg=tm&m=128553' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128553')">Post #: 23</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128555></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 2:28:14 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 2:28:14 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=34" class="subhead" target="_blank">Hammeron</a><br>
+        
+		  <script>titleAndStar(4578,-34,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/B8D9DE5002AF411AB50D387B4F31D2DE.gif" border=0 align="absmiddle"></div><br>
+          Posts:  4578<br>
+          
+          Joined:  10/31/2002 <br>
+          From:  USA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I did some searching, I found this thread with some recommendations <br>  <br> <a href="http://forums2.warcry.com/read.phtml?f=687&id=438076#438076" target="_blank">http://forums2.warcry.com/read.phtml?f=687&id=438076#438076</a> <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>You're a bit wrong on the ATI cards descriptions ... but right about 9600Pro&lt;9600XT&lt;9800Pro <br>  <br> - 9600Pro: Entry level card to play DX9 game &quot;correctly&quot; just check the RAM of the card is 300MHz (600MHz DDR2) and not 200MHz (400MHz DDR2). Because the second one is really crappy. Prefer 128Mb cards as most of the 256Mb are based on 200MHz RAM. <br>  <br> - 9600XT: A little better than the &quot;real&quot; 9600Pro (see above). It's a 9600Pro with higher GPU/RAM frequency. Not a big gap but still better. FYI the 9600XT has performance arround the &quot;old&quot; 9500Pro (yes 9600 serie is slower than 9500 which was too expensive to produce). <br>  <br> - 9800Pro/XT: The &quot;state of the art&quot; ATI card since a few months. Far better than the 9600XT, a 9800 as same performance as an &quot;old&quot; 9700Pro and the Pro and XT are two MHz increase steps from the basic 9800. But as for the 9600Pro, you have to take care about the bus size ... a 9800 (except SE which is bad) is supposed to be 256bits, some 9800/9800Pro (not XT) are based on low-cost 128bits RAM bus and are not better than a &quot;real&quot; 9600Pro ... <br>  <br> I know, it's not always easy to ask the frequencies and the bus size when buying a card (even more online) but if you don't take care about it, you may buy a card with -40% performance ... which is really BAD !!! <br>  <br> As for Nvidia, forget about GF2/3/4 (not DX9 compliant) forget about FX5200/5600 and FX5700 non Ultra as their poor DX9 performance won't be enough to play correctly games such EQ2. And go for: FX5700Ultra or even better FX5900 or 5950. As for the XT models, Nvidia XT are low level cards Vs. Non-XT opposed to ATI where XT are better than Pro ... For instance: Nvidia FX5900XT&lt;FX5900 and for ATI 9800XT&gt;9800Pro <br>  <br> If you're really rich, and have the computer to feed new generation cards go for ATI X800XT or Nvidia FX6800/GT. <br>  <br> Hope it will help. <br>  <br> Bel-O-kan: 1st post from France ;) <br>  <br> ** ADD **: If your CPU is not in the AMD XP2500+/XP3200+/AMD64 or INTEL P4C 2.4/3.6 range, forget about cards higher than 9600XT or FX5700Ultra (except if you've planed to upgrade it in a close future). Because those graphic cards are able to animate and texture billions of polygons each second, but if the CPU is not able to compute those polygons fast enough, you won't have any improvments ... <br>  <br> ** ADD2 ** DX9 Graphic cards range is like <br>  <br> FX5700Ultra &lt; 9600Pro(2x300MHz) &lt; 9600XT &lt; FX5900XT &lt; 9800(256bits) &lt; FX5900 &lt; FX5950 &lt; 9800Pro(256bits)  &lt; 9800XT &lt; X800 &lt; X800Pro/XT &lt; FX6800 serie (Basic/GT/Ultra) </blockquote> 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size="1">How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128553'>Hammeron</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=34'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=34&mode=block&pg=tm&m=128555' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128555')">Post #: 24</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128556></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/4/2004 2:28:42 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/4/2004 2:28:42 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=34" class="subhead" target="_blank">Hammeron</a><br>
+        
+		  <script>titleAndStar(4578,-34,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/B8D9DE5002AF411AB50D387B4F31D2DE.gif" border=0 align="absmiddle"></div><br>
+          Posts:  4578<br>
+          
+          Joined:  10/31/2002 <br>
+          From:  USA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          so, I guess maybe not 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size="1">How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128555'>Hammeron</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=34'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=34&mode=block&pg=tm&m=128556' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128556')">Post #: 25</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=128900></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/6/2004 2:02:46 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/6/2004 2:02:46 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=33" class="subhead" target="_blank">Parm</a><br>
+        
+		  <script>titleAndStar(3414,-1,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/33/E518F12205974D17BAA2FF5D076C8B2A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  3414<br>
+          
+          Joined:  10/31/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <blockquote class="quote"><i>quote:</i><br><br>ORIGINAL:  Hammeron <br>  <br> I'm not really sure why my card can't run EQ2... it should be good enough, barely <br> </blockquote> <br>  <br> Yes, especially since my Geforce 4 Ti 4200 can play it, and your card came out after mine.  Note my 4200 has 128 mb of ram on it. 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Parm</b> -- <b>10/6/2004 2:03:05 PM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.magelo.com/eq_view_profile.html?num=181972" target="_blank">my stuff</a> <br>  <br> <i>&quot;The whole problem with the world is that fools and fanatics are always so certain of themselves, but wiser people so full of doubts.&quot; <br> -- Bertrand Russell</i> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128553'>Hammeron</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=33')" title="E-mail  Parm"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=33'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=33&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=33&mode=block&pg=tm&m=128900' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=128900'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=128900')">Post #: 26</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=129145></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/7/2004 5:03:59 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/7/2004 5:03:59 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=34" class="subhead" target="_blank">Hammeron</a><br>
+        
+		  <script>titleAndStar(4578,-34,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/B8D9DE5002AF411AB50D387B4F31D2DE.gif" border=0 align="absmiddle"></div><br>
+          Posts:  4578<br>
+          
+          Joined:  10/31/2002 <br>
+          From:  USA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          mine is 128 too... weird 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Hammeron</b> -- <b>10/7/2004 8:04:48 PM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size="1">How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#128900'>Parm</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=34'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=34&mode=block&pg=tm&m=129145' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=129145'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=129145')">Post #: 27</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=129405></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/8/2004 11:03:37 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/8/2004 11:03:37 PM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Looks like nVidia has a new mid-priced card coming out in November.  Found this on a web site somewhere.   <br>  <br> <blockquote class="quote"><i>quote:</i><br><br>Nvidia has a new secret steed for the graphics race and this time it clippity-clops about under the NV41 codename. I have to admit that people haven't talked much about this chip, even though we pre-announced it for Nvidia quite some time ago. <br>  <br> This chip is nothing more than a lower cost version of the NV40 core that will be adjusted for the performance mainstream market. This is the market where cards cost from $200 to $300. NV41 may well be called Geforce 6700. It will be clocked to 400MHz core and 1000MHz memory. Cards will, rather surprisingly, use a 256 bit memory interface and will come in two variants, 128MB and 256MB. <br> </blockquote> 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#129145'>Hammeron</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=129405' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=129405')">Post #: 28</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=129980></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/12/2004 10:32:49 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/12/2004 10:32:49 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=57" class="subhead" target="_blank">Jani</a><br>
+        
+		  <script>titleAndStar(1493,-73,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/57/3AD8373F14924036B3B739C8404B1D39.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1493<br>
+          
+          Joined:  11/1/2002 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Tom's Hardware updated their VGA chart, which contains all of the latest video cards, including results from practically every benchmark there is. <br>  <br> <a href="http://graphics.tomshardware.com/graphic/20041004/index.html" target="_blank">http://graphics.tomshardware.com/graphic/20041004/index.html</a> <br>  <br> Find your card in those charts and weep, it's probably waaayyyy down there... <img src="http://ghguild.com/forum/image/s7.gif"> 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#129405'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=57')" title="E-mail  Jani"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=57'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=57&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=57&mode=block&pg=tm&m=129980' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=129980')">Post #: 29</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=129998></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Current Video Card Options (Ongoing Thread)  - <span class="ultrasmall">10/12/2004 11:14:15 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("10/12/2004 11:14:15 AM",0,0,0,128408,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=691" class="subhead" target="_blank">nytedemon</a><br>
+        
+		  <script>titleAndStar(2359,2,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/691/84F0FC58B33D47908B5987F9A735FEC0.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  2359<br>
+          
+          Joined:  6/3/2004 <br>
+          
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          damn about time toms did this/I was waiting my ass off for this. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.magelo.com/eq_view_profile.html?num=1035993" target="_blank">My Sexy Self</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#129980'>Jani</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=691')" title="E-mail  nytedemon"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=691'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=691&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=691&mode=block&pg=tm&m=129998' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=129998')">Post #: 30</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+       <font color='FFFFFF' class='subhead'>[1]</font> <a href='tm.aspx?m=128408&mpage=2&key='><font color='FFFFFF' class='subhead'>2</font></a> &nbsp;&nbsp;<a href='tm.aspx?m=128408&mpage=2&key=' title='next'><font color='FFFFFF' class='subhead'>next &gt;</font></a>&nbsp;&nbsp;<a href='tm.aspx?m=128408&mpage=2&key=' title='last'><font color='FFFFFF' class='subhead'> &gt;&gt;</font></a>
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Current Video Card Options (Last Updated 3-01-05) </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> <a href='tm.aspx?m=128408&mpage=2'><b>2</b></a> &nbsp;&nbsp;<a href='tm.aspx?m=128408&mpage=2' title='next'><b>next &gt;</b></a>&nbsp;&nbsp;<a href='tm.aspx?m=128408&mpage=2' title='last'><b> &gt;&gt;</b></a></td></tr></table>
+
+<table width="97%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" >- - Public Forum</option>
+<option value="tt.aspx?forumid=2" selected>- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="97%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="128408">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="97%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+<font size="-4" color="#b1b1b1">This Content for Google Adsense: Lots of Gaming and Computer hardware. Buy Computer Hardware here. Newegg is the best for hardware. Fast Video Cards. World of Warcraft. Get a fast computer like alienware for the win. Win Teh game. Arcade games are fun. Spyware and Viruses are not. Porn is cool but google isn't down with the porn. Everquest. Everquest 2. We do it all. PC Gaming X-box Playstation 2 Xbox 360 Console Games Get HDTV Television With Satellite TV or Cable with Cablecard for the best TV experience.  There's also great deals on fast food and coupon sites. Get Dell coupons from fatwallet or bensbargins. Microsoft Server products for the win. Web hosting we provide for FREE! Gamers like to eat snacks like cheetos or candy and soda. Time to get on the fattymcfatfat machine. Treadmill and no gym for home. Weight Watchers and lose weight fast with diet pills that may kill you but hey that's the fun. Atkins doesn't work. There's no women on the internet unless they post pics of their breasts with a penny. Digital Cameras like the Rebel XT or 20D from Canon are much better than cameras from Nikon like D50 and D70. Sigma is great if you get a sharp one. Play the Sigma Lottery if you wish.</font></center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.078</font><br>
+</body>
+</html>

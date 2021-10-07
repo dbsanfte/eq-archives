@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Changing the background of a window</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; Changing the background of a window</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=551">Changing the background of a window</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Cullyn</div><div class="date">08-02-2002, 04:40 PM</div></div><div class="posttext">I have jpg file that I want to be the background of the itemdisplay window. How would I go about adding that in? I don't know much about xml so any help would be appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nennayan</div><div class="date">08-02-2002, 04:58 PM</div></div><div class="posttext">First you have to turn the JPG into a TGA file, making sure it has dimensions which are a power of 2 (128, 256, 512, 1024) and an alpha channel with either full or partial opacity. There are lots of graphics programs that can do this and I don't know what you have, so I'll leave it up to you to figure out this part.<br />
+<br />
+Next, you need to decide if you want this to affect all your windows or just one. If the answer is all windows, then just replace Wnd_bg_dark_rock.tga and Wnd_bg_light_rock.tga with your file by renaming it then copying it to that directory, thus overwriting them.<br />
+<br />
+If you'd rather only affect one window, you need to give your file a unique name (my_awesome_background.tga) and copy it to the skin directory that you're using, then edit EQUI_Animations.xml to add the info for that file, and finally, edit EQUI_Templates.xml and change the background info for the window you want to point to the new file.<br />
+<br />
+If this doesn't make any sense, then please refer to the tutorials posted at the top of this forum.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cullyn</div><div class="date">08-03-2002, 04:25 AM</div></div><div class="posttext">ok i worked on thsi for like 4 hours and didn't even get the picture to show up at all :(  so time to give up and seek help<br />
+<br />
+my file is 512x1024 the image inside is 400x190 <br />
+<br />
+Anyone more knowledgable with xml want to help me out and post some code on how to do this? just post what I need to add to what files would help. <br />
+<br />
+Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lozoria</div><div class="date">08-03-2002, 08:20 AM</div></div><div class="posttext">I'm having the same issue.<br />
+<br />
+I've been trying to modify the quartz interface, but have been coming across some difficulties while actually changing the size of the Window Select background.<br />
+<br />
+I took the base image for the quartz image, put it on a 512x512 transparent background (it started on 256x256), and the image is 109x283 pixels.<br />
+<br />
+Basically, I want the background select window to look like this:<br />
+<br />
+http://www.douglasdesign.org/EQfiles/winselect.jpg<br />
+<br />
+But it keeps coming up with no background at all.<br />
+<br />
+I've gone through all the code that I can think of that deals with the size of the image (UI_playername_82, EQUI_selectwindow, EQUI_Animations, etc), and I'm at a loss. Any help would be appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">08-03-2002, 03:08 PM</div></div><div class="posttext">Open EQUI_Templates.xml<br />
+<br />
+This is where you modify the background of windows. I don't know exactly what you did, but what you should try doing is copying one of the already-defined templates like WDT_Def, Find the &lt;Background&gt; declaration for the copied WindowDrawTemplate, and change the file from whatever it is there to the *.tga file you want it to be. *** THE *.TGA FILE MUST BE 256 x 256 or else you start to have problems.<br />
+<br />
+If you're just trying to go for a transparent background you don't need to change the background image. Just go to the window (like EQUI_PlayerWindow.xml) and at the bottom where it declares the Screen item, you find the part that declares the &lt;Style_Background&gt; *I think* and make that false. That way it won't show any background whatsoever, like the default buff window.<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dinuvian</div><div class="date">08-03-2002, 11:14 PM</div></div><div class="posttext">I use custom backgrounds that are 256 by 256 and also 512 by 512. Both work.<br />
+<br />
+But yes, there are several steps.<br />
+<br />
+1. Make your picture. Remember to make it 256x256 or 512x512 (I havent tested other values, but always keep them a square with multiples of 2 - as above - ). Save it as a .tga file in your userinterface directory.<br />
+<br />
+2. Edit your Animations file. Make a new animation and call it the name you saved the picture as. Set the size of the animation to the size you saved the picture (again, 256x256 etc etc)<br />
+<br />
+3. Open your templates file. This is the biggest step. There are a selection of templates you can use. Borders, no borders, titles, no titles, squared, rounded. Select the one you like (minus the background it has selected). They are easy to understand from their title. E.g. WDT_RoundedNoTitle. Self explanatory.<br />
+<br />
+4. Copy the whole template code for the one you want to use (N.B. the template defines your buttons, borders as well as your background, so take those into account). Rename the template to what you want.<br />
+<br />
+5. Change the &lt;Background&gt; label from whatever it currently says to the .tga picture you made.<br />
+<br />
+6. Open the .xml file for the window you want a new background for. Scroll to the bottom. See where it defines the template? Change that to the name you made your new template.<br />
+<br />
+That's you done. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pure</div><div class="date">08-04-2002, 01:31 AM</div></div><div class="posttext">Using the Info provided by DINUVIAN - Ty so very much :)<br />
+I did use his directions to very easily place a picture in the Autoequip of my Inventory.<br />
+I saved it as 512 x 512 and placed the 120 x 200 picture in the top left corner like the pics for backgrounds of Quartz Mod.<br />
+If the day comes and more of the Hard Code actually comes available. This will be one nice easy way of changing window content with the template and background changes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cullyn</div><div class="date">08-04-2002, 02:18 AM</div></div><div class="posttext">Thanks I will give this a shot today and see what happens.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cullyn</div><div class="date">08-07-2002, 04:33 AM</div></div><div class="posttext">Ok I got the background working. Now one question. It currently shows 2 of the image as the background. Anyone know of a way to change that?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Atheenath Dawns</div><div class="date">08-24-2002, 10:26 AM</div></div><div class="posttext">Ive done all that. Even had to do more. First of all it didnt want to work if the tga file wasnt named wnd_bg_light_filename.tga. Then it didnt want to work if there wasnt also a &quot;dark&quot; version of that tga. Ive added both files into animation.xml. Ive added the template taking the template the buffwindow was using and changing the background tga file reference. Ive changed the buff window .xml file to the name of my new template. and now it gives me this crap : <br />
+<br />
+UIErrorLog created at Sat Aug 24 15:54:08 2002<br />
+[Sat Aug 24 15:54:11 2002] [Line:531 Source:UIFiles\belle\EQUI_BuffWindow.xml] Couldn't find class:item 'WDT_Buffbar' reference in FieldParseItemOfClass()<br />
+[Sat Aug 24 15:54:11 2002] Error loading skin: loading default skin instead.<br />
+ <br />
+<br />
+<br />
+This is what i have in my ani.xml folder : <br />
+<br />
+<br />
+&lt;TextureInfo item = &quot;wnd_bg_light_buffbar.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;907&lt;/CX&gt;<br />
+			&lt;CY&gt;68&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+&lt;/TextureInfo&gt;<br />
+<br />
+&lt;TextureInfo item = &quot;wnd_bg_dark_buffbar.tga&quot;&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;907&lt;/CX&gt;<br />
+			&lt;CY&gt;68&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+&lt;/TextureInfo&gt;<br />
+ <br />
+<br />
+<br />
+This is what i have in my buffwindow.xml, replacing the original template name with mine<br />
+<br />
+<br />
+&lt;DrawTemplate&gt;WDT_Buffbar&lt;/DrawTemplate&gt; <br />
+<br />
+<br />
+<br />
+This is what i have in my templates.xml file. I made a copy of the original template that window was using and changed the name and the background file name.<br />
+<br />
+<br />
+<br />
+&lt;WindowDrawTemplate item = &quot;WDT_buffbar&quot;&gt;<br />
+		&lt;Background&gt;wnd_bg_light_buffbar.tga&lt;/Background&gt;<br />
+<br />
+<br />
+and it STILL doesnt want to bloody work. <br />
+<br />
+<br />
+As far as the error message goes, this is line 531 of UIFiles\belle\EQUI_BuffWindow.xml<br />
+<br />
+<br />
+529. <br />
+530. <br />
+531. 	&lt;Screen item = &quot;BuffWindow&quot;&gt; <br />
+532. 		&lt;!--&lt;ScreenID/&gt;--&gt;<br />
+533. 		&lt;Text&gt;Buffs&lt;/Text&gt;<br />
+534. 		&lt;RelativePosition&gt;false&lt;/RelativePosition&gt;<br />
+535. 		&lt;Location&gt;<br />
+536. 			&lt;X&gt;415&lt;/X&gt;<br />
+537. 			&lt;Y&gt;0&lt;/Y&gt;<br />
+538. 		&lt;/Location&gt;<br />
+539. 		&lt;Size&gt;<br />
+540. 			&lt;CX&gt;104&lt;/CX&gt;<br />
+541. 			&lt;CY&gt;395&lt;/CY&gt;<br />
+542. 		&lt;/Size&gt;<br />
+543. 		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+544. 		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+545. 		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+546. 		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+547. 		&lt;DrawTemplate&gt;WDT_Buffbar&lt;/DrawTemplate&gt;<br />
+548. 		&lt;Style_Titlebar&gt;true&lt;/Style_Titlebar&gt;<br />
+<br />
+<br />
+<br />
+I really dont know what to do. I dont understand why it doesnt work, and why it gives me that error message.<br />
+<br />
+The worst of this is, that when I replace the Wnd_bg_light_rock.tga  file with my new tga it works. But I dont want to change the backgrounds of ALL windows, I want to know how to change it on ONE only. I made individual background tga files for each windows that are all part of a picture. If I cant even get it to work on ONE i will never make it :(<br />
+<br />
+Please please please help :confused: :confused: <br />
+<br />
+<br />
+Atheen</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">arbaon</div><div class="date">08-31-2002, 05:16 AM</div></div><div class="posttext">&lt;WindowDrawTemplate item = &quot;WDT_buffbar&quot;&gt;<br />
+<br />
+should change to:<br />
+<br />
+&lt;WindowDrawTemplate item = &quot;WDT_Buffbar&quot;&gt;<br />
+<br />
+Be careful with XML as nearly every item is case-sensitive.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

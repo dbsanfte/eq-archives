@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Created my first complete UI from scratch, need help tweaking a few things...</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Created my first complete UI from scratch, need help tweaking a few things...</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=10938">Created my first complete UI from scratch, need help tweaking a few things...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-01-2003, 11:57 PM</div></div><div class="posttext">Hello...<br />
+<br />
+Over the past few days, I have been tweaking XML to create my own customized UI.  Some of the files I have been using are original EQ files, others are mods I have downloaded here over the months.  For the most part, I have been successful in this endeavor, but there are a couple issues I could use some input on from those in the know...<br />
+<br />
+1) resolved, I think<br />
+<br />
+2) ditto<br />
+<br />
+3) I have ended up with two files that have cause my EQ UI to crash and load up default when trying to use them: EQUI_QuantityWnd.xml and EQUI_PlayerWindow.xml.  SidlWidl does not give me any clues as to why EQ won't play nice with my player window, but for the quantity window, it tells me &quot;can't create object from a null mode.&quot;  Unfortunately, I have no idea what that means or how to fix it.  I am attaching these two .xml files...if anyone wants to take a peek at them and tell me what I have done wrong with them that would cause them to error out and make EQ revert to the default UI, I would appreciate it.<br />
+<br />
+UPDATE: See post below on why I think the Player window isnt working, perhaps you can help me fix it.  Still have no clue as to what I am doing wrong with the Quantity window.<br />
+<br />
+4) figured this one out myself, woot!<br />
+<br />
+5) resolved, thanks to the help below<br />
+<br />
+6) Stupid newbie question I am sure is so ignorant I shouldnt even been asking it.  I just started a new character since the patch where the spells come pre-scribed, memmed, and hotbuttoned.  And cool!  The spell icon is on the hotbutton...but...how can I get spell icons on the spellcasting hotbuttons for my other characters?  Cuz it just looks nifty.  Can you have a spellgem icon on a hotbutton that does something in addition to casting the spell (for example, sending a message to your group?)<br />
+<br />
+7) To make things cleaner, I set MOST of my windows to WDT_Inner and took off the titlebar and borders.  This occasionally created problems with windows I wanted to keep the close and/or minimize buttons on, because the content of the window would shift up and obscure these buttons.  It was easy to fix this problem with any windows where the content was positioned on the x,y grid such as with buttons and inventory slots, but I had a bit more trouble when the postioning on the content was done by margin offsets instead.  I muddled my way through with trial and error until I could see the close and minimize buttons in the Screen Layout window, but those buttons are not showing up ingame.  Any idea why?<br />
+<br />
+I am almost certain I had other questions, but I am gonna go tweak with my code a bit more and see what comes of these questions.  Forgive any ignorance displayed herein.  I have never been taught xml or html or any other language...what I have done here, I picked up through intuition and trial and error, so my knowledge base is sketchy at best.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-02-2003, 04:11 AM</div></div><div class="posttext">Originally posted by Rykahna <br />
+<br />
+5) In my quest to make things smaller, I did some fiddling with the spellbook.  Though I tend to be minimalist for the constantly visible stuff in my UI, I really like t.king's spellbooks, animations, and gem icons.  I was shooting for a spellbook that was less than half the size of the existing spellbook, but still had the background graphic.    <br />
+<br />
+Update...<br />
+<br />
+Argh...I am so close on this one.  Whatever it is I am missing, I suspect is either in the animations portion of the EQUI_SpellBookWnd.xml code, or is in one of the animations files themselves.  Neither of which I am comfortable messing with to any degree.  I may know just enough to be dangeous, but at least I am aware of my limitations.<br />
+<br />
+I shrunk down the tga files to the following dimensions:<br />
+<br />
+tkspellbook01.tga - 165x165<br />
+tkspellbook02.tga - 105x165<br />
+tkspellbook03.tga - 165x67<br />
+tkspellbook04.tga - 165x67<br />
+<br />
+Created a .tga file that is nothing but a transparent background to replace tkspellbook05.tga, but the little tab at the bottom is still showing.<br />
+<br />
+Here is the code that concerns me the most.  I suspect that whatever is giving me my headache here is in this code.  What is really frustrating is that the spell book shows up perfectly in SidlWidl's QuickView feature, but is completely wrong when viewed ingame (see attachment for bitmaps of each one.)<br />
+<br />
+End dimensions of the spellbook in the .xml file are 328x210.<br />
+<br />
+ &lt;!-- edited the dimensions in this section, to correspond with dimensions of smaller .tga files I'm using --&gt;<br />
+ <br />
+  &lt;TextureInfo item=&quot;tkspellbook01.tga&quot;&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;165&lt;/CX&gt;<br />
+      &lt;CY&gt;165&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+  &lt;/TextureInfo&gt;<br />
+  &lt;TextureInfo item=&quot;tkspellbook02.tga&quot;&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;165&lt;/CX&gt;<br />
+      &lt;CY&gt;165&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+  &lt;/TextureInfo&gt;<br />
+  &lt;TextureInfo item=&quot;tkspellbook03.tga&quot;&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;165&lt;/CX&gt;<br />
+      &lt;CY&gt;67&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+  &lt;/TextureInfo&gt;<br />
+  &lt;TextureInfo item=&quot;tkspellbook04.tga&quot;&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;165&lt;/CX&gt;<br />
+      &lt;CY&gt;67&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+  &lt;/TextureInfo&gt;<br />
+  &lt;TextureInfo item=&quot;tkspellbook05.tga&quot;&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;1&lt;/CX&gt;<br />
+      &lt;CY&gt;1&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+  &lt;/TextureInfo&gt;<br />
+  &lt;!-- have edited the dimensions of the spellbook to get rid of the close button graphics at bottom.  Would like to get rid of the file altogether, don't know how.  Close button is in top center of book ala Remelio.  Don't know how graphic is still showing up, as I have replaced the graphic tkspellbook05.tga file with a completely empty, blank, transparent file of the same dimensions.  How to get rid of this? --&gt;<br />
+  &lt;!-- HAVE NOT edited the dimensions here, because whenever I do, the end result in SidlWidl looks like it was thrown together from mismatched jigsaw materials.  Possibly this is the problem section? --&gt;<br />
+  <br />
+  &lt;Ui2DAnimation item=&quot;TK_SpellBook1&quot;&gt;<br />
+    &lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+    &lt;Frames&gt;<br />
+      &lt;Texture&gt;tkspellbook01.tga&lt;/Texture&gt;<br />
+      &lt;Location&gt;<br />
+        &lt;X&gt;0&lt;/X&gt;<br />
+        &lt;Y&gt;0&lt;/Y&gt;<br />
+      &lt;/Location&gt;<br />
+      &lt;Size&gt;<br />
+        &lt;CX&gt;256&lt;/CX&gt;<br />
+        &lt;CY&gt;256&lt;/CY&gt;<br />
+      &lt;/Size&gt;<br />
+    &lt;/Frames&gt;<br />
+  &lt;/Ui2DAnimation&gt;<br />
+  &lt;Ui2DAnimation item=&quot;TK_SpellBook2&quot;&gt;<br />
+    &lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+    &lt;Frames&gt;<br />
+      &lt;Texture&gt;tkspellbook02.tga&lt;/Texture&gt;<br />
+      &lt;Location&gt;<br />
+        &lt;X&gt;1&lt;/X&gt;<br />
+        &lt;Y&gt;0&lt;/Y&gt;<br />
+      &lt;/Location&gt;<br />
+      &lt;Size&gt;<br />
+        &lt;CX&gt;255&lt;/CX&gt;<br />
+        &lt;CY&gt;256&lt;/CY&gt;<br />
+      &lt;/Size&gt;<br />
+    &lt;/Frames&gt;<br />
+  &lt;/Ui2DAnimation&gt;<br />
+  &lt;Ui2DAnimation item=&quot;TK_SpellBook3&quot;&gt;<br />
+    &lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+    &lt;Frames&gt;<br />
+      &lt;Texture&gt;tkspellbook03.tga&lt;/Texture&gt;<br />
+      &lt;Location&gt;<br />
+        &lt;X&gt;0&lt;/X&gt;<br />
+        &lt;Y&gt;1&lt;/Y&gt;<br />
+      &lt;/Location&gt;<br />
+      &lt;Size&gt;<br />
+        &lt;CX&gt;256&lt;/CX&gt;<br />
+        &lt;CY&gt;101&lt;/CY&gt;<br />
+      &lt;/Size&gt;<br />
+    &lt;/Frames&gt;<br />
+  &lt;/Ui2DAnimation&gt;<br />
+  &lt;Ui2DAnimation item=&quot;TK_SpellBook4&quot;&gt;<br />
+    &lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+    &lt;Frames&gt;<br />
+      &lt;Texture&gt;tkspellbook04.tga&lt;/Texture&gt;<br />
+      &lt;Location&gt;<br />
+        &lt;X&gt;1&lt;/X&gt;<br />
+        &lt;Y&gt;1&lt;/Y&gt;<br />
+      &lt;/Location&gt;<br />
+      &lt;Size&gt;<br />
+        &lt;CX&gt;255&lt;/CX&gt;<br />
+        &lt;CY&gt;101&lt;/CY&gt;<br />
+      &lt;/Size&gt;<br />
+    &lt;/Frames&gt;<br />
+  &lt;/Ui2DAnimation&gt;<br />
+  &lt;Ui2DAnimation item=&quot;TK_SpellBookClose&quot;&gt;<br />
+    &lt;Cycle&gt;false&lt;/Cycle&gt;<br />
+    &lt;Frames&gt;<br />
+      &lt;Texture&gt;tkspellbook05.tga&lt;/Texture&gt;<br />
+      &lt;Location&gt;<br />
+        &lt;X&gt;0&lt;/X&gt;<br />
+        &lt;Y&gt;0&lt;/Y&gt;<br />
+      &lt;/Location&gt;<br />
+      &lt;Size&gt;<br />
+        &lt;CX&gt;96&lt;/CX&gt;<br />
+        &lt;CY&gt;60&lt;/CY&gt;<br />
+      &lt;/Size&gt;<br />
+    &lt;/Frames&gt;<br />
+  &lt;/Ui2DAnimation&gt;<br />
+  &lt;!-- end of t.king graphics --&gt;<br />
+  &lt;!-- its all cake from here... --&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">download91</div><div class="date">11-02-2003, 04:45 AM</div></div><div class="posttext">I'm sure that the problem was that 165x165,105x165,165x67 and, 165x67 aren't vaild dimensions... I think I read somewehre that what EQ will do is change your sizes to the closest possible size... I'm sure that Phsycogears tutorial says that it needs to be a power of 2 to work... I'm too lazy to post a link, but I think its in the graphics tutorials or something. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-02-2003, 05:08 AM</div></div><div class="posttext">Originally posted by download91 <br />
+I'm sure that the problem was that 165x165,105x165,165x67 and, 165x67 aren't vaild dimensions... I think I read somewehre that what EQ will do is change your sizes to the closest possible size... I'm sure that Phsycogears tutorial says that it needs to be a power of 2 to work... I'm too lazy to post a link, but I think its in the graphics tutorials or something. :D  <br />
+<br />
+all right, that is a starting point.  Kinda puts me in an ugly spot, because 128 is too small and 256 is, well, exactly where I already was.  I will see what I can do to tweak.  Maybe create a two-layer file...one with the graphic that is the size I need it to be, and one transparent layer filling out the pixels I don't plan to use to the nearest power of 2...hrm...<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cairenn</div><div class="date">11-02-2003, 10:47 AM</div></div><div class="posttext">http://www.eqgui.com/showthread.php?s=&amp;threadid=458<br />
+<br />
+In short, what you need to do is make the file a power of two (ie 256x128, 256x256, 512x1024, 64x32, etc). The actual image can be whatever size you want/need it to be, but the file has to be the power of two.<br />
+<br />
+You define the file (aka TextureInfo item):<br />
+<br />
+      &lt;TextureInfo item = &quot;sample.tga&quot;&gt;<br />
+        &lt;Size&gt;<br />
+          &lt;CX&gt;512&lt;/CX&gt;<br />
+          &lt;CY&gt;128&lt;/CY&gt;<br />
+        &lt;/Size&gt;<br />
+      &lt;/TextureInfo&gt;<br />
+<br />
+Then you define the image (aka Ui2DAnimation):<br />
+<br />
+&lt;Ui2DAnimation item = &quot;MyPrettyRedCircle&quot;&gt;<br />
+  &lt;Cycle&gt;true&lt;/Cycle&gt;<br />
+  &lt;Frames&gt;<br />
+    &lt;Texture&gt;sample.tga&lt;/Texture&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;10&lt;/X&gt;<br />
+      &lt;Y&gt;112&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;12&lt;/CX&gt;<br />
+      &lt;CY&gt;22&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Hotspot&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Hotspot&gt;<br />
+    &lt;Duration&gt;1000&lt;/Duration&gt;<br />
+  &lt;/Frames&gt;<br />
+&lt;/Ui2DAnimation&gt;<br />
+<br />
+That tells the game that the image is found in the file sample.tga at the location 10, 112 and that the image is sized 12,22.<br />
+<br />
+Then you define the static graphic (aka StaticAnimation item) for in game<br />
+<br />
+  &lt;StaticAnimation item=&quot;GW_prettyredcircle&quot;&gt;<br />
+    &lt;ScreenID&gt;GW_prettyredcircle&lt;/ScreenID&gt;<br />
+    &lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+    &lt;Location&gt;<br />
+      &lt;X&gt;0&lt;/X&gt;<br />
+      &lt;Y&gt;0&lt;/Y&gt;<br />
+    &lt;/Location&gt;<br />
+    &lt;Size&gt;<br />
+      &lt;CX&gt;12&lt;/CX&gt;<br />
+      &lt;CY&gt;22&lt;/CY&gt;<br />
+    &lt;/Size&gt;<br />
+    &lt;Animation&gt;MyPrettyRedCircle&lt;/Animation&gt;<br />
+  &lt;/StaticAnimation&gt;<br />
+<br />
+Remember to include it with the Pieces at the bottom of your Window:<br />
+<br />
+&lt;Pieces&gt;GW_prettyredcircle&lt;/Pieces&gt;<br />
+<br />
+If your PrettyRedCircle isn't a background or some such, ie if instead it is for a gauge or something, then you wouldn't need to do the StaticAnimation or the Pieces sections, as it would be part of the Gauge definitions.<br />
+<br />
+re: 1) SidlWidl--I have tried to use this, and except for being on the crashy side, it seems to work well for editing anything that can be loaded using the &quot;View--&gt; QuickLoad&quot; ability. Anything I pull up using QuickLoad, I have the ability to view and edit and save. However...I assume I should be able to open up any EQ xml file and view and edit and save it, right? Well, I can't. I can get a list of all the applicable files in the Browser window in SidlWidl, but whenever I click on a file or a part of a file, nothing happens, as though they are grayed out. I have the latest .Net installed if that makes any difference. If I choose &quot;View--&gt; Screen Layout&quot; a start page saying &quot;internet explorer cannot open the page&quot; pops up, and when I hit &quot;ok&quot; to that window, I get a list of available files, which I can view the graphic for, but cannot make any changes to. So, essentially, the only files I can edit in SidlWidl are the ones that can be opened through QuickLoad.<br />
+You need to open the QuickLoad.xml  file in the SidlWidl folder and add any elements that you want to be able to edit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-02-2003, 03:28 PM</div></div><div class="posttext">Originally posted by Cairenn <br />
+http://www.eqgui.com/showthread.php?s=&amp;threadid=458<br />
+<br />
+snip<br />
+<br />
+You need to open the QuickLoad.xml  file in the SidlWidl folder and add any elements that you want to be able to edit.  <br />
+<br />
+Thank you very much.  I am not such a newbie that I didn't look at that thread, I swear, lol.  I did, actually, look at the thread in question...however, I don't know why, but it just didnt occur to me that I was creating background graphics and needed to be following that procedure.<br />
+<br />
+snip nm...dumb question I answered myself looking farther down in the file.<br />
+<br />
+Successfully made the teenie-tiny book using 128x128 and 128x64 pieces before bed last night, but it won't be usable, unless I want to be a very myopic cleric...<br />
+<br />
+removing #5 from my list of issues...only 4 more to go...<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-03-2003, 12:46 AM</div></div><div class="posttext">I have a spellbook that works now, hallelujah!  It is much more compact than the normal spellbook, which I like a lot.  I still havent been able to get rid of the tab at the bottom.  I dont wanna use Remelio's borderless spellbook mod for tking's spellbooks, because it seems to truncate the bottom of the book graphic.  However, I have tried replacing both tkspellbook_05.tga with a blank pic, and editing out the tab from tkspellbook_03.tga and tkspellbook_04.tga and while this appears to work when viewing in SidlWidl, when viewed in-game there is a white &quot;ghost&quot; of the bottom tab on the book.  Oh well, for now, its the best I can do.  For anyone who is interested, here's the file attached.<br />
+<br />
+Now, another question.  I think the reason the Player Window I am linked above that isn't working causes my UI to fail is because the casting gauge is a part of the player window.  I noticed on another mod that included the Target information on the player window, it was necessary to replace the Target window with a &quot;dummy&quot; file.  Is it necessary to replace the Casting window with a dummy file if the casting gauge is part of the Player window?  If so, how?  I suspect simply copying the contents of the Target dummy file into the Casting window won't do the trick.  This is also an issue because I am trying to make my spell-gems bar, including a spell-book trigger, a part of my hotbuttons window.  Again, the UI crashes and resets to the default UI when I try this, and I suspect its because I need to replace the CastSpellWnd with a &quot;dummy&quot; file if that content is going to be a part of Hotbuttons window.  But how?<br />
+<br />
+Removing #4 from my list of issues...figured out how to make the hotbuttons look right myself.  Had no clue that there were 3 layers on each button until I was able to access and edit the files in SidlWidl.  3 issues to go before I have my ideal UI!!<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cairenn</div><div class="date">11-03-2003, 02:01 AM</div></div><div class="posttext">No, you don't need to create a &quot;dummy&quot;.  What you need to do is give it a new name.  EQ doesn't like having two things named the same.  Since you are putting it in the Hotbutton window, I'd suggest something like:<br />
+<br />
+  &lt;Gauge item=&quot;HBW_Casting&quot;&gt;<br />
+    &lt;ScreenID&gt;HBW_Casting&lt;/ScreenID&gt;<br />
+<br />
+<br />
+(HBW for HotButtonWindow)<br />
+<br />
+As for &quot; trying to make my spell-gems bar, including a spell-book trigger, a part of my hotbuttons window&quot;, you can't.  Anything with a function can not be moved out of its parent window.  Check out the &quot;Things the new UI can't do&quot; thread in the Request forum.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-03-2003, 02:13 AM</div></div><div class="posttext">Originally posted by Cairenn <br />
+No, you don't need to create a &quot;dummy&quot;.  What you need to do is give it a new name.  EQ doesn't like having two things named the same.  Since you are putting it in the Hotbutton window, I'd suggest something like:<br />
+<br />
+  &lt;Gauge item=&quot;HBW_Casting&quot;&gt;<br />
+    &lt;ScreenID&gt;HBW_Casting&lt;/ScreenID&gt;<br />
+<br />
+<br />
+(HBW for HotButtonWindow)<br />
+<br />
+As for &quot; trying to make my spell-gems bar, including a spell-book trigger, a part of my hotbuttons window&quot;, you can't.  Anything with a function can not be moved out of its parent window.  Check out the &quot;Things the new UI can't do&quot; thread in the Request forum.  <br />
+<br />
+Ah, ok, thanks.<br />
+<br />
+Looks like I'll be going with my backup plan then, which is to make the spellgem bar the same height as my hotbutton window and line them up side by side.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-03-2003, 03:21 PM</div></div><div class="posttext">Originally posted by Rykahna <br />
+Ah, ok, thanks.<br />
+<br />
+Looks like I'll be going with my backup plan then, which is to make the spellgem bar the same height as my hotbutton window and line them up side by side.<br />
+<br />
+Rykahna  <br />
+<br />
+another question...<br />
+<br />
+A couple windows...most notably my container windows and my loot window, are not showing up with the dimensions I am specifying...they loot window comes out truncated on the right, and the container window ends up too long and wide.  Not sure what I am missing to get these dimensions correct.  My loot window is a mod of a mod posted here recently with the &quot;link all&quot; button on it...All I did was change the dimensions of the slots shown and the window itself to make it more compact.  The file included with that mod said to change the UI_char.INI file to the specified width and length, so I did, but it didnt help.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cairenn</div><div class="date">11-03-2003, 03:23 PM</div></div><div class="posttext">The loot window I'm not sure why you would be having a problem with.  :confused:<br />
+<br />
+The container window is a p.i.t.a. to mod, becuase it has to be scalable to fit anything from a two-slot coin purse to a 10-slot giant bag, and everything in between.  It has its own rules that take some getting used to.  The best way to deal with it is to just play around with it until it does what you want it to. :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-03-2003, 03:26 PM</div></div><div class="posttext">Originally posted by Cairenn <br />
+The loot window I'm not sure why you would be having a problem with.  :confused:<br />
+<br />
+The container window is a p.i.t.a. to mod, becuase it has to be scalable to fit anything from a two-slot coin purse to a 10-slot giant bag, and everything in between.  It has its own rules that take some getting used to.  The best way to deal with it is to just play around with it until it does what you want it to. :p  <br />
+<br />
+LOL kk thanks...I can certainly do that, though I must say, I am geting really tired of my computer telling me its low on virtual memory just because I have reloaded my UI in the game a dozen times.  Phffftt!  Rebooting sucks!<br />
+<br />
+If my questions get too obnoxiously newbie-ish, please do be sure to inform me.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lothay</div><div class="date">11-04-2003, 03:24 AM</div></div><div class="posttext">Originally posted by Rykahna <br />
+LOL kk thanks...I can certainly do that, though I must say, I am geting really tired of my computer telling me its low on virtual memory just because I have reloaded my UI in the game a dozen times.  Phffftt!  Rebooting sucks!<br />
+ <br />
+<br />
+If you're getting this message, something else is wrong.  <br />
+<br />
+Not with your UI, but either with your operating system or your hardware.  Most likely is that your swapfile is on your main partition and that partition is highly fragmented and or near full.   I would sugguest you do some maintenance, like uninstalling old applications that you don't use, running the disk clean-up uitility in Windows to clear out old temporary files, and defragging.  <br />
+<br />
+~Lothay</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xymarra</div><div class="date">11-04-2003, 09:53 PM</div></div><div class="posttext">6) Stupid newbie question I am sure is so ignorant I shouldnt even been asking it. I just started a new character since the patch where the spells come pre-scribed, memmed, and hotbuttoned. And cool! The spell icon is on the hotbutton...but...how can I get spell icons on the spellcasting hotbuttons for my other characters? Cuz it just looks nifty.<br />
+If your question is &quot;How do I put a spell gem on a hot button?&quot;, you do it the same way you put any other button on a hot button.  Click and hold the spell gem.  It should appear on your cursor.  Click your cursor on an empty hot button.  Now you have a spell gem on a hot button.<br />
+<br />
+Can you have a spellgem icon on a hotbutton that does something in addition to casting the spell (for example, sending a message to your group?)<br />
+No, you have to choose.  If you want to add a message, you need to make a macro that includes the &quot;/cast 1&quot; command and a &quot;/gsay&quot; command.  The spell gem won't appear on it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-05-2003, 06:40 PM</div></div><div class="posttext">Originally posted by Xymarra <br />
+If your question is &quot;How do I put a spell gem on a hot button?&quot;, you do it the same way you put any other button on a hot button.  Click and hold the spell gem.  It should appear on your cursor.  Click your cursor on an empty hot button.  Now you have a spell gem on a hot button.<br />
+<br />
+<br />
+No, you have to choose.  If you want to add a message, you need to make a macro that includes the &quot;/cast 1&quot; command and a &quot;/gsay&quot; command.  The spell gem won't appear on it.  <br />
+<br />
+<br />
+Thanks...bummer that you can't make a macro that has the gem icon on it.  I have a ton of them that would just be a lot more fun to look at that way, lol.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-05-2003, 07:02 PM</div></div><div class="posttext">Originally posted by Cairenn <br />
+The container window is a p.i.t.a. to mod, becuase it has to be scalable to fit anything from a two-slot coin purse to a 10-slot giant bag, and everything in between.  It has its own rules that take some getting used to.  The best way to deal with it is to just play around with it until it does what you want it to. :p  <br />
+<br />
+Oy, you weren't kidding!  Container seems to be being VERY obnoxious to me.  The laws of math don't seem to apply to any of the dimensions or offsets, at least not any math I have ever studied.  Who knew that when you wanted a window to appear 64 pixels wide, you had to set it to 52?<br />
+<br />
+What I am working with is the code for the StayPut modified container window.  What I want is basically that same window, only smaller.  I've got the slots set to 32x32 right now...I might even go down to 28x28.  I want to make the icon and title smaller, and swap it around so that the combine button is up top instead of on the bottom, and the done button is on bottom instead of up top (ala Remelio's container.)<br />
+<br />
+Left column of slots was easy...they are all on the grid system.  Right column was a bit tougher, as they were using offsets, but I got it working.  I could find absolutely no way to position these using X and Y coordinates that wouldn't make the window size show up as 80-wide no matter what it was supposed to be.  As it is, I have to set the window size to 52-wide in order to make it line the columns up next to each other with no gap in between.  So...32+32=52.  Ooooh-kay then.  Somewhere out there, my second grade math teacher is spinning in her grave.<br />
+<br />
+Everything up top looks ok except for the fact that whatever it was about the StayPut mod that made it STAY PUT has gone buh-bye when I started messing with it, and it is now freely moveable.<br />
+<br />
+Then we come to the &quot;done&quot; button at the bottom. *sigh*<br />
+<br />
+When I position it using offsets and get it looking right in SidlWidl, it disappears when loaded in the game.  No DONE button whatsoever, only an empty space (of the exact correct size, even) where the Done button SHOULD be.  When I set Auto-Stretch to False and position the button using X and Y coordinates, instead, I get what you see in the attached picture...button is off-center and too small (it is supposed to be 64x32) and there is a lot of excess blank window space below it.<br />
+<br />
+Right now I am at that hair-pulling point where I am *this* close.  Anyone wanna give me a nudge in the right direction and tell me what I am doing wrong?  Attached is a bitmap of what I have and the xml I used to get there.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rykahna</div><div class="date">11-06-2003, 11:05 PM</div></div><div class="posttext">Is the width and length of the container window coded into another file, such as the UI_Client.INI file?  For the life of me, I can't get the game to make a bag smaller than a certain width and length, no matter how I tweak the code.  I assume this has to do with the scaleability issue...I am just not yet quite clear on how.<br />
+<br />
+Rykahna</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zarmie</div><div class="date">11-08-2003, 02:41 AM</div></div><div class="posttext">Not sure if you've fixed your loot window issue or not..<br />
+<br />
+I had the same problem.  I found out the loot window width is still controled in the UI_name_server.ini file.. under [LootWnd] header.  Look for width and adjust your value there...<br />
+<br />
+If that doesn't fix it.. you got me.. i'm still trying to reshape all my ui mod's I've downloaded into TGA's I'm makeing to look like the Quartz ui..  Quartz is great, but alot has changed in what we can do with the xml now..  <br />
+<br />
+so far i have color changeing group window, the new target window, target ring, pet window.. lots of great stuff.. just moving things around and putting it to new graphics sucks.. too much time.. lol.<br />
+<br />
+anyway, ta-ta for now..<br />
+<br />
+http://members.cox.net/offspring/manasig.jpg <br />
+Sage Manatoya [65 Phantasmist] &lt;Cote en Noir&gt; (Leader)<br />
+Venerable Pleinjour En'Avant [62 Hierophant] &lt;Cote en Noir&gt;</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

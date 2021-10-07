@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Movable Windows w/out titles</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; Movable Windows w/out titles</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=114">Movable Windows w/out titles</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">07-27-2002, 05:38 PM</div></div><div class="posttext">I'm trying to figure this one out, but can't seem to locate it.<br />
+<br />
+The INV window, you can move it by using the Title, the border, if it's not resizable, or any unused portion of the screen.<br />
+<br />
+I'm trying to duplicate this move action in other windows, namely the Player info. But I want it in all windows. I hate the title bars, but w/out it the ability to move some windows gets removed ( like the buff window ).<br />
+<br />
+Is it possiable?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ageous</div><div class="date">07-27-2002, 06:02 PM</div></div><div class="posttext">The only way I have found to  move a window with out a title bar is to set StyleSizable to false.  Then it lets you move it but you can't resize it :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">07-27-2002, 06:08 PM</div></div><div class="posttext">The only way I have found to  move a window with out a title bar is to set StyleSizable to false.  Then it lets you move it but you can't resize it :( <br />
+<br />
+Thus breaking the buff box's ability. :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dunn</div><div class="date">07-27-2002, 06:56 PM</div></div><div class="posttext">I am looking for the same thing.  May be possible with combination of window size and the Pieces used.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Regenspieler</div><div class="date">07-30-2002, 01:41 PM</div></div><div class="posttext">Everyone's probably already figured this out by now, but resizable windows can be positioned by dragging various resize handles around, and &quot;inchworming&quot; the window to its final position.   It is very much a pain, especially if you're still doing frequent /loadskin to test your mods, since each one clobbers your windows' screen coordinates.<br />
+<br />
+I took the title off my BuffWindow, and got it into place this way.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DarkBlade</div><div class="date">07-30-2002, 02:28 PM</div></div><div class="posttext">If you do a <br />
+<br />
+/loadskin &lt;Name&gt; 1  <br />
+<br />
+it will keep your  window locations. The 1 tells it to load your location from your UI_&lt;name&gt;_&lt;server#&gt;.ini file.<br />
+<br />
+-DarkBlade</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">arantius</div><div class="date">07-30-2002, 07:46 PM</div></div><div class="posttext">Oh my god WOOT That is useful !!  How did you figure that out DarkBlade?<br />
+They just need to make that the default behavior!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Regenspieler</div><div class="date">07-30-2002, 11:50 PM</div></div><div class="posttext">Thanks!  That's great info.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pini Uldar</div><div class="date">07-31-2002, 05:07 PM</div></div><div class="posttext">The way that I accomplish movement using a titlebar without the titlebar is by adding a 2 pixel transparent title bar to the window. I did this to my buff box and it worked great. Actually I have both a transparent border (to allow resize upwards) and a transparent title (to allow window movement using the titlebar). It works pretty well for me.<br />
+<br />
+- Pini</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syberwired</div><div class="date">08-13-2002, 12:19 PM</div></div><div class="posttext">Pini,<br />
+<br />
+Where in the code can you set just the titlebar to be transparent?  Yes, I am very new on xml. I am going through the code now to find that...and great idea!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pini Uldar</div><div class="date">08-13-2002, 02:20 PM</div></div><div class="posttext">You can't. I just went through and made a new WindowDrawTemplate called NotitleMover and used it for my window. I used it for my buff window so you can drag it around still using a 2 pixel invisible titlebar.<br />
+<br />
+You just need to make the WindowDrawTemplate have the appropriate borders and titlebar defined. For me, I just cut and pasted all the declarations for A_BorderFrame[...] and made A_BorderFrame[..]Invisible (example: cut and paste A_BorderFrameTopLeft to be A_BorderFrameTopLeftInvisible) and then made by invisible stuff point to transparent parts of windowpieces01.tga. <br />
+<br />
+Then do the same with the title bar definition in your new WindowDrawTemple. I cut and pasted A_WindowTitle[...] into A_WindowTitle[...]Transparent and then made it transparent.<br />
+<br />
+The result for me what a buff box that could be resized and be movable using the title bar portion.<br />
+<br />
+It's not an easy XML true/false or anything. Sorry *grin*<br />
+<br />
+- Pini</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syberwired</div><div class="date">08-13-2002, 03:11 PM</div></div><div class="posttext">Thanks for that help. Working on it now.  I wish there was a list of element definitions that Verant is using to explain some of the elements they are using...<br />
+<br />
+/shrug<br />
+<br />
+Thanks again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Inulkee</div><div class="date">02-19-2003, 01:06 PM</div></div><div class="posttext">This is exactly what I've been looking for. Only problem is I'm no good at this type of stuff. Was wondering if one of those who've done this could be so kind as to post the code for the template so I can cut and paste instead of trial and error for hours.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">KaisonIcebear</div><div class="date">02-21-2003, 05:42 PM</div></div><div class="posttext">as to the elements take a look in your default uifiles directory for <br />
+<br />
+AboutSIDL.doc<br />
+<br />
+lists the eq elements</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Skin Patching Software</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-4.html">Interface Gallery Discussion</a> &gt; <a href="f-39.html">Archive</a> &gt; Skin Patching Software</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=8066">Skin Patching Software</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">jobeken</div><div class="date">04-18-2003, 09:23 AM</div></div><div class="posttext">I have written this small program to assist those who are doing skinning projects with providing an easier and less bandwidth intensive update solution.<br />
+<br />
+It is free, for any and all use.  I am posting the source code and readme files here.  If you would like to compile the code for yourself visit: http://www.activestate.com/Products/Tcl_Dev_Kit/<br />
+You can obtain a free trial license there and compile the code yourself if you wish.<br />
+<br />
+I will provide a pre-compiled version for download as well.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jobeken</div><div class="date">04-18-2003, 09:24 AM</div></div><div class="posttext">ABOUT<br />
+-----<br />
+This program has been written to provide an update interface for EQ Skinners.<br />
+It performs the following actions:<br />
+1) Find EverQuest uifiles directory<br />
+2) Read website address from configuration<br />
+3) Compare current skin, with website skin<br />
+4) update files as needed<br />
+<br />
+There is currently no other functionality offered or implied.<br />
+<br />
+<br />
+END-USER<br />
+--------<br />
+You may install this program and activate it from anywhere.  It will locate the EverQuest uifiles directory from any installation point and work appropriately.<br />
+<br />
+Launch the program, and then click any buttons that show the name of your skin to check for updates.<br />
+<br />
+<br />
+SKIN DEVELOPER<br />
+--------------<br />
+Sample Local Configuration file:<br />
+source_path http://www.yourwebserver.com/yourskindirectory/<br />
+source_configs configs.txt<br />
+<br />
+source_file Whatever.xml 1.0<br />
+source_file MyPicture.tga 1.0<br />
+<br />
+Sample WEB Configuration file:<br />
+source_path http://www.yourwebserver.com/yourskindirectory/<br />
+source_configs web_configs.txt<br />
+<br />
+source_file Whatever.xml 1.3<br />
+source_file MyPicture.tga 1.1<br />
+<br />
+The local configuration file (the one distributed with your skin) should be named &quot;configs.txt&quot;<br />
+Provide the source_path to your webserver<br />
+Provide the source_configs (the website configuration file)<br />
+Provide a source_file entry fopr each file contained in your skin<br />
+<br />
+source_file FileName VersionNumber<br />
+If you update any webserver file, just update the version number and the patcher will update all changed files.<br />
+If you add new files, just create a new entry in the source_configs file and it will update appropriately.<br />
+<br />
+DISCLAIMER<br />
+----------<br />
+I accept no liability for this software.  The source will remain freely available, and I will never insert any intentionally malicious code.<br />
+<br />
+LICENSE<br />
+-------<br />
+This software is totally free, for any and all use including modification.  If you modify this software you must remove any and all references to me as it has become your software and I accept no liability for any changes made.<br />
+<br />
+DEVELOPER<br />
+---------<br />
+Jobeken Xoner<br />
+40 Beastlord Tholuxe Paells<br />
+You can reach me on EQInterface via PM</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jobeken</div><div class="date">04-18-2003, 09:26 AM</div></div><div class="posttext"># require http libraries<br />
+package require http<br />
+<br />
+# procedure to grab files from webserver<br />
+proc Get_URL { url name } {<br />
+	Display_Message &quot;Storing $name locally ...&quot;<br />
+	set url  &quot;$url$name&quot;<br />
+	set web_file [file tail $url]<br />
+	set content  [open &quot;$web_file&quot; &quot;w&quot;]<br />
+	set n  [http::geturl $url -binary 1 -channel $content]<br />
+	http::wait $n<br />
+	close $content<br />
+	Display_Message &quot;* $name Complete! *&quot;<br />
+}<br />
+<br />
+# create a scrolling text window<br />
+proc Text_Window { f args } {<br />
+	frame $f<br />
+	eval {text $f.text -wrap none -yscrollcommand [list $f.yscroll set]} $args<br />
+	scrollbar $f.yscroll -orient vertical -command [list $f.text yview]<br />
+	grid $f.text $f.yscroll -sticky news<br />
+	grid rowconfigure $f 0 -weight 1<br />
+	grid columnconfigure $f 0 -weight 1<br />
+	return $f.text<br />
+}<br />
+<br />
+# update messages to end-user<br />
+proc Display_Message { message } {<br />
+	global t<br />
+	$t configure -state normal<br />
+	$t insert end &quot;$message\n&quot;<br />
+	$t configure -state disabled<br />
+}<br />
+<br />
+# perform skin updates<br />
+proc Skin_Update { dir_name } {<br />
+	# change to correct directory<br />
+	cd $dir_name<br />
+<br />
+	# read config file for webserver<br />
+	set in_file [open &quot;configs.txt&quot; &quot;r&quot;]<br />
+	while {-1 != [gets $in_file in_line]} {<br />
+		if {[string match &quot;*source_configs*&quot; $in_line]} {<br />
+			set configs(WebFile) [lindex $in_line 1]<br />
+		}<br />
+		if {[string match &quot;*source_path*&quot; $in_line]} {<br />
+			set configs(Root) [lindex $in_line 1]<br />
+		}<br />
+	}<br />
+	close $in_file<br />
+<br />
+	# retrieve webserver config file<br />
+	if [catch {Get_URL $configs(Root) $configs(WebFile)} err] {<br />
+		Display_Message &quot;$err&quot;<br />
+	}<br />
+<br />
+	# compare webserver file versions to local versions and update as needed<br />
+	set webcontent &quot;&quot;<br />
+	set web_file [open &quot;$configs(WebFile)&quot; &quot;r&quot;]<br />
+	while {-1 != [gets $web_file web_line]} {<br />
+		set webcontent &quot;$webcontent$web_line\n&quot;<br />
+		if {[string match &quot;*source_file*&quot; $web_line]} {<br />
+			set web_name [lindex $web_line 1]<br />
+			set web_version [lindex $web_line 2]<br />
+			set local_file [open &quot;configs.txt&quot; &quot;r&quot;]<br />
+			set match 0<br />
+			while {-1 != [gets $local_file local_line]} {<br />
+				if {[string match &quot;*$web_name*&quot; $local_line]} {<br />
+					set local_version [lindex $local_line 2]<br />
+					if {$web_version != $local_version} {<br />
+						set match [expr $match + 1]<br />
+						Get_URL $configs(Root) $web_name<br />
+					}<br />
+					if {$web_version == $local_version} {<br />
+						Display_Message &quot;$web_name is up-to-date ...&quot;<br />
+					}<br />
+				}<br />
+			}<br />
+			close $local_file<br />
+			if {$match == 0} {<br />
+				Get_URL $configs(Root) $web_name<br />
+			}<br />
+		}<br />
+	}<br />
+	close $web_file<br />
+<br />
+	# overwrite local config file with webserver config file<br />
+	if {![string match &quot;*Error*&quot; $webcontent] &amp;&amp; [llength $webcontent] &gt; 5} {<br />
+		set new_configs [open &quot;configs.txt&quot; &quot;w&quot;]<br />
+		puts $new_configs $webcontent<br />
+		close $new_configs<br />
+	}<br />
+}<br />
+<br />
+# Find the EQ uifiles Directory<br />
+proc Find_EQ { dir_name } {<br />
+	global eq_dir<br />
+	set cur_dir [pwd]<br />
+	if [catch {cd $dir_name} err] {<br />
+		Display_Message &quot;$err&quot;<br />
+		return<br />
+	}<br />
+	foreach match [glob -nocomplain -- uifiles] {<br />
+		set eq_dir [file join $dir_name $match]<br />
+	}<br />
+	foreach file [glob -nocomplain *] {<br />
+		if [file isdirectory $file] {<br />
+			Find_EQ [file join $dir_name $file]<br />
+		}<br />
+	}<br />
+	cd $cur_dir<br />
+}<br />
+<br />
+# draw GUI<br />
+frame .top<br />
+frame .myDisplay -relief flat -bd 0<br />
+set t [Text_Window .myText -width 40 -height 20 -relief sunken]<br />
+pack .myText -in .myDisplay -fill both -expand true<br />
+pack .myDisplay -in .top -fill both -expand true<br />
+frame .skins -relief flat -bd 0<br />
+label .skinlabel -text &quot;Patch Skin: &quot; -relief flat -bd 0<br />
+pack .skinlabel -in .skins -side left<br />
+pack .skins -in .top -fill x<br />
+frame .myCommands -relief flat -bd 0<br />
+button .myCommand -text &quot; Exit &quot; -relief raised -command {&quot;exit&quot;;}<br />
+pack .myCommand -in .myCommands -side right<br />
+pack .myCommands -in .top -fill x<br />
+pack .top -fill both -expand true<br />
+wm title . &quot;SkinPatcher v1.0 (BETA)&quot;<br />
+<br />
+Display_Message &quot;Locating EverQuest uifiles Directory ...&quot;<br />
+<br />
+set eq_dir 0<br />
+Find_EQ C:/<br />
+if {$eq_dir == 0} {<br />
+	Find_EQ D:/<br />
+}<br />
+if {$eq_dir == 0} {<br />
+	Display_Message &quot;Unable to Locate EverQuest uifiles!&quot;<br />
+	label .skinNone -text &quot;No files located&quot;<br />
+	pack .skinNone -in .skins -side left<br />
+}<br />
+<br />
+if {$eq_dir != 1} {<br />
+	cd $eq_dir<br />
+	# find all skin folders that can be updated<br />
+	set paths [glob *]<br />
+	set i [llength $paths]<br />
+	set ii 0<br />
+	set nn 0<br />
+	while {$ii &lt; $i} {<br />
+		set this_file [lindex $paths $ii]<br />
+		set file_dir [file isdirectory $this_file]<br />
+		if {$file_dir == 1} {<br />
+			cd $this_file<br />
+			set config_exists [file exists configs.txt]<br />
+			if {$config_exists == 1} {<br />
+				button .skin$this_file -text &quot; $this_file &quot; -relief raised -command {set mx [winfo pointerx .]; set my [winfo pointery .]; set mw [winfo containing -displayof . $mx $my]; set mw [split $mw &quot;&quot;]; set mw [lreplace $mw 0 4]; set mw [join $mw &quot;&quot;]; Skin_Update $mw;}<br />
+				pack .skin$this_file -in .skins -side left<br />
+			}<br />
+			cd ..<br />
+		}<br />
+		set ii [expr $ii + 1]<br />
+	}<br />
+<br />
+	# tell user program starting<br />
+	Display_Message &quot;You must have an active internet connection to use this tool.&quot;<br />
+	Display_Message &quot;Click Skin Name Button to Perform Update ...&quot;<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jobeken</div><div class="date">04-25-2003, 02:21 PM</div></div><div class="posttext">http://www.monkly.net/SkinPatcher.tcl<br />
+The source code...<br />
+<br />
+http://www.monkly.net/SkinPatcher.zip<br />
+Zipped Compiled .exe file<br />
+<br />
+http://www.monkly.net/TclTkCompiler.zip<br />
+So you can compile the source yourself, if concerned about malicious code</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thomus</div><div class="date">04-25-2003, 03:43 PM</div></div><div class="posttext">Fantastic work!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Makani</div><div class="date">04-27-2003, 04:23 PM</div></div><div class="posttext">This sounds like a usefull item.<br />
+<br />
+Can you explain this in dummy terms?<br />
+<br />
+What it &quot;Seems&quot; to suggest that it does (To my not so smrt self) is that it will find out what Ui you are using, come to this website, and check for updated files, and download/install them if there are updates.<br />
+<br />
+Did I just make myself sound stupid?<br />
+<br />
+I think the &quot;Code&quot; and tons of links have confused me a bit. =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jobeken</div><div class="date">04-28-2003, 11:54 AM</div></div><div class="posttext">Well ...<br />
+<br />
+Currently it requires the custom UI configuration files.  And does not automagically unzip anything.  Just reads the configs, goes to the skinners webspace and updates any new files.<br />
+<br />
+I will toss out a skin install program very soon (like a week max) that will install skins you download to your UI folder automagically.<br />
+<br />
+My last program, will in fact download from this site and install updates automagically.  I am just working my way into that.<br />
+<br />
+Where the current program would be most helpful, is for artists like Thomus.  He has his own webspace and can store image files and configuration files there to update art for his supporters and other things.<br />
+<br />
+Later, I hope the final program is helpful for everyone and significantly simplifies the creation/installation/updating of all skins.</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

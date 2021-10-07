@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="keywords" content="luclin,everquest,EQ,luclin server" />
+<meta name="description" content="A forum for the luclin server community" />
+
+<title>Luclin Community Forums :: Index</title>
+<link rel="stylesheet" href="templates/eqluclin/eqluclin.css" type="text/css" />
+
+</head>
+<body>
+<div align="center">
+<a id="top">&nbsp;</a>
+
+<table class="bodyline" width="95%" cellspacing="0" cellpadding="0" border="0">
+<tr><td valign="top">
+
+<table class="topbkg" width="95%" cellspacing="0" cellpadding="0" border="0">
+<tr><td align="center">
+<a href="http://www.eqluclin.com" style="font-size: larger; font-weight: bold; font-variant: small-caps; vertical-align: 150%; text-decoration: none">EQLuclin.com</a>
+<a href="index.php?sid=233af6801d590887f52321b98b6d0ce5"><img src="templates/eqluclin/images/eqluclin.jpg" alt="Luclin Community Forums Forum Index" title="Luclin Community Forums Forum Index" width="400" height="75" /></a>
+<a href="http://www.luclin.org" style="font-size: larger; font-weight: bold; font-variant: small-caps; vertical-align: 150%; text-decoration: none">Luclin.org</a><br />
+<a href="http://everquest.estoncom.com/luclin/index.shtml" style="font-size: larger; font-weight: bold; font-variant: small-caps; text-decoration: none; border-top-width: 1; border-bottom-width: 1">Luclin Calendar</a>
+</td></tr>
+</table>
+
+<table width="95%" border="0" cellspacing="0" cellpadding="2">
+<tr><td align="center" class="topnav">
+&nbsp; <a href="rules.php">Board Rules</a> &nbsp; &#8226; &nbsp; <a href="statistics.php">Statistics</a> &nbsp; &#8226; &nbsp;<a href="faq.php?sid=233af6801d590887f52321b98b6d0ce5">FAQ</a>&nbsp; &#8226; &nbsp; <a href="search.php?sid=233af6801d590887f52321b98b6d0ce5">Search</a>
+&nbsp;&#8226; &nbsp;<a href="memberlist.php?sid=233af6801d590887f52321b98b6d0ce5">Memberlist</a>&nbsp; &#8226;
+&nbsp;<a href="groupcp.php?sid=233af6801d590887f52321b98b6d0ce5">Usergroups</a>
+&nbsp; &#8226; &nbsp;<a href="profile.php?mode=register&amp;sid=233af6801d590887f52321b98b6d0ce5">Register</a>
+<br />
+&nbsp;<a href="ignore.php">Ignore List</a>
+&nbsp; &#8226; &nbsp;<a href="profile.php?mode=editprofile&amp;sid=233af6801d590887f52321b98b6d0ce5">Profile</a>&nbsp; &#8226; &nbsp;<a href="privmsg.php?folder=inbox&amp;sid=233af6801d590887f52321b98b6d0ce5">Log in to check your private messages</a>&nbsp;
+&#8226; &nbsp;<a href="login.php?sid=233af6801d590887f52321b98b6d0ce5">Log in</a>
+</td></tr>
+</table>
+
+<table width="95%" border="0" cellspacing="0" cellpadding="10">
+<tr><td>
+
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom"><span class="gensmall">
+	The time now is Fri Dec 17, 2004 3:49 am<br />
+    All times are GMT<br />
+    </span><span class="nav"><a href="index.php?sid=233af6801d590887f52321b98b6d0ce5" class="nav">Luclin Community Forums Forum Index</a></span></td>
+	<td align="right" valign="bottom" class="gensmall">
+	</td>
+  </tr>
+</table>
+
+<!-- mod : annonces -->
+<!-- fin mod : annonces -->
+
+<br />
+
+<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
+  <tr>
+	<th colspan="2" class="thCornerL" height="25" nowrap="nowrap">&nbsp;Forum&nbsp;</th>
+	<th width="50" class="thTop">&nbsp;Topics&nbsp;</th>
+	<th width="50" class="thTop">&nbsp;Posts&nbsp;</th>
+	<th width="50" class="thTop">&nbsp;Views&nbsp;</th>
+	<th class="thCornerR">&nbsp;Last Post&nbsp;</th>
+  </tr>
+  <tr>
+	<td class="catLeft" colspan="2" height="28"><span class="cattitle"><a href="index.php?c=2&amp;sid=233af6801d590887f52321b98b6d0ce5" class="cattitle">General Luclin Forums</a></span></td>
+	<td class="rowpic" colspan="4" align="right">&nbsp;</td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=4&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">Everquest Discussion</a><br />
+    <span class="genmed">Everquest discussion. This is the place for server events, guilds, rotations, raids, and backflagging.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">884</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">10690</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">189139</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Thu Dec 16, 2004 9:10 pm<br /><a href="profile.php?mode=viewprofile&amp;u=2589&amp;sid=233af6801d590887f52321b98b6d0ce5">Sacril</a> <a href="viewtopic.php?p=101805&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101805"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=13&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">General</a><br />
+    <span class="genmed">Luclin's general chat, for non-everquest discussion.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">2163</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">24907</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">484794</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Thu Dec 16, 2004 11:06 pm<br /><a href="profile.php?mode=viewprofile&amp;u=38&amp;sid=233af6801d590887f52321b98b6d0ce5">lokal</a> <a href="viewtopic.php?p=101815&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101815"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=8&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">News & Debates</a><br />
+    <span class="genmed">More rousing discussions than you can read in a day. This is the place to post interesting news items.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">581</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">12815</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">115147</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Thu Dec 16, 2004 10:11 pm<br /><a href="profile.php?mode=viewprofile&amp;u=886&amp;sid=233af6801d590887f52321b98b6d0ce5">Ianien</a> <a href="viewtopic.php?p=101811&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101811"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=20&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">Technical & Support</a><br />
+    <span class="genmed">Dicussions about technology of all kinds. Also the place to get computer help.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">431</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">3301</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">30322</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Tue Dec 14, 2004 6:37 pm<br /><a href="profile.php?mode=viewprofile&amp;u=143&amp;sid=233af6801d590887f52321b98b6d0ce5">Flarestar</a> <a href="viewtopic.php?p=101624&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101624"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=12&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">Trading</a><br />
+    <span class="genmed">Luclin's flea market. Buying or selling, this is the place. Posts are deleted after 14 days.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">19</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">115</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">132880</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Fri Dec 17, 2004 12:41 am<br /><a href="profile.php?mode=viewprofile&amp;u=3144&amp;sid=233af6801d590887f52321b98b6d0ce5">Stroggo</a> <a href="viewtopic.php?p=101825&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101825"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=1&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">Past Favorites</a><br />
+    <span class="genmed">Some threads deserve to be in a trophy room.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">15</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">2433</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">5326</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Fri Dec 03, 2004 5:28 pm<br /><a href="profile.php?mode=viewprofile&amp;u=3599&amp;sid=233af6801d590887f52321b98b6d0ce5">Craigonian</a> <a href="viewtopic.php?p=100498&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#100498"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=9&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">Flames & Rants</a><br />
+    <span class="genmed">Luclin's own pit of despair. In order to enter this forum, you must authorize your account.  Click <a href="http://www.eqluclin.com/forum/groupcp.php?g=11">HERE</a> and click <strong>Join Group</strong> to add your account to the list.  By doing so, you agree to abide by the <a href="http://www.eqluclin.com/forum/rules.php">rules</a> for Flames & Rants. <strong>This is an adult forum and it is not work safe.</strong> Everything herein is 100% BS.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">1310</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">38369</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">754428</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Fri Dec 17, 2004 3:30 am<br /><a href="profile.php?mode=viewprofile&amp;u=700&amp;sid=233af6801d590887f52321b98b6d0ce5">Shammybear</a> <a href="viewtopic.php?p=101828&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101828"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=24&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">Other Games</a><br />
+    <span class="genmed">Worlds of Warcraft, Everquest 2, ect. Direct those discussions here! Find out what servers your friends are on, ect.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">83</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">1971</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">17590</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">Fri Dec 17, 2004 12:10 am<br /><a href="profile.php?mode=viewprofile&amp;u=507&amp;sid=233af6801d590887f52321b98b6d0ce5">Skrillz</a> <a href="viewtopic.php?p=101823&amp;sid=233af6801d590887f52321b98b6d0ce5&amp;no=1#101823"><img src="templates/eqluclin/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="catLeft" colspan="2" height="28"><span class="cattitle"><a href="index.php?c=7&amp;sid=233af6801d590887f52321b98b6d0ce5" class="cattitle">EQLuclin Portal</a></span></td>
+	<td class="rowpic" colspan="4" align="right">&nbsp;</td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/eqluclin/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" align="left" width="100%" height="50"> <a href="viewforum.php?f=21&amp;sid=233af6801d590887f52321b98b6d0ce5" class="forumlink">News</a><br />
+    <span class="genmed">Stories and polls posted to the main EQ Luclin Portal page.  Mods can add stories and polls, anyone can comment on them.  To submit a story to EQLuclin.com, add a post into the submissions forum.</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">0</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">0</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">295</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">No Posts</span></td>
+  </tr>
+</table>
+<br />
+<table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
+  <tr>
+	<td class="catHead" colspan="2" height="28"><span class="cattitle"><a href="viewonline.php?sid=233af6801d590887f52321b98b6d0ce5" class="cattitle">Who is Online</a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" rowspan="2"><img src="templates/eqluclin/images/whosonline.gif" alt="Who is Online" /></td>
+	<td class="row1" align="left" width="100%"><span class="gensmall">Our users have posted a total of <b>94981</b> articles<br />We have <b>2951</b> registered users<br />The newest registered user is <b><a href="profile.php?mode=viewprofile&amp;u=3661&amp;sid=233af6801d590887f52321b98b6d0ce5">EAL</a></b></span>
+	</td>
+  </tr>
+  <tr>
+	<td class="row1" align="left"><span class="gensmall">In total there are <b>10</b> users online :: 4 Registered, 3 Hidden and 3 Guests &nbsp; [ <span style="color:#FFA34F">Administrator</span> ] &nbsp; [ <span style="color:#006600">Moderator</span> ]<br />Most users ever online was <b>116</b> on Tue Aug 19, 2003 2:27 am<br />Registered Users: <a href="profile.php?mode=viewprofile&amp;u=331&amp;sid=233af6801d590887f52321b98b6d0ce5">Aeolion</a>, <a href="profile.php?mode=viewprofile&amp;u=2961&amp;sid=233af6801d590887f52321b98b6d0ce5">Burredfoot</a>, <a href="profile.php?mode=viewprofile&amp;u=147&amp;sid=233af6801d590887f52321b98b6d0ce5">Sir Stormwynd</a>, <a href="profile.php?mode=viewprofile&amp;u=97&amp;sid=233af6801d590887f52321b98b6d0ce5">Tigerlili</a></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="1" cellspacing="1" border="0">
+<tr>
+	<td align="left" valign="top"><span class="gensmall">This data is based on users active over the past fifteen minutes</span></td>
+</tr>
+</table>
+
+<form method="post" action="login.php?sid=233af6801d590887f52321b98b6d0ce5">
+  <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
+	<tr>
+	  <td class="catHead" height="28"><a name="login"></a><span class="cattitle">Log in</span></td>
+	</tr>
+	<tr>
+	  <td class="row1" align="center" valign="middle" height="28"><span class="gensmall">Username:
+		<input class="post" type="text" name="username" size="10" />
+		&nbsp;&nbsp;&nbsp;Password:
+		<input class="post" type="password" name="password" size="10" maxlength="32" />
+		&nbsp;&nbsp; &nbsp;&nbsp;Log me on automatically each visit
+		<input class="text" type="checkbox" name="autologin" />
+		&nbsp;&nbsp;&nbsp;
+		<input type="submit" class="mainoption" name="login" value="Log in" />
+		</span> </td>
+	</tr>
+  </table>
+</form>
+
+<br clear="all" />
+
+<table cellspacing="3" border="0" align="center" cellpadding="0">
+  <tr>
+	<td width="20" align="center"><img src="templates/eqluclin/images/folder_new.gif" alt="New posts"/></td>
+	<td><span class="gensmall">New posts</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center"><img src="templates/eqluclin/images/folder.gif" alt="No new posts" /></td>
+	<td><span class="gensmall">No new posts</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center"><img src="templates/eqluclin/images/folder_lock.gif" alt="Forum is locked" /></td>
+	<td><span class="gensmall">Forum is locked</span></td>
+  </tr>
+</table>
+
+<br />
+<div class="copyright"><br />
+Powered by <a href="http://www.phpbb.com/" target="_blank" class="copyright">phpBB</a> 2.0.11 &copy; 2001, 2002, 2003 phpBB Group - Server Load: 40 page(s) served in previous fifteen minutes.<br />
+</div>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</div>
+</body>
+</html>
+

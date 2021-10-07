@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - auto-equip - child/parent</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; auto-equip - child/parent</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=2277">auto-equip - child/parent</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">grottel</div><div class="date">09-20-2002, 12:55 PM</div></div><div class="posttext">As I understand it, the auto-equip a screen item that belongs to the inventory window.<br />
+<br />
+Now parents inherit the elements of their children.<br />
+This is how the EQUI.XML sucks everything together using the &lt;composite&gt;&lt;include&gt; statements.<br />
+<br />
+Wouldn't it be possible to remove the include for the inventory from the EQUI.XML and add it to a different window?  like say the EQUI_HotButtonWnd.XML?<br />
+<br />
+Since parent can access everything of the child, the inventory would still be available to the game.  And since the other window (hotbuttons) would now be the parent of the inventory window, it would have access to its screen elements.<br />
+<br />
+Just thinking out-loud.  Not sure if this will work at all.  But worth testing.  SIDL.DOC makes for intersting reading.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">09-20-2002, 06:25 PM</div></div><div class="posttext">Novel Idea, but EQ doesn't understand the true style of inheritance.<br />
+<br />
+This is how the EQUI.XML sucks everything together using the &lt;composite&gt;&lt;include&gt; statements.<br />
+<br />
+EQUI.xml is used to tell the UI what windows it has and will display. This is my guess as to why you can't add more Includes to this file, but you can add them to any other file just fine.<br />
+Another one of them hard coded things.<br />
+<br />
+The requirements is that the static/dynamic items appear within the &lt;Pieces&gt; of the &lt;Screen&gt; they belong in. If they aren't there, it would either not work, or outright crash the UI.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Astryne</div><div class="date">09-29-2002, 01:14 PM</div></div><div class="posttext">You actually can add more things to EQUI.xml, you just can't add more screens. For example I got tired of always having to edit animations and so I created a new file with custom animations and added it in with no problems. So now if I find something I want to download and play with that has a custom Animations file, I just diff it with the default and add the new ones to my own animations file. Makes for a little less headache in piecing things together.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">grottel</div><div class="date">10-03-2002, 12:11 PM</div></div><div class="posttext">Actually you can add more screens - there just no way get them open.  I seem to recall someones interview with Verant and this was a topic.<br />
+<br />
+Also, I've successfully transformed the inventory window into a parent window with the real inventory window as subwindow floating witihn it.  Heres a run-down of the behavior exhibited.<br />
+<br />
+The child window was only accessible as a control when the parent window was open and behind the child.  This includes any mouse interaction such as sizing, moving, etc...<br />
+<br />
+The parent window didnt need to be fully behind  the child- only the area being used on the child had to be in contact with the parent.<br />
+<br />
+The child window could be closed, but there was no way to re-open the child window short of re-loading the mod.  Recommend CLOSE being set to False and MINIMIZE set to True.<br />
+<br />
+Parent window could have several children windows.<br />
+<br />
+Controls available to the parent window were also available to the child window.  For example, auto equip worked on the child inventory window.  Pressing DONE on the child inventory window closed the parent inventory window (darn hard coding).<br />
+<br />
+I placed the Auto-Equip in the parent window by it self and it worked.  However, this cause the Auto-equip on the child to stop working.  No UI errors either. LOL.<br />
+<br />
+Parent window remained affected by all open and close events (selector window, CTRL-I, I from keyboard)<br />
+<br />
+Minimizing Parent - removed child windows from screen.<br />
+<br />
+Still doing more experients to see how badly I can twist this hunk of code :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dyllwindw</div><div class="date">10-03-2002, 02:34 PM</div></div><div class="posttext">Hey, sounds like an interesting experiment. I don't know alot about XML just yet but I'm working on that. I was wondering if you would be able to get multiple instances of the auto-equip working within the parent window. Suppose you had seperate child windows within the parent and had autoequip in each but not the parent, would that be at all feasible?</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

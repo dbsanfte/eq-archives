@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Graphics help</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-47.html">Tutorials &amp; Info.</a> &gt; <a href="f-49.html">Graphics Tutorials &amp; Info.</a> &gt; Graphics help</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=1212">Graphics help</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Muse</div><div class="date">08-19-2002, 01:00 AM</div></div><div class="posttext">I wrote up the following after spending some time this weekend figuring out how graphics are used in the GUI.  I hope some find it useful, and I'll add more as I find it out.<br />
+<br />
+The fundamental graphic file is the &quot;texture&quot; file, which is any graphic you want to use.  This file is included in the xml with the tab &lt;TextureInfo&gt;, and typically has a &lt;Name&gt; and &lt;Size&gt; attributes.  The texture file itself can be any actual size you want, it does not have to be in a multiple of 256.  It can also be .tga, .png, or .jpg (those are the only ones I've tried).<br />
+<br />
+When you declare a texture file in the &lt;TextureInfo&gt; tag, you can again set the size to be whatever you want to, typically this will be the same size as the actual texture.  If you set it to a different size, however, the image will be scaled to whatever size you set, similar to the &quot;Modify&gt;Image Size&quot; feature of most graphics programs.  For instance, a 200x200 texture that is labeled as having size 512x512 in the &lt;TextureInfo&gt;&lt;Size&gt; attributes will expand to fill that area (and get pretty bad looking in the process).<br />
+<br />
+Now we move onto higher levels and what they do to images.  First let's step back and look at the heirarchy of tags in a typical page.  You have to declare what a specific item is prior to using it in most cases, so the order in the actual XML file is kind of a reverse heirarchy (the highest level item is at the bottom).  In order from highest to lowest (for what I'm doing anyway) the files look like this: Screen &gt; Page &gt; StaticAnimation &gt; Ui2DAnimation &gt; TextureInfo.  In the actual file, as you go down they go in the reverse order of this (TextureInfo &gt; Ui2DAnimation etc) because you need to name the textures prior to using them in the Ui2DAnimations, and so on.<br />
+<br />
+With that in mind: the next step is using the TextureInfo item in a Ui2DAnimation item.  The Ui2DAnimation item can hold many textures within the Frames that it has, each one is a different frame.  The thinking behind this is that, since it is expecting to hold more than one texture, it just assumes that the TextureInfo&gt;Size is correct, and won't rescale images.  Instead, it crops or tiles them, depending on what you did.  If you make the Ui2DAnimation&gt;Frame the same Size as the TextureInfo, you see the image once normally.  If you make it smaller than the TextureInfo, the texture is cropped.  If it's larger, the texture is tiled to fill the area.<br />
+<br />
+As an example, the 200x200 texture, declared as 200x200, but filling a 512x512 Ui2DAnimation&gt;Frame will appear 2.5 times both sideways and up and down within that Frame.<br />
+<br />
+Next, Ui2DAnimations are held within StaticAnimation items as the StaticAnimation&gt;Animation element.  What happens with this is a little weird, but basically the StaticAnimation will scale the Ui2DAnimation much like the original TextureInfo did to the texture if the sizes don't match.  Although you could probably use this for something fancy (I have no idea what), I would make sure that the total dimensions of your Ui2DAnimations match the size of the StaticAnimation they're in or you will get oddly scaled items.<br />
+<br />
+Pages don't have sizes, so you don't have to worry about them, other than to make sure they allow scrolling if you are using multiple Pages (like in a TabBox).  The Screen itself allows resizing and scrollbars as well, in case you aren't using multiple Pages or for whatever else you want to do.  I honestly haven't played with it that much.<br />
+<br />
+Hope this helps, and add in comments and such, I'm sure I've missed a fair amount.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">08-19-2002, 03:22 AM</div></div><div class="posttext">Moved this on over to the Info Vault.<br />
+<br />
+Nice write-up Muse! I'm sure many people will find this very useful.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Muse</div><div class="date">09-12-2002, 01:00 AM</div></div><div class="posttext">An addendum to what I wrote above:<br />
+<br />
+I'm wondering if they've changed the way they load textures, because when I wrote the above, it was definitely true that a texture who had a size labelled larger than it actually was would get stretched and look badly.  Now, however, it doesn't seem to work that way.  I may have just been wrong before, regardless, the following is now true.<br />
+<br />
+Textures are loaded so that they use up 512x512 texture spaces.  This means that a 200x200 picture would actually have a texture size setting of 512x512.  A 200x600 picture would have a texture size setting of 512x1024 (since it's wider than the 512, so it needs two of those).  You should continue to use these dimensions as I described above in the other components (i.e. the same as the texture size).<br />
+<br />
+If you set the 200x200 pictures texture size to be 200x200, what it does is it allocates it into the 512x512 texture, and then shrinks it to fit into a 200x200 space, making it look quite small.  You need to set them initially to fit that block and then it will work correctly.<br />
+<br />
+Also (I'm not sure about this, though) this might not be quite right on non-nVidia boards (like Voodoos).  It seems they might use a different size texture, so it loads them in odd ways.  I don't have enough info to be sure, though.  Besides, anyone still playing with a Voodoo should be shot for being silly.  :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lareieli</div><div class="date">12-02-2002, 04:20 PM</div></div><div class="posttext">This is very helpful, thank  you!  One request though, could you please define some of the terms you used for total newbs?  Specifically, what exactly do you mean by &quot;page&quot; &quot;frame&quot; and &quot;screen&quot; for starters.  I'm also having a really hard time wrapping my mind around what bits of the stuff I see are referred to in the various tutorials and xml files.  When I see &quot;spell gem&quot; referred to, does that mean the &quot;picture&quot; of a spell gem that I see at such and such coordinate on the .tga file?  Or is it a compilation of a number of &quot;frames&quot; like the familiar picture, plus a picture of a greyed out gem, plus an image of the slot?  Are the lines I see around every window in the EQ UI an element separate from the window background?  UGH my head hurts!  If you can offer any clarity at all I will thank you again :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lareieli</div><div class="date">12-02-2002, 04:30 PM</div></div><div class="posttext">Okay, replying to my own post, I've been searching here for a couple weeks now, but somehow missed the following post until after posting the above *doh*.  I think this answers at least some of my headachey questions: http://www.eqgui.com/showthread.php?s=&amp;threadid=626<br />
+Thanks again for any further explanation!</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

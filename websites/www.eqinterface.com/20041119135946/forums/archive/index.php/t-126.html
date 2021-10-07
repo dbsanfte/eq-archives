@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Hardcoded - what is, and what isn't</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-12.html">General authoring help / discussion</a> &gt; Hardcoded - what is, and what isn't</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=126">Hardcoded - what is, and what isn't</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Demorgoth</div><div class="date">07-27-2002, 08:03 PM</div></div><div class="posttext">OK, from what I've read, some things are hardcoded into specific windows and others aren't.<br />
+<br />
+Invite/Disband MUST appear in the grouping box, though they can be made too small to see or moved off the box. I'm assuming it also follows that they can't be used in other windows.<br />
+<br />
+So, what buttons CAN you tinker about with?<br />
+<br />
+Can you add a regular text userdefinable box hotkey (eg: /say INC %t ) to any windows?<br />
+<br />
+Can you add a predefined hotkey such as 'run'<br />
+<br />
+No doubt more question will come to light, just wondering what people's initial findings were</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 12:14 AM</div></div><div class="posttext">OK so far my findings are :<br />
+<br />
+- If it has an EQType it can be move and placed in any window you like.  But at the current time you can only have 1 existing gauge of each type.  Also only 1 label, having more than 1 doesn't cause it to crash but all dupicates appear as a 0 (or default text), this has been or will be soon fixed on test.<br />
+<br />
+- If it doesn't have an EQType it MUST not only exist but also be in it's original window, moving it WILL NOT work.<br />
+<br />
+- All XML files for windows must exist.<br />
+<br />
+- It is reported (by a 3rd party) that Verant have allowed for players to create new windows, but I have yet to see anyone succeed at doing this.  So either you can't fullstop or that you can't yet.<br />
+<br />
+- Some windows have inherit characteristics which can't be duplicated or removed.  <br />
+    .  Casting window will appear when casting, even if the bar is not there.<br />
+    . Breathe Window will appear under water, even if the bar is not there.<br />
+    . Inventory will appear when looting/banking or shopping even if no slots are in it.<br />
+    . Buff window has hard-coded placing of icons, and starts at the top-left, and readjusts with re-sizing.<br />
+    . Containers size is hard-coded, therefore not changable through XML.<br />
+<br />
+<br />
+Can't think of anything else at the moment.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">psychogears</div><div class="date">07-28-2002, 12:18 AM</div></div><div class="posttext">Where'd you hear that you can make a new window? I'd like to at least see who claims you can do it, as it might provide some clue or something that I missed before...<br />
+<br />
+Your observations are very cool, though. I didn't think about the relationship between the behaviors of the windows, and that bit about having an EQType... that observation made alot of things clearer to me. :)<br />
+<br />
+-TJ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 12:34 AM</div></div><div class="posttext">Thats why I put 3rd person in bracets.  I read it in a seperate thread on this board about 1/2 an hour ago of someone saying they read it on the eqlive forums.  So yes its a &quot;I read that soandso read that soandso wrote&quot; things  which is why I tend to disbelieve it until someone can actually show me an example of it working.<br />
+<br />
+Also forgot to add in <br />
+- the plain text labels (eg the / between current Hp's and maxHP, the NEXT LEVEL label etc) can all be edited/ deleted/ resized/ moved etc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">guice</div><div class="date">07-28-2002, 01:01 AM</div></div><div class="posttext">. Casting window will appear when casting, even if the bar is not there.<br />
+<br />
+This is fixable by removing the &lt;Screen&gt; element.<br />
+<br />
+It can't draw something that doesn't have a &lt;Screen&gt; associated with it. ;)<br />
+<br />
+This is the method I used to remove the Casting Gauge when duplicating the Bard spell cast icon set. I didn't like the way he/she modified the EQUI.xml file ( commenting out the one said file ), so I modified the CastingWindow.xml file. Must better implmentation, I think.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 01:09 AM</div></div><div class="posttext">I set my casting window to a size of 1 and removed the border and texture etc.  I must admit it has been a while since I tried to literally remove the window.  I have given up trying to remove them, so when I don't want a window I just shrink it, much less hassle.  So they may have some windows that can be deleted, but I'd rather not go through the trial and error to find out.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Akephalos</div><div class="date">07-28-2002, 02:35 AM</div></div><div class="posttext">Currently, there seems to be some confusion (and a rather large discussion) with what is hard coded, and what is not. I do not know everything about the UI, nor do I believe some of the things that seem to be circulating as fact.<br />
+<br />
+Things such as  &quot;- All XML files for windows must exist.&quot; <br />
+<br />
+A UI is exactly what its name says. Its a User Interface. It is an interface between the person whom is using it, and the functions, features, and commands that are in the EXE. <br />
+<br />
+It takes the information provided by the EXE, and organizes it in a way that the user can make sense of, and use it. <br />
+<br />
+What is hard coded, is what is in the exe. New commands, Functions, and features will not be able to be created via the UI, however, most everything should be able to be edited and changed in the XML UI. <br />
+<br />
+<br />
+I would seriously suggest reading the following thread, as it has tons of useful information, as well as a good explanation of how things appear to work, as well as a factual basis of refuting the above bold typed statement.<br />
+<br />
+http://www.eqgui.com/showthread.php?s=&amp;postid=499#post499</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Geddine</div><div class="date">07-28-2002, 04:57 AM</div></div><div class="posttext">In regards to the bolded statement.  This was true on test at the start, and after 2 days of trying to get rid of certain windows/buttons I had given up and have yet to attempt it since (to me waste of time as I know I can just hide them).<br />
+<br />
+Ok this is untested but see if someone can confirm for me.<br />
+<br />
+Based on the other &quot;Question&quot; thread is there any windows which can be deleted which contains something that is not an EQType?  (eg buttons)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

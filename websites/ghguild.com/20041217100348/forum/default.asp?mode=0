@@ -1,0 +1,438 @@
+
+<html>
+<head>
+<title>Grey Hawke Message Board</title>
+<style type="text/css">
+<!--
+.c2 {font: bold 11px Verdana}
+.head {font: bold 14px Verdana;color : #000000}
+.high {background-color : Yellow;font : bold 11px Arial, Helvetica, sans-serif;color : Black;border : 1px solid Black;}
+.info {font: 11px Verdana;}
+.msg {font: 13px Verdana;}
+.quote {border:1px Solid #505050; background-color:#ffffff; width:85%; margin:2px; padding:5px; color:#505050; font: 11px Verdana;}
+.subhead {font: bold 13px Verdana;color : #000000}
+.titlehead {font: bold 15px Verdana; line-height:180%;}
+.ultrasmall {font: 10px Verdana;color:#555555;}
+a {color:#454545;}
+a:hover {color: #e51d00;text-decoration:underline}
+a:visited {color: #0b0b0b;hover-color: #e51d00}
+body {color: #000000; font: 11px Verdana; background-color: #004580; /*margin: 0px 0px 0px 0px;*/
+scrollbar-face-color: #0075cc; 
+scrollbar-highlight-color: #4db2ff; 
+scrollbar-shadow-color: #4db2ff; 
+scrollbar-3dlight-color: #000000; 
+scrollbar-arrow-color: #4db2ff; 
+scrollbar-track-color: #004580; 
+scrollbar-darkshadow-color: #004580;}
+input {color : #000000;font: normal 11px Verdana;}
+pre {font: 11px "Courier New",monospace;}
+select {color : #000000;font: normal 11px Verdana;}
+td {font: 11px verdana}
+td.cat {background-color: #4db2ff}
+textarea {background-color: #f9f9f9;color : #000000;font: normal 11px Verdana;}
+th {background-color: #0075cc}
+
+
+-->
+</style>
+<script language="JavaScript" src="js/popie.js"></script>
+</head>
+<body >
+<script language="JavaScript">
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("12/17/2004 2:03:42 AM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("12/17/2004 2:03:42 AM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "12/17/2004 2:03:42 AM"
+	
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.asp?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+//-->
+</script>
+<noscript>Javascript is currently disabled!</noscript>
+	<center>
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="1" height="115"></td>   
+      <td width="20%" height="115" background="leftextend2.jpg"></td>
+      <td width="741" height="115">
+      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map">
+<MAP NAME="GH_Banner_Map">
+<AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.asp">
+<AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.asp?view=groupinfo">
+<AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.asp" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.php?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.asp" onClick="return logwin(this.href)">
+<AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.asp">
+<AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.asp">
+<AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.asp">
+<AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.asp">
+<AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.asp">
+<AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.asp">
+<AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.asp">
+<AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.asp">
+<AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.asp">
+<AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum">
+<AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com">
+</MAP></td>
+ <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>
+      
+    </tr>
+  </table>
+		<BR></center>
+
+	</table></center>
+
+<table border="0" bgcolor=#006699 align=center>
+	<tr>
+		<td width="40%"><center>294139470<font color=#CCCCCC><br>
+<a href="ghmotdedit.asp" target=_new><font color=white>EQ MOTD</font></a>:<br>
+
+For GH EQ Members only<br>
+</font></td>
+		<td  width="40%"><center>294139470<br><a href="ghmotdedit2.asp" target=_new><font color=white>EQ2 MOTD</font></a>:<br><font color=#CCCCCC>
+
+For GH EQ2 Members only
+</font></center>
+</td>
+	</tr>
+</table>
+
+
+
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+
+
+
+
+	<table width="98%" border="0" cellspacing="2" cellpadding="0">
+		<tr>
+			<td class="c2">Active Users: 109</td>
+			<td class="c2" align="right">Logged in as: Guest&nbsp;</td>
+		</tr>
+	</table>
+<br>
+
+	<table width="98%" border="0" cellspacing="2" cellpadding="0">
+	  <tr>
+		<td bgcolor="004580">
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+			  <tr>
+				<th bgcolor="006699" align="left"><font color="FFFFFF" class="subhead">Forum Announcements</font></th>
+			  </tr>
+	
+			  <tr>
+				<td class="cat"  bgcolor="e6e6e6" >
+			 	<img src="image/icon2.gif" align="absmiddle"> <span class="subhead">Welcome to the Grey Hawke Gaming Guild Forums!</span> -- <i>10/25/2004 1:00:00 PM</i>
+				</td>
+			  </tr>
+			  <tr>
+				<td  bgcolor="dedede" >
+				<span class="msg"> <div align="center"><b>Welcome to the official forums of Grey Hawke. </b> <font color='#880000'><font size='1'><i> <br> Everyone is welcome to register and post on our public board.  <br> For Everquest Live Access: If you are <u>registered and confirmed</u>, please PM and contact <b><a target="_blank" href="http://ghguild.com/forum/pmsend.asp?toMemId=173">Azhe</a></b> or <b><a target="_blank" href="http://ghguild.com/forum/pmsend.asp?toMemId=71">Aramus</a></b> in game. You must already be a member of the guild. <br> For Everquest 2 Access:  If you are  <u>registered and confirmed</u>, please PM and contact <b><a target="_blank" href="http://ghguild.com/forum/pmsend.asp?toMemId=1">Croso</a></b> in game. You must already be a member of the guild. <br> <div align="right">-croso</div></i></font></font> </span>
+				</td>
+			  </tr>	
+		
+			</table>
+		  </td>
+		</tr>
+	</table><br>
+
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+	<tr>
+		<td class="c2">
+				
+		<a href="default.asp?mode=delcookie">Delete All Cookies</a>
+		 : : 
+		<a href="default.asp?mode=markread">Mark All Forums read</a>
+		
+		 : : 
+		<a href="default.asp?mode=1">Open All Categories</a>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="004580">
+			<table width="100%" border="0" cellspacing="1" cellpadding="3">
+				<tr bgcolor="006699"><th align="center" colspan="2"><font color="FFFFFF" class="subhead">Forum Description</font></th><th align="center"><font color="FFFFFF" class="subhead">Topics</font></th><th align="center"><font color="FFFFFF" class="subhead">Posts</font></th><th align="center"><font color="FFFFFF" class="subhead">Last Post</font></th></tr><tr nowrap  bgcolor="dedede" ><td width="5%" align="center" ><script type="text/javascript">showPicture("12/16/2004 10:47:19 PM",0,0,0,0,2,1)</script></td><td width="68%" ><a href="tt.asp?forumid=58" class="subhead">[Public]</a>&nbsp;<br><hr noshade size="1"><span class="ultrasmall"><b>Sub-forums:</b> <a href="tt.asp?forumid=1">Public Forum <script type="text/javascript">showPicture("12/16/2004 7:02:53 AM",0,0,0,0,1,0,1)</script></a>, <a href="tt.asp?forumid=2">Geek Life <script type="text/javascript">showPicture("12/16/2004 10:47:19 PM",0,0,0,0,2,0,1)</script></a></span></td><td width="5%" align="center" >1370</td><td width="5%" align="center" >7927</td><td width="17%" align="center" nowrap  class="ultrasmall"><a href="fb.asp?m=142897"><b> Hard Drive Wipe with Win XP S </b> </a>..<br><span class="info">12/16/2004 10:47:19 PM</span><b><br><a href="http://ghguild.com/forum/showprofile.asp?memid=38">Yaldin</a></b>&nbsp;</td></tr><tr nowrap  bgcolor="e6e6e6" ><td width="5%" align="center" ><script type="text/javascript">showPicture("8/29/2004 1:36:34 PM",0,0,0,0,95,1)</script></td><td width="68%" ><a href="tt.asp?forumid=97" class="subhead">[Grey Hawke Everquest]</a>&nbsp;<br></td><td width="5%" align="center" >13747</td><td width="5%" align="center" >100174</td><td width="17%" align="center" nowrap  class="ultrasmall"><a href="fb.asp?m=123214"><b> RE: 18 person BiC Event MONDA </b> </a>..<br><span class="info">8/29/2004 1:36:34 PM</span><b><br><a href="http://ghguild.com/forum/showprofile.asp?memid=103">Nlocnil</a></b>&nbsp;</td></tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br>
+
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+   
+	<td bgcolor="004580"> 
+	  <table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  	<tr>
+          <th bgcolor="006699" align="left"><img src="image/icon1.gif" border=0> 
+			<a href="onlineuser.asp"><font color="FFFFFF" class="subhead">Active Users: There are <b>7</b> members and <b>102</b> guests.</font></a>
+		  </th>
+		</tr>
+		
+		<tr> 
+		  <td  bgcolor="dedede" >
+		  Most users ever online was 271 at 12/9/2004 9:44:02 PM.<br>
+		  <span  class="c2">
+		   <a href="showProfile.asp?memid=1031" title="Viewing Private Message at 12/17/2004 2:02:54 AM">Edenus</a>, <a href="showProfile.asp?memid=419" title="Viewing a message at 12/17/2004 2:02:21 AM">Fabbas</a>, <a href="showProfile.asp?memid=176" title="Viewing Private Message at 12/17/2004 2:01:08 AM">Fredrinn</a>, <a href="showProfile.asp?memid=632" title="Viewing a message at 12/17/2004 2:00:53 AM">Bubbajones</a>, <a href="showProfile.asp?memid=110" title="Viewing message list at 12/17/2004 1:52:34 AM">Yestis</a>, <a href="showProfile.asp?memid=723" title="Viewing a message at 12/17/2004 1:52:03 AM">Redheeler</a>, <a href="showProfile.asp?memid=40" title="Viewing a message at 12/17/2004 1:37:56 AM">Kilrav</a></span>&nbsp;
+		  </td>
+		</tr>
+		
+	  </table>
+	</td>
+  
+  </tr>
+</table>
+
+<br>
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+	<tr>
+		<td bgcolor="004580">
+		<table width="100%" border="0" cellspacing="1" cellpadding="4">
+		<tr>
+		  <th bgcolor="006699" align="left"><img src="image/icon1.gif" border=0> 
+		  <font color="FFFFFF" class="subhead">Today's Events</font>
+		  </th>
+		</tr>		
+		<tr> 
+		  <td  bgcolor="dedede"  class="info">
+			There is no event scheduled.
+		  </td>
+		</tr>	
+	
+		<tr>
+		  <th bgcolor="006699" align="left"><img src="image/icon1.gif" border=0> 
+		  <font color="FFFFFF" class="subhead">Today's Birthdays</font>
+		  </th>
+		</tr>	
+		<tr> 
+		  <td  bgcolor="dedede"  class="info">
+	  		
+			<img src="image/cake.gif" border=0> <a href="showprofile.asp?memid=70" class='c2' target="_blank">Zeea</a>  
+			
+		  </td>
+		</tr>		
+		</table>
+		</td>
+	</tr>
+</table>		
+<br>
+	
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+	<tr>
+		<td bgcolor="004580">
+		<table width="100%" border="0" cellspacing="1" cellpadding="4">
+		<tr>
+		  <th bgcolor="006699" align="left"><img src="image/icon1.gif" border=0> 
+		  <font color="FFFFFF" class="subhead">Forum Statistics</font>
+		  </th>
+		</tr>
+		<tr> 
+		  <td  bgcolor="dedede"  class="info">
+		  <img src="mIcons/m1.gif" border=0 align="absmiddle" vspace="3"> <b>883</b> Registered users have made <b>133909</b> posts in <b>126</b> forums. There are currently <b>18834</b> topics.<br>	
+		  <img src="mIcons/m2.gif" border=0 align="absmiddle" vspace="3"> Please welcome our newest member:  <a href="showprofile.asp?memId=1031"><b>Edenus</b></a><br>		  
+		
+		  <img src="mIcons/m4.gif" border=0 align="absmiddle" vspace="3"> You can click here to see <img src="mIcons/m8.gif" border=0 align="absmiddle" vspace="3"> <a href="searchpro.asp?searchfor=today"><b>Today's Posts</b></a> | <img src="mIcons/m6.gif" border=0 align="absmiddle" vspace="3"> <a href="searchpro.asp?searchfor=active"><b>Most Active Topics</b></a> | <img src="mIcons/m2.gif" border=0 align="absmiddle" vspace="3"> <a href="searchpro.asp?searchfor=lastvisit"><b>Posts Since Last Visit</b></a><br>			  
+		  </td>
+		</tr>	
+		</table>
+		</td>
+	</tr>
+	<tr>
+	<td class="ultrasmall">Current Server Time: 12/17/2004 2:03:42 AM</td>
+	</tr>
+</table>	
+<br>	
+<br>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td>
+   <table border='0' cellspacing='0' cellpadding='3'>
+	<tr>
+		<td class="c2"><img src="image/board_n.gif" align="absmiddle" vspace=2> New Messages</td>
+		<td class="c2"><img src="image/board.gif" align="absmiddle" vspace=2> No New Messages</td>
+	</tr>
+   </table>
+  </td>
+  </tr>
+</table>
+
+	<br>
+	<br>
+	</center>
+	
+	<script language="JavaScript">
+	
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")){
+			self.location.href="pm.asp";
+		}
+	}
+	</script>
+	
+	<center><br><a href="http://ghguild.com/forum/ticket.asp"><font color=green>Moderator Ticket System</font></a><br><br><img src="http://ghguild.com/poweredbywin2k3.gif"><br><br><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+	<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.4.2 
+	SP3</td>
+  </tr>
+</table></center>
+	<br><font color="ffffff">0.110</font><br>
+
+</body>
+</html>

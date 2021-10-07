@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - Compass Info</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; Compass Info</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=10717">Compass Info</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Inokis</div><div class="date">10-14-2003, 07:36 PM</div></div><div class="posttext">I'm not sure how many people have messed around with the Compass Window and to what extent, so if any of this info is a repeat then you can flame me later. However, I haven't seen any info about what I'm going to post:<br />
+<br />
+In the compass window I've discovered the compass only works if it is contained in the &lt;Screen item = &quot;CompassWindow&quot;&gt;.  This also means that any other &lt;Screen Item&gt; inside the CompassWnd.xml that contains a compass will also work.   <br />
+<br />
+You're wondering, &quot;Why do I want two compass in the same window?&quot;  It's simple really; because you cannot move the default compass around.  This makes it very difficult to scale the compass window inside a ui without either resizing the overlay elements (which causes the compass to lose accuracy) or losing the visual integrity of the compass (having the compass animation bleed to the other side of the window).  By putting a sizable window with a working compass inside the default window, you then solve both of these problems.  You can scale the window however you like it to fit a ui, and keep the accuracy of the compass.  The final problem remains.  If you have one compass overlaying the other...you still see the one that bleeds .  Which you then add another &lt;Screen Item&gt; to act as a filter and a background for the compass you want to display.<br />
+<br />
+To demonstrate, I've taken a screenshot of a compass window I sized to 200 x 200 Pix using the template WDT_RoundedNoTitle.  The compass is inset in the middle using the template WDT_Inner:<br />
+<br />
+http://eq.onlinegamersguild.com/compass.jpg <br />
+<br />
+Here are the main elements for the Screen Items:<br />
+<br />
+&lt;!--Background Filter--&gt;<br />
+&lt;Screen item = &quot;CompassWindow2&quot;&gt;<br />
+		&lt;ScreenID/&gt;<br />
+		&lt;!--&lt;Font/&gt;--&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;0&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;400&lt;/CX&gt;<br />
+			&lt;CY&gt;100&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+		&lt;DrawTemplate&gt;WDT_RoundedNoTitle&lt;/DrawTemplate&gt;<br />
+		&lt;Style_Titlebar&gt;false&lt;/Style_Titlebar&gt;<br />
+		&lt;Style_Closebox&gt;false&lt;/Style_Closebox&gt;<br />
+		&lt;Style_Minimizebox&gt;false&lt;/Style_Minimizebox&gt;<br />
+		&lt;Style_Border&gt;false&lt;/Style_Border&gt;<br />
+		&lt;Style_Sizable&gt;false&lt;/Style_Sizable&gt;<br />
+&lt;/Screen&gt;<br />
+<br />
+&lt;!--Working Displayed Compass--&gt;<br />
+	&lt;Screen item = &quot;CompassWindow1&quot;&gt;<br />
+		&lt;ScreenID/&gt;<br />
+		&lt;!--&lt;Font/&gt;--&gt;<br />
+		&lt;RelativePosition&gt;true&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;47&lt;/X&gt;<br />
+			&lt;Y&gt;84&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;106&lt;/CX&gt;<br />
+			&lt;CY&gt;32&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+		&lt;DrawTemplate&gt;WDT_Inner&lt;/DrawTemplate&gt;<br />
+		&lt;Style_Titlebar&gt;false&lt;/Style_Titlebar&gt;<br />
+		&lt;Style_Closebox&gt;false&lt;/Style_Closebox&gt;<br />
+		&lt;Style_Minimizebox&gt;false&lt;/Style_Minimizebox&gt;<br />
+		&lt;Style_Border&gt;true&lt;/Style_Border&gt;<br />
+		&lt;Style_Sizable&gt;false&lt;/Style_Sizable&gt;<br />
+		&lt;Pieces&gt;CMPW_Strip1&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;CMPW_Strip2&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;CMPW_Overlay&lt;/Pieces&gt;<br />
+&lt;/Screen&gt;<br />
+<br />
+&lt;!--Default Compass--&gt;<br />
+	&lt;Screen item = &quot;CompassWindow&quot;&gt;<br />
+		&lt;!--&lt;ScreenID/&gt;--&gt;<br />
+		&lt;!--&lt;Font/&gt;--&gt;<br />
+		&lt;RelativePosition&gt;false&lt;/RelativePosition&gt;<br />
+		&lt;Location&gt;<br />
+			&lt;X&gt;0&lt;/X&gt;<br />
+			&lt;Y&gt;24&lt;/Y&gt;<br />
+		&lt;/Location&gt;<br />
+		&lt;Size&gt;<br />
+			&lt;CX&gt;200&lt;/CX&gt;<br />
+			&lt;CY&gt;200&lt;/CY&gt;<br />
+		&lt;/Size&gt;<br />
+		&lt;Style_VScroll&gt;false&lt;/Style_VScroll&gt;<br />
+		&lt;Style_HScroll&gt;false&lt;/Style_HScroll&gt;<br />
+		&lt;Style_Transparent&gt;false&lt;/Style_Transparent&gt;<br />
+		&lt;!--&lt;TooltipReference/&gt;--&gt;<br />
+		&lt;DrawTemplate&gt;WDT_RoundedNoTitle&lt;/DrawTemplate&gt;<br />
+		&lt;Style_Titlebar&gt;false&lt;/Style_Titlebar&gt;<br />
+		&lt;Style_Closebox&gt;false&lt;/Style_Closebox&gt;<br />
+		&lt;Style_Minimizebox&gt;false&lt;/Style_Minimizebox&gt;<br />
+		&lt;Style_Border&gt;true&lt;/Style_Border&gt;<br />
+		&lt;Style_Sizable&gt;false&lt;/Style_Sizable&gt;<br />
+		&lt;Pieces&gt;CompassWindow2&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;CompassWindow1&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;CMPW_Strip1&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;CMPW_Strip2&lt;/Pieces&gt;<br />
+		&lt;Pieces&gt;CMPW_Overlay&lt;/Pieces&gt;<br />
+	&lt;/Screen&gt;<br />
+<br />
+I hope someone finds this info as useful as I do.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cairenn</div><div class="date">10-14-2003, 09:10 PM</div></div><div class="posttext">Interesting solution. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Inokis</div><div class="date">10-16-2003, 04:00 PM</div></div><div class="posttext">I don't know where to do it or what not, but its the general consensus the compass window isn't very modifiable.  Maybe putting a note to what is and isn't able to be done and adding compass to the can list.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ladred</div><div class="date">11-03-2003, 07:49 PM</div></div><div class="posttext">Just wanted to say a big thank you. It solved one of the big problems I was having. Here is a picture of my compass window now.<br />
+<br />
+http://www.eqgui.com/attachment.php?s=&amp;postid=57756</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

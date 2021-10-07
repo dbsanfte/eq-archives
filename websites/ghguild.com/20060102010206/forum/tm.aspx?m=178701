@@ -1,0 +1,832 @@
+
+<html>
+<head>
+<title> Cool links I ripped off </title>
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src = "js/trims.js"></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language="JavaScript" src = "js/confirmdeletion.js"></script>
+<script language="JavaScript" src = "js/showSelect.js"></script>
+<script language="JavaScript" src = "js/pgdcodeinput.js"></script>
+<script language="JavaScript" src = "js/validator.js"></script>
+<script type="text/javascript">
+
+function keepalive(){
+	var keepAliveFrame = document.createElement("iframe")
+	keepAliveFrame.src = "/forum/keepalive.aspx"
+	keepAliveFrame.style.display="none"
+	document.body.appendChild(keepAliveFrame)
+}
+
+
+
+setTimeout("keepalive()",3540000); 
+
+var objFormValidator = new PGDFormValidator;
+
+function validateForm(postform) {
+	if (objFormValidator.execute()){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+// -->
+</script>
+<script language="JavaScript">
+
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("1/1/2006 5:02:34 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("1/1/2006 5:02:34 PM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "1/1/2006 5:02:34 PM"	
+
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.aspx?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+ strTitle [1] = "25&&0neophyte1"
+ strTitle [2] = "100&&0greenhorn2"
+ strTitle [3] = "400&&0competent3"
+ strTitle [4] = "900&&0seasoned4"
+ strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<link rel='stylesheet' href='/forum/upfiles/4.css' type='text/css'>
+</head>
+<body >
+<!-- CSS Stylesheet -->
+<style type="text/css" id="gh_css">
+<!--
+/* GH header CSS  */
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+/* ***** don't change the following ***** */
+
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+body { margin: 0; padding: 0; }
+img { border: 0; }
+#header {
+position: relative;
+display: block;
+width: 100%;
+height: 30px;
+margin: 0;
+padding: 0;
+background: url(image/livebarbg.jpg) repeat-x;
+}
+#header #header-nav {
+position: absolute;
+top: 0;
+right: 0;
+}
+#header #header-nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#header #header-nav ul li {
+display: inline;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+
+<div id="header">
+<div id="live">
+<a href="http://ghguild.com"><img src="http://ghguild.com/forum/image/livebarghlive.jpg"></a>
+</div>
+<div id="header-nav">
+<ul>
+<li><a href="http://eq.ghguild.com/">Everquest</a></li><li>Everquest2</li><li>World of Warcraft</li>
+</ul>
+</div>
+</div>
+
+
+
+<center><TABLE width='97%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #<%= tableborder %> solid;"><!--Here is one--><tr>	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->  <table width="98%" border="0" cellpadding="0" cellspacing="0">    <tr>      <td width="1" height="115"></td>         <td width="20%" height="115" background="leftextend2.jpg"></td>      <td width="741" height="115">      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map"><MAP NAME="GH_Banner_Map"><AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.aspx"><AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.aspx?view=groupinfo"><AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.aspx" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.phpx?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank"><AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.aspx" onClick="return logwin(this.href)"><AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.aspx"><AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.aspx"><AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.aspx"><AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.aspx"><AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.aspx"><AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.aspx"><AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.aspx"><AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.aspx"><AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.aspx"><AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum"><AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com"></MAP></td> <td width=80% background="http://ghguild.com/forum/rightextend2.jpg" height="115"></td>   </tr>  </table>
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		if (theForm.body) theForm.body.focus(); else if (document.all && document.all.body1) document.all.body1.focus();
+		
+		theForm.parent.value = parentid;
+		theForm.subject.value = theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='97%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> Cool links I ripped off </h2>&nbsp;
+		
+		<br>
+		<span class="ultrasmall">View related threads:
+		(<a href="/forum/searchpro.aspx?phrase=Cool+links+I+ripped+off&criteria=OR&forumid=2&topicreply=topic&message=both&timefilter=0&top=10" target="_blank">in this forum</a>
+		| <a href="/forum/searchpro.aspx?phrase=Cool+links+I+ripped+off&criteria=OR&forumid=ALL&topicreply=topic&message=both&timefilter=-365&timeframe=%3E&top=10" target="_blank">in all forums</a>)
+		</span>
+		<br><br>
+		
+	</td>
+	<td class="c2" align="right">Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+	
+<table width="97%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+
+	<td class="ultrasmall">
+	Users viewing this topic: 
+    none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='97%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.aspx?m=178701" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+    
+	</td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Cool links I ripped off </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table><script language="JavaScript" type="text/javascript">
+function submitForm(){ try {updateRTE('body1'); return true;} catch(e){}; }</script>
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="155" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="155" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0" width="100%">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.aspx?go=prev&m=178701&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.aspx?go=next&m=178701&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=178701></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               Cool links I ripped off  - <span class="ultrasmall">7/28/2005 10:57:28 PM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("7/28/2005 10:57:28 PM",0,0,0,178701,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=1" class="subhead" target="_blank">Croso</a><br>
+        
+		  <script>titleAndStar(1700,10000,true,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/1/drawgirl.gif" border=0 align="absmiddle"></div><br>
+          Posts:  1700<br>
+          
+          Joined:  10/18/2002 <br>
+          From:  Santa Rosa, CA<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <font color="#000099">---------------------------------------------------------------------------------------- <br> <b>Utilities, tune-up, maintenance &amp; useful PC information</b> <br> </font><a href="http://www.1-4a.com/" target="_blank"><font color="#000099">1-4a Rename</font></a><font color="#000099"> - batch, mass file renamer &amp; other useful utilities (2/18/04) <br> </font><a href="http://www.killdisk.com/" target="_blank"><font color="#000099">Active@ Kill Disk</font></a><font color="#000099"> - free powerful hard drive eraser (11/7/04) <br> </font><a href="http://www.superwin.com/index.htm" target="_blank"><font color="#000099">Add/Remove Pro</font></a><font color="#000099"> - useful Add/Remove Programs utility <br> </font><a href="http://www.answersthatwork.com/home_page.htm" target="_blank"><font color="#000099">AnswersThatWork.com</font></a><font color="#000099"> - ultimate online HelpDesk for PC problems (5/17/04) <br> </font><a href="http://www.autopatcher.com/index.html" target="_blank"><font color="#000099">AutoPatcher</font></a><font color="#000099"> - install all the updates &amp; registry tweaks (6/22/04) <br> </font><a href="http://www.nu2.nu/pebuilder/" target="_blank"><font color="#000099">BartPE</font></a><font color="#000099"> - Bart's Preinstalled Environment (BartPE) bootable live windows CD/DVD (10/6/04) <br> </font><a href="http://www.softpile.com/Utilities/Miscellaneous/Review_02903_index.html" target="_blank"><font color="#000099">Batchrun</font></a><font color="#000099"> - create batch files Win 95/98/ME/NT/2000 <br> </font><a href="http://www.pensacolasgreatest.com/tempfiles.html#XP" target="_blank"><font color="#000099">Batchrun XP alternative</font></a><font color="#000099"> - create .cmd files (using Notepad) (6/21/04) <br> </font><a href="http://www.blackviper.com/" target="_blank"><font color="#000099">Black Viper's web site</font></a><font color="#000099"> - Windows configurations, setup, tweaks... <br> </font><a href="http://web.archive.org/web/20041128094512/http://www.blackviper.com/" target="_blank"><font color="#000099">Black Viper archived</font></a><font color="#000099"> - archived site (5/10/05) <br> </font><a href="http://www.student.dtu.dk/~s011527/blackviper/service411sp2.htm" target="_blank"><font color="#000099">Black Viper archived</font></a><font color="#000099"> - archived site for XP SP2 (5/10/05) <br> </font><a href="http://www.topqualityfreeware.com/lost29.html" target="_blank"><font color="#000099">Boot Log Analyzer</font></a><font color="#000099"> - looks at your Windows BOOTLOG.TXT file for startup issues (5/21/05) <br> </font><a href="http://www.greatis.com/utilities/bootlogxp/" target="_blank"><font color="#000099">Boot Log XP</font></a><font color="#000099"> - the best Windows boot analyzer (5/21/05) <br> </font><a href="http://www.majorgeeks.com/download.php?det=664" target="_blank"><font color="#000099">BootVis</font></a><font color="#000099"> - performance trace visualization tool for faster boot-startup times (8/1/04) <br> </font><a href="http://www.elpros.si/CDCheck/helplink.php?helpfn=overview" target="_blank"><font color="#000099">CDCheck</font></a><font color="#000099"> - utility for prevention, error detection &amp; recovery of damaged files (6/30/04) <br> </font><a href="http://members.lycos.co.uk/codestuff/" target="_blank"><font color="#000099">CodeStuff Starter</font></a><font color="#000099"> - view &amp; manage all the programs that are starting <br> </font><a href="http://www.computeruser.com/resources/dictionary/" target="_blank"><font color="#000099">ComputerUser.com</font></a><font color="#000099"> - very complete and updated high-tech dictionary for computer users (9/20/04) <br> </font><a href="http://dban.sourceforge.net/" target="_blank"><font color="#000099">Darik's Boot and Nuke</font></a><font color="#000099"> - self-contained boot floppy that securely wipes the hard disks of most computers (11/7/04) <br> </font><a href="http://www.explorerxp.com/" target="_blank"><font color="#000099">ExplorerXP</font></a><font color="#000099"> - innovative FREEWARE file manager for Windows 2000/XP (5/20/05) <br> </font><a href="http://www.theeldergeek.com/file_management_in_windows_xp.htm" target="_blank"><font color="#000099">File Management in Windows XP</font></a><font color="#000099"> - a lot of info &amp; tips from The Elder Geek (5/20/05) <br> </font><a href="http://www.fileant.com/" target="_blank"><font color="#000099">FileAnt File Manager</font></a><font color="#000099"> - Windows file manager on tabs, FTP client (5/20/05) <br> </font><a href="http://www.answersthatwork.com/Downright_pages/downrights_files.htm" target="_blank"><font color="#000099">Filex</font></a><font color="#000099"> - complete reference on File Extensions &amp; associated applications <br> </font><a href="http://www.freecommander.com/" target="_blank"><font color="#000099">freeCommander</font></a><font color="#000099"> - dual pane, “swiss army knife” replacement for Windows Explorer (12/17/04) <br> </font><a href="http://www.freshdevices.com/" target="_blank"><font color="#000099">freshdevices</font></a><font color="#000099"> - excellent utilities like Fresh Download, Fresh Diagnose, Fresh UI, Fresh View... (5/21/05) <br> </font><a href="http://www.majorgeeks.com/download4330.html" target="_blank"><font color="#000099">HDD Scan and Restoration Program</font></a><font color="#000099"> - free HDD repair &amp; data recovery software (11/7/04) <br> </font><a href="http://www.help2go.com/" target="_blank"><font color="#000099">Help2Go</font></a><font color="#000099"> - committed to offering free computer help &amp; tutorials (6/23/04) <br> </font><a href="http://www.lavalys.com/products.php?lang=en" target="_blank"><font color="#000099">Lavalys</font></a><font color="#000099"> - freeware system diagnostics &amp; benchmarking solution (6/30/04) <br> </font><a href="http://www.lockergnome.com/" target="_blank"><font color="#000099">Lockergnome Tips</font></a><font color="#000099"> - “Your Top Technology Information Resource” <br> </font><a href="http://www.pcguide.com/ref/hdd/geom/formatUtilities-c.html" target="_blank"><font color="#000099">Low-Level Format, Zero-Fill &amp; Diagnostic Utilities</font></a><font color="#000099"> - info on HDD (Hard Disk Drive) utilities &amp; formatting (11/7/04) <br> </font><a href="http://www.ariolic.com/activesmart/low-level-format.html" target="_blank"><font color="#000099">Low-Level Format, Zero-Fill &amp; Diagnostic Utilities</font></a><font color="#000099"> - manufacturer links for HDD utilities (11/7/04) <br> </font><a href="http://www.geocities.com/thestarman3/asm/mbr/WIPE.html" target="_blank"><font color="#000099">How to permanently erase data from a hard disk</font></a><font color="#000099"> - site about permanently erasing data on a hard drive (11/7/04) <br> </font><a href="http://mbm.livewiredev.com/" target="_blank"><font color="#000099">Motherboard Monitor</font></a><font color="#000099"> - manage your fans, resources &amp; alarms  <br> </font><a href="http://unattended.msfn.org/" target="_blank"><font color="#000099">MSFN's Unattended XP CD</font></a><font color="#000099"> - create XP CD with Critical Updates, tweaks, drivers... (5/27/04) <br> </font><a href="http://www.nliteos.com/" target="_blank"><font color="#000099">nLite</font></a><font color="#000099"> - excellent free Windows Installation Customizer, remove unwanted Windows components (8/28/04) <br> </font><a href="http://www.pcinspector.de/file_recovery/UK/welcome.htm" target="_blank"><font color="#000099">PC INSPECTOR File Recovery</font></a><font color="#000099"> - data recovery program for FAT 12/16/32 &amp; NTFS file systems (6/30/04) <br> </font><a href="http://www.pcinspector.de/smart_media_recovery/uk/welcome.htm" target="_blank"><font color="#000099">PC INSPECTOR smart recovery</font></a><font color="#000099"> - File Recovery companion for digital camera media... (6/30/04) <br> </font><a href="http://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx" target="_blank"><font color="#000099">PowerToys</font></a><font color="#000099"> - Microsoft PowerToys for Windows XP, TweakUI... <br> </font><a href="http://www.xmlsp.com/pview/prcview.htm" target="_blank"><font color="#000099">PrcView</font></a><font color="#000099"> - explore &amp; debug, process viewer for Windows (7/1/04) <br> </font><a href="http://www.sysinternals.com/ntw2k/freeware/procexp.shtml" target="_blank"><font color="#000099">Process Explorer</font></a><font color="#000099"> - advanced task manager (6/26/04) <br> </font><a href="http://experimentalscene.com/?type=1&amp;id=regcompact" target="_blank"><font color="#000099">Regcompact.NET</font></a><font color="#000099"> - registry compaction program that cleans empty values (5/3/2004) <br> </font><a href="http://www.dcsoft.com/products/regeditx/" target="_blank"><font color="#000099">RegEditX</font></a><font color="#000099"> - unsurpassed RegEdit productivity <br> </font><a href="http://www.resplendence.com/reglite" target="_blank"><font color="#000099">Registrar Lite</font></a><font color="#000099"> - powerful &amp; flexible freeware registry editor <br> </font><a href="http://www.winguides.com/registry/" target="_blank"><font color="#000099">Registry Guide for Windows</font></a><font color="#000099"> - (formerly RegHelp, RegEditX, RegEdit.com) <br> </font><a href="http://tianwei.digitalnuke.com/main/index.php" target="_blank"><font color="#000099">RegShot</font></a><font color="#000099"> - small &amp; open-sourced registry compare utility <br> </font><a href="http://www.freewareweb.com/cgi-bin/archive.cgi?ID=1672" target="_blank"><font color="#000099">Restoration</font></a><font color="#000099"> - restore files that are deleted accidentally &amp; not in recycle bin (6/30/04) <br> </font><a href="http://www.sisoftware.co.uk/index.html?dir=dload&amp;location=sware_dl_x86&amp;langx=en&amp;a=" target="_blank"><font color="#000099">SiSoftware Sandra Standard</font></a><font color="#000099"> - The Diagnostic Tool <br> </font><a href="http://www.almico.com/speedfan.php" target="_blank"><font color="#000099">SpeedFan</font></a><font color="#000099"> - monitors fan speeds, temperatures &amp; voltages in PCs... <br> </font><a href="http://www.mlin.net/StartupCPL.shtml" target="_blank"><font color="#000099">Startup Control Panel</font></a><font color="#000099"> - easily configure which programs run when your PC starts <br> </font><a href="http://www.spywareinfo.com/~merijn/downloads.html" target="_blank"><font color="#000099">StartupList</font></a><font color="#000099"> - WAY better than msconfig lists all auto starting programs (5/17/04) <br> </font><a href="http://www.sysinternals.com/ntw2k/freeware/procexp.shtml" target="_blank"><font color="#000099">Sysinternals Freeware</font></a><font color="#000099"> - free very professional/quality system utilities (6/26/04) <br> </font><a href="http://www.sysinternals.com/ntw2k/source/regmon.shtml" target="_blank"><font color="#000099">Sysinternals RegMon</font></a><font color="#000099"> - Registry monitoring utility <br> </font><a href="http://www.resplendence.com/textractor" target="_blank"><font color="#000099">Textractor</font></a><font color="#000099"> - captures text from screen <br> </font><a href="http://www.theeldergeek.com/" target="_blank"><font color="#000099">The Elder Geek on Windows XP</font></a><font color="#000099"> - very useful free information site like Black Viper's <br> </font><a href="http://www.majorgeeks.com/download414.html" target="_blank"><font color="#000099">ToniArts EasyCleaner</font></a><font color="#000099"> - very useful program to clean PC &amp; registry (5/20/04) <br> </font><a href="http://www.jam-software.com/freeware/index.shtml" target="_blank"><font color="#000099">TreeSize</font></a><font color="#000099"> - tells you where precious space has gone to <br> </font><a href="http://www.tweakhound.com/xp/xptweaks/supertweaks1.htm" target="_blank"><font color="#000099">TweakHound</font></a><font color="#000099"> - Super XP tweaking guide (1/31/04) <br> </font><a href="http://www.tweaktown.com/document.php?dType=review&amp;dId=324" target="_blank"><font color="#000099">TweakTown WinXP Tweaking</font></a><font color="#000099"> - From Reformat to Relax (1/31/04) <br> </font><a href="http://www.tweaktown.com/document.php?dType=review&amp;dId=434" target="_blank"><font color="#000099">TweakTown WinXP Tweaking</font></a><font color="#000099"> - From Relax to Righteous (1/31/04) <br> </font><a href="http://www.tweakxp.com/tweak1438.aspx" target="_blank"><font color="#000099">TweakXP.com</font></a><font color="#000099"> - delete Windows Prefetch files automatically (9/5/04) <br> </font><a href="http://www.tweakxp.com/tweak1438.aspx" target="_blank"><font color="#000099">TweakXP.com</font></a><font color="#000099"> - world's best site for improving &amp; customizing Microsoft Windows (9/5/04) <br> </font><a href="http://www.ultimatebootcd.com/" target="_blank"><font color="#000099">Ultimate Boot CD</font></a><font color="#000099"> - boot CD for any OS, also WinUBCD &amp; other free apps (10/6/04) <br> </font><a href="http://www.unhsolutions.net/" target="_blank"><font color="#000099">UnH Solutions</font></a><font color="#000099"> - free excellent system utilities (6/26/04) <br> </font><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;familyid=901A9B95-6063-4462-8150-360394E98E1E" target="_blank"><font color="#000099">User Profile Deletion Utility - Delprof.exe</font></a><font color="#000099"> - get rid of old User Profiles that are no longer needed (5/14/05) <br> </font><a href="http://www.netcult.ch/elmue/ElmueSoft-en.htm" target="_blank"><font color="#000099">Windows MultiEnhancer</font></a><font color="#000099"> - remove Windows DialogBox, Outlook Express &amp; Internet Explorer annoyances (12/8/04) <br> </font><a href="http://www.pchardware.ro/Download/index.php?catid=11" target="_blank"><font color="#000099">Windows Registry cleaners, downloads</font></a><font color="#000099"> - search, delete &amp; cure invalid references to Windows Registry (5/6/05) <br> </font><a href="http://v4.windowsupdate.microsoft.com/catalog/en/corp_drivers.asp" target="_blank"><font color="#000099">Windows update driver site</font></a><font color="#000099"> - latest secure Windows certified hardware drivers (6/30/04) <br> </font><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=E8FE6868-6E4F-471C-B455-BD5AFEE126D8" target="_blank"><font color="#000099">Windows XP Home Edition Utility</font></a><font color="#000099"> - setup disks for floppy boot install (6/30/04) <br> </font><a href="http://www.v-com.com/support/sup_os_WinXP_install.html" target="_blank"><font color="#000099">Windows XP Installation</font></a><font color="#000099"> - Step-by-Step Windows XP install <br> </font><a href="http://www.matirsoft.com/main/winuscon.htm" target="_blank"><font color="#000099">Winuscon</font></a><font color="#000099"> -unearths many Windows's most useful features (6/30/04) <br> </font><a href="http://www.x-setup.net/" target="_blank"><font color="#000099">Xteq X-Setup Pro</font></a><font color="#000099"> - 1 of most powerful free tweakers, utilities in 1 program <br> ---------------------------------------------------------------------------------------- <br> <b>Tweaks &amp; overclocking</b> <br> </font><a href="http://www.abxzone.com/forums/showthread.php?s=&amp;threadid=34558" target="_blank"><font color="#000099">ABXZone.com</font></a><font color="#000099"> - Windows XP tweaks (1/31/04) <br> </font><a href="http://www.cluboverclocker.com/" target="_blank"><font color="#000099">ClubOC.net</font></a><font color="#000099"> - the original overclockers club (1/31/04) <br> </font><a href="http://www.extremeoverclocking.com/" target="_blank"><font color="#000099">Extreme Overclocking</font></a><font color="#000099"> - tweaking PC hardware to the max (1/31/04) <br> </font><a href="http://www.overclockersclub.com/guides/windowsxpservices.php" target="_blank"><font color="#000099">Overclockers Club</font></a><font color="#000099"> - XP Services removal guide (1/31/04) <br> </font><a href="http://www.overclockersonline.com/" target="_blank"><font color="#000099">Overclockers Online</font></a><font color="#000099"> - news, reviews &amp; the kitchen sink (1/31/04) <br> </font><a href="http://www.overclockers.com/" target="_blank"><font color="#000099">OverClockers.com</font></a><font color="#000099"> - push system performance to limit (1/31/04) <br> </font><a href="http://www.tweaktown.com/" target="_blank"><font color="#000099">TweakTown</font></a><font color="#000099"> - overclocking, tweaking... site (1/31/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Security, adware, spyware, spam, cookies, pop-ups...</b> <br> </font><a href="http://www.analogx.com/contents/download/system/sdefend.htm" target="_blank"><font color="#000099">AnalogX Script Defender</font></a><font color="#000099"> - intercepts all requests to execute a variety of script types (.VBS, .JS, .WSH...) (5/15/05) <br> </font><a href="http://www.thefreesite.com/Free_Software/Anti_virus_freeware/" target="_blank"><font color="#000099">Anti-Virus freeware</font></a><font color="#000099"> - free anti-virus software from TheFreeSite.com (8/11/04) <br> </font><a href="http://www.avast.com/i_idt_153.html" target="_blank"><font color="#000099">avast! 4 Home Edition</font></a><font color="#000099"> - free antivirus software <br> </font><a href="http://www.grisoft.com/us/us_dwnl_free.php" target="_blank"><font color="#000099">AVG Anti-Virus Free Edition</font></a><font color="#000099"> - free antivirus software <br> </font><a href="http://www.bartdart.com/" target="_blank"><font color="#000099">bartdart.com</font></a><font color="#000099"> - “freeware for you” site, apps like Toolbar Chest, 2 tools below... (6/30/04) <br> </font><a href="http://www.bartdart.com/" target="_blank"><font color="#000099">CachePal</font></a><font color="#000099"> - dump your IE cache files, browser history, &amp; cookies quickly (6/30/04) <br> </font><a href="http://www.bartdart.com/" target="_blank"><font color="#000099">ScrubXP</font></a><font color="#000099"> - cleans out temp files, cookies, history &amp; Windows XP opened/searched files (6/30/04) <br> </font><a href="http://www.kephyr.com/" target="_blank"><font color="#000099">Bazooka Adware &amp; Spyware Scanner</font></a><font color="#000099"> - detects a multitude of spyware, adware, trojan... (2/11/04) <br> </font><a href="http://www.wilderssecurity.com/bhblaster.html" target="_blank"><font color="#000099">Browser Hijack Blaster</font></a><font color="#000099"> - stop anyone from hijacking your home page + other features (6/30/04) <br> </font><a href="http://computercops.biz/index.php" target="_blank"><font color="#000099">CastleCops</font></a><font color="#000099"> - formerly ComputerCops, security professionals (9/5/04) <br> </font><a href="http://www.karenware.com/powertools/ptcookie.asp" target="_blank"><font color="#000099">Cookie Viewer</font></a><font color="#000099"> - discover info that websites leave on your computer (5/7/05) <br> </font><a href="http://www.softpedia.com/public/cat/10/17/10-17-150.shtml" target="_blank"><font color="#000099">CWShredder</font></a><font color="#000099"> - small utility for removing CoolWebSearch &amp; associated spyware apps (9/7/04) <br> </font><a href="http://www.heidi.ie/eraser/" target="_blank"><font color="#000099">Eraser</font></a><font color="#000099"> - secure data removal tool for Windows (6/22/04) <br> </font><a href="http://sourceforge.net/projects/eraser/" target="_blank"><font color="#000099">Eraser</font></a><font color="#000099"> - SourceForge open-source site for Eraser (6/22/04) <br> </font><a href="http://www.spychecker.com/program/hijackthis.html" target="_blank"><font color="#000099">HijackThis!</font></a><font color="#000099"> - powerful spyware tool, many other useful downloads (5/17/04) <br> </font><a href="http://www.unhsolutions.net/IEPK/index.shtml" target="_blank"><font color="#000099">IE Privacy Keeper</font></a><font color="#000099"> - simple &amp; fast browsing history cleaner for Internet Explorer (6/26/04) <br> </font><a href="https://netfiles.uiuc.edu/ehowes/www/resource.htm#IESPYAD" target="_blank"><font color="#000099">IE-SPYAD</font></a><font color="#000099"> - Restricted Sites block list file download, Registry entry (5/14/05) <br> </font><a href="http://www.spywareguide.com/blockfile.php" target="_blank"><font color="#000099">MVPS Hosts File</font></a><font color="#000099"> - Restricted Sites block list file download, Registry entry (5/14/05) <br> </font><a href="http://www.mvps.org/winhelp2002/hosts.htm" target="_blank"><font color="#000099">MVPS Hosts File</font></a><font color="#000099"> - info &amp; help for Restricted Sites block list/Hosts file (5/14/05) <br> </font><a href="http://www.junkbusters.com/" target="_blank"><font color="#000099">Junkbusters home page</font></a><font color="#000099"> - dedicated to fighting junk inside the PC (7/1/04) <br> </font><a href="http://www.lavasoftusa.com/" target="_blank"><font color="#000099">Lavasoft Ad-Aware</font></a><font color="#000099"> - useful adware/spyware scanner removal program <br> </font><a href="http://www.mailwasher.net/" target="_blank"><font color="#000099">MailWasher</font></a><font color="#000099"> - fight spam, manage incoming e-mails (2/23/2004) <br> </font><a href="http://www.microsoft.com/windowsxp/default.asp" target="_blank"><font color="#000099">Microsoft Windows XP</font></a><font color="#000099"> - site for latest updates, Service Packs &amp; utilities (5/23/04) <br> </font><a href="http://securityadmin.info/faq.asp" target="_blank"><font color="#000099">Microsoft Security FAQ</font></a><font color="#000099"> - FAQ about Microsoft Software &amp; Internet Security <br> </font><a href="http://www.pgp.com/products/freeware.html" target="_blank"><font color="#000099">PGP Freeware</font></a><font color="#000099"> - encrypt messages &amp; keep e-mail confidential (6/30/04) <br> </font><a href="http://www.panicware.com/product_psfree_download.html" target="_blank"><font color="#000099">Pop-Up Stopper Free Edition</font></a><font color="#000099"> - pop-up blocker with history, cookies... &quot;privacy report&quot; (6/30/04) <br> </font><a href="http://sourceforge.net/project/showfiles.php?group_id=11118" target="_blank"><font color="#000099">Privoxy</font></a><font color="#000099"> - proxy web filter download &amp; choice of OS's <br> </font><a href="http://www.privoxy.org/" target="_blank"><font color="#000099">Privoxy home page</font></a><font color="#000099"> - web filter home page (based on Internet Junkbuster &amp; updated) <br> </font><a href="http://www.deepspace6.net/sections/sources.html" target="_blank"><font color="#000099">Privoxy sources</font></a><font color="#000099"> - IE6 enhancements, future versions... <br> </font><a href="http://www.proxomitron.info/index.html" target="_blank"><font color="#000099">Proxomitron</font></a><font color="#000099"> - proxy web filter, similar to Privoxy - not sure of updates (5/7/05) <br> </font><a href="http://www.diamondcs.com.au/index.php?page=regprot" target="_blank"><font color="#000099">RegistryProt</font></a><font color="#000099"> - compact, low-level realtime registry monitor and protector (5/15/05) <br> </font><a href="http://www.samspade.org/ssw/download.html" target="_blank"><font color="#000099">Sam Spade</font></a><font color="#000099"> - network-query tool that can help you locate bulk mailers, spammers... (6/30/04) <br> </font><a href="http://www.jasons-toolbox.com/programs.asp?Program=Script%20Sentry" target="_blank"><font color="#000099">ScriptSentry</font></a><font color="#000099"> - specify which scripts/files should be allowed to run, like AnalogX Script Defender (5/15/05) <br> </font><a href="http://www.secretmaker.com/default.html" target="_blank"><font color="#000099">SECRETMAKER</font></a><font color="#000099"> - handle spam, plus 6 other useful tools (2/23/2004) <br> </font><a href="http://www.spysweeper.com/" target="_blank"><font color="#000099">Spy Sweeper</font></a><font color="#000099"> - free Spyware removal tools &amp; info (9/5/04) <br> </font><a href="http://security.safer-networking.org/" target="_blank"><font color="#000099">SpyBot - Search &amp; Destroy</font></a><font color="#000099"> - powerful spyware/adware... detector &amp; remover <br> </font><a href="http://www.spywarewarrior.com/" target="_blank"><font color="#000099">Spyware Warrior Forums</font></a><font color="#000099"> - help with Spyware, Hijackers &amp; other Internet nuisances (9/7/04) <br> </font><a href="http://www.javacoolsoftware.com/spywareblaster.html" target="_blank"><font color="#000099">SpywareBlaster</font></a><font color="#000099"> - + SpywareGuard, MRU-Blaster... prevent spyware from installing <br> </font><a href="http://www.spywareinfo.com/" target="_blank"><font color="#000099">SpywareInfo</font></a><font color="#000099"> - online spyware remover, doesn't scan cookies (5/31/04) <br> </font><a href="http://www.mlin.net/StartupMonitor.shtml" target="_blank"><font color="#000099">StartupMonitor</font></a><font color="#000099"> - notifies you when any program registers itself to run at system startup (5/15/05) <br> </font><a href="http://smb.sygate.com/products/spf_standard.htm" target="_blank"><font color="#000099">Sygate Personal Firewall</font></a><font color="#000099"> - excellent secure Firewall, user friendly (5/12/05) <br> </font><a href="http://swatit.org/download.html" target="_blank"><font color="#000099">SwatIt</font></a><font color="#000099"> - scans your computer for Trojans, Worms, Bots and other Hacker programs (9/30/04) <br> </font><a href="http://housecall.trendmicro.com/" target="_blank"><font color="#000099">Trend Micro</font></a><font color="#000099"> - online virus scanner (2/21/2004) <br> </font><a href="http://www.webwasher.com/" target="_blank"><font color="#000099">WebWasher Classic</font></a><font color="#000099"> - blocks access, filters unwanted ads, crushes cookies, &amp; prevents profiling... (6/30/04) <br> </font><a href="http://www.wilders.org/" target="_blank"><font color="#000099">Wilders.org Security Advisors</font></a><font color="#000099"> - website is totally devoted to security <br> </font><a href="http://www.winpatrol.com/" target="_blank"><font color="#000099">WinPatrol</font></a><font color="#000099"> - spyware program launch alert (6/30/04) <br> </font><a href="http://www.zonelabs.com/store/content/catalog/products/sku_list_za.jsp?lid=home_zainfo" target="_blank"><font color="#000099">ZoneAlarm</font></a><font color="#000099"> - excellent free firewall <br> ---------------------------------------------------------------------------------------- <br> <b>Internet browsers &amp; other web surfing software enhancements</b> <br> </font><a href="http://www.altavista.com/toolbar/" target="_blank"><font color="#000099">AltaVista Toolbar</font></a><font color="#000099"> - toolbar w/Google like features + Babelfish translator button (6/30/04) <br> </font><a href="http://www.avantbrowser.com/" target="_blank"><font color="#000099">Avant Browser</font></a><font color="#000099"> - versatile tabbed browser using IE engine (5/29/04) <br> </font><a href="http://www.copernic.com/" target="_blank"><font color="#000099">Copernic search engine</font></a><font color="#000099"> - allows you to search ALL search engines at once (11/9/04) <br> </font><a href="http://gaim.sourceforge.net/downloads.php" target="_blank"><font color="#000099">Gaim</font></a><font color="#000099"> - multi-protocol instant messaging client for Linux, BSD, MacOS X, and Windows (6/30/04) <br> </font><a href="http://toolbar.google.com/deskbar/" target="_blank"><font color="#000099">Google Deskbar</font></a><font color="#000099"> - search using Google without opening your browser (6/30/04) <br> </font><a href="http://www.msgplus.net/" target="_blank"><font color="#000099">Messenger Plus!</font></a><font color="#000099"> - the most popular add-on for MSN Messenger (6/30/04) <br> </font><a href="http://googlebar.mozdev.org/" target="_blank"><font color="#000099">Googlebar</font></a><font color="#000099"> - search bar plug-in for Mozilla (6/30/04) <br> </font><a href="http://www.mozilla.org/products/firefox/" target="_blank"><font color="#000099">Mozilla Firefox</font></a><font color="#000099"> - Mozilla's next generation browser (5/28/04) <br> </font><a href="https://addons.mozilla.org/extensions/" target="_blank"><font color="#000099">Mozilla Firefox Extensions</font></a><font color="#000099"> - Most popular Firefox Extensions (5/13/05) <br> </font><a href="http://www.freedownloadmanager.org/" target="_blank"><font color="#000099">Mozilla Firefox Extensions</font></a><font color="#000099"> - Free Download Manager: FULL of features, works w/FlashGot Extension (5/16/05) <br> </font><a href="https://addons.mozilla.org/extensions/moreinfo.php?id=256&amp;application=firefox" target="_blank"><font color="#000099">Mozilla Firefox Extensions</font></a><font color="#000099"> - Download Manager Tweak: still adds features, but smaller alternative (5/16/05) <br> </font><a href="http://fireftp.mozdev.org/index.html" target="_blank"><font color="#000099">Mozilla Firefox Extensions</font></a><font color="#000099"> - fireFTP: cross-platform FTP client for Mozilla Firefox (6/8/05) <br> </font><a href="http://www.techsupportalert.com/firefox_install.htm" target="_blank"><font color="#000099">Mozilla Firefox Installation Guide</font></a><font color="#000099"> - very useful simple guide &amp; tips for Firefox browser (5/13/05) <br> </font><a href="http://www.mozilla.org/products/mozilla1.x/" target="_blank"><font color="#000099">Mozilla Suite</font></a><font color="#000099"> - web browser, advanced e-mail... all-in-one Internet application suite (5/13/05) <br> </font><a href="http://www.mozilla.org/products/thunderbird/" target="_blank"><font color="#000099">Mozilla Thunderbird</font></a><font color="#000099"> - Mozilla's e-mail &amp; newsgroup client (6/30/04) <br> </font><a href="http://www.myie2.com/html_en/home.htm" target="_blank"><font color="#000099">MyIE2</font></a><font color="#000099"> - tabbed interface solution for browser Windows filling taskbar (6/30/04) <br> </font><a href="http://www.opera.com/" target="_blank"><font color="#000099">Opera</font></a><font color="#000099"> - full-featured web browser - surf the web faster, safer &amp; easier (5/14/05) <br> </font><a href="http://www.bartdart.com/" target="_blank"><font color="#000099">Toolbar Chest</font></a><font color="#000099"> - for OE - save window positions, layout &amp; many more settings (6/30/04) <br> </font><a href="http://www.trillian.cc/downloads/" target="_blank"><font color="#000099">Trillian Basic</font></a><font color="#000099"> - multi-network IM client - IRC, AOL, ICQ, MSN, or Yahoo... (6/30/04) <br> </font><a href="http://www.w00t.net/" target="_blank"><font color="#000099">w00t!</font></a><font color="#000099"> - counter-strike search engine (11/14/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Useful software &amp; links for freeware</b> <br> </font><a href="http://www.100best-free-web-space.com/Top10_overall.htm" target="_blank"><font color="#000099">100best FREE web space Providers</font></a><font color="#000099"> - The Truth About Free Web Hosting <br> </font><a href="http://www.7-zip.org/" target="_blank"><font color="#000099">7-Zip</font></a><font color="#000099"> - versatile zip extractor <br> </font><a href="http://freeware.aceftp.com/" target="_blank"><font color="#000099">AceFTP 3</font></a><font color="#000099"> - FTP client for creating/exchanging web pages <br> </font><a href="http://freeware.acehtml.com/" target="_blank"><font color="#000099">AceHTML 5</font></a><font color="#000099"> - web page creation, validation (6/19/04, no more updates) <br> </font><a href="http://www.mechcad.net/products/acemoney/index_lite.shtml" target="_blank"><font color="#000099">AceMoney Lite</font></a><font color="#000099"> - freeware manages your finances (6/30/04) <br> </font><a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank"><font color="#000099">Adobe Acrobat Reader</font></a><font color="#000099"> - useful Internet .pdf file viewer, other features... (6/30/04) <br> </font><a href="http://www.analogx.com/contents/download/network.htm" target="_blank"><font color="#000099">AnalogX</font></a><font color="#000099"> - free Network utilities (8/12/04) <br> </font><a href="http://www.autohotkey.com/" target="_blank"><font color="#000099">AutoHotKey</font></a><font color="#000099"> - create Macros, automate tasks (6/11/04) <br> </font><a href="http://www.nu2.nu/bootdisk/network/" target="_blank"><font color="#000099">Bart's Network Book Disk</font></a><font color="#000099"> - professional network boot disk (2/12/04) <br> </font><a href="http://new.blogger.com/" target="_blank"><font color="#000099">Blogger.com</font></a><font color="#000099"> - create your own blog/web page <br> </font><a href="http://www.schneier.com/blowfish.html" target="_blank"><font color="#000099">Blowfish</font></a><font color="#000099"> - The Blowfish Encryption Algorithm, useful for SFTP server transfer... (5/20/05) <br> </font><a href="http://www.cadsoft.de/freeware.htm" target="_blank"><font color="#000099">CadSoft Online</font></a><font color="#000099"> - Eagle Light Edition: free circuit board, electronics... CAD (7/3/04) <br> </font><a href="http://www.coreftp.com/" target="_blank"><font color="#000099">CORE FTP LE</font></a><font color="#000099"> - FULL FEATURED FTP, SFTP... client for PC... website file transfer (5/17/05) <br> </font><a href="http://www.cycas.de/" target="_blank"><font color="#000099">CYCAS</font></a><font color="#000099"> - CYCAS CAD 2D + 3D + ARCHITECTURE (8/9/04) <br> </font><a href="http://sourceforge.net/projects/dcplusplus/" target="_blank"><font color="#000099">DC++</font></a><font color="#000099"> - free ultimate file sharing client for Direct Connect Network (5/5/05) <br> </font><a href="http://www.silvermaine.co.uk/dir_to_html.asp" target="_blank"><font color="#000099">Dir to HTML Wizard</font></a><font color="#000099"> - Advanced Directory Manager (2/10/04) <br> </font><a href="http://filezilla.sourceforge.net/" target="_blank"><font color="#000099">FileZilla</font></a><font color="#000099"> - FTP client for web pages, lots of useful features <br> </font><a href="http://www.freedownloadmanager.org/" target="_blank"><font color="#000099">Free Download Manager</font></a><font color="#000099"> - FULL of features, also works w/FlashGot Extension in Firefox browser (5/16/05) <br> </font><a href="http://www.freedownloadscenter.com/Utilities/" target="_blank"><font color="#000099">FREE DOWNLOADS CENTER</font></a><font color="#000099"> - free utilities download site (8/12/04) <br> </font><a href="http://www.jfitz.com/tips/ssh_for_windows.html" target="_blank"><font color="#000099">Free SSH and SCP</font></a><font color="#000099"> - secure transfer protocol for Windows 9x, NT, ME, 2000 and XP (5/20/05) <br> </font><a href="http://www.freebsd.org/" target="_blank"><font color="#000099">FreeBSD</font></a><font color="#000099"> - FreeBSD makes an ideal Internet or Intranet server (5/7/05) <br> </font><a href="http://freedns.afraid.org/" target="_blank"><font color="#000099">FreeDNS</font></a><font color="#000099"> - Free DNS, Dynamic DNS, subdomain and domain hosting (5/7/05) <br> </font><a href="http://www.freecad.com/" target="_blank"><font color="#000099">FreeCAD.com</font></a><font color="#000099"> - The one site for all free CAD, CAM and CAE programs (6/19/04) <br> </font><a href="http://www.freewarefiles.com/category/utilities.php" target="_blank"><font color="#000099">FreewareFiles.com</font></a><font color="#000099"> - your free software resource - utilities (8/12/04) <br> </font><a href="http://www.freewarehome.com/index.html" target="_blank"><font color="#000099">Freeware Home</font></a><font color="#000099"> - collection of free software &amp; Internet services (8/11/04) <br> </font><a href="http://www.all4you.dk/FreewareWorld/links.php?action=member&amp;in=AV" target="_blank"><font color="#000099">Freeware World Team</font></a><font color="#000099"> - International Freeware Database (8/11/04) <br> </font><a href="http://www.freeworldialup.com/" target="_blank"><font color="#000099">FreeWorld DIALUP</font></a><font color="#000099"> - uses a broadband Internet connection to make phone calls (6/30/04) <br> </font><a href="http://www.ghostscript.com/" target="_blank"><font color="#000099">Ghostscript</font></a><font color="#000099"> - PDF engine, 3 similar links right below... (3/11/05) <br> </font><a href="http://www.cs.wisc.edu/~ghost/gsview/get46.htm" target="_blank"><font color="#000099">GSview</font></a><font color="#000099"> - display &amp; print PostScript and PDF files, requires Ghostscript (3/11/05) <br> </font><a href="http://www.cs.wisc.edu/~ghost/redmon/" target="_blank"><font color="#000099">RedMon - Redirection Port Monitor</font></a><font color="#000099"> - redirect Ghostscript .pdf to a file (or printer) (3/11/05) <br> Creating a free PDFWriter using Ghostscript - step by step on how to create a PDF Writer (3/11/05) <br> </font><a href="http://www.hamachi.cc/" target="_blank"><font color="#000099">Hamachi</font></a><font color="#000099"> - organize 2 or more computers w/Internet connection into secure virtual network (5/24/05) <br> </font><a href="http://www.chami.com/html-kit/" target="_blank"><font color="#000099">HTML-Kit</font></a><font color="#000099"> - web page creation, Multiple Validators <br> </font><a href="http://www.chami.com/html%2Dkit/devtools/start/" target="_blank"><font color="#000099">HTML-Kit Plugins Generator</font></a><font color="#000099"> - very useful additions to HTML-Kit (6/19/04) <br> </font><a href="http://www.internetdownloadmanager.com/" target="_blank"><font color="#000099">Internet Download Manager</font></a><font color="#000099"> - handle your downloads &amp; increase download speeds... (6/30/04) <br> </font><a href="http://www.irfanview.com/" target="_blank"><font color="#000099">IrfanView</font></a><font color="#000099"> - free compact powerful image editor (6/30/04) <br> </font><a href="http://www.izsoft.dir.bg/izarc.htm" target="_blank"><font color="#000099">IZArc</font></a><font color="#000099"> - the ultimate archive/compression utility supports many archive formats (1/21/05) <br> </font><a href="http://www.tecnick.com/public/code/cp_dpage.php?aiocp_dp=jxhtmledit" target="_blank"><font color="#000099">JXHTMLEDIT</font></a><font color="#000099"> - excellent easy browser-based HTML/XHTML authoring tool based on Java 2 (5/17/05) <br> </font><a href="http://www.tranglos.com/free/keynote.html" target="_blank"><font color="#000099">KeyNote</font></a><font color="#000099"> - multi-featured tabbed notebook (6/30/04) <br> </font><a href="http://www.microsoft.com/typography/free.htm" target="_blank"><font color="#000099">Microsoft Typography</font></a><font color="#000099"> - free font tools &amp; utilities site (8/12/04) <br> </font><a href="http://www.moochers.com/index.html?w95avchat.html" target="_blank"><font color="#000099">Moochers Freeware</font></a><font color="#000099"> - your home for free software on the 'net (8/11/04) <br> </font><a href="http://www.netleech.com/" target="_blank"><font color="#000099">NetLeech</font></a><font color="#000099"> - excellent versatile download manager <br> </font><a href="http://www.notetab.com/download.php" target="_blank"><font color="#000099">NoteTab Light</font></a><font color="#000099"> - Notepad replacement, MS Word alternative, handy ASCII MDI, HTML editor (2/19/04) <br> </font><a href="http://www.onlineconversion.com/" target="_blank"><font color="#000099">OnlineConversion.com</font></a><font color="#000099"> - convert just about anything to anything else (7/18/04) <br> </font><a href="http://www.openoffice.org/product/" target="_blank"><font color="#000099">OpenOffice.org 1.1</font></a><font color="#000099"> - free open-source alternative to Microsoft Office (Excel, Word...) <br> </font><a href="http://home.earthlink.net/~gamba2/pc2mac.html#wsw" target="_blank"><font color="#000099">PC---&gt;MAC</font></a><font color="#000099"> - link page to MAC to/from PC utilities (3/11/05) <br> </font><a href="http://www.povray.org/" target="_blank"><font color="#000099">POV-Ray</font></a><font color="#000099"> - free tool for creating stunning 3-D graphics (8/9/04) <br> </font><a href="http://stevemiller.net/puretext/" target="_blank"><font color="#000099">PureText</font></a><font color="#000099"> - copy text from Web pages, remove formatting... (6/30/04) <br> </font><a href="http://www.python.org/download/" target="_blank"><font color="#000099">Python</font></a><font color="#000099"> - powerful object-oriented programming language, like Perl, Tcl, Scheme, or Java (5/20/05) <br> </font><a href="http://www.roboform.com/" target="_blank"><font color="#000099">RoboForm</font></a><font color="#000099"> - free password manager, form filler, password generator... (6/30/04) <br> </font><a href="http://www.statcounter.com/" target="_blank"><font color="#000099">StatCounter</font></a><font color="#000099"> - invisible web tracker, hit counter, real-time web stats... (5/6/05) <br> </font><a href="http://www.analogx.com/contents/download/network/sswww.htm" target="_blank"><font color="#000099">SimpleServer:WWW</font></a><font color="#000099"> - set up your own webserver... (2/10/04) <br> </font><a href="http://www.smartftp.com/" target="_blank"><font color="#000099">SmartFTP</font></a><font color="#000099"> - like CORE FTP LE, free feature rich file-web transfer app (5/17/05) <br> </font><a href="http://www.statcounter.com/" target="_blank"><font color="#000099">StatCounter</font></a><font color="#000099"> - invisible web tracker, hit counter, real-time web stats... (5/6/05) <br> </font><a href="http://www.systemtools.com/free_frame.htm" target="_blank"><font color="#000099">SystemTools.com</font></a><font color="#000099"> - all free utilities (8/12/04) <br> </font><a href="http://www.techsupportalert.com/best_free_utilities.htm" target="_blank"><font color="#000099">Tech Support Alert</font></a><font color="#000099"> - The 46 Best-ever Freeware Utilities (8/12/04) <br> </font><a href="http://www.sudhian.com/showdocs.cfm?aid=570" target="_blank"><font color="#000099">The FreewarePC</font></a><font color="#000099"> - run your PC all on FREEWARE (except OS) (8/11/04) <br> </font><a href="http://www.gimp.org/downloads/" target="_blank"><font color="#000099">the GIMP</font></a><font color="#000099"> - GNU Image Manipulation Program: photo, image composition &amp; image authoring (6/30/04) <br> </font><a href="http://www.clickherefree.com/" target="_blank"><font color="#000099">The Official Free Web Hosting Guide</font></a><font color="#000099"> - the best free web hosting sites on the web (5/6/05) <br> </font><a href="http://www.thefreesite.com/" target="_blank"><font color="#000099">TheFreeSite.com</font></a><font color="#000099"> - home of the Web's best Freebies (8/11/04) <br> </font><a href="http://www.tripod.lycos.com/compare/compare.html" target="_blank"><font color="#000099">Tripod</font></a><font color="#000099"> - one the best free web hosting sites on the web (5/7/05) <br> </font><a href="http://www.tugzip.com/" target="_blank"><font color="#000099">TUGZip</font></a><font color="#000099"> - provides support for a wide range of compressed, encoded and disc-image files (9/7/04) <br> </font><a href="http://www.tenlinks.com/CAD/PRODUCTS/viewers.htm" target="_blank"><font color="#000099">Ultimate CAD Directory</font></a><font color="#000099"> - free CAD viewers, reviews &amp; great site for CAD (9/23/04) <br> </font><a href="http://rawfish7.tripod.com/" target="_blank"><font color="#000099">web-based news aggregator</font></a><font color="#000099"> - create your own custom newspage for your website (5/20/05) <br> </font><a href="http://www.webwizguide.com/" target="_blank"><font color="#000099">Web Wiz Guide</font></a><font color="#000099"> - site for web design &amp; development <br> </font><a href="http://mwganson.freeyellow.com/winkeysim/" target="_blank"><font color="#000099">WinKeySim</font></a><font color="#000099"> - create Macros, automate tasks... (5/21/05) <br> </font><a href="http://winscp.net/eng/index.php" target="_blank"><font color="#000099">WinSCP</font></a><font color="#000099"> - open source freeware SFTP client for Windows using SSH (5/20/05) <br> </font><a href="http://www.xe.com/ucc/" target="_blank"><font color="#000099">xe.com</font></a><font color="#000099"> - The Universal Currency Converter (7/10/04) <br> </font><a href="http://zipcentral.iscool.net/" target="_blank"><font color="#000099">Zip Central</font></a><font color="#000099"> - free &amp; easy smart zip file compression manager (6/30/04) <br>  <br> </font><a href="http://www.aplawrence.com/" target="_blank"><font color="#000099">A.P. Lawrence</font></a><font color="#000099"> - Unix, Linux &amp; Mac OS X Help site (1/31/04) <br> </font><a href="http://www.fedora.us/" target="_blank"><font color="#000099">Fedora Linux</font></a><font color="#000099"> - free open-source alternative operating system <br> </font><a href="http://www.freebsd.org/" target="_blank"><font color="#000099">FreeBSD</font></a><font color="#000099"> - advanced OS for Pentium, Athlon &amp; other compatible architectures (5/21/2005) <br> </font><a href="http://www.freesbie.org/" target="_blank"><font color="#000099">FreeSBIE</font></a><font color="#000099"> - FreeBSD-based operating system that works directly from a CD (5/21/05) <br> </font><a href="http://freshmeat.net/" target="_blank"><font color="#000099">FRESHMEAT</font></a><font color="#000099"> - vast Linux free resource site (7/1/04) <br> </font><a href="http://downloads-zdnet.com.com/3000-6677-10180505.html" target="_blank"><font color="#000099">IntelliCAD 2001</font></a><font color="#000099"> - 3D CAD (might not be free anymore) <br> </font><a href="http://java.com/en/index.jsp" target="_blank"><font color="#000099">Java</font></a><font color="#000099"> - download from Sun Microsystems <br> </font><a href="http://www.knoppix.net/about.php" target="_blank"><font color="#000099">Knoppix</font></a><font color="#000099"> - a bootable CD with a collection of GNU/Linux software (5/21/05) <br> </font><a href="http://www.linuxhardware.org/" target="_blank"><font color="#000099">LinuxHardware.org</font></a><font color="#000099"> - Linux hardware/software resource site (1/31/04) <br> </font><a href="http://livecd.berlios.de/" target="_blank"><font color="#000099">LiveCD</font></a><font color="#000099"> - create your own LiveCD from a currently installed Linux distribution (5/21/05) <br> </font><a href="http://slax.linux-live.org/" target="_blank"><font color="#000099">SLAX</font></a><font color="#000099"> - small bootable CD containing the Linux operating system (5/21/05) <br> ---------------------------------------------------------------------------------------- <br> <b>Useful links for other great freeware download sites</b> <br> </font><a href="http://www.download.com/" target="_blank"><font color="#000099">DOWNLOAD.COM</font></a><font color="#000099"> - useful vast free download resource site (7/1/04) <br> </font><a href="http://www.driverfiles.net/" target="_blank"><font color="#000099">DriverFiles.net</font></a><font color="#000099"> - excellent free “search for the device driver you need” site (6/30/04) <br> </font><a href="http://www.freebyte.com/freeware/" target="_blank"><font color="#000099">FreeByte</font></a><font color="#000099"> - freeware programs created by Freebyte (7/1/04) <br> </font><a href="http://www.majorgeeks.com/" target="_blank"><font color="#000099">MajorGeeks.com</font></a><font color="#000099"> - super tools &amp; utilities download site (5/21/04) <br> </font><a href="http://www.nonags.com/" target="_blank"><font color="#000099">NONAGS</font></a><font color="#000099"> - the original &amp; best genuine freeware site (7/1/04) <br> </font><a href="http://www.nu2.nu/" target="_blank"><font color="#000099">Nu2 Productions Website</font></a><font color="#000099"> - free Utilities, BootCD &amp; Disk, Multimedia apps... (7/19/04) <br> </font><a href="http://www.onlythebestfreeware.com/" target="_blank"><font color="#000099">OnlyTheBestFreeware.com</font></a><font color="#000099"> - pretty self explanatory (7/1/04) <br> </font><a href="http://www.pcworld.com/downloads/" target="_blank"><font color="#000099">PC World download</font></a><font color="#000099"> - vast PC download resource site (7/1/04) <br> </font><a href="http://www.pricelessware.org/2004/about2004PL.htm" target="_blank"><font color="#000099">Pricelessware</font></a><font color="#000099"> - the best of the best in Windows freeware (2/18/04) <br> </font><a href="http://www.tucows.com/" target="_blank"><font color="#000099">Tucows Downloads</font></a><font color="#000099"> - vast download site for Windows, Mac, Linux... (7/1/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Audio/Video</b> <br> </font><a href="http://www.techlogic.ca/r4/product.mv?5+1" target="_blank"><font color="#000099">Absolute MP3 Recorder</font></a><font color="#000099"> - record PC sound directly to MP3 file <br> </font><a href="http://www.analogx.com/contents/download/audio.htm" target="_blank"><font color="#000099">AnalogX</font></a><font color="#000099"> - 30 different DirectX utilities &amp; plug-ins for audio files (7/1/04) <br> </font><a href="http://michael.tippach.bei.t-online.de/asio4all/" target="_blank"><font color="#000099">ASIO4ALL</font></a><font color="#000099"> - Universal ASIO Driver For WDM Audio (6/13/04) <br> </font><a href="http://www.hf.com.ru/content/view/2168/" target="_blank"><font color="#000099">auCDtect</font></a><font color="#000099"> - audio CD authenticity detector (4/22/05) <br> </font><a href="http://www.true-audio.com/" target="_blank"><font color="#000099">Tau Analyzer</font></a><font color="#000099"> - audio CD authenticity detector - updated version of Aucdtect (4/22/05) <br> </font><a href="http://audacity.sourceforge.net/" target="_blank"><font color="#000099">Audacity</font></a><font color="#000099"> - wav sound file editor, audio recorder... (1/6/04) <br> </font><a href="http://avicodec.duby.info/" target="_blank"><font color="#000099">AVIcodec</font></a><font color="#000099"> - multiple info on movies, particularly video &amp; audio codecs (11/12/04) <br> </font><a href="http://www.videohelp.com/tools?tool=AVIcodec" target="_blank"><font color="#000099">AVIcodec</font></a><font color="#000099"> - download &amp; help @ VideoHelp.com (11/12/04) <br> </font><a href="http://www.filesland.com/companies/InspiredCode/Music-Tools.html" target="_blank"><font color="#000099">BumpUp.exe</font></a><font color="#000099"> - small useful filtering/edit tool for audio recordings (5/21/04) <br> </font><a href="http://www.cdex.n3.net/" target="_blank"><font color="#000099">Cdex</font></a><font color="#000099"> - CD ripping &amp; converting... <br> </font><a href="http://www.geocities.com/davidayton/CDisplay" target="_blank"><font color="#000099">CDisplay Sequential Image Viewer</font></a><font color="#000099"> - Windows image viewer for JPEG, PNG &amp; GIF formats (8/11/04) <br> </font><a href="http://www.dbpoweramp.com/" target="_blank"><font color="#000099">dBpowerAMP Audio Player</font></a><font color="#000099"> - complete audio player (2/18/04) <br> </font><a href="http://www.dbpoweramp.com/" target="_blank"><font color="#000099">dBpowerAMP Music Converter</font></a><font color="#000099"> - Swiss army knife of audio (2/18/04) <br> </font><a href="http://www.digitalsoundplanet.com/SoftwareHouse/Products/Audio_Master/Freeware/freeware.phtml" target="_blank"><font color="#000099">Digital Sound Planet/Quartz Audio Master</font></a><font color="#000099"> - audio recording software (5/21/04) <br> </font><a href="http://wiki.etree.org/" target="_blank"><font color="#000099">Etree Wiki</font></a><font color="#000099"> - award-winning leader in lossless digital audio distribution (7/1/04) <br> </font><a href="http://www.evillabs.sk/evillyrics/" target="_blank"><font color="#000099">EvilLyrics</font></a><font color="#000099"> - view the lyrics of song that's playing, automatic search (7/1/04) <br> </font><a href="http://www.exactaudiocopy.de/" target="_blank"><font color="#000099">Exact Audio Copy</font></a><font color="#000099"> - new audio grabber for CD-ROM drives <br> </font><a href="http://flac.sourceforge.net/" target="_blank"><font color="#000099">FLAC</font></a><font color="#000099"> - audiophile lossless encoder <br> </font><a href="http://www.foobar2000.org/index.html" target="_blank"><font color="#000099">foobar2000</font></a><font color="#000099"> - excellent free useful “audiophile” audio player.. <br> </font><a href="http://www.r1ch.net/stuff/foobar/" target="_blank"><font color="#000099">foobar2000 plugins</font></a><font color="#000099"> - R1CH's foobar2000 Plugins, Winamp API Emulator (6/13/04) <br> </font><a href="http://www.apple.com/itunes/download/" target="_blank"><font color="#000099">iTunes</font></a><font color="#000099"> - digital jukebox for Mac &amp; Windows (7/1/04) <br> </font><a href="http://www.jetaudio.com/download/" target="_blank"><font color="#000099">jetAudio Basic</font></a><font color="#000099"> - jukebox, burner, recorder, many features (6/11/04) <br> </font><a href="http://www.kreatives.org/kristal/index.php" target="_blank"><font color="#000099">KRISTAL Audio Engine</font></a><font color="#000099"> - audio recording software (5/21/04) <br> </font><a href="http://lame.sourceforge.net/" target="_blank"><font color="#000099">LAME</font></a><font color="#000099"> - open-source LPGL MP3 encoder <br> </font><a href="http://sourceforge.net/projects/guliverkli/" target="_blank"><font color="#000099">Media Player Classic</font></a><font color="#000099"> - non-bloat replacement for Windows Media Player <br> </font><a href="http://www.mediamonkey.com/" target="_blank"><font color="#000099">MediaMonkey</font></a><font color="#000099"> - free versatile music manager <br> </font><a href="http://www.monkeysaudio.com/" target="_blank"><font color="#000099">Monkey's Audio</font></a><font color="#000099"> - lossless compression <br> </font><a href="http://www.chiariglione.org/mpeg/" target="_blank"><font color="#000099">MPEG Home Page</font></a><font color="#000099"> - Official site for MPEG-2, MPEG-4, MP3... lossy compressed formats (7/18/04) <br> </font><a href="http://www.mpeg.org/MPEG/index.html" target="_blank"><font color="#000099">MPEG.ORG</font></a><font color="#000099"> - home page of the Moving Picture Experts Group (MPEG) (7/18/04) <br> </font><a href="http://www.rz.uni-frankfurt.de/~pesch/#mp3dc" target="_blank"><font color="#000099">mp3DirectCut</font></a><font color="#000099"> - a small tool for editing MPEG audio directly <br> </font><a href="http://www.logiccell.com/~mp3trim/" target="_blank"><font color="#000099">MP3Trim</font></a><font color="#000099"> - clean up &amp; improve your MP3 collection (7/1/04) <br> </font><a href="http://www.cdspeed2000.com/go.php3?link=download.html" target="_blank"><font color="#000099">Nero DriveSpeed w/ASPI manager</font></a><font color="#000099"> - control DVD-ROM speed (2/3/2004) <br> </font><a href="http://www.winamp.com/" target="_blank"><font color="#000099">Nullsoft Winamp</font></a><font color="#000099"> - excellent versatile free audio utility (3 popular plugins below) <br> </font><a href="http://www.x-sound.com/b5/005/index.htm" target="_blank"><font color="#000099">ASIO plugin</font></a> <br> <a href="http://www.url.ru/~copah/CDReader.htm" target="_blank"><font color="#000099">CDReader plugin</font></a> <br> <a href="http://www.winamp.com/plugins/details.php?id=138099" target="_blank"><font color="#000099">Monkey's Audio plugin</font></a> <br> <a href="http://www.hydrogenaudio.org/forums/index.php?showtopic=4569" target="_blank"><font color="#000099">Kernel Streaming output plugin for Winamp2</font></a><font color="#000099"> - info &amp; help @ Hydrogen Audio Discussion Forum (11/11/04) <br> </font><a href="http://www.cs.indiana.edu/~cshei/out_ks.dll" target="_blank"><font color="#000099">Kernel Streaming output plugin for Winamp2</font></a><font color="#000099"> - direct download link (11/11/04) <br> </font><a href="http://www.quinnware.com/index.php" target="_blank"><font color="#000099">Quintessential Player</font></a><font color="#000099"> - free full featured audio utility <br> </font><a href="http://sdc.shockwave.com/shockwave/download/download.cgi?" target="_blank"><font color="#000099">Shockwave Player Download Center</font></a><font color="#000099"> - the standard for viewing rich media Web content (7/1/04) <br> </font><a href="http://www.softsound.com/Shorten.html" target="_blank"><font color="#000099">Shorten</font></a><font color="#000099"> - (SHN) lossless audio encoder (3/21/04) <br> </font><a href="http://www.videolan.org/vlc/" target="_blank"><font color="#000099">VLC media player</font></a><font color="#000099"> - the cross-platform media player and streaming server (6/24/04) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?threadid=227837&amp;perpage=20&amp;pagenumber=1" target="_blank"><font color="#000099">Windows Media 9 HDTV Encoding Guide</font></a><font color="#000099"> - Windows Media 9 HDTV Encoding Guide @ AVS Forum <br> </font><a href="http://www.microsoft.com/windows/windowsmedia/9series/encoder/default.aspx" target="_blank"><font color="#000099">Windows Media Encoder 9</font></a><font color="#000099"> - take advantage of Windows Media 9 Series <br> </font><a href="http://www.microsoft.com/windows/windowsmedia/download/default.asp" target="_blank"><font color="#000099">Windows Media Player</font></a><font color="#000099"> - excellent popular free audio/HD video player <br> </font><a href="http://www.sliq.com/default.asp?view=wmsnoop" target="_blank"><font color="#000099">WMSnoop</font></a><font color="#000099"> - free WMV frame-by-frame anaylsis tool (4/27/05) <br> </font><a href="http://www.inmatrix.com/files/zoomplayer_download.shtml" target="_blank"><font color="#000099">Zoom Player</font></a><font color="#000099"> - simple audio/video player, but gives Power Users all the tools &amp; interfaces <br> </font><a href="http://zynaddsubfx.sourceforge.net/" target="_blank"><font color="#000099">ZynAddSubFX</font></a><font color="#000099"> - opensource software synthesizer capable of making a countless number of instruments (8/20/04) <br> ---------------------------------------------------------------------------------------- <br> <b>HTPC setup...</b> <br> </font><a href="http://www.3dchipset.com/bios/ati/flash/index.php" target="_blank"><font color="#000099">3DChipset</font></a><font color="#000099"> - ATi Radeon BIOS Flash Programs &amp; Utilities <br> </font><a href="http://ac3filter.sourceforge.net/" target="_blank"><font color="#000099">AC3Filter</font></a><font color="#000099"> - DirectShow filter for AC3 decoding/real-time encoding (6/25/04) <br> </font><a href="http://ac3filter.sourceforge.net/download/ac3filter_1_01a_rc5.exe" target="_blank"><font color="#000099">AC3Filter</font></a><font color="#000099"> - new improved release candidate (6/25/04) <br> </font><a href="http://www.free-codecs.com/download/AC3_Filter.htm" target="_blank"><font color="#000099">AC3Filter</font></a><font color="#000099"> - link that will self update w/each new AC3Filter release (7/18/04) <br> </font><a href="http://www.antp.be/software/moviecatalog/" target="_blank"><font color="#000099">Ant Movie Catalog</font></a><font color="#000099"> - manage your collection of CD/DVD movies (1/31/04) <br> </font><a href="http://www.antennaweb.org/aw/Welcome.aspx" target="_blank"><font color="#000099">AntennaWeb.org</font></a><font color="#000099"> - antenna setup &amp; resource site <br> </font><a href="http://www.nct.ch/multimedia/avi_io/" target="_blank"><font color="#000099">AVI_IO</font></a><font color="#000099"> - for supported video cards, capturing w/scheduling solution (6/14/04) <br> </font><a href="http://btwincap.sourceforge.net/" target="_blank"><font color="#000099">AVI_IO</font></a><font color="#000099"> - WDM Video Capture Driver for XP (6/14/04) <br> </font><a href="http://www.avsforum.com/avs-vb/search.php?" target="_blank"><font color="#000099">AVS Forum Search Page</font></a><font color="#000099"> - search forum(s), normal search (3/1/2004) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?threadid=31225" target="_blank"><font color="#000099">AVS Home Theater Computer</font></a><font color="#000099"> - HTPC meta FAQ thread (6/20/04) <br> </font><a href="http://www.avsforum.com/avs-vb/forumdisplay.php?forumid=26" target="_blank"><font color="#000099">AVS Home Theater Computer Forum</font></a><font color="#000099"> - thats THIS forum! <br> </font><a href="http://bitconjurer.org/BitTorrent/" target="_blank"><font color="#000099">BitTorrent</font></a><font color="#000099"> - free cheap file distribution, official site (2/19/04) <br> </font><a href="http://www.bobyte.com/" target="_blank"><font color="#000099">Bobyte Software</font></a><font color="#000099"> - freeware AVI splitter &amp; combining utilities (3/11/05) <br> </font><a href="http://www.bootxp.net/" target="_blank"><font color="#000099">BootXP</font></a><font color="#000099"> - Windows boot screens <br> </font><a href="http://www.xmission.com/~smesser/" target="_blank"><font color="#000099">Chameleon</font></a><font color="#000099"> - HTPC front-end framework with a very customizable interface (7/7/04) <br> </font><a href="http://www.checkhd.com/zipentry.aspx?ReturnUrl=%2fDefault.aspx" target="_blank"><font color="#000099">CheckHD</font></a><font color="#000099"> - CheckHD tells you all about high definition (HD) at your house (3/1/05) <br> </font><a href="http://www.ctpvr.com/" target="_blank"><font color="#000099">CTpvr &amp; CTtv</font></a><font color="#000099"> - free PVR for Hauppauge PVR 250/350 TV tuner cards (7/7/04) <br> </font><a href="http://www.laptopshowcase.co.uk/downloads.php?id=1" target="_blank"><font color="#000099">Dead Pixel Buddy</font></a><font color="#000099"> - program for testing LCD screens for dead pixels (6/7/05) <br> </font><a href="http://www.cse.msu.edu/~stan/htpcinterface.html" target="_blank"><font color="#000099">Digital Theater Interface</font></a><font color="#000099"> - HTPC user interface (2/8/04) <br> </font><a href="http://www.pcmx.net/dtvcon/" target="_blank"><font color="#000099">DirecTV</font></a><font color="#000099"> - Control your DirecTV® satellite receiver with your computer <br> </font><a href="http://www.dscaler.org/" target="_blank"><font color="#000099">Dscaler</font></a><font color="#000099"> - very useful, versatile free video scaler <br> </font><a href="http://www.dvarchive.org/" target="_blank"><font color="#000099">DVArchive</font></a><font color="#000099"> - Virtual Replay TV for your PC <br> </font><a href="http://www.intervocative.com/Downloads.aspx" target="_blank"><font color="#000099">DVD Profiler</font></a><font color="#000099"> - catalog DVD collection <br> </font><a href="http://kgbird.com/DVHSTool/" target="_blank"><font color="#000099">DVHSTool</font></a><font color="#000099"> - read/write HDTV transport Streams to/from a D-VHS VCR <br> </font><a href="http://fcchandler.home.comcast.net/" target="_blank"><font color="#000099">FCCHandler VirtualDub-MPEG2</font></a><font color="#000099"> - handles MPEG2 content <br> </font><a href="http://sourceforge.net/projects/ffdshow" target="_blank"><font color="#000099">ffdshow</font></a><font color="#000099"> - DirectShow decoding filter for decompressing DIVX &amp; XVID movies <br> </font><a href="http://www.free-codecs.com/download/FFDShow.htm" target="_blank"><font color="#000099">ffdshow</font></a><font color="#000099"> - Free-Codecs.com alternate download site (6/23/04) <br> </font><a href="http://www.softpedia.com/public/cat/11/2/7/11-2-7-13.shtml" target="_blank"><font color="#000099">ffdshow</font></a><font color="#000099"> - softpedia.com alternate download site (6/23/04) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?s=&amp;threadid=246752&amp;highlight=ffdshow+faq" target="_blank"><font color="#000099">Ffdshow FAQ</font></a><font color="#000099"> - AVS Forum ffdshow FAQ thread <br> </font><a href="http://freevo.sourceforge.net/index.html" target="_blank"><font color="#000099">Freevo</font></a><font color="#000099"> - home theater PC platform based on Linux <br> </font><a href="http://www.gbpvr.com/" target="_blank"><font color="#000099">GB-PVR</font></a><font color="#000099"> - fully featured Personal Video Recorder (5/3/2004) <br> </font><a href="http://www.gottvpvr.com/" target="_blank"><font color="#000099">GotTV PVR</font></a><font color="#000099"> - all in one PVR for TV, movies, music, photos... (7/1/04) <br> </font><a href="http://www.headbands.com/gspot/" target="_blank"><font color="#000099">GSpot</font></a><font color="#000099"> - audio/video codec information appliance (1/26/05) <br> </font><a href="http://www.intel.com/support/chipsets/iaa/" target="_blank"><font color="#000099">HDD - Intel Application Accelerator</font></a><font color="#000099"> - support for hard drives &gt;137 Gigabytes, &lt;= Intel 860 (5/23/04) <br> </font><a href="http://www.maxtor.com/en/support/downloads/big_drive_enabler.htm" target="_blank"><font color="#000099">HDD - Maxtor Big Drive Enabler</font></a><font color="#000099"> - support for hard drives &gt;137 Gigabytes, &gt; Intel 860 (5/23/04) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?threadid=207262&amp;perpage=20&amp;pagenumber=1" target="_blank"><font color="#000099">HDTV Card Buyer's Guide</font></a><font color="#000099"> - AVS Forum thread (V2.5 -updated on 4/11/04) (6/19/04) <br> </font><a href="http://www.byremote.com.au/HIP/Default.htm" target="_blank"><font color="#000099">HIP from ByRemote</font></a><font color="#000099"> - Human Interface Programmer - simple &amp; versatile minimal screen keyboard remote (9/29/04) <br> </font><a href="http://htpcnews.com/main.php" target="_blank"><font color="#000099">HTPCnews.com</font></a><font color="#000099"> - HTPC news, reviews, gaming, guides... (6/8/04) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?postid=3722699#post3722699" target="_blank"><font color="#000099">HDTVtoMPEG2</font></a><font color="#000099"> - AVS thread on HDTV to MPEG2 file conversion (10/5/04) <br> </font><a href="http://www.eecs.umich.edu/~balazer/HDTVtoMPEG2/" target="_blank"><font color="#000099">HDTVtoMPEG2 - download</font></a><font color="#000099"> - HDTV to MPEG2 file conversion application (10/5/04) <br> </font><a href="http://www.midwinter.com/~bcooley/" target="_blank"><font color="#000099">HDTVtoMPEG2 description-download</font></a><font color="#000099"> - (5/21/05) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?threadid=403695&amp;perpage=20&amp;pagenumber=1" target="_blank"><font color="#000099">How to record via 1394/Firewire to WindowsXP</font></a><font color="#000099"> - AVS Forum thread - 2 download links below (10/5/04) <br> </font><a href="http://www.yamabe.org/soft/CapDVHS0306e.zip" target="_blank"><font color="#000099">CapDVHS zip file</font></a><font color="#000099"> - capture software for 1394/Firewire to Windows XP download (10/5/04) <br> </font><a href="http://www.cornbread.org/HT/core_driver.zip" target="_blank"><font color="#000099">HT core driver zip file</font></a><font color="#000099"> - device driver for 1394/Firewire to Windows XP download (10/5/04) <br> </font><a href="http://www.iulab.com/iuvcr/index.shtml" target="_blank"><font color="#000099">iuVCR</font></a><font color="#000099"> - universal video recording program (2/8/04) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?s=&amp;threadid=206854" target="_blank"><font color="#000099">Karnis' Custom Resolution Guide for PowerStrip</font></a><font color="#000099"> - AVS Forum thread for 1080i HDTV-HTPC-POWERSTRIP-RADEON <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?s=&amp;threadid=353147" target="_blank"><font color="#000099">LCD Master</font></a><font color="#000099"> - LCD/VFD screen manager (pay version Girder required) (2/10/04) <br> </font><a href="http://www.mediaengine.org/" target="_blank"><font color="#000099">Media Engine</font></a><font color="#000099"> - HTPC front end - audio/video interface (7/7/04) <br> </font><a href="http://mediaportal.sourceforge.net/" target="_blank"><font color="#000099">MediaPortal</font></a><font color="#000099"> - PVR &amp; many other useful features (5/16/04) <br> </font><a href="http://uimimic.sourceforge.net/" target="_blank"><font color="#000099">Mimic</font></a><font color="#000099"> - HTPC front end - build complex, flexible user interfaces (7/7/04) <br> </font><a href="http://www.afterdawn.com/software/video_software/video_players/elecard_mpeg2_player.cfm" target="_blank"><font color="#000099">Moonlight-Elecard MPEG2 Player</font></a><font color="#000099"> - excellent tool for viewing, e.g. SVCD streams (6/24/04) <br> </font><a href="http://www.maksil.com/" target="_blank"><font color="#000099">MsDVR 2000</font></a><font color="#000099"> - digital VCR for personal computers (5/3/2004) <br> </font><a href="http://imon.soundgraph.com/contents/e_204.html" target="_blank"><font color="#000099">Multi-Median</font></a><font color="#000099"> - HTPC front end - new standard for Home Theater PC (7/7/04) <br> </font><a href="http://www.binnerup.dk/mce/mydvdcollection/" target="_blank"><font color="#000099">My Movies</font></a><font color="#000099"> - remote operated DVD index, free add-on app for Media Center Edition users (2/1/05) <br> </font><a href="http://mysettopbox.tv/" target="_blank"><font color="#000099">My Settop Box</font></a><font color="#000099"> - assemble your very own settop box using Linux (7/7/04) <br> </font><a href="http://myhtpc.net/" target="_blank"><font color="#000099">MyHTPC</font></a><font color="#000099"> - excellent free front end software <br> </font><a href="http://myhtpc.net/plugins/index.php?showthis=2482" target="_blank"><font color="#000099">Got TV (at myHTPC)</font></a><font color="#000099"> - can be used as integrated TV solution for myHTPC system <br> </font><a href="http://www.mythtv.org/" target="_blank"><font color="#000099">MythTV</font></a><font color="#000099"> - PVR project, one of best HTPC front ends out there <br> </font><a href="http://www.netremote.org/" target="_blank"><font color="#000099">NetRemote</font></a><font color="#000099"> - remote control for HTPC <br> </font><a href="http://nimo.titanesk.com/modules/news/" target="_blank"><font color="#000099">Nimo's Codec Pack website</font></a><font color="#000099"> - A/V codecs &amp; DirectShow filters (2/8/04) <br> </font><a href="http://www.construnet.hu/nokia/Monitors/TEST/monitor_test.html" target="_blank"><font color="#000099">Nokia Monitor Test</font></a><font color="#000099"> - the best way - by far - to find stuck or dead LCD pixels (6/7/05) <br> </font><a href="http://sourceforge.net/projects/openmc/" target="_blank"><font color="#000099">OpenMC</font></a><font color="#000099"> - Open Source Multimedia Center <br> </font><a href="http://www.openhtpc.org/about.html" target="_blank"><font color="#000099">OpenHTPC</font></a><font color="#000099"> - Home Theater PC (HTPC) front-end software (5/16/04) <br> </font><a href="http://www.entechtaiwan.net/ps.htm" target="_blank"><font color="#000099">PowerStrip</font></a><font color="#000099"> - advanced, multi-monitor, programmable hardware support for graphics cards <br> </font><a href="http://www.rage3d.com/" target="_blank"><font color="#000099">Rage3D</font></a><font color="#000099"> - ATI utilities site (6/18/04) <br> </font><a href="http://www.rage3d.com/index.php?node=r3dtweak" target="_blank"><font color="#000099">Rage3D Tweak</font></a><font color="#000099"> - custom resolutions for ATI cards (6/18/04) <br> </font><a href="http://ogo.nerim.net/reclockfilter/" target="_blank"><font color="#000099">ReClock DirectShow Filter</font></a><font color="#000099"> - get rid of jerky playback of AVI and MPEG material (6/24/04) <br> </font><a href="http://www.serverelements.com/" target="_blank"><font color="#000099">Server Elements NASLite</font></a><font color="#000099"> - a simple dedicated file server using old hardware (12/5/04) <br> </font><a href="http://contribs.org/modules/phpwiki/index.php/Downloads" target="_blank"><font color="#000099">SME Server</font></a><font color="#000099"> - Linux file server: versatile, simple, secure, cross platform (9/25/04) <br> </font><a href="http://sourceforge.net/projects/cx777es-rs232/" target="_blank"><font color="#000099">Sony DVP-CX777ES RS232 controller</font></a><font color="#000099"> - Windows program for Sony DVP-CX777ES 400-disc DVD player <br> </font><a href="http://www.remotecentral.com/cgi-bin/files/rcfiles.cgi?area=pronto&amp;db=other&amp;br=utilities&amp;dv=supernudelist&amp;fc=" target="_blank"><font color="#000099">SuperNudelist</font></a><font color="#000099"> - CD/DVD megachanger for Pronto remote (2/8/04) <br> </font><a href="http://www.hometheaterhifi.com/volume_11_1/feature-prologic-iix-3-2004.html" target="_blank"><font color="#000099">Surround Sound formats</font></a><font color="#000099"> - surround sound formats explained with diagrams (7/18/04) <br> </font><a href="http://www.mooneyass.com/testpatterns/" target="_blank"><font color="#000099">Test Patterns</font></a><font color="#000099"> - test pattern apps for setting up a CRT projector with/PC (6/24/04) <br> </font><a href="http://www.tightvnc.com/" target="_blank"><font color="#000099">TightVNC</font></a><font color="#000099"> - HTPC network remote control <br> </font><a href="http://www.titantv.com/TTV/MyTitanTv/Login/index.aspx?ReturnUrl=%2fTTV%2fCommandCenter%2fCommandCenter.aspx" target="_blank"><font color="#000099">Titan TV</font></a><font color="#000099"> - the most definitive source for what is on TV <br> </font><a href="http://btwincap.sourceforge.net/" target="_blank"><font color="#000099">TV tuner card drivers</font></a><font color="#000099"> - WDM Video Capture Driver for XP <br> </font><a href="http://www.tv-cards.com/" target="_blank"><font color="#000099">TV-Cards.com</font></a><font color="#000099"> - information on TV tuner cards &amp; PVR software (6/12/04) <br> </font><a href="http://ultravnc.sourceforge.net/" target="_blank"><font color="#000099">Ultr@VNC</font></a><font color="#000099"> - HTPC network remote control <br> </font><a href="http://www.videolan.org/" target="_blank"><font color="#000099">VideoLan</font></a><font color="#000099"> - video streaming solution for every OS (2/6/04) <br> </font><a href="http://www.vidomi.com/" target="_blank"><font color="#000099">Vidomi</font></a><font color="#000099"> - plays TV quality XviD and DivX™ MPEG4 video (2/8/04) <br> </font><a href="http://virtualvcr.sourceforge.net/" target="_blank"><font color="#000099">Virtual VCR</font></a><font color="#000099"> - DirectShow video capture application <br> </font><a href="http://www.virtualdub.org/" target="_blank"><font color="#000099">VirtualDub</font></a><font color="#000099"> - video capture/processing utility (2/8/04) <br> </font><a href="http://www.softpedia.com/public/cat/11/2/7/11-2-7-8.shtml" target="_blank"><font color="#000099">VobSub</font></a><font color="#000099"> - can load subtitles (vobsub, ssa, srt, sub, ...) into movies being played (6/25/04) <br> </font><a href="http://sourceforge.net/projects/guliverkli/" target="_blank"><font color="#000099">VobSub</font></a><font color="#000099"> - Home of VobSub, Media Player Classic (MPC) &amp; other utilities (7/19/04) <br> </font><a href="http://wmvhd.com/" target="_blank"><font color="#000099">Windows Media High Definition Video</font></a><font color="#000099"> - watch stunning HD movies on your PC (7/1/04) <br> </font><a href="http://www.xlobby.com/" target="_blank"><font color="#000099">Xlobby</font></a><font color="#000099"> - excellent free front end software <br> </font><a href="http://membled.com/work/apps/xmltv/" target="_blank"><font color="#000099">XMLTV</font></a><font color="#000099"> - utilities to manage TV viewing (2/8/04) <br> </font><a href="http://www.x-o-n-e.com/" target="_blank"><font color="#000099">XONE MEDIA CENTER</font></a><font color="#000099"> - HTPC interface front end software (7/7/04) <br> </font><a href="http://www.keohi.com/keohihdtv/htpc/yxy/yxy.html" target="_blank"><font color="#000099">YXY</font></a><font color="#000099"> - aspect ratio for DVD players, like Zoom Player (2/8/2004) <br> ---------------------------------------------------------------------------------------- <br> <b>Links for backup &amp; copying CDs, DVDs... </b> <br> </font><a href="http://www.afterdawn.com/software/video_software/video_players/" target="_blank"><font color="#000099">AfterDawn.com</font></a><font color="#000099"> - video players &amp; other free downloads... (6/24/04) <br> </font><a href="http://www.audiograbber.com-us.net/" target="_blank"><font color="#000099">Audiograbber</font></a><font color="#000099"> - CD-Ripper for Windows (7/1/04) <br> </font><a href="http://www.free-codecs.com/download/AutoGK.htm" target="_blank"><font color="#000099">AutoGK (Auto Gordian Knot)</font></a><font color="#000099"> - create excellent quality backups of your DVDs (6/23/04) <br> </font><a href="http://www.burn4free.com/" target="_blank"><font color="#000099">burn4free</font></a><font color="#000099"> - new free burning solution &amp; DVD copy (7/1/04) <br> </font><a href="http://www.burnatonce.com/index.htm?news" target="_blank"><font color="#000099">burnatonce</font></a><font color="#000099"> - master data and audio discs, read/write image files and copy on the fly (2/18/04) <br> </font><a href="http://www.burnworld.com/" target="_blank"><font color="#000099">BurnWorld.com</font></a><font color="#000099"> - everything you need for CD/DVD burning info (1/31/04) <br> </font><a href="http://www.cdburnerxp.se/" target="_blank"><font color="#000099">CDBurnerXP Pro</font></a><font color="#000099"> - burn CD-R, CD-RW DVD+R/RW DVD-R/RW discs, a lot like Nero but free (9/25/04) <br> </font><a href="http://www.daemon-tools.cc/dtcc/portal/portal.php?sid=247e1d53119412c389ad94989cb269a5" target="_blank"><font color="#000099">DAEMON Tools</font></a><font color="#000099"> - useful for mounting DVD images... w/DVD Decrypter (1/31/04) <br> </font><a href="http://www.doom9.org/" target="_blank"><font color="#000099">Doom9</font></a><font color="#000099"> - The definitive DVD backup resource <br> </font><a href="http://regionhacks.datatestlab.com/" target="_blank"><font color="#000099">DVD Region Patches</font></a><font color="#000099"> - codefree region patches on the web for DVD-ROM players <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?threadid=345188" target="_blank"><font color="#000099">DVD ripping 050</font></a><font color="#000099"> - AVS Forum thread, DVD copying &amp; burning info <br> </font><a href="http://www.afterdawn.com/software/video_software/dvd_rippers/dvd43.cfm" target="_blank"><font color="#000099">DVD43</font></a><font color="#000099"> - very good app for use with ripper-free software <br> </font><a href="http://www.dvdshrink.org/" target="_blank"><font color="#000099">DVDShrink</font></a><font color="#000099"> - excellent free software to backup DVD discs <br> </font><a href="http://www.free-codecs.com/" target="_blank"><font color="#000099">Free-Codecs.com</font></a><font color="#000099"> - download latest video &amp; audio codecs free (6/23/04) <br> </font><a href="http://mpucoder.kewlhair.com/derrow/" target="_blank"><font color="#000099">IfoEdit</font></a><font color="#000099"> - solution to DVD Copy 1:1 <br> </font><a href="http://www.pcworld.com/downloads/collection/0,collid,1311,pg,1,00.asp" target="_blank"><font color="#000099">PCWorld.com - Free Tools</font></a><font color="#000099"> - Free Tools: DVD-Copying, Spyware-Free File Sharing (7/1/04) <br> </font><a href="http://www.remoteselector.com/index.html" target="_blank"><font color="#000099">Remote Selector</font></a><font color="#000099"> - great free program removes Macrovision &amp; region lock on software DVD players (11/1/04) <br> </font><a href="http://archive2.avsforum.com/avs-vb/showthread.php?s=&amp;threadid=152400&amp;highlight=ripping+101" target="_blank"><font color="#000099">Ripping 101</font></a><font color="#000099"> - AVS Forum thread, DVD copying &amp; burning info (10/9/04) <br> </font><a href="http://www.avsforum.com/avs-vb/showthread.php?s=&amp;threadid=320902" target="_blank"><font color="#000099">Ripping 102</font></a><font color="#000099"> - AVS Forum thread, DVD copying &amp; burning info (6/2/04) <br> </font><a href="http://www.smart-projects.net/isobuster/" target="_blank"><font color="#000099">Smart Projects IsoBuster</font></a><font color="#000099"> - the Ultimate CD &amp; DVD data recovery software (3/11/05) <br> </font><a href="http://www.afterdawn.com/software/video_software/dvd_rippers/smartripper.cfm" target="_blank"><font color="#000099">SmartRipper</font></a><font color="#000099"> - DVD VOB file extractor/&quot;DVD ripper&quot; <br> </font><a href="http://www.softpedia.com/" target="_blank"><font color="#000099">softpedia.com</font></a><font color="#000099"> - download audio &amp; video codecs, software, games, drivers + news (6/23/04) <br> </font><a href="http://forum.rpc1.org/portal.php" target="_blank"><font color="#000099">The Firmware Page</font></a><font color="#000099"> - firmware for optical CD/DVD drives (2/20/04) <br> </font><a href="http://www.doom9.org/index.html?/vstrip.htm" target="_blank"><font color="#000099">vStrip</font></a><font color="#000099"> - Descrambling/Ripping tool, hard to learn but guaranteed results (6/7/05) <br> ---------------------------------------------------------------------------------------- <br> <b>Removable storage &amp; media</b> <br> </font><a href="http://www.cdmediaworld.com/hardware/cdrom/cd.shtml" target="_blank"><font color="#000099">CD Media World</font></a><font color="#000099"> - media resource &amp; download site (1/31/04) <br> </font><a href="http://www.cdrlabs.com/" target="_blank"><font color="#000099">CDRLabs.com</font></a><font color="#000099"> - removable media resource site (1/31/04) <br> </font><a href="http://www.dvdrw.com/" target="_blank"><font color="#000099">DVD+RW Alliance</font></a><font color="#000099"> - DVD+RW resource site <br> </font><a href="http://www.dvdplusrw.org/" target="_blank"><font color="#000099">DVDplusRW.org</font></a><font color="#000099"> - largest, independent, online source for DVD+RW (1/31/04) <br> </font><a href="http://www.recipe4dvd.com/" target="_blank"><font color="#000099">Recipe for DVD</font></a><font color="#000099"> - DVD resource site (1/31/04) <br> </font><a href="http://www.videohelp.com/" target="_blank"><font color="#000099">VideoHelp.com</font></a><font color="#000099"> - also known as DVDRHelp.com &amp; VCDHelp.com (6/23/04) <br> ---------------------------------------------------------------------------------------- <br> <b>I/O (Input/Output) info</b> <br> </font><a href="http://www.everythingusb.com/" target="_blank"><font color="#000099">EVERYTHING USB</font></a><font color="#000099"> - USB I/O resource site (1/31/04) <br> </font><a href="http://www.firewire-1394.com/" target="_blank"><font color="#000099">FireWire-1394.com</font></a><font color="#000099"> - FireWire I/O resource site (1/31/04) <br> </font><a href="http://fieldhome.net:9080/scsi_faq/" target="_blank"><font color="#000099">Gary Field's SCSI Info Central</font></a><font color="#000099"> - tons of info on the SCSI interface (1/31/04) <br> </font><a href="http://www.hdmi.org/" target="_blank"><font color="#000099">HDMI.org</font></a><font color="#000099"> - catalyst for the DTV revolution (2/3/2004) <br> </font><a href="http://www.hifi-remote.com/ofa/nuts-volts.shtml" target="_blank"><font color="#000099">IR Remote</font></a><font color="#000099"> - IR remote control article for HTPC (8/25/04) <br> </font><a href="http://www.hifi-remote.com/forums/index.php?sid=1ae69716240b24935a3e49d110eac448" target="_blank"><font color="#000099">IR Remote - JP1 Remotes Forum</font></a><font color="#000099"> - main forum for JP1 remote issues (8/25/04) <br> </font><a href="http://groups.yahoo.com/group/jp1/" target="_blank"><font color="#000099">IR Remote - Yahoo Group JP1 Users</font></a><font color="#000099"> - IR.exe, Keymap Master, RemoteMaster for IR remote (8/25/04) <br> </font><a href="http://www.sixdots.de/?id=miriam&amp;lang=en" target="_blank"><font color="#000099">IR Remote - Miriam</font></a><font color="#000099"> - free software for IR remote control for HTPC (8/25/04) <br> </font><a href="http://winlirc.sourceforge.net/" target="_blank"><font color="#000099">IR Remote - WinLIRC</font></a><font color="#000099"> - free software for IR remote control for HTPC (8/25/04) <br> </font><a href="http://www.lirc.org/" target="_blank"><font color="#000099">IR Remote - LIRC</font></a><font color="#000099"> - free software for IR remote control for HTPC - Linux OS (8/25/04) <br> </font><a href="http://www.pcstats.com/articleview.cfm?articleID=1087" target="_blank"><font color="#000099">PCI Express</font></a><font color="#000099"> - introduction to PCI Express (6/23/04) <br> </font><a href="http://www.pcisig.com/home" target="_blank"><font color="#000099">PCI SIG</font></a><font color="#000099"> - PCI, PCI-X, PCI Express I/O site (1/31/04) <br> </font><a href="http://www.pdaarchives.com/" target="_blank"><font color="#000099">PDA Archives</font></a><font color="#000099"> - resource site for older PDAs (7/1/04) <br> </font><a href="http://www.freewarepalm.com/" target="_blank"><font color="#000099">PDA - FreewarePalm</font></a><font color="#000099"> - PalmOS &amp; Pocket PC Windows Mobile PDA freeware (7/1/04) <br> </font><a href="http://www.freewareppc.com/" target="_blank"><font color="#000099">PDA - FreewarePPC</font></a><font color="#000099"> - PalmOS &amp; Pocket PC Windows Mobile PDA freeware (7/1/04) <br> </font><a href="http://www.handango.com/home.jsp?siteId=1" target="_blank"><font color="#000099">PDA - Handango</font></a><font color="#000099"> - advanced search for many PDAs, sort prices for free downloads (7/1/04) <br> </font><a href="http://www.palmgear.com/" target="_blank"><font color="#000099">PDA - PalmGear.com</font></a><font color="#000099"> - freeware for your versatile PDA (7/1/04) <br> </font><a href="http://pda.tucows.com/" target="_blank"><font color="#000099">PDA - Tucows PDA</font></a><font color="#000099"> - lots of freeware for many different PDAs (7/1/04) <br> </font><a href="http://www.scsi-planet.com/" target="_blank"><font color="#000099">SCSI Planet</font></a><font color="#000099"> - All the SCSI, all the time (1/31/04) <br> </font><a href="http://www.jiwire.com/jiwire-hotspots-offline-wap-avantgo-hotspot-directory.htm" target="_blank"><font color="#000099">Wi-Fi - AvantGo HOTSPOT LOCATOR</font></a><font color="#000099"> - JiWire for use w/Palm OS &amp; Pocket PC devices (6/30/04) <br> </font><a href="http://www.jiwire.com/" target="_blank"><font color="#000099">Wi-Fi - JiWire</font></a><font color="#000099"> - Wi-Fi Hotspot finder, product news, industry reviews (6/30/04) <br> </font><a href="http://www.netstumbler.com/" target="_blank"><font color="#000099">Wi-Fi - NetStumbler.com</font></a><font color="#000099"> - troubleshoot &amp; shore up Wi-Fi security (6/30/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Themes, desktop enhancements, miscellaneous...</b> <br> </font><a href="http://www.apple.com/trailers/" target="_blank"><font color="#000099">Apple - Movie Trailers</font></a><font color="#000099"> - Apple's site on movie trailers using QuickTime video (10/25/04) <br> </font><a href="http://www.arkaos.net/site/en/index.html" target="_blank"><font color="#000099">Arkaos Visualizer</font></a><font color="#000099"> - add visualization to music <br> </font><a href="http://atnotes.fr.st/" target="_blank"><font color="#000099">Atnotes</font></a><font color="#000099"> - drag &amp; drop sticky Post-it like notes on your screen (6/30/04) <br> </font><a href="http://www.analogx.com/contents/download/network/ats.htm" target="_blank"><font color="#000099">Atomic TimeSynch</font></a><font color="#000099"> - synchronize with govt. Atomic clock (2/10/04) <br> </font><a href="http://www.beyondtv.org/pages/index.php" target="_blank"><font color="#000099">BeyONdTV</font></a><font color="#000099"> - showcasing features that the mainstream media ignores (5/3/2004) <br> </font><a href="http://sac-ftp.gratex.sk/utilmisc9.html" target="_blank"><font color="#000099">BZ Hider</font></a><font color="#000099"> - mouse cursor hider for Win32 (2/8/04) <br> </font><a href="http://www.cdcovers.cc/" target="_blank"><font color="#000099">CDCOVERS.CC</font></a><font color="#000099"> - CD cover art, world's largest cover archive <br> </font><a href="http://www.lakefolks.org/cnt/" target="_blank"><font color="#000099">Click-N-Type virtual keyboard</font></a><font color="#000099"> - on-screen virtual keyboard <br> </font><a href="http://www.coverxp.com/main.asp" target="_blank"><font color="#000099">coverxp</font></a><font color="#000099"> - print your CD/DVD covers in seconds... (6/23/2004) <br> </font><a href="http://notesbydave.com/toolbar/doc.htm" target="_blank"><font color="#000099">Dave's Quick Search Taskbar Toolbar Deskbar</font></a><font color="#000099"> - for search hounds with weary mouse-fingers (5/3/2004) <br> </font><a href="http://www.softcom.net/users/mikey719/deskcolor_screenshot.html" target="_blank"><font color="#000099">DeskColor</font></a><font color="#000099"> - customize Icons on the Desktop <br> </font><a href="http://www.superdownloads.co.uk/downloadview-details-829-Desktop_Icon_Hider.html" target="_blank"><font color="#000099">Desktop Icon Hider</font></a><font color="#000099"> - hide your desktop Icons, Start Button (2/8/04) <br> </font><a href="http://p072.ezboard.com/fdvdepotcustomerforumfrm27" target="_blank"><font color="#000099">DVDCOVERART.com Forum</font></a><font color="#000099"> - DVDCOVERART.com currently down, alternative site (6/23/04) <br> </font><a href="http://www.netcult.ch/elmue/ElmueSoft-en.htm" target="_blank"><font color="#000099">ElmuSoft Download Page</font></a><font color="#000099"> - many useful downloads like PTBSync, Atomic Clock Synchronization... (12/8/04) <br> </font><a href="http://www.kolumbus.fi/eero.muhonen/FS/Support.htm" target="_blank"><font color="#000099">EMS-Project</font></a><font color="#000099"> - great free Internet surfing companion (6/26/04) <br> </font><a href="http://espn.go.com/bottomline/" target="_blank"><font color="#000099">ESPN BottomLine</font></a><font color="#000099"> - displays live scores &amp; news on Windows desktop (7/1/04) <br> </font><a href="http://www.feedreader.com/" target="_blank"><font color="#000099">FeedReader</font></a><font color="#000099"> - supports major RSS formats - aggregate and organize online news (6/30/04) <br> </font><a href="http://home.mchsi.com/~ron.crawley/" target="_blank"><font color="#000099">Gotcha Covered</font></a><font color="#000099"> - batch downloading of album &amp; DVD covers (2/8/04) <br> </font><a href="http://www.jsihardware.com/" target="_blank"><font color="#000099">HP photo tools &amp; templates</font></a><font color="#000099"> - personalized photo tool for T-shirts, mugs, calendars... (7/1/04) <br> </font><a href="http://sac-ftp.gratex.sk/utilmisc27.html" target="_blank"><font color="#000099">IconHider</font></a><font color="#000099"> - hides Icons, for Win32 (2/8/04) <br> </font><a href="http://www.jetaudio.com/download/jettoolbar.html" target="_blank"><font color="#000099">Jet Toolbar</font></a><font color="#000099"> - useful desktop toolbar - float or dock &amp; many features (6/30/04) <br> </font><a href="http://webpages.charter.net/krumsick/" target="_blank"><font color="#000099">KeyTweak</font></a><font color="#000099"> - keyboard remapper for Windows 2000 or XP (2/6/04) <br> </font><a href="http://www.bk-soft.com/killwin.htm" target="_blank"><font color="#000099">Kill Win</font></a><font color="#000099"> - shut down, restart, or log off Windows at specified times (6/30/04) <br> </font><a href="http://www.mobydock.com/" target="_blank"><font color="#000099">MobyDock</font></a><font color="#000099"> - an Apple-like dockbar (5/3/2004) <br> </font><a href="http://www.download.com/3000-2341-10247255.html" target="_blank"><font color="#000099">MobyDock</font></a><font color="#000099"> - DOWNLOAD.COM alternative (6/21/2004) <br> </font><a href="http://www.majorgeeks.com/download2908.html" target="_blank"><font color="#000099">MobyDock</font></a><font color="#000099"> - MajorGeeks.com alternative (6/23/2004) <br> </font><a href="http://www.moviewallpaper.net/wallpaper/movie.html" target="_blank"><font color="#000099">Movie Wallpapers</font></a><font color="#000099"> - movie wallpapers sorted by movie title (10/25/04) <br> </font><a href="http://www.movie-list.com/" target="_blank"><font color="#000099">Movie-List</font></a><font color="#000099"> - great site for movie trailers (10/25/04) <br> </font><a href="http://www.belchfire.net/article555.html" target="_blank"><font color="#000099">MultiPatcher</font></a><font color="#000099"> - Patch Windows XP to use Unsigned Themes &amp; Visual Styles (5/3/2004) <br> </font><a href="http://www.greggman.com/nostalgic/" target="_blank"><font color="#000099">Nostalgic Screensaver</font></a><font color="#000099"> - shows your images similar to documentaries and biographies <br> </font><a href="http://www.stardock.com/products/objectdock/" target="_blank"><font color="#000099">ObjectDock</font></a><font color="#000099"> - great interactive application launcher (2/20/04) <br> </font><a href="http://www.osxp.net/index.asp" target="_blank"><font color="#000099">OSXP.net</font></a><font color="#000099"> - some beautiful themes, wallpaper &amp; icons a la mac (6/26/04) <br> </font><a href="http://www.picasa.com/" target="_blank"><font color="#000099">Picasa</font></a><font color="#000099"> - instantly find, edit &amp; share all the pictures on your PC (1/30/05) <br> </font><a href="http://www.ipi.fi/~rainy/Rainlendar.html" target="_blank"><font color="#000099">Rainy's Rainlendar</font></a><font color="#000099"> - customizable calendar displays current month (5/3/2004) <br> </font><a href="http://www.samurize.com/modules/news/" target="_blank"><font color="#000099">SAMURIZE.COM</font></a><font color="#000099"> - desktop customization program (1/31/04) <br> </font><a href="http://www.time.gov/" target="_blank"><font color="#000099">Set Your Computer Clock</font></a><font color="#000099"> - world animation display + official U.S. time (5/17/04) <br> </font><a href="http://www.boulder.nist.gov/timefreq/service/its.htm" target="_blank"><font color="#000099">Set Your Computer Clock</font></a><font color="#000099"> - via the Internet NIST Internet Time Service (5/17/04) <br> </font><a href="http://www.smartbarxp.com/cgi-bin/main.cgi?parent=main&amp;display=news" target="_blank"><font color="#000099">SmartBarXP</font></a><font color="#000099"> - best Windows Start Bar replacement bar none (2/20/04) <br> </font><a href="http://www.stopstart.fsnet.co.uk/" target="_blank"><font color="#000099">Smiley &amp; images site</font></a><font color="#000099"> - The Ultimate Pointless Website (5/31/04) <br> </font><a href="http://pages.prodigy.net/rogerlori1/emoticons/pageindex.htm" target="_blank"><font color="#000099">Smiley site</font></a><font color="#000099"> - Best Smileys Page Index (5/31/04) <br> </font><a href="http://www.clicksmilies.com/" target="_blank"><font color="#000099">Smiley site</font></a><font color="#000099"> - clicksmilies.com (5/31/04) <br> </font><a href="http://www.my-smileys.de/" target="_blank"><font color="#000099">Smiley site</font></a><font color="#000099"> - my Smileys, German (5/31/04) <br> </font><a href="http://www.mysmilies.com/" target="_blank"><font color="#000099">Smiley site</font></a><font color="#000099"> - Mysmileys.com (5/31/04) <br> </font><a href="http://www.open-video.org/" target="_blank"><font color="#000099">The Open Video Project</font></a><font color="#000099"> - interesting archival video - a shared digital video collection, open-source (10/25/04) <br> </font><a href="http://www.themexp.org/" target="_blank"><font color="#000099">ThemeXP</font></a><font color="#000099"> - almost infinite amount of quality windows substitute themes (6/26/04) <br> </font><a href="http://www.wideopenwest.com/~trbarry/" target="_blank"><font color="#000099">Video filters</font></a><font color="#000099"> - some useful tools &amp; effects... (6/13/04) <br> </font><a href="http://www.stardock.com/products/windowblinds/downloads.asp" target="_blank"><font color="#000099">WindowBlinds</font></a><font color="#000099"> - fully control GUI (2/6/04) <br> </font><a href="http://www.worldtimeserver.com/" target="_blank"><font color="#000099">World Time Server.com</font></a><font color="#000099"> - atomic clock synchronization (5/17/04) <br> </font><a href="http://xnews.newsguy.com/" target="_blank"><font color="#000099">Xnews</font></a><font color="#000099"> - excellent Usenet newsreader for Windows (6/30/04) <br> </font><a href="http://www.xpthemes.com/" target="_blank"><font color="#000099">XPthemes</font></a><font color="#000099"> - your headquarters on Windows XP customization (6/26/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Audio information links, measurement &amp; loudspeaker design software</b> <br> </font><a href="http://pcazeles.perso.cegetel.net/acxo.htm" target="_blank"><font color="#000099">ACXO</font></a><font color="#000099"> - acoustic correction &amp; digital crossover for PC (9/22/04) <br> </font><a href="http://www.ludd.luth.se/~torger/almusvcu.html#whatis" target="_blank"><font color="#000099">AlmusVCU</font></a><font color="#000099"> - Linux convolver for Auralisation, binaural, Ambisonics &amp; ITU 5.1 (9/22/04) <br> </font><a href="http://www.bostonaudiosociety.org/links.htm" target="_blank"><font color="#000099">Boston Audio Society links pages</font></a><font color="#000099"> - many categories of informative &amp; hi-end audio links (9/23/04) <br> </font><a href="http://www.ludd.luth.se/~torger/brutefir.html" target="_blank"><font color="#000099">BruteFIR</font></a><font color="#000099"> - Linux versatile basic convolver for crossovers, equaliztion, Auralisation, Ambisonics... (9/22/04) <br> </font><a href="http://home.pacbell.net/donwm/" target="_blank"><font color="#000099">Digital Crossover Filter Construction/Playback</font></a><font color="#000099"> - digital crossover filters w/driver correction (2/6/04) <br> </font><a href="http://freshmeat.net/projects/drc/?topic_id=114" target="_blank"><font color="#000099">Digital Room Correction</font></a><font color="#000099"> - Digital Room Correction software by Denis Sbragion (9/22/04) <br> </font><a href="http://www.mooneyass.com/DRC/" target="_blank"><font color="#000099">Digital Room Correction</font></a><font color="#000099"> - instructions by Jones Rush on how to setup &amp; use DRC (9/22/04) <br> </font><a href="http://drc.wildgooses.com/index.php/Main_Page" target="_blank"><font color="#000099">Digital Room Correction links + guide</font></a><font color="#000099"> - links &amp; guide for DRC software by Denis Sbragion (9/22/04) <br> </font><a href="http://www.etfacoustic.com/index.html" target="_blank"><font color="#000099">ETF audio file reader</font></a><font color="#000099"> - for reading .etf acoustic measurement files, also a demo (1/22/05) <br> </font><a href="http://www.pvconsultants.com/audio/frdgroup.htm" target="_blank"><font color="#000099">FRD Consortium</font></a><font color="#000099"> - acoustic design tools (2/6/04) <br> </font><a href="http://www.marchandelec.com/fg.html" target="_blank"><font color="#000099">Function Generator</font></a><font color="#000099"> - generates sine, square &amp; triangle wave signals from 1 Hz to 20 kHz (6/26/04) <br> </font><a href="http://www.libinst.com/PraxisNews.htm" target="_blank"><font color="#000099">Liberty Instruments</font></a><font color="#000099"> - Praxis loudspeaker measurement software - free download (5/3/2004) <br> </font><a href="http://www.quarter-wave.com/" target="_blank"><font color="#000099">Martin J. King's MathCAD models</font></a><font color="#000099"> - Quarter Wavelength Loudspeaker Design (2/6/04) <br> </font><a href="http://www.nch.com.au/tonegen/index.html" target="_blank"><font color="#000099">NCH Tone Generator</font></a><font color="#000099"> - excellent audio test tone generator (9/14/04) <br> </font><a href="http://www.ymec.com/products/rale/" target="_blank"><font color="#000099">RAL/Realtime Analyzer Light</font></a><font color="#000099"> - measure &amp; equalize sound system acoustics (need dB meter, 3-day trial) (8/19/04) <br> </font><a href="http://www.speakerworkshop.com/" target="_blank"><font color="#000099">Speaker Workshop</font></a><font color="#000099"> - freeware site devoted to creating loudspeakers (2/6/04) <br> </font><a href="http://www.tolvan.com/edge/" target="_blank"><font color="#000099">The Edge</font></a><font color="#000099"> - baffle diffraction simulator (5/3/2004) <br> </font><a href="http://ldsg.snippets.org/" target="_blank"><font color="#000099">The LDSG</font></a><font color="#000099"> - a COMPENDIUM of recommended speaker drivers, crossovers, electronics... (5/16/05) <br> </font><a href="http://home20.inet.tele.dk/kou/ubmodel.html" target="_blank"><font color="#000099">UniBox</font></a><font color="#000099"> - excellent free speaker design software (2/6/04) <br> </font><a href="http://www.linearteam.dk/" target="_blank"><font color="#000099">WinISD Pro</font></a><font color="#000099"> - free speaker design software (2/6/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Games &amp; online gaming for PC</b> <br> </font><a href="http://www.download-free-games.com/" target="_blank"><font color="#000099">Download Free Games</font></a><font color="#000099"> - download over 140 virus &amp; spyware free games (7/1/04) <br> </font><a href="http://latest.files.filefront.com/" target="_blank"><font color="#000099">FILE FRONT</font></a><font color="#000099"> - 50 latest games in reverse chronological order (7/1/04) <br> </font><a href="http://www.fileplanet.com/" target="_blank"><font color="#000099">FilePlanet</font></a><font color="#000099"> - online play foe IGN/GameSpy software games (7/1/04) <br> </font><a href="http://www.fileshack.com/" target="_blank"><font color="#000099">FILESHACK</font></a><font color="#000099"> - fastest loading game site on the Web (7/1/04) <br> </font><a href="http://www.fraps.com/" target="_blank"><font color="#000099">FRAPS</font></a><font color="#000099"> - benchmarking, screen &amp; video capture tools for DirectX &amp; OpenGL games (9/21/04) <br> </font><a href="http://www.happypuppy.com/" target="_blank"><font color="#000099">HappyPuppy.com</font></a><font color="#000099"> - latest video &amp; computer game downloads (7/1/04) <br> </font><a href="http://www.itsyourturn.com/" target="_blank"><font color="#000099">ItsYourTurn.com</font></a><font color="#000099"> - play online games: chess, checkers, Battleship, Stratego, Go (similar variations)... (7/02/04) <br> </font><a href="http://www.shockwave.com/sw/home/" target="_blank"><font color="#000099">Shockwave.com</font></a><font color="#000099"> - games for everyone (7/02/04) <br> </font><a href="http://files.worthplaying.com/files/index.php" target="_blank"><font color="#000099">WORTHPLAYING FILES</font></a><font color="#000099"> - search games by keyword or category (7/1/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Hardware info, news, reviews, shopping</b> <br> </font><a href="http://www.hardocp.com/" target="_blank"><font color="#000099">[H]ard|OCP</font></a><font color="#000099"> - hardware site (1/31/04) <br> </font><a href="http://www.2cpu.com/" target="_blank"><font color="#000099">2CPU.com</font></a><font color="#000099"> - dual CPU site (1/31/04) <br> </font><a href="http://www.aceshardware.com/" target="_blank"><font color="#000099">Ace's Hardware</font></a><font color="#000099"> - hardware site (1/31/04) <br> </font><a href="http://www.active-hardware.com/english/main.htm#test" target="_blank"><font color="#000099">Active-Hardware.com</font></a><font color="#000099"> - news, reviews, articles... (1/31/04) <br> </font><a href="http://www.amd.com/us-en/" target="_blank"><font color="#000099">AMD.com</font></a><font color="#000099"> - products, support, resources (1/31/04) <br> </font><a href="http://www.anandtech.com/" target="_blank"><font color="#000099">AnandTech</font></a><font color="#000099"> - hardware analysis &amp; news site (1/31/04) <br> </font><a href="http://www.ascully.com/modules.php?name=NSN_Reviews" target="_blank"><font color="#000099">Ascully.com</font></a><font color="#000099"> - reviews of DVD movies, hardware... (1/31/04) <br> </font><a href="http://www.basichardware.com/" target="_blank"><font color="#000099">BasicHardware.com</font></a><font color="#000099"> - your basic hardware page (1/31/04) <br> </font><a href="http://www.bit-tech.net/" target="_blank"><font color="#000099">bit-tech.net</font></a><font color="#000099"> - UK's Premier Modding &amp; Review site (6/7/04) <br> </font><a href="http://www.buildorbuy.org/" target="_blank"><font color="#000099">BuildOrBuy.org</font></a><font color="#000099"> - DIY PC resource site (1/31/04) <br> </font><a href="http://www.chait.net/" target="_blank"><font color="#000099">CHAITGEAR</font></a><font color="#000099"> - news &amp; reviews for digital audio &amp; video consumers (5/19/04) <br> </font><a href="http://news.com.com/" target="_blank"><font color="#000099">CNET News.com</font></a><font color="#000099"> - technology news &amp; business reports (1/31/04) <br> </font><a href="http://reviews.cnet.com/" target="_blank"><font color="#000099">CNET reviews</font></a><font color="#000099"> - CNET reviews page (1/31/04) <br> </font><a href="http://www.cnet.com/" target="_blank"><font color="#000099">CNET.com</font></a><font color="#000099"> - product reviews, shopping, tech news, downloads (1/31/04) <br> </font><a href="http://www.deviceforge.com/" target="_blank"><font color="#000099">DeviceForge.com</font></a><font color="#000099"> - tomorrow's device technology today (1/31/04) <br> </font><a href="http://www.digit-life.com/" target="_blank"><font color="#000099">DigitLife.com</font></a><font color="#000099"> – hardware resource site (1/31/04) <br> </font><a href="http://www.directron.com/silence.html" target="_blank"><font color="#000099">Directron.com</font></a><font color="#000099"> - lots of PC info, quiet PC components &amp; discounts (1/31/04) <br> </font><a href="http://hardware.earthweb.com/" target="_blank"><font color="#000099">EarthWeb</font></a><font color="#000099"> - hardware/software news resource site (1/31/04) <br> </font><a href="http://www.ecoustics.com/" target="_blank"><font color="#000099">eCoustics.com</font></a><font color="#000099"> - gigantic list of consumer electronics reviews (5/20/04) <br> </font><a href="http://www.explosivelabs.com/" target="_blank"><font color="#000099">Explosive Labs</font></a><font color="#000099"> - hardware/peripheral reviews, articles, news... (1/31/04) <br> </font><a href="http://www.extremetech.com/" target="_blank"><font color="#000099">ExtremeTech</font></a><font color="#000099"> - hardware/software info site <br> </font><a href="http://www.geek.com/" target="_blank"><font color="#000099">Geek.com</font></a><font color="#000099"> - the online technology resource (1/31/04) <br> </font><a href="http://www.gizmodo.com/" target="_blank"><font color="#000099">GIZMODO</font></a><font color="#000099"> - gadget guide, lots of new HTPC accessories... (4/22/05) <br> </font><a href="http://hardwarehell.com/index.shtml" target="_blank"><font color="#000099">Hardware Hell</font></a><font color="#000099"> - vast hardware/software resource site (1/31/04) <br> </font><a href="http://www.hardware-unlimited.com/" target="_blank"><font color="#000099">Hardware-unlimited.com</font></a><font color="#000099"> - hardware reviews, articles, news... (1/31/04) <br> </font><a href="http://www.hardwarecentral.com/hardwarecentral/" target="_blank"><font color="#000099">HardwareCentral</font></a><font color="#000099"> - in-depth computer hardware info (1/31/04) <br> </font><a href="http://www.hardwaremania.com/index.shtml" target="_blank"><font color="#000099">hARDWAREMANIA</font></a><font color="#000099"> - hardware reviews, news... (1/31/04) <br> </font><a href="http://www.hardwareseeker.com/" target="_blank"><font color="#000099">Hardwareseeker</font></a><font color="#000099"> - hardware news, articles &amp; reviews (1/31/04) <br> </font><a href="http://www.hexus.net/" target="_blank"><font color="#000099">HEXUS.net</font></a><font color="#000099"> - hardware news, reviews, articles... (1/31/04) <br> </font><a href="http://www.hothardware.com/" target="_blank"><font color="#000099">Hot Hardware</font></a><font color="#000099"> - only the hottest PC hardware tested &amp; burned in (1/31/04) <br> </font><a href="http://www.infoworld.com/" target="_blank"><font color="#000099">InfoWorld</font></a><font color="#000099"> - news, reviews &amp; analysis (1/31/04) <br> </font><a href="http://www.intel.com/" target="_blank"><font color="#000099">Intel.com</font></a><font color="#000099"> - products, tools, resources, downloads (1/31/04) <br> </font><a href="http://www.lostcircuits.com/" target="_blank"><font color="#000099">LOSTCIRCUITS</font></a><font color="#000099"> - reliable hardware reviews (2/7/04) <br> </font><a href="http://www.mbreview.com/" target="_blank"><font color="#000099">MBReview.com</font></a><font color="#000099"> - motherboard reviews &amp; database (1/31/04) <br> </font><a href="http://www.meetthegeeks.org/" target="_blank"><font color="#000099">MeetTheGeeks.org</font></a><font color="#000099"> - hardware, software, mobile computing (1/31/04) <br> </font><a href="http://www.modthebox.com/" target="_blank"><font color="#000099">MODTHEBOX.COM</font></a><font color="#000099"> - Canada's premier case modding source (1/31/04) <br> </font><a href="http://www.monkeyreview.com/" target="_blank"><font color="#000099">MonkeyReview.com</font></a><font color="#000099"> - hardware, DVD movie reviews... (1/31/04) <br> </font><a href="http://www.motherboards.org/" target="_blank"><font color="#000099">motherboards.org</font></a><font color="#000099"> - motherboard resource site (1/31/04) <br> </font><a href="http://www.neoseeker.com/" target="_blank"><font color="#000099">Neoseeker</font></a><font color="#000099"> - hardware &amp; games reviews index (1/31/04) <br> </font><a href="http://www.nwfusion.com/" target="_blank"><font color="#000099">Network World Fusion</font></a><font color="#000099"> - useful news, resources site, home page (1/31/04) <br> </font><a href="http://nexushardware.com/" target="_blank"><font color="#000099">Nexus Hardware</font></a><font color="#000099"> - hardware reviews, articles, news... (1/31/04) <br> </font><a href="http://www.pcabusers.com/" target="_blank"><font color="#000099">PC Abusers</font></a><font color="#000099"> - advice, news, reviews (1/31/04) <br> </font><a href="http://www.pcmag.com/" target="_blank"><font color="#000099">PC Magazine</font></a><font color="#000099"> - articles, news, reviews... (1/31/04) <br> </font><a href="http://www.pcper.com/" target="_blank"><font color="#000099">PC Perspective</font></a><font color="#000099"> - excellent forums, e.g. Liquid Cooling Forum, “reference of choice regarding PCs” (11/12/04) <br> </font><a href="http://www.pcstats.com/" target="_blank"><font color="#000099">PCStats.com</font></a><font color="#000099"> - vast hardware resource site (1/31/04) <br> </font><a href="http://www.pcworld.com/" target="_blank"><font color="#000099">PCWorld.com</font></a><font color="#000099"> - news, reviews, how-to, downloads (1/31/04) <br> </font><a href="http://www.procooling.com/" target="_blank"><font color="#000099">ProCooling.com</font></a><font color="#000099"> - where the big players come to cool off (11/12/04) <br> </font><a href="http://www.ramelectronics.net/" target="_blank"><font color="#000099">Ram Electronics</font></a><font color="#000099"> - resourceful hardware HTPC interface setup <br> </font><a href="http://www.sharkyextreme.com/" target="_blank"><font color="#000099">Sharkey Extreme</font></a><font color="#000099"> - hardware site (1/31/04) <br> </font><a href="http://www.silentpcreview.com/" target="_blank"><font color="#000099">SilentPCReview.com</font></a><font color="#000099"> - reference site about quiet, low noise, noise-free PCs &amp; components (11/12/04) <br> </font><a href="http://www.siliconstrategies.com/" target="_blank"><font color="#000099">SiliconStrategies.com</font></a><font color="#000099"> - info/news source for semiconductor industry (1/31/04) <br> </font><a href="http://www.storagereview.com/" target="_blank"><font color="#000099">STORAGE REVIEW.COM</font></a><font color="#000099"> - hardware storage site (1/31/04) <br> </font><a href="http://www.techfest.com/" target="_blank"><font color="#000099">TechFest</font></a><font color="#000099"> - ultimate tech info source (1/31/04) <br> </font><a href="http://hankfiles.pcvsconsole.com/" target="_blank"><font color="#000099">The Hank Files</font></a><font color="#000099"> - the truth is right here... (1/31/04) <br> </font><a href="http://www.theinquirer.net/" target="_blank"><font color="#000099">the INQUIRER</font></a><font color="#000099"> - news, reviews, facts &amp; friction <br> </font><a href="http://www.tech-report.com/" target="_blank"><font color="#000099">the TECH REPORT</font></a><font color="#000099"> - personal computing explored (1/31/04) <br> </font><a href="http://thetechzone.com/" target="_blank"><font color="#000099">The Tech Zone</font></a><font color="#000099"> - computer hardware reviews (1/31/04) <br> </font><a href="http://www.tomshardware.com/" target="_blank"><font color="#000099">tom's hardware guide</font></a><font color="#000099"> - news, reviews, latest hardware (1/31/04) <br> </font><a href="http://www.vr-zone.com/" target="_blank"><font color="#000099">VR-Zone</font></a><font color="#000099"> - VIRTUAL ZONE - hardware resources, news, networking, audio, display... (1/31/04) <br> </font><a href="http://www.wide-format-printers.org/" target="_blank"><font color="#000099">wide-format-printers.org</font></a><font color="#000099"> - wide format printer resource site (1/31/04) <br> </font><a href="http://www.windowsclusters.org/" target="_blank"><font color="#000099">Windows Clusters Resource Center</font></a><font color="#000099"> - large storage capacity resources (1/31/04) <br> </font><a href="http://www.woodyswatch.com/" target="_blank"><font color="#000099">Woody's Watch</font></a><font color="#000099"> - Microsoft software advice, tips &amp; news <br> </font><a href="http://www.xbitlabs.com/" target="_blank"><font color="#000099">X-Bit labs</font></a><font color="#000099"> - hardware news &amp; reviews site (1/31/04) <br> </font><a href="http://www.xtremesystems.org/" target="_blank"><font color="#000099">XtremeSystems.Org</font></a><font color="#000099"> - computing with no limits (2/1/2004) <br> </font><a href="http://www.zdnet.com/?tag=zdfd.header1" target="_blank"><font color="#000099">ZDNet</font></a><font color="#000099"> - hardware/software reviews &amp; prices, tool, downloads... (1/31/04) <br> ---------------------------------------------------------------------------------------- <br> <b>Bargain shopping for music, movies... &amp; price comparison sites</b> <br> </font><a href="http://store.acousticsounds.com/" target="_blank"><font color="#000099">Acoustic Sounds</font></a><font color="#000099"> - high quality SACD, DVD, CD, vinyl... recordings of different genre (7/02/04) <br> </font><a href="http://www.amazon.com/exec/obidos/tg/browse/-/3023481/ref%3Dtab%5Fm%5Fgw%5Fl/103-8255203-0838254" target="_blank"><font color="#000099">Amazon - CDNOW</font></a><font color="#000099"> - music, video, DVD site for Amazon (7/02/04) <br> </font><a href="http://www.amazon.com/exec/obidos/subst/home/home.html/103-8255203-0838254" target="_blank"><font color="#000099">Amazon.com</font></a><font color="#000099"> - DVD, computer &amp; video games, music, books... (7/02/04) <br> </font><a href="http://www.auctionsniper.com/" target="_blank"><font color="#000099">Auction Sniper</font></a><font color="#000099"> - automates process of placing your eBay bid in closing seconds (5/13/05) <br> </font><a href="http://www.bargainshare.com/" target="_blank"><font color="#000099">bargain$hare.com</font></a><font color="#000099"> - special deal notices, to quote “You paid what?!” (3/11/05) <br> </font><a href="http://www.barnesandnoble.com/" target="_blank"><font color="#000099">Barnes &amp; Noble.com</font></a><font color="#000099"> - deals on DVD &amp; Video, music, books... (7/02/04) <br> </font><a href="http://www.bestbuy.com/" target="_blank"><font color="#000099">Best Buy</font></a><font color="#000099"> - deals on music, movies, games, electronics... (7/02/04) <br> </font><a href="http://www.bmgmusic.com/acq/ott/index.jhtml;jsessionid=Q1EJ150TJHCCUCWJISCCFEY?acqlinkback=y&amp;_requestid=91745" target="_blank"><font color="#000099">BMG Music Service</font></a><font color="#000099"> - music club with good deals &amp; selection on various music genre (7/02/04) <br> </font><a href="http://www.brainwashed.com/archives.html" target="_blank"><font color="#000099">brainwashed</font></a><font color="#000099"> - unique site for new music of wide taste (7/02/04) <br> </font><a href="http://www.cduniverse.com/" target="_blank"><font color="#000099">CD Universe</font></a><font color="#000099"> - “your online music store” (7/02/04) <br> </font><a href="http://cheap-cds.com/surf/home" target="_blank"><font color="#000099">CHEAP-CDS</font></a><font color="#000099"> - “Look, listen &amp; buy online at Cost” (7/02/04) <br> </font><a href="http://www.chesky.com/" target="_blank"><font color="#000099">Chesky Records</font></a><font color="#000099"> - “The Premiere Audiophile Record Label” (7/02/04) <br> </font><a href="http://www.columbiahouse.com/sa/ch/homepage.jsp" target="_blank"><font color="#000099">Columbia House</font></a><font color="#000099"> - deals in music, DVD, video... clubs (7/02/04) <br> </font><a href="http://freespace.virgin.net/m.warner/CPUPrices.htm" target="_blank"><font color="#000099">CPU Prices</font></a><font color="#000099"> - price chart by month for 1,000 unit quantites - as indicator (5/21/05) <br> </font><a href="http://www.amd.com/us-en/Processors/ProductInformation/0,,30_118_609,00.html?redir=CPT301" target="_blank"><font color="#000099">AMD CPU Prices</font></a><font color="#000099"> - price chart for 1,000 unit quantites - as indicator (5/21/05) <br> </font><a href="http://www.intel.com/intel/finance/pricelist/" target="_blank"><font color="#000099">Intel CPU Prices</font></a><font color="#000099"> - price chart for 1,000 unit quantites - as indicator (5/21/05) <br> </font><a href="http://www.deepdiscountdvd.com/" target="_blank"><font color="#000099">Deep Discount DVD</font></a><font color="#000099"> - guaranteed lowest total price (7/02/04) <br> </font><a href="http://www.dvdpricesearch.com/" target="_blank"><font color="#000099">DVD Price Search</font></a><font color="#000099"> - “the smartest way to compare DVD prices online” (3/7/05) <br> </font><a href="http://www.*********/" target="_blank"><font color="#000099">eBay</font></a><font color="#000099"> - huge online new &amp; used auction site <br> </font><a href="http://www.elusivedisc.com/" target="_blank"><font color="#000099">Elusive Disc Inc.</font></a><font color="#000099"> - SACDs, DVD-As, XRCDs, LPs (7/02/04) <br> </font><a href="http://www.fatwallet.com/" target="_blank"><font color="#000099">FatWallet</font></a><font color="#000099"> - special deal notices, “The smart way to shop online.” (3/11/05) <br> </font><a href="http://www.freecycle.org/" target="_blank"><font color="#000099">freecycle</font></a><font color="#000099"> - any &amp; every item is FREE - be it a stereo, TV, fax machine, piano, or an old door... (11/14/04) <br> </font><a href="http://www.gemm.com/" target="_blank"><font color="#000099">GEMM</font></a><font color="#000099"> - world's largest music catalog (7/02/04) <br> </font><a href="http://half.*********/index.jsp" target="_blank"><font color="#000099">Half.com - home page</font></a><font color="#000099"> - deals on music, DVDs, movies, video games... (7/02/04) <br> </font><a href="http://half.*********/products/music/index.cfm" target="_blank"><font color="#000099">Half.com - Music</font></a><font color="#000099"> - excellent &amp; cheap music (CD...) selection site (7/02/04) <br> </font><a href="http://half.*********/products/videos/index.cfm" target="_blank"><font color="#000099">Half.com - Movies</font></a><font color="#000099"> - excellent &amp; cheap DVDs/movies selection site (7/02/04) <br> </font><a href="http://half.*********/products/games/index.cfm" target="_blank"><font color="#000099">Half.com - Video Games</font></a><font color="#000099"> - excellent &amp; cheap Video Games selection site (7/02/04) <br> </font><a href="http://www.hdcd.com/music_catalog/welcome.asp" target="_blank"><font color="#000099">HDCD Music Catalog</font></a><font color="#000099"> - the most comprehensive source for HDCD-encoded CDs (7/02/04) <br> </font><a href="http://www.jr.com/" target="_blank"><font color="#000099">J&amp;R Music &amp; Computer World</font></a><font color="#000099"> - audio, video, games, movies, music, computers, software... (7/02/04) <br> </font><a href="http://www.amusicdirect.com/" target="_blank"><font color="#000099">musicdirect</font></a><font color="#000099"> - audiophile site for Gold &amp; HDCD, SACD, XRCD, DVD-Audio &amp; Video... (7/02/04) <br> </font><a href="http://www.musicstack.com/" target="_blank"><font color="#000099">MusicStack music marketplace</font></a><font color="#000099"> - buy music CDs, used CDs, rare vinyl records... (7/2/04) <br> </font><a href="http://www.toolhaus.org/cgi-bin/negs" target="_blank"><font color="#000099">Negative/Neutral Feedback</font></a><font color="#000099"> - returns just negative &amp; neutral ratings for any eBay user ID (3/12/05) <br> </font><a href="http://www.overstock.com/cgi-bin/d2.cgi?PAGE=STORELIST&amp;STO_ID=3" target="_blank"><font color="#000099">Overstock.com</font></a><font color="#000099"> - online outlet for books, movies, music &amp; games... (7/02/04) <br> </font><a href="http://www.pricewatch.com/" target="_blank"><font color="#000099">Price Watch</font></a><font color="#000099"> - street price search engine <br> </font><a href="http://www.secondspin.com/index.cfm?SID=116851748340" target="_blank"><font color="#000099">SecondSpin.com</font></a><font color="#000099"> - buy used bargain or sell your DVDs, CDs, VHS... (7/02/04) <br> </font><a href="http://www.spun.com/" target="_blank"><font color="#000099">Spun.com</font></a><font color="#000099"> - buy, sell or trade music, dvds, games (7/02/04) <br> </font><a href="http://www.techbargains.com/" target="_blank"><font color="#000099">Techbargains.com</font></a><font color="#000099"> - save money on all your technology product purchases (11/29/04) <br> </font><a href="http://www.vcdgallery.com/" target="_blank"><font color="#000099">VCDGallery</font></a><font color="#000099"> - VCD movies &amp; SVCD (7/02/04) <br> </font><a href="http://www.xrcd.com/" target="_blank"><font color="#000099">XRCD by JVC</font></a><font color="#000099"> - XRCD, extended resolution CD site (7/02/04) <br> </font><a href="http://shopping.yahoo.com/" target="_blank"><font color="#000099">Yahoo shopping</font></a><font color="#000099"> - very useful price comparison site <br> ---------------------------------------------------------------------------------------- </font> 
+          
+		  <span class="info">
+          <br><br>&lt; Message edited by <b>Croso</b> -- <b>7/28/2005 10:58:48 PM </b> &gt;					
+			</span>
+		  <br><br>_____________________________<br><br><b><a href="http://www.magelo.com/eq_view_profile.html?num=396606" target="_blank">Croso, OGRE!!! Warlord of Karana</a></b><font size="1"><i> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=396589" target="_blank">Qasa</a> - 53 Cleric</i> 
+         
+         <div align="right">
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=1')" title="E-mail  Croso"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=1'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=1&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=1&mode=block&pg=tm&m=178701' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+             <a href="javascript:void(powin('revision.aspx?m=178701'))">Revisions: 1</a> | 
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=178701')">Post #: 1</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=178716></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Cool links I ripped off  - <span class="ultrasmall">7/29/2005 12:40:36 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("7/29/2005 12:40:36 AM",0,0,0,178701,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=712" class="subhead" target="_blank">Hikthur</a><br>
+        
+		  <script>titleAndStar(503,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/712/4A86F19C31E34EA58375B938BC8A6BBA.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  503<br>
+          
+          Joined:  6/20/2004 <br>
+          From:  The slightly frostier wastes.<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          I haven't read through all of them, but I noticed some right off the bat that I'd been looking for. Thanks Croso. :-) 
+          
+		  <span class="info">
+          					
+			</span>
+		 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#178701'>Croso</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=712')" title="E-mail  Hikthur"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=712'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=712&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=712&mode=block&pg=tm&m=178716' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=178716')">Post #: 2</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=178762></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Cool links I ripped off  - <span class="ultrasmall">7/29/2005 5:50:26 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("7/29/2005 5:50:26 AM",0,0,0,178701,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=11" class="subhead" target="_blank">sindaan</a><br>
+        
+		  <script>titleAndStar(5015,11,false,true,"Chub Daddy","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/11/Rp44644.gif" border=0 align="absmiddle"></div><br>
+          Posts:  5015<br>
+          
+          Joined:  10/29/2002 <br>
+          From:  Rub the Chub!<br>
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          <a href="http://www.stationripper.com" target="_blank">www.stationripper.com</a> &gt; All  <br>   <br>  and not listed for some reason! <br>   <br>  Our very own Vorrata wrote that btw. 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://www.magelo.com/eq_view_profile.html?num=65075" target="_blank">Sindaan Sarcophagus</a> <br> <a href="http://www.sindaan.com/default.aspx" target="_blank">Loot Tracking</a> <br> <a href="http://moopig.blogspot.com/" target="_blank">My Blog</a> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#178716'>Hikthur</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=11')" title="E-mail  sindaan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=11'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=11&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=11&mode=block&pg=tm&m=178762' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=178762')">Post #: 3</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=178800></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Cool links I ripped off  - <span class="ultrasmall">7/29/2005 9:50:44 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("7/29/2005 9:50:44 AM",0,0,0,178701,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=101" class="subhead" target="_blank">Chantela</a><br>
+        
+		  <script>titleAndStar(12388,-12,true,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/101/951CDAADE8B941229A02E6D60997057A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  12388<br>
+          
+          Joined:  11/3/2002 <br>
+          From:  South Florida<br>
+          Status: <span class='online'>online</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Awesome list, thanks for posting it. <br>  
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><a href="http://hardrockstars.org/blogs/pats_blog/" target="_blank"><font color="red"><b>My Blog</b></font></a> <br> <a href="http://www.magelo.com/eq_view_profile.html?num=174188" target="_blank">Chantela</a> <br> <img src="http://www.immersiontechnologies.com/jaws.jpg"> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#178762'>sindaan</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td> <a href='pmsend.aspx?toMemId=101'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=101&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=101&mode=block&pg=tm&m=178800' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=178800')">Post #: 4</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	    <td  bgcolor="e6e6e6"  class="cat" colspan="2">
+		  <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td width=*>
+			  <a name=179589></a>
+			  	
+		  	  <img src="micons/m1.gif" border="0" align="absmiddle">
+               RE: Cool links I ripped off  - <span class="ultrasmall">8/4/2005 8:41:48 AM</span>&nbsp;
+              &nbsp;
+              
+			  </td>
+			  <td align="right" nowrap>		
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+			  	
+					<td align="right"><script>showPicture("8/4/2005 8:41:48 AM",0,0,0,178701,2)</script></td>
+				</tr>
+			  </table>
+			</td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	  <tr>
+      
+	    <td  bgcolor="dedede"  width="155" valign="top" class="ultrasmall" nowrap>
+        <a href="showProfile.aspx?memid=1086" class="subhead" target="_blank">Astona</a><br>
+        
+		  <script>titleAndStar(386,0,false,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/1086/01214DD670FF4783B3BDFCABB48C054A.jpg" border=0 align="absmiddle"></div><br>
+          Posts:  386<br>
+          
+          Joined:  2/4/2005 <br>
+          
+          Status: <span class='offline'>offline</span>
+        
+		  <img src="image/blank.gif" align="right" border="0" width="155" height="1">
+		</td>
+        
+	    <td  bgcolor="dedede"  valign="top" class="msg" width="100%" >
+         
+          Wow, very good stuff .... thanx for posting 
+          
+		  <span class="info">
+          					
+			</span>
+		  <br><br>_____________________________<br><br><div align="center"><font color="purple"> Life is not measured by the number of breaths we take, but the moments that take our breath away</font></div><div align="center"><img src="http://ghguild.com/forum/albumtn.aspx/mid_1086-6EEB65901BA64333992F05C5B057B3E1.jpg"></div> 
+         
+         <div align="right">
+         <br><span class="ultrasmall">(in reply to <a href='#178800'>Chantela</a>)</span>
+         
+         </div>	
+         
+		</td>
+	  </tr>
+	  <tr>
+	    <td  bgcolor="e6e6e6"  width="100%" colspan="2">
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%">
+			<tr>
+			<td><a href='#' onclick="return ewin ('email.aspx?memid=1086')" title="E-mail  Astona"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a> <a href='pmsend.aspx?toMemId=1086'><img src="image/pm.gif" border="0" align="absmiddle" title="Send Private Message"></a> <a href='address.aspx?memID=1086&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.aspx?memID=1086&mode=block&pg=tm&m=179589' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a></td>
+			<td align="right">
+			
+			<a href="#" onclick="return fwdwin('postnumber.aspx?id=179589')">Post #: 5</a>
+            	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a></td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="97%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+       <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="97%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><img src='image/blank.gif' height='20' width='1' border='0' align='absmiddle' vspace='5'><b><a href='default.aspx'>All Forums</a> &gt;&gt; <a href='tt.aspx?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.aspx?forumid=2'>Geek Life</a> &gt;&gt;  Cool links I ripped off </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="97%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.aspx'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.aspx?forumid=58" >[Public]</option>
+<option value="tt.aspx?forumid=1" >- - Public Forum</option>
+<option value="tt.aspx?forumid=2" selected>- - Geek Life</option>
+<option value="tt.aspx?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="97%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.aspx" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="178701">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="2">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+<br>
+          <table width="97%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr>
+					  <td><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Reply to Message<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Post New Poll<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Submit Vote<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Post<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Delete My Own Thread<br><img src="image/no.gif" border=0 align='absmiddle'>&nbsp;Rate Posts</td>
+					</tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br><br>
+<br>
+<font size="-4" color="#b1b1b1">This Content for Google Adsense: Lots of Gaming and Computer hardware. Buy Computer Hardware here. Newegg is the best for hardware. Fast Video Cards. World of Warcraft. Get a fast computer like alienware for the win. Win Teh game. Arcade games are fun. Spyware and Viruses are not. Porn is cool but google isn't down with the porn. Everquest. Everquest 2. We do it all. PC Gaming X-box Playstation 2 Xbox 360 Console Games Get HDTV Television With Satellite TV or Cable with Cablecard for the best TV experience.  There's also great deals on fast food and coupon sites. Get Dell coupons from fatwallet or bensbargins. Microsoft Server products for the win. Web hosting we provide for FREE! Gamers like to eat snacks like cheetos or candy and soda. Time to get on the fattymcfatfat machine. Treadmill and no gym for home. Weight Watchers and lose weight fast with diet pills that may kill you but hey that's the fun. Atkins doesn't work. There's no women on the internet unless they post pics of their breasts with a penny. Digital Cameras like the Rebel XT or 20D from Canon are much better than cameras from Nikon like D50 and D70. Sigma is great if you get a sharp one. Play the Sigma Lottery if you wish.</font></center>
+<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")) self.location.href="pm.aspx";
+	}
+</script>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td align="center" class="info">Forum Software &copy; <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a> <b>Advanced Edition</b> 2.5.5 ANSI </td>
+	  </tr>
+	</table><br><font color="ffffff">0.156</font><br>
+</body>
+</html>

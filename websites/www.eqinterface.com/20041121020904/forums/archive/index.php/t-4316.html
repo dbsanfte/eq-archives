@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<title>EQInterface Forums - SIDL Question</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Everquest,Everquest II,EQ,EQ2,EQII,SOE,Interface,XML,TGA,Mods,Skins" />
+	<meta name="description" content="An Everquest II Interface site." />
+	<link rel="stylesheet" href="http://www.eqinterface.com/forums/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">EQInterface Forums</a> &gt; <a href="f-1.html">Developer Discussion</a> &gt; <a href="f-30.html">XML modification help.</a> &gt; SIDL Question</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://www.eqinterface.com/forums/showthread.php?t=4316">SIDL Question</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">aeluin</div><div class="date">11-24-2002, 05:36 PM</div></div><div class="posttext">I found this in SIDL.xml:<br />
+<br />
+&lt;ElementType name=&quot;SuiteDefaults&quot;&gt;<br />
+			&lt;superType type=&quot;Class&quot; /&gt;<br />
+			&lt;element name=&quot;DefaultWindowDrawTemplate&quot; type=&quot;WindowDrawTemplate:item&quot; /&gt;<br />
+			&lt;element name=&quot;CursorDefault&quot; type=&quot;Ui2DAnimation:item&quot; /&gt;<br />
+			&lt;element name=&quot;CursorResizeNS&quot; type=&quot;Ui2DAnimation:item&quot; /&gt;<br />
+			&lt;element name=&quot;CursorResizeEW&quot; type=&quot;Ui2DAnimation:item&quot; /&gt;<br />
+			&lt;element name=&quot;CursorResizeNESW&quot; type=&quot;Ui2DAnimation:item&quot; /&gt;<br />
+			&lt;element name=&quot;CursorResizeNWSE&quot; type=&quot;Ui2DAnimation:item&quot; /&gt;<br />
+			&lt;element name=&quot;CursorDrag&quot; type=&quot;Ui2DAnimation:item&quot; /&gt;<br />
+		&lt;/ElementType&gt;<br />
+<br />
+<br />
+would I be able to define a CursorDefault Item?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">puddy</div><div class="date">11-25-2002, 04:48 AM</div></div><div class="posttext">Absolutely...<br />
+<br />
+Just go to your EQUI_Animations.xml file and modify the Ui2DAnimation item = &quot;A_DefaultCursor&quot; to be the cursor that you want to use...<br />
+<br />
+You can either modify the .tga file to reflect the cursor you want to use...  or create a new one...<br />
+<br />
+&gt;^,,^&lt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aeluin</div><div class="date">11-25-2002, 10:24 PM</div></div><div class="posttext">Nonononono!<br />
+I want to do this *without* modifying EQUI_Animations. I know how to do it in the animations file, have done it several times, and in the windowpieces.tga file, but I want a way to change the size and tga file for my cursor without modifying the animations file. My question was: Would it be legal for me, in *another* file, to define something as a CursorDefault Item? Or something similar?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">grottel</div><div class="date">11-26-2002, 07:15 PM</div></div><div class="posttext">SIDL.doc doesn't list defaults for these elements.  However, since there is no assignment made within the DEFAULT UI's XMLs then we can only assume that at a minimum the SIDL EQUI sets the defaults assingment of these suite elements to appropriate animations.<br />
+<br />
+Is it possible to point  cursor suite elements to a different animation?  unknown<br />
+<br />
+<br />
+Assuming that the graphics are already defined.<br />
+Even if we had a file that defined a new cursor set (druid in this example) or included the body of the code in the EQUI_Template.xml <br />
+<br />
+&lt;?xml version = &quot;1.0&quot;?&gt;<br />
+&lt;XML ID = &quot;EQInterfaceDefinitionLanguage&quot;&gt;<br />
+	&lt;Schema xmlns = &quot;EverQuestData&quot; xmlns:dt = &quot;EverQuestDataTypes&quot;/&gt;<br />
+<br />
+	&lt;SuiteDefault item = &quot;SD_Druid&quot;&gt;<br />
+		&lt;DefaultWindowDrawTemplate&gt;WDT_Def&lt;/DefaultWindowDrawTemplate&gt;<br />
+		&lt;CursorDefault&gt;A_CursorDefault_Druid&lt;/CursorDefault&gt;<br />
+		&lt;CursorResizeNS&gt;A_CursorResizeNS_Druid&lt;/CursorResizeNS&gt;<br />
+		&lt;CursorResizeEW&gt;A_CursorResizeEW_Druid&lt;/CursorResizeEW&gt;<br />
+		&lt;CursorResizeNESW&gt;A_CursorResizeNESW_Druid&lt;/CursorResizeNESW&gt;<br />
+		&lt;CursorResizeNWSE&gt;A_CursorResizeNWSE_Druid&lt;/CursorResizeNWSE&gt;<br />
+		&lt;CursorDrag&gt;A_CursorDrag_Druid&lt;/CursorDrag&gt;<br />
+	&lt;/SuiteDefault&gt;<br />
+&lt;/XML&gt;<br />
+<br />
+The problem remains that there are no function calls to set the SuiteDefault there remains no way to assign our newly defined item.<br />
+<br />
+However, this might be possible since its a global item and technically inherited, it might be possible to define a different cursor set to each window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aeluin</div><div class="date">11-26-2002, 11:29 PM</div></div><div class="posttext">this is embarassing but...huh?<br />
+<br />
+er...I kind of see what you're saying...but don't see how I would put it into practice, to test what you're suggesting, unless you're suggesting that I try inserting some variation on the above code into one of my window files?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">grottel</div><div class="date">11-27-2002, 10:50 AM</div></div><div class="posttext">I did emphasis that this is an unknown area.  Since the SIDL schema doesn't include any indication of how SuiteDefaults are implemented, it probably isn't even possible.  If you want an exact answer as to what to do - nobody has one because this  uncharted territory.  The only thing you can do is experiement while following the logic of the schema.  I simply dont have the patience to load up a EQ (15 minutes) each time I want to test a mod.  So I leave it those with 2 machines that can test stuff quickly to sort it out.  However, I'm more than happy to share ideas.<br />
+<br />
+One reason why this is a bit of guess for me is how the SIDL.DOC shows the hierarchy of the SUITEDEFAULTS object.  Supposedly this has a supratype of CLASS but the hierarchy shows it above the class level.  /shrug</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aeluin</div><div class="date">11-29-2002, 01:43 AM</div></div><div class="posttext">thank you :)</div></div><hr />
+
+<div id="copyright">vBulletin v3.0.3, Copyright &copy;2000-2004, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

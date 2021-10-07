@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Darkwind</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body bgcolor="#000000" text="#CCCCCC">
+<a name="top"></a>
+<table width="700" border="0" cellspacing="0" cellpadding="5">
+  <tr> 
+    <td width="30">&nbsp;</td>
+    <td width="670" background="images/table_header.jpg"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>News</b></font></td>
+  </tr>
+  <tr> 
+    <td width="30">&nbsp;</td>
+    <td width="670"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">January 27 -- <a href="#1">Big news!<br></a></font></td>
+  </tr>
+</table>
+<br>
+<table width="700" border="0" cellspacing="0" cellpadding="5"><tr><a name="1"></a><td width="30">&nbsp;</td><td width="670" background="images/table_header.jpg"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Big news!.</b><br>Monday, January 27, 01:29 -- Posted by: Stekarn</font></td></tr><tr><td width="30">&nbsp;</td><td width="670"><div align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Tylis Newleaf is dead!</b><br />
+Earlier today we headed to Plane of Torment to get some of our slackers and applicants the Saryrn flag. We were also joined by members of Mortalis and Raging fury for this flagging session. Roughly 75 people showed up for the event and we had enormous amounts of fun fighting up through the tower. Really.<br />
+<br />
+When we finally reached Maareq the Prophet (or whatever the hell his name is) enchanters, wizards and druids did their thing in the form of AE-ing the little adds which path to the Prophet. Once Maareq dies Tylis Newleaf becomes targetable and plays an <b>essential</b> part in getting your raid to the Keeper of Sorrows area. But you allready knew that.<br />
+<br />
+During the course of the fight the AE casters moved closer and closer to the spawnpoint of the little green adds which also just happened to be right near the cage in which Tylis Newleaf is located. Gosh, what a coincidence!<br />
+<br />
+Maareq dies, little green adds depop, Tylis Newleaf becomes targetable, AE detail keeps going.<br />
+Tylis Newleaf has been slain by Edydar.<br />
+75 people cheered.<br />
+<br />
+<b>Other minor things</b><br />
+<img src="http://darkwind-guild.com/pics/20030127news/sr.jpg"><br />
+<table><tr><td><img src="http://darkwind-guild.com/pics/20030127news/srl.jpg"></td><br />
+<td><img src="http://darkwind-guild.com/pics/20030127news/srl1.jpg"><br><img src="http://darkwind-guild.com/pics/20030127news/srl2.jpg"></td></tr></table><br />
+<br />
+<b>Elemental Patterns</b><br />
+Total drops: 67<br />
+<br />
+Silk: <br />
+Boots 2, Gloves 3, Arms 2, Bracer 11, Head 3 = 21 <br />
+<br />
+Leather: <br />
+Boots 3, Gloves 5, Arms 9, Bracer 5, Head 3 = 25 <br />
+<br />
+Plate: <br />
+Boots 4, Gloves 4, Arms 8, Bracer 0, Head 2 = 18 <br />
+<br />
+Chain: <br />
+Boots 0, Gloves 1, Arms 1, Bracer 1, Head 0 = 3<br />
+<br />
+Silk and Leather classes in our guild are afraid of the newly formed Chain class lynch mob.<br><br>&raquo; <a href="#top">back to top</a><br><br></font></div></td></tr></table>
+</body>
+</html>

@@ -1,0 +1,1457 @@
+
+
+
+<HEAD>
+</HEAD>
+
+
+
+<html>
+<head>
+<title> nedd's news - 8/18/4 - a revelation </title>
+
+<script language="JavaScript" src = "js/popie.js"></script>
+<script language="JavaScript" src ='js/trims.js'></script>
+<script language="JavaScript" src = "js/jumpto.js"></script>
+<script language="JavaScript" src = "js/TitleAndRating.js"></script>
+<script language='JavaScript' src = "js/confirmdeletion.js"></script>
+<script language='JavaScript' src ='js/showSelect.js'></script>
+<script language="JavaScript" src="js/pgdcodeinput.js"></script>
+<script language="JavaScript" src ='js/validator.js'></script>
+<script type="text/javascript">
+
+var alivecount = 1
+function alertImage(){
+	if(document.images){
+		if (document.images["keepalive"]){document.images["keepalive"].src = "http://ghguild.com/forum/keepalive.asp?a="+alivecount}
+		alivecount++ ;
+		//alert (document.images["keepalive"].src)
+	}
+}
+function validateForm(postform) {
+	if (validatorPro(postform)){
+		postform.submitbutton.disabled = true;
+		postform.jsenabled.value='true';
+		return true;
+	}else{
+		return false;
+	}
+}
+
+setInterval("alertImage()",1000*60*29)
+
+// -->
+</script>
+<script language="JavaScript">
+
+var threadTracking = ""
+var forumTracking = ""
+
+var arrTTrack = threadTracking.split("|");
+var hashTTrack = new Array() ;
+
+for (var i = 0; i<arrTTrack.length; i++){
+	var tSubArr = arrTTrack[i].split("-")
+	if (tSubArr.length==2) hashTTrack[tSubArr[0]] = tSubArr[1] 
+}
+
+var arrFTrack = forumTracking.split("|");
+var hashFTrack = new Array() ;
+
+for (var i = 0; i<arrFTrack.length; i++){
+	var fSubArr = arrFTrack[i].split("-")
+	if (fSubArr.length==2) hashFTrack[fSubArr[0]] = fSubArr[1]
+}
+
+
+var appMPG = 30
+
+function showPicture(lastU,isLocked,hits,replies,threadid,forumid,largepic,subforum){
+	var checkDate = new Date("11/4/2004 11:39:38 AM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var boardNImg, boardImg
+	
+	boardNImg = (largepic==1)? "board_n.gif" : "board_sn.gif"
+	boardImg = (largepic==1)? "board.gif" : "board_s.gif"
+	
+	if (subforum==1){
+		boardNImg = "newestmsg.gif"
+		boardImg = "blank.gif"
+	}
+	
+	var withNewMessage = true
+	var readChecked = 0
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (withNewMessage) {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_snlocked.gif' border='0' alt='New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_snh.gif' border='0' alt='Hot Topic!, New Messages'>")
+		}
+		else {
+			document.write ("<img src='/forum/image/"+ boardNImg +"' border='0' alt='New Messages'>")
+		}
+	}
+	else {
+		if (isLocked==1) {
+			document.write ("<img src='/forum/image/board_slocked.gif' border='0' alt='No New Messages'>")
+		} 
+		else if (hits>=10*appMPG || replies>=appMPG){
+			document.write ("<img src='/forum/image/board_sh.gif' border='0' alt='Hot Topic!, No New Messages'>")
+		}		
+		else {
+			document.write ("<img src='/forum/image/"+ boardImg +"' border='0' alt='No New Messages'>")
+		}
+	}
+} 
+
+function showArrow(lastU,threadid,forumid,fromTree){
+	var checkDate = new Date("11/4/2004 11:39:38 AM")
+	var checkDate1= new Date(lastU)
+	
+	var lastVisit=checkDate.getTime()
+	var lastUpdate=checkDate1.getTime()
+	
+	var withNewMessage = true
+	var readChecked = 0
+	var linkDate = "11/4/2004 11:39:38 AM"
+	
+	
+	if (typeof threadid!="undefined" && typeof forumid !="undefined"){
+		if (typeof hashFTrack[forumid] != "undefined"){
+			var ttempdate = new Date (hashFTrack[forumid])
+			if ((lastUpdate - ttempdate.getTime())<=0){
+				withNewMessage = false;
+				readChecked = 1
+			}
+			
+		}
+		
+		if (typeof hashTTrack[threadid] != "undefined" && readChecked==0){
+			var ttempdate = new Date (hashTTrack[threadid])
+			if ((lastUpdate - ttempdate.getTime())<=0) {
+				withNewMessage = false;
+				readChecked = 1
+			}else{
+				linkDate = hashTTrack[threadid]
+			}
+			
+		}
+	}
+	
+	
+	if (readChecked==0){
+		if ((lastUpdate-lastVisit)<=0) withNewMessage = false
+		
+	}	
+	
+	if (!fromTree){
+		if (withNewMessage) {
+			document.write (" <a href=\"/forum/fb.asp?m=" + threadid + "&go=newest&lastvisit=" + escape(linkDate) + "\"><img src=\"/forum/image/newestmsg.gif\" title=\"Go to first unread post\" border=0 align=\"absmiddle\"></a> <span class=\"newpost\">")
+		}else{
+			document.write ("<span class=\"oldpost\">")
+		}
+	}else{
+		if (withNewMessage) {
+			return "newpost";
+		}else{
+			return "oldpost";
+		}
+	}
+} 
+
+
+
+
+
+var userLevelNameMod = "Rajah"
+var userLevelNameAdmin = "Maharajah"
+var starPicSuffix = "star.gif"
+var modStar = "5starM.gif"
+var adminStar = "5starA.gif"
+var strTitle = new Array()
+strTitle [1] = "25&&0neophyte1"
+strTitle [2] = "100&&0greenhorn2"
+strTitle [3] = "400&&0competent3"
+strTitle [4] = "900&&0seasoned4"
+strTitle [5] = "1500&&0au courant5"
+
+var forumdir = "/forum/"
+//-->
+</script>
+<style type="text/css">
+<!--
+.c2 {font: bold 11px Verdana}
+.head {font: bold 14px Verdana;color : #000000}
+.high {background-color : Yellow;font : bold 11px Arial, Helvetica, sans-serif;color : Black;border : 1px solid Black;}
+.info {font: 11px Verdana;}
+.msg {font: 13px Verdana;}
+.quote {border:1px Solid #505050; background-color:#ffffff; width:85%; margin:2px; padding:5px; color:#505050; font: 11px Verdana;}
+.subhead {font: bold 13px Verdana;color : #000000}
+.titlehead {font: bold 15px Verdana; line-height:180%;}
+.ultrasmall {font: 10px Verdana;color:#555555;}
+a {color:#454545;}
+a:hover {color: #e51d00;text-decoration:underline}
+a:visited {color: #0b0b0b;hover-color: #e51d00}
+body {color: #000000; font: 11px Verdana; background-color: #004580; /*margin: 0px 0px 0px 0px;*/
+scrollbar-face-color: #0075cc; 
+scrollbar-highlight-color: #4db2ff; 
+scrollbar-shadow-color: #4db2ff; 
+scrollbar-3dlight-color: #000000; 
+scrollbar-arrow-color: #4db2ff; 
+scrollbar-track-color: #004580; 
+scrollbar-darkshadow-color: #004580;}
+input {color : #000000;font: normal 11px Verdana;}
+pre {font: 11px "Courier New",monospace;}
+select {color : #000000;font: normal 11px Verdana;}
+td {font: 11px verdana}
+td.cat {background-color: #4db2ff}
+textarea {background-color: #f9f9f9;color : #000000;font: normal 11px Verdana;}
+th {background-color: #0075cc}
+
+
+-->
+</style>
+</head>
+<body >
+<noscript>Javascript is currently disabled!</noscript>
+	<center>
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="1" height="115"></td>   
+      <td width="20%" height="115" background="leftextend2.jpg"></td>
+      <td width="741" height="115">
+      <IMG SRC="ghnavtrim.jpg" WIDTH=741 HEIGHT=115 BORDER=0 ALT="" USEMAP="#GH_Banner_Map">
+<MAP NAME="GH_Banner_Map">
+<AREA SHAPE="rect" ALT="" COORDS="330,78,409,95" HREF="http://ghguild.com/forum/register.asp">
+<AREA SHAPE="rect" ALT="" COORDS="422,80,471,94" HREF="http://ghguild.com/forum/memberlist.asp?view=groupinfo">
+<AREA SHAPE="rect" ALT="" COORDS="493,80,525,94" HREF="http://ghguild.com/forum/chat.asp" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="540,81,571,93" HREF="http://loot.ghguild.com" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="587,79,623,94" HREF="http://www.ghguild.com/voice/listing.php?detail=69.44.57.156&detailport=8767&page=1&sort=server_name&direction=asc&showgroup=all" TARGET="_blank">
+<AREA SHAPE="rect" ALT="" COORDS="645,78,681,95" HREF="http://ghguild.com/forum/login.asp" onClick="return logwin(this.href)">
+<AREA SHAPE="rect" ALT="" COORDS="699,79,744,95" HREF="http://ghguild.com/forum/redirect.asp">
+<AREA SHAPE="rect" ALT="" COORDS="714,98,740,116" HREF="http://ghguild.com/forum/faq.asp">
+<AREA SHAPE="rect" ALT="" COORDS="633,98,698,115" HREF="http://ghguild.com/forum/calendar.asp">
+<AREA SHAPE="rect" ALT="" COORDS="571,100,617,116" HREF="http://ghguild.com/forum/search.asp">
+<AREA SHAPE="rect" ALT="" COORDS="477,100,557,115" HREF="http://ghguild.com/forum/memberlist.asp">
+<AREA SHAPE="rect" ALT="" COORDS="375,100,460,115" HREF="http://ghguild.com/forum/subscribe.asp">
+<AREA SHAPE="rect" ALT="" COORDS="303,100,360,113" HREF="http://ghguild.com/forum/address.asp">
+<AREA SHAPE="rect" ALT="" COORDS="244,100,286,115" HREF="http://ghguild.com/forum/editprofile.asp">
+<AREA SHAPE="rect" ALT="" COORDS="188,101,226,114" HREF="http://ghguild.com/forum/pm.asp">
+<AREA SHAPE="rect" ALT="" COORDS="86,101,168,114" HREF="http://ghguild.com/forum">
+<AREA SHAPE="rect" ALT="" COORDS="24,101,67,114" HREF="http://ghguild.com">
+</MAP></td>
+ <td width="20%" background="http://ghguild.com/forum/rightextend2.jpg" height="115"><td width="1" height="115" rowspan="2"></td></td>
+      
+    </tr>
+  </table>
+		<BR></center>
+	</table></center>
+
+<table border="0" bgcolor=#006699 align=center>
+	<tr>
+		<td width="40%"><center><font color=#CCCCCC><br>
+<a href="ghmotdedit.asp" target=_new><font color=white>EQ MOTD</font></a>:<br>
+
+For GH EQ Members only<br>
+</font></td>
+		<td  width="40%"><center><font color=white>EQ2 MOTD:</font><br><font color=cccccc><b>
+</b>For GH EQ2 Members only<br></b>
+
+</font></center>
+</td>
+	</tr>
+</table>
+
+
+
+<TABLE width='100%' border='0' cellspacing='0' cellpadding='0' style="border: 1px #004580 solid;"><!--Here is one-->
+	  <tr>
+	    <td bgcolor="b1b1b1" align="center"><!--Here is another-->
+		
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+
+
+
+<script language="JavaScript">
+<!--
+var rpEdLnkAdd = "&toStyle=tm"
+function checkqrp(parentid,theTitle){
+	var theForm = document.postform
+	if (theForm){
+		if (document.getElementById) {
+			var qrp = document.getElementById("qrp");
+			if (qrp){
+				if (qrp.style.display=="none") {qrp.style.display="";}
+				document.getElementById("aqrp").focus();//alert(theForm.parent.value)
+			}
+		} 
+		theForm.body.focus();theForm.parent.value=parentid;theForm.subject.value=theTitle.trim().replace(/\<\/span\>/gi,"").replace(/\<span class\=\"high\"\>/gi,"");
+	} 
+}
+//-->
+</script>
+<form name="selectedText">
+<input type="Hidden" name="selectedText">
+</form>
+<table width='98%' border='0' cellspacing='2' cellpadding='0'>
+  <tr>
+	<td>
+		<h2 class="messagetitle"> nedd's news - 8/18/4 - a revelation </h2>&nbsp;
+		
+	</td>
+	<td class="c2" align="right">
+		Logged in as: Guest
+	</td>  	
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='0' cellpadding='1'>
+  <tr>
+	<td class="c2">
+		
+
+<table width="98%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+  
+	<td class="ultrasmall">
+		Users viewing this topic: none
+	</td>
+  
+  </tr>
+</table>
+
+	</td>
+  </tr>
+</table>
+<table width='98%' border='0' cellspacing='1' cellpadding='3'>
+<tr>
+	<td nowrap align="right" class="c2">&nbsp;
+	
+			<a href="printable.asp?m=121531" target="_blank">
+			<img src="image/print.gif" border=0 align="absmiddle">Printable Version</a>
+		
+	</td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=1'>Public Forum</a> &gt;&gt;  nedd's news - 8/18/4 - a revelation </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">  <tr>     <th width="100" align="left" bgcolor="006699">     <font color=FFFFFF class="subhead">Login </font>     <img src="image/blank.gif" align="right" border=0 width="100" height="1">     </th>     <th bgcolor="006699" align="left" colspan="0">       <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>           <td><font color=FFFFFF class="subhead">Message</font></td>           <td align="right">           <a href="fb.asp?go=prev&m=121531&viewType=tm"><font color=FFFFFF class="c2">&lt;&lt; Older Topic</font></a>&nbsp;&nbsp;           <a href="fb.asp?go=next&m=121531&viewType=tm"><font color=FFFFFF class="c2">Newer Topic &gt;&gt;</font></a>           </td>       </tr></table>     </th>  </tr></table>
+    </td>
+  </tr>
+</table>		
+<!--
+ 	Message Starts Here
+ -->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=77')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=77&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=77&mode=block&pg=tm&m=121531' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=77" class="subhead" target=_blank>nedd</a>
+		  
+		  <br>
+		  <script>titleAndStar(3062,835,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/77/8BA3E1F3884C4218BD8E226481A68618.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3062<br>
+		  Joined:  11/1/2002 <br>From:  hihihoho gnom city!<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121531></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  nedd's news - 8/18/4 - a revelation &nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 10:25:14 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   <font size="7"><b><i>you suck</font></b></i> 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=271215">nedd</a> <br>  <br>  <img src="http://www.humpsteven.com/temp/vanilla.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/18/2004 10:25:14 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121531  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=678')" title="E-mail  Trydan"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=678')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=678&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=678&mode=block&pg=tm&m=121536' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=678" class="subhead" target=_blank>Trydan</a>
+		  
+		  <br>
+		  <script>titleAndStar(5,0,0,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><p class="ultrasmall">
+		  Posts:  5<br>
+		  Joined:  5/26/2004 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121536></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121531'>nedd</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 10:44:12 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Wrong dude.....just wrong. Mr. Po Ta Toe.....where's the news? 
+					<span class="info"><br><br><br>&lt; Message edited by <b>Trydan</b> -- <b>8/18/2004 10:44:59 AM </b> &gt;</span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/18/2004 10:44:12 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			 <a href="javascript:void(powin('revision.asp?m=121536'))">Revisions: 1</a> | 
+			ID: 121536  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=60')" title="E-mail  Biljac"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=60')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=60&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=60&mode=block&pg=tm&m=121540' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=60" class="subhead" target=_blank>Biljac</a>
+		  
+		  <br>
+		  <script>titleAndStar(806,-1,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/60/Xv65771.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  806<br>
+		  Joined:  11/1/2002 <br>From:  Ohio, USA :)<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121540></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121531'>nedd</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 11:04:38 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   boo. <br>  <br> -BJ- 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><b><font size="3">Magelo:</font></b>  <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=204913"> <img src="http://www.biljac.com/images/navbar2/BJNavbar2_01.jpg" align="middle" border="0" alt=""> </a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/18/2004 11:04:38 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121540  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=34')" title="E-mail  Hammeron"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=34')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=34&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=34&mode=block&pg=tm&m=121550' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=34" class="subhead" target=_blank>Hammeron</a>
+		  
+		  <br>
+		  <script>titleAndStar(4152,-34,10,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/34/Wu60702.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  4152<br>
+		  Joined:  10/31/2002 <br>From:  USA<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121550></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121540'>Biljac</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 11:50:32 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   I love you nedd 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><b>Hammeron</b> <br> <i>Team Ghey</i> <br>  <br> <font size="1">How happy is the blameless vestal's lot! <br> The world forgetting, by the world forgot. <br> Eternal sunshine of the spotless mind! <br> Each pray'r accepted, and each wish resign'd. 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/18/2004 11:50:32 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 121550  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=273')" title="E-mail  Aurella"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=273')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=273&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=273&mode=block&pg=tm&m=121552' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=273" class="subhead" target=_blank>Aurella</a>
+		  
+		  <br>
+		  <script>titleAndStar(1495,-4,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/273/04C52ADEC01B4E86A3B2C19F570651CD.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1495<br>
+		  Joined:  2/12/2003 <br>Status: <span class='online'>online</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121552></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121550'>Hammeron</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 11:56:58 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   hey nedd <br>  <br>  <img src="http://s94325883.onlinehome.us/outstanding.jpg" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=440107"> <img src="http://ghguild.com/forum/upfiles/273/asppg_Om322409039.gif" align="middle" border="0" alt=""> </a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/18/2004 11:56:58 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121552  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=38')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=38&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=38&mode=block&pg=tm&m=121554' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=38" class="subhead" target=_blank>Yaldin</a>
+		  
+		  <br>
+		  <script>titleAndStar(2397,-42,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/38/921F0794245A409380BA18829036A466.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  2397<br>
+		  Joined:  10/31/2002 <br>From:  &#92;<br>Status: <span class='online'>online</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121554></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121552'>Aurella</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 11:59:16 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   , <br>  <br> <br><span class='ultrasmall'><b>Thumbnail Image</b></span><br><a href="http://ghguild.com/forum/upfiles/38/16E4D2879B6843A88A186AF7475CCD5E.jpg" target="_blank"> <img src="http://ghguild.com/forum/thumb.aspx?size=125&imgpath=upfiles/38/16E4D2879B6843A88A186AF7475CCD5E.jpg" align="middle" border="0" alt=""> </a> <br><br><img src='image/paperclip.gif' border='0' align='absmiddle'><a href="#" onclick="return uplwin('attachment.asp?m=121554')">Attachment (1)</a>
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=222377">R-Yaldin-R</a>  <br> 65 Arcanist <br> Karana Server <br> Grey Hawke <br>  <br> omg yaldin i agree with you[!]  - Benigni 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/18/2004 11:59:16 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 121554  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=120')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=120&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=120&mode=block&pg=tm&m=121564' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=120" class="subhead" target=_blank>Rainne</a>
+		  
+		  <br>
+		  <script>titleAndStar(2427,4,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/120/407D3A6C39304A17A8BC6CE4007FF4F0.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  2427<br>
+		  Joined:  11/4/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121564></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121531'>nedd</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/18/2004 1:01:47 PM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				    <img src="http://s94325883.onlinehome.us/dieinfire.jpg" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><b><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=80176">VTEC powered!</a></b> <br>  <br> <font size="1">Veteran of a thousand psychic wars.</font> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/18/2004 1:01:47 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121564  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  &nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=77')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=77&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=77&mode=block&pg=tm&m=121672' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=77" class="subhead" target=_blank>nedd</a>
+		  
+		  <br>
+		  <script>titleAndStar(3062,835,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/77/8BA3E1F3884C4218BD8E226481A68618.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3062<br>
+		  Joined:  11/1/2002 <br>From:  hihihoho gnom city!<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121672></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121564'>Rainne</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/19/2004 2:39:37 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				    <img src="http://s94325883.onlinehome.us/excellent.jpg" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=271215">nedd</a> <br>  <br>  <img src="http://www.humpsteven.com/temp/vanilla.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/19/2004 2:39:37 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 121672  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=313')" title="E-mail  Figgs"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=313')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=313&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=313&mode=block&pg=tm&m=121785' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=313" class="subhead" target=_blank>Figgs</a>
+		  
+		  <br>
+		  <script>titleAndStar(298,0,0,false,"","")</script><br>
+		  <div align="center">&nbsp;</div><p class="ultrasmall">
+		  Posts:  298<br>
+		  Joined:  4/12/2003 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121785></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121672'>nedd</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/19/2004 1:57:38 PM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   Relax. 
+					<span class="info"></span>
+					
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/19/2004 1:57:38 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121785  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=71')" title="E-mail  Aramus"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=71')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=71&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=71&mode=block&pg=tm&m=121790' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=71" class="subhead" target=_blank>Aramus</a>
+		  
+		  <br>
+		  <script>titleAndStar(6241,2,0,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%202/144.JPG" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  6241<br>
+		  Joined:  11/1/2002 <br>From:  The Great White North<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121790></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121785'>Figgs</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/19/2004 2:06:53 PM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   F FIGGS! 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=91734"><div align="center">Brackus/</a><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=84239"><b>Aramus</b></a><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=1105722">/Coball</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/19/2004 2:06:53 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 121790  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=60')" title="E-mail  Biljac"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=60')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=60&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=60&mode=block&pg=tm&m=121868' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=60" class="subhead" target=_blank>Biljac</a>
+		  
+		  <br>
+		  <script>titleAndStar(806,-1,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/60/Xv65771.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  806<br>
+		  Joined:  11/1/2002 <br>From:  Ohio, USA :)<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121868></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121785'>Figgs</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/20/2004 6:23:33 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   IHF! <br>  <br> -BJ- 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><b><font size="3">Magelo:</font></b>  <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=204913"> <img src="http://www.biljac.com/images/navbar2/BJNavbar2_01.jpg" align="middle" border="0" alt=""> </a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/20/2004 6:23:33 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121868  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=86')" title="E-mail  Nausicaa"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=86')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=86&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=86&mode=block&pg=tm&m=121926' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=86" class="subhead" target=_blank>Nausicaa</a>
+		  
+		  <br>
+		  <script>titleAndStar(792,4,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/86/Xu62430.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  792<br>
+		  Joined:  11/1/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121926></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121868'>Biljac</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/20/2004 11:44:23 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   This thread is about to jump the shark. <br>  <img src="http://www.bitoffun.com/images/wei-surfs_up.jpg" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br> <img src="http://ghguild.com/forum/upfiles/86/Hf10205.gif" align="middle" border="0" alt="">  <br> <font color="green"><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=139496"><b><i>Nausicaa Valleywind, Forest Stalker of Karana</a></font> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/20/2004 11:44:23 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 121926  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=2')" title="E-mail  Mezzini"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=2')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=2&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=2&mode=block&pg=tm&m=121968' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=2" class="subhead" target=_blank>Mezzini</a>
+		  
+		  <br>
+		  <script>titleAndStar(3267,7,3,true,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/2/Qo41100.gif" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  3267<br>
+		  Joined:  10/25/2002 <br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121968></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121926'>Nausicaa</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/20/2004 4:07:33 PM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				    <img src="http://ghguild.com/forum/upfiles/smiley/spanking.gif" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=376715"><font color="red">Mezzini Doomcaster</font></a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/20/2004 4:07:33 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 121968  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="e6e6e6" >
+		  <a href='#' onclick="return powin ('email.asp?memid=16')" title="E-mail  HooVooLoo"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=16')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=16&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=16&mode=block&pg=tm&m=121972' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=16" class="subhead" target=_blank>HooVooLoo</a>
+		  
+		  <br>
+		  <script>titleAndStar(1934,-10,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/upfiles/16/Jh161267072.jpg" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  1934<br>
+		  Joined:  10/29/2002 <br>From:  The land of love<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="e6e6e6" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=121972></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121926'>Nausicaa</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/20/2004 5:01:29 PM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				   You mean jump the dolphin.  ;-) 
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br> <img src="http://s94405020.onlinehome.us/images/hooorg.jpg" align="middle" border="0" alt="">  <br> <a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=197502">Me</a> 
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="e6e6e6"  nowrap class="ultrasmall">8/20/2004 5:01:29 PM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="e6e6e6"  align="right">
+			
+			ID: 121972  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr>
+	  
+	    <td width="100" valign="top" nowrap  bgcolor="dedede" >
+		  <a href='#' onclick="return powin ('email.asp?memid=577')" title="E-mail  Mornindew"><img src="image/emailToAuthor.gif" border=0 align="absmiddle"></a>&nbsp; <a href='#' onclick="return powin('pmsend.asp?toMemId=577')" title="Send Private Message"><img src="image/pm.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=577&mode=addindividual' title="Add Member To Contact List"><img src="image/address.gif" border="0" align="absmiddle"></a> <a href='address.asp?memID=577&mode=block&pg=tm&m=122342' title="Block this guy and hide his messages"><img src="image/block.gif" border="0" align="absmiddle"></a><br>
+			<a href="showProfile.asp?memid=577" class="subhead" target=_blank>Mornindew</a>
+		  
+		  <br>
+		  <script>titleAndStar(681,0,0,false,"","")</script><br>
+		  <div align="center"><img src="http://ghguild.com/forum/avatars/NEW%20Avatars!/Part%203/226a.JPG" border=0 align="absmiddle"></div><p class="ultrasmall">
+		  Posts:  681<br>
+		  Joined:  2/17/2004 <br>From:  Orlando, Florida<br>Status: <span class='offline'>offline</span></p>
+		</td>
+	  
+	    <td valign="top" colspan="0"  bgcolor="dedede" >
+		 <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		    <tr>
+			  <td align="left" class="info" width=*>
+			  
+			  <a name=122342></a>
+			  	
+				  <img src="micons/m1.gif" border=0 align="absmiddle">  RE: nedd's news - 8/18/4 - a revela...&nbsp;(<span class="ultrasmall">in reply to <a href='#121972'>HooVooLoo</a></span>)&nbsp;
+			  </td>
+			  <td align="right" class="c2" colspan=2 nowrap>
+			  <table cellpadding="2" cellspacing="0" border="0" width="10">
+			  	<tr>
+					
+					<td align="right"><script>showPicture("8/24/2004 9:57:07 AM",0,0,0,121531,1)</script></td>
+				</tr>
+			  </table>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan=3 valign="top"><hr size="1" color="004580" width="100%"></td>
+			</tr>
+	        <tr>
+			  <td colspan=3 valign="top">
+		          <span class=msg>
+				    <img src="http://ghguild.com/forum/upfiles/smiley/thefinger.gif" align="middle" border="0" alt="">  
+					<span class="info"></span>
+					 <br><br>_____________________________<br><br><a target="_blank" href="http://www.magelo.com/eq_view_profile.html?num=782341"><font color="purple"><b>Natureguard Mornindew</b></font></a>  <br>  <br>  <img src="http://68.209.182.23/mornin.jpg" align="middle" border="0" alt="">  
+				  
+				  </span>
+	          </td>
+	        </tr>
+		  </table>
+		</td>
+	  </tr>
+	  <tr>
+	    <td width="100"   bgcolor="dedede"  nowrap class="ultrasmall">8/24/2004 9:57:07 AM<img src="image/blank.gif" align="left" border=0 width="100" height="1"></td>
+		<td  bgcolor="dedede"  align="right">
+			
+			ID: 122342  	
+			<a href="#"><img src="image/asc.gif" align="absmiddle" border="0"></a>
+		</td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>	
+
+<!--
+	Message Ends Here
+-->
+
+<table width="98%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="004580" align="center">
+	<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	  <tr bgcolor='006699'>
+      <th align='center'>
+	  <font color='FFFFFF' class='subhead'>Page: </font>&nbsp;
+	   <font color='FFFFFF' class='subhead'>[1]</font> 
+	  </th>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">  <tr><td class='ultrasmall' width="90%"><b><a href='default.asp'>All Forums</a> &gt;&gt; <a href='tt.asp?forumid=58'>[Public]</a> &gt;&gt; <a href='tt.asp?forumid=1'>Public Forum</a> &gt;&gt;  nedd's news - 8/18/4 - a revelation </b>  </td><td align="right" nowrap class='ultrasmall'>Page:   <b>[1]</b> </td></tr></table>
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><form name='jumpforummenu'><td align='right' class="ultrasmall">Jump to: <select name="SelectMenu" onchange="jumpTo(this)"><option value=''>Select a Forum</option><option value=''></option><option value='default.asp'>All Forums</option><option value=''>----------------------</option>
+<option value="tt.asp?forumid=58" >[Public]</option>
+<option value="tt.asp?forumid=1" selected>- - Public Forum</option>
+<option value="tt.asp?forumid=2" >- - Geek Life</option>
+<option value="tt.asp?forumid=95" >- - - - - - Events Archive</option></select><input type='Button' class='buttons' value='GO' onclick="jumpTo(document.jumpforummenu.SelectMenu)"></td></form></tr></table>
+<br><br>
+<table width="98%" cellpadding=0 cellspacing=0>
+<tr>
+<form action="searchpro.asp" target="_self" name="searchPage">
+	<td align="right" nowrap width="10%">
+	<input type="text" name="phrase" value="Search Term" maxlength="30" size="25" onfocus="this.select()">
+	<input type="submit" value="Search" class="buttons">
+	<input type="hidden" name="m" value="121531">
+	<input type="hidden" name="message" value="body">
+	<input type="hidden" name="topicreply" value="both">
+	<input type="hidden" name="forumid" value="1">
+	<input type="hidden" name="timeframe" value="&gt;">
+	<input type="hidden" name="timefilter" value="0">
+	</td>
+</form>
+</tr>
+</table>
+<br><br>
+
+<br>
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+			  <td>
+			   <table border='0' cellspacing='0' cellpadding='3'>
+               		<tr>
+					<td><img src="image/board_sn.gif" align="absmiddle" vspace=2> New Messages</td>
+					<td><img src="image/board_s.gif" align="absmiddle" vspace=2> No New Messages</td>
+					</tr>
+					<tr>
+					<td><img src="image/board_snh.gif" align="absmiddle" vspace=2> Hot Topic w/ New Messages</td>
+					<td><img src="image/board_sh.gif" align="absmiddle" vspace=2> Hot Topic w/o New Messages</td>
+			   		</tr>
+					<tr>
+					<tr>
+					<td><img src="image/board_snlocked.gif" align="absmiddle" vspace=2> Locked w/ New Messages</td>
+					<td><img src="image/board_slocked.gif" align="absmiddle" vspace=2> Locked w/o New Messages</td>
+					</tr>
+			   </table>
+			  </td>
+			  <td align="right">
+				<table border=0>
+					<tr><td>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Reply to Message<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Post New Poll<br>			
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Submit Vote<br>
+
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Post<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Delete My Own Thread<br>
+							<img src="image/no.gif" border=0 align='absmiddle'>
+&nbsp;Rate Posts
+					</td></tr>
+				</table>
+			  </td>
+            </tr>
+          </table>
+<br><br>
+<center>
+	
+	<br>
+	<br>	</td>
+	  </tr>
+	</table>
+	</center>
+	
+	<script language="JavaScript">
+	if (0){
+		if (confirm("You have at least 1 new private message.\n\nWould you like to go to your inbox now?")){
+			self.location.href="pm.asp";
+		}
+	}
+	</script>
+	<center><img src="http://ghguild.com/poweredbywin2k3.gif"><br><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+	<td align="center" class="info">Forum Software powered by ASP Playground <b>Advanced Edition</b> 2.3<br>
+	  Copyright &copy; 2000 - 2003 <a href="http://www.aspplayground.net" target="_blank">ASPPlayground.NET</a></td>
+  </tr>
+</table></center>
+	<br><font color="ffffff">0.109</font><br>
+
+</body>
+</html>
