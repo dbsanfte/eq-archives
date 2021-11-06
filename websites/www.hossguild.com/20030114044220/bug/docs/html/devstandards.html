@@ -1,0 +1,436 @@
+<HTML
+><HEAD
+><TITLE
+>Development Standards</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="phpBugTracker"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Developer's Guide"
+HREF="devguide.html"><LINK
+REL="PREVIOUS"
+TITLE="Developer's Guide"
+HREF="devguide.html"><LINK
+REL="NEXT"
+TITLE="Database Schema"
+HREF="schema.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docs.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#800080"
+ALINK="#FF0000"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>phpBugTracker</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="devguide.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Developer's Guide</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="schema.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="DEVSTANDARDS">3.2. Development Standards</H1
+><BLOCKQUOTE
+CLASS="ABSTRACT"
+><DIV
+CLASS="ABSTRACT"
+><A
+NAME="AEN362"><P
+>			This section details the coding and process standards to be 
+			followed by the developers working on phpBugTracker.
+		</P
+></DIV
+></BLOCKQUOTE
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="DEVSTANDARDS-CODE">3.2.1. Coding Standards</H2
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-INDENTING">3.2.1.1. Indenting</H3
+><P
+>				Use an indent of one tab per indent.
+			</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-CONTROL">3.2.1.2. Control Structures</H3
+><P
+>				These include if, for, while, switch, etc. Here is an example if 
+				statement, since it is the most complicated of them:
+			</P
+><TABLE
+BORDER="0"
+BGCOLOR="#EEEEEE"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>  if ((condition1) || (condition2)) {
+    action1;
+  } elseif ((condition3) &amp;&amp; (condition4)) {
+    action2;
+  } else {
+    defaultaction;
+  }
+			</PRE
+></TD
+></TR
+></TABLE
+><P
+>				Control statements should have one space between the control keyword 
+				and opening parenthesis, to distinguish them from function calls.
+			</P
+><P
+>				You are strongly encouraged to always use curly braces even in 
+				situations where they are technically optional. Having them increases 
+				readability and decreases the likelihood of logic errors being 
+				introduced when new lines are added.
+			</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-FUNCCALLS">3.2.1.3. Function Calls</H3
+><P
+>				Functions should be called with no spaces between the function name, 
+				the opening parenthesis, and the first parameter; spaces between 
+				commas and each parameter, and no space between the last parameter, 
+				the closing parenthesis, and the semicolon. Here's an example:
+			</P
+><TABLE
+BORDER="0"
+BGCOLOR="#EEEEEE"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>  $var = foo($bar, $baz, $quux);
+			</PRE
+></TD
+></TR
+></TABLE
+><P
+>				As displayed above, there should be one space on either side of an 
+				equals sign used to assign the return value of a function to a variable.
+			</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-FUNCDEFS">3.2.1.4. Function Definitions</H3
+><P
+>				Function definitions follow the format of function calls, with the 
+				opening brace at the end of the line of the function declaration. The 
+				global variable list (if used) should be placed on the line immediately 
+				following the opening brace, with a blank line between the variable 
+				list and the first line of function code. If the global variable list 
+				is not neccessary, include a blank line between the opening brace and 
+				the first line of function code.
+			</P
+><TABLE
+BORDER="0"
+BGCOLOR="#EEEEEE"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>  function fooFunction($arg1, $arg2 = '') {
+    global $foo1, $foo2;
+
+    if (condition) {
+      statement;
+    }
+    return $val;
+  }
+			</PRE
+></TD
+></TR
+></TABLE
+><P
+>				Arguments with default values go at the end of the argument list.  
+				Always attempt to return a meaningful value from a function if one is 
+				appropriate. Here is a slightly longer example:
+			</P
+><TABLE
+BORDER="0"
+BGCOLOR="#EEEEEE"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>  function connect(&amp;$dsn, $persistent = false) {
+
+    if (is_array($dsn)) {
+      $dsninfo = &amp;$dsn;
+    } else {
+      $dsninfo = DB::parseDSN($dsn);
+    }
+
+    if (!$dsninfo || !$dsninfo['phptype']) {
+      return $this-&gt;raiseError();
+    }
+
+    return true;
+  }
+			</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-COMMENTS">3.2.1.5. Comments</H3
+><P
+>				Non-documentation comments are strongly encouraged. A general rule of 
+				thumb is that if you look at a section of code and think "Wow, I don't 
+				want to try and describe that", you need to comment it before you 
+				forget how it works.
+			</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-INCLUDING">3.2.1.6. Including Code</H3
+><P
+>				Anywhere you are unconditionally including a class file, use 
+				<A
+HREF="http://php.net/manual/en/html/function.require-once.html"
+TARGET="_top"
+>				<TT
+CLASS="FUNCTION"
+>require_once()</TT
+></A
+>. Anywhere you are 
+				conditionally including a class file (for example, factory methods), 
+				use <A
+HREF="http://php.net/manual/en/html/function.include-once.html"
+TARGET="_top"
+>				<TT
+CLASS="FUNCTION"
+>include_once()</TT
+></A
+>. Either of these will 
+				ensure that class files are included only once. They share the same file 
+				list, so you don't need to worry about mixing them - a file included 
+				with <TT
+CLASS="FUNCTION"
+>require_once()</TT
+> will not be included again by 
+				<TT
+CLASS="FUNCTION"
+>include_once()</TT
+>.
+			</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-PHPTAGS">3.2.1.7. PHP Tags</H3
+><P
+>				Always use <TT
+CLASS="COMPUTEROUTPUT"
+>&lt;?php ?&gt;</TT
+> 
+				to delimit PHP code, not the <TT
+CLASS="COMPUTEROUTPUT"
+>&lt;? ?&gt;</TT
+> 
+				shorthand.
+			</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-CONSTANTS">3.2.1.8. Naming Constants</H3
+><P
+>				Constants should always be uppercase, with underscores to separate 
+				words.
+			</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="OTHERCONVENTIONS">3.2.2. Other Conventions</H2
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="DEVSTANDARDS-FILENAMING">3.2.2.1. File Naming</H3
+><P
+>				File names should be all lowercase and contain no spaces. HTML files 
+				should have <TT
+CLASS="FILENAME"
+>.html</TT
+> as the extension, and PHP files 
+				should have <TT
+CLASS="FILENAME"
+>.php</TT
+> as the extension. Where possible, 
+				template files should match the name of the PHP file that will be using 
+				it, e. g., <TT
+CLASS="FILENAME"
+>index.html</TT
+> would be the template file 
+				for <TT
+CLASS="FILENAME"
+>index.php</TT
+>. Where one PHP file uses more than one 
+				template, the templates should be similarly named: 
+				<TT
+CLASS="FILENAME"
+>user.php</TT
+> could use 
+				<TT
+CLASS="FILENAME"
+>userlist.html</TT
+> and <TT
+CLASS="FILENAME"
+>userform.html</TT
+> 
+				for a list of users and editing a user, respectively.
+			</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="devguide.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="schema.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Developer's Guide</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="devguide.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Database Schema</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

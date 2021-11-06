@@ -1,0 +1,1145 @@
+
+<table border=1 cellspacing=0 bordercolor=black width=350 align=center>
+<tr>
+<td width=30>Num.</td>
+<td width=100><a href=ShowVTKey.php?sort=PlayerName>Name</a></td>
+<td width=50>Ssra</td>
+<td width=50>Seru</td>
+<td width=50>Fungus</td>
+<td width=50>Dawnshroud</td>
+<td width=50>Grey</td>
+<td width=50>Scarlet</td>
+<td width=50>Akheva</td>
+<td width=50>Deep</td>
+<td width=50>Acyrlia</td>
+<td width=50>Maiden</td>
+<td width=20><a href=ShowVTKey.php?sort=Status>Status</a></td>
+</tr><tr>
+<td width=30>1.</td>
+<td width=100>Abyena</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>2.</td>
+<td width=100>Aedail</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>3.</td>
+<td width=100>Amberel</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>4.</td>
+<td width=100>Andaas</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>5.</td>
+<td width=100>Andriana</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>6.</td>
+<td width=100>Arcius</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>7.</td>
+<td width=100>Bolien</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>8.</td>
+<td width=100>Burnem</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>9.</td>
+<td width=100>Cardinal</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>10.</td>
+<td width=100>Caydon</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>11.</td>
+<td width=100>Cruunch</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>12.</td>
+<td width=100>daisiee</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>13.</td>
+<td width=100>Dharrk</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>14.</td>
+<td width=100>Drakky</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>15.</td>
+<td width=100>Eisai</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>16.</td>
+<td width=100>Elidroth</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>17.</td>
+<td width=100>Eomer</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>18.</td>
+<td width=100>Fehren</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>19.</td>
+<td width=100>Forty</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>20.</td>
+<td width=100>Grimthorn</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>21.</td>
+<td width=100>Inizen</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>22.</td>
+<td width=100>Jynere</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>23.</td>
+<td width=100>kaedaase</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>24.</td>
+<td width=100>Kallaill </td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>25.</td>
+<td width=100>Karendra</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>26.</td>
+<td width=100>Katianara</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>27.</td>
+<td width=100>Khael</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>28.</td>
+<td width=100>Klerik</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>29.</td>
+<td width=100>kurbi</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>30.</td>
+<td width=100>Lepra</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>31.</td>
+<td width=100>Lexoon</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>32.</td>
+<td width=100>Lilcix</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>33.</td>
+<td width=100>Lola</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>34.</td>
+<td width=100>Lonskils</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>35.</td>
+<td width=100>Loralana</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>36.</td>
+<td width=100>Mancer</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>37.</td>
+<td width=100>Mintin</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>38.</td>
+<td width=100>Mitsy</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>39.</td>
+<td width=100>Myztlee</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=red>&nbsp;</td>
+</tr><tr>
+<td width=30>40.</td>
+<td width=100>Nexten</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>41.</td>
+<td width=100>Nuuk</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>42.</td>
+<td width=100>Obudan</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>43.</td>
+<td width=100>Oobah</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>44.</td>
+<td width=100>Parak</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>45.</td>
+<td width=100>Phaera</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>46.</td>
+<td width=100>Psidan</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>47.</td>
+<td width=100>qaediin</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>48.</td>
+<td width=100>rinna</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>49.</td>
+<td width=100>Rolist</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>50.</td>
+<td width=100>Sachiiel</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>51.</td>
+<td width=100>Sazar</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>52.</td>
+<td width=100>Scrith</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>53.</td>
+<td width=100>Selenajra</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>54.</td>
+<td width=100>sendain</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>55.</td>
+<td width=100>Shaidi</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>56.</td>
+<td width=100>shyft</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>57.</td>
+<td width=100>Stitz</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>58.</td>
+<td width=100>Stompetta</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>59.</td>
+<td width=100>Storme</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>60.</td>
+<td width=100>Syana</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>61.</td>
+<td width=100>Sylvia</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>62.</td>
+<td width=100>Tarissa</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>63.</td>
+<td width=100>teutebod</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>64.</td>
+<td width=100>Thunderclap</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>65.</td>
+<td width=100>Tilea</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>66.</td>
+<td width=100>Trazz</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>67.</td>
+<td width=100>Turtull</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>68.</td>
+<td width=100>Vanuiil</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>69.</td>
+<td width=100>Vegar</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>70.</td>
+<td width=100>Vestax</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>71.</td>
+<td width=100>Vidmer</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>72.</td>
+<td width=100>Vinilaa</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>73.</td>
+<td width=100>Waright</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>74.</td>
+<td width=100>Xuen</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>75.</td>
+<td width=100>Yendii</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>76.</td>
+<td width=100>Zaphoe</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=20 bgcolor=red>&nbsp;</td>
+</tr><tr>
+<td width=30>77.</td>
+<td width=100>Zappo</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>78.</td>
+<td width=100>Zarwin</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr><tr>
+<td width=30>79.</td>
+<td width=100>Zorgon</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=50>-</td>
+<td width=50>Got</td>
+<td width=50>-</td>
+<td width=20 bgcolor=yellow>&nbsp;</td>
+</tr><tr>
+<td width=30>80.</td>
+<td width=100>Zyklan</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=50>Got</td>
+<td width=20 bgcolor=#40FF40>&nbsp;</td>
+</tr>
+<tr>
+<td colspan=13>
+44 People have all their shards<br>
+34 People have some of their shards<br>
+2 People have none of their shards
+</td>
+</tr>
+</table>

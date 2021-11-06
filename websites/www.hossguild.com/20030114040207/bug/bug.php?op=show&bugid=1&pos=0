@@ -1,0 +1,286 @@
+<html>
+<head>
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <title>phpBugTracker - View Bug</title>
+    <link rel="StyleSheet" href="styles/default.css" type="text/css">
+	<link rel="stylesheet" type"text/css" href="styles/print.css" media="print">
+    <META http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+</head>
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="nav">
+  <tr>
+	<td class="nav" valign="middle"><img name="title" src="templates/default/images/title.gif" width="500" height="50" border="0" alt="" hspace="0" vspace="0"></td>
+	<td align="right" valign="middle" class="nav">
+		<form action="bug.php">
+		<input type="hidden" name="op" value="show">
+		Find Bug
+		<input name="bugid" type="text" id="bugid" size="4">
+		&nbsp;
+		</form>
+	</td>
+  </tr>
+  <tr>
+	<td bgcolor="#9999FF" height="4" colspan="2"><img src="templates/default/images/spacer.gif" height="1" width="1"></td>
+  </tr>
+  <tr>
+	<td bgcolor="#9999FF" colspan="2">
+	  <table border="0" cellspacing="0" cellpadding="4">
+			<tr>
+			  <td><a href="index.php"><font class="navlink">Home</font></a></td>
+			  <td>|</td>
+			  <td><a href="bug.php?op=add"><font class="navlink">Add a new Bug</font></a></td>
+			  <td>|</td>
+			  <td><a href="query.php?op=query"><font class="navlink">Query Bugs</font></a></td>
+			  <td>|</td>
+			  <td><a href="report.php"><font class="navlink">View Reports</font></a></td>
+							  <td>|</td>
+			  <td><a href="newaccount.php"><font class="navlink">Create a new Account</font></a></td>
+							  <td>|</td>
+			  <td><a href="docs/html/userguide.html"><font class="navlink">Read Documentation</font></a></td>
+							</tr>
+		</table>
+	</td>
+  </tr>
+  <tr>
+	<td bgcolor="#9999FF" height="4" colspan="2"><img src="templates/default/images/spacer.gif" height="1" width="1"></td>
+  </tr>
+  <tr>
+	<td bgcolor="#000000" height="1" colspan="2"><img src="templates/default/images/spacer.gif" height="1" width="1"></td>
+  </tr>
+  	<tr>
+	    <td colspan="2" height="20" class="bottomnav">
+		<form method="post" action="/bug/bug.php?op=show&bugid=1&pos=0">
+		&nbsp;
+				    					    				
+				Email: <input type="text" name="username" class="bottomnavinput" value="">
+				Password: <input type="password" name="password" class="bottomnavinput">
+				<input type="hidden" name="dologin" value="1">
+				<input type="submit" value="Login" class="bottomnavinput">
+				<input type="submit" name="sendpass" value="Email Password" class="bottomnavinput" title="Forgot your password?  Have it sent to you">
+		    				&nbsp;
+		</form>
+	    </td>
+	</tr>
+  <tr>
+	<td bgcolor="#000000" height="1" colspan="2"><img src="templates/default/images/spacer.gif" height="1" width="1"></td>
+  </tr>
+    <tr>
+	<td bgcolor="#ffffff" height="20" colspan="2"><img src="templates/default/images/spacer.gif" height="1" width="1"></td>
+  </tr>
+</table>
+
+<script type="text/JavaScript">
+<!--
+	warningString = 'You must be logged in to modify this bug';
+	warnedAlready = false;
+
+	versions = new Array();
+	closedversions = new Array();
+	components = new Array();
+	versions['All'] = new Array(new Array('','All'));
+	closedversions['All'] = new Array(new Array('','All'));
+	components['All'] = new Array(new Array('','All'));
+	versions['Bug Database'] = new Array(new Array(1,'.9'));
+closedversions['Bug Database'] = new Array(new Array(0, 'Choose One'),new Array(1,'.9'));
+components['Bug Database'] = new Array(new Array(1,'Test'));
+
+	
+	function updateMenus(f) {
+	  	sel = f.project_id[f.project_id.selectedIndex].text;
+	  	f.version_id.length = versions[sel].length;
+	  	for (var x = 0; x < versions[sel].length; x++) {
+	    	f.version_id.options[x].value = versions[sel][x][0];
+	    	f.version_id.options[x].text = versions[sel][x][1];
+				f.version_id.selectedIndex = 0;
+	  	}
+
+	  	f.to_be_closed_in_version_id.length = closedversions[sel].length;
+	  	for (var x = 0; x < closedversions[sel].length; x++) {
+	    	f.to_be_closed_in_version_id.options[x].value = closedversions[sel][x][0];
+	    	f.to_be_closed_in_version_id.options[x].text = closedversions[sel][x][1];
+				f.to_be_closed_in_version_id.selectedIndex = 0;
+	  	}
+
+	  	f.closed_in_version_id.length = closedversions[sel].length;
+	  	for (var x = 0; x < closedversions[sel].length; x++) {
+	    	f.closed_in_version_id.options[x].value = closedversions[sel][x][0];
+	    	f.closed_in_version_id.options[x].text = closedversions[sel][x][1];
+				f.closed_in_version_id.selectedIndex = 0;
+	  	}
+
+	  	f.component_id.length = components[sel].length;
+	  	for (var x = 0; x < components[sel].length; x++) {
+	    	f.component_id.options[x].value = components[sel][x][0];
+	    	f.component_id.options[x].text = components[sel][x][1];
+				f.component_id.selectedIndex = 0;
+	  	}
+	}
+
+	function popupAtt(id) {
+		window.open('attachment.php?use_js=1&bugid='+id, 'ewin', 'dependent=yes,width=350,height=200,scrollbars=1');
+		return false;
+	}
+
+	function alertNoChange() {
+		if (!warnedAlready) {
+			alert(warningString);
+			warnedAlready = true;
+		}
+	}
+	
+//-->
+</script>
+<form action="bug.php" method="post">
+    <input type="hidden" name="op" value="update">
+    <input type="hidden" name="bugid" value="1">
+    <input type="hidden" name="projectid" value="1">
+    <input type="hidden" name="last_modified_date" value="1041986836">
+    <input type="hidden" name="pos" value="0">
+    <table border="0" width="100%">
+	<tr>
+	    <td>Bug <b>#1</b> - Installation was too easy. - Return to <a href="query.php">bug list</a></td>
+		<td align="right">
+	    </td>
+	</tr>
+    </table>
+    <table border="0" width="100%" cellspacing="0" cellpadding="2">
+	<tr>
+	    <td>Reporter:</td>
+	    <td><b>******</b></td>
+	    <td>Created:</td>
+	    <td><b>01-07-2003</b></td>
+	</tr><tr>
+	    <td>Project:</td>
+	    <td><select name="project_id" onChange="updateMenus(this.form)" onClick="alertNoChange();"><option value="1" selected>Bug Database</option></select></td>
+	    <td>Priority:</td>
+	    <td><select name="priority" onClick="alertNoChange();"><option value="1" selected>1 - Low</option><option value="2">2</option><option value="3">3 - Medium</option><option value="4">4</option><option value="5">5 - High</option></select></td>
+	</tr><tr>
+	    <td>Component:</td>
+	    <td><select name="component_id" onClick="alertNoChange();"><option value="1" selected>Test</option></select></td>
+	    <td>Severity:</td>
+	    <td><select name="severity_id" onClick="alertNoChange();"><option value="1">Unassigned</option><option value="2">Idea</option><option value="3">Feature Request</option><option value="4">Annoyance</option><option value="5">Content</option><option value="6" selected>Significant</option><option value="7">Critical</option></select></td>
+	</tr><tr>
+	    <td>Version:</td>
+	    <td><select name="version_id" onClick="alertNoChange();"><option value="1" selected>.9</option></select></td>
+	    <td>OS:</td>
+	    <td><select name="os_id" onClick="alertNoChange();"><option value="1" selected>All</option><option value="2">Windows 3.1</option><option value="3">Windows 95</option><option value="4">Windows 98</option><option value="5">Windows ME</option><option value="6">Windows 2000</option><option value="7">Windows NT</option><option value="8">Mac System 7</option><option value="9">Mac System 7.5</option><option value="10">Mac System 7.6.1</option><option value="11">Mac System 8.0</option><option value="12">Mac System 8.5</option><option value="13">Mac System 8.6</option><option value="14">Mac System 9.0</option><option value="15">Mac OS X</option><option value="16">Linux</option><option value="17">BSDI</option><option value="18">FreeBSD</option><option value="19">NetBSD</option><option value="20">OpenBSD</option><option value="21">AIX</option><option value="22">BeOS</option><option value="23">HP-UX</option><option value="24">IRIX</option><option value="25">Neutrino</option><option value="26">OpenVMS</option><option value="27">OS/2</option><option value="28">OSF/1</option><option value="29">Solaris</option><option value="30">SunOS</option><option value="31">other</option></select></td>
+	</tr><tr>
+	    <td>To be Closed in Version</td>
+	    <td><select name="to_be_closed_in_version_id" onClick="alertNoChange();">
+		    <option value="0">Choose One</option>
+		    <option value="1">.9</option>		</select></td>
+	    <td>Database:</td>
+	    <td><select name="database_id" onClick="alertNoChange();"><option value="0">None</option><option value="1">Oracle 8.1.7</option><option value="2">MySQL 3.23.49</option><option value="3">PostgreSQL 7.1.3</option></select></td>
+	</tr><tr>
+	    <td>Closed in Version</td>
+	    <td><select name="closed_in_version_id" onClick="alertNoChange();">
+		    <option value="0">Choose One</option>
+		    <option value="1">.9</option>		</select></td>
+	    <td>Reported on Site</td>
+	    <td><select name="site_id" onClick="alertNoChange();"><option value="0" selected>All</option><option value="1">Production - location 1</option><option value="2">Production - location 2</option><option value="3">Test site - location 1</option><option value="4">Test site - location 2</option></select></td>
+	</tr><tr>
+	    <td>Summary:</td>
+	    <td><input type="text" size="30" maxlength="100" name="title" value="Installation was too easy." onClick="alertNoChange();"></td>
+	    <td>Status:</td>
+	    <td><select name="status_id" onClick="alertNoChange();"><option value="1" selected>Unconfirmed</option><option value="2">New</option><option value="3">Assigned</option><option value="4">Reopened</option><option value="5">Resolved</option><option value="6">Verified</option><option value="7">Closed</option></select></td>
+	</tr><tr>
+	    <td>URL:</td>
+	    <td><input type="text" size="30" maxlength="255" name="url" value="" onClick="alertNoChange();"></td>
+	    <td>Resolution:</td>
+	    <td><select name="resolution_id" onClick="alertNoChange();"><option value="0">None</option><option value="1">Fixed</option><option value="2">Not a bug</option><option value="3">Won't Fix</option><option value="4">Deferred</option><option value="5">Works for me</option><option value="6">Duplicate</option></select></td>
+	</tr><tr>
+	    <td>Assigned To:</td>
+	    <td><select name="assigned_to" onClick="alertNoChange();"><option value="0">Nobody</option><option value="4">dev@tdk-m.com</option></select></td>
+	    <td>Add CC:</td>
+	    <td><input type="text" name="add_cc" onClick="alertNoChange();"></td>
+	</tr><tr>
+	    <td colspan="2" valign="top">
+		Dependencies: <br>
+		Add Dependency: <input type="text" name="add_dependency" size="5" onClick="alertNoChange();"><br>
+		Remove Dependency: <input type="text" name="del_dependency" size="5" onClick="alertNoChange();"><br><br></td>
+	    <td colspan="2" valign="top">
+		Remove selected CCs:<br>
+		<select name="remove_cc[]" size="5" style="width: 15em" multiple onClick="alertNoChange();"><option value="" disabled>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option></select></td>
+	</tr>
+    </table>
+    <table border="0" cellpadding="2" cellspacing="0" width="100%">
+	<tr>
+	    <td valign="top">Additional Comments:<br><br>
+		<textarea name="comments" rows="6" cols="55" wrap="virtual" onClick="alertNoChange();"></textarea>
+		<br><br>
+		<div align="right">
+			You must be logged in to modify this bug
+		</div></td>
+	</tr><tr>
+	    <td><table border="0" cellpadding="0" width="100%">
+		    <tr>
+			<td colspan="2">Attachments:</td>
+			<td colspan="3" align="right"><a href="attachment.php?bugid=1" onClick="return popupAtt(1)">Create Attachment</a></td>
+		    </tr><tr>
+			<td colspan="5" height="2" bgcolor="#ffffff"><spacer type="block" height="2" width="2"></td>
+		    </tr><tr>
+			<td bgcolor="#cccccc" align="center"><b>Name</b></td>
+			<td width="60" bgcolor="#cccccc" align="center"><b>Size</b></a></td>
+			<td width="150" bgcolor="#cccccc" align="center"><b>Type</b></a></td>
+			<td width="80" bgcolor="#cccccc" align="center"><b>Created</b></a></td>
+			<td width="80" bgcolor="#cccccc" align="center">&nbsp;</a></td>
+		    </tr><tr>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+		    </tr>
+		    <tr title="Picture of nothing.">
+			<td>st_logo.tga</td>
+			<td align="right">
+    		48k
+    			</td>
+			<td align="center">application/octet-stream</td>
+			<td align="center">01-07-2003</td>
+			<td align="center"><a href='attachment.php?attachid=1'>View</a>
+    			</td>
+		    </tr>
+		    <tr>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+			<td bgcolor="#000000" height="1"><spacer type="block" height="1" width="1"></td>
+		    </tr><tr>
+			<td colspan="5" height="2" bgcolor="#ffffff"><spacer type="block" height="2" width="2"></td>
+		    </tr>
+		</table></td>
+	</tr>
+    </table>
+</form>
+<div align="center" class="bugdisplaylinks">
+    <b><a href="/bug/bug.php?op=vote&bugid=1" onClick="if (1) { alert ('You have already voted for this bug'); return false; }">Vote for this bug</a></b> |
+    <b><a href="/bug/bug.php?op=viewvotes&bugid=1">View votes (2) for this bug</a></b> |
+    <b><a href="/bug/bug.php?op=history&bugid=1">View bug activity</a></b> |
+    <b><a href="/bug/bug.php?op=print&bugid=1">Printable View</a></b>
+</div>
+<br><br>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+    <tr>
+	<td>Comments:</td>
+    </tr><tr class="alt">
+	<td>Posted By: ****** <br>
+	    Date: 7:43 PM On 01-07-2003</td>
+    </tr><tr>
+	<td>This must be a trick. <br><br></td>
+    </tr>
+        <tr class="alt">
+	<td>Posted By: ****** <br>
+	    Date: 7:45 PM  01-07-2003</td>
+    </tr><tr>
+	<td>Bug text.<br />
+<br />
+BlahblahblahBlahblahblahBlahblahblahBlahblahblahBl ahbla BlahblahblahBlahblahblahBlahblahblahBlahblahbla hBlahblahblahBlahblahblahBlahblahblahBlahblahbla hBlahblahblahBlahblahblahBlahblahblahBlahblahblahB lahblahblahBlahblahblah<br />
+<br />
+BlahblahblahBlahblahblahBlahblahblahBlahblahblah<br />
+BlahblahblahBlahblahblah <br><br></td>
+    </tr>
+    </table>
+</body>
+</html>

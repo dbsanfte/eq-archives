@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="index.php" title="" />
+<link rel="search" href="search.php" title="" />
+<link rel="help" href="faq.php" title="" />
+<link rel="author" href="memberlist.php" title="" />
+
+<title>Magna Charta :: Index</title>
+<link rel="stylesheet" href="templates/fiapple/fiapple.css" type="text/css" />
+<style type="text/css">
+<!--
+TH			{ background-image: url(templates/fiapple/images/lines.gif) }
+TD.cat		{ background-image: url(templates/fiapple/images/lines.gif) }
+TD.rowpic	{ background-image: url(templates/fiapple/images/lines.gif) }
+TD.catHead,TD.catSides,TD.catRight,TD.catBottom { background-image: url(templates/fiapple/images/lines.gif) }
+TD.catLeft { background-image: url(templates/fiapple/images/cat_bkg.gif) }
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#4682b4" vlink="#4682b4"
+background="templates/fiapple/images/lines.gif">
+<a name="top"></a>
+<table width="750" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center">
+<table border="0" cellpadding="0" cellspacing="0" width="720">
+<tr>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+<td><img src="templates/fiapple/images/spacer.gif" width="80" height="1" /></td>
+</tr>
+<tr>
+<td><a href="index.php?sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_2.gif" width="80" height="26" border="0" alt="Magna Charta Foren-Übersicht"></a></td>
+<td><a href="faq.php?sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_3.gif" width="80" height="26" border="0" alt="FAQ"></a></td>
+<td><a href="memberlist.php?sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_4.gif" width="80" height="26" border="0" alt="Mitgliederliste"></a></td>
+<td><a href="search.php?sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_5.gif" width="80" height="26" border="0" alt="Suchen"></a></td>
+<td><a href="groupcp.php?sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_6.gif" width="80" height="26" border="0" alt="Benutzergruppen"></a></td>
+<td><a href="profile.php?mode=editprofile&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_8.gif" width="80" height="26" border="0" alt="Profil"></a></td>
+<td><a href="privmsg.php?folder=inbox&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_9.gif" width="80" height="26" border="0" alt="Einloggen, um private Nachrichten zu lesen"></a></td>
+<td><a href="login.php?sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_10.gif" width="80" height="26" border="0" alt="Login"></a></td>
+<td><span class="gen"><a href="profile.php?mode=register&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65"><img src="templates/fiapple/images/top_bar1_7.gif" width="80" height="26" border="0" alt="Registrieren"></a></span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_1.gif" width="10" height="12" /></td>
+<td background="templates/fiapple/images/pl_bdr_3.gif" class="gensmall" width="100%"><img src="templates/fiapple/images/spacer.gif" width="200" height="12" /></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_5.gif" width="10" height="12" /></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="10" border="0">
+<tr>
+<td class="bodyline">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="15"><img src="templates/fiapple/images/imac_scrn_1.gif" width="15" height="16" /></td>
+<td background="templates/fiapple/images/imac_scrn_3.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="10" height="16" /></td>
+<td width="16"><img src="templates/fiapple/images/imac_scrn_5.gif" width="16" height="16" /></td>
+</tr>
+<tr>
+<td width="15" background="templates/fiapple/images/imac_scrn_9.gif"><img src="templates/fiapple/images/spacer.gif" width="15" height="60" /></td>
+<td align="center"> <span class="maintitle">Magna Charta</span><br />
+<span class="gen">Eine Everquest-Gilde auf Solusek Ro</span></td>
+<td width="16" background="templates/fiapple/images/imac_scrn_10.gif"><img src="templates/fiapple/images/spacer.gif" width="15" height="60" /></td>
+</tr>
+<tr>
+<td width="15"><img src="templates/fiapple/images/imac_scrn_13.gif" width="15" height="16" /></td>
+<td background="templates/fiapple/images/imac_scrn_14.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="10" height="16" /></td>
+<td width="16"><img src="templates/fiapple/images/imac_scrn_11.gif" width="16" height="16" /></td>
+</tr>
+</table>
+<br />
+
+<table width="100%" cellspacing="0" cellpadding="2" border="0" align="center"><tr>
+<td align="left" valign="bottom"><span class="gensmall">
+Aktuelles Datum und Uhrzeit: 06.12.2004 - 19:30<br />
+</span><span class="nav"><a href="index.php?sid=fc04017ecfc6070bc9ed7aca9a941a65" class="nav">Magna Charta Foren-Übersicht</a></span></td>
+<td align="right" valign="bottom" class="gensmall">
+<a href="search.php?search_id=unanswered&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="gensmall">Unbeantwortete Beiträge anzeigen</a></td></tr><tr>
+<td align="left" valign="bottom"><img src="templates/fiapple/images/spacer.gif" width="200" height="2" alt="" /></td>
+<td align="right" valign="bottom" class="gensmall"><img src="templates/fiapple/images/spacer.gif" width="200" height="2" alt="" /></td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_1.gif" width="10" height="12" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr_3.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="200" height="12" alt="" /></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_5.gif" width="10" height="12" alt="" /></td></tr></table>
+<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline"><tr>
+<th colspan="2" class="thCornerL" height="25" nowrap>&nbsp;Forum&nbsp;</th>
+<th class="thTop" nowrap>&nbsp;Themen&nbsp;</th>
+<th width="50" class="thTop" nowrap>&nbsp;Beiträge&nbsp;</th>
+<th class="thCornerR" nowrap>&nbsp;Letzter&nbsp;Beitrag&nbsp;</th></tr>
+<tr><td class="catLeft" colspan="5">&nbsp;<a href="index.php?c=7&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="cattitle">News/Homepage</a></td>
+</tr>
+<tr>
+<td class="row1" align="center" valign="middle" height="40"><img src="templates/fiapple/images/folder.gif" width="40" height="30" alt="Keine neuen Beiträge" title="Keine neuen Beiträge" /></td>
+<td class="row1" width="100%"><span class="forumlink"> <a href="viewforum.php?f=46&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="forumlink">News</a><br />
+</span> <span class="genmed"><br /></span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">62</span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">359</span></td>
+<td class="row2" align="center" valign="middle" nowrap> <span class="gensmall">22.11.2004 - 01:05<br /><a href="profile.php?mode=viewprofile&amp;u=558&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Sind</a> <a href="viewtopic.php?p=73871&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65#73871"><img src="templates/fiapple/images/icon_latest_reply.gif" border="0" alt="Letzten Beitrag anzeigen" title="Letzten Beitrag anzeigen" /></a></span></td>
+</tr>
+<tr><td class="catLeft" colspan="5">&nbsp;<a href="index.php?c=1&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="cattitle">Offene Foren</a></td>
+</tr>
+<tr>
+<td class="row1" align="center" valign="middle" height="40"><img src="templates/fiapple/images/folder.gif" width="40" height="30" alt="Keine neuen Beiträge" title="Keine neuen Beiträge" /></td>
+<td class="row1" width="100%"><span class="forumlink"> <a href="viewforum.php?f=1&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="forumlink">Offenes Forum</a><br />
+</span> <span class="genmed">Das allgemeine Forum für unsere Gäste<br /></span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">222</span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">2111</span></td>
+<td class="row2" align="center" valign="middle" nowrap> <span class="gensmall">06.12.2004 - 13:47<br /><a href="profile.php?mode=viewprofile&amp;u=121&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Apeiron</a> <a href="viewtopic.php?p=74674&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65#74674"><img src="templates/fiapple/images/icon_latest_reply.gif" border="0" alt="Letzten Beitrag anzeigen" title="Letzten Beitrag anzeigen" /></a></span></td>
+</tr>
+<tr>
+<td class="row1" align="center" valign="middle" height="40"><img src="templates/fiapple/images/folder.gif" width="40" height="30" alt="Keine neuen Beiträge" title="Keine neuen Beiträge" /></td>
+<td class="row1" width="100%"><span class="forumlink"> <a href="viewforum.php?f=27&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="forumlink">Offenes Tauschforum</a><br />
+</span> <span class="genmed">Public Trade forum<br /></span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">95</span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">282</span></td>
+<td class="row2" align="center" valign="middle" nowrap> <span class="gensmall">01.10.2004 - 20:46<br /><a href="profile.php?mode=viewprofile&amp;u=522&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Der_Gast</a> <a href="viewtopic.php?p=71637&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65#71637"><img src="templates/fiapple/images/icon_latest_reply.gif" border="0" alt="Letzten Beitrag anzeigen" title="Letzten Beitrag anzeigen" /></a></span></td>
+</tr>
+<tr>
+<td class="row1" align="center" valign="middle" height="40"><img src="templates/fiapple/images/folder.gif" width="40" height="30" alt="Keine neuen Beiträge" title="Keine neuen Beiträge" /></td>
+<td class="row1" width="100%"><span class="forumlink"> <a href="viewforum.php?f=40&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="forumlink">Picture Post</a><br />
+</span> <span class="genmed"><br /></span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">49</span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">359</span></td>
+<td class="row2" align="center" valign="middle" nowrap> <span class="gensmall">04.12.2004 - 20:29<br /><a href="profile.php?mode=viewprofile&amp;u=88&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Daarkja</a> <a href="viewtopic.php?p=74622&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65#74622"><img src="templates/fiapple/images/icon_latest_reply.gif" border="0" alt="Letzten Beitrag anzeigen" title="Letzten Beitrag anzeigen" /></a></span></td>
+</tr>
+<tr>
+<td class="row1" align="center" valign="middle" height="40"><img src="templates/fiapple/images/folder.gif" width="40" height="30" alt="Keine neuen Beiträge" title="Keine neuen Beiträge" /></td>
+<td class="row1" width="100%"><span class="forumlink"> <a href="viewforum.php?f=43&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="forumlink">Gildenlinks</a><br />
+</span> <span class="genmed"><br /></span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">2</span></td>
+<td class="row2" align="center" valign="middle"><span class="gensmall">2</span></td>
+<td class="row2" align="center" valign="middle" nowrap> <span class="gensmall">29.04.2003 - 14:37<br /><a href="profile.php?mode=viewprofile&amp;u=31&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Manadasa</a> <a href="viewtopic.php?p=38759&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65#38759"><img src="templates/fiapple/images/icon_latest_reply.gif" border="0" alt="Letzten Beitrag anzeigen" title="Letzten Beitrag anzeigen" /></a></span></td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_9.gif" width="10" height="22" alt="" /></td>
+<td width="50%" background="templates/fiapple/images/pl_bdr_10.gif"><b><a href="index.php?mark=forums&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65" class="gensmall">Alle Foren als gelesen markieren</a></b></td>
+<td align="right" width="50%" background="templates/fiapple/images/pl_bdr_10.gif"><span class="gensmall">Alle Zeiten sind GMT</span></td><td width="10"><img src="templates/fiapple/images/pl_bdr_11.gif" width="10" height="22" alt="" /></td></tr><tr>
+<td width="10">&nbsp;</td><td width="50%">&nbsp;</td><td align="right" width="50%">&nbsp;</td><td width="10">&nbsp;</td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_1.gif" width="10" height="12" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr_3.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="200" height="12" alt="" /></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_5.gif" width="10" height="12" alt="" /></td></tr></table>
+<table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline"><tr>
+<td class="catHead" colspan="2" height="28">&nbsp;<a href="viewonline.php?sid=fc04017ecfc6070bc9ed7aca9a941a65" class="cattitle">Wer ist online?</a></td>
+</tr><tr>
+<td class="row1" align="center" valign="middle" rowspan="2"><img src="templates/fiapple/images/whosonline.gif" alt="Wer ist online?" width="40" height="30" /></td>
+<td class="row1" align="left" width="100%"><span class="gensmall">Unsere Benutzer haben insgesamt <b>36028</b> Artikel geschrieben.
+Wir haben <b>534</b> registrierte Benutzer.<br />
+Der neueste Benutzer ist <b><a href="profile.php?mode=viewprofile&amp;u=568&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Daremyth</a></b>.</span></td>
+</tr><tr>
+<td class="row1" align="left"><span class="gensmall">Insgesamt sind 4 Benutzer online: 1 registrierter, 1 versteckter und 2 Gäste. &nbsp;
+[ <b><span style="color:#ec4c6c">Administrator</span></b> ] &nbsp; [ <b><span style="color:#006600">Moderator</span></b> ]<br />
+Registrierte Benutzer: <a href="profile.php?mode=viewprofile&amp;u=8&amp;sid=fc04017ecfc6070bc9ed7aca9a941a65">Grotz</a></span></td></tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_9.gif" width="10" height="22" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr_10.gif" width="100%"><span class="gensmall">Diese Daten zeigen an, wer in den letzten 5 Minuten online war.</span></td><td width="10"><img src="templates/fiapple/images/pl_bdr_11.gif" width="10" height="22" alt="" /></td></tr></table>
+<form method="post" action="login.php?sid=fc04017ecfc6070bc9ed7aca9a941a65">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_1.gif" width="10" height="12" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr_3.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="200" height="12" alt="" /></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_5.gif" width="10" height="12" alt="" /></td></tr></table>
+<table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline"><tr>
+<td class="catHead" height="28"><a name="login"></a><span class="cattitle">&nbsp;Login</span></td>
+</tr><tr>
+<td class="row1" align="center" valign="middle" height="28"><span class="gensmall">Benutzername: <input class="post" type="text" name="username" size="10" />&nbsp;&nbsp;&nbsp;Passwort: <input class="post" type="password" name="password" size="10" />&nbsp;&nbsp; &nbsp;&nbsp;Bei jedem Besuch automatisch einloggen <input class="text" type="checkbox" name="autologin" />&nbsp;&nbsp;&nbsp; <input type="submit" class="mainoption" name="login" value="Login" />
+</span> </td></tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_9.gif" width="10" height="22" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr_10.gif" width="100%"></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_11.gif" width="10" height="22" alt="" /></td></tr></table>
+</form>
+<br clear="all" />
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_1.gif" width="10" height="12" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr_3.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="200" height="12" alt="" /></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_5.gif" width="10" height="12" alt="" /></td></tr></table>
+<table border="0" cellspacing="1" cellpadding="2" class="forumline" width="100%"><tr>
+<td align="center" class="catHead"><span class="cattitle">Key</span></td></tr><tr><td class="row1" align="center">
+<table cellspacing="0" border="0" align="center" cellpadding="2">
+<tr>
+<td width="20" align="center"><img src="templates/fiapple/images/folder_new.gif" alt="Neue Beiträge" width="40" height="30"/></td>
+<td><span class="gensmall">Neue Beiträge</span></td><td>&nbsp;&nbsp;</td>
+<td width="20" align="center"><img src="templates/fiapple/images/folder.gif" alt="Keine neuen Beiträge" width="40" height="30" /></td>
+<td><span class="gensmall">Keine neuen Beiträge</span></td><td>&nbsp;&nbsp;</td>
+<td width="20" align="center"><img src="templates/fiapple/images/folder_lock.gif" alt="Forum ist gesperrt" width="40" height="30" /></td>
+<td><span class="gensmall">Forum ist gesperrt</span></td></tr></table></td></tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr1s_9.gif" width="10" height="12" alt="" /></td>
+<td background="templates/fiapple/images/pl_bdr1s_10.gif" width="100%"><img src="templates/fiapple/images/spacer.gif" width="200" height="12" alt="" /></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr1s_11.gif" width="10" height="12" alt="" /></td>
+</tr>
+</table>
+
+
+<br /><div align="center"><span class="gensmall"></span></div></td></tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_9.gif" width="10" height="22" /></td>
+<td background="templates/fiapple/images/pl_bdr_10.gif" class="gensmall" align="center" width="100%">Powered
+by <a href="http://www.phpbb.com/" target="_phpbb" class="gensmall">phpBB</a>
+2.0.6 &copy; 2001, 2002 phpBB Group :: Theme &amp; Graphics by <a href="http://www.forumimages.com/" class="gensmall" target="_fi">Daz</a></td>
+<td width="10"><img src="templates/fiapple/images/pl_bdr_11.gif" width="10" height="22" /></td>
+</tr></table>
+</body>
+</html>
+
+<br /><center><font size="-2">phpBB Created this page in 4.051841 seconds : 14 queries executed : GZIP compression enabled</font></center>
