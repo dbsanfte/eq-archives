@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>Insidious Blood :: We put the FU in Fun!</title>
+<meta name="keywords" content="everquest,ib,insidious blood,guild,eq" />
+<meta name="description" content="We put the FU in Fun!" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="resource-type" content="document" />
+<meta http-equiv="expires" content="0" />
+<meta name="author" content="Insidious Blood" />
+<meta name="copyright" content="Copyright 2003 by Insidious Blood" />
+<meta name="revisit-after" content="1 days" />
+<meta name="distribution" content="global" />
+<meta name="generator" content="postnuke 0.7.2.6-Phoenix - http://postnuke.com" />
+<meta name="rating" content="general" />
+<link rel="stylesheet" href="themes/ib21/style/style.css" type="text/css" />
+<script type="text/javascript" src="javascript/showimages.php"></script>
+<script type="text/javascript" src="javascript/openwindow.php?hlpfile="></script>
+<script language="javascript" type="text/javascript">
+<!--
+function popupwin(url, name, properties) {
+popChild=window.open(url, name, properties);
+if(popChild) { popChild.focus(); }
+}
+function breakout() {
+if (window.top != window.self) { window.top.location="index.php"; }
+}
+breakout();
+-->
+</script>
+</head>
+<body>
+<br />
+<table width="90%" border="0" cellspacing="0" cellpadding="2" align="center">
+<tr><td bgcolor="#990000" colspan="2">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#330000">
+<tr>
+<td width="85%"><img src="/themes/ib21/images/smalllogo.gif" width="70" height="73" alt="iB" /><img src="/themes/ib21/images/slogan.jpg" width="600" height="75" alt="We put the FU in FUN" /></td>
+<td valign="top" align="right"><img src="/themes/ib21/images/ibangbus.gif" width="152" height="65" alt="iBangBus" /></td>
+</tr>
+<tr><td colspan="2">
+<table class="redtableborder">
+<tr><td valign="middle" align="left" nowrap="nowrap">
+<form action="user.php" method="post" style="margin: 0">
+Login: <input type="text" name="uname" size="12" maxlength="25" />
+Password: <input type="password" name="pass" size="12" maxlength="20" />
+&nbsp;Remember:&nbsp;<input type="checkbox" class="checkbox" name="rememberme" />
+<input type="hidden" name="url" value="/index.php" />
+<input type="hidden" name="module" value="NS-User" />
+<input type="hidden" name="op" value="login" />
+<input type="image" src="themes/ib21/images/login.gif" alt="Login" />
+</form>
+</td>
+<td width="100%" nowrap="nowrap">&nbsp;</td>
+<td align="right" valign="middle" class="pn-normal">&nbsp;Search&nbsp;</td>
+<td valign="middle" align="right" nowrap="nowrap">
+<form action="modules.php" method="post" style="margin:0">
+<input type="hidden" name="name" value="Search" />
+<input type="hidden" name="file" value="index" />
+<input type="hidden" name="op" value="modload" />
+<input type="hidden" name="action" value="search" />
+<input type="hidden" name="overview" value="1" />
+<input type="hidden" name="active_stories" value="1" />
+<input type="hidden" name="bool" value="AND" />
+<input type="hidden" name="stories_cat" value="" />
+<input type="hidden" name="stories_topics" value="" />
+<input type="text" class="pn-normal" name="q" />
+<input type="image" alt="Go" src="themes/ib21/images/go.gif" value="Go" />
+</form>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#330000">
+<tr valign="top"><td colspan="3" height="1">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td rowspan="2" height="1" bgcolor="#330000" valign="top" align="left" width="26">
+<table width="26" border="0" cellspacing="0" cellpadding="0">
+<tr><td valign="top" align="left" bgcolor="#330000"><a href="index.php"><img src="/themes/ib21/images/news_down.gif" width="26" height="110" alt="News" /></a></td></tr>
+<tr><td valign="top" align="left" bgcolor="#330000"><a href="index.php?module=roster&amp;func=main"><img src="/themes/ib21/images/roster_up.gif" width="26" height="110" alt="Roster" /></a></td></tr>
+<tr><td valign="top" align="left" bgcolor="#330000"><a href="index.php?module=guildapp&amp;func=main"><img src="/themes/ib21/images/join_up.gif" width="26" height="110" alt="Join" /></a></td></tr>
+<tr><td valign="top" align="left" bgcolor="#330000"><a href="http://forum.insidiousblood.net" target="_blank"><img src="/themes/ib21/images/forums_up.gif" width="26" height="110" alt="Forums" /></a></td></tr>
+<tr><td valign="top" align="left" bgcolor="#330000"><a href="index.php?module=irc_chat&amp;func=main"><img src="/themes/ib21/images/chat_up.gif" width="26" height="110" alt="Chat" /></a></td></tr>
+</table>
+</td>
+<td rowspan="2" height="1" bgcolor="#330000" width="19">&nbsp;</td>
+<td rowspan="2" height="1" bgcolor="#330000" valign="top">
+<table width="95%" border="0" cellspacing="0" cellpadding="4">
+<tr><td valign="top">
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr><td width="100%" colspan="2">
+</td></tr>
+<tr><td width="100%" colspan="2" class="catandtitle"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=413&amp;mode=thread&amp;order=0&amp;thold=0">Timeline.jpg</a></td></tr>
+<tr><td valign="top" colspan="2">Posted by: Xarain on Monday, November 24, 2003 - 04:24 PM</td></tr>
+<tr>
+<td valign="top"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=5"><img src="images/topics/topicraids.gif" border="0" alt="IB Guild Raids" align="left" hspace="5" vspace="5" /></a></td>
+<td width="100%" valign="top">Not much new content other then sticking to our Schedule® hitting on PoTime and Elemental Gods during the Off days.<br />
+Let's see...<br />
+<br />
+Tier 1 - Check<br />
+Tier 2 - Destroyed<br />
+Tier 3 - Check<br />
+<br />
+Finally some Demi-Gods action.<br />
+<br />
+<div align="center"><br />
+<a href="http://stasis.smipc.net/~xarain/pic/nov/tier4.jpg"><br />
+<img src="http://stasis.smipc.net/~xarain/pic/nov/tier4small.jpg" alt="" /></a></div><br />
+<br />
+Tier 4, 50% completed.  much &lt;3 for weekend time raids<br /><br />
+</td></tr>
+<tr><td>&nbsp;</td><td align="right"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=413&amp;mode=thread&amp;order=0&amp;thold=0">Read more...</a> (4243 bytes more) 1 Comment  <a class="pn-normal" href="print.php?sid=413"><img src="images/global/print.gif" border="0" alt="Printer friendly page" /></a></td></tr>
+</table>
+<hr noshade="noshade" class="#FFCC33" size="1" />
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr><td width="100%" colspan="2">
+</td></tr>
+<tr><td width="100%" colspan="2" class="catandtitle"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=412&amp;mode=thread&amp;order=0&amp;thold=0">Time Again</a></td></tr>
+<tr><td valign="top" colspan="2">Posted by: Naeldair on Saturday, November 08, 2003 - 04:37 PM</td></tr>
+<tr>
+<td valign="top"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=5"><img src="images/topics/topicraids.gif" border="0" alt="IB Guild Raids" align="left" hspace="5" vspace="5" /></a></td>
+<td width="100%" valign="top">Over the past weeks we've been killing the same shit over and over again, along with wiping to phase 1 of time weee.  But for the times where we beat it we pwned it.  Gratz us on getting to phase 3 three times and to phase 4 once.(only to wipe to phase one for the next 2 days.<br />
+<br />
+<div align="center"><br />
+<img src="http://users.cwnet.com/naeldair/SivarMOTD.jpg" alt="" /><br />
+We love you Sivar<br />
+</div><br /><br />
+</td></tr>
+<tr><td>&nbsp;</td><td align="right"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=412&amp;mode=thread&amp;order=0&amp;thold=0">Read more...</a> (1316 bytes more) comments?  <a class="pn-normal" href="print.php?sid=412"><img src="images/global/print.gif" border="0" alt="Printer friendly page" /></a></td></tr>
+</table>
+<hr noshade="noshade" class="#FFCC33" size="1" />
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr><td width="100%" colspan="2">
+</td></tr>
+<tr><td width="100%" colspan="2" class="catandtitle"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=411&amp;mode=thread&amp;order=0&amp;thold=0">The backflagging continues</a></td></tr>
+<tr><td valign="top" colspan="2">Posted by: Naeldair on Tuesday, October 14, 2003 - 01:16 AM</td></tr>
+<tr>
+<td valign="top"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=5"><img src="images/topics/topicraids.gif" border="0" alt="IB Guild Raids" align="left" hspace="5" vspace="5" /></a></td>
+<td width="100%" valign="top">The backflagging never ends so we killed Fro Xego and Rathe in 3 days.<br />
+<br />
+Oh Worcyel, Rogue safefall sucks<br />
+<br />
+<div align="center"><br />
+<img src="http://users.adelphia.net/~fxsts/worcyel.jpg" alt="" /><br />
+</div><br /><br />
+</td></tr>
+<tr><td>&nbsp;</td><td align="right"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=411&amp;mode=thread&amp;order=0&amp;thold=0">Read more...</a> (1299 bytes more) comments?  <a class="pn-normal" href="print.php?sid=411"><img src="images/global/print.gif" border="0" alt="Printer friendly page" /></a></td></tr>
+</table>
+<hr noshade="noshade" class="#FFCC33" size="1" />
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr><td width="100%" colspan="2">
+</td></tr>
+<tr><td width="100%" colspan="2" class="catandtitle"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=410&amp;mode=thread&amp;order=0&amp;thold=0">Time's up!</a></td></tr>
+<tr><td valign="top" colspan="2">Posted by: Xarain on Sunday, October 05, 2003 - 04:28 AM</td></tr>
+<tr>
+<td valign="top"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=5"><img src="images/topics/topicraids.gif" border="0" alt="IB Guild Raids" align="left" hspace="5" vspace="5" /></a></td>
+<td width="100%" valign="top">Another weekend of pwn and finally the backflagging for Elemental Gods has been completed!<br />
+<br />
+Once again, another one bites the dust.<br />
+<br />
+<div align="center"><br />
+<img src="http://stasis.smipc.net/~xarain/rathe/aoe.jpg" alt="" /><br />
+</div><br />
+<br />
+Insidious Blood's journey to time video can be downloaded from the following links:<br />
+<a href="http://stasis.smipc.net/~xarain/vids/jtime.avi"> <b>-- Mirror 1</b> </a><br />
+<a href="http://www.luclin.org/files/xuefang/10-10-2003-journey-to-time.avi"> <b>-- Mirror 2</b> </a><br />
+<br />
+<i>Once again you need the latest Divx Codes from <a href="http://www.divx.com">this site</a>.</i><br /><br />
+</td></tr>
+<tr><td>&nbsp;</td><td align="right"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=410&amp;mode=thread&amp;order=0&amp;thold=0">Read more...</a> (1866 bytes more) comments?  <a class="pn-normal" href="print.php?sid=410"><img src="images/global/print.gif" border="0" alt="Printer friendly page" /></a></td></tr>
+</table>
+<hr noshade="noshade" class="#FFCC33" size="1" />
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr><td width="100%" colspan="2">
+</td></tr>
+<tr><td width="100%" colspan="2" class="catandtitle"><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=409&amp;mode=thread&amp;order=0&amp;thold=0">The Rathe have been given a dirt nap!</a></td></tr>
+<tr><td valign="top" colspan="2">Posted by: Tymmon on Tuesday, September 30, 2003 - 03:09 AM</td></tr>
+<tr>
+<td valign="top"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=5"><img src="images/topics/topicraids.gif" border="0" alt="IB Guild Raids" align="left" hspace="5" vspace="5" /></a></td>
+<td width="100%" valign="top">In what was our fourth attempt at the rathe council, they dropped like Treesom at a gay bar!  I think ever person that is guilded was on to help or just sit and watch GU as the events transpired.  In what took exactly 2 hours, the Avatar of Earth popped!  Welcome to the Plane of Time!  Much more inc for IB!<br />
+<br />
+<div align="center"><br />
+<img src="http://www.insidiousblood.net/storypics/409/rathe.gif" alt="" /><br />
+</div><br />
+<br />
+*edit*<br />
+Compiled the rathe fight which was kindly hosted by Moslad and Ticker<br />
+------<a href="http://stasis.smipc.net/~xarain/vids/ibrathe.avi"> Mirror 1 </a><br />
+------<a href="http://www.luclin.org/files/xuefang/09-29-2003-ibrathe.avi"> Mirror 2 </a><br />
+<br />
+Both are the <b>same files</b>, choose one and download. You <u>need</u> the latest codecs from <a href="http://www.divx.com">here</a><br />
+Enjoy and remember.... There is no Tree.<br /><br />
+</td></tr>
+<tr><td>&nbsp;</td><td align="right"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=409&amp;mode=thread&amp;order=0&amp;thold=0">Read more...</a> (1442 bytes more) comments?  <a class="pn-normal" href="print.php?sid=409"><img src="images/global/print.gif" border="0" alt="Printer friendly page" /></a></td></tr>
+</table>
+<hr noshade="noshade" class="#FFCC33" size="1" />
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td>
+<td height="1" valign="top" rowspan="2" width="165">
+<table width="150" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2">
+<table width="150" border="0" cellspacing="0" cellpadding="0" align="left">
+<tr><td width="0" bgcolor="#990000"></td>
+<td width="149">
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Main Menu</b></td></tr>
+<tr><td class="blockcontent"><a href="index.php" title="Back to the home page.">Home</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Guild Links</b></td></tr>
+<tr><td class="blockcontent"><a href="http://forum.insidiousblood.net/">Guild Forums</a><br />
+<a href="index.php?module=roster">Guild Roster</a><br />
+<a href="index.php?module=character_reports">Guild Reports</a><br />
+<a href="index.php?module=irc_chat">Chat on IRC in #ib</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Guild Charter</b></td></tr>
+<tr><td class="blockcontent"><a href="index.php?module=charter">About Us</a><br />
+<a href="index.php?module=charter&amp;func=houserules">House Rules</a><br />
+<a href="index.php?module=charter&amp;func=loot">Loot Rules</a><br />
+<a href="index.php?module=charter&amp;func=appprocess">Application Process</a><br />
+<a href="index.php?module=guildapp">Online Application</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Search EQ Database</b></td></tr>
+<tr><td class="blockcontent"><a href="http://www.insidiousblood.net/index.php?module=eqloot">Search for Equipment</a><br />
+<a href="http://www.insidiousblood.net/index.php?module=eqspell">Search for Spells</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Luclin Server Status</b></td></tr>
+<tr><td class="blockcontent">
+<table border="0" cellspacing="1" cellpadding="2" width="98%" align="center"><tr><td width="60%"><font size="1"><b>Luclin</b></font></td>
+<td align="center" width="40%"><font size="1" color="Yellow"><b>Up</b></font></td>
+</tr>
+<tr><td colspan="2" align="center"><a href="http://www.insidiousblood.net/index.php?module=eq_server_status"><font size="1" class="pn-sub">More Server Status</font></a></td></tr>
+</table>
+</td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Server Links</b></td></tr>
+<tr><td class="blockcontent"><a href="http://www.eqluclin.com" target="_blank">Luclin Server Site</a><br />
+<a href="http://everquest.estoncom.com/luclin/index.shtml" target="_blank">Luclin Server Calendar</a><br />
+<a href="http://www.eqluclin.com/forum" target="_blank">Luclin Server Forums</a><br />
+<a href="http://www.luclin.org" target="_blank">Luclin.org</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>EverQuest Links</b></td></tr>
+<tr><td class="blockcontent"><a href="http://www.squidbox.com/skp/eq/ldon/list.cgi" target="_blank">LDoN Augs Listing</a><br />
+<a href="http://www.bjornstar.com" target="_blank">Focus Effect Guide</a><br />
+<a href="http://eq.crgaming.com" target="_blank">Castersrealm</a><br />
+<a href="http://www.magelo.com" target="_blank">Magelo</a><br />
+<a href="http://www.eqtraders.com" target="_blank">EQ  Traders</a><br />
+<a href="http://everquest.allakhazam.com" target="_blank">Allakhazams.com</a><br />
+<a href="http://www.graffe.com" target="_blank">Graffe's</a><br />
+<a href="http://www.thesafehouse.org" target="_blank">The Safehouse</a><br />
+<a href="http://www.eqatlas.com" target="_blank">EQ Atlas</a><br />
+<a href="http://www.eqlizer.net" target="_blank">EQ Lizer</a><br />
+<a href="http://lucy.fnord.net" target="_blank">Lucy</a><br />
+<a href="http://eqlive.station.sony.com" target="_blank">EverQuest Live!</a><br />
+<a href="http://eqlive.station.sony.com/support/network_status.jsp" target="_blank">EverQuest Network Status</a><br />
+<a href="http://eqlive.station.sony.com/support/server_status.jsp"  target="_blank">EverQuest Server Status</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>EverQuest Live</b></td></tr>
+<tr><td class="blockcontent"><script type="text/javascript"  language="javascript" src="http://eqlive.station.sony.com/includes/js_news/eq_headlines.jsp"></script>
+<noscript>The EverQuest Live news requires you to have JavaScript turned on.</noscript></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>Website Links</b></td></tr>
+<tr><td class="blockcontent"><a href="index.php?module=archives&amp;func=main">Site Archive</a><br />
+<a href="modules.php?op=modload&amp;name=Submit_News&amp;file=i
+ndex">Submit News</a><br />
+<a href="modules.php?op=modload&amp;name=Stats&amp;file=index">Website Stats</a><br /></td></tr>
+</table>
+<table border="0" cellpadding="4" cellspacing="0" width="165">
+<tr><td bgcolor="#990000" class="blocktitle"><b>About This Site</b></td></tr>
+<tr><td class="blockcontent"><b>EverQuest</b> is a registered trademark of Sony Online Entertainment<br />
+<br />
+This site is Copyright © 2003 by Insidious Blood and Trilogy Technologies<br />
+<br />
+This site is hosted by <a href="http://www.phpwebhosting.com" target="_blank">PHP Web Hosting</a><br />
+<br />
+This web site was made with <a href="http://www.postnuke.com" target="_blank">Post-Nuke</a>, a web portal system written in <a href="http://www.php.net" target="_blank">PHP</a><br />
+<br />
+You can syndicate (RSS or XML) our news using <a href="backend.php" target="_blank">backend.php</a><br />
+<br />
+Site design and maintence by <a href="mailto:webmaster@insidiousblood.net">Tymmon</a><br /><br />
+<div align="center"><a href="http://validator.w3.org/check/referer" target="_blank"><img src="xhtml.png" alt="Valid XHTML 1.0" /></a><br />
+<a href="http://jigsaw.w3.org/css-validator/" target="_blank"><img src="css.png" alt="Valid CSS" /></a><br />
+<a href="backend.php" target="_blank"><img src="xml.png" alt="XML Feed" /></a><br />
+<a href="http://httpd.apache.org" target="_blank"><img src="apache.png" alt="Apache" /></a><br />
+<a href="http://www.mysql.com" target="_blank"><img src="mysql.png" alt="MySQL" /></a></div></td></tr>
+</table>
+<br /></td></tr>
+<tr><td bgcolor="#990000" colspan="2" height="1"></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<br />
+</body>
+</html>

@@ -1,0 +1,309 @@
+<html> 
+<head>
+  <title>Slide Show for album :: Open Raid Photos / Strat Photos / Misc</title>
+  <link rel="stylesheet" type="text/css" href="http://www.scienceofwar.net/gallery/css/embedded_style.css.default">
+<link rel="stylesheet" type="text/css" href="http://www.scienceofwar.net/gallery/css/standalone_style.css.default">  <style type="text/css">
+  </style>
+</head>
+
+<body>
+
+<table width=100% border=0>
+  <tr>
+    <td>
+      <span class="head">
+        Open Raid Photos / Strat Photos / Misc      </span>
+    </td>
+  </tr>
+  <tr>
+    <td  align="center" valign="top">
+
+<!-- Here are the URL of the images written down as links. This is to make
+     wget able to convert these links. It will not convert them, if they
+     are written inside JavaScript. JavaScript will then take the images
+     out of these links with "document.getElementById()". -->
+
+<a id="slideShowUrl" href="http://www.scienceofwar.net/gallery/slideshow_low.php?set_albumName=openraid"></a>
+
+<a id="photo_urls_1" href="http://www.scienceofwar.net/albums/openraid/EQ001468.jpg"></a>
+<a id="photo_urls_2" href="http://www.scienceofwar.net/albums/openraid/EQ001470.jpg"></a>
+<a id="photo_urls_3" href="http://www.scienceofwar.net/albums/openraid/aleksongarn_map.gif"></a>
+<a id="photo_urls_4" href="http://www.scienceofwar.net/albums/openraid/halgoz_rellinic.jpg"></a>
+<a id="photo_urls_5" href="http://www.scienceofwar.net/albums/openraid/map_tactics.gif"></a>
+<a id="photo_urls_6" href="http://www.scienceofwar.net/albums/openraid/map_cazic_thule.gif"></a>
+<a id="photo_urls_7" href="http://www.scienceofwar.net/albums/openraid/map_acidic_mass_startpoint.jpg"></a>
+<a id="photo_urls_8" href="http://www.scienceofwar.net/albums/openraid/map_acidic_mass_tracking.jpg"></a>
+<a id="photo_urls_9" href="http://www.scienceofwar.net/albums/openraid/acidicmass.gif"></a>
+<a id="photo_urls_10" href="http://www.scienceofwar.net/albums/openraid/AErange.gif"></a>
+<a id="photo_urls_11" href="http://www.scienceofwar.net/albums/openraid/funny_guildnews.gif"></a>
+<a id="photo_urls_12" href="http://www.scienceofwar.net/albums/openraid/antfarm.jpg"></a>
+
+<script language="JavaScript">
+var timer; 
+var current_location = 1;
+var next_location = 1; 
+var pics_loaded = 0;
+var onoff = 0;
+var timeout_value;
+var images = new Array;
+var photo_urls = new Array;
+var photo_captions = new Array;
+var loop = 0;
+var full = 0;
+var direction = 1;
+photo_captions[1] = "Aramin";
+photo_captions[2] = "Grummus";
+photo_captions[3] = "Alekson Garn Trial Info";
+photo_captions[4] = "Halgoz Rellinic - one of the named in the Alekson Garn trials";
+photo_captions[5] = "Vallon Zek raid info";
+photo_captions[6] = "Strat Map for Acidic Mass in Cazic Thule";
+photo_captions[7] = "Strat Map for Acidic Mass in Cazic Thule";
+photo_captions[8] = "Strat Map for Acidic Mass in Cazic Thule";
+photo_captions[9] = "Acidic Mass  ";
+photo_captions[10] = "AE range doesn't include vertical distance.";
+photo_captions[11] = "Heh. ";
+photo_captions[12] = "Sonny (Online Entertainment) works on his ant farm.";
+var photo_count = 12; 
+
+function stop() {
+    onoff = 0;
+    status = "The slide show is stopped, Click [play] to resume.";
+    clearTimeout(timer);
+}
+
+function play() {
+    onoff = 1;
+    status = "Slide show is running...";
+    go_to_next_photo();
+}
+
+function toggleLoop() {
+    if (loop) {
+        loop = 0;
+    } else {
+        loop = 1;
+    }
+}
+
+function preload_complete() {
+}
+
+function reset_timer() {
+    clearTimeout(timer);
+    if (onoff) {
+	timeout_value = document.TopForm.time.options[document.TopForm.time.selectedIndex].value * 1000;
+	timer = setTimeout('go_to_next_page()', timeout_value);
+    }
+}
+
+function wait_for_current_photo() {
+
+    /* Show the current photo */
+    if (!show_current_photo()) {
+
+	/*
+	 * The current photo isn't loaded yet.  Set a short timer just to wait
+	 * until the current photo is loaded.
+	 */
+	status = "Picture is loading...(" + current_location + " of " + photo_count +
+		").  Please Wait..." ;
+	clearTimeout(timer);
+	timer = setTimeout('wait_for_current_photo()', 500);
+	return 0;
+    } else {
+	preload_next_photo();
+	reset_timer();
+    }
+}
+
+function go_to_next_page() {
+
+    var slideShowUrl = document.getElementById('slideShowUrl').href;
+
+    document.location = slideShowUrl + "&slide_index=" + next_location + "&slide_full=" + full
+	+ "&slide_loop=" + loop + "&slide_pause=" + (timeout_value / 1000) 
+	+ "&slide_dir=" + direction;
+    return 0;
+}
+
+function go_to_next_photo() {
+    /* Go to the next location */
+    current_location = next_location;
+
+    /* Show the current photo */
+    if (!show_current_photo()) {
+	wait_for_current_photo();
+	return 0;
+    }
+
+    preload_next_photo();
+    reset_timer();
+
+}
+
+function preload_next_photo() {
+    
+    /* Calculate the new next location */
+    next_location = (parseInt(current_location) + parseInt(direction));
+    if (next_location > photo_count) {
+	next_location = 1;
+	if (!loop) {
+	    stop();
+	}
+    }
+    
+    /* Preload the next photo */
+    preload_photo(next_location);
+}
+
+function show_current_photo() {
+
+    /*
+     * If the current photo is not completely loaded don't display it.
+     */
+    if (!images[current_location] || !images[current_location].complete) {
+	preload_photo(current_location);
+	return 0;
+    }
+    
+    return 1;
+}
+
+function preload_photo(index) {
+
+    /* Load the next picture */
+    if (pics_loaded < photo_count) {
+
+	/* not all the pics are loaded.  Is the next one loaded? */
+	if (!images[index]) {
+	    images[index] = new Image;
+	    images[index].onLoad = preload_complete();
+	    images[index].src = document.getElementById("photo_urls_" + index).href;
+	    pics_loaded++;
+	}
+    } 
+}
+
+</Script>
+
+
+<form name="TopForm"><input type="hidden" name="PHPSESSID" value="34b49c75ac8a031810e5ca24bff5979d" />
+
+
+<table width="" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="3" bgcolor="black"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="black" width="1" height="18"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <td align="right" width="3000" height="18">
+      <span class="bread">
+&nbsp;Gallery: <a href="http://www.scienceofwar.net/gallery/albums.php">Science of War Images</a>&nbsp<img src="http://www.scienceofwar.net/gallery/images/nav_home.gif" width=13 height=11>&nbsp;Album: <a href="http://www.scienceofwar.net/gallery/openraid">Open Raid Photos / Strat Photos / Misc</a>&nbsp      <img src="http://www.scienceofwar.net/gallery/images/nav_home.gif" width="13" height="11">&nbsp;
+      </span>
+    </td> 
+                
+    <td bgcolor="black" width="1" height="18"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>    
+
+<table width="" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="4" bgcolor="black"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="black" width="1" height="18"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <td align="left" valign="middle" width="3000" height="18">&nbsp;Slide Show</td>
+    <td align="right" valign="middle" width="3000" height="18">&nbsp;&nbsp;</td>
+    <td bgcolor="black" width="1" height="18"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>    
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="3" bgcolor="black"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td height="25" width="1" bgcolor="black"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <td width="5000" align="left" valign="middle">
+    <span class=admin>
+    &nbsp;<a href="#" onClick='stop(); return false;'>[stop]</a>
+    <a href="#" onClick='play(); return false;'>[play]</a>
+<a href="http://www.scienceofwar.net/gallery/slideshow_low.php?set_albumName=&slide_index=1&slide_loop=0&slide_pause=3&slide_full=1&slide_dir=1">[full size]</a>&nbsp;<a href="http://www.scienceofwar.net/gallery/slideshow_low.php?set_albumName=&slide_index=1&slide_loop=0&slide_pause=3&slide_full=0&slide_dir=-1">[reverse direction]</a>    &nbsp;&nbsp;||
+    &nbsp;Delay:
+<select name="time" size=1  onchange="reset_timer()" style="font-size=10px;">
+<option value=1 > 1 second
+<option value=2 > 2 second
+<option value=3 selected> 3 second
+<option value=4 > 4 second
+<option value=5 > 5 second
+<option value=10 > 10 second
+<option value=15 > 15 second
+<option value=30 > 30 second
+<option value=45 > 45 second
+<option value=60 > 60 second
+</select>
+    &nbsp;Loop:<input type="checkbox" name="loopCheck"  onclick='toggleLoop();'>
+    </span>
+    </td>
+    <td width="1" bgcolor="black"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="black"><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>
+
+<br>
+<div align="center">
+
+
+<table width=1% border=0 cellspacing=0 cellpadding=0>
+  <tr bgcolor="black">
+    <td colspan=3 height=1><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td bgcolor="black" width=1><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <script language="JavaScript">
+    document.write("<td><img border=0 src="+document.getElementById("photo_urls_1").href+" name=slide></td>");
+    </script>
+    <td bgcolor="black" width=1><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="black">
+    <td colspan=3 height=1><img src="http://www.scienceofwar.net/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<br>
+
+<script language="Javascript">
+/* show the caption either in a nice div or an ugly form textarea */
+document.write("<div class='desc'>" + "[" + current_location + " of " + photo_count + "] " + photo_captions[1] + "</div>");
+
+/* Load the first picture */
+preload_photo(1);
+
+/* Start the show. */
+play();
+
+</script>
+
+ 
+
+</div>
+</form>
+
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <!-- The Gallery code version number, linked to the Gallery home page -->
+    <span class="fineprint">
+    Powered by <a href=http://gallery.sourceforge.net>Gallery v1.3.4</a>
+    </span>
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>

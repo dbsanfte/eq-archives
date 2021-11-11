@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Installation on Debian/GNU Linux running kernel 2.4.4 by Jesper Angelo</title>
+</head>
+
+<body bgcolor=white text=black link=blue alink=blue vlink=blue>
+
+<h1>Installation on Debian/GNU Linux running kernel 2.4.4</h1>
+<hr>
+<p>
+
+<small><em>May 8, 2001</em></small>
+<p>
+
+<small><b>Keywords: Installation, Debian, GNU, Linux, RPM, Linux 2.4.4, Woody</b></small>
+<p>
+
+Installation is quit easy on a Debian system (eh...well...just read on...).
+<p>
+
+First, upgrade to the woody distribution (AKA testing) since running Potato
+(stable) will have the wrong tools for dealing with the new module
+handling. Remember to install linux header files, if you are not compiling
+your own kernel (although I would recommend that you DO always
+compile a kernel for your system!!!).
+<p>
+
+Use <tt>dselect</tt> or <tt>apt-get</tt> to Install the package <b>alien</b>.
+This may require the RPM packages if not already installed. Install these as well.
+<p>
+
+Download the 2.0.4 Relase Candidate of vmware:<br>
+&nbsp; <a href="http://www.vmware.com/download/download_204.html">http://www.vmware.com/download/download_204.html</a>
+<p>
+
+Save it to a subdirectory, say VMWARE for instance.
+<p>
+
+As root, enter the directory, and convert the RPM package to a debian
+package:<br>
+<tt>root@styx:~# <b>cd VMWARE/</b></tt><br>
+<tt>root@styx:~/VMWARE# <b>alien VMware-2.0.4-1118.i386.rpm</b></tt><br>
+<p>
+
+The converter now complains alot about missing stuff like:<br>
+&nbsp; <em>"dpkg-shlibdeps: warning: could not find path for ld-linux.so.2"<br>
+&nbsp; "dpkg-shlibdeps: warning: could not find any packages for (ld-linux.so.2)"<br>
+&nbsp; "dpkg-shlibdeps: warning: unable to find dependency information for shared library ld-linux (soname 2, path , dependency field Depends)"</em><br>
+<p>
+
+Ignore these!
+<p>
+
+The important thing is that it ends up writing:<br>
+&nbsp; <em>"vmware_2.0.4-1119_i386.deb generated"</em>
+<p>
+
+This means we now have an installable Debian Package, so lets install it
+while we're still logged in as root:<br>
+&nbsp; <tt>root@styx:~/VMWARE# <b>dpkg -i vmware_2.0.4-1119_i386.deb</b></tt><br>
+<p>
+
+<font color=red><b>This should complete without errors, otherwise something has gone wrong!</b></font>
+<p>
+
+After this vmware binaries are installed. Now we must emulate the setup
+script. First we have to fix a little glitch in the locations file. Using
+your standard editor to insert this line:<br>
+&nbsp; <tt><b>answer INITSCRIPTSDIR /etc/init.d</b></tt><br>
+after the line saying:<br>
+&nbsp; <tt><b>answer INITDIR /etc/rc.d/init.d</b></tt><br>
+<p>
+
+If you get it wrong the next step below will answer:<br>
+&nbsp; <em>"Unable to find the answer INITSCRIPTSDIR in the installer database<br>
+&nbsp; (/etc/vmware/locations). You may want to re-install VMware."</em>
+<p>
+
+Now we need to compile the vmware modules. Run the vmware-config.pl
+script:<br>
+&nbsp; <tt>root@styx:~/VMWARE# <b>vmware-config.pl</b></tt><br>
+<p>
+
+The script stops any currently running modules (if you are upgrading for
+instance), and then goes on to compile modules. Default answers should
+get you going, but check the vmware docs if you want to change something.
+<p>
+
+After compiling (if there are no errors), it starts the modules. Done!
+Oh, well sorry no :-)
+<p>
+
+If you want to run vmware from your normal user account (do so!), we must
+make it SUID root. Okay, first grant it root exec permissions:<br>
+&nbsp; <tt>root@styx:~/VMWARE# <b>chmod +s /usr/bin/vmware</b></tt><br>
+<p>
+
+and then change the owner to root as well:<br>
+&nbsp; <tt>root@styx:~/VMWARE# <b>chown root.root /usr/bin/vmware</b></tt><br>
+<p>
+
+Now you're done! :-)
+<p>
+
+Log out as root, and log in as a normal user. Run vmware with:<br>
+&nbsp; <tt>guru@styx$ <b>vmware</b></tt><br>
+<p>
+
+
+Hope it works for you too :-)
+<p>
+
+
+There's a colorfull HTML version of this at:<br>
+&nbsp; <a href="http://guru.dyndns.dk/vmware">http://guru.dyndns.dk/vmware</a>
+<p>
+
+</body>
+</html>

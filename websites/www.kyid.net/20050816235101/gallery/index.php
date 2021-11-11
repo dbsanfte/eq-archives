@@ -1,0 +1,1516 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<title>Coppermine Photo Gallery - Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+
+<link rel="stylesheet" href="themes/classic/style.css" />
+<script type="text/javascript" src="scripts.js"></script>
+<!--
+$Id: template.html,v 1.1 2004/06/11 09:20:08 tarique Exp $
+-->
+</head>
+<body>
+<table width="100%" height="100%" border="0" cellpadding="20" cellspacing="20" bgcolor="#CCCCCC">
+<tr>
+        <td valign="top" bordercolor="#666666" bgcolor="#FFFFFF" style="border: 1px solid;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                       <tr>
+                                <td><a href="index.php"><img src="themes/classic/images/site_logo.png" alt="" border="0" /><br /></a></td>
+                                <td width="100%" align="center">
+                                        <h1>Coppermine Photo Gallery</h1>
+                                        <h3>Your online photo album</h3><br />
+                                                        <span class="topmenu">
+<!-- BEGIN album_list -->
+                        <a href="index.php?cat=0" title="Go to the album list">Album list</a> ::
+<!-- END album_list -->
+
+
+
+
+
+
+
+
+<!-- BEGIN login -->
+                        <a href="login.php?referer=%2Fgallery%2Findex.php">Login</a>
+<!-- END login -->
+
+                        <br />
+                        <a href="thumbnails.php?album=lastup&cat=0">Last uploads</a> ::
+                        <a href="thumbnails.php?album=lastcom&cat=0">Last comments</a> ::
+                        <a href="thumbnails.php?album=topn&cat=0">Most viewed</a> ::
+                        <a href="thumbnails.php?album=toprated&cat=0">Top rated</a> ::
+                        <a href="thumbnails.php?album=favpics">My Favorites</a> ::
+                        <a href="search.php">Search</a>
+                </span>
+                                </td>
+                        </tr>
+                </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                  <td align="center" valign="top"></td></tr>
+                 <tr> <td align="center" valign="top">
+                  </td>
+                  </tr>
+                </table>
+                <img src="images/spacer.gif" width="1" height="15" /><br />
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center" valign="top">
+                                        
+                                        
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+                <td class="tableh1" width="80%"><b>Category</b></td>
+                <td class="tableh1" width="10%" align="center"><b>Albums</b></td>
+                <td class="tableh1" width="10%" align="center"><b>Files</b></td>
+        </tr>
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><span class="catlink"><b><a href="index.php?cat=6">Winnipeg Life!</a></b></span></td></tr></table></td>
+                <td class="tableb" align="center">15</td>
+                <td class="tableb" align="center">179</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3>
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=37" class="alblink"><b>Miscellaneous</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=37" class="albums"><img src="albums/userpics/10001/thumb_img_6672b.jpg" class="image" " height="50" border="0" alt="img_6672b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">14 files, last one added on Aug 02, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=41" class="alblink"><b>Abstract / Street Art / Patterns / Shapes</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=41" class="albums"><img src="albums/userpics/10001/thumb_img_7947b.jpg" class="image" " height="50" border="0" alt="img_7947b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">16 files, last one added on Jul 21, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=40" class="alblink"><b>People / Faces / Candids / Street Portraiture</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=40" class="albums"><img src="albums/userpics/10001/thumb_img_7576b.jpg" class="image" " height="50" border="0" alt="img_7576b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>People that agree to let me photograph them, or ask to be photographed end up here.  Other photos of people can end up in here as well.</p>
+                        <p class="album_stat">40 files, last one added on Aug 08, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=49" class="alblink"><b>Reflections</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=49" class="albums"><img src="albums/userpics/10001/thumb_img_6384b.jpg" class="image" " height="50" border="0" alt="img_6384b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">5 files, last one added on Jul 16, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=42" class="alblink"><b>Buildings / Architecture</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=42" class="albums"><img src="albums/userpics/10001/thumb_img_8835b%7E0.jpg" class="image" " height="50" border="0" alt="img_8835b~0.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Shots of various buildings, urban landscapes, etc that I find interesting.</p>
+                        <p class="album_stat">7 files, last one added on Jul 16, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=48" class="alblink"><b>Flora / Fauna / Nature / (Non-Urban) Landscapes / Sunsets / Sky / Clouds</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=48" class="albums"><img src="albums/userpics/10001/thumb_img_9919-crop-1b.jpg" class="image" " height="50" border="0" alt="img_9919-crop-1b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">13 files, last one added on Jul 29, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=35" class="alblink"><b>Red River Exhibition (Summer 2005)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=35" class="albums"><img src="albums/userpics/10001/thumb_img_6750a.jpg" class="image" " height="50" border="0" alt="img_6750a.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Various photos from my couple of visits to the <span class="bblink"><a href="http://www.redriverex.com/rrx/rrx_main.htm" target="_blank">Red River Exhibition</a></span> this year.</p>
+                        <p class="album_stat">16 files, last one added on Jul 09, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=31" class="alblink"><b>Bears On Broadway (Summer 2005)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=31" class="albums"><img src="albums/userpics/10001/thumb_img_6008a.jpg" class="image" " height="50" border="0" alt="img_6008a.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p><span class="bblink"><a href="http://www.cancercare.mb.ca/" target="_blank">CancerCare Manitoba</a></span> Foundation has added a new sphere of interest to its multi faceted special event program over the last year. <span class="bblink"><a href="http://www.bearsonbroadway.com/" target="_blank">Bears on Broadway</a></span> is a signature project that commemorates the 75th anniversay of <span class="bblink"><a href="http://www.cancercare.mb.ca/" target="_blank">CancerCare Manitoba</a></span> in a most unique way.<br />
+<br />
+62 seven-foot-tall polar bears will be gracing the median strip on Broadway from the CN Station to Memorial Boulevard for the summer until late October, to help raise funds for <span class="bblink"><a href="http://www.cancercare.mb.ca/" target="_blank">CancerCare Manitoba</a></span> Foundation and to raise awareness about what everyone can do to reduce their risk of cancer.<br />
+<br />
+Every bear has a sponsor and it’s anticipated the <span class="bblink"><a href="http://www.bearsonbroadway.com/" target="_blank">Bears on Broadway</a></span> project will raise over $400,000 for <span class="bblink"><a href="http://www.cancercare.mb.ca/" target="_blank">CancerCare Manitoba</a></span>. It’s their largest single project ever and it’s taken an army of artists and assorted technical, construction and building experts to make it all happen.</p>
+                        <p class="album_stat">18 files, last one added on Jul 03, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=33" class="alblink"><b>Horse Police (2005-06-24)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=33" class="albums"><img src="albums/userpics/10001/thumb_img_6388-crop-1b.jpg" class="image" " height="50" border="0" alt="img_6388-crop-1b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">7 files, last one added on Jul 16, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=34" class="alblink"><b>Ethiopian Protest March (2005-06-24)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=34" class="albums"><img src="albums/userpics/10001/thumb_img_6456a.jpg" class="image" " height="50" border="0" alt="img_6456a.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>A protest march meant to raise awareness of poor conditions in Ethiopia, and to foster a pro-democracy movement for that country.</p>
+                        <p class="album_stat">4 files, last one added on Jun 25, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=46" class="alblink"><b>Powwow At The Forks (Summer 2005)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=46" class="albums"><img src="albums/userpics/10001/thumb_img_8602b.jpg" class="image" " height="50" border="0" alt="img_8602b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>A public display of a powwow (or at least parts of one).  The colours of the costumes are beautiful!</p>
+                        <p class="album_stat">19 files, last one added on Jul 20, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=25" class="alblink"><b>Assiniboine Park Conservatory (2005-05-29)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=25" class="albums"><img src="albums/userpics/10001/thumb_img_5410a.jpg" class="image" " height="50" border="0" alt="img_5410a.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>A trip to the Assiniboine Conservatory while my sister and her boyfriend went to the <span class="bblink"><a href="http://www.goodbear.mb.ca/default.asp" target="_blank">Children's Hospital Foundation of Manitoba's</a></span> &quot;<span class="bblink"><a href="http://www.goodbear.mb.ca/content.asp?view=CHF-41805" target="_blank">Teddy Bear's Picnic</a></span>&quot;.</p>
+                        <p class="album_stat">12 files, last one added on Jun 26, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=29" class="alblink"><b>Assiniboine Park Zoo (2005-06-11)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=29" class="albums"><img src="albums/userpics/10001/thumb_img_5609a.jpg" class="image" " height="50" border="0" alt="img_5609a.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">5 files, last one added on Jun 14, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=30" class="alblink"><b>Assiniboine Park Leo Mol Sculpture Garden (2005-06-11)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=30" class="albums"><img src="images/nopic.jpg" " height="50" alt="" border="0" class="image" /><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">0 files</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=52" class="alblink"><b>Animals / Insects</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=52" class="albums"><img src="albums/userpics/10001/thumb_img_0565b.jpg" class="image" " height="50" border="0" alt="img_0565b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">3 files, last one added on Jul 26, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td height="1" valign="top" class="tableh2">
+                        <b>&nbsp;</b>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        &nbsp;
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+
+        <tr>
+                <td colspan="2" style="padding: 0px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                        <td width="100%" align="left" valign="middle" class="tableh1_compact" style="white-space: nowrap"><b>15 albums on 1 page(s)</b></td>
+
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+</td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td><a href="index.php?cat=8"><img src="albums/userpics/10001/thumb_img_6514-crop-b.jpg" class="image" " height="50" border="0" alt=""></a></td><td><span class="catlink"><b><a href="index.php?cat=8">Miscellaneous</a></b></span>For albums that I don't know what section to put them in.</td></tr></table></td>
+                <td class="tableb" align="center">4</td>
+                <td class="tableb" align="center">22</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3>
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=36" class="alblink"><b>Neil's Farewell Lunch (2005-06-23)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=36" class="albums"><img src="albums/userpics/10001/thumb_img_6370a2.jpg" class="image" " height="51" border="0" alt="img_6370a2.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">3 files, last one added on Jun 30, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=38" class="alblink"><b>&quot;The Bird&quot; Collection</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=38" class="albums"><img src="albums/userpics/10001/thumb_img_6528b.jpg" class="image" " height="50" border="0" alt="img_6528b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Why, it's my very own personal &quot;bird&quot; collection!</p>
+                        <p class="album_stat">5 files, last one added on Jul 04, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=39" class="alblink"><b>Mongos Grill (2005-06-25)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=39" class="albums"><img src="albums/userpics/10001/thumb_img_6517b.jpg" class="image" " height="50" border="0" alt="img_6517b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>An impromptu lunch with Donna and Dianne and a camera!</p>
+                        <p class="album_stat">7 files, last one added on Jul 03, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=44" class="alblink"><b>Miscellaneous</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=44" class="albums"><img src="albums/misc/thumb_CRW_3763_JFR.JPG" class="image" " height="50" border="0" alt="CRW_3763_JFR.JPG"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">7 files, last one added on Apr 12, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+
+        <tr>
+                <td colspan="2" style="padding: 0px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                        <td width="100%" align="left" valign="middle" class="tableh1_compact" style="white-space: nowrap"><b>4 albums on 1 page(s)</b></td>
+
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+</td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><span class="catlink"><b><a href="index.php?cat=7">Photography Meetups</a></b></span>Local photographers get together about once a month to have some social interaction and see what we have been shooting for the past month.  This started as a meetup,com group, but since meetup.com started charging for its services all the activity for our local group has centred around <span class="bblink"><a href="http://www.wpgphoto.com" target="_blank">www.wpgphoto.com</a></span>.  So, if you like photography (at any level of skill), feel free to <span class="bblink"><a href="http://www.wpgphoto.com" target="_blank">get involved</a></span>!</td></tr></table></td>
+                <td class="tableb" align="center">1</td>
+                <td class="tableb" align="center">4</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3>
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=28" class="alblink"><b>www.wpgphoto.com</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=28" class="albums"><img src="albums/userpics/10001/thumb_img_9586-crop-1b.jpg" class="image" " height="50" border="0" alt="img_9586-crop-1b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>This album will be for images I post on <span class="bblink"><a href="http://www.wpgphoto.com" target="_blank">www.wpgphoto.com</a></span> whether for critques, contests, or assignments.</p>
+                        <p class="album_stat">4 files, last one added on Jul 20, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td height="1" valign="top" class="tableh2">
+                        <b>&nbsp;</b>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        &nbsp;
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+
+        <tr>
+                <td colspan="2" style="padding: 0px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                        <td width="100%" align="left" valign="middle" class="tableh1_compact" style="white-space: nowrap"><b>1 albums on 1 page(s)</b></td>
+
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+</td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td><a href="index.php?cat=3"><img src="albums/mall_of_america_20050508/thumb_img_4997.jpg" class="image" " height="50" border="0" alt=""></a></td><td><span class="catlink"><b><a href="index.php?cat=3">Road Trips!</a></b></span>Various places I have driven to and taken photos at or of.</td></tr></table></td>
+                <td class="tableb" align="center">9</td>
+                <td class="tableb" align="center">169</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3>
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=20" class="alblink"><b>Birds Hill Park Teahouse (2005-04-24)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=20" class="albums"><img src="albums/birds_hill_park_20050424/thumb_img_4895.jpg" class="image" " height="50" border="0" alt="img_4895.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>This one might as well be called &quot;<b>Christina scarfs a whole piece of cake, and then licks the platter clean</b>&quot;  It might be better to watch this album as a slideshow, at least until you get to my seriously over-exposed exterior shots.</p>
+                        <p class="album_stat">50 files, last one added on Apr 24, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=23" class="alblink"><b>Mall of America (2005-05-08)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=23" class="albums"><img src="albums/mall_of_america_20050508/thumb_img_5052.jpg" class="image" " height="50" border="0" alt="img_5052.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Mother's Day weekend I took my mom on a roadtrip to Minneapolis to shop in Minneapolis, and more importantly, to have her present at the <span class="bblink"><a href="http://www.komen.org" target="_blank">Susan G. Komen Race For The Cure</a></span>.  According to the Minneapolis Star Tribune, there were an estimated 50,000 people at the race for all events combined!<br />
+<br />
+My mom is a breast cancer survivor, and I thought it would be special for her to see me run in the 5k race.  <br />
+<br />
+All in all, it was a great, special weekend!</p>
+                        <p class="album_stat">21 files, last one added on May 11, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=24" class="alblink"><b>Narcisse Snake Pits (2005-05-23)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=24" class="albums"><img src="albums/narcisse_snake_pits_20050523/thumb_img_5208.jpg" class="image" " height="50" border="0" alt="img_5208.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Every spring, the <span class="bblink"><a href="http://www.gov.mb.ca/conservation/wildlife/managing/snakes_narcisse.html" target="_blank">Narcisse Snake Dens</a></span> are alive with tens of thousands of red-sided garter snakes as they slither to the surface from their winter dens. These snakes are ready to begin their annual mating ritual. This spectacular ritual lasts for a one to three week period in late April or early May, depending on weather conditions. <br />
+<br />
+The male snakes are usually first to surface and they wait patiently for the females to come out. As the larger females surface, the male snakes are eager to mate with them. This eagerness is displayed in the familiar “mating ball,” where one female is surrounded by up to one hundred males. <br />
+<br />
+There are four active snake dens at the Narcisse WMA. The dens are connected by a three-kilometre self-guiding interpretive trail. Although the garter snakes are harmless, they are best viewed by the observation platforms built next to the dens.</p>
+                        <p class="album_stat">57 files, last one added on May 23, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=27" class="alblink"><b>Kennedy House on River Road (2005-06-04)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=27" class="albums"><img src="albums/userpics/10001/thumb_img_5462-crop-1b.jpg" class="image" " height="50" border="0" alt="img_5462-crop-1b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">9 files, last one added on Jul 16, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=32" class="alblink"><b>Miscellaneous</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=32" class="albums"><img src="albums/userpics/10001/thumb_img_3757a.jpg" class="image" " height="50" border="0" alt="img_3757a.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">1 files, last one added on Jun 23, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=43" class="alblink"><b>St. Andrew's Church</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=43" class="albums"><img src="albums/st_andrews_church/thumb_img_4615.jpg" class="image" " height="50" border="0" alt="img_4615.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p>Images from St. Andrews church on River Road.</p>
+                        <p class="album_stat">20 files, last one added on Apr 12, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=45" class="alblink"><b>Lockport</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=45" class="albums"><img src="albums/userpics/10001/thumb_img_4647b.jpg" class="image" " height="50" border="0" alt="img_4647b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">6 files, last one added on Jul 16, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=53" class="alblink"><b>Farm & Patricia Beach (2005-07-24)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=53" class="albums"><img src="albums/userpics/10001/thumb_img_0716b.jpg" class="image" " height="50" border="0" alt="img_0716b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">2 files, last one added on Aug 03, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=54" class="alblink"><b>Church of the Immaculate Conception, Cook's Creek, Manitoba (2005-07-23)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=54" class="albums"><img src="albums/userpics/10001/thumb_img_0416b.jpg" class="image" " height="50" border="0" alt="img_0416b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">3 files, last one added on Aug 03, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td height="1" valign="top" class="tableh2">
+                        <b>&nbsp;</b>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        &nbsp;
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+
+        <tr>
+                <td colspan="2" style="padding: 0px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                        <td width="100%" align="left" valign="middle" class="tableh1_compact" style="white-space: nowrap"><b>9 albums on 1 page(s)</b></td>
+
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+</td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><span class="catlink"><b><a href="index.php?cat=9">Keith, Friends, and Family</a></b></span>A category for assorted photos that are more of a personal nature to me.</td></tr></table></td>
+                <td class="tableb" align="center">2</td>
+                <td class="tableb" align="center">10</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3>
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=50" class="alblink"><b>Friends and Family</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=50" class="albums"><img src="albums/userpics/10001/thumb_img_0830b.jpg" class="image" " height="50" border="0" alt="img_0830b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">7 files, last one added on Jul 26, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        <td width="50%" height="100%" valign="top">
+        <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr>
+                <td colspan="3" height="1" valign="top" class="tableh2">
+                        <a href="thumbnails.php?album=51" class="alblink"><b>Storm Aftermath (2005-07-17)</b></a>
+                </td>
+        </tr>
+        <tr>
+                <td colspan="3">
+                        <img src="images/spacer.gif" width="1" height="1"><br />
+                </td>
+        </tr>
+        <tr height="100%">
+                <td align="center" height="100%" valign="middle" class="thumbnails">
+                        <img src="images/spacer.gif" width="52" height="1" class="image" style="margin-top: 0px;
+ margin-bottom: 0px; border: none;"><br />
+                        <a href="thumbnails.php?album=51" class="albums"><img src="albums/userpics/10001/thumb_img_9616b.jpg" class="image" " height="50" border="0" alt="img_9616b.jpg"><br /></a>
+                </td>
+                <td height="100%">
+                        <img src="images/spacer.gif" width="1" height="1">
+                </td>
+                <td width="100%" height="100%" valign="top" class="tableb_compact">
+                        
+                        <p></p>
+                        <p class="album_stat">3 files, last one added on Jul 17, 2005</p>
+                </td>
+        </tr>
+        </table>
+        </td>
+
+        </tr>
+
+        <tr>
+                <td colspan="2" style="padding: 0px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                        <td width="100%" align="left" valign="middle" class="tableh1_compact" style="white-space: nowrap"><b>2 albums on 1 page(s)</b></td>
+
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+</td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><img src="images/spacer.gif" width="20" height="1"></td><td></td><td><span class="catlink"><b><a href="index.php?cat=2">This is me... Then</a></b></span>Photos of me from different periods of time.</td></tr></table></td>
+                <td class="tableb" align="center">2</td>
+                <td class="tableb" align="center">24</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3></td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><img src="images/spacer.gif" width="20" height="1"></td><td><a href="index.php?cat=5"><img src="albums/userpics/10001/thumb_img_5170.jpg" class="image" " height="50" border="0" alt=""></a></td><td><span class="catlink"><b><a href="index.php?cat=5">Neil and Rifah's Wedding (2005-05-20)</a></b></span></td></tr></table></td>
+                <td class="tableb" align="center">2</td>
+                <td class="tableb" align="center">36</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3></td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><span class="catlink"><b><a href=index.php?cat=1>User galleries</a></b></span>This category contains albums that belong to Coppermine users.</td></tr></table></td>
+                <td class="tableb" align="center">2</td>
+                <td class="tableb" align="center">10</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3></td>
+      </tr><!--};-->
+
+        <tr>
+                <td colspan="3" class="tableh1" align="center"><span class="statlink"><b><b>454</b> files in <b>37</b> albums and <b>8</b> categories with <b>10</b> comments viewed <b>3825</b> times</b></span></td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+        <tr>
+                <td class="tableh1" colspan="4"><h2>Last additions</h2></td>
+        </tr>
+
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=0"><img src="albums/userpics/10001/thumb_img_1139b.jpg" class="image" " height="100" border="0" alt="img_1139b.jpg" title="Filename : img_1139b.jpg
+Filesize : 98KB
+Dimensions : 545x800
+Date added : Aug 08, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 08, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=1"><img src="albums/userpics/10001/thumb_img_0416b.jpg" class="image" " height="100" border="0" alt="img_0416b.jpg" title="Filename : img_0416b.jpg
+Filesize : 89KB
+Dimensions : 545x800
+Date added : Aug 03, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 03, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=2"><img src="albums/userpics/10001/thumb_img_0426b.jpg" class="image" " height="100" border="0" alt="img_0426b.jpg" title="Filename : img_0426b.jpg
+Filesize : 97KB
+Dimensions : 800x545
+Date added : Aug 03, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 03, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=3"><img src="albums/userpics/10001/thumb_img_0427b.jpg" class="image" " height="100" border="0" alt="img_0427b.jpg" title="Filename : img_0427b.jpg
+Filesize : 133KB
+Dimensions : 545x800
+Date added : Aug 03, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 03, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=4"><img src="albums/userpics/10001/thumb_img_0716b.jpg" class="image" " height="100" border="0" alt="img_0716b.jpg" title="Filename : img_0716b.jpg
+Filesize : 97KB
+Dimensions : 545x800
+Date added : Aug 03, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 03, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=5"><img src="albums/userpics/10001/thumb_img_0876b.jpg" class="image" " height="100" border="0" alt="img_0876b.jpg" title="Filename : img_0876b.jpg
+Filesize : 83KB
+Dimensions : 545x800
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=6"><img src="albums/userpics/10001/thumb_img_0878-crop-1b.jpg" class="image" " height="100" border="0" alt="img_0878-crop-1b.jpg" title="Filename : img_0878-crop-1b.jpg
+Filesize : 64KB
+Dimensions : 549x800
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=7"><img src="albums/userpics/10001/thumb_img_0921b.jpg" class="image" " height="100" border="0" alt="img_0921b.jpg" title="Filename : img_0921b.jpg
+Filesize : 79KB
+Dimensions : 800x545
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=8"><img src="albums/userpics/10001/thumb_img_1033b.jpg" class="image" " height="100" border="0" alt="img_1033b.jpg" title="Filename : img_1033b.jpg
+Filesize : 100KB
+Dimensions : 545x800
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=9"><img src="albums/userpics/10001/thumb_img_1051b.jpg" class="image" " height="100" border="0" alt="img_1051b.jpg" title="Filename : img_1051b.jpg
+Filesize : 100KB
+Dimensions : 545x800
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=10"><img src="albums/userpics/10001/thumb_img_0846-1b.jpg" class="image" " height="100" border="0" alt="img_0846-1b.jpg" title="Filename : img_0846-1b.jpg
+Filesize : 83KB
+Dimensions : 800x545
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=11"><img src="albums/userpics/10001/thumb_img_0869-1b.jpg" class="image" " height="100" border="0" alt="img_0869-1b.jpg" title="Filename : img_0869-1b.jpg
+Filesize : 53KB
+Dimensions : 545x800
+Date added : Aug 02, 2005"><br /></a>
+                                        <span class="thumb_caption">Aug 02, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+<div class="footer" align="center" style="padding-top: 10px;">Powered by <a href="http://coppermine.sf.net/" target="_blank">Coppermine Photo Gallery</a></div>
+                                </td>
+                        </tr>
+                </table>
+                </td>
+        </tr>
+</table>
+<!--Coppermine Photo Gallery 1.3.2--></body>
+</html>

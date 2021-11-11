@@ -1,0 +1,328 @@
+<html>
+<script language="Javascript1.2">
+// Cursor Trails - Copyright 1997-1999 Matthew Alum and InsideDHTML.com, 
+// All Rights Reserved.
+ 
+
+var isNS = (navigator.appName == "Netscape");
+layerRef = (isNS) ? "document" : "document.all";
+styleRef = (isNS) ? "" : ".style";
+ 
+var queue = new Array();
+ 
+var NUM_OF_TRAIL_PARTS = 5
+ 
+for (x=1; x < 6; x++) {  ///////////////Image Preload
+ eval("trailSpriteFrame" + x + " = new Image(40,40);");
+ eval("trailSpriteFrame" + x + ".src = 'trailgif" + x + ".gif';");
+}
+ 
+
+////////////////////////////////////////////////The trail Object
+ 
+function trailSpriteObj(anID) {
+ this.trailSpriteID = "trailSprite" + anID; //as before 
+ this.imgRef = "trailSprite" + anID + "img"; //reference to the sprites image name
+ this.currentFrame = 1; //the varible for looking after the frame
+ this.animateTrailSprite = animateTrailSprite; //declare the objects method cycle
+}
+ 
+function animateTrailSprite() {
+ if (this.currentFrame <6 ) { //if there are animation frames left, the change sprites the current frame
+  if (isNS) {     //Detect the browser and perform coresponding image switch
+   eval("document." + this.trailSpriteID +".document['"+ this.imgRef + "'].src  =  trailSpriteFrame" + this.currentFrame + ".src");
+  } else {
+   eval("document['" + this.imgRef + "'].src  =  trailSpriteFrame" + this.currentFrame + ".src");
+  }
+  this.currentFrame ++;   //and increase the objects current frame 
+ } else {       //the current frame has reached its limit so hide the sprite
+  eval(layerRef + '.' + this.trailSpriteID +  styleRef + '.visibility = "hidden"');
+ } 
+}
+ 
+/////////////////////////////////////////////////////////////////
+ 
+function processAnim() {
+ for(x=0; x < NUM_OF_TRAIL_PARTS; x++)
+   queue[x].animateTrailSprite();
+}
+ 
+function processMouse(e) {
+ currentObj = shuffleQueue();
+ if (isNS) {
+  eval("document." + currentObj + ".left = e.pageX - 10 ;");
+  eval("document." + currentObj + ".top = e.pageY + 10;");
+ } else {
+  eval("document.all." + currentObj + ".style.pixelLeft = event.clientX + document.body.scrollLeft - 10 ;");
+  eval("document.all." + currentObj + ".style.pixelTop = event.clientY + document.body.scrollTop + 10;");
+ }
+}
+ 
+function shuffleQueue() {
+ lastItemPos = queue.length - 1;
+ lastItem = queue[lastItemPos];
+ for (i = lastItemPos; i>0; i--) 
+  queue[i] = queue[i-1];
+ queue[0] = lastItem;
+ 
+ queue[0].currentFrame = 1; //reset the objects frame number & make the sprite visible again
+ eval(layerRef + '.' + queue[0].trailSpriteID +  styleRef + '.visibility = "visible"'); 
+ 
+ return  queue[0].trailSpriteID;
+}
+ 
+function init() {
+ 
+ for(x=0; x<NUM_OF_TRAIL_PARTS; x++)  //fill array with trail objects
+  queue[x] = new trailSpriteObj(x+1) ;
+ 
+ if (isNS) { document.captureEvents(Event.MOUSEMOVE); }
+ document.onmousemove = processMouse;
+ 
+ setInterval("processAnim();",25);
+} 
+ 
+window.onload = init;
+ 
+</script>
+<head>
+<title>Happy Valentine's Day!</title>
+</head>
+
+<body background="images/valentine/valent2.jpg">
+
+<div id="trailSprite1" style="position: absolute; height:40px; width:40px;z-index: 100" align="center">
+<dd><img src="trailgif1.gif" border="0" name="trailSprite1img" WIDTH="40" HEIGHT="40"> </dd>
+</div><div id="trailSprite2" style="position: absolute; height:40px; width:40px;z-index: 10" align="center">
+<dd><img src="trailgif2.gif" border="0" name="trailSprite2img" WIDTH="40" HEIGHT="40"> </dd>
+</div><div id="trailSprite3" style="position: absolute; height:40px; width:40px;z-index: 10" align="center">
+<dd><img src="trailgif3.gif" border="0" name="trailSprite3img" WIDTH="40" HEIGHT="40"> </dd>
+</div><div id="trailSprite4" style="position: absolute; height:40px; width:40px;z-index: 10" align="center">
+<dd><img src="trailgif4.gif" border="0" name="trailSprite4img" WIDTH="40" HEIGHT="40"> </dd>
+</div><div id="trailSprite5" style="position: absolute; height:40px; width:40px;z-index: 10" align="center">
+<dd><img src="trailgif5.gif" border="0" name="trailSprite5img" WIDTH="40" HEIGHT="40"> </dd>
+</div>
+
+<MAP NAME="TableofContents">
+<AREA SHAPE=rect COORDS="5, 163, 115, 185" HREF="" TARGET="_top" ALT="Family Fun">
+<AREA SHAPE=rect COORDS="0, 188, 117, 209" HREF="" TARGET="_top" ALT="Family Photos">
+<AREA SHAPE=rect COORDS="1, 140, 117, 162" HREF="http://pub50.ezboard.com/bclanbrigatta90942" TARGET="_top" ALT="Class Discussions">
+<AREA SHAPE=rect COORDS="0, 113, 117, 136" HREF="/phpBB/index.php" TARGET="_top" ALT="Message Boards">
+<AREA SHAPE=rect COORDS="25, 88, 93, 109" HREF="../cgi-bin/calendar/calendar.pl" TARGET="_top" ALT="Scheduled Events">
+<AREA SHAPE=rect COORDS="7, 62, 115, 85" HREF="" TARGET="_top" ALT="Friendly Links">
+<AREA SHAPE=rect COORDS="31, 36, 90, 58" HREF="policies.shtml" TARGET="_top" ALT="Our Policies">
+<AREA SHAPE=rect COORDS="33, 14, 89, 36" HREF="charter.shtml" TARGET="_top" ALT="Our Charter">
+</MAP>
+<MAP NAME="Header">
+<AREA SHAPE=rect COORDS="135, 20, 314, 76" HREF="http://www.penandplow.com/brigatta" TARGET="_top" ALT="Back to Home Page">
+<AREA SHAPE=rect COORDS="425, 33, 547, 79" HREF="http://www.everquest.com/" TARGET="_top" ALT="You're in OUR world, now!">
+<AREA SHAPE=rect COORDS="430, 83, 542, 105" HREF="http://pub16.ezboard.com/bdruzzilro86846" TARGET="_top" ALT="Druzzil Ro Community Pages">
+</MAP>
+
+
+<TABLE WIDTH=755 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=38 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=10 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=98 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=10 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=66 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=279 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=65 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=16 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=126 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=11 HEIGHT=1></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=36 HEIGHT=1></TD>
+		<TD></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=11>
+			<IMG NAME="Header" SRC="images/valentine/vhomepage_01.jpg" BORDER=0 USEMAP="#Header" width=755 height=207></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=207></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_02.jpg" width=38 height=212></TD>
+		<TD COLSPAN=3 ROWSPAN=3>
+			<IMG NAME="TableofContents" SRC="images/valentine/vhomepage_03.jpg" BORDER=0 USEMAP="#TableofContents" width=118 height=212></TD>
+		<TD ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_04.jpg" width=66 height=212></TD>
+		<TD ROWSPAN=6 BACKGROUND="images/valentine/vhomepage_05.jpg">
+			
+<base target="_top">
+<BODY>
+
+
+
+
+
+<HTML>
+<HEAD><TITLE>News Previews</TITLE></HEAD>
+<BODY>
+<FONT FACE="Arial">
+
+<!-- 443651, 325280, FFCC00 -->
+ 
+    <table width='100%' border='0' cellspacing='0' cellpadding='3'><tr><td><font face='Arial' size='2' color='#443651'><i><img border='0' src='/phpBB/images/icon1.gif'>&nbsp;'Clan Brigatta Shines in Norrath'</a></font></td></tr><tr><td><i><font face='Arial' size='2' color='#325280'>There is so much to write and so little space! First off, we have had some dings! Adolaf - 55; Shadowhand - 55; and Neril - 54. <BR><BR>Next off, CB did some epic battles of late. We fought Eejag times three for Hennesy, Chichiry, and Jasrais. Then off to the Plane of Air where we saw the demise of Gwan times two for Hennesy and Jasrais. <BR><BR>Contratulations to our ding recipients and to our epic battle heros. Wooooot, CB!.....&nbsp;</font><font face='Arial' size='2' color='#FFCC00'>--&nbsp;<a href="../phpBB/viewtopic.php?topic=1100&forum=17">Read More!</a></font></td></tr></i></table><BR>
+
+</HTML>
+
+</TD>
+		<TD COLSPAN=2 ROWSPAN=5>
+			<IMG SRC="images/valentine/vhomepage_06.jpg" width=81 height=276></TD>
+		<TD COLSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_07.jpg" width=173 height=8></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=8></TD>
+	</TR>
+	<TR>
+		<TD BACKGROUND="images/valentine/vhomepage_08.jpg">			
+			<applet code="advnewsscroll.class" WIDTH=126 HEIGHT=75 codebase="./" align="center">
+						<param name="info" value="Applet by Gokhan Dagli,japplets.tripod.com">
+						<param name="regcode" value="">
+
+						<param name="input_text" value="from_parameters">
+						<param name="text_file" value="">
+
+						<param name="scroll_mode" value="scroll">
+
+						<param name="bgimage" value="images/valentine/vhomepage_08.jpg">
+						<param name="image_xposition" value="0">
+						<param name="image_yposition" value="0">
+
+						<param name="bgcolor" value="000038">
+
+						<param name="title_color" value="8B734F">
+						<param name="text_color" value="8B734F">
+						<param name="highlight_title_color" value="8B734F">
+						<param name="highlight_text_color" value="50b5f0">
+
+						<param name="title_align" value="left">
+						<param name="text_align" value="left">
+
+						<param name="title_font_type" value="Helvetica">
+						<param name="title_font_size" value="10">
+						<param name="title_font_style" value="1">
+
+						<param name="text_font_type" value="Helvetica">
+						<param name="text_font_size" value="9">
+						<param name="text_font_style" value="0">
+
+						<param name="title_underline" value="no">
+						<param name="text_underline" value="no">
+
+						<param name="scroll_delay" value="30">
+						<param name="pause" value="3000">
+
+						<param name="border_thickness" value="0">
+						<param name="border_color" value="d0d0a0">
+
+						<param name="left_margin" value="2">
+						<param name="top_margin" value="0">
+						<param name="right_margin" value="0">
+						<param name="bottom_margin" value="0">
+
+						<param name="vertical_space" value="20">
+						<param name="title_linespace" value="0">
+						<param name="text_linespace" value="0">
+
+                        <param name=title1 value="02/12 - Plane of Air">
+<param name="text1" value="First group to show gets to go.  Meet at 5pm PST at South Ro Wizzy spires.  Bring 1 or 2 p-dots for the cleric(s).">
+<param name="link1" value="">
+<param name="target_frame1" value="_self">
+
+<param name=title2 value="02/17 - Kael Drakkel">
+<param name="text2" value="Form up at EW/Kael zone line. Same as every Sunday. 3pm PST form-up. Don't forget 3 peridot for the cleric. ">
+<param name="link2" value="">
+<param name="target_frame1" value="_self">
+
+<param name=title3 value="02/20 - Plane of Air">
+<param name="text3" value="First group to show gets to go.  Meet at 5pm PST at South Ro Wizzy spires.  Bring 1 or 2 p-dots for the cleric(s).">
+<param name="link3" value="">
+<param name="target_frame1" value="_self">
+
+<param name=title4 value="02/24 - Kael Drakkel">
+<param name="text4" value="Form up at EW/Kael zone line. Same as every Sunday. 3pm PST form-up. Don't forget 3 peridot for the cleric. ">
+<param name="link4" value="">
+<param name="target_frame1" value="_self">
+
+<param name=title5 value="02/28 - Plane of Air">
+<param name="text5" value="First group to show gets to go.  Meet at 5pm PST at South Ro Wizzy spires.  Bring 1 or 2 p-dots for the cleric(s).">
+<param name="link5" value="">
+<param name="target_frame1" value="_self">
+
+
+
+					</applet>            
+            </TD>
+		<TD COLSPAN=2>
+			<IMG SRC="images/valentine/vhomepage_09.jpg" width=47 height=75></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=75></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_10.jpg" width=126 height=193></TD>
+		<TD COLSPAN=2 ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_11.jpg" width=47 height=193></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=129></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG SRC="images/valentine/vhomepage_12.jpg" width=222 height=54></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=54></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_13.jpg" width=48 height=82></TD>
+		<TD ROWSPAN=3 BACKGROUND="images/valentine/vhomepage_14.jpg">
+			<IMG BORDER="0" ALIGN="center" SRC="images/valentine/ccdfh1.gif" WIDTH=98 HEIGHT=82></TD>
+		<TD COLSPAN=2 ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_15.jpg" width=76 height=82></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=10></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_16.jpg" width=65 height=128></TD>
+		<TD COLSPAN=3 ROWSPAN=2 BACKGROUND="images/valentine/vhomepage_17.jpg">
+        <img border="0" align="center" src="images/valentine/wtc2.gif" WIDTH=153 HEIGHT=68">
+		</TD>
+		<TD ROWSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_18.jpg" width=36 height=128></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=23></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/valentine/vhomepage_19.jpg" width=279 height=105></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=49></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG SRC="images/valentine/vhomepage_20.jpg" width=222 height=56></TD>
+		<TD COLSPAN=3>
+			<IMG SRC="images/valentine/vhomepage_21.jpg" width=153 height=56></TD>
+		<TD>
+			<IMG SRC="images/valentine/spacer.gif" WIDTH=1 HEIGHT=56></TD>
+	</TR>
+</TABLE>
+
+</body>
+
+</html>

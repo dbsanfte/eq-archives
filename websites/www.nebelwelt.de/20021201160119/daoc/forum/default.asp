@@ -1,0 +1,946 @@
+<html>
+
+<head>
+<title>DaoC's Nebelwelt</title>
+<meta name="copyright" content="This code is Copyright (C) 2000-01 Michael Anderson and Pierre Gorissen">
+
+<script language="JavaScript">
+<!-- hide from JavaScript-challenged browsers
+function openWindow(url) {
+  popupWin = window.open(url,'new_page','width=400,height=400')
+}
+function openWindow2(url) {
+  popupWin = window.open(url,'new_page','width=400,height=450')
+}
+function openWindow3(url) {
+  popupWin = window.open(url,'new_page','width=400,height=450,scrollbars=yes')
+}
+function openWindow4(url) {
+  popupWin = window.open(url,'new_page','width=400,height=525')
+}
+function openWindow5(url) {
+  popupWin = window.open(url,'new_page','width=450,height=525,scrollbars=yes,toolbars=yes,menubar=yes,resizable=yes')
+}
+// done hiding -->
+</script>
+<style type=text/css>
+<!--
+a:link    {color:midnightblue;text-decoration:underline}
+a:visited {color:maroon;text-decoration:underline}
+a:hover   {color:red;text-decoration:underline}
+input.radio {background: navajowhite; color:#000000}
+-->
+</style>
+</head>
+
+<body bgColor="wheat" text="black" link="midnightblue" aLink="red" vLink="red">
+<a name="top"></a><font face="Verdana, Arial, Helvetica">
+
+<table align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td valign="top" width="50%"><a href="default.asp"><img alt="DaoC's Nebelwelt" border="0" src="forum-logo.jpg"></a></td>
+    <td align="center" valign="top" width="50%">
+    <table border="0" cellPadding="2" cellSpacing="0">
+      <tr>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2"><b>DaoC's Nebelwelt</b></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="1">
+        <a href="http://www.nebelwelt.de/daoc/"><acronym title="Homepage">Nebelwelt</acronym></a>
+        |
+		 <a href="events.asp"><acronym title="Event Kalendar...">Kalender</acronym></a>        |
+        <a href="pop_profile.asp?mode=Edit"><acronym title="Pers&ouml;nliche Einstellungen bearbeiten">Profil</acronym></a>
+        |
+        <a href="policy.asp"><acronym title="melde Dich an um im Forum posten zu k&ouml;nnen">Registrieren</acronym></a>
+        |
+        <a href="active.asp"><acronym title="Zeigt aktive Topics seit deinem letzten Besuch an">Aktive Topics</acronym></a>
+		 |
+		 <a href="active_polls.asp"><acronym title="Aktive Umfragen...">Aktive Umfragen</acronym></a>
+        |
+        <a href="members.asp"><acronym title="Aktuelle Mitglieder des Forums...">Mitglieder</acronym></a>
+        |
+        <a href="search.asp"><acronym title="F&uuml;hrt eine Suche nach Schl&uuml;sselwort, Datum, und/oder Name aus...">Suche</acronym></a>
+        |
+        <a href="faq.asp"><acronym title="Antworten auf h&auml;ufig gestellte Fragen...">FAQ</acronym></a>
+
+        </font></td>
+      </tr>
+
+      <form action="/daoc/forum/default.asp" method="post" id=form1 name=form1>
+      <INPUT type="hidden" name="Method_Type" value="login">
+      <tr>
+        <td align="center">
+        <table>
+          <tr>
+
+            <td><font face="Verdana, Arial, Helvetica" size="1"><b>Benutzername:</b></font><br>
+            <INPUT type="text" name="Name" size="10" value=""></td>
+            <td><font face="Verdana, Arial, Helvetica" size="1"><b>Passwort:</b></font><br>
+            <INPUT type="password" name="Password" size="10" value=""></td>
+            <td valign="bottom">
+
+            <INPUT src=button_login.gif type="image" value="Login" id=submit1 name=submit1 border=0 hspace=4>
+
+            </td>
+	</tr>
+	<tr>
+	<td colspan="3" align="left"><font face="Verdana, Arial, Helvetica" size="1">
+	<INPUT type="checkbox" name="SavePassWord" value="true" CHECKED><b> Passwort speichern</b></font>
+	</td>
+
+          </tr>
+
+       </table>
+       </td>
+     </tr>
+     </form>
+
+   </table>
+   </td>
+ </tr>
+</table>
+<table valign="top" align="center" border="0" cellPadding="0" cellSpacing="0" width="100%">
+  <tr>
+    <td valign="top">
+
+
+
+
+<br>
+
+<script language="JavaScript">
+function autoReload(objform)
+{
+	var tmpCookieURL = '/daoc/forum/';
+	if (objform.SelectSize.value == 1)
+	{
+			document.PostTopic.Message.cols = 45;
+			document.PostTopic.Message.rows = 6;		
+		}
+		if (objform.SelectSize.value == 2)
+		{			
+			document.PostTopic.Message.cols = 80;			
+			document.PostTopic.Message.rows = 12;		
+		}		
+		if (objform.SelectSize.value == 3)
+		{			
+			document.PostTopic.Message.cols = 90;			
+			document.PostTopic.Message.rows = 12;		
+		}		
+		if (objform.SelectSize.value == 4)
+		{			
+			document.PostTopic.Message.cols = 130;			
+			document.PostTopic.Message.rows = 15;		
+		}	
+		document.cookie =  tmpCookieURL + "strSelectSize=" + objform.SelectSize.value;
+
+}
+</script>
+<style TYPE="text/css">
+<!--
+TD.NON {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 	color :#C0C0C0; 	font-weight :normal}
+TD.TOP {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 	color :#0000FF; 	font-weight :bold}
+TD.Some {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 	color :#000000; 	font-weight :normal	}
+TD.Today {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 	background-color :lightsteelblue; 	font-weight :normal}
+TD.Day {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 
+	color :#FFFFFF; 	background-color :beige; 	font-weight :normal}
+TD.Selected {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 
+	background-color :plum; 	font-weight :normal}
+TD.HL {	font-family :Verdana, Arial, Helvetica; 	font-size :12px; 	color :#000000; 	font-weight :normal}
+TD.NON2 {	font-family: Verdana, Arial, Helvetica; 	font-size :12px; 	background-color :lightgrey; 	font-weight :normal}
+A.NOEVENT:link
+{
+    COLOR: #000000;
+    CURSOR: nw-resize;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.NOEVENT:visited
+{
+    COLOR: #000000;
+    CURSOR: nw-resize;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.NOEVENT:hover
+{
+    BACKGROUND-COLOR: lavender;
+    COLOR: #000000;
+    CURSOR: nw-resize;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.EVENT:link
+{
+    COLOR: navy;
+    CURSOR: nw-resize;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A.EVENT:visited
+{
+    COLOR: navy;
+    CURSOR: nw-resize;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A.EVENT:hover
+{
+    BACKGROUND-COLOR: plum;
+    COLOR: navy;
+    CURSOR: nw-resize;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A.MONTH:link
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.MONTH:visited
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.MONTH:hover
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: underline
+}
+A.NORMAL:link
+{
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.NORMAL:visited
+{
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+A.NORMAL:hover
+{
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+.createdby
+{
+    FONT-STYLE: italic;
+    TEXT-ALIGN: right
+}
+.bluetext
+{
+    COLOR: #336699
+}
+.month
+{
+    FONT-WEIGHT: bold
+}
+.eventname
+{
+    FONT-WEIGHT: bold
+}
+a.Title:link {color:navy; text-decoration: underline; cursor: hand}
+a.Title:visited {color: steelblue; text-decoration: underline}
+a.Title:hover   {color: maroon; text-decoration: underline; cursor: hand}
+-->
+</style>
+
+
+<table bgcolor="black" border="0" cellpadding="0" border="01" cellspacing="1" width="150px" ALIGN=CENTER>
+	<tr>
+		<td bgcolor="papayawhip" align="center" valign="top" nowrap width="140">
+			<table border="0" bordercolor="black" cellpadding="2" cellspacing="0" width="140" height="100%">
+				<tr>
+					<td height="25" align="center" bgcolor="peru" valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Monatsansicht</font></b></td>
+				</tr>
+				
+				
+					<tr>
+						<td valign="top">
+	<table ALIGN="CENTER" BORDER="1" CELLSPACING="0" CELLPADDING="2" BGCOLOR="White" BORDERCOLOR="Gray">
+	  <tr>
+		<td>
+		<table WIDTH="140" BORDER="0" CELLPADDING="1" CELLSPACING="0" BGCOLOR="FFFFFF">
+			<tr HEIGHT="18" BGCOLOR="Silver">
+				<td WIDTH="20" HEIGHT="18" ALIGN="LEFT" VALIGN="MIDDLE"><a HREF="events.asp?month=11&amp;year=2002"><img SRC="prev.gif" WIDTH="10" HEIGHT="18" BORDER="0" ALT="Previous Month"></a></td>
+				<td WIDTH="120" COLSPAN="5" ALIGN="CENTER" VALIGN="MIDDLE" CLASS="SOME">December 2002</td>
+				<td WIDTH="20" HEIGHT="18" ALIGN="RIGHT" VALIGN="MIDDLE"><a HREF="events.asp?month=1&amp;year=2003"><img SRC="next.gif" WIDTH="10" HEIGHT="18" BORDER="0" ALT="Next Month"></a></td>
+			</tr>
+		  <tr>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">So</td>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">Mo</td>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">Di</td>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">Mi</td>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">Do</td>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">Fr</td>
+				<td ALIGN="CENTER" CLASS="SOME" WIDTH="20" HEIGHT="15" VALIGN="BOTTOM">Sa</td>
+		  </tr>
+		  <tr><td HEIGHT="1" ALIGN="MIDDLE" COLSPAN="7"><img SRC="line.gif" HEIGHT="1" WIDTH="140" BORDER="0"></td></tr>
+		  
+	<TR>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='TODAY'> <A HREF=events.asp?date=12/1/02&month=12&year=2002 CLASS='NOEVENT'> 1</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/2/02&month=12&year=2002 CLASS='NOEVENT'> 2</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/3/02&month=12&year=2002 CLASS='NOEVENT'> 3</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/4/02&month=12&year=2002 CLASS='NOEVENT'> 4</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/5/02&month=12&year=2002 CLASS='NOEVENT'> 5</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/6/02&month=12&year=2002 CLASS='NOEVENT'> 6</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/7/02&month=12&year=2002 CLASS='NOEVENT'> 7</A></TD>
+	</TR>
+	<TR>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/8/02&month=12&year=2002 CLASS='NOEVENT'> 8</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/9/02&month=12&year=2002 CLASS='NOEVENT'> 9</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/10/02&month=12&year=2002 CLASS='NOEVENT'> 10</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/11/02&month=12&year=2002 CLASS='NOEVENT'> 11</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/12/02&month=12&year=2002 CLASS='NOEVENT'> 12</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/13/02&month=12&year=2002 CLASS='NOEVENT'> 13</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/14/02&month=12&year=2002 CLASS='NOEVENT'> 14</A></TD>
+	</TR>
+	<TR>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/15/02&month=12&year=2002 CLASS='NOEVENT'> 15</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/16/02&month=12&year=2002 CLASS='NOEVENT'> 16</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/17/02&month=12&year=2002 CLASS='NOEVENT'> 17</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/18/02&month=12&year=2002 CLASS='NOEVENT'> 18</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/19/02&month=12&year=2002 CLASS='NOEVENT'> 19</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/20/02&month=12&year=2002 CLASS='NOEVENT'> 20</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/21/02&month=12&year=2002 CLASS='NOEVENT'> 21</A></TD>
+	</TR>
+	<TR>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/22/02&month=12&year=2002 CLASS='NOEVENT'> 22</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/23/02&month=12&year=2002 CLASS='NOEVENT'> 23</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/24/02&month=12&year=2002 CLASS='NOEVENT'> 24</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/25/02&month=12&year=2002 CLASS='NOEVENT'> 25</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/26/02&month=12&year=2002 CLASS='NOEVENT'> 26</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/27/02&month=12&year=2002 CLASS='NOEVENT'> 27</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/28/02&month=12&year=2002 CLASS='NOEVENT'> 28</A></TD>
+	</TR>
+	<TR>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/29/02&month=12&year=2002 CLASS='NOEVENT'> 29</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/30/02&month=12&year=2002 CLASS='NOEVENT'> 30</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='SOME'> <A HREF=events.asp?date=12/31/02&month=12&year=2002 CLASS='NOEVENT'> 31</A></TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='NON'> 1</TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='NON'> 2</TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='NON'> 3</TD>
+		<TD ALIGN='RIGHT' WIDTH=20 HEIGHT=15 VALIGN='BOTTOM' CLASS='NON'> 4</TD>
+	</TR>
+
+		</table>
+		</td>
+	  </tr>
+	</table>
+						</td>
+					</tr>
+	
+				<tr>
+					<td align=center valign="top">
+						<FORM ACTION="events.asp" METHOD=GET id=frmSelectMonth name=frmSelectMonth>
+							<SELECT NAME=MONTH>
+								
+								<OPTION VALUE=1>Jan
+								<OPTION VALUE=2>Feb
+								<OPTION VALUE=3>Mar
+								<OPTION VALUE=4>Apr
+								<OPTION VALUE=5>May
+								<OPTION VALUE=6>Jun
+								<OPTION VALUE=7>Jul
+								<OPTION VALUE=8>Aug
+								<OPTION VALUE=9>Sep
+								<OPTION VALUE=10>Oct
+								<OPTION VALUE=11>Nov
+								<OPTION VALUE=12 selected>Dec
+							</SELECT>
+							<SELECT NAME=YEAR>
+								
+								<OPTION VALUE=1999>1999
+								<OPTION VALUE=2000>2000
+								<OPTION VALUE=2001>2001
+								<OPTION VALUE=2002 selected>2002
+								<OPTION VALUE=2003>2003
+								<OPTION VALUE=2004>2004
+								<OPTION VALUE=2005>2005
+							</SELECT>
+							<INPUT TYPE="submit" NAME="Go" value="Go" BORDER="0" WIDTH="35" HEIGHT="20">
+						</FORM>
+					</td>
+				</tr>
+				
+				<tr>
+					<td align=center valign="top">
+						<font face="Verdana, Arial, Helvetica" size="2"><a HREF="events.asp?view=week&date=12/1/02">View by Week</A></font>
+					</td>
+				</tr>
+				
+				<tr>
+					<td valign="top">
+					&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td align="center" bgcolor="peru" valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">
+					Anstehende Events
+					</font></b></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					
+	<table border="0" cellpadding="3" cellspacing="0" width="100%">
+	<tr><td valign=top><font size="2">Es sind keine Events f&uuml;r die n&auml;chste Zeit eingetragen</font></td></tr>
+	</table>
+
+					<br>
+					<br>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" bgcolor="peru" valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">
+					Vergangene Events
+					</font></b></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					
+	<table border="0" cellpadding="3" cellspacing="0" width="100%">
+	<tr><td align=left width=100% valign=top><font face=Verdana, Arial, Helvetica size=2><b>28.11.2002</b></font></td></tr><tr><td align=left width='100%'><a href="JavaScript:openWindow3('pop_event.asp?event_id=43')"><font face=Verdana, Arial, Helvetica size=1> RvR Abend</font></a></td></tr><tr><td align=left width=100% valign=top><font face=Verdana, Arial, Helvetica size=2><b>24.11.2002</b></font></td></tr><tr><td align=left width='100%'><a href="JavaScript:openWindow3('pop_event.asp?event_id=42')"><font face=Verdana, Arial, Helvetica size=1> Gildentreffen</font></a></td></tr><tr><td align=left width=100% valign=top><font face=Verdana, Arial, Helvetica size=2><b>22.11.2002</b></font></td></tr><tr><td align=left width='100%'><a href="JavaScript:openWindow3('pop_event.asp?event_id=41')"><font face=Verdana, Arial, Helvetica size=1> RvR Abend</font></a></td></tr><tr><td align=left width=100% valign=top><font face=Verdana, Arial, Helvetica size=2><b>16.11.2002</b></font></td></tr><tr><td align=left width='100%'><a href="JavaScript:openWindow3('pop_event.asp?event_id=40')"><font face=Verdana, Arial, Helvetica size=1> RvR Abend</font></a></td></tr><tr><td align=left width=100% valign=top><font face=Verdana, Arial, Helvetica size=2><b>10.11.2002</b></font></td></tr><tr><td align=left width='100%'><a href="JavaScript:openWindow3('pop_event.asp?event_id=38')"><font face=Verdana, Arial, Helvetica size=1> RvR Abend</font></a></td></tr><tr><td align=left width=100% valign=top><font face=Verdana, Arial, Helvetica size=2><b>4.11.2002</b></font></td></tr><tr><td align=left width='100%'><a href="JavaScript:openWindow3('pop_event.asp?event_id=36')"><font face=Verdana, Arial, Helvetica size=1> RvR Abend</font></a></td></tr>
+	</table>
+
+					<br>
+					<br>
+					</td>
+				</tr>
+			</table>
+		</td>
+		
+	</tr>
+</table>
+
+
+</td><td width="10px">&nbsp;</td><td><table border=0 width="100%" cellspacing=0 cellpadding=0 align=center>
+  <tr>
+    <td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr><td align="right">
+          </td></tr>
+		</table>
+     </td>
+   </tr>
+   <tr>
+     <td>
+    &nbsp;&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="black">
+    <table border=0 width="100%" cellspacing="1" cellpadding="4">
+      <tr>
+        <td align=center bgcolor="peru" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">	 &nbsp;	</b></font></td>
+        <td align=center bgcolor="peru" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Forum</font></b></td>
+        <td align=center bgcolor="peru" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Topics</font></b></td>
+        <td align=center bgcolor="peru" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Posts</font></b></td>
+        <td align=center bgcolor="peru" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Last&nbsp;Post</font></b></td>
+        <td align=center bgcolor="peru" nowrap valign="top"><b><font face="Verdana, Arial, Helvetica" size="2" color="mintcream">Moderator(s)</font></b></td>
+        <td align=center bgcolor="peru">
+&nbsp;        </td>
+      </tr>
+      <tr>
+        <td bgcolor="sandybrown" colspan="6" valign=top><a href="/daoc/forum/default.asp?HideCat1=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category"></a>&nbsp;<a href="default.asp?CAT_ID=1"><font face="Verdana, Arial, Helvetica" size="2" color="floralwhite"><b>Allgemeine Foren</b></font></a>&nbsp;&nbsp;</td>
+        <td bgcolor="sandybrown" align=center valign=top nowrap><b><font face="Verdana, Arial, Helvetica" size="2">
+        </font></b></td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=1"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=1">DAoC Allgemein</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Forum für das tägliche Allerlei. Hier kann jeder und darf alles legale gepostet werden, auch wenns DaoC nicht betrifft.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">118</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">723</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>20 Nov 2002</b><br>
+         10:28:10<br>by: <a href="pop_profile.asp?mode=display&id=464">Atlantur</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=2"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=2">Brunnenkneipe</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Die gemütliche Taverne, die man gerne besucht, wenn der Nebel wieder schwer auf die Gemüter drückt. Zeit für Gedichte und Geschichten und gute Gespräche am Ingame-Stammtisch.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">29</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">553</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>30 Nov 2002</b><br>
+         19:32:35<br>by: <a href="pop_profile.asp?mode=display&id=113">Ambar</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+Paddock
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=37"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=37">Hibernia</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Quatsch und Tratsch rund um Hibernia
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">40</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">200</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>18 Aug 2002</b><br>
+         17:31:13<br>by: <a href="pop_profile.asp?mode=display&id=361">Mortana</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=38"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=38">Midgard</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Quatsch und Tratsch rund um Midgard
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">8</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>19 Jul 2002</b><br>
+         12:33:15<br>by: <a href="pop_profile.asp?mode=display&id=15">Cory</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=36"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=36">Albion</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Quatsch und Tratsch rund um Albion
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">9</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">40</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>01 Oct 2002</b><br>
+         12:46:57<br>by: <a href="pop_profile.asp?mode=display&id=454">Morana</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=22"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=22">Tech-Talk</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Fragen rund um die Technischen Probleme mit Dark Age of Camelot
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">51</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">238</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>11 Nov 2002</b><br>
+         20:11:31<br>by: <a href="pop_profile.asp?mode=display&id=248">Myriele</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=14"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=14">Test-Forum</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Hier könnt ihr eure Signaturen etc ausprobieren
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">36</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">142</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>01 Dec 2002</b><br>
+         13:07:22<br>by: <a href="pop_profile.asp?mode=display&id=501">Coriana</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="sandybrown" colspan="6" valign=top><a href="/daoc/forum/default.asp?HideCat6=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category"></a>&nbsp;<a href="default.asp?CAT_ID=6"><font face="Verdana, Arial, Helvetica" size="2" color="floralwhite"><b>Namenlose Bruderschaft Stonehenge-Hibernia</b></font></a>&nbsp;&nbsp;</td>
+        <td bgcolor="sandybrown" align=center valign=top nowrap><b><font face="Verdana, Arial, Helvetica" size="2">
+        </font></b></td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=17"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=17">Gästezimmer</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Hier werden Gespräche geführt mit Gildenmitgliedern und Gästen, Bewerbern, öffentlich, für jederman zugänglich
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">191</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">997</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>27 Nov 2002</b><br>
+         16:08:10<br>by: <a href="pop_profile.asp?mode=display&id=7">Sturmauge</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+fenris, Ystlum, Navech, StormClaw, Muecke, Morwyn, Atlantur
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=19"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=19">Kaminzimmer</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Hier treffen sich die Gildenmitglieder unter sich und bereden ihr tägliches Allerlei.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">169</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">1228</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>01 Dec 2002</b><br>
+         16:07:34<br>by: <a href="pop_profile.asp?mode=display&id=210">floh</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+Ystlum, fenris, Muecke, Morwyn, Navech, StormClaw, Atlantur
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=18"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=18">Beratungszimmer</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Hier tagt der Rat und werden wichtige Entscheidungen diskutiert.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">61</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">587</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>30 Nov 2002</b><br>
+         18:43:49<br>by: <a href="pop_profile.asp?mode=display&id=113">Ambar</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+fenris, Muecke, Ystlum, Navech, Morwyn, StormClaw, Atlantur
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=23"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=23">Der Coven</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Hier fallen die Entscheidungen des Coven.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">131</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">760</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>26 Nov 2002</b><br>
+         19:46:06<br>by: <a href="pop_profile.asp?mode=display&id=7">Sturmauge</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="http://www.tdf-allianz.de" target="_blank"><img src="icon_url.gif" height=16 width=16 border=0 hspace=0></a>
+        </td>
+        <td colspan=4 bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="http://www.tdf-allianz.de" target="_blank">Allianzforum der TdF-Allianz</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Forum der Gildenallianz
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="http://www.nebelwelt.de/daoc/memberlist/" target="_blank"><img src="icon_url.gif" height=16 width=16 border=0 hspace=0></a>
+        </td>
+        <td colspan=4 bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="http://www.nebelwelt.de/daoc/memberlist/" target="_blank">Gildenhalle</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Bitte haltet Eure Charakterdaten auf dem Laufenden
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="sandybrown" colspan="6" valign=top><a href="/daoc/forum/default.asp?HideCat11=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category"></a>&nbsp;<a href="default.asp?CAT_ID=11"><font face="Verdana, Arial, Helvetica" size="2" color="floralwhite"><b>Namenlose Bruderschaft in Albion auf Lyonesse</b></font></a>&nbsp;&nbsp;</td>
+        <td bgcolor="sandybrown" align=center valign=top nowrap><b><font face="Verdana, Arial, Helvetica" size="2">
+        </font></b></td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=42"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=42">Gästezimmer</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Hier werden Gespräche geführt mit Gildenmitgliedern und Gästen, Bewerbern, öffentlich, für jederman zugänglich
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">71</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">232</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>01 Dec 2002</b><br>
+         03:39:21<br>by: <a href="pop_profile.asp?mode=display&id=463">Lena Draculstochter</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+Thuffir, raveen, Niobe, Jerodar, Ivan, Rugahgloh
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="http://namenlose.dyndns.org" target="_blank"><img src="icon_url.gif" height=16 width=16 border=0 hspace=0></a>
+        </td>
+        <td colspan=4 bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="http://namenlose.dyndns.org" target="_blank">Mitgliederliste</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="sandybrown" colspan="6" valign=top><a href="/daoc/forum/default.asp?HideCat14=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category"></a>&nbsp;<a href="default.asp?CAT_ID=14"><font face="Verdana, Arial, Helvetica" size="2" color="floralwhite"><b>Urlaubsgilde in Logres</b></font></a>&nbsp;&nbsp;</td>
+        <td bgcolor="sandybrown" align=center valign=top nowrap><b><font face="Verdana, Arial, Helvetica" size="2">
+        </font></b></td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=52"><IMG src='icon_folder_new.gif' height=15 width=15 border=0 hspace=0 alt='New Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=52">Kaminzimmer</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Das Forum für diejenigen, die in Logres Urlaub machen
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">4</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">18</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>25 Nov 2002</b><br>
+         14:59:46<br>by: <a href="pop_profile.asp?mode=display&id=113">Ambar</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+fenris, Muecke, Morwyn, Niobe, StormClaw, Thuffir, Ystlum, Navech, Atlantur
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="sandybrown" colspan="6" valign=top><a href="/daoc/forum/default.asp?HideCat3=Y"><img src="icon_minus.gif" width="10" height="10" border="0" alt="Collapse This Category"></a>&nbsp;<a href="default.asp?CAT_ID=3"><font face="Verdana, Arial, Helvetica" size="2" color="floralwhite"><b>Wissenshort</b></font></a>&nbsp;&nbsp;</td>
+        <td bgcolor="sandybrown" align=center valign=top nowrap><b><font face="Verdana, Arial, Helvetica" size="2">
+        </font></b></td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=26"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=26">Hibernia-Questen</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Interessante Questen für Gildenmitglieder. Wer gibts sie wo und in welchem Level.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">33</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">75</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>07 Nov 2002</b><br>
+         11:54:34<br>by: <a href="pop_profile.asp?mode=display&id=453">Silbur</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=27"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=27">Albion-Questen</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Interessante Questen für Gildenmitglieder. Wer gibts sie wo und in welchem Level.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">43</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">65</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>20 Sep 2002</b><br>
+         10:56:07<br>by: <a href="pop_profile.asp?mode=display&id=446">Richy</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" align=center valign=top>
+        <a href="forum.asp?FORUM_ID=34"><IMG src='icon_folder.gif' height=15 width=15 border=0 hspace=0 alt='Old Posts'></a>        </td>
+        <td bgcolor="papayawhip" valign="top">
+        <font face="Verdana, Arial, Helvetica" size="2"><a href="forum.asp?FORUM_ID=34">Midgard-Questen</a><br>
+        <font color="midnightblue" face="Verdana, Arial, Helvetica" size="1">
+Wer gibts sie wo und in welchem Level.
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">2</font></td>
+        <td bgcolor="papayawhip" align=center valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">3</font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap><font face="Verdana, Arial, Helvetica" color="midnightblue" size="1">
+        <b>13 Feb 2002</b><br>
+         11:41:07<br>by: <a href="pop_profile.asp?mode=display&id=183">stallion</a>
+
+        </font></td>
+        <td bgcolor="papayawhip" align=left valign=top><font face="Verdana, Arial, Helvetica" color="midnightblue" size="2">
+        &nbsp;
+        </font></td>
+        <td bgcolor="papayawhip" align=center valign=top nowrap>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="sandybrown" colspan="7"><font face="Verdana, Arial, Helvetica" size="2" color="floralwhite" size="+1"><b>Statistics</b></font></td>
+      </tr>
+      <tr>
+        <td rowspan="4" bgcolor="papayawhip">&nbsp;</td>
+        <td bgcolor="papayawhip" colspan="6">
+        <font face="Verdana, Arial, Helvetica" size="1">379 Members have  made 5869 posts in 16 forums, with the last post on <a href="topic.asp?TOPIC_ID=2649">01 Dec 2002 16:07:34</a> by: <a href="pop_profile.asp?mode=display&id=210">floh</a>.          </font>
+          </td>
+        </tr>
+        <tr>
+        <td bgcolor="papayawhip" colspan="6">
+        <font face="Verdana, Arial, Helvetica" size="1">There are  currently 990  topics.</font>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="papayawhip" colspan="6">
+        <font face="Verdana, Arial, Helvetica" size="1">Please welcome our newest member:
+        <a href="pop_profile.asp?mode=display&id=501">Coriana</a>.</font>
+          </td>
+        </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <table width="100%">
+      <tr>
+        <td>
+        <font face="Verdana, Arial, Helvetica" size="1">
+        <img alt="New Posts" src="icon_folder_new.gif" width="15" height="15"> Contains new posts since last visit.<br>
+        <img alt="Old Posts" src="icon_folder.gif" width="15" height="15"> No new posts since the last visit.<br>
+        </font>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<table width=100% border=0 bgcolor="wheat" cellpadding="0" cellspacing = "4"> 
+  <tr bgcolor="wheat">
+    <td bgcolor="wheat">
+    <table border=0 width="100%" align="center" cellpadding="4" cellspacing="0">
+      <tr>
+        <td bgcolor="papayawhip" align=left valign=top nowrap><font face="Verdana, Arial, Helvetica" size="1">
+        <p align=left>DaoC's Nebelwelt</p>
+        </font></td>
+        <td bgcolor="papayawhip" align=right valign=top nowrap><font face="Verdana, Arial, Helvetica" size="1">
+        <p align=right>© by Ystlum 2001</p>
+        </font></td>
+        <td bgcolor="papayawhip" width=10 nowrap><a href="#top"><img src="icon_go_up.gif" height=15 width=15 border="0" align="right" alt="Go To Top Of Page"></a></font></td>    
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<table border=0 width="100%" align="center" cellpadding="4" cellspacing="0">
+  <tr>
+    <td align="right"><font face="Verdana, Arial, Helvetica" size="1">
+    <a href="http://forum.snitz.com"><acronym title="Powered By: ">Snitz Forums 2000</acronym></a>
+
+    </font></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+
+</font>
+</body>
+<!-- timer
+<center>
+<font face="Verdana, Arial, Helvetica" size="1">61880.54</font>
+</center>
+end timer -->
+</html>
+
+
+

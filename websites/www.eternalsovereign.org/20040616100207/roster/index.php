@@ -1,0 +1,1961 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="index.php?sid=8eb244848aa5511a0a52d8d583b26847" title="" />
+<link rel="search" href="search.php?sid=8eb244848aa5511a0a52d8d583b26847" title="" />
+<link rel="help" href="faq.php?sid=8eb244848aa5511a0a52d8d583b26847" title="" />
+<link rel="author" href="memberlist.php?sid=8eb244848aa5511a0a52d8d583b26847" title="" />
+
+<title>Eternal Sovereign :: Roster</title>
+<link rel="stylesheet" href="../templates/Danae/Danae.css" type="text/css">
+<style type="text/css">
+<!--
+th, td.th, td.spacerow	{ background-image: url(../templates/Danae/images/bg_cat.gif); }
+td.th2	{ background-image: url(../templates/Danae/images/bg_cat2.gif); }
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom, td.row4	{ background-image: url(../templates/Danae/images/bg_cat4.gif); }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("../templates/Danae/formIE.css");
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+
+var es_member = new Array('Andara','Mingo','Sazxus','Morendo','Laiderone','Thoraxas','Barad','Tullili','Mystieaxe','Runnydrizzler','Crimsonwolf','Alec','Fehklar','Sonami','Kanvil','Grrumble','Memzin','Kazh','Songholisi','Sendyen','Jadine','Shaolu','Chesshire','Lourob','Rakkar','Fazin','Lezard','Noircogi','Noirfu','Emptysoul','Reiely','Maktabi','Makromancer','Makslil','Vatar','Rohgziel','Gorio','Wynde','Karilmat','Googaba','Suleka','Zeremi','Gbeek','Kenundra','Arocus','Jkana','Taetynwych','Tudana','Belquillon','Danenel','Dmonger','Patrisha','Hanamorf','Thalsadoom','Quaymar','Aallaan','Leafblight','Lenine','Filter','Tinolyen','Tommo','Shcammy','Yyubbu','Theoso','Bakko','Adriak','Klarissa','Kilique','Nozel','Idar','Ayngwysh','Bransback','Johrune','Saneril','Ozzeren','Grimgrak','Grakdrak','Sensorian','Floofy','Redde','Shari','Straman','Aenil','Korana','Tillwin','Serani','Gherek','Znamu','Audreya','Kharu','Rikii','Yroc','Mingokk','Chona','Jarlox','Snortt','Vinay','Bolaliel','Brindain','Yujk','Aynya','Newbrow','Excidium','Branaddar','Velania','Razormaw','Maschelie','Linkagge','Eviltowel','Quiggle','Rebellion','Ylyrra','Sweepor','Squeaky','Ginon','Drideon','Duuece','Qualith','Bargar','Jeaorb','Snowfangs','Kineras','Punchau','Orephan','Aaliyyah','Ebilredde','Kunoichi','Donor','Murrmur','Kaena','Mandelyn','Phalyn','Wyndesaur','Brayne','Jeska','Thommy','Krypticon','Siang','Alatar','Avenea','Toloose','Janque','Druis','Bearzerker','Hurlee','Adalyyn','Grego','Kaput','Gurty','Lorai','Rascalan','Aulinya','Slath','Sakharra','Yumbus','Psychhe','Eldorian','Blakwidow','Kelos','Ignotus','Brenvarion','Gorag','Kethra','Sikvik','Cinu','Redpearl','Olwin','Traine','Fheyria');
+var es_magelo = new Array('13790','196193','122386','206035','762574','88522','497050','376231','777787','831223','595690','920092','762003','43495','6057','66430','829470','75351','715351','406286','471333','625783','669463','647485','724347','47408','831301','758788','759236','93749','143999','47238','411761','593195','229275','553991','389310','256113','465484','16259','528354','210338','599689','434863','46081','250322','574231','44367','566875','42796','763590','47625','758831','483740','370519','76517','19265','763715','624161','723963','342332','577697','400196','378112','800109','396494','718034','692429','891428','658317','628072','939819','787796','916329','451482','707928','44561','107501','495282','706647','718986','578270','785686','234023','311214','536038','832402','819616','829176','900925','736365','286390','876692','231508','709156','756720','201873','143391','710951','717347','769082','282539','722667','286983','838321','464976','527019','574007','586530','802563','796758','903216','822303','877142','29962','476783','235707','584958','660584','581531','585228','904119','980119','838440','818174','956810','913861','883707','883515','376592','609644','987688','882185','863384','948854','935642','920005','936250','895418','959251','892892','594884','159574','947279','813705','721337','82275','936319','1024302','488916','384264','650478','668642','11990','557812','1038124','634427','636706','417668','142742','658704','370133','996043','651736','1005207','990811','668247','1024321','1024313');
+
+ var lang = "lang_english/";
+
+ function changeImages()
+ {
+  if (document.images)
+  {
+   for (var i=0; i<changeImages.arguments.length; i+=2)
+   {
+    document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+   }
+  }
+ }
+
+ var PreloadFlag = false;
+
+ function newImage(arg)
+ {
+  if (document.images)
+  {
+   rslt = new Image();
+   rslt.src = arg;
+   return rslt;
+  }
+ }
+
+function ShowItem(name)
+{
+	settings="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=451,height=232";
+	MyWindow=window.open("http://eternalsovereign.org/items/showitem.php?id="+name, "ItemWindow", settings);
+	MyWindow.focus();
+}
+
+function ShowProfile(name)
+{
+	settings="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=800,height=600";
+	MyWindow=window.open("http://www.magelo.com/eq_view_profile.html?num="+name, "ProfileWindow", settings);
+	MyWindow.focus();
+}
+
+function ShowChat()
+{
+	settings="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=780,height=400";
+	MyWindow=window.open("../chat/popup.php", "ChatWindow", settings);
+	MyWindow.focus();
+}
+
+function ShowIntro()
+{
+	settings="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400";
+	MyWindow=window.open("../intro/popup.php", "IntroWindow", settings);
+	MyWindow.focus();
+}
+
+function WriteItem(url,link,name)
+{
+	document.write('<a href="javascript:ShowItem(');
+	document.write("'" + url + "'");
+	if (name!='') {
+		document.write(');">' + name + '</a>');
+	} else {
+		document.write(');">' + link + '</a>');
+	}
+}
+
+function WriteMagelo(url,link,name)
+{
+	var i=0; var newlink=0; var newname='-';
+	// [magelo]x[/magelo]
+	// [magelo=x]y[/magelo]
+	if (link.toUpperCase()!=link.toLowerCase()) {
+		while (i<es_member.length && newlink==0) {
+			if (es_member[i].toLowerCase()==link.toLowerCase()) {
+				newlink=es_magelo[i];
+				if (name=='') newname=es_member[i]; else newname=name;
+			}
+			i++;
+		}
+	} else {
+		newlink=link;
+		if (name=='') {
+			newname=link;
+			while (i<es_member.length && newname==link) {
+				if (es_magelo[i]==link) newname=es_member[i];
+				i++;
+			}
+		} else newname=name;
+	}
+	if (newname=='-') {
+		if (name=='') document.write(link); else document.write(name);
+	} else {
+		document.write('<a href="javascript:ShowProfile(');
+		document.write("'" + newlink + "'");
+		document.write(');">' + newname + '</a>');
+	}
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#606060" text="#ffffff" link="#975922" vlink="#A26024" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" background="../templates/Danae/images/bg_main.jpg">
+
+<a name="top"></a>
+
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
+<tr>
+	<td width="100%">
+  	<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+	 codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+	 WIDTH="100%" HEIGHT="100" id="title" ALIGN="">
+    <PARAM NAME=movie VALUE="../templates/Danae/images/title.swf"> <PARAM NAME=quality VALUE=high>
+    <EMBED src="../templates/Danae/images/title.swf" quality=high  WIDTH="100%" HEIGHT="100" NAME="title" ALIGN=""
+	 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
+	</OBJECT>
+	</td>
+</tr>
+<tr>
+	<td style="background-image:url(../templates/Danae/images/hdr_bar.jpg)" width="100%" height="45" align="center" valign="bottom">
+
+		<table border="0" cellspacing="0" cellpadding="0" height="45"><tr>
+			<td valign="center"><span class="mainmenu"><a href="javascript:ShowIntro();" class="mainmenu">Intro</a></span>&nbsp;</td>
+			<td valign="center"><span class="mainmenu">&nbsp;<a href="../news/" class="mainmenu">News</a></span>&nbsp;</td>
+			<td valign="center"><span class="mainmenu">&nbsp;<a href="../roster/" class="mainmenu">Roster</a></span>&nbsp;</td>
+			<td valign="center"><span class="mainmenu">&nbsp;<a href="../forums/index.php?sid=8eb244848aa5511a0a52d8d583b26847" class="mainmenu">Forums</a></span>&nbsp;</td>
+			<td valign="center"><span class="mainmenu">&nbsp;<a href="javascript:ShowChat();" class="mainmenu">Chat</a></span>&nbsp;</td>
+			<td valign="center"><span class="mainmenu">&nbsp;<a href="../links/" class="mainmenu">Links</a></span>&nbsp;</td>
+			<script>
+				if ("no"=="no") {
+					if ("no"=="yes") {
+						document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/memberlist.php?sid=8eb244848aa5511a0a52d8d583b26847">Memberlist</a></span>&nbsp;</td>');
+						document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/search.php?sid=8eb244848aa5511a0a52d8d583b26847">Search</a></span>&nbsp;</td>');
+					}
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/login.php?sid=8eb244848aa5511a0a52d8d583b26847">Login</a></span>&nbsp;</td>');
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/profile.php?mode=register&amp;sid=8eb244848aa5511a0a52d8d583b26847">Register</a></span>&nbsp;</td>');
+				}
+				if ("guest"=="member" || "guest"=="recruit" || "guest"=="officer") {
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../hitlist/">Hitlist</a></span>&nbsp;</td>');
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../items/index.php">Items</a></span>&nbsp;</td>');
+				}
+				if ("no"=="yes") {
+					if ("no"=="yes") {
+						document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/memberlist.php?sid=8eb244848aa5511a0a52d8d583b26847">Memberlist</a></span>&nbsp;</td>');
+						document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/search.php?sid=8eb244848aa5511a0a52d8d583b26847">Search</a></span>&nbsp;</td>');
+						document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/groupcp.php?sid=8eb244848aa5511a0a52d8d583b26847">Groups</a></span>&nbsp;</td>');
+					}
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/profile.php?mode=editprofile&amp;sid=8eb244848aa5511a0a52d8d583b26847">Profile</a></span>&nbsp;</td>');
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/privmsg.php?folder=inbox&amp;sid=8eb244848aa5511a0a52d8d583b26847" alt="Log in to check your private messages">Messages</a></span>&nbsp;</td>');
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/login.php?sid=8eb244848aa5511a0a52d8d583b26847">Logout</a></span>&nbsp;</td>');
+				}
+				if (""!="") {
+					document.write('<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="">Admin</a></span>&nbsp;</td>');
+				}
+			</script>
+			<td valign="center"><span class="mainmenu">&nbsp;<a class="mainmenu" href="../forums/faq.php?sid=8eb244848aa5511a0a52d8d583b26847">Help</a></span></td>
+		</tr></table>
+	</td>
+</tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="10" width="100%">
+<tr>
+	<td align="center" valign="top">
+
+<div align="center"><table width="780" border="0" cellspacing="0" cellpadding="0"><tr><td width="0">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td width="23" align="right" valign="bottom"><img src="../templates/Danae/images/top_left.gif" width="23" height="36" border="0" alt="" /></td>
+	<td width="100%" align="left" valign="middle" background="../templates/Danae/images/top_center.gif"><table border="0" cellspacing="0" cellpadding="0"><tr><td><img src="../templates/Danae/images/spacer.gif" width="1" height="11" border="0" /></td></tr><tr><td align="left" valign="center"><span class="cattitle">
+	Guild Roster</span></td></tr></table></td>
+	<td width="60" align="left" valign="bottom"><img src="../templates/Danae/images/top_right.gif" width="60" height="36" border="0" alt="" /></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="genmed"><span class="th">
+		Main - <a href="index.php?order=flags" class="th">Flags</a> - <a href="index.php?order=trades" class="th">Tradeskills</a> - <a href="index.php?order=exp" class="th">Experience</a> - <a href="index.php?order=alt" class="th">Alts</a> - <a href="index.php?order=alpha" class="th">Alphabet</a></span></span></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td class="row1" align="left" valign="top"><span class="postbody">
+	113 Members - <font color="#ffffff">113 = Level 65</font> - <font color="#ffffc0">0 = Level 60-64</font> - <font color="#ffc0c0">0 = Level 55-59</font><br />
+	108 Sol Ro - 106 Planes - 102 Doomfire - 106 Ragrax - 92 Time<br />
+	<span class="copyright">(O)</span> = Officer - <span class="copyright">(L)</span> = Guild Leader - <span class="copyright">(P)</span> = Probationary Member<br />
+	</span></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td width="10" align="right" valign="top"><img src="../templates/Danae/images/bottom_left.gif" width="10" height="10" border="0" alt="" /></td>
+	<td width="100%" background="../templates/Danae/images/bottom_center.gif"><img src="../templates/Danae/images/spacer.gif" width="1" height="1" border="0" alt="" /></td>
+	<td width="10" align="left" valign="top"><img src="../templates/Danae/images/bottom_right.gif" width="10" height="10" border="0" alt="" /></td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td width="23" align="right" valign="bottom"><img src="../templates/Danae/images/top_left.gif" width="23" height="36" border="0" alt="" /></td>
+	<td width="100%" align="left" valign="middle" background="../templates/Danae/images/top_center.gif"><table border="0" cellspacing="0" cellpadding="0"><tr><td><img src="../templates/Danae/images/spacer.gif" width="1" height="11" border="0" /></td></tr><tr><td align="left" valign="center"><span class="cattitle">
+	Main Characters</span></td></tr></table></td>
+	<td width="60" align="left" valign="bottom"><img src="../templates/Danae/images/top_right.gif" width="60" height="36" border="0" alt="" /></td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Bards (8)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('650478')" alt="Aulinya\'s magelo profile">Aulinya</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">5</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('658704')" alt="Brenvarion\'s magelo profile">Brenvarion</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">91</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('787796')" alt="Johrune\'s magelo profile">Johrune</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">172</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('417668')" alt="Kelos\'s magelo profile">Kelos</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">185</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('916329')" alt="Saneril\'s magelo profile">Saneril</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">89</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('936250')" alt="Siang\'s magelo profile">Siang</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">81</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('528354')" alt="Suleka\'s magelo profile">Suleka</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">100</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('935642')" alt="Thommy\'s magelo profile">Thommy</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">210</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Beastlords (5)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('594884')" alt="Janque\'s magelo profile">Janque</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">193</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('581531')" alt="Jeaorb\'s magelo profile">Jeaorb</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">143</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('196193')" alt="Mingo\'s magelo profile">Mingo</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">281</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('987688')" alt="Phalyn\'s magelo profile">Phalyn</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">140</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('585228')" alt="Snowfangs\'s magelo profile">Snowfangs</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">153</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Berserkers (1)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('1024302')" alt="Gurty\'s magelo profile">Gurty</a>
+</span> <span class="copyright">(P)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">54</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Clerics (17)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('76517')" alt="Aallaan\'s magelo profile">Aallaan</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">104</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('721337')" alt="Adalyyn\'s magelo profile">Adalyyn</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">85</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('829176')" alt="Audreya\'s magelo profile">Audreya</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">400</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('1005207')" alt="Cinu\'s magelo profile">Cinu</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">54</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('883707')" alt="Donor\'s magelo profile">Donor</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">60</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('634427')" alt="Eldorian\'s magelo profile">Eldorian</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">38</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('1024313')" alt="Fheyria\'s magelo profile">Fheyria</a>
+</span> <span class="copyright">(P)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">104</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('488916')" alt="Lorai\'s magelo profile">Lorai</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">158</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('593195')" alt="Makslil\'s magelo profile">Makslil</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">251</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('206035')" alt="Morendo\'s magelo profile">Morendo</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">163</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('838440')" alt="Orephan\'s magelo profile">Orephan</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">43</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('1038124')" alt="Psychhe\'s magelo profile">Psychhe</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">101</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('706647')" alt="Redde\'s magelo profile">Redde</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">145</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('736365')" alt="Rikii\'s magelo profile">Rikii</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">234</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('378112')" alt="Theoso\'s magelo profile">Theoso</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">210</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('892892')" alt="Toloose\'s magelo profile">Toloose</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">74</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('903216')" alt="Ylyrra\'s magelo profile">Ylyrra</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">71</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Druids (10)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('920092')" alt="Alec\'s magelo profile">Alec</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">490</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('497050')" alt="Barad\'s magelo profile">Barad</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">70</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('586530')" alt="Eviltowel\'s magelo profile">Eviltowel</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">134</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('82275')" alt="Grego\'s magelo profile">Grego</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">98</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('996043')" alt="Kethra\'s magelo profile">Kethra</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('718034')" alt="Klarissa\'s magelo profile">Klarissa</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">163</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('777787')" alt="Mystieaxe\'s magelo profile">Mystieaxe</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">241</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('831223')" alt="Runnydrizzler\'s magelo profile">Runnydrizzler</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">400</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('536038')" alt="Serani\'s magelo profile">Serani</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">100</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('376231')" alt="Tullili\'s magelo profile">Tullili</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">350</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Enchanters (9)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('863384')" alt="Brayne\'s magelo profile">Brayne</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">87</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('762003')" alt="Fehklar\'s magelo profile">Fehklar</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">135</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Gamdil</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('66430')" alt="Grrumble\'s magelo profile">Grrumble</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">130</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Harnel</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">145</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('6057')" alt="Kanvil\'s magelo profile">Kanvil</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">156</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('527019')" alt="Maschelie\'s magelo profile">Maschelie</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">130</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Possessed</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">179</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('43495')" alt="Sonami\'s magelo profile">Sonami</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">706</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Magicians (6)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Cazteal</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">202</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('658317')" alt="Idar\'s magelo profile">Idar</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">287</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('471333')" alt="Jadine\'s magelo profile">Jadine</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">75</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('406286')" alt="Sendyen\'s magelo profile">Sendyen</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">257</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('625783')" alt="Shaolu\'s magelo profile">Shaolu</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">81</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('557812')" alt="Yumbus\'s magelo profile">Yumbus</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">111</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Monks (3)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('599689')" alt="Gbeek\'s magelo profile">Gbeek</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">81</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('891428')" alt="Nozel\'s magelo profile">Nozel</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">293</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('980119')" alt="Punchau\'s magelo profile">Punchau</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">148</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Necromancers (6)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('710951')" alt="Brindain\'s magelo profile">Brindain</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">211</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('763590')" alt="Dmonger\'s magelo profile">Dmonger</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">113</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('93749')" alt="Emptysoul\'s magelo profile">Emptysoul</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">340</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('758788')" alt="Noircogi\'s magelo profile">Noircogi</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">535</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('122386')" alt="Sazxus\'s magelo profile">Sazxus</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">773</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('668642')" alt="Slath\'s magelo profile">Slath</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">168</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Paladins (5)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('936319')" alt="Kaput\'s magelo profile">Kaput</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">180</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('370519')" alt="Quaymar\'s magelo profile">Quaymar</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">410</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('990811')" alt="Redpearl\'s magelo profile">Redpearl</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">118</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('143999')" alt="Reiely\'s magelo profile">Reiely</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">247</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('651736')" alt="Sikvik\'s magelo profile">Sikvik</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">60</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Rangers (7)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('785686')" alt="Aenil\'s magelo profile">Aenil</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">92</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('476783')" alt="Drideon\'s magelo profile">Drideon</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">178</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('19265')" alt="Leafblight\'s magelo profile">Leafblight</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">221</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('553991')" alt="Rohgziel\'s magelo profile">Rohgziel</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">424</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('822303')" alt="Sweepor\'s magelo profile">Sweepor</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">81</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('723963')" alt="Tinolyen\'s magelo profile">Tinolyen</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">111</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('342332')" alt="Tommo\'s magelo profile">Tommo</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">342</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Rogues (6)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('636706')" alt="Blakwidow\'s magelo profile">Blakwidow</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">215</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('722667')" alt="Excidium\'s magelo profile">Excidium</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">115</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('813705')" alt="Hurlee\'s magelo profile">Hurlee</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">83</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('11990')" alt="Sakharra\'s magelo profile">Sakharra</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">150</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('311214')" alt="Tillwin\'s magelo profile">Tillwin</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">224</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Venemous</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">346</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Shadowknights (7)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('628072')" alt="Ayngwysh\'s magelo profile">Ayngwysh</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">376</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Damador</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">213</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('16259')" alt="Googaba\'s magelo profile">Googaba</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">54</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('370133')" alt="Gorag\'s magelo profile">Gorag</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">268</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('44561')" alt="Grakdrak\'s magelo profile">Grakdrak</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">213</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('75351')" alt="Kazh\'s magelo profile">Kazh</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">76</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('210338')" alt="Zeremi\'s magelo profile">Zeremi</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">158</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Shamans (5)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('758831')" alt="Hanamorf\'s magelo profile">Hanamorf</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">21</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('434863')" alt="Kenundra\'s magelo profile">Kenundra</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">160</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('234023')" alt="Korana\'s magelo profile">Korana</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">210</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('802563')" alt="Quiggle\'s magelo profile">Quiggle</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">370</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('384264')" alt="Rascalan\'s magelo profile">Rascalan</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">150</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Warriors (6)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('46081')" alt="Arocus\'s magelo profile">Arocus</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">190</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('660584')" alt="Bargar\'s magelo profile">Bargar</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">172</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('143391')" alt="Bolaliel\'s magelo profile">Bolaliel</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">223</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('107501')" alt="Sensorian\'s magelo profile">Sensorian</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">490</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('44367')" alt="Tudana\'s magelo profile">Tudana</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">299</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('286390')" alt="Yroc\'s magelo profile">Yroc</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">219</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Wizards (12)</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="30%" class="row2" align="left" valign="top"><span class="postbody"><b>Name</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Level</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>AA</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Sol Ro</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Planes</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Doomfire</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Ragrax</b></span></td>
+	<td width="10%" class="row2" align="center" valign="top"><span class="postbody"><b>Time</b></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('566875')" alt="Belquillon\'s magelo profile">Belquillon</a>
+</span> <span class="copyright">(L)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">262</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('42796')" alt="Danenel\'s magelo profile">Danenel</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">89</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody">Eldon</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">460</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('47408')" alt="Fazin\'s magelo profile">Fazin</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">223</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('29962')" alt="Ginon\'s magelo profile">Ginon</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">95</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('142742')" alt="Ignotus\'s magelo profile">Ignotus</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">342</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('574007')" alt="Linkagge\'s magelo profile">Linkagge</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">102</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('883515')" alt="Murrmur\'s magelo profile">Murrmur</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">240</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('282539')" alt="Newbrow\'s magelo profile">Newbrow</a>
+</span> <span class="copyright">(O)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">94</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('668247')" alt="Olwin\'s magelo profile">Olwin</a>
+</span> <span class="copyright">(P)</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">23</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/spacer.gif" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('47625')" alt="Patrisha\'s magelo profile">Patrisha</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">280</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+<tr>
+	<td width="30%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('483740')" alt="Thalsadoom\'s magelo profile">Thalsadoom</a>
+</span> <span class="copyright">&nbsp;</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><font color="#ffffff">65</font></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody">616</span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+	<td width="10%" class="row1" align="center" valign="top"><span class="postbody"><img src="../templates/Danae/images/es_roster/key_st.png" width="20" height="20"/></span></td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%" class="forumline">
+<tr>
+	<td class="th" align="center" valign="middle"><table border="0" cellspacing="0" cellpadding="2" width="100%">
+	<tr height="26">
+		<td align="left" valign="middle" nowrap="nowrap"><span class="th"><span class="genmed">
+		Inactive</span></span></td>
+		<td align="right" valign="middle" nowrap="nowrap"></td>
+	</tr></table></td>
+</tr>
+</table>
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<tr>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('818174')" alt="Aaliyyah\'s magelo profile">Aaliyyah</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('396494')" alt="Adriak\'s magelo profile">Adriak</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('895418')" alt="Alatar\'s magelo profile">Alatar</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('13790')" alt="Andara\'s magelo profile">Andara</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('959251')" alt="Avenea\'s magelo profile">Avenea</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('800109')" alt="Bakko\'s magelo profile">Bakko</a>
+</span></td>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody">Bidin</span></td>
+</tr>
+<tr>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('939819')" alt="Bransback\'s magelo profile">Bransback</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('595690')" alt="Crimsonwolf\'s magelo profile">Crimsonwolf</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('235707')" alt="Duuece\'s magelo profile">Duuece</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody">Faythe</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('832402')" alt="Gherek\'s magelo profile">Gherek</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('389310')" alt="Gorio\'s magelo profile">Gorio</a>
+</span></td>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('465484')" alt="Karilmat\'s magelo profile">Karilmat</a>
+</span></td>
+</tr>
+<tr>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('900925')" alt="Kharu\'s magelo profile">Kharu</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('692429')" alt="Kilique\'s magelo profile">Kilique</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('904119')" alt="Kineras\'s magelo profile">Kineras</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('913861')" alt="Kunoichi\'s magelo profile">Kunoichi</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('762574')" alt="Laiderone\'s magelo profile">Laiderone</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('763715')" alt="Lenine\'s magelo profile">Lenine</a>
+</span></td>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('831301')" alt="Lezard\'s magelo profile">Lezard</a>
+</span></td>
+</tr>
+<tr>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody">Lingering</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('647485')" alt="Lourob\'s magelo profile">Lourob</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('724347')" alt="Rakkar\'s magelo profile">Rakkar</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('796758')" alt="Rebellion\'s magelo profile">Rebellion</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('577697')" alt="Shcammy\'s magelo profile">Shcammy</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('715351')" alt="Songholisi\'s magelo profile">Songholisi</a>
+</span></td>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('578270')" alt="Straman\'s magelo profile">Straman</a>
+</span></td>
+</tr>
+<tr>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('574231')" alt="Taetynwych\'s magelo profile">Taetynwych</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('88522')" alt="Thoraxas\'s magelo profile">Thoraxas</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('229275')" alt="Vatar\'s magelo profile">Vatar</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('838321')" alt="Velania\'s magelo profile">Velania</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('201873')" alt="Vinay\'s magelo profile">Vinay</a>
+</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('717347')" alt="Yujk\'s magelo profile">Yujk</a>
+</span></td>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody"><a href="javascript:ShowProfile('400196')" alt="Yyubbu\'s magelo profile">Yyubbu</a>
+</span></td>
+</tr>
+<tr>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody">Zona</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="14%" class="row1" align="left" valign="top"><span class="postbody">&nbsp;</span></td>
+	<td width="15%" class="row1" align="left" valign="top"><span class="postbody">&nbsp;</span></td>
+</tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td width="10" align="right" valign="top"><img src="../templates/Danae/images/bottom_left.gif" width="10" height="10" border="0" alt="" /></td>
+	<td width="100%" background="../templates/Danae/images/bottom_center.gif"><img src="../templates/Danae/images/spacer.gif" width="1" height="1" border="0" alt="" /></td>
+	<td width="10" align="left" valign="top"><img src="../templates/Danae/images/bottom_right.gif" width="10" height="10" border="0" alt="" /></td>
+</tr>
+</table>
+
+</td></tr></table></div>
+<!-- Page generated in: 752.36296653748 ms. -->
+<div align="center"><span class="copyright"><br />
+Eternal Sovereign &copy; 2003. All trademarks and copyrights are owned by their respective owners. <br>Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001-2003. Additional code and graphics by <a href="mailto:webmasters@eternalsovereign.org" class="copyright">Eternal Sovereign</a>.</span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

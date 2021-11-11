@@ -1,0 +1,555 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 9">
+<link id=Main-File rel=Main-File href="../vision.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = document.all.item("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#FFFFFF",gOtlNormalClr="#000000",gOtlActiveClr="#FFFF00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+	if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+}
+function LoadOtl()
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	OtlObj.style.display="block"
+	OtlObj.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	for(ii=0; ii<document.all.tags("DIV").length; ii++) {
+		obj=document.all.tags("DIV").item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 ) {   
+			gChildEntryTable[count++]=obj
+			obj.children.tags("TABLE").item(0).style.borderColor=gOtlNormalClr
+		}
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=document.all.item("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=document.all.item("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+
+	obj=document.all.item("PPTB"+idx)
+	if( obj )
+		obj.style.borderLeftColor=obj.style.borderBottomColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( obj ){ ChgClr(obj,gOtlActiveClr) }
+function Out( obj ){ ChgClr(obj,gOtlHiliteClr) }
+function ObjExists( ii ) { obj=document.all("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+//-->
+</script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:5px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	padding-left:10px;}
+.CBorder
+	{position:relative;
+	width:100%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	padding-bottom:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()">
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:absolute;width:70px;visibility:hidden' align=left
+ cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span style="mso-spacerun:
+ yes">  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=right cellpadding=0 cellspacing=0>
+ <td>
+ <div id="nb_sldshwBorder" style='position:absolute;left:-20px;width:20px;
+ height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_sldshw" title="Full Screen Slide Show"
+ style='position:relative;left:-254px' width="344" height="18"></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px' width="344" height="18"></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px' width="344" height="18"></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px' width="344" height="18"></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'>Outline</div>
+ <div title="Show/Hide Outline" id="nb_otl" style='position:absolute;
+ top:0%;left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px' width="344" height="18"></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden'>
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr>
+  <td>
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" onmouseover="Over(this)"
+  id=PPTL1 onmouseout="Out(this)">The Clan X Direction</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0281.htm');" onmouseover="Over(this)"
+  id=PPTL2 onmouseout="Out(this)">An Analysis of EQ Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0310.htm');" onmouseover="Over(this)"
+  id=PPTL3 onmouseout="Out(this)">The 6 Pillars</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0292.htm');" onmouseover="Over(this)"
+  id=PPTL4 onmouseout="Out(this)">Quick-Death Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0291.htm');" onmouseover="Over(this)"
+  id=PPTL5 onmouseout="Out(this)">Family Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0293.htm');" onmouseover="Over(this)"
+  id=PPTL6 onmouseout="Out(this)">Raiding Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0294.htm');" onmouseover="Over(this)"
+  id=PPTL7 onmouseout="Out(this)">Ideal Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0311.htm');" onmouseover="Over(this)"
+  id=PPTL8 onmouseout="Out(this)">An Analysis of EQ Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0290.htm');" onmouseover="Over(this)"
+  id=PPTL9 onmouseout="Out(this)">Guilds on The Rathe</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0313.htm');" onmouseover="Over(this)"
+  id=PPTL10 onmouseout="Out(this)">Is the Vision Possible?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0305.htm');" onmouseover="Over(this)"
+  id=PPTL11 onmouseout="Out(this)">What Mobs Can We Defeat?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0318.htm');" onmouseover="Over(this)"
+  id=PPTL12 onmouseout="Out(this)">What exactly is “family” in EQ?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0315.htm');" onmouseover="Over(this)"
+  id=PPTL13 onmouseout="Out(this)">Score your Social Interaction</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0319.htm');" onmouseover="Over(this)"
+  id=PPTL14 onmouseout="Out(this)">The Social Interaction Scale</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0300.htm');" onmouseover="Over(this)"
+  id=PPTL15 onmouseout="Out(this)">This is Dangerous!<span style="mso-spacerun:
+  yes">  </span>The internal Tug-Of-War</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0296.htm');" onmouseover="Over(this)"
+  id=PPTL16 onmouseout="Out(this)">What is The Verant Barrier?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0316.htm');" onmouseover="Over(this)"
+  id=PPTL17 onmouseout="Out(this)">Your Choices – do the work</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0317.htm');" onmouseover="Over(this)"
+  id=PPTL18 onmouseout="Out(this)">Thank you for reviewing The Clan X Direction</a></font></div>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='display:none'><a href=master15.htm></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master16.htm></a><a href=master16.xml></a><a
+href=master02.htm></a><a href=pres.xml></a><a href=slide0001.htm></a><a
+href="slide0001_background.gif"></a><a href="master16_image001.gif"></a><a
+href="master16_image002.gif"></a><a href="slide0001_image003.gif"></a><a
+href=slide0281.htm></a><a href="master15_background.gif"></a><a
+href="master15_image004.gif"></a><a href="master15_image005.gif"></a><a
+href="slide0281_image006.gif"></a><a href="slide0281_image007.gif"></a><a
+href="slide0281_image008.gif"></a><a href="slide0281_image009.gif"></a><a
+href=slide0310.htm></a><a href="slide0310_image010.gif"></a><a
+href=slide0292.htm></a><a href="slide0292_image017.gif"></a><a
+href="slide0292_image018.gif"></a><a href=slide0291.htm></a><a
+href="slide0291_image019.gif"></a><a href=slide0293.htm></a><a
+href="slide0293_image026.gif"></a><a href=slide0294.htm></a><a
+href="slide0294_image033.gif"></a><a href=slide0311.htm></a><a
+href=slide0311.xml></a><a href="slide0311_image040.gif"></a><a
+href="slide0311_image041.gif"></a><a href="slide0311_image042.gif"></a><a
+href="slide0311_image043.gif"></a><a href=slide0290.htm></a><a
+href=slide0290.xml></a><a href="slide0290_image062.gif"></a><a
+href="slide0290_image063.gif"></a><a href="slide0290_image064.gif"></a><a
+href="slide0290_image065.gif"></a><a href="slide0290_image066.gif"></a><a
+href="slide0290_image067.gif"></a><a href="slide0290_image068.gif"></a><a
+href="slide0290_image069.gif"></a><a href="slide0290_image070.gif"></a><a
+href="slide0290_image071.gif"></a><a href="slide0290_image072.gif"></a><a
+href="slide0290_image073.gif"></a><a href="slide0290_image074.gif"></a><a
+href="slide0290_image075.gif"></a><a href="slide0290_image076.gif"></a><a
+href="slide0290_image077.gif"></a><a href="slide0290_image078.gif"></a><a
+href="slide0290_image079.gif"></a><a href="slide0290_image080.gif"></a><a
+href="slide0290_image081.gif"></a><a href="slide0290_image082.gif"></a><a
+href="slide0290_image083.gif"></a><a href="slide0290_image084.gif"></a><a
+href="slide0290_image085.gif"></a><a href="slide0290_image086.gif"></a><a
+href="slide0290_image087.gif"></a><a href="slide0290_image088.gif"></a><a
+href="slide0290_image089.gif"></a><a href="slide0290_image090.gif"></a><a
+href="slide0290_image091.gif"></a><a href="slide0290_image092.gif"></a><a
+href="slide0290_image093.gif"></a><a href="slide0290_image094.gif"></a><a
+href="slide0290_image095.gif"></a><a href="slide0290_image096.gif"></a><a
+href="slide0290_image097.gif"></a><a href="slide0290_image098.gif"></a><a
+href="slide0290_image099.gif"></a><a href="slide0290_image100.gif"></a><a
+href="slide0290_image101.gif"></a><a href="slide0290_image102.gif"></a><a
+href="slide0290_image103.gif"></a><a href="slide0290_image104.gif"></a><a
+href="slide0290_image105.gif"></a><a href="slide0290_image106.gif"></a><a
+href=slide0313.htm></a><a href=slide0313.xml></a><a
+href="slide0313_image107.gif"></a><a href="slide0313_image108.gif"></a><a
+href="slide0313_image109.gif"></a><a href="slide0313_image110.gif"></a><a
+href="slide0313_image111.gif"></a><a href="slide0313_image112.gif"></a><a
+href="slide0313_image113.gif"></a><a href="slide0313_image114.gif"></a><a
+href="slide0313_image115.gif"></a><a href="slide0313_image116.gif"></a><a
+href="slide0313_image117.gif"></a><a href="slide0313_image118.gif"></a><a
+href="slide0313_image119.gif"></a><a href="slide0313_image120.gif"></a><a
+href="slide0313_image121.gif"></a><a href="slide0313_image122.gif"></a><a
+href="slide0313_image123.gif"></a><a href="slide0313_image124.gif"></a><a
+href="slide0313_image125.gif"></a><a href="slide0313_image126.gif"></a><a
+href="slide0313_image127.gif"></a><a href="slide0313_image128.gif"></a><a
+href="slide0313_image129.gif"></a><a href="slide0313_image130.gif"></a><a
+href="slide0313_image131.gif"></a><a href="slide0313_image132.gif"></a><a
+href="slide0313_image133.gif"></a><a href="slide0313_image134.gif"></a><a
+href="slide0313_image135.gif"></a><a href="slide0313_image136.gif"></a><a
+href="slide0313_image137.gif"></a><a href="slide0313_image138.gif"></a><a
+href="slide0313_image139.gif"></a><a href="slide0313_image140.gif"></a><a
+href="slide0313_image141.gif"></a><a href="slide0313_image142.gif"></a><a
+href="slide0313_image143.gif"></a><a href="slide0313_image144.gif"></a><a
+href="slide0313_image145.gif"></a><a href="slide0313_image146.gif"></a><a
+href="slide0313_image147.gif"></a><a href="slide0313_image148.gif"></a><a
+href="slide0313_image149.gif"></a><a href="slide0313_image150.gif"></a><a
+href="slide0313_image151.gif"></a><a href="slide0313_image152.gif"></a><a
+href="slide0313_image153.gif"></a><a href="slide0313_image154.gif"></a><a
+href="slide0313_image155.gif"></a><a href="slide0313_image156.gif"></a><a
+href=slide0305.htm></a><a href="slide0305_image157.gif"></a><a
+href="slide0305_image158.gif"></a><a href="slide0305_image159.gif"></a><a
+href="slide0305_image160.gif"></a><a href="slide0305_image161.gif"></a><a
+href="slide0305_image162.gif"></a><a href="slide0305_image163.png"></a><a
+href="slide0305_image164.jpg"></a><a href="slide0305_image165.gif"></a><a
+href="slide0305_image166.gif"></a><a href="slide0305_image167.gif"></a><a
+href="slide0305_image168.gif"></a><a href="slide0305_image169.gif"></a><a
+href="slide0305_image170.gif"></a><a href="slide0305_image171.gif"></a><a
+href=slide0318.htm></a><a href="slide0318_image172.gif"></a><a
+href="slide0318_image173.gif"></a><a href=slide0315.htm></a><a
+href=slide0315.xml></a><a href="slide0315_image175.gif"></a><a
+href="slide0315_image176.gif"></a><a href="slide0315_image177.gif"></a><a
+href="slide0315_image178.gif"></a><a href="slide0315_image179.gif"></a><a
+href="slide0315_image180.gif"></a><a href="slide0315_image181.gif"></a><a
+href="slide0315_image182.gif"></a><a href="slide0315_image183.gif"></a><a
+href="slide0315_image184.gif"></a><a href="slide0315_image185.gif"></a><a
+href="slide0315_image186.gif"></a><a href="slide0315_image187.gif"></a><a
+href="slide0315_image188.gif"></a><a href="slide0315_image189.gif"></a><a
+href="slide0315_image190.gif"></a><a href="slide0315_image191.gif"></a><a
+href="slide0315_image192.gif"></a><a href="slide0315_image193.gif"></a><a
+href="slide0315_image194.gif"></a><a href="slide0315_image195.gif"></a><a
+href="slide0315_image196.gif"></a><a href="slide0315_image197.gif"></a><a
+href="slide0315_image198.gif"></a><a href="slide0315_image199.gif"></a><a
+href="slide0315_image200.gif"></a><a href="slide0315_image201.gif"></a><a
+href="slide0315_image202.gif"></a><a href="slide0315_image203.gif"></a><a
+href="slide0315_image204.gif"></a><a href="slide0315_image205.gif"></a><a
+href=slide0319.htm></a><a href="slide0319_image206.gif"></a><a
+href="slide0319_image207.gif"></a><a href="slide0319_image208.gif"></a><a
+href="slide0319_image209.gif"></a><a href="slide0319_image210.gif"></a><a
+href="slide0319_image211.jpg"></a><a href="slide0319_image212.jpg"></a><a
+href="slide0319_image213.jpg"></a><a href="slide0319_image214.jpg"></a><a
+href="slide0319_image215.jpg"></a><a href="slide0319_image217.jpg"></a><a
+href="slide0319_image218.jpg"></a><a href="slide0319_image219.jpg"></a><a
+href="slide0319_image220.jpg"></a><a href="slide0319_image221.jpg"></a><a
+href="slide0319_image223.gif"></a><a href="slide0319_image224.gif"></a><a
+href="slide0319_image225.gif"></a><a href="slide0319_image226.gif"></a><a
+href="slide0319_image227.gif"></a><a href=slide0300.htm></a><a
+href="slide0300_image228.gif"></a><a href="slide0300_image229.gif"></a><a
+href="slide0300_image230.gif"></a><a href="slide0300_image231.gif"></a><a
+href="slide0300_image232.gif"></a><a href="slide0300_image233.gif"></a><a
+href="slide0300_image234.gif"></a><a href=slide0296.htm></a><a
+href="slide0296_image235.gif"></a><a href=slide0316.htm></a><a
+href=slide0316.xml></a><a href="slide0316_background.gif"></a><a
+href="master15_image236.gif"></a><a href="master15_image237.gif"></a><a
+href="slide0316_image238.gif"></a><a href="slide0316_image239.gif"></a><a
+href="slide0316_image240.gif"></a><a href="slide0316_image241.gif"></a><a
+href="slide0316_image242.gif"></a><a href="slide0316_image243.gif"></a><a
+href="slide0316_image244.gif"></a><a href="slide0316_image245.gif"></a><a
+href="slide0316_image246.gif"></a><a href="slide0316_image247.gif"></a><a
+href="slide0316_image248.gif"></a><a href="slide0316_image249.gif"></a><a
+href="slide0316_image250.gif"></a><a href="slide0316_image251.gif"></a><a
+href="slide0316_image252.gif"></a><a href="slide0316_image253.gif"></a><a
+href="slide0316_image254.gif"></a><a href="slide0316_image255.gif"></a><a
+href="slide0316_image256.gif"></a><a href="slide0316_image257.gif"></a><a
+href="slide0316_image258.gif"></a><a href="slide0316_image259.gif"></a><a
+href="slide0316_image260.gif"></a><a href="slide0316_image261.gif"></a><a
+href="slide0316_image262.gif"></a><a href="slide0316_image263.gif"></a><a
+href="slide0316_image264.gif"></a><a href="slide0316_image265.gif"></a><a
+href="slide0316_image266.gif"></a><a href="slide0316_image267.gif"></a><a
+href="slide0316_image268.gif"></a><a href="slide0316_image269.gif"></a><a
+href="slide0316_image270.gif"></a><a href="slide0316_image271.gif"></a><a
+href="slide0316_image272.gif"></a><a href="slide0316_image273.gif"></a><a
+href="slide0316_image274.gif"></a><a href="slide0316_image275.gif"></a><a
+href="slide0316_image276.gif"></a><a href="slide0316_image277.gif"></a><a
+href="slide0316_image278.gif"></a><a href="slide0316_image279.gif"></a><a
+href="slide0316_image280.gif"></a><a href="slide0316_image281.gif"></a><a
+href=slide0317.htm></a><a href="slide0317_background.gif"></a><a
+href="master16_image282.gif"></a><a href="master16_image283.gif"></a><a
+href="slide0317_image284.gif"></a><a href=master01.htm></a><a
+href="master15_stylesheet.css"></a><a href=script.js></a><a href="../vision.htm"></a><a
+href=error.htm></a><a href=fullscreen.htm></a><a href=buttons.gif></a><a
+href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>

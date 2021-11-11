@@ -1,0 +1,214 @@
+
+<html>
+<head>
+
+
+<title>Epic Shadows - The Guild</title>
+<META NAME="description" 
+CONTENT= "Epic Shadows is a guild on the EverQuest Vazaelle Server.">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="EverQuest,Epic Shadows,EpicShadows,Vazaelle,Guild">
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+
+<STYLE TYPE="text/css">	BODY {
+		margin 0;
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size : 12px;
+		color : #DDDDDD;
+	}
+	TD {
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size : 12px;
+		color : #DDDDDD;
+	}
+	.LINKS{
+		font-size : 12px;
+		color : #EEEEEE;
+		font-style : bold;
+	}
+	.LINKS:visited{
+		font-size : 12px;
+		color : #EEEEEE;
+		font-style : bold;
+	}
+	a {
+		text-decoration : none;
+	}
+	a:hover{
+		text-decoration : underline;
+	}
+	
+</STYLE> 
+<script language="JavaScript1.2" type="text/javascript">
+	if (!document.all)
+		alert("You are not using Internet Explorer.  This page will not display correctly, and I didn't want to dumb it down for anything else!\n- Ludarian");
+
+</script>
+</head>
+
+<body bgcolor="#000000" text="#999999" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#BF0000" alink="#BF0000" vlink="#BF0000" onLoad="if(parent.frames.length!=0)top.location='http://www.epicshadows.com';">
+
+<table height="120" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td align="right" background="images/logofullb.jpg" height="120"> 
+        <img src="images/right.gif" width="100" height="120"> </td>
+
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top"><td width="155">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/flagpole.jpg" height="500">
+<tr valign="top">
+	<td width="23">&nbsp;&nbsp;&nbsp;</td>
+	<td width="*" class="LINKS"><br><br><br><b>Guild Information</b>
+	<br>
+	&nbsp;<a class="LINKS" href="goal.cfm">Goal</a><br>
+	&nbsp;<a class="LINKS" href="index.cfm">Home</a><br>
+	&nbsp;<a class="LINKS" href="officers.cfm">Officers</a><br>
+	&nbsp;<a class="LINKS" href="members.cfm">Members</a><br>
+	<br>
+	<b>Guild Events</b><br>
+	&nbsp;<a class="LINKS" href="events.cfm">View Current</a><br>
+	
+	<br>
+	<b><a class="LINKS" href="sale.cfm">Items for Sale</a></b>
+	<br>
+	<br>
+	<b><a class="LINKS" href="buy.cfm">Items Wanted</a></b>
+	<br>
+	<br>
+	<b><a class="LINKS" href="screens.cfm">Screen Shots</a></b>
+	<br>
+	<br>
+	<b><a href="http://pub83.ezboard.com/bepicshadows" target="_new" class="LINKS">Forums</a></b>
+	<br>
+	<br>
+	<b><a class="LINKS" href="chatredir.cfm">Enter Chat Room</a></b>
+	<br>
+	<br>
+	<b><a class="LINKS" href="links.cfm">Links</a></b>
+	<br>
+	<br>
+	<b><a class="LINKS" href="blist.cfm">Black List</a></b>
+	<br>
+	<br>
+	
+	<b><a class="LINKS" href="login.cfm">Member Login</a></b>
+	
+	<br><br><br>
+	<a class="LINKS" href="javascript:history.back()"><font size="2"><b>Go Back</b></font></a>
+	
+	
+	</td>
+</tr>
+</table>
+</td>
+<td align="center">
+<br>
+	<table align="center" background="images/grid.gif" width="90%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td height="18" width="15" background="images/box/ul.jpg">&nbsp;&nbsp;&nbsp;</td>
+	    <td height="18" background="images/box/top.jpg">&nbsp;</td>
+	    <td height="18" width="15" background="images/box/ur.jpg">&nbsp;&nbsp;&nbsp;
+	    </td>
+	  </tr>
+	  <tr>
+	    <td background="images/box/left.jpg" width="15">&nbsp;</td>
+	    <td>
+		<br>
+			<div align="center">
+	      	<a name="ae"></a>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Shots from The Arena Event:<br>
+			<center>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=guildmeet.jpg','showimg','resizeable,width=660,height=550')" href="#ae" class="a"><img src="images/shots/guildmeet_thumb.jpg"></a></td>
+				    <td><a onclick="window.open('imgopen.cfm?img=guildmeet2.jpg','showimg','resizeable,width=660,height=550')" href="#ae" class="a"><img src="images/shots/guildmeet2_thumb.jpg"></a></td>
+					<td><a onclick="window.open('imgopen.cfm?img=guildmeet3.jpg','showimg','resizeable,width=660,height=550')" href="#ae" class="a"><img src="images/shots/guildmeet3_thumb.jpg"></a></td>
+				</tr>
+			</table>
+	  		</center>
+			<a name="ss"></a>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Afterwards Camping Stone Skellies:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=ss1.jpg','showimg','resizeable,width=660,height=550')" href="#ss" class="a"><img src="images/shots/ss1_thumb.jpg"></a></td>
+				    <td><a onclick="window.open('imgopen.cfm?img=ss2.jpg','showimg','resizeable,width=660,height=550')" href="#ss" class="a"><img src="images/shots/ss2_thumb.jpg"></a></td>
+				</tr>
+			</table>
+			<a name="ct"></a>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Cazic Thule:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=cazichall.jpg','showimg','resizeable,width=660,height=550')" href="#ct" class="a"><img src="images/shots/cazichall_thumb.jpg"></a></td>
+				    <td><a onclick="window.open('imgopen.cfm?img=temple.jpg','showimg','resizeable,width=660,height=550')" href="#ct" class="a"><img src="images/shots/temple_thumb.jpg"></a></td>
+				</tr>
+			</table>
+			<a name="perm"></a>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Permafrost:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=perma1.jpg','showimg','resizeable,width=660,height=550')" href="#perm" class="a"><img src="images/shots/perma1_thumb.jpg"></a></td>
+				    <td><a onclick="window.open('imgopen.cfm?img=perma2.jpg','showimg','resizeable,width=660,height=550')" href="#perm" class="a"><img src="images/shots/perma2_thumb.jpg"></a></td>
+					<td><a onclick="window.open('imgopen.cfm?img=perma3.jpg','showimg','resizeable,width=660,height=550')" href="#perm" class="a"><img src="images/shots/perma3_thumb.jpg"></a></td>
+				</tr>
+			</table>
+			<a name="dal"></a>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Dalnir:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=dal1.jpg','showimg','resizeable,width=660,height=550')" href="#dal" class="a"><img src="images/shots/thumb_dal1.jpg"></a></td>
+				</tr>
+			</table>
+			<a name="cc"></a>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Crystal Caverns:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=cc1.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_cc1.jpg"></a></td>
+				    <td><a onclick="window.open('imgopen.cfm?img=cc2.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_cc2.jpg"></a></td>
+					<td><a onclick="window.open('imgopen.cfm?img=cc3.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_cc3.jpg"></a></td>
+					<td><a onclick="window.open('imgopen.cfm?img=cc4.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_cc4.jpg"></a></td>
+				</tr>
+			</table>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>Kaesora:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=kaesora.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_kaesora.jpg"></a></td>
+				</tr>
+			</table>
+			<p><font size="+1" face="Verdana, Arial, Helvetica, sans-serif"><b>LOIO Sarnak Fort:<br>
+			<table align="center" width="400" cellspacing="10" cellpadding="0" border="0">
+				<tr align="center">
+				    <td><a onclick="window.open('imgopen.cfm?img=sarnak1.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_sarnak1.jpg"></a></td>
+				    <td><a onclick="window.open('imgopen.cfm?img=sarnak2.jpg','showimg','resizeable,width=660,height=550')" href="#cc" class="a"><img src="images/shots/thumb_sarnak2.jpg"></a></td>
+				</tr>
+			</table>
+		<Br>
+		
+		</td>
+	    <td background="images/box/right.jpg">&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td height="18" background="images/box/ll.jpg">&nbsp;</td>
+	    <td background="images/box/bottom.jpg" height="18">&nbsp;</td>
+	    <td height="18" background="images/box/lr.jpg">&nbsp;</td>
+	  </tr>
+	</table>
+</td>
+</tr>
+</table>
+  <div id="Layer1" style="align:right; position:absolute; left:0px; top:35px; width:80%; height:79px; z-index:1" align="right"><img src="images/moonb.gif" width="54" height="54" align="right"></div>
+
+
+</body>
+</html>
+

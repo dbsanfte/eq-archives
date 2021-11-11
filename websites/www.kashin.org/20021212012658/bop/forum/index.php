@@ -1,0 +1,118 @@
+<html>
+<head>
+<title> 
+Log In
+</title>
+
+
+<link rel='stylesheet' href='style_sheets/stylesheet_11.css' type='text/css'>
+
+
+</head>
+<body bgcolor="#000000" text="#FFE081" link="#FFE081" vlink="#FFE081" alink="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+	<td class="bodyline" bgcolor="#000000">
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td><a href='index.php'><img src='style_images/9/logo_chronicles.gif' vspace='1' border='0'></a></td>
+    <td align="center" width="100%" valign="middle"><span class='maintitle'>Legions of Ragnarok</span><br /><br /><table cellspacing="0" cellpadding="2" border="0">
+        <tr>
+          <td align="center" valign="top" nowrap="nowrap"><span class='mainmenu'>&nbsp;<a href='http://kashin.org/bop/forum/index.php?s=29f44c44c91b70a5ddabc82c4194d6c3&act=Help' class='mainmenu'><img src='style_images/9/icon_mini_faq.gif' title='Help Files' name='help' width="12" height="13" border="0" alt="FAQ" hspace="3" />FAQ</a></span><span class="mainmenu">&nbsp;
+            &nbsp;<a href='http://kashin.org/bop/forum/index.php?s=29f44c44c91b70a5ddabc82c4194d6c3&act=Search&f=' class='mainmenu'><img src='style_images/9/icon_mini_search.gif' title='Search' name='search' width="12" height="13" border="0" alt="Search" hspace="3">Search</a>&nbsp;
+            &nbsp;<a href='http://kashin.org/bop/forum/index.php?s=29f44c44c91b70a5ddabc82c4194d6c3&act=Members' class='mainmenu'><img src='style_images/9/icon_mini_members.gif' title='Members List' name='members' width="12" height="13" border="0" alt="Memberlist" hspace="3" />Memberlist</a></span></td>
+        </tr>
+        <tr>
+          <td height="25" align="center" valign="top" nowrap="nowrap">
+            <span class="mainmenu">&nbsp;<a href='http://kashin.org/bop/forum/index.php?s=29f44c44c91b70a5ddabc82c4194d6c3&act=Login&CODE=00' class="mainmenu"><img src='style_images/9/icon_mini_login.gif' title='Login' name='Login' width="12" height="13" border="0" hspace="3" />Log In</a>&nbsp;
+&nbsp;<a href='http://kashin.org/bop/forum/index.php?s=29f44c44c91b70a5ddabc82c4194d6c3&act=Reg&CODE=00' class='mainmenu'><img src='style_images/9/icon_mini_register.gif' title='Register' name='Register' width="12" height="13" border="0" hspace="3" />Register</a>&nbsp;</span>
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width='100%' align='center' border="0" cellspacing="0" cellpadding="1">
+<tr>
+    <td width="100%" class="nav"><span class='nav'><a href='http://kashin.org/bop/forum/index.php?s=29f44c44c91b70a5ddabc82c4194d6c3'>Legions of Ragnarok</a>  ->Log In		</span></td>
+  </tr>
+</table>
+  <table width='100%' cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
+                <tr>
+                <td class='row1'><span class='gentblmed'><b>The following errors were found:</b></span><hr noshade size='1'><span class='gentblsmall'>The board administrator requires all members to log in</span></td>
+                </tr>
+     </table>    <script language='JavaScript'>
+    <!--
+    function ValidateForm() {
+        var Check = 0;
+        if (document.LOGIN.UserName.value == '') { Check = 1; }
+        if (document.LOGIN.PassWord.value == '') { Check = 1; }
+
+        if (Check == 1) {
+            alert("Please enter your name and password before continuing");
+            return false;
+        } else {
+            document.LOGIN.submit.disabled = true;
+            return true;
+        }
+    }
+    //-->
+    </script>     
+     <br>
+     <table cellpadding='3' cellspacing='1' border='0' align='center' width='100%'>
+     <tr>
+     <td align='left' class='gen'>You must already have registered for an account before you can log in.<br>If you do not have an account, you may register by clicking the 'register' link near the top of the screen</td>
+     </tr>
+     </table>
+<form action="http://kashin.org/bop/forum/index.php" method="post" name='LOGIN' onSubmit='return ValidateForm()'>
+  <input type='hidden' name='act' value='Login'>
+  <input type='hidden' name='CODE' value='01'>
+  <input type='hidden' name='s' value='29f44c44c91b70a5ddabc82c4194d6c3'>
+  <input type='hidden' name='referer' value="">
+  <table width='100%' cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
+    <tr> 
+      <th height="25" class="thHead" nowrap="nowrap">Please enter your details below to log in</th>
+    </tr>
+    <tr> 
+      <td class="row2"><table border="0" cellpadding="3" cellspacing="1" width="100%">
+          <tr> 
+            <td colspan="2" align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="45%" align="right"><span class="gentblmed">Please enter your name</span></td>
+            <td><input type='text' size='20' maxlength='64' name='UserName' class='row1'> 
+            </td>
+          </tr>
+          <tr> 
+            <td align="right"><span class="gentblmed">Please enter your password</span></td>
+            <td><input type='password' size='20' name='PassWord' class='row1'> </td>
+          </tr>
+          <tr align="center"> 
+            <td colspan="2" align="center"><span class="gentblmed">Don't add me to the active users list 
+              <input type="checkbox" class='radio' name="Privacy" value="1">
+              </span></td>
+          </tr>
+          <tr> 
+            <td colspan="2" align="center"><span class="gentblmed">Log me on automatically 
+              each visit: 
+              <input type="checkbox" class='radio' name="CookieDate" value="1">
+              </span></td>
+          </tr>
+          <tr align="center"> 
+            <td colspan="2"><input type="submit" name='submit' value="Log me in" class="mainoption"></td>
+          </tr>
+          <tr align="center"> 
+            <td colspan="2"><span class='gensmall'><a href='http://kashin.org/bop/forum/index.php?act=Reg&CODE=10' class='gensmall'>I've forgotten my password!</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+</form>
+
+<br><br>
+<table width='80%' cellspacing='0' cellpadding='0' align ='center'><tr><td width='100%' class='gensmall' align='center'>Legions of Ragnarok &copy 2002</td></tr></table>
+<!-- Copyright Information -->
+
+<p><table width='80%' align='center' cellpadding='3' cellspacing='0'><tr><td align='center' valign='middle' id='copyright'><br>Powered by <a href="http://www.invisionboard.com" class="copyright" target='_blank'>Invision Board</a> v1.0 RC 2 &copy; 2002 &nbsp;<a href='http://www.invisionpower.com' target='_blank'>Invision PS</a></td></tr></table><p> </td></tr>
+</body>
+</html>

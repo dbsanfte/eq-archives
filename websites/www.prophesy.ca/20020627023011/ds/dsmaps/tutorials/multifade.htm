@@ -1,0 +1,176 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Fading Multiple Nodes</title>
+<base href="http://www.prophesy.ca/ds/dsmaps/">
+</head>
+
+<body bgcolor="#000000" text="#FFFF00" link="#0000FF"
+vlink="#800080">
+
+<table border="0">
+    <tr>
+        <td valign="top">&nbsp;</td>
+        <td><p align="center"><font color="#C0C0C0" size="7"><strong>Fading
+        Multiple Nodes</strong></font></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"><p align="left"><a href="index.htm"><font
+        size="5">Index</font></a></p>
+        <p align="left"><a
+        href="http://www.prophesy.ca/ds/dsmaps/maps.htm"><font
+        size="5">Maps</font></a></p>
+        <p align="left"><a
+        href="http://www.prophesy.ca/ds/dsmaps/tutorials.htm"><font
+        size="5">Tutorials</font></a></p>
+        <p align="left"><a
+        href="http://68.3.21.42:8080/cgi-bin/Miral/ikonboard.cgi?s=3cfec4b359afffff;act=SF;f=39"><font
+        size="5">Forums</font></a></p>
+        <p align="left"><a
+        href="http://www.prophesy.ca/ds/dsmaps/downloads.htm"><font
+        size="5">Downloads</font></a></p>
+        <p align="left"><a
+        href="http://www.prophesy.ca/ds/dsmaps/links.htm"><font
+        size="5">Links</font></a></p>
+        <p align="left"><a href="mailto:nintastic@hotmail.com"
+        target="frm-new"><font size="5">Contact</font></a></p>
+        </td>
+        <td><p align="center"><font color="#FFFFFF">UPDATE: I
+        have recieved a very informative e-mail from David
+        Tomandl, one of the level designers for Dungeon Siege
+        over at Gas Powered Games, revealing to me the lovely
+        secrets of properly using that joyus fade_nodes trigger.
+        Here is the e-mail he sent me:</font></p>
+        <p align="center"><font color="#FFFFFF">&quot;Basically,
+        you flag nodes with a specific Section, Level, and Object
+        value (under the Fade Settings tab in Node properties),
+        and refer to those values with the &quot;fade_nodes&quot;
+        action in a trigger.&nbsp; So if you flagged the house
+        roof as 1,2,3 (section, level, object), then in the
+        fade_nodes action, you would need to paste the region
+        guid (found under the Settings menu, in Region Settings),
+        and fill out the Section/Level/Object values 1,2,3, along
+        with the type of fade (usually &quot;out:black&quot; or
+        &quot;in&quot;).&nbsp; Then when you walk through the
+        trigger, all nodes in the region with those node fade
+        flags will fade. Using this method, you can fade a house
+        roof, or a dungeon, or a large field...even an entire
+        region!&quot;</font></p>
+        <p align="center"><font color="#FFFFFF">As you can see,
+        I've been doing things the hard way, LOL. To reflect this
+        change, I have updated the information in this tutorial
+        accordingly.</font></p>
+        <p align="center"><font color="#FFFFFF">This tutorial is
+        for those who are having trouble with the 2 story, (or
+        more) buildings and getting things to fade in and out
+        properly.</font></p>
+        <p align="center"><font color="#FFFFFF">First, create the
+        base for the house, like this:</font></p>
+        <p align="center"><font color="#FFFFFF"><img
+        src="tutorials/mf1.JPG" width="580" height="372"></font></p>
+        <p align="center"><font color="#FFFFFF">Next, add the
+        door-top node to door 16 of the house. We're gonna want
+        to make this node fade out on it's own when we enter and
+        leave, so select the door-top node, open the node menu
+        from the top, and select properties. Under the general
+        tab, uncheck the bounds camera box, and check the camera
+        fade box. Under the fade settings box, set all the valuse
+        to 0. Done.</font></p>
+        <p align="center"><font color="#FFFFFF">Next, add the
+        stairs to door 15 of the house. next, add floor 2 to the
+        house on door2 of the STAIRS. Select floor 2 node and set
+        the properties to occludes camera and occludes light
+        only. Under the &quot;fade settings&quot; tab in node
+        properies (select the node, open the node menu up top
+        then click on node properties), set section, level, and
+        object all to 1. Add the roof to door 2 of floor 2. The
+        generic-b-shingle and generic-b-thatch roofs fit. Under
+        the &quot;fade settings&quot; tab of the roof in node
+        properties, set section, level, and object all to 2.Hide
+        the roof node by selecting it, selecting the node menu,
+        and clicking hide node(s). Do the same for level 2. Now
+        we want to create our triggers. Create 4 generic triggers
+        located in game objects/gizmos/triggers, 1 outside the
+        house steps, one just inside the door, one at the base of
+        the stairs, and one on the landing that is almost at the
+        top of the stairs. It should look like this:</font></p>
+        <p align="center"><font color="#FFFFFF"><img
+        src="tutorials/mf2.JPG" width="585" height="372"></font></p>
+        <p align="center"><font color="#FFFFFF">Now we want to
+        set up the triggers. On the trigger outside and inside
+        the door, follow these steps:</font></p>
+        <p align="center"><font color="#FFFFFF">1. Select the
+        trigger, right click, properties, trigger properties.
+        Click NEW at the bottom left, expand the tree at the top
+        left, and select trigger_0. Add a new condition,
+        party_member_within_bounding_box. Adjust the half diag X,
+        Y, and Z values to the following: X=0.5 Y=1 Z=1. Add 2
+        fade_nodes actions. From the settings menu on the top of
+        the SE window, select region settings. Copy the region
+        GUID number (CTRL-C or highlight, right click and select
+        copy) and paste it in the Region GUID value field in the
+        fade_nodes action boxes in the trigger properties window,
+        located within the object properties window of the first
+        trigger outside the door. In the Section, Level, and
+        Object fields in the same box, enter 1 for all values of
+        the first action, and 2 for all values in the second
+        action. In both the fade_nodes actions, set the fade type
+        to IN from the drop down menus. Copy everything from this
+        first trigger and put it into the second trigger inside
+        the door, but change the fade type to OUT:BLACK. Now when
+        we enter the house, the first and second floors vanish,
+        and when we exit, they fade back in. Now we want to make
+        the second floor appear when we get to the landing in the
+        middle of the stairs, and fade out again when we leave it
+        from the bottom. Copy the settings for the first action
+        of either of the triggers beside the door, both condition
+        and action. It should have the Section, Level, and Object
+        values of 1, and enter them into the trigger_generic at
+        the bottom of the stairs. Set the fade type to IN. Select
+        the trigger at the top of the stairs, and repeat the
+        process for the one at the bottom, only with this one set
+        the fade type to OUT:BLACK. Rotate and move your triggers
+        accordingly, and you should have something that looks
+        like this:</font></p>
+        <p align="center"><font color="#FFFFFF"><img
+        src="tutorials/mf3.JPG" width="577" height="360"></font></p>
+        <p align="center"><font color="#FFFFFF">That's all there
+        is to it! You're done! Save the map, export as .dsmap,
+        and play it!</font></p>
+        <p align="center"><font color="#FFFFFF">What you can do
+        with this, as mentioned above in the e-mail sent to me by
+        David Tomandl, is set ANY node you want to fade with that
+        trigger to have the same Section, Level, and Object
+        values, making it possible to fade like 200 floors on a
+        super high tower, or even fade a whole region! This is
+        how you make the rest of the world fade out when you
+        enter a dungeon that goes underneath the ground, such as
+        Cellars and Crypts and whatnot. You'd simply use
+        &quot;select all regions&quot; from the node menu up at
+        the top, then select node properties from the same menu
+        (this will adjust the settings for every node in the
+        region), and set the Section, Level, and Object fields
+        all to the same numbers. You would then set the same
+        settings for the stairs and the dungeon all to 2, that
+        way, the one fade_nodes trigger you'd have at the top of
+        the stairs for the cellar would fade out the whole region
+        except for the dungeon and stairs. I would advise that
+        you make the dungeon a seperate region, then stitch it to
+        the stairs. It makes the game run smoother. Isn't this
+        terrific? I knew you'd love it!</font></p>
+        </td>
+    </tr>
+</table>
+
+<p align="center"><font color="#FFFFFF">Gas Powered Games&trade;
+and</font> <a href="http://www.dungeonsiege.com/">Dungeon
+Siege&trade;</a> <font color="#FFFFFF">are the copyrighted
+property of</font><font color="#008080"> </font><a
+href="http://www.gaspoweredgames.com/">Gas Powered Games, Corp.</a>
+</p>
+</body>
+</html>

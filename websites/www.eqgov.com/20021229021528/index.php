@@ -1,0 +1,831 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ <!-- no cache headers -->
+ <meta http-equiv="Pragma" content="no-cache">
+ <meta http-equiv="no-cache">
+ <meta http-equiv="Expires" content="-1">
+ <meta http-equiv="Cache-Control" content="no-cache">
+ <!-- end no cache headers -->
+ <meta name="keywords" content="vbulletin,forum,bbs,discussion,jelsoft">
+ <title>Guardians of Veeshan</title>
+ <meta name="MSSmartTagsPreventParsing" content="TRUE">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<LINK REL="StyleSheet" HREF="/style.css" TYPE="text/css">
+<style type="text/css">
+BODY {
+ SCROLLBAR-BASE-COLOR: #3A485F;
+ SCROLLBAR-ARROW-COLOR: #D0A134;
+}
+SELECT {
+ FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+ FONT-SIZE: 11px;
+ COLOR: #FFFFFF;
+ BACKGROUND-COLOR: #3A485F
+}
+
+TEXTAREA, .bginput {
+ FONT-SIZE: 12px;
+ FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+ COLOR: #FFFFFF;
+ BACKGROUND-COLOR: #3A485F
+}
+A:link, A:visited, A:active {
+ COLOR: #CFCFCF;
+}
+A:hover {
+ COLOR: #B69D3A;
+}
+#cat A:link, #cat A:visited, #cat A:active {
+ COLOR: #D0A134;
+ TEXT-DECORATION: none;
+}
+#cat A:hover {
+ COLOR: #D0A134;
+ TEXT-DECORATION: underline;
+}
+#ltlink A:link, #ltlink A:visited, #ltlink A:active {
+ COLOR: #CFCFCF;
+ TEXT-DECORATION: none;
+}
+#ltlink A:hover {
+ COLOR: #B69D3A;
+ TEXT-DECORATION: underline;
+}
+.thtcolor {
+ COLOR: #F4F4F4;
+}
+
+.lf {
+ FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+ FONT-SIZE: 14px;
+}
+
+.nf {
+ FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+ FONT-SIZE: 12px;
+}
+
+.sf {
+ FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+ FONT-SIZE: 10px;
+}
+
+</style>
+
+
+
+<script language="javascript">
+if (document.images) {
+   img1on = new Image();   img1on.src = "/forums/images/layout/home-glow.gif";
+   img2on = new Image();   img2on.src = "/forums/images/layout/forum-glow.gif";
+   img3on = new Image();   img3on.src = "/forums/images/layout/usercp-glow.gif";
+   img4on = new Image();   img4on.src = "/forums/images/layout/calendar-glow.gif";
+   img5on = new Image();   img5on.src = "/forums/images/layout/members-glow.gif";
+   img6on = new Image();   img6on.src = "/forums/images/layout/faq-glow.gif";
+   img7on = new Image();   img7on.src = "/forums/images/layout/search-glow.gif";
+   
+   img1off = new Image();   img1off.src = "/forums/images/layout/home.gif";    
+   img2off = new Image();   img2off.src = "/forums/images/layout/forum.gif";
+   img3off = new Image();   img3off.src = "/forums/images/layout/usercp.gif";
+   img4off = new Image();   img4off.src = "/forums/images/layout/calendar.gif";
+   img5off = new Image();   img5off.src = "/forums/images/layout/members.gif";
+   img6off = new Image();   img6off.src = "/forums/images/layout/faq.gif";
+   img7off = new Image();   img7off.src = "/forums/images/layout/search.gif";
+} function imgOn(imgName) { if (document.images) { document[imgName].src = eval(imgName + "on.src"); } } function imgOff(imgName) { if (document.images) { document[imgName].src = eval(imgName + "off.src"); } }// -->
+</script>
+
+<script language="JavaScript">
+<!-- Hide from old browsers
+var imagenumber = 2 ;
+var randomnumber = Math.random() ;
+var rand1 = Math.round( (imagenumber-1) * randomnumber) + 1 ;
+images = new Array
+images[1] = "/forums/images/layout/left/topleft.gif"
+images[2] = "/forums/images/layout/left/topleft2.gif"
+var image = images[rand1]
+// -- End Hiding Here -->
+</script>
+<script language="JavaScript">
+<!-- Hide from old browsers
+var imagenumber = 2 ;
+var randomnumber = Math.random() ;
+var rand1 = Math.round( (imagenumber-1) * randomnumber) + 1 ;
+images = new Array
+images[1] = "/forums/images/layout/right/topright.gif"
+images[2] = "/forums/images/layout/right/topright2.gif"
+var imageb = images[rand1]
+// -- End Hiding Here -->
+</script>
+
+<script type="text/javascript">
+<!--
+function openwindow(){
+ window.open ("","Help","toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=600,height=400");
+}
+
+function launch(URL, newName, newFeatures, orgName) {
+  var remote = open(URL, newName, newFeatures);
+  if (remote.opener == null)
+    remote.opener = window;
+  remote.opener.name = orgName;
+  return remote;
+}
+
+function openWindow(URL) {
+  Popup = launch(URL, 'popup', 'dependent=0,height=600,width=900,screenX=200,left=50,screenY=200,top=50,channelmode=0,dependent=0,directories=0,fullscreen=0,location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0', 'launcher');
+}
+
+
+//-->
+</script>
+
+</head>
+<body bgcolor="081429" text="#F4F4F4" link="#F4F4F4" alink="#FFFFFF" rightmargin=0 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<!-- Call the Common Header -->
+<!-- logo and buttons -->
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0"><tr><td height="100%" valign="top">
+	<table border="0" width="100%" cellpadding="0" cellspacing="0" background="/forums/images/layout/topbg.jpg">
+	<tr><td valign="top">
+		<table border="0" width="100%" cellpadding="0" cellspacing="0">
+		<tr><td width="181" align="left" valign="top"><script language="JavaScript">
+<!-- Hide this script from old browsers --
+document.write('<IMG SRC="' + image + '">')
+// -- End Hiding Here -->
+</script></td><td width=100% align="center" valign="middle"><img src="/forums/images/layout/title.gif"></td><td align="right" valign="top"><script language="JavaScript">
+<!-- Hide this script from old browsers --
+document.write('<IMG SRC="' + imageb + '">')
+// -- End Hiding Here -->
+</script></td>
+		</tr></table>
+	</td></tr></table>
+	<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr><td align="left" valign="top">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr><td align="left" valign="top"><img src="/forums/images/layout/sidetopleft.jpg"></td></tr>
+		</table>
+	</td>
+	<td width="100%" valign="top">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr><td align="center" valign="middle"><img src="/forums/images/layout/leftbat.gif"></td>
+		<td width=100% align="center" valign="top">
+			<!-- MENU -->
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tr><td width="69"><A HREF="/index.php?s=ac24b34d207e6d0f2402d16a1b0a0801" onmouseover="imgOn('img1')" onmouseout="imgOff('img1')" ><img name="img1" border=0 SRC="/forums/images/layout/home.gif" width="69" height="26"></A></td>
+			<td width="72"><A HREF="/forums/index.php?s=ac24b34d207e6d0f2402d16a1b0a0801" onmouseover="imgOn('img2')" onmouseout="imgOff('img2')" ><img name="img2" border=0 SRC="/forums/images/layout/forum.gif" width="72" height="26"></A></td>
+			<td width="73"><A HREF="/forums/usercp.php?s=ac24b34d207e6d0f2402d16a1b0a0801" onmouseover="imgOn('img3')" onmouseout="imgOff('img3')" ><img name="img3" border=0 SRC="/forums/images/layout/usercp.gif"  width="73" height="26"></A></td>
+			<td width="73"><A HREF="/forums/calendar.php?s=ac24b34d207e6d0f2402d16a1b0a0801" onmouseover="imgOn('img4')" onmouseout="imgOff('img4')" ><img name="img4" border=0 SRC="/forums/images/layout/calendar.gif" width="73" height="26"></A></td>
+			<td width="74"><A HREF="/forums/memberselect.php?s=ac24b34d207e6d0f2402d16a1b0a0801" onmouseover="imgOn('img5')" onmouseout="imgOff('img5')" ><img name="img5" border=0 SRC="/forums/images/layout/members.gif" width="74" height="26"></A></td>
+			<td width="72"><A HREF="/forums/misc.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=faq" onmouseover="imgOn('img6')" onmouseout="imgOff('img6')" ><img name="img6" border=0 SRC="/forums/images/layout/faq.gif" width="72" height="26"></A></td>
+			<td width="68"><A HREF="/forums/search.php?s=ac24b34d207e6d0f2402d16a1b0a0801" onmouseover="imgOn('img7')" onmouseout="imgOff('img7')" ><img name="img7" border=0 SRC="/forums/images/layout/search.gif" width="68" height="26"></A></td>
+			</tr></table>
+		</td>
+		<td align="center" valign="middle"><img src="/forums/images/layout/rightbat.gif"></td>
+		</tr></table>
+	</td>
+	<td align="right" valign="top">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr><td align="right" valign="top"><img src="/forums/images/layout/sidetopright.jpg"></td></tr>
+		</table>
+	</td></tr>
+	</table>
+	<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+	<tr><td align="left" valign="top" background="/forums/images/layout/sideleft.jpg"><img src="/forums/images/layout/sideleft.jpg"></td>
+	<td width="100%" valign="top">
+<!-- /logo and buttons -->
+
+<!-- If we use custom menus -->
+<!- e.g. The TabMenu and iMac themes -->
+
+
+<!-- Display Left Column -->
+<!-- P_themeleftcolumn -->
+<table bgcolor="#081429" width="100%" cellpadding="5" cellspacing="0" border="0">
+<tr>
+
+<!-- Start  Left column -->
+<td align="center" width = "150" valign="top"> 
+
+<!-- Display the Leftcolumn blocks -->
+<table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Menu</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C" align="left">
+<font face="verdana,arial,helvetica" size="1" class="sf"><font size="2">
+<SCRIPT src="/includes/java/cookie.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/includes/java/list.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/includes/java/menucontent.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/includes/java/menuarw.js" type=text/javascript></SCRIPT>
+<span class=mlevel1 id=mlHome><IMG height=12 src="/images/menu/menuBall.gif" width=12 border=0> 
+<A class=mlinklevel1 href="/index.php">Home</A> 
+</span>
+<br>
+<br>
+<span class=mlevel1 id=mlGuildinfo>
+<A class=mexpander href="javascript:toggleMenuContent('mcGuildinfo');"><IMG id=iconmcGuildinfo height=12 src="/images/menu/menuDown.gif" width=12 border=0></A> 
+<A class=mexpander href="javascript:toggleMenuContent('mcGuildinfo');"> Guild Info.</A>
+
+	<span class=mlevel2 id=mcGuildinfo>
+	<table border="0" width="100%"><tr><td width="10"></td><td>
+	<font size="1">
+	<!-- <strong><big>·</big></strong> <a href="/modules.php?op=modload&name=mediaGallery&file=index">Guild Gallery</a><br> -->
+	<strong><big>·</big></strong> <a href="/modules.php?op=modload&name=guildinfo&file=history">Our History</a><br>
+	<strong><big>·</big></strong> <a href="/modules.php?op=modload&name=guildinfo&file=charter">Our Charter</a><br>
+	<strong><big>·</big></strong> <a href="/forums/memberlist2.php">Our Members</a><br>
+	</font></td></tr></table>
+	</span>
+</span>
+<br>
+<span class=mlevel1 id=mlForums>
+<A class=mexpander href="javascript:toggleMenuContent('mcForums');"><IMG id=iconmcForums height=12 src="/images/menu/menuDown.gif" width=12 border=0></A> 
+<A class=mlinklevel1 onclick="forceMenuOpen('mcForums');" href="/forums/index.php">Forums</A> 
+
+	<span class=mlevel2 id=mcForums>
+	<table border="0" width="100%"><tr><td width="10"></td><td>
+	<font size="1">
+	<strong><big>·</big></strong> <a href="/forums/forumdisplay.php?forumid=1">Public</a><br>
+	<strong><big>·</big></strong> <a href="/forums/forumdisplay.php?forumid=4">Friends</a><br>
+	<strong><big>·</big></strong> <a href="/forums/forumdisplay.php?forumid=2">Members</a><br>
+	<strong><big>·</big></strong> <a href="/forums/forumdisplay.php?forumid=27">The Vault</a><br>
+	</font></td></tr></table>
+	</span>
+</span>
+<br>
+<span class=mlevel1 id=mlMisc>
+<A class=mexpander href="javascript:toggleMenuContent('mcMisc');"><IMG id=iconmcMisc height=12 src="/images/menu/menuDown.gif" width=12 border=0></A>
+<A class=mexpander href="javascript:toggleMenuContent('mcMisc');">Miscellaneous</A> 
+
+	<span class=mlevel2 id=mcMisc>
+	<table border="0" width="100%"><tr><td width="10"></td><td>
+	<font size="1">
+	<strong><big>·</big></strong> <a href="/EQStat.php">EQ Server Status</a><br>
+	<strong><big>·</big></strong> <a href="/modules.php?name=Statistics">Webpage Stats</a><br>
+	<strong><big>·</big></strong> <a href="/modules.php?name=Top">Top 10</a><br>
+	<strong><big>·</big></strong> <a href="/modules.php?name=Web_Links">Community</a><br>
+	<strong><big>·</big></strong> <a href="/modules.php?name=Downloads">Downloads</a>
+	</font></td></tr></table>
+	</span>
+</span>
+<br>
+<br>
+<span class=mlevel1 id=mlHome><IMG height=12 src="/images/menu/menuBall.gif" width=12 border=0> 
+<A class=mlinklevel1 href="/irc.php">IRC Chat</A> 
+</span>
+<br>
+<span class=mlevel1 id=mlHome><IMG height=12 src="/images/menu/menuBall.gif" width=12 border=0> 
+<A class=mlinklevel1 href="/gallery/index.php">Photo Gallery</A> 
+</span>
+<br>
+<span class=mlevel1 id=mlHome><IMG height=12 src="/images/menu/menuBall.gif" width=12 border=0> 
+<A class=mlinklevel1 href="/forums/joininfo.php">Join Info.</A> 
+</span>
+<SCRIPT language=JavaScript>
+initMenuContent(); defaultMenuClosed("mcForums,mcGuildinfo,mcMisc");
+//window.alert(document.cookie);
+</SCRIPT>
+</font></font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Shoutbox</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C" align="left">
+<font face="verdana,arial,helvetica" size="1" class="sf"><div STYLE="height:150;width:140;overflow:auto;">
+<table width="100%">
+      <tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-28-2002 06:46 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=167"><font face="verdana,arial,helvetica" size="1" class="sf"><b>kaithan</b></a>: IT IS A MIRACLE...DOLBY WOKE UP!!</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-28-2002 06:36 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=269"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Eclaire</b></a>: Bena!!  <img src="/forums/images/smilies/frown.gif" border="0" alt="">  We'll miss you, but have fun!</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-27-2002 05:25 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=59"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Sabbena</b></a>: Going out of town again. <img src="/forums/images/smilies/frown.gif" border="0" alt=""> See you all Sunday night or Monday when I can actually play again! /hugs</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-27-2002 04:06 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=35"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Jerrith</b></a>: Must fix video card in main comp too.....</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-27-2002 04:05 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=35"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Jerrith</b></a>: Time warp shut down this past  Monday. <img src="/forums/images/smilies/smile.gif" border="0" alt="">  Away this weekend, but back this coming Monday. <img src="/forums/images/smilies/smile.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-27-2002 10:03 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=16"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Dolby</b></a>: swordfish</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-27-2002 06:31 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=304"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Drem</b></a>: nathi <img src="/forums/images/smilies/bllurk.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-27-2002 05:38 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=81"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Nathicana</b></a>: <img src="/forums/images/smilies/dance2.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-27-2002 03:38 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=139"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Austen</b></a>: Hey guys =)<br />
+I got PoP...<br />
+52 cleric LFG!!!</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-27-2002 02:15 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=64"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Shashonna</b></a>: Jerrith has left us. Deserted us, abandened us......bah <img src="/forums/images/smilies/tongue.gif" border="0" alt=""> hehe</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-26-2002 09:24 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=35"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Jerrith</b></a>: <-- has been stuck in a timewarp 500 years in the past. ;-)</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-26-2002 05:49 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=269"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Eclaire</b></a>: Hi Jerrith!  Where you been?</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-26-2002 05:49 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=269"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Eclaire</b></a>: BENA!!  Hurry back!  <img src="/forums/images/smilies/tongue.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-26-2002 10:06 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=59"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Sabbena</b></a>: Hope everyone had a good Christmas! Not sure if I will see you all soon... Will be Monday at the latest. I miss you all!! /hugs</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-26-2002 09:37 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=81"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Nathicana</b></a>: /bonk Drem!<br />
+</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-26-2002 08:19 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=304"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Drem</b></a>: i smell a conspiracy on the calender polls... <img src="/forums/images/smilies/bllurk.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-26-2002 06:14 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=35"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Jerrith</b></a>: Merry Christmas! <img src="/forums/images/smilies/smile.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-26-2002 01:37 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=321"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Zukik</b></a>: Woot!</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-25-2002 06:21 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=65"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Sirellyn</b></a>: Merry Christmas everyone!!!</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-25-2002 03:12 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=167"><font face="verdana,arial,helvetica" size="1" class="sf"><b>kaithan</b></a>: DING 51!!</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-25-2002 11:52 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=167"><font face="verdana,arial,helvetica" size="1" class="sf"><b>kaithan</b></a>: Merry christmass all</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-25-2002 05:17 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=26"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Goblez</b></a>: Merry Christmas everyone.. be safe in your travels and I wish you all a grand new year. =p</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-25-2002 02:51 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=64"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Shashonna</b></a>: Merry Christmas all see you on Thursday!</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-24-2002 10:55 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=381"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Anayla</b></a>: Merry Christmas all!</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-24-2002 09:26 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=304"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Drem</b></a>: last minute shoppers!</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-24-2002 08:27 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=118"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Zenyth</b></a>: MERRY CHRISTMAS EVERYONE!!!<br />
+<br />
+I LOVE GETTING PRESSIES.  <img src="/forums/images/smilies/biggrin.gif" border="0" alt=""></font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-24-2002 03:51 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=266"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Oopsalot</b></a>: Happy Holiday's ya'll<br />
+Miss ya'll</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-24-2002 01:21 PM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=64"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Shashonna</b></a>: PRESENTS!!</font></td>
+</tr><tr>
+          <td bgcolor=#43547C valign="middle" title="Posted: 12-24-2002 03:46 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=37"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Kadie</b></a>: I have chocolate cigars!  But they are for Valcie :p</font></td>
+</tr><tr>
+          <td bgcolor=#3A4A6D valign="middle" title="Posted: 12-24-2002 12:15 AM"><a href="http://www.eqgov.com/forums/member.php?s=&action=getinfo&userid=16"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Dolby</b></a>: sorry out of waffles.</font></td>
+</tr>
+</table>
+</div>
+      </font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Who's Online</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C" align="left">
+<font face="verdana,arial,helvetica" size="1" class="sf"><!-- P_loggedinusers -->
+<table><tr id="cat">
+<td bgcolor="#3A485F"><a href="/forums/online.php?s=ac24b34d207e6d0f2402d16a1b0a0801"><font face="verdana, arial, helvetica" size="2" class="nf" color="#D0A134"><b>Currently Active: 7</b></font></a></td>
+</tr>
+<tr><td bgcolor="#43547C"><font face="verdana,arial,helvetica" size="1" class="sf">
+There are currently 4 members and 3 guests on-line. Most users ever online was 60 on 07-20-2002 at 09:11 AM.<br>
+<a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&userid=21">Enyil</a>
+<a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&userid=117">Maxidomus</a>
+<a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&userid=145">Nesian</a>
+<a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&userid=63">Saerilyah</a>
+
+</font></td></tr></table>
+<!-- End --></font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br>
+
+<!-- Close Leftcolumn / Start Center Column -->
+</td><td valign="top" align="center" width="100%">
+
+<!-- Display the breadcrumb menu for addons -->
+
+
+
+<!-- Display the Centerblocks -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="40"><img src="/forums/images/layout/centertopleft.gif" width="40" height="13"></td>
+	<td width=50% background="/forums/images/layout/centertopbg.gif"><img src="/forums/images/layout/centertopbg.gif" width="1" height="13"></td>
+	<td width="299" align="center"><img src="/forums/images/layout/centertopdodad.gif" width="299" height="13"></td>
+	<td width=50% background="/forums/images/layout/centertopbg.gif"><img src="/forums/images/layout/centertopbg.gif" width="1" height="13"></td>
+	<td width="38"><img src="/forums/images/layout/centertopright.gif" width="38" height="13"></td>
+	</td></tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="31"><img src="/forums/images/layout/centertop2left.gif" width="31" height="23"></td>
+	<td width="100%" align="center" valign="middle" bgcolor="#313E5C"><font size="4" color="#D0A134"><b>Active Topics</b></font><font face="verdana,arial,helvetica" size="1" class="sf">  - [<a href="/modules.php?s=ac24b34d207e6d0f2402d16a1b0a0801&name=Active_Topics">more</a>]</font></td>
+	<td width="31"><img src="/forums/images/layout/centertop2right.gif" width="31" height="23"></td>
+	</tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="14" background="/forums/images/layout/centerleftbg.gif"><img src="/forums/images/layout/centerleftbg.gif" width="14" height="1"></td>
+	<td bgcolor="#313E5C" width="100%" align="center">
+	<!-- block content -->
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#3A485F">
+              <tr>
+                <td><font face="verdana,arial,helvetica" size="1" class="sf" color="#D0A134"><b>Topic</b></font></td>
+                <td align="center"><p align="left"><font face="verdana,arial,helvetica" size="1" class="sf" color="#D0A134"><b>Started By</b></font></p></td>
+                <td align="center"><p align="left"><font face="verdana,arial,helvetica" size="1" class="sf" color="#D0A134"><b>Last Post By</b></font></p></td>
+                <td align="center"><p align="left"><font face="verdana,arial,helvetica" size="1" class="sf" color="#D0A134"><b>Posted on</b></font></p></td>
+              </tr>
+              <!-- P_activetopic_centerboxbit start-->
+<tr>
+  <td bgcolor="#3A4A6D" align="left">&nbsp;<img src="/forums/images/smicon3.gif" border="0" width="5" height="5" alt="&gt;"><font face="verdana,arial,helvetica" size="1" class="sf"><b>&nbsp;<a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&goto=newpost&threadid=4049">This is why my Mac ownz</a></b></font>
+</td>
+  <td bgcolor="#3A4A6D" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Sargeras">Sargeras</a></font>
+  </td>
+  <td bgcolor="#3A4A6D" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Saerilyah">Saerilyah</a></font>
+  </td>
+  <td bgcolor="#3A4A6D" align="left"><font face="verdana,arial,helvetica" size="1" class="sf">12-29-2002 @ 02:11 AM</font></td>
+  </tr>
+<!-- P_activetopic_centerboxbit end --><!-- P_activetopic_centerboxbit start-->
+<tr>
+  <td bgcolor="#43547C" align="left">&nbsp;<img src="/forums/images/smicon3.gif" border="0" width="5" height="5" alt="&gt;"><font face="verdana,arial,helvetica" size="1" class="sf"><b>&nbsp;<a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&goto=newpost&threadid=4054">shrunk!</a></b></font>
+</td>
+  <td bgcolor="#43547C" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Kyria">Kyria</a></font>
+  </td>
+  <td bgcolor="#43547C" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Kyria">Kyria</a></font>
+  </td>
+  <td bgcolor="#43547C" align="left"><font face="verdana,arial,helvetica" size="1" class="sf">12-29-2002 @ 12:00 AM</font></td>
+  </tr>
+<!-- P_activetopic_centerboxbit end --><!-- P_activetopic_centerboxbit start-->
+<tr>
+  <td bgcolor="#3A4A6D" align="left">&nbsp;<img src="/forums/images/smicon3.gif" border="0" width="5" height="5" alt="&gt;"><font face="verdana,arial,helvetica" size="1" class="sf"><b>&nbsp;<a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&goto=newpost&threadid=4050">Mr. and Miss January</a></b></font>
+</td>
+  <td bgcolor="#3A4A6D" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Kyria">Kyria</a></font>
+  </td>
+  <td bgcolor="#3A4A6D" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Nathicana">Nathicana</a></font>
+  </td>
+  <td bgcolor="#3A4A6D" align="left"><font face="verdana,arial,helvetica" size="1" class="sf">12-28-2002 @ 10:26 PM</font></td>
+  </tr>
+<!-- P_activetopic_centerboxbit end --><!-- P_activetopic_centerboxbit start-->
+<tr>
+  <td bgcolor="#43547C" align="left">&nbsp;<img src="/forums/images/smicon3.gif" border="0" width="5" height="5" alt="&gt;"><font face="verdana,arial,helvetica" size="1" class="sf"><b>&nbsp;<a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&goto=newpost&threadid=4051">Windows Update</a></b></font>
+</td>
+  <td bgcolor="#43547C" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Enyil">Enyil</a></font>
+  </td>
+  <td bgcolor="#43547C" align="left"><font face="verdana,arial,helvetica" size="1" class="sf"><a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=getinfo&username=Enyil">Enyil</a></font>
+  </td>
+  <td bgcolor="#43547C" align="left"><font face="verdana,arial,helvetica" size="1" class="sf">12-28-2002 @ 08:18 PM</font></td>
+  </tr>
+<!-- P_activetopic_centerboxbit end -->
+         </table>
+<!-- END:block content -->
+	</td>
+	<td width="15" background="/forums/images/layout/centerrightbg.gif"><img src="/forums/images/layout/centerrightbg.gif" width="15" height="1"></td>
+	</tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="14"><img src="/forums/images/layout/centerbottomleft.gif" width="14" height="13"></td>
+	<td width=50% background="/forums/images/layout/centerbottombg.gif"><img src="/forums/images/layout/centerbottombg.gif" width="1" height="13"></td>
+	<td width="299" align="center"><img src="/forums/images/layout/centerbottomdodad.gif" width="301" height="13"></td>
+	<td width=50% background="/forums/images/layout/centerbottombg.gif"><img src="/forums/images/layout/centerbottombg.gif" width="1" height="13"></td>
+	<td width="15"><img src="/forums/images/layout/centerbottomright.gif" width="15" height="13"></td>
+	</tr></table>
+</td></tr></table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="40"><img src="/forums/images/layout/centertopleft.gif" width="40" height="13"></td>
+	<td width=50% background="/forums/images/layout/centertopbg.gif"><img src="/forums/images/layout/centertopbg.gif" width="1" height="13"></td>
+	<td width="299" align="center"><img src="/forums/images/layout/centertopdodad.gif" width="299" height="13"></td>
+	<td width=50% background="/forums/images/layout/centertopbg.gif"><img src="/forums/images/layout/centertopbg.gif" width="1" height="13"></td>
+	<td width="38"><img src="/forums/images/layout/centertopright.gif" width="38" height="13"></td>
+	</td></tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="31"><img src="/forums/images/layout/centertop2left.gif" width="31" height="23"></td>
+	<td width="100%" align="center" valign="middle" bgcolor="#313E5C"><font size="4" color="#D0A134"><b>Random Gallery Pictures</b></font></td>
+	<td width="31"><img src="/forums/images/layout/centertop2right.gif" width="31" height="23"></td>
+	</tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="14" background="/forums/images/layout/centerleftbg.gif"><img src="/forums/images/layout/centerleftbg.gif" width="14" height="1"></td>
+	<td bgcolor="#313E5C" width="100%">
+	<!-- block content -->
+<font face="verdana,arial,helvetica" size="1" class="sf"><table class="" width="100%"><tr><td onmouseover=this.style.background='' onmouseout=this.style.background='' align="center"><A class="" href="http://www.eqgov.com/gallery/showphoto.php?photo=90"><img border="0" src='http://www.eqgov.com/gallery/data/512/16fg3-thumb.jpg'><Font size="1"color="" face="verdana,arial">
+<br>Fire Giants</a><Br>by Dolby</font></div><br></td><td onmouseover=this.style.background='' onmouseout=this.style.background='' align="center"><A class="" href="http://www.eqgov.com/gallery/showphoto.php?photo=144"><img border="0" src='http://www.eqgov.com/gallery/data/500/16dolby-luclin-thumb.jpg'><Font size="1"color="" face="verdana,arial">
+<br>To the nexus!</a><Br>by Dolby</font></div><br></td><td onmouseover=this.style.background='' onmouseout=this.style.background='' align="center"><A class="" href="http://www.eqgov.com/gallery/showphoto.php?photo=66"><img border="0" src='http://www.eqgov.com/gallery/data/506/16caught-thumb.jpg'><Font size="1"color="" face="verdana,arial">
+<br>Zullo Caught!</a><Br>by Dolby</font></div><br></td></tr><tr></tr></table><center><font size='1' face='vendra'>View our entire <a href='/gallery/index.php'>Gallery</a>. If your a Guardian or a Friend upload a picture!</font></center></font>
+<!-- END:block content -->
+	</td>
+	<td width="15" background="/forums/images/layout/centerrightbg.gif"><img src="/forums/images/layout/centerrightbg.gif" width="15" height="1"></td>
+	</tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="14"><img src="/forums/images/layout/centerbottomleft.gif" width="14" height="13"></td>
+	<td width=50% background="/forums/images/layout/centerbottombg.gif"><img src="/forums/images/layout/centerbottombg.gif" width="1" height="13"></td>
+	<td width="299" align="center"><img src="/forums/images/layout/centerbottomdodad.gif" width="301" height="13"></td>
+	<td width=50% background="/forums/images/layout/centerbottombg.gif"><img src="/forums/images/layout/centerbottombg.gif" width="1" height="13"></td>
+	<td width="15"><img src="/forums/images/layout/centerbottomright.gif" width="15" height="13"></td>
+	</tr></table>
+</td></tr></table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="40"><img src="/forums/images/layout/centertopleft.gif" width="40" height="13"></td>
+	<td width=50% background="/forums/images/layout/centertopbg.gif"><img src="/forums/images/layout/centertopbg.gif" width="1" height="13"></td>
+	<td width="299" align="center"><img src="/forums/images/layout/centertopdodad.gif" width="299" height="13"></td>
+	<td width=50% background="/forums/images/layout/centertopbg.gif"><img src="/forums/images/layout/centertopbg.gif" width="1" height="13"></td>
+	<td width="38"><img src="/forums/images/layout/centertopright.gif" width="38" height="13"></td>
+	</td></tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="31"><img src="/forums/images/layout/centertop2left.gif" width="31" height="23"></td>
+	<td width="100%" align="center" valign="middle" bgcolor="#313E5C"><font size="4" color="#D0A134"><b>The News</b></font></td>
+	<td width="31"><img src="/forums/images/layout/centertop2right.gif" width="31" height="23"></td>
+	</tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="14" background="/forums/images/layout/centerleftbg.gif"><img src="/forums/images/layout/centerleftbg.gif" width="14" height="1"></td>
+	<td bgcolor="#313E5C" width="100%">
+	<!-- block content -->
+<font face="verdana,arial,helvetica" size="1" class="sf"><br>
+<table border="0" cellspacing="0" cellpadding="6" width="100%">
+<tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+	<td colspan="2">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="100%" valign="bottom"><img src="/forums/images/icons/icon.gif"> <font size ="3" color = "#D0A134"><b> Happy Holidays!</b></font><br>
+	                     <font size ="1" color = "#COCOCO"> Posted by: [<a href="/member.php?action=mailform&userid=16">Dolby</a>] on 12-24-2002 @ 08:33 PM</b></font>
+		</td><td valign="bottom" align="right"></td>
+    </tr></table>
+	<hr size="1" width="100%">
+	</td>
+	</tr>
+	<tr>
+	<td wrap>
+	<br>
+		<font size="2" color="#COCOCO"><center><img src="/newsimages/12.24.02/xmas.gif"><br />
+<font size=3 face="arial black">The Guardians of Veeshan wish every one a safe and Happy Holiday!</font><br />
+</center></font><br>
+        
+	</td>
+	</tr><tr><td align="right">
+	<font face="verdana,arial,helvetica" size="1" class="sf"> <a href="/forums/showthread.php?threadid=4027"><b>Comment...</b></a><b>  (3 <font face="verdana,arial,helvetica" size="1" class="sf"><b>Comments</b></a></font> ) </b></font> 
+	<a href="/forums/printthread.php?threadid=4027"><img src="/forums/images/print.gif" border="0"></a> <a href="/forums/sendtofriend.php?threadid=4027"><img src="/forums/images/friend.gif" border="0"></a>
+	</td></tr></table>
+</td></tr></table>
+<br>
+<center><img src="/forums/images/layout/newsdodad.gif" width="300" height="15"></center>
+<br><br>
+<table border="0" cellspacing="0" cellpadding="6" width="100%">
+<tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+	<td colspan="2">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="100%" valign="bottom"><img src="/forums/images/icons/icon.gif"> <font size ="3" color = "#D0A134"><b> Dozekar the Cursed</b></font><br>
+	                     <font size ="1" color = "#COCOCO"> Posted by: [<a href="/member.php?action=mailform&userid=113">Aranash</a>] on 12-21-2002 @ 02:08 PM</b></font>
+		</td><td valign="bottom" align="right"></td>
+    </tr></table>
+	<hr size="1" width="100%">
+	</td>
+	</tr>
+	<tr>
+	<td wrap>
+	<br>
+		<font size="2" color="#COCOCO">Tonight we gathered in Halls of Testing with some friends from Blue Cloak and Sargeras. To test are abilities againest the master of the Halls. Not only where we successful. But, we destoryed the fowl beast without any deaths. Many Gratz to all those who were there it was a very nice kill.<br />
+<br />
+<center><br />
+<img src="/newsimages/12.21.02/Dozekar.JPG"><br />
+</center></font><br>
+        
+	</td>
+	</tr><tr><td align="right">
+	<font face="verdana,arial,helvetica" size="1" class="sf"> <a href="/forums/showthread.php?threadid=4001"><b>Comment...</b></a><b>  (2 <font face="verdana,arial,helvetica" size="1" class="sf"><b>Comments</b></a></font> ) </b></font> 
+	<a href="/forums/printthread.php?threadid=4001"><img src="/forums/images/print.gif" border="0"></a> <a href="/forums/sendtofriend.php?threadid=4001"><img src="/forums/images/friend.gif" border="0"></a>
+	</td></tr></table>
+</td></tr></table>
+<br>
+<center><img src="/forums/images/layout/newsdodad.gif" width="300" height="15"></center>
+<br></font>
+<!-- END:block content -->
+	</td>
+	<td width="15" background="/forums/images/layout/centerrightbg.gif"><img src="/forums/images/layout/centerrightbg.gif" width="15" height="1"></td>
+	</tr></table>
+</td></tr><tr><td>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr><td width="14"><img src="/forums/images/layout/centerbottomleft.gif" width="14" height="13"></td>
+	<td width=50% background="/forums/images/layout/centerbottombg.gif"><img src="/forums/images/layout/centerbottombg.gif" width="1" height="13"></td>
+	<td width="299" align="center"><img src="/forums/images/layout/centerbottomdodad.gif" width="301" height="13"></td>
+	<td width=50% background="/forums/images/layout/centerbottombg.gif"><img src="/forums/images/layout/centerbottombg.gif" width="1" height="13"></td>
+	<td width="15"><img src="/forums/images/layout/centerbottomright.gif" width="15" height="13"></td>
+	</tr></table>
+</td></tr></table>
+<br>
+
+<!-- Display Right Column -->
+<!-- moved this to footer P_themerightcolumn -->
+
+<!-- Display the Theme Footer -->
+
+
+<!-- Close Centercolumn / Start Right Column -->
+</td><td align="center" width = "150" valign="top">
+
+<!-- Display the Rightcolumn blocks -->
+<table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Events</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C">
+<font face="verdana,arial,helvetica" size="1" class="sf"><li><font face="verdana,arial,helvetica" size="1" class="sf" color="#D0A134">None Found</font></a></li>
+</font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>User's Login</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C">
+<font face="verdana,arial,helvetica" size="1" class="sf"><form action="/forums/member.php" method="post">
+<input type="hidden" name="action" value="login"><input type="hidden" name="s" value="ac24b34d207e6d0f2402d16a1b0a0801">
+<input type="hidden" name="url" value="/index.php?s=ac24b34d207e6d0f2402d16a1b0a0801">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td nowrap>
+<br>
+</td></tr>
+<tr><td>
+<p align="center"><font face="verdana,arial,helvetica" size="1" class="sf"><b>Username</b>&nbsp;</font><input type="text" name="username" size="7">
+<br><font face="verdana,arial,helvetica" size="1" class="sf"><b>Password</b>&nbsp;&nbsp;</font><input type="password" name="password" size="7"><br><br>
+<input type="submit" value="Login!">
+</p>
+</td></tr>
+<tr><td nowrap>
+<p align="center"><font face="verdana,arial,helvetica" size="1" class="sf"><br>
+Don't have an account? <br>
+<a href="/forums/register.php?s=ac24b34d207e6d0f2402d16a1b0a0801&action=signup">Register</a> for one now!<br><br>
+<a href="/forums/member.php?s=ac24b34d207e6d0f2402d16a1b0a0801">Lost Password</a>
+</font>
+</td></tr>
+</table>
+</form></font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Search Box</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C">
+<font face="verdana,arial,helvetica" size="1" class="sf"><table border="0"><tr><td>
+	<form style="margin-bottom:-2;" method="post" name="search" action="/modules.php?s=ac24b34d207e6d0f2402d16a1b0a0801&op=modload&name=Search&file=index">
+	<div align="left"><font face="verdana,arial,helvetica" size="1" class="sf">
+    <select name="type">
+    <option value="" selected>Search Type</option>
+	<option value="news">News</option>
+    <option value="forums">Forums</option>
+	<option value="comments">Comments</option>
+	<option value="users">Users</option>
+	<option value="sections">Sections</option>
+	<option value="reviews">Reviews</option>
+	<option value="content">Content</option>
+	<option value="downloads">Downloads</option>
+	<option value="links">Web Links</option>
+    <option value="faqs">FAQ</option>
+	<option value="encyc">Encyclopedia</option>
+	
+    </select>
+    <input type="hidden" name="s" value="ac24b34d207e6d0f2402d16a1b0a0801">
+    <input type="hidden" name="file" value="index">
+	<input type="text" name="query" size="12" maxlength="255">
+    <input type="image" src="/forums/images/go.gif" name="Submit" border="0" align="absbottom">
+	&nbsp;<a href="/modules.php?s=ac24b34d207e6d0f2402d16a1b0a0801&op=modload&name=Search&file=index"><b>Advanced Search</b></a>
+	</font></div></form></td></tr></table>    </font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Top Posters</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C">
+<font face="verdana,arial,helvetica" size="1" class="sf"><table border='0' cellpadding='3' width='100%'><tr><td align='left'>
+<font size='1'>
+<font size = 1>&nbsp;1: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=64'>Shashonna</A> (2158)&nbsp;</FONT><BR><font size = 1>&nbsp;2: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=16'>Dolby</A> (1995)&nbsp;</FONT><BR><font size = 1>&nbsp;3: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=59'>Sabbena</A> (1880)&nbsp;</FONT><BR><font size = 1>&nbsp;4: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=21'>Enyil</A> (1478)&nbsp;</FONT><BR><font size = 1>&nbsp;5: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=67'>Suretu</A> (975)&nbsp;</FONT><BR><font size = 1>&nbsp;6: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=49'>Falleni</A> (806)&nbsp;</FONT><BR><font size = 1>&nbsp;7: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=118'>Zenyth</A> (737)&nbsp;</FONT><BR><font size = 1>&nbsp;8: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=46'>Lilora</A> (682)&nbsp;</FONT><BR><font size = 1>&nbsp;9: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=44'>Kyria</A> (678)&nbsp;</FONT><BR><font size = 1>&nbsp;10: <A HREF='http://www.eqgov.com/forums/member.php?action=getinfo&userid=52'>Nevrotix</A> (651)&nbsp;</FONT><BR></font></td></tr></table><br>
+</font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br><table border="0" cellspacing="0" cellpadding="0" width="167">
+<tr><td colspan="3"><img src="/forums/images/layout/menutop.gif" width="167" height="13"></td></tr>
+<tr><td width="29" align="left"><img src="/forums/images/layout/menuleft.gif" width="29" height="25"></td><td width="109" align="center" valign="middle" bgcolor="#313E5C"><font color="#D0A134"><b>Past News</b></font></td><td width="29" align="right"><img src="/forums/images/layout/menuright.gif" width="29" height="25"></td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="12" background="/forums/images/layout/menubgleft.gif"><img src="/forums/images/layout/menubgleft.gif" width="12" height="8"></td>
+<td width="143" bgcolor="#313E5C" align="center">
+<table border="0" cellspacing="1" cellpadding="0"width="99%"><tr><td bgcolor="#313E5C">
+<font face="verdana,arial,helvetica" size="1" class="sf"><!-- Sidebox template for Past News -->
+<tr><td bgcolor="#3A4A6D"><img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon"><font face="verdana,arial,helvetica" size="1" class="sf"> <a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&threadid=3952">Spawned Trakanon Dead</a>
+</font><br></td></tr>
+
+<!-- Sidebox template for Past News -->
+<tr><td bgcolor="#43547C"><img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon"><font face="verdana,arial,helvetica" size="1" class="sf"> <a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&threadid=3874">Vhaksiz and friends</a>
+</font><br></td></tr>
+
+<!-- Sidebox template for Past News -->
+<tr><td bgcolor="#3A4A6D"><img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon"><font face="verdana,arial,helvetica" size="1" class="sf"> <a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&threadid=3856">Dragon killing squad</a>
+</font><br></td></tr>
+
+<!-- Sidebox template for Past News -->
+<tr><td bgcolor="#43547C"><img src="/forums/images/icons/icon0.gif" border="0" height="15" width="15" alt="icon"><font face="verdana,arial,helvetica" size="1" class="sf"> <a href="/forums/showthread.php?s=ac24b34d207e6d0f2402d16a1b0a0801&threadid=3841">Derakor the Vindicator - Dead</a>
+</font><br></td></tr>
+
+</font>
+</td></tr></table>
+</td>
+<td width="12" background="/forums/images/layout/menubgright.gif"><img src="/forums/images/layout/menubgright.gif" width="12" height="8"></td>
+</tr>
+</table>
+</td></tr>
+<tr><td colspan="3"><img src="/forums/images/layout/menubottom.gif" width="167" height="13"></td></tr>
+</table>
+<br>
+
+
+
+<!-- P_themefooter -->
+
+<!-- close frontpage table -->
+</td></tr></table>
+
+
+<!--- Start custom theme code-->
+<!-- Custom Code would go here -->
+<!-- End custom theme code-->
+<br>
+<center><font face="verdana,arial,helvetica" size="1" class="sf">
+<!-- footer vars are in the config.php -->
+<br>
+<br>
+<br>
+<br>
+<!-- vbPortal version and copyright -->
+<a href="http://www.phpportals.com" target="blank">Powered by vbPortal© 3.0 beta 2.1</a><br>
+Page generated in 1.39689302 seconds (93.04% PHP - 6.96% MySQL) with 41 queries.
+</font></center>
+<br>
+
+<!- Close Body and HTML Tags -->
+</body></html>
+<!-- End -->
+	</td>
+	<td align="left" valign="top" background="/forums/images/layout/sideright.jpg"><img src="/forums/images/layout/sideright.jpg"></td>
+	</tr></table>
+</td></tr></table>
+

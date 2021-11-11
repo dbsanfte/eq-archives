@@ -1,0 +1,14 @@
+document.write('<center><img src="images/logo.gif" height=121 width=120></center>');
+document.write('<p>');
+document.write('<a href="home.html">[Home]</a><br>');
+document.write('<a href="introduction.html">[Introduction]</a><br>');
+document.write('<a href="leaders.html">[Leaders]</a><br>');
+document.write('<a href="members.html">[Members]</a><br>');
+document.write('<a href="/forums/">[Forums]</a><br>');
+document.write('<a href="events.html">[Events]</a><br>');
+document.write('<a href="quests.html">[Quests]</a><br>');
+document.write('<a href="tradeskills.html">[Tradeskills]</a><br>');
+document.write('<a href="scapbook.html">[Scrapbook]</a><br>');
+document.write('<a href="contact.html">[Contacts]</a><br>');
+document.write('<a href="links.html">[Links]</a><br>');
+document.write('</p>');

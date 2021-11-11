@@ -1,0 +1,1956 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>The Crimson Talon :: An EverQuest guild on the Cazic-Thule server</title>
+<meta name="KEYWORDS" content="EverQuest, Crimson Talon Guild, Cazic-Thule Server" />
+<meta name="DESCRIPTION" content="An EverQuest guild on the Cazic-Thule server" />
+<meta name="ROBOTS" content="INDEX,FOLLOW" />
+<meta name="resource-type" content="document" />
+<meta http-equiv="expires" content="0" />
+<meta name="author" content="The Crimson Talon" />
+<meta name="copyright" content="Copyright (c) 2001 by The Crimson Talon" />
+<meta name="revisit-after" content="1 days" />
+<meta name="distribution" content="Global" />
+<meta name="generator" content="PostNuke 0.7.2.3-Phoenix - http://postnuke.com" />
+<meta name="rating" content="General" />
+<link rel="StyleSheet" href="themes/CrimsonTalon/style/styleNN.css" type="text/css" />
+<style type="text/css">@import url("themes/CrimsonTalon/style/style.css"); </style>
+<script type="text/javascript" src="javascript/showimages.php"></script>
+
+<script type="text/javascript" src="javascript/openwindow.php?hlpfile="></script>
+
+</head>
+<body bgcolor="#000068" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+
+<!---- Copyright © 2003 Brewall Rainsinger (http://www.crimsontalon.com) ---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adscorner_t_l.gif" width="23" height="23"></td>
+<td bgcolor="#CCCCCC" width="100%"><img src="themes/CrimsonTalon/images/pixel.gif" width="23" height="23"></td>
+<td><img src="themes/CrimsonTalon/images/adscorner_t_r.gif" width="23" height="23"></td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td bgcolor="#CCCCCC">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><a href=\index.php><img src="themes/CrimsonTalon/images/logo.gif" border=0><!--replace this logo with your unique one, do not forget to specify size of your logo --></a></td>
+<td align="right"><!-- If you do not wish to activate banner, you can add your own image tag here. Be Creative! -->
+</td>
+</tr><tr><td><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="10" border="0"></td></tr>
+</table>
+</td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td colspan="3">
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1"></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="index.php">HOME</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="modules.php?op=modload&name=PNphpBB2&file=index">FORUMS(new)</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href=//www.crimsontalon.com/forum/index.php>FORUMS(old)</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="index.php?module=roster&func=main">ROSTER</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href=http://www.crimsontalon.com/modules.php?op=modload&name=gallery&file=index>SCRAPBOOK</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="modules.php?op=modload&name=Downloads&file=index">DOWNLOAD</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></td>
+</tr>
+</table>
+</td>
+<td align="right"> 
+<form action="modules.php" method="post" style="margin:0">
+<input type="hidden" name="name" value="Search">
+<input type="hidden" name="file" value="index">
+<input type="hidden" name="op" value="modload">
+<input type="hidden" name="action" value="search">
+<input type="hidden" name="overview" value="1">
+<input type="hidden" name="active_stories" value="1">
+<input type="hidden" name="bool" value="AND">
+<input type="hidden" name="stories_cat" value="">
+<input type="hidden" name="stories_topics" value="">
+<input NAME="q" TYPE="text" VALUE="" SIZE="10">&nbsp;
+<input type="submit" value="search">
+</form>
+</td>
+<td align="right"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="70%" background="themes/CrimsonTalon/images/userbg.gif"  valign="top">
+<table width="100%" border="0" cellspacing="3" cellpadding="0">
+<tr>
+<td>
+<form action="user.php" method="post" style="margin:0">
+&nbsp;<font class="user"><b>Name: </b></font>
+<input type="text" name="uname" size="8" maxlength="25">
+&nbsp;<font class="user"><b>Password: </b></font>
+<input type="password" name="pass" size="8" maxlength="20">
+&nbsp;<font class="user"><b>Remember Me: </b></font>
+<input type="checkbox" name="rememberme">
+<input type="hidden" name="module" value="NS-User">
+<input type="hidden" name="op" value="login">
+<input type="submit" value="login">
+&nbsp;<a href="user.php"><font class="user"><b>Join</b></font></a>
+</form>
+</td>
+</tr>
+</table>
+</td>
+<td background="themes/CrimsonTalon/images/timebg.gif" align="center"><font class="time">
+Oct 03, 2003 - 10:05 PM</td><td background="themes/CrimsonTalon/images/timebg.gif"><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="41" border="0"></td>
+</tr>
+</table>
+</td>
+</tr><tr>
+<td colspan="3" bgcolor="#FFFFFF"> 
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></a></td>
+<td width="150" valign="top"> 
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>CT Photos</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent"><center><a href=modules.php?set_albumName=album02&id=dragon16_vox1&op=modload&name=gallery&file=index&include=view_photo.php><img src=http://crimsontalon.com/albums/album02/dragon16_vox1.thumb.jpg width=115 height=87 border=0></a></center><br><center>Dragon Raid #16 - Vox dies yet again <br>
+August 03, 2001 </center><br><center>Album: <a href=modules.php?set_albumName=album02&op=modload&name=gallery&file=index&include=view_album.php>Crimson Talon Scrapbook</a></center></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.afterdarkstudio.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>CT Lore</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent"><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&name=Sections&file=index&req=listarticles&secid=2" title="Information about Crimson Talon.">Guild Information</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&name=Sections&file=index&req=listarticles&secid=3" title="Everquest Guides.">Guides</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&name=Search&file=index&action=search&overview=1&active_stories=1" title="Old Stories from Crimson Talon.">Old Stories</a><br /><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="modules.php?op=modload&name=gallery&file=index" title="Crimson Talon scrap book and epic gallery.">CT Scrap Book</a><br /></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.afterdarkstudio.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>EQ News Links</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent">· <a href="http://everquest.station.sony.com/">EverQuest Home</a><br>
+· <a href="http://www.planeteq.com/cazicthule/">Cazic-Thule</a><br>
+· <a href="http://www.everquestraids.com/">EverQuest Raids</a><br>
+· <a href="http://everquest.allakhazam.com/">AllaKhazam''s</a><br>
+· <a href="http://www.eqvault.net/" target="_blank">EQ Vault</a><br>
+· <a href="http://eq.stratics.com/">EQSS</a><br>
+· <a href="http://eq.crgaming.com/">EQ CastersRealm</a><br>
+· <a href="http://www.everlore.com/">EverLore</a></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.afterdarkstudio.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>EQ Class Links</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent">· <a href="http://www.attcanada.net/~reaper" target="_blank">Concert Hall (Bard)</a><br>
+· <a href="http://eq.castersrealm.com/menu/enchanter.asp" target="_blank">Enchanter</a><br>
+· <a href="http://www.eqbeastlord.com/" target="_blank">EQ Beastlord</a><br>
+· <a href="http://eqcleric.gameglow.com/" target="_blank">EQ Cleric</a><br>
+· <a href="http://www.eqdiva.com/" target="_blank">EQ Diva (Bard)</a><br>
+· <a href="http://www.eqdruids.com/" target="_blank">EQ Druids</a><br>
+· <a href="http://www.graffe.com/" target="_blank">Graffe's Wizard</a><br>
+· <a href = 
+"http://forum.magecompendium.com/tower/index.php" target="_blank">Magicians Tower</a><br>
+· <a target="_blank" href="http://www.monkly-business.com/">Monkly Business</a><br>
+· <a href="http://necro.eqclasses.com/" target="_blank">Necro</a><br>
+· <a href="http://pub13.ezboard.com/bpaladinsofnorrath" target="_blank">Paladins of Norrath</a><br>
+· <a href="http://interealms.com/ranger/" target="_blank">Ranger's Glade</a><br>
+· <a href="http://pub146.ezboard.com/bthesafehouse" target="_blank">Safehouse (Rogue)</a><br>
+· <a href="http://forums.shadowknight.org/" target="_blank">ShadowKnight.org</a><br>
+· <a href="http://interealms.com/shaman/" target="_blank">Shaman's Crucible</a><br>
+· <a href="http://steelwarrior.xwarzone.com/" target="_blank">Steel Warrior </a></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.afterdarkstudio.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>EQ Misc Links</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent">· <a href="http://www.eqatlas.com">EQ Atlas</a><br>
+· <a href="http://www.eqinterface.com">EQ Interface</a><br>
+· <a href="http://www.eqmaps.com/">EQ Maps</a><br>
+· <a href="http://maps.eq-toolbox.com/">EQ Toolbox Maps</a><br> 
+· <a href="http://www.eqrankings.com/">EQ Rankings</a><br>
+· <a href="http://www.eqtraders.com/">EQ Traders</a><br>
+· <a href="http://lucy.fnord.net/">Lucy (Spell Info)</a><br></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.afterdarkstudio.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>Who's Online</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent"><span class="pn-normal">We have 1 guest and 4 members online<br />
+<br />You are an anonymous user. You can register for free by clicking <a href="user.php">here</a></span><br /></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.afterdarkstudio.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+ </td>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="10" height="1" border="0"></a></td>
+<td width="100%" valign="top"> 
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=124&amp;mode=thread&amp;order=0&amp;thold=0">Grats Phlirtatious!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Monday, September 29, 2003 - 10:37 AM (6 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats Phlirt on reaching 65!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny"> <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=124"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=124"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=123&amp;mode=thread&amp;order=0&amp;thold=0">Kael slaughter</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Monday, September 22, 2003 - 08:28 AM (17 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">In quick order, the forces of CT slaughtered the residents of Kael. Vindi, Idol, and the Avatar of War fell.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=123"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=123"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=122&amp;mode=thread&amp;order=0&amp;thold=0">Grummus rots</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Thursday, September 18, 2003 - 02:09 PM (14 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>The forces of Crimson Talon killed Grummus this evening on our second-ever attempt at this rotting scumbag.&nbsp;&nbsp;Instead of a zerg-fest, we killed him with under 50 people (all non-VT equiped).&nbsp;&nbsp;The planar projection was rather quick and vanished in under 2 minutes.&nbsp;&nbsp;We will be killing him and other PoP bosses in the very near future.</P><P><A href="http://www.crimsontalon.com/albums/album02/grummus.jpg" target=_blank border="0"><IMG alt="Grummus&#39;s corpse rots" src="http://www.crimsontalon.com/albums/album02/grummus.thumb.jpg" border=0></A> </P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=122"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=122"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=121&amp;mode=thread&amp;order=0&amp;thold=0">Crimson Talon solves Hole Quest!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Tomwin on Saturday, September 13, 2003 - 09:06 PM (448 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>The Hole got a facelift recently and a new quest was added to the zone.&nbsp; Tomwin/Skylynn being a hole junkie took interest in solving it.&nbsp; With the help of The Safehouse community message board and guildmates Crimson Talon is the first known to solve this quest.&nbsp; Since you need research skill to attempt it Chantress took on the role of the quester and within weeks made the final combine and turned in the final item.&nbsp;You then use that to&nbsp;obtain the following items which can be turned in for each other excluding the&nbsp;Tome of the Outcast&nbsp;which you turn in for the Disenchanted Piece of Yael to make the other items.</P><P><TABLE borderColor=black cellSpacing=2 cellPadding=1 border=1><TR><TD width=150 height=70><A href="albums/album02/Tome.jpg" target="_blank"><IMG alt="Tome of the Outcast" hspace=0 src="albums/album02/Tome.thumb.jpg" align=left border=0></A></TD><TD width=150 height=70><A href="albums/album02/Piece.jpg" target="_blank"><IMG alt="Disenchanted Piece of Yael" hspace=0 src="albums/album02/Piece.thumb.jpg" align=left border=0></A></TD><TD width=150 height=70><A href="albums/album02/Gloves.jpg" target="_blank"><IMG alt="Living Stone Gloves" hspace=0 src="albums/album02/Gloves.thumb.jpg" align=left border=0></A></TD></TR><TR><TD width=150 height=70><A href="albums/album02/Cleaver.jpg" target="_blank"><IMG alt="Living Stone Cleaver" hspace=0 src="albums/album02/Cleaver.thumb.jpg" align=left border=0></A></TD><TD width=150 height=70><A href="albums/album02/Lance.jpg" target="_blank"><IMG alt="Living Stone Lancet" hspace=0 src="albums/album02/Lance.thumb.jpg" align=left border=0></A></TD><TD width=150 height=70><A href="albums/album02/Scepter.jpg" target="_blank"><IMG alt="Living Stone Scepter" hspace=0 src="albums/album02/Scepter.thumb.jpg" align=left border=0></A></TD></TR><TR><TD>&nbsp;</TD><TD width=150 height=70><A href="albums/album02/Shield.jpg" target="_blank"><IMG alt="Living Stone Shield" hspace=0 src="albums/album02/Shield.thumb.jpg" align=left border=0></A></TD><TD>&nbsp;</TD></TR></TABLE></P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=121"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=121"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=120&amp;mode=thread&amp;order=0&amp;thold=0">Riverwake is 65!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Saturday, September 13, 2003 - 03:10 PM (6 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats to Riverwake for reaching 65!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=120"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=120"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=119&amp;mode=thread&amp;order=0&amp;thold=0">VP Cleared</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: ctadmin on Wednesday, August 27, 2003 - 02:11 PM (39 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Another clearing of Veeshan&#39;s Peak, vanquishing all the residing dragons. Several nice item and spell drops for this quick raid. Excellent tactics and smart playing by the crack adventuring crew.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=119"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=119"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=118&amp;mode=thread&amp;order=0&amp;thold=0">Kenatal is 65</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Tuesday, August 26, 2003 - 11:55 AM (16 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats to Kenatal for reaching 65!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=118"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=118"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=117&amp;mode=thread&amp;order=0&amp;thold=0">BoT Tower Excursions</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Saturday, August 23, 2003 - 11:06 AM (21 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>Was a good week in BoTT for us. We killed all 4 of the tower bosses, some multiple times. A good time was had by all and many upgrades were handed out to our ranks. The major upgrades were -</P><P><STRONG>Missycat</STRONG> -&nbsp;Ornate Robe Pattern</P><P><STRONG>Thespis </STRONG>-&nbsp;Ornate Plate Breastplate Mold</P><P><STRONG>Vintersong </STRONG>-&nbsp;Ornate Leather Tunic Pattern</P><P><STRONG>Proetus, Ikana, Dakatsu</STRONG> -<STRONG>&nbsp;</STRONG>&nbsp;GreatStaff of the Four Winds</P><P><STRONG>Zoranna, Yakkai </STRONG>- Some pig sticker</P><P><STRONG>Fenik</STRONG>&nbsp;Was the first to finish Agnarr&#39;s key </P><P>Many Specterals and Runes dropped and were given out as well. Congrats to all. Job well done.</P><P></P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=117"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=117"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=116&amp;mode=thread&amp;order=0&amp;thold=0">Ring of Fear</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Valstorm on Wednesday, August 13, 2003 - 10:50 AM (24 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>The forces of Crimson Talon decided to tackle the Ring of Fear event in Cazic Thule.&nbsp;&nbsp;Grats to all the winners!</P><P>Hattrick - <A href="http://everquest.allakhazam.com/equipment/graphics19/FrightfulShroud.jpg" target=_blank>Frightful Shroud</A></P><P>Fenik - <A href="http://everquest.allakhazam.com/equipment/graphics18/fright_imbued_battlestaff.jpg" target=_blank>Fright Imbued Battlestaff</A></P><P>Kagarok - <A href="http://everquest.allakhazam.com/equipment/graphics18/ring_dreadful_dreams.jpg" target=_blank>Ring of Dreadful Dreams</A></P><P>Dragu - <A href="http://everquest.allakhazam.com/equipment/graphics18/dread_coronet.jpg" target=_blank>Dread Coronet</A></P><P>Hawkien - <A href="http://everquest.allakhazam.com/equipment/graphics19/pearlofdread.jpg" target=_blank>Pearl of Dread</A></P><P>Khallin - <A href="http://everquest.allakhazam.com/equipment/graphics19/pearlofdread.jpg" target=_blank>Pearl of Dread</A></P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=116"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=116"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=115&amp;mode=thread&amp;order=0&amp;thold=0">Temple of Veeshan</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Monday, August 11, 2003 - 09:44 AM (12 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>Temple of Veeshan went very smoothly once again at a record setting killing pace.&nbsp;&nbsp;Cleared everything within two nights and attempted Vulak on the third.&nbsp;&nbsp;Unfortunately, the script is still bugged as immediately after we started, multiple death-touching mobs spawned in addition to the regular spawns.&nbsp;&nbsp;We quickly called evac after the first few deaths, reported the bug again, and will attempt again on our next NToV rotation. </P><P><STRONG>Aaryonar</STRONG>: Reapers Ring [Imotep], 2 Rocksmasher [Hawkien, Rommell]<BR><STRONG>Ajorek the Crimson Fang: </STRONG>Melodic Charm [ROT] (1st day)<BR><STRONG>Ajorek the Crimson Fang</STRONG>: Melodic Charm [ROT] (2nd day)<BR><STRONG>Cekenar</STRONG>: Cekenar Claw [ROT]<BR><STRONG>Cyndor Lightningfang</STRONG>: Shield of Fury [Sabretta]<BR><STRONG>Dagarn the Destroyer</STRONG>: 2 Boots of the Destroyer [Brewall, Zoranna]<BR><STRONG>Eashen of the Sky</STRONG>: Mask of Sky [Sabretta], Bracelet of Sky [Sabretta]<BR><STRONG>Ikatiar the Venom</STRONG>: 2 Ancient Wyvern Hide Boots [Altus, Thespis] <BR><STRONG>Jorlleag</STRONG>: 2 Silver Chains [Yakkai, Windarii]<BR><STRONG>Koi&#39;Doken</STRONG>: Pirate Eyepatch, Siren Song [Brewall], Trident of Deep Sea [Keyra]<BR><STRONG>Lady Mirenilla</STRONG>: Mithril Boots [Shcammer], Mithril Gauntlets [Riverwake]<BR><STRONG>Lady Nevederia</STRONG>: Mask of Terror [Denor], Medal of Deep Thought [Aorthin], Cloak of Thorns [Bearrun]<BR><STRONG>Lord Feshlak</STRONG>: Sky Watchers Monacle [Barelil], Beldron Vambraces of Impiety [Lisner], Thunderstone [Perpetuary]<BR><STRONG>Lord Vyemm</STRONG>: ?<BR><STRONG>Maizren</STRONG>: Silent Fang Necklace [Ikana]<BR><STRONG>Nir&#39;Tan</STRONG>: Shield of the Dragonkind [Skylynn]<BR><STRONG>Sevalak</STRONG>: Great Spear of Dawn [Hawkien]<BR><STRONG>Zlexak</STRONG>: Windraider Belt [Thespis]<BR></P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=115"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=115"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=114&amp;mode=thread&amp;order=0&amp;thold=0">Grats Altus on dinging lvl 65!!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Perpetuary on Sunday, August 10, 2003 - 08:45 AM (25 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>Grats Altus! </P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=114"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=114"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=113&amp;mode=thread&amp;order=0&amp;thold=0">Ding!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Chiun on Saturday, August 09, 2003 - 05:44 PM (18 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Many thanks to Nikkorya for helping me through that last blue bit..At last Ding!! Chiun makes 62!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=113"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=113"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=112&amp;mode=thread&amp;order=0&amp;thold=0">GRATS to POLYNEICES for hitting 65!!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Maemura on Saturday, July 26, 2003 - 02:51 PM (33 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Congratulations to my sistah for becoming a Storm Warden this week.&nbsp;&nbsp;Yay!!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=112"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=112"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=111&amp;mode=thread&amp;order=0&amp;thold=0">The Avatar of War falls to CT</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Khandrahcir on Tuesday, July 22, 2003 - 04:56 PM (39 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">In another example of flawless execution the forces of Crimson Talon brought&nbsp;&nbsp;<B>Derakor The Vindicator</B>&nbsp;, <B>The Statue of Rallos Zek</B>, <B>The Idol of Rallos Zek </B>and the <B>The Avatar of War</B> to their combined knees.<br>Congratulations to Proetus on <FONT color=#006600><B>Flayed Barbarian Skin Leggings</B> </FONT>, Yakkai on <FONT color=#006600><B>Flayed Barbarian Hide Mask</B> </FONT>, Maxist on <FONT color=#006600><B>War Bow of Rallos Zek</B> </FONT>,&nbsp;Hawkien on <FONT color=#006600><B>Shard of Hsagra&#39;s Talisman</B> </FONT>, Khallin on <FONT color=#006600><B>Chestplate of Vindication</B> </FONT>, Greymask on <FONT color=#006600><B>Iron Scroll of War</B> </FONT>, and all the other winners.<TABLE cellSpacing=2 cellPadding=1 border=0><TR><A href="albums/album02/aow07_21_03.sized.jpg" target=_blank border="0"><IMG alt="The Avatar of War is buried" src="albums/album02/aow07_21_03.thumb.jpg" border=0></A> </TR></TABLE></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=111"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=111"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=109&amp;mode=thread&amp;order=0&amp;thold=0">Return to Sleepers Tomb</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Monday, July 14, 2003 - 11:30 AM (25 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>Our second foray into Sleepers Tomb went very well, even though we had just come off another raid and only had one cleric.&nbsp;&nbsp;Managed to kill the <STRONG>Master of the Guard</STRONG>:&nbsp;&nbsp;Ancient Prismatic Axe [Khandrahcir], Velium Fraught Shackles, and Primal Avatar.&nbsp;&nbsp;Also killed the <STRONG>Projenitor</STRONG>: Ancient Prismatic Mace [Valstorm] and an Ancient Prismatic Claymore [Tico].<BR></P><P><A href="http://www.crimsontalon.com/albums/album02/ST_Projenitor.sized.jpg"><BR><IMG alt="Opening the door to the Projenitor" hspace=0 src="http://www.crimsontalon.com/albums/album02/ST_Projenitor.thumb.jpg" align=left border=0></A></P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=109"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=109"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=108&amp;mode=thread&amp;order=0&amp;thold=0">Friday night special-</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Polyneices on Saturday, July 12, 2003 - 07:35 AM (18 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Congratulations to Dragu and Furies on completing their epics tonight!<BR>Two new Water Sprinkler of Nem Ankh for the guild. Good job on all your hard work!<BR><BR>Also Congratulations to Keyra on her Red Dragon Scale and Zoranna on her Runed Bolster Belt. After taking down the pansy <B>Zordakalicus Ragefire</B> we moved on to some better dragons in VP.<BR><BR><B>Phara Dar</B> was nice enough to drop 2 Robes of the Azure Sky for us, Infernostar and Sneeky really appreciated it. Not to mention the many spells for the guild bank.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=108"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=108"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=107&amp;mode=thread&amp;order=0&amp;thold=0">Tippe finishes 8th Shawl</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Thursday, July 10, 2003 - 10:12 AM (24 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats to Tippe for finishing the 8th Coldain shawl.&nbsp;&nbsp;An excellent turnout of guild support to help protect the dorf.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=107"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=107"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=106&amp;mode=thread&amp;order=0&amp;thold=0">Temple of Veeshan Map</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Thursday, July 10, 2003 - 10:04 AM (43 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=3"><img src="images/topics/map.gif" border="0" Alt="Map News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Brewall has finished and released his Temple of Veeshan map in the guild-only area of the website.&nbsp;&nbsp;Mapping this large zone took quite a bit of time, but the results are perhaps one of the best maps ever of this zone. Coordinates, mob locations, and an enormous amount of other information! Like other maps, it can be found in the &quot;Brewall&#39;s Maps&quot; section of the CT Lore.&nbsp;&nbsp;Enjoy!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=106"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=106"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=105&amp;mode=thread&amp;order=0&amp;thold=0">Ring War!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Thursday, July 10, 2003 - 06:06 AM (20 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">After much questing working throughout Velious, it was time to slay the giants and help the Dorfs retain control of Thurgadin. With near flawless execution, we slayed many giants and brought Narandi to his knees and succeeded!<BR><BR>Proetus - Ring of Dain Frostreaver IV<BR>Maemura - Crown of Narandi<BR>Hattrick - Choker of the Wretched<BR>Tico - Faceguard of Bentos the Hero<BR>Bearrun - Narandi&#39;s Lance<BR>Saerynn - Earring of the Frozen Skull<BR><A href="albums/album02/GD_Narandi.sized.jpg"><IMG alt="Narandi fails to conquer the dwarves." hspace=0 src="albums/album02/GD_Narandi.thumb.jpg" align=left border=0></A></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=105"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=105"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=104&amp;mode=thread&amp;order=0&amp;thold=0">IV &amp; Grieg</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Wednesday, July 09, 2003 - 08:49 AM (26 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>A few days ago we decided to go after some Luclin bosses that were long overdue for a killing.<BR><BR>IV was nice enough to drop: Vex Xi Vius [Paxton], Collar of Tavuel Xakreum [Tippe], Sunbeam Staff [Naydell], and an Orb of Lucinite [Tico].<BR><BR>Then, we ventured over to Grieg&#39;s end, killed the Servitor for another Orb [Valstorm], and then gave Grieg a makeover: Etched Bone Ulak [Ignatious], Bonecurse [Windsensai], and another Orb [Kagarok].&nbsp;&nbsp;Great night of raiding!</P><A href="albums/album02/ItraerVius.sized.jpg"><IMG alt="Itraer Vius leans over to look for his attackers." hspace=0 src="albums/album02/ItraerVius.thumb.jpg" align=left border=0></A></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=104"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=104"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=103&amp;mode=thread&amp;order=0&amp;thold=0">Ssraeshza Temple Maps</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Tuesday, July 08, 2003 - 11:35 AM (90 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=3"><img src="images/topics/map.gif" border="0" Alt="Map News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Brewall has published his maps of Ssraeshza Temple to the guild-only area of the website.&nbsp;&nbsp;Perhaps the most accurate and detailed maps available anywhere!&nbsp;&nbsp;<br>There are separate maps for basement, level 1, level 2, and level 3.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=103"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=103"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=102&amp;mode=thread&amp;order=0&amp;thold=0">Scratch one bag of bones..</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Tuesday, July 08, 2003 - 06:57 AM (34 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">After Fenik and crew spent some time collecting bones shards in Veksar, we decided to kill Fenik&#39;s little dragon, Garudon.<BR>Grats:<BR>Khandrahcir - Draconian Idol<BR>Vinterson - Tempered Gold Mask<BR>Proetus - Soulscream Belt<BR>Good Job by all!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=102"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=102"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=101&amp;mode=thread&amp;order=0&amp;thold=0">Another 65</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Ikana on Tuesday, July 08, 2003 - 06:56 AM (17 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Zoranna made 65 a couple of days ago, congratulations toe-tipping rogue.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=101"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=101"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=100&amp;mode=thread&amp;order=0&amp;thold=0">Belated Grats to Maemura!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Monday, July 07, 2003 - 08:04 PM (19 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>Grats for getting 65!</P><P></P><P>Yay im like 2 weeks late!</P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=100"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=100"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=99&amp;mode=thread&amp;order=0&amp;thold=0">Late night in Ssraeshza Temple</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Khallin on Monday, July 07, 2003 - 11:54 AM (24 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">A few late night hunters noticed Rhag Mozdezh was up, and quickly called in a few more friends.  19 of us went in, and Moz died - taking only one of us with him.<br />
+<br />
+Congrats to <br />
+Zoranna - <a href="http://everquest.allakhazam.com/db/item.html?item=8760">Smouldershank</a><br />
+Hawkien - <a href="http://everquest.allakhazam.com/db/item.html?item=8099">Crystal of Interpretation</a><br />
+Kagarok - <a href="http://everquest.allakhazam.com/db/item.html?item=8099">Crystal of Interpretation</a></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=99"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=99"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=98&amp;mode=thread&amp;order=0&amp;thold=0">More 65's</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Ikana on Monday, July 07, 2003 - 09:56 AM (19 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats to Hawkien and Dezziy on reaching 65 !</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=98"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=98"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=97&amp;mode=thread&amp;order=0&amp;thold=0">Grats!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Saturday, July 05, 2003 - 07:36 AM (20 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=4"><img src="images/topics/ding.gif" border="0" Alt="Ding News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats to Paxton for reaching 65!</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=97"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=97"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=96&amp;mode=thread&amp;order=0&amp;thold=0">Thought Horror Overfiend meets his demise</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: proetus on Thursday, July 03, 2003 - 10:35 PM (36 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">The Thought Horror Overfiend was taunting us from his lair, naturally the forces of Crimson Talon were to much for him. <BR>Grats:<BR><UL><LI>Chupacabra - Orb of lost souls</LI><LI>Naydell - A Glowing Orb of Luclinite<BR><A href="albums/album02/THO2.sized.jpg"><IMG alt="Thought Horror Overfeind" hspace=0 src="albums/album02/THO2.thumb.jpg" align=left border=0></A><A href="albums/album02/THO1.sized.jpg"><IMG alt="Thought Horror Overfeind" hspace=0 src="albums/album02/THO1.thumb.jpg" align=left border=0></A><A href="albums/album02/THO3.sized.jpg"><IMG alt="Thought Horror Overfeind" hspace=0 src="albums/album02/THO3.thumb.jpg" align=left border=0></A></LI></UL></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=96"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=96"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=95&amp;mode=thread&amp;order=0&amp;thold=0">Zionmaster finishes 8th Shawl!</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: brewall on Thursday, July 03, 2003 - 08:49 AM (20 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content">Grats to Zionmaster for finishing the 8th Coldain Shawl quest this evening!&nbsp;&nbsp;He thanks everyone in the guild for such an incredible turnout in support.</font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=95"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=95"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+<tr>
+<td align="center"><table width="100%" border="0" cellspacing="1" cellpadding="5">
+<tr>
+<td><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#CCCCCC"><tr><td>
+<font class="option"><b><a class="pn-title" href="modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=94&amp;mode=thread&amp;order=0&amp;thold=0">Torn burnt book ripped from Sev's dead body</a></b></font>
+<br><font class="tiny" size="1">
+Posted by: Ikana on Sunday, June 29, 2003 - 08:21 AM (31 Reads)
+</font><br>
+</td>
+</tr>
+</table></td></tr><tr>
+<td bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="1" border="0"></a></td>
+</tr></table>
+
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<font class="content"><a class="pn-normal" href="modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=1"><img src="images/topics/ct.gif" border="0" Alt="Crimson Talon News" align="left" hspace="5" vspace="5" ></a></font>
+<font class="content"><P>Vintersorg noticed Severilious up.&nbsp;&nbsp;The bad news for Sev was that we quickly arrived in force, bringing whole exp groups in some cases and took him down.&nbsp;&nbsp;Waited with bated breath and YES he had the book Elca needed as his last item for epic.</P><P>Grats also to Saxonlight on Mask of the Hunter.</P><P>Other drops from memory (open rolled) Pouch, GDS, Selos Drums of the March, Spirit of Oak, Talisman of Raptor.</P></font>
+<br><br><font class="content"></font>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td align="right">
+<br><font class="tiny">comments? <a class="pn-normal" href="modules.php?op=modload&amp;name=Recommend_Us&amp;file=index&amp;req=FriendSend&amp;sid=94"><img src="images/global/friend.gif" border="0" alt="Send this story to a friend"></a> <a class="pn-normal" href="print.php?sid=94"><img src="images/global/print.gif" border="0" alt="Printer friendly page"></a></font>
+</td>
+</tr>
+</table>
+</td></tr></table></td></tr></table><br>
+
+
+ </td>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="10" height="1" border="0"></a></td>
+<td width="150" valign="top"> 
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>Calendar</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent">
+<script language="JavaScript">
+<!-- overLIB configuration -->
+ol_fgcolor = "#CCCCCC"; 
+ol_bgcolor = "#FFFFFF"; 
+ol_textcolor = "#000000"; 
+ol_capcolor = "#000000";
+ol_closecolor = "#000000"; 
+ol_textfont = "Verdana,Arial,Helvetica"; 
+ol_captionfont = "Verdana,Arial,Helvetica";
+ol_captionsize = 2; 
+ol_textsize = 2; 
+ol_border = 2; 
+ol_width = 350; 
+ol_offsetx = 10; 
+ol_offsety = 10;
+ol_sticky = 0; 
+ol_close = "Close"; 
+ol_closeclick = 0; 
+ol_autostatus = 2; 
+ol_snapx = 0; 
+ol_snapy = 0;
+ol_fixx = -1; 
+ol_fixy = -1; 
+ol_background = ""; 
+ol_fgbackground = ""; 
+ol_bgbackground = "";
+ol_padxl = 1; 
+ol_padxr = 1; 
+ol_padyt = 1; 
+ol_padyb = 1; 
+ol_capicon = ""; 
+ol_hauto = 1; 
+ol_vauto = 1;
+</script>
+<div id="overDiv" style="position:absolute; top:0px; left:0px; visibility:hidden; z-index:1000;"></div>
+<script language="JavaScript" src="modules/PostCalendar/pnincludes/overlib_mini.js">
+<!-- overLIB (c) Erik Bosrup -->
+</script>
+
+<style>
+td.blockmonthon 			{ background-color: #CCCCCC; border: 1px solid #FFFFFF; }
+td.blockmonthoff 			{ background-color: #FFFFFF; border: 1px solid #CCCCCC; }
+td.blockmonthtoday  		{ background-color: #FF0000; border: 1px solid #FFFFFF; }
+td.blockmonthheader 		{ background-color: #FFFFFF; font-size: 8pt; font-weight: bold; }
+table.blockmonthheader  	{ background-color: #FFFFFF; border: 1px solid #000000; }
+.blockmonthheader a:link 	{ font-size: 8pt; font-weight: bold; text-decoration: none; padding-left: 1px; padding-right: 1px; }
+.blockmonthheader a:hover 	{ font-size: 8pt; font-weight: bold; text-decoration: none; padding-left: 1px; padding-right: 1px; }
+.blockmonthheader a:active 	{ font-size: 8pt; font-weight: bold; text-decoration: none; padding-left: 1px; padding-right: 1px; }
+.blockmonthheader a:visited	{ font-size: 8pt; font-weight: bold; text-decoration: none; padding-left: 1px; padding-right: 1px; }
+td.blockdaynames 			{ background-color: #CCCCCC; border: 1px solid #CCCCCC; font-size: 8pt; font-weight: normal; text-decoration: none; }
+table.blockcalcontainer 	{ border: 1px solid #000000; }
+td.blockcalcontainer 		{ border: 1px solid #000000; }
+td.blockweeklink 			{ background-color: #CCCCCC; border: 1px solid #CCCCCC; }
+.blockweeklink a:link 		{ color: #000000; font-size: 7pt; font-weight: normal; text-decoration: none; }
+.blockweeklink a:hover		{ color: #000000; font-size: 7pt; font-weight: normal; text-decoration: none; }
+.blockweeklink a:visited	{ color: #000000; font-size: 7pt; font-weight: normal; text-decoration: none; }
+.blockweeklink a:active 	{ color: #000000; font-size: 7pt; font-weight: normal; text-decoration: none; }
+a.blockevent-none:link		{ color: #000000; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-none:hover     { color: #000000; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-none:visited   { color: #000000; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-none:active    { color: #000000; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-one:link	  	{ color: #006600; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-one:hover	  	{ color: #006600; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-one:visited    { color: #006600; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-one:active     { color: #006600; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-two:link	  	{ color: #006666; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-two:hover	  	{ color: #006666; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-two:visited    { color: #006666; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-two:active     { color: #006666; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-three:link     { color: #0066cc; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-three:hover    { color: #0066cc; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-three:visited  { color: #0066cc; font-size: 10px; font-weight: normal; text-decoration: none; }
+a.blockevent-three:active   { color: #0066cc; font-size: 10px; font-weight: normal; text-decoration: none; }
+td.eventlink 				{ padding: 2px; font-size: 10px; font-weight: normal; text-decoration: none; }
+.eventlink a:link 			{ padding: 2px; font-size: 10px; font-weight: normal; text-decoration: none; }
+.eventlink a:hover  		{ padding: 2px; font-size: 10px; font-weight: normal; text-decoration: none; }
+.eventlink a:visited  		{ padding: 2px; font-size: 10px; font-weight: normal; text-decoration: none; }
+.eventlink a:active  		{ padding: 2px; font-size: 10px; font-weight: normal; text-decoration: none; }
+</style><table width="100%" border="0" cellpadding="5" cellspacing="0" class="blockmonthheader">
+<tr align="center">
+<td nowrap class="blockmonthheader" width="100%" align="center" valign="middle">
+<a class="blockmonthheader" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=default&viewtype=month&Date=20030901">&lt;&lt;</a>
+<a href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=month&Date=20031003&pc_username=&pc_category=&pc_topic=&print=" 
+class="blockmonthheader">October 2003</a>
+<a class="blockmonthheader" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=default&viewtype=month&Date=20031101">&gt;&gt;</a>
+</td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="blockcalcontainer">
+<tr>
+<td class="blockweeklink">&nbsp;</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">M</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">T</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">W</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">T</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">F</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">S</td>
+<td width="14%" valign="top" align="center" class="blockdaynames">S</td>
+</tr>
+<tr>
+<td class="blockweeklink" align="center" valign="middle"><a 
+href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=week&Date=20030929&pc_username=&pc_category=&pc_topic=&print=">&gt;</a></td>
+<td width="14%" class="blockmonthoff" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20030929&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20030929&pc_username=&pc_category=&pc_topic=&print=">29</a>
+</td>
+<td width="14%" class="blockmonthoff" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20030930&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20030930&pc_username=&pc_category=&pc_topic=&print=">30</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031001&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031001&pc_username=&pc_category=&pc_topic=&print=">01</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031002&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031002&pc_username=&pc_category=&pc_topic=&print=">02</a>
+</td>
+<td width="14%" class="blockmonthtoday" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031003&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031003&pc_username=&pc_category=&pc_topic=&print=">03</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031004&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031004&pc_username=&pc_category=&pc_topic=&print=">04</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031005&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031005&pc_username=&pc_category=&pc_topic=&print=">05</a>
+</td>
+</tr>
+<tr>
+<td class="blockweeklink" align="center" valign="middle"><a 
+href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=week&Date=20031006&pc_username=&pc_category=&pc_topic=&print=">&gt;</a></td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031006&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031006&pc_username=&pc_category=&pc_topic=&print=">06</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031007&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031007&pc_username=&pc_category=&pc_topic=&print=">07</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031008&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031008&pc_username=&pc_category=&pc_topic=&print=">08</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031009&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031009&pc_username=&pc_category=&pc_topic=&print=">09</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031010&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-one" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031010&pc_username=&pc_category=&pc_topic=&print="
+onMouseOver="return overlib('08:30'+' PM'+' Overking!'+' (3:00)<br'+' /><br'+' />',CAPTION,'Friday,'+' October'+' 10'+' 2003',TIMEOUT,3600,DELAY,500);" onMouseOut="nd();">10</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031011&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031011&pc_username=&pc_category=&pc_topic=&print=">11</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031012&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031012&pc_username=&pc_category=&pc_topic=&print=">12</a>
+</td>
+</tr>
+<tr>
+<td class="blockweeklink" align="center" valign="middle"><a 
+href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=week&Date=20031013&pc_username=&pc_category=&pc_topic=&print=">&gt;</a></td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031013&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031013&pc_username=&pc_category=&pc_topic=&print=">13</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031014&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031014&pc_username=&pc_category=&pc_topic=&print=">14</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031015&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031015&pc_username=&pc_category=&pc_topic=&print=">15</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031016&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031016&pc_username=&pc_category=&pc_topic=&print=">16</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031017&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031017&pc_username=&pc_category=&pc_topic=&print=">17</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031018&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031018&pc_username=&pc_category=&pc_topic=&print=">18</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031019&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031019&pc_username=&pc_category=&pc_topic=&print=">19</a>
+</td>
+</tr>
+<tr>
+<td class="blockweeklink" align="center" valign="middle"><a 
+href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=week&Date=20031020&pc_username=&pc_category=&pc_topic=&print=">&gt;</a></td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031020&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031020&pc_username=&pc_category=&pc_topic=&print=">20</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031021&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031021&pc_username=&pc_category=&pc_topic=&print=">21</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031022&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031022&pc_username=&pc_category=&pc_topic=&print=">22</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031023&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031023&pc_username=&pc_category=&pc_topic=&print=">23</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031024&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031024&pc_username=&pc_category=&pc_topic=&print=">24</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031025&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031025&pc_username=&pc_category=&pc_topic=&print=">25</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031026&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031026&pc_username=&pc_category=&pc_topic=&print=">26</a>
+</td>
+</tr>
+<tr>
+<td class="blockweeklink" align="center" valign="middle"><a 
+href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=week&Date=20031027&pc_username=&pc_category=&pc_topic=&print=">&gt;</a></td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031027&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031027&pc_username=&pc_category=&pc_topic=&print=">27</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031028&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031028&pc_username=&pc_category=&pc_topic=&print=">28</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031029&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031029&pc_username=&pc_category=&pc_topic=&print=">29</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031030&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031030&pc_username=&pc_category=&pc_topic=&print=">30</a>
+</td>
+<td width="14%" class="blockmonthon" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031031&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031031&pc_username=&pc_category=&pc_topic=&print=">31</a>
+</td>
+<td width="14%" class="blockmonthoff" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031101&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031101&pc_username=&pc_category=&pc_topic=&print=">01</a>
+</td>
+<td width="14%" class="blockmonthoff" align="center" valign="middle"
+onmouseover="this.style.backgroundColor='#ffffff';"
+onmouseout="this.style.backgroundColor='';"
+onclick="javascript:location.href='http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031102&pc_username=&pc_category=&pc_topic=&print=';">
+<a class="blockevent-none" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&tplview=&viewtype=day&Date=20031102&pc_username=&pc_category=&pc_topic=&print=">02</a>
+</td>
+</tr>
+</table>
+<br />
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="100%" align="left" valign="middle">
+<b>Today's Events</b>
+</td>
+</tr>
+</table>
+<br />
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td>No Events</td>
+</tr>
+</table>
+<br />
+
+<br />
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="100%" align="left" valign="middle">
+<b>Upcoming Events</b>
+</td>
+</tr>
+</table>
+<br />
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td style="padding: 2px;" bgcolor="#FFFFFF">
+<b style="color: #000000;">Fri, October 10 2003</b>
+</td>
+</tr>
+<tr>
+<td valign="top" align="left" class="eventlink">
+<a class="eventlink" href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=view&Date=20031010&tplview=&viewtype=details&eid=139&print=" 
+onMouseOver="return overlib('Chardok'+' for'+' Sanalorn',CAPTION,'Overking!',BGCOLOR,'#ff0000',TIMEOUT,3600,DELAY,500);" onMouseOut="nd();">08:30 PM Overking!
+(3:00)
+</a><br />
+</td>
+</tr>
+</table>
+<br /><br /><center>[ <a href="http://www.crimsontalon.com/index.php?module=PostCalendar&func=search">Search</a> ]</center></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>Your Characters</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent">
+<table width ="100%"><tr><td align="center" class="pn-sub">&#91; <A HREF="http://www.crimsontalon.com/index.php?module=character_edit">More Options</A> &#93;</td></tr></table></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+<table width="148" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_t_r.gif" width="15" height="15"></td>
+</tr>
+<tr bgcolor="#8C8C8C">
+<td>&nbsp;</td>
+<td width="100%" bgcolor="#8C8C8C"><font class="boxtitle"><b>Guild Roster Reports</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+<td width="100%" bgcolor="#CCCCCC">
+<font class="boxcontent"><strong><big>&middot;</big></strong>&nbsp;<a class="pn-normal" href="index.php?module=character_reports&amp;func=main" title="View Guild Reports">Guild Reports</a><br /></font></td>
+<td bgcolor="#CCCCCC">&nbsp;</td>
+</tr>
+<tr>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_l.gif" width="15" height="15"></td>
+<td width="100%" bgcolor="#CCCCCC"><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="15" border="0"></a></td>
+<td><img src="themes/CrimsonTalon/images/adssideblock_b_r.gif" width="15" height="15"></td>
+</tr>
+</table><br>
+
+</td>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0" border="0"></a></td>
+</tr>
+<tr>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="20" border="0"></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr></table></td></tr>
+<tr bgcolor="#FFFFFF">
+<td colspan="3">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="themes/CrimsonTalon/images/bottombg.gif">
+<tr>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="1" height="26" border="0"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3" bgcolor="#8C8C8C">
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+<tr>
+<td><a href="http://www.crimsontalon.com"><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></a></td>
+<td>
+<form action="modules.php" method="post" style="margin:0">
+<input type="hidden" name="name" value="Search">
+<input type="hidden" name="file" value="index">
+<input type="hidden" name="op" value="modload">
+<input type="hidden" name="action" value="search">
+<input type="hidden" name="overview" value="1">
+<input type="hidden" name="active_stories" value="1">
+<input type="hidden" name="bool" value="AND">
+<input type="hidden" name="stories_cat" value="">
+<input type="hidden" name="stories_topics" value="">
+<input NAME="q" TYPE="text" VALUE="" SIZE="10">&nbsp; 
+<input type="submit" value="search">
+</form>
+</td>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="index.php">HOME</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="modules.php?op=modload&name=PNphpBB2&file=index">FORUMS(new)</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href=//www.crimsontalon.com/forum/index.php>FORUMS(old)</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="index.php?module=roster&func=main">ROSTER</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href=http://www.crimsontalon.com/modules.php?op=modload&name=gallery&file=index>SCRAPBOOK</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/arrow.gif" width="4" height="8"><font class="navbutton">&nbsp;<a href="modules.php?op=modload&name=Downloads&file=index">DOWNLOAD</a>&nbsp;&nbsp;&nbsp;</font></td>
+<td><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></td>
+</tr></table></td>
+<td><img src="themes/CrimsonTalon/images/pixel.gif" width="5" height="1" border="0"></td>
+</tr></table></td></tr><tr>
+<td><img src="themes/CrimsonTalon/images/adscorner_b_l.gif" width="23" height="23"></td>
+<td bgcolor="#CCCCCC" width="100%"><img src="themes/CrimsonTalon/images/pixel.gif" width="23" height="23"></td>
+<td><img src="themes/CrimsonTalon/images/adscorner_b_r.gif" width="23" height="23"></td>
+</tr></table>
+<br>
+<font class="copyright">
+<font class="pn-sub">
+
+	Site built by Brewall - The Crimson Talon<br>
+
+	</font>
+</font></div>
+
+
+</body>
+</html>

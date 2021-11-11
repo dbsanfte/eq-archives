@@ -1,0 +1,1 @@
+<table border=0 cellpadding=2 cellspacing=0 width="540"><table width=540 border=0 valign=top><tr><td><font face="Arial,Helvetica" size=1>Weather Acquired From <a href="http://weather.yahoo.com/">Yahoo.Com</a> - Script By: <a href="http://www.4cm.com/">www.4cm.com/</a></font></td></tr></table>

@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>Welcome to Arirang~!!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+<frameset rows="*,0" frameborder="NO" border="0" framespacing="0">
+	<frame name="mainFrame" src="main.php">
+	<frame name="footFrame" scrolling="NO" noresize src="index.php?pmode=foot" >
+</frameset>
+<noframes><body bgcolor="#FFFFFF" text="#000000"></body></noframes>
+</html>

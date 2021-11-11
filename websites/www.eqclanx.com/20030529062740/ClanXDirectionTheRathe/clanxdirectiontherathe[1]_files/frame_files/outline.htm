@@ -1,0 +1,862 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 9">
+<link id=Main-File rel=Main-File href="../frame.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = document.all.item("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#FFFFFF",gOtlNormalClr="#000000",gOtlActiveClr="#FFFF00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+	if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+}
+function LoadOtl()
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	OtlObj.style.display="block"
+	OtlObj.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	for(ii=0; ii<document.all.tags("DIV").length; ii++) {
+		obj=document.all.tags("DIV").item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 ) {   
+			gChildEntryTable[count++]=obj
+			obj.children.tags("TABLE").item(0).style.borderColor=gOtlNormalClr
+		}
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=document.all.item("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=document.all.item("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+
+	obj=document.all.item("PPTB"+idx)
+	if( obj )
+		obj.style.borderLeftColor=obj.style.borderBottomColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( obj ){ ChgClr(obj,gOtlActiveClr) }
+function Out( obj ){ ChgClr(obj,gOtlHiliteClr) }
+function ObjExists( ii ) { obj=document.all("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+//-->
+</script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:5px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	padding-left:10px;}
+.CBorder
+	{position:relative;
+	width:100%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	padding-bottom:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()">
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:absolute;width:70px;visibility:hidden' align=left
+ cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span style="mso-spacerun:
+ yes">  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=right cellpadding=0 cellspacing=0>
+ <td>
+ <div id="nb_sldshwBorder" style='position:absolute;left:-20px;width:20px;
+ height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_sldshw" title="Full Screen Slide Show"
+ style='position:relative;left:-254px' width="344" height="18"></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px' width="344" height="18"></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px' width="344" height="18"></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px' width="344" height="18"></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'>Outline</div>
+ <div title="Show/Hide Outline" id="nb_otl" style='position:absolute;
+ top:0%;left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px' width="344" height="18"></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden'>
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr>
+  <td>
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" onmouseover="Over(this)"
+  id=PPTL1 onmouseout="Out(this)">The Clan X Direction</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0281.htm');" onmouseover="Over(this)"
+  id=PPTL2 onmouseout="Out(this)">An Analysis of EQ Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0292.htm');" onmouseover="Over(this)"
+  id=PPTL3 onmouseout="Out(this)">Quick-Death Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0291.htm');" onmouseover="Over(this)"
+  id=PPTL4 onmouseout="Out(this)">Family Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0293.htm');" onmouseover="Over(this)"
+  id=PPTL5 onmouseout="Out(this)">Raiding Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0294.htm');" onmouseover="Over(this)"
+  id=PPTL6 onmouseout="Out(this)">Ideal Guilds</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0290.htm');" onmouseover="Over(this)"
+  id=PPTL7 onmouseout="Out(this)">Guilds on The Rathe</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0306.htm');" onmouseover="Over(this)"
+  id=PPTL8 onmouseout="Out(this)">Is the Vision Possible?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0305.htm');" onmouseover="Over(this)"
+  id=PPTL9 onmouseout="Out(this)">What Mobs Can We Defeat?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0300.htm');" onmouseover="Over(this)"
+  id=PPTL10 onmouseout="Out(this)">This is Dangerous!<span style="mso-spacerun:
+  yes">  </span>The internal Tug-Of-War</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0296.htm');" onmouseover="Over(this)"
+  id=PPTL11 onmouseout="Out(this)">What is The Verant Barrier?</a></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0301.htm');" onmouseover="Over(this)"
+  id=PPTL12 onmouseout="Out(this)">Watch out Norrath!</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB12 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Clan X is stronger than ever!</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>&#9;The
+    City of Mist story<br>
+    When Clan X first started going to City of
+    Mist, we did everything wrong.<span style="mso-spacerun: yes">  </span>If
+    we were lucky, we might have killed the first Black Reaver during the raid,
+    seldom would we find a second one.<span style="mso-spacerun: yes"> 
+    </span>Our trains were record breaking, our CRs lasted for hours.<span
+    style="mso-spacerun: yes">  </span>But the guild was relentless, and would
+    not stop trying for the brass ring (in this case, Jade Reavers).<span
+    style="mso-spacerun: yes">  </span>We didn’t know where to stand, so we
+    fell in the water and died as the mobs pounded on us.<span
+    style="mso-spacerun: yes">  </span>And let’s not forget Rixma’s favorite
+    Blonde Blunder when she attacked Rak Ashirr and wiped out the
+    alliance.<br>
+    <br>
+    Today, Clan X OWNS this zone.<span style="mso-spacerun: yes">  </span>We
+    no longer need four groups of people to take out all 6 Black Reavers - we
+    can do it easily with two, sometimes one.<span style="mso-spacerun: yes"> 
+    </span>And we can pull all 6 Black Reavers and have to wait till the next
+    spawn cycle starts.<span style="mso-spacerun: yes">  </span>Not only that,
+    so many people in Clan X could LEAD this raid - why?<span
+    style="mso-spacerun: yes">  </span>Because you have gone to so many of them
+    that you know instinctively what to do - where to stand, when to attack,
+    when to back off, when to pull more mobs.<span style="mso-spacerun: yes"> 
+    </span>And after over 100 Black Reaver kills, Verrant has finally decided
+    to reward us with Jade Reavers.<br>
+    <br>
+    City of Mist is a SUCCESS STORY for Clan X.<span style="mso-spacerun:
+    yes">  </span>This is what you are all capable of.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Just think what is yet to come ...</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>… and how we are going to get there …</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0283.htm');" onmouseover="Over(this)"
+  id=PPTL13 onmouseout="Out(this)">Creative Thinking Session<br>
+  &amp; Discussion</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB13 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Where do YOU want Clan X to go?</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Think about where you want that orange dot to
+    move … Right? Left? Up?<span style="mso-spacerun: yes">  </span>Choose
+    Family, Raiding, or Ideal Guild focus.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Can you commit to officer responsibilities of
+    that guild structure?</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Can you commit to member responsibilities of
+    that guild structure?</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Your comments ...</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0308.htm');" onmouseover="Over(this)"
+  id=PPTL14 onmouseout="Out(this)">Our Needs<br>
+  <span style="mso-spacerun:
+  yes">  </span>March 2, 2002</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB14 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>1.<span style="mso-spacerun: yes">  </span>Let’s
+    focus on our guild relations</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Let’s make sure we are having fun again in
+    Norrath, and that our guild has high guild morale.<span
+    style="mso-spacerun: yes">  </span>People should be able to do what they
+    want while in Norrath - no mandatory raiding.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Restrict Official Raiding - too may raids
+    scheduled - some are burnt out on raiding.<span style="mso-spacerun: yes"> 
+    </span>Max official raids scheduled monthly are 2 Planes Raids, 2 Final
+    Epic Mobs, 4 Velious Faction/Quests, no more than 2 raids per day scheduled
+    on the calendar, impromptu raids encouraged.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>YOUR 2 Days a week - No official raids will be
+    scheduled on these two days - members are encouraged to do whatever it is
+    they like best.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Focus on Leveling our Members - people want
+    experience - let’s give them that.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Officers to attend scheduled raids (if they can
+    - since we are reducing official raids)</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Chain of Command - bring issues to your officers
+    - don’t take all issues to Rixma.<span style="mso-spacerun: yes"> 
+    </span>Rixma’s role is more like the CEO of a company dealing with
+    strategic planning, hence the guild leader, BUT she is equal in power to
+    the rest of the officers.<span style="mso-spacerun: yes">  </span>Members
+    know who the officers are!</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Problem members will be addressed immediately
+    and put on probation for causing conflicts.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0303.htm');" onmouseover="Over(this)"
+  id=PPTL15 onmouseout="Out(this)">Our Progress<br>
+  <span
+  style="mso-spacerun: yes">  </span>May 6, 2002</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB15 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>PROGRESS</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Website</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Members page automated</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Flash page completed</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Raid Leaders at all raids</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Calendar updated regularly</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Screenshots page – Glanois</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>News page – Glanois, Gebi</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Links page - Gneiss</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>The Epic Quest Project - Database</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Rogue, Shaman, Tracking</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Look at progress at next meeting</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Bank &amp; Resist Gear</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>4 banks set up on Guild Magic</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Bank rules posted on web site</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Ubercyrus to create bank database</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>New Recruiting Processes Published</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Alliance Council Meetings going strong</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0307.htm');" onmouseover="Over(this)"
+  id=PPTL16 onmouseout="Out(this)">Our Progress<br>
+  <span
+  style="mso-spacerun: yes">  </span>July 1, 2002</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB16 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>PROGRESS</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Experience Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Leveled people in 8 classes to 57+</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Recruiting Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Held Xtravaganza – good marketing for new
+    recruits</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Established good interviewing and recruiting
+    routine.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Item Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Allurra has set up Chardok raid – to be done on
+    Thursday, June 27<sup>th</sup>.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Skill Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Uphoria successful puller</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Lana received class training from Tashim and has
+    started on her epic</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Raid leader training?</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0309.htm');" onmouseover="Over(this)"
+  id=PPTL17 onmouseout="Out(this)">Our Progress<br>
+  <span
+  style="mso-spacerun: yes">  </span>August 26, 2002</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB17 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>PROGRESS<br>
+    Experience Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>11 Classes in Clan X have one or more people 57+</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Recruiting Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Selective recruiting shown increased application
+    traffic and guild reputation</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Item Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Cleric click stick rewarded to Allurra – WOOT!</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Epic focus has proven successful – 20 epics now
+    awarded in guild.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Skill Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Monks trained by Sulpicious</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Teamwork Progress</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Rixma kidnapping event helped teamwork</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Loot rules created for Clan X alone</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Hate and Fear raids helping build team
+    confidence</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Kael raids helping build tank and cleric gear,
+    and building team confidence.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='display:none'><a href=master15.htm></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master16.htm></a><a href=master16.xml></a><a
+href=master02.htm></a><a href=pres.xml></a><a href=slide0001.htm></a><a
+href="master16_background.gif"></a><a href="master16_image001.gif"></a><a
+href="master16_image002.gif"></a><a href="slide0001_image003.gif"></a><a
+href=slide0281.htm></a><a href="master15_background.gif"></a><a
+href="master15_image004.gif"></a><a href="master15_image005.gif"></a><a
+href="slide0281_image006.gif"></a><a href="slide0281_image007.gif"></a><a
+href="slide0281_image008.gif"></a><a href="slide0281_image009.gif"></a><a
+href=slide0292.htm></a><a href="slide0292_image010.gif"></a><a
+href="slide0292_image011.gif"></a><a href=slide0291.htm></a><a
+href="slide0291_image012.gif"></a><a href=slide0293.htm></a><a
+href="slide0293_image013.gif"></a><a href=slide0294.htm></a><a
+href="slide0294_image014.gif"></a><a href=slide0290.htm></a><a
+href=slide0290.xml></a><a href="slide0290_image015.gif"></a><a
+href="slide0290_image016.gif"></a><a href="slide0290_image017.gif"></a><a
+href="slide0290_image018.gif"></a><a href="slide0290_image019.gif"></a><a
+href="slide0290_image020.gif"></a><a href="slide0290_image021.gif"></a><a
+href="slide0290_image022.gif"></a><a href="slide0290_image023.gif"></a><a
+href="slide0290_image024.gif"></a><a href="slide0290_image025.gif"></a><a
+href="slide0290_image026.gif"></a><a href="slide0290_image027.gif"></a><a
+href="slide0290_image028.gif"></a><a href="slide0290_image029.gif"></a><a
+href="slide0290_image030.gif"></a><a href="slide0290_image031.gif"></a><a
+href="slide0290_image032.gif"></a><a href="slide0290_image033.gif"></a><a
+href="slide0290_image034.gif"></a><a href="slide0290_image035.gif"></a><a
+href="slide0290_image036.gif"></a><a href="slide0290_image037.gif"></a><a
+href="slide0290_image038.gif"></a><a href="slide0290_image039.gif"></a><a
+href="slide0290_image040.gif"></a><a href="slide0290_image041.gif"></a><a
+href="slide0290_image042.gif"></a><a href="slide0290_image043.gif"></a><a
+href="slide0290_image044.gif"></a><a href="slide0290_image045.gif"></a><a
+href=slide0306.htm></a><a href=slide0306.xml></a><a
+href="slide0306_image046.gif"></a><a href="slide0306_image047.gif"></a><a
+href="slide0306_image048.gif"></a><a href="slide0306_image049.gif"></a><a
+href="slide0306_image050.gif"></a><a href="slide0306_image051.gif"></a><a
+href="slide0306_image052.gif"></a><a href="slide0306_image053.gif"></a><a
+href="slide0306_image054.gif"></a><a href="slide0306_image055.gif"></a><a
+href="slide0306_image056.gif"></a><a href="slide0306_image057.gif"></a><a
+href="slide0306_image058.gif"></a><a href="slide0306_image059.gif"></a><a
+href="slide0306_image060.gif"></a><a href="slide0306_image061.gif"></a><a
+href="slide0306_image062.gif"></a><a href="slide0306_image063.gif"></a><a
+href="slide0306_image064.gif"></a><a href="slide0306_image065.gif"></a><a
+href="slide0306_image066.gif"></a><a href="slide0306_image067.gif"></a><a
+href="slide0306_image068.gif"></a><a href="slide0306_image069.gif"></a><a
+href="slide0306_image070.gif"></a><a href="slide0306_image071.gif"></a><a
+href="slide0306_image072.gif"></a><a href="slide0306_image073.gif"></a><a
+href="slide0306_image074.gif"></a><a href="slide0306_image075.gif"></a><a
+href="slide0306_image076.gif"></a><a href="slide0306_image077.gif"></a><a
+href=slide0305.htm></a><a href="slide0305_image078.gif"></a><a
+href="slide0305_image079.gif"></a><a href="slide0305_image080.gif"></a><a
+href="slide0305_image081.gif"></a><a href="slide0305_image082.gif"></a><a
+href="slide0305_image083.gif"></a><a href="slide0305_image084.gif"></a><a
+href="slide0305_image085.gif"></a><a href="slide0305_image086.png"></a><a
+href="slide0305_image087.jpg"></a><a href=slide0300.htm></a><a
+href="slide0300_image088.gif"></a><a href="slide0300_image089.gif"></a><a
+href="slide0300_image090.gif"></a><a href="slide0300_image091.gif"></a><a
+href="slide0300_image092.gif"></a><a href="slide0300_image093.gif"></a><a
+href="slide0300_image094.gif"></a><a href="slide0300_image095.gif"></a><a
+href="slide0300_image096.gif"></a><a href="slide0300_image097.gif"></a><a
+href="slide0300_image098.gif"></a><a href="slide0300_image099.gif"></a><a
+href="slide0300_image100.gif"></a><a href=slide0296.htm></a><a
+href="slide0296_image101.gif"></a><a href=slide0301.htm></a><a
+href=slide0283.htm></a><a href="slide0283_image102.gif"></a><a
+href="slide0283_image103.gif"></a><a href="slide0283_image104.gif"></a><a
+href="slide0283_image105.gif"></a><a href="slide0283_image106.gif"></a><a
+href=slide0308.htm></a><a href="slide0308_background.gif"></a><a
+href="master15_image107.gif"></a><a href="master15_image108.gif"></a><a
+href="slide0308_image109.gif"></a><a href="slide0308_image110.gif"></a><a
+href="slide0308_image111.gif"></a><a href=slide0303.htm></a><a
+href="slide0303_background.gif"></a><a href="master15_image112.gif"></a><a
+href="master15_image113.gif"></a><a href="slide0303_image114.gif"></a><a
+href="slide0303_image115.gif"></a><a href="slide0303_image116.gif"></a><a
+href=slide0307.htm></a><a href="slide0307_background.gif"></a><a
+href="master15_image117.gif"></a><a href="master15_image118.gif"></a><a
+href="slide0307_image119.gif"></a><a href="slide0307_image120.gif"></a><a
+href="slide0307_image121.gif"></a><a href=slide0309.htm></a><a
+href="slide0309_background.gif"></a><a href="master15_image122.gif"></a><a
+href="master15_image123.gif"></a><a href="slide0309_image124.gif"></a><a
+href="slide0309_image125.gif"></a><a href="slide0309_image126.gif"></a><a
+href=master01.htm></a><a href="master15_stylesheet.css"></a><a href=script.js></a><a
+href="../frame.htm"></a><a href=error.htm></a><a href=fullscreen.htm></a><a
+href=buttons.gif></a><a href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<title>Coppermine Photo Gallery - Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+
+<link rel="stylesheet" href="themes/classic/style.css" />
+<script type="text/javascript" src="scripts.js"></script>
+<!--
+$Id: template.html,v 1.1 2004/06/11 09:20:08 tarique Exp $
+-->
+</head>
+<body>
+<table width="100%" height="100%" border="0" cellpadding="20" cellspacing="20" bgcolor="#CCCCCC">
+<tr>
+        <td valign="top" bordercolor="#666666" bgcolor="#FFFFFF" style="border: 1px solid;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                       <tr>
+                                <td><a href="index.php"><img src="themes/classic/images/site_logo.png" alt="" border="0" /><br /></a></td>
+                                <td width="100%" align="center">
+                                        <h1>Coppermine Photo Gallery</h1>
+                                        <h3>Your online photo album</h3><br />
+                                                        <span class="topmenu">
+<!-- BEGIN album_list -->
+                        <a href="index.php?cat=0" title="Go to the album list">Album list</a> ::
+<!-- END album_list -->
+
+
+
+
+
+
+
+
+<!-- BEGIN login -->
+                        <a href="login.php?referer=%2Fgallery%2Findex.php">Login</a>
+<!-- END login -->
+
+                        <br />
+                        <a href="thumbnails.php?album=lastup&cat=0">Last uploads</a> ::
+                        <a href="thumbnails.php?album=lastcom&cat=0">Last comments</a> ::
+                        <a href="thumbnails.php?album=topn&cat=0">Most viewed</a> ::
+                        <a href="thumbnails.php?album=toprated&cat=0">Top rated</a> ::
+                        <a href="thumbnails.php?album=favpics">My Favorites</a> ::
+                        <a href="search.php">Search</a>
+                </span>
+                                </td>
+                        </tr>
+                </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                  <td align="center" valign="top"></td></tr>
+                 <tr> <td align="center" valign="top">
+                  </td>
+                  </tr>
+                </table>
+                <img src="images/spacer.gif" width="1" height="15" /><br />
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center" valign="top">
+                                        
+                                        
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+
+        <tr>
+                <td class="tableh1" width="80%"><b>Category</b></td>
+                <td class="tableh1" width="10%" align="center"><b>Albums</b></td>
+                <td class="tableh1" width="10%" align="center"><b>Files</b></td>
+        </tr>
+
+        <tr>
+                <td class="tableb"><table border="0"><tr><td></td><td><span class="catlink"><b><a href=index.php?cat=1>User galleries</a></b></span>This category contains albums that belong to Coppermine users.</td></tr></table></td>
+                <td class="tableb" align="center">14</td>
+                <td class="tableb" align="center">371</td>
+        </tr>
+     <!--if (isset(CAT_ALBUMS)){-->
+          <tr>
+            <td class="tableb" colspan=3></td>
+      </tr><!--};-->
+
+        <tr>
+                <td class="tableh2" colspan="3"><table border="0" ><tr><td></td><td><span class="catlink"><b><a href="index.php?cat=2">This is me... Then</a></b></span>Photos of me from different periods of time.</td></tr></table></td>
+        </tr>
+
+        <tr>
+                <td class="tableh2" colspan="3"><table border="0" ><tr><td></td><td><span class="catlink"><b><a href="index.php?cat=3">Road Trips!</a></b></span>Various places I have driven to and taken photos at or of.</td></tr></table></td>
+        </tr>
+
+        <tr>
+                <td class="tableh2" colspan="3"><table border="0" ><tr><td></td><td><img src="images/spacer.gif" width="20" height="1"></td><td></td><td><span class="catlink"><b><a href="index.php?cat=4">Birds Hill Park</a></b></span>A provincial Park in Manitoba</td></tr></table></td>
+        </tr>
+
+        <tr>
+                <td colspan="3" class="tableh1" align="center"><span class="statlink"><b><b>371</b> files in <b>14</b> albums and <b>4</b> categories with <b>0</b> comments viewed <b>747</b> times</b></span></td>
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+        <tr>
+                <td class="tableh1" colspan="4"><h2>Random files</h2></td>
+        </tr>
+
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-36"><img src="albums/lockport/thumb_img_4678.jpg" class="image" " height="101" border="0" alt="img_4678.jpg" title="Filename : img_4678.jpg
+Filesize : 101KB
+Dimensions : 640x427
+Date added : Apr 12, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-413"><img src="albums/mall_of_america_20050508/thumb_img_5006.jpg" class="image" " height="100" border="0" alt="img_5006.jpg" title="Filename : img_5006.jpg
+Filesize : 222KB
+Dimensions : 683x1024
+Date added : May 11, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-42"><img src="albums/lockport/thumb_img_4684.jpg" class="image" " height="100" border="0" alt="img_4684.jpg" title="Filename : img_4684.jpg
+Filesize : 172KB
+Dimensions : 427x640
+Date added : Apr 12, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-367"><img src="albums/birds_hill_park_20050424/thumb_img_4953.jpg" class="image" " height="101" border="0" alt="img_4953.jpg" title="Filename : img_4953.jpg
+Filesize : 180KB
+Dimensions : 640x427
+Date added : Apr 24, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-295"><img src="albums/birds_hill_park_20050424/thumb_img_4881.jpg" class="image" " height="100" border="0" alt="img_4881.jpg" title="Filename : img_4881.jpg
+Filesize : 242KB
+Dimensions : 427x640
+Date added : Apr 24, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-171"><img src="albums/river_road_night_shots/thumb_img_4756.jpg" class="image" " height="101" border="0" alt="img_4756.jpg" title="Filename : img_4756.jpg
+Filesize : 86KB
+Dimensions : 640x427
+Date added : Apr 24, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-43"><img src="albums/lockport/thumb_img_4685.jpg" class="image" " height="100" border="0" alt="img_4685.jpg" title="Filename : img_4685.jpg
+Filesize : 162KB
+Dimensions : 427x640
+Date added : Apr 12, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=random&cat=0&pos=-312"><img src="albums/birds_hill_park_20050424/thumb_img_4898.jpg" class="image" " height="101" border="0" alt="img_4898.jpg" title="Filename : img_4898.jpg
+Filesize : 256KB
+Dimensions : 640x427
+Date added : Apr 24, 2005"><br /></a>
+                                        
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+
+<!-- Start standard table -->
+<table align="center" width="100%" cellspacing="1" cellpadding="0" class="maintable">
+        <tr>
+                <td class="tableh1" colspan="4"><h2>Last additions</h2></td>
+        </tr>
+
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=0"><img src="albums/mall_of_america_20050508/thumb_img_5069.jpg" class="image" " height="100" border="0" alt="img_5069.jpg" title="Filename : img_5069.jpg
+Filesize : 341KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=1"><img src="albums/mall_of_america_20050508/thumb_img_5068.jpg" class="image" " height="100" border="0" alt="img_5068.jpg" title="Filename : img_5068.jpg
+Filesize : 357KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=2"><img src="albums/mall_of_america_20050508/thumb_img_5067.jpg" class="image" " height="100" border="0" alt="img_5067.jpg" title="Filename : img_5067.jpg
+Filesize : 356KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=3"><img src="albums/mall_of_america_20050508/thumb_img_5066.jpg" class="image" " height="100" border="0" alt="img_5066.jpg" title="Filename : img_5066.jpg
+Filesize : 321KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+        <tr>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=4"><img src="albums/mall_of_america_20050508/thumb_img_5065.jpg" class="image" " height="100" border="0" alt="img_5065.jpg" title="Filename : img_5065.jpg
+Filesize : 336KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=5"><img src="albums/mall_of_america_20050508/thumb_img_5064.jpg" class="image" " height="100" border="0" alt="img_5064.jpg" title="Filename : img_5064.jpg
+Filesize : 362KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=6"><img src="albums/mall_of_america_20050508/thumb_img_5063.jpg" class="image" " height="100" border="0" alt="img_5063.jpg" title="Filename : img_5063.jpg
+Filesize : 345KB
+Dimensions : 512x768
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        <td valign="top" class="thumbnails" width ="25%" align="center">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                                <td align="center">
+                                        <a href="displayimage.php?album=lastup&cat=0&pos=7"><img src="albums/mall_of_america_20050508/thumb_img_5062.jpg" class="image" " height="100" border="0" alt="img_5062.jpg" title="Filename : img_5062.jpg
+Filesize : 365KB
+Dimensions : 768x512
+Date added : May 11, 2005"><br /></a>
+                                        <span class="thumb_caption">May 11, 2005</span>
+                                        
+                                </td>
+                        </tr>
+                </table>
+        </td>
+
+        </tr>
+</table>
+<!-- End standard table -->
+
+        <img src="images/spacer.gif" width="1" height="17" /><br />
+<div class="footer" align="center" style="padding-top: 10px;">Powered by <a href="http://coppermine.sf.net/" target="_blank">Coppermine Photo Gallery</a></div>
+                                </td>
+                        </tr>
+                </table>
+                </td>
+        </tr>
+</table>
+<!--Coppermine Photo Gallery 1.3.2--></body>
+</html>

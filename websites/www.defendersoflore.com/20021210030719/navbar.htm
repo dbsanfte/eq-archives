@@ -1,0 +1,253 @@
+<HTML>
+<HEAD>
+<TITLE>Michael's Home Page</TITLE>
+<SCRIPT LANGUAGE = "JavaScript">
+// This is the scroll template file. All necessary items relating to
+// an implementation of a scrolling effect are located in this file.
+
+// A test variable to determine if test messages should print out or not.
+var scrollmessageFlag = false;
+// Defines/Variables to handle the scrolling style to use.
+var SCROLL_STILL = 0;
+var SCROLL_RIGHT = 1;
+// a variable to hold the current version of this file.
+var scrollverVar = "1.00";
+
+// This is a toggle function to turn on/off the module messages.
+function scrollMessages(value) {
+  scrollmessageFlag = value;
+}
+
+// This returns the current version number of this file.
+function scrollVer() {
+  if (scrollmessageFlag == true)
+    document.write(scrollverVar);
+
+  return (scrollverVar);
+}
+
+// Create an indexed array of Elements size with a length property.
+function scrollArray(Elements)
+{
+  this.length=Elements;
+    for (var x=1;x<=Elements;x++){
+      this[x]=0;
+    }
+  return this;
+}
+
+// Gets a browser platform specific delay calibration for scrolling messages.
+function scrollDelay()
+{
+  // Defaults to 500 for Mac/UNIX/etc.
+  var Delay=500;
+
+  // Windows based.
+  if (navigator.userAgent.indexOf("Win") != 0){
+    Delay=150;
+  }
+  else {
+    // XWindows.
+    if (navigator.userAgent.indexOf("X11") != 0) {
+      Delay=750;
+    }
+  }
+
+  if (scrollmessageFlag)
+    document.writeln("Scroll Delay set to "+Delay+".");
+  return Delay;
+}
+
+// Create the configuration object.
+function scrollConfiguration(messageCount)
+{
+  // Which message we're on.
+  this.num=1;
+  // Used for scrolling types.
+  this.seed=0;
+  // List of messages to display.
+  this.list=new scrollArray(messageCount);
+  // Display method indicators.
+  this.type=new scrollArray(messageCount);
+  // Browser platform specific delay.
+  this.delay=scrollDelay();
+  // System event timer.
+  this.timer=0;
+  // Timeout for urlfix functionality.
+  this.showurl=(5 * 1000);
+  // Continuously rotate messages flag (true/false).
+  this.looping=true;
+  // How long to display non-scrolling messages.
+  this.msgdisp=(5 * 1000);
+  // How many characters to size the status bar.
+  this.barwidth=100;
+
+  if (scrollmessageFlag)
+    document.writeln("Set up "+messageCount+" messages.");
+  return this;
+}
+
+// This function handles the right to left scrolling.
+function scrollmessagerighttoLeft()
+{
+  var out=" ";
+  var x=0;
+
+  if (window.config.seed <= window.config.barwidth && window.config.seed > 0) {
+    for (var x=0 ; x < window.config.seed ; x++) {
+      out+=" ";
+    }
+    out+=window.config.list[window.config.num];
+    window.config.seed--;
+    window.status=out;
+    window.config.timer=window.setTimeout("scrollmessagerighttoLeft()",window.config.delay);
+  }
+  else 
+    if (window.config.seed <= 0) {
+      if (-window.config.seed < window.config.list[window.config.num].length) {
+        out+=window.config.list[window.config.num].substring(-window.config.seed,window.config.list[window.config.num].length);
+        window.config.seed--;
+        window.status=out;
+        window.config.timer=window.setTimeout("scrollmessagerighttoLeft()",window.config.delay);
+      }
+      else {
+        window.status=" ";
+        window.config.num++;
+        window.config.timer=window.setTimeout("scrollPrint()",window.config.msgdisp);
+        }
+    }
+}
+
+// This function runs the status bar, cycling through the messages.
+function scrollPrint()
+{
+  if (window.config.num <= window.config.list.length) {
+    if (window.config.type[window.config.num] == 0) {
+      window.status=window.config.list[window.config.num];
+      window.config.num++;
+      window.clearTimeout(window.config.timer);
+      window.config.timer=window.setTimeout('scrollPrint()',window.config.msgdisp);
+    }
+    else 
+      if (window.config.type[window.config.num] == 1) {
+        window.config.seed=window.config.barwidth;
+        scrollmessagerighttoLeft();
+      }
+  }
+  else 
+    if (window.config.looping) {
+      window.config.num=1;
+      window.clearTimeout(window.config.timer);
+      window.config.timer=window.setTimeout('scrollPrint()',window.config.delay);
+    }
+}
+
+// This function sets up a message based on the incomming parms for
+// style and the string.
+function scrollSetMessage(Message, String, Style) {
+  window.config.list[Message]=String;
+  window.config.type[Message]=Style;
+}
+
+  window.config=new scrollConfiguration(3);
+  scrollSetMessage(1,"Michael Watson Information Page!",SCROLL_RIGHT);
+  scrollSetMessage(2,"Welcome to Michael's Web Page!",SCROLL_RIGHT);
+  scrollSetMessage(3,"Check out Michael's availability!",SCROLL_RIGHT);
+  browserName = navigator.appName;          
+  browserVer = parseInt(navigator.appVersion);  
+  if (browserVer >= 3) version = "n3";
+  else version = "n2";
+<!--End Browser Type ID-->
+<!--Preload On Menu-->
+  if (version == "n3") {               
+    toc1on = new Image(29, 145);            		 <!--TOP-->
+    toc1on.src = "Resources/Images/top_on.gif";              
+    toc2on = new Image(25, 145);            		 <!--INFO-->
+    toc2on.src = "Resources/Images/info_on.gif";
+    toc3on = new Image(25, 145);                    	 <!--IMAGES-->
+    toc3on.src ="Resources/Images/images_on.gif";        
+    toc4on = new Image(25, 145);           		 <!--DOWNLOAD-->
+    toc4on.src ="Resources/Images/download_on.gif";       
+    toc5on = new Image(25, 145);            		 <!--COOL SITES-->
+    toc5on.src ="Resources/Images/cool_on.gif";
+    toc6on = new Image(25, 145);            		 <!--HINTS FAQ-->
+    toc6on.src ="Resources/Images/hints_on.gif";            
+    toc7on = new Image(25, 145);            		 <!--MESSAGES-->
+    toc7on.src ="Resources/Images/messages_on.gif";
+    toc8on = new Image(25, 145);            		 <!--LIVE CHAT-->
+    toc8on.src ="Resources/Images/livechat_on.gif";
+    toc9on = new Image(25, 145);            		 <!--ORDER-->
+    toc9on.src ="Resources/Images/order_on.gif";
+<!--End PreLoad-->
+<!-- Preload Off Menu -->
+  toc1off = new Image(29, 145);    		         <!--TOP-->
+  toc1off.src = "Resources/Images/top_off.gif";           
+  toc2off = new Image(25, 145);          		 <!--INFO-->
+  toc2off.src ="Resources/Images/info_off.gif"; 
+  toc3off = new Image(25, 145);               		 <!--IMAGES-->
+  toc3off.src ="Resources/Images/images_off.gif"; 
+  toc4off = new Image(25, 145);        			 <!--DOWNLOAD-->
+  toc4off.src ="Resources/Images/download_off.gif"; 
+  toc5off = new Image(25, 145);          		 <!--Cool SItes-->
+  toc5off.src ="Resources/Images/cool_off.gif"; 
+  toc6off = new Image(25, 145);          		 <!--Hints FAQ-->
+  toc6off.src ="Resources/Images/hints_off.gif"; 
+  toc7off = new Image(25, 145);          		 <!--MESSAGES-->
+  toc7off.src ="Resources/Images/messages_off.gif"; 
+  toc8off = new Image(25, 145);          		 <!--LIVECHAT-->
+  toc8off.src ="Resources/Images/livechat_off.gif"; 
+  toc9off = new Image(25, 145);          		 <!--MERC-->
+  toc9off.src ="Resources/Images/order_off.gif";               
+}
+<!--End Preload Off Menu-->
+<!--Control-->
+function img_act(imgName) {
+  if (version == "n3") {
+    imgOn = eval(imgName + "on.src");
+    document [imgName].src = imgOn;
+  }
+}
+
+function img_inact(imgName) {
+  if (version == "n3") {
+    imgOff = eval(imgName + "off.src");
+    document [imgName].src = imgOff;
+  }
+}
+<!--End Control-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR=000000 BORDER=0 CELLSPACING=0 CELLPADDING=0 BACKGROUND="Resources/Images/navbar_bkg.gif"  TEXT=6DCEF7>
+<CENTER>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  scrollPrint()
+// -->
+</SCRIPT>
+<BR><BR><BR>
+<IMG SRC="Resources/Images/vcounter.gif" width="90" height="20">
+<BR><BR><BR><BR>
+<TABLE BORDER=0 WIDTH="150" VALIGN="TOP">
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP>
+<!--TOP-->       <IMG SRC="Resources/Images/navavail.gif" BORDER="0" width="145" height="48"><BR>
+<!--TOP       <IMG SRC="Resources/Images/navempld.gif" BORDER="0"><BR> -->
+<!--INDEX-->     <A  HREF="content.htm"      TARGET="content" onMouseover = "img_act('toc1')"  onMouseout = "img_inact('toc1')"><IMG SRC="Resources/Images/top_off.gif" WIDTH="145" HEIGHT="29" BORDER="0" NAME="toc1"><BR>
+<!--INFO-->      <A  HREF="info.htm"         TARGET="content" onMouseover = "img_act('toc2')"  onMouseout = "img_inact('toc2')"><IMG SRC="Resources/Images/info_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc2"><BR>
+<!--IMAGES-->    <A  HREF="images.htm"       TARGET="content" onMouseover = "img_act('toc3')"  onMouseout = "img_inact('toc3')"><IMG SRC="Resources/Images/images_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc3"><BR>
+<!--DOWNLOAD-->  <A  HREF="download.htm"     TARGET="content" onMouseover = "img_act('toc4')"  onMouseout = "img_inact('toc4')"><IMG SRC="Resources/Images/download_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc4"><BR>
+<!--COOL SITES--><A  HREF="links.htm"        TARGET="content" onMouseover = "img_act('toc5')"  onMouseout = "img_inact('toc5')"><IMG SRC="Resources/Images/cool_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc5"><BR>
+<!--HINTS FAQ--> <A  HREF="hints.htm"        TARGET="content" onMouseover = "img_act('toc6')"  onMouseout = "img_inact('toc6')"><IMG SRC="Resources/Images/hints_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc6"><BR>
+<!--MESSAGES-->  <A  HREF="mailto:mwatson@michaelwatson.com" TARGET="content" onMouseover = "img_act('toc7')"  onMouseout = "img_inact('toc7')"><IMG SRC="Resources/Images/messages_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc7"><BR>
+<!--LIVECHAT-->  <A  HREF="chat.htm"         TARGET="content" onMouseover = "img_act('toc8')"  onMouseout = "img_inact('toc8')"><IMG SRC="Resources/Images/livechat_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc8"><BR>
+<!--ORDER-->     <A  HREF="order.htm"        TARGET="content" onMouseover = "img_act('toc9')"  onMouseout = "img_inact('toc9')"><IMG SRC="Resources/Images/order_off.gif" WIDTH="145" HEIGHT="25" BORDER="0" NAME="toc9"><BR>
+<!--BOTTOM-->    <IMG SRC="Resources/Images/bottomnav.gif" WIDTH="145" HEIGHT="13" BORDER="0"></TD>
+</TR>
+</TABLE>
+<BR>
+<IMG SRC="Resources/Images/notepad.gif" BORDER="0" width="112" height="41">
+<BR>
+</CENTER>
+<EMBED SRC="Resources/Audio/watson.au" HIDDEN=TRUE AUTOSTART=TRUE LOOP=FALSE ALIGN=LEFT WIDTH=2 HEIGHT=2>
+</BODY>
+</HTML>

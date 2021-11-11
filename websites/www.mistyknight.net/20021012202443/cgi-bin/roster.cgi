@@ -1,0 +1,611 @@
+<html>
+
+<head>
+ 	<title>The Misty Knight Guild</title>
+ 	<!--<base HREF="http://www.mistyknight.net/beta/">-->
+ 	<style>
+ 		<!--
+ 		body
+ 		    {
+ 			font-family 	: 'X', Arial, Helvetica, X;
+ 			font-size 		: 14px;
+ 			color 			: 000000;
+ 			}
+ 		.headline
+ 			{
+ 			font-family : 'X', Arial, Helvetica, X;
+ 			font-size 	: 16px;
+ 			color 		: 333399;
+ 			font-weight : bold;
+ 			}
+ 		A.nav-link
+ 			{
+ 			font-family : 'X', Arial, Helvetica, X;
+ 			line-height : 14px;
+ 			font-size   : 16px;
+ 			}
+ 		A.nav-link:visited
+ 		    {
+ 			color           : White;
+ 			text-decoration : none;
+ 			font-family     : 'X', Arial, Helvetica, X;
+ 			}
+ 		A.nav-link:link
+ 		    {
+ 			text-decoration : none;
+ 			color : White;
+ 			}
+ 		A.nav-link-sel:link
+ 		    {
+ 			text-decoration : none;
+ 			color : Black;
+ 			}
+ 		A.nav-link-sel:visited
+ 		    {
+ 			text-decoration : none;
+ 			color : Black;
+ 			}
+ 		A.nav-link:hover
+ 		    {
+ 			text-decoration : underline;
+ 			font-family : 'X', Arial, Helvetica, X;
+ 			color : Black;
+ 			}
+ 		.nav-input
+ 		    {
+ 			font-size : 10px;
+ 			font-family : Verdana;
+ 			}
+ 		-->
+ 	</style>
+ 	<script LANGUAGE="JavaScript">
+ 		<!-- Begin
+ 		function popUp(URL)
+ 		{
+ 		day = new Date();
+ 		id = day.getTime();
+ 		eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=400,height=450');");
+ 		}
+ 		// End -->
+ 	</script>
+ </head>
+  
+
+<body leftmargin = 0 topmargin = 0 background = /beta/gfx/header/bg_purple.jpg>
+
+
+<table cellpadding = 0 cellspacing = 0 background = /beta/gfx/header/background/rm_07.jpg width = 950>
+<tr><td>
+
+	<table cellpadding = 0 cellspacing = 0>
+	<tr>
+	<td width = 30 height = 30 background = /beta/gfx/header/corner_ul_purple.jpg>&nbsp;</td>
+	<td width = 890 height = 30 background = /beta/gfx/header/row_purple.jpg>&nbsp;</td>
+	<td width = 30 height = 30 background = /beta/gfx/header/corner_ur_purple.jpg>&nbsp;</td>
+	</tr>
+
+	<tr>
+	<td width = 30 height = 120 background = /beta/gfx/header/column_purple.jpg>&nbsp;</td>
+	<td width = 890 height = 120 valign = top>
+		<table cellpadding = 0 cellspacing = 0 width = 100% height = 100%>
+		<tr><td align = left valign = top>
+		<img src = /beta/gfx/header/logo/logo_purple.gif>
+		</td>
+		<td align = right valign = bottom>
+		&nbsp;
+		</td></tr>
+		</table>
+	</td>
+	<td width = 30 height = 120 background = /beta/gfx/header/column_purple.jpg>&nbsp;</td>
+	</tr>
+
+
+	<tr>
+	<td width = 30 height = 30 background = /beta/gfx/header/corner_ll_purple.jpg>&nbsp;</td>
+	<td width = 890 height = 30 background = /beta/gfx/header/row_purple.jpg>&nbsp;</td>
+	<td width = 30 height = 30 background = /beta/gfx/header/corner_lr_purple.jpg>&nbsp;</td>
+	</tr>
+	</table>
+
+</td></tr></table>
+ 
+
+
+<!-- Page Layout Info  -->
+
+<table width = 950 cellpadding = 0 cellspacing = 0 border = 0>
+	<tr>
+		<td width = 160 valign = top align = right>
+			 
+
+
+           <table width = 100% cellpadding = 0 cellspacing = 0>
+        <form action = "/cgi-bin/login.cgi" method = "get">
+        <tr><td background = "/beta/gfx/header/leftnav.gif">
+        &nbsp;&nbsp;
+        <strong><font face = arial size = 3 color = 333399>Members</font></strong></font>
+        </td></tr>
+        <tr>
+        <td align = left background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 3 color = 000000>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>Login</strong>
+        </font></td>
+        </tr>
+        <tr>
+        <td align = left background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 2>
+        &nbsp;&nbsp;&nbsp;&nbsp;User name
+        </font></td>
+        </tr>
+        <tr>
+        <td align = left background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 2>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type = edit name = user size = 15>
+        </font></td>
+        </tr>
+        <tr>
+        <td align = left background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 2>
+        &nbsp;&nbsp;&nbsp;&nbsp;Password
+        </font></td>
+        </tr>
+        <tr>
+        <td align = left background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 2>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type = password name = pass size = 15>
+        </font></td>
+        </tr>
+        <tr>
+        <td align = right background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 2>
+        <br><input type = image src = /beta/submit.gif name = submit value = minisubmit>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </font></td>
+        </tr>
+        <tr>
+        <td align = left background = "/beta/gfx/header/leftnav.gif"><font face = arial size = 2>
+        &nbsp;&nbsp;<input type = checkbox name = hold>&nbsp;check for persistent<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login.
+        </font></td></tr></form></table>
+ <table width = 100% cellpadding = 2 cellspacing = 0>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;
+ 
+ 
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;
+ 		<strong><font class = headline>Main</font></strong></font>
+ 
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/index.shtml" class=nav-link>
+ 		<strong>Home</strong>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		<table cellpadding = 0 cellspacing = 0><tr><td width =20 height = 40>&nbsp;</td><td>
+ 		<a href = "/beta/signup.shtml" class=nav-link>
+ 		<strong>Apply for<br>Membership</font></a></strong></td></tr></table>
+ 		</a>
+ 	</td></tr>
+ 
+ </table>
+ <table width = 100% cellpadding = 2 cellspacing = 0>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;
+ 		<strong><font class = headline>Guild</font></strong></font>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/cgi-bin/eventman.cgi?time=now" class=nav-link>
+ 		<strong>Events</strong>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/cgi-bin/roster.cgi" class=nav-link>
+ 		<strong>Roster</strong>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/cgi-bin/manage_coffin.cgi?toc=1" class=nav-link>
+ 		<strong>Necrro's Coffin</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	<!--
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/signup.shtml" class=nav-link>
+ 		<strong>Grouping</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	-->
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "http://pub92.ezboard.com/bmistyknightguild" class=nav-link target = "_Blank">
+ 		<strong>Forum</strong>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/cgi-bin/screenshots.cgi" class=nav-link>
+ 		<strong>Pictures</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	<!--
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/signup.shtml" class=nav-link>
+ 		<strong>Quests</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	-->
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/cgi-bin/addnews.cgi?toc=1" class=nav-link>
+ 		<strong>News Archives</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	<!--
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/signup.shtml" class=nav-link>
+ 		<strong>Bazaar</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	-->
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/charter1.shtml" class=nav-link>
+ 		<strong>Charter</strong></font>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/cgi-bin/mkadventures.cgi?toc=1" class=nav-link>
+ 		<strong>MK Adventures</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	<!--
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/signup.shtml" class=nav-link>
+ 		<strong>Guild Politics</strong>
+ 		</a>
+ 	</td></tr>
+ 
+ 	-->
+ 
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "/beta/mistylinks.shtml" class=nav-link>
+ 		<strong>Misty Links</strong>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href = "http://www.mistyknight.net/cgi-bin/roster.cgi?sort=2" class=nav-link>
+ 		<strong>Kunark Alts</strong>
+ 		</a>
+ 	</td></tr>
+ 	<tr><td background = "/beta/gfx/header/leftnav.gif">
+ 
+  
+
+
+ 
+ 	</td></tr><tr><td height = 20 background = "/beta/gfx/header/leftnavbot.gif" valign = top><img src = "/beta/gfx/header/spacer-20.gif" border = 0></td></tr>
+ </table>
+		</td>
+		<td width = 640 valign = top align = left>
+			<table width = 100% cellpadding = 0 cellspacing = 0>
+			<tr>
+				<td width = 20>
+					&nbsp;
+				</td>
+				<td colspan = 2>
+					<br>
+					<center>
+					<table width = 500>
+					<tr>
+					<td>
+					<font class = headline>Misty Knight Guild Roster:</font><br><br>
+					Click on a character's name to visit their page.<br>
+					<br>
+						<table width = 100% cellpadding = 0 cellspacing = 0>
+						<tr>
+							<td width = 125>
+								<a href = "http://www.mistyknight.net/cgi-bin/roster.cgi?sort=0" class = nav-link><b>View Mains</b></a>
+							</td>
+							<td width = 125>
+								<a href = "http://www.mistyknight.net/cgi-bin/roster.cgi?sort=1" class = nav-link><b>View All</b></a>
+							</td>
+							<td width = 250>
+								<a href = "http://www.mistyknight.net/cgi-bin/roster.cgi?sort=2" class = nav-link><b>View Kunark Alts</b></a>
+							</td>
+						</tr>
+						<tr>
+							<td colspan = 3>
+								<a href = "http://www.mistyknight.net/cgi-bin/roster.cgi?sort=3" class = nav-link><b>Sort By Class</b></a>
+							</td>
+						</tr>
+						</table>
+					</td>
+					</tr>
+					</table>
+					<br><br>
+					<table width = 500><tr>
+            <td><font face = arial size = 3><b>Name</b></td>
+            <td><font face = arial size = 3><b>Type</b></td>
+            <td><font face = arial size = 3><b>Race</b></td>
+            <td><font face = arial size = 3><b>Class</b></td>
+            <td><font face = arial size = 3><b>Level</b></td></tr><tr><td colspan = 5><font class = headline>Member: MeJewel</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_MeJewel/_Suenan/" class = nav-link><b>Suenan</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Vah Shir</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Beastlord</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>30</td></tr><tr><td colspan = 5><font class = headline>Member: Julaene</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Julaene/_Julaene/" class = nav-link><b>Julaene</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Enchanter</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>14</td></tr><tr><td colspan = 5><font class = headline>Member: Shaleck</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Shaleck/_Shaleck_Woodknight/" class = nav-link><b>Shaleck_Woodknight</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wood Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Druid</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>51</td></tr><tr><td colspan = 5><font class = headline>Member: kylafahy</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_kylafahy/_Micheezipoofs/" class = nav-link><b>Micheezipoofs</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Halfling</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Rogue</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>25</td></tr><tr><td colspan = 5><font class = headline>Member: Aumamwena_</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Aumamwena_/_Aumamwena_/" class = nav-link><b>Aumamwena_</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Enchanter</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>47</td></tr><tr><td colspan = 5><font class = headline>Member: zaxxx69</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_zaxxx69/_Galelebla_Fasthands/" class = nav-link><b>Galelebla_Fasthands</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Monk</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>26</td></tr><tr><td colspan = 5><font class = headline>Member: raybound</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_raybound/_raybound/" class = nav-link><b>raybound</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dark Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Necromancer</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>37</td></tr><tr><td colspan = 5><font class = headline>Member: Otiswar</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Otiswar/_Otiswar/" class = nav-link><b>Otiswar</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wood Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Ranger</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>38</td></tr><tr><td colspan = 5><font class = headline>Member: chuk</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_chuk/_Aluna/" class = nav-link><b>Aluna</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wood Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Druid</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>38</td></tr><tr><td colspan = 5><font class = headline>Member: somon</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_somon/_somon/" class = nav-link><b>somon</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wood Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Bard</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>26</td></tr><tr><td colspan = 5><font class = headline>Member: Beasts_Tuneblinker</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Beasts_Tuneblinker/_BEASTS_TUNEBLINKER/" class = nav-link><b>BEASTS_TUNEBLINKER</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Vah Shir</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Bard</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>46</td></tr><tr><td colspan = 5><font class = headline>Member: Valrad</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Valrad/_Valrad/" class = nav-link><b>Valrad</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Ogre</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Shadow Knight</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>40</td></tr><tr><td colspan = 5><font class = headline>Member: KahyFahy</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_KahyFahy/_Shom/" class = nav-link><b>Shom</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dark Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Necromancer</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>23</td></tr><tr><td colspan = 5><font class = headline>Member: Darckist</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Darckist/_Darckist/" class = nav-link><b>Darckist</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Iksar</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Monk</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>34</td></tr><tr><td colspan = 5><font class = headline>Member: Guidoh</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Guidoh/_Guidoh/" class = nav-link><b>Guidoh</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Vah Shir</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Bard</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>18</td></tr><tr><td colspan = 5><font class = headline>Member: curer</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_curer/_Curer/" class = nav-link><b>Curer</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dwarf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Cleric</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>40</td></tr><tr><td colspan = 5><font class = headline>Member: Moejo</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Moejo/_Moejo_/" class = nav-link><b>Moejo_</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Erudite</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Enchanter</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>50</td></tr><tr><td colspan = 5><font class = headline>Member: nadalium</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_nadalium/_nadalium/" class = nav-link><b>nadalium</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wood Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Ranger</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>18</td></tr><tr><td colspan = 5><font class = headline>Member: larank</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_larank/_Larank/" class = nav-link><b>Larank</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Halfling</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Cleric</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>24</td></tr><tr><td colspan = 5><font class = headline>Member: Festergut</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Festergut/_Festergut/" class = nav-link><b>Festergut</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Halfling</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Druid</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>15</td></tr><tr><td colspan = 5><font class = headline>Member: Bikanen</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Bikanen/_Bikanen_Battleblade/" class = nav-link><b>Bikanen_Battleblade</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dwarf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Warrior</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>34</td></tr><tr><td colspan = 5><font class = headline>Member: Naidden</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Naidden/_Seymor/" class = nav-link><b>Seymor</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Monk</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>21</td></tr><tr><td colspan = 5><font class = headline>Member: Nertro</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Nertro/_Nertro_Skeleytamer/" class = nav-link><b>Nertro_Skeleytamer</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dark Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Necromancer</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>45</td></tr><tr><td colspan = 5><font class = headline>Member: Benjamine</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Benjamine/_Gerdari/" class = nav-link><b>Gerdari</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wood Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Bard</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>40</td></tr><tr><td colspan = 5><font class = headline>Member: Chona_Nitehealer</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Chona_Nitehealer/_Chona_Nitehealer/" class = nav-link><b>Chona_Nitehealer</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Cleric</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>39</td></tr><tr><td colspan = 5><font class = headline>Member: Dollalron</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Dollalron/_Dollalron_McBashem/" class = nav-link><b>Dollalron_McBashem</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Warrior</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>38</td></tr><tr><td colspan = 5><font class = headline>Member: silzan</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_silzan/_Silzan/" class = nav-link><b>Silzan</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dark Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Wizard</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>44</td></tr><tr><td colspan = 5><font class = headline>Member: Jazzmina</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Jazzmina/_Jazzmina/" class = nav-link><b>Jazzmina</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Bard</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>29</td></tr><tr><td colspan = 5><font class = headline>Member: BUBBA</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_BUBBA/_Mussh/" class = nav-link><b>Mussh</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Monk</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>31</td></tr><tr><td colspan = 5><font class = headline>Member: Deiggun</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Deiggun/_Deiggun/" class = nav-link><b>Deiggun</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Halfling</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Druid</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>41</td></tr><tr><td colspan = 5><font class = headline>Member: Aslar</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Aslar/_Aslar/" class = nav-link><b>Aslar</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Vah Shir</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Beastlord</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>34</td></tr><tr><td colspan = 5><font class = headline>Member: Selke</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Selke/_Selke_Smooth/" class = nav-link><b>Selke_Smooth</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Gnome</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Warrior</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>49</td></tr><tr><td colspan = 5><font class = headline>Member: mucatas</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_mucatas/_Azrexel/" class = nav-link><b>Azrexel</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Iksar</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Shadow Knight</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>43</td></tr><tr><td colspan = 5><font class = headline>Member: TalonBlade</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_TalonBlade/_Raiyden/" class = nav-link><b>Raiyden</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Monk</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>31</td></tr><tr><td colspan = 5><font class = headline>Member: Kaduri</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Kaduri/_Kaduri/" class = nav-link><b>Kaduri</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dwarf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Cleric</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>41</td></tr><tr><td colspan = 5><font class = headline>Member: Derrmerth</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Derrmerth/_Derrmerth_McDonaldson/" class = nav-link><b>Derrmerth_McDonaldson</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Barbarian</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Warrior</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>52</td></tr><tr><td colspan = 5><font class = headline>Member: chaea</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_chaea/_chaea/" class = nav-link><b>chaea</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Enchanter</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>50</td></tr><tr><td colspan = 5><font class = headline>Member: Thargon</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Thargon/_Thargon_Stonehead/" class = nav-link><b>Thargon_Stonehead</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dwarf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Cleric</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>36</td></tr><tr><td colspan = 5><font class = headline>Member: Arcticus</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Arcticus/_Arcticus/" class = nav-link><b>Arcticus</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Magician</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>26</td></tr><tr><td colspan = 5><font class = headline>Member: Tornin</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Tornin/_Tornin/" class = nav-link><b>Tornin</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dwarf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Paladin</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>46</td></tr><tr><td colspan = 5><font class = headline>Member: Raythor</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Raythor/_Raythor/" class = nav-link><b>Raythor</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Paladin</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>52</td></tr><tr><td colspan = 5><font class = headline>Member: Cashal_FoRezel</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Cashal_FoRezel/_Cashal_FoRezel/" class = nav-link><b>Cashal_FoRezel</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Cleric</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>51</td></tr><tr><td colspan = 5><font class = headline>Member: Qalamdarl</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Qalamdarl/_Qalamdarl/" class = nav-link><b>Qalamdarl</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>High Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Magician</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>53</td></tr><tr><td colspan = 5><font class = headline>Member: Vatar</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Vatar/_Vatar/" class = nav-link><b>Vatar</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Paladin</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>53</td></tr><tr><td colspan = 5><font class = headline>Member: Coppermouth</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Coppermouth/_Xzavior/" class = nav-link><b>Xzavior</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Gnome</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Magician</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>52</td></tr><tr><td colspan = 5><font class = headline>Member: Azyar</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Azyar/_Azyar/" class = nav-link><b>Azyar</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Erudite</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Magician</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>54</td></tr><tr><td colspan = 5><font class = headline>Member: Caleldor</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Caleldor/_Caleldor_Tocodelmuerte/" class = nav-link><b>Caleldor_Tocodelmuerte</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Monk</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>46</td></tr><tr><td colspan = 5><font class = headline>Member: Wupimm</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Wupimm/_Wupimm/" class = nav-link><b>Wupimm</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Barbarian</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Warrior</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>41</td></tr><tr><td colspan = 5><font class = headline>Member: Barend</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Barend/_Barend/" class = nav-link><b>Barend</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Human</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Necromancer</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>55</td></tr><tr><td colspan = 5><font class = headline>Member: necrro</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_necrro/_necrro/" class = nav-link><b>necrro</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Dark Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Necromancer</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>54</td></tr><tr><td colspan = 5><font class = headline>Member: Toddan</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Toddan/_toddan/" class = nav-link><b>toddan</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Halfling</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Druid</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>56</td></tr><tr><td colspan = 5><font class = headline>Member: Kode</td></tr><tr><td><font face = arial size = 2><font face = arial><a href = "http://www.mistyknight.net/beta/_Kode/_Kodessus/" class = nav-link><b>Kodessus</b></a></b></td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Main</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Half Elf</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>Druid</td>
+                        <td><font face = arial size = 2><font face = arial size = 3>51</td></tr></table>
+					</center>
+					<br>
+				</td>
+				<td width = 20>
+					&nbsp;
+				</td>
+			</tr>
+
+
+			</table>
+		</td>
+		<td width = 150 valign = top align = left>
+			<br>
+ <table width = 95% cellpadding = 0 cellspacing = 0>
+ <tr>
+ 	<td width = 10 height = 20>&nbsp;</td>
+ 	<td valign = top>&nbsp;</td>
+ 	<td width = 10>&nbsp;</td>
+ </tr>
+ <tr>
+ 	<td width = 5>&nbsp;</td>
+ 	<td width valign = top>
+ 	<!-- Begin Poll -->
+ 	<!--#include file = "poll.html"-->
+ 	<!-- End Poll -->
+ 	<br>
+ 	<br>
+ 	</td>
+ 	<td width = 5>&nbsp;</td>
+ </tr>
+ <tr>
+ 	<td width = 10 height = 20>&nbsp;</td>
+ 	<td valign = top>&nbsp;</td>
+ 	<td width = 10>&nbsp;</td>
+ </tr>
+ </table>
+		</td>
+	</tr>
+	<tr>
+		<td width = 950 valign = top align = left colspan = 3>
+			<br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <center><font face = Lombardic size = 4>The Misty Knight Guild</font><br>Tholuxe Paells Server<br>Code by Kode<br><br></center>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Drexor!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(2);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 10, 15, 20, 25, 31, 44, 46, 47, 48, 61, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 111, 115);
+    document.MM_Time[0][0].values = new Array(2);
+    if (ns5)
+        document.MM_Time[0][0].values[0] = new Array("341px", "351px", "361px", "372px", "382px", "391px", "400px", "408px", "415px", "421px", "426px", "425px", "423px", "422px", "420px", "420px", "420px", "420px", "419px", "418px", "417px", "416px", "414px", "410px", "398px", "382px", "364px", "344px", "324px", "305px", "287px", "280px", "274px", "268px", "262px", "257px", "252px", "248px", "244px", "240px", "236px", "233px", "230px", "227px", "222px", "221px", "219px", "218px", "221px", "225px", "228px", "232px", "237px", "241px", "246px", "251px", "257px", "263px", "270px", "278px", "286px", "290px", "295px", "299px", "304px", "308px", "313px", "318px", "323px", "328px", "333px", "338px", "343px", "349px", "355px", "360px", "366px", "372px", "377px", "383px", "388px", "393px", "398px", "403px", "407px", "411px", "416px", "420px", "424px", "428px", "431px", "435px", "439px", "442px", "444px", "446px", "448px", "452px", "456px", "460px", "464px", "470px", "470px", "466px", "462px", "457px", "452px", "447px", "442px", "437px", "433px", "428px", "425px", "422px", "420px");
+    else
+        document.MM_Time[0][0].values[0] = new Array(341,351,361,372,382,391,400,408,415,421,426,425,423,422,420,420,420,420,419,418,417,416,414,410,398,382,364,344,324,305,287,280,274,268,262,257,252,248,244,240,236,233,230,227,222,221,219,218,221,225,228,232,237,241,246,251,257,263,270,278,286,290,295,299,304,308,313,318,323,328,333,338,343,349,355,360,366,372,377,383,388,393,398,403,407,411,416,420,424,428,431,435,439,442,444,446,448,452,456,460,464,470,470,466,462,457,452,447,442,437,433,428,425,422,420);
+    document.MM_Time[0][0].values[0].prop = "left";
+    if (ns5)
+        document.MM_Time[0][0].values[1] = new Array("170px", "168px", "167px", "165px", "164px", "162px", "161px", "160px", "159px", "158px", "157px", "158px", "158px", "159px", "159px", "158px", "157px", "157px", "158px", "159px", "163px", "169px", "176px", "183px", "186px", "183px", "178px", "171px", "164px", "158px", "154px", "153px", "153px", "153px", "153px", "154px", "155px", "156px", "156px", "157px", "158px", "159px", "160px", "160px", "160px", "160px", "160px", "160px", "160px", "161px", "162px", "162px", "163px", "164px", "164px", "165px", "166px", "166px", "167px", "168px", "168px", "168px", "168px", "169px", "169px", "169px", "169px", "169px", "169px", "169px", "169px", "169px", "170px", "170px", "170px", "170px", "170px", "170px", "170px", "170px", "170px", "170px", "170px", "170px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "171px", "170px", "169px", "168px", "166px", "161px", "153px", "152px", "151px", "151px", "150px", "149px", "149px", "149px", "149px", "150px", "153px", "155px", "158px");
+    else
+        document.MM_Time[0][0].values[1] = new Array(170,168,167,165,164,162,161,160,159,158,157,158,158,159,159,158,157,157,158,159,163,169,176,183,186,183,178,171,164,158,154,153,153,153,153,154,155,156,156,157,158,159,160,160,160,160,160,160,160,161,162,162,163,164,164,165,166,166,167,168,168,168,168,169,169,169,169,169,169,169,169,169,170,170,170,170,170,170,170,170,170,170,170,170,171,171,171,171,171,171,171,171,171,171,171,171,171,170,169,168,166,161,153,152,151,151,150,149,149,149,149,150,153,155,158);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 116;
+    document.MM_Time[0][1].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 116;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#000000" text="#FFFF00" onLoad="MM_timelinePlay('Timeline1')">
+<div id="Layer1" style="position:absolute; left:341px; top:170px; width:193px; height:128px; z-index:1"><img src="../../../Archive/images/mbtitle.gif" width="295" height="116"></div>
+<div align="center">
+  <p><b><font size="5">ASHEN VENDETTA!</font></b></p>
+  <p>&nbsp;</p>
+  <p><b><font size="5">Here is my cool site, check out my l33t graphic ski11z</font></b></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><img src="http://www.gifs.net/animate/ghost.gif"></p>
+  <p><font size="5"><b>Stuff we killed this week:</b></font></p>
+  <p>Dragons</p>
+  <p>Giants</p>
+  <p>Jeldore</p>
+  <p>Dragons</p>
+  <p>&nbsp;</p>
+  <p><font size="5"><b>Loot we got:</b></font></p>
+  <p>Swords</p>
+  <p>Armor</p>
+  <p>Free passes to Captin Jinx's Catfish Museum and Seafood Resuraunt <br>
+    (4 miles past the world's largest ball of tinfoil, Highway 54)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <TITLE>Welcome to Guardians of Forever - Forum</TITLE>
+   <META HTTP-EQUIV="Expires" CONTENT="0">
+   <meta name="Description" content="">
+   <meta http-equiv="Description" content="">
+   <meta name="Keywords" content="">
+   <meta http-equiv="Keywords" content="">
+   <LINK HREF="ebolterpics.css" REL="stylesheet" TYPE="text/css">
+</HEAD>
+
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="left"><IMG alt="" border =0 height="74" src="http://www.guardiansofforever.com/images/gof_header.jpg" width="800" border="0"></td>
+	</tr>
+
+	<tr valign="top"> 
+		<td width="214" valign="top"><!--menu--> 
+    		<table border="0" cellspacing="0" cellpadding="0">
+    			<tr>
+					<td width="160" valign="top">
+						<table border="0" cellspacing="0" cellpadding="0" >
+							<tr>
+								<td background="http://www.guardiansofforever.com/images/menu_bg.jpg"><img src="http://www.guardiansofforever.com/images/menu_top.jpg" width="161" height="65" border="0" alt=""></td>
+							</tr>
+							<tr>
+								<td valign="top" width="160" background="http://www.guardiansofforever.com/images/menu_bg.jpg">
+								<IMG height=8 src="http://www.guardiansofforever.com/images/space_6.gif" width=8 border="0"><a href="http://www.guardiansofforever.com/index.php?section=2"><font face="Verdana, Arial, Sans Serif" >GOF Main Page</font></a><br>
+								<hr width="100">
+								<IMG height=8 src="http://www.guardiansofforever.com/images/space_6.gif" width=8><a class="menuTop">Guild Forums</a><br>
+								
+				<IMG height=8 src=\"http://www.guardiansofforever.com/images/space_12.gif\" width=12><a href="register.php?PHPSESSID=b6591784a2594026479cce146c262a05"><font face="Verdana, Arial, Sans Serif" >Register</font></a><br>
+			<IMG height=8 src=\"http://www.guardiansofforever.com/images/space_12.gif" width=12><a href="login.php?PHPSESSID=b6591784a2594026479cce146c262a05"><font face="Verdana, Arial, Sans Serif" >Login</font></a><br>
+			<IMG height=8 src=\"http://www.guardiansofforever.com/images/space_12.gif" width=12><A target="_parent" href="http://guardiansofforever.com/gallery/index.php"><font face="Verdana, Arial, Sans Serif" >Gallery</font></A><br>
+			<IMG height=8 src=\"http://www.guardiansofforever.com/images/space_12.gif" width=12><a href = "http://www.guardiansofforever.com/board/index.php"><font face="Verdana, Arial, Sans Serif" >Reload Forum</font></a><br>
+      
+
+				
+									
+									
+									
+								
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="http://www.guardiansofforever.com/images/menu_btm.jpg"><br>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td>
+					<!--insert forum-->
+									
+<table width="800" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="#333333"><tr><td>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="4" align="center" bgcolor="#333333">
+<tr><td bgcolor="#333333" align="left" valign="top" class="basic">
+<img src="images/gof_forum_hdr.jpg"  border="0" alt="Welcome to the Guardians of Forever Forum"></td>
+</tr>
+<tr><td bgcolor="#333333" align="left" class="basic">
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" align="left" valign="top"><tr><td class="basic">
+
+
+
+</td></tr></table>
+
+
+
+
+
+
+
+</td></tr></table>
+
+</td></tr></table>
+
+
+
+
+      <table border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor=""><img src="/gallery/images/blank_1x1.gif" height="3" width="1" alt="" border="0"><br></td></tr></table>
+   
+
+
+<table width="800" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="silver"><tr><td>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="8" align="center">
+
+<tr><td bgcolor="#000033">
+
+
+
+
+
+         <table border="0" cellspacing="0" cellpadding="0" align="right"><tr>
+
+            <td class="subheadline" valign="top">Select a member!&nbsp;&nbsp; </td>
+
+            <td>
+
+      
+      <form action="index.php" method="post"><input type="hidden" name="PHPSESSID" value="b6591784a2594026479cce146c262a05" />
+      <select name="peepname" onChange="location = 'index.php?peep=' + this.options[this.selectedIndex].value; return false;">
+      <option value="0">- - w00t! - -</option>
+   <option value="Aggador">Aggador</option>
+<option value="Aimika">Aimika</option>
+<option value="Andante">Andante</option>
+<option value="Aydrian">Aydrian</option>
+<option value="Barthalamu">Barthalamu</option>
+<option value="Beeg">Beeg</option>
+<option value="Belic">Belic</option>
+<option value="Braxtor">Braxtor</option>
+<option value="Charmda">Charmda</option>
+<option value="Damos">Damos</option>
+<option value="Danadek">Danadek</option>
+<option value="Danya">Danya</option>
+<option value="dovefoot">dovefoot</option>
+<option value="Dyse">Dyse</option>
+<option value="Ezuna">Ezuna</option>
+<option value="Feydakin">Feydakin</option>
+<option value="Galex">Galex</option>
+<option value="Gofizz">Gofizz</option>
+<option value="Gurl">Gurl</option>
+<option value="Harigrd">Harigrd</option>
+<option value="Healinand">Healinand</option>
+<option value="Icethorn">Icethorn</option>
+<option value="Jantzen">Jantzen</option>
+<option value="Jeany">Jeany</option>
+<option value="kanrae">kanrae</option>
+<option value="Kazhidea">Kazhidea</option>
+<option value="Khanh">Khanh</option>
+<option value="Kikamek">Kikamek</option>
+<option value="Kitathas">Kitathas</option>
+<option value="Linatte">Linatte</option>
+<option value="Linatte+is+my+port+pimp">Linatte is my port pimp</option>
+<option value="Lineart">Lineart</option>
+<option value="Loani">Loani</option>
+<option value="Loveknife">Loveknife</option>
+<option value="Maitai">Maitai</option>
+<option value="Meats">Meats</option>
+<option value="Minlas">Minlas</option>
+<option value="Monoclypsus">Monoclypsus</option>
+<option value="Mystii">Mystii</option>
+<option value="Nikelty">Nikelty</option>
+<option value="Nikiita">Nikiita</option>
+<option value="Noka">Noka</option>
+<option value="Nyxxt">Nyxxt</option>
+<option value="Oogurgar">Oogurgar</option>
+<option value="Percius">Percius</option>
+<option value="Ponelicus">Ponelicus</option>
+<option value="Qrys">Qrys</option>
+<option value="Quarate">Quarate</option>
+<option value="Quist">Quist</option>
+<option value="Ratepe">Ratepe</option>
+<option value="Reathor">Reathor</option>
+<option value="Saintess">Saintess</option>
+<option value="Seoman">Seoman</option>
+<option value="Shmash+Anbash">Shmash Anbash</option>
+<option value="Shyann">Shyann</option>
+<option value="Svea">Svea</option>
+<option value="Terrix">Terrix</option>
+<option value="Test">Test</option>
+<option value="Thrakkan">Thrakkan</option>
+<option value="Thunderforge">Thunderforge</option>
+<option value="Timanou">Timanou</option>
+<option value="Titanjay">Titanjay</option>
+<option value="Tlaini">Tlaini</option>
+<option value="Tuarloth">Tuarloth</option>
+<option value="Waila">Waila</option>
+<option value="Walen">Walen</option>
+<option value="Warlaan">Warlaan</option>
+<option value="Wompit">Wompit</option>
+<option value="Wujihn">Wujihn</option>
+
+      </select>
+      </form>
+   
+
+            </td>
+
+         </tr></table>
+
+         <br clear="all">
+
+      
+<!-- Page Content -->
+
+<div align="center">
+<img src="images/bigmuffin.jpg"  border="0" alt="roxxor j00, beeyotch!"></div>
+
+<!-- End Page Content -->
+</td></tr></table>
+</td></tr></table>
+<center>
+			<TABLE cellSpacing=0 cellPadding=0 align=center border=0>
+			<TR>
+			<TD align=middle colSpan=6><br><hr width="250" size="1" noshade>
+			Site Design by <A href="mailto:linatte@97digital.com">Linatte Webranger</A></TD>
+			</TR>
+			<TR>
+			<TD align=middle colSpan=6>© 2001 <A href="http://www.guardiansofforever.com">guardiansofforever.com</A>. All rights reserved.</TD>
+			</TR>
+			
+			</TABLE></center><br>
+			<br>
+
+
+
+</BODY>
+</HTML>

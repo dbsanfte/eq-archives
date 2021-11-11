@@ -1,0 +1,140 @@
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="includes/base.css">
+<title>Defiant of Vallon Zek</title>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+
+<table width="100%" border="0">
+	<tr>
+		<td width="200" height="80">
+			<img src="images/logo.jpg" border="0" WIDTH="200" HEIGHT="80">			
+		</td>
+		<td align="center">
+		
+		<a href='login.asp' target='_top'>Members Login</a>
+		
+		</td>  			
+	</tr>
+</table>
+ 
+<table width="100%" border="0" cellspacing="2" cellpadding="0" bordercolor="#000000" align="center">
+  <tr>
+    <td width="25%" class="menuitem"> 
+      <div align="center"><a href="default.asp" target="_top">News</a></div>
+    </td>
+    <td width="25%" class="menuitem"> 
+      <div align="center"><a>Events (N/A)</a></div>
+    </td>
+    <td width="25%" class="menuitem"> 
+      <div align="center"><a href="memberlist.asp" target="_top">Member List</a></div>
+    </td>
+    <td width="25%" class="menuitem"> 
+      <div align="center"><a href="http://pub122.ezboard.com/bdefiantvz" target="_blank">Message 
+        Boards</a></div>
+    </td>
+  </tr>
+</table>
+
+<div class='column'>
+<div class='newsdate'>5/28/2004 -- Posted by: Locale</div>
+<div class='newsbody'>
+I am the very model of a modern major general<br>
+<br>
+-Locale
+</div>
+</div><br>
+
+<div class='column'>
+<div class='newsdate'>5/25/2004 -- Posted by: Debt</div>
+<div class='newsbody'>
+"I need full power!"<br>
+<br>
+"I'm giving it all she's got"<br>
+<br>
+<hr width="25%" align="left"><br>
+<br>
+Site is back up, again... hopefully all router (UUnet ;p) and other issues are fixed for good.
+</div>
+</div><br>
+
+<div class='column'>
+<div class='newsdate'>4/30/2004 -- Posted by: Debt</div>
+<div class='newsbody'>
+Site is back up, quit yer whining<br>
+<br>
+-Debt
+</div>
+</div><br>
+
+<div class='column'>
+<div class='newsdate'>4/2/2004 -- Posted by: Vixie</div>
+<div class='newsbody'>
+Well I have good news and bad news.<br>
+<br>
+The good news is we've continued progressing through GoD, we have been doing Ikk trials sporadically and all has been going well in that regards.<br>
+<br>
+Unfortunately I also have some sad news...<br>
+<br>
+We recently lost a warrior who we have all grown <br>
+very close to. He was a warrior like no other, and<br>
+we had our misgivings about him. He is a darkie<br>
+which always made people pause at the time he was<br>
+invited, and he had a background no one was too<br>
+sure about. But he took a spot in our hearts and<br>
+will not be soon forgotten. His absense leaves a<br>
+hole in defiant hearts that no other I think will<br>
+be able to fill. We will honor his memory, and <br>
+cherish the experiences we shared with him and <br>
+hold them close to us as we continue our EQ <br>
+journey.<br>
+<br>
+To him I'd like to dedicate this update, and tell<br>
+him that because he transferred to Kane Bayle, he<br>
+has not been forgotten.<br>
+<br>
+We will remember you always and forever.<br>
+<br>
+It seems like just yesterday you entered our ranks<br>
+asked for every piece of loot that dropped and<br>
+left us. <br>
+<br>
+We will be cycling some grief concillors around<br>
+during raids to help our members cope with this.<br>
+<br>
+Also Bonuzz's whorehouse will be having a special<br>
+on transvestite gnome hookers, which are a<br>
+favorite of many defiants.<br>
+<br>
+Its all about healing the pain<br>
+<br><br>
+<br><br>
+<center><img src="http://members.shaw.ca/shatter/kane1.JPG"><br>
+<br><br>
+<img src="http://members.shaw.ca/shatter/kane2.JPG"><br>
+<br><br>
+<br>
+<img src="http://members.shaw.ca/shatter/hapie.JPG"><br>
+<br></center><br>
+<br>
+Also lost is the unidentified caster that was lodged in his ass, who had to transfer since we were unable to remove him. Trolls have a colon like cement unfortunately.<br>
+<br>
+<br>
+SWEETDREAM is back too! Which is important because Sweet is supernifty and was terribly missed and we are thrilled to see him again. <br>
+<br>
+Other than that not much new, just lootwhorin, drama and people AE TLin from us. I had a funny screenshot of: <br>
+"Rubiness Runnin to PoEb" <br>
+"Rubiness healed and zoning back" <br>
+"Rubiness LOW!" <br>
+"Rubiness zoning to PoEb!"<br>
+"Rubiness sliced in PoEb! damn zoned"<br>
+"Rubiness low in PoEA!"<br>
+"Zoned to PoEb!"<br>
+<br>
+etc but somehow I lost it, which is a shame cause it was really kinda funny =/
+</div>
+</div><br>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ <title>Mor Do Kuli</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+ <meta name="author" content="Jiří Lukáš (phpRS), Lubomír Kupka">
+ <meta name="category" content="game">
+ <meta http-equiv="Cache-Control" content="no-cache">
+ <link rel="stylesheet" href="image/eqskin/eqskin.css" type="text/css">
+<script language="JavaScript1.2" src="okna.js" type="text/javascript"></script>
+</head>
+
+<body BACKGROUND="image/eqskin/bottom_bg.jpg">
+<div class="zahlavi">
+<table align="center"><tr>
+<td valign="middle"><img src="image/eqskin/mdk1.jpg" border=0 width=750 height=122 Alt="MDK"></td>
+<td valign="middle">
+<!-- Misto pro banner -->
+<center></center>
+<!-- Konec Misto pro banner -->
+</td>
+</tr></table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<form action="search.php" method="get">
+<tr><td bgcolor="#cc9900" height="1" colspan="3"></td></tr>
+<tr><td height="2" colspan="3"></td></tr>
+<tr height="30" valign="middle">
+<td bgcolor="#0A152B" align="left" width="200" class="z">Dnešní datum: 07. 01. 2006&nbsp;&nbsp;</td>
+<td bgcolor="#0A152B" align="center" class="z">| <A HREF="index.php" TITLE="Hlavní domovská stránka">Hlavní stránka</A> | <A HREF="index.php?akce=temata" TITLE="Úplný seznam rubrik">Seznam rubrik</A> | <A HREF="http://forum.imperium.cz/default.asp?CAT_ID=22" TITLE="Diskusní forum o EQ" target=_blank>Forum EQ</A> | <A HREF="index.php?akce=linky" TITLE="Sekce odkazů">Odkazy</A> |</td>
+<td bgcolor="#0A152B" align="right" valign="middle"><input type="text" name="rstext" size="15" class="formular"/> &nbsp; <INPUT TYPE=image align=absmiddle border=0 TITLE="Vyhledávání ve všech uveřejněných článcích" src="image/eqskin/search_cz.gif">&nbsp;</td>
+</tr>
+<tr><td height="2" colspan="3"></td></tr>
+<tr><td bgcolor="#cc9900" height="1" colspan="3"></td></tr>
+</form>
+</table>
+<br />
+</div>
+<!-- Telo HTML -->
+<table border="0" class="lay_tabulka">
+<tr>
+<td width="180" class="lay_sl">
+<!-- Blok -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor="#035D8A" border=0><TR><TD>
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#000000" border="0" align="center"><tr>
+<TD width="36" align="left"><IMG height=8 src="image/eqskin/c_lt.gif" width=36 border=0></TD>
+<td class="biltucne" align="center">Mé menu</td>
+<TD width="36" align="right"><IMG height=8 src="image/eqskin/c_rt.gif" width=36 border=0></TD>
+</tr></table>
+<table cellSpacing="0" cellPadding="3" width="100%" bgColor="#0A152B" border="0"><tr><td width="10">&nbsp;</td><td class="z">
+Neznámý čtenář</td></tr></table>
+</TD></TR></TABLE><font class="zsmall"><br></font><!-- Blok -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor="#035D8A" border=0><TR><TD>
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#000000" border="0" align="center"><tr>
+<TD width="36" align="left"><IMG height=8 src="image/eqskin/c_lt.gif" width=36 border=0></TD>
+<td class="biltucne" align="center">Hlavní menu</td>
+<TD width="36" align="right"><IMG height=8 src="image/eqskin/c_rt.gif" width=36 border=0></TD>
+</tr></table>
+<table cellSpacing="0" cellPadding="3" width="100%" bgColor="#0A152B" border="0"><tr><td class="z">
+<LI><A HREF="index.php" TITLE="Hlavní domovská stránka">Hlavní stránka</A></LI>
+<LI><A HREF="index.php?akce=temata" TITLE="Úplný seznam rubrik">Seznam rubrik</A></LI>
+<LI><A HREF="download.php" TITLE="Download sekce">Download</A></LI>
+<LI><A HREF="index.php?akce=linky" TITLE="Sekce odkazů">Odkazy</A></LI>
+<LI><A HREF="index.php?akce=statistika" TITLE="Žebříček 15 nejčtenějších článků">TOP 15</A><br><br></LI>
+<LI><A HREF="kforum.php" TITLE="Interní forum">Interní forum</A></LI>
+<LI><A HREF="chars.php" TITLE="Seznam charakterů v guildě">Seznam guildy</A></LI>
+<LI><A HREF="gallery.php?akce=index" TITLE="Galerie">Galerie</A><br><br></LI>
+<LI><A HREF="http://forum.imperium.cz/default.asp?CAT_ID=22" TITLE="Diskusní forum o EQ" target=_blank>Forum EQ</A></LI>
+<LI><A HREF="http://pub34.ezboard.com/bkanebayleforums" TITLE="Diskusní forum serveru Kane Bayle" target=_blank>Forum Kane Bayle</A><br><br></LI>
+<LI><A HREF="readers.php" TITLE="Přihlášení">Přihlášení</A></LI>
+<LI><A HREF="search.php" TITLE="Rozšířené vyhledávání">Rozšířené vyhledávání</A></LI>
+</td></tr></table>
+</TD></TR></TABLE><font class="zsmall"><br></font><!-- Blok -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor="#035D8A" border=0><TR><TD>
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#000000" border="0" align="center"><tr>
+<TD width="36" align="left"><IMG height=8 src="image/eqskin/c_lt.gif" width=36 border=0></TD>
+<td class="biltucne" align="center">Přehled akcí</td>
+<TD width="36" align="right"><IMG height=8 src="image/eqskin/c_rt.gif" width=36 border=0></TD>
+</tr></table>
+<table cellSpacing="0" cellPadding="3" width="100%" bgColor="#0A152B" border="0"><tr><td class="z">
+<p align="center"><b><span class='novtext'>Databáze je prázdná!</span></b></p>
+</td></tr></table>
+</TD></TR></TABLE><font class="zsmall"><br></font><!-- Blok -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor="#035D8A" border=0><TR><TD>
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#000000" border="0" align="center"><tr>
+<TD width="36" align="left"><IMG height=8 src="image/eqskin/c_lt.gif" width=36 border=0></TD>
+<td class="biltucne" align="center">Kalendář</td>
+<TD width="36" align="right"><IMG height=8 src="image/eqskin/c_rt.gif" width=36 border=0></TD>
+</tr></table>
+<table cellSpacing="0" cellPadding="3" width="100%" bgColor="#0A152B" border="0"><tr><td class="z">
+<table border="1" align="center" cellspacing="0" cellpadding="1">
+<tr class="kaltext"><td colspan="7" align="center"><b><a href="search.php?kalendarmes=12&kalendarrok=2005&rsod=2005-12-1 00:00:01&rsdo=2005-12-31 23:59:59&rstext=all-phpRS-all">&lt;&lt;</a>&nbsp;
+<a href="search.php?kalendarmes=01&kalendarrok=2006&rsod=2006-01-1 00:00:01&rsdo=2006-01-31 23:59:59&rstext=all-phpRS-all">Leden</a>
+&nbsp;<a href="search.php?kalendarmes=02&kalendarrok=2006&rsod=2006-02-1 00:00:01&rsdo=2006-02-28 23:59:59&rstext=all-phpRS-all">&gt;&gt;</a></b></td></tr>
+<tr class="kaltext"><td>Po</td><td>Út</td><td>St</td><td>Čt</td><td>Pá</td><td>So</td><td>Ne</td></tr>
+<tr class="kaltext"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td align="center">1</td></tr>
+<tr class="kaltext"><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center" class="kaldnesni"><a href="index.php">7</a></td><td align="center">8</td></tr>
+<tr class="kaltext"><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td></tr>
+<tr class="kaltext"><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td></tr>
+<tr class="kaltext"><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td></tr>
+<tr class="kaltext"><td align="center">30</td><td align="center">31</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</td></tr></table>
+</TD></TR></TABLE><font class="zsmall"><br></font><!-- Blok -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor="#035D8A" border=0><TR><TD>
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#000000" border="0" align="center"><tr>
+<TD width="36" align="left"><IMG height=8 src="image/eqskin/c_lt.gif" width=36 border=0></TD>
+<td class="biltucne" align="center">Údržba</td>
+<TD width="36" align="right"><IMG height=8 src="image/eqskin/c_rt.gif" width=36 border=0></TD>
+</tr></table>
+<table cellSpacing="0" cellPadding="3" width="100%" bgColor="#0A152B" border="0"><tr><td class="z">
+<LI><A HREF="admin.html" TITLE="Vstup pro admina" target="_blank">Vstup Admin</A></LI>
+<LI><A HREF="writer.html" TITLE="Vstup pro autora" target="_blank">Vstup Autor</A></LI></td></tr></table>
+</TD></TR></TABLE><font class="zsmall"><br></font><!-- Blok -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor="#035D8A" border=0><TR><TD>
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#000000" border="0" align="center"><tr>
+<TD width="36" align="left"><IMG height=8 src="image/eqskin/c_lt.gif" width=36 border=0></TD>
+<td class="biltucne" align="center">Návštěvy</td>
+<TD width="36" align="right"><IMG height=8 src="image/eqskin/c_rt.gif" width=36 border=0></TD>
+</tr></table>
+<table cellSpacing="0" cellPadding="3" width="100%" bgColor="#0A152B" border="0"><tr><td class="z">
+<center><a href="http://www.toplist.cz/cgi-bin/toplist.asp?search=MDK+-&a=s&kat=0" target="_blank"><IMG
+SRC="http://www.toplist.cz/count.asp?logo=bc&ID=50543&start=0" border="0" width="88" height="120"></a>
+<br>
+<a href="http://www.toplist.cz/cgi-bin/stat.asp?menu=4096&menu=64&menu=1024&menu=32&menu=8192&kdy=dnes&id=50543" target="_blank">Podrobnosti</a></center></td></tr></table>
+</TD></TR></TABLE><font class="zsmall"><br></font></td>
+<td class="lay_slhlavni">
+<div class="modryram">
+<table align="center"><tr><td class="z">
+<p class="nadpis">Download sekce</p>
+<p><table border="0" align="center">
+<tr class="z"><td align="center"><b><a href="download.php?sekce=2">plugin phpRS</a></b></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="center"><b>Základní sekce</b></td></tr>
+</table></p>
+<p><table cellspacing="0" cellpadding="5" border="0" align="center">
+<tr class="z"><td align="center"><b>&nbsp;</b></td>
+<td align="center"><b>Soubor</b></td>
+<td align="center"><b>Velikost</b></td>
+<td align="center"><b>Zdroj</b></td>
+<td align="center"><b>Datum</b></td>
+<td align="center"><b>Verze</b></td>
+<td align="center"><b>Kategorie</b></td></tr>
+<tr class="z"><td align="center"><img src="image/info.gif" width="16" height="16" onClick="alert('Česká a anglická kopie druhé verze GNU GPL licence!');return true" alt="klikni ..." />&nbsp;&nbsp;<a href="download.php?soubor=1" target="_blank"><img src="image/download.gif" border="0" width="16" height="16" /></a></td>
+<td align="center">GNU GPL licence verze č. 2<br /><a href="download.php?soubor=1" target="_blank">gnu_gpl.zip</a></td>
+<td align="center">15,1 kB</td>
+<td align="center">&nbsp;</td>
+<td align="center">13.06.2001</td>
+<td align="center">2</td>
+<td align="center">gnu</td></tr>
+</table></p>
+<p></p>
+</td></tr></table>
+</div>
+<p></p>
+</td>
+</tr>
+</table>
+<!-- Konec - Telo HTML -->
+<div class="zapati">
+
+<!-- Misto pro banner -->
+<center></center>
+<!-- Konec Misto pro banner -->
+<p class="z">
+<a href="http://www.supersvet.cz/phprs/" target="_blank"><img src="image/eqskin/plogo_phprs.gif" alt="Web site powered by phpRS" border="0" hspace="10" height="31" width="88" /></a>
+<a href="http://www.php.net" target="_blank"><img src="image/eqskin/plogo_php.gif" alt="PHP Scripting Language" border="0" hspace="10" height="31" width="88" /></a>
+<a href="http://www.mysql.com" target=blank><img src="image/eqskin/plogo_mysql.gif" alt="MySQL" border="0" hspace="10" height="31" width="88" /></a>
+<a href="http://www.apache.org" target=blank><img src="image/eqskin/plogo_apache.gif" alt="Apache Web Server" border="0" hspace="10" height="31" width="88" /></a>
+</p>
+<p class="zsmall">
+Web byl vytvořen prostřednictvím redakčního systému <a href="http://www.supersvet.cz/phprs/" target="_blank">phpRS v.2.3.5b</a>.<br />
+Na této stránce použité názvy programových produktů, firem apod. mohou být ochrannými známkami<br>nebo registrovanými ochrannými známkami příslušných vlastníků.<br>
+Hostování a správa webu pod záštitou <a href="http://www.saton.cz/" target="_blank">SATON Glass, s.r.o.</a>
+</p>
+</div>
+
+</body>
+</html>

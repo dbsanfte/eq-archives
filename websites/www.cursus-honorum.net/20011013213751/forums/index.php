@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Cursus Honorum Forums - Forum Index</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#000000" VLINK="#000000">
+<font face="sans-serif">
+<TABLE BORDER=0 WIDTH="95%" CELLPADDING="5" ALIGN="CENTER">
+<TR>                    
+        <TD ALIGN="CENTER" WIDTH="50%" ROWSPAN="2"><a href="/forums/index.php"><IMG SRC="images/helmetheader.gif" border="0"></a><br>
+			</TD>
+	<TD ALIGN="CENTER">
+		<FONT FACE="sans-serif" SIZE="+1" COLOR="#000000">Cursus Honorum Forums</font>
+	</TD>
+</TR>
+<TR>
+	<TD ALIGN="CENTER">
+		<FONT FACE="sans-serif" SIZE="1" COLOR="#000000">
+		[<a href="/forums/bb_register.php?mode=agreement">Register</a>]&nbsp;
+		[<a href="/forums/bb_profile.php?mode=edit">Edit Profile</a>]&nbsp;
+		[<a href="/forums/prefs.php">Edit Your Preferences</a>]&nbsp;
+		[<a href="/forums/search.php">Search</a>]<br>
+		
+		[<a href="/forums/viewpmsg.php">Private Messages</a>]&nbsp;
+		[<a href="/forums/bb_memberlist.php">Memberslist</a>]&nbsp;
+		[<a href="/forums/faq.php">FAQ</a>]&nbsp;
+		[<a href="/forums/login.php">Login</a>]
+		
+		
+		</font>
+	</TD>
+</TR>
+<TR>
+	<TD COLSPAN="2" ALIGN="RIGHT">
+		<FONT FACE="sans-serif" SIZE="1" COLOR="#000000">
+		Our users have posted a total of -145- Messages.<br>
+We have -28- Registered Users.<br>
+The newest Registered User is -<a href="/forums/bb_profile.php?mode=view&user=33">Palsel of Qeynos</a>-.<br>
+-2- users are <a href="/forums/whosonline.php">currently browsing</a> the forums.<br><b>Not logged in. <a href="/forums/login.php">Login.</a></b><br>
+		</font>
+	</TD>
+</TR>
+</TABLE>
+
+<TABLE BORDER="0" WIDTH="95%" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP"><TR><TD BGCOLOR="#001100">
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="1" WIDTH="100%">
+<TR BGCOLOR="#efefef" ALIGN="LEFT">
+	<TD BGCOLOR="#efefef" ALIGN="CENTER" VALIGN="MIDDLE">&nbsp;</TD>
+	<TD><FONT FACE="sans-serif" SIZE="1" COLOR="#000000"><B>Forum</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000"><B>Topics</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000"><B>Posts</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000"><B>Last Post</B></font></TD>
+	<TD ALIGN="CENTER"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000"><B>Moderator</B></font></TD>
+</TR>
+
+<TR ALIGN="LEFT" VALIGN="TOP"><TD COLSPAN=6 BGCOLOR="#efefef"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000"><B><a href="/forums/index.php?viewcat=1">Guild Discussion Boards</a></B></FONT></TD></TR><TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#efefef" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/forums/images/red_folder.gif"></TD><TD BGCOLOR="#cdcdcd"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000"><a href="viewforum.php?forum=1&8">Messages from the Regent</a></font>
+<br><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">Important messages from Regent Ardour.</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">7</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">8</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">2001-10-04 16:27<br>by Rohwin</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="sans-serif" SIZE="-2" COLOR="#000000"><a href="bb_profile.php?mode=view&user=6">Rohwin</a>, <a href="bb_profile.php?mode=view&user=11">Benedain</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#efefef" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/forums/images/red_folder.gif"></TD><TD BGCOLOR="#cdcdcd"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000"><a href="viewforum.php?forum=2&110">Cursus Honorum Guild Discussion</a></font>
+<br><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">Open discussion for guild members.</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">38</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">110</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">2001-10-10 16:52<br>by safphires</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="sans-serif" SIZE="-2" COLOR="#000000"><a href="bb_profile.php?mode=view&user=6">Rohwin</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#efefef" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/forums/images/red_folder.gif"></TD><TD BGCOLOR="#cdcdcd"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000"><a href="viewforum.php?forum=3&13">House of Lords</a></font>
+<br><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">Discussion for the members of the House of Lords.</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">4</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">13</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">2001-10-01 23:16<br>by Canoni</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="sans-serif" SIZE="-2" COLOR="#000000"><a href="bb_profile.php?mode=view&user=6">Rohwin</a></font></td></tr>
+<TR  ALIGN="LEFT" VALIGN="TOP"><TD BGCOLOR="#efefef" ALIGN="CENTER" VALIGN="middle" WIDTH=5%><IMG SRC="/forums/images/red_folder.gif"></TD><TD BGCOLOR="#cdcdcd"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000"><a href="viewforum.php?forum=4&14">Web site updates</a></font>
+<br><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">Please post any updates to your characters here so that the web site will stay current.</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">8</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="2" COLOR="#000000">14</font></TD>
+<TD BGCOLOR="#efefef" WIDTH=15% ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="sans-serif" SIZE="1" COLOR="#000000">2001-09-06 13:32<br>by Rohwin</font></TD>
+<TD BGCOLOR="#cdcdcd" WIDTH=5% ALIGN="CENTER" VALIGN="MIDDLE" NOWRAP><FONT FACE="sans-serif" SIZE="-2" COLOR="#000000"><a href="bb_profile.php?mode=view&user=6">Rohwin</a></font></td></tr>
+     </TABLE></TD></TR></TABLE>
+<TABLE ALIGN="CENTER" BORDER="0" WIDTH="95%"><TR><TD>
+<FONT FACE="sans-serif" SIZE="1" COLOR="#000000">
+<IMG SRC="/forums/images/red_folder.gif"> = New Posts since your last visit.
+<BR><IMG SRC="/forums/images/folder.gif"> = No New Posts since your last visit.
+</FONT></TD></TR></TABLE>
+
+<FONT FACE="sans-serif" SIZE="-2" COLOR="#000000">
+<CENTER><h3><a href="http://www.cursus-honorum.net/">Return to the Cursus Honorum Web Site</a><br><br></h3>Powered by <a href="http://www.phpbb.com/" target="_blank">phpBB</a> Version 1.4.0<BR>
+Copyright &copy; 2000 - 2001 <a href="http://www.phpbb.com/credits.php" target="_blank">The phpBB Group</a>
+</CENTER>
+</font><BR>
+
+<center><font size=-2>phpBB Created this page in 0.092861 seconds.</font></center>
+</FONT>
+</BODY>
+</HTML>
+

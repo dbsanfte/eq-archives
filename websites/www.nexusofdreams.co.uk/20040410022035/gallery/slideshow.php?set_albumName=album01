@@ -1,0 +1,383 @@
+<html> 
+<head>
+  <title>Slide Show for album :: Miscellany</title>
+  <link rel="stylesheet" type="text/css" href="http://www.nexusofdreams.co.uk/gallery/css/embedded_style.css.default">
+<link rel="stylesheet" type="text/css" href="http://www.nexusofdreams.co.uk/gallery/css/standalone_style.css">  <style type="text/css">
+BODY { background-color:#332361; }  </style>
+
+</head>
+
+<body>
+
+
+  <script language="JavaScript" SRC="http://www.nexusofdreams.co.uk/gallery/js/client_sniff.js">
+  </script>
+<script language="JavaScript">
+var timer; 
+var current_location = 1;
+var next_location = 1; 
+var pics_loaded = 0;
+var onoff = 0;
+var direction = 1;
+var timeout_value;
+var images = new Array;
+var photo_urls = new Array;
+var photo_captions = new Array;
+var transitionNames = new Array;
+var transitions = new Array;
+var current_transition = 0;
+var loop = 0;
+photo_urls[1] = "http://www.nexusofdreams.co.uk/albums/album01/iksarbard.jpg";
+photo_captions[1] = "Iksar bard anyone?";
+photo_urls[2] = "http://www.nexusofdreams.co.uk/albums/album01/Dannie.jpg";
+photo_captions[2] = "A Guilded GM 8)";
+photo_urls[3] = "http://www.nexusofdreams.co.uk/albums/album01/Dannie2.jpg";
+photo_captions[3] = "A Better Shot of a guilded GM";
+photo_urls[4] = "http://www.nexusofdreams.co.uk/albums/album01/GiantTnker.sized.jpg";
+photo_captions[4] = "Ever seen a Gnome taller than a Barbarian?";
+photo_urls[5] = "http://www.nexusofdreams.co.uk/albums/album01/WolfSJ.jpg";
+photo_captions[5] = "Wolf Star-jumps!";
+transitions[0] = "progid:DXImageTransform.Microsoft.Fade(duration=1)";
+transitions[1] = "progid:DXImageTransform.Microsoft.Blinds(Duration=1,bands=20)";
+transitions[2] = "progid:DXImageTransform.Microsoft.Checkerboard(Duration=1,squaresX=20,squaresY=20)";
+transitions[3] = "progid:DXImageTransform.Microsoft.Strips(Duration=1,motion=rightdown)";
+transitions[4] = "progid:DXImageTransform.Microsoft.Barn(Duration=1,orientation=vertical)";
+transitions[5] = "progid:DXImageTransform.Microsoft.GradientWipe(duration=1)";
+transitions[6] = "progid:DXImageTransform.Microsoft.Iris(Duration=1,motion=out)";
+transitions[7] = "progid:DXImageTransform.Microsoft.Wheel(Duration=1,spokes=12)";
+transitions[8] = "progid:DXImageTransform.Microsoft.Pixelate(maxSquare=10,duration=1)";
+transitions[9] = "progid:DXImageTransform.Microsoft.RadialWipe(Duration=1,wipeStyle=clock)";
+transitions[10] = "progid:DXImageTransform.Microsoft.RandomBars(Duration=1,orientation=vertical)";
+transitions[11] = "progid:DXImageTransform.Microsoft.Slide(Duration=1,slideStyle=push)";
+transitions[12] = "progid:DXImageTransform.Microsoft.RandomDissolve(Duration=1,orientation=vertical)";
+transitions[13] = "progid:DXImageTransform.Microsoft.Spiral(Duration=1,gridSizeX=40,gridSizeY=40)";
+transitions[14] = "progid:DXImageTransform.Microsoft.Stretch(Duration=1,stretchStyle=push)";
+transitions[15] = "special case";
+var transition_count = 15;
+var photo_count = 5; 
+
+var slideShowLow = "http://www.nexusofdreams.co.uk/gallery/slideshow_low.php?set_albumName=album01";
+
+// Browser capabilities detection ---
+// - assume only IE4+ and NAV6+ can do image resizing, others redirect to low 
+if (is_ie4up || is_nav6up) {
+    //-- it's all good ---
+} else {
+    //-- any other browser we go low-tech ---
+    document.location = slideShowLow;
+}
+
+// - IE5.5 and up can do the blending transition.
+var browserCanBlend = (is_ie5_5up);
+
+function stopOrStart() {
+    if (onoff) {
+	stop();
+    } else {
+	play();
+    }
+}
+
+function toggleLoop() {
+    if (loop) {
+	loop = 0;
+    } else {
+	loop = 1;
+    }
+}
+
+function changeElementText(id, newText) {
+    element = document.getElementById(id);
+    element.innerHTML = newText;
+}
+
+function stop() {
+    changeElementText("stopOrStartText", "play");
+
+    onoff = 0;
+    status = "The slide show is stopped, Click [play] to resume.";
+    clearTimeout(timer);
+
+}
+
+function play() {
+    changeElementText("stopOrStartText", "stop");
+
+    onoff = 1;
+    status = "Slide show is running...";
+    go_to_next_photo();
+}
+
+function changeDirection() {
+    if (direction == 1) {
+	direction = -1;
+	changeElementText("changeDirText", "forward");
+    } else {
+	direction = 1;
+	changeElementText("changeDirText", "reverse");
+    }
+    preload_next_photo();
+
+}
+
+function change_transition() {
+    current_transition = document.TopForm.transitionType.selectedIndex;
+}
+
+function preload_complete() {
+}
+
+function reset_timer() {
+    clearTimeout(timer);
+    if (onoff) {
+	timeout_value = document.TopForm.time.options[document.TopForm.time.selectedIndex].value * 1000;
+	timer = setTimeout('go_to_next_photo()', timeout_value);
+    }
+}
+
+function wait_for_current_photo() {
+
+    /* Show the current photo */
+    if (!show_current_photo()) {
+
+	/*
+	 * The current photo isn't loaded yet.  Set a short timer just to wait
+	 * until the current photo is loaded.
+	 */
+	status = "Picture is loading...(" + current_location + " of " + photo_count +
+		").  Please Wait..." ;
+	clearTimeout(timer);
+	timer = setTimeout('wait_for_current_photo()', 500);
+	return 0;
+    } else {
+	status = "Slide show is running...";
+	preload_next_photo();
+	reset_timer();
+    }
+}
+
+function go_to_next_photo() {
+    /* Go to the next location */
+    current_location = next_location;
+
+    /* Show the current photo */
+    if (!show_current_photo()) {
+	wait_for_current_photo();
+	return 0;
+    }
+
+    preload_next_photo();
+    reset_timer();
+}
+
+function preload_next_photo() {
+    
+    /* Calculate the new next location */
+    next_location = (parseInt(current_location) + parseInt(direction));
+    if (next_location > photo_count) {
+	next_location = 1;
+	if (!loop) {
+	    stop();
+	}
+    }
+    if (next_location == 0) {
+        next_location = photo_count;
+	if (!loop) {
+	    stop();
+	}
+    }
+    
+    /* Preload the next photo */
+    preload_photo(next_location);
+}
+
+function show_current_photo() {
+
+    /*
+     * If the current photo is not completely loaded don't display it.
+     */
+    if (!images[current_location] || !images[current_location].complete) {
+	preload_photo(current_location);
+	return 0;
+    }
+    
+    /* transistion effects */
+    if (browserCanBlend){
+	var do_transition;
+	if (current_transition == (transition_count)) {
+	    do_transition = Math.floor(Math.random() * transition_count);
+	} else {
+	    do_transition = current_transition;
+	}
+	document.images.slide.style.filter=transitions[do_transition];
+	document.images.slide.filters[0].Apply();
+    }
+    document.slide.src = images[current_location].src;
+    setCaption(photo_captions[current_location]);
+
+    if (browserCanBlend) {
+	document.images.slide.filters[0].Play();
+    }
+
+    return 1;
+}
+
+function preload_photo(index) {
+
+    /* Load the next picture */
+    if (pics_loaded < photo_count) {
+
+	/* not all the pics are loaded.  Is the next one loaded? */
+	if (!images[index]) {
+	    images[index] = new Image;
+	    images[index].onLoad = preload_complete();
+	    images[index].src = photo_urls[index];
+	    pics_loaded++;
+	}
+    } 
+}
+
+function setCaption(text) {
+    changeElementText("caption", "[" + current_location + " of " + photo_count + "] " + text);
+}
+
+</Script>
+
+
+
+
+<table width=100% border=0>
+  <tr>
+    <td>
+      <span class="head">
+        Miscellany      </span>
+    </td>
+  </tr>
+  <tr>
+    <td  align="center" valign="top">
+<form name="TopForm"><input type="hidden" name="PHPSESSID" value="f784b3862c19158040f219dbda06e033" />
+
+<table width="" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="3" bgcolor="#11023a"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#11023a" width="1" height="18"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <td align="right" width="3000" height="18">
+      <span class="bread">
+&nbsp;Gallery: <a href="http://www.nexusofdreams.co.uk/gallery/albums.php">Nexus of Dreams Image Gallery</a>&nbsp<img src="http://www.nexusofdreams.co.uk/gallery/images/nav_home.gif" width=13 height=11>&nbsp;Album: <a href="http://www.nexusofdreams.co.uk/gallery/album01">Miscellany</a>&nbsp      <img src="http://www.nexusofdreams.co.uk/gallery/images/nav_home.gif" width="13" height="11">&nbsp;
+      </span>
+    </td> 
+                
+    <td bgcolor="#11023a" width="1" height="18"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>    
+
+<table width="" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="4" bgcolor="#11023a"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#11023a" width="1" height="18"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <td align="left" valign="middle" width="3000" height="18">&nbsp;Slide Show</td>
+    <td align="right" valign="middle" width="3000" height="18">&nbsp;<span class="admin">&nbsp;<a href="http://www.nexusofdreams.co.uk/gallery/slideshow_low.php?set_albumName=album01">[not working for you? try the low-tech]</a></span>&nbsp;</td>
+    <td bgcolor="#11023a" width="1" height="18"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>    
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="3" bgcolor="#11023a"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td height="25" width="1" bgcolor="#11023a"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <td align="left" valign="middle">
+    <span class=admin>
+
+&nbsp;<a href='#' onClick='stopOrStart(); return false;'>[<span id='stopOrStartText'>stop</span>]</a>&nbsp;<a href='#' onClick='changeDirection(); return false;'>[<span id='changeDirText'>reverse</span> direction]</a>&nbsp;<a href="http://www.nexusofdreams.co.uk/gallery/slideshow.php?set_albumName=album01&slide_full=1">[full size]</a>&nbsp;&nbsp;||
+    &nbsp;Delay: 
+<select name="time" size=1  onchange="reset_timer()" style="font-size=10px;">
+<option value=1 > 1 second
+<option value=2 > 2 second
+<option value=3 selected> 3 second
+<option value=4 > 4 second
+<option value=5 > 5 second
+<option value=10 > 10 second
+<option value=15 > 15 second
+<option value=30 > 30 second
+<option value=45 > 45 second
+<option value=60 > 60 second
+</select>
+    <script language="Javascript">
+    /* show the blend select if appropriate */
+    if (browserCanBlend) {
+	document.write('&nbsp;Transition: <select name="transitionType" size=1  onchange="change_transition()" style="font-size=10px;"> <option value=0 selected> Blend <option value=1 > Blinds <option value=2 > Checkerboard <option value=3 > Diagonal <option value=4 > Doors <option value=5 > Gradient <option value=6 > Iris <option value=7 > Pinwheel <option value=8 > Pixelate <option value=9 > Radial <option value=10 > Rain <option value=11 > Slide <option value=12 > Snow <option value=13 > Spiral <option value=14 > Stretch <option value=15 > RANDOM! </select> ');
+    }
+    
+    </script>
+    &nbsp;Loop:<input type="checkbox" name="loopCheck"  onclick='toggleLoop();'>
+    </span>
+    </td>
+    <td width="1" bgcolor="#11023a"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#11023a"><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>
+
+<br>
+<div align="center">
+
+
+<table width=1% border=0 cellspacing=0 cellpadding=0>
+  <tr bgcolor="#11023a">
+    <td colspan=3 height=1><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#11023a" width=1><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+    <script language="JavaScript">
+    document.write("<td><img border=0 src="+photo_urls[1]+" name=slide></td>");
+    </script>
+    <td bgcolor="#11023a" width=1><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="#11023a">
+    <td colspan=3 height=1><img src="http://www.nexusofdreams.co.uk/gallery/images/pixel_trans.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<br>
+
+<script language="Javascript">
+/* show the caption */
+document.write("<div class='desc' id='caption'></div>");
+
+/* Load the first picture */
+setCaption(photo_captions[1]);
+preload_photo(1);
+
+/* Start the show. */
+play();
+
+</script>
+
+ 
+
+</div>
+</form>
+
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <!-- The Gallery code version number, linked to the Gallery home page -->
+    <span class="fineprint">
+    Powered by <a href=http://gallery.sourceforge.net>Gallery v1.3.3</a>
+    </span>
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>

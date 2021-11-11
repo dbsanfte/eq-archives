@@ -1,0 +1,498 @@
+//This is the base teplate for an evil NPC that casts spells at you. There are male and female versions.
+//Template modified from farmboy, farmgirl, and swamp witch by Mike Ryan of Dungeoneer's Haven - www.dungeonsiegemaps.cjb.net
+//Congradulations to GPG for making a game that incorporates true object oriented programming
+
+[t:template,n:base_necromancer_male] //this is the base template for the male necromancer
+{
+	category_name = "1W_evil_a"; //category it shows up in actors, evil
+	doc = "Necromancer male base template."; //documentation
+	specializes = actor_evil; //what kind of actor is it
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a1; //mesh used to represent the character
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_male; } //sounds used
+		}
+	}
+	[body]
+	{
+		armor_version = gah_fb;
+		avg_move_velocity = 4.500000; //speed that this actor moves at
+		initial_chore = chore_fidget; //what this actor is doing when it is first created
+		[bone_translator] //bone configuration, DO NOT MODIFY
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary] //what can this actor do aminations-wise, DO NOT MODIFY
+		{
+			chore_prefix = a_c_gah_fb_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+				}
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop;
+				[anim_files] { 00=dff; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gah_fb_fs1_dk;
+					gtup = a_c_gah_fb_fs0_up;
+					look = a_c_gah_fb_fs0_dsf;
+					wyme = a_c_gah_fb_fs0_dsf-02;
+					frtd = a_c_gah_fb_fs0_dsf-03;
+					talk = a_c_gah_fb_fs0_dsf-04;
+					bed1 = a_c_gah_fb_fs0_dsf-05;
+					bed2 = a_c_gah_fb_fs0_dsf-06;
+					bed3 = a_c_gah_fb_fs0_dsf-07;
+					mrik = a_c_gah_fb_fs0_dsf-08;
+					sit1 = a_c_gah_fb_fs0_dsf-09;
+					sit2 = a_c_gah_fb_fs0_dsf-10;
+					bed4 = a_c_gah_fb_fs0_dsf-11;
+					bed5 = a_c_gah_fb_fs0_dsf-12;
+					froz = a_c_gah_fb_fs0_dsf-16;
+					andi = a_c_gah_fb_fs0_dsf-17;
+					lsn2 = a_c_gah_fb_fs0_dsf-18;
+					knee = a_c_gah_fb_fs1_dsf-03;
+					lstn = a_c_gah_fb_fs1_dsf-04;
+					lblg = a_c_gah_fb_fs2_dsf-02;
+					hoe1 = a_c_gah_fb_fs5_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files] { 05=rl; }
+			}
+		}
+	}
+	[mind] //how this actor reacts to a situation
+	{
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+		jat_die 						= world\ai\jobs\common\job_die_fade.skrit;
+
+
+		actor_weapon_preference			= WP_MAGIC; //weapon preference
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range				= 2;
+		personal_space_range			= 0.7;
+		on_enemy_entered_ocz_attack		= true;
+		ranged_engage_range				= 13.0;
+		sight_range						= 13.0;
+	}
+}
+[t:template,n:base_necromancer_female]
+{
+	category_name = "1W_evil_a";
+	doc = "Necromancer female base template.";
+	specializes = actor_evil;
+	[aspect]
+	{
+		model = m_c_gah_fg_pos_a1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_female; }
+		}
+	}
+	[body]
+	{
+		armor_version = gah_fg;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee		= 0.8, 0.8, 0.8;
+			as_two_handed_melee	= 0.8, 0.8, 0.8;
+			as_two_handed_sword	= 0.8, 0.8, 0.8;
+			as_staff			= 1.0, 1.0, 1.0;
+			as_bow_and_arrow	= 0.8, 0.8, 0.8;
+			as_minigun			= 0.8, 0.8, 0.8;
+			as_shield_only		= 0.9, 0.9, 0.9;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+				}
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop;
+				[anim_files] { 00=dff; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gah_fg_fs1_dk;
+					gtup = a_c_gah_fg_fs0_up;
+					look = a_c_gah_fg_fs0_dsf;
+					talk = a_c_gah_fg_fs0_dsf-02;
+					wyme = a_c_gah_fg_fs0_dsf-03;
+					ulor = a_c_gah_fg_fs0_dsf-04;
+					hddl = a_c_gah_fg_fs0_dsf-05;
+					hdup = a_c_gah_fg_fs0_dsf-06;
+					knee = a_c_gah_fg_fs1_dsf-03;
+					lstn = a_c_gah_fg_fs1_dsf-04;
+                    frtd = a_c_gah_fg_fs0_dsf-03;
+                    ulo1 = a_c_gah_fg_fs0_dsf-04;
+                    sit1 = a_c_gah_fg_fs0_dsf-08;
+					hoe1 = a_c_gah_fg_fs5_dsf-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[mind]
+	{
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+		jat_die 						= world\ai\jobs\common\job_die_fade.skrit;
+
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range				= 2;
+		personal_space_range			= 0.7;
+		on_enemy_entered_ocz_attack		= true;
+		ranged_engage_range				= 13.0;
+		sight_range						= 13.0;
+	}
+}
+
+[t:template,n:necromancer_male_base]
+{
+	category_name = "1W_evil_a";
+	doc = "Necromancer Male";
+	specializes = base_necromancer_male;
+	[actor]
+	{
+		[skills] //what skill level this actor has
+		{
+			strength =  8, 0;
+			intelligence =  18, 0;
+			dexterity =  9, 0;
+			combat_magic =  20,  0;
+		}
+	}
+	[aspect] //life, mana, and experience rewarded to player when killed
+	{
+		experience_value = 1691;
+		life = 210;
+		max_life = 210;
+		mana = 100000;
+		max_mana = 100000;
+
+		[textures] //textures used by this actor
+		{
+			0 = b_c_gah_fb_skin_05; //head skin
+			1 = b_c_pos_a1_004; //body skin
+		}
+	}
+	[attack] //melee damage, since this is a spellcaster these values are invalid
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 95;
+	}
+	[common] { screen_name="Necromancer Male"; } //name dipslayed upon mouseover
+	[generator_in_object] //when killed, this actor has a skeleton that flies up into the air, ala swamp witch
+	{
+		child_template_name = swamp_switch_skeleton;
+		spawn_event = WE_KILLED;
+		spawn_chance = 1.0;
+	}
+
+    [defend] { defense=125; } //actor's defence
+	[inventory] //what this actor is carrying
+	{
+		[pcontent] //chance to spawn a magical item
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/60-73;
+				il_main = #armor/32-160;
+                il_main = #body,ro/102-160;
+            }
+            [oneof*] //chance to spawn a rare item
+			{
+	        	chance = 0.004;
+	            il_main = #weapon/-rare(1)/65-78;
+	            il_main = #armor/-rare(1)/122-241;
+                il_main = #*/-rare(1)/65-78;
+            }
+			[oneof*] //chance to spawn a unique item
+			{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/65-78;
+	            il_main = #armor/-unique(2)/122-241;
+                il_main = #*/-unique(2)/65-78;
+            }
+		}
+		selected_active_location = il_active_primary_spell; //active attack slot upon creation of this actor
+		[other]
+		{
+			il_active_primary_spell=spell_fireskull; //spell 1
+			il_spell_1=spell_firespray; //spell 2
+
+//can add more spells, such as il_spell2=spell_fireball
+
+		}
+	}
+	[mind] //what this actor does
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.35
+			&meander						= false
+			&still							= false;
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&spell_chances				= "0.5,                  0.5" //chance to cast the spells below
+			&spells						= "spell_fireskull, spell_firespray"; //spells this actor can use
+
+        on_enemy_entered_ocz_flee 	= false;
+		on_enemy_entered_ocz_attack = true;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+	}
+}
+[t:template,n:necromancer_male] //template used by SE to add to game world
+{
+	category_name = "1W_evil_a";
+	doc = "Necromancer Male";
+	specializes = necromancer_male_base;
+}
+[t:template,n:necromancer_female_base]
+{
+	category_name = "1W_evil_a";
+	doc = "Necromancer Female";
+	specializes = base_necromancer_female;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  8, 0;
+			intelligence =  18, 0;
+			dexterity =  9, 0;
+			combat_magic =  20,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1691;
+		life = 210;
+		max_life = 210;
+		mana = 100000;
+		max_mana = 100000;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_10;
+			1 = b_c_pos_a7_004;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 95;
+	}
+	[common] { screen_name="Necromancer Female"; }
+	[generator_in_object]
+	{
+		child_template_name = swamp_switch_skeleton;
+		spawn_event = WE_KILLED;
+		spawn_chance = 1.0;
+	}
+
+    [defend] { defense=125; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/60-73;
+				il_main = #armor/32-160;
+                il_main = #body,ro/102-160;
+            }
+            [oneof*]
+			{
+	        	chance = 0.004;
+	            il_main = #weapon/-rare(1)/65-78;
+	            il_main = #armor/-rare(1)/122-241;
+                il_main = #*/-rare(1)/65-78;
+            }
+			[oneof*]
+			{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/65-78;
+	            il_main = #armor/-unique(2)/122-241;
+                il_main = #*/-unique(2)/65-78;
+            }
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_fireskull;
+			il_spell_1=spell_firespray;
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.35
+			&meander						= false
+			&still							= false;
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&spell_chances				= "0.5,                  0.5"
+			&spells						= "spell_fireskull, spell_firespray";
+
+        on_enemy_entered_ocz_flee 	= false;
+		on_enemy_entered_ocz_attack = true;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+	}
+}
+[t:template,n:necromancer_female]
+{
+	category_name = "1W_evil_a";
+	doc = "Necromancer Female";
+	specializes = necromancer_female_base;
+}

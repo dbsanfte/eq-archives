@@ -1,0 +1,238 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+<SCRIPT LANGUAGE="JavaScript">
+function SortableTable(id,rows,cols,border,width,align) {
+ this.id = id
+ this.rows = rows
+ this.cols = cols
+ this.border = border
+ this.width = width
+ this.align = align
+ this.buttons = new Array(cols)
+ this.numeric = new Array(cols)
+ for(var i=0;i<cols;++i) 
+  this.buttons[i]=" "
+ for(var i=0;i<cols;++i) 
+  this.numeric[i]=false
+ this.data = new Array(rows)
+ for(var i=0;i<rows;++i) {
+  this.data[i] = new Array(cols)
+  for(var j=0;j<cols;++j)
+   this.data[i][j] = " "
+ }
+ this.display = SortableTable_display
+ this.setButtons = SortableTable_setButtons
+ this.setData = SortableTable_setData
+ this.setNumeric = SortableTable_setNumeric
+ this.sort = SortableTable_sort
+}
+function SortableTable_setData(data) {
+ if(data == null) return
+ if(data.length > 0) {
+  for(var i=0;i<this.rows;++i) {
+   if(i>=data.length) break
+   if(data[i] != null) {
+    var n = data[i].length
+    if(n > this.cols) n = this.cols
+    for(var j=0;j<n;++j)
+     if(data[i][j]!=null) this.data[i][j] = data[i][j]
+   }
+  }
+ }
+}
+function SortableTable_setButtons(buttons) {
+ if(buttons == null) return
+ var n = buttons.length
+ if(n > this.cols) n = this.cols
+ for(var i=0;i<n;++i)
+  if(buttons[i]!=null) this.buttons[i] = buttons[i]
+}
+function SortableTable_display() {
+ // Check for tableSortBy cookie
+ if(document.cookie.length > 0) {
+  var search = this.id + "="
+  var offset = document.cookie.indexOf(this.id+"=") 
+  if(offset != -1) { 
+   offset += search.length 
+   var end = document.cookie.indexOf(";", offset) 
+   if(end == -1) end = document.cookie.length
+   this.sort(document.cookie.substring(offset, end))
+  }   
+ }
+ document.writeln('<FORM NAME="tableForm">')
+ document.write('<TABLE BORDER="'+this.border+'" WIDTH="')
+ document.writeln(this.width+'" ALIGN="'+this.align+'">')
+ document.writeln('<TR>')
+ // Display buttons
+ for(var i=0;i<this.cols;++i) {
+  document.write('<TD>')
+  document.write('<INPUT TYPE="BUTTON" VALUE="')
+  document.write(this.buttons[i])
+  document.write('" ONCLICK="SortableTable_handleColumnButton(\'')
+  document.write(this.id+'\','+i+')">')
+  document.writeln('</TD>')
+ }
+ document.writeln('</TR>')
+ // Display sorted/unsorted table
+ for(var i=0;i<this.rows;++i) {
+  document.writeln('<TR>')
+  for(var j=0;j<this.cols;++j) {
+   document.write('<TD>')
+    document.write(this.data[i][j])
+    document.writeln('</TD>')
+  }
+  document.writeln('</TR>')
+ }
+ document.writeln('</TABLE>')
+ document.writeln('</FORM>')
+}
+function SortableTable_setNumeric(n) {
+ this.numeric[n] = true
+}
+function SortableTable_sort(n) {
+ // Sort rows
+ var changes=true
+ for(;changes;) {
+  changes = false
+  for(var i=0;i<this.rows-1;++i) {
+   if(this.numeric[n]) {
+    var v1 = parseFloat(this.data[i][n])
+    if(isNaN(v1)) v1 = 0;
+    var v2 = parseFloat(this.data[i+1][n])
+    if(isNaN(v2)) v2 = 0;
+    if(v1 < v2) {
+     changes = true
+     var temp = this.data[i]
+     this.data[i] = this.data[i+1]
+     this.data[i+1] = temp
+    }   
+   }else{
+    if(this.data[i][n] > this.data[i+1][n]) {
+     changes = true
+     var temp = this.data[i]
+     this.data[i] = this.data[i+1]
+     this.data[i+1] = temp
+    }
+   }
+  }
+ } 
+}
+function SortableTable_handleColumnButton(id,n) {
+ // Set cookie and reload
+ document.cookie = id + "="+n
+ window.location.reload()
+}
+</SCRIPT>
+
+</head>
+
+</body>
+
+<body text="#CBAB57" bgcolor="#000000">
+
+<p align="center"><img border="0" src="http://www.grrtech.com/doj/Heading.jpg" width="600" height="227">
+<p align="center"><font face="Copperplate Gothic Bold" size="5" color="#D86C18">Members
+Listing</font></p>
+<p align="center"><b><font size="3" color="#D86C18">Click on a button to sort by
+catagory</font></b></p>
+
+<p align="center"><b><font size="3" color="#D8FC18">NEW!</font><font size="3" color="#000000"> MB </font><font size="3" color="#808080">A "*" after level denotes this character has the Sebilis key</font></b></p>
+
+<p align="center"><SCRIPT LANGUAGE="JavaScript">
+var buttons = new Array("Member Status","Character","Race","Class","Diety","Level","Secondary")
+var data = new Array(
+ new Array("Guild Leader","Caudex Lifesupport","High Elf","Cleric","Tunare","51*"," "),
+ new Array("Guild Officer","Aslin Lorekeeper","Gnome","Wizard","Brell","34","Oakn"),
+ new Array("Guild Officer","Bloodedge Soulripper","Dark Elf","Shadow Knight"," ","43","Stonesprite"),
+ new Array("Guild Officer","Ditty Zooks","High Elf","Enchanter"," ","40"," "),
+ new Array("Guild Officer","Gakkil Darkthorn","Halfling","Druid","Karana","51","Bralen"),     
+ new Array("Guild Officer","Koronado Konjurer","Human","Magician","Agnostic","35","Rassius"),
+ new Array("Guild Officer","Leia Skywolf","Wood Elf","Druid"," ","46*"," "),
+ new Array("Guild Officer","Radiac Firesupport","High Elf","Magician"," ","45"," "),
+ new Array("Guild Officer","Sacer Frontline","High Elf","Paladin"," ","45"," "),
+ new Array("Guild Officer","Vinger Endbringer","Human","Monk","Quellious", "51*", "Grodenaire"),
+// new Array("Left Guild","Alsia","High Elf","Enchanter"," ","48*"," "),
+// new Array("Left Guild","Arcane Draza","Dark Elf","Enchanter"," ","50*","Griim"),
+ new Array("Member","Arith Vamesses","Half Elf","Druid"," ","29"," "),
+ new Array("Member","Arocus Levinclypeus","Human","Warrior","Agnostic","47","Aelisuu"),
+// new Array("Left Guild","Athame","Iksar","Shaman","Cazic Thule","52*","Volume"),
+ new Array("Member","Baalana Nostrum","Human","Cleric","Rodcet Nife","51*","Yakov"),
+ new Array("Member","Bait Furfishin","Erudite","Enchanter","Prexus","29","Decoy"),
+ new Array("Member","Bilboin","Halfling","Druid","Karana","37"," "),
+// new Array("Left Guild","Briters Warwolfie","Wood Elf","Druid","Tunare","37","Skelevel"),
+ new Array("Member","Bubbaa Baker","Dark Elf","Enchanter"," ","37"," "),
+ new Array("Member","Buen Wildwind"," ","Druid","Karana","42"," "),
+ new Array("Member","Cadell","Barbarian","Shaman"," "," "," "),
+ new Array("Member","Cathleena","Dwarf","Cleric"," ","10"," "),
+ new Array("Member","Casil","Iksar","Shadow Knight","Cazic Thule","30","Teferi"),
+ new Array("Member","Center Catholicon","Barbarian","Shaman"," ","40"," "),
+ new Array("Member","Charthas Dabadshammy","Iksar","Shaman"," "," "," "),
+ new Array("Member","Chopsui","Human","Monk"," ","45"," "),
+ new Array("Member","Connick Turbocharged","Half Elf","Bard"," ","38"," "),
+ new Array("Member","Daergor Cruentum","Erudite","Necromancer","Cazic Thule","24"," "),
+ new Array("Member","Daire Delincourt","Dark Elf","Enchanter"," "," "," "),
+ new Array("Member","Danar Darkforge","Dwarf","Cleric","Brell","37"," "),
+ new Array("Member","Delarion","High Elf","Enchanter"," "," "," "),
+ new Array("Member","Devoor Orwat","Troll","Warrior"," "," "," "),
+// new Array("Left Guild","Drosadon","Troll","Warrior"," "," "," "),
+ new Array("Member","Dukha Lifereaver","Erudite","Necromancer"," ","44"," "),
+ new Array("Member","Eamil","High Elf","Wizard"," "," "," "),
+// new Array("Left Guild","Emory Stashbooty","Half Elf","Rogue"," ","43"," "),
+ new Array("Member","Ethir Nandor"," ","Druid"," ","31"," "),
+ new Array("Member","Faddor","Human","Cleric"," ","48"," "),
+ new Array("Member","Fandain","Barbarian","Shaman","Tribunal","29"," "),
+ new Array("Member","Freie","Human","Monk","Agnostic","32"," "),
+ new Array("Member","Haliyen Caradoc","Dwarf","Cleric","Brell","41"," "),
+ new Array("Member","Hogun","Barbarian","Shaman"," "," "," "),
+ new Array("Member","Hotto Ttott","Halfling","Druid","Karana","51*"," "),
+ new Array("Member","Kaichang Glimmerfist","Human","Monk"," ","26","Korad"),
+ new Array("Member","Kilkaithin"," ","Necromancer"," ","31","Tiggon"),
+// new Array("Left Guild","Krisek Bloodspiller","Barbarian","Warrior"," ","51*"," "),
+ new Array("Member","Kublikahn","Wood Elf","Druid"," ","26"," "),
+ new Array("Member","Lukey Planeswalker","Dwarf","Paladin"," ","31"," "),
+ new Array("Member","Lupous","Wood Elf","Druid"," ","30"," "),
+// new Array("Left Guild","Maarken Draza","Dwarf","Cleric"," ","49"," "),
+ new Array("Member","Maclain Clanhammer","Barbarian","Warrior"," ","54*"," "),
+ new Array("Member","Madai Baker","Halfling","Druid","Karana","45","Cheerleader"),
+ new Array("Member","Marlack","Gnome","Magician"," ","26"," "),
+ new Array("Member","Midknight","Half Elf","Ranger"," ","36"," "),
+ new Array("Member","Miniya Ithile","High Elf","Wizard"," "," "," "),
+ new Array("Member","Mippo Myster","Halfling","Warrior"," ","40"," "),
+ new Array("Member","Nitrox Baker","Half Elf","Bard"," ","30",""),
+// new Array("Left Guild","Rakassan"," ","Ranger"," ","51*"," "),
+ new Array("Member","Rhiann Souldrifter","Human","Druid","Tunare","51","Bowe"),
+ new Array("Member","Roland Bain","Gnome","Wizard","Agnostic","51",""),
+ new Array("Member","Sabiin","Human","Monk"," "," "," "),
+ new Array("Member","Seeffon","Halfling","Druid","Karana","39"," "),
+ new Array("Member","Szardos Baker","Dark Elf ","Necromancer"," ","45"," "),
+ new Array("Member","Talshejar","High Elf","Wizard"," "," "," "),
+// new Array("Member","Teuelin Bonenslaver","Dark Elf","Necromancer","Innoruuk","54*"," "),
+// new Array("Left Guild","Turonyen Weathercloud","High Elf","Enchanter"," ","36"," "),
+// new Array("Left Guild","Thinker III","Gnome","Wizard"," ","45"," "),
+ new Array("Member","Valinya","Dark Elf","Shadow Knight"," ","33"," "),
+ new Array("Member","Vannan D'Mare","Erudite","Cleric","Cazic","21"," "),
+ new Array("Member","Vixxen","Wood Elf","Rogue"," ","40","Phantos"),
+ new Array("Member","Warrlop","Dwarf","Warrior"," ","25"," "),
+ new Array("Member","Xalisa","Dark Elf","Necromancer"," ","30"," "),
+ new Array("Member","Xukas","Iksar","Shadow Knight"," ","30","Catrianna")
+)
+  //no comma on last one.
+
+var table = new SortableTable("myTable",85,7,0,"100%","CENTER")
+table.setData(data)
+table.setButtons(buttons)
+table.setNumeric(5)
+// Use table.setNumeric(n) to sort column n in numerical order.
+table.display()
+</SCRIPT>
+
+</p>
+
+</body>
+
+</html>

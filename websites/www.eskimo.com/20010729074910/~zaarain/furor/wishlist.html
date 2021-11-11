@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>Furor Poeticus</title>
+</head>
+
+<style>
+  a.border:link       {color:white; text-decoration:none}
+  a.border:visited    {color:white; text-decoration:none}
+  a.border:active     {color:white}
+  a.border:hover      {color:white; text-decoration:underline}
+</style>
+
+<body leftmargin=0 topmargin=0>
+
+<table height=100% width=100% cellpadding=0 cellspacing=0 border=0>
+  <tr bgcolor=#002580 border=0>
+    <td><img height=104 width=579 src=logo.jpg></td?
+  </tr>
+<tr height=100%>
+<td>
+<table height=100% width=100% cellpadding=0 cellspacing=0 border=0>
+<tr valign=top>
+  <td bgcolor=#002580 width=5>&nbsp</td>
+  <td bgcolor=#002580 width=100><font color=white>
+    <a class=border href=index.html><b><u> Home </u></b></a><br>
+    <a class=border href=archive.html> Archive </a><br>
+    <a class=border href=calendar.html> Calendar </a><br>
+    <a class=border href=wishlist.html> Wishlist </a><br>
+    <p>
+    <a class=border href=group.html><b><u> The Group </u></b></a><br>
+    <a class=border href=coleridge.html> Coleridge </a><br>
+    <a class=border href=faulkner.html> Faulkner </a><br>
+    <a class=border href=gruffydd.html> Gruffydd </a><br>
+    <a class=border href=kerawack.html> Kerawack </a><br>
+    <a class=border href=millay.html> Millay </a><br>
+    <a class=border href=paldaan.html> Paldaan </a><br>
+    <a class=border href=tennyson.html> Tennyson </a><br>
+    <p>
+    <b><u>Alts</u></b><br>
+    Rimbaud <br>
+    Sebel <br>
+    Tikk <br>
+    Timbre <br>
+    <p>
+    <b><u> Adventures </u></b><br>
+    <a class=border href=cazic.html> Cazic Thule </a><br>
+    Dalnir <br>
+    <a class=border href=kaesora.html> Kaesora </a><br>
+    <a class=border href=sola.html> Solusek's Eye </a><br>
+    <a class=border href=soulfire.html> Soulfire </a><br>
+    <a class=border href=uguk.html> Upper Guk </a><br>
+    <p>
+    <b><u> Info </u></b><br>
+    <a class=border href=expbonus.html> Exp bonuses </a><br>
+    <p>
+    <a class=border href=about.html> <i> About us </i> </a><br>
+  </font></td>
+  <td width=5><img height=5 width=5 src=curve.bmp></td>
+  <td>
+
+
+Sort by <u onclick="Sort(0)" style="cursor:default">Character</u> 
+     or <u onclick="Sort(2)" style="cursor:default">Zone</u>
+
+<p>
+
+<table id=wishlist border style="{border:'thin solid black';border-collapse:collapse}" cellpadding=2>
+<tr>
+  <th> Character </th>
+  <th> Item </th>
+  <th> Zone </th>
+  <th> Mob </th>
+  <th> Notes </th>
+</tr>
+<!-- begin -->
+<tr>
+  <td> Gruffydd  </td>
+  <td> <A href="http://www.eqmaps.com/zone.php3?tag=soldunb&amp;item=684">Golden Efreeti Boots&nbsp;</A>  </td>
+  <td> SolB&nbsp;  </td>
+  <td> Efreeti Lord Djarn (50)  </td>
+  <td>  </td>
+</tr>
+<tr>
+  <td> Paldaan  </td>
+  <td> Tigeraptor Cloak  </td>
+  <td> Velious  </td>
+  <td> Tailored  </td>
+  <td> Good luck!  </td>
+</tr>
+<tr>
+  <td> Paldaan  </td>
+  <td> Tigeraptor Boots  </td>
+  <td> Velious  </td>
+  <td> Tailored  </td>
+  <td> Good luck!  </td>
+</tr>
+<tr>
+  <td> Paldaan  </td>
+  <td> Ivandyr's Hoop  </td>
+  <td> Innothule  </td>
+  <td> Lynuga  </td>
+  <td>  </td>
+</tr>
+<!-- end -->
+</table>
+
+<form id=form method=post action=/~zaarain/cgi-bin/wishlist.cgi>
+<input name="data" type=hidden value="test">
+</form>
+
+<div id=buttons></div>
+
+<div align=right style="width:10;height:10;top:0;right:0;position:absolute" onclick="Init()">
+</div>
+
+
+
+<script>
+
+var edit;
+
+
+function Init()
+{
+  for (var i = 1; i < wishlist.rows.length; i++)
+    SetupRow(wishlist.rows(i));
+
+  var html =    "<p>"
+  html = html + "<button onclick='NewRow()'> New Item </button>&nbsp"
+  html = html + "<button onclick='DeleteRow()'> Delete Item </button><p>"
+  html = html + "<button onclick='SaveChanges()'> Save Changes </button>"
+
+  buttons.innerHTML = html;
+}
+
+function SetupRow(row)
+{
+  row.attachEvent("onmouseenter", EnterRow);
+  row.attachEvent("onmouseleave", LeaveRow);
+  row.attachEvent("onclick",      EditRow);
+
+  for (var i = 0; i < row.cells.length; i++)
+  {
+    row.cells(i).detachEvent("onmouseenter", EnterRow);
+    row.cells(i).detachEvent("onmouseleave", LeaveRow);
+    row.cells(i).detachEvent("onclick",      EditRow);
+
+    if (!row.getAttribute("setup"))
+      row.cells(i).innerHTML = "<span>" + row.cells(i).innerHTML + "</span>";
+
+    row.cells(i).children(0).contentEditable = false;
+  }
+
+  row.setAttribute("setup", "true");
+  row.bgColor = "white";
+}
+  
+function NewRow()
+{
+  var row = wishlist.insertRow();
+  var cell;
+
+  for (var i = 0; i < 5; i++)
+    cell = row.insertCell();
+
+  SetupRow(row);
+  row.click();
+}
+
+function DeleteRow()
+{
+  if (!edit)
+    return;
+
+  wishlist.deleteRow(edit.rowIndex);
+  edit = null;
+}
+
+function EnterRow(row)
+{
+  event.srcElement.bgColor = "#f5deb3";
+}
+
+function LeaveRow()
+{
+  if (event.srcElement != edit)
+    event.srcElement.bgColor = "white";
+}
+
+function EditRow()
+{
+  if (edit)
+    SetupRow(edit);
+
+  row = event.srcElement;
+
+  while ("TR" != row.nodeName)
+    row = row.parentElement;
+
+  row.detachEvent("onmouseenter", EnterRow);
+  row.detachEvent("onmouseleave", LeaveRow);
+  row.detachEvent("onclick",      EditRow);
+
+  for (var i = 0; i < row.cells.length; i++)
+{
+    row.cells(i).children(0).contentEditable = true;
+row.cells(i).children(0).bgColor = 'green';
+}
+  row.bgColor = "yellow";
+
+  edit = row;
+}
+
+function Sort(column)
+{
+  for (var i = 1; i < wishlist.rows.length; i++)
+    for (var j = wishlist.rows.length - 1; j > i ; --j)
+      if (wishlist.rows(j).cells(column).innerText < wishlist.rows(i).cells(column).innerText)
+        wishlist.moveRow(j, i);
+}
+
+function SaveChanges()
+{
+  var data = "";
+  var re = /\s/gm;
+
+  for (var i = 1; i < wishlist.rows.length; i++)
+  {
+    var row = wishlist.rows(i);
+
+    for (var j = 0; j < row.cells.length; j++)
+      data = data + row.cells(j).children(0).innerHTML.replace(re, " ") + "\t";
+
+    data = data + "\f";
+  }
+
+  form.children("data").value = data;
+  form.submit();
+}
+
+</script>
+
+  </td>
+  <td width=5>&nbsp</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+
+

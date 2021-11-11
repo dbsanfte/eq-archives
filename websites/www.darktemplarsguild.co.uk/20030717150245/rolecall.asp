@@ -1,0 +1,884 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+
+<head>
+<title>Dark Templars | Rolecall</title>
+
+<meta name="copyright" content="Copyright (C) 2001 al@functionfirst.co.uk">
+<link rel="stylesheet" href="styles/default.css" type="text/css">
+<script language="JavaScript" type="text/javascript" src="script/functions.js"></script>
+<script language="JavaScript1.2" src="fw_menu.js"></script>
+<script language="JavaScript1.2" type="text/javascript">
+function fwLoadMenus() {
+	if (window.fw_menu_0) return;
+		window.fw_menu_0_1  = new Menu("Rolecall",152,17,"Arial",10,"#000000","#000000","#EDEDED","#CCCCCC");
+		fw_menu_0_1.addMenuItem("Sort By Name","location='rolecall.asp?order=name'");
+		fw_menu_0_1.addMenuItem("Sort by Class","location='rolecall.asp?order=class'");
+		fw_menu_0_1.addMenuItem("Sort by Level","location='rolecall.asp?order=level'");
+		fw_menu_0_1.addMenuItem("Sort by Status","location='rolecall.asp?order=status'");
+		fw_menu_0_1.addMenuItem("Sort by Base ELP","location='rolecall.asp?order=elp'");
+		fw_menu_0_1.addMenuItem("Sort by Total ElP","location='rolecall.asp?order=total'");
+		fw_menu_0_1.hideOnMouseOut=true;
+		
+		window.fw_menu_0_2  = new Menu("Administration",152,17,"Arial",10,"#000000","#000000","#EDEDED","#CCCCCC");
+		fw_menu_0_2.addMenuItem("Add News","location='members/addnews.asp'");
+		fw_menu_0_2.addMenuItem("Edit News","location='members/listnews.asp'");
+		fw_menu_0_2.addMenuItem("Add Raid","location='members/addraid.asp'");
+		fw_menu_0_2.addMenuItem("Edit Raid","location='members/raidmenu.asp'");
+		fw_menu_0_2.addMenuItem("Edit User","location='members/listuser.asp'");
+		fw_menu_0_2.addMenuItem("Moderate Users","location='members/moderate.asp'");
+		fw_menu_0_2.addMenuItem("Edit Access","location='members/accesslevels.asp'");
+		fw_menu_0_2.addMenuItem("Upload Image","location='members/upload.asp'");
+		fw_menu_0_2.addMenuItem("Statistics","location='members/statistics.asp'");
+		fw_menu_0_2.addMenuItem("Print ELP","location='members/printelp.asp'");
+		fw_menu_0_2.hideOnMouseOut=true;
+		
+		
+		window.fw_menu_0 	= new Menu("root",100,17,"Arial",10,"#000000","#000000","#EDEDED","#CCCCCC");
+		fw_menu_0.addMenuItem("Latest News","location=''");
+		fw_menu_0.addMenuItem("Archived News","location='archives.asp'");
+		fw_menu_0.hideOnMouseOut=true;
+		fw_menu_0.childMenuIcon="arrows.gif";
+		window.fw_menu_1 	= new Menu("root",100,17,"Arial",10,"#000000","#000000","#EDEDED","#CCCCCC");
+		fw_menu_1.addMenuItem(fw_menu_0_1,"location='rolecall.asp'");
+		fw_menu_1.addMenuItem("Register","location='register.asp'");
+		fw_menu_1.addMenuItem("Requirements","location='requirements.asp'");
+		fw_menu_1.addMenuItem("ELP System","location='elp.asp'");
+		fw_menu_1.hideOnMouseOut=true;
+		window.fw_menu_2 	= new Menu("root",96,17,"Arial",10,"#000000","#000000","#EDEDED","#CCCCCC");
+
+		fw_menu_2.addMenuItem("Player Details","location='members/'");
+		fw_menu_2.addMenuItem("View Raids","location='members/raidlist.asp'");
+		fw_menu_2.addMenuItem("Pop Flags","location='members/flags.asp'");
+		fw_menu_2.addMenuItem("Change Password","location='members/changepw.asp'");
+		fw_menu_2.addMenuItem("Logout","location='members/logout.asp'");
+		fw_menu_2.hideOnMouseOut=true;
+		fw_menu_2.writeMenus();
+	}
+</script>
+</head>
+
+<body>
+<script language="JavaScript1.2">fwLoadMenus();</script>
+<table border="0" cellspacing="0" cellpadding="0" height="100%" width="100%">
+  <tr>
+    <td valign="top">
+	  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td colspan="2" class="txt" background="images/bg.jpg"><a href="./"><img src="images/logo.jpg" border="0"></a></td>
+        </tr>
+        <tr>
+          <td background="images/bgUpper.jpg" width="100%"><img src="images/nav_r2_c1.jpg"></td>
+      	<td align="right"><img src="images/nav_r2_c20.jpg"></td>
+        </tr>
+        <tr>
+          <td background="images/bgMiddle.jpg" width="100%">
+            <table border="0" cellspacing="0" cellpadding="0">
+        	  <tr>
+	            <td><img src="images/nav_r3_c1.jpg"><a href=""
+				                                      onClick="window.FW_showMenu(window.fw_menu_0,46,130);"
+		                                              onMouseOver="imgOn('images/menuNews', 'News'); window.FW_showMenu(window.fw_menu_0,46,130)"
+											          onMouseOut="imgOff('images/menuNews', 'News'); FW_startTimeout();"
+											        ><img id="News" src="images/menuNews.jpg" border="0"></a></td>
+	            <td><img src="images/nav_r3_c10.jpg"><a href="guildhall.asp"
+													   onClick="window.FW_showMenu(window.fw_menu_1,177,130);"
+		                                               onMouseOver="imgOn('images/menuGuildhall', 'Guildhall'); window.FW_showMenu(window.fw_menu_1,177,130)"
+											           onMouseOut="imgOff('images/menuGuildhall', 'Guildhall'); FW_startTimeout();"
+													  ><img id="Guildhall" src="images/menuGuildhall.jpg" border="0"></a></td>
+	            <td><img src="images/nav_r3_c14.jpg"><a href="members/"
+				                                       onClick="window.FW_showMenu(window.fw_menu_2,307,130);"
+		                                               onMouseOver="imgOn('images/menuMembers', 'Members'); window.FW_showMenu(window.fw_menu_2,307,130)"
+											           onMouseOut="imgOff('images/menuMembers', 'Members'); FW_startTimeout();"
+													 ><img id="Members" src="images/menuMembers.jpg" border="0"></a></td>
+	            <td><img src="images/nav_r3_c16.jpg"><a href="http://www.darktemplarsguild.co.uk/forums"
+											           onMouseOver="imgOn('images/menuForums', 'Forums')"
+											           onMouseOut="imgOff('images/menuForums', 'Forums')"
+				><img id="Forums" src="images/menuForums.jpg" border="0"></a></td>
+	            <td><img src="images/nav_r3_c18.jpg"></td>
+				<td class="sml" align="right"><font color="#EEEEEE">You are not currently logged in.</font></td>
+	          </tr>
+	        </table>
+	      <td align="right"><img src="images/nav_r3_c20.jpg"></td>
+        </tr>
+        <tr>
+          <td background="images/bgLower.jpg" width="100%"><img src="images/nav_r4_c1.jpg"></td>
+      	<td align="right"><img src="images/nav_r4_c20.jpg"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+		    <table border="0" cellspacing="0" cellpadding="5" width="100%">
+			  <tr>
+			    <td class="txt" valign="top" height="100%">
+				<!-- BEGIN : Dynamic Content //-->
+
+<table border="0" width="90%" cellspacing="0" cellpadding="2" align="center">
+  <tr>
+    <td class="txt" align="center"><div class="massive">94 Active Members</div>
+    View a players details by selecting their name. Select a column title to change sorting.</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <table border="0" width="100%" cellspacing="1" cellpadding="0" bgcolor="#000000">
+        <tr>
+          <td align="center">
+            <table border="0" width="100%" cellspacing="1" cellpadding="2">
+              <tr align="center" bgcolor="#898376" class="header">
+                <td width="20%"><a href="rolecall.asp?order=name" class="link">Name</a></td>
+                <td width="10%"><a href="rolecall.asp?order=class" class="link">Class</a></td>
+                <td width="10%"><a href="rolecall.asp?order=level" class="link">Level</a></td>
+                <td width="10%"><a href="rolecall.asp?order=status" class="link">Status</a></td>
+                <td width="10%" class="cheader"><a href="rolecall.asp?order=elp" class="link">Current ELP</a></td>
+                <td width="10%" class="cheader"><a href="rolecall.asp?order=total" class="link">Total ELP</a></td>
+                <td width="10%" class="cheader">Profile</td>
+              </tr>
+			  <tr>
+			    <td colspan="9" bgcolor="#898376">
+			      <table border="0" cellspacing="0" cellpadding="2" width="100%">
+			          <tr id="Aedan McCallacht" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=1" class="link">Aedan McCallacht</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">251</td>
+    <td width="10%">499</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=50190','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Alaros" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=220" class="link">Alaros</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">69</td>
+    <td width="10%">896</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=27007','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Alenia" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=176" class="link">Alenia</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">511</td>
+    <td width="10%">2011</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=193691','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Alizia" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=232" class="link">Alizia</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">235</td>
+    <td width="10%">280</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=700042','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Ardg" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=229" class="link">Ardg</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">106</td>
+    <td width="10%">807</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=588547','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Avelariel" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=50" class="link">Avelariel</a></td>
+    <td width="10%">Bard</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">455</td>
+    <td width="10%">2444</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=25809','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Bafoon Boombastique" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=71" class="link">Bafoon Boombastique</a></td>
+    <td width="10%">Magician</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">144</td>
+    <td width="10%">721</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=635506','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Bertil Mithrilmane" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=116" class="link">Bertil Mithrilmane</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">556</td>
+    <td width="10%">1987</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=25776','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Blammore" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=66" class="link">Blammore</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">248</td>
+    <td width="10%">1664</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=416963','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Brucy Lee" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=236" class="link">Brucy Lee</a></td>
+    <td width="10%">Monk</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">28</td>
+    <td width="10%">208</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=91816','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Cabirus" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=17" class="link">Cabirus</a></td>
+    <td width="10%">Necromancer</td>
+    <td width="10%">65</td>
+    <td width="10%">Guild Leader</td>
+    <td width="10%">276</td>
+    <td width="10%">1130</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=313704','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Calven" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=47" class="link">Calven</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">394</td>
+    <td width="10%">1038</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=532691','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Cerivel" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=221" class="link">Cerivel</a></td>
+    <td width="10%">Ranger</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">665</td>
+    <td width="10%">1291</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=307994','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Chasan Dayve" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=139" class="link">Chasan Dayve</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">64</td>
+    <td width="10%">754</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=229082','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Chowar" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=233" class="link">Chowar</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">226</td>
+    <td width="10%">293</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=465138','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Daleth" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=32" class="link">Daleth</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">291</td>
+    <td width="10%">1209</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=80180','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Darythia Stormheart" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=22" class="link">Darythia Stormheart</a></td>
+    <td width="10%">Paladin</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">238</td>
+    <td width="10%">1056</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=624774','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Davon Plainswalker" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=180" class="link">Davon Plainswalker</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">405</td>
+    <td width="10%">1417</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=34478','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Deka Kardz" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=19" class="link">Deka Kardz</a></td>
+    <td width="10%">Paladin</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">362</td>
+    <td width="10%">1821</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=77633','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Egam" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=235" class="link">Egam</a></td>
+    <td width="10%">Magician</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">103</td>
+    <td width="10%">274</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=674235','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Eldias Moonshadow" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=114" class="link">Eldias Moonshadow</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">111</td>
+    <td width="10%">1329</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=220166','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Eolistiar Scriberans" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=111" class="link">Eolistiar Scriberans</a></td>
+    <td width="10%">Magician</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">254</td>
+    <td width="10%">1578</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=20571','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Esbjörn" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=186" class="link">Esbjörn</a></td>
+    <td width="10%">Beastlord</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">262</td>
+    <td width="10%">1439</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=396979','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Ever" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=242" class="link">Ever</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Trial Member</td>
+    <td width="10%">192</td>
+    <td width="10%">196</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=571639','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Fafnir Elementcaller" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=80" class="link">Fafnir Elementcaller</a></td>
+    <td width="10%">Magician</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">504</td>
+    <td width="10%">1445</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=212892','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Faranor Elysian" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=56" class="link">Faranor Elysian</a></td>
+    <td width="10%">Monk</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">236</td>
+    <td width="10%">1483</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=145881','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Finie" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=214" class="link">Finie</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">247</td>
+    <td width="10%">1131</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=348229','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Flaashheart" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=177" class="link">Flaashheart</a></td>
+    <td width="10%">Monk</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">397</td>
+    <td width="10%">2102</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=251120','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Fufinski" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=26" class="link">Fufinski</a></td>
+    <td width="10%">Ranger</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">441</td>
+    <td width="10%">2215</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=185010','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Gregorus" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=228" class="link">Gregorus</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">236</td>
+    <td width="10%">839</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=34892','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Grimthor" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=217" class="link">Grimthor</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">139</td>
+    <td width="10%">950</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=39433','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Grobu" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=49" class="link">Grobu</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">99</td>
+    <td width="10%">519</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=209166','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Gromm It" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=4" class="link">Gromm It</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">575</td>
+    <td width="10%">1398</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=312177','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Guldren Kjelldoran" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=234" class="link">Guldren Kjelldoran</a></td>
+    <td width="10%">Ranger</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">131</td>
+    <td width="10%">387</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=536569','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Haplos" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=179" class="link">Haplos</a></td>
+    <td width="10%">Necromancer</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">279</td>
+    <td width="10%">1648</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=286326','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Indriel Elysian" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=55" class="link">Indriel Elysian</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">99</td>
+    <td width="10%">2253</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=154142','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Iyenae Truedove" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=62" class="link">Iyenae Truedove</a></td>
+    <td width="10%">Bard</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">69</td>
+    <td width="10%">1889</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=123153','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Jaakor Coeur de Neige" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=195" class="link">Jaakor Coeur de Neige</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">110</td>
+    <td width="10%">847</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=128007','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Jadriel Evergreen" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=190" class="link">Jadriel Evergreen</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">63</td>
+    <td width="10%">Member</td>
+    <td width="10%">116</td>
+    <td width="10%">464</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=353938','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Jhalava Fortune" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=27" class="link">Jhalava Fortune</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">181</td>
+    <td width="10%">1275</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=342688','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Johnb" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=7" class="link">Johnb</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">290</td>
+    <td width="10%">872</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=41993','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Jontom Merrywether" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=13" class="link">Jontom Merrywether</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">326</td>
+    <td width="10%">1391</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=30233','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Kaina" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=187" class="link">Kaina</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">213</td>
+    <td width="10%">1252</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=454440','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Kaladryn" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=200" class="link">Kaladryn</a></td>
+    <td width="10%">Ranger</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">89</td>
+    <td width="10%">477</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=644090','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Karmer" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=137" class="link">Karmer</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">121</td>
+    <td width="10%">409</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=550267','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Keikan" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=241" class="link">Keikan</a></td>
+    <td width="10%">Ranger</td>
+    <td width="10%">65</td>
+    <td width="10%">Trial Member</td>
+    <td width="10%">58</td>
+    <td width="10%">61</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=202831','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Kellis Kindred" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=193" class="link">Kellis Kindred</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">220</td>
+    <td width="10%">1251</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=58589','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Khuobak" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=213" class="link">Khuobak</a></td>
+    <td width="10%">Shadowknight</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">116</td>
+    <td width="10%">383</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=531449','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Klaen" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=12" class="link">Klaen</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">442</td>
+    <td width="10%">1968</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=321460','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Knivek Muppet" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=14" class="link">Knivek Muppet</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">63</td>
+    <td width="10%">1407</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=115431','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Kral Swiftfox" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=131" class="link">Kral Swiftfox</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">689</td>
+    <td width="10%">1861</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=50034','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Lavendal" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=238" class="link">Lavendal</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Trial Member</td>
+    <td width="10%">240</td>
+    <td width="10%">277</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=159787','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Lloddian" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=230" class="link">Lloddian</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">287</td>
+    <td width="10%">582</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=129214','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Loupo" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=227" class="link">Loupo</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">187</td>
+    <td width="10%">868</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=608742','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Maxtones" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=225" class="link">Maxtones</a></td>
+    <td width="10%">Bard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">196</td>
+    <td width="10%">978</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=191354','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Mollen" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=147" class="link">Mollen</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">62</td>
+    <td width="10%">Temp Inactive</td>
+    <td width="10%">180</td>
+    <td width="10%">196</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=162194','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Morbidity" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=174" class="link">Morbidity</a></td>
+    <td width="10%">Shadowknight</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">104</td>
+    <td width="10%">785</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=443299','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Namari" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=239" class="link">Namari</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">205</td>
+    <td width="10%">225</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=258566','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Obzidian Valdroth" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=128" class="link">Obzidian Valdroth</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">153</td>
+    <td width="10%">788</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=411927','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Paladore Shadowborn" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=145" class="link">Paladore Shadowborn</a></td>
+    <td width="10%">Paladin</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">259</td>
+    <td width="10%">1382</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=339690','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Pholious Athorix" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=237" class="link">Pholious Athorix</a></td>
+    <td width="10%">Monk</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">67</td>
+    <td width="10%">265</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=702613','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Phreud" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=216" class="link">Phreud</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">219</td>
+    <td width="10%">1030</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=625738','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Qinnydar Longbone" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=170" class="link">Qinnydar Longbone</a></td>
+    <td width="10%">Paladin</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">239</td>
+    <td width="10%">2009</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=531323','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Rakhir" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=134" class="link">Rakhir</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">99</td>
+    <td width="10%">2161</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=79396','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Remas" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=210" class="link">Remas</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">79</td>
+    <td width="10%">656</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=531175','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Samarah" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=244" class="link">Samarah</a></td>
+    <td width="10%">Shadowknight</td>
+    <td width="10%">61</td>
+    <td width="10%">Trial Member</td>
+    <td width="10%">0</td>
+    <td width="10%">0</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=579359','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Sarrasha" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=169" class="link">Sarrasha</a></td>
+    <td width="10%">Monk</td>
+    <td width="10%">58</td>
+    <td width="10%">Member</td>
+    <td width="10%">137</td>
+    <td width="10%">146</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=302496','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Sattinnee Sheets" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=29" class="link">Sattinnee Sheets</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">202</td>
+    <td width="10%">1023</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=391737','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Saydo Mazochist" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=243" class="link">Saydo Mazochist</a></td>
+    <td width="10%">Necromancer</td>
+    <td width="10%">65</td>
+    <td width="10%">Trial Member</td>
+    <td width="10%">177</td>
+    <td width="10%">177</td>    <td width="10%" class="txt">n/a</td>  </tr>  <tr id="Seferoth" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=113" class="link">Seferoth</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">120</td>
+    <td width="10%">819</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=479805','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Selariel" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=3" class="link">Selariel</a></td>
+    <td width="10%">Bard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">178</td>
+    <td width="10%">1078</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=701621','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Serrath" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=204" class="link">Serrath</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">300</td>
+    <td width="10%">1202</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=329177','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Sherish Broganie" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=188" class="link">Sherish Broganie</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">222</td>
+    <td width="10%">1140</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=734316','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Shiroy" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=231" class="link">Shiroy</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">402</td>
+    <td width="10%">559</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=330551','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Summer" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=212" class="link">Summer</a></td>
+    <td width="10%">Bard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">145</td>
+    <td width="10%">1227</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=77952','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Tahas" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=59" class="link">Tahas</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">649</td>
+    <td width="10%">1406</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=565894','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Taliessen" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=178" class="link">Taliessen</a></td>
+    <td width="10%">Druid</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">243</td>
+    <td width="10%">2024</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=536980','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Tarranth Thunderspirit" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=211" class="link">Tarranth Thunderspirit</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">287</td>
+    <td width="10%">1417</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=438360','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Tellall" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=219" class="link">Tellall</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">63</td>
+    <td width="10%">Member</td>
+    <td width="10%">407</td>
+    <td width="10%">760</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=645772','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Thiefen Kindred" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=208" class="link">Thiefen Kindred</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">70</td>
+    <td width="10%">1533</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=402803','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="thrugo" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=222" class="link">thrugo</a></td>
+    <td width="10%">Paladin</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">288</td>
+    <td width="10%">1187</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=401973','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Totty" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=23" class="link">Totty</a></td>
+    <td width="10%">Ranger</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">317</td>
+    <td width="10%">2311</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=267383','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Tulian Shadowheart" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=91" class="link">Tulian Shadowheart</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">194</td>
+    <td width="10%">1053</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=106044','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Ulthiana" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=218" class="link">Ulthiana</a></td>
+    <td width="10%">Shadowknight</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">157</td>
+    <td width="10%">281</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=61720','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Urrien" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=156" class="link">Urrien</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">204</td>
+    <td width="10%">1189</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=193829','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Utaman" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=171" class="link">Utaman</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">180</td>
+    <td width="10%">361</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=533096','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Veril" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=35" class="link">Veril</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">273</td>
+    <td width="10%">1968</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=20968','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Vhaelos Flass" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=154" class="link">Vhaelos Flass</a></td>
+    <td width="10%">Enchanter</td>
+    <td width="10%">65</td>
+    <td width="10%">Class Leader</td>
+    <td width="10%">208</td>
+    <td width="10%">1428</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=102194','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Viscera Galen" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=52" class="link">Viscera Galen</a></td>
+    <td width="10%">Cleric</td>
+    <td width="10%">65</td>
+    <td width="10%">Officer</td>
+    <td width="10%">156</td>
+    <td width="10%">1213</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=191031','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Volatile O Braidy" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=28" class="link">Volatile O Braidy</a></td>
+    <td width="10%">Rogue</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">179</td>
+    <td width="10%">556</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=418413','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Willium" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=141" class="link">Willium</a></td>
+    <td width="10%">Shaman</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">142</td>
+    <td width="10%">487</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=230527','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Wolfgard" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=240" class="link">Wolfgard</a></td>
+    <td width="10%">Warrior</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">102</td>
+    <td width="10%">282</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=709229','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Xalyssa" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=129" class="link">Xalyssa</a></td>
+    <td width="10%">Wizard</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">349</td>
+    <td width="10%">1341</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=335620','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Zhaz" align="center" class="rollOffB" onMouseOver="this.className='rollOnB'" onMouseOut="this.className='rollOffB'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=92" class="link">Zhaz</a></td>
+    <td width="10%">Monk</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">160</td>
+    <td width="10%">1771</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=83189','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>  <tr id="Zuniga" align="center" class="rollOffA" onMouseOver="this.className='rollOnA'" onMouseOut="this.className='rollOffA'">
+    <td width="20%" align="left">
+    <a href="viewdetails.asp?mID=109" class="link">Zuniga</a></td>
+    <td width="10%">Paladin</td>
+    <td width="10%">65</td>
+    <td width="10%">Member</td>
+    <td width="10%">123</td>
+    <td width="10%">723</td>    <td width="10%"><a href="#" onClick="window.open('http://www.magelo.com/eq_view_profile.html?num=338326','mageloo','width=800, height=600, toolbars=no')"><img src="images/magelo.gif" border="0"></a></td>  </tr>
+  			      </table>
+			    </td>
+			  </tr>
+		    </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+				<!-- END : Dynamic Content //-->
+				</td>
+				<td valign="top" width="220">
+				  <table border="0" cellspacing="0" cellpadding="0">
+				    <tr>
+					  <td colspan="3"><img src="images/subHeader.jpg"></td>
+					</tr>
+					<tr>
+					  <td background="images/subLeft.gif"><img src="images/shim.gif" height="1" width="51"></td>
+					  <td width="150" background="images/bgMenu.jpg" style="padding: 4" class="sml"><div align="center"><b>Classes</b></div>
+					  5 : Bards<br>
+1 : Beastlords<br>
+12 : Clerics<br>
+10 : Druids<br>
+8 : Enchanters<br>
+4 : Magicians<br>
+6 : Monks<br>
+3 : Necromancers<br>
+6 : Paladins<br>
+6 : Rangers<br>
+9 : Rogues<br>
+4 : Shadowknights<br>
+7 : Shamans<br>
+7 : Warriors<br>
+7 : Wizards<br>
+<br>
+					  <div align="center"><b>Top Item Bids</b></div>
+					  Soul Essence of Aten Ha Ra. 292<br>
+Soul Essence of Aten Ha Ra. 280<br>
+Leggings of Judgement. 280<br>
+Soul Essence of Aten Ha Ra. 280<br>
+Soul Essence of Aten Ha ra. 280<br>
+Soul Essence of Aten Ha Ra. 280<br>
+Mask of Secrets . 280<br>
+Koadics Robe of Heightened Focus. 270<br>
+Soul Eseence of Aten Ha Ra. 265<br>
+Soul Essence of Aten Ha Ra. 260<br>
+Mail of Judgement. 260<br>
+</td>
+					  <td background="images/subRight.gif"><img src="images/shim.gif" height="1" width="20"></td>
+					</tr>
+					<tr>
+					  <td colspan="3"><img src="images/subBase.jpg"></td>
+					</tr>
+				  </table>
+				</td>
+			  </tr>
+			</table>
+		  </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+      <table border="0" cellspacing="0" cellpadding="0" background="images/bgBase.jpg" width="100%">
+  	    <tr>
+          <td valign="bottom"><a href=""><img src="images/baseNews.jpg" border="0"></a><a href="guildhall.asp"><img src="images/baseGuildhall.jpg" border="0"></a><a href="members/"><img src="images/baseMembers.jpg" border="0"></a><a href="http://forums.darktemplars.co.uk"><img src="images/baseForums.jpg" border="0"></a></td>
+	      <td valign="bottom" align="right"><a href="http://www.functionfirst.co.uk" target="_blank"><img src="images/baseProps.jpg" border="0"></a></td>
+	    </tr>
+	  </table>
+	</td>
+  </tr>
+</table>
+
+
+</body>
+
+</html>
+

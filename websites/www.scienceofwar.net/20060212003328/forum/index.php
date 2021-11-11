@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="./index.php?sid=8bf51a38328d62d98f43707458fc1d56" title="Science Of War Forum Index" />
+<link rel="search" href="./search.php?sid=8bf51a38328d62d98f43707458fc1d56" title="Search" />
+<link rel="help" href="./faq.php?sid=8bf51a38328d62d98f43707458fc1d56" title="FAQ" />
+<link rel="author" href="./memberlist.php?sid=8bf51a38328d62d98f43707458fc1d56" title="Memberlist" />
+
+<title>Science Of War :: Index</title>
+<link rel="stylesheet" href="templates/ashGrunge/ashGrunge.css" type="text/css">
+<LINK REL="SHORTCUT ICON" HREF="http://www.scienceofwar.net/sow-favicon.ico">
+
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="993" border="0" cellspacing="0" cellpadding="0" class="maintable">
+  <tr>
+    <td valign="top">
+
+
+
+<!-- Science of War Banner and Main Menu -->
+<div id="headerbg">
+   <script language="javascript">
+      <!--
+
+      var bdis = "<img src=\"";
+      var edis = " width=\"993\" height=\"194\" usemap=\"#Map\" border=\"0\">";
+      var rnumb = "";
+      var img = "";
+
+      rnumb += Math.floor(Math.random()*3);
+      img = rnumb;
+
+      if (img == "0")
+      {
+         document.write(bdis+ "../../forum/templates/ashGrunge/images/header-chi.jpg\"" +edis);
+      }
+
+      if (img == "1")
+      {
+         document.write(bdis+ "../../forum/templates/ashGrunge/images/header-eng.jpg\"" +edis);
+      }
+
+      if (img == "2")
+      {
+         document.write(bdis+ "../../forum/templates/ashGrunge/images/header-drag.jpg\"" +edis);
+      }
+
+      // -->
+   </script>
+   <map name="Map">
+      <area shape="circle" coords="61,130,54" href="http://www.scienceofwar.net" alt="Science of War Guild Home">
+   </map>
+</div>
+<div class="menubar">
+  <span class="menuspacing"><A HREF="http://sow.jot.com/WikiHome">About Us</A></span>
+  <span class="menuspacing"><a href="http://www.scienceofwar.net/forum/">Forum</a></span>
+  <span class="menuspacing"><A HREF="http://www.scienceofwar.net/dkp/">DKP</A></span>
+  <span class="menuspacing"><A HREF="http://www.scienceofwar.net/forum/viewtopic.php?t=9">Join Us</A></span>
+  <span class="menuspacing"><A HREF="http://www.scienceofwar.net/gallery">Gallery</A></span>
+<span class="menuspacing"><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="image" align="right" valign="top" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+</form></span>
+</div>
+  <div  class="wideblkbox">
+    <fieldset>
+    <legend>Forum Navigation</legend>
+	&nbsp &nbsp
+	<a href="search.php?sid=8bf51a38328d62d98f43707458fc1d56">Search</a> &nbsp &nbsp
+	<a href="memberlist.php?sid=8bf51a38328d62d98f43707458fc1d56">Memberlist</a>&nbsp &nbsp
+	<a href="groupcp.php?sid=8bf51a38328d62d98f43707458fc1d56">Usergroups</a>&nbsp &nbsp
+	<a href="profile.php?mode=editprofile&amp;sid=8bf51a38328d62d98f43707458fc1d56">Profile</a>&nbsp &nbsp &nbsp
+	<a href="privmsg.php?folder=inbox&amp;sid=8bf51a38328d62d98f43707458fc1d56">Private Messages</a>&nbsp &nbsp
+	<a href="profile.php?mode=register&amp;sid=8bf51a38328d62d98f43707458fc1d56">Register</a>&nbsp &nbsp
+	<a href="login.php?sid=8bf51a38328d62d98f43707458fc1d56">Login</a>&nbsp &nbsp
+	</fieldset>
+  </div>
+
+</td>
+	</tr>
+	 <tr>
+    <td colspan="2" valign="top">
+<table border="0" cellpadding="5" width="993" align="left">
+	<tr>
+	<td>
+<fieldset>
+<legend><span class="maintitle">Science of War Guild Forums</span></legend>
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="right" valign="bottom" class="gensmall">
+		<a href="search.php?search_id=unanswered&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="gensmall">View unanswered posts</a></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="2" cellspacing="2" border="0" class="forumline">
+  <tr>
+	<th colspan="2" class="thCornerL" height="25" nowrap="nowrap">&nbsp;Forum&nbsp;</th>
+	<th width="50" class="thTop" nowrap="nowrap">&nbsp;Topics&nbsp;</th>
+	<th width="50" class="thTop" nowrap="nowrap">&nbsp;Posts&nbsp;</th>
+	<th class="thCornerR" nowrap="nowrap">&nbsp;Last Post&nbsp;</th>
+  </tr>
+  <tr>
+	<td class="catLeft" colspan="5" height="28"><span class="cattitle"><a href="index.php?c=1&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="cattitle">Public Forums</a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=39&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Guild News</a><br />
+	  </span> <span class="genmed"><br />
+	  </span><span class="gensmall">Moderator <a href="profile.php?mode=viewprofile&amp;u=355&amp;sid=8bf51a38328d62d98f43707458fc1d56">Klaen</a></span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">41</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">259</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">02.03 06.44pm<br /><a href="profile.php?mode=viewprofile&amp;u=4&amp;sid=8bf51a38328d62d98f43707458fc1d56">vovka</a> <a href="viewtopic.php?p=104886&amp;sid=8bf51a38328d62d98f43707458fc1d56#104886"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=2&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">General Discussion</a><br />
+	  </span> <span class="genmed"><br />
+	  </span><span class="gensmall">Moderator <a href="profile.php?mode=viewprofile&amp;u=355&amp;sid=8bf51a38328d62d98f43707458fc1d56">Klaen</a></span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">1646</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">8988</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">02.02 02.52pm<br /><a href="profile.php?mode=viewprofile&amp;u=4&amp;sid=8bf51a38328d62d98f43707458fc1d56">vovka</a> <a href="viewtopic.php?p=104885&amp;sid=8bf51a38328d62d98f43707458fc1d56#104885"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=33&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Applications to Join SoW</a><br />
+	  </span> <span class="genmed"><br />
+	  </span><span class="gensmall">Moderator <a href="profile.php?mode=viewprofile&amp;u=355&amp;sid=8bf51a38328d62d98f43707458fc1d56">Klaen</a></span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">152</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">42</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.02 11.53pm<br /><a href="profile.php?mode=viewprofile&amp;u=288&amp;sid=8bf51a38328d62d98f43707458fc1d56">Phobeus</a> <a href="viewtopic.php?p=103703&amp;sid=8bf51a38328d62d98f43707458fc1d56#103703"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=5&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Gonads and Strife (and Testing)</a><br />
+	  </span> <span class="genmed"><br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">1004</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">6375</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.27 04.32pm<br /><a href="profile.php?mode=viewprofile&amp;u=9480&amp;sid=8bf51a38328d62d98f43707458fc1d56">Sonkun</a> <a href="viewtopic.php?p=104819&amp;sid=8bf51a38328d62d98f43707458fc1d56#104819"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=38&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Public Library: WoW</a><br />
+	  </span> <span class="genmed">Donate via paypal button for access. Be sure to send Vovka a PM with the email address you used to make the donation so that he can turn access on for you.<br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">81</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">972</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.09 08.54pm<br /><a href="profile.php?mode=viewprofile&amp;u=9637&amp;sid=8bf51a38328d62d98f43707458fc1d56">Najira</a> <a href="viewtopic.php?p=104642&amp;sid=8bf51a38328d62d98f43707458fc1d56#104642"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=14&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Public Library: EQ1</a><br />
+	  </span> <span class="genmed">Strats, Tactics and Spoilers for Everquest. Donate via paypal button for access. Be sure to send Vovka a PM with the email address you used to make the donation so that he can turn access on for you.<br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">902</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">9504</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.10 08.09am<br /><a href="profile.php?mode=viewprofile&amp;u=4&amp;sid=8bf51a38328d62d98f43707458fc1d56">vovka</a> <a href="viewtopic.php?p=104672&amp;sid=8bf51a38328d62d98f43707458fc1d56#104672"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="catLeft" colspan="5" height="28"><span class="cattitle"><a href="index.php?c=7&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="cattitle">WoW Member Forums</a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=45&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Private Applicant Forum</a><br />
+	  </span> <span class="genmed">For SoW apps only<br />
+	  </span><span class="gensmall">Moderator <a href="profile.php?mode=viewprofile&amp;u=355&amp;sid=8bf51a38328d62d98f43707458fc1d56">Klaen</a></span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">215</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">992</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.11 04.11pm<br /><a href="profile.php?mode=viewprofile&amp;u=10189&amp;sid=8bf51a38328d62d98f43707458fc1d56">draconiaes</a> <a href="viewtopic.php?p=104781&amp;sid=8bf51a38328d62d98f43707458fc1d56#104781"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=30&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Guild Matters</a><br />
+	  </span> <span class="genmed"><br />
+	  </span><span class="gensmall">Moderator <a href="profile.php?mode=viewprofile&amp;u=355&amp;sid=8bf51a38328d62d98f43707458fc1d56">Klaen</a></span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">557</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">3984</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">10.26 10.55pm<br /><a href="profile.php?mode=viewprofile&amp;u=9516&amp;sid=8bf51a38328d62d98f43707458fc1d56">Trillan</a> <a href="viewtopic.php?p=104837&amp;sid=8bf51a38328d62d98f43707458fc1d56#104837"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=35&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">[HR] Application Deliberations</a><br />
+	  </span> <span class="genmed">Forum for applications that are pending a decision. <br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">29</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">506</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">10.09 12.56am<br /><a href="profile.php?mode=viewprofile&amp;u=10309&amp;sid=8bf51a38328d62d98f43707458fc1d56">Xeth</a> <a href="viewtopic.php?p=104823&amp;sid=8bf51a38328d62d98f43707458fc1d56#104823"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=36&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">[HR] Application Decisions</a><br />
+	  </span> <span class="genmed">Where all applications go after a decision has been made.<br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">197</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">2535</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.10 01.46pm<br /><a href="profile.php?mode=viewprofile&amp;u=9549&amp;sid=8bf51a38328d62d98f43707458fc1d56">Lare</a> <a href="viewtopic.php?p=104689&amp;sid=8bf51a38328d62d98f43707458fc1d56#104689"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=37&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">Site Technology Info</a><br />
+	  </span> <span class="genmed">Spot a bug on the site? Note it here. Need access to something? Request it here. Gallery, Teamspeak and other login information here as well.<br />
+	  </span><span class="gensmall">Moderator <a href="profile.php?mode=viewprofile&amp;u=355&amp;sid=8bf51a38328d62d98f43707458fc1d56">Klaen</a></span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">45</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">349</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.08 11.02pm<br /><a href="profile.php?mode=viewprofile&amp;u=4&amp;sid=8bf51a38328d62d98f43707458fc1d56">vovka</a> <a href="viewtopic.php?p=104415&amp;sid=8bf51a38328d62d98f43707458fc1d56#104415"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=42&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">[DKP] Unprocessed Transactions</a><br />
+	  </span> <span class="genmed">DKP transactions that have not yet been entered into our DKP tracking tool wait here.<br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">12</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">37</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.10 08.05pm<br /><a href="profile.php?mode=viewprofile&amp;u=9549&amp;sid=8bf51a38328d62d98f43707458fc1d56">Lare</a> <a href="viewtopic.php?p=104715&amp;sid=8bf51a38328d62d98f43707458fc1d56#104715"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+  <tr>
+	<td class="row1" align="center" valign="middle" height="50"><img src="templates/ashGrunge/images/folder_big.gif" width="46" height="25" alt="No new posts" title="No new posts" /></td>
+	<td class="row1" width="100%" height="50"><span class="forumlink"> <a href="viewforum.php?f=43&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="forumlink">[DKP] Processed Transactions</a><br />
+	  </span> <span class="genmed">Archive of all processed DKP transactions.<br />
+	  </span><span class="gensmall">&nbsp; &nbsp;</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">173</span></td>
+	<td class="row2" align="center" valign="middle" height="50"><span class="gensmall">639</span></td>
+	<td class="row2" align="center" valign="middle" height="50" nowrap="nowrap"> <span class="gensmall">09.07 02.59pm<br /><a href="profile.php?mode=viewprofile&amp;u=9627&amp;sid=8bf51a38328d62d98f43707458fc1d56">Scud</a> <a href="viewtopic.php?p=104272&amp;sid=8bf51a38328d62d98f43707458fc1d56#104272"><img src="templates/ashGrunge/images/icon_latest_reply.gif" border="0" alt="View latest post" title="View latest post" /></a></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="0" border="0" align="center" cellpadding="2">
+  <tr>
+	<td align="left"><span class="gensmall"><a href="index.php?mark=forums&amp;sid=8bf51a38328d62d98f43707458fc1d56" class="gensmall">Mark all forums read</a></span></td>
+	<td align="right"><span class="gensmall">All times are GMT - 5 Hours</span></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
+  <tr>
+	<td class="catHead" height="28"><span class="cattitle"><a href="viewonline.php?sid=8bf51a38328d62d98f43707458fc1d56" class="cattitle">Who is Online</a></span></td>
+  </tr>
+  <tr>
+
+	<td class="row1" align="left" width="100%"><span class="gensmall">Our users have posted a total of <b>100404</b> articles<br />We have <b>10362</b> registered users<br />The newest registered user is <b><a href="profile.php?mode=viewprofile&amp;u=10376&amp;sid=8bf51a38328d62d98f43707458fc1d56">ghfgf</a></b></span>
+	</td>
+  </tr>
+  <tr>
+	<td class="row1" align="left"><span class="gensmall">In total there is <b>1</b> user online :: 0 Registered, 0 Hidden and 1 Guest &nbsp; [ <span class="admintext"><span style="color:#000000">Administrator</span></span> ] &nbsp; [ <span class="admintext"><span style="color:#C80909">Moderator</span></span>  ]<br />Most users ever online was <b>42</b> on 07.15 03.43pm<br />Registered Users: None</span></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="1" cellspacing="1" border="0">
+	<td align="left" valign="top"><span class="gensmall">This data is based on users active over the past five minutes</span></td>
+</table>
+
+<form method="post" action="login.php?sid=8bf51a38328d62d98f43707458fc1d56">
+  <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
+	<tr>
+	  <td class="catHead" height="28"><a name="login"></a><span class="cattitle">Log in</span></td>
+	</tr>
+	<tr>
+	  <td class="row1" align="center" valign="middle" height="28"><span class="gensmall">Username:
+		<input class="post" type="text" name="username" size="10" />
+		&nbsp;&nbsp;&nbsp;Password:
+		<input class="post" type="password" name="password" size="10" />
+		&nbsp;&nbsp; &nbsp;&nbsp;Log me on automatically each visit
+		<input class="text" type="checkbox" name="autologin" />
+		&nbsp;&nbsp;&nbsp;
+		<input type="submit" class="mainoption" name="login" value="Log in" />
+		</span> </td>
+	</tr>
+  </table>
+</form>
+
+<br clear="all" />
+
+<table cellspacing="3" border="0" align="center" cellpadding="0">
+  <tr>
+	<td width="20" align="center"><img src="templates/ashGrunge/images/folder_new.gif" alt="New posts"/></td>
+	<td><span class="gensmall">New posts</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center"><img src="templates/ashGrunge/images/folder_lock.gif" alt="Forum is locked" /></td>
+	<td><span class="gensmall">Forum is locked</span></td>
+  </tr>
+</table>
+</fieldset>
+
+<span class="copyright"><br />
+
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a>  &copy; 2001-2010 phpBB Group. 
+Original template by <a href="http://www.ashwebstudio.com/index.php?r=phpbb" target="_blank" class="copyright">Ashwebstudio</a>, modified by <a href="http://www.ladyofdragons.com" target="_blank" class="copyright">Sarah E Gross</a>.<br>
+All other content is copyright Science of War, unless otherwise noted. All Rights Reserved. Site design by <a href="http://www.ladyofdragons.com" target="_blank" class="copyright">Sarah E Gross</a>.
+  Logo translation by <a href="http://www.livejournal.com/users/bride/" target="_blank" class="copyright">Bride of the First House</a>.
+
+</span>
+	</td>
+	</tr>
+	</table>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

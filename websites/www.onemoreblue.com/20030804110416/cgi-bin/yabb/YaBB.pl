@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Star Wars Galaxies - Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+<style type="text/css">
+<!--
+/* General layout */
+A:link        { font-weight: normal; text-decoration: none; color: #FFFFFF; }
+A:visited     { text-decoration: none; color: #FFFFFF; font-weight: normal; }
+A:hover       { text-decoration: none; color: #AAAAAA; }
+BODY          { scrollbar-face-color: #000000; scrollbar-shadow-color: #000000; scrollbar-highlight-color: #FFFFFF;
+                scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #AFC6DB;
+                scrollbar-track-color: #333333; scrollbar-arrow-color: ##DEE7EF; font-family: Tahoma, Helvetica, Arial; 
+                font-size:12px; font-weight: bold; margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-left: 0; 
+                padding-right: 0; }
+text          { font-family: Tahoma, Helvetica, Arial; font-size: 11px; font-weight: bold; }
+TD            { font-family: Tahoma, Helvetica, Arial; color: #FFFFFF; font-size: 11px; font-weight: bold; }
+input         { background-color: #000000; font-family: Tahoma, Helvetica, Arial; font-size: 9pt; color: #FFFFFF; font-weight: bold; }
+textarea      { background-color: #000000; font-family: Tahoma, Helvetica, Arial; font-size: 9pt; color: #FFFFFF; font-weight: bold; }
+select        { background-color: #000000; font-family: Tahoma, Helvetica, Arial; font-size: 7pt; color: #FFFFFF; font-weight: bold; }
+.copyright    { font-family: Tahoma, Helvetica, Arial; font-size: 10px; }
+
+/* YaBB navigation links */
+.nav          { font-size: 10px; text-decoration: none; color: #FFFFFF; font-weight: bold; }
+.nav:link     { font-size: 10px; text-decoration: none; color: #FFFFFF; font-weight: bold; }
+.nav:visited  { font-size: 10px; text-decoration: none; color: #FFFFFF; font-weight: bold; }
+.nav:hover    { font-size: 10px; text-decoration: none; color: #AAAAAA; font-weight: bold; text-decoration: underline; }
+
+/* YaBB alternating bgcolors */
+.windowbg     { background-color: #000000; font-size: 11px; font-family: Tahoma; color: #FFFFFF; font-weight: bold; }
+.windowbg2    { background-color: #000000; font-size: 11px; font-family: Tahoma; color: #FFFFFF; font-weight: bold; }
+.windowbg3    { background-color: #000000; font-size: 11px; font-family: Tahoma; color: #FFFFFF; font-weight: bold; }
+
+/* Misc./title/category colors */
+.hr           { color: #6394BD; }
+.titlebg      { background-color: #333333; color: #FFFFFF; }
+.text1        { font-style: normal; font-weight: bold; font-size: 12px; color: #FFFFFF; }
+.catbg        { background-color: #666666; color: #FFFFFF; font-weight: bold; font-size: 13px; }
+.bordercolor  { background-color: #333333; }
+
+/* Image fonts */
+.imgbg        { font-style: normal; font-size: 10px; color: #FFFFFF; font-weight: bold;}
+.imgcatbg     { font-style: normal; font-size: 10px; color: #FFFFFF; font-weight: bold; }
+.imgtitlebg   { font-style: normal; font-size: 10px; color: #FFFFFF;  font-weight: bold; }
+.imgwindowbg  { font-style: normal; font-size: 9px; color: #FFFFFF; font-weight: bold;}
+.imgmenu      { font-style: normal; font-size: 11px; color: #FFFFFF; font-weight: bold; letter-spacing: 0.1em; }
+
+/* Post quote/code colors */
+.quote        { font-size: 10px; font-family: Tahoma, Helvetica, Arial; color: #FFFFFF; background-color: #000000; }
+.code         { font-size: 10px; font-family: Tahoma; color: #FFFFFF; background-color: #000000; }
+-->
+</style>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+if ((navigator.appVersion.substring(0,1) == "5" && navigator.userAgent.indexOf('Gecko') != -1) || navigator.userAgent.search(/Opera/) != -1) {
+   document.write('<META HTTP-EQUIV="pragma" CONTENT="no-cache">');
+}
+// -->
+</script>
+</head>
+
+<body text="#FFFFFF" bgcolor="#000000" link="#FFFFFF">
+<center>
+<script>
+<!-- 
+var pic, alt;
+pic = new Array;
+pic[0] = "http://www.onemoreblue.com/banners/banner1.jpg";
+pic[1] = "http://www.onemoreblue.com/banners/banner2.jpg";
+pic[2] = "http://www.onemoreblue.com/banners/banner3.jpg";
+pic[3] = "http://www.onemoreblue.com/banners/banner4.jpg";
+pic[4] = "http://www.onemoreblue.com/banners/banner5.jpg";
+pic[5] = "http://www.onemoreblue.com/banners/banner6.jpg";
+pic[6] = "http://www.onemoreblue.com/banners/banner7.jpg";
+pic[7] = "http://www.onemoreblue.com/banners/banner8.jpg";
+pic[8] = "http://www.onemoreblue.com/banners/banner9.jpg";
+pic[9] = "http://www.onemoreblue.com/banners/banner10.jpg";
+pic[10] = "http://www.onemoreblue.com/banners/banner11.jpg";
+pic[11] = "http://www.onemoreblue.com/banners/banner12.jpg";
+pic[12] = "http://www.onemoreblue.com/banners/banner13.jpg";
+pic[13] = "http://www.onemoreblue.com/banners/banner14.jpg";
+pic[14] = "http://www.onemoreblue.com/banners/banner15.jpg";
+pic[15] = "http://www.onemoreblue.com/banners/banner16.jpg";
+
+alt = new Array;
+alt[0] = "Visit onemoreblue.com";
+alt[1] = "Visit onemoreblue.com";
+alt[2] = "Visit onemoreblue.com";
+alt[3] = "Visit onemoreblue.com";
+alt[4] = "Visit onemoreblue.com";
+alt[5] = "Visit onemoreblue.com";
+alt[6] = "Visit onemoreblue.com";
+alt[7] = "Visit onemoreblue.com";
+alt[8] = "Visit onemoreblue.com";
+alt[9] = "Visit onemoreblue.com";
+alt[10] = "Visit onemoreblue.com";
+alt[11] = "Visit onemoreblue.com";
+alt[12] = "Visit onemoreblue.com";
+alt[13] = "Visit onemoreblue.com";
+alt[14] = "Visit onemoreblue.com";
+alt[15] = "Visit onemoreblue.com";
+
+var now = new Date();
+var seed = now.getTime() % 0xffffffff;
+
+function rand(n) {
+seed = (0x015a4e35 * seed) % 0x7fffffff;
+return ( seed >> 16 ) % n;
+} 
+
+var num = rand(16);
+
+document.write("<img alt='" + alt[num] + "' name='main_image' src='" + pic[num] + "'  border='0' ></a>"); 
+
+//-->
+</script>
+
+<script language="JavaScript1.2">
+function setcountdown(theyear,themonth,theday){
+yr=theyear;mo=themonth;da=theday
+}
+setcountdown(2003,6,26)
+var occasion="SWG Release Date!"
+var message_on_occasion="w00t! SWG is here!"
+var countdownwidth='480px'
+var countdownheight='20px'
+var countdownbgcolor='black'
+var opentags='<font face="Tahoma" color="FFFFFF" size="2">'
+var closetags='</font>'
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+var crosscount=''
+function start_countdown(){
+if (document.layers)
+document.countdownnsmain.visibility="show"
+else if (document.all||document.getElementById)
+crosscount=document.getElementById&&!document.all?document.getElementById("countdownie") : countdownie
+countdown()
+}
+
+if (document.all||document.getElementById)
+document.write('<span id="countdownie" style="width:'+countdownwidth+'; background-color:'+countdownbgcolor+'"></span>')
+
+window.onload=start_countdown
+
+function countdown(){
+var today=new Date()
+var todayy=today.getYear()
+if (todayy < 1000)
+todayy+=1900
+var todaym=today.getMonth()
+var todayd=today.getDate()
+var todayh=today.getHours()
+var todaymin=today.getMinutes()
+var todaysec=today.getSeconds()
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+futurestring=montharray[mo-1]+" "+da+", "+yr
+dd=Date.parse(futurestring)-Date.parse(todaystring)
+dday=Math.floor(dd/(60*60*1000*24)*1)
+dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+//if on day of occasion
+if(dday<=0&&dhour<=0&&dmin<=0&&dsec<=1&&todayd==da){
+if (document.layers){
+document.countdownnsmain.document.countdownnssub.document.write(opentags+message_on_occasion+closetags)
+document.countdownnsmain.document.countdownnssub.document.close()
+}
+else if (document.all||document.getElementById)
+crosscount.innerHTML=opentags+message_on_occasion+closetags
+return
+}
+//if passed day of occasion
+else if (dday<=-1){
+if (document.layers){
+document.countdownnsmain.document.countdownnssub.document.write(opentags+"Occasion already passed! "+closetags)
+document.countdownnsmain.document.countdownnssub.document.close()
+}
+else if (document.all||document.getElementById)
+crosscount.innerHTML=opentags+"Occasion already passed! "+closetags
+return
+}
+//else, if not yet
+else{
+if (document.layers){
+document.countdownnsmain.document.countdownnssub.document.write(opentags+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec+" seconds left until "+occasion+closetags)
+document.countdownnsmain.document.countdownnssub.document.close()
+}
+else if (document.all||document.getElementById)
+crosscount.innerHTML=opentags+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec+" seconds left until "+occasion+closetags
+}
+setTimeout("countdown()",1000)
+}
+</script>
+<ilayer id="countdownnsmain" width=&{countdownwidth}; height=&{countdownheight}; bgColor=&{countdownbgcolor}; visibility=hide><layer id="countdownnssub" width=&{countdownwidth}; height=&{countdownheight}; left=0 top=0></layer></ilayer>
+
+</center>
+<br>
+<table width="92%" cellspacing="1" cellpadding="0" border="0" align="CENTER" class="bordercolor">
+  <tr> 
+    <td class="bordercolor" width="100%"> 
+      <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#000000">
+              <tr> 
+                <td bgcolor="#000000" height="50"><img src="http://www.onemoreblue.com/banners/sabre.gif" alt="Star Wars Galaxies"></td>
+                <td bgcolor="#000000"> 
+                <p><font size="2">
+                Welcome, Guest. Please <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=login">Login</a> or <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=register">Register</a>. <BR>
+                Aug 4<sup>th</sup>, 2003, 7:06am
+                </font><BR></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table bgcolor="#AFC6DB" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="3" cellspacing="0" bgcolor="#000000" align="center">
+              <tr> 
+                <td valign="middle" bgcolor="#000000" align="center"><font size="1"><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl"><img src="http://www.onemoreblue.com/YaBBImages/home.gif" alt="Home" border="0"> <font size="1" class="imgmenu">Home</font></a> <a href="http://www.onemoreblu.com/YaBBHelp/index.html" target="_blank" style="cursor:help;"><img src="http://www.onemoreblue.com/YaBBImages/help.gif" alt="Help" border="0"> <font size="1" class="imgmenu">Help</font></a> <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=search"><img src="http://www.onemoreblue.com/YaBBImages/search.gif" alt="Search" border="0"> <font size="1" class="imgmenu">Search</font></a> <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=mlall"><img src="http://www.onemoreblue.com/YaBBImages/guest.gif" alt="Members" border="0"> <font size="1" class="imgmenu">Members</font></a> <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=login"><img src="http://www.onemoreblue.com/YaBBImages/login.gif" alt="Login" border="0"> <font size="1" class="imgmenu">Login</font></a> <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=register"><img src="http://www.onemoreblue.com/YaBBImages/register.gif" alt="Register" border="0"> <font size="1" class="imgmenu">Register</font></a></font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr><tr> 
+    <td class="bordercolor" align="center"> 
+      <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="100%" align="center"> 
+            <table border="0" width="100%" cellpadding="5" cellspacing="0" bgcolor="#000000" align="center">
+              <tr> 
+                <td valign="middle" bgcolor="#000000" align="center">
+                <font size="2" color="#FFFFFF"><B>Star Wars Galaxies</B>  « Index »</font><br>
+</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<BR>
+<center>
+<!--#echo banner=""-->
+<BR>
+<table width="92%" align="center" border="0">
+  <tr>
+    <td><font size="2">
+    
+<P align="left"><font size="2" class="nav"><IMG SRC="http://www.onemoreblue.com/YaBBImages/open.gif" BORDER="0" alt=""> <b>Star Wars Galaxies</b></font>
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="#000000" class="bordercolor">
+  <tr>
+    <td>
+    <table cellpadding="4" cellspacing="1" border="0" width="100%">
+      <tr>
+        <td class="titlebg" bgcolor="#333333" colspan="2"><font class="text1" color="#FFFFFF" size="2"><b>Forum name</b></font></td>
+        <td class="titlebg" bgcolor="#333333" width="1%" align="center"><font class="text1" color="#FFFFFF" size="2"><b>Topics</b></font></td>
+        <td class="titlebg" bgcolor="#333333" width="1%" align="center"><font class="text1" color="#FFFFFF" size="2"><b>Posts</b></font></td>
+        <td class="titlebg" bgcolor="#333333" width="24%" align="center"><font class="text1" color="#FFFFFF" size="2"><b>Last post</b></font></td>
+      </tr><tr>
+        <td colspan="5" class="catbg" bgcolor="#333333" height="18"><a name="general_cat"> <font size=2><b>SWG</b></font></a></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="8%" align="center" valign="top"><img src="http://www.onemoreblue.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#333333" align="left" width="66%">
+        <a name="news"></a>
+        <font size=2><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=news"><B>General SWG Discussion</B></a></font>
+        <br><font size="1">Free for all about the upcoming release of SWG, and information so we can start as a community on the "Flurry" Server.    <BR>
+        <i>Moderator: N/A</i></font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">23</font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">62</font></td>
+        <td class="windowbg2" bgcolor="#333333" valign="middle" width="24%"><font size="1">Jun 30<sup>th</sup>, 2003, 4:37pm<BR>by <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Glytter">Glytter</a></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="8%" align="center" valign="top"><img src="http://www.onemoreblue.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#333333" align="left" width="66%">
+        <a name="PA_cat"></a>
+        <font size=2><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=PA_cat"><B>PA Relations</B></a></font>
+        <br><font size="1">Forum for anything related to SWG Player Associations. Recruit, Organize, Trash Talk, and just have fun!  <BR>
+        <i>Moderator: N/A</i></font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">2</font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">4</font></td>
+        <td class="windowbg2" bgcolor="#333333" valign="middle" width="24%"><font size="1">Jun 23<sup>rd</sup>, 2003, 5:38pm<BR>by <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=HateBreeder">HateBreeder</a></font></td>
+      </tr><tr>
+        <td colspan="5" class="catbg" bgcolor="#333333" height="18"><a name="General"> <font size=2><b>General</b></font></a></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="8%" align="center" valign="top"><img src="http://www.onemoreblue.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#333333" align="left" width="66%">
+        <a name="Offtopic"></a>
+        <font size=2><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=Offtopic"><B>Offtopic</B></a></font>
+        <br><font size="1">Post anything non-game related here. <BR>
+        <i>Moderator: N/A</i></font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">7</font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">11</font></td>
+        <td class="windowbg2" bgcolor="#333333" valign="middle" width="24%"><font size="1">May 21<sup>st</sup>, 2003, 6:36pm<BR>by <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=vayman">vayman</a></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="8%" align="center" valign="top"><img src="http://www.onemoreblue.com/YaBBImages/off.gif" alt="No New Posts" border="0"></td>
+        <td class="windowbg2" bgcolor="#333333" align="left" width="66%">
+        <a name="suggest"></a>
+        <font size=2><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=suggest"><B>Suggestion Box</B></a></font>
+        <br><font size="1">Have a suggestion for the site, something you want to see? Drop us a note here.<BR>
+        <i>Moderator: N/A</i></font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">1</font></td>
+        <td class="windowbg" bgcolor="#333333" valign="middle" align="center" width="1%"><font size="2">1</font></td>
+        <td class="windowbg2" bgcolor="#333333" valign="middle" width="24%"><font size="1">Mar 13<sup>th</sup>, 2003, 7:40pm<BR>by <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=Glytter">Glytter</a></font></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+<BR><BR>
+<table border=0 width="100%" cellspacing="0" cellpadding="0" bgcolor="#000000" class="bordercolor">
+  <tr>
+    <td>
+    <table cellpadding="4" cellspacing="1" border="0" width="100%">
+      <tr>
+        <td bgcolor="#333333" class="titlebg" align="center" colspan="2">
+        <font class="text1" color="#FFFFFF" size="2"><b>Info Center</b></font></td>
+      </tr><tr>
+        <td class="catbg" bgcolor="#333333" colspan="2"> <font size="2" class="catbg"><b>Forum Statistics</b></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="20" valign="middle" align="center"><img src="http://www.onemoreblue.com/YaBBImages/info.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#333333" valign="top" align="center"><font size="1">
+        <table width="98%" cellpadding="3" align="center">
+          <tr>
+            <td valign="top" align="left" width="60%"><font size="1">
+            Total Topics: <B>33</B> &nbsp; - &nbsp; Total Posts: <B>78</B>
+	    <BR>Last Updated Topic: <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=news;action=display;num=1057005461;start=0"><B>Cool site</B></a> (Jun 30<sup>th</sup>, 2003, 4:37pm)<BR>View the <A href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=recent">10 most recent posts</a> of this forum.
+	    </font></td>
+	    <td valign="top" align="left" width="40%"><font size="1">
+	    Total Members: <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=mlall"><B>30</B></a>
+	    <BR>Newest Member: <a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?action=viewprofile;username=HateBreeder"><b>HateBreeder</b></a>
+	    
+	    </font></td>
+	  </tr>
+	</table>
+	</font></td>
+      </tr><tr>
+        <td class="catbg" bgcolor="#333333" colspan="2"> <font size="2" class="catbg"><b>Users online</b></font></td>
+      </tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="20" valign="middle" align="center"><img src="http://www.onemoreblue.com/YaBBImages/online.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#333333"><font size=1>
+        <table width="98%" cellpadding="3" align="center">
+          <tr>
+            <td valign="top" align="left"><font size="1">
+            1 Guests, 0 Users<BR>
+            </font></td>
+          </tr>
+        </table>
+        </font></td>
+      </tr><tr><td class="catbg" bgcolor="#333333" colspan="2"><font size="2" class="catbg"><b>Login <small><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=reminder">(Forgot password?)</small></a></b></font></td></tr><tr>
+        <td class="windowbg" bgcolor="#333333" width="20" valign=middle align=center><img src="http://www.onemoreblue.com/YaBBImages/login.gif" border="0" alt=""></td>
+        <td class="windowbg2" bgcolor="#333333" valign="middle"><BR>
+        <form action="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=login2" method="POST">
+        <table border="0" cellpadding="2" cellspacing="0" valign="middle" align="center" width="90%">
+          <tr>
+            <td valign="middle" align="left"><font size=2><b>Username:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=text name="username" size="15" tabindex="1"></font></td>
+            <td valign="middle" align="left"><font size=2><b>Minutes to stay logged in:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=text name="cookielength" size="7" maxlength="4" value="360" tabindex="3"> </font></td>
+          </tr><tr>
+            <td valign="middle" align="left"><font size=2><b>Password:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=password name="passwrd" size="15" tabindex="2"></font></td>
+            <td valign="middle" align="left"><font size=2><b>Always stay logged in:</b></font></td>
+            <td valign="middle" align="left"><font size=2><input type=checkbox name="cookieneverexp" tabindex="4" checked>&nbsp;&nbsp;</font> <input type=submit value="Login" tabindex="5" accesskey="l"></font></td>
+            <td valign="middle" align="left"><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl?board=;action=reminder"><font size="1">Forgot password?</font></a></td>
+          </tr>
+        </table>
+        </form>
+       </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+    </font></td>
+  </tr>
+</table>
+<BR>
+<font class="copyright"><a href="http://www.onemoreblue.com/cgi-bin/yabb/YaBB.pl"><font size="1">Star Wars Galaxies</font></a> &#187; <font size="1">Powered by</font> <a href="http://www.yabbforum.com"><font size="1">YaBB 1 Gold - SP 1.1</font></a><font size="1">!<BR>
+YaBB © 2000-2002, </font><a href="http://www.xnull.com"><font size="1">Xnull</font></a><font size="1">. All Rights Reserved.</font></font>
+</center>
+</body>
+</html>

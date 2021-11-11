@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+<title>Infinite Vision</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 12px;
+    color: #000000;
+    background-color: #000033;
+}
+
+a:link,a:active,a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffcc33;
+    text-decoration: underline;
+}
+a.header:link,a.header:active,a.header:visited {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+a.header:hover {
+    color: #CECFEF;
+    font-weight: bold;
+    text-decoration: none;
+}
+.smallheader {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 10px;
+}
+a.smallheader:link,a.smallheader:active,a.smallheader:visited {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+}
+a.smallheader:hover {
+    color: #CECFEF;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+}
+a.rowfoot:link,a.rowfoot:active,a.rowfoot:visited {
+    color: #FFFFFF;
+    text-align: right;
+    text-decoration: none;
+}
+a.rowfoot:hover {
+    color: #CECFEF;
+    text-align: right;
+    text-decoration: none;
+}
+.rowhead {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #999999;
+    white-space: nowrap;
+}
+.row1 {
+    background-color: #8995ab;
+}
+.row2 {
+    background-color: #445470;
+}
+.rowfoot {
+    color: #FFFFFF;
+    text-align: right;
+    background-color: #999999;
+    white-space: nowrap;
+}
+.positive {
+    color: #ffffff;
+}
+.negative {
+    color: #CCCCCC;
+}
+.neutral {
+    color: #000000;
+}
+.small {
+    font-size: 10px;
+}
+.copy {
+    font-size: 10px;
+    color: #ffffff;
+}
+a.copy:link,a.copy:active,a.copy:visited {
+    font-size: 10px;
+    color: #ffffff;
+}
+a.copy:hover {
+    font-size: 10px;
+    color: #CECFEF;
+}
+a.menu:link,a.menu:active,a.menu:visited {
+    text-decoration: none;
+    font-size: 10px;
+    color: #ffffff;
+}
+a.menu:hover {
+    text-decoration: underline;
+    font-size: 10px;
+    color: #CECFEF;
+}
+.quote1 {
+    background-color: #445470;
+    font-size: 12px;
+    line-height: 125%;
+}
+.quote2 {
+    background-color: #8995ab;
+    font-size: 12px;
+    line-height: 125%;
+}
+.input {
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10px;
+    color: #000000;
+    background-color: #D1D1D1;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: #000000;
+    border-style: solid;
+}
+input.mainoption {
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #999999;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: #FFFFFF;
+    border-style: solid;
+}
+input.liteoption {
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #999999;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: #FFFFFF;
+    border-style: solid;
+}
+.helpline1 {
+    background-color: #8995ab;
+    border-style: none;
+}
+.helpline2 {
+    background-color: #445470;
+    border-style: none;
+}
+
+.mainmenu {
+	font-size: 11px;
+	color: #CCCCFF;
+}
+a.mainmenu {
+	text-decoration: none;
+	color: #CCCCFF;
+}
+a.mainmenu:visited {
+	text-decoration: none;
+	color: #CCCCFF;
+}
+a.mainmenu:hover {
+	text-decoration: underline;
+	color: #CCCCFF;
+}
+
+.itemFont {
+	font-family: Arial;
+	font-size: 11px;
+	color: white;
+	line-height: 10px;
+}
+.maintitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.subtitle {
+    font-size: 12px;
+    color: #ffffff;
+}
+#stats {
+    color: #FFFFFF;
+    position: relative;
+    left: 4px;
+    top: 3px;
+    height: 101px;
+    z-index: 2;
+}
+-->
+</style>
+</head>
+
+<!-- <body> -->
+<body bgcolor="#333366" background="/images/bkg.gif" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	  <td valign="top" align="center"><img border="0" src="/images/header.gif"></td>
+	</tr>
+	<tr>
+		<td width="100%">
+		  <br>
+		  <center><span class="copy">
+		  <a href="./index.php?s=ff25a9ce2dbb4dfe62f9b33fec135305" class="mainmenu">News</a> | <a href="./plugins/roster/index.php?s=ff25a9ce2dbb4dfe62f9b33fec135305" class="mainmenu">Roster</a> | <a href="./phpbb/profile.php?mode=register " class="mainmenu">Register</a> | <a href="./login.php?s=ff25a9ce2dbb4dfe62f9b33fec135305" target="_top" class="mainmenu">Login</a> | <a href="./phpbb" class="mainmenu"><b>Message Boards</b></a><br>
+		  
+		  </span></center>
+		</td>
+	</tr>
+  </table>
+  </center>
+</div>
+<br />
+
+<table align="center" width="1000" border="0" cellspacing="0" cellpadding="0" bgcolor="#000033">
+	<tr>
+		<td valign='top'>
+			<table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#445470">
+			  <tr >
+               	<td><img src="http://www.eqiv.com/images/Tab1.gif" ></td>
+			  </tr>
+			  <tr>
+			  	<td colspan='1'>
+			  		<table >
+			  			
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">May 31, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>IV Transcends!</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">Ikkinz 3 down....the Altar boy is next...can ya feel it? I know you can...<br />
+<br />
+Grats IV on learning this one...it wasnt easy.<br />
+<br />
+Oh yeah..and we woulda won last week except a guard somehow fell below the world and we couldnt finish...beaten by gamebug_99999<br />
+<br />
+</span><br><br>
+											<span class="small">(submitted by Backalley at 09:22pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/70-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/70-1_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">May 26, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Someone check the temperature in Hell.....</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">Letter From John Smedley<br />
+<br />
+<br />
+ <br />
+Hello Norrath!<br />
+ <br />
+I wanted to announce that we've decided to push Omens of War back to Late August in order to give the EQ team time to respond to important issues that the EverQuest community is raising (specifically including the issues with Gates of Discord). We've heard some concerns from within the community that we feel are important enough to push back our next expansion and spend time fixing the problems you have brought to our attention. At the end of the day, we work for you and it's important for us to demonstrate that we both understand and appreciate that. We're also inviting many members of the community to join us here at SOE for a day to have a direct dialog with the development team about issues that are important to the EverQuest community as a whole. We've already sent out the invitations and are making all the arrangements. In addition, our EQ community managers will be coming up with a list of issues raised on the message boards so that we can come back to you with a specific list of things we're going to address.<br />
+ <br />
+I'm sorry if you feel we haven't been listening and reacting appropriately. We do our best to balance all of the needs and concerns you raise along with expanding Norrath and giving you new and wonderful things to do in EverQuest, but we do make mistakes. We've heard you loud and clear. <br />
+ <br />
+We have many things planned for EverQuest over the upcoming years, and our goal is to keep you happily playing EverQuest for a long time to come. The best way for us to do that is by first and foremost is by listening to you.<br />
+ <br />
+John Smedley<br />
+President, Sony Online Entertainment<br />
+<br />
+<br />
+First of all I would like to applaud Smedley and SOE for finally stepping up to the plate and taking a swing at customer service. I just hope its not too late as people are quitting the game over the bugs and other problems over yet another unfinished released expansion. Its GOOD they are pushing back the Omens because they should fix the current problems first or there wont be alot of players hanging around for the next one.<br />
+<br />
+As of tonight 5/26 characters and mobs still have problems staying above ground, some still stick half through the floor or appear like they are falling into the floor as they move. Mobs warp badly, getting hung up on walls then popping on top of raids. Tonight in Ikkinz-Transcendence we got down to the last golem guard only to have him warp through the wall and wind up under the world, thus ending 4+ hours of hard work learning this raid for the first time. We could have won yet we had to log AGAIN feeling let down by the games continued bugs. In the past few months this has happened far too much and if you listen to anything SOE listen to the fact that people wont play a broken game for long. EQ isnt the draw it used to be, its stale in many ways for players who have played for 5+ years and while GOD has given us some fun new ways to raid, alot about the game hasnt changed in ages. <br />
+<br />
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="center"><tr><td class="quote1"><b>Quote:</b></td></tr><tr><td class="quote1">At the end of the day, we work for you and it's important for us to demonstrate that we both understand and appreciate that.</td></tr></table> <br />
+<br />
+No, when you get your butt outta bed in the morning to go into work your working for us right then and there. Sony doesnt magically pay you from thin air, your paychecks come from the people who pay your bottom line. You may answer to a superior or stockholders or whatever immediatly,  but at the end of the day you answer to US. If we stop playing your games you have nothing, except time to update your resume'.<br />
+<br />
+For 5 years you had a very well developed game for its time, MMORPG but competition from Blizzard, Sigil and others is coming. REAL competition and now you realize that the people you have abused and ignored because you were THE GAME now see a choice and many resent how they have been treated/ignored by your company over the years.<br />
+<br />
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="center"><tr><td class="quote1"><b>Quote:</b></td></tr><tr><td class="quote1">We're also inviting many members of the community to join us here at SOE for a day to have a direct dialog with the development team about issues that are important to the EverQuest community as a whole.</td></tr></table><br />
+<br />
+Save a buck....do it at a Fan Faire because those are your most loyal players. The people who will shell out $100 and fly to a location, pay for a hotel to meet people who play the game. THOSE are who can best give you the information you need. Instead of having short meaningless Dev Sessions, where most people get to ask a single question and get a short, unenthusiastic response back. <br />
+<br />
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="center"><tr><td class="quote1"><b>Quote:</b></td></tr><tr><td class="quote1"> I'm sorry if you feel we haven't been listening and reacting appropriately.</td></tr></table><br />
+<br />
+You havent, for 5 + years. Now that things are going south you actually give a shi$. <br />
+<br />
+Again, I applaud SOE for finally doing the RIGHT thing and addressing current problems before moving onto the next cash flow project/expansion. I bet if you asked all of your long time players, especially those at the high end of the game, 90+% would say they want finished expansions. No more Rathes, no more Uguas...we want to know that our hard work pays off, that we paid for a finished product, not a work in progress. Hold betas that last longer than a few weeks, open betas for MORE people so you can test things properly. I did the GOD Beta and while the Dev folks like Prathun I dealt with were very personable we simply couldnt test their material because we just didnt have enough people to do it. I think 15 of us were brought to Txevu and couldnt move past the zone in. I mean comeon, if you want us to really test stuff give us stuff to test with reasonable numbers. Most of the GOD beta was people grouping and trying to test the small quests because there was  no direction, people didnt know what to test and how. So GOD was released unfinished and hurried. Its a fun expansion when it works..but when it doesnt its really a collosal waste of our time.<br />
+<br />
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="center"><tr><td class="quote1"><b>Quote:</b></td></tr><tr><td class="quote1">The best way for us to do that is by first and foremost is by listening to you.</td></tr></table><br />
+<br />
+Can i get an AMEN?<br />
+</span><br><br>
+											<span class="small">(submitted by Backalley at 11:02pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table>  </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">May 25, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Ikkinz #2 DOWN!</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">Took some tweaking...some sticking around later than we like..but we downed #2 tonight!<br />
+<br />
+WTG IV!!</span><br><br>
+											<span class="small">(submitted by Backalley at 09:41pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/68-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/68-1_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">May 18, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Ikkinz #1 Down!</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">First time + 42 people = EZ<br />
+<br />
+I dont even wanna know what this last picture of Ikkinz ceiling art is supposed to be.....<br />
+<br />
+Grats IV on climbing another step on our way to QVIC!<br />
+<br />
+Backalley</span><br><br>
+											<span class="small">(submitted by Backalley at 10:01pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/67-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/67-1_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/67-2.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/67-2_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/67-3.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/67-3_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">May 8, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Quarm Down!</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">Huge HUGE night for IV....we cleared phase 4/5 and finally...FINALLY dropped Quarm....the credit goes to every single member of the raid and all those who have shown up for us lately to beat this next challenge!<br />
+<br />
+We stayed patient and we finally finished POP!<br />
+<br />
+WTG IV!!</span><br><br>
+											<span class="small">(submitted by Backalley at 10:07pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/66-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/66-1_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/66-2.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/66-2_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/66-3.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/66-3_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">April 28, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>In Case you have been wondering where the GMS have been....</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">For weeks...Maelin has been without any GMs whatsoever. On the off chance we actually SEE a GM/guide...they are only on for a minute before poof..gone again.<br />
+<br />
+We have been wondering whats been going on.....we petitioned SO much about the bugs we had in Time..and the bugs we STILL have since the clever Directx patch. Yet we never see any gms or guides answer our petitions for days at a time. <br />
+<br />
+So my groups in Fire today....exping at the first castle....minding our own business, only group in the zone.  Newbie guide pops on..Larena or something ...Vaporous quips, wow a gm<br />
+<br />
+Then she poofs....few minutes later, Senior Guide Serenn pops on...and promplty tells me my surname is offensive...and removes it....while also tagging it so I cant pick another one. <br />
+<br />
+Now we have mobs warping still in this game...something that was supposedly fixed months ago, we have players and mobs...going into the floor...halfway...and not being affected by spells or AEs....we have people getting stuck above the zone in Kod Taz...trying to simply move around avoiding the stupidly huge amount of spawns in the zone...ducking constantly because the walls are bugged...we have CONSTANT bugs and more serious problems...and they have time to remove surnames. In fact a member of our group had a petiton in que...and Guide Serenna was kind enough to ignore it and leave...after removing my surname. <br />
+<br />
+Oh yes we know...all petitions will be answered in que...after 5 years we are VERY familiar with the high standards set by Verant/SOE customer service. The amount of care and dedication its given to its loyal customer base over the years. Im sorry, I wish I could help,  hotkeys...the utter lack of presence or reliability and the general FU attitude they display. <br />
+<br />
+Well FU right back Smedly....FU SOE...FU Serenna...and FU Everquest....your cash cow is screaming down the toilet and your piece of shit EQ2 isnt gonna save it. Two Vegas Fan Faires and you cant get the damn thing working when you have people there to WATCH your demos...its laggy...it crashes..and its the usual amatuer hour crap we can expect from a company that lucked into buying a game developed by real programmers with some imagination and ability. You use your highly disappointing SWG engine for EQ2 making it boring to look at....while a company like Blizzard comes out with something so beautiful to look at people are streaming away from EQ in droves. <br />
+<br />
+I can say...when I leave this game....that I will miss the good times...but the good times were never courtesy of SOE, they were courtesy of the relationships I had with people who played here. SOE has never had a clue how to manage a project....they were stupid as hell to add MGBS that would mature their servers at an exponential rate creating overcrowding and a sense of futility at the high end of the game...something that any good businessman would see as a potential risk to their cash flow. <br />
+<br />
+Oh and part of the fun at Fan Faires...has been the names people have come up with...and gotten through the filters...Im sure that had something to do with this...god forbid there be something fun in the game....it has to be a fucking grinding time sink.<br />
+<br />
+Im glad you could stop by and ruin my evening Serenna....now go FIX THE GAME.....because its causing people to retire en masse and nobody at SOE seems to care. <br />
+<br />
+<br />
+<!-- m --><a href="http://www.worldofwarcraft.com/" target="_blank">http://www.worldofwarcraft.com/</a><!-- m --><br />
+<br />
+<br />
+Finally...<br />
+</span><br><br>
+											<span class="small">(submitted by Backalley at 11:32am PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/65-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/65-1_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/65-2.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/65-2_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/65-3.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/65-3_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">April 18, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Big Bastard awaits....</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">Finally...after getting to Inny in our first week in Time...then having to endure weeks of SOE programming incompetance blocking us from killing stuff that was trivial...we finally got to the big bastard and dropped him to 74% on our first run.<br />
+<br />
+He will be dead....oh yes....he will be dead....<br />
+<br />
+And while this screenshot looks like something that would require batteries and be hidden in the back of Ukkos closet...we finally got to see Quarm up close.</span><br><br>
+											<span class="small">(submitted by Backalley at 10:11pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/64-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/64-1_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">April 11, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Its been a year and we would just like to thank SOE.</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">We have had an awesome couple weeks in Time, between Saryn going under the floor, and summoning people, VZ falling through a wall and just disappearing entirely leaving everyone alive, Tallon warping around as we try to position him...the list of fun just goes on and on. <br />
+<br />
+We here in IV would like to send our heartfelt thanks and gratitude to the kind folks responsible for EQs gameplay and thank them for their speedy correction of newbie zone mobs warping, because lord knows theres nothing more frustrating than being low level and been paying for EQs bottom line for all of a few days and having that Giant Rat_01 warp as you were about to kill it. <br />
+<br />
+After five years of dedicated playing....we want to thank the handling team of EQ for making sure the zones we play in are working as intended and for the near non existant customer service we receive daily on our beloved server. We want to thank SOE for offering the private Korean server a home on our 8 elemental guild 6 time guild server when they closed down.<br />
+<br />
+Theres nothing better than not only trying to figure out how to kill something you have waited a year to see, but also trying to figure out how to do it without it or your players falling through walls or floors. <br />
+<br />
+We just have SO much to be grateful for its hard to put it all down and not drive the point home clearly enough so I will just ask that when you look at our pictures, we hope you can derive some meaning from them.<br />
+<br />
+Perhaps three little words...<br />
+</span><br><br>
+											<span class="small">(submitted by Backalley at 03:43pm PDT)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/63-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/63-1_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/63-2.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/63-2_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/63-3.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/63-3_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">March 17, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Cazic, Bertox and Rallos are the Pwnt!</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">Unfortunatley no picture of Cazic available he was zerged so hard he was more of a MR. Hankey smudge than a corpse<br />
+<br />
+Grats to Irriaden on IVs first Robe....Mondrieg on our first Plate BP....Wyndwisper on the Greatstaff of Power, Niivag on the Darkblade of the Warlord (lookout Headboss!), Neurosis on Greaves of Furious Might, Backalley - Earring of Corporal Essence, Pote - Timespinner, Gaythelus - Veil of the Inferno, Fizeldar on Boots of Despair and everyone who was there to help us drop these guys!</span><br><br>
+											<span class="small">(submitted by Backalley at 08:53pm PST)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/62-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/62-1_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/62-2.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/62-2_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+			  			<tr>
+			  				<td bgcolor="#999999">
+			  					<table cellpadding="1" >
+			  						<tr>
+			  							<td width='100%' valign='top' align='left'>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">March 12, 2004</span><br>
+			  								<span style="font-family: Times New Roman;  color: #000000; font-size: 12pt; ine-height: 20px"><b>Vallon Down!</b></span><br><br>
+											<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">IV moves to Phase 5....almost in our first instance....WTFG you guys!<br />
+<br />
+<br />
+Grats Sorndar on the Shinai...Niivag - Helm of Flowing Time...and Maxamillian on the belt dealio. Grendle and Harmonae on Plate legs, Katriona and Allastar on Leather Legs, Golden on Chain Legs, Kaydron - Faceguard of Frenzy, Kattnip and Xixun on Protective Sleeves and Jozie on an Etherial Destoyer!<br />
+<br />
+Backalley</span><br><br>
+											<span class="small">(submitted by Backalley at 10:10pm PST)</span>
+										</td>
+										<td valign='top' align='right'>
+											 <table> <tr><td><a target="_blank" href="http://www.eqiv.com/images/news/61-1.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/61-1_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/61-2.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/61-2_tn.jpg"></a></td></tr><tr><td><a target="_blank" href="http://www.eqiv.com/images/news/61-3.jpg"><img border=0 width=120 src="http://www.eqiv.com/images/news/61-3_tn.jpg"></a></td></tr> </table> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+					</table>
+				</td>
+			  </tr>
+			  <tr>
+				<td colspan='3' class="rowfoot">&nbsp;</td>
+			  </tr>
+			</table>
+		</td>
+			<td width="15">
+		</td>
+		<td valign='top' width="220" >
+			<table bgcolor="#445470" width="100%" border="0" cellspacing="0" cellpadding="1">
+			  <tr>
+			  	<td><img src="http://www.eqiv.com/images/template2.jpg"></td>
+			  </tr>
+			  <tr>
+			  	<td height="10" bgcolor="#000033"></td>
+			  </tr>
+			  <tr>
+			  	<td align="center">
+			  		<span style="font-family: Times New Roman;  color: #999999; font-size: 14pt; ine-height: 20px">
+			  		Most Recent Kills
+			  		</span>
+			  		<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">
+			  		<table width="100%">
+			  		  
+					</table>
+					</span>
+			  	</td>
+			  </tr>
+			  <tr>
+			  	  	<td height="10" bgcolor="#000033"></td>
+			  </tr>
+			  <tr>
+			  	<td align="center">
+			  		<span style="font-family: Times New Roman;  color: #999999; font-size: 14pt; ine-height: 20px">
+			  		Most Recent Loot
+			  		</span>
+			  		<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">
+			  		<table width="100%">
+			  		  
+					</table>
+					</span>
+			  	</td>
+			  </tr>
+			  <tr>
+			  	  	<td height="10" bgcolor="#000033"></td>
+			  </tr>
+			  <tr>
+			  	<td align="center">
+			  		<span style="font-family: Times New Roman;  color: #999999; font-size: 14pt; ine-height: 20px">
+			  		Last 30 Days
+			  		</spam>
+			  		<span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px">
+			  		<table width="100%">
+			  		  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ageless Relic Protector</td>
+					    <td bgcolor="#999999" align="center" width="20%" >2</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chamber of Glorification - End</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chamber of Glorification - Start</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chamber of Transcendence</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chamber of Transcendence - Beginning</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chamber of Transcendence - End</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chambers of Glorification</td>
+					    <td bgcolor="#999999" align="center" width="20%" >2</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chambers of Righteousness</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chambers of Righteousness - End</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Ikkinz, Chambers of Righteousness - Start</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >QUARM</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Smith Rondo event</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Summoner Ring</td>
+					    <td bgcolor="#999999" align="center" width="20%" >1</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Bertoxxulous</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Cazic Thule</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Innoruuk</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME PHASE 2</td>
+					    <td bgcolor="#999999" align="center" width="20%" >4</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME PHASE 3</td>
+					    <td bgcolor="#999999" align="center" width="20%" >4</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Rallos Zek</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Saryn</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Tallon Zek</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Terris Thule</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >Time Trials</td>
+					    <td bgcolor="#999999" align="center" width="20%" >8</td>
+					  </tr>
+					  
+					  <tr>
+					    <td bgcolor="#999999" width="80%" >TIME Vallon Zek</td>
+					    <td bgcolor="#999999" align="center" width="20%" >3</td>
+					  </tr>
+					  
+					</table>
+					</span>
+			  	</td>
+			  </tr>
+			  <tr>
+			  	<td height="10" bgcolor="#000033"></td>
+			  </tr>
+			  <tr >
+ 	             <td><img src="http://www.eqiv.com/images/Tab2.gif"></td>
+			  </tr>
+			  <tr >
+			  	<td>
+			  		<table bgcolor="#445470">
+						<td align="left" bgcolor="#999999"><span style="font-family: Times New Roman;  color: #000000; font-size: 10pt; ine-height: 20px"><SCRIPT language="JavaScript" SRC="http://eqlive.station.sony.com/includes/js_news/eq_headlines.jsp"></SCRIPT><br/></span></td>
+					</table>
+				</td>
+			  </tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br />
+
+<!--
+    If you use this software and find it to be useful, we ask that you
+    retain the copyright notice below.  While not required for free use,
+    it will help build interest in the EQdkp project.
+//-->
+<center><span class="mainmenu">Adminstrator: <a href="/phpbb/profile.php?mode=viewprofile&u=4" class="mainmenu">Xixun</a><br>Developers: <a href="/phpbb/profile.php?mode=viewprofile&u=3" class="mainmenu">Tazmann</a> & <a href="/phpbb/profile.php?mode=viewprofile&u=4" class="mainmenu">Xixun</a><br>Systems Used: <a href="http://www.eqdkp.com" class="mainmenu">EQDkp</a>, <a href="http://www.phpbb.com" class="mainmenu">phpBB</a>, & our own custom stuff!!!</span></center>
+<br />
+
+</body>
+</html>

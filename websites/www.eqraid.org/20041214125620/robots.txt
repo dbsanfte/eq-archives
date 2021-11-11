@@ -1,0 +1,21 @@
+<?
+include("main_include.php");
+
+$ip_address = $_SERVER["REMOTE_ADDR"];
+$user_agent = addslashes(stripslashes($HTTP_USER_AGENT));
+$reverse_dns = @gethostbyaddr($ip_address);
+
+$sql = "INSERT INTO RobotsTxt SET 
+ip_address = '$ip_address', 
+user_agent = '$user_agent', 
+reverse_dns = '$reverse_dns', 
+counter = '1' 
+ON DUPLICATE KEY UPDATE counter = counter + 1";
+//echo $sql;
+db_query($sql, 'RobotStats');
+
+header('Content-type: text/plain');
+?>
+User-agent: *
+Disallow: /click.php
+Disallow: /more_results.php

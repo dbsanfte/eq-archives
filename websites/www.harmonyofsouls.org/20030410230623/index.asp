@@ -1,0 +1,123 @@
+ 
+
+<HTML>
+<HEAD>
+<TITLE>Harmony of Souls</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#CCCCCC" VLINK="#CCCCCC" ALINK="#CCCCCC" LEFTMARGIN="0" TOPMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="MM_preloadImages('images/on_charter.gif','images/on_codes.gif','images/on_ranks.gif','images/on_earning.gif','images/on_members.gif','images/on_board.gif')">
+<TABLE WIDTH="750" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="CENTER">
+  <TR> 
+    <TD><A HREF="charter.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Charter','','images/on_charter.gif',1)"><IMG NAME="Charter" BORDER="0" SRC="images/off_charter.gif" WIDTH="63" HEIGHT="38"></A></TD>
+    <TD><A HREF="conduct.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Codes','','images/on_codes.gif',1)"><IMG NAME="Codes" BORDER="0" SRC="images/off_codes.gif" WIDTH="127" HEIGHT="38"></A></TD>
+    <TD><A HREF="ranks.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Ranks','','images/on_ranks.gif',1)"><IMG NAME="Ranks" BORDER="0" SRC="images/off_ranks.gif" WIDTH="146" HEIGHT="38"></A></TD>
+    <TD><A HREF="earning.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Earning','','images/on_earning.gif',1)"><IMG NAME="Earning" BORDER="0" SRC="images/off_earning.gif" WIDTH="119" HEIGHT="38"></A></TD>
+    <TD><A HREF="members/index.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Members','','images/on_members.gif',1)"><IMG NAME="Members" BORDER="0" SRC="images/off_members.gif" WIDTH="73" HEIGHT="38"></A></TD>
+    <TD><A HREF="http://pub10.ezboard.com/bharmonyofsouls36932" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Board','','images/on_board.gif',1)"><IMG NAME="Board" BORDER="0" SRC="images/off_board.gif" WIDTH="105" HEIGHT="38"></A></TD>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR> 
+    <TD COLSPAN="7"><IMG SRC="images/home_header.jpg" WIDTH="750" HEIGHT="199" ALT="Harmony of Souls"><BR>
+      <BR>
+    </TD>
+  </TR>
+  <TR> 
+    <TD COLSPAN="7">
+      <TABLE WIDTH="747" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <TR> 
+          <TD WIDTH="541" ALIGN="LEFT" VALIGN="TOP"> 
+            
+            <TABLE BORDER=0 CELLPADDING CELLSPACING=0 BGCOLOR="#003399" BORDERCOLOR="#999999">
+              <TR VALIGN="TOP"> 
+                <TD> <TABLE WIDTH=739 height="117" BORDER=1 CELLPADDING=2 CELLSPACING=1 BORDERCOLOR="#999999" BGCOLOR="#000000">
+                    <TR BGCOLOR="#003366"> 
+                      <TD width="736" ALIGN=LEFT VALIGN=TOP><B><FONT SIZE="3">Meet my newest girl friends....</FONT></B><BR> 
+                        <FONT SIZE="2" COLOR="#000000"><B><FONT COLOR="#CCCCCC">Fish</FONT></B><FONT COLOR="#CCCCCC"> 
+                        - 4/2/2003</FONT></FONT></TD>
+                    </TR>
+                    <TR BGCOLOR="#000000"> 
+                      <TD ALIGN=LEFT VALIGN=TOP BGCOLOR="#000000" BORDERCOLOR="#000099"> 
+                        <FONT SIZE="2"> <style>
+.updateText { color: #FFFFFF; font-family: verdana; font-size: 9px; }
+.updateHeadline { color: #FFFFFF; font-family: verdana; font-size: 11px; font-weight: bold; }
+.updateLink { color: #FFFFFF; font-family: verdana; font-size: 9px; }
+</style>
+<table width="650" cellpadding="2" cellspacing="2" bgcolor="#000000">
+	<tr>
+		<td colspan="2" align="center" class="updateHeadline">Some new targets have been in our sights lately.<br>Let me introduce them....</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" class="updateHeadline">Miss IV (no I am not going to try to spell her name)</td>
+	</tr>
+	<tr>
+		<td align="right"><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=7230" target="_new"><img src="http://cot.emich.edu/personal/screenshots/fish/4_01_03/IV_2.jpg" width="400" height="350" border="0"></a></td>
+		<td class="updateText">
+		<a href="http://everquest.allakhazam.com/db/item.html?item=7532" target="_new" class="updateLink">Collar of Tavuel Xakreum</a> - Gurjin</br>
+		<a href="http://everquest.allakhazam.com/db/item.html?item=8830" target="_new" class="updateLink">Ribcracker</a> - Silly Sneezy<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" class="updateHeadline">We could call her The Dancing Queen... but we'll just call her Terris Thule or dead.. your choice.</td>
+	</tr>
+	<tr>
+		<td align="right"><a href="http://eqbeastiary.allakhazam.com/search.shtml?id=10334" target="_new"><img src="http://cot.emich.edu/personal/screenshots/fish/4_01_03/TT_1.jpg" width="370" height="404" border="0"></a></td>
+		<td class="updateText">
+		<a href="http://everquest.allakhazam.com/db/item.html?item=16826" target="_new" class="updateLink">Indigo Snake Bracelet</a> - Dirsen<br>
+		<a href="http://everquest.allakhazam.com/db/item.html?item=16559" target="_new" class="updateLink">Carved Bone Ring</a> - Fish
+		</td>
+	</tr>
+</table>
+<br> </FONT> </TD>
+                    </TR>
+                  </TABLE></TD>
+              </TR>
+            </TABLE>
+            <P><BR>
+              
+              <BR>
+              <BR>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+  <TR> 
+    <TD COLSPAN="7" ALIGN="CENTER">
+      <P><BR>
+        <BR>
+        <IMG SRC="images/footer.gif" WIDTH="160" HEIGHT="76" ALT="HoS: A Prexus Everquest Guild"><BR>
+        <FONT SIZE="2">For more information, or to request an induction,<BR>
+        please contact <A HREF="mailto:koikeeper@hotmail.com">koikeeper@hotmail.com</A></FONT> 
+      </P>
+      <P>&nbsp; </P>
+    </TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

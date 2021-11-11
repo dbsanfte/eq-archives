@@ -1,0 +1,117 @@
+
+<html>
+<head>
+<title>Furybane Messageboard</title>
+<script language="JavaScript">
+<!-- hide from JavaScript-challenged browsers
+function openWindow(url) {
+	popupWin = window.open(url,'new_page','width=400,height=400')
+}
+
+function openHelpWindow(url) 
+{
+  var popupWin = window.open(url,'helpwin','resizable,scrollbars,top=20,left=20,width=500,height=400')
+}
+
+function jumpTo(strMenu) {
+	if (strMenu.options[strMenu.selectedIndex].value != "")
+		top.location.href = strMenu.options[strMenu.selectedIndex].value;
+
+	return true;
+}
+// done hiding -->
+</script>
+
+</head>
+
+<BODY bgColor="#ffffff" text="#000000" link="#0033cc"	aLink=0033cc vLink="0033cc" topmargin=0 leftmargin=0>
+
+
+
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width=95%>
+<TR><TD colspan=2><img src="i/pad.gif" width=1 height=5></TD></TR>
+<TR vAlign=middle>
+	<TD align=middle>
+
+	</td>
+	<TD align=middle>
+		<FONT face="Verdana, Arial, Helvetica, Sans-Serif" size=+1><B>Furybane Messageboard</B></font><br>
+		<FONT face="Verdana, Arial, Helvetica, Sans-Serif" size=1><B>
+		<A href="register.asp" title="Register to use this forum, it's FREE!">register</A>
+		|
+		<A href="profile.asp?mode=edit" title="Edit your profile">my profile</A> 
+		|
+		<a href="bookmark.asp" title="View a list of your bookmarks">my bookmarks</a>
+		|
+		<A href="search.asp" title="Perform a search by keyword, date or user name">search</A>
+		|
+		<A href="javascript:openHelpWindow('help_faqs.html')" title="Look at some frequently asked questions">faq's</A></b>
+		<br>
+		<form action="/forum/default.asp?" method="post" style="margin-top:10;margin-bottom:5;">	
+		Show topics: <SELECT NAME="Days" style="font-size: 9pt;">
+		<OPTION  value="1">from past day
+		<OPTION  value="2">from past 2 days
+		<OPTION  value="5">from past 5 days
+		<OPTION  value="10">from past 10 days
+		<OPTION  value="30">from past 30 days
+		<OPTION  value="60">from past 60 days
+		<OPTION  value="100">from past 100 days
+		<OPTION  value="365">from the past year
+		</SELECT><input type=hidden name="cookie" value="true"> <input type=submit value="Go" style="font-size: 9pt;">&nbsp;&nbsp;&nbsp;&nbsp;
+		</form>
+		</font></TD>
+</TR>
+<TR><TD colspan=2><img src="i/pad.gif" width=1 height=5></TD></TR>
+</TABLE>
+
+<table width="100%" border=0>
+<tr><td colspan=2 align=right><font face="Verdana, Arial, Helvetica, Sans-Serif" size="1">&nbsp;&nbsp;<a href='active.asp'>Show all topics with new replies since your last visit</a>&nbsp;&nbsp;&nbsp;<br><a href='posters.asp'>Show top forum posters</a>&nbsp;&nbsp;&nbsp;</font></td></tr>
+<tr><td><font face="Verdana, Arial, Helvetica, Sans-Serif" size="1">
+&nbsp;&nbsp;You last visited on Wednesday, February 27, 2002 - 12:54</td>
+<td align=right>
+<font face="Verdana, Arial, Helvetica, Sans-Serif" size=1>Total Posts: 250, Total Users: 38 &nbsp;&nbsp;</font>
+</td></tr>
+</table>
+
+<center>
+<table border="0" width="95%" cellspacing="2" cellpadding="4">
+  <tr>
+    <td width=30 align="center" bgcolor="#eeeeee"><b>&nbsp;</td>
+
+    <td align="Left" bgcolor="#eeeeee"><b>
+    <font face="Verdana, Arial, Helvetica, Sans-Serif" size="2" color="#000080">Forum</font>
+    </b></td>
+    <td width=50 align="center" bgcolor="#eeeeee"><b>
+    <font face="Verdana, Arial, Helvetica, Sans-Serif" size="2" color="#000080">Posts</font></b></td>
+    <td width=175 align="center" bgcolor="#eeeeee"><b>
+    <font face="Verdana, Arial, Helvetica, Sans-Serif" size="2" color="#000080">Last Post</font></b></td>
+  </tr>
+<tr><td colspan=4 bgcolor='#000080'><font face='Verdana, Arial, Helvetica, Sans-Serif' size=2 color='#f7f7f7'> <b>Furybane </b></font></td></tr><tr valign=top>
+<td valign=middle width=30 align='center' bgcolor='#f7f7f7'><img src='/forum/i/new_postings.gif' alt='This forum contains new posts since the last time you logged on.'></td>
+<td bgcolor='#f7f7f7'><font face='Verdana, Arial, Helvetica, Sans-Serif' size=2><a href='forum.asp?id=1'><b>Guild </b></a><br>
+<font color='#000080' face='Verdana, Arial, Helvetica, Sans-Serif' size=1>A place for members of the Furybane guild to communicate messages, thoughts, and ideas. <br><b>Forum moderated by <a href="profile.asp?mode=display&id=2">Admin</a></b></font></td>
+<td width=50 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>209</font></td>
+<td width=175 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>Friday, March 08, 2002 - 06:13</font></td>
+</tr>
+<tr valign=top>
+<td valign=middle width=30 align='center' bgcolor='#f7f7f7'><img src="i/pad.gif" width=1 height=1 border=0 alt=""></td>
+<td bgcolor='#f7f7f7'><font face='Verdana, Arial, Helvetica, Sans-Serif' size=2><a href='forum.asp?id=3'><b>Class Specific</b></a><br>
+<font color='#000080' face='Verdana, Arial, Helvetica, Sans-Serif' size=1>A place for guildmembers to ask class specific questions. <br><b>Forum moderated by <a href="profile.asp?mode=display&id=2">Admin</a></b></font></td>
+<td width=50 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>10</font></td>
+<td width=175 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>Wednesday, September 19, 2001 - 23:29</font></td>
+</tr>
+<tr valign=top>
+<td valign=middle width=30 align='center' bgcolor='#f7f7f7'><img src="i/pad.gif" width=1 height=1 border=0 alt=""></td>
+<td bgcolor='#f7f7f7'><font face='Verdana, Arial, Helvetica, Sans-Serif' size=2><a href='forum.asp?id=4'><b>Race Specific</b></a><br>
+<font color='#000080' face='Verdana, Arial, Helvetica, Sans-Serif' size=1>A place for guildmembers to discuss race specific issues. <br><b>Forum moderated by <a href="profile.asp?mode=display&id=2">Admin</a></b></font></td>
+<td width=50 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1></font></td>
+<td width=175 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>Sunday, March 04, 2001 - 14:17</font></td>
+</tr>
+<tr valign=top>
+<td valign=middle width=30 align='center' bgcolor='#f7f7f7'><img src="i/pad.gif" width=1 height=1 border=0 alt=""></td>
+<td bgcolor='#f7f7f7'><font face='Verdana, Arial, Helvetica, Sans-Serif' size=2><a href='forum.asp?id=5'><b>Quest Specific</b></a><br>
+<font color='#000080' face='Verdana, Arial, Helvetica, Sans-Serif' size=1>Have questions about a quest?  Perhaps one of our guildmembers has the answer. <br><b>Forum moderated by <a href="profile.asp?mode=display&id=2">Admin</a></b></font></td>
+<td width=50 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>31</font></td>
+<td width=175 bgcolor='#f7f7f7' align='center'><font face='Verdana, Arial, Helvetica, Sans-Serif' color='#000080' size=1>Monday, October 08, 2001 - 22:06</font></td>
+</tr>
+</table><P></body></html>

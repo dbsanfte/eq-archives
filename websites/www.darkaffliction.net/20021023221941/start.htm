@@ -1,0 +1,347 @@
+<html>
+<head>
+<title>Dark Affliction</title>
+<!-- Webpage Script and Design Copyright 2001 Josche MacDonnell -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+var scroll_height,scrstep,hid_hieght,allowchange;
+hid_hieght = 300;
+scroll_height = 400;
+scrstep = 8;
+allowchange = true;
+
+
+function OutputToScroll(text, flag)
+{
+	if(!flag)flag="";
+	var obj = document.getElementById("ScrMid");
+	switch(flag){
+		case "ADD": obj.innerHTML += text;break;
+		case "LIN": obj.innerHTML += text+"<br>";break;
+		case "CLR": obj.innerHTML = text; break;
+		case "":obj.innerHTML += text;break;
+		default:break;
+	}
+}
+
+function DumpText()
+{
+	var count;
+	
+	for(count=0;count<50;count++)
+			OutputToScroll("Hello count = "+count+"<BR>");
+}
+function ScrContract()
+{
+	;
+}
+
+function ScrExpand()
+{
+	;
+}
+var ReloadPage = 2; 
+
+function ScrAnimate(direction, callback)
+{
+	var middle = parseInt(scroll_height)/2; 
+	var scrtop = document.getElementById("ScrTop");
+	var scrbottom = document.getElementById("ScrBottom");
+	var scrmiddle = document.getElementById("ScrMid");
+	var maxtop,maxbottom;
+	
+	if(direction == "contract")
+	{
+		allowchange = false;
+		if(!callback) callback = "OutputToScroll('','CLR')";
+		maxtop = middle - (parseInt(scrtop.style.height)/32);
+		maxbottom = middle + (parseInt(scrbottom.style.height)/32);
+			
+		scrtop.style.top = (parseInt(scrtop.style.top) + scrstep)+"px";
+		if(parseInt(scrtop.style.top) > maxtop){
+			scrtop.style.top = maxtop+"px";
+		}
+		
+		scrbottom.style.top = (parseInt(scrbottom.style.top) - scrstep)+"px";
+		if(parseInt(scrbottom.style.top) < maxbottom){
+			scrbottom.style.top = maxbottom+"px"; 
+			direction="expand";			
+					
+		}
+		
+		scrmiddle.style.top = parseInt(scrmiddle.style.top) + scrstep + "px"; 
+		scrmiddle.style.height = parseInt(scrmiddle.style.height) - (scrstep*2) +"px";
+	
+		if(parseInt(scrmiddle.style.height) < 1)scrmiddle.style.height = 1+"px";
+		
+		var go ="ScrAnimate(\'" + direction + "\',\" " + callback + "\")";					
+		
+		setTimeout(go,5);
+	}
+
+	else if(direction == "expand")
+	{
+		if(parseInt(scrtop.style.top) - scrstep < 1){
+			scrtop.style.top = "0px";
+			direction="stop";
+				ReloadPage = 2;
+			allowchange = true;
+		}
+		else{
+			scrtop.style.top = (parseInt(scrtop.style.top) - scrstep) + "px";
+			if(ReloadPage>0)
+			{
+				setTimeout(callback,5);
+				ReloadPage = ReloadPage-1;
+			}
+			
+		}
+		scrbottom.style.top = (parseInt(scrbottom.style.top) + scrstep)+"px";
+		
+		scrmiddle.style.top = parseInt(scrmiddle.style.top) - scrstep + "px"; 
+		scrmiddle.style.height = parseInt(scrmiddle.style.height) + (scrstep*2) + "px";
+	
+		if(parseInt(scrmiddle.style.height) < 1)scrmiddle.style.height = 1+"px";	
+		var go ="ScrAnimate(\'" + direction + "\',\" " + callback + "\")";
+		setTimeout(go,10);
+	}
+	else{;}	
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function BW_reload() {location.reload();}
+
+function BW_centerLayers() { //v4.1.1
+	if (document.layers || document.all || document.getElementById){
+		var winWidth, winHeight, i, horz, vert, width, height, offsetX, offsetY, negX, negY, group, x, y, args;
+		args = BW_centerLayers.arguments;
+		
+		onresize = BW_reload;
+
+				
+		winWidth = (document.all)?document.body.clientWidth:window.innerWidth;
+		winHeight = (document.all)?document.body.clientHeight:window.innerHeight;
+				
+		for (i=0; i<(args.length-9); i+=10) {
+			horz    = args[i+1];
+			vert    = args[i+2];
+			width   = parseInt(args[i+3]);
+			height  = parseInt(args[i+4]);
+			offsetX = parseInt(args[i+5]);
+			offsetY = parseInt(args[i+6]);
+			negX    = args[i+7];
+			negY    = args[i+8];
+		
+			x = ((winWidth - width)/2) + offsetX;
+			y = ((winHeight - height)/2) + offsetY;
+						
+			x = (negX=='false' && (x < 0))?0:x;
+			y = (negY=='false' && (y < 0))?0:y;
+				
+			layerObj = (document.getElementById)?document.getElementById(args[i]):MM_findObj(args[i]);
+			
+			if (layerObj!=null) {
+				layerObj = (layerObj.style)?layerObj.style:layerObj;
+				layerObj.left = (horz=="true")?x:layerObj.left;
+				layerObj.top = (vert=="true")?y:layerObj.top;
+			}
+		}
+	}
+}
+
+function loaddocintoscroll(newlocation)
+{		
+	document.getElementById("scrollframe").src=newlocation;	
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Scroll"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Scroll");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Scroll"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 15);
+    document.MM_Time[0][0].values = new Array(2);
+    if (ns5)
+        document.MM_Time[0][0].values[0] = new Array("50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px", "50px");
+    else
+        document.MM_Time[0][0].values[0] = new Array(50,50,50,50,50,50,50,50,50,50,50,50,50,50,50);
+    document.MM_Time[0][0].values[0].prop = "left";
+    if (ns5)
+        document.MM_Time[0][0].values[1] = new Array("135px", "136px", "137px", "138px", "139px", "140px", "141px", "143px", "144px", "145px", "146px", "147px", "148px", "149px", "150px");
+    else
+        document.MM_Time[0][0].values[1] = new Array(135,136,137,138,139,140,141,143,144,145,146,147,148,149,150);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    document.MM_Time[0].lastFrame = 15;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+
+function DisplayMainLimks()
+{
+	document.getElementById('ContentLinks').innerHTML = document.getElementById('MainLinks').innerHTML;
+}
+
+function DisplayMemberLinks()
+{
+	document.getElementById('ContentLinks').innerHTML = document.getElementById('MembersLinks').innerHTML;
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#000000" text="#000000" onload="BW_centerLayers('Scroll','true','false','700','400','0','0','false','false','false');DisplayMainLimks(); ScrAnimate('contract','loaddocintoscroll(\'htms/welcome.htm\')');" link="#FF0000" vlink="#FF0000" alink="#0000FF">
+
+<div id="Scroll" style="position:absolute; left:50px; top:165px; width:700px; height:400px; z-index:3; border: 1px none #000000"> 
+  <div id="ScrTop" style="position:absolute; left:0px; top:0px; width:700px; height:46px; z-index:3"><span style="position: absolute; left: 0; top: 0"><img src="images/leftnob.gif" width="74" height="55"></span><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="34" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/middledown.gif" width="74" height="55"><img src="images/rightnob.gif" width="74" height="55"></div>
+  <div id="ScrBottom" style="position:absolute; left:0px; top:345px; width:700px; height:50px; z-index:3"><img src="images/leftnob.gif" width="74" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/middleup.gif" width="34" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/middleup.gif" width="74" height="55"><img src="images/rightnob.gif" width="74" height="55"></div>
+  <div id="ScrMid" style="position: absolute; left: 74px; top: 51px; width: 550px; height: 300px; z-index: 2; overflow: auto; background-image: url('images/brown-paper.gif'); layer-background-image: url(images/brown-paper.gif); background-repeat: 4; clip: rect(4 550 294 0); border: 1px none #000000"> 
+    <iframe id="scrollframe"; name="main-iframe"; src="pagetemplate.htm" style="position: absolute; left: 0px; top: 0px; width: 546px; height:286" SCROLLING=Auto FRAMEBORDER=0 > 
+    </iframe>
+    </div>
+</div>
+
+
+<div id="SourceDiv" style="position:absolute; left:248px; top:40px; width:100px; height:60px; z-index:4; visibility: hidden"> 
+  <IFrame id="sourcelayer"  src="pagetemplate.htm" style="position:absolute; top:0px; left:0px; width:100px; height:60px" SCROLLING=1> 
+  </IFrame>
+</div>
+  
+<table width="100%" border="0" cellpadding="0" cellspacing="0" height="295">
+  <tr> 
+    <td valign="top" height="58" colspan="3" width="935">
+      <p align="center">&nbsp;<img border="0" src="images/darkafflictiontitle.gif" width="573" height="79"></p>
+    </td>
+  </tr>
+  <tr bgcolor="#0000FF"> 
+    <td valign="top" height="1" colspan="3" width="935" align="center" bgcolor="#000000">    
+    <div id="MembersLinks" style="position:absolute; left:0;top:0; visibility:hidden">
+    	<font face="Arial Narrow" size="3" color="#FF0000">
+    <!--	Members List -->
+    	&nbsp;&nbsp;
+    	<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/members/memberlevels.htm\')');}">
+	    	Members Levels
+	    </a>
+   	 	&nbsp;&nbsp;
+   	 	<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/members/charter.htm\')');}">
+    	Our Charter
+    	</a>
+    	&nbsp;&nbsp;
+    	<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/members/spellresearch.htm\')');}">
+    	Spell Research
+    	</a>
+    	&nbsp;&nbsp;
+    	<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/members/skills.htm\')');}">
+    	Trade Skills
+    	</a>
+    	&nbsp;&nbsp;
+    	
+    	<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/members/lewts.htm\')');}">
+    	Phat Lewts
+    	</a>
+    	&nbsp;&nbsp;
+    	<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/welcome.htm\')');DisplayMainLimks();} ">
+    		Return To Main
+    	</a>
+    	</font>
+    </div>
+	<div id="MainLinks" style="position:absolute; left:0;top:0; visibility:hidden">
+		<CENTER>
+		<font face="Arial Narrow" size="3" color="#FF0000">	
+		     
+		<a href="http://www.darkaffliction.net/scgi-bin/YaBB.cgi" target="_new">
+		Message Board
+		</a>
+		&nbsp;&nbsp; 	  
+	  
+		<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/members.htm\')');DisplayMemberLinks(); }">
+		Member's Area
+		</a>
+		&nbsp;&nbsp;	  
+ 		
+		<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/alliesnenemies.htm\')');}">
+  
+   		Allies &amp; Enemies
+   		</a>
+   		&nbsp; 
+   		   
+   		<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/guildwars.htm\')');}">
+   		Guild Wars
+   		</a> 
+   		&nbsp;&nbsp;
+   
+   		<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/gallery.htm\')');}">
+   		SoulStealers
+   		</a>
+   		&nbsp;&nbsp;
+   
+   		<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/achievments.htm\')');}">
+   		Our Achievments
+   		</a>
+   		&nbsp;&nbsp;
+   
+   		<a href="#" onClick="if(allowchange){ScrAnimate('contract','loaddocintoscroll(\'htms/links.htm\')');}">
+   		Everquest Links
+   		</a>
+   		&nbsp;&nbsp;
+		</font>    
+		</center>       
+	</div>
+	<span id="ContentLinks">
+	</span>
+  </td>
+  </tr>
+  <tr> 
+    <td height="450" valign="top" bgcolor="#000000" width="20" background="images/web-background034_Red.jpg">&nbsp;
+      <p>&nbsp;</p>
+    </td>
+    <td width="80%" valign="top" bgcolor="#000000" background="images/web-background034_Red.jpg">&nbsp;</td>
+    <td valign="top" bgcolor="#000000" width="20" background="images/web-background034_Red.jpg">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="3" height="40" valign="top" width="935">
+    <CENTER>
+    <font face="Arial Narrow" size="3" color="#FF0000">
+    Webpage and Design By Vylse
+    </font>
+    </CENTER>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

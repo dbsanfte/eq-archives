@@ -1,0 +1,1688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<!-- no cache headers -->
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<!-- end no cache headers -->
+	<title>Guardians of Veeshan</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="" />
+<meta name="keywords" content="Everquest, Gov, Guardians of Veeshan" />
+<meta name="description" content="Guardians of Veeshan, An Everquest Guild." />
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Guardians of Veeshan vBulletin 3 Style' (styleid: 1) */
+body
+{
+	background: #E1E1E2 url(/forums/images/layout/bg.jpg) repeat;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0px 0px 0px 0px;
+	
+}
+a:link
+{
+	color: #000000;
+}
+a:visited
+{
+	color: #000000;
+}
+a:hover, a:active
+{
+	color: #333333;
+}
+.page
+{
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #9A9990;
+	color: #000000;
+	border: 1px solid #3B3B3B;
+}
+.tcat
+{
+	background: #57554A url(/forums/images/gradients/gradient_tcat.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #FFFF66;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #3B3A32;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #FFFFFF;
+}
+.thead a:visited
+{
+	color: #FFFFFF;
+}
+.thead a:hover, .thead a:active
+{
+	color: #FFFF00;
+}
+.tfoot
+{
+	background-color: #3B3A32;
+	color: #FFFFFF;
+}
+.tfoot a:link
+{
+	color: #FFFFFF;
+}
+.tfoot a:visited
+{
+	color: #FFFFFF;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #FFFF66;
+}
+.alt1, .alt1Active
+{
+	background-color: #EEEEEB;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #D9D8D2;
+	color: #000000;
+}
+.alt3
+{
+	background-color: #D5D8E5;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #D9D8D2;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #000000;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #6F6D60;
+	color: #ffffff;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background-color: #EEEEEB;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background-color: #D9D8D2;
+	color: #000000;
+}
+legend
+{
+	color: #22229C;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background: #57554A url(/forums/images/gradients/gradient_tcat.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #3B3B3B;
+	text-align: left;
+}
+.vbmenu_option
+{
+	background-color: #B6B5AD;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #000000;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #6F6D60;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+.vbmenu_top
+{
+
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_top a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_top a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_top a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbicat
+{
+color: #FFFFFF;
+font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbicat a:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbicat a:visited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.vbicat a:hover, .tcat a:active
+{
+	color: #FFFF66;
+	text-decoration: underline;
+}
+.vbilthread
+{
+	color: #FFFFFF;
+	background: #77766E;
+	font: bold 9px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 1px 4px 1px 4px;
+	white-space: nowrap;
+}
+.eql_title {
+	color:darkblue;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a.eql_headline {
+	color:black;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:underline;
+}
+a.eql_headline:hover {
+	color:darkorange;
+	font-weight:normal;
+	text-decoration:underline;
+}
+a.eql_headline:visited {
+	color:black;
+}
+.eqi_cat {
+	color:#3C3C3C;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.eqi_author {
+	color:#3C3C3C;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.eqi_text {
+	color:#000000;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.eqi_link {
+	color:#000000;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.eqi_link:visited {
+	color:#282828;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.eqi_link:hover {
+	color:#000066;
+	font-size: 10px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.wowi_cat {
+	color:#3C3C3C;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.wowi_author {
+	color:#3C3C3C;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.wowi_text {
+	color:#000000;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.wowi_link {
+	color:#000000;
+	font-family:Verdana, Arial, Helvetica;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.wowi_link:visited {
+	color:#282828;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.wowi_link:hover {
+	color:#000066;
+	font-size: 10px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var IMGDIR_MISC = "/forums/images/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="http://www.eqgov.com/forums/clientscript/vbulletin_global.js"></script>
+
+</head>
+<body>
+<a name="top"></a>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td valign="top" align="center" bgcolor="#57554A" background="/forums/images/layout/header-bg.jpg">
+<table cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="top" align="right" background="" width="268"><img src="/forums/images/layout/eqgov-left-eq2.gif" width="268" height="86"></td>
+<td valign="top" align="center" background="" width="262"><img src="/forums/images/layout/eqgov-logo-new.gif" width="262" height="86"></td>
+<td valign="top" align="left" background="" width="267"><img src="/forums/images/layout/eqgov-right-wow.gif" width="267" height="86"></td>
+</tr></table></td>
+</tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td valign="top" align="right" width="100"><img src="/forums/images/layout/menu-left.gif" width="100" height="33"></td>
+<td align="center" valign="middle" align="center" width="100%" background="/forums/images/layout/menu-bg.gif">
+<!-- nav buttons bar -->
+	<table cellspacing="0" border="0" width="100%" align="center">
+	<tr align="center">
+		<td class="vbmenu_top"><a href="/index.php?">Home</a></td>
+		<td class="vbmenu_top"><a href="http://www.eqgov.com/forums/index.php?">Forums</a></td>
+		
+		
+		
+			<td class="vbmenu_top"><a href="http://www.eqgov.com/forums/register.php?">Register</a></td>
+		
+		<td class="vbmenu_top"><a href="http://www.eqgov.com/forums/memberlist.php?">Members List</a></td>
+		<td class="vbmenu_top"><a href="http://www.eqgov.com/forums/calendar.php?">Calendar</a></td>
+				
+			
+			<td class="vbmenu_top"><a href="http://www.eqgov.com/forums/forumdisplay.php?do=markread">Mark Forums Read</a></td>
+						
+		
+		
+	</tr>
+	</table>
+<!-- / nav buttons bar -->
+
+
+</td>
+<td valign="top" align="left" width="100"><img src="/forums/images/layout/menu-right.gif" width="100" height="33"></td>
+</tr></table>
+<div align="center">
+<br />
+<table cellpadding="0" cellspacing="0" border="0" width="98%">
+<tr><td align="right" width="10"><img src="/forums/images/layout/round1-left.gif" width="10" height="4"></td>
+<td bgcolor="#A5A49A" width="100%"><img src="/forums/images/layout/pixel.gif" width="1" height="4"></td>
+<td align="left" width="10"><img src="/forums/images/layout/round1-right.gif" width="10" height="4"></td>
+<tr><td valign="top" align="right" bgcolor="#A5A49A" width="10"><img src="/forums/images/layout/round2-left.gif" width="10" height="5"></td>
+<td valign="top" bgcolor="#A5A49A" width="100%">
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 5px 0px 5px">
+
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+	<tr>
+	
+		<!-- start side (left) -->
+<td width="160" style="vertical-align: top">
+	
+		<table cellpadding="0" cellspacing="0" border="0" width="160">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%"><strong>Menu</strong></td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<div class="smallfont">
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <a href="/index.php?"><b>Home</b></a><br />
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <a href="http://www.eqgov.com/forums/index.php?"><b>Forums</b></a><br />
+<br />
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <u><b>Guild Info.</b></u><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="/index.php?&section=history">Our History</a><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="/index.php?&section=charter">Our Charter</a><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="http://eqplayers.station.sony.com/guild_profile.vm?guildId=498216206378">EQplayers profile</a><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="http://eq2players.station.sony.com/en/guild.vm?guildId=20201">EQ2players profile</a><br />
+<br />
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <u><b>Features</b></u><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="/index.php?&section=irc">IRC Chat</a><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="http://www.eqgov.com/forums/arcade.php?">Arcade</a><br />
+&nbsp;&nbsp;&nbsp;<img src="/forums/images/layout/menu/list.gif" valign="middle"> <a href="/gallery">Picture Gallery</a><br />
+<br />
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <a href="http://www.eqgov.com/forums/joininfo.php?"><b>EQ1 Application</b></a><br />
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <a href="http://www.eqgov.com/forums/joininfo2.php?"><b>EQ2 Application</b></a><br />
+<img src="/forums/images/layout/menu/closed.gif" valign="bottom"> <a href="http://www.eqgov.com/forums/joininfo3.php?"><b>WoW Application</b></a><br />
+</div>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="160">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong>Shoutbox</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt2">
+
+						<tr>
+							<td style="padding: 0px">
+								<div style="position: relative; width: 100%; height: 250px; z-index: 1; overflow: auto; border-style: hidden; align: center">
+									<table border="0" align="left" cellpadding="4" cellspacing="1" width="100%">
+										<tr>
+	<td class="alt1" title="Today 05:04 AM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=16">Dolby</a>
+		</div>
+		<div class="smallfont">
+			drem fae!
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="Today 03:26 AM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=304">Drem</a>
+		</div>
+		<div class="smallfont">
+			remember ps3 on friday, find a good camping spot to farm gold on ebay!
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="Today 12:54 AM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=345">Thaadius</a>
+		</div>
+		<div class="smallfont">
+			grimm nearly cries alot. kinda like radja. hehe. =P
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="Yesterday 05:55 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=481">Morovindi</a>
+		</div>
+		<div class="smallfont">
+			2 day expansion download and counting  <img src="images/smilies/frown.gif" border="0" alt="" title="Frown" class="inlineimg" />
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="Yesterday 02:56 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=950">Luna</a>
+		</div>
+		<div class="smallfont">
+			yup yup plus it was a 70s/80s Jordache commercial LOL
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="Yesterday 01:24 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=64">Shashonna</a>
+		</div>
+		<div class="smallfont">
+			That bad huh
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="Yesterday 01:01 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=950">Luna</a>
+		</div>
+		<div class="smallfont">
+			I sang last nite on Vent and Grimm nearly cried. LOL
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="11-14-2006 09:34 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=304">Drem</a>
+		</div>
+		<div class="smallfont">
+			we're sitting here on ventrilo, playing some DOTA
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="11-14-2006 09:05 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=604">Tolewyn</a>
+		</div>
+		<div class="smallfont">
+			and sing for us<br />
+
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="11-14-2006 08:41 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=64">Shashonna</a>
+		</div>
+		<div class="smallfont">
+			People get in VENT
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="11-14-2006 05:35 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=64">Shashonna</a>
+		</div>
+		<div class="smallfont">
+			sooooooooooooooo<br />
+board!!!!
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="11-14-2006 05:35 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=64">Shashonna</a>
+		</div>
+		<div class="smallfont">
+			soooooooooooo
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="11-14-2006 02:49 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=950">Luna</a>
+		</div>
+		<div class="smallfont">
+			pfffffffftn<img src="images/smilies/tongue.gif" border="0" alt="" title="Stick Out Tongue" class="inlineimg" />
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt2" title="11-14-2006 01:58 PM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=69">Theramor</a>
+		</div>
+		<div class="smallfont">
+			...bleh...
+		</div>
+	</td>
+</tr><tr>
+	<td class="alt1" title="11-14-2006 04:21 AM">
+		<div class="smallfont">
+			<a href="http://www.eqgov.com/forums/member.php?userid=514">Feowden</a>
+		</div>
+		<div class="smallfont">
+			Well if I do will you wake me up when its time to go home?
+		</div>
+	</td>
+</tr> 
+									</table>
+								</div>
+							</td>
+						</tr>
+					
+					
+						<tr class="alt2">
+							<td width="100%" style="text-align: center">
+								<br />
+								<form action="/index.php" method="post">
+									<input type="hidden" name="action" value="newshout" />
+									<input type="hidden" name="s" value="" />
+									<textarea name="shout" rows="4" cols="15" class="bginput" disabled="disabled">You need to register before you can shout.</textarea>
+									<br />
+									<br />
+									<input type="submit" name="comment_submit" value="Shout Now!" class="button" disabled="disabled" />
+								</form>
+								<div class="smallfont"></div>
+							</td>
+						</tr>
+					
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong>Top Posters</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<div class="smallfont">&nbsp;1: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=64">Shashonna</a> (4218)&nbsp;<br />&nbsp;2: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=16">Dolby</a> (4146)&nbsp;<br />&nbsp;3: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=113">Aranash</a> (2857)&nbsp;<br />&nbsp;4: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=59">Sabbena</a> (2649)&nbsp;<br />&nbsp;5: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=21">Enyil</a> (2367)&nbsp;<br />&nbsp;6: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=81">Nathicana</a> (2358)&nbsp;<br />&nbsp;7: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=67">Pepto</a> (2210)&nbsp;<br />&nbsp;8: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=69">Theramor</a> (2193)&nbsp;<br />&nbsp;9: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=14">Darkannin</a> (1812)&nbsp;<br />&nbsp;10: <a href="http://www.eqgov.com/forums/member.php?action=getinfo&userid=46">Lilora</a> (1594)&nbsp;<br /></div>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="160">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong><a href="http://www.eqgov.com/forums/online.php?">Online Users</a>: 9</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<div class="smallfont">
+							<strong>5</strong> Members | <b>4</b> Guests
+						</div>
+						<div class="smallfont">
+							<a href="http://www.eqgov.com/forums/member.php?userid=879">Bellarose</a>, <a href="http://www.eqgov.com/forums/member.php?userid=514">Feowden</a>, <a href="http://www.eqgov.com/forums/member.php?userid=870">Keylie</a>, <a href="http://www.eqgov.com/forums/member.php?userid=41">Kuurus</a>, <a href="http://www.eqgov.com/forums/member.php?userid=70">Tantolar</a>
+						</div>
+						
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br />
+	
+
+	
+</td>
+<!-- end side (left) -->
+	
+		<!-- start main col -->
+		<td style="vertical-align:top">
+			
+
+	
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#8F8D7E">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+						<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+							<strong><a href="http://www.eqgov.com/forums/search.php?do=getnew">Latest Threads</a></strong>
+						</td>
+						<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+					</tr>
+				</table>
+				<table cellpadding="4" cellspacing="1" border="0" width="100%">
+					<!-- <tr>
+						<td class="thead" style="text-align: center; vertical-align: middle">
+							Thread / Thread Starter
+						</td>
+						<td class="thead" style="text-align: center; vertical-align: middle">
+							Last Post
+						</td>	
+						<td class="thead" style="text-align: center; vertical-align: middle">
+							Replies
+						</td>	
+					</tr> -->						
+					<tr>
+	<td class="alt1Active" id="t9447" title="....and the PRESCRIPTION is MORE COWBELL!!!!
+ 
+ &lt;object height=&quot;350&quot; width=&quot;425&quot;&gt;
+
+
+
+&lt;embed src=&quot;http://www.youtube.com/v/tEiQjisUodM&quot; type=&quot;application/x-shockwave-flash&quot; wmode=&quot;transparent&quot; height=&quot;350&quot; width=&quot;425&quot;&gt;&lt;/object&gt;
+ 
+ 
+ T">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9447">I've got a FEVER....</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=6"><em>Public Discussion</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=69')">Theramor</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 3, Views: 57">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Today <span class="time">12:53 AM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9447">Thaadius</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9447"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		3	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9448" title="So Thaad, is this what you look like now? :P
+
+http://i69.photobucket.com/albums/i65/lunadelmare/crusader.jpg">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9448">New Horses for Dwarves</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=6"><em>Public Discussion</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=950')">Luna</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 5, Views: 69">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">11:31 PM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9448">Thaadius</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9448"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		5	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9444" title="Ok, someone post the link thingee for Vent so I can spend the next 2 day's cussin and swearin and kickin my computer tryin to make it work.  :)">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9444">Vent</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=23"><em>Geek Talk</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=870')">Keylie</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 3, Views: 55">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">01:21 PM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9444">Shashonna</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9444"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		3	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9441" title="I thought this was a cool little screensaver....... or tool for a practical joke!
+
+http://www.microsoft.com/technet/sysinternals/Miscellaneous/BlueScreen.mspx">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9441">Bsod!</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=23"><em>Geek Talk</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=113')">Aranash</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 1, Views: 56">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			11-14-2006 <span class="time">10:31 AM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9441">Pepto</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9441"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		1	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9427" title="Here is what you calll.... IDIOTS!
+
+http://www.tgdaily.com/2006/11/10/ps3_bestbuy_burbank_line/">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9427">And people think I am...</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=6"><em>Public Discussion</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=113')">Aranash</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 5, Views: 134">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			11-13-2006 <span class="time">10:10 PM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9427">dakira</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9427"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		5	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9412" title="Kaiba fixed my computer and I am taking her home today. :D Now I just have to select internet service and just wanted a general opinion if I should go cable or dsl or does it really matter? Here is the info I got from the companies:
+
+COX CABLE
+7 MBPS DOWNLOAD
+512 KBPS UPLOAD
+$44.95 PER MONTH
+
+QWEST...">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9412">Cable vs DSL or does it...</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=6"><em>Public Discussion</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=950')">Luna</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 21, Views: 267">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			11-11-2006 <span class="time">10:40 PM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9412">dakira</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9412"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		21	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9420" title="LMAO!!! Kaiba I think the bathrooms in your area are the SAFE HAVENS!! LOL
+
+HOW TO POOP AT WORK
+We've all been there but don't like to admit it. As much as we try to
+convince ourselves otherwise, the WORKPOOP is inevitable. For those who
+hate pooping at work, following is the Survival Guide for...">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9420">Poopers</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=6"><em>Public Discussion</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=950')">Luna</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 5, Views: 95">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			11-08-2006 <span class="time">01:10 AM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9420">Falleni</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9420"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		5	
+	</td>
+</tr><tr>
+	<td class="alt1Active" id="t9416" title="If you have an hour I found this video kind of interesting. The start is kinda boring but when they get into how the electronic voteing systems work it gets interesting. I'm no high level programmer but the main software for diebold called  gems uses MS Access for its database backend? How stupid...">
+		<div>
+						
+						
+			<a href="http://www.eqgov.com/forums/showthread.php?t=9416">If you have an hour...</a>
+		</div>
+	
+		<div class="smallfont">
+			<span style="float: right">Forum: <a href="http://www.eqgov.com/forums/forumdisplay.php?forumid=6"><em>Public Discussion</em></a></span>
+			<span style="cursor:hand" onclick="window.open('http://www.eqgov.com/forums/member.php?userid=16')">Dolby</span>
+		</div>		
+	</td>
+	
+	<td class="alt2" title="Replies: 2, Views: 67">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			11-07-2006 <span class="time">10:15 AM</span><br />
+			Reply by <a href="http://www.eqgov.com/forums/member.php?find=lastposter&amp;threadid=9416">Calalene</a>  <a href="http://www.eqgov.com/forums/showthread.php?goto=lastpost&amp;threadid=9416"><img src="/forums/images/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	<td class="alt1Active" style="text-align: center">
+		2	
+	</td>
+</tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+		</tr>
+	</table>
+	<br />
+	
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<a href="http://www.eqgov.com/forums/showthread.php?threadid=9442"><strong>Echoes of Faydwer</strong></a>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td class="alt2" style="text-align: right">
+						<div class="smallfont">
+						Posted By: <a href="http://www.eqgov.com/forums/member.php?userid=69">Theramor</a> - 11-14-2006 
+						
+							<span class="time">11:46 AM</span>
+						 
+						- <a href="http://www.eqgov.com/forums/showthread.php?threadid=9442">Replies</a> 
+						(<span class="time">0</span>)
+						
+						
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt1">
+						<div>
+							
+								<img src="http://www.eqgov.com/forums/image.php?userid=69&amp;dateline=1076188421" border="0" align="left" vspace="3" hspace="3" alt="Theramor's Avatar" title="Theramor's " />&nbsp;
+							
+							<div align="left">SoE has released Expansion Pack #3 - Echoes of Faydwer today.  <br />
+   </div>
+<div align="left">   <br />
+      Also pushed to the servers is Game Update #29 which includes major changes to combat.<br />
+      <br />
+      <a href="http://eqiiforums.station.sony.com/eq2/board/message?board.id=stat&amp;message.id=329" target="_blank">Here is a link to the complete patch notes.</a><br />
+      <br />
+      And for those who are interested, <a href="http://eqiiforums.station.sony.com/eq2/board/message?board.id=testfeed&amp;message.id=66299" target="_blank">a link to the detailed post describing the combat changes that went live.</a></div>
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt2" style="text-align: right">
+						&nbsp;<a href="http://www.eqgov.com/forums/printthread.php?threadid=9442"><img src="/forums/images/buttons/printer.gif" alt="View printable version of this thread." title="View printable version of this thread." border="0" /></a>
+					</td>
+				</tr>
+			</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<a href="http://www.eqgov.com/forums/showthread.php?threadid=9381"><strong>Darathar the dead</strong></a>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td class="alt2" style="text-align: right">
+						<div class="smallfont">
+						Posted By: <a href="http://www.eqgov.com/forums/member.php?userid=16">Dolby</a> - 10-30-2006 
+						
+							<span class="time">06:36 PM</span>
+						 
+						- <a href="http://www.eqgov.com/forums/showthread.php?threadid=9381">Replies</a> 
+						(<span class="time">0</span>)
+						
+						- Attachments (<span class="time">3</span>)
+						
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt1">
+						<div>
+							
+								<img src="http://www.eqgov.com/forums/image.php?userid=16&amp;dateline=1114651839" border="0" align="left" vspace="3" hspace="3" alt="Dolby's Avatar" title="Dolby's " />&nbsp;
+							
+							This Saturday a large gathering of Guardians of Veeshan with a few friends from Torment took on the dragon known as Darathar. The first attempt didn’t go so well but we quickly re-grouped learned what was done wrong and took him down with out too much trouble.<br />
+<br />
+Congrats to every one that finished their prismatic 1.0 quest and received their glowing new weapons!<br />
+<br />
+A big thanks goes out to Thaadius for leading this raid on Darathar and also a thanks to every one who attended!<br />
+<br />
+<div align="center"><br />
+<a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1320" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1320&amp;stc=1&amp;thumb=1" border="0" alt="" /></a> <a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1321" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1321&amp;stc=1&amp;thumb=1" border="0" alt="" /></a> <a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1322" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1322&amp;stc=1&amp;thumb=1" border="0" alt="" /></a><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</div>
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt2" style="text-align: right">
+						&nbsp;<a href="http://www.eqgov.com/forums/printthread.php?threadid=9381"><img src="/forums/images/buttons/printer.gif" alt="View printable version of this thread." title="View printable version of this thread." border="0" /></a>
+					</td>
+				</tr>
+			</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<a href="http://www.eqgov.com/forums/showthread.php?threadid=9314"><strong>2nd successful weekend in LBRS!</strong></a>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td class="alt2" style="text-align: right">
+						<div class="smallfont">
+						Posted By: <a href="http://www.eqgov.com/forums/member.php?userid=874">Ewan</a> - 10-09-2006 
+						
+							<span class="time">10:39 AM</span>
+						 
+						- <a href="http://www.eqgov.com/forums/showthread.php?threadid=9314">Replies</a> 
+						(<span class="time">0</span>)
+						
+						
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt1">
+						<div>
+							
+								<img src="http://www.eqgov.com/forums/image.php?userid=874&amp;dateline=1158012325" border="0" align="left" vspace="3" hspace="3" alt="Ewan's Avatar" title="Ewan's " />&nbsp;
+							
+							For the second weekend in a row, the Lower segment of Blackrock Spire fell to the might of GoV!  Grats to Aranash on getting the last crystal he needed in order to complete his Upper Blackrock Spire key.<br />
+<br />
+Look for updates in the near future with our exploits in the upper section of the spire!
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt2" style="text-align: right">
+						&nbsp;<a href="http://www.eqgov.com/forums/printthread.php?threadid=9314"><img src="/forums/images/buttons/printer.gif" alt="View printable version of this thread." title="View printable version of this thread." border="0" /></a>
+					</td>
+				</tr>
+			</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<a href="http://www.eqgov.com/forums/showthread.php?threadid=9303"><strong>Game Update #28</strong></a>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td class="alt2" style="text-align: right">
+						<div class="smallfont">
+						Posted By: <a href="http://www.eqgov.com/forums/member.php?userid=69">Theramor</a> - 10-04-2006 
+						
+							<span class="time">06:09 PM</span>
+						 
+						- <a href="http://www.eqgov.com/forums/showthread.php?threadid=9303">Replies</a> 
+						(<span class="time">0</span>)
+						
+						
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt1">
+						<div>
+							
+								<img src="http://www.eqgov.com/forums/image.php?userid=69&amp;dateline=1076188421" border="0" align="left" vspace="3" hspace="3" alt="Theramor's Avatar" title="Theramor's " />&nbsp;
+							
+							Thanks to Bellarose for posting the <a href="http://www.eqgov.com/forums/showthread.php?t=9302" target="_blank">full Game Update notes</a> in the EQ2 forums.<br />
+<br />
+Here are the highlights...<br />
+<br />
+- Tradeskillers can now craft in the fresh air in many city zones.  <br />
+  <br />
+  - The hand of the gods can be felt once again with two new Live Events!
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt2" style="text-align: right">
+						&nbsp;<a href="http://www.eqgov.com/forums/printthread.php?threadid=9303"><img src="/forums/images/buttons/printer.gif" alt="View printable version of this thread." title="View printable version of this thread." border="0" /></a>
+					</td>
+				</tr>
+			</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<a href="http://www.eqgov.com/forums/showthread.php?threadid=9294"><strong>More WoW wackiness</strong></a>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td class="alt2" style="text-align: right">
+						<div class="smallfont">
+						Posted By: <a href="http://www.eqgov.com/forums/member.php?userid=874">Ewan</a> - 10-01-2006 
+						
+							<span class="time">09:55 AM</span>
+						 
+						- <a href="http://www.eqgov.com/forums/showthread.php?threadid=9294">Replies</a> 
+						(<span class="time">0</span>)
+						
+						- Attachments (<span class="time">6</span>)
+						
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt1">
+						<div>
+							
+								<img src="http://www.eqgov.com/forums/image.php?userid=874&amp;dateline=1158012325" border="0" align="left" vspace="3" hspace="3" alt="Ewan's Avatar" title="Ewan's " />&nbsp;
+							
+							It's been an interesting week for GoV inside of World of Warcraft.  Most of the week (and weekend) effort was spent trying to get parts to spawn the "Dukes" in Silithus, and let me tell you that the "Ultra-Safe" transporter has some ... side effects:<br />
+<br />
+<div align="center"><a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1310&amp;stc=1" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1310&amp;stc=1&amp;thumb=1" border="0" alt="" /></a>  <a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1311&amp;stc=1" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1311&amp;stc=1&amp;thumb=1" border="0" alt="" /></a>   <br />
+</div>
+<br />
+Much fun was had, and much loot was gotten from the Dukes... but that wasn't enough to fill the plans of the hearty GOV crew.  Friday night we gathered up a grand total of 7 people and headed to Blackrock Spire.  We handily took down everything in our path and cleared the  lower part of the instance with very little difficulty.  Before long we'll be doing the same thing to the Upper area of the instace, for sure!<br />
+<br />
+<div align="center"><a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1312&amp;stc=1" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1312&amp;stc=1&amp;thumb=1" border="0" alt="" /></a>  <a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1313&amp;stc=1" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1313&amp;stc=1&amp;thumb=1" border="0" alt="" /></a>   <br />
+<a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1314&amp;stc=1" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1314&amp;stc=1&amp;thumb=1" border="0" alt="" /></a>  <br />
+</div>
+<br />
+Saturday night we had to find a way to top the excitement we had Friday, so off to Stratholme we go!  This time we took on the "dead" side, facing up with the archvillian of the Argent Dawn, the "Baron".  While the Baron was unable to comment when GoV was done with him, we did get reports that his head has been handed over to the Argent Dawn for some level of reward.<br />
+<br />
+<div align="center"><a href="http://www.eqgov.com/forums/attachment.php?attachmentid=1315&amp;stc=1" target="_blank"><img src="http://www.eqgov.com/forums/attachment.php?attachmentid=1315&amp;stc=1&amp;thumb=1" border="0" alt="" /></a>   <br />
+</div>
+<br />
+Grats to everyone on a productive weekend!
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt2" style="text-align: right">
+						&nbsp;<a href="http://www.eqgov.com/forums/printthread.php?threadid=9294"><img src="/forums/images/buttons/printer.gif" alt="View printable version of this thread." title="View printable version of this thread." border="0" /></a>
+					</td>
+				</tr>
+			</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<a href="http://www.eqgov.com/forums/showthread.php?threadid=9290"><strong>A Croc, an Angler, and a Behemoth...</strong></a>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td class="alt2" style="text-align: right">
+						<div class="smallfont">
+						Posted By: <a href="http://www.eqgov.com/forums/member.php?userid=69">Theramor</a> - 09-30-2006 
+						
+							<span class="time">04:17 AM</span>
+						 
+						- <a href="http://www.eqgov.com/forums/showthread.php?threadid=9290">Replies</a> 
+						(<span class="time">0</span>)
+						
+						
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt1">
+						<div>
+							
+								<img src="http://www.eqgov.com/forums/image.php?userid=69&amp;dateline=1076188421" border="0" align="left" vspace="3" hspace="3" alt="Theramor's Avatar" title="Theramor's " />&nbsp;
+							
+							Friday Night.<br />
+Got together with our friends in Torment and special guest star Gryfndr.<br />
+Visited Lockjaw.<br />
+Killed him.<br />
+Visited Rocnog the Angler in the Cove of Decay.<br />
+Killed him too.<br />
+Went to a deserted mine in Zek and saw Tremblar the Behemoth.<br />
+Yes, killed him too.<br />
+<br />
+....and then we camped...<br />
+<br />
+Thanks to our friends in Torment and to Gryfndr for helping to lead the raid.<br />
+<br />
+(happy Bella, I posted the news.....  <img src="images/smilies/sagrin.gif" border="0" alt="" title="Devil" class="inlineimg" /> )
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="alt2" style="text-align: right">
+						&nbsp;<a href="http://www.eqgov.com/forums/printthread.php?threadid=9290"><img src="/forums/images/buttons/printer.gif" alt="View printable version of this thread." title="View printable version of this thread." border="0" /></a>
+					</td>
+				</tr>
+			</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br />
+	</td>
+	<!-- end main col -->
+	
+		<!-- start side (right) -->
+<td width="160" style="vertical-align: top">
+	
+
+	
+		<table cellpadding="0" cellspacing="0" border="0" width="160">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+
+<strong>Log in!</strong>
+
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+			<div class="smallfont">
+						
+		<!-- login form -->
+		<form action="http://www.eqgov.com/forums/login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+		<script type="text/javascript" src="http://www.eqgov.com/forums/clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+		<tr>
+			<td colspan="2" class="smallfont">User Name</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="text" class="button" name="vb_login_username" id="navbar_username" size="15" accesskey="u" tabindex="1" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="smallfont">Password</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="password" class="button" name="vb_login_password" size="15" accesskey="p" tabindex="2" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" class="button" value="Log in" tabindex="4" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+		</tr>
+		<tr>
+			<td class="smallfont" colspan="2" align="center"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Remember Me?</label></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />			
+		<input type="hidden" name="vb_login_md5password" />
+		</form>
+		<!-- / login form -->
+	
+						</div>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="160">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong>Random Pic's</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<table class="" width="100%"><tr><td align="center"><a href="http://www.eqgov.com/gallery/showphoto.php?photo=488"><img border="0" src='http://www.eqgov.com/gallery/data/500/588l3-thumb.jpg'></a><a href="http://www.eqgov.com/gallery/showphoto.php?photo=488"><br />Luthyan Bladestryke</a><br />by Raiami<br /></td></tr><tr><td align="center"><a href="http://www.eqgov.com/gallery/showphoto.php?photo=360"><img border="0" src='http://www.eqgov.com/gallery/images/nothumb.gif' alt='http://www.eqgov.com/gallery/data/500/572Gathering-thumb.jpg'></a><a href="http://www.eqgov.com/gallery/showphoto.php?photo=360"><br />Gathering</a><br />by Gympzilla<br /></td></tr><tr></tr></table>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br /><table cellpadding="0" cellspacing="0" border="0" width="160">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong>EQ Interfaces</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<script language='Javascript' src='http://www.eqinterface.com/interfacefeed.php?l=2&sn=5&nc=18&b=1&inf=2'></script>
+<noscript>The EQInterface Live feed requires you to have JavaScript turned on.</noscript>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br />
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong>EQ2 Interfaces</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<script language='Javascript' src='http://www.eq2interface.com/interfacefeed.php?l=2&sn=5&nc=18&b=1&inf=2'></script>
+<noscript>The EQInterface Live feed requires you to have JavaScript turned on.</noscript>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br />
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center"><img src="/forums/images/layout/block-top-dodad.gif" width="103" height="5"></td>
+</tr>
+<tr>
+<td bgcolor="#8F8D7E">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-left-brad.gif" width="13" height="25"></td>
+<td class="vbicat" style="text-align: center" background="/forums/images/layout/block-top-bg.gif" width="100%">
+<strong>WoW Interfaces</strong>
+</td>
+<td width="13" bgcolor="#363635"><img src="/forums/images/layout/block-right-brad.gif" width="13" height="25"></td>
+</tr></table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" class="alt1">
+<script language='Javascript' src='http://www.wowinterface.com/interfacefeed.php?l=2&sn=5&nc=18&b=1&inf=2'></script>
+<noscript>The WoWInterface Live feed requires you to have JavaScript turned on.</noscript>
+</td></tr></table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="100%" bgcolor="#363635" background="/forums/images/layout/block-btm-bg.gif"><img src="/forums/images/layout/pixel.gif" width="1" height="11"></td>
+</tr></table>
+</td>
+</tr><tr>
+<td align="center"><img src="/forums/images/layout/block-btm-dodad.gif" width="103" height="5" border="0"></td>
+</tr></table>
+<br />
+	
+</td>
+<!-- end side (right) -->
+	
+	</tr>
+</table>
+<br />
+<div class="smallfont" align="center">All times are GMT -5. The time now is <span class="time">09:25 AM</span>.</div>
+<br />
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+<div align="center">
+		<div class="smallfont">
+			<strong>
+				<a href="mailto:dolby@eqgov.com">Contact Us</a> -
+				<a href="http://www.eqgov.com/">Guardians of Veeshan</a> -
+				
+				
+				
+				<!-- - <a href="">Privacy Statement</a> - -->
+				<a href="#top">Top</a>
+			</strong>
+		</div>
+</div>
+
+<br />
+
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	Powered by: vBulletin Version 3.0.3 &amp; vBindex Version 3.0.0 RC5<br />
+vBulletin Copyright &copy; MM - MMIV Jelsoft Enterprises Ltd.<br />
+vBindex Copyright &copy; MMII - MMIV Winter Systems.
+	<!-- Do not remove this copyright notice -->
+	</div>
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	
+</div>
+		
+	</div>
+</div>
+</form>
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+</td>
+<td valign="top" align="left" bgcolor="#A5A49A" width="10"><img src="/forums/images/layout/round2-right.gif" width="10" height="5"></td>
+</tr></table>
+</div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
+<td valign="top" align="right" width="243"><a href="javascript:scroll(0,0);"><img src="/forums/images/layout/footer-left.gif" width="152" height="32" border="0"></a></td>
+<td valign="top" align="center" background="/forums/images/layout/footer-bg.gif" width="100%"><img src="/forums/images/layout/copyright.gif" width="368" height="30" alt="Copyright ©2003, EQGov.com (EverQuest and all associated properties are the Copyright of Sony Online Entertainment.)"></td>
+<td valign="top" align="left" width="242"><a href="javascript:scroll(0,0);"><img src="/forums/images/layout/footer-right.gif" width="151" height="32" border="0"></a></td>
+</tr></table>
+</body>
+</html>
