@@ -1,0 +1,493 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>elderec.com</title>
+<link rel="STYLESHEET" href="style.css" type="text/css">
+<LINK REV="made" href="mailto:elderec@null.com">
+<META NAME="keywords" CONTENT="elderec, malevolence, waste">
+<META NAME="description" CONTENT="elderec.com - waste tutorials &amp; downloads">
+<META NAME="author" CONTENT="elderec">
+<META NAME="ROBOTS" CONTENT="ALL">
+</head>
+<body bgcolor="FFFFFF">
+
+
+
+
+<div align="center">
+<table width="750" border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td colspan="3" width="750">
+   <table width="750" border="0" cellpadding="0" cellspacing="0">
+
+    <tr>
+     <td width="750" colspan="3">
+     <span style="font-size:28px;color:000080">
+     malevolence
+     </span>
+     </td>
+    </tr>
+    <tr>
+     <td width="330">
+
+     <span style="font-size:20px;color:CCCCCC">
+     evil disposition toward another
+     </span>
+     </td>
+     <td width="400" align="right">
+      <table width="400" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+        <td align="right" height="20">
+        <span style="color:AAAAAA">
+
+        search the forums&nbsp;
+        </span>
+        <input type="text" onFocus="this.style.background='FFFFFF';" onBlur="this.style.background='F9F9F9';">&nbsp;
+        <input type="submit" style="padding:0;background-color:000080;border:0;color:FFFFFF;width:25;font-weight:bold" value="GO">
+        </td>
+       </tr>
+      </table>
+     </td>
+
+     <td width="20"></td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td colspan="3" height="15" bgcolor="FFFFFF"></td>
+ </tr>
+ <tr>
+
+  <td colspan="3" height="1" bgcolor="CCCCCC"></td>
+ </tr>
+ <tr>
+  <td colspan="3" height="10" bgcolor="FFFFFF"></td>
+ </tr>
+ <tr>
+  <td width="170" bgcolor="FFFFFF" valign="top">
+  <span style="font-size:6px"><br></span>
+  <div align="center">
+
+   <table width="140" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td><a href="./index.php">home</a></td>
+    </tr>
+    <tr>
+     <td>main page</td>
+    </tr>
+    <tr>
+
+     <td height="5" bgcolor="FFFFFF"></td>
+    </tr>
+
+    <tr>
+     <td><a href="./apps/phpBB2/">forums</a></td>
+    </tr>
+    <tr>
+     <td>discussion</td>
+    </tr>
+    <tr>
+
+     <td height="5" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td><a href="./apps/netjuke/">netjuke</a></td>
+    </tr>
+    <tr>
+     <td>streaming music</td>
+    </tr>
+
+    <tr>
+     <td height="5" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td><a href="#">image gallery</a></td>
+    </tr>
+    <tr>
+     <td>random pics</td>
+
+    </tr>
+    <tr>
+     <td height="5" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td><a href="?nav=links">links</a></td>
+    </tr>
+    <tr>
+
+     <td>look at our partners</td>
+    </tr>
+    <tr>
+     <td height="5" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td><a href="#">registration</a></td>
+    </tr>
+
+    <tr>
+     <td>how you can register</td>
+    </tr>
+    <tr>
+     <td height="5" bgcolor="FFFFFF"></td>
+    </tr>
+
+   </table>
+
+   <br><span style="font-size:6px"><br></span>
+   <table width="140" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td colspan="3" height="1" bgcolor="AAAAAA"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA" rowspan="5"></td>
+     <td width="138" height="26" bgcolor="F9F9F9" style="color:000080;font-size:14px">
+     &nbsp;&nbsp;headlines
+     </td>
+
+     <td width="1" bgcolor="AAAAAA" rowspan="5"></td>
+    </tr>
+    <tr>
+     <td height="1" bgcolor="AAAAAA"></td>
+    </tr>
+    <tr>
+     <td bgcolor="FFFFFF">
+      <table width="138" border="0" cellpadding="7" cellspacing="0">
+       <tr>
+
+        <td style="color:AAAAAA">
+<a href="http://fohguild.org/elderec/#ni7">Tracker Online</a>, by elderec posted on 07 August, 2004<br /><a href="http://fohguild.org/elderec/#ni6">Forum &amp; Torrents</a>, by elderec posted on 14 July, 2004<br /><a href="http://fohguild.org/elderec/#ni5">Downtime</a>, by elderec posted on 06 July, 2004<br /><a href="http://fohguild.org/elderec/#ni4">Content Managment</a>, by elderec posted on 27 June, 2004<br /><a href="http://fohguild.org/elderec/#ni3">Forums</a>, by elderec posted on 27 June, 2004<br /><a href="http://fohguild.org/elderec/#ni2">Updates</a>, by elderec posted on 26 June, 2004<br /><a href="http://fohguild.org/elderec/#ni1">Welcome</a>, by elderec posted on 24 June, 2004<br />        </td>
+       </tr>
+      </table>
+     </td>
+
+    </tr>
+    <tr>
+     <td height="1" bgcolor="AAAAAA"></td>
+    </tr>
+   </table>
+  <span style="font-size:6px"><br></span>
+  </div>
+  </td>
+  <td width="1" bgcolor="CCCCCC"></td>
+
+  <td width="579" valign="top">
+  <span style="font-size:6px"><br></span>
+  <div align="center">
+
+<!-- BEGIN NEWS CONTENT -->
+
+<!-- (c) 2003, 2004 PHPNews - http://newsphp.sourceforge.net/ -->
+<!-- TEST TABLE -->
+   <table width="549" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td colspan="4" height="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="1" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td rowspan="2" colspan="2" width="542" height="27" bgcolor="F9F9F9" style="color:000080;font-size:15px">&nbsp;&nbsp;Tracker Online</td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="4" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0" height="23"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" bgcolor="FFFFFF">
+      <table width="542" border="0" cellpadding="17" cellspacing="0">
+       <tr>
+        <td style="color:999999;line-height:1.6em">
+        <div align="justify">
+
+	The torrent tracker is now online, you can find the login in the forums.  Everything I see will be using Azureus (pw protected torrents), so you will need to be using <a href="http://azureus.sourceforge.net">Azureus</a> to download my posts.
+<br><br>
+Read: 0 | <a href="/elderec/index.php?action=fullnews&amp;showcomments=1&amp;id=7">Comments (0)</a> | 
+        </div>
+        </td>
+       </tr>
+      </table>
+     </td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" height="5" bgcolor="FFFFFF"></td>
+     <td width="4" height="5" bgcolor="FFFFFF"></td>
+     <td width="538" height="5" bgcolor="F0F0F0"></td>
+     <td width="1" height="5" bgcolor="F0F0F0"></td>
+     <td width="5" height="5" bgcolor="F0F0F0"></td>
+    </tr>
+   </table>
+<!-- TEST TABLE -->
+   <table width="549" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td colspan="4" height="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="1" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td rowspan="2" colspan="2" width="542" height="27" bgcolor="F9F9F9" style="color:000080;font-size:15px">&nbsp;&nbsp;Forum &amp; Torrents</td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="4" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0" height="23"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" bgcolor="FFFFFF">
+      <table width="542" border="0" cellpadding="17" cellspacing="0">
+       <tr>
+        <td style="color:999999;line-height:1.6em">
+        <div align="justify">
+
+	The forums are up &amp; running and the email registration feature now works.  I've also setup a torrent tracker to see if anyone is interested.  Please check the forum for more information.
+<br><br>
+Read: 4 | <a href="/elderec/index.php?action=fullnews&amp;showcomments=1&amp;id=6">Comments (0)</a> | 
+        </div>
+        </td>
+       </tr>
+      </table>
+     </td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" height="5" bgcolor="FFFFFF"></td>
+     <td width="4" height="5" bgcolor="FFFFFF"></td>
+     <td width="538" height="5" bgcolor="F0F0F0"></td>
+     <td width="1" height="5" bgcolor="F0F0F0"></td>
+     <td width="5" height="5" bgcolor="F0F0F0"></td>
+    </tr>
+   </table>
+<!-- TEST TABLE -->
+   <table width="549" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td colspan="4" height="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="1" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td rowspan="2" colspan="2" width="542" height="27" bgcolor="F9F9F9" style="color:000080;font-size:15px">&nbsp;&nbsp;Downtime</td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="4" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0" height="23"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" bgcolor="FFFFFF">
+      <table width="542" border="0" cellpadding="17" cellspacing="0">
+       <tr>
+        <td style="color:999999;line-height:1.6em">
+        <div align="justify">
+
+	Back up and running.
+<br><br>
+Read: 2 | <a href="/elderec/index.php?action=fullnews&amp;showcomments=1&amp;id=5">Comments (0)</a> | 
+        </div>
+        </td>
+       </tr>
+      </table>
+     </td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" height="5" bgcolor="FFFFFF"></td>
+     <td width="4" height="5" bgcolor="FFFFFF"></td>
+     <td width="538" height="5" bgcolor="F0F0F0"></td>
+     <td width="1" height="5" bgcolor="F0F0F0"></td>
+     <td width="5" height="5" bgcolor="F0F0F0"></td>
+    </tr>
+   </table>
+<!-- TEST TABLE -->
+   <table width="549" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td colspan="4" height="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="1" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td rowspan="2" colspan="2" width="542" height="27" bgcolor="F9F9F9" style="color:000080;font-size:15px">&nbsp;&nbsp;Content Managment</td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="4" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0" height="23"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" bgcolor="FFFFFF">
+      <table width="542" border="0" cellpadding="17" cellspacing="0">
+       <tr>
+        <td style="color:999999;line-height:1.6em">
+        <div align="justify">
+
+	Got quite a few of the phpnews features working this last update. RSS news feeds, story archiving, &amp; commenting are now available.
+<br><br>
+Read: 0 | <a href="/elderec/index.php?action=fullnews&amp;showcomments=1&amp;id=4">Comments (0)</a> | 
+        </div>
+        </td>
+       </tr>
+      </table>
+     </td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" height="5" bgcolor="FFFFFF"></td>
+     <td width="4" height="5" bgcolor="FFFFFF"></td>
+     <td width="538" height="5" bgcolor="F0F0F0"></td>
+     <td width="1" height="5" bgcolor="F0F0F0"></td>
+     <td width="5" height="5" bgcolor="F0F0F0"></td>
+    </tr>
+   </table>
+<!-- TEST TABLE -->
+   <table width="549" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td colspan="4" height="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="1" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td rowspan="2" colspan="2" width="542" height="27" bgcolor="F9F9F9" style="color:000080;font-size:15px">&nbsp;&nbsp;Forums</td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" height="4" bgcolor="FFFFFF"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0" height="23"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" bgcolor="FFFFFF">
+      <table width="542" border="0" cellpadding="17" cellspacing="0">
+       <tr>
+        <td style="color:999999;line-height:1.6em">
+        <div align="justify">
+
+	The forums are setup now, however the email function isn't working so just shoot me an email after you register and I will activate your account.
+<br><br>
+Read: 0 | <a href="/elderec/index.php?action=fullnews&amp;showcomments=1&amp;id=3">Comments (0)</a> | 
+        </div>
+        </td>
+       </tr>
+      </table>
+     </td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td colspan="2" height="1" bgcolor="AAAAAA"></td>
+     <td width="1" bgcolor="AAAAAA"></td>
+     <td width="5" bgcolor="F0F0F0"></td>
+    </tr>
+    <tr>
+     <td width="1" height="5" bgcolor="FFFFFF"></td>
+     <td width="4" height="5" bgcolor="FFFFFF"></td>
+     <td width="538" height="5" bgcolor="F0F0F0"></td>
+     <td width="1" height="5" bgcolor="F0F0F0"></td>
+     <td width="5" height="5" bgcolor="F0F0F0"></td>
+    </tr>
+   </table>
+<br />
+<span style="margin-left:5px;"><a href="/elderec/index.php?prevnext=5">Next &gt;&gt;&gt;</a></span>
+<!-- (c) 2003, 2004 PHPNews - http://newsphp.sourceforge.net/ -->
+
+
+<!-- END NEWS CONTENT -->
+  <br>
+ 
+  </div>
+  </td>
+
+ </tr>
+ <tr>
+  <td colspan="3" height="10" bgcolor="FFFFFF"></td>
+ </tr>
+ <tr>
+  <td colspan="3" height="1" bgcolor="CCCCCC"></td>
+ </tr>
+ <tr>
+  <td colspan="3" height="5" bgcolor="FFFFFF"></td>
+
+ </tr>
+ <tr>
+  <td colspan="3" bgcolor="FFFFFF" align="right">
+  Last modified Saturday, 07th August, 2004 @ 04:51am  
+  </td>
+ </tr>
+</table>
+</div>
+
+</body>
+</html>
