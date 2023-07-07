@@ -8,4 +8,4 @@ then
 fi
 
 find ./websites/ -name "$fileNameToScrape" | while read filename; do ./sanitize-links.sh "$filename" ./links-sanitized.txt; done;
-sort ./links-sanitized.txt | uniq -u > ./linkx-sanitized-unique.txt
+sort ./links-sanitized.txt | uniq -u > ./links-sanitized-unique.txt
