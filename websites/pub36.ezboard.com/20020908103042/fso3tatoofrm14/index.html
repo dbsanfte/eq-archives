@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>Development</title><CENTER><!-- START POPUP AD SCRIPT --><iframe src="http://www.ezboard.com/bravenet/ads/popup.htm" frameborder="0" scrolling="No" width="1" height="1" marginwidth="0" marginheight="0" style="border-width:0px; border-color:000000; border-style:solid;"></iframe><!-- END POPUP AD SCRIPT --></CENTER><meta name=description content="Imperial force of Sub-Oversector #003 in the Tatoo System."><meta name=keywords content="message boards, forum, free forums, free message boards,  programming, programmers, community, games, bulletin boards, online communities, discussion forums, "> <SCRIPT LANGUAGE="JavaScript"><!--if ((navigator.appVersion.indexOf("Mac") != -1)) document.write("<LINK REL=stylesheet HREF=\"http://www.ezboard.com/ztyles/defaultmac.css\" TYPE=\"text/css\">"); else document.write("<LINK REL=stylesheet HREF=\"http://www.ezboard.com/ztyles/default.css\" TYPE=\"text/css\">"); // --></SCRIPT> <SCRIPT LANGUAGE="JavaScript">
+
+var timerID ;
+
+function tzone(tz, os, ds, cl)
+
+{
+
+	this.ct = new Date(0) ;		// datetime
+
+	this.tz = tz ;		// code
+
+	this.os = os ;		// GMT offset
+
+	this.ds = ds ;		// has daylight savings
+
+	this.cl = cl ;		// font color
+
+}
+
+
+
+function UpdateClocks()
+
+{
+
+	// www.timeanddate.com/worldclock
+
+	var ct = new Array(
+
+		new tzone('Los Angeles: ',  -8, 1, 'silver'),
+
+		new tzone('Denver: ', -7, 1, 'silver'),
+
+		new tzone('Chicago: ', -6, 1, 'silver'),
+
+		new tzone('New York: ', -5, 1, 'silver'),
+
+		new tzone('London: ',  0, 1, 'red'),
+
+		new tzone('Tokyo: ', +9, 1, 'silver'),
+
+		new tzone('Sydney: ', +10, 1,  'silver'),
+
+		new tzone('Honolulu ', -10, 1,  'silver')
+
+	) ;
+
+
+
+	var dt = new Date() ;	// [GMT] time according to machine clock
+
+
+
+	var startDST = new Date(dt.getFullYear(), 3, 1) ;
+
+	while (startDST.getDay() != 0)
+
+		startDST.setDate(startDST.getDate() + 1) ;
+
+
+
+	var endDST = new Date(dt.getFullYear(), 9, 31) ;
+
+	while (endDST.getDay() != 0)
+
+		endDST.setDate(endDST.getDate() - 1) ;
+
+
+
+	var ds_active ;		// DS currently active
+
+	if (startDST < dt && dt < endDST)
+
+		ds_active = 1 ;
+
+	else
+
+		ds_active = 0 ;
+
+
+
+	// Adjust each clock offset if that clock has DS and in DS.
+
+	for(n=0 ; n<ct.length ; n++)
+
+		if (ct[n].ds == 1 && ds_active == 1) ct[n].os++ ;
+
+
+
+	// compensate time zones
+
+	gmdt = new Date() ;
+
+	for (n=0 ; n<ct.length ; n++)
+
+		ct[n].ct = new Date(gmdt.getTime() + ct[n].os * 3600 * 1000) ;
+
+
+
+	document.all.Clock0.innerHTML =
+
+		'<font color="' + ct[0].cl + '">' + ct[0].tz + ClockString(ct[0].ct) + '</font>' ;
+
+
+
+	document.all.Clock1.innerHTML =
+
+		'<font color="' + ct[1].cl + '">' + ct[1].tz + ClockString(ct[1].ct) + '</font>' ;
+
+
+
+	document.all.Clock2.innerHTML =
+
+		'<font color="' + ct[2].cl + '">' + ct[2].tz + ClockString(ct[2].ct) + '</font>' ;
+
+
+
+	document.all.Clock3.innerHTML =
+
+		'<font color="' + ct[3].cl + '">' + ct[3].tz + ClockString(ct[3].ct) + '</font>' ;
+
+
+
+	document.all.Clock4.innerHTML =
+
+		'<font color="' + ct[4].cl + '">' + ct[4].tz + ClockString(ct[4].ct) + '</font>' ;
+
+
+
+	document.all.Clock5.innerHTML =
+
+		'<font color="' + ct[5].cl + '">' + ct[5].tz + ClockString(ct[5].ct) + '</font>' ;
+
+
+
+	document.all.Clock6.innerHTML =
+
+		'<font color="' + ct[6].cl + '">' + ct[6].tz + ClockString(ct[6].ct) + '</font>' ;
+
+
+
+	document.all.Clock7.innerHTML =
+
+		'<font color="' + ct[7].cl + '">' + ct[7].tz + ClockString(ct[7].ct) + '</font>' ;
+
+
+
+	
+
+	timerID = window.setTimeout("UpdateClocks()", 1001) ;
+
+}
+
+
+
+function ClockString(dt)
+
+{
+
+	var stemp, ampm ;
+
+
+
+	var dt_year = dt.getUTCFullYear() ;
+
+	var dt_month = dt.getUTCMonth() + 1 ;
+
+	var dt_day = dt.getUTCDate() ;
+
+	var dt_hour = dt.getUTCHours() ;
+
+	var dt_minute = dt.getUTCMinutes() ;
+
+	var dt_second = dt.getUTCSeconds() ;
+
+	
+
+	dt_year = dt_year.toString() ;
+
+	if (0 <= dt_hour && dt_hour < 12)
+
+	{
+
+		ampm = 'AM' ;
+
+		if (dt_hour == 0) dt_hour = 12 ;		
+
+	} else {
+
+		ampm = 'PM' ;
+
+		dt_hour = dt_hour - 12 ;
+
+		if (dt_hour == 0) dt_hour = 12 ;		
+
+	}
+
+	
+
+	if (dt_minute < 10)
+
+		dt_minute = '0' + dt_minute ;
+
+	
+
+	if (dt_second < 10)
+
+		dt_second = '0' + dt_second ;
+
+
+
+	stemp = dt_month + '/' + dt_day + '/' + dt_year.substr(2,2) ;
+
+	stemp = stemp + ' ' + dt_hour + ":" + dt_minute + ":" + dt_second + ' ' + ampm ;
+
+	return stemp ;
+
+}
+
+//  End -->
+
+</script></head><body text="#FF0000" bgcolor="#000000" link="#C00000" vlink="#C00000" alink="#C00000"  background="http://so3tatoo.clanpages.com/mbi/dev.jpg"  onLoad="UpdateClocks()"><center><CENTER><!-- START TOP DEFAULT AD SCRIPT -->
+<SCRIPT LANGUAGE="javascript" TYPE="text/javascript" src="http://www.ezboard.com/bravenet/ads/ads.txt"></script><noscript><div align="center"><iframe src="http://www.ezboard.com/bravenet/ads/eznoscript1.htm" frameborder="0" scrolling="No" width="756" height="117" marginwidth="0" marginheight="0" style="border-width:1px; border-color:000000; border-style:solid;"></iframe></div></noscript>
+<!-- END TOP DEFAULT AD SCRIPT -->
+</CENTER> <br> <table border=0 width=95%><tr><td  align=center ><a href=http://so3.clanpages.com><img src=http://so3.clanpages.com/mbi/banner.jpg border=0></a></td></tr></table>  <table border=0 width=95% cellpadding=0 cellspacing=0><tr><td></td></tr></table> <table border=0 width=95% cellpadding=0 cellspacing=0><tr><td><table border=0 cellspacing=1 cellpadding=2 width=100%><tr><td><table border=0 width=100%><tr><td align=left valign=top><h4>  <a href=http://pub36.ezboard.com/bso3tatoo>SO3 - Tatoo System</a><br>&nbsp;&nbsp;&nbsp;> Development</h4> <input type=hidden name=source value=inviteFriendsFromTopicPage><a href=http://www1.ezboard.com/inveitefriends.php3?action=http://pub36.ezboard.com/bso3tatoo.doTellAFriend&yourName= target=_blank><img src=http://www.ezboard.com/image/email.gif border=0> Invite Friends!</a> <br>Moderated by: <a href=http://pub36.ezboard.com/uharlius.showPublicProfile?language=EN>Harlius</a>&nbsp;<a href=http://pub36.ezboard.com/ureichouojike.showPublicProfile?language=EN>Reichou Ojike</a>&nbsp;<a href=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</a>&nbsp;</td><td valign=top align=right><a href=http://pub36.ezboard.com/fso3tatoofrm14.showAddTopicScreenFromWeb><img src=http://thewebsensei.com/so3/newtopic.gif border=0 alt="New Topic"></a>  &nbsp;&nbsp;<a href=http://pub36.ezboard.com/fso3tatoofrm14.showAddPollScreenFromWeb><img src=http://thewebsensei.com/so3/newpoll.gif border=0 alt="New Poll"></a></td></tr></table><table border=0 width=100%><tr><td align=left> <a href=BBSSystem.handleLoginCheck?action=login&boardName=so3tatoo&back=so3tatoo>Login</a><font color=#6F6F6F> |<a href=http://pub36.ezboard.com/BBSMessageBoard.showRegistrationChoice?boardName=so3tatoo>Register Your Free Account (Required)</a>  <font color=#6F6F6F> | </font><a href=http://pub36.ezboard.com/BBSForum.showForumSearch?boardName=so3tatoo&forumName=so3tatoofrm14>Search</a><font color=#6F6F6F> | </font>  <a href=http://www.ezboard.com/help/index.html target=_blank>Help</a></td><td align=right><a href=http://www.ezboard.com/messages/alert_cookies.html>Need help logging in?</a></td></tr></table></td></tr></table> <font size= 2><B>Welcome to Sub-Oversector #003 Tatoo System Command</b></font> </td></tr></table><br>  <table border=0 width=95% cellpadding=1 cellspacing=0 ><tr><td><table border=0 cellspacing=0 cellpadding=4 width=100%  class=whosonline><tr><td><b><font color=#C0C0C0 class=whosonline>1 visitor in the last 15 minutes:0 Members -1 Guest -0Anonymous</font></b></td></tr><tr><td bgcolor="#000000"></td></tr></table></td></tr></table><br> <table border=0 cellpadding=4 cellspacing=1 width=95%><tr><td  class=headings>&nbsp;</td><td  class=headings>&nbsp;</td><td  class=headings><font color=#FF0000>Topic</font></td><td align=center nowrap  class=headings><font color=#FF0000>Replies</font></td><td align=center nowrap  class=headings><font color=#FF0000>Last Comment</font></td><td align=center nowrap  class=headings><font color=#FF0000>Started By</font></td></tr><tr><td  align=center> &nbsp; </td> <td align=center > &nbsp; </td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=16.topic>Name Tags</a></td> <td nowrap align=center     class=m>2</td> <td align=center  class=m><nobr>8/2/02 8:45:32 pm</nobr><br>by: dajedied</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center > &nbsp; </td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=10.topic>A few questions...</a></td> <td nowrap align=center     class=m>2</td> <td align=center  class=m><nobr>7/30/02 11:11:55 am</nobr><br>by: Radur Aank</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_sunglasses.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=8.topic>*wets himself*</a></td> <td nowrap align=center     class=m>2</td> <td align=center  class=m><nobr>7/30/02 11:10:21 am</nobr><br>by: Radur Aank</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_exclamation_mark.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=9.topic>Beta CDs are being made...</a></td> <td nowrap align=center     class=m>1</td> <td align=center  class=m><nobr>7/30/02 11:09:12 am</nobr><br>by: Radur Aank</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_mad.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=15.topic>Play nice...oh please...</a></td> <td nowrap align=center     class=m>0</td> <td align=center  class=m><nobr>7/30/02 5:29:44 am</nobr><br>by: Tejinashi69</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_exclamation_mark.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=14.topic>Breasts, Underware, Bodies, and Faces...</a></td> <td nowrap align=center     class=m>1</td> <td align=center  class=m><nobr>7/30/02 4:53:33 am</nobr><br>by: Tejinashi69</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center > &nbsp; </td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=13.topic>Beta Manual</a></td> <td nowrap align=center     class=m>1</td> <td align=center  class=m><nobr>7/30/02 4:47:47 am</nobr><br>by: Tejinashi69</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_lightbulb.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=12.topic>New Professions 07-26-02</a></td> <td nowrap align=center     class=m>1</td> <td align=center  class=m><nobr>7/30/02 4:44:34 am</nobr><br>by: Tejinashi69</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_mad.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=11.topic>Once again...I'm not going to say it...</a></td> <td nowrap align=center     class=m>0</td> <td align=center  class=m><nobr>7/30/02 4:41:37 am</nobr></td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_lightbulb.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=7.topic>The money...</a></td> <td nowrap align=center     class=m>3</td> <td align=center  class=m><nobr>7/26/02 12:07:51 pm</nobr><br>by: Radur Aank</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_lightbulb.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=6.topic>Names - A post by myself...</a></td> <td nowrap align=center     class=m>0</td> <td align=center  class=m><nobr>7/25/02 1:12:49 am</nobr></td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_smile.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=3.topic>The box...</a></td> <td nowrap align=center     class=m>3</td> <td align=center  class=m><nobr>7/25/02 1:10:45 am</nobr><br>by: Tejinashi69</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_lightbulb.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=4.topic>Only now, at the end, do you understand...</a></td> <td nowrap align=center     class=m>0</td> <td align=center  class=m><nobr>7/24/02 11:13:45 pm</nobr></td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center > &nbsp; </td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=5.topic>Beta Update #4</a></td> <td nowrap align=center     class=m>0</td> <td align=center  class=m><nobr>7/24/02 1:24:03 pm</nobr></td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center > &nbsp; </td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=1.topic>7/22/02 Holobits</a></td> <td nowrap align=center     class=m>1</td> <td align=center  class=m><nobr>7/23/02 3:09:44 pm</nobr><br>by: Radur Aank</td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr><tr><td  align=center> &nbsp; </td> <td align=center ><img src="http://www.ezboard.com/images/posticons/pi_cry.gif" alt="posticon"></td> <td  class=m><a href=http://pub36.ezboard.com/fso3tatoofrm14.showMessage?topicID=2.topic>Me like shiny, me want shiny! RE: &quot;Battle Cries&quot;</a></td> <td nowrap align=center     class=m>0</td> <td align=center  class=m><nobr>7/23/02 7:32:13 am</nobr></td><td  class=m><A HREF=http://pub36.ezboard.com/utejinashi69.showPublicProfile?language=EN>Tejinashi69</A>&nbsp; <IMG HEIGHT=10 WIDTH=10 SRC="http://www.bestanimations.com/Sci-Fi/StarWars/Emporer-01.gif" BORDER=0></td></tr></table><br><table border=0 width=95%><tr><td align=left valign="top"></td><td align=right valign="top"><input type=hidden name=returnUrl value="http://pub36.ezboard.com/fso3tatoofrm14"><a href=http://pub36.ezboard.com/fso3tatoofrm14.showAddTopicScreenFromWeb><img src=http://thewebsensei.com/so3/newtopic.gif border=0 alt="New Topic"></a>  &nbsp;&nbsp;<a href=http://pub36.ezboard.com/fso3tatoofrm14.showAddPollScreenFromWeb><img src=http://thewebsensei.com/so3/newpoll.gif border=0 alt="New Poll"></a></td></tr></table></form><br><table width=95%><tr><td valign="top"><b>icon legend:</b><br><img src="http://www.ezboard.com/themes/professional/closeThread.gif" alt="Closed threads - can not reply to these posts" align=absmiddle> Closed Topics<br><img src="http://thewebsensei.com/so3/unread.gif" alt="Unread messages" align=absmiddle> New messages<br><br></td><td valign="top" align="right"> <form action=http://pub36.ezboard.com/BBSForum.jumpShowForum method=post><table border="0" cellspacing="0" cellpadding="1"><tr><td nowrap><b>jump to:</b><select name=forumName><option value="so3tatoofrm11">Recruitment<option value="so3tatoofrm1">General Discussion<option value="so3tatoofrm2">The Drunken Sandtrooper<option value="so3tatoofrm3">Tatooine Base<option value="so3tatoofrm4">Tatooine Base Command Center<option value="so3tatoofrm13">Tatooine Base Command Center Level Yellow<option value="so3tatoofrm5">Stormtrooper Barracks<option value="so3tatoofrm6">Open-air Market<option value="so3tatoofrm7">Supply Depot<option value="so3tatoofrm8">Research Laboratory<option value="so3tatoofrm10">Tatooine Archives<option value="so3tatoofrm12">Tatoo System Roster<option value="so3tatoofrm14">Development<option value="so3tatoofrm15">Testing Grounds</select></td><td><input type=submit value="Go" class=inputbutton></td></tr></table></form> </td></tr></table><br><br><table border=0 align=center><tr><td align=center></td><td><img src="http://www.ezboard.com/image/spacer.gif" width=15 height=1 border=0></td><td align=center></td></tr></table><CENTER><!-- START BOTTOM DEFAULT AD SCRIPT -->
+<SCRIPT LANGUAGE="javascript" TYPE="text/javascript" src="http://www.ezboard.com/bravenet/ads/ads.txt"></script><noscript><div align="center"><iframe src="http://www.ezboard.com/bravenet/ads/eznoscript1.htm" frameborder="0" scrolling="No" width="756" height="117" marginwidth="0" marginheight="0" style="border-width:1px; border-color:000000; border-style:solid;"></iframe></div></noscript>
+<!-- END BOTTOM DEFAULT AD SCRIPT -->
+</CENTER> <center>
+
+<table border="0" cellspacing="0" width="100%">
+
+  <tr bgcolor="#000000" style="font-family: Verdana, Tahoma, Arial; font-size: x-small">
+
+    <td ID="Clock0" width="25%" >   </td>
+
+    <td ID="Clock1" width="25%" >   </td>
+
+    <td ID="Clock2" width="25%" >   </td>
+
+    <td ID="Clock3" width="25%" >   </td>
+
+  </tr>
+
+  <tr bgcolor="#000000" style="font-family: Verdana, Tahoma, Arial; font-size: x-small">
+
+    <td ID="Clock4" width="25%" >   </td>
+
+    <td ID="Clock5" width="25%" >   </td>
+
+    <td ID="Clock6" width="25%" >   </td>
+
+    <td ID="Clock7" width="25%" >   </td>
+
+  </tr>
+
+</table> <br><br>Powered By <a href=http://www.ezboard.com/>ezboard®</a> Ver. 6.9.5.4<br>Copyright ©1999-2002 ezboard, Inc.</center></body></html>
+
