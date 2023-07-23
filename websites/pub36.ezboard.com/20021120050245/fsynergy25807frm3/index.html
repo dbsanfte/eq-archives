@@ -1,0 +1,540 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>Raids and Events</title><meta name=description content="An Everquest guild on the Xegony server."><meta name=keywords content="message boards, forum, free forums, free message boards,  programming, programmers, community, games, bulletin boards, online communities, discussion forums,      Synergy,Xegony, Everquest,eq, synergy guild, everquest guild     "><script type="text/javascript" src="http://www.ezboard.com/scripts/popup.js"></script> <SCRIPT LANGUAGE="JavaScript"><!--if ((navigator.appVersion.indexOf("Mac") != -1)) document.write("<LINK REL=stylesheet HREF=\"http://www.ezboard.com/ztyles/defaultmac.css\" TYPE=\"text/css\">"); else document.write("<LINK REL=stylesheet HREF=\"http://www.ezboard.com/ztyles/default.css\" TYPE=\"text/css\">"); // --></SCRIPT> <SCRIPT>
+
+/************************************************************************************
+ * News Scroller by http://www.JavaScript-fx.com
+ * You may use this script on any page as long as this comment
+ * Is not removed from the script.
+ ************************************************************************************/
+var ns4 = (navigator.appName.indexOf("Netscape") != -1 && !document.getElementById);
+
+if(!window.JSFX)
+        JSFX=new Object();
+
+JSFX.layerNo=0; 
+/**********************************************************************************/
+JSFX.createLayer = function(htmlStr, parent)
+{
+        //Declare all variables first
+        var elem = null;
+        var xName;
+        var txt;
+
+         if(document.layers) 
+        {
+                xName="xLayer" + JSFX.layerNo++;
+                if(parent == null)
+                        elem=new Layer(2000);
+                else
+                        elem=new Layer(2000, parent.elem);
+ 
+                elem.document.open(); 
+                elem.document.write(htmlStr); 
+                elem.document.close(); 
+                elem.moveTo(0,0);
+                elem.innerHTML = htmlStr;
+        }
+        else 
+        if(document.all) 
+        {
+                if(parent == null)
+                        parent=document.body;
+                else
+                        parent=parent.elem;
+
+                xName = "xLayer" + JSFX.layerNo++; 
+                txt = '<DIV ID="' + xName + '"'
+                        + ' STYLE="position:absolute;left:0;top:0;visibility:hidden">' 
+                        + htmlStr 
+                        + '</DIV>'; 
+
+                        parent.insertAdjacentHTML("BeforeEnd",txt); 
+
+                elem = document.all[xName]; 
+        } 
+        else 
+        if (document.getElementById)
+        {
+                if(parent == null)
+                        parent=document.body;
+                else
+                        parent=parent.elem;
+
+                xName="xLayer" + JSFX.layerNo++;
+                txt = ""
+                        + "position:absolute;left:0px;top:0px;visibility:hidden";
+
+                var newRange = document.createRange();
+
+                elem = document.createElement("DIV");
+                elem.setAttribute("style",txt);
+                elem.setAttribute("id", xName);
+
+                parent.appendChild(elem);
+
+                newRange.setStartBefore(elem);
+                strFrag = newRange.createContextualFragment(htmlStr);        
+                elem.appendChild(strFrag);
+        }
+
+        return elem;
+}
+/**********************************************************************************/
+JSFX.Layer = function(newLayer, parent) 
+{
+        if(!newLayer)
+                return;
+
+        if(typeof newLayer == "string")
+                this.elem = JSFX.createLayer(newLayer, parent);
+        else
+                this.elem=newLayer;
+
+        if(document.layers)
+        {
+                this.images                = this.elem.document.images; 
+                this.parent                = parent;
+                this.style                = this.elem;
+                if(parent != null)
+                        this.style.visibility = "inherit";
+         } 
+        else 
+        {
+                this.images  = document.images; 
+                this.parent         = parent;
+                this.style   = this.elem.style; 
+        } 
+        window[this.elem.id]=this;        //save a reference to this
+} 
+/**********************************************************************************/
+JSFX.findLayer = function(theDiv, d)
+{
+        if(document.layers)
+        {
+                var i;
+                if(d==null) d = document;
+                var theLayer = d.layers[theDiv];
+                if(theLayer != null)
+                        return(theLayer);
+                else
+                        for(i=0 ; i<d.layers.length ; i++)
+                        {
+                                theLayer = JSFX.findLayer(theDiv, d.layers[ i ].document);
+                                if(theLayer != null)
+                                        return(theLayer);
+                        }
+                return("Undefined....");
+        }
+        else 
+        if(document.all)
+                return(document.all[theDiv]);
+        else 
+        if(document.getElementById)
+                return(document.getElementById(theDiv));
+        else
+                return("Undefined.....");
+}
+
+/**********************************************************************************/
+/*** moveTo (x,y) ***/
+JSFX.Layer.prototype.moveTo = function(x,y)
+{
+        this.style.left = x+"px";
+        this.style.top = y+"px";
+}
+if(ns4)
+        JSFX.Layer.prototype.moveTo = function(x,y) { this.elem.moveTo(x,y); }
+
+/**********************************************************************************/
+/*** BackGround Color ***/
+JSFX.Layer.prototype.setBgColor        = function(color) { this.style.backgroundColor = color==null?'transparent':color; } 
+if(ns4)
+        JSFX.Layer.prototype.setBgColor         = function(color) { this.elem.bgColor = color; }
+/**********************************************************************************/
+/*** BackGround Image ***/
+JSFX.Layer.prototype.setBgImage        = function(image) { this.style.backgroundImage = "url("+image+")"; }
+if(ns4)
+        JSFX.Layer.prototype.setBgImage         = function(image) { this.style.background.src = image; }
+
+/**********************************************************************************/
+/*** show()/hide() Visibility ***/
+JSFX.Layer.prototype.show                = function()         { this.style.visibility = "visible"; } 
+JSFX.Layer.prototype.hide                = function()         { this.style.visibility = "hidden"; } 
+JSFX.Layer.prototype.isVisible        = function()        { return this.style.visibility == "visible"; } 
+if(ns4)
+{
+        JSFX.Layer.prototype.show                = function()         { this.style.visibility = "show"; }
+        JSFX.Layer.prototype.hide                 = function()         { this.style.visibility = "hide"; }
+        JSFX.Layer.prototype.isVisible         = function()         { return this.style.visibility == "show"; }
+}
+/**********************************************************************************/
+/*** set Content***/
+JSFX.Layer.prototype.setContent   = function(xHtml)        { this.elem.innerHTML=xHtml; } 
+if(ns4)
+        JSFX.Layer.prototype.setContent   = function(xHtml)
+        {
+                this.elem.document.write(xHtml);
+                this.elem.document.close();
+                this.elem.innerHTML = xHtml;
+        }
+/**********************************************************************************/
+/*** Opacity ***/
+if(ns4)
+{
+        JSFX.Layer.prototype.setOpacity = function(pc) {return 0;}
+}
+else if(document.all)
+{
+        JSFX.Layer.prototype.setOpacity = function(pc)
+        {
+                if(this.style.filter=="")
+                        this.style.filter="alpha(opacity=100);";
+                this.elem.filters.alpha.opacity=pc;
+        }
+}
+else
+{
+/*** Assume NS6 ***/
+        JSFX.Layer.prototype.setOpacity = function(pc){        this.style.MozOpacity=pc+'%' }
+}
+/**********************************************************************************/
+JSFX.Layer.prototype.getPageX                = function(el)         
+{ 
+        if(el == null) 
+                el = this.elem;
+        return el.offsetLeft + (el.offsetParent ? this.getPageX(el.offsetParent) : 0);
+}
+JSFX.Layer.prototype.getPageY                = function(el)         
+{ 
+        if(el == null) 
+                el = this.elem;
+        return el.offsetTop + (el.offsetParent ? this.getPageY(el.offsetParent) : 0);
+}
+if(ns4)
+{
+        JSFX.Layer.prototype.getPageX         = function()         { return this.elem.pageX; }
+        JSFX.Layer.prototype.getPageY         = function()         { return this.elem.pageY; }
+}
+/*************************************************************************************/ 
+JSFX.VerticalScroller = function()
+{
+        this.isMessageScroller=true;
+        this.sx                 = 0;
+        this.sy                 = 0;
+        this.w                 = 100;
+        this.h                 = 100;
+        this.op                = 0;
+        this.outerLayer         = null;
+        this.scrollLayer         = null;
+        this.bgColor         = null;
+        this.bgImage        = null;
+        this.theStyleStr  = null;
+        this.messages         = new Array();
+        this.currMessage         = -1;
+        this.step                 = 2;
+        this.id                 = "JSFXScroll" + JSFX.VerticalScroller.no++;
+        this.holder         = this.id + "_h";
+        this.content         = this.id + "_c";
+        this.showTime        = 1000;
+
+        this.animateIn        = this.animateIn_StartScrollUp;
+        this.animateOut        = this.animateOut_FadeDown;
+        this.animate         = this.animateIn;
+
+        window[this.id]        = this;
+}
+JSFX.VerticalScroller.no = 0;
+JSFX.VerticalScroller.prototype.setAnimation = function(inAni, outAni)
+{
+        if(inAni == 0)
+                this.animateIn        = this.animateIn_StartScrollUp;
+        else if (inAni == 1)
+                this.animateIn        = this.animateIn_StartScrollDown;
+        else
+                this.animateIn        = this.animateIn_StartFadeUp;
+        
+        if(outAni == 0)
+                this.animateOut        = this.animateOut_ScrollUp;
+        else if (outAni == 1)
+                this.animateOut        = this.animateOut_ScrollDown;
+        else
+                this.animateOut        = this.animateOut_FadeDown;
+
+        this.animate         = this.animateIn;
+}
+
+JSFX.VerticalScroller.prototype.toHtml = function(width, height)
+{
+        this.w = width;
+        this.h = height;
+        var str = "";
+        if(ns4)
+        {
+                str =    '<ILAYER WIDTH="'+width+'" HEIGHT="'+height+'" NAME="'+this.holder+'">'
+                        +  '<LAYER  WIDTH="'+width+'" HEIGHT="'+height+'" NAME="'+this.content+'">'
+                        +  '</LAYER></ILAYER>';
+        }
+        else
+        {
+                str =   '<div style="overflow:hidden;   width:'+width+';height:'+height+';" id="'+this.holder+'">'
+                        + '<div style="position:relative; width:'+width+';height:'+height+'; filter:alpha(opacity=0); -moz-opacity:0%;" id="'+this.content+'">'
+                        + '</div></div>';
+        }
+
+        return str;
+}
+JSFX.VerticalScroller.prototype.setShowTime = function(theInterval)
+{
+        this.showTime = theInterval * 1000;
+}
+JSFX.VerticalScroller.prototype.setBgColor = function(color)
+{
+        this.bgColor = color;
+        if(this.outerLayer != null)
+                this.outerLayer.setBgColor(color);
+}
+JSFX.VerticalScroller.prototype.setBgImage = function(theImage)
+{
+        this.bgImage = theImage;
+        if(this.outerLayer != null)
+                this.outerLayer.setBgImage(theImage);
+}
+JSFX.VerticalScroller.prototype.setStyle = function(theStyleStr)
+{
+        this.styleStr = theStyleStr;
+}
+JSFX.VerticalScroller.prototype.addMessage = function(message)
+{
+        if(!this.isMessageScroller)
+        {
+                alert("Cannot add messages to a 'Div Scroller'");
+                return;
+        }
+        this.messages[this.messages.length] = message;
+}
+JSFX.VerticalScroller.prototype.addDiv = function(message)
+{
+        if(this.isMessageScroller && this.messages.length >0)
+        {
+                alert("Cannot add Divs to a 'Message Scroller'");
+                return;
+        }
+        this.isMessageScroller = false;
+        this.messages[this.messages.length] = message;
+}
+JSFX.VerticalScroller.prototype.start = function()
+{
+        //Initialise the DIV/Layer if not already done so
+        if(this.scrollLayer == null)
+        {
+                this.outerLayer  = new JSFX.Layer(JSFX.findLayer(this.holder));
+                this.scrollLayer = new JSFX.Layer(JSFX.findLayer(this.content));
+                if(this.bgImage != null)
+                        this.outerLayer.setBgImage(this.bgImage);
+                else if(this.bgColor != null)
+                        this.outerLayer.setBgColor(this.bgColor);
+        }
+        this.animate();
+}
+JSFX.VerticalScroller.prototype.moveContent = function(x, y)
+{
+        var px=0;
+        var py=0;
+        if(! this.isMessageScroller)
+        {
+                px=this.outerLayer.getPageX();
+                py=this.outerLayer.getPageY();
+        }
+
+        this.scrollLayer.moveTo(px + x, py + y);
+        if(! this.isMessageScroller)
+        {
+                if(this.sy > 0)
+                        this.scrollLayer.clip(0,0,this.w, this.h - this.sy);
+                else
+                        this.scrollLayer.clip(0, -this.sy,this.w, this.h);
+        }
+
+
+}
+JSFX.VerticalScroller.prototype.setNextMessage = function(x, y, o)
+{
+        this.currMessage = (this.currMessage + 1) % this.messages.length;
+
+        this.sx=x;
+        this.sy=y;
+        this.op=o;
+
+        this.scrollLayer.hide();
+        if(this.isMessageScroller)
+        {
+                var str = "";
+
+                if(this.styleStr != null)
+                        str += '<span style="'+this.styleStr+'">';
+
+                str += this.messages[this.currMessage];
+
+                if(this.styleStr != null)
+                        str += '</span>';
+
+                this.scrollLayer.setContent(str);
+        }
+        else
+        {
+                this.scrollLayer = new JSFX.Layer(JSFX.findLayer(this.messages[this.currMessage]));
+        }
+        this.moveContent(this.sx, this.sy);
+        this.scrollLayer.setOpacity(this.op);
+        this.scrollLayer.show();
+}
+
+JSFX.VerticalScroller.prototype.animateIn_StartScrollUp = function()
+{
+        this.setNextMessage(0, this.h, 100);
+        this.animate = this.animateIn_ScrollUp
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateIn_ScrollUp = function()
+{
+        this.sy -= this.step;
+        this.moveContent(this.sx, this.sy);
+        if(this.sy <= 0)
+        {
+                this.animate=this.animateOut;
+                this.setTimeout("animate()", this.showTime);
+        }
+        else
+                this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateIn_StartScrollDown = function()
+{
+        this.setNextMessage(0, -this.h, 100);
+        this.animate = this.animateIn_ScrollDown
+        this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateIn_ScrollDown = function()
+{
+        this.sy += this.step;
+        this.moveContent(this.sx, this.sy);
+        if(this.sy >= 0)
+        {
+                this.animate=this.animateOut;
+                this.setTimeout("animate()", this.showTime);
+        }
+        else
+                this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateIn_StartFadeUp = function()
+{
+        this.setNextMessage(0, 0, 0);
+        this.animate = this.animateIn_FadeUp
+        this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateIn_FadeUp = function()
+{
+        this.op += 10;
+        this.scrollLayer.setOpacity(this.op);
+        if(this.op == 100)
+        {
+                this.animate = this.animateOut;
+                this.setTimeout("animate()", this.showTime);
+        }
+        else
+                this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateOut_ScrollUp = function()
+{
+        this.sy -= this.step;
+        this.moveContent(this.sx, this.sy);
+
+        if(this.sy <= -this.h)
+                this.animate=this.animateIn;
+
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateOut_ScrollDown = function()
+{
+        this.sy += this.step;
+        this.moveContent(this.sx, this.sy);
+
+        if(this.sy >= this.h)
+                this.animate=this.animateIn;
+
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateOut_FadeDown = function()
+{
+        this.op -= 10;
+        this.scrollLayer.setOpacity(this.op);
+        this.moveContent(this.sx, this.sy);
+
+        if(this.op == 0)
+                this.animate = this.animateIn;
+
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.setTimeout = function(f, t) 
+{
+        setTimeout("window."+this.id+"."+f, t);
+}
+
+/*** If no other script has added it yet, add the ns resize fix ***/
+if(navigator.appName.indexOf("Netscape") != -1 && !document.getElementById)
+{
+        if(!JSFX.ns_resize)
+        {
+                JSFX.ow = outerWidth;
+                JSFX.oh = outerHeight;
+                JSFX.ns_resize = function()
+                {
+                        if(outerWidth != JSFX.ow || outerHeight != JSFX.oh )
+                                location.reload();
+                }
+        }
+        window.onresize=JSFX.ns_resize;
+}
+/************************************************************************************/
+        var myScroller = new JSFX.VerticalScroller();
+
+        myScroller.setStyle("font-family: Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FFFFFF");
+        myScroller.setBgColor("#000000");
+        myScroller.setShowTime(5);
+        myScroller.addMessage("<b>Welcome to the Synergy Collective message board</b>");
+        myScroller.addMessage("<b>Congratulations to Garleene on becoming the newest permanent member of the guild!</b>");
+        myScroller.addMessage("<b>All members please remember to keep your character info up to date in the Guild Roster forum</b>");
+/************************************************************************************/
+function JSFX_StartEffects()
+{
+        myScroller.start();
+}
+ </SCRIPT>
+
+</head><body text="#FFFFFF" bgcolor="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#0000FF"  background="http://members.telocity.com/~dwbtmc/images/062.gif"  onload="JSFX_StartEffects();"><center> <TABLE align="center" BORDER="0" cellspacing="0" cellpadding="0">
+<TR>
+
+<TD>
+<CENTER><IMG SRC=http://members.telocity.com/~dwbtmc/images/synsword2.gif></CENTER>
+</TD>
+</TR>
+</TABLE>
+<BR>
+
+<TABLE align="center" BORDER="3" cellspacing="0" cellpadding="0">
+
+<TR>
+
+<TD>
+<CENTER><SCRIPT>
+        document.write(myScroller.toHtml(400,80));
+
+</SCRIPT></CENTER></TD>
+</TR>
+</TABLE>
+<BR>
+ <table border=0 width=95% cellpadding=0 cellspacing=0><tr><td></td></tr></table> <table border=0 width=95% cellpadding=1 cellspacing=0 bgcolor=#000000><tr><td><table border=0 cellspacing=0 cellpadding=2 width=100% bgcolor=#000000><tr><td><table border=0 width=100%><tr><td align=left valign=top><h4><a href="http://www.ezboard.com/ezcommunity/" target="_blank" ><img src="http://www.ezboard.com/image/csc_goldcommunity.gif"  border="0" align="absmiddle" alt="Gold Community"  /></a>  <a href=http://pub36.ezboard.com/bsynergy25807>Synergy Collective</a> <br>&nbsp;&nbsp;&nbsp;> Raids and Events</h4> <input type=hidden name=source value=inviteFriendsFromTopicPage><a href=http://www1.ezboard.com/inveitefriends.php3?action=http://pub36.ezboard.com/bsynergy25807.doTellAFriend&yourName= target=_blank><img src=http://www.ezboard.com/image/email.gif border=0> Invite Friends!</a> &nbsp; </td><td valign=top align=right><a href=http://pub36.ezboard.com/fsynergy25807frm3.showAddTopicScreenFromWeb><img src=http://www.ezboard.com/themes/space/newTopic.gif border=0 alt="New Topic"></a> </td></tr></table><table border=0 width=100%><tr><td align=left> <a href=BBSSystem.handleLoginCheck?action=login&boardName=synergy25807&back=synergy25807>Login</a><font color=#FFFFFF> |<a href=http://pub36.ezboard.com/BBSMessageBoard.showRegistrationChoice?boardName=synergy25807>Register Your Free Account (Required)</a>  <font color=#FFFFFF> | </font><a href=http://pub36.ezboard.com/BBSForum.showForumSearch?boardName=synergy25807&forumName=synergy25807frm3>Search</a><font color=#FFFFFF> | </font>  <a href=http://www.ezboard.com/help/index.html target=_blank>Help</a></td><td align=right><a href=http://www.ezboard.com/messages/alert_cookies.html>Need help logging in?</a></td></tr></table></td></tr><tr><td></td></tr></table></td></tr></table><br>  <table border=0 width=95% cellpadding=1 cellspacing=0  bgcolor=#000000 ><tr><td><table border=0 cellspacing=0 cellpadding=4 width=100% bgcolor=#000000 class=whosonline><tr><td><b><font color=#FFFFFF class=whosonline>1 visitor in the last 15 minutes:0 Members -1 Guest -0Anonymous</font></b></td></tr><tr><td bgcolor="#000000"></td></tr></table></td></tr></table><br>  Page  <b>1</b> <a href=http://pub36.ezboard.com/fsynergy25807frm3?page=2>2</a><a href=http://pub36.ezboard.com/fsynergy25807frm3?page=3>3</a> <table border=0 cellpadding=0 cellspacing=0 width=95%><tr><td bgcolor=#000000><table border=0 cellpadding=4 cellspacing=1 width=100%><tr><td bgcolor=#000000 class=headings>&nbsp;</td><td bgcolor=#000000 class=headings>&nbsp;</td><td bgcolor=#000000 class=headings><font color=#FFFFFF>Topic</font></td><td align=center nowrap bgcolor=#000000 class=headings><font color=#FFFFFF>Replies</font></td><td align=center nowrap bgcolor=#000000 class=headings><font color=#FFFFFF>Views</font></td><td align=center nowrap bgcolor=#000000 class=headings><font color=#FFFFFF>Last Comment</font></td><td align=center nowrap bgcolor=#000000 class=headings><font color=#FFFFFF>Started By</font></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=64.topic>WTL (want to loot) Jade Reaver</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>6</td>  <td nowrap align=center bgcolor=#000000 class=m>19</td> <td align=center bgcolor=#000000 class=m><nobr>11/19/02 10:06:02 am</nobr><br>by: PRESTOR</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/bsynergy25807.showUserPublicProfile?gid=garleene>Garleene</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=62.topic>Kael-a-thon 2</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>6</td>  <td nowrap align=center bgcolor=#000000 class=m>24</td> <td align=center bgcolor=#000000 class=m><nobr>11/18/02 1:40:42 pm</nobr><br>by: Aaoogaa</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/bsynergy25807.showUserPublicProfile?gid=aaoogaa>Aaoogaa</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=63.topic>Kanaf takes on Ragefire, Nov 11th at 9:00 pm CST</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>3</td>  <td nowrap align=center bgcolor=#000000 class=m>4</td> <td align=center bgcolor=#000000 class=m><nobr>11/13/02 6:15:23 pm</nobr><br>by: Aaoogaa</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/bsynergy25807.showUserPublicProfile?gid=kimyanya>kimyanya</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=59.topic>Shissar Temple postponed til 18th (friday Night)</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>10</td>  <td nowrap align=center bgcolor=#000000 class=m>32</td> <td align=center bgcolor=#000000 class=m><nobr>11/10/02 12:36:33 pm</nobr><br>by: Sanoini</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/bsynergy25807.showLocalUserPublicProfile?login=korab>Korab</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=61.topic>Kaelathon</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>5</td>  <td nowrap align=center bgcolor=#000000 class=m>13</td> <td align=center bgcolor=#000000 class=m><nobr>11/4/02 11:03:23 am</nobr><br>by: Aaoogaa</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/bsynergy25807.showUserPublicProfile?gid=aaoogaa>Aaoogaa</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=60.topic>Saturday Night UP Results</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>2</td> <td align=center bgcolor=#000000 class=m><nobr>10/15/02 3:37:22 pm</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000><img src="http://www.ezboard.com/images/posticons/pi_sunglasses.gif" alt="posticon"></td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=57.topic>What  a guild is all about...</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>7</td>  <td nowrap align=center bgcolor=#000000 class=m>29</td> <td align=center bgcolor=#000000 class=m><nobr>9/28/02 4:35:26 am</nobr><br>by: Korab</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/ugarleene.showPublicProfile?language=EN>Garleene</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=58.topic>FoG Hosted Hate Raid October 4th -6th</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>1</td>  <td nowrap align=center bgcolor=#000000 class=m>5</td> <td align=center bgcolor=#000000 class=m><nobr>9/27/02 8:13:18 am</nobr><br>by: Markun</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uteej2379.showPublicProfile?language=EN>TeeJ2379</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=56.topic>Results - 9/21 Umbral Plains Excursion</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>2</td>  <td nowrap align=center bgcolor=#000000 class=m>14</td> <td align=center bgcolor=#000000 class=m><nobr>9/23/02 9:42:01 am</nobr><br>by: Curves</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=55.topic>Fear raid 9/15</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>14</td>  <td nowrap align=center bgcolor=#000000 class=m>74</td> <td align=center bgcolor=#000000 class=m><nobr>9/15/02 5:03:56 am</nobr><br>by: Locrovik</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uaaoogaa.showPublicProfile?language=EN>Aaoogaa</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=54.topic>Droc's Hate raid 9/7/02**CANCELLED**</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>6</td>  <td nowrap align=center bgcolor=#000000 class=m>41</td> <td align=center bgcolor=#000000 class=m><nobr>9/4/02 6:27:08 am</nobr><br>by: Nottaa</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uravenswingsunstealer.showPublicProfile?language=EN>Ravenswing Sunstealer</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=53.topic>Enjoyed your company</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>2</td>  <td nowrap align=center bgcolor=#000000 class=m>14</td> <td align=center bgcolor=#000000 class=m><nobr>9/3/02 8:10:12 am</nobr><br>by: Markun</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uteej2379.showPublicProfile?language=EN>TeeJ2379</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=52.topic>Radir/Tawro/friends 8/30</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>0</td> <td align=center bgcolor=#000000 class=m><nobr>8/31/02 9:30:40 am</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=51.topic>Radir 8/29</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>2</td>  <td nowrap align=center bgcolor=#000000 class=m>9</td> <td align=center bgcolor=#000000 class=m><nobr>8/30/02 11:10:17 am</nobr><br>by: Kanaf</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=36.topic>Hate Raid Invite to PoL, OHS, DC, Synergy Collective </a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>2</td>  <td nowrap align=center bgcolor=#000000 class=m>26</td> <td align=center bgcolor=#000000 class=m><nobr>8/29/02 1:09:11 pm</nobr><br>by: Markun</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uaristobulos.showPublicProfile?language=EN>Aristobulos</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=49.topic>Trak raid we could use some help please</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>2</td>  <td nowrap align=center bgcolor=#000000 class=m>26</td> <td align=center bgcolor=#000000 class=m><nobr>8/28/02 9:09:32 am</nobr><br>by: Aaoogaa</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uaristobulos.showPublicProfile?language=EN>Aristobulos</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=50.topic>Hello</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>1</td> <td align=center bgcolor=#000000 class=m><nobr>8/27/02 5:55:56 pm</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/ugendd.showPublicProfile?language=EN>Gendd</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=40.topic>PoA</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>2</td>  <td nowrap align=center bgcolor=#000000 class=m>14</td> <td align=center bgcolor=#000000 class=m><nobr>8/27/02 5:48:15 pm</nobr><br>by: Gendd</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/ugendd.showPublicProfile?language=EN>Gendd</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=46.topic>Radir, Tawro, friends &amp; family 8/26</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>10</td> <td align=center bgcolor=#000000 class=m><nobr>8/27/02 10:34:48 am</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=45.topic>Results - 8/25 Umbral Plains Excursion</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>13</td> <td align=center bgcolor=#000000 class=m><nobr>8/27/02 9:58:34 am</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=43.topic>Radir, Tawro and friends 8/20</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>11</td> <td align=center bgcolor=#000000 class=m><nobr>8/27/02 9:57:38 am</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=44.topic>FoG Kael tonight</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>11</td> <td align=center bgcolor=#000000 class=m><nobr>8/22/02 12:38:38 pm</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uaaoogaa.showPublicProfile?language=EN>Aaoogaa</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=42.topic>Results - 8/17 Umbral Plains Excursion</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>10</td> <td align=center bgcolor=#000000 class=m><nobr>8/18/02 1:13:53 pm</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=41.topic>Time to start my epic</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>8</td>  <td nowrap align=center bgcolor=#000000 class=m>35</td> <td align=center bgcolor=#000000 class=m><nobr>8/16/02 9:09:14 am</nobr><br>by: Aaoogaa</td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/uaaoogaa.showPublicProfile?language=EN>Aaoogaa</A></td></tr><tr><td bgcolor=#000000 align=center> &nbsp; </td> <td align=center bgcolor=#000000> &nbsp; </td> <td bgcolor=#000000 class=m><a href=http://pub36.ezboard.com/fsynergy25807frm3.showMessage?topicID=39.topic>Radir down 8/08</a></td> <td nowrap align=center bgcolor=#000000  bgcolor=#000000  class=m>0</td>  <td nowrap align=center bgcolor=#000000 class=m>10</td> <td align=center bgcolor=#000000 class=m><nobr>8/12/02 12:38:40 am</nobr></td><td bgcolor=#000000 class=m><A HREF=http://pub36.ezboard.com/umarkun.showPublicProfile?language=EN>Markun</A></td></tr> </table></td></tr></table><br><table border=0 width=95%><tr><td align=left valign="top"></td><td align=right valign="top"><input type=hidden name=returnUrl value="http://pub36.ezboard.com/fsynergy25807frm3"> Page  <b>1</b> <a href=http://pub36.ezboard.com/fsynergy25807frm3?page=2>2</a><a href=http://pub36.ezboard.com/fsynergy25807frm3?page=3>3</a> <br><br><a href=http://pub36.ezboard.com/fsynergy25807frm3.showAddTopicScreenFromWeb><img src=http://www.ezboard.com/themes/space/newTopic.gif border=0 alt="New Topic"></a> </td></tr></table></form><br><table width=95%><tr><td valign="top"><b>icon legend:</b><br><img src="http://www.ezboard.com/themes/pastel/closeThread.gif" alt="Closed threads - cannot reply to these posts" align=absmiddle> Closed Topics<br><img src="http://members.telocity.com/~dwbtmc/images/dagger.jpg" alt="Unread messages" align=absmiddle> New messages<br><br></td><td valign="top" align="right"> <form action=http://pub36.ezboard.com/BBSForum.jumpShowForum method=post><table border="0" cellspacing="0" cellpadding="1"><tr><td nowrap><b>jump to:</b><select name=forumName><option value="synergy25807frm8">Guild Information<option value="synergy25807frm1">General<option value="synergy25807frm2">Prospective Members<option value="synergy25807frm11">Guild Roster<option value="synergy25807frm3">Raids and Events<option value="synergy25807frm4">Private Forum<option value="synergy25807frm5">Guild Bank<option value="synergy25807frm7">Guild Library<option value="synergy25807frm10">Voting Booth<option value="synergy25807frm6">Officers Forum<option value="synergy25807frm12">Archives</select></td><td><input type=submit value="Go" class=inputbutton></td></tr></table></form> </td></tr></table><br><br> <a href="mailto:davebran@directvinternet.com">Contact Administrator</a> <font color=#FFFFFF> - </font><a href=http://pub36.ezboard.com/BBSMessageBoard.showRegistrationChoice?boardName=synergy25807>Register An Account</a> <font color=#FFFFFF> | </font> <b><a href=BBSSystem.handleLoginCheck?action=login&boardName=synergy25807&back=synergy25807>Login</a></b> <font color=#FFFFFF> | </font><a href=http://pub36.ezboard.com/bsynergy25807>Synergy Collective</a> <br><br>Powered By <a href=http://www.ezboard.com/>ezboard®</a> Ver. 7.0.91<br>Copyright ©1999-2002 ezboard, Inc.<br>Accelerated By <a href=http://www.wbs.com/ezboard.html>JXEL</a></center></body></html>
+

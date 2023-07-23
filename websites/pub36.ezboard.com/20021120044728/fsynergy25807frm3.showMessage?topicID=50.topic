@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> <html><head><title>Hello - www.ezboard.com</title>  <SCRIPT LANGUAGE="JavaScript"><!--if ((navigator.appVersion.indexOf("Mac") != -1)) document.write("<LINK REL=stylesheet HREF=\"http://www.ezboard.com/ztyles/defaultmac.css\" TYPE=\"text/css\">"); else document.write("<LINK REL=stylesheet HREF=\"http://www.ezboard.com/ztyles/default.css\" TYPE=\"text/css\">"); // --></SCRIPT> <script language=javascript src=http://www1.ezboard.com/spch.js?customerid=1147458082></script><script language="javascript"><!--function MM_openBrWindow(theURL,winName,features) { //v2.0  window.open(theURL,winName,features);}//--></script><SCRIPT>
+
+/************************************************************************************
+ * News Scroller by http://www.JavaScript-fx.com
+ * You may use this script on any page as long as this comment
+ * Is not removed from the script.
+ ************************************************************************************/
+var ns4 = (navigator.appName.indexOf("Netscape") != -1 && !document.getElementById);
+
+if(!window.JSFX)
+        JSFX=new Object();
+
+JSFX.layerNo=0; 
+/**********************************************************************************/
+JSFX.createLayer = function(htmlStr, parent)
+{
+        //Declare all variables first
+        var elem = null;
+        var xName;
+        var txt;
+
+         if(document.layers) 
+        {
+                xName="xLayer" + JSFX.layerNo++;
+                if(parent == null)
+                        elem=new Layer(2000);
+                else
+                        elem=new Layer(2000, parent.elem);
+ 
+                elem.document.open(); 
+                elem.document.write(htmlStr); 
+                elem.document.close(); 
+                elem.moveTo(0,0);
+                elem.innerHTML = htmlStr;
+        }
+        else 
+        if(document.all) 
+        {
+                if(parent == null)
+                        parent=document.body;
+                else
+                        parent=parent.elem;
+
+                xName = "xLayer" + JSFX.layerNo++; 
+                txt = '<DIV ID="' + xName + '"'
+                        + ' STYLE="position:absolute;left:0;top:0;visibility:hidden">' 
+                        + htmlStr 
+                        + '</DIV>'; 
+
+                        parent.insertAdjacentHTML("BeforeEnd",txt); 
+
+                elem = document.all[xName]; 
+        } 
+        else 
+        if (document.getElementById)
+        {
+                if(parent == null)
+                        parent=document.body;
+                else
+                        parent=parent.elem;
+
+                xName="xLayer" + JSFX.layerNo++;
+                txt = ""
+                        + "position:absolute;left:0px;top:0px;visibility:hidden";
+
+                var newRange = document.createRange();
+
+                elem = document.createElement("DIV");
+                elem.setAttribute("style",txt);
+                elem.setAttribute("id", xName);
+
+                parent.appendChild(elem);
+
+                newRange.setStartBefore(elem);
+                strFrag = newRange.createContextualFragment(htmlStr);        
+                elem.appendChild(strFrag);
+        }
+
+        return elem;
+}
+/**********************************************************************************/
+JSFX.Layer = function(newLayer, parent) 
+{
+        if(!newLayer)
+                return;
+
+        if(typeof newLayer == "string")
+                this.elem = JSFX.createLayer(newLayer, parent);
+        else
+                this.elem=newLayer;
+
+        if(document.layers)
+        {
+                this.images                = this.elem.document.images; 
+                this.parent                = parent;
+                this.style                = this.elem;
+                if(parent != null)
+                        this.style.visibility = "inherit";
+         } 
+        else 
+        {
+                this.images  = document.images; 
+                this.parent         = parent;
+                this.style   = this.elem.style; 
+        } 
+        window[this.elem.id]=this;        //save a reference to this
+} 
+/**********************************************************************************/
+JSFX.findLayer = function(theDiv, d)
+{
+        if(document.layers)
+        {
+                var i;
+                if(d==null) d = document;
+                var theLayer = d.layers[theDiv];
+                if(theLayer != null)
+                        return(theLayer);
+                else
+                        for(i=0 ; i<d.layers.length ; i++)
+                        {
+                                theLayer = JSFX.findLayer(theDiv, d.layers[ i ].document);
+                                if(theLayer != null)
+                                        return(theLayer);
+                        }
+                return("Undefined....");
+        }
+        else 
+        if(document.all)
+                return(document.all[theDiv]);
+        else 
+        if(document.getElementById)
+                return(document.getElementById(theDiv));
+        else
+                return("Undefined.....");
+}
+
+/**********************************************************************************/
+/*** moveTo (x,y) ***/
+JSFX.Layer.prototype.moveTo = function(x,y)
+{
+        this.style.left = x+"px";
+        this.style.top = y+"px";
+}
+if(ns4)
+        JSFX.Layer.prototype.moveTo = function(x,y) { this.elem.moveTo(x,y); }
+
+/**********************************************************************************/
+/*** BackGround Color ***/
+JSFX.Layer.prototype.setBgColor        = function(color) { this.style.backgroundColor = color==null?'transparent':color; } 
+if(ns4)
+        JSFX.Layer.prototype.setBgColor         = function(color) { this.elem.bgColor = color; }
+/**********************************************************************************/
+/*** BackGround Image ***/
+JSFX.Layer.prototype.setBgImage        = function(image) { this.style.backgroundImage = "url("+image+")"; }
+if(ns4)
+        JSFX.Layer.prototype.setBgImage         = function(image) { this.style.background.src = image; }
+
+/**********************************************************************************/
+/*** show()/hide() Visibility ***/
+JSFX.Layer.prototype.show                = function()         { this.style.visibility = "visible"; } 
+JSFX.Layer.prototype.hide                = function()         { this.style.visibility = "hidden"; } 
+JSFX.Layer.prototype.isVisible        = function()        { return this.style.visibility == "visible"; } 
+if(ns4)
+{
+        JSFX.Layer.prototype.show                = function()         { this.style.visibility = "show"; }
+        JSFX.Layer.prototype.hide                 = function()         { this.style.visibility = "hide"; }
+        JSFX.Layer.prototype.isVisible         = function()         { return this.style.visibility == "show"; }
+}
+/**********************************************************************************/
+/*** set Content***/
+JSFX.Layer.prototype.setContent   = function(xHtml)        { this.elem.innerHTML=xHtml; } 
+if(ns4)
+        JSFX.Layer.prototype.setContent   = function(xHtml)
+        {
+                this.elem.document.write(xHtml);
+                this.elem.document.close();
+                this.elem.innerHTML = xHtml;
+        }
+/**********************************************************************************/
+/*** Opacity ***/
+if(ns4)
+{
+        JSFX.Layer.prototype.setOpacity = function(pc) {return 0;}
+}
+else if(document.all)
+{
+        JSFX.Layer.prototype.setOpacity = function(pc)
+        {
+                if(this.style.filter=="")
+                        this.style.filter="alpha(opacity=100);";
+                this.elem.filters.alpha.opacity=pc;
+        }
+}
+else
+{
+/*** Assume NS6 ***/
+        JSFX.Layer.prototype.setOpacity = function(pc){        this.style.MozOpacity=pc+'%' }
+}
+/**********************************************************************************/
+JSFX.Layer.prototype.getPageX                = function(el)         
+{ 
+        if(el == null) 
+                el = this.elem;
+        return el.offsetLeft + (el.offsetParent ? this.getPageX(el.offsetParent) : 0);
+}
+JSFX.Layer.prototype.getPageY                = function(el)         
+{ 
+        if(el == null) 
+                el = this.elem;
+        return el.offsetTop + (el.offsetParent ? this.getPageY(el.offsetParent) : 0);
+}
+if(ns4)
+{
+        JSFX.Layer.prototype.getPageX         = function()         { return this.elem.pageX; }
+        JSFX.Layer.prototype.getPageY         = function()         { return this.elem.pageY; }
+}
+/*************************************************************************************/ 
+JSFX.VerticalScroller = function()
+{
+        this.isMessageScroller=true;
+        this.sx                 = 0;
+        this.sy                 = 0;
+        this.w                 = 100;
+        this.h                 = 100;
+        this.op                = 0;
+        this.outerLayer         = null;
+        this.scrollLayer         = null;
+        this.bgColor         = null;
+        this.bgImage        = null;
+        this.theStyleStr  = null;
+        this.messages         = new Array();
+        this.currMessage         = -1;
+        this.step                 = 2;
+        this.id                 = "JSFXScroll" + JSFX.VerticalScroller.no++;
+        this.holder         = this.id + "_h";
+        this.content         = this.id + "_c";
+        this.showTime        = 1000;
+
+        this.animateIn        = this.animateIn_StartScrollUp;
+        this.animateOut        = this.animateOut_FadeDown;
+        this.animate         = this.animateIn;
+
+        window[this.id]        = this;
+}
+JSFX.VerticalScroller.no = 0;
+JSFX.VerticalScroller.prototype.setAnimation = function(inAni, outAni)
+{
+        if(inAni == 0)
+                this.animateIn        = this.animateIn_StartScrollUp;
+        else if (inAni == 1)
+                this.animateIn        = this.animateIn_StartScrollDown;
+        else
+                this.animateIn        = this.animateIn_StartFadeUp;
+        
+        if(outAni == 0)
+                this.animateOut        = this.animateOut_ScrollUp;
+        else if (outAni == 1)
+                this.animateOut        = this.animateOut_ScrollDown;
+        else
+                this.animateOut        = this.animateOut_FadeDown;
+
+        this.animate         = this.animateIn;
+}
+
+JSFX.VerticalScroller.prototype.toHtml = function(width, height)
+{
+        this.w = width;
+        this.h = height;
+        var str = "";
+        if(ns4)
+        {
+                str =    '<ILAYER WIDTH="'+width+'" HEIGHT="'+height+'" NAME="'+this.holder+'">'
+                        +  '<LAYER  WIDTH="'+width+'" HEIGHT="'+height+'" NAME="'+this.content+'">'
+                        +  '</LAYER></ILAYER>';
+        }
+        else
+        {
+                str =   '<div style="overflow:hidden;   width:'+width+';height:'+height+';" id="'+this.holder+'">'
+                        + '<div style="position:relative; width:'+width+';height:'+height+'; filter:alpha(opacity=0); -moz-opacity:0%;" id="'+this.content+'">'
+                        + '</div></div>';
+        }
+
+        return str;
+}
+JSFX.VerticalScroller.prototype.setShowTime = function(theInterval)
+{
+        this.showTime = theInterval * 1000;
+}
+JSFX.VerticalScroller.prototype.setBgColor = function(color)
+{
+        this.bgColor = color;
+        if(this.outerLayer != null)
+                this.outerLayer.setBgColor(color);
+}
+JSFX.VerticalScroller.prototype.setBgImage = function(theImage)
+{
+        this.bgImage = theImage;
+        if(this.outerLayer != null)
+                this.outerLayer.setBgImage(theImage);
+}
+JSFX.VerticalScroller.prototype.setStyle = function(theStyleStr)
+{
+        this.styleStr = theStyleStr;
+}
+JSFX.VerticalScroller.prototype.addMessage = function(message)
+{
+        if(!this.isMessageScroller)
+        {
+                alert("Cannot add messages to a 'Div Scroller'");
+                return;
+        }
+        this.messages[this.messages.length] = message;
+}
+JSFX.VerticalScroller.prototype.addDiv = function(message)
+{
+        if(this.isMessageScroller && this.messages.length >0)
+        {
+                alert("Cannot add Divs to a 'Message Scroller'");
+                return;
+        }
+        this.isMessageScroller = false;
+        this.messages[this.messages.length] = message;
+}
+JSFX.VerticalScroller.prototype.start = function()
+{
+        //Initialise the DIV/Layer if not already done so
+        if(this.scrollLayer == null)
+        {
+                this.outerLayer  = new JSFX.Layer(JSFX.findLayer(this.holder));
+                this.scrollLayer = new JSFX.Layer(JSFX.findLayer(this.content));
+                if(this.bgImage != null)
+                        this.outerLayer.setBgImage(this.bgImage);
+                else if(this.bgColor != null)
+                        this.outerLayer.setBgColor(this.bgColor);
+        }
+        this.animate();
+}
+JSFX.VerticalScroller.prototype.moveContent = function(x, y)
+{
+        var px=0;
+        var py=0;
+        if(! this.isMessageScroller)
+        {
+                px=this.outerLayer.getPageX();
+                py=this.outerLayer.getPageY();
+        }
+
+        this.scrollLayer.moveTo(px + x, py + y);
+        if(! this.isMessageScroller)
+        {
+                if(this.sy > 0)
+                        this.scrollLayer.clip(0,0,this.w, this.h - this.sy);
+                else
+                        this.scrollLayer.clip(0, -this.sy,this.w, this.h);
+        }
+
+
+}
+JSFX.VerticalScroller.prototype.setNextMessage = function(x, y, o)
+{
+        this.currMessage = (this.currMessage + 1) % this.messages.length;
+
+        this.sx=x;
+        this.sy=y;
+        this.op=o;
+
+        this.scrollLayer.hide();
+        if(this.isMessageScroller)
+        {
+                var str = "";
+
+                if(this.styleStr != null)
+                        str += '<span style="'+this.styleStr+'">';
+
+                str += this.messages[this.currMessage];
+
+                if(this.styleStr != null)
+                        str += '</span>';
+
+                this.scrollLayer.setContent(str);
+        }
+        else
+        {
+                this.scrollLayer = new JSFX.Layer(JSFX.findLayer(this.messages[this.currMessage]));
+        }
+        this.moveContent(this.sx, this.sy);
+        this.scrollLayer.setOpacity(this.op);
+        this.scrollLayer.show();
+}
+
+JSFX.VerticalScroller.prototype.animateIn_StartScrollUp = function()
+{
+        this.setNextMessage(0, this.h, 100);
+        this.animate = this.animateIn_ScrollUp
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateIn_ScrollUp = function()
+{
+        this.sy -= this.step;
+        this.moveContent(this.sx, this.sy);
+        if(this.sy <= 0)
+        {
+                this.animate=this.animateOut;
+                this.setTimeout("animate()", this.showTime);
+        }
+        else
+                this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateIn_StartScrollDown = function()
+{
+        this.setNextMessage(0, -this.h, 100);
+        this.animate = this.animateIn_ScrollDown
+        this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateIn_ScrollDown = function()
+{
+        this.sy += this.step;
+        this.moveContent(this.sx, this.sy);
+        if(this.sy >= 0)
+        {
+                this.animate=this.animateOut;
+                this.setTimeout("animate()", this.showTime);
+        }
+        else
+                this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateIn_StartFadeUp = function()
+{
+        this.setNextMessage(0, 0, 0);
+        this.animate = this.animateIn_FadeUp
+        this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateIn_FadeUp = function()
+{
+        this.op += 10;
+        this.scrollLayer.setOpacity(this.op);
+        if(this.op == 100)
+        {
+                this.animate = this.animateOut;
+                this.setTimeout("animate()", this.showTime);
+        }
+        else
+                this.setTimeout("animate()", 40);
+}
+JSFX.VerticalScroller.prototype.animateOut_ScrollUp = function()
+{
+        this.sy -= this.step;
+        this.moveContent(this.sx, this.sy);
+
+        if(this.sy <= -this.h)
+                this.animate=this.animateIn;
+
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateOut_ScrollDown = function()
+{
+        this.sy += this.step;
+        this.moveContent(this.sx, this.sy);
+
+        if(this.sy >= this.h)
+                this.animate=this.animateIn;
+
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.animateOut_FadeDown = function()
+{
+        this.op -= 10;
+        this.scrollLayer.setOpacity(this.op);
+        this.moveContent(this.sx, this.sy);
+
+        if(this.op == 0)
+                this.animate = this.animateIn;
+
+        this.setTimeout("animate()", 40);
+}
+
+JSFX.VerticalScroller.prototype.setTimeout = function(f, t) 
+{
+        setTimeout("window."+this.id+"."+f, t);
+}
+
+/*** If no other script has added it yet, add the ns resize fix ***/
+if(navigator.appName.indexOf("Netscape") != -1 && !document.getElementById)
+{
+        if(!JSFX.ns_resize)
+        {
+                JSFX.ow = outerWidth;
+                JSFX.oh = outerHeight;
+                JSFX.ns_resize = function()
+                {
+                        if(outerWidth != JSFX.ow || outerHeight != JSFX.oh )
+                                location.reload();
+                }
+        }
+        window.onresize=JSFX.ns_resize;
+}
+/************************************************************************************/
+        var myScroller = new JSFX.VerticalScroller();
+
+        myScroller.setStyle("font-family: Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FFFFFF");
+        myScroller.setBgColor("#000000");
+        myScroller.setShowTime(5);
+        myScroller.addMessage("<b>Welcome to the Synergy Collective message board</b>");
+        myScroller.addMessage("<b>Congratulations to Garleene on becoming the newest permanent member of the guild!</b>");
+        myScroller.addMessage("<b>All members please remember to keep your character info up to date in the Guild Roster forum</b>");
+/************************************************************************************/
+function JSFX_StartEffects()
+{
+        myScroller.start();
+}
+ </SCRIPT>
+
+</head><body text=#FFFFFF bgcolor=#000000 link=#FFFFFF vlink=#FFFFFF alink=#0000FF  background=http://members.telocity.com/~dwbtmc/images/062.gif  onload="JSFX_StartEffects();"><center> <TABLE align="center" BORDER="0" cellspacing="0" cellpadding="0">
+<TR>
+
+<TD>
+<CENTER><IMG SRC=http://members.telocity.com/~dwbtmc/images/synsword2.gif></CENTER>
+</TD>
+</TR>
+</TABLE>
+<BR>
+
+<TABLE align="center" BORDER="3" cellspacing="0" cellpadding="0">
+
+<TR>
+
+<TD>
+<CENTER><SCRIPT>
+        document.write(myScroller.toHtml(400,80));
+
+</SCRIPT></CENTER></TD>
+</TR>
+</TABLE>
+<BR>
+ <table width=95%><tr><td class=headings valign="bottom"><a href="http://www.ezboard.com/ezcommunity/" target="_blank" ><img src="http://www.ezboard.com/image/csc_goldcommunity.gif"  border="0" align="absmiddle" alt="Gold Community"  /></a> <a href=http://pub36.ezboard.com/bsynergy25807>Synergy Collective</a><br>&nbsp;&nbsp;&nbsp;&nbsp;> <a href=http://pub36.ezboard.com/fsynergy25807frm3>Raids and Events</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> Hello</td><td align=right valign="bottom"><a href=http://pub36.ezboard.com/fsynergy25807frm3.showAddTopicScreenFromWeb><img src=http://www.ezboard.com/themes/space/newTopic.gif border=0 alt="New Topic"></a>  &nbsp;&nbsp;<a self href=http://pub36.ezboard.com/fsynergy25807frm3.showAddReplyScreenFromWeb?topicID=50.topic><img src=http://www.ezboard.com/themes/space/addReply.gif border=0 alt="Add Reply"></a>  </td></tr><tr><td align=left></td><td align=right> <br> <a href="http://pub36.ezboard.com/fsynergy25807frm3.showPrevMessage?topicID=50.topic"> << Prev Topic</a>&nbsp;| <a href="http://pub36.ezboard.com/fsynergy25807frm3.showNextMessage?topicID=50.topic"> Next Topic >> </a> </td></tr></table> <table border=0 cellpadding=0 cellspacing=0 width=95%><tr><td bgcolor=#000000><table border=0 width=100% cellpadding=5 cellspacing=1><tr><td valign=top bgcolor=#000000 class=headings><font color=#FFFFFF>Author</font></td><td valign=top bgcolor=#000000 class=headings><font color=#FFFFFF>Comment</font></td></tr><tr bgcolor=#778899><td nowrap width=20% valign=top align=left><span class=title> <A HREF=http://pub36.ezboard.com/ugendd.showPublicProfile?language=EN>Gendd</A></span><br> <span class=usertitle>Registered User</span><br>  Posts: 3<br> <font color=#FFFFFF>(8/27/02 5:55:56 pm)</font><br>   <a href=http://pub36.ezboard.com/fsynergy25807frm3.showAddReplyScreenFromWeb?topicID=50.topic>Reply</a>   </td><td valign=top align=left class=m><span class=title>   Hello</span><hr size=1> Gend 56 mag<br>
+Lebo 52 shammy<br>
+Woror 51 Warrior<br>
+<br>
+If you can use any of them on a raid or just need help.... look me up and thanks aaoogaa <p></p><i></i></td></tr></table> </td></tr></table> <table border=0 width=95%><tr><td align=left valign="top"> </td><td align=right valign="top"><a href="http://pub36.ezboard.com/fsynergy25807frm3.showPrevMessage?topicID=50.topic"> << Prev Topic</a>&nbsp;| <a href="http://pub36.ezboard.com/fsynergy25807frm3.showNextMessage?topicID=50.topic"> Next Topic >> </a><br><br><a self href=http://pub36.ezboard.com/fsynergy25807frm3.showAddReplyScreenFromWeb?topicID=50.topic><img src=http://www.ezboard.com/themes/space/addReply.gif border=0 alt="Add Reply"></a> </td></tr></table><br><table width=95% border=0><td valign="top"> <a href=http://pub36.ezboard.com/fsynergy25807frm3.emailToFriend?topicID=50.topic><img src=http://www.ezboard.com/image/email.gif border=0 alt="Email This To a Friend"> Email This To a Friend</a><br> <a href=http://pub36.ezboard.com/fsynergy25807frm3.threadControl?topicID=50.topic><img src=http://www.ezboard.com/themes/space/deleteThread.gif border=0 alt="Topic Control Image"> Topic Commands</a><br> <a href=http://pub36.ezboard.com/fsynergy25807frm3.subscribeUnregisteredToTopic?topicID=50.topic>Subscribe</a> Click to receive email notification of replies<br>  <a href=http://pub36.ezboard.com/fsynergy25807frm3.unsubscribeUnregisteredToTopic?topicID=50.topic>Unsubscribe</a> Click to stop receiving email notification of replies<br> </td><td align="right" valign="top"></td></tr><tr align="right"><td colspan=2><form action=http://pub36.ezboard.com/BBSForum.jumpShowForum method=post><table border="0" cellspacing="0" cellpadding="1"><tr><td><b>jump to:</b><select name=forumName><option value="synergy25807frm8">Guild Information<option value="synergy25807frm1">General<option value="synergy25807frm2">Prospective Members<option value="synergy25807frm11">Guild Roster<option value="synergy25807frm3">Raids and Events<option value="synergy25807frm4">Private Forum<option value="synergy25807frm5">Guild Bank<option value="synergy25807frm7">Guild Library<option value="synergy25807frm10">Voting Booth<option value="synergy25807frm6">Officers Forum<option value="synergy25807frm12">Archives</select></td><td><input type=submit value="Go" class=inputbutton></td></tr></table></form></td></tr></table><br><font color=#FFFFFF>- </font><a href=http://pub36.ezboard.com/bsynergy25807>Synergy Collective</a><font color=#FFFFFF> - </font><a href=http://pub36.ezboard.com/fsynergy25807frm3>Raids and Events</a> <font color=#FFFFFF> - </font><br><br><br><br>Powered By <a href=http://www.ezboard.com/>ezboard®</a> Ver. 7.0.91<br>Copyright ©1999-2002 ezboard, Inc.<br>Accelerated By <a href=http://www.wbs.com/ezboard.html>JXEL</a></center></body></html>
+
