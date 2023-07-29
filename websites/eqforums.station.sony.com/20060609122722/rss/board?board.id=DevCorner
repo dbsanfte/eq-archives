@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Developer's  Corner</title>
+    <link>http://eqforums.station.sony.com/eq/board?board.id=DevCorner</link>
+    <description>Developer's  Corner</description>
+    <pubDate>Fri, 09 Jun 2006 12:27:23 GMT</pubDate>
+    <managingEditor>DevCorner</managingEditor>
+    <dc:creator>DevCorner</dc:creator>
+    <dc:date>2006-06-09T12:27:23Z</dc:date>
+    <item>
+      <title>DirectX 9.0c update on Test and is going Live with the next update</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12520#M12520</link>
+      <description>This post is just another reminder to folks that we've updated the Test server to use the April release DirectX 9.0c. Note there is a little bit of confusion about which specific version of DX9.0c you need; there happens to be a couple of different versions of DX9.0c and to make a long story short if you aren't sure which specific version of DirectX 9.0c you have installed, please just &lt;a href="http://go.microsoft.com/fwlink/?linkid=56513&amp;amp;clcid=0x409" target=_blank&gt;visit the microsoft DirectX update site&lt;/a&gt;&lt;a href="http://go.microsoft.com/fwlink/?linkid=56513&amp;amp;clcid=0x409" target=_blank&gt;&lt;/a&gt; to be sure your system is fully up to date. While it's a little confusing to everyone that there are multiple releases of DirectX 9.0c, it is a thankfully simple process to just go to the microsoft site and update automatically (I have no idea why Microsoft didn't update the visible version numbers, sorry).&lt;br&gt;&lt;br&gt;&lt;font color="#ff0000"&gt;&lt;b&gt;Please note that with the next update to live servers players will be required to use a version of DirectX released in April or later.&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;For anyone interested in why we are updating, it is because there have been a good number of bug fixes in DirectX 9 since the version currently in use on Live servers. The latest version also provides some very useful diagnostic tools to help us continue to improve the stability &amp;amp; performance of EverQuest. This is not a significant update to the code; pretty much all that had to change from a code standpoint to support the latest DX was shader API related. &lt;br&gt;&lt;br&gt;Our compatibility lab spent a lot of time testing all the the permutations of supported hardware (which is a lot of time &amp;amp; hardware) and so far neither QA or the players on Test have reported any problems with the DirectX update. That said, if you want to be certain your system will not have any problems related to the DirectX update when we patch live servers, I recommend you log in to the Test server and verify your system allows you to log in and play with no obvious visual artifacts. To the best of our knowledge, updating DirectX to the latest version will not affect your ability to play on Live servers and in fact we believe a significant portion of the player base is already using the correct version. We are optimistic this will be a smooth update, but it's always good to get more people confirming the results so if you're able to get on Test to check it out please do. &lt;br&gt;&lt;br&gt;Thanks-&lt;br&gt;&lt;br&gt;</description>
+      <pubDate>Mon, 22 May 2006 18:05:01 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12520#M12520</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2006-05-22T18:05:01Z</dc:date>
+    </item>
+    <item>
+      <title>Pathing Update</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12330#M12330</link>
+      <description>Hi everyone&lt;br&gt;&#xD;
+&#xD;
+&lt;br&gt;As you may know I've been at fan faire for most of a week but now that I'm back I'm&#xD;
+deep in the pathing system which is where I was when I left. Well I did take a little while this morning&#xD;
+to organize my notes from FF about various code things we need to look&#xD;
+into but after that I started getting back to pathing.&lt;br&gt;&#xD;
+&#xD;
+&lt;br&gt;Here's the current plan with pathing:&lt;br&gt;&lt;ol&gt;&lt;li&gt;Figure out what's wrong&lt;/li&gt;&lt;li&gt;Figure out options that will solve the problems.&lt;/li&gt;&lt;li&gt;Extract the current pathing system into a standalone project (a 'static library' for the technical types) and modify the zone server to use this reorganized form of the current code. This will allow me to do focused unit testing on the system, as well as easily swap between the current code and new code should any problems come up later.&lt;br&gt;&lt;/li&gt;&lt;li&gt;Have QA confirm that step 3 didn't change the behavior of the system, bugs and all.&amp;nbsp; This is done on my personal dev box to isolate Test server from major problems before we put it there.&lt;/li&gt;&lt;li&gt;Put the reorganized code on test. Note there aren't going to be any actual fixes at this time, just reorganized code to allow fixed to be done in an isolated, modular manner.&lt;br&gt;&lt;/li&gt;&lt;li&gt;Implement changes that solve the problems.&lt;br&gt;&lt;/li&gt;&lt;li&gt;Put the fixes on my dev box and have QA check things out there. Work with them until known issues are solved.&lt;/li&gt;&lt;li&gt;Put the code on test.&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;So where am I now with all this? I've been working on it with most of my time here at work for a while now, and here's the checklist:&lt;br&gt;&lt;br&gt;1) I believe I understand the problems at this point. I did find one major bug that was a big part of why warping occurs, but we're going to not only fix the bug but also make general improvements which we believe will substantially reduce the zone's CPU load due to pathing while also improving the end result. Not a bad deal, assuming we're right. I am optimistic at this point.&lt;br&gt;&lt;br&gt;2) If you've followed the threads you have seen the options discussed so I'll just get to what has been decided. Pathing will be implemented such that searches will be a series of smaller searches, each with a search budget smaller than what it is today. This will cause search failures to not stall the zone as NPCs burn huge amounts of time for no solution. They will follow their partial solution until they determine they are stuck. When this happens, the NPC will warp somewhere between the target and the NPC and the NPC will be guaranteed to reach the target from this warp location. &lt;br&gt;&lt;br&gt;3) I finished the extraction before I left for fanfaire and had my server tested by QA while I was gone.&lt;br&gt;&lt;br&gt;4) Today I was able to get confirmation that everything works as it did before in this newly reorganized setup.&lt;br&gt;&lt;br&gt;5) We haven't put this code on test yet, I just got confirmation a few minutes ago. I need to update various people before we can do that.&lt;br&gt;&lt;br&gt;6) I had implemented some of the fixes before the reorganization, but the invasive nature of the fixes is what prompted me to extract the pathing system into a module. I reverted my fixes before doing the code extraction, but I saved a copy of the changes to allow me to go through and put them in again which is a lot easier than doing it from scratch. When I was testing these changes before, I had to do some pretty extreme stuff to get any warps to occur at all. Like fly around outside the world. Not saying that it's perfect, but it was much much improved and I didn't see any problems with warping at all. There are a few things that need to be done in addition to what I already experimented with but I've already seen it work well enough that I'm confident it will make a huge improvement when it's done.&lt;br&gt;&lt;br&gt;7) I'm about to start putting the fixes on my dev box. I need to get the current code prepped for Test server and checked in before I can do that though.&lt;br&gt;&lt;br&gt;8) Going to be a while before we get to the point of putting the actual fixes on Test, probably a week or two is my guess. There are just too many things to regress to expect it any sooner.&lt;br&gt;&lt;br&gt;&lt;br&gt;Anyways, hope this helps answer any questions people may have or concerns that it's not being worked on. It's definitely being worked on actively both by myself and the QA department to make sure we get it right.&lt;br&gt;&lt;br&gt;Cheers,&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;/div&gt;</description>
+      <pubDate>Fri, 09 Jun 2006 08:09:13 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12330#M12330</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2006-06-09T08:09:13Z</dc:date>
+    </item>
+    <item>
+      <title>Workaround for the bug in the Key to Corruption mission in Elddar Forest.</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12263#M12263</link>
+      <description>&lt;p class="MsoNormal"&gt;Currently on live there is a bug in the &lt;st1:place&gt;&lt;st1:PlaceName&gt;Elddar&lt;/st1:PlaceName&gt;&#xD;
+ &lt;st1:PlaceType&gt;Forest&lt;/st1:PlaceType&gt;&lt;/st1:place&gt; mission "Key to&#xD;
+Corruption" on the step where you need to find Orgaf.&amp;nbsp; The problem is&#xD;
+I moved him further away from the named orc raid because it was causing some&#xD;
+funky agro problems having a quest giver be so close to.&amp;nbsp; &lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+If you get stuck on this until the next time we can update tasks to the live&#xD;
+servers, you can get the update if you go to location&amp;nbsp;&amp;nbsp;&amp;nbsp;&#xD;
+positive 1603, negative 1435.&amp;nbsp; Then run over to Orgaf who isn't to far&#xD;
+away from that spot.&amp;nbsp;&lt;span **SMURF**"font-size: 10pt; font-family: Arial;"&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&#xD;
+&#xD;
+&lt;span&gt;&lt;/span&gt;&lt;div&gt;&lt;/div&gt;</description>
+      <pubDate>Thu, 08 Jun 2006 11:32:41 GMT</pubDate>
+      <author>Gordish-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12263#M12263</guid>
+      <dc:creator>Gordish-Dev</dc:creator>
+      <dc:date>2006-06-08T11:32:41Z</dc:date>
+    </item>
+    <item>
+      <title>Double-exp to be extended by a day &amp; 5am patch</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12226#M12226</link>
+      <description>&lt;DIV&gt;&#xD;
+&lt;P&gt;In light of the rather significant booboo of having to delay double-exp by a day, we're going to extend double-exp by&amp;nbsp;one day next week, so it will start tomorrow, the 17th, at noon&amp;nbsp;and end&amp;nbsp;next Wednesday the 22nd, not Tuesday.&amp;nbsp; You'll get an extra day of double-exp out of it.&lt;/P&gt;&#xD;
+&lt;P&gt;The patch will take place at 5am tomorrow.&amp;nbsp; An in-game message will go out shortly.&lt;/P&gt;&#xD;
+&lt;P&gt;Again,&amp;nbsp;we apologize for any inconvenience this has caused you all.&amp;nbsp; Hopefully another day of double-exp will make up for it some.&lt;/P&gt;&#xD;
+&lt;P&gt;Vahlar&lt;/P&gt;&lt;/DIV&gt;</description>
+      <pubDate>Thu, 16 Mar 2006 22:53:27 GMT</pubDate>
+      <author>Vahlar-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12226#M12226</guid>
+      <dc:creator>Vahlar-Dev</dc:creator>
+      <dc:date>2006-03-16T22:53:27Z</dc:date>
+    </item>
+    <item>
+      <title>Double Experience Delayed until tomorrow (Friday, March 16)</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12200#M12200</link>
+      <description>&lt;DIV&gt;The double-experience we announced in our update message yesterday has been delayed until tomorrow at noon.&amp;nbsp; We will be patching tonight.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;So, the double-experience will run from tomorrow, Friday, March 16 until Tuesday, March 21.&amp;nbsp; Same number of days!&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Sorry about the delay folks,&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Vahlar&lt;/DIV&gt;</description>
+      <pubDate>Thu, 16 Mar 2006 22:53:03 GMT</pubDate>
+      <author>Vahlar-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12200#M12200</guid>
+      <dc:creator>Vahlar-Dev</dc:creator>
+      <dc:date>2006-03-16T22:53:03Z</dc:date>
+    </item>
+    <item>
+      <title>20k problem with auras &amp; mounts</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12149#M12149</link>
+      <description>&lt;br&gt;As some of you know, with Auras came the risk of death due to a bug if you were on a mount and moving too quickly. I found the problem with this code, but unfortunately it's too late to get proper testing of the fix before the next update though so for the time being please be careful of using auras and mounts at the same time. The change is pretty deep in the collision/movement system and we've learned to be extremely careful about making last minute changes to these sorts of things. We'll get the code on Test server ASAP however.&lt;br&gt;&lt;br&gt;Just wanted to let folks know what was up with this one, I'm sure it affects a lot of people. For the short term, if you want to avoid risking this bug, just don't use both at the same time. I'm certain this will be fixed in the update after this next one. It's risky to put in core level changes like this at the last minute and despite what some might think we do try to test as carefully as possible and this, unfortunately, would be cutting it too close.&lt;br&gt;&lt;br&gt;For those wondering, the movement system was not excluding the aura NPC from movement, you were basically being deflected off of the aura. Auras should have been ignored for movement, and they are unless you are on a mount - the bug was that while mounted you actually did collide with them. Since auras are always centered exactly upon your player, the&#xD;
+movement deflection logic had a divide by zero type of bug going on in there&#xD;
+which corrupted movement results, causing the 20k death result.&lt;div&gt;&lt;/div&gt;&lt;br&gt;Cheers,&lt;br&gt;&lt;br&gt;</description>
+      <pubDate>Fri, 28 Apr 2006 01:27:48 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12149#M12149</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2006-04-28T01:27:48Z</dc:date>
+    </item>
+    <item>
+      <title>Line of Sight issues</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12099#M12099</link>
+      <description>This thread is to consolidate reports about line of sight bugs that have been popping up.&lt;br&gt;&lt;br&gt;Line of sight issues I'm interested in seeing more information about include:&lt;br&gt;&lt;ul&gt;&lt;li&gt;Targeting via clicking with mouse not working even though you are clicking right on it.&lt;/li&gt;&lt;li&gt;Spells that won't cast or land because you are blocked by something that really doesn't seem like it should be blocking.&lt;/li&gt;&lt;li&gt;Combat where you should be able to melee but can't see your target.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;The information I need in order for your post to be useful in tracking down this problem is the following:&lt;br&gt;&lt;ul&gt;&lt;li&gt;The zone you are in.&lt;/li&gt;&lt;li&gt;If you were targeting, clicking, casting, combat, whatever.&lt;br&gt;&lt;/li&gt;&lt;li&gt;What race you are playing&lt;/li&gt;&lt;li&gt;If you are shrunk or levitated.&lt;br&gt;&lt;/li&gt;&lt;li&gt;The exact coordinates you are at as shown by the /loc command.&lt;/li&gt;&lt;li&gt;The coordinates of your target at the time of LOS failure, which I know is going to be an approximation but as specific as you can get will really help. Within a unit or two.&lt;/li&gt;&lt;li&gt;The name of the NPC. This is because height affects the endpoints of the line segment used for the collision call.&lt;/li&gt;&lt;li&gt;Comments about what appears to be blocking the LOS to the target. &lt;br&gt;&lt;/li&gt;&lt;li&gt;If you are able, please do me a favor and take a screenshot of the situation and include a link to it in your post. If not, that's ok, I know it's a hassle to manage images on the web. The other information is most important.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;If you can provide the above information, your post will be very helpful in finding more cases to reproduce this problem. Without the above information, please refrain from posting in this thread, I need to solve this problem and I need very specific data to do so and would like to avoid off topic stuff in here. I've been working on other bugs (pathing, warping, etc) and haven't had a lot of time to investigate this yet so a set of good test cases would help speed this up for me quite a bit.&lt;br&gt;&lt;br&gt;One thing I have already confirmed is that some shrubs in qvic block LOS incorrectly due to a bug that appears to have been introduced about 18 months ago. The other day I wrote a tool to scan every model in every zone in all of everquest to find all models that can possibly cause an LOS problem due to this particular bug I found. While there were a fair number of models that met the criteria, the various reports players have posted about LOS problems included a number of other zones that I have confirmed do not include models that trigger this bug. So there is something else going on in addition to the bug I found.&lt;br&gt;&lt;br&gt;There were some changes made to the LOS behavior which had to occur to support destructible object targeting &amp;amp; combat. It's likely the problems people are seeing are the result of that. I plan to do a test where I run the old code in parallel with the new code and trigger alerts when &amp;amp; if behavior is ever any different between them when dealing with regular targeting situations that don't include destructibles becuse that behavior should not have changed. With the data I hope to get from the players in this thread, I will test the various situations with this diagnostic code enabled and eventually figure out what went wrong. I have some locs to test already, but details are scarce and getting more info would be pretty helpful at this point.&lt;br&gt;&lt;br&gt;Thanks for any help getting details on this problem, it's appreciated.&lt;br&gt;&lt;br&gt;</description>
+      <pubDate>Sat, 27 May 2006 04:43:05 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12099#M12099</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2006-05-27T04:43:05Z</dc:date>
+    </item>
+    <item>
+      <title>Pathing Issues</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12007#M12007</link>
+      <description>Hello&lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+Sorry for the late response on the ongoing pathing issues people have&#xD;
+been posting about. I've been out of the office on PTO as I recovered&#xD;
+from a long crunch cycle that ended only after PoR shipped and appeared&#xD;
+reasonably stable. &lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+For those of you who don't know, I am the person who created the&#xD;
+collision system in EQ, the 3D volumetric pathing system (also used by&#xD;
+EQ2, incidentally), and was one of two people who created the pathing&#xD;
+algorithm that EQ uses to direct NPCs to where they want to go. &lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+I've been aware of the warping problems that are going on, and have&#xD;
+been going on for quite some time. However, as far as I know, this&#xD;
+isn't anything new going on with pathing that is on live servers.&#xD;
+Pathing systems haven't been touched in a while now. That said, I'm not&#xD;
+denying the reports of changed behavior in old zones - I have no reason not to&#xD;
+believe people who say it's happening. There's a&#xD;
+possible explanation for this though, NPC movement behavior problems&#xD;
+could perhaps be triggered by something else. For example, if another&#xD;
+zone on the physical box lags out for some reason, a player may move&#xD;
+past a threshold distance used by NPCs to just "beeline" to targets&#xD;
+causing a pathsearch to occur which would further lag the server out.&#xD;
+This kind of problem is known as a cascading falure, or race condition,&#xD;
+and it is hard to accidentally repro in a dev environment. Something&#xD;
+like this could explain why live servers are seeing problems we hadn't&#xD;
+noticed during testing and would also explain why old zones, where&#xD;
+nothing has changed with the data or logic, might be acting up.&lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+About a month ago I became more concerned about the warping problems&#xD;
+that seem to be exaggerated in PoR zones. These zones are big outdoor&#xD;
+zones that use the 3D volume pathing system I created for LDoN and has&#xD;
+been in use ever since, but had never been used in zones as large as&#xD;
+the ones in PoR (it is an optional thing for us to use it, a number of&#xD;
+large zones since LDoN use a less accurate system based on the original&#xD;
+EQ pathing data we had to support when we rewrote pathing). I got the OK from my supervisor to take a hard look at the pathing&#xD;
+system so we can try to find solutions to the warping problems and&#xD;
+general pathing problems that aren't so obvious to players but&#xD;
+ultimately result in server lag. I've spent a significant amount of&#xD;
+time since then getting a better understanding of the portions of the&#xD;
+pathing code that I didn't design or create myself&amp;nbsp; - which happens to&#xD;
+deal with pathing failures, integrating pathing solutions/results with&#xD;
+NPC AI, and dealing with failure cases when pathing is unable to&#xD;
+provide a solution to the NPC trying to move. In other words, I've been looking at the stuff people are saying is broken with pathing.&lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+As for what specifically I'm working on to fix this, I don't want to get into the details (it's pretty&#xD;
+complicated, this would become a huge post) but I can say I'm making progress.&amp;nbsp; Nothing is final yet.&#xD;
+My goal is to eliminate warping except in the most extreme&#xD;
+circumstance. Warping is, ultimately, the result of a failure of the&#xD;
+pathing system to find a solution within certain time constraints (this&#xD;
+is the same reason the player find fails in places, btw, it just runs&#xD;
+out of it's budgeted time). &lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+There's been a number of low level changes I've been experimenting&#xD;
+with which help (a lot), but there are still some exaggerated cases where&#xD;
+pathing failures can occur. Also, the changes can cause extra server&#xD;
+load and I need to spend more time evaluating the impact of each of the&#xD;
+changes to determine which ones make the most sense to apply. When I'm done this code will be sitting on Test server for a while because it does affect everything that moves at a fundimental level.&lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+In the end, I think what an NPC should do when pathing fails is something we need to also consider as an independant question. I'll&#xD;
+continue to try to minimize how often pathing fails in order to&#xD;
+make things just go where they need to go as much as possible, but&#xD;
+pathing can &amp;amp; will fail at some point and I think it may be time to&#xD;
+consider alternatives to warping upon pathing failure. At the root of it is that we don't want to have an exploitable pathing system. This is&#xD;
+something I will be discussing with the team once I have the&#xD;
+alternatives identified along with any resulting impact to gameplay&#xD;
+&amp;amp; server performance. If anyone has suggestions about what an NPC should do when pathing failed, please post &amp;amp; discuss. We've got some ideas, I'd like to hear what other people might think about it. As always, we will do what we think is the best for the game (which may be to not change things too much aside from reducing how often things warp, so don't be surprised if that's all that happens regardless of the discussion).&lt;br&gt;&#xD;
+&lt;br&gt;&#xD;
+Cheers&lt;br&gt;&#xD;
+&lt;div&gt;&lt;/div&gt;&lt;br&gt;</description>
+      <pubDate>Thu, 16 Mar 2006 19:38:27 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=12007#M12007</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2006-03-16T19:38:27Z</dc:date>
+    </item>
+    <item>
+      <title>Demi-Plane of Blood changes</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=11859#M11859</link>
+      <description>&lt;DIV&gt;&lt;FONT face=Verdana size=2&gt;The following changes to the Demi-Plane of Blood will go live on the same day that Prophecy of Ro launches.&amp;nbsp; There were far too many changes to list in the patch message, so they have been listed in their entirety here.&amp;nbsp; Most changes were meant to address bugs or loopholes in raids.&amp;nbsp; A few changes were to address difficulty.&amp;nbsp; The most important change was to add&amp;nbsp;bonuses I had intended to include in the zone&amp;nbsp;from the&amp;nbsp;beginning,&amp;nbsp;but&amp;nbsp;was unable to&amp;nbsp;in time for Darkhollow's launch.&lt;/FONT&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;FONT face=Verdana size=2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;FONT face=Verdana size=2&gt;Redfang:&lt;BR&gt;The blooddrinker bats will no longer assign themselves as pets to Redfang. This is what was causing him to auto-aggro when he respawned.&amp;nbsp; Though it might be tempting to avoid re-aggroing him to take a reprieve from the fight, there are &lt;EM&gt;serious&lt;/EM&gt; drawbacks to leaving Redfang up unaggroed for too long.&lt;BR&gt;&lt;BR&gt;Zi-thuuli:&lt;BR&gt;Nothing.&lt;BR&gt;&lt;BR&gt;Hatchet:&lt;BR&gt;Hatchet will continue to "chase" people all the way down to 10% health.&amp;nbsp;&amp;nbsp;Previously he would stop using this hazard after he had been&amp;nbsp;trapped four times.&lt;BR&gt;If Hatchet goes prone, he can no longer follow through with any axe tosses that may be pending. A message will indicate this to the affected player.&lt;BR&gt;&lt;BR&gt;Sisters:&lt;BR&gt;The bats near the bedrooms are now part of this event. They will only spawn when the Sisters event is activated, and they'll deactivate&amp;nbsp;after successfully completing the event.&lt;BR&gt;&lt;BR&gt;Tris:&lt;BR&gt;Increased hit points slightly.&lt;BR&gt;Increased the rate at which she changes forms slightly.&lt;BR&gt;The chest should no longer have a chance to double&amp;nbsp;or triple spawn on a win if multiple priests landed a cure spell simultaneously.&lt;BR&gt;Some of the werewolf adds are no longer mezzable.&lt;BR&gt;The orc adds will now walk in the room with Tris instead of bunching up outside.&lt;BR&gt;&lt;BR&gt;Devlin:&lt;BR&gt;Changed the pathing in Devlin's room and increased his height. His pathing appears to be MUCH better.&lt;BR&gt;As an additional safety precaution, added a tether to Devlin that will teleport him back to his room if he strays too far away from spawn.&lt;BR&gt;When Devlin throws a bottle at someone, a text warning will now display to everyone nearby, similar to the message that you see when Hatchet is about to chase someone.&lt;BR&gt;Fixed the problem with Devlin's&amp;nbsp;adds not depopping on success&amp;nbsp;or failure.&lt;BR&gt;When Devlin's shield is broken, he'll now wield a broken shield (no graphic) in his offhand. This will prevent him from gaining DPS due to dual wield. I hope this will promote breaking the shield, whereas before guilds may have avoided it due to the drawback.&lt;BR&gt;Mana Weave no longer counts as a fire spell for breaking Devlin's shield.&lt;BR&gt;&lt;BR&gt;Roley:&lt;BR&gt;Roley and Adrianna now spawn at a static location in the ballroom, which should help prevent initial&amp;nbsp;warping at the beginning of the event.&lt;BR&gt;As an additional safety precaution, added a tether to Roley and Adrianna that will warp them back to their room if they stray too far away from spawn. This will help mitigate warping, but also means they must be fought in the ballroom.&lt;BR&gt;The chests will no longer cast their 'fine red mist' trap if hit by a stray AE spell.&lt;BR&gt;The twitching skeleton NPC in the lab no longer spawns.&lt;BR&gt;As mentioned above, the bats in the bedrooms are now part of the Sister's event and will not interfere with the Roley event.&lt;BR&gt;&lt;BR&gt;Performer:&lt;BR&gt;Blueblood and the Spinstress are immune to Song of Highsun.&lt;BR&gt;Removed the drops from the adds in this event so corpses won't litter the room and contribute to lag.&lt;BR&gt;The Performer is now rooted in place.&lt;BR&gt;Less adds will spawn, per wave, in the later phases of the event.&lt;BR&gt;&lt;BR&gt;Mayong:&lt;BR&gt;Increased attack speed slightly.&lt;BR&gt;The named gargoyles will now respawn properly between attempts.&lt;BR&gt;Zombie and drachnid trash mobs should no longer path high enough to add while fighting Mayong.&lt;BR&gt;Mayong's AE slash ability will now correctly hit the people closest to him instead of killing everyone not close to him.&lt;BR&gt;Fixed the typo in Mayong's hail text.&lt;BR&gt;You no longer need to sneak to speak to Mayong and trigger the encounter.&lt;BR&gt;It should now be more obvious what your choices meant when triggering the Mayong fight.&lt;BR&gt;Bonus rewards for killing Mayong are now in.&lt;BR&gt;&lt;BR&gt;General Changes:&lt;BR&gt;The spinstun screech spell now has half the arc width as before and decreased duration.&lt;BR&gt;All four flags received for doing the AE blocker quest will now show up on EQ players profiles, and the descriptions should make more sense.&lt;BR&gt;The dinner invitation will now be added to your keyring when you click the statue in West Korlach.&lt;BR&gt;Fixed the typo when you click into Demi-Plane after killing Mayong.&lt;/FONT&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;FONT face=Verdana size=2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;FONT face=Verdana size=2&gt;Happy launch day!&lt;/FONT&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;FONT face=Verdana size=2&gt;-Prathun&lt;/FONT&gt;&lt;/DIV&gt;</description>
+      <pubDate>Mon, 22 May 2006 04:59:46 GMT</pubDate>
+      <author>Prathun-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=11859#M11859</guid>
+      <dc:creator>Prathun-Dev</dc:creator>
+      <dc:date>2006-05-22T04:59:46Z</dc:date>
+    </item>
+    <item>
+      <title>Depths of Darkhollow augmentation changes</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=4628#M4628</link>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&#xD;
+&lt;DIV&gt;Quite a few Depths of Darkhollow augmentations were upgraded in the previous patch inadvertently, making them more powerful than they were intended to be. As of next patch, these items will be reverted to their previous values. Here is the list of augmentations:&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&#xD;
+&lt;TABLE **HALFLING**"WIDTH: 223pt; BORDER-COLLAPSE: collapse" cellSpacing=0 cellPadding=0 width=297 border=0 x:str&gt;&#xD;
+&lt;COLGROUP&gt;&#xD;
+&lt;COL **HALFLING**"WIDTH: 223pt; mso-width-source: userset; mso-width-alt: 10552" width=297&gt;&#xD;
+&lt;TBODY&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl28 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white 0.5pt solid; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: #969696" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;NAME&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl27 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: #ece9d8; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Trapped Shiliskin Spirit&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Drachnid Heart&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Drachnid Eye&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Drachnid Leg&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Ancient Dragon's Eggshell Fragment&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Crystalline Webbing of Health&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Crystalline Webbing of the Mind&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Crystalline Webbing of Vitality&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Crystalline Webbing of Brilliance&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Blurred Corathus Shard of Health&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&#xD;
+&lt;TR **HALFLING**"HEIGHT: 11.4pt" height=15&gt;&#xD;
+&lt;TD class=xl26 **HALFLING**"BORDER-RIGHT: white 0.5pt solid; BORDER-TOP: white; BORDER-LEFT: white 0.5pt solid; WIDTH: 223pt; BORDER-BOTTOM: white 0.5pt solid; HEIGHT: 11.4pt; BACKGROUND-COLOR: transparent" width=297 height=15&gt;&lt;FONT color=#ffffff size=2&gt;Clear Corathus Shard of Magic&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;&#xD;
+&lt;P&gt;I apologize for any inconveniences.&lt;/P&gt;&lt;p&gt;Message Edited by Zajeer-Dev on &lt;span class=date_text&gt;12-01-2005&lt;/span&gt; &lt;span class=time_text&gt;11:30 AM&lt;/span&gt;</description>
+      <pubDate>Sat, 28 Jan 2006 17:48:30 GMT</pubDate>
+      <author>Zajeer-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=4628#M4628</guid>
+      <dc:creator>Zajeer-Dev</dc:creator>
+      <dc:date>2006-01-28T17:48:30Z</dc:date>
+    </item>
+    <item>
+      <title>AC Mitigation Changes – Bards and Clerics</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=4584#M4584</link>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&#xD;
+&lt;P class=MsoNormal **SMURF**?MARGIN: 0in 0pt?&gt;AC Mitigation Changes – Bards and Clerics&lt;/P&gt;&#xD;
+&lt;P class=MsoNormal **SMURF**?MARGIN: 0in 0pt?&gt;At the summit I spoke briefly with Boanerges about cleric AC mitigation and the AC cap. The AC cap for clerics is higher than other priest classes, and at the time I also claimed that the return for AC over the cap was better for clerics over other priest classes. Looking over the data, I found this to be not true – currently clerics receive the same returns from AC over the cap as other priests.&lt;/P&gt;&#xD;
+&lt;P class=MsoNormal **SMURF**?MARGIN: 0in 0pt?&gt;After evaluating this today, we’ve decided to go ahead and increase the AC over the cap for clerics to match that of bards – so that bards and clerics will have both the same AC cap and same returns from AC over the cap, making their gains from AC be equal.&lt;/P&gt;&#xD;
+&lt;P class=MsoNormal **SMURF**?MARGIN: 0in 0pt?&gt;As far as bards are concerned, I also looked over the AC cap values for their class. Currently, the AC value for bards is set to the same values as that of monks and rogues. This seems to also be too low and after evaluation, bards will have the same cap as clerics, which is a higher value.&lt;/P&gt;&#xD;
+&lt;P class=MsoNormal **SMURF**?MARGIN: 0in 0pt?&gt;These two changes should give both clerics and bards more gains from AC from gear than before.&lt;/P&gt;&lt;/DIV&gt;&lt;p&gt;Message Edited by Zajeer-Dev on &lt;span class=date_text&gt;10-05-2005&lt;/span&gt; &lt;span class=time_text&gt;06:40 PM&lt;/span&gt;</description>
+      <pubDate>Mon, 13 Mar 2006 08:04:48 GMT</pubDate>
+      <author>Zajeer-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=4584#M4584</guid>
+      <dc:creator>Zajeer-Dev</dc:creator>
+      <dc:date>2006-03-13T08:04:48Z</dc:date>
+    </item>
+    <item>
+      <title>Griffin Mission returns to Test</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=4688#M4688</link>
+      <description>&lt;DIV&gt;Kathi is back up in the Commonlands.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;The mission has had some rather dramatic changes.&amp;nbsp; You'll need to stay on your toes.&amp;nbsp; Rather than just picking up eggs sitting on the ground, you will now have to compete with PCs who want them for quests, deal with PCs out for revenge against the Griffins that killed them as newbs and various beasts that want your eggs as snacks.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;I'm pretty sure it's functional, I also think it might be too hard.&amp;nbsp; Please let me know what you think.&amp;nbsp; I'll fiddle with it more on Monday based on your feedback.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Thanks.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;A&lt;/DIV&gt;</description>
+      <pubDate>Fri, 23 Dec 2005 14:19:38 GMT</pubDate>
+      <author>Absor</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=4688#M4688</guid>
+      <dc:creator>Absor</dc:creator>
+      <dc:date>2005-12-23T14:19:38Z</dc:date>
+    </item>
+    <item>
+      <title>New Merchant Window</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=861#M861</link>
+      <description>&lt;DIV&gt;This was originally discussed on the "&lt;A href="http://eqforums.station.sony.com/eq/board/message?board.id=testing&amp;amp;message.id=5803&amp;amp;view=by_date_ascending&amp;amp;page=1" target=_blank&gt;In Testing&lt;/A&gt;" forum, since this feature is now live lets move the discussion here.&lt;/DIV&gt;</description>
+      <pubDate>Mon, 28 Nov 2005 22:27:02 GMT</pubDate>
+      <author>Ashlanne</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=861#M861</guid>
+      <dc:creator>Ashlanne</dc:creator>
+      <dc:date>2005-11-28T22:27:02Z</dc:date>
+    </item>
+    <item>
+      <title>Video Blanking Out or East/West bug</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9344#M9344</link>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;When this bug occurs you see only&amp;nbsp;sky, particles, and the UI. It often goes in and out as you rotate around, and "blanks" when facing a certain direction, like east or west.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;I did fix one bug that was causing this in several zones, and that is why I closed the previous thread. However, it appears that there is still a remaining bug, so this thread is to get information.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Please only post in this thread if you have experienced the bug (and only the bug described above)&amp;nbsp;since the last live patch (7/2005). If you have some other bug please post in the tech support forum or on another appropriate thread.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;I'd like to know the answers to these questions:&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;1. What zone were you in when it occured, and the /loc if you have it.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;2. What video card you have, and what driver version if you know it.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;3. Do you have HardwareTnL=True or False in your eqclient.ini?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;4. In advanced display options:&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;a.&amp;nbsp;Hardware Vertex Shaders on?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;b.&amp;nbsp;Pixel Shader 1.1 on?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;c.&amp;nbsp;Pixel Shader 1.4 on?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;d.&amp;nbsp;Pixel Shader 2.0 on?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;e.&amp;nbsp;Advanced Lighting on?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Also, if you have any other details about this bug such as it always happens when you do some particular thing, or always after some event, please add that.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;p&gt;Message Edited by Rowyl_The_Freak on &lt;span class=date_text&gt;07-18-2005&lt;/span&gt; &lt;span class=time_text&gt;10:55 AM&lt;/span&gt;</description>
+      <pubDate>Sun, 04 Jun 2006 23:20:26 GMT</pubDate>
+      <author>Rowyl_The_Freak</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9344#M9344</guid>
+      <dc:creator>Rowyl_The_Freak</dc:creator>
+      <dc:date>2006-06-04T23:20:26Z</dc:date>
+    </item>
+    <item>
+      <title>How to play on the Test server</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=5189#M5189</link>
+      <description>If you're interested in testing new features, new content and fixes to existing bugs before it reaches the live servers we have a Test server that is open to the public. Access is open to the public, but there are a few special steps that have to be taken in order to access it and a few things you should know about before committing time on the Test server.&lt;br&gt;&lt;br&gt;The Test server is pretty much the same as a normal live server, otherwise known as a 'production' or 'proddy' server, except that this is where we on the dev team and QA team actually work on a day to day basis. People play their characters, level up, do raids, all that fun stuff but there are some things about playing on Test that you should know about if you are thinking about playing there. &lt;br&gt;&lt;br&gt;* Servers are reset for patches quite often. Usually every day or two during the work week. On occasion we have to patch a few times in a single day due to severe bugs that require immediate attention. We try to patch in the PST mornings as early as possible, but sometimes it's the afternoon. On rare occasions it's during primetime PST play hours, but that doesn't really happen that often. A downside of this is that long respawn mobs are seen less often. An upside of this is that mobs that are up at server up are seen more often.&lt;br&gt;&lt;br&gt;* Once in a while, bugs occur that make the game difficult if not impossible to play. We do our best to correct these situations when they arise but it's not unheard of for people to be stuck in a bad situation longer than anyone is happy about. When we do discover this sort of thing going on, we help out with rollbacks and other things as appropriate.&lt;br&gt;&lt;br&gt;* There is no formal GM support. The people working here are Dev &amp; QA folks, and we try to help as much as possible but we can't promise in game support on this server. &lt;br&gt;&lt;br&gt;* Since we patch so often, you'll often find that a new executable and data has to be downloaded most of the time you start a game session. This is typically a couple megs of stuff to download. Goes pretty quick for broadband but slow connections can't help but deal with a bit of &lt;br&gt;&lt;br&gt;* You get to see new stuff first.&lt;br&gt;&lt;br&gt;* You get to use /testbuff to start play at level 25.&lt;br&gt;&lt;br&gt;* Experience is 2x the normal rate of live servers. This is to help with player progression that is interrupted so often by patches.&lt;br&gt;&lt;br&gt;* The players on Test are a very nice bunch of folks. The nature of the server means a lot of the players are helpful, mature and really into EverQuest for the sheer fun of it.&lt;br&gt;&lt;br&gt;* You can often find Devs and QA online and bend their ears, if that's something you want to do. &lt;br&gt;&lt;br&gt;&lt;br&gt;So if you think playing on Test might be for you, here is how you do it:&lt;br&gt;&lt;br&gt;* Run the 'testeverquest.exe' instead of the normal 'everquest.exe'. This will download files specific to the test server which will usually replace files used by the regular production servers, so it is often a good idea to manually copy your normal EverQuest folder into a completely separate folder just for playing on Test. This way you can switch between Live and Test servers without having to patch every time you switch servers.&lt;br&gt;&lt;br&gt;* That's about it. Have fun, hope to see you there sometime.&lt;br&gt;&lt;br&gt;Cheers,</description>
+      <pubDate>Fri, 08 Jul 2005 01:48:39 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=5189#M5189</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2005-07-08T01:48:39Z</dc:date>
+    </item>
+    <item>
+      <title>Problems in Yxxta</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=106#M106</link>
+      <description>&lt;DIV&gt;We have raided Yxxta a bit of late, say&amp;nbsp;twice a week for a month and have had the following ;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1. Channels drop totally and dont return.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Tonight 30/5 We couldn't control the raid window.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 3. Tonight 30/5 No raid experience&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4&amp;nbsp; Raid Say didnt work.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;All in all&amp;nbsp;a buggy zone.&lt;/DIV&gt;</description>
+      <pubDate>Thu, 01 Jun 2006 21:39:03 GMT</pubDate>
+      <author>Wolja</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=106#M106</guid>
+      <dc:creator>Wolja</dc:creator>
+      <dc:date>2006-06-01T21:39:03Z</dc:date>
+    </item>
+    <item>
+      <title>Advanced Lighting issues?</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9543#M9543</link>
+      <description>&lt;DIV&gt;Please reply with issues you have found with the "Advanced Lighting" option that went live on 6/29/2005 but is still in development.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;My hope is to resolve all of these issues before the next live patch.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Please note, the feature only works on cards capable of pixel shader 1.1 or greater. So I don't need any posts telling me it doesn't work on your card if your card doesn't support pixel shaders.&lt;/DIV&gt;</description>
+      <pubDate>Tue, 21 Feb 2006 13:45:54 GMT</pubDate>
+      <author>Rowyl_The_Freak</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9543#M9543</guid>
+      <dc:creator>Rowyl_The_Freak</dc:creator>
+      <dc:date>2006-02-21T13:45:54Z</dc:date>
+    </item>
+    <item>
+      <title>Extreme problems with Noble's Causeway</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=2#M2</link>
+      <description>&lt;DIV&gt;Everytime i go to NC it's fine for a while then the whole zone starts to lag. to the point the game almost grinds to a halt. It's not just me either, everyone in the zone said they had the same problem. I and many others have done /feedback on it and still it does it. NC is my favorite zone but it's completely unplayable like it is, I have noticed that it happens when the fecund is up and pups are already summon. Maybe it has something to do with them. I just noticed that tonight though so i don't know if it's a cause/effect or just a correlation between them. Please fix this as it's such a fun and challenging zone to kite in i almost don't even want to play anywhere else.&lt;/DIV&gt;</description>
+      <pubDate>Tue, 14 Feb 2006 03:24:34 GMT</pubDate>
+      <author>gakins</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=2#M2</guid>
+      <dc:creator>gakins</dc:creator>
+      <dc:date>2006-02-14T03:24:34Z</dc:date>
+    </item>
+    <item>
+      <title>Eye of Tallon while on my drog</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=63#M63</link>
+      <description>Hi&lt;br&gt;&lt;br&gt;Just wondering if anyone else has the same problem. Yesterday while sitting on my drog in WoS I tried to cast Eye of Talon but i got the message that it wouldn't stick. I tried a few times but got the same message. After clicking of my drog it worked fine but I tried it again on the drog and it still wouldn't stick.&lt;br&gt;I also tried Eye of Zomm with the same result.&lt;br&gt;Any coments?</description>
+      <pubDate>Mon, 05 Jun 2006 18:01:10 GMT</pubDate>
+      <author>Ldder</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=63#M63</guid>
+      <dc:creator>Ldder</dc:creator>
+      <dc:date>2006-06-05T18:01:10Z</dc:date>
+    </item>
+    <item>
+      <title>Running Animation Graphics Glitch (or something).</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=1196#M1196</link>
+      <description>When I first noticed this problem, I thought it to be my graphics card. But I see now that just about everyone sees the same problem. When your character runs right away after an animation (like an attack animation, casting animation, or an instrument animation), his running animation will sometimes go out of sync and will do an odd (and stupid) looking run. It looks like he/she is turning his/her head left to right repeatedly and may also include wavering arms and a tilting torso. Also, I have seen many old world and new world models do this as well. I believe this was a recent occurance into Everquest. I understand that animations are a low priority problem, but this should be looked into. Also, my bard looks so stupid running like a monkey, this animation bug makes wood elves run like monkeys...</description>
+      <pubDate>Mon, 31 Oct 2005 16:43:43 GMT</pubDate>
+      <author>Xrathos_Komodo</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=1196#M1196</guid>
+      <dc:creator>Xrathos_Komodo</dc:creator>
+      <dc:date>2005-10-31T16:43:43Z</dc:date>
+    </item>
+  </channel>
+</rss>
+

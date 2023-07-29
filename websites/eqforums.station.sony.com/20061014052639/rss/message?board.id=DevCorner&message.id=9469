@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Collsion Update 1/26/05</title>
+    <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9469</link>
+    <description>Hello again,&lt;br&gt;&lt;br&gt;I wanted to let folks know there's been some good fixes lately and I wanted to talk about them a bit because people seem to like to know these details. &lt;br&gt;&lt;br&gt;The last 'collision update' post was here -  http://eqforums.station.sony.com/eq/board/message?board.id=development&amp;message.id=2007 - I'll try to answer what I can from there, but first let me go over some recent bug fixes.&lt;br&gt;&lt;br&gt;As some folks may have heard, we introduced new networking code on Test a couple weeks ago. This code has made a tremendous difference to the coders because it provides a wealth of great debugging features that have made it easier than ever to solve some really difficult bugs that have been around for a while. &lt;br&gt;&lt;br&gt;The first bug that was fixed was related to subtle differences in the way that the zone servers and the clients load geometry. Turns out that objects (but not the terrain) on the zone server had their "triangle normals" pointed in the opposite direction for zones created using the new DX9 data format (EQG files). This was causing problems for NPC pathing and any other server code that depending on being able to "find the ground" when standing on top of one of these objects (as opposed to the standard terrain geometry). Many Omens of War zones had a number of places where entire sections of the zone were using this type of geometry, such as the tunnels in the bloodfields, and this would cause all kinds of problems with pathing, summoning pets, and things of that nature. After this problem was finally identified thanks to some debugging features we've recently added, it was easy to fix and seems to have helped a lot. This fix went in with today’s update.&lt;br&gt;&lt;br&gt;The second bug that appears to be fixed is related to a combination of events that could cause the zone server to think a player was falling under the world even when the player appeared to be above the world in the correct location for all clients. I say 'appears' because it hasn't been fully tested yet by other people, but it is working on my development servers at least. It's related to the way the physics system extrapolates positions over time and how gravity is part of the position extrapolation. There is a check that is made that was intended to prevent extrapolation from going below ground level, but the problem was that the ground level check was sometimes producing invalid values. This could happen when the extrapolation happened after receiving a network packet and the extrapolated movement had not yet been collision checked. Once the server had an invalid ground elevation, it was unable to correct itself and the server data usually had the player falling under the world when this happened. It wasn't seen by the clients directly because the extrapolation is used only by the zone server; each client does their own extrapolation. While it wasn’t seen directly by the clients, players did see the side effects of this bug. For example, MGB/Group spells would sometimes not hit everyone in the group because the server thought some of the players were on the surface and some could be literally thousands of units below (as a result of the server's extrapolation of gravity over time). The problem of spells not landing in a couple of specific situations was a reproducible problem that no longer occurs now that this bug has been fixed. I suspect it will correct a number of other hard to reproduce problems related to getting summoned under the world for various reasons, picking up agro from floors below you, and things of that nature but I'm still trying to find reproducible test cases to be sure. Unfortunately, this fix was only recently made and hasn’t yet been tested carefully enough to put into this update. Look for it to hit Test sometime soon, though.&lt;br&gt;&lt;br&gt;Now, getting to the previous thread with all the questions about collision &amp; movement types of problems, I’ll answer what I can:&lt;br&gt;&lt;br&gt;Axxius – “However, there was this question about a bug related to collision: in some zones (Uqua comes to mind), walking close to a wall when shrunk switches your first person view camera to a ducking mode even though you are not ducking and have auto-duck off. You just start seeing things from a lower height as if you were ducking. Is this fixed now?”&lt;br&gt;&lt;br&gt;No, this hasn’t been worked on. I can tell you what the source of this is however. I think most people have seen how small races can see through walls pretty easily just by walking up to them. This is actually the oldest bug I’ve worked on in the database, which was entered - . We added code to the camera system to try to prevent this from happening and for a while it was working but not long after that some seemingly unrelated changes broke both this fix and also allowed small races to see through walls again. It’s on my list of things to fix but I don’t have an ETA.&lt;br&gt;&lt;br&gt;Pomaikai - " Is anything being done about the Z-Axis collision bug for those on a mount in Vex Thal?  If you are on a mount you will agro mobs on the floors directly above and below you.”&lt;br&gt;&lt;br&gt;I haven’t tested this problem recently, but last time we tested it (horses in VT) everything seemed to be working fine with respect to agro distance &amp; other related stuff. Looking back, however, I don’t think we tested it in such a way that would trigger the bug #2 above and I suspect this has been fixed. &lt;br&gt;&lt;br&gt;Tyck- “I'd like to suggest testing using a shaman using bearform with different level's of shrink.”&lt;br&gt;&lt;br&gt;I’ve been doing my testing lately with all kinds of sizes, we have a GM command to allow us to easily set any size/model we want. Since the two bugs described above were fixed on my machine, I haven’t seen any problems so I am hopeful this sort of thing is finally fixed. We’ll test it more when I wrap up what I’m doing and get all this on Test.&lt;br&gt;&lt;br&gt;ChatHandle_03 &amp; twoofus, I’ve forwarded your suggestions about /outputfile. No promises but this sort of thing is obviously pretty easy. I’m hoping to enhance this output enough that people won’t feel the need to run memory sniffers to get the character data they want.&lt;br&gt;&lt;br&gt;Eludril, I’ve forwarded your comments about the guild tool window. Should be easy to fix.&lt;br&gt;&lt;br&gt;PimpDaddyFroglok – “How about you finally fix the run speed prediction on the client for mobs that aren't in the view? It's absurd that you get 'Your target is out of range' spell message for monsters that aren't in the view that are hitting you in the back.”&lt;br&gt;&lt;br&gt;Yeah that would be no fun to deal with. I thought this had long since been fixed though, perhaps it only went in with the 12/16 update though. Please let me know if this is still happening, because I thought it had been fixed and I don't have a bug for this in my bug database.&lt;br&gt;&lt;br&gt;Ixiola – The reports of people 20k’ing after getting a COH have been difficult for me to reproduce. In fact, I haven’t yet been able to get it to happen at all and QA has only been able to get it to happen sporadically. We’ll keep trying to get a repro case though.&lt;br&gt;&lt;br&gt;MordenX, I think the problem you had with getting stuck in the ceiling is probably directly related to some other bugs that were fixed on 12/16. Is this still happening?&lt;br&gt;&lt;br&gt;Mooncage, “in East Cabilis, my Iksar has to duck in order to get into a few buildings, and also to walk across one of the "board bridges" in the middle of the zone (sort of near the Monk guild).  I'm not sure if it's related to his headgear, which has the large skull graphic.“&lt;br&gt;&lt;br&gt;I think this was probably fixed with the 12/16 update. Please let me know if it’s still doing this.&lt;br&gt;&lt;br&gt;&lt;br&gt;2ul_Rocks, I’ll take a closer look at wall of slaughter. That zone has a lot of models that would affect collisions/pathing as a result of bug#1 (above) and that is probably what you are seeing there, hopefully it will be corrected by the fix. The pathing comments are a bit more troubling though, I’ll see what is going on there.&lt;br&gt;&lt;br&gt;Sarshish, I expect the bug#1 is the cause of the problem with chimeras in riftseekers.&lt;br&gt;&lt;br&gt;Disembowel, the warping mobs in Vxed are probably pathing failures of some sort. I have spent a lot of time lately adding diagnostic code that will allow me to debug pathing much more easily so I am hoping for progress on pathing issues fairly soon.&lt;br&gt;&lt;br&gt;Velvaren, if what I suspect is true then the pathing problems people are describing are probably common to all Omens zones as you describe. &lt;br&gt;&lt;br&gt;Maximin &amp; skaal, I think the mount related and veksar pathing bugs are almost certainly related to bug#2. I haven’t yet been able to verify this however.&lt;br&gt;&lt;br&gt;MrHamster, the “you cannot see your target” messages related to line of sight when casting, etc, have been somewhat improved by bugfix#2, but we’re discussing how to increase visibility between players and their targets. Right now it only does one line of sight check, and we’re talking about doing more checks to different parts of the body to more accurately represent visibility. We are only in the discussion stage however.&lt;br&gt;&lt;br&gt;Conejo, the zone has code in place that should be warping NPCs up to the surface when they go under the world as a result of either collision bug or simply the absense of a floor to keep them falling (aka an art bug). I’ll take a look at these zones to make sure the parameters for making this work with the geometry in those zones is correct.&lt;br&gt;&lt;br&gt;&lt;br&gt;Please feel free to post here with any more information or questions about outstanding collision/pathing bugs that still exist after today's update.&lt;br&gt;&lt;br&gt;Cheers,</description>
+    <pubDate>Wed, 26 Jan 2005 22:40:39 GMT</pubDate>
+    <managingEditor>Grumbuk-Dev</managingEditor>
+    <dc:creator>Grumbuk-Dev</dc:creator>
+    <dc:date>2005-01-26T22:40:39Z</dc:date>
+    <item>
+      <title>Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9469#M9469</link>
+      <description>Hello again,&lt;br&gt;&lt;br&gt;I wanted to let folks know there's been some good fixes lately and I wanted to talk about them a bit because people seem to like to know these details. &lt;br&gt;&lt;br&gt;The last 'collision update' post was here -  http://eqforums.station.sony.com/eq/board/message?board.id=development&amp;message.id=2007 - I'll try to answer what I can from there, but first let me go over some recent bug fixes.&lt;br&gt;&lt;br&gt;As some folks may have heard, we introduced new networking code on Test a couple weeks ago. This code has made a tremendous difference to the coders because it provides a wealth of great debugging features that have made it easier than ever to solve some really difficult bugs that have been around for a while. &lt;br&gt;&lt;br&gt;The first bug that was fixed was related to subtle differences in the way that the zone servers and the clients load geometry. Turns out that objects (but not the terrain) on the zone server had their "triangle normals" pointed in the opposite direction for zones created using the new DX9 data format (EQG files). This was causing problems for NPC pathing and any other server code that depending on being able to "find the ground" when standing on top of one of these objects (as opposed to the standard terrain geometry). Many Omens of War zones had a number of places where entire sections of the zone were using this type of geometry, such as the tunnels in the bloodfields, and this would cause all kinds of problems with pathing, summoning pets, and things of that nature. After this problem was finally identified thanks to some debugging features we've recently added, it was easy to fix and seems to have helped a lot. This fix went in with today’s update.&lt;br&gt;&lt;br&gt;The second bug that appears to be fixed is related to a combination of events that could cause the zone server to think a player was falling under the world even when the player appeared to be above the world in the correct location for all clients. I say 'appears' because it hasn't been fully tested yet by other people, but it is working on my development servers at least. It's related to the way the physics system extrapolates positions over time and how gravity is part of the position extrapolation. There is a check that is made that was intended to prevent extrapolation from going below ground level, but the problem was that the ground level check was sometimes producing invalid values. This could happen when the extrapolation happened after receiving a network packet and the extrapolated movement had not yet been collision checked. Once the server had an invalid ground elevation, it was unable to correct itself and the server data usually had the player falling under the world when this happened. It wasn't seen by the clients directly because the extrapolation is used only by the zone server; each client does their own extrapolation. While it wasn’t seen directly by the clients, players did see the side effects of this bug. For example, MGB/Group spells would sometimes not hit everyone in the group because the server thought some of the players were on the surface and some could be literally thousands of units below (as a result of the server's extrapolation of gravity over time). The problem of spells not landing in a couple of specific situations was a reproducible problem that no longer occurs now that this bug has been fixed. I suspect it will correct a number of other hard to reproduce problems related to getting summoned under the world for various reasons, picking up agro from floors below you, and things of that nature but I'm still trying to find reproducible test cases to be sure. Unfortunately, this fix was only recently made and hasn’t yet been tested carefully enough to put into this update. Look for it to hit Test sometime soon, though.&lt;br&gt;&lt;br&gt;Now, getting to the previous thread with all the questions about collision &amp; movement types of problems, I’ll answer what I can:&lt;br&gt;&lt;br&gt;Axxius – “However, there was this question about a bug related to collision: in some zones (Uqua comes to mind), walking close to a wall when shrunk switches your first person view camera to a ducking mode even though you are not ducking and have auto-duck off. You just start seeing things from a lower height as if you were ducking. Is this fixed now?”&lt;br&gt;&lt;br&gt;No, this hasn’t been worked on. I can tell you what the source of this is however. I think most people have seen how small races can see through walls pretty easily just by walking up to them. This is actually the oldest bug I’ve worked on in the database, which was entered - . We added code to the camera system to try to prevent this from happening and for a while it was working but not long after that some seemingly unrelated changes broke both this fix and also allowed small races to see through walls again. It’s on my list of things to fix but I don’t have an ETA.&lt;br&gt;&lt;br&gt;Pomaikai - " Is anything being done about the Z-Axis collision bug for those on a mount in Vex Thal?  If you are on a mount you will agro mobs on the floors directly above and below you.”&lt;br&gt;&lt;br&gt;I haven’t tested this problem recently, but last time we tested it (horses in VT) everything seemed to be working fine with respect to agro distance &amp; other related stuff. Looking back, however, I don’t think we tested it in such a way that would trigger the bug #2 above and I suspect this has been fixed. &lt;br&gt;&lt;br&gt;Tyck- “I'd like to suggest testing using a shaman using bearform with different level's of shrink.”&lt;br&gt;&lt;br&gt;I’ve been doing my testing lately with all kinds of sizes, we have a GM command to allow us to easily set any size/model we want. Since the two bugs described above were fixed on my machine, I haven’t seen any problems so I am hopeful this sort of thing is finally fixed. We’ll test it more when I wrap up what I’m doing and get all this on Test.&lt;br&gt;&lt;br&gt;ChatHandle_03 &amp; twoofus, I’ve forwarded your suggestions about /outputfile. No promises but this sort of thing is obviously pretty easy. I’m hoping to enhance this output enough that people won’t feel the need to run memory sniffers to get the character data they want.&lt;br&gt;&lt;br&gt;Eludril, I’ve forwarded your comments about the guild tool window. Should be easy to fix.&lt;br&gt;&lt;br&gt;PimpDaddyFroglok – “How about you finally fix the run speed prediction on the client for mobs that aren't in the view? It's absurd that you get 'Your target is out of range' spell message for monsters that aren't in the view that are hitting you in the back.”&lt;br&gt;&lt;br&gt;Yeah that would be no fun to deal with. I thought this had long since been fixed though, perhaps it only went in with the 12/16 update though. Please let me know if this is still happening, because I thought it had been fixed and I don't have a bug for this in my bug database.&lt;br&gt;&lt;br&gt;Ixiola – The reports of people 20k’ing after getting a COH have been difficult for me to reproduce. In fact, I haven’t yet been able to get it to happen at all and QA has only been able to get it to happen sporadically. We’ll keep trying to get a repro case though.&lt;br&gt;&lt;br&gt;MordenX, I think the problem you had with getting stuck in the ceiling is probably directly related to some other bugs that were fixed on 12/16. Is this still happening?&lt;br&gt;&lt;br&gt;Mooncage, “in East Cabilis, my Iksar has to duck in order to get into a few buildings, and also to walk across one of the "board bridges" in the middle of the zone (sort of near the Monk guild).  I'm not sure if it's related to his headgear, which has the large skull graphic.“&lt;br&gt;&lt;br&gt;I think this was probably fixed with the 12/16 update. Please let me know if it’s still doing this.&lt;br&gt;&lt;br&gt;&lt;br&gt;2ul_Rocks, I’ll take a closer look at wall of slaughter. That zone has a lot of models that would affect collisions/pathing as a result of bug#1 (above) and that is probably what you are seeing there, hopefully it will be corrected by the fix. The pathing comments are a bit more troubling though, I’ll see what is going on there.&lt;br&gt;&lt;br&gt;Sarshish, I expect the bug#1 is the cause of the problem with chimeras in riftseekers.&lt;br&gt;&lt;br&gt;Disembowel, the warping mobs in Vxed are probably pathing failures of some sort. I have spent a lot of time lately adding diagnostic code that will allow me to debug pathing much more easily so I am hoping for progress on pathing issues fairly soon.&lt;br&gt;&lt;br&gt;Velvaren, if what I suspect is true then the pathing problems people are describing are probably common to all Omens zones as you describe. &lt;br&gt;&lt;br&gt;Maximin &amp; skaal, I think the mount related and veksar pathing bugs are almost certainly related to bug#2. I haven’t yet been able to verify this however.&lt;br&gt;&lt;br&gt;MrHamster, the “you cannot see your target” messages related to line of sight when casting, etc, have been somewhat improved by bugfix#2, but we’re discussing how to increase visibility between players and their targets. Right now it only does one line of sight check, and we’re talking about doing more checks to different parts of the body to more accurately represent visibility. We are only in the discussion stage however.&lt;br&gt;&lt;br&gt;Conejo, the zone has code in place that should be warping NPCs up to the surface when they go under the world as a result of either collision bug or simply the absense of a floor to keep them falling (aka an art bug). I’ll take a look at these zones to make sure the parameters for making this work with the geometry in those zones is correct.&lt;br&gt;&lt;br&gt;&lt;br&gt;Please feel free to post here with any more information or questions about outstanding collision/pathing bugs that still exist after today's update.&lt;br&gt;&lt;br&gt;Cheers,</description>
+      <pubDate>Wed, 26 Jan 2005 22:40:39 GMT</pubDate>
+      <author>Grumbuk-Dev</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9469#M9469</guid>
+      <dc:creator>Grumbuk-Dev</dc:creator>
+      <dc:date>2005-01-26T22:40:39Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=11810#M11810</link>
+      <description>Im sorry to ask of this but was directed to this post for whatever reason.  Im basically here to say that I just lost a couple of really good loots.  One of them that I won last night at a raid.  Is there any possible way to get an item reimbursal.  Im not getting any response in game and did work hard for them.  Well whatever have a nice day&lt;br&gt;&lt;div&gt;&lt;/div&gt;</description>
+      <pubDate>Sat, 21 Jan 2006 04:04:03 GMT</pubDate>
+      <author>kayg</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=11810#M11810</guid>
+      <dc:creator>kayg</dc:creator>
+      <dc:date>2006-01-21T04:04:03Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9542#M9542</link>
+      <description>&lt;DIV&gt;Why there is no Augment on Talisman of Vah Kerrath?never seen another item without it.&lt;/DIV&gt;</description>
+      <pubDate>Wed, 20 Apr 2005 08:21:49 GMT</pubDate>
+      <author>andywong</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9542#M9542</guid>
+      <dc:creator>andywong</dc:creator>
+      <dc:date>2005-04-20T08:21:49Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9526#M9526</link>
+      <description>&lt;DIV&gt;Mobs in MPG are spawning underground and seem to be shifting places also. There's a thread on Steelwarrior's battlefield site about it but basically some named/ph's seem to have problems with being above ground and if they are above ground then they either seem to spawn elsewhere or wander around. This partly shows as named being well away from their spawn points, and random pops(not on a timer for that location) in previously safe spots. I think this counts as collision with floors problems but sorry if it should have been elsewhere.&lt;/DIV&gt;</description>
+      <pubDate>Sat, 05 Mar 2005 16:35:13 GMT</pubDate>
+      <author>JheregAttackPet</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9526#M9526</guid>
+      <dc:creator>JheregAttackPet</dc:creator>
+      <dc:date>2005-03-05T16:35:13Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9527#M9527</link>
+      <description>&lt;DIV&gt;Another zone with bad line of sight issues is Plane of Valor.&amp;nbsp; I get lots of "you cannot see your target" messages here, when what it really means is "you cannot see the small toe of the right foot of your target".&amp;nbsp; As a caster this makes things irritating.&lt;/DIV&gt;</description>
+      <pubDate>Fri, 11 Mar 2005 03:37:30 GMT</pubDate>
+      <author>Nehtaniel</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9527#M9527</guid>
+      <dc:creator>Nehtaniel</dc:creator>
+      <dc:date>2005-03-11T03:37:30Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9528#M9528</link>
+      <description>&lt;DIV&gt;And another zone that has "cannot see" the left little toe of the mob problem is Plane of Nightmare.&lt;/FONT&gt;&lt;/DIV&gt;</description>
+      <pubDate>Fri, 25 Mar 2005 00:22:57 GMT</pubDate>
+      <author>Nehtaniel</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9528#M9528</guid>
+      <dc:creator>Nehtaniel</dc:creator>
+      <dc:date>2005-03-25T00:22:57Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9529#M9529</link>
+      <description>&lt;DIV&gt;The murkgliders in Noble's causeway will warp if you run along the gulley wall just below the highway in the area near the Dranik Scar zone line.&amp;nbsp; This one caught me by suprise since I hadn't run into very many warping mobs.&amp;nbsp; Scary as they warp right on top of you even if you are not very far away from them.&lt;/DIV&gt;</description>
+      <pubDate>Mon, 28 Mar 2005 07:12:40 GMT</pubDate>
+      <author>Nehtaniel</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9529#M9529</guid>
+      <dc:creator>Nehtaniel</dc:creator>
+      <dc:date>2005-03-28T07:12:40Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9530#M9530</link>
+      <description>&lt;DIV&gt;Buggy pathing:&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Karnor's Castle.&amp;nbsp;&amp;nbsp; Most mobs cannot get out of the water, and there are several areas where there is an underwater passage way that the mobs cannot navigate.&amp;nbsp; They get stuck on the ceiling, and eventually head back to their spawn points.&amp;nbsp; As well, most mobs have a very hard time crossing the second drawbridge (further into the zone) and many just run back and forth on the spot.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Acutally, on second thought I'll just state that there is a huge number of pathing problems in Karnor's Castle, and that I'll /bug them in game since its too hard to describe where they all are.&amp;nbsp; Alternatively if a dev wishes I can make some notes on a map of the zone where the buggy pathing is (I spent all Friday pulling 95% of the zone down to the Drolvarg Warlord room, so I've got quite a list)&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Also, should I continue reporting screwy pathing/warping/bugged zone geometry/Collision bugs here, or is this a subject that is on the backburner for now?&lt;/DIV&gt;</description>
+      <pubDate>Mon, 28 Mar 2005 07:16:58 GMT</pubDate>
+      <author>Nehtaniel</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9530#M9530</guid>
+      <dc:creator>Nehtaniel</dc:creator>
+      <dc:date>2005-03-28T07:16:58Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9531#M9531</link>
+      <description>&lt;DIV&gt;This seems like a dead thread now, but it's still the best fit for my post, I think...&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Following the 4/12 patch, I've noticed collision and pathfinding in Lavaspinner's Lair has gotten even worse.&amp;nbsp; There have always been&amp;nbsp;issues with the drakes --&amp;nbsp;they fall into the lava sometimes instead of flying across, they get stuck at some points, and the wanderers sometimes move about under the world&amp;nbsp;only to pop up out of the ground when they get aggro --&amp;nbsp;but now the spiders are having issues too.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;It's pretty easy to see... moving from the dervish area to the spiders, (basically west to east), there is a southern path that leads down to a room with 3 spiders.&amp;nbsp; Pull the spiders and run back up the tunnel to the start of it.&amp;nbsp; You can watch the spiders continually warp back and forth as they get stuck on the terrain.&amp;nbsp; (The same happens with pretty much any pull of a spider up a slope)&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;I've spent probably 20+ hours in Lavaspinner doing this mission, and the spiders neevr had this issue before the recent patch, so I am assuming some collision changes were promoted to live.&amp;nbsp; It would be great if the issue with both the spiders and the drakes could be fixed.&lt;/DIV&gt;</description>
+      <pubDate>Sun, 17 Apr 2005 04:42:08 GMT</pubDate>
+      <author>skaal</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9531#M9531</guid>
+      <dc:creator>skaal</dc:creator>
+      <dc:date>2005-04-17T04:42:08Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9532#M9532</link>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;I have noticed that the larva in Plane of Disease have started going under the hill. From the zone in go straight across the water. At the first bit of land is where I quad kite. If a larva is included in the quad, and at full speed the quad goes up the slight rise there, the larva goes under the world. The flies never exhibit this behavior but I believe the rats do, not positive on the rats. If I maneuver the quad to run the coastline, then the larva pop back to the surface of the world and I can interact with them. Once the larva are snared, they remain on the surface of the land.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Jabborwok&lt;/DIV&gt;</description>
+      <pubDate>Mon, 18 Apr 2005 19:27:50 GMT</pubDate>
+      <author>Jabborwok</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9532#M9532</guid>
+      <dc:creator>Jabborwok</dc:creator>
+      <dc:date>2005-04-18T19:27:50Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9533#M9533</link>
+      <description>From my post in the Newbie Zone (man, this message board is baffling... )&lt;br&gt;&lt;br&gt;http://eqforums.station.sony.com/eq/board/message?board.id=TNZ&amp;message.id=178018&lt;br&gt;&lt;br&gt;[B]Corner Tanking Issues Cropping up.[/b]&lt;br&gt;&lt;br&gt;There's more on this over on TSW.&lt;br&gt;&lt;br&gt;Was tanking a raid in VT over the weekend. Kept getting consistent 'can't see target' messages when max shrunk and cornering mobs. Ducking a little and looking through the mob at its targ circle looked like the mob was getting pushed into the wall more than it used to be.&lt;br&gt;&lt;br&gt;Have you guys been messing around with the collision engine again?</description>
+      <pubDate>Fri, 20 May 2005 13:28:59 GMT</pubDate>
+      <author>UncleDidi</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9533#M9533</guid>
+      <dc:creator>UncleDidi</dc:creator>
+      <dc:date>2005-05-20T13:28:59Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9534#M9534</link>
+      <description>&lt;DIV&gt;The line of sight&amp;nbsp;in The Ascent is attrocious.&amp;nbsp; Almost every single location in the zone has issues with being unable to see the mob that is standing 3 feet away from you and beating the life out of you.&amp;nbsp; Line of sight issues here are probably some of the worse I've seen.&amp;nbsp; Much worse than Dranik's Scar.&lt;/DIV&gt;</description>
+      <pubDate>Sat, 21 May 2005 21:54:52 GMT</pubDate>
+      <author>Nehtaniel</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9534#M9534</guid>
+      <dc:creator>Nehtaniel</dc:creator>
+      <dc:date>2005-05-21T21:54:52Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9535#M9535</link>
+      <description>Also unable to corner mobs in ssra and mm, and getting summoned into walls again, have to illusion to get out.  I hadn't seen this happen for many months prior to the mid-may patches.</description>
+      <pubDate>Thu, 26 May 2005 15:39:14 GMT</pubDate>
+      <author>Kirna_</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9535#M9535</guid>
+      <dc:creator>Kirna_</dc:creator>
+      <dc:date>2005-05-26T15:39:14Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9536#M9536</link>
+      <description>Can we get a "new" collision update posting from the Devs and close this old one out, so we know you're there? &lt;br&gt;&lt;br&gt;As of this week, as a shrunken dark elf, I can't climb the stairs in Riftseeker's while levitating and have to jump when not levitating.&lt;br&gt;&lt;br&gt;Feratha and Chailak continue to warp back to spawn point at 1-3% if walled. &lt;br&gt;&lt;br&gt;Cornering is khexxed up all over the place in a variety of ways.&lt;br&gt;&lt;br&gt;Thanks.</description>
+      <pubDate>Thu, 02 Jun 2005 21:20:49 GMT</pubDate>
+      <author>Ayida</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9536#M9536</guid>
+      <dc:creator>Ayida</dc:creator>
+      <dc:date>2005-06-02T21:20:49Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9537#M9537</link>
+      <description>&lt;DIV&gt;While Chailak and Feratha haven't warped on us in ages, mobs in the Dranik Sewers at the anguish sig camp have when cornered.&amp;nbsp; That may be an unrelated bug, but since the previous post mentions it I figured I'd mention it.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;I posted in the wrong forum and was directed to this thread:&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&#xD;
+&lt;DIV&gt;On live the collision issues introduced around May 2005 are still just as bad.&amp;nbsp; Mobs go part way into the wall, and in such corners if the tank is not shrunk the mob ends up behind the tank even though they are on the wall.&amp;nbsp; When mobs are pushed against the walls, very evident in places like Sanctus Seru and Uqua, the mob partially goes inside the wall, and while the fighting mechanics work, line of sight detection for the target nearest npc and cycle npc functions is messed up, as well as visibly seeing the mob is part way in the wall.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Is there any update to this? It's been this way for a few months now.&amp;nbsp; Prior to this, the targeting commands worked very well.&lt;/DIV&gt;&lt;/DIV&gt;</description>
+      <pubDate>Wed, 31 Aug 2005 22:17:37 GMT</pubDate>
+      <author>Zunnoab-Stromm</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9537#M9537</guid>
+      <dc:creator>Zunnoab-Stromm</dc:creator>
+      <dc:date>2005-08-31T22:17:37Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9538#M9538</link>
+      <description>&lt;DIV&gt;Lately, I've noticed a problem with targetting mobs who are standing up against a wall (ie: have been pushed against a wall)&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;When I use f8 or my key to cycle nearest NPC's it is as if they are invisible to the targeting logic.&amp;nbsp; It will never target them, though they are still very clearly visible to me and within melee range.&amp;nbsp; The only way I have been able to target them is to /assist someone who already has them targetted.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Is this a flaw in collision/line of sight/pathing, or is this something else?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;This occurs in all zones, and not only with walls.&amp;nbsp; It happens any time a mob is too close to other geometry.&amp;nbsp; I am on the same "side" of the geometry obstruction as the mob, but it acts like I'm not.&lt;/DIV&gt;</description>
+      <pubDate>Thu, 15 Sep 2005 21:22:47 GMT</pubDate>
+      <author>Izabadman-Luclin</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9538#M9538</guid>
+      <dc:creator>Izabadman-Luclin</dc:creator>
+      <dc:date>2005-09-15T21:22:47Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9541#M9541</link>
+      <description>&lt;BR&gt;&#xD;
+&lt;BLOCKQUOTE&gt;&#xD;
+&lt;HR&gt;&#xD;
+Izabadman-Luclin wrote:&lt;BR&gt;&#xD;
+&lt;DIV&gt;Lately, I've noticed a problem with targetting mobs who are standing up against a wall (ie: have been pushed against a wall)&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;When I use f8 or my key to cycle nearest NPC's it is as if they are invisible to the targeting logic.&amp;nbsp; It will never target them, though they are still very clearly visible to me and within melee range.&amp;nbsp; The only way I have been able to target them is to /assist someone who already has them targetted.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Is this a flaw in collision/line of sight/pathing, or is this something else?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;This occurs in all zones, and not only with walls.&amp;nbsp; It happens any time a mob is too close to other geometry.&amp;nbsp; I am on the same "side" of the geometry obstruction as the mob, but it acts like I'm not.&lt;/DIV&gt;&lt;BR&gt;&#xD;
+&lt;HR&gt;&#xD;
+&lt;/BLOCKQUOTE&gt;The inability to target mob occurs very frequently in the Orcs Monster Mission in Nektulos Forest.&amp;nbsp; The orcs will wander right into the trees and become untargettable except by assist.&amp;nbsp; A real pain when the orc is in the wall and you have to /assist Vadrok (think that's the name of the quest npc).&amp;nbsp;&amp;nbsp; Very noticeable at the southeast corner of the first intersection and sometimes at the northwest of the first intersection.&lt;BR&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;</description>
+      <pubDate>Tue, 08 Nov 2005 21:14:47 GMT</pubDate>
+      <author>Trinor</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9541#M9541</guid>
+      <dc:creator>Trinor</dc:creator>
+      <dc:date>2005-11-08T21:14:47Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9539#M9539</link>
+      <description>&lt;BR&gt;&#xD;
+&lt;BLOCKQUOTE&gt;&#xD;
+&lt;HR&gt;&#xD;
+Izabadman-Luclin wrote:&lt;BR&gt;&#xD;
+&lt;DIV&gt;Lately, I've noticed a problem with targetting mobs who are standing up against a wall (ie: have been pushed against a wall)&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;When I use f8 or my key to cycle nearest NPC's it is as if they are invisible to the targeting logic.&amp;nbsp; It will never target them, though they are still very clearly visible to me and within melee range.&amp;nbsp; The only way I have been able to target them is to /assist someone who already has them targetted.&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Is this a flaw in collision/line of sight/pathing, or is this something else?&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;This occurs in all zones, and not only with walls.&amp;nbsp; It happens any time a mob is too close to other geometry.&amp;nbsp; I am on the same "side" of the geometry obstruction as the mob, but it acts like I'm not.&lt;/DIV&gt;&lt;BR&gt;&#xD;
+&lt;HR&gt;&#xD;
+&lt;/BLOCKQUOTE&gt;I've also noticed, (not sure when this started to occur), but you can't target a mob that is just on the other side of a closed gate in an LDoN.&amp;nbsp; For example, I was in a Mistmoore LDoN the other day, and had to open the gate to target the mob just on the other side, even though he was very close and I could see him (and his feet, lol - but that's another issue).&amp;nbsp; Even trying to target with ` wouldn't work (as I thought perhaps it's just a mouse click issue).&amp;nbsp; The gate had to be open to target the mob.&lt;BR&gt;&#xD;
+&lt;DIV&gt;&lt;/DIV&gt;</description>
+      <pubDate>Tue, 20 Sep 2005 15:52:46 GMT</pubDate>
+      <author>Atzanik</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9539#M9539</guid>
+      <dc:creator>Atzanik</dc:creator>
+      <dc:date>2005-09-20T15:52:46Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9540#M9540</link>
+      <description>&lt;DIV&gt;I got lazy and didnt read everypost (because they are so old) but wanted to mention....&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;Whenever my gnome collides with something, he falls half way through the ground, lowering my vision (like a duck). I play 3rd person mostly and i can see i am not ducking, but up to my waist in dirt. just a minor annoyance most of the time, but stairs BLIND me entirely, all i can see is straight up or a stair.... &lt;/DIV&gt;&#xD;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&#xD;
+&lt;DIV&gt;This has been hapening ever since the DX9.0 patch (2 years ago?).... Devs must not play gnomes.&lt;/DIV&gt;</description>
+      <pubDate>Wed, 21 Sep 2005 16:44:50 GMT</pubDate>
+      <author>GorGreybeard</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9540#M9540</guid>
+      <dc:creator>GorGreybeard</dc:creator>
+      <dc:date>2005-09-21T16:44:50Z</dc:date>
+    </item>
+    <item>
+      <title>Re: Collsion Update 1/26/05</title>
+      <link>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9524#M9524</link>
+      <description>Yes!  Please fix the Z axis for casting.  Fighting on the stairs in Riftseekers, hillsides in RCOD etc are so terrible for casters who get constant LOS messages. If you are gonna' make hilly zones, fix this.&lt;br&gt;&lt;br&gt;Leerah 70 Wiz, Quellious</description>
+      <pubDate>Thu, 03 Mar 2005 17:14:36 GMT</pubDate>
+      <author>Leerah-Tunary</author>
+      <guid>http://eqforums.station.sony.com/eq/board/message?board.id=DevCorner&amp;message.id=9524#M9524</guid>
+      <dc:creator>Leerah-Tunary</dc:creator>
+      <dc:date>2005-03-03T17:14:36Z</dc:date>
+    </item>
+  </channel>
+</rss>
+
