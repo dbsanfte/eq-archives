@@ -42,3 +42,7 @@ https://web.archive.org/web/www.everquest.com.tw/download/patch/EQ_Patch_2001040
 RoK patch:
 
 https://web.archive.org/web/www.everquest.com.tw/download/patch/RoK_Patch_20000426.zip
+
+I also found EQ Beta patch notes and placed them on the P99 Wiki:
+
+https://wiki.project1999.com/Beta_Patch_Notes
