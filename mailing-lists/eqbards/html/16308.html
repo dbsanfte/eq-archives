@@ -1,0 +1,188 @@
+[<a href='16309.html'>Next Message in Time</a>] | 
+[<a href='16307.html'>Previous Message in Time</a>] | 
+[<a href='16309.html'>Next Message in Topic</a>] | 
+[<a href='0.html'>Previous Message in Topic</a>] <br/><br/>
+<b>Message ID:</b> 16308 <br/>
+<b>Date:</b> Fri Mar 17 20:43:49 GMT 2000 <br/>
+<b>Author:</b> Ryan Honeyman <br/>
+<b>Subject:</b> [eqbards] Song DB Model. (request for comments) <br/>
+<br/><br/>
+<div id="ygrps-yiv-469654289">I know there are a lot of technical people on this list.<br/>
+  You all have provided excellent feedback about numerous<br/>
+  things in the past, so I will post this here for discussion.<br/>
+<br/>
+  If you don&#39;t care to learn or know about database schemas<br/>
+  and such, go ahead and delete this post now, it&#39;s gonna get<br/>
+  really in depth.  I&#39;m trying to design a robust system to<br/>
+  search our knowledge base and dynamically generate our song<br/>
+  webpages.  I&#39;d also like to create an interface for those<br/>
+  of us who test regularly to update our data.<br/>
+<br/>
+  Rokenn knows that a while back I had dreams of porting all the<br/>
+  information we collected into a database.  I started work on it<br/>
+  but to make it portable I decided against using our Oracle <br/>
+  installation here.  Alternatively, I could have installed mySQL<br/>
+  and done it on that.  However for flexibility I went with file<br/>
+  based information storage.  It worked, but it sucked - needless<br/>
+  to say.  I&#39;m back in the db design phase now.  We need to address<br/>
+  the elements of the songs we want to capture and make this whole<br/>
+  thing as flexible as possible.<br/>
+<br/>
+  If you know nothing about Entity Relationship, I fear this could<br/>
+  get confusing.  Hey but if you are willing to learn, like a true<br/>
+  bard would, here ya go:  (text for design, then maybe I won&#39;t be<br/>
+  so lazy and open my visual ER and make a PDF file or something) heh.<br/>
+  People can also suggest typing these variables too, as I haven&#39;t<br/>
+  done that yet.<br/>
+<br/>
+Primary table =========================================================<br/>
+<br/>
+How do we support quantified data?  It varies per song.<br/>
+<br/>
+songs<br/>
+-----<br/>
+song_id<br/>
+song_level<br/>
+song_name<br/>
+song_effect<br/>
+song_mana<br/>
+song_duration<br/>
+song_casting_time<br/>
+song_cost<br/>
+song_skill_id [fk song_skills]<br/>
+song_req_inst<br/>
+song_target_id [fk song_targets]<br/>
+song_taunt_id [fk song_taunts]<br/>
+song_formula<br/>
+song_analysis_by<br/>
+song_updated_by<br/>
+<br/>
+<br/>
+Lookup tables ==========================================================<br/>
+<br/>
+Really nice for controlling input with pulldowns.  Standardizes data<br/>
+as well and provides joining for complex queries.<br/>
+<br/>
+<br/>
+song_skills  (Percussion, Wind, Singing, String, Brass)<br/>
+-----------<br/>
+skill_id<br/>
+skill_name<br/>
+skill_desc<br/>
+<br/>
+<br/>
+song_targets (Party, Non Party, Area Effect, Target, Self, etc)<br/>
+------------<br/>
+target_id<br/>
+target_name<br/>
+target_desc<br/>
+<br/>
+<br/>
+guild_locations  (Freeport, Qeynos, Kelethin)<br/>
+---------------<br/>
+location_id<br/>
+location_name<br/>
+location_desc<br/>
+<br/>
+<br/>
+song_taunts  (Nil, Low, Medium, High, Very High)<br/>
+-----------<br/>
+taunt_id<br/>
+taunt_name<br/>
+taunt_desc<br/>
+<br/>
+<br/>
+comment_types    (Comments, Strategy, Cautions)<br/>
+-------------<br/>
+comment_id<br/>
+comment_name<br/>
+comment_desc<br/>
+<br/>
+<br/>
+Data mapping tables<br/>
+=========================================================<br/>
+<br/>
+<br/>
+song_locations  (list of songs and locations, one to many relation)<br/>
+--------------<br/>
+song_id<br/>
+location_id [fk guild_locations]<br/>
+<br/>
+<br/>
+song_unstackables  (list of songs which don&#39;t stack, one to many)<br/>
+-----------------  (this doesnt support &#39;other&#39; comments, needs work here)<br/>
+song_id<br/>
+unstack_song_id<br/>
+<br/>
+<br/>
+song_comments  (list of comments by type)<br/>
+-------------<br/>
+song_id<br/>
+comment_id [fk comment_types]<br/>
+comment_desc<br/>
+comment_author<br/>
+<br/>
+<br/>
+=============================================================================<br/>
+<br/>
+Queries.  [Note I am seeking input on creating this database, as such<br/>
+           no tables are out there as of yet.  These statements may <br/>
+           be off a little, but the idea is there - correct SQL or <br/>
+           not ;)  Just need to demonstrate the flexibility too. ]<br/>
+<br/>
+<br/>
+o Where can I find the level &lt;foo&gt; song?<br/>
+<br/>
+select  s.song_level,s.song_name,gl.location_name<br/>
+from    songs as s,<br/>
+        song_locations as sl,<br/>
+        guild_locations as gl<br/>
+where   s.song_id = sl.song_id<br/>
+and     sl.location_id = gl.location_id<br/>
+and     s.song_level = &lt;foo&gt;<br/>
+<br/>
+<br/>
+o What is the name of level &lt;foo&gt; song?<br/>
+<br/>
+select  song_level,song_name<br/>
+from    songs<br/>
+where   song_level = &#39;&lt;foo&gt;&#39;<br/>
+<br/>
+<br/>
+o What type of type of target does Denon&#39;s Desparate Dirge use?<br/>
+<br/>
+select  s.song_name,st.target_name<br/>
+from    songs as s,<br/>
+        song_targets as st<br/>
+where   s.song_target_id = st.target_id<br/>
+and     s.song_name = &#39;Denon&#39;&#39;s Desparate Dirge&#39;<br/>
+<br/>
+<br/>
+o What strategies are there for L50 Verses of Victory?<br/>
+<br/>
+select  s.song_name,sc.comment_author,sc.comment_desc<br/>
+from    songs as s,<br/>
+        song_comments as sc,<br/>
+        comment_types as ct<br/>
+where   s.song_id = sc.song_id<br/>
+and     sc.comment_id = ct.comment_id<br/>
+and     ct.comment_name = &#39;Strategy&#39;<br/>
+and     s.song_level = &#39;50&#39;<br/>
+<br/>
+<br/>
+etc, etc, etc.<br/>
+<br/>
+  Anyone care to comment?  Additional values we should be storing?<br/>
+  Different model?  Better implementation?  Maybe take this to a<br/>
+  different area to talk about it, if a lot of people have ideas.<br/>
+<br/>
+  Harmonic.<br/>
+<br/>
+  +=================================+<br/>
+  | Ryan Honeyman, Programmer      /<br/>
+  | Decipher, Web Group           /<br/>
+  | <a rel="nofollow" target="_blank" href="http://www.decipher.com">http://www.decipher.com</a>      /<br/>
+  +-----------------------------+<br/>
+  | phone&gt; 757.664.1126        /<br/>
+  | pager&gt; 757.629.1567       /<br/>
+  +==========================+</div>

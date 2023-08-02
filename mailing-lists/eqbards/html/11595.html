@@ -1,0 +1,124 @@
+[<a href='11596.html'>Next Message in Time</a>] | 
+[<a href='11594.html'>Previous Message in Time</a>] | 
+[<a href='11607.html'>Next Message in Topic</a>] | 
+[<a href='0.html'>Previous Message in Topic</a>] <br/><br/>
+<b>Message ID:</b> 11595 <br/>
+<b>Date:</b> Thu Dec  9 18:48:56 GMT 1999 <br/>
+<b>Author:</b> Ryan Honeyman <br/>
+<b>Subject:</b> Pixie/Lullaby theory (long) <br/>
+<br/><br/>
+<div id="ygrps-yiv-1122447414"><blockquote><span title="ireply">&gt; The time stamps clearly showed that mobs that were nodded were able to<br/>
+&gt; attack immediately, despite being nodded, 20% of the time.  This was on mobs<br/>
+&gt; 18+ levels below the bard level.  The resist rate is what one would expect,<br/>
+&gt; about 5%.  Hopefully GZ will actually look into this.  I sent him the log<br/>
+&gt; file as well.<br/>
+<br/>
+ </span></blockquote>  Good work Kit.  I also experimented with Pixie Strike last night<br/>
+  in the Arena on myself after I died.<br/>
+<br/>
+  I couldn&#39;t find any pattern to when the song would and would not work,<br/>
+  but most of the time this is what happened (based on the messages<br/>
+  I recall, forget the exact wording).<br/>
+<br/>
+  You begin to send forth music. (0 sec)  (-13 MR)<br/>
+  You are stunned.               (0 sec)<br/>
+  Your song ends.                (0 sec)<br/>
+  Your song ends.                (0 sec)<br/>
+  You are unstunned.             (6 sec)<br/>
+  You are no longer stunned.     (8 sec)<br/>
+<br/>
+  And again:<br/>
+<br/>
+  You begin to send forth music. (0 sec)  (-13 MR)<br/>
+  You are no longer stunned.     (8 sec)<br/>
+  <br/>
+  And again:<br/>
+  <br/>
+  You being to send forth music  (0 sec)  (-13 MR)<br/>
+  You are no longer stunned.     (8 sec)<br/>
+<br/>
+  This time I let the icon fade away first:<br/>
+<br/>
+  You being to send forth music  (0 sec)  (-13 MR)<br/>
+  You are no longer stunned.     (8 sec)<br/>
+<br/>
+  Then I let it fade again:<br/>
+<br/>
+  You begin to send forth music. (0 sec)  (-13 MR)<br/>
+  You are stunned.               (0 sec)<br/>
+  Your song ends.                (0 sec)<br/>
+  Your song ends.                (0 sec)<br/>
+  You are unstunned.             (6 sec)<br/>
+  You are no longer stunned.     (8 sec)<br/>
+<br/>
+  It&#39;s really weird.  I cannot explain the circumstances when I <br/>
+  actually take the song hit, but dont take the stun with it.<br/>
+  The song does always drop MR when not resisted, it just doesn&#39;t<br/>
+  always send the stun component in.  Also I wish Verant would<br/>
+  change the song fade message to:  You stop sending forth music<br/>
+  instead of You are no longer stunned.  Because it&#39;s simply not<br/>
+  the case.  It&#39;s purely text message, and does not indicate anything<br/>
+  other than the fact that the song effects are done.  You can break<br/>
+  the stun earlier than the full duration and often do.<br/>
+<br/>
+  Since Pixie and Lullaby are so closely tied together in their<br/>
+  effective impact (stuns a creature) - I am willing to bet there<br/>
+  was an indirect change a month or so ago which is propagating <br/>
+  false signals to the objects stun code.  (As it stands now, <br/>
+  both in PvP, against oneself, and against NPCs the effect is<br/>
+  universal - song skill check rolls success, yet the stun is<br/>
+  not accepted by the object)<br/>
+<br/>
+  Since Verant was looking for LPmud coders, I&#39;m guessing that<br/>
+  a lot of their structure is built up upon that model.  I coded<br/>
+  on an LPmud for 2 years, both object and area design.  And even<br/>
+  some of the base models, like player and monster.<br/>
+   <br/>
+  This may be just a wild guessing (read: warning techie lingo coming)<br/>
+<br/>
+  But when you target someone for Pixie Strike.  I would imagine you<br/>
+  are picking up the object (player or npc) at that time.  When you<br/>
+  begin to sing the song, the server does its basic checking.  Are <br/>
+  you in range of the target coords?  If so, is this a valid target?<br/>
+  And did the target save vs. your song?  At that point, I&#39;m guessing<br/>
+  several things can happen, but most likely:<br/>
+<br/>
+  The server sends you info back saying:  Target didnt resist.  To<br/>
+  which your client finds the appropriate message to display from<br/>
+  your spell data file.  And then the server processes the target<br/>
+  in order to make the effect happen.  In our case, our target <br/>
+  must have some variable in the object class for being <br/>
+  stunned.  And the attack and movement methods in the object<br/>
+  are setup such that [ if (stunned) return; ]  Basically, if <br/>
+  I (the object) am stunned, then don&#39;t perform this action.<br/>
+  Then internally the object has a timer on the stun, which<br/>
+  it counts down periodically.<br/>
+<br/>
+  If you try this on yourself, clearly the server is not correctly<br/>
+  giving you the stun &#39;command&#39; whatever it may be.  I first thought, <br/>
+  maybe the server is in fact telling the object it is stunned<br/>
+  but expiring it so quickly that nothing happens.  But wouldn&#39;t<br/>
+  you see:  You are stunned.  You are unstunned.  at the same <br/>
+  time?  I would think so.  Or maybe telling an object to stun<br/>
+  for 0 seconds is just skipped since a 0 second stun is obsolete.<br/>
+  That could be, then no messages would display.  But that&#39;s if<br/>
+  the coded it in said way.<br/>
+<br/>
+  target-&gt;stun(0);   // send target stun for 0 seconds.<br/>
+<br/>
+  ------------------------------<br/>
+<br/>
+  private int stunned;<br/>
+<br/>
+  void function stun(int duration)<br/>
+  {<br/>
+     if (stunned)   return;  // already stunned, skip.<br/>
+     if (!duration) return;  // no duration?, skip.<br/>
+<br/>
+     stunned = duration;<br/>
+  }<br/>
+<br/>
+  Errr, damn hehe... I&#39;ve got _real_ work to do =)<br/>
+  Sorry for the massive brain dump.<br/>
+<br/>
+  Harmonic.</div>
