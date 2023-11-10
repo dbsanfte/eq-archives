@@ -1,0 +1,170 @@
+From 4073427951435664748
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,89eba36a363a1e8a
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2003-10-22 08:09:23 PST
+Path: archiver1.google.com!news2.google.com!news.maxwell.syr.edu!feed.news.qwest.net!news.uswest.net.POSTED!not-for-mail
+Newsgroups: alt.games.everquest
+Subject: Re: UI Skins
+From: Sean Kennedy <x@n.n>
+References: <vpd1h0dfj05f93@corp.supernews.com>
+User-Agent: Xnews/5.04.25
+Lines: 149
+Message-ID: <D4xlb.616$G_1.19596@news.uswest.net>
+Date: Wed, 22 Oct 2003 15:09:23 GMT
+NNTP-Posting-Host: 63.224.250.231
+X-Trace: news.uswest.net 1066835363 63.224.250.231 (Wed, 22 Oct 2003 10:09:23 CDT)
+NNTP-Posting-Date: Wed, 22 Oct 2003 10:09:23 CDT
+Xref: archiver1.google.com alt.games.everquest:3883
+
+"Robin Russell" <robrus@pacificpress.com> wrote in 
+news:vpd1h0dfj05f93@corp.supernews.com:
+
+> I would like to apply a new ui skin (I am using default now) that shows
+> percent of level completed (or remaining).
+> I am a busy boy and cannot afford the time to experiment with several to
+> find out which ones are good and dependable.
+> 
+> Would anyone care to share the name of their favorites with me?  (include
+> web source if you have it, but I am sure I can find it if you don't)
+> 
+> 
+> 
+> 
+
+I just edited a window to have "XP:xx% AA:yy%" in it.
+
+If you can do even basic XML editing it's very easy to add
+this to a window.
+
+EQType26 is XP percentage, EQType27 is AA percentage (I have
+a site bookmarked on my home comp. with all of them listed, but
+don't have it here)
+
+The default Player Window is 78 pixels high.  an extra 14 will
+give you more than enough room to put in the percentages -
+modify the 
+
+
+	<Screen item = "PlayerWindow">
+		<!--<ScreenID/>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>516</X>
+			<Y>0</Y>
+		</Location>
+		<Size>
+			<CX>124</CX>
+			<CY>78</CY>
+		</Size>
+
+section near the bottom of the file so that you have
+    	    	    	<CY>92</CY>
+
+Now, you want to put the percentages at Y = 78 (they
+are 12 pixels high, so you will have a bit of a spacer at
+the bottom) and X = 11, the reason for this is that the
+other text in there is offset by 11 on the x axis.  3 for the
+gauge, 8 on the textoffset.
+
+First you want a static label - (the SDK is to prevent collisions
+in the namespace)
+
+	<Label item ="SDK_XPPercLabel">
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>11</X>
+			<Y>78</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>XP:</Text>
+		<TextColor>
+				<R>200</R>
+				<G>200</G>
+				<B>200</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+
+Then you want the actual percentage
+
+	<Label item ="SDK_XPPerc">
+		<ScreenID>XPPerc</ScreenID>
+		<EQType>26</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>31</X>
+			<Y>78</Y>
+		</Location>
+		<Size>
+			<CX>14</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>xx</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+	</Label>
+
+Note that it's right aligned.
+
+And, finally, a % sign
+
+	<Label item ="SDK_XPPercPercLabel">
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>45</X>
+			<Y>78</Y>
+		</Location>
+		<Size>
+			<CX>10</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+				<R>200</R>
+				<G>200</G>
+				<B>200</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+
+When you add these, you also have to add the following lines
+in the playerwindow element -
+
+		<Pieces>SDK_XPPerc</Pieces>
+		<Pieces>SDK_XPPercLabel</Pieces>
+		<Pieces>SDK_XPPercPercLabel</Pieces>
+
+Rinse and repeat for AA xp.
+
+This is from memory of what I did to mine.  I actually
+edited my group window to have my health with my groupmates
+(so they are listed in order) my mana/fatigue, target name
+and health and my xp/aa percentages.  By getting rid of the 
+invite/disband/lfg buttons my window is just barely bigger
+than the default window, but I can close the player window and
+target window and save all that space.
+
+-- 
+Arch Convoker Mairelon Snapbang of Lanys T'vyl
+
+http://www.magelo.com/eq_view_profile.html?num=701866
+
+

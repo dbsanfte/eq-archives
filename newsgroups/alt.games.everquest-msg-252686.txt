@@ -1,0 +1,130 @@
+From 3328202234810212386
+X-Google-Thread: fb739,4f2f3d5a3a8522d
+X-Google-Attributes: gidfb739,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news1.google.com!news.glorb.com!border1.nntp.dca.giganews.com!nntp.giganews.com!newsfeed.cwix.com!feed.news.qwest.net!news.uswest.net.POSTED!not-for-mail
+Newsgroups: alt.games.everquest
+Subject: Re: Demise as a business model?
+From: Sean Kennedy <x@y.z>
+References: <40d34642$0$32617$a1866201@newsreader.visi.com> <30m6d0hk8m1jkdntlt5cag94s3h240mm34@4ax.com> <40d45662$0$32608$a1866201@newsreader.visi.com> <cvuad0l8isolnc7hunpitidsk5ntsjekcd@4ax.com> <40d59918$0$30603$a1866201@newsreader.visi.com> <da3fd01qek91ombafjghrvi5aop66aar0n@4ax.com> <40d83e61$0$30597$a1866201@newsreader.visi.com> <Xns951087BD4C3E2xyz@207.225.159.8> <18qhd0pj7nl06eb9mcmhifgh491ks1i54j@4ax.com> <Xns9510D268E57B4xyz@207.225.159.7> <4cspd0hak2e1rlqcdr5vockioqou6vor99@4ax.com>
+Message-ID: <Xns951439BEFA36Axyz@207.225.159.8>
+User-Agent: Xnews/5.04.25
+Lines: 110
+Date: Sat, 26 Jun 2004 13:25:48 GMT
+NNTP-Posting-Host: 63.224.250.201
+X-Trace: news.uswest.net 1088256348 63.224.250.201 (Sat, 26 Jun 2004 08:25:48 CDT)
+NNTP-Posting-Date: Sat, 26 Jun 2004 08:25:48 CDT
+Xref: g2news1.google.com alt.games.everquest:7964
+
+D.J. <jolly73@boingcableone.net> wrote in 
+news:4cspd0hak2e1rlqcdr5vockioqou6vor99@4ax.com:
+
+> 
+> Sean Kennedy <x@y.z> wrote:
+>] Nah - we just like seeing morons thrash after they make stupid
+>] claims here.  Your complete ignorance of the difference between
+>] highly parallel, floating point intensive applications and the
+>] linear, mostly integer nature of the eq client (not including
+>] the the graphics which are already off loaded to a parallel
+>] piece of hardware), coupled with your belligerent posing and
+>] insistence on calling other people morons just made my day.
+> 
+> I don't know you, or anyone else's, computer skills in this
+> newsgroup. So I asked someone whose computer skills I do know about.
+> He said an emulation of a PC on a Cray would depend on how it was
+> done. Its not an either/or situation. If the company hiring someone
+> to do it hired a mediocre programmer and that person did it in C++,
+> it would be slower on the Cray, depending on the Cray. If the
+> programmer hired was top-notch, and did it in native machine
+> language, the emulation on the Cray would be faster than the speed
+> the PC ran.
+> 
+> So I was almost correct.
+> 
+> JimP.
+
+Hmmm - one of the old school types who thinks you can
+still beat a good optimizing compiler by writing the
+assembler yourself - not that you can't, just that it's
+hard, time consuming and ultimately barely worth the 
+time and effort.
+
+For the graphics library I wrote in the mid-90's 
+(the exact date escapes me, but a pentium 200 MMX
+was the top end processor) my profiling showed that
+over 85% of the cycles were in the inside loops that
+actually did the rotated/scaled/alpha blended blit
+from the RLE compressed, 8bit images to the 16 bit
+surface.
+
+This was a classic "90% of the cycles are in 10% of
+the code" situation where you get great bang for 
+the buck in spending time optimizing that code.  With
+the help of some really talented programmers from
+rec.arts.game.programming I rewrote the inside loops
+in assembler.  I optimized it to allow both pipes
+to retire an instruction as frequently as possible
+(There were 2 pipes in the pentium, one was limited
+use - there was a limited subset of instructions it
+would handle).  I also optimized the lookup tables so
+that they would fit in cache all at once, in an effort
+to reduce hits to main memory.  I even went a step
+further and performed the operations 2 at a time on
+32bit chunks so that I never did anything but quad
+word accesses to the surface.  (Since I needed to 
+read the existing pixels on the surface for the alpha
+blended stuff, I built the screen in main memory,
+then used fastblt() to move it to the card.  Since
+most late 2d cards had hardware to do this, this was
+a very fast, non-CPU intensive operation)
+
+All of that, with separate execution paths for the
+3 main flavors of 16bit depth graphics, and I achieved
+a 3% increase in the number of blitted sprites per
+second over the code the compiler wrote. 
+
+When it comes to scheduling for multiple pipelines, much
+less multiple processors with vector units (like MMX, 
+3d Now and the Multimedia extensions on the Pentium family)
+I'm pretty sure I couldn't achieve much, if any, advantage
+over a really good compiler.  Those who can are only going 
+to achieve a few percent advantage by working on the bare
+metal.  At the same time they lose the huge advantage in
+portability that staying in C++ would give them.
+
+An example of that is the new AMD Opteron (64bit) processors.
+They can run old 32bit apps without much improvement in speed,
+but a simple recompile with a 64bit optimizing compiler shows
+10-15% speed increases without needing to rewrite code.  Yet,
+the assembler needs to be rewritten to take advantage of it.
+(this is under a 64bit native code OS, such as Linux)
+
+For the record I not only have over 20 years of programming
+experience, but also a formal education which included x86
+assembler (on an 80186 based Xenix machine :-/) but also 
+compiler theory/design.  (both required back then).
+
+My assembler programming experience started with 6502 and
+6510 processors (Apple and C64), x86 and 68k processors
+(the Xenix box and the Amiga - including time with the 040
+on my 4000).
+
+Of course, then the ultimate indignity hit - 3d boards became
+common as dirt.  You know the fastest way (and with only a few
+lines of code) to do a rotated/scaled/blended blit from an
+8bit image to 16 or 24 or 32 bit surface?  Make a polygon,
+attach the image as a texture and have the card do it.  All that
+assembler was replaced by just a couple of pages of high-level code using
+DX3 (D3d immediate mode).  It ran way faster from the beginning
+and left massive cycles free on the CPU.
+
+That's progress.
+-- 
+Arch Convoker Mairelon Snapbang
+Feral Lord Bosra Snowclaw
+  Vacationing in the south of Faydwer
+  for the forseeable future.
+
+an Laoch,  8th Level Tanker
+
+

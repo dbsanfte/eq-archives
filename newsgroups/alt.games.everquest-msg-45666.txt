@@ -1,0 +1,57 @@
+From -4462015277853311513
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,73694c9db2730782
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2001-09-29 15:00:27 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!nntp.cs.ubc.ca!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!feed2.news.rcn.net!rcn!dca6-feed2.news.digex.net!intermedia!newsfeed1.cidera.com!Cidera!cyclone.tampabay.rr.com!news-post.tampabay.rr.com!typhoon.tampabay.rr.com.POSTED!not-for-mail
+From: "kasjdflkjslakdf" <newsmail@adenine.yi.org>
+Newsgroups: alt.games.everquest
+References: <1001728799.28762.0.nnrp-13.9e984627@news.demon.co.uk> <rzct7.239042$aZ.45227798@typhoon.tampabay.rr.com> <1001764893.10789.0.nnrp-10.9e984627@news.demon.co.uk>
+Subject: Re: EQ and Linux IP Masquerading.
+Lines: 31
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Message-ID: <_vrt7.255992$8c3.44710149@typhoon.tampabay.rr.com>
+Date: Sat, 29 Sep 2001 22:00:26 GMT
+NNTP-Posting-Host: 65.33.153.97
+X-Complaints-To: abuse@rr.com
+X-Trace: typhoon.tampabay.rr.com 1001800826 65.33.153.97 (Sat, 29 Sep 2001 18:00:26 EDT)
+NNTP-Posting-Date: Sat, 29 Sep 2001 18:00:26 EDT
+Organization: RoadRunner - Central Florida
+Xref: archiver1.google.com alt.games.everquest:121933
+
+David Navarro wrote...
+> Mandrake 8, and to my eternal embarrassment, I totally let it set itself
+> up. :) I've done it the hard way a few times, with freeBSD and Red Hat 4,
+> but as I get older, I find that I'm more and more willing to let the OS do
+> the work.
+>
+> Then again, the problem may not be with EQ. After a reboot, it looks like
+> the connection sharing has fritzed. The machines can ping each other, and
+I
+> can see apache in the Linux box, but I have no more access to the web from
+> the Windows box. Man, I really do hate computers some times.
+>
+
+Here is simple firewall script that should work fine:
+#!/bin/sh
+# Enable IP forwarding
+echo 1 > /proc/sys/net/ipv4/ip_forward
+# Masquerade connections from 192.168.1.x to anywhere
+# on the outside network (where eth0 is the external interface)
+iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -d 0.0.0.0/0 -j
+MASQUERADE
+
+That's pretty insecure so you may want to read a Firewall-HOWTO or
+IP-Masquerade-HOWTO from www.linuxdoc.org and add more.
+
+There isn't a whole lot to screw up in configuring the Windows computer.
+Just set the IP of the Ethernet card to something like 192.168.1.2, subnet
+mask 255.255.255.0, and default gateway to whatever the IP of your Linux
+computer's internal Ethernet card is.
+
+
+
+

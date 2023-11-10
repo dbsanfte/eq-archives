@@ -1,0 +1,64 @@
+From 1303469954798804311
+X-Google-Thread: fb739,e8c870460b33ec74
+X-Google-Attributes: gidfb739,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news1.google.com!news3.google.com!newshub.sdsu.edu!elnk-nf2-pas!newsfeed.earthlink.net!stamper.news.pas.earthlink.net!newsread1.news.pas.earthlink.net.POSTED!00d81f24!not-for-mail
+Newsgroups: alt.games.everquest
+From: Tim Smith <reply_in_group@mouse-potato.com>
+Subject: Re: [EQ1] AA EXP and Splitting.
+References: <4298c0d9.1414640@newsgroups.bellsouth.net> <N39me.154$iy2.124@newsfe1-gui.ntli.net> <slrnd9ie2e.2n5.faned@wyld.qx.net> <Bajme.651$ci4.76@newsfe6-win.ntli.net> <slrnd9p8vh.2n5.faned@wyld.qx.net>
+Organization: Institute of Lawsonomy, Department of Suction and Pressure
+User-Agent: slrn/0.9.7.4 (OS/2 for ENIAC)
+Lines: 42
+Message-ID: <Y32oe.334$HM.225@newsread1.news.pas.earthlink.net>
+Date: Fri, 03 Jun 2005 19:20:24 GMT
+NNTP-Posting-Host: 69.34.217.150
+X-Complaints-To: abuse@earthlink.net
+X-Trace: newsread1.news.pas.earthlink.net 1117826424 69.34.217.150 (Fri, 03 Jun 2005 12:20:24 PDT)
+NNTP-Posting-Date: Fri, 03 Jun 2005 12:20:24 PDT
+Xref: g2news1.google.com alt.games.everquest:35987
+
+In article <slrnd9p8vh.2n5.faned@wyld.qx.net>, Faned wrote:
+>> > What is 50% of 3 exp?
+>>
+>> 1.5exp?
+> 
+> Not in a system of "integers" (which is almost definitely what is used,
+> both for efficiency in the CPUs kicking them around and for the
+> pre-determined finite space they consume in a database) it isn't.
+
+This reminds me of a clever hack that was used in many Intellivision games.
+The position of moving objects was stored as integer x and y coordinates,
+and the velocity was stored as fixed point value.
+
+If you are just storing current position and velocity (in pixels per tick),
+and updating position each tick with the obvious formula,
+
+    new_x = old_x + x_vel
+    new_y = old_y + y_vel
+
+you end up with the object getting forced to move straight vertical or
+horizontal if x_vel or y_vel is less than 1 pixel/tick.  If both the x
+and y velocity components are low (less than 2 pixels/tick), the object can
+only move in 8 directions.  This is quite noticable and ugly.
+
+We didn't have enough RAM to store all the positions in fixed point--there
+were only 168 words of RAM in the thing.
+
+So, the trick was to generate a random fractional x and y position before
+doing the position update.  That is, the update formulat becomes this:
+
+    new_x = old_x + random + x_vel
+    new_y = old_y + random + y_vel
+
+So, consider what happens when an object has an x_vel of, say, 1/4
+pixel/tick.  3/4 of the time, the random value is < 3/4, and new_x is the
+same as old_x.  1/4 of the time, the random value will be >= 3/4, and adding
+the velocity of 1/4 to that will be >= 1, and new_x will be old_x+1.  So,
+basically, a velocity of 1/4 pixel/tick ends up meaning that there is a 1/4
+chance on any given tick of the coordinate changing.
+
+-- 
+--Tim Smith
+
+

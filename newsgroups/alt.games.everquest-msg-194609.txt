@@ -1,0 +1,201 @@
+From 8731278208174972422
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,99150ddd3abad77d,start
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2003-04-27 18:17:42 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!wn14feed!worldnet.att.net!207.217.77.102!newsfeed2.earthlink.net!newsfeed.earthlink.net!stamper.news.pas.earthlink.net!newsread1.prod.itd.earthlink.net.POSTED!not-for-mail
+From: "Chris" <Dranai@REMOVEearthlink.net>
+Newsgroups: alt.games.everquest
+Subject: OT: Assembly Code
+Lines: 176
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2720.3000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Message-ID: <3h%qa.43164$ey1.4012483@newsread1.prod.itd.earthlink.net>
+Date: Mon, 28 Apr 2003 01:15:43 GMT
+NNTP-Posting-Host: 63.49.117.25
+X-Complaints-To: abuse@earthlink.net
+X-Trace: newsread1.prod.itd.earthlink.net 1051492543 63.49.117.25 (Sun, 27 Apr 2003 18:15:43 PDT)
+NNTP-Posting-Date: Sun, 27 Apr 2003 18:15:43 PDT
+Organization: EarthLink Inc. -- http://www.EarthLink.net
+Xref: archiver1.google.com alt.games.everquest:278976
+
+I know this is very off topic, but I know that very computer literate people
+look here often and there aren't any english speaking newsgroups for
+assembler code that I could find, so I was hoping someone would have some
+kindness and tell me what exactly isn't working on this assembly code.
+
+(Btw, if it makes a difference, I didn't just stop by for the help, I used
+to post under 'Snaredmyself' and a few others as the times change.. again, I
+know i'm gonna be flamed, but it may be worth it if someone solves this
+   ).
+
+The code is a reverse polish notation evaluation. (basically goes through
+postfix mathamatical expression and solves it).  The problems are:
+
+The code compiles and works, all except  the last time through the loop (L1:
+in RPN), and the div is giving an integer overflow which I don't know how to
+handle.  I don't really have to handle it, just make it so it doesn't
+happen.. (not error checked, just fixed).  It only goes through the first
+expression, not the second (not an error, I haven't set it to go through the
+second yet.
+
+Well, thanks to anyone who looks!
+
+Code:
+
+.386
+.model flat, stdcall
+.stack 100h
+DumpMem PROTO
+DumpRegs PROTO
+ExitProcess PROTO, dwExitCode:dword
+
+;-------------------------------------------------------------------
+
+.data
+Variables  DWORD  17,   ;A
+       12,   ;B
+       4,   ;C
+       10,   ;D
+       5   ;E
+
+Expression  BYTE  "AB-C*DE-/" ;Expression evaluation. =4.
+Expression2  BYTE  "AB-CD*+E/" ;Expression evaluation. =9.
+temp   DWORD  ?
+
+;-------------------------------------------------------------------
+
+.code
+
+main proc
+
+ call  DumpRegs
+
+ mov   esi,  OFFSET Expression
+ mov   edx,  OFFSET Variables
+ mov   ecx,  LENGTHOF Variables
+
+ call  RPN
+
+ call  DumpRegs
+
+ invoke  exitprocess, 0   ;Graceful Exit
+main endp
+
+;-------------------------------------------------------------------
+
+RPN Proc
+; Returns in EAX
+; Receives Evaluation String Offset in ESI.
+; Receives Lengthof Evaluation String in ECX.
+; Receives Variable Offset in EDX.
+; Calculates Reverse Polish Notation on passed string.
+
+L1:
+
+ movzx   ebx,  BYTE PTR [esi]
+ inc   esi
+
+ call  isOp
+
+ cmp eax, 0
+  je PushVar ; If variable, jump to PushVar.
+  jmp DoOp ; Else (if operator), jump to DoOp.
+
+Lloop:
+ loop L1
+
+ jmp Done  ; Done evaluating.
+
+PushVar:
+ push [edx]
+ add   edx,  4   ;Inc var ptr by 4 (dword).
+ jmp Lloop
+
+DoOp:
+
+ cmp   ebx,  '+'
+  je  ADDITION
+ cmp   ebx,  '-'
+  je  SUBTRACTION
+ cmp   ebx,  '*'
+  je  MULTIPLICATION
+ cmp   ebx,  '/'
+  je  DIVISION
+
+ADDITION:
+
+ pop temp
+ pop eax
+ add   eax,  temp
+ push eax
+ jmp Lloop
+
+SUBTRACTION:
+
+ pop temp
+ pop eax
+ sub   eax,  temp
+ push eax
+ jmp Lloop
+
+MULTIPLICATION:
+
+ pop temp
+ pop eax
+ push edx
+ imul temp
+ pop edx
+ push eax
+ jmp Lloop
+
+DIVISION:
+
+ pop temp
+ pop eax
+ push edx
+ div temp
+ pop edx
+ push eax
+ jmp Lloop
+
+Done:
+
+ pop   eax
+ call  DumpRegs
+
+ ret
+RPN endp
+
+;-------------------------------------------------------------------
+
+isOp Proc
+; Returns in EAX
+; Receives Character to analyze in EBX.
+; returns 0 if variable, 1 if register.
+
+ cmp ebx, 41h
+  jb L1
+  jmp L2
+L1:
+ mov   eax,  1
+ jmp L3
+
+L2:
+ mov   eax,  0
+ jmp L3
+
+L3:
+ ret
+
+isOp endp
+;-------------------------------------------------------------------
+
+end main
+
+
+
+
+

@@ -1,0 +1,155 @@
+From -7641420425451564703
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,8eadd2dd31d7583e
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2002-03-17 19:27:41 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!netnews.com!xfer02.netnews.com!newsfeed1.cidera.com!Cidera!cyclone.tampabay.rr.com!cyclone.austin.rr.com!typhoon.austin.rr.com.POSTED!53ab2750!not-for-mail
+From: dcd@firstnethou.com (Dan Day)
+Newsgroups: alt.games.everquest
+Subject: Re: How do the new (non) hell levels work?
+Message-ID: <3c9645d5.174722892@news-server.houston.rr.com>
+References: <a70t8i$dkf$1@news.xmission.com> <3c95fd4a.90603348@news-server.houston.rr.com> <UMUk8.2413$BP1.1368@nwrddc04.gnilink.net>
+X-Newsreader: Forte Agent 1.01/32.397
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Lines: 129
+Date: Mon, 18 Mar 2002 03:25:25 GMT
+NNTP-Posting-Host: 66.25.13.184
+X-Complaints-To: abuse@rr.com
+X-Trace: typhoon.austin.rr.com 1016421925 66.25.13.184 (Sun, 17 Mar 2002 21:25:25 CST)
+NNTP-Posting-Date: Sun, 17 Mar 2002 21:25:25 CST
+Organization: Road Runner - Texas
+Xref: archiver1.google.com alt.games.everquest:176506
+
+On Sun, 17 Mar 2002 04:16:52 GMT, "Wolfie" <bgbdwolf@gte.net> wrote:
+>
+>> This is presuming the "adjust" hell levels the same way they
+>> "removed" the old hybrid experience penalty, which I think is
+>> likely.
+>
+>I find that method unlikely, myself.
+
+Let's check your reasons...
+
+
+>"Hell levels" are the result of a new multiplier.  The new
+>multiplier that takes effect at 30, for instance, has to
+>be applied to the XP in levels 31 through 34 as well.
+>(It shifts again at 35, obviously.)
+
+Correct.
+
+
+>So it's not just a question of applying a constant (or even
+>a shifting) multiplier to XP earned during those levels.
+
+You're right in that you couldn't apply a constant, but
+you could certainly apply a shifting multiplier.  Start
+with:
+
+    OLDEXP(n) = amount of exp it currently takes
+                to get through level "n".
+
+Decide on:
+
+    NEWEXP(n) = amount of exp it would take to get through
+                level "n" under an "ideal" exp curve
+                that has no hell levels, but which
+                has the same exp from 1-50 as the
+                old (current) 1-50 curve.
+
+(Actually, for 10-50, since they've said they're speeding
+up the trip from 1-10 somewhat -- but this method can
+accommodate that easily without extra code, just lower
+the "NEWEXP" table entries for 1-10, and it all works out.)
+
+Calculate:
+
+   MULT(n) = OLDEXP(n)/NEWEXP(n) = multiplier for
+               level "n" which, when applied to each
+               dose of exp as you earn it, would make
+               your leveling act as if it were calculated
+               using the NEWEXP curve instead of the OLDEXP
+               curve.
+
+Note that the MULT table is pre-calculated once, takes
+up only 60 slots of memory, applies to all classes/races,
+and would be pre-programmed into the server code.  It
+doesn't need to be recalculated on the fly, it's just a
+single table lookup (based on level) which yields the
+multiplier to be applied to any exp you earn.
+
+It works in pretty much the same way as the "class-based
+penalty nullifier" multipliers that they already added
+to the code, and in fact would be applied at the same
+places in the code, making it easy for the programmers
+to ensure that they've got all the cases covered (just
+repeat what they had done previously, in the same
+spots).
+              
+It would work just fine.
+
+
+>  If
+>they did it that way, they'd drastically shorten the amount
+>of kills needed to advance from 30 through 50, something
+>they say they're not doing.
+
+10-50, you mean.  The only 1-30 exp change is for
+dungeons, which will be handled via the ZEM (Zone
+Experience Modifier) code, not the "every time you
+get exp" code.
+
+No, it wouldn't change the amount of required kills,
+because the multipliers for the non-hell levels would end
+up being less than 1, while the multipliers for the
+current hell levels would be greater than 1.  Over 10-50,
+they would average out the same.
+
+
+>It's far more likely, IMO, that they've just phased in the
+>multipliers.  Instead of moving from 1.0 to 1.1 at 30, for
+>instance, they'll most likely move to 1.02 (random number
+>there) at 25 (something not likely to be noticed) and 1.04
+>at 26, etc, so that the XP curve appears smooth.   Then all
+>that has to be done is to translate current XP for everyone
+>affected to the new XP curve so that they don't log in and
+>see a shift in their XP bar and/or level.
+
+That would have been the method I would have chosen to
+do remove the hybrid exp penalties as well, *but* they
+chose not to handle it that way.  From what I've gathered,
+the reasons were:
+
+1.  It would take a hell of a long time to process the
+character databases for literally millions of characters
+and twiddle absolutely everyone's current exp numbers.
+
+2.  It would just be asking for trouble, like corrupted
+databases, messed-up exp numbers for some people, etc.
+For example, what happens if the computer crashes while
+it's halfway through diddling the character records?
+
+3.  Restores would be a nightmare.  Every time someone's
+character had a problem and had to be restored from a
+pre-tweak backup, the restore process would have to
+re-tweak their exp on the fly.
+
+I'm sure there are other reasons I haven't heard about.
+
+For whatever reason, they decided that an "as you earn it"
+multiplier kludge was the most desirable way to handle
+the class-based exp penalties, instead of doing it the
+way the you have suggested.   Thus, I'd be willing to bet
+that they'll be handling the "reshaping" of the level
+curve the same way.
+
+Additionally, having 60 separate level-exp multipliers
+already programmed in will then give them future flexibility
+to easily tweak the level curve any time they feel like
+it, which would not be the case if they had just
+"reset" everyone's exp to fit a new curve.
+
+
+

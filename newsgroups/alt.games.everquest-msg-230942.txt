@@ -1,0 +1,215 @@
+From 2353109508436334746
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,18f8d0db9993f383
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2004-01-07 09:39:29 PST
+Path: archiver1.google.com!postnews1.google.com!not-for-mail
+From: freeload101@yahoo.com (freeload101)
+Newsgroups: alt.games.everquest
+Subject: Re: macroquest hack mqauth.exe
+Date: 7 Jan 2004 09:39:27 -0800
+Organization: http://groups.google.com
+Lines: 191
+Message-ID: <55cdc1f3.0401070939.27e60286@posting.google.com>
+References: <55cdc1f3.0401070021.777dba19@posting.google.com>
+NNTP-Posting-Host: 65.80.70.229
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: posting.google.com 1073497169 13045 127.0.0.1 (7 Jan 2004 17:39:29 GMT)
+X-Complaints-To: groups-abuse@google.com
+NNTP-Posting-Date: Wed, 7 Jan 2004 17:39:29 +0000 (UTC)
+Xref: archiver1.google.com alt.games.everquest:14534
+
+dont know how the code will fair with format but here is a .bat
+autocompile and bin requires winrar and .NET to run
+
+AIM= freeload101 ( I am in no way condoning the disto of bins for MQ I
+just dont want to have to run some gay exeauth crap every time I want
+to run it on a diff computer )
+
+
+================================================
+
+@echo off
+REM operat0r's MQ UPDATER 1.6B " with mq2auth workaround "
+
+set rarpath="C:\Program Files\WinRAR\WinRAR.exe" 
+
+@SET VSINSTALLDIR=E:\Microsoft Visual Studio .NET\Common7\IDE
+@SET VCINSTALLDIR=E:\Microsoft Visual Studio .NET
+@SET FrameworkDir=C:\WINNT\Microsoft.NET\Framework
+@SET FrameworkSDKDir=E:\Microsoft Visual Studio .NET\FrameworkSDK
+
+echo Please check your paths to match your installed folder
+echo or nmake will not  properly
+echo -------------------------------- 
+echo %VSINSTALLDIR%
+echo %VCINSTALLDIR%
+echo %FrameworkDir%
+
+echo --------------------------------
+echo Current MQ Client Version
+echo --------------------------------
+type .\MQBIN\eqgame.ini | find "ClientVersion"
+if not exist .\MQBIN\eqgame.ini  echo NO eqgame.ini please download
+and compile Latest ZIP
+echo --------------------------------
+
+pause
+
+
+@if "%VSINSTALLDIR%"=="" goto Usage
+@if "%VCINSTALLDIR%"=="" set VCINSTALLDIR=%VSINSTALLDIR%
+
+@rem
+@rem Root of Visual Studio ide installed files.
+@rem
+@set DevEnvDir=%VSINSTALLDIR%
+
+@rem
+@rem Root of Visual C++ installed files.
+@rem
+@set MSVCDir=%VCINSTALLDIR%\VC7
+
+
+
+@REM %VCINSTALLDIR%\Common7\Tools dir is added only for real setup.
+
+@set PATH=%DevEnvDir%;%MSVCDir%\BIN;%VCINSTALLDIR%\Common7\Tools;%VCINSTALLDIR%\Common7\Tools\bin\prerelease;%VCINSTALLDIR%\Common7\Tools\bin;%FrameworkSDKDir%\bin;%FrameworkDir%\%FrameworkVersion%;%PATH%;
+@set INCLUDE=%MSVCDir%\ATLMFC\INCLUDE;%MSVCDir%\INCLUDE;%MSVCDir%\PlatformSDK\include\prerelease;%MSVCDir%\PlatformSDK\include;%FrameworkSDKDir%\include;%INCLUDE%
+@set LIB=%MSVCDir%\ATLMFC\LIB;%MSVCDir%\LIB;%MSVCDir%\PlatformSDK\lib\prerelease;%MSVCDir%\PlatformSDK\lib;%FrameworkSDKDir%\lib;%LIB%
+
+@goto end
+
+:Usage
+
+@echo. VSINSTALLDIR variable is not set. 
+@echo.
+@echo SYNTAX: %0
+
+@goto end
+
+:end
+
+
+
+
+
+if not exist %rarpath% goto norar
+
+
+
+
+echo Check the date to see if the latest zip has changed and download
+it to that same folder as this BAT
+
+pause
+
+
+
+start http://macroquest.sourceforge.net/downloads/?M=D
+
+pause
+
+
+echo "Extracting"
+rmdir /s/q  MQ2-Latest
+mkdir MQ2-Latest
+
+%rarpath% x -o+ MQ2-Latest.zip ./MQ2-Latest/
+
+cd MQ2-Latest
+
+MQ2Auth.exe
+
+nmake 
+
+del .\Release\*.exp
+del .\Release\*.lib
+del .\Release\*.map
+del .\Release\*.pdb
+
+cd ..
+
+mkdir MQBIN
+
+xcopy /s .\MQ2-Latest\Release .\MQBIN
+echo Backing up Regisrty Keys to file .\MQBIN\your_exe_reg_patch.reg
+
+START REGEDIT /E .\MQBIN\your_exe_reg_patch.reg
+"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+
+echo Writeing Registry patch ...
+
+echo echo operat0r's registry key backup and restore program >
+.\MQBIN\!Runmefirst.bat
+echo echo ================================================================
+>> .\MQBIN\!Runmefirst.bat
+echo echo DO NOT RUN THIS IF YOU HAVE WIN2k_MQ2_patch.reg CURRENTLY
+LOADED !!! OR THIS WILL OVERWRITE YOUR BACKUP TO MY REGPATCH >>
+.\MQBIN\!Runmefirst.bat
+echo echo ================================================================
+>> .\MQBIN\!Runmefirst.bat
+echo pause >> .\MQBIN\!Runmefirst.bat
+echo pause >> .\MQBIN\!Runmefirst.bat
+
+echo use the your_exe_reg_patch.reg to restore your computer back to
+the origonal setting >> .\MQBIN\!Runmefirst.bat
+echo use the your_exe_reg_patch.reg for your compiled EXE >>
+.\MQBIN\!Runmefirst.bat
+echo use the WIN2k_MQ2_patch.reg for you MY compiled EXE >>
+.\MQBIN\!Runmefirst.bat
+
+echo START REGEDIT /E .\your_exe_reg_patch.reg
+"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion" >>
+.\MQBIN\!Runmefirst.bat
+"C:\Program Files\WinRAR\WinRAR.exe" a macroquest2.rar .\MQBIN
+
+goto exit1
+
+
+
+
+
+:norar 
+
+
+ 
+echo %rarpath% is a invalid path please set devenv in update.bat 
+echo "Searching for the path to your WinRAR.exe" 
+echo you can download winrar at http://www.rarlab.com/ 
+if exist c: dir/s/b c:\WinRAR.exe 
+if exist d: dir/s/b d:\WinRAR.exe 
+if exist e: dir/s/b e:\WinRAR.exe 
+if exist f: dir/s/b f:\WinRAR.exe 
+if exist g: dir/s/b g:\WinRAR.exe 
+if exist h: dir/s/b h:\WinRAR.exe 
+
+
+
+pause 
+ 
+goto exit1
+
+
+:exit1
+Echo Macroquest exe checks these keys to match the one in the program
+echo I have included my reg patch with a your_exe_reg_patch.reg of
+your current settings !!
+echo Run the your_exe_reg_patch.reg when you are done playing MQ
+
+echo ===============================
+
+echo [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion]
+echo "ProductName"
+echo "RegisteredOrganization"
+echo "RegisteredOwner"
+echo "SystemRoot"
+echo "ProductId"
+
+
+start explorer .\MQBIN
+
+===========================================
+
+

@@ -1,0 +1,74 @@
+From -3663267199535246776
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,dc87f93e006631ac
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2002-04-20 23:37:22 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!newsfeed1.cidera.com!Cidera!cyclone.tampabay.rr.com!news-post.tampabay.rr.com!typhoon.tampabay.rr.com.POSTED!not-for-mail
+From: "kasdfkjksdf" <root@adenine.yi.org>
+Newsgroups: alt.games.everquest
+References: <adm4cuc4eph0hfpd3tguu79jiaq13m1gl4@4ax.com>
+Subject: Re: Could someone plz post everquest?
+Lines: 48
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Message-ID: <B6tw8.272400$K52.42325510@typhoon.tampabay.rr.com>
+Date: Sun, 21 Apr 2002 06:37:21 GMT
+NNTP-Posting-Host: 65.33.154.157
+X-Complaints-To: abuse@rr.com
+X-Trace: typhoon.tampabay.rr.com 1019371041 65.33.154.157 (Sun, 21 Apr 2002 02:37:21 EDT)
+NNTP-Posting-Date: Sun, 21 Apr 2002 02:37:21 EDT
+Organization: RoadRunner - Central Florida
+Xref: archiver1.google.com alt.games.everquest:188484
+
+Kat wrote...
+Absolutely nothing.
+
+#!/usr/bin/perl
+# geteq - by kasdfkjksdf
+# Released under the GPL http://www.gnu.org/licenses/gpl.html
+
+`wget
+http://patch.everquest.com:7000/patch/everquest/everquest-changes.xml`;
+open(IN, 'everquest-changes.xml') or die "Couldn't get file list.\n";
+
+$/ = '>';
+$i = 0;
+
+while (<IN>)
+{
+ if (/File.*Name="(.*?)".*/)
+ {
+  if ($download eq 'y')
+  {
+   $files[$i] = "$path/$1";
+   $i++;
+  }
+ }
+ elsif (/Directory.*RemotePath="(.*?)".*/)
+ {
+  $path = "http://patch.everquest.com:7000/$1";
+ }
+ elsif (/Distribution.*Title="(.*?)".*/)
+ {
+  print "Download $1? (y/n): ";
+  $/ = "\n";
+  $download = <STDIN>;
+  chomp $download;
+  $/ = '>';
+ }
+}
+
+`rm -f everquest-changes.xml`;
+
+for ($i=0; $i<=$#files; $i++)
+{
+ `wget $files[$i]`;
+ $files[$i] =~ /\/([^\/]*?.gz)$/;
+ `gunzip $1`;
+}
+
+
+
+

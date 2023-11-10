@@ -1,0 +1,56 @@
+From -6872388472721973518
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,5842166704e9358f
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2001-08-29 15:58:11 PST
+Path: archiver1.google.com!newsfeed.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!news-xfer.siscom.net!sn-xit-04!supernews.com!news.airnews.net!cabal10.airnews.net!207.136.37.115.MISMATCH!news.airnews.net!cabal11.airnews.net!cabal1.airnews.net!news-f.iadfw.net!usenet
+From: Tim Smith <reply_in_group@mouse-potato.com>
+Newsgroups: alt.games.everquest
+Subject: Re: Underground Hill Giants in EK
+Date: Wed, 29 Aug 2001 15:58:26 -0700
+Organization: TSCNET, Inc. (using Airnews.net!)
+Lines: 29
+Message-ID: <D6412B0124B20AE1.171F333490B85D18.2B0966FF1A7D9C70@lp.airnews.net>
+X-Orig-Message-ID: <b7sqots4j1qcevg9s5d6kmnf9oclcura1g@4ax.com>
+References: <_5_i7.2833$Fv3.261615@newsread2.prod.itd.earthlink.net> <o75qot8nkuoutmeaqtauhng9nvarruhju5@4ax.com>
+Abuse-Reports-To: abuse at tscnet.com to report improper postings
+NNTP-Proxy-Relay: library1-aux.airnews.net
+NNTP-Posting-Time: Wed Aug 29 17:57:23 2001
+NNTP-Posting-Host: !\'H]1k-VN:tM=l (Encoded at Airnews!)
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Newsreader: Forte Agent 1.8/32.548
+Xref: archiver1.google.com alt.games.everquest:113139
+
+dstep <dstep@babaloo.com> wrote:
+>Its something verant should fix but maybe they can't easily, like
+>they'd have to rebuild the zone. Really they should implement player
+>like code.. if a player is underground they are moved to the safe spot
+>should do the same for mobs.
+
+Yeah, they could fix it pretty easily.  Underground mobs are usually
+well below the lowest spot in the zone, so a simple periodic
+
+	if ( mob->z < zone->lowest_z )
+		mob->z += 1000;
+
+would do the trick.  It would be entertaining, too, as mobs that get
+under the world would then fall from the sky.  Note that since mobs
+don't take falling damage, they would not even have to move them to a
+safe spot.  They just have to get them above the world and let them
+fall.
+
+If they are reluctant to add any periodic code to the server, the
+other way to fix this is to let the client do most of the work.  The
+EQ server sends to every player in the zone the position of every mob.
+That's how ranger/druid/bard tracking works: everything is sent, and
+then the client checks your skill and position, and decides what to
+show.  They could make the client do under-the-world checks on nearby
+mobs, and if it finds one under the world, the client could tell the
+server.  The server could then do some verification and reposition the
+mob.
+
+--Tim Smith
+
+

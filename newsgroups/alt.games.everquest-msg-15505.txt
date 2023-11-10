@@ -1,0 +1,132 @@
+From -3860383980269827127
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,492428aba45fac21
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2001-06-16 00:43:15 PST
+Path: archiver1.google.com!newsfeed.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!news.stealth.net!news-east.rr.com!news.rr.com!cyclone.kc.rr.com!news.kc.rr.com!cyclone.austin.rr.com!cyclone2.austin.rr.com!typhoon.austin.rr.com.POSTED!not-for-mail
+From: dcd@firstnethou.com (Dan Day)
+Newsgroups: alt.games.everquest
+Subject: Re: Congrats Conquest
+Message-ID: <3b2c0500.35246570@news-server.houston.rr.com>
+References: <ChxT6.8676$Jg4.819524@news1.telusplanet.net> <9fm9il$m52$1@bob.news.rcn.net> <6QzT6.9065$Jg4.859682@news1.telusplanet.net> <9fohof$eq0$1@bob.news.rcn.net> <3B1FCEB2.EAADC1B4@not.there.anymore.com> <3b230ce5.182912658@news-server.houston.rr.com> <3b33f64a.962192781@news.isomedia.com> <3b2ed066.17909512@news-server.houston.rr.com> <3b39c6fc.1277770484@news.isomedia.com> <3b28c6b2.10235179@news-server.houston.rr.com> <3b2aba63.1536696703@news.isomedia.com>
+X-Newsreader: Forte Agent 1.01/32.397
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Lines: 106
+Date: Sat, 16 Jun 2001 07:27:56 GMT
+NNTP-Posting-Host: 24.162.59.130
+X-Complaints-To: abuse@rr.com
+X-Trace: typhoon.austin.rr.com 992676476 24.162.59.130 (Sat, 16 Jun 2001 02:27:56 CDT)
+NNTP-Posting-Date: Sat, 16 Jun 2001 02:27:56 CDT
+Organization: Road Runner - Texas
+Xref: archiver1.google.com alt.games.everquest:86178
+
+On Sat, 16 Jun 2001 01:52:00 GMT, sang@choenet.com.remove.this.com (Sang K. Choe)
+wrote:
+>>>No they can't.
+>>>Spell stacking code is one the area they've fubarred.  This is why
+>>>there's so many bug around it.
+>>>
+>>>They can't fix it in an instant. 
+>>
+>>Sure they could -- you snipped the part where I told how:
+>
+>Do me a favor, go work on a major software project that's been
+>developed by someone else and then come along and try and change
+>something like buff stacking as implemented.
+
+Been there, done that, countless times.  I've been working
+on "major software projects" for over twenty years.  When I'm
+done the code is usually half the size, runs ten times as
+fast, and resolves bugs that had been plaguing the system for
+years.  Taking out crappy code with a machete and replacing
+it with a finely tuned, maintainable engine is my specialty.
+
+
+>Then go back and see what you broke.
+
+Yes, that's always a risk.  But in my (professional) experience,
+if the code was bad enough to require going in there, ripping
+it out, and replacing it, the new version is usually a lot less
+buggy than the original stuff, even including unexpected
+cross-dependencies with other parts of the code.
+
+
+>>Furthermore, I fail to see why buff stacking is so
+>>damned hard to code.  Give every buff a "class" number.
+>>Buffs with the same class number stack, buffs with
+>>different class numbers don't.
+>
+>No kidding, really?  Never would have thought that.
+>But wait, how about effects that traverse classes?  Or are we gonna
+>limit buffs to just one type of effect and only that effect?
+
+So add a few more fields to the "buff-stacking" table.  At worst,
+you'd end up with buffs that should overwrite each other which
+won't the first time around, which you can then take care of as
+you discover them.
+
+But what sort of weird-ass system do they have there currently
+which would cause a rez effect buff to block a dragon breath effect?
+Blocking should require a positive developer action, not be
+something that can happen by accident.
+
+The code should be written so that buff-stacking is the default
+behavior, not buff-non-stacking.  Since most buffs *don't* interfere
+with each other, it's far simpler to make the "unless otherwise
+specified" behavior to be "any two buffs can co-exist", and then
+have table entries only for the exceptions (i.e., buffs that
+block or overwrite each other).
+
+Or even scrap the current buggy buff system and replace it with
+one where you can have any combination of buffs you want, but
+the largest "effect" of each takes precedence.  So if you get both
+a "skin" buff and a "valor" buff, the highest AC boost of the two
+is the only one that counts, and likewise for the highest HP boost
+of the two.  The Conquest buff-tactic wouldn't help, because the
+dragon-breath slow would be larger than the rez effect slow, and
+that's the one that would be used for melee calculations (and
+likewise for the several other effects that are wrapped up in
+both the dragon breath buff and the rez effect buff -- there's
+no stacking complication if the system doesn't have to do an
+"all or nothing" decision concerning them).
+
+What about multiple HP buffs which do stack, for example?  No
+problem, each would have its own "HP flavor" category, while
+Skin/Valor lines would have "HP flavor chocolate", and not stack
+with each other, Symbol buffs would have "HP flavor vanilla",
+and Talisman would have "HP flavor strawberry" (behind the
+scenes, of course).
+
+This would also cure the annoying cases where, for instance,
+you can't buff yourself because someone else has stuck you with
+a different, incompatible buff.  Being in Kedge Keep, not being
+able to Enduring Breath yourself because someone had given
+you a DMF buff (I think that's the one I had trouble with)
+can be not only annoying, it can be fatal.  Far better to be
+able to EB yourself pre-emptively before the DMF wears out,
+than to have to wait until the DMF *totally* dissipates before
+you can even EB yourself at all.  With the above system,
+your fresh EB would be waiting to take over whenever the
+DMF dropped (which is no different from the practice of
+"freshening up" an existing EB buff to prevent it from
+running out in the middle of a battle, etc.)
+
+Would this solve every desired buff behavior?  Maybe, maybe not,
+but it can easily be extended.  And lord knows the *current*
+system seems to already have been pushed way beyond its
+limitations, so a redesign which keeps in mind all the desired
+buff behaviors is likely to be simpler to code and maintain,
+more flexible, and less buggy than the existing kludge-up.
+
+Give me a design spec of all desired buff behavior, and I'll
+show you a simple algorithm to code it.
+
+
+>If it's a piece of cake to code, code it.
+
+If they want me to, I will.
+
+
+

@@ -1,0 +1,171 @@
+From -5181260090708436073
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,37f06f4efcc62570
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2003-12-29 05:08:52 PST
+Path: archiver1.google.com!postnews1.google.com!not-for-mail
+From: hidone@hotmail.com (Russell)
+Newsgroups: alt.games.everquest
+Subject: Re: A Minor UI Problem? A Solution Found.
+Date: 29 Dec 2003 05:08:51 -0800
+Organization: http://groups.google.com
+Lines: 147
+Message-ID: <ae89e75a.0312290508.1aa1e07@posting.google.com>
+References: <ae89e75a.0312221004.6327add1@posting.google.com>
+NNTP-Posting-Host: 66.192.217.34
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: posting.google.com 1072703332 22885 127.0.0.1 (29 Dec 2003 13:08:52 GMT)
+X-Complaints-To: groups-abuse@google.com
+NNTP-Posting-Date: Mon, 29 Dec 2003 13:08:52 +0000 (UTC)
+Xref: archiver1.google.com alt.games.everquest:13513
+
+hidone@hotmail.com (Russell) wrote in message news:<ae89e75a.0312221004.6327add1@posting.google.com>...
+> With the problems logging onto my regular server, I created a
+> character on The Tribunal server, which actually had let me in, to
+> pass some time.
+> 
+> Problem, albeit irritating and also relatively minor (maybe):
+> 
+> Clicking on the Skills button does nothing. Cannot bring up skills
+> list to examine the current state of the character's skills.
+> 
+> - Used the same custom interface I used on my regular server.
+> - Tried to go back to default, in case the problem was in the custom
+> interface. (It did actually go back to default, though with the layout
+> I had made.)
+> - Tried reloading custom interface again (back and forth a couple
+> times).
+> - Used the Load Skin command available from the game interface
+> (initially used /loadskin xxxxxxxx 1).
+> - Custom interface still works on other characters on regular server.
+> - Created another character on The Tribunal but haven't brought
+> character on (would see if was one of a kind problem) yet.
+> 
+> Nothing worked. Skills list not accessible. Was even dropped off
+> server, when character died, and there was no difference when logged
+> on later.
+> 
+> Any suggestions related to the skills list (and maybe its related xml
+> file) and getting it to pop up when I click on "skill". Or is that a
+> "feature" of The Tribunal server in that you don't know the state of
+> your skills unless you go to a trainer<G>.
+> 
+> Any thoughts or advice would be welcome. I have NO experience with
+> editing XML files so that is kind of out. One thing I will try is to
+> reset the UI back to full default condition including layout.
+> 
+> Btw, in case it helps, I noticed that there was a "Face" button now.
+> The other buttons, AA, destroy, etc. seem to work okay.
+> 
+> Thanks in Advance.
+> 
+> a perplexed mage
+> (this never happened before, sniff.)
+
+I have solved the problem. Albeit maybe in a more complex fashion than
+necessary, but this works for me.
+
+Short version: problem lies in UI_character name_server.ini file in
+the Everquest directory. The width and height of the skill window was
+set to zero [0]. Editing to set the width = 300 and height = 240 fixes
+the problem.
+
+
+Long winded version:
+
+My newly created characters (at least those created after the big
+patch in December) had a similar problem - the skill list button in
+the Inventory window did not bring up the skills list so I were unable
+to check what their skill ratings were.
+
+I had a friend create new characters, to see if the problem was
+related specifically to my computer, and his new characters on two
+different servers also had inoperative skill buttons.
+
+One obvious workaround was to go to the character's guildmaster and
+open up the training window, but that was hardly convenient.
+
+My first effort to find out why new character's skill buttons didn't
+work but older character skill buttons did (and still do) lead me to
+look for INI files in the Everquest directory. The first I came across
+(filename: character name_server.ini) contained info like friends,
+ignore, etc. My search stalled for awhile since nothing in that ini
+file seemed related to the skill list.
+
+By chance, I found additional INI files (filename: UI_character
+name_server.ini) and a search of a ini file with my new character's
+name found the following:
+
+[SkillsWindow]
+XPos1280x1024=0
+YPos1280x1024=0
+Width1280x1024=0
+Height1280x1024=0
+BGTint.red=255
+BGTint.green=255
+BGTint.blue=255
+BGType=1
+Fades=true
+Delay=2000
+Duration=500
+Alpha=255
+FadeToAlpha=255
+Locked=false
+
+I compared that entry with a similar entry from a known working ini
+file:
+
+[SkillsWindow]
+XPos640x480=120
+YPos640x480=200
+Width=300
+Height=240
+BGTint.red=255
+BGTint.green=255
+BGTint.blue=255
+Fades=true
+Delay=2000
+Duration=1000
+Alpha=193
+FadeToAlpha=128
+Locked=false
+XPos1024x768=512
+YPos1024x768=170
+Width1024x768=300
+Height1024x768=240
+BGType=1
+XPos1280x1024=440
+YPos1280x1024=472
+Width1280x1024=300
+Height1280x1024=240
+
+I am sure you can see what the problem is. For some reason, the width
+and height of the skills list window was set to zero [0] width and
+zero [0] height when the character was created.
+
+Had I found the reason the skill button didn't seem to work? When a
+working ini file was examined I found that the width should have been
+300 [pixels] and the height should be 240 [pixels] in my case.
+
+I didn't know if the solution was this simple so I confirmed this by
+editing the new character UI ini file and changed the zero values to
+the corresponding values from the known working file then started
+Everquest and tried to bring up the Skills window which now worked.
+
+Once you can get your cursor on the skills window, you can change its
+position on the screen and resize it.
+
+Be sure to use a ASCII editor, such as notepad, or be sure to save the
+file as a text file.
+
+Keep an original copy of the ini file just in case. It can always be
+deleted later if things work properly.
+
+I suppose that deleting UI_name_server.ini would force the game to
+recreate it, hopefully the reinitialized ini file would have proper
+values for the skill windows instead of zero, zero.
+
+=30=
+
+
