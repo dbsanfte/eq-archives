@@ -1,0 +1,198 @@
+From 577368494376644989
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,8eadd2dd31d7583e
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2002-03-18 08:19:54 PST
+From: Jeremiah Kristal  <jeremiah@shell.inch.com>
+Subject: Re: How do the new (non) hell levels work?
+Newsgroups: alt.games.everquest
+References: <a70t8i$dkf$1@news.xmission.com> <3c95fd4a.90603348@news-server.houston.rr.com> <UMUk8.2413$BP1.1368@nwrddc04.gnilink.net> <3c9645d5.174722892@news-server.houston.rr.com> <vphl8.3692$BP1.2040@nwrddc04.gnilink.net> <3c98053e.223731520@news-server.houston.rr.com>
+User-Agent: tin/pre-1.4-980818 ("Laura") (UNIX) (FreeBSD/2.2.7-19980825-SNAP (i386))
+NNTP-Posting-Host: inch.com
+Message-ID: <3c96139c_2@nntp2.nac.net>
+Date: 18 Mar 2002 11:19:40 -0500
+X-Trace: nntp2.nac.net 1016468380 inch.com (18 Mar 2002 11:19:40 -0500)
+Lines: 178
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!newspeer1.nac.net!nntp2.nac.net!shell.inch.com!jeremiah
+Xref: archiver1.google.com alt.games.everquest:176635
+
+Dan Day <dcd@firstnethou.com> wrote:
+> On Mon, 18 Mar 2002 08:18:35 GMT, "Wolfie" <bgbdwolf@gte.net> wrote:
+>>They can't do that for hell levels:  the new multiplier
+>>applies to the following levels as well.  So they'd have
+>>to multiply all the XP earned by the amount the
+>>multiplier had jumped, which would drastically reduce
+>>the kills required to level from 30 to 60.
+
+> No.  Read my solution again.  It does not change
+> the total exp from 30-60, but it smooths out the
+> hell levels.  Detailed example below.
+
+
+>>That's probably a single field for each character, at
+>>least from the explanations I've seen.  Even with
+>>millions of records, computers are VERY fast when
+>>doing math, even floating point, quickly.   We're not
+>>talking hours;   we're talking minutes per server, at
+>>most.
+
+> I would think so too, but they've said that it just
+> isn't that simple for them to do it that way.  Given
+> the bizarre results (i.e. bugs) that some of their other
+> code changes (which *should* have been simple) have
+> resulted in, I'm tempted to agree with them.
+
+> They seem to have an awful lot of spaghetti code
+> in EQ, and a lot of "the original programmers are gone
+> and we don't really know *how* in the hell this code
+> works, so we just poke it with a stick until we
+> get lucky and rearrange it to do approximately what
+> we want it to do".
+
+
+>>> For example, what happens if the computer crashes while
+>>> it's halfway through diddling the character records?
+>>
+>>The same thing that happens to any other database
+>>that's being updated when the host crashes.  You use
+>>the rollback procedure and start again if doing batch
+>>work.
+
+> You're presuming that they have a modern, hi-tech, 
+> transaction-based database server.  Ha.  Ha.  Ha.
+
+
+>>As for the "corrupted database," how many times a day
+>>do you guess the average active character earns XP
+>>and updates that field?  ;)
+
+> And how often does someone lose all his faction settings,
+> etc.?
+
+
+>>> 3.  Restores would be a nightmare.  Every time someone's
+>>> character had a problem and had to be restored from a
+>>> pre-tweak backup, the restore process would have to
+>>> re-tweak their exp on the fly.
+>>
+>>Extract data from file;  run through filter; add to
+>>database.  That's not a nightmare;  that's a simple,
+>>automated task, for any data pulled off tapes prior
+>>to the change.
+
+> ...until they make another tweak in the exp curve,
+> and have to have multiple layers of "under what exp
+> regime was this number calculated, so that we can
+> properly tweak/retweak/retweak it to fit the current
+> regime?
+
+
+>>   And, one would hope, they don't
+>>have to do that very often anyway.   And one would
+>>think they'd have full backups, checked for integrity,
+>>prior to beginning any database manipulations.
+
+> "One would hope", "one would think"...
+
+> Yes, *ideally*, they could make such changes
+> in the most "direct" way.  But again, they have
+> stated flat out, and past performance has indicated,
+> that the code and database are not likely to be
+> set up to make such things as easy as they should be.
+
+> Sometimes you just have to accept the limitations
+> of a legacy system.
+
+
+
+>>> Additionally, having 60 separate level-exp multipliers
+>>> already programmed in will then give them future flexibility
+>>> to easily tweak the level curve any time they feel like
+>>> it, which would not be the case if they had just
+>>> "reset" everyone's exp to fit a new curve.
+>>
+>>Well, we're actually in agreement, except you miss the
+>>"where am I now" part of the problem.
+
+> No, actually, I don't.
+
+
+>>   With some made up numbers:
+>>
+>>Old curve
+>>29  19,756,800 to 21,950,100, or 2,193,300 total
+>>30  21,950,100 to 26,730,000, or 4,779,900 total
+>>31  26,730,000 to 29,493,090, or 2,763,090 total
+>>
+>>New curve
+>>29  20,000,000 to 23,000,000 or 3,000,000 total
+>>30  23,000,000 to 26,300,000 or 3,300,000 total
+>>31  26,300,000 to 29,900,000 or 3,600,000 total
+
+> Under my plan (which is analogous to how they
+> tweaked away the hybrid exp penalty), experience
+> you earned in level 29 would be multiplied by:
+
+>    MULT(29) = 2,193,300 / 3,000,000 = 0.7311
+
+> And likewise for levels 30, 31:
+
+>    MULT(30) = 4,779,900 / 3,300,000 = 1.448
+>    MULT(31) = 2,763,090 / 3,600,000 = 0.7675
+
+> You get through 30 faster, because you're earning
+> exp 44.8% faster while in 30.  But you get through
+> 29 and 31 slower, because 27% of the exp you earn
+> in 29, and 23% of the exp you earn in 31, gets
+> flushed down the bitbucket.
+
+> Overall, your trip to 50 takes just as long
+> (presuming your "total exp to 50" is the same
+> under both the old curve and the new curve).
+
+> I think this is what you're missing -- you
+> DON'T actually *use* the new curve for calculating
+> when someone dings.  YOU STILL USE THE OLD CURVE,
+> just as hybrids *still* need 40% more exp (behind
+> the scenes) to ding than non-hybrids.  But by 
+> using the "earned exp multiplier", you're making 
+> it *act* as if ding-points are being calculated 
+> under the new curve.
+
+
+>>That's just to show the current curve with the "bump"
+>>of a "hell level" and a new, "smooth" curve without it.
+>>But take the character that has 26,500,000, or just
+>>short of leveling into 31 when he logs off before the
+>>servers go down.  When he signs back on, he's now
+>>suddenly 31.
+
+> No, he's not.  See above.  The old exp curve is still
+> being used to determine your level.  So he's still just
+> short of 31.  What's different, however, is that
+> from here on out, he'll end up getting through non-hell
+> levels a little slower, and hell levels considerably
+> faster, in a way that makes the time spent in each
+> level (and the number of kills necessary to get through
+> it) much more of a smooth progression than was previously
+> the case.
+
+
+>>  Or the one that signs off at 29,500,000
+>>(just into 32) who signs on and is back in 31.   They've
+>>said that's not going to happen.
+
+> And it wouldn't if they make the change the way
+> I think they're going to, which is the way I've described.
+
+
+>>IMO, they HAVE to equate current XP to a new curve
+>>and change the database entry for it.
+
+> That's one option, but they absolutely do not "HAVE"
+> to do it that way, just as they did not "HAVE" to
+> recalculate everyone's current exp totals to
+> "remove" the effect of the hybrid experience penalty.
+
+
+

@@ -1,0 +1,78 @@
+From 4041892344224989457
+X-Google-Language: ENGLISH,ASCII-7-bit
+X-Google-Thread: fb739,2a9fee699d19a62c
+X-Google-Attributes: gidfb739,public
+X-Google-ArrivalTime: 2002-10-07 23:02:28 PST
+Path: archiver1.google.com!news1.google.com!newsfeed.stanford.edu!cyclone.bc.net!ps01-sjc1!news.webusenet.com!newsfeed.news2me.com!newsfeed2.easynews.com!newsfeed1.easynews.com!easynews.com!easynews!nntp2.aus1.giganews.com!border1.nntp.aus1.giganews.com!nntp.giganews.com!nntp3.aus1.giganews.com!News.GigaNews.Com.POSTED!not-for-mail
+NNTP-Posting-Date: Tue, 08 Oct 2002 01:02:23 CDT
+Newsgroups: alt.games.everquest
+From: Tim Smith <reply_in_group@mouse-potato.com>
+Subject: Re: Way to shut down EQ while AFK!?
+References: <FEqdnVqNi4fUowCgXTWc3w@News.GigaNews.Com> <WY3odrAapZn9EwGr@armoury1.demon.co.uk> <hQmdnREAzZ-EdQCgXTWc3A@News.GigaNews.Com> <2v4QgAAZDeo9EwJZ@armoury1.demon.co.uk>
+Organization: Institute of Lawsonomy, Department of Suction and Pressure
+Message-ID: <slrnaq4t7e.bdr.reply_in_group@tzs.net>
+User-Agent: slrn/0.9.7.4 (Linux)
+Cache-Post-Path: tzs.net!unknown@tzs.net
+X-Cache: nntpcache 2.3.3 (see http://www.nntpcache.org/)
+Date: Tue, 08 Oct 2002 01:02:24 CDT
+Lines: 50
+X-Trace: sv3-AY9DAMU0JN8yoDABJcxUeiqqBBSUxaOgioWoIEukhPevMEYbQb0WuI4xTMQtlEXJEZpfsQvt079yVv3!4A1Ts4GE4SxtgkDGr/GHt96N546tmTxpbcI2P4+fw1Pif3c86t+NWR5RFya22DLnhOlooPvV69ww!ax2mVvsOm6A=
+X-Complaints-To: abuse@giganews.com
+X-DMCA-Notifications: http://www.giganews.com/info/dmca.html
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.1
+Xref: archiver1.google.com alt.games.everquest:236356
+
+In article <2v4QgAAZDeo9EwJZ@armoury1.demon.co.uk>, Ben wilson wrote:
+> The answer your original question to the letter:
+> 
+> HIGH TECH ANSWER
+> Code a small program to end the eqgame.exe task
+
+#include <windows.h>
+#include <tlhelp32.h>
+
+void zap_eq();
+void kill_process( DWORD pid );
+
+int WINAPI WinMain( HINSTANCE, HINSTANCE, LPSTR, int )
+{
+    // Change the 5 below to how many minutes you want before EQ
+    // gets killed
+    Sleep( 1000 * 60 * 5 );
+    zap_eq();
+    return 0;
+}
+
+void zap_eq()
+{
+    HANDLE snap = CreateToolhelp32Snapshot( TH32CS_SNAPPROCESS, 0 );
+    if ( snap == INVALID_HANDLE_VALUE )
+        return;
+
+    PROCESSENTRY32 pe;
+    pe.dwSize = sizeof pe;
+    bool more = Process32First( snap, &pe );
+    while ( more )
+    {
+        if ( lstrcmpi( pe.szExeFile, "eqgame.exe" ) == 0 )
+            kill_process( pe.th32ProcessID );
+        more = Process32Next( snap, &pe );
+    }
+
+    CloseHandle( snap );
+    return;
+}
+
+void kill_process( DWORD pid )
+{
+    HANDLE ph = OpenProcess( PROCESS_TERMINATE, FALSE, pid );
+    if ( ph == NULL )
+        return;
+    TerminateProcess( ph, 0 );
+    CloseHandle( ph );
+}
+
+
+

@@ -1,0 +1,125 @@
+From -3172808897814555634
+X-Google-Thread: fb739,4ce77ddb11586038,start
+X-Google-Attributes: gidfb739,public
+X-Google-Language: ENGLISH,ASCII-7-bit
+Path: g2news2.google.com!news3.google.com!border1.nntp.dca.giganews.com!nntp.giganews.com!local01.nntp.dca.giganews.com!nntp.insightbb.com!news.insightbb.com.POSTED!not-for-mail
+NNTP-Posting-Date: Tue, 17 Oct 2006 10:17:42 -0500
+Newsgroups: alt.games.everquest
+Subject: EQ config files backup
+From: Richard Carpenter <rumbledor@hotspamsuxmail.com>
+Message-ID: <Xns985F72E87E5BErumbledorhotmailcom@216.196.97.142>
+User-Agent: Xnews/5.04.25
+Date: Tue, 17 Oct 2006 10:17:42 -0500
+Lines: 101
+NNTP-Posting-Host: 74.133.39.86
+X-Trace: sv3-KAkqOYMJlAb5KjHXKjitHOVDzaan4fSABqWdly19LbtVQcB2vZEkvp/+6AYgb0n86ClU462NbLcxa4b!mAOZP3haGu7OxjSsrcWOrfFuk//XrcCbw6NIqxqtiYqUoD2pt0QcR2vl0I9GA3fwecULZPVY9IdI!QwdfupuUv0qaQa6xuEc9ZQ==
+X-Complaints-To: abuse@insightbb.com
+X-DMCA-Complaints-To: abuse@insightbb.com
+X-Abuse-and-DMCA-Info: Please be sure to forward a copy of ALL headers
+X-Abuse-and-DMCA-Info: Otherwise we will be unable to process your complaint properly
+X-Postfilter: 1.3.32
+Xref: g2news2.google.com alt.games.everquest:4254
+
+Well, since I'm on vacation this week, and SoE has found it once again 
+necessary to take the game down for an emercency patch (completely 
+underestimating the downtime requirements, of course), I thought I'd post 
+some information that I have recently found very helpful.
+
+I run two accounts from one PC, but I have to keep the graphics settings 
+to a bare minimum on one of them for performance purposes, so I run them 
+from two seperate directories. The only problem is that I don't always 
+run the same account from the same directory. One day I may decide that I 
+want to play a character on my second account, but with the higher 
+graphics settings, and remembering to re-set them as I switch back and 
+forth is a pain.
+
+I remembered someone here once mentioning starting EQ from a batch file, 
+or using some similar means, to backup all of the .ini files (or copy 
+them in *from* backup, I don't remember for sure), so I thought I would 
+try that.
+
+I can't believe I waited this long to do so. It works like a charm. I use 
+the archive bit, a property all files have, to determine whether a file 
+has changed. As I understand it, many backup programs utilize this method 
+for incremental backup operations. 
+
+When chages are made to a file, the archive bit gets "set". Once the file 
+is backed up, this bit can be cleared, excluding it from subsequent 
+checks as appropriate. The XCOPY command includes options for considering 
+and/or resetting the archive bit of files during a copy operation. Also, 
+I only concern myself with files that match the *_*.ini pattern (e.g. 
+Felstaff_stromm.ini, UI_Draelen_firiona.ini, etc.). This ignores files 
+such as sky.ini and eqclient.ini.
+
+Now, when I start EQ(1), the following events occur:
+
+1) Any *_*.ini files in the EQ(2) directory that have changed (their 
+archive bit has been set) are copied to a backup, or "master", directory.
+
+2) All *_*.ini files in the EQ(2) directory have their archive bits 
+reset, indicating that no changes have been made to those files since the 
+last copy operation.
+
+3) Any files in the master directory that reflect changes are copied into 
+the EQ(1) directory.
+
+4) Those files in the master directory that reflect changes have their 
+archive bits reset.
+
+5) EverQuest.exe is run.
+
+
+Setting this up is simple. Merely create a new text file, and insert the 
+following three lines of text:
+
+xcopy C:\EQ_Acct1\*_*.ini c:\Backup\EQConfig /M /Y
+xcopy C:\Backup\EQConfig\*.* C:\EQ_Acct2 /M /Y
+
+start /DC:\EQ_Acct1 Everquest.exe
+
+Save this text file as StartEQ1.bat. You can then just run this batch 
+file to perform the .ini file synchronization and start EQ. Create a 
+second batch file, reversing the paths, of course, for your second EQ 
+directory.
+
+Also, this can be modified to simply back up your configuration files 
+every time you start EQ or, as I have heard mentioned here, to instead 
+read them in *from* a backup directory. Additionally, you can add the 
+/wait option to the start command, and additional XCOPY operations after 
+it. The only downside is that the batch file is then left in a run state 
+while you were playing EQ. This probably isn't much of a problem, as it 
+can't take up much in the way of system resources, but in my case anyway, 
+every little bit helps.
+
+A couple more examples (not tested):
+
+# This backs up all config files when EQ is started
+xcopy C:\EQ\*_*.ini c:\Backup\EQConfig /M /Y
+start /DC:\EQ Everquest.exe
+
+# This reads in previously backed up (through this or other methods)
+# config files
+xcopy C:\Backup\EQConfig\*.* C:\EQ /M /Y
+start /DC:\EQ_Acct1 Everquest.exe
+
+# This does both, backing up the config files upon exiting EQ.
+# However, as mentioned the program stays in memory until EQ exits
+# and it can complete.
+xcopy C:\Backup\EQConfig\*.* C:\EQ /M /Y
+start /wait /DC:\EQ_Acct1 Everquest.exe
+xcopy C:\EQ\*_*.ini c:\Backup\EQConfig /M /Y
+# Optionally add: attrib C:\Backup\EQConfig\*.* -A 
+# to clear archive bit on these files once copied
+
+There's really a lot that can be accomplished in this manner with a 
+simple batch program. More information on the ATTRIB, START, XCOPY and 
+other batch commands can be found here:
+
+http://www.ss64.com/nt
+
+-- 
+Richard Carpenter
+"Write something worth reading, or do something worth writing."
+                                       -- Benjamin Franklin
+
+
