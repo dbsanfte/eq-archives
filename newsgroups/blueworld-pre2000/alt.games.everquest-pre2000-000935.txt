@@ -1,0 +1,54 @@
+Message-ID: <tktD2.1402$5w.2126@wormhole.dimensional.com>
+Subject: Re: Disinformation? (was Re: check this out about bannings in EQ (repost from the EQvault.))
+Date: Thu, 04 Mar 1999 00:00:00 +0000
+From: Sohi <LOKPlayer@pobox.com>
+References: <36d2c70e.17048300@news.earthlink.net> <7b1jcs$8ml$1@remarQ.com> <MPG.113ebda9dafab728989774@news> <36e3167a.13352997@nntp.ix.netcom.com> <nlOB2.1065$5w.1724@wormhole.dimensional.com> <920339015.693.73@news.remarQ.com> <36dfd2c7.4290215@nnrp.gol.com> <q1#46uPZ#GA.181@pet.hiwaay.net> <36df6f8b.238481735@newstoo.hiwaay.net>
+Path: archive.usenet.blueworldhosting.com!illumos!news.pugleaf.net!.TX!i2pn2.pugleaf.net!archive.newsdeef.eu!mbox2nntp-rec.games.computer.ultima.online.mbox.zip!not-for-mail
+X-Deja-AN: 451108410
+Sender: Andy Collier <andy@flatland.dimensional.com>
+X-Trace: wormhole.dimensional.com 920543641 208.206.176.24 (Thu, 04 Mar 1999 03:34:01 MDT)
+Organization: Dimensional Communications
+User-Agent: tin/pre-1.4-980618 (UNIX) (SunOS/4.1.4 (sun4m))
+NNTP-Posting-Date: Thu, 04 Mar 1999 03:34:01 MDT
+Newsgroups: rec.games.computer.ultima.online,alt.games.everquest
+Xref: archive.usenet.blueworldhosting.com rec.games.computer.ultima.online:67773 alt.games.everquest:935
+
+In rec.games.computer.ultima.online Anjelika Hamilton <anjelika@pball.nospam.com> wrote:
+: The real issue is can someone write one which doesn't crash or interfere
+: with EQ. However, I can write C++ code which is so dependant on the
+: focus of the cursor as to guarantee it knows if it lost focus. In which case
+: no task switcher could be written unless it latches the focus vector and
+: fools EQ, which of course would be interfering with EQ which we don't
+: want to do.
+
+Well truth is you write a vxd that chains in ahead of anything at the user
+level (leaving the other kernel drivers intact so the darned things work)
+for the Kbd and mouse - it can mask off the message pump for the WM_
+messages dealing with focus - meaning EQ will not know it has lost focus.
+But this is only good if you figure a way to plop your GUI on top of the
+EQ D3D full screen setup.  Which is why I said the first "hacks" will
+likely be dual monitor setup required.  
+
+I've messed a bit with just such a thing (vxd's are a pain in the ass - I
+cribbed most of my code from an old MSJ article) - and was able to steal
+the mouse from a VB progam and spring it over to my app (VB sitting on a
+DLL that drilled into the vxd) without blowing the focus message set (it
+was chained and not released until I left my "hacker" app).  Of course it
+wreaked merry hell with the screen as the mouse was in one spot and the OS
+knew it, but the app that the focus was supposed to return to (the VB one)
+didn't have the slightest idea where the mouse was - and I couldnt send it
+a "got focus" event - eventually I got arround it by recording the mouse
+location when it generated the "left the app" message, subtracted 1,1 and
+just stuffed it back there and kicked out a "mouse up" to wake the
+"fooled" ap up and exited my prog.  Doing this on top of a "live" program
+(that changes on its own) as opposed to the basically inert VB program
+(all it did was change color when it got and lost focus) may cause
+problems if it tracks mouse location and that mouse is nowhere near being
+on its coord system (I dunno if they use the mouse directly or go thru the
+DirectInput interface to the mouse - meaning it would have relative rather
+than absolute coords - im not familiar with Direct Input so Im talking out
+my ass on this one).
+
+Any other ideas?
+
+
