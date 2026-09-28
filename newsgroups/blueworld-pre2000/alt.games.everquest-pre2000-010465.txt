@@ -1,0 +1,78 @@
+Message-ID: <395D1E0C.C5F65F1C@misleading.com>
+Subject: Re: This is starting to get a little rediculous.
+Date: Fri, 30 Jun 2000 00:00:00 +0000
+From: Morgan <morgana@misleading.com>
+References: <8oV55.24365$7I1.490495@news1.rdc2.on.home.com> <bA265.9234$NP5.157315@newsread2.prod.itd.earthlink.net> <395a2672$0$17001$7f31c96c@news01.syd.optusnet.com.au> <395d81fe.86394538@news.mindspring.com> <395b53be$0$17013$7f31c96c@news01.syd.optusnet.com.au> <8F6261746roadkillaromacom@207.126.101.100>
+Path: archive.usenet.blueworldhosting.com!illumos!news.pugleaf.net!.TX!i2pn2.pugleaf.net!archive.newsdeef.eu!mbox2nntp-rec.games.computer.everquest.mbox.zip!not-for-mail
+X-Deja-AN: 641004551
+Content-Transfer-Encoding: 7bit
+X-Accept-Language: en
+Content-Type: text/plain; charset=us-ascii
+X-Complaints-To: abuse@pacbell.net
+X-Trace: news.pacbell.net 962403751 216.103.192.163 (Fri, 30 Jun 2000 15:22:31 PDT)
+Organization: UC Berkeley
+MIME-Version: 1.0
+NNTP-Posting-Date: Fri, 30 Jun 2000 15:22:31 PDT
+Newsgroups: alt.games.everquest,rec.games.computer.everquest
+Xref: archive.usenet.blueworldhosting.com alt.games.everquest:10465 rec.games.computer.everquest:8419
+
+Dann Glenn Johnson wrote:
+> 
+> >Its not lag, or packet loss.
+> >Ive had this happen over and over with a nice steady ping and 0% pl.
+> >Verant are aware of the problem, and according to the latest patch, are
+> >trying to fix it.
+> >
+> >I can even track the monster while its "vanished", and its position
+> >changes. Sometimes (like just a few hours ago) the monster vanishes for
+> >maybe 15 seconds, and during that time I just have to follow it around
+> >using tracking until it re-appears. All the while showing a steady ping
+> >and 0% packet loss.
+> 
+> It might be a zbuffer error.  The engine could be drawing the polys for mob
+> before drawing the the world.  Which covers up the mob.  You can run right
+> up to where the invisible monster is, and will get attacked (because he IS
+> there).  I often just shoot an arrow when they poof like this, and it finds
+> it's target just fine.
+> 
+> I agree.  It's DEFINATELY not lag.
+
+Z-buffer error is not a likely culprit for invisible monsters that
+are right in front of you.  The z-buffer is what makes it ok for the
+computer to draw the terrain before the monsters.  The only time
+things vanish due to the z-buffer is when they are far away and very
+close to something big.  In that case, the computer might decide that
+they are actually at the same distance and not draw the monster.  You
+can tell if this is happening by the big jagged edges showing up at
+the edges of things and the monster popping in and out of a wall or
+tree as you move your head.
+
+The most common reason for monsters appearing and vanishing is that
+their motion prediction brought them into your visual range when they
+were actually quite far away.  When you finally get an update on the
+monster, the thing vanishes.  You get very infrequent updates on
+monsters that are not close to you.
+
+I am pretty sure that tracking is local, so you will track the monster
+at the same position that your client would draw it.  If you really
+have tracked the monster to be directly in front of you, been attacked
+by it, and still can't see it, then there is some new bug here.  If
+you didn't manage to catch it, then you were probably just running
+around tracking wild vectors because you never got close enough to get
+frequent position updates.
+
+Ghosts and spectres that are partially transparent will actually
+vanish if the transparency is not handled properly.  Transparent faces
+should be drawn back to front after the rest of the world is drawn.  I
+have noticed the spectres in Trakanon's Teeth partially vanishing when
+they pass in front of trees.  However, even when their shapes
+disappear entirely, the names still show so I don't think that is the
+answer here either.
+
+-- 
+Morgan	
+Cembyr, Wood Elf Ranger
+
+(crossposting all posts to rec.games.computer.everquest)
+
+

@@ -1,0 +1,96 @@
+Message-ID: <389DEE01.A80E462@misleading.com>
+Subject: Re: Abashi: Group damage kill credit doesnt work and never has
+Date: Sun, 06 Feb 2000 00:00:00 +0000
+From: Morgan <morgana@misleading.com>
+References: <IKEj4.49$ax6.1945@news.uswest.net> <01bf69a3$1572e420$330201c0@dell40> <389CE04C.B728B5A2@earthlink.net> <87j1c8$aii$1@news.laserlink.net> <389D113F.71678B26@misleading.com> <87k4bf$shj$1@news.laserlink.net>
+Path: archive.usenet.blueworldhosting.com!illumos!news.pugleaf.net!.TX!i2pn2.pugleaf.net!archive.newsdeef.eu!mbox2nntp-rec.games.computer.everquest.mbox.zip!not-for-mail
+X-Deja-AN: 582401351
+Content-Transfer-Encoding: 7bit
+X-Accept-Language: en
+Content-Type: text/plain; charset=us-ascii
+X-Complaints-To: abuse@pacbell.net
+X-Trace: nnrp3-w.snfc21.pbi.net 949873818 216.103.192.163 (Sun, 06 Feb 2000 13:50:18 PST)
+Organization: UC Berkeley
+MIME-Version: 1.0
+NNTP-Posting-Date: Sun, 06 Feb 2000 13:50:18 PST
+Newsgroups: alt.games.everquest,rec.games.computer.everquest
+Xref: archive.usenet.blueworldhosting.com alt.games.everquest:4800 rec.games.computer.everquest:1472
+
+VWilcox wrote:
+> 
+> > This is easily explained by the "short hate list churning" hypothesis.
+> > The hate list is a short array of [playerId hate damage].  When the list
+> > is full, it starts over again at the beginning, overwriting all previous
+> > damage and hate.  So, if there are N entries in the list and more than N
+> > people and pets attacking, the person who did the most damage out of the
+> > last N attacks gets the kill.
+> >
+> > If there are fewer than N people and pets attacking, then they never get
+> > rolled off the list, and everyone gets credit for all the damage they
+> > did.
+> 
+> Very interesting.  I hadn't heard that theory (or you just made it) but it
+> is very reasonable.
+
+It's been bouncing around for a while.  I did not come up with it.
+
+> Hate list would likely be a fixed length array.  I use
+> storage template almost exclusively and avoid fixed length arrays like the
+> plague (speed difference is negligible in almost all cases.)  Of course,
+> with today's machines and the doubted existence of more than 1000 mobs in a
+> zone -- simply upping the fixed length array dimension to double it's
+> current length or more wouldn't likely use too much RAM either.  Programmers
+> tend to maintain their old, old habits from their TRS-80 days when memory
+> and speed were premiums.
+
+Memory may be a problem, but speed is definitely a problem.  As long
+as the lists are short, linear searches and unsorted lists are fine.
+As soon as they set the hate list length to something adequate, like
+32, those searches are going to get long.  Every time anyone irks a
+monster in any way, the hate list for that monster has to be searched
+to see if the person is already on the list.
+
+My proposed solution is to make the list 16 entries long, which will
+still result in hate list churning in big fights in the planes, but 
+maintain a running total of group damage with each group member.  That 
+way every member of a group would have to fall off the list for their 
+damage to be forgotten.
+
+> > > Another fix would be to suspend hate data that is blurred instead of
+> > > clearing it.  Then if the players killing the MoB in the first place
+> > > hit it for 4 points of dmg it REMEMBERS the 800 they did previously.
+> >
+> > There are two pieces of data associated with each person on the hate
+> > list: damage done and hate level.  We know that these are separate,
+> > because it is possible to get a monster very angry at you without
+> > getting any kill credit, such as by healing someone who is fighting.
+> 
+> Agreed -- but the dmg done may be a parameter of the 'event' item in the
+> history list.  It is also possible that they simply keep a sum of dmg done
+> and hate level for each player that interacts with the MoB somehow.  
+
+Yes, I think this is the case.  When you damage a monster or cause
+it to hate you, the new damage and/or hate is added to your current
+values if you are on the hate list.
+
+I think that the hate list is not sorted by damage or hate.  I think
+that each new person is added on to the end of the array as they 
+enter the list, and if the list is full, they are added to the top,
+replacing the person who has been on the list longest.
+
+> If so,
+> mem blur could be made to wipe all hate levels to 0 but keep dmg done.  But,
+> to avoid the players doing partial damage multiple times to a MoB and then
+> leaving (to get credit when someone else does the full kill)... the hate
+> list would need to be completely wiped when a MoB healed to full or close
+> and the hate levels were 0.
+
+I don't really like the idea of letting the monster run around with
+kill credit but no hate.  Something seems wrong with that.
+
+-- 
+Morgan
+
+(crossposting all posts to rec.games.computer.everquest)
+
+
