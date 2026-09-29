@@ -71,3 +71,11 @@ a rendered April 1999 thread, and two other captures contain source-view
 pages of later articles, but these do not provide comparable bulk coverage.
 The [UsenetArchives recovery method](https://github.com/bushidocodes/usenet-comp-lang-cobol/blob/main/markdown/README.md)
 remains another lead for group-only posts.
+
+## Additional Internet Archive recovery
+
+[ia-pre2000/](ia-pre2000/README.md) adds 306 distinct early crossposts found in
+the Usenet Archive Toolkit PC games collection and historical mbox archives.
+The primary files retain the stored source bytes; manifests record checksums,
+all source occurrences, canonical Message-IDs and date precision. The same
+additive path is published on the `mailing-lists` GitHub Pages branch.
