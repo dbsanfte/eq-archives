@@ -1,0 +1,119 @@
+<TITLE>Everquest Spells</TITLE>
+<HTML>
+<BODY text=DEBD84 Background=/images/bg.jpg vlink=#238e23 link=DEBD84 ID=Body topmargin=0 leftmargin=0 rightmargin=0
+>
+<BR>
+<CENTER>
+
+<IMG img src=/images/title.jpg>
+
+<BR><font size=-1>
+
+[<A href="/eq/spells.asp?class=Bard">Bard</A>]
+
+
+[<A href="/eq/spells.asp?class=Cleric">Cleric</A>]
+
+
+[<A href="/eq/spells.asp?class=Druid">Druid</A>]
+
+
+[<A href="/eq/spells.asp?class=Enchanter">Enchanter</A>]
+
+
+[<A href="/eq/spells.asp?class=Magician">Magician</A>]
+
+
+[<A href="/eq/spells.asp?class=Necromancer">Necromancer</A>]
+
+
+[<A href="/eq/spells.asp?class=Paladin">Paladin</A>]
+
+
+[<A href="/eq/spells.asp?class=Ranger">Ranger</A>]
+
+
+[<A href="/eq/spells.asp?class=ShadowKnight">ShadowKnight</A>]
+
+
+[<A href="/eq/spells.asp?class=Shaman">Shaman</A>]
+
+
+[<A href="/eq/spells.asp?class=Wizard">Wizard</A>]
+
+
+</font>
+
+</CENTER>
+<TABLE  border =0 width=90% cellpadding=10>
+<TD width = 200 valign=top>
+<a Href=default.asp Title="Main Page">
+<img border=0 src=/images/mainpage.jpg></a><BR>
+<a href=msgboard.asp target=TOP Title="Message Board">
+<img border=0 src=/images/msgboard.jpg></A><BR>
+<a href=Register.asp Title="Register for Free Email">
+<img border=0 src=/images/freemail.jpg></a><BR>
+<a href=maps.asp Title="Zone Maps">
+<img border=0 src=/images/maps.jpg></A><BR>
+<a Href=guilds.asp Title="Guild Info">
+<img border=0 src=/images/guilds.jpg></a><BR>
+<a Href=events.asp Title="Server Events">
+<img border=0 src=/images/serverevents.jpg></a><BR>
+<a href=links.asp Title="Links">
+<img border=0 src=/images/links.jpg></A><BR>
+<a Href=gallery.asp Title="Picture Gallery">
+<img border=0 src=/images/Gallery.jpg></a><BR>
+<a Href=classes.asp Title="Class Info">
+<img border=0 src=/images/classes.jpg></a><BR>
+<a Href=equip.asp Title="Equipment">
+<img border=0 src=/images/equipment.jpg></a><BR>
+<a Href=suggest.asp Title="Submit Suggestion">
+<img border=0 src=/images/webmaster.jpg></a><BR>
+<a Href=staff.asp Title="Meet the Staff">
+<img border=0 src=/images/staff.jpg></a><BR>
+
+</TD>
+<TD valign=top>
+
+<CENTER><font size=2>
+<TABLE width = 90% border =0>
+<TR>
+<TD width=14% align=center><A href=/eq/spells.asp?class=bard><img border=0 src=/images/bard.jpg></a></TD>
+<TD width=14% align=center><A href=/eq/spells.asp?class=cleric><img border=0 src=/images/cleric.jpg></a></TD>
+<TD width=14%  align=center><A href=/eq/spells.asp?class=Druid><img border=0 src=/images/Druid.jpg></a></TD>
+<TD width=14%  align=center><A href=/eq/spells.asp?class=enchanter><img border=0 src=/images/enchanter.jpg></a></TD>
+</tR>
+<TR>
+<TD width=14%  align=center><A href=/eq/spells.asp?class=Magician><img border=0 src=/images/magician.jpg></a></TD>
+<TD align=center rowspan=2 colspan=2><img src=/images/spelllst.jpg></TD>
+<TD width=14%  align=center><A href=/eq/spells.asp?class=necromancer><img border=0 src=/images/necro.jpg></A></TD>
+
+</TR>
+
+<TR>
+<TD width=14% align=center><A href=/eq/spells.asp?class=Paladin><img border=0 src=/images/Paladin.jpg></a></TD>
+
+
+<TD width=14% align=center><A href=/eq/spells.asp?class=Ranger><img border=0 src=/images/Ranger.jpg></A></TD>
+
+</tR>
+<TR>
+<TD width=14%  align=center><A href="/eq/spells.asp?class=ShadowKnight"><img border=0 src=/images/Shadow.jpg></a></TD>
+
+
+<TD width=14%  align=center colspan=2><A href=/eq/spells.asp?class=Shaman><img border=0 src=/images/Shaman.jpg></A></TD>
+<TD width=14%  align=center><A href="/eq/spells.asp?class=wizard"><img border=0  src=/images/wizard.jpg></a></TD>
+</tR>
+
+</TAble>
+
+</CENTER>
+
+
+</TD>
+</TABLE>
+
+
+</BODY>
+</HTML>
+

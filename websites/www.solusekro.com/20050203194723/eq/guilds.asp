@@ -1,0 +1,509 @@
+
+
+<html>
+<head>
+<LINK REL="STYLESHEET" HREF="style/solusek.css" TYPE="text/css" MEDIA=screen>
+<title>Welcome to Solusek Ro</title>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="130" bgcolor="#990000"><img src="images/solro.gif" width="130" height="58"></td>
+<td valign="baseline">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="tTop"><img src=images/trans.gif width=10 height=1 align=top>Thursday, February 03, 2005</td>
+
+<td class="tTopR"><a class="aTop" href="Logon.asp">Not Logged In</a>
+<img src=images/trans.gif width=10 height=8></td>
+
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td bgcolor=000000 valign="bottom">
+<img src="images/top_nav_corner.gif" width="15" height="15"></td>
+<td bgcolor="#000000"  align="right" width=100%>
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" target="_blank" href="http://www.solusekro.com/forums">Message Board</a>
+<img src="images/trans.gif" width="15" height="8">
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" target="_blank" href="http://www.solrorage.org">SolRo Rage</a>
+<img src="images/trans.gif" width="15" height="8">
+
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" href="default.asp">Recent News</a>
+<img src="images/trans.gif" width="15" height="8">
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" href="staff.asp">Contact Us</a>
+<img src=images/trans.gif width=10 height=0></td></tr>
+</table>
+		
+<!-- This is for the page specific title, and link if needed -->		
+	<table width="100%" border="0" cellspacing="0" cellpadding="4">
+        <tr> 
+          <td bgcolor="#990000"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b>Guilds of Solusek Ro</b></font></td>
+        </tr>
+      </table>
+<!-- End Page specific stuff -->
+
+		</td>
+	</TR>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="130" valign="top"><table border=0 width=130 cellpadding=0 cellspacing=0>
+<tr bgcolor="#990000">
+<td><b><img src=images/trans.gif width=13 height=8></b></td>
+<td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>Community</b></font></td>
+</tr>
+<tr>
+<td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000"><a class="rBar" href="news.asp?addnews=y">Submit News Item</a><br>
+<a class="rBar" href="default.asp">Recent News</a><br>
+<a class="rBar" href="news.asp">Archived News</a><br>
+<a class="rBar" target="_blank" href="http://www.solusekro.com/forums">Message Boards</a><br>
+<a class="rBar" target="_blank" href="http://www.solrorage.org">SolRo Rage</a><br>
+<a class="rBar" href="gallery.asp">Picture Gallery</a><br>
+<a class="rBar" href="register.asp">Free Account</a><br>
+<a class="rBar" href="suggest.asp">Suggestions</a><br>
+<a class="rBar" href="links.asp">Links</a>
+</td>
+</tr>
+<tr bgcolor="#990000">
+<td>&nbsp;</td>
+
+<td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>Information</b></font></td>
+</tr>
+<tr>
+<td bgcolor="#990000">&nbsp;</td>
+<td bgcolor="#990000"><a class="rBar" href="events.asp">Server Events</a><br>
+<a class="rBar" href="guilds.asp">Guilds</a><br>
+</td></tr><tr bgcolor="#990000">
+<td>&nbsp;</td>
+<td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>User Profile</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor="#990000"><a class="rBar" href="logon.asp">Login</font></a></td>
+</tr>
+
+<tr><td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000" align="right"><img src="images/left_nav_bottom.gif" width="20" height="20"></td></tr></table></td>
+    <td width="20" valign="top"><img src="images/top_corner.gif" width="20" height="20"></td>
+    <td valign="top" align="center" width=100%>
+
+
+		<BR>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<UL>
+	
+		
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.ahraiding.org target=_blank>After Hours</A></B><font size=-1> - [544]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.amazoniaguild.net target=_blank>Amazonia</A></B><font size=-1> - [355]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.ambassadors-of-fate.de/ target=_blank>Ambassadors of Fate</A></B><font size=-1> - [327]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.eqarcaneasylum.com/ target=_blank>Arcane Asylum</A></B><font size=-1> - [212]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://go.to/blackdawnelite target=_blank>Black Dawn Elite</A></B><font size=-1> - [190]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://bladesoflight.hypermart.net/ target=_blank>Blades of Light</A></B><font size=-1> - [290]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.bloodofro.com/ target=_blank>Blood of Ro</A></B><font size=-1> - [10637]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.daniel-seite.de/bdg/indexm.htm target=_blank>Bund des Geistes</A></B><font size=-1> - [3143]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.geocities.com/bunniesofchaos/ target=_blank>Bunnies of Chaos</A></B><font size=-1> - [550]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://chevaliersdelavengeance.guildportal.com target=_blank>Chevaliers de la Vengeance </A></B><font size=-1> - [149]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.eqguild.net/guilds/COF/ target=_blank>Circle of the Forgotten</A></B><font size=-1> - [95]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.clan-donald.com target=_blank>Clan Donald</A></B><font size=-1> - [469]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.coronamundi.de target=_blank>Corona Mundi</A></B><font size=-1> - [3529]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://members.lycos.co.uk/cruzadosforop/ target=_blank>Cruzados Sanguinarios</A></B><font size=-1> - [540]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.darkblood.com/ target=_blank>Darkblood</A></B><font size=-1> - [11873]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.deathmisdealt.net target=_blank>Death Misdealt</A></B><font size=-1> - [2173]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.diablosdehispannia.com/ target=_blank>Diablos de Hispania</A></B><font size=-1> - [140]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.diehelden-eq.de/ target=_blank>Die Helden</A></B><font size=-1> - [2609]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://rurulet.sbnews.de/ target=_blank>Die Soeldner</A></B><font size=-1> - [3593]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://pub95.ezboard.com/beverquest80039 target=_blank>Dioses de Norrath</A></B><font size=-1> - [70]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.guildhouse.org/ target=_blank>Disciples</A></B><font size=-1> - [253]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.guildportal.com/Guild.aspx?GuildID=10433&TabID=85901 target=_blank>Draconigena</A></B><font size=-1> - [0]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.elder-dragons.de target=_blank>Elder Dragons</A></B><font size=-1> - [141]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.elvensociety.com/ target=_blank>Elven Society</A></B><font size=-1> - [1459]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.burkesweb.com/empire_of_eternity/ target=_blank>Empire of Eternity</A></B><font size=-1> - [5611]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.digitalsodality.com/ec/ target=_blank>Enchanted Circle</A></B><font size=-1> - [180]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://eternalflames.meischke.de/eq target=_blank>Eternal Flames</A></B><font size=-1> - [1757]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.angelfire.com/dc2/loh target=_blank>Excido Decus</A></B><font size=-1> - [120]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://foroedn.midire.com/ target=_blank>Exploradores de Norrath</A></B><font size=-1> - [116]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.eyeofmordor.net target=_blank>Eye of Mordor</A></B><font size=-1> - [7197]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.geocities.com/flammaaeturnus/ target=_blank>Flamma Aeturnus</A></B><font size=-1> - [76]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://webpages.charter.net/forged/Forged%20Strength/Page_3.html target=_blank>Forged Strength</A></B><font size=-1> - [397]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.furiouspantaloons.org/ target=_blank>Furious Pantaloons</A></B><font size=-1> - [1779]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.gatheredmight.com target=_blank>Gathered Might</A></B><font size=-1> - [3820]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.geistermacht.de/ target=_blank>Geistermacht</A></B><font size=-1> - [100]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.freewebs.com/gochaos/ target=_blank>Gods of Chaos</A></B><font size=-1> - [120]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://pub95.ezboard.com/bguardianesdesolusek target=_blank>Guardianes De Solusek</A></B><font size=-1> - [729]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.gotcr.com/ target=_blank>Guardians of the Crystal Rose</A></B><font size=-1> - [2131]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://asp5.catalog.com/jeffreysmith/goa/main.asp target=_blank>Guild of Avalon</A></B><font size=-1> - [366]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.hofguild.org target=_blank>House of Funk</A></B><font size=-1> - [3537]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.jaggedpine.net target=_blank>Jaggedpine Defenders</A></B><font size=-1> - [3569]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.eqkorl.com target=_blank>Keepers of Raging Light</A></B><font size=-1> - [3089]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://forums.eqnocturnal.com/ target=_blank>Knights Nocturnal</A></B><font size=-1> - [223]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.knightsofnobility.com target=_blank>Knights of Nobility</A></B><font size=-1> - [241]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://lanakila.dchess.com/ target=_blank>Lanakila</A></B><font size=-1> - [1076]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.legion-whiterose.com target=_blank>Legion of the White Rose</A></B><font size=-1> - [11522]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.vytco.com target=_blank>Lords of Prophecy</A></B><font size=-1> - [497]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://lords-zodiac.com/ target=_blank>Lords of the Zodiac</A></B><font size=-1> - [2448]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.lost-souls-of-melnibone.de/ target=_blank>Lost Souls of Melnibone</A></B><font size=-1> - [123]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://lucidvisions.net./ target=_blank>Lucid Visions</A></B><font size=-1> - [99]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.aeterna.de target=_blank>Lux Aeterna </A></B><font size=-1> - [104]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.mondtempler.de/ target=_blank>Mondtempler</A></B><font size=-1> - [113]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://boehse.de/moonwhisper/ target=_blank>Moonwhisper</A></B><font size=-1> - [2924]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.mysticcrusaders.org/ target=_blank>Mystic Crusaders</A></B><font size=-1> - [494]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.gwspace.de/postNuke/html/index.php target=_blank>Najenas Erben</A></B><font size=-1> - [84]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.noble-dreams.org/ target=_blank>Noble Dreams</A></B><font size=-1> - [184]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.novussatus.com/ target=_blank>Novus Satus</A></B><font size=-1> - [21]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.obsidianfear.net/ target=_blank>Obsidian Fear</A></B><font size=-1> - [386]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.odisea-eq.com target=_blank>Odisea</A></B><font size=-1> - [7055]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.xsorbit6.com/users/orderoftheemeraldempire/ target=_blank>Order of the Emerald Empire</A></B><font size=-1> - [71]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.pledgeofancients.com target=_blank>Pledge of Ancients</A></B><font size=-1> - [173]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.protectorsofmoonglow.org/ target=_blank>Protectors of M`glow</A></B><font size=-1> - [4472]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.madknight.com/rhi target=_blank>Reluctant Heros</A></B><font size=-1> - [52]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.revixi.net/ target=_blank>Revixi</A></B><font size=-1> - [424]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.clan-donald.com/ROH/roh_main.htm target=_blank>Ring of Honor</A></B><font size=-1> - [161]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.risinglegacy.com  target=_blank>Rising Legacy</A></B><font size=-1> - [631]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.ritter-der-tafelrunde.com/ target=_blank>Ritter der Tafelrunde</A></B><font size=-1> - [438]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://pub33.ezboard.com/broninerrante target=_blank>Ronin Errante </A></B><font size=-1> - [114]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.guildportal.com/Guild.aspx?GuildID=18254&TabID=164552 target=_blank>Ruadh Righ</A></B><font size=-1> - [0]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.serraadvocates.com  target=_blank>Serra Advocates</A></B><font size=-1> - [622]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.souls-of-spirit.com/neuehp/start.html  target=_blank>Souls of Spirit</A></B><font size=-1> - [1268]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://homepages.eq-guilds.com/SpiritsOfSanctuary/ target=_blank>Spirits of Sanctuary</A></B><font size=-1> - [1261]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.geocities.com/steelfaith2001 target=_blank>Steel Faith</A></B><font size=-1> - [475]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://stonecircle.fragism.com/gl-bin/forum/index.php target=_blank>Stone Circle - Database server down?</A></B><font size=-1> - [155]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.sunclan.com/ target=_blank>Sun Clan of Warriors</A></B><font size=-1> - [363]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.guildportal.com/Guild.aspx?GuildID=16701&TabID=150915 target=_blank>Syndicate Ro</A></B><font size=-1> - [400]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.triadica.us target=_blank>Triadica</A></B><font size=-1> - [13992]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.trueguardianknights.net target=_blank>True Guardian Knights</A></B><font size=-1> - [120]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://unforgiven-counsel.eqguild.net/ target=_blank>Unforgiven Counsel</A></B><font size=-1> - [59]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://pub27.ezboard.com/bunion90134 target=_blank>Union</A></B><font size=-1> - [266]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.ogdom.com/ubbthreads/categories.php?Cat= target=_blank>Wanderers</A></B><font size=-1> - [1341]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.Warriors-Caste.org  target=_blank>Warriors Caste</A></B><font size=-1> - [74]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://wolfsclan-eq.de/ target=_blank>Wolfsclan</A></B><font size=-1> - [7951]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.wrathofinnoruuk.org target=_blank>Wrath of Innoruuk</A></B><font size=-1> - [132]</font></LI><BR>
+				</TD></TR>
+			
+				<TR bgcolor=><TD>
+				<LI><B><a href=hit.asp?url=http://www.get-me.to/zirkeldesdrachen target=_blank>Zirkel des Drachen</A></B><font size=-1> - [227]</font></LI><BR>
+				</TD></TR>
+			
+
+		</UL>
+		
+
+		</TD></TR>
+	</TABLE><!--Footer -->
+<BR>
+<center>
+<table width=100% align=center><TR><TD>
+<img src=images/redline.gif height=1 width=100%>			
+</TD></TR>
+<TR><TD align=center>
+<p class=pFooter>©2003 Solusekro.com, Everquest is a Trademark of Sony Corporation</p>
+<TD></TR></table>
+</center>
+<BR>
+					
+					
+					</td>
+
+<td width="20" valign="top"><img src="images/top_corner1.gif" width="20" height="20"></td>
+<td width="110" valign="top"><!--Right nav bar -->
+
+<table border="0" width="180" cellpadding="0" cellspacing="0">
+	<tr bgcolor="#990000">
+		<TD bgcolor="#990000">
+			<img src=images/trans.gif height=0 width=4>
+		</TD>
+		<td>
+			<center> 
+		    	<p><font face="MS Sans Serif, Verdana, Arial" size="1" color="#FFFFFF"><b>SCREENSHOT<br>OF THE DECADE</b></font>
+				<a class="aShot" target="_blank" href="screen.asp">
+				<img src=images/t_luclin.jpg width=100 height=75 border="0"></a>
+				<br>
+				<a class="aShot" target="_blank" href="screen.asp">
+				Norrath!
+				</a></p>
+	      	</center>
+		</td>
+	</tr>
+<tr bgcolor="#990000">
+		<TD>&nbsp;</TD>
+		<td>
+			<table width="100%" border=0 cellpadding=5 cellspacing=0 align=left>
+				<tr>
+					<td>
+<center>
+						<a class="rBar1" href="guilds.asp">Top 25 Guilds<BR>(by clicks)</a></center>
+					</td>
+				</tr>
+				<tr>
+					<td align=left>
+					
+	<center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.triadica.us target=_blank>1. Triadica</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.darkblood.com/ target=_blank>2. Darkblood</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.legion-whiterose.com target=_blank>3. Legion of the White Rose</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.bloodofro.com/ target=_blank>4. Blood of Ro</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://wolfsclan-eq.de/ target=_blank>5. Wolfsclan</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.eyeofmordor.net target=_blank>6. Eye of Mordor</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.odisea-eq.com target=_blank>7. Odisea</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.burkesweb.com/empire_of_eternity/ target=_blank>8. Empire of Eternity</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.protectorsofmoonglow.org/ target=_blank>9. Protectors of M`glow</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.gatheredmight.com target=_blank>10. Gathered Might</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://rurulet.sbnews.de/ target=_blank>11. Die Soeldner</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.jaggedpine.net target=_blank>12. Jaggedpine Defenders</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.hofguild.org target=_blank>13. House of Funk</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.coronamundi.de target=_blank>14. Corona Mundi</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.daniel-seite.de/bdg/indexm.htm target=_blank>15. Bund des Geistes</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.eqkorl.com target=_blank>16. Keepers of Raging Light</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://boehse.de/moonwhisper/ target=_blank>17. Moonwhisper</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.diehelden-eq.de/ target=_blank>18. Die Helden</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://lords-zodiac.com/ target=_blank>19. Lords of the Zodiac</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.deathmisdealt.net target=_blank>20. Death Misdealt</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.gotcr.com/ target=_blank>21. Guardians of the Crystal Rose</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.furiouspantaloons.org/ target=_blank>22. Furious Pantaloons</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://eternalflames.meischke.de/eq target=_blank>23. Eternal Flames</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.elvensociety.com/ target=_blank>24. Elven Society</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.ogdom.com/ubbthreads/categories.php?Cat= target=_blank>25. Wanderers</B><font color=white size=-2></font></A>
+
+					</td>
+				</tr>
+
+			</table>
+		</td>
+	</tr>
+
+<TR><td bgcolor="#990000"  colspan =2><centeR>
+</center>
+</TD></TR>
+
+	<TR><td colspan=2 bgcolor="#990000" align="left"><img src="images/right_nav_bottom.gif" width="20" height="20"></td></TR>
+
+</Table></td>
+</tr>
+</table>
+</body>
+</html>

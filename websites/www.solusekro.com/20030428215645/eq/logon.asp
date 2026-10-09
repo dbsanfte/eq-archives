@@ -1,0 +1,280 @@
+
+
+
+<html>
+<head>
+<LINK REL="STYLESHEET" HREF="style/solusek.css" TYPE="text/css" MEDIA=screen>
+<title>Welcome to Solusek Ro</title>
+</head>
+<body>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="130" bgcolor="#990000"><img src="images/solro.gif" width="130" height="58"></td>
+<td valign="baseline">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="tTop"><img src=images/trans.gif width=10 height=1 align=top>Monday, April 28, 2003</td>
+
+<td class="tTopR"><a class="aTop" href="Logon.asp">Not Logged In</a>
+<img src=images/trans.gif width=10 height=8></td>
+
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td bgcolor=000000 valign="bottom">
+<img src="images/top_nav_corner.gif" width="15" height="15"></td>
+<td bgcolor="#000000"  align="right" width=100%>
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" target="_blank" href="http://www.solusekro.org">Message Board</a>
+<img src="images/trans.gif" width="15" height="8">
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" href="default.asp">Recent News</a>
+<img src="images/trans.gif" width="15" height="8">
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" href="staff.asp">Contact Us</a>
+<img src=images/trans.gif width=10 height=0></td></tr>
+</table>
+		
+<!-- This is for the page specific title, and link if needed -->		
+	<table width="100%" border="0" cellspacing="0" cellpadding="4">
+        <tr> 
+          <td bgcolor="#990000"><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFFFF"><b> 
+          Logon</b></font></td>
+          </tr>
+      </table>
+<!-- End Page specific stuff -->
+
+		</td>
+	</TR>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="130" valign="top">
+<table border=0 width=130 cellpadding=0 cellspacing=0><tr bgcolor="#990000"><td><b><img src=images/trans.gif width=13 height=8></b></td><td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>Community</b></font></td></tr><tr><td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000"><a class="rBar" href="news.asp?addnews=y">Submit News Item</a><br><a class="rBar" href="default.asp">Recent News</a><br><a class="rBar" href="news.asp">Archived News</a><br><a class="rBar" target="_blank" href="http://www.solusekro.org">Message Boards</a><br><a class="rBar" href="forsale.asp?list=all">For Sale</a><br><a class="rBar" href="gallery.asp">Picture Gallery</a><br><a class="rBar" href="register.asp">Free E-mail</a><br><a class="rBar" href="register.asp">Free Account</a><br><a class="rBar" href="suggest.asp">Suggestions</a><br><a class="rBar" href="links.asp">Links</a></td></tr><tr bgcolor="#990000"><td>&nbsp;</td><td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>Information</b></font></td></tr><tr><td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000"><a class="rBar" href="events.asp">Server Events</a><br><a class="rBar" href="tips.asp?list=all">Hints and Tips</a><br><a class="rBar" href="guilds.asp">Guilds</a><br><a class="rBar" href="equip.asp">Equipment</a><br><a class="rBar" href="spells.asp">Spell List</a><br><a class="rBar" href="classes.asp">Classes</a><br><a class="rBar" href="maps.asp">Zone Maps</a></td></tr><tr bgcolor="#990000"><td>&nbsp;</td><td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>User Profile</b></font></td></tr><tr><td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000"><a class="rBar" href="logon.asp">Login</font></a></td></tr>
+<tr><td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000" align="right"><img src="images/left_nav_bottom.gif" width="20" height="20"></td></tr></table></td>
+    <td width="20" valign="top"><img src="images/top_corner.gif" width="20" height="20"></td>
+    <td valign="top" align="center" width=100%>
+
+
+
+<form method=post action=logon.asp>
+<center><br>
+<TABLE width=100% align="center">
+	<TR>
+		<TD bgcolor="#FFCC00" width=50%>
+			User Name:
+		</TD>
+		<TD width=50%>
+			<input type=text name=usernm>
+		</TD>
+	</TR>
+	<TR>
+		<TD  bgcolor="#FFCC00">
+			Password:
+		</tD>
+		<TD>
+			<input type=password name=password>
+		</TD>
+	</TR>
+</TABLE>
+<input type=submit name=Logon value=Logon>
+</form>
+
+<a href="register.asp">Click here for your Free Account</a>
+</CENTER>
+<!--Footer -->
+<BR>
+<center>
+<table width=100% align=center><TR><TD>
+<img src=images/redline.gif height=1 width=100%>			
+</TD></TR>
+<TR><TD align=center>
+<p class=pFooter>©2000 Solusekro.com, Everquest is a Trademark of Sony Corporation</p>
+<TD></TR></table>
+</center>
+<BR>
+					
+					
+					</td>			
+
+<td width="20" valign="top"><img src="images/top_corner1.gif" width="20" height="20"></td>
+
+			    <td width="110" valign="top"><!--Right nav bar -->
+
+<table border="0" width="110" cellpadding="0" cellspacing="0">
+	<tr bgcolor="#990000">
+		<TD bgcolor="#990000">
+			<img src=images/trans.gif height=0 width=4>
+		</TD>
+		<td>
+			<center> 
+		    	<p><font face="MS Sans Serif, Verdana, Arial" size="1" color="#FFFFFF"><b>SCREENSHOT<br>OF THE WEEK</b></font>
+				<a class="aShot" target="_blank" href="screen.asp">
+				<img src=images/t_luclin.jpg width=100 height=75 border="0"></a>
+				<br>
+				<a class="aShot" target="_blank" href="screen.asp">
+				Norrath!
+				</a></p>
+	      	</center>
+		</td>
+	</tr>
+	<tr bgcolor="#990000">
+		<TD>&nbsp;</TD>
+		<td>
+			<table width="100%">
+				<tr>
+					<td>
+						<a class="rBar1" href="forsale.asp?list=all">Buy/Sell!</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+						<a class="rBar" href=forsale.asp?index=2623>55 Cleric, 47 Monk Brell</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2622>Power leveling on Solusek Ro</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2624>WTB 60 SHD on SolRo</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2621>Trade Platinum</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2620>WTT Diablo II account for EQ account</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2619>62 mage ,57 rogue epic  sweet gears</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2618>Stuff For My New Ranger</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2617>48 bard account only 30 dollars</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2616>90k pp</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2615>63 Gnome Necromancer 23 AA's</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2614>61 SK 20 aa NToV/Vindi/ST/AoW</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2613>Account on Cazic-Thule</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2610>62 Cleric with epic</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2611>WTT/WTS 65 Rogue</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2609>27 froggy shammy</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2612>60 bard Thoxule Paells</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2608>52 female woodelf war</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2607>61 Wood elf Rogue Female</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2606>DAoC for EQ account</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2605>WTS Uber lvl 60 monk </A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2604>60 Shaman on Veeshan</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2603>TRADE</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2602>gold for sale</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2601>WTS-WTT</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2600>WTT Account for PP - both on Sol Ro</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2595>TRADE</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2599>Selling PLATINUM!!!!</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2594>lev 62 necro 27 aa lev 61 epic mage 9aa 100kpp on </A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2598>65 monk</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2596>135500pp on povar</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2597>TRADE </A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2593>Totally amazing deal pls read</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2591>WTB plat on sol ro</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2590>SCAMMER ALERT</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2589>Povar 65 Enc + more</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2588>65 Pal for Sale</A><BR>
+						
+						<a class="rBar" href=forsale.asp?index=2587>63 rogue + more...</A><BR>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="rBarList" href=forsale.asp?list=all>List All Items</font></A><BR>
+						<a class="rBarList" href=forsale.asp?add=y>Sell Item</font></A>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr bgcolor="#990000">
+		<TD>&nbsp;</TD>
+		<td>
+			<table border="0" width="100%">
+				<tr>
+					<td>
+						<a class="rBar1" href="tips.asp?list=all">Tips!</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+							<a class="rBar" href=Tips.asp?index=12>Trade my bard 59</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=11>lvling pally 32-43 Fast :)</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=10>AoE Groups</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=9>Bard Songs</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=8>The way to beg...</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=6>Stay Home</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=5>Caster tech for wiz</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=4>Begging tip</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=1>Getting the web page to work</A><BR>
+						
+						
+							<a class="rBar" href=Tips.asp?index=3>Taunting and Assist</A><BR>
+						
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="rBarList" href=Tips.asp?list=all>List All Tips</A><BR>
+						<a class="rBarList" href=tips.asp?add=y>Add Tip</font></A>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<TR><td colspan=2 bgcolor="#990000" align="left"><img src="images/right_nav_bottom.gif" width="20" height="20"></td></TR>
+</table>
+	
+			    </td>
+			  </tr>
+		</table>
+	</body>
+</html>
+
+

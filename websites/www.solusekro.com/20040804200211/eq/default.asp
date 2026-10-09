@@ -1,0 +1,295 @@
+<html>
+<head>
+<LINK REL="STYLESHEET" HREF="style/solusek.css" TYPE="text/css" MEDIA=screen>
+<title>Welcome to Solusek Ro</title>
+</head>
+<body >
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="130" bgcolor="#990000"><img src="images/solro.gif" width="130" height="58"></td>
+<td valign="baseline">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="tTop"><img src=images/trans.gif width=10 height=1 align=top>Wednesday, August 04, 2004</td>
+
+<td class="tTopR"><a class="aTop" href="Logon.asp">Not Logged In</a>
+<img src=images/trans.gif width=10 height=8></td>
+
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td bgcolor=000000 valign="bottom">
+<img src="images/top_nav_corner.gif" width="15" height="15"></td>
+<td bgcolor="#000000"  align="right" width=100%>
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" target="_blank" href="http://www.solusekro.com/forums">Message Board</a>
+<img src="images/trans.gif" width="15" height="8">
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" target="_blank" href="http://www.solrorage.com/forum2">SolRo Rage</a>
+<img src="images/trans.gif" width="15" height="8">
+
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" href="default.asp">Recent News</a>
+<img src="images/trans.gif" width="15" height="8">
+<img src="images/byarrow.gif" width="10" height="10"><a class="tLinkM" href="staff.asp">Contact Us</a>
+<img src=images/trans.gif width=10 height=0></td></tr>
+</table>
+		
+<!-- This is for the page specific title, and link if needed -->		
+	<table width="100%" border="0" cellspacing="0" cellpadding="4">
+        <tr> 
+          <td class="tMain">News & Announcements<BR>
+		  <a class="tLink" href="news.asp?addnews=y">[<b>Submit News Item</b>]</a></td>
+          <td class="tRight">
+		  <img src=images/trans.gif width=10 height=8></td></tr>
+      </table>
+<!-- End Page specific stuff -->
+
+		</td>
+	</TR>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="130" valign="top"><table border=0 width=130 cellpadding=0 cellspacing=0>
+<tr bgcolor="#990000">
+<td><b><img src=images/trans.gif width=13 height=8></b></td>
+<td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>Community</b></font></td>
+</tr>
+<tr>
+<td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000"><a class="rBar" href="news.asp?addnews=y">Submit News Item</a><br>
+<a class="rBar" href="default.asp">Recent News</a><br>
+<a class="rBar" href="news.asp">Archived News</a><br>
+<a class="rBar" target="_blank" href="http://www.solusekro.com/forums">Message Boards</a><br>
+<a class="rBar" target="_blank" href="http://www.solrorage.com/forum2">SolRo Rage</a><br>
+<a class="rBar" href="gallery.asp">Picture Gallery</a><br>
+<a class="rBar" href="register.asp">Free Account</a><br>
+<a class="rBar" href="suggest.asp">Suggestions</a><br>
+<a class="rBar" href="links.asp">Links</a>
+</td>
+</tr>
+<tr bgcolor="#990000">
+<td>&nbsp;</td>
+
+<td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>Information</b></font></td>
+</tr>
+<tr>
+<td bgcolor="#990000">&nbsp;</td>
+<td bgcolor="#990000"><a class="rBar" href="events.asp">Server Events</a><br>
+<a class="rBar" href="guilds.asp">Guilds</a><br>
+</td></tr><tr bgcolor="#990000">
+<td>&nbsp;</td>
+<td><font face="ms sans serif, Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFCC00"><b>User Profile</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor="#990000"><a class="rBar" href="logon.asp">Login</font></a></td>
+</tr>
+
+<tr><td bgcolor="#990000">&nbsp;</td><td bgcolor="#990000" align="right"><img src="images/left_nav_bottom.gif" width="20" height="20"></td></tr></table></td>
+    <td width="20" valign="top"><img src="images/top_corner.gif" width="20" height="20"></td>
+    <td valign="top" align="center"><br>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr> 
+	          <td>&nbsp;</td>
+				<td>
+					
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Saturday, July 31, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">Warning to SolRo! </p>
+							<tr><td><p class=pText>
+							Hail, Soulsek Ro! Please Be Aware:...<BR><BR>Please view RANTS Section of Message Boards for rest of message.
+							<br><BR>
+							 - Lorslady of DSoR (Templar 58th Season)<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=555">[Add Comment]</a>&nbsp;
+							&nbsp;<a class="abody" href="comments.asp?Index=555">[View Comments]</a>
+
+
+
+					<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Thursday, July 29, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">New Guild Ruadh Righ </p>
+							<tr><td><p class=pText>
+							Ruadh Righ is a new guild on the Solusek Ro server founded by myself and several long-time friends. We are looking for players who are mature, have a sense of humor, play the game for fun, and who play honestly. <BR><BR>Our goal is to experience everything EQ has to offer, but at our own pace and in our own time.  If you haven't found quite the right guild, and just want some nice folks to hang out with, or share grouping opportunities, raids and adventures with, feel free to contact us. All levels and classes are welcome.<BR><BR>Although we are a small group for the moment, we will grow. But that growth will be based on admitting people who are fun to be around. Ruadh Righ is for folks whose main priority is the quality of the time they spend online and in-game.<BR> <BR>Our permanent webpage is currently under construction, so if you are interested in finding out more about Ruadh Righ, please send me an e-mail at jgibson1066@hotmail.com.  I look forward to hearing from you.<BR> <BR>Regards,<BR> <BR>Doriath<BR>Deputy Guild Leader<BR>Ruadh Righ
+							<br><BR>
+							 - Doriath<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=554">[Add Comment]</a>&nbsp;
+							&nbsp;<a class="abody" href="comments.asp?Index=554">[View Comments]</a>
+
+
+
+					<BR><BR></TD></TR>
+<TR><TD><BR><img src=images/redline.gif height=2 width="100%"><BR><BR></TD></TR>
+					
+
+						<TR><TD><p class="pTitle">Chevaliers de la Vengeance New website </p></TD></TR>
+							<TR><TD><p class=pText>
+							We have a new WebSite. http://chevaliersdelavengeance.guildportal.com
+							 <BR><BR>- Bakabaka<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=552">[Add Comment]</a>&nbsp;
+							&nbsp; <a class="abody" href="comments.asp?Index=552">[View Comments]</a>
+
+					<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Sunday, July 25, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">New Syndicate Ro Castle </p>
+							<tr><td><p class=pText>
+							Syndicate Ro has moved into a new castle at http://syndicatero.guildportal.com/
+							<br><BR>
+							 - Ancandune<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=551">[Add Comment]</a>&nbsp;
+							&nbsp;<a class="abody" href="comments.asp?Index=551">[View Comments]</a>
+
+
+
+					<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Monday, July 19, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">New webpage </p>
+							<tr><td><p class=pText>
+							Rising Legacy has a new webpage.<BR>www.risinglegacy.com<BR>Safe Hunting
+							<br><BR>
+							 - Minimout<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=550">[Add Comment]</a>&nbsp;
+							&nbsp;<a class="abody" href="comments.asp?Index=550">[View Comments]</a>
+
+
+
+					<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Saturday, July 17, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">Sol Ro Server Forums... </p>
+							<tr><td><p class=pText>
+							Ganza has been hard at work... just if no one has noticed.<BR><BR>We have a Brand NEW Server Forums.  Please go check it out!<BR><BR>If you were using the OLD boards for your Guild Message Board, you can request one on the NEW one as well!<BR><BR>Please notify your Guilds of the new message board for Our Server.<BR><BR>Thanks millions!  Also, a big hug to Ganza for a job well done :)<BR><BR>The URL is:<BR>http://www.solusekro.com/forums/<BR><BR>Adra
+							<br><BR>
+							 - Adrastea<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=549">[Add Comment]</a>&nbsp;
+							<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Saturday, July 10, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">Triquetra </p>
+							<tr><td><p class=pText>
+							Hello Solusek Ro,<BR> Triquetra is looking for some more members in the level 30 -55 range, higher levels welcome though, We are a group of people that like to group, have fun, and try out harder things Norrath has too offer. If you might be interested contact me or a officer in game for some more information.<BR>Thank You and Good Adventurers too you all
+							<br><BR>
+							 - Hovaa MoveOvaa<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=548">[Add Comment]</a>&nbsp;
+							<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Monday, July 05, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">The Warriors' Caste </p>
+							<tr><td><p class=pText>
+							Hello all,<BR>I would like to inform you all that the Warriors' Caste has a new website which can be accessed by typing www.Warriors-Caste.org we look forward to see you all drop by and welcome anyone looking for a none raid based guild who just likes to play EQ and be good at.
+							<br><BR>
+							 - Tubzinsac<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=547">[Add Comment]</a>&nbsp;
+							<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Friday, June 25, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">Solusek Ro Forums </p>
+							<tr><td><p class=pText>
+							I've added a local Forum for Solusekro.com in the past we've always linked to other peoples forums, solusekro.org which is no longer and then solrorage.com which I'm told is still up, they just moved servers and the DNS is taking awhile to update.<BR><BR>In any event if your a fan of the solrorage.com forums there a links for there site still(still unreachable at the time of this post). <BR><BR>In the mean time check out the new forums <a href="http://www.solusekro.com/forums" target="_blank">here</a>. <BR><BR>If you would like a public or private forum for your guild post your information on the general guild forum or email it to: ganza@solusekro.com<BR><BR>
+							<br><BR>
+							 - Ganza<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=546">[Add Comment]</a>&nbsp;
+							<BR><BR></TD></TR>
+					
+						<tr><td bgcolor=FFCC00><p class="pDate">Thursday, June 24, 2004</p></TD></TR>
+						<tr><td><BR><p class="pTitle">The Madness of WORMS! </p>
+							<tr><td><p class=pText>
+							Ok Gang, I got me a fix for at least 2000 Windows or better.  Obviously if you are seeing this you have not gotten infected.. but just in case you have not protected your system as of yet.. GO TO Microsoft's website and get it protected ASAP!<BR><BR>We were having some major problems getting back online after our move and the silly worm kept getting hold of the connection.  Microsoft held my hand and patiently aided me in protecting the system so I could get our Sat system operational.  Here is what he had me download, mind you at 21.6 connection it took about an hour.  Also keep in mind that we are running XP Pro.  Pay attention to the download for your particular OS  :)<BR><BR>Here is the steps:<BR><b>Go Here:</b><BR>http://www.microsoft.com/downloads/search.aspx?displaylang=en<BR><b>Then Click:</b><BR>Sasser (A-F) Worm Removal Tool (KB841720<BR>http://www.microsoft.com/downloads/details.aspx?FamilyID=76c6de7e-1b6b-4fc3-90d4-9fa42d14cc17&displaylang=en<BR><b>Download.  This is the detection tool for the worm.</b><BR>I suggest saving all these files to your desktop for ease in finding and using.  <BR><b>Now Download This:</b><BR>Windows-KB841720-ENU-V4.exe<BR>http://search.microsoft.com/search/results.aspx?st=b&na=88&View=en-us&qu=KB841720<BR><b>Now Download the Security Patch for it:</b><BR>WindowsXP-KB823980-x86-ENU.exe<BR>http://search.microsoft.com/search/results.aspx?st=b&na=88&View=en-us&qu=KB823980<BR><BR>Now execute the last one downloaded, then the first one and then the second one.  Now go MAKE SURE you have all the Critical Updates.  Also make sure if you are infected that you reboot and DO NOT CONNECT to the internet and tunr on the Windows Firewall.  Then connect to the internet and go to Microsoft and follow their directions for disinfection and protection against this happening again.<BR><BR>I hope this helps a bit and if you have anymore suggestions please please comment!<BR><BR>Special Thank You to Andrew at Microsoft Tech Support.. The FIRST actual HELPFUL person I have encountered there.  <BR><BR>Adra
+							<br><BR>
+							 - Adrastea<BR><BR>
+							</p>
+							<a class="abody" href="comments.asp?add=y&Index=545">[Add Comment]</a>&nbsp;
+							&nbsp;<a class="abody" href="comments.asp?Index=545">[View Comments]</a>
+
+
+
+					<BR><BR></TD></TR>
+
+				</td>			
+			</tr></table>
+					<center><br><br><a Href="news.asp?addnews=y">[&nbsp;Submit News&nbsp;</A>
+					<a Href="news.asp">|&nbsp;Show All News&nbsp;]</A></center>
+
+			<!--Footer -->
+<BR>
+<center>
+<table width=100% align=center><TR><TD>
+<img src=images/redline.gif height=1 width=100%>			
+</TD></TR>
+<TR><TD align=center>
+<p class=pFooter>©2003 Solusekro.com, Everquest is a Trademark of Sony Corporation</p>
+<TD></TR></table>
+</center>
+<BR>
+					
+					
+					
+		
+			</td>
+				<td width="15">&nbsp;</td>
+				<td width="20" valign="top"><img src="images/top_corner1.gif" width="20" height="20"></td>
+			    <td width="110" valign="top"><!--Right nav bar -->
+
+<table border="0" width="180" cellpadding="0" cellspacing="0">
+	<tr bgcolor="#990000">
+		<TD bgcolor="#990000">
+			<img src=images/trans.gif height=0 width=4>
+		</TD>
+		<td>
+			<center> 
+		    	<p><font face="MS Sans Serif, Verdana, Arial" size="1" color="#FFFFFF"><b>SCREENSHOT<br>OF THE DECADE</b></font>
+				<a class="aShot" target="_blank" href="screen.asp">
+				<img src=images/t_luclin.jpg width=100 height=75 border="0"></a>
+				<br>
+				<a class="aShot" target="_blank" href="screen.asp">
+				Norrath!
+				</a></p>
+	      	</center>
+		</td>
+	</tr>
+<tr bgcolor="#990000">
+		<TD>&nbsp;</TD>
+		<td>
+			<table width="100%" border=0 cellpadding=5 cellspacing=0 align=left>
+				<tr>
+					<td>
+<center>
+						<a class="rBar1" href="guilds.asp">Top 25 Guilds<BR>(by clicks)</a></center>
+					</td>
+				</tr>
+				<tr>
+					<td align=left>
+					
+	<center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.wickedintentions.com/ target=_blank>1. Necessary Evil</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.triadica.org target=_blank>2. Triadica</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.darkblood.com/ target=_blank>3. Darkblood</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.bloodofro.com/ target=_blank>4. Blood of Ro</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.legion-whiterose.com target=_blank>5. Legion of the White Rose</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://wolfsclan-eq.de/ target=_blank>6. Wolfsclan</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.odisea-eq.com target=_blank>7. Odisea</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.eyeofmordor.net target=_blank>8. Eye of Mordor</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.burkesweb.com/empire_of_eternity/ target=_blank>9. Empire of Eternity</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.protectorsofmoonglow.org/ target=_blank>10. Protectors of M`glow</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://rurulet.sbnews.de/ target=_blank>11. Die Soeldner</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.coronamundi.de target=_blank>12. Corona Mundi</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.daniel-seite.de/bdg/indexm.htm target=_blank>13. Bund des Geistes</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.gatheredmight.com/menu.htm target=_blank>14. Gathered Might</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.eqkorl.com target=_blank>15. Keepers of Raging Light</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://boehse.de/moonwhisper/ target=_blank>16. Moonwhisper</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://lords-zodiac.com/ target=_blank>17. Lords of the Zodiac</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.jaggedpine.net target=_blank>18. Jaggedpine Defenders</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.gotcr.com/ target=_blank>19. Guardians of the Crystal Rose</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.deathmisdealt.net target=_blank>20. Death Misdealt</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.diehelden-eq.de/ target=_blank>21. Die Helden</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.furiouspantaloons.org/ target=_blank>22. Furious Pantaloons</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.elvensociety.com/ target=_blank>23. Elven Society</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://homepages.eq-guilds.com/SpiritsOfSanctuary/ target=_blank>24. Spirits of Sanctuary</B><font color=white size=-2></font></A><center><HR width=90%></center><a class="rBar" href=hit.asp?url=http://www.wanderers-eq.com target=_blank>25. Wanderers</B><font color=white size=-2></font></A>
+
+					</td>
+				</tr>
+
+			</table>
+		</td>
+	</tr>
+
+<TR><td bgcolor="#990000"  colspan =2><centeR>
+</center>
+</TD></TR>
+
+	<TR><td colspan=2 bgcolor="#990000" align="left"><img src="images/right_nav_bottom.gif" width="20" height="20"></td></TR>
+
+</Table>
+			    </td>
+			  </tr>
+		</table>
+
+
+	</body>
+</html>
