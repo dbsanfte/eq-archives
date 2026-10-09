@@ -1,0 +1,528 @@
+<HTML>
+<HEAD>
+	<TITLE>Calendar</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function viewday (yr,mm,dd) {
+	window.open('/luclin/calendar1/calendar.pl?ACTION=VIEWDAY&Year=' +yr+ '&Month=' +mm+ '&Date=' +dd +'&config=calendar.cfg','VIEWDAY','scrollbars,resizable,status,height=480,width=600');
+	}
+</SCRIPT>
+<style>
+<!--
+ A { text-decoration:none; }
+-->
+</style>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#006600" ALINK="#003333" VLINK="#333333">
+
+<div align="center">
+<a href="http://everquest.estoncom.com/luclin"><img src="../images/corner.gif" border="0" alt="
+Home - Everquest Luclin Raid Calendar" align="left"></a>
+<h2><font face="tempus sans itc" color="#FFFFEE">Luclin Raid Schedule - Dragons, Planes, Gods</font></h2>
+<font color="#ffffee">This calendar is explicitly for raids on the planes, the gods, and dragons (or dragon level mobs).  For general guild events and other zone raids please go <a href="http://everquest.estoncom.com/luclin/calendar2/calendar.pl"><font color="#FFCCCC">here.</font></a></font>
+<br><br>
+<hr>
+
+<TABLE BORDER=1 BGCOLOR="#ffffff" CELLPADDING=3 CELLSPACING=0 BORDERCOLOR=#333333>
+<TR>
+	<TD ALIGN=LEFT BGCOLOR=#004000>
+		<TABLE BORDER=1 CELLPADDING=0 cellspacing=0 BGCOLOR=white>
+	<TR><TD COLSPAN=7 VALIGN=TOP ALIGN=CENTER><font size=1><a href="/luclin/calendar1/calendar.pl?Month=3&Year=2001&config=calendar.cfg">March&nbsp;2001</a></font></TD></TR>
+<TR><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD VALIGN=TOP><font size=1>1</font></TD><TD VALIGN=TOP><font size=1>2</font></TD><TD VALIGN=TOP><font size=1>3</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>4</font></TD><TD VALIGN=TOP><font size=1>5</font></TD><TD VALIGN=TOP><font size=1>6</font></TD><TD VALIGN=TOP><font size=1>7</font></TD><TD VALIGN=TOP><font size=1>8</font></TD><TD VALIGN=TOP><font size=1>9</font></TD><TD VALIGN=TOP><font size=1>10</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>11</font></TD><TD VALIGN=TOP><font size=1>12</font></TD><TD VALIGN=TOP><font size=1>13</font></TD><TD VALIGN=TOP><font size=1>14</font></TD><TD VALIGN=TOP><font size=1>15</font></TD><TD VALIGN=TOP><font size=1>16</font></TD><TD VALIGN=TOP><font size=1>17</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>18</font></TD><TD VALIGN=TOP><font size=1>19</font></TD><TD VALIGN=TOP><font size=1>20</font></TD><TD VALIGN=TOP><font size=1>21</font></TD><TD VALIGN=TOP><font size=1>22</font></TD><TD VALIGN=TOP><font size=1>23</font></TD><TD VALIGN=TOP><font size=1>24</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>25</font></TD><TD VALIGN=TOP><font size=1>26</font></TD><TD VALIGN=TOP><font size=1>27</font></TD><TD VALIGN=TOP><font size=1>28</font></TD><TD VALIGN=TOP><font size=1>29</font></TD><TD VALIGN=TOP><font size=1>30</font></TD><TD VALIGN=TOP><font size=1>31</font></TD></TR>
+</TR></TABLE>
+
+	</TD>
+	<form action="/luclin/calendar1/calendar.pl" method=post>
+	<TD COLSPAN=5 VALIGN=MIDDLE BGCOLOR=#004000 ALIGN=CENTER>
+	<font color=white size=+2 face="verdana"><b>April 2001</b></font><br>
+	<input type="hidden" name="config" value="calendar.cfg">
+	<select name="Month" size=1>
+		<option value="1" >January
+		<option value="2" >February
+		<option value="3" >March
+		<option value="4" SELECTED>April
+		<option value="5" >May
+		<option value="6" >June
+		<option value="7" >July
+		<option value="8" >August
+		<option value="9" >September
+		<option value="10" >October
+		<option value="11" >November
+		<option value="12" >December
+	</select>
+	<select name="Year" size=1>
+		<option value="2000" >2000
+		<option value="2001" SELECTED>2001
+		<option value="2002" >2002
+		<option value="2003" >2003
+	</select>
+	<input type="submit" value="Go"><br>
+	<font size="-1" color="white"><i>Click on any date to view details for that day.</i></font>
+	</TD>
+	</form>
+	<TD ALIGN=RIGHT BGCOLOR=#004000>
+		<TABLE BORDER=1 CELLPADDING=0 cellspacing=0 BGCOLOR=white>
+	<TR><TD COLSPAN=7 VALIGN=TOP ALIGN=CENTER><font size=1><a href="/luclin/calendar1/calendar.pl?Month=5&Year=2001&config=calendar.cfg">May&nbsp;2001</a></font></TD></TR>
+<TR><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD VALIGN=TOP><font size=1>1</font></TD><TD VALIGN=TOP><font size=1>2</font></TD><TD VALIGN=TOP><font size=1>3</font></TD><TD VALIGN=TOP><font size=1>4</font></TD><TD VALIGN=TOP><font size=1>5</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>6</font></TD><TD VALIGN=TOP><font size=1>7</font></TD><TD VALIGN=TOP><font size=1>8</font></TD><TD VALIGN=TOP><font size=1>9</font></TD><TD VALIGN=TOP><font size=1>10</font></TD><TD VALIGN=TOP><font size=1>11</font></TD><TD VALIGN=TOP><font size=1>12</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>13</font></TD><TD VALIGN=TOP><font size=1>14</font></TD><TD VALIGN=TOP><font size=1>15</font></TD><TD VALIGN=TOP><font size=1>16</font></TD><TD VALIGN=TOP><font size=1>17</font></TD><TD VALIGN=TOP><font size=1>18</font></TD><TD VALIGN=TOP><font size=1>19</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>20</font></TD><TD VALIGN=TOP><font size=1>21</font></TD><TD VALIGN=TOP><font size=1>22</font></TD><TD VALIGN=TOP><font size=1>23</font></TD><TD VALIGN=TOP><font size=1>24</font></TD><TD VALIGN=TOP><font size=1>25</font></TD><TD VALIGN=TOP><font size=1>26</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>27</font></TD><TD VALIGN=TOP><font size=1>28</font></TD><TD VALIGN=TOP><font size=1>29</font></TD><TD VALIGN=TOP><font size=1>30</font></TD><TD VALIGN=TOP><font size=1>31</font></TD><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD></TR></TABLE>
+
+	</TD>
+</TR>
+<TR>
+	<TD COLSPAN=7>
+	<ul>
+		
+	</ul>
+	</font>
+	</TD>
+</TR>
+<TR>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Sunday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Monday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Tuesday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Wednesday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Thursday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Friday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Saturday</font></TH>
+</TR>
+
+<TR>
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,1);"><u>1</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		April Fool's Day<br>
+US in POH<br>
+Fellowship and friends in Fear<br>
+Dreadlords-Nagafen<br>
+Eyee Candee in PoA<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,2);"><u>2</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Faydedar - APEX<br>
+Dreadlords- PoF<br>
+Sterm's Open Hate Raid<br>
+Furlfoot & Friends for Vox<br>
+PoF - Sacred Sanctuary<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,3);"><u>3</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Ancient Crusade in PoF<br>
+LoS in PoH<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,4);"><u>4</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		PoF/LoS/Ungar<br>
+Asura in PoH<br>
+Asura in PoH canceled<br>
+Triad -PoH<br>
+Furlfoot & friends for vox<br>
+WCoD Hate Raid<br>
+LoS PoF cancled<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,5);"><u>5</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		POF<br>
+Invite Only<br>
+PoH<br>
+WCoD Hate Raid<br>
+PoA  for Apex<br>
+Vox<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,6);"><u>6</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		IB in PoF<br>
+CJ in PoH<br>
+Sol A raid<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,7);"><u>7</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Blood Alliance in POF<br>
+Vets and friends take Hate<br>
+Moseby  kills naggy (i hope)<br>
+Vox <br>
+Ancient Crusade in PoG!<br>
+NPF does UNREST<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,8);"><u>8</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Heroes PoF<br>
+Moseby makes Vox dead<br>
+VoS-POH<br>
+Chardok Royals raid<br>
+CJ in PoA<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,9);"><u>9</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Vox Dies if Moseby fails - WFL<br>
+Not gonna happen<br>
+Vox be mine<br>
+Vox canceled...<br>
+LoS in Poh<br>
+Isle one PoA<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,10);"><u>10</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Shades in Hate<br>
+Scarlet Mist & friends in PoF<br>
+CJ - Royall familie (Chardok)<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,11);"><u>11</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Ancient crusade in PoH<br>
+Triad PoF<br>
+Nagafen<br>
+Nagafen moved to tomorrow<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,12);"><u>12</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Mily's Open raid-Plane of Fear<br>
+Asura in Hate<br>
+PoA - Sacred Sanctuary<br>
+Nagafen-Senaiel<br>
+Open Raid PoF<br>
+Open PoF Raid<br>
+LoS Cazic Thule<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,13);"><u>13</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		IB in PoH<br>
+PoF - Raj Artair<br>
+Sorrow's End in PoG<br>
+PoA - Sacred Sanctuary<br>
+Vox-moved to here<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,14);"><u>14</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Llainn and friends in PoF<br>
+RoN in HATE<br>
+Naggy<br>
+PoF cancelled<br>
+Sacred Sanctuary - PoG<br>
+PoF : Hyakka<br>
+Heroes Slay Severilous<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,15);"><u>15</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Hordes in PoH<br>
+PoF- Colleague & Scarlet<br>
+Vox<br>
+Hate pickup<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,16);"><u>16</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		PoF - Sacred Sanctuary<br>
+Fellowship in Hate<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,17);"><u>17</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Llainn and friends in PoH <br>
+PoF/LoS/Ungar<br>
+PoG finni and friends<br>
+pog moved to 18th<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,18);"><u>18</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Asura in PoH<br>
+DOL Alliance Kill Vox<br>
+Pof bob&friends.<br>
+Naggy<br>
+Vox- Moved to today<br>
+PoG finni <br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#cceecf >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,19);"><u>19</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		PoF - Poysuni<br>
+Shades vs. Plane of Growth<br>
+LoS in PoH<br>
+naggy<br>
+Vox<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,20);"><u>20</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CJ in PoH<br>
+WCoD - PoF<br>
+Naggy<br>
+Trade & Research Fair <br>
+IB in PoA<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,21);"><u>21</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Moonstone's PoH raid( open)<br>
+The Alliance Hosts PoF<br>
+Naggy gonna be slain.<br>
+Shades vs. Plane of Sky<br>
+IB in PoA<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,22);"><u>22</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		4C/Open PoF Raid<br>
+Plane of Hate<br>
+Shades Vs Plane of Sky Day 2<br>
+IB in PoA<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,23);"><u>23</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CoS in Hate<br>
+Vox- LoC<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,24);"><u>24</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Heroes raid PoH<br>
+PoF *finvite only*<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,25);"><u>25</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CJ in PoH<br>
+PoF - Apex<br>
+Naggy<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,26);"><u>26</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Mily's open raid-Plane of Hate<br>
+AC in PoF<br>
+AC in PoF<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,27);"><u>27</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		The Alliance in PoH<br>
+The Magnanimous Ones in POF<br>
+Se PoG<br>
+VoS Air 4/27 to 5/1<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,28);"><u>28</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Open Chardok Raid<br>
+US in POH<br>
+CJ in PoF<br>
+Nagafen - MD<br>
+Sacred Sanctuary - PoG<br>
+VoS in Air<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,29);"><u>29</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		TToL/Open Hate Raid<br>
+Ancient Crusade in PoF<br>
+Vos in Air<br>
+Vox<br>
+Erickson V.S. Severilous<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,30);"><u>30</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CoS in Hate - Iberar leader<br>
+Vos in Air<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+<TD COLSPAN=5 ><P>&nbsp;</TD>
+<TR>
+	<TD COLSPAN=7 BGCOLOR="#004000">
+             <center><font size="+2" color="#FFFFFF"><B>Calendar Guidelines</b></font></center><font color="#FFFFFF">
+     <ol>
+        <li>Do not have more than 3 current reservations.</li>
+        <li>Do not have more than 1 current weekend (Friday, Saturday, Sunday) reservation.</li>
+        <li>Do not exploit the reservation system by posting under different names or using a multi-guild reservation rotation which
+ unfairly monopolizes zones/spawns.</li>
+     </ol>
+Please remember, you can always do unannounced pickup raids without using the calendar, and you can always contact a raid leader to
+work things out if you are interested in a day they have reserved.
+Issues, complaints, and notifications that rules are being broken should be placed in the General or Dragons and Planes forum of the
+ Luclin.com message board.  If the calendar is clearly being abused, your reservations may be erased.  Please try to work together,
+without cooperation these reservations are useless since they are unofficial and not recognized by Verant.</font></TD>
+</TR>
+</TABLE>
+<BR>
+
+<!-- Add An Entry Form -->
+<table border="0" cellspacing="10" cellpadding="0" width="98%">
+<tr><td align="right"><br><hr><font color="#FFFFDE" size="-1">Please state what the raid/event is and who it is
+ for briefly in the heading.  Use the description field to expand on times, invitations, etc.</font><hr></td>
+<td>
+
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=3>
+	<form action="/luclin/calendar1/calendar.pl" method=post>
+	<input type="hidden" name="ACTION" value="DO_ADD">
+	<input type="hidden" name="config" value="calendar.cfg">
+	<input type="hidden" name="ref" value="post">
+	<input type="hidden" name="REQUIRED" value="name|description|heading">
+	<TR>
+		<TD BGCOLOR="#004000" ALIGN=CENTER COLSPAN=4><font color="white" size=+1><B>Add an Event</B></font></TD>
+	</TR>
+	<TR>
+		<TH BGCOLOR="#CCCCCC">Name</TH>
+		<TD BGCOLOR="#CCCCCC"><input type="text" name="name" size="15" maxlength="15"></TD>
+
+		<TH BGCOLOR="#CCCCCC">E-Mail<br><font size="-2">optional</font></TH>
+		<TD BGCOLOR="#CCCCCC"><input type="text" name="email" size="30" maxlength="75"></TD>
+	</TR>
+	<TR>
+		<TH BGCOLOR="#CCCCCC">Date</TH>
+		<TD BGCOLOR="#CCCCCC">
+			<input name="Month" size=2 maxlength=2 value="4"> / <input name="Date" size=2 maxlength=2 value="19"> / <input name="Year" size=4 maxlength=4 value="2001"><br>
+		
+
+<!--Commented out annual entry
+
+	<input type="checkbox" name="annual" value="1" onClick="if(form.annual.checked == true){form.Year.value='0000'}else{form.Year.value='2001'}"> Every Year
+
+end comment-->
+
+
+		</TD>
+		<TH BGCOLOR="#CCCCCC">Heading</TH>
+		<TD BGCOLOR="#CCCCCC"><input name="heading" size=30 maxlength="30"></TD>
+	</TR>
+	<TR>
+		<TH BGCOLOR="#CCCCCC">Description</TH>
+		<TD BGCOLOR="#CCCCCC" COLSPAN=3><textarea name="description" cols=50 rows=3></textarea></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=4 ALIGN=RIGHT BGCOLOR="#CCCCCC"><input type="reset" value="Cancel">&nbsp;&nbsp;&nbsp;<input type="submit" value="Save"></TD>
+	</TR>
+	</form>
+</TABLE></td>
+<td>
+<br><hr><font color="#FFFFDE" size="-1">If you make a mistake, comment your post noting the mistake, repost the
+ correct information, and notify me in <a href="mailto:bish@estoncom.com"><font color="#C8FFCC">email</font></a
+>.</font><hr></td></tr></table>
+<BR>
+
+</div>
+<font color="#ffffff">
+Please send all comments, questions, and suggestions to 
+<a href="mailto:bish@estoncom.com"><font color="#ffffdd">bish@estoncom.com</font></a>
+ or post them on relavent threads on the 
+<a href="http://pub6.ezboard.com/bluclin71335">
+<font color="#ffffdd">Luclin Message Board</font></a>.
+</font>
+</BODY>
+</HTML>

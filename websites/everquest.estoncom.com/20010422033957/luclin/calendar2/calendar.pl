@@ -1,0 +1,471 @@
+<HTML>
+<HEAD>
+	<TITLE>Calendar</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function viewday (yr,mm,dd) {
+	window.open('/luclin/calendar2/calendar.pl?ACTION=VIEWDAY&Year=' +yr+ '&Month=' +mm+ '&Date=' +dd +'&config=calendar.cfg','VIEWDAY','scrollbars,resizable,status,height=480,width=600');
+	}
+</SCRIPT>
+<style>
+<!--
+ A { text-decoration:none; }
+-->
+</style>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#006600" ALINK="#003333" VLINK="#333333">
+
+<div align="center">
+<a href="http://everquest.estoncom.com/luclin"><img src="../images/corner.gif" border="0" alt="
+Home - Everquest Luclin Raid Calendar" align="left"></a>
+<h2><font face="tempus sans itc" color="#FFFFEE">Luclin Raid and Event Announcements</font></h2>
+<font color="#ffffee">This calendar is for guild events and NON-god/plane/dragon raids and events.  Think announcement here, not reservation.  For raids on gods, dragons, or the planes, please go <a href="http://everquest.estoncom.com/luclin/calendar1/calendar.pl"><font color="#FFCCCC">here.</font></a></font>
+<br><br>
+<hr>
+
+<TABLE BORDER=1 BGCOLOR="#ffffff" CELLPADDING=3 CELLSPACING=0 BORDERCOLOR=#333333>
+<TR>
+	<TD ALIGN=LEFT BGCOLOR=#004000>
+		<TABLE BORDER=1 CELLPADDING=0 cellspacing=0 BGCOLOR=white>
+	<TR><TD COLSPAN=7 VALIGN=TOP ALIGN=CENTER><font size=1><a href="/luclin/calendar2/calendar.pl?Month=3&Year=2001&config=calendar.cfg">March&nbsp;2001</a></font></TD></TR>
+<TR><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD VALIGN=TOP><font size=1>1</font></TD><TD VALIGN=TOP><font size=1>2</font></TD><TD VALIGN=TOP><font size=1>3</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>4</font></TD><TD VALIGN=TOP><font size=1>5</font></TD><TD VALIGN=TOP><font size=1>6</font></TD><TD VALIGN=TOP><font size=1>7</font></TD><TD VALIGN=TOP><font size=1>8</font></TD><TD VALIGN=TOP><font size=1>9</font></TD><TD VALIGN=TOP><font size=1>10</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>11</font></TD><TD VALIGN=TOP><font size=1>12</font></TD><TD VALIGN=TOP><font size=1>13</font></TD><TD VALIGN=TOP><font size=1>14</font></TD><TD VALIGN=TOP><font size=1>15</font></TD><TD VALIGN=TOP><font size=1>16</font></TD><TD VALIGN=TOP><font size=1>17</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>18</font></TD><TD VALIGN=TOP><font size=1>19</font></TD><TD VALIGN=TOP><font size=1>20</font></TD><TD VALIGN=TOP><font size=1>21</font></TD><TD VALIGN=TOP><font size=1>22</font></TD><TD VALIGN=TOP><font size=1>23</font></TD><TD VALIGN=TOP><font size=1>24</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>25</font></TD><TD VALIGN=TOP><font size=1>26</font></TD><TD VALIGN=TOP><font size=1>27</font></TD><TD VALIGN=TOP><font size=1>28</font></TD><TD VALIGN=TOP><font size=1>29</font></TD><TD VALIGN=TOP><font size=1>30</font></TD><TD VALIGN=TOP><font size=1>31</font></TD></TR>
+</TR></TABLE>
+
+	</TD>
+	<form action="/luclin/calendar2/calendar.pl" method=post>
+	<TD COLSPAN=5 VALIGN=MIDDLE BGCOLOR=#004000 ALIGN=CENTER>
+	<font color=white size=+2 face="verdana"><b>April 2001</b></font><br>
+	<input type="hidden" name="config" value="calendar.cfg">
+	<select name="Month" size=1>
+		<option value="1" >January
+		<option value="2" >February
+		<option value="3" >March
+		<option value="4" SELECTED>April
+		<option value="5" >May
+		<option value="6" >June
+		<option value="7" >July
+		<option value="8" >August
+		<option value="9" >September
+		<option value="10" >October
+		<option value="11" >November
+		<option value="12" >December
+	</select>
+	<select name="Year" size=1>
+		<option value="2000" >2000
+		<option value="2001" SELECTED>2001
+		<option value="2002" >2002
+		<option value="2003" >2003
+	</select>
+	<input type="submit" value="Go"><br>
+	<font size="-1" color="white"><i>Click on any date to view details for that day.</i></font>
+	</TD>
+	</form>
+	<TD ALIGN=RIGHT BGCOLOR=#004000>
+		<TABLE BORDER=1 CELLPADDING=0 cellspacing=0 BGCOLOR=white>
+	<TR><TD COLSPAN=7 VALIGN=TOP ALIGN=CENTER><font size=1><a href="/luclin/calendar2/calendar.pl?Month=5&Year=2001&config=calendar.cfg">May&nbsp;2001</a></font></TD></TR>
+<TR><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD><TD VALIGN=TOP><font size=1>1</font></TD><TD VALIGN=TOP><font size=1>2</font></TD><TD VALIGN=TOP><font size=1>3</font></TD><TD VALIGN=TOP><font size=1>4</font></TD><TD VALIGN=TOP><font size=1>5</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>6</font></TD><TD VALIGN=TOP><font size=1>7</font></TD><TD VALIGN=TOP><font size=1>8</font></TD><TD VALIGN=TOP><font size=1>9</font></TD><TD VALIGN=TOP><font size=1>10</font></TD><TD VALIGN=TOP><font size=1>11</font></TD><TD VALIGN=TOP><font size=1>12</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>13</font></TD><TD VALIGN=TOP><font size=1>14</font></TD><TD VALIGN=TOP><font size=1>15</font></TD><TD VALIGN=TOP><font size=1>16</font></TD><TD VALIGN=TOP><font size=1>17</font></TD><TD VALIGN=TOP><font size=1>18</font></TD><TD VALIGN=TOP><font size=1>19</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>20</font></TD><TD VALIGN=TOP><font size=1>21</font></TD><TD VALIGN=TOP><font size=1>22</font></TD><TD VALIGN=TOP><font size=1>23</font></TD><TD VALIGN=TOP><font size=1>24</font></TD><TD VALIGN=TOP><font size=1>25</font></TD><TD VALIGN=TOP><font size=1>26</font></TD></TR>
+<TR><TD VALIGN=TOP><font size=1>27</font></TD><TD VALIGN=TOP><font size=1>28</font></TD><TD VALIGN=TOP><font size=1>29</font></TD><TD VALIGN=TOP><font size=1>30</font></TD><TD VALIGN=TOP><font size=1>31</font></TD><TD><font size=1>&nbsp;</font></TD><TD><font size=1>&nbsp;</font></TD></TR></TABLE>
+
+	</TD>
+</TR>
+<TR>
+	<TD COLSPAN=7>
+	<ul>
+		
+	</ul>
+	</font>
+	</TD>
+</TR>
+<TR>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Sunday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Monday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Tuesday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Wednesday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Thursday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Friday</font></TH>
+	<TH WIDTH=90 BGCOLOR=#CCCCCC><font face="verdana" SIZE="-1">Saturday</font></TH>
+</TR>
+
+<TR>
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,1);"><u>1</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		April Fool's Day<br>
+Sev Souls in Arena<br>
+CoM<br>
+Birthday party for a wizard<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,2);"><u>2</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		sacred sanctuary vs phinny<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,3);"><u>3</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		sacred sanctuary vs phinny<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,4);"><u>4</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,5);"><u>5</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		AC in kedge<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,6);"><u>6</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		WCoD - CoM Reavers/Lords<br>
+GoM Najena Raid<br>
+Falein and friends vs POD<br>
+Bahck Does Hole<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,7);"><u>7</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Chardok Royal Raid 12pm CST<br>
+MD in MM<br>
+Caldek/Eillesandra Wedding<br>
+Najenas Fall<br>
+Phinny/Kedge Raid<br>
+BotT and BD raid MM<br>
+NPF does Unrest<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,8);"><u>8</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		AC at Naggy<br>
+Chardok Royals raid<br>
+Titans and NRA in MM<br>
+Titans and NRA in MM Moved<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,9);"><u>9</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,10);"><u>10</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CJ - Royall Familie (Chardok)<br>
+WCoD - Kedge Keep<br>
+CotD - Runnyeye<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,11);"><u>11</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Birthday<br>
+Open Drunk Death Race<br>
+Kael<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,12);"><u>12</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		COM by AC<br>
+COM by AC<br>
+Placacka in Chardok (Royalls)<br>
+VoS in MM   Castle<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,13);"><u>13</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Chardok Royals (Overking)<br>
+Kedge Keep, random targets.<br>
+Epic Courage PAW Raid<br>
+WCoD - The Hole<br>
+Ixiblat Fer<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,14);"><u>14</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Kedge Keep Raid <br>
+SoP in MM<br>
+Phinny Raid - Kedge Keep<br>
+KoL raids CoM<br>
+chardok - AC<br>
+Lguk King vs. Dragons of Lore<br>
+small Velketer raid - EP + EOP<br>
+AoP @ CC<br>
+NPF raids Mistmoore<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,15);"><u>15</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Chardok Royals! VoS<br>
+Chardok raid Canceled<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,16);"><u>16</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Bixie raid<br>
+AC does Kedge for Phinny<br>
+AC does Kedge for Phinny<br>
+AC does Kedge for Phinny<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,17);"><u>17</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,18);"><u>18</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Kithicor<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,19);"><u>19</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Placacka in Chardok<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,20);"><u>20</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CB Raid - Wildfyre Legion<br>
+Trade, Skill, & Research Fair<br>
+Chardok Royals<br>
+<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR=#cceecf >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,21);"><u>21</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Chardok Royals Raid<br>
+Raj Artair in ToFS<br>
+The Stryngs of Ayre Raid MM<br>
+The Stryngs of Ayre Raid MM<br>
+Kedge/Phinny Raid<br>
+Gfay Party for newbies!<br>
+B-DAY<br>
+KoL raids CoM<br>
+Emerald Phoenix in Kaesora<br>
+NPF at Cazic - Thule<br>
+Chardok Royalty<br>
+Heroes in Velketor's Lab<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,22);"><u>22</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Partaay Night<br>
+Titans and NRA in Mistmoore<br>
+Kedge Raid<br>
+Chardok Royals!<br>
+AC in CoM<br>
+Permafrost Fearless Crusaders<br>
+Heroes in Kael<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,23);"><u>23</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		*MM Raid -  Stryngs of Ayre<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,24);"><u>24</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,25);"><u>25</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Epic Courage MM Raid<br>
+Shades raid CoM<br>
+<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,26);"><u>26</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		CotD - Runnyeye<br>
+CotD - Runnyeye - CANCEL<br>
+CotD - Permafrost<br>
+Private Kedge Keep Raid<br>
+
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,27);"><u>27</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		WCoD - The Hole<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,28);"><u>28</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		GoM Does Runnyeye<br>
+Emerald Phoenix in Najena<br>
+Mad Wanderer - Kaesora<br>
+Kedge/Phinny<br>
+
+	</FONT>
+	</TD>
+
+</TR><TR>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,29);"><u>29</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		Frozen Shadow-Thousand Suns<br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+
+	<TD VALIGN=TOP  >
+	<FONT SIZE=+1><B><a href="javascript:viewday(2001,4,30);"><u>30</u></a></B></FONT>
+	<FONT SIZE="-2"><br>
+		<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+	</FONT>
+	</TD>
+<TD COLSPAN=5 ><P>&nbsp;</TD>
+<TR>
+	<TD COLSPAN=7 BGCOLOR="#004000">&nbsp;</TD>
+</TR>
+</TABLE>
+<BR>
+
+<!-- Add An Entry Form -->
+<table border="0" cellspacing="10" cellpadding="0" width="98%">
+<tr><td align="right"><br><hr><font color="#FFFFDE" size="-1">Please state what the raid/event is and who it is
+ for briefly in the heading.  Use the description field to expand on times, invitations, etc.</font><hr></td>
+<td>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=3>
+	<form action="/luclin/calendar2/calendar.pl" method=post>
+	<input type="hidden" name="ACTION" value="DO_ADD">
+	<input type="hidden" name="config" value="calendar.cfg">
+	<input type="hidden" name="ref" value="post">
+	<input type="hidden" name="REQUIRED" value="name|description|heading">
+	<TR>
+		<TD BGCOLOR="#004000" ALIGN=CENTER COLSPAN=4><font color="white" size=+1><B>Add an Event</B></font></TD>
+	</TR>
+	<TR>
+		<TH BGCOLOR="#CCCCCC">Name</TH>
+		<TD BGCOLOR="#CCCCCC"><input type="text" name="name" size="15" maxlength="15"></TD>
+
+		<TH BGCOLOR="#CCCCCC">E-Mail<br><font size="-2">optional</font></TH>
+		<TD BGCOLOR="#CCCCCC"><input type="text" name="email" size="30" maxlength="75"></TD>
+	</TR>
+	<TR>
+		<TH BGCOLOR="#CCCCCC">Date</TH>
+		<TD BGCOLOR="#CCCCCC">
+			<input name="Month" size=2 maxlength=2 value="4"> / <input name="Date" size=2 maxlength=2 value="21"> / <input name="Year" size=4 maxlength=4 value="2001"><br>
+		
+
+<!--Commented out annual entry
+
+	<input type="checkbox" name="annual" value="1" onClick="if(form.annual.checked == true){form.Year.value='0000'}else{form.Year.value='2001'}"> Every Year
+
+end comment-->
+
+
+		</TD>
+		<TH BGCOLOR="#CCCCCC">Heading</TH>
+		<TD BGCOLOR="#CCCCCC"><input name="heading" size=30 maxlength="30"></TD>
+	</TR>
+	<TR>
+		<TH BGCOLOR="#CCCCCC">Description</TH>
+		<TD BGCOLOR="#CCCCCC" COLSPAN=3><textarea name="description" cols=50 rows=3></textarea></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=4 ALIGN=RIGHT BGCOLOR="#CCCCCC"><input type="reset" value="Cancel">&nbsp;&nbsp;&nbsp;<input type="submit" value="Save"></TD>
+	</TR>
+	</form>
+</TABLE></td>
+<td>
+<br><hr><font color="#FFFFDE" size="-1">If you make a mistake, comment your post noting the mistake, repost the
+ correct information, and notify me in <a href="mailto:bish@estoncom.com"><font color="#C8FFCC">email</font></a
+>.</font><hr></td></tr></table>
+<BR>
+
+</div>
+<font color="#ffffff">
+Please send all comments, questions, and suggestions to 
+<a href="mailto:bish@estoncom.com"><font color="#ffffdd">bish@estoncom.com</font></a>
+ or post them on relavent threads on the 
+<a href="http://pub6.ezboard.com/bluclin71335">
+<font color="#ffffdd">Luclin Message Board</font></a>.
+</font>
+</BODY>
+</HTML>
